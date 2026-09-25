@@ -1,8 +1,13 @@
-name: Deploy to GitHub Pages
+name: Build and deploy
+
+# 저장소가 비공개인 동안에는 빌드와 데이터 검증만 하고,
+# 공개로 전환하면 같은 워크플로가 GitHub Pages 배포까지 한다 (DESIGN.md §13).
+# 공개 전환 후 Settings → Pages → Source를 "GitHub Actions"로 한 번 설정해야 한다.
 
 on:
   push:
     branches: [main]
+  pull_request:
   workflow_dispatch:
 
 permissions:
@@ -11,12 +16,17 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages
+  group: pages-${{ github.ref }}
   cancel-in-progress: true
+
+env:
+  PUBLISH: ${{ github.event.repository.private == false && github.event_name != 'pull_request' }}
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    outputs:
+      publish: ${{ env.PUBLISH }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -25,12 +35,14 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
-      - uses: actions/upload-pages-artifact@v3
+      - if: env.PUBLISH == 'true'
+        uses: actions/upload-pages-artifact@v3
         with:
           path: dist
 
   deploy:
     needs: build
+    if: needs.build.outputs.publish == 'true'
     runs-on: ubuntu-latest
     environment:
       name: github-pages

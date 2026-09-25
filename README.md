@@ -10,7 +10,7 @@ npm run dev      # http://localhost:5173/history-map/
 npm run build    # dist/ 생성
 ```
 
-`main` 브랜치에 push하면 GitHub Actions가 GitHub Pages로 배포합니다.
+push하면 GitHub Actions가 빌드와 데이터 검증을 실행합니다. 저장소가 공개 상태일 때만 `main` 브랜치를 GitHub Pages로 배포합니다. 공개로 전환한 뒤 Settings → Pages → Source를 "GitHub Actions"로 한 번 설정해야 합니다.
 
 ## 제보
 
