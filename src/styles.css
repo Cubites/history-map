@@ -89,20 +89,11 @@ button {
 .map-canvas { position: absolute; inset: 0; display: block; }
 .map-overlay { position: absolute; inset: 0; pointer-events: none; overflow: visible; }
 
-/* hover한 영토를 위 레이어에 복제해 살짝 키운다 (DESIGN.md §6.1) */
-.territory-lift {
+/* hover한 영토의 경계선을 위 레이어에 강조한다 (DESIGN.md §6.1) */
+.territory-hover {
+  fill: none;
   stroke: var(--fg);
   stroke-width: 1.5;
-  transform-box: fill-box;
-  transform-origin: center;
-  animation: territory-lift 150ms ease-out forwards;
-}
-@keyframes territory-lift {
-  from { transform: scale(1); }
-  to { transform: scale(1.05); }
-}
-@media (prefers-reduced-motion: reduce) {
-  .territory-lift { animation-duration: 1ms; }
 }
 
 .territory-selected {

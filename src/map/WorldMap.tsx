@@ -322,8 +322,6 @@ export default function WorldMap({ data }: { data: StaticData }) {
   };
 
   // ── 마우스·터치 ────────────────────────────────────────────
-  const pointerType = useRef('mouse');
-
   const hitTest = useCallback(
     (x: number, y: number): string | null => {
       if (!size) return null;
@@ -358,8 +356,7 @@ export default function WorldMap({ data }: { data: StaticData }) {
     const entry = active.find((t) => t.entityId === id);
     const feature = entry && featureFor(entry, overlayLod);
     if (!entry || !feature) return null;
-    const path = geoPath(crossesSeam(entry.bbox, view) ? precise : projection);
-    return { d: path(feature) ?? '', color: data.entities.get(id)?.color ?? '#999999' };
+    return geoPath(crossesSeam(entry.bbox, view) ? precise : projection)(feature) ?? '';
   };
   const selectedShape = overlayPath(selectedId);
   const hoveredShape = overlayPath(hovered?.id ?? null);
@@ -370,9 +367,6 @@ export default function WorldMap({ data }: { data: StaticData }) {
     <div
       ref={containerRef}
       className="world-map"
-      onPointerDown={(e) => {
-        pointerType.current = e.pointerType;
-      }}
       onPointerMove={(e) => {
         if (e.pointerType !== 'mouse' || e.buttons) return;
         const [x, y] = localPoint(e);
@@ -382,10 +376,7 @@ export default function WorldMap({ data }: { data: StaticData }) {
       onPointerLeave={() => setHovered(null)}
       onClick={(e) => {
         const [x, y] = localPoint(e);
-        const id = hitTest(x, y);
-        selectEntity(id);
-        // 터치에는 hover가 없으므로 누른 나라를 잠깐 들어 올려 보여준다
-        if (pointerType.current !== 'mouse') setHovered(id ? { id, x, y } : null);
+        selectEntity(hitTest(x, y));
       }}
     >
       <canvas ref={canvasRef} className="map-canvas" />
@@ -398,8 +389,8 @@ export default function WorldMap({ data }: { data: StaticData }) {
           </defs>
           {/* 강조 도형도 지구 테두리 밖으로 나가지 않게 자른다 */}
           <g clipPath="url(#map-sphere-clip)">
-            {selectedShape && <path className="territory-selected" d={selectedShape.d} />}
-            {hoveredShape && hovered && <path key={hovered.id} className="territory-lift" d={hoveredShape.d} fill={hoveredShape.color} />}
+            {selectedShape && <path className="territory-selected" d={selectedShape} />}
+            {hoveredShape && <path className="territory-hover" d={hoveredShape} />}
           </g>
           <LabelLayer territories={active} entities={data.entities} selectedId={selectedId} projection={projection} view={view} size={size} />
           {hoveredEvent && selectedId && (
@@ -407,7 +398,7 @@ export default function WorldMap({ data }: { data: StaticData }) {
           )}
         </svg>
       )}
-      {hovered && hoveredEntity && pointerType.current === 'mouse' && (
+      {hovered && hoveredEntity && (
         <div className="map-tooltip" style={{ left: hovered.x + 14, top: hovered.y + 14 }}>
           <strong>{hoveredEntity.names.ko}</strong>
           {hoveredEntity.names.hanja && <span className="hanja"> {hoveredEntity.names.hanja}</span>}
