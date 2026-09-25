@@ -12,22 +12,28 @@ const Names = z.object({
   hanja: z.string().optional(),
 });
 
-export const EntitySchema = z.object({
-  id: z.string().regex(/^[a-z0-9-]+$/, '소문자, 숫자, 하이픈만 사용'),
-  level: z.enum(['polity', 'region']),
-  names: Names,
-  /** 존속 시작 연도 (포함) */
-  from: Year,
-  /** 존속 마지막 연도 (포함). null이면 현재까지 */
-  to: Year.nullable(),
-  color: z.string().regex(/^#[0-9a-fA-F]{6}$/).optional(),
-  summary: z.string().optional(),
-  basis: z.object({
-    type: z.enum(['primary_source', 'national_institution']),
-    refs: z.array(z.string().min(1)).min(1, '수록 근거(refs)가 비어 있음'),
-    foundingNote: z.string().optional(),
-  }),
-});
+export const EntitySchema = z
+  .object({
+    id: z.string().regex(/^[a-z0-9-]+$/, '소문자, 숫자, 하이픈만 사용'),
+    level: z.enum(['polity', 'region']),
+    names: Names,
+    /** 존속 시작 연도 (포함) */
+    from: Year,
+    /** 존속 마지막 연도 (포함). null이면 현재까지 */
+    to: Year.nullable(),
+    color: z.string().regex(/^#[0-9a-fA-F]{6}$/, '#rrggbb 형식이어야 함').optional(),
+    summary: z.string().optional(),
+    /** 수록 근거 (DESIGN.md D9). 나라(polity)는 필수, 지역(region)은 선택 */
+    basis: z
+      .object({
+        type: z.enum(['primary_source', 'national_institution']),
+        refs: z.array(z.string().min(1)).min(1, '수록 근거(refs)가 비어 있음'),
+        foundingNote: z.string().optional(),
+      })
+      .optional(),
+  })
+  .refine((e) => e.level !== 'polity' || e.basis, { message: '나라(polity)는 수록 근거(basis)가 필수', path: ['basis'] })
+  .refine((e) => e.to === null || e.to >= e.from, { message: 'to가 from보다 앞섬', path: ['to'] });
 export type Entity = z.infer<typeof EntitySchema>;
 
 export const RelationSchema = z.object({

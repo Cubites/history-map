@@ -41,6 +41,8 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..')
 const DATA = path.join(ROOT, 'data');
 const OUT = path.join(ROOT, 'public/data');
 const require = createRequire(import.meta.url);
+/** --check: 검증만 하고 public/data/에 쓰지 않는다 */
+const CHECK_ONLY = process.argv.includes('--check');
 
 /** 타임라인 범위: 고조선 건국(기원전 2333년) ~ 올해 (DESIGN.md D9) */
 const RANGE: [number, number] = [-2332, new Date().getFullYear()];
@@ -106,7 +108,14 @@ async function readTerritories(): Promise<Territory[]> {
         errors.push(`${where}: Polygon 또는 MultiPolygon이어야 함`);
         return;
       }
-      territories.push({ ...props, coords: toMulti(f.geometry), where });
+      const coords = toMulti(f.geometry);
+      // QGIS에서 좌표계를 EPSG:4326이 아닌 것으로 저장하면 미터 단위 좌표가 들어온다.
+      const outOfRange = coords.flat(2).find(([x, y]) => !(x >= -180 && x <= 180 && y >= -90 && y <= 90));
+      if (outOfRange) {
+        errors.push(`${where}: 경위도 범위를 벗어난 좌표 [${outOfRange.join(', ')}]. 좌표계가 EPSG:4326(WGS 84)인지 확인`);
+        return;
+      }
+      territories.push({ ...props, coords, where });
     });
   }
   return territories;
@@ -152,6 +161,8 @@ function checkIntegrity(entities: Map<string, Entity>, territories: Territory[],
     if (eventIds.has(ev.id)) errors.push(`${where}: id 중복`);
     eventIds.add(ev.id);
     if (ev.endYear !== undefined && ev.endYear < ev.year) errors.push(`${where}: endYear가 year보다 앞섬`);
+    if (ev.year < RANGE[0] || (ev.endYear ?? ev.year) > RANGE[1])
+      errors.push(`${where}: 연도가 타임라인 범위(${RANGE[0]}~${RANGE[1]})를 벗어남`);
     const refs = [...ev.subjects.map((id) => ['subjects', id]), ...ev.links.flatMap((l) => [['links.from', l.from], ['links.to', l.to]])];
     for (const [field, id] of refs) {
       const entity = entities.get(id);
@@ -162,8 +173,22 @@ function checkIntegrity(entities: Map<string, Entity>, territories: Territory[],
   }
 
   for (const r of relations) {
-    for (const id of [r.subject, r.object]) if (!entities.has(id)) errors.push(`관계 ${r.type} ${r.subject}→${r.object}: 없는 나라 '${id}'`);
+    const where = `관계 ${r.type} ${r.subject}→${r.object}`;
+    for (const id of [r.subject, r.object]) if (!entities.has(id)) errors.push(`${where}: 없는 나라 '${id}'`);
+    if (r.to !== null && r.to < r.from) errors.push(`${where}: to가 from보다 앞섬`);
+    const subject = entities.get(r.subject);
+    if (subject && !alive(subject, r.from)) errors.push(`${where}: ${r.from}년에 ${r.subject}가 존재하지 않음`);
+    if (r.subject === r.object) errors.push(`${where}: 자기 자신과의 관계`);
   }
+}
+
+/** 화살표를 그릴 수 없는 사건: 영토 데이터가 하나도 없는 나라가 links에 있음 */
+function checkArrowAnchors(events: HistoryEvent[], territories: Territory[]) {
+  const withTerritory = new Set(territories.map((t) => t.entityId));
+  for (const ev of events)
+    for (const l of ev.links)
+      for (const id of [l.from, l.to])
+        if (!withTerritory.has(id)) warnings.push(`사건 ${ev.id}: '${id}'의 영토 데이터가 없어 화살표를 그릴 수 없음`);
 }
 
 // ── 지오 처리 (DESIGN.md §5.3 ③) ────────────────────────────
@@ -191,11 +216,16 @@ function clipAll(territories: Territory[], land: Awaited<ReturnType<typeof loadL
   });
 }
 
+/** 이미 검사한 영토 버전 쌍. 같은 쌍이 여러 구간에 걸쳐 있어도 한 번만 검사하고 보고한다. */
+const checkedPairs = new Set<string>();
+
 function checkOverlaps(intervalTerritories: ClippedTerritory[], from: number) {
   for (let i = 0; i < intervalTerritories.length; i++)
     for (let j = i + 1; j < intervalTerritories.length; j++) {
       const [a, b] = [intervalTerritories[i], intervalTerritories[j]];
-      if (!bboxIntersects(a.box, b.box)) continue;
+      const pair = `${a.where}|${b.where}`;
+      if (checkedPairs.has(pair) || !bboxIntersects(a.box, b.box)) continue;
+      checkedPairs.add(pair);
       const overlap = areaKm2(intersect(a.clipped, b.clipped));
       if (overlap > OVERLAP_TOLERANCE_KM2)
         errors.push(`${from}년: ${a.entityId}와 ${b.entityId}의 영토가 약 ${Math.round(overlap)}km² 겹침 (${a.where}, ${b.where})`);
@@ -241,12 +271,18 @@ async function main() {
   const territories = await readTerritories();
 
   checkIntegrity(entities, territories, events, relations);
+  checkArrowAnchors(events, territories);
   if (errors.length) return finish();
 
   const clipped = clipAll(territories, await loadLand());
   const { intervals, changeYears } = buildIntervals(clipped);
   for (const interval of intervals) checkOverlaps(interval.members, interval.from);
   if (errors.length) return finish();
+
+  if (CHECK_ONLY) {
+    console.log(`check:data  이상 없음 (나라 ${entities.size} · 영토 ${clipped.length} · 사건 ${events.length})`);
+    return finish();
+  }
 
   await rm(OUT, { recursive: true, force: true });
 
@@ -286,7 +322,7 @@ async function main() {
 }
 
 function finish() {
-  for (const w of warnings) console.warn(`  경고: ${w}`);
+  for (const w of new Set(warnings)) console.warn(`  경고: ${w}`);
   if (errors.length) {
     for (const e of errors) console.error(`  오류: ${e}`);
     console.error(`build:data 실패 (오류 ${errors.length}건)`);

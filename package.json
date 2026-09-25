@@ -9,6 +9,7 @@
   },
   "scripts": {
     "build:data": "node --disable-warning=ExperimentalWarning scripts/build-data/index.ts",
+    "check:data": "node --disable-warning=ExperimentalWarning scripts/build-data/index.ts --check",
     "dev": "npm run build:data && vite",
     "typecheck": "tsc --noEmit",
     "build": "npm run build:data && tsc --noEmit && vite build",

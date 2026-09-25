@@ -46,7 +46,7 @@ export function EventPanel({ data }: { data: StaticData }) {
         </div>
       </header>
       {entity.summary && <p className="panel-summary">{entity.summary}</p>}
-      {entity.basis.foundingNote && <p className="panel-note">{entity.basis.foundingNote}</p>}
+      {entity.basis?.foundingNote && <p className="panel-note">{entity.basis.foundingNote}</p>}
 
       {!isAlive(entity, year) && (
         <div className="panel-absent">

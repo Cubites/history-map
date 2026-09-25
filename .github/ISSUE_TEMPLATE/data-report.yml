@@ -1,0 +1,69 @@
+name: 역사 데이터 제보
+description: 사건, 국경, 나라 정보의 오류나 누락을 제보합니다. 증거 사료가 있는 제보만 검토합니다.
+title: "[제보] "
+labels: ["데이터 제보"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        제보해 주셔서 감사합니다. 이 프로젝트의 역사 데이터는 운영자가 직접 작성합니다.
+        - **증거 사료가 없는 제보는 반영하지 않습니다.**
+        - 반영할 때는 사료를 확인한 뒤 운영자가 새로 작성합니다. 제보하신 문장이 그대로 들어가지는 않습니다.
+        - 반영된 데이터는 CC BY-NC-SA 4.0으로 공개됩니다.
+  - type: dropdown
+    id: kind
+    attributes:
+      label: 제보 종류
+      options:
+        - 사건 추가
+        - 사건 내용 수정
+        - 국경(영토) 수정
+        - 나라 정보 수정 (이름, 존속 기간 등)
+        - 영향 관계(화살표) 수정
+        - 기타
+    validations:
+      required: true
+  - type: input
+    id: year
+    attributes:
+      label: 대상 연도
+      description: 기원전은 "기원전 57"처럼 적어 주세요.
+      placeholder: "예: 668"
+    validations:
+      required: true
+  - type: input
+    id: entity
+    attributes:
+      label: 대상 나라·지역
+      placeholder: "예: 신라, 당"
+    validations:
+      required: true
+  - type: textarea
+    id: content
+    attributes:
+      label: 제보 내용
+      description: 무엇이 틀렸거나 빠졌는지, 어떻게 고쳐야 하는지 적어 주세요.
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: 증거 사료
+      description: 사료명과 권·편·쪽, 또는 국사편찬위원회 등 역사기관 자료의 링크를 적어 주세요. 여러 개면 줄을 나눠 주세요.
+      placeholder: |
+        『삼국사기』 신라본기 문무왕 8년
+        https://contents.history.go.kr/...
+    validations:
+      required: true
+  - type: input
+    id: credit
+    attributes:
+      label: 기여자 표기 (선택)
+      description: 반영될 경우 CREDITS.md에 적을 이름입니다. 비워 두면 표기하지 않습니다.
+  - type: checkboxes
+    id: agree
+    attributes:
+      label: 확인
+      options:
+        - label: 증거 사료를 적었고, 운영자가 사료를 확인해 직접 작성한다는 점에 동의합니다.
+          required: true
