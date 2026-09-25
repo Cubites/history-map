@@ -1,0 +1,46 @@
+{
+ "type": "FeatureCollection",
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "entityId": "balhae",
+    "from": 698,
+    "to": 701,
+    "certainty": "estimated",
+    "source": "P1 샘플: 대략적인 추정 경계. QGIS로 다시 그려야 함"
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       127.3,
+       42.8
+      ],
+      [
+       129.3,
+       42.8
+      ],
+      [
+       129.6,
+       43.8
+      ],
+      [
+       128,
+       44.4
+      ],
+      [
+       127,
+       43.8
+      ],
+      [
+       127.3,
+       42.8
+      ]
+     ]
+    ]
+   }
+  }
+ ]
+}

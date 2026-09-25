@@ -8,8 +8,9 @@
     "node": ">=24"
   },
   "scripts": {
-    "build:data": "node scripts/build-data/index.mjs",
+    "build:data": "node --disable-warning=ExperimentalWarning scripts/build-data/index.ts",
     "dev": "npm run build:data && vite",
+    "typecheck": "tsc --noEmit",
     "build": "npm run build:data && tsc --noEmit && vite build",
     "preview": "vite preview"
   },
@@ -20,7 +21,9 @@
     "d3-zoom": "^3.0.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "topojson-client": "^3.1.0"
+    "topojson-client": "^3.1.0",
+    "zod": "^4.6.5",
+    "zustand": "^5.0.15"
   },
   "devDependencies": {
     "@types/d3-geo": "^3.1.1",
@@ -28,13 +31,20 @@
     "@types/d3-transition": "^3.0.9",
     "@types/d3-zoom": "^3.0.8",
     "@types/geojson": "^7946.0.16",
+    "@types/node": "^26.6.2",
+    "@types/polylabel": "^2.0.0",
     "@types/react": "^18.3.31",
     "@types/react-dom": "^18.3.7",
     "@types/topojson-client": "^3.1.5",
+    "@types/topojson-server": "^3.0.4",
     "@types/topojson-specification": "^1.0.5",
     "@vitejs/plugin-react": "^6.1.1",
+    "polyclip-ts": "^0.16.8",
+    "polylabel": "^2.1.0",
+    "topojson-server": "^3.0.1",
     "typescript": "^5.9.3",
     "vite": "^8.3.1",
-    "world-atlas": "^2.0.2"
+    "world-atlas": "^2.0.2",
+    "yaml": "^2.9.1"
   }
 }

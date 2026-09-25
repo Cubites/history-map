@@ -1,0 +1,297 @@
+// 데이터 빌드 (DESIGN.md §5.3): 원본 YAML/GeoJSON → 검증 → 지오 처리 → public/data/
+import { mkdir, readdir, readFile, rm, writeFile } from 'node:fs/promises';
+import { createRequire } from 'node:module';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { parse as parseYaml } from 'yaml';
+import { z } from 'zod';
+import { feature } from 'topojson-client';
+import { topology } from 'topojson-server';
+import type { Feature, FeatureCollection, MultiPolygon, Polygon } from 'geojson';
+import type { GeometryCollection, Topology } from 'topojson-specification';
+import {
+  EntitySchema,
+  EventSchema,
+  RelationSchema,
+  TerritoryPropsSchema,
+  type AnchorIndex,
+  type Entity,
+  type HistoryEvent,
+  type MapFeatureProps,
+  type Relation,
+  type TerritoryProps,
+  type TimelineIndex,
+  type TimelineInterval,
+} from '../../src/schema/index.ts';
+import {
+  anchorPoint,
+  areaKm2,
+  bbox,
+  bboxIntersects,
+  clipToLand,
+  intersect,
+  rewindForD3,
+  roundCoords,
+  toMulti,
+  type BBox,
+  type MultiCoords,
+} from './geo.ts';
+
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
+const DATA = path.join(ROOT, 'data');
+const OUT = path.join(ROOT, 'public/data');
+const require = createRequire(import.meta.url);
+
+/** 타임라인 범위: 고조선 건국(기원전 2333년) ~ 올해 (DESIGN.md D9) */
+const RANGE: [number, number] = [-2332, new Date().getFullYear()];
+/** 서로 다른 나라 영토가 이 면적(km²)보다 많이 겹치면 오류 */
+const OVERLAP_TOLERANCE_KM2 = 5;
+/** color가 없는 나라에 쓰는 기본 색 */
+const FALLBACK_PALETTE = ['#c8745a', '#7d9b5b', '#d4a93f', '#5b7fa8', '#9a6fb0', '#b86b8a', '#8f8a5a', '#5f9e9a'];
+
+const errors: string[] = [];
+const warnings: string[] = [];
+const rel = (file: string) => path.relative(ROOT, file).replaceAll('\\', '/');
+
+// ── 읽기와 스키마 검증 ────────────────────────────────────
+
+async function listFiles(dir: string, ext: string): Promise<string[]> {
+  try {
+    return (await readdir(dir)).filter((f) => f.endsWith(ext)).sort().map((f) => path.join(dir, f));
+  } catch {
+    return [];
+  }
+}
+
+function validate<T>(schema: z.ZodType<T>, value: unknown, where: string): T | null {
+  const result = schema.safeParse(value);
+  if (result.success) return result.data;
+  for (const issue of result.error.issues) errors.push(`${where} ${issue.path.join('.')}: ${issue.message}`);
+  return null;
+}
+
+async function readYamlList<T>(file: string, schema: z.ZodType<T>): Promise<T[]> {
+  let raw: unknown;
+  try {
+    raw = parseYaml(await readFile(file, 'utf8')) ?? [];
+  } catch (e) {
+    errors.push(`${rel(file)}: YAML 문법 오류 - ${(e as Error).message}`);
+    return [];
+  }
+  if (!Array.isArray(raw)) {
+    errors.push(`${rel(file)}: 최상위는 목록이어야 함`);
+    return [];
+  }
+  return raw.flatMap((item, i) => {
+    const label = `${rel(file)} [${i}${item?.id ? ` ${item.id}` : ''}]`;
+    const parsed = validate(schema, item, label);
+    return parsed ? [parsed] : [];
+  });
+}
+
+interface Territory extends TerritoryProps {
+  coords: MultiCoords;
+  where: string;
+}
+
+async function readTerritories(): Promise<Territory[]> {
+  const territories: Territory[] = [];
+  for (const file of await listFiles(path.join(DATA, 'geo'), '.geojson')) {
+    const fc = JSON.parse(await readFile(file, 'utf8')) as FeatureCollection;
+    fc.features.forEach((f, i) => {
+      const where = `${rel(file)} [${i}]`;
+      const props = validate(TerritoryPropsSchema, f.properties, where);
+      if (!props) return;
+      if (f.geometry?.type !== 'Polygon' && f.geometry?.type !== 'MultiPolygon') {
+        errors.push(`${where}: Polygon 또는 MultiPolygon이어야 함`);
+        return;
+      }
+      territories.push({ ...props, coords: toMulti(f.geometry), where });
+    });
+  }
+  return territories;
+}
+
+// ── 참조 무결성 (DESIGN.md §5.3 ②) ─────────────────────────
+
+const alive = (e: Entity, year: number) => e.from <= year && (e.to === null || year <= e.to);
+const active = (t: { from: number; to: number | null }, year: number) => t.from <= year && (t.to === null || year < t.to);
+
+function checkIntegrity(entities: Map<string, Entity>, territories: Territory[], events: HistoryEvent[], relations: Relation[]) {
+  const byEntity = new Map<string, Territory[]>();
+  for (const t of territories) {
+    const entity = entities.get(t.entityId);
+    if (!entity) {
+      errors.push(`${t.where}: 없는 나라 '${t.entityId}'`);
+      continue;
+    }
+    if (t.to !== null && t.to <= t.from) errors.push(`${t.where}: to(${t.to})가 from(${t.from})보다 커야 함`);
+    const lastYear = t.to === null ? Infinity : t.to - 1;
+    const entityEnd = entity.to ?? Infinity;
+    if (t.from < entity.from || lastYear > entityEnd)
+      errors.push(`${t.where}: 영토 기간 [${t.from}, ${t.to})이 ${entity.id}의 존속 기간 ${entity.from}~${entity.to ?? '현재'}을 벗어남`);
+    byEntity.set(t.entityId, [...(byEntity.get(t.entityId) ?? []), t]);
+  }
+
+  for (const [id, list] of byEntity) {
+    list.sort((a, b) => a.from - b.from);
+    for (let i = 1; i < list.length; i++) {
+      const prev = list[i - 1];
+      if (prev.to === null || prev.to > list[i].from)
+        errors.push(`${list[i].where}: ${id}의 영토 기간이 앞 버전(${prev.from}~${prev.to})과 겹침`);
+      else if (prev.to < list[i].from) warnings.push(`${id}: ${prev.to}~${list[i].from - 1}년 영토 없음`);
+    }
+  }
+  for (const e of entities.values()) {
+    if (e.level === 'polity' && !byEntity.has(e.id)) warnings.push(`${e.id}: 영토 데이터 없음`);
+  }
+
+  const eventIds = new Set<string>();
+  for (const ev of events) {
+    const where = `사건 ${ev.id}`;
+    if (eventIds.has(ev.id)) errors.push(`${where}: id 중복`);
+    eventIds.add(ev.id);
+    if (ev.endYear !== undefined && ev.endYear < ev.year) errors.push(`${where}: endYear가 year보다 앞섬`);
+    const refs = [...ev.subjects.map((id) => ['subjects', id]), ...ev.links.flatMap((l) => [['links.from', l.from], ['links.to', l.to]])];
+    for (const [field, id] of refs) {
+      const entity = entities.get(id);
+      if (!entity) errors.push(`${where}: ${field}의 '${id}'는 없는 나라`);
+      else if (!alive(entity, ev.year)) errors.push(`${where}: ${field}의 '${id}'는 ${ev.year}년에 존재하지 않음`);
+    }
+    for (const l of ev.links) if (l.from === l.to) errors.push(`${where}: 같은 나라 사이의 link (${l.from})`);
+  }
+
+  for (const r of relations) {
+    for (const id of [r.subject, r.object]) if (!entities.has(id)) errors.push(`관계 ${r.type} ${r.subject}→${r.object}: 없는 나라 '${id}'`);
+  }
+}
+
+// ── 지오 처리 (DESIGN.md §5.3 ③) ────────────────────────────
+
+async function loadLand() {
+  const topo = JSON.parse(await readFile(require.resolve('world-atlas/land-50m.json'), 'utf8')) as Topology<{ land: GeometryCollection }>;
+  const land = feature(topo, topo.objects.land) as FeatureCollection<Polygon | MultiPolygon>;
+  return land.features.flatMap((f) => toMulti(f.geometry)).map((coords) => ({ coords, bbox: bbox([coords]) }));
+}
+
+interface ClippedTerritory extends Territory {
+  clipped: MultiCoords;
+  box: BBox;
+  anchor: [number, number];
+}
+
+function clipAll(territories: Territory[], land: Awaited<ReturnType<typeof loadLand>>): ClippedTerritory[] {
+  return territories.flatMap((t) => {
+    const clipped = roundCoords(clipToLand(t.coords, land));
+    if (clipped.length === 0) {
+      errors.push(`${t.where}: 해안선으로 자르고 나니 육지가 남지 않음`);
+      return [];
+    }
+    return [{ ...t, clipped, box: bbox(clipped), anchor: anchorPoint(clipped) }];
+  });
+}
+
+function checkOverlaps(intervalTerritories: ClippedTerritory[], from: number) {
+  for (let i = 0; i < intervalTerritories.length; i++)
+    for (let j = i + 1; j < intervalTerritories.length; j++) {
+      const [a, b] = [intervalTerritories[i], intervalTerritories[j]];
+      if (!bboxIntersects(a.box, b.box)) continue;
+      const overlap = areaKm2(intersect(a.clipped, b.clipped));
+      if (overlap > OVERLAP_TOLERANCE_KM2)
+        errors.push(`${from}년: ${a.entityId}와 ${b.entityId}의 영토가 약 ${Math.round(overlap)}km² 겹침 (${a.where}, ${b.where})`);
+    }
+}
+
+// ── 출력 ─────────────────────────────────────────────────
+
+function buildIntervals(territories: ClippedTerritory[]): { intervals: (TimelineInterval & { members: ClippedTerritory[] })[]; changeYears: number[] } {
+  const [start, end] = RANGE;
+  const bounds = new Set<number>([start, end + 1]);
+  for (const t of territories) {
+    if (t.from > start && t.from <= end) bounds.add(t.from);
+    if (t.to !== null && t.to > start && t.to <= end) bounds.add(t.to);
+  }
+  const sorted = [...bounds].sort((a, b) => a - b);
+  const intervals = sorted.slice(0, -1).map((from, i) => {
+    const to = sorted[i + 1];
+    const members = territories.filter((t) => active(t, from));
+    return { from, to, file: members.length ? `${from}_${to}.topo.json` : null, members };
+  });
+  return { intervals, changeYears: sorted.slice(1, -1) };
+}
+
+function colorFor(entity: Entity, index: number): string {
+  return entity.color ?? FALLBACK_PALETTE[index % FALLBACK_PALETTE.length];
+}
+
+async function writeJson(file: string, value: unknown) {
+  await mkdir(path.dirname(file), { recursive: true });
+  await writeFile(file, JSON.stringify(value));
+}
+
+async function main() {
+  const entityList = (await Promise.all((await listFiles(path.join(DATA, 'entities'), '.yaml')).map((f) => readYamlList(f, EntitySchema)))).flat();
+  const entities = new Map<string, Entity>();
+  for (const e of entityList) {
+    if (entities.has(e.id)) errors.push(`나라 id 중복: ${e.id}`);
+    entities.set(e.id, e);
+  }
+  const relations = await readYamlList(path.join(DATA, 'relations.yaml'), RelationSchema);
+  const events = (await Promise.all((await listFiles(path.join(DATA, 'events'), '.yaml')).map((f) => readYamlList(f, EventSchema)))).flat();
+  const territories = await readTerritories();
+
+  checkIntegrity(entities, territories, events, relations);
+  if (errors.length) return finish();
+
+  const clipped = clipAll(territories, await loadLand());
+  const { intervals, changeYears } = buildIntervals(clipped);
+  for (const interval of intervals) checkOverlaps(interval.members, interval.from);
+  if (errors.length) return finish();
+
+  await rm(OUT, { recursive: true, force: true });
+
+  for (const { file, members } of intervals) {
+    if (!file) continue;
+    const fc: FeatureCollection<MultiPolygon, MapFeatureProps> = {
+      type: 'FeatureCollection',
+      features: members.map((t): Feature<MultiPolygon, MapFeatureProps> => ({
+        type: 'Feature',
+        properties: { entityId: t.entityId, certainty: t.certainty, anchor: t.anchor },
+        geometry: { type: 'MultiPolygon', coordinates: rewindForD3(t.clipped) },
+      })),
+    };
+    await writeJson(path.join(OUT, 'map', file), topology({ territories: fc }, 1e5));
+  }
+
+  const timeline: TimelineIndex = {
+    range: RANGE,
+    changeYears,
+    intervals: intervals.map(({ from, to, file }) => ({ from, to, file })),
+  };
+  const anchors: AnchorIndex = {};
+  for (const t of [...clipped].sort((a, b) => a.from - b.from))
+    (anchors[t.entityId] ??= []).push({ from: t.from, to: t.to, anchor: t.anchor });
+
+  await writeJson(path.join(OUT, 'timeline.json'), timeline);
+  await writeJson(path.join(OUT, 'entities.json'), entityList.map((e, i) => ({ ...e, color: colorFor(e, i) })));
+  await writeJson(path.join(OUT, 'relations.json'), relations);
+  await writeJson(path.join(OUT, 'anchors.json'), anchors);
+  await writeJson(path.join(OUT, 'events.json'), [...events].sort((a, b) => a.year - b.year || a.id.localeCompare(b.id)));
+  await writeFile(path.join(OUT, 'base-land-50m.topo.json'), await readFile(require.resolve('world-atlas/land-50m.json')));
+
+  console.log(
+    `build:data  나라 ${entities.size} · 영토 ${clipped.length} · 사건 ${events.length} · 지도 구간 ${intervals.filter((i) => i.file).length}`,
+  );
+  finish();
+}
+
+function finish() {
+  for (const w of warnings) console.warn(`  경고: ${w}`);
+  if (errors.length) {
+    for (const e of errors) console.error(`  오류: ${e}`);
+    console.error(`build:data 실패 (오류 ${errors.length}건)`);
+    process.exit(1);
+  }
+}
+
+await main();

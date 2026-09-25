@@ -1,0 +1,13 @@
+# 일본 열도 (P1 샘플)
+# ※ 샘플 데이터. 운영자 검수 필요.
+
+- id: wa
+  level: polity
+  names: { ko: 왜, hanja: 倭, en: Wa }
+  from: 57
+  to: 700
+  color: "#b86b8a"
+  summary: 701년 무렵부터 '일본'이라는 국호를 사용
+  basis:
+    type: primary_source
+    refs: ["『후한서』 동이열전 왜", "『수서』 왜국전", "『일본서기』"]

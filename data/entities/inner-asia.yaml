@@ -1,0 +1,23 @@
+# 북방·내륙 아시아 (P1 샘플)
+# ※ 샘플 데이터. 운영자 검수 필요.
+
+- id: eastern-turks
+  level: polity
+  names: { ko: 동돌궐, hanja: 東突厥, en: Eastern Turkic Khaganate }
+  from: 583
+  to: 630
+  color: "#8f8a5a"
+  basis:
+    type: primary_source
+    refs: ["『수서』 돌궐전", "『구당서』 돌궐전"]
+
+- id: tibet
+  level: polity
+  names: { ko: 토번, hanja: 吐蕃, en: Tibetan Empire }
+  from: 618
+  to: 842
+  color: "#a0785a"
+  basis:
+    type: primary_source
+    refs: ["『구당서』 토번전"]
+    foundingNote: 송첸감포의 통일 시기(7세기 초)는 학설에 따라 차이가 있음

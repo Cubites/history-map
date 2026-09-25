@@ -1,0 +1,22 @@
+# 중국 왕조 (P1 샘플)
+# ※ 샘플 데이터. 운영자 검수 필요.
+
+- id: sui
+  level: polity
+  names: { ko: 수, hanja: 隋, en: Sui }
+  from: 581
+  to: 618
+  color: "#6f8fb3"
+  basis:
+    type: primary_source
+    refs: ["『수서』"]
+
+- id: tang
+  level: polity
+  names: { ko: 당, hanja: 唐, en: Tang }
+  from: 618
+  to: 907
+  color: "#5b7fa8"
+  basis:
+    type: primary_source
+    refs: ["『구당서』", "『신당서』"]

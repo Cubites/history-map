@@ -1,0 +1,46 @@
+# 한국사 나라 (P1 샘플: 600~700년 전후)
+# 연도는 천문 연도: 기원전 1년 = 0, 기원전 57년 = -56. from/to는 존속 첫해와 마지막 해(포함).
+# ※ 샘플 데이터. 운영자 검수 필요.
+
+- id: goguryeo
+  level: polity
+  names: { ko: 고구려, hanja: 高句麗, en: Goguryeo }
+  from: -36
+  to: 668
+  color: "#c8745a"
+  basis:
+    type: primary_source
+    refs: ["『삼국사기』 고구려본기"]
+    foundingNote: 건국 연대(기원전 37년)는 『삼국사기』의 기록에 따름
+
+- id: baekje
+  level: polity
+  names: { ko: 백제, hanja: 百濟, en: Baekje }
+  from: -17
+  to: 660
+  color: "#7d9b5b"
+  basis:
+    type: primary_source
+    refs: ["『삼국사기』 백제본기"]
+    foundingNote: 건국 연대(기원전 18년)는 『삼국사기』의 기록에 따름
+
+- id: silla
+  level: polity
+  names: { ko: 신라, hanja: 新羅, en: Silla }
+  from: -56
+  to: 935
+  color: "#d4a93f"
+  basis:
+    type: primary_source
+    refs: ["『삼국사기』 신라본기"]
+    foundingNote: 건국 연대(기원전 57년)는 『삼국사기』의 기록에 따름
+
+- id: balhae
+  level: polity
+  names: { ko: 발해, hanja: 渤海, en: Balhae }
+  from: 698
+  to: 926
+  color: "#9a6fb0"
+  basis:
+    type: primary_source
+    refs: ["『구당서』 발해말갈전", "『신당서』 발해전"]

@@ -1,0 +1,5 @@
+# 나라 사이의 관계 (DESIGN.md §4.3)
+# ※ 샘플 데이터. 운영자 검수 필요.
+
+- { type: successor_of, subject: tang, object: sui, from: 618, to: null }
+- { type: successor_of, subject: balhae, object: goguryeo, from: 698, to: null }

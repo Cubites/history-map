@@ -5,13 +5,19 @@ export type Size = { width: number; height: number };
 export type LonLatBounds = [[west: number, south: number], [east: number, north: number]];
 
 /** 초기 시점 (DESIGN.md D5: 동아시아) */
-export const EAST_ASIA: LonLatBounds = [[73, 15], [150, 56]];
+export const EAST_ASIA: LonLatBounds = [[88, 20], [146, 52]];
 
 const PADDING = 16;
 
+/**
+ * 중앙 경선. Equal Earth는 중앙 경선에서 멀수록 지형이 비스듬히 기울어지므로,
+ * 한국 교과서 세계지도처럼 동아시아가 가운데 오는 태평양 중심으로 둔다.
+ */
+const CENTRAL_MERIDIAN = 120;
+
 /** 세계 전체가 화면에 들어오는 Equal Earth 투영 */
 export function createProjection({ width, height }: Size): GeoProjection {
-  return geoEqualEarth().fitExtent(
+  return geoEqualEarth().rotate([-CENTRAL_MERIDIAN, 0]).fitExtent(
     [[PADDING, PADDING], [width - PADDING, height - PADDING]],
     { type: 'Sphere' },
   );
