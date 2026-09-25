@@ -6,23 +6,22 @@ import { fileURLToPath } from 'node:url';
 import { parse as parseYaml } from 'yaml';
 import { z } from 'zod';
 import { feature } from 'topojson-client';
-import { topology } from 'topojson-server';
 import type { Feature, FeatureCollection, MultiPolygon, Polygon } from 'geojson';
 import type { GeometryCollection, Topology } from 'topojson-specification';
 import {
   EntitySchema,
   EventSchema,
+  LODS,
   RelationSchema,
   TerritoryPropsSchema,
-  type AnchorIndex,
   type Entity,
   type HistoryEvent,
-  type MapFeatureProps,
   type Relation,
+  type TerritoryIndexEntry,
   type TerritoryProps,
   type TimelineIndex,
-  type TimelineInterval,
 } from '../../src/schema/index.ts';
+import { buildLodTopology, countPoints, subTopology } from './topo.ts';
 import {
   anchorPoint,
   areaKm2,
@@ -193,27 +192,62 @@ function checkArrowAnchors(events: HistoryEvent[], territories: Territory[]) {
 
 // ── 지오 처리 (DESIGN.md §5.3 ③) ────────────────────────────
 
-async function loadLand() {
-  const topo = JSON.parse(await readFile(require.resolve('world-atlas/land-50m.json'), 'utf8')) as Topology<{ land: GeometryCollection }>;
-  const land = feature(topo, topo.objects.land) as FeatureCollection<Polygon | MultiPolygon>;
-  return land.features.flatMap((f) => toMulti(f.geometry)).map((coords) => ({ coords, bbox: bbox([coords]) }));
+type Land = Awaited<ReturnType<typeof loadLand>>;
+
+/** Natural Earth 육지. 1:50m은 mid·high 단계와 검사에, 1:110m은 low 단계에 쓴다. */
+async function loadLand(scale: '50m' | '110m') {
+  const topo = JSON.parse(await readFile(require.resolve(`world-atlas/land-${scale}.json`), 'utf8')) as Topology<{ land: GeometryCollection }>;
+  const fc = feature(topo, topo.objects.land) as FeatureCollection<Polygon | MultiPolygon>;
+  const pieces = fc.features.flatMap((f) => toMulti(f.geometry)).map((coords) => ({ coords, bbox: bbox([coords]) }));
+  return { fc, pieces };
 }
 
 interface ClippedTerritory extends Territory {
+  key: string;
   clipped: MultiCoords;
   box: BBox;
   anchor: [number, number];
 }
 
-function clipAll(territories: Territory[], land: Awaited<ReturnType<typeof loadLand>>): ClippedTerritory[] {
+function clipAll(territories: Territory[], land: Land): ClippedTerritory[] {
   return territories.flatMap((t) => {
-    const clipped = roundCoords(clipToLand(t.coords, land));
+    const clipped = roundCoords(clipToLand(t.coords, land.pieces));
     if (clipped.length === 0) {
       errors.push(`${t.where}: 해안선으로 자르고 나니 육지가 남지 않음`);
       return [];
     }
-    return [{ ...t, clipped, box: bbox(clipped), anchor: anchorPoint(clipped) }];
+    return [{ ...t, key: `${t.entityId}@${t.from}`, clipped, box: bbox(clipped), anchor: anchorPoint(clipped) }];
   });
+}
+
+function toFeature(key: string, coords: MultiCoords): Feature<MultiPolygon, { key: string }> {
+  return { type: 'Feature', properties: { key }, geometry: { type: 'MultiPolygon', coordinates: rewindForD3(coords) } };
+}
+
+/** 단계별 토폴로지를 만들어 육지 파일과 나라별 영토 파일로 나눠 쓴다. */
+async function writeLods(clipped: ClippedTerritory[], land50: Land, land110: Land) {
+  const byEntity = new Map<string, string[]>();
+  for (const t of clipped) byEntity.set(t.entityId, [...(byEntity.get(t.entityId) ?? []), t.key]);
+
+  // low 단계는 1:110m 해안선에 맞춰 다시 자른다 (육지 레이어와 해안선이 정확히 겹치도록)
+  const low = clipped.flatMap((t) => {
+    const coords = roundCoords(clipToLand(t.coords, land110.pieces));
+    return coords.length ? [toFeature(t.key, coords)] : [];
+  });
+  const detailed = clipped.map((t) => toFeature(t.key, t.clipped));
+  const summary: string[] = [];
+
+  for (const lod of LODS) {
+    const topo = buildLodTopology(lod, lod === 'low' ? land110.fc : land50.fc, lod === 'low' ? low : detailed);
+    await writeJson(path.join(OUT, `land-${lod}.topo.json`), subTopology(topo, 'land', topo.objects.land.geometries));
+    const byKey = new Map(topo.objects.territories.geometries.map((g) => [g.id as string, g]));
+    for (const [entityId, keys] of byEntity) {
+      const geometries = keys.flatMap((k) => byKey.get(k) ?? []);
+      if (geometries.length) await writeJson(path.join(OUT, 'geo', lod, `${entityId}.topo.json`), subTopology(topo, 'territories', geometries));
+    }
+    summary.push(`${lod} ${countPoints(topo).toLocaleString()}점`);
+  }
+  return summary.join(' · ');
 }
 
 /** 이미 검사한 영토 버전 쌍. 같은 쌍이 여러 구간에 걸쳐 있어도 한 번만 검사하고 보고한다. */
@@ -234,7 +268,8 @@ function checkOverlaps(intervalTerritories: ClippedTerritory[], from: number) {
 
 // ── 출력 ─────────────────────────────────────────────────
 
-function buildIntervals(territories: ClippedTerritory[]): { intervals: (TimelineInterval & { members: ClippedTerritory[] })[]; changeYears: number[] } {
+/** 지도가 바뀌는 연도로 나눈 구간. 겹침 검사와 "이전/다음 변화" 이동에 쓴다. */
+function buildIntervals(territories: ClippedTerritory[]) {
   const [start, end] = RANGE;
   const bounds = new Set<number>([start, end + 1]);
   for (const t of territories) {
@@ -242,11 +277,7 @@ function buildIntervals(territories: ClippedTerritory[]): { intervals: (Timeline
     if (t.to !== null && t.to > start && t.to <= end) bounds.add(t.to);
   }
   const sorted = [...bounds].sort((a, b) => a - b);
-  const intervals = sorted.slice(0, -1).map((from, i) => {
-    const to = sorted[i + 1];
-    const members = territories.filter((t) => active(t, from));
-    return { from, to, file: members.length ? `${from}_${to}.topo.json` : null, members };
-  });
+  const intervals = sorted.slice(0, -1).map((from) => ({ from, members: territories.filter((t) => active(t, from)) }));
   return { intervals, changeYears: sorted.slice(1, -1) };
 }
 
@@ -274,7 +305,8 @@ async function main() {
   checkArrowAnchors(events, territories);
   if (errors.length) return finish();
 
-  const clipped = clipAll(territories, await loadLand());
+  const [land50, land110] = await Promise.all([loadLand('50m'), loadLand('110m')]);
+  const clipped = clipAll(territories, land50);
   const { intervals, changeYears } = buildIntervals(clipped);
   for (const interval of intervals) checkOverlaps(interval.members, interval.from);
   if (errors.length) return finish();
@@ -285,39 +317,20 @@ async function main() {
   }
 
   await rm(OUT, { recursive: true, force: true });
+  const lodSummary = await writeLods(clipped, land50, land110);
 
-  for (const { file, members } of intervals) {
-    if (!file) continue;
-    const fc: FeatureCollection<MultiPolygon, MapFeatureProps> = {
-      type: 'FeatureCollection',
-      features: members.map((t): Feature<MultiPolygon, MapFeatureProps> => ({
-        type: 'Feature',
-        properties: { entityId: t.entityId, certainty: t.certainty, anchor: t.anchor },
-        geometry: { type: 'MultiPolygon', coordinates: rewindForD3(t.clipped) },
-      })),
-    };
-    await writeJson(path.join(OUT, 'map', file), topology({ territories: fc }, 1e5));
-  }
-
-  const timeline: TimelineIndex = {
-    range: RANGE,
-    changeYears,
-    intervals: intervals.map(({ from, to, file }) => ({ from, to, file })),
-  };
-  const anchors: AnchorIndex = {};
-  for (const t of [...clipped].sort((a, b) => a.from - b.from))
-    (anchors[t.entityId] ??= []).push({ from: t.from, to: t.to, anchor: t.anchor });
+  const timeline: TimelineIndex = { range: RANGE, changeYears };
+  const index: TerritoryIndexEntry[] = [...clipped]
+    .sort((a, b) => a.from - b.from || a.entityId.localeCompare(b.entityId))
+    .map(({ key, entityId, from, to, certainty, anchor, box }) => ({ key, entityId, from, to, certainty, anchor, bbox: box }));
 
   await writeJson(path.join(OUT, 'timeline.json'), timeline);
+  await writeJson(path.join(OUT, 'territories.json'), index);
   await writeJson(path.join(OUT, 'entities.json'), entityList.map((e, i) => ({ ...e, color: colorFor(e, i) })));
   await writeJson(path.join(OUT, 'relations.json'), relations);
-  await writeJson(path.join(OUT, 'anchors.json'), anchors);
   await writeJson(path.join(OUT, 'events.json'), [...events].sort((a, b) => a.year - b.year || a.id.localeCompare(b.id)));
-  await writeFile(path.join(OUT, 'base-land-50m.topo.json'), await readFile(require.resolve('world-atlas/land-50m.json')));
 
-  console.log(
-    `build:data  나라 ${entities.size} · 영토 ${clipped.length} · 사건 ${events.length} · 지도 구간 ${intervals.filter((i) => i.file).length}`,
-  );
+  console.log(`build:data  나라 ${entities.size} · 영토 ${clipped.length} · 사건 ${events.length} · ${lodSummary}`);
   finish();
 }
 

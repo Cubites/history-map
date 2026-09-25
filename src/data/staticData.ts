@@ -1,29 +1,29 @@
 import { useEffect, useState } from 'react';
-import type { FeatureCollection, MultiPolygon } from 'geojson';
+import type { Feature, FeatureCollection, MultiPolygon, Polygon, Position } from 'geojson';
 import { feature } from 'topojson-client';
 import type { GeometryCollection, Topology } from 'topojson-specification';
 import type {
-  AnchorIndex,
+  BBox,
   Entity,
   HistoryEvent,
+  Lod,
   LonLat,
-  MapFeatureProps,
   Relation,
+  TerritoryIndexEntry,
   TimelineIndex,
-  TimelineInterval,
 } from '../schema/index.ts';
 
 export type LoadedEntity = Entity & { color: string };
 
 export interface StaticData {
   timeline: TimelineIndex;
+  territories: TerritoryIndexEntry[];
   entities: Map<string, LoadedEntity>;
   relations: Relation[];
-  anchors: AnchorIndex;
   events: HistoryEvent[];
 }
 
-export type TerritoryCollection = FeatureCollection<MultiPolygon, MapFeatureProps>;
+export type TerritoryFeature = Feature<MultiPolygon>;
 
 export const dataUrl = (file: string) => `${import.meta.env.BASE_URL}data/${file}`;
 
@@ -40,13 +40,13 @@ export function useStaticData() {
   useEffect(() => {
     Promise.all([
       getJson<TimelineIndex>('timeline.json'),
+      getJson<TerritoryIndexEntry[]>('territories.json'),
       getJson<LoadedEntity[]>('entities.json'),
       getJson<Relation[]>('relations.json'),
-      getJson<AnchorIndex>('anchors.json'),
       getJson<HistoryEvent[]>('events.json'),
     ])
-      .then(([timeline, entities, relations, anchors, events]) =>
-        setData({ timeline, entities: new Map(entities.map((e) => [e.id, e])), relations, anchors, events }),
+      .then(([timeline, territories, entities, relations, events]) =>
+        setData({ timeline, territories, entities: new Map(entities.map((e) => [e.id, e])), relations, events }),
       )
       .catch((e: Error) => setError(e.message));
   }, []);
@@ -54,21 +54,65 @@ export function useStaticData() {
   return { data, error };
 }
 
-export function intervalAt(timeline: TimelineIndex, year: number): TimelineInterval | undefined {
-  return timeline.intervals.find((i) => i.from <= year && year < i.to);
+export const isActive = (t: { from: number; to: number | null }, year: number) => t.from <= year && (t.to === null || year < t.to);
+
+export function activeTerritories(territories: TerritoryIndexEntry[], year: number): TerritoryIndexEntry[] {
+  return territories.filter((t) => isActive(t, year));
 }
 
-const intervalCache = new Map<string, Promise<TerritoryCollection>>();
+// ── 도형 캐시 ───────────────────────────────────────────────
+// 육지와 나라별 영토 파일을 단계(LOD)별로 한 번만 받아 풀어 둔다.
 
-/** 구간별 지도 파일. 한 번 받은 파일은 다시 받지 않는다. */
-export function loadInterval(file: string): Promise<TerritoryCollection> {
-  let pending = intervalCache.get(file);
+/** 육지 조각 (대륙·섬 단위). 화면 밖 조각은 그리지 않으려고 나눠 둔다. */
+export interface LandPiece {
+  feature: Feature<Polygon>;
+  bbox: BBox;
+}
+
+const landCache = new Map<Lod, Promise<LandPiece[]>>();
+
+function ringBBox(ring: Position[]): BBox {
+  let [w, s, e, n] = [Infinity, Infinity, -Infinity, -Infinity];
+  for (const [x, y] of ring) {
+    if (x < w) w = x;
+    if (x > e) e = x;
+    if (y < s) s = y;
+    if (y > n) n = y;
+  }
+  return [w, s, e, n];
+}
+
+export function loadLand(lod: Lod): Promise<LandPiece[]> {
+  let pending = landCache.get(lod);
   if (!pending) {
-    pending = getJson<Topology<{ territories: GeometryCollection<MapFeatureProps> }>>(`map/${file}`).then(
-      (topo) => feature(topo, topo.objects.territories) as TerritoryCollection,
-    );
-    pending.catch(() => intervalCache.delete(file));
-    intervalCache.set(file, pending);
+    pending = getJson<Topology<{ land: GeometryCollection }>>(`land-${lod}.topo.json`).then((topo) => {
+      const fc = feature(topo, topo.objects.land) as FeatureCollection<Polygon | MultiPolygon>;
+      return fc.features.flatMap((f) =>
+        (f.geometry.type === 'Polygon' ? [f.geometry.coordinates] : f.geometry.coordinates).map((coordinates) => ({
+          feature: { type: 'Feature' as const, properties: null, geometry: { type: 'Polygon' as const, coordinates } },
+          bbox: ringBBox(coordinates[0]),
+        })),
+      );
+    });
+    pending.catch(() => landCache.delete(lod));
+    landCache.set(lod, pending);
+  }
+  return pending;
+}
+
+const geoCache = new Map<string, Promise<Map<string, TerritoryFeature>>>();
+
+/** 한 나라의 모든 영토 버전 도형. key(`${entityId}@${from}`)로 찾는다. */
+export function loadEntityGeometry(lod: Lod, entityId: string): Promise<Map<string, TerritoryFeature>> {
+  const cacheKey = `${lod}/${entityId}`;
+  let pending = geoCache.get(cacheKey);
+  if (!pending) {
+    pending = getJson<Topology<{ territories: GeometryCollection }>>(`geo/${lod}/${entityId}.topo.json`).then((topo) => {
+      const fc = feature(topo, topo.objects.territories) as FeatureCollection<MultiPolygon>;
+      return new Map(fc.features.map((f) => [String(f.id), f]));
+    });
+    pending.catch(() => geoCache.delete(cacheKey));
+    geoCache.set(cacheKey, pending);
   }
   return pending;
 }
@@ -76,9 +120,9 @@ export function loadInterval(file: string): Promise<TerritoryCollection> {
 /**
  * 화살표 기준점. 그 해의 영토를 쓰고, 그 해에 영토가 없으면(예: 멸망한 해) 시간상 가장 가까운 영토를 쓴다.
  */
-export function anchorAt(anchors: AnchorIndex, entityId: string, year: number): LonLat | null {
-  const versions = anchors[entityId];
-  if (!versions?.length) return null;
+export function anchorAt(territories: TerritoryIndexEntry[], entityId: string, year: number): LonLat | null {
+  const versions = territories.filter((t) => t.entityId === entityId);
+  if (!versions.length) return null;
   const distance = (v: { from: number; to: number | null }) =>
     year < v.from ? v.from - year : v.to !== null && year >= v.to ? year - v.to + 1 : 0;
   return versions.reduce((best, v) => (distance(v) < distance(best) ? v : best)).anchor;

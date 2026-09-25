@@ -121,7 +121,11 @@ function EventItem({ event, data, selectedId, highlight }: { event: HistoryEvent
       onMouseLeave={() => hoverEvent(null)}
       onFocus={() => hoverEvent(event.id)}
       onBlur={() => hoverEvent(null)}
-      onClick={() => setYear(event.year)}
+      onClick={() => {
+        setYear(event.year);
+        // 터치 화면에는 hover가 없으므로 누르면 화살표를 보여준다 (setYear가 hover를 지우므로 그 뒤에 설정)
+        hoverEvent(event.id);
+      }}
       tabIndex={0}
     >
       <div className="event-head">

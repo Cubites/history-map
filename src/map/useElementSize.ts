@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import type { Size } from './projection';
+import type { Size } from './view.ts';
 
 export function useElementSize<T extends HTMLElement>() {
   const ref = useRef<T>(null);

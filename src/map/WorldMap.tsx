@@ -1,193 +1,396 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { geoGraticule10, geoPath } from 'd3-geo';
+import { geoContains, geoPath } from 'd3-geo';
 import { select } from 'd3-selection';
-import 'd3-transition';
 import { zoom, zoomIdentity, type ZoomBehavior, type ZoomTransform } from 'd3-zoom';
-import { feature } from 'topojson-client';
-import type { Topology, GeometryCollection } from 'topojson-specification';
-import type { FeatureCollection } from 'geojson';
-import { dataUrl, intervalAt, loadInterval, type StaticData, type TerritoryCollection } from '../data/staticData.ts';
+import {
+  activeTerritories,
+  loadEntityGeometry,
+  loadLand,
+  type LandPiece,
+  type StaticData,
+  type TerritoryFeature,
+} from '../data/staticData.ts';
 import { formatRange } from '../lib/year.ts';
+import type { Lod, TerritoryIndexEntry } from '../schema/index.ts';
 import { useAppStore } from '../store/useAppStore.ts';
 import { ArrowLayer } from './ArrowLayer.tsx';
+import { drawMap, isVisible, visibleBounds, type DrawTerritory, type Palette } from './canvasLayer.ts';
 import { LabelLayer } from './LabelLayer.tsx';
-import { createProjection, EAST_ASIA, transformForBounds } from './projection.ts';
-import { TerritoryLayer, type DrawnTerritory } from './TerritoryLayer.tsx';
 import { useElementSize } from './useElementSize.ts';
+import {
+  baseScale,
+  clampView,
+  createProjection,
+  EAST_ASIA_BOUNDS,
+  fitBounds,
+  invertPoint,
+  MAX_ZOOM,
+  MIN_ZOOM,
+  recenter,
+  WORLD_VIEW,
+  type View,
+} from './view.ts';
 
-const MAX_ZOOM = 40;
+/** 움직임이 멈췄다고 보는 시간(ms). 이후 정밀한 단계로 다시 그린다 */
+const SETTLE_MS = 150;
 
-type Zoomer = ZoomBehavior<SVGSVGElement, unknown>;
+/**
+ * 정밀도 단계 (DESIGN.md §3.1). 움직이는 동안에는 가볍게, 멈추거나 확대하면 정밀하게 그린다.
+ * 확대할수록 화면 밖 영토를 건너뛰므로 정밀한 단계를 써도 계산량이 크게 늘지 않는다.
+ */
+function lodFor(k: number, moving: boolean): Lod {
+  if (moving) return k < 4 ? 'low' : k < 12 ? 'mid' : 'high';
+  return k < 2 ? 'mid' : 'high';
+}
+const FALLBACK: Record<Lod, Lod[]> = { low: ['low', 'mid', 'high'], mid: ['mid', 'low', 'high'], high: ['high', 'mid', 'low'] };
+
+function readPalette(el: Element): Palette {
+  const css = getComputedStyle(el);
+  const v = (name: string) => css.getPropertyValue(name).trim();
+  return {
+    ocean: v('--ocean'),
+    graticule: v('--graticule'),
+    land: v('--land-unassigned'),
+    landStroke: v('--land-stroke'),
+    territoryStroke: v('--territory-stroke'),
+    outline: v('--outline'),
+  };
+}
 
 export default function WorldMap({ data }: { data: StaticData }) {
   const [containerRef, size] = useElementSize<HTMLDivElement>();
-  const svgRef = useRef<SVGSVGElement>(null);
-  const layerRef = useRef<SVGGElement>(null);
-  const zoomRef = useRef<Zoomer>(undefined);
-  const [land, setLand] = useState<FeatureCollection | null>(null);
-  const [territories, setTerritories] = useState<TerritoryCollection | null>(null);
-  const [error, setError] = useState<string | null>(null);
-  const [transform, setTransform] = useState<ZoomTransform>(zoomIdentity);
-  const [hovered, setHovered] = useState<{ id: string; x: number; y: number } | null>(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const zoomRef = useRef<ZoomBehavior<HTMLDivElement, unknown>>(undefined);
 
   const year = useAppStore((s) => s.year);
   const selectedId = useAppStore((s) => s.selectedId);
   const hoveredEventId = useAppStore((s) => s.hoveredEventId);
   const selectEntity = useAppStore((s) => s.select);
 
-  useEffect(() => {
-    fetch(dataUrl('base-land-50m.topo.json'))
-      .then((res) => {
-        if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
-        return res.json() as Promise<Topology<{ land: GeometryCollection }>>;
-      })
-      .then((topo) => setLand(feature(topo, topo.objects.land) as FeatureCollection))
-      .catch((e: Error) => setError(e.message));
+  // 시점은 매 프레임 바뀌므로 ref에 두고, 화면 좌표 레이어(SVG)를 위해 프레임당 한 번 state로 복사한다.
+  const viewRef = useRef<View>(WORLD_VIEW);
+  const [view, setView] = useState<View>(WORLD_VIEW);
+  const initialized = useRef(false);
+  const movingRef = useRef(false);
+  const [hovered, setHovered] = useState<{ id: string; x: number; y: number } | null>(null);
+  const [error, setError] = useState<string | null>(null);
+  const [geoVersion, setGeoVersion] = useState(0);
+
+  const s0 = useMemo(() => (size ? baseScale(size) : 1), [size]);
+  const eastAsia = useCallback(() => (size ? fitBounds(size, s0, EAST_ASIA_BOUNDS) : WORLD_VIEW), [size, s0]);
+
+  // 첫 화면은 동아시아가 꽉 차게 (화면 크기를 알게 된 뒤 한 번만)
+  if (size && !initialized.current) {
+    initialized.current = true;
+    viewRef.current = eastAsia();
+  }
+  const active = useMemo(() => activeTerritories(data.territories, year), [data.territories, year]);
+
+  // ── 도형 불러오기 ─────────────────────────────────────────
+  const geo = useRef(new Map<string, Map<string, TerritoryFeature>>());
+  const land = useRef(new Map<Lod, LandPiece[]>());
+  /** 이미 요청한 파일. 매 프레임 같은 요청을 다시 걸지 않도록 기록한다 */
+  const requested = useRef(new Set<string>());
+
+  const ensureLoaded = useCallback(
+    (lod: Lod, entityIds: string[]) => {
+      if (!requested.current.has(`land/${lod}`)) {
+        requested.current.add(`land/${lod}`);
+        loadLand(lod)
+          .then((pieces) => {
+            land.current.set(lod, pieces);
+            setGeoVersion((v) => v + 1);
+          })
+          .catch((e: Error) => {
+            requested.current.delete(`land/${lod}`);
+            setError(e.message);
+          });
+      }
+      for (const id of entityIds) {
+        const key = `${lod}/${id}`;
+        if (requested.current.has(key)) continue;
+        requested.current.add(key);
+        loadEntityGeometry(lod, id)
+          .then((m) => {
+            geo.current.set(key, m);
+            setGeoVersion((v) => v + 1);
+          })
+          .catch((e: Error) => {
+            requested.current.delete(key);
+            setError(e.message);
+          });
+      }
+    },
+    [],
+  );
+
+  /** 원하는 단계가 아직 없으면 받아 둔 다른 단계로 대신 그린다 */
+  const featureFor = useCallback((entry: TerritoryIndexEntry, lod: Lod) => {
+    for (const l of FALLBACK[lod]) {
+      const f = geo.current.get(`${l}/${entry.entityId}`)?.get(entry.key);
+      if (f) return f;
+    }
+    return undefined;
+  }, []);
+  const landFor = useCallback((lod: Lod) => {
+    for (const l of FALLBACK[lod]) {
+      const pieces = land.current.get(l);
+      if (pieces) return pieces;
+    }
+    return [];
   }, []);
 
-  // 연도가 바뀌면 그 구간의 지도 파일을 불러온다. 불러오는 동안에는 이전 지도를 그대로 보여준다.
-  const interval = intervalAt(data.timeline, year);
-  useEffect(() => {
-    if (!interval?.file) {
-      setTerritories(null);
-      return;
+  // ── 그리기 ────────────────────────────────────────────────
+  const paletteRef = useRef<Palette | null>(null);
+  const drawnRef = useRef<{ entry: TerritoryIndexEntry; feature: TerritoryFeature }[]>([]);
+  const frame = useRef(0);
+
+  const draw = useCallback(() => {
+    const canvas = canvasRef.current;
+    if (!canvas || !size) return;
+    const v = viewRef.current;
+    const lod = lodFor(v.k, movingRef.current);
+    ensureLoaded(lod, [...new Set(active.map((t) => t.entityId))]);
+    const projection = createProjection(size, s0, v);
+    const bounds = visibleBounds(projection, size, v);
+    const territories: DrawTerritory[] = [];
+    const drawn: typeof drawnRef.current = [];
+    for (const entry of active) {
+      if (!isVisible(entry.bbox, bounds, v)) continue;
+      const feature = featureFor(entry, lod);
+      if (!feature) continue;
+      const color = data.entities.get(entry.entityId)?.color ?? '#999999';
+      territories.push({ feature, color, certainty: entry.certainty, bbox: entry.bbox });
+      drawn.push({ entry, feature });
     }
-    let cancelled = false;
-    loadInterval(interval.file)
-      .then((fc) => !cancelled && setTerritories(fc))
-      .catch((e: Error) => !cancelled && setError(e.message));
-    // 앞뒤 구간을 미리 받아 둔다
-    const i = data.timeline.intervals.indexOf(interval);
-    for (const neighbor of [data.timeline.intervals[i - 1], data.timeline.intervals[i + 1]])
-      if (neighbor?.file) loadInterval(neighbor.file).catch(() => {});
-    return () => {
-      cancelled = true;
-    };
-  }, [interval, data.timeline]);
+    drawnRef.current = drawn;
+    const ctx = canvas.getContext('2d')!;
+    const dpr = window.devicePixelRatio || 1;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    paletteRef.current ??= readPalette(canvas);
+    const landPieces = landFor(lod).filter((p) => isVisible(p.bbox, bounds, v));
+    drawMap(ctx, projection, size, landPieces, territories, paletteRef.current);
+    setView(v);
+  }, [size, s0, active, data.entities, ensureLoaded, featureFor, landFor]);
 
-  const projection = useMemo(() => (size ? createProjection(size) : null), [size]);
+  const requestDraw = useCallback(() => {
+    cancelAnimationFrame(frame.current);
+    frame.current = requestAnimationFrame(draw);
+  }, [draw]);
 
-  const base = useMemo(() => {
-    if (!projection) return null;
-    const path = geoPath(projection);
-    return {
-      sphere: path({ type: 'Sphere' }) ?? '',
-      graticule: path(geoGraticule10()) ?? '',
-      land: land ? (path(land) ?? '') : '',
-    };
-  }, [projection, land]);
-
-  const drawn = useMemo(() => {
-    if (!projection || !territories) return [];
-    const path = geoPath(projection);
-    return territories.features.map((f) => ({
-      entityId: f.properties.entityId,
-      certainty: f.properties.certainty,
-      anchor: f.properties.anchor,
-      d: path(f) ?? '',
-      bounds: path.bounds(f),
-      color: data.entities.get(f.properties.entityId)?.color ?? '#999999',
-    }));
-  }, [projection, territories, data.entities]);
-
-  // 확대/이동. 화면 크기가 바뀌면 투영이 새로 맞춰지므로 동아시아 시점으로 다시 맞춘다.
   useEffect(() => {
-    if (!size || !projection || !svgRef.current) return;
-    const svg = select(svgRef.current);
-    let frame = 0;
-    const behavior = zoom<SVGSVGElement, unknown>()
-      .scaleExtent([1, MAX_ZOOM])
-      .translateExtent([[0, 0], [size.width, size.height]])
-      .on('zoom', (event: { transform: ZoomTransform }) => {
-        // 영토 레이어는 속성만 바꾸고, 화면 좌표 레이어(이름표·화살표)는 프레임당 한 번만 다시 그린다.
-        layerRef.current?.setAttribute('transform', event.transform.toString());
-        cancelAnimationFrame(frame);
-        frame = requestAnimationFrame(() => setTransform(event.transform));
-      });
-    // 더블클릭은 나중에 지역 단위 드릴다운에 쓴다 (DESIGN.md §7).
-    svg.call(behavior).on('dblclick.zoom', null);
-    svg.call(behavior.transform, transformForBounds(projection, size, EAST_ASIA, MAX_ZOOM));
-    zoomRef.current = behavior;
-    return () => {
-      cancelAnimationFrame(frame);
-      svg.on('.zoom', null);
+    requestDraw();
+  }, [requestDraw, geoVersion]);
+
+  // 다크 모드 전환 시 색을 다시 읽는다
+  useEffect(() => {
+    const media = window.matchMedia('(prefers-color-scheme: dark)');
+    const onChange = () => {
+      paletteRef.current = null;
+      requestDraw();
     };
-  }, [size, projection]);
+    media.addEventListener('change', onChange);
+    return () => media.removeEventListener('change', onChange);
+  }, [requestDraw]);
 
-  const zoomBy = (factor: number) => {
-    if (svgRef.current && zoomRef.current) select(svgRef.current).transition().duration(250).call(zoomRef.current.scaleBy, factor);
+  // 캔버스 크기 (고해상도 화면 대응)
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas || !size) return;
+    const dpr = window.devicePixelRatio || 1;
+    canvas.width = Math.round(size.width * dpr);
+    canvas.height = Math.round(size.height * dpr);
+    canvas.style.width = `${size.width}px`;
+    canvas.style.height = `${size.height}px`;
+    requestDraw();
+  }, [size, requestDraw]);
+
+  // ── 끌기·확대 ──────────────────────────────────────────────
+  // d3-zoom은 끌기, 휠, 핀치 제스처만 담당한다. 이동량을 받아 도법 회전(중앙 경선 이동)으로 바꾼다.
+  const lastTransform = useRef<ZoomTransform>(zoomIdentity);
+  const syncing = useRef(false);
+  const settleTimer = useRef(0);
+
+  const setMoving = useCallback(
+    (moving: boolean) => {
+      window.clearTimeout(settleTimer.current);
+      if (moving) {
+        movingRef.current = true;
+        return;
+      }
+      settleTimer.current = window.setTimeout(() => {
+        movingRef.current = false;
+        requestDraw();
+      }, SETTLE_MS);
+    },
+    [requestDraw],
+  );
+
+  /** d3-zoom 내부 배율을 현재 시점과 맞춘다 (버튼으로 시점을 바꾼 뒤) */
+  const syncZoom = useCallback(() => {
+    const el = containerRef.current;
+    if (!el || !zoomRef.current) return;
+    syncing.current = true;
+    const t = zoomIdentity.scale(viewRef.current.k);
+    select(el).call(zoomRef.current.transform, t);
+    lastTransform.current = t;
+    syncing.current = false;
+  }, [containerRef]);
+
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el || !size) return;
+    const behavior = zoom<HTMLDivElement, unknown>()
+      .scaleExtent([MIN_ZOOM, MAX_ZOOM])
+      .clickDistance(4)
+      .on('start', () => {
+        if (!syncing.current) setMoving(true);
+      })
+      .on('zoom', (event: { transform: ZoomTransform }) => {
+        if (syncing.current) return;
+        const t0 = lastTransform.current;
+        const t1 = event.transform;
+        lastTransform.current = t1;
+        // 새 화면 가운데에 올 점을, 옮기기 전 화면 좌표로 구한다 (끌기와 기준점 확대 모두 처리)
+        const center: [number, number] = [size.width / 2, size.height / 2];
+        const target = t0.apply(t1.invert(center)) as [number, number];
+        const projection = createProjection(size, s0, viewRef.current);
+        viewRef.current = recenter(size, projection, viewRef.current, target, t1.k);
+        setHovered(null);
+        requestDraw();
+      })
+      .on('end', () => {
+        if (!syncing.current) setMoving(false);
+      });
+    zoomRef.current = behavior;
+    // 더블클릭은 나중에 지역 단위 드릴다운에 쓴다 (DESIGN.md §7).
+    select(el).call(behavior).on('dblclick.zoom', null);
+    syncZoom();
+    return () => {
+      select(el).on('.zoom', null);
+    };
+  }, [containerRef, size, s0, requestDraw, setMoving, syncZoom]);
+
+  const animation = useRef(0);
+  const animateTo = useCallback(
+    (target: View) => {
+      cancelAnimationFrame(animation.current);
+      const from = { ...viewRef.current };
+      const to = clampView(target);
+      // 경도는 짧은 쪽으로 돈다
+      const dLon = ((((to.lon - from.lon + 180) % 360) + 360) % 360) - 180;
+      const start = performance.now();
+      const DURATION = 500;
+      movingRef.current = true;
+      const step = (now: number) => {
+        const t = Math.min(1, (now - start) / DURATION);
+        const e = t < 0.5 ? 2 * t * t : 1 - (-2 * t + 2) ** 2 / 2;
+        viewRef.current = clampView({
+          lon: from.lon + dLon * e,
+          lat: from.lat + (to.lat - from.lat) * e,
+          k: from.k * (to.k / from.k) ** e,
+        });
+        draw();
+        if (t < 1) animation.current = requestAnimationFrame(step);
+        else {
+          syncZoom();
+          setMoving(false);
+        }
+      };
+      animation.current = requestAnimationFrame(step);
+    },
+    [draw, setMoving, syncZoom],
+  );
+
+  // ── 마우스·터치 ────────────────────────────────────────────
+  const pointerType = useRef('mouse');
+
+  const hitTest = useCallback(
+    (x: number, y: number): string | null => {
+      if (!size) return null;
+      const lonLat = invertPoint(createProjection(size, s0, viewRef.current), [x, y]);
+      if (!lonLat) return null;
+      const [lon, lat] = lonLat;
+      const drawn = drawnRef.current;
+      for (let i = drawn.length - 1; i >= 0; i--) {
+        const { entry, feature } = drawn[i];
+        const [w, s, e, n] = entry.bbox;
+        if (lat < s || lat > n) continue;
+        if (e - w < 360 && (lon < w || lon > e)) continue;
+        if (geoContains(feature, lonLat)) return entry.entityId;
+      }
+      return null;
+    },
+    [size, s0],
+  );
+
+  const localPoint = (e: React.MouseEvent | React.PointerEvent) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    return [e.clientX - rect.left, e.clientY - rect.top] as const;
   };
-  const zoomTo = (t: ZoomTransform) => {
-    if (svgRef.current && zoomRef.current) select(svgRef.current).transition().duration(500).call(zoomRef.current.transform, t);
+
+  // ── 화면 좌표 레이어 (SVG) ─────────────────────────────────
+  const projection = useMemo(() => (size ? createProjection(size, s0, view) : null), [size, s0, view]);
+  const overlayLod = lodFor(view.k, false);
+  const overlayPath = (id: string | null) => {
+    if (!id || !projection) return null;
+    const entry = active.find((t) => t.entityId === id);
+    const feature = entry && featureFor(entry, overlayLod);
+    return feature ? { d: geoPath(projection)(feature) ?? '', color: data.entities.get(id)?.color ?? '#999999' } : null;
   };
-
-  // 툴팁 위치. mouseenter가 첫 mousemove보다 먼저 올 수 있어 포인터 위치는 항상 기록해 둔다.
-  const pointer = useRef({ x: 0, y: 0 });
-  const onHover = useCallback((id: string | null) => setHovered(id ? { id, ...pointer.current } : null), []);
-  const onSelect = useCallback((id: string) => selectEntity(id), [selectEntity]);
-
-  const hoveredTerritory = hovered && drawn.find((t) => t.entityId === hovered.id);
-  const selectedTerritory = selectedId ? drawn.find((t) => t.entityId === selectedId) : undefined;
+  const selectedShape = overlayPath(selectedId);
+  const hoveredShape = overlayPath(hovered?.id ?? null);
   const hoveredEntity = hovered ? data.entities.get(hovered.id) : undefined;
   const hoveredEvent = hoveredEventId ? data.events.find((e) => e.id === hoveredEventId) : undefined;
 
   return (
-    <div ref={containerRef} className="world-map">
-      {size && base && projection && (
-        <svg
-          ref={svgRef}
-          width={size.width}
-          height={size.height}
-          role="img"
-          aria-label="세계 지도"
-          onClick={() => selectEntity(null)}
-          onMouseMove={(e) => {
-            const rect = e.currentTarget.getBoundingClientRect();
-            pointer.current = { x: e.clientX - rect.left, y: e.clientY - rect.top };
-            if (hovered) setHovered({ id: hovered.id, ...pointer.current });
-          }}
-        >
-          <g ref={layerRef}>
-            <path className="map-ocean" d={base.sphere} />
-            <path className="map-graticule" d={base.graticule} />
-            <path className="map-land" d={base.land} />
-            <TerritoryLayer territories={drawn} onHover={onHover} onSelect={onSelect} />
-            {selectedTerritory && <path className="territory-selected" d={selectedTerritory.d} />}
-            {hoveredTerritory && <HoverLift key={hoveredTerritory.entityId} territory={hoveredTerritory} />}
-            <path className="map-outline" d={base.sphere} />
-          </g>
-          <LabelLayer territories={drawn} entities={data.entities} selectedId={selectedId} projection={projection} transform={transform} />
+    <div
+      ref={containerRef}
+      className="world-map"
+      onPointerDown={(e) => {
+        pointerType.current = e.pointerType;
+      }}
+      onPointerMove={(e) => {
+        if (e.pointerType !== 'mouse' || e.buttons) return;
+        const [x, y] = localPoint(e);
+        const id = hitTest(x, y);
+        setHovered(id ? { id, x, y } : null);
+      }}
+      onPointerLeave={() => setHovered(null)}
+      onClick={(e) => {
+        const [x, y] = localPoint(e);
+        const id = hitTest(x, y);
+        selectEntity(id);
+        // 터치에는 hover가 없으므로 누른 나라를 잠깐 들어 올려 보여준다
+        if (pointerType.current !== 'mouse') setHovered(id ? { id, x, y } : null);
+      }}
+    >
+      <canvas ref={canvasRef} className="map-canvas" />
+      {size && projection && (
+        <svg className="map-overlay" width={size.width} height={size.height} aria-hidden>
+          {selectedShape && <path className="territory-selected" d={selectedShape.d} />}
+          {hoveredShape && hovered && <path key={hovered.id} className="territory-lift" d={hoveredShape.d} fill={hoveredShape.color} />}
+          <LabelLayer territories={active} entities={data.entities} selectedId={selectedId} projection={projection} view={view} size={size} />
           {hoveredEvent && selectedId && (
-            <ArrowLayer data={data} event={hoveredEvent} selectedId={selectedId} projection={projection} transform={transform} />
+            <ArrowLayer data={data} event={hoveredEvent} selectedId={selectedId} projection={projection} />
           )}
         </svg>
       )}
-      {hovered && hoveredEntity && (
+      {hovered && hoveredEntity && pointerType.current === 'mouse' && (
         <div className="map-tooltip" style={{ left: hovered.x + 14, top: hovered.y + 14 }}>
           <strong>{hoveredEntity.names.ko}</strong>
           {hoveredEntity.names.hanja && <span className="hanja"> {hoveredEntity.names.hanja}</span>}
           <div>{formatRange(hoveredEntity.from, hoveredEntity.to)}</div>
         </div>
       )}
-      {!land && !error && <div className="map-status">지도를 불러오는 중…</div>}
       {error && <div className="map-status map-status-error">지도를 불러오지 못했습니다: {error}</div>}
-      {interval && !interval.file && <div className="map-notice">이 시기의 영토 데이터는 아직 없습니다</div>}
-      <div className="map-controls">
-        <button type="button" aria-label="확대" onClick={() => zoomBy(1.6)}>+</button>
-        <button type="button" aria-label="축소" onClick={() => zoomBy(1 / 1.6)}>−</button>
-        <button type="button" onClick={() => projection && size && zoomTo(transformForBounds(projection, size, EAST_ASIA, MAX_ZOOM))}>
-          동아시아
-        </button>
-        <button type="button" onClick={() => zoomTo(zoomIdentity)}>세계</button>
+      {active.length === 0 && <div className="map-notice">이 시기의 영토 데이터는 아직 없습니다</div>}
+      <div className="map-controls" onClick={(e) => e.stopPropagation()} onPointerDown={(e) => e.stopPropagation()}>
+        <button type="button" className="map-zoom-button" aria-label="확대" onClick={() => animateTo({ ...viewRef.current, k: viewRef.current.k * 1.6 })}>+</button>
+        <button type="button" className="map-zoom-button" aria-label="축소" onClick={() => animateTo({ ...viewRef.current, k: viewRef.current.k / 1.6 })}>−</button>
+        <button type="button" onClick={() => animateTo(eastAsia())}>동아시아</button>
+        <button type="button" onClick={() => animateTo({ ...WORLD_VIEW, lon: viewRef.current.lon })}>세계</button>
       </div>
     </div>
   );
-}
-
-/**
- * hover한 영토를 맨 위 레이어에 복제해 살짝 키운다 (DESIGN.md §6.1).
- * 원본 순서를 바꾸지 않으므로 이웃 영토에 가려지지 않으면서도 다시 그릴 필요가 없다.
- */
-function HoverLift({ territory }: { territory: DrawnTerritory }) {
-  return <path className="territory-lift" d={territory.d} fill={territory.color} />;
 }

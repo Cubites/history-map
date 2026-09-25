@@ -85,30 +85,38 @@ export type HistoryEvent = z.infer<typeof EventSchema>;
 // ── 빌드 결과물 (public/data/) ──────────────────────────────
 
 export type LonLat = [lon: number, lat: number];
+export type BBox = [west: number, south: number, east: number, north: number];
 
-export interface TimelineInterval {
-  from: Year;
-  /** 구간 끝 (미포함) */
-  to: Year;
-  /** map/ 아래 TopoJSON 파일명. 영토 데이터가 없는 구간은 null */
-  file: string | null;
-}
+/**
+ * 지도 정밀도 단계 (DESIGN.md §3). 움직이는 동안에는 가벼운 단계, 멈추거나 확대하면 정밀한 단계를 쓴다.
+ * - low: 1:110m 해안선 + 강한 단순화
+ * - mid: 1:50m 해안선 + 약한 단순화
+ * - high: 1:50m 해안선 원본
+ */
+export const LODS = ['low', 'mid', 'high'] as const;
+export type Lod = (typeof LODS)[number];
 
 export interface TimelineIndex {
   range: [start: Year, end: Year];
   /** 지도가 바뀌는 연도 (이전/다음 변화 이동에 사용) */
   changeYears: Year[];
-  intervals: TimelineInterval[];
 }
 
-/** 구간별 TopoJSON 안의 영토 Feature properties */
-export interface MapFeatureProps {
+/**
+ * 영토 버전 목록 (territories.json). 도형은 나라별 파일(geo/<lod>/<entityId>.topo.json)에
+ * 한 번씩만 저장하고, 브라우저가 해당 연도의 버전을 모아 그린다.
+ */
+export interface TerritoryIndexEntry {
+  /** 도형 파일 안의 geometry id: `${entityId}@${from}` */
+  key: string;
   entityId: string;
+  from: Year;
+  to: Year | null;
   certainty: Certainty;
+  /** 화살표·이름표 기준점 */
   anchor: LonLat;
+  /** 화면 밖 영토를 건너뛰는 데 쓰는 경위도 범위 */
+  bbox: BBox;
 }
-
-/** 나라별 화살표 기준점. 영토 버전마다 하나 */
-export type AnchorIndex = Record<string, { from: Year; to: Year | null; anchor: LonLat }[]>;
 
 export type Year = z.infer<typeof Year>;

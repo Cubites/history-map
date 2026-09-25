@@ -1,5 +1,4 @@
 import type { GeoProjection } from 'd3-geo';
-import type { ZoomTransform } from 'd3-zoom';
 import { anchorAt, type StaticData } from '../data/staticData.ts';
 import { linkDirection } from '../lib/events.ts';
 import type { HistoryEvent } from '../schema/index.ts';
@@ -9,7 +8,6 @@ interface Props {
   event: HistoryEvent;
   selectedId: string;
   projection: GeoProjection;
-  transform: ZoomTransform;
 }
 
 /** 화살표 끝을 기준점에서 조금 떨어뜨려 이름표와 겹치지 않게 한다 */
@@ -21,11 +19,10 @@ const BEND = 0.2;
  * 사건 화살표 (DESIGN.md §6.3). 화면 좌표로 그려서 확대해도 굵기와 화살촉 크기가 변하지 않는다.
  * 곡선은 진행 방향 왼쪽으로 휘므로 A→B와 B→A가 자동으로 서로 반대쪽으로 갈린다.
  */
-export function ArrowLayer({ data, event, selectedId, projection, transform }: Props) {
+export function ArrowLayer({ data, event, selectedId, projection }: Props) {
   const toScreen = (entityId: string) => {
-    const lonLat = anchorAt(data.anchors, entityId, event.year);
-    const p = lonLat && projection(lonLat);
-    return p ? transform.apply(p) : null;
+    const lonLat = anchorAt(data.territories, entityId, event.year);
+    return (lonLat && projection(lonLat)) ?? null;
   };
 
   const arrows = event.links.flatMap((link, i) => {
