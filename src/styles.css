@@ -1,0 +1,99 @@
+:root {
+  --bg: #f5f3ee;
+  --fg: #22211f;
+  --muted: #6b6760;
+  --ocean: #dfe8ee;
+  --graticule: #c9d5dd;
+  --land-unassigned: #cfcbc3; /* 데이터가 없는 육지 (DESIGN.md D5) */
+  --land-stroke: #a9a49a;
+  --outline: #9fb0bb;
+  --control-bg: #ffffffe6;
+  --control-border: #d6d2ca;
+  --error: #c0392b;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #171a1d;
+    --fg: #e8e6e1;
+    --muted: #9a968e;
+    --ocean: #1d2a33;
+    --graticule: #27363f;
+    --land-unassigned: #3a3d3f;
+    --land-stroke: #55595b;
+    --outline: #3b4d59;
+    --control-bg: #23272ae6;
+    --control-border: #3a3f43;
+    --error: #ff7b6b;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html, body, #root { height: 100%; margin: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Malgun Gothic', system-ui, sans-serif;
+}
+
+a { color: inherit; }
+
+.app { display: flex; flex-direction: column; height: 100%; }
+
+.app-header { padding: 10px 16px; border-bottom: 1px solid var(--control-border); }
+.app-header h1 { margin: 0; font-size: 18px; font-weight: 700; }
+
+.app-main { flex: 1; min-height: 0; position: relative; }
+
+.app-footer {
+  padding: 6px 16px;
+  font-size: 12px;
+  color: var(--muted);
+  border-top: 1px solid var(--control-border);
+}
+
+.world-map { position: absolute; inset: 0; overflow: hidden; }
+.world-map svg { display: block; cursor: grab; touch-action: none; }
+.world-map svg:active { cursor: grabbing; }
+
+.map-ocean { fill: var(--ocean); }
+.map-graticule { fill: none; stroke: var(--graticule); stroke-width: 0.5; vector-effect: non-scaling-stroke; }
+.map-land { fill: var(--land-unassigned); stroke: var(--land-stroke); stroke-width: 0.5; vector-effect: non-scaling-stroke; }
+.map-outline { fill: none; stroke: var(--outline); stroke-width: 1; vector-effect: non-scaling-stroke; }
+
+.map-status {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 8px 14px;
+  border-radius: 6px;
+  background: var(--control-bg);
+  font-size: 14px;
+}
+.map-status-error { color: var(--error); }
+
+.map-controls {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.map-controls button {
+  min-width: 36px;
+  height: 32px;
+  padding: 0 10px;
+  border: 1px solid var(--control-border);
+  border-radius: 6px;
+  background: var(--control-bg);
+  color: var(--fg);
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+}
+.map-controls button:hover { border-color: var(--muted); }

@@ -1,0 +1,23 @@
+Copyright (c) 2026 Cubites (https://github.com/Cubites)
+
+The historical data in this directory — entity definitions (entities/),
+relations (relations.yaml), event descriptions (events/) and hand-drawn
+territory geometries (geo/) — is licensed under the Creative Commons
+Attribution-NonCommercial-ShareAlike 4.0 International License
+(CC BY-NC-SA 4.0).
+
+  Summary:   https://creativecommons.org/licenses/by-nc-sa/4.0/
+  Legal code: https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
+
+Attribution: "History Map by Cubites (https://github.com/Cubites/history-map),
+CC BY-NC-SA 4.0"
+
+Exception: files under base/ are derived from Natural Earth
+(https://www.naturalearthdata.com/), which is in the public domain.
+
+---
+
+이 디렉터리의 역사 데이터(나라 정의, 관계, 사건 서술, 직접 그린 영토 폴리곤)는
+크리에이티브 커먼즈 저작자표시-비영리-동일조건변경허락 4.0 국제 라이선스
+(CC BY-NC-SA 4.0)를 따릅니다. base/ 아래의 Natural Earth 파생 데이터는
+퍼블릭 도메인입니다.
