@@ -14,7 +14,14 @@ import { formatRange } from '../lib/year.ts';
 import type { Lod, TerritoryIndexEntry } from '../schema/index.ts';
 import { useAppStore } from '../store/useAppStore.ts';
 import { ArrowLayer } from './ArrowLayer.tsx';
-import { drawMap, isVisible, visibleBounds, type DrawTerritory, type Palette } from './canvasLayer.ts';
+import {
+  crossesSeam,
+  drawMap,
+  isVisible,
+  visibleBounds,
+  type DrawTerritory,
+  type Palette,
+} from './canvasLayer.ts';
 import { LabelLayer } from './LabelLayer.tsx';
 import { useElementSize } from './useElementSize.ts';
 import {
@@ -169,7 +176,7 @@ export default function WorldMap({ data }: { data: StaticData }) {
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     paletteRef.current ??= readPalette(canvas);
     const landPieces = landFor(lod).filter((p) => isVisible(p.bbox, bounds, v));
-    drawMap(ctx, projection, size, landPieces, territories, paletteRef.current);
+    drawMap(ctx, projection, createProjection(size, s0, v, true), v, size, landPieces, territories, paletteRef.current);
     setView(v);
   }, [size, s0, active, data.entities, ensureLoaded, featureFor, landFor]);
 
@@ -332,11 +339,15 @@ export default function WorldMap({ data }: { data: StaticData }) {
   // ── 화면 좌표 레이어 (SVG) ─────────────────────────────────
   const projection = useMemo(() => (size ? createProjection(size, s0, view) : null), [size, s0, view]);
   const overlayLod = lodFor(view.k, false);
+  const precise = useMemo(() => (size ? createProjection(size, s0, view, true) : null), [size, s0, view]);
+  const sphereD = useMemo(() => (precise ? (geoPath(precise)({ type: 'Sphere' }) ?? '') : ''), [precise]);
   const overlayPath = (id: string | null) => {
-    if (!id || !projection) return null;
+    if (!id || !projection || !precise) return null;
     const entry = active.find((t) => t.entityId === id);
     const feature = entry && featureFor(entry, overlayLod);
-    return feature ? { d: geoPath(projection)(feature) ?? '', color: data.entities.get(id)?.color ?? '#999999' } : null;
+    if (!entry || !feature) return null;
+    const path = geoPath(crossesSeam(entry.bbox, view) ? precise : projection);
+    return { d: path(feature) ?? '', color: data.entities.get(id)?.color ?? '#999999' };
   };
   const selectedShape = overlayPath(selectedId);
   const hoveredShape = overlayPath(hovered?.id ?? null);
@@ -368,8 +379,16 @@ export default function WorldMap({ data }: { data: StaticData }) {
       <canvas ref={canvasRef} className="map-canvas" />
       {size && projection && (
         <svg className="map-overlay" width={size.width} height={size.height} aria-hidden>
-          {selectedShape && <path className="territory-selected" d={selectedShape.d} />}
-          {hoveredShape && hovered && <path key={hovered.id} className="territory-lift" d={hoveredShape.d} fill={hoveredShape.color} />}
+          <defs>
+            <clipPath id="map-sphere-clip">
+              <path d={sphereD} />
+            </clipPath>
+          </defs>
+          {/* 강조 도형도 지구 테두리 밖으로 나가지 않게 자른다 */}
+          <g clipPath="url(#map-sphere-clip)">
+            {selectedShape && <path className="territory-selected" d={selectedShape.d} />}
+            {hoveredShape && hovered && <path key={hovered.id} className="territory-lift" d={hoveredShape.d} fill={hoveredShape.color} />}
+          </g>
           <LabelLayer territories={active} entities={data.entities} selectedId={selectedId} projection={projection} view={view} size={size} />
           {hoveredEvent && selectedId && (
             <ArrowLayer data={data} event={hoveredEvent} selectedId={selectedId} projection={projection} />

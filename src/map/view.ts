@@ -40,13 +40,17 @@ export function baseScale({ width, height }: Size): number {
   return geoEqualEarth().fitExtent([[PADDING, PADDING], [width - PADDING, height - PADDING]], { type: 'Sphere' }).scale();
 }
 
-export function createProjection(size: Size, s0: number, view: View): GeoProjection {
-  // 우리 데이터는 점이 이미 촘촘하므로 곡선 보정(적응형 재표본화)을 끈다. 측정 결과 계산이 약 40% 줄었다.
+/**
+ * 우리 데이터는 점이 이미 촘촘하므로 기본은 곡선 보정(적응형 재표본화)을 끈다. 측정 결과 계산이 약 40% 줄었다.
+ * 점이 적은 지구 테두리와 이음새에서 잘린 면은 곡선 보정이 없으면 직선이 되어 타원이 각지고
+ * 육지가 테두리 밖으로 튀어나오므로, 그런 곳에만 `precise`로 곡선 보정을 켠 투영을 쓴다.
+ */
+export function createProjection(size: Size, s0: number, view: View, precise = false): GeoProjection {
   const projection = geoEqualEarth()
     .rotate([-view.lon, 0])
     .scale(s0 * view.k)
     .translate([size.width / 2, size.height / 2])
-    .precision(0);
+    .precision(precise ? Math.SQRT1_2 : 0);
   const [, y] = projection([view.lon, view.lat])!;
   return projection.translate([size.width / 2, size.height - y]);
 }

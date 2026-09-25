@@ -59,31 +59,50 @@ export function isVisible(bbox: BBox, bounds: ReturnType<typeof visibleBounds>, 
   return re >= bounds.w && rw <= bounds.e;
 }
 
+/** 이음새(중앙 경선의 반대편 경선)에 걸친 도형인가 */
+export function crossesSeam(bbox: BBox, view: View): boolean {
+  const [west, , east] = bbox;
+  if (east - west >= 180) return true;
+  return normalizeLon(east - view.lon) < normalizeLon(west - view.lon);
+}
+
+/**
+ * @param projection 곡선 보정을 끈 빠른 투영 (대부분의 도형)
+ * @param preciseProjection 곡선 보정을 켠 투영 (지구 테두리, 경위선, 이음새에 걸친 도형). view.ts의 createProjection 참고
+ */
 export function drawMap(
   ctx: CanvasRenderingContext2D,
   projection: GeoProjection,
+  preciseProjection: GeoProjection,
+  view: View,
   size: Size,
   land: LandPiece[],
   territories: DrawTerritory[],
   palette: Palette,
 ) {
-  const path = geoPath(projection, ctx);
+  const fast = geoPath(projection, ctx);
+  const precise = geoPath(preciseProjection, ctx);
+  const pathFor = (bbox: BBox) => (crossesSeam(bbox, view) ? precise : fast);
   ctx.clearRect(0, 0, size.width, size.height);
 
   ctx.beginPath();
-  path(SPHERE);
+  precise(SPHERE);
   ctx.fillStyle = palette.ocean;
   ctx.fill();
 
+  // 지구 테두리 밖으로는 아무것도 그리지 않는다
+  ctx.save();
+  ctx.clip();
+
   ctx.beginPath();
-  path(graticule);
+  precise(graticule);
   ctx.lineWidth = 0.5;
   ctx.strokeStyle = palette.graticule;
   ctx.stroke();
 
   if (land.length) {
     ctx.beginPath();
-    for (const piece of land) path(piece.feature);
+    for (const piece of land) pathFor(piece.bbox)(piece.feature);
     ctx.fillStyle = palette.land;
     ctx.fill();
     ctx.strokeStyle = palette.landStroke;
@@ -94,7 +113,7 @@ export function drawMap(
   ctx.strokeStyle = palette.territoryStroke;
   for (const t of territories) {
     ctx.beginPath();
-    path(t.feature);
+    pathFor(t.bbox)(t.feature);
     ctx.fillStyle = t.color;
     ctx.fill();
     // 추정·논쟁 경계는 점선 (DESIGN.md §4.2)
@@ -102,9 +121,10 @@ export function drawMap(
     ctx.stroke();
   }
   ctx.setLineDash([]);
+  ctx.restore();
 
   ctx.beginPath();
-  path(SPHERE);
+  precise(SPHERE);
   ctx.strokeStyle = palette.outline;
   ctx.stroke();
 }
