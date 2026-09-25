@@ -26,15 +26,19 @@ import { LabelLayer } from './LabelLayer.tsx';
 import { useElementSize } from './useElementSize.ts';
 import {
   baseScale,
-  clampView,
+  constrain,
   createProjection,
+  DEFAULT_LON,
   EAST_ASIA_BOUNDS,
   fitBounds,
   invertPoint,
   MAX_ZOOM,
   MIN_ZOOM,
   recenter,
-  WORLD_VIEW,
+  toGeoView,
+  toView,
+  type GeoView,
+  type Size,
   type View,
 } from './view.ts';
 
@@ -75,21 +79,22 @@ export default function WorldMap({ data }: { data: StaticData }) {
   const selectEntity = useAppStore((s) => s.select);
 
   // 시점은 매 프레임 바뀌므로 ref에 두고, 화면 좌표 레이어(SVG)를 위해 프레임당 한 번 state로 복사한다.
-  const viewRef = useRef<View>(WORLD_VIEW);
-  const [view, setView] = useState<View>(WORLD_VIEW);
-  const initialized = useRef(false);
+  const viewRef = useRef<View>({ lon: DEFAULT_LON, k: 1, ty: 0, dx: 0 });
+  const [view, setView] = useState<View>(viewRef.current);
   const movingRef = useRef(false);
   const [hovered, setHovered] = useState<{ id: string; x: number; y: number } | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [geoVersion, setGeoVersion] = useState(0);
 
   const s0 = useMemo(() => (size ? baseScale(size) : 1), [size]);
-  const eastAsia = useCallback(() => (size ? fitBounds(size, s0, EAST_ASIA_BOUNDS) : WORLD_VIEW), [size, s0]);
 
-  // 첫 화면은 동아시아가 꽉 차게 (화면 크기를 알게 된 뒤 한 번만)
-  if (size && !initialized.current) {
-    initialized.current = true;
-    viewRef.current = eastAsia();
+  // 화면 크기가 정해지거나 바뀌면 시점을 다시 맞춘다. 처음에는 동아시아가 꽉 차게,
+  // 이후(창 크기 변경, 모바일 회전)에는 보던 곳과 배율을 유지한다.
+  const sized = useRef<{ size: Size; s0: number } | null>(null);
+  if (size && sized.current?.size !== size) {
+    const prev = sized.current;
+    viewRef.current = prev ? toView(size, s0, toGeoView(prev.size, prev.s0, viewRef.current)) : fitBounds(size, s0, EAST_ASIA_BOUNDS);
+    sized.current = { size, s0 };
   }
   const active = useMemo(() => activeTerritories(data.territories, year), [data.territories, year]);
 
@@ -261,8 +266,7 @@ export default function WorldMap({ data }: { data: StaticData }) {
         // 새 화면 가운데에 올 점을, 옮기기 전 화면 좌표로 구한다 (끌기와 기준점 확대 모두 처리)
         const center: [number, number] = [size.width / 2, size.height / 2];
         const target = t0.apply(t1.invert(center)) as [number, number];
-        const projection = createProjection(size, s0, viewRef.current);
-        viewRef.current = recenter(size, projection, viewRef.current, target, t1.k);
+        viewRef.current = recenter(size, s0, viewRef.current, target, t1.k);
         setHovered(null);
         requestDraw();
       })
@@ -279,11 +283,14 @@ export default function WorldMap({ data }: { data: StaticData }) {
   }, [containerRef, size, s0, requestDraw, setMoving, syncZoom]);
 
   const animation = useRef(0);
+  /** 경위도 시점으로 부드럽게 이동 (버튼). 한 프레임마다 지도 끝 붙이기 규칙을 적용한다 */
   const animateTo = useCallback(
-    (target: View) => {
+    (target: GeoView | View) => {
+      if (!size) return;
       cancelAnimationFrame(animation.current);
-      const from = { ...viewRef.current };
-      const to = clampView(target);
+      const startView = viewRef.current;
+      const from = toGeoView(size, s0, startView);
+      const to = 'lat' in target ? target : toGeoView(size, s0, target);
       // 경도는 짧은 쪽으로 돈다
       const dLon = ((((to.lon - from.lon + 180) % 360) + 360) % 360) - 180;
       const start = performance.now();
@@ -292,11 +299,13 @@ export default function WorldMap({ data }: { data: StaticData }) {
       const step = (now: number) => {
         const t = Math.min(1, (now - start) / DURATION);
         const e = t < 0.5 ? 2 * t * t : 1 - (-2 * t + 2) ** 2 / 2;
-        viewRef.current = clampView({
+        const next = toView(size, s0, {
           lon: from.lon + dLon * e,
           lat: from.lat + (to.lat - from.lat) * e,
           k: from.k * (to.k / from.k) ** e,
         });
+        // 세계가 화면보다 좁을 때의 가로 위치도 부드럽게 가운데로
+        viewRef.current = constrain(size, s0, { ...next, dx: startView.dx * (1 - e) });
         draw();
         if (t < 1) animation.current = requestAnimationFrame(step);
         else {
@@ -306,8 +315,11 @@ export default function WorldMap({ data }: { data: StaticData }) {
       };
       animation.current = requestAnimationFrame(step);
     },
-    [draw, setMoving, syncZoom],
+    [size, s0, draw, setMoving, syncZoom],
   );
+  const zoomButton = (factor: number) => {
+    if (size) animateTo({ ...toGeoView(size, s0, viewRef.current), k: viewRef.current.k * factor });
+  };
 
   // ── 마우스·터치 ────────────────────────────────────────────
   const pointerType = useRef('mouse');
@@ -405,10 +417,10 @@ export default function WorldMap({ data }: { data: StaticData }) {
       {error && <div className="map-status map-status-error">지도를 불러오지 못했습니다: {error}</div>}
       {active.length === 0 && <div className="map-notice">이 시기의 영토 데이터는 아직 없습니다</div>}
       <div className="map-controls" onClick={(e) => e.stopPropagation()} onPointerDown={(e) => e.stopPropagation()}>
-        <button type="button" className="map-zoom-button" aria-label="확대" onClick={() => animateTo({ ...viewRef.current, k: viewRef.current.k * 1.6 })}>+</button>
-        <button type="button" className="map-zoom-button" aria-label="축소" onClick={() => animateTo({ ...viewRef.current, k: viewRef.current.k / 1.6 })}>−</button>
-        <button type="button" onClick={() => animateTo(eastAsia())}>동아시아</button>
-        <button type="button" onClick={() => animateTo({ ...WORLD_VIEW, lon: viewRef.current.lon })}>세계</button>
+        <button type="button" className="map-zoom-button" aria-label="확대" onClick={() => zoomButton(1.6)}>+</button>
+        <button type="button" className="map-zoom-button" aria-label="축소" onClick={() => zoomButton(1 / 1.6)}>−</button>
+        <button type="button" onClick={() => size && animateTo(fitBounds(size, s0, EAST_ASIA_BOUNDS))}>동아시아</button>
+        <button type="button" onClick={() => animateTo({ lon: viewRef.current.lon, lat: 0, k: MIN_ZOOM })}>세계</button>
       </div>
     </div>
   );
