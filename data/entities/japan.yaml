@@ -1,5 +1,5 @@
-# 일본 열도 (P1 샘플)
-# ※ 샘플 데이터. 운영자 검수 필요.
+# 일본 열도
+# 3번 묶음(600~935). 운영자 검수 필요.
 
 - id: wa
   level: polity
@@ -7,7 +7,19 @@
   from: 57
   to: 700
   color: "#b86b8a"
-  summary: 701년 무렵부터 '일본'이라는 국호를 사용
+  summary: 백제와 가까웠고, 백제 부흥운동을 도우려 백강에 수군을 보냄
   basis:
     type: primary_source
     refs: ["『후한서』 동이열전 왜", "『수서』 왜국전", "『일본서기』"]
+
+- id: japan
+  level: polity
+  names: { ko: 일본, hanja: 日本, en: Japan }
+  from: 701
+  to: null
+  color: "#b86b8a"
+  summary: 왜가 국호를 일본으로 바꾼 뒤의 나라. 신라·발해와 사신을 주고받음
+  basis:
+    type: primary_source
+    refs: ["『속일본기』", "『신당서』 일본전"]
+    foundingNote: 국호를 일본으로 바꾼 시기는 7세기 후반으로 학설에 따라 차이가 있음. 지도에서는 대보율령(701)을 기준으로 함

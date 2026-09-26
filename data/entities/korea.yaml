@@ -1,6 +1,6 @@
-# 한국사 나라 (P1 샘플: 600~700년 전후)
+# 한국사 나라
 # 연도는 천문 연도: 기원전 1년 = 0, 기원전 57년 = -56. from/to는 존속 첫해와 마지막 해(포함).
-# ※ 샘플 데이터. 운영자 검수 필요.
+# 3번 묶음(600~935) 조사: 중고등학교 한국사 교과서 수준. 운영자 검수 필요.
 
 - id: goguryeo
   level: polity
@@ -8,6 +8,7 @@
   from: -36
   to: 668
   color: "#c8745a"
+  summary: 수·당의 침입을 막아 내며 만주와 한반도 북부를 차지한 삼국 중 가장 넓은 나라
   basis:
     type: primary_source
     refs: ["『삼국사기』 고구려본기"]
@@ -19,6 +20,7 @@
   from: -17
   to: 660
   color: "#7d9b5b"
+  summary: 한반도 서남부를 차지하고 중국 남조·왜와 활발히 교류한 나라
   basis:
     type: primary_source
     refs: ["『삼국사기』 백제본기"]
@@ -30,6 +32,7 @@
   from: -56
   to: 935
   color: "#d4a93f"
+  summary: 당과 연합해 백제·고구려를 무너뜨리고 나당 전쟁에서 이겨 삼국을 통일한 나라 (676년 이후 통일 신라)
   basis:
     type: primary_source
     refs: ["『삼국사기』 신라본기"]
@@ -41,6 +44,41 @@
   from: 698
   to: 926
   color: "#9a6fb0"
+  summary: 고구려 장수 출신 대조영이 세운 고구려 계승 국가. 전성기에 해동성국이라 불림
   basis:
     type: primary_source
     refs: ["『구당서』 발해말갈전", "『신당서』 발해전"]
+
+- id: hubaekje
+  level: polity
+  names: { ko: 후백제, hanja: 後百濟, en: Later Baekje }
+  from: 900
+  to: 936
+  color: "#8fae6a"
+  summary: 견훤이 완산주(전주)를 도읍으로 세운 나라. 백제 계승을 내세움
+  basis:
+    type: primary_source
+    refs: ["『삼국사기』 권50 열전 견훤"]
+    foundingNote: 견훤은 892년 무진주를 차지하고 900년 완산주에서 후백제를 세움
+
+- id: hugoguryeo
+  level: polity
+  names: { ko: 후고구려, hanja: 後高句麗, en: Taebong }
+  from: 901
+  to: 918
+  color: "#d98b6b"
+  summary: 궁예가 송악(개성)을 도읍으로 세운 나라. 국호를 마진(904), 태봉(911)으로 바꿈
+  basis:
+    type: primary_source
+    refs: ["『삼국사기』 권50 열전 궁예"]
+
+- id: goryeo
+  level: polity
+  names: { ko: 고려, hanja: 高麗, en: Goryeo }
+  from: 918
+  to: 1392
+  color: "#4f8f8a"
+  summary: 왕건이 궁예를 몰아내고 세운 나라. 신라의 귀부(935)와 후백제 정복(936)으로 후삼국을 통일
+  basis:
+    type: primary_source
+    refs: ["『고려사』 세가"]

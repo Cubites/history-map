@@ -1,0 +1,514 @@
+# 3번 묶음: 삼국 통일과 남북국 (600 ~ 935)
+# 깊이: 중고등학교 한국사 교과서 수준. 서술은 새로 작성, 출처는 해당 기록이 실린 사료. 운영자 검수 필요.
+#
+# links: 영향 관계. 선택한 나라가 to면 들어오는 화살표(파랑), from이면 나가는 화살표(주황).
+# 사건에 나오는 나라는 모두 그 해에 존재해야 한다 (예: 663년 백강 전투에 멸망한 백제는 넣을 수 없음).
+
+# ── 삼국 항쟁 (600 ~ 659) ────────────────────────────────
+
+- id: tang-founded-618
+  year: 618
+  title:
+    ko: 수 멸망과 당 건국
+  summary:
+    ko: 고구려 원정 실패와 무리한 토목 공사로 수가 무너지고 이연이 당을 세웠다.
+  subjects: [tang, sui]
+  links:
+    - { from: sui, to: tang, note: "왕조 교체" }
+  tags: [politics]
+  sources: ["『구당서』 고조본기"]
+
+- id: salsu-612
+  year: 612
+  title:
+    ko: 살수 대첩
+  summary:
+    ko: 수 양제가 대군을 이끌고 고구려에 쳐들어왔으나 을지문덕이 살수(청천강)에서 수의 별동대를 크게 무찔렀다. 거듭된 원정 실패는 수가 멸망하는 원인이 되었다.
+  subjects: [goguryeo, sui]
+  links:
+    - { from: sui, to: goguryeo, note: "수 양제의 대규모 원정" }
+    - { from: goguryeo, to: sui, note: "원정 실패로 수의 국력 약화" }
+  tags: [war]
+  sources: ["『삼국사기』 고구려본기 영양왕 23년", "『수서』 양제기"]
+
+- id: eastern-turks-fall-630
+  year: 630
+  title:
+    ko: 동돌궐 멸망
+  summary:
+    ko: 당 태종이 동돌궐을 무너뜨려 북방의 위협을 없앴다. 이후 당은 고구려를 압박하기 시작했다.
+  subjects: [eastern-turks, tang]
+  links:
+    - { from: tang, to: eastern-turks, note: "당 태종의 원정" }
+  tags: [war]
+  sources: ["『구당서』 돌궐전"]
+
+- id: cheolli-jangseong-631
+  year: 631
+  title:
+    ko: 천리장성 축조 시작
+  summary:
+    ko: 당의 침입에 대비해 고구려가 부여성에서 비사성에 이르는 천리장성을 쌓기 시작했다. 공사는 16년 동안 이어졌다.
+  subjects: [goguryeo]
+  links:
+    - { from: tang, to: goguryeo, note: "당의 압박에 대비" }
+  tags: [war]
+  sources: ["『삼국사기』 고구려본기 영류왕 14년"]
+
+- id: daeyaseong-642
+  year: 642
+  title:
+    ko: 대야성 전투
+  summary:
+    ko: 백제 의자왕이 신라의 대야성(합천)을 비롯한 40여 성을 빼앗았다. 위기에 몰린 신라는 김춘추를 고구려와 당에 보내 도움을 청했다.
+  subjects: [baekje, silla]
+  links:
+    - { from: baekje, to: silla, note: "대야성 등 40여 성 공격" }
+  tags: [war]
+  sources: ["『삼국사기』 백제본기 의자왕 2년", "『삼국사기』 신라본기 선덕왕 11년"]
+
+- id: yeon-gaesomun-642
+  year: 642
+  title:
+    ko: 연개소문의 정변
+  summary:
+    ko: 연개소문이 영류왕과 반대파 귀족을 제거하고 보장왕을 세운 뒤 권력을 잡았다. 당에 강경한 정책을 폈다.
+  subjects: [goguryeo]
+  links:
+    - { from: goguryeo, to: tang, note: "대당 강경 정책" }
+  tags: [politics]
+  sources: ["『삼국사기』 고구려본기 영류왕 25년"]
+
+- id: ansiseong-645
+  year: 645
+  title:
+    ko: 안시성 전투
+  summary:
+    ko: 당 태종이 직접 대군을 이끌고 고구려에 쳐들어와 요동성 등을 함락했으나, 안시성에서 두 달 넘게 막혀 물러났다.
+  subjects: [goguryeo, tang]
+  links:
+    - { from: tang, to: goguryeo, note: "당 태종의 친정" }
+    - { from: goguryeo, to: tang, note: "안시성 방어로 당군 퇴각" }
+  tags: [war]
+  sources: ["『삼국사기』 고구려본기 보장왕 4년"]
+
+- id: bidam-647
+  year: 647
+  title:
+    ko: 비담의 난
+  summary:
+    ko: 상대등 비담이 여왕은 나라를 잘 다스릴 수 없다며 반란을 일으켰다. 김춘추와 김유신이 이를 진압하고 권력의 중심에 섰다.
+  subjects: [silla]
+  tags: [politics]
+  sources: ["『삼국사기』 신라본기 선덕왕 16년"]
+
+- id: silla-tang-alliance-648
+  year: 648
+  title:
+    ko: 나당 동맹
+  summary:
+    ko: 김춘추가 당에 건너가 당 태종과 군사 동맹을 맺었다. 백제와 고구려를 함께 치기로 약속했다.
+  subjects: [silla, tang]
+  links:
+    - { from: silla, to: tang, note: "김춘추의 외교" }
+    - { from: tang, to: silla, note: "군사 동맹 약속" }
+  tags: [diplomacy]
+  sources: ["『삼국사기』 신라본기 진덕왕 2년"]
+
+- id: muyeol-654
+  year: 654
+  title:
+    ko: 태종 무열왕 즉위
+  summary:
+    ko: 김춘추가 진골 출신으로 처음 왕위에 올랐다. 이후 무열왕의 직계 자손이 왕위를 이었다.
+  subjects: [silla]
+  tags: [politics]
+  sources: ["『삼국사기』 신라본기 태종 무열왕 원년"]
+
+# ── 통일 전쟁 (660 ~ 676) ────────────────────────────────
+
+- id: baekje-falls-660
+  year: 660
+  title:
+    ko: 백제 멸망
+  summary:
+    ko: 김유신의 신라군이 황산벌에서 계백의 결사대를 물리치고, 바다를 건너온 당군과 함께 사비성을 함락했다. 당은 옛 백제 땅에 웅진도독부를 두었다.
+  subjects: [baekje, silla, tang]
+  links:
+    - { from: silla, to: baekje, note: "황산벌 전투" }
+    - { from: tang, to: baekje, note: "소정방의 당군 상륙" }
+  tags: [war]
+  sources: ["『삼국사기』 백제본기 의자왕 20년", "『삼국사기』 신라본기 태종 무열왕 7년"]
+
+- id: baekje-restoration-660
+  year: 660
+  endYear: 663
+  title:
+    ko: 백제 부흥 운동
+  summary:
+    ko: 복신, 도침, 흑치상지 등이 왜에 있던 왕자 부여풍을 왕으로 세우고 주류성과 임존성을 중심으로 백제를 되살리려 했다. 지도층의 내분과 나당 연합군의 공격으로 실패했다.
+  subjects: [silla, tang, wa]
+  links:
+    - { from: wa, to: tang, note: "부여풍 귀국과 부흥군 지원" }
+    - { from: silla, to: tang, note: "나당 연합군의 진압" }
+  tags: [war]
+  sources: ["『삼국사기』 백제본기 의자왕 20년 이후 기사", "『일본서기』 사이메이·덴지 기"]
+
+- id: baekgang-663
+  year: 663
+  title:
+    ko: 백강 전투
+  summary:
+    ko: 백제 부흥군을 돕기 위해 건너온 왜의 수군이 백강 어귀에서 나당 연합군에게 크게 패했다. 이후 백제 부흥 운동은 힘을 잃었다.
+  subjects: [wa, tang, silla]
+  links:
+    - { from: wa, to: tang, note: "부흥군 지원 수군 파견" }
+    - { from: tang, to: wa, note: "왜 수군 대패, 이후 왜는 방어 체제 정비" }
+    - { from: silla, to: wa, note: "육상에서 부흥군 진압" }
+  tags: [war]
+  sources: ["『일본서기』 덴지 2년", "『구당서』 유인궤전"]
+
+- id: goguryeo-falls-668
+  year: 668
+  title:
+    ko: 고구려 멸망
+  summary:
+    ko: 연개소문이 죽은 뒤 아들들 사이에 권력 다툼이 벌어져 고구려가 약해졌다. 나당 연합군이 평양성을 함락하여 고구려가 멸망했고, 당은 평양에 안동도호부를 두었다.
+  subjects: [goguryeo, silla, tang]
+  links:
+    - { from: tang, to: goguryeo, note: "이적의 당군" }
+    - { from: silla, to: goguryeo, note: "신라군 참전" }
+  tags: [war]
+  sources: ["『삼국사기』 고구려본기 보장왕 27년", "『삼국사기』 신라본기 문무왕 8년"]
+
+- id: goguryeo-restoration-670
+  year: 670
+  endYear: 673
+  title:
+    ko: 고구려 부흥 운동
+  summary:
+    ko: 검모잠이 보장왕의 외손 안승을 왕으로 세워 고구려를 되살리려 했다. 신라는 안승을 받아들여 금마저(익산)에 머물게 하고 당을 견제하는 데 활용했다.
+  subjects: [silla, tang]
+  links:
+    - { from: silla, to: tang, note: "고구려 부흥군을 지원해 당 견제" }
+  tags: [war]
+  sources: ["『삼국사기』 신라본기 문무왕 10년"]
+
+- id: silla-tang-war-670
+  year: 670
+  endYear: 676
+  title:
+    ko: 나당 전쟁
+  summary:
+    ko: 당이 한반도 전체를 지배하려 하자 신라가 맞서 싸웠다. 매소성(675)과 기벌포(676)에서 당군을 물리쳐 대동강에서 원산만에 이르는 이남 지역을 차지하고 삼국 통일을 이루었다.
+  subjects: [silla, tang]
+  links:
+    - { from: tang, to: silla, note: "한반도 지배 시도" }
+    - { from: silla, to: tang, note: "매소성·기벌포 승리, 당군 축출" }
+  tags: [war]
+  sources: ["『삼국사기』 신라본기 문무왕 10~16년"]
+
+# ── 통일 신라 (676 ~ 900) ────────────────────────────────
+
+- id: kim-heumdol-681
+  year: 681
+  title:
+    ko: 김흠돌의 난
+  summary:
+    ko: 신문왕의 장인 김흠돌이 반란을 꾀하다 처형되었다. 신문왕은 이를 계기로 귀족 세력을 숙청하고 왕권을 강화했다.
+  subjects: [silla]
+  tags: [politics]
+  sources: ["『삼국사기』 신라본기 신문왕 원년"]
+
+- id: gukhak-682
+  year: 682
+  title:
+    ko: 국학 설치
+  summary:
+    ko: 신문왕이 유학 교육 기관인 국학을 세워 관리를 양성했다.
+  subjects: [silla]
+  tags: [culture]
+  sources: ["『삼국사기』 신라본기 신문왕 2년"]
+
+- id: nine-provinces-685
+  year: 685
+  title:
+    ko: 9주 5소경 정비
+  summary:
+    ko: 넓어진 영토를 9주로 나누고 지방의 중요한 곳에 5소경을 두어 지방 통치 체제를 갖추었다.
+  subjects: [silla]
+  tags: [politics]
+  sources: ["『삼국사기』 신라본기 신문왕 5년"]
+
+- id: official-land-687
+  year: 687
+  title:
+    ko: 관료전 지급
+  summary:
+    ko: 관리에게 토지에서 조세만 거둘 수 있는 관료전을 지급했다.
+  subjects: [silla]
+  tags: [economy]
+  sources: ["『삼국사기』 신라본기 신문왕 7년"]
+
+- id: nogeup-abolished-689
+  year: 689
+  title:
+    ko: 녹읍 폐지
+  summary:
+    ko: 귀족이 토지와 그 땅의 백성까지 지배하던 녹읍을 없애 귀족의 경제 기반을 약화시켰다.
+  subjects: [silla]
+  tags: [economy]
+  sources: ["『삼국사기』 신라본기 신문왕 9년"]
+
+- id: jeongjeon-722
+  year: 722
+  title:
+    ko: 정전 지급
+  summary:
+    ko: 성덕왕이 백성에게 정전을 지급했다.
+  subjects: [silla]
+  tags: [economy]
+  sources: ["『삼국사기』 신라본기 성덕왕 21년"]
+
+- id: paegang-735
+  year: 735
+  title:
+    ko: 당, 패강 이남 신라 영토 인정
+  summary:
+    ko: 발해를 견제하려는 당이 패강(대동강) 이남의 땅을 신라의 영토로 공식 인정했다.
+  subjects: [silla, tang]
+  links:
+    - { from: tang, to: silla, note: "패강 이남 영토 인정" }
+  tags: [diplomacy]
+  sources: ["『삼국사기』 신라본기 성덕왕 34년"]
+
+- id: bulguksa-751
+  year: 751
+  title:
+    ko: 불국사와 석굴암 창건
+  summary:
+    ko: 김대성이 불국사와 석불사(석굴암)를 짓기 시작했다. 통일 신라 불교문화의 대표 유산이다.
+  subjects: [silla]
+  tags: [culture]
+  sources: ["『삼국유사』 권5 효선 대성효이세부모"]
+
+- id: nogeup-restored-757
+  year: 757
+  title:
+    ko: 녹읍 부활
+  summary:
+    ko: 귀족의 반발로 녹읍이 다시 생겨 왕권이 약해지기 시작했다.
+  subjects: [silla]
+  tags: [economy]
+  sources: ["『삼국사기』 신라본기 경덕왕 16년"]
+
+- id: dokseo-788
+  year: 788
+  title:
+    ko: 독서삼품과 실시
+  summary:
+    ko: 원성왕이 유교 경전을 읽은 수준에 따라 관리를 뽑는 독서삼품과를 실시했다. 진골 귀족의 반대로 제대로 시행되지 못했다.
+  subjects: [silla]
+  tags: [politics]
+  sources: ["『삼국사기』 신라본기 원성왕 4년"]
+
+- id: kim-heonchang-822
+  year: 822
+  title:
+    ko: 김헌창의 난
+  summary:
+    ko: 웅천주 도독 김헌창이 아버지가 왕이 되지 못한 것에 불만을 품고 반란을 일으켰다. 신라 하대 왕위 다툼과 지방 세력 성장을 보여 준다.
+  subjects: [silla]
+  tags: [politics]
+  sources: ["『삼국사기』 신라본기 헌덕왕 14년"]
+
+- id: cheonghaejin-828
+  year: 828
+  title:
+    ko: 청해진 설치
+  summary:
+    ko: 장보고가 완도에 청해진을 설치해 해적을 소탕하고 당·신라·일본을 잇는 해상 무역을 장악했다.
+  subjects: [silla]
+  links:
+    - { from: silla, to: tang, note: "해상 무역" }
+    - { from: silla, to: japan, note: "해상 무역" }
+  tags: [economy]
+  sources: ["『삼국사기』 신라본기 흥덕왕 3년"]
+
+- id: jang-bogo-846
+  year: 846
+  title:
+    ko: 장보고 피살
+  summary:
+    ko: 딸을 왕비로 들이려다 귀족의 반대에 부딪힌 장보고가 암살되었고, 이후 청해진이 없어졌다. 『삼국사기』는 846년, 일본 기록은 841년으로 전한다.
+  subjects: [silla]
+  tags: [politics]
+  sources: ["『삼국사기』 신라본기 문성왕 8년", "『속일본후기』 조와 9년"]
+
+- id: wonjong-aeno-889
+  year: 889
+  title:
+    ko: 원종·애노의 난
+  summary:
+    ko: 진성여왕 때 세금 독촉에 반발한 농민들이 사벌주(상주)에서 봉기했다. 이후 전국에서 농민 봉기가 이어졌다.
+  subjects: [silla]
+  tags: [society]
+  sources: ["『삼국사기』 신라본기 진성왕 3년"]
+
+# ── 발해 (698 ~ 926) ────────────────────────────────────
+
+- id: balhae-founded-698
+  year: 698
+  title:
+    ko: 발해 건국
+  summary:
+    ko: 고구려 장수 출신 대조영이 고구려 유민과 말갈인을 이끌고 동모산에서 발해를 세웠다. 발해는 스스로 고구려를 계승했다고 밝혔다.
+  subjects: [balhae]
+  links:
+    - { from: tang, to: balhae, note: "당의 통제에서 벗어나 건국" }
+  tags: [politics]
+  sources: ["『구당서』 발해말갈전", "『신당서』 발해전"]
+
+- id: balhae-japan-727
+  year: 727
+  title:
+    ko: 발해의 일본 사신 파견
+  summary:
+    ko: 무왕이 일본에 처음 사신을 보내 국교를 맺었다. 국서에서 발해가 고구려를 이었음을 밝혔다.
+  subjects: [balhae, japan]
+  links:
+    - { from: balhae, to: japan, note: "사신 파견과 국교" }
+  tags: [diplomacy]
+  sources: ["『속일본기』 신귀 4년"]
+
+- id: balhae-attacks-tang-732
+  year: 732
+  endYear: 733
+  title:
+    ko: 발해의 당 등주 공격
+  summary:
+    ko: 무왕이 장문휴를 보내 당의 등주(산둥반도)를 공격했다. 당의 요청을 받은 신라가 발해의 남쪽을 공격했으나 큰 눈 때문에 물러났다.
+  subjects: [balhae, tang, silla]
+  links:
+    - { from: balhae, to: tang, note: "장문휴의 등주 공격" }
+    - { from: tang, to: silla, note: "발해 공격 요청" }
+    - { from: silla, to: balhae, note: "당의 요청으로 발해 남쪽 공격" }
+  tags: [war]
+  sources: ["『신당서』 발해전", "『삼국사기』 신라본기 성덕왕 32년"]
+
+- id: balhae-munwang-756
+  year: 756
+  precision: decade
+  title:
+    ko: 문왕의 체제 정비
+  summary:
+    ko: 문왕이 당의 제도를 받아들여 3성 6부의 중앙 조직을 갖추고 상경으로 도읍을 옮겼다. 당·일본과 활발히 교류하고 신라도를 통해 신라와도 오갔다.
+  subjects: [balhae]
+  links:
+    - { from: tang, to: balhae, note: "3성 6부 등 제도 수용" }
+    - { from: balhae, to: japan, note: "사신 왕래" }
+    - { from: balhae, to: silla, note: "신라도를 통한 교류" }
+  tags: [politics]
+  sources: ["『신당서』 발해전"]
+
+- id: balhae-seonwang-818
+  year: 818
+  endYear: 830
+  title:
+    ko: 선왕과 해동성국
+  summary:
+    ko: 선왕이 말갈 부족을 복속시키고 요동 방면으로 진출해 발해의 영토가 가장 넓어졌다. 당은 이 무렵의 발해를 해동성국이라 불렀다.
+  subjects: [balhae]
+  links:
+    - { from: balhae, to: tang, note: "해동성국이라 불림" }
+  tags: [politics]
+  sources: ["『신당서』 발해전"]
+
+- id: balhae-falls-926
+  year: 926
+  title:
+    ko: 발해 멸망
+  summary:
+    ko: 거란(요)의 야율아보기가 발해의 수도 상경을 함락해 발해가 멸망했다. 세자 대광현 등 많은 유민이 고려로 넘어왔다.
+  subjects: [balhae, liao, goryeo]
+  links:
+    - { from: liao, to: balhae, note: "야율아보기의 침입" }
+    - { from: balhae, to: goryeo, note: "발해 유민의 고려 망명" }
+  tags: [war]
+  sources: ["『요사』 태조본기 천현 원년", "『고려사』 세가 태조"]
+
+# ── 후삼국 (900 ~ 935) ───────────────────────────────────
+
+- id: hubaekje-founded-900
+  year: 900
+  title:
+    ko: 후백제 건국
+  summary:
+    ko: 신라의 지방 통제가 무너진 틈을 타 견훤이 완산주(전주)에 도읍하고 후백제를 세웠다.
+  subjects: [hubaekje, silla]
+  links:
+    - { from: silla, to: hubaekje, note: "신라의 지방 통제 약화" }
+  tags: [politics]
+  sources: ["『삼국사기』 권50 열전 견훤"]
+
+- id: hugoguryeo-founded-901
+  year: 901
+  title:
+    ko: 후고구려 건국
+  summary:
+    ko: 신라 왕족 출신이라 전해지는 궁예가 송악(개성)에 도읍하고 후고구려를 세웠다. 이후 국호를 마진, 태봉으로 바꾸고 도읍을 철원으로 옮겼다.
+  subjects: [hugoguryeo, silla]
+  links:
+    - { from: silla, to: hugoguryeo, note: "신라의 지방 통제 약화" }
+  tags: [politics]
+  sources: ["『삼국사기』 권50 열전 궁예"]
+
+- id: goryeo-founded-918
+  year: 918
+  title:
+    ko: 고려 건국
+  summary:
+    ko: 신하들이 폭정을 일삼던 궁예를 몰아내고 왕건을 왕으로 세웠다. 왕건은 국호를 고려라 하고 이듬해 도읍을 송악으로 옮겼다.
+  subjects: [goryeo, hugoguryeo]
+  links:
+    - { from: hugoguryeo, to: goryeo, note: "궁예 축출, 왕건 즉위" }
+  tags: [politics]
+  sources: ["『고려사』 세가 태조 원년"]
+
+- id: gongsan-927
+  year: 927
+  title:
+    ko: 공산 전투
+  summary:
+    ko: 견훤이 경주에 쳐들어가 경애왕을 죽게 했다. 신라를 도우러 온 왕건의 고려군은 돌아가는 후백제군과 공산(대구 팔공산)에서 싸워 크게 졌다.
+  subjects: [hubaekje, goryeo, silla]
+  links:
+    - { from: hubaekje, to: silla, note: "경주 침입" }
+    - { from: hubaekje, to: goryeo, note: "공산에서 고려군 격파" }
+    - { from: goryeo, to: silla, note: "신라 구원" }
+  tags: [war]
+  sources: ["『삼국사기』 신라본기 경애왕 4년", "『고려사』 세가 태조 10년"]
+
+- id: gochang-930
+  year: 930
+  title:
+    ko: 고창 전투
+  summary:
+    ko: 고려가 고창(안동)에서 후백제군을 크게 물리쳤다. 이후 경상도 지역의 호족들이 고려로 기울었다.
+  subjects: [goryeo, hubaekje]
+  links:
+    - { from: goryeo, to: hubaekje, note: "고창 전투 승리" }
+  tags: [war]
+  sources: ["『고려사』 세가 태조 13년"]
+
+- id: silla-falls-935
+  year: 935
+  title:
+    ko: 신라 멸망
+  summary:
+    ko: 경순왕이 나라를 고려에 넘겨 신라가 멸망했다. 이듬해(936) 고려가 후백제를 무너뜨려 후삼국을 통일했다.
+  subjects: [silla, goryeo]
+  links:
+    - { from: silla, to: goryeo, note: "경순왕의 귀부" }
+  tags: [politics]
+  sources: ["『삼국사기』 신라본기 경순왕 9년", "『고려사』 세가 태조 18년"]

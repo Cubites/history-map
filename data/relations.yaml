@@ -1,5 +1,11 @@
 # 나라 사이의 관계 (DESIGN.md §4.3)
-# ※ 샘플 데이터. 운영자 검수 필요.
+# 3번 묶음(600~935). 운영자 검수 필요.
 
 - { type: successor_of, subject: tang, object: sui, from: 618, to: null }
 - { type: successor_of, subject: balhae, object: goguryeo, from: 698, to: null }
+- { type: successor_of, subject: japan, object: wa, from: 701, to: null }
+- { type: successor_of, subject: later-liang, object: tang, from: 907, to: null }
+- { type: successor_of, subject: later-tang, object: later-liang, from: 923, to: null }
+- { type: successor_of, subject: goryeo, object: hugoguryeo, from: 918, to: null }
+- { type: successor_of, subject: goryeo, object: silla, from: 935, to: null }
+- { type: successor_of, subject: goryeo, object: hubaekje, from: 936, to: null }

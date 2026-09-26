@@ -1,5 +1,5 @@
-# 중국 왕조 (P1 샘플)
-# ※ 샘플 데이터. 운영자 검수 필요.
+# 중국 왕조
+# 3번 묶음(600~935): 한국사와 관계된 왕조만. 운영자 검수 필요.
 
 - id: sui
   level: polity
@@ -7,6 +7,7 @@
   from: 581
   to: 618
   color: "#6f8fb3"
+  summary: 남북조를 통일한 왕조. 고구려 원정에 거듭 실패하고 멸망
   basis:
     type: primary_source
     refs: ["『수서』"]
@@ -17,6 +18,29 @@
   from: 618
   to: 907
   color: "#5b7fa8"
+  summary: 수를 이은 왕조. 신라와 연합해 백제·고구려를 무너뜨렸으나 나당 전쟁에서 물러남
   basis:
     type: primary_source
     refs: ["『구당서』", "『신당서』"]
+
+- id: later-liang
+  level: polity
+  names: { ko: 후량, hanja: 後梁, en: Later Liang }
+  from: 907
+  to: 923
+  color: "#7e93ad"
+  summary: 당을 무너뜨리고 화북에 세워진 5대 첫 왕조. 지도에는 화북만 표시 (남쪽의 10국은 표시하지 않음)
+  basis:
+    type: primary_source
+    refs: ["『구오대사』", "『신오대사』"]
+
+- id: later-tang
+  level: polity
+  names: { ko: 후당, hanja: 後唐, en: Later Tang }
+  from: 923
+  to: 936
+  color: "#6a86a6"
+  summary: 후량을 이은 5대 두 번째 왕조. 지도에는 화북만 표시 (남쪽의 10국은 표시하지 않음)
+  basis:
+    type: primary_source
+    refs: ["『구오대사』", "『신오대사』"]

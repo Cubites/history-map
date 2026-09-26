@@ -1,5 +1,5 @@
-# 북방·내륙 아시아 (P1 샘플)
-# ※ 샘플 데이터. 운영자 검수 필요.
+# 북방·내륙 아시아
+# 3번 묶음(600~935). 운영자 검수 필요.
 
 - id: eastern-turks
   level: polity
@@ -7,6 +7,7 @@
   from: 583
   to: 630
   color: "#8f8a5a"
+  summary: 몽골 초원의 유목 국가. 수·당과 대립하다 당 태종에게 멸망
   basis:
     type: primary_source
     refs: ["『수서』 돌궐전", "『구당서』 돌궐전"]
@@ -17,7 +18,20 @@
   from: 618
   to: 842
   color: "#a0785a"
+  summary: 티베트 고원의 왕국. 당의 서쪽에서 세력을 겨룸
   basis:
     type: primary_source
     refs: ["『구당서』 토번전"]
     foundingNote: 송첸감포의 통일 시기(7세기 초)는 학설에 따라 차이가 있음
+
+- id: liao
+  level: polity
+  names: { ko: 요(거란), hanja: 遼, en: Liao }
+  from: 916
+  to: 1125
+  color: "#8a7f5a"
+  summary: 야율아보기가 거란 부족을 통합해 세운 나라. 926년 발해를 멸망시킴
+  basis:
+    type: primary_source
+    refs: ["『요사』 태조본기"]
+    foundingNote: 916년 야율아보기가 황제를 칭한 해를 건국으로 봄. 국호를 요로 정한 것은 그 뒤의 일

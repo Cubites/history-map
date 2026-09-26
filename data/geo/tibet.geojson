@@ -6,9 +6,9 @@
    "properties": {
     "entityId": "tibet",
     "from": 618,
-    "to": 701,
+    "to": 843,
     "certainty": "estimated",
-    "source": "P1 샘플: 대략적인 추정 경계. QGIS로 다시 그려야 함"
+    "source": "중고등학교 한국사 교과서 시대별 지도의 일반적인 경계를 따른 대략적인 추정. 운영자 검수 필요"
    },
    "geometry": {
     "type": "Polygon",
