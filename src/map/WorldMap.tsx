@@ -130,8 +130,9 @@ export default function WorldMap({ data }: { data: StaticData }) {
             setGeoVersion((v) => v + 1);
           })
           .catch((e: Error) => {
-            requested.current.delete(key);
-            setError(e.message);
+            // 한 나라의 한 단계 파일이 없어도 다른 단계로 대신 그리므로(featureFor) 지도 전체 오류로 띄우지 않는다.
+            // 매 프레임 다시 요청하지 않도록 요청 기록은 남겨 둔다.
+            console.warn(`영토 파일을 불러오지 못함 (${key}): ${e.message}`);
           });
       }
     },

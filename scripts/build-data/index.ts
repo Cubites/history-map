@@ -242,8 +242,10 @@ async function writeLods(clipped: ClippedTerritory[], land50: Land, land110: Lan
     await writeJson(path.join(OUT, `land-${lod}.topo.json`), subTopology(topo, 'land', topo.objects.land.geometries));
     const byKey = new Map(topo.objects.territories.geometries.map((g) => [g.id as string, g]));
     for (const [entityId, keys] of byEntity) {
+      // 간략 단계(1:110m)에는 작은 섬이 없어 도형이 비는 나라가 있다 (예: 제주의 탐라총관부).
+      // 앱이 파일을 찾다 실패하지 않도록 비어 있어도 파일을 만든다. 앱은 다른 단계로 대신 그린다.
       const geometries = keys.flatMap((k) => byKey.get(k) ?? []);
-      if (geometries.length) await writeJson(path.join(OUT, 'geo', lod, `${entityId}.topo.json`), subTopology(topo, 'territories', geometries));
+      await writeJson(path.join(OUT, 'geo', lod, `${entityId}.topo.json`), subTopology(topo, 'territories', geometries));
     }
     summary.push(`${lod} ${countPoints(topo).toLocaleString()}점`);
   }
