@@ -129,3 +129,16 @@
   basis:
     type: primary_source
     refs: ["『고려사』 세가 원종 14년", "『고려사』 세가 충렬왕 20년"]
+
+# ── 임진왜란 일본군 점령지 (6번 묶음). 조선 색 위에 일본 색으로 빗금 ──
+
+- id: imjin-occupied
+  level: region
+  names: { ko: 임진왜란 일본군 점령지, en: Japanese-occupied Joseon (Imjin War) }
+  from: 1592
+  to: 1598
+  color: "#3e8ab8"
+  summary: 1592년 일본군이 한양·평양과 함경도까지 차지한 지역. 1593년 평양성 탈환 뒤 경상도 남해안의 왜성 일대로 물러났다가 1598년 철수함
+  basis:
+    type: primary_source
+    refs: ["『선조실록』", "유성룡, 『징비록』"]

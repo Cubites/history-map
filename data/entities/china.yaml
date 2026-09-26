@@ -128,3 +128,16 @@
   basis:
     type: primary_source
     refs: ["『명사』"]
+
+# ── 6번 묶음 (1592 ~ 1876) ──
+
+- id: qing
+  level: polity
+  names: { ko: 청, hanja: 淸, en: Qing }
+  from: 1636
+  to: 1912
+  color: "#c49a3c"
+  summary: 홍타이지가 후금의 국호를 바꿔 세운 왕조. 병자호란으로 조선과 군신 관계를 맺고, 1644년 베이징에 들어가 중국을 지배함. 1860년 베이징 조약으로 연해주를 러시아에 넘김
+  basis:
+    type: primary_source
+    refs: ["『청사고』", "『인조실록』"]

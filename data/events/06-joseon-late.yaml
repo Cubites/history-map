@@ -1,0 +1,716 @@
+# 6번 묶음: 조선 후기 (1592 ~ 1876)
+# 깊이: 한국사능력검정시험(심화) 수준. 서술은 새로 작성, 출처는 해당 기록이 실린 사료. 운영자 검수 필요.
+# 『조선왕조실록』의 왕 연차는 즉위 이듬해가 1년이다. 반정으로 즉위한 인조는 1623년이 1년이다.
+# 1876년 강화도 조약은 이 묶음의 마지막 사건으로 넣고, 개항 이후는 7번 묶음에서 다룬다.
+
+# ── 임진왜란과 정유재란 (1592 ~ 1598) ───────────────────
+
+- id: imjin-war-1592
+  year: 1592
+  title:
+    ko: 임진왜란 발발
+  summary:
+    ko: 도요토미 히데요시가 보낸 일본군이 부산진과 동래성을 함락했다. 신립이 충주 탄금대에서 패하자 선조는 의주로 피란했고, 일본군은 한양과 평양, 함경도까지 차지했다.
+  subjects: [joseon, japan, imjin-occupied]
+  links:
+    - { from: japan, to: joseon, note: "일본군의 침략" }
+  tags: [war]
+  sources: ["『선조실록』 선조 25년", "유성룡, 『징비록』"]
+
+- id: yi-sunsin-1592
+  year: 1592
+  title:
+    ko: 이순신의 해전 승리 (옥포·한산도 대첩)
+  summary:
+    ko: 전라 좌수사 이순신이 옥포 해전에서 첫 승리를 거두고, 거북선을 앞세워 사천 해전 등에서 이겼다. 한산도 대첩에서는 학익진으로 일본 수군을 크게 무찔러 남해의 제해권을 지켰고, 곡창 지대인 전라도를 보호했다.
+  subjects: [joseon, japan]
+  links:
+    - { from: joseon, to: japan, note: "조선 수군의 승리" }
+  tags: [war]
+  sources: ["『선조실록』 선조 25년", "이순신, 『난중일기』"]
+
+- id: righteous-army-1592
+  year: 1592
+  title:
+    ko: 의병과 승병의 활약
+  summary:
+    ko: 곽재우(홍의장군), 조헌, 고경명, 정문부 등이 향토 지리를 이용해 의병을 일으켰고, 휴정(서산 대사)과 유정(사명 대사)은 승병을 이끌었다.
+  subjects: [joseon]
+  links:
+    - { from: joseon, to: japan, note: "의병의 항전" }
+  tags: [war]
+  sources: ["『선조실록』 선조 25년", "『선조수정실록』 선조 25년"]
+
+- id: jinju-1592
+  year: 1592
+  title:
+    ko: 진주 대첩
+  summary:
+    ko: 진주 목사 김시민이 적은 병력으로 진주성을 지켜 일본군의 전라도 진출을 막았다. 이듬해 2차 진주성 전투에서는 성이 함락되었다.
+  subjects: [joseon, japan]
+  links:
+    - { from: japan, to: joseon, note: "진주성 공격" }
+  tags: [war]
+  sources: ["『선조수정실록』 선조 25년"]
+
+- id: pyongyang-recapture-1593
+  year: 1593
+  title:
+    ko: 조·명 연합군의 평양성 탈환과 행주 대첩
+  summary:
+    ko: 명의 이여송이 이끄는 원군과 조선군이 평양성을 되찾았다. 권율은 행주산성에서 일본군을 크게 물리쳤다. 일본군은 한양에서 물러나 남해안에 왜성을 쌓고 명과 휴전 협상에 들어갔다.
+  subjects: [joseon, ming, japan]
+  links:
+    - { from: ming, to: joseon, note: "명의 원군 파견" }
+    - { from: joseon, to: japan, note: "평양성 탈환·행주 대첩" }
+  tags: [war]
+  sources: ["『선조실록』 선조 26년", "유성룡, 『징비록』"]
+
+- id: hullyeon-dogam-1593
+  year: 1593
+  title:
+    ko: 훈련도감 설치
+  summary:
+    ko: 유성룡의 건의로 포수·사수·살수의 삼수병으로 이루어진 훈련도감을 설치했다. 급료를 받는 직업 군인으로 구성되었다. 지방에는 양반부터 노비까지 편성한 속오군을 두었다.
+  subjects: [joseon]
+  tags: [politics, war]
+  sources: ["『선조실록』 선조 26년"]
+
+- id: jeongyu-war-1597
+  year: 1597
+  endYear: 1598
+  title:
+    ko: 정유재란과 명량·노량 해전
+  summary:
+    ko: 휴전 협상이 깨지자 일본군이 다시 쳐들어왔다. 원균이 칠천량에서 패한 뒤 다시 기용된 이순신이 13척으로 명량에서 승리했다. 1598년 히데요시가 죽자 일본군이 물러났고, 이순신은 노량 해전에서 전사했다.
+  subjects: [joseon, japan, ming]
+  links:
+    - { from: japan, to: joseon, note: "재침략" }
+    - { from: joseon, to: japan, note: "명량·노량 해전" }
+    - { from: ming, to: joseon, note: "명 수군의 참전" }
+  tags: [war]
+  sources: ["『선조실록』 선조 30년·31년", "이순신, 『난중일기』"]
+
+- id: imjin-aftermath-1598
+  year: 1598
+  title:
+    ko: 왜란의 영향
+  summary:
+    ko: 인구와 농경지가 크게 줄고 불국사, 경복궁, 사고 등이 불탔다. 재정을 메우려 공명첩을 팔아 신분제가 흔들렸다. 일본은 조선의 도공과 활자, 서적을 가져가 문화가 발전했고, 명은 국력이 약해져 여진이 성장하는 계기가 되었다.
+  subjects: [joseon, japan, ming]
+  links:
+    - { from: joseon, to: japan, note: "도공·활자·서적 약탈, 성리학 전래" }
+  tags: [society]
+  sources: ["『선조실록』", "유성룡, 『징비록』"]
+
+# ── 광해군과 호란 ───────────────────────────────────────
+
+- id: daedongbeop-1608
+  year: 1608
+  title:
+    ko: 대동법 실시 (경기도)
+  summary:
+    ko: 이원익의 건의로 공납을 특산물 대신 토지 1결당 쌀 12두로 거두는 대동법을 경기도에 처음 실시하고 선혜청을 두었다. 관청에 물품을 대는 공인이 등장했다.
+  subjects: [joseon]
+  tags: [economy]
+  sources: ["『광해군일기』 광해군 즉위년"]
+
+- id: giyu-treaty-1609
+  year: 1607
+  endYear: 1609
+  title:
+    ko: 일본과 국교 재개 (기유약조)
+  summary:
+    ko: 에도 막부의 요청으로 회답 겸 쇄환사를 보내 포로를 데려오고(1607), 기유약조로 부산포에 왜관을 두고 세견선 20척의 교역을 허락했다.
+  subjects: [joseon, japan]
+  links:
+    - { from: japan, to: joseon, note: "국교 재개 요청" }
+    - { from: joseon, to: japan, note: "제한된 교역 허용" }
+  tags: [diplomacy]
+  sources: ["『선조실록』 선조 40년", "『광해군일기』 광해군 1년"]
+
+- id: donguibogam-1610
+  year: 1610
+  endYear: 1613
+  title:
+    ko: 허준의 『동의보감』
+  summary:
+    ko: 허준이 우리 약재와 처방을 정리한 의학서 『동의보감』을 완성해(1610) 간행했다(1613).
+  subjects: [joseon]
+  tags: [culture]
+  sources: ["『광해군일기』 광해군 2년·5년"]
+
+- id: hugeum-founded-1616
+  year: 1616
+  title:
+    ko: 후금 건국
+  summary:
+    ko: 누르하치가 임진왜란으로 명과 조선의 힘이 약해진 틈에 여진 부족을 통합해 후금을 세웠다. 1618년 명에 선전 포고하며 세력을 넓혔다.
+  subjects: [hugeum, ming]
+  links:
+    - { from: hugeum, to: ming, note: "명과의 대립" }
+  tags: [politics]
+  sources: ["『광해군일기』", "『청태조실록』"]
+
+- id: sarhu-1619
+  year: 1619
+  title:
+    ko: 광해군의 중립 외교 (사르후 전투)
+  summary:
+    ko: 명의 요청으로 강홍립이 이끄는 군대를 보냈으나, 광해군은 형세를 보아 행동하게 해 사르후 전투에서 후금에 항복하게 했다. 명과 후금 사이에서 실리를 찾은 중립 외교였다.
+  subjects: [joseon, ming, hugeum]
+  links:
+    - { from: ming, to: joseon, note: "원군 요청" }
+    - { from: joseon, to: hugeum, note: "강홍립의 출병과 항복" }
+  tags: [diplomacy, war]
+  sources: ["『광해군일기』 광해군 11년"]
+
+- id: injo-banjeong-1623
+  year: 1623
+  title:
+    ko: 인조반정
+  summary:
+    ko: 서인이 광해군의 중립 외교와 영창 대군 살해, 인목 대비 폐위를 문제 삼아 광해군을 몰아내고 인조를 세웠다. 이후 명을 가까이하고 후금을 멀리하는 친명배금 정책을 폈다.
+  subjects: [joseon]
+  tags: [politics]
+  sources: ["『인조실록』 인조 1년"]
+
+- id: yi-gwal-1624
+  year: 1624
+  title:
+    ko: 이괄의 난
+  summary:
+    ko: 반정 공신 이괄이 논공행상에 불만을 품고 난을 일으켜 한때 한양을 차지했다. 인조는 공주로 피란했다.
+  subjects: [joseon]
+  tags: [politics]
+  sources: ["『인조실록』 인조 2년"]
+
+- id: jeongmyo-horan-1627
+  year: 1627
+  title:
+    ko: 정묘호란
+  summary:
+    ko: 후금이 광해군을 위한 보복과 이괄의 난 잔당을 구실로 쳐들어왔다. 인조는 강화도로 피란했고, 정봉수·이립 등 의병이 맞섰다. 후금과 형제 관계를 맺고 강화했다.
+  subjects: [joseon, hugeum]
+  links:
+    - { from: hugeum, to: joseon, note: "후금의 침입" }
+  tags: [war]
+  sources: ["『인조실록』 인조 5년"]
+
+- id: yeongjeongbeop-1635
+  year: 1635
+  title:
+    ko: 영정법 실시
+  summary:
+    ko: 풍흉에 관계없이 전세를 토지 1결당 쌀 4~6두로 고정했다.
+  subjects: [joseon]
+  tags: [economy]
+  sources: ["『인조실록』 인조 13년"]
+
+- id: byeongja-horan-1636
+  year: 1636
+  endYear: 1637
+  title:
+    ko: 병자호란과 삼전도의 굴욕
+  summary:
+    ko: 후금이 국호를 청으로 바꾸고 군신 관계를 요구하자 주화론(최명길)과 척화론(김상헌)이 맞섰다. 척화론에 따라 요구를 거부하자 청 태종이 쳐들어왔다. 인조는 남한산성에서 버티다 삼전도에서 항복했고, 소현 세자·봉림 대군과 척화론자(삼학사)가 청에 끌려갔다.
+  subjects: [joseon, qing]
+  links:
+    - { from: qing, to: joseon, note: "청의 침입, 군신 관계 강요" }
+    - { from: joseon, to: qing, note: "왕자·척화론자 압송" }
+  tags: [war]
+  sources: ["『인조실록』 인조 14년·15년", "나만갑, 『병자록』"]
+
+- id: qing-conquest-1644
+  year: 1644
+  title:
+    ko: 명의 멸망과 청의 중국 지배
+  summary:
+    ko: 이자성의 반란군이 베이징을 함락해 명이 망하고, 청이 산해관을 넘어 베이징에 도읍했다. 조선에서는 명을 높이는 존명 의리와 소중화 의식이 강해졌다.
+  subjects: [qing, ming]
+  links:
+    - { from: qing, to: ming, note: "베이징 점령" }
+  tags: [war, politics]
+  sources: ["『인조실록』 인조 22년", "『청사고』"]
+
+- id: sohyeon-1645
+  year: 1645
+  title:
+    ko: 소현 세자의 귀국
+  summary:
+    ko: 청에 인질로 있던 소현 세자가 베이징에서 아담 샬과 사귀며 서양 과학과 천주교를 접하고 돌아왔으나, 귀국 두 달 만에 갑자기 죽었다.
+  subjects: [joseon, qing]
+  links:
+    - { from: qing, to: joseon, note: "서양 문물 전래" }
+  tags: [culture]
+  sources: ["『인조실록』 인조 23년"]
+
+# ── 효종 ~ 숙종: 북벌과 붕당의 변질 ─────────────────────
+
+- id: bukbeol-1649
+  year: 1649
+  endYear: 1659
+  title:
+    ko: 효종의 북벌 운동
+  summary:
+    ko: 효종이 송시열·이완 등과 함께 청을 치려는 북벌을 준비하며 어영청을 강화하고 군사를 길렀으나 효종이 죽으면서 실현되지 못했다.
+  subjects: [joseon]
+  links:
+    - { from: joseon, to: qing, note: "북벌 준비" }
+  tags: [politics, war]
+  sources: ["『효종실록』"]
+
+- id: hamel-1653
+  year: 1653
+  title:
+    ko: 하멜 표류
+  summary:
+    ko: 네덜란드인 하멜 일행이 제주도에 표류했다. 13년 뒤 탈출해 『하멜 표류기』로 조선을 유럽에 알렸다. 앞서 표류한 벨테브레이(박연)는 훈련도감에서 서양식 대포 제조를 도왔다.
+  subjects: [joseon]
+  tags: [diplomacy]
+  sources: ["『효종실록』 효종 4년", "하멜, 『하멜 표류기』"]
+
+- id: naseon-1654
+  year: 1654
+  endYear: 1658
+  title:
+    ko: 나선 정벌
+  summary:
+    ko: 청의 요청으로 조총 부대를 보내 흑룡강 일대에 내려온 러시아군과 싸웠다(1654·1658). 북벌을 위해 기른 군사력이 쓰인 사례이다.
+  subjects: [joseon, qing]
+  links:
+    - { from: qing, to: joseon, note: "원병 요청" }
+    - { from: joseon, to: qing, note: "조총 부대 파견" }
+  tags: [war]
+  sources: ["『효종실록』 효종 5년·9년", "신류, 『북정일기』"]
+
+- id: yesong-1659
+  year: 1659
+  endYear: 1674
+  title:
+    ko: 예송 논쟁
+  summary:
+    ko: 효종과 효종 비가 죽었을 때 자의 대비가 상복을 얼마 동안 입을지를 두고 서인과 남인이 맞섰다. 기해예송(1659)에서는 서인이, 갑인예송(1674)에서는 남인이 이겼다.
+  subjects: [joseon]
+  tags: [politics]
+  sources: ["『현종실록』 현종 즉위년", "『현종실록』 현종 15년"]
+
+- id: sangpyeong-tongbo-1678
+  year: 1678
+  title:
+    ko: 상평통보 전국 유통
+  summary:
+    ko: 상평통보를 법화로 정해 전국에 유통했다. 상품 화폐 경제가 발달하면서 동전이 널리 쓰였으나, 돈을 쌓아 두는 전황이 나타나기도 했다.
+  subjects: [joseon]
+  tags: [economy]
+  sources: ["『숙종실록』 숙종 4년"]
+
+- id: hwanguk-1680
+  year: 1680
+  endYear: 1694
+  title:
+    ko: 숙종의 환국
+  summary:
+    ko: 숙종이 집권 붕당을 한꺼번에 바꾸는 환국을 되풀이했다. 경신환국(1680)으로 서인이, 기사환국(1689)으로 남인이, 갑술환국(1694)으로 다시 서인이 집권했다. 서인은 노론과 소론으로 나뉘고 일당 전제화가 나타났다.
+  subjects: [joseon]
+  tags: [politics]
+  sources: ["『숙종실록』 숙종 6년·15년·20년"]
+
+- id: ogunyeong-1682
+  year: 1682
+  title:
+    ko: 5군영 체제 완성
+  summary:
+    ko: 금위영이 설치되면서 훈련도감, 어영청, 총융청, 수어청과 함께 5군영 체제가 완성되었다.
+  subjects: [joseon]
+  tags: [politics, war]
+  sources: ["『숙종실록』 숙종 8년"]
+
+- id: an-yongbok-1693
+  year: 1693
+  endYear: 1696
+  title:
+    ko: 안용복의 활동과 울릉도·독도
+  summary:
+    ko: 동래 어민 안용복이 울릉도에서 고기를 잡던 일본 어민과 다툰 뒤 일본에 건너가 울릉도와 독도가 조선 땅임을 주장했다. 1696년 에도 막부는 일본인의 울릉도 도해를 금지했다.
+  subjects: [joseon, japan]
+  links:
+    - { from: joseon, to: japan, note: "울릉도·독도 영유 주장" }
+    - { from: japan, to: joseon, note: "울릉도 도해 금지" }
+  tags: [diplomacy]
+  sources: ["『숙종실록』 숙종 19년·22년"]
+
+- id: daedongbeop-nationwide-1708
+  year: 1708
+  title:
+    ko: 대동법 전국 확대
+  summary:
+    ko: 황해도에까지 대동법을 시행하면서, 경기도에서 시작한 지 100년 만에 함경도·평안도를 뺀 전국에 대동법이 적용되었다.
+  subjects: [joseon]
+  tags: [economy]
+  sources: ["『숙종실록』 숙종 34년"]
+
+- id: baekdusan-stele-1712
+  year: 1712
+  title:
+    ko: 백두산정계비 건립
+  summary:
+    ko: 조선과 청이 국경을 정하고 백두산에 정계비를 세웠다. 비문의 "서쪽은 압록, 동쪽은 토문"에서 토문강의 해석을 두고 뒤에 간도 귀속 문제가 일어났다.
+  subjects: [joseon, qing]
+  links:
+    - { from: qing, to: joseon, note: "국경 확정 요구" }
+    - { from: joseon, to: qing, note: "정계비 건립" }
+  tags: [diplomacy]
+  sources: ["『숙종실록』 숙종 38년"]
+
+# ── 영조·정조의 탕평 정치 ───────────────────────────────
+
+- id: yeongjo-tangpyeong-1725
+  year: 1725
+  endYear: 1742
+  title:
+    ko: 영조의 탕평책
+  summary:
+    ko: 영조가 탕평의 뜻을 밝히고 붕당의 근거지인 서원을 정리했다. 이조 전랑의 후임자 추천권을 없애고 성균관 앞에 탕평비를 세웠다(1742).
+  subjects: [joseon]
+  tags: [politics]
+  sources: ["『영조실록』 영조 1년", "『영조실록』 영조 18년"]
+
+- id: yi-injwa-1728
+  year: 1728
+  title:
+    ko: 이인좌의 난
+  summary:
+    ko: 정권에서 밀려난 소론 강경파와 남인 일부가 영조의 정통성을 부정하며 난을 일으켰다. 진압 뒤 영조는 탕평을 더욱 강조했다.
+  subjects: [joseon]
+  tags: [politics]
+  sources: ["『영조실록』 영조 4년"]
+
+- id: sokdaejeon-1746
+  year: 1746
+  title:
+    ko: 『속대전』 편찬
+  summary:
+    ko: 『경국대전』 이후 바뀐 법령을 정리한 『속대전』을 펴냈다. 영조는 가혹한 형벌을 줄이고 신문고를 다시 설치하는 등 민생을 살폈다.
+  subjects: [joseon]
+  tags: [politics]
+  sources: ["『영조실록』 영조 22년"]
+
+- id: gyunyeokbeop-1750
+  year: 1750
+  title:
+    ko: 균역법 실시
+  summary:
+    ko: 1년에 군포 2필을 내던 것을 1필로 줄였다. 부족한 재정은 지주에게 토지 1결당 쌀 2두를 걷는 결작, 일부 상류층의 선무군관포, 어장세·선박세 등으로 메웠다.
+  subjects: [joseon]
+  tags: [economy]
+  sources: ["『영조실록』 영조 26년"]
+
+- id: jeongseon-1751
+  year: 1751
+  title:
+    ko: 정선의 「인왕제색도」와 진경산수화
+  summary:
+    ko: 정선이 우리 산천을 직접 보고 그린 진경산수화를 발전시켰다. 「인왕제색도」와 「금강전도」가 대표작이다.
+  subjects: [joseon]
+  tags: [culture]
+  sources: ["정선, 「인왕제색도」 화제"]
+
+- id: imo-hwabyeon-1762
+  year: 1762
+  title:
+    ko: 사도 세자의 죽음 (임오화변)
+  summary:
+    ko: 영조가 세자인 사도 세자를 뒤주에 가두어 죽게 했다. 이 일을 두고 세자를 동정하는 시파와 영조의 처분을 옳다고 보는 벽파가 나뉘었다.
+  subjects: [joseon]
+  tags: [politics]
+  sources: ["『영조실록』 영조 38년", "혜경궁 홍씨, 『한중록』"]
+
+- id: gyujanggak-1776
+  year: 1776
+  title:
+    ko: 정조 즉위와 규장각 설치
+  summary:
+    ko: 정조가 즉위하자 규장각을 설치해 정책 연구와 학문 기관으로 삼았다. 박제가, 유득공 등 서얼 출신을 검서관으로 등용하고, 젊은 관리를 다시 교육하는 초계문신제를 실시했다(1781).
+  subjects: [joseon]
+  tags: [politics, culture]
+  sources: ["『정조실록』 정조 즉위년", "『정조실록』 정조 5년"]
+
+- id: bak-jiwon-1780
+  year: 1780
+  title:
+    ko: 박지원의 『열하일기』와 북학
+  summary:
+    ko: 박지원이 청에 다녀와 『열하일기』를 쓰고 수레와 선박의 이용, 화폐 유통을 주장했다. 박제가는 『북학의』(1778)에서 소비를 늘려 생산을 자극해야 한다고 했다. 청의 문물을 배우자는 이들을 북학파(중상학파)라 한다.
+  subjects: [joseon, qing]
+  links:
+    - { from: joseon, to: qing, note: "연행 사신 수행" }
+    - { from: qing, to: joseon, note: "청 문물 수용 (북학)" }
+  tags: [culture]
+  sources: ["박지원, 『열하일기』", "박제가, 『북학의』"]
+
+- id: seohak-1784
+  year: 1784
+  title:
+    ko: 이승훈의 세례와 천주교 전파
+  summary:
+    ko: 서학으로 들어온 천주교를 연구하던 남인 학자 중 이승훈이 베이징에서 세례를 받고 돌아와 신앙 공동체를 만들었다. 평등 사상과 제사 거부로 정부와 갈등했다.
+  subjects: [joseon, qing]
+  links:
+    - { from: qing, to: joseon, note: "베이징을 통한 천주교 전래" }
+  tags: [culture, religion]
+  sources: ["『정조실록』", "황사영, 『황사영 백서』"]
+
+- id: daejeon-tongpyeon-1785
+  year: 1785
+  title:
+    ko: 『대전통편』 편찬
+  summary:
+    ko: 『경국대전』과 『속대전』 등을 하나로 모아 법전 『대전통편』을 펴냈다.
+  subjects: [joseon]
+  tags: [politics]
+  sources: ["『정조실록』 정조 9년"]
+
+- id: sinhae-1791
+  year: 1791
+  title:
+    ko: 신해통공과 신해박해
+  summary:
+    ko: 육의전을 뺀 시전 상인의 금난전권을 없애 자유로운 상업 활동을 허용했다(신해통공). 같은 해 윤지충이 어머니 제사를 거부하고 신주를 불태운 일로 처형되었다(신해박해).
+  subjects: [joseon]
+  tags: [economy, religion]
+  sources: ["『정조실록』 정조 15년"]
+
+- id: jangyongyeong-1793
+  year: 1793
+  title:
+    ko: 장용영 설치
+  summary:
+    ko: 정조가 국왕 친위 부대인 장용영을 만들어 군사적 기반을 강화했다. 한양에 내영, 수원 화성에 외영을 두었다.
+  subjects: [joseon]
+  tags: [politics, war]
+  sources: ["『정조실록』 정조 17년"]
+
+- id: hwaseong-1794
+  year: 1794
+  endYear: 1796
+  title:
+    ko: 수원 화성 축조
+  summary:
+    ko: 정조가 아버지 사도 세자의 묘를 옮긴 수원에 화성을 쌓았다. 정약용이 설계하고 거중기를 이용해 공사 기간을 줄였으며, 공사 과정을 『화성성역의궤』에 기록했다.
+  subjects: [joseon]
+  tags: [culture, politics]
+  sources: ["『정조실록』 정조 18년·20년", "『화성성역의궤』"]
+
+# ── 세도 정치와 사회 변동 ───────────────────────────────
+
+- id: sedo-1800
+  year: 1800
+  title:
+    ko: 순조 즉위와 세도 정치
+  summary:
+    ko: 정조가 죽고 어린 순조가 즉위하면서 안동 김씨 등 몇몇 외척 가문이 권력을 독점하는 세도 정치가 시작되었다. 비변사가 권력의 중심이 되고 매관매직과 삼정(전정·군정·환곡)의 문란이 심해졌다.
+  subjects: [joseon]
+  tags: [politics]
+  sources: ["『순조실록』"]
+
+- id: sinyu-1801
+  year: 1801
+  title:
+    ko: 공노비 해방과 신유박해
+  summary:
+    ko: 중앙 관청의 공노비 6만 6천여 명을 해방했다. 같은 해 천주교를 크게 탄압해 이승훈 등이 처형되고 정약용이 유배되었으며, 황사영 백서 사건이 일어났다.
+  subjects: [joseon]
+  tags: [society, religion]
+  sources: ["『순조실록』 순조 1년"]
+
+- id: tongsinsa-last-1811
+  year: 1811
+  title:
+    ko: 마지막 통신사 파견
+  summary:
+    ko: 1607년부터 12차례 에도 막부에 보낸 통신사가 쓰시마에서 국서를 주고받는 것으로 끝났다. 통신사는 일본에 조선의 문화를 전하는 역할을 했다.
+  subjects: [joseon, japan]
+  links:
+    - { from: joseon, to: japan, note: "통신사 파견 (쓰시마)" }
+  tags: [diplomacy]
+  sources: ["『순조실록』 순조 11년"]
+
+- id: hong-gyeongnae-1811
+  year: 1811
+  endYear: 1812
+  title:
+    ko: 홍경래의 난
+  summary:
+    ko: 몰락 양반 홍경래가 서북 지역민에 대한 차별과 세도 정치에 반발해 평안도 가산에서 봉기했다. 영세 농민, 광산 노동자 등이 가담해 청천강 이북을 차지했으나 정주성에서 진압되었다.
+  subjects: [joseon]
+  tags: [society]
+  sources: ["『순조실록』 순조 11년·12년"]
+
+- id: jeong-yakyong-1818
+  year: 1817
+  endYear: 1818
+  title:
+    ko: 정약용의 『경세유표』와 『목민심서』
+  summary:
+    ko: 강진에 유배된 정약용이 행정 기구 개편을 다룬 『경세유표』와 지방관의 도리를 다룬 『목민심서』를 지었다. 마을 단위로 토지를 함께 경작하고 노동량에 따라 나누는 여전론을 주장했다. 유형원·이익과 함께 중농학파(경세치용)로 꼽힌다.
+  subjects: [joseon]
+  tags: [culture]
+  sources: ["정약용, 『여유당전서』"]
+
+- id: kim-jeonghui-1816
+  year: 1816
+  title:
+    ko: 김정희의 북한산비 고증
+  summary:
+    ko: 김정희가 북한산비가 신라 진흥왕 순수비임을 밝혀내 『금석과안록』에 정리했다. 추사체를 만들고 「세한도」를 그렸다.
+  subjects: [joseon]
+  tags: [culture]
+  sources: ["김정희, 『금석과안록』"]
+
+- id: gihae-bakhae-1839
+  year: 1839
+  title:
+    ko: 기해박해
+  summary:
+    ko: 천주교를 다시 탄압해 프랑스 선교사들과 많은 신자가 처형되었다. 1846년에는 첫 조선인 신부 김대건이 순교했다.
+  subjects: [joseon]
+  tags: [religion]
+  sources: ["『헌종실록』 헌종 5년"]
+
+- id: donghak-1860
+  year: 1860
+  title:
+    ko: 최제우의 동학 창시
+  summary:
+    ko: 최제우가 유·불·선과 민간 신앙을 합쳐 동학을 만들었다. 시천주와 인내천의 평등 사상을 내세웠으나, 정부는 세상을 어지럽힌다는 죄로 최제우를 처형했다(1864). 2대 교주 최시형이 『동경대전』과 『용담유사』를 펴냈다.
+  subjects: [joseon]
+  tags: [religion]
+  sources: ["『고종실록』 고종 1년", "『동경대전』"]
+
+- id: daedong-yeojido-1861
+  year: 1861
+  title:
+    ko: 김정호의 「대동여지도」
+  summary:
+    ko: 김정호가 산줄기와 물줄기를 자세히 그리고 10리마다 눈금을 표시한 「대동여지도」를 목판으로 펴냈다. 22첩으로 나누어 접을 수 있게 만들었다.
+  subjects: [joseon]
+  tags: [culture]
+  sources: ["김정호, 「대동여지도」"]
+
+- id: imsul-uprising-1862
+  year: 1862
+  title:
+    ko: 임술 농민 봉기
+  summary:
+    ko: 경상 우병사 백낙신의 수탈에 맞서 유계춘 등이 진주에서 봉기했고, 삼남 지방을 중심으로 전국으로 퍼졌다. 정부는 박규수를 안핵사로 보내고 삼정이정청을 설치했으나 효과가 적었다.
+  subjects: [joseon]
+  tags: [society]
+  sources: ["『철종실록』 철종 13년", "박규수, 『임술록』"]
+
+# ── 흥선 대원군과 양요 ─────────────────────────────────
+
+- id: daewongun-1863
+  year: 1863
+  endYear: 1873
+  title:
+    ko: 흥선 대원군의 개혁
+  summary:
+    ko: 고종이 어린 나이로 즉위하자 아버지 흥선 대원군이 권력을 잡았다. 비변사를 사실상 폐지하고 의정부와 삼군부를 되살렸으며(1865), 『대전회통』을 펴냈다. 양반에게도 군포를 걷는 호포제와 사창제를 실시하고, 47곳만 남기고 서원을 정리했다(1871).
+  subjects: [joseon]
+  tags: [politics]
+  sources: ["『고종실록』 고종 2년·8년"]
+
+- id: gyeongbokgung-1865
+  year: 1865
+  endYear: 1868
+  title:
+    ko: 경복궁 중건
+  summary:
+    ko: 흥선 대원군이 임진왜란 때 불탄 경복궁을 다시 지었다. 비용을 마련하려 원납전을 걷고 당백전을 발행해 물가가 크게 올랐고, 백성을 동원해 원성을 샀다.
+  subjects: [joseon]
+  tags: [politics, economy]
+  sources: ["『고종실록』 고종 2년·5년"]
+
+- id: general-sherman-1866
+  year: 1866
+  title:
+    ko: 제너럴셔먼호 사건
+  summary:
+    ko: 미국 상선 제너럴셔먼호가 대동강을 거슬러 평양까지 와 통상을 요구하며 약탈하자, 평안 감사 박규수와 평양 관민이 배를 불태웠다.
+  subjects: [joseon, usa]
+  links:
+    - { from: usa, to: joseon, note: "통상 요구와 약탈" }
+    - { from: joseon, to: usa, note: "평양 관민이 배를 불태움" }
+  tags: [diplomacy, war]
+  sources: ["『고종실록』 고종 3년"]
+
+- id: byeongin-yangyo-1866
+  year: 1866
+  title:
+    ko: 병인박해와 병인양요
+  summary:
+    ko: 대원군이 프랑스 선교사 9명과 천주교 신자 수천 명을 처형했다(병인박해). 이를 구실로 프랑스 함대가 강화도를 침공했으나 한성근(문수산성)과 양헌수(정족산성)가 물리쳤다. 프랑스군은 물러나며 외규장각 의궤 등을 약탈했다.
+  subjects: [joseon, france]
+  links:
+    - { from: france, to: joseon, note: "강화도 침공, 외규장각 도서 약탈" }
+    - { from: joseon, to: france, note: "문수산성·정족산성 항전" }
+  tags: [war, religion]
+  sources: ["『고종실록』 고종 3년"]
+
+- id: oppert-1868
+  year: 1868
+  title:
+    ko: 오페르트 도굴 사건
+  summary:
+    ko: 통상을 거부당한 독일 상인 오페르트가 흥선 대원군의 아버지 남연군의 묘를 도굴하려다 실패했다. 서양에 대한 반감이 더욱 커졌다.
+  subjects: [joseon]
+  tags: [diplomacy]
+  sources: ["『고종실록』 고종 5년"]
+
+- id: sinmi-yangyo-1871
+  year: 1871
+  title:
+    ko: 신미양요와 척화비
+  summary:
+    ko: 미국이 제너럴셔먼호 사건을 구실로 강화도를 침공해 초지진과 광성보를 점령했다. 어재연이 광성보에서 싸우다 전사했으나 조선이 통상을 거부하자 미군은 물러났다. 대원군은 전국에 척화비를 세웠다.
+  subjects: [joseon, usa]
+  links:
+    - { from: usa, to: joseon, note: "강화도 침공" }
+    - { from: joseon, to: usa, note: "광성보 항전, 통상 거부" }
+  tags: [war]
+  sources: ["『고종실록』 고종 8년"]
+
+- id: gojong-rule-1873
+  year: 1873
+  title:
+    ko: 흥선 대원군 하야와 고종의 친정
+  summary:
+    ko: 최익현이 대원군의 정책을 비판하는 상소를 올린 것을 계기로 대원군이 물러나고 고종이 직접 정치를 맡았다. 민씨 세력이 정권을 잡았다.
+  subjects: [joseon]
+  tags: [politics]
+  sources: ["『고종실록』 고종 10년"]
+
+- id: unyo-1875
+  year: 1875
+  title:
+    ko: 운요호 사건
+  summary:
+    ko: 일본 군함 운요호가 강화도 초지진에 접근해 포격전을 벌이고 영종도를 공격했다. 일본은 이를 구실로 조선에 개항을 요구했다.
+  subjects: [joseon, japan]
+  links:
+    - { from: japan, to: joseon, note: "강화도 무력 시위" }
+  tags: [war, diplomacy]
+  sources: ["『고종실록』 고종 12년"]
+
+- id: ganghwa-treaty-1876
+  year: 1876
+  title:
+    ko: 강화도 조약 (조일 수호 조규)
+  summary:
+    ko: 조선이 일본과 맺은 첫 근대적 조약이자 불평등 조약이다. 조선을 자주국으로 규정해 청의 간섭을 막으려 했고, 부산 외 2개 항구 개항, 해안 측량권, 치외 법권(영사 재판권)을 인정했다. 개항 이후의 역사는 7번 묶음에서 다룬다.
+  subjects: [joseon, japan]
+  links:
+    - { from: japan, to: joseon, note: "개항 강요, 불평등 조약" }
+  tags: [diplomacy]
+  sources: ["『고종실록』 고종 13년"]

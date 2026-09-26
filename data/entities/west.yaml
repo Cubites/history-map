@@ -1,0 +1,25 @@
+# 서양 나라
+# 6번 묶음(1592~1876)부터. 한국사와 관련된 시기의 영토만 대략 표시. 운영자 검수 필요.
+
+- id: france
+  level: polity
+  names: { ko: 프랑스, en: France }
+  from: 987
+  to: null
+  color: "#6d7fb8"
+  summary: 1866년 천주교 박해(병인박해)를 구실로 강화도를 침공함(병인양요). 지도에는 한국사와 관련된 19세기 이후 영토만 표시
+  basis:
+    type: national_institution
+    refs: ["『고종실록』", "국사편찬위원회 『신편 한국사』"]
+    foundingNote: 카페 왕조가 시작된 987년을 프랑스 왕국의 시작으로 봄
+
+- id: usa
+  level: polity
+  names: { ko: 미국, en: United States }
+  from: 1776
+  to: null
+  color: "#5a8f6e"
+  summary: 제너럴셔먼호 사건(1866)을 구실로 1871년 강화도를 침공함(신미양요). 지도에는 한국사와 관련된 19세기 중반 이후 영토만 표시
+  basis:
+    type: national_institution
+    refs: ["『고종실록』", "국사편찬위원회 『신편 한국사』"]

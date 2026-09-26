@@ -107,3 +107,16 @@
     type: primary_source
     refs: ["『명사』", "『고려사』"]
     foundingNote: 원 왕실은 1388년 이후에도 몽골 초원에서 이어졌으나, 지도에서는 토구스 테무르가 죽은 1388년까지를 북원으로 봄
+
+# ── 6번 묶음 (1592 ~ 1876) ──
+
+- id: hugeum
+  level: polity
+  names: { ko: 후금, hanja: 後金, en: Later Jin }
+  from: 1616
+  to: 1636
+  color: "#c49a3c"
+  summary: 누르하치가 여진 부족을 통합해 세운 나라. 1621년 요동을 차지하고 1627년 조선을 침입함(정묘호란). 1636년 국호를 청으로 바꿈
+  basis:
+    type: primary_source
+    refs: ["『청태조실록』", "『광해군일기』"]

@@ -35,3 +35,8 @@
 # 종속: 원 간섭기 (지도에 고려 테두리를 원의 색으로)
 - { type: vassal_of, subject: goryeo, object: mongol-empire, from: 1270, to: 1270 }
 - { type: vassal_of, subject: goryeo, object: yuan, from: 1271, to: 1356 }
+
+# ── 6번 묶음 (1592 ~ 1876) ──
+- { type: occupied_by, subject: imjin-occupied, object: japan, from: 1592, to: 1598 }
+- { type: successor_of, subject: hugeum, object: jurchen, from: 1616, to: null }
+- { type: successor_of, subject: qing, object: hugeum, from: 1636, to: null }
