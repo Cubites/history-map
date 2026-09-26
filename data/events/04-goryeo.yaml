@@ -597,3 +597,451 @@
   subjects: [goryeo]
   tags: [politics]
   sources: ["『고려사』 세가 공양왕 4년", "『태조실록』 1권 태조 원년 7월"]
+
+# ══ 한국사능력검정시험(심화) 수준 보충 ══════════════════════
+
+# ── 태조 ~ 목종: 제도 정비 ──
+
+- id: sasimgwan-935
+  year: 935
+  title:
+    ko: 사심관 제도 실시
+  summary:
+    ko: 태조가 항복해 온 경순왕 김부를 경주의 사심관으로 삼았다. 지방 출신 고관에게 출신지를 책임지게 해 호족을 견제했으며, 호족의 자제를 개경에 머물게 한 기인 제도와 함께 운영되었다.
+  subjects: [goryeo]
+  tags: [politics]
+  sources: ["『고려사』 세가 태조 18년", "『고려사』 식화지"]
+
+- id: yeokbunjeon-940
+  year: 940
+  title:
+    ko: 역분전 지급
+  summary:
+    ko: 태조가 후삼국 통일에 공을 세운 사람들에게 인품과 공로를 기준으로 역분전을 나누어 주었다.
+  subjects: [goryeo]
+  tags: [economy]
+  sources: ["『고려사』 식화지 전제 태조 23년"]
+
+- id: gwanggun-947
+  year: 947
+  title:
+    ko: 광군 조직
+  summary:
+    ko: 정종이 거란의 침입에 대비해 30만 명의 광군을 조직하고 광군사를 설치했다.
+  subjects: [goryeo]
+  links:
+    - { from: liao, to: goryeo, note: "거란 침입 대비" }
+  tags: [war]
+  sources: ["『고려사』 병지 정종 2년"]
+
+- id: gwangjong-emperor-950
+  year: 950
+  title:
+    ko: 광종의 칭제 건원
+  summary:
+    ko: 광종이 스스로 황제라 칭하고 광덕이라는 독자적인 연호를 써 왕권의 위엄을 높였다. 개경은 황도로 불렀다.
+  subjects: [goryeo]
+  tags: [politics]
+  sources: ["『고려사』 세가 광종 원년"]
+
+- id: gongbok-960
+  year: 960
+  title:
+    ko: 백관의 공복 제정
+  summary:
+    ko: 광종이 관리의 등급에 따라 자주색, 붉은색, 비색, 녹색으로 공복의 색을 정해 위계 질서를 세웠다.
+  subjects: [goryeo]
+  tags: [politics]
+  sources: ["『고려사』 세가 광종 11년"]
+
+- id: sijeong-jeonsigwa-976
+  year: 976
+  title:
+    ko: 시정 전시과 실시
+  summary:
+    ko: 경종이 관리의 관품과 인품을 함께 고려해 토지(전지)와 땔감을 얻는 땅(시지)을 나누어 주는 전시과를 처음 실시했다.
+  subjects: [goryeo]
+  tags: [economy]
+  sources: ["『고려사』 식화지 전제 경종 원년"]
+
+- id: gukjagam-992
+  year: 992
+  title:
+    ko: 국자감 설치
+  summary:
+    ko: 성종이 개경에 최고 교육 기관인 국자감을 세웠다.
+  subjects: [goryeo]
+  tags: [culture]
+  sources: ["『고려사』 세가 성종 11년"]
+
+- id: geonwon-jungbo-996
+  year: 996
+  title:
+    ko: 건원중보 주조
+  summary:
+    ko: 성종 때 고려 최초의 철전인 건원중보를 만들었으나 널리 쓰이지는 못했다.
+  subjects: [goryeo]
+  tags: [economy]
+  sources: ["『고려사』 식화지 화폐 성종 15년"]
+
+- id: gaejeong-jeonsigwa-998
+  year: 998
+  title:
+    ko: 개정 전시과 실시
+  summary:
+    ko: 목종이 인품을 빼고 관직의 높고 낮음만으로 토지를 나누어 주도록 전시과를 고쳤다.
+  subjects: [goryeo]
+  tags: [economy]
+  sources: ["『고려사』 식화지 전제 목종 원년"]
+
+- id: gangjo-1009
+  year: 1009
+  title:
+    ko: 강조의 정변
+  summary:
+    ko: 강조가 목종을 몰아내고 현종을 세웠다. 거란은 이를 구실로 이듬해 2차 침입을 했다.
+  subjects: [goryeo]
+  links:
+    - { from: goryeo, to: liao, note: "거란의 침입 구실이 됨" }
+  tags: [politics]
+  sources: ["『고려사』 세가 목종 12년", "『고려사』 열전 강조"]
+
+# ── 현종 ~ 예종: 체제 완성과 문벌 귀족 사회 ──
+
+- id: local-system-1018
+  year: 1018
+  title:
+    ko: 지방 제도 정비 (5도 양계)
+  summary:
+    ko: 현종 때 전국을 일반 행정 구역인 5도와 군사 행정 구역인 양계(동계·북계)로 나누고, 4도호부와 8목을 두는 지방 제도를 갖추었다.
+  subjects: [goryeo]
+  tags: [politics]
+  sources: ["『고려사』 지리지 서문", "『고려사』 세가 현종 9년"]
+
+- id: naseong-1029
+  year: 1029
+  title:
+    ko: 개경 나성 완성
+  summary:
+    ko: 거란의 침입을 겪은 뒤 강감찬의 건의로 개경을 둘러싸는 나성을 쌓았다.
+  subjects: [goryeo]
+  links:
+    - { from: liao, to: goryeo, note: "거란 침입 대비" }
+  tags: [war]
+  sources: ["『고려사』 세가 현종 20년"]
+
+- id: choe-chung-1055
+  year: 1055
+  precision: decade
+  title:
+    ko: 최충의 문헌공도와 사학 12도
+  summary:
+    ko: 벼슬에서 물러난 최충이 사립 학교인 9재 학당(문헌공도)을 열었다. 이를 비롯한 사학 12도가 번성해 관학인 국자감이 위축되었다.
+  subjects: [goryeo]
+  tags: [culture]
+  sources: ["『고려사』 열전 최충"]
+
+- id: gyeongjeong-jeonsigwa-1076
+  year: 1076
+  title:
+    ko: 경정 전시과 실시
+  summary:
+    ko: 문종이 현직 관리에게만 토지를 나누어 주도록 전시과를 고치고 지급 액수를 줄였다.
+  subjects: [goryeo]
+  tags: [economy]
+  sources: ["『고려사』 식화지 전제 문종 30년"]
+
+- id: uicheon-1097
+  year: 1097
+  title:
+    ko: 의천의 천태종 개창
+  summary:
+    ko: 문종의 아들 대각국사 의천이 국청사를 중심으로 천태종을 열어 교종 중심으로 선종을 통합하려 했다. 교관겸수를 내세웠다.
+  subjects: [goryeo]
+  links:
+    - { from: song, to: goryeo, note: "의천의 송 유학" }
+  tags: [culture]
+  sources: ["『고려사』 세가 숙종 2년", "김부식, 「영통사 대각국사비」"]
+
+- id: haedong-tongbo-1102
+  year: 1101
+  endYear: 1102
+  title:
+    ko: 은병(활구)과 해동통보 주조
+  summary:
+    ko: 숙종 때 의천의 건의로 주전도감을 두고, 우리나라 지형을 본뜬 은병(활구)과 해동통보 등의 화폐를 만들었다.
+  subjects: [goryeo]
+  tags: [economy]
+  sources: ["『고려사』 식화지 화폐 숙종 6년·7년"]
+
+- id: gwanhak-1109
+  year: 1109
+  endYear: 1119
+  title:
+    ko: 관학 진흥 정책
+  summary:
+    ko: 사학에 밀린 관학을 살리기 위해 예종이 국학에 7재라는 전문 강좌를 두고(1109) 장학 재단인 양현고를 설치했다(1119).
+  subjects: [goryeo]
+  tags: [culture]
+  sources: ["『고려사』 세가 예종 4년·14년"]
+
+# ── 무신 정권기 ──
+
+- id: kim-bodang-1173
+  year: 1173
+  endYear: 1174
+  title:
+    ko: 김보당·조위총의 난
+  summary:
+    ko: 동북면 병마사 김보당이 의종 복위를 내걸고(1173), 서경 유수 조위총이 무신 정권 타도를 내걸고(1174) 군사를 일으켰으나 모두 진압되었다.
+  subjects: [goryeo]
+  tags: [politics]
+  sources: ["『고려사』 세가 명종 3년·4년"]
+
+- id: jinul-1190
+  year: 1190
+  title:
+    ko: 지눌의 정혜결사
+  summary:
+    ko: 보조국사 지눌이 불교계의 타락을 비판하며 정혜결사를 조직했다. 이후 순천 송광사(수선사)로 옮겨 정혜쌍수와 돈오점수를 내세우며 조계종을 일으켰다.
+  subjects: [goryeo]
+  tags: [culture]
+  sources: ["지눌, 「권수정혜결사문」"]
+
+- id: kim-sami-1193
+  year: 1193
+  title:
+    ko: 김사미·효심의 난
+  summary:
+    ko: 경상도 운문과 초전에서 김사미와 효심이 신라 부흥을 내세우며 봉기했다.
+  subjects: [goryeo]
+  tags: [society]
+  sources: ["『고려사』 세가 명종 23년"]
+
+- id: dongmyeongwang-pyeon-1193
+  year: 1193
+  title:
+    ko: 이규보의 「동명왕편」
+  summary:
+    ko: 이규보가 고구려 건국 시조 동명왕의 이야기를 서사시로 지어 고구려 계승 의식을 드러냈다.
+  subjects: [goryeo]
+  tags: [culture]
+  sources: ["이규보, 『동국이상국집』 권3 동명왕편"]
+
+- id: gyojeong-dogam-1209
+  year: 1209
+  title:
+    ko: 교정도감 설치
+  summary:
+    ko: 최충헌이 자신을 해치려는 음모를 조사하려고 교정도감을 설치했다. 이후 최씨 정권의 최고 권력 기구가 되었다.
+  subjects: [goryeo]
+  tags: [politics]
+  sources: ["『고려사』 열전 최충헌"]
+
+- id: haedong-goseungjeon-1215
+  year: 1215
+  title:
+    ko: 『해동고승전』 편찬
+  summary:
+    ko: 각훈이 왕명으로 삼국 시대 이후 승려들의 전기를 모은 『해동고승전』을 지었다.
+  subjects: [goryeo]
+  tags: [culture]
+  sources: ["각훈, 『해동고승전』"]
+
+- id: jeongbang-1225
+  year: 1225
+  title:
+    ko: 정방 설치
+  summary:
+    ko: 최우가 자기 집에 정방을 두어 관리 인사권을 장악했다. 문신을 등용하는 서방도 설치했다.
+  subjects: [goryeo]
+  tags: [politics]
+  sources: ["『고려사』 열전 최우"]
+
+- id: sangjeong-gogeum-yemun-1234
+  year: 1234
+  title:
+    ko: 『상정고금예문』 금속 활자 인쇄
+  summary:
+    ko: 강화도 피란 중에 『상정고금예문』 28부를 금속 활자로 찍었다는 기록이 이규보의 글에 남아 있다. 책은 전하지 않는다.
+  subjects: [goryeo]
+  tags: [culture]
+  sources: ["이규보, 『동국이상국집』 후집 권11 신서상정예문발미"]
+
+- id: chungju-1253
+  year: 1253
+  title:
+    ko: 충주성 전투
+  summary:
+    ko: 몽골의 5차 침입 때 김윤후가 충주성에서 노비 문서를 불태우며 백성을 이끌어 70여 일 동안 몽골군을 막아 냈다.
+  subjects: [goryeo, mongol-empire]
+  links:
+    - { from: mongol-empire, to: goryeo, note: "5차 침입" }
+    - { from: goryeo, to: mongol-empire, note: "충주성 방어" }
+  tags: [war]
+  sources: ["『고려사』 세가 고종 40년", "『고려사』 열전 김윤후"]
+
+# ── 원 간섭기 ──
+
+- id: bureaucracy-downgrade-1275
+  year: 1275
+  title:
+    ko: 관제 격하와 부마국
+  summary:
+    ko: 고려 왕이 원 공주와 혼인해 원의 부마국이 되었다. 중서문하성과 상서성을 첨의부로, 6부를 4사로 합치는 등 관제와 왕실 호칭이 제후국 수준으로 낮아졌다. 왕의 묘호에 '충(忠)'자를 붙였다.
+  subjects: [goryeo, yuan]
+  links:
+    - { from: yuan, to: goryeo, note: "관제 격하 강요" }
+  tags: [politics]
+  sources: ["『고려사』 세가 충렬왕 원년", "『고려사』 백관지"]
+
+- id: jeongdong-haengseong-1280
+  year: 1280
+  title:
+    ko: 정동행성 설치
+  summary:
+    ko: 원이 일본 원정을 위해 정동행성을 설치했다. 원정 실패 뒤에도 남아 고려의 내정을 간섭하는 기구가 되었다.
+  subjects: [goryeo, yuan]
+  links:
+    - { from: yuan, to: goryeo, note: "내정 간섭 기구" }
+  tags: [politics]
+  sources: ["『고려사』 세가 충렬왕 6년", "『원사』 세조본기"]
+
+- id: jewang-ungi-1287
+  year: 1287
+  title:
+    ko: 이승휴의 『제왕운기』
+  summary:
+    ko: 이승휴가 중국과 우리 역사를 시로 읊은 『제왕운기』를 지었다. 단군을 우리 역사의 시작으로 보고 발해를 우리 역사에 넣었다.
+  subjects: [goryeo]
+  tags: [culture]
+  sources: ["이승휴, 『제왕운기』"]
+
+- id: neo-confucianism-1290
+  year: 1290
+  title:
+    ko: 안향의 성리학 소개
+  summary:
+    ko: 원에 갔던 안향이 주자의 책을 베껴 와 성리학을 처음 소개했다. 성리학은 이후 신진 사대부의 사상 기반이 되었다.
+  subjects: [goryeo]
+  links:
+    - { from: yuan, to: goryeo, note: "성리학 전래" }
+  tags: [culture]
+  sources: ["『고려사』 열전 안향"]
+
+- id: sudeoksa-1308
+  year: 1308
+  title:
+    ko: 수덕사 대웅전 건립
+  summary:
+    ko: 예산 수덕사 대웅전이 세워졌다. 주심포 양식 건물로, 부석사 무량수전·봉정사 극락전과 함께 고려 시대 목조 건축을 대표한다.
+  subjects: [goryeo]
+  tags: [culture]
+  sources: ["예산 수덕사 대웅전 묵서명"]
+
+- id: mangwondang-1314
+  year: 1314
+  title:
+    ko: 만권당 설치
+  summary:
+    ko: 충선왕이 원의 수도 연경에 만권당을 세워 이제현 등 고려 학자가 원의 학자들과 교류하게 했다.
+  subjects: [goryeo, yuan]
+  links:
+    - { from: goryeo, to: yuan, note: "고려와 원 학자의 교류" }
+    - { from: yuan, to: goryeo, note: "성리학 수용 확대" }
+  tags: [culture]
+  sources: ["『고려사』 열전 이제현"]
+
+- id: jeongchi-dogam-1347
+  year: 1347
+  title:
+    ko: 정치도감 설치
+  summary:
+    ko: 충목왕이 권문세족이 불법으로 차지한 토지와 노비를 바로잡으려 정치도감을 두었으나, 원과 권문세족의 방해로 성과를 거두지 못했다.
+  subjects: [goryeo]
+  tags: [politics]
+  sources: ["『고려사』 세가 충목왕 3년"]
+
+- id: gyeongcheonsa-1348
+  year: 1348
+  title:
+    ko: 경천사지 10층 석탑 건립
+  summary:
+    ko: 원의 영향을 받은 대리석 석탑인 경천사지 10층 석탑이 세워졌다. 조선의 원각사지 10층 석탑에 영향을 주었다.
+  subjects: [goryeo]
+  links:
+    - { from: yuan, to: goryeo, note: "원의 석탑 양식 영향" }
+  tags: [culture]
+  sources: ["경천사지 10층 석탑 명문"]
+
+# ── 공민왕 ~ 고려 말 ──
+
+- id: mongol-customs-banned-1352
+  year: 1352
+  title:
+    ko: 몽골풍 폐지
+  summary:
+    ko: 공민왕이 즉위하자 변발과 호복 등 몽골식 풍습을 없앴다.
+  subjects: [goryeo]
+  links:
+    - { from: goryeo, to: yuan, note: "몽골풍 폐지" }
+  tags: [politics]
+  sources: ["『고려사』 세가 공민왕 원년"]
+
+- id: liaodong-campaign-1370
+  year: 1370
+  title:
+    ko: 공민왕의 요동 공략
+  summary:
+    ko: 공민왕이 이성계 등을 보내 요동의 동녕부를 공격하고 오녀산성을 함락했다. 요동을 차지하지는 못했다.
+  subjects: [goryeo, northern-yuan]
+  links:
+    - { from: goryeo, to: northern-yuan, note: "요동 공략" }
+  tags: [war]
+  sources: ["『고려사』 세가 공민왕 19년"]
+
+- id: hongsan-1376
+  year: 1376
+  title:
+    ko: 홍산 대첩
+  summary:
+    ko: 최영이 홍산(부여)에서 왜구를 크게 물리쳤다.
+  subjects: [goryeo, japan]
+  links:
+    - { from: goryeo, to: japan, note: "왜구 격퇴" }
+  tags: [war]
+  sources: ["『고려사』 열전 신우 2년", "『고려사』 열전 최영"]
+
+- id: hwatong-dogam-1377
+  year: 1377
+  title:
+    ko: 화통도감 설치
+  summary:
+    ko: 최무선의 건의로 화약과 화포를 만드는 화통도감을 설치했다. 여기서 만든 화포로 진포에서 왜구를 물리쳤다.
+  subjects: [goryeo]
+  tags: [war]
+  sources: ["『고려사』 열전 신우 3년", "『고려사』 열전 최무선"]
+
+- id: gwaneumpo-1383
+  year: 1383
+  title:
+    ko: 관음포 대첩
+  summary:
+    ko: 정지가 남해 관음포에서 화포를 써서 왜구의 배를 크게 무찔렀다.
+  subjects: [goryeo, japan]
+  links:
+    - { from: goryeo, to: japan, note: "왜구 격퇴" }
+  tags: [war]
+  sources: ["『고려사』 열전 신우 9년", "『고려사』 열전 정지"]
+
+- id: tsushima-1389
+  year: 1389
+  title:
+    ko: 박위의 쓰시마 정벌
+  summary:
+    ko: 왜구의 근거지를 없애려 박위가 전함 100척을 이끌고 쓰시마를 공격했다.
+  subjects: [goryeo, japan]
+  links:
+    - { from: goryeo, to: japan, note: "쓰시마 정벌" }
+  tags: [war]
+  sources: ["『고려사』 열전 신창 원년", "『고려사』 열전 박위"]
