@@ -83,6 +83,18 @@
     type: primary_source
     refs: ["『고려사』 세가"]
 
+- id: joseon
+  level: polity
+  names: { ko: 조선, hanja: 朝鮮, en: Joseon }
+  from: 1392
+  to: 1897
+  color: "#3e8ab8"
+  summary: 이성계와 신진 사대부가 세운 나라. 한양에 도읍하고 성리학을 통치 이념으로 삼았으며, 세종 때 4군 6진을 개척해 압록강~두만강 국경을 확정함
+  basis:
+    type: primary_source
+    refs: ["『조선왕조실록』"]
+    foundingNote: 1897년 국호를 대한제국으로 바꿈
+
 # ── 원이 고려 땅에 둔 점령 기구 (4번 묶음). 고려 색 위에 원의 색으로 빗금 ──
 
 - id: ssangseong

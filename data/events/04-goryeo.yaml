@@ -591,10 +591,12 @@
 - id: goryeo-falls-1392
   year: 1392
   title:
-    ko: 고려 멸망
+    ko: 고려 멸망과 조선 건국
   summary:
-    ko: 정몽주 등 고려를 지키려던 세력이 제거된 뒤, 이성계가 공양왕을 물러나게 하고 왕위에 올라 고려가 멸망했다.
-  subjects: [goryeo]
+    ko: 정몽주 등 고려를 지키려던 세력이 제거된 뒤, 이성계가 공양왕을 물러나게 하고 왕위에 올라 고려가 멸망했다. 이듬해 국호를 조선으로 정했다.
+  subjects: [goryeo, joseon]
+  links:
+    - { from: goryeo, to: joseon, note: "왕조 교체 (이성계 즉위)" }
   tags: [politics]
   sources: ["『고려사』 세가 공양왕 4년", "『태조실록』 1권 태조 원년 7월"]
 

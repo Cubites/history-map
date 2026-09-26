@@ -29,6 +29,9 @@
 - { type: occupied_by, subject: dongnyeong, object: yuan, from: 1271, to: 1290 }
 - { type: occupied_by, subject: tamna-chonggwanbu, object: yuan, from: 1273, to: 1294 }
 
+# ── 5번 묶음 (1392 ~ 1592) ──
+- { type: successor_of, subject: joseon, object: goryeo, from: 1392, to: null }
+
 # 종속: 원 간섭기 (지도에 고려 테두리를 원의 색으로)
 - { type: vassal_of, subject: goryeo, object: mongol-empire, from: 1270, to: 1270 }
 - { type: vassal_of, subject: goryeo, object: yuan, from: 1271, to: 1356 }
