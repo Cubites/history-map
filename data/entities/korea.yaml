@@ -142,3 +142,103 @@
   basis:
     type: primary_source
     refs: ["『선조실록』", "유성룡, 『징비록』"]
+
+# ── 2번 묶음 (기원전 57 ~ 600): 여러 나라와 가야 ──
+# 부여·옥저·동예·삼한의 시작 연도는 잠정값. 1번 묶음(고조선과 여러 나라)에서 보완할 예정
+
+- id: buyeo
+  level: polity
+  names: { ko: 부여, hanja: 夫餘, en: Buyeo }
+  from: -199
+  to: 494
+  color: "#b39a6b"
+  summary: 쑹화강 유역의 평야에 자리 잡은 연맹 왕국. 왕 아래 마가·우가·저가·구가가 사출도를 다스림. 12월에 영고라는 제천 행사를 열고, 1책 12법과 순장 풍습이 있었음. 494년 고구려에 항복
+  basis:
+    type: primary_source
+    refs: ["『삼국지』 위서 동이전 부여", "『삼국사기』 고구려본기"]
+    foundingNote: 기원전 2세기 이전에 성립한 것으로 보나 정확한 시기는 알 수 없음. 1번 묶음에서 보완 예정
+
+- id: okjeo
+  level: polity
+  names: { ko: 옥저, hanja: 沃沮, en: Okjeo }
+  from: -107
+  to: 56
+  color: "#a88d7a"
+  summary: 함경도 해안 지역의 군장 국가. 읍군·삼로가 다스렸고 민며느리제와 가족 공동 무덤(골장제)이 있었음. 고구려에 공물을 바치다 태조왕 때 정복됨
+  basis:
+    type: primary_source
+    refs: ["『삼국지』 위서 동이전 동옥저", "『삼국사기』 고구려본기 태조대왕 4년"]
+    foundingNote: 시작 연도는 잠정값. 1번 묶음에서 보완 예정
+
+- id: dongye
+  level: polity
+  names: { ko: 동예, hanja: 東濊, en: Dongye }
+  from: -107
+  to: 313
+  color: "#9c8f7c"
+  summary: 강원도 북부 해안의 군장 국가. 10월에 무천을 열고, 다른 부족의 영역을 침범하면 노비·소·말로 갚는 책화와 족외혼이 있었음. 단궁·과하마·반어피가 특산물
+  basis:
+    type: primary_source
+    refs: ["『삼국지』 위서 동이전 예"]
+    foundingNote: 시작 연도는 잠정값. 멸망 시기가 분명하지 않아, 지도에서는 고구려가 낙랑군을 몰아낸 313년 무렵 고구려에 흡수된 것으로 표시
+
+- id: mahan
+  level: polity
+  names: { ko: 마한, hanja: 馬韓, en: Mahan }
+  from: -107
+  to: 369
+  color: "#8fa478"
+  summary: 삼한 가운데 가장 큰 연맹체로 54개 소국으로 이루어짐. 목지국의 지배자가 삼한을 주도함. 제사장인 천군이 신성 지역인 소도를 다스리는 제정 분리 사회였고, 5월 수릿날과 10월 계절제를 지냄. 백제가 성장하며 흡수함
+  basis:
+    type: primary_source
+    refs: ["『삼국지』 위서 동이전 한"]
+    foundingNote: 시작 연도는 잠정값. 근초고왕이 마한을 정복한 369년까지 표시
+
+- id: jinhan
+  level: polity
+  names: { ko: 진한, hanja: 辰韓, en: Jinhan }
+  from: -107
+  to: 356
+  color: "#c9b27a"
+  summary: 낙동강 동쪽의 12개 소국 연맹체. 그 가운데 사로국이 성장해 신라가 됨
+  basis:
+    type: primary_source
+    refs: ["『삼국지』 위서 동이전 한"]
+    foundingNote: 시작 연도는 잠정값. 지도에서는 내물 마립간이 진한 지역을 대부분 차지한 356년 무렵까지 표시
+
+- id: byeonhan
+  level: polity
+  names: { ko: 변한, hanja: 弁韓, en: Byeonhan }
+  from: -107
+  to: 42
+  color: "#a3a37a"
+  summary: 낙동강 서쪽의 12개 소국 연맹체. 철이 많이 나서 낙랑과 왜에 수출하고 화폐처럼 사용함. 가야 연맹으로 이어짐
+  basis:
+    type: primary_source
+    refs: ["『삼국지』 위서 동이전 변진"]
+    foundingNote: 시작 연도는 잠정값. 금관가야가 세워진 42년에 가야로 이어진 것으로 표시
+
+- id: gaya
+  level: polity
+  names: { ko: 가야, hanja: 伽倻, en: Gaya }
+  from: 42
+  to: 562
+  color: "#b98a5e"
+  summary: 낙동강 하류의 소국들이 이룬 연맹. 전기에는 김해의 금관가야, 5세기 이후에는 고령의 대가야가 중심. 철이 풍부해 덩이쇠를 화폐처럼 쓰고 낙랑·왜와 교역함. 중앙 집권 국가로 성장하지 못하고 신라에 병합됨
+  basis:
+    type: primary_source
+    refs: ["『삼국유사』 가락국기", "『삼국사기』 신라본기"]
+    foundingNote: 건국 연도(42년)는 『삼국유사』 가락국기의 김수로왕 건국 기록에 따름. 지도에서는 여러 가야를 하나의 연맹으로 묶어 표시
+
+# ── 한 군현 (2번 묶음). 옛 고조선 땅에 한이 둔 군현. 중국 왕조의 색으로 빗금 ──
+
+- id: nangnang
+  level: region
+  names: { ko: 낙랑군, hanja: 樂浪郡, en: Lelang Commandery }
+  from: -107
+  to: 313
+  color: "#9b8a70"
+  summary: 한 무제가 고조선을 멸망시키고 대동강 유역에 둔 군현. 3세기 초 공손씨가 남쪽에 대방군을 나누어 설치함(지도에서는 함께 표시). 313년 고구려 미천왕에게 쫓겨남
+  basis:
+    type: primary_source
+    refs: ["『한서』 지리지", "『삼국사기』 고구려본기 미천왕 14년"]

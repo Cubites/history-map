@@ -1,0 +1,235 @@
+# 중국 왕조 (한 ~ 남북조)
+# 2번 묶음(기원전 57 ~ 600): 한국사와 관계된 왕조를 중심으로. 영토는 화북·강남·요서·요동 단위의 대략적인 추정. 운영자 검수 필요.
+# 5호 16국 가운데 한국사와 직접 관계된 전연·전진·후연·북연만 표시한다.
+
+- id: western-han
+  level: polity
+  names: { ko: 한(전한), hanja: 前漢, en: Western Han }
+  from: -201
+  to: 8
+  color: "#b04a3c"
+  summary: 유방이 세운 왕조. 무제가 고조선을 멸망시키고(기원전 108) 옛 땅에 군현을 둠
+  basis:
+    type: primary_source
+    refs: ["『사기』", "『한서』"]
+
+- id: xin
+  level: polity
+  names: { ko: 신, hanja: 新, en: Xin }
+  from: 9
+  to: 23
+  color: "#b3604f"
+  summary: 왕망이 전한의 왕위를 빼앗아 세운 왕조. 15년 만에 무너짐
+  basis:
+    type: primary_source
+    refs: ["『한서』 왕망전"]
+
+- id: eastern-han
+  level: polity
+  names: { ko: 한(후한), hanja: 後漢, en: Eastern Han }
+  from: 25
+  to: 220
+  color: "#b04a3c"
+  summary: 광무제가 한을 다시 세운 왕조. 뤄양에 도읍함. 고구려와 요동·현도를 두고 자주 충돌함
+  basis:
+    type: primary_source
+    refs: ["『후한서』"]
+
+- id: cao-wei
+  level: polity
+  names: { ko: 위, hanja: 魏, en: Cao Wei }
+  from: 220
+  to: 265
+  color: "#a8584a"
+  summary: 삼국 시대 화북의 왕조. 요동의 공손씨를 무너뜨리고(238), 관구검을 보내 고구려의 환도성을 함락함
+  basis:
+    type: primary_source
+    refs: ["『삼국지』 위서"]
+    foundingNote: 요동은 238년까지 공손씨가 다스렸으나 지도에서는 위에 포함해 표시
+
+- id: shu
+  level: polity
+  names: { ko: 촉, hanja: 蜀, en: Shu Han }
+  from: 221
+  to: 263
+  color: "#b8765a"
+  summary: 유비가 쓰촨에 세운 삼국 시대 왕조. 위에 멸망
+  basis:
+    type: primary_source
+    refs: ["『삼국지』 촉서"]
+
+- id: wu
+  level: polity
+  names: { ko: 오, hanja: 吳, en: Eastern Wu }
+  from: 222
+  to: 280
+  color: "#c07a62"
+  summary: 손권이 강남에 세운 삼국 시대 왕조. 바닷길로 고구려와 사신을 주고받음. 서진에 멸망
+  basis:
+    type: primary_source
+    refs: ["『삼국지』 오서"]
+
+- id: western-jin
+  level: polity
+  names: { ko: 서진, hanja: 西晉, en: Western Jin }
+  from: 265
+  to: 316
+  color: "#a64d45"
+  summary: 사마염이 위를 이어 세운 왕조. 오를 무너뜨리고 중국을 통일했으나(280), 북방 민족의 침입으로 무너짐
+  basis:
+    type: primary_source
+    refs: ["『진서』"]
+
+- id: eastern-jin
+  level: polity
+  names: { ko: 동진, hanja: 東晉, en: Eastern Jin }
+  from: 317
+  to: 420
+  color: "#a64d45"
+  summary: 서진 왕실이 강남으로 옮겨 세운 왕조. 백제와 교류하고 침류왕 때 마라난타를 통해 불교를 전함
+  basis:
+    type: primary_source
+    refs: ["『진서』"]
+
+- id: former-yan
+  level: polity
+  names: { ko: 전연, hanja: 前燕, en: Former Yan }
+  from: 337
+  to: 370
+  color: "#8f7a55"
+  summary: 선비족 모용씨가 요서에 세운 나라. 342년 고구려 환도성을 함락하고 미천왕의 무덤을 파헤침. 전진에 멸망
+  basis:
+    type: primary_source
+    refs: ["『진서』 모용황재기", "『삼국사기』 고구려본기 고국원왕 12년"]
+
+- id: former-qin
+  level: polity
+  names: { ko: 전진, hanja: 前秦, en: Former Qin }
+  from: 351
+  to: 394
+  color: "#9a8457"
+  summary: 저족이 세운 나라. 부견이 화북을 통일하고(376) 고구려에 승려 순도와 불상·경문을 보냄. 비수 전투(383) 패배 뒤 무너짐
+  basis:
+    type: primary_source
+    refs: ["『진서』 부견재기", "『삼국사기』 고구려본기 소수림왕 2년"]
+
+- id: later-yan
+  level: polity
+  names: { ko: 후연, hanja: 後燕, en: Later Yan }
+  from: 384
+  to: 407
+  color: "#8f7a55"
+  summary: 모용수가 전연을 다시 세운 나라. 광개토대왕과 요동을 두고 싸우다 요동을 잃음
+  basis:
+    type: primary_source
+    refs: ["『진서』 모용수재기", "『삼국사기』 고구려본기 광개토왕"]
+
+- id: northern-yan
+  level: polity
+  names: { ko: 북연, hanja: 北燕, en: Northern Yan }
+  from: 407
+  to: 436
+  color: "#8a7658"
+  summary: 요서에 있던 나라. 북위에 멸망할 때 왕 풍홍이 고구려로 망명함
+  basis:
+    type: primary_source
+    refs: ["『위서』", "『삼국사기』 고구려본기 장수왕 24년"]
+
+- id: northern-wei
+  level: polity
+  names: { ko: 북위, hanja: 北魏, en: Northern Wei }
+  from: 386
+  to: 534
+  color: "#9c7d4e"
+  summary: 선비족 탁발씨가 세운 나라. 화북을 통일하고(439) 남조와 대립함. 장수왕은 북위와 남조 모두와 교류함
+  basis:
+    type: primary_source
+    refs: ["『위서』"]
+
+- id: eastern-wei
+  level: polity
+  names: { ko: 동위, hanja: 東魏, en: Eastern Wei }
+  from: 534
+  to: 550
+  color: "#a0814f"
+  summary: 북위가 동서로 갈라져 생긴 나라. 북제로 이어짐
+  basis:
+    type: primary_source
+    refs: ["『위서』", "『북제서』"]
+
+- id: western-wei
+  level: polity
+  names: { ko: 서위, hanja: 西魏, en: Western Wei }
+  from: 535
+  to: 557
+  color: "#93794f"
+  summary: 북위가 동서로 갈라져 생긴 나라. 북주로 이어짐
+  basis:
+    type: primary_source
+    refs: ["『주서』"]
+
+- id: northern-qi
+  level: polity
+  names: { ko: 북제, hanja: 北齊, en: Northern Qi }
+  from: 550
+  to: 577
+  color: "#a0814f"
+  summary: 동위를 이은 화북 동부의 왕조. 신라 진흥왕을 책봉함(565). 북주에 멸망
+  basis:
+    type: primary_source
+    refs: ["『북제서』", "『삼국사기』 신라본기 진흥왕 26년"]
+
+- id: northern-zhou
+  level: polity
+  names: { ko: 북주, hanja: 北周, en: Northern Zhou }
+  from: 557
+  to: 581
+  color: "#93794f"
+  summary: 서위를 이은 왕조. 북제를 무너뜨리고 화북을 통일했으나(577) 수에 왕위를 넘김
+  basis:
+    type: primary_source
+    refs: ["『주서』"]
+
+- id: liu-song
+  level: polity
+  names: { ko: 송(남조), hanja: 宋, en: Liu Song }
+  from: 420
+  to: 479
+  color: "#b8604c"
+  summary: 동진을 이은 남조의 첫 왕조. 고구려·백제·왜와 사신을 주고받음
+  basis:
+    type: primary_source
+    refs: ["『송서』 이만전"]
+
+- id: southern-qi
+  level: polity
+  names: { ko: 제(남조), hanja: 齊, en: Southern Qi }
+  from: 479
+  to: 502
+  color: "#b8604c"
+  summary: 송을 이은 남조 왕조. 대가야의 왕 하지가 사신을 보내 관작을 받음(479)
+  basis:
+    type: primary_source
+    refs: ["『남제서』 동남이전"]
+
+- id: liang
+  level: polity
+  names: { ko: 양, hanja: 梁, en: Liang }
+  from: 502
+  to: 557
+  color: "#b8604c"
+  summary: 남조의 왕조. 백제 무령왕·성왕과 활발히 교류해 무령왕릉의 벽돌무덤 양식 등에 영향을 줌
+  basis:
+    type: primary_source
+    refs: ["『양서』 제이전"]
+
+- id: chen
+  level: polity
+  names: { ko: 진(남조), hanja: 陳, en: Chen }
+  from: 557
+  to: 589
+  color: "#b8604c"
+  summary: 남조의 마지막 왕조. 수에 멸망하면서 중국이 다시 통일됨
+  basis:
+    type: primary_source
+    refs: ["『진서(陳書)』"]

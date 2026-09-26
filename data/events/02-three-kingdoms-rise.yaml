@@ -1,0 +1,597 @@
+# 2번 묶음: 삼국의 성립과 발전 (기원전 57 ~ 600)
+# 깊이: 한국사능력검정시험(심화) 수준. 서술은 새로 작성, 출처는 해당 기록이 실린 사료. 운영자 검수 필요.
+# 연도는 천문 연도: 기원전 57년 = -56. 『삼국사기』는 즉위한 해를 원년으로 센다.
+# 광개토대왕 관련 연도는 『삼국사기』보다 1년 앞서는 광개토대왕릉비의 영락 연호를 따른다.
+# 600년 이후는 3번 묶음에서 다룬다.
+
+# ── 삼국의 건국 ─────────────────────────────────────────
+
+- id: silla-founded
+  year: -56
+  title:
+    ko: 신라 건국
+  summary:
+    ko: 박혁거세가 진한의 사로국을 세웠다. 초기에는 박·석·김의 세 성씨가 번갈아 왕위를 이었고, 왕의 칭호는 거서간·차차웅·이사금으로 바뀌었다.
+  subjects: [silla, jinhan]
+  tags: [politics]
+  sources: ["『삼국사기』 신라본기 혁거세 거서간 원년"]
+
+- id: goguryeo-founded
+  year: -36
+  title:
+    ko: 고구려 건국
+  summary:
+    ko: 부여에서 내려온 주몽이 졸본(환인)에서 고구려를 세웠다. 5부족 연맹체로 출발했으며, 산간 지역이라 식량이 부족해 주변 지역을 정복하며 성장했다.
+  subjects: [goguryeo, buyeo]
+  links:
+    - { from: buyeo, to: goguryeo, note: "주몽의 남하" }
+  tags: [politics]
+  sources: ["『삼국사기』 고구려본기 동명성왕 원년", "광개토대왕릉비"]
+
+- id: baekje-founded
+  year: -17
+  title:
+    ko: 백제 건국
+  summary:
+    ko: 고구려에서 내려온 온조가 한강 유역의 위례성에서 백제를 세웠다. 고구려 계통의 유이민과 한강 유역의 토착민이 결합했으며, 건국 초기의 돌무지무덤(서울 석촌동)이 고구려와 비슷하다.
+  subjects: [baekje, goguryeo, mahan]
+  links:
+    - { from: goguryeo, to: baekje, note: "온조 집단의 남하" }
+  tags: [politics]
+  sources: ["『삼국사기』 백제본기 온조왕 원년"]
+
+- id: gungnaeseong-3
+  year: 3
+  title:
+    ko: 유리왕의 국내성 천도
+  summary:
+    ko: 고구려 유리왕이 도읍을 졸본에서 압록강 가의 국내성(지안)으로 옮겼다.
+  subjects: [goguryeo]
+  tags: [politics]
+  sources: ["『삼국사기』 고구려본기 유리명왕 22년"]
+
+- id: gaya-founded
+  year: 42
+  title:
+    ko: 금관가야 건국
+  summary:
+    ko: 김수로가 김해에서 금관가야를 세웠다고 전한다. 변한의 소국들이 가야 연맹으로 발전했으며, 풍부한 철을 낙랑과 왜에 수출했다.
+  subjects: [gaya, byeonhan]
+  tags: [politics]
+  sources: ["『삼국유사』 가락국기"]
+
+- id: taejo-okjeo-56
+  year: 56
+  title:
+    ko: 고구려 태조왕의 옥저 정복
+  summary:
+    ko: 태조왕이 동옥저를 정복해 성읍으로 삼았다. 이 무렵 고구려는 계루부 고씨가 왕위를 독점 세습하며 중앙 집권 국가의 기틀을 마련했다.
+  subjects: [goguryeo, okjeo]
+  links:
+    - { from: goguryeo, to: okjeo, note: "정복" }
+  tags: [war]
+  sources: ["『삼국사기』 고구려본기 태조대왕 4년"]
+
+- id: jindaebeop-194
+  year: 194
+  title:
+    ko: 고국천왕의 진대법
+  summary:
+    ko: 을파소의 건의로 봄에 곡식을 빌려주고 가을에 갚게 하는 진대법을 실시해 농민이 노비가 되는 것을 막았다. 고국천왕 때 부족적 5부가 행정적 5부로 바뀌고 왕위의 부자 상속이 확립되었다.
+  subjects: [goguryeo]
+  tags: [economy, politics]
+  sources: ["『삼국사기』 고구려본기 고국천왕 16년"]
+
+- id: gwanggugeom-244
+  year: 244
+  endYear: 245
+  title:
+    ko: 위 관구검의 고구려 침입
+  summary:
+    ko: 동천왕이 요동의 서안평을 공격하자, 위의 관구검이 쳐들어와 환도성을 함락했다. 동천왕은 옥저 방면으로 피란했고, 밀우·유유의 활약으로 위군을 물리쳤다.
+  subjects: [goguryeo, cao-wei]
+  links:
+    - { from: goguryeo, to: cao-wei, note: "서안평 공격" }
+    - { from: cao-wei, to: goguryeo, note: "관구검의 환도성 함락" }
+  tags: [war]
+  sources: ["『삼국지』 위서 관구검전", "『삼국사기』 고구려본기 동천왕 20년"]
+
+- id: goi-260
+  year: 260
+  title:
+    ko: 백제 고이왕의 체제 정비
+  summary:
+    ko: 고이왕이 한강 유역을 완전히 장악하고 6좌평과 16관등제를 마련했으며, 관리의 공복을 자주색·붉은색·푸른색으로 정했다.
+  subjects: [baekje, mahan]
+  tags: [politics]
+  sources: ["『삼국사기』 백제본기 고이왕 27년"]
+
+# ── 4세기: 고구려의 도약과 백제의 전성기 ────────────────
+
+- id: michcheon-313
+  year: 313
+  title:
+    ko: 미천왕의 낙랑군 축출
+  summary:
+    ko: 고구려 미천왕이 낙랑군을 몰아내 대동강 유역을 차지했다. 이듬해 대방군도 몰아내어 한 군현이 한반도에서 사라졌다. 앞서 311년에는 요동의 서안평을 차지했다.
+  subjects: [goguryeo, nangnang, western-jin]
+  links:
+    - { from: goguryeo, to: nangnang, note: "낙랑군 축출" }
+  tags: [war]
+  sources: ["『삼국사기』 고구려본기 미천왕 12년·14년·15년"]
+
+- id: former-yan-342
+  year: 342
+  title:
+    ko: 전연의 고구려 침입
+  summary:
+    ko: 전연의 모용황이 쳐들어와 환도성을 함락하고 미천왕의 무덤을 파헤쳐 시신과 왕모·왕비를 끌고 갔다.
+  subjects: [goguryeo, former-yan]
+  links:
+    - { from: former-yan, to: goguryeo, note: "환도성 함락" }
+  tags: [war]
+  sources: ["『삼국사기』 고구려본기 고국원왕 12년", "『진서』 모용황재기"]
+
+- id: naemul-356
+  year: 356
+  title:
+    ko: 내물 마립간 즉위
+  summary:
+    ko: 신라 내물왕이 즉위해 김씨가 왕위를 독점 세습하고, 대군장을 뜻하는 마립간이라는 칭호를 썼다. 진한 지역 대부분을 차지했으며, 382년에는 고구려를 통해 전진에 사신을 보냈다.
+  subjects: [silla, jinhan]
+  links:
+    - { from: silla, to: jinhan, note: "진한 지역 차지" }
+  tags: [politics]
+  sources: ["『삼국사기』 신라본기 내물 이사금 원년", "『삼국유사』 왕력"]
+
+- id: geunchogo-369
+  year: 369
+  title:
+    ko: 근초고왕의 마한 정복
+  summary:
+    ko: 백제 근초고왕이 마한의 남은 세력을 정복해 전라도 남해안까지 영토를 넓히고, 가야에 영향력을 행사했다. 같은 해 치양에서 고구려군을 물리쳤다.
+  subjects: [baekje, mahan, gaya, goguryeo]
+  links:
+    - { from: baekje, to: mahan, note: "마한 정복" }
+    - { from: baekje, to: gaya, note: "가야에 영향력 행사" }
+    - { from: goguryeo, to: baekje, note: "고구려의 침입 (치양)" }
+  tags: [war]
+  sources: ["『일본서기』 신공기 49년", "『삼국사기』 백제본기 근초고왕 24년"]
+
+- id: pyongyang-371
+  year: 371
+  title:
+    ko: 백제의 평양성 공격과 고국원왕 전사
+  summary:
+    ko: 근초고왕과 태자 근구수가 고구려 평양성을 공격해 고국원왕을 전사시켰다. 백제는 황해도 일부까지 차지했다.
+  subjects: [baekje, goguryeo]
+  links:
+    - { from: baekje, to: goguryeo, note: "평양성 공격, 고국원왕 전사" }
+  tags: [war]
+  sources: ["『삼국사기』 백제본기 근초고왕 26년", "『삼국사기』 고구려본기 고국원왕 41년"]
+
+- id: geunchogo-diplomacy-372
+  year: 372
+  endYear: 375
+  title:
+    ko: 근초고왕의 대외 교류와 칠지도
+  summary:
+    ko: 근초고왕이 동진에 사신을 보내고, 요서·산둥 방면과 왜로 이어지는 교역로를 확보했다. 왜에 칠지도를 보냈다고 전한다. 박사 고흥이 역사서 『서기』를 편찬했고(375), 부자 상속으로 왕위를 이었다.
+  subjects: [baekje, eastern-jin, wa]
+  links:
+    - { from: baekje, to: eastern-jin, note: "사신 파견" }
+    - { from: baekje, to: wa, note: "칠지도 전달, 문물 전파" }
+  tags: [diplomacy, culture]
+  sources: ["『삼국사기』 백제본기 근초고왕 27년·30년", "『일본서기』 신공기 52년", "칠지도 명문"]
+
+- id: sosurim-372
+  year: 372
+  endYear: 373
+  title:
+    ko: 소수림왕의 불교 수용과 체제 정비
+  summary:
+    ko: 고구려 소수림왕이 전진에서 온 승려 순도를 통해 불교를 받아들이고, 국립 교육 기관인 태학을 세웠다. 이듬해 율령을 반포해 국가 체제를 정비했다.
+  subjects: [goguryeo, former-qin]
+  links:
+    - { from: former-qin, to: goguryeo, note: "순도가 불상·경문을 전함" }
+  tags: [culture, politics]
+  sources: ["『삼국사기』 고구려본기 소수림왕 2년·3년"]
+
+- id: baekje-buddhism-384
+  year: 384
+  title:
+    ko: 백제의 불교 수용
+  summary:
+    ko: 침류왕 때 동진에서 온 승려 마라난타를 통해 불교를 받아들였다.
+  subjects: [baekje, eastern-jin]
+  links:
+    - { from: eastern-jin, to: baekje, note: "마라난타의 불교 전래" }
+  tags: [culture]
+  sources: ["『삼국사기』 백제본기 침류왕 원년"]
+
+# ── 광개토대왕과 장수왕 ─────────────────────────────────
+
+- id: gwanggaeto-391
+  year: 391
+  title:
+    ko: 광개토대왕 즉위와 영락 연호
+  summary:
+    ko: 광개토대왕이 즉위해 '영락'이라는 독자적인 연호를 썼다. 북쪽으로 거란(비려)과 숙신을 정벌하고, 410년에는 동부여를 복속했다.
+  subjects: [goguryeo]
+  tags: [politics]
+  sources: ["광개토대왕릉비", "『삼국사기』 고구려본기 광개토왕 원년"]
+
+- id: gwanggaeto-baekje-396
+  year: 396
+  title:
+    ko: 광개토대왕의 백제 공격
+  summary:
+    ko: 광개토대왕이 백제를 공격해 한강 이북의 58성을 빼앗았다. 백제 아신왕은 항복하고 영원히 신하가 되겠다고 맹세했다.
+  subjects: [goguryeo, baekje]
+  links:
+    - { from: goguryeo, to: baekje, note: "58성 700촌 정복" }
+  tags: [war]
+  sources: ["광개토대왕릉비 영락 6년조"]
+
+- id: gwanggaeto-silla-400
+  year: 400
+  title:
+    ko: 광개토대왕의 신라 구원
+  summary:
+    ko: 신라 내물왕의 요청으로 광개토대왕이 5만 군대를 보내 신라에 쳐들어온 왜를 물리치고, 임나가라(금관가야)까지 추격했다. 이후 고구려군이 신라에 머물며 내정에 간섭했고, 금관가야가 쇠퇴해 가야 연맹의 중심이 대가야로 옮겨 갔다. 경주 호우총에서 나온 호우명 그릇이 두 나라의 관계를 보여 준다.
+  subjects: [goguryeo, silla, wa, gaya]
+  links:
+    - { from: goguryeo, to: silla, note: "구원군 파견, 내정 간섭" }
+    - { from: goguryeo, to: wa, note: "왜 격퇴" }
+    - { from: goguryeo, to: gaya, note: "임나가라 추격" }
+    - { from: wa, to: silla, note: "왜의 침입" }
+  tags: [war]
+  sources: ["광개토대왕릉비 영락 10년조", "호우명 그릇 명문"]
+
+- id: liaodong-405
+  year: 402
+  endYear: 405
+  title:
+    ko: 고구려의 요동 확보
+  summary:
+    ko: 광개토대왕이 후연의 숙군성을 공격하는 등 후연과 싸워 요동 지역을 차지했다. 405년 후연이 요동성을 공격했으나 막아 냈다.
+  subjects: [goguryeo, later-yan]
+  links:
+    - { from: goguryeo, to: later-yan, note: "숙군성 공격, 요동 차지" }
+    - { from: later-yan, to: goguryeo, note: "요동성 공격" }
+  tags: [war]
+  sources: ["『삼국사기』 고구려본기 광개토왕 11년·14년"]
+
+- id: gwanggaeto-stele-414
+  year: 414
+  title:
+    ko: 광개토대왕릉비 건립
+  summary:
+    ko: 장수왕이 아버지 광개토대왕의 업적을 기려 국내성(지안)에 비를 세웠다. 고구려의 건국 신화와 광개토대왕의 정복 활동이 새겨져 있다.
+  subjects: [goguryeo]
+  tags: [culture]
+  sources: ["광개토대왕릉비"]
+
+- id: pyongyang-427
+  year: 427
+  title:
+    ko: 장수왕의 평양 천도
+  summary:
+    ko: 장수왕이 도읍을 국내성에서 평양으로 옮기고 남진 정책을 폈다. 북위와 남조 송에 모두 사신을 보내는 양면 외교로 중국을 견제했다.
+  subjects: [goguryeo, northern-wei, liu-song]
+  links:
+    - { from: goguryeo, to: northern-wei, note: "사신 파견" }
+    - { from: goguryeo, to: liu-song, note: "사신 파견" }
+  tags: [politics, diplomacy]
+  sources: ["『삼국사기』 고구려본기 장수왕 15년"]
+
+- id: najae-alliance-433
+  year: 433
+  title:
+    ko: 나제 동맹
+  summary:
+    ko: 고구려의 남진에 맞서 신라 눌지왕과 백제 비유왕이 동맹을 맺었다. 눌지왕 때 신라는 왕위의 부자 상속을 확립하고 고구려의 간섭에서 벗어나려 했다.
+  subjects: [silla, baekje]
+  links:
+    - { from: baekje, to: silla, note: "동맹 요청" }
+    - { from: silla, to: baekje, note: "동맹 수락" }
+  tags: [diplomacy]
+  sources: ["『삼국사기』 신라본기 눌지 마립간 17년", "『삼국사기』 백제본기 비유왕 7년"]
+
+- id: northern-yan-436
+  year: 436
+  title:
+    ko: 북연 왕 풍홍의 고구려 망명
+  summary:
+    ko: 북위의 공격을 받은 북연의 왕 풍홍이 고구려로 망명했다. 북연이 멸망하면서 북위가 화북을 통일해 가는 가운데, 장수왕은 북위와 맞서지 않으면서 실리를 챙겼다.
+  subjects: [goguryeo, northern-yan, northern-wei]
+  links:
+    - { from: northern-wei, to: northern-yan, note: "북연 정복" }
+    - { from: northern-yan, to: goguryeo, note: "풍홍의 망명" }
+  tags: [diplomacy]
+  sources: ["『삼국사기』 고구려본기 장수왕 24년", "『위서』"]
+
+- id: gaero-letter-472
+  year: 472
+  title:
+    ko: 개로왕의 북위 국서
+  summary:
+    ko: 백제 개로왕이 북위에 국서를 보내 고구려를 함께 치자고 요청했으나 북위는 응하지 않았다.
+  subjects: [baekje, northern-wei]
+  links:
+    - { from: baekje, to: northern-wei, note: "고구려 공격 요청" }
+  tags: [diplomacy]
+  sources: ["『삼국사기』 백제본기 개로왕 18년", "『위서』 백제전"]
+
+- id: hanseong-falls-475
+  year: 475
+  title:
+    ko: 한성 함락과 웅진 천도
+  summary:
+    ko: 장수왕이 백제의 한성을 함락하고 개로왕을 죽였다. 백제 문주왕은 웅진(공주)으로 도읍을 옮겼다. 고구려는 한강 유역을 차지하고 아산만에서 죽령·영일만에 이르는 지역까지 세력을 넓혔으며, 이 시기에 충주 고구려비(중원 고구려비)를 세웠다.
+  subjects: [goguryeo, baekje]
+  links:
+    - { from: goguryeo, to: baekje, note: "한성 함락, 개로왕 전사" }
+  tags: [war]
+  sources: ["『삼국사기』 고구려본기 장수왕 63년", "『삼국사기』 백제본기 개로왕 21년·문주왕 원년", "충주 고구려비"]
+
+- id: daegaya-479
+  year: 479
+  title:
+    ko: 대가야의 남제 사신 파견
+  summary:
+    ko: 고령의 대가야(가라국) 왕 하지가 남제에 사신을 보내 관작을 받았다. 5세기 후반 대가야가 후기 가야 연맹을 이끌었다.
+  subjects: [gaya, southern-qi]
+  links:
+    - { from: gaya, to: southern-qi, note: "사신 파견" }
+    - { from: southern-qi, to: gaya, note: "보국장군 본국왕 책봉" }
+  tags: [diplomacy]
+  sources: ["『남제서』 동남이전 가라국"]
+
+- id: marriage-alliance-493
+  year: 493
+  title:
+    ko: 백제와 신라의 결혼 동맹
+  summary:
+    ko: 백제 동성왕이 신라 소지 마립간에게 혼인을 청해, 이찬 비지의 딸과 결혼하며 나제 동맹을 강화했다.
+  subjects: [baekje, silla]
+  links:
+    - { from: baekje, to: silla, note: "혼인 요청" }
+    - { from: silla, to: baekje, note: "이찬 비지의 딸을 보냄" }
+  tags: [diplomacy]
+  sources: ["『삼국사기』 백제본기 동성왕 15년", "『삼국사기』 신라본기 소지 마립간 15년"]
+
+- id: buyeo-falls-494
+  year: 494
+  title:
+    ko: 부여의 고구려 복속
+  summary:
+    ko: 물길에 쫓긴 부여 왕실이 고구려 문자명왕에게 항복해 부여가 완전히 사라졌다. 고구려는 최대 영토를 이루었다.
+  subjects: [buyeo, goguryeo]
+  links:
+    - { from: buyeo, to: goguryeo, note: "왕실의 항복" }
+  tags: [politics]
+  sources: ["『삼국사기』 고구려본기 문자명왕 3년"]
+
+# ── 6세기: 백제의 중흥과 신라의 발전 ────────────────────
+
+- id: jijeung-503
+  year: 502
+  endYear: 509
+  title:
+    ko: 지증왕의 체제 정비
+  summary:
+    ko: 신라 지증왕이 소를 이용한 우경을 장려하고 순장을 금지했다(502). 국호를 '신라'로 정하고 '마립간' 대신 '왕'이라는 칭호를 썼다(503). 지방에 주·군을 설치하고 실직주에 이사부를 군주로 보냈으며(505), 수도에 시장을 감독하는 동시전을 두었다(509).
+  subjects: [silla]
+  tags: [politics, economy]
+  sources: ["『삼국사기』 신라본기 지증 마립간 3년·4년·6년·10년"]
+
+- id: usanguk-512
+  year: 512
+  title:
+    ko: 이사부의 우산국 정복
+  summary:
+    ko: 하슬라주(강릉) 군주 이사부가 나무 사자를 배에 싣고 가 우산국(울릉도)을 복속시켰다. 신라는 동해안을 따라 강릉까지 세력을 넓혔다.
+  subjects: [silla]
+  tags: [war]
+  sources: ["『삼국사기』 신라본기 지증 마립간 13년", "『삼국사기』 열전 이사부"]
+
+- id: muryeong-521
+  year: 521
+  title:
+    ko: 무령왕의 양 교류와 22담로
+  summary:
+    ko: 백제 무령왕이 지방에 22담로를 두고 왕족을 보내 다스렸다. 양에 사신을 보내 "다시 강국이 되었다"고 알리고 영동대장군 칭호를 받았다. 공주의 무령왕릉은 양의 영향을 받은 벽돌무덤이다.
+  subjects: [baekje, liang]
+  links:
+    - { from: baekje, to: liang, note: "사신 파견" }
+    - { from: liang, to: baekje, note: "영동대장군 책봉, 벽돌무덤 양식" }
+  tags: [diplomacy, culture]
+  sources: ["『삼국사기』 백제본기 무령왕 21년", "『양서』 백제전", "무령왕릉 지석"]
+
+- id: beopheung-520
+  year: 517
+  endYear: 520
+  title:
+    ko: 법흥왕의 율령 반포
+  summary:
+    ko: 신라 법흥왕이 병부를 설치하고(517) 율령을 반포하며 백관의 공복을 정했다(520). 골품제가 정비되고, 531년에는 귀족 회의를 이끄는 상대등을 두었다.
+  subjects: [silla]
+  tags: [politics]
+  sources: ["『삼국사기』 신라본기 법흥왕 4년·7년·18년"]
+
+- id: ichadon-527
+  year: 527
+  endYear: 528
+  title:
+    ko: 이차돈의 순교와 불교 공인
+  summary:
+    ko: 이차돈의 순교를 계기로 신라가 불교를 공인했다. 불교는 왕즉불 사상 등으로 왕권 강화를 뒷받침했다.
+  subjects: [silla]
+  tags: [culture, religion]
+  sources: ["『삼국사기』 신라본기 법흥왕 15년", "『삼국유사』 원종흥법 염촉멸신"]
+
+- id: geumgwan-532
+  year: 532
+  title:
+    ko: 금관가야 병합
+  summary:
+    ko: 금관가야의 김구해가 신라 법흥왕에게 항복했다. 신라는 낙동강 하류로 진출했고, 김구해의 후손인 김무력·김유신은 진골 귀족이 되었다.
+  subjects: [silla, gaya]
+  links:
+    - { from: silla, to: gaya, note: "금관가야 병합" }
+  tags: [war, politics]
+  sources: ["『삼국사기』 신라본기 법흥왕 19년"]
+
+- id: geonwon-536
+  year: 536
+  title:
+    ko: 신라의 '건원' 연호 사용
+  summary:
+    ko: 법흥왕이 처음으로 '건원'이라는 독자적인 연호를 써서 중국과 대등한 국가임을 나타냈다.
+  subjects: [silla]
+  tags: [politics]
+  sources: ["『삼국사기』 신라본기 법흥왕 23년"]
+
+- id: sabi-538
+  year: 538
+  title:
+    ko: 성왕의 사비 천도
+  summary:
+    ko: 백제 성왕이 도읍을 사비(부여)로 옮기고 국호를 남부여로 바꾸었다. 중앙에 22부의 관청을 두고 수도를 5부, 지방을 5방으로 정비했다.
+  subjects: [baekje]
+  tags: [politics]
+  sources: ["『삼국사기』 백제본기 성왕 16년"]
+
+- id: guksa-545
+  year: 545
+  title:
+    ko: 거칠부의 『국사』 편찬
+  summary:
+    ko: 신라 진흥왕이 거칠부에게 역사서 『국사』를 편찬하게 했다.
+  subjects: [silla]
+  tags: [culture]
+  sources: ["『삼국사기』 신라본기 진흥왕 6년"]
+
+- id: han-river-551
+  year: 551
+  title:
+    ko: 나제 연합의 한강 유역 회복
+  summary:
+    ko: 백제 성왕과 신라 진흥왕이 함께 고구려를 공격해 백제는 한강 하류의 6군을, 신라는 한강 상류의 10군을 차지했다. 신라는 단양 적성비를 세워 이 지역의 민심을 달랬다. 이 무렵 대가야의 우륵이 가야금을 가지고 신라로 망명했다.
+  subjects: [baekje, silla, goguryeo]
+  links:
+    - { from: baekje, to: goguryeo, note: "한강 하류 6군 탈환" }
+    - { from: silla, to: goguryeo, note: "한강 상류 10군 차지" }
+  tags: [war]
+  sources: ["『삼국사기』 신라본기 진흥왕 12년", "『삼국사기』 열전 거칠부", "단양 신라 적성비"]
+
+- id: buddhism-japan-552
+  year: 552
+  title:
+    ko: 백제의 불교 일본 전파
+  summary:
+    ko: 백제 성왕이 노리사치계를 보내 왜에 불상과 불경을 전했다. 아직기·왕인(한문, 『논어』·『천자문』) 등에 이어 백제는 왜의 고대 문화 발전에 큰 영향을 주었다.
+  subjects: [baekje, wa]
+  links:
+    - { from: baekje, to: wa, note: "불교 전파" }
+  tags: [culture, religion]
+  sources: ["『일본서기』 긴메이 13년"]
+
+- id: silla-han-river-553
+  year: 553
+  title:
+    ko: 신라의 한강 하류 차지
+  summary:
+    ko: 진흥왕이 백제가 차지한 한강 하류까지 빼앗고 신주를 설치했다. 나제 동맹이 깨졌고, 신라는 서해 당항성을 통해 중국과 직접 교류할 수 있게 되었다.
+  subjects: [silla, baekje]
+  links:
+    - { from: silla, to: baekje, note: "한강 하류 탈취, 나제 동맹 결렬" }
+  tags: [war]
+  sources: ["『삼국사기』 신라본기 진흥왕 14년"]
+
+- id: gwansanseong-554
+  year: 554
+  title:
+    ko: 관산성 전투와 성왕 전사
+  summary:
+    ko: 백제 성왕이 가야·왜와 함께 신라의 관산성(옥천)을 공격했다가 전사했다. 이후 신라와 백제는 오랫동안 대립했다.
+  subjects: [baekje, silla, gaya, wa]
+  links:
+    - { from: baekje, to: silla, note: "관산성 공격" }
+    - { from: silla, to: baekje, note: "성왕 전사" }
+    - { from: gaya, to: silla, note: "백제 편에서 참전" }
+    - { from: wa, to: silla, note: "백제 편에서 참전" }
+  tags: [war]
+  sources: ["『삼국사기』 신라본기 진흥왕 15년", "『삼국사기』 백제본기 성왕 32년", "『일본서기』 긴메이 15년"]
+
+- id: jinheung-stele-555
+  year: 555
+  endYear: 568
+  title:
+    ko: 진흥왕 순수비
+  summary:
+    ko: 진흥왕이 넓힌 영토를 돌아보며 북한산비(555), 창녕비(561), 황초령비·마운령비(568)를 세웠다. 신라는 함경도 남부까지 진출했다. 북한산비는 조선 후기 김정희가 진흥왕 순수비임을 밝혔다.
+  subjects: [silla]
+  tags: [culture, politics]
+  sources: ["『삼국사기』 신라본기 진흥왕 16년", "북한산 신라 진흥왕 순수비", "마운령 신라 진흥왕 순수비"]
+
+- id: daegaya-falls-562
+  year: 562
+  title:
+    ko: 대가야 멸망
+  summary:
+    ko: 신라 진흥왕이 이사부와 사다함을 보내 대가야를 정복했다. 가야 연맹이 완전히 사라지고 신라가 낙동강 유역 전체를 차지했다.
+  subjects: [silla, gaya]
+  links:
+    - { from: silla, to: gaya, note: "대가야 정복" }
+  tags: [war]
+  sources: ["『삼국사기』 신라본기 진흥왕 23년", "『삼국사기』 열전 사다함"]
+
+- id: northern-qi-565
+  year: 565
+  title:
+    ko: 북제의 진흥왕 책봉
+  summary:
+    ko: 신라 진흥왕이 북제에 사신을 보내 책봉을 받았다. 한강 유역 확보 이후 신라는 중국 왕조와 직접 교류하기 시작했다.
+  subjects: [silla, northern-qi]
+  links:
+    - { from: silla, to: northern-qi, note: "사신 파견" }
+    - { from: northern-qi, to: silla, note: "신라왕 책봉" }
+  tags: [diplomacy]
+  sources: ["『삼국사기』 신라본기 진흥왕 26년", "『북제서』"]
+
+- id: hwarang-576
+  year: 576
+  title:
+    ko: 화랑도의 국가 조직화
+  summary:
+    ko: 원화 제도를 고쳐 청소년 수련 단체인 화랑도를 국가 조직으로 개편했다. 계층 간 대립을 조절하고 인재를 길러 삼국 통일의 원동력이 되었다. 뒤에 원광이 세속 5계를 지어 주었다.
+  subjects: [silla]
+  tags: [society]
+  sources: ["『삼국사기』 신라본기 진흥왕 37년"]
+
+- id: sui-unification-589
+  year: 589
+  title:
+    ko: 수의 중국 통일
+  summary:
+    ko: 북주를 이은 수가 남조의 진을 무너뜨려 약 300년 만에 중국을 통일했다. 수의 팽창은 고구려에 큰 위협이 되었다.
+  subjects: [sui, chen]
+  links:
+    - { from: sui, to: chen, note: "진 정복" }
+  tags: [war]
+  sources: ["『수서』 고조기"]
+
+- id: sui-first-war-598
+  year: 598
+  title:
+    ko: 고구려의 요서 공격과 수 문제의 침입
+  summary:
+    ko: 고구려 영양왕이 말갈군을 이끌고 요서를 먼저 공격했다. 수 문제가 30만 대군으로 쳐들어왔으나 장마와 전염병, 풍랑으로 크게 패하고 물러났다.
+  subjects: [goguryeo, sui]
+  links:
+    - { from: goguryeo, to: sui, note: "요서 선제공격" }
+    - { from: sui, to: goguryeo, note: "30만 대군 침입" }
+  tags: [war]
+  sources: ["『삼국사기』 고구려본기 영양왕 9년", "『수서』 고려전"]

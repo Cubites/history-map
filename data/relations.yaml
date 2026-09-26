@@ -40,3 +40,28 @@
 - { type: occupied_by, subject: imjin-occupied, object: japan, from: 1592, to: 1598 }
 - { type: successor_of, subject: hugeum, object: jurchen, from: 1616, to: null }
 - { type: successor_of, subject: qing, object: hugeum, from: 1636, to: null }
+
+# ── 2번 묶음 (기원전 57 ~ 600) ──
+- { type: successor_of, subject: gaya, object: byeonhan, from: 42, to: null }
+- { type: successor_of, subject: xin, object: western-han, from: 9, to: null }
+- { type: successor_of, subject: eastern-han, object: western-han, from: 25, to: null }
+- { type: successor_of, subject: cao-wei, object: eastern-han, from: 220, to: null }
+- { type: successor_of, subject: western-jin, object: cao-wei, from: 265, to: null }
+- { type: successor_of, subject: eastern-jin, object: western-jin, from: 317, to: null }
+- { type: successor_of, subject: liu-song, object: eastern-jin, from: 420, to: null }
+- { type: successor_of, subject: southern-qi, object: liu-song, from: 479, to: null }
+- { type: successor_of, subject: liang, object: southern-qi, from: 502, to: null }
+- { type: successor_of, subject: chen, object: liang, from: 557, to: null }
+- { type: successor_of, subject: later-yan, object: former-yan, from: 384, to: null }
+- { type: successor_of, subject: eastern-wei, object: northern-wei, from: 534, to: null }
+- { type: successor_of, subject: western-wei, object: northern-wei, from: 535, to: null }
+- { type: successor_of, subject: northern-qi, object: eastern-wei, from: 550, to: null }
+- { type: successor_of, subject: northern-zhou, object: western-wei, from: 557, to: null }
+- { type: successor_of, subject: sui, object: northern-zhou, from: 581, to: null }
+
+# 한 군현: 옛 고조선 땅을 중국 왕조가 점령 (빗금)
+- { type: occupied_by, subject: nangnang, object: western-han, from: -107, to: 8 }
+- { type: occupied_by, subject: nangnang, object: xin, from: 9, to: 23 }
+- { type: occupied_by, subject: nangnang, object: eastern-han, from: 25, to: 219 }
+- { type: occupied_by, subject: nangnang, object: cao-wei, from: 220, to: 264 }
+- { type: occupied_by, subject: nangnang, object: western-jin, from: 265, to: 313 }
