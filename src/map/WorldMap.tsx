@@ -41,6 +41,7 @@ import {
   MAX_ZOOM,
   MIN_ZOOM,
   recenter,
+  zoomAround,
   toGeoView,
   toView,
   type GeoView,
@@ -314,7 +315,15 @@ export default function WorldMap({ data }: { data: StaticData }) {
         // 새 화면 가운데에 올 점을, 옮기기 전 화면 좌표로 구한다 (끌기와 기준점 확대 모두 처리)
         const center: [number, number] = [size.width / 2, size.height / 2];
         const target = t0.apply(t1.invert(center)) as [number, number];
-        viewRef.current = recenter(size, s0, viewRef.current, target, t1.k);
+        if (t1.k === t0.k) viewRef.current = recenter(size, s0, viewRef.current, target, t1.k);
+        else {
+          // 확대 기준점(포인터): 확대 전후 변환에서 움직이지 않는 점
+          const anchor: [number, number] = [
+            (t0.x * t1.k - t1.x * t0.k) / (t1.k - t0.k),
+            (t0.y * t1.k - t1.y * t0.k) / (t1.k - t0.k),
+          ];
+          viewRef.current = zoomAround(size, s0, viewRef.current, target, t1.k, anchor);
+        }
         setHovered(null);
         requestDraw();
       })

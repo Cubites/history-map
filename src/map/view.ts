@@ -1,6 +1,14 @@
 // 지도 시점 (DESIGN.md §3). 면적 보존 도법(Equal Earth)에서 보고 있는 경도를 항상 중앙 경선으로 둔다.
 // 옆으로 움직이면 지도를 밀어내는 대신 도법을 회전시키므로, 보는 곳은 늘 왜곡이 가장 작은 중심에 온다.
-import { geoEqualEarth, type GeoProjection } from 'd3-geo';
+// 확대하면 람베르트 정적 방위 도법(보는 곳 중심)으로 부드럽게 바뀌어 고위도 지역의 모양도 바로잡는다 (D13, §3.1).
+import {
+  geoAzimuthalEqualAreaRaw,
+  geoEqualEarth,
+  geoEqualEarthRaw,
+  geoProjection,
+  type GeoProjection,
+  type GeoRawProjection,
+} from 'd3-geo';
 import type { LonLat } from '../schema/index.ts';
 
 export type Size = { width: number; height: number };
@@ -53,11 +61,89 @@ export function baseScale({ width, height }: Size): number {
  * 육지가 테두리 밖으로 튀어나오므로, 그런 곳에만 `precise`로 곡선 보정을 켠 투영을 쓴다.
  */
 export function createProjection(size: Size, s0: number, view: View, precise = false): GeoProjection {
+  const t = regionalBlend(size, s0, view.k);
+  const world = worldProjection(size, s0, view, precise);
+  if (t === 0) return world;
+  // 화면 가운데의 땅은 도법이 바뀌어도 그대로 가운데에 있도록, Equal Earth 기준 중심 위도를 구해 그 점을 가운데에 둔다
+  const center = world.invert!([size.width / 2 + view.dx, size.height / 2]);
+  const lat = center && Number.isFinite(center[1]) ? center[1] : 0;
+  const projection = geoProjection(blendRaw(t))
+    // Equal Earth는 경도 180° 선(이음새)을 따라 자르지만, 방위 도법에서는 그 선이 한 줄로 겹쳐 지도가 사라진다.
+    // 지역 도법이 절반 넘게 섞이면 중심에서 170° 떨어진 원으로 자른다 (이 축척에서는 화면 밖).
+    .clipAngle(t >= 0.5 ? 170 : null)
+    // 지역 도법이 섞일수록 보는 위도를 도법의 중심으로 옮긴다 (t=1이면 보는 곳이 정중앙, 북쪽이 위)
+    .rotate([-view.lon, -lat * t])
+    .scale(s0 * view.k)
+    .translate([size.width / 2, size.height / 2])
+    .precision(precise ? Math.SQRT1_2 : 0);
+  const [x, y] = projection([view.lon, lat])!;
+  return projection.translate([size.width + view.dx - x, size.height - y]);
+}
+
+/** 세계 지도: 가로로만 회전하는 Equal Earth */
+function worldProjection(size: Size, s0: number, view: View, precise: boolean): GeoProjection {
   return geoEqualEarth()
     .rotate([-view.lon, 0])
     .scale(s0 * view.k)
     .translate([size.width / 2 + view.dx, view.ty])
     .precision(precise ? Math.SQRT1_2 : 0);
+}
+
+// ── 확대하면 지역 도법으로 (DESIGN.md §3.1 D13) ─────────────────
+/**
+ * 지도 축척(s0·k)이 화면의 긴 변의 이 비율에 이르면 지역 도법을 섞기 시작해서, 끝 비율에서 완전히 바꾼다.
+ * 배율(k) 대신 화면 크기에 대한 비율로 정해, 좁은 모바일 화면에서도 지구 반대편 가장자리가 보이기 전에 바뀌지 않게 한다.
+ * (PC 2096×1102에서 대략 배율 2.5~3.5, 성능 측정 기준)
+ */
+const BLEND_START = 0.45;
+const BLEND_END = 0.65;
+
+/** 지역 도법이 섞인 정도 (0: Equal Earth, 1: 람베르트 정적 방위 도법) */
+export function regionalBlend(size: Size, s0: number, k: number): number {
+  const ratio = (s0 * k) / Math.max(size.width, size.height);
+  const x = clamp((ratio - BLEND_START) / (BLEND_END - BLEND_START), 0, 1);
+  return x * x * (3 - 2 * x); // smoothstep: 양 끝에서 부드럽게
+}
+
+const blendCache = new Map<number, GeoRawProjection>();
+
+/**
+ * 두 도법의 좌표를 t 비율로 섞는다. 둘 다 면적을 보존하는 도법이라 섞은 도법도 면적 왜곡이 작다.
+ * 섞은 도법은 역변환 공식이 없어서 뉴턴법으로 푼다 (나라 클릭, 끌기, 화면 밖 판정에 필요).
+ */
+function blendRaw(t: number): GeoRawProjection {
+  if (t >= 1) return geoAzimuthalEqualAreaRaw;
+  const key = Math.round(t * 1000) / 1000;
+  const hit = blendCache.get(key);
+  if (hit) return hit;
+  const raw: GeoRawProjection = (lambda, phi) => {
+    const a = geoEqualEarthRaw(lambda, phi);
+    const b = geoAzimuthalEqualAreaRaw(lambda, phi);
+    return [a[0] * (1 - key) + b[0] * key, a[1] * (1 - key) + b[1] * key];
+  };
+  raw.invert = (x, y) => {
+    // 더 많이 섞인 쪽 도법의 역변환으로 시작점을 잡는다
+    const start = (key < 0.5 ? geoEqualEarthRaw.invert! : geoAzimuthalEqualAreaRaw.invert!)(x, y);
+    let [lambda, phi] = start;
+    const h = 1e-7;
+    for (let i = 0; i < 12; i++) {
+      const [fx, fy] = raw(lambda, phi);
+      const ex = fx - x;
+      const ey = fy - y;
+      if (Math.abs(ex) < 1e-10 && Math.abs(ey) < 1e-10) break;
+      const [ax, ay] = raw(lambda + h, phi);
+      const [bx, by] = raw(lambda, phi + h);
+      const a = (ax - fx) / h, c = (ay - fy) / h, b = (bx - fx) / h, d = (by - fy) / h;
+      const det = a * d - b * c;
+      if (!Number.isFinite(det) || Math.abs(det) < 1e-12) return [NaN, NaN];
+      lambda -= (d * ex - b * ey) / det;
+      phi -= (-c * ex + a * ey) / det;
+    }
+    return [lambda, phi];
+  };
+  if (blendCache.size > 256) blendCache.clear();
+  blendCache.set(key, raw);
+  return raw;
 }
 
 export function normalizeLon(lon: number): number {
@@ -93,14 +179,15 @@ export function constrain(size: Size, s0: number, view: View): View {
 
 /** 경위도 시점을 화면 시점으로. 해당 위도가 화면 가운데에 오게 한다 */
 export function toView(size: Size, s0: number, { lon, lat, k }: GeoView): View {
-  const projection = createProjection(size, s0, { lon, k, ty: 0, dx: 0 });
+  // 시점(ty)은 Equal Earth 기준으로 정의되므로 세계 도법으로 계산한다
+  const projection = worldProjection(size, s0, { lon, k, ty: 0, dx: 0 }, false);
   const y = projection([lon, lat])![1];
   return constrain(size, s0, { lon, k, ty: size.height / 2 - y, dx: 0 });
 }
 
 /** 화면 가운데의 위도 */
 export function centerLat(size: Size, s0: number, view: View): number {
-  const projection = createProjection(size, s0, view);
+  const projection = worldProjection(size, s0, view, false);
   const p = invertPoint(projection, [size.width / 2 + view.dx, size.height / 2]);
   return p ? p[1] : 0;
 }
@@ -139,6 +226,27 @@ export function pxPerDegree(projection: GeoProjection, view: View, lat: number):
 }
 
 /**
+ * 확대·축소 (휠·핀치·버튼). `anchor`는 확대 기준점(포인터)의 화면 좌표.
+ * 먼저 recenter로 근사한 뒤, 기준점 아래에 있던 땅이 다시 기준점 아래로 오도록 시점을 보정한다.
+ * 도법이 회전하고 섞이기 때문에 한 번의 근사로는 땅이 수십 px 밀린다 (측정: 1.25배 확대에 11~60px).
+ */
+export function zoomAround(size: Size, s0: number, view: View, target: [number, number], k: number, anchor: [number, number]): View {
+  const ground = invertPoint(createProjection(size, s0, view), anchor);
+  let next = recenter(size, s0, view, target, k);
+  if (!ground) return next;
+  const center: [number, number] = [size.width / 2, size.height / 2];
+  for (let i = 0; i < 3; i++) {
+    const now = createProjection(size, s0, next)(ground);
+    if (!now) break;
+    const [ex, ey] = [now[0] - anchor[0], now[1] - anchor[1]];
+    if (Math.hypot(ex, ey) < 0.5) break;
+    // 밀린 만큼 반대로 옮긴다 (같은 배율에서의 이동)
+    next = recenter(size, s0, next, [center[0] + ex, center[1] + ey], next.k);
+  }
+  return next;
+}
+
+/**
  * d3-zoom의 이동량(끌기, 휠·핀치 확대의 기준점 보정)을 시점 변화로 바꾼다.
  * `target`은 새 화면 가운데에 올 점의 (옮기기 전) 화면 좌표, `k`는 새 배율.
  */
@@ -154,10 +262,13 @@ export function recenter(size: Size, s0: number, view: View, target: [number, nu
     // 세계가 화면보다 좁을 때 확대·축소하면 회전하지 않고 옮긴다 (끝이 화면 경계에 붙도록 constrain이 제한)
     return constrain(size, s0, { lon: view.lon, k, ty, dx: (meridianX - target[0]) * ratio });
   }
-  // 그 밖에는 가로 이동량만큼 도법을 회전한다. 회전은 지도 끝 위치를 바꾸지 않으므로 빈 곳을 만들지 않는다.
+  // 그 밖에는 target 지점의 경위도를 새 화면 가운데로 삼는다 (가로는 도법 회전).
+  // 회전은 지도 끝 위치를 바꾸지 않으므로 빈 곳을 만들지 않는다. 지역 도법이 섞여 있어도 같은 방식으로 맞는다.
   const projection = createProjection(size, s0, view);
   const point: [number, number] = [meridianX + (target[0] - center[0]), target[1]];
   const hit = invertPoint(projection, point);
-  const lon = hit ? hit[0] : view.lon + (target[0] - center[0]) / (EQUATOR_PER_DEGREE * s0 * view.k);
+  if (hit) return constrain(size, s0, { ...toView(size, s0, { lon: hit[0], lat: hit[1], k }), dx: view.dx });
+  // 지도 바깥(세계 타원 밖)을 잡았으면 Equal Earth 기준으로 근사한다
+  const lon = view.lon + (target[0] - center[0]) / (EQUATOR_PER_DEGREE * s0 * view.k);
   return constrain(size, s0, { lon, k, ty, dx: view.dx });
 }
