@@ -173,7 +173,16 @@ export function constrain(size: Size, s0: number, view: View): View {
     dx = 0;
   }
 
-  ty = 2 * halfHeight <= size.height ? size.height / 2 : clamp(ty, size.height - halfHeight, halfHeight);
+  if (2 * halfHeight <= size.height) {
+    ty = size.height / 2;
+  } else {
+    // 지역 도법이 섞일수록 끝 제한을 풀어, 다 바뀌면 극점이 화면 가운데까지 올 수 있게 한다.
+    // 끝 제한은 Equal Earth 기준이라, 그대로 두면 극지방을 세로로 누르는 세계 도법의 특성 때문에
+    // 확대할수록 극점이 화면 밖으로 밀려난다 (확대 10배에서 북극이 화면 위로 약 680px 밖).
+    // 극점 바로 위(세계 타원 밖)는 역변환이 불안정하므로 극점에서 0.5px 앞까지만 허용한다
+    const slack = regionalBlend(size, s0, k) * (size.height / 2 - 0.5);
+    ty = clamp(ty, size.height - halfHeight - slack, halfHeight + slack);
+  }
   return { lon: normalizeLon(lon), k, ty, dx };
 }
 
@@ -267,7 +276,14 @@ export function recenter(size: Size, s0: number, view: View, target: [number, nu
   const projection = createProjection(size, s0, view);
   const point: [number, number] = [meridianX + (target[0] - center[0]), target[1]];
   const hit = invertPoint(projection, point);
-  if (hit) return constrain(size, s0, { ...toView(size, s0, { lon: hit[0], lat: hit[1], k }), dx: view.dx });
+  if (hit) {
+    // 극점을 넘어 반대편을 잡으면 경도가 180° 뒤집혀 지도가 갑자기 돌아가므로, 극점에서 멈춘다
+    if (regionalBlend(size, s0, view.k) > 0 && Math.abs(hit[1]) > 45 && Math.abs(normalizeLon(hit[0] - view.lon)) > 90) {
+      const lat = Math.sign(hit[1] || centerLat(size, s0, view)) * 90;
+      return constrain(size, s0, { ...toView(size, s0, { lon: view.lon, lat, k }), dx: view.dx });
+    }
+    return constrain(size, s0, { ...toView(size, s0, { lon: hit[0], lat: hit[1], k }), dx: view.dx });
+  }
   // 지도 바깥(세계 타원 밖)을 잡았으면 Equal Earth 기준으로 근사한다
   const lon = view.lon + (target[0] - center[0]) / (EQUATOR_PER_DEGREE * s0 * view.k);
   return constrain(size, s0, { lon, k, ty, dx: view.dx });

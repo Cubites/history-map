@@ -94,6 +94,15 @@ export function visibleBounds(projection: GeoProjection, size: Size, view: View)
   // 세계 타원 가장자리가 보일 만큼 축소했으면 모두 그린다
   if (outside) return { w: -180, e: 180, s: -90, n: 90, all: true };
   const margin = 2;
+  // 극점이 화면 안에 있거나 가까우면 모든 경도가 보일 수 있다 (격자 점만으로는 놓친다)
+  const onScreen = (lat: number) => {
+    const p = projection([view.lon, lat]);
+    return !!p && p[0] >= 0 && p[0] <= size.width && p[1] >= 0 && p[1] <= size.height;
+  };
+  const north = onScreen(90) || n > 80;
+  const south = onScreen(-90) || s < -80;
+  if (north || south)
+    return { w: -180, e: 180, s: south ? -90 : s - margin, n: north ? 90 : n + margin, all: false };
   return { w: w - margin, e: e + margin, s: s - margin, n: n + margin, all: false };
 }
 
