@@ -242,3 +242,28 @@
   basis:
     type: primary_source
     refs: ["『한서』 지리지", "『삼국사기』 고구려본기 미천왕 14년"]
+
+# ── 7번 묶음 (1876 ~ 1945) ──
+
+- id: daehan-jeguk
+  level: polity
+  names: { ko: 대한제국, hanja: 大韓帝國, en: Korean Empire }
+  from: 1897
+  to: 1910
+  color: "#3b6fb0"
+  summary: 고종이 아관파천에서 돌아와 국호를 대한, 연호를 광무로 정하고 황제로 즉위해 세운 나라. 구본신참의 광무개혁을 추진했으나 을사늑약(1905)으로 외교권을 빼앗기고 1910년 일제에 국권을 강탈당함
+  basis:
+    type: primary_source
+    refs: ["『고종실록』 고종 34년", "「대한국 국제」"]
+
+# 일제 강점기. 대한제국 땅 위에 일본 색으로 빗금 (DESIGN.md D8)
+- id: occupied-korea
+  level: region
+  names: { ko: 일제 강점기의 한국, en: Korea under Japanese rule }
+  from: 1910
+  to: 1945
+  color: "#3e8ab8"
+  summary: 1910년 국권 피탈부터 1945년 광복까지 일제가 조선 총독부를 두고 불법으로 지배한 시기. 무단 통치(1910년대), 이른바 문화 통치(1920년대), 민족 말살 통치(1930년대 후반~)로 이어졌으며, 국내외에서 독립운동이 끊이지 않음. 대한민국 임시정부(1919~)의 활동도 여기에 표시
+  basis:
+    type: national_institution
+    refs: ["국사편찬위원회 『한국사』", "『조선총독부 관보』"]

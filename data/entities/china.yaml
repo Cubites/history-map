@@ -141,3 +141,39 @@
   basis:
     type: primary_source
     refs: ["『청사고』", "『인조실록』"]
+
+# ── 7번 묶음 (1876 ~ 1945) ──
+
+- id: roc
+  level: polity
+  names: { ko: 중화민국, hanja: 中華民國, en: Republic of China }
+  from: 1912
+  to: null
+  color: "#b8504a"
+  summary: 신해혁명(1911)으로 청이 무너지고 세워진 공화국. 대한민국 임시정부와 한국광복군을 지원함. 1949년 국공 내전에서 져 타이완으로 옮김
+  basis:
+    type: primary_source
+    refs: ["『중화민국 임시약법』", "국사편찬위원회 『한국독립운동사』"]
+    foundingNote: 외몽골은 1921년 독립한 뒤 지도에서 비워 둠
+
+- id: manchukuo
+  level: polity
+  names: { ko: 만주국, hanja: 滿洲國, en: Manchukuo }
+  from: 1932
+  to: 1945
+  color: "#a58b5c"
+  summary: 만주 사변(1931) 뒤 일제가 청의 마지막 황제 푸이를 내세워 세운 괴뢰 국가. 지도에는 일본에 종속된 나라로 표시 (일본 색 테두리)
+  basis:
+    type: primary_source
+    refs: ["『리턴 조사단 보고서』"]
+
+- id: occupied-china
+  level: region
+  names: { ko: 중일 전쟁 일본군 점령지, en: Japanese-occupied China }
+  from: 1938
+  to: 1945
+  color: "#b8504a"
+  summary: 중일 전쟁(1937) 뒤 일본군이 차지한 화북·화중 동부의 도시와 교통로, 광저우 일대. 중화민국 정부는 충칭으로 옮겨 저항함. 실제 점령은 점과 선 위주였으며 지도는 대략적인 범위
+  basis:
+    type: primary_source
+    refs: ["『중화민국사』"]

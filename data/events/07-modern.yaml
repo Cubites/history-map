@@ -1,0 +1,859 @@
+# 7번 묶음: 근대 (1876 ~ 1945)
+# 깊이: 한국사능력검정시험(심화) 수준. 서술은 새로 작성, 출처는 해당 기록이 실린 사료·자료. 운영자 검수 필요.
+# 강화도 조약(1876)은 6번 묶음에 있다. 광복 이후는 8번 묶음에서 다룬다.
+# 『고종실록』: 고종 1년 = 1864년. 『순종실록』: 순종 1년 = 1908년.
+# 1910~1945년 한국 안의 사건은 'occupied-korea'(일제 강점기의 한국)에 둔다. 대한민국 임시정부는 영토가 없어 따로 나라로 두지 않았다.
+
+# ── 개항과 개화 정책 (1876 ~ 1884) ─────────────────────
+
+- id: trade-rules-1876
+  year: 1876
+  title:
+    ko: 조일 수호 조규 부록과 조일 무역 규칙
+  summary:
+    ko: 강화도 조약에 이어 개항장에서 일본인의 거류지(간행이정 10리)를 정하고 일본 화폐를 쓸 수 있게 했다. 무역 규칙으로 양곡의 무제한 유출과 무관세 무역을 허용했다. 김기수가 1차 수신사로 일본에 다녀왔다.
+  subjects: [joseon, japan]
+  links:
+    - { from: japan, to: joseon, note: "불평등한 무역 규칙" }
+    - { from: joseon, to: japan, note: "1차 수신사 파견" }
+  tags: [diplomacy, economy]
+  sources: ["『고종실록』 고종 13년", "김기수, 『일동기유』"]
+
+- id: joseon-strategy-1880
+  year: 1880
+  endYear: 1881
+  title:
+    ko: 『조선책략』 유포와 영남 만인소
+  summary:
+    ko: 2차 수신사 김홍집이 청의 황쭌셴이 쓴 『조선책략』을 들여왔다. 러시아를 막으려면 청과 친하고 일본과 맺고 미국과 연결해야 한다는 내용이었다. 이에 반발해 이만손 등 영남 유생이 만인소를 올리는 등 위정척사 운동이 거세졌다.
+  subjects: [joseon, qing, japan]
+  links:
+    - { from: joseon, to: japan, note: "2차 수신사 김홍집" }
+    - { from: qing, to: joseon, note: "『조선책략』 전래" }
+  tags: [diplomacy, politics]
+  sources: ["『고종실록』 고종 17년·18년", "황쭌셴, 『조선책략』"]
+
+- id: tongni-gimu-1880
+  year: 1880
+  endYear: 1881
+  title:
+    ko: 통리기무아문 설치와 개화 정책
+  summary:
+    ko: 개화 정책을 총괄하는 통리기무아문과 12사를 두고, 신식 군대인 별기군을 만들었다(1881). 일본에 조사 시찰단(신사 유람단)을, 청의 톈진에 영선사(김윤식)를 보냈고, 영선사의 경험으로 근대 무기 공장인 기기창이 세워졌다(1883).
+  subjects: [joseon, japan, qing]
+  links:
+    - { from: joseon, to: japan, note: "조사 시찰단 파견" }
+    - { from: joseon, to: qing, note: "영선사 파견" }
+  tags: [politics]
+  sources: ["『고종실록』 고종 17년·18년"]
+
+- id: korea-us-treaty-1882
+  year: 1882
+  title:
+    ko: 조미 수호 통상 조약
+  summary:
+    ko: 청의 알선으로 서양 나라와 처음 맺은 조약이다. 거중 조정, 치외 법권, 최혜국 대우를 규정했고 처음으로 관세 조항을 넣었다. 이듬해 민영익 등이 보빙사로 미국에 갔다.
+  subjects: [joseon, usa, qing]
+  links:
+    - { from: qing, to: joseon, note: "조약 알선" }
+    - { from: joseon, to: usa, note: "수교, 보빙사 파견 (1883)" }
+  tags: [diplomacy]
+  sources: ["『고종실록』 고종 19년·20년", "「조미 수호 통상 조약」"]
+
+- id: imo-1882
+  year: 1882
+  title:
+    ko: 임오군란
+  summary:
+    ko: 별기군과의 차별 대우와 밀린 급료에 불만을 품은 구식 군인들이 난을 일으켜 일본 공사관을 공격했다. 흥선 대원군이 잠시 다시 집권했으나 청군이 대원군을 납치해 갔다. 이후 일본과 제물포 조약(배상금, 공사관 경비병 주둔)을, 청과 조청 상민 수륙 무역 장정(청 상인의 내지 통상)을 맺었고, 청은 마젠창과 묄렌도르프를 고문으로 보내 내정에 간섭했다.
+  subjects: [joseon, qing, japan]
+  links:
+    - { from: qing, to: joseon, note: "군란 진압, 대원군 납치, 내정 간섭" }
+    - { from: japan, to: joseon, note: "제물포 조약" }
+  tags: [politics, war]
+  sources: ["『고종실록』 고종 19년", "「제물포 조약」", "「조청 상민 수륙 무역 장정」"]
+
+- id: hanseong-sunbo-1883
+  year: 1883
+  title:
+    ko: 근대 시설과 『한성순보』
+  summary:
+    ko: 박문국에서 최초의 근대 신문인 『한성순보』를 펴내고, 화폐를 찍는 전환국을 설치했다. 함경도 덕원 주민들이 최초의 근대 사립 학교인 원산 학사를 세웠다. 같은 해 영국·독일과도 수교했다.
+  subjects: [joseon, uk]
+  links:
+    - { from: joseon, to: uk, note: "조영 수호 통상 조약" }
+  tags: [culture]
+  sources: ["『고종실록』 고종 20년", "『한성순보』"]
+
+- id: gapsin-1884
+  year: 1884
+  endYear: 1885
+  title:
+    ko: 갑신정변
+  summary:
+    ko: 김옥균·박영효 등 급진 개화파가 우정총국 개국 축하연에서 정변을 일으켜 14개조 정강(청에 대한 사대 폐지, 지조법 개혁, 인민 평등)을 발표했으나 청군의 개입으로 3일 만에 실패했다. 조선은 일본과 한성 조약을, 청과 일본은 톈진 조약(1885, 양국 군대 철수와 파병 시 통보)을 맺었다.
+  subjects: [joseon, japan, qing]
+  links:
+    - { from: japan, to: joseon, note: "일본 공사관의 지원 약속" }
+    - { from: qing, to: joseon, note: "청군의 진압" }
+    - { from: qing, to: japan, note: "톈진 조약" }
+  tags: [politics]
+  sources: ["『고종실록』 고종 21년", "김옥균, 『갑신일록』"]
+
+# ── 열강의 대립과 동학 농민 운동 (1885 ~ 1895) ───────────
+
+- id: geomundo-1885
+  year: 1885
+  endYear: 1887
+  title:
+    ko: 거문도 사건
+  summary:
+    ko: 러시아의 남하를 막는다며 영국 함대가 거문도를 불법 점령했다. 조선과 러시아가 가까워지는 데 대한 견제였다. 이 무렵 부들러와 유길준이 한반도 중립화론을 주장했다.
+  subjects: [joseon, uk, russia]
+  links:
+    - { from: uk, to: joseon, note: "거문도 불법 점령" }
+    - { from: uk, to: russia, note: "러시아 남하 견제" }
+  tags: [diplomacy, war]
+  sources: ["『고종실록』 고종 22년·24년"]
+
+- id: modern-schools-1885
+  year: 1885
+  endYear: 1886
+  title:
+    ko: 광혜원과 근대 학교 설립
+  summary:
+    ko: 미국인 선교사 알렌의 건의로 최초의 근대식 병원 광혜원(제중원)을 세웠다. 아펜젤러의 배재 학당, 스크랜턴의 이화 학당이 문을 열었고, 정부는 헐버트 등을 교사로 초빙해 육영 공원을 세웠다(1886).
+  subjects: [joseon, usa]
+  links:
+    - { from: usa, to: joseon, note: "선교사의 의료·교육 활동" }
+  tags: [culture]
+  sources: ["『고종실록』 고종 22년·23년"]
+
+- id: korea-france-1886
+  year: 1886
+  title:
+    ko: 조불 수호 통상 조약
+  summary:
+    ko: 프랑스와 수교하면서 천주교 선교의 자유가 사실상 인정되었다.
+  subjects: [joseon, france]
+  links:
+    - { from: joseon, to: france, note: "수교, 선교 허용" }
+  tags: [diplomacy, religion]
+  sources: ["『고종실록』 고종 23년"]
+
+- id: banggongnyeong-1889
+  year: 1889
+  title:
+    ko: 방곡령 선포
+  summary:
+    ko: 일본으로 곡물이 대량 유출되자 함경도 관찰사 조병식이 방곡령을 내렸다. 일본은 1개월 전 통보 규정을 어겼다며 배상금을 요구했다.
+  subjects: [joseon, japan]
+  links:
+    - { from: joseon, to: japan, note: "곡물 수출 금지" }
+    - { from: japan, to: joseon, note: "배상금 요구" }
+  tags: [economy]
+  sources: ["『고종실록』 고종 26년"]
+
+- id: donghak-first-1894
+  year: 1894
+  title:
+    ko: 동학 농민 운동 (1차 봉기와 전주 화약)
+  summary:
+    ko: 고부 군수 조병갑의 수탈에 맞서 전봉준이 고부 관아를 점령했다. 백산에서 격문과 4대 강령을 발표하고 황토현·황룡촌에서 관군을 이긴 뒤 전주성을 점령했다. 정부가 청에 원병을 요청하자 일본도 톈진 조약을 구실로 군대를 보냈다. 농민군은 전주 화약을 맺고 전라도에 집강소를 두어 폐정 개혁을 실천했다.
+  subjects: [joseon, qing, japan]
+  links:
+    - { from: qing, to: joseon, note: "원병 파견" }
+    - { from: japan, to: joseon, note: "톈진 조약을 구실로 파병" }
+  tags: [society, war]
+  sources: ["『고종실록』 고종 31년", "전봉준 공초"]
+
+- id: sino-japanese-war-1894
+  year: 1894
+  endYear: 1895
+  title:
+    ko: 청일 전쟁과 시모노세키 조약
+  summary:
+    ko: 일본군이 경복궁을 점령하고 풍도 앞바다에서 청군을 공격해 전쟁이 시작되었다. 일본이 이겨 시모노세키 조약으로 청은 조선이 자주국임을 인정하고, 랴오둥반도와 타이완을 일본에 넘겼다.
+  subjects: [qing, japan, joseon]
+  links:
+    - { from: japan, to: qing, note: "전쟁 도발, 타이완 할양" }
+    - { from: japan, to: joseon, note: "경복궁 점령" }
+  tags: [war]
+  sources: ["『고종실록』 고종 31년", "「시모노세키 조약」"]
+
+- id: gabo-reform-1894
+  year: 1894
+  endYear: 1895
+  title:
+    ko: 갑오개혁 (1·2차)
+  summary:
+    ko: 일본의 간섭 속에 군국기무처가 개혁을 추진했다(1차). 과거제와 신분제, 연좌제, 조혼을 없애고 은 본위 화폐 제도와 조세의 금납화를 시행했다. 2차 개혁에서는 고종이 홍범 14조를 반포하고, 8아문을 7부로, 8도를 23부로 바꾸었으며 재판소를 설치하고 교육 입국 조서를 발표했다.
+  subjects: [joseon, japan]
+  links:
+    - { from: japan, to: joseon, note: "개혁 간섭" }
+  tags: [politics]
+  sources: ["『고종실록』 고종 31년·32년", "「홍범 14조」"]
+
+- id: donghak-second-1894
+  year: 1894
+  title:
+    ko: 동학 농민 운동 (2차 봉기와 우금치 전투)
+  summary:
+    ko: 일본군이 경복궁을 점령하자 농민군이 반외세를 내세우며 다시 봉기했다. 남접과 북접이 논산에서 합류했으나 공주 우금치에서 일본군과 관군에 크게 패했고 전봉준이 체포되었다. 폐정 개혁 요구의 일부는 갑오개혁에 반영되었다.
+  subjects: [joseon, japan]
+  links:
+    - { from: joseon, to: japan, note: "반외세 봉기" }
+    - { from: japan, to: joseon, note: "농민군 진압" }
+  tags: [society, war]
+  sources: ["『고종실록』 고종 31년", "『동학란 기록』"]
+
+- id: triple-intervention-1895
+  year: 1895
+  title:
+    ko: 삼국 간섭과 을미사변
+  summary:
+    ko: 러시아가 프랑스·독일과 함께 일본을 압박해 랴오둥반도를 청에 돌려주게 했다(삼국 간섭). 조선 정부가 러시아에 가까워지자 일본은 경복궁에 난입해 명성 황후를 시해했다.
+  subjects: [joseon, russia, japan, france]
+  links:
+    - { from: russia, to: japan, note: "랴오둥반도 반환 압박" }
+    - { from: japan, to: joseon, note: "명성 황후 시해" }
+  tags: [diplomacy, politics]
+  sources: ["『고종실록』 고종 32년"]
+
+- id: eulmi-reform-1895
+  year: 1895
+  endYear: 1896
+  title:
+    ko: 을미개혁과 을미의병
+  summary:
+    ko: 친일 내각이 단발령을 내리고 태양력 사용, '건양' 연호, 종두법, 우편 사무, 친위대·진위대 설치 등을 추진했다. 을미사변과 단발령에 분노한 유인석·이소응 등 유생이 의병을 일으켰다.
+  subjects: [joseon, japan]
+  links:
+    - { from: japan, to: joseon, note: "친일 내각의 개혁" }
+  tags: [politics, war]
+  sources: ["『고종실록』 고종 32년·33년", "유인석, 『의암집』"]
+
+# ── 아관파천과 대한제국 (1896 ~ 1904) ───────────────────
+
+- id: agwan-pacheon-1896
+  year: 1896
+  title:
+    ko: 아관파천과 열강의 이권 침탈
+  summary:
+    ko: 고종이 러시아 공사관으로 거처를 옮겼다. 친러 내각이 들어서고 러시아의 영향력이 커졌으며, 최혜국 대우를 내세운 열강이 광산·철도·삼림 채벌권 등 이권을 빼앗아 갔다(경인선 부설권은 미국 → 일본).
+  subjects: [joseon, russia, usa, japan]
+  links:
+    - { from: joseon, to: russia, note: "고종의 러시아 공사관 이어" }
+    - { from: russia, to: joseon, note: "압록강·울릉도 삼림 채벌권 등" }
+    - { from: usa, to: joseon, note: "운산 금광 채굴권, 경인선 부설권" }
+  tags: [diplomacy, economy]
+  sources: ["『고종실록』 고종 33년"]
+
+- id: independence-club-1896
+  year: 1896
+  endYear: 1898
+  title:
+    ko: 독립 협회와 만민 공동회
+  summary:
+    ko: 서재필이 『독립신문』을 창간하고 독립 협회를 세워 독립문을 지었다. 만민 공동회를 열어 러시아의 절영도 조차 요구를 막고, 관민 공동회에서 헌의 6조를 결의했다. 의회식 중추원 관제가 반포되었으나, 보수 세력이 공화정을 세우려 한다고 모함해 황국 협회를 동원해 해산시켰다.
+  subjects: [joseon, russia]
+  links:
+    - { from: joseon, to: russia, note: "절영도 조차 반대 (1898)" }
+  tags: [politics, society]
+  sources: ["『독립신문』", "『고종실록』 고종 35년"]
+
+- id: daehan-jeguk-1897
+  year: 1897
+  title:
+    ko: 대한제국 수립
+  summary:
+    ko: 고종이 경운궁(덕수궁)으로 돌아와 연호를 '광무'로 고치고, 환구단에서 황제 즉위식을 올린 뒤 국호를 '대한'으로 정했다.
+  subjects: [joseon, daehan-jeguk]
+  links:
+    - { from: joseon, to: daehan-jeguk, note: "국호 변경, 황제 즉위" }
+  tags: [politics]
+  sources: ["『고종실록』 고종 34년"]
+
+- id: gwangmu-reform-1899
+  year: 1899
+  endYear: 1904
+  title:
+    ko: 대한국 국제와 광무개혁
+  summary:
+    ko: 황제가 군대 통수권, 입법·사법·행정권을 모두 가진다는 대한국 국제를 반포했다. 구본신참을 내세워 원수부를 두고, 양전 사업을 벌여 토지 소유자에게 지계를 발급했다. 상공업 진흥책으로 회사와 공장을 세우고 실업 학교를 설립했으며, 한성 전기 회사의 전차가 다니고 경인선이 개통되었다(1899).
+  subjects: [daehan-jeguk]
+  tags: [politics, economy]
+  sources: ["『고종실록』 고종 36년", "「대한국 국제」"]
+
+- id: dokdo-edict-1900
+  year: 1900
+  title:
+    ko: 대한제국 칙령 제41호 (울도군 설치)
+  summary:
+    ko: 울릉도를 울도군으로 높이고 울릉 전도와 죽도, 석도(독도)를 관할하게 해, 독도가 대한제국의 영토임을 법으로 밝혔다.
+  subjects: [daehan-jeguk]
+  tags: [politics]
+  sources: ["『관보』 광무 4년 10월 27일 칙령 제41호"]
+
+- id: anglo-japanese-1902
+  year: 1902
+  title:
+    ko: 영일 동맹
+  summary:
+    ko: 러시아를 견제하려는 영국과 일본이 동맹을 맺었다. 영국은 한국에서 일본의 특수한 이익을 인정했다.
+  subjects: [uk, japan, russia]
+  links:
+    - { from: uk, to: japan, note: "동맹, 한국에서 일본의 이익 인정" }
+  tags: [diplomacy]
+  sources: ["「영일 동맹」"]
+
+# ── 러일 전쟁과 국권 피탈 (1904 ~ 1910) ─────────────────
+
+- id: russo-japanese-war-1904
+  year: 1904
+  title:
+    ko: 러일 전쟁과 한일 의정서·제1차 한일 협약
+  summary:
+    ko: 대한제국이 국외 중립을 선언했으나 일본은 러시아를 기습하고 한일 의정서를 강요해 군사 요지를 쓸 수 있게 했다. 이어 제1차 한일 협약으로 메가타(재정)와 스티븐스(외교)를 고문으로 보내는 고문 정치를 시작했다.
+  subjects: [daehan-jeguk, japan, russia]
+  links:
+    - { from: japan, to: russia, note: "러일 전쟁" }
+    - { from: japan, to: daehan-jeguk, note: "한일 의정서, 고문 정치" }
+  tags: [war, diplomacy]
+  sources: ["『고종실록』 고종 41년", "「한일 의정서」"]
+
+- id: dokdo-annexation-1905
+  year: 1905
+  title:
+    ko: 일본의 독도 불법 편입
+  summary:
+    ko: 러일 전쟁 중 일본이 시마네현 고시 제40호로 독도를 '다케시마'라 부르며 자기 영토에 불법으로 편입했다.
+  subjects: [japan, daehan-jeguk]
+  links:
+    - { from: japan, to: daehan-jeguk, note: "독도 불법 편입" }
+  tags: [politics]
+  sources: ["시마네현 고시 제40호", "『황성신문』"]
+
+- id: katsura-taft-1905
+  year: 1905
+  title:
+    ko: 가쓰라-태프트 밀약과 포츠머스 조약
+  summary:
+    ko: 미국과 일본이 필리핀과 한국에 대한 서로의 지배를 인정하는 밀약을 맺었고, 영국은 2차 영일 동맹으로 이를 인정했다. 러일 전쟁에서 이긴 일본은 포츠머스 조약으로 러시아에게서 한국에 대한 독점적 지배권과 사할린 남부, 뤼순·다롄을 얻었다.
+  subjects: [japan, usa, uk, russia, daehan-jeguk]
+  links:
+    - { from: usa, to: japan, note: "일본의 한국 지배 인정" }
+    - { from: uk, to: japan, note: "2차 영일 동맹" }
+    - { from: russia, to: japan, note: "포츠머스 조약" }
+  tags: [diplomacy]
+  sources: ["「가쓰라-태프트 각서」", "「포츠머스 조약」"]
+
+- id: eulsa-1905
+  year: 1905
+  title:
+    ko: 을사늑약과 통감부 설치
+  summary:
+    ko: 일본이 군대를 동원해 강압적으로 을사늑약(제2차 한일 협약)을 맺어 대한제국의 외교권을 빼앗고, 이듬해 통감부를 두어 이토 히로부미가 초대 통감이 되었다. 고종은 조약에 서명하지 않았다. 장지연은 「시일야방성대곡」을 쓰고 민영환은 자결했으며, 민종식·최익현·신돌석(평민 의병장) 등이 을사의병을 일으켰다.
+  subjects: [daehan-jeguk, japan]
+  links:
+    - { from: japan, to: daehan-jeguk, note: "외교권 강탈, 통감부 설치" }
+    - { from: daehan-jeguk, to: japan, note: "을사의병" }
+  tags: [politics, war]
+  sources: ["『고종실록』 고종 42년", "『황성신문』 1905년 11월 20일"]
+
+- id: currency-reform-1905
+  year: 1905
+  title:
+    ko: 화폐 정리 사업
+  summary:
+    ko: 재정 고문 메가타가 백동화를 일본 제일은행권으로 바꾸게 하면서, 등급을 매겨 제대로 바꾸어 주지 않아 한국 상인과 은행이 큰 타격을 입었다.
+  subjects: [daehan-jeguk, japan]
+  links:
+    - { from: japan, to: daehan-jeguk, note: "화폐 정리 사업" }
+  tags: [economy]
+  sources: ["『고종실록』 고종 42년"]
+
+- id: debt-repayment-1907
+  year: 1907
+  title:
+    ko: 국채 보상 운동
+  summary:
+    ko: 일본에서 들여온 차관 1,300만 원을 국민의 힘으로 갚자며 대구에서 서상돈 등이 시작했다. 『대한매일신보』 등 언론이 지원하고 금연·금주와 여성들의 비녀·가락지 모으기로 전국에 퍼졌으나 통감부의 탄압으로 실패했다.
+  subjects: [daehan-jeguk, japan]
+  links:
+    - { from: japan, to: daehan-jeguk, note: "차관 강요와 운동 탄압" }
+  tags: [economy, society]
+  sources: ["『대한매일신보』 1907년"]
+
+- id: hague-1907
+  year: 1907
+  title:
+    ko: 헤이그 특사와 고종 강제 퇴위
+  summary:
+    ko: 고종이 네덜란드 헤이그의 만국 평화 회의에 이준·이상설·이위종을 특사로 보내 을사늑약의 무효를 알리려 했으나 실패했다. 일본은 이를 구실로 고종을 강제로 물러나게 하고 한일 신협약(정미 7조약)을 맺어 차관 정치를 시작했으며, 대한제국 군대를 해산했다.
+  subjects: [daehan-jeguk, japan]
+  links:
+    - { from: japan, to: daehan-jeguk, note: "고종 강제 퇴위, 군대 해산" }
+  tags: [politics, diplomacy]
+  sources: ["『고종실록』 고종 44년", "『순종실록』 순종 즉위년"]
+
+- id: jeongmi-uibyeong-1907
+  year: 1907
+  endYear: 1909
+  title:
+    ko: 정미의병과 서울 진공 작전
+  summary:
+    ko: 해산된 군인들이 의병에 합류해 의병 전쟁으로 발전했다. 이인영·허위가 이끄는 13도 창의군이 서울 진공 작전을 벌이고(1908) 각국 영사관에 국제법상 교전 단체로 인정해 달라고 요구했다. 일제는 '남한 대토벌 작전'(1909)으로 의병을 탄압했고, 의병들은 간도와 연해주로 옮겨 갔다.
+  subjects: [daehan-jeguk, japan]
+  links:
+    - { from: daehan-jeguk, to: japan, note: "의병 전쟁" }
+    - { from: japan, to: daehan-jeguk, note: "남한 대토벌 작전" }
+  tags: [war]
+  sources: ["『순종실록』 순종 1년·2년", "국사편찬위원회 『한국독립운동사』"]
+
+- id: sinminhoe-1907
+  year: 1907
+  endYear: 1911
+  title:
+    ko: 신민회
+  summary:
+    ko: 안창호·양기탁 등이 공화정 수립을 목표로 비밀 결사 신민회를 만들었다. 대성 학교·오산 학교를 세우고 태극 서관과 자기 회사를 운영했으며, 서간도에 독립운동 기지(삼원보, 경학사, 신흥 강습소)를 만들었다. 105인 사건(1911)으로 해체되었다.
+  subjects: [daehan-jeguk]
+  tags: [politics, society]
+  sources: ["국사편찬위원회 『한국독립운동사』", "『대한매일신보』"]
+
+- id: sin-chaeho-1908
+  year: 1908
+  title:
+    ko: 신채호의 「독사신론」과 애국 계몽 운동
+  summary:
+    ko: 신채호가 『대한매일신보』에 「독사신론」을 실어 민족주의 역사학의 방향을 제시했다. 국문 연구소(1907)에서 주시경·지석영이 한글을 연구했고, 『을지문덕전』·『이순신전』 같은 위인전이 널리 읽혔다. 일제는 신문지법·보안법(1907)으로 언론과 집회를 탄압했다.
+  subjects: [daehan-jeguk]
+  tags: [culture]
+  sources: ["『대한매일신보』 1908년", "『순종실록』"]
+
+- id: oriental-development-1908
+  year: 1908
+  title:
+    ko: 동양 척식 주식회사 설립
+  summary:
+    ko: 일제가 한국의 토지와 자원을 빼앗으려 동양 척식 주식회사를 세웠다. 일제 강점기에 최대의 지주가 되어 일본인 이민을 지원했다.
+  subjects: [daehan-jeguk, japan]
+  links:
+    - { from: japan, to: daehan-jeguk, note: "토지 수탈 기구 설치" }
+  tags: [economy]
+  sources: ["『순종실록』 순종 1년"]
+
+- id: an-junggeun-1909
+  year: 1909
+  title:
+    ko: 안중근의 이토 히로부미 사살
+  summary:
+    ko: 안중근이 만주 하얼빈역에서 초대 통감 이토 히로부미를 사살했다. 뤼순 감옥에서 『동양 평화론』을 쓰다 순국했다. 같은 해 전명운·장인환(1908)과 이재명의 의거도 이어졌다.
+  subjects: [daehan-jeguk, japan]
+  links:
+    - { from: daehan-jeguk, to: japan, note: "이토 히로부미 사살" }
+  tags: [war]
+  sources: ["『순종실록』 순종 2년", "안중근, 『동양 평화론』"]
+
+- id: gando-convention-1909
+  year: 1909
+  title:
+    ko: 기유각서와 간도 협약
+  summary:
+    ko: 일본이 기유각서로 대한제국의 사법권을 빼앗았다. 또 청과 간도 협약을 맺어 남만주 철도 부설권을 얻는 대가로 간도를 청의 영토로 인정했다.
+  subjects: [daehan-jeguk, japan, qing]
+  links:
+    - { from: japan, to: daehan-jeguk, note: "사법권 강탈" }
+    - { from: japan, to: qing, note: "간도를 청 영토로 인정" }
+  tags: [diplomacy]
+  sources: ["『순종실록』 순종 2년", "「간도 협약」"]
+
+- id: annexation-1910
+  year: 1910
+  title:
+    ko: 국권 피탈
+  summary:
+    ko: 일본이 이른바 '한국 병합 조약'을 강요해 대한제국의 국권을 빼앗고 조선 총독부를 설치했다. 황현은 「절명시」를 남기고 자결했다.
+  subjects: [daehan-jeguk, japan, occupied-korea]
+  links:
+    - { from: japan, to: daehan-jeguk, note: "국권 강탈" }
+  tags: [politics]
+  sources: ["『순종실록』 순종 3년", "『조선총독부 관보』"]
+
+# ── 1910년대: 무단 통치 ─────────────────────────────────
+
+- id: military-rule-1910
+  year: 1910
+  endYear: 1918
+  title:
+    ko: 무단 통치와 토지 조사 사업
+  summary:
+    ko: 헌병 경찰이 즉결 처분권을 가지고 조선 태형령(1912)으로 한국인만 매로 다스렸으며, 관리와 교사도 제복을 입고 칼을 찼다. 기한부 신고제로 토지 조사 사업을 벌여 많은 농민이 경작권을 잃었고, 회사령(허가제)으로 한국인의 기업 설립을 막았다.
+  subjects: [occupied-korea, japan]
+  links:
+    - { from: japan, to: occupied-korea, note: "무단 통치, 경제 수탈" }
+  tags: [politics, economy]
+  sources: ["『조선총독부 관보』", "「조선 태형령」", "「토지 조사령」"]
+
+- id: independence-bases-1911
+  year: 1911
+  endYear: 1914
+  title:
+    ko: 국외 독립운동 기지 건설
+  summary:
+    ko: 이회영 형제 등이 서간도 삼원보에 경학사와 신흥 강습소(뒤의 신흥 무관 학교)를 세웠다. 연해주에서는 권업회가 조직되고 이상설·이동휘가 대한 광복군 정부를 세웠으며(1914), 하와이에서는 박용만이 대조선 국민 군단을 만들었다(1914).
+  subjects: [occupied-korea, qing, russia, usa]
+  links:
+    - { from: occupied-korea, to: qing, note: "서간도 이주, 신흥 강습소" }
+    - { from: occupied-korea, to: russia, note: "연해주 권업회, 대한 광복군 정부" }
+    - { from: occupied-korea, to: usa, note: "하와이 대조선 국민 군단" }
+  tags: [politics]
+  sources: ["국사편찬위원회 『한국독립운동사』"]
+
+- id: secret-societies-1912
+  year: 1912
+  endYear: 1915
+  title:
+    ko: 독립 의군부와 대한 광복회
+  summary:
+    ko: 임병찬이 고종의 밀지를 받아 복벽주의를 내세운 독립 의군부를 조직했다(1912). 박상진은 공화정을 목표로 대한 광복회를 조직하고 군자금을 모아 친일 부호를 처단했다(1915).
+  subjects: [occupied-korea]
+  tags: [politics]
+  sources: ["국사편찬위원회 『한국독립운동사』"]
+
+- id: park-eunsik-1915
+  year: 1915
+  title:
+    ko: 박은식의 『한국통사』
+  summary:
+    ko: 박은식이 국혼을 강조하며 일제의 침략 과정을 정리한 『한국통사』를 펴냈다. 뒤에 『한국독립운동지혈사』(1920)를 썼다.
+  subjects: [occupied-korea]
+  tags: [culture]
+  sources: ["박은식, 『한국통사』"]
+
+# ── 3·1 운동과 대한민국 임시정부 ────────────────────────
+
+- id: february-8-1919
+  year: 1919
+  title:
+    ko: 2·8 독립 선언
+  summary:
+    ko: 윌슨의 민족 자결주의와 고종의 죽음을 계기로 도쿄의 조선 청년 독립단이 독립 선언서를 발표했다. 상하이의 신한 청년당은 김규식을 파리 강화 회의에 보냈다.
+  subjects: [occupied-korea, japan]
+  links:
+    - { from: occupied-korea, to: japan, note: "도쿄 유학생의 독립 선언" }
+  tags: [politics]
+  sources: ["「2·8 독립 선언서」"]
+
+- id: march-first-1919
+  year: 1919
+  title:
+    ko: 3·1 운동
+  summary:
+    ko: 민족 대표 33인의 이름으로 독립 선언서를 발표하고 전국에서 만세 시위가 일어났다. 비폭력으로 시작해 도시에서 농촌으로, 국외(간도, 연해주, 미주)로 퍼졌다. 일제는 화성 제암리 학살 등으로 잔인하게 탄압했다. 3·1 운동은 대한민국 임시정부 수립과 중국 5·4 운동에 영향을 주었고, 일제는 통치 방식을 바꾸었다.
+  subjects: [occupied-korea, japan, roc]
+  links:
+    - { from: occupied-korea, to: japan, note: "만세 시위" }
+    - { from: japan, to: occupied-korea, note: "무력 탄압, 제암리 학살" }
+    - { from: occupied-korea, to: roc, note: "5·4 운동에 영향" }
+  tags: [politics, society]
+  sources: ["「기미 독립 선언서」", "박은식, 『한국독립운동지혈사』"]
+
+- id: provisional-government-1919
+  year: 1919
+  title:
+    ko: 대한민국 임시정부 수립
+  summary:
+    ko: 상하이에서 민주 공화제를 채택한 대한민국 임시정부가 세워졌다(대통령 이승만). 연통제와 교통국으로 국내와 연락하고, 독립 공채를 발행했으며, 구미 위원부를 두고 외교 활동을 펼쳤다. 『독립신문』을 발행하고 사료 편찬소에서 『한일관계사료집』을 펴냈다.
+  subjects: [occupied-korea, roc]
+  links:
+    - { from: occupied-korea, to: roc, note: "상하이에 임시정부 수립" }
+  tags: [politics]
+  sources: ["「대한민국 임시 헌장」", "『대한민국 임시정부 공보』"]
+
+- id: cultural-rule-1920
+  year: 1920
+  endYear: 1925
+  title:
+    ko: 이른바 문화 통치와 산미 증식 계획
+  summary:
+    ko: 3·1 운동 뒤 일제는 보통 경찰제로 바꾸고 한글 신문(『조선일보』·『동아일보』) 발행을 허가했으나 경찰 수는 오히려 늘었고 검열을 강화했다. 친일파를 기르는 민족 분열 통치였다. 일본의 쌀 부족을 메우려 산미 증식 계획(1920~1934)을 실시해 쌀을 대량으로 가져갔고, 회사령을 폐지했으며 치안 유지법(1925)으로 사회주의와 독립운동을 탄압했다.
+  subjects: [occupied-korea, japan]
+  links:
+    - { from: japan, to: occupied-korea, note: "민족 분열 통치, 쌀 수탈" }
+  tags: [politics, economy]
+  sources: ["『조선총독부 관보』", "「치안 유지법」"]
+
+- id: bongo-cheongsan-1920
+  year: 1920
+  title:
+    ko: 봉오동 전투와 청산리 대첩
+  summary:
+    ko: 홍범도의 대한 독립군이 봉오동에서 일본군을 크게 이겼다. 일본군이 간도로 대규모 군대를 보내자 김좌진의 북로 군정서와 홍범도 부대 등이 청산리 일대에서 대승을 거두었다. 일본군은 보복으로 간도의 한인을 학살했다(간도 참변).
+  subjects: [occupied-korea, japan, roc]
+  links:
+    - { from: occupied-korea, to: japan, note: "봉오동·청산리 승리" }
+    - { from: japan, to: roc, note: "간도 출병, 간도 참변" }
+  tags: [war]
+  sources: ["『독립신문』 1920년", "국사편찬위원회 『한국독립운동사』"]
+
+- id: free-city-1921
+  year: 1921
+  title:
+    ko: 자유시 참변
+  summary:
+    ko: 간도 참변을 피해 러시아 자유시(스보보드니)로 옮겨 간 독립군 부대들이 지휘권 다툼 속에 적색군의 무장 해제 요구를 거부하다 큰 피해를 입었다.
+  subjects: [occupied-korea, soviet-union]
+  links:
+    - { from: occupied-korea, to: soviet-union, note: "독립군의 자유시 이동" }
+    - { from: soviet-union, to: occupied-korea, note: "적색군의 무장 해제 공격" }
+  tags: [war]
+  sources: ["국사편찬위원회 『한국독립운동사』"]
+
+- id: self-strength-1920
+  year: 1920
+  endYear: 1923
+  title:
+    ko: 물산 장려 운동과 민립 대학 설립 운동
+  summary:
+    ko: 조만식 등이 평양에서 "내 살림 내 것으로"를 내세워 국산품 애용을 호소하는 물산 장려 운동을 시작했다. 이상재 등은 조선 민립 대학 기성회를 만들어 "한민족 1천만이 한 사람 1원씩"을 모으려 했으나 일제의 방해로 실패했고, 일제는 경성 제국 대학을 세웠다(1924).
+  subjects: [occupied-korea]
+  tags: [economy, society]
+  sources: ["『동아일보』 1922~1923년"]
+
+- id: national-representatives-1923
+  year: 1923
+  title:
+    ko: 국민 대표 회의와 조선 형평사
+  summary:
+    ko: 이승만의 위임 통치 청원 등으로 임시정부가 흔들리자 국민 대표 회의가 열렸으나 창조파와 개조파로 나뉘어 결렬되었다. 같은 해 진주에서 백정에 대한 차별을 없애려는 조선 형평사가 창립되었다.
+  subjects: [occupied-korea, roc]
+  tags: [politics, society]
+  sources: ["국사편찬위원회 『한국독립운동사』"]
+
+- id: mitsuya-1925
+  year: 1925
+  title:
+    ko: 미쓰야 협정과 3부
+  summary:
+    ko: 만주에서 참의부·정의부·신민부의 3부가 자치 행정과 무장 활동을 펼쳤다. 조선 총독부 경무국장 미쓰야와 만주 군벌이 독립운동가를 체포해 넘기는 미쓰야 협정을 맺어 독립군이 큰 어려움을 겪었고, 3부는 국민부와 혁신 의회로 재편되었다.
+  subjects: [occupied-korea, japan, roc]
+  links:
+    - { from: japan, to: roc, note: "독립운동가 체포 협정" }
+  tags: [politics]
+  sources: ["국사편찬위원회 『한국독립운동사』"]
+
+- id: june-10-1926
+  year: 1926
+  title:
+    ko: 6·10 만세 운동
+  summary:
+    ko: 순종의 인산일에 맞춰 학생과 사회주의 계열이 만세 시위를 벌였다. 민족주의와 사회주의 계열이 연대하는 계기가 되었다.
+  subjects: [occupied-korea]
+  tags: [politics]
+  sources: ["『동아일보』 1926년 6월"]
+
+- id: singanhoe-1927
+  year: 1927
+  endYear: 1931
+  title:
+    ko: 신간회
+  summary:
+    ko: 정우회 선언을 계기로 비타협적 민족주의와 사회주의 세력이 연합해 신간회를 만들었다(회장 이상재). 일제 강점기 최대의 합법적 민족 운동 단체로, 광주 학생 항일 운동에 조사단을 보내고 민중 대회를 열려 했다. 자매 단체로 근우회가 있었다. 1931년 해소되었다.
+  subjects: [occupied-korea]
+  tags: [politics]
+  sources: ["『조선일보』 1927년", "「신간회 강령」"]
+
+- id: gwangju-students-1929
+  year: 1929
+  title:
+    ko: 광주 학생 항일 운동과 원산 총파업
+  summary:
+    ko: 광주에서 한일 학생 사이의 충돌을 계기로 학생들이 식민지 차별 교육에 맞서 시위를 벌였고, 전국으로 퍼져 3·1 운동 이후 최대의 민족 운동이 되었다. 같은 해 원산에서 노동자들의 총파업이 일어났다.
+  subjects: [occupied-korea, japan]
+  links:
+    - { from: occupied-korea, to: japan, note: "식민지 차별 교육 반대" }
+  tags: [society]
+  sources: ["『조선일보』 1929년", "국사편찬위원회 『한국독립운동사』"]
+
+# ── 1930년대 이후: 전쟁과 민족 말살 통치 ───────────────
+
+- id: manchurian-incident-1931
+  year: 1931
+  endYear: 1932
+  title:
+    ko: 만주 사변과 만주국
+  summary:
+    ko: 일본 관동군이 만주 사변을 일으켜 만주를 점령하고 1932년 만주국을 세웠다. 이에 한중 연합 작전이 활발해졌다.
+  subjects: [japan, roc]
+  links:
+    - { from: japan, to: roc, note: "만주 침략, 만주국 수립" }
+  tags: [war]
+  sources: ["『리턴 조사단 보고서』"]
+
+- id: korean-patriotic-1932
+  year: 1932
+  title:
+    ko: 한인 애국단의 이봉창·윤봉길 의거
+  summary:
+    ko: 김구가 조직한 한인 애국단의 이봉창이 도쿄에서 일본 국왕에게 폭탄을 던졌고, 윤봉길은 상하이 훙커우 공원의 일본군 전승 기념식에서 폭탄을 던졌다. 중국 국민당 정부가 임시정부를 지원하는 계기가 되었고, 중국 중앙 군관 학교 뤄양 분교에 한인 특별반이 설치되었다.
+  subjects: [occupied-korea, japan, roc]
+  links:
+    - { from: occupied-korea, to: japan, note: "이봉창·윤봉길 의거" }
+    - { from: roc, to: occupied-korea, note: "임시정부 지원" }
+  tags: [war]
+  sources: ["국사편찬위원회 『한국독립운동사』", "김구, 『백범일지』"]
+
+- id: korea-china-joint-1932
+  year: 1932
+  endYear: 1933
+  title:
+    ko: 한중 연합 작전
+  summary:
+    ko: 양세봉의 조선 혁명군이 중국 의용군과 함께 영릉가·흥경성에서, 지청천의 한국 독립군이 쌍성보·대전자령에서 일본군과 만주국군을 물리쳤다.
+  subjects: [occupied-korea, roc, manchukuo, japan]
+  links:
+    - { from: occupied-korea, to: manchukuo, note: "조선 혁명군·한국 독립군의 항전" }
+    - { from: roc, to: manchukuo, note: "중국 의용군과 연합" }
+  tags: [war]
+  sources: ["국사편찬위원회 『한국독립운동사』"]
+
+- id: korean-language-society-1933
+  year: 1933
+  endYear: 1934
+  title:
+    ko: 한글 맞춤법 통일안과 국학 운동
+  summary:
+    ko: 조선어 학회가 한글 맞춤법 통일안을 만들고 『우리말 큰사전』 편찬을 준비했다. 정인보·안재홍 등은 조선학 운동을 벌였고, 백남운은 사회 경제 사학을, 이병도·손진태 등은 진단 학회(1934)를 만들어 실증 사학을 발전시켰다.
+  subjects: [occupied-korea]
+  tags: [culture]
+  sources: ["조선어 학회, 『한글 마춤법 통일안』", "『진단학보』"]
+
+- id: forced-relocation-1937
+  year: 1937
+  title:
+    ko: 연해주 한인의 중앙아시아 강제 이주
+  summary:
+    ko: 소련이 연해주의 한인 약 17만 명을 일본의 첩자가 될 수 있다는 이유로 중앙아시아(카자흐스탄·우즈베키스탄)로 강제로 이주시켰다.
+  subjects: [soviet-union, occupied-korea]
+  links:
+    - { from: soviet-union, to: occupied-korea, note: "한인 강제 이주" }
+  tags: [society]
+  sources: ["국사편찬위원회 『한국사』"]
+
+- id: second-sino-japanese-war-1937
+  year: 1937
+  title:
+    ko: 중일 전쟁과 민족 말살 통치
+  summary:
+    ko: 일본이 중국을 전면 침략했다. 일제는 한반도를 병참 기지로 삼고, 내선일체를 내세워 황국 신민 서사 암송과 신사 참배를 강요했다. 조선어 교육을 사실상 없애고(1938), 창씨개명(1940)을 강요했으며, 조선어 학회 사건(1942)으로 한글 학자를 탄압했다.
+  subjects: [japan, roc, occupied-korea]
+  links:
+    - { from: japan, to: roc, note: "중국 전면 침략" }
+    - { from: japan, to: occupied-korea, note: "민족 말살 통치" }
+  tags: [war, politics]
+  sources: ["『조선총독부 관보』", "국사편찬위원회 『한국사』"]
+
+- id: korean-volunteers-1938
+  year: 1938
+  title:
+    ko: 조선 의용대 창설
+  summary:
+    ko: 김원봉의 조선 민족 혁명당(1935)이 중국 국민당 정부의 지원으로 한커우에서 조선 의용대를 만들었다. 일부는 화북으로 가 조선 의용군(조선 독립 동맹, 1942)이 되었고, 남은 병력은 한국광복군에 합류했다(1942).
+  subjects: [occupied-korea, roc]
+  links:
+    - { from: roc, to: occupied-korea, note: "조선 의용대 창설 지원" }
+  tags: [war]
+  sources: ["국사편찬위원회 『한국독립운동사』"]
+
+- id: national-mobilization-1938
+  year: 1938
+  endYear: 1944
+  title:
+    ko: 국가 총동원법과 인력·물자 수탈
+  summary:
+    ko: 일제가 국가 총동원법으로 쌀 공출과 금속 공출, 배급제를 실시했다. 국민 징용령(1939)으로 노동자를 끌고 가고, 지원병제에 이어 학도 지원병제(1943)와 징병제(1944)로 청년을 전쟁터로 보냈다. 여자 정신 근로령(1944)을 공포하고 여성을 일본군 '위안부'로 동원했다.
+  subjects: [occupied-korea, japan]
+  links:
+    - { from: japan, to: occupied-korea, note: "강제 동원과 수탈" }
+  tags: [war, economy]
+  sources: ["「국가 총동원법」", "「국민 징용령」", "국사편찬위원회 『한국사』"]
+
+- id: korean-liberation-army-1940
+  year: 1940
+  endYear: 1941
+  title:
+    ko: 한국광복군 창설과 대한민국 건국 강령
+  summary:
+    ko: 충칭으로 옮긴 임시정부가 지청천을 총사령관으로 한국광복군을 창설했다. 조소앙의 삼균주의를 바탕으로 대한민국 건국 강령을 발표했고(1941), 태평양 전쟁이 일어나자 일본에 선전 포고를 했다.
+  subjects: [occupied-korea, roc, japan]
+  links:
+    - { from: roc, to: occupied-korea, note: "충칭 임시정부, 광복군 창설" }
+    - { from: occupied-korea, to: japan, note: "대일 선전 포고" }
+  tags: [war, politics]
+  sources: ["『대한민국 임시정부 공보』", "「대한민국 건국 강령」"]
+
+- id: pacific-war-1941
+  year: 1941
+  title:
+    ko: 태평양 전쟁 발발
+  summary:
+    ko: 일본이 하와이 진주만의 미국 해군 기지를 기습해 태평양 전쟁이 일어났다.
+  subjects: [japan, usa]
+  links:
+    - { from: japan, to: usa, note: "진주만 기습" }
+  tags: [war]
+  sources: ["미국 의회 대일 선전 포고 결의"]
+
+- id: allies-operations-1943
+  year: 1943
+  endYear: 1945
+  title:
+    ko: 한국광복군의 연합 작전과 국내 진공 작전 준비
+  summary:
+    ko: 한국광복군이 영국군의 요청으로 인도·미얀마 전선에 파견되어 선전·포로 심문을 맡았다. 미국 전략 정보국(OSS)과 함께 국내 진공 작전을 준비했으나 일본의 항복으로 실행하지 못했다.
+  subjects: [occupied-korea, uk, usa]
+  links:
+    - { from: occupied-korea, to: uk, note: "인도·미얀마 전선 파견" }
+    - { from: usa, to: occupied-korea, note: "OSS 합동 훈련" }
+  tags: [war]
+  sources: ["국사편찬위원회 『한국독립운동사』"]
+
+- id: cairo-1943
+  year: 1943
+  title:
+    ko: 카이로 회담
+  summary:
+    ko: 미국·영국·중국의 정상이 모여 "적당한 시기에" 한국을 자유롭게 독립시키기로 처음 약속했다. 이 약속은 포츠담 선언(1945)에서 다시 확인되었다.
+  subjects: [usa, uk, roc, occupied-korea]
+  links:
+    - { from: usa, to: occupied-korea, note: "한국 독립 약속" }
+    - { from: uk, to: occupied-korea, note: "한국 독립 약속" }
+    - { from: roc, to: occupied-korea, note: "한국 독립 약속" }
+  tags: [diplomacy]
+  sources: ["「카이로 선언」"]
+
+- id: founding-alliance-1944
+  year: 1944
+  title:
+    ko: 조선 건국 동맹
+  summary:
+    ko: 여운형이 국내에서 비밀 결사 조선 건국 동맹을 만들어 광복 이후를 준비했다. 광복 직후 조선 건국 준비 위원회로 이어졌다.
+  subjects: [occupied-korea]
+  tags: [politics]
+  sources: ["국사편찬위원회 『한국사』"]
+
+- id: liberation-1945
+  year: 1945
+  title:
+    ko: 8·15 광복
+  summary:
+    ko: 미국의 원자 폭탄 투하와 소련의 참전 뒤 일본이 무조건 항복해 한국이 광복을 맞았다. 우리 민족의 끊임없는 독립운동과 연합국의 승리가 함께 이룬 결과였다. 광복 이후의 역사는 8번 묶음에서 다룬다.
+  subjects: [occupied-korea, japan, usa, soviet-union]
+  links:
+    - { from: usa, to: japan, note: "원자 폭탄 투하" }
+    - { from: soviet-union, to: japan, note: "대일 참전" }
+    - { from: japan, to: occupied-korea, note: "무조건 항복, 광복" }
+  tags: [politics, war]
+  sources: ["「포츠담 선언」", "일본 항복 문서"]

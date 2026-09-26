@@ -65,3 +65,14 @@
 - { type: occupied_by, subject: nangnang, object: eastern-han, from: 25, to: 219 }
 - { type: occupied_by, subject: nangnang, object: cao-wei, from: 220, to: 264 }
 - { type: occupied_by, subject: nangnang, object: western-jin, from: 265, to: 313 }
+
+# ── 7번 묶음 (1876 ~ 1945) ──
+- { type: successor_of, subject: daehan-jeguk, object: joseon, from: 1897, to: null }
+- { type: successor_of, subject: roc, object: qing, from: 1912, to: null }
+- { type: successor_of, subject: soviet-union, object: russia, from: 1917, to: null }
+# 을사늑약(1905) 이후 통감부의 지배 (테두리를 일본 색으로)
+- { type: vassal_of, subject: daehan-jeguk, object: japan, from: 1905, to: 1910 }
+- { type: vassal_of, subject: manchukuo, object: japan, from: 1932, to: 1945 }
+# 일제 강점 (빗금)
+- { type: occupied_by, subject: occupied-korea, object: japan, from: 1910, to: 1945 }
+- { type: occupied_by, subject: occupied-china, object: japan, from: 1938, to: 1945 }

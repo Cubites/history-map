@@ -18,7 +18,7 @@ export function EventPanel({ data }: { data: StaticData }) {
       <aside className="panel">
         <p className="panel-guide">지도에서 나라를 누르면 그 시기의 사건이 여기에 나타납니다.</p>
         <p className="panel-guide">사건에 마우스를 올리면 영향을 주고받은 나라가 화살표로 표시됩니다.</p>
-        <p className="panel-note">현재는 기원전 57년~1876년(삼국 성립 ~ 조선 후기) 한국사 자료가 들어 있습니다.</p>
+        <p className="panel-note">현재는 기원전 57년~1945년(삼국 성립 ~ 광복) 한국사 자료가 들어 있습니다.</p>
       </aside>
     );
   }

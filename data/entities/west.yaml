@@ -23,3 +23,40 @@
   basis:
     type: national_institution
     refs: ["『고종실록』", "국사편찬위원회 『신편 한국사』"]
+
+# ── 7번 묶음 (1876 ~ 1945) ──
+
+- id: uk
+  level: polity
+  names: { ko: 영국, en: United Kingdom }
+  from: 1707
+  to: null
+  color: "#7a6fa8"
+  summary: 러시아의 남하를 막는다며 거문도를 불법 점령하고(1885~1887), 영일 동맹(1902·1905)으로 일본의 한국 지배를 인정함. 지도에는 19세기 이후 영토만 표시 (식민지 제외)
+  basis:
+    type: national_institution
+    refs: ["『고종실록』", "국사편찬위원회 『신편 한국사』"]
+    foundingNote: 잉글랜드와 스코틀랜드가 합친 1707년을 시작으로 봄. 1922년 아일랜드 자유국이 떨어져 나감
+
+- id: russia
+  level: polity
+  names: { ko: 러시아 제국, en: Russian Empire }
+  from: 1721
+  to: 1917
+  color: "#6f8f6f"
+  summary: 베이징 조약(1860)으로 연해주를 차지해 조선과 국경을 맞댐. 삼국 간섭과 아관파천으로 한반도에 영향력을 넓혔으나 러일 전쟁(1904~1905)에서 짐. 지도에는 1860년 이후 영토만 대략 표시
+  basis:
+    type: national_institution
+    refs: ["『고종실록』", "국사편찬위원회 『신편 한국사』"]
+
+- id: soviet-union
+  level: polity
+  names: { ko: 소련, en: Soviet Union }
+  from: 1917
+  to: 1991
+  color: "#7c8c63"
+  summary: 러시아 혁명(1917)으로 세워진 사회주의 국가(1922년 소비에트 사회주의 공화국 연방 결성). 1937년 연해주의 한인을 중앙아시아로 강제 이주시킴
+  basis:
+    type: national_institution
+    refs: ["국사편찬위원회 『한국독립운동사』"]
+    foundingNote: 1917년 10월 혁명부터 1922년 연방 결성 이전까지의 소비에트 러시아를 포함
