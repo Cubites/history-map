@@ -13,3 +13,22 @@
 # 점령: subject 지역을 object가 점령 (지도에 object 색으로 빗금)
 - { type: occupied_by, subject: ungjin-dodokbu, object: tang, from: 660, to: 676 }
 - { type: occupied_by, subject: andong-dohobu, object: tang, from: 668, to: 756 }
+
+# ── 4번 묶음 (936 ~ 1392) ──
+- { type: successor_of, subject: later-jin, object: later-tang, from: 936, to: null }
+- { type: successor_of, subject: later-han, object: later-jin, from: 947, to: null }
+- { type: successor_of, subject: later-zhou, object: later-han, from: 951, to: null }
+- { type: successor_of, subject: song, object: later-zhou, from: 960, to: null }
+- { type: successor_of, subject: yuan, object: mongol-empire, from: 1271, to: null }
+- { type: successor_of, subject: northern-yuan, object: yuan, from: 1368, to: null }
+- { type: successor_of, subject: ming, object: yuan, from: 1368, to: null }
+
+- { type: occupied_by, subject: ssangseong, object: mongol-empire, from: 1258, to: 1270 }
+- { type: occupied_by, subject: ssangseong, object: yuan, from: 1271, to: 1356 }
+- { type: occupied_by, subject: dongnyeong, object: mongol-empire, from: 1270, to: 1270 }
+- { type: occupied_by, subject: dongnyeong, object: yuan, from: 1271, to: 1290 }
+- { type: occupied_by, subject: tamna-chonggwanbu, object: yuan, from: 1273, to: 1294 }
+
+# 종속: 원 간섭기 (지도에 고려 테두리를 원의 색으로)
+- { type: vassal_of, subject: goryeo, object: mongol-empire, from: 1270, to: 1270 }
+- { type: vassal_of, subject: goryeo, object: yuan, from: 1271, to: 1356 }

@@ -5,6 +5,7 @@ import { zoom, zoomIdentity, type ZoomBehavior, type ZoomTransform } from 'd3-zo
 import {
   activeTerritories,
   occupierAt,
+  overlordAt,
   loadEntityGeometry,
   loadLand,
   type LandPiece,
@@ -175,7 +176,9 @@ export default function WorldMap({ data }: { data: StaticData }) {
       const color = data.entities.get(entry.entityId)?.color ?? '#999999';
       const occupier = occupierAt(data.relations, entry.entityId, year);
       const hatch = occupier && data.entities.get(occupier.object)?.color;
-      territories.push({ feature, color, certainty: entry.certainty, bbox: entry.bbox, hatch });
+      const overlord = overlordAt(data.relations, entry.entityId, year);
+      const border = overlord && data.entities.get(overlord.object)?.color;
+      territories.push({ feature, color, certainty: entry.certainty, bbox: entry.bbox, hatch, border });
       drawn.push({ entry, feature });
     }
     drawnRef.current = drawn;

@@ -56,12 +56,16 @@ export function useStaticData() {
 
 export const isActive = (t: { from: number; to: number | null }, year: number) => t.from <= year && (t.to === null || year < t.to);
 
-/** 그 해에 이 지역을 점령한 나라 (relations.yaml의 occupied_by). 관계 기간의 to는 포함 */
-export function occupierAt(relations: Relation[], entityId: string, year: number): Relation | undefined {
-  return relations.find(
-    (r) => r.type === 'occupied_by' && r.subject === entityId && r.from <= year && (r.to === null || year <= r.to),
-  );
+/** 그 해에 성립한 관계 (예: occupied_by = 점령, vassal_of = 종속·간섭). 관계 기간의 to는 포함 */
+export function relationAt(relations: Relation[], type: Relation['type'], entityId: string, year: number): Relation | undefined {
+  return relations.find((r) => r.type === type && r.subject === entityId && r.from <= year && (r.to === null || year <= r.to));
 }
+
+/** 그 해에 이 지역을 점령한 나라와의 관계 */
+export const occupierAt = (relations: Relation[], entityId: string, year: number) => relationAt(relations, 'occupied_by', entityId, year);
+
+/** 그 해에 이 나라가 종속·간섭을 받은 나라와의 관계 */
+export const overlordAt = (relations: Relation[], entityId: string, year: number) => relationAt(relations, 'vassal_of', entityId, year);
 
 export function activeTerritories(territories: TerritoryIndexEntry[], year: number): TerritoryIndexEntry[] {
   return territories.filter((t) => isActive(t, year));

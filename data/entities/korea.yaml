@@ -82,3 +82,38 @@
   basis:
     type: primary_source
     refs: ["『고려사』 세가"]
+
+# ── 원이 고려 땅에 둔 점령 기구 (4번 묶음). 고려 색 위에 원의 색으로 빗금 ──
+
+- id: ssangseong
+  level: region
+  names: { ko: 쌍성총관부, hanja: 雙城摠管府, en: Ssangseong Prefecture }
+  from: 1258
+  to: 1356
+  color: "#4f8f8a"
+  summary: 몽골이 화주(영흥) 이북의 동북면을 차지하고 둔 기구. 1356년 공민왕이 무력으로 되찾음
+  basis:
+    type: primary_source
+    refs: ["『고려사』 세가 고종 45년", "『고려사』 세가 공민왕 5년"]
+
+- id: dongnyeong
+  level: region
+  names: { ko: 동녕부, hanja: 東寧府, en: Dongnyeong Prefecture }
+  from: 1270
+  to: 1290
+  color: "#4f8f8a"
+  summary: 원이 자비령 이북의 서북면을 차지하고 서경(평양)에 둔 기구. 1290년 고려에 돌려줌
+  basis:
+    type: primary_source
+    refs: ["『고려사』 세가 원종 11년", "『고려사』 세가 충렬왕 16년"]
+
+- id: tamna-chonggwanbu
+  level: region
+  names: { ko: 탐라총관부, hanja: 耽羅摠管府, en: Tamna Prefecture }
+  from: 1273
+  to: 1294
+  color: "#4f8f8a"
+  summary: 삼별초를 진압한 원이 제주에 둔 기구. 말을 기르는 목장을 운영함. 1294년 고려에 돌려줌
+  basis:
+    type: primary_source
+    refs: ["『고려사』 세가 원종 14년", "『고려사』 세가 충렬왕 20년"]

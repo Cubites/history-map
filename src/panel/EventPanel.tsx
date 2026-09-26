@@ -1,4 +1,4 @@
-import { occupierAt, type StaticData } from '../data/staticData.ts';
+import { occupierAt, overlordAt, type StaticData } from '../data/staticData.ts';
 import { eventsOf, formatEventYears, inDecade, linkDirection } from '../lib/events.ts';
 import { formatDecade, formatRange, formatYear, isAlive } from '../lib/year.ts';
 import type { HistoryEvent } from '../schema/index.ts';
@@ -18,7 +18,7 @@ export function EventPanel({ data }: { data: StaticData }) {
       <aside className="panel">
         <p className="panel-guide">지도에서 나라를 누르면 그 시기의 사건이 여기에 나타납니다.</p>
         <p className="panel-guide">사건에 마우스를 올리면 영향을 주고받은 나라가 화살표로 표시됩니다.</p>
-        <p className="panel-note">현재는 600~935년(삼국 통일과 남북국) 한국사 자료가 들어 있습니다.</p>
+        <p className="panel-note">현재는 600~1392년(삼국 통일 ~ 고려) 한국사 자료가 들어 있습니다.</p>
       </aside>
     );
   }
@@ -34,6 +34,8 @@ export function EventPanel({ data }: { data: StaticData }) {
     .filter((s) => s.entity);
   const occupation = occupierAt(data.relations, entity.id, year);
   const occupier = occupation && data.entities.get(occupation.object);
+  const vassalage = overlordAt(data.relations, entity.id, year);
+  const overlord = vassalage && data.entities.get(vassalage.object);
 
   return (
     <aside className="panel">
@@ -44,6 +46,7 @@ export function EventPanel({ data }: { data: StaticData }) {
             background: occupier
               ? `repeating-linear-gradient(135deg, ${occupier.color} 0 2px, transparent 2px 5px), ${entity.color}`
               : entity.color,
+            boxShadow: overlord ? `0 0 0 2px ${overlord.color}` : undefined,
           }}
         />
         <div>
@@ -55,6 +58,11 @@ export function EventPanel({ data }: { data: StaticData }) {
           {occupier && occupation && (
             <div className="panel-occupation">
               {occupier.names.ko}의 점령지 ({formatRange(occupation.from, occupation.to)})
+            </div>
+          )}
+          {overlord && vassalage && (
+            <div className="panel-occupation">
+              {overlord.names.ko}의 간섭·종속 ({formatRange(vassalage.from, vassalage.to)})
             </div>
           )}
         </div>

@@ -12,7 +12,11 @@ export interface DrawTerritory {
   bbox: BBox;
   /** 점령한 나라의 색. 있으면 그 색으로 빗금을 친다 (DESIGN.md §4.3) */
   hatch?: string;
+  /** 종속·간섭한 나라의 색. 있으면 테두리를 그 색으로 굵게 그린다 (DESIGN.md §4.3) */
+  border?: string;
 }
+
+const VASSAL_BORDER_WIDTH = 3;
 
 const HATCH_SPACING = 7;
 const hatchCache = new Map<string, CanvasPattern | null>();
@@ -159,6 +163,16 @@ export function drawMap(
     ctx.stroke();
   }
   ctx.setLineDash([]);
+
+  // 종속 관계 테두리는 이웃 영토에 덮이지 않도록 모든 영토를 칠한 뒤 그린다
+  ctx.lineWidth = VASSAL_BORDER_WIDTH;
+  for (const t of territories) {
+    if (!t.border) continue;
+    ctx.beginPath();
+    pathFor(t.bbox)(t.feature);
+    ctx.strokeStyle = t.border;
+    ctx.stroke();
+  }
   ctx.restore();
 
   ctx.beginPath();

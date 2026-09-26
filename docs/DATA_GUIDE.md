@@ -109,7 +109,7 @@ note: 매소성·기벌포 승리, 당군 축출      # X (YAML 오류)
 |------|----|------|
 | `successor_of` | subject가 object를 계승 | 사라진 나라를 선택하면 "후계 국가" 링크 |
 | `occupied_by` | subject가 object에 점령·강점됨 | subject 색 위에 object 색으로 빗금. 패널에 "○○의 점령지" 표시 |
-| `vassal_of` | subject가 object에 종속 | (예정) 지배국 색 테두리 |
+| `vassal_of` | subject가 object에 종속·간섭을 받음 | subject 테두리를 object 색으로 굵게. 패널에 "○○의 간섭·종속" 표시 |
 | `part_of` | 지역이 나라에 속함 | (예정) 지역 단위 보기 |
 
 ## 5. 국경 그리기 (QGIS)

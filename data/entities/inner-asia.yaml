@@ -35,3 +35,61 @@
     type: primary_source
     refs: ["『요사』 태조본기"]
     foundingNote: 916년 야율아보기가 황제를 칭한 해를 건국으로 봄. 국호를 요로 정한 것은 그 뒤의 일
+
+# ── 4번 묶음 (936 ~ 1392) ──
+
+- id: xixia
+  level: polity
+  names: { ko: 서하, hanja: 西夏, en: Western Xia }
+  from: 1038
+  to: 1227
+  color: "#9aa36a"
+  summary: 탕구트족이 세운 나라. 비단길을 차지하고 송과 대립하다 몽골에 멸망
+  basis:
+    type: primary_source
+    refs: ["『송사』 하국전", "『원사』 태조본기"]
+
+- id: jin
+  level: polity
+  names: { ko: 금, hanja: 金, en: Jin }
+  from: 1115
+  to: 1234
+  color: "#b0885a"
+  summary: 여진족 완옌부의 아구다가 세운 나라. 요를 무너뜨리고(1125) 북송의 화북을 차지했으며(1127), 고려에 사대를 요구함
+  basis:
+    type: primary_source
+    refs: ["『금사』 태조본기"]
+
+- id: mongol-empire
+  level: polity
+  names: { ko: 몽골 제국, en: Mongol Empire }
+  from: 1206
+  to: 1270
+  color: "#7d6b99"
+  summary: 칭기즈 칸이 몽골 초원을 통일해 세운 나라. 30여 년 동안 고려를 침입함. 지도에는 동아시아 쪽만 표시 (서방의 칸국들은 표시하지 않음)
+  basis:
+    type: primary_source
+    refs: ["『원사』 태조본기", "『몽골비사』"]
+
+- id: yuan
+  level: polity
+  names: { ko: 원, hanja: 元, en: Yuan }
+  from: 1271
+  to: 1368
+  color: "#7d6b99"
+  summary: 쿠빌라이가 몽골 제국의 국호를 바꿔 세운 왕조. 남송을 멸망시키고(1279) 중국 전체를 지배했으며 고려의 내정에 간섭함
+  basis:
+    type: primary_source
+    refs: ["『원사』 세조본기"]
+
+- id: northern-yuan
+  level: polity
+  names: { ko: 북원, hanja: 北元, en: Northern Yuan }
+  from: 1368
+  to: 1388
+  color: "#9d8fb8"
+  summary: 명에 쫓겨 몽골 초원으로 물러난 원 왕실. 고려 말 친원파와 친명파 대립의 배경이 됨
+  basis:
+    type: primary_source
+    refs: ["『명사』", "『고려사』"]
+    foundingNote: 원 왕실은 1388년 이후에도 몽골 초원에서 이어졌으나, 지도에서는 토구스 테무르가 죽은 1388년까지를 북원으로 봄
