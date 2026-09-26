@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import type { Feature, FeatureCollection, MultiPolygon, Polygon, Position } from 'geojson';
+import { geoArea } from 'd3-geo';
 import { feature } from 'topojson-client';
 import type { GeometryCollection, Topology } from 'topojson-specification';
 import type {
@@ -82,6 +83,28 @@ export interface LandPiece {
 
 const landCache = new Map<Lod, Promise<LandPiece[]>>();
 
+/**
+ * d3는 구면 위의 고리 방향(시계 방향 = 안쪽)으로 면을 정하므로, 방향이 뒤집힌 면은 "그 도형을 뺀 지구 전체"가 되어
+ * 화면이 한 색으로 덮인다. 단순화(특히 low 단계)나 도형 연산으로 생긴 가느다란 조각에서 방향이 뒤집힐 수 있어,
+ * 불러올 때 반구보다 큰 면은 고리 방향을 뒤집고, 뒤집어도 이상하면 버린다.
+ */
+function fixWinding<G extends Feature['geometry'] | null>(geometry: G): G {
+  if (!geometry || (geometry.type !== 'Polygon' && geometry.type !== 'MultiPolygon')) return geometry;
+  const polygons = geometry.type === 'Polygon' ? [geometry.coordinates] : geometry.coordinates;
+  const fixed = polygons.flatMap((polygon) => {
+    if (geoArea({ type: 'Polygon', coordinates: polygon }) <= 2 * Math.PI) return [polygon];
+    const reversed = polygon.map((ring) => [...ring].reverse());
+    return geoArea({ type: 'Polygon', coordinates: reversed }) <= 2 * Math.PI ? [reversed] : [];
+  });
+  return (geometry.type === 'Polygon'
+    ? { type: 'MultiPolygon', coordinates: fixed }
+    : { ...geometry, coordinates: fixed }) as G;
+}
+
+function fixFeature<F extends Feature>(f: F): F {
+  return { ...f, geometry: fixWinding(f.geometry) };
+}
+
 function ringBBox(ring: Position[]): BBox {
   let [w, s, e, n] = [Infinity, Infinity, -Infinity, -Infinity];
   for (const [x, y] of ring) {
@@ -98,7 +121,7 @@ export function loadLand(lod: Lod): Promise<LandPiece[]> {
   if (!pending) {
     pending = getJson<Topology<{ land: GeometryCollection }>>(`land-${lod}.topo.json`).then((topo) => {
       const fc = feature(topo, topo.objects.land) as FeatureCollection<Polygon | MultiPolygon>;
-      return fc.features.flatMap((f) =>
+      return fc.features.map(fixFeature).flatMap((f) =>
         (f.geometry.type === 'Polygon' ? [f.geometry.coordinates] : f.geometry.coordinates).map((coordinates) => ({
           feature: { type: 'Feature' as const, properties: null, geometry: { type: 'Polygon' as const, coordinates } },
           bbox: ringBBox(coordinates[0]),
@@ -120,7 +143,7 @@ export function loadEntityGeometry(lod: Lod, entityId: string): Promise<Map<stri
   if (!pending) {
     pending = getJson<Topology<{ territories: GeometryCollection }>>(`geo/${lod}/${entityId}.topo.json`).then((topo) => {
       const fc = feature(topo, topo.objects.territories) as FeatureCollection<MultiPolygon>;
-      return new Map(fc.features.map((f) => [String(f.id), f]));
+      return new Map(fc.features.map((f) => [String(f.id), fixFeature(f)]));
     });
     pending.catch(() => geoCache.delete(cacheKey));
     geoCache.set(cacheKey, pending);
@@ -145,7 +168,7 @@ type TiledTopology = Topology<{ tiles: GeometryCollection<{ key?: string; b: BBo
 function toPieces(topo: TiledTopology, name: 'tiles' | 'lines') {
   return (feature(topo, topo.objects[name]) as FeatureCollection<Polygon | MultiPolygon, { key?: string; b: BBox }>).features.map((f) => ({
     key: f.properties.key,
-    piece: { feature: f, bbox: f.properties.b } as Piece,
+    piece: { feature: name === 'tiles' ? fixFeature(f) : f, bbox: f.properties.b } as Piece,
   }));
 }
 

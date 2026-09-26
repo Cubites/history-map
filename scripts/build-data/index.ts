@@ -222,8 +222,12 @@ function clipAll(territories: Territory[], land: Land): ClippedTerritory[] {
   });
 }
 
+/** 도형 연산과 해안선 자르기에서 생기는 면적이 거의 없는 조각. 방향이 흔들려 지구 전체를 칠하는 원인이 된다 */
+const SLIVER_KM2 = 0.5;
+
 function toFeature(key: string, coords: MultiCoords): Feature<MultiPolygon, { key: string }> {
-  return { type: 'Feature', properties: { key }, geometry: { type: 'MultiPolygon', coordinates: rewindForD3(coords) } };
+  const solid = coords.filter((polygon) => areaKm2([polygon]) >= SLIVER_KM2);
+  return { type: 'Feature', properties: { key }, geometry: { type: 'MultiPolygon', coordinates: rewindForD3(solid) } };
 }
 
 /** 단계별 토폴로지를 만들어 육지 파일과 나라별 영토 파일로 나눠 쓴다. */
