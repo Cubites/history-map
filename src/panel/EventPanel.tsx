@@ -1,4 +1,4 @@
-import type { StaticData } from '../data/staticData.ts';
+import { occupierAt, type StaticData } from '../data/staticData.ts';
 import { eventsOf, formatEventYears, inDecade, linkDirection } from '../lib/events.ts';
 import { formatDecade, formatRange, formatYear, isAlive } from '../lib/year.ts';
 import type { HistoryEvent } from '../schema/index.ts';
@@ -32,17 +32,31 @@ export function EventPanel({ data }: { data: StaticData }) {
     .filter((r) => r.type === 'successor_of' && r.object === entity.id)
     .map((r) => ({ relation: r, entity: data.entities.get(r.subject) }))
     .filter((s) => s.entity);
+  const occupation = occupierAt(data.relations, entity.id, year);
+  const occupier = occupation && data.entities.get(occupation.object);
 
   return (
     <aside className="panel">
       <header className="panel-header">
-        <span className="panel-swatch" style={{ background: entity.color }} />
+        <span
+          className="panel-swatch"
+          style={{
+            background: occupier
+              ? `repeating-linear-gradient(135deg, ${occupier.color} 0 2px, transparent 2px 5px), ${entity.color}`
+              : entity.color,
+          }}
+        />
         <div>
           <h2>
             {entity.names.ko}
             {entity.names.hanja && <span className="hanja"> {entity.names.hanja}</span>}
           </h2>
           <div className="panel-period">{formatRange(entity.from, entity.to)}</div>
+          {occupier && occupation && (
+            <div className="panel-occupation">
+              {occupier.names.ko}의 점령지 ({formatRange(occupation.from, occupation.to)})
+            </div>
+          )}
         </div>
       </header>
       {entity.summary && <p className="panel-summary">{entity.summary}</p>}
@@ -50,7 +64,7 @@ export function EventPanel({ data }: { data: StaticData }) {
 
       {!isAlive(entity, year) && (
         <div className="panel-absent">
-          {formatYear(year)}에는 존재하지 않는 나라입니다.
+          {formatYear(year)}에는 존재하지 않습니다.
           {successors.map(({ relation, entity: next }) => (
             <button
               key={next!.id}

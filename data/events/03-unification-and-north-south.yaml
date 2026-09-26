@@ -133,10 +133,11 @@
     ko: 백제 멸망
   summary:
     ko: 김유신의 신라군이 황산벌에서 계백의 결사대를 물리치고, 바다를 건너온 당군과 함께 사비성을 함락했다. 당은 옛 백제 땅에 웅진도독부를 두었다.
-  subjects: [baekje, silla, tang]
+  subjects: [baekje, silla, tang, ungjin-dodokbu]
   links:
     - { from: silla, to: baekje, note: "황산벌 전투" }
     - { from: tang, to: baekje, note: "소정방의 당군 상륙" }
+    - { from: tang, to: ungjin-dodokbu, note: "옛 백제 땅에 도독부 설치" }
   tags: [war]
   sources: ["『삼국사기』 백제본기 의자왕 20년", "『삼국사기』 신라본기 태종 무열왕 7년"]
 
@@ -168,16 +169,30 @@
   tags: [war]
   sources: ["『일본서기』 덴지 2년", "『구당서』 유인궤전"]
 
+- id: chwirisan-oath-665
+  year: 665
+  title:
+    ko: 취리산 회맹
+  summary:
+    ko: 당이 의자왕의 아들 부여융을 웅진도독으로 삼고, 신라 문무왕과 웅진(공주) 취리산에서 서로 침범하지 않기로 맹세하게 했다. 당이 옛 백제 땅을 신라에 넘길 생각이 없음을 보여 주는 사건이다.
+  subjects: [silla, tang, ungjin-dodokbu]
+  links:
+    - { from: tang, to: ungjin-dodokbu, note: "부여융을 웅진도독으로 임명" }
+    - { from: tang, to: silla, note: "웅진도독부와의 회맹 강요" }
+  tags: [diplomacy]
+  sources: ["『삼국사기』 신라본기 문무왕 5년", "『구당서』 유인궤전"]
+
 - id: goguryeo-falls-668
   year: 668
   title:
     ko: 고구려 멸망
   summary:
     ko: 연개소문이 죽은 뒤 아들들 사이에 권력 다툼이 벌어져 고구려가 약해졌다. 나당 연합군이 평양성을 함락하여 고구려가 멸망했고, 당은 평양에 안동도호부를 두었다.
-  subjects: [goguryeo, silla, tang]
+  subjects: [goguryeo, silla, tang, andong-dohobu]
   links:
     - { from: tang, to: goguryeo, note: "이적의 당군" }
     - { from: silla, to: goguryeo, note: "신라군 참전" }
+    - { from: tang, to: andong-dohobu, note: "평양에 도호부 설치" }
   tags: [war]
   sources: ["『삼국사기』 고구려본기 보장왕 27년", "『삼국사기』 신라본기 문무왕 8년"]
 
@@ -201,12 +216,26 @@
     ko: 나당 전쟁
   summary:
     ko: 당이 한반도 전체를 지배하려 하자 신라가 맞서 싸웠다. 매소성(675)과 기벌포(676)에서 당군을 물리쳐 대동강에서 원산만에 이르는 이남 지역을 차지하고 삼국 통일을 이루었다.
-  subjects: [silla, tang]
+  subjects: [silla, tang, andong-dohobu]
   links:
     - { from: tang, to: silla, note: "한반도 지배 시도" }
     - { from: silla, to: tang, note: "매소성·기벌포 승리, 당군 축출" }
+    - { from: silla, to: andong-dohobu, note: "안동도호부를 요동으로 밀어냄" }
   tags: [war]
   sources: ["『삼국사기』 신라본기 문무왕 10~16년"]
+
+- id: soburi-ju-671
+  year: 671
+  title:
+    ko: 소부리주 설치
+  summary:
+    ko: 나당 전쟁 중 신라가 웅진도독부가 있던 사비 일대를 차지하고 소부리주를 두었다. 이로써 옛 백제 땅 대부분이 신라의 지배 아래 들어왔다.
+  subjects: [silla, tang, ungjin-dodokbu]
+  links:
+    - { from: silla, to: ungjin-dodokbu, note: "사비 일대 점령, 소부리주 설치" }
+    - { from: silla, to: tang, note: "옛 백제 땅 장악" }
+  tags: [war]
+  sources: ["『삼국사기』 신라본기 문무왕 11년"]
 
 # ── 통일 신라 (676 ~ 900) ────────────────────────────────
 

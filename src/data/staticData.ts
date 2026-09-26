@@ -56,6 +56,13 @@ export function useStaticData() {
 
 export const isActive = (t: { from: number; to: number | null }, year: number) => t.from <= year && (t.to === null || year < t.to);
 
+/** 그 해에 이 지역을 점령한 나라 (relations.yaml의 occupied_by). 관계 기간의 to는 포함 */
+export function occupierAt(relations: Relation[], entityId: string, year: number): Relation | undefined {
+  return relations.find(
+    (r) => r.type === 'occupied_by' && r.subject === entityId && r.from <= year && (r.to === null || year <= r.to),
+  );
+}
+
 export function activeTerritories(territories: TerritoryIndexEntry[], year: number): TerritoryIndexEntry[] {
   return territories.filter((t) => isActive(t, year));
 }

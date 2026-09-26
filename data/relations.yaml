@@ -9,3 +9,7 @@
 - { type: successor_of, subject: goryeo, object: hugoguryeo, from: 918, to: null }
 - { type: successor_of, subject: goryeo, object: silla, from: 935, to: null }
 - { type: successor_of, subject: goryeo, object: hubaekje, from: 936, to: null }
+
+# 점령: subject 지역을 object가 점령 (지도에 object 색으로 빗금)
+- { type: occupied_by, subject: ungjin-dodokbu, object: tang, from: 660, to: 676 }
+- { type: occupied_by, subject: andong-dohobu, object: tang, from: 668, to: 756 }

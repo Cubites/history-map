@@ -100,12 +100,15 @@ note: 매소성·기벌포 승리, 당군 축출      # X (YAML 오류)
 
 ```yaml
 - { type: successor_of, subject: balhae, object: goguryeo, from: 698, to: null }
+- { type: occupied_by, subject: ungjin-dodokbu, object: tang, from: 660, to: 676 }
 ```
+
+**점령지를 표시하려면**: 점령당한 지역을 따로 나라·지역 항목으로 만들고(`level: region`, 색은 옛 나라의 색), 그 지역의 영토를 그린 뒤 `occupied_by` 관계를 추가합니다. 점령한 나라의 영토에는 그 지역을 넣지 않습니다. 예: 웅진도독부(옛 백제 땅, 당이 점령), 안동도호부(옛 고구려 땅, 당이 점령). 일제강점기도 같은 방식입니다.
 
 | type | 뜻 | 화면 |
 |------|----|------|
 | `successor_of` | subject가 object를 계승 | 사라진 나라를 선택하면 "후계 국가" 링크 |
-| `occupied_by` | subject가 object에 점령·강점됨 | (예정) 지배국 색 빗금 |
+| `occupied_by` | subject가 object에 점령·강점됨 | subject 색 위에 object 색으로 빗금. 패널에 "○○의 점령지" 표시 |
 | `vassal_of` | subject가 object에 종속 | (예정) 지배국 색 테두리 |
 | `part_of` | 지역이 나라에 속함 | (예정) 지역 단위 보기 |
 

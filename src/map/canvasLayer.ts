@@ -10,6 +10,39 @@ export interface DrawTerritory {
   color: string;
   certainty: Certainty;
   bbox: BBox;
+  /** 점령한 나라의 색. 있으면 그 색으로 빗금을 친다 (DESIGN.md §4.3) */
+  hatch?: string;
+}
+
+const HATCH_SPACING = 7;
+const hatchCache = new Map<string, CanvasPattern | null>();
+
+/**
+ * 점령지 빗금 무늬. 지도와 함께 움직이지 않는 화면 기준 무늬라 확대해도 간격이 일정하다.
+ * 고해상도 화면에서 흐려지지 않도록 기기 픽셀 크기로 그린 뒤 CSS 픽셀로 줄인다.
+ */
+function hatchPattern(ctx: CanvasRenderingContext2D, color: string): CanvasPattern | null {
+  const dpr = window.devicePixelRatio || 1;
+  const key = `${color}@${dpr}`;
+  if (hatchCache.has(key)) return hatchCache.get(key)!;
+  const size = Math.round(HATCH_SPACING * dpr);
+  const tile = document.createElement('canvas');
+  tile.width = tile.height = size;
+  const t = tile.getContext('2d')!;
+  t.strokeStyle = color;
+  t.lineWidth = 2 * dpr;
+  t.lineCap = 'square';
+  // 타일 경계에서 끊기지 않도록 대각선을 세 번 그린다
+  t.beginPath();
+  for (const offset of [-size, 0, size]) {
+    t.moveTo(offset, size);
+    t.lineTo(offset + size, 0);
+  }
+  t.stroke();
+  const pattern = ctx.createPattern(tile, 'repeat');
+  pattern?.setTransform(new DOMMatrix().scale(1 / dpr));
+  hatchCache.set(key, pattern);
+  return pattern;
 }
 
 export interface Palette {
@@ -116,6 +149,11 @@ export function drawMap(
     pathFor(t.bbox)(t.feature);
     ctx.fillStyle = t.color;
     ctx.fill();
+    const hatch = t.hatch && hatchPattern(ctx, t.hatch);
+    if (hatch) {
+      ctx.fillStyle = hatch;
+      ctx.fill();
+    }
     // 추정·논쟁 경계는 점선 (DESIGN.md §4.2)
     ctx.setLineDash(t.certainty === 'confirmed' ? [] : [4, 3]);
     ctx.stroke();

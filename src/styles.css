@@ -222,6 +222,7 @@ button {
 .panel-header h2 { margin: 0; font-size: 20px; }
 .panel-swatch { width: 14px; height: 14px; margin-top: 7px; border-radius: 3px; flex-shrink: 0; }
 .panel-period { color: var(--muted); font-size: 13px; }
+.panel-occupation { font-size: 13px; font-weight: 600; }
 .panel-summary { margin: 8px 0 0; }
 
 .panel-absent {

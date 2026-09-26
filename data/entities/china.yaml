@@ -23,6 +23,32 @@
     type: primary_source
     refs: ["『구당서』", "『신당서』"]
 
+# 당이 점령지를 다스리려고 둔 기구. 옛 나라의 색 위에 당의 색으로 빗금을 친다 (relations.yaml의 occupied_by).
+# 나라가 아니므로 level: region으로 둔다.
+
+- id: ungjin-dodokbu
+  level: region
+  names: { ko: 웅진도독부, hanja: 熊津都督府, en: Ungjin Commandery }
+  from: 660
+  to: 676
+  color: "#7d9b5b"
+  summary: 당이 백제를 멸망시킨 뒤 옛 백제 땅을 다스리려고 둔 기구. 665년 의자왕의 아들 부여융을 도독으로 삼음. 671년 신라가 사비 일대를 차지하고 소부리주를 두면서 힘을 잃었고, 676년 요동의 건안성으로 옮겨짐
+  basis:
+    type: primary_source
+    refs: ["『삼국사기』 백제본기 의자왕 20년", "『구당서』 백제전"]
+
+- id: andong-dohobu
+  level: region
+  names: { ko: 안동도호부, hanja: 安東都護府, en: Protectorate General to Pacify the East }
+  from: 668
+  to: 756
+  color: "#c8745a"
+  summary: 당이 고구려를 멸망시킨 뒤 평양에 둔 기구. 나당 전쟁으로 676년 요동으로 물러났고, 8세기 중엽 안사의 난 무렵 사실상 없어짐
+  basis:
+    type: primary_source
+    refs: ["『삼국사기』 고구려본기 보장왕 27년", "『구당서』 지리지"]
+    foundingNote: 요동으로 옮긴 뒤 폐지된 시기는 기록에 따라 차이가 있어, 지도에서는 756년(안사의 난 직후)까지로 봄
+
 - id: later-liang
   level: polity
   names: { ko: 후량, hanja: 後梁, en: Later Liang }

@@ -4,6 +4,7 @@ import { select } from 'd3-selection';
 import { zoom, zoomIdentity, type ZoomBehavior, type ZoomTransform } from 'd3-zoom';
 import {
   activeTerritories,
+  occupierAt,
   loadEntityGeometry,
   loadLand,
   type LandPiece,
@@ -172,7 +173,9 @@ export default function WorldMap({ data }: { data: StaticData }) {
       const feature = featureFor(entry, lod);
       if (!feature) continue;
       const color = data.entities.get(entry.entityId)?.color ?? '#999999';
-      territories.push({ feature, color, certainty: entry.certainty, bbox: entry.bbox });
+      const occupier = occupierAt(data.relations, entry.entityId, year);
+      const hatch = occupier && data.entities.get(occupier.object)?.color;
+      territories.push({ feature, color, certainty: entry.certainty, bbox: entry.bbox, hatch });
       drawn.push({ entry, feature });
     }
     drawnRef.current = drawn;
@@ -183,7 +186,7 @@ export default function WorldMap({ data }: { data: StaticData }) {
     const landPieces = landFor(lod).filter((p) => isVisible(p.bbox, bounds, v));
     drawMap(ctx, projection, createProjection(size, s0, v, true), v, size, landPieces, territories, paletteRef.current);
     setView(v);
-  }, [size, s0, active, data.entities, ensureLoaded, featureFor, landFor]);
+  }, [size, s0, year, active, data.entities, data.relations, ensureLoaded, featureFor, landFor]);
 
   const requestDraw = useCallback(() => {
     cancelAnimationFrame(frame.current);
