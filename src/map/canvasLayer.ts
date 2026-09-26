@@ -1,15 +1,27 @@
 // 육지와 영토를 Canvas에 그린다 (DESIGN.md §3). 매 프레임 도법을 다시 계산하므로
 // 가장 무거운 이 부분만 Canvas로 두고, 한두 개만 그리는 강조·화살표·이름표는 SVG로 그린다.
-import { geoGraticule10, geoPath, type GeoProjection } from 'd3-geo';
+import { geoGraticule10, geoPath, type GeoPermissibleObjects, type GeoProjection } from 'd3-geo';
 import type { BBox, Certainty } from '../schema/index.ts';
-import type { LandPiece, TerritoryFeature } from '../data/staticData.ts';
 import { invertPoint, normalizeLon, type Size, type View } from './view.ts';
 
-export interface DrawTerritory {
-  feature: TerritoryFeature;
+/** 그릴 도형 하나와 그 경위도 범위 */
+export interface Shape {
+  feature: GeoPermissibleObjects;
+  bbox: BBox;
+}
+
+/**
+ * 칠할 도형과 테두리를 그릴 도형을 따로 받는다. 원래 도형이면 둘이 같고,
+ * 격자 조각(DESIGN.md §3.2)이면 칠하기는 조각, 테두리는 선 조각이다 (조각 경계선을 그리지 않기 위해).
+ */
+export interface DrawShapes {
+  fill: Shape[];
+  stroke: Shape[];
+}
+
+export interface DrawTerritory extends DrawShapes {
   color: string;
   certainty: Certainty;
-  bbox: BBox;
   /** 점령한 나라의 색. 있으면 그 색으로 빗금을 친다 (DESIGN.md §4.3) */
   hatch?: string;
   /** 종속·간섭한 나라의 색. 있으면 테두리를 그 색으로 굵게 그린다 (DESIGN.md §4.3) */
@@ -113,13 +125,16 @@ export function drawMap(
   preciseProjection: GeoProjection,
   view: View,
   size: Size,
-  land: LandPiece[],
+  land: DrawShapes,
   territories: DrawTerritory[],
   palette: Palette,
 ) {
   const fast = geoPath(projection, ctx);
   const precise = geoPath(preciseProjection, ctx);
-  const pathFor = (bbox: BBox) => (crossesSeam(bbox, view) ? precise : fast);
+  /** 도형들을 현재 경로에 더한다. 이음새에 걸친 도형만 곡선 보정을 켠 투영으로 */
+  const trace = (shapes: Shape[]) => {
+    for (const s of shapes) (crossesSeam(s.bbox, view) ? precise : fast)(s.feature);
+  };
   ctx.clearRect(0, 0, size.width, size.height);
 
   ctx.beginPath();
@@ -137,11 +152,16 @@ export function drawMap(
   ctx.strokeStyle = palette.graticule;
   ctx.stroke();
 
-  if (land.length) {
+  // 같은 대상의 조각은 한 경로로 칠해야 조각 사이에 이음매(안티에일리어싱 틈)가 보이지 않는다
+  if (land.fill.length) {
     ctx.beginPath();
-    for (const piece of land) pathFor(piece.bbox)(piece.feature);
+    trace(land.fill);
     ctx.fillStyle = palette.land;
     ctx.fill();
+  }
+  if (land.stroke.length) {
+    ctx.beginPath();
+    trace(land.stroke);
     ctx.strokeStyle = palette.landStroke;
     ctx.stroke();
   }
@@ -150,13 +170,17 @@ export function drawMap(
   ctx.strokeStyle = palette.territoryStroke;
   for (const t of territories) {
     ctx.beginPath();
-    pathFor(t.bbox)(t.feature);
+    trace(t.fill);
     ctx.fillStyle = t.color;
     ctx.fill();
     const hatch = t.hatch && hatchPattern(ctx, t.hatch);
     if (hatch) {
       ctx.fillStyle = hatch;
       ctx.fill();
+    }
+    if (t.stroke !== t.fill) {
+      ctx.beginPath();
+      trace(t.stroke);
     }
     // 추정·논쟁 경계는 점선 (DESIGN.md §4.2)
     ctx.setLineDash(t.certainty === 'confirmed' ? [] : [4, 3]);
@@ -169,7 +193,7 @@ export function drawMap(
   for (const t of territories) {
     if (!t.border) continue;
     ctx.beginPath();
-    pathFor(t.bbox)(t.feature);
+    trace(t.stroke);
     ctx.strokeStyle = t.border;
     ctx.stroke();
   }

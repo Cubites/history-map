@@ -69,6 +69,20 @@ export function subTopology(source: Topology, name: string, geometries: Geometry
   } as Topology;
 }
 
+/**
+ * 격자 조각(칠하기)과 선 조각(테두리)을 한 토폴로지로 묶는다.
+ * 조각의 가장자리와 테두리 선이 같은 arc를 공유해서 용량이 조각 나누기 전과 크게 다르지 않다.
+ */
+export function tiledTopology(tiles: Feature[], lines: Feature[]): Topology {
+  return topology(
+    {
+      tiles: { type: 'FeatureCollection', features: tiles } as FeatureCollection,
+      lines: { type: 'FeatureCollection', features: lines } as FeatureCollection,
+    },
+    QUANTIZATION,
+  ) as unknown as Topology;
+}
+
 export function countPoints(topo: Topology): number {
   return topo.arcs.reduce((sum, arc) => sum + arc.length, 0);
 }

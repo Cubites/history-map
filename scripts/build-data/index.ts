@@ -16,12 +16,14 @@ import {
   TerritoryPropsSchema,
   type Entity,
   type HistoryEvent,
+  type Lod,
   type Relation,
   type TerritoryIndexEntry,
   type TerritoryProps,
   type TimelineIndex,
 } from '../../src/schema/index.ts';
-import { buildLodTopology, countPoints, subTopology } from './topo.ts';
+import { buildLodTopology, countPoints, subTopology, tiledTopology } from './topo.ts';
+import { chunkOutlines, tilePolygons } from './tiles.ts';
 import {
   anchorPoint,
   areaKm2,
@@ -248,8 +250,27 @@ async function writeLods(clipped: ClippedTerritory[], land50: Land, land110: Lan
       await writeJson(path.join(OUT, 'geo', lod, `${entityId}.topo.json`), subTopology(topo, 'territories', geometries));
     }
     summary.push(`${lod} ${countPoints(topo).toLocaleString()}점`);
+    if (TILED_LODS.includes(lod)) await writeTiled(lod, topo, byEntity);
   }
   return summary.join(' · ');
+}
+
+/** 격자 조각을 만드는 단계. low는 넓게 볼 때만 쓰여 건너뛸 조각이 없으므로 만들지 않는다 */
+const TILED_LODS: Lod[] = ['mid', 'high'];
+
+/** 확대했을 때 쓰는 격자 조각 파일 (DESIGN.md §3.2) */
+async function writeTiled(lod: Lod, topo: ReturnType<typeof buildLodTopology>, byEntity: Map<string, string[]>) {
+  const land = feature(topo, topo.objects.land) as FeatureCollection<Polygon | MultiPolygon>;
+  const landPolygons = land.features.flatMap((f) => toMulti(f.geometry));
+  await writeJson(path.join(OUT, `land-tiled-${lod}.topo.json`), tiledTopology(tilePolygons(landPolygons), chunkOutlines(landPolygons)));
+
+  const territories = feature(topo, topo.objects.territories) as FeatureCollection<Polygon | MultiPolygon>;
+  const byKey = new Map(territories.features.map((f) => [String(f.id), toMulti(f.geometry)]));
+  for (const [entityId, keys] of byEntity) {
+    const tiles = keys.flatMap((k) => (byKey.has(k) ? tilePolygons(byKey.get(k)!, k) : []));
+    const lines = keys.flatMap((k) => (byKey.has(k) ? chunkOutlines(byKey.get(k)!, k) : []));
+    await writeJson(path.join(OUT, 'geo-tiled', lod, `${entityId}.topo.json`), tiledTopology(tiles, lines));
+  }
 }
 
 /** 이미 검사한 영토 버전 쌍. 같은 쌍이 여러 구간에 걸쳐 있어도 한 번만 검사하고 보고한다. */

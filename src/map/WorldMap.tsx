@@ -8,7 +8,11 @@ import {
   overlordAt,
   loadEntityGeometry,
   loadLand,
+  loadLandTiled,
+  loadEntityTiled,
   type LandPiece,
+  type Piece,
+  type TiledGroup,
   type StaticData,
   type TerritoryFeature,
 } from '../data/staticData.ts';
@@ -55,7 +59,14 @@ function lodFor(k: number, moving: boolean): Lod {
   if (moving) return k < 4 ? 'low' : k < 12 ? 'mid' : 'high';
   return k < 2 ? 'mid' : 'high';
 }
-const FALLBACK: Record<Lod, Lod[]> = { low: ['low', 'mid', 'high'], mid: ['mid', 'low', 'high'], high: ['high', 'mid', 'low'] };
+/**
+ * 화면에 보이는 경위도 넓이(경도 폭 × 위도 폭, 도²)가 이 값 이하일 때 격자 조각을 쓴다 (DESIGN.md §3.2).
+ * 조각은 자른 면과 따로 그리는 테두리 때문에 점이 약 2배라, 건너뛸 조각이 충분히 많을 만큼 확대했을 때만 이득이다.
+ * 경도 폭만 보면 세로로 긴 화면(모바일)에서 너무 일찍 켜져 오히려 느려져서 넓이로 판단한다.
+ */
+const TILE_VIEW_AREA = 3000;
+
+const FALLBACK: Record<Lod, Lod[]> ={ low: ['low', 'mid', 'high'], mid: ['mid', 'low', 'high'], high: ['high', 'mid', 'low'] };
 
 function readPalette(el: Element): Palette {
   const css = getComputedStyle(el);
@@ -139,6 +150,24 @@ export default function WorldMap({ data }: { data: StaticData }) {
     [],
   );
 
+  // 격자 조각 (DESIGN.md §3.2): 확대했을 때만 받아서 보이는 조각만 그린다
+  const landTiled = useRef(new Map<Lod, TiledGroup>());
+  const geoTiled = useRef(new Map<string, Map<string, TiledGroup>>());
+
+  const ensureTiled = useCallback((lod: Lod, entityIds: string[]) => {
+    const request = (key: string, load: () => Promise<void>) => {
+      if (requested.current.has(key)) return;
+      requested.current.add(key);
+      load()
+        .then(() => setGeoVersion((v) => v + 1))
+        // 조각 파일이 없어도 원래 도형으로 그리므로 오류로 띄우지 않는다
+        .catch((e: Error) => console.warn(`격자 조각을 불러오지 못함 (${key}): ${e.message}`));
+    };
+    request(`tiled/land/${lod}`, () => loadLandTiled(lod).then((g) => void landTiled.current.set(lod, g)));
+    for (const id of entityIds)
+      request(`tiled/${lod}/${id}`, () => loadEntityTiled(lod, id).then((m) => void geoTiled.current.set(`${lod}/${id}`, m)));
+  }, []);
+
   /** 원하는 단계가 아직 없으면 받아 둔 다른 단계로 대신 그린다 */
   const featureFor = useCallback((entry: TerritoryIndexEntry, lod: Lod) => {
     for (const l of FALLBACK[lod]) {
@@ -165,21 +194,31 @@ export default function WorldMap({ data }: { data: StaticData }) {
     if (!canvas || !size) return;
     const v = viewRef.current;
     const lod = lodFor(v.k, movingRef.current);
-    ensureLoaded(lod, [...new Set(active.map((t) => t.entityId))]);
+    const entityIds = [...new Set(active.map((t) => t.entityId))];
+    ensureLoaded(lod, entityIds);
     const projection = createProjection(size, s0, v);
     const bounds = visibleBounds(projection, size, v);
+    // 충분히 확대했을 때만 격자 조각을 쓴다. 넓게 볼 때는 건너뛸 조각이 적고 점만 늘어 오히려 느리다 (측정 결과)
+    const useTiles = lod !== 'low' && !bounds.all && (bounds.e - bounds.w) * (bounds.n - bounds.s) <= TILE_VIEW_AREA;
+    if (useTiles) ensureTiled(lod, entityIds);
+    const visiblePieces = (pieces: Piece[]) => pieces.filter((p) => isVisible(p.bbox, bounds, v));
+
     const territories: DrawTerritory[] = [];
     const drawn: typeof drawnRef.current = [];
     for (const entry of active) {
       if (!isVisible(entry.bbox, bounds, v)) continue;
       const feature = featureFor(entry, lod);
       if (!feature) continue;
+      const tiled = useTiles ? geoTiled.current.get(`${lod}/${entry.entityId}`)?.get(entry.key) : undefined;
+      const plain = [{ feature, bbox: entry.bbox }];
+      const shapes = tiled ? { fill: visiblePieces(tiled.tiles), stroke: visiblePieces(tiled.lines) } : { fill: plain, stroke: plain };
       const color = data.entities.get(entry.entityId)?.color ?? '#999999';
       const occupier = occupierAt(data.relations, entry.entityId, year);
       const hatch = occupier && data.entities.get(occupier.object)?.color;
       const overlord = overlordAt(data.relations, entry.entityId, year);
       const border = overlord && data.entities.get(overlord.object)?.color;
-      territories.push({ feature, color, certainty: entry.certainty, bbox: entry.bbox, hatch, border });
+      territories.push({ ...shapes, color, certainty: entry.certainty, hatch, border });
+      // 클릭 판정과 hover 테두리는 원래 도형으로 한다
       drawn.push({ entry, feature });
     }
     drawnRef.current = drawn;
@@ -187,10 +226,12 @@ export default function WorldMap({ data }: { data: StaticData }) {
     const dpr = window.devicePixelRatio || 1;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     paletteRef.current ??= readPalette(canvas);
-    const landPieces = landFor(lod).filter((p) => isVisible(p.bbox, bounds, v));
-    drawMap(ctx, projection, createProjection(size, s0, v, true), v, size, landPieces, territories, paletteRef.current);
+    const tiledLand = useTiles ? landTiled.current.get(lod) : undefined;
+    const plainLand = landFor(lod).filter((p) => isVisible(p.bbox, bounds, v));
+    const land = tiledLand ? { fill: visiblePieces(tiledLand.tiles), stroke: visiblePieces(tiledLand.lines) } : { fill: plainLand, stroke: plainLand };
+    drawMap(ctx, projection, createProjection(size, s0, v, true), v, size, land, territories, paletteRef.current);
     setView(v);
-  }, [size, s0, year, active, data.entities, data.relations, ensureLoaded, featureFor, landFor]);
+  }, [size, s0, year, active, data.entities, data.relations, ensureLoaded, ensureTiled, featureFor, landFor]);
 
   const requestDraw = useCallback(() => {
     cancelAnimationFrame(frame.current);

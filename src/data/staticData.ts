@@ -128,6 +128,57 @@ export function loadEntityGeometry(lod: Lod, entityId: string): Promise<Map<stri
   return pending;
 }
 
+// ── 격자 조각 (DESIGN.md §3.2) ────────────────────────────
+// 확대했을 때만 쓴다. 칠하기용 조각(tiles)과 테두리용 선 조각(lines)에 각각 경위도 범위가 붙어 있다.
+
+export interface Piece {
+  feature: Feature;
+  bbox: BBox;
+}
+export interface TiledGroup {
+  tiles: Piece[];
+  lines: Piece[];
+}
+
+type TiledTopology = Topology<{ tiles: GeometryCollection<{ key?: string; b: BBox }>; lines: GeometryCollection<{ key?: string; b: BBox }> }>;
+
+function toPieces(topo: TiledTopology, name: 'tiles' | 'lines') {
+  return (feature(topo, topo.objects[name]) as FeatureCollection<Polygon | MultiPolygon, { key?: string; b: BBox }>).features.map((f) => ({
+    key: f.properties.key,
+    piece: { feature: f, bbox: f.properties.b } as Piece,
+  }));
+}
+
+const tiledCache = new Map<string, Promise<unknown>>();
+function cached<T>(key: string, load: () => Promise<T>): Promise<T> {
+  let pending = tiledCache.get(key) as Promise<T> | undefined;
+  if (!pending) {
+    pending = load();
+    pending.catch(() => tiledCache.delete(key));
+    tiledCache.set(key, pending);
+  }
+  return pending;
+}
+
+export function loadLandTiled(lod: Lod): Promise<TiledGroup> {
+  return cached(`land/${lod}`, async () => {
+    const topo = await getJson<TiledTopology>(`land-tiled-${lod}.topo.json`);
+    return { tiles: toPieces(topo, 'tiles').map((p) => p.piece), lines: toPieces(topo, 'lines').map((p) => p.piece) };
+  });
+}
+
+/** 한 나라의 영토 버전별 격자 조각. key(`${entityId}@${from}`)로 찾는다 */
+export function loadEntityTiled(lod: Lod, entityId: string): Promise<Map<string, TiledGroup>> {
+  return cached(`${lod}/${entityId}`, async () => {
+    const topo = await getJson<TiledTopology>(`geo-tiled/${lod}/${entityId}.topo.json`);
+    const groups = new Map<string, TiledGroup>();
+    const group = (key: string) => groups.get(key) ?? groups.set(key, { tiles: [], lines: [] }).get(key)!;
+    for (const { key, piece } of toPieces(topo, 'tiles')) if (key) group(key).tiles.push(piece);
+    for (const { key, piece } of toPieces(topo, 'lines')) if (key) group(key).lines.push(piece);
+    return groups;
+  });
+}
+
 /**
  * 화살표 기준점. 그 해의 영토를 쓰고, 그 해에 영토가 없으면(예: 멸망한 해) 시간상 가장 가까운 영토를 쓴다.
  */
