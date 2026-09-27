@@ -29,7 +29,8 @@ export interface StaticData {
 
 export type TerritoryFeature = Feature<MultiPolygon>;
 
-export const dataUrl = (file: string) => `${import.meta.env.BASE_URL}data/${file}`;
+/** 데이터 파일 주소. 빌드마다 바뀌는 버전을 붙여 이전 배포본의 저장된 파일과 섞이지 않게 한다 */
+export const dataUrl = (file: string) => `${import.meta.env.BASE_URL}data/${file}?v=${__DATA_VERSION__}`;
 
 async function getJson<T>(file: string): Promise<T> {
   const res = await fetch(dataUrl(file));

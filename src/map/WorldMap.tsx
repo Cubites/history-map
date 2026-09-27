@@ -148,7 +148,7 @@ export default function WorldMap({ data }: { data: StaticData }) {
     if (!war || !snapshot) return active;
     return active.map((t) => {
       const side = t.entityId === war.sides.north.entity ? 'north' : t.entityId === war.sides.south.entity ? 'south' : null;
-      const anchor = side && snapshot.anchors[side];
+      const anchor = side && snapshot.anchors?.[side];
       return anchor ? { ...t, anchor } : t;
     });
   }, [active, war, snapshot]);
