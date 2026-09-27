@@ -352,3 +352,60 @@
   basis:
     type: national_institution
     refs: ["국사편찬위원회 『한국사』", "통일부 『북한 이해』"]
+
+# ── 귀속 논쟁 지역 (2026-09-27): 후보 나라들의 색을 번갈아 빗금으로 칠한다 (relations.yaml의 claimed_by) ──
+
+- id: manbeonhan-disputed
+  level: region
+  names: { ko: 압록강~청천강 (귀속 논쟁), en: Yalu–Cheongcheon (disputed) }
+  from: -281
+  to: -194
+  color: "#b7ae9c"
+  summary: 연의 장수 진개가 고조선 서쪽 땅 2천여 리를 빼앗고 만번한을 경계로 삼았다. 만번한의 위치를 요동의 천산산맥 부근으로 보면 이곳은 고조선 땅이고, 청천강 부근으로 보면 연(뒤에 진·한)의 땅이 된다. 한 초에는 패수를 경계로 삼았는데 패수의 위치(압록강·청천강 등)도 학설이 갈린다
+  basis:
+    type: national_institution
+    refs: ["국사편찬위원회 『신편 한국사』 4 초기국가", "『삼국지』 위서 동이전 주석 『위략』", "『사기』 조선열전"]
+
+- id: yeongsan-disputed
+  level: region
+  names: { ko: 영산강 유역 (귀속 논쟁), en: Yeongsan River basin (disputed) }
+  from: 369
+  to: 497
+  color: "#b7ae9c"
+  summary: 교과서는 근초고왕이 369년 마한을 정복해 전라도 남해안까지 차지했다고 본다. 그러나 영산강 유역에는 대형 옹관묘와 전방후원형 고분 등 독자적인 문화가 5세기 말까지 이어져, 이때까지 마한 세력이 남아 백제에 느슨하게 딸려 있었다는 견해도 있다. 동성왕이 무진주(광주)까지 친히 내려온 498년 무렵 백제의 직접 지배가 확실해진다
+  basis:
+    type: national_institution
+    refs: ["국사편찬위원회 『신편 한국사』 6 삼국의 정치와 사회 Ⅱ 백제", "『일본서기』 신공기 49년", "『삼국사기』 백제본기 동성왕 20년"]
+
+- id: seomjin-disputed
+  level: region
+  names: { ko: 섬진강 유역 (귀속 논쟁), en: Seomjin River basin (disputed) }
+  from: 475
+  to: 512
+  color: "#b7ae9c"
+  summary: 남원·장수·구례·순천 등 섬진강 유역에서 5세기 후반의 대가야 양식 무덤이 나와, 이 무렵 대가야의 세력권이었다고 보는 견해가 있다. 백제 영역으로 보는 견해도 있으며, 6세기 초 무령왕 때 백제가 기문·대사를 두고 대가야와 다툰 끝에 차지했다
+  basis:
+    type: national_institution
+    refs: ["국사편찬위원회 『신편 한국사』 7 삼국의 문화 가야", "『일본서기』 계체기 7~9년"]
+
+- id: nine-forts-disputed
+  level: region
+  names: { ko: 동북 9성 북쪽 (귀속 논쟁), en: North of the Nine Fortresses (disputed) }
+  from: 1107
+  to: 1108
+  color: "#b7ae9c"
+  summary: 윤관이 여진을 몰아내고 쌓은 동북 9성의 위치는 학설이 갈린다. 함흥평야 일대로 보는 견해, 길주 이남까지로 보는 견해, 『고려사』 지리지를 따라 두만강 북쪽 700리 공험진까지로 보는 견해가 있다. 지도는 함흥평야까지를 고려 땅으로 두고 그 북쪽을 논쟁 지역으로 표시한다. 1109년 여진에 돌려줌
+  basis:
+    type: national_institution
+    refs: ["국사편찬위원회 『신편 한국사』 15 고려 전기의 정치구조", "『고려사』 지리지 동계", "『고려사』 윤관 열전"]
+
+- id: gando-disputed
+  level: region
+  names: { ko: 간도 (귀속 논쟁), en: Gando (disputed) }
+  from: 1883
+  to: 1908
+  color: "#b7ae9c"
+  summary: 1712년 세운 백두산정계비의 '서쪽은 압록, 동쪽은 토문'이라는 문구에서 토문강을 조선은 쑹화강 지류로, 청은 두만강으로 해석했다. 조선인이 많이 옮겨 가 살자 1883년 어윤중을 보내 조사하고 감계 회담(1885·1887)을 열었으나 결론이 나지 않았다. 대한제국은 이범윤을 간도 관리사로 보냈으나(1903), 1909년 일본이 청과 간도 협약을 맺어 청의 땅으로 넘겼다
+  basis:
+    type: national_institution
+    refs: ["국사편찬위원회 『신편 한국사』 39 제국주의의 침투와 동학농민전쟁", "동북아역사재단 『간도 문제』"]

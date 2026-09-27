@@ -106,3 +106,15 @@
 - { type: claimed_by, subject: liaodong-disputed, object: balhae, from: 756, to: 925 }
 - { type: claimed_by, subject: liaodong-disputed, object: tang, from: 756, to: 906 }
 - { type: claimed_by, subject: liaodong-disputed, object: liao, from: 916, to: 925 }
+- { type: claimed_by, subject: manbeonhan-disputed, object: gojoseon, from: -281, to: -194 }
+- { type: claimed_by, subject: manbeonhan-disputed, object: yan-state, from: -281, to: -221 }
+- { type: claimed_by, subject: manbeonhan-disputed, object: qin, from: -220, to: -206 }
+- { type: claimed_by, subject: manbeonhan-disputed, object: western-han, from: -201, to: -194 }
+- { type: claimed_by, subject: yeongsan-disputed, object: baekje, from: 369, to: 497 }
+- { type: claimed_by, subject: seomjin-disputed, object: baekje, from: 475, to: 512 }
+- { type: claimed_by, subject: seomjin-disputed, object: gaya, from: 475, to: 512 }
+- { type: claimed_by, subject: nine-forts-disputed, object: goryeo, from: 1107, to: 1108 }
+- { type: claimed_by, subject: nine-forts-disputed, object: jurchen, from: 1107, to: 1108 }
+- { type: claimed_by, subject: gando-disputed, object: joseon, from: 1883, to: 1896 }
+- { type: claimed_by, subject: gando-disputed, object: daehan-jeguk, from: 1897, to: 1908 }
+- { type: claimed_by, subject: gando-disputed, object: qing, from: 1883, to: 1908 }
