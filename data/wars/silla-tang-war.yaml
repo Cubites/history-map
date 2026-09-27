@@ -1,0 +1,116 @@
+# 삼국 통일 전쟁: 백제·고구려 멸망과 나당 전쟁 (DESIGN.md §4.5)
+# 영토가 해마다 바뀌는 전쟁이라 나라 영토를 그대로 진영 색으로 칠한다 (replaces 없음).
+# 당이 차지한 옛 백제·고구려 땅은 웅진도독부·안동도호부 영토로 칠한다.
+# 날짜는 『삼국사기』를 따른 음력이며, 날이 전하지 않으면 00으로 적는다. 위치는 교과서 수준의 대략적인 추정.
+
+id: silla-tang-war
+name: 삼국 통일 전쟁 (날짜는 음력)
+factions:
+  - { id: silla, name: 신라군, entity: silla }
+  - { id: tang, name: 당군, entity: tang }
+  - { id: baekje, name: 백제·부흥군·왜군, entity: baekje }
+  - { id: goguryeo, name: 고구려·부흥군, entity: goguryeo }
+participants:
+  - { entity: silla, faction: silla }
+  - { entity: tang, faction: tang }
+  - { entity: baekje, faction: baekje, to: 660-07-18 }
+  - { entity: wa, faction: baekje, from: 661-01-00, to: 663-09-00 }
+  - { entity: goguryeo, faction: goguryeo, to: 668-09-21 }
+sources: ["『삼국사기』 신라본기 태종 무열왕·문무왕", "『구당서』·『신당서』", "『일본서기』 덴지기", "국사편찬위원회 『신편 한국사』 9"]
+
+theaters:
+  - id: korea
+    name: 한반도
+    marker: [127.0, 36.6]
+    bounds: [[123.0, 33.6], [130.5, 41.8]]
+    routes:
+      - name: 김유신의 신라군
+        faction: silla
+        points:
+          - { at: [129.22, 35.84], date: 660-05-00, label: 경주 출발 }
+          - { at: [127.13, 36.2], date: 660-07-09, label: 황산벌 }
+          - { at: [126.91, 36.28], date: 660-07-13, label: 사비성 }
+      - name: 소정방의 당군
+        faction: tang
+        points:
+          - { at: [120.8, 37.6], date: 660-06-00, label: 산둥반도 }
+          - { at: [126.2, 37.2], label: 덕물도 }
+          - { at: [126.7, 36.02], date: 660-07-09, label: 기벌포 상륙 }
+          - { at: [126.91, 36.28], date: 660-07-13, label: 사비성 }
+    battles:
+      - { name: 황산벌 전투, at: [127.13, 36.2], date: 660-07-09, winner: silla, summary: 계백의 결사대 5천이 김유신의 신라군 5만을 맞아 네 번 이겼으나, 관창 등 화랑의 희생으로 사기가 오른 신라군에 패했다. }
+      - { name: 사비성 함락, at: [126.91, 36.28], date: 660-07-13, winner: tang, summary: 나당 연합군이 사비성을 함락했다. 웅진성으로 피했던 의자왕이 18일 항복했다. }
+      - { name: 백강 전투, at: [126.75, 36.0], date: 663-08-00, winner: tang, summary: 백제 부흥군을 도우러 온 왜의 수군이 백강 어귀에서 나당 연합군에게 크게 졌다. 곧 주류성이 함락되었다. }
+      - { name: 평양성 함락, at: [125.75, 39.02], date: 668-09-21, winner: tang, summary: 나당 연합군이 평양성을 함락해 고구려가 멸망했다. }
+      - { name: 매소성 전투, at: [127.05, 37.95], date: 675-09-29, winner: silla, summary: 신라군이 매소성의 당군 20만을 물리치고 말 3만여 필을 얻었다. }
+      - { name: 기벌포 전투, at: [126.7, 36.02], date: 676-11-00, winner: silla, summary: 신라 수군이 금강 하구에서 설인귀의 당 수군을 물리쳐 나당 전쟁을 끝냈다. }
+    snapshots:
+      - date: 660-07-18
+        title: 백제 멸망
+        summary: 신라군이 황산벌에서 계백의 결사대를 물리치고 당군과 함께 사비성을 함락했습니다. 의자왕이 항복하고, 당은 옛 백제 땅에 웅진도독부를 두었습니다.
+        areas:
+          - { faction: silla, entities: [silla] }
+          - { faction: tang, entities: [ungjin-dodokbu] }
+          - { faction: goguryeo, entities: [goguryeo] }
+
+      - date: 663-08-00
+        title: 백제 부흥 운동과 백강 전투
+        summary: 복신·도침·흑치상지가 부여풍을 왕으로 세워 주류성과 임존성에서 백제를 되살리려 했습니다. 왜가 수군을 보냈으나 백강에서 크게 졌고, 주류성이 함락되었습니다.
+        areas:
+          - { faction: silla, entities: [silla] }
+          - { faction: tang, entities: [ungjin-dodokbu] }
+          - { faction: goguryeo, entities: [goguryeo] }
+        holds:
+          - { name: 주류성, at: [126.75, 36.3], faction: baekje }
+          - { name: 임존성, at: [126.8, 36.6], faction: baekje }
+        arrows:
+          - { faction: baekje, path: [[129.5, 34.2], [127.0, 34.4], [126.6, 35.9]], label: 왜의 수군 }
+
+      - date: 668-09-21
+        title: 고구려 멸망
+        summary: 나당 연합군이 평양성을 함락해 고구려가 멸망했습니다. 당은 평양에 안동도호부를 두고 신라까지 계림대도독부로 삼아 한반도 전체를 지배하려 했습니다.
+        areas:
+          - { faction: silla, entities: [silla] }
+          - { faction: tang, entities: [ungjin-dodokbu, andong-dohobu] }
+        arrows:
+          - { faction: silla, path: [[127.0, 37.6], [125.85, 38.9]], label: 신라군 }
+          - { faction: tang, path: [[124.5, 40.3], [125.7, 39.1]], label: 당군 }
+
+      - date: 670-03-00
+        title: 나당 전쟁 시작
+        summary: 신라의 설오유와 고구려 부흥군의 고연무가 압록강을 건너 당군을 먼저 쳤습니다. 검모잠은 안승을 왕으로 세워 고구려 부흥 운동을 일으켰고, 신라는 이들을 지원했습니다.
+        areas:
+          - { faction: silla, entities: [silla] }
+          - { faction: tang, entities: [ungjin-dodokbu, andong-dohobu] }
+        holds:
+          - { name: 한성 (검모잠·안승), at: [125.6, 38.4], faction: goguryeo }
+        arrows:
+          - { faction: silla, path: [[125.5, 39.5], [124.6, 40.4]], label: 설오유·고연무 (오골성) }
+
+      - date: 671-00-00
+        title: 소부리주 설치
+        summary: 신라가 웅진도독부가 있던 사비성을 차지하고 소부리주를 두어 옛 백제 땅을 되찾았습니다.
+        areas:
+          - { faction: silla, entities: [silla] }
+          - { faction: tang, entities: [andong-dohobu] }
+        arrows:
+          - { faction: silla, path: [[127.8, 36.2], [126.95, 36.3]], label: 사비성 }
+
+      - date: 675-09-29
+        title: 매소성 전투
+        summary: 신라군이 매소성에서 당의 20만 대군을 물리쳤습니다. 육지에서 당군의 남하가 막혔습니다.
+        areas:
+          - { faction: silla, entities: [silla] }
+          - { faction: tang, entities: [andong-dohobu] }
+        arrows:
+          - { faction: tang, path: [[126.8, 38.6], [127.05, 38.05]], label: 이근행의 당군 }
+
+      - date: 676-11-00
+        title: 기벌포 전투와 삼국 통일
+        summary: 신라 수군이 기벌포에서 당 수군을 물리쳤습니다. 당은 안동도호부를 요동으로 옮기고, 신라는 대동강에서 원산만에 이르는 이남 땅을 차지해 삼국 통일을 이루었습니다.
+        areas:
+          - { faction: silla, entities: [silla] }
+          - { faction: tang, entities: [andong-dohobu] }
+        arrows:
+          - { faction: tang, path: [[125.7, 36.2], [126.6, 36.02]], label: 설인귀의 수군 }
+          - { faction: tang, path: [[125.7, 39.1], [123.2, 41.2]], label: 안동도호부 이전 }

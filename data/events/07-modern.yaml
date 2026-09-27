@@ -597,6 +597,7 @@
     - { from: japan, to: roc, note: "간도 출병, 간도 참변" }
   tags: [war]
   sources: ["『독립신문』 1920년", "국사편찬위원회 『한국독립운동사』"]
+  front: { war: independence-war-1920, date: 1920-10-21 }
 
 - id: free-city-1921
   year: 1921
@@ -610,6 +611,7 @@
     - { from: soviet-union, to: occupied-korea, note: "적색군의 무장 해제 공격" }
   tags: [war]
   sources: ["국사편찬위원회 『한국독립운동사』"]
+  front: { war: independence-war-1920, date: 1921-06-27 }
 
 - id: self-strength-1920
   year: 1920

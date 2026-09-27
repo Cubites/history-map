@@ -1,0 +1,109 @@
+# 거란의 침입 (1~3차) (DESIGN.md §4.5)
+# 전역 하나(고려 북부). 스냅샷마다 고려 영토를 고려 진영으로 칠한 뒤 거란군이 장악한 지역(khitan/*.geojson)을 덮는다.
+# 날짜는 『고려사』를 따른 음력이며, 날이 전하지 않으면 00으로 적는다. 위치는 교과서 수준의 대략적인 추정.
+
+id: goryeo-khitan-war
+name: 거란의 침입 (날짜는 음력)
+factions:
+  - { id: goryeo, name: 고려군, entity: goryeo }
+  - { id: liao, name: 거란군, entity: liao }
+participants:
+  - { entity: goryeo, faction: goryeo }
+  - { entity: liao, faction: liao }
+sources: ["『고려사』 세가 성종·현종", "『고려사』 열전 서희·양규·강감찬", "『요사』", "국사편찬위원회 『신편 한국사』 15"]
+
+theaters:
+  - id: korea
+    name: 고려 북부
+    replaces: [goryeo]
+    marker: [125.4, 40.2]
+    bounds: [[122.5, 34.5], [129.0, 41.8]]
+    routes:
+      - name: 현종의 피란
+        faction: goryeo
+        points:
+          - { at: [126.55, 37.97], date: 1010-12-28, label: 개경 }
+          - { at: [127.12, 36.46], label: 공주 }
+          - { at: [126.71, 35.03], date: 1011-01-13, label: 나주 }
+      - name: 소배압의 거란군 (3차)
+        faction: liao
+        points:
+          - { at: [124.55, 40.3], date: 1018-12-00, label: 압록강 }
+          - { at: [124.72, 40.05], label: 흥화진 }
+          - { at: [126.35, 38.3], date: 1019-01-00, label: 신은현 (개경 100리) }
+          - { at: [125.3, 40.1], date: 1019-02-01, label: 귀주 }
+    battles:
+      - { name: 안융진 전투, at: [125.7, 39.62], date: 993-10-00, winner: goryeo, summary: 발해 유민 출신 대도수가 안융진에서 소손녕의 거란군을 막아 냈다. 이후 서희의 담판이 열렸다. }
+      - { name: 흥화진 전투, at: [124.72, 40.05], date: 1010-11-00, winner: goryeo, summary: 양규가 흥화진을 지켜 거란 성종의 40만 대군을 막았다. 거란군이 물러갈 때는 뒤를 쳐 포로 3만여 명을 되찾았다. }
+      - { name: 통주 전투, at: [125.0, 39.85], date: 1010-11-00, winner: liao, summary: 강조가 이끈 고려의 주력군이 통주에서 크게 지고 강조가 사로잡혀 죽었다. }
+      - { name: 개경 함락, at: [126.55, 37.97], date: 1011-01-01, winner: liao, summary: 거란군이 개경을 함락해 불태웠다. 현종은 나주까지 피란했다. }
+      - { name: 흥화진 수공, at: [124.8, 40.1], date: 1018-12-00, winner: goryeo, summary: 강감찬이 쇠가죽으로 강물을 막았다가 터뜨려 건너던 거란군을 크게 무찔렀다. }
+      - { name: 귀주 대첩, at: [125.3, 40.1], date: 1019-02-01, winner: goryeo, summary: 강감찬이 개경에서 물러나던 소배압의 거란군을 귀주에서 크게 무찔렀다. 살아 돌아간 자가 수천 명에 불과했다. }
+    snapshots:
+      - date: 993-10-00
+        title: 1차 침입
+        summary: 송과 가까이 지내고 거란을 멀리하던 고려에 소손녕이 80만 대군을 이끌고 쳐들어왔습니다. 봉산군을 빼앗았으나 안융진에서 막혔습니다. 서희가 담판에 나서 고려가 고구려를 이었음을 밝히고, 여진을 몰아내면 거란과 교류하겠다고 약속했습니다.
+        areas:
+          - { faction: goryeo, entities: [goryeo] }
+          - { faction: liao, geojson: khitan/0993-10-00.geojson }
+        arrows:
+          - { faction: liao, path: [[123.5, 41.0], [125.5, 40.0]], label: 소손녕 }
+
+      - date: 994-00-00
+        title: 강동 6주
+        summary: 서희의 담판으로 고려는 압록강 동쪽의 여진을 몰아내고 흥화진·용주·통주·철주·귀주·곽주의 강동 6주를 쌓아 영토를 압록강까지 넓혔습니다.
+        areas:
+          - { faction: goryeo, entities: [goryeo] }
+        holds:
+          - { name: 흥화진, at: [124.72, 40.05], faction: goryeo }
+          - { name: 귀주, at: [125.3, 40.1], faction: goryeo }
+          - { name: 곽주, at: [125.2, 39.72], faction: goryeo }
+
+      - date: 1010-11-00
+        title: 2차 침입과 통주 전투
+        summary: 강조가 목종을 몰아낸 정변(1009)을 구실로 거란 성종이 40만 대군을 이끌고 쳐들어왔습니다. 양규가 흥화진을 지켰으나, 강조의 주력군은 통주에서 무너졌습니다.
+        areas:
+          - { faction: goryeo, entities: [goryeo] }
+          - { faction: liao, geojson: khitan/1010-11-00.geojson }
+        holds:
+          - { name: 흥화진 (양규), at: [124.72, 40.05], faction: goryeo }
+        arrows:
+          - { faction: liao, path: [[123.8, 41.0], [124.6, 40.3]], label: 거란 성종 }
+
+      - date: 1011-01-00
+        title: 개경 함락
+        summary: 거란군이 개경을 함락하고, 현종은 나주까지 피란했습니다. 현종이 거란에 직접 가서 예를 갖추기로 하자 거란군이 물러났고, 양규가 물러가는 거란군을 공격했습니다.
+        areas:
+          - { faction: goryeo, entities: [goryeo] }
+          - { faction: liao, geojson: khitan/1011-01-00.geojson }
+        holds:
+          - { name: 흥화진 (양규), at: [124.72, 40.05], faction: goryeo }
+          - { name: 서경, at: [125.75, 39.02], faction: goryeo }
+        arrows:
+          - { faction: liao, path: [[125.3, 39.6], [126.1, 38.6], [126.5, 38.0]], label: 개경 }
+
+      - date: 1018-12-00
+        title: 3차 침입과 흥화진 전투
+        summary: 현종이 거란에 가지 않고 강동 6주도 돌려주지 않자 소배압이 10만 대군으로 쳐들어왔습니다. 강감찬이 흥화진에서 물을 막았다 터뜨려 큰 타격을 주었습니다.
+        areas:
+          - { faction: goryeo, entities: [goryeo] }
+          - { faction: liao, geojson: khitan/1018-12-00.geojson }
+        holds:
+          - { name: 흥화진, at: [124.72, 40.05], faction: goryeo }
+
+      - date: 1019-01-00
+        title: 거란군의 개경 진격
+        summary: 소배압은 곧장 개경 가까이까지 내려왔으나, 고려가 들판을 비우고 성을 지키는 청야 전술로 맞서자 식량이 떨어져 물러났습니다.
+        areas:
+          - { faction: goryeo, entities: [goryeo] }
+          - { faction: liao, geojson: khitan/1019-01-00.geojson }
+        holds:
+          - { name: 개경, at: [126.55, 37.97], faction: goryeo }
+
+      - date: 1019-02-01
+        title: 귀주 대첩
+        summary: 강감찬이 물러나던 거란군을 귀주에서 크게 무찔렀습니다. 이후 고려·송·거란 사이에 세력 균형이 이루어졌고, 고려는 개경에 나성(1029)을, 북쪽 국경에 천리장성(1033~1044)을 쌓았습니다.
+        areas:
+          - { faction: goryeo, entities: [goryeo] }
+        arrows:
+          - { faction: liao, path: [[125.3, 40.15], [124.5, 40.4]], label: 거란군 패주 }

@@ -68,11 +68,23 @@ export function factionColor(war: WarIndexEntry, factionId: string, entityColor:
 /** 화살표 모양 번호: 진영 순서 (0: 실선, 1: 긴 점선, 2 이상: 짧은 점선) */
 export const factionIndex = (war: WarIndexEntry, factionId: string) => Math.max(0, war.factions.findIndex((f) => f.id === factionId));
 
-/** YYYY-MM-DD → 1950.6.25 */
+/**
+ * YYYY-MM-DD → 1950.6.25. 기록에 날이나 달이 없으면 00으로 적는다: 612-07-00 → 612.7, 927-00-00 → 927
+ * (DESIGN.md §4.5)
+ */
 export function formatFrontDate(date: string): string {
   const [, y, m, d] = date.match(/^(-?\d+)-(\d+)-(\d+)$/)!;
   const year = Number(y);
-  return `${year <= 0 ? `기원전 ${1 - year}` : year}.${Number(m)}.${Number(d)}`;
+  const yearText = year <= 0 ? `기원전 ${1 - year}` : String(year);
+  if (Number(m) === 0) return yearText;
+  return Number(d) === 0 ? `${yearText}.${Number(m)}` : `${yearText}.${Number(m)}.${Number(d)}`;
+}
+
+/** 연도를 뺀 짧은 날짜 (진군로 지점 옆): 12.13, 7월. 달을 모르면 빈 문자열 */
+export function formatShortFrontDate(date: string): string {
+  const [, , m, d] = date.match(/^(-?\d+)-(\d+)-(\d+)$/)!;
+  if (Number(m) === 0) return '';
+  return Number(d) === 0 ? `${Number(m)}월` : `${Number(m)}.${Number(d)}`;
 }
 
 /** YYYY-MM-DD의 연도 (천문 연도) */

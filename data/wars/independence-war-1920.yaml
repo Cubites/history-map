@@ -1,0 +1,75 @@
+# 만주의 독립 전쟁: 봉오동·청산리 전투 (DESIGN.md §4.5)
+# 영토가 바뀐 전쟁이 아니라 독립군과 일본군의 싸움이므로 점령 지역 없이 거점·이동·전투만 그린다.
+# 날짜는 양력. 위치는 교과서 수준의 대략적인 추정.
+
+id: independence-war-1920
+name: 봉오동·청산리 전투 (만주 독립 전쟁)
+factions:
+  - { id: independence, name: 독립군, entity: occupied-korea, color: "#2f6f9f" }
+  - { id: japan, name: 일본군, entity: japan }
+participants:
+  - { entity: japan, faction: japan }
+sources: ["국사편찬위원회 『한국사』 48", "독립기념관 한국독립운동사연구소", "국가보훈부 『독립운동사』"]
+
+theaters:
+  - id: manchuria
+    name: 간도·연해주
+    marker: [129.3, 42.8]
+    bounds: [[126.5, 41.2], [133.0, 46.2]]
+    routes:
+      - name: 독립군의 이동
+        faction: independence
+        points:
+          - { at: [129.83, 42.97], date: 1920-06-07, label: 봉오동 }
+          - { at: [128.9, 42.55], date: 1920-10-21, label: 청산리 }
+          - { at: [131.87, 45.53], date: 1920-12-00, label: 밀산 (대한 독립 군단) }
+          - { at: [128.12, 51.38], date: 1921-06-27, label: 자유시 }
+    battles:
+      - { name: 삼둔자 전투, at: [129.95, 42.9], date: 1920-06-04, winner: independence, summary: 국경을 넘어 온성의 일본군 초소를 친 독립군을 쫓아온 일본군을 삼둔자에서 물리쳤다. }
+      - { name: 봉오동 전투, at: [129.83, 42.97], date: 1920-06-07, winner: independence, summary: 홍범도의 대한 독립군과 최진동의 군무 도독부 등 연합 부대가 봉오동 골짜기로 일본군을 끌어들여 크게 무찔렀다. }
+      - { name: 청산리 전투, at: [128.9, 42.55], date: 1920-10-21, winner: independence, summary: 김좌진의 북로 군정서와 홍범도의 연합 부대가 백운평·완루구·어랑촌 등에서 엿새 동안 일본군을 크게 물리쳤다. }
+    snapshots:
+      - date: 1920-06-07
+        title: 봉오동 전투
+        summary: 3·1 운동 뒤 만주의 독립군이 국경을 넘어 일본군을 공격했습니다. 이를 쫓아온 일본군을 홍범도 등의 연합 부대가 봉오동에서 크게 무찔렀습니다.
+        holds:
+          - { name: 봉오동 (홍범도·최진동), at: [129.83, 42.97], faction: independence }
+          - { name: 온성, at: [129.99, 42.95], faction: japan }
+        arrows:
+          - { faction: japan, path: [[129.99, 42.93], [129.86, 42.97]], label: 일본군 추격 }
+
+      - date: 1920-10-02
+        title: 훈춘 사건
+        summary: 일본은 마적을 시켜 훈춘의 일본 영사관을 습격하게 하고 이를 구실로 대군을 간도에 보냈습니다. 독립군은 일본군을 피해 백두산 쪽으로 옮겨 갔습니다.
+        holds:
+          - { name: 훈춘, at: [130.37, 42.87], faction: japan }
+        arrows:
+          - { faction: japan, path: [[131.9, 43.1], [130.45, 42.9]], label: 연해주에서 }
+          - { faction: japan, path: [[129.75, 42.44], [129.4, 42.85]], label: 회령에서 }
+          - { faction: independence, path: [[129.7, 43.0], [128.95, 42.6]], label: 독립군 이동 }
+
+      - date: 1920-10-21
+        title: 청산리 전투
+        summary: 김좌진의 북로 군정서와 홍범도의 대한 독립군 등이 청산리 일대에서 엿새 동안 10여 차례 싸워 일본군을 크게 물리쳤습니다. 독립군이 거둔 가장 큰 승리입니다.
+        holds:
+          - { name: 백운평, at: [128.85, 42.52], faction: independence }
+          - { name: 어랑촌, at: [128.98, 42.6], faction: independence }
+        arrows:
+          - { faction: japan, path: [[129.5, 42.8], [129.0, 42.58]], label: 일본군 }
+
+      - date: 1920-12-00
+        title: 간도 참변과 밀산 집결
+        summary: 패배에 보복하려는 일본군이 간도의 한인 마을을 불태우고 주민을 학살했습니다(간도 참변, 1920.10~1921). 독립군은 밀산에 모여 서일을 총재로 대한 독립 군단을 만들었습니다.
+        holds:
+          - { name: 밀산, at: [131.87, 45.53], faction: independence }
+          - { name: 용정 (간도 참변), at: [129.43, 42.77], faction: japan }
+        arrows:
+          - { faction: independence, path: [[129.0, 42.7], [130.5, 44.5], [131.8, 45.45]], label: 밀산으로 }
+
+      - date: 1921-06-27
+        title: 자유시 참변
+        summary: 러시아 영토 자유시(스보보드니)로 옮겨 간 독립군이 지휘권 다툼 끝에 러시아 적군에게 무장 해제를 당하며 큰 피해를 입었습니다. 이후 독립군은 만주로 돌아와 3부(참의부·정의부·신민부)로 다시 조직되었습니다.
+        holds:
+          - { name: 자유시, at: [128.12, 51.38], faction: independence }
+        arrows:
+          - { faction: independence, path: [[131.8, 45.6], [130.0, 48.5], [128.2, 51.3]], label: 자유시로 }

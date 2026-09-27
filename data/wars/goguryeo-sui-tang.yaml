@@ -1,0 +1,114 @@
+# 고구려–수·당 전쟁 (DESIGN.md §4.5)
+# 전역 하나(요동·한반도 북부). 스냅샷마다 고구려 영토를 고구려 진영으로 칠한 뒤, 수·당군이 차지하거나 에워싼 지역(sui-tang/*.geojson)을 덮는다.
+# 날짜는 『삼국사기』·중국 사서를 따른 음력이며, 날이 전하지 않으면 00으로 적는다 (612-07-00 → "612.7").
+# 위치는 교과서 수준의 대략적인 추정.
+
+id: goguryeo-sui-tang
+name: 고구려–수·당 전쟁 (날짜는 음력)
+factions:
+  - { id: goguryeo, name: 고구려군, entity: goguryeo }
+  - { id: sui, name: 수군, entity: sui }
+  - { id: tang, name: 당군, entity: tang }
+  - { id: silla, name: 신라군, entity: silla }
+participants:
+  - { entity: goguryeo, faction: goguryeo }
+  - { entity: sui, faction: sui, from: 598-01-00, to: 614-12-00 }
+  - { entity: tang, faction: tang, from: 645-01-00 }
+  - { entity: silla, faction: silla, from: 660-01-00 }
+sources: ["『삼국사기』 고구려본기", "『수서』 양제기·고려전", "『구당서』·『신당서』 고려전", "국사편찬위원회 『신편 한국사』 5"]
+
+theaters:
+  - id: liaodong
+    name: 요동·한반도 북부
+    replaces: [goguryeo]
+    marker: [123.3, 41.3]
+    bounds: [[118.8, 36.8], [129.5, 43.5]]
+    routes:
+      - name: 수 별동대 (우중문·우문술)
+        faction: sui
+        points:
+          - { at: [123.17, 41.27], date: 612-06-00, label: 요동성 }
+          - { at: [124.5, 40.3], label: 압록강 }
+          - { at: [125.66, 39.62], label: 살수 }
+          - { at: [125.75, 39.1], date: 612-07-00, label: 평양 부근 }
+      - name: 당 태종의 친정
+        faction: tang
+        points:
+          - { at: [122.3, 41.7], date: 645-04-00, label: 요하 도하 }
+          - { at: [123.17, 41.27], date: 645-05-00, label: 요동성 함락 }
+          - { at: [123.38, 41.05], date: 645-06-00, label: 백암성 }
+          - { at: [122.75, 40.9], date: 645-09-00, label: 안시성 }
+    battles:
+      - { name: 살수 대첩, at: [125.66, 39.62], date: 612-07-00, winner: goguryeo, summary: 을지문덕이 수의 별동대 30만 5천을 살수(청천강)에서 크게 무찔렀다. 살아 돌아간 자가 2,700명이었다고 한다. }
+      - { name: 요동성 함락, at: [123.17, 41.27], date: 645-05-00, winner: tang, summary: 당 태종이 직접 이끈 당군이 요동성을 함락했다. }
+      - { name: 안시성 전투, at: [122.75, 40.9], date: 645-09-00, winner: goguryeo, summary: 안시성 군민이 당군의 흙산 공격까지 막아 내며 석 달 가까이 버텼고, 당 태종은 추위가 닥치자 물러났다. }
+      - { name: 사수 전투, at: [125.7, 38.95], date: 662-02-00, winner: goguryeo, summary: 연개소문이 평양을 돕던 방효태의 당군을 사수에서 전멸시켰다. }
+      - { name: 평양성 함락, at: [125.75, 39.02], date: 668-09-00, winner: tang, summary: 연개소문이 죽은 뒤 아들들이 다투는 사이 나당 연합군이 평양성을 함락했다. }
+    snapshots:
+      - date: 598-06-00
+        title: 수의 1차 침입
+        summary: 영양왕이 말갈병을 이끌고 요서를 먼저 치자 수 문제가 30만 대군을 보냈습니다. 육군은 장마와 전염병으로, 수군은 폭풍으로 큰 피해를 입고 물러났습니다.
+        areas:
+          - { faction: goguryeo, entities: [goguryeo] }
+        arrows:
+          - { faction: goguryeo, path: [[122.2, 41.3], [120.6, 41.4]], label: 요서 선제공격 }
+          - { faction: sui, path: [[119.7, 40.0], [121.6, 41.2]], label: 육군 }
+          - { faction: sui, path: [[120.8, 37.5], [122.8, 38.3]], label: 수군 }
+
+      - date: 612-07-00
+        title: 살수 대첩
+        summary: 수 양제가 113만 대군으로 쳐들어왔으나 요동성이 버텼습니다. 평양으로 곧장 내려간 별동대는 을지문덕의 유인 작전에 걸려 살수에서 크게 무너졌습니다.
+        areas:
+          - { faction: goguryeo, entities: [goguryeo] }
+          - { faction: sui, geojson: sui-tang/0612-07-00.geojson }
+        holds:
+          - { name: 요동성, at: [123.17, 41.27], faction: goguryeo }
+          - { name: 평양성, at: [125.75, 39.02], faction: goguryeo }
+        arrows:
+          - { faction: sui, path: [[119.7, 40.0], [122.4, 41.3]], label: 수 양제 본군 }
+          - { faction: goguryeo, path: [[125.7, 39.4], [125.55, 39.9]], label: 살수 추격 }
+
+      - date: 645-09-00
+        title: 안시성 전투
+        summary: 연개소문의 정변을 구실로 당 태종이 직접 쳐들어와 요동성·백암성·비사성 등을 빼앗았습니다. 그러나 안시성을 석 달 가까이 함락하지 못하고 물러났습니다.
+        areas:
+          - { faction: goguryeo, entities: [goguryeo] }
+          - { faction: tang, geojson: sui-tang/0645-09-00.geojson }
+        holds:
+          - { name: 안시성, at: [122.75, 40.9], faction: goguryeo }
+          - { name: 요동성, at: [123.17, 41.27], faction: tang }
+          - { name: 비사성, at: [121.95, 39.1], faction: tang }
+        arrows:
+          - { faction: tang, path: [[120.5, 37.8], [121.8, 38.95]], label: 당 수군 }
+
+      - date: 662-02-00
+        title: 사수 전투
+        summary: 백제를 무너뜨린 당이 평양성을 에워쌌으나, 연개소문이 사수에서 방효태의 당군을 전멸시켰습니다. 당군은 평양 포위를 풀고 물러났습니다.
+        areas:
+          - { faction: goguryeo, entities: [goguryeo] }
+          - { faction: tang, geojson: sui-tang/0662-02-00.geojson }
+        holds:
+          - { name: 평양성, at: [125.75, 39.02], faction: goguryeo }
+        arrows:
+          - { faction: tang, path: [[124.2, 38.3], [125.4, 38.85]], label: 소정방 (대동강) }
+          - { faction: silla, path: [[127.2, 37.3], [125.9, 38.8]], label: 김유신의 군량 수송 }
+
+      - date: 667-09-00
+        title: 신성 함락
+        summary: 연개소문이 죽은 뒤(665) 아들들 사이에 권력 다툼이 벌어지고 맏아들 남생이 당에 항복했습니다. 당의 이세적이 요동의 요충지 신성을 함락했습니다.
+        areas:
+          - { faction: goguryeo, entities: [goguryeo] }
+          - { faction: tang, geojson: sui-tang/0667-09-00.geojson }
+        holds:
+          - { name: 신성, at: [123.95, 41.88], faction: tang }
+        arrows:
+          - { faction: tang, path: [[123.95, 41.88], [125.0, 40.6], [125.6, 39.3]], label: 평양 방면 }
+
+      - date: 668-09-00
+        title: 고구려 멸망
+        summary: 나당 연합군이 평양성을 함락하고 보장왕이 항복했습니다. 당은 평양에 안동도호부를 두었습니다.
+        areas:
+          - { faction: tang, entities: [andong-dohobu] }
+        arrows:
+          - { faction: tang, path: [[124.5, 40.3], [125.7, 39.1]], label: 당군 }
+          - { faction: silla, path: [[126.9, 37.6], [125.8, 38.9]], label: 신라군 }

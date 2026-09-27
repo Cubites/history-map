@@ -1,5 +1,5 @@
 import type { GeoProjection } from 'd3-geo';
-import { dateKey, factionColor, factionStroke, formatFrontDate } from '../lib/wars.ts';
+import { dateKey, factionColor, factionStroke, formatFrontDate, formatShortFrontDate } from '../lib/wars.ts';
 import type { FrontSnapshotOut, TheaterOut, WarIndexEntry } from '../schema/index.ts';
 
 /** 경로 지점 이름 사이의 최소 화면 거리(px) */
@@ -85,7 +85,7 @@ export function WarDetailLayer({ war, theater, snapshot, projection, entityColor
                 {r.labeled.has(i) && (point.label || point.date) && (
                   <text className="war-route-label" x={p[0] + 6} y={p[1] - 5}>
                     {point.label}
-                    {point.date && <tspan className="war-route-date"> {formatFrontDate(point.date).replace(/^\d+\./, '')}</tspan>}
+                    {point.date && formatShortFrontDate(point.date) && <tspan className="war-route-date"> {formatShortFrontDate(point.date)}</tspan>}
                   </text>
                 )}
               </g>

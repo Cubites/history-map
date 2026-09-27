@@ -1,0 +1,91 @@
+# 후삼국 통일 전쟁 (DESIGN.md §4.5)
+# 전역 하나(한반도 남부). 고려·후백제·신라의 영토를 각 진영 색으로 칠한다.
+# 날짜는 『고려사』·『삼국사기』를 따른 음력이며, 날·달이 전하지 않거나 기록마다 다르면 00으로 적는다. 위치는 교과서 수준의 대략적인 추정.
+
+id: later-three-kingdoms
+name: 후삼국 통일 전쟁 (날짜는 음력)
+factions:
+  - { id: goryeo, name: 고려, entity: goryeo }
+  - { id: hubaekje, name: 후백제, entity: hubaekje }
+  - { id: silla, name: 신라, entity: silla }
+participants:
+  - { entity: goryeo, faction: goryeo }
+  - { entity: hubaekje, faction: hubaekje }
+  - { entity: silla, faction: silla, to: 935-11-00 }
+sources: ["『고려사』 세가 태조", "『삼국사기』 열전 견훤·궁예", "국사편찬위원회 『신편 한국사』 11·12"]
+
+theaters:
+  - id: korea
+    name: 한반도 남부
+    replaces: [goryeo, hubaekje, silla]
+    marker: [127.8, 36.2]
+    bounds: [[125.0, 34.0], [130.0, 39.5]]
+    routes:
+      - name: 견훤의 경주 습격
+        faction: hubaekje
+        points:
+          - { at: [127.15, 35.82], date: 927-00-00, label: 완산주 (전주) }
+          - { at: [128.3, 35.95], label: 고울부 (영천) }
+          - { at: [129.22, 35.84], label: 경주 (경애왕 죽음) }
+          - { at: [128.7, 36.0], label: 공산 }
+    battles:
+      - { name: 공산 전투, at: [128.7, 36.0], date: 927-00-00, winner: hubaekje, summary: 신라를 도우러 온 왕건의 고려군이 팔공산에서 견훤에게 크게 졌다. 신숭겸·김락 등이 왕건을 대신해 전사했다. }
+      - { name: 고창 전투, at: [128.73, 36.57], date: 930-01-00, winner: goryeo, summary: 고려가 고창(안동)에서 후백제군 8천여 명을 무찔렀다. 경상도 호족들이 고려로 돌아섰다. }
+      - { name: 운주 전투, at: [126.66, 36.6], date: 934-09-00, winner: goryeo, summary: 왕건이 운주(홍성)에서 견훤을 물리쳐 웅진 이북 30여 성이 고려에 항복했다. }
+      - { name: 일리천 전투, at: [128.32, 36.24], date: 936-09-00, winner: goryeo, summary: 왕건이 견훤과 함께 신검의 후백제군을 일리천(구미 선산)에서 무찔렀다. 신검이 황산에서 항복해 후백제가 멸망했다. }
+    snapshots:
+      - date: 918-06-00
+        title: 고려 건국
+        summary: 신하들이 궁예를 몰아내고 왕건을 왕으로 세웠습니다. 후백제·고려·신라가 맞서는 후삼국의 판도가 굳어졌습니다.
+        areas:
+          - { faction: goryeo, entities: [goryeo] }
+          - { faction: hubaekje, entities: [hubaekje] }
+          - { faction: silla, entities: [silla] }
+
+      - date: 927-00-00
+        title: 공산 전투
+        summary: 견훤이 경주를 습격해 경애왕을 죽게 하고 경순왕을 세웠습니다. 신라를 도우러 온 왕건은 공산에서 크게 져 겨우 목숨을 건졌습니다.
+        areas:
+          - { faction: goryeo, entities: [goryeo] }
+          - { faction: hubaekje, entities: [hubaekje] }
+          - { faction: silla, entities: [silla] }
+        arrows:
+          - { faction: goryeo, path: [[127.9, 37.1], [128.6, 36.1]], label: 왕건의 구원군 }
+
+      - date: 930-01-00
+        title: 고창 전투
+        summary: 고려가 고창(안동)에서 후백제군을 크게 물리쳤습니다. 이후 경상도의 호족과 신라가 고려 쪽으로 기울었습니다.
+        areas:
+          - { faction: goryeo, entities: [goryeo] }
+          - { faction: hubaekje, entities: [hubaekje] }
+          - { faction: silla, entities: [silla] }
+        arrows:
+          - { faction: goryeo, path: [[128.0, 36.9], [128.7, 36.55]], label: 고창 }
+
+      - date: 934-09-00
+        title: 운주 전투
+        summary: 왕건이 운주(홍성)에서 견훤을 물리쳐 충청도 서부의 30여 성이 고려에 항복했습니다.
+        areas:
+          - { faction: goryeo, entities: [goryeo] }
+          - { faction: hubaekje, entities: [hubaekje] }
+          - { faction: silla, entities: [silla] }
+        arrows:
+          - { faction: goryeo, path: [[126.9, 37.2], [126.7, 36.65]], label: 운주 }
+
+      - date: 935-11-00
+        title: 견훤의 투항과 신라의 항복
+        summary: 왕위 다툼으로 아들 신검에게 쫓겨난 견훤이 고려에 투항하고(6월), 신라 경순왕이 나라를 고려에 넘겼습니다(11월).
+        areas:
+          - { faction: goryeo, entities: [goryeo] }
+          - { faction: hubaekje, entities: [hubaekje] }
+        arrows:
+          - { faction: hubaekje, path: [[127.0, 35.2], [126.5, 36.8], [126.55, 37.9]], label: 견훤의 투항 (나주 → 개경) }
+
+      - date: 936-09-00
+        title: 일리천 전투와 후삼국 통일
+        summary: 고려가 일리천에서 신검의 후백제군을 무찌르고 황산에서 항복을 받아 후삼국을 통일했습니다.
+        areas:
+          - { faction: goryeo, entities: [goryeo] }
+        arrows:
+          - { faction: goryeo, path: [[128.3, 36.6], [128.32, 36.28]], label: 일리천 }
+          - { faction: goryeo, path: [[128.3, 36.2], [127.2, 36.15]], label: 황산 (신검 항복) }

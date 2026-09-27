@@ -596,3 +596,4 @@
     - { from: sui, to: goguryeo, note: "30만 대군 침입" }
   tags: [war]
   sources: ["『삼국사기』 고구려본기 영양왕 9년", "『수서』 고려전"]
+  front: { war: goguryeo-sui-tang, date: 598-06-00 }

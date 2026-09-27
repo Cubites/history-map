@@ -15,6 +15,7 @@
     - { from: goryeo, to: hubaekje, note: "일리천 전투 승리" }
   tags: [war]
   sources: ["『고려사』 세가 태조 19년"]
+  front: { war: later-three-kingdoms, date: 936-09-00 }
 
 - id: manbugyo-942
   year: 942
@@ -86,6 +87,7 @@
     - { from: goryeo, to: liao, note: "서희 담판, 강동 6주 확보" }
   tags: [war, diplomacy]
   sources: ["『고려사』 세가 성종 12년", "『고려사』 열전 서희"]
+  front: { war: goryeo-khitan-war, date: 993-10-00 }
 
 - id: liao-second-invasion-1010
   year: 1010
@@ -98,6 +100,7 @@
     - { from: liao, to: goryeo, note: "개경 함락" }
   tags: [war]
   sources: ["『고려사』 세가 현종 원년"]
+  front: { war: goryeo-khitan-war, date: 1011-01-00 }
 
 - id: chojo-daejanggyeong-1011
   year: 1011
@@ -124,6 +127,7 @@
     - { from: goryeo, to: liao, note: "강감찬의 귀주 대첩" }
   tags: [war]
   sources: ["『고려사』 세가 현종 9년·10년", "『고려사』 열전 강감찬"]
+  front: { war: goryeo-khitan-war, date: 1019-02-01 }
 
 - id: cheolli-jangseong-1033
   year: 1033
@@ -343,6 +347,7 @@
     - { from: mongol-empire, to: goryeo, note: "살리타의 침입" }
   tags: [war]
   sources: ["『고려사』 세가 고종 18년", "『고려사』 열전 박서"]
+  front: { war: goryeo-mongol-war, date: 1231-12-00 }
 
 - id: ganghwa-1232
   year: 1232
@@ -356,6 +361,7 @@
     - { from: goryeo, to: mongol-empire, note: "처인성에서 살리타 사살" }
   tags: [war]
   sources: ["『고려사』 세가 고종 19년"]
+  front: { war: goryeo-mongol-war, date: 1232-12-16 }
 
 - id: jin-falls-1234
   year: 1234
@@ -407,6 +413,7 @@
     - { from: mongol-empire, to: dongnyeong, note: "자비령 이북 점령" }
   tags: [politics]
   sources: ["『고려사』 세가 원종 11년"]
+  front: { war: goryeo-mongol-war, date: 1270-05-00 }
 
 - id: sambyeolcho-1270
   year: 1270
@@ -884,6 +891,7 @@
   sources: ["『고려사』 세가 고종 40년", "『고려사』 열전 김윤후"]
 
 # ── 원 간섭기 ──
+  front: { war: goryeo-mongol-war, date: 1253-10-00 }
 
 - id: bureaucracy-downgrade-1275
   year: 1275

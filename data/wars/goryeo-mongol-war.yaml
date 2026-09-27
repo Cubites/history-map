@@ -1,0 +1,97 @@
+# 몽골의 침입 (DESIGN.md §4.5)
+# 전역 하나(고려). 스냅샷마다 고려 영토를 고려 진영으로 칠한 뒤 몽골군이 휩쓴 지역(mongol/*.geojson)을 덮는다.
+# 몽골군은 성을 모두 차지하지 않고 들판을 휩쓸었으므로, 칠한 범위는 "몽골군이 휩쓴 지역"의 대략적인 추정이다.
+# 날짜는 『고려사』를 따른 음력이며, 날·달이 전하지 않으면 00으로 적는다.
+
+id: goryeo-mongol-war
+name: 몽골의 침입 (날짜는 음력)
+factions:
+  - { id: goryeo, name: 고려군, entity: goryeo }
+  - { id: mongol, name: 몽골군, entity: mongol-empire }
+  - { id: sambyeolcho, name: 삼별초, entity: goryeo, color: "#8b3a3a" }
+participants:
+  - { entity: goryeo, faction: goryeo }
+  - { entity: mongol-empire, faction: mongol }
+sources: ["『고려사』 세가 고종·원종", "『고려사』 열전 박서·김윤후", "국사편찬위원회 『신편 한국사』 20"]
+
+theaters:
+  - id: korea
+    name: 고려
+    replaces: [goryeo]
+    marker: [126.0, 39.6]
+    bounds: [[123.5, 33.8], [130.0, 41.5]]
+    routes:
+      - name: 살리타의 몽골군 (1차)
+        faction: mongol
+        points:
+          - { at: [124.55, 40.3], date: 1231-08-00, label: 압록강 }
+          - { at: [125.3, 40.1], date: 1231-09-00, label: 귀주성 }
+          - { at: [126.55, 37.97], date: 1231-12-00, label: 개경 포위 }
+    battles:
+      - { name: 귀주성 전투, at: [125.3, 40.1], date: 1231-09-00, winner: goryeo, summary: 박서가 귀주성에서 몽골군의 공격을 한 달 넘게 막아 냈다. }
+      - { name: 처인성 전투, at: [127.2, 37.23], date: 1232-12-16, winner: goryeo, summary: 승려 김윤후가 이끈 처인 부곡민이 몽골 장수 살리타를 활로 쏘아 죽였다. 몽골군이 물러났다. }
+      - { name: 죽주산성 전투, at: [127.44, 37.07], date: 1236-00-00, winner: goryeo, summary: 송문주가 죽주산성을 지켜 몽골군을 물리쳤다. }
+      - { name: 충주성 전투, at: [127.93, 36.99], date: 1253-10-00, winner: goryeo, summary: 김윤후가 노비 문서를 불태워 백성의 사기를 높이고 70여 일 동안 충주성을 지켰다. }
+    snapshots:
+      - date: 1231-12-00
+        title: 1차 침입
+        summary: 몽골 사신 저고여가 돌아가다 죽은 일을 구실로 살리타가 쳐들어왔습니다. 박서가 귀주성을 지켰으나 몽골군은 개경을 에워쌌고, 고려는 강화를 맺었습니다. 몽골은 다루가치를 두고 돌아갔습니다.
+        areas:
+          - { faction: goryeo, entities: [goryeo] }
+          - { faction: mongol, geojson: mongol/1231-12-00.geojson }
+        holds:
+          - { name: 귀주성 (박서), at: [125.3, 40.1], faction: goryeo }
+          - { name: 자주성 (최춘명), at: [125.95, 39.4], faction: goryeo }
+
+      - date: 1232-12-16
+        title: 강화 천도와 처인성 전투
+        summary: 최우가 몽골의 지나친 요구에 맞서 도읍을 강화도로 옮기자(6월) 몽골이 다시 쳐들어왔습니다. 처인성에서 김윤후와 부곡민이 살리타를 죽여 몽골군을 물리쳤습니다.
+        areas:
+          - { faction: goryeo, entities: [goryeo] }
+          - { faction: mongol, geojson: mongol/1232-12-16.geojson }
+        holds:
+          - { name: 강화도 (임시 수도), at: [126.49, 37.72], faction: goryeo }
+          - { name: 처인성, at: [127.2, 37.23], faction: goryeo }
+        arrows:
+          - { faction: goryeo, path: [[126.55, 37.97], [126.49, 37.75]], label: 강화 천도 }
+
+      - date: 1238-00-00
+        title: 3차 침입과 팔만대장경
+        summary: 몽골군이 1235년부터 4년 동안 경상도까지 휩쓸어 경주 황룡사 9층 목탑이 불탔습니다(1238). 고려는 부처의 힘으로 몽골을 물리치려고 팔만대장경을 새기기 시작했습니다(1236~1251).
+        areas:
+          - { faction: goryeo, entities: [goryeo] }
+          - { faction: mongol, geojson: mongol/1238-00-00.geojson }
+        holds:
+          - { name: 강화도, at: [126.49, 37.72], faction: goryeo }
+          - { name: 죽주산성 (송문주), at: [127.44, 37.07], faction: goryeo }
+        arrows:
+          - { faction: mongol, path: [[128.3, 36.6], [129.22, 35.84]], label: 경주 (황룡사 소실) }
+
+      - date: 1253-10-00
+        title: 5차 침입과 충주성 전투
+        summary: 예쿠의 몽골군이 쳐들어오자 김윤후가 충주성에서 70여 일을 버텼습니다. 이어진 6차 침입(1254~1259)에서는 포로로 끌려간 사람만 20만 명이 넘었습니다.
+        areas:
+          - { faction: goryeo, entities: [goryeo] }
+          - { faction: mongol, geojson: mongol/1253-10-00.geojson }
+        holds:
+          - { name: 강화도, at: [126.49, 37.72], faction: goryeo }
+          - { name: 충주성 (김윤후), at: [127.93, 36.99], faction: goryeo }
+
+      - date: 1259-04-00
+        title: 강화와 쌍성총관부
+        summary: 최씨 무신 정권이 무너진 뒤 고려는 태자(원종)를 몽골에 보내 강화를 맺었습니다. 몽골은 화주(영흥)에 쌍성총관부를 두어 철령 이북을 직접 다스렸습니다(1258).
+        areas:
+          - { faction: goryeo, entities: [goryeo] }
+        arrows:
+          - { faction: goryeo, path: [[126.49, 37.72], [124.6, 40.3]], label: 태자 입조 }
+
+      - date: 1270-05-00
+        title: 개경 환도와 삼별초
+        summary: 무신 정권이 끝나고 고려는 개경으로 도읍을 옮겼습니다. 이에 반대한 삼별초는 배중손을 중심으로 강화도에서 진도로 옮겨 항쟁했고, 뒤에 제주도에서 김통정의 지휘로 1273년까지 맞섰습니다.
+        areas:
+          - { faction: goryeo, entities: [goryeo] }
+        holds:
+          - { name: 진도 용장성 (삼별초), at: [126.25, 34.49], faction: sambyeolcho }
+        arrows:
+          - { faction: goryeo, path: [[126.49, 37.72], [126.55, 37.95]], label: 개경 환도 }
+          - { faction: sambyeolcho, path: [[126.3, 37.6], [125.9, 36.2], [126.2, 34.55]], label: 삼별초 (진도로) }
