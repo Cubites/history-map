@@ -469,7 +469,7 @@ button {
 .war-marker:hover .war-marker-disc, .war-marker:focus-visible .war-marker-disc { fill: var(--front-line); }
 .war-marker-icon { fill: none; stroke: var(--front-line); stroke-width: 2; stroke-linecap: round; }
 .war-marker:hover .war-marker-icon, .war-marker:focus-visible .war-marker-icon { stroke: var(--surface); }
-.war-marker:focus-visible { outline: none; }
+.war-marker:focus, .war-marker:focus-visible { outline: none; }
 .war-marker-label, .war-marker-sub { paint-order: stroke; stroke: var(--label-halo); stroke-width: 3.5px; }
 .war-marker-label { font-size: 12.5px; font-weight: 700; fill: var(--front-line); }
 .war-marker-sub { font-size: 11px; fill: var(--label); opacity: 0; transition: opacity .15s; }
@@ -548,7 +548,7 @@ button {
 
 /* 전투 장소 표시 (DESIGN.md §4.5): 전쟁 보기(⚔)보다 작고 가볍게 */
 .battle-pin { cursor: pointer; pointer-events: auto; }
-.battle-pin:focus-visible { outline: none; }
+.battle-pin:focus, .battle-pin:focus-visible { outline: none; }
 .battle-pin-hit { fill: transparent; }
 .battle-pin-disc { fill: var(--surface); stroke: var(--front-line); stroke-width: 1.5; }
 .battle-pin-icon { fill: none; stroke: var(--front-line); stroke-width: 1.8; stroke-linecap: round; }
