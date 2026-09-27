@@ -575,3 +575,14 @@ button {
 /* 새 버전 알림 */
 .update-notice { display: flex; gap: 10px; align-items: center; justify-content: center; padding: 6px 12px; font-size: 13.5px; background: var(--surface); border-bottom: 1px solid var(--border); }
 .update-notice button { font: inherit; font-weight: 600; padding: 3px 10px; border: 1px solid var(--front-line); border-radius: 6px; background: transparent; color: var(--front-line); cursor: pointer; }
+
+/* 선사 시대 단계 (연도 막대 왼쪽) */
+.timeline-row { display: flex; align-items: flex-start; gap: 6px; margin-top: 6px; }
+.timeline-row .timeline-track { flex: 1; min-width: 0; margin-top: 0; }
+.timeline-prehistory { display: flex; gap: 2px; flex: 0 0 auto; }
+.timeline .timeline-prehistory button { height: 22px; padding: 0 7px; font-size: 12px; border-radius: 4px; }
+.timeline .timeline-prehistory button[aria-pressed='true'] { border-color: var(--front-line); color: var(--front-line); font-weight: 700; }
+/* 유적 표시: 전투(⊗)와 구별되게 채운 점 */
+.site-pin .battle-pin-disc { fill: var(--label); stroke: var(--surface); stroke-width: 1.5; }
+.site-pin .battle-pin-label { fill: var(--label); }
+.site-pin:hover .battle-pin-disc, .site-pin:focus-visible .battle-pin-disc { fill: var(--front-line); }

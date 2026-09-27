@@ -49,6 +49,8 @@ const CHECK_ONLY = process.argv.includes('--check');
 
 /** 타임라인 범위: 고조선 건국(기원전 2333년) ~ 올해 (DESIGN.md D9) */
 const RANGE: [number, number] = [-2332, new Date().getFullYear()];
+/** 선사 단계의 연도 (src/lib/year.ts의 PREHISTORY와 같아야 함) */
+const PREHISTORY_YEARS = [-699999, -7999];
 /** 서로 다른 나라 영토가 이 면적(km²)보다 많이 겹치면 오류 */
 const OVERLAP_TOLERANCE_KM2 = 5;
 /** color가 없는 나라에 쓰는 기본 색 */
@@ -164,7 +166,9 @@ function checkIntegrity(entities: Map<string, Entity>, territories: Territory[],
     if (eventIds.has(ev.id)) errors.push(`${where}: id 중복`);
     eventIds.add(ev.id);
     if (ev.endYear !== undefined && ev.endYear < ev.year) errors.push(`${where}: endYear가 year보다 앞섬`);
-    if (ev.year < RANGE[0] || (ev.endYear ?? ev.year) > RANGE[1])
+    // 선사 단계(구석기·신석기, src/lib/year.ts의 PREHISTORY)는 연도 막대 앞에 따로 있으므로 그 연도는 허용한다
+    const prehistoric = PREHISTORY_YEARS.includes(ev.year) && (ev.endYear === undefined || ev.endYear < RANGE[0]);
+    if ((ev.year < RANGE[0] && !prehistoric) || (ev.endYear ?? ev.year) > RANGE[1])
       errors.push(`${where}: 연도가 타임라인 범위(${RANGE[0]}~${RANGE[1]})를 벗어남`);
     const refs = [...ev.subjects.map((id) => ['subjects', id]), ...ev.links.flatMap((l) => [['links.from', l.from], ['links.to', l.to]])];
     for (const [field, id] of refs) {

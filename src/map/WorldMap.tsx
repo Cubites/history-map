@@ -591,7 +591,11 @@ export default function WorldMap({ data }: { data: StaticData }) {
         </div>
       )}
       {error && <div className="map-status map-status-error">지도를 불러오지 못했습니다: {error}</div>}
-      {active.length === 0 && <div className="map-notice">이 시기의 영토 데이터는 아직 없습니다</div>}
+      {active.length === 0 && (
+        <div className="map-notice">
+          {year < data.timeline.range[0] ? '나라가 생기기 전입니다. 유적(●)을 누르면 그 시대의 생활을 볼 수 있습니다' : '이 시기의 영토 데이터는 아직 없습니다'}
+        </div>
+      )}
       {war && (
         <div className="war-banner" onClick={(e) => e.stopPropagation()} onPointerDown={(e) => e.stopPropagation()}>
           <span className="war-banner-title">

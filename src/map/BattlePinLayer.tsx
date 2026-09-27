@@ -24,10 +24,12 @@ export function BattlePinLayer({ pins, projection, onOpen }: { pins: BattlePin[]
         const p = points[i];
         if (!p) return null;
         const open = () => onOpen(pin);
+        // 전쟁이 아닌 사건의 장소(선사 유적 등)는 ⊗ 대신 점으로 그린다
+        const site = !pin.event.tags.includes('war');
         return (
           <g
             key={`${pin.event.id}/${i}`}
-            className="battle-pin"
+            className={site ? 'battle-pin site-pin' : 'battle-pin'}
             transform={`translate(${p[0]},${p[1]})`}
             role="button"
             tabIndex={0}
@@ -47,8 +49,8 @@ export function BattlePinLayer({ pins, projection, onOpen }: { pins: BattlePin[]
             <title>{`${pin.name} · ${pin.event.title.ko}`}</title>
             {/* 손가락으로도 누르기 쉽게 보이지 않는 넓은 판정 영역 */}
             <circle className="battle-pin-hit" r={12} />
-            <circle className="battle-pin-disc" r={6.5} />
-            <path className="battle-pin-icon" d="M-3.2,-3.2 L3.2,3.2 M3.2,-3.2 L-3.2,3.2" />
+            <circle className="battle-pin-disc" r={site ? 4.5 : 6.5} />
+            {!site && <path className="battle-pin-icon" d="M-3.2,-3.2 L3.2,3.2 M3.2,-3.2 L-3.2,3.2" />}
             {!crowded[i] && (
               <text className="battle-pin-label" x={10} y={4}>
                 {pin.name}

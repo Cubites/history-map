@@ -1,6 +1,6 @@
 import { useMemo, useRef, useState } from 'react';
 import type { StaticData } from '../data/staticData.ts';
-import { clampYear, decadeOf, formatYear, parseYearInput } from '../lib/year.ts';
+import { PREHISTORY, clampYear, decadeOf, formatYear, parseYearInput, prehistoryStage } from '../lib/year.ts';
 import { useAppStore } from '../store/useAppStore.ts';
 import { FrontTimeline } from './FrontTimeline.tsx';
 import { activeWarView } from '../lib/wars.ts';
@@ -33,11 +33,17 @@ export function Timeline({ data }: { data: StaticData }) {
 
   const range = data.timeline.range;
   const [min, max] = [decadeOf(range[0]), decadeOf(range[1])];
-  const go = (y: number) => setYear(clampYear(y, range));
+  // 역사 시대 앞으로 가면 선사 단계로 옮긴다 (DESIGN.md §4.4)
+  const go = (y: number) => setYear(y < range[0] ? prehistoryStage(y).year : clampYear(y, range));
   const percent = (y: number) => ((y - min) / (max - min)) * 100;
+  const prehistoric = year < range[0];
+  const stage = prehistoric ? prehistoryStage(year) : undefined;
 
-  const prevChange = [...data.timeline.changeYears].reverse().find((y) => y < year);
-  const nextChange = data.timeline.changeYears.find((y) => y > year && y <= range[1]);
+  const stops = [...PREHISTORY.map((s) => s.year), range[0], ...data.timeline.changeYears.filter((y) => y > range[0])];
+  const prevChange = [...stops].reverse().find((y) => y < year);
+  const nextChange = stops.find((y) => y > year && y <= range[1]);
+  // 선사 단계에서 +10년은 다음 단계(또는 역사 시대의 시작)로
+  const forward = () => (prehistoric ? go(stops.find((y) => y > year) ?? range[0]) : go(year + 10));
   const coverage = useMemo(() => coverageRanges(data), [data]);
 
   const submit = () => {
@@ -78,9 +84,9 @@ export function Timeline({ data }: { data: StaticData }) {
             requestAnimationFrame(() => inputRef.current?.focus());
           }}
         >
-          {formatYear(year)}
+          {stage ? `${stage.name} · ${formatYear(year)}` : formatYear(year)}
         </button>
-        <button type="button" onClick={() => go(year + 10)} aria-label="10년 후">+10년</button>
+        <button type="button" onClick={forward} aria-label="10년 후">+10년</button>
         <button type="button" disabled={nextChange === undefined} onClick={() => nextChange !== undefined && go(nextChange)} title="다음 지도 변화" aria-label="다음 지도 변화">
           <span className="timeline-button-label">다음 변화 </span>▶
         </button>
@@ -106,12 +112,20 @@ export function Timeline({ data }: { data: StaticData }) {
           <button type="submit">이동</button>
         </form>
       </div>
+      <div className="timeline-row">
+      <div className="timeline-prehistory" role="group" aria-label="선사 시대">
+        {PREHISTORY.map((s) => (
+          <button key={s.year} type="button" aria-pressed={stage?.year === s.year} onClick={() => setYear(s.year)} title={`${s.name} (${formatYear(s.year)})`}>
+            {s.short}
+          </button>
+        ))}
+      </div>
       <div className="timeline-track">
         <div className="timeline-bands" aria-hidden>
           {coverage.map(([from, to]) => (
             <span key={from} className="timeline-band" style={{ left: `${percent(from)}%`, width: `${Math.max(0.3, percent(to) - percent(from))}%` }} />
           ))}
-          {data.events.map((e) => (
+          {data.events.filter((e) => e.year >= min).map((e) => (
             <span key={e.id} className="timeline-tick" style={{ left: `${percent(e.year)}%` }} />
           ))}
         </div>
@@ -120,7 +134,7 @@ export function Timeline({ data }: { data: StaticData }) {
           min={min}
           max={max}
           step={10}
-          value={decadeOf(year)}
+          value={Math.max(min, decadeOf(year))}
           onChange={(e) => go(Number(e.target.value))}
           aria-label="연도"
           aria-valuetext={formatYear(year)}
@@ -129,6 +143,7 @@ export function Timeline({ data }: { data: StaticData }) {
           <span>{formatYear(range[0])}</span>
           <span>{formatYear(range[1])}</span>
         </div>
+      </div>
       </div>
     </div>
   );

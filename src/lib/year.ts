@@ -1,7 +1,23 @@
 // 연도 처리 (DESIGN.md §4.4). 내부는 천문 연도(기원전 1년 = 0)로 계산하고 표시할 때만 변환한다.
 
 export function formatYear(year: number, suffix = '년'): string {
+  // 2만 년보다 먼 과거(구석기)는 "약 70만 년 전"처럼 쓴다
+  if (1 - year >= 20000) return `약 ${Math.round((1 - year) / 10000)}만 ${suffix ? '년 ' : ''}전`;
   return year <= 0 ? `기원전 ${1 - year}${suffix}` : `${year}${suffix}`;
+}
+
+/**
+ * 선사 시대 단계 (DESIGN.md §4.4). 연도 막대 왼쪽 끝에 버튼으로 압축해 두고, 그 해로 가면 유적을 보여 준다.
+ * 청동기 시대는 고조선(기원전 2333년~)과 겹치므로 연도 막대 안에서 다룬다.
+ */
+export const PREHISTORY = [
+  { year: -699999, name: '구석기 시대', short: '구석기' },
+  { year: -7999, name: '신석기 시대', short: '신석기' },
+] as const;
+
+/** 역사 시대(연도 막대)보다 앞선 연도의 선사 단계. 단계 사이의 연도는 앞 단계로 본다 */
+export function prehistoryStage(year: number) {
+  return [...PREHISTORY].reverse().find((s) => s.year <= year) ?? PREHISTORY[0];
 }
 
 export function formatRange(from: number, to: number | null): string {

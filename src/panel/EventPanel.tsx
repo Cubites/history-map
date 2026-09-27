@@ -3,7 +3,7 @@ import { useMediaQuery } from '../lib/useMediaQuery.ts';
 import { claimantsAt, claimedRegionsAt, occupierAt, overlordAt, type StaticData } from '../data/staticData.ts';
 import { eventsOf, formatEventYears, inDecade, linkDirection } from '../lib/events.ts';
 import { entryYear, formatFrontDate, warsOf, yearOfFrontDate } from '../lib/wars.ts';
-import { formatDecade, formatRange, formatYear, isAlive } from '../lib/year.ts';
+import { formatDecade, formatRange, formatYear, isAlive, prehistoryStage } from '../lib/year.ts';
 import type { HistoryEvent } from '../schema/index.ts';
 import { useAppStore } from '../store/useAppStore.ts';
 
@@ -25,7 +25,7 @@ export function EventPanel({ data }: { data: StaticData }) {
       <aside className="panel">
         <p className="panel-guide">지도에서 나라를 누르면 그 시기의 사건이 여기에 나타납니다.</p>
         <p className="panel-guide">사건에 {touch ? '손가락을 대면' : '마우스를 올리면'} 영향을 주고받은 나라가 화살표로 표시됩니다.</p>
-        <p className="panel-note">현재는 고조선(기원전 2333년)부터 현대까지 한국사 전 시대 자료가 들어 있습니다.</p>
+        <p className="panel-note">현재는 선사 시대(구석기·신석기)와 고조선(기원전 2333년)부터 현대까지 한국사 전 시대 자료가 들어 있습니다.</p>
       </aside>
     );
   }
@@ -157,7 +157,7 @@ export function EventPanel({ data }: { data: StaticData }) {
       )}
 
       <div className="panel-section-title">
-        <h3>{showAll ? '전체 사건' : `${formatDecade(year)} 사건`}</h3>
+        <h3>{showAll ? '전체 사건' : year < data.timeline.range[0] ? `${prehistoryStage(year).name}` : `${formatDecade(year)} 사건`}</h3>
         {all.length > 0 && (
           <button type="button" className="link-button" onClick={() => setShowAll(!showAll)}>
             {showAll ? '현재 구간만 보기' : `전체 사건 보기 (${all.length})`}
