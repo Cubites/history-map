@@ -100,3 +100,4 @@
 - { type: successor_of, subject: mulgil, object: eupru, from: 450, to: null }
 - { type: successor_of, subject: malgal, object: mulgil, from: 560, to: null }
 - { type: successor_of, subject: jurchen, object: malgal, from: 926, to: null }
+- { type: successor_of, subject: mongols, object: northern-yuan, from: 1388, to: null }
