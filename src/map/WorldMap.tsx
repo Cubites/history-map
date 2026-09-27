@@ -163,11 +163,14 @@ export default function WorldMap({ data }: { data: StaticData }) {
   // 전쟁 중에는 영토 대신 칠하는 나라의 이름표를 그 나라 진영의 점령 지역 안쪽에 둔다
   const labelTerritories = useMemo(() => {
     if (!snapshot) return active;
-    return active.map((t) => {
+    const replaces = new Set(theater?.replaces ?? []);
+    return active.flatMap((t) => {
       const anchor = snapshot.labels?.find((l) => l.entity === t.entityId)?.anchor;
-      return anchor ? { ...t, anchor } : t;
+      if (anchor) return [{ ...t, anchor }];
+      // 영토를 그리지 않는 나라(진영의 대표가 아닌 replaces 나라, 예: 임진왜란 점령지)는 이름표도 숨긴다
+      return replaces.has(t.entityId) ? [] : [t];
     });
-  }, [active, snapshot]);
+  }, [active, snapshot, theater]);
 
   // ── 도형 불러오기 ─────────────────────────────────────────
   const geo = useRef(new Map<string, Map<string, TerritoryFeature>>());
