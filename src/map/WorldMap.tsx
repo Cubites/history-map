@@ -19,12 +19,13 @@ import {
   type TerritoryFeature,
 } from '../data/staticData.ts';
 import { activeWarView, factionColor, snapshotFor, theatersInYear } from '../lib/wars.ts';
-import { formatRange } from '../lib/year.ts';
+import { formatRange, isAlive } from '../lib/year.ts';
 import type { Lod, TerritoryIndexEntry } from '../schema/index.ts';
 import { useAppStore } from '../store/useAppStore.ts';
 import { ArrowLayer } from './ArrowLayer.tsx';
 import { FrontArrowLayer } from './FrontArrowLayer.tsx';
 import { WarMarkerLayer } from './WarMarkerLayer.tsx';
+import { BattlePinLayer, type BattlePin } from './BattlePinLayer.tsx';
 import { WarDetailLayer } from './WarDetailLayer.tsx';
 import {
   drawMap,
@@ -110,6 +111,7 @@ export default function WorldMap({ data }: { data: StaticData }) {
   const enterWar = useAppStore((s) => s.enterWar);
   const exitWar = useAppStore((s) => s.exitWar);
   const selectEntity = useAppStore((s) => s.select);
+  const focusEvent = useAppStore((s) => s.focusEvent);
 
   // 시점은 매 프레임 바뀌므로 ref에 두고, 화면 좌표 레이어(SVG)를 위해 프레임당 한 번 state로 복사한다.
   const viewRef = useRef<View>({ lon: DEFAULT_LON, k: 1, ty: 0, dx: 0 });
@@ -143,6 +145,24 @@ export default function WorldMap({ data }: { data: StaticData }) {
   const snapshot = warView ? snapshotFor(warView, year, frontDate, hoveredEvent) : undefined;
   // 평소 지도에는 그 해에 진행 중인 전역마다 전쟁 표시만 둔다
   const warMarkers = useMemo(() => (warId ? [] : theatersInYear(data.wars, year)), [data.wars, warId, year]);
+  // 전쟁 보기가 없는 전쟁·전투 사건은 그 해에 싸운 곳만 작게 표시한다 (DESIGN.md §4.5)
+  const battlePins = useMemo<BattlePin[]>(
+    () =>
+      warId
+        ? []
+        : data.events
+            .filter((e) => !e.front && e.year <= year && year <= (e.endYear ?? e.year))
+            .flatMap((event) => (event.places ?? []).map((p) => ({ event, name: p.name, at: p.at }))),
+    [data.events, warId, year],
+  );
+  const openBattlePin = (pin: BattlePin) => {
+    // 그 해에 있던 나라 가운데 사건의 첫 주체를 골라 패널에 사건을 띄운다
+    const subject = pin.event.subjects.find((id) => {
+      const entity = data.entities.get(id);
+      return entity && isAlive(entity, year);
+    });
+    if (subject) focusEvent(subject, pin.event.id);
+  };
   const frontShapes = useMemo(() => {
     if (!war || !theater || !snapshot) return undefined;
     const lineBox = (line: [number, number][]): [number, number, number, number] => {
@@ -547,6 +567,7 @@ export default function WorldMap({ data }: { data: StaticData }) {
             <WarDetailLayer war={war} theater={theater} snapshot={snapshot} projection={projection} entityColor={(id) => data.entities.get(id)?.color} />
           )}
           {snapshot && war && <FrontArrowLayer war={war} snapshot={snapshot} projection={projection} entityColor={(id) => data.entities.get(id)?.color} />}
+          {battlePins.length > 0 && <BattlePinLayer pins={battlePins} projection={projection} onOpen={openBattlePin} />}
           {warMarkers.length > 0 && (
             <WarMarkerLayer items={warMarkers} projection={projection} onOpen={({ war: w, theater: t }) => enterWar(w.id, t.id, year, null)} />
           )}

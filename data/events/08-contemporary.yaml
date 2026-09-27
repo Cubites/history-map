@@ -373,6 +373,7 @@
     - { from: usa, to: rok, note: "파병 요청, 브라운 각서" }
   tags: [war, diplomacy]
   sources: ["「브라운 각서」", "국방부 『파월 한국군 전사』"]
+  places: [{ name: "퀴논 (주월 한국군)", at: [109.2, 13.77] }]
 
 - id: jan-21-1968
   year: 1968

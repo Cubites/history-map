@@ -7,6 +7,8 @@ interface AppState {
   year: number;
   selectedId: string | null;
   hoveredEventId: string | null;
+  /** 지도의 전투 표시로 고른 사건. 패널에서 그 사건으로 스크롤하고 강조한다 */
+  focusedEventId: string | null;
   showAllEvents: boolean;
   /**
    * 전쟁 보기 (DESIGN.md §4.5). 사용자가 지도 표시·패널에서 전쟁을 골랐을 때만 켜진다.
@@ -27,6 +29,8 @@ interface AppState {
   /** 전쟁 보기를 닫고 들어오기 전 연도로 돌아간다 */
   exitWar: () => void;
   select: (id: string | null) => void;
+  /** 사건의 나라를 고르고 그 사건을 패널에서 보여 준다 (지도의 전투 표시를 눌렀을 때) */
+  focusEvent: (entityId: string, eventId: string) => void;
   hoverEvent: (id: string | null) => void;
   setShowAllEvents: (value: boolean) => void;
 }
@@ -49,14 +53,16 @@ function readUrl() {
 export const useAppStore = create<AppState>((set) => ({
   ...readUrl(),
   hoveredEventId: null,
+  focusedEventId: null,
   showAllEvents: false,
-  setYear: (year) => set({ year, hoveredEventId: null, frontDate: null }),
+  setYear: (year) => set({ year, hoveredEventId: null, focusedEventId: null, frontDate: null }),
   setFront: (year, frontDate) => set({ year, frontDate }),
   enterWar: (warId, theaterId, year, frontDate) =>
     set((s) => ({ warId, theaterId, year, frontDate, hoveredEventId: null, returnYear: s.warId ? s.returnYear : s.year })),
   exitWar: () =>
     set((s) => ({ warId: null, theaterId: null, frontDate: null, hoveredEventId: null, year: s.returnYear ?? s.year, returnYear: null })),
-  select: (selectedId) => set({ selectedId, hoveredEventId: null, showAllEvents: false }),
+  select: (selectedId) => set({ selectedId, hoveredEventId: null, focusedEventId: null, showAllEvents: false }),
+  focusEvent: (selectedId, eventId) => set({ selectedId, hoveredEventId: eventId, focusedEventId: eventId, showAllEvents: false }),
   hoverEvent: (hoveredEventId) => set({ hoveredEventId }),
   setShowAllEvents: (showAllEvents) => set({ showAllEvents }),
 }));

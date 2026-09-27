@@ -115,6 +115,7 @@
     - { from: uk, to: russia, note: "러시아 남하 견제" }
   tags: [diplomacy, war]
   sources: ["『고종실록』 고종 22년·24년"]
+  places: [{ name: "거문도", at: [127.31, 34.03] }]
 
 - id: modern-schools-1885
   year: 1885
@@ -166,6 +167,7 @@
     - { from: japan, to: joseon, note: "톈진 조약을 구실로 파병" }
   tags: [society, war]
   sources: ["『고종실록』 고종 31년", "전봉준 공초"]
+  places: [{ name: "황토현", at: [126.85, 35.62] }, { name: "황룡촌", at: [126.72, 35.3] }, { name: "전주성", at: [127.15, 35.82] }]
 
 - id: sino-japanese-war-1894
   year: 1894
@@ -180,6 +182,7 @@
     - { from: japan, to: joseon, note: "경복궁 점령" }
   tags: [war]
   sources: ["『고종실록』 고종 31년", "「시모노세키 조약」"]
+  places: [{ name: "풍도", at: [126.38, 37.1] }, { name: "성환", at: [127.13, 36.92] }, { name: "평양", at: [125.75, 39.02] }, { name: "황해 해전", at: [123.5, 39.3] }]
 
 - id: gabo-reform-1894
   year: 1894
@@ -206,6 +209,7 @@
     - { from: japan, to: joseon, note: "농민군 진압" }
   tags: [society, war]
   sources: ["『고종실록』 고종 31년", "『동학란 기록』"]
+  places: [{ name: "우금치", at: [127.1, 36.45] }]
 
 - id: triple-intervention-1895
   year: 1895
@@ -321,6 +325,7 @@
     - { from: japan, to: daehan-jeguk, note: "한일 의정서, 고문 정치" }
   tags: [war, diplomacy]
   sources: ["『고종실록』 고종 41년", "「한일 의정서」"]
+  places: [{ name: "제물포", at: [126.6, 37.47] }, { name: "뤼순", at: [121.25, 38.82] }, { name: "봉천", at: [123.43, 41.8] }, { name: "쓰시마 해전", at: [129.6, 34.3] }]
 
 - id: dokdo-annexation-1905
   year: 1905
@@ -410,6 +415,7 @@
     - { from: japan, to: daehan-jeguk, note: "남한 대토벌 작전" }
   tags: [war]
   sources: ["『순종실록』 순종 1년·2년", "국사편찬위원회 『한국독립운동사』"]
+  places: [{ name: "서울 진공 작전 (양주)", at: [127.05, 37.8] }]
 
 - id: sinminhoe-1907
   year: 1907
@@ -455,6 +461,7 @@
     - { from: daehan-jeguk, to: japan, note: "이토 히로부미 사살" }
   tags: [war]
   sources: ["『순종실록』 순종 2년", "안중근, 『동양 평화론』"]
+  places: [{ name: "하얼빈역", at: [126.63, 45.76] }]
 
 - id: gando-convention-1909
   year: 1909
@@ -693,6 +700,7 @@
     - { from: japan, to: roc, note: "만주 침략, 만주국 수립" }
   tags: [war]
   sources: ["『리턴 조사단 보고서』"]
+  places: [{ name: "류탸오후", at: [123.4, 41.85] }]
 
 - id: korean-patriotic-1932
   year: 1932
@@ -706,6 +714,7 @@
     - { from: roc, to: occupied-korea, note: "임시정부 지원" }
   tags: [war]
   sources: ["국사편찬위원회 『한국독립운동사』", "김구, 『백범일지』"]
+  places: [{ name: "이봉창 의거 (도쿄)", at: [139.75, 35.68] }, { name: "윤봉길 의거 (훙커우 공원)", at: [121.48, 31.27] }]
 
 - id: korea-china-joint-1932
   year: 1932
@@ -720,6 +729,7 @@
     - { from: roc, to: manchukuo, note: "중국 의용군과 연합" }
   tags: [war]
   sources: ["국사편찬위원회 『한국독립운동사』"]
+  places: [{ name: "쌍성보", at: [126.3, 45.35] }, { name: "영릉가", at: [125.0, 41.73] }, { name: "대전자령", at: [129.5, 43.35] }]
 
 - id: korean-language-society-1933
   year: 1933
@@ -756,6 +766,7 @@
     - { from: japan, to: occupied-korea, note: "민족 말살 통치" }
   tags: [war, politics]
   sources: ["『조선총독부 관보』", "국사편찬위원회 『한국사』"]
+  places: [{ name: "루거우차오", at: [116.22, 39.85] }]
 
 - id: korean-volunteers-1938
   year: 1938
@@ -807,6 +818,7 @@
     - { from: japan, to: usa, note: "진주만 기습" }
   tags: [war]
   sources: ["미국 의회 대일 선전 포고 결의"]
+  places: [{ name: "진주만", at: [-157.95, 21.35] }]
 
 - id: allies-operations-1943
   year: 1943
@@ -821,6 +833,7 @@
     - { from: usa, to: occupied-korea, note: "OSS 합동 훈련" }
   tags: [war]
   sources: ["국사편찬위원회 『한국독립운동사』"]
+  places: [{ name: "인도·미얀마 전선 (임팔)", at: [93.94, 24.8] }]
 
 - id: cairo-1943
   year: 1943

@@ -135,6 +135,7 @@
     - { from: gojoseon, to: western-han, note: "1년 가까운 항전" }
   tags: [war]
   sources: ["『사기』 조선열전"]
+  places: [{ name: "왕검성", at: [125.75, 39.02] }]
 
 - id: han-commanderies-108
   year: -107

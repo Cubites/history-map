@@ -67,6 +67,7 @@
     - { from: baekje, to: silla, note: "대야성 등 40여 성 공격" }
   tags: [war]
   sources: ["『삼국사기』 백제본기 의자왕 2년", "『삼국사기』 신라본기 선덕왕 11년"]
+  places: [{ name: "대야성", at: [128.16, 35.57] }]
 
 - id: yeon-gaesomun-642
   year: 642
@@ -433,6 +434,7 @@
     - { from: silla, to: balhae, note: "당의 요청으로 발해 남쪽 공격" }
   tags: [war]
   sources: ["『신당서』 발해전", "『삼국사기』 신라본기 성덕왕 32년"]
+  places: [{ name: "등주", at: [120.75, 37.8] }]
 
 - id: balhae-munwang-756
   year: 756
@@ -474,6 +476,7 @@
     - { from: balhae, to: goryeo, note: "발해 유민의 고려 망명" }
   tags: [war]
   sources: ["『요사』 태조본기 천현 원년", "『고려사』 세가 태조"]
+  places: [{ name: "상경 용천부", at: [129.1, 44.0] }]
 
 # ── 후삼국 (900 ~ 935) ───────────────────────────────────
 
@@ -993,6 +996,7 @@
     - { from: hugoguryeo, to: hubaekje, note: "나주 점령" }
   tags: [war]
   sources: ["『고려사』 세가 태조 총서"]
+  places: [{ name: "금성 (나주)", at: [126.71, 35.03] }]
 
 - id: majin-904
   year: 904

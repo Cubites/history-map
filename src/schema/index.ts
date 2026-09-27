@@ -85,6 +85,13 @@ export const EventSchema = z.object({
   sources: z.array(z.string().min(1)).min(1, '출처(sources)가 비어 있음'),
   /** 전쟁 중 사건이면 그 날짜의 전선 (data/wars/). theater가 없으면 그 전쟁의 첫 전역 */
   front: z.object({ war: z.string(), theater: z.string().optional(), date: z.string() }).optional(),
+  /**
+   * 싸움이 벌어진 곳. 전쟁 보기가 없는 전쟁·전투는 그 해 지도에 작은 전투 표시(⊗)로 나타난다 (DESIGN.md §4.5)
+   * 전쟁 보기가 있는 사건(front)에는 적지 않는다
+   */
+  places: z
+    .array(z.object({ name: z.string().min(1), at: z.tuple([z.number().min(-180).max(180), z.number().min(-90).max(90)]) }))
+    .default([]),
 });
 export type HistoryEvent = z.infer<typeof EventSchema>;
 

@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react';
 import { claimantsAt, claimedRegionsAt, occupierAt, overlordAt, type StaticData } from '../data/staticData.ts';
 import { eventsOf, formatEventYears, inDecade, linkDirection } from '../lib/events.ts';
 import { entryYear, formatFrontDate, warsOf, yearOfFrontDate } from '../lib/wars.ts';
@@ -196,6 +197,11 @@ export function EventPanel({ data }: { data: StaticData }) {
 function EventItem({ event, data, selectedId, highlight }: { event: HistoryEvent; data: StaticData; selectedId: string; highlight: boolean }) {
   const hoverEvent = useAppStore((s) => s.hoverEvent);
   const hovered = useAppStore((s) => s.hoveredEventId === event.id);
+  const focused = useAppStore((s) => s.focusedEventId === event.id);
+  const itemRef = useRef<HTMLLIElement>(null);
+  useEffect(() => {
+    if (focused) itemRef.current?.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+  }, [focused]);
   const setYear = useAppStore((s) => s.setYear);
   const setFront = useAppStore((s) => s.setFront);
   const enterWar = useAppStore((s) => s.enterWar);
@@ -209,7 +215,8 @@ function EventItem({ event, data, selectedId, highlight }: { event: HistoryEvent
 
   return (
     <li
-      className={['event', hovered && 'event-hovered', highlight && 'event-current'].filter(Boolean).join(' ')}
+      ref={itemRef}
+      className={['event', (hovered || focused) && 'event-hovered', highlight && 'event-current'].filter(Boolean).join(' ')}
       onMouseEnter={() => hoverEvent(event.id)}
       onMouseLeave={() => hoverEvent(null)}
       onFocus={() => hoverEvent(event.id)}

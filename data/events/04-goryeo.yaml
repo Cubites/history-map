@@ -174,6 +174,7 @@
   subjects: [goryeo]
   tags: [war]
   sources: ["『고려사』 세가 예종 2년·4년", "『고려사』 열전 윤관"]
+  places: [{ name: "동북 9성", at: [127.7, 40.1] }]
 
 - id: jin-founded-1115
   year: 1115
@@ -323,6 +324,7 @@
     - { from: mongol-empire, to: goryeo, note: "공물 요구 시작" }
   tags: [war, diplomacy]
   sources: ["『고려사』 세가 고종 6년"]
+  places: [{ name: "강동성", at: [126.1, 39.15] }]
 
 - id: xixia-falls-1227
   year: 1227
@@ -427,6 +429,7 @@
     - { from: goryeo, to: mongol-empire, note: "삼별초의 대몽 항쟁" }
   tags: [war]
   sources: ["『고려사』 세가 원종 11년~14년", "『고려사』 열전 배중손"]
+  places: [{ name: "진도 용장성", at: [126.25, 34.49] }, { name: "제주 항파두리성", at: [126.4, 33.45] }]
 
 # ── 원 간섭기 (1271 ~ 1350) ──────────────────────────────
 
@@ -466,6 +469,7 @@
     - { from: goryeo, to: japan, note: "연합군 참전" }
   tags: [war]
   sources: ["『고려사』 세가 원종 15년", "『고려사』 세가 충렬왕 7년"]
+  places: [{ name: "하카타", at: [130.4, 33.6] }]
 
 - id: samguk-yusa-1281
   year: 1281
@@ -527,6 +531,7 @@
   subjects: [goryeo]
   tags: [war]
   sources: ["『고려사』 세가 공민왕 8년·10년"]
+  places: [{ name: "서경", at: [125.75, 39.02] }, { name: "개경", at: [126.55, 37.97] }]
 
 - id: sindon-1366
   year: 1366
@@ -571,6 +576,7 @@
     - { from: goryeo, to: japan, note: "왜구 격퇴" }
   tags: [war]
   sources: ["『고려사』 열전 신우 6년", "『고려사』 열전 최무선"]
+  places: [{ name: "진포", at: [126.7, 36.0] }, { name: "황산", at: [127.55, 35.47] }]
 
 - id: wihwado-1388
   year: 1388
@@ -584,6 +590,7 @@
     - { from: goryeo, to: ming, note: "요동 정벌 추진 → 위화도 회군" }
   tags: [war, politics]
   sources: ["『고려사』 열전 신우 14년"]
+  places: [{ name: "위화도", at: [124.45, 40.12] }]
 
 - id: gwajeon-1391
   year: 1391
@@ -1009,6 +1016,7 @@
     - { from: goryeo, to: northern-yuan, note: "요동 공략" }
   tags: [war]
   sources: ["『고려사』 세가 공민왕 19년"]
+  places: [{ name: "요양 (동녕부)", at: [123.17, 41.27] }]
 
 - id: hongsan-1376
   year: 1376
@@ -1021,6 +1029,7 @@
     - { from: goryeo, to: japan, note: "왜구 격퇴" }
   tags: [war]
   sources: ["『고려사』 열전 신우 2년", "『고려사』 열전 최영"]
+  places: [{ name: "홍산", at: [126.78, 36.2] }]
 
 - id: hwatong-dogam-1377
   year: 1377
@@ -1043,6 +1052,7 @@
     - { from: goryeo, to: japan, note: "왜구 격퇴" }
   tags: [war]
   sources: ["『고려사』 열전 신우 9년", "『고려사』 열전 정지"]
+  places: [{ name: "관음포", at: [127.9, 34.9] }]
 
 - id: tsushima-1389
   year: 1389
@@ -1055,3 +1065,4 @@
     - { from: goryeo, to: japan, note: "쓰시마 정벌" }
   tags: [war]
   sources: ["『고려사』 열전 신창 원년", "『고려사』 열전 박위"]
+  places: [{ name: "쓰시마", at: [129.3, 34.4] }]

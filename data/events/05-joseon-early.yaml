@@ -95,6 +95,7 @@
     - { from: joseon, to: japan, note: "이종무의 쓰시마 정벌" }
   tags: [war]
   sources: ["『세종실록』 세종 1년"]
+  places: [{ name: "쓰시마", at: [129.3, 34.4] }]
 
 - id: jiphyeonjeon-1420
   year: 1420
@@ -141,6 +142,7 @@
     - { from: jurchen, to: joseon, note: "여진의 침입" }
   tags: [war]
   sources: ["『세종실록』 세종 15년·16년", "『세종실록』 지리지"]
+  places: [{ name: "4군", at: [126.3, 41.3] }, { name: "6진", at: [129.6, 42.4] }]
 
 - id: uijeongbu-seosa-1436
   year: 1436
@@ -334,6 +336,7 @@
     - { from: joseon, to: japan, note: "무역 축소 (임신약조)" }
   tags: [war, diplomacy]
   sources: ["『중종실록』 중종 5년·7년"]
+  places: [{ name: "제포", at: [128.7, 35.1] }, { name: "부산포", at: [129.04, 35.1] }, { name: "염포", at: [129.4, 35.52] }]
 
 - id: gimyo-sahwa-1519
   year: 1519
@@ -389,6 +392,7 @@
     - { from: japan, to: joseon, note: "왜구의 전라도 침입" }
   tags: [war]
   sources: ["『명종실록』 명종 10년"]
+  places: [{ name: "달량진", at: [126.6, 34.4] }]
 
 - id: jikjeon-abolished-1556
   year: 1556
@@ -446,6 +450,7 @@
     - { from: joseon, to: jurchen, note: "신립 등의 격퇴" }
   tags: [war]
   sources: ["『선조실록』 선조 16년"]
+  places: [{ name: "경원", at: [130.15, 42.75] }]
 
 - id: gichuk-oksa-1589
   year: 1589

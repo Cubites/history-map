@@ -95,6 +95,7 @@
     - { from: cao-wei, to: goguryeo, note: "관구검의 환도성 함락" }
   tags: [war]
   sources: ["『삼국지』 위서 관구검전", "『삼국사기』 고구려본기 동천왕 20년"]
+  places: [{ name: "환도성", at: [126.18, 41.15] }]
 
 - id: goi-260
   year: 260
@@ -119,6 +120,7 @@
     - { from: goguryeo, to: nangnang, note: "낙랑군 축출" }
   tags: [war]
   sources: ["『삼국사기』 고구려본기 미천왕 12년·14년·15년"]
+  places: [{ name: "낙랑군", at: [125.75, 38.98] }]
 
 - id: former-yan-342
   year: 342
@@ -131,6 +133,7 @@
     - { from: former-yan, to: goguryeo, note: "환도성 함락" }
   tags: [war]
   sources: ["『삼국사기』 고구려본기 고국원왕 12년", "『진서』 모용황재기"]
+  places: [{ name: "환도성", at: [126.18, 41.15] }]
 
 - id: naemul-356
   year: 356
@@ -169,6 +172,7 @@
     - { from: baekje, to: goguryeo, note: "평양성 공격, 고국원왕 전사" }
   tags: [war]
   sources: ["『삼국사기』 백제본기 근초고왕 26년", "『삼국사기』 고구려본기 고국원왕 41년"]
+  places: [{ name: "평양성", at: [125.75, 39.02] }]
 
 - id: geunchogo-diplomacy-372
   year: 372
@@ -232,6 +236,7 @@
     - { from: goguryeo, to: baekje, note: "58성 700촌 정복" }
   tags: [war]
   sources: ["광개토대왕릉비 영락 6년조"]
+  places: [{ name: "백제 한성", at: [127.12, 37.52] }]
 
 - id: gwanggaeto-silla-400
   year: 400
@@ -247,6 +252,7 @@
     - { from: wa, to: silla, note: "왜의 침입" }
   tags: [war]
   sources: ["광개토대왕릉비 영락 10년조", "호우명 그릇 명문"]
+  places: [{ name: "종발성 (김해)", at: [128.88, 35.23] }]
 
 - id: liaodong-405
   year: 402
@@ -261,6 +267,7 @@
     - { from: later-yan, to: goguryeo, note: "요동성 공격" }
   tags: [war]
   sources: ["『삼국사기』 고구려본기 광개토왕 11년·14년"]
+  places: [{ name: "요동성", at: [123.17, 41.27] }]
 
 - id: gwanggaeto-stele-414
   year: 414
@@ -334,6 +341,7 @@
     - { from: goguryeo, to: baekje, note: "한성 함락, 개로왕 전사" }
   tags: [war]
   sources: ["『삼국사기』 고구려본기 장수왕 63년", "『삼국사기』 백제본기 개로왕 21년·문주왕 원년", "충주 고구려비"]
+  places: [{ name: "한성", at: [127.12, 37.52] }]
 
 - id: daegaya-479
   year: 479
@@ -396,6 +404,7 @@
   subjects: [silla]
   tags: [war]
   sources: ["『삼국사기』 신라본기 지증 마립간 13년", "『삼국사기』 열전 이사부"]
+  places: [{ name: "우산국", at: [130.87, 37.5] }]
 
 - id: muryeong-521
   year: 521
@@ -525,6 +534,7 @@
     - { from: wa, to: silla, note: "백제 편에서 참전" }
   tags: [war]
   sources: ["『삼국사기』 신라본기 진흥왕 15년", "『삼국사기』 백제본기 성왕 32년", "『일본서기』 긴메이 15년"]
+  places: [{ name: "관산성", at: [127.57, 36.3] }]
 
 - id: jinheung-stele-555
   year: 555
@@ -548,6 +558,7 @@
     - { from: silla, to: gaya, note: "대가야 정복" }
   tags: [war]
   sources: ["『삼국사기』 신라본기 진흥왕 23년", "『삼국사기』 열전 사다함"]
+  places: [{ name: "대가야 (고령)", at: [128.26, 35.73] }]
 
 - id: northern-qi-565
   year: 565

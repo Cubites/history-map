@@ -170,6 +170,7 @@
     - { from: joseon, to: hugeum, note: "강홍립의 출병과 항복" }
   tags: [diplomacy, war]
   sources: ["『광해군일기』 광해군 11년"]
+  places: [{ name: "사르후", at: [124.2, 41.85] }]
 
 - id: injo-banjeong-1623
   year: 1623
@@ -291,6 +292,7 @@
     - { from: joseon, to: qing, note: "조총 부대 파견" }
   tags: [war]
   sources: ["『효종실록』 효종 5년·9년", "신류, 『북정일기』"]
+  places: [{ name: "1차 나선 정벌 (1654)", at: [129.9, 46.4] }, { name: "2차 나선 정벌 (1658)", at: [132.5, 47.9] }]
 
 - id: yesong-1659
   year: 1659
@@ -652,6 +654,7 @@
     - { from: joseon, to: usa, note: "평양 관민이 배를 불태움" }
   tags: [diplomacy, war]
   sources: ["『고종실록』 고종 3년"]
+  places: [{ name: "대동강 (평양)", at: [125.75, 39.02] }]
 
 - id: byeongin-yangyo-1866
   year: 1866
@@ -665,6 +668,7 @@
     - { from: joseon, to: france, note: "문수산성·정족산성 항전" }
   tags: [war, religion]
   sources: ["『고종실록』 고종 3년"]
+  places: [{ name: "문수산성", at: [126.55, 37.72] }, { name: "정족산성", at: [126.49, 37.63] }]
 
 - id: oppert-1868
   year: 1868
@@ -688,6 +692,7 @@
     - { from: joseon, to: usa, note: "광성보 항전, 통상 거부" }
   tags: [war]
   sources: ["『고종실록』 고종 8년"]
+  places: [{ name: "초지진", at: [126.54, 37.61] }, { name: "광성보", at: [126.52, 37.67] }]
 
 - id: gojong-rule-1873
   year: 1873
@@ -710,6 +715,7 @@
     - { from: japan, to: joseon, note: "강화도 무력 시위" }
   tags: [war, diplomacy]
   sources: ["『고종실록』 고종 12년"]
+  places: [{ name: "초지진", at: [126.54, 37.61] }, { name: "영종진", at: [126.52, 37.47] }]
 
 - id: ganghwa-treaty-1876
   year: 1876
