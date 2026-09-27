@@ -361,8 +361,6 @@ button {
   .front-timeline-head { font-size: 12px; gap: 2px 8px; }
   .front-timeline-legend { font-size: 11px; }
   .front-timeline-dates ol button { height: 26px; }
-  /* 모바일은 위쪽 날짜 영역에 전쟁 이름과 닫기 버튼이 있으므로, 지도 버튼을 가리는 띠는 숨긴다 */
-  .war-banner { display: none; }
   .app-main { order: 2; flex: 1 1 auto; min-height: 180px; }
   .panel {
     order: 3;
@@ -537,3 +535,9 @@ button {
 .war-battle path { fill: none; stroke-width: 2; stroke-linecap: round; }
 .war-battle-past { opacity: 0.55; }
 .war-battle-label { font-size: 12px; font-weight: 700; }
+
+/* 모바일은 위쪽 날짜 영역에 전쟁 이름과 닫기 버튼이 있으므로, 지도 버튼을 가리는 띠는 숨긴다.
+   기본 .war-banner 규칙보다 뒤에 있어야 덮어쓴다 */
+@media (max-width: 768px) {
+  .war-banner { display: none; }
+}
