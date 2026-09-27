@@ -17,16 +17,20 @@ import {
   type StaticData,
   type TerritoryFeature,
 } from '../data/staticData.ts';
+import { activeFront, snapshotFor } from '../lib/fronts.ts';
 import { formatRange } from '../lib/year.ts';
 import type { Lod, TerritoryIndexEntry } from '../schema/index.ts';
 import { useAppStore } from '../store/useAppStore.ts';
 import { ArrowLayer } from './ArrowLayer.tsx';
+import { FrontArrowLayer } from './FrontArrowLayer.tsx';
 import {
   drawMap,
   isVisible,
   visibleBounds,
+  type DrawFront,
   type DrawTerritory,
   type Palette,
+  type Shape,
 } from './canvasLayer.ts';
 import { LabelLayer } from './LabelLayer.tsx';
 import { useElementSize } from './useElementSize.ts';
@@ -85,6 +89,7 @@ function readPalette(el: Element): Palette {
     territoryStroke: v('--territory-stroke'),
     outline: v('--outline'),
     highlight: v('--fg'),
+    frontLine: v('--front-line'),
   };
 }
 
@@ -96,6 +101,7 @@ export default function WorldMap({ data }: { data: StaticData }) {
   const year = useAppStore((s) => s.year);
   const selectedId = useAppStore((s) => s.selectedId);
   const hoveredEventId = useAppStore((s) => s.hoveredEventId);
+  const frontDate = useAppStore((s) => s.frontDate);
   const selectEntity = useAppStore((s) => s.select);
 
   // 시점은 매 프레임 바뀌므로 ref에 두고, 화면 좌표 레이어(SVG)를 위해 프레임당 한 번 state로 복사한다.
@@ -120,6 +126,23 @@ export default function WorldMap({ data }: { data: StaticData }) {
     sized.current = { size, s0 };
   }
   const active = useMemo(() => activeTerritories(data.territories, year), [data.territories, year]);
+  const hoveredEvent = hoveredEventId ? data.events.find((e) => e.id === hoveredEventId) : undefined;
+
+  // 전쟁 중이면 해당 나라들의 영토 대신 날짜별 전선으로 칠한다 (DESIGN.md §4.5)
+  const war = useMemo(() => activeFront(data.fronts, year), [data.fronts, year]);
+  const snapshot = war ? snapshotFor(war, year, frontDate, hoveredEvent) : undefined;
+  const frontShapes = useMemo(() => {
+    if (!war || !snapshot) return undefined;
+    const area = (coordinates: [number, number][][][]): Shape => ({ feature: { type: 'Feature', properties: null, geometry: { type: 'MultiPolygon', coordinates } }, bbox: snapshot.bbox });
+    const xs = snapshot.line.map((p) => p[0]);
+    const ys = snapshot.line.map((p) => p[1]);
+    return {
+      region: new Set(war.region),
+      north: area(snapshot.north),
+      south: area(snapshot.south),
+      line: { feature: { type: 'Feature', properties: null, geometry: { type: 'LineString', coordinates: snapshot.line } }, bbox: [Math.min(...xs), Math.min(...ys), Math.max(...xs), Math.max(...ys)] } as Shape,
+    };
+  }, [war, snapshot]);
 
   // ── 도형 불러오기 ─────────────────────────────────────────
   const geo = useRef(new Map<string, Map<string, TerritoryFeature>>());
@@ -219,8 +242,31 @@ export default function WorldMap({ data }: { data: StaticData }) {
 
     const territories: DrawTerritory[] = [];
     const drawn: typeof drawnRef.current = [];
+    const { selected, hovered: hoveredId } = highlightRef.current;
+    let front: DrawFront | undefined;
+    if (war && frontShapes) {
+      const sideEntity = { north: war.sides.north.entity, south: war.sides.south.entity };
+      const width = (id: string) => (id === selected ? SELECTED_WIDTH : id === hoveredId ? HOVER_WIDTH : undefined);
+      front = {
+        north: [frontShapes.north],
+        south: [frontShapes.south],
+        northColor: data.entities.get(sideEntity.north)?.color ?? '#999999',
+        southColor: data.entities.get(sideEntity.south)?.color ?? '#999999',
+        line: frontShapes.line,
+        highlight: (['north', 'south'] as const).flatMap((side) => {
+          const w = width(sideEntity[side]);
+          return w ? [{ side, width: w }] : [];
+        }),
+      };
+    }
     for (const entry of active) {
       if (!isVisible(entry.bbox, bounds, v)) continue;
+      if (front && frontShapes?.region.has(entry.entityId)) {
+        // 전선이 대신 칠한다. 클릭 판정은 전선으로 나뉜 두 지역으로 한다
+        const side = entry.entityId === war!.sides.north.entity ? frontShapes.north : entry.entityId === war!.sides.south.entity ? frontShapes.south : undefined;
+        if (side) drawn.push({ entry: { ...entry, bbox: side.bbox }, feature: side.feature as TerritoryFeature });
+        continue;
+      }
       const feature = featureFor(entry, lod);
       if (!feature) continue;
       const tiled = useTiles ? geoTiled.current.get(`${lod}/${entry.entityId}`)?.get(entry.key) : undefined;
@@ -231,7 +277,6 @@ export default function WorldMap({ data }: { data: StaticData }) {
       const hatch = occupier && data.entities.get(occupier.object)?.color;
       const overlord = overlordAt(data.relations, entry.entityId, year);
       const border = overlord && data.entities.get(overlord.object)?.color;
-      const { selected, hovered: hoveredId } = highlightRef.current;
       const highlight = entry.entityId === selected ? SELECTED_WIDTH : entry.entityId === hoveredId ? HOVER_WIDTH : undefined;
       territories.push({ ...shapes, color, certainty: entry.certainty, hatch, border, highlight });
       // 클릭 판정과 hover 테두리는 원래 도형으로 한다
@@ -245,10 +290,10 @@ export default function WorldMap({ data }: { data: StaticData }) {
     const tiledLand = useTiles ? landTiled.current.get(lod) : undefined;
     const plainLand = landFor(lod).filter((p) => isVisible(p.bbox, bounds, v));
     const land = tiledLand ? { fill: visiblePieces(tiledLand.tiles), stroke: visiblePieces(tiledLand.lines) } : { fill: plainLand, stroke: plainLand };
-    drawMap(ctx, projection, createProjection(size, s0, v, true), v, size, land, territories, paletteRef.current);
+    drawMap(ctx, projection, createProjection(size, s0, v, true), v, size, land, territories, paletteRef.current, front);
     // 이름표·화살표(SVG)도 방금 그린 지도와 같은 프레임에 맞춘다. 늦게 그리면 움직이는 동안 지도에서 밀려 보인다
     flushSync(() => setView(v));
-  }, [size, s0, year, active, data.entities, data.relations, ensureLoaded, ensureTiled, featureFor, landFor]);
+  }, [size, s0, year, active, war, frontShapes, data.entities, data.relations, ensureLoaded, ensureTiled, featureFor, landFor]);
 
   const requestDraw = useCallback(() => {
     cancelAnimationFrame(frame.current);
@@ -422,7 +467,6 @@ export default function WorldMap({ data }: { data: StaticData }) {
   // ── 화면 좌표 레이어 (SVG) ─────────────────────────────────
   const projection = useMemo(() => (size ? createProjection(size, s0, view) : null), [size, s0, view]);
   const hoveredEntity = hovered ? data.entities.get(hovered.id) : undefined;
-  const hoveredEvent = hoveredEventId ? data.events.find((e) => e.id === hoveredEventId) : undefined;
 
   return (
     <div
@@ -443,6 +487,7 @@ export default function WorldMap({ data }: { data: StaticData }) {
       <canvas ref={canvasRef} className="map-canvas" />
       {size && projection && (
         <svg className="map-overlay" width={size.width} height={size.height} aria-hidden>
+          {snapshot && <FrontArrowLayer snapshot={snapshot} projection={projection} />}
           <LabelLayer territories={active} entities={data.entities} selectedId={selectedId} projection={projection} view={view} size={size} />
           {hoveredEvent && selectedId && (
             <ArrowLayer data={data} event={hoveredEvent} selectedId={selectedId} projection={projection} />

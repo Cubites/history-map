@@ -2,6 +2,7 @@ import { useMemo, useRef, useState } from 'react';
 import type { StaticData } from '../data/staticData.ts';
 import { clampYear, decadeOf, formatYear, parseYearInput } from '../lib/year.ts';
 import { useAppStore } from '../store/useAppStore.ts';
+import { FrontTimeline } from './FrontTimeline.tsx';
 
 /** 영토 데이터가 있는 기간을 겹치지 않게 합친다 (슬라이더 뒤 표시용) */
 function coverageRanges(data: StaticData): [number, number][] {
@@ -118,6 +119,7 @@ export function Timeline({ data }: { data: StaticData }) {
           <span>{formatYear(range[1])}</span>
         </div>
       </div>
+      <FrontTimeline data={data} />
     </div>
   );
 }

@@ -6,6 +6,7 @@ import type { GeometryCollection, Topology } from 'topojson-specification';
 import type {
   BBox,
   Entity,
+  FrontIndexEntry,
   HistoryEvent,
   Lod,
   LonLat,
@@ -22,6 +23,8 @@ export interface StaticData {
   entities: Map<string, LoadedEntity>;
   relations: Relation[];
   events: HistoryEvent[];
+  /** 전쟁 중 날짜별 전선 (DESIGN.md §4.5) */
+  fronts: FrontIndexEntry[];
 }
 
 export type TerritoryFeature = Feature<MultiPolygon>;
@@ -45,9 +48,10 @@ export function useStaticData() {
       getJson<LoadedEntity[]>('entities.json'),
       getJson<Relation[]>('relations.json'),
       getJson<HistoryEvent[]>('events.json'),
+      getJson<FrontIndexEntry[]>('fronts.json'),
     ])
-      .then(([timeline, territories, entities, relations, events]) =>
-        setData({ timeline, territories, entities: new Map(entities.map((e) => [e.id, e])), relations, events }),
+      .then(([timeline, territories, entities, relations, events, fronts]) =>
+        setData({ timeline, territories, entities: new Map(entities.map((e) => [e.id, e])), relations, events, fronts }),
       )
       .catch((e: Error) => setError(e.message));
   }, []);

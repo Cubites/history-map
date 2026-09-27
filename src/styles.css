@@ -19,6 +19,10 @@
   /* 사건 화살표 (DESIGN.md §6.3): 색과 선 모양을 함께 다르게 한다 */
   --arrow-in: #2f6fdb;
   --arrow-out: #e0701f;
+  /* 전쟁 중 전선 (DESIGN.md §4.5): 전선과 두 편의 작전 화살표 */
+  --front-line: #b0231b;
+  --front-north: #b23a31;
+  --front-south: #1d4f7a;
   color-scheme: light dark;
 }
 
@@ -43,6 +47,9 @@
     --error: #ff7b6b;
     --arrow-in: #6ea2ff;
     --arrow-out: #ff9a4d;
+    --front-line: #ff6b5e;
+    --front-north: #ff7a6e;
+    --front-south: #86b8e3;
   }
 }
 
@@ -384,3 +391,59 @@ button {
   .event { padding: 8px 10px; }
   .panel-legend { margin-top: 10px; }
 }
+
+/* 전쟁 중 작전 화살표 (DESIGN.md §4.5): north 편은 실선, south 편은 긴 점선 */
+.front-arrow-line { fill: none; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.front-arrow-north .front-arrow-line { stroke: var(--front-north); }
+.front-arrow-south .front-arrow-line { stroke: var(--front-south); stroke-dasharray: 9 4; }
+.front-head-north { fill: var(--front-north); }
+.front-head-south { fill: var(--front-south); }
+.front-arrow-label {
+  font-size: 12px;
+  font-weight: 600;
+  paint-order: stroke;
+  stroke: var(--label-halo);
+  stroke-width: 3.5px;
+}
+.front-arrow-north .front-arrow-label { fill: var(--front-north); }
+.front-arrow-south .front-arrow-label { fill: var(--front-south); }
+
+/* ── 전쟁 중 하위 타임라인 (DESIGN.md §4.5) ───────────────── */
+.front-timeline {
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px dashed var(--border);
+  display: grid;
+  gap: 4px;
+}
+.front-timeline-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; font-size: 13px; }
+.front-timeline-current { font-weight: 600; font-variant-numeric: tabular-nums; }
+.front-timeline-legend { display: inline-flex; align-items: center; gap: 4px; color: var(--muted); font-size: 12px; }
+.front-timeline-legend i { display: inline-block; width: 14px; height: 0; margin-left: 6px; }
+.front-legend-north { border-top: 3px solid var(--front-north); }
+.front-legend-south { border-top: 3px dashed var(--front-south); }
+.front-timeline-dates { display: flex; align-items: center; gap: 4px; }
+.front-timeline-dates ol {
+  list-style: none;
+  margin: 0;
+  padding: 2px 0;
+  display: flex;
+  gap: 4px;
+  overflow-x: auto;
+  flex: 1;
+  scrollbar-width: thin;
+}
+.front-timeline-dates ol button {
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+.front-timeline-dates ol button[aria-pressed='true'] {
+  border-color: var(--front-line);
+  color: var(--front-line);
+  font-weight: 700;
+}
+.front-timeline-summary { margin: 0; font-size: 12.5px; color: var(--muted); }
+.event-front { font-size: 11.5px; color: var(--front-line); margin-top: 2px; }

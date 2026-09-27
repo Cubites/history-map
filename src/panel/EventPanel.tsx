@@ -1,5 +1,6 @@
 import { occupierAt, overlordAt, type StaticData } from '../data/staticData.ts';
 import { eventsOf, formatEventYears, inDecade, linkDirection } from '../lib/events.ts';
+import { formatFrontDate, yearOfFrontDate } from '../lib/fronts.ts';
 import { formatDecade, formatRange, formatYear, isAlive } from '../lib/year.ts';
 import type { HistoryEvent } from '../schema/index.ts';
 import { useAppStore } from '../store/useAppStore.ts';
@@ -134,6 +135,7 @@ function EventItem({ event, data, selectedId, highlight }: { event: HistoryEvent
   const hoverEvent = useAppStore((s) => s.hoverEvent);
   const hovered = useAppStore((s) => s.hoveredEventId === event.id);
   const setYear = useAppStore((s) => s.setYear);
+  const setFront = useAppStore((s) => s.setFront);
   const name = (id: string) => data.entities.get(id)?.names.ko ?? id;
 
   return (
@@ -144,7 +146,9 @@ function EventItem({ event, data, selectedId, highlight }: { event: HistoryEvent
       onFocus={() => hoverEvent(event.id)}
       onBlur={() => hoverEvent(null)}
       onClick={() => {
-        setYear(event.year);
+        // 전선에 연결된 사건은 그 날짜의 전선으로 옮긴다 (DESIGN.md §4.5)
+        if (event.front) setFront(yearOfFrontDate(event.front.date), event.front.date);
+        else setYear(event.year);
         // 터치 화면에는 hover가 없으므로 누르면 화살표를 보여준다 (setYear가 hover를 지우므로 그 뒤에 설정)
         hoverEvent(event.id);
       }}
@@ -167,6 +171,7 @@ function EventItem({ event, data, selectedId, highlight }: { event: HistoryEvent
           ))}
         </ul>
       )}
+      {event.front && <div className="event-front">전선: {formatFrontDate(event.front.date)} (누르면 이 날짜의 전선으로 이동)</div>}
       <div className="event-sources">{event.sources.join(' · ')}</div>
     </li>
   );

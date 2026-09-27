@@ -31,6 +31,21 @@ export interface DrawTerritory extends DrawShapes {
 }
 
 const VASSAL_BORDER_WIDTH = 3;
+const FRONT_LINE_WIDTH = 3;
+
+/**
+ * 전쟁 중 전선 (DESIGN.md §4.5). 해당 나라들의 영토 대신 두 편의 점령 지역을 칠하고 전선을 굵게 긋는다.
+ * 전선은 바다까지 그어진 원래 선을 두 지역 안으로만 잘라 그린다.
+ */
+export interface DrawFront {
+  north: Shape[];
+  south: Shape[];
+  northColor: string;
+  southColor: string;
+  line: Shape;
+  /** 선택·hover한 편의 강조 테두리 두께(px) */
+  highlight?: { side: 'north' | 'south'; width: number }[];
+}
 
 const HATCH_SPACING = 7;
 const hatchCache = new Map<string, CanvasPattern | null>();
@@ -72,6 +87,8 @@ export interface Palette {
   outline: string;
   /** 선택·hover 강조 테두리 */
   highlight: string;
+  /** 전쟁 중 전선 */
+  frontLine: string;
 }
 
 const graticule = geoGraticule10();
@@ -141,6 +158,7 @@ export function drawMap(
   land: DrawShapes,
   territories: DrawTerritory[],
   palette: Palette,
+  front?: DrawFront,
 ) {
   const fast = geoPath(projection, ctx);
   const precise = geoPath(preciseProjection, ctx);
@@ -209,6 +227,36 @@ export function drawMap(
     trace(t.stroke);
     ctx.strokeStyle = t.border;
     ctx.stroke();
+  }
+
+  if (front) {
+    ctx.lineWidth = 1;
+    ctx.strokeStyle = palette.territoryStroke;
+    for (const [shapes, color] of [[front.south, front.southColor], [front.north, front.northColor]] as const) {
+      ctx.beginPath();
+      trace(shapes);
+      ctx.fillStyle = color;
+      ctx.fill();
+      ctx.stroke();
+    }
+    // 전선은 두 지역 안에서만 보이게 자른다 (원래 선은 바다까지 그어져 있다)
+    ctx.save();
+    ctx.beginPath();
+    trace([...front.north, ...front.south]);
+    ctx.clip();
+    ctx.beginPath();
+    trace([front.line]);
+    ctx.lineWidth = FRONT_LINE_WIDTH;
+    ctx.strokeStyle = palette.frontLine;
+    ctx.stroke();
+    ctx.restore();
+    ctx.strokeStyle = palette.highlight;
+    for (const h of front.highlight ?? []) {
+      ctx.beginPath();
+      trace(h.side === 'north' ? front.north : front.south);
+      ctx.lineWidth = h.width;
+      ctx.stroke();
+    }
   }
 
   // 선택·hover 강조 테두리는 맨 위에

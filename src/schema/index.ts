@@ -79,8 +79,63 @@ export const EventSchema = z.object({
   links: z.array(EventLinkSchema).default([]),
   tags: z.array(z.string()).default([]),
   sources: z.array(z.string().min(1)).min(1, '출처(sources)가 비어 있음'),
+  /** 전쟁 중 사건이면 그 날짜의 전선 (data/fronts/). 사건에 마우스를 올리면 그 전선과 작전 화살표를 보여 준다 */
+  front: z.object({ war: z.string(), date: z.string() }).optional(),
 });
 export type HistoryEvent = z.infer<typeof EventSchema>;
+
+// ── 전선 (DESIGN.md §4.5) ────────────────────────────────
+// 연 단위 영토로는 보이지 않는 전쟁 중의 전선 변화를 날짜별 스냅샷으로 적는다.
+
+/** 날짜: YYYY-MM-DD (천문 연도, 기원전은 앞에 -) */
+export const FrontDate = z.string().regex(/^-?\d{1,4}-\d{2}-\d{2}$/, 'YYYY-MM-DD 형식이어야 함');
+const LonLatSchema = z.tuple([z.number().min(-180).max(180), z.number().min(-90).max(90)]);
+
+export const FrontArrowSchema = z.object({
+  /** north: 선의 북·서쪽 편, south: 남·동쪽 편 */
+  side: z.enum(['north', 'south']),
+  /** 작전 방향 (출발 → 도착, 중간 점 가능) */
+  path: z.array(LonLatSchema).min(2),
+  label: z.string().optional(),
+});
+
+export const FrontSnapshotSchema = z.object({
+  date: FrontDate,
+  title: z.string().min(1),
+  summary: z.string().min(1),
+  /** 전선: 서쪽 바다에서 동쪽 바다까지. 선의 북·서쪽이 north 편 점령 지역 */
+  line: z.array(LonLatSchema).min(2),
+  arrows: z.array(FrontArrowSchema).default([]),
+});
+
+export const FrontSchema = z.object({
+  id: z.string().regex(/^[a-z0-9-]+$/),
+  name: z.string().min(1),
+  /** 전쟁 동안 전선으로 대신 칠할 나라 (그 나라들의 영토를 합친 범위를 두 편으로 나눈다) */
+  region: z.array(z.string()).min(1),
+  sides: z.object({
+    north: z.object({ name: z.string(), entity: z.string() }),
+    south: z.object({ name: z.string(), entity: z.string() }),
+  }),
+  sources: z.array(z.string().min(1)).min(1),
+  snapshots: z.array(FrontSnapshotSchema).min(1),
+});
+export type Front = z.infer<typeof FrontSchema>;
+
+/** fronts.json: 빌드가 스냅샷마다 두 편의 점령 지역을 계산해 넣는다 */
+export interface FrontSnapshotOut extends z.infer<typeof FrontSnapshotSchema> {
+  year: Year;
+  north: MultiPolygonCoords;
+  south: MultiPolygonCoords;
+  bbox: BBox;
+}
+export interface FrontIndexEntry extends Omit<Front, 'snapshots'> {
+  /** 전선을 보여 주는 연도 범위 (포함) */
+  from: Year;
+  to: Year;
+  snapshots: FrontSnapshotOut[];
+}
+type MultiPolygonCoords = [number, number][][][];
 
 // ── 빌드 결과물 (public/data/) ──────────────────────────────
 

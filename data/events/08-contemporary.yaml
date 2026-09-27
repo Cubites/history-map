@@ -155,7 +155,7 @@
   title:
     ko: 6·25 전쟁 발발
   summary:
-    ko: 미국이 한반도를 방위선에서 제외한 애치슨 선언(1950.1) 뒤, 북한이 소련과 중국의 지원을 받아 6월 25일 남침했다. 3일 만에 서울이 함락되고 국군은 낙동강 방어선까지 밀렸다. 유엔 안전 보장 이사회는 유엔군 파병을 결의했다.
+    ko: 미국이 한반도를 방위선에서 제외한 애치슨 선언(1950.1) 뒤, 북한이 소련과 중국의 지원을 받아 6월 25일 남침했다. 3일 만에 서울이 함락되었다. 유엔 안전 보장 이사회는 북한의 침략을 규탄하고 유엔군 파병을 결의했다.
   subjects: [dprk, rok, soviet-union, usa]
   links:
     - { from: dprk, to: rok, note: "남침" }
@@ -163,27 +163,97 @@
     - { from: usa, to: rok, note: "유엔군 참전" }
   tags: [war]
   sources: ["유엔 안전 보장 이사회 결의 제82·83호", "국방부 군사편찬연구소 『6·25 전쟁사』"]
+  front: { war: korean-war, date: 1950-06-25 }
+
+- id: nakdong-1950
+  year: 1950
+  title:
+    ko: 낙동강 방어선과 다부동 전투
+  summary:
+    ko: 대전을 빼앗긴 국군과 유엔군은 마산–왜관–영덕을 잇는 낙동강 방어선까지 밀렸다. 다부동 전투 등에서 북한군의 총공세를 막아 내며 반격할 시간을 벌었다.
+  subjects: [rok, dprk, usa]
+  links:
+    - { from: dprk, to: rok, note: "낙동강 총공세" }
+    - { from: rok, to: dprk, note: "다부동 방어" }
+  tags: [war]
+  sources: ["국방부 군사편찬연구소 『6·25 전쟁사』"]
+  front: { war: korean-war, date: 1950-08-31 }
 
 - id: incheon-1950
   year: 1950
   title:
-    ko: 인천 상륙 작전과 중국군 참전
+    ko: 인천 상륙 작전과 서울 수복
   summary:
-    ko: 유엔군이 인천 상륙 작전(9.15)으로 전세를 뒤집어 서울을 되찾고(9.28) 압록강까지 진격했다. 그러나 중국군이 대규모로 참전해(10월) 흥남 철수를 거쳐 1951년 1월 서울을 다시 빼앗겼다(1·4 후퇴).
-  subjects: [rok, usa, dprk, prc]
+    ko: 맥아더가 지휘한 유엔군이 인천에 상륙(9.15)해 북한군의 보급로를 끊었고, 낙동강에서도 반격해 서울을 되찾았다(9.28).
+  subjects: [rok, usa, dprk]
   links:
-    - { from: usa, to: dprk, note: "인천 상륙, 북진" }
-    - { from: prc, to: rok, note: "중국군 참전" }
+    - { from: usa, to: dprk, note: "인천 상륙 작전" }
+    - { from: rok, to: dprk, note: "서울 수복" }
   tags: [war]
   sources: ["국방부 군사편찬연구소 『6·25 전쟁사』"]
+  front: { war: korean-war, date: 1950-09-28 }
+
+- id: north-advance-1950
+  year: 1950
+  title:
+    ko: 38도선 돌파와 평양 탈환
+  summary:
+    ko: 국군이 38도선을 넘어(10.1, 뒤에 국군의 날) 북진했고, 유엔군과 함께 평양을 되찾았다(10.19). 국군 일부는 초산에서 압록강에 이르렀다(10.26).
+  subjects: [rok, usa, dprk]
+  links:
+    - { from: rok, to: dprk, note: "북진, 평양 탈환" }
+    - { from: usa, to: dprk, note: "북진" }
+  tags: [war]
+  sources: ["국방부 군사편찬연구소 『6·25 전쟁사』"]
+  front: { war: korean-war, date: 1950-10-19 }
+
+- id: chinese-entry-1950
+  year: 1950
+  title:
+    ko: 중국군 참전과 흥남 철수
+  summary:
+    ko: 중국군이 대규모로 참전하자(10월 말) 국군과 유엔군은 후퇴했다. 동부 전선에서는 장진호 전투를 치르고 흥남에서 군인과 피란민 약 10만 명이 배로 철수했다(12월).
+  subjects: [prc, rok, usa, dprk]
+  links:
+    - { from: prc, to: rok, note: "중국군 참전" }
+    - { from: prc, to: usa, note: "중국군 공세" }
+  tags: [war]
+  sources: ["국방부 군사편찬연구소 『6·25 전쟁사』"]
+  front: { war: korean-war, date: 1950-12-24 }
+
+- id: january-4-retreat-1951
+  year: 1951
+  title:
+    ko: 1·4 후퇴와 서울 재수복
+  summary:
+    ko: 중국군의 공세로 서울을 다시 빼앗기고(1·4 후퇴) 평택–삼척 선까지 물러났다. 유엔군이 반격해 3월에 서울을 다시 되찾았고, 이후 전선은 38도선 부근에서 오르내렸다.
+  subjects: [rok, usa, prc]
+  links:
+    - { from: prc, to: rok, note: "서울 재점령" }
+    - { from: usa, to: prc, note: "반격, 서울 재수복" }
+  tags: [war]
+  sources: ["국방부 군사편찬연구소 『6·25 전쟁사』"]
+  front: { war: korean-war, date: 1951-01-24 }
+
+- id: armistice-talks-1951
+  year: 1951
+  title:
+    ko: 정전 회담 시작과 고지 쟁탈전
+  summary:
+    ko: 전선이 교착되자 소련의 제의로 개성에서 정전 회담이 시작되었다(1951.7). 포로 송환 문제로 협상이 2년 동안 이어지는 사이 백마고지 전투 등 치열한 고지 쟁탈전이 벌어졌다.
+  subjects: [rok, usa, prc, dprk, soviet-union]
+  links:
+    - { from: soviet-union, to: usa, note: "정전 회담 제의" }
+  tags: [war, diplomacy]
+  sources: ["국방부 군사편찬연구소 『6·25 전쟁사』"]
+  front: { war: korean-war, date: 1951-07-10 }
 
 - id: armistice-1953
-  year: 1951
-  endYear: 1953
+  year: 1953
   title:
-    ko: 정전 협상과 정전 협정
+    ko: 반공 포로 석방과 정전 협정
   summary:
-    ko: 전선이 38도선 부근에서 교착되자 소련의 제의로 정전 회담이 시작되었다(1951). 포로 송환 문제로 협상이 길어졌고, 이승만 정부는 반공 포로를 석방하며 반대했다. 1953년 7월 27일 유엔군·북한·중국 사이에 정전 협정이 맺어져 군사 분계선과 비무장 지대가 설정되었다. 이어 한미 상호 방위 조약이 체결되었다(1953.10).
+    ko: 이승만 정부는 정전에 반대하며 반공 포로를 석방했다(1953.6). 1953년 7월 27일 유엔군·북한·중국 사이에 정전 협정이 맺어져 군사 분계선과 비무장 지대가 설정되었다. 이어 한미 상호 방위 조약이 체결되었다(1953.10).
   subjects: [rok, dprk, usa, prc]
   links:
     - { from: usa, to: dprk, note: "정전 협정 (유엔군 측)" }
@@ -191,6 +261,7 @@
     - { from: usa, to: rok, note: "한미 상호 방위 조약" }
   tags: [war, diplomacy]
   sources: ["「정전 협정」", "「한미 상호 방위 조약」"]
+  front: { war: korean-war, date: 1953-07-27 }
 
 - id: war-damage-1953
   year: 1953

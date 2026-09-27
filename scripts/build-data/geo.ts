@@ -111,6 +111,15 @@ export function intersect(a: MultiCoords, b: MultiCoords): MultiCoords {
   return polyclip.intersection(a as polyclip.Geom, b as polyclip.Geom) as MultiCoords;
 }
 
+export function union(...parts: MultiCoords[]): MultiCoords {
+  if (parts.length === 0) return [];
+  return polyclip.union(parts[0] as polyclip.Geom, ...(parts.slice(1) as polyclip.Geom[])) as MultiCoords;
+}
+
+export function difference(a: MultiCoords, b: MultiCoords): MultiCoords {
+  return polyclip.difference(a as polyclip.Geom, b as polyclip.Geom) as MultiCoords;
+}
+
 /** 해안선 클리핑: 영토 폴리곤과 bbox가 겹치는 육지 조각만 골라 교차시킨다. */
 export function clipToLand(territory: MultiCoords, land: { coords: PolygonCoords; bbox: BBox }[]): MultiCoords {
   const box = bbox(territory);
