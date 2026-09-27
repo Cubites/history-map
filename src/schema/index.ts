@@ -140,6 +140,32 @@ export const FrontAreaSchema = z
   })
   .refine((a) => !!a.entities !== !!a.geojson, { message: 'entities와 geojson 중 하나만 적어야 함' });
 
+/** 진군 경로: 군대가 지나간 지점들. 날짜가 있는 지점까지를 "지나온 길"로 그린다 (날짜 없는 지점은 앞 지점을 따른다) */
+export const RouteSchema = z.object({
+  name: z.string().min(1),
+  faction: z.string(),
+  points: z
+    .array(z.object({ at: LonLatSchema, date: FrontDate.optional(), label: z.string().optional() }))
+    .min(2),
+});
+
+/** 전투. 그 날짜부터 전쟁 보기에 나타난다 */
+export const BattleSchema = z.object({
+  name: z.string().min(1),
+  at: LonLatSchema,
+  date: FrontDate,
+  /** 이긴 진영 (없으면 승패 불분명) */
+  winner: z.string().optional(),
+  summary: z.string().optional(),
+});
+
+/** 거점: 그 스냅샷 때 도시·요새가 어느 진영에 속했는지 (점령 지역으로 나타내기 어려운 도시 국가 등) */
+export const HoldSchema = z.object({
+  name: z.string().min(1),
+  at: LonLatSchema,
+  faction: z.string(),
+});
+
 export const FrontSnapshotSchema = z
   .object({
     date: FrontDate,
@@ -150,8 +176,9 @@ export const FrontSnapshotSchema = z
     /** 따로 그을 전선 (split의 선은 자동으로 들어간다) */
     lines: z.array(z.array(LonLatSchema).min(2)).default([]),
     arrows: z.array(FrontArrowSchema).default([]),
+    holds: z.array(HoldSchema).default([]),
   })
-  .refine((s) => s.split || s.areas.length > 0, { message: '점령 지역(split 또는 areas)이 없음' });
+  .refine((s) => s.split || s.areas.length > 0 || s.holds.length > 0, { message: '점령 지역(split·areas)이나 거점(holds)이 없음' });
 
 /** 전역: 한 전쟁 안에서 따로 보는 지역 (예: 제2차 세계 대전의 유럽·태평양). 전역이 하나뿐인 전쟁도 있다 */
 export const TheaterSchema = z.object({
@@ -163,6 +190,8 @@ export const TheaterSchema = z.object({
   marker: LonLatSchema.optional(),
   /** 전쟁 보기를 열 때 확대할 범위 [[서, 남], [동, 북]]. 없으면 점령 지역 범위에 여백을 둔다 */
   bounds: z.tuple([LonLatSchema, LonLatSchema]).optional(),
+  routes: z.array(RouteSchema).default([]),
+  battles: z.array(BattleSchema).default([]),
   snapshots: z.array(FrontSnapshotSchema).min(1),
 });
 
@@ -177,6 +206,9 @@ export const WarSchema = z.object({
 export type War = z.infer<typeof WarSchema>;
 export type Faction = z.infer<typeof FactionSchema>;
 export type FrontArrow = z.infer<typeof FrontArrowSchema>;
+export type Route = z.infer<typeof RouteSchema>;
+export type Battle = z.infer<typeof BattleSchema>;
+export type Hold = z.infer<typeof HoldSchema>;
 
 /** wars.json: 빌드가 스냅샷마다 진영별 점령 지역을 계산해 넣는다 */
 export interface FrontAreaOut {
@@ -195,6 +227,7 @@ export interface FrontSnapshotOut {
   arrows: FrontArrow[];
   /** 영토 대신 칠하는 나라의 이름표 위치 (그 나라 진영의 점령 지역 안쪽) */
   labels: { entity: string; anchor: LonLat }[];
+  holds: Hold[];
   bbox: BBox;
 }
 export interface TheaterOut {
@@ -206,6 +239,8 @@ export interface TheaterOut {
   replaces: string[];
   marker: LonLat;
   bounds: [[number, number], [number, number]];
+  routes: Route[];
+  battles: Battle[];
   snapshots: FrontSnapshotOut[];
 }
 export interface WarIndexEntry {

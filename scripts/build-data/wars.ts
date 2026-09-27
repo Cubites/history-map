@@ -28,6 +28,12 @@ import {
   type PolygonCoords,
 } from './geo.ts';
 
+/** 날짜 비교용 수 (기원전 날짜도 순서대로) */
+export function dateKey(date: string): number {
+  const [, y, m, d] = date.match(/^(-?\d+)-(\d+)-(\d+)$/)!;
+  return Number(y) * 10000 + Number(m) * 100 + Number(d);
+}
+
 /** 날짜 문자열의 연도 (천문 연도) */
 export function yearOfDate(date: string): number {
   return Number(date.match(/^(-?\d+)-/)![1]);
@@ -79,10 +85,7 @@ export function checkWars(wars: War[], entities: Map<string, Entity>, events: Hi
       t.replaces.forEach((id) => entity(id, `전역 ${t.id}의 replaces`));
       t.snapshots.forEach((s, i) => {
         const at = `전역 ${t.id} ${s.date}`;
-        if (i > 0 && yearOfDate(s.date) < yearOfDate(t.snapshots[i - 1].date))
-          errors.push(`${where}: ${at} 스냅샷이 날짜 순서대로가 아님`);
-        if (i > 0 && yearOfDate(s.date) === yearOfDate(t.snapshots[i - 1].date) && s.date <= t.snapshots[i - 1].date)
-          errors.push(`${where}: ${at} 스냅샷이 날짜 순서대로가 아님`);
+        if (i > 0 && dateKey(s.date) <= dateKey(t.snapshots[i - 1].date)) errors.push(`${where}: ${at} 스냅샷이 날짜 순서대로가 아님`);
         if (s.split) {
           faction(s.split.north, `${at} split.north`);
           faction(s.split.south, `${at} split.south`);
@@ -93,7 +96,10 @@ export function checkWars(wars: War[], entities: Map<string, Entity>, events: Hi
           a.entities?.forEach((id) => entity(id, `${at} areas`));
         });
         s.arrows.forEach((a) => faction(a.faction, `${at} arrows`));
+        s.holds.forEach((h) => faction(h.faction, `${at} holds ${h.name}`));
       });
+      t.routes.forEach((r) => faction(r.faction, `전역 ${t.id} 경로 ${r.name}`));
+      t.battles.forEach((b) => b.winner && faction(b.winner, `전역 ${t.id} 전투 ${b.name}`));
     }
   }
   for (const ev of events) {
@@ -198,7 +204,12 @@ export async function buildWars(wars: War[], geo: WarGeoSources, errors: string[
           lines: [...(s.split ? [s.split.line] : []), ...s.lines],
           arrows: s.arrows,
           labels,
-          bbox: areas.length ? mergeBox(areas.map((a) => a.bbox)) : [0, 0, 0, 0],
+          holds: s.holds,
+          bbox: areas.length
+            ? mergeBox(areas.map((a) => a.bbox))
+            : s.holds.length
+              ? [Math.min(...s.holds.map((h) => h.at[0])), Math.min(...s.holds.map((h) => h.at[1])), Math.max(...s.holds.map((h) => h.at[0])), Math.max(...s.holds.map((h) => h.at[1]))]
+              : [0, 0, 0, 0],
         });
       }
       const all = mergeBox(snapshots.map((s) => s.bbox));
@@ -211,6 +222,8 @@ export async function buildWars(wars: War[], geo: WarGeoSources, errors: string[
         replaces: t.replaces,
         marker: t.marker ?? [(first[0] + first[2]) / 2, (first[1] + first[3]) / 2],
         bounds: t.bounds ?? [[all[0] - 1.5, all[1] - 1], [all[2] + 1.5, all[3] + 1]],
+        routes: t.routes,
+        battles: [...t.battles].sort((a, b) => dateKey(a.date) - dateKey(b.date)),
         snapshots,
       });
     }

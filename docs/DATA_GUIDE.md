@@ -198,6 +198,25 @@ theaters:                       # 전역: 동시에 여러 곳에서 싸웠으�
 2. **나라 영토(`entities`)**: "그 나라 전체가 점령됨"일 때 씁니다.
 3. **직접 그리기(`geojson`)**: 흩어진 점령지를 QGIS에서 폴리곤으로 그려 `data/wars/` 아래에 GeoJSON(EPSG:4326)으로 저장합니다. 바다까지 대충 그려도 빌드가 해안선으로 자릅니다.
 
+**진군 경로·전투·거점** (전역 또는 스냅샷에 추가):
+
+```yaml
+theaters:
+  - id: korea
+    routes:                     # 진군 경로: 날짜가 있는 지점까지를 "지나온 길"로 그림
+      - name: 유엔군 서부 진격로
+        faction: south
+        points:
+          - { at: [126.62, 37.47], date: 1950-09-15, label: 인천 상륙 }
+          - { at: [125.75, 39.02], date: 1950-10-19, label: 평양 }
+    battles:                    # 전투: 그 날짜부터 표시. winner·summary는 선택
+      - { name: 인천 상륙 작전, at: [126.62, 37.47], date: 1950-09-15, winner: south, summary: 설명 }
+    snapshots:
+      - date: ...
+        holds:                  # 거점: 그 시점의 도시·요새 소속 (도시 국가 동맹 등)
+          - { name: 아테네, at: [23.73, 37.98], faction: delian }
+```
+
 관련 사건에 `front: { war: 전쟁 id, theater: 전역 id, date: 날짜 }`를 붙이면 사건에서 그 날짜의 전쟁 보기로 들어갈 수 있습니다(전역이 하나면 theater 생략).
 
 검증 메시지:

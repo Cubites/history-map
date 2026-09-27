@@ -24,6 +24,7 @@ import { useAppStore } from '../store/useAppStore.ts';
 import { ArrowLayer } from './ArrowLayer.tsx';
 import { FrontArrowLayer } from './FrontArrowLayer.tsx';
 import { WarMarkerLayer } from './WarMarkerLayer.tsx';
+import { WarDetailLayer } from './WarDetailLayer.tsx';
 import {
   drawMap,
   isVisible,
@@ -529,6 +530,9 @@ export default function WorldMap({ data }: { data: StaticData }) {
       <canvas ref={canvasRef} className="map-canvas" />
       {size && projection && (
         <svg className="map-overlay" width={size.width} height={size.height} aria-hidden>
+          {snapshot && war && theater && (
+            <WarDetailLayer war={war} theater={theater} snapshot={snapshot} projection={projection} entityColor={(id) => data.entities.get(id)?.color} />
+          )}
           {snapshot && war && <FrontArrowLayer war={war} snapshot={snapshot} projection={projection} entityColor={(id) => data.entities.get(id)?.color} />}
           {warMarkers.length > 0 && (
             <WarMarkerLayer items={warMarkers} projection={projection} onOpen={({ war: w, theater: t }) => enterWar(w.id, t.id, year, null)} />

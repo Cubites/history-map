@@ -79,3 +79,15 @@ export function formatFrontDate(date: string): string {
 export function yearOfFrontDate(date: string): number {
   return Number(date.match(/^(-?\d+)-/)![1]);
 }
+
+/** 날짜 비교용 수 (기원전 날짜도 순서대로) */
+export function dateKey(date: string): number {
+  const [, y, m, d] = date.match(/^(-?\d+)-(\d+)-(\d+)$/)!;
+  return Number(y) * 10000 + Number(m) * 100 + Number(d);
+}
+
+/** 화살표·경로 색: 첫째·둘째 진영은 지도 위에서 잘 보이는 전용 색(CSS 변수), 셋째부터 진영 색 */
+export function factionStroke(war: WarIndexEntry, factionId: string, entityColor: (id: string) => string | undefined): string {
+  const i = factionIndex(war, factionId);
+  return i === 0 ? 'var(--front-north)' : i === 1 ? 'var(--front-south)' : factionColor(war, factionId, entityColor);
+}
