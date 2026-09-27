@@ -28,6 +28,8 @@ export interface DrawTerritory extends DrawShapes {
   border?: string;
   /** 선택(굵게)·hover(가늘게)한 영토의 강조 테두리 두께(px). 지도와 같은 프레임·같은 도형으로 그려야 움직일 때 어긋나지 않는다 */
   highlight?: number;
+  /** 강조 테두리용 도형. 타일 조각은 경계를 따라 폭 0인 다리가 있어 합집합 테두리에 선이 새므로, 자르지 않은 원래 도형을 쓴다 */
+  outline?: DrawShapes;
   /** 귀속 논쟁 지역: 후보 나라들의 색. 있으면 단색 대신 이 색들을 번갈아 빗금으로 칠한다 (DESIGN.md §4.3) */
   stripes?: string[];
 }
@@ -338,7 +340,7 @@ export function drawMap(
     const g = groups.get(width) ?? { fill: [], stroke: [] };
     groups.set(width, { fill: [...g.fill, ...shapes.fill], stroke: [...g.stroke, ...shapes.stroke] });
   };
-  for (const t of territories) addGroup(t.highlight, t);
+  for (const t of territories) addGroup(t.highlight, t.outline ?? t);
   for (const area of front?.areas ?? []) addGroup(area.highlight, { fill: area.shapes, stroke: area.shapes });
   for (const [width, shapes] of [...groups].sort((a, b) => a[0] - b[0])) drawUnionOutline(ctx, projection, preciseProjection, view, shapes, width, palette.highlight);
   ctx.restore();

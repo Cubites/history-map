@@ -299,7 +299,8 @@ export default function WorldMap({ data }: { data: StaticData }) {
       const isSelected = entry.entityId === selected || (!!selected && claimants.includes(selected));
       const isHovered = entry.entityId === hoveredId || (!!hoveredId && claimants.includes(hoveredId));
       const highlight = isSelected ? SELECTED_WIDTH : isHovered ? HOVER_WIDTH : undefined;
-      territories.push({ ...shapes, color, certainty: entry.certainty, hatch, border, highlight, stripes });
+      const outline = highlight && tiled ? { fill: plain, stroke: plain } : undefined;
+      territories.push({ ...shapes, color, certainty: entry.certainty, hatch, border, highlight, outline, stripes });
       // 클릭 판정과 hover 테두리는 원래 도형으로 한다
       drawn.push({ entry, feature });
     }
