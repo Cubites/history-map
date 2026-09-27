@@ -226,6 +226,7 @@
     - { from: joseon, to: qing, note: "왕자·척화론자 압송" }
   tags: [war]
   sources: ["『인조실록』 인조 14년·15년", "나만갑, 『병자록』"]
+  front: { war: byeongja-horan, date: 1636-12-14 }
 
 - id: qing-conquest-1644
   year: 1644

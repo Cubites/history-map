@@ -1,0 +1,102 @@
+# 병자호란 (DESIGN.md §4.5)
+# 전역 하나(한반도). 스냅샷마다 조선 영토 전체를 조선 진영으로 칠한 뒤 청군이 장악한 지역(byeongja/*.geojson)을 덮는다.
+# 청군은 산성을 지키던 조선군을 피해 의주~한양의 큰길로 곧장 내려왔으므로, 점령 지역은 넓은 땅이 아니라 진군로와 한양·경기 일대다.
+# 날짜는 음력이다 (예: 청군 압록강 도하 1636년 음력 12월 9일 = 양력 1637년 1월 4일). 위치는 교과서 수준의 대략적인 추정.
+
+id: byeongja-horan
+name: 병자호란 (날짜는 음력)
+factions:
+  - { id: joseon, name: 조선군, entity: joseon }
+  - { id: qing, name: 청군, entity: qing }
+participants:
+  - { entity: joseon, faction: joseon }
+  - { entity: qing, faction: qing }
+sources: ["『인조실록』 인조 14년·15년", "나만갑 『병자록』", "국방부 군사편찬연구소 『병자호란사』", "국사편찬위원회 『신편 한국사』 29"]
+
+theaters:
+  - id: korea
+    name: 한반도
+    replaces: [joseon]
+    marker: [126.4, 38.9]
+    bounds: [[122.8, 36.5], [129.3, 42.2]]
+    routes:
+      - name: 청군 (청 태종·마부대)
+        faction: qing
+        points:
+          - { at: [123.43, 41.8], date: 1636-12-02, label: 선양 출발 }
+          - { at: [124.53, 40.2], date: 1636-12-09, label: 압록강 도하 (의주) }
+          - { at: [125.75, 39.02], label: 평양 }
+          - { at: [126.55, 37.97], date: 1636-12-13, label: 개성 }
+          - { at: [126.98, 37.57], date: 1636-12-14, label: 한양 }
+          - { at: [127.18, 37.48], date: 1636-12-16, label: 남한산성 포위 }
+      - name: 인조의 피란
+        faction: joseon
+        points:
+          - { at: [126.98, 37.57], date: 1636-12-14, label: 한양 (강화도 길이 막힘) }
+          - { at: [127.18, 37.48], date: 1636-12-14, label: 남한산성 }
+          - { at: [127.1, 37.51], date: 1637-01-30, label: 삼전도 }
+    battles:
+      - { name: 김화 전투, at: [127.43, 38.24], date: 1636-12-26, winner: joseon, summary: 남한산성을 구하러 가던 평안도 군대가 김화에서 청군과 싸웠다. 관찰사 홍명구는 전사했으나 병사 유림이 청군을 물리쳤다. }
+      - { name: 쌍령 전투, at: [127.3, 37.4], date: 1637-01-03, winner: qing, summary: 남한산성을 구하러 온 경상도 근왕병 4만여 명이 쌍령(경기 광주)에서 훨씬 적은 청 기병에게 크게 무너졌다. }
+      - { name: 광교산 전투, at: [127.03, 37.33], date: 1637-01-04, winner: joseon, summary: 전라 병사 김준룡이 광교산에서 청군을 막고 청 장수 양고리를 죽였으나, 보급이 끊겨 물러났다. }
+      - { name: 강화도 함락, at: [126.49, 37.75], date: 1637-01-22, winner: qing, summary: 청군이 바다를 건너 강화도를 함락하고 피란해 있던 세자빈·봉림 대군 등 왕족을 사로잡았다. 이 소식에 인조는 항복을 결심했다. }
+    snapshots:
+      - date: 1636-12-09
+        title: 청군 압록강 도하
+        summary: 조선이 군신 관계 요구를 거부하자 청 태종이 12만 대군을 이끌고 쳐들어왔습니다. 선봉 마부대는 의주 백마산성의 임경업을 피해 곧장 한양으로 내달렸습니다.
+        areas:
+          - { faction: joseon, entities: [joseon] }
+          - { faction: qing, geojson: byeongja/1636-12-09.geojson }
+        holds:
+          - { name: 백마산성 (임경업), at: [124.63, 40.13], faction: joseon }
+        arrows:
+          - { faction: qing, path: [[123.43, 41.8], [124.55, 40.25]], label: 청군 }
+
+      - date: 1636-12-14
+        title: 남한산성 피란
+        summary: 청군이 닷새 만에 개성을 지나자 인조는 강화도로 가려 했으나 길이 막혀 남한산성으로 들어갔습니다. 세자빈과 봉림 대군 등은 강화도로 피란했습니다.
+        areas:
+          - { faction: joseon, entities: [joseon] }
+          - { faction: qing, geojson: byeongja/1636-12-14.geojson }
+        holds:
+          - { name: 남한산성, at: [127.18, 37.48], faction: joseon }
+          - { name: 강화도, at: [126.49, 37.72], faction: joseon }
+          - { name: 백마산성, at: [124.63, 40.13], faction: joseon }
+          - { name: 안주성, at: [125.66, 39.62], faction: joseon }
+        arrows:
+          - { faction: qing, path: [[124.6, 40.1], [125.75, 39.1], [126.55, 38.0], [126.95, 37.62]], label: 한양 }
+
+      - date: 1637-01-03
+        title: 남한산성 포위와 근왕병
+        summary: 청군이 남한산성을 에워쌌습니다. 각 도의 근왕병이 산성을 구하러 올라왔으나 쌍령 전투에서 크게 지는 등 포위를 풀지 못했습니다. 산성 안에서는 주화론(최명길)과 척화론(김상헌)이 맞섰습니다.
+        areas:
+          - { faction: joseon, entities: [joseon] }
+          - { faction: qing, geojson: byeongja/1637-01-03.geojson }
+        holds:
+          - { name: 남한산성, at: [127.18, 37.48], faction: joseon }
+          - { name: 강화도, at: [126.49, 37.72], faction: joseon }
+        arrows:
+          - { faction: joseon, path: [[128.3, 36.8], [127.35, 37.38]], label: 경상도 근왕병 }
+          - { faction: joseon, path: [[127.0, 36.6], [127.03, 37.3]], label: 전라도 근왕병 }
+          - { faction: joseon, path: [[127.6, 38.8], [127.43, 38.28]], label: 평안도 근왕병 }
+
+      - date: 1637-01-22
+        title: 강화도 함락
+        summary: 청군이 강화도를 함락해 왕족을 사로잡았습니다. 식량이 떨어져 가던 남한산성 안에서는 더 버틸 수 없게 되었습니다.
+        areas:
+          - { faction: joseon, entities: [joseon] }
+          - { faction: qing, geojson: byeongja/1637-01-22.geojson }
+        holds:
+          - { name: 남한산성, at: [127.18, 37.48], faction: joseon }
+        arrows:
+          - { faction: qing, path: [[126.75, 37.62], [126.52, 37.72]], label: 강화도 }
+
+      - date: 1637-01-30
+        title: 삼전도의 굴욕
+        summary: 인조가 남한산성에서 나와 삼전도에서 청 태종에게 항복하고 군신 관계를 맺었습니다. 소현 세자와 봉림 대군, 척화를 주장한 삼학사가 인질로 청에 끌려갔습니다.
+        areas:
+          - { faction: joseon, entities: [joseon] }
+        holds:
+          - { name: 삼전도 (항복), at: [127.1, 37.51], faction: qing }
+        arrows:
+          - { faction: qing, path: [[126.9, 37.7], [125.75, 39.1], [124.55, 40.25], [123.43, 41.8]], label: 인질을 데리고 철수 }
