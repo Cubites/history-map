@@ -26,6 +26,8 @@ export interface DrawTerritory extends DrawShapes {
   hatch?: string;
   /** 종속·간섭한 나라의 색. 있으면 테두리를 그 색으로 굵게 그린다 (DESIGN.md §4.3) */
   border?: string;
+  /** 선택(굵게)·hover(가늘게)한 영토의 강조 테두리 두께(px). 지도와 같은 프레임·같은 도형으로 그려야 움직일 때 어긋나지 않는다 */
+  highlight?: number;
 }
 
 const VASSAL_BORDER_WIDTH = 3;
@@ -68,6 +70,8 @@ export interface Palette {
   landStroke: string;
   territoryStroke: string;
   outline: string;
+  /** 선택·hover 강조 테두리 */
+  highlight: string;
 }
 
 const graticule = geoGraticule10();
@@ -204,6 +208,16 @@ export function drawMap(
     ctx.beginPath();
     trace(t.stroke);
     ctx.strokeStyle = t.border;
+    ctx.stroke();
+  }
+
+  // 선택·hover 강조 테두리는 맨 위에
+  ctx.strokeStyle = palette.highlight;
+  for (const t of territories) {
+    if (!t.highlight) continue;
+    ctx.beginPath();
+    trace(t.stroke);
+    ctx.lineWidth = t.highlight;
     ctx.stroke();
   }
   ctx.restore();

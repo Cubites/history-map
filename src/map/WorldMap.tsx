@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { geoContains, geoPath } from 'd3-geo';
+import { flushSync } from 'react-dom';
+import { geoContains } from 'd3-geo';
 import { select } from 'd3-selection';
 import { zoom, zoomIdentity, type ZoomBehavior, type ZoomTransform } from 'd3-zoom';
 import {
@@ -21,7 +22,6 @@ import type { Lod, TerritoryIndexEntry } from '../schema/index.ts';
 import { useAppStore } from '../store/useAppStore.ts';
 import { ArrowLayer } from './ArrowLayer.tsx';
 import {
-  crossesSeam,
   drawMap,
   isVisible,
   visibleBounds,
@@ -51,6 +51,9 @@ import {
 
 /** 움직임이 멈췄다고 보는 시간(ms). 이후 정밀한 단계로 다시 그린다 */
 const SETTLE_MS = 150;
+/** 선택·hover한 영토의 강조 테두리 두께(px) */
+const SELECTED_WIDTH = 2.5;
+const HOVER_WIDTH = 1.5;
 
 /**
  * 정밀도 단계 (DESIGN.md §3.1). 움직이는 동안에는 가볍게, 멈추거나 확대하면 정밀하게 그린다.
@@ -79,6 +82,7 @@ function readPalette(el: Element): Palette {
     landStroke: v('--land-stroke'),
     territoryStroke: v('--territory-stroke'),
     outline: v('--outline'),
+    highlight: v('--fg'),
   };
 }
 
@@ -99,6 +103,9 @@ export default function WorldMap({ data }: { data: StaticData }) {
   const [hovered, setHovered] = useState<{ id: string; x: number; y: number } | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [geoVersion, setGeoVersion] = useState(0);
+  // 강조 테두리는 Canvas에서 그리므로(그리기 함수가 매번 새로 만들어지지 않게) ref로 넘긴다
+  const highlightRef = useRef<{ selected: string | null; hovered: string | null }>({ selected: null, hovered: null });
+  highlightRef.current = { selected: selectedId, hovered: hovered?.id ?? null };
 
   const s0 = useMemo(() => (size ? baseScale(size) : 1), [size]);
 
@@ -218,7 +225,9 @@ export default function WorldMap({ data }: { data: StaticData }) {
       const hatch = occupier && data.entities.get(occupier.object)?.color;
       const overlord = overlordAt(data.relations, entry.entityId, year);
       const border = overlord && data.entities.get(overlord.object)?.color;
-      territories.push({ ...shapes, color, certainty: entry.certainty, hatch, border });
+      const { selected, hovered: hoveredId } = highlightRef.current;
+      const highlight = entry.entityId === selected ? SELECTED_WIDTH : entry.entityId === hoveredId ? HOVER_WIDTH : undefined;
+      territories.push({ ...shapes, color, certainty: entry.certainty, hatch, border, highlight });
       // 클릭 판정과 hover 테두리는 원래 도형으로 한다
       drawn.push({ entry, feature });
     }
@@ -231,7 +240,8 @@ export default function WorldMap({ data }: { data: StaticData }) {
     const plainLand = landFor(lod).filter((p) => isVisible(p.bbox, bounds, v));
     const land = tiledLand ? { fill: visiblePieces(tiledLand.tiles), stroke: visiblePieces(tiledLand.lines) } : { fill: plainLand, stroke: plainLand };
     drawMap(ctx, projection, createProjection(size, s0, v, true), v, size, land, territories, paletteRef.current);
-    setView(v);
+    // 이름표·화살표(SVG)도 방금 그린 지도와 같은 프레임에 맞춘다. 늦게 그리면 움직이는 동안 지도에서 밀려 보인다
+    flushSync(() => setView(v));
   }, [size, s0, year, active, data.entities, data.relations, ensureLoaded, ensureTiled, featureFor, landFor]);
 
   const requestDraw = useCallback(() => {
@@ -241,7 +251,7 @@ export default function WorldMap({ data }: { data: StaticData }) {
 
   useEffect(() => {
     requestDraw();
-  }, [requestDraw, geoVersion]);
+  }, [requestDraw, geoVersion, selectedId, hovered?.id]);
 
   // 다크 모드 전환 시 색을 다시 읽는다
   useEffect(() => {
@@ -405,18 +415,6 @@ export default function WorldMap({ data }: { data: StaticData }) {
 
   // ── 화면 좌표 레이어 (SVG) ─────────────────────────────────
   const projection = useMemo(() => (size ? createProjection(size, s0, view) : null), [size, s0, view]);
-  const overlayLod = lodFor(view.k, false);
-  const precise = useMemo(() => (size ? createProjection(size, s0, view, true) : null), [size, s0, view]);
-  const sphereD = useMemo(() => (precise ? (geoPath(precise)({ type: 'Sphere' }) ?? '') : ''), [precise]);
-  const overlayPath = (id: string | null) => {
-    if (!id || !projection || !precise) return null;
-    const entry = active.find((t) => t.entityId === id);
-    const feature = entry && featureFor(entry, overlayLod);
-    if (!entry || !feature) return null;
-    return geoPath(crossesSeam(entry.bbox, view) ? precise : projection)(feature) ?? '';
-  };
-  const selectedShape = overlayPath(selectedId);
-  const hoveredShape = overlayPath(hovered?.id ?? null);
   const hoveredEntity = hovered ? data.entities.get(hovered.id) : undefined;
   const hoveredEvent = hoveredEventId ? data.events.find((e) => e.id === hoveredEventId) : undefined;
 
@@ -439,16 +437,6 @@ export default function WorldMap({ data }: { data: StaticData }) {
       <canvas ref={canvasRef} className="map-canvas" />
       {size && projection && (
         <svg className="map-overlay" width={size.width} height={size.height} aria-hidden>
-          <defs>
-            <clipPath id="map-sphere-clip">
-              <path d={sphereD} />
-            </clipPath>
-          </defs>
-          {/* 강조 도형도 지구 테두리 밖으로 나가지 않게 자른다 */}
-          <g clipPath="url(#map-sphere-clip)">
-            {selectedShape && <path className="territory-selected" d={selectedShape} />}
-            {hoveredShape && <path className="territory-hover" d={hoveredShape} />}
-          </g>
           <LabelLayer territories={active} entities={data.entities} selectedId={selectedId} projection={projection} view={view} size={size} />
           {hoveredEvent && selectedId && (
             <ArrowLayer data={data} event={hoveredEvent} selectedId={selectedId} projection={projection} />

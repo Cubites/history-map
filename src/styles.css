@@ -89,20 +89,7 @@ button {
 .map-canvas { position: absolute; inset: 0; display: block; }
 .map-overlay { position: absolute; inset: 0; pointer-events: none; overflow: visible; }
 
-/* hover한 영토의 경계선을 위 레이어에 강조한다 (DESIGN.md §6.1) */
-.territory-hover {
-  fill: none;
-  stroke: var(--fg);
-  stroke-width: 1.5;
-}
-
-.territory-selected {
-  fill: none;
-  stroke: var(--fg);
-  stroke-width: 2.5;
-  vector-effect: non-scaling-stroke;
-  pointer-events: none;
-}
+/* 선택·hover한 영토의 강조 테두리는 지도와 같은 프레임에 맞추려고 Canvas에서 그린다 (canvasLayer.ts, DESIGN.md §6.1) */
 
 .label {
   font-size: 12px;
