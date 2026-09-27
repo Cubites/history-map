@@ -1,5 +1,6 @@
 import { useMemo, useRef, useState } from 'react';
 import type { StaticData } from '../data/staticData.ts';
+import { useMediaQuery } from '../lib/useMediaQuery.ts';
 import { formatEventYears } from '../lib/events.ts';
 import { formatRange, isAlive } from '../lib/year.ts';
 import type { Entity, HistoryEvent } from '../schema/index.ts';
@@ -25,6 +26,8 @@ export function SearchBox({ data }: { data: StaticData }) {
   const focusEvent = useAppStore((s) => s.focusEvent);
   const exitWar = useAppStore((s) => s.exitWar);
   const warId = useAppStore((s) => s.warId);
+  // 휴대폰에서는 검색창이 좁아 예시를 빼고 짧게 쓴다
+  const narrow = useMediaQuery('(max-width: 767px)');
 
   const results = useMemo<Result[]>(() => {
     const q = normalize(query);
@@ -83,7 +86,7 @@ export function SearchBox({ data }: { data: StaticData }) {
         ref={inputRef}
         className="search-input"
         type="search"
-        placeholder="사건·나라 찾기 (예: 관산성, 서희)"
+        placeholder={narrow ? '사건·나라 찾기' : '사건·나라 찾기 (예: 관산성, 서희)'}
         aria-label="사건·나라 찾기"
         value={query}
         onChange={(e) => {

@@ -571,3 +571,7 @@ button {
   .search { flex-basis: 60%; }
   .search-input { font-size: 16px; padding: 5px 8px; }
 }
+
+/* 새 버전 알림 */
+.update-notice { display: flex; gap: 10px; align-items: center; justify-content: center; padding: 6px 12px; font-size: 13.5px; background: var(--surface); border-bottom: 1px solid var(--border); }
+.update-notice button { font: inherit; font-weight: 600; padding: 3px 10px; border: 1px solid var(--front-line); border-radius: 6px; background: transparent; color: var(--front-line); cursor: pointer; }

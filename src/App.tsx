@@ -3,6 +3,7 @@ import WorldMap from './map/WorldMap.tsx';
 import { EventPanel } from './panel/EventPanel.tsx';
 import { Timeline } from './timeline/Timeline.tsx';
 import { SearchBox } from './search/SearchBox.tsx';
+import { UpdateNotice } from './UpdateNotice.tsx';
 
 export default function App() {
   const { data, error } = useStaticData();
@@ -13,6 +14,7 @@ export default function App() {
         <h1>역사 지도</h1>
         {data && <SearchBox data={data} />}
       </header>
+      <UpdateNotice />
       {data ? (
         <>
           <div className="app-body">
