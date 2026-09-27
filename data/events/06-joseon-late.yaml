@@ -202,6 +202,7 @@
     - { from: hugeum, to: joseon, note: "후금의 침입" }
   tags: [war]
   sources: ["『인조실록』 인조 5년"]
+  front: { war: jeongmyo-horan, date: 1627-01-27 }
 
 - id: yeongjeongbeop-1635
   year: 1635

@@ -1,0 +1,79 @@
+# 정묘호란 (DESIGN.md §4.5)
+# 전역 하나(한반도). 스냅샷마다 조선 영토 전체를 조선 진영으로 칠한 뒤 후금군이 장악한 지역(jeongmyo/*.geojson)을 덮는다.
+# 후금군은 의주에서 평산까지 평안도·황해도의 큰길을 따라 내려왔다. 점령 지역은 진군로 주변만 칠한다.
+# 날짜는 음력이다 (예: 후금군 압록강 도하 1627년 음력 1월 13일 = 양력 2월 28일). 위치는 교과서 수준의 대략적인 추정.
+
+id: jeongmyo-horan
+name: 정묘호란 (날짜는 음력)
+factions:
+  - { id: joseon, name: 조선군·의병, entity: joseon }
+  - { id: hugeum, name: 후금군, entity: hugeum }
+participants:
+  - { entity: joseon, faction: joseon }
+  - { entity: hugeum, faction: hugeum }
+sources: ["『인조실록』 인조 5년", "국방부 군사편찬연구소 『정묘·병자호란과 동아시아』", "국사편찬위원회 『신편 한국사』 29"]
+
+theaters:
+  - id: korea
+    name: 한반도
+    replaces: [joseon]
+    marker: [125.2, 39.9]
+    bounds: [[122.8, 37.0], [128.5, 42.2]]
+    routes:
+      - name: 후금군 (아민)
+        faction: hugeum
+        points:
+          - { at: [123.43, 41.8], label: 선양 }
+          - { at: [124.53, 40.2], date: 1627-01-14, label: 의주 }
+          - { at: [125.66, 39.62], date: 1627-01-21, label: 안주 }
+          - { at: [126.39, 38.34], date: 1627-01-27, label: 평산 }
+      - name: 인조의 피란
+        faction: joseon
+        points:
+          - { at: [126.98, 37.57], date: 1627-01-26, label: 한양 }
+          - { at: [126.49, 37.75], date: 1627-01-29, label: 강화도 }
+    battles:
+      - { name: 의주성 전투, at: [124.53, 40.2], date: 1627-01-14, winner: hugeum, summary: 후금군이 압록강을 건너 의주를 함락했다. 부윤 이완이 전사했다. }
+      - { name: 안주성 전투, at: [125.66, 39.62], date: 1627-01-21, winner: hugeum, summary: 평안 병사 남이흥이 안주성을 지키다 성이 함락되자 스스로 화약에 불을 붙여 죽었다. }
+    snapshots:
+      - date: 1627-01-14
+        title: 후금군 침입
+        summary: 친명배금 정책과 이괄의 난 잔당(한명련의 아들)의 부추김을 구실로 후금의 아민이 3만 군사를 이끌고 압록강을 건너 의주를 함락했습니다. 가도의 명 장수 모문룡을 치려는 목적도 있었습니다.
+        areas:
+          - { faction: joseon, entities: [joseon] }
+          - { faction: hugeum, geojson: jeongmyo/1627-01-14.geojson }
+        arrows:
+          - { faction: hugeum, path: [[123.43, 41.8], [124.55, 40.25]], label: 후금군 }
+
+      - date: 1627-01-21
+        title: 안주성 함락
+        summary: 후금군이 곽산·정주를 거쳐 청천강의 안주성을 함락했습니다. 남이흥이 끝까지 싸우다 전사했습니다.
+        areas:
+          - { faction: joseon, entities: [joseon] }
+          - { faction: hugeum, geojson: jeongmyo/1627-01-21.geojson }
+        arrows:
+          - { faction: hugeum, path: [[124.6, 40.15], [125.6, 39.65]], label: 안주 }
+
+      - date: 1627-01-27
+        title: 인조의 강화도 피란
+        summary: 후금군이 평양을 지나 황해도 평산까지 내려오자 인조는 강화도로 피란하고, 소현 세자는 전주로 내려가 분조를 이끌었습니다. 용골산성의 정봉수, 의주의 이립 등 의병이 후금군의 뒤를 괴롭혔습니다.
+        areas:
+          - { faction: joseon, entities: [joseon] }
+          - { faction: hugeum, geojson: jeongmyo/1627-01-27.geojson }
+        holds:
+          - { name: 강화도, at: [126.49, 37.72], faction: joseon }
+          - { name: 용골산성 (정봉수), at: [124.72, 39.98], faction: joseon }
+        arrows:
+          - { faction: hugeum, path: [[125.7, 39.55], [125.8, 39.05], [126.35, 38.4]], label: 평산 }
+
+      - date: 1627-03-03
+        title: 정묘 화약
+        summary: 강화도에서 후금과 화의를 맺었습니다. 두 나라는 형제 관계를 맺고, 조선은 명과의 관계는 그대로 두기로 했습니다. 후금군은 물러났지만 한동안 의주에 군대를 남겼습니다.
+        areas:
+          - { faction: joseon, entities: [joseon] }
+          - { faction: hugeum, geojson: jeongmyo/1627-03-03.geojson }
+        holds:
+          - { name: 강화도 (화의), at: [126.49, 37.72], faction: joseon }
+          - { name: 용골산성 (정봉수), at: [124.72, 39.98], faction: joseon }
+        arrows:
+          - { faction: hugeum, path: [[126.2, 38.5], [125.7, 39.5], [124.6, 40.2], [123.43, 41.8]], label: 후금군 철수 }
