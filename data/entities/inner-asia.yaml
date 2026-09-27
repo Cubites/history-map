@@ -36,6 +36,78 @@
     refs: ["『요사』 태조본기"]
     foundingNote: 916년 야율아보기가 황제를 칭한 해를 건국으로 봄. 국호를 요로 정한 것은 그 뒤의 일
 
+# ── 만주의 옛 민족 (2026-09-27 보충): 비어 있던 만주 서부·동부를 채운다. 범위는 대략적인 추정. 운영자 검수 필요 ──
+
+- id: donghu
+  level: polity
+  names: { ko: 동호, hanja: 東胡, en: Donghu }
+  from: -700
+  to: -207
+  color: "#9c8e6c"
+  summary: 흉노의 동쪽, 지금의 내몽골 동부·요서 북쪽에 살던 유목 민족. 연과 맞섰으며, 기원전 206년 무렵 흉노의 묵돌 선우에게 무너졌다. 남은 무리가 오환과 선비가 되었다고 전한다
+  basis:
+    type: primary_source
+    refs: ["『사기』 흉노열전", "『삼국지』 위서 오환선비동이전"]
+    foundingNote: 기원전 7세기 무렵부터 기록에 보이는 것으로 보아 이때를 시작으로 둠
+
+- id: sushen
+  level: polity
+  names: { ko: 숙신, hanja: 肅愼, en: Sushen }
+  from: -700
+  to: 0
+  color: "#7f8f76"
+  summary: 중국 고대 기록에 나오는 만주 동북부의 민족. 싸리나무 화살(호시)과 돌화살촉을 바쳤다고 전한다. 뒤의 읍루·물길·말갈·여진으로 이어지는 민족의 조상으로 본다
+  basis:
+    type: primary_source
+    refs: ["『국어』 노어", "『삼국지』 위서 동이전 읍루조"]
+    foundingNote: 기록에 나오는 시기가 분명하지 않아 동호와 같은 무렵부터 표시함
+
+- id: wuhuan
+  level: polity
+  names: { ko: 오환, hanja: 烏桓, en: Wuhuan }
+  from: -206
+  to: 206
+  color: "#a08f6e"
+  summary: 동호가 무너진 뒤 오환산으로 옮겨 간 무리. 요서 북쪽에 살며 한에 복속하기도 했다. 207년 조조가 백랑산에서 크게 무찔러 세력을 잃었다
+  basis:
+    type: primary_source
+    refs: ["『삼국지』 위서 오환선비동이전", "『후한서』 오환선비열전"]
+
+- id: xianbei
+  level: polity
+  names: { ko: 선비, hanja: 鮮卑, en: Xianbei }
+  from: -206
+  to: 399
+  color: "#8f8a5c"
+  summary: 동호의 한 갈래로 선비산에 살던 유목 민족. 흉노가 약해진 1세기 말부터 몽골 초원 동부를 차지했고, 2세기 단석괴 때 크게 세력을 떨쳤다. 뒤에 모용씨(전연·후연)·탁발씨(북위) 등이 중국 북부에 나라를 세웠다
+  basis:
+    type: primary_source
+    refs: ["『삼국지』 위서 오환선비동이전", "『후한서』 오환선비열전", "『진서』 모용외재기"]
+
+- id: khitan
+  level: polity
+  names: { ko: 거란(부족), hanja: 契丹, en: Khitan tribes }
+  from: 388
+  to: 915
+  color: "#96885e"
+  summary: 선비의 한 갈래인 우문부에서 나온 유목 민족. 시라무렌강 유역에 살며 북위·고구려·당과 맞섰다. 8부족 연맹을 이루었고, 916년 야율아보기가 부족을 통합해 요를 세웠다
+  basis:
+    type: primary_source
+    refs: ["『위서』 거란전", "『요사』 영위지"]
+    foundingNote: 388년 북위가 거란을 쳤다는 기록을 처음 보이는 해로 둠
+
+- id: shiwei
+  level: polity
+  names: { ko: 실위, hanja: 室韋, en: Shiwei }
+  from: 400
+  to: 925
+  color: "#8a9a78"
+  summary: 눈강과 흑룡강 상류, 후룬베이얼 초원에 살던 민족. 북위 때부터 기록에 나오며, 몽골족의 조상 가운데 하나(몽올실위)로 본다
+  basis:
+    type: primary_source
+    refs: ["『위서』 실위전", "『구당서』 실위전"]
+    foundingNote: 북위(5세기) 기록에 처음 나오므로 400년 무렵부터 표시함
+
 # ── 5번 묶음 (1392 ~ 1592) ──
 
 - id: jurchen
