@@ -1,5 +1,5 @@
 # 3번 묶음: 삼국 통일과 남북국 (600 ~ 935)
-# 깊이: 중고등학교 한국사 교과서 수준. 서술은 새로 작성, 출처는 해당 기록이 실린 사료. 운영자 검수 필요.
+# 깊이: 중고등학교 한국사 교과서 수준에 한국사능력검정시험(심화) 수준 보충. 서술은 새로 작성, 출처는 해당 기록이 실린 사료. 운영자 검수 필요.
 #
 # links: 영향 관계. 선택한 나라가 to면 들어오는 화살표(파랑), from이면 나가는 화살표(주황).
 # 사건에 나오는 나라는 모두 그 해에 존재해야 한다 (예: 663년 백강 전투에 멸망한 백제는 넣을 수 없음).
@@ -698,3 +698,293 @@
     - { from: hubaekje, to: goryeo, note: "견훤의 투항" }
   tags: [politics]
   sources: ["『삼국사기』 열전 견훤", "『고려사』 세가 태조 18년"]
+
+# ── 한국사능력검정시험(심화) 수준 보충 (2026-09-27) ────────────────
+
+- id: sinjip-600
+  year: 600
+  title:
+    ko: 이문진의 『신집』 편찬
+  summary:
+    ko: 영양왕의 명으로 태학박사 이문진이 옛 역사서 『유기』 100권을 간추려 『신집』 5권을 펴냈다. 지금은 전하지 않는다.
+  subjects: [goguryeo]
+  tags: [culture]
+  sources: ["『삼국사기』 고구려본기 영양왕 11년"]
+
+- id: gwalleuk-602
+  year: 602
+  title:
+    ko: 관륵의 일본 전파
+  summary:
+    ko: 백제 승려 관륵이 왜에 건너가 역법·천문·지리 책과 둔갑·방술을 전했다. 백제는 불교·유교·기술을 왜에 전해 아스카 문화 형성에 큰 영향을 주었다.
+  subjects: [baekje, wa]
+  links:
+    - { from: baekje, to: wa, note: "역법·천문 전파" }
+  tags: [culture, diplomacy]
+  sources: ["『일본서기』 스이코 10년"]
+
+- id: geolsapyo-608
+  year: 608
+  title:
+    ko: 원광의 걸사표
+  summary:
+    ko: 고구려의 잦은 침입에 시달리던 진평왕이 승려 원광에게 수에 군사를 청하는 글(걸사표)을 짓게 했다(611년 수에 전달). 원광은 화랑 귀산과 추항에게 세속 5계를 준 것으로도 알려져 있다.
+  subjects: [silla, sui]
+  links:
+    - { from: silla, to: sui, note: "고구려 원정 요청" }
+  tags: [diplomacy]
+  sources: ["『삼국사기』 신라본기 진평왕 30년·33년", "『삼국사기』 열전 귀산"]
+
+- id: damjing-610
+  year: 610
+  title:
+    ko: 담징의 일본 전파
+  summary:
+    ko: 고구려 승려 담징이 왜에 건너가 종이와 먹 만드는 법, 채색 기법을 전했다. 호류사 금당 벽화를 그렸다는 이야기가 전한다.
+  subjects: [goguryeo, wa]
+  links:
+    - { from: goguryeo, to: wa, note: "종이·먹 제조법 전파" }
+  tags: [culture]
+  sources: ["『일본서기』 스이코 18년"]
+
+- id: seondeok-632
+  year: 632
+  title:
+    ko: 선덕여왕 즉위
+  summary:
+    ko: 진평왕이 아들 없이 죽자 성골인 딸 덕만이 왕위에 올라 신라 최초의 여왕이 되었다. 분황사·첨성대·황룡사 9층 목탑이 이 시기에 세워졌다.
+  subjects: [silla]
+  tags: [politics]
+  sources: ["『삼국사기』 신라본기 선덕왕 즉위년"]
+
+- id: cheomseongdae-633
+  year: 633
+  title:
+    ko: 첨성대 건립
+  summary:
+    ko: 선덕여왕 때 경주에 별을 관측하던 첨성대를 세웠다. 동양에서 가장 오래된 천문 관측대로 꼽힌다. 세운 해는 『세종실록』 지리지에 따라 633년(선덕여왕 2년)으로 보는 것이 일반적이며, 647년으로 보는 견해도 있다.
+  subjects: [silla]
+  tags: [culture]
+  sources: ["『삼국유사』 기이 선덕왕 지기삼사", "『세종실록』 지리지 경주부"]
+
+- id: taoism-643
+  year: 643
+  title:
+    ko: 고구려의 도교 장려
+  summary:
+    ko: 연개소문의 건의로 보장왕이 당에서 도사 8명과 『도덕경』을 들여오고 절을 도관으로 삼게 했다. 이에 반발한 승려 보덕이 백제로 옮겨 갔다. 강서대묘의 사신도에도 도교의 영향이 보인다.
+  subjects: [goguryeo, tang]
+  links:
+    - { from: tang, to: goguryeo, note: "도사와 『도덕경』" }
+  tags: [culture]
+  sources: ["『삼국사기』 고구려본기 보장왕 2년", "『삼국유사』 흥법 보장봉로 보덕이암"]
+
+- id: sataek-jijeok-654
+  year: 654
+  title:
+    ko: 사택지적비
+  summary:
+    ko: 백제의 대신 사택지적이 늙어 감을 한탄하며 절과 탑을 세운 일을 새긴 비석이다. 세련된 4·6 변려체 문장과 도교적 색채가 드러나 백제 귀족 문화를 보여 준다.
+  subjects: [baekje]
+  tags: [culture]
+  sources: ["「사택지적비」 (부여 출토)"]
+
+- id: sasu-662
+  year: 662
+  title:
+    ko: 사수 전투
+  summary:
+    ko: 평양성을 포위한 당군을 돕던 방효태의 군대를 연개소문이 사수(평양 부근)에서 크게 무찔렀다. 방효태와 그 아들들이 모두 전사하고, 당군은 평양 포위를 풀고 물러났다.
+  subjects: [goguryeo, tang]
+  links:
+    - { from: tang, to: goguryeo, note: "평양성 포위" }
+  tags: [war]
+  sources: ["『삼국사기』 고구려본기 보장왕 21년", "『자치통감』 당기 용삭 2년"]
+
+- id: gyerim-dodokbu-663
+  year: 663
+  title:
+    ko: 계림대도독부 설치
+  summary:
+    ko: 당이 신라를 계림대도독부로 삼고 문무왕을 계림주 대도독으로 임명했다. 백제 땅의 웅진도독부, 뒤의 안동도호부와 함께 한반도 전체를 지배하려는 당의 의도를 드러낸 것으로, 뒷날 나당 전쟁의 원인이 되었다.
+  subjects: [tang, silla]
+  links:
+    - { from: tang, to: silla, note: "신라를 도독부로 삼으려 함" }
+  tags: [politics, diplomacy]
+  sources: ["『삼국사기』 신라본기 문무왕 3년", "『구당서』 신라전"]
+
+- id: bodeok-674
+  year: 674
+  title:
+    ko: 보덕국 왕 안승
+  summary:
+    ko: 신라가 금마저(익산)에 머물던 고구려 왕족 안승을 보덕왕으로 봉했다(670년에는 고구려왕으로 봉함). 고구려 유민을 끌어들여 당과 싸우는 데 활용했으며, 683년 안승을 경주로 옮기고 이듬해 보덕국을 없앴다.
+  subjects: [silla]
+  tags: [politics]
+  sources: ["『삼국사기』 신라본기 문무왕 10년·14년, 신문왕 3년·4년"]
+
+- id: maesoseong-675
+  year: 675
+  title:
+    ko: 매소성 전투
+  summary:
+    ko: 신라군이 매소성(경기 연천·양주 일대로 추정)에 머물던 당의 이근행이 이끄는 20만 대군을 물리치고 말 3만여 필을 얻었다. 나당 전쟁의 흐름을 바꾼 육지 싸움이다.
+  subjects: [silla, tang]
+  links:
+    - { from: silla, to: tang, note: "육로의 당군 격퇴" }
+  tags: [war]
+  sources: ["『삼국사기』 신라본기 문무왕 15년"]
+
+- id: gibeolpo-676
+  year: 676
+  title:
+    ko: 기벌포 전투
+  summary:
+    ko: 시득이 이끄는 신라 수군이 금강 하구 기벌포에서 설인귀의 당 수군을 물리쳤다. 당은 안동도호부를 요동으로 옮기고, 신라는 대동강에서 원산만에 이르는 이남 땅을 차지해 삼국 통일을 이루었다.
+  subjects: [silla, tang]
+  links:
+    - { from: silla, to: tang, note: "당 수군 격퇴" }
+  tags: [war]
+  sources: ["『삼국사기』 신라본기 문무왕 16년"]
+
+- id: gameunsa-682
+  year: 682
+  title:
+    ko: 감은사 완성과 문무왕 수중릉
+  summary:
+    ko: 죽어서 용이 되어 왜구를 막겠다던 문무왕의 유언에 따라 동해 대왕암에 장사 지내고(681), 신문왕이 그 뜻을 기려 감은사를 완성했다. 감은사지 3층 석탑은 통일 신라 초기 쌍탑 가람의 대표적 석탑이다.
+  subjects: [silla]
+  tags: [culture]
+  sources: ["『삼국사기』 신라본기 문무왕 21년", "『삼국유사』 기이 만파식적"]
+
+- id: dalgubeol-689
+  year: 689
+  title:
+    ko: 달구벌 천도 계획
+  summary:
+    ko: 신문왕이 도읍을 경주에서 달구벌(대구)로 옮기려 했으나 이루지 못했다. 경주 귀족 세력의 반발 때문으로 보며, 왕권 강화를 꾀한 시도로 평가된다.
+  subjects: [silla]
+  tags: [politics]
+  sources: ["『삼국사기』 신라본기 신문왕 9년"]
+
+- id: balhae-king-713
+  year: 713
+  title:
+    ko: 당, 대조영을 발해군왕으로 책봉
+  summary:
+    ko: 당이 대조영을 발해군왕으로 책봉하면서 나라 이름을 진(震)에서 발해로 쓰게 되었다. 대조영은 고왕으로 불린다.
+  subjects: [balhae, tang]
+  links:
+    - { from: tang, to: balhae, note: "발해군왕 책봉" }
+  tags: [diplomacy]
+  sources: ["『구당서』 발해말갈전", "『신당서』 발해전"]
+
+- id: sangwonsa-bell-725
+  year: 725
+  title:
+    ko: 상원사 동종
+  summary:
+    ko: 성덕왕 때 만든 오대산 상원사의 동종으로, 연대가 확실한 우리나라에서 가장 오래된 종이다. 하늘을 나는 비천상이 새겨져 있다.
+  subjects: [silla]
+  tags: [culture]
+  sources: ["「상원사 동종」 명문"]
+
+- id: dharani-751
+  year: 751
+  title:
+    ko: 무구정광대다라니경
+  summary:
+    ko: 1966년 불국사 3층 석탑(석가탑)을 고칠 때 나온 불경이다. 석가탑이 세워진 751년 무렵 이전에 찍은 것으로, 현재 남아 있는 세계에서 가장 오래된 목판 인쇄물로 꼽힌다.
+  subjects: [silla]
+  tags: [culture]
+  sources: ["국립중앙박물관 「무구정광대다라니경」 해설", "문화재청 국보 제126호 해설"]
+
+- id: minjeong-munseo-755
+  year: 755
+  title:
+    ko: 신라 촌락 문서 (민정 문서)
+  summary:
+    ko: 서원경(청주) 부근 4개 마을의 인구·가구·토지·소와 말·뽕나무·잣나무 수 등을 적은 문서로, 3년마다 다시 조사했다. 조세와 노동력을 거두려고 만들었다. 일본 도다이사 쇼소인에서 발견되었으며, 만든 해는 695년·755년·815년 등 학설이 갈린다.
+  subjects: [silla]
+  tags: [economy, society]
+  sources: ["「신라 촌락 문서」 (쇼소인 소장)", "국사편찬위원회 『신편 한국사』 9 통일신라"]
+
+- id: hanhwa-757
+  year: 757
+  title:
+    ko: 경덕왕의 한화 정책
+  summary:
+    ko: 경덕왕이 전국의 주·군·현 이름을 중국식 한자 이름으로 고치고(757), 관직 이름도 당식으로 바꾸었다(759). 왕권을 강화하려는 개혁이었으나 혜공왕 때 옛 이름으로 되돌아갔다.
+  subjects: [silla]
+  links:
+    - { from: tang, to: silla, note: "당 제도 수용" }
+  tags: [politics]
+  sources: ["『삼국사기』 신라본기 경덕왕 16년·18년", "『삼국사기』 지리지"]
+
+- id: balhae-kingdom-762
+  year: 762
+  title:
+    ko: 당, 발해를 '발해국'으로 인정
+  summary:
+    ko: 당이 문왕을 발해군왕에서 한 단계 높여 발해국왕으로 책봉했다. 발해를 정식 나라로 인정한 것이다. 문왕은 대흥·보력 등 독자적인 연호를 썼다.
+  subjects: [balhae, tang]
+  links:
+    - { from: tang, to: balhae, note: "발해국왕 책봉" }
+  tags: [diplomacy]
+  sources: ["『신당서』 발해전"]
+
+- id: princess-tombs-792
+  year: 792
+  title:
+    ko: 정혜공주 묘와 정효공주 묘
+  summary:
+    ko: 문왕의 두 딸 무덤이다. 정혜공주 묘(780)는 굴식 돌방무덤에 모줄임 천장을 써 고구려 양식을 이었고, 정효공주 묘(792)는 벽돌무덤으로 당의 영향을 보여 준다. 묘지명에서 문왕을 '황상'이라 불러 발해가 황제국을 자처했음을 알 수 있다.
+  subjects: [balhae]
+  tags: [culture]
+  sources: ["「정혜공주 묘지」", "「정효공주 묘지」"]
+
+- id: seon-821
+  year: 821
+  title:
+    ko: 선종의 확산 (9산 선문)
+  summary:
+    ko: 당에서 선종을 배운 도의가 돌아와 가지산문의 기초를 닦은 뒤, 지방 곳곳에 9산 선문이 생겼다. 참선으로 깨달음을 얻는다는 선종은 호족과 6두품의 지지를 받았고, 승려의 사리를 모신 승탑과 탑비가 많이 세워졌다.
+  subjects: [silla]
+  links:
+    - { from: tang, to: silla, note: "선종 전래" }
+  tags: [culture]
+  sources: ["「보림사 보조선사 창성탑비」", "국사편찬위원회 『신편 한국사』 11 신라의 쇠퇴와 후삼국"]
+
+- id: jaengjang-897
+  year: 897
+  title:
+    ko: 쟁장 사건
+  summary:
+    ko: 발해 왕자 대봉예가 당에 가서 발해 사신의 자리를 신라 사신보다 윗자리로 해 달라고 요구했으나 당이 거절했다. 발해와 신라가 서로 경쟁한 모습을 보여 주며, 최치원이 당에 감사하는 글을 지었다.
+  subjects: [balhae, silla, tang]
+  links:
+    - { from: balhae, to: tang, note: "사신 서열 변경 요구" }
+  tags: [diplomacy]
+  sources: ["최치원, 「사불허북국거상표」 (『동문선』)"]
+
+- id: wanggeon-naju-903
+  year: 903
+  title:
+    ko: 왕건의 나주 점령
+  summary:
+    ko: 궁예의 장수 왕건이 수군을 이끌고 후백제의 뒤쪽인 금성(나주)을 차지했다. 후백제를 앞뒤에서 압박하게 되었고, 왕건은 해상 세력의 지지를 얻어 힘을 키웠다.
+  subjects: [hugoguryeo, hubaekje]
+  links:
+    - { from: hugoguryeo, to: hubaekje, note: "나주 점령" }
+  tags: [war]
+  sources: ["『고려사』 세가 태조 총서"]
+
+- id: majin-904
+  year: 904
+  title:
+    ko: 국호 마진과 광평성 설치
+  summary:
+    ko: 궁예가 나라 이름을 마진으로 바꾸고 최고 정무 기구인 광평성을 두는 등 관제를 정비했다. 이듬해 철원으로 도읍을 옮기고 911년 국호를 태봉으로 고쳤다. 미륵불을 자처하며 폭정을 일삼아 신하들의 반발을 샀다.
+  subjects: [hugoguryeo]
+  tags: [politics]
+  sources: ["『삼국사기』 열전 궁예"]
