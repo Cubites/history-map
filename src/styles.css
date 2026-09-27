@@ -74,7 +74,7 @@ button {
 
 .app { display: flex; flex-direction: column; height: 100%; }
 
-.app-header { padding: 10px 16px; border-bottom: 1px solid var(--border); }
+.app-header { padding: 10px 16px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 16px; }
 .app-header h1 { margin: 0; font-size: 18px; font-weight: 700; }
 
 .app-body { flex: 1; min-height: 0; display: flex; }
@@ -555,3 +555,19 @@ button {
 .battle-pin:hover .battle-pin-disc, .battle-pin:focus-visible .battle-pin-disc { fill: var(--front-line); }
 .battle-pin:hover .battle-pin-icon, .battle-pin:focus-visible .battle-pin-icon { stroke: var(--surface); }
 .battle-pin-label { font-size: 11.5px; font-weight: 600; fill: var(--front-line); paint-order: stroke; stroke: var(--label-halo); stroke-width: 3.5px; }
+
+/* 검색 (머리글) */
+.search { position: relative; flex: 0 1 320px; min-width: 0; margin-left: auto; }
+.search-input { width: 100%; box-sizing: border-box; padding: 6px 10px; font: inherit; font-size: 14px; color: var(--fg); background: var(--surface); border: 1px solid var(--border); border-radius: 6px; }
+.search-input:focus { outline: 2px solid var(--front-line); outline-offset: -1px; }
+.search-results { position: absolute; z-index: 20; top: calc(100% + 4px); left: 0; right: 0; margin: 0; padding: 4px 0; list-style: none; background: var(--surface); border: 1px solid var(--border); border-radius: 6px; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15); max-height: 60vh; overflow-y: auto; }
+.search-result { display: flex; gap: 8px; padding: 6px 10px; cursor: pointer; font-size: 13.5px; }
+.search-result-active { background: var(--border); }
+.search-year { flex: 0 0 auto; min-width: 64px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.search-title { flex: 1 1 auto; min-width: 0; }
+.search-sub { color: var(--muted); font-size: 12px; }
+.search-empty { padding: 6px 10px; color: var(--muted); font-size: 13px; }
+@media (max-width: 767px) {
+  .search { flex-basis: 60%; }
+  .search-input { font-size: 16px; padding: 5px 8px; }
+}

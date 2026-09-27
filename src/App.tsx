@@ -2,6 +2,7 @@ import { useStaticData } from './data/staticData.ts';
 import WorldMap from './map/WorldMap.tsx';
 import { EventPanel } from './panel/EventPanel.tsx';
 import { Timeline } from './timeline/Timeline.tsx';
+import { SearchBox } from './search/SearchBox.tsx';
 
 export default function App() {
   const { data, error } = useStaticData();
@@ -10,6 +11,7 @@ export default function App() {
     <div className="app">
       <header className="app-header">
         <h1>역사 지도</h1>
+        {data && <SearchBox data={data} />}
       </header>
       {data ? (
         <>
