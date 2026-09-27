@@ -15,7 +15,7 @@ theaters:
   - id: manchuria
     name: 간도·연해주
     marker: [129.3, 42.8]
-    bounds: [[126.5, 41.2], [133.0, 46.2]]
+    bounds: [[127.9, 41.8], [132.3, 45.8]]
     routes:
       - name: 독립군의 이동
         faction: independence
