@@ -54,7 +54,8 @@ export function tilePolygons(polygons: MultiCoords, key?: string): Feature<Multi
   const cells = new Map<string, MultiCoords>();
   for (const polygon of polygons) {
     const [w, s, e, n] = bbox([polygon]);
-    for (let x = Math.floor(w / TILE_SIZE) * TILE_SIZE; x < e; x += TILE_SIZE)
+    // -180°~180° 밖의 칸은 건너뛴다. 날짜 변경선을 넘는 폴리곤은 양쪽으로 옮긴 사본이 들어오므로 한 번씩만 칠해진다
+    for (let x = Math.max(-180, Math.floor(w / TILE_SIZE) * TILE_SIZE); x < Math.min(e, 180); x += TILE_SIZE)
       for (let y = Math.floor(s / TILE_SIZE) * TILE_SIZE; y < n; y += TILE_SIZE) {
         const cell: BBox = [x, y, x + TILE_SIZE, y + TILE_SIZE];
         const outer = clipRing(polygon[0], cell);

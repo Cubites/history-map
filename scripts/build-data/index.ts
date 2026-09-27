@@ -34,6 +34,7 @@ import {
   rewindForD3,
   roundCoords,
   toMulti,
+  unwrapAntimeridian,
   type BBox,
   type MultiCoords,
 } from './geo.ts';
@@ -200,7 +201,8 @@ type Land = Awaited<ReturnType<typeof loadLand>>;
 async function loadLand(scale: '50m' | '110m') {
   const topo = JSON.parse(await readFile(require.resolve(`world-atlas/land-${scale}.json`), 'utf8')) as Topology<{ land: GeometryCollection }>;
   const fc = feature(topo, topo.objects.land) as FeatureCollection<Polygon | MultiPolygon>;
-  const pieces = fc.features.flatMap((f) => toMulti(f.geometry)).map((coords) => ({ coords, bbox: bbox([coords]) }));
+  // 해안선 자르기는 평면 계산이므로 날짜 변경선을 넘는 육지를 펴서 쓴다 (geo.ts의 unwrapAntimeridian)
+  const pieces = fc.features.flatMap((f) => toMulti(f.geometry)).flatMap(unwrapAntimeridian).map((coords) => ({ coords, bbox: bbox([coords]) }));
   return { fc, pieces };
 }
 
@@ -266,7 +268,8 @@ const TILED_LODS: Lod[] = ['mid', 'high'];
 async function writeTiled(lod: Lod, topo: ReturnType<typeof buildLodTopology>, byEntity: Map<string, string[]>) {
   const land = feature(topo, topo.objects.land) as FeatureCollection<Polygon | MultiPolygon>;
   const landPolygons = land.features.flatMap((f) => toMulti(f.geometry));
-  await writeJson(path.join(OUT, `land-tiled-${lod}.topo.json`), tiledTopology(tilePolygons(landPolygons), chunkOutlines(landPolygons)));
+  // 격자 자르기도 평면 계산이므로 날짜 변경선을 넘는 육지는 편 사본으로 자른다. 테두리 선은 구면 그대로 쓴다
+  await writeJson(path.join(OUT, `land-tiled-${lod}.topo.json`), tiledTopology(tilePolygons(landPolygons.flatMap(unwrapAntimeridian)), chunkOutlines(landPolygons)));
 
   const territories = feature(topo, topo.objects.territories) as FeatureCollection<Polygon | MultiPolygon>;
   const byKey = new Map(territories.features.map((f) => [String(f.id), toMulti(f.geometry)]));

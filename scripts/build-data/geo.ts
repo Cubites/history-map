@@ -9,6 +9,46 @@ export type PolygonCoords = Ring[];
 export type MultiCoords = PolygonCoords[];
 export type BBox = [west: number, south: number, east: number, north: number];
 
+/**
+ * 경도 180°(날짜 변경선)를 넘는 폴리곤을 평면 계산용으로 이어 붙인다.
+ * Natural Earth 육지에서 유라시아(추코트카)와 브랑겔섬은 한 고리 안에서 180°와 -180°를 오간다.
+ * 구면(d3)에서는 문제없지만, 경위도를 평면으로 보는 계산(polyclip 해안선 자르기, 격자 자르기)에서는
+ * 그 이음새가 지도 전체를 가로지르는 직선이 되어, 러시아가 위도 65°~69°에서 띠 모양으로 잘리고
+ * 바다가 칠해지는 등 이상한 다각형이 생겼다.
+ * 고리를 끊기지 않게 펴서(±360°) 한쪽으로 넘친 폴리곤은 반대쪽으로 옮긴 사본도 함께 돌려준다.
+ * 극을 감싸는 고리(남극 대륙)는 펼 수 없고 평면에서도 이미 올바르므로 그대로 둔다.
+ */
+export function unwrapAntimeridian(polygon: PolygonCoords): PolygonCoords[] {
+  const crosses = polygon.some((ring) => ring.some((p, i) => i > 0 && Math.abs(p[0] - ring[i - 1][0]) > 180));
+  if (!crosses) return [polygon];
+  const unwrapRing = (ring: Ring): Ring | null => {
+    let shift = 0;
+    const out: Ring = ring.map((p, i) => {
+      if (i > 0) {
+        const d = p[0] - ring[i - 1][0];
+        if (d > 180) shift -= 360;
+        else if (d < -180) shift += 360;
+      }
+      return [p[0] + shift, p[1]];
+    });
+    return shift === 0 ? out : null; // 한 바퀴 돌아 닫히지 않으면 극을 감싸는 고리
+  };
+  const rings = polygon.map(unwrapRing);
+  if (rings.some((r) => r === null)) return [polygon];
+  // 구멍은 바깥 고리와 같은 경도 범위로 맞춘다
+  const center = (r: Ring) => (Math.min(...r.map((p) => p[0])) + Math.max(...r.map((p) => p[0]))) / 2;
+  const outerCenter = center(rings[0]!);
+  const aligned = rings.map((r) => {
+    const k = Math.round((outerCenter - center(r!)) / 360);
+    return k === 0 ? r! : r!.map(([x, y]) => [x + 360 * k, y]);
+  });
+  const xs = aligned[0].map((p) => p[0]);
+  const shiftAll = (d: number) => aligned.map((r) => r.map(([x, y]) => [x + d, y]));
+  if (Math.max(...xs) > 180) return [aligned, shiftAll(-360)];
+  if (Math.min(...xs) < -180) return [aligned, shiftAll(360)];
+  return [aligned];
+}
+
 export function toMulti(geometry: Polygon | MultiPolygon): MultiCoords {
   return geometry.type === 'Polygon' ? [geometry.coordinates] : geometry.coordinates;
 }
