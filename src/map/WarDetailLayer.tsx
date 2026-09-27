@@ -1,6 +1,9 @@
 import type { GeoProjection } from 'd3-geo';
-import { dateKey, factionColor, factionStroke, formatFrontDate, formatShortFrontDate } from '../lib/wars.ts';
+import { dateKey, factionColor, factionStroke, formatFrontDate, formatShortFrontDate, yearOfFrontDate } from '../lib/wars.ts';
 import type { FrontSnapshotOut, TheaterOut, WarIndexEntry } from '../schema/index.ts';
+
+/** 이보다 오래전(년)에 끝난 전투·진군로는 숨긴다. 6·25 전쟁(3년)처럼 짧은 전쟁은 모두 남는다 */
+const STALE_YEARS = 3;
 
 /** 경로 지점 이름 사이의 최소 화면 거리(px) */
 const LABEL_GAP = 46;
@@ -21,6 +24,7 @@ interface Props {
  */
 export function WarDetailLayer({ war, theater, snapshot, projection, entityColor }: Props) {
   const now = dateKey(snapshot.date);
+  const nowYear = yearOfFrontDate(snapshot.date);
   const index = theater.snapshots.indexOf(snapshot);
   const prev = index > 0 ? dateKey(theater.snapshots[index - 1].date) : -Infinity;
   const xy = (p: [number, number]) => projection(p) ?? null;
@@ -51,11 +55,18 @@ export function WarDetailLayer({ war, theater, snapshot, projection, entityColor
     }
     // 직전 날짜보다 먼저 끝난 경로는 흐리게 (예: 후퇴 뒤에도 남아 있는 지난 진격로)
     const finished = reached === route.points.length - 1 && keys[keys.length - 1] <= prev;
-    return { ri, route, reached, screen, labeled, finished, stroke: factionStroke(war, route.faction, entityColor) };
-  });
+    // 수십 년에 걸친 전쟁(예: 고구려–수·당)에서 다른 시기의 경로가 겹쳐 보이지 않게,
+    // 아직 시작하지 않은 다음 해 이후의 경로와 오래전에 끝난 경로는 숨긴다
+    const firstDated = route.points.find((p) => p.date)?.date;
+    const lastDated = [...route.points].reverse().find((p) => p.date)?.date;
+    const hidden =
+      (reached < 0 && !!firstDated && yearOfFrontDate(firstDated) > nowYear) ||
+      (finished && !!lastDated && yearOfFrontDate(lastDated) < nowYear - STALE_YEARS);
+    return { ri, route, reached, screen, labeled, finished, hidden, stroke: factionStroke(war, route.faction, entityColor) };
+  }).filter((r) => !r.hidden);
 
   const battles = theater.battles
-    .filter((b) => dateKey(b.date) <= now)
+    .filter((b) => dateKey(b.date) <= now && yearOfFrontDate(b.date) >= nowYear - STALE_YEARS)
     .map((b, i) => ({ b, i, p: xy(b.at), fresh: dateKey(b.date) > prev }))
     .filter((x) => x.p);
 
