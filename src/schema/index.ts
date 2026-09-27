@@ -128,6 +128,8 @@ export interface FrontSnapshotOut extends z.infer<typeof FrontSnapshotSchema> {
   north: MultiPolygonCoords;
   south: MultiPolygonCoords;
   bbox: BBox;
+  /** 전쟁 중 이름표를 둘 곳 (각 편 점령 지역 안쪽). 그 편이 차지한 곳이 없으면 null */
+  anchors: { north: LonLat | null; south: LonLat | null };
 }
 export interface FrontIndexEntry extends Omit<Front, 'snapshots'> {
   /** 전선을 보여 주는 연도 범위 (포함) */

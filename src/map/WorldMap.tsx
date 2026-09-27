@@ -143,6 +143,15 @@ export default function WorldMap({ data }: { data: StaticData }) {
       line: { feature: { type: 'Feature', properties: null, geometry: { type: 'LineString', coordinates: snapshot.line } }, bbox: [Math.min(...xs), Math.min(...ys), Math.max(...xs), Math.max(...ys)] } as Shape,
     };
   }, [war, snapshot]);
+  // 전쟁 중에는 이름표를 전선으로 나뉜 각 편의 점령 지역 안쪽에 둔다
+  const labelTerritories = useMemo(() => {
+    if (!war || !snapshot) return active;
+    return active.map((t) => {
+      const side = t.entityId === war.sides.north.entity ? 'north' : t.entityId === war.sides.south.entity ? 'south' : null;
+      const anchor = side && snapshot.anchors[side];
+      return anchor ? { ...t, anchor } : t;
+    });
+  }, [active, war, snapshot]);
 
   // ── 도형 불러오기 ─────────────────────────────────────────
   const geo = useRef(new Map<string, Map<string, TerritoryFeature>>());
@@ -488,7 +497,7 @@ export default function WorldMap({ data }: { data: StaticData }) {
       {size && projection && (
         <svg className="map-overlay" width={size.width} height={size.height} aria-hidden>
           {snapshot && <FrontArrowLayer snapshot={snapshot} projection={projection} />}
-          <LabelLayer territories={active} entities={data.entities} selectedId={selectedId} projection={projection} view={view} size={size} />
+          <LabelLayer territories={labelTerritories} entities={data.entities} selectedId={selectedId} projection={projection} view={view} size={size} />
           {hoveredEvent && selectedId && (
             <ArrowLayer data={data} event={hoveredEvent} selectedId={selectedId} projection={projection} />
           )}

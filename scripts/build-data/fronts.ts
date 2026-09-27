@@ -8,7 +8,7 @@ import {
   type FrontIndexEntry,
   type HistoryEvent,
 } from '../../src/schema/index.ts';
-import { bbox, difference, intersect, rewindForD3, roundCoords, union, type MultiCoords } from './geo.ts';
+import { anchorPoint, bbox, difference, intersect, rewindForD3, roundCoords, union, type MultiCoords } from './geo.ts';
 
 /** 날짜 문자열의 연도 (천문 연도) */
 export function yearOfDate(date: string): number {
@@ -80,7 +80,9 @@ export function buildFronts(fronts: Front[], regionCoords: (entityId: string, ye
         const north = intersect(area, northRing(s.line as [number, number][]));
         const south = difference(area, north);
         const out = (c: MultiCoords) => rewindForD3(roundCoords(c, 3)) as [number, number][][][];
-        return { ...s, year: yearOfDate(s.date), north: out(north), south: out(south), bbox: bbox(area) };
+        // 이름표 위치: 각 편 점령 지역의 가장 큰 조각 안쪽
+        const anchors = { north: north.length ? anchorPoint(north) : null, south: south.length ? anchorPoint(south) : null };
+        return { ...s, year: yearOfDate(s.date), north: out(north), south: out(south), bbox: bbox(area), anchors };
       }),
     };
   });
