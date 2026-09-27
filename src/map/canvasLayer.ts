@@ -188,7 +188,7 @@ function drawUnionOutline(
   projection: GeoProjection,
   preciseProjection: GeoProjection,
   view: View,
-  shapes: Shape[],
+  shapes: DrawShapes,
   width: number,
   color: string,
 ) {
@@ -204,15 +204,16 @@ function drawUnionOutline(
   off.setTransform(ctx.getTransform());
   const fast = geoPath(projection, off);
   const precise = geoPath(preciseProjection, off);
-  const trace = () => {
+  const trace = (list: Shape[]) => {
     off.beginPath();
-    for (const s of shapes) (crossesSeam(s.bbox, view) ? precise : fast)(s.feature);
+    for (const s of list) (crossesSeam(s.bbox, view) ? precise : fast)(s.feature);
   };
-  trace();
+  trace(shapes.stroke);
   off.lineJoin = 'round';
   off.lineWidth = width * 2;
   off.strokeStyle = color;
   off.stroke();
+  trace(shapes.fill);
   off.globalCompositeOperation = 'destination-out';
   off.fill();
   off.globalCompositeOperation = 'source-over';
@@ -329,13 +330,16 @@ export function drawMap(
 
   // 선택·hover 강조 테두리는 맨 위에. 같은 두께끼리 모아 합친 바깥선만 그린다
   // (귀속 논쟁 지역을 포함한 선택 나라, 여러 조각이나 격자 조각으로 된 영토도 안쪽 경계선 없이)
-  const groups = new Map<number, Shape[]>();
-  const addGroup = (width: number | undefined, shapes: Shape[]) => {
+  // 테두리는 테두리용 선(stroke)으로, 안쪽 지우기는 칠하기용 도형(fill)으로 한다. 격자 조각(fill)의 테두리를 그리면
+  // 조각을 잇는 폭 0인 "다리"(칸 경계를 따라 바다 위를 지나기도 함)가 지워지지 않고 영토 밖의 선으로 남는다
+  const groups = new Map<number, DrawShapes>();
+  const addGroup = (width: number | undefined, shapes: DrawShapes) => {
     if (!width) return;
-    groups.set(width, [...(groups.get(width) ?? []), ...shapes]);
+    const g = groups.get(width) ?? { fill: [], stroke: [] };
+    groups.set(width, { fill: [...g.fill, ...shapes.fill], stroke: [...g.stroke, ...shapes.stroke] });
   };
-  for (const t of territories) addGroup(t.highlight, t.fill);
-  for (const area of front?.areas ?? []) addGroup(area.highlight, area.shapes);
+  for (const t of territories) addGroup(t.highlight, t);
+  for (const area of front?.areas ?? []) addGroup(area.highlight, { fill: area.shapes, stroke: area.shapes });
   for (const [width, shapes] of [...groups].sort((a, b) => a[0] - b[0])) drawUnionOutline(ctx, projection, preciseProjection, view, shapes, width, palette.highlight);
   ctx.restore();
 
