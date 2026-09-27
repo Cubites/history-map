@@ -177,3 +177,16 @@
   basis:
     type: primary_source
     refs: ["『중화민국사』"]
+
+# ── 8번 묶음 (1945 ~ 현재) ──
+
+- id: prc
+  level: polity
+  names: { ko: 중화인민공화국, hanja: 中華人民共和國, en: People's Republic of China }
+  from: 1949
+  to: null
+  color: "#c9433a"
+  summary: 국공 내전에서 이긴 중국 공산당이 세운 나라. 6·25 전쟁에 군대를 보냈고(1950), 1992년 대한민국과 수교함
+  basis:
+    type: national_institution
+    refs: ["국사편찬위원회 『한국사』"]

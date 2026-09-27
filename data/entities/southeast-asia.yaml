@@ -1,0 +1,13 @@
+# 동남아시아
+# 8번 묶음(1945~현재)부터. 한국사와 관련된 시기의 영토만 대략 표시. 운영자 검수 필요.
+
+- id: south-vietnam
+  level: polity
+  names: { ko: 베트남 공화국, en: Republic of Vietnam }
+  from: 1955
+  to: 1975
+  color: "#c7a03e"
+  summary: 북위 17도선 이남의 남베트남. 베트남 전쟁 때 한국군이 파병됨(1964~1973). 1975년 북베트남에 의해 무너짐
+  basis:
+    type: national_institution
+    refs: ["국사편찬위원회 『한국사』"]

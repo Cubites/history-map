@@ -23,3 +23,16 @@
     type: primary_source
     refs: ["『속일본기』", "『신당서』 일본전"]
     foundingNote: 국호를 일본으로 바꾼 시기는 7세기 후반으로 학설에 따라 차이가 있음. 지도에서는 대보율령(701)을 기준으로 함
+
+# ── 8번 묶음 (1945 ~ 현재) ──
+
+- id: ryukyu-us
+  level: region
+  names: { ko: 미국 통치하의 오키나와, en: Okinawa under US administration }
+  from: 1945
+  to: 1972
+  color: "#b86b8a"
+  summary: 제2차 세계 대전 뒤 미국이 통치한 류큐 제도(오키나와). 1972년 일본에 반환됨
+  basis:
+    type: primary_source
+    refs: ["「샌프란시스코 강화 조약」 제3조"]

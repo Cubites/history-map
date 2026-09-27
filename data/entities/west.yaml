@@ -60,3 +60,16 @@
     type: national_institution
     refs: ["국사편찬위원회 『한국독립운동사』"]
     foundingNote: 1917년 10월 혁명부터 1922년 연방 결성 이전까지의 소비에트 러시아를 포함
+
+# ── 8번 묶음 (1945 ~ 현재) ──
+
+- id: russia-fed
+  level: polity
+  names: { ko: 러시아 연방, en: Russian Federation }
+  from: 1991
+  to: null
+  color: "#6f8f6f"
+  summary: 소련이 해체된 뒤(1991) 그 지위를 이어받은 나라. 북핵 문제를 다룬 6자 회담에 참여함
+  basis:
+    type: national_institution
+    refs: ["국사편찬위원회 『한국사』"]

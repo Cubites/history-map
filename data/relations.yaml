@@ -76,3 +76,11 @@
 # 일제 강점 (빗금)
 - { type: occupied_by, subject: occupied-korea, object: japan, from: 1910, to: 1945 }
 - { type: occupied_by, subject: occupied-china, object: japan, from: 1938, to: 1945 }
+
+# ── 8번 묶음 (1945 ~ 현재) ──
+- { type: occupied_by, subject: usamgik, object: usa, from: 1945, to: 1948 }
+- { type: occupied_by, subject: soviet-north, object: soviet-union, from: 1945, to: 1948 }
+- { type: occupied_by, subject: ryukyu-us, object: usa, from: 1945, to: 1972 }
+- { type: successor_of, subject: rok, object: usamgik, from: 1948, to: null }
+- { type: successor_of, subject: dprk, object: soviet-north, from: 1948, to: null }
+- { type: successor_of, subject: russia-fed, object: soviet-union, from: 1991, to: null }

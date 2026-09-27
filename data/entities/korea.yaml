@@ -267,3 +267,51 @@
   basis:
     type: national_institution
     refs: ["국사편찬위원회 『한국사』", "『조선총독부 관보』"]
+
+# ── 8번 묶음 (1945 ~ 현재) ──
+# 미·소 군정: 한국 땅 위에 점령국 색으로 빗금
+
+- id: usamgik
+  level: region
+  names: { ko: 미군정기 남한, en: US Army Military Government in Korea }
+  from: 1945
+  to: 1948
+  color: "#3e8ab8"
+  summary: 광복 뒤 북위 38도선 이남을 미군이 점령하고 군정을 실시한 시기(1945.9~1948.8). 조선 총독부 관리를 그대로 쓰고, 조선 인민 공화국과 대한민국 임시정부를 인정하지 않음
+  basis:
+    type: primary_source
+    refs: ["「맥아더 포고 제1호」", "국사편찬위원회 『한국사』"]
+
+- id: soviet-north
+  level: region
+  names: { ko: 소련군정기 북한, en: Soviet Civil Administration in North Korea }
+  from: 1945
+  to: 1948
+  color: "#3e8ab8"
+  summary: 광복 뒤 북위 38도선 이북을 소련군이 점령한 시기. 각 지역 인민 위원회를 통해 간접 통치했고, 북조선 임시 인민 위원회(1946)가 토지 개혁 등을 추진함
+  basis:
+    type: primary_source
+    refs: ["국사편찬위원회 『한국사』"]
+
+- id: rok
+  level: polity
+  names: { ko: 대한민국, hanja: 大韓民國, en: Republic of Korea }
+  from: 1948
+  to: null
+  color: "#3e8ab8"
+  summary: 1948년 5·10 총선거로 구성된 제헌 국회가 헌법을 만들고 8월 15일 정부를 수립함. 헌법 전문에서 3·1 운동으로 세워진 대한민국 임시정부의 법통을 이음. 유엔 총회에서 한반도의 유일한 합법 정부로 승인됨(1948.12)
+  basis:
+    type: national_institution
+    refs: ["「대한민국 헌법」", "국사편찬위원회 『한국사』"]
+    foundingNote: 1953년 정전 협정 이후 경계는 군사 분계선(휴전선)
+
+- id: dprk
+  level: polity
+  names: { ko: 북한, en: North Korea }
+  from: 1948
+  to: null
+  color: "#8a78ad"
+  summary: 1948년 9월 9일 김일성을 수상으로 조선 민주주의 인민 공화국 정부를 수립함. 6·25 전쟁을 일으켰으며, 김일성·김정일·김정은으로 이어지는 권력 세습 체제
+  basis:
+    type: national_institution
+    refs: ["국사편찬위원회 『한국사』", "통일부 『북한 이해』"]

@@ -1,0 +1,542 @@
+# 8번 묶음: 현대 (1945 ~ 현재)
+# 깊이: 한국사능력검정시험(심화) 수준. 서술은 새로 작성, 출처는 해당 기록이 실린 자료. 운영자 검수 필요.
+# 8·15 광복은 7번 묶음에 있다. 1945~1948년 남쪽 사건은 'usamgik'(미군정기 남한), 북쪽 사건은 'soviet-north'에 둔다.
+
+# ── 광복과 정부 수립 (1945 ~ 1948) ──────────────────────
+
+- id: division-1945
+  year: 1945
+  title:
+    ko: 건국 준비 위원회와 38도선 분할
+  summary:
+    ko: 광복 직후 여운형·안재홍이 조선 건국 준비 위원회를 만들어 치안을 맡고 조선 인민 공화국을 선포했다. 미국과 소련은 일본군의 무장 해제를 이유로 북위 38도선을 경계로 남북을 나누어 점령했다. 미군정은 조선 인민 공화국과 대한민국 임시정부를 인정하지 않았다.
+  subjects: [usamgik, soviet-north, usa, soviet-union]
+  links:
+    - { from: usa, to: usamgik, note: "38도선 이남 점령, 미군정" }
+    - { from: soviet-union, to: soviet-north, note: "38도선 이북 점령" }
+  tags: [politics]
+  sources: ["「맥아더 포고 제1호」", "국사편찬위원회 『한국사』"]
+
+- id: moscow-conference-1945
+  year: 1945
+  endYear: 1946
+  title:
+    ko: 모스크바 3국 외상 회의와 신탁 통치 논쟁
+  summary:
+    ko: 미국·영국·소련 외상이 모여 한국에 임시 민주 정부를 세우고, 이를 위해 미소 공동 위원회를 열며, 최대 5년간 신탁 통치를 실시하기로 했다. 우익은 반탁 운동을 벌였고 좌익은 결정을 총체적으로 지지하는 쪽으로 돌아서 좌우 대립이 심해졌다.
+  subjects: [usamgik, soviet-north, usa, soviet-union, uk]
+  links:
+    - { from: usa, to: usamgik, note: "임시 정부 수립·신탁 통치 결정" }
+    - { from: soviet-union, to: soviet-north, note: "임시 정부 수립·신탁 통치 결정" }
+  tags: [diplomacy, politics]
+  sources: ["「모스크바 3국 외상 회의 결정서」"]
+
+- id: joint-commission-1946
+  year: 1946
+  endYear: 1947
+  title:
+    ko: 미소 공동 위원회와 좌우 합작 운동
+  summary:
+    ko: 1차 미소 공동 위원회가 협의 대상 단체 문제로 결렬되자(1946), 이승만은 정읍에서 남한만의 단독 정부 수립을 주장했다. 여운형·김규식은 좌우 합작 위원회를 만들어 좌우 합작 7원칙을 발표했으나, 여운형이 암살되고 2차 미소 공동 위원회도 결렬되었다(1947).
+  subjects: [usamgik, usa, soviet-union]
+  links:
+    - { from: usa, to: soviet-union, note: "미소 공동 위원회" }
+  tags: [politics]
+  sources: ["「좌우 합작 7원칙」", "국사편찬위원회 『한국사』"]
+
+- id: north-land-reform-1946
+  year: 1946
+  title:
+    ko: 북조선 임시 인민 위원회와 토지 개혁
+  summary:
+    ko: 북쪽에서는 김일성을 위원장으로 북조선 임시 인민 위원회가 세워지고, 무상 몰수·무상 분배 방식의 토지 개혁과 주요 산업 국유화를 추진했다.
+  subjects: [soviet-north, soviet-union]
+  links:
+    - { from: soviet-union, to: soviet-north, note: "북조선 임시 인민 위원회 지원" }
+  tags: [politics, economy]
+  sources: ["「북조선 토지 개혁에 대한 법령」"]
+
+- id: un-transfer-1947
+  year: 1947
+  title:
+    ko: 한국 문제의 유엔 이관
+  summary:
+    ko: 미소 공동 위원회가 결렬되자 미국이 한국 문제를 유엔에 넘겼다. 유엔 총회는 인구 비례에 따른 남북한 총선거를 결의하고 유엔 한국 임시 위원단을 보냈으나, 소련이 위원단의 북한 입국을 거부했다.
+  subjects: [usamgik, soviet-north, usa, soviet-union]
+  links:
+    - { from: usa, to: usamgik, note: "한국 문제 유엔 이관" }
+    - { from: soviet-union, to: soviet-north, note: "유엔 위원단 입북 거부" }
+  tags: [diplomacy]
+  sources: ["유엔 총회 결의 제112호"]
+
+- id: jeju-april-3-1948
+  year: 1948
+  endYear: 1954
+  title:
+    ko: 제주 4·3 사건
+  summary:
+    ko: 남한 단독 선거 반대와 경찰·서북 청년회의 탄압에 맞서 제주도의 좌익 세력이 봉기했고, 진압 과정에서 많은 주민이 희생되었다. 2000년 제주 4·3 특별법이 제정되어 진상 규명과 명예 회복이 시작되었다.
+  subjects: [usamgik, rok]
+  tags: [society]
+  sources: ["「제주 4·3 사건 진상 조사 보고서」 (2003)"]
+
+- id: south-north-talks-1948
+  year: 1948
+  title:
+    ko: 남북 협상
+  summary:
+    ko: 김구는 「삼천만 동포에게 읍고함」을 발표하고, 김규식과 함께 평양에 가서 남북 지도자 회의를 열어 단독 정부 수립 반대를 결의했으나 성과를 거두지 못했다.
+  subjects: [usamgik, soviet-north]
+  links:
+    - { from: usamgik, to: soviet-north, note: "김구·김규식의 방북" }
+  tags: [politics]
+  sources: ["김구, 「삼천만 동포에게 읍고함」"]
+
+- id: rok-founded-1948
+  year: 1948
+  title:
+    ko: 5·10 총선거와 대한민국 정부 수립
+  summary:
+    ko: 우리나라 최초의 민주 선거인 5·10 총선거(보통·직접·평등·비밀 선거)로 제헌 국회가 구성되었다. 제헌 국회는 대통령 중심제와 국회 간선제를 담은 헌법을 공포하고, 이승만을 대통령으로 뽑았다. 8월 15일 대한민국 정부가 수립되었고, 12월 유엔 총회에서 한반도의 유일한 합법 정부로 승인받았다.
+  subjects: [usamgik, rok, usa]
+  links:
+    - { from: usamgik, to: rok, note: "정부 수립" }
+  tags: [politics]
+  sources: ["「대한민국 헌법」 (1948)", "유엔 총회 결의 제195호"]
+
+- id: dprk-founded-1948
+  year: 1948
+  title:
+    ko: 북한 정부 수립
+  summary:
+    ko: 북쪽에서는 최고 인민 회의 선거를 거쳐 9월 9일 김일성을 수상으로 조선 민주주의 인민 공화국 정부를 세웠다.
+  subjects: [soviet-north, dprk]
+  links:
+    - { from: soviet-north, to: dprk, note: "정부 수립" }
+  tags: [politics]
+  sources: ["국사편찬위원회 『한국사』"]
+
+- id: yeosun-1948
+  year: 1948
+  title:
+    ko: 여수·순천 10·19 사건
+  summary:
+    ko: 제주 4·3 사건 진압 출동을 거부한 여수 주둔 국군 일부가 봉기해 여수·순천 일대를 장악했다가 진압되었다. 이를 계기로 국가 보안법이 제정되었다.
+  subjects: [rok]
+  tags: [society, politics]
+  sources: ["「국가 보안법」 (1948)", "국사편찬위원회 『한국사』"]
+
+- id: anti-collab-1948
+  year: 1948
+  endYear: 1949
+  title:
+    ko: 반민족 행위 처벌법과 반민 특위
+  summary:
+    ko: 제헌 국회가 반민족 행위 처벌법을 만들고 반민족 행위 특별 조사 위원회(반민 특위)를 두어 친일파를 조사했다. 이승만 정부의 비협조와 국회 프락치 사건, 경찰의 반민 특위 습격으로 활동이 크게 위축되어 친일 청산은 제대로 이루어지지 못했다.
+  subjects: [rok]
+  tags: [politics]
+  sources: ["「반민족 행위 처벌법」"]
+
+- id: land-reform-1949
+  year: 1949
+  endYear: 1950
+  title:
+    ko: 농지 개혁법과 김구 암살
+  summary:
+    ko: 3정보를 상한으로 유상 매수·유상 분배하는 농지 개혁법이 제정되어(1949) 1950년부터 시행되었다. 자영농이 늘었지만 대상에서 산림·임야는 빠졌다. 같은 해(1949) 김구가 암살되었다. 귀속 재산 처리법도 제정되었다.
+  subjects: [rok]
+  tags: [economy, politics]
+  sources: ["「농지 개혁법」", "「귀속 재산 처리법」"]
+
+# ── 6·25 전쟁 (1950 ~ 1953) ─────────────────────────────
+
+- id: korean-war-1950
+  year: 1950
+  title:
+    ko: 6·25 전쟁 발발
+  summary:
+    ko: 미국이 한반도를 방위선에서 제외한 애치슨 선언(1950.1) 뒤, 북한이 소련과 중국의 지원을 받아 6월 25일 남침했다. 3일 만에 서울이 함락되고 국군은 낙동강 방어선까지 밀렸다. 유엔 안전 보장 이사회는 유엔군 파병을 결의했다.
+  subjects: [dprk, rok, soviet-union, usa]
+  links:
+    - { from: dprk, to: rok, note: "남침" }
+    - { from: soviet-union, to: dprk, note: "무기 지원·남침 승인" }
+    - { from: usa, to: rok, note: "유엔군 참전" }
+  tags: [war]
+  sources: ["유엔 안전 보장 이사회 결의 제82·83호", "국방부 군사편찬연구소 『6·25 전쟁사』"]
+
+- id: incheon-1950
+  year: 1950
+  title:
+    ko: 인천 상륙 작전과 중국군 참전
+  summary:
+    ko: 유엔군이 인천 상륙 작전(9.15)으로 전세를 뒤집어 서울을 되찾고(9.28) 압록강까지 진격했다. 그러나 중국군이 대규모로 참전해(10월) 흥남 철수를 거쳐 1951년 1월 서울을 다시 빼앗겼다(1·4 후퇴).
+  subjects: [rok, usa, dprk, prc]
+  links:
+    - { from: usa, to: dprk, note: "인천 상륙, 북진" }
+    - { from: prc, to: rok, note: "중국군 참전" }
+  tags: [war]
+  sources: ["국방부 군사편찬연구소 『6·25 전쟁사』"]
+
+- id: armistice-1953
+  year: 1951
+  endYear: 1953
+  title:
+    ko: 정전 협상과 정전 협정
+  summary:
+    ko: 전선이 38도선 부근에서 교착되자 소련의 제의로 정전 회담이 시작되었다(1951). 포로 송환 문제로 협상이 길어졌고, 이승만 정부는 반공 포로를 석방하며 반대했다. 1953년 7월 27일 유엔군·북한·중국 사이에 정전 협정이 맺어져 군사 분계선과 비무장 지대가 설정되었다. 이어 한미 상호 방위 조약이 체결되었다(1953.10).
+  subjects: [rok, dprk, usa, prc]
+  links:
+    - { from: usa, to: dprk, note: "정전 협정 (유엔군 측)" }
+    - { from: prc, to: rok, note: "정전 협정 (중국군 측)" }
+    - { from: usa, to: rok, note: "한미 상호 방위 조약" }
+  tags: [war, diplomacy]
+  sources: ["「정전 협정」", "「한미 상호 방위 조약」"]
+
+- id: war-damage-1953
+  year: 1953
+  title:
+    ko: 전쟁의 피해와 전후 복구
+  summary:
+    ko: 전쟁으로 수백만 명이 죽거나 다치고 1천만 이산가족이 생겼으며, 국토가 황폐해졌다. 노근리 사건, 거창 사건, 국민 보도 연맹 사건 등 민간인 학살도 일어났다. 남한은 미국의 원조로 제분·제당·면방직의 삼백 산업이 성장했고, 북한은 중공업 우선 정책과 천리마 운동(1958)으로 복구했다.
+  subjects: [rok, dprk, usa]
+  links:
+    - { from: usa, to: rok, note: "원조 경제 (삼백 산업)" }
+  tags: [society, economy]
+  sources: ["국사편찬위원회 『한국사』"]
+
+# ── 이승만 정부와 4·19 혁명 (1951 ~ 1960) ───────────────
+
+- id: san-francisco-1951
+  year: 1951
+  endYear: 1952
+  title:
+    ko: 샌프란시스코 강화 조약과 평화선
+  summary:
+    ko: 연합국이 일본과 강화 조약을 맺었으나 한국은 참가하지 못했고, 조약에 독도가 명시되지 않아 이후 일본이 영유권을 주장하는 빌미가 되었다. 이승만 정부는 평화선(1952)을 선포해 독도를 포함한 해양 주권을 밝혔다.
+  subjects: [japan, usa, rok]
+  links:
+    - { from: usa, to: japan, note: "강화 조약, 미군정 종료" }
+    - { from: rok, to: japan, note: "평화선 선포" }
+  tags: [diplomacy]
+  sources: ["「샌프란시스코 강화 조약」", "「인접 해양의 주권에 대한 대통령 선언」 (1952)"]
+
+- id: constitutional-amendments-1952
+  year: 1952
+  endYear: 1954
+  title:
+    ko: 발췌 개헌과 사사오입 개헌
+  summary:
+    ko: 국회 간선으로는 재선이 어려워지자 이승만 정부는 임시 수도 부산에서 계엄령을 내리고 대통령 직선제를 담은 발췌 개헌을 통과시켰다(1952). 이어 초대 대통령에 한해 중임 제한을 없애는 개헌안을 사사오입 논리로 통과시켰다(1954).
+  subjects: [rok]
+  tags: [politics]
+  sources: ["「대한민국 헌법」 제1·2차 개정", "국회 속기록"]
+
+- id: progressive-party-1958
+  year: 1958
+  endYear: 1959
+  title:
+    ko: 진보당 사건과 독재 강화
+  summary:
+    ko: 1956년 대통령 선거에서 평화 통일론을 내세워 많은 표를 얻은 조봉암을 간첩 혐의로 사형에 처했다(진보당 사건, 1959 집행). 국가 보안법을 강화하는 2·4 파동(1958)을 일으키고, 정부를 비판한 『경향신문』을 폐간했다(1959).
+  subjects: [rok]
+  tags: [politics]
+  sources: ["국사편찬위원회 『한국사』"]
+
+- id: april-19-1960
+  year: 1960
+  title:
+    ko: 3·15 부정 선거와 4·19 혁명
+  summary:
+    ko: 자유당 정권이 3·15 정·부통령 선거에서 대규모 부정 선거를 저지르자 마산에서 시위가 일어났고, 김주열 학생의 시신이 발견되면서 4월 19일 전국적인 시위로 번졌다. 대학 교수단 시국 선언 뒤 이승만이 물러났다. 허정 과도 정부를 거쳐 내각 책임제와 양원제 개헌이 이루어지고 장면 내각이 출범했다.
+  subjects: [rok]
+  tags: [politics, society]
+  sources: ["「4·19 선언문」", "「대한민국 헌법」 제3차 개정"]
+
+# ── 박정희 정부 (1961 ~ 1979) ───────────────────────────
+
+- id: may-16-1961
+  year: 1961
+  title:
+    ko: 5·16 군사 정변
+  summary:
+    ko: 박정희 등 군인들이 정변을 일으켜 국가 재건 최고 회의를 만들고 반공을 국시로 삼았다. 중앙정보부를 두었으며, 대통령 중심제 개헌(1962) 뒤 박정희가 대통령에 당선되었다(1963).
+  subjects: [rok]
+  tags: [politics]
+  sources: ["「혁명 공약」", "「대한민국 헌법」 제5차 개정"]
+
+- id: five-year-plan-1962
+  year: 1962
+  endYear: 1971
+  title:
+    ko: 경제 개발 5개년 계획
+  summary:
+    ko: 제1·2차 경제 개발 5개년 계획으로 노동 집약적 경공업과 수출 주도형 성장을 추진했다. 경부 고속 국도가 개통되고(1970), 농촌 근대화를 위한 새마을 운동이 시작되었다(1970). 한편 저임금·장시간 노동에 항의해 전태일이 분신했다(1970).
+  subjects: [rok]
+  tags: [economy]
+  sources: ["「제1차 경제 개발 5개년 계획」", "국사편찬위원회 『한국사』"]
+
+- id: korea-japan-treaty-1965
+  year: 1964
+  endYear: 1965
+  title:
+    ko: 6·3 시위와 한일 기본 조약
+  summary:
+    ko: 경제 개발 자금을 마련하려 일본과 국교 정상화를 추진하자(김종필·오히라 메모) 굴욕 외교에 반대하는 6·3 시위가 일어났다(1964). 정부는 계엄령을 내리고 한일 기본 조약을 맺었으나(1965), 식민 지배에 대한 사과와 배상 문제는 해결되지 않았다.
+  subjects: [rok, japan]
+  links:
+    - { from: japan, to: rok, note: "청구권 자금 (무상 3억·유상 2억 달러)" }
+    - { from: rok, to: japan, note: "국교 정상화" }
+  tags: [diplomacy]
+  sources: ["「한일 기본 조약」", "「청구권 협정」"]
+
+- id: vietnam-dispatch-1964
+  year: 1964
+  endYear: 1973
+  title:
+    ko: 베트남 파병과 브라운 각서
+  summary:
+    ko: 미국의 요청으로 국군을 베트남에 파병했다. 미국은 브라운 각서(1966)로 국군 현대화와 경제 원조를 약속했고, 베트남 특수로 경제가 성장했다. 한편 전사자와 고엽제 피해, 민간인 피해 문제를 남겼다.
+  subjects: [rok, usa, south-vietnam]
+  links:
+    - { from: rok, to: south-vietnam, note: "국군 파병" }
+    - { from: usa, to: rok, note: "파병 요청, 브라운 각서" }
+  tags: [war, diplomacy]
+  sources: ["「브라운 각서」", "국방부 『파월 한국군 전사』"]
+
+- id: jan-21-1968
+  year: 1968
+  endYear: 1969
+  title:
+    ko: 1·21 사태와 3선 개헌
+  summary:
+    ko: 북한 무장 공비가 청와대를 습격하려 한 1·21 사태와 미국 정보함 푸에블로호 납치 사건이 일어났다. 정부는 향토 예비군을 창설하고 국민 교육 헌장을 선포했다(1968). 박정희는 대통령의 3회 연임을 허용하는 3선 개헌을 강행했다(1969).
+  subjects: [rok, dprk, usa]
+  links:
+    - { from: dprk, to: rok, note: "청와대 습격 시도" }
+    - { from: dprk, to: usa, note: "푸에블로호 납치" }
+  tags: [politics]
+  sources: ["「대한민국 헌법」 제6차 개정", "국사편찬위원회 『한국사』"]
+
+- id: july-4-1972
+  year: 1972
+  title:
+    ko: 7·4 남북 공동 성명과 유신 체제
+  summary:
+    ko: 닉슨 독트린 등 데탕트 속에서 남북이 자주·평화·민족적 대단결의 통일 3대 원칙을 담은 7·4 남북 공동 성명을 발표하고 남북 조절 위원회를 두었다. 그러나 남에서는 10월 유신(대통령 간선·임기 6년·중임 제한 없음·긴급 조치권)이, 북에서는 사회주의 헌법(주석제)이 선포되어 두 체제의 독재가 강화되었다.
+  subjects: [rok, dprk]
+  links:
+    - { from: rok, to: dprk, note: "7·4 남북 공동 성명" }
+    - { from: dprk, to: rok, note: "7·4 남북 공동 성명" }
+  tags: [politics, diplomacy]
+  sources: ["「7·4 남북 공동 성명」", "「대한민국 헌법」 제7차 개정 (유신 헌법)"]
+
+- id: heavy-industry-1973
+  year: 1973
+  endYear: 1979
+  title:
+    ko: 중화학 공업 육성과 석유 파동
+  summary:
+    ko: 제3·4차 경제 개발 계획으로 철강·조선·석유 화학 등 중화학 공업을 키웠다(포항 제철 준공 1973). 1차 석유 파동은 중동 건설 붐으로 극복하고 수출 100억 달러를 달성했으나(1977), 2차 석유 파동(1979)과 중복 투자로 경제가 어려워졌다.
+  subjects: [rok]
+  tags: [economy]
+  sources: ["국사편찬위원회 『한국사』"]
+
+- id: anti-yushin-1973
+  year: 1973
+  endYear: 1979
+  title:
+    ko: 유신 반대 운동과 10·26 사태
+  summary:
+    ko: 개헌 청원 100만인 서명 운동(1973), 3·1 민주 구국 선언(1976) 등 유신 반대 운동이 이어졌고, 정부는 긴급 조치로 탄압했다(민청학련 사건, 인혁당 재건위 사건). 1979년 YH 무역 사건과 김영삼 의원 제명을 계기로 부산·마산에서 부마 민주 항쟁이 일어났고, 10월 26일 박정희가 김재규에게 피살되었다.
+  subjects: [rok]
+  tags: [politics, society]
+  sources: ["「3·1 민주 구국 선언」", "국사편찬위원회 『한국사』"]
+
+# ── 전두환 정부와 6월 민주 항쟁 (1979 ~ 1987) ──────────
+
+- id: may-18-1980
+  year: 1979
+  endYear: 1980
+  title:
+    ko: 12·12 사태와 5·18 민주화 운동
+  summary:
+    ko: 전두환 등 신군부가 12·12 사태로 군권을 장악했다. 1980년 서울의 봄에 민주화 요구가 커지자 신군부는 비상계엄을 전국으로 확대했고, 광주에서 계엄군이 시민을 무력으로 진압해 많은 사상자가 났다(5·18 민주화 운동). 시민들은 시민군을 만들어 맞섰다. 관련 기록물은 2011년 유네스코 세계 기록 유산에 등재되었다.
+  subjects: [rok]
+  tags: [politics, society]
+  sources: ["「5·18 민주화 운동 등에 관한 특별법」", "5·18 민주화 운동 기록물"]
+
+- id: chun-government-1980
+  year: 1980
+  endYear: 1986
+  title:
+    ko: 전두환 정부의 강압과 유화 정책
+  summary:
+    ko: 신군부가 국가 보위 비상 대책 위원회를 만들고 삼청 교육대를 운영했다. 7년 단임 간선제 헌법으로 전두환 정부가 출범했다(1981). 언론 통폐합으로 언론을 통제하는 한편 야간 통행금지 해제, 교복 자율화, 프로 야구 출범 등 유화 정책을 폈고, 3저 호황(저달러·저유가·저금리)으로 경제가 성장했다. 남북 이산가족이 처음으로 고향을 방문했다(1985).
+  subjects: [rok, dprk]
+  links:
+    - { from: rok, to: dprk, note: "첫 이산가족 고향 방문 (1985)" }
+  tags: [politics, economy]
+  sources: ["「대한민국 헌법」 제8차 개정", "국사편찬위원회 『한국사』"]
+
+- id: june-struggle-1987
+  year: 1987
+  title:
+    ko: 6월 민주 항쟁과 6·29 민주화 선언
+  summary:
+    ko: 박종철 고문치사 사건과 4·13 호헌 조치에 맞서 "호헌 철폐, 독재 타도"를 외치는 시위가 전국에서 일어났고, 이한열이 최루탄에 맞아 숨졌다. 결국 노태우가 대통령 직선제를 받아들이는 6·29 민주화 선언을 발표했다. 5년 단임 대통령 직선제의 현행 헌법(9차 개헌)이 만들어졌다.
+  subjects: [rok]
+  tags: [politics, society]
+  sources: ["「6·29 민주화 선언」", "「대한민국 헌법」 제9차 개정"]
+
+# ── 민주화 이후 (1988 ~ ) ───────────────────────────────
+
+- id: seoul-olympics-1988
+  year: 1988
+  title:
+    ko: 서울 올림픽과 북방 외교
+  summary:
+    ko: 노태우 정부 때 서울 올림픽이 동서 진영이 함께 참가한 가운데 열렸다. 정부는 공산권 나라들과 관계를 넓히는 북방 외교를 추진해 헝가리·소련(1990)·중국(1992)과 수교했다.
+  subjects: [rok, soviet-union]
+  links:
+    - { from: rok, to: soviet-union, note: "북방 외교" }
+  tags: [diplomacy, culture]
+  sources: ["국사편찬위원회 『한국사』"]
+
+- id: korea-ussr-1990
+  year: 1990
+  title:
+    ko: 한소 수교
+  summary:
+    ko: 대한민국과 소련이 국교를 맺었다.
+  subjects: [rok, soviet-union]
+  links:
+    - { from: rok, to: soviet-union, note: "수교" }
+  tags: [diplomacy]
+  sources: ["외교부 『한국 외교 60년』"]
+
+- id: un-membership-1991
+  year: 1991
+  title:
+    ko: 남북한 유엔 동시 가입과 남북 기본 합의서
+  summary:
+    ko: 남북한이 유엔에 동시에 가입했다. 이어 서로의 체제를 인정하고 상호 불가침과 교류·협력을 약속한 남북 기본 합의서를 채택했고, 한반도 비핵화 공동 선언을 발표했다.
+  subjects: [rok, dprk]
+  links:
+    - { from: rok, to: dprk, note: "남북 기본 합의서" }
+    - { from: dprk, to: rok, note: "남북 기본 합의서" }
+  tags: [diplomacy]
+  sources: ["「남북 사이의 화해와 불가침 및 교류·협력에 관한 합의서」", "「한반도의 비핵화에 관한 공동 선언」"]
+
+- id: korea-china-1992
+  year: 1992
+  title:
+    ko: 한중 수교
+  summary:
+    ko: 대한민국과 중화인민공화국이 국교를 맺었다. 대한민국은 중화민국(타이완)과 단교했다.
+  subjects: [rok, prc, roc]
+  links:
+    - { from: rok, to: prc, note: "수교" }
+    - { from: rok, to: roc, note: "단교" }
+  tags: [diplomacy]
+  sources: ["「한중 수교 공동 성명」"]
+
+- id: kim-youngsam-1993
+  year: 1993
+  endYear: 1996
+  title:
+    ko: 김영삼 정부의 개혁
+  summary:
+    ko: 32년 만의 문민정부로 금융 실명제를 실시하고(1993), 하나회를 해체했으며, 지방 자치제를 전면 실시했다(1995). 역사 바로 세우기로 조선 총독부 건물을 철거하고 전두환·노태우를 구속했다. 경제 협력 개발 기구(OECD)에 가입했다(1996).
+  subjects: [rok]
+  tags: [politics, economy]
+  sources: ["「금융 실명 거래 및 비밀 보장에 관한 긴급 재정 경제 명령」", "국사편찬위원회 『한국사』"]
+
+- id: geneva-1994
+  year: 1994
+  title:
+    ko: 김일성 사망과 북미 제네바 합의
+  summary:
+    ko: 1차 북핵 위기 속에 남북 정상 회담을 앞두고 김일성이 사망했고 김정일이 권력을 이었다. 북한과 미국은 북한의 핵 동결 대가로 경수로를 지어 주기로 한 제네바 합의를 맺었다.
+  subjects: [dprk, usa]
+  links:
+    - { from: usa, to: dprk, note: "제네바 합의 (경수로 지원)" }
+    - { from: dprk, to: usa, note: "핵 동결" }
+  tags: [diplomacy]
+  sources: ["「북미 기본 합의문」"]
+
+- id: imf-crisis-1997
+  year: 1997
+  endYear: 2001
+  title:
+    ko: 외환 위기와 극복
+  summary:
+    ko: 외환 보유액이 바닥나 국제 통화 기금(IMF)의 구제 금융을 받았다. 김대중 정부는 금 모으기 운동, 노사정 위원회, 기업·금융 구조 조정으로 위기를 극복하고 2001년 구제 금융을 모두 갚았으나, 실업과 비정규직이 늘었다.
+  subjects: [rok]
+  tags: [economy]
+  sources: ["국사편찬위원회 『한국사』"]
+
+- id: june-15-2000
+  year: 1998
+  endYear: 2000
+  title:
+    ko: 햇볕 정책과 6·15 남북 공동 선언
+  summary:
+    ko: 김대중 정부가 대북 화해·협력 정책(햇볕 정책)을 펴서 정주영의 소 떼 방북과 금강산 관광(1998)이 이루어졌다. 2000년 평양에서 첫 남북 정상 회담이 열려 6·15 남북 공동 선언을 발표했고, 이산가족 상봉과 경의선 복구, 개성 공단 건설(2003 착공)로 이어졌다.
+  subjects: [rok, dprk]
+  links:
+    - { from: rok, to: dprk, note: "남북 정상 회담, 금강산 관광" }
+    - { from: dprk, to: rok, note: "6·15 남북 공동 선언" }
+  tags: [diplomacy]
+  sources: ["「6·15 남북 공동 선언」"]
+
+- id: world-cup-2002
+  year: 2002
+  title:
+    ko: 한일 월드컵
+  summary:
+    ko: 대한민국과 일본이 함께 월드컵 축구 대회를 열었다.
+  subjects: [rok, japan]
+  links:
+    - { from: rok, to: japan, note: "공동 개최" }
+  tags: [culture]
+  sources: ["국사편찬위원회 『한국사』"]
+
+- id: six-party-2003
+  year: 2003
+  endYear: 2007
+  title:
+    ko: 6자 회담과 북한 핵 실험
+  summary:
+    ko: 2차 북핵 위기를 풀기 위해 남북한·미국·중국·일본·러시아가 6자 회담을 열어 9·19 공동 성명(2005)에 합의했으나, 북한은 1차 핵 실험을 했다(2006). 노무현 정부 때 두 번째 남북 정상 회담에서 10·4 남북 정상 선언을 발표했다(2007).
+  subjects: [dprk, rok, usa, prc, japan, russia-fed]
+  links:
+    - { from: prc, to: dprk, note: "6자 회담 주최" }
+    - { from: rok, to: dprk, note: "10·4 남북 정상 선언 (2007)" }
+  tags: [diplomacy]
+  sources: ["「9·19 공동 성명」", "「10·4 남북 정상 선언」"]
+
+- id: korea-us-fta-2007
+  year: 2007
+  endYear: 2012
+  title:
+    ko: 한미 자유 무역 협정
+  summary:
+    ko: 한·칠레 FTA(2004) 이후 대한민국과 미국이 자유 무역 협정을 타결했고(2007), 2012년 발효되었다.
+  subjects: [rok, usa]
+  links:
+    - { from: rok, to: usa, note: "FTA 체결" }
+  tags: [economy, diplomacy]
+  sources: ["「대한민국과 미합중국 간의 자유 무역 협정」"]
+
+- id: panmunjom-2018
+  year: 2018
+  title:
+    ko: 판문점 선언
+  summary:
+    ko: 판문점에서 남북 정상 회담이 열려 한반도의 완전한 비핵화와 평화 체제 구축을 약속한 판문점 선언을 발표했다. 같은 해 북미 정상 회담(싱가포르)과 평양 남북 정상 회담(9·19 평양 공동 선언)이 이어졌다.
+  subjects: [rok, dprk, usa]
+  links:
+    - { from: rok, to: dprk, note: "판문점 선언" }
+    - { from: usa, to: dprk, note: "북미 정상 회담" }
+  tags: [diplomacy]
+  sources: ["「한반도의 평화와 번영, 통일을 위한 판문점 선언」"]
