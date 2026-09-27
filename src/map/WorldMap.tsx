@@ -54,6 +54,8 @@ const SETTLE_MS = 150;
 /** 선택·hover한 영토의 강조 테두리 두께(px) */
 const SELECTED_WIDTH = 2.5;
 const HOVER_WIDTH = 1.5;
+/** 영토 파일을 받지 못했을 때 다시 시도하기까지의 시간(ms) */
+const RETRY_MS = 5000;
 
 /**
  * 정밀도 단계 (DESIGN.md §3.1). 움직이는 동안에는 가볍게, 멈추거나 확대하면 정밀하게 그린다.
@@ -150,8 +152,12 @@ export default function WorldMap({ data }: { data: StaticData }) {
           })
           .catch((e: Error) => {
             // 한 나라의 한 단계 파일이 없어도 다른 단계로 대신 그리므로(featureFor) 지도 전체 오류로 띄우지 않는다.
-            // 매 프레임 다시 요청하지 않도록 요청 기록은 남겨 둔다.
+            // 매 프레임 다시 요청하지 않도록 요청 기록은 잠시 남겨 두었다가, 일시적인 실패(배포 직후 등)일 수 있으니 뒤에 다시 시도한다.
             console.warn(`영토 파일을 불러오지 못함 (${key}): ${e.message}`);
+            window.setTimeout(() => {
+              requested.current.delete(key);
+              setGeoVersion((v) => v + 1);
+            }, RETRY_MS);
           });
       }
     },
