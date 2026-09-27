@@ -505,6 +505,7 @@ button {
 
 /* 전쟁 보기의 진군 경로·전투·거점 (DESIGN.md §4.5) */
 .war-route-ahead { fill: none; stroke-width: 2; stroke-dasharray: 2 5; stroke-linecap: round; opacity: 0.55; }
+.war-route-halo { fill: none; stroke: var(--surface); stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; opacity: 0.85; }
 .war-route-done { fill: none; stroke-width: 3.5; stroke-linecap: round; stroke-linejoin: round; }
 .war-route-stop { fill: var(--surface); stroke-width: 2; }
 .war-route-label, .war-route-name, .war-hold-label, .war-battle-label {

@@ -2,6 +2,9 @@ import type { GeoProjection } from 'd3-geo';
 import { dateKey, factionColor, factionStroke, formatFrontDate } from '../lib/wars.ts';
 import type { FrontSnapshotOut, TheaterOut, WarIndexEntry } from '../schema/index.ts';
 
+/** 경로 지점 이름 사이의 최소 화면 거리(px) */
+const LABEL_GAP = 46;
+
 interface Props {
   war: WarIndexEntry;
   theater: TheaterOut;
@@ -35,7 +38,18 @@ export function WarDetailLayer({ war, theater, snapshot, projection, entityColor
       if (k <= now) reached = i;
     });
     const screen = route.points.map((p) => xy(p.at));
-    return { ri, route, reached, screen, stroke: factionStroke(war, route.faction, entityColor) };
+    // 지점 이름이 겹치지 않게, 앞에서 이름을 붙인 지점과 화면에서 가까우면 건너뛴다 (가장 최근 지점은 항상 붙인다)
+    const labeled = new Set<number>();
+    let lastLabeled: [number, number] | null = null;
+    for (let i = reached; i >= 0; i--) {
+      const p = screen[i];
+      if (!p) continue;
+      if (i === reached || !lastLabeled || Math.hypot(p[0] - lastLabeled[0], p[1] - lastLabeled[1]) > LABEL_GAP) {
+        labeled.add(i);
+        lastLabeled = p;
+      }
+    }
+    return { ri, route, reached, screen, labeled, stroke: factionStroke(war, route.faction, entityColor) };
   });
 
   const battles = theater.battles
@@ -56,6 +70,7 @@ export function WarDetailLayer({ war, theater, snapshot, projection, entityColor
       {routes.map((r) => (
         <g key={r.ri} className="war-route" aria-hidden>
           <path className="war-route-ahead" d={pathOf(r.screen)} style={{ stroke: r.stroke }} />
+          {r.reached >= 1 && <path className="war-route-halo" d={pathOf(r.screen.slice(0, r.reached + 1))} />}
           {r.reached >= 1 && (
             <path className="war-route-done" d={pathOf(r.screen.slice(0, r.reached + 1))} style={{ stroke: r.stroke }} markerEnd={`url(#route-head-${r.ri})`} />
           )}
@@ -65,7 +80,7 @@ export function WarDetailLayer({ war, theater, snapshot, projection, entityColor
             return (
               <g key={i}>
                 <circle className="war-route-stop" cx={p[0]} cy={p[1]} r={3.2} style={{ stroke: r.stroke }} />
-                {(point.label || point.date) && (
+                {r.labeled.has(i) && (point.label || point.date) && (
                   <text className="war-route-label" x={p[0] + 6} y={p[1] - 5}>
                     {point.label}
                     {point.date && <tspan className="war-route-date"> {formatFrontDate(point.date).replace(/^\d+\./, '')}</tspan>}
