@@ -11,9 +11,23 @@ export function inDecade(event: HistoryEvent, year: number): boolean {
   return event.year <= start + 9 && (event.endYear ?? event.year) >= start;
 }
 
+/**
+ * 사건 연도 표기. 정밀도(precision)에 따라
+ * - year: 기원전 108 / 1950
+ * - decade: 기원전 280 무렵
+ * - century: 기원전 10세기 (기간이면 기원전 20세기–기원전 11세기)
+ */
 export function formatEventYears(event: HistoryEvent): string {
   const y = (v: number) => (v <= 0 ? `기원전 ${1 - v}` : String(v));
-  return event.endYear !== undefined && event.endYear !== event.year ? `${y(event.year)}–${y(event.endYear)}` : y(event.year);
+  const century = (v: number) => (v <= 0 ? `기원전 ${Math.ceil((1 - v) / 100)}세기` : `${Math.ceil(v / 100)}세기`);
+  const one = event.precision === 'century' ? century : y;
+  const hasRange = event.endYear !== undefined && event.endYear !== event.year;
+  if (event.precision === 'century') {
+    const [a, b] = [century(event.year), hasRange ? century(event.endYear!) : ''];
+    return b && b !== a ? `${a}–${b}` : a;
+  }
+  const text = hasRange ? `${one(event.year)}–${one(event.endYear!)}` : one(event.year);
+  return event.precision === 'decade' ? `${text} 무렵` : text;
 }
 
 export type LinkDirection = 'in' | 'out' | 'other';

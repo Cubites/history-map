@@ -1,0 +1,203 @@
+# 1번 묶음: 고조선과 여러 나라 (기원전 2333 ~ 기원전 1세기)
+# 깊이: 한국사능력검정시험(심화) 수준. 서술은 새로 작성, 출처는 해당 기록이 실린 사료. 운영자 검수 필요.
+# 연도는 천문 연도: 기원전 1년 = 0, 기원전 108년 = -107.
+# 연대가 분명하지 않은 사건은 precision: century(세기) 또는 decade(무렵)로 적는다.
+# 삼국의 건국(기원전 57~)부터는 2번 묶음에서 다룬다.
+
+# ── 고조선의 건국과 발전 ────────────────────────────────
+
+- id: gojoseon-founded
+  year: -2332
+  title:
+    ko: 고조선 건국과 단군 신화
+  summary:
+    ko: 단군왕검이 아사달에 도읍해 고조선을 세웠다고 전한다. 단군 신화에는 하늘의 자손이라는 선민사상, 환웅 부족과 곰을 숭배하는 부족의 결합(토테미즘), 바람·비·구름을 다스리는 농경 사회, 제사장(단군)과 정치 지배자(왕검)를 겸한 제정일치 사회, 널리 인간을 이롭게 한다는 홍익인간의 이념이 담겨 있다. 단군 신화는 『삼국유사』·『제왕운기』·『세종실록』 지리지·『동국여지승람』 등에 실려 있다.
+  subjects: [gojoseon]
+  tags: [politics]
+  sources: ["『삼국유사』 기이 고조선(왕검조선)", "『제왕운기』", "『동국통감』"]
+
+- id: bronze-age
+  year: -1999
+  endYear: -1000
+  precision: century
+  title:
+    ko: 청동기 문화와 고조선의 세력 범위
+  summary:
+    ko: 한반도와 만주에서 청동기 문화가 발전하면서 계급이 생기고 군장(족장)이 나타났다. 비파형 동검, 고인돌(탁자식), 미송리식 토기, 거친무늬 거울이 나오는 요령 지방과 한반도 서북부가 고조선의 세력 범위로 여겨진다. 반달 돌칼로 곡식을 거두고 민무늬 토기를 썼으며, 일부 지역에서 벼농사가 시작되었다.
+  subjects: [gojoseon]
+  tags: [culture, society]
+  sources: ["국사편찬위원회 『한국사』"]
+
+- id: gojoseon-king-322
+  year: -322
+  precision: decade
+  title:
+    ko: 고조선의 왕 칭호와 연과의 대립
+  summary:
+    ko: 연이 왕을 칭하자 고조선의 지배자도 왕을 칭하고 연을 치려 했으나, 대부 예의 간언으로 그만두었다고 전한다. 기원전 4세기 무렵 고조선은 중국과 대등하게 맞설 만큼 성장했다.
+  subjects: [gojoseon, yan-state]
+  links:
+    - { from: gojoseon, to: yan-state, note: "왕을 칭하고 대립" }
+  tags: [politics, diplomacy]
+  sources: ["『삼국지』 위서 동이전 주석 『위략』"]
+
+- id: iron-age
+  year: -399
+  endYear: -200
+  precision: century
+  title:
+    ko: 철기 문화의 보급과 독자적인 청동기 문화
+  summary:
+    ko: 기원전 5세기 무렵부터 철기가 보급되어 농기구와 무기가 발전했다. 명도전·반량전·오수전 같은 중국 화폐가 나와 중국과 활발히 교류했음을 알 수 있고, 창원 다호리에서 나온 붓은 한자를 썼음을 보여 준다. 한편 세형동검·잔무늬 거울과 거푸집이 나와 독자적인 청동기 문화가 발전했다(세형동검 문화). 널무덤·독무덤을 만들었다.
+  subjects: [gojoseon, yan-state]
+  links:
+    - { from: yan-state, to: gojoseon, note: "명도전 유입, 철기 전래" }
+  tags: [culture, economy]
+  sources: ["국사편찬위원회 『한국사』"]
+
+- id: jingae-281
+  year: -281
+  precision: decade
+  title:
+    ko: 연 진개의 침입과 중심지 이동
+  summary:
+    ko: 연의 장수 진개가 고조선을 공격해 서쪽 땅 2천여 리를 빼앗고 만번한을 경계로 삼았다. 고조선은 요동을 잃고 중심지를 대동강 유역(왕검성)으로 옮긴 것으로 본다.
+  subjects: [gojoseon, yan-state]
+  links:
+    - { from: yan-state, to: gojoseon, note: "진개의 침입, 서쪽 2천여 리 탈취" }
+  tags: [war]
+  sources: ["『삼국지』 위서 동이전 주석 『위략』", "『사기』 흉노열전"]
+
+- id: bu-jun-kings-220
+  year: -220
+  precision: decade
+  title:
+    ko: 부왕·준왕의 왕위 세습과 관직 정비
+  summary:
+    ko: 기원전 3세기 무렵 고조선은 부왕·준왕으로 왕위를 세습하고, 왕 아래에 상·대부·장군 등의 관직을 두었다. 진이 중국을 통일하자(기원전 221) 부왕은 진을 경계해 형식적으로 복속했다고 전한다.
+  subjects: [gojoseon, qin]
+  links:
+    - { from: qin, to: gojoseon, note: "진의 통일과 압박" }
+  tags: [politics]
+  sources: ["『삼국지』 위서 동이전 주석 『위략』"]
+
+# ── 위만 조선 ─────────────────────────────────────────
+
+- id: wiman-194
+  year: -193
+  title:
+    ko: 위만의 집권
+  summary:
+    ko: 진·한 교체기의 혼란으로 유이민이 고조선으로 들어왔다. 연 지역에서 1천여 명을 이끌고 온 위만은 준왕에게서 서쪽 변경을 지키는 일을 맡았다가, 세력을 키워 준왕을 몰아내고 왕이 되었다(기원전 194). 위만은 상투를 틀고 조선옷을 입었으며, 나라 이름을 그대로 조선이라 하고 토착민 출신을 높은 벼슬에 앉혔다. 쫓겨난 준왕은 남쪽 진국으로 가서 한왕이라 했다고 전한다.
+  subjects: [gojoseon, western-han, jin-guk]
+  links:
+    - { from: western-han, to: gojoseon, note: "연 지역 유이민의 이주" }
+    - { from: gojoseon, to: jin-guk, note: "준왕의 남하" }
+  tags: [politics]
+  sources: ["『사기』 조선열전", "『삼국지』 위서 동이전 주석 『위략』"]
+
+- id: wiman-trade-180
+  year: -180
+  precision: decade
+  title:
+    ko: 위만 조선의 성장과 중계 무역
+  summary:
+    ko: 위만 조선은 철기 문화를 본격적으로 받아들여 군사력을 키우고, 진번과 임둔을 복속시켜 영토를 넓혔다. 한반도 남쪽의 진국과 한 사이의 직접 교역을 막고 중계 무역으로 이익을 얻었다.
+  subjects: [gojoseon, western-han, jin-guk]
+  links:
+    - { from: gojoseon, to: jin-guk, note: "중계 무역, 직접 교역 차단" }
+    - { from: gojoseon, to: western-han, note: "중계 무역" }
+  tags: [economy, politics]
+  sources: ["『사기』 조선열전"]
+
+- id: namryeo-128
+  year: -127
+  title:
+    ko: 예군 남려의 한 투항
+  summary:
+    ko: 고조선에 속해 있던 예의 군장 남려가 28만 명을 이끌고 한에 투항했다. 한은 그 땅에 창해군을 두었다가 2년 뒤 폐지했다.
+  subjects: [gojoseon, western-han]
+  links:
+    - { from: gojoseon, to: western-han, note: "예군 남려의 투항, 창해군 설치" }
+  tags: [politics]
+  sources: ["『한서』 무제기", "『후한서』 동이열전 예"]
+
+- id: han-invasion-109
+  year: -108
+  endYear: -107
+  title:
+    ko: 한 무제의 침입과 고조선 멸망
+  summary:
+    ko: 한의 사신 섭하가 고조선의 장수를 죽이고 돌아가자, 고조선이 섭하를 죽인 것을 구실로 한 무제가 수륙 양면으로 쳐들어왔다. 고조선은 1년 가까이 버텼으나 지배층이 분열해 우거왕이 살해되고, 대신 성기가 끝까지 싸웠지만 기원전 108년 왕검성이 함락되었다. 한 무제는 고조선과 흉노의 연결을 끊으려 했다.
+  subjects: [gojoseon, western-han]
+  links:
+    - { from: western-han, to: gojoseon, note: "수륙 양면 침입, 왕검성 함락" }
+    - { from: gojoseon, to: western-han, note: "1년 가까운 항전" }
+  tags: [war]
+  sources: ["『사기』 조선열전"]
+
+- id: han-commanderies-108
+  year: -107
+  title:
+    ko: 한 군현 설치와 8조법
+  summary:
+    ko: 한은 고조선 땅에 낙랑·진번·임둔군을 두고 이듬해 현도군을 두었다. 고조선에는 사회 질서를 지키는 8조법이 있었는데, 사람을 죽인 자는 사형, 남을 다치게 한 자는 곡식으로 배상, 도둑질한 자는 노비로 삼되 용서받으려면 50만 전을 내게 했다는 3개 조항이 전한다. 생명과 노동력, 사유 재산을 중시한 계급 사회였음을 알 수 있다. 한 군현이 설치된 뒤 법 조항이 60여 개로 늘어나 풍속이 각박해졌다.
+  subjects: [gojoseon, western-han, nangnang]
+  links:
+    - { from: western-han, to: nangnang, note: "낙랑·진번·임둔·현도군 설치" }
+  tags: [politics, society]
+  sources: ["『한서』 지리지", "『사기』 조선열전"]
+
+- id: commanderies-82
+  year: -81
+  endYear: -74
+  title:
+    ko: 진번·임둔군 폐지와 현도군 이동
+  summary:
+    ko: 토착 세력의 저항으로 한은 진번군과 임둔군을 폐지해 낙랑군에 합쳤고(기원전 82), 현도군을 서북쪽으로 옮겼다(기원전 75). 낙랑군은 313년 고구려 미천왕에게 쫓겨날 때까지 남았다.
+  subjects: [nangnang, western-han]
+  links:
+    - { from: western-han, to: nangnang, note: "군현 통폐합" }
+  tags: [politics]
+  sources: ["『한서』 소제기", "『후한서』 동이열전"]
+
+# ── 여러 나라의 성장 ───────────────────────────────────
+
+- id: buyeo-society
+  year: -199
+  endYear: -100
+  precision: century
+  title:
+    ko: 부여의 성장과 풍속
+  summary:
+    ko: 쑹화강 유역의 넓은 평야에서 부여가 성장했다. 왕 아래 마가·우가·저가·구가가 각자 사출도를 다스리는 연맹 왕국이었다. 12월에 영고라는 제천 행사를 열었고, 남의 물건을 훔치면 12배로 갚는 1책 12법, 형이 죽으면 동생이 형수를 아내로 삼는 형사취수제, 왕이 죽으면 사람을 함께 묻는 순장 풍습이 있었다. 반농반목으로 말·주옥·모피가 특산물이었다.
+  subjects: [buyeo]
+  tags: [society]
+  sources: ["『삼국지』 위서 동이전 부여"]
+
+- id: okjeo-dongye
+  year: -107
+  endYear: -1
+  precision: century
+  title:
+    ko: 옥저와 동예의 풍속
+  summary:
+    ko: 함경도 해안의 옥저와 강원도 북부 해안의 동예는 왕이 없고 읍군·삼로라는 군장이 다스렸다. 옥저에는 여자아이를 신랑 집에서 기르다 성인이 되면 혼인시키는 민며느리제와, 가족이 죽으면 뼈를 추려 한 목곽에 넣는 가족 공동 무덤이 있었다. 동예는 10월에 무천이라는 제천 행사를 열고, 다른 부족의 영역을 침범하면 노비·소·말로 갚는 책화와 같은 씨족끼리 혼인하지 않는 족외혼이 있었다. 단궁·과하마·반어피가 특산물이었다. 두 나라 모두 고구려의 압박으로 크게 성장하지 못했다.
+  subjects: [okjeo, dongye]
+  tags: [society]
+  sources: ["『삼국지』 위서 동이전 동옥저·예"]
+
+- id: samhan
+  year: -107
+  endYear: -1
+  precision: century
+  title:
+    ko: 삼한의 성립과 제정 분리
+  summary:
+    ko: 고조선 멸망 뒤 유이민이 남쪽으로 내려오면서 진국이 마한·진한·변한의 삼한으로 발전했다. 마한의 목지국 지배자가 삼한을 이끌었고, 신지·견지(큰 세력)와 읍차·부례(작은 세력)라는 군장이 있었다. 제사장인 천군이 다스리는 신성 지역 소도에는 군장의 권력이 미치지 못해 제정이 분리되어 있었다. 5월 수릿날과 10월 계절제를 지냈고, 벼농사를 위해 저수지를 만들었다(김제 벽골제 등). 변한은 철이 많이 나서 낙랑과 왜에 수출하고 화폐처럼 썼다.
+  subjects: [mahan, jinhan, byeonhan, jin-guk]
+  links:
+    - { from: jin-guk, to: mahan, note: "진국에서 삼한으로" }
+    - { from: byeonhan, to: nangnang, note: "철 수출" }
+  tags: [society, politics]
+  sources: ["『삼국지』 위서 동이전 한"]

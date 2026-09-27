@@ -84,3 +84,9 @@
 - { type: successor_of, subject: rok, object: usamgik, from: 1948, to: null }
 - { type: successor_of, subject: dprk, object: soviet-north, from: 1948, to: null }
 - { type: successor_of, subject: russia-fed, object: soviet-union, from: 1991, to: null }
+
+# ── 1번 묶음 (기원전 2333 ~ 기원전 1세기) ──
+- { type: successor_of, subject: western-han, object: qin, from: -201, to: null }
+- { type: successor_of, subject: mahan, object: jin-guk, from: -107, to: null }
+- { type: successor_of, subject: jinhan, object: jin-guk, from: -107, to: null }
+- { type: successor_of, subject: byeonhan, object: jin-guk, from: -107, to: null }

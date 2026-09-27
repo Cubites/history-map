@@ -2,6 +2,29 @@
 # 2번 묶음(기원전 57 ~ 600): 한국사와 관계된 왕조를 중심으로. 영토는 화북·강남·요서·요동 단위의 대략적인 추정. 운영자 검수 필요.
 # 5호 16국 가운데 한국사와 직접 관계된 전연·전진·후연·북연만 표시한다.
 
+- id: yan-state
+  level: polity
+  names: { ko: 연, hanja: 燕, en: Yan }
+  from: -1043
+  to: -221
+  color: "#a8584a"
+  summary: 중국 전국 시대 7웅의 하나로 지금의 베이징 일대에 있던 나라. 고조선과 대립했으며, 기원전 3세기 초 장수 진개가 고조선을 공격해 서쪽 땅 2천여 리를 빼앗았다. 명도전이 고조선 지역에서 많이 발견된다. 진에 멸망. 지도에는 전국 시대(기원전 4세기) 이후만 표시
+  basis:
+    type: primary_source
+    refs: ["『사기』 연소공세가", "『삼국지』 위서 동이전 주석 『위략』"]
+    foundingNote: 주 왕실이 소공 석을 봉한 기원전 11세기 무렵을 시작으로 봄
+
+- id: qin
+  level: polity
+  names: { ko: 진, hanja: 秦, en: Qin }
+  from: -220
+  to: -206
+  color: "#8c5a4a"
+  summary: 시황제가 중국을 처음 통일한 왕조(기원전 221). 만리장성을 쌓고 요동까지 다스렸다. 고조선의 부왕은 진을 경계해 형식적으로 복속했다고 전한다. 15년 만에 무너짐
+  basis:
+    type: primary_source
+    refs: ["『사기』 진시황본기", "『삼국지』 위서 동이전 주석 『위략』"]
+
 - id: western-han
   level: polity
   names: { ko: 한(전한), hanja: 前漢, en: Western Han }
