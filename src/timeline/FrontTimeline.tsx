@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react';
 import type { StaticData } from '../data/staticData.ts';
 import { activeWarView, entryYear, factionColor, formatFrontDate, snapshotFor } from '../lib/wars.ts';
 import { formatYear } from '../lib/year.ts';
@@ -17,13 +18,24 @@ export function FrontTimeline({ data }: { data: StaticData }) {
   const enterWar = useAppStore((s) => s.enterWar);
   const exitWar = useAppStore((s) => s.exitWar);
   const returnYear = useAppStore((s) => s.returnYear);
+  const listRef = useRef<HTMLOListElement>(null);
 
   const warView = activeWarView(data.wars, warId, theaterId, year);
-  if (!warView) return null;
-  const { war, theater } = warView;
   const hoveredEvent = hoveredEventId ? data.events.find((e) => e.id === hoveredEventId) : undefined;
-  const current = snapshotFor(warView, year, frontDate, hoveredEvent);
-  const index = theater.snapshots.indexOf(current);
+  const current = warView && snapshotFor(warView, year, frontDate, hoveredEvent);
+  const index = warView && current ? warView.theater.snapshots.indexOf(current) : -1;
+
+  // 고른 날짜 버튼이 목록 가운데 오도록 좌우로만 스크롤한다 (scrollIntoView는 화면 전체를 세로로도 움직일 수 있어 쓰지 않는다)
+  useEffect(() => {
+    const list = listRef.current;
+    const item = list?.children[index] as HTMLElement | undefined;
+    if (!list || !item) return;
+    const target = item.offsetLeft - list.offsetLeft - (list.clientWidth - item.offsetWidth) / 2;
+    list.scrollTo({ left: Math.max(0, target), behavior: 'smooth' });
+  }, [index, warView?.theater.id]);
+
+  if (!warView || !current) return null;
+  const { war, theater } = warView;
   const go = (i: number) => {
     const s = theater.snapshots[i];
     if (s) setFront(s.year, s.date);
@@ -63,7 +75,7 @@ export function FrontTimeline({ data }: { data: StaticData }) {
       )}
       <div className="front-timeline-dates">
         <button type="button" disabled={index <= 0} onClick={() => go(index - 1)} aria-label="이전 날짜">◀</button>
-        <ol>
+        <ol ref={listRef}>
           {theater.snapshots.map((s, i) => (
             <li key={s.date}>
               <button type="button" aria-pressed={i === index} onClick={() => go(i)} title={s.title}>
