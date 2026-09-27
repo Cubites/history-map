@@ -49,7 +49,9 @@ export function WarDetailLayer({ war, theater, snapshot, projection, entityColor
         lastLabeled = p;
       }
     }
-    return { ri, route, reached, screen, labeled, stroke: factionStroke(war, route.faction, entityColor) };
+    // 직전 날짜보다 먼저 끝난 경로는 흐리게 (예: 후퇴 뒤에도 남아 있는 지난 진격로)
+    const finished = reached === route.points.length - 1 && keys[keys.length - 1] <= prev;
+    return { ri, route, reached, screen, labeled, finished, stroke: factionStroke(war, route.faction, entityColor) };
   });
 
   const battles = theater.battles
@@ -68,7 +70,7 @@ export function WarDetailLayer({ war, theater, snapshot, projection, entityColor
       </defs>
 
       {routes.map((r) => (
-        <g key={r.ri} className="war-route" aria-hidden>
+        <g key={r.ri} className={`war-route${r.finished ? ' war-route-finished' : ''}`} aria-hidden>
           <path className="war-route-ahead" d={pathOf(r.screen)} style={{ stroke: r.stroke }} />
           {r.reached >= 1 && <path className="war-route-halo" d={pathOf(r.screen.slice(0, r.reached + 1))} />}
           {r.reached >= 1 && (

@@ -508,6 +508,7 @@ button {
 .war-route-halo { fill: none; stroke: var(--surface); stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; opacity: 0.85; }
 .war-route-done { fill: none; stroke-width: 3.5; stroke-linecap: round; stroke-linejoin: round; }
 .war-route-stop { fill: var(--surface); stroke-width: 2; }
+.war-route-finished { opacity: 0.4; }
 .war-route-label, .war-route-name, .war-hold-label, .war-battle-label {
   paint-order: stroke;
   stroke: var(--label-halo);
