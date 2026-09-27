@@ -45,8 +45,39 @@ function clipRing(ring: Ring, [x0, y0, x1, y1]: BBox): Ring | null {
   }
   if (points.length < 3) return null;
   const round = (v: number) => Math.round(v * 1e4) / 1e4;
-  const closed = points.map(([x, y]) => [round(x), round(y)]);
+  const closed = densifyBorder(points.map(([x, y]) => [round(x), round(y)]), [x0, y0, x1, y1]);
   return [...closed, closed[0]];
+}
+
+/** 칸 경계를 따라가는 변에 찍는 점의 간격(°) */
+const BORDER_STEP = 0.5;
+
+/**
+ * 칸 경계를 따라가는 변에 경위도 눈금(BORDER_STEP의 배수)마다 점을 넣는다.
+ * 오목한 도형을 자르면 떨어진 부분이 칸 경계 위의 폭 0인 "다리"로 이어지는데, 가는 변과 오는 변의 끝점이 달라
+ * 위도선이 휘는 지역 도법에서는 두 변이 어긋나 바다 위에 가는 선이 보였다 (1946년 발해 위의 중화민국 선).
+ * 같은 눈금 점을 지나게 하면 두 변이 겹쳐 폭이 다시 0이 된다.
+ */
+function densifyBorder(points: Position[], [x0, y0, x1, y1]: BBox): Position[] {
+  const out: Position[] = [];
+  const onX = (v: number) => v === x0 || v === x1;
+  const onY = (v: number) => v === y0 || v === y1;
+  for (let i = 0; i < points.length; i++) {
+    const a = points[i];
+    const b = points[(i + 1) % points.length];
+    out.push(a);
+    const vertical = a[0] === b[0] && onX(a[0]);
+    const horizontal = a[1] === b[1] && onY(a[1]);
+    if (!vertical && !horizontal) continue;
+    const axis = vertical ? 1 : 0;
+    const [from, to] = [a[axis], b[axis]];
+    const dir = Math.sign(to - from);
+    if (Math.abs(to - from) <= BORDER_STEP) continue;
+    // from과 to 사이(양 끝 제외)의 눈금 값
+    let v = dir > 0 ? Math.floor(from / BORDER_STEP + 1) * BORDER_STEP : Math.ceil(from / BORDER_STEP - 1) * BORDER_STEP;
+    for (; dir > 0 ? v < to : v > to; v += dir * BORDER_STEP) out.push(vertical ? [a[0], v] : [v, a[1]]);
+  }
+  return out;
 }
 
 export function tilePolygons(polygons: MultiCoords, key?: string): Feature<MultiPolygon, PieceProps>[] {
