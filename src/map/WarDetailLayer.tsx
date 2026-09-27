@@ -94,7 +94,7 @@ export function WarDetailLayer({ war, theater, snapshot, projection, entityColor
               <g key={i}>
                 <circle className="war-route-stop" cx={p[0]} cy={p[1]} r={3.2} style={{ stroke: r.stroke }} />
                 {r.labeled.has(i) && (point.label || point.date) && (
-                  <text className="war-route-label" x={p[0] + 6} y={p[1] - 5}>
+                  <text className="war-route-label" data-label-priority={i === r.reached ? 3 : 2} x={p[0] + 6} y={p[1] - 5}>
                     {point.label}
                     {point.date && formatShortFrontDate(point.date) && <tspan className="war-route-date"> {formatShortFrontDate(point.date)}</tspan>}
                   </text>
@@ -103,7 +103,7 @@ export function WarDetailLayer({ war, theater, snapshot, projection, entityColor
             );
           })}
           {r.screen[0] && (
-            <text className="war-route-name" x={r.screen[0][0] - 6} y={r.screen[0][1] + 16} textAnchor="end" style={{ fill: r.stroke }}>
+            <text className="war-route-name" data-label-priority={1} x={r.screen[0][0] - 6} y={r.screen[0][1] + 16} textAnchor="end" style={{ fill: r.stroke }}>
               {r.route.name}
             </text>
           )}
@@ -116,7 +116,7 @@ export function WarDetailLayer({ war, theater, snapshot, projection, entityColor
         return (
           <g key={`h${i}`} className="war-hold" aria-hidden>
             <circle cx={p[0]} cy={p[1]} r={5} style={{ fill: factionColor(war, h.faction, entityColor) }} />
-            <text className="war-hold-label" x={p[0] + 7} y={p[1] + 4}>
+            <text className="war-hold-label" data-label-priority={4} x={p[0] + 7} y={p[1] + 4}>
               {h.name}
             </text>
           </g>
@@ -139,7 +139,7 @@ export function WarDetailLayer({ war, theater, snapshot, projection, entityColor
             {/* 교차한 칼 모양 */}
             {fresh && <path d="M-4,-4 L4,4 M4,-4 L-4,4" style={{ stroke: color }} />}
             {fresh && (
-              <text className="war-battle-label" x={11} y={4} style={{ fill: color }}>
+              <text className="war-battle-label" data-label-priority={5} x={11} y={4} style={{ fill: color }}>
                 {b.name}
               </text>
             )}

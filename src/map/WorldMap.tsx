@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { flushSync } from 'react-dom';
 import { geoContains } from 'd3-geo';
 import { select } from 'd3-selection';
@@ -37,6 +37,7 @@ import {
   type Shape,
 } from './canvasLayer.ts';
 import { LabelLayer } from './LabelLayer.tsx';
+import { layoutLabels } from './labelLayout.ts';
 import { useElementSize } from './useElementSize.ts';
 import {
   baseScale,
@@ -100,6 +101,11 @@ function readPalette(el: Element): Palette {
 export default function WorldMap({ data }: { data: StaticData }) {
   const [containerRef, size] = useElementSize<HTMLDivElement>();
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const overlayRef = useRef<SVGSVGElement>(null);
+  // 전쟁 보기의 이름표가 겹치면 우선순위가 낮은 것을 숨긴다. 그릴 때마다(확대·이동 포함) 다시 맞춘다
+  useLayoutEffect(() => {
+    if (overlayRef.current) layoutLabels(overlayRef.current);
+  });
   const zoomRef = useRef<ZoomBehavior<HTMLDivElement, unknown>>(undefined);
 
   const year = useAppStore((s) => s.year);
@@ -562,7 +568,7 @@ export default function WorldMap({ data }: { data: StaticData }) {
     >
       <canvas ref={canvasRef} className="map-canvas" />
       {size && projection && (
-        <svg className="map-overlay" width={size.width} height={size.height} aria-hidden>
+        <svg ref={overlayRef} className="map-overlay" width={size.width} height={size.height} aria-hidden>
           {snapshot && war && theater && (
             <WarDetailLayer war={war} theater={theater} snapshot={snapshot} projection={projection} entityColor={(id) => data.entities.get(id)?.color} />
           )}

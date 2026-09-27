@@ -45,7 +45,7 @@ export function FrontArrowLayer({
         <g key={a.key} className={`front-arrow front-arrow-${a.index}`}>
           <path className="front-arrow-line" d={a.d} style={a.color ? { stroke: a.color } : undefined} markerEnd={`url(#front-head-${a.color ? `c${a.key}` : a.index})`} />
           {a.label && (
-            <text className="front-arrow-label" x={a.end[0] + 7} y={a.end[1]} dy="1.1em" style={a.color ? { fill: a.color } : undefined}>
+            <text className="front-arrow-label" data-label-priority={3} x={a.end[0] + 7} y={a.end[1]} dy="1.1em" style={a.color ? { fill: a.color } : undefined}>
               {a.label}
             </text>
           )}
