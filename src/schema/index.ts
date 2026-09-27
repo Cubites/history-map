@@ -79,71 +79,145 @@ export const EventSchema = z.object({
   links: z.array(EventLinkSchema).default([]),
   tags: z.array(z.string()).default([]),
   sources: z.array(z.string().min(1)).min(1, '출처(sources)가 비어 있음'),
-  /** 전쟁 중 사건이면 그 날짜의 전선 (data/fronts/). 사건에 마우스를 올리면 그 전선과 작전 화살표를 보여 준다 */
-  front: z.object({ war: z.string(), date: z.string() }).optional(),
+  /** 전쟁 중 사건이면 그 날짜의 전선 (data/wars/). theater가 없으면 그 전쟁의 첫 전역 */
+  front: z.object({ war: z.string(), theater: z.string().optional(), date: z.string() }).optional(),
 });
 export type HistoryEvent = z.infer<typeof EventSchema>;
 
-// ── 전선 (DESIGN.md §4.5) ────────────────────────────────
-// 연 단위 영토로는 보이지 않는 전쟁 중의 전선 변화를 날짜별 스냅샷으로 적는다.
+// ── 전쟁 (DESIGN.md §4.5) ────────────────────────────────
+// 연 단위 영토로는 보이지 않는 전쟁 중의 변화를 전역(戰域)별 날짜 스냅샷으로 적는다.
+// 전쟁 → 진영·참전국 → 전역 → 스냅샷(점령 지역·전선·작전 화살표)
 
 /** 날짜: YYYY-MM-DD (천문 연도, 기원전은 앞에 -) */
 export const FrontDate = z.string().regex(/^-?\d{1,4}-\d{2}-\d{2}$/, 'YYYY-MM-DD 형식이어야 함');
 const LonLatSchema = z.tuple([z.number().min(-180).max(180), z.number().min(-90).max(90)]);
+const Id = z.string().regex(/^[a-z0-9-]+$/, '소문자, 숫자, 하이픈만 사용');
+
+/** 진영: 지도에서 한 색으로 칠하는 편. entity는 색·이름표·클릭 대상이 되는 대표 나라 */
+export const FactionSchema = z.object({
+  id: Id,
+  name: z.string().min(1),
+  entity: z.string(),
+  /** 대표 나라 색 대신 쓸 색 */
+  color: z.string().regex(/^#[0-9a-fA-F]{6}$/).optional(),
+});
+
+/** 참전국. 편을 바꾼 나라는 기간을 나눠 두 번 적는다 (예: 이탈리아 1940~1943 추축국, 1943~ 연합국) */
+export const ParticipantSchema = z.object({
+  entity: z.string(),
+  faction: z.string(),
+  /** 참전 시작·끝 날짜. 없으면 전쟁 전체 기간 */
+  from: FrontDate.optional(),
+  to: FrontDate.optional(),
+});
 
 export const FrontArrowSchema = z.object({
-  /** north: 선의 북·서쪽 편, south: 남·동쪽 편 */
-  side: z.enum(['north', 'south']),
+  faction: z.string(),
   /** 작전 방향 (출발 → 도착, 중간 점 가능) */
   path: z.array(LonLatSchema).min(2),
   label: z.string().optional(),
 });
 
-export const FrontSnapshotSchema = z.object({
-  date: FrontDate,
-  title: z.string().min(1),
-  summary: z.string().min(1),
-  /** 전선: 서쪽 바다에서 동쪽 바다까지. 선의 북·서쪽이 north 편 점령 지역 */
+/** 선으로 가르기: 전역의 replaces 나라 영토를 합친 범위를 선의 북·서쪽(north)과 남·동쪽(south)으로 나눈다 */
+export const FrontSplitSchema = z.object({
+  /** 서쪽(또는 남해안) 바다에서 동쪽 바다까지 */
   line: z.array(LonLatSchema).min(2),
-  arrows: z.array(FrontArrowSchema).default([]),
+  north: z.string(),
+  south: z.string(),
 });
 
-export const FrontSchema = z.object({
-  id: z.string().regex(/^[a-z0-9-]+$/),
+/**
+ * 점령 지역. 방법 둘 중 하나:
+ * - entities: 그 나라들의 그 해 영토 전체 (예: 독일에 점령된 폴란드 = poland)
+ * - geojson: data/wars/ 기준 경로의 GeoJSON 폴리곤 (QGIS로 그림)
+ * 뒤에 적은 지역이 앞의 지역(선으로 가른 지역 포함)을 덮는다.
+ */
+export const FrontAreaSchema = z
+  .object({
+    faction: z.string(),
+    entities: z.array(z.string()).min(1).optional(),
+    geojson: z.string().optional(),
+  })
+  .refine((a) => !!a.entities !== !!a.geojson, { message: 'entities와 geojson 중 하나만 적어야 함' });
+
+export const FrontSnapshotSchema = z
+  .object({
+    date: FrontDate,
+    title: z.string().min(1),
+    summary: z.string().min(1),
+    split: FrontSplitSchema.optional(),
+    areas: z.array(FrontAreaSchema).default([]),
+    /** 따로 그을 전선 (split의 선은 자동으로 들어간다) */
+    lines: z.array(z.array(LonLatSchema).min(2)).default([]),
+    arrows: z.array(FrontArrowSchema).default([]),
+  })
+  .refine((s) => s.split || s.areas.length > 0, { message: '점령 지역(split 또는 areas)이 없음' });
+
+/** 전역: 한 전쟁 안에서 따로 보는 지역 (예: 제2차 세계 대전의 유럽·태평양). 전역이 하나뿐인 전쟁도 있다 */
+export const TheaterSchema = z.object({
+  id: Id,
   name: z.string().min(1),
-  /** 전쟁 동안 전선으로 대신 칠할 나라 (그 나라들의 영토를 합친 범위를 두 편으로 나눈다) */
-  region: z.array(z.string()).min(1),
-  sides: z.object({
-    north: z.object({ name: z.string(), entity: z.string() }),
-    south: z.object({ name: z.string(), entity: z.string() }),
-  }),
-  sources: z.array(z.string().min(1)).min(1),
-  /** 참전국. 이 나라를 고르면 사건 패널의 "이 시기의 전쟁"에 나온다 (region·sides 나라는 자동 포함) */
-  participants: z.array(z.string()).default([]),
-  /** 평소 지도에 전쟁 표시를 둘 곳. 없으면 전선 범위의 가운데 */
+  /** 전쟁 보기에서 영토 대신 점령 지역으로 칠할 나라들 (split은 이 나라들의 영토를 나눈다) */
+  replaces: z.array(z.string()).default([]),
+  /** 평소 지도에 전쟁 표시를 둘 곳. 없으면 첫 스냅샷 범위의 가운데 */
   marker: LonLatSchema.optional(),
-  /** 전쟁 보기를 열 때 확대할 범위 [[서, 남], [동, 북]]. 없으면 전선 범위에 여백을 둔다 */
+  /** 전쟁 보기를 열 때 확대할 범위 [[서, 남], [동, 북]]. 없으면 점령 지역 범위에 여백을 둔다 */
   bounds: z.tuple([LonLatSchema, LonLatSchema]).optional(),
   snapshots: z.array(FrontSnapshotSchema).min(1),
 });
-export type Front = z.infer<typeof FrontSchema>;
 
-/** fronts.json: 빌드가 스냅샷마다 두 편의 점령 지역을 계산해 넣는다 */
-export interface FrontSnapshotOut extends z.infer<typeof FrontSnapshotSchema> {
-  year: Year;
-  north: MultiPolygonCoords;
-  south: MultiPolygonCoords;
+export const WarSchema = z.object({
+  id: Id,
+  name: z.string().min(1),
+  factions: z.array(FactionSchema).min(2),
+  participants: z.array(ParticipantSchema).default([]),
+  sources: z.array(z.string().min(1)).min(1),
+  theaters: z.array(TheaterSchema).min(1),
+});
+export type War = z.infer<typeof WarSchema>;
+export type Faction = z.infer<typeof FactionSchema>;
+export type FrontArrow = z.infer<typeof FrontArrowSchema>;
+
+/** wars.json: 빌드가 스냅샷마다 진영별 점령 지역을 계산해 넣는다 */
+export interface FrontAreaOut {
+  faction: string;
+  coords: MultiPolygonCoords;
   bbox: BBox;
-  /** 전쟁 중 이름표를 둘 곳 (각 편 점령 지역 안쪽). 그 편이 차지한 곳이 없으면 null */
-  anchors: { north: LonLat | null; south: LonLat | null };
 }
-export interface FrontIndexEntry extends Omit<Front, 'snapshots' | 'marker' | 'bounds'> {
-  /** 전쟁 기간 (포함): 첫 스냅샷 ~ 마지막 스냅샷 연도 */
+export interface FrontSnapshotOut {
+  date: string;
+  year: Year;
+  title: string;
+  summary: string;
+  /** 진영마다 하나 (여러 조각이면 MultiPolygon) */
+  areas: FrontAreaOut[];
+  lines: LonLat[][];
+  arrows: FrontArrow[];
+  /** 영토 대신 칠하는 나라의 이름표 위치 (그 나라 진영의 점령 지역 안쪽) */
+  labels: { entity: string; anchor: LonLat }[];
+  bbox: BBox;
+}
+export interface TheaterOut {
+  id: string;
+  name: string;
+  /** 전역 기간 (포함): 첫 스냅샷 ~ 마지막 스냅샷 연도 */
   from: Year;
   to: Year;
+  replaces: string[];
   marker: LonLat;
   bounds: [[number, number], [number, number]];
   snapshots: FrontSnapshotOut[];
+}
+export interface WarIndexEntry {
+  id: string;
+  name: string;
+  from: Year;
+  to: Year;
+  factions: Faction[];
+  /** 참전 기간은 연도로 바꿔 둔다 (포함) */
+  participants: { entity: string; faction: string; from: Year; to: Year }[];
+  sources: string[];
+  theaters: TheaterOut[];
 }
 type MultiPolygonCoords = [number, number][][][];
 

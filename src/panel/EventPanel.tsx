@@ -1,6 +1,6 @@
 import { occupierAt, overlordAt, type StaticData } from '../data/staticData.ts';
 import { eventsOf, formatEventYears, inDecade, linkDirection } from '../lib/events.ts';
-import { entryYear, formatFrontDate, warsOf, yearOfFrontDate } from '../lib/fronts.ts';
+import { entryYear, formatFrontDate, warsOf, yearOfFrontDate } from '../lib/wars.ts';
 import { formatDecade, formatRange, formatYear, isAlive } from '../lib/year.ts';
 import type { HistoryEvent } from '../schema/index.ts';
 import { useAppStore } from '../store/useAppStore.ts';
@@ -37,7 +37,7 @@ export function EventPanel({ data }: { data: StaticData }) {
     .filter((s) => s.entity);
   // 이 나라가 참전한 전쟁 중 지금 보는 10년 구간과 겹치는 것 (DESIGN.md §4.5)
   const decade = Math.floor(year / 10) * 10;
-  const wars = warsOf(data.fronts, entity.id, decade, decade + 9);
+  const wars = warsOf(data.wars, entity.id, decade, decade + 9);
   const occupation = occupierAt(data.relations, entity.id, year);
   const occupier = occupation && data.entities.get(occupation.object);
   const vassalage = overlordAt(data.relations, entity.id, year);
@@ -108,7 +108,7 @@ export function EventPanel({ data }: { data: StaticData }) {
                 {warId === w.id ? (
                   <span className="panel-war-open">보는 중</span>
                 ) : (
-                  <button type="button" className="link-button" onClick={() => enterWar(w.id, entryYear(w, year), null)}>
+                  <button type="button" className="link-button" onClick={() => enterWar(w.id, null, entryYear(w, year), null)}>
                     전선 보기 →
                   </button>
                 )}
@@ -167,8 +167,11 @@ function EventItem({ event, data, selectedId, highlight }: { event: HistoryEvent
   const enterWar = useAppStore((s) => s.enterWar);
   const warId = useAppStore((s) => s.warId);
   const name = (id: string) => data.entities.get(id)?.names.ko ?? id;
-  const war = event.front && data.fronts.find((f) => f.id === event.front!.war);
-  const openFront = () => event.front && enterWar(event.front.war, yearOfFrontDate(event.front.date), event.front.date);
+  const war = event.front && data.wars.find((w) => w.id === event.front!.war);
+  const theaterId = useAppStore((s) => s.theaterId);
+  const openFront = () => event.front && enterWar(event.front.war, event.front.theater ?? null, yearOfFrontDate(event.front.date), event.front.date);
+  // 지금 보고 있는 전역의 사건인가 (전역을 적지 않은 사건은 첫 전역)
+  const inCurrentView = !!event.front && event.front.war === warId && (event.front.theater ?? war?.theaters[0].id) === (theaterId ?? war?.theaters[0].id);
 
   return (
     <li
@@ -179,7 +182,8 @@ function EventItem({ event, data, selectedId, highlight }: { event: HistoryEvent
       onBlur={() => hoverEvent(null)}
       onClick={() => {
         // 전쟁 보기 중이면 그 전쟁의 사건은 그 날짜의 전선으로 옮긴다 (DESIGN.md §4.5)
-        if (event.front && event.front.war === warId) setFront(yearOfFrontDate(event.front.date), event.front.date);
+        if (event.front && inCurrentView) setFront(yearOfFrontDate(event.front.date), event.front.date);
+        else if (event.front && event.front.war === warId) openFront();
         else setYear(event.year);
         // 터치 화면에는 hover가 없으므로 누르면 화살표를 보여준다 (setYear가 hover를 지우므로 그 뒤에 설정)
         hoverEvent(event.id);
@@ -203,7 +207,7 @@ function EventItem({ event, data, selectedId, highlight }: { event: HistoryEvent
           ))}
         </ul>
       )}
-      {event.front && war && warId !== event.front.war && (
+      {event.front && war && !inCurrentView && (
         <button
           type="button"
           className="link-button event-front"

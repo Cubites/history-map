@@ -6,12 +6,12 @@ import type { GeometryCollection, Topology } from 'topojson-specification';
 import type {
   BBox,
   Entity,
-  FrontIndexEntry,
   HistoryEvent,
   Lod,
   LonLat,
   Relation,
   TerritoryIndexEntry,
+  WarIndexEntry,
   TimelineIndex,
 } from '../schema/index.ts';
 
@@ -23,8 +23,8 @@ export interface StaticData {
   entities: Map<string, LoadedEntity>;
   relations: Relation[];
   events: HistoryEvent[];
-  /** 전쟁 중 날짜별 전선 (DESIGN.md §4.5) */
-  fronts: FrontIndexEntry[];
+  /** 전쟁: 진영·참전국·전역별 날짜 스냅샷 (DESIGN.md §4.5) */
+  wars: WarIndexEntry[];
 }
 
 export type TerritoryFeature = Feature<MultiPolygon>;
@@ -49,10 +49,10 @@ export function useStaticData() {
       getJson<LoadedEntity[]>('entities.json'),
       getJson<Relation[]>('relations.json'),
       getJson<HistoryEvent[]>('events.json'),
-      getJson<FrontIndexEntry[]>('fronts.json'),
+      getJson<WarIndexEntry[]>('wars.json'),
     ])
-      .then(([timeline, territories, entities, relations, events, fronts]) =>
-        setData({ timeline, territories, entities: new Map(entities.map((e) => [e.id, e])), relations, events, fronts }),
+      .then(([timeline, territories, entities, relations, events, wars]) =>
+        setData({ timeline, territories, entities: new Map(entities.map((e) => [e.id, e])), relations, events, wars }),
       )
       .catch((e: Error) => setError(e.message));
   }, []);

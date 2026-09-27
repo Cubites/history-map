@@ -24,7 +24,7 @@ import {
 } from '../../src/schema/index.ts';
 import { buildLodTopology, countPoints, subTopology, tiledTopology } from './topo.ts';
 import { chunkOutlines, tilePolygons } from './tiles.ts';
-import { buildFronts, checkFronts, readFronts } from './fronts.ts';
+import { buildWars, checkWars, readWars } from './wars.ts';
 import {
   anchorPoint,
   areaKm2,
@@ -331,10 +331,10 @@ async function main() {
   const relations = await readYamlList(path.join(DATA, 'relations.yaml'), RelationSchema);
   const events = (await Promise.all((await listFiles(path.join(DATA, 'events'), '.yaml')).map((f) => readYamlList(f, EventSchema)))).flat();
   const territories = await readTerritories();
-  const fronts = await readFronts(await listFiles(path.join(DATA, 'fronts'), '.yaml'), errors, rel);
+  const wars = await readWars(await listFiles(path.join(DATA, 'wars'), '.yaml'), errors, rel);
 
   checkIntegrity(entities, territories, events, relations);
-  checkFronts(fronts, entities, events, errors);
+  checkWars(wars, entities, events, errors);
   checkArrowAnchors(events, territories);
   if (errors.length) return finish();
 
@@ -362,11 +362,13 @@ async function main() {
   await writeJson(path.join(OUT, 'entities.json'), entityList.map((e, i) => ({ ...e, color: colorFor(e, i) })));
   await writeJson(path.join(OUT, 'relations.json'), relations);
   await writeJson(path.join(OUT, 'events.json'), [...events].sort((a, b) => a.year - b.year || a.id.localeCompare(b.id)));
-  // 전선: 전쟁이 시작된 해의 해당 나라 영토(해안선으로 자른 것)를 합쳐 두 편으로 나눈다
-  const regionCoords = (entityId: string, year: number) => clipped.find((t) => t.entityId === entityId && active(t, year))?.clipped ?? null;
-  await writeJson(path.join(OUT, 'fronts.json'), buildFronts(fronts, regionCoords));
+  // 전쟁: 스냅샷마다 진영별 점령 지역을 계산한다 (DESIGN.md §4.5)
+  const territory = (entityId: string, year: number) => clipped.find((t) => t.entityId === entityId && active(t, year))?.clipped ?? null;
+  const warIndex = await buildWars(wars, { territory, land: land50.pieces, dir: path.join(DATA, 'wars') }, errors);
+  if (errors.length) return finish();
+  await writeJson(path.join(OUT, 'wars.json'), warIndex);
 
-  console.log(`build:data  나라 ${entities.size} · 영토 ${clipped.length} · 사건 ${events.length} · 전선 ${fronts.reduce((n, f) => n + f.snapshots.length, 0)} · ${lodSummary}`);
+  console.log(`build:data  나라 ${entities.size} · 영토 ${clipped.length} · 사건 ${events.length} · 전쟁 ${wars.length}(스냅샷 ${wars.reduce((n, w) => n + w.theaters.reduce((m, t) => m + t.snapshots.length, 0), 0)}) · ${lodSummary}`);
   finish();
 }
 
