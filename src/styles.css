@@ -361,6 +361,8 @@ button {
   .front-timeline-head { font-size: 12px; gap: 2px 8px; }
   .front-timeline-legend { font-size: 11px; }
   .front-timeline-dates ol button { height: 26px; }
+  /* 모바일은 위쪽 날짜 영역에 전쟁 이름과 닫기 버튼이 있으므로, 지도 버튼을 가리는 띠는 숨긴다 */
+  .war-banner { display: none; }
   .app-main { order: 2; flex: 1 1 auto; min-height: 180px; }
   .panel {
     order: 3;
