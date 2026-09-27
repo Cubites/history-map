@@ -17,12 +17,13 @@ import {
   type StaticData,
   type TerritoryFeature,
 } from '../data/staticData.ts';
-import { activeFront, snapshotFor } from '../lib/fronts.ts';
+import { snapshotFor, warsInYear } from '../lib/fronts.ts';
 import { formatRange } from '../lib/year.ts';
 import type { Lod, TerritoryIndexEntry } from '../schema/index.ts';
 import { useAppStore } from '../store/useAppStore.ts';
 import { ArrowLayer } from './ArrowLayer.tsx';
 import { FrontArrowLayer } from './FrontArrowLayer.tsx';
+import { WarMarkerLayer } from './WarMarkerLayer.tsx';
 import {
   drawMap,
   isVisible,
@@ -102,6 +103,9 @@ export default function WorldMap({ data }: { data: StaticData }) {
   const selectedId = useAppStore((s) => s.selectedId);
   const hoveredEventId = useAppStore((s) => s.hoveredEventId);
   const frontDate = useAppStore((s) => s.frontDate);
+  const warId = useAppStore((s) => s.warId);
+  const enterWar = useAppStore((s) => s.enterWar);
+  const exitWar = useAppStore((s) => s.exitWar);
   const selectEntity = useAppStore((s) => s.select);
 
   // 시점은 매 프레임 바뀌므로 ref에 두고, 화면 좌표 레이어(SVG)를 위해 프레임당 한 번 state로 복사한다.
@@ -129,8 +133,14 @@ export default function WorldMap({ data }: { data: StaticData }) {
   const hoveredEvent = hoveredEventId ? data.events.find((e) => e.id === hoveredEventId) : undefined;
 
   // 전쟁 중이면 해당 나라들의 영토 대신 날짜별 전선으로 칠한다 (DESIGN.md §4.5)
-  const war = useMemo(() => activeFront(data.fronts, year), [data.fronts, year]);
+  // 전쟁 보기는 사용자가 골랐을 때만 켜진다. 연도만 바꿔서는 켜지지 않는다
+  const war = useMemo(() => {
+    const w = warId ? data.fronts.find((f) => f.id === warId) : undefined;
+    return w && w.from <= year && year <= w.to ? w : undefined;
+  }, [data.fronts, warId, year]);
   const snapshot = war ? snapshotFor(war, year, frontDate, hoveredEvent) : undefined;
+  // 평소 지도에는 그 해에 진행 중인 전쟁의 표시만 둔다
+  const warMarkers = useMemo(() => (warId ? [] : warsInYear(data.fronts, year)), [data.fronts, warId, year]);
   const frontShapes = useMemo(() => {
     if (!war || !snapshot) return undefined;
     const area = (coordinates: [number, number][][][]): Shape => ({ feature: { type: 'Feature', properties: null, geometry: { type: 'MultiPolygon', coordinates } }, bbox: snapshot.bbox });
@@ -444,6 +454,29 @@ export default function WorldMap({ data }: { data: StaticData }) {
     },
     [size, s0, draw, setMoving, syncZoom],
   );
+  // 전쟁 보기를 열면 전쟁 지역으로 확대하고, 닫으면 들어오기 전 위치로 돌아간다
+  const beforeWar = useRef<View | null>(null);
+  const shownWar = useRef<string | null>(null);
+  useEffect(() => {
+    if (!size) return;
+    const target = war?.id ?? null;
+    if (target === shownWar.current) return;
+    if (target && war) {
+      if (!shownWar.current) beforeWar.current = viewRef.current;
+      animateTo(fitBounds(size, s0, war.bounds));
+    } else if (beforeWar.current) {
+      animateTo(beforeWar.current);
+      beforeWar.current = null;
+    }
+    shownWar.current = target;
+  }, [war, size, s0, animateTo]);
+  // 전쟁 보기 중에 전쟁 기간 밖의 연도로 옮기면(사건 목록의 이동 등) 전쟁 보기를 닫는다
+  useEffect(() => {
+    if (!warId) return;
+    const w = data.fronts.find((f) => f.id === warId);
+    if (!w || year < w.from || year > w.to) useAppStore.setState({ warId: null, frontDate: null, returnYear: null });
+  }, [warId, year, data.fronts]);
+
   const zoomButton = (factor: number) => {
     if (size) animateTo({ ...toGeoView(size, s0, viewRef.current), k: viewRef.current.k * factor });
   };
@@ -497,6 +530,9 @@ export default function WorldMap({ data }: { data: StaticData }) {
       {size && projection && (
         <svg className="map-overlay" width={size.width} height={size.height} aria-hidden>
           {snapshot && <FrontArrowLayer snapshot={snapshot} projection={projection} />}
+          {warMarkers.length > 0 && (
+            <WarMarkerLayer wars={warMarkers} projection={projection} onOpen={(w) => enterWar(w.id, year, null)} />
+          )}
           <LabelLayer territories={labelTerritories} entities={data.entities} selectedId={selectedId} projection={projection} view={view} size={size} />
           {hoveredEvent && selectedId && (
             <ArrowLayer data={data} event={hoveredEvent} selectedId={selectedId} projection={projection} />
@@ -512,6 +548,14 @@ export default function WorldMap({ data }: { data: StaticData }) {
       )}
       {error && <div className="map-status map-status-error">지도를 불러오지 못했습니다: {error}</div>}
       {active.length === 0 && <div className="map-notice">이 시기의 영토 데이터는 아직 없습니다</div>}
+      {war && (
+        <div className="war-banner" onClick={(e) => e.stopPropagation()} onPointerDown={(e) => e.stopPropagation()}>
+          <span className="war-banner-title">전쟁 보기 · {war.name}</span>
+          <button type="button" onClick={exitWar}>
+            닫기
+          </button>
+        </div>
+      )}
       <div className="map-controls" onClick={(e) => e.stopPropagation()} onPointerDown={(e) => e.stopPropagation()}>
         <button type="button" className="map-zoom-button" aria-label="확대" onClick={() => zoomButton(1.6)}>+</button>
         <button type="button" className="map-zoom-button" aria-label="축소" onClick={() => zoomButton(1 / 1.6)}>−</button>

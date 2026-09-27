@@ -447,3 +447,54 @@ button {
 }
 .front-timeline-summary { margin: 0; font-size: 12.5px; color: var(--muted); }
 .event-front { font-size: 11.5px; color: var(--front-line); margin-top: 2px; }
+
+/* ── 전쟁 보기 (DESIGN.md §4.5) ─────────────────────────── */
+.war-marker { cursor: pointer; pointer-events: auto; }
+.war-marker-disc { fill: var(--surface); stroke: var(--front-line); stroke-width: 1.5; }
+.war-marker:hover .war-marker-disc, .war-marker:focus-visible .war-marker-disc { fill: var(--front-line); }
+.war-marker-icon { fill: none; stroke: var(--front-line); stroke-width: 2; stroke-linecap: round; }
+.war-marker:hover .war-marker-icon, .war-marker:focus-visible .war-marker-icon { stroke: var(--surface); }
+.war-marker:focus-visible { outline: none; }
+.war-marker-label, .war-marker-sub { paint-order: stroke; stroke: var(--label-halo); stroke-width: 3.5px; }
+.war-marker-label { font-size: 12.5px; font-weight: 700; fill: var(--front-line); }
+.war-marker-sub { font-size: 11px; fill: var(--label); opacity: 0; transition: opacity .15s; }
+.war-marker:hover .war-marker-sub, .war-marker:focus-visible .war-marker-sub { opacity: 1; }
+
+.war-banner {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 6px 5px 12px;
+  border: 1px solid var(--front-line);
+  border-radius: 999px;
+  background: var(--control-bg);
+  font-size: 13px;
+  white-space: nowrap;
+  z-index: 2;
+}
+.war-banner-title { color: var(--front-line); font-weight: 700; }
+.war-banner button { font-size: 12px; padding: 2px 10px; border-radius: 999px; }
+
+.timeline-war .front-timeline { margin-top: 0; padding-top: 0; border-top: none; }
+.front-timeline-period { color: var(--muted); font-variant-numeric: tabular-nums; }
+.front-timeline-close { margin-left: auto; font-size: 12px; }
+
+.panel-wars { margin: 10px 0 4px; }
+.panel-wars h3 { font-size: 13px; color: var(--muted); font-weight: 600; margin: 0 0 4px; }
+.panel-wars ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
+.panel-wars li {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--front-line);
+}
+.panel-war-name { font-weight: 700; }
+.panel-war-period { color: var(--muted); font-size: 12px; font-variant-numeric: tabular-nums; }
+.panel-wars li > :last-child { margin-left: auto; }
+.panel-war-open { font-size: 12px; color: var(--front-line); }

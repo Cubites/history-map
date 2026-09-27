@@ -10,6 +10,10 @@ sides:
   north: { name: 북한군·중국군, entity: dprk }
   south: { name: 국군·유엔군, entity: rok }
 sources: ["국방부 군사편찬연구소 『6·25 전쟁사』", "국사편찬위원회 『한국사』"]
+# 참전국 (region·sides 나라는 자동 포함). 유엔군 참전 16개국 중 지도에 있는 나라와 중국
+participants: [usa, uk, france, prc]
+# 평소 지도의 전쟁 표시 위치 (38도선 부근)
+marker: [127.3, 38.0]
 
 snapshots:
   - date: 1950-06-25

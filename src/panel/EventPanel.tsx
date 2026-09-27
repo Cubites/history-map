@@ -1,6 +1,6 @@
 import { occupierAt, overlordAt, type StaticData } from '../data/staticData.ts';
 import { eventsOf, formatEventYears, inDecade, linkDirection } from '../lib/events.ts';
-import { formatFrontDate, yearOfFrontDate } from '../lib/fronts.ts';
+import { entryYear, formatFrontDate, warsOf, yearOfFrontDate } from '../lib/fronts.ts';
 import { formatDecade, formatRange, formatYear, isAlive } from '../lib/year.ts';
 import type { HistoryEvent } from '../schema/index.ts';
 import { useAppStore } from '../store/useAppStore.ts';
@@ -12,6 +12,8 @@ export function EventPanel({ data }: { data: StaticData }) {
   const setShowAll = useAppStore((s) => s.setShowAllEvents);
   const setYear = useAppStore((s) => s.setYear);
   const select = useAppStore((s) => s.select);
+  const enterWar = useAppStore((s) => s.enterWar);
+  const warId = useAppStore((s) => s.warId);
 
   const entity = selectedId ? data.entities.get(selectedId) : undefined;
   if (!entity) {
@@ -33,6 +35,9 @@ export function EventPanel({ data }: { data: StaticData }) {
     .filter((r) => r.type === 'successor_of' && r.object === entity.id)
     .map((r) => ({ relation: r, entity: data.entities.get(r.subject) }))
     .filter((s) => s.entity);
+  // 이 나라가 참전한 전쟁 중 지금 보는 10년 구간과 겹치는 것 (DESIGN.md §4.5)
+  const decade = Math.floor(year / 10) * 10;
+  const wars = warsOf(data.fronts, entity.id, decade, decade + 9);
   const occupation = occupierAt(data.relations, entity.id, year);
   const occupier = occupation && data.entities.get(occupation.object);
   const vassalage = overlordAt(data.relations, entity.id, year);
@@ -90,6 +95,29 @@ export function EventPanel({ data }: { data: StaticData }) {
         </div>
       )}
 
+      {wars.length > 0 && (
+        <div className="panel-wars">
+          <h3>이 시기의 전쟁</h3>
+          <ul>
+            {wars.map((w) => (
+              <li key={w.id}>
+                <span className="panel-war-name">{w.name}</span>
+                <span className="panel-war-period">
+                  {formatYear(w.from, '')}–{formatYear(w.to, '')}
+                </span>
+                {warId === w.id ? (
+                  <span className="panel-war-open">보는 중</span>
+                ) : (
+                  <button type="button" className="link-button" onClick={() => enterWar(w.id, entryYear(w, year), null)}>
+                    전선 보기 →
+                  </button>
+                )}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
       <div className="panel-section-title">
         <h3>{showAll ? '전체 사건' : `${formatDecade(year)} 사건`}</h3>
         {all.length > 0 && (
@@ -136,7 +164,11 @@ function EventItem({ event, data, selectedId, highlight }: { event: HistoryEvent
   const hovered = useAppStore((s) => s.hoveredEventId === event.id);
   const setYear = useAppStore((s) => s.setYear);
   const setFront = useAppStore((s) => s.setFront);
+  const enterWar = useAppStore((s) => s.enterWar);
+  const warId = useAppStore((s) => s.warId);
   const name = (id: string) => data.entities.get(id)?.names.ko ?? id;
+  const war = event.front && data.fronts.find((f) => f.id === event.front!.war);
+  const openFront = () => event.front && enterWar(event.front.war, yearOfFrontDate(event.front.date), event.front.date);
 
   return (
     <li
@@ -146,8 +178,8 @@ function EventItem({ event, data, selectedId, highlight }: { event: HistoryEvent
       onFocus={() => hoverEvent(event.id)}
       onBlur={() => hoverEvent(null)}
       onClick={() => {
-        // 전선에 연결된 사건은 그 날짜의 전선으로 옮긴다 (DESIGN.md §4.5)
-        if (event.front) setFront(yearOfFrontDate(event.front.date), event.front.date);
+        // 전쟁 보기 중이면 그 전쟁의 사건은 그 날짜의 전선으로 옮긴다 (DESIGN.md §4.5)
+        if (event.front && event.front.war === warId) setFront(yearOfFrontDate(event.front.date), event.front.date);
         else setYear(event.year);
         // 터치 화면에는 hover가 없으므로 누르면 화살표를 보여준다 (setYear가 hover를 지우므로 그 뒤에 설정)
         hoverEvent(event.id);
@@ -171,7 +203,18 @@ function EventItem({ event, data, selectedId, highlight }: { event: HistoryEvent
           ))}
         </ul>
       )}
-      {event.front && <div className="event-front">전선: {formatFrontDate(event.front.date)} (누르면 이 날짜의 전선으로 이동)</div>}
+      {event.front && war && warId !== event.front.war && (
+        <button
+          type="button"
+          className="link-button event-front"
+          onClick={(e) => {
+            e.stopPropagation();
+            openFront();
+          }}
+        >
+          {war.name} · {formatFrontDate(event.front.date)} 전선 보기 →
+        </button>
+      )}
       <div className="event-sources">{event.sources.join(' · ')}</div>
     </li>
   );

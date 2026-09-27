@@ -28,6 +28,7 @@ export function Timeline({ data }: { data: StaticData }) {
   const [invalid, setInvalid] = useState(false);
   const [editing, setEditing] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
+  const inWar = useAppStore((s) => s.warId !== null && data.fronts.some((f) => f.id === s.warId && f.from <= s.year && s.year <= f.to));
 
   const range = data.timeline.range;
   const [min, max] = [decadeOf(range[0]), decadeOf(range[1])];
@@ -49,6 +50,15 @@ export function Timeline({ data }: { data: StaticData }) {
     setInvalid(false);
     setEditing(false);
   };
+
+  // 전쟁 보기에서는 연도 타임라인 대신 그 전쟁의 날짜 축을 보여 준다 (DESIGN.md §4.5)
+  if (inWar) {
+    return (
+      <div className="timeline timeline-war">
+        <FrontTimeline data={data} />
+      </div>
+    );
+  }
 
   return (
     <div className="timeline" data-editing={editing}>
@@ -119,7 +129,6 @@ export function Timeline({ data }: { data: StaticData }) {
           <span>{formatYear(range[1])}</span>
         </div>
       </div>
-      <FrontTimeline data={data} />
     </div>
   );
 }

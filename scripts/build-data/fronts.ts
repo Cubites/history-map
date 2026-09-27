@@ -40,7 +40,7 @@ export function checkFronts(fronts: Front[], entities: Map<string, Entity>, even
   for (const f of fronts) {
     if (ids.has(f.id)) errors.push(`전선 id 중복: ${f.id}`);
     ids.add(f.id);
-    for (const id of [...f.region, f.sides.north.entity, f.sides.south.entity])
+    for (const id of [...f.region, f.sides.north.entity, f.sides.south.entity, ...f.participants])
       if (!entities.has(id)) errors.push(`전선 ${f.id}: 없는 나라 '${id}'`);
     f.snapshots.forEach((s, i) => {
       if (i > 0 && s.date <= f.snapshots[i - 1].date && yearOfDate(s.date) >= yearOfDate(f.snapshots[i - 1].date))
@@ -72,10 +72,16 @@ export function buildFronts(fronts: Front[], regionCoords: (entityId: string, ye
     const to = yearOfDate(f.snapshots[f.snapshots.length - 1].date);
     const parts = f.region.map((id) => regionCoords(id, from)).filter((c): c is MultiCoords => !!c && c.length > 0);
     const area = union(...parts);
+    const [w, s, e, n] = bbox(area);
+    // 참전국: region·sides 나라를 빠짐없이 넣는다
+    const participants = [...new Set([...f.region, f.sides.north.entity, f.sides.south.entity, ...f.participants])];
     return {
       ...f,
+      participants,
       from,
       to,
+      marker: f.marker ?? [(w + e) / 2, (s + n) / 2],
+      bounds: f.bounds ?? [[w - 1.5, s - 1], [e + 1.5, n + 1]],
       snapshots: f.snapshots.map((s) => {
         const north = intersect(area, northRing(s.line as [number, number][]));
         const south = difference(area, north);

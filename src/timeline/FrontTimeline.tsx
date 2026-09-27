@@ -1,18 +1,22 @@
 import type { StaticData } from '../data/staticData.ts';
-import { activeFront, formatFrontDate, snapshotFor } from '../lib/fronts.ts';
+import { formatFrontDate, snapshotFor } from '../lib/fronts.ts';
+import { formatYear } from '../lib/year.ts';
 import { useAppStore } from '../store/useAppStore.ts';
 
 /**
- * 전쟁 중 하위 타임라인 (DESIGN.md §4.5): 연도 타임라인 아래에 전선 날짜를 늘어놓는다.
- * 날짜를 고르면 지도가 그 날의 전선과 작전 화살표를 보여 준다. 다른 해의 날짜를 고르면 연도도 옮긴다.
+ * 전쟁 보기의 타임라인 (DESIGN.md §4.5): 연도 타임라인 대신 그 전쟁의 전선 날짜를 늘어놓는다.
+ * 날짜를 고르면 지도가 그 날의 전선과 작전 화살표를 보여 준다.
  */
 export function FrontTimeline({ data }: { data: StaticData }) {
   const year = useAppStore((s) => s.year);
+  const warId = useAppStore((s) => s.warId);
   const frontDate = useAppStore((s) => s.frontDate);
   const hoveredEventId = useAppStore((s) => s.hoveredEventId);
   const setFront = useAppStore((s) => s.setFront);
+  const exitWar = useAppStore((s) => s.exitWar);
+  const returnYear = useAppStore((s) => s.returnYear);
 
-  const war = activeFront(data.fronts, year);
+  const war = data.fronts.find((f) => f.id === warId);
   if (!war) return null;
   const hoveredEvent = hoveredEventId ? data.events.find((e) => e.id === hoveredEventId) : undefined;
   const current = snapshotFor(war, year, frontDate, hoveredEvent);
@@ -25,7 +29,10 @@ export function FrontTimeline({ data }: { data: StaticData }) {
   return (
     <section className="front-timeline" aria-label={`${war.name} 전선`}>
       <div className="front-timeline-head">
-        <strong>{war.name} 전선</strong>
+        <strong>{war.name}</strong>
+        <span className="front-timeline-period">
+          {formatYear(war.from, '')}–{formatYear(war.to, '')}
+        </span>
         <span className="front-timeline-current">
           {formatFrontDate(current.date)} · {current.title}
         </span>
@@ -35,6 +42,9 @@ export function FrontTimeline({ data }: { data: StaticData }) {
           <i className="front-legend-south" />
           {war.sides.south.name}
         </span>
+        <button type="button" className="front-timeline-close" onClick={exitWar}>
+          닫고 {formatYear(returnYear ?? year)} 지도로
+        </button>
       </div>
       <div className="front-timeline-dates">
         <button type="button" disabled={index <= 0} onClick={() => go(index - 1)} aria-label="이전 전선">◀</button>

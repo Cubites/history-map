@@ -118,6 +118,12 @@ export const FrontSchema = z.object({
     south: z.object({ name: z.string(), entity: z.string() }),
   }),
   sources: z.array(z.string().min(1)).min(1),
+  /** 참전국. 이 나라를 고르면 사건 패널의 "이 시기의 전쟁"에 나온다 (region·sides 나라는 자동 포함) */
+  participants: z.array(z.string()).default([]),
+  /** 평소 지도에 전쟁 표시를 둘 곳. 없으면 전선 범위의 가운데 */
+  marker: LonLatSchema.optional(),
+  /** 전쟁 보기를 열 때 확대할 범위 [[서, 남], [동, 북]]. 없으면 전선 범위에 여백을 둔다 */
+  bounds: z.tuple([LonLatSchema, LonLatSchema]).optional(),
   snapshots: z.array(FrontSnapshotSchema).min(1),
 });
 export type Front = z.infer<typeof FrontSchema>;
@@ -131,10 +137,12 @@ export interface FrontSnapshotOut extends z.infer<typeof FrontSnapshotSchema> {
   /** 전쟁 중 이름표를 둘 곳 (각 편 점령 지역 안쪽). 그 편이 차지한 곳이 없으면 null */
   anchors: { north: LonLat | null; south: LonLat | null };
 }
-export interface FrontIndexEntry extends Omit<Front, 'snapshots'> {
-  /** 전선을 보여 주는 연도 범위 (포함) */
+export interface FrontIndexEntry extends Omit<Front, 'snapshots' | 'marker' | 'bounds'> {
+  /** 전쟁 기간 (포함): 첫 스냅샷 ~ 마지막 스냅샷 연도 */
   from: Year;
   to: Year;
+  marker: LonLat;
+  bounds: [[number, number], [number, number]];
   snapshots: FrontSnapshotOut[];
 }
 type MultiPolygonCoords = [number, number][][][];
