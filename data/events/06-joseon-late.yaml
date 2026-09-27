@@ -16,6 +16,7 @@
     - { from: japan, to: joseon, note: "일본군의 침략" }
   tags: [war]
   sources: ["『선조실록』 선조 25년", "유성룡, 『징비록』"]
+  front: { war: imjin-war, date: 1592-05-03 }
 
 - id: yi-sunsin-1592
   year: 1592
@@ -28,6 +29,7 @@
     - { from: joseon, to: japan, note: "조선 수군의 승리" }
   tags: [war]
   sources: ["『선조실록』 선조 25년", "이순신, 『난중일기』"]
+  front: { war: imjin-war, date: 1592-07-08 }
 
 - id: righteous-army-1592
   year: 1592
@@ -40,6 +42,7 @@
     - { from: joseon, to: japan, note: "의병의 항전" }
   tags: [war]
   sources: ["『선조실록』 선조 25년", "『선조수정실록』 선조 25년"]
+  front: { war: imjin-war, date: 1592-10-10 }
 
 - id: jinju-1592
   year: 1592
@@ -52,6 +55,7 @@
     - { from: japan, to: joseon, note: "진주성 공격" }
   tags: [war]
   sources: ["『선조수정실록』 선조 25년"]
+  front: { war: imjin-war, date: 1592-10-10 }
 
 - id: pyongyang-recapture-1593
   year: 1593
@@ -65,6 +69,7 @@
     - { from: joseon, to: japan, note: "평양성 탈환·행주 대첩" }
   tags: [war]
   sources: ["『선조실록』 선조 26년", "유성룡, 『징비록』"]
+  front: { war: imjin-war, date: 1593-02-12 }
 
 - id: hullyeon-dogam-1593
   year: 1593
@@ -90,6 +95,7 @@
     - { from: ming, to: joseon, note: "명 수군의 참전" }
   tags: [war]
   sources: ["『선조실록』 선조 30년·31년", "이순신, 『난중일기』"]
+  front: { war: imjin-war, date: 1597-09-16 }
 
 - id: imjin-aftermath-1598
   year: 1598

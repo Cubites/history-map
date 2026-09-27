@@ -1,0 +1,182 @@
+# 임진왜란·정유재란 (DESIGN.md §4.5)
+# 전역 하나(한반도). 스냅샷마다 조선 땅 전체(조선·일본군 점령지 영토)를 조선 진영으로 칠한 뒤,
+# 일본군 점령 지역(imjin/*.geojson)을 그 위에 덮는다. 점령 지역은 교과서 전황도 수준의 대략적인 추정.
+# 날짜는 우리 역사책이 흔히 쓰는 음력이다 (예: 부산 상륙 1592년 음력 4월 13일 = 양력 5월 23일).
+# 운영자가 국방부 군사편찬연구소 『임진왜란사』 전황도를 기준으로 검수·보정할 것.
+
+id: imjin-war
+name: 임진왜란·정유재란 (날짜는 음력)
+factions:
+  - { id: joseon, name: 조선군·명군, entity: joseon }
+  - { id: japan, name: 일본군, entity: japan }
+participants:
+  - { entity: joseon, faction: joseon }
+  # 명의 첫 원군(조승훈)은 음력 7월, 이여송의 본군은 12월에 압록강을 건넜다
+  - { entity: ming, faction: joseon, from: 1592-07-17 }
+  - { entity: japan, faction: japan }
+sources: ["국방부 군사편찬연구소 『임진왜란사』", "『선조실록』", "유성룡 『징비록』", "이순신 『난중일기』", "국사편찬위원회 『신편 한국사』 29"]
+
+theaters:
+  - id: korea
+    name: 한반도
+    replaces: [joseon, imjin-occupied]
+    marker: [128.4, 35.6]
+    bounds: [[124.0, 33.6], [131.2, 43.0]]
+    routes:
+      - name: 고니시 유키나가 (제1군)
+        faction: japan
+        points:
+          - { at: [129.04, 35.1], date: 1592-04-14, label: 부산진 }
+          - { at: [129.08, 35.2], date: 1592-04-15, label: 동래 }
+          - { at: [128.6, 35.87], date: 1592-04-21, label: 대구 }
+          - { at: [128.16, 36.41], date: 1592-04-25, label: 상주 }
+          - { at: [127.93, 36.99], date: 1592-04-28, label: 충주 (탄금대) }
+          - { at: [126.98, 37.57], date: 1592-05-03, label: 한양 }
+          - { at: [126.55, 37.97], date: 1592-05-29, label: 개성 }
+          - { at: [125.75, 39.02], date: 1592-06-15, label: 평양 }
+      - name: 가토 기요마사 (제2군)
+        faction: japan
+        points:
+          - { at: [129.04, 35.1], date: 1592-04-18, label: 부산 }
+          - { at: [129.22, 35.84], date: 1592-04-21, label: 경주 }
+          - { at: [127.93, 36.99], date: 1592-04-28, label: 충주 }
+          - { at: [126.98, 37.57], date: 1592-05-03, label: 한양 }
+          - { at: [127.3, 39.0], date: 1592-06-17, label: 안변 }
+          - { at: [127.53, 39.92], date: 1592-06-25, label: 함흥 }
+          - { at: [129.75, 42.44], date: 1592-07-23, label: 회령 (두 왕자 포로) }
+      - name: 명군 (이여송)
+        faction: joseon
+        points:
+          - { at: [124.53, 40.2], date: 1592-12-25, label: 의주 (압록강) }
+          - { at: [125.75, 39.02], date: 1593-01-08, label: 평양성 탈환 }
+          - { at: [126.55, 37.97], date: 1593-01-19, label: 개성 }
+          - { at: [126.87, 37.7], date: 1593-01-27, label: 벽제관 }
+    battles:
+      - { name: 부산진·동래성 전투, at: [129.06, 35.15], date: 1592-04-14, winner: japan, summary: 부산진 첨사 정발과 동래 부사 송상현이 끝까지 싸우다 전사했다. }
+      - { name: 탄금대 전투, at: [127.9, 37.0], date: 1592-04-28, winner: japan, summary: 신립이 탄금대에 배수진을 쳤으나 일본군의 조총 부대에 크게 졌다. 사흘 뒤 선조가 한양을 떠나 피란했다. }
+      - { name: 옥포 해전, at: [128.69, 34.9], date: 1592-05-07, winner: joseon, summary: 이순신의 첫 승리. 거제 옥포에서 일본 전선 26척을 격파했다. }
+      - { name: 사천 해전, at: [128.06, 34.93], date: 1592-05-29, winner: joseon, summary: 거북선이 처음 출전한 해전. }
+      - { name: 한산도 대첩, at: [128.45, 34.78], date: 1592-07-08, winner: joseon, summary: 이순신이 학익진으로 일본 수군을 크게 무찔렀다. 일본군의 서해 진출과 수륙 병진 작전이 막혀 전라도를 지킬 수 있었다. }
+      - { name: 이치 전투, at: [127.35, 36.05], date: 1592-07-08, winner: joseon, summary: 권율이 금산에서 전주로 넘어가는 이치 고개에서 일본군을 막아 전라도를 지켰다. }
+      - { name: 금산 전투, at: [127.49, 36.1], date: 1592-08-18, winner: japan, summary: 의병장 조헌과 승병장 영규가 이끈 700여 명이 일본군과 싸우다 모두 전사했다(칠백의총). }
+      - { name: 진주 대첩, at: [128.08, 35.19], date: 1592-10-05, winner: joseon, summary: 진주 목사 김시민이 3,800여 명으로 2만 명의 일본군을 막아 냈다. 3대첩의 하나. }
+      - { name: 평양성 전투, at: [125.75, 39.02], date: 1593-01-08, winner: joseon, summary: 조·명 연합군이 고니시의 일본군을 몰아내고 평양성을 되찾았다. }
+      - { name: 벽제관 전투, at: [126.87, 37.7], date: 1593-01-27, winner: japan, summary: 한양으로 내려가던 명군이 벽제관에서 패해 평양으로 물러났다. }
+      - { name: 행주 대첩, at: [126.82, 37.6], date: 1593-02-12, winner: joseon, summary: 권율이 행주산성에서 3만여 명의 일본군을 물리쳤다. 3대첩의 하나. }
+      - { name: 제2차 진주성 전투, at: [128.1, 35.2], date: 1593-06-29, winner: japan, summary: 일본군이 전년의 패배를 갚으려 대군으로 진주성을 함락했다. 논개의 이야기가 전한다. }
+      - { name: 칠천량 해전, at: [128.6, 34.97], date: 1597-07-16, winner: japan, summary: 이순신 대신 삼도 수군통제사가 된 원균의 조선 수군이 거의 전멸했다. }
+      - { name: 남원성 전투, at: [127.39, 35.41], date: 1597-08-16, winner: japan, summary: 조·명 연합군이 지키던 남원성이 함락되었다. 일본군은 곧 전주까지 차지했다. }
+      - { name: 직산 전투, at: [127.15, 36.88], date: 1597-09-07, winner: joseon, summary: 명군이 직산(천안)에서 북상하던 일본군을 막았다. 일본군은 이후 남해안으로 물러났다. }
+      - { name: 명량 대첩, at: [126.3, 34.57], date: 1597-09-16, winner: joseon, summary: 다시 수군통제사가 된 이순신이 남은 배 13척으로 울돌목에서 일본 전선 133척을 물리쳤다. }
+      - { name: 노량 해전, at: [127.87, 34.94], date: 1598-11-19, winner: joseon, summary: 도요토미 히데요시가 죽은 뒤 철수하던 일본군을 조·명 수군이 공격했다. 이순신이 전사했다. }
+    snapshots:
+      - date: 1592-04-15
+        title: 부산 상륙
+        summary: 음력 4월 13일 일본군이 부산에 상륙해 부산진(14일)과 동래성(15일)을 함락했습니다.
+        areas:
+          - { faction: joseon, entities: [joseon, imjin-occupied] }
+          - { faction: japan, geojson: imjin/1592-04-15.geojson }
+        arrows:
+          - { faction: japan, path: [[129.3, 34.4], [129.05, 35.05]], label: 부산 상륙 }
+
+      - date: 1592-05-03
+        title: 한양 함락
+        summary: 일본군이 세 갈래로 북상해 상륙 20일 만에 한양을 차지했습니다. 선조는 4월 30일 한양을 떠나 개성·평양으로 피란했습니다.
+        areas:
+          - { faction: joseon, entities: [joseon, imjin-occupied] }
+          - { faction: japan, geojson: imjin/1592-05-03.geojson }
+        arrows:
+          - { faction: japan, path: [[128.6, 35.9], [128.16, 36.41], [127.93, 36.99], [127.0, 37.5]], label: 중로 }
+          - { faction: japan, path: [[129.22, 35.84], [128.5, 36.8], [127.3, 37.55]], label: 좌로 }
+
+      - date: 1592-06-15
+        title: 평양 함락
+        summary: 고니시의 일본군이 평양을 차지하고, 가토의 일본군은 함경도로 들어갔습니다. 선조는 의주로 피란해 명에 원군을 요청했습니다.
+        areas:
+          - { faction: joseon, entities: [joseon, imjin-occupied] }
+          - { faction: japan, geojson: imjin/1592-06-15.geojson }
+        arrows:
+          - { faction: japan, path: [[126.55, 37.97], [125.8, 38.9]], label: 평양 }
+          - { faction: japan, path: [[127.0, 37.7], [127.3, 38.95], [127.55, 39.8]], label: 함경도 }
+
+      - date: 1592-07-08
+        title: 한산도 대첩
+        summary: 일본군이 함경도 끝 회령까지 올라갔지만, 이순신이 한산도에서 일본 수군을 크게 물리치고 권율이 이치에서 일본군을 막아 전라도를 지켰습니다.
+        areas:
+          - { faction: joseon, entities: [joseon, imjin-occupied] }
+          - { faction: japan, geojson: imjin/1592-07-08.geojson }
+        arrows:
+          - { faction: joseon, path: [[127.75, 34.75], [128.4, 34.78]], label: 조선 수군 }
+          - { faction: japan, path: [[127.55, 39.9], [129.7, 42.3]], label: 회령 }
+
+      - date: 1592-10-10
+        title: 진주 대첩과 의병
+        summary: 곽재우·고경명·조헌 등 의병과 승병이 곳곳에서 일어났고, 김시민이 진주성을 지켜 냈습니다(3대첩). 경상도 서부가 일본군의 손에서 벗어났습니다.
+        areas:
+          - { faction: joseon, entities: [joseon, imjin-occupied] }
+          - { faction: japan, geojson: imjin/1592-10-10.geojson }
+        holds:
+          - { name: 진주성, at: [128.08, 35.19], faction: joseon }
+          - { name: 의령 (곽재우), at: [128.26, 35.32], faction: joseon }
+
+      - date: 1593-01-08
+        title: 평양성 탈환
+        summary: 이여송이 이끄는 명군과 조선군이 평양성을 되찾았습니다. 일본군은 한양 쪽으로 물러났습니다.
+        areas:
+          - { faction: joseon, entities: [joseon, imjin-occupied] }
+          - { faction: japan, geojson: imjin/1593-01-08.geojson }
+        arrows:
+          - { faction: joseon, path: [[124.55, 40.15], [125.75, 39.05]], label: 조·명 연합군 }
+          - { faction: japan, path: [[125.75, 38.95], [126.5, 38.0]], label: 후퇴 }
+
+      - date: 1593-02-12
+        title: 행주 대첩
+        summary: 권율이 행주산성에서 일본군을 크게 물리쳤습니다. 함경도의 가토 군도 한양으로 물러났고, 일본군은 한양 주변과 남쪽 길목만 지켰습니다.
+        areas:
+          - { faction: joseon, entities: [joseon, imjin-occupied] }
+          - { faction: japan, geojson: imjin/1593-02-12.geojson }
+        holds:
+          - { name: 행주산성, at: [126.82, 37.6], faction: joseon }
+        arrows:
+          - { faction: japan, path: [[127.55, 39.8], [127.3, 38.9], [127.1, 37.8]], label: 가토 군 철수 }
+
+      - date: 1593-04-20
+        title: 한양 수복과 강화 회담
+        summary: 명과 일본이 강화 회담을 열면서 일본군이 한양에서 물러나 경상도 남해안에 왜성을 쌓고 머물렀습니다. 조선은 훈련도감을 설치해 군대를 정비했습니다. 회담은 3년 넘게 이어지다 결렬되었습니다.
+        areas:
+          - { faction: joseon, entities: [joseon, imjin-occupied] }
+          - { faction: japan, geojson: imjin/1593-04-20.geojson }
+        arrows:
+          - { faction: japan, path: [[127.0, 37.5], [128.3, 36.3], [128.9, 35.4]], label: 남해안으로 철수 }
+
+      - date: 1597-09-07
+        title: 정유재란과 직산 전투
+        summary: 강화 회담이 깨지자 일본군이 다시 쳐들어왔습니다(1597). 칠천량에서 조선 수군이 무너지고 남원·전주가 함락되었으나, 직산에서 조·명 연합군이 일본군의 북상을 막았습니다.
+        areas:
+          - { faction: joseon, entities: [joseon, imjin-occupied] }
+          - { faction: japan, geojson: imjin/1597-09-07.geojson }
+        arrows:
+          - { faction: japan, path: [[128.3, 35.1], [127.39, 35.41], [127.15, 35.82], [127.15, 36.75]], label: 남원·전주 }
+          - { faction: joseon, path: [[127.05, 37.3], [127.15, 36.95]], label: 명군 }
+
+      - date: 1597-09-16
+        title: 명량 대첩
+        summary: 이순신이 남은 배 13척으로 울돌목에서 일본 수군을 물리쳤습니다. 서해로 가려던 일본군의 계획이 막히고, 일본군은 남해안의 왜성으로 물러났습니다.
+        areas:
+          - { faction: joseon, entities: [joseon, imjin-occupied] }
+          - { faction: japan, geojson: imjin/1597-09-16.geojson }
+        arrows:
+          - { faction: joseon, path: [[125.9, 34.45], [126.3, 34.57]], label: 조선 수군 13척 }
+
+      - date: 1598-11-19
+        title: 노량 해전과 전쟁의 끝
+        summary: 도요토미 히데요시가 죽자 일본군이 철수했습니다. 이순신은 노량에서 물러가는 일본군을 공격하다 전사했습니다. 7년 전쟁이 끝났습니다.
+        areas:
+          - { faction: joseon, entities: [joseon, imjin-occupied] }
+        holds:
+          - { name: 순천 왜성, at: [127.6, 34.9], faction: japan }
+          - { name: 사천 왜성, at: [128.05, 35.0], faction: japan }
+          - { name: 울산 왜성, at: [129.33, 35.55], faction: japan }
+        arrows:
+          - { faction: joseon, path: [[127.6, 34.75], [127.87, 34.92]], label: 노량 }
+          - { faction: japan, path: [[128.5, 34.9], [129.3, 34.3]], label: 일본군 철수 }
