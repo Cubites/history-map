@@ -111,6 +111,15 @@ note: 매소성·기벌포 승리, 당군 축출      # X (YAML 오류)
 | `occupied_by` | subject가 object에 점령·강점됨 | subject 색 위에 object 색으로 빗금. 패널에 "○○의 점령지" 표시 |
 | `vassal_of` | subject가 object에 종속·간섭을 받음 | subject 테두리를 object 색으로 굵게. 패널에 "○○의 간섭·종속" 표시 |
 | `part_of` | 지역이 나라에 속함 | (예정) 지역 단위 보기 |
+| `claimed_by` | 귀속 논쟁: subject 지역을 object의 땅으로 보는 견해가 있음 | 후보 나라 색을 번갈아 빗금으로 칠함. 후보 나라를 고르면 선택 테두리에 이 지역도 포함 |
+
+**귀속이 불확실한 지역을 표시하려면**: 그 지역을 따로 `level: region` 항목으로 만들고(예: `liaodong-disputed`), 영토를 그린 뒤 후보 나라마다 `claimed_by` 관계를 추가합니다. 후보 나라들의 영토에는 그 지역을 넣지 않습니다. 기간마다 후보가 바뀌면 관계의 `from`·`to`를 나눠 적습니다.
+
+```yaml
+- { type: claimed_by, subject: liaodong-disputed, object: balhae, from: 756, to: 925 }
+- { type: claimed_by, subject: liaodong-disputed, object: tang, from: 756, to: 906 }
+- { type: claimed_by, subject: liaodong-disputed, object: liao, from: 916, to: 925 }
+```
 
 ## 5. 국경 그리기 (QGIS)
 

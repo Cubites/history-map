@@ -70,6 +70,14 @@ export function relationAt(relations: Relation[], type: Relation['type'], entity
 /** 그 해에 이 지역을 점령한 나라와의 관계 */
 export const occupierAt = (relations: Relation[], entityId: string, year: number) => relationAt(relations, 'occupied_by', entityId, year);
 
+/** 그 해에 이 지역의 귀속 후보 나라들 (귀속 논쟁 지역이 아니면 빈 배열) */
+export const claimantsAt = (relations: Relation[], entityId: string, year: number) =>
+  relations.filter((r) => r.type === 'claimed_by' && r.subject === entityId && r.from <= year && (r.to === null || year <= r.to)).map((r) => r.object);
+
+/** 그 해에 이 나라가 귀속 후보로 올라 있는 논쟁 지역들 */
+export const claimedRegionsAt = (relations: Relation[], entityId: string, year: number) =>
+  relations.filter((r) => r.type === 'claimed_by' && r.object === entityId && r.from <= year && (r.to === null || year <= r.to)).map((r) => r.subject);
+
 /** 그 해에 이 나라가 종속·간섭을 받은 나라와의 관계 */
 export const overlordAt = (relations: Relation[], entityId: string, year: number) => relationAt(relations, 'vassal_of', entityId, year);
 

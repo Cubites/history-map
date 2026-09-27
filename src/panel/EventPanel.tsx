@@ -1,4 +1,4 @@
-import { occupierAt, overlordAt, type StaticData } from '../data/staticData.ts';
+import { claimantsAt, claimedRegionsAt, occupierAt, overlordAt, type StaticData } from '../data/staticData.ts';
 import { eventsOf, formatEventYears, inDecade, linkDirection } from '../lib/events.ts';
 import { entryYear, formatFrontDate, warsOf, yearOfFrontDate } from '../lib/wars.ts';
 import { formatDecade, formatRange, formatYear, isAlive } from '../lib/year.ts';
@@ -42,6 +42,11 @@ export function EventPanel({ data }: { data: StaticData }) {
   const occupier = occupation && data.entities.get(occupation.object);
   const vassalage = overlordAt(data.relations, entity.id, year);
   const overlord = vassalage && data.entities.get(vassalage.object);
+  // 귀속 논쟁 (DESIGN.md §4.3): 이 지역의 후보 나라들 / 이 나라가 후보로 오른 논쟁 지역들
+  const claimants = claimantsAt(data.relations, entity.id, year).flatMap((id) => data.entities.get(id) ?? []);
+  const claimedRegions = claimedRegionsAt(data.relations, entity.id, year).flatMap((id) => data.entities.get(id) ?? []);
+  const stripeBackground = (colors: string[]) =>
+    `repeating-linear-gradient(135deg, ${colors.map((c, i) => `${c} ${i * 4}px ${(i + 1) * 4}px`).join(', ')})`;
 
   return (
     <aside className="panel">
@@ -49,9 +54,11 @@ export function EventPanel({ data }: { data: StaticData }) {
         <span
           className="panel-swatch"
           style={{
-            background: occupier
-              ? `repeating-linear-gradient(135deg, ${occupier.color} 0 2px, transparent 2px 5px), ${entity.color}`
-              : entity.color,
+            background: claimants.length
+              ? stripeBackground(claimants.length > 1 ? claimants.map((c) => c.color) : [claimants[0].color, 'var(--land-unassigned)'])
+              : occupier
+                ? `repeating-linear-gradient(135deg, ${occupier.color} 0 2px, transparent 2px 5px), ${entity.color}`
+                : entity.color,
             boxShadow: overlord ? `0 0 0 2px ${overlord.color}` : undefined,
           }}
         />
@@ -69,6 +76,33 @@ export function EventPanel({ data }: { data: StaticData }) {
           {overlord && vassalage && (
             <div className="panel-occupation">
               {overlord.names.ko}의 간섭·종속 ({formatRange(vassalage.from, vassalage.to)})
+            </div>
+          )}
+          {claimants.length > 0 && (
+            <div className="panel-claims">
+              귀속 논쟁 · 학설에 따라{' '}
+              {claimants.map((c, i) => (
+                <span key={c.id}>
+                  {i > 0 && ' 또는 '}
+                  <button type="button" className="link-button" onClick={() => select(c.id)}>
+                    {c.names.ko}
+                  </button>
+                </span>
+              ))}
+              의 땅으로 봄
+            </div>
+          )}
+          {claimedRegions.length > 0 && (
+            <div className="panel-claims">
+              귀속 논쟁 지역 포함:{' '}
+              {claimedRegions.map((r, i) => (
+                <span key={r.id}>
+                  {i > 0 && ', '}
+                  <button type="button" className="link-button" onClick={() => select(r.id)}>
+                    {r.names.ko}
+                  </button>
+                </span>
+              ))}
             </div>
           )}
         </div>

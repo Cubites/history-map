@@ -37,7 +37,11 @@ export const EntitySchema = z
 export type Entity = z.infer<typeof EntitySchema>;
 
 export const RelationSchema = z.object({
-  type: z.enum(['part_of', 'occupied_by', 'vassal_of', 'successor_of']),
+  /**
+   * claimed_by: 귀속이 불확실한 지역(subject)을 그 나라(object)의 땅으로 보는 견해가 있음.
+   * 후보 나라들의 색을 번갈아 빗금으로 칠하고, 후보 나라를 고르면 선택 테두리에 이 지역도 포함한다 (DESIGN.md §4.3)
+   */
+  type: z.enum(['part_of', 'occupied_by', 'vassal_of', 'successor_of', 'claimed_by']),
   subject: z.string(),
   object: z.string(),
   from: Year,

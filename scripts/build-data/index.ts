@@ -182,6 +182,8 @@ function checkIntegrity(entities: Map<string, Entity>, territories: Territory[],
     const subject = entities.get(r.subject);
     if (subject && !alive(subject, r.from)) errors.push(`${where}: ${r.from}년에 ${r.subject}가 존재하지 않음`);
     if (r.subject === r.object) errors.push(`${where}: 자기 자신과의 관계`);
+    const object = entities.get(r.object);
+    if (r.type === 'claimed_by' && object && !alive(object, r.from)) errors.push(`${where}: ${r.from}년에 ${r.object}가 존재하지 않음`);
   }
 }
 

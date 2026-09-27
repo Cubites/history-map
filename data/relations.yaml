@@ -101,3 +101,8 @@
 - { type: successor_of, subject: malgal, object: mulgil, from: 560, to: null }
 - { type: successor_of, subject: jurchen, object: malgal, from: 926, to: null }
 - { type: successor_of, subject: mongols, object: northern-yuan, from: 1388, to: null }
+
+# ── 귀속 논쟁 (claimed_by): 그 지역을 그 나라 땅으로 보는 견해가 있음 ──
+- { type: claimed_by, subject: liaodong-disputed, object: balhae, from: 756, to: 925 }
+- { type: claimed_by, subject: liaodong-disputed, object: tang, from: 756, to: 906 }
+- { type: claimed_by, subject: liaodong-disputed, object: liao, from: 916, to: 925 }

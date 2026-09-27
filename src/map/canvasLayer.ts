@@ -28,6 +28,8 @@ export interface DrawTerritory extends DrawShapes {
   border?: string;
   /** 선택(굵게)·hover(가늘게)한 영토의 강조 테두리 두께(px). 지도와 같은 프레임·같은 도형으로 그려야 움직일 때 어긋나지 않는다 */
   highlight?: number;
+  /** 귀속 논쟁 지역: 후보 나라들의 색. 있으면 단색 대신 이 색들을 번갈아 빗금으로 칠한다 (DESIGN.md §4.3) */
+  stripes?: string[];
 }
 
 const VASSAL_BORDER_WIDTH = 3;
@@ -49,6 +51,39 @@ const hatchCache = new Map<string, CanvasPattern | null>();
  * 점령지 빗금 무늬. 지도와 함께 움직이지 않는 화면 기준 무늬라 확대해도 간격이 일정하다.
  * 고해상도 화면에서 흐려지지 않도록 기기 픽셀 크기로 그린 뒤 CSS 픽셀로 줄인다.
  */
+const STRIPE_WIDTH = 5;
+const stripeCache = new Map<string, CanvasPattern | null>();
+
+/** 여러 색을 번갈아 칠한 45° 빗금 (귀속 논쟁 지역) */
+function stripePattern(ctx: CanvasRenderingContext2D, colors: string[]): CanvasPattern | null {
+  const dpr = window.devicePixelRatio || 1;
+  const key = `${colors.join('|')}@${dpr}`;
+  if (stripeCache.has(key)) return stripeCache.get(key)!;
+  const band = STRIPE_WIDTH * dpr;
+  const size = Math.round(band * colors.length);
+  const tile = document.createElement('canvas');
+  tile.width = tile.height = size;
+  const t = tile.getContext('2d')!;
+  // 타일 경계에서 끊기지 않도록 한 타일 너비만큼 양쪽으로 더 그린다
+  for (let k = -colors.length; k < 2 * colors.length; k++) {
+    t.fillStyle = colors[((k % colors.length) + colors.length) % colors.length];
+    t.beginPath();
+    t.moveTo(k * band, 0);
+    t.lineTo((k + 1) * band, 0);
+    t.lineTo((k + 1) * band - size, size);
+    t.lineTo(k * band - size, size);
+    t.closePath();
+    t.fill();
+  }
+  const pattern = ctx.createPattern(tile, 'repeat');
+  pattern?.setTransform(new DOMMatrix().scale(1 / dpr));
+  stripeCache.set(key, pattern);
+  return pattern;
+}
+
+/** 합친 바깥선을 그릴 때 쓰는 화면 밖 캔버스 */
+let outlineCanvas: HTMLCanvasElement | null = null;
+
 function hatchPattern(ctx: CanvasRenderingContext2D, color: string): CanvasPattern | null {
   const dpr = window.devicePixelRatio || 1;
   const key = `${color}@${dpr}`;
@@ -144,6 +179,49 @@ export function crossesSeam(bbox: BBox, view: View): boolean {
  * @param projection 곡선 보정을 끈 빠른 투영 (대부분의 도형)
  * @param preciseProjection 곡선 보정을 켠 투영 (지구 테두리, 경위선, 이음새에 걸친 도형). view.ts의 createProjection 참고
  */
+/**
+ * 도형들을 합친 바깥선만 그린다: 화면 밖 캔버스에 두 배 두께로 테두리를 그린 뒤 도형 안쪽을 지우면
+ * 바깥쪽 절반만 남는다. 도형끼리 맞닿은 안쪽 경계는 양쪽에서 지워져 사라진다.
+ */
+function drawUnionOutline(
+  ctx: CanvasRenderingContext2D,
+  projection: GeoProjection,
+  preciseProjection: GeoProjection,
+  view: View,
+  shapes: Shape[],
+  width: number,
+  color: string,
+) {
+  const { width: w, height: h } = ctx.canvas;
+  outlineCanvas ??= document.createElement('canvas');
+  if (outlineCanvas.width !== w || outlineCanvas.height !== h) {
+    outlineCanvas.width = w;
+    outlineCanvas.height = h;
+  }
+  const off = outlineCanvas.getContext('2d')!;
+  off.setTransform(1, 0, 0, 1, 0, 0);
+  off.clearRect(0, 0, w, h);
+  off.setTransform(ctx.getTransform());
+  const fast = geoPath(projection, off);
+  const precise = geoPath(preciseProjection, off);
+  const trace = () => {
+    off.beginPath();
+    for (const s of shapes) (crossesSeam(s.bbox, view) ? precise : fast)(s.feature);
+  };
+  trace();
+  off.lineJoin = 'round';
+  off.lineWidth = width * 2;
+  off.strokeStyle = color;
+  off.stroke();
+  off.globalCompositeOperation = 'destination-out';
+  off.fill();
+  off.globalCompositeOperation = 'source-over';
+  ctx.save();
+  ctx.setTransform(1, 0, 0, 1, 0, 0);
+  ctx.drawImage(outlineCanvas, 0, 0);
+  ctx.restore();
+}
+
 export function drawMap(
   ctx: CanvasRenderingContext2D,
   projection: GeoProjection,
@@ -197,7 +275,7 @@ export function drawMap(
   for (const t of territories) {
     ctx.beginPath();
     trace(t.fill);
-    ctx.fillStyle = t.color;
+    ctx.fillStyle = (t.stripes && stripePattern(ctx, t.stripes)) || t.color;
     ctx.fill();
     const hatch = t.hatch && hatchPattern(ctx, t.hatch);
     if (hatch) {
@@ -247,25 +325,18 @@ export function drawMap(
       ctx.stroke();
       ctx.restore();
     }
-    ctx.strokeStyle = palette.highlight;
-    for (const area of front.areas) {
-      if (!area.highlight) continue;
-      ctx.beginPath();
-      trace(area.shapes);
-      ctx.lineWidth = area.highlight;
-      ctx.stroke();
-    }
   }
 
-  // 선택·hover 강조 테두리는 맨 위에
-  ctx.strokeStyle = palette.highlight;
-  for (const t of territories) {
-    if (!t.highlight) continue;
-    ctx.beginPath();
-    trace(t.stroke);
-    ctx.lineWidth = t.highlight;
-    ctx.stroke();
-  }
+  // 선택·hover 강조 테두리는 맨 위에. 같은 두께끼리 모아 합친 바깥선만 그린다
+  // (귀속 논쟁 지역을 포함한 선택 나라, 여러 조각이나 격자 조각으로 된 영토도 안쪽 경계선 없이)
+  const groups = new Map<number, Shape[]>();
+  const addGroup = (width: number | undefined, shapes: Shape[]) => {
+    if (!width) return;
+    groups.set(width, [...(groups.get(width) ?? []), ...shapes]);
+  };
+  for (const t of territories) addGroup(t.highlight, t.fill);
+  for (const area of front?.areas ?? []) addGroup(area.highlight, area.shapes);
+  for (const [width, shapes] of [...groups].sort((a, b) => a[0] - b[0])) drawUnionOutline(ctx, projection, preciseProjection, view, shapes, width, palette.highlight);
   ctx.restore();
 
   ctx.beginPath();

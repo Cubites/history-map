@@ -5,6 +5,7 @@ import { select } from 'd3-selection';
 import { zoom, zoomIdentity, type ZoomBehavior, type ZoomTransform } from 'd3-zoom';
 import {
   activeTerritories,
+  claimantsAt,
   occupierAt,
   overlordAt,
   loadEntityGeometry,
@@ -264,6 +265,7 @@ export default function WorldMap({ data }: { data: StaticData }) {
     if (useTiles) ensureTiled(lod, entityIds);
     const visiblePieces = (pieces: Piece[]) => pieces.filter((p) => isVisible(p.bbox, bounds, v));
 
+    paletteRef.current ??= readPalette(canvas);
     const territories: DrawTerritory[] = [];
     const drawn: typeof drawnRef.current = [];
     const { selected, hovered: hoveredId } = highlightRef.current;
@@ -289,8 +291,15 @@ export default function WorldMap({ data }: { data: StaticData }) {
       const hatch = occupier && data.entities.get(occupier.object)?.color;
       const overlord = overlordAt(data.relations, entry.entityId, year);
       const border = overlord && data.entities.get(overlord.object)?.color;
-      const highlight = entry.entityId === selected ? SELECTED_WIDTH : entry.entityId === hoveredId ? HOVER_WIDTH : undefined;
-      territories.push({ ...shapes, color, certainty: entry.certainty, hatch, border, highlight });
+      // 귀속 논쟁 지역: 후보 나라 색을 번갈아 빗금으로. 후보가 하나면 그 나라 색과 주인 없는 땅 색을 번갈아
+      const claimants = claimantsAt(data.relations, entry.entityId, year);
+      const claimantColors = claimants.map((id) => data.entities.get(id)?.color ?? '#999999');
+      const stripes = claimants.length ? (claimantColors.length > 1 ? claimantColors : [claimantColors[0], paletteRef.current?.land ?? '#d9d5cd']) : undefined;
+      // 후보 나라를 고르면 선택 테두리에 논쟁 지역도 포함한다
+      const isSelected = entry.entityId === selected || (!!selected && claimants.includes(selected));
+      const isHovered = entry.entityId === hoveredId || (!!hoveredId && claimants.includes(hoveredId));
+      const highlight = isSelected ? SELECTED_WIDTH : isHovered ? HOVER_WIDTH : undefined;
+      territories.push({ ...shapes, color, certainty: entry.certainty, hatch, border, highlight, stripes });
       // 클릭 판정과 hover 테두리는 원래 도형으로 한다
       drawn.push({ entry, feature });
     }

@@ -190,3 +190,16 @@
   basis:
     type: national_institution
     refs: ["국사편찬위원회 『한국사』"]
+
+# ── 귀속 논쟁 지역 (2026-09-27): 후보 나라들의 색을 번갈아 빗금으로 칠한다 (relations.yaml의 claimed_by) ──
+
+- id: liaodong-disputed
+  level: region
+  names: { ko: 요동 (귀속 논쟁), en: Liaodong (disputed) }
+  from: 756
+  to: 925
+  color: "#b7ae9c"
+  summary: 안동도호부가 요서로 물러나 없어진 뒤 요동의 귀속은 학설이 갈린다. 발해가 선왕 때(9세기 전반) 요동까지 차지했다는 견해, 당의 영향력이 남았거나 고구려 유민 세력(이른바 소고구려)이 있었다는 견해가 있고, 10세기 초에는 거란이 진출했다. 926년 발해를 멸망시킨 요의 땅이 됨
+  basis:
+    type: national_institution
+    refs: ["국사편찬위원회 『신편 한국사』 10 발해", "『신당서』 발해전", "『요사』 지리지"]
