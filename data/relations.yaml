@@ -95,3 +95,8 @@
 - { type: vassal_of, subject: tamna, object: baekje, from: 498, to: 660 }
 - { type: vassal_of, subject: tamna, object: silla, from: 662, to: 935 }
 - { type: vassal_of, subject: tamna, object: goryeo, from: 938, to: 1104 }
+
+# ── 만주 동부 부족과 여진 (2026-09-27 보충) ──
+- { type: successor_of, subject: mulgil, object: eupru, from: 450, to: null }
+- { type: successor_of, subject: malgal, object: mulgil, from: 560, to: null }
+- { type: successor_of, subject: jurchen, object: malgal, from: 926, to: null }

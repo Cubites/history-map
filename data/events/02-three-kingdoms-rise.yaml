@@ -367,8 +367,9 @@
     ko: 부여의 고구려 복속
   summary:
     ko: 물길에 쫓긴 부여 왕실이 고구려 문자명왕에게 항복해 부여가 완전히 사라졌다. 고구려는 최대 영토를 이루었다.
-  subjects: [buyeo, goguryeo]
+  subjects: [buyeo, goguryeo, mulgil]
   links:
+    - { from: mulgil, to: buyeo, note: "물길의 공격" }
     - { from: buyeo, to: goguryeo, note: "왕실의 항복" }
   tags: [politics]
   sources: ["『삼국사기』 고구려본기 문자명왕 3년"]

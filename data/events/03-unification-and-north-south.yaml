@@ -392,9 +392,10 @@
     ko: 발해 건국
   summary:
     ko: 고구려 장수 출신 대조영이 고구려 유민과 말갈인을 이끌고 동모산에서 발해를 세웠다. 발해는 스스로 고구려를 계승했다고 밝혔다.
-  subjects: [balhae]
+  subjects: [balhae, malgal]
   links:
     - { from: tang, to: balhae, note: "당의 통제에서 벗어나 건국" }
+    - { from: malgal, to: balhae, note: "말갈 세력의 참여" }
   tags: [politics]
   sources: ["『구당서』 발해말갈전", "『신당서』 발해전"]
 
