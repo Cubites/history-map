@@ -483,3 +483,25 @@
   subjects: [joseon]
   tags: [politics]
   sources: ["『선조수정실록』 선조 24년"]
+
+# ── 한국사능력검정시험(심화) 빈출 주제 보충 (2026-09-28) ────────────────
+
+- id: hyangyak-jipseong-1433
+  year: 1433
+  title:
+    ko: 『향약집성방』 편찬
+  summary:
+    ko: 세종의 명으로 우리 풍토에 맞는 약재(향약)와 치료법을 모아 『향약집성방』을 펴냈다. 1445년에는 의학 백과사전인 『의방유취』도 완성했다.
+  subjects: [joseon]
+  tags: [culture]
+  sources: ["『세종실록』 세종 15년"]
+
+- id: hongmungwan-1478
+  year: 1478
+  title:
+    ko: 홍문관 설치
+  summary:
+    ko: 성종이 집현전을 이어받은 학문 기관으로 홍문관을 두었다. 경연을 맡고 왕에게 자문했으며, 사헌부·사간원과 함께 3사로 불리며 언론 기능을 했다. 성종은 사림을 등용해 훈구 세력을 견제했다.
+  subjects: [joseon]
+  tags: [politics]
+  sources: ["『성종실록』 성종 9년", "『경국대전』 이전"]

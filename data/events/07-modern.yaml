@@ -872,3 +872,74 @@
     - { from: japan, to: occupied-korea, note: "무조건 항복, 광복" }
   tags: [politics, war]
   sources: ["「포츠담 선언」", "일본 항복 문서"]
+
+# ── 한국사능력검정시험(심화) 빈출 주제 보충 (2026-09-28) ────────────────
+
+- id: boanhoe-1904
+  year: 1904
+  title:
+    ko: 보안회의 황무지 개간권 반대 운동
+  summary:
+    ko: 일본이 대한제국의 황무지 개간권을 요구하자 보안회가 반대 운동을 벌여 이를 철회시켰다. 이후 헌정 연구회(1905)·대한 자강회(1906)가 애국 계몽 운동을 이어 갔다.
+  subjects: [daehan-jeguk, japan]
+  links:
+    - { from: japan, to: daehan-jeguk, note: "황무지 개간권 요구" }
+  tags: [politics]
+  sources: ["『고종실록』 고종 41년", "『황성신문』"]
+
+- id: uiyeoldan-1919
+  year: 1919
+  title:
+    ko: 의열단 조직
+  summary:
+    ko: 김원봉이 만주 지린에서 의열단을 조직했다. 신채호가 쓴 「조선 혁명 선언」(1923)을 행동 강령으로 삼아 민중의 직접 혁명을 주장했다. 김상옥(종로 경찰서), 나석주(동양 척식 주식회사) 등이 의거를 일으켰다. 뒤에 김원봉은 황푸 군관 학교에 들어가 조직적인 무장 투쟁을 준비했다.
+  subjects: [occupied-korea, japan]
+  links:
+    - { from: occupied-korea, to: japan, note: "식민 통치 기관 파괴·요인 암살" }
+  tags: [politics]
+  sources: ["신채호, 「조선 혁명 선언」", "국사편찬위원회 『한국사』 48"]
+
+- id: amtaedo-1923
+  year: 1923
+  title:
+    ko: 암태도 소작 쟁의
+  summary:
+    ko: 전남 신안 암태도의 소작농들이 7~8할에 이르는 소작료를 4할로 낮추라고 요구하며 1년 가까이 싸워 뜻을 이루었다. 1920년대 농민 운동의 대표적인 사례다.
+  subjects: [occupied-korea, japan]
+  tags: [society, economy]
+  sources: ["『동아일보』 1923~1924년 기사", "국사편찬위원회 『한국사』 49"]
+
+- id: communist-party-1925
+  year: 1925
+  title:
+    ko: 치안 유지법과 조선 공산당
+  summary:
+    ko: 3·1 운동 뒤 사회주의 사상이 들어와 1925년 조선 공산당이 조직되었다. 일본은 같은 해 치안 유지법을 만들어 사회주의자와 독립운동가를 탄압했다. 사회주의 세력의 등장은 민족 유일당 운동과 신간회(1927)로 이어졌다.
+  subjects: [occupied-korea, japan]
+  links:
+    - { from: japan, to: occupied-korea, note: "치안 유지법으로 탄압" }
+  tags: [politics]
+  sources: ["『조선총독부 관보』", "국사편찬위원회 『한국사』 49"]
+
+- id: joseonsa-1925
+  year: 1925
+  title:
+    ko: 조선사 편수회와 식민 사관
+  summary:
+    ko: 조선 총독부가 조선사 편수회를 만들어 『조선사』를 펴냈다. 한국사가 외세에 휘둘렸다는 타율성론, 발전 없이 멈춰 있었다는 정체성론, 붕당은 분열하는 민족성 탓이라는 당파성론 등으로 식민 지배를 정당화했다. 이에 맞서 박은식·신채호의 민족주의 사학, 백남운의 사회 경제 사학, 진단 학회(1934)의 실증 사학이 나왔다.
+  subjects: [occupied-korea, japan]
+  links:
+    - { from: japan, to: occupied-korea, note: "식민 사관 보급" }
+  tags: [culture]
+  sources: ["조선사편수회, 『조선사』", "국사편찬위원회 『한국사』 51"]
+
+- id: vnarod-1931
+  year: 1931
+  endYear: 1934
+  title:
+    ko: 브나로드 운동과 문자 보급 운동
+  summary:
+    ko: 동아일보가 '민중 속으로'라는 뜻의 브나로드 운동을 벌여 학생들이 농촌에서 한글을 가르치고 계몽 활동을 했다. 조선일보도 "아는 것이 힘, 배워야 산다"는 구호로 문자 보급 운동(1929~)을 벌였다. 총독부의 금지로 1935년 무렵 중단되었다.
+  subjects: [occupied-korea]
+  tags: [culture, society]
+  sources: ["『동아일보』 1931년 기사", "『조선일보』 1929년 기사"]

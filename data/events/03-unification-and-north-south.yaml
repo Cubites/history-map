@@ -1007,3 +1007,27 @@
   subjects: [hugoguryeo]
   tags: [politics]
   sources: ["『삼국사기』 열전 궁예"]
+
+# ── 한국사능력검정시험(심화) 빈출 주제 보충 (2026-09-28) ────────────────
+
+- id: nine-seodang-680
+  year: 680
+  precision: decade
+  title:
+    ko: 9서당 10정 정비
+  summary:
+    ko: 신문왕 때 중앙군인 9서당과 지방군인 10정을 갖추었다. 9서당에는 신라인뿐 아니라 고구려·백제·말갈 사람도 편성해 민족 융합을 꾀했고, 10정은 9주에 하나씩(한주에는 둘) 두었다.
+  subjects: [silla]
+  tags: [politics]
+  sources: ["『삼국사기』 직관지 무관조"]
+
+- id: balhae-system-820
+  year: 820
+  precision: decade
+  title:
+    ko: 발해의 5경 15부 62주와 주자감
+  summary:
+    ko: 발해는 문왕 때 3성 6부의 중앙 제도를 갖추고, 선왕 무렵 지방을 5경 15부 62주로 나누어 다스렸다. 3성 가운데 정당성의 대내상이 국정을 총괄했고, 6부는 충·인·의·지·예·신이라는 유교식 이름을 썼다. 유학 교육 기관으로 주자감을 두었다.
+  subjects: [balhae]
+  tags: [politics, culture]
+  sources: ["『신당서』 발해전"]

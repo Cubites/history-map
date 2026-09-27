@@ -728,3 +728,36 @@
     - { from: japan, to: joseon, note: "개항 강요, 불평등 조약" }
   tags: [diplomacy]
   sources: ["『고종실록』 고종 13년"]
+
+# ── 한국사능력검정시험(심화) 빈출 주제 보충 (2026-09-28) ────────────────
+
+- id: taengniji-1751
+  year: 1751
+  title:
+    ko: 이중환의 『택리지』
+  summary:
+    ko: 이중환이 전국을 답사해 각 지역의 자연환경·인물·풍속·물산을 적고 살기 좋은 곳의 조건을 논한 인문 지리서 『택리지』를 썼다.
+  subjects: [joseon]
+  tags: [culture]
+  sources: ["이중환, 『택리지』"]
+
+- id: folk-culture-1750
+  year: 1750
+  precision: century
+  title:
+    ko: 서민 문화의 발달 (풍속화·판소리·한글 소설)
+  summary:
+    ko: 상공업이 발달하고 서민의 경제력이 커지면서 서민 문화가 꽃피었다. 김홍도는 서민의 일상을, 신윤복은 양반과 부녀자의 생활을 풍속화로 그렸다. 판소리와 탈춤이 유행했고, 「홍길동전」·「춘향전」 같은 한글 소설과 사설시조가 널리 읽혔다. 민화도 유행했다.
+  subjects: [joseon]
+  tags: [culture, society]
+  sources: ["국립중앙박물관 『단원 풍속도첩』 해설", "간송미술관 『혜원 전신첩』 해설"]
+
+- id: balhaego-1784
+  year: 1784
+  title:
+    ko: 유득공의 『발해고』
+  summary:
+    ko: 규장각 검서관 유득공이 『발해고』를 써서 발해를 우리 역사로 보고, 신라와 발해가 함께 있던 시기를 '남북국'이라 불렀다. 고대사 인식의 범위를 만주까지 넓혔다.
+  subjects: [joseon]
+  tags: [culture]
+  sources: ["유득공, 『발해고』 서문"]

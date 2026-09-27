@@ -1066,3 +1066,64 @@
   tags: [war]
   sources: ["『고려사』 열전 신창 원년", "『고려사』 열전 박위"]
   places: [{ name: "쓰시마", at: [129.3, 34.4] }]
+
+# ── 한국사능력검정시험(심화) 빈출 주제 보충 (2026-09-28) ────────────────
+
+- id: jeongan-938
+  year: 938
+  precision: decade
+  endYear: 986
+  title:
+    ko: 발해 유민의 정안국
+  summary:
+    ko: 발해가 멸망한 뒤 유민들이 압록강 중류에 정안국을 세워 송과 교류하며 거란에 맞섰다. 986년 무렵 거란(요)에 무너졌다.
+  subjects: [liao, goryeo]
+  tags: [politics]
+  sources: ["『송사』 정안국전", "『요사』 성종본기"]
+
+- id: byeongnando-1050
+  year: 1050
+  precision: century
+  title:
+    ko: 벽란도와 대외 무역
+  summary:
+    ko: 개경 가까운 예성강 어귀의 벽란도가 국제 무역항으로 번성했다. 송과 가장 활발히 교류했고, 거란·여진·일본, 멀리 아라비아 상인까지 드나들었다. 고려(Corea)라는 이름이 서양에 알려진 계기가 되었다.
+  subjects: [goryeo, song]
+  links:
+    - { from: song, to: goryeo, note: "비단·서적·자기 수입" }
+    - { from: goryeo, to: song, note: "금·은·인삼·종이 수출" }
+  tags: [economy, diplomacy]
+  sources: ["『고려사』 세가", "서긍, 『선화봉사고려도경』"]
+
+- id: sanggam-celadon-1150
+  year: 1150
+  precision: century
+  title:
+    ko: 상감 청자의 발달
+  summary:
+    ko: 11세기 순수 청자에 이어 12세기 중엽 고려는 그릇 표면에 무늬를 새기고 다른 색 흙을 메워 굽는 상감 기법을 독자적으로 개발했다. 강진과 부안이 대표적인 생산지였다. 원 간섭기 이후 점차 쇠퇴해 분청사기로 이어졌다.
+  subjects: [goryeo]
+  tags: [culture]
+  sources: ["서긍, 『선화봉사고려도경』", "국립중앙박물관 고려 청자 해설"]
+
+- id: baengnyeon-1216
+  year: 1216
+  title:
+    ko: 요세의 백련 결사
+  summary:
+    ko: 천태종 승려 요세가 강진 만덕사에서 백련 결사를 열었다. 참회와 염불로 극락에 가기를 바라는 법화 신앙을 내세워 지방 백성들의 호응을 얻었다. 지눌의 수선사(정혜 결사)와 함께 무신 집권기 불교 개혁 운동을 이끌었다.
+  subjects: [goryeo]
+  tags: [culture]
+  sources: ["『동문선』 「만덕산 백련사 원묘국사비」"]
+
+- id: gyeolhon-dogam-1274
+  year: 1274
+  title:
+    ko: 결혼도감 설치와 공녀
+  summary:
+    ko: 원의 요구로 결혼도감을 두어 고려 여성을 원에 보냈다(공녀). 이 때문에 일찍 혼인시키는 조혼 풍습이 생겼다. 원은 매를 잡아 바치는 응방도 두었고, 고려에서는 몽골풍, 원에서는 고려양이 유행했다.
+  subjects: [goryeo, yuan]
+  links:
+    - { from: yuan, to: goryeo, note: "공녀·매 요구" }
+  tags: [society, diplomacy]
+  sources: ["『고려사』 세가 원종 15년", "이곡, 「공녀를 그만두게 할 것을 청하는 글」"]
