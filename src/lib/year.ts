@@ -2,7 +2,7 @@
 
 export function formatYear(year: number, suffix = '년'): string {
   // 2만 년보다 먼 과거(구석기)는 "약 70만 년 전"처럼 쓴다
-  if (1 - year >= 20000) return `약 ${Math.round((1 - year) / 10000)}만 ${suffix ? '년 ' : ''}전`;
+  if (1 - year >= 20000) return `약 ${Math.round((1 - year) / 10000)}만 년 전`;
   return year <= 0 ? `기원전 ${1 - year}${suffix}` : `${year}${suffix}`;
 }
 

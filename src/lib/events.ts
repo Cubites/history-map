@@ -1,5 +1,5 @@
 import type { EventLink, HistoryEvent } from '../schema/index.ts';
-import { decadeOf } from './year.ts';
+import { decadeOf, formatYear } from './year.ts';
 
 export function eventsOf(events: HistoryEvent[], entityId: string): HistoryEvent[] {
   return events.filter((e) => e.subjects.includes(entityId));
@@ -18,7 +18,8 @@ export function inDecade(event: HistoryEvent, year: number): boolean {
  * - century: 기원전 10세기 (기간이면 기원전 20세기–기원전 11세기)
  */
 export function formatEventYears(event: HistoryEvent): string {
-  const y = (v: number) => (v <= 0 ? `기원전 ${1 - v}` : String(v));
+  // 선사(2만 년보다 먼 과거)는 "약 70만 년 전"처럼 (formatYear와 같은 규칙)
+  const y = (v: number) => formatYear(v, '');
   const century = (v: number) => (v <= 0 ? `기원전 ${Math.ceil((1 - v) / 100)}세기` : `${Math.ceil(v / 100)}세기`);
   const one = event.precision === 'century' ? century : y;
   const hasRange = event.endYear !== undefined && event.endYear !== event.year;
