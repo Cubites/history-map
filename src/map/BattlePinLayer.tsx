@@ -14,7 +14,7 @@ export interface BattlePin {
 export function BattlePinLayer({ pins, projection, onOpen }: { pins: BattlePin[]; projection: GeoProjection; onOpen: (pin: BattlePin) => void }) {
   const points = pins.map((pin) => projection(pin.at) ?? null);
   // 표시와 이름이 차지하는 화면 영역. 이름이 다른 표시·이름과 겹치면 이름을 숨긴다 (확대해서 떨어지면 다시 보인다)
-  const boxes = points.map((p, i) => (p ? { x0: p[0] - 7, x1: p[0] + 10 + labelWidth(pins[i].name), y0: p[1] - 9, y1: p[1] + 8 } : null));
+  const boxes = points.map((p, i) => (p ? { x0: p[0] - 7, x1: p[0] + 10 + labelWidth(pins[i].name), y0: p[1] - 7, y1: p[1] + 7 } : null));
   const crowded = boxes.map(
     (a, i) => !!a && boxes.some((b, j) => j !== i && !!b && a.x0 < b.x1 && b.x0 < a.x1 && a.y0 < b.y1 && b.y0 < a.y1),
   );
