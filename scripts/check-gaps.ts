@@ -1,4 +1,4 @@
-// 영토 공백 검사 (DESIGN.md §5.4): 연도마다 한반도와 만주에서 어느 나라에도 속하지 않은 육지를 찾는다.
+// 영토 공백 검사 (DESIGN.md §5.4): 연도마다 한반도·만주·몽골 초원에서 어느 나라에도 속하지 않은 육지를 찾는다.
 // 사용: npm run check:gaps [-- 최소넓이km²] (기본 500)
 // 공백이 모두 오류는 아니다. 기록이 없는 시기(고조선 이전 남부 등)나 한국사와 관계없는 초원은 비워 둔다.
 import { readFileSync, readdirSync } from 'node:fs';
@@ -25,7 +25,10 @@ const KOREA_RING = [[123.6, 39.5], [124.4, 40.0], [125.3, 40.6], [126.0, 41.0], 
 const korea = clipToLand([[KOREA_RING]], land);
 // 만주: 요서·요동 ~ 흑룡강 이남 (한반도 제외)
 const manchuria = polyclip.difference(clipToLand([[[[119, 38.5], [135, 38.5], [135, 48.5], [119, 48.5], [119, 38.5]]]], land) as polyclip.Geom, korea as polyclip.Geom) as MultiCoords;
-const regions: [string, MultiCoords][] = [['한반도', korea], ['만주', manchuria]];
+// 몽골 초원: 동돌궐 영역(생성기의 EASTERN_TURKS)에서 만주 검사 범위를 뺀 곳
+const STEPPE_RING = [[118.5, 41.5], [116.0, 41.2], [113.5, 41.0], [111.0, 41.0], [108.5, 41.3], [106.5, 40.5], [104.5, 39.0], [101.0, 42.5], [96.0, 44.0], [92.0, 47.0], [90.0, 49.5], [95.0, 51.0], [102.0, 51.5], [108.0, 50.5], [114.0, 49.5], [119.0, 47.0], [120.0, 44.0], [118.5, 41.5]];
+const steppe = polyclip.difference(clipToLand([[STEPPE_RING]], land) as polyclip.Geom, manchuria as polyclip.Geom) as MultiCoords;
+const regions: [string, MultiCoords][] = [['한반도', korea], ['만주', manchuria], ['몽골', steppe]];
 
 interface T { entityId: string; from: number; to: number | null; coords: MultiCoords }
 const territories: T[] = [];

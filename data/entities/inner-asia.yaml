@@ -77,7 +77,7 @@
   level: polity
   names: { ko: 선비, hanja: 鮮卑, en: Xianbei }
   from: -206
-  to: 399
+  to: 401
   color: "#8f8a5c"
   summary: 동호의 한 갈래로 선비산에 살던 유목 민족. 흉노가 약해진 1세기 말부터 몽골 초원 동부를 차지했고, 2세기 단석괴 때 크게 세력을 떨쳤다. 뒤에 모용씨(전연·후연)·탁발씨(북위) 등이 중국 북부에 나라를 세웠다
   basis:
@@ -107,6 +107,122 @@
     type: primary_source
     refs: ["『위서』 실위전", "『구당서』 실위전"]
     foundingNote: 북위(5세기) 기록에 처음 나오므로 400년 무렵부터 표시함
+
+# ── 몽골 초원의 유목 국가 (2026-09-27 보충): 비어 있던 몽골 초원을 시대별로 채운다. 범위는 대략적인 추정. 운영자 검수 필요 ──
+
+- id: xiongnu
+  level: polity
+  names: { ko: 흉노, hanja: 匈奴, en: Xiongnu }
+  from: -318
+  to: 90
+  color: "#8c7b55"
+  summary: 몽골 초원의 유목 국가. 묵돌 선우(기원전 209~174) 때 동호와 월지를 무너뜨리고 초원을 통일해 한을 위협했다. 1세기 중엽 남북으로 갈라졌고, 북흉노는 91년 한과 선비에 밀려 서쪽으로 옮겨 갔다
+  basis:
+    type: primary_source
+    refs: ["『사기』 흉노열전", "『한서』 흉노전", "『후한서』 남흉노열전"]
+    foundingNote: 기원전 318년 한·조·위 등과 함께 진을 친 기록을 처음 보이는 해로 둠
+
+- id: rouran
+  level: polity
+  names: { ko: 유연, hanja: 柔然, en: Rouran Khaganate }
+  from: 402
+  to: 551
+  color: "#86805a"
+  summary: 선비가 떠난 몽골 초원을 차지한 유목 국가. 처음으로 가한(칸) 칭호를 썼으며 북위와 맞섰다. 고구려와도 교류해 지두우(흥안령 일대)를 나누어 가지려 했다는 기록이 있다. 552년 돌궐에 무너짐
+  basis:
+    type: primary_source
+    refs: ["『위서』 연연전", "『북사』 연연전"]
+    foundingNote: 사륜이 가한을 칭한 402년을 시작으로 봄
+
+- id: gokturk
+  level: polity
+  names: { ko: 돌궐, hanja: 突厥, en: Turkic Khaganate }
+  from: 552
+  to: 582
+  color: "#8f8a5a"
+  summary: 알타이 산맥의 튀르크계 부족이 유연을 무너뜨리고 세운 유목 제국. 몽골 초원부터 중앙아시아까지 차지했다. 583년 무렵 동돌궐과 서돌궐로 갈라졌다
+  basis:
+    type: primary_source
+    refs: ["『주서』 돌궐전", "『수서』 돌궐전"]
+
+- id: xueyantuo
+  level: polity
+  names: { ko: 설연타, hanja: 薛延陀, en: Xueyantuo }
+  from: 630
+  to: 645
+  color: "#94865c"
+  summary: 동돌궐이 당에 무너진 뒤 몽골 초원을 차지한 철륵계 유목 국가. 고구려의 연개소문이 당을 견제하려고 손잡으려 했다는 기록이 있다. 646년 당에 무너짐
+  basis:
+    type: primary_source
+    refs: ["『구당서』 철륵전", "『신당서』 회흘전"]
+
+- id: anbuk-dohobu
+  level: region
+  names: { ko: 안북도호부, hanja: 安北都護府, en: Protectorate General to Pacify the North }
+  from: 646
+  to: 681
+  color: "#6f8fb0"
+  summary: 당이 설연타를 무너뜨린 뒤 몽골 초원의 철륵 부족을 다스리려고 둔 기구(처음 이름은 연연도호부). 부족장에게 벼슬을 주어 간접으로 다스렸다. 682년 돌궐이 다시 일어나며 초원을 잃었다
+  basis:
+    type: primary_source
+    refs: ["『구당서』 지리지", "『신당서』 지리지"]
+
+- id: second-turks
+  level: polity
+  names: { ko: 돌궐(후돌궐), hanja: 後突厥, en: Second Turkic Khaganate }
+  from: 682
+  to: 743
+  color: "#8f8a5a"
+  summary: 당의 지배에서 벗어난 돌궐이 다시 세운 나라. 발해의 대조영이 나라를 세울 때 돌궐과 손잡았고, 오르혼강의 퀼 테긴 비문 등 돌궐 문자 기록을 남겼다. 744년 위구르에 무너짐
+  basis:
+    type: primary_source
+    refs: ["『구당서』 돌궐전", "「퀼 테긴 비문」", "『신당서』 발해전"]
+
+- id: uyghur
+  level: polity
+  names: { ko: 위구르, hanja: 回紇, en: Uyghur Khaganate }
+  from: 744
+  to: 839
+  color: "#7f8a5f"
+  summary: 돌궐을 무너뜨리고 몽골 초원을 차지한 튀르크계 유목 국가. 안사의 난 때 당을 도와 반란군을 진압했고, 비단과 말을 바꾸는 무역으로 부유해졌다. 840년 키르기스의 공격으로 무너져 서쪽으로 흩어졌다
+  basis:
+    type: primary_source
+    refs: ["『구당서』 회흘전", "『신당서』 회흘전"]
+
+- id: zubu
+  level: polity
+  names: { ko: 초원 부족(달단·조복), hanja: 韃靼·阻卜, en: Tatar and Zubu tribes }
+  from: 840
+  to: 935
+  color: "#8a8260"
+  summary: 위구르가 무너진 뒤 몽골 초원에 흩어져 살던 여러 부족. 중국 기록은 달단(타타르)·조복 등으로 불렀다. 10세기 전반 요(거란)가 초원까지 세력을 넓혔다
+  basis:
+    type: primary_source
+    refs: ["『요사』 부족표", "『신오대사』 사이부록"]
+    foundingNote: 요가 초원 전체를 다스리기 시작한 시기는 기록에 따라 차이가 있어, 지도에서는 936년부터 요의 땅으로 봄
+
+- id: steppe-tribes
+  level: polity
+  names: { ko: 몽골 초원 부족, en: Mongolian steppe tribes }
+  from: 1125
+  to: 1205
+  color: "#8b8058"
+  summary: 요가 무너진 뒤 몽골 초원에서 케레이트·나이만·타타르·메르키트·몽골 등 여러 부족이 서로 다투던 시기. 1206년 테무친이 부족들을 통합하고 칭기즈 칸이 되었다
+  basis:
+    type: primary_source
+    refs: ["『몽골비사』", "『원사』 태조본기"]
+
+- id: mongolia
+  level: polity
+  names: { ko: 몽골, en: Mongolia }
+  from: 1921
+  to: null
+  color: "#6f8c9c"
+  summary: 청이 무너질 무렵 독립을 선언한(1911) 외몽골에서 1921년 혁명이 일어나 1924년 몽골 인민 공화국이 세워졌다. 소련의 영향 아래 있다가 1992년 민주화로 몽골국이 되었다
+  basis:
+    type: national_institution
+    refs: ["몽골 정부 누리집", "국립외교원 『몽골 개황』"]
+    foundingNote: 1921년 혁명으로 중화민국의 지배에서 벗어난 해를 지도의 시작으로 봄
 
 # ── 5번 묶음 (1392 ~ 1592) ──
 
