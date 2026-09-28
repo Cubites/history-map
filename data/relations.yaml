@@ -79,7 +79,7 @@
 - { type: vassal_of, subject: manchukuo, object: japan, from: 1932, to: 1945 }
 # 일제 강점 (빗금)
 - { type: occupied_by, subject: occupied-korea, object: japan, from: 1910, to: 1945 }
-- { type: occupied_by, subject: occupied-china, object: japan, from: 1938, to: 1945 }
+- { type: occupied_by, subject: occupied-china, object: japan, from: 1937, to: 1945 }
 
 # ── 8번 묶음 (1945 ~ 현재) ──
 - { type: occupied_by, subject: usamgik, object: usa, from: 1945, to: 1948 }
