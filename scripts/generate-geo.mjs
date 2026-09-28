@@ -235,11 +235,20 @@ const QING_1898 = D(QING_BASE, [KWANTUNG]);
 const OUTER_MONGOLIA = D(I([EASTERN_TURKS], [ring([[87.0, 44.5], [105.0, 42.5], [112.0, 43.5], [119.5, 46.5], [120.0, 52.0], [87.0, 52.0]])]), [AMUR_BAND]);
 const ROC_1912 = QING_1898;
 const ROC_1921 = D(ROC_1912, OUTER_MONGOLIA);
-const MANCHUKUO = D(U(MANCHURIA_NORTH, [LIAODONG], KHITAN_W, [AMUR_BAND]), [PRIMORYE], [KWANTUNG], OUTER_MONGOLIA);
-const ROC_1932 = D(ROC_1921, MANCHUKUO);
+// 만리장성 동쪽 구간 (산해관~희봉구~고북구~무톈위): 탕구 정전 협정(1933) 뒤 만주국과 중화민국의 사실상 경계
+const L_WALL_E = [[119.8, 39.95], [119.4, 40.15], [118.8, 40.35], [118.3, 40.42], [117.7, 40.25], [117.2, 40.68], [116.6, 40.5], [116.0, 40.7], [116.0, 41.2]];
+// 장성 바깥의 요서(진저우·푸신)와 러허. CHINA 폴리곤이 장성 밖까지 들어가 있어, 만주국에 넣지 않으면 1938년부터 중화민국의 떨어진 조각
+// (21,020km²)으로 남았다. 동돌궐 영역 쪽(웨이창·펑닝 북쪽)도 함께 넣어야 중화민국의 가는 띠가 남지 않는다 (2026-09-29)
+const OUTSIDE_WALL = I(U([CHINA], [EASTERN_TURKS]), [ring(L_WALL_E, [[116.0, 42.6], [123.0, 42.6], [123.0, 39.6]])]);
+// 러허성: 1933년 3월 열하 작전으로 만주국에 편입. 요서 회랑(수중·싱청·진저우·이현)은 펑톈성으로 1932년부터 만주국
+const REHE = I(OUTSIDE_WALL, [ring([[115.0, 39.0], [119.8, 39.95], [120.2, 40.6], [120.9, 41.6], [121.1, 42.6], [115.0, 42.6]])]);
+const MANCHUKUO = D(U(MANCHURIA_NORTH, [LIAODONG], KHITAN_W, [AMUR_BAND], OUTSIDE_WALL), [PRIMORYE], [KWANTUNG], OUTER_MONGOLIA);
+const MANCHUKUO_1932 = D(MANCHUKUO, REHE);
+const ROC_1932 = D(ROC_1921, MANCHUKUO_1932);
+const ROC_1933 = D(ROC_1921, MANCHUKUO);
 // 중일 전쟁 때 일본군이 차지한 화북·화중 동부와 광저우 일대 (1938년 무렵)
 const OCC_CHINA = D(I([CHINA], U([ring([[110.5, 41.5], [119.5, 41.5], [122.5, 40.5], [123.0, 31.0], [121.5, 28.5], [118.0, 29.5], [114.5, 29.5], [113.0, 30.5], [112.0, 34.5], [110.5, 35.5]])], [bx(112.5, 21.5, 114.5, 23.8)])), MANCHUKUO);
-const ROC_1938 = D(ROC_1932, OCC_CHINA);
+const ROC_1938 = D(ROC_1933, OCC_CHINA);
 const JAPAN_1869 = U([JAPAN_ISLANDS], [TOHOKU_N], [HOKKAIDO]);
 const JAPAN_1879 = U(JAPAN_1869, [RYUKYU]);
 const JAPAN_1895 = U(JAPAN_1879, [TAIWAN]);
@@ -547,10 +556,10 @@ const versions = {
   ],
   hugeum: [[1616, 1621, U(HUGEUM_1616, NE_FAR)], [1621, 1636, U(HUGEUM_1621, NE_FAR)]],
   qing: [[1636, 1644, U(QING_1636, NE_FAR)], [1644, 1683, U(QING_1644, NE_FAR)], [1683, 1691, U(QING_1644, [TAIWAN], NE_FAR)], [1691, 1720, U(QING_1691, [TAIWAN], [AMUR_BAND])], [1720, 1860, U(QING_1720, [TAIWAN], [AMUR_BAND])], [1860, 1883, U(QING_BASE, [TAIWAN])], [1883, 1895, D(U(QING_BASE, [TAIWAN]), GANDO)], [1895, 1898, D(QING_1895, GANDO)], [1898, 1909, D(QING_1898, GANDO)], [1909, 1912, QING_1898]],
-  roc: [[1912, 1921, ROC_1912], [1921, 1932, ROC_1921], [1932, 1938, ROC_1932], [1938, 1946, ROC_1938], [1946, 1949, ROC_1946], [1949, null, [[TAIWAN]]]],
+  roc: [[1912, 1921, ROC_1912], [1921, 1932, ROC_1921], [1932, 1933, ROC_1932], [1933, 1938, ROC_1933], [1938, 1946, ROC_1938], [1946, 1949, ROC_1946], [1949, null, [[TAIWAN]]]],
   prc: [[1949, null, PRC]],
   'south-vietnam': [[1955, 1976, [[SOUTH_VIETNAM]]]],
-  manchukuo: [[1932, 1946, MANCHUKUO]],
+  manchukuo: [[1932, 1933, MANCHUKUO_1932], [1933, 1946, MANCHUKUO]],
   'occupied-china': [[1938, 1946, OCC_CHINA]],
   russia: [[1860, 1898, RUSSIA_1860], [1898, 1905, RUSSIA_1898], [1905, 1918, RUSSIA_1905]],
   'soviet-union': [[1918, 1946, SOVIET], [1946, 1992, SOVIET_1946]],
