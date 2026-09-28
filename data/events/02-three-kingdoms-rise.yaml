@@ -50,6 +50,20 @@
   tags: [politics]
   sources: ["『삼국사기』 고구려본기 유리명왕 22년"]
 
+- id: goguryeo-hyeondo-14
+  year: 14
+  title:
+    ko: 유리왕의 양맥 정벌과 고구려현 습격
+  summary:
+    ko: "고구려 유리왕이 오이·마리에게 군사 2만을 주어 서쪽의 양맥을 쳐 없애고, 나아가 현도군에 속한 한의 고구려현을 습격했다. 앞서 12년에는 신의 왕망이 흉노를 치려고 고구려 군사를 동원하다 반발을 사자 고구려의 우두머리를 꾀어 죽이고 고구려를 '하구려'로 낮추어 불렀다. 현도군은 이 뒤에도 107년 무렵까지 신빈 일대에 남았다."
+  subjects: [goguryeo, hyeondo, xin]
+  links:
+    - { from: goguryeo, to: hyeondo, note: "고구려현 습격" }
+    - { from: xin, to: goguryeo, note: "하구려로 낮춤" }
+  tags: [war]
+  sources: ["『삼국사기』 고구려본기 유리명왕 31년·33년", "『한서』 왕망전"]
+  places: [{ name: "고구려현(영릉진 고성)", at: [124.8, 41.7] }]
+
 - id: gaya-founded
   year: 42
   title:
@@ -71,6 +85,20 @@
     - { from: goguryeo, to: okjeo, note: "정복" }
   tags: [war]
   sources: ["『삼국사기』 고구려본기 태조대왕 4년"]
+
+- id: taejo-liaodong-105
+  year: 105
+  endYear: 107
+  title:
+    ko: 태조왕의 요동 공격과 현도군의 이동
+  summary:
+    ko: "고구려 태조왕이 한의 요동에 쳐들어가 6현을 약탈했으나 요동 태수 경기에게 격파되었다. 고구려의 압박이 거세지자 한은 107년 무렵 현도군을 신빈 일대에서 서쪽 무순 방면으로 물리고(제3현도군), 요동군의 고현·후성·요양현을 떼어 현도군에 붙였다. 고구려는 이 뒤에도 118년 예맥과 함께 현도를 치는 등 요동·현도를 계속 공격했다."
+  subjects: [goguryeo, eastern-han, hyeondo]
+  links:
+    - { from: goguryeo, to: eastern-han, note: "요동 6현 약탈" }
+    - { from: goguryeo, to: hyeondo, note: "압박, 현도군 이동" }
+  tags: [war]
+  sources: ["『후한서』 동이열전 고구려", "『삼국사기』 고구려본기 태조대왕 53년·66년", "『후한서』 군국지 현도군"]
 
 - id: jindaebeop-194
   year: 194
@@ -224,6 +252,19 @@
   subjects: [goguryeo]
   tags: [politics]
   sources: ["광개토대왕릉비", "『삼국사기』 고구려본기 광개토왕 원년"]
+
+- id: gwanggaeto-gwanmi-392
+  year: 392
+  title:
+    ko: 광개토대왕의 석현성·관미성 공격
+  summary:
+    ko: "광개토대왕이 4만 군사로 백제 북쪽 변경을 쳐 석현성 등 10여 성을 빼앗고, 10월에는 사방이 절벽이고 바닷물이 둘러싼 요새 관미성을 일곱 길로 나누어 20일 만에 함락했다. 백제는 한수 북쪽의 여러 부락을 잃어, 근초고왕 때 차지한 예성강~임진강 사이 황해도 남부를 내주었다. 아신왕이 관미성을 되찾으려 했으나(393) 실패하고 수곡성(394)·패수(395)에서도 졌다. 관미성의 위치는 강화 교동도설(이병도), 파주 오두산성설(윤일녕), 개성 부근설 등이 있고, 석현성도 개풍 청석령설·곡산설(『대동지지』) 등이 갈린다."
+  subjects: [goguryeo, baekje]
+  links:
+    - { from: goguryeo, to: baekje, note: "석현성 등 10여 성·관미성 함락" }
+  tags: [war]
+  sources: ["『삼국사기』 백제본기 진사왕 8년·아신왕 2년~4년", "『삼국사기』 고구려본기 광개토왕 원년"]
+  places: [{ name: "관미성 (교동도설)", at: [126.27, 37.78] }]
 
 - id: gwanggaeto-baekje-396
   year: 396

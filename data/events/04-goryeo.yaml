@@ -312,18 +312,33 @@
   tags: [politics]
   sources: ["『원사』 태조본기 원년"]
 
+- id: dongxia-1215
+  year: 1215
+  endYear: 1217
+  title:
+    ko: 동진(대진·동하)의 성립
+  summary:
+    ko: 금의 요동 선무사 포선만노가 요동에서 자립해 천왕을 칭하고 나라 이름을 대진이라 했다. 1216년 몽골에 항복해 아들을 볼모로 보냈으나, 이듬해 두만강 유역으로 옮겨 다시 자립하고 나라 이름을 동하로 바꾸었다. 고려는 이 나라를 동진이라 불렀다.
+  subjects: [dongxia, jin, mongol-empire]
+  links:
+    - { from: jin, to: dongxia, note: "요동 선무사 포선만노의 자립" }
+    - { from: mongol-empire, to: dongxia, note: "1216년 항복을 받음" }
+  tags: [politics]
+  sources: ["『원사』 태조본기 10년·11년"]
+
 - id: gangdong-1219
   year: 1219
   title:
     ko: 강동성 전투
   summary:
-    ko: 몽골에 쫓겨 고려에 들어온 거란 유민을 고려와 몽골이 함께 강동성에서 물리쳤다. 이를 계기로 몽골이 고려에 지나친 공물을 요구하기 시작했다.
-  subjects: [goryeo, mongol-empire]
+    ko: 몽골에 쫓겨 고려에 들어온 거란 유민을 고려·몽골·동진(동하)이 함께 강동성에서 물리쳤다. 동진은 완안자연이 이끄는 군사 2만을 보내 성의 동문~남문을 맡았다. 이를 계기로 몽골이 고려에 지나친 공물을 요구하기 시작했다.
+  subjects: [goryeo, mongol-empire, dongxia]
   links:
     - { from: goryeo, to: mongol-empire, note: "거란 유민 공동 토벌" }
     - { from: mongol-empire, to: goryeo, note: "공물 요구 시작" }
+    - { from: dongxia, to: goryeo, note: "완안자연의 군사 2만 합류" }
   tags: [war, diplomacy]
-  sources: ["『고려사』 세가 고종 6년"]
+  sources: ["『고려사』 세가 고종 5~6년", "『고려사』 열전 조충", "『고려사』 열전 김취려"]
   places: [{ name: "강동성", at: [126.1, 39.15] }]
 
 - id: xixia-falls-1227
@@ -364,6 +379,18 @@
   tags: [war]
   sources: ["『고려사』 세가 고종 19년"]
   front: { war: goryeo-mongol-war, date: 1232-12-16 }
+
+- id: dongxia-falls-1233
+  year: 1233
+  title:
+    ko: 동진(동하) 멸망
+  summary:
+    ko: 오고타이 칸이 보낸 구유크의 몽골군이 동진의 남경(연변 성자산성)을 함락하고 포선만노를 사로잡았다. 만주 동부와 함경도의 여진 땅은 몽골의 지배 아래 들어갔다.
+  subjects: [dongxia, mongol-empire]
+  links:
+    - { from: mongol-empire, to: dongxia, note: "구유크의 정벌" }
+  tags: [war]
+  sources: ["『원사』 태종본기 5년"]
 
 - id: jin-falls-1234
   year: 1234
