@@ -13,6 +13,8 @@
     "dev": "npm run build:data && vite",
     "typecheck": "tsc --noEmit",
     "check:gaps": "node --disable-warning=ExperimentalWarning scripts/check-gaps.ts",
+    "gen:geo": "node scripts/generate-geo.mjs",
+    "check:exclaves": "node --disable-warning=ExperimentalWarning scripts/check-exclaves.ts",
     "build": "npm run build:data && tsc --noEmit && vite build",
     "preview": "vite preview"
   },

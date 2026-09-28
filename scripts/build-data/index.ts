@@ -25,6 +25,7 @@ import {
 import { buildLodTopology, countPoints, subTopology, tiledTopology } from './topo.ts';
 import { chunkOutlines, tilePolygons } from './tiles.ts';
 import { buildWars, checkWars, readWars } from './wars.ts';
+import { AllowedExclaveSchema, EXCLAVE_REPORT_KM2, findExclaves, formatPiece, matchExclaves, type AllowedExclave } from './exclaves.ts';
 import {
   anchorPoint,
   areaKm2,
@@ -53,6 +54,11 @@ const RANGE: [number, number] = [-2332, new Date().getFullYear()];
 const PREHISTORY_YEARS = [-699999, -7999];
 /** 서로 다른 나라 영토가 이 면적(km²)보다 많이 겹치면 오류 */
 const OVERLAP_TOLERANCE_KM2 = 5;
+/**
+ * 허용 목록(data/exclaves.yaml)에 없는 떨어진 영토 조각을 오류로 볼지 (DESIGN.md §5.5).
+ * 생성기의 부산물을 고치는 동안에는 경고로만 알린다. 다 고치면 true로 바꾼다.
+ */
+const EXCLAVES_ARE_ERRORS = false;
 /** color가 없는 나라에 쓰는 기본 색 */
 const FALLBACK_PALETTE = ['#c8745a', '#7d9b5b', '#d4a93f', '#5b7fa8', '#9a6fb0', '#b86b8a', '#8f8a5a', '#5f9e9a'];
 
@@ -303,6 +309,15 @@ function checkOverlaps(intervalTerritories: ClippedTerritory[], from: number) {
     }
 }
 
+/** 월경지 검사 (DESIGN.md §5.5): 같은 육지 위 본토와 떨어진 조각 가운데 허용 목록에 없는 것을 알린다 */
+function checkExclaves(clipped: ClippedTerritory[], land: Land, allow: AllowedExclave[], entities: Map<string, Entity>) {
+  const { unexpected, stale } = matchExclaves(findExclaves(clipped, land.pieces), allow);
+  const report = EXCLAVES_ARE_ERRORS ? errors : warnings;
+  for (const p of unexpected.filter((p) => p.km2 >= EXCLAVE_REPORT_KM2))
+    report.push(`월경지: ${formatPiece(p, entities.get(p.entityId)?.names.ko)} — 허용 목록(data/exclaves.yaml)에 없음. 생성기 경계를 확인`);
+  for (const a of stale) warnings.push(`data/exclaves.yaml: ${a.entity} ${a.from}~${a.to ?? '현재'} @${a.at.join(',')}에 맞는 떨어진 조각이 없음 (도형이 바뀌었으면 목록에서 지울 것)`);
+}
+
 // ── 출력 ─────────────────────────────────────────────────
 
 /** 지도가 바뀌는 연도로 나눈 구간. 겹침 검사와 "이전/다음 변화" 이동에 쓴다. */
@@ -348,6 +363,7 @@ async function main() {
   const clipped = clipAll(territories, land50);
   const { intervals, changeYears } = buildIntervals(clipped);
   for (const interval of intervals) checkOverlaps(interval.members, interval.from);
+  checkExclaves(clipped, land50, await readYamlList(path.join(DATA, 'exclaves.yaml'), AllowedExclaveSchema), entities);
   if (errors.length) return finish();
 
   if (CHECK_ONLY) {
