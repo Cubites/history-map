@@ -35,6 +35,7 @@
   basis:
     type: primary_source
     refs: ["『사기』", "『한서』"]
+    foundingNote: 기원전 207~203년(초한 쟁패기)은 지도에 중국 왕조를 표시하지 않음. 이때 요동은 연왕 장도의 땅(기원전 206년 요동왕 한광을 병합, 204년 한에 귀순)
 
 - id: xin
   level: polity
@@ -57,6 +58,7 @@
   basis:
     type: primary_source
     refs: ["『후한서』"]
+    foundingNote: 24년(경시제 시기)은 지도에 표시하지 않음
 
 - id: cao-wei
   level: polity
