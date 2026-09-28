@@ -63,7 +63,7 @@
 # 한 군현: 옛 고조선 땅을 중국 왕조가 점령 (빗금)
 - { type: occupied_by, subject: nangnang, object: western-han, from: -107, to: 8 }
 - { type: occupied_by, subject: nangnang, object: xin, from: 9, to: 23 }
-- { type: occupied_by, subject: nangnang, object: eastern-han, from: 25, to: 219 }
+- { type: occupied_by, subject: nangnang, object: eastern-han, from: 30, to: 219 }
 - { type: occupied_by, subject: nangnang, object: cao-wei, from: 220, to: 264 }
 - { type: occupied_by, subject: nangnang, object: western-jin, from: 265, to: 313 }
 - { type: occupied_by, subject: hyeondo, object: western-han, from: -74, to: 8 }
@@ -117,8 +117,8 @@
 - { type: claimed_by, subject: yeongsan-disputed, object: baekje, from: 369, to: 497 }
 - { type: claimed_by, subject: seomjin-disputed, object: baekje, from: 475, to: 512 }
 - { type: claimed_by, subject: seomjin-disputed, object: gaya, from: 475, to: 512 }
-- { type: claimed_by, subject: nine-forts-disputed, object: goryeo, from: 1107, to: 1108 }
-- { type: claimed_by, subject: nine-forts-disputed, object: jurchen, from: 1107, to: 1108 }
+- { type: claimed_by, subject: nine-forts-disputed, object: goryeo, from: 1107, to: 1109 }
+- { type: claimed_by, subject: nine-forts-disputed, object: jurchen, from: 1107, to: 1109 }
 - { type: claimed_by, subject: gando-disputed, object: joseon, from: 1883, to: 1896 }
 - { type: claimed_by, subject: gando-disputed, object: daehan-jeguk, from: 1897, to: 1908 }
 - { type: claimed_by, subject: gando-disputed, object: qing, from: 1883, to: 1908 }

@@ -685,7 +685,7 @@
    "properties": {
     "entityId": "goryeo",
     "from": 1107,
-    "to": 1109,
+    "to": 1110,
     "certainty": "estimated",
     "source": "중고등학교 한국사 교과서 시대별 지도의 일반적인 경계를 따른 대략적인 추정. 운영자 검수 필요"
    },
@@ -863,7 +863,7 @@
    "type": "Feature",
    "properties": {
     "entityId": "goryeo",
-    "from": 1109,
+    "from": 1110,
     "to": 1258,
     "certainty": "estimated",
     "source": "중고등학교 한국사 교과서 시대별 지도의 일반적인 경계를 따른 대략적인 추정. 운영자 검수 필요"

@@ -25,7 +25,7 @@ theaters:
         faction: hubaekje
         points:
           - { at: [127.15, 35.82], date: 927-00-00, label: 완산주 (전주) }
-          - { at: [128.3, 35.95], label: 고울부 (영천) }
+          - { at: [128.94, 35.97], label: 고울부 (영천) }
           - { at: [129.22, 35.84], label: 경주 (경애왕 죽음) }
           - { at: [128.7, 36.0], label: 공산 }
     battles:

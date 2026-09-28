@@ -511,7 +511,7 @@ const versions = {
   gojoseon: [[-2332, -281, P(GOJOSEON_EARLY), 'disputed'], [-281, -193, D(GOJOSEON_281, MANBEONHAN)], [-193, -107, GOJOSEON_WIMAN]],
   'jin-guk': [[-199, -107, JINGUK]],
   'yan-state': [[-399, -281, YAN_EARLY], [-281, -221, YAN_281]],
-  qin: [[-220, -206, HAN_EMPIRE]],
+  qin: [[-220, -204, HAN_EMPIRE]], // 기원전 206년 멸망 (검수 2026-09-28)
   buyeo: [[-199, 494, P(BUYEO)]],
   okjeo: [[-107, 56, OKJEO]],
   dongye: [[-107, 313, U([DONGYE], CENTRAL_E, CENTRAL_NW)]],
@@ -562,8 +562,8 @@ const versions = {
     [936, 994, GORYEO_936],
     [994, 1105, GORYEO_994],
     [1105, 1107, GORYEO_1105],
-    [1107, 1109, GORYEO_1107],
-    [1109, 1258, GORYEO_1105],
+    [1107, 1110, GORYEO_1107], // 9성은 1109년 7월에 돌려줌
+    [1110, 1258, GORYEO_1105],
     [1258, 1270, D(GORYEO_1105, [SSANGSEONG])],
     [1270, 1273, D(GORYEO_1105, [SSANGSEONG], [DONGNYEONG])],
     [1273, 1290, D(GORYEO_1105, [SSANGSEONG], [DONGNYEONG], [JEJU])],
@@ -599,8 +599,8 @@ const versions = {
     [936, 994, U(NB_936, EAST_MAN, NE_FAR)],
     [994, 1014, U(NB_994, EAST_MAN, NE_FAR)],
     [1014, 1107, U(NB_994_NB, EAST_MAN, NE_FAR)],
-    [1107, 1109, D(U(NB_1107, EAST_MAN, NE_FAR), NINE_NORTH, BOJU)],
-    [1109, 1115, U(NB_994_NB, EAST_MAN, NE_FAR)],
+    [1107, 1110, D(U(NB_1107, EAST_MAN, NE_FAR), NINE_NORTH, BOJU)],
+    [1110, 1115, U(NB_994_NB, EAST_MAN, NE_FAR)],
     // 1115~1368년은 금·원의 영토에 포함
     [1368, 1388, NB_1356],
     [1388, 1392, U(MANCHURIA_NORTH, NB_1356, NE_FAR)],
@@ -658,7 +658,7 @@ const versions = {
   'manbeonhan-disputed': [[-281, -193, MANBEONHAN, 'disputed']],
   'yeongsan-disputed': [[369, 498, YEONGSAN, 'disputed']],
   'seomjin-disputed': [[475, 513, SEOMJIN, 'disputed']],
-  'nine-forts-disputed': [[1107, 1109, NINE_NORTH, 'disputed']],
+  'nine-forts-disputed': [[1107, 1110, NINE_NORTH, 'disputed']],
   'gando-disputed': [[1883, 1909, GANDO, 'disputed']],
   'later-liang': [[907, 916, HUABEI], [916, 923, D(HUABEI, LX916)]],
   'later-tang': [[923, 936, D(HUABEI, LX923)]],
@@ -730,15 +730,15 @@ const versions = {
   // 숙신·읍루 구역(서기 56년까지): 동경 127.5° 동쪽과 부여 북쪽(북위 45.5° 이북). 그 남서쪽은 예맥
   const SUSHEN_Z = I(EAST, U(box(127.5, 38.5, 136.0, 49.5), box(118.5, 45.5, 136.0, 49.5)));
   const specs = [
-    { id: 'donghu', zone: U(NORTH_W, WEST_S), from: -700, to: -206 },
+    { id: 'donghu', zone: U(NORTH_W, WEST_S), from: -700, to: -205 }, // 기원전 206년 묵돌에게 무너짐
     // 숙신·읍루는 부여 동북쪽(『삼국지』 읍루전: 부여 동북 천여 리). 휘발하·혼강 유역(부여·고구려·현도군 경계 지대)은 채우지 않는다 (2026-09-28)
     // 그 서쪽(지린·창춘·휘발하·혼강 유역, 서단산 문화)은 부여·고구려의 모체가 된 예맥의 땅. 부여·고구려가 차지하기 전까지 채운다 (2026-09-28)
     { id: 'yemaek', zone: D(EAST, SUSHEN_Z), from: -700, to: 56 },
     { id: 'sushen', zone: SUSHEN_Z, from: -700, to: 1 },
-    { id: 'wuhuan', zone: WUHUAN_Z, from: -206, to: 207 },
-    { id: 'xianbei', zone: XIANBEI_S, from: -206, to: 207 },
+    { id: 'wuhuan', zone: WUHUAN_Z, from: -205, to: 207 },
+    { id: 'xianbei', zone: XIANBEI_S, from: -205, to: 207 },
     { id: 'xianbei', zone: WEST_S, from: 207, to: 388 },
-    { id: 'xianbei', zone: NORTH_W, from: -206, to: 400 },
+    { id: 'xianbei', zone: NORTH_W, from: -205, to: 400 },
     // 서진이 무너진 뒤 전연이 서기 전까지 요서·요동은 모용선비가 다스렸다
     { id: 'xianbei', zone: U(LIAOXI, [LIAODONG]), from: 317, to: 337 },
     { id: 'khitan', zone: WEST_S, from: 388, to: 916 },
@@ -754,7 +754,7 @@ const versions = {
     { id: 'mulgil', zone: EAST, from: 450, to: 560 },
     { id: 'malgal', zone: EAST, from: 560, to: 926 },
     // 몽골 초원 (2026-09-27): 동돌궐 영역과 같은 범위에서 중국 땅을 뺀 곳. 만주 쪽이 먼저 채운 땅은 제외된다
-    { id: 'xiongnu', zone: STEPPE, from: -318, to: 91 },
+    { id: 'xiongnu', zone: STEPPE, from: -317, to: 91 }, // 기원전 318년 첫 기록
     { id: 'xianbei', zone: STEPPE, from: 91, to: 402 },
     { id: 'rouran', zone: STEPPE, from: 402, to: 552 },
     { id: 'gokturk', zone: STEPPE, from: 552, to: 583 },

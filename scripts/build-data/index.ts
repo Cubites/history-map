@@ -24,7 +24,7 @@ import {
 } from '../../src/schema/index.ts';
 import { buildLodTopology, countPoints, subTopology, tiledTopology } from './topo.ts';
 import { chunkOutlines, tilePolygons } from './tiles.ts';
-import { buildWars, checkWars, readWars } from './wars.ts';
+import { buildWars, checkWars, findCutText, readWars } from './wars.ts';
 import { AllowedExclaveSchema, EXCLAVE_REPORT_KM2, findExclaves, formatPiece, matchExclaves, type AllowedExclave } from './exclaves.ts';
 import {
   anchorPoint,
@@ -95,6 +95,7 @@ async function readYamlList<T>(file: string, schema: z.ZodType<T>): Promise<T[]>
     errors.push(`${rel(file)}: 최상위는 목록이어야 함`);
     return [];
   }
+  findCutText(raw, rel(file), errors);
   return raw.flatMap((item, i) => {
     const label = `${rel(file)} [${i}${item?.id ? ` ${item.id}` : ''}]`;
     const parsed = validate(schema, item, label);

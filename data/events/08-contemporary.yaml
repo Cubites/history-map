@@ -212,7 +212,7 @@
   title:
     ko: 중국군 참전과 흥남 철수
   summary:
-    ko: 중국군이 대규모로 참전하자(10월 말) 국군과 유엔군은 후퇴했다. 동부 전선에서는 장진호 전투를 치르고 흥남에서 군인과 피란민 약 10만 명이 배로 철수했다(12월).
+    ko: "중국군이 대규모로 참전하자(10월 말) 국군과 유엔군은 후퇴했다. 동부 전선에서는 장진호 전투를 치르고, 흥남에서 국군과 유엔군 약 10만 5천 명과 피란민 약 9만~10만 명이 배로 철수했다(12월)."
   subjects: [prc, rok, usa, dprk]
   links:
     - { from: prc, to: rok, note: "중국군 참전" }
@@ -257,7 +257,7 @@
   subjects: [rok, dprk, usa, prc]
   links:
     - { from: usa, to: dprk, note: "정전 협정 (유엔군 측)" }
-    - { from: prc, to: rok, note: "정전 협정 (중국군 측)" }
+    - { from: prc, to: usa, note: "정전 협정 (중국군 측)" }
     - { from: usa, to: rok, note: "한미 상호 방위 조약" }
   tags: [war, diplomacy]
   sources: ["「정전 협정」", "「한미 상호 방위 조약」"]

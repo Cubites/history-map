@@ -26,7 +26,9 @@ theaters:
           - { at: [123.43, 41.8], label: 선양 }
           - { at: [124.53, 40.2], date: 1627-01-14, label: 의주 }
           - { at: [125.66, 39.62], date: 1627-01-21, label: 안주 }
-          - { at: [126.39, 38.34], date: 1627-01-27, label: 평산 }
+          - { at: [125.75, 39.02], date: 1627-01-24, label: 평양 }
+          - { at: [125.75, 38.67], date: 1627-01-25, label: 황주 }
+          - { at: [126.39, 38.34], date: 1627-02-07, label: 평산 }
       - name: 인조의 피란
         faction: joseon
         points:
@@ -56,7 +58,7 @@ theaters:
 
       - date: 1627-01-27
         title: 인조의 강화도 피란
-        summary: 후금군이 평양을 지나 황해도 평산까지 내려오자 인조는 강화도로 피란하고, 소현 세자는 전주로 내려가 분조를 이끌었습니다. 용골산성의 정봉수, 의주의 이립 등 의병이 후금군의 뒤를 괴롭혔습니다.
+        summary: 후금군이 평양을 지나 황해도 황주까지 함락하자 인조는 강화도로 피란하고, 소현 세자는 전주로 내려가 분조를 이끌었습니다. 용골산성의 정봉수, 의주의 이립 등 의병이 후금군의 뒤를 괴롭혔습니다.
         areas:
           - { faction: joseon, entities: [joseon] }
           - { faction: hugeum, geojson: jeongmyo/1627-01-27.geojson }
@@ -64,7 +66,20 @@ theaters:
           - { name: 강화도, at: [126.49, 37.72], faction: joseon }
           - { name: 용골산성 (정봉수), at: [124.72, 39.98], faction: joseon }
         arrows:
-          - { faction: hugeum, path: [[125.7, 39.55], [125.8, 39.05], [126.35, 38.4]], label: 평산 }
+          - { faction: hugeum, path: [[125.7, 39.55], [125.8, 39.05], [125.78, 38.72]], label: 황주 }
+
+      # 검수(2026-09-28): 후금군은 평양으로 물러나 관망하다가 2월 7일 무렵 평산으로 진격했다 (『신편 한국사』 29, 『인조실록』 5년 2월 9일)
+      - date: 1627-02-07
+        title: 후금군의 평산 진출
+        summary: 평양으로 물러나 형세를 살피던 후금군이 2월 초 다시 황해도 평산까지 내려왔습니다. 후금군은 평산 남쪽으로는 더 나아가지 않았고, 강화도의 조정과 화의 교섭이 이어졌습니다.
+        areas:
+          - { faction: joseon, entities: [joseon] }
+          - { faction: hugeum, geojson: jeongmyo/1627-02-07.geojson }
+        holds:
+          - { name: 강화도, at: [126.49, 37.72], faction: joseon }
+          - { name: 용골산성 (정봉수), at: [124.72, 39.98], faction: joseon }
+        arrows:
+          - { faction: hugeum, path: [[125.78, 38.72], [126.35, 38.4]], label: 평산 }
 
       - date: 1627-03-03
         title: 정묘 화약

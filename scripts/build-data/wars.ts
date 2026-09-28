@@ -39,6 +39,22 @@ export function yearOfDate(date: string): number {
   return Number(date.match(/^(-?\d+)-/)![1]);
 }
 
+/**
+ * 흐름 매핑({ ... }) 안에 따옴표 없이 쓴 글에 쉼표가 있으면 YAML은 쉼표 뒤를 값 없는 키로 읽어
+ * 글이 잘린다 (예: "3,800여 명" → "3"). 값이 없고 공백이나 한글이 든 키를 찾아 오류로 알린다.
+ */
+export function findCutText(node: unknown, where: string, errors: string[], trail = ''): void {
+  if (Array.isArray(node)) node.forEach((v, i) => findCutText(v, where, errors, `${trail}[${i}]`));
+  else if (node && typeof node === 'object') {
+    for (const [k, v] of Object.entries(node)) {
+      if (v === null && /[\sㄱ-힣]/.test(k)) {
+        errors.push(`${where} ${trail}: 쉼표 때문에 글이 잘림 ("${k.slice(0, 30)}…" 앞의 쉼표). 글 전체를 큰따옴표로 감쌀 것`);
+      }
+      findCutText(v, where, errors, trail ? `${trail}.${k}` : k);
+    }
+  }
+}
+
 export async function readWars(files: string[], errors: string[], rel: (f: string) => string): Promise<War[]> {
   const wars: War[] = [];
   for (const file of files) {
@@ -49,6 +65,7 @@ export async function readWars(files: string[], errors: string[], rel: (f: strin
       errors.push(`${rel(file)}: YAML 문법 오류 - ${(e as Error).message}`);
       continue;
     }
+    findCutText(raw, rel(file), errors);
     const result = WarSchema.safeParse(raw);
     if (!result.success) {
       for (const issue of result.error.issues) errors.push(`${rel(file)} ${issue.path.join('.')}: ${issue.message}`);
