@@ -17,6 +17,9 @@
     "check:exclaves": "node --disable-warning=ExperimentalWarning scripts/check-exclaves.ts",
     "check:generator": "node scripts/check-generator.mjs",
     "compare:geo": "node scripts/compare-geo.mjs",
+    "prep:fragments": "node scripts/prep-fragments.mjs",
+    "check:fragments": "node scripts/check-fragments.mjs",
+    "compare:cshapes": "node scripts/compare-cshapes.mjs",
     "build": "npm run build:data && tsc --noEmit && vite build",
     "preview": "vite preview"
   },

@@ -26,4 +26,6 @@ push하면 GitHub Actions가 빌드와 데이터 검증을 실행합니다. 저�
 - 소스 코드: [MIT](LICENSE)
 - 역사 데이터(`data/`): [CC BY-NC-SA 4.0](data/LICENSE)
 - 기본 지도: [Natural Earth](https://www.naturalearthdata.com/) (퍼블릭 도메인)
+- 유럽 행정구역 조각: [Natural Earth](https://www.naturalearthdata.com/) 1:10m Admin 1 – States, Provinces v5.1.2 (퍼블릭 도메인). 유럽 범위를 잘라 간략화하고, 해안을 1:50m·1:110m 육지에 맞춰 가공함(`data/base/fragments/`, `scripts/prep-fragments.mjs`). 유럽 나라 영토를 만들 때 이 현대 행정구역을 시대별로 묶으므로 그 영토는 근사임
+- 근현대 국경 대조 자료: CShapes 2.0 — Schvitz, Rüegger, Girardin, Cederman, Weidmann, Gleditsch, "Mapping the International System, 1886-2019: The CShapes 2.0 Dataset", Journal of Conflict Resolution 66(1), 2022, doi:10.1177/00220027211013563, https://icr.ethz.ch/data/cshapes/ (CC BY-NC-SA 4.0). 대조(`npm run compare:cshapes`)에만 썼고 도형은 이 저장소에 들어 있지 않음
 - 경계 참고: 간쑤 서부(둔황·아커싸이·과저우·쑤베이)와 신장 동쪽 경계의 꼭짓점 일부는 [OpenStreetMap](https://www.openstreetmap.org/copyright) 행정 경계를 간략화해 참고함 (© OpenStreetMap contributors, ODbL)

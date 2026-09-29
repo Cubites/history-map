@@ -4,6 +4,8 @@
 //     scripts/geo의 파일끼리 같은 좌표를 이름 없이 되풀이하지 않음('값만 같은 점' 허용 목록 ALLOWED_REPEATS만).
 // [2] 안전장치: 잘못된 권역 구성·옵션·인자 오타에서 생성기가 data/geo를 지우기 전에(엉뚱한 폴더에 쓰지 않고) 멈추는지, --prune과 권역 출처(source)가 약속대로 도는지,
 //     빈 땅 검사 구역(gapZones)이 AREAS 순서대로 모이고 새 권역의 구역도 저절로 들어가는지, 구역 모양이 틀리면 멈추는지.
+// [3] 행정구역 조각(2026-09-30): topojson-client와 조각 파일(data/base/fragments)은 lib.mjs에서만 쓰는지(층 규칙은 [1]),
+//     조각 파일이 prep:fragments가 쓴 그대로인지(README.md의 크기·sha256), 형식·id·arc 번호가 맞는지, lib의 loadFragments·F가 약속대로 도는지.
 // 프로젝트의 data/geo는 건드리지 않는다. data/geo를 임시 폴더에 복사해 그곳에서 시험하고, 끝나면 임시 폴더를 지운다.
 // 생성기(scripts/generate-geo.mjs, scripts/geo/)를 고친 뒤와 권역을 더한 뒤에 돌린다. data/geo가 생성기 결과와 맞아야 한다(먼저 npm run gen:geo).
 import { spawnSync } from 'node:child_process';
@@ -74,6 +76,8 @@ else ok(`권역 ${AREAS.length}개가 AREAS 순서대로 등록됨 (${AREAS.map(
 
 // import 층 규칙. lib < shared < 권역(AREAS 순서) < area-list 이고 engine은 lib만 쓴다. areas/<권역>/ 아래 도우미 모듈은 그 권역 파일과 같은 규칙을 따른다.
 // area-list는 등록된 권역 파일만 가져오고, scripts/geo의 다른 파일은 area-list를 가져오지 않는다(권역 파일이 가져오면 순환)
+// lib.mjs만 가져올 수 있는 패키지(조각 합치기). polyclip-ts는 lib이 require.resolve로 불러오므로 이 목록이 아니라 아래 글 검사로 본다
+const LIB_PACKAGES = ['topojson-client'];
 const importsOf = (text) => [...text.matchAll(/^\s*(?:import|export)\b[^;]*?\bfrom\s*'([^']+)'|^\s*import\s*'([^']+)'/gm)].map((m) => m[1] ?? m[2]);
 function layerProblems(rel, text) {
   const out = [];
@@ -85,7 +89,10 @@ function layerProblems(rel, text) {
       if (rel !== 'lib.mjs' && rel !== 'engine.mjs') out.push(`${rel}: node 내장 모듈 '${spec}'은 lib·engine에서만 쓴다`);
       continue;
     }
-    if (!spec.startsWith('.')) { out.push(`${rel}: 패키지 '${spec}'를 직접 가져옴 (polyclip은 lib에서 가져온다)`); continue; }
+    if (!spec.startsWith('.')) {
+      if (!(rel === 'lib.mjs' && LIB_PACKAGES.includes(spec))) out.push(`${rel}: 패키지 '${spec}'를 직접 가져옴 (polyclip·topojson-client는 lib에서 가져온다)`);
+      continue;
+    }
     const target = path.posix.normalize(path.posix.join(path.posix.dirname(rel), spec));
     let allowed;
     if (rel === 'lib.mjs') allowed = false;
@@ -120,6 +127,29 @@ if (AREAS.length) {
 const polyclipUsers = files.filter((f) => f.text.includes('polyclip-ts')).map((f) => f.rel);
 if (polyclipUsers.join() === 'lib.mjs') ok('polyclip-ts를 불러오는 곳은 lib.mjs 하나');
 else bad(`polyclip-ts를 불러오는 곳: [${polyclipUsers}] (lib.mjs 하나여야 함)`);
+const topoUsers = files.filter((f) => /['"]topojson-client['"]/.test(f.text)).map((f) => f.rel);
+if (topoUsers.join() === 'lib.mjs') ok('topojson-client(조각 합치기)를 불러오는 곳은 lib.mjs 하나');
+else bad(`topojson-client를 불러오는 곳: [${topoUsers}] (lib.mjs 하나여야 함)`);
+// 조각 파일(data/base/fragments)을 읽는 곳은 lib.mjs의 loadFragments뿐이다: 다른 파일의 문자열 리터럴(주석 제외)에 fragments·.topo.json이 있으면 실패
+const stringsOf = (rel, text) => {
+  const sf = ts.createSourceFile(rel, text, ts.ScriptTarget.Latest, true, ts.ScriptKind.JS);
+  const out = [];
+  const visit = (n) => { if (ts.isStringLiteralLike(n) || ts.isTemplateHead(n) || ts.isTemplateMiddle(n) || ts.isTemplateTail(n)) out.push(n.text); ts.forEachChild(n, visit); };
+  visit(sf);
+  return out;
+};
+const readsFragments = (rel, text) => stringsOf(rel, text).some((v) => /fragments|\.topo\.json/.test(v));
+const fragReaders = files.filter((f) => readsFragments(f.rel, f.text)).map((f) => f.rel);
+if (fragReaders.join() === 'lib.mjs' && /^export function loadFragments\(/m.test(files.find((f) => f.rel === 'lib.mjs')?.text ?? '')) ok('조각 파일(data/base/fragments)을 읽는 곳은 lib.mjs의 loadFragments 하나');
+else bad(`조각 파일을 읽는 곳: [${fragReaders}] (lib.mjs의 loadFragments 하나여야 함. 권역 파일은 loadFragments(권역).F를 쓴다)`);
+// 검사기 자체 시험: 권역 파일이 topojson-client를 직접 가져오거나 조각 파일을 직접 읽으면 잡아야 한다
+if (AREAS.length) {
+  const probe = layerProblems(`areas/${AREAS[0].name}.mjs`, "import { merge } from 'topojson-client';\n");
+  if (probe.length) ok(`권역 파일이 topojson-client를 직접 가져오면 잡음 (시험 → ${short(probe[0])})`);
+  else bad('층 위반 시험: 권역 파일이 topojson-client를 가져와도 잡지 못함');
+  if (readsFragments('areas/check.mjs', "const t = JSON.parse(readFileSync(new URL('../../../data/base/fragments/europe.topo.json', import.meta.url)));\n")) ok('권역 파일이 조각 파일을 직접 읽으면 잡음 (시험: 문자열 data/base/fragments/europe.topo.json)');
+  else bad('조각 파일 읽기 시험: 권역 파일이 조각 파일을 직접 읽어도 잡지 못함');
+}
 const argvUsers = files.filter((f) => /\bprocess\.|\bargv\b/.test(f.text)).map((f) => f.rel);
 if (!argvUsers.length) ok('scripts/geo는 process·argv를 쓰지 않음 (다른 스크립트가 권역 파일을 가져와도 됨)');
 else bad(`process·argv를 쓰는 파일: [${argvUsers}]`);
@@ -389,6 +419,86 @@ try {
   bad(`시험 도중 오류: ${e.stack ?? e}`);
 } finally {
   rmSync(tmp, { recursive: true, force: true });
+}
+
+// ── [3] 행정구역 조각 파일 ───────────────────────────────
+console.log('[3] 행정구역 조각 파일 (data/base/fragments)');
+{
+  const FRAG_DIR = path.join(PROJECT, 'data/base/fragments');
+  const entries = existsSync(FRAG_DIR) ? readdirSync(FRAG_DIR) : [];
+  const topoFiles = entries.filter((f) => f.endsWith('.topo.json')).sort();
+  const stray = entries.filter((f) => !f.endsWith('.topo.json') && f !== 'README.md');
+  if (!existsSync(FRAG_DIR)) ok('data/base/fragments 없음 (조각을 쓰는 권역이 없으면 괜찮다)');
+  else if (stray.length || !topoFiles.length || !entries.includes('README.md')) bad(`data/base/fragments에는 <권역>.topo.json과 README.md만 둔다: 다른 것 [${stray}], 조각 파일 ${topoFiles.length}개, README.md ${entries.includes('README.md') ? '있음' : '없음'}`);
+  else ok(`data/base/fragments: 조각 파일 ${topoFiles.length}개(${topoFiles.join(', ')})와 README.md`);
+  const readmeText = entries.includes('README.md') ? readFileSync(path.join(FRAG_DIR, 'README.md'), 'utf8') : '';
+  const { loadFragments } = topoFiles.length ? await import(pathToFileURL(path.join(GEO_SRC, 'lib.mjs')).href) : {};
+  for (const file of topoFiles) {
+    const name = file.slice(0, -'.topo.json'.length);
+    const buf = readFileSync(path.join(FRAG_DIR, file));
+    // prep:fragments가 쓴 그대로인지: README.md의 '| `파일` | 크기B | `sha256` |' 줄과 같아야 한다
+    const row = readmeText.split('\n').map((l) => l.match(/^\| `([^`]+)` \| ([\d,]+)B \| `([0-9a-f]{64})` \|$/)).find((m) => m && m[1] === file);
+    if (!row) bad(`${file}: README.md에 크기·sha256 줄이 없음 (npm run prep:fragments로 다시 만든다)`);
+    else if (row[3] !== sha(buf) || Number(row[2].replaceAll(',', '')) !== buf.length) bad(`${file}: README.md의 크기·sha256과 다름 (손으로 고쳤거나 README를 함께 쓰지 않음. npm run prep:fragments로 다시 만든다)`);
+    else ok(`${file}: README.md의 크기·sha256과 같음 (${buf.length.toLocaleString('en-US')}B, ${row[3].slice(0, 12)}…)`);
+    // 형식·id·arc 번호
+    const problems = [];
+    let topo = null;
+    try { topo = JSON.parse(buf.toString('utf8')); } catch (e) { problems.push(`JSON이 아님: ${e.message}`); }
+    let geoms = [];
+    if (topo) {
+      const t = topo.transform;
+      if (topo.type !== 'Topology') problems.push('type이 Topology가 아님');
+      if (t?.scale?.[0] !== 1e-4 || t?.scale?.[1] !== 1e-4 || t?.translate?.[0] !== 0 || t?.translate?.[1] !== 0) problems.push('transform이 scale [0.0001, 0.0001]·translate [0, 0]이 아님');
+      if (topo.objects?.fragments?.type !== 'GeometryCollection') problems.push('objects.fragments가 GeometryCollection이 아님');
+      if (!['Polygon', 'MultiPolygon'].includes(topo.objects?.domain?.type)) problems.push('objects.domain이 Polygon·MultiPolygon이 아님');
+      geoms = topo.objects?.fragments?.geometries ?? [];
+      const nArcs = topo.arcs?.length ?? 0;
+      const seen = new Set();
+      const uses = new Map();
+      const walk = (a, g) => (Array.isArray(a) ? a.forEach((x) => walk(x, g)) : Number.isInteger(a) && (a < 0 ? ~a : a) < nArcs ? uses.set(a < 0 ? ~a : a, (uses.get(a < 0 ? ~a : a) ?? 0) + 1) : problems.push(`${g.id}: arc 번호 ${a}가 범위 밖`));
+      for (const g of geoms) {
+        if (typeof g.id !== 'string' || !/^[A-Z0-9]+(-[A-Z0-9]+)*$/.test(g.id)) problems.push(`id 모양이 틀림: ${JSON.stringify(g.id)}`);
+        else if (seen.has(g.id)) problems.push(`id가 겹침: ${g.id}`);
+        seen.add(g.id);
+        if (!['Polygon', 'MultiPolygon'].includes(g.type)) problems.push(`${g.id}: type ${g.type}`);
+        if (typeof g.properties?.adm0 !== 'string' || typeof g.properties?.name !== 'string') problems.push(`${g.id}: properties.adm0·name이 없음`);
+        walk(g.arcs, g);
+      }
+      if ((topo.arcs ?? []).some((a) => !Array.isArray(a) || a.length < 2 || a.some((q) => !Number.isInteger(q[0]) || !Number.isInteger(q[1])))) problems.push('점이 둘 미만이거나 정수가 아닌 좌표가 있는 arc');
+      const shared3 = [...uses.values()].filter((n) => n > 2).length;
+      if (shared3) problems.push(`세 번 이상 쓰인 arc ${shared3}개 (조각이 겹침)`);
+      const unused = nArcs - uses.size;
+      if (unused) problems.push(`쓰이지 않는 arc ${unused}개`);
+    }
+    if (problems.length) problems.slice(0, 5).forEach((m) => bad(`${file}: ${m}`));
+    else ok(`${file}: 형식·id·arc 번호가 맞음 (조각 ${geoms.length}개, arc ${topo.arcs.length.toLocaleString('en-US')}개, 격자 transform 1e-4, 세 번 이상 쓰인 arc 없음)`);
+    if (problems.length || !geoms.length) continue;
+    // lib의 loadFragments·F: 격자 좌표, 순서 무관 memo, 오류, 이웃 조각의 공유 arc가 녹는지, 모든 조각의 합 = domain
+    try {
+      const set = loadFragments(name);
+      const ringArea = (r) => { let a = 0; for (let i = 0, j = r.length - 1; i < r.length; j = i++) a += (r[j][0] + r[i][0]) * (r[j][1] - r[i][1]); return Math.abs(a / 2); };
+      const area = (m) => m.reduce((s2, poly) => s2 + poly.reduce((s3, r, k) => s3 + (k ? -1 : 1) * ringArea(r), 0), 0);
+      const perim = (m) => m.reduce((s2, poly) => s2 + poly.reduce((s3, r) => s3 + r.slice(1).reduce((s4, q, k) => s4 + Math.hypot(q[0] - r[k][0], q[1] - r[k][1]), 0), 0), 0);
+      const a = set.ids[0];
+      const fa = set.F(a);
+      const onGrid = fa.every((poly) => poly.every((r) => r.length >= 4 && r[0][0] === r.at(-1)[0] && r[0][1] === r.at(-1)[1] && r.every(([x, y]) => x === Math.round(x * 1e4) / 1e4 && y === Math.round(y * 1e4) / 1e4)));
+      // a와 arc를 함께 쓰는 이웃 조각 하나
+      const arcsOf = (g) => { const out = new Set(); const w = (x) => (Array.isArray(x) ? x.forEach(w) : out.add(x < 0 ? ~x : x)); w(g.arcs); return out; };
+      const aArcs = arcsOf(geoms.find((g) => g.id === a));
+      const b = geoms.find((g) => g.id !== a && [...arcsOf(g)].some((x) => aArcs.has(x)))?.id;
+      const same = b ? set.F(a, b) === set.F(b, a) : false;
+      const dissolved = b ? perim(set.F(a, b)) < perim(fa) + perim(set.F(b)) - 1e-9 : false;
+      const all = set.F(...set.ids);
+      const domainSame = Math.abs(area(all) - area(set.domain)) <= 1e-9 * area(set.domain);
+      const errs = [['F()', 'id가 없음', () => set.F()], ['모르는 id', '모르는 조각 id', () => set.F('CHECK-없음')], ['같은 id 두 번', '두 번', () => set.F(a, a)]]
+        .map(([label, needle, fn]) => { try { fn(); return `${label}: 멈추지 않음`; } catch (e) { return String(e.message).includes(needle) ? null : `${label}: 다른 오류 ${short(e.message)}`; } }).filter(Boolean);
+      if (onGrid && same && dissolved && domainSame && !errs.length) ok(`${file}: loadFragments·F가 약속대로 돎 (F(${a})는 격자 위 닫힌 링, F(${a}, ${b})는 순서 무관 같은 객체이고 공유 경계가 녹음, 모든 조각의 합 = domain, 잘못된 id에서 멈춤)`);
+      else bad(`${file}: loadFragments·F 시험 실패 (격자 ${onGrid}, memo ${same}, 공유 경계 녹음 ${dissolved}(${b}), domain ${domainSame}${errs.length ? ', ' + errs.join('; ') : ''})`);
+    } catch (e) {
+      bad(`${file}: loadFragments 실패: ${short(String(e.stack ?? e))}`);
+    }
+  }
 }
 
 console.log(failed ? `=== 실패 ${failed}개 ===` : '=== 전체 통과 ===');

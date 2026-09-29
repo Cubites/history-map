@@ -244,6 +244,7 @@ data/
     goguryeo.geojson
     ...
   base/            # Natural Earth 해안선·육지 (퍼블릭 도메인)
+    fragments/     # 행정구역 조각 europe.topo.json (Natural Earth admin-1 v5.1.2 파생, npm run prep:fragments가 만듦, §5.2 '행정구역 조각')
 ```
 
 GeoJSON은 QGIS에서 바로 열어 볼 수 있고, 텍스트 파일이라 git에서 변경 내용을 비교할 수 있다. 지금 `data/geo`는 모두 국경 생성기가 만들므로, 영토를 고칠 때는 geojson이 아니라 생성기의 권역 파일을 고친다(§5.2 5번).
@@ -269,6 +270,7 @@ GeoJSON은 QGIS에서 바로 열어 볼 수 있고, 텍스트 파일이라 git�
    - **빈 땅 채우기와 순서**: specs는 `AREAS` 순서로 이어 붙고, 순서가 땅 배분을 정한다(앞 spec이 먼저 채움, 순서를 바꾸면 13~14개 파일이 바뀐 실험이 있음). 지금은 `inner-asia`의 28개(나라 id 20개 가운데 17개는 채우기로만 만들고, 읍루·물길·말갈은 덧붙임)뿐이다. 새 권역의 specs는 끝에 온다. 채우기는 기간마다 그때 살아 있는 나라 가운데 구역의 범위 상자와 겹치는 나라만 빼고, 거른 뒤의 뺄 목록이 같은 기간은 한 번만 계산한다(2026-09-30. 전에는 세계의 모든 나라를 빼서 가짜 나라 100·300개를 유럽에 더하면 채우기가 28.6초·113.8초였고, 지금은 1.7초·2.2초이며 결과 바이트는 같다).
    - **실패해도 지우지 않는다(지우기 전 대조, `--prune`)**: 권역 등록 빠뜨림, `versions`·`fillSpecs`·`source`·`gapZones` 오타, 같은 나라 id가 두 권역에 있음, 다른 권역 나라를 채우는 spec, 같은 채우기 id를 두 권역이 채움, spec 모양 오류, 빈 땅 검사 구역(`gapZones`) 모양 오류, 인자 오타(`--prune` 말고 `-`로 시작하는 인자, 폴더 둘 이상, `package.json`·`data/entities`가 없는 폴더. 예: 줄표를 빠뜨린 `npm run gen:geo prune`)는 `data/geo`를 지우기 전에, 다른 폴더에도 쓰지 않고 멈춘다. 쓰기 직전에는 이번에 쓰지 않을 geojson(권역 파일째 빠짐, 없앤 나라, id를 바꾼 나라의 옛 파일, 생성기 밖에서 손으로 그린 파일)이 있는지 대조해 있으면 멈춘다. 나라를 일부러 없애거나 id를 바꿀 때만 `npm run gen:geo -- --prune`으로 지운다. `--prune`은 손으로 그린 파일도 지우므로 그런 파일은 먼저 권역 파일로 옮긴다(DATA_GUIDE §5). 이 대조는 '지금 있는 파일' 기준이라, 새 권역에서 아직 한 번도 만들지 않은 나라를 빠뜨린 경우는 잡지 못한다(`check:data`의 '영토 데이터 없음' 경고가 잡는다).
    - **파일 사이에서 맞물리는 점** (2026-09-29 정리): 한쪽만 옮기면 틈이나 겹침이 생기는 점은 좌표를 되풀이하지 않고 이름(공유 상수·배열 조각)으로 가져다 쓴다. 나눈 직후에는 다른 파일의 이름과 같은 좌표를 이름 없이 되풀이한 곳이 24묶음 있었고, 그 가운데 맞물리는 19묶음을 이름 참조로 바꿨다(값이 같아 `data/geo` 118개와 세 검사 출력이 바이트 단위로 같다). 새로 둔 이름은 `shared`의 방천 3국 접경 `TUMEN_TRIPOINT`·우수리강 `L_USSURI`·두만강 하구 앞바다 점 `TUMEN_SEA`(간도·압록강 두만강선·연해주·러시아), 흑룡강 띠 남쪽 변 `L_KHITAN_N`·`L_BALHAE_N`(거란·발해 북쪽 경계), 연운 16주 북쪽 끝 `YANYUN_N`(거란), 북위 33°선 `L33`(금·남송 상자), `korea`의 쌍성총관부·동녕부 경계 `L_SSANGSEONG_W`(동하), `inner-asia`의 몽골 초원 북쪽 변 `ET_NORTH`(러시아)이고, 이미 있던 `HEXI_W`·`L_YALU_TUMEN`·`MN_SW`는 export해 신장 동쪽 경계·간도·동만주 링·러시아가 가져다 쓴다. 남은 5묶음(발해 앞바다↔러시아, 요동 앞바다↔고조선 초기·연, 화북 상자↔요하 서쪽 초원 상자, 동돌궐↔4군 상자, 만주 동북부↔연해주)은 값만 같고 맞물리지 않은 점(바다 쪽 점, 결과에 드러나지 않는 자르기 상자 모서리)이라 이름으로 묶지 않고 '값만 같은 점' 주석을 달았다(따로 옮겨도 틈·겹침이 생기지 않음). 맞물리는데 이름으로 바꾸면 바이트가 달라져 값으로 둔 점('값으로 맞춘 점')은 없다. 새 선을 그을 때도 다른 파일의 좌표를 베끼지 말고 이름을 가져다 쓴다. 이 규칙은 `check:generator`가 지키는지 본다: `scripts/geo`의 `.mjs`에서 `[수, 수]` 좌표 리터럴을 최상위 이름별로 모아(주석은 빼고), 서로 다른 파일의 이름이 같은 좌표를 되풀이하는 묶음이 허용 목록(`scripts/check-generator.mjs`의 `ALLOWED_REPEATS`, 지금은 위 5묶음을 좌표와 이름으로 적음) 밖에 있으면 실패한다. 새 권역이 다른 파일의 좌표를 베끼거나, 목록의 점을 다른 이름이 또 쓰면 실패하고, 목록에 있는데 사라진 묶음도 실패로 알린다(목록과 이 문단에서 지운다). 맞물리지 않는 점을 새로 두면 양쪽 이름 위에 '값만 같은 점' 주석을 달고 목록과 이 문단에 더한다.
+   - **행정구역 조각** (2026-09-30, 작업 5의 기반. 아직 어느 권역도 쓰지 않아 `data/geo`는 그대로): 유럽 나라 영토를 현대 행정구역 조각을 묶어 만들 수 있게, `npm run prep:fragments -- <원본>`(`scripts/prep-fragments.mjs`)이 Natural Earth 1:10m admin-1 v5.1.2(`.cache/natural-earth/v5.1.2/`, git에서 뺌)에서 `data/base/fragments/europe.topo.json`(조각 1,832개, 1e-4° 격자·arc 공유·간략화·해안을 land-50m·110m에 맞춤, 약 1.2MB)과 `README.md`(출처·SHA·매개변수·나라별 조각 표)를 만든다. 생성기에서는 `lib.mjs`의 `loadFragments(권역)`이 돌려주는 `F(...ids)`(topojson-client merge, 순서 무관 memo)로 조각을 합친다. 조각 파일과 `topojson-client`는 `lib`에서만 쓰고(`check:generator` [1]·[3]), 조각을 `level: region` Entity로 내보내지 않는다(§7 6번). 검사는 `npm run check:fragments`(나라별 countries-50m 대조, 조각 겹침·빈틈, 해안 맞춤), 근현대 국경 대조는 `npm run compare:cshapes`(CShapes 2.0이 `.cache/cshapes/`에 있을 때만 날짜별 대칭차 표를 보이고 파일은 쓰지 않음, CC BY-NC-SA 4.0이라 좌표를 저장소에 넣지 않는다). 권역 파일과 조각 소유표는 작업 6에서 설계한다.
    - **검사 도구**: `npm run check:generator`는 구조(층 규칙, `polyclip-ts`는 `lib`에서만, `scripts/geo`는 명령줄 인자를 모름, 권역 등록, `data/geo` 평면 폴더, 타입 선언(`.d.mts`)과 export가 맞음, `check-gaps.ts`에 좌표 복사가 없음, 파일 사이 좌표 되풀이가 허용 목록뿐이고 가짜 파일이 다른 파일 좌표를 베끼면 잡는지)와 위의 멈춤 경우·`--prune`·권역 `source`·빈 땅 검사 구역(`AREAS` 순서로 모임, 새 권역의 구역이 끝에 붙음, 모양 오류에서 멈춤)을 `data/geo`를 임시 폴더에 복사해 시험한다(약 20초, 프로젝트의 `data/geo`는 건드리지 않음). 생성기를 고친 뒤와 권역을 더한 뒤에 돌린다. `npm run compare:geo [-- 기준 폴더]`는 git HEAD(또는 기준 폴더)의 geojson과 지금 `data/geo`를 나라·기간별 대칭차 면적으로 비교한다.
    - **새 권역 더하기** (예: 유럽):
      1. `data/entities/europe.yaml`과 `scripts/geo/areas/europe.mjs`를 짝 짓는다. 처음에는 `lib`·`shared`만 가져오는 잎으로 시작하고, 근거가 한국사 교과서가 아니면 `export const source = '…'`를 둔다. 비어 있으면 안 되는 지역은 `export const gapZones = [{ name: '유럽', zone: P(링) }]`로 내보내면 2단계의 `AREAS` 등록만으로 `check:gaps`가 검사한다(`check-gaps.ts`는 고치지 않음, §5.4). 유럽 안의 시대별 행정구역(§7의 지역)도 이 권역 파일에서 만든다(단 §7 6번의 배타 가정을 먼저 볼 것).
@@ -481,6 +483,7 @@ history-map/
   scripts/generate-geo.mjs  # 국경 생성기 진입 파일 (§5.2 5번, npm run gen:geo)
   scripts/geo/           # 국경 생성기: lib·shared·engine, area-list(권역 목록), areas/<권역>.mjs (권역마다 도형과 versions)
   scripts/check-*.ts, check-generator.mjs, compare-geo.mjs  # 영토 공백·월경지 검사, 생성기 구조·안전장치 검사, 도형 비교
+  scripts/prep-fragments.mjs, check-fragments.mjs, compare-cshapes.mjs, fragments/  # 행정구역 조각 가공·검사, CShapes 대조 (§5.2)
   src/
     schema/              # zod 스키마 (빌드와 앱이 공유)
     map/                 # 시점·투영(view), Canvas 레이어, SVG 강조·이름표·화살표
@@ -543,6 +546,7 @@ P1을 먼저 하는 이유: 전체 데이터를 만들기 전에 작은 데이�
 | 소스 코드 (`src/`, `scripts/`) | MIT | `LICENSE` |
 | 직접 만든 데이터 (`data/entities`, `data/events`, `data/geo`, `relations.yaml`) | CC BY-NC-SA 4.0 | `data/LICENSE` |
 | Natural Earth 해안선 (`data/base`) | 퍼블릭 도메인 | 출처만 표기 |
+| 유럽 행정구역 조각 (`data/base/fragments`) | 퍼블릭 도메인 (Natural Earth 파생) | 출처만 표기 |
 
 **데이터에 CC BY-NC-SA 4.0을 고른 이유**
 - **BY (출처 표시)**: 다른 곳에서 쓸 때 이 프로젝트를 출처로 밝혀야 한다.
