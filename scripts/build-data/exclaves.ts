@@ -1,5 +1,5 @@
 // 월경지 검사 (DESIGN.md §5.5): 해안선으로 자른 영토에서 같은 육지 덩어리 위의 본토와 떨어진 조각을 찾는다.
-// 생성기(scripts/generate-geo.mjs)의 직선 경계가 만·반도·해협을 가로지르면, 생성기 좌표에서는 바다를 통해
+// 생성기(scripts/geo/areas/의 권역 파일)의 직선 경계가 만·반도·해협을 가로지르면, 생성기 좌표에서는 바다를 통해
 // 본토와 이어져 보이던 조각이 해안선으로 자를 때 떨어져 나온다. 실제로 떨어져 있던 영토는 data/exclaves.yaml에 근거와 함께 적는다.
 import { z } from 'zod';
 import { anchorPoint, areaKm2, type BBox, type MultiCoords, type PolygonCoords, type Ring } from './geo.ts';
