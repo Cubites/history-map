@@ -26,3 +26,4 @@ push하면 GitHub Actions가 빌드와 데이터 검증을 실행합니다. 저�
 - 소스 코드: [MIT](LICENSE)
 - 역사 데이터(`data/`): [CC BY-NC-SA 4.0](data/LICENSE)
 - 기본 지도: [Natural Earth](https://www.naturalearthdata.com/) (퍼블릭 도메인)
+- 경계 참고: 간쑤 서부(둔황·아커싸이·과저우·쑤베이)와 신장 동쪽 경계의 꼭짓점 일부는 [OpenStreetMap](https://www.openstreetmap.org/copyright) 행정 경계를 간략화해 참고함 (© OpenStreetMap contributors, ODbL)
