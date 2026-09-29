@@ -17,6 +17,7 @@ data/
   geo/<나라 id>.geojson   영토 폴리곤 (나라 하나당 파일 하나, 기간별 버전을 feature로. 국경 생성기가 만듦)
 scripts/
   generate-geo.mjs  국경 생성기 진입 파일 (npm run gen:geo)
+  geo/area-list.mjs 권역 목록 AREAS (생성기와 빈 땅 검사가 함께 씀)
   geo/areas/*.mjs   권역 파일: 권역마다 도형과 나라별 기간 영토 (data/entities의 같은 이름 YAML과 짝)
 ```
 
@@ -139,7 +140,7 @@ note: 매소성·기벌포 승리, 당군 축출      # X (YAML 오류)
 >
 > 생성기에서 경계선을 곧게 그으면 만·반도·해협을 가로질러, 해안선으로 자를 때 선 반대편 해안이 본토와 떨어진 조각(월경지)으로 남습니다. 물을 건너는 선은 바다 쪽 점을 거쳐 돌리고, 이웃 나라끼리는 같은 선(상수)을 함께 쓰세요. 떨어진 조각은 `npm run check:exclaves`로 볼 수 있습니다(§6의 검증 메시지 참고).
 >
-> 생성기 파일(`scripts/generate-geo.mjs`, `scripts/geo/`)을 고친 뒤에는 `npm run check:generator`(생성기 구조와 안전장치 시험, 약 15초, `data/geo`는 건드리지 않음)도 돌리세요. 기존 나라의 geojson이 바뀌었는데 도형은 같아야 하는 경우(정리·옮기기)는 `npm run compare:geo`가 기간마다 대칭차 면적으로 확인해 줍니다.
+> 생성기 파일(`scripts/generate-geo.mjs`, `scripts/geo/`)을 고친 뒤에는 `npm run check:generator`(생성기 구조와 안전장치 시험, 약 20초, `data/geo`는 건드리지 않음)도 돌리세요. 기존 나라의 geojson이 바뀌었는데 도형은 같아야 하는 경우(정리·옮기기)는 `npm run compare:geo`가 기간마다 대칭차 면적으로 확인해 줍니다.
 
 QGIS([qgis.org](https://qgis.org/), 무료)는 이제 `data/geo`를 직접 고치는 데가 아니라, 새 경계선의 좌표를 따고 생성기 결과를 눈으로 확인하는 데 씁니다.
 
@@ -156,13 +157,13 @@ QGIS([qgis.org](https://qgis.org/), 무료)는 이제 `data/geo`를 직접 고�
 ### 5.2 그릴 때 규칙
 
 - **바다 쪽은 대충 그리세요.** 폴리곤을 해안선 바깥 바다까지 넉넉하게 잡으면(바다 쪽 점) 빌드가 Natural Earth 해안선에 맞춰 자동으로 자릅니다. 신경 쓸 곳은 **육지 위의 국경선**뿐입니다.
-- **이웃 나라와는 경계를 공유하세요.** 맞닿는 곳은 같은 이름 붙은 선(상수)을 함께 쓰면(`ring(L_LIAO, …)`처럼) 틈이나 겹침이 생기지 않습니다. 좌표를 따로 되풀이해 적으면 한쪽만 고쳤을 때 어긋납니다. 두 권역 이상이 쓰는 선은 `scripts/geo/shared.mjs`에 둡니다. 겹침이 5km²를 넘으면 빌드가 실패합니다.
+- **이웃 나라와는 경계를 공유하세요.** 맞닿는 곳은 같은 이름 붙은 선(상수)을 함께 쓰면(`ring(L_LIAO, …)`처럼) 틈이나 겹침이 생기지 않습니다. 좌표를 따로 되풀이해 적으면 한쪽만 고쳤을 때 어긋납니다. 두 권역 이상이 쓰는 선은 아래층에 둡니다: `scripts/geo/shared.mjs`에 두거나, `AREAS`에서 앞에 있는 권역 파일에 두고 export합니다(권역 파일은 앞 권역만 가져올 수 있음). 다른 파일의 좌표를 베껴 적으면 `npm run check:generator`가 '파일 사이 좌표 되풀이'로 실패합니다(바다 쪽 점처럼 맞물리지 않는 점만 허용 목록에 둠, DESIGN.md §5.2). 겹침이 5km²를 넘으면 빌드가 실패합니다.
 - 섬이 여럿이면 한 버전의 도형을 여러 조각(멀티폴리곤)으로 만들어도 됩니다(`U([섬1], [섬2])`).
 
 ### 5.3 새 나라의 영토 만들기
 
 1. 나라가 속한 권역 파일을 고릅니다. `data/entities`에서 그 나라를 적은 YAML과 짝인 `scripts/geo/areas/<권역>.mjs`입니다. 새 권역이 필요하면 DESIGN.md §5.2 5번 '새 권역 더하기'를 따릅니다.
-2. 경계선과 도형을 상수로 둡니다. 이웃 나라와 맞닿는 곳은 이미 있는 이름 붙은 선을 쓰고, 새 선의 좌표는 QGIS에서 배경 지도·해안선·이웃 경계를 보며 땁니다(§5.1). 다른 권역 파일의 도형은 `generate-geo.mjs`의 `AREAS`에서 앞에 있는 권역 것만 가져올 수 있습니다(층 규칙).
+2. 경계선과 도형을 상수로 둡니다. 이웃 나라와 맞닿는 곳은 이미 있는 이름 붙은 선을 쓰고, 새 선의 좌표는 QGIS에서 배경 지도·해안선·이웃 경계를 보며 땁니다(§5.1). 다른 권역 파일의 도형은 `scripts/geo/area-list.mjs`의 `AREAS`에서 앞에 있는 권역 것만 가져올 수 있습니다(층 규칙).
 3. 권역 파일의 `versions`에 `'<새 id>': [[from, to, 도형, 확실성?]]`을 더합니다. 이 값들이 geojson feature의 속성이 됩니다.
 4. `npm run gen:geo`를 실행하고 `npm run check:data`로 확인합니다. `git status data/geo`로 새 파일만 늘었는지 봅니다(기존 파일이 바뀌었으면 DESIGN.md §5.2 5번 '새 권역 더하기'의 4단계대로 확인합니다).
 
@@ -282,11 +283,12 @@ theaters:
 | 메시지 | 원인 | 해결 |
 |--------|------|------|
 | `data/geo에서 사라질 파일 N개: …` | 이번에 만들지 않는 geojson이 `data/geo`에 있음 (없앤 나라·id를 바꾼 나라의 옛 파일, 손으로 그린 파일, 권역 파일째 빠짐) | 일부러 없앤 나라면 `npm run gen:geo -- --prune`(가운데 `--`를 빠뜨리면 npm이 `--prune`을 가져가 같은 오류가 다시 남). 손으로 그린 파일이면 먼저 권역 파일로 옮김(`--prune`은 그 파일도 지움). 뜻밖이면 권역 파일의 import와 `AREAS` 등록 확인 |
-| `권역 파일 X이(가) AREAS 목록에 없음` | `scripts/geo/areas/`에 파일은 있는데 `generate-geo.mjs`의 `AREAS`에 없음 | import 한 줄을 넣고 `AREAS` 끝에 `['X', …]`를 더하기 |
+| `권역 파일 X이(가) AREAS 목록에 없음` | `scripts/geo/areas/`에 파일은 있는데 `scripts/geo/area-list.mjs`의 `AREAS`에 없음 | `area-list.mjs`에 import 한 줄을 넣고 `AREAS` 끝에 `['X', …]`를 더하기 |
 | `나라 id 'x'가 A와 B 두 곳에 있음` | 같은 나라를 두 권역 파일이 만듦 (나라 id가 곧 파일 이름) | 한 권역 파일에만 두기 |
-| `권역 X의 export '…': versions·fillSpecs·source의 오타가 아닌지 확인` | 권역 파일이 약속된 이름과 비슷한 이름(`fillSpec`, `version`, `SOURCE` 등)을 내보냄 | 이름 고치기. `fill`·`version`·`source`로 시작하는 다른 이름은 내보내지 않음 |
+| `권역 X의 export '…': versions·fillSpecs·source·gapZones의 오타가 아닌지 확인` | 권역 파일이 약속된 이름과 비슷한 이름(`fillSpec`, `version`, `SOURCE`, `gapZone` 등)을 내보냄 | 이름 고치기. `fill`·`version`·`source`·`gap`으로 시작하는 다른 이름은 내보내지 않음 |
 | `… 채우기 spec '…'는 X 권역의 나라임`, `… 두 권역이 채움`, `채우기 spec …: id는 문자열, …` | 빈 땅 채우기 spec이 다른 권역의 나라를 가리키거나, 같은 새 나라를 두 권역이 채우거나, 모양이 틀림(끝 없음은 `to: 3000`) | spec을 그 나라가 있는 권역으로 옮기거나 모양 고치기 |
-| `areas/의 하위 폴더 …: 등록된 권역 이름이 아님` | `scripts/geo/areas/` 아래 폴더 이름이 권역 이름이 아님 | 한 권역 전용 도우미는 `areas/<권역>/`에, 두 권역 이상이 쓰는 것은 `scripts/geo/shared.mjs`에 두기 |
+| `권역 X의 빈 땅 검사 구역 "…": …`, `권역 X의 gapZones가 배열이 아님` | 빈 땅 검사 구역(`gapZones`)의 모양이 틀림: 이름이 비었거나 다른 구역과 같음, `zone`이 닫힌 링의 멀티폴리곤이 아님, `minus`가 앞에 모은 구역이 아님, 모르는 속성(`minsu` 등) | DESIGN.md §5.4의 모양대로 고치기(링 하나면 `P(링)`). `npm run check:gaps`도 같은 메시지로 멈춤 |
+| `areas/의 하위 폴더 …: 등록된 권역 이름이 아님` | `scripts/geo/areas/` 아래 폴더 이름이 권역 이름이 아님 | 한 권역 전용 도우미는 `areas/<권역>/`에, 두 권역 이상이 쓰는 것은 `scripts/geo/shared.mjs`에 두거나 `AREAS`에서 앞에 있는 권역 파일에 두고 export하기 |
 | `Cannot access 'X' before initialization` | 권역 파일이 `AREAS`에서 뒤에 있는 권역 파일을 가져와 순환이 생김 (층 규칙 위반) | 그 도형을 `scripts/geo/shared.mjs`로 내리기 (DESIGN.md §5.2 5번) |
 | `모르는 옵션: …`, `프로젝트 폴더는 하나만 준다: …`, `프로젝트 폴더가 아님: …` | `--prune` 말고 `-`로 시작하는 인자를 줌(`-prune`, `--purne` 등), 폴더를 둘 이상 줌, 또는 `package.json`·`data/entities`가 없는 폴더를 줌(`npm run gen:geo prune`처럼 줄표를 빠뜨리면 `prune`이 폴더로 읽힘) | 명령 확인. 지우기를 허락하려면 `npm run gen:geo -- --prune` |
 

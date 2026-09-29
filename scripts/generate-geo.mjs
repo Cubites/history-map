@@ -1,6 +1,6 @@
 // 국경 생성기 (DESIGN.md §5.2): data/geo/*.geojson 전체를 scripts/geo/ 아래 파일들로 만든다. 사용: npm run gen:geo [-- --prune]
 // 주의: 실행할 때마다 data/geo/의 geojson을 모두 지우고 다시 쓴다. 영토를 고칠 때는 geojson이 아니라 scripts/geo/areas/의 권역 파일을 고친다.
-// 이 파일은 명령줄 처리와 권역 목록(AREAS)만 둔다. 권역 합치기·빈 땅 채우기·쓰기는 scripts/geo/engine.mjs가 한다.
+// 이 파일은 명령줄 처리만 둔다. 권역 목록(AREAS)은 scripts/geo/area-list.mjs에, 권역 합치기·빈 땅 채우기·쓰기는 scripts/geo/engine.mjs에 있다.
 // 이웃 나라가 같은 경계선을 공유하도록 이름 붙인 선으로 폴리곤을 조립한다.
 // 바다 쪽 점은 해안선 밖에 찍는다. 빌드 단계에서 육지와 교차시켜 해안선이 맞춰진다.
 // 선이 만·반도·해협을 가로지르면 선 반대편 해안이 본토와 떨어진 조각(월경지)으로 남으므로, 물을 건너는 선은 바다 점을 거쳐 돌린다.
@@ -9,12 +9,7 @@
 import { existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
-import * as koreaArea from './geo/areas/korea.mjs';
-import * as innerAsiaArea from './geo/areas/inner-asia.mjs';
-import * as chinaArea from './geo/areas/china.mjs';
-import * as westArea from './geo/areas/west.mjs';
-import * as japanArea from './geo/areas/japan.mjs';
-import * as southeastAsiaArea from './geo/areas/southeast-asia.mjs';
+import { AREAS } from './geo/area-list.mjs';
 import { mergeAreas, fillEmptyLand, writeGeo } from './geo/engine.mjs';
 
 // 사용: node scripts/generate-geo.mjs [프로젝트 폴더] [--prune]
@@ -33,18 +28,7 @@ const project = folders.length ? path.resolve(folders[0]) : path.resolve(path.di
 const notProject = ['package.json', 'data/entities'].filter((f) => !existsSync(path.join(project, f)));
 if (notProject.length) throw new Error(`프로젝트 폴더가 아님: ${project} (${notProject.join('·')} 없음)`);
 
-// 권역 목록 (DESIGN.md §5.2). 이름은 scripts/geo/areas/의 파일 이름(확장자 제외)과 같다.
-// - 순서가 곧 층 순서다: 권역 파일은 lib·shared와, 이 목록에서 자기보다 앞에 있는 권역 파일만 import한다
-// - versions를 합치는 순서이자 채우기 specs를 이어 붙이는 순서이기도 하다. 그래서 새 권역은 끝에 붙인다
-// - areas/의 .mjs 파일은 모두 여기 있어야 한다. 파일만 두고 등록을 빠뜨리면 지우기 전에 멈춘다
-const AREAS = [
-  ['korea', koreaArea],
-  ['inner-asia', innerAsiaArea],
-  ['china', chinaArea],
-  ['west', westArea],
-  ['japan', japanArea],
-  ['southeast-asia', southeastAsiaArea],
-];
+// 권역 목록(AREAS, scripts/geo/area-list.mjs)의 순서대로 합치고 채운다. AREA_DIR(권역 파일 폴더)에 목록에 없는 권역 파일이 있으면 지우기 전에 멈춘다
 const AREA_DIR = path.join(path.dirname(fileURLToPath(import.meta.url)), 'geo/areas');
 const { versions, fillSpecs, sources } = mergeAreas(AREAS, AREA_DIR);
 fillEmptyLand(versions, fillSpecs);

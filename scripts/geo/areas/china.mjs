@@ -2,15 +2,15 @@
 // 짝 entities 파일: data/entities/china-early.yaml과 china.yaml 두 파일. korea.yaml의 gando-disputed(간도)도 청 도형(QING_BASE)에서 잘라 여기서 만든다.
 // 가져와도 되는 것: lib.mjs, shared.mjs, areas/korea.mjs, areas/inner-asia.mjs. 위층 권역(west)이 쓰는 QING_BASE를 export한다.
 // 중일 전쟁 점령지(R38·OCC_*·ROC_1937~1945 등)는 1937년 모양이 1938년 도형과의 교집합이라 이 파일 안에 원래 순서대로 함께 둔다.
-// 구획 제목의 '○번 묶음'은 원래 generate-geo.mjs의 조사 묶음(시대)이다. '값으로 맞춘 점'은 shared.mjs 머리 주석 참고.
-import { D, I, P, U, box, bx, ring } from '../lib.mjs';
-import { AMUR_BAND, CHINA, HUABEI, HUABEI_938, KWANTUNG, LIAODONG, LIAOXI, LX916, LX923, NORTH_OF_YANYUN, PRIMORYE, TAIWAN, XIXIA, YANYUN } from '../shared.mjs';
-import { BAEKJE, GOGURYEO, HYEONDO_2, noNokdun } from './korea.mjs';
+// 구획 제목의 '○번 묶음'은 원래 generate-geo.mjs의 조사 묶음(시대)이다. 파일 사이에서 맞물리는 점은 이름으로 가져다 쓴다('값만 같은 점'은 shared.mjs 머리 주석 참고).
+import { D, I, P, U, box, bx, rev, ring } from '../lib.mjs';
+import { AMUR_BAND, CHINA, HUABEI, HUABEI_938, KWANTUNG, L33, LIAODONG, LIAOXI, LX916, LX923, L_NORTH, NORTH_OF_YANYUN, PRIMORYE, TAIWAN, XIXIA, YANYUN } from '../shared.mjs';
+import { BAEKJE, GOGURYEO, HYEONDO_2, L_YALU_TUMEN, noNokdun } from './korea.mjs';
 import { ALXA, EASTERN_TURKS, ET_NE, HUGEUM_1621, KHITAN_W, MANCHURIA_NORTH, NE_FAR, OUTER_MONGOLIA, QH_N, TIBET, XILIN_N } from './inner-asia.mjs';
 
 // ── 4번 묶음 (936 ~ 1392) ─────────────────────────────────
-// 값으로 맞춘 점: shared.mjs의 NORTH_BOX (90.0, 33.0)·(125.0, 33.0) (북위 33°에서 두 상자가 맞닿는다)
-const SOUTH_BOX = [ring([[90.0, 15.0], [125.0, 15.0], [125.0, 33.0], [90.0, 33.0]])];
+// 북쪽 변은 북위 33°선(shared.mjs의 L33): 금 쪽 상자(NORTH_BOX)와 이 선에서 맞닿는다
+const SOUTH_BOX = [ring([[90.0, 15.0], [125.0, 15.0]], rev(L33))];
 const SONG_960 = D([CHINA], [YANYUN], XIXIA, [NORTH_OF_YANYUN]);
 const SONG_1127 = I(SONG_960, SOUTH_BOX);
 const MING_1387 = U([CHINA], [LIAODONG]);
@@ -31,8 +31,8 @@ const QING_1898 = D(QING_BASE, [KWANTUNG]);
 const ROC_1912 = QING_1898;
 const ROC_1921 = D(ROC_1912, OUTER_MONGOLIA);
 // 만리장성 동쪽 구간 (산해관~희봉구~고북구~무톈위): 탕구 정전 협정(1933) 뒤 만주국과 중화민국의 사실상 경계
-// 값으로 맞춘 점: 끝점 (116.0, 41.2)은 shared.mjs의 L_NORTH 꼭짓점이다
-const L_WALL_E = [[119.8, 39.95], [119.4, 40.15], [118.8, 40.35], [118.3, 40.42], [117.7, 40.25], [117.2, 40.68], [116.6, 40.5], [116.0, 40.7], [116.0, 41.2]];
+// 끝점은 중국 북쪽 경계(shared.mjs의 L_NORTH)의 꼭짓점 (116.0, 41.2)
+const L_WALL_E = [[119.8, 39.95], [119.4, 40.15], [118.8, 40.35], [118.3, 40.42], [117.7, 40.25], [117.2, 40.68], [116.6, 40.5], [116.0, 40.7], L_NORTH[3]];
 // 장성 바깥의 요서(진저우·푸신)와 러허. CHINA 폴리곤이 장성 밖까지 들어가 있어, 만주국에 넣지 않으면 1938년부터 중화민국의 떨어진 조각
 // (21,020km²)으로 남았다. 동돌궐 영역 쪽(웨이창·펑닝 북쪽)도 함께 넣어야 중화민국의 가는 띠가 남지 않는다 (2026-09-29)
 const OUTSIDE_WALL = I(U([CHINA], [EASTERN_TURKS]), [ring(L_WALL_E, [[116.0, 42.6], [123.0, 42.6], [123.0, 39.6]])]);
@@ -165,7 +165,7 @@ const NORTH_EAST = I(NORTH_PART, box(111.0, 20.0, 130.0, 50.0));
 const NORTH_WEST = I(NORTH_PART, box(80.0, 20.0, 111.0, 50.0));
 const SHU = I(SOUTH_PART, box(80.0, 15.0, 109.0, 34.0));
 const WU = I(SOUTH_PART, box(109.0, 15.0, 130.0, 34.0));
-// 값으로 맞춘 점: (123.0, 39.0)은 shared.mjs의 LIAODONG_SEA, korea.mjs의 GOJOSEON_EARLY와 같은 값 (바다 쪽 점이라 우연일 수 있음)
+// 값만 같은 점: (123.0, 39.0)은 shared.mjs의 LIAODONG_SEA, korea.mjs의 GOJOSEON_EARLY와 값이 같다 (중국 도형 밖의 자르기 모서리라 요동과 변을 함께 쓰지 않음, shared.mjs 참고)
 const YAN_CHINA = I(NORTH_PART, [ring([[113.0, 34.5], [119.5, 34.5], [123.0, 39.0], [123.0, 43.0], [113.0, 43.0]])]);
 const SHANXI_N = I(NORTH_PART, box(110.0, 37.5, 113.0, 41.5));
 const HAN_EMPIRE = U([CHINA], [LIAODONG]);
@@ -182,8 +182,8 @@ const YAN_281 = U(I(NORTH_PART, box(113.5, 36.0, 122.6, 42.5)), [LIAODONG]);
 // ── 귀속 논쟁 지역 (2026-09-27): 학설에 따라 어느 나라 땅인지 갈리는 곳. relations.yaml의 claimed_by로 후보 나라를 적는다 ──
 // 간도(북간도): 백두산정계비의 '토문' 해석을 두고 조선·대한제국과 청이 다툰 두만강 북쪽 (1883 조사 ~ 1909 간도 협약)
 // 동쪽 끝은 러시아 국경(L_KHASAN)까지, 훈춘 포함 (2026-09-28)
-// 값으로 맞춘 점: korea.mjs의 L_YALU_TUMEN (128.2, 41.5)부터 (130.7, 42.3)까지 여섯 점, inner-asia.mjs의 EAST_MAN_RING (128.2, 41.5), shared.mjs의 L_KHASAN (130.7, 42.3)
-const GANDO = I(QING_BASE, [ring([[128.2, 41.5], [128.9, 42.05], [129.7, 42.45], [130.0, 42.9], [130.4, 42.6], [130.7, 42.3], [131.3, 43.0], [130.5, 43.6], [129.5, 43.8], [128.5, 43.5], [128.0, 42.8], [127.95, 42.0]])]);
+// 남쪽 변은 두만강(korea.mjs의 L_YALU_TUMEN)의 (128.2, 41.5)부터 방천 3국 접경 (130.7, 42.3)까지
+const GANDO = I(QING_BASE, [ring(L_YALU_TUMEN.slice(5, 11), [[131.3, 43.0], [130.5, 43.6], [129.5, 43.8], [128.5, 43.5], [128.0, 42.8], [127.95, 42.0]])]);
 
 // 나라 id: [[from, to, 멀티폴리곤, 확실성?], ...]. to가 null이면 지금까지, 확실성은 'disputed' 등(없으면 'estimated').
 // 출처(geojson의 source)는 나라별로 적지 않고 권역 파일의 source로 정한다(없으면 engine.mjs의 기본 문구)

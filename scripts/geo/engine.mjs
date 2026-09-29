@@ -1,5 +1,7 @@
 // 국경 생성기 엔진 (DESIGN.md §5.2): 모든 권역을 합친 뒤 도는 단계. 권역 합치기(검사 포함) → 빈 땅 채우기 → 지우기 전 대조 → 틈새 구멍 메우기 → data/geo 쓰기.
-// 가져와도 되는 것: node 내장 모듈과 lib.mjs. 권역 파일은 가져오지 않는다(진입 파일이 AREAS로 넘겨줌).
+// 빈 땅 검사(npm run check:gaps)가 쓰는 검사 구역 모으기(collectGapZones)도 여기 둔다.
+// 가져와도 되는 것: node 내장 모듈과 lib.mjs. 권역 파일과 권역 목록(area-list.mjs)은 가져오지 않는다(부르는 쪽이 AREAS를 넘겨줌).
+// .ts 스크립트가 가져올 때 tsc가 쓰는 타입 선언은 engine.d.mts에 있다(.ts가 쓰는 export만).
 // 영토는 기간마다 서로 배타라고 본다: 빈 땅 채우기는 구역에서 다른 모든 나라를 빼고, 틈새 구멍 메우기는 다른 나라가 든 구멍을 남긴다
 // (빌드의 겹침 검사도 모든 영토 쌍을 본다). 그래서 나라와 겹치는 지역 폴리곤(DESIGN.md §7의 행정구역)은 같은 기간의 나라 폴리곤과 함께 쓸 수 없다.
 import { writeFileSync, mkdirSync, readdirSync, rmSync } from 'node:fs';
@@ -15,16 +17,17 @@ function geometry(multi) {
 // 권역 파일이 source를 내보내지 않을 때 쓰는 기본 출처 문구 (지금 권역은 모두 이 문구를 쓴다)
 const ESTIMATED = '중고등학교 한국사 교과서 시대별 지도의 일반적인 경계를 따른 대략적인 추정. 운영자 검수 필요';
 
-// 권역 파일이 내보내는 약속된 이름. fill·version·source로 시작하는 다른 이름(대소문자 무시)은 이 셋의 오타로 보고 멈춘다
-const AREA_EXPORTS = new Set(['versions', 'fillSpecs', 'source']);
+// 권역 파일이 내보내는 약속된 이름. fill·version·source·gap으로 시작하는 다른 이름(대소문자 무시)은 이 넷의 오타로 보고 멈춘다
+const AREA_EXPORTS = new Set(['versions', 'fillSpecs', 'source', 'gapZones']);
 
 // 권역 파일들의 versions·fillSpecs·source를 AREAS 순서대로 합친다. 아래 경우에는 data/geo를 지우기 전에 멈춘다.
-// - 권역이 versions를 내보내지 않거나, 약속된 이름과 헷갈리는 이름(fillSpec, version, sources 등)을 내보냄
+// - 권역이 versions를 내보내지 않거나, 약속된 이름과 헷갈리는 이름(fillSpec, version, sources, gapZone 등)을 내보냄
 // - fillSpecs가 배열이 아니거나 spec 모양이 틀림, source가 비어 있지 않은 문자열이 아님
 // - 같은 나라 id가 두 권역에 있음 (나라 id가 곧 data/geo 파일 이름)
 // - 채우기 spec의 id가 다른 권역의 나라이거나, 같은 새 id를 두 권역이 채움
+// - 빈 땅 검사 구역(gapZones)의 모양이 틀림 (collectGapZones의 검사. 생성기는 구역을 쓰지 않지만 check:gaps보다 먼저 잡는다)
 // - areaDir(권역 파일 폴더)에 AREAS 목록에 없는 권역 파일이나, 등록된 권역 이름이 아닌 하위 폴더가 있음
-//   (areas/ 바로 아래에는 권역 파일만 둔다. 한 권역만 쓰는 도우미 모듈은 areas/<권역>/에, 두 권역 이상이 쓰는 것은 shared.mjs에 둔다)
+//   (areas/ 바로 아래에는 권역 파일만 둔다. 한 권역만 쓰는 도우미 모듈은 areas/<권역>/에, 두 권역 이상이 쓰는 것은 앞 권역 파일(export)이나 shared.mjs에 둔다)
 // sources(나라 id → 출처 문구)에는 source를 내보낸 권역의 나라와, 그 권역의 채우기가 새로 만드는 나라만 들어간다. 나머지는 writeGeo가 ESTIMATED를 쓴다
 export function mergeAreas(areas, areaDir) {
   const versions = {};
@@ -35,7 +38,7 @@ export function mergeAreas(areas, areaDir) {
   for (const [name, area] of areas) {
     if (!area.versions || typeof area.versions !== 'object') throw new Error(`권역 ${name}이 versions를 내보내지 않음`);
     for (const key of Object.keys(area)) {
-      if (/^(fill|version|source)/i.test(key) && !AREA_EXPORTS.has(key)) throw new Error(`권역 ${name}의 export '${key}': versions·fillSpecs·source의 오타가 아닌지 확인`);
+      if (/^(fill|version|source|gap)/i.test(key) && !AREA_EXPORTS.has(key)) throw new Error(`권역 ${name}의 export '${key}': versions·fillSpecs·source·gapZones의 오타가 아닌지 확인`);
     }
     if (area.fillSpecs !== undefined && !Array.isArray(area.fillSpecs)) throw new Error(`권역 ${name}의 fillSpecs가 배열이 아님`);
     if (area.source !== undefined && (typeof area.source !== 'string' || !area.source.trim())) throw new Error(`권역 ${name}의 source가 비어 있지 않은 문자열이 아님`);
@@ -59,15 +62,53 @@ export function mergeAreas(areas, areaDir) {
       fillSpecs.push(sp);
     }
   }
+  collectGapZones(areas);
   if (areaDir) {
     const listed = new Set(areas.map(([name]) => name));
     const entries = readdirSync(areaDir, { withFileTypes: true });
     const strayDirs = entries.filter((e) => e.isDirectory() && !listed.has(e.name)).map((e) => e.name + '/');
     if (strayDirs.length) throw new Error(`areas/의 하위 폴더 ${strayDirs.join(', ')}: 등록된 권역 이름이 아님 (하위 폴더에는 같은 이름 권역의 도우미 모듈만 둔다)`);
     const unlisted = entries.filter((e) => e.isFile() && e.name.endsWith('.mjs')).map((e) => e.name.slice(0, -'.mjs'.length)).filter((n) => !listed.has(n));
-    if (unlisted.length) throw new Error(`권역 파일 ${unlisted.join(', ')}이(가) AREAS 목록에 없음 (generate-geo.mjs에 등록)`);
+    if (unlisted.length) throw new Error(`권역 파일 ${unlisted.join(', ')}이(가) AREAS 목록에 없음 (scripts/geo/area-list.mjs에 등록)`);
   }
   return { versions, fillSpecs, sources };
+}
+
+// 빈 땅 검사 구역 (DESIGN.md §5.4): 권역 파일의 gapZones를 AREAS 순서대로 모은다. npm run check:gaps가 이 순서대로 검사해 출력하고,
+// mergeAreas도 불러 모양을 검사한다(틀리면 생성기가 data/geo를 지우기 전에 멈춘다). 새 권역은 AREAS에 등록하고 gapZones만 내보내면 검사에 들어간다.
+// 권역 파일의 gapZones: [{ name, zone, minus? }] (없으면 그 권역은 검사 구역이 없다)
+// - name: 구역 이름(check:gaps 출력에 그대로 나온다). 비어 있지 않은 문자열이고 모든 권역을 통틀어 겹치지 않는다
+// - zone: 멀티폴리곤 (링 하나면 P(링), 폴리곤이면 [폴리곤]). 링은 닫혀 있고 점이 넷 이상이다. check:gaps가 해안선으로 자른다
+// - minus: (선택) 앞에 모은 구역 이름의 배열. 검사 범위에서 그 구역(해안선으로 자르고 그 구역의 minus까지 뺀 것)을 뺀다 (예: 만주 상자에서 한반도)
+// 반환: [{ area, name, zone, minus }] (area는 권역 이름, minus가 없으면 []). export 이름 오타(gapZone 등)나 구역의 모르는 속성(minsu 등)이 있으면 멈춘다
+const GAP_ZONE_KEYS = new Set(['name', 'zone', 'minus']);
+const isPoint = (p) => Array.isArray(p) && p.length === 2 && p.every((v) => Number.isFinite(v));
+const isClosedRing = (r) => Array.isArray(r) && r.length >= 4 && r.every(isPoint) && r[0][0] === r.at(-1)[0] && r[0][1] === r.at(-1)[1];
+const isMultiPolygon = (m) => Array.isArray(m) && m.length > 0 && m.every((poly) => Array.isArray(poly) && poly.length > 0 && poly.every(isClosedRing));
+export function collectGapZones(areas) {
+  const out = [];
+  const seen = new Map(); // 구역 이름 → 권역 이름
+  for (const [name, area] of areas) {
+    // gapZone·GAP_ZONES 같은 오타는 멈춘다 (그냥 건너뛰면 check:gaps가 그 권역의 구역을 조용히 빠뜨린다)
+    for (const key of Object.keys(area)) if (/^gap/i.test(key) && key !== 'gapZones') throw new Error(`권역 ${name}의 export '${key}': gapZones의 오타가 아닌지 확인`);
+    if (area.gapZones === undefined) continue;
+    if (!Array.isArray(area.gapZones)) throw new Error(`권역 ${name}의 gapZones가 배열이 아님`);
+    for (const gz of area.gapZones) {
+      const label = `권역 ${name}의 빈 땅 검사 구역 ${JSON.stringify(gz?.name)}`;
+      if (typeof gz?.name !== 'string' || !gz.name.trim()) throw new Error(`${label}: name은 비어 있지 않은 문자열이어야 함`);
+      if (seen.has(gz.name)) throw new Error(`${label}: 같은 이름이 ${seen.get(gz.name)} 권역에도 있음`);
+      const unknown = Object.keys(gz).filter((k) => !GAP_ZONE_KEYS.has(k));
+      if (unknown.length) throw new Error(`${label}: 모르는 속성 ${unknown.join(', ')} (name·zone·minus만 쓴다)`);
+      if (!isMultiPolygon(gz.zone)) throw new Error(`${label}: zone은 닫힌 링으로 된 멀티폴리곤이어야 함 (링 하나면 P(링), 폴리곤이면 [폴리곤])`);
+      const minus = gz.minus ?? [];
+      if (!Array.isArray(minus) || minus.some((m) => !seen.has(m)) || new Set(minus).size !== minus.length) {
+        throw new Error(`${label}: minus는 앞에 모은 구역 이름의 배열이어야 함 (앞에 모은 구역: ${[...seen.keys()].join(', ') || '없음'})`);
+      }
+      seen.set(gz.name, name);
+      out.push({ area: name, name: gz.name, zone: gz.zone, minus });
+    }
+  }
+  return out;
 }
 
 // 빈 땅 채우기 (2026-09-27): 권역 파일의 fillSpecs({ id, zone, from, to })마다, 기간을 나라 영토가 바뀌는 해로 잘라
