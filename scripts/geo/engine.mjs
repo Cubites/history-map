@@ -111,17 +111,52 @@ export function collectGapZones(areas) {
   return out;
 }
 
+// 범위 상자 거르기 (2026-09-30): 채우기와 틈새 구멍 메우기가 먼 나라를 계산에서 빼는 데 쓴다.
+// boundsOf(멀티폴리곤) = [서, 남, 동, 북]. 바깥 링만 본다(구멍은 바깥 링 안에 있다). 같은 도형 객체는 한 번만 계산한다(권역 파일의 도형은 여러 버전·기간이 함께 쓴다).
+// apart(p, q)는 두 상자가 떨어져 있으면 참이다. 변이나 꼭짓점만 닿으면 떨어진 것으로 보지 않는다(polyclip의 범위 비교와 같다).
+const boundsCache = new WeakMap();
+function boundsOf(multi) {
+  let b = boundsCache.get(multi);
+  if (!b) {
+    b = [Infinity, Infinity, -Infinity, -Infinity];
+    for (const poly of multi) {
+      for (const [x, y] of poly[0] ?? []) {
+        if (x < b[0]) b[0] = x;
+        if (y < b[1]) b[1] = y;
+        if (x > b[2]) b[2] = x;
+        if (y > b[3]) b[3] = y;
+      }
+    }
+    boundsCache.set(multi, b);
+  }
+  return b;
+}
+const apart = (p, q) => p[0] > q[2] || p[2] < q[0] || p[1] > q[3] || p[3] < q[1];
+
 // 빈 땅 채우기 (2026-09-27): 권역 파일의 fillSpecs({ id, zone, from, to })마다, 기간을 나라 영토가 바뀌는 해로 잘라
 // 구역(zone)에서 그 기간에 살아 있는 다른 모든 나라의 영토와 앞서 채운 땅을 뺀 나머지를 그 id에 준다.
 // versions에 이미 있는 나라는 그 기간 영토에 덧붙이고, 없는 id는 새 나라로 만든다. 끝 없음(to: 3000)은 마지막에 null로 바꾼다.
 // specs 순서가 땅 배분을 정한다(앞 spec이 먼저 채움). specs는 AREAS 순서로 이어 붙으므로 새 권역의 specs는 끝에 온다.
 // 지금 specs는 inner-asia 권역의 만주·몽골 초원 채우기 28개다(나라 id 20개 가운데 17개는 채우기로만 만들고, eupru·mulgil·malgal은 덧붙임).
 // versions는 제자리에서 고친다(새 나라를 더하고, 덧붙인 나라는 새 배열로 바꾼다). 권역 파일의 versions는 끝 없음을 null로 적고 3000을 쓰지 않는다.
+// 빼는 나라는 범위 상자로 거른다 (2026-09-30): 구역(zone)의 범위 상자와 떨어진 나라는 빼지 않는다. 그래서 먼 곳에 나라를 더해도 채우기 결과가 그대로이고 시간도 거의 늘지 않는다
+// (가짜 나라 100·300개를 유럽에 더한 시험: 채우기 28.6초·113.8초 → 1.7초·2.2초, 결과 바이트 동일).
+// 대신 뺄셈이 끝나면 D(gap)으로 한 번 정리한다. polyclip의 차집합은 범위가 떨어진 도형을 버리고 남은 도형만 다시 계산해
+// 가까운 꼭짓점을 합치고 일직선 위 점을 빼는데, 거르기 전에는 먼 나라를 뺄 때마다 이 정리가 일어났다. 정리 없이 거르면 바이트가 달라진다
+// (시험: mongolia 1946~ 버전에 반올림 뒤 같은 점 (100.0282, 51.3592)이 두 번 남아 1921~ 한 버전이 1921~1946·1946~ 둘로 나뉨, 도형은 같음).
+// 끝에 한 번 정리하면 지금 data/geo 118개가 거르기 전과 바이트까지 같다.
+// 같은 계산은 한 번만 한다: 구역과 뺄 도형 목록(범위 상자로 거른 뒤, 도형 객체로 구별)이 앞서 계산한 기간과 같으면 그 결과를 그대로 쓴다
+// (먼 나라의 연도 경계로만 나뉜 기간). 권역 파일의 도형은 고치지 않고, 앞서 채운 땅(earlier)도 이 표의 결과 객체를 쓰므로 목록이 같으면 결과도 같다.
 export function fillEmptyLand(versions, specs) {
   if (!specs.length) throw new Error('빈 땅 채우기 specs가 0개임 (권역 파일의 fillSpecs가 모이지 않음)');
   const cuts = [...new Set(Object.values(versions).flatMap((list) => list.flatMap(([f, t]) => [f, t ?? 3000])).concat(specs.flatMap((sp) => [sp.from, sp.to])))].sort((a, b) => a - b);
   const alive = (list, a, b) => list.filter(([f, t]) => f < b && a < (t ?? Infinity)).map(([, , m]) => m);
   const area = (m) => m.reduce((sum, poly) => sum + poly.reduce((s2, r, k) => { let a2 = 0; for (let i = 0, j = r.length - 1; i < r.length; j = i++) a2 += (r[j][0] + r[i][0]) * (r[j][1] - r[i][1]); return s2 + (k === 0 ? 1 : -1) * Math.abs(a2 / 2); }, 0), 0);
+  // 계산한 결과: 구역과 뺄 도형 목록(도형 객체마다 붙인 일련번호) → 남은 땅
+  const serials = new WeakMap();
+  let lastSerial = 0;
+  const serialOf = (m) => { let n = serials.get(m); if (n === undefined) serials.set(m, (n = ++lastSerial)); return n; };
+  const done = new Map();
   const fills = [];
   for (const sp of specs) {
     for (let k = 0; k < cuts.length - 1; k++) {
@@ -129,11 +164,19 @@ export function fillEmptyLand(versions, specs) {
       if (a < sp.from || b > sp.to) continue;
       const others = Object.entries(versions).filter(([id]) => id !== sp.id).flatMap(([, list]) => alive(list, a, b));
       const mine = alive(versions[sp.id] ?? [], a, b);
-      let gap = sp.zone;
       // 앞서 다른 구역에 준 땅도 뺀다 (구역이 겹치는 곳: 317~337년 요동)
       const earlier = fills.filter((f) => f.a < b && a < f.b).map((f) => f.gap);
-      for (const o of [...others, ...mine, ...earlier]) if (gap.length) gap = D(gap, o);
-      gap = gap.filter((poly) => area([poly]) > 0.02); // 0.02제곱도(약 200km²) 미만 조각은 버린다
+      const zoneBox = boundsOf(sp.zone);
+      const subtract = [...others, ...mine, ...earlier].filter((o) => !apart(zoneBox, boundsOf(o)));
+      const key = [sp.zone, ...subtract].map(serialOf).join(' ');
+      let gap = done.get(key);
+      if (!gap) {
+        gap = sp.zone;
+        for (const o of subtract) if (gap.length) gap = D(gap, o);
+        if (gap.length) gap = D(gap); // 정리 (위 설명)
+        gap = gap.filter((poly) => area([poly]) > 0.02); // 0.02제곱도(약 200km²) 미만 조각은 버린다
+        done.set(key, gap);
+      }
       if (gap.length) fills.push({ id: sp.id, a, b, gap });
     }
   }
@@ -180,8 +223,9 @@ export function writeGeo(project, versions, { prune = false, sources = {} } = {}
    * 조각을 합칠 때 경계가 살짝 어긋나 영토 안에 생긴 틈새 구멍을 메운다 (2026-09-27).
    * 그대로 두면 구멍 테두리가 영토 안의 점선으로 보였다 (동예·고구려·청 등).
    * 같은 시기에 다른 나라 영토가 들어 있는 구멍(마한 안의 백제, 금 안의 몽골 등)은 남긴다.
+   * 구멍의 범위 상자와 떨어진 나라는 교집합을 구하지 않는다 (2026-09-30, 교집합이 비는 것이 확실하므로 결과는 같다. 나라가 늘어도 느려지지 않게).
    */
-  const all = Object.entries(versions).flatMap(([entityId, list]) => list.map(([from, to, multi]) => ({ entityId, from, to: to ?? Infinity, multi })));
+  const all = Object.entries(versions).flatMap(([entityId, list]) => list.map(([from, to, multi]) => ({ entityId, from, to: to ?? Infinity, multi, box: boundsOf(multi) })));
   const overlapsInTime = (a, b) => a.from < b.to && b.from < a.to;
   let filled = 0;
   function fillEmptyHoles(entityId, from, to, multi) {
@@ -190,7 +234,8 @@ export function writeGeo(project, versions, { prune = false, sources = {} } = {}
     return multi.map(([outer, ...holes]) => [
       outer,
       ...holes.filter((h) => {
-        const occupied = others.some((o) => polyclip.intersection([[h]], o.multi).length > 0);
+        const holeBox = boundsOf([[h]]);
+        const occupied = others.some((o) => !apart(holeBox, o.box) && polyclip.intersection([[h]], o.multi).length > 0);
         if (!occupied) filled++;
         return occupied;
       }),
