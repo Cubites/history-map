@@ -140,7 +140,7 @@ note: 매소성·기벌포 승리, 당군 축출      # X (YAML 오류)
 >
 > 생성기에서 경계선을 곧게 그으면 만·반도·해협을 가로질러, 해안선으로 자를 때 선 반대편 해안이 본토와 떨어진 조각(월경지)으로 남습니다. 물을 건너는 선은 바다 쪽 점을 거쳐 돌리고, 이웃 나라끼리는 같은 선(상수)을 함께 쓰세요. 떨어진 조각은 `npm run check:exclaves`로 볼 수 있습니다(§6의 검증 메시지 참고).
 >
-> 생성기 파일(`scripts/generate-geo.mjs`, `scripts/geo/`)을 고친 뒤에는 `npm run check:generator`(생성기 구조와 안전장치 시험, 약 20초, `data/geo`는 건드리지 않음)도 돌리세요. 기존 나라의 geojson이 바뀌었는데 도형은 같아야 하는 경우(정리·옮기기)는 `npm run compare:geo`가 기간마다 대칭차 면적으로 확인해 줍니다.
+> 생성기 파일(`scripts/generate-geo.mjs`, `scripts/geo/`)을 고친 뒤에는 `npm run check:generator`(생성기 구조와 안전장치 시험, 약 20초, `data/geo`는 건드리지 않음)도 돌리세요. 기존 나라의 geojson이 바뀌었는데 도형은 같아야 하는 경우(정리·옮기기)는 `npm run compare:geo`가 기간마다 대칭차 면적으로 확인해 줍니다. 유럽처럼 새 권역을 넣을 때의 순서와 행정구역 조각(`npm run check:fragments`)·근현대 국경 대조(`npm run compare:cshapes`)는 `docs/REGION_GUIDE.md`를 보세요.
 
 QGIS([qgis.org](https://qgis.org/), 무료)는 이제 `data/geo`를 직접 고치는 데가 아니라, 새 경계선의 좌표를 따고 생성기 결과를 눈으로 확인하는 데 씁니다.
 
