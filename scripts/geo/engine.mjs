@@ -209,7 +209,7 @@ export function fillEmptyLand(versions, specs) {
   console.log(`만주·몽골 빈 땅 채우기: ${fills.length}개 기간`);
 }
 
-// data/geo 쓰기: 지우기 전 대조 → 기존 geojson 삭제 → 틈새 구멍 메우기 → 나라마다 <id>.geojson(FeatureCollection 하나, JSON.stringify(fc, null, 1) + 개행).
+// data/geo 쓰기: 지우기 전 대조 → 기존 geojson 삭제 → 틈새 구멍 메우기 → 나라마다 <id>.geojson(FeatureCollection 하나, 버전마다 한 줄 + 개행).
 // sources는 mergeAreas가 만든 나라 id → 출처 문구 표다. 없는 나라는 ESTIMATED를 쓴다
 export function writeGeo(project, versions, { prune = false, sources = {} } = {}) {
   const outDir = path.join(project, 'data/geo');
@@ -252,7 +252,9 @@ export function writeGeo(project, versions, { prune = false, sources = {} } = {}
         geometry: geometry(fillEmptyHoles(entityId, from, to, multi)),
       })),
     };
-    writeFileSync(path.join(outDir, `${entityId}.geojson`), JSON.stringify(fc, null, 1) + '\n');
+    // 버전(feature)마다 한 줄로 쓴다. 들여쓰기 형식보다 약 3분의 1 크기이고, git diff는 바뀐 버전 줄만 보인다 (2026-10-01)
+    const lines = fc.features.map((f) => JSON.stringify(f)).join(',\n');
+    writeFileSync(path.join(outDir, `${entityId}.geojson`), `{"type":"FeatureCollection","features":[\n${lines}\n]}\n`);
     console.log(entityId, list.map(([f, t, m]) => `${f}-${t}:${m.length}`).join(' '));
   }
   console.log(`빈 틈새 구멍 ${filled}개를 메움`);
