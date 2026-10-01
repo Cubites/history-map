@@ -35,7 +35,8 @@ export function SearchBox({ data }: { data: StaticData }) {
     const found: Result[] = [];
     for (const entity of data.entities.values()) {
       const name = normalize(entity.names.ko);
-      if (name.includes(q) || (entity.names.hanja && entity.names.hanja.includes(query.trim()))) {
+      const other = [entity.names.hanja, entity.names.native].some((n) => n && n.toLowerCase().includes(query.trim().toLowerCase()));
+      if (name.includes(q) || other) {
         found.push({ kind: 'entity', entity, score: name === q ? 0 : name.startsWith(q) ? 1 : 3 });
       }
     }

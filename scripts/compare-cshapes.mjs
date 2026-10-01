@@ -25,8 +25,18 @@ if (!existsSync(CSHAPES)) {
   process.exit(0);
 }
 
-// [1]에서 비교할 생성기 나라: GW 번호 → data/geo의 나라 id(기간이 이어지는 id들). 유럽 권역을 넣으면 여기에 더한다
-const GW_ENTITIES = { 200: ['uk'], 220: ['france'], 365: ['russia', 'soviet-union', 'russia-fed'] };
+// [1]에서 비교할 생성기 나라: GW 번호 → data/geo의 나라 id(기간이 이어지는 id들). 유럽 권역을 넣으면 여기에 더한다.
+// 키가 '390+395'처럼 +로 이어지면 CShapes의 그 나라들을 합쳐 비교한다(덴마크 본국과 아이슬란드: 생성기는 덴마크에 아이슬란드를 넣음).
+// 2026-10-02(작업 E2): 1815~1914 유럽 뼈대의 나라를 더함. 3461은 CShapes의 보스니아(1886~1908, 오스트리아-헝가리 점령지)
+const GW_ENTITIES = {
+  200: ['uk'], 220: ['france'], 365: ['russia', 'soviet-union', 'russia-fed'],
+  210: ['netherlands'], 211: ['belgium'], 212: ['luxembourg'], 225: ['switzerland'], 230: ['spain'], 235: ['portugal'],
+  255: ['german-empire'], 300: ['austria-hungary'], 3461: ['bosnia-occupied'], 325: ['italy'],
+  '390+395': ['denmark'], 380: ['sweden-norway', 'sweden'], 385: ['norway'],
+  640: ['ottoman'], 350: ['greece'], 340: ['serbia'], 341: ['montenegro'], 360: ['romania'], 355: ['bulgaria'], 339: ['albania'],
+};
+// 권역 바깥선(조각 domain) 안만 비교하는 나라: 생성기가 권역 바깥선 안만 그린 나라(오스만 제국. CShapes는 중동·북아프리카까지 넣음)
+const DOMAIN_ONLY = new Set(['640']);
 // [2] 조각 adm0 → CShapes 2019의 GW 번호. 속령·주권 기지는 본국과 묶고, 소국은 CShapes에 없어 뺀다
 const GW_FRAGMENTS = [
   [200, ['GBR', 'IMN', 'JEY', 'GGY', 'GIB']], [205, ['IRL']], [210, ['NLD']], [211, ['BEL']], [212, ['LUX']], [220, ['FRA']], [225, ['CHE']],
@@ -43,6 +53,8 @@ const cs = JSON.parse(readFileSync(CSHAPES, 'utf8')).features.map((f) => {
   return { gw: p.gwcode, name: p.cntry_name, from: p.gwsyear * 1e4 + p.gwsmonth * 100 + p.gwsday, to: p.gweyear * 1e4 + p.gwemonth * 100 + p.gweday, fromYear: p.gwsyear, geom: f.geometry };
 });
 const shape = (gw, day) => cs.find((c) => c.gw === gw && c.from <= day && day <= c.to);
+// GW_ENTITIES의 키(번호 하나 또는 '390+395')로 그날의 CShapes 나라들
+const shapesOf = (key, day) => String(key).split('+').map((g) => shape(Number(g), day)).filter(Boolean);
 const multiOf = (c) => toMulti(c.geom).flatMap(unwrapAntimeridian);
 const land50 = loadLand('50m');
 const onLand = (multi) => { const b = bboxOf(multi); const near = land50.filter((poly) => !boxesApart(bboxOf([poly]), b)); return near.length ? polyclip.intersection(multi, near) : []; };
@@ -61,18 +73,23 @@ if (!years.length) {
   const set = new Set([1886, 2019]);
   for (const [gw, list] of Object.entries(versions)) {
     for (const v of list) for (const y of [v.from, v.to]) if (y >= 1886 && y <= 2019) set.add(y);
-    for (const c of cs) if (c.gw === Number(gw) && c.fromYear >= 1886 && c.fromYear <= 2019) set.add(c.fromYear);
+    const gws = String(gw).split('+').map(Number);
+    for (const c of cs) if (gws.includes(c.gw) && c.fromYear >= 1886 && c.fromYear <= 2019) set.add(c.fromYear);
   }
   years = [...set].sort((a, b) => a - b);
 }
-console.log(`[1] 생성기와 CShapes (그해 1월 1일, land-50m 안): ${years.length}개 해 × ${Object.keys(GW_ENTITIES).length}개 나라`);
+console.log(`[1] 생성기와 CShapes (그해 1월 1일, land-50m 안. ${[...DOMAIN_ONLY].join('·')}은 권역 바깥선 안만): ${years.length}개 해 × ${Object.keys(GW_ENTITIES).length}개 나라`);
 console.log('  날짜        GW   CShapes 이름                 생성기 버전                CShapes km²   생성기 km²   대칭차 km²   비율');
+const { loadFragments } = await import(pathToFileURL(path.join(ROOT, 'scripts/geo/lib.mjs')).href);
+const europeDomain = DOMAIN_ONLY.size ? loadFragments('europe').domain : [];
 for (const y of years) {
   for (const [gw, list] of Object.entries(versions)) {
-    const c = shape(Number(gw), y * 1e4 + 101);
+    const found = shapesOf(gw, y * 1e4 + 101);
     const v = list.find((x) => x.from <= y && y < x.to);
-    if (!c && !v) continue;
-    const a = c ? onLand(multiOf(c)) : [], b = v ? onLand(v.multi) : [];
+    if (!found.length && !v) continue;
+    const c = found.length ? { name: found.map((f) => f.name).join('+'), multi: found.length === 1 ? multiOf(found[0]) : polyclip.union(...found.map(multiOf)) } : null;
+    const clip = (m) => (DOMAIN_ONLY.has(gw) ? polyclip.intersection(m, europeDomain) : m);
+    const a = c ? onLand(clip(c.multi)) : [], b = v ? onLand(clip(v.multi)) : [];
     const x = polyclip.xor(a, b);
     const label = v ? `${v.id} ${v.from}~${v.to === 3000 ? '' : v.to}` : '(없음)';
     console.log(`  ${y}-01-01  ${String(gw).padStart(3)}  ${(c?.name ?? '(없음)').padEnd(28)} ${label.padEnd(26)} ${km(areaKm2(a)).padStart(11)} ${km(areaKm2(b)).padStart(12)} ${km(areaKm2(x)).padStart(12)} ${pct(areaKm2(x), areaKm2(a)).padStart(6)}`);
@@ -83,7 +100,6 @@ for (const y of years) {
 const fragDir = path.join(ROOT, 'data/base/fragments');
 const fragFiles = existsSync(fragDir) ? readdirSync(fragDir).filter((f) => f.endsWith('.topo.json')).sort() : [];
 if (!fragFiles.length) console.log('[2] 조각 파일이 없어 건너뜀 (npm run prep:fragments)');
-const { loadFragments } = fragFiles.length ? await import(pathToFileURL(path.join(ROOT, 'scripts/geo/lib.mjs')).href) : {};
 for (const file of fragFiles) {
   const set = loadFragments(file.slice(0, -'.topo.json'.length));
   const byAdm0 = new Map();

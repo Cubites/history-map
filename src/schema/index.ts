@@ -10,6 +10,8 @@ const Names = z.object({
   ko: z.string().min(1),
   en: z.string().optional(),
   hanja: z.string().optional(),
+  /** 원어 표기 (예: Königreich Preußen). 한자 이름이 없을 때 이름 옆에 보인다 (2026-10-02, 유럽 권역) */
+  native: z.string().optional(),
 });
 
 export const EntitySchema = z

@@ -1,12 +1,17 @@
-// 유럽 권역 (DESIGN.md §5.2, 층 8): 러시아 제국·소련·러시아 연방과 영국·프랑스의 도형과 versions. 짝 entities 파일: data/entities/europe.yaml
+// 유럽 권역 (DESIGN.md §5.2, 층 8): 유럽 나라(1815~1914 뼈대)와 러시아 제국·소련·러시아 연방의 도형과 versions. 짝 entities 파일: data/entities/europe.yaml
 // 가져와도 되는 것: lib.mjs, shared.mjs, areas/korea.mjs, areas/inner-asia.mjs, areas/china.mjs (러시아가 청·조선·외몽골을 뺀다)
-// 2026-10-01 (작업 E1): 다섯 나라를 west 권역에서 옮겼다(나라 id는 그대로). 영토 기간의 시작(russia 1860~, france 1815~, uk 1801~)은 그대로 두고,
-// 그 안에서 조각 소속이 바뀐 해에 버전을 나눴다(france 1860 사보이아·니스·1947 탕드·라브리그, russia 1878 베를린 조약).
+// 2026-10-01 (작업 E1): 영국·프랑스·러시아 제국·소련·러시아 연방을 west 권역에서 옮겼다(나라 id는 그대로).
+// 2026-10-02 (작업 E2): 1815년(빈 회의)부터 1914년 7월(1차 대전 직전)까지 유럽 권역(조각 domain, 튀르키예·캅카스 포함)의 나라를 넣었다.
+//   1815~1914년 영토는 아래 '1815~1914 조각 소유표' 한곳에서 정한다: 조각(또는 선으로 나눈 조각)마다 [해, 나라] 목록을 적고, 나라별 버전은 이 표에서 만든다.
+//   한 조각은 표에 한 번만 나오므로 같은 기간 한 조각을 두 나라가 가질 수 없고, 조각을 두 번 쓰거나 빠뜨리면 멈춘다.
+//   영국·프랑스·러시아 제국의 1815~1914년 버전도 이 표에서 만든다(E1 버전과 도형이 같음, compare:geo로 확인). 러시아 제국은 1815~1860년 버전을 더했다.
 // 유럽 쪽 모양은 행정구역 조각(lib.mjs의 loadFragments('europe'))을 그 시기 국경에 맞춰 묶어 만든다. 권역 바깥선(domain) 밖(시베리아·중앙아시아·극동)은
 // west에서 쓰던 손 도형을 그대로 쓴다: 러시아 = D(손 도형, domain) ∪ F(그때 러시아에 속한 조각). 두 경계가 한 자료(domain의 arc)에서 나오므로 틈이 생기지 않는다.
+// 오스만 제국은 권역 바깥선 안(발칸·아나톨리아·키프로스·캅카스 일부)만 그린다. 중동·북아프리카는 아직 어느 권역에도 없다.
 // 조각은 현대 행정구역이라 역사 경계와 다른 곳은 이름 붙은 선(아래 '조각을 가르는 선')으로 쪼갠다. 근거는 줄마다 적는다.
+// 대략 1만 km²보다 작은 차이는 쪼개지 않고 근사로 두었다(아래 '쪼개지 않은 근사' 목록).
 import { D, I, U, bx, ring, loadFragments } from '../lib.mjs';
-import { KWANTUNG, L_AMUR, L_KHASAN, L_USSURI, SAKHALIN_S, TAIWAN, TUMEN_SEA } from '../shared.mjs';
+import { KWANTUNG, L_AMUR, L_KHASAN, L_USSURI, PRIMORYE, SAKHALIN_S, TAIWAN, TUMEN_SEA } from '../shared.mjs';
 import { JOSEON_1449 } from './korea.mjs';
 import { ET_NORTH, MN_SW, OUTER_MONGOLIA } from './inner-asia.mjs';
 import { QING_BASE } from './china.mjs';
@@ -17,10 +22,6 @@ export const source = '유럽 쪽은 Natural Earth 1:10m admin-1(v5.1.2) 현대 
 const EU = loadFragments('europe');
 const { F, domain } = EU;
 
-// 빈 땅 검사 구역 (DESIGN.md §5.4): 권역 바깥선(domain, 모든 조각의 합) 전체. 유럽 나라는 아직 영국·프랑스·러시아뿐이라 모든 해를 검사하면
-// 해마다 수백만 km²가 비었다고 나오므로, 뼈대를 먼저 채우는 시작 구간(1789~1914, docs/EUROPE_DRAFT.md)만 검사한다.
-// 다음 구간(1914~1991, 1991~현재, 1789년 전)을 채우면 from·to를 넓힌다. 그 전까지 이 구간의 결과는 '아직 채울 곳' 목록이다
-export const gapZones = [{ name: '유럽', zone: domain, from: 1789, to: 1914 }];
 // adm0(Natural Earth 나라 코드)별 조각 id
 const idsOf = (...adm0s) => EU.ids.filter((id) => adm0s.includes(EU.props.get(id).adm0));
 // ids에서 빼기. 빼려는 id가 목록에 없으면 멈춘다(조각 id 오타를 잡는다)
@@ -99,50 +100,430 @@ const RU_WEST_1920 = U([FINLAND_SE_1920], [SALLA_1920], [PETSAMO_1920], [PETSERI
 const TENDE = ring([[7.43, 44.08], [7.52, 44.03], [7.62, 44.0], [7.72, 44.01], [7.78, 44.2], [7.43, 44.2]]);
 const NICE_COUNTY = ring([[7.2, 43.3], [7.2, 43.64], [7.19, 43.76], [7.17, 43.83], [6.98, 43.86], [6.86, 43.92], [6.8, 43.96], [6.5, 44.0], [6.5, 44.6], [7.9, 44.6], [7.9, 43.3]]);
 
-// ── 나라별 조각 소유표 ─────────────────────────────────────
-// 영국: 그레이트브리튼·북아일랜드와 왕실령(맨섬·저지·건지, 국방·외교를 영국이 맡음). 식민지(지브롤터·몰타·키프로스, 1960년부터의 키프로스 주권 기지)는 넣지 않는다
-const UK_GB = idsOf('GBR', 'IMN', 'JEY', 'GGY');
-// 아일랜드는 1801년 연합법부터 1922년 12월 아일랜드 자유국까지 연합 왕국
-const UK_1801 = F(...UK_GB, ...idsOf('IRL'));
-const UK_1922 = F(...UK_GB);
-// 프랑스: 본토 96개 도(코르시카 포함). 모나코는 넣지 않는다
-const FRANCE_ALL = idsOf('FRA');
-// 1815~1860: 사보이아(사부아·오트사부아)와 니스 백작령은 사르데냐 왕국
-const FRANCE_1815 = U(F(...minus(FRANCE_ALL, 'FR-73', 'FR-74', 'FR-06')), D(F('FR-06'), [NICE_COUNTY]));
-const FRANCE_1947 = F(...FRANCE_ALL);
-// 1860~1947: 탕드·라브리그는 이탈리아
-const FRANCE_1860 = D(FRANCE_1947, [TENDE]);
-// 1871~1918: 프랑크푸르트 조약으로 알자스(바랭·오랭, 벨포르 제외)와 로렌 북동부(지금의 모젤)를 독일 제국에 넘김. 지금의 모젤도는 1871년 할양 지역을 1919년에 도로 만든 것이다
-const FRANCE_1871 = D(F(...minus(FRANCE_ALL, 'FR-67', 'FR-68', 'FR-57')), [TENDE]);
+// ── 조각을 가르는 선 (작업 E2, 1815~1914) ───────────────────────
+// 모두 대략(수 km~수십 km 오차). 조각 하나(또는 몇 개)만 가르므로 링의 나머지 변은 다른 나라·바다로 넉넉히 둔다.
+// 크라쿠프 자유시(1815~1846)와 프로이센·오스트리아 경계(폴란드 슐레지엔주·소폴란드주):
+// - 프셰므사강(L_PRZEMSZA): 세 황제 모서리(L_CONGRESS_W의 미스워비체 점)에서 비스와강 합류점까지. 서쪽(카토비체·미스워비체)은 프로이센, 동쪽(야보주노·흐샤누프)은 자유시
+// - 자유시의 남쪽은 비스와강(건너편 포드구제·오시비엥침은 오스트리아 갈리치아), 동쪽 끝은 크라쿠프 동쪽에서 러시아 경계(L_CONGRESS_W)와 만남
+// - 프로이센·오스트리아 경계(L_VISTULA_UP): 프셰므사강 합류점에서 비스와강을 거슬러 스트루미엔까지, 거기서 올자강(지금의 체코 국경)까지.
+//   북쪽(프슈치나·리브니크·보지스와프·야스트솀비에)은 프로이센 상슐레지엔, 남쪽(비엘스코·체신·체호비체)은 오스트리아령 슐레지엔·갈리치아
+const L_PRZEMSZA = [L_CONGRESS_W[23], [19.19, 50.2], [19.22, 50.15], [19.23, 50.08], [19.2, 50.03]];
+const L_VISTULA_UP = [[19.2, 50.03], [19.08, 49.99], [18.95, 49.96], [18.85, 49.93], [18.77, 49.92], [18.62, 49.91], [18.48, 49.92], [18.33, 49.93]];
+const KRAKOW = ring(L_PRZEMSZA, [[19.3, 50.01], [19.45, 49.99], [19.6, 50.0], [19.75, 50.03], [19.88, 50.04], [19.95, 50.05], [20.05, 50.07]], [L_CONGRESS_W[29], [20.15, 50.45], [19.17, 50.45]]);
+const GALICIA_W = ring(L_PRZEMSZA, L_VISTULA_UP.slice(1), [[18.2, 49.3], [22.5, 49.0], [22.5, 50.7], [19.17, 50.7]]);
+// 포어포메른(프로이센 포메른주, 1815년 스웨덴령 포메른까지 합침)과 메클렌부르크(슈베린·슈트렐리츠 대공국)의 경계: 피슐란트(아렌스호프)에서 레크니츠강(리브니츠·담가르텐)·
+// 트레벨강을 따라 데민 서쪽, 페네강·쿰머로 호수에서 알텐트렙토(프로이센)와 노이브란덴부르크·프리틀란트(메클렌부르크)·볼데크 사이를 지나 슈트라스부르크(프로이센 우커마르크) 서쪽까지.
+// 메클렌부르크포어포메른주만 이 선으로 나눈다
+const VORPOMMERN = ring([[12.4, 54.55], [12.42, 54.38], [12.44, 54.25], [12.55, 54.1], [12.75, 53.98], [12.95, 53.92], [12.85, 53.8], [13.1, 53.72], [13.3, 53.66],
+  [13.5, 53.7], [13.65, 53.72], [13.72, 53.6], [13.7, 53.5], [13.68, 53.1], [14.6, 53.1], [14.6, 54.9], [12.4, 54.9]]);
+// 튀링겐 북부의 프로이센 땅(작센주 에르푸르트 현): 아이히스펠트(하일리겐슈타트)·뮐하우젠·노르트하우젠·트레푸르트·랑엔잘차·에르푸르트·죔메르다·쾰레다.
+// 남쪽 경계는 아이제나흐·고타·아른슈타트·바이마르·아폴다(튀링겐 국가들)의 북쪽. 존더스하우젠·프랑켄하우젠(슈바르츠부르크)과 쥘·슐로이징겐·치겐뤼크(프로이센 비지)는 나누지 않았다
+const THURINGIA_PR = ring([[10.0, 51.1], [10.15, 51.08], [10.4, 51.06], [10.62, 51.03], [10.85, 50.99], [10.95, 50.92], [11.12, 50.92], [11.2, 51.03], [11.38, 51.1], [11.5, 51.12],
+  [11.75, 51.15], [11.75, 51.7], [10.0, 51.7]]);
+// 라인란트팔츠주의 남부(바이에른령 팔츠와 헤센 대공국의 라인헤센): 북쪽 경계는 프로이센 라인주(바트크로이츠나흐·비르켄펠트 쪽)와의 경계로, 쿠젤 북쪽에서 나에강을 따라 빙엔까지.
+// 팔츠와 라인헤센은 1815~1914년 내내 같은 쪽(독일 연방 국가들 → 남독일 국가들 → 독일 제국)이라 둘 사이는 나누지 않는다. 빙엔에서 동쪽은 라인강 건너 헤센주 쪽으로 넉넉히(마인츠 북쪽 부덴하임까지 들게), 서쪽 변은 자를란트 안
+const PFALZ = ring([[7.2, 49.45], [7.3, 49.6], [7.5, 49.68], [7.7, 49.75], [7.85, 49.8], [7.9, 49.92], [7.9, 49.97], [7.92, 50.0], [7.95, 50.07], [8.6, 50.07], [8.6, 48.9], [6.9, 48.9], [6.9, 49.45]]);
+// 라인란트팔츠주의 라인강 동쪽 가운데 나사우 공국 땅(라인-란 군·베스터발트 남부: 란슈타인·브라우바흐·장크트고아르스하우젠·몬타바우어·하헨부르크).
+// 북쪽 경계는 에렌브라이트슈타인·노이비트·알텐키르헨(프로이센)과의 경계, 서쪽 변은 라인강 한가운데(카우프~란슈타인)
+const NASSAU_RP = ring([[7.605, 50.33], [7.65, 50.4], [7.7, 50.5], [7.75, 50.6], [7.8, 50.68], [7.95, 50.72], [8.3, 50.75], [8.3, 50.03], [7.85, 50.03], [7.78, 50.07],
+  [7.755, 50.1], [7.725, 50.13], [7.715, 50.155], [7.69, 50.19], [7.63, 50.215], [7.615, 50.24], [7.635, 50.27], [7.62, 50.3]]);
+// 마인강(헤센주): 1866~1871년 북독일 연방과 남독일 국가들의 경계. 마인강 남쪽 스타르켄부르크(다름슈타트·오펜바흐·젤리겐슈타트, 헤센 대공국)는 남독일,
+// 북쪽(프랑크푸르트·하나우·비스바덴과 헤센 대공국의 오버헤센)은 북독일 연방. 헤센주만 이 선으로 나눈다
+const L_MAIN = [[8.25, 50.02], [8.4, 50.0], [8.5, 50.03], [8.6, 50.09], [8.68, 50.1], [8.8, 50.11], [8.92, 50.12], [9.0, 50.09], [9.1, 50.05]];
+const HESSE_S = ring(L_MAIN, [[9.4, 50.05], [9.4, 49.3], [8.2, 49.3], [8.2, 50.02]]);
+// 슐레스비히·홀슈타인 경계(아이더강과 레벤사우, 1864~1866년 가슈타인 협약의 프로이센 관리 슐레스비히와 오스트리아 관리 홀슈타인): 퇴닝·프리드리히슈타트·에케른푀르데는 슐레스비히,
+// 렌즈부르크·킬은 홀슈타인. 슐레스비히홀슈타인주만 이 선으로 나눈다
+const L_EIDER = [[8.5, 54.28], [8.9, 54.3], [9.1, 54.37], [9.3, 54.3], [9.5, 54.28], [9.67, 54.3], [9.85, 54.35], [10.0, 54.38], [10.15, 54.42], [10.3, 54.5]];
+const SCHLESWIG = ring(L_EIDER, [[10.5, 54.6], [10.5, 55.6], [8.0, 55.6], [8.0, 54.28]]);
+// 라우엔부르크 공국(1865년 가슈타인 협약으로 프로이센 왕이 삼): 지금의 헤르초크툼라우엔부르크군(라체부르크·묄른·슈바르첸베크). 뤼베크(자유시)는 밖
+const LAUENBURG = ring([[10.25, 53.4], [10.35, 53.52], [10.45, 53.62], [10.55, 53.72], [10.65, 53.8], [10.75, 53.84], [11.0, 53.84], [11.0, 53.2], [10.25, 53.2]]);
+// 북슐레스비히(1864~1920년 프로이센·독일): 쥐다네마르크 지역 가운데 1864년 빈 조약 경계 남쪽. 리베(덴마크) 남쪽을 돌아 콩에강을 따라 콜딩 피오르 남쪽 기슭까지,
+// 동쪽은 소벨트 해협(알스섬은 안, 퓐섬·에뢰섬은 밖). 쥐다네마르크 지역만 이 선으로 나눈다
+const N_SCHLESWIG = ring([[8.0, 55.28], [8.62, 55.28], [8.75, 55.27], [8.85, 55.33], [8.88, 55.42], [9.05, 55.45], [9.25, 55.46], [9.42, 55.47], [9.55, 55.47], [9.7, 55.47],
+  [9.68, 55.3], [9.78, 55.15], [9.95, 55.08], [10.12, 55.0], [10.12, 54.7], [8.0, 54.7]]);
+// 교황령과 양시칠리아 왕국의 경계(라치오주 남부): 테라치나(교황령)와 폰디(나폴리) 사이 해안에서 체프라노·베롤리(교황령)와 소라·이솔라델리리(나폴리) 사이를 지나 아브루초 경계까지.
+// 프로시노네주 동부(소라·카시노·아티나)와 라티나주 남부(폰디·포르미아·가에타·폰차 제도)는 나폴리. 두 주만 이 선으로 나눈다.
+// 교황령 비지 폰테코르보·베네벤토는 나누지 않았다(나폴리 쪽)
+const NAPLES_LAZIO = ring([[13.35, 41.2], [13.35, 41.3], [13.4, 41.37], [13.45, 41.45], [13.52, 41.55], [13.47, 41.62], [13.47, 41.7], [13.45, 41.8], [13.4, 41.88], [13.32, 41.95],
+  [13.25, 42.0], [14.3, 42.0], [14.3, 40.7], [12.8, 40.7]]);
+// 도데카니사 제도(오스만, 1912년부터 이탈리아 점령): 남에게해 지역 가운데 아스티팔레아·킨아로스 동쪽(파트모스·레로스·코스·로도스·카르파토스·카스텔로리조). 그 서쪽 키클라데스는 1830년부터 그리스
+const DODECANESE = bx(26.15, 35.0, 30.0, 37.7);
+// 아르타 지방(1881년 콘스탄티노폴리스 협약으로 그리스): 에피루스 지역 가운데 아라크토스강 동쪽(아르타 시는 동쪽 기슭). 그 서쪽·북쪽(프레베자·이오아니나)은 1913년까지 오스만
+const ARTA_1881 = ring([[20.95, 38.95], [21.0, 39.05], [20.96, 39.15], [21.0, 39.25], [21.05, 39.35], [21.1, 39.45], [21.15, 39.55], [21.2, 39.65], [21.6, 39.65], [21.6, 38.95]]);
+// 네스토스강(메스타강): 1913년 부쿠레슈티 조약에서 그리스(카발라·드라마·타소스섬)와 불가리아(서트라키아: 크산티·코모티니·데데아아치) 경계. 동마케도니아-트라키아 지역만 이 선으로 나눈다.
+// 위쪽 네스토스 골짜기(파라네스티)는 지금의 드라마-크산티 경계처럼 그리스로 둔다(CShapes 2.0도 그리스). 남쪽 변은 사모트라키섬(1912년부터 그리스) 북쪽 바다
+const W_THRACE = ring([[24.62, 41.8], [24.62, 41.58], [24.65, 41.4], [24.7, 41.25], [24.75, 41.15], [24.8, 41.08], [24.82, 40.95], [24.85, 40.8], [24.88, 40.6], [26.8, 40.6], [26.8, 41.8]]);
+// 얀마옌섬(노를란주 조각 안): 1929년 노르웨이 병합 전까지 주인 없는 땅
+const JAN_MAYEN = bx(-9.5, 70.5, -7.5, 71.5);
+// 작센 왕국이 1815년 빈 회의로 프로이센에 넘긴 땅(작센주 조각 안, 검토 반영 2026-10-02):
+// - 북서부(프로이센 작센주 메르제부르크 현): 토르가우·델리치·아일렌부르크·바트뒤벤·벨게른. 남쪽 경계는 라이프치히·타우하·부르첸·다렌·오샤츠·슈트렐라(작센)의 북쪽
+// - 동부(오버라우지츠 북동부, 프로이센 슐레지엔주 리그니츠 현): 호이어스베르다·니스키·괴를리츠(나이세강 서쪽 시가지 포함). 남서쪽 경계는 카멘츠·바우첸·뢰바우·치타우(작센)의 북동쪽
+const SAXONY_PR_NW = ring([[12.0, 51.44], [12.45, 51.43], [12.65, 51.42], [12.85, 51.4], [13.05, 51.4], [13.2, 51.42], [13.3, 51.42], [13.3, 51.8], [12.0, 51.8]]);
+const SAXONY_PR_E = ring([[13.9, 51.47], [14.1, 51.38], [14.3, 51.33], [14.5, 51.28], [14.65, 51.22], [14.8, 51.12], [14.95, 51.08], [15.1, 51.0], [15.3, 51.0], [15.3, 51.7], [13.9, 51.7]]);
+// 안할트 공국들(데사우·쾨텐·베른부르크·체르프스트, 독일 연방 국가들 → 북독일 연방): 작센안할트주 가운데. 하르츠의 비지(발렌슈테트)는 나누지 않음
+const ANHALT = ring([[11.65, 51.72], [11.8, 51.68], [12.0, 51.68], [12.3, 51.72], [12.5, 51.78], [12.45, 51.88], [12.3, 52.0], [12.1, 52.08], [11.9, 52.0], [11.75, 51.9]]);
+// 오이펜-말메디(1815~1920 프로이센 라인주, 1920년 베르사유 조약으로 벨기에): 리에주주 동쪽 끝(오이펜·말메디·장크트피트·뷔트겐바흐).
+// 서쪽 경계는 벨기에 쪽 림부르·스파·스타벨로의 동쪽(대략). 리에주주만 이 도형으로 나눈다
+const EUPEN_MALMEDY = ring([[5.95, 50.8], [5.95, 50.75], [5.97, 50.6], [5.93, 50.48], [5.95, 50.38], [6.0, 50.3], [6.03, 50.2], [6.0, 50.1], [6.5, 50.1], [6.5, 50.8]]);
+// 포티 요새와 그 둘레(오스만, 1828년 러시아가 점령하고 1829년 아드리아노플 조약으로 넘김): 사메그렐로-제모 스바네티 지역의 리오니강 하구(대략)
+const POTI = bx(41.6, 42.08, 41.78, 42.22);
+// 코토르 시가지(보카코토르스카, 1815~1918 오스트리아): 조각 경계가 거칠어 시가지가 체티네 조각에 들어가므로 만 동쪽 기슭을 체티네 조각에서 떼어 낸다(대략)
+const KOTOR_TOWN = bx(18.74, 42.38, 18.785, 42.45);
+// 망통(1861년 프랑스가 모나코에게서 삼): 조각 경계가 거칠어 시가지가 임페리아 조각에 들어가므로 산루도비코 다리(국경) 서쪽을 임페리아 조각에서 떼어 낸다
+const MENTON = bx(7.4, 43.7, 7.515, 43.86);
+// 노비파자르 산자크의 세르비아 쪽(1913년까지 오스만, 1878~1908년 오스트리아-헝가리 군 주둔): 즐라티보르·라슈카 지구 가운데 프리보이·프리예폴레·노바바로시·시에니차·노비파자르·투틴.
+// 북쪽 경계는 1833~1912년 세르비아 남서 국경(우지체·이바니차·라슈카는 세르비아)
+const SANJAK_RS = ring([[19.0, 43.62], [19.5, 43.65], [19.7, 43.6], [19.9, 43.55], [20.1, 43.45], [20.3, 43.42], [20.45, 43.35], [20.6, 43.25], [20.75, 43.15], [20.85, 43.0], [20.8, 42.6], [19.0, 42.6]]);
+// 1878년 전 몬테네그로: 포드고리차 시의 북쪽(피페리·쿠치·브라토노지치 부족 땅. 포드고리차 시가지·제타 평원·투지는 오스만)과 바르 시의 북쪽(츠르므니차, 스카다르호 기슭. 바르 해안은 오스만)
+const PODGORICA_N = bx(19.0, 42.48, 20.0, 43.0);
+const CRMNICA = bx(18.9, 42.19, 19.4, 42.5);
+// 체르케스(쿠반강 남쪽, 1829년 아드리아노플 조약 전까지 오스만의 종주권 주장 지역. 아나파 요새는 오스만): 쿠반강 하구에서 크라스노다르·우스트라빈스크·크로폿킨·아르마비르·네빈노미스크·
+// 체르케스크를 지나 엘브루스 쪽 큰 캅카스 산줄기까지. 타만반도와 쿠반강 북쪽(흑해 카자크)은 러시아. 크라스노다르 지방·아디게야·카라차이체르케스만 이 도형으로 나눈다
+const CIRCASSIA = ring([[36.5, 45.0], [37.45, 45.12], [38.0, 45.15], [38.5, 45.08], [38.97, 45.03], [39.5, 45.15], [39.7, 45.2], [40.2, 45.35], [40.57, 45.43], [41.13, 45.0], [41.6, 44.8],
+  [41.93, 44.63], [42.05, 44.2], [42.0, 43.5], [42.3, 42.9], [40.0, 42.9], [37.0, 43.5]]);
 
-// 러시아 제국 (1860~1917)
+// ── 1815~1914 조각 소유표 (작업 E2) ─────────────────────────────
+// 단위: 조각 하나를 통째로 쓰면 그 조각 id, 선으로 나눴으면 '이름/부분'. own(단위들, [[해, 나라], ...])는 그 해부터 다음 해 전까지 그 나라 땅이라는 뜻이다.
+// 나라가 null이면 일부러 비워 둔 땅(주인 없는 땅·이 지도에 없는 나라의 땅)이고, 빈 땅 검사 구역에서 그 해에 뺀다(맨 아래 gapZones).
+// 표는 1815~1914년(TABLE_TO 전)만 정한다. 나라별 마지막 버전은 TAIL_TO(그 뒤 첫 국경 변화 해)까지 이어 쓴다. 1914년은 7월(1차 대전 직전) 모습이다.
+const TABLE_FROM = 1815;
+const TABLE_TO = 1915;
+const units = new Map(); // 단위 이름 → null(통째 조각) 또는 도형을 만드는 함수
+const claimed = new Map(); // 조각 id → 그 조각을 쓴 단위·묶음 이름
+const claim = (id, by) => {
+  if (!EU.props.has(id)) throw new Error(`europe.mjs 소유표: 모르는 조각 id ${id}`);
+  if (claimed.has(id)) throw new Error(`europe.mjs 소유표: 조각 ${id}를 ${claimed.get(id)}와 ${by}에서 함께 씀`);
+  claimed.set(id, by);
+};
+const addUnit = (name, make) => {
+  if (units.has(name)) throw new Error(`europe.mjs 소유표: 단위 이름 ${name}이 겹침`);
+  units.set(name, make);
+};
+// 통째 조각. 단위 이름 = 조각 id
+const whole = (...ids) => {
+  for (const id of ids) {
+    claim(id, id);
+    addUnit(id, null);
+  }
+  return ids;
+};
+// 나눈 조각: 조각 묶음 ids를 parts의 도형으로 차례로 자른다. 첫 부분 = I(F(ids), 도형1), 둘째 = I(D(F(ids), 도형1), 도형2), …, 나머지 = D(F(ids), 도형1, 도형2, …).
+// 부분들이 묶음을 빈틈·겹침 없이 나눈다. 반환: 단위 이름 객체 { 부분 이름: '묶음/부분' }
+const split = (label, ids, parts, restName) => {
+  for (const id of ids) claim(id, label);
+  const out = {};
+  const shapes = [];
+  for (const [name, shape] of parts) {
+    const before = [...shapes];
+    out[name] = `${label}/${name}`;
+    addUnit(out[name], () => I(before.length ? D(F(...ids), ...before) : F(...ids), shape));
+    shapes.push(shape);
+  }
+  out[restName] = `${label}/${restName}`;
+  addUnit(out[restName], () => D(F(...ids), ...shapes));
+  return out;
+};
+const ownership = new Map(); // 단위 → [[해, 나라|null], ...]
+const own = (list, timeline) => {
+  if (timeline[0]?.[0] !== TABLE_FROM || timeline.some(([y], i) => !Number.isInteger(y) || (i && y <= timeline[i - 1][0]) || y >= TABLE_TO)) {
+    throw new Error(`europe.mjs 소유표: ${list[0]} 등의 기간 ${JSON.stringify(timeline)} (첫 해는 ${TABLE_FROM}, 해는 늘어나고 ${TABLE_TO} 전)`);
+  }
+  for (const u of list) {
+    if (!units.has(u)) throw new Error(`europe.mjs 소유표: 정의하지 않은 단위 ${u}`);
+    if (ownership.has(u)) throw new Error(`europe.mjs 소유표: 단위 ${u}의 주인을 두 번 적음`);
+    ownership.set(u, timeline);
+  }
+};
+
+// 서유럽 ─────────────────────────────────────────
+// 영국: 그레이트브리튼·북아일랜드와 왕실령(맨섬·저지·건지, 국방·외교를 영국이 맡음), 아일랜드(1801년 연합법~1922년 아일랜드 자유국).
+// 식민지(지브롤터 1713~·몰타 1814~)는 영국 본국 영토에 넣지 않는다(E1 원칙). 이 지도에 따로 그리지 않으므로 비워 둔다
+const UK_GB = idsOf('GBR', 'IMN', 'JEY', 'GGY');
+own(whole(...UK_GB, ...idsOf('IRL')), [[1815, 'uk']]);
+own(whole(...idsOf('GIB', 'MLT')), [[1815, null]]);
+// 프랑스: 본토 96개 도(코르시카 포함). 사보이아(사부아·오트사부아)와 니스 백작령은 1860년 토리노 조약까지 사르데냐 왕국,
+// 알자스(바랭·오랭, 벨포르 제외)와 로렌 북동부(지금의 모젤도)는 1871년 프랑크푸르트 조약으로 독일 제국
+const FRANCE_ALL = idsOf('FRA');
+const FR06 = split('FR-06', ['FR-06'], [['탕드', [TENDE]], ['니스', [NICE_COUNTY]]], '프로방스');
+own(whole(...minus(FRANCE_ALL, 'FR-06', 'FR-73', 'FR-74', 'FR-67', 'FR-68', 'FR-57')), [[1815, 'france']]);
+own([FR06.프로방스], [[1815, 'france']]);
+own([...whole('FR-73', 'FR-74'), FR06.니스], [[1815, 'sardinia'], [1860, 'france']]);
+own([FR06.탕드], [[1815, 'sardinia'], [1861, 'italy']]);
+own(whole('FR-67', 'FR-68', 'FR-57'), [[1815, 'france'], [1871, 'german-empire']]);
+own(whole('MCO'), [[1815, 'monaco']]); // 망통·로크브륀(1848년 자유시 선언, 1861년 프랑스가 삼)은 E1처럼 1860년까지 사르데냐 니스, 그 뒤 프랑스로 단순화
+own(whole(...idsOf('ESP')), [[1815, 'spain']]); // 카나리아 제도·발레아레스 제도·세우타·멜리야 포함
+own(whole(...idsOf('AND')), [[1815, 'andorra']]);
+own(whole(...idsOf('PRT')), [[1815, 'portugal']]); // 아소르스·마데이라 제도 포함
+own(whole(...idsOf('CHE')), [[1815, 'switzerland']]); // 빈 회의로 제네바·발레·뇌샤텔이 더해진 22개 주. 뇌샤텔은 1857년까지 프로이센 왕의 공국이기도 했다
+own(whole(...idsOf('LIE')), [[1815, 'liechtenstein']]);
+// 네덜란드·벨기에·룩셈부르크: 빈 회의로 네덜란드 연합 왕국(1815~1830). 벨기에 독립(1830, 1839년 런던 조약으로 네덜란드 인정).
+// 룩셈부르크 대공국(네덜란드 왕이 대공 겸임, 독일 연방 소속)은 1839년 서부(지금의 벨기에 뤽상부르주)를 벨기에에 넘김.
+// 1830~1839년 벨기에가 사실상 차지한 룩셈부르크 서부·네덜란드 림뷔르흐는 법적 소속(룩셈부르크·네덜란드)으로 둔다
+own(whole(...idsOf('NLD')), [[1815, 'netherlands']]);
+const BE_WLG = split('BE-WLG', ['BE-WLG'], [['오이펜-말메디', [EUPEN_MALMEDY]]], '리에주');
+own([...whole(...minus(idsOf('BEL'), 'BE-WLX', 'BE-WLG')), BE_WLG.리에주], [[1815, 'netherlands'], [1830, 'belgium']]);
+own(whole('BE-WLX'), [[1815, 'luxembourg'], [1839, 'belgium']]);
+own(whole(...idsOf('LUX')), [[1815, 'luxembourg']]);
+
+// 북유럽 ─────────────────────────────────────────
+// 덴마크: 본토·아이슬란드·페로 제도. 왕이 겸한 슐레스비히·홀슈타인·라우엔부르크 공국은 1864년 빈 조약으로 프로이센·오스트리아에 넘어감(아래 독일)
+const DK83 = split('DK-83', ['DK-83'], [['북슐레스비히', [N_SCHLESWIG]]], '덴마크');
+own([...whole(...minus(idsOf('DNK'), 'DK-83'), ...idsOf('ISL', 'FRO')), DK83.덴마크], [[1815, 'denmark']]);
+// 스웨덴-노르웨이 연합 왕국(1814~1905) → 스웨덴·노르웨이. 스발바르는 1920년 조약(1925년 편입), 얀마옌은 1929년 병합까지 주인 없는 땅이라 비워 둔다
+own(whole(...idsOf('SWE')), [[1815, 'sweden-norway'], [1905, 'sweden']]);
+const NO18 = split('NO-18', ['NO-18'], [['얀마옌', [JAN_MAYEN]]], '노를란');
+own([...whole(...minus(idsOf('NOR'), 'NO-21', 'NO-18')), NO18.노를란], [[1815, 'sweden-norway'], [1905, 'norway']]);
+own([...whole('NO-21'), NO18.얀마옌], [[1815, null]]); // 얀마옌은 1929년 노르웨이 병합
+
+// 독일 ─────────────────────────────────────────
+// 1815~1866 독일 연방: 프로이센·오스트리아(아래)·덴마크령 홀슈타인·라우엔부르크·룩셈부르크(위)를 뺀 나라들은 '독일 연방 국가들 (묶음)'.
+// 1866년 프로이센-오스트리아 전쟁 뒤 마인강 북쪽은 북독일 연방(1866년 8월 동맹 조약, 1867년 헌법), 남쪽(바이에른·뷔르템베르크·바덴·헤센 남부)은 남독일 국가들, 1871년 독일 제국.
+// 프로이센(1815~1866): 브란덴부르크·포메른·슐레지엔·작센주·라인주·베스트팔렌·포젠·서프로이센·동프로이센. 서쪽 두 주(라인·베스트팔렌)는 하노버·헤센에 막혀 본토와 떨어져 있었다.
+// 1815년 작센 왕국이 프로이센에 넘긴 북부(토르가우·델리치·괴를리츠 등)와 안할트 공국들은 선으로 나눈다(SAXONY_PR_NW·SAXONY_PR_E·ANHALT). 작센안할트주의 나머지는 프로이센 작센주.
+// 쪼개지 않은 근사(각 1만 km² 미만): 리페·샤움부르크리페(노르트라인베스트팔렌·니더작센), 호엔촐레른(1850년 프로이센, 바덴뷔르템베르크 안),
+// 안할트의 하르츠 비지와 작센안할트주 안의 브라운슈바이크 비지(블랑켄부르크·칼푀르데), 자를란트의 바이에른 땅(자르팔츠), 헤센 안의 프로이센 베츨라어, 코부르크(1920년까지 작센코부르크고타, 바이에른 안),
+// 뤼베크 자유시·올덴부르크령 오이틴(홀슈타인 안), 프로이센 힐친 지방(체코 모라바슐레지엔 안, 오스트리아로 둠)
+const SN = split('DE-SN', ['DE-SN'], [['프로이센 북서부', [SAXONY_PR_NW]], ['프로이센 동부', [SAXONY_PR_E]]], '작센');
+const ST = split('DE-ST', ['DE-ST'], [['안할트', [ANHALT]]], '프로이센');
+const MV = split('DE-MV', ['DE-MV'], [['포어포메른', [VORPOMMERN]]], '메클렌부르크');
+const TH = split('DE-TH', ['DE-TH'], [['프로이센', [THURINGIA_PR]]], '튀링겐');
+const RP = split('DE-RP', ['DE-RP'], [['팔츠·라인헤센', [PFALZ]], ['나사우', [NASSAU_RP]]], '프로이센');
+const HE = split('DE-HE', ['DE-HE'], [['남부', [HESSE_S]]], '북부');
+const SH = split('DE-SH', ['DE-SH'], [['슐레스비히', [SCHLESWIG]], ['라우엔부르크', [LAUENBURG]]], '홀슈타인');
+// 폴란드 쪽 네 주(쿠야비아-포모제·대폴란드·슐레지엔·소폴란드): 러시아(의회 왕국) → 크라쿠프 자유시 → 오스트리아 → 나머지 프로이센 차례로 자른다
+const PL4 = split('폴란드 4주', ['PL-KP', 'PL-WP', 'PL-SL', 'PL-MA'], [['러시아', [CONGRESS]], ['크라쿠프', [KRAKOW]], ['오스트리아', [GALICIA_W]]], '프로이센');
+const MEMEL_LT = split('메멜', ['LT-KL', 'LT-TA'], [['프로이센', [MEMEL]]], '러시아');
+own([...whole('DE-BB', 'DE-BE', 'DE-NW', 'DE-SL', 'PL-ZP', 'PL-PM', 'PL-WN', 'PL-LB', 'PL-DS', 'PL-OP', 'RU-KGD'),
+  ST.프로이센, SN['프로이센 북서부'], SN['프로이센 동부'], MV.포어포메른, TH.프로이센, RP.프로이센, PL4.프로이센, MEMEL_LT.프로이센, BE_WLG['오이펜-말메디']], [[1815, 'prussia'], [1866, 'north-german-confederation'], [1871, 'german-empire']]);
+own([...whole('DE-NI', 'DE-HB', 'DE-HH'), SN.작센, ST.안할트, MV.메클렌부르크, TH.튀링겐, HE.북부, RP.나사우],
+  [[1815, 'german-states'], [1866, 'north-german-confederation'], [1871, 'german-empire']]);
+own([...whole('DE-BY', 'DE-BW'), HE.남부, RP['팔츠·라인헤센']], [[1815, 'german-states'], [1866, 'south-german-states'], [1871, 'german-empire']]);
+// 1864년 덴마크 전쟁 → 빈 조약으로 세 공국을 프로이센·오스트리아가 함께 가짐. 1865년 가슈타인 협약으로 슐레스비히는 프로이센, 홀슈타인은 오스트리아가 관리하고
+// 라우엔부르크는 프로이센 왕이 삼. 1866년 전쟁 뒤 모두 프로이센(북독일 연방)
+own([SH.슐레스비히, SH.라우엔부르크, DK83.북슐레스비히], [[1815, 'denmark'], [1864, 'prussia'], [1866, 'north-german-confederation'], [1871, 'german-empire']]);
+own([SH.홀슈타인], [[1815, 'denmark'], [1864, 'austria'], [1866, 'north-german-confederation'], [1871, 'german-empire']]);
+
+// 오스트리아 ───────────────────────────────────────
+// 오스트리아 제국(1804~1867) → 오스트리아-헝가리(1867~1918): 지금의 오스트리아·체코·슬로바키아·헝가리·크로아티아·슬로베니아, 세르비아 보이보디나,
+// 루마니아 트란실바니아·바나트·크리샤나·마라무레시·남부코비나, 우크라이나 갈리치아 동부·북부코비나·카르파티아 루스, 폴란드 갈리치아 서부·체신, 이탈리아 트렌티노·남티롤·고리치아·트리에스테,
+// 몬테네그로 보카코토르스카(헤르체그노비·코토르·티바트·부드바).
+// 쪼개지 않은 근사: 베오그라드시의 사바·도나우강 북쪽(제문, 1918년까지 오스트리아), 오르쇼바, 부코비나에 든 몰다비아 땅(팔티체니), 헤르차(몰다비아),
+// 잘츠부르크(1816년 바이에른에서 넘어옴, 1815년부터 오스트리아로 둠). 두브로브니크·보카코토르스카는 오스만의 네움(클레크) 회랑에 막혀 1908년까지 본토와 떨어져 있었다
+const UA61 = split('UA-61', ['UA-61'], [['러시아', [VOLHYNIA_S]]], '오스트리아');
+const UA77 = split('UA-77', ['UA-77'], [['러시아', [KHOTYN]]], '오스트리아');
+const AUSTRIA_RO = ['RO-AB', 'RO-AR', 'RO-BH', 'RO-BN', 'RO-BV', 'RO-CJ', 'RO-CS', 'RO-CV', 'RO-HD', 'RO-HR', 'RO-MM', 'RO-MS', 'RO-SB', 'RO-SJ', 'RO-SM', 'RO-TM', 'RO-SV'];
+const UA_AUSTRIA = ['UA-46', 'UA-26', 'UA-21'];
+own([...whole(...idsOf('AUT', 'CZE', 'SVK', 'HUN', 'HRV', 'SVN'), 'RS-01', 'RS-02', 'RS-03', 'RS-04', 'RS-05', 'RS-06', 'RS-07', ...AUSTRIA_RO, ...UA_AUSTRIA, 'PL-PK',
+  'IT-TN', 'IT-BZ', 'IT-GO', 'IT-TS', 'ME-05', 'ME-08', 'ME-10', 'ME-19'), UA61.오스트리아, UA77.오스트리아, PL4.오스트리아], [[1815, 'austria'], [1867, 'austria-hungary']]);
+// 크라쿠프 자유시(1815~1846): 1846년 크라쿠프 봉기 뒤 오스트리아가 병합
+own([PL4.크라쿠프], [[1815, 'krakow'], [1846, 'austria'], [1867, 'austria-hungary']]);
+// 보스니아 헤르체고비나: 오스만 → 베를린 조약(1878)으로 오스트리아-헝가리 점령(주권은 오스만) → 1908년 10월 병합
+own(whole(...idsOf('BIH')), [[1815, 'ottoman'], [1878, 'bosnia-occupied'], [1908, 'austria-hungary']]);
+
+// 이탈리아 ─────────────────────────────────────────
+// 사르데냐 왕국: 피에몬테·발레다오스타·리구리아(1815년 제노바 공화국을 합침)·사르데냐섬, 사보이아·니스(위 프랑스). 1861년 이탈리아 왕국.
+// 롬바르디아-베네치아 왕국(오스트리아): 1859년 취리히 조약으로 롬바르디아(만토바 제외)를 사르데냐에, 1866년 빈 조약으로 베네치아·만토바를 이탈리아에.
+// 중부 공국들(토스카나·파르마·모데나·루카)과 교황령의 로마냐·마르케·움브리아는 1860년 사르데냐에 합쳐짐(주민 투표), 양시칠리아 왕국은 1860년 가리발디의 원정 뒤 합쳐짐.
+// 교황령의 라치오(로마·비테르보·프로시노네·라티나 북부)는 1870년 이탈리아. 산마리노는 독립을 지킴.
+// 쪼개지 않은 근사: 파비아주 서부(로멜리나·오트레포, 1743년부터 사르데냐)를 롬바르디아로, 리에티주 동부(아마트리체·치타두칼레, 나폴리)를 교황령으로,
+// 포를리체세나주 남부(토스카나령 로마냐)를 교황령으로, 우디네주 동쪽 끝(체르비냐노, 1918년까지 오스트리아)을 베네치아로 둠
+const SARDINIA_IT = ['IT-TO', 'IT-CN', 'IT-AT', 'IT-AL', 'IT-BI', 'IT-VC', 'IT-NO', 'IT-VB', 'IT-AO', 'IT-GE', 'IT-SV', 'IT-SP',
+  'IT-CA', 'IT-CI', 'IT-NU', 'IT-OG', 'IT-OR', 'IT-OT', 'IT-SS', 'IT-VS'];
+const LOMBARDY = ['IT-MI', 'IT-BG', 'IT-BS', 'IT-CO', 'IT-CR', 'IT-LC', 'IT-LO', 'IT-MB', 'IT-SO', 'IT-VA', 'IT-PV'];
+const VENETIA = ['IT-VE', 'IT-PD', 'IT-VI', 'IT-VR', 'IT-TV', 'IT-BL', 'IT-RO', 'IT-UD', 'IT-PN', 'IT-MN'];
+const DUCHIES = ['IT-PR', 'IT-PC', 'IT-MO', 'IT-RE', 'IT-MS', 'IT-LU', 'IT-FI', 'IT-PO', 'IT-PT', 'IT-PI', 'IT-LI', 'IT-AR', 'IT-SI', 'IT-GR'];
+const PAPAL_N = ['IT-BO', 'IT-FE', 'IT-RA', 'IT-FC', 'IT-RN', 'IT-PU', 'IT-AN', 'IT-MC', 'IT-FM', 'IT-AP', 'IT-PG', 'IT-TR', 'IT-RI'];
+const NAPLES = ['IT-AQ', 'IT-TE', 'IT-PE', 'IT-CH', 'IT-CB', 'IT-IS', 'IT-NA', 'IT-CE', 'IT-SA', 'IT-AV', 'IT-BN', 'IT-BA', 'IT-BT', 'IT-FG', 'IT-TA', 'IT-BR', 'IT-LE',
+  'IT-PZ', 'IT-MT', 'IT-CS', 'IT-CZ', 'IT-KR', 'IT-VV', 'IT-RC', 'IT-AG', 'IT-CL', 'IT-CT', 'IT-EN', 'IT-ME', 'IT-PA', 'IT-RG', 'IT-SR', 'IT-TP'];
+const LAZIO_S = split('프로시노네·라티나', ['IT-FR', 'IT-LT'], [['나폴리', [NAPLES_LAZIO]]], '교황령');
+const IT_IM = split('IT-IM', ['IT-IM'], [['망통', [MENTON]]], '임페리아');
+own([...whole(...SARDINIA_IT), IT_IM.임페리아], [[1815, 'sardinia'], [1861, 'italy']]);
+own([IT_IM.망통], [[1815, 'sardinia'], [1860, 'france']]); // 망통·로크브륀: E1처럼 1860년부터 프랑스(1861년 매입)
+own(whole(...LOMBARDY), [[1815, 'austria'], [1859, 'sardinia'], [1861, 'italy']]);
+own(whole(...VENETIA), [[1815, 'austria'], [1866, 'italy']]);
+own(whole(...DUCHIES), [[1815, 'italian-duchies'], [1860, 'sardinia'], [1861, 'italy']]);
+own(whole(...PAPAL_N), [[1815, 'papal-states'], [1860, 'sardinia'], [1861, 'italy']]);
+// 바티칸(VAT) 조각은 로마 안의 작은 조각이다. 1929년 바티칸 시국 전까지 로마와 같은 쪽
+own([...whole('IT-RM', 'IT-VT', 'VAT'), LAZIO_S.교황령], [[1815, 'papal-states'], [1870, 'italy']]);
+own([...whole(...NAPLES), LAZIO_S.나폴리], [[1815, 'two-sicilies'], [1860, 'sardinia'], [1861, 'italy']]);
+own(whole(...idsOf('SMR')), [[1815, 'san-marino']]);
+
+// 러시아 제국 (1815~1917) ───────────────────────────────
 // - 포함: 러시아 유럽 쪽 조각(칼리닌그라드=동프로이센 제외), 핀란드 대공국(1809~1917, 황제가 대공을 겸한 자치 대공국으로 제국의 일부. 올란드 포함),
 //   발트 3현(에스틀란트·리플란트·쿠를란트)과 리투아니아(메멜 지방 제외), 벨라루스, 우크라이나(갈리치아·부코비나·카르파티아 루스 제외),
 //   폴란드 의회 왕국(1815~1915, 1867년부터 '비스와 지방'으로 직할)과 비아위스토크(그로드노현), 베사라비아(1812~, 1856~1878년 남베사라비아 제외),
-//   캅카스(그루지야·아르메니아·아제르바이잔. 이그디르=에리반현 수르말루군은 1828년 투르크만차이 조약부터)
+//   캅카스(그루지야 1801~1810, 굴리스탄 조약(1813)으로 얻은 아제르바이잔 칸국들·다게스탄)
+// - 1828년 투르크만차이 조약: 페르시아(카자르)에게서 에리반·나흐치반 칸국(지금의 아르메니아 중부·남서부, 나흐치반, 이그디르=수르말루)을 얻음. 그전은 이 지도에 없는 나라라 비워 둔다
+// - 1829년 아드리아노플 조약: 오스만에게서 아할치헤·아할칼라키(삼츠헤-자바헤티)와 흑해 동쪽 해안(체르케스, 쿠반강 남쪽)을 얻음
 // - 1878년 베를린 조약(산스테파노 조약 수정): 남베사라비아를 되찾고, 오스만에게서 카르스·아르다한·올투(카르스주)와 바투미·아르트빈(바툼주)을 얻음.
+// - 도나우강 삼각주(1829~1856 러시아)는 1만 km² 미만이라 나누지 않았다(툴체아주 = 오스만, 1878년 루마니아)
 // - 핀란드 대공국과 폴란드 의회 왕국은 CShapes 2.0도 러시아(GW 365)에 넣는다
 const RUS_ALL = idsOf('RUS');
-const POLAND_RU = ['PL-MZ', 'PL-LD', 'PL-LU', 'PL-SK', 'PL-PD'];
-const POLAND_SPLIT = ['PL-KP', 'PL-WP', 'PL-SL', 'PL-MA'];
-const UA_AUSTRIA = ['UA-46', 'UA-26', 'UA-21'];
-const MEMEL_SPLIT = ['LT-KL', 'LT-TA'];
-const RE_COMMON = [
-  ...minus(RUS_ALL, 'RU-KGD', 'RU-ARK'), ...idsOf('FIN', 'ALD', 'EST', 'LVA', 'BLR'), ...minus(idsOf('LTU'), ...MEMEL_SPLIT),
-  ...minus(idsOf('UKR'), ...UA_AUSTRIA, 'UA-61', 'UA-77', 'UA-51'), ...POLAND_RU, ...minus(idsOf('GEO'), 'GE-AJ'), ...idsOf('ARM', 'AZE'), 'TR-76',
-];
-const RE_SPLIT = U(
-  D(F('RU-ARK'), [FRANZ_JOSEF]),
-  I(F(...POLAND_SPLIT), [CONGRESS]),
-  D(F(...MEMEL_SPLIT), [MEMEL]),
-  I(F('UA-61'), [VOLHYNIA_S]),
-  I(F('UA-77'), [KHOTYN]),
-);
-// 몰도바(베사라비아와 드니스테르 왼쪽 기슭)·오데사주 가운데 남베사라비아 밖
-const BESSARABIA_N = D(F(...idsOf('MDA'), 'UA-51'), [S_BESSARABIA]);
-const BESSARABIA_S = I(F(...idsOf('MDA'), 'UA-51'), [S_BESSARABIA]);
-const RE_EU_1860 = U(F(...RE_COMMON), RE_SPLIT, BESSARABIA_N);
-const RE_EU_1878 = U(RE_EU_1860, BESSARABIA_S, F('GE-AJ', 'TR-36', 'TR-75'), I(F('TR-08'), [ARTVIN_RU]), I(F('TR-25'), [OLTU]));
+const ARK = split('RU-ARK', ['RU-ARK'], [['프란츠요제프', [FRANZ_JOSEF]]], '러시아');
+const KUBAN = split('쿠반', ['RU-KDA', 'RU-AD', 'RU-KC'], [['체르케스', [CIRCASSIA]]], '러시아');
+const BESSARABIA = split('베사라비아', [...idsOf('MDA'), 'UA-51'], [['남', [S_BESSARABIA]]], '북');
+const GE_SZ = split('GE-SZ', ['GE-SZ'], [['포티', [POTI]]], '사메그렐로');
+const ERIVAN = ['AM-AG', 'AM-AR', 'AM-AV', 'AM-ER', 'AM-GR', 'AM-KT', 'AM-VD'];
+const NAKHCHIVAN = ['AZ-BAB', 'AZ-CUL', 'AZ-KAN', 'AZ-NX', 'AZ-ORD', 'AZ-SAD', 'AZ-SAH', 'AZ-SAR'];
+own([...whole(...minus(RUS_ALL, 'RU-KGD', 'RU-ARK', 'RU-KDA', 'RU-AD', 'RU-KC'), ...idsOf('FIN', 'ALD', 'EST', 'LVA', 'BLR'), ...minus(idsOf('LTU'), 'LT-KL', 'LT-TA'),
+  ...minus(idsOf('UKR'), ...UA_AUSTRIA, 'UA-61', 'UA-77', 'UA-51'), 'PL-MZ', 'PL-LD', 'PL-LU', 'PL-SK', 'PL-PD',
+  ...minus(idsOf('GEO'), 'GE-AJ', 'GE-SJ', 'GE-SZ'), ...minus(idsOf('ARM'), ...ERIVAN), ...minus(idsOf('AZE'), ...NAKHCHIVAN)), GE_SZ.사메그렐로,
+ARK.러시아, KUBAN.러시아, BESSARABIA.북, PL4.러시아, MEMEL_LT.러시아, UA61.러시아, UA77.러시아], [[1815, 'russia']]);
+// 프란츠요제프 제도: 1873년 오스트리아-헝가리 탐험대가 찾은 무주지(1926년 소련 영유 선언)
+own([ARK.프란츠요제프], [[1815, null]]);
+// 남베사라비아(카훌·볼흐라드·이즈마일): 1856년 파리 조약으로 몰다비아, 1859년 연합 공국(루마니아), 1878년 베를린 조약으로 러시아
+own([BESSARABIA.남], [[1815, 'russia'], [1856, 'moldavia'], [1859, 'romania'], [1878, 'russia']]);
+// 에리반·나흐치반 칸국과 수르말루(이그디르): 1828년까지 페르시아(이 지도에 없는 나라라 비워 둠)
+own(whole(...ERIVAN, ...NAKHCHIVAN, 'TR-76'), [[1815, null], [1828, 'russia']]);
+own([...whole('GE-SJ'), KUBAN.체르케스, GE_SZ.포티], [[1815, 'ottoman'], [1829, 'russia']]);
+
+// 오스만 제국과 발칸 ─────────────────────────────────────
+// 오스만은 권역 바깥선 안(지금의 튀르키예·키프로스·발칸·캅카스 일부)만 그린다.
+// 점령지 기준(보스니아와 같음): 법적 주권은 오스만에 남았지만 다른 나라가 점령·통치한 땅은 오스만 색의 지역 항목에 occupied_by를 단다.
+// 키프로스(1878년 키프로스 협약으로 영국 관리, 1914년 11월 영국 합병), 도데카니사(1912년 이탈리아 점령, 1923년 로잔 조약으로 이탈리아), 보스니아(위)
+const TR08 = split('TR-08', ['TR-08'], [['러시아', [ARTVIN_RU]]], '오스만');
+const TR25 = split('TR-25', ['TR-25'], [['러시아', [OLTU]]], '오스만');
+own([...whole('GE-AJ', 'TR-36', 'TR-75'), TR08.러시아, TR25.러시아], [[1815, 'ottoman'], [1878, 'russia']]);
+own([...whole(...minus(idsOf('TUR'), 'TR-76', 'TR-36', 'TR-75', 'TR-08', 'TR-25')), TR08.오스만, TR25.오스만], [[1815, 'ottoman']]);
+own(whole(...idsOf('CYP', 'CYN', 'ESB', 'WSB')), [[1815, 'ottoman'], [1878, 'cyprus-british']]);
+// 그리스: 1830년 런던 의정서(1832년 아르타-볼로스선으로 확정; 독립 전쟁 끝에 사실상 차지한 땅이라 1830년부터 이 선으로 둠) → 1864년 이오니아 제도 →
+// 1881년 테살리아·아르타 → 1913년 에피루스 남부·마케도니아 남부·크레타·북에게해 섬들.
+// 쪼개지 않은 근사: 북스포라데스(테살리아 지역 안, 1830년 그리스)를 1881년까지 오스만으로, 키티라섬(아티키 지역 안, 1864년까지 이오니아 제도)을 1830년부터 그리스로,
+// 엘라소나(라리사 북부, 1912년까지 오스만)를 1881년부터 그리스로, 이오니아 제도의 1815년 버전은 파르가(1819년 오스만)를 넣지 않음
+const GR_L = split('GR-L', ['GR-L'], [['도데카니사', [DODECANESE]]], '키클라데스');
+const GR_D = split('GR-D', ['GR-D'], [['아르타', [ARTA_1881]]], '에피루스');
+const GR_A = split('GR-A', ['GR-A'], [['서트라키아', [W_THRACE]]], '동마케도니아');
+own([...whole('GR-J', 'GR-H', 'GR-A1', 'GR-G'), GR_L.키클라데스], [[1815, 'ottoman'], [1830, 'greece']]);
+own([GR_L.도데카니사], [[1815, 'ottoman'], [1912, 'dodecanese-occupied']]); // 1923년 로잔 조약으로 이탈리아 (B 구간)
+own(whole('GR-F'), [[1815, 'ionian-islands'], [1864, 'greece']]);
+own([...whole('GR-E'), GR_D.아르타], [[1815, 'ottoman'], [1881, 'greece']]);
+own([...whole('GR-B', 'GR-C', 'GR-69', 'GR-K'), GR_D.에피루스, GR_A.동마케도니아], [[1815, 'ottoman'], [1913, 'greece']]);
+own(whole('GR-M'), [[1815, 'ottoman'], [1898, 'cretan-state'], [1913, 'greece']]);
+// 불가리아: 1878년 베를린 조약으로 자치 공국(도나우강~발칸산맥, 소피아, 남도브루자)과 동루멜리아(발칸산맥 남쪽 자치주) → 1885년 통합 → 1908년 독립 →
+// 1913년 피린 마케도니아·로도피(카르잘리·스몰랸)·서트라키아를 얻고 남도브루자를 루마니아에 넘김.
+// 쪼개지 않은 근사: 지금 세르비아 땅인 차리브로드·보실레그라드(1919년까지 불가리아), 스빌렌그라드·이빌로브그라드·말코터르노보(1913년까지 오스만),
+// 디디모티호·오레스티아다(1913~1915 오스만, 서트라키아 안)
+const BG_PRINCIPALITY = ['BG-05', 'BG-06', 'BG-12', 'BG-15', 'BG-11', 'BG-07', 'BG-04', 'BG-18', 'BG-17', 'BG-25', 'BG-27', 'BG-03', 'BG-23', 'BG-22', 'BG-14', 'BG-10'];
+const BG_RUMELIA = ['BG-16', 'BG-13', 'BG-24', 'BG-20', 'BG-28', 'BG-02', 'BG-26'];
+own(whole(...BG_PRINCIPALITY), [[1815, 'ottoman'], [1878, 'bulgaria']]);
+own(whole('BG-08', 'BG-19'), [[1815, 'ottoman'], [1878, 'bulgaria'], [1913, 'romania']]);
+own(whole(...BG_RUMELIA), [[1815, 'ottoman'], [1878, 'eastern-rumelia'], [1885, 'bulgaria']]);
+own([...whole('BG-01', 'BG-09', 'BG-21'), GR_A.서트라키아], [[1815, 'ottoman'], [1913, 'bulgaria']]);
+// 루마니아: 몰다비아·왈라키아 공국(오스만 종주) → 1859년 연합 공국(1862년 통합, 1866년부터 루마니아) → 1878년 독립·북도브루자 → 1913년 남도브루자(위).
+// 브론체아주는 밀코브강이 몰다비아·왈라키아 경계지만 대부분 몰다비아(푸트나)로 둔다
+const MOLDAVIA_RO = ['RO-BT', 'RO-IS', 'RO-NT', 'RO-BC', 'RO-VS', 'RO-GL', 'RO-VN'];
+const WALLACHIA_RO = ['RO-AG', 'RO-B', 'RO-BR', 'RO-BZ', 'RO-CL', 'RO-DB', 'RO-DJ', 'RO-GJ', 'RO-GR', 'RO-IF', 'RO-IL', 'RO-MH', 'RO-OT', 'RO-PH', 'RO-TR', 'RO-VL'];
+own(whole(...MOLDAVIA_RO), [[1815, 'moldavia'], [1859, 'romania']]);
+own(whole(...WALLACHIA_RO), [[1815, 'wallachia'], [1859, 'romania']]);
+own(whole('RO-TL', 'RO-CT'), [[1815, 'ottoman'], [1878, 'romania']]);
+// 세르비아: 1817년 자치(베오그라드 파샬리크: 슈마디야·마치바·포모라블레·우지체·크랄레보) → 1833년 여섯 지역(크라이나·츠르나레카·티목·파라친·크루셰바츠·스타리블라흐) →
+// 1878년 독립·니시·피로트·토플리차·브라네 → 1913년 노비파자르 산자크 동부·코소보 동부·바르다르 마케도니아.
+// 쪼개지 않은 근사: 알렉시나츠(1833년, 니시 지구 안)를 1878년부터로, 프레셰보·부야노바츠(1912년까지 오스만)를 1878년부터 세르비아로
+const RS16 = split('RS-16', ['RS-16'], [['산자크', [SANJAK_RS]]], '우지체');
+const RS18 = split('RS-18', ['RS-18'], [['산자크', [SANJAK_RS]]], '크랄레보');
+own([...whole('RS-00', 'RS-08', 'RS-09', 'RS-10', 'RS-11', 'RS-12', 'RS-13', 'RS-17'), RS16.우지체, RS18.크랄레보], [[1815, 'ottoman'], [1817, 'serbia']]);
+own(whole('RS-14', 'RS-15', 'RS-19'), [[1815, 'ottoman'], [1833, 'serbia']]);
+own(whole('RS-20', 'RS-21', 'RS-22', 'RS-23', 'RS-24'), [[1815, 'ottoman'], [1878, 'serbia']]);
+// 스트루미차 골짜기(스트루미차·노보셀로·보실로보·바실레보): 1913년 부쿠레슈티 조약으로 불가리아, 1919년 뇌이 조약으로 세르브·크로아트·슬로베네 왕국
+const STRUMICA = ['MK-73', 'MK-56', 'MK-07', 'MK-11'];
+own(whole(...STRUMICA), [[1815, 'ottoman'], [1913, 'bulgaria']]);
+const KOS_MNE = ['KOS-5886', 'KOS-5887', 'KOS-5888', 'KOS-5889', 'KOS-5890']; // 페치·이스토크·클리나·데차니·자코비차: 1913년 몬테네그로
+own([...whole(...minus(idsOf('MKD'), ...STRUMICA), ...minus(idsOf('KOS'), ...KOS_MNE)), RS16.산자크, RS18.산자크], [[1815, 'ottoman'], [1913, 'serbia']]);
+// 몬테네그로: 1878년 전(옛 몬테네그로·브르다: 체티네·다닐로브그라드·샤브니크·자블라크·콜라신 서부 산지·안드리예비차·포드고리차 북부·츠르므니차).
+// 콜라신·안드리예비차는 1858~1878년에야 굳어진 땅이고 콜라신 읍은 1878년까지 오스만이지만 한 버전으로 묶음 →
+// 1878년 베를린 조약(니크시치·포드고리차·바르·플루지네, 1880년 울치니도 이 버전에 넣음) → 1913년 산자크 서부(플레블랴·비옐로폴레·베라네·로자예)·플라브·메토히야 서부
+const ME16 = split('ME-16', ['ME-16'], [['북부', [PODGORICA_N]]], '남부');
+const ME02 = split('ME-02', ['ME-02'], [['츠르므니차', [CRMNICA]]], '바르');
+const ME06 = split('ME-06', ['ME-06'], [['코토르', [KOTOR_TOWN]]], '체티네');
+own([ME06.코토르], [[1815, 'austria'], [1867, 'austria-hungary']]);
+own([...whole('ME-07', 'ME-18', 'ME-21', 'ME-01', 'ME-09'), ME06.체티네, ME16.북부, ME02.츠르므니차], [[1815, 'montenegro']]);
+own([...whole('ME-12', 'ME-15', 'ME-11', 'ME-20'), ME16.남부, ME02.바르], [[1815, 'ottoman'], [1878, 'montenegro']]);
+own(whole('ME-03', 'ME-04', 'ME-13', 'ME-14', 'ME-17', ...KOS_MNE), [[1815, 'ottoman'], [1913, 'montenegro']]);
+// 알바니아: 1912년 11월 독립 선언, 1913년 런던 대사 회의·피렌체 의정서로 국경 확정(지금 국경과 거의 같음)
+own(whole(...idsOf('ALB')), [[1815, 'ottoman'], [1913, 'albania']]);
+
+// 표 검사: 모든 조각을 정확히 한 번 썼는지, 모든 단위에 주인을 적었는지
+{
+  const unused = EU.ids.filter((id) => !claimed.has(id));
+  if (unused.length) throw new Error(`europe.mjs 소유표: 쓰지 않은 조각 ${unused.length}개 (${unused.slice(0, 10).join(', ')} …)`);
+  const ownerless = [...units.keys()].filter((u) => !ownership.has(u));
+  if (ownerless.length) throw new Error(`europe.mjs 소유표: 주인을 적지 않은 단위 ${ownerless.join(', ')}`);
+}
+
+// 표 → 해마다 나라별 단위 목록 → 같은 목록이 이어지는 기간을 한 버전으로
+const ownerAt = (timeline, year) => timeline.filter(([y]) => y <= year).at(-1)[1];
+const segments = {}; // 나라 → [[from, to, 단위 목록]]
+const nullSegments = []; // 주인 없는 단위의 기간
+for (let year = TABLE_FROM; year < TABLE_TO; year++) {
+  const byOwner = new Map();
+  for (const [u, timeline] of ownership) {
+    const owner = ownerAt(timeline, year);
+    if (!byOwner.has(owner)) byOwner.set(owner, []);
+    byOwner.get(owner).push(u);
+  }
+  for (const [owner, list] of byOwner) {
+    list.sort();
+    const segs = owner === null ? nullSegments : (segments[owner] ??= []);
+    const last = segs.at(-1);
+    if (last && last[1] === year && last[2].join('|') === list.join('|')) last[1] = year + 1;
+    else segs.push([year, year + 1, list]);
+  }
+}
+// 단위 목록 → 도형: 통째 조각은 F로 한 번에 합치고(arc 병합), 나눈 조각은 polyclip 합집합으로 더한다. 같은 목록은 한 번만 계산한다
+const unitGeom = new Map();
+const geomOfUnit = (u) => {
+  if (!unitGeom.has(u)) unitGeom.set(u, units.get(u)());
+  return unitGeom.get(u);
+};
+const builtGeom = new Map();
+const build = (list) => {
+  const key = list.join('|');
+  if (!builtGeom.has(key)) {
+    const ids = list.filter((u) => units.get(u) === null);
+    const parts = list.filter((u) => units.get(u) !== null).map(geomOfUnit);
+    builtGeom.set(key, parts.length ? U(...(ids.length ? [F(...ids)] : []), ...parts) : F(...ids));
+  }
+  return builtGeom.get(key);
+};
+// 1914년 7월 모습이 이어지는 마지막 해(그 뒤 첫 국경 변화. 1914년 하반기 변화는 1915로). null이면 지금까지.
+// 다음 구간(1914~1991, B)을 채울 때 이 값에서 버전을 나눈다
+const TAIL_TO = {
+  uk: 1922, // 아일랜드 자유국 (E1 버전 그대로)
+  france: 1919, // 베르사유 조약으로 알자스·로렌 회복 (E1)
+  russia: 1918, // E1과 같음 (1917년 혁명, 1918년 브레스트-리토프스크 조약)
+  'german-empire': 1919, // 베르사유 조약
+  'austria-hungary': 1919, // 1918년 해체, 1919년 생제르맹·트리아농 조약
+  italy: 1919, // 생제르맹 조약(남티롤·트리에스테)
+  ottoman: 1915, // 1915년 불가리아에 마리차강 동쪽 띠를 넘김
+  'cyprus-british': 1915, // 1914년 11월 영국 합병(B 구간에서 나눔)
+  'dodecanese-occupied': 1923, // 로잔 조약으로 이탈리아 영토
+  greece: 1919, // 1919년 스미르나 점령·뇌이 조약(서트라키아)
+  bulgaria: 1919, // 뇌이 조약
+  serbia: 1919, // 1918년 12월 세르브·크로아트·슬로베네 왕국
+  montenegro: 1919, // 1918년 11월 세르비아에 합병
+  romania: 1918, // 1918년 베사라비아·부코비나·트란실바니아 통합
+  albania: 1921, // 1차 대전 중 점령은 되돌려졌고, 1921년 대사 회의가 국경을 다시 확인
+  denmark: 1918, // 1918년 12월 아이슬란드 왕국 분리 (1920년 북슐레스비히 회복)
+  belgium: 1920, // 오이펜-말메디
+  norway: 1925, // 스발바르 편입
+  netherlands: null,
+  luxembourg: null,
+  switzerland: null,
+  spain: null,
+  portugal: null,
+  sweden: null,
+  liechtenstein: null,
+  andorra: null,
+  'san-marino': null,
+  monaco: null,
+};
+const tableVersions = (id) => {
+  const segs = segments[id];
+  if (!segs) throw new Error(`europe.mjs: 소유표에 ${id}의 땅이 없음`);
+  const reaches = segs.at(-1)[1] === TABLE_TO;
+  if (reaches !== Object.hasOwn(TAIL_TO, id)) throw new Error(`europe.mjs: ${id}의 TAIL_TO가 ${reaches ? '없음' : '필요 없음'}`);
+  return segs.map(([from, to, list]) => [from, to === TABLE_TO ? TAIL_TO[id] : to, list]);
+};
 
 // 소련의 유럽 쪽
 // - 1918~1946 버전(1921년 리가 조약~1939년 무렵 경계): 핀란드(1920 타르투 조약)·에스토니아·라트비아·리투아니아·폴란드(서벨라루스·서우크라이나)·
@@ -210,17 +591,63 @@ const CAUCASUS_S = ring([[36.0, 38.0], [36.0, 41.0], [40.0, 43.4], [42.0, 43.2],
 const WEST_CUT = ring([[15.0, 60.0], [27.8, 59.5], [28.2, 57.5], [31.3, 56.0], [32.7, 53.8], [31.8, 52.1], [34.4, 51.3], [35.4, 50.4], [38.2, 49.9], [40.2, 49.6], [39.8, 47.8], [38.2, 47.1], [36.0, 45.0], [30.0, 40.0], [15.0, 40.0]]);
 const RUSSIA_FED = D(SOVIET_1946, [CENTRAL_ASIA], [CAUCASUS_S], [WEST_CUT]);
 
+// 1919년 뒤 영국·프랑스 (E1, 소유표 밖). 프랑스에는 임페리아 조각에서 떼어 낸 망통을 더한다(versions)
+const UK_1922 = F(...UK_GB);
+const FRANCE_1947 = F(...FRANCE_ALL);
+// 1919~1947: 탕드·라브리그는 이탈리아
+const FRANCE_1860 = D(FRANCE_1947, [TENDE]);
+// 러시아 제국의 권역 바깥선 밖(손 도형): 1860년 전에는 네르친스크 조약(1689) 경계라 연해주(청, QING_1724 안)와
+// 흑룡강 북쪽·하류(외만주: 아르군강 합류점에서 스타노보이산맥을 따라 우다만까지의 남쪽, 아이훈 조약(1858)·베이징 조약(1860)으로 러시아)를 뺀다.
+// 외만주는 청 도형(흑룡강 남쪽까지)에도 없어 1815~1859년에는 비어 있다(그전과 같음, 만주 빈 땅 검사의 흑룡강 북쪽 띠 약 7,600km²).
+// 사할린은 손 도형 그대로 러시아로 둔다(근사, 1855년 시모다 조약으로 러일 공동 거주)
+const OUTER_MANCHURIA = ring(L_AMUR.slice(0, 6), [[121.0, 54.6], [124.0, 55.6], [128.0, 55.8], [132.0, 55.6], [135.0, 55.8], [136.5, 55.0], [140.5, 55.0], [142.0, 54.5], [141.8, 53.4], [141.8, 48.4]]);
+const RUSSIA_PRE1860 = D(RUSSIA_1860, [PRIMORYE], [OUTER_MANCHURIA]);
+const RUSSIA_EAST = [[1815, RUSSIA_PRE1860], [1860, RUSSIA_1860], [1898, RUSSIA_1898], [1905, RUSSIA_1905]];
+const outsideMemo = new Map();
+const outsideOf = (multi) => {
+  if (!outsideMemo.has(multi)) outsideMemo.set(multi, outside(multi));
+  return outsideMemo.get(multi);
+};
+// 러시아 제국: 유럽 쪽(소유표)과 바깥(손 도형)이 바뀌는 해를 모두 버전 경계로
+const russiaVersions = () => {
+  const eu = tableVersions('russia');
+  const cuts = [...new Set([...eu.map(([from]) => from), ...RUSSIA_EAST.map(([y]) => y)])].sort((a, b) => a - b);
+  return cuts.map((from, i) => {
+    const to = cuts[i + 1] ?? TAIL_TO.russia;
+    const list = eu.filter(([f]) => f <= from).at(-1)[2];
+    const east = RUSSIA_EAST.filter(([y]) => y <= from).at(-1)[1];
+    return [from, to, U(outsideOf(east), build(list))];
+  });
+};
+// 소유표의 나라 (영국·프랑스·러시아 밖)
+const TABLE_ENTITIES = ['prussia', 'north-german-confederation', 'german-empire', 'german-states', 'south-german-states', 'austria', 'austria-hungary', 'bosnia-occupied', 'cyprus-british', 'dodecanese-occupied', 'krakow',
+  'sardinia', 'italy', 'papal-states', 'two-sicilies', 'italian-duchies', 'san-marino', 'monaco', 'netherlands', 'belgium', 'luxembourg', 'switzerland', 'liechtenstein',
+  'spain', 'portugal', 'andorra', 'denmark', 'sweden-norway', 'sweden', 'norway', 'ottoman', 'greece', 'ionian-islands', 'cretan-state', 'bulgaria', 'eastern-rumelia',
+  'moldavia', 'wallachia', 'romania', 'serbia', 'montenegro', 'albania'];
+{
+  const missing = Object.keys(segments).filter((id) => !TABLE_ENTITIES.includes(id) && !['uk', 'france', 'russia'].includes(id));
+  if (missing.length) throw new Error(`europe.mjs: 소유표의 나라 ${missing.join(', ')}가 TABLE_ENTITIES에 없음`);
+}
+// 영국은 1801~1922년 내내 같은 조각이라 소유표의 한 버전을 1801년부터 쓴다
+const ukVersions = () => {
+  const t = tableVersions('uk');
+  if (t.length !== 1) throw new Error('europe.mjs: 영국의 1815~1914 버전이 하나가 아님');
+  return [[1801, t[0][1], build(t[0][2])], [1922, null, UK_1922]];
+};
+
 // 나라 id: [[from, to, 멀티폴리곤, 확실성?], ...]. to가 null이면 지금까지, 확실성은 'disputed' 등(없으면 'estimated').
 // 출처(geojson의 source)는 이 권역의 source
 export const versions = {
-  russia: [
-    [1860, 1878, U(outside(RUSSIA_1860), RE_EU_1860)],
-    [1878, 1898, U(outside(RUSSIA_1860), RE_EU_1878)],
-    [1898, 1905, U(outside(RUSSIA_1898), RE_EU_1878)],
-    [1905, 1918, U(outside(RUSSIA_1905), RE_EU_1878)],
-  ],
+  russia: russiaVersions(),
   'soviet-union': [[1918, 1946, U(outside(SOVIET), SU_EU_1921)], [1946, 1992, U(outside(SOVIET_1946), SU_EU_1946)]],
   'russia-fed': [[1992, null, U(outside(RUSSIA_FED), RF_EU)]],
-  uk: [[1801, 1922, UK_1801], [1922, null, UK_1922]],
-  france: [[1815, 1860, FRANCE_1815], [1860, 1871, FRANCE_1860], [1871, 1919, FRANCE_1871], [1919, 1947, FRANCE_1860], [1947, null, FRANCE_1947]],
+  uk: ukVersions(),
+  france: [...tableVersions('france').map(([from, to, list]) => [from, to, build(list)]), [1919, 1947, U(FRANCE_1860, geomOfUnit(IT_IM.망통))], [1947, null, U(FRANCE_1947, geomOfUnit(IT_IM.망통))]],
+  ...Object.fromEntries(TABLE_ENTITIES.map((id) => [id, tableVersions(id).map(([from, to, list]) => [from, to, build(list)])])),
 };
+
+// 빈 땅 검사 구역 (DESIGN.md §5.4): 권역 바깥선(domain, 모든 조각의 합)에서 그해 주인 없는 단위(소유표의 null)를 뺀 곳.
+// 주인 없는 단위가 같은 기간마다 구역 하나. 1815~1914년(뼈대를 채운 구간)만 검사한다. 1815년 전(E3)·1914년 뒤(B)를 채우면 넓힌다.
+// 일부러 비워 둔 곳: 지브롤터·몰타(영국 식민지, E1 원칙), 스발바르(1925년까지 무주지)·얀마옌(1929년까지 무주지), 프란츠요제프 제도(1926년까지 무주지),
+// 에리반·나흐치반 칸국과 수르말루(1828년까지 페르시아)
+export const gapZones = nullSegments.map(([from, to, list]) => ({ name: `유럽 ${from}~${to - 1}`, zone: D(domain, build(list)), from, to }));

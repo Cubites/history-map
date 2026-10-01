@@ -69,7 +69,7 @@ export function EventPanel({ data }: { data: StaticData }) {
         <div>
           <h2>
             {entity.names.ko}
-            {entity.names.hanja && <span className="hanja"> {entity.names.hanja}</span>}
+            {(entity.names.hanja ?? entity.names.native) && <span className="hanja"> {entity.names.hanja ?? entity.names.native}</span>}
           </h2>
           <div className="panel-period">{formatRange(entity.from, entity.to)}</div>
           {occupier && occupation && (

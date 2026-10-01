@@ -586,7 +586,7 @@ export default function WorldMap({ data }: { data: StaticData }) {
       {hovered && hoveredEntity && (
         <div className="map-tooltip" style={{ left: hovered.x + 14, top: hovered.y + 14 }}>
           <strong>{hoveredEntity.names.ko}</strong>
-          {hoveredEntity.names.hanja && <span className="hanja"> {hoveredEntity.names.hanja}</span>}
+          {(hoveredEntity.names.hanja ?? hoveredEntity.names.native) && <span className="hanja"> {hoveredEntity.names.hanja ?? hoveredEntity.names.native}</span>}
           <div>{formatRange(hoveredEntity.from, hoveredEntity.to)}</div>
         </div>
       )}

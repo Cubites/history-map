@@ -1,10 +1,11 @@
 # 유럽 나라
 # 짝 생성기 권역 파일: scripts/geo/areas/europe.mjs (유럽 쪽 영토는 행정구역 조각으로 만든 근사, DESIGN.md §5.2)
-# 2026-10-01 west.yaml에서 옮김(id 그대로). 영토는 아직 19세기 이후(한국사와 닿는 시기)만 있다. 운영자 검수 필요.
+# 2026-10-01 west.yaml에서 옮김(id 그대로). 2026-10-02(작업 E2) 1815~1914년 유럽 뼈대의 나라를 더함(영토는 1815년부터). 운영자 검수 필요.
+# 이름의 native는 원어 표기. '(묶음)'은 여러 나라를 한 항목으로 묶은 것(나라별 심화 때 나눔, docs/EUROPE_DRAFT.md)
 
 - id: france
   level: polity
-  names: { ko: 프랑스, en: France }
+  names: { ko: 프랑스, en: France, native: France }
   from: 987
   to: null
   color: "#6d7fb8"
@@ -16,7 +17,7 @@
 
 - id: uk
   level: polity
-  names: { ko: 영국, en: United Kingdom }
+  names: { ko: 영국, en: United Kingdom, native: United Kingdom of Great Britain and Ireland }
   from: 1707
   to: null
   color: "#7a6fa8"
@@ -28,14 +29,14 @@
 
 - id: russia
   level: polity
-  names: { ko: 러시아 제국, en: Russian Empire }
+  names: { ko: 러시아 제국, en: Russian Empire, native: Российская империя }
   from: 1721
   to: 1917
   color: "#6f8f6f"
-  summary: 베이징 조약(1860)으로 연해주를 차지해 조선과 국경을 맞댐. 삼국 간섭과 아관파천으로 한반도에 영향력을 넓혔으나 러일 전쟁(1904~1905)에서 짐. 지도에는 1860년 이후 영토만 대략 표시. 두만강 하구 북쪽 하산 지역은 1860년 베이징 조약 경계를 따름. 조선 땅이던 녹둔도도 이때 러시아 쪽에 들어가 조선이 반환을 요구함
+  summary: 빈 회의(1815)로 폴란드 왕국을 얻고 크림 전쟁(1853~1856)에 졌으나 러시아-튀르크 전쟁(1877~1878)으로 발칸에 세력을 넓힘. 베이징 조약(1860)으로 연해주를 차지해 조선과 국경을 맞댐. 삼국 간섭과 아관파천으로 한반도에 영향력을 넓혔으나 러일 전쟁(1904~1905)에서 짐. 지도에는 1815년 이후 영토만 대략 표시. 두만강 하구 북쪽 하산 지역은 1860년 베이징 조약 경계를 따름. 조선 땅이던 녹둔도도 이때 러시아 쪽에 들어가 조선이 반환을 요구함
   basis:
     type: national_institution
-    refs: ["『고종실록』", "국사편찬위원회 『신편 한국사』"]
+    refs: ["『고종실록』", "국사편찬위원회 『신편 한국사』", "빈 회의 최종 의정서(1815)", "파리 조약(1856)", "베를린 조약(1878)"]
 
 - id: soviet-union
   level: polity
@@ -59,3 +60,502 @@
   basis:
     type: national_institution
     refs: ["국사편찬위원회 『한국사』"]
+
+# ── 1815~1914년 유럽 뼈대 (작업 E2, 영토는 scripts/geo/areas/europe.mjs의 '1815~1914 조각 소유표') ──
+
+# 서유럽
+- id: netherlands
+  level: polity
+  names: { ko: 네덜란드, en: Netherlands, native: Koninkrijk der Nederlanden }
+  from: 1815
+  to: null
+  color: "#e0994f"
+  summary: 빈 회의(1815)로 옛 오스트리아령 네덜란드(지금의 벨기에)를 합친 네덜란드 연합 왕국이 됨. 1830년 벨기에가 독립해 떨어져 나갔고 1839년 런던 조약으로 이를 인정함. 1890년까지 왕이 룩셈부르크 대공을 겸함. 지도에는 유럽 본토만 표시 (식민지 제외)
+  basis:
+    type: primary_source
+    refs: ["빈 회의 최종 의정서(1815)", "런던 조약(1839)"]
+    foundingNote: 빌럼 1세가 왕이 된 1815년을 네덜란드 왕국의 시작으로 봄. 그전의 네덜란드 공화국·바타비아 공화국·홀란트 왕국은 따로 다룸
+
+- id: belgium
+  level: polity
+  names: { ko: 벨기에, en: Belgium, native: "Belgique / België" }
+  from: 1830
+  to: null
+  color: "#d4bf5e"
+  summary: 1830년 혁명으로 네덜란드 연합 왕국에서 독립하고 1831년 레오폴드 1세를 왕으로 맞음. 1839년 런던 조약으로 영세 중립국이 되고 룩셈부르크 서부를 얻음. 1914년 독일이 중립을 어기고 침공함
+  basis:
+    type: primary_source
+    refs: ["런던 조약(1839)"]
+    foundingNote: 독립을 선언한 1830년을 시작으로 봄. 1830~1839년 지도는 법적 경계(룩셈부르크 서부는 룩셈부르크)를 따름
+
+- id: luxembourg
+  level: polity
+  names: { ko: 룩셈부르크, en: Luxembourg, native: Lëtzebuerg }
+  from: 1815
+  to: null
+  color: "#a58fc4"
+  summary: 빈 회의(1815)로 대공국이 되어 네덜란드 왕이 대공을 겸하고 독일 연방에 속함. 1839년 런던 조약으로 서부(지금의 벨기에 뤽상부르주)를 벨기에에 넘기고, 1867년 런던 조약으로 영세 중립국이 됨
+  basis:
+    type: primary_source
+    refs: ["빈 회의 최종 의정서(1815)", "런던 조약(1839)", "런던 조약(1867)"]
+    foundingNote: 대공국이 된 1815년을 시작으로 봄
+
+- id: switzerland
+  level: polity
+  names: { ko: 스위스, en: Switzerland, native: Confoederatio Helvetica }
+  from: 1291
+  to: null
+  color: "#cf6f6f"
+  summary: 빈 회의(1815)로 제네바·발레·뇌샤텔이 더해져 22개 주가 되고 영세 중립을 인정받음. 1847년 분리 동맹 전쟁 뒤 1848년 헌법으로 연방 국가가 됨
+  basis:
+    type: primary_source
+    refs: ["빈 회의 최종 의정서(1815)", "스위스 연방 헌법(1848)"]
+    foundingNote: 우리·슈비츠·운터발덴이 동맹을 맺은 1291년을 기원으로 봄
+
+- id: liechtenstein
+  level: polity
+  names: { ko: 리히텐슈타인, en: Liechtenstein, native: Fürstentum Liechtenstein }
+  from: 1719
+  to: null
+  color: "#8fa0c4"
+  summary: 오스트리아와 스위스 사이의 작은 공국. 1806년 주권국이 되고 1815~1866년 독일 연방에 속함
+  basis:
+    type: primary_source
+    refs: ["빈 회의 최종 의정서(1815)"]
+    foundingNote: 신성 로마 제국의 공국이 된 1719년을 시작으로 봄
+
+- id: spain
+  level: polity
+  names: { ko: 에스파냐, en: Spain, native: España }
+  from: 1479
+  to: null
+  color: "#d8b04c"
+  summary: 나폴레옹 전쟁 뒤 부르봉 왕가가 돌아왔으나 19세기 내내 혁명과 내전(카를로스 전쟁)이 이어짐. 1810~1820년대 아메리카 식민지 대부분이 독립하고 1898년 미국-에스파냐 전쟁으로 쿠바·필리핀 등을 잃음. 지도에는 유럽 본토와 카나리아 제도·세우타·멜리야만 표시
+  basis:
+    type: primary_source
+    refs: ["빈 회의 최종 의정서(1815)", "파리 조약(1898)"]
+    foundingNote: 카스티야와 아라곤이 합친 1479년을 시작으로 봄
+
+- id: portugal
+  level: polity
+  names: { ko: 포르투갈, en: Portugal, native: Portugal }
+  from: 1139
+  to: null
+  color: "#7da36b"
+  summary: 1822년 브라질이 독립한 뒤 아프리카 식민지를 넓힘. 1910년 혁명으로 공화국이 됨. 지도에는 유럽 본토와 아소르스·마데이라 제도만 표시
+  basis:
+    type: primary_source
+    refs: ["빈 회의 최종 의정서(1815)"]
+    foundingNote: 아폰수 1세가 왕을 칭한 1139년을 시작으로 봄
+
+- id: andorra
+  level: polity
+  names: { ko: 안도라, en: Andorra, native: Principat d'Andorra }
+  from: 1278
+  to: null
+  color: "#c99a78"
+  summary: 피레네산맥의 작은 공국. 프랑스 국가원수와 에스파냐 우르헬 주교가 함께 군주를 맡음
+  basis:
+    type: primary_source
+    refs: ["파레아주 협약(1278)"]
+    foundingNote: 푸아 백작과 우르헬 주교가 공동 영주 협약을 맺은 1278년을 시작으로 봄
+
+- id: monaco
+  level: polity
+  names: { ko: 모나코, en: Monaco, native: Principauté de Monaco }
+  from: 1297
+  to: null
+  color: "#d47f8f"
+  summary: 지중해 연안의 작은 공국. 1815년 파리 조약으로 사르데냐의 보호를 받음. 1848년 떨어져 나간 망통·로크브륀을 1861년 프랑스에 팔아 지금 크기가 됨 (지도에는 1860년까지 사르데냐 니스, 그 뒤 프랑스로 단순화)
+  basis:
+    type: primary_source
+    refs: ["파리 조약(1815)", "프랑스-모나코 조약(1861)"]
+    foundingNote: 그리말디 가문이 모나코를 차지한 1297년을 시작으로 봄
+
+# 북유럽
+- id: denmark
+  level: polity
+  names: { ko: 덴마크, en: Denmark, native: Danmark }
+  from: 936
+  to: null
+  color: "#c4685c"
+  summary: 1814년 킬 조약으로 노르웨이를 스웨덴에 넘김. 왕이 겸해 다스리던 슐레스비히·홀슈타인·라우엔부르크 공국을 두고 독일과 다투다 1864년 프로이센·오스트리아와의 전쟁에 져 세 공국을 잃음. 지도에는 아이슬란드(1918년 동군연합 왕국으로 분리)·페로 제도를 포함
+  basis:
+    type: primary_source
+    refs: ["킬 조약(1814)", "빈 조약(1864)"]
+    foundingNote: 고름 왕이 나라를 통일한 10세기(936년 무렵)를 시작으로 봄
+
+- id: sweden-norway
+  level: polity
+  names: { ko: 스웨덴-노르웨이, en: Sweden-Norway (United Kingdoms of Sweden and Norway), native: Sverige-Norge }
+  from: 1814
+  to: 1905
+  color: "#6f96c4"
+  summary: 1814년 킬 조약과 모스 협약으로 노르웨이가 자체 헌법과 의회를 지닌 채 스웨덴 왕을 함께 섬긴 연합 왕국(동군연합). 외교는 스웨덴이 맡았으며, 1905년 노르웨이가 연합 해체를 선언해 두 나라로 나뉨
+  basis:
+    type: primary_source
+    refs: ["킬 조약(1814)", "모스 협약(1814)", "카를스타드 협약(1905)"]
+
+- id: sweden
+  level: polity
+  names: { ko: 스웨덴, en: Sweden, native: Sverige }
+  from: 1523
+  to: null
+  color: "#6f96c4"
+  summary: 1905년 노르웨이와의 연합을 평화롭게 끝냄. 나폴레옹 전쟁 뒤로 전쟁에 참가하지 않는 중립 정책을 지킴
+  basis:
+    type: primary_source
+    refs: ["카를스타드 협약(1905)"]
+    foundingNote: 구스타브 바사가 칼마르 동맹에서 독립한 1523년을 시작으로 봄. 1814~1905년은 스웨덴-노르웨이 항목으로 표시
+
+- id: norway
+  level: polity
+  names: { ko: 노르웨이, en: Norway, native: Norge }
+  from: 1905
+  to: null
+  color: "#c07a6a"
+  summary: 1905년 국민 투표로 스웨덴과의 연합을 끝내고 덴마크 왕자를 호콘 7세로 맞아 독립 왕국이 됨. 지도에는 1925년 편입한 스발바르를 넣지 않음
+  basis:
+    type: primary_source
+    refs: ["카를스타드 협약(1905)"]
+    foundingNote: 연합을 끝내고 완전한 독립 왕국이 된 1905년을 시작으로 봄. 중세 노르웨이 왕국과 1814~1905년 연합 왕국 시기는 따로 다룸
+
+# 독일
+- id: prussia
+  level: polity
+  names: { ko: 프로이센 왕국, en: Kingdom of Prussia, native: Königreich Preußen }
+  from: 1701
+  to: 1918
+  color: "#5f6f8f"
+  summary: 호엔촐레른 왕가의 왕국. 빈 회의(1815)로 라인란트·베스트팔렌을 얻어 영토가 동서로 나뉨. 1834년 관세 동맹을 이끌고, 비스마르크의 철혈 정책으로 덴마크(1864)·오스트리아(1866)를 이겨 북독일 연방을 만들고 1871년 독일 제국을 세움. 지도에는 1866년까지만 따로 표시하고 그 뒤는 북독일 연방·독일 제국에 포함
+  basis:
+    type: primary_source
+    refs: ["빈 회의 최종 의정서(1815)", "프라하 조약(1866)"]
+    foundingNote: 프리드리히 1세가 왕위에 오른 1701년을 왕국의 시작으로 봄
+
+- id: german-states
+  level: polity
+  names: { ko: 독일 연방 국가들 (묶음), en: States of the German Confederation (grouped) }
+  from: 1815
+  to: 1866
+  color: "#a8b48e"
+  summary: 빈 회의(1815)로 만든 독일 연방(39개국) 가운데 프로이센·오스트리아·덴마크령 홀슈타인·라우엔부르크·룩셈부르크를 뺀 나라들을 묶은 항목. 바이에른·작센·하노버·뷔르템베르크·바덴·헤센 등 왕국·공국과 함부르크·브레멘·프랑크푸르트 같은 자유시가 들어 있음. 1866년 프로이센-오스트리아 전쟁으로 독일 연방이 해체되며 북독일 연방과 남독일 국가들로 나뉨
+  basis:
+    type: primary_source
+    refs: ["빈 회의 최종 의정서(1815)", "독일 연방 규약(1815)"]
+
+- id: north-german-confederation
+  level: polity
+  names: { ko: 북독일 연방, en: North German Confederation, native: Norddeutscher Bund }
+  from: 1866
+  to: 1870
+  color: "#5f6f8f"
+  summary: 프로이센-오스트리아 전쟁(1866) 뒤 하노버·헤센카셀·나사우·프랑크푸르트·슐레스비히홀슈타인을 합친 프로이센이 마인강 북쪽 나라들과 만든 연방 국가. 1867년 헌법을 시행했고 1871년 남독일 국가들이 합류해 독일 제국이 됨
+  basis:
+    type: primary_source
+    refs: ["프라하 조약(1866)", "북독일 연방 헌법(1867)"]
+    foundingNote: 1866년 8월 동맹 조약을 시작으로 봄. 연방 헌법은 1867년 7월에 시행됨
+
+- id: south-german-states
+  level: polity
+  names: { ko: 남독일 국가들 (묶음), en: South German states (grouped) }
+  from: 1866
+  to: 1870
+  color: "#a8b48e"
+  summary: 1866년 북독일 연방에 들지 않은 마인강 남쪽의 바이에른·뷔르템베르크·바덴·헤센 대공국 남부를 묶은 항목. 프로이센과 비밀 군사 동맹을 맺었고 프로이센-프랑스 전쟁 중 1871년 독일 제국에 합류함
+  basis:
+    type: primary_source
+    refs: ["프라하 조약(1866)"]
+
+- id: german-empire
+  level: polity
+  names: { ko: 독일 제국, en: German Empire, native: Deutsches Kaiserreich }
+  from: 1871
+  to: 1918
+  color: "#5f6f8f"
+  summary: 프로이센-프랑스 전쟁 중 1871년 1월 베르사유 궁전에서 선포된 제국. 프랑크푸르트 조약으로 알자스와 로렌 북부를 얻음. 프로이센 왕이 황제를 겸하고 비스마르크가 동맹 체제를 짰으나 빌헬름 2세의 세계 정책으로 영국과 맞섬. 1차 대전에서 져 1918년 제정이 무너짐
+  basis:
+    type: primary_source
+    refs: ["독일 제국 헌법(1871)", "프랑크푸르트 조약(1871)"]
+
+# 오스트리아
+- id: austria
+  level: polity
+  names: { ko: 오스트리아 제국, en: Austrian Empire, native: Kaisertum Österreich }
+  from: 1804
+  to: 1867
+  color: "#d6bd6e"
+  summary: 합스부르크 왕가가 1804년 세운 제국. 메테르니히가 빈 회의(1815)를 이끌고 롬바르디아·베네치아를 얻어 직접 지배하며 중부 이탈리아 공국들에도 영향력을 미침. 1848년 혁명을 누르고 1859년 롬바르디아, 1866년 베네치아를 잃었으며 프로이센에 져 독일 연방에서 밀려남. 1867년 헝가리와 타협해 오스트리아-헝가리 제국이 됨. 1864~1866년 홀슈타인은 가슈타인 협약에 따라 오스트리아가 관리한 땅으로 표시
+  basis:
+    type: primary_source
+    refs: ["빈 회의 최종 의정서(1815)", "취리히 조약(1859)", "프라하 조약(1866)"]
+    foundingNote: 프란츠 2세가 오스트리아 황제를 칭한 1804년을 시작으로 봄
+
+- id: austria-hungary
+  level: polity
+  names: { ko: 오스트리아-헝가리 제국, en: Austria-Hungary, native: Österreich-Ungarn }
+  from: 1867
+  to: 1918
+  color: "#d6bd6e"
+  summary: 1867년 대타협으로 오스트리아 황제가 헝가리 왕을 겸한 이중 제국. 베를린 조약(1878)으로 보스니아 헤르체고비나를 점령하고 1908년 병합해 세르비아와 갈등이 커짐. 1914년 사라예보 사건이 1차 대전으로 이어졌고 1918년 해체됨
+  basis:
+    type: primary_source
+    refs: ["오스트리아-헝가리 대타협(1867)", "베를린 조약(1878)"]
+
+- id: bosnia-occupied
+  level: region
+  names: { ko: 보스니아 헤르체고비나 (오스트리아-헝가리 점령지), en: Bosnia and Herzegovina (Austro-Hungarian occupation) }
+  from: 1878
+  to: 1907
+  color: "#b5845a"
+  summary: 베를린 조약(1878)으로 오스트리아-헝가리가 점령해 다스린 오스만 제국의 땅. 주권은 오스만에 남았으나 1908년 10월 오스트리아-헝가리가 병합해 보스니아 위기를 일으킴
+  basis:
+    type: primary_source
+    refs: ["베를린 조약(1878)"]
+
+- id: krakow
+  level: polity
+  names: { ko: 크라쿠프 자유시, en: Free City of Kraków, native: Wolne Miasto Kraków }
+  from: 1815
+  to: 1846
+  color: "#b39ad0"
+  summary: 빈 회의(1815)로 러시아·프로이센·오스트리아의 보호 아래 세운 작은 공화국. 1846년 크라쿠프 봉기 뒤 오스트리아에 병합됨
+  basis:
+    type: primary_source
+    refs: ["빈 회의 최종 의정서(1815)"]
+
+# 이탈리아
+- id: sardinia
+  level: polity
+  names: { ko: 사르데냐 왕국, en: Kingdom of Sardinia, native: Regno di Sardegna }
+  from: 1720
+  to: 1860
+  color: "#78a67e"
+  summary: 사보이아 왕가가 피에몬테·사보이아·니스·제노바와 사르데냐섬을 다스린 왕국. 카보우르가 크림 전쟁에 참전하고 프랑스와 손잡아 1859년 오스트리아를 이겨 롬바르디아를 얻음. 1860년 사보이아·니스를 프랑스에 넘기는 대신 중부 이탈리아를 합치고 가리발디가 정복한 남부를 받아들임. 1861년 이탈리아 왕국이 됨
+  basis:
+    type: primary_source
+    refs: ["빈 회의 최종 의정서(1815)", "취리히 조약(1859)", "토리노 조약(1860)"]
+    foundingNote: 사보이아 공국이 사르데냐섬을 얻어 왕국이 된 1720년을 시작으로 봄
+
+- id: italy
+  level: polity
+  names: { ko: 이탈리아 왕국, en: Kingdom of Italy, native: Regno d'Italia }
+  from: 1861
+  to: 1946
+  color: "#78a67e"
+  summary: 1861년 사르데냐 왕 비토리오 에마누엘레 2세를 왕으로 선포한 통일 국가. 1866년 베네치아, 1870년 로마를 합쳐 통일을 마무리했으나 트렌티노·트리에스테('미회수 이탈리아')는 오스트리아-헝가리에 남음. 1912년 이탈리아-튀르크 전쟁으로 리비아를 얻고 도데카니사 제도를 점령함(도데카니사는 1923년 로잔 조약으로 이탈리아 영토)
+  basis:
+    type: primary_source
+    refs: ["이탈리아 왕국 선포법(1861)", "빈 조약(1866)"]
+
+- id: papal-states
+  level: polity
+  names: { ko: 교황령, en: Papal States, native: Stato Pontificio }
+  from: 756
+  to: 1870
+  color: "#e3d48f"
+  summary: 교황이 다스린 중부 이탈리아의 나라. 1860년 로마냐·마르케·움브리아를 사르데냐에 잃고 프랑스군이 지키던 로마 일대만 남았다가, 프로이센-프랑스 전쟁으로 프랑스군이 물러난 1870년 이탈리아에 병합됨
+  basis:
+    type: primary_source
+    refs: ["빈 회의 최종 의정서(1815)"]
+    foundingNote: 피핀의 기증(756)을 시작으로 봄
+
+- id: two-sicilies
+  level: polity
+  names: { ko: 양시칠리아 왕국, en: Kingdom of the Two Sicilies, native: Regno delle Due Sicilie }
+  from: 1815
+  to: 1860
+  color: "#d79a6a"
+  summary: 부르봉 왕가가 다스린 남이탈리아와 시칠리아의 왕국. 1860년 가리발디의 붉은 셔츠단이 정복해 주민 투표로 사르데냐에 합쳐짐(마지막 거점 가에타 요새는 1861년 2월 항복)
+  basis:
+    type: primary_source
+    refs: ["빈 회의 최종 의정서(1815)"]
+    foundingNote: 나폴리·시칠리아 두 왕국을 합친 공식 성립은 1816년 12월. 빈 회의(1815)로 부르봉 왕가가 나폴리를 되찾아 두 왕국을 함께 다스린 1815년부터 표시함
+
+- id: italian-duchies
+  level: polity
+  names: { ko: 중부 이탈리아 공국들 (묶음), en: Central Italian duchies (grouped) }
+  from: 1815
+  to: 1860
+  color: "#b6a0c8"
+  summary: 토스카나 대공국·파르마 공국·모데나 공국·루카 공국(1847년 토스카나에 합침)을 묶은 항목. 합스부르크·부르봉 가문 군주가 다스렸고 1859년 혁명으로 군주가 쫓겨난 뒤 1860년 주민 투표로 사르데냐에 합쳐짐
+  basis:
+    type: primary_source
+    refs: ["빈 회의 최종 의정서(1815)"]
+
+- id: san-marino
+  level: polity
+  names: { ko: 산마리노, en: San Marino, native: Repubblica di San Marino }
+  from: 301
+  to: null
+  color: "#8fa8cf"
+  summary: 이탈리아 반도 동부의 작은 공화국. 빈 회의(1815)가 독립을 인정했고 이탈리아 통일 뒤에도 독립을 지킴
+  basis:
+    type: primary_source
+    refs: ["빈 회의 최종 의정서(1815)"]
+    foundingNote: 전승에 따라 301년 건국으로 봄
+
+# 오스만 제국과 발칸
+- id: ottoman
+  level: polity
+  names: { ko: 오스만 제국, en: Ottoman Empire, native: Devlet-i Âliye-i Osmâniyye }
+  from: 1299
+  to: 1922
+  color: "#b5845a"
+  summary: 아나톨리아·발칸·아랍 지역을 다스린 이슬람 제국. 19세기에 그리스(1830)·세르비아·루마니아·몬테네그로(1878)·불가리아(1908)가 떨어져 나가 '유럽의 병자'로 불림. 탄지마트 개혁(1839~1876)과 청년 튀르크 혁명(1908)을 겪었고 발칸 전쟁(1912~1913)으로 유럽 땅을 대부분 잃음. 법적 주권은 남았지만 다른 나라가 점령·통치한 보스니아(1878~)·키프로스(1878~)·도데카니사(1912~)는 오스만 색의 점령지로 따로 표시함. 지도에는 유럽 권역 안(발칸·아나톨리아·키프로스·캅카스 일부)만 표시하고 중동·북아프리카는 아직 그리지 않음
+  basis:
+    type: primary_source
+    refs: ["베를린 조약(1878)", "런던 조약(1913)", "콘스탄티노폴리스 조약(1913)"]
+    foundingNote: 오스만 1세가 나라를 세운 1299년을 시작으로 봄
+
+- id: greece
+  level: polity
+  names: { ko: 그리스, en: Greece, native: Ελλάδα }
+  from: 1830
+  to: null
+  color: "#6fa3cc"
+  summary: 1821년 독립 전쟁을 일으켜 1830년 런던 의정서로 독립을 인정받고 1832년 왕국이 됨. 1864년 영국에게서 이오니아 제도, 1881년 테살리아를 얻고, 발칸 전쟁(1912~1913)으로 마케도니아 남부·에피루스 남부·크레타·에게해 섬들을 얻음
+  basis:
+    type: primary_source
+    refs: ["런던 의정서(1830)", "콘스탄티노폴리스 조약(1832)", "부쿠레슈티 조약(1913)"]
+    foundingNote: 독립을 인정받은 1830년을 시작으로 봄(1822년 임시 정부, 1832년 왕국). 지도의 1830년 경계는 1832년에 확정된 아르타-볼로스선을 씀
+
+- id: ionian-islands
+  level: polity
+  names: { ko: 이오니아 제도 합중국, en: United States of the Ionian Islands, native: Ἡνωμένον Κράτος τῶν Ἰονίων Νήσων }
+  from: 1815
+  to: 1864
+  color: "#9cbfd4"
+  summary: 케르키라(코르푸)·케팔로니아·자킨토스 등 이오니아해의 일곱 섬으로 된 나라. 1815년 파리 조약으로 영국의 보호국이 되었고 1864년 그리스에 넘겨짐
+  basis:
+    type: primary_source
+    refs: ["파리 조약(1815)", "런던 조약(1864)"]
+
+- id: cretan-state
+  level: polity
+  names: { ko: 크레타 자치국, en: Cretan State, native: Κρητική Πολιτεία }
+  from: 1898
+  to: 1913
+  color: "#86b4c4"
+  summary: 1897~1898년 봉기 뒤 열강의 보호 아래 오스만 종주권을 둔 자치국이 됨. 그리스 왕자 게오르기오스가 고등 판무관을 맡았고, 1908년 그리스와의 통합을 선언해 1913년 그리스에 합쳐짐
+  basis:
+    type: primary_source
+    refs: ["런던 조약(1913)"]
+    foundingNote: 열강이 자치를 정하고 오스만군이 물러난 1898년을 시작으로 봄
+
+- id: serbia
+  level: polity
+  names: { ko: 세르비아, en: Serbia, native: Србија }
+  from: 1817
+  to: 1918
+  color: "#b8706d"
+  summary: 두 차례 봉기(1804·1815) 끝에 1817년 밀로시 오브레노비치가 공이 되어 자치를 얻고 1830년 오스만이 자치 공국으로 인정함. 베를린 조약(1878)으로 독립해 니시·피로트를 얻고 1882년 왕국이 됨. 발칸 전쟁(1912~1913)으로 코소보·마케도니아를 얻었고, 1914년 사라예보 사건으로 오스트리아-헝가리의 공격을 받음. 1918년 세르브·크로아트·슬로베네 왕국이 됨
+  basis:
+    type: primary_source
+    refs: ["오스만 칙령(1830)", "베를린 조약(1878)", "부쿠레슈티 조약(1913)"]
+    foundingNote: 밀로시 오브레노비치가 세습 공으로 추대된 1817년을 자치 공국의 시작으로 봄(오스만의 공식 인정은 1830년)
+
+- id: montenegro
+  level: polity
+  names: { ko: 몬테네그로, en: Montenegro, native: Црна Гора }
+  from: 1696
+  to: 1918
+  color: "#8b6f9c"
+  summary: 산악 지대의 정교회 나라로 오스만의 지배를 사실상 받지 않음. 1852년 주교공국에서 세속 공국이 되고 1878년 베를린 조약으로 독립을 인정받아 니크시치·포드고리차·바르를 얻음(울치니는 1880년). 1910년 왕국이 되고 발칸 전쟁으로 영토를 넓혔으나 1918년 세르비아에 합쳐짐
+  basis:
+    type: primary_source
+    refs: ["베를린 조약(1878)", "런던 조약(1913)"]
+    foundingNote: 페트로비치-네고시 가문이 주교공 자리를 세습하기 시작한 1696년을 시작으로 봄
+
+- id: moldavia
+  level: polity
+  names: { ko: 몰다비아 공국, en: Principality of Moldavia, native: Principatul Moldovei }
+  from: 1346
+  to: 1859
+  color: "#b9a7d1"
+  summary: 오스만의 종주권 아래 있던 루마니아계 공국. 1829년 아드리아노플 조약 뒤 러시아의 보호도 받음. 크림 전쟁 뒤 파리 조약(1856)으로 남베사라비아를 얻었고, 1859년 왈라키아와 같은 공(쿠자)을 뽑아 합쳐짐
+  basis:
+    type: primary_source
+    refs: ["아드리아노플 조약(1829)", "파리 조약(1856)"]
+    foundingNote: 공국이 선 1346년 무렵을 시작으로 봄
+
+- id: wallachia
+  level: polity
+  names: { ko: 왈라키아 공국, en: Principality of Wallachia, native: Țara Românească }
+  from: 1310
+  to: 1859
+  color: "#9fc4ae"
+  summary: 오스만의 종주권 아래 있던 루마니아계 공국으로 수도는 부쿠레슈티. 1829년 아드리아노플 조약 뒤 러시아의 보호도 받음. 1859년 몰다비아와 같은 공(쿠자)을 뽑아 연합 공국이 됨
+  basis:
+    type: primary_source
+    refs: ["아드리아노플 조약(1829)", "파리 조약(1856)"]
+    foundingNote: 바사라브 1세가 공국을 세운 1310년 무렵을 시작으로 봄
+
+- id: romania
+  level: polity
+  names: { ko: 루마니아, en: Romania, native: România }
+  from: 1859
+  to: null
+  color: "#a5b8db"
+  summary: 1859년 몰다비아·왈라키아가 쿠자를 함께 공으로 뽑아 연합 공국이 되고 1862년 하나로 합쳐 1866년부터 루마니아라 부름. 1878년 베를린 조약으로 독립해 북도브루자를 얻는 대신 남베사라비아를 러시아에 넘김. 1881년 왕국이 되고 2차 발칸 전쟁(1913)으로 남도브루자를 얻음
+  basis:
+    type: primary_source
+    refs: ["파리 협약(1858)", "베를린 조약(1878)", "부쿠레슈티 조약(1913)"]
+    foundingNote: 두 공국이 같은 공을 뽑은 1859년을 시작으로 봄
+
+- id: bulgaria
+  level: polity
+  names: { ko: 불가리아, en: Bulgaria, native: България }
+  from: 1878
+  to: null
+  color: "#8aa86a"
+  summary: 러시아-튀르크 전쟁(1877~1878) 뒤 산스테파노 조약으로 대불가리아가 정해졌으나 베를린 조약(1878)으로 도나우강과 발칸산맥 사이의 자치 공국으로 줄어듦. 1885년 동루멜리아를 합치고 1908년 독립 왕국을 선포함. 1913년 2차 발칸 전쟁에 져 남도브루자를 루마니아에 넘겼으나 서트라키아를 얻어 에게해에 닿음
+  basis:
+    type: primary_source
+    refs: ["베를린 조약(1878)", "부쿠레슈티 조약(1913)"]
+    foundingNote: 베를린 조약으로 자치 공국이 된 1878년을 시작으로 봄. 중세 불가리아 제국은 따로 다룸
+
+- id: eastern-rumelia
+  level: polity
+  names: { ko: 동루멜리아, en: Eastern Rumelia, native: Източна Румелия }
+  from: 1878
+  to: 1885
+  color: "#a9c4a0"
+  summary: 베를린 조약(1878)으로 발칸산맥 남쪽에 세운 오스만 제국의 자치주. 기독교도 총독이 다스렸고 1885년 플로브디프의 봉기로 불가리아에 합쳐짐(1886년 톱하네 협정으로 사실상 인정)
+  basis:
+    type: primary_source
+    refs: ["베를린 조약(1878)", "톱하네 협정(1886)"]
+
+- id: albania
+  level: polity
+  names: { ko: 알바니아, en: Albania, native: Shqipëria }
+  from: 1912
+  to: null
+  color: "#7f9f9a"
+  summary: 1912년 1차 발칸 전쟁 중 블로러에서 독립을 선언하고 1913년 런던 대사 회의에서 열강의 인정을 받음. 1914년 독일 귀족 빌헬름 추 비트를 공으로 맞았으나 1차 대전으로 곧 혼란에 빠짐
+  basis:
+    type: primary_source
+    refs: ["블로러 독립 선언(1912)", "런던 대사 회의 결정(1913)", "피렌체 의정서(1913)"]
+    foundingNote: 독립을 선언한 1912년 11월을 시작으로 봄. 지도에는 국경이 정해진 1913년부터 표시
+
+- id: cyprus-british
+  level: region
+  names: { ko: 키프로스 (영국 관리지), en: Cyprus (British administration) }
+  from: 1878
+  to: 1914
+  color: "#b5845a"
+  summary: 1878년 키프로스 협약으로 영국이 점령해 다스린 오스만 제국의 섬. 러시아를 막는 대가로 영국이 관리했고 주권은 오스만에 남았으나, 1914년 11월 오스만이 1차 대전에 참전하자 영국이 합병함
+  basis:
+    type: primary_source
+    refs: ["키프로스 협약(1878)"]
+
+- id: dodecanese-occupied
+  level: region
+  names: { ko: 도데카니사 제도 (이탈리아 점령지), en: Dodecanese (Italian occupation) }
+  from: 1912
+  to: 1922
+  color: "#b5845a"
+  summary: 이탈리아-튀르크 전쟁(1911~1912) 중 이탈리아가 점령한 오스만 제국의 섬들(로도스·코스 등). 우시 조약(1912)은 반환을 약속했으나 점령이 이어졌고 1923년 로잔 조약으로 이탈리아 영토가 됨
+  basis:
+    type: primary_source
+    refs: ["우시 조약(1912)", "로잔 조약(1923)"]

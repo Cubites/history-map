@@ -124,3 +124,41 @@
 - { type: claimed_by, subject: gando-disputed, object: joseon, from: 1883, to: 1896 }
 - { type: claimed_by, subject: gando-disputed, object: daehan-jeguk, from: 1897, to: 1908 }
 - { type: claimed_by, subject: gando-disputed, object: qing, from: 1883, to: 1908 }
+
+# ── 유럽 1815~1914 (작업 E2, 2026-10-02) ──
+# 계승: 사라진 나라를 고르면 '후계 국가로 이동'
+- { type: successor_of, subject: north-german-confederation, object: prussia, from: 1866, to: null }
+- { type: successor_of, subject: north-german-confederation, object: german-states, from: 1866, to: null }
+- { type: successor_of, subject: south-german-states, object: german-states, from: 1866, to: null }
+- { type: successor_of, subject: german-empire, object: north-german-confederation, from: 1871, to: null }
+- { type: successor_of, subject: german-empire, object: south-german-states, from: 1871, to: null }
+- { type: successor_of, subject: austria, object: krakow, from: 1846, to: null }
+- { type: successor_of, subject: austria-hungary, object: austria, from: 1867, to: null }
+- { type: successor_of, subject: austria-hungary, object: bosnia-occupied, from: 1908, to: null }
+- { type: successor_of, subject: sardinia, object: italian-duchies, from: 1860, to: null }
+- { type: successor_of, subject: sardinia, object: two-sicilies, from: 1860, to: null }
+- { type: successor_of, subject: italy, object: sardinia, from: 1861, to: null }
+- { type: successor_of, subject: italy, object: papal-states, from: 1870, to: null }
+- { type: successor_of, subject: romania, object: moldavia, from: 1859, to: null }
+- { type: successor_of, subject: romania, object: wallachia, from: 1859, to: null }
+- { type: successor_of, subject: bulgaria, object: eastern-rumelia, from: 1885, to: null }
+- { type: successor_of, subject: greece, object: ionian-islands, from: 1864, to: null }
+- { type: successor_of, subject: greece, object: cretan-state, from: 1913, to: null }
+- { type: successor_of, subject: sweden, object: sweden-norway, from: 1905, to: null }
+- { type: successor_of, subject: norway, object: sweden-norway, from: 1905, to: null }
+
+# 종속: 오스만 제국의 종주권 아래 있던 자치 공국·자치주 (지도에 테두리를 오스만의 색으로)
+- { type: vassal_of, subject: moldavia, object: ottoman, from: 1815, to: 1858 }
+- { type: vassal_of, subject: wallachia, object: ottoman, from: 1815, to: 1858 }
+- { type: vassal_of, subject: romania, object: ottoman, from: 1859, to: 1877 }
+- { type: vassal_of, subject: serbia, object: ottoman, from: 1817, to: 1877 }
+- { type: vassal_of, subject: bulgaria, object: ottoman, from: 1878, to: 1907 }
+- { type: vassal_of, subject: eastern-rumelia, object: ottoman, from: 1878, to: 1884 }
+- { type: vassal_of, subject: cretan-state, object: ottoman, from: 1898, to: 1912 }
+# 종속: 이오니아 제도 합중국은 1815년 파리 조약으로 영국의 보호국 (영국이 고등 판무관을 보냄)
+- { type: vassal_of, subject: ionian-islands, object: uk, from: 1815, to: 1863 }
+# 점령: 베를린 조약(1878)으로 오스트리아-헝가리가 점령한 오스만의 보스니아 헤르체고비나 (1908년 병합)
+- { type: occupied_by, subject: bosnia-occupied, object: austria-hungary, from: 1878, to: 1907 }
+# 점령: 주권은 오스만에 남은 채 영국이 다스린 키프로스(1914년 11월 합병), 이탈리아가 점령한 도데카니사(1923년 로잔 조약으로 이탈리아)
+- { type: occupied_by, subject: cyprus-british, object: uk, from: 1878, to: 1914 }
+- { type: occupied_by, subject: dodecanese-occupied, object: italy, from: 1912, to: 1922 }
