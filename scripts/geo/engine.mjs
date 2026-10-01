@@ -76,12 +76,14 @@ export function mergeAreas(areas, areaDir) {
 
 // 빈 땅 검사 구역 (DESIGN.md §5.4): 권역 파일의 gapZones를 AREAS 순서대로 모은다. npm run check:gaps가 이 순서대로 검사해 출력하고,
 // mergeAreas도 불러 모양을 검사한다(틀리면 생성기가 data/geo를 지우기 전에 멈춘다). 새 권역은 AREAS에 등록하고 gapZones만 내보내면 검사에 들어간다.
-// 권역 파일의 gapZones: [{ name, zone, minus? }] (없으면 그 권역은 검사 구역이 없다)
+// 권역 파일의 gapZones: [{ name, zone, minus?, from?, to? }] (없으면 그 권역은 검사 구역이 없다)
 // - name: 구역 이름(check:gaps 출력에 그대로 나온다). 비어 있지 않은 문자열이고 모든 권역을 통틀어 겹치지 않는다
 // - zone: 멀티폴리곤 (링 하나면 P(링), 폴리곤이면 [폴리곤]). 링은 닫혀 있고 점이 넷 이상이다. check:gaps가 해안선으로 자른다
 // - minus: (선택) 앞에 모은 구역 이름의 배열. 검사 범위에서 그 구역(해안선으로 자르고 그 구역의 minus까지 뺀 것)을 뺀다 (예: 만주 상자에서 한반도)
-// 반환: [{ area, name, zone, minus }] (area는 권역 이름, minus가 없으면 []). export 이름 오타(gapZone 등)나 구역의 모르는 속성(minsu 등)이 있으면 멈춘다
-const GAP_ZONE_KEYS = new Set(['name', 'zone', 'minus']);
+// - from·to: (선택, 2026-10-01) 이 구역을 검사하는 해 [from, to). 정수이고 from < to, 끝 없음은 to를 빼거나 null. 빼면 모든 해를 검사한다.
+//   권역의 나라를 아직 채우지 않은 시대에 빈 땅이 대량으로 보고되지 않게, 뼈대를 채우는 시대만 검사할 때 쓴다(예: 유럽 1789~1914)
+// 반환: [{ area, name, zone, minus, from, to }] (area는 권역 이름, minus가 없으면 [], from·to가 없으면 null). export 이름 오타(gapZone 등)나 구역의 모르는 속성(minsu 등)이 있으면 멈춘다
+const GAP_ZONE_KEYS = new Set(['name', 'zone', 'minus', 'from', 'to']);
 const isPoint = (p) => Array.isArray(p) && p.length === 2 && p.every((v) => Number.isFinite(v));
 const isClosedRing = (r) => Array.isArray(r) && r.length >= 4 && r.every(isPoint) && r[0][0] === r.at(-1)[0] && r[0][1] === r.at(-1)[1];
 const isMultiPolygon = (m) => Array.isArray(m) && m.length > 0 && m.every((poly) => Array.isArray(poly) && poly.length > 0 && poly.every(isClosedRing));
@@ -98,14 +100,18 @@ export function collectGapZones(areas) {
       if (typeof gz?.name !== 'string' || !gz.name.trim()) throw new Error(`${label}: name은 비어 있지 않은 문자열이어야 함`);
       if (seen.has(gz.name)) throw new Error(`${label}: 같은 이름이 ${seen.get(gz.name)} 권역에도 있음`);
       const unknown = Object.keys(gz).filter((k) => !GAP_ZONE_KEYS.has(k));
-      if (unknown.length) throw new Error(`${label}: 모르는 속성 ${unknown.join(', ')} (name·zone·minus만 쓴다)`);
+      if (unknown.length) throw new Error(`${label}: 모르는 속성 ${unknown.join(', ')} (name·zone·minus·from·to만 쓴다)`);
       if (!isMultiPolygon(gz.zone)) throw new Error(`${label}: zone은 닫힌 링으로 된 멀티폴리곤이어야 함 (링 하나면 P(링), 폴리곤이면 [폴리곤])`);
       const minus = gz.minus ?? [];
       if (!Array.isArray(minus) || minus.some((m) => !seen.has(m)) || new Set(minus).size !== minus.length) {
         throw new Error(`${label}: minus는 앞에 모은 구역 이름의 배열이어야 함 (앞에 모은 구역: ${[...seen.keys()].join(', ') || '없음'})`);
       }
+      const from = gz.from ?? null, to = gz.to ?? null;
+      if ((from !== null && !Number.isInteger(from)) || (to !== null && !Number.isInteger(to)) || (from !== null && to !== null && from >= to)) {
+        throw new Error(`${label}: from·to는 정수이고 from < to여야 함 (끝 없음은 to를 빼거나 null)`);
+      }
       seen.set(gz.name, name);
-      out.push({ area: name, name: gz.name, zone: gz.zone, minus });
+      out.push({ area: name, name: gz.name, zone: gz.zone, minus, from, to });
     }
   }
   return out;

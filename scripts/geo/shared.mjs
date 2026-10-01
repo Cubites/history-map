@@ -78,7 +78,7 @@ export const LX923 = I(I(HUABEI, [NORTH_OF_YANYUN]), [ring([[118.2, 38.0], [125.
 export const TUMEN_TRIPOINT = [130.7, 42.3];
 export const L_KHASAN = [TUMEN_TRIPOINT, [130.58, 42.42], [130.53, 42.54], [130.58, 42.62], [130.42, 42.71], [130.58, 42.81], [130.87, 42.86], [131.07, 42.9], [131.14, 43.1], [131.2, 43.3]];
 // 청이 베이징 조약(1860)으로 러시아에 넘긴 우수리강 동쪽(연해주)
-// 우수리강(L_USSURI)과 두만강 하구 앞바다 점(TUMEN_SEA, 하산 선 첫 점의 남동쪽 바다)은 러시아(west.mjs의 RUSSIA_RAW)도 함께 쓴다
+// 우수리강(L_USSURI)과 두만강 하구 앞바다 점(TUMEN_SEA, 하산 선 첫 점의 남동쪽 바다)은 러시아(europe.mjs의 RUSSIA_RAW)도 함께 쓴다
 // 값만 같은 점: (141.5, 48.5)는 inner-asia.mjs의 NE_FAR 상자 모서리와 값이 같다. 둘 다 타타르 해협의 바다 쪽 점이고 같은 때 쓰이지 않는다(NE_FAR는 1691년까지, PRIMORYE는 1860년부터)
 export const L_USSURI = [[131.2, 44.8], [132.4, 45.2], [133.1, 46.4], [134.4, 47.7]];
 export const TUMEN_SEA = [130.9, 42.1];

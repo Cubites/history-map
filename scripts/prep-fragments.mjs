@@ -45,7 +45,7 @@ const SOURCE = {
 
 // 권역: 나라 목록(adm0_a3)과 러시아 유럽 쪽(NE region 속성. Northwestern·Central·Volga이고, NE의 Volga에는 남부·북캅카스 관구도 들어 있다).
 // 범위 상자 [서, 남, 동, 북] 밖에 통째로 있는 폴리곤은 뺀다(프랑스 해외 데파르트망, 네덜란드 카리브 특별 기초자치단체). 카나리아·마데이라·아조레스는 상자 안이다.
-// 카자흐스탄과 러시아 아시아 쪽(Urals·Siberian·Far Eastern)은 넣지 않는다(west.mjs의 손 도형으로 둔다). 권역마다 파일을 하나씩 만들고, 지금은 europe뿐이다
+// 카자흐스탄과 러시아 아시아 쪽(Urals·Siberian·Far Eastern)은 넣지 않는다(areas/europe.mjs가 손 도형으로 둔다). 권역마다 파일을 하나씩 만들고, 지금은 europe뿐이다
 const REGIONS = {
   europe: {
     adm0: [

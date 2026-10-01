@@ -181,7 +181,7 @@ else bad(`check-gaps.ts: ${gapsUsesList ? '' : 'area-list.mjs의 AREAS와 collec
 // - '값으로 맞춘 점': 맞물리지만 이름으로 바꾸면 data/geo 바이트가 달라져 값으로 둔 점(지금은 없다). 함께 옮긴다
 // 새로 더할 때는 양쪽 이름 위에 같은 종류의 주석을 달고 DESIGN.md §5.2 목록에도 적는다. 이름은 'scripts/geo 기준 파일 경로:최상위 이름'이다
 const ALLOWED_REPEATS = [
-  { kind: '값만 같은 점', points: [[135, 43.3], [132.5, 42.4]], names: ['areas/korea.mjs:MARITIME_SEA_719', 'areas/korea.mjs:MARITIME_SEA_818', 'areas/west.mjs:RUSSIA_RAW'], why: '발해의 연해주 앞바다, 바다 쪽 점' },
+  { kind: '값만 같은 점', points: [[135, 43.3], [132.5, 42.4]], names: ['areas/korea.mjs:MARITIME_SEA_719', 'areas/korea.mjs:MARITIME_SEA_818', 'areas/europe.mjs:RUSSIA_RAW'], why: '발해의 연해주 앞바다, 바다 쪽 점' },
   { kind: '값만 같은 점', points: [[123, 39]], names: ['shared.mjs:LIAODONG_SEA', 'areas/korea.mjs:GOJOSEON_EARLY', 'areas/china.mjs:YAN_CHINA'], why: '요동 앞바다, 바다 쪽 점' },
   { kind: '값만 같은 점', points: [[125, 41.2]], names: ['shared.mjs:HUABEI_BOX', 'areas/inner-asia.mjs:MAN_WEST'], why: '결과에 드러나지 않는 자르기 상자 모서리' },
   { kind: '값만 같은 점', points: [[120, 44]], names: ['areas/inner-asia.mjs:EASTERN_TURKS', 'areas/korea.mjs:WEST_OF_BAEKDU'], why: '4군 띠만 자르는 상자 모서리' },
@@ -360,6 +360,15 @@ try {
   expectStop('검사 구역 zone에 링을 그대로 줌(P를 빠뜨림)', '멀티폴리곤이어야 함', () => withZone({ name: 'check-링', zone: sq(0)[0][0] }));
   expectStop('검사 구역 minus가 앞에 없는 구역', 'minus는 앞에 모은', () => withZone({ name: 'check-뒤', zone: sq(0), minus: ['check-없는 구역'] }));
   expectStop('검사 구역 속성 오타(minsu)', '모르는 속성 minsu', () => withZone({ name: 'check-오타', zone: sq(0), minsu: [] }));
+  // 검사하는 해(from·to, 2026-10-01): 정수이고 from < to. 모은 구역에 그대로 실리고, 없으면 null
+  expectStop('검사 구역 from ≥ to', 'from < to', () => withZone({ name: 'check-해', zone: sq(0), from: 1914, to: 1789 }));
+  expectStop('검사 구역 from이 정수가 아님', 'from·to는 정수', () => withZone({ name: 'check-해', zone: sq(0), from: '1789' }));
+  {
+    const got = engine.collectGapZones([...areas, ['check-years', { versions: {}, gapZones: [{ name: 'check-해', zone: sq(0), from: 1789 }] }]]).at(-1);
+    const plain = zones.find((z) => z.from === null && z.to === null);
+    if (got.from === 1789 && got.to === null && plain) ok(`검사 구역의 검사하는 해: from·to가 모은 구역에 실림(from 1789·to 없음 → null), 주지 않은 구역은 null (${plain.name})`);
+    else bad(`검사 구역 from·to가 약속과 다름: ${JSON.stringify({ from: got.from, to: got.to })}, from·to 없는 구역 ${plain ? plain.name : '없음'}`);
+  }
 
   // areas/ 하위 폴더: 등록된 권역 이름이면 허용(그 권역의 도우미 모듈), 아니면 멈춤
   const fakeDir = path.join(tmp, 'areas');
