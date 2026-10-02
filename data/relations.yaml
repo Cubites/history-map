@@ -148,8 +148,8 @@
 - { type: successor_of, subject: norway, object: sweden-norway, from: 1905, to: null }
 
 # 종속: 오스만 제국의 종주권 아래 있던 자치 공국·자치주 (지도에 테두리를 오스만의 색으로)
-- { type: vassal_of, subject: moldavia, object: ottoman, from: 1815, to: 1858 }
-- { type: vassal_of, subject: wallachia, object: ottoman, from: 1815, to: 1858 }
+- { type: vassal_of, subject: moldavia, object: ottoman, from: 1789, to: 1858 }
+- { type: vassal_of, subject: wallachia, object: ottoman, from: 1789, to: 1858 }
 - { type: vassal_of, subject: romania, object: ottoman, from: 1859, to: 1877 }
 - { type: vassal_of, subject: serbia, object: ottoman, from: 1817, to: 1877 }
 - { type: vassal_of, subject: bulgaria, object: ottoman, from: 1878, to: 1907 }
@@ -162,3 +162,44 @@
 # 점령: 주권은 오스만에 남은 채 영국이 다스린 키프로스(1914년 11월 합병), 이탈리아가 점령한 도데카니사(1923년 로잔 조약으로 이탈리아)
 - { type: occupied_by, subject: cyprus-british, object: uk, from: 1878, to: 1914 }
 - { type: occupied_by, subject: dodecanese-occupied, object: italy, from: 1912, to: 1922 }
+
+# ── 유럽 1789~1814 (작업 E3, 2026-10-02) ──
+# 계승
+- { type: successor_of, subject: uk, object: ireland-kingdom, from: 1801, to: null }
+- { type: successor_of, subject: austria, object: habsburg-monarchy, from: 1804, to: null }
+- { type: successor_of, subject: confederation-of-the-rhine, object: holy-roman-empire, from: 1806, to: null }
+- { type: successor_of, subject: hanseatic-cities, object: holy-roman-empire, from: 1806, to: null }
+- { type: successor_of, subject: german-states, object: confederation-of-the-rhine, from: 1814, to: null }
+- { type: successor_of, subject: batavian-republic, object: dutch-republic, from: 1795, to: null }
+- { type: successor_of, subject: kingdom-of-holland, object: batavian-republic, from: 1806, to: null }
+- { type: successor_of, subject: netherlands, object: kingdom-of-holland, from: 1813, to: null }
+- { type: successor_of, subject: ligurian-republic, object: genoa, from: 1797, to: null }
+- { type: successor_of, subject: etruria, object: tuscany, from: 1801, to: null }
+- { type: successor_of, subject: italian-duchies, object: parma-modena-lucca, from: 1814, to: null }
+- { type: successor_of, subject: italian-duchies, object: tuscany, from: 1814, to: null }
+- { type: successor_of, subject: italy-napoleonic, object: cisalpine-republic, from: 1805, to: null }
+- { type: successor_of, subject: two-sicilies, object: naples-napoleonic, from: 1815, to: null }
+- { type: successor_of, subject: ionian-islands, object: septinsular-republic, from: 1814, to: null }
+- { type: successor_of, subject: denmark, object: denmark-norway, from: 1814, to: null }
+- { type: successor_of, subject: sweden-norway, object: sweden-kingdom, from: 1814, to: null }
+- { type: successor_of, subject: sweden-norway, object: denmark-norway, from: 1814, to: null }
+- { type: successor_of, subject: prussia, object: danzig, from: 1814, to: null }
+- { type: successor_of, subject: russia, object: courland, from: 1795, to: null }
+# 종속: 폴란드-리투아니아의 봉토 쿠를란트, 오스만에 공물을 바친 라구사, 오스만 종주 아래의 셉틴슐라 공화국
+- { type: vassal_of, subject: courland, object: polish-lithuanian-commonwealth, from: 1789, to: 1795 }
+- { type: vassal_of, subject: ragusa, object: ottoman, from: 1789, to: 1805 }
+- { type: vassal_of, subject: septinsular-republic, object: ottoman, from: 1800, to: 1806 }
+# 종속: 프랑스의 자매 공화국·위성국(지도에 테두리를 프랑스의 색으로)
+- { type: vassal_of, subject: batavian-republic, object: france, from: 1795, to: 1806 }
+- { type: vassal_of, subject: kingdom-of-holland, object: france, from: 1806, to: 1810 }
+- { type: vassal_of, subject: cisalpine-republic, object: france, from: 1797, to: 1805 }
+- { type: vassal_of, subject: ligurian-republic, object: france, from: 1797, to: 1805 }
+- { type: vassal_of, subject: etruria, object: france, from: 1801, to: 1807 }
+- { type: vassal_of, subject: italy-napoleonic, object: france, from: 1805, to: 1813 }
+- { type: vassal_of, subject: naples-napoleonic, object: france, from: 1806, to: 1813 }
+- { type: vassal_of, subject: confederation-of-the-rhine, object: france, from: 1806, to: 1813 }
+- { type: vassal_of, subject: duchy-of-warsaw, object: france, from: 1807, to: 1812 }
+- { type: vassal_of, subject: danzig, object: france, from: 1807, to: 1813 }
+# 점령: 프랑스군이 점령한 한자 자유시(1806년 11월~1810년 병합), 러시아가 점령한 바르샤바 공국(1813~1815년 빈 회의)
+- { type: occupied_by, subject: hanseatic-cities, object: france, from: 1806, to: 1810 }
+- { type: occupied_by, subject: duchy-of-warsaw, object: russia, from: 1813, to: 1815 }
