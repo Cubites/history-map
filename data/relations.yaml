@@ -263,17 +263,45 @@
 - { type: occupied_by, subject: italy-occupied, object: nazi-germany, from: 1943, to: 1944 }
 - { type: occupied_by, subject: hungary, object: nazi-germany, from: 1944, to: 1944 }
 - { type: occupied_by, subject: slovakia, object: nazi-germany, from: 1944, to: 1944 }
-# 점령: 1945년 독일 점령 지구와 베를린(4개국 관리)
+# 점령: 1945년 독일 점령 지구와 베를린(4개국 관리). 서베를린은 1990년 10월 통일 때까지 미국·영국·프랑스의 점령 지위가 남음(작업 B2에서 1989년까지로 늘림)
 - { type: occupied_by, subject: germany-zone-us, object: usa, from: 1945, to: 1948 }
 - { type: occupied_by, subject: germany-zone-uk, object: uk, from: 1945, to: 1948 }
 - { type: occupied_by, subject: germany-zone-fr, object: france, from: 1945, to: 1948 }
 - { type: occupied_by, subject: germany-zone-su, object: soviet-union, from: 1945, to: 1948 }
-- { type: occupied_by, subject: berlin-western-sectors, object: usa, from: 1945, to: 1948 }
-- { type: occupied_by, subject: berlin-western-sectors, object: uk, from: 1945, to: 1948 }
-- { type: occupied_by, subject: berlin-western-sectors, object: france, from: 1945, to: 1948 }
+- { type: occupied_by, subject: berlin-western-sectors, object: usa, from: 1945, to: 1989 }
+- { type: occupied_by, subject: berlin-western-sectors, object: uk, from: 1945, to: 1989 }
+- { type: occupied_by, subject: berlin-western-sectors, object: france, from: 1945, to: 1989 }
 - { type: occupied_by, subject: berlin-soviet-sector, object: soviet-union, from: 1945, to: 1948 }
 # 점령: 오스트리아 공화국(1945~1955 미국·영국·프랑스·소련 4개국 점령, 1955년 국가 조약으로 끝남. 지도는 점령 지구를 나누지 않음)
 - { type: occupied_by, subject: austria-republic, object: usa, from: 1945, to: 1954 }
 - { type: occupied_by, subject: austria-republic, object: uk, from: 1945, to: 1954 }
 - { type: occupied_by, subject: austria-republic, object: france, from: 1945, to: 1954 }
 - { type: occupied_by, subject: austria-republic, object: soviet-union, from: 1945, to: 1954 }
+
+# ── 유럽 1946~1991 (작업 B2, 2026-10-03) ──
+# 계승: 점령 지구 → 서독·동독(1949), 자르(1947 보호령, 1957 서독), 통일 독일(1990), 트리에스테 자유 지역의 분할(1954)
+- { type: successor_of, subject: west-germany, object: germany-zone-us, from: 1949, to: null }
+- { type: successor_of, subject: west-germany, object: germany-zone-uk, from: 1949, to: null }
+- { type: successor_of, subject: west-germany, object: germany-zone-fr, from: 1949, to: null }
+- { type: successor_of, subject: east-germany, object: germany-zone-su, from: 1949, to: null }
+- { type: successor_of, subject: east-germany, object: berlin-soviet-sector, from: 1949, to: null }
+- { type: successor_of, subject: saar-protectorate, object: germany-zone-fr, from: 1947, to: null }
+- { type: successor_of, subject: west-germany, object: saar-protectorate, from: 1957, to: null }
+- { type: successor_of, subject: germany, object: west-germany, from: 1990, to: null }
+- { type: successor_of, subject: germany, object: east-germany, from: 1990, to: null }
+- { type: successor_of, subject: germany, object: berlin-western-sectors, from: 1990, to: null }
+- { type: successor_of, subject: italy-republic, object: trieste-zone-a, from: 1954, to: null }
+- { type: successor_of, subject: yugoslavia, object: trieste-zone-b, from: 1954, to: null }
+# 종속: 프랑스의 보호령 자르(경제·관세 동맹, 외교·국방은 프랑스)
+- { type: vassal_of, subject: saar-protectorate, object: france, from: 1947, to: 1956 }
+# 점령: 서독(점령 조례, 1955년 5월 파리 조약 발효로 끝남)·동독(소련 관리 위원회, 1954년 3월 소련이 주권을 인정)은 오스트리아처럼 관계만
+- { type: occupied_by, subject: west-germany, object: usa, from: 1949, to: 1954 }
+- { type: occupied_by, subject: west-germany, object: uk, from: 1949, to: 1954 }
+- { type: occupied_by, subject: west-germany, object: france, from: 1949, to: 1954 }
+- { type: occupied_by, subject: east-germany, object: soviet-union, from: 1949, to: 1953 }
+# 점령: 트리에스테 자유 지역의 군정(A 구역 영국·미국, B 구역 유고슬라비아, 1954년 10월 런던 양해 각서까지)
+- { type: occupied_by, subject: trieste-zone-a, object: uk, from: 1947, to: 1953 }
+- { type: occupied_by, subject: trieste-zone-a, object: usa, from: 1947, to: 1953 }
+- { type: occupied_by, subject: trieste-zone-b, object: yugoslavia, from: 1947, to: 1953 }
+# 점령: 1974년 튀르키예군이 차지한 키프로스 북부(1983년 북키프로스 튀르키예 공화국 선포는 튀르키예만 승인, 유엔 안보리 결의 541호가 무효로 봄. 귀속 논쟁이 아니라 점령으로 둠)
+- { type: occupied_by, subject: northern-cyprus, object: turkey, from: 1974, to: null }

@@ -30,6 +30,7 @@ if (!existsSync(CSHAPES)) {
 // 2026-10-02(작업 E2): 1815~1914 유럽 뼈대의 나라를 더함. 3461은 CShapes의 보스니아(1886~1908, 오스트리아-헝가리 점령지)
 // 2026-10-03(작업 B1): 1918~1945 뼈대의 나라를 더함. 독일(255)은 독일 제국·바이마르 공화국·나치 독일, 오스만(640)은 튀르키예로 이어진다.
 // CShapes는 2차 대전의 점령을 빼고 병합만 반영하므로(예: 1939~1945 폴란드 없음) 생성기의 점령 항목(총독부 등)은 비교하지 않는다
+// 2026-10-03(작업 B2): 1946~1991 뼈대의 나라를 더함. CShapes는 통일 독일(1990년 10월~)도 서독과 같은 260으로 두므로 서독(west-germany)과 통일 독일(germany)을 260 하나와 비교한다
 const GW_ENTITIES = {
   200: ['uk'], 220: ['france'], 365: ['russia', 'soviet-union', 'russia-fed'],
   210: ['netherlands'], 211: ['belgium'], 212: ['luxembourg'], 225: ['switzerland'], 230: ['spain'], 235: ['portugal'],
@@ -38,6 +39,7 @@ const GW_ENTITIES = {
   640: ['ottoman', 'turkey'], 350: ['greece'], 340: ['serbia'], 341: ['montenegro'], 360: ['romania'], 355: ['bulgaria'], 339: ['albania'],
   205: ['ireland'], 395: ['iceland'], 375: ['finland'], 366: ['estonia'], 367: ['latvia'], 368: ['lithuania'], 290: ['poland'],
   305: ['austria-republic'], 310: ['hungary'], 315: ['czechoslovakia'], 345: ['yugoslavia'],
+  260: ['west-germany', 'germany'], 265: ['east-germany'], 338: ['malta'], 352: ['cyprus'],
 };
 // 권역 바깥선(조각 domain) 안만 비교하는 나라: 생성기가 권역 바깥선 안만 그린 나라(오스만 제국. CShapes는 중동·북아프리카까지 넣음)
 const DOMAIN_ONLY = new Set(['640']);

@@ -10,6 +10,8 @@
 // 2026-10-03 (작업 B1): 1918년(1차 대전 뒤 신생국)부터 1945년(2차 대전 종전 직후)까지를 '1918~1945 조각 소유표'(T1918)로 더했다. E2 표는 1917년까지로 늘렸다(1915년 키프로스만 바뀜).
 //   1차 대전 중(1914~1918)의 전시 점령은 그리지 않고(법적 국경), 2차 대전(1939~1945)의 점령지는 중일 전쟁 점령지처럼 점령 항목(occupied_by)으로 그해 말 모습을 그린다.
 //   소련의 유럽 쪽(1918~1945)도 이 표에서 만든다(E1의 1921년 무렵 고정 도형 SU_EU_1921을 대신함).
+// 2026-10-03 (작업 B2): 1946년부터 1991년(냉전, 소련 해체 직전)까지를 '1946~1991 조각 소유표'(T1946)로 더했다. 소련의 유럽 쪽 1946~1991년도 이 표에서 만든다
+//   (E1의 고정 도형 SU_EU_1946을 대신함, 1946~1990년 땅은 같음).
 // 유럽 쪽 모양은 행정구역 조각(lib.mjs의 loadFragments('europe'))을 그 시기 국경에 맞춰 묶어 만든다. 권역 바깥선(domain) 밖(시베리아·중앙아시아·극동)은
 // west에서 쓰던 손 도형을 그대로 쓴다: 러시아 = D(손 도형, domain) ∪ F(그때 러시아에 속한 조각). 두 경계가 한 자료(domain의 arc)에서 나오므로 틈이 생기지 않는다.
 // 오스만 제국은 권역 바깥선 안(발칸·아나톨리아·키프로스·캅카스 일부)만 그린다. 중동·북아프리카는 아직 어느 권역에도 없다.
@@ -196,7 +198,7 @@ const CIRCASSIA = ring([[36.5, 45.0], [37.45, 45.12], [38.0, 45.15], [38.5, 45.0
 // 같은 단위 이름을 다른 도형으로 다시 정의하면 멈춘다(통째 조각은 이름 = 조각 id라 어느 표에서나 같다).
 // 이웃한 두 표에서 한 나라의 단위 목록이 같으면 한 버전으로 잇는다(예: 에스파냐는 1814년 버전이 1815년 뒤로 이어짐).
 // renames: 나라 이름(항목)만 바뀌고 땅은 그대로 넘어간 해. 그 해부터 그 나라의 모든 단위 주인을 새 항목으로 바꿔 읽는다(줄마다 되풀이해 적지 않으려고).
-// 나라별 마지막 버전은 TAIL_TO(그 뒤 첫 국경 변화 해)까지 이어 쓴다. 마지막 표(T1918)의 끝은 1945년 말(종전 직후) 모습이다(작업 B1. E2 때는 1914년 7월).
+// 나라별 마지막 버전은 TAIL_TO(그 뒤 첫 국경 변화 해)까지 이어 쓴다. 마지막 표(T1946)의 끝은 1991년 말 모습이다(작업 B2. E2 때는 1914년 7월, B1 때는 1945년 말).
 const unitMake = new Map(); // 단위 이름 → null(통째 조각) 또는 도형을 만드는 함수 (모든 표가 함께 씀)
 const splitIds = new Map(); // split이 돌려준 단위 이름 객체 → 그 묶음의 조각 id (reuse가 씀)
 const makeTable = (FROM, TO, renames = {}) => {
@@ -1069,6 +1071,9 @@ const K41 = ring([[28.0, 60.8], [32.9, 60.8], [33.6, 60.95], [34.5, 61.0], [35.4
 // 1940~1941 한코반도 조차지·1944~1956 포르칼라 조차지(소련), 1940~1943 망통(이탈리아), 채널 제도(1940~1945 독일 점령), 1939년 슬로바키아에 넘어간 오라바·스피시 일부,
 // 피우메 1918~1919(연합국 공동 점령, 1919년 9월부터 단눈치오 점령)는 이탈리아로 둠, 1941년 말 세바스토폴·케르치(소련)와 1944년 말 메멜 시·동프로이센 동부·헝가리 동부·슬로바키아 동부의 소련군 점령, 1944년 말 남네덜란드·핀마르크 해방, 1943년 10월 코르시카 해방,
 // 1944~1945 콜마르 포켓, 바르샤바 북쪽 나레프강 교두보, 1945년 율리안 마치의 유고슬라비아 군정(B 지구)
+// 이 표의 블록 안에서 나눈 조각·조각 목록 가운데 '1946~1991 조각 소유표'(작업 B2)가 reuse로 같은 단위를 이어 쓰는 것(블록 끝에서 채움).
+// 1945년 말과 땅이 같은 나라는 단위 목록도 같아야 1945년 버전이 1946년 뒤로 그대로 이어진다
+const B1_UNITS = {};
 const T1918 = makeTable(1918, 1946, {
   'weimar-republic': [1933, 'nazi-germany'],
   ottoman: [1923, 'turkey'],
@@ -1378,11 +1383,178 @@ const T1918 = makeTable(1918, 1946, {
   own([...whole(...minus(idsOf('TUR'), 'TR-76', 'TR-36', 'TR-75', 'TR-08', 'TR-25', 'TR-31', ...GR_OCC_1919, ...GR_OCC_1920, ...GR_OCC_1921)), TR08.오스만, TR25.오스만], [[1918, OT]]);
   own(whole('TR-31'), [[1918, null], [1939, 'turkey']]);
   own(whole(...idsOf('CYP', 'CYN', 'ESB', 'WSB')), [[1918, null]]); // 영국 식민지(위 E2 표의 1915년부터와 같음)
+
+  Object.assign(B1_UNITS, { FRL, BAV18, BW18, BE18, PM18, WN18, KP18, WP18, SL18, MA18, LD18, MZ18, PK18, PD18, TRS18, CZ18, SK18, HR08,
+    DE_US, DE_UK, DE_SU, SI_ITALY_1920 });
+}
+
+// ── 조각을 가르는 선 (작업 B2, 1946~1991) ───────────────────────
+// 모두 대략(수 km 오차). 조각 하나만 가르므로 링의 나머지 변은 다른 나라·바다로 넉넉히 둔다.
+// 트리에스테 자유 지역(1947~1954) B 구역의 크로아티아 쪽(이스트라주 북서부의 옛 부예 군: 우마그·노비그라드·부예·브르토니글라·그로주냔). 파리 강화 조약 부속서 6의 남쪽 경계는
+// 미르나강 하구(노비그라드 남쪽)에서 미르나강을 거슬러 오르다가 그로주냔(B 구역)·오프르탈(유고슬라비아) 사이에서 북쪽으로 슬로베니아 국경(드라고냐강 위쪽)까지 간다(대략).
+// 이스트라주만 이 링으로 나눈다. 북쪽 변은 슬로베니아 쪽으로 넉넉히 둔다(이스트라주 조각에 들지 않음)
+// 고리치아·노바고리차(1947년 파리 강화 조약 국경): 고리치아 시가지(성·비토리아 광장·산탄드레아)는 이탈리아, 동쪽의 솔칸·셈페테르·브르토이바·노바고리차(1947년 뒤 새로 세운 도시)는 유고슬라비아.
+// 국경은 트란살피나 역 광장(국경이 역 앞을 가름)에서 남쪽으로 라푸트·산피에트로를 지나 브르토이바 고개까지(대략). 조각 간략화로 고리치아 시가지 동쪽이 슬로베니아의
+// 셈페테르-브르토이바·노바고리차 조각에 들어가 있어 그 두 조각만 이 링(서쪽, 이탈리아)으로 나눈다
+const GORIZIA_W = ring([[13.61, 45.9], [13.625, 45.912], [13.632, 45.925], [13.634, 45.94], [13.637, 45.952], [13.638, 45.958], [13.632, 45.966], [13.625, 45.98], [13.55, 45.98], [13.55, 45.9]]);
+// 나르바강(나르바 시가지 앞): 서쪽 기슭의 나르바(성·시청)는 에스토니아, 동쪽 기슭의 이반고로드는 러시아. 레닌그라드주 조각이 강 서쪽 시가지(약 1~2km 폭)까지 덮고 있어
+// 레닌그라드주 조각만 이 링(서쪽)으로 나눈다. 크렌홀름섬 아래쪽에서 나르바요에수 쪽으로 강 한가운데를 대략 따름. 러시아 연방(RF_EU)도 같은 링으로 뺀다
+const NARVA_W = ring([[28.17, 59.33], [28.19, 59.35], [28.2, 59.362], [28.204, 59.374], [28.198, 59.385], [28.185, 59.395], [28.165, 59.405], [28.14, 59.42], [28.115, 59.44], [28.0, 59.44], [28.0, 59.33]]);
+const ZONE_B_ISTRIA = ring([[13.3, 45.3], [13.585, 45.3], [13.63, 45.315], [13.67, 45.33], [13.71, 45.345], [13.76, 45.355], [13.785, 45.375], [13.785, 45.42],
+  [13.8, 45.45], [13.85, 45.5], [13.85, 45.7], [13.3, 45.7]]);
+
+// ── 1946~1991 조각 소유표 (작업 B2) ─────────────────────────────
+// 2차 대전 종전 이듬해(1946년 말)부터 소련 해체 직전(1991년 말)까지. 버전은 그해 말 모습이다. 이 시기 국경은 대부분 지금의 행정구역과 가까워 조각을 거의 그대로 쓴다.
+// 버전 해: 1946(이탈리아 공화국, 땅은 1945년 말과 같음) → 1947(파리 강화 조약: 탕드·라브리그는 프랑스, 율리안 마치·이스트라·리예카는 유고슬라비아, 트리에스테 자유 지역 A·B 구역,
+// 도데카니사는 그리스. 자르 보호령) → 1949(독일 연방 공화국·독일 민주 공화국) → 1954(런던 양해 각서: A 구역은 이탈리아, B 구역은 유고슬라비아) → 1957(자를란트가 서독에 들어감)
+// → 1960(키프로스 독립) → 1964(몰타 독립) → 1974(튀르키예군의 북키프로스 점령) → 1990(독일 통일, 10월) → 1991(발트 3국 독립 회복, 9월 소련 승인)
+// 1991년 말: 소련은 12월 26일에 해체되어 그해 말 기준이면 해체 뒤 모습이어야 하지만, 소련 영토를 1991년까지(러시아 연방은 1992년부터) 그린 E1의 경계를 그대로 둔다.
+//   이 경계는 동아시아 쪽(손 도형)과 함께 쓰고, 해체 뒤 나라(우크라이나·벨라루스·몰도바·캅카스 3국 등)는 1991~현재 뼈대(A)에서 그리기 때문이다.
+//   발트 3국은 해체보다 앞선 1991년 9월 6일 소련이 독립을 승인(9월 17일 유엔 가입)했으므로 그해 말 기준대로 1991년부터 그린다.
+//   유고슬라비아는 슬로베니아·크로아티아가 1991년 6월 독립을 선언했지만 국제 승인이 1992년 1월이라 1991년까지 한 나라로 둔다(체코슬로바키아는 1992년까지).
+// 1945년 말과 땅이 같은 나라는 T1918에서 나눈 조각을 reuse로 이어 써서(B1_UNITS) 1945년 버전이 그대로 이어진다.
+// 소련은 다시 묶는다(1946년에 동쪽 손 도형이 바뀌어 어차피 버전이 나뉨. 땅이 E1의 SU_EU_1946과 같아 1946~1990년 도형도 같음. 레닌그라드주만 나르바 선으로 나눔).
+// 점령·귀속(relations.yaml):
+//  - 독일: 1949년까지 4개 점령 지구(1947년 자르 보호령이 프랑스 지구에서 떨어져 나감). 서베를린은 1990년까지 미국·영국·프랑스 관리 구역으로 따로 둔다
+//    (연합국 점령 지위가 통일 때까지 남음. 서독 영토에 넣지 않으므로 서독의 월경지로 보지 않음). 동베를린은 1949년부터 동독 영토로 그린다
+//    (동독의 수도로 동독이 다스림. 미국·영국·프랑스는 4개국 관리 지위를 내세워 인정하지 않았음, 근사).
+//  - 오스트리아(1945~1955 4개국 점령)는 B1처럼 관계만 단다. 서독·동독도 1955년 주권 회복 전(서독 점령 조례, 동독의 소련 관리 위원회)은 관계만.
+//  - 트리에스테 A·B 구역은 군정 지역 항목(occupied_by: A는 영국·미국, B는 유고슬라비아). 자르 보호령은 종속(vassal_of 프랑스).
+//  - 키프로스: 1960년 독립 전과 영국 주권 기지 지역(아크로티리·데켈리아)은 지브롤터처럼 비워 둔다(E1 원칙: 식민지·해외 영토는 영국 본국 영토에 넣지 않음).
+//    1974년 튀르키예군이 차지한 북부는 점령 항목에 occupied_by. 1983년 북키프로스 튀르키예 공화국 선포는 튀르키예만 승인하고 유엔 안보리 결의 541호가 무효로 보아
+//    귀속 논쟁(claimed_by)이 아니라 점령으로 둔다(국제법상 키프로스 공화국 영토라는 데 이견이 없음).
+// 고리치아(GORIZIA_W)와 나르바(NARVA_W)는 조각 간략화로 시가지가 이웃 나라 조각에 들어가 있어 선으로 나눴다(독립 검토 반영).
+// 쪼개지 않은 근사(각 1만 km² 미만): 1947년 프랑스·이탈리아의 작은 국경 조정(몽스니 고원·작은 생베르나르 고개·샤베르통), 1947년 브라티슬라바 교두보(헝가리 → 체코슬로바키아, 약 43km²),
+//  1948년 뱀섬(루마니아 → 소련), 1949~1963 네덜란드의 독일 땅 관리(엘텐·젤프캉트 등 약 69km²), 1951년 폴란드·소련 국경 교환(약 480km²), 1944~1956 포르칼라 조차지(소련, 핀란드로 둠),
+//  1954년 A 구역 동쪽 끝의 유고슬라비아 이양(약 11km²), 1946~1947 자르 영역 조정(라인란트팔츠 쪽 마을), 1945~1947 율리안 마치의 군정 분할(모건선, 법적 소속인 이탈리아로 둠),
+//  1945~1947 도데카니사의 영국 군정(이탈리아로 둠), 린다우(1945~1955 프랑스 관리, 1949년부터 서독으로 둠), 서베를린의 비지(슈타인슈튀켄 등), 데켈리아 안의 키프로스 마을(오르미디아·실로팀부),
+//  키프로스의 유엔 완충 지대(조각 경계 그대로 키프로스 쪽), 1947~1954 트리에스테 자유 지역의 경계(이탈리아 트리에스테주 조각이 A 구역, 코페르·이졸라·피란 조각과 위 선 북쪽이 B 구역. 실제보다 A는 약 80km², B는 약 190km² 넓음),
+//  자다르·크레스·로시니·라스토보(1920~1947 이탈리아, 1947년 유고슬라비아. B1처럼 1918년부터 유고슬라비아 쪽에 둠)
+// 서독(west-germany)은 1990년 통일부터 독일(germany) 항목으로 이어 그린다(같은 나라, 소련·러시아 연방처럼 화면 이름을 위해 나눔)
+const T1946 = makeTable(1946, 1992, { 'west-germany': [1990, 'germany'] });
+{
+  const { whole, split, own, reuse } = T1946;
+  const { FRL, BAV18, BW18, BE18, PM18, WN18, KP18, WP18, SL18, MA18, LD18, MZ18, PK18, PD18, TRS18, CZ18, SK18, HR08, DE_US, DE_UK, DE_SU, SI_ITALY_1920 } = B1_UNITS;
+  const IR = 'italy-republic';
+  const YU = 'yugoslavia';
+  const SU = 'soviet-union';
+  const WD = 'west-germany'; // 서독(독일 연방 공화국, 1949~1990). 1990년부터는 renames로 독일(germany)
+  const DE = 'germany'; // 통일 독일(1990~). 법적으로는 동독이 기본법 23조로 서독에 가입해 서독이 이어짐
+  const DD = 'east-germany';
+
+  // 서유럽 ─────────────────────────────────────────
+  // 영국: 지브롤터(식민지)는 비워 둠. 몰타는 1964년 9월 독립(그전은 식민지라 비워 둠). 아일랜드는 1949년 4월 공화국 선포·영국 연방 탈퇴(이름만 바뀜)
+  own(whole(...UK_GB), [[1946, 'uk']]);
+  own(whole(...idsOf('IRL')), [[1946, 'ireland']]);
+  own(whole(...idsOf('GIB')), [[1946, null]]);
+  own(whole(...idsOf('MLT')), [[1946, null], [1964, 'malta']]);
+  // 프랑스: 1947년 파리 강화 조약으로 탕드·라브리그(1947년 뒤 도형은 E1의 FRANCE_1947, versions). 1940년 분계선으로 나눈 도는 B1 단위 그대로 이어 쓴다
+  reuse(FR06);
+  reuse(IT_IM);
+  reuse(FRL);
+  own([...whole(...minus(FRANCE_ALL, 'FR-06', ...splitIds.get(FRL))), FRL.점령, FRL.자유, FR06.니스, FR06.프로방스, IT_IM.망통], [[1946, 'france']]);
+  own([FR06.탕드], [[1946, IR], [1947, 'france']]);
+  own(whole('MCO'), [[1946, 'monaco']]);
+  own(whole(...idsOf('ESP')), [[1946, 'spain']]);
+  own(whole(...idsOf('AND')), [[1946, 'andorra']]);
+  own(whole(...idsOf('PRT')), [[1946, 'portugal']]);
+  own(whole(...idsOf('CHE')), [[1946, 'switzerland']]);
+  own(whole(...idsOf('LIE')), [[1946, 'liechtenstein']]);
+  reuse(BE_WLG);
+  own(whole(...idsOf('NLD')), [[1946, 'netherlands']]);
+  own([...whole(...minus(idsOf('BEL'), 'BE-WLG')), BE_WLG.리에주, BE_WLG['오이펜-말메디']], [[1946, 'belgium']]);
+  own(whole(...idsOf('LUX')), [[1946, 'luxembourg']]);
+
+  // 북유럽 ─────────────────────────────────────────
+  // 덴마크(페로 제도 1948년 자치), 아이슬란드, 스웨덴, 노르웨이(스발바르·얀마옌), 핀란드(1947년 파리 강화 조약으로 1944년 휴전 국경 확정)
+  reuse(DK83);
+  reuse(NO18);
+  own([...whole(...minus(idsOf('DNK'), 'DK-83'), ...idsOf('FRO')), DK83.덴마크, DK83.북슐레스비히], [[1946, 'denmark']]);
+  own(whole(...idsOf('ISL')), [[1946, 'iceland']]);
+  own(whole(...idsOf('SWE')), [[1946, 'sweden']]);
+  own([...whole(...minus(idsOf('NOR'), 'NO-18')), NO18.노를란, NO18.얀마옌], [[1946, 'norway']]);
+  own(whole(...idsOf('FIN', 'ALD')), [[1946, 'finland']]);
+
+  // 독일 ─────────────────────────────────────────
+  // 4개 점령 지구 → 1949년 5월 독일 연방 공화국(미국·영국·프랑스 지구), 10월 독일 민주 공화국(소련 지구). 자르는 1947년 프랑스 보호령(자를란트), 1957년 1월 서독의 주.
+  // 1990년 10월 3일 동독이 서독에 가입(통일)하고 서베를린도 합쳐짐
+  reuse(BAV18);
+  reuse(BW18);
+  reuse(BE18);
+  own([...whole(...DE_US), BAV18.바이에른, BW18.북부], [[1946, 'germany-zone-us'], [1949, WD]]);
+  own(whole(...DE_UK), [[1946, 'germany-zone-uk'], [1949, WD]]);
+  own([...whole('DE-RP'), BAV18.린다우, BW18.남부], [[1946, 'germany-zone-fr'], [1949, WD]]);
+  own(whole('DE-SL'), [[1946, 'germany-zone-fr'], [1947, 'saar-protectorate'], [1957, WD]]);
+  own(whole(...DE_SU), [[1946, 'germany-zone-su'], [1949, DD], [1990, DE]]);
+  own([BE18.서부], [[1946, 'berlin-western-sectors'], [1990, DE]]);
+  own([BE18.동부], [[1946, 'berlin-soviet-sector'], [1949, DD], [1990, DE]]);
+
+  // 폴란드 ─────────────────────────────────────────
+  // 1945년 오데르-나이세선 국경 그대로(1950년 동독과 즈고젤레츠 조약, 1970년 서독과 바르샤바 조약으로 인정). 1951년 소련과의 국경 교환은 작아 나누지 않음
+  const PL18 = [PM18, WN18, KP18, WP18, SL18, MA18, LD18, MZ18, PK18, PD18];
+  for (const s of PL18) reuse(s);
+  own([...PL18.flatMap((s) => Object.values(s)), ...whole('PL-ZP', 'PL-LB', 'PL-DS', 'PL-OP', 'PL-SK', 'PL-LU')], [[1946, 'poland']]);
+
+  // 소련·발트 3국 ─────────────────────────────────────
+  // 소련: 1945년 국경(칼리닌그라드·발트 3국·서벨라루스·서우크라이나·카르파티아 루스·베사라비아·북부코비나). 1954년 크림이 러시아 SFSR에서 우크라이나 SSR로 옮겨졌지만 소련 안이라 나누지 않음.
+  // 발트 3국은 1990년 독립 선언(리투아니아 3월, 에스토니아·라트비아는 이행 선언), 1991년 8월 독립 확인, 9월 6일 소련 승인 → 1991년부터 지금의 국경(페초리·이반고로드·아브레네는 러시아)
+  const LEN46 = split('RU-LEN(1946)', ['RU-LEN'], [['나르바', [NARVA_W]]], '레닌그라드');
+  own([...whole(...idsOf('EST')), LEN46.나르바], [[1946, SU], [1991, 'estonia']]);
+  own(whole(...idsOf('LVA')), [[1946, SU], [1991, 'latvia']]);
+  own(whole(...idsOf('LTU')), [[1946, SU], [1991, 'lithuania']]);
+  own([...whole(...minus(RUS_ALL, 'RU-LEN'), ...idsOf('BLR', 'UKR', 'MDA', 'GEO', 'ARM', 'AZE')), LEN46.레닌그라드], [[1946, SU]]);
+
+  // 중부·동유럽 ──────────────────────────────────────
+  // 오스트리아(1955년 국가 조약), 헝가리(1947년 파리 강화 조약으로 트리아농 국경), 체코슬로바키아(1945년 국경, 1993년 분리), 루마니아(1947년 파리 강화 조약: 북트란실바니아 되찾음,
+  // 베사라비아·북부코비나는 소련, 남도브루자는 불가리아), 불가리아(1940년 크라이오바 조약 국경)
+  own(whole(...idsOf('AUT')), [[1946, 'austria-republic']]);
+  own(whole(...idsOf('HUN')), [[1946, 'hungary']]);
+  reuse(CZ18);
+  reuse(SK18);
+  own([CZ18.보호령, CZ18.주데텐, SK18.남부, SK18.북부, ...whole('SK-BL', 'SK-TC', 'SK-ZI', 'SK-PV')], [[1946, 'czechoslovakia']]);
+  reuse(TRS18);
+  own([TRS18.북부, TRS18.남부, ...whole(...minus(idsOf('ROU'), ...splitIds.get(TRS18)))], [[1946, 'romania']]);
+  own(whole(...idsOf('BGR')), [[1946, 'bulgaria']]);
+
+  // 이탈리아·유고슬라비아·트리에스테 ───────────────────────────
+  // 1946년 6월 이탈리아 공화국(땅은 1945년 말과 같음). 1947년 2월 파리 강화 조약(9월 발효): 율리안 마치(고리차 동쪽 배후지·이드리야·포스토이나·세자나 등)·이스트라·리예카·자다르·
+  // 크레스·라스토보는 유고슬라비아, 트리에스테 자유 지역(유엔 안보리 보장, 총독을 끝내 두지 못함)은 A 구역(트리에스테 시, 영국·미국 군정)과 B 구역(코페르·부예 군, 유고슬라비아 군정)으로 나뉨.
+  // 1954년 10월 런던 양해 각서로 A 구역은 이탈리아, B 구역은 유고슬라비아(1975년 오시모 조약으로 확정)
+  const HR18 = split('HR-18(1946)', ['HR-18'], [['B 구역', [ZONE_B_ISTRIA]]], '이스트라');
+  reuse(HR08);
+  const ZONE_B_SI = ['SI-040', 'SI-050', 'SI-090']; // 이졸라·코페르·피란
+  own([...whole(...minus(idsOf('ITA'), 'IT-IM', 'IT-TS')), IT_IM.임페리아], [[1946, IR]]);
+  own(whole('IT-TS'), [[1946, IR], [1947, 'trieste-zone-a'], [1954, IR]]);
+  own([HR18['B 구역'], ...whole(...ZONE_B_SI)], [[1946, IR], [1947, 'trieste-zone-b'], [1954, YU]]);
+  const GO46 = split('고리치아(1946)', ['SI-183', 'SI-084'], [['이탈리아', [GORIZIA_W]]], '유고슬라비아');
+  own([GO46.이탈리아], [[1946, IR]]);
+  own([HR18.이스트라, HR08.이탈리아, HR08.피우메, GO46.유고슬라비아, ...whole(...minus(SI_ITALY_1920, ...ZONE_B_SI, 'SI-183', 'SI-084'))], [[1946, IR], [1947, YU]]);
+  // 유고슬라비아: 1945년 11월 연방 인민 공화국(1963년 사회주의 연방 공화국). 6개 공화국(슬로베니아·크로아티아·보스니아 헤르체고비나·세르비아·몬테네그로·마케도니아)과 세르비아 안의 자치주(보이보디나·코소보)
+  own([HR08.유고슬라비아, ...whole(...minus(idsOf('SVN'), ...SI_ITALY_1920), ...minus(idsOf('HRV'), 'HR-18', 'HR-08'), ...idsOf('BIH', 'SRB', 'MNE', 'KOS', 'MKD'))], [[1946, YU]]);
+  own(whole('VAT'), [[1946, 'vatican']]);
+  own(whole(...idsOf('SMR')), [[1946, 'san-marino']]);
+
+  // 발칸 남부·튀르키예·키프로스 ─────────────────────────────
+  // 그리스: 1947년 파리 강화 조약으로 도데카니사(1945~1947 영국 군정, 1948년 3월 넘겨받음). 알바니아. 튀르키예(1939년 하타이까지 그대로)
+  reuse(GR_L);
+  reuse(GR_D);
+  reuse(GR_A);
+  own([...whole('GR-J', 'GR-H', 'GR-A1', 'GR-G', 'GR-F', 'GR-E', 'GR-B', 'GR-C', 'GR-69', 'GR-K', 'GR-M'), GR_L.키클라데스, GR_D.아르타, GR_D.에피루스, GR_A.동마케도니아, GR_A.서트라키아],
+    [[1946, 'greece']]);
+  own([GR_L.도데카니사], [[1946, IR], [1947, 'greece']]);
+  own(whole(...idsOf('ALB')), [[1946, 'albania']]);
+  reuse(TR08);
+  reuse(TR25);
+  own([...whole(...minus(idsOf('TUR'), 'TR-08', 'TR-25')), TR08.오스만, TR08.러시아, TR25.오스만, TR25.러시아], [[1946, 'turkey']]);
+  // 키프로스: 1960년 8월 독립(취리히·런던 협정, 영국 주권 기지 지역은 영국에 남음). 1974년 7월 그리스 군사 정권이 꾀한 쿠데타 뒤 튀르키예군이 북부를 점령(8월 휴전선, 유엔 완충 지대)
+  own(whole(...idsOf('CYP')), [[1946, null], [1960, 'cyprus']]);
+  own(whole('CYN'), [[1946, null], [1960, 'cyprus'], [1974, 'northern-cyprus']]);
+  own(whole(...idsOf('ESB', 'WSB')), [[1946, null]]);
 }
 
 // ── 소유표 → 버전 ─────────────────────────────────────────
 // 표를 시대 순서로 이어 해마다 나라별 단위 목록을 만들고, 같은 목록이 이어지는 기간을 한 버전으로 묶는다(표의 경계를 넘어서도 이어진다)
-const TABLES = [T1789, T1815, T1918];
+const TABLES = [T1789, T1815, T1918, T1946];
 const TABLE_TO = TABLES.at(-1).TO;
 const segments = {}; // 나라 → [[from, to, 단위 목록]]
 const nullSegments = []; // 주인 없는 단위의 기간
@@ -1412,46 +1584,47 @@ const build = (list) => {
   }
   return builtGeom.get(key);
 };
-// 1945년 말 모습이 이어지는 마지막 해(그 뒤 첫 국경 변화). null이면 지금까지. 다음 구간(1946~1991, B 후반)을 채울 때 이 값에서 버전을 나눈다.
-// 2026-10-03(작업 B1): 표가 1945년까지 늘어 1914년 7월 기준의 값(E2)을 1945년 말 기준으로 바꿨다
+// 1991년 말 모습이 이어지는 마지막 해(그 뒤 첫 국경 변화). null이면 지금까지. 다음 구간(1991~현재, A)을 채울 때 이 값에서 버전을 나눈다.
+// 2026-10-03(작업 B1): 1914년 7월 기준의 값(E2)을 1945년 말 기준으로 바꿨다. 같은 날(작업 B2): 표가 1991년까지 늘어 1991년 말 기준으로 바꿨다
 const TAIL_TO = {
   uk: null,
   ireland: null,
-  france: 1947, // 파리 강화 조약으로 탕드·라브리그 (E1의 1947년 버전이 이어짐)
-  'soviet-union': 1946, // E1의 1946~1992 버전(사할린 남부·쿠릴 등 동쪽 손 도형)이 이어짐
-  italy: 1946, // 1946년 6월 국민 투표로 공화국(versions의 italy-republic이 1946~1947년을 이어 받음. 1947년 파리 강화 조약으로 이스트리아·율리안 마치·자다르·도데카니사를 잃음)
-  yugoslavia: 1947, // 파리 강화 조약으로 이스트리아·리예카·자다르
-  greece: 1947, // 파리 강화 조약으로 도데카니사
-  czechoslovakia: 1993, // 체코·슬로바키아 분리 (1947년 브라티슬라바 교두보는 작아 나누지 않음)
-  'germany-zone-us': 1949, // 독일 연방 공화국
-  'germany-zone-uk': 1949,
-  'germany-zone-fr': 1949, // 1947년 1월 자르 보호령이 떨어져 나갔지만 B 후반에서 나눌 때까지 1949년까지 이어 씀(근사, 검토 반영 2026-10-03)
-  'germany-zone-su': 1949, // 독일 민주 공화국
-  'berlin-western-sectors': 1949,
-  'berlin-soviet-sector': 1949,
-  poland: null, // 1951년 소련과의 국경 교환(약 480km²)은 작아 나누지 않음
-  hungary: null,
+  malta: null,
+  france: null, // 1947년부터의 도형은 E1의 FRANCE_1947(versions)
+  monaco: null,
+  spain: null,
+  andorra: null,
+  portugal: null,
+  switzerland: null,
+  liechtenstein: null,
+  netherlands: null,
+  belgium: null,
+  luxembourg: null,
+  denmark: null,
+  iceland: null,
+  sweden: null,
+  norway: null,
+  finland: null,
+  germany: null,
+  poland: null,
+  estonia: null,
+  latvia: null,
+  lithuania: null,
+  'soviet-union': 1992, // 1991년 12월 소련 해체 → 러시아 연방(1992~, E1 손 도형)과 해체 뒤 나라들(A)
   'austria-republic': null,
+  hungary: null,
+  czechoslovakia: 1993, // 체코·슬로바키아 분리
   romania: null,
   bulgaria: null,
+  yugoslavia: 1992, // 1992년 1월 슬로베니아·크로아티아 국제 승인, 4월 보스니아 헤르체고비나, 유고슬라비아 연방 공화국(세르비아·몬테네그로)
+  'italy-republic': null,
+  vatican: null,
+  'san-marino': null,
+  greece: null,
   albania: null,
   turkey: null,
-  finland: null, // 1944~1956 포르칼라 조차지는 그리지 않음
-  iceland: null,
-  vatican: null,
-  denmark: null,
-  belgium: null,
-  norway: null,
-  netherlands: null,
-  luxembourg: null,
-  switzerland: null,
-  spain: null,
-  portugal: null,
-  sweden: null,
-  liechtenstein: null,
-  andorra: null,
-  'san-marino': null,
-  monaco: null,
+  cyprus: null,
+  'northern-cyprus': null,
 };
 // 표가 바뀌는 해에 단위 이름만 바뀌고 땅은 같은 이음매: 앞 버전의 단위 목록으로 잇는다(작업 B1).
 // 프랑스는 1918년 표에서 1940년 분계선이 지나는 도를 나눈 단위로 쓰지만 1917년과 땅이 같다(대칭차 0km²)
@@ -1474,11 +1647,12 @@ const tableVersions = (id) => {
 
 // 소련의 유럽 쪽
 // - 1918~1945년(작업 B1): '1918~1945 조각 소유표'에서 만든다(1939~1940 합병, 1941~1944 독일 점령 범위, 1944~1945 되찾은 땅). 동쪽은 손 도형 SOVIET
-// - 1946~1992 버전: 지금의 러시아·발트 3국·벨라루스·우크라이나·몰도바·캅카스 3국 조각 전부(칼리닌그라드 1945, 카르파티아 루스 1945, 크림은 1954년부터 우크라이나 SSR이지만 소련 안).
-//   1945년 말의 유럽 쪽은 이 도형과 거의 같고(1951년 폴란드와의 국경 교환 정도), 동쪽 손 도형이 사할린 남부를 더하는 1946년에 나눈다(일본 권역의 사할린 남부가 1946년까지)
-const SU_EU_1946 = F(...RUS_ALL, ...idsOf('EST', 'LVA', 'LTU', 'BLR', 'UKR', 'MDA', 'GEO', 'ARM', 'AZE'));
+// - 1946~1991년(작업 B2): '1946~1991 조각 소유표'에서 만든다. 1946~1990년은 지금의 러시아·발트 3국·벨라루스·우크라이나·몰도바·캅카스 3국 조각 전부
+//   (칼리닌그라드 1945, 카르파티아 루스 1945, 크림은 1954년부터 우크라이나 SSR이지만 소련 안. E1의 고정 도형 SU_EU_1946과 땅이 같음), 1991년은 발트 3국(나르바 시가지 포함)을 뺀다.
+//   동쪽은 손 도형 SOVIET_1946(사할린 남부를 더함. 일본 권역의 사할린 남부가 1946년까지)
 // 러시아 연방: 지금의 러시아 조각 가운데 크림·세바스토폴(2014년 러시아 합병, 국제적으로 우크라이나 영토)을 뺀다. 2014년부터의 실효 지배는 아직 나누지 않았다(1991~현재 뼈대에서)
-const RF_EU = F(...minus(RUS_ALL, 'UA-43', 'UA-40'));
+// 2026-10-03(작업 B2): 레닌그라드주 조각이 덮던 나르바 시가지(강 서쪽, 에스토니아)를 NARVA_W로 뺀다
+const RF_EU = D(F(...minus(RUS_ALL, 'UA-43', 'UA-40')), [NARVA_W]);
 
 // ── 유럽 밖 손 도형 (west.mjs에서 옮김, 좌표 그대로) ──────────────
 // 러시아 제국 (대략). 중앙아시아·캅카스 포함. 청 영토와 겹치는 곳은 뺀다
@@ -1526,7 +1700,8 @@ const CAUCASUS_S = ring([[36.0, 38.0], [36.0, 41.0], [40.0, 43.4], [42.0, 43.2],
 const WEST_CUT = ring([[15.0, 60.0], [27.8, 59.5], [28.2, 57.5], [31.3, 56.0], [32.7, 53.8], [31.8, 52.1], [34.4, 51.3], [35.4, 50.4], [38.2, 49.9], [40.2, 49.6], [39.8, 47.8], [38.2, 47.1], [36.0, 45.0], [30.0, 40.0], [15.0, 40.0]]);
 const RUSSIA_FED = D(SOVIET_1946, [CENTRAL_ASIA], [CAUCASUS_S], [WEST_CUT]);
 
-// 1947년 뒤 프랑스 (E1, 소유표 밖). 임페리아 조각에서 떼어 낸 망통을 더한다(versions). 1946년까지는 소유표(작업 B1에서 1919~1946년 E1 도형 FRANCE_1860을 대신함)
+// 1947년 뒤 프랑스 (E1). 임페리아 조각에서 떼어 낸 망통을 더한다(versions). 1946년까지는 소유표(작업 B1에서 1919~1946년 E1 도형 FRANCE_1860을 대신함).
+// 2026-10-03(작업 B2): 1947년부터도 소유표가 땅을 정하지만(탕드·라브리그를 더함) 도형은 이 E1 도형을 그대로 쓴다(땅이 같음)
 const FRANCE_1947 = F(...FRANCE_ALL);
 // 러시아 제국의 권역 바깥선 밖(손 도형): 1860년 전에는 네르친스크 조약(1689) 경계라 연해주(청, QING_1724 안)와
 // 흑룡강 북쪽·하류(외만주: 아르군강 합류점에서 스타노보이산맥을 따라 우다만까지의 남쪽, 아이훈 조약(1858)·베이징 조약(1860)으로 러시아)를 뺀다.
@@ -1552,11 +1727,12 @@ const russiaVersions = () => {
     return [from, to, U(outsideOf(east), build(list))];
   });
 };
-// 소련(1918~1945, 작업 B1): 유럽 쪽은 소유표, 동쪽은 손 도형 SOVIET. 1946년부터는 E1 버전(동쪽 SOVIET_1946)
-const sovietVersions = () => [
-  ...tableVersions('soviet-union').map(([from, to, list]) => [from, to, U(outsideOf(SOVIET), build(list))]),
-  [1946, 1992, U(outside(SOVIET_1946), SU_EU_1946)],
-];
+// 소련: 유럽 쪽은 소유표(1918~1945 작업 B1, 1946~1991 작업 B2), 동쪽은 손 도형(1945년까지 SOVIET, 1946년부터 SOVIET_1946)
+const SOVIET_EAST_CUT = 1946;
+const sovietVersions = () => tableVersions('soviet-union').map(([from, to, list]) => {
+  if (from < SOVIET_EAST_CUT && to > SOVIET_EAST_CUT) throw new Error('europe.mjs: 소련 버전이 1946년(동쪽 손 도형이 바뀌는 해)을 넘어 이어짐');
+  return [from, to, U(outsideOf(from < SOVIET_EAST_CUT ? SOVIET : SOVIET_1946), build(list))];
+});
 // 소유표의 나라 (영국·프랑스·러시아·소련 밖)
 const TABLE_ENTITIES = ['prussia', 'north-german-confederation', 'german-empire', 'german-states', 'south-german-states', 'austria', 'austria-hungary', 'bosnia-occupied', 'cyprus-british', 'dodecanese-occupied', 'krakow',
   'sardinia', 'italy', 'papal-states', 'two-sicilies', 'italian-duchies', 'san-marino', 'monaco', 'netherlands', 'belgium', 'luxembourg', 'switzerland', 'liechtenstein',
@@ -1570,9 +1746,11 @@ const TABLE_ENTITIES = ['prussia', 'north-german-confederation', 'german-empire'
   'uk', 'ireland', 'iceland', 'finland', 'estonia', 'latvia', 'lithuania', 'poland', 'weimar-republic', 'nazi-germany', 'free-city-danzig', 'memel-territory', 'saar-territory',
   'austria-republic', 'hungary', 'czechoslovakia', 'bohemia-moravia', 'slovakia', 'yugoslavia', 'croatia-ndh', 'serbia-occupied', 'montenegro-occupied', 'fiume', 'vatican', 'turkey',
   'ottoman-greek-occupation', 'general-government', 'soviet-occupied', 'karelia-occupied', 'france-occupied', 'france-italian-occupied', 'italy-occupied',
-  'germany-zone-us', 'germany-zone-uk', 'germany-zone-fr', 'germany-zone-su', 'berlin-western-sectors', 'berlin-soviet-sector'];
+  'germany-zone-us', 'germany-zone-uk', 'germany-zone-fr', 'germany-zone-su', 'berlin-western-sectors', 'berlin-soviet-sector',
+  // 1946~1991 (작업 B2. 이탈리아 공화국은 versions에서 따로)
+  'west-germany', 'germany', 'east-germany', 'saar-protectorate', 'trieste-zone-a', 'trieste-zone-b', 'cyprus', 'northern-cyprus', 'malta'];
 {
-  const missing = Object.keys(segments).filter((id) => !TABLE_ENTITIES.includes(id) && !['france', 'russia', 'soviet-union'].includes(id));
+  const missing = Object.keys(segments).filter((id) => !TABLE_ENTITIES.includes(id) && !['france', 'russia', 'soviet-union', 'italy-republic'].includes(id));
   if (missing.length) throw new Error(`europe.mjs: 소유표의 나라 ${missing.join(', ')}가 TABLE_ENTITIES에 없음`);
 }
 
@@ -1583,16 +1761,24 @@ export const versions = {
   russia: russiaVersions(),
   'soviet-union': sovietVersions(),
   'russia-fed': [[1992, null, U(outside(RUSSIA_FED), RF_EU)]],
-  france: [...tableVersions('france').map(([from, to, list]) => [from, to, build(list)]), [1947, null, U(FRANCE_1947, geomOfUnit(IT_IM.망통))]],
-  // 이탈리아 공화국: 1946년 6월 국민 투표로 왕국이 공화국으로 바뀜(이름만 바뀜, 땅은 1945년 말과 같음). 1947년 파리 강화 조약부터는 B 후반에서
-  'italy-republic': [[1946, 1947, build(tableVersions('italy').at(-1)[2])]],
+  france: tableVersions('france').map(([from, to, list], i, all) => {
+    if (i === all.length - 1 && (from !== 1947 || to !== null)) throw new Error('europe.mjs: 프랑스의 마지막 버전이 1947~이 아님');
+    return [from, to, from === 1947 ? U(FRANCE_1947, geomOfUnit(IT_IM.망통)) : build(list)];
+  }),
+  // 이탈리아 공화국: 1946년 6월 국민 투표로 왕국이 공화국으로 바뀜(이름만 바뀜, 땅은 1945년 말과 같음). 1946년 버전은 B1처럼 왕국의 1945년 단위 목록으로 만들고(같은 땅),
+  // 1947년(파리 강화 조약)부터는 소유표(작업 B2)
+  'italy-republic': tableVersions('italy-republic').map(([from, to, list], i) => {
+    if (i === 0 && (from !== 1946 || to !== 1947)) throw new Error('europe.mjs: 이탈리아 공화국의 첫 버전이 1946~1947이 아님');
+    return [from, to, build(i === 0 ? tableVersions('italy').at(-1)[2] : list)];
+  }),
   ...Object.fromEntries(TABLE_ENTITIES.map((id) => [id, tableVersions(id).map(([from, to, list]) => [from, to, build(list)])])),
 };
 
 // 빈 땅 검사 구역 (DESIGN.md §5.4): 권역 바깥선(domain, 모든 조각의 합)에서 그해 주인 없는 단위(소유표의 null)를 뺀 곳.
-// 주인 없는 단위가 같은 기간마다 구역 하나. 1789~1945년(뼈대를 채운 구간, 2026-10-02 작업 E3에서 1789년까지, 2026-10-03 작업 B1에서 1945년까지 넓힘)만 검사한다. 1789년 전(D)·1945년 뒤(B 후반)를 채우면 넓힌다.
+// 주인 없는 단위가 같은 기간마다 구역 하나. 1789~1991년(뼈대를 채운 구간, 2026-10-02 작업 E3에서 1789년까지, 2026-10-03 작업 B1에서 1945년까지, 같은 날 작업 B2에서 1991년까지 넓힘)만 검사한다. 1789년 전(D)·1991년 뒤(A)를 채우면 넓힌다.
 // 일부러 비워 둔 곳: 지브롤터·몰타(영국 식민지, E1 원칙), 스발바르(1925년까지 무주지)·얀마옌(1929년까지 무주지), 프란츠요제프 제도(1926년까지 무주지),
 // 에리반·나흐치반 칸국과 수르말루(1828년까지 페르시아). 1789~1814년(작업 E3)에 더: 몰타(1798년까지 몰타 기사단령),
 // 러시아에 합쳐지기 전의 조지아 왕국들(카르틀리-카헤티 1801년까지, 서조지아 1810년까지)과 아제르바이잔·다게스탄의 칸국들·아르메니아 북부(1806년까지, 페르시아 종주).
-// 1915~1945년(작업 B1)에 더: 키프로스(1914년 11월부터 영국 식민지), 하타이(1918~1938 프랑스 위임 통치령 시리아)
+// 1915~1945년(작업 B1)에 더: 키프로스(1914년 11월부터 영국 식민지), 하타이(1918~1938 프랑스 위임 통치령 시리아).
+// 1946~1991년(작업 B2): 키프로스는 1959년까지(1960년 독립), 몰타는 1963년까지(1964년 독립), 영국 주권 기지 지역(아크로티리·데켈리아)은 1960년 뒤에도 비워 둠
 export const gapZones = nullSegments.map(([from, to, list]) => ({ name: `유럽 ${from}~${to - 1}`, zone: D(domain, build(list)), from, to }));
