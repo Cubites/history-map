@@ -26,14 +26,18 @@ if (!existsSync(CSHAPES)) {
 }
 
 // [1]에서 비교할 생성기 나라: GW 번호 → data/geo의 나라 id(기간이 이어지는 id들). 유럽 권역을 넣으면 여기에 더한다.
-// 키가 '390+395'처럼 +로 이어지면 CShapes의 그 나라들을 합쳐 비교한다(덴마크 본국과 아이슬란드: 생성기는 덴마크에 아이슬란드를 넣음).
+// 키가 '390+395'처럼 +로 이어지면 CShapes의 그 나라들을 합쳐 비교한다(덴마크 본국과 아이슬란드: 생성기는 1917년까지 덴마크에 아이슬란드를 넣고 1918년부터 따로 그림. CShapes는 1944년 6월부터 아이슬란드를 따로 둠).
 // 2026-10-02(작업 E2): 1815~1914 유럽 뼈대의 나라를 더함. 3461은 CShapes의 보스니아(1886~1908, 오스트리아-헝가리 점령지)
+// 2026-10-03(작업 B1): 1918~1945 뼈대의 나라를 더함. 독일(255)은 독일 제국·바이마르 공화국·나치 독일, 오스만(640)은 튀르키예로 이어진다.
+// CShapes는 2차 대전의 점령을 빼고 병합만 반영하므로(예: 1939~1945 폴란드 없음) 생성기의 점령 항목(총독부 등)은 비교하지 않는다
 const GW_ENTITIES = {
   200: ['uk'], 220: ['france'], 365: ['russia', 'soviet-union', 'russia-fed'],
   210: ['netherlands'], 211: ['belgium'], 212: ['luxembourg'], 225: ['switzerland'], 230: ['spain'], 235: ['portugal'],
-  255: ['german-empire'], 300: ['austria-hungary'], 3461: ['bosnia-occupied'], 325: ['italy'],
+  255: ['german-empire', 'weimar-republic', 'nazi-germany'], 300: ['austria-hungary'], 3461: ['bosnia-occupied'], 325: ['italy', 'italy-republic'],
   '390+395': ['denmark'], 380: ['sweden-norway', 'sweden'], 385: ['norway'],
-  640: ['ottoman'], 350: ['greece'], 340: ['serbia'], 341: ['montenegro'], 360: ['romania'], 355: ['bulgaria'], 339: ['albania'],
+  640: ['ottoman', 'turkey'], 350: ['greece'], 340: ['serbia'], 341: ['montenegro'], 360: ['romania'], 355: ['bulgaria'], 339: ['albania'],
+  205: ['ireland'], 395: ['iceland'], 375: ['finland'], 366: ['estonia'], 367: ['latvia'], 368: ['lithuania'], 290: ['poland'],
+  305: ['austria-republic'], 310: ['hungary'], 315: ['czechoslovakia'], 345: ['yugoslavia'],
 };
 // 권역 바깥선(조각 domain) 안만 비교하는 나라: 생성기가 권역 바깥선 안만 그린 나라(오스만 제국. CShapes는 중동·북아프리카까지 넣음)
 const DOMAIN_ONLY = new Set(['640']);

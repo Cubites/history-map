@@ -203,3 +203,77 @@
 # 점령: 프랑스군이 점령한 한자 자유시(1806년 11월~1810년 병합), 러시아가 점령한 바르샤바 공국(1813~1815년 빈 회의)
 - { type: occupied_by, subject: hanseatic-cities, object: france, from: 1806, to: 1810 }
 - { type: occupied_by, subject: duchy-of-warsaw, object: russia, from: 1813, to: 1815 }
+
+# ── 유럽 1918~1945 (작업 B1, 2026-10-03) ──
+# 계승: 무너진 제국과 신생국, 이름만 바뀐 나라, 병합된 국제 관리 지역
+- { type: successor_of, subject: finland, object: russia, from: 1917, to: null }
+- { type: successor_of, subject: estonia, object: russia, from: 1918, to: null }
+- { type: successor_of, subject: latvia, object: russia, from: 1918, to: null }
+- { type: successor_of, subject: lithuania, object: russia, from: 1918, to: null }
+- { type: successor_of, subject: poland, object: russia, from: 1918, to: null }
+- { type: successor_of, subject: poland, object: austria-hungary, from: 1918, to: null }
+- { type: successor_of, subject: weimar-republic, object: german-empire, from: 1918, to: null }
+- { type: successor_of, subject: nazi-germany, object: weimar-republic, from: 1933, to: null }
+- { type: successor_of, subject: austria-republic, object: austria-hungary, from: 1918, to: null }
+- { type: successor_of, subject: hungary, object: austria-hungary, from: 1918, to: null }
+- { type: successor_of, subject: czechoslovakia, object: austria-hungary, from: 1918, to: null }
+- { type: successor_of, subject: yugoslavia, object: serbia, from: 1918, to: null }
+- { type: successor_of, subject: yugoslavia, object: montenegro, from: 1918, to: null }
+- { type: successor_of, subject: yugoslavia, object: austria-hungary, from: 1918, to: null }
+- { type: successor_of, subject: turkey, object: ottoman, from: 1923, to: null }
+- { type: successor_of, subject: lithuania, object: memel-territory, from: 1923, to: null }
+- { type: successor_of, subject: italy, object: fiume, from: 1924, to: null }
+- { type: successor_of, subject: nazi-germany, object: saar-territory, from: 1935, to: null }
+- { type: successor_of, subject: nazi-germany, object: free-city-danzig, from: 1939, to: null }
+- { type: successor_of, subject: czechoslovakia, object: bohemia-moravia, from: 1945, to: null }
+- { type: successor_of, subject: czechoslovakia, object: slovakia, from: 1945, to: null }
+- { type: successor_of, subject: yugoslavia, object: croatia-ndh, from: 1945, to: null }
+- { type: successor_of, subject: poland, object: general-government, from: 1945, to: null }
+- { type: successor_of, subject: germany-zone-us, object: nazi-germany, from: 1945, to: null }
+- { type: successor_of, subject: germany-zone-uk, object: nazi-germany, from: 1945, to: null }
+- { type: successor_of, subject: germany-zone-fr, object: nazi-germany, from: 1945, to: null }
+- { type: successor_of, subject: germany-zone-su, object: nazi-germany, from: 1945, to: null }
+- { type: successor_of, subject: italy-republic, object: italy, from: 1946, to: null }
+# 종속: 독일의 위성국과 비시 프랑스(1942년 11월부터는 점령)
+- { type: vassal_of, subject: slovakia, object: nazi-germany, from: 1939, to: 1944 }
+- { type: vassal_of, subject: croatia-ndh, object: nazi-germany, from: 1941, to: 1944 }
+- { type: vassal_of, subject: france, object: nazi-germany, from: 1940, to: 1941 }
+# 점령: 전간기 국제 관리 지역과 그리스-튀르키예 전쟁
+- { type: occupied_by, subject: memel-territory, object: france, from: 1920, to: 1922 }
+- { type: occupied_by, subject: ottoman-greek-occupation, object: greece, from: 1919, to: 1921 }
+# 점령: 2차 대전(그해 말 기준. 지역 항목은 점령지 영토 위에, 나라 전체가 점령되고 정부가 남은 나라는 그 나라 영토 위에 빗금. 룩셈부르크는 1940~1943년 독일 영토로 그림)
+- { type: occupied_by, subject: bohemia-moravia, object: nazi-germany, from: 1939, to: 1944 }
+- { type: occupied_by, subject: general-government, object: nazi-germany, from: 1939, to: 1944 }
+- { type: occupied_by, subject: albania, object: italy, from: 1939, to: 1942 }
+- { type: occupied_by, subject: albania, object: nazi-germany, from: 1943, to: 1943 }
+- { type: occupied_by, subject: denmark, object: nazi-germany, from: 1940, to: 1944 }
+- { type: occupied_by, subject: norway, object: nazi-germany, from: 1940, to: 1944 }
+- { type: occupied_by, subject: netherlands, object: nazi-germany, from: 1940, to: 1944 }
+- { type: occupied_by, subject: belgium, object: nazi-germany, from: 1940, to: 1943 }
+- { type: occupied_by, subject: france-occupied, object: nazi-germany, from: 1940, to: 1943 }
+- { type: occupied_by, subject: france, object: nazi-germany, from: 1942, to: 1943 }
+- { type: occupied_by, subject: france-italian-occupied, object: italy, from: 1942, to: 1942 }
+- { type: occupied_by, subject: greece, object: nazi-germany, from: 1941, to: 1943 }
+- { type: occupied_by, subject: greece, object: italy, from: 1941, to: 1942 }
+- { type: occupied_by, subject: serbia-occupied, object: nazi-germany, from: 1941, to: 1943 }
+- { type: occupied_by, subject: montenegro-occupied, object: italy, from: 1941, to: 1942 }
+- { type: occupied_by, subject: montenegro-occupied, object: nazi-germany, from: 1943, to: 1943 }
+- { type: occupied_by, subject: soviet-occupied, object: nazi-germany, from: 1941, to: 1944 }
+- { type: occupied_by, subject: karelia-occupied, object: finland, from: 1941, to: 1943 }
+- { type: occupied_by, subject: italy-occupied, object: nazi-germany, from: 1943, to: 1944 }
+- { type: occupied_by, subject: hungary, object: nazi-germany, from: 1944, to: 1944 }
+- { type: occupied_by, subject: slovakia, object: nazi-germany, from: 1944, to: 1944 }
+# 점령: 1945년 독일 점령 지구와 베를린(4개국 관리)
+- { type: occupied_by, subject: germany-zone-us, object: usa, from: 1945, to: 1948 }
+- { type: occupied_by, subject: germany-zone-uk, object: uk, from: 1945, to: 1948 }
+- { type: occupied_by, subject: germany-zone-fr, object: france, from: 1945, to: 1948 }
+- { type: occupied_by, subject: germany-zone-su, object: soviet-union, from: 1945, to: 1948 }
+- { type: occupied_by, subject: berlin-western-sectors, object: usa, from: 1945, to: 1948 }
+- { type: occupied_by, subject: berlin-western-sectors, object: uk, from: 1945, to: 1948 }
+- { type: occupied_by, subject: berlin-western-sectors, object: france, from: 1945, to: 1948 }
+- { type: occupied_by, subject: berlin-soviet-sector, object: soviet-union, from: 1945, to: 1948 }
+# 점령: 오스트리아 공화국(1945~1955 미국·영국·프랑스·소련 4개국 점령, 1955년 국가 조약으로 끝남. 지도는 점령 지구를 나누지 않음)
+- { type: occupied_by, subject: austria-republic, object: usa, from: 1945, to: 1954 }
+- { type: occupied_by, subject: austria-republic, object: uk, from: 1945, to: 1954 }
+- { type: occupied_by, subject: austria-republic, object: france, from: 1945, to: 1954 }
+- { type: occupied_by, subject: austria-republic, object: soviet-union, from: 1945, to: 1954 }
