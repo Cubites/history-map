@@ -31,15 +31,19 @@ if (!existsSync(CSHAPES)) {
 // 2026-10-03(작업 B1): 1918~1945 뼈대의 나라를 더함. 독일(255)은 독일 제국·바이마르 공화국·나치 독일, 오스만(640)은 튀르키예로 이어진다.
 // CShapes는 2차 대전의 점령을 빼고 병합만 반영하므로(예: 1939~1945 폴란드 없음) 생성기의 점령 항목(총독부 등)은 비교하지 않는다
 // 2026-10-03(작업 B2): 1946~1991 뼈대의 나라를 더함. CShapes는 통일 독일(1990년 10월~)도 서독과 같은 260으로 두므로 서독(west-germany)과 통일 독일(germany)을 260 하나와 비교한다
+// 2026-10-04(작업 A): 1992~현재 뼈대의 나라를 더함. 345(유고슬라비아)는 2006년까지 유고슬라비아 연방 공화국·세르비아 몬테네그로로, 340·341은 1918년 전 나라와 2006년 뒤 나라를 함께 비교한다.
+// 분쟁·실효 지배 지역(크림·트란스니스트리아·압하지야·남오세티야·나고르노카라바흐·코소보 등)은 나라와 따로 그리므로 CShapes의 나라와 그만큼 차이가 난다(결과 노트)
 const GW_ENTITIES = {
   200: ['uk'], 220: ['france'], 365: ['russia', 'soviet-union', 'russia-fed'],
   210: ['netherlands'], 211: ['belgium'], 212: ['luxembourg'], 225: ['switzerland'], 230: ['spain'], 235: ['portugal'],
   255: ['german-empire', 'weimar-republic', 'nazi-germany'], 300: ['austria-hungary'], 3461: ['bosnia-occupied'], 325: ['italy', 'italy-republic'],
   '390+395': ['denmark'], 380: ['sweden-norway', 'sweden'], 385: ['norway'],
-  640: ['ottoman', 'turkey'], 350: ['greece'], 340: ['serbia'], 341: ['montenegro'], 360: ['romania'], 355: ['bulgaria'], 339: ['albania'],
+  640: ['ottoman', 'turkey'], 350: ['greece'], 340: ['serbia', 'serbia-republic'], 341: ['montenegro', 'montenegro-republic'], 360: ['romania'], 355: ['bulgaria'], 339: ['albania'],
   205: ['ireland'], 395: ['iceland'], 375: ['finland'], 366: ['estonia'], 367: ['latvia'], 368: ['lithuania'], 290: ['poland'],
-  305: ['austria-republic'], 310: ['hungary'], 315: ['czechoslovakia'], 345: ['yugoslavia'],
+  305: ['austria-republic'], 310: ['hungary'], 315: ['czechoslovakia'], 345: ['yugoslavia', 'fr-yugoslavia', 'serbia-montenegro'], 347: ['kosovo-disputed'],
   260: ['west-germany', 'germany'], 265: ['east-germany'], 338: ['malta'], 352: ['cyprus'],
+  316: ['czechia'], 317: ['slovakia-republic'], 343: ['macedonia-republic', 'north-macedonia'], 344: ['croatia'], 346: ['bosnia-herzegovina'], 349: ['slovenia'],
+  359: ['moldova'], 369: ['ukraine'], 370: ['belarus'], 371: ['armenia'], 372: ['georgia'], 373: ['azerbaijan'],
 };
 // 권역 바깥선(조각 domain) 안만 비교하는 나라: 생성기가 권역 바깥선 안만 그린 나라(오스만 제국. CShapes는 중동·북아프리카까지 넣음)
 const DOMAIN_ONLY = new Set(['640']);

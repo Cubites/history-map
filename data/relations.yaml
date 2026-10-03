@@ -305,3 +305,42 @@
 - { type: occupied_by, subject: trieste-zone-b, object: yugoslavia, from: 1947, to: 1953 }
 # 점령: 1974년 튀르키예군이 차지한 키프로스 북부(1983년 북키프로스 튀르키예 공화국 선포는 튀르키예만 승인, 유엔 안보리 결의 541호가 무효로 봄. 귀속 논쟁이 아니라 점령으로 둠)
 - { type: occupied_by, subject: northern-cyprus, object: turkey, from: 1974, to: null }
+
+# ── 유럽 1992~현재 (작업 A, 2026-10-04) ──
+# 계승: 소련·유고슬라비아·체코슬로바키아 해체 뒤 나라들, 이름만 바뀐 나라(유고슬라비아 연방 공화국 → 세르비아 몬테네그로 → 세르비아, 마케도니아 → 북마케도니아)
+- { type: successor_of, subject: ukraine, object: soviet-union, from: 1991, to: null }
+- { type: successor_of, subject: belarus, object: soviet-union, from: 1991, to: null }
+- { type: successor_of, subject: moldova, object: soviet-union, from: 1991, to: null }
+- { type: successor_of, subject: georgia, object: soviet-union, from: 1991, to: null }
+- { type: successor_of, subject: armenia, object: soviet-union, from: 1991, to: null }
+- { type: successor_of, subject: azerbaijan, object: soviet-union, from: 1991, to: null }
+- { type: successor_of, subject: slovenia, object: yugoslavia, from: 1991, to: null }
+- { type: successor_of, subject: croatia, object: yugoslavia, from: 1991, to: null }
+- { type: successor_of, subject: bosnia-herzegovina, object: yugoslavia, from: 1992, to: null }
+- { type: successor_of, subject: macedonia-republic, object: yugoslavia, from: 1991, to: null }
+- { type: successor_of, subject: fr-yugoslavia, object: yugoslavia, from: 1992, to: null }
+- { type: successor_of, subject: serbia-montenegro, object: fr-yugoslavia, from: 2003, to: null }
+- { type: successor_of, subject: serbia-republic, object: serbia-montenegro, from: 2006, to: null }
+- { type: successor_of, subject: montenegro-republic, object: serbia-montenegro, from: 2006, to: null }
+- { type: successor_of, subject: north-macedonia, object: macedonia-republic, from: 2019, to: null }
+- { type: successor_of, subject: czechia, object: czechoslovakia, from: 1993, to: null }
+- { type: successor_of, subject: slovakia-republic, object: czechoslovakia, from: 1993, to: null }
+- { type: successor_of, subject: kosovo-disputed, object: kosovo-un, from: 2008, to: null }
+- { type: successor_of, subject: ukraine-east-disputed, object: donbas-separatist, from: 2022, to: null }
+# 귀속 논쟁(claimed_by): 다른 유엔 회원국이 병합을 선언한 땅(크림 2014~, 2022년 4개 주의 점령 지역)과 유엔 회원국 약 절반이 독립을 승인한 코소보(2008~).
+# 병합국의 영토에는 넣지 않는다(europe.mjs '1992~현재 조각 소유표'의 기준 ②). 코소보는 세르비아와 코소보 공화국(영토는 이 지역 항목)이 후보.
+# 1999~2007년 유엔 관리 코소보(kosovo-un)는 국제 연맹 관리 자르 지역(1920~1935)처럼 관계 없는 지역 항목
+- { type: claimed_by, subject: crimea-disputed, object: ukraine, from: 2014, to: null }
+- { type: claimed_by, subject: crimea-disputed, object: russia-fed, from: 2014, to: null }
+- { type: claimed_by, subject: ukraine-east-disputed, object: ukraine, from: 2022, to: null }
+- { type: claimed_by, subject: ukraine-east-disputed, object: russia-fed, from: 2022, to: null }
+- { type: claimed_by, subject: kosovo-disputed, object: serbia-republic, from: 2008, to: null }
+- { type: claimed_by, subject: kosovo-disputed, object: kosovo, from: 2008, to: null }
+# 점령(occupied_by): 병합 선언은 없지만 다른 나라의 군대가 차지하거나 국제 재판소·유엔 결의가 그 나라의 실효 지배를 인정한 땅(기준 ③).
+# 트란스니스트리아는 1992년 전쟁부터(일라슈쿠 판결), 나고르노카라바흐는 1994년 휴전부터 2019년까지(치라고프 판결. 2020년 11월 휴전 성명이 아르메니아군의 철수를 정해 2020년 말 버전부터는 관계 없음),
+# 돈바스 분리 지역은 2014년부터(우크라이나·네덜란드 대 러시아 결정, 2022년부터는 귀속 논쟁 지역), 압하지야·남오세티야는 2008년 전쟁부터(조지아 대 러시아(II) 판결)
+- { type: occupied_by, subject: transnistria, object: russia-fed, from: 1992, to: null }
+- { type: occupied_by, subject: nagorno-karabakh, object: armenia, from: 1994, to: 2019 }
+- { type: occupied_by, subject: donbas-separatist, object: russia-fed, from: 2014, to: 2021 }
+- { type: occupied_by, subject: abkhazia, object: russia-fed, from: 2008, to: null }
+- { type: occupied_by, subject: south-ossetia, object: russia-fed, from: 2008, to: null }
