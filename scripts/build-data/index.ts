@@ -1,13 +1,11 @@
 // 데이터 빌드 (DESIGN.md §5.3): 원본 YAML/GeoJSON → 검증 → 지오 처리 → public/data/
 import { mkdir, readdir, readFile, rm, writeFile } from 'node:fs/promises';
-import { createRequire } from 'node:module';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parse as parseYaml } from 'yaml';
 import { z } from 'zod';
 import { feature } from 'topojson-client';
 import type { Feature, FeatureCollection, MultiPolygon, Polygon } from 'geojson';
-import type { GeometryCollection, Topology } from 'topojson-specification';
 import {
   EntitySchema,
   EventSchema,
@@ -25,14 +23,14 @@ import {
 import { buildLodTopology, countPoints, subTopology, tiledTopology } from './topo.ts';
 import { chunkOutlines, tilePolygons } from './tiles.ts';
 import { buildWars, checkWars, findCutText, readWars } from './wars.ts';
+import { keyOf, runCached } from './cache.ts';
+import { loadLand, type Land } from './tasks.ts';
 import { AllowedExclaveSchema, EXCLAVE_REPORT_KM2, findExclaves, formatPiece, matchExclaves, type AllowedExclave } from './exclaves.ts';
 import {
   anchorPoint,
   areaKm2,
   bbox,
   bboxIntersects,
-  clipToLand,
-  intersect,
   rewindForD3,
   roundCoords,
   toMulti,
@@ -44,7 +42,6 @@ import {
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const DATA = path.join(ROOT, 'data');
 const OUT = path.join(ROOT, 'public/data');
-const require = createRequire(import.meta.url);
 /** --check: 검증만 하고 public/data/에 쓰지 않는다 */
 const CHECK_ONLY = process.argv.includes('--check');
 
@@ -209,15 +206,14 @@ function checkArrowAnchors(events: HistoryEvent[], territories: Territory[]) {
 
 // ── 지오 처리 (DESIGN.md §5.3 ③) ────────────────────────────
 
-type Land = Awaited<ReturnType<typeof loadLand>>;
+// Natural Earth 육지(tasks.ts의 loadLand). 1:50m은 mid·high 단계와 검사에, 1:110m은 low 단계에 쓴다.
 
-/** Natural Earth 육지. 1:50m은 mid·high 단계와 검사에, 1:110m은 low 단계에 쓴다. */
-async function loadLand(scale: '50m' | '110m') {
-  const topo = JSON.parse(await readFile(require.resolve(`world-atlas/land-${scale}.json`), 'utf8')) as Topology<{ land: GeometryCollection }>;
-  const fc = feature(topo, topo.objects.land) as FeatureCollection<Polygon | MultiPolygon>;
-  // 해안선 자르기는 평면 계산이므로 날짜 변경선을 넘는 육지를 펴서 쓴다 (geo.ts의 unwrapAntimeridian)
-  const pieces = fc.features.flatMap((f) => toMulti(f.geometry)).flatMap(unwrapAntimeridian).map((coords) => ({ coords, bbox: bbox([coords]) }));
-  return { fc, pieces };
+/**
+ * 해안선 자르기 (2026-10-03): 영토마다 geo.ts의 clipToLand와 같은 계산을 worker들에 나눠 하고 결과를 캐시에 둔다(cache.ts).
+ * check:data·check:exclaves도 같은 계산(같은 열쇠)을 하므로 한 명령이 자른 영토는 다른 명령이 다시 자르지 않는다. 결과는 입력 순서대로 온다
+ */
+function clipJobs(coordsList: MultiCoords[], land: '50m' | '110m') {
+  return coordsList.map((coords) => ({ args: { g: keyOf(coords), land }, geoms: new Map([[keyOf(coords), coords]]) }));
 }
 
 interface ClippedTerritory extends Territory {
@@ -227,9 +223,10 @@ interface ClippedTerritory extends Territory {
   anchor: [number, number];
 }
 
-function clipAll(territories: Territory[], land: Land): ClippedTerritory[] {
-  return territories.flatMap((t) => {
-    const clipped = roundCoords(clipToLand(t.coords, land.pieces));
+async function clipAll(territories: Territory[]): Promise<ClippedTerritory[]> {
+  const results = await runCached<MultiCoords>('clip', clipJobs(territories.map((t) => t.coords), '50m'));
+  return territories.flatMap((t, i) => {
+    const clipped = roundCoords(results[i]);
     if (clipped.length === 0) {
       errors.push(`${t.where}: 해안선으로 자르고 나니 육지가 남지 않음`);
       return [];
@@ -252,8 +249,9 @@ async function writeLods(clipped: ClippedTerritory[], land50: Land, land110: Lan
   for (const t of clipped) byEntity.set(t.entityId, [...(byEntity.get(t.entityId) ?? []), t.key]);
 
   // low 단계는 1:110m 해안선에 맞춰 다시 자른다 (육지 레이어와 해안선이 정확히 겹치도록)
-  const low = clipped.flatMap((t) => {
-    const coords = roundCoords(clipToLand(t.coords, land110.pieces));
+  const low110 = await runCached<MultiCoords>('clip', clipJobs(clipped.map((t) => t.coords), '110m'));
+  const low = clipped.flatMap((t, i) => {
+    const coords = roundCoords(low110[i]);
     return coords.length ? [toFeature(t.key, coords)] : [];
   });
   const detailed = clipped.map((t) => toFeature(t.key, t.clipped));
@@ -294,20 +292,31 @@ async function writeTiled(lod: Lod, topo: ReturnType<typeof buildLodTopology>, b
   }
 }
 
-/** 이미 검사한 영토 버전 쌍. 같은 쌍이 여러 구간에 걸쳐 있어도 한 번만 검사하고 보고한다. */
-const checkedPairs = new Set<string>();
-
-function checkOverlaps(intervalTerritories: ClippedTerritory[], from: number) {
-  for (let i = 0; i < intervalTerritories.length; i++)
-    for (let j = i + 1; j < intervalTerritories.length; j++) {
-      const [a, b] = [intervalTerritories[i], intervalTerritories[j]];
-      const pair = `${a.where}|${b.where}`;
-      if (checkedPairs.has(pair) || !bboxIntersects(a.box, b.box)) continue;
-      checkedPairs.add(pair);
-      const overlap = areaKm2(intersect(a.clipped, b.clipped));
-      if (overlap > OVERLAP_TOLERANCE_KM2)
-        errors.push(`${from}년: ${a.entityId}와 ${b.entityId}의 영토가 약 ${Math.round(overlap)}km² 겹침 (${a.where}, ${b.where})`);
-    }
+/**
+ * 겹침 검사: 구간마다 범위 상자가 겹치는 영토 버전 쌍의 겹친 넓이를 잰다. 같은 쌍이 여러 구간에 걸쳐 있어도 한 번만(처음 만난 구간에서) 검사하고 보고한다.
+ * 쌍을 먼저 모두 모은 뒤 넓이를 worker들에 나눠 재고(캐시, cache.ts), 오류는 쌍을 모은 순서대로 적는다 (2026-10-03)
+ */
+async function checkOverlaps(intervals: { from: number; members: ClippedTerritory[] }[]) {
+  const checkedPairs = new Set<string>();
+  const pairs: { a: ClippedTerritory; b: ClippedTerritory; from: number }[] = [];
+  for (const { from, members } of intervals)
+    for (let i = 0; i < members.length; i++)
+      for (let j = i + 1; j < members.length; j++) {
+        const [a, b] = [members[i], members[j]];
+        const pair = `${a.where}|${b.where}`;
+        if (checkedPairs.has(pair) || !bboxIntersects(a.box, b.box)) continue;
+        checkedPairs.add(pair);
+        pairs.push({ a, b, from });
+      }
+  const areas = await runCached<number>(
+    'overlap',
+    pairs.map(({ a, b }) => ({ args: { a: keyOf(a.clipped), b: keyOf(b.clipped) }, geoms: new Map([[keyOf(a.clipped), a.clipped], [keyOf(b.clipped), b.clipped]]) })),
+  );
+  pairs.forEach(({ a, b, from }, k) => {
+    const overlap = areas[k];
+    if (overlap > OVERLAP_TOLERANCE_KM2)
+      errors.push(`${from}년: ${a.entityId}와 ${b.entityId}의 영토가 약 ${Math.round(overlap)}km² 겹침 (${a.where}, ${b.where})`);
+  });
 }
 
 /** 월경지 검사 (DESIGN.md §5.5): 같은 육지 위 본토와 떨어진 조각 가운데 허용 목록에 없는 것을 알린다 */
@@ -360,10 +369,10 @@ async function main() {
   checkArrowAnchors(events, territories);
   if (errors.length) return finish();
 
-  const [land50, land110] = await Promise.all([loadLand('50m'), loadLand('110m')]);
-  const clipped = clipAll(territories, land50);
+  const [land50, land110] = [loadLand('50m'), loadLand('110m')];
+  const clipped = await clipAll(territories);
   const { intervals, changeYears } = buildIntervals(clipped);
-  for (const interval of intervals) checkOverlaps(interval.members, interval.from);
+  await checkOverlaps(intervals);
   checkExclaves(clipped, land50, await readYamlList(path.join(DATA, 'exclaves.yaml'), AllowedExclaveSchema), entities);
   if (errors.length) return finish();
 

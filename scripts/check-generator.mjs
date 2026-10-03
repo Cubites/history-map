@@ -64,8 +64,10 @@ for (const { name, ns } of AREAS) {
   if (!listText.includes(`import * as ${ns} from './areas/${name}.mjs';`)) bad(`AREAS의 ${name}: area-list.mjs에 import * as ${ns} from './areas/${name}.mjs'가 없음`);
 }
 const entryText = readFileSync(ENTRY, 'utf8');
-if (entryText.includes("import { AREAS } from './geo/area-list.mjs';") && !entryText.includes("'./geo/areas/")) ok('진입 파일(generate-geo.mjs)은 권역 목록을 area-list.mjs에서 가져옴 (권역 파일을 직접 가져오지 않음)');
-else bad("generate-geo.mjs: 권역 목록은 import { AREAS } from './geo/area-list.mjs'로 가져오고 권역 파일을 직접 가져오지 않는다");
+// 진입 파일은 인자를 본 뒤 권역 목록을 동적 import로 불러온다(2026-10-03, 인자 오타로 멈출 때 권역 계산을 기다리지 않게). 정적 import도 받는다
+const entryImportsList = entryText.includes("const { AREAS } = await import('./geo/area-list.mjs');") || entryText.includes("import { AREAS } from './geo/area-list.mjs';");
+if (entryImportsList && !entryText.includes("'./geo/areas/")) ok('진입 파일(generate-geo.mjs)은 권역 목록을 area-list.mjs에서 가져옴 (권역 파일을 직접 가져오지 않음)');
+else bad("generate-geo.mjs: 권역 목록은 const { AREAS } = await import('./geo/area-list.mjs')(또는 import { AREAS } from './geo/area-list.mjs')로 가져오고 권역 파일을 직접 가져오지 않는다");
 const areaEntries = readdirSync(AREA_DIR, { withFileTypes: true });
 const areaFiles = areaEntries.filter((e) => e.isFile() && e.name.endsWith('.mjs')).map((e) => e.name.slice(0, -4));
 const unlisted = areaFiles.filter((n) => !order.has(n));

@@ -6,7 +6,7 @@
 // (빌드의 겹침 검사도 모든 영토 쌍을 본다). 그래서 나라와 겹치는 지역 폴리곤(DESIGN.md §7의 행정구역)은 같은 기간의 나라 폴리곤과 함께 쓸 수 없다.
 import { writeFileSync, mkdirSync, readdirSync, rmSync } from 'node:fs';
 import path from 'node:path';
-import { D, U, polyclip } from './lib.mjs';
+import { D, U, opKey, peekOp, polyclip, runParallel, serveParallel, withOpKey, workerCount } from './lib.mjs';
 
 // 좌표는 소수 넷째 자리로 반올림하고, 조각이 하나면 Polygon, 여럿이면 MultiPolygon으로 쓴다
 const round = (g) => JSON.parse(JSON.stringify(g, (_, v) => (typeof v === 'number' ? Math.round(v * 1e4) / 1e4 : v)));
@@ -215,6 +215,60 @@ export function fillEmptyLand(versions, specs) {
   console.log(`만주·몽골 빈 땅 채우기: ${fills.length}개 기간`);
 }
 
+/**
+ * 틈새 구멍 메우기: 조각을 합칠 때 경계가 살짝 어긋나 영토 안에 생긴 틈새 구멍을 메운다 (2026-09-27).
+ * 그대로 두면 구멍 테두리가 영토 안의 점선으로 보였다 (동예·고구려·청 등).
+ * 같은 시기에 다른 나라 영토가 들어 있는 구멍(마한 안의 백제, 금 안의 몽골 등)은 남긴다.
+ * 구멍의 범위 상자와 떨어진 나라는 교집합을 구하지 않는다 (2026-09-30, 교집합이 비는 것이 확실하므로 결과는 같다. 나라가 늘어도 느려지지 않게).
+ * holeOwners(versions): 모든 영토 버전 [{ entityId, from, to(끝 없음은 Infinity), multi, box }]
+ * keepHoles: 버전 하나의 구멍 가운데 그 기간 다른 나라가 든 구멍(occupied(구멍 링, 다른 버전)이 참)만 남긴 멀티폴리곤. 메운 구멍마다 onFilled()
+ */
+const holeOwners = (versions) => Object.entries(versions).flatMap(([entityId, list]) => list.map(([from, to, multi]) => ({ entityId, from, to: to ?? Infinity, multi, box: boundsOf(multi) })));
+const overlapsInTime = (a, b) => a.from < b.to && b.from < a.to;
+function keepHoles(all, entityId, from, to, multi, occupied, onFilled) {
+  const me = { from, to: to ?? Infinity };
+  const others = all.filter((o) => o.entityId !== entityId && overlapsInTime(me, o));
+  return multi.map(([outer, ...holes]) => [
+    outer,
+    ...holes.filter((h) => {
+      const holeBox = boundsOf([[h]]);
+      const kept = others.some((o) => !apart(holeBox, o.box) && occupied(h, o));
+      if (!kept) onFilled();
+      return kept;
+    }),
+  ]);
+}
+/**
+ * 구멍 판정 병렬 미리 계산 (2026-10-03): 구멍 판정의 교집합은 큰 나라(러시아·오스만 등)를 통째로 계산해 무겁다.
+ * 연산 메모(lib.mjs)에 아직 없는 판정이 있는 버전만 골라 worker들(이 파일을 worker로 띄움)이 writeGeo와 같은 순서로 판정해 메모에 넣는다.
+ * 그 뒤 writeGeo는 원래대로 판정하며 메모에서 읽으므로 결과가 미리 계산하지 않을 때와 같다.
+ * 고르기: 메모만 보고 판정해 보다가(peekOp) 메모에 없는 교집합을 만나면 그 버전을 고른다
+ */
+function prefetchHoles(all) {
+  if (workerCount() === 0) return;
+  const targets = [];
+  all.forEach((v, i) => {
+    if (!v.multi.some((poly) => poly.length > 1)) return;
+    let missing = false;
+    keepHoles(all, v.entityId, v.from, v.to, v.multi, (h, o) => {
+      if (missing) return true;
+      const r = peekOp('intersection', [[h]], o.multi);
+      if (r === undefined) missing = true;
+      return missing || r.length > 0;
+    }, () => {});
+    if (missing) targets.push(i);
+  });
+  runParallel(import.meta.url, 'engine-holes', { all: all.map((o) => ({ ...o, key: opKey(o.multi) })), targets }, targets.length);
+}
+serveParallel('engine-holes', (data, i) => {
+  if (!data.keyed) {
+    for (const o of data.all) withOpKey(o.multi, o.key);
+    data.keyed = true;
+  }
+  const v = data.all[data.targets[i]];
+  keepHoles(data.all, v.entityId, v.from, v.to, v.multi, (h, o) => polyclip.intersection([[h]], o.multi).length > 0, () => {});
+});
+
 // data/geo 쓰기: 지우기 전 대조 → 기존 geojson 삭제 → 틈새 구멍 메우기 → 나라마다 <id>.geojson(FeatureCollection 하나, 버전마다 한 줄 + 개행).
 // sources는 mergeAreas가 만든 나라 id → 출처 문구 표다. 없는 나라는 ESTIMATED를 쓴다
 export function writeGeo(project, versions, { prune = false, sources = {} } = {}) {
@@ -224,29 +278,13 @@ export function writeGeo(project, versions, { prune = false, sources = {} } = {}
   // 나라를 일부러 없애거나 id를 바꿀 때만 --prune으로 지운다. --prune은 손으로 그린 파일도 지우므로 그런 파일은 먼저 권역 파일로 옮긴다
   const vanishing = readdirSync(outDir).filter((f) => f.endsWith('.geojson') && !Object.hasOwn(versions, f.slice(0, -'.geojson'.length)));
   if (vanishing.length && !prune) throw new Error(`data/geo에서 사라질 파일 ${vanishing.length}개: ${vanishing.join(', ')}. 나라를 일부러 없앴거나 id를 바꿨으면 --prune을 붙여 다시 실행한다. 생성기 밖에서 그린 파일이면 먼저 권역 파일로 옮긴다(--prune은 그 파일도 지운다)`);
+  // 구멍 판정 미리 계산은 지우기 전에 한다(미리 계산이 실패해 멈춰도 data/geo가 그대로 남게)
+  const all = holeOwners(versions);
+  prefetchHoles(all);
   for (const f of readdirSync(outDir)) if (f.endsWith('.geojson')) rmSync(path.join(outDir, f));
-  /**
-   * 조각을 합칠 때 경계가 살짝 어긋나 영토 안에 생긴 틈새 구멍을 메운다 (2026-09-27).
-   * 그대로 두면 구멍 테두리가 영토 안의 점선으로 보였다 (동예·고구려·청 등).
-   * 같은 시기에 다른 나라 영토가 들어 있는 구멍(마한 안의 백제, 금 안의 몽골 등)은 남긴다.
-   * 구멍의 범위 상자와 떨어진 나라는 교집합을 구하지 않는다 (2026-09-30, 교집합이 비는 것이 확실하므로 결과는 같다. 나라가 늘어도 느려지지 않게).
-   */
-  const all = Object.entries(versions).flatMap(([entityId, list]) => list.map(([from, to, multi]) => ({ entityId, from, to: to ?? Infinity, multi, box: boundsOf(multi) })));
-  const overlapsInTime = (a, b) => a.from < b.to && b.from < a.to;
   let filled = 0;
-  function fillEmptyHoles(entityId, from, to, multi) {
-    const me = { from, to: to ?? Infinity };
-    const others = all.filter((o) => o.entityId !== entityId && overlapsInTime(me, o));
-    return multi.map(([outer, ...holes]) => [
-      outer,
-      ...holes.filter((h) => {
-        const holeBox = boundsOf([[h]]);
-        const occupied = others.some((o) => !apart(holeBox, o.box) && polyclip.intersection([[h]], o.multi).length > 0);
-        if (!occupied) filled++;
-        return occupied;
-      }),
-    ]);
-  }
+  const occupiedBy = (h, o) => polyclip.intersection([[h]], o.multi).length > 0;
+  const fillEmptyHoles = (entityId, from, to, multi) => keepHoles(all, entityId, from, to, multi, occupiedBy, () => filled++);
 
   for (const [entityId, list] of Object.entries(versions)) {
     const fc = {

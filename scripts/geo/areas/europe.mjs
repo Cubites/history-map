@@ -17,7 +17,7 @@
 // 오스만 제국은 권역 바깥선 안(발칸·아나톨리아·키프로스·캅카스 일부)만 그린다. 중동·북아프리카는 아직 어느 권역에도 없다.
 // 조각은 현대 행정구역이라 역사 경계와 다른 곳은 이름 붙은 선(아래 '조각을 가르는 선')으로 쪼갠다. 근거는 줄마다 적는다.
 // 대략 1만 km²보다 작은 차이는 쪼개지 않고 근사로 두었다(아래 '쪼개지 않은 근사' 목록).
-import { D, I, U, bx, ring, loadFragments } from '../lib.mjs';
+import { D, I, U, bx, ring, loadFragments, prefetch } from '../lib.mjs';
 import { KWANTUNG, L_AMUR, L_KHASAN, L_USSURI, PRIMORYE, SAKHALIN_S, TAIWAN, TUMEN_SEA } from '../shared.mjs';
 import { JOSEON_1449 } from './korea.mjs';
 import { ET_NORTH, MN_SW, OUTER_MONGOLIA } from './inner-asia.mjs';
@@ -1575,12 +1575,17 @@ const geomOfUnit = (u) => {
   return unitGeom.get(u);
 };
 const builtGeom = new Map();
+// 단위 목록을 합치는 합집합의 인자. 나눈 조각이 없으면 null(F 하나로 끝남)
+const buildArgs = (list) => {
+  const ids = list.filter((u) => unitMake.get(u) === null);
+  const parts = list.filter((u) => unitMake.get(u) !== null).map(geomOfUnit);
+  return parts.length ? [...(ids.length ? [F(...ids)] : []), ...parts] : null;
+};
 const build = (list) => {
   const key = list.join('|');
   if (!builtGeom.has(key)) {
-    const ids = list.filter((u) => unitMake.get(u) === null);
-    const parts = list.filter((u) => unitMake.get(u) !== null).map(geomOfUnit);
-    builtGeom.set(key, parts.length ? U(...(ids.length ? [F(...ids)] : []), ...parts) : F(...ids));
+    const args = buildArgs(list);
+    builtGeom.set(key, args ? U(...args) : F(...list));
   }
   return builtGeom.get(key);
 };
@@ -1716,23 +1721,24 @@ const outsideOf = (multi) => {
   if (!outsideMemo.has(multi)) outsideMemo.set(multi, outside(multi));
   return outsideMemo.get(multi);
 };
-// 러시아 제국: 유럽 쪽(소유표)과 바깥(손 도형)이 바뀌는 해를 모두 버전 경계로
-const russiaVersions = () => {
+// 러시아 제국: 유럽 쪽(소유표)과 바깥(손 도형)이 바뀌는 해를 모두 버전 경계로. russiaPlan은 [from, to, 바깥 손 도형, 유럽 쪽 단위 목록]
+const russiaPlan = () => {
   const eu = tableVersions('russia');
   const cuts = [...new Set([...eu.map(([from]) => from), ...RUSSIA_EAST.map(([y]) => y)])].sort((a, b) => a - b);
   return cuts.map((from, i) => {
     const to = cuts[i + 1] ?? eu.at(-1)[1];
     const list = eu.filter(([f]) => f <= from).at(-1)[2];
     const east = RUSSIA_EAST.filter(([y]) => y <= from).at(-1)[1];
-    return [from, to, U(outsideOf(east), build(list))];
+    return [from, to, east, list];
   });
 };
 // 소련: 유럽 쪽은 소유표(1918~1945 작업 B1, 1946~1991 작업 B2), 동쪽은 손 도형(1945년까지 SOVIET, 1946년부터 SOVIET_1946)
 const SOVIET_EAST_CUT = 1946;
-const sovietVersions = () => tableVersions('soviet-union').map(([from, to, list]) => {
+const sovietPlan = () => tableVersions('soviet-union').map(([from, to, list]) => {
   if (from < SOVIET_EAST_CUT && to > SOVIET_EAST_CUT) throw new Error('europe.mjs: 소련 버전이 1946년(동쪽 손 도형이 바뀌는 해)을 넘어 이어짐');
-  return [from, to, U(outsideOf(from < SOVIET_EAST_CUT ? SOVIET : SOVIET_1946), build(list))];
+  return [from, to, from < SOVIET_EAST_CUT ? SOVIET : SOVIET_1946, list];
 });
+const withEast = (plan) => plan.map(([from, to, east, list]) => [from, to, U(outsideOf(east), build(list))]);
 // 소유표의 나라 (영국·프랑스·러시아·소련 밖)
 const TABLE_ENTITIES = ['prussia', 'north-german-confederation', 'german-empire', 'german-states', 'south-german-states', 'austria', 'austria-hungary', 'bosnia-occupied', 'cyprus-british', 'dodecanese-occupied', 'krakow',
   'sardinia', 'italy', 'papal-states', 'two-sicilies', 'italian-duchies', 'san-marino', 'monaco', 'netherlands', 'belgium', 'luxembourg', 'switzerland', 'liechtenstein',
@@ -1754,12 +1760,41 @@ const TABLE_ENTITIES = ['prussia', 'north-german-confederation', 'german-empire'
   if (missing.length) throw new Error(`europe.mjs: 소유표의 나라 ${missing.join(', ')}가 TABLE_ENTITIES에 없음`);
 }
 
+// 병렬 미리 계산 (2026-10-03, lib.mjs의 prefetch): 아래 versions·gapZones가 부를 무거운 합집합·차집합을 단계마다 worker들에 나눠 미리 계산해 연산 메모에 넣는다.
+// versions·gapZones는 원래 순서대로 같은 연산을 부르고 메모에서 읽으므로 결과는 미리 계산하지 않을 때와 같다(빠뜨린 연산은 그때 계산할 뿐).
+// 1단계 단위 목록 합치기(build), 2단계 러시아·소련 손 도형의 바깥 자르기(outside), 3단계 그 둘을 쓰는 합치기와 빈 땅 검사 구역
+{
+  const lists = [
+    ...TABLE_ENTITIES.flatMap((id) => tableVersions(id).map(([, , list]) => list)),
+    ...tableVersions('france').filter(([from]) => from !== 1947).map(([, , list]) => list),
+    tableVersions('italy').at(-1)[2], ...tableVersions('italy-republic').slice(1).map(([, , list]) => list),
+    ...russiaPlan().map(([, , , list]) => list), ...sovietPlan().map(([, , , list]) => list),
+    ...nullSegments.map(([, , list]) => list),
+  ];
+  const seen = new Set();
+  const jobs = [];
+  for (const list of lists) {
+    const key = list.join('|');
+    if (seen.has(key) || builtGeom.has(key)) continue;
+    seen.add(key);
+    const args = buildArgs(list);
+    if (args) jobs.push(['union', ...args]);
+  }
+  prefetch(jobs);
+  const easts = [...new Set([...russiaPlan(), ...sovietPlan()].map(([, , east]) => east))];
+  prefetch([...easts, RUSSIA_FED].map((m) => ['difference', m, domain, [IRAN_NW]]));
+  prefetch([
+    ...[...russiaPlan(), ...sovietPlan()].map(([, , east, list]) => ['union', outsideOf(east), build(list)]),
+    ...nullSegments.map(([, , list]) => ['difference', domain, build(list)]),
+  ]);
+}
+
 // 나라 id: [[from, to, 멀티폴리곤, 확실성?], ...]. to가 null이면 지금까지, 확실성은 'disputed' 등(없으면 'estimated').
 // 출처(geojson의 source)는 이 권역의 source
 // 영국은 1789~1800 그레이트브리튼 왕국, 1801~1921 아일랜드를 합친 연합 왕국, 1922년부터 아일랜드 자유국을 뺀 모습으로 모두 소유표에서 만든다(작업 B1, 전에는 1922년 버전이 E1 도형 UK_1922. 조각 묶음이 같아 도형도 같음)
 export const versions = {
-  russia: russiaVersions(),
-  'soviet-union': sovietVersions(),
+  russia: withEast(russiaPlan()),
+  'soviet-union': withEast(sovietPlan()),
   'russia-fed': [[1992, null, U(outside(RUSSIA_FED), RF_EU)]],
   france: tableVersions('france').map(([from, to, list], i, all) => {
     if (i === all.length - 1 && (from !== 1947 || to !== null)) throw new Error('europe.mjs: 프랑스의 마지막 버전이 1947~이 아님');

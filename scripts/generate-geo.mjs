@@ -9,8 +9,6 @@
 import { existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
-import { AREAS } from './geo/area-list.mjs';
-import { mergeAreas, fillEmptyLand, writeGeo } from './geo/engine.mjs';
 
 // 사용: node scripts/generate-geo.mjs [프로젝트 폴더] [--prune]
 // - 프로젝트 폴더: 그 아래 data/geo에 쓴다. 주지 않으면 이 파일이 있는 scripts/의 상위 폴더, 상대 경로는 현재 폴더 기준
@@ -28,6 +26,9 @@ const project = folders.length ? path.resolve(folders[0]) : path.resolve(path.di
 const notProject = ['package.json', 'data/entities'].filter((f) => !existsSync(path.join(project, f)));
 if (notProject.length) throw new Error(`프로젝트 폴더가 아님: ${project} (${notProject.join('·')} 없음)`);
 
+// 권역 목록(AREAS)과 엔진은 인자를 다 본 뒤에 불러온다: 권역 파일은 불러올 때 도형을 계산하므로, 인자 오타로 멈출 때 그 계산을 기다리지 않게 (2026-10-03)
+const { AREAS } = await import('./geo/area-list.mjs');
+const { mergeAreas, fillEmptyLand, writeGeo } = await import('./geo/engine.mjs');
 // 권역 목록(AREAS, scripts/geo/area-list.mjs)의 순서대로 합치고 채운다. AREA_DIR(권역 파일 폴더)에 목록에 없는 권역 파일이 있으면 지우기 전에 멈춘다
 const AREA_DIR = path.join(path.dirname(fileURLToPath(import.meta.url)), 'geo/areas');
 const { versions, fillSpecs, sources } = mergeAreas(AREAS, AREA_DIR);

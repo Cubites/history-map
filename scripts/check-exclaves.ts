@@ -1,30 +1,25 @@
 // 월경지 목록 (DESIGN.md §5.5): 나라·기간마다 같은 육지 위 본토와 떨어진 영토 조각을 모두 보여 준다.
 // 사용: npm run check:exclaves [-- 최소넓이km²] (기본 5). 빌드(check:data)는 허용 목록에 없는 30km² 이상 조각만 알린다.
+// 해안선 자르기는 build:data·check:data와 같은 계산(build-data/tasks.ts의 clip)이라 그 캐시를 함께 쓰고, 없는 것만 worker들에 나눠 자른다 (2026-10-03)
 import { readFileSync, readdirSync } from 'node:fs';
-import { createRequire } from 'node:module';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import type { FeatureCollection } from 'geojson';
-import { feature } from 'topojson-client';
 import { parse as parseYaml } from 'yaml';
 import { AllowedExclaveSchema, EXCLAVE_MIN_KM2, findExclaves, formatPiece, matchExclaves } from './build-data/exclaves.ts';
-import { bbox, clipToLand, toMulti, unwrapAntimeridian, type MultiCoords } from './build-data/geo.ts';
+import { toMulti, type MultiCoords } from './build-data/geo.ts';
+import { keyOf, runCached } from './build-data/cache.ts';
+import { loadLand } from './build-data/tasks.ts';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const require = createRequire(import.meta.url);
 const MIN_KM2 = Number(process.argv[2] ?? EXCLAVE_MIN_KM2);
-
-const topo = JSON.parse(readFileSync(require.resolve('world-atlas/land-50m.json'), 'utf8'));
-const land = (feature(topo, topo.objects.land) as unknown as FeatureCollection).features
-  .flatMap((f) => toMulti(f.geometry as never))
-  .flatMap(unwrapAntimeridian)
-  .map((coords) => ({ coords, bbox: bbox([coords]) }));
+const land = loadLand('50m').pieces;
 
 const names = new Map<string, string>();
 for (const f of readdirSync(path.join(ROOT, 'data/entities')).filter((f) => f.endsWith('.yaml')))
   for (const e of (parseYaml(readFileSync(path.join(ROOT, 'data/entities', f), 'utf8')) ?? []) as { id: string; names: { ko: string } }[]) names.set(e.id, e.names.ko);
 
-const territories = readdirSync(path.join(ROOT, 'data/geo'))
+const raw = readdirSync(path.join(ROOT, 'data/geo'))
   .filter((f) => f.endsWith('.geojson'))
   .flatMap((f) =>
     (JSON.parse(readFileSync(path.join(ROOT, 'data/geo', f), 'utf8')) as FeatureCollection).features
@@ -34,9 +29,11 @@ const territories = readdirSync(path.join(ROOT, 'data/geo'))
         from: ft.properties!.from as number,
         to: (ft.properties!.to ?? null) as number | null,
         where: `data/geo/${f} [${i}]`,
-        clipped: clipToLand(toMulti(ft.geometry as never), land) as MultiCoords,
+        coords: toMulti(ft.geometry as never) as MultiCoords,
       })),
   );
+const clippedAll = await runCached<MultiCoords>('clip', raw.map(({ coords }) => ({ args: { g: keyOf(coords), land: '50m' }, geoms: new Map([[keyOf(coords), coords]]) })));
+const territories = raw.map(({ entityId, from, to, where }, i) => ({ entityId, from, to, where, clipped: clippedAll[i] }));
 
 const allow = AllowedExclaveSchema.array().parse(parseYaml(readFileSync(path.join(ROOT, 'data/exclaves.yaml'), 'utf8')) ?? []);
 const pieces = findExclaves(territories, land, MIN_KM2).sort((a, b) => a.entityId.localeCompare(b.entityId) || a.from - b.from);
