@@ -1,10 +1,12 @@
 // 데이터 빌드·검사의 계산 캐시와 병렬 처리 (DESIGN.md §5.3, 2026-10-03)
-// 해안선 자르기·겹침 넓이·빈 땅 검사의 연도별 줄처럼 무겁고 서로 독립인 계산을 worker_threads로 나눠 돌리고, 결과를 입력 해시 열쇠로 .cache/build-data/에 둔다.
+// 해안선 자르기·겹침 넓이·빈 땅 검사의 (구역, 해) 칸처럼 무겁고 서로 독립인 계산을 worker_threads로 나눠 돌리고, 결과를 입력 해시 열쇠로 .cache/build-data/에 둔다.
 // - 같은 입력이면 다시 계산하지 않는다: build:data·check:data·check:exclaves가 같은 영토를 같은 육지로 자르는 일, gen:geo 뒤 바뀌지 않은 나라의 계산
 // - 계산 함수(tasks.ts)는 같은 입력에 늘 같은 값을 돌려주는 순수 함수이고, 결과는 입력 순서대로 돌려준다. 그래서 캐시가 있든 없든, worker가 몇 개든 결과가 같다
 // - 열쇠: 계산 이름 + 입력(도형은 내용 해시) + 코드 판(CODE_SALT: 계산 코드 원문, 쓰는 패키지의 판과 파일 해시, 육지 파일 해시, Node 판, 숫자 표기 로캘).
 //   이 가운데 하나라도 바뀌면 다시 계산한다. 캐시 파일은 내용 해시를 머리에 두어 깨진 파일은 다시 계산한다
 // - 캐시는 지워도 된다(다시 계산할 뿐). 오래된 항목은 지우지 않으므로 커지면 .cache/build-data/를 지운다
+// - 환경 변수 HISTORY_MAP_CACHE=0이면 캐시를 읽지도 쓰지도 않고 모두 계산한다(2026-10-05. 결과는 캐시가 있을 때와 같다)
+// - worker가 오류·exit로 멈추거나 WORKER_STALL_MS 동안 끝난 계산이 없으면 나머지 worker를 모두 끝내고 오류로 멈춘다(2026-10-05. 전에는 남은 worker가 남은 계산을 다 할 때까지 기다렸다)
 import { createHash } from 'node:crypto';
 import { mkdirSync, readFileSync, renameSync, unlinkSync, writeFileSync } from 'node:fs';
 import { createRequire } from 'node:module';
@@ -39,18 +41,21 @@ function packageId(name: string, files: string[]): string {
 }
 const esm = (spec: string) => fileURLToPath(import.meta.resolve(spec));
 const bignumberCjs = createRequire(require.resolve('polyclip-ts')).resolve('bignumber.js');
+// polyclip-ts가 쓰는 splaytree-ts (2026-10-05에 더함): require 쪽(dist/cjs)과 import 쪽(dist/esm) 파일
+const splaytreeCjs = createRequire(require.resolve('polyclip-ts')).resolve('splaytree-ts');
 
 /** 코드 판: 계산 코드·패키지·육지 파일·Node·로캘이 바뀌면 열쇠가 모두 바뀐다 */
 const CODE_SALT = hashOf(
-  'build-data cache 2',
+  'build-data cache 3',
   ...['cache.ts', 'tasks.ts', 'geo.ts', 'worker.ts'].map((f) => readFileSync(path.join(HERE, f))),
   packageId('polyclip-ts', [esm('polyclip-ts')]),
   packageId('bignumber.js', [bignumberCjs, path.join(path.dirname(bignumberCjs), 'bignumber.mjs')]),
+  packageId('splaytree-ts', [splaytreeCjs, path.join(path.dirname(splaytreeCjs), '../esm/index.js')]),
   packageId('polylabel', [esm('polylabel')]),
   packageId('topojson-client', [esm('topojson-client')]),
   packageId('world-atlas', [require.resolve('world-atlas/land-50m.json'), require.resolve('world-atlas/land-110m.json')]),
   `node ${process.version}`,
-  // 빈 땅 검사 줄(gapsYear)은 toLocaleString으로 쓴 숫자를 담는다
+  // 빈 땅 검사 글(gapsZone)은 toLocaleString으로 쓴 숫자를 담는다
   `locale ${new Intl.NumberFormat().resolvedOptions().locale} ${(1234567.5).toLocaleString()}`,
 );
 
@@ -135,28 +140,56 @@ function workerCount(jobs: number): number {
   return Math.min(n, jobs);
 }
 
+/** 캐시를 쓰는지 (2026-10-05): 환경 변수 HISTORY_MAP_CACHE가 0이면 읽지도 쓰지도 않고 모두 계산한다. 없거나 비었거나 1이면 쓴다 */
+function cacheEnabled(): boolean {
+  const v = process.env.HISTORY_MAP_CACHE;
+  if (v === undefined || v === '' || v === '1') return true;
+  if (v === '0') return false;
+  throw new Error(`HISTORY_MAP_CACHE는 0(캐시를 쓰지 않음)이나 1이어야 함: ${JSON.stringify(v)}`);
+}
+
+/**
+ * worker들이 이 시간 동안 계산을 하나도 끝내지 못하면 죽었거나 멈춘 것으로 보고 모든 worker를 끝내고 오류로 멈춘다(lib.mjs의 병렬 미리 계산과 같은 3분).
+ * 지금 가장 무거운 빈 땅 검사 칸(유럽)은 약 4~6초에 끝난다(2026-10-05 잼). 멈춘 worker가 있어도 다른 worker가 남은 계산을 다 한 뒤 이 시간이 지나면 멈춘다
+ */
+const WORKER_STALL_MS = 3 * 60 * 1000;
+
+/** runCached가 더해 가는 수: 캐시에서 읽은 계산(hits)과 새로 한 계산(computed) */
+export interface RunStats {
+  hits: number;
+  computed: number;
+}
+
 /**
  * 계산(task)을 입력마다 하고 결과를 입력 순서대로 돌려준다. 캐시에 있으면 읽고, 없는 것만 worker들에 나눠 계산한 뒤 캐시에 쓴다.
- * extraKey: 입력 밖에서 결과를 정하는 것
+ * extraKey: 입력 밖에서 결과를 정하는 것. stats를 주면 캐시에서 읽은 수와 계산한 수를 더한다
  */
-export async function runCached<T>(task: TaskName, jobs: Job[], extraKey = ''): Promise<T[]> {
+export async function runCached<T>(task: TaskName, jobs: Job[], extraKey = '', stats?: RunStats): Promise<T[]> {
+  const useCache = cacheEnabled();
   const out: T[] = new Array(jobs.length);
   const misses: { i: number; key: string }[] = [];
   jobs.forEach((job, i) => {
     const key = hashOf(CODE_SALT, task, extraKey, JSON.stringify(job.args));
-    const c = readCache(key);
+    const c = useCache ? readCache(key) : { hit: false as const };
     if (c.hit) out[i] = c.value as T;
     else misses.push({ i, key });
   });
+  if (stats) {
+    stats.hits += jobs.length - misses.length;
+    stats.computed += misses.length;
+  }
   if (!misses.length) return out;
+  const save = (key: string, value: unknown) => {
+    if (useCache) writeCache(key, value);
+  };
   const n = workerCount(misses.length);
   if (n === 0) {
-    // worker 없이 주 스레드에서 같은 함수로 계산한다
+    // worker 없이 주 스레드에서 같은 함수로 계산한다(주 스레드 계산이라 3분 멈춤 한도는 없다)
     for (const { i, key } of misses) {
       const job = jobs[i];
       const value = (TASKS[task] as (args: never, get: (k: string) => unknown) => unknown)(job.args as never, (k) => job.geoms.get(k));
       out[i] = value as T;
-      writeCache(key, value);
+      save(key, value);
     }
     return out;
   }
@@ -165,48 +198,69 @@ export async function runCached<T>(task: TaskName, jobs: Job[], extraKey = ''): 
   const weights = new Map(misses.map((m) => [m, weight(m.i)]));
   misses.sort((a, b) => weights.get(b)! - weights.get(a)! || a.i - b.i);
   let next = 0;
-  await Promise.all(
-    Array.from({ length: n }, () =>
-      new Promise<void>((resolve, reject) => {
-        const worker = new Worker(new URL('./worker.ts', import.meta.url));
-        const sent = new Set<string>();
-        let current: { i: number; key: string } | null = null;
-        let finished = false;
-        const fail = (e: Error) => {
-          if (finished) return;
+  await new Promise<void>((resolve, reject) => {
+    const workers: Worker[] = [];
+    const ended: Promise<number>[] = [];
+    let running = n;
+    let failed = false;
+    let stall: ReturnType<typeof setTimeout> | undefined;
+    // 하나라도 실패하면 나머지 worker도 바로 끝낸다(남은 계산을 다 할 때까지 기다리지 않음)
+    const fail = (e: Error) => {
+      if (failed) return;
+      failed = true;
+      clearTimeout(stall);
+      for (const w of workers) void w.terminate();
+      console.error(`경고: ${task} 계산을 멈춤: ${e.message}`);
+      reject(e);
+    };
+    const armStall = () => {
+      clearTimeout(stall);
+      stall = setTimeout(() => fail(new Error(`${task}: ${WORKER_STALL_MS / 60000}분 동안 끝난 계산이 없어 기다림을 그만둠(worker가 메모리 부족 등으로 죽었을 수 있음). 환경 변수 HISTORY_MAP_WORKERS=0이면 worker 없이 돈다`)), WORKER_STALL_MS);
+    };
+    armStall();
+    for (let w = 0; w < n; w++) {
+      const worker = new Worker(new URL('./worker.ts', import.meta.url));
+      workers.push(worker);
+      const sent = new Set<string>();
+      let current: { i: number; key: string } | null = null;
+      let finished = false;
+      const feed = () => {
+        if (failed) return;
+        if (next >= misses.length) {
           finished = true;
-          void worker.terminate();
-          reject(e);
-        };
-        const feed = () => {
-          if (next >= misses.length) {
-            finished = true;
-            current = null;
-            void worker.terminate().then(() => resolve());
-            return;
+          current = null;
+          ended.push(worker.terminate());
+          if (--running === 0) {
+            clearTimeout(stall);
+            void Promise.all(ended).then(() => resolve());
           }
-          current = misses[next++];
-          const job = jobs[current.i];
-          // 이 worker에 아직 보내지 않은 도형만 보낸다(육지·영토를 여러 계산이 함께 씀)
-          const geoms: [string, unknown][] = [];
-          for (const [k, g] of job.geoms) if (!sent.has(k)) {
-            sent.add(k);
-            geoms.push([k, g]);
-          }
-          worker.postMessage({ task, args: job.args, geoms });
-        };
-        worker.on('message', (m: { ok: true; value: unknown } | { ok: false; error: string }) => {
-          if (!m.ok) return fail(new Error(`${task} 계산 실패: ${m.error}`));
-          out[current!.i] = m.value as T;
-          writeCache(current!.key, m.value);
-          feed();
-        });
-        worker.on('error', (e: Error) => fail(e));
-        // 결과를 보내지 않고 끝난 worker(exit·메모리 부족 등)는 실패로 본다
-        worker.on('exit', (code) => fail(new Error(`${task} 계산 worker가 결과 없이 끝남 (코드 ${code})`)));
+          return;
+        }
+        current = misses[next++];
+        const job = jobs[current.i];
+        // 이 worker에 아직 보내지 않은 도형만 보낸다(육지·영토를 여러 계산이 함께 씀)
+        const geoms: [string, unknown][] = [];
+        for (const [k, g] of job.geoms) if (!sent.has(k)) {
+          sent.add(k);
+          geoms.push([k, g]);
+        }
+        worker.postMessage({ task, args: job.args, geoms });
+      };
+      worker.on('message', (m: { ok: true; value: unknown } | { ok: false; error: string }) => {
+        if (failed) return;
+        if (!m.ok) return fail(new Error(`${task} 계산 실패: ${m.error}`));
+        out[current!.i] = m.value as T;
+        save(current!.key, m.value);
+        armStall();
         feed();
-      }),
-    ),
-  );
+      });
+      worker.on('error', (e: Error) => fail(e));
+      // 결과를 보내지 않고 끝난 worker(exit·메모리 부족 등)는 실패로 본다
+      worker.on('exit', (code) => {
+        if (!finished) fail(new Error(`${task} 계산 worker가 결과 없이 끝남 (코드 ${code}). 환경 변수 HISTORY_MAP_WORKERS=0이면 worker 없이 돈다`));
+      });
+      feed();
+    }
+  });
   return out;
 }

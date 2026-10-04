@@ -38,20 +38,19 @@ export const TASKS = {
   /** 두 영토가 겹친 넓이(km²) */
   overlap: ({ a, b }: { a: string; b: string }, get: Get) => areaKm2(intersect(get(a) as MultiCoords, get(b) as MultiCoords)),
   /**
-   * 빈 땅 검사 한 해 (check-gaps.ts): 그해 영토(active, 파일 순서)를 모두 합쳐, 검사 구역(regions, 구역 순서)마다 덮이지 않은 육지 가운데 minKm2보다 큰 조각을 적은 글.
-   * 공백이 없는 구역은 빼고 돌려준다
+   * 빈 땅 검사 한 칸(구역 하나 × 한 해, check-gaps.ts, 2026-10-05): 그해 그 구역에 걸칠 수 있는 영토(active, 파일 순서)를 모두 합쳐,
+   * 구역(region, 해안선으로 자르고 minus를 뺀 도형)에서 덮이지 않은 육지 가운데 minKm2보다 큰 조각을 적은 글(name은 글의 머리). 공백이 없으면 null.
+   * 2026-10-03~10-04에는 한 해의 모든 영토를 합쳐 모든 구역을 함께 검사했다(gapsYear). 구역과 범위 상자가 떨어진 영토는 구역 안의 공백을 바꾸지 않으므로 빼고 넘긴다
    */
-  gapsYear: ({ active, regions, minKm2 }: { active: string[]; regions: [string, string][]; minKm2: number }, get: Get) => {
+  gapsZone: ({ name, region, active, minKm2 }: { name: string; region: string; active: string[]; minKm2: number }, get: Get): string | null => {
     const covered = active.length ? (polyclip.union(...(active.map(get) as [polyclip.Geom])) as MultiCoords) : [];
-    return regions.flatMap(([name, region]) => {
-      const gaps = (polyclip.difference(get(region) as polyclip.Geom, covered as polyclip.Geom) as MultiCoords)
-        .map((p) => ({ area: areaKm2([p]), box: bbox([p]) }))
-        .filter((g) => g.area > minKm2)
-        .sort((a, b) => b.area - a.area);
-      if (!gaps.length) return [];
-      const total = gaps.reduce((s, g) => s + g.area, 0);
-      return [`${name} ${Math.round(total).toLocaleString()}km² ` + gaps.slice(0, 3).map((g) => `[${Math.round(g.area).toLocaleString()}km² ${g.box.map((v) => v.toFixed(1)).join(',')}]`).join(' ')];
-    });
+    const gaps = (polyclip.difference(get(region) as polyclip.Geom, covered as polyclip.Geom) as MultiCoords)
+      .map((p) => ({ area: areaKm2([p]), box: bbox([p]) }))
+      .filter((g) => g.area > minKm2)
+      .sort((a, b) => b.area - a.area);
+    if (!gaps.length) return null;
+    const total = gaps.reduce((s, g) => s + g.area, 0);
+    return `${name} ${Math.round(total).toLocaleString()}km² ` + gaps.slice(0, 3).map((g) => `[${Math.round(g.area).toLocaleString()}km² ${g.box.map((v) => v.toFixed(1)).join(',')}]`).join(' ');
   },
 };
 export type TaskName = keyof typeof TASKS;
