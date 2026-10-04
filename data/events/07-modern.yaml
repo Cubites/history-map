@@ -217,9 +217,11 @@
     ko: 삼국 간섭과 을미사변
   summary:
     ko: 러시아가 프랑스·독일과 함께 일본을 압박해 랴오둥반도를 청에 돌려주게 했다(삼국 간섭). 조선 정부가 러시아에 가까워지자 일본은 경복궁에 난입해 명성 황후를 시해했다.
-  subjects: [joseon, russia, japan, france]
+  subjects: [joseon, russia, japan, france, german-empire]
   links:
     - { from: russia, to: japan, note: "랴오둥반도 반환 압박" }
+    - { from: france, to: japan, note: "랴오둥반도 반환 압박" }
+    - { from: german-empire, to: japan, note: "랴오둥반도 반환 압박" }
     - { from: japan, to: joseon, note: "명성 황후 시해" }
   tags: [diplomacy, politics]
   sources: ["『고종실록』 고종 32년"]
