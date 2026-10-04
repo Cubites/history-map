@@ -1,20 +1,23 @@
 import { useMemo, useRef, useState } from 'react';
-import type { StaticData } from '../data/staticData.ts';
+import type { LoadedEntity, LoadedEvent, StaticData } from '../data/staticData.ts';
 import { useMediaQuery } from '../lib/useMediaQuery.ts';
 import { formatEventYears } from '../lib/events.ts';
 import { formatRange, isAlive } from '../lib/year.ts';
-import type { Entity, HistoryEvent } from '../schema/index.ts';
+import { inRegionFilter } from '../schema/regions.ts';
 import { useAppStore } from '../store/useAppStore.ts';
 
-type Result = { kind: 'event'; event: HistoryEvent; score: number } | { kind: 'entity'; entity: Entity; score: number };
+type Result = { kind: 'event'; event: LoadedEvent; score: number } | { kind: 'entity'; entity: LoadedEntity; score: number };
 
 const MAX_RESULTS = 8;
+/** 권역 필터를 골랐을 때 다른 권역 결과가 있으면 목록 끝에 남겨 두는 칸 수 (DESIGN.md §6.4.2) */
+const OTHER_REGION_SLOTS = 2;
 /** 띄어쓰기·대소문자를 무시하고 비교한다 ("관산성전투" = "관산성 전투") */
 const normalize = (text: string) => text.replace(/\s+/g, '').toLowerCase();
 
 /**
  * 머리글의 검색 (DESIGN.md §6.4.1). 사건(제목·설명·싸운 곳)과 나라(이름·한자)를 찾는다.
  * 사건을 고르면 그 해로 가서 사건을 패널에 띄우고, 나라를 고르면 그 나라를 고른다.
+ * 권역 필터를 고르면 그 권역의 결과를 먼저 보여 준다. 다른 권역 결과가 있으면 끝의 2칸은 그것에 남겨 두어 숨기지 않는다 (DESIGN.md §6.4.2)
  */
 export function SearchBox({ data }: { data: StaticData }) {
   const [query, setQuery] = useState('');
@@ -26,6 +29,7 @@ export function SearchBox({ data }: { data: StaticData }) {
   const focusEvent = useAppStore((s) => s.focusEvent);
   const exitWar = useAppStore((s) => s.exitWar);
   const warId = useAppStore((s) => s.warId);
+  const regionFilter = useAppStore((s) => s.regionFilter);
   // 휴대폰에서는 검색창이 좁아 예시를 빼고 짧게 쓴다
   const narrow = useMediaQuery('(max-width: 767px)');
 
@@ -54,10 +58,15 @@ export function SearchBox({ data }: { data: StaticData }) {
             : -1;
       if (score >= 0) found.push({ kind: 'event', event, score });
     }
-    return found
-      .sort((a, b) => a.score - b.score || yearOf(a) - yearOf(b))
-      .slice(0, MAX_RESULTS);
-  }, [data, query]);
+    found.sort((a, b) => a.score - b.score || yearOf(a) - yearOf(b));
+    // 고른 권역의 결과를 먼저, 다른 권역 결과는 뒤에. 다른 권역 결과가 있으면 끝의 OTHER_REGION_SLOTS칸은 그것에 남겨 둔다
+    // (고른 권역 결과가 적으면 남는 칸도 다른 권역 결과로 채운다). 전체이면 모두 고른 권역으로 본다
+    const inside = (r: Result) => inRegionFilter(regionFilter, r.kind === 'event' ? r.event.region : r.entity.region);
+    const mine = found.filter(inside);
+    const others = found.filter((r) => !inside(r));
+    const otherCount = Math.min(others.length, Math.max(OTHER_REGION_SLOTS, MAX_RESULTS - mine.length));
+    return [...mine.slice(0, MAX_RESULTS - otherCount), ...others.slice(0, otherCount)];
+  }, [data, query, regionFilter]);
 
   const pick = (r: Result) => {
     if (warId) exitWar();

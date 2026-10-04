@@ -15,14 +15,19 @@ import type {
   TimelineIndex,
 } from '../schema/index.ts';
 
-export type LoadedEntity = Entity & { color: string };
+/**
+ * 권역(region: korea·europe 등 지리적 권역)은 빌드가 데이터 파일 이름에서 정해 붙인다 (src/schema/regions.ts, DESIGN.md §6.4.2).
+ * 나라 항목의 `level: 'region'`(나라가 아닌 지역 항목)과는 다른 것이다
+ */
+export type LoadedEntity = Entity & { color: string; region: string };
+export type LoadedEvent = HistoryEvent & { region: string };
 
 export interface StaticData {
   timeline: TimelineIndex;
   territories: TerritoryIndexEntry[];
   entities: Map<string, LoadedEntity>;
   relations: Relation[];
-  events: HistoryEvent[];
+  events: LoadedEvent[];
   /** 전쟁: 진영·참전국·전역별 날짜 스냅샷 (DESIGN.md §4.5) */
   wars: WarIndexEntry[];
 }
@@ -48,7 +53,7 @@ export function useStaticData() {
       getJson<TerritoryIndexEntry[]>('territories.json'),
       getJson<LoadedEntity[]>('entities.json'),
       getJson<Relation[]>('relations.json'),
-      getJson<HistoryEvent[]>('events.json'),
+      getJson<LoadedEvent[]>('events.json'),
       getJson<WarIndexEntry[]>('wars.json'),
     ])
       .then(([timeline, territories, entities, relations, events, wars]) =>

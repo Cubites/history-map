@@ -20,6 +20,7 @@ import {
   type TerritoryProps,
   type TimelineIndex,
 } from '../../src/schema/index.ts';
+import { DEFAULT_STORY_REGION, REGION_FILTER_OF, STORY_FILE_PREFIXES, regionOfEntityFile, regionOfEventFile } from '../../src/schema/regions.ts';
 import { buildLodTopology, countPoints, subTopology, tiledTopology } from './topo.ts';
 import { chunkOutlines, tilePolygons } from './tiles.ts';
 import { buildWars, checkWars, findCutText, readWars } from './wars.ts';
@@ -352,15 +353,58 @@ async function writeJson(file: string, value: unknown) {
   await writeFile(file, JSON.stringify(value));
 }
 
+// ── 권역 (DESIGN.md §6.4.2) ───────────────────────────────
+// 권역 값은 YAML에 적지 않고 파일 이름에서 정한다 (src/schema/regions.ts). 출력 JSON의 항목 끝에 `region`으로 붙는다
+
+/** 나라 파일의 권역. 대응표(REGION_FILTER_OF)에 없는 파일이면 오류 */
+function entityFileRegion(file: string): string {
+  const region = regionOfEntityFile(file);
+  if (region === undefined)
+    errors.push(`${rel(file)}: 권역 대응표(src/schema/regions.ts의 REGION_FILTER_OF)에 '${path.basename(file, '.yaml')}'가 없음. 새 권역이면 한 줄 더할 것`);
+  return region ?? '';
+}
+
+/** 사건 파일의 권역. 알려진 앞머리(eu- 등)도, 한국사 시대 파일(01-~08-)도 아니면 오류 */
+function eventFileRegion(file: string): string {
+  const region = regionOfEventFile(file);
+  if (region === undefined)
+    errors.push(
+      `${rel(file)}: 사건 파일 이름은 한국사 시대 파일(두 자리 수-…)이거나 알려진 앞머리(${STORY_FILE_PREFIXES.map(([p]) => p).join(', ')})로 시작해야 함. 새 권역이면 src/schema/regions.ts의 STORY_FILE_PREFIXES에 한 줄 더할 것`,
+    );
+  return region ?? '';
+}
+
+/** 사건·전쟁 파일 앞머리가 정하는 권역도 대응표에 있어야 한다 */
+function checkStoryRegions() {
+  for (const region of new Set([DEFAULT_STORY_REGION, ...STORY_FILE_PREFIXES.map(([, r]) => r)]))
+    if (!Object.hasOwn(REGION_FILTER_OF, region)) errors.push(`src/schema/regions.ts: 사건·전쟁 파일의 권역 '${region}'가 REGION_FILTER_OF에 없음`);
+}
+
 async function main() {
-  const entityList = (await Promise.all((await listFiles(path.join(DATA, 'entities'), '.yaml')).map((f) => readYamlList(f, EntitySchema)))).flat();
+  const entityFiles = await listFiles(path.join(DATA, 'entities'), '.yaml');
+  const entityList = (
+    await Promise.all(
+      entityFiles.map(async (f) => {
+        const region = entityFileRegion(f);
+        return (await readYamlList(f, EntitySchema)).map((e) => ({ ...e, region }));
+      }),
+    )
+  ).flat();
+  checkStoryRegions();
   const entities = new Map<string, Entity>();
   for (const e of entityList) {
     if (entities.has(e.id)) errors.push(`나라 id 중복: ${e.id}`);
     entities.set(e.id, e);
   }
   const relations = await readYamlList(path.join(DATA, 'relations.yaml'), RelationSchema);
-  const events = (await Promise.all((await listFiles(path.join(DATA, 'events'), '.yaml')).map((f) => readYamlList(f, EventSchema)))).flat();
+  const events = (
+    await Promise.all(
+      (await listFiles(path.join(DATA, 'events'), '.yaml')).map(async (f) => {
+        const region = eventFileRegion(f);
+        return (await readYamlList(f, EventSchema)).map((e) => ({ ...e, region }));
+      }),
+    )
+  ).flat();
   const territories = await readTerritories();
   const wars = await readWars(await listFiles(path.join(DATA, 'wars'), '.yaml'), errors, rel);
 
@@ -391,7 +435,8 @@ async function main() {
 
   await writeJson(path.join(OUT, 'timeline.json'), timeline);
   await writeJson(path.join(OUT, 'territories.json'), index);
-  await writeJson(path.join(OUT, 'entities.json'), entityList.map((e, i) => ({ ...e, color: colorFor(e, i) })));
+  // 권역(region)은 항목 끝에 둔다
+  await writeJson(path.join(OUT, 'entities.json'), entityList.map(({ region, ...e }, i) => ({ ...e, color: colorFor(e, i), region })));
   await writeJson(path.join(OUT, 'relations.json'), relations);
   await writeJson(path.join(OUT, 'events.json'), [...events].sort((a, b) => a.year - b.year || a.id.localeCompare(b.id)));
   // 전쟁: 스냅샷마다 진영별 점령 지역을 계산한다 (DESIGN.md §4.5)

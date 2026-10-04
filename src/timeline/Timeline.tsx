@@ -4,6 +4,7 @@ import { PREHISTORY, clampYear, decadeOf, formatYear, parseYearInput, prehistory
 import { useAppStore } from '../store/useAppStore.ts';
 import { FrontTimeline } from './FrontTimeline.tsx';
 import { activeWarView } from '../lib/wars.ts';
+import { inRegionFilter } from '../schema/regions.ts';
 
 /** 영토 데이터가 있는 기간을 겹치지 않게 합친다 (슬라이더 뒤 표시용) */
 function coverageRanges(data: StaticData): [number, number][] {
@@ -45,6 +46,12 @@ export function Timeline({ data }: { data: StaticData }) {
   // 선사 단계에서 +10년은 다음 단계(또는 역사 시대의 시작)로
   const forward = () => (prehistoric ? go(stops.find((y) => y > year) ?? range[0]) : go(year + 10));
   const coverage = useMemo(() => coverageRanges(data), [data]);
+  // 사건 눈금은 권역 필터에 맞는 사건만 (DESIGN.md §6.4.2)
+  const regionFilter = useAppStore((s) => s.regionFilter);
+  const ticks = useMemo(
+    () => data.events.filter((e) => e.year >= min && inRegionFilter(regionFilter, e.region)),
+    [data.events, min, regionFilter],
+  );
 
   const submit = () => {
     const parsed = parseYearInput(input);
@@ -125,7 +132,7 @@ export function Timeline({ data }: { data: StaticData }) {
           {coverage.map(([from, to]) => (
             <span key={from} className="timeline-band" style={{ left: `${percent(from)}%`, width: `${Math.max(0.3, percent(to) - percent(from))}%` }} />
           ))}
-          {data.events.filter((e) => e.year >= min).map((e) => (
+          {ticks.map((e) => (
             <span key={e.id} className="timeline-tick" style={{ left: `${percent(e.year)}%` }} />
           ))}
         </div>

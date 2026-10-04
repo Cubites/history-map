@@ -13,6 +13,7 @@ import {
   type War,
   type WarIndexEntry,
 } from '../../src/schema/index.ts';
+import { STORY_FILE_PREFIXES, regionOfWarFile } from '../../src/schema/regions.ts';
 import {
   anchorPoint,
   bbox,
@@ -55,8 +56,11 @@ export function findCutText(node: unknown, where: string, errors: string[], trai
   }
 }
 
-export async function readWars(files: string[], errors: string[], rel: (f: string) => string): Promise<War[]> {
-  const wars: War[] = [];
+/** 전쟁과 그 파일 이름이 정한 권역 (src/schema/regions.ts) */
+export type RegionalWar = War & { region: string };
+
+export async function readWars(files: string[], errors: string[], rel: (f: string) => string): Promise<RegionalWar[]> {
+  const wars: RegionalWar[] = [];
   for (const file of files) {
     let raw: unknown;
     try {
@@ -71,7 +75,13 @@ export async function readWars(files: string[], errors: string[], rel: (f: strin
       for (const issue of result.error.issues) errors.push(`${rel(file)} ${issue.path.join('.')}: ${issue.message}`);
       continue;
     }
-    wars.push(result.data);
+    // 권역은 파일 이름에서 정한다 (src/schema/regions.ts). `<영문자>-<두 자리 수>-` 꼴인데 앞머리를 모르면 오류
+    const region = regionOfWarFile(file);
+    if (region === undefined) {
+      errors.push(`${rel(file)}: 파일 이름 앞머리 '${path.basename(file).split('-')[0]}-'를 모름. src/schema/regions.ts의 STORY_FILE_PREFIXES(지금 ${STORY_FILE_PREFIXES.map(([p]) => p).join(', ')})에 한 줄 더할 것`);
+      continue;
+    }
+    wars.push({ ...result.data, region });
   }
   return wars;
 }
@@ -168,7 +178,7 @@ async function readAreaGeojson(file: string, errors: string[]): Promise<MultiCoo
   }
 }
 
-export async function buildWars(wars: War[], geo: WarGeoSources, errors: string[]): Promise<WarIndexEntry[]> {
+export async function buildWars(wars: RegionalWar[], geo: WarGeoSources, errors: string[]): Promise<WarIndexEntry[]> {
   const out: WarIndexEntry[] = [];
   for (const w of wars) {
     const theaters: TheaterOut[] = [];
@@ -260,6 +270,7 @@ export async function buildWars(wars: War[], geo: WarGeoSources, errors: string[
       })),
       sources: w.sources,
       theaters,
+      region: w.region,
     });
   }
   return out;

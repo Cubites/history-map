@@ -20,6 +20,7 @@ import {
 } from '../data/staticData.ts';
 import { activeWarView, factionColor, snapshotFor, theatersInYear } from '../lib/wars.ts';
 import { formatRange, isAlive } from '../lib/year.ts';
+import { REGION_FILTER_INFO, inRegionFilter } from '../schema/regions.ts';
 import type { Lod, TerritoryIndexEntry } from '../schema/index.ts';
 import { useAppStore } from '../store/useAppStore.ts';
 import { ArrowLayer } from './ArrowLayer.tsx';
@@ -118,6 +119,9 @@ export default function WorldMap({ data }: { data: StaticData }) {
   const exitWar = useAppStore((s) => s.exitWar);
   const selectEntity = useAppStore((s) => s.select);
   const focusEvent = useAppStore((s) => s.focusEvent);
+  const regionFilter = useAppStore((s) => s.regionFilter);
+  const regionFocus = useAppStore((s) => s.regionFocus);
+  const focusedEventId = useAppStore((s) => s.focusedEventId);
 
   // 시점은 매 프레임 바뀌므로 ref에 두고, 화면 좌표 레이어(SVG)를 위해 프레임당 한 번 state로 복사한다.
   const viewRef = useRef<View>({ lon: DEFAULT_LON, k: 1, ty: 0, dx: 0 });
@@ -132,12 +136,14 @@ export default function WorldMap({ data }: { data: StaticData }) {
 
   const s0 = useMemo(() => (size ? baseScale(size) : 1), [size]);
 
-  // 화면 크기가 정해지거나 바뀌면 시점을 다시 맞춘다. 처음에는 동아시아가 꽉 차게,
+  // 화면 크기가 정해지거나 바뀌면 시점을 다시 맞춘다. 처음에는 동아시아(권역 필터를 고른 주소면 그 권역)가 꽉 차게,
   // 이후(창 크기 변경, 모바일 회전)에는 보던 곳과 배율을 유지한다.
   const sized = useRef<{ size: Size; s0: number } | null>(null);
   if (size && sized.current?.size !== size) {
     const prev = sized.current;
-    viewRef.current = prev ? toView(size, s0, toGeoView(prev.size, prev.s0, viewRef.current)) : fitBounds(size, s0, EAST_ASIA_BOUNDS);
+    viewRef.current = prev
+      ? toView(size, s0, toGeoView(prev.size, prev.s0, viewRef.current))
+      : fitBounds(size, s0, REGION_FILTER_INFO[regionFilter].bounds ?? EAST_ASIA_BOUNDS);
     sized.current = { size, s0 };
   }
   const active = useMemo(() => activeTerritories(data.territories, year), [data.territories, year]);
@@ -149,17 +155,27 @@ export default function WorldMap({ data }: { data: StaticData }) {
   const war = warView?.war;
   const theater = warView?.theater;
   const snapshot = warView ? snapshotFor(warView, year, frontDate, hoveredEvent) : undefined;
-  // 평소 지도에는 그 해에 진행 중인 전역마다 전쟁 표시만 둔다
-  const warMarkers = useMemo(() => (warId ? [] : theatersInYear(data.wars, year)), [data.wars, warId, year]);
-  // 전쟁 보기가 없는 전쟁·전투 사건은 그 해에 싸운 곳만 작게 표시한다 (DESIGN.md §4.5)
+  // 평소 지도에는 그 해에 진행 중인 전역마다 전쟁 표시만 둔다. 권역 필터에 맞는 전쟁만 (DESIGN.md §6.4.2)
+  const warMarkers = useMemo(
+    () => (warId ? [] : theatersInYear(data.wars, year).filter(({ war: w }) => inRegionFilter(regionFilter, w.region))),
+    [data.wars, warId, year, regionFilter],
+  );
+  // 전쟁 보기가 없는 전쟁·전투 사건은 그 해에 싸운 곳만 작게 표시한다 (DESIGN.md §4.5).
+  // 권역 필터에 맞는 사건만. 다만 검색·전투 표시로 고른 사건(focusedEventId)은 필터와 상관없이 보여 준다
   const battlePins = useMemo<BattlePin[]>(
     () =>
       warId
         ? []
         : data.events
-            .filter((e) => !e.front && e.year <= year && year <= (e.endYear ?? e.year))
+            .filter(
+              (e) =>
+                !e.front &&
+                e.year <= year &&
+                year <= (e.endYear ?? e.year) &&
+                (e.id === focusedEventId || inRegionFilter(regionFilter, e.region)),
+            )
             .flatMap((event) => (event.places ?? []).map((p) => ({ event, name: p.name, at: p.at }))),
-    [data.events, warId, year],
+    [data.events, warId, year, regionFilter, focusedEventId],
   );
   const openBattlePin = (pin: BattlePin) => {
     // 그 해에 있던 나라 가운데 사건의 첫 주체를 골라 패널에 사건을 띄운다
@@ -511,6 +527,15 @@ export default function WorldMap({ data }: { data: StaticData }) {
     }
     shownWar.current = target;
   }, [war, theater, size, s0, animateTo]);
+  // 권역 단추를 누르면 지도를 그 권역 범위로 한 번 옮긴다 (DESIGN.md §6.4.2).
+  // '전체'는 옮기지 않고, 전쟁 보기 중에는 전쟁 지역을 보고 있으므로 옮기지 않는다 (닫으면 들어오기 전 위치로 돌아감)
+  const shownRegionFocus = useRef(regionFocus);
+  useEffect(() => {
+    if (!size || regionFocus === shownRegionFocus.current) return;
+    shownRegionFocus.current = regionFocus;
+    const bounds = REGION_FILTER_INFO[regionFilter].bounds;
+    if (bounds && !warId) animateTo(fitBounds(size, s0, bounds));
+  }, [regionFocus, regionFilter, warId, size, s0, animateTo]);
   // 전쟁 보기 중에 전쟁 기간 밖의 연도로 옮기면(사건 목록의 이동 등) 전쟁 보기를 닫는다
   useEffect(() => {
     if (!warId) return;

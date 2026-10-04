@@ -572,6 +572,34 @@ button {
   .search-input { font-size: 16px; padding: 5px 8px; }
 }
 
+/* 권역 필터 (머리글, DESIGN.md §6.4.2): 검색창 왼쪽의 붙은 단추 묶음. 고른 단추는 색·굵기·밑줄로 (색만으로 구분하지 않음) */
+.region-filter-wrap { position: relative; flex: 0 0 auto; margin-left: auto; }
+.region-filter-wrap + .search { margin-left: 0; }
+.region-filter { display: flex; border: 1px solid var(--border); border-radius: 6px; overflow: hidden; background: var(--surface); }
+.region-filter button { padding: 5px 10px; border: none; border-left: 1px solid var(--border); background: transparent; font-size: 13px; color: var(--muted); cursor: pointer; white-space: nowrap; }
+.region-filter button:first-child { border-left: none; }
+.region-filter button:hover { color: var(--fg); }
+.region-filter button[aria-pressed='true'] { color: var(--front-line); font-weight: 700; box-shadow: inset 0 -2px 0 var(--front-line); }
+.region-filter button:focus-visible { outline: 2px solid var(--front-line); outline-offset: -2px; }
+.region-filter-short { display: none; }
+/* 권역 자료가 없는 연도에서 권역을 골라 연도를 옮겼을 때의 짧은 알림 (비어 있으면 보이지 않음) */
+.region-notice { position: absolute; z-index: 21; top: calc(100% + 6px); right: 0; width: max-content; max-width: min(320px, calc(100vw - 24px)); padding: 6px 10px; border: 1px solid var(--border); border-radius: 6px; background: var(--control-bg); color: var(--fg); font-size: 13px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12); pointer-events: none; }
+.region-notice:empty { padding: 0; border: 0; box-shadow: none; }
+@media (max-width: 767px) {
+  /* 휴대폰: 제목·권역·검색창을 한 줄에. 권역은 짧은 이름(한국)으로 */
+  .app-header { gap: 8px; }
+  .app-header h1 { flex: 0 0 auto; white-space: nowrap; }
+  .region-filter button { min-height: 32px; padding: 0 7px; font-size: 12.5px; }
+  .region-filter-long { display: none; }
+  .region-filter-short { display: inline; }
+  .region-filter-wrap { position: static; }
+  .region-notice { top: calc(100% + 4px); left: 8px; right: 8px; width: auto; max-width: none; }
+  /* 권역 단추 때문에 검색창이 좁아지므로 결과 목록은 머리글 폭에 맞춘다 */
+  .app-header { position: relative; }
+  .search { position: static; }
+  .search-results { left: 8px; right: 8px; }
+}
+
 /* 새 버전 알림 */
 .update-notice { display: flex; gap: 10px; align-items: center; justify-content: center; padding: 6px 12px; font-size: 13.5px; background: var(--surface); border-bottom: 1px solid var(--border); }
 .update-notice button { font: inherit; font-weight: 600; padding: 3px 10px; border: 1px solid var(--front-line); border-radius: 6px; background: transparent; color: var(--front-line); cursor: pointer; }

@@ -10,6 +10,7 @@ import {
   type GeoRawProjection,
 } from 'd3-geo';
 import type { LonLat } from '../schema/index.ts';
+import { REGION_FILTER_INFO } from '../schema/regions.ts';
 
 export type Size = { width: number; height: number };
 
@@ -40,8 +41,8 @@ export const MAX_ZOOM = 60;
 /** 최대로 축소했을 때 세계가 화면 가로나 세로 한쪽에 꼭 맞도록 여백을 두지 않는다 */
 const PADDING = 0;
 
-/** 첫 화면과 "동아시아" 버튼이 보여줄 범위 (DESIGN.md D5) */
-export const EAST_ASIA_BOUNDS: [[west: number, south: number], [east: number, north: number]] = [[88, 18], [146, 54]];
+/** 첫 화면과 "동아시아" 버튼이 보여줄 범위 (DESIGN.md D5). 권역 필터의 '한국·동아시아'와 같은 범위다 (regions.ts) */
+export const EAST_ASIA_BOUNDS: [[west: number, south: number], [east: number, north: number]] = REGION_FILTER_INFO['east-asia'].bounds!;
 export const DEFAULT_LON = 117;
 
 // 축척 1일 때 세계 타원의 반폭·반높이와 적도에서 경도 1°의 폭 (Equal Earth는 적도에서 x가 경도에 비례)

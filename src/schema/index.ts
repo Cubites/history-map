@@ -17,6 +17,10 @@ const Names = z.object({
 export const EntitySchema = z
   .object({
     id: z.string().regex(/^[a-z0-9-]+$/, '소문자, 숫자, 하이픈만 사용'),
+    /**
+     * polity: 나라, region: 나라가 아닌 지역 항목(귀속 논쟁 지역, 선사 시대 한반도 등).
+     * 빌드가 붙이는 권역 키 `region`(korea·europe 등 지리적 권역, regions.ts)과는 다른 것이다
+     */
     level: z.enum(['polity', 'region']),
     names: Names,
     /** 존속 시작 연도 (포함) */
@@ -266,6 +270,8 @@ export interface WarIndexEntry {
   participants: { entity: string; faction: string; from: Year; to: Year }[];
   sources: string[];
   theaters: TheaterOut[];
+  /** 권역: 빌드가 data/wars 파일 이름에서 정한다 (regions.ts) */
+  region: string;
 }
 type MultiPolygonCoords = [number, number][][][];
 
