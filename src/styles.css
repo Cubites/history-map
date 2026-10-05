@@ -270,6 +270,8 @@ button {
 .event-current { background: var(--highlight); }
 .event-hovered,
 .event:focus-visible { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+/* 눌러서 화살표를 고정한 사건 (2026-10-05): 마우스를 올린 사건보다 테두리를 굵게 */
+.event-pinned { box-shadow: 0 0 0 2px var(--accent); }
 
 .event-head { display: flex; gap: 8px; align-items: baseline; }
 .event-year { font-variant-numeric: tabular-nums; font-weight: 700; color: var(--muted); white-space: nowrap; }

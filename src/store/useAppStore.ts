@@ -8,6 +8,11 @@ interface AppState {
   year: number;
   selectedId: string | null;
   hoveredEventId: string | null;
+  /**
+   * 눌러서 고정한 사건 (2026-10-05). 마우스가 떠나도 화살표를 계속 보여 주고, 그 사건을 다시 누르거나 사건 밖을 누르면 풀린다.
+   * 화살표는 마우스를 올린 사건(hoveredEventId)이 있으면 그것을, 없으면 고정한 사건을 그린다(activeEventId)
+   */
+  pinnedEventId: string | null;
   /** 지도의 전투 표시로 고른 사건. 패널에서 그 사건으로 스크롤하고 강조한다 */
   focusedEventId: string | null;
   showAllEvents: boolean;
@@ -40,6 +45,7 @@ interface AppState {
   /** 사건의 나라를 고르고 그 사건을 패널에서 보여 준다 (지도의 전투 표시를 눌렀을 때) */
   focusEvent: (entityId: string, eventId: string) => void;
   hoverEvent: (id: string | null) => void;
+  pinEvent: (id: string | null) => void;
   setShowAllEvents: (value: boolean) => void;
   /** 권역 필터를 고른다. 지도 이동(regionFocus)도 함께 요청한다 */
   setRegionFilter: (filter: RegionFilter) => void;
@@ -65,21 +71,26 @@ function readUrl() {
 export const useAppStore = create<AppState>((set) => ({
   ...readUrl(),
   hoveredEventId: null,
+  pinnedEventId: null,
   focusedEventId: null,
   showAllEvents: false,
   regionFocus: 0,
-  setYear: (year) => set({ year, hoveredEventId: null, focusedEventId: null, frontDate: null }),
+  setYear: (year) => set({ year, hoveredEventId: null, pinnedEventId: null, focusedEventId: null, frontDate: null }),
   setFront: (year, frontDate) => set({ year, frontDate }),
   enterWar: (warId, theaterId, year, frontDate) =>
-    set((s) => ({ warId, theaterId, year, frontDate, hoveredEventId: null, returnYear: s.warId ? s.returnYear : s.year })),
+    set((s) => ({ warId, theaterId, year, frontDate, hoveredEventId: null, pinnedEventId: null, returnYear: s.warId ? s.returnYear : s.year })),
   exitWar: () =>
-    set((s) => ({ warId: null, theaterId: null, frontDate: null, hoveredEventId: null, year: s.returnYear ?? s.year, returnYear: null })),
-  select: (selectedId) => set({ selectedId, hoveredEventId: null, focusedEventId: null, showAllEvents: false }),
-  focusEvent: (selectedId, eventId) => set({ selectedId, hoveredEventId: eventId, focusedEventId: eventId, showAllEvents: false }),
+    set((s) => ({ warId: null, theaterId: null, frontDate: null, hoveredEventId: null, pinnedEventId: null, year: s.returnYear ?? s.year, returnYear: null })),
+  select: (selectedId) => set({ selectedId, hoveredEventId: null, pinnedEventId: null, focusedEventId: null, showAllEvents: false }),
+  focusEvent: (selectedId, eventId) => set({ selectedId, hoveredEventId: null, pinnedEventId: eventId, focusedEventId: eventId, showAllEvents: false }),
   hoverEvent: (hoveredEventId) => set({ hoveredEventId }),
+  pinEvent: (pinnedEventId) => set({ pinnedEventId }),
   setShowAllEvents: (showAllEvents) => set({ showAllEvents }),
   setRegionFilter: (regionFilter) => set((s) => ({ regionFilter, regionFocus: s.regionFocus + 1 })),
 }));
+
+/** 화살표를 그릴 사건: 마우스를 올린 사건, 없으면 눌러서 고정한 사건 */
+export const activeEventId = (s: AppState) => s.hoveredEventId ?? s.pinnedEventId;
 
 useAppStore.subscribe((state, prev) => {
   if (

@@ -18,13 +18,24 @@ export function EventPanel({ data }: { data: StaticData }) {
   const warId = useAppStore((s) => s.warId);
   // 마우스가 없는 화면(휴대폰·태블릿)에서는 안내 문구를 바꾼다
   const touch = useMediaQuery('(hover: none)');
+  // 눌러서 고정한 사건은 사건 밖(지도·패널의 다른 곳 등)을 누르면 풀린다. 다른 사건을 누르면 그 사건으로 바뀐다 (EventItem)
+  const pinned = useAppStore((s) => s.pinnedEventId);
+  const pinEvent = useAppStore((s) => s.pinEvent);
+  useEffect(() => {
+    if (!pinned) return;
+    const onPointerDown = (e: PointerEvent) => {
+      if (!(e.target instanceof Element && e.target.closest('.event'))) pinEvent(null);
+    };
+    document.addEventListener('pointerdown', onPointerDown);
+    return () => document.removeEventListener('pointerdown', onPointerDown);
+  }, [pinned, pinEvent]);
 
   const entity = selectedId ? data.entities.get(selectedId) : undefined;
   if (!entity) {
     return (
       <aside className="panel">
         <p className="panel-guide">지도에서 나라를 누르면 그 시기의 사건이 여기에 나타납니다.</p>
-        <p className="panel-guide">사건에 {touch ? '손가락을 대면' : '마우스를 올리면'} 영향을 주고받은 나라가 화살표로 표시됩니다.</p>
+        <p className="panel-guide">사건에 {touch ? '손가락을 대면' : '마우스를 올리면'} 영향을 주고받은 나라가 화살표로 표시됩니다. 사건을 누르면 화살표가 계속 남고, 그 사건을 다시 누르거나 다른 곳을 누르면 사라집니다.</p>
         <p className="panel-note">현재는 선사 시대(구석기·신석기)와 고조선(기원전 2333년)부터 현대까지의 한국사 전 시대 자료와 유럽(1789년~현재)의 국경·사건이 들어 있습니다.</p>
       </aside>
     );
@@ -199,7 +210,9 @@ export function EventPanel({ data }: { data: StaticData }) {
 
 function EventItem({ event, data, selectedId, highlight }: { event: HistoryEvent; data: StaticData; selectedId: string; highlight: boolean }) {
   const hoverEvent = useAppStore((s) => s.hoverEvent);
+  const pinEvent = useAppStore((s) => s.pinEvent);
   const hovered = useAppStore((s) => s.hoveredEventId === event.id);
+  const pinned = useAppStore((s) => s.pinnedEventId === event.id);
   const focused = useAppStore((s) => s.focusedEventId === event.id);
   const itemRef = useRef<HTMLLIElement>(null);
   useEffect(() => {
@@ -215,22 +228,33 @@ function EventItem({ event, data, selectedId, highlight }: { event: HistoryEvent
   const openFront = () => event.front && enterWar(event.front.war, event.front.theater ?? null, yearOfFrontDate(event.front.date), event.front.date);
   // 지금 보고 있는 전역의 사건인가 (전역을 적지 않은 사건은 첫 전역)
   const inCurrentView = !!event.front && event.front.war === warId && (event.front.theater ?? war?.theaters[0].id) === (theaterId ?? war?.theaters[0].id);
+  const activate = () => {
+    // 이미 고정한 사건을 다시 누르면 고정을 푼다. 연도 이동(setYear 등)이 고정을 지우므로 누르기 전 상태를 먼저 본다
+    const wasPinned = useAppStore.getState().pinnedEventId === event.id;
+    // 전쟁 보기 중이면 그 전쟁의 사건은 그 날짜의 전선으로 옮긴다 (DESIGN.md §4.5)
+    if (event.front && inCurrentView) setFront(yearOfFrontDate(event.front.date), event.front.date);
+    else if (event.front && event.front.war === warId) openFront();
+    else setYear(event.year);
+    // 누르면 화살표를 고정한다(터치 화면에는 hover가 없음). 다시 누르면 마우스가 위에 있어도 화살표를 지운다
+    if (wasPinned) {
+      pinEvent(null);
+      hoverEvent(null);
+    } else pinEvent(event.id);
+  };
 
   return (
     <li
       ref={itemRef}
-      className={['event', (hovered || focused) && 'event-hovered', highlight && 'event-current'].filter(Boolean).join(' ')}
+      className={['event', (hovered || pinned || focused) && 'event-hovered', pinned && 'event-pinned', highlight && 'event-current'].filter(Boolean).join(' ')}
       onMouseEnter={() => hoverEvent(event.id)}
       onMouseLeave={() => hoverEvent(null)}
       onFocus={() => hoverEvent(event.id)}
       onBlur={() => hoverEvent(null)}
-      onClick={() => {
-        // 전쟁 보기 중이면 그 전쟁의 사건은 그 날짜의 전선으로 옮긴다 (DESIGN.md §4.5)
-        if (event.front && inCurrentView) setFront(yearOfFrontDate(event.front.date), event.front.date);
-        else if (event.front && event.front.war === warId) openFront();
-        else setYear(event.year);
-        // 터치 화면에는 hover가 없으므로 누르면 화살표를 보여준다 (setYear가 hover를 지우므로 그 뒤에 설정)
-        hoverEvent(event.id);
+      onClick={activate}
+      onKeyDown={(e) => {
+        if (e.target !== e.currentTarget || (e.key !== 'Enter' && e.key !== ' ')) return;
+        e.preventDefault();
+        activate();
       }}
       tabIndex={0}
     >

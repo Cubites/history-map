@@ -22,7 +22,7 @@ import { activeWarView, factionColor, snapshotFor, theatersInYear } from '../lib
 import { formatRange, isAlive } from '../lib/year.ts';
 import { REGION_FILTER_INFO, inRegionFilter } from '../schema/regions.ts';
 import type { Lod, TerritoryIndexEntry } from '../schema/index.ts';
-import { useAppStore } from '../store/useAppStore.ts';
+import { activeEventId, useAppStore } from '../store/useAppStore.ts';
 import { ArrowLayer } from './ArrowLayer.tsx';
 import { FrontArrowLayer } from './FrontArrowLayer.tsx';
 import { WarMarkerLayer } from './WarMarkerLayer.tsx';
@@ -111,7 +111,7 @@ export default function WorldMap({ data }: { data: StaticData }) {
 
   const year = useAppStore((s) => s.year);
   const selectedId = useAppStore((s) => s.selectedId);
-  const hoveredEventId = useAppStore((s) => s.hoveredEventId);
+  const hoveredEventId = useAppStore(activeEventId);
   const frontDate = useAppStore((s) => s.frontDate);
   const warId = useAppStore((s) => s.warId);
   const theaterId = useAppStore((s) => s.theaterId);

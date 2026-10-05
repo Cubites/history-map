@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import type { StaticData } from '../data/staticData.ts';
 import { activeWarView, entryYear, factionColor, formatFrontDate, snapshotFor } from '../lib/wars.ts';
 import { formatYear } from '../lib/year.ts';
-import { useAppStore } from '../store/useAppStore.ts';
+import { activeEventId, useAppStore } from '../store/useAppStore.ts';
 
 /**
  * 전쟁 보기의 타임라인 (DESIGN.md §4.5): 연도 타임라인 대신 그 전역의 날짜를 늘어놓는다.
@@ -13,7 +13,7 @@ export function FrontTimeline({ data }: { data: StaticData }) {
   const warId = useAppStore((s) => s.warId);
   const theaterId = useAppStore((s) => s.theaterId);
   const frontDate = useAppStore((s) => s.frontDate);
-  const hoveredEventId = useAppStore((s) => s.hoveredEventId);
+  const hoveredEventId = useAppStore(activeEventId);
   const setFront = useAppStore((s) => s.setFront);
   const enterWar = useAppStore((s) => s.enterWar);
   const exitWar = useAppStore((s) => s.exitWar);
