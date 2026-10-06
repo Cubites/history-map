@@ -148,8 +148,8 @@
 - { type: successor_of, subject: norway, object: sweden-norway, from: 1905, to: null }
 
 # 종속: 오스만 제국의 종주권 아래 있던 자치 공국·자치주 (지도에 테두리를 오스만의 색으로)
-- { type: vassal_of, subject: moldavia, object: ottoman, from: 1700, to: 1858 }
-- { type: vassal_of, subject: wallachia, object: ottoman, from: 1700, to: 1858 }
+- { type: vassal_of, subject: moldavia, object: ottoman, from: 1600, to: 1858 }
+- { type: vassal_of, subject: wallachia, object: ottoman, from: 1600, to: 1858 }
 - { type: vassal_of, subject: romania, object: ottoman, from: 1859, to: 1877 }
 - { type: vassal_of, subject: serbia, object: ottoman, from: 1817, to: 1877 }
 - { type: vassal_of, subject: bulgaria, object: ottoman, from: 1878, to: 1907 }
@@ -186,8 +186,8 @@
 - { type: successor_of, subject: prussia, object: danzig, from: 1814, to: null }
 - { type: successor_of, subject: russia, object: courland, from: 1795, to: null }
 # 종속: 폴란드-리투아니아의 봉토 쿠를란트, 오스만에 공물을 바친 라구사, 오스만 종주 아래의 셉틴슐라 공화국
-- { type: vassal_of, subject: courland, object: polish-lithuanian-commonwealth, from: 1700, to: 1795 }
-- { type: vassal_of, subject: ragusa, object: ottoman, from: 1700, to: 1805 }
+- { type: vassal_of, subject: courland, object: polish-lithuanian-commonwealth, from: 1600, to: 1795 }
+- { type: vassal_of, subject: ragusa, object: ottoman, from: 1600, to: 1805 }
 - { type: vassal_of, subject: septinsular-republic, object: ottoman, from: 1800, to: 1806 }
 # 종속: 프랑스의 자매 공화국·위성국(지도에 테두리를 프랑스의 색으로)
 - { type: vassal_of, subject: batavian-republic, object: france, from: 1795, to: 1806 }
@@ -205,7 +205,7 @@
 - { type: occupied_by, subject: duchy-of-warsaw, object: russia, from: 1813, to: 1815 }
 
 # ── 유럽 1700~1788 (작업 D1, 2026-10-06) ──
-# 몰다비아·왈라키아·라구사의 오스만 종속과 쿠를란트의 폴란드-리투아니아 종속은 위(1815~1914·1789~1814)의 줄을 1700년부터로 넓혔다
+# 몰다비아·왈라키아·라구사의 오스만 종속과 쿠를란트의 폴란드-리투아니아 종속은 위(1815~1914·1789~1814)의 줄을 1700년부터로 넓혔다(작업 D2에서 크림 칸국 종속과 함께 1600년부터로 넓힘)
 # 계승: 이름만 바뀐 나라(소유표 renames)와 합쳐진 나라
 - { type: successor_of, subject: prussia, object: brandenburg-prussia, from: 1701, to: null }
 - { type: successor_of, subject: uk, object: england, from: 1707, to: null }
@@ -215,7 +215,16 @@
 - { type: successor_of, subject: france, object: lorraine, from: 1766, to: null }
 - { type: successor_of, subject: russia, object: crimean-khanate, from: 1783, to: null }
 # 종속: 1478년부터 오스만의 종주권 아래 있던 크림 칸국(1774년 퀴췩카이나르자 조약으로 독립)
-- { type: vassal_of, subject: crimean-khanate, object: ottoman, from: 1700, to: 1773 }
+- { type: vassal_of, subject: crimean-khanate, object: ottoman, from: 1600, to: 1773 }
+# ── 유럽 1600~1699 (작업 D2, 2026-10-06) ──
+# 계승: 브란덴부르크 선제후가 프로이센 공국을 이어받음(1618)
+- { type: successor_of, subject: brandenburg-prussia, object: ducal-prussia, from: 1618, to: null }
+# 종속: 폴란드의 봉토 프로이센 공국(1525~1657, 1618년부터는 브란덴부르크-프로이센의 프로이센 땅만이라 관계는 1617년까지), 오스만의 종주를 받은 트란실바니아 공국(1687년 블라지 조약부터 합스부르크),
+# 1654년 페레야슬라우 회의로 러시아 차르의 보호를 받은 코사크 헤트만국(1654년부터 영토는 러시아 땅으로 그리고, 패널에 종속 관계만 1666년까지 둠)
+- { type: vassal_of, subject: ducal-prussia, object: polish-lithuanian-commonwealth, from: 1600, to: 1617 }
+- { type: vassal_of, subject: transylvania, object: ottoman, from: 1600, to: 1686 }
+- { type: vassal_of, subject: transylvania, object: habsburg-monarchy, from: 1687, to: 1698 }
+- { type: vassal_of, subject: cossack-hetmanate, object: russia-tsardom, from: 1654, to: 1666 }
 # ── 유럽 1918~1945 (작업 B1, 2026-10-03) ──
 # 계승: 무너진 제국과 신생국, 이름만 바뀐 나라, 병합된 국제 관리 지역
 - { type: successor_of, subject: finland, object: russia, from: 1917, to: null }
