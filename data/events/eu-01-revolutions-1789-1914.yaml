@@ -48,7 +48,7 @@
     ko: 혁명 전쟁과 제1공화정
   summary:
     ko: "혁명이 번질 것을 걱정한 오스트리아와 프로이센이 혁명에 간섭할 뜻을 밝히자(필니츠 선언, 1791), 프랑스는 1792년 4월 오스트리아에 선전 포고했다. 8월 파리 민중이 튀일리 궁을 습격해 왕권을 정지시켰고, 의용군이 발미에서 프로이센군을 막아 낸 직후 남성 보통 선거로 뽑힌 국민 공회가 왕정을 폐지하고 공화정을 선포했다(9월). 루이 16세가 처형되자(1793년 1월) 영국 등이 제1차 대프랑스 동맹을 맺었다. 로베스피에르가 이끄는 자코뱅파는 공안 위원회를 중심으로 징병제와 최고 가격제를 시행하고 반대파를 대거 처형하는 공포 정치를 폈으나, 테르미도르 반동(1794년 7월)으로 무너졌다. 그사이 혁명군은 벨기에를 점령하고 1795년 1월 네덜란드 공화국에 들어가, 총독 빌럼 5세가 영국으로 달아난 뒤 바타비아 공화국이 세워졌다. 프로이센(4월)과 에스파냐(7월)는 바젤 조약을 맺고 전쟁에서 빠졌다. 1795년 새 헌법에 따라 총재 정부가 들어섰다."
-  subjects: [france, habsburg-monarchy, prussia, uk, dutch-republic]
+  subjects: [france, habsburg-monarchy, prussia, uk, dutch-republic, batavian-republic]
   links:
     - { from: habsburg-monarchy, to: france, note: "혁명 간섭 전쟁" }
     - { from: prussia, to: france, note: "혁명 간섭 전쟁, 발미 전투" }
@@ -97,7 +97,7 @@
     ko: 나폴레옹의 집권과 프랑스 민법전
   summary:
     ko: "이탈리아 원정(1796~1797)과 이집트 원정으로 이름을 떨친 나폴레옹 보나파르트가 브뤼메르 18일 쿠데타(1799년 11월)로 총재 정부를 무너뜨리고 제1통령이 되었다. 이어 마렝고(1800년 6월)·호엔린덴(12월) 전투에서 오스트리아군을 물리쳐 뤼네빌 조약(1801)으로 라인강 왼쪽 땅을 확정하고 토스카나 대공국 자리에 에트루리아 왕국을 세우게 했으며, 영국과도 아미앵 화약(1802)을 맺어 잠시 전쟁을 멈추었다. 프랑스 은행을 세우고(1800), 교황과 정교 협약을 맺어(1801) 혁명기의 교회 갈등을 수습했으며, 법 앞의 평등과 사유 재산 보장을 담은 프랑스 민법전(나폴레옹 법전, 1804)을 펴냈다. 1804년 국민 투표를 거쳐 황제 나폴레옹 1세로 즉위해 제1제정을 열었다. 이에 맞서 합스부르크 왕가의 프란츠 2세도 같은 해 8월 오스트리아 황제를 칭했다(오스트리아 제국). 민법전은 정복지에 퍼져 근대 민법의 본보기가 되었다."
-  subjects: [france, habsburg-monarchy, tuscany, etruria]
+  subjects: [france, habsburg-monarchy, tuscany, etruria, austria]
   links:
     - { from: france, to: habsburg-monarchy, note: "마렝고·호엔린덴 전투, 뤼네빌 조약 (1801)" }
     - { from: france, to: tuscany, note: "뤼네빌 조약으로 에트루리아 왕국으로 바꿈 (1801)" }
@@ -111,7 +111,7 @@
     ko: 트라팔가르 해전과 아우스터리츠 전투
   summary:
     ko: "나폴레옹이 1805년 3월 이탈리아 공화국(옛 치살피나 공화국)을 왕국으로 바꿔 5월 밀라노에서 이탈리아 왕으로 즉위하고 6월 리구리아 공화국을 프랑스에 합치자, 4월 동맹을 맺은 영국·러시아에 오스트리아가 8월 가담해 제3차 대프랑스 동맹이 이루어졌다. 나폴레옹은 영국 상륙을 준비했으나, 넬슨이 이끄는 영국 함대가 트라팔가르에서 프랑스·에스파냐 연합 함대를 무찔렀다(1805년 10월). 대륙에서는 나폴레옹이 아우스터리츠에서 오스트리아·러시아 연합군을 크게 이겼고(12월, 세 황제의 전투), 오스트리아는 프레스부르크 조약으로 베네치아와 티롤 등을 내주었다. 이듬해 나폴레옹이 서·남독일 나라들을 묶어 라인 동맹을 만들자 1804년부터 오스트리아 황제를 겸하던 프란츠 2세가 신성 로마 황제 자리를 내려놓아 신성 로마 제국이 끝났다(1806)."
-  subjects: [france, uk, austria, russia, holy-roman-empire, spain, cisalpine-republic, italy-napoleonic, ligurian-republic]
+  subjects: [france, uk, austria, russia, holy-roman-empire, spain, cisalpine-republic, italy-napoleonic, ligurian-republic, confederation-of-the-rhine]
   links:
     - { from: uk, to: france, note: "트라팔가르 해전" }
     - { from: france, to: austria, note: "아우스터리츠 전투, 프레스부르크 조약" }
@@ -129,7 +129,7 @@
     ko: 대륙 봉쇄령과 틸지트 조약
   summary:
     ko: "나폴레옹은 예나·아우어슈테트 전투에서 프로이센군을 무너뜨리고 베를린에 들어가(1806년 10월), 유럽 대륙과 영국의 무역을 막는 베를린 칙령(대륙 봉쇄령)을 내렸다. 프리틀란트에서 러시아군도 이긴 뒤 틸지트 조약(1807)을 맺어 프로이센의 땅을 절반 가까이 빼앗고 옛 폴란드 땅에 바르샤바 공국을 세웠으며, 러시아는 대륙 봉쇄에 참여하기로 했다. 그러나 영국과의 무역이 막혀 대륙의 경제가 어려워졌다. 패전한 프로이센에서는 슈타인과 하르덴베르크가 농노 해방(1807년 10월 칙령)과 행정·군제 개혁에 나섰고, 피히테는 「독일 국민에게 고함」 강연으로 국민 의식을 일깨웠다."
-  subjects: [france, prussia, russia, uk]
+  subjects: [france, prussia, russia, uk, duchy-of-warsaw]
   links:
     - { from: france, to: uk, note: "대륙 봉쇄령" }
     - { from: france, to: prussia, note: "예나 전투, 영토 축소" }
@@ -228,7 +228,7 @@
     ko: 그리스 독립 전쟁
   summary:
     ko: "오스만 제국의 지배를 받던 그리스인이 독립 전쟁을 일으켰다(1821). 빈 체제는 민족 운동을 막으려 했으나 고대 그리스를 동경한 유럽 여론이 그리스를 도왔고(영국 시인 바이런도 참전했다가 병사), 영국·프랑스·러시아 연합 함대가 나바리노 해전(1827)에서 오스만·이집트 함대를 무찔렀다. 러시아-튀르크 전쟁 뒤 아드리아노플 조약(1829)을 거쳐 런던 의정서(1830)로 그리스의 독립이 국제적으로 인정되었다. 빈 체제가 처음으로 크게 흔들린 사건이었다."
-  subjects: [ottoman, uk, france, russia]
+  subjects: [ottoman, uk, france, russia, greece]
   links:
     - { from: uk, to: ottoman, note: "나바리노 해전" }
     - { from: france, to: ottoman, note: "나바리노 해전" }
@@ -411,7 +411,7 @@
     ko: 이탈리아 통일
   summary:
     ko: "마치니의 청년 이탈리아(1831) 같은 민족 운동이 실패한 뒤, 사르데냐 왕국의 재상 카보우르가 통일을 이끌었다. 그는 프랑스 나폴레옹 3세와 손잡고 오스트리아와 싸워(마젠타·솔페리노 전투, 1859) 롬바르디아를 얻었고, 중부 이탈리아 나라들을 주민 투표로 합쳤으며, 그 대가로 니스와 사부아를 프랑스에 넘겼다(1860). 같은 해 가리발디가 붉은 셔츠대(천인대)를 이끌고 시칠리아와 나폴리를 점령해 사르데냐 왕에게 바쳤고, 1861년 이탈리아 왕국이 세워졌다(국왕 비토리오 에마누엘레 2세). 이탈리아는 프로이센-오스트리아 전쟁 때 프로이센 편에 서서 베네치아를 얻고(1866), 프로이센-프랑스 전쟁으로 프랑스군이 물러나자 로마를 점령해(1870) 통일을 마무리했다. 솔페리노의 참상을 본 스위스인 뒤낭의 호소로 국제 적십자 위원회(1863)가 생겼다."
-  subjects: [sardinia, france, austria, two-sicilies, papal-states, italian-duchies]
+  subjects: [sardinia, france, austria, two-sicilies, papal-states, italian-duchies, italy]
   links:
     - { from: france, to: sardinia, note: "통일 전쟁 지원, 니스·사부아를 넘겨받음" }
     - { from: sardinia, to: austria, note: "마젠타·솔페리노 전투, 롬바르디아 획득" }
@@ -482,7 +482,7 @@
     ko: 비스마르크와 프로이센-오스트리아 전쟁
   summary:
     ko: "프로이센 총리 비스마르크는 독일 통일 문제는 연설과 다수결이 아니라 철과 피로 해결된다며(철혈 연설, 1862) 의회의 반대를 누르고 군비를 늘렸다. 먼저 오스트리아와 함께 덴마크와 싸워 슐레스비히·홀슈타인을 빼앗았고(1864), 그 관리 문제로 오스트리아와 전쟁을 벌였다(1866). 프로이센군은 철도와 신식 소총을 활용해 쾨니히그레츠(사도바) 전투에서 이겨 7주 만에 전쟁을 끝냈다. 프라하 조약으로 독일 연방이 해체되고, 프로이센은 하노버 등을 합병해 마인강 북쪽 나라들과 북독일 연방을 만들었다. 프로이센 편에 선 이탈리아는 베네치아를 얻었다. 독일에서 밀려난 오스트리아는 헝가리와 타협해 오스트리아-헝가리 이중 제국이 되었다(1867)."
-  subjects: [prussia, austria, denmark, german-states, italy]
+  subjects: [prussia, austria, denmark, german-states, italy, north-german-confederation]
   links:
     - { from: prussia, to: denmark, note: "슐레스비히·홀슈타인 획득 (1864)" }
     - { from: austria, to: denmark, note: "덴마크 전쟁 (1864)" }
@@ -535,7 +535,7 @@
     ko: 프로이센-프랑스 전쟁
   summary:
     ko: "에스파냐 왕위 계승 문제로 두 나라가 맞선 가운데, 비스마르크가 엠스에서 온 전보를 자극적으로 줄여 발표하자 프랑스가 선전 포고했다(1870년 7월). 남독일 나라들도 프로이센 편에 섰다. 프로이센군은 스당에서 프랑스군을 포위해 나폴레옹 3세를 사로잡았고(9월), 파리에서는 제2제정이 무너지고 공화정(제3공화정)이 선포되었다. 프로이센군은 메스를 함락하고 파리를 넉 달 넘게 포위했으며, 파리는 1871년 1월 항복했다. 이 틈에 이탈리아는 프랑스군이 지키던 로마를 점령했다. 1870년 11월 남독일 네 나라가 북독일 연방과 조약을 맺어 합류했고, 이듬해 1월 18일 베르사유 궁전에서 독일 제국이 선포되었다."
-  subjects: [prussia, north-german-confederation, south-german-states, france]
+  subjects: [prussia, north-german-confederation, south-german-states, france, german-empire]
   links:
     - { from: north-german-confederation, to: france, note: "엠스 전보, 스당 전투, 파리 포위 (프로이센 주도)" }
     - { from: south-german-states, to: france, note: "남독일 나라들의 참전" }
