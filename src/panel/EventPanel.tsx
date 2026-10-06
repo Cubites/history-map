@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { useMediaQuery } from '../lib/useMediaQuery.ts';
 import { claimantsAt, claimedRegionsAt, occupierAt, overlordAt, type StaticData } from '../data/staticData.ts';
-import { eventsOf, formatEventYears, inDecade, linkDirection } from '../lib/events.ts';
+import { eventYearFor, eventsOf, formatEventYears, inDecade, linkDirection } from '../lib/events.ts';
 import { entryYear, formatFrontDate, warsOf, yearOfFrontDate } from '../lib/wars.ts';
 import { formatDecade, formatRange, formatYear, isAlive, prehistoryStage } from '../lib/year.ts';
 import type { HistoryEvent } from '../schema/index.ts';
@@ -36,7 +36,7 @@ export function EventPanel({ data }: { data: StaticData }) {
       <aside className="panel">
         <p className="panel-guide">지도에서 나라를 누르면 그 시기의 사건이 여기에 나타납니다.</p>
         <p className="panel-guide">사건에 {touch ? '손가락을 대면' : '마우스를 올리면'} 영향을 주고받은 나라가 화살표로 표시됩니다. 사건을 누르면 화살표가 계속 남고, 그 사건을 다시 누르거나 다른 곳을 누르면 사라집니다.</p>
-        <p className="panel-note">현재는 선사 시대(구석기·신석기)와 고조선(기원전 2333년)부터 현대까지의 한국사 전 시대 자료와 유럽(국경 1453년~, 사건 1789년~현재) 자료가 들어 있습니다.</p>
+        <p className="panel-note">현재는 선사 시대(구석기·신석기)와 고조선(기원전 2333년)부터 현대까지의 한국사 전 시대 자료와 유럽(국경 1453년~, 사건 1648년~현재) 자료가 들어 있습니다.</p>
       </aside>
     );
   }
@@ -46,6 +46,8 @@ export function EventPanel({ data }: { data: StaticData }) {
   const shown = showAll ? all : current;
   const before = [...all].reverse().find((e) => (e.endYear ?? e.year) < year && !inDecade(e, year));
   const after = all.find((e) => e.year > year && !inDecade(e, year));
+  // 앞뒤 사건으로 옮길 때 이 나라가 있던 해로 맞춘다(사건 연도에 이 나라가 없을 수 있음, eventYearFor)
+  const jumpTo = (e: HistoryEvent) => setYear(eventYearFor(e, entity, e.year) ?? e.year);
   const successors = data.relations
     .filter((r) => r.type === 'successor_of' && r.object === entity.id)
     .map((r) => ({ relation: r, entity: data.entities.get(r.subject) }))
@@ -181,12 +183,12 @@ export function EventPanel({ data }: { data: StaticData }) {
           <p>이 구간에 등록된 사건이 없습니다.</p>
           <div className="panel-jump">
             {before && (
-              <button type="button" className="link-button" onClick={() => setYear(before.year)}>
+              <button type="button" className="link-button" onClick={() => jumpTo(before)}>
                 ← {formatEventYears(before)} {before.title.ko}
               </button>
             )}
             {after && (
-              <button type="button" className="link-button" onClick={() => setYear(after.year)}>
+              <button type="button" className="link-button" onClick={() => jumpTo(after)}>
                 {formatEventYears(after)} {after.title.ko} →
               </button>
             )}
@@ -234,7 +236,11 @@ function EventItem({ event, data, selectedId, highlight }: { event: HistoryEvent
     // 전쟁 보기 중이면 그 전쟁의 사건은 그 날짜의 전선으로 옮긴다 (DESIGN.md §4.5)
     if (event.front && inCurrentView) setFront(yearOfFrontDate(event.front.date), event.front.date);
     else if (event.front && event.front.war === warId) openFront();
-    else setYear(event.year);
+    else {
+      // 선택한 나라가 사건 연도에 없으면(사건 기간 중에 생긴 나라) 그 나라가 있던 해로 맞춘다 (eventYearFor)
+      const entity = data.entities.get(selectedId);
+      setYear((entity && eventYearFor(event, entity, event.year)) ?? event.year);
+    }
     // 누르면 화살표를 고정한다(터치 화면에는 hover가 없음). 다시 누르면 마우스가 위에 있어도 화살표를 지운다
     if (wasPinned) {
       pinEvent(null);

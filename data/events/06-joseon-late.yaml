@@ -275,7 +275,7 @@
     ko: 하멜 표류
   summary:
     ko: 네덜란드인 하멜 일행이 제주도에 표류했다. 13년 뒤 탈출해 『하멜 표류기』로 조선을 유럽에 알렸다. 앞서 표류한 벨테브레이(박연)는 훈련도감에서 서양식 대포 제조를 도왔다.
-  subjects: [joseon]
+  subjects: [joseon, dutch-republic]
   tags: [diplomacy]
   sources: ["『효종실록』 효종 4년", "하멜, 『하멜 표류기』"]
 
@@ -286,7 +286,7 @@
     ko: 나선 정벌
   summary:
     ko: 청의 요청으로 조총 부대를 보내 흑룡강 일대에 내려온 러시아군과 싸웠다(1654·1658). 북벌을 위해 기른 군사력이 쓰인 사례이다.
-  subjects: [joseon, qing]
+  subjects: [joseon, qing, russia-tsardom]
   links:
     - { from: qing, to: joseon, note: "원병 요청" }
     - { from: joseon, to: qing, note: "조총 부대 파견" }

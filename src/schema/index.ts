@@ -93,10 +93,18 @@ export const EventSchema = z.object({
   front: z.object({ war: z.string(), theater: z.string().optional(), date: z.string() }).optional(),
   /**
    * 싸움이 벌어진 곳. 전쟁 보기가 없는 전쟁·전투는 그 해 지도에 작은 전투 표시(⊗)로 나타난다 (DESIGN.md §4.5)
-   * 전쟁 보기가 있는 사건(front)에는 적지 않는다
+   * 전쟁 보기가 있는 사건(front)에는 적지 않는다.
+   * year(선택, 2026-10-06): 그 장소에서 싸운 해, 기간이면 [from, to]. 있으면 그 해에만, 없으면 사건 기간 내내 보인다.
+   * 사건 기간 안이어야 한다(build-data가 검사)
    */
   places: z
-    .array(z.object({ name: z.string().min(1), at: z.tuple([z.number().min(-180).max(180), z.number().min(-90).max(90)]) }))
+    .array(
+      z.object({
+        name: z.string().min(1),
+        at: z.tuple([z.number().min(-180).max(180), z.number().min(-90).max(90)]),
+        year: z.union([z.number().int(), z.tuple([z.number().int(), z.number().int()])]).optional(),
+      }),
+    )
     .default([]),
 });
 export type HistoryEvent = z.infer<typeof EventSchema>;

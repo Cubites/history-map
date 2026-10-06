@@ -18,8 +18,9 @@ import {
   type StaticData,
   type TerritoryFeature,
 } from '../data/staticData.ts';
+import { focusTarget, placeActive } from '../lib/events.ts';
 import { activeWarView, factionColor, snapshotFor, theatersInYear } from '../lib/wars.ts';
-import { formatRange, isAlive } from '../lib/year.ts';
+import { formatRange } from '../lib/year.ts';
 import { REGION_FILTER_INFO, inRegionFilter } from '../schema/regions.ts';
 import type { Lod, TerritoryIndexEntry } from '../schema/index.ts';
 import { activeEventId, useAppStore } from '../store/useAppStore.ts';
@@ -119,6 +120,7 @@ export default function WorldMap({ data }: { data: StaticData }) {
   const exitWar = useAppStore((s) => s.exitWar);
   const selectEntity = useAppStore((s) => s.select);
   const focusEvent = useAppStore((s) => s.focusEvent);
+  const setYear = useAppStore((s) => s.setYear);
   const regionFilter = useAppStore((s) => s.regionFilter);
   const regionFocus = useAppStore((s) => s.regionFocus);
   const focusedEventId = useAppStore((s) => s.focusedEventId);
@@ -161,6 +163,7 @@ export default function WorldMap({ data }: { data: StaticData }) {
     [data.wars, warId, year, regionFilter],
   );
   // 전쟁 보기가 없는 전쟁·전투 사건은 그 해에 싸운 곳만 작게 표시한다 (DESIGN.md §4.5).
+  // 장소에 year(싸운 해, 기간이면 [from, to])가 있으면 그 해에만, 없으면 사건 기간 내내 보인다 (placeActive, 2026-10-06).
   // 권역 필터에 맞는 사건만. 다만 검색·전투 표시로 고른 사건(focusedEventId)은 필터와 상관없이 보여 준다
   const battlePins = useMemo<BattlePin[]>(
     () =>
@@ -174,16 +177,16 @@ export default function WorldMap({ data }: { data: StaticData }) {
                 year <= (e.endYear ?? e.year) &&
                 (e.id === focusedEventId || inRegionFilter(regionFilter, e.region)),
             )
-            .flatMap((event) => (event.places ?? []).map((p) => ({ event, name: p.name, at: p.at }))),
+            .flatMap((event) => (event.places ?? []).filter((p) => placeActive(event, p, year)).map((p) => ({ event, name: p.name, at: p.at }))),
     [data.events, warId, year, regionFilter, focusedEventId],
   );
   const openBattlePin = (pin: BattlePin) => {
-    // 그 해에 있던 나라 가운데 사건의 첫 주체를 골라 패널에 사건을 띄운다
-    const subject = pin.event.subjects.find((id) => {
-      const entity = data.entities.get(id);
-      return entity && isAlive(entity, year);
-    });
-    if (subject) focusEvent(subject, pin.event.id);
+    // 그 해에 있던 나라 가운데 사건의 첫 주체를 골라 패널에 사건을 띄운다.
+    // 그 해에 있던 주체가 없으면 사건 기간과 그 주체의 존재 기간이 겹치는 구간에서 가장 가까운 해로 옮긴다 (focusTarget)
+    const target = focusTarget(pin.event, (id) => data.entities.get(id), year);
+    if (!target) return;
+    if (target.year !== year) setYear(target.year);
+    focusEvent(target.subject, pin.event.id);
   };
   const frontShapes = useMemo(() => {
     if (!war || !theater || !snapshot) return undefined;

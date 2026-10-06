@@ -1,7 +1,7 @@
 import { useMemo, useRef, useState } from 'react';
 import type { LoadedEntity, LoadedEvent, StaticData } from '../data/staticData.ts';
 import { useMediaQuery } from '../lib/useMediaQuery.ts';
-import { formatEventYears } from '../lib/events.ts';
+import { focusTarget, formatEventYears } from '../lib/events.ts';
 import { formatRange, isAlive } from '../lib/year.ts';
 import { inRegionFilter } from '../schema/regions.ts';
 import { useAppStore } from '../store/useAppStore.ts';
@@ -72,13 +72,11 @@ export function SearchBox({ data }: { data: StaticData }) {
     if (warId) exitWar();
     if (r.kind === 'event') {
       const { event } = r;
-      setYear(event.year);
-      // 그 해에 있던 나라 가운데 사건의 첫 주체를 골라 패널에 사건을 띄운다
-      const subject = event.subjects.find((id) => {
-        const entity = data.entities.get(id);
-        return entity && isAlive(entity, event.year);
-      });
-      if (subject) focusEvent(subject, event.id);
+      // 사건 연도에 있던 나라 가운데 사건의 첫 주체를 골라 패널에 사건을 띄운다.
+      // 사건 연도에 있던 주체가 없으면 사건 기간과 그 주체의 존재 기간이 겹치는 구간의 첫 해로 옮긴다 (focusTarget)
+      const target = focusTarget(event, (id) => data.entities.get(id), event.year);
+      setYear(target?.year ?? event.year);
+      if (target) focusEvent(target.subject, event.id);
     } else {
       const { entity } = r;
       const year = useAppStore.getState().year;

@@ -135,6 +135,12 @@ async function readTerritories(): Promise<Territory[]> {
 
 const alive = (e: Entity, year: number) => e.from <= year && (e.to === null || year <= e.to);
 const active = (t: { from: number; to: number | null }, year: number) => t.from <= year && (t.to === null || year < t.to);
+/**
+ * 사건 기간 [from, to]와 나라의 존재 기간이 겹치는가 (끝 해 포함).
+ * 근세에는 전쟁 중에 나라가 생기고 없어지는 일이 많아(대북방 전쟁 중 프로이센 왕국 1701·러시아 제국 1721 등)
+ * 사건 연도 하나가 아니라 사건 기간과 겹치면 되게 넓혔다 (EUROPE_DRAFT.md 7.3-⑥, 2026-10-06)
+ */
+const overlaps = (e: Entity, from: number, to: number) => e.from <= to && (e.to === null || from <= e.to);
 
 function checkIntegrity(entities: Map<string, Entity>, territories: Territory[], events: HistoryEvent[], relations: Relation[]) {
   const byEntity = new Map<string, Territory[]>();
@@ -176,12 +182,21 @@ function checkIntegrity(entities: Map<string, Entity>, territories: Territory[],
     if ((ev.year < RANGE[0] && !prehistoric) || (ev.endYear ?? ev.year) > RANGE[1])
       errors.push(`${where}: 연도가 타임라인 범위(${RANGE[0]}~${RANGE[1]})를 벗어남`);
     const refs = [...ev.subjects.map((id) => ['subjects', id]), ...ev.links.flatMap((l) => [['links.from', l.from], ['links.to', l.to]])];
+    const end = ev.endYear ?? ev.year;
+    const span = end === ev.year ? `${ev.year}년` : `사건 기간 ${ev.year}~${end}년`;
     for (const [field, id] of refs) {
       const entity = entities.get(id);
       if (!entity) errors.push(`${where}: ${field}의 '${id}'는 없는 나라`);
-      else if (!alive(entity, ev.year)) errors.push(`${where}: ${field}의 '${id}'는 ${ev.year}년에 존재하지 않음`);
+      else if (!overlaps(entity, ev.year, end)) errors.push(`${where}: ${field}의 '${id}'는 ${span}에 존재하지 않음`);
     }
     for (const l of ev.links) if (l.from === l.to) errors.push(`${where}: 같은 나라 사이의 link (${l.from})`);
+    // 전투 표시의 해(places[].year)는 사건 기간 안이어야 한다 (2026-10-06)
+    for (const p of ev.places) {
+      if (p.year === undefined) continue;
+      const [from, to] = typeof p.year === 'number' ? [p.year, p.year] : p.year;
+      if (from > to) errors.push(`${where}: places '${p.name}'의 해(year: [${from}, ${to}])가 거꾸로임`);
+      else if (from < ev.year || to > end) errors.push(`${where}: places '${p.name}'의 해(year: ${from === to ? from : `${from}~${to}`})가 사건 기간 ${ev.year}~${end}년을 벗어남`);
+    }
   }
 
   for (const r of relations) {
