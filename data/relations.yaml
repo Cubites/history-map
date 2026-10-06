@@ -148,8 +148,8 @@
 - { type: successor_of, subject: norway, object: sweden-norway, from: 1905, to: null }
 
 # 종속: 오스만 제국의 종주권 아래 있던 자치 공국·자치주 (지도에 테두리를 오스만의 색으로)
-- { type: vassal_of, subject: moldavia, object: ottoman, from: 1526, to: 1858 }
-- { type: vassal_of, subject: wallachia, object: ottoman, from: 1526, to: 1858 }
+- { type: vassal_of, subject: moldavia, object: ottoman, from: 1486, to: 1858 }
+- { type: vassal_of, subject: wallachia, object: ottoman, from: 1453, to: 1858 }
 - { type: vassal_of, subject: romania, object: ottoman, from: 1859, to: 1877 }
 - { type: vassal_of, subject: serbia, object: ottoman, from: 1817, to: 1877 }
 - { type: vassal_of, subject: bulgaria, object: ottoman, from: 1878, to: 1907 }
@@ -187,7 +187,7 @@
 - { type: successor_of, subject: russia, object: courland, from: 1795, to: null }
 # 종속: 폴란드-리투아니아의 봉토 쿠를란트, 오스만에 공물을 바친 라구사, 오스만 종주 아래의 셉틴슐라 공화국
 - { type: vassal_of, subject: courland, object: polish-lithuanian-commonwealth, from: 1569, to: 1795 }
-- { type: vassal_of, subject: ragusa, object: ottoman, from: 1526, to: 1805 }
+- { type: vassal_of, subject: ragusa, object: ottoman, from: 1458, to: 1805 }
 - { type: vassal_of, subject: septinsular-republic, object: ottoman, from: 1800, to: 1806 }
 # 종속: 프랑스의 자매 공화국·위성국(지도에 테두리를 프랑스의 색으로)
 - { type: vassal_of, subject: batavian-republic, object: france, from: 1795, to: 1806 }
@@ -215,7 +215,7 @@
 - { type: successor_of, subject: france, object: lorraine, from: 1766, to: null }
 - { type: successor_of, subject: russia, object: crimean-khanate, from: 1783, to: null }
 # 종속: 1478년부터 오스만의 종주권 아래 있던 크림 칸국(1774년 퀴췩카이나르자 조약으로 독립)
-- { type: vassal_of, subject: crimean-khanate, object: ottoman, from: 1526, to: 1773 }
+- { type: vassal_of, subject: crimean-khanate, object: ottoman, from: 1478, to: 1773 }
 # ── 유럽 1600~1699 (작업 D2, 2026-10-06) ──
 # 계승: 브란덴부르크 선제후가 프로이센 공국을 이어받음(1618)
 - { type: successor_of, subject: brandenburg-prussia, object: ducal-prussia, from: 1618, to: null }
@@ -225,6 +225,62 @@
 - { type: vassal_of, subject: transylvania, object: ottoman, from: 1570, to: 1686 }
 - { type: vassal_of, subject: transylvania, object: habsburg-monarchy, from: 1687, to: 1698 }
 - { type: vassal_of, subject: cossack-hetmanate, object: russia-tsardom, from: 1654, to: 1666 }
+# ── 유럽 1453~1525 (작업 D4, 2026-10-06) ──
+# 왈라키아(1417년부터 공물)·라구사(1458)·크림 칸국(1478)·몰다비아(1486년 슈테판 대공과 바예지트 2세의 강화로 공물을 다시 바침)의 오스만 종속은 위의 줄을 넓혔다
+# 계승: 이름만 바뀐 나라(소유표 renames)와 병합·정복된 나라
+- { type: successor_of, subject: spain, object: castile, from: 1479, to: null }
+- { type: successor_of, subject: spain, object: aragon, from: 1479, to: null }
+- { type: successor_of, subject: spain, object: granada, from: 1492, to: null }
+- { type: successor_of, subject: spain, object: navarre, from: 1512, to: null }
+- { type: successor_of, subject: spain, object: naples-kingdom, from: 1504, to: null }
+- { type: successor_of, subject: ducal-prussia, object: teutonic-order, from: 1525, to: null }
+- { type: successor_of, subject: denmark-norway, object: kalmar-union, from: 1524, to: null }
+- { type: successor_of, subject: sweden-kingdom, object: sweden-medieval, from: 1523, to: null }
+- { type: successor_of, subject: ottoman, object: serbian-despotate, from: 1459, to: null }
+- { type: successor_of, subject: ottoman, object: morea-despotate, from: 1460, to: null }
+- { type: successor_of, subject: ottoman, object: trebizond, from: 1461, to: null }
+- { type: successor_of, subject: ottoman, object: candar-beylik, from: 1461, to: null }
+- { type: successor_of, subject: ottoman, object: bosnia-kingdom, from: 1463, to: null }
+- { type: successor_of, subject: ottoman, object: herzegovina, from: 1482, to: null }
+- { type: successor_of, subject: ottoman, object: albanian-league, from: 1479, to: null }
+- { type: successor_of, subject: ottoman, object: karaman-beylik, from: 1487, to: null }
+- { type: successor_of, subject: ottoman, object: knights-hospitaller, from: 1522, to: null }
+- { type: successor_of, subject: ottoman, object: dulkadir-beylik, from: 1522, to: null }
+- { type: successor_of, subject: venice, object: cyprus-kingdom, from: 1489, to: null }
+- { type: successor_of, subject: france, object: provence, from: 1481, to: null }
+- { type: successor_of, subject: france, object: burgundy, from: 1482, to: null }
+- { type: successor_of, subject: habsburg-netherlands, object: burgundy, from: 1482, to: null }
+- { type: successor_of, subject: grand-duchy-of-moscow, object: novgorod-republic, from: 1478, to: null }
+- { type: successor_of, subject: grand-duchy-of-moscow, object: tver, from: 1485, to: null }
+- { type: successor_of, subject: grand-duchy-of-moscow, object: vyatka, from: 1489, to: null }
+- { type: successor_of, subject: grand-duchy-of-moscow, object: pskov-republic, from: 1510, to: null }
+- { type: successor_of, subject: grand-duchy-of-moscow, object: ryazan, from: 1521, to: null }
+- { type: successor_of, subject: crimean-khanate, object: golden-horde, from: 1502, to: null }
+# 아스트라한 칸국은 대오르다 칸 쿠추크 무함마드의 아들 마흐무드가 세운 같은 가문의 칸국(1466 무렵)으로, 1502년 대오르다가 무너진 뒤 볼가강 하류에 남은 그 가문의 나라
+- { type: successor_of, subject: astrakhan-khanate, object: golden-horde, from: 1502, to: null }
+- { type: successor_of, subject: habsburg-monarchy, object: habsburg-austria, from: 1526, to: null }
+- { type: successor_of, subject: habsburg-monarchy, object: bohemia-kingdom, from: 1526, to: null }
+- { type: successor_of, subject: habsburg-monarchy, object: hungary-kingdom, from: 1526, to: null }
+- { type: successor_of, subject: eastern-hungarian-kingdom, object: hungary-kingdom, from: 1526, to: null }
+# 종속(정할 점 D4-③: 주권 왕조·국가가 공물·종주권만 인정한 경우는 따로 그리고 관계만 둔다. 종주국 안의 자치 단위(코사크·칼미크·분봉 공국)는 종주국 땅이라 관계를 두지 않는다)
+# 오스만에 공물을 바친 세르비아 전제공국·보스니아 왕국·헤르체고비나 공국·모레아 전제공국·트레비존드 제국, 셀림 1세가 베이를 세운 둘카디르(1515~1521), 몰다비아(슈테판 대공이 끊기 전 1456~1472),
+# 제2차 토룬 조약(1466)으로 폴란드 왕의 봉토가 된 튜턴 기사단국, 모스크바 대공의 종주를 받은 노브고로드(1471 코로스틴 조약)·뱌트카(1459)·랴잔(1456 이반 3세의 후견)·프스코프, 모스크바가 칸을 세운 카잔 칸국(1487~1495 무함마드 아민, 1497~1505 압둘라티프·무함마드 아민), 1480년 우그라강 대치까지 대오르다(킵차크 칸국)의 종주를 받은 모스크바 대공국
+- { type: vassal_of, subject: serbian-despotate, object: ottoman, from: 1453, to: 1458 }
+- { type: vassal_of, subject: bosnia-kingdom, object: ottoman, from: 1453, to: 1462 }
+- { type: vassal_of, subject: herzegovina, object: ottoman, from: 1453, to: 1481 }
+- { type: vassal_of, subject: morea-despotate, object: ottoman, from: 1453, to: 1459 }
+- { type: vassal_of, subject: trebizond, object: ottoman, from: 1456, to: 1460 }
+- { type: vassal_of, subject: dulkadir-beylik, object: ottoman, from: 1515, to: 1521 }
+- { type: vassal_of, subject: moldavia, object: ottoman, from: 1456, to: 1472 }
+- { type: vassal_of, subject: teutonic-order, object: poland-kingdom, from: 1466, to: 1524 }
+- { type: vassal_of, subject: novgorod-republic, object: grand-duchy-of-moscow, from: 1471, to: 1477 }
+- { type: vassal_of, subject: vyatka, object: grand-duchy-of-moscow, from: 1459, to: 1488 }
+- { type: vassal_of, subject: ryazan, object: grand-duchy-of-moscow, from: 1456, to: 1520 }
+- { type: vassal_of, subject: pskov-republic, object: grand-duchy-of-moscow, from: 1453, to: 1509 }
+- { type: vassal_of, subject: kazan-khanate, object: grand-duchy-of-moscow, from: 1487, to: 1495 }
+- { type: vassal_of, subject: kazan-khanate, object: grand-duchy-of-moscow, from: 1497, to: 1505 }
+- { type: vassal_of, subject: grand-duchy-of-moscow, object: golden-horde, from: 1453, to: 1480 }
+
 # ── 유럽 1526~1599 (작업 D3, 2026-10-06) ──
 # 몰다비아·왈라키아·라구사·크림 칸국의 오스만 종속, 쿠를란트·프로이센 공국의 폴란드-리투아니아 종속, 트란실바니아의 오스만 종속은 위의 줄을 넓혔다
 # 계승: 이름만 바뀐 나라(소유표 renames)와 합쳐진 나라
