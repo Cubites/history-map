@@ -1,6 +1,6 @@
 // 영토 공백 검사 (DESIGN.md §5.4): 연도마다 검사 구역에서 어느 나라에도 속하지 않은 육지를 찾는다.
 // 검사 구역은 권역 파일(scripts/geo/areas/<권역>.mjs)이 내보내는 gapZones를 권역 목록(scripts/geo/area-list.mjs의 AREAS) 순서대로 모은 것이다
-// (지금은 korea의 한반도, inner-asia의 만주·몽골·알라산·칭하이, europe의 유럽 1789~지금). 새 권역은 AREAS에 등록하고 gapZones만 내보내면 이 파일을 고치지 않아도 여기 들어가고, 구역 이름·순서가 곧 출력의 이름·순서다.
+// (지금은 korea의 한반도, inner-asia의 만주·몽골·알라산·칭하이, europe의 유럽 1700~지금). 새 권역은 AREAS에 등록하고 gapZones만 내보내면 이 파일을 고치지 않아도 여기 들어가고, 구역 이름·순서가 곧 출력의 이름·순서다.
 // AREAS에 등록하지 않은 권역 파일은 여기서 보지 못한다(npm run gen:geo와 check:generator가 등록 누락으로 멈춘다).
 // 사용: npm run check:gaps [-- 최소넓이km²] (기본 500)
 // 공백이 모두 오류는 아니다. 기록이 없는 시기(고조선 이전 남부 등)나 한국사와 관계없는 초원은 비워 둔다.
