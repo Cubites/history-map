@@ -574,3 +574,59 @@
 - { type: vassal_of, subject: novgorod-republic, object: golden-horde, from: 1259, to: 1477 } # 1259 몽골의 호구 조사와 공물(검토 반영), 1478 모스크바 병합까지
 - { type: vassal_of, subject: trebizond, object: rum-sultanate, from: 1214, to: 1242 } # 1214 시노프를 잃은 뒤 카이카우스 1세에게 공물(검토 반영)
 - { type: vassal_of, subject: trebizond, object: mongol-empire, from: 1243, to: 1256 } # 쾨세다그 뒤 몽골에 신속(1256년 뒤 일한국은 설명에만, M-④)
+
+# ── 작업 M4 (2026-10-07): 1000~1199년 ──
+# 계승: 이름만 바뀐 나라(renames, M-⑧)와 나라가 무너지거나 합쳐진 뒤 땅을 이어받은 쪽
+- { type: successor_of, subject: georgia-kingdom, object: abkhazia-kingdom, from: 1008, to: null } # 바그라트 3세의 통일(renames)
+- { type: successor_of, subject: georgia-kingdom, object: kakheti-hereti, from: 1105, to: null }
+- { type: successor_of, subject: byzantine-empire, object: first-bulgarian-empire, from: 1018, to: null } # 바실리오스 2세의 정복
+- { type: successor_of, subject: taifas-first, object: cordoba-caliphate, from: 1031, to: null }
+- { type: successor_of, subject: holy-roman-empire, object: burgundy-kingdom, from: 1033, to: null } # 콘라트 2세의 부르군트 왕위
+- { type: successor_of, subject: provence-early, object: burgundy-kingdom, from: 1033, to: null }
+- { type: successor_of, subject: cuman-tribes, object: pecheneg-tribes, from: 1055, to: null }
+- { type: successor_of, subject: castile-early, object: castile-county, from: 1065, to: null } # 산초 2세(renames)
+- { type: successor_of, subject: almoravids, object: taifas-first, from: 1091, to: null }
+- { type: successor_of, subject: sicily-county, object: sicily-emirate, from: 1091, to: null } # 노토 함락
+- { type: successor_of, subject: portugal-county, object: leon, from: 1096, to: null }
+- { type: successor_of, subject: provence-barcelona, object: provence-early, from: 1112, to: null } # 두스와 라몬 베렝게르 3세의 혼인(renames)
+- { type: successor_of, subject: sicily-county, object: apulia-duchy, from: 1128, to: null } # 로제르 2세의 아풀리아 상속
+- { type: successor_of, subject: sicily-kingdom, object: sicily-county, from: 1130, to: null } # 로제르 2세의 대관(renames)
+- { type: successor_of, subject: rus-principalities, object: kievan-rus, from: 1132, to: null }
+- { type: successor_of, subject: aragon-early, object: barcelona-county, from: 1137, to: null } # 라몬 베렝게르 4세와 페트로닐라의 약혼
+- { type: successor_of, subject: polish-duchies, object: piast-poland, from: 1138, to: null } # 볼레스와프 3세의 유언
+- { type: successor_of, subject: portugal, object: portugal-county, from: 1139, to: null } # 아폰수 1세의 왕 칭호(renames)
+- { type: successor_of, subject: sicily-kingdom, object: lombard-principalities, from: 1140, to: null }
+- { type: successor_of, subject: taifas-second, object: almoravids, from: 1145, to: null }
+- { type: successor_of, subject: almohads, object: almoravids, from: 1147, to: null }
+- { type: successor_of, subject: england, object: anjou, from: 1154, to: null } # 헨리 2세의 즉위(앙주 제국)
+- { type: successor_of, subject: england, object: normandy-duchy, from: 1154, to: null }
+- { type: successor_of, subject: england, object: aquitaine, from: 1154, to: null }
+- { type: successor_of, subject: aragon, object: aragon-early, from: 1164, to: null } # 알폰스 2세(renames)
+- { type: successor_of, subject: sweden-medieval, object: sweden-early, from: 1164, to: null } # 웁살라 대주교구(renames)
+- { type: successor_of, subject: serbia-grand-principality, object: raska, from: 1166, to: null } # 스테판 네마냐(renames)
+- { type: successor_of, subject: lordship-of-ireland, object: irish-kingdoms, from: 1171, to: null }
+- { type: successor_of, subject: gaelic-irish-lordships, object: irish-kingdoms, from: 1171, to: null }
+- { type: successor_of, subject: almohads, object: taifas-second, from: 1172, to: null }
+- { type: successor_of, subject: rum-sultanate, object: danishmendids, from: 1175, to: null }
+- { type: successor_of, subject: holy-roman-empire, object: slavic-tribes, from: 1181, to: null } # 포메른 공국이 제국 공국
+- { type: successor_of, subject: serbia-grand-principality, object: duklja, from: 1186, to: null } # 네마냐의 제타
+- { type: successor_of, subject: cilician-armenia, object: cilicia-principality, from: 1198, to: null } # 레본 2세의 대관(renames)
+- { type: successor_of, subject: bohemia-kingdom, object: bohemia-duchy, from: 1198, to: null } # 오타카르 1세(renames)
+# 종속(⑧·M-②(마)): 스볼데르 해전 뒤 덴마크·스웨덴 왕의 봉신인 라데 백작들의 노르웨이, 사무일·동로마에 신속한 두클랴, 1059 멜피 조약 뒤 교황의 봉신인 아풀리아 공국과 1130 시칠리아 왕국(1139 미냐노 조약),
+# 레온 왕의 봉신인 포르투갈 백국(1128 상마메드 전투 뒤 사실상 자립, 1143 사모라 조약), 1150 타라강 전투 뒤 동로마 마누일 1세의 종주(라슈카·1172 네마냐), 1159 안티오크의 레날드가 마누일에게 신서,
+# 1167 시르미움 전투 뒤 동로마의 종주를 받은 보스니아 바나트(그 앞뒤는 헝가리), 1174 팔레즈 조약~1189 캔터베리 면제의 스코틀랜드. 크누트의 북해 제국(1016~1035)과 레온-카스티야·아라곤-나바라·노르망디-앙주는 동군 연합이라 관계 종류가 없어 항목 설명에만 적음
+- { type: vassal_of, subject: norway-medieval, object: denmark-medieval, from: 1000, to: 1014 } # 라데 백작 에이리크·스베인(1015 올라프 2세)
+- { type: vassal_of, subject: duklja, object: first-bulgarian-empire, from: 1000, to: 1015 } # 요반 블라디미르(1016 살해)
+- { type: vassal_of, subject: duklja, object: byzantine-empire, from: 1018, to: 1041 } # 1042 바르 전투
+- { type: vassal_of, subject: apulia-duchy, object: papal-states, from: 1059, to: 1127 } # 멜피 조약
+- { type: vassal_of, subject: sicily-kingdom, object: papal-states, from: 1139, to: 1199 } # 미냐노 조약(1139 인노첸시오 2세의 인정), 1156 베네벤토 조약
+- { type: vassal_of, subject: portugal-county, object: leon, from: 1096, to: 1127 }
+- { type: vassal_of, subject: raska, object: byzantine-empire, from: 1150, to: 1165 }
+- { type: vassal_of, subject: serbia-grand-principality, object: byzantine-empire, from: 1172, to: 1179 } # 네마냐의 신속(1172), 1180 마누일이 죽음
+- { type: vassal_of, subject: antioch, object: byzantine-empire, from: 1159, to: 1179 }
+- { type: vassal_of, subject: bosnian-banate, object: hungary-kingdom, from: 1154, to: 1166 }
+- { type: vassal_of, subject: bosnian-banate, object: byzantine-empire, from: 1167, to: 1179 }
+- { type: vassal_of, subject: bosnian-banate, object: hungary-kingdom, from: 1180, to: 1199 } # 1200년부터는 작업 M3의 줄
+- { type: vassal_of, subject: scotland, object: england, from: 1174, to: 1188 } # 팔레즈 조약, 1189 캔터베리 면제
+- { type: successor_of, subject: byzantine-empire, object: armenian-kingdoms, from: 1045, to: null } # 가기크 2세가 아니를 넘김(1021 바스푸라칸, 1065 카르스)
+- { type: successor_of, subject: rum-sultanate, object: eastern-anatolian-beyliks, from: 1202, to: null } # 쉴레이만 2세의 에르주룸(멩귀젝 1228)
