@@ -630,3 +630,48 @@
 - { type: vassal_of, subject: scotland, object: england, from: 1174, to: 1188 } # 팔레즈 조약, 1189 캔터베리 면제
 - { type: successor_of, subject: byzantine-empire, object: armenian-kingdoms, from: 1045, to: null } # 가기크 2세가 아니를 넘김(1021 바스푸라칸, 1065 카르스)
 - { type: successor_of, subject: rum-sultanate, object: eastern-anatolian-beyliks, from: 1202, to: null } # 쉴레이만 2세의 에르주룸(멩귀젝 1228)
+# ── 작업 M5 (2026-10-08): 800~999년 ──
+# 계승(renames는 같은 색): 베르됭(843)·프륌(855)·메르센(870) 조약의 나눔, 알바(843)·키예프(882)·레온(910)·크로아티아 왕국(925)·잉글랜드(927)·코르도바 칼리프국(929)·브르타뉴 공국(939)·덴마크(958)·신성 로마 제국(962)·프랑스(987)
+- { type: successor_of, subject: first-bulgarian-empire, object: avar-khaganate, from: 805, to: null } # 크룸이 동쪽 아바르를 정복(수다)
+- { type: successor_of, subject: west-francia, object: carolingian-empire, from: 843, to: null } # 베르됭 조약
+- { type: successor_of, subject: middle-francia, object: carolingian-empire, from: 843, to: null }
+- { type: successor_of, subject: east-francia, object: carolingian-empire, from: 843, to: null }
+- { type: successor_of, subject: scotland, object: picts, from: 843, to: null } # 케네스 1세(renames)
+- { type: successor_of, subject: italy-carolingian, object: middle-francia, from: 855, to: null } # 프륌 조약
+- { type: successor_of, subject: provence-kingdom, object: middle-francia, from: 855, to: null }
+- { type: successor_of, subject: west-francia, object: middle-francia, from: 870, to: null } # 메르센 조약
+- { type: successor_of, subject: east-francia, object: middle-francia, from: 870, to: null }
+- { type: successor_of, subject: kievan-rus, object: rurikid-rus, from: 882, to: null } # 올레그의 키예프(renames)
+- { type: successor_of, subject: magyars, object: great-moravia, from: 907, to: null } # 프레스부르크 전투
+- { type: successor_of, subject: leon, object: asturias, from: 910, to: null } # 가르시아 1세(renames)
+- { type: successor_of, subject: croatia-kingdom, object: croatia-duchy, from: 925, to: null } # 토미슬라브(renames)
+- { type: successor_of, subject: england, object: wessex, from: 927, to: null } # 애설스탠(renames)
+- { type: successor_of, subject: england, object: anglo-saxon-kingdoms, from: 927, to: null } # 이먼트 회합
+- { type: successor_of, subject: cordoba-caliphate, object: cordoba-emirate, from: 929, to: null } # 압드 알라흐만 3세(renames)
+- { type: successor_of, subject: burgundy-kingdom, object: provence-kingdom, from: 933, to: null } # 위그가 루돌프 2세에게 넘김
+- { type: successor_of, subject: brittany, object: brittany-kingdom, from: 939, to: null } # 알랭 2세(renames)
+- { type: successor_of, subject: scotland, object: strathclyde, from: 945, to: null } # 에드먼드가 컴브리아를 맬컴 1세에게
+- { type: successor_of, subject: england, object: danelaw, from: 954, to: null } # 에이리크 피도끼왕이 쫓겨남
+- { type: successor_of, subject: denmark-medieval, object: denmark-early, from: 958, to: null } # 하랄 블로탄(renames)
+- { type: successor_of, subject: byzantine-empire, object: crete-emirate, from: 961, to: null } # 니키포로스 포카스의 칸닥스
+- { type: successor_of, subject: holy-roman-empire, object: east-francia, from: 962, to: null } # 오토 1세(renames)
+- { type: successor_of, subject: italian-minor-states, object: italy-carolingian, from: 962, to: null } # 오토 1세의 황제 대관(M-②(다))
+- { type: successor_of, subject: pecheneg-tribes, object: khazar-khaganate, from: 969, to: null } # 이틸이 무너짐
+- { type: successor_of, subject: france, object: west-francia, from: 987, to: null } # 위그 카페(renames)
+- { type: successor_of, subject: kievan-rus, object: east-slavic-tribes, from: 992, to: null } # 크로아티아인 원정
+- { type: successor_of, subject: hungary-kingdom, object: magyars, from: 1000, to: null } # 이슈트반 1세의 대관
+- { type: successor_of, subject: duklja, object: south-slavic-principalities, from: 1000, to: null } # 요반 블라디미르(묶음 → 개별 항목, 같은 색)
+# 종속(⑧·M-②(마)): 니키포로스 화약(812)의 베네치아, 카롤루스에 공납한 베네벤토(812 그리모알도 4세), 아헨 조약(812) 뒤 프랑크의 종주를 받은 크로아티아 공국(852 트르피미르 헌장의 로타르 1세, 878~879 즈데슬라브의 동로마),
+# 앙트람 조약(863) 뒤 공납한 살로몽의 브르타뉴, 스바토플루크의 종주를 받은 보헤미아(890~894), 하자르에 공납한 볼가 불가리아(922 이븐 팔란), 차슬라프의 세르비아(동로마), 오토 1세의 봉신 베렌가리오 2세(952~961), 하랄 블로탄의 종주를 받은 하콘 백작의 노르웨이
+- { type: vassal_of, subject: avar-khaganate, object: carolingian-empire, from: 803, to: 804 } # 투둔의 신서(레겐스부르크)
+- { type: vassal_of, subject: venice, object: byzantine-empire, from: 800, to: 839 } # 840 로타르 협약
+- { type: vassal_of, subject: lombard-principalities, object: carolingian-empire, from: 800, to: 813 } # 그리모알도 3세·4세의 공납, 814 카롤루스가 죽음
+- { type: vassal_of, subject: croatia-duchy, object: carolingian-empire, from: 800, to: 842 }
+- { type: vassal_of, subject: croatia-duchy, object: middle-francia, from: 843, to: 854 }
+- { type: vassal_of, subject: croatia-duchy, object: byzantine-empire, from: 878, to: 878 } # 즈데슬라브(879 브라니미르)
+- { type: vassal_of, subject: brittany-kingdom, object: west-francia, from: 863, to: 873 } # 앙트람 조약, 874 살로몽이 살해됨
+- { type: vassal_of, subject: bohemia-duchy, object: great-moravia, from: 890, to: 894 } # 895 레겐스부르크에서 아르눌프에게 신서
+- { type: vassal_of, subject: volga-bulgaria, object: khazar-khaganate, from: 922, to: 964 } # 965 스뱌토슬라프의 하자르 원정
+- { type: vassal_of, subject: south-slavic-principalities, object: byzantine-empire, from: 933, to: 959 } # 차슬라프(『제국 통치론』)
+- { type: vassal_of, subject: italy-carolingian, object: east-francia, from: 952, to: 961 } # 아우크스부르크 회의
+- { type: vassal_of, subject: norway-medieval, object: denmark-medieval, from: 970, to: 974 } # 하콘 백작, 975 무렵 다네비르케 전투 뒤 자립
