@@ -472,7 +472,7 @@
 - { type: vassal_of, subject: serbian-despotate, object: hungary-kingdom, from: 1404, to: 1427 }
 - { type: vassal_of, subject: serbian-despotate, object: ottoman, from: 1428, to: 1438 }
 - { type: vassal_of, subject: byzantine-empire, object: ottoman, from: 1424, to: 1452 }
-- { type: vassal_of, subject: epirus-despotate, object: ottoman, from: 1430, to: 1448 }
+- { type: vassal_of, subject: epirus-despotate, object: ottoman, from: 1430, to: 1478 } # 1449년 아르타를 잃은 뒤 토코 가문(레오나르도 3세)의 아카르나니아·레프카다도 오스만에 공물(작업 FIX2에서 1478년까지 늘림, 1479 정복)
 - { type: vassal_of, subject: tver, object: golden-horde, from: 1300, to: 1452 }
 - { type: vassal_of, subject: ryazan, object: golden-horde, from: 1300, to: 1452 }
 
@@ -483,8 +483,8 @@
 - { type: successor_of, subject: lithuania-grand-duchy, object: galicia-volhynia, from: 1340, to: null } # 볼히니아(류바르트)
 - { type: successor_of, subject: poland-kingdom, object: galicia-volhynia, from: 1349, to: null } # 할리치나(카지미에시 3세)
 - { type: successor_of, subject: grand-duchy-of-moscow, object: rus-principalities, from: 1392, to: null } # 블라디미르 대공위(1363)와 수즈달-니즈니노브고로드(1392)
-- { type: successor_of, subject: kalmar-union, object: denmark-medieval, from: 1397, to: null }
-- { type: successor_of, subject: kalmar-union, object: norway-medieval, from: 1397, to: null }
+- { type: successor_of, subject: kalmar-union-three-kingdoms, object: denmark-medieval, from: 1397, to: null } # 작업 FIX2: 1397~1447년 칼마르 동맹(세 나라)
+- { type: successor_of, subject: kalmar-union-three-kingdoms, object: norway-medieval, from: 1397, to: null }
 - { type: successor_of, subject: burgundy, object: flanders, from: 1384, to: null }
 - { type: successor_of, subject: france, object: dauphine, from: 1349, to: null }
 - { type: successor_of, subject: aragon, object: majorca-kingdom, from: 1344, to: null }
@@ -517,3 +517,7 @@
 - { type: vassal_of, subject: bulgaria-second, object: ottoman, from: 1371, to: 1392 }
 - { type: vassal_of, subject: serbian-magnates, object: ottoman, from: 1371, to: 1394 }
 - { type: vassal_of, subject: byzantine-empire, object: ottoman, from: 1373, to: 1401 } # 1402 앙카라 전투까지(작업 M2. 1400~1401년은 M1에서 빠졌던 것을 더함)
+# 작업 FIX2 (2026-10-07): 칼마르 동맹의 이름 바뀜(1448), 노가이 오르다, 아테네 공국의 오스만 공물(1394 네리오 1세~, 1444년 모레아 전제공국에 잠시 신속한 것은 근사). 조지아 왕국들의 관계는 EUROPE_DRAFT.md 8.12 FIX2-⑥ 부록
+- { type: successor_of, subject: kalmar-union, object: kalmar-union-three-kingdoms, from: 1448, to: null }
+- { type: successor_of, subject: nogai-horde, object: golden-horde, from: 1440, to: null }
+- { type: vassal_of, subject: duchy-of-athens, object: ottoman, from: 1394, to: 1455 } # 1393~1394 바예지트 1세가 네오파트라스를 차지한 뒤 네리오 1세가 해마다 공물, 안토니오 1세·네리오 2세도 이음(1456 오스만 정복)
