@@ -675,3 +675,38 @@
 - { type: vassal_of, subject: south-slavic-principalities, object: byzantine-empire, from: 933, to: 959 } # 차슬라프(『제국 통치론』)
 - { type: vassal_of, subject: italy-carolingian, object: east-francia, from: 952, to: 961 } # 아우크스부르크 회의
 - { type: vassal_of, subject: norway-medieval, object: denmark-medieval, from: 970, to: 974 } # 하콘 백작, 975 무렵 다네비르케 전투 뒤 자립
+
+# ── 작업 M6 (2026-10-08): 476~799년 ──
+# 계승(renames는 같은 색): 서로마의 달마티아(481)·오도아케르(493)·수아송(486)·부르군트(534)·반달(534)·동고트(554)·수에비(585)·게피드(567)·대불가리아(668)·덴마크(700)·서고트(711)·우마이야(756)·롬바르드(774)·바이에른(788), 카롤루스의 대관(800). 앞 나라가 그 뒤에도 이어지는 부분 넘김(부예·롬바르드의 판노니아·피핀의 기증)은 계승으로 적지 않음(검토 반영)
+- { type: successor_of, subject: odoacer-italy, object: western-roman-empire, from: 481, to: null } # 네포스가 죽은 뒤 오도아케르의 달마티아
+- { type: successor_of, subject: frankish-kingdom, object: domain-of-soissons, from: 486, to: null } # 수아송 전투
+- { type: successor_of, subject: ostrogothic-kingdom, object: odoacer-italy, from: 493, to: null } # 라벤나 입성
+- { type: successor_of, subject: frankish-kingdom, object: germanic-tribes, from: 531, to: null } # 튀링겐 왕국(운스트루트)
+- { type: successor_of, subject: frankish-kingdom, object: burgundian-kingdom, from: 534, to: null } # 부르군트 왕국 분할
+- { type: successor_of, subject: byzantine-empire, object: vandal-kingdom, from: 534, to: null } # 벨리사리우스(사르데냐·코르시카·발레아레스)
+- { type: successor_of, subject: byzantine-empire, object: ostrogothic-kingdom, from: 554, to: null } # 고트 전쟁의 끝
+- { type: successor_of, subject: avar-khaganate, object: gepid-kingdom, from: 567, to: null } # 롬바르드·아바르의 게피드 멸망
+- { type: successor_of, subject: visigothic-kingdom, object: suebi-kingdom, from: 585, to: null } # 레오비길드
+- { type: successor_of, subject: old-great-bulgaria, object: hunnic-bulgar-tribes, from: 632, to: null } # 쿠브라트
+- { type: successor_of, subject: slavic-tribes, object: samo-kingdom, from: 659, to: null } # 사모가 죽음
+- { type: successor_of, subject: khazar-khaganate, object: old-great-bulgaria, from: 668, to: null } # 바트바얀의 복속
+- { type: successor_of, subject: first-bulgarian-empire, object: old-great-bulgaria, from: 681, to: null } # 아스파루흐
+- { type: successor_of, subject: umayyad-caliphate, object: visigothic-kingdom, from: 711, to: null } # 과달레테 전투
+- { type: successor_of, subject: asturias, object: visigothic-kingdom, from: 718, to: null } # 펠라요
+- { type: successor_of, subject: denmark-early, object: germanic-tribes, from: 700, to: null } # 옹겐두스(데인인, 검토 반영)
+- { type: successor_of, subject: picts, object: dal-riata, from: 741, to: null } # 앵거스 막 퍼구사
+- { type: successor_of, subject: cordoba-emirate, object: umayyad-caliphate, from: 756, to: null } # 압드 알라흐만 1세
+- { type: successor_of, subject: frankish-kingdom, object: aquitaine-early, from: 768, to: null } # 와이파르가 죽음
+- { type: successor_of, subject: frankish-kingdom, object: lombard-kingdom, from: 774, to: null } # 파비아 함락
+- { type: successor_of, subject: lombard-principalities, object: lombard-kingdom, from: 774, to: null } # 아리키스 2세의 베네벤토 공국
+- { type: successor_of, subject: abkhazia-kingdom, object: lazica, from: 778, to: null } # 레온 2세
+- { type: successor_of, subject: kakheti-hereti, object: iberia-principate, from: 787, to: null } # 그리골
+- { type: successor_of, subject: frankish-kingdom, object: bavaria-duchy, from: 788, to: null } # 타실로 3세의 폐위
+- { type: successor_of, subject: carolingian-empire, object: frankish-kingdom, from: 800, to: null } # 카롤루스의 황제 대관(renames)
+- { type: successor_of, subject: croatia-duchy, object: south-slavic-principalities, from: 800, to: null } # 비셰슬라브(묶음 → 개별 항목, 정할 점 M6-⑧)
+# 종속(⑧·M-②(마)): 프랑크의 종주를 받은 아길롤핑의 바이에른, 736 카롤루스 마르텔에게 신서한 후날드의 아키텐, 522 차트 1세 뒤 동로마의 종주를 받은 라지카, 588 구아람 1세(쿠로팔라테스)의 이베리아 공국, 697 도제 뒤의 베네치아(동로마 땅)
+- { type: vassal_of, subject: bavaria-duchy, object: frankish-kingdom, from: 555, to: 787 } # 『바이에른 법』, 757 타실로 3세의 신서
+- { type: vassal_of, subject: aquitaine-early, object: frankish-kingdom, from: 736, to: 744 } # 후날드의 신서(745 수도원으로 물러남)
+- { type: vassal_of, subject: lazica, object: byzantine-empire, from: 522, to: 696 } # 697 파트리키오스 세르기오스가 라지카를 아랍에 넘김(테오파네스)
+- { type: vassal_of, subject: iberia-principate, object: byzantine-empire, from: 588, to: 626 } # 구아람 1세·스테파노스 1세(627 헤라클레이오스의 트빌리시 포위)
+- { type: vassal_of, subject: venice, object: byzantine-empire, from: 697, to: 799 } # 800년 표의 종속(840 로타르 협약)과 이음
