@@ -276,12 +276,12 @@
 - { type: vassal_of, subject: teutonic-order, object: poland-kingdom, from: 1466, to: 1524 }
 - { type: vassal_of, subject: novgorod-republic, object: grand-duchy-of-moscow, from: 1471, to: 1477 }
 - { type: vassal_of, subject: vyatka, object: grand-duchy-of-moscow, from: 1459, to: 1488 }
-- { type: vassal_of, subject: great-perm, object: novgorod-republic, from: 1400, to: 1471 } # 1471년까지 노브고로드에 형식상 종속(작업 FIX1)
+- { type: vassal_of, subject: great-perm, object: novgorod-republic, from: 1324, to: 1471 } # 1471년까지 노브고로드에 형식상 종속(작업 FIX1)
 - { type: vassal_of, subject: ryazan, object: grand-duchy-of-moscow, from: 1456, to: 1520 }
 - { type: vassal_of, subject: pskov-republic, object: grand-duchy-of-moscow, from: 1453, to: 1509 }
 - { type: vassal_of, subject: kazan-khanate, object: grand-duchy-of-moscow, from: 1487, to: 1495 }
 - { type: vassal_of, subject: kazan-khanate, object: grand-duchy-of-moscow, from: 1497, to: 1505 }
-- { type: vassal_of, subject: grand-duchy-of-moscow, object: golden-horde, from: 1400, to: 1480 }
+- { type: vassal_of, subject: grand-duchy-of-moscow, object: golden-horde, from: 1300, to: 1480 }
 
 # ── 유럽 1526~1599 (작업 D3, 2026-10-06) ──
 # 몰다비아·왈라키아·라구사·크림 칸국의 오스만 종속, 쿠를란트·프로이센 공국의 폴란드-리투아니아 종속, 트란실바니아의 오스만 종속은 위의 줄을 넓혔다
@@ -467,11 +467,53 @@
 - { type: successor_of, subject: ottoman, object: byzantine-empire, from: 1453, to: null }
 # 종속(정할 점 ⑧·D4-③·M1-⑲): 오스만에 공물을 바친 모라바 세르비아(1389 코소보 전투 뒤)·브란코비치 영지(1392~)·세르비아 전제공국(1428 주라지 브란코비치의 조약)·동로마 제국(1424 조약)·에피루스(1430 카를로 2세 토코),
 # 헝가리 왕 지기스문트의 봉신이 된 세르비아 전제공국(1403~1404 슈테판 라자레비치, 베오그라드·마치바), 대오르다에 공납한 트베리·랴잔
-- { type: vassal_of, subject: moravian-serbia, object: ottoman, from: 1400, to: 1401 }
-- { type: vassal_of, subject: brankovic-lands, object: ottoman, from: 1400, to: 1411 }
+- { type: vassal_of, subject: moravian-serbia, object: ottoman, from: 1390, to: 1401 } # 1389 코소보 전투 뒤 슈테판 라자레비치(작업 M2에서 앞당김)
+- { type: vassal_of, subject: brankovic-lands, object: ottoman, from: 1392, to: 1411 } # 1392 부크 브란코비치의 굴복(작업 M2에서 앞당김)
 - { type: vassal_of, subject: serbian-despotate, object: hungary-kingdom, from: 1404, to: 1427 }
 - { type: vassal_of, subject: serbian-despotate, object: ottoman, from: 1428, to: 1438 }
 - { type: vassal_of, subject: byzantine-empire, object: ottoman, from: 1424, to: 1452 }
 - { type: vassal_of, subject: epirus-despotate, object: ottoman, from: 1430, to: 1448 }
-- { type: vassal_of, subject: tver, object: golden-horde, from: 1400, to: 1452 }
-- { type: vassal_of, subject: ryazan, object: golden-horde, from: 1400, to: 1452 }
+- { type: vassal_of, subject: tver, object: golden-horde, from: 1300, to: 1452 }
+- { type: vassal_of, subject: ryazan, object: golden-horde, from: 1300, to: 1452 }
+
+# ── 유럽 1300~1399 (작업 M2, 2026-10-07) ──
+# 위의 모스크바 대공국·트베리·랴잔의 킵차크 칸국 종속(1300), 대페름의 노브고로드 종속(1324), 모라바 세르비아(1390)·브란코비치 영지(1392)의 오스만 종속은 시작 해를 앞당겼다
+# 계승: 이름만 바뀐 나라(소유표 renames)와 합쳐진 나라
+- { type: successor_of, subject: poland-kingdom, object: polish-duchies, from: 1320, to: null }
+- { type: successor_of, subject: lithuania-grand-duchy, object: galicia-volhynia, from: 1340, to: null } # 볼히니아(류바르트)
+- { type: successor_of, subject: poland-kingdom, object: galicia-volhynia, from: 1349, to: null } # 할리치나(카지미에시 3세)
+- { type: successor_of, subject: grand-duchy-of-moscow, object: rus-principalities, from: 1392, to: null } # 블라디미르 대공위(1363)와 수즈달-니즈니노브고로드(1392)
+- { type: successor_of, subject: kalmar-union, object: denmark-medieval, from: 1397, to: null }
+- { type: successor_of, subject: kalmar-union, object: norway-medieval, from: 1397, to: null }
+- { type: successor_of, subject: burgundy, object: flanders, from: 1384, to: null }
+- { type: successor_of, subject: france, object: dauphine, from: 1349, to: null }
+- { type: successor_of, subject: aragon, object: majorca-kingdom, from: 1344, to: null }
+- { type: successor_of, subject: milan, object: milan-signoria, from: 1395, to: null }
+- { type: successor_of, subject: bosnia-kingdom, object: bosnian-banate, from: 1377, to: null }
+- { type: successor_of, subject: serbian-empire, object: serbia-medieval, from: 1346, to: null } # 두샨의 황제 대관(renames)
+- { type: successor_of, subject: moravian-serbia, object: serbian-empire, from: 1371, to: null }
+- { type: successor_of, subject: brankovic-lands, object: serbian-empire, from: 1371, to: null }
+- { type: successor_of, subject: serbian-magnates, object: serbian-empire, from: 1371, to: null }
+- { type: successor_of, subject: byzantine-empire, object: thessaly, from: 1333, to: null }
+- { type: successor_of, subject: ottoman, object: serbian-magnates, from: 1395, to: null }
+- { type: successor_of, subject: ottoman, object: bulgaria-second, from: 1393, to: null }
+- { type: successor_of, subject: ottoman, object: vidin-tsardom, from: 1396, to: null }
+- { type: successor_of, subject: ottoman, object: dobruja-despotate, from: 1388, to: null }
+- { type: successor_of, subject: ottoman, object: eretnids, from: 1398, to: null }
+- { type: successor_of, subject: lithuania-grand-duchy, object: smolensk-principality, from: 1395, to: null } # 비타우타스의 병합(1401~1403 복위는 위 1404 줄)
+# 종속(정할 점 ⑧·M-②(마)·M1-⑲): 킵차크 칸국에 공납한 루스 공국들·갈리치아-볼히니아·스몰렌스크, 헝가리 왕의 봉신인 보스니아 바나트·왈라키아(1330 포사다 전투까지)·비딘 차르국(1369 뒤),
+# 아라곤의 봉신인 마요르카 왕국(1279 페르피냥 조약), 나폴리 왕(앙주가)의 봉신인 아카이아 공국, 아카이아의 봉신인 아테네 공국(1311 카탈루냐 용병단까지),
+# 1371년 마리차 전투 뒤 오스만에 공물을 바친 불가리아·세르비아 영주들, 요안니스 5세 뒤의 동로마(1373~1402 앙카라 전투)
+- { type: vassal_of, subject: rus-principalities, object: golden-horde, from: 1300, to: 1391 }
+- { type: vassal_of, subject: galicia-volhynia, object: golden-horde, from: 1300, to: 1348 }
+- { type: vassal_of, subject: smolensk-principality, object: golden-horde, from: 1300, to: 1394 }
+- { type: vassal_of, subject: bosnian-banate, object: hungary-kingdom, from: 1300, to: 1376 }
+- { type: vassal_of, subject: wallachia, object: hungary-kingdom, from: 1310, to: 1329 }
+- { type: vassal_of, subject: majorca-kingdom, object: aragon, from: 1300, to: 1343 }
+- { type: vassal_of, subject: achaea, object: naples-kingdom, from: 1300, to: 1381 } # 1381년 나바라 용병단(앙주가의 승계 다툼)
+- { type: vassal_of, subject: duchy-of-athens, object: achaea, from: 1300, to: 1310 }
+- { type: vassal_of, subject: vidin-tsardom, object: hungary-kingdom, from: 1369, to: 1387 }
+- { type: vassal_of, subject: vidin-tsardom, object: ottoman, from: 1388, to: 1395 }
+- { type: vassal_of, subject: bulgaria-second, object: ottoman, from: 1371, to: 1392 }
+- { type: vassal_of, subject: serbian-magnates, object: ottoman, from: 1371, to: 1394 }
+- { type: vassal_of, subject: byzantine-empire, object: ottoman, from: 1373, to: 1401 } # 1402 앙카라 전투까지(작업 M2. 1400~1401년은 M1에서 빠졌던 것을 더함)
