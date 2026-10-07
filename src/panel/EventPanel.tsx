@@ -36,7 +36,7 @@ export function EventPanel({ data }: { data: StaticData }) {
       <aside className="panel">
         <p className="panel-guide">지도에서 나라를 누르면 그 시기의 사건이 여기에 나타납니다.</p>
         <p className="panel-guide">사건에 {touch ? '손가락을 대면' : '마우스를 올리면'} 영향을 주고받은 나라가 화살표로 표시됩니다. 사건을 누르면 화살표가 계속 남고, 그 사건을 다시 누르거나 다른 곳을 누르면 사라집니다.</p>
-        <p className="panel-note">현재는 선사 시대(구석기·신석기)와 고조선(기원전 2333년)부터 현대까지의 한국사 전 시대 자료와 유럽(국경 1453년~, 사건 1453년~현재) 자료가 들어 있습니다.</p>
+        <p className="panel-note">현재는 선사 시대(구석기·신석기)와 고조선(기원전 2333년)부터 현대까지의 한국사 전 시대 자료와 유럽(국경 1400년~, 사건 1453년~현재) 자료가 들어 있습니다.</p>
       </aside>
     );
   }
