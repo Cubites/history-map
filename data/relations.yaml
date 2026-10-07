@@ -281,7 +281,7 @@
 - { type: vassal_of, subject: pskov-republic, object: grand-duchy-of-moscow, from: 1453, to: 1509 }
 - { type: vassal_of, subject: kazan-khanate, object: grand-duchy-of-moscow, from: 1487, to: 1495 }
 - { type: vassal_of, subject: kazan-khanate, object: grand-duchy-of-moscow, from: 1497, to: 1505 }
-- { type: vassal_of, subject: grand-duchy-of-moscow, object: golden-horde, from: 1300, to: 1480 }
+- { type: vassal_of, subject: grand-duchy-of-moscow, object: golden-horde, from: 1283, to: 1480 }
 
 # ── 유럽 1526~1599 (작업 D3, 2026-10-06) ──
 # 몰다비아·왈라키아·라구사·크림 칸국의 오스만 종속, 쿠를란트·프로이센 공국의 폴란드-리투아니아 종속, 트란실바니아의 오스만 종속은 위의 줄을 넓혔다
@@ -473,8 +473,8 @@
 - { type: vassal_of, subject: serbian-despotate, object: ottoman, from: 1428, to: 1438 }
 - { type: vassal_of, subject: byzantine-empire, object: ottoman, from: 1424, to: 1452 }
 - { type: vassal_of, subject: epirus-despotate, object: ottoman, from: 1430, to: 1478 } # 1449년 아르타를 잃은 뒤 토코 가문(레오나르도 3세)의 아카르나니아·레프카다도 오스만에 공물(작업 FIX2에서 1478년까지 늘림, 1479 정복)
-- { type: vassal_of, subject: tver, object: golden-horde, from: 1300, to: 1452 }
-- { type: vassal_of, subject: ryazan, object: golden-horde, from: 1300, to: 1452 }
+- { type: vassal_of, subject: tver, object: golden-horde, from: 1247, to: 1452 }
+- { type: vassal_of, subject: ryazan, object: golden-horde, from: 1243, to: 1452 }
 
 # ── 유럽 1300~1399 (작업 M2, 2026-10-07) ──
 # 위의 모스크바 대공국·트베리·랴잔의 킵차크 칸국 종속(1300), 대페름의 노브고로드 종속(1324), 모라바 세르비아(1390)·브란코비치 영지(1392)의 오스만 종속은 시작 해를 앞당겼다
@@ -504,14 +504,14 @@
 # 종속(정할 점 ⑧·M-②(마)·M1-⑲): 킵차크 칸국에 공납한 루스 공국들·갈리치아-볼히니아·스몰렌스크, 헝가리 왕의 봉신인 보스니아 바나트·왈라키아(1330 포사다 전투까지)·비딘 차르국(1369 뒤),
 # 아라곤의 봉신인 마요르카 왕국(1279 페르피냥 조약), 나폴리 왕(앙주가)의 봉신인 아카이아 공국, 아카이아의 봉신인 아테네 공국(1311 카탈루냐 용병단까지),
 # 1371년 마리차 전투 뒤 오스만에 공물을 바친 불가리아·세르비아 영주들, 요안니스 5세 뒤의 동로마(1373~1402 앙카라 전투)
-- { type: vassal_of, subject: rus-principalities, object: golden-horde, from: 1300, to: 1391 }
-- { type: vassal_of, subject: galicia-volhynia, object: golden-horde, from: 1300, to: 1348 }
-- { type: vassal_of, subject: smolensk-principality, object: golden-horde, from: 1300, to: 1394 }
-- { type: vassal_of, subject: bosnian-banate, object: hungary-kingdom, from: 1300, to: 1376 }
+- { type: vassal_of, subject: rus-principalities, object: golden-horde, from: 1243, to: 1391 } # 1243 야로슬라프 2세의 야를릭(M-④, 작업 M3에서 앞당김)
+- { type: vassal_of, subject: galicia-volhynia, object: golden-horde, from: 1246, to: 1348 } # 1245~1246 다닐로가 사라이에서 바투에게 신속(작업 M3에서 앞당김)
+- { type: vassal_of, subject: smolensk-principality, object: golden-horde, from: 1243, to: 1394 } # 루스 공국들과 같게 1243(M-④, 1274~1275 몽골의 호구 조사, 작업 M3에서 앞당김)
+- { type: vassal_of, subject: bosnian-banate, object: hungary-kingdom, from: 1200, to: 1376 } # 반 쿨린 때부터 헝가리 왕의 종주(작업 M3에서 앞당김)
 - { type: vassal_of, subject: wallachia, object: hungary-kingdom, from: 1310, to: 1329 }
-- { type: vassal_of, subject: majorca-kingdom, object: aragon, from: 1300, to: 1343 }
-- { type: vassal_of, subject: achaea, object: naples-kingdom, from: 1300, to: 1381 } # 1381년 나바라 용병단(앙주가의 승계 다툼)
-- { type: vassal_of, subject: duchy-of-athens, object: achaea, from: 1300, to: 1310 }
+- { type: vassal_of, subject: majorca-kingdom, object: aragon, from: 1279, to: 1343 } # 1279 페르피냥 조약(작업 M3에서 앞당김)
+- { type: vassal_of, subject: achaea, object: naples-kingdom, from: 1282, to: 1381 } # 1381년 나바라 용병단(앙주가의 승계 다툼)
+- { type: vassal_of, subject: duchy-of-athens, object: achaea, from: 1259, to: 1310 } # 1258 카리디 전투 뒤 기 1세의 신서(작업 M3에서 앞당김)
 - { type: vassal_of, subject: vidin-tsardom, object: hungary-kingdom, from: 1369, to: 1387 }
 - { type: vassal_of, subject: vidin-tsardom, object: ottoman, from: 1388, to: 1395 }
 - { type: vassal_of, subject: bulgaria-second, object: ottoman, from: 1371, to: 1392 }
@@ -530,3 +530,47 @@
 - { type: successor_of, subject: kartli-kakheti, object: kakheti, from: 1762, to: null }
 - { type: vassal_of, subject: kartli-kakheti, object: russia, from: 1783, to: 1800 }
 - { type: vassal_of, subject: imereti, object: ottoman, from: 1555, to: 1803 } # 1555 아마시아 조약으로 오스만의 세력권, 공물(1804 엘라즈나우리 조약으로 러시아 보호국)
+# ── 유럽 1200~1299 (작업 M3, 2026-10-07) ──
+# 위의 모스크바 대공국(1283)·트베리(1247)·랴잔(1243)·루스 공국들(1243)·갈리치아-볼히니아(1246)·스몰렌스크(1243)의 킵차크 칸국 종속, 보스니아 바나트의 헝가리 종속(1200), 마요르카 왕국의 아라곤 종속(1279),
+# 아카이아의 나폴리 종속(1282), 아테네 공국의 아카이아 종속(1259)은 시작 해를 앞당겼다
+# 계승: 이름만 바뀐 나라(소유표 renames)와 합쳐진 나라
+- { type: successor_of, subject: serbia-medieval, object: serbia-grand-principality, from: 1217, to: null } # 스테판의 대관(renames)
+- { type: successor_of, subject: castile, object: castile-early, from: 1230, to: null } # 페르난도 3세의 레온 계승(renames)
+- { type: successor_of, subject: castile, object: leon, from: 1230, to: null }
+- { type: successor_of, subject: byzantine-empire, object: nicaea, from: 1261, to: null } # 콘스탄티노폴리스 탈환(renames)
+- { type: successor_of, subject: byzantine-empire, object: latin-empire, from: 1261, to: null }
+- { type: successor_of, subject: provence, object: provence-barcelona, from: 1246, to: null } # 앙주의 샤를과 베아트리스의 혼인(renames)
+- { type: successor_of, subject: nicaea, object: byzantine-empire, from: 1204, to: null } # 제4차 십자군 뒤의 망명 국가
+- { type: successor_of, subject: epirus-despotate, object: thessalonica-kingdom, from: 1224, to: null }
+- { type: successor_of, subject: thessaly, object: epirus-despotate, from: 1268, to: null }
+- { type: successor_of, subject: naples-kingdom, object: sicily-kingdom, from: 1282, to: null } # 시칠리아 만종 뒤의 반도
+- { type: successor_of, subject: taifas-third, object: almohads, from: 1228, to: null }
+- { type: successor_of, subject: granada, object: taifas-third, from: 1238, to: null }
+- { type: successor_of, subject: castile, object: taifas-third, from: 1266, to: null } # 무르시아 병합
+- { type: successor_of, subject: golden-horde, object: volga-bulgaria, from: 1242, to: null }
+- { type: successor_of, subject: golden-horde, object: cuman-tribes, from: 1242, to: null }
+- { type: successor_of, subject: lithuania-grand-duchy, object: baltic-tribes, from: 1236, to: null }
+- { type: successor_of, subject: norway-medieval, object: iceland-commonwealth, from: 1262, to: null }
+- { type: successor_of, subject: england, object: welsh-principalities, from: 1283, to: null }
+- { type: successor_of, subject: france, object: county-of-toulouse, from: 1271, to: null }
+- { type: successor_of, subject: france, object: champagne, from: 1285, to: null }
+# 종속(정할 점 ⑧·M-②(마)·M-④): 라틴 황제의 봉신(테살로니키 왕국, 1209 라벤니카 의회 뒤 아카이아), 테살로니키 왕의 봉신 아테네, 1267 비테르보 조약 뒤 시칠리아 왕(앙주의 샤를)의 봉신 아카이아,
+# 몽골 제국의 종속(킵차크 칸국 1242~1259, 쾨세다그 전투 뒤 룸 술탄국, 1243 루수단의 조지아, 1247 헤툼 1세의 킬리키아 아르메니아. 1256년 훌레구가 온 뒤 일한국의 종속은 설명에만, M-④),
+# 잉글랜드 왕에게 신서한 웨일스 공국들(1201 대르웰린~1282)과 존 발리올의 스코틀랜드(1292~1296), 카스티야의 봉신 그라나다(1246 하엔 조약~1264 무데하르 반란)·무르시아(1243 알카라스 조약~1265),
+# 노가이(킵차크 칸국)의 종주를 받은 불가리아(게오르기 테르테르 1세 무렵~1299 차카)
+- { type: vassal_of, subject: thessalonica-kingdom, object: latin-empire, from: 1204, to: 1224 }
+- { type: vassal_of, subject: achaea, object: latin-empire, from: 1209, to: 1261 }
+- { type: vassal_of, subject: duchy-of-athens, object: thessalonica-kingdom, from: 1205, to: 1224 }
+- { type: vassal_of, subject: achaea, object: sicily-kingdom, from: 1267, to: 1281 }
+- { type: vassal_of, subject: golden-horde, object: mongol-empire, from: 1242, to: 1259 }
+- { type: vassal_of, subject: rum-sultanate, object: mongol-empire, from: 1243, to: 1256 }
+- { type: vassal_of, subject: georgia-kingdom, object: mongol-empire, from: 1243, to: 1256 }
+- { type: vassal_of, subject: cilician-armenia, object: mongol-empire, from: 1247, to: 1256 }
+- { type: vassal_of, subject: welsh-principalities, object: england, from: 1201, to: 1282 }
+- { type: vassal_of, subject: scotland, object: england, from: 1292, to: 1295 }
+- { type: vassal_of, subject: granada, object: castile, from: 1246, to: 1264 }
+- { type: vassal_of, subject: taifas-third, object: castile, from: 1243, to: 1265 }
+- { type: vassal_of, subject: bulgaria-second, object: golden-horde, from: 1285, to: 1299 }
+- { type: vassal_of, subject: novgorod-republic, object: golden-horde, from: 1259, to: 1477 } # 1259 몽골의 호구 조사와 공물(검토 반영), 1478 모스크바 병합까지
+- { type: vassal_of, subject: trebizond, object: rum-sultanate, from: 1214, to: 1242 } # 1214 시노프를 잃은 뒤 카이카우스 1세에게 공물(검토 반영)
+- { type: vassal_of, subject: trebizond, object: mongol-empire, from: 1243, to: 1256 } # 쾨세다그 뒤 몽골에 신속(1256년 뒤 일한국은 설명에만, M-④)
