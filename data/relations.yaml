@@ -521,3 +521,12 @@
 - { type: successor_of, subject: kalmar-union, object: kalmar-union-three-kingdoms, from: 1448, to: null }
 - { type: successor_of, subject: nogai-horde, object: golden-horde, from: 1440, to: null }
 - { type: vassal_of, subject: duchy-of-athens, object: ottoman, from: 1394, to: 1455 } # 1393~1394 바예지트 1세가 네오파트라스를 차지한 뒤 네리오 1세가 해마다 공물, 안토니오 1세·네리오 2세도 이음(1456 오스만 정복)
+# 작업 FIX2b (2026-10-07 운영자 승인): 조지아 왕국들의 나뉨·합침, 이메레티의 오스만 공물, 카르틀리-카헤티의 러시아 보호국(1783 게오르기예프스크 조약)
+- { type: successor_of, subject: georgia-kingdom, object: west-georgia-kingdom, from: 1330, to: null }
+- { type: successor_of, subject: kartli, object: georgia-kingdom, from: 1490, to: null }
+- { type: successor_of, subject: kakheti, object: georgia-kingdom, from: 1490, to: null }
+- { type: successor_of, subject: imereti, object: georgia-kingdom, from: 1490, to: null }
+- { type: successor_of, subject: kartli-kakheti, object: kartli, from: 1762, to: null }
+- { type: successor_of, subject: kartli-kakheti, object: kakheti, from: 1762, to: null }
+- { type: vassal_of, subject: kartli-kakheti, object: russia, from: 1783, to: 1800 }
+- { type: vassal_of, subject: imereti, object: ottoman, from: 1555, to: 1803 } # 1555 아마시아 조약으로 오스만의 세력권, 공물(1804 엘라즈나우리 조약으로 러시아 보호국)
