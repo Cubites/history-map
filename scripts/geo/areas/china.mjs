@@ -4,7 +4,7 @@
 // 중일 전쟁 점령지(R38·OCC_*·ROC_1937~1945 등)는 1937년 모양이 1938년 도형과의 교집합이라 이 파일 안에 원래 순서대로 함께 둔다.
 // 구획 제목의 '○번 묶음'은 원래 generate-geo.mjs의 조사 묶음(시대)이다. 파일 사이에서 맞물리는 점은 이름으로 가져다 쓴다('값만 같은 점'은 shared.mjs 머리 주석 참고).
 import { D, I, P, U, box, bx, rev, ring } from '../lib.mjs';
-import { AMUR_BAND, CHINA, HUABEI, HUABEI_938, KWANTUNG, L33, LIAODONG, LIAOXI, LX916, LX923, L_NORTH, NORTH_OF_YANYUN, PRIMORYE, TAIWAN, XIXIA, YANYUN } from '../shared.mjs';
+import { AMUR_BAND, CHINA, HUABEI, HUABEI_938, KHABAROVSK, KWANTUNG, L33, LIAODONG, LIAOXI, LX916, LX923, L_NORTH, NORTH_OF_YANYUN, PRIMORYE, TAIWAN, XIXIA, YANYUN } from '../shared.mjs';
 import { BAEKJE, GOGURYEO, HYEONDO_2, L_YALU_TUMEN, noNokdun } from './korea.mjs';
 import { ALXA, EASTERN_TURKS, ET_NE, HUGEUM_1621, KHITAN_W, MANCHURIA_NORTH, NE_FAR, OUTER_MONGOLIA, QH_N, TIBET, XILIN_N } from './inner-asia.mjs';
 
@@ -25,7 +25,10 @@ const QING_1724 = U(QING_1720, QH_N); // 롭상 단진의 난(1723~1724)을 진�
 const QING_1860 = D(QING_1724, [PRIMORYE]);
 
 // ── 7번 묶음 (1876 ~ 1945) ─────────────────────────────────
-export const QING_BASE = U(QING_1860, [AMUR_BAND]);
+// QING_1860_BAND: 흑룡강 띠까지의 청(2026-10-07 작업 FIX1 전의 QING_BASE와 같은 도형). 러시아 손 도형(europe.mjs의 1860년 전 한계)과 간도는 이것을 그대로 써서 바이트까지 바뀌지 않게 한다.
+// QING_BASE: 1860년 베이징 조약 뒤의 청. 하바롭스크 쐐기(shared.mjs의 KHABAROVSK)를 뺀다(전에는 하바롭스크가 청·중화민국·중화인민공화국 땅으로 칠해짐)
+export const QING_1860_BAND = U(QING_1860, [AMUR_BAND]);
+export const QING_BASE = D(QING_1860_BAND, [KHABAROVSK]);
 const QING_1895 = QING_BASE;
 const QING_1898 = D(QING_BASE, [KWANTUNG]);
 const ROC_1912 = QING_1898;
@@ -38,7 +41,9 @@ const L_WALL_E = [[119.8, 39.95], [119.4, 40.15], [118.8, 40.35], [118.3, 40.42]
 const OUTSIDE_WALL = I(U([CHINA], [EASTERN_TURKS]), [ring(L_WALL_E, [[116.0, 42.6], [123.0, 42.6], [123.0, 39.6]])]);
 // 러허성: 1933년 3월 열하 작전으로 만주국에 편입. 요서 회랑(수중·싱청·진저우·이현)은 펑톈성으로 1932년부터 만주국
 const REHE = I(OUTSIDE_WALL, [ring([[115.0, 39.0], [119.8, 39.95], [120.2, 40.6], [120.9, 41.6], [121.1, 42.6], [115.0, 42.6]])]);
-const MANCHUKUO = D(U(MANCHURIA_NORTH, [LIAODONG], KHITAN_W, [AMUR_BAND], OUTSIDE_WALL, ET_NE), [PRIMORYE], [KWANTUNG], OUTER_MONGOLIA, XILIN_N);
+// MANCHUKUO_AREA는 2026-10-07(작업 FIX1) 전의 만주국 도형(중일 전쟁 점령지 계산 occ가 그대로 쓴다). 만주국은 여기서 하바롭스크 쐐기를 뺀다
+const MANCHUKUO_AREA = D(U(MANCHURIA_NORTH, [LIAODONG], KHITAN_W, [AMUR_BAND], OUTSIDE_WALL, ET_NE), [PRIMORYE], [KWANTUNG], OUTER_MONGOLIA, XILIN_N);
+const MANCHUKUO = D(MANCHUKUO_AREA, [KHABAROVSK]);
 const MANCHUKUO_1932 = D(MANCHUKUO, REHE);
 const ROC_1932 = D(ROC_1921, MANCHUKUO_1932);
 const ROC_1933 = D(ROC_1921, MANCHUKUO);
@@ -46,7 +51,7 @@ const ROC_1933 = D(ROC_1921, MANCHUKUO);
 // 해마다 링을 더하고(occ), 아직 점령되지 않은 영국령 홍콩(1941.12.25 항복)·포르투갈령 마카오(점령되지 않음)와
 // 1938년 4월 일본군이 물러난 산시 남동부(창즈·진청, 1939.8 다시 점령)는 뺀다. 이 지도는 홍콩·마카오를 중국 도형에 넣어 그리므로 뺀 곳은 중화민국 쪽이 된다.
 // 전선 뒤의 유격 근거지(산둥 이멍산·타이항산 등)와 1939년 3월까지 중국 쪽이던 장쑤 북부(화이인·옌청)는 면으로 칠한다
-const occ = (rings, cut = []) => D(I([CHINA], U(...rings.map((r) => [r]))), MANCHUKUO, ...cut.map((r) => [r]));
+const occ = (rings, cut = []) => D(I([CHINA], U(...rings.map((r) => [r]))), MANCHUKUO_AREA, ...cut.map((r) => [r]));
 // 1938년 말 본체. 1937년 링(OCC_N_1937·OCC_C_1937)과 닿는 곳은 1937년 꼭짓점을 그대로 쓴다.
 // 주의: 1937년 모양은 이 도형과의 교집합(OCC_CHINA_1937)이므로 1937년 링 안쪽을 줄이면 1937년 모양도 바뀐다
 const R38 = ring([
@@ -183,7 +188,7 @@ const YAN_281 = U(I(NORTH_PART, box(113.5, 36.0, 122.6, 42.5)), [LIAODONG]);
 // 간도(북간도): 백두산정계비의 '토문' 해석을 두고 조선·대한제국과 청이 다툰 두만강 북쪽 (1883 조사 ~ 1909 간도 협약)
 // 동쪽 끝은 러시아 국경(L_KHASAN)까지, 훈춘 포함 (2026-09-28)
 // 남쪽 변은 두만강(korea.mjs의 L_YALU_TUMEN)의 (128.2, 41.5)부터 방천 3국 접경 (130.7, 42.3)까지
-const GANDO = I(QING_BASE, [ring(L_YALU_TUMEN.slice(5, 11), [[131.3, 43.0], [130.5, 43.6], [129.5, 43.8], [128.5, 43.5], [128.0, 42.8], [127.95, 42.0]])]);
+const GANDO = I(QING_1860_BAND, [ring(L_YALU_TUMEN.slice(5, 11), [[131.3, 43.0], [130.5, 43.6], [129.5, 43.8], [128.5, 43.5], [128.0, 42.8], [127.95, 42.0]])]);
 
 // 나라 id: [[from, to, 멀티폴리곤, 확실성?], ...]. to가 null이면 지금까지, 확실성은 'disputed' 등(없으면 'estimated').
 // 출처(geojson의 source)는 나라별로 적지 않고 권역 파일의 source로 정한다(없으면 engine.mjs의 기본 문구)

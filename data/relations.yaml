@@ -253,6 +253,7 @@
 - { type: successor_of, subject: grand-duchy-of-moscow, object: novgorod-republic, from: 1478, to: null }
 - { type: successor_of, subject: grand-duchy-of-moscow, object: tver, from: 1485, to: null }
 - { type: successor_of, subject: grand-duchy-of-moscow, object: vyatka, from: 1489, to: null }
+- { type: successor_of, subject: grand-duchy-of-moscow, object: great-perm, from: 1472, to: null }
 - { type: successor_of, subject: grand-duchy-of-moscow, object: pskov-republic, from: 1510, to: null }
 - { type: successor_of, subject: grand-duchy-of-moscow, object: ryazan, from: 1521, to: null }
 - { type: successor_of, subject: crimean-khanate, object: golden-horde, from: 1502, to: null }
@@ -275,6 +276,7 @@
 - { type: vassal_of, subject: teutonic-order, object: poland-kingdom, from: 1466, to: 1524 }
 - { type: vassal_of, subject: novgorod-republic, object: grand-duchy-of-moscow, from: 1471, to: 1477 }
 - { type: vassal_of, subject: vyatka, object: grand-duchy-of-moscow, from: 1459, to: 1488 }
+- { type: vassal_of, subject: great-perm, object: novgorod-republic, from: 1453, to: 1471 } # 1471년까지 노브고로드에 형식상 종속(작업 FIX1)
 - { type: vassal_of, subject: ryazan, object: grand-duchy-of-moscow, from: 1456, to: 1520 }
 - { type: vassal_of, subject: pskov-republic, object: grand-duchy-of-moscow, from: 1453, to: 1509 }
 - { type: vassal_of, subject: kazan-khanate, object: grand-duchy-of-moscow, from: 1487, to: 1495 }
@@ -444,3 +446,6 @@
 - { type: occupied_by, subject: donbas-separatist, object: russia-fed, from: 2014, to: 2021 }
 - { type: occupied_by, subject: abkhazia, object: russia-fed, from: 2008, to: null }
 - { type: occupied_by, subject: south-ossetia, object: russia-fed, from: 2008, to: null }
+
+# ── 작업 FIX1 (2026-10-07) ──
+- { type: successor_of, subject: russia, object: north-caucasus-highlanders, from: 1859, to: null }
