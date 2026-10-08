@@ -319,7 +319,7 @@
     ko: 동진(대진·동하)의 성립
   summary:
     ko: 금의 요동 선무사 포선만노가 요동에서 자립해 천왕을 칭하고 나라 이름을 대진이라 했다. 1216년 몽골에 항복해 아들을 볼모로 보냈으나, 이듬해 두만강 유역으로 옮겨 다시 자립하고 나라 이름을 동하로 바꾸었다. 고려는 이 나라를 동진이라 불렀다.
-  subjects: [dongxia, jin, mongol-empire]
+  subjects: [dongxia, jin, mongol-empire, goryeo]
   links:
     - { from: jin, to: dongxia, note: "요동 선무사 포선만노의 자립" }
     - { from: mongol-empire, to: dongxia, note: "1216년 항복을 받음" }
@@ -386,7 +386,7 @@
     ko: 동진(동하) 멸망
   summary:
     ko: 오고타이 칸이 보낸 구유크의 몽골군이 동진의 남경(연변 성자산성)을 함락하고 포선만노를 사로잡았다. 만주 동부와 함경도의 여진 땅은 몽골의 지배 아래 들어갔다.
-  subjects: [dongxia, mongol-empire]
+  subjects: [dongxia, mongol-empire, jurchen]
   links:
     - { from: mongol-empire, to: dongxia, note: "구유크의 정벌" }
   tags: [war]
@@ -945,7 +945,7 @@
     ko: 정동행성 설치
   summary:
     ko: 원이 일본 원정을 위해 정동행성을 설치했다. 원정 실패 뒤에도 남아 고려의 내정을 간섭하는 기구가 되었다.
-  subjects: [goryeo, yuan]
+  subjects: [goryeo, yuan, japan]
   links:
     - { from: yuan, to: goryeo, note: "내정 간섭 기구" }
   tags: [politics]
