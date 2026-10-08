@@ -136,7 +136,7 @@
     ko: 천리장성 축조
   summary:
     ko: 거란과 여진의 침입에 대비해 압록강 어귀에서 동해안의 도련포에 이르는 천리장성을 쌓았다.
-  subjects: [goryeo]
+  subjects: [goryeo, liao, jurchen]
   links:
     - { from: liao, to: goryeo, note: "거란·여진 방어" }
   tags: [war]
@@ -150,7 +150,7 @@
     ko: 별무반 편성
   summary:
     ko: 여진과의 싸움에서 기병에 밀리자 윤관의 건의로 신기군(기병), 신보군(보병), 항마군(승병)으로 이루어진 별무반을 만들었다.
-  subjects: [goryeo]
+  subjects: [goryeo, jurchen]
   tags: [war]
   sources: ["『고려사』 세가 숙종 9년", "『고려사』 열전 윤관"]
 
@@ -171,7 +171,7 @@
     ko: 동북 9성 설치와 반환
   summary:
     ko: 윤관이 별무반을 이끌고 여진을 몰아낸 뒤 동북 지방에 9성을 쌓았다. 여진의 계속된 반환 요구와 방어의 어려움으로 1109년 돌려주었다. 9성의 위치는 함흥 평야 일대로 보는 설과 두만강 북쪽까지로 보는 설이 있다.
-  subjects: [goryeo]
+  subjects: [goryeo, jurchen, nine-forts-disputed]
   tags: [war]
   sources: ["『고려사』 세가 예종 2년·4년", "『고려사』 열전 윤관"]
   places: [{ name: "동북 9성", at: [127.7, 40.1] }]
@@ -182,7 +182,7 @@
     ko: 금 건국
   summary:
     ko: 여진족 완옌부의 아구다가 여러 부족을 통합해 금을 세우고 요에 맞섰다.
-  subjects: [jin, liao]
+  subjects: [jin, liao, jurchen]
   links:
     - { from: jin, to: liao, note: "요에 대한 봉기" }
   tags: [politics]
