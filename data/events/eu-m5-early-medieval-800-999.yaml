@@ -1,0 +1,537 @@
+# 유럽 중세 사건 5차 묶음: 카롤루스의 황제 대관에서 바실리오스 2세·알만수르·블라디미르의 세례까지 (800 ~ 999, 작업 EVM5)
+# 범위: 카롤루스의 황제 대관과 아헨 화약, 루트비히 경건왕과 아들들·베르됭·메르센·리베몽 조약과 카를 3세 비만왕, 서프랑크 대봉토와 카페 왕조의 등장, 바이킹의 센강 습격과 노르망디·브르타뉴,
+#   클뤼니 수도원, 동프랑크의 작센 왕조·레히펠트·오토 1세의 황제 대관과 오토 2세·3세, 웨식스의 잉글랜드 통일과 데인로·스코틀랜드의 형성, 덴마크·스웨덴·노르웨이와 아이슬란드 정착,
+#   키예프 루스(류리크·올레그·올가·스뱌토슬라프·블라디미르)와 하자르 칸국의 몰락·볼가 교역로, 마자르의 정착, 대모라비아와 키릴로스·메토디오스, 불가리아 제1제국(크룸·보리스 1세·시메온·사무일), 크로아티아·세르비아,
+#   피아스트 폴란드와 보헤미아 공국, 동로마의 성상 파괴 끝·포티오스 분열·마케도니아 왕조의 반격(크레타·안티오크)·바실리오스 2세의 즉위, 아랍의 시칠리아 정복, 캅카스 왕조들,
+#   아스투리아스에서 레온으로·나바라·카스티야·바르셀로나, 후우마이야 칼리프국과 알만수르.
+# 깊이: 고등학교 세계사 교과서 본문 수준에, 800~999년 지도에서 생기거나 끝난 유럽 항목(카롤루스 제국·크로아티아 공국 800, 타오-클라르제티 813, 아바르 칸국 822, 나바라 824, 크레타 토후국 827, 스웨덴 829,
+#   시칠리아 토후국 831, 대모라비아 833, 마자르 공국 838, 스코틀랜드·서프랑크·동프랑크·중프랑크 843, 브르타뉴 왕국 851, 이탈리아 왕국·프로방스 왕국 855, 아키텐 860, 플랑드르 862, 루스 862, 가스코뉴 864, 데인로 867,
+#   앙주·보헤미아 870, 노르웨이 872, 바르셀로나 878, 키예프 루스 882, 아르메니아 왕국들 885, 부르군트 왕국 888, 페체네그 890, 레온 910, 노르망디 911, 볼가 불가리아 922, 크로아티아 왕국 925, 잉글랜드 927,
+#   후우마이야 칼리프국 929, 아이슬란드 930, 카스티야 931, 덴마크 936, 브르타뉴 공국 939, 데인로의 끝 954, 덴마크 왕국 958, 로렌 959, 폴란드 960, 신성 로마 제국 962, 하자르 칸국 969, 프랑스 987 등)을
+#   subjects로 이음(docs/REGION_GUIDE.md §5, 점검 방식은 EVM1~EVM4의 성립·소멸 점검과 같음). 지도의 큰 변화(1만 km² 넘는 유럽 버전 해)도 사건으로 이음.
+# 한국사와 닿는 점: 볼가 교역로의 이븐 후르다드베가 적은 신라(알실라)를 silla로 subjects에 잇고, 청해진(`cheonghaejin-828`)·장보고 피살(`jang-bogo-846`)은 서술로 이었다. 936년 고려의 후삼국 통일(`unification-936`)과
+#   발해 멸망(`balhae-falls-926`)은 서술로만 같은 시기임을 적었다. 03·04번 파일에 있는 사건은 다시 만들지 않았다.
+# 사건 연도 규칙: subjects·links의 나라는 사건 기간(year~endYear)과 존재 기간이 겹치면 된다(DATA_GUIDE.md §3).
+# 날짜: 1582년 10월 그레고리력 개정 전의 날짜는 당시 쓰던 율리우스력이라 양력(그레고리력)과 6~10일 차이가 나므로 달까지만 적거나 통설의 날짜를 적었다.
+# places의 year: 기간이 있는 사건은 장소마다 싸운 해를 적어 그 해에만 전투 표시가 보이게 했다. 전투·포위가 없는 사건에는 places를 달지 않았다.
+# 서술은 새로 작성. 출처는 사료와 표준 개설서(한국어 번역본이 확인된 것만 번역본으로). 병력·사상자·인구는 사료가 과장하는 일이 많아 범위와 '추산'으로 적었다. 운영자 검수 필요.
+
+- id: charlemagne-emperor-800
+  year: 800
+  endYear: 814
+  title:
+    ko: "카롤루스의 황제 대관(800)과 아헨 화약(812): 서방 제국과 동로마의 인정"
+  summary:
+    ko: "799년 4월 로마 귀족들에게 습격당한 교황 레오 3세가 프랑크 왕 카롤루스에게 몸을 맡겼고, 카롤루스는 800년 11월 로마에 와서 12월 23일 교황이 맹세로 혐의를 씻는 자리를 이끌었다. 12월 25일 성탄절 미사에서 교황이 그에게 황제의 관을 씌웠다(아인하르트는 그가 미리 알았다면 그날 성당에 들어가지 않았을 것이라고 했다고 전한다). 476년 서로마 황제가 사라진 뒤 서방의 첫 황제로, 카롤루스는 스스로를 '로마 제국을 다스리는 황제'라 불렀고 지도는 800년에 프랑크 왕국을 카롤루스 제국으로 이름만 바꿔 그린다. 동로마는 황제가 둘이 되는 것에 반발했고(802년 니케포로스 1세가 여제 이레네를 몰아냈다), 810년 카롤루스의 아들 이탈리아 왕 피핀의 베네치아 원정은 실패했다. 810년 피핀이 죽은 뒤 이어진 협상 끝에 812년 아헨에서 미카엘 1세의 사절이 카롤루스를 '바실레우스'로 불러 칭호를 인정했다('로마인의 황제'는 동로마 황제만 쓰기로 했다). 베네치아와 달마티아의 해안 도시·섬은 동로마 몫으로 남았고 달마티아 내륙의 크로아티아는 프랑크의 영역으로 확인되었으나 경계가 분명하지 않아 817년 레온 5세의 사절이 다시 아헨에 왔다. 남이탈리아의 롬바르드·캄파니아 공국들(베네벤토 등)은 카롤루스에게 공납을 바쳤고, 달마티아 내륙의 크로아티아 공국(지도는 800년부터)도 프랑크의 종주 아래 있었다. 변경에서는 801년 4월 아들 루트비히(뒤의 경건왕)가 코르도바 아미르국에게서 바르셀로나를 얻어 에스파냐 변경령을 세웠고(지도는 805년 버전), 806년 팜플로나가 복속했다(지도는 806년 버전). 806년 카롤루스는 제국을 세 아들에게 나눌 계획을 세웠으나 피핀(810)과 샤를(811)이 먼저 죽어, 813년 9월 아헨에서 루트비히를 공동 황제로 세웠고 814년 1월 28일 죽었다."
+  subjects: [carolingian-empire, frankish-kingdom, papal-states, byzantine-empire, venice, croatia-duchy, lombard-principalities, cordoba-emirate]
+  links:
+    - { from: papal-states, to: carolingian-empire, note: "교황 레오 3세의 대관(800)" }
+    - { from: carolingian-empire, to: byzantine-empire, note: "황제 칭호의 인정(812 아헨 화약)" }
+  tags: [politics, diplomacy]
+  sources: ["Einhard and Notker the Stammerer, Two Lives of Charlemagne (Lewis Thorpe 옮김, 1969)", "Bernhard Walter Scholz 옮김, Carolingian Chronicles: Royal Frankish Annals and Nithard's Histories (1970)", "Rosamond McKitterick, Charlemagne: The Formation of a European Identity (2008)", "게오르크 오스트로고르스키, 『비잔티움 제국사』(한정숙·김경연 옮김, 까치글방)"]
+  places: [{ name: 바르셀로나, at: [2.17, 41.39], year: 801 }]
+
+- id: wessex-alfred-800
+  year: 800
+  endYear: 899
+  title:
+    ko: "웨식스의 에그버트에서 앨프레드 대왕까지: 엘렌던(825)·대이교도군(865)·에딩턴(878)"
+  summary:
+    ko: "웨식스 왕 에그버트(재위 802~839)는 825년 엘렌던에서 머시아 왕 베오른울프를 꺾어 켄트·서식스·서리·에식스를 얻었고(지도는 825년), 829년 머시아를 한때 정복했으나 이듬해 위글라프가 되찾았다(지도는 829·830년). 838년 힝스턴 다운에서 콘월 사람과 데인인의 연합군을 물리쳐 콘월을 굳혔다(지도는 근사로 콘월과 데번을 800년부터 웨식스 땅으로 그려 브리튼인 왕국들(덤노니아) 항목이 800년에 끝난다). 839년 에그버트가 죽은 뒤 아들 애설울프(재위 839~858)와 그의 아들들인 애설발드·애설버트·애설레드 1세(재위 865~871)가 차례로 이었다. 바이킹은 835년 무렵부터 수도원과 해안을 거듭 약탈하고 사람을 잡아 노예로 팔았고, 865년 이바르·하프단 형제 등이 이끈 '대이교도군'이 동앵글리아에 상륙해 866년 11월 요크를 차지해(지도는 867년) 867년 3월 요크 전투에서 노섬브리아의 두 왕이 죽었고, 869년 동앵글리아를 차지했다(동앵글리아 왕 에드먼드는 그때 죽어 훗날 성인이 되었다). 874년 머시아 왕 버레드가 쫓겨난 뒤 877년 데인인이 머시아를 나눠 동쪽을 차지하자 앵글로색슨 왕국들(머시아·노섬브리아·동앵글리아 등) 가운데 웨식스만 온전히 남았다. 애설레드 1세의 동생으로 871년 왕이 된 앨프레드(재위 871~899)는 878년 5월 에딩턴에서 구트럼을 꺾었고, 세례를 받은 구트럼은 880년 동앵글리아에 정착했다(지도는 에식스를 880년 데인로로 옮긴다). 886년 앨프레드가 런던을 되찾고 구트럼과 템스강·리강·베드퍼드·우즈강·와틀링가도를 경계로 하는 조약을 맺었다(조약 연대는 880년설과 886년 뒤설이 갈린다)(머시아 서부는 신하 애설레드가 맡아 지도는 886년 웨식스 땅). 웨일스 공국들의 일부 왕도 앨프레드의 신종을 받아들였고, 그는 요새도시(버)와 민병·함대로 방어를 짜고 학문을 장려했다."
+  subjects: [wessex, anglo-saxon-kingdoms, danelaw, brittonic-kingdoms, welsh-principalities]
+  links:
+    - { from: wessex, to: anglo-saxon-kingdoms, note: "엘렌던(825)과 머시아 정복(829)" }
+    - { from: danelaw, to: anglo-saxon-kingdoms, note: "요크(867)·동앵글리아(869)·동머시아(877) 정복" }
+    - { from: wessex, to: danelaw, note: "에딩턴(878)과 런던(886)" }
+  tags: [war, politics]
+  sources: ["The Anglo-Saxon Chronicle (Michael Swanton 영역, 1996)", "Simon Keynes·Michael Lapidge 옮김, Alfred the Great: Asser's Life of King Alfred and Other Contemporary Sources (1983)", "Richard Abels, Alfred the Great: War, Kingship and Culture in Anglo-Saxon England (1998)", "Barbara Yorke, Wessex in the Early Middle Ages (1995)"]
+  places: [{ name: 엘렌던, at: [-1.79, 51.52], year: 825 }, { name: 힝스턴 다운, at: [-4.25, 50.52], year: 838 }, { name: 요크, at: [-1.08, 53.96], year: 867 }, { name: 에딩턴, at: [-2.10, 51.28], year: 878 }]
+
+- id: croatia-serbia-800
+  year: 800
+  endYear: 960
+  title:
+    ko: "크로아티아와 세르비아: 크로아티아 공국(800)에서 토미슬라브의 왕국(925)과 차슬라프(960 무렵)까지"
+  summary:
+    ko: "달마티아 내륙의 크로아티아인은 비셰슬라브(800 무렵)와 보르나(재위 810 무렵~821) 때 카롤루스 제국(프랑크)의 종주를 받아들였다. 자다르·스플리트·트로기르·라구사 같은 해안 도시는 동로마 땅으로 남았다(지도는 크로아티아 공국을 800년부터 그리고 도시는 근사). 819~823년 판노니아의 류데비트가 프랑크의 종주에 맞서 봉기했으나 눌렸다. 트르피미르(845 무렵~864)가 트르피미로비치 가문을 열었고, 도마고이(864~876)의 뒤를 이은 즈데슬라브(878~879)는 동로마의 도움을 받았다. 887년 베네치아 도제 피에트로 칸디아노 1세가 네레트바 해적과 싸우다 죽었다. 879년 교황 요한 8세가 브라니미르를 공으로 인정한 편지는 자립의 증거로 꼽힌다. 토미슬라브(재위 910 무렵~928 무렵)는 판노니아 쪽 일부를(범위는 학자마다 갈린다) 아울러 924~925년 무렵 왕이 되었고(지도는 925년부터 크로아티아 왕국), 925년 교황 요한 10세의 편지가 그를 '크로아티아인의 왕'으로 불렀으며 925년과 928년 스플리트에서 교회 회의가 열렸다. 926년 무렵 시메온의 불가리아군을 동보스니아 쪽에서 무너뜨렸다고 전하고, 마자르와의 싸움은 사료마다 승패가 갈린다. 세르비아는 블라스티미르(830년대~850 무렵)가 불가리아 제1제국의 프레시안을 막았고(839~842), 924년 시메온이 세르비아를 정복했으나(지도는 924년) 927~933년 사이(연구마다 갈린다) 차슬라프가 동로마의 도움으로 되살렸다(지도는 933년 라스를 남슬라브 공국들로 돌린다). 콘스탄티노스 7세의 『제국 통치론』은 차슬라프의 세르비아가 트라부니아·자훔리예·네레트바와 보스니아에 미쳤다고 적는다. 『두클랴 사제 연대기』의 전승은 960년 무렵 차슬라프가 죽자 보스니아가 크로아티아로 넘어갔다고 전한다(지도는 960년). 라스는 971년 동로마 땅이 되고, 지도는 976년부터 사무일의 불가리아 땅으로 그린다(사무일의 남슬라브 공국들 복속을 997~998년 무렵으로 적은 사건과 해가 다르다)."
+  subjects: [croatia-duchy, croatia-kingdom, south-slavic-principalities, byzantine-empire, first-bulgarian-empire, carolingian-empire, venice, magyars]
+  links:
+    - { from: carolingian-empire, to: croatia-duchy, note: "프랑크의 종주(800~842)" }
+    - { from: byzantine-empire, to: south-slavic-principalities, note: "차슬라프의 귀환(933 무렵)" }
+  tags: [politics]
+  sources: ["John V. A. Fine Jr., The Early Medieval Balkans: A Critical Survey from the Sixth to the Late Twelfth Century (1983)", "Florin Curta, Southeastern Europe in the Middle Ages, 500–1250 (2006)", "Constantine Porphyrogenitus, De Administrando Imperio (Gy. Moravcsik·R. J. H. Jenkins 엮음, 1967)"]
+
+- id: asturias-leon-800
+  year: 800
+  endYear: 951
+  title:
+    ko: "아스투리아스에서 레온으로: 알폰소 2세에서 라미로 2세까지의 재정주(800~951)"
+  summary:
+    ko: "아스투리아스 왕 알폰소 2세(재위 791~842)는 오비에도를 도읍으로 삼고 갈리시아의 산티아고 무덤 발견 전승(9세기 초)을 후원했다. 라미로 1세(재위 842~850)에 이어 오르도뇨 1세(재위 850~866)는 854년 아스토르가, 856년 레온을 다시 채웠고(재정주), 알폰소 3세 대왕(재위 866~910)은 두에로강 쪽으로 밀고 내려가 868년 포르투, 878년 코임브라, 893년 사모라, 899년 시망카스를 재정주했다(지도는 868·878·893·900년 버전). 코르도바 아미르국은 880~928년 무왈라드(이베리아 출신 개종자)와 호족의 반란으로 흔들려 이를 막지 못했다. 910년 알폰소 3세가 아들들에게 밀려나자 왕국은 가르시아 1세(레온)·오르도뇨(갈리시아)·프루엘라(아스투리아스)로 나뉘었고, 가르시아가 도읍을 레온으로 옮겨 레온 왕국이 되었다(지도는 910년에 이름만 바꾼다). 914년 오르도뇨 2세(재위 914~924)가 갈리시아와 레온을 합쳤다. 912년 압드 알라흐만 3세가 즉위한 뒤 두에로강 선이 다시 다투어졌고(지도는 912년 오스마 일대를 아미르국에서 레온으로), 오르도뇨 2세는 917년 산에스테반 데 고르마스에서 이겼으나 920년 발데훈케라에서 레온·나바라 연합군이 졌다. 프루엘라 2세(924~925)와 알폰소 4세(925~931)를 거쳐 931년 라미로 2세(재위 931~951)가 즉위했고 카스티야 백작 페르난 곤살레스가 따로 움직이기 시작했다(지도는 931년부터 카스티야 백국). 939년 시망카스에서 라미로 2세와 페르난 곤살레스, 나바라 왕 가르시아 산체스 1세가 압드 알라흐만 3세의 후우마이야 칼리프국군을 꺾었고(칼리프가 간신히 달아났다), 940년 살라망카를 다시 채웠다(지도는 940년). 양쪽 모두 원정에서 약탈하고 포로를 잡아 노예로 삼았다. 북쪽으로 올라온 모사라베 그리스도교인이 재정주 지역을 채웠다."
+  subjects: [asturias, leon, cordoba-emirate, cordoba-caliphate, castile-county, navarre]
+  links:
+    - { from: asturias, to: cordoba-emirate, note: "두에로강 선을 둘러싼 전쟁(868~912)" }
+    - { from: cordoba-caliphate, to: leon, note: "시망카스(939)" }
+  tags: [politics, war]
+  sources: ["Roger Collins, Early Medieval Spain: Unity in Diversity, 400–1000 (2판, 1995)", "Hugh Kennedy, Muslim Spain and Portugal: A Political History of al-Andalus (1996)", "Kenneth Baxter Wolf 옮김, Conquerors and Chroniclers of Early Medieval Spain (2판, 1999)"]
+  places: [{ name: 시망카스, at: [-4.81, 41.59], year: 939 }]
+
+- id: krum-omurtag-803
+  year: 803
+  endYear: 842
+  title:
+    ko: "크룸에서 오무르타그까지: 불가리아 제1제국의 팽창(803~842)"
+  summary:
+    ko: "불가르인의 칸 크룸(재위 803 무렵~814)은 805년 무렵 동쪽에 남은 아바르 칸국의 땅(티서강 평원과 바나트)을 차지해 영토를 다뉴브강 중류까지 넓혔고(지도는 805년 버전, 아바르 칸국의 항목은 822년에 끝난다), 809년 세르디카(소피아)를 빼앗고 수비대를 죽였다(6천 명이라 전한다). 811년 7월 니케포로스 1세가 플리스카를 불태우자 크룸은 고개에서 퇴로를 막아 황제를 죽였고, 동로마 사료는 그 두개골에 은을 입혀 술잔으로 썼다고 전한다. 812년 데벨토스·메셈브리아, 813년 6월 베르시니키아에서 미카엘 1세를 이긴 뒤 아드리아노폴리스를 함락해 수비병과 주민 1만 명 안팎(전하는 수)을 다뉴브강 북쪽으로 끌고 갔다. 크룸은 814년 4월 콘스탄티노폴리스를 치려 준비하다 죽었다. 오무르타그(재위 814~831)는 815 또는 816년 레온 5세와 30년 화약을 맺고(지도는 자고라를 816년부터 불가리아 땅으로 그린다) 822년 무렵 미카엘 2세를 도왔으며, 827~829년 도나우강을 따라 판노니아로 나아가 슬라브 부족들을 복속시켰다(카롤루스 제국의 땅이던 스렘·베오그라드 일대는 지도에서 827년부터 불가리아 땅). 9세기 중엽 말라미르(재위 831~836)와 프레시안(재위 836~852) 때 필리포폴리스 일대(지도는 836년)와 마케도니아·코소보 쪽 슬라브 땅(지도는 842년)이 불가리아로 넘어와 남슬라브 공국들의 땅이 줄었다."
+  subjects: [first-bulgarian-empire, byzantine-empire, avar-khaganate, south-slavic-principalities, carolingian-empire]
+  links:
+    - { from: first-bulgarian-empire, to: byzantine-empire, note: "플리스카(811)·베르시니키아(813)와 30년 화약(816)" }
+    - { from: first-bulgarian-empire, to: avar-khaganate, note: "동쪽 아바르 정복(805 무렵)" }
+  tags: [war, politics]
+  sources: ["John V. A. Fine Jr., The Early Medieval Balkans: A Critical Survey from the Sixth to the Late Twelfth Century (1983)", "Florin Curta, Southeastern Europe in the Middle Ages, 500–1250 (2006)", "Cyril Mango·Roger Scott 옮김, The Chronicle of Theophanes Confessor (1997)", "게오르크 오스트로고르스키, 『비잔티움 제국사』(한정숙·김경연 옮김, 까치글방)"]
+  places: [{ name: 세르디카(소피아), at: [23.32, 42.70], year: 809 }, { name: 플리스카, at: [27.10, 43.37], year: 811 }, { name: 아드리아노폴리스(에디르네), at: [26.56, 41.68], year: 813 }]
+
+- id: scandinavia-denmark-sweden-804
+  year: 804
+  endYear: 995
+  title:
+    ko: "덴마크와 스웨덴 왕국의 형성: 구드프레드의 아이더강 국경(811)에서 하랄 푸른이빨의 옐링과 승리왕 에리크까지"
+  summary:
+    ko: "『프랑크 왕국 연대기』는 804년 덴마크 왕 구드프레드를 처음 적는다. 구드프레드는 808년 오보트리트의 교역도시 레리크를 부수고 상인들을 헤데비로 옮겼으며 남쪽 국경에 다네비르케를 쌓았고, 810년 프리슬란트를 약탈한 뒤 암살되었다. 811년 후임 헤밍이 아이더강을 카롤루스 제국과의 경계로 정했다. 826년 하랄 클라크가 루트비히 경건왕 앞에서 세례를 받고 수도사 안스가르가 선교에 나섰으나 이교는 오래 남았다. 854년 호리크 1세가 죽은 뒤 왕위 다툼이 이어졌고 10세기 초 헤데비는 스웨덴 계통으로 보는 올라프 가문이 다스렸다(934년 동프랑크의 하인리히 1세가 쳐서 변경령을 두었다). 지도는 800년부터 덴마크를 하나로 그리고 이런 분열은 그리지 않는다. 고름 노왕(936 무렵~958 무렵)이 덴마크를 다시 묶었고 아들 하랄 푸른이빨(재위 958 무렵~986 무렵)은 옐링에 룬석비를 세워 '덴마크 전체와 노르웨이를 얻고 덴마크인을 그리스도교인으로 만들었다'고 새겼다(세례는 965년 무렵, 지도는 958년에 덴마크 왕국으로 이름을 바꾼다). 974년 신성 로마 제국의 오토 2세가 다네비르케를 빼앗았으나 983년 슬라브 반란 때 하랄이 되찾았다(뒤의 사건). 하랄은 970년 무렵 노르웨이 서부의 호콘 백작을 종주 아래 두었다(지도는 970~974년). 하랄은 986년 무렵 아들 스벤 포크비어드에게 쫓겨났다. 스웨덴은 829년 안스가르가 비르카의 비에른 왕에게 간 일을 『안스가르 전기』가 전하고(지도는 829년부터 스베알란드를 스웨덴 땅으로 그린다), 839년 『생베르탱 연대기』는 동로마 사절과 함께 온 '로스' 사람들이 스웨덴 사람임을 적는다. 970년 무렵 승리왕 에리크가 예탈란드까지 다스렸고(지도는 970년), 아들 올로프 쇠트코눙(재위 995 무렵~1022)이 이었다."
+  subjects: [denmark-early, denmark, denmark-medieval, sweden-early, norway-medieval, carolingian-empire, east-francia, holy-roman-empire]
+  links:
+    - { from: carolingian-empire, to: denmark-early, note: "아이더강 국경(811)" }
+    - { from: holy-roman-empire, to: denmark-medieval, note: "다네비르케(974)" }
+  tags: [politics]
+  sources: ["Birgit Sawyer·Peter Sawyer, Medieval Scandinavia: From Conversion to Reformation, circa 800–1500 (1993)", "Anders Winroth, The Conversion of Scandinavia: Vikings, Merchants, and Missionaries in the Remaking of Northern Europe (2012)", "Bernhard Walter Scholz 옮김, Carolingian Chronicles: Royal Frankish Annals and Nithard's Histories (1970)", "Janet L. Nelson 옮김, The Annals of St-Bertin (1991)"]
+
+- id: caucasus-kingdoms-813
+  year: 813
+  endYear: 981
+  title:
+    ko: "캅카스의 기독교 왕조들: 아쇼트 쿠로팔라테스(813)에서 바그라트 3세(978~981)까지"
+  summary:
+    ko: "아랍 칼리프국이 다스리던 카르틀리(트빌리시 토후국)에서 바그라티오니 가문의 아쇼트 1세가 813년 무렵 남서쪽 타오·클라르제티로 옮겨 '이베리아 수석공'에 오르고(칼리프의 인정은 818년 무렵) 동로마가 준 '쿠로팔라테스' 칭호를 받아 조지아인의 나라를 이루었다(지도는 813년부터 타오-클라르제티). 888년 아다르나세 4세는 '이베리아인의 왕'을 칭하며 카르틀리를 다스렸다. 서쪽의 아브하지아 왕국은 8세기 말 레온 2세가 동로마에서 자립해 세웠고, 904~908년 무렵 콘스탄티네 3세가 카르틀리를 얻었다(지도는 904년). 동쪽 카헤티-헤레티(코레피스코포스 공국)는 따로 남았다. 아르메니아에서는 바그라투니 가문의 아쇼트 1세가 885년 칼리프와 동로마 황제에게서 왕관을 받았다(지도는 885년부터 아르메니아 왕국들 묶음). 아르츠루니 가문은 908년 바스푸라칸 왕국을 세웠고, 909~914년 아제르바이잔의 사지드 왕조가 침입해 아르메니아를 짓밟았다(지도는 그리지 않는다). 타론 공국의 바그라투니 가문(그레고리와 바그라트 형제)은 966~968년 땅을 동로마에 넘겼다(지도는 966년). 다비트 3세(쿠로팔라테스, 재위 966~1000 또는 1001)는 979년 동로마 황제 바실리오스 2세를 도와 반란자 바르다스 스클레로스를 누르고 그 대가로 땅을 얻었다. 그러나 987~989년 바르다스 포카스의 반란에는 포카스 편에 섰고, 패한 뒤 990년 무렵 자기가 죽으면 영토를 동로마에 넘기기로 약속했다(뒤의 사건에서 약속대로 넘어간다). 978년 바그라트 3세가 외가인 아브하지아의 왕위를 이어 서조지아와 삼츠헤 쪽을 한 왕관 아래 두었다(지도는 981년 버전). 이 흐름이 1008년 조지아 왕국으로 이어진다(뒤의 사건)."
+  subjects: [tao-klarjeti, abkhazia-kingdom, kakheti-hereti, armenian-kingdoms, byzantine-empire]
+  links:
+    - { from: byzantine-empire, to: armenian-kingdoms, note: "타론의 양도(966 무렵)" }
+    - { from: tao-klarjeti, to: byzantine-empire, note: "다비트 3세의 군사 지원(979)" }
+  tags: [politics]
+  sources: ["Ronald Grigor Suny, The Making of the Georgian Nation (2판, 1994)", "Donald Rayfield, Edge of Empires: A History of Georgia (2012)", "Richard G. Hovannisian 엮음, The Armenian People from Ancient to Modern Times, vol. 1 (1997)"]
+
+- id: louis-pious-verdun-814
+  year: 814
+  endYear: 843
+  title:
+    ko: "루트비히 경건왕과 아들들의 내전: 퐁트누아(841)에서 베르됭 조약(843)까지"
+  summary:
+    ko: "루트비히 경건왕(재위 814~840)은 817년 제국 계승령으로 맏아들 로타르를 공동 황제로 세우고 피핀과 독일인 루트비히에게 아키텐과 바이에른을 주었다. 그러나 823년 둘째 부인에게서 샤를(뒤의 대머리왕)이 태어나 몫을 다시 나누려 하자 아들들이 되풀이해 반란했고, 833년 6월 '거짓말의 들판'에서 군대가 황제를 버려 로타르가 아버지를 폐위했다(834년 복위). 변경에서는 822년 프랑크푸르트 회의에 아바르 사절이 온 것이 이 칸국의 마지막 기록이 되었고(지도는 822년에 아바르 칸국을 끝낸다), 824년 론세스바예스에서 프랑크군이 바스크인에게 져 이니고 아리스타가 팜플로나를 이끌게 되었다(지도는 824년부터 나바라 왕국). 같은 해 로타르는 로마에서 황제의 사절이 지켜보는 가운데 교황을 뽑게 하는 로마 헌장을 정했다. 840년 6월 경건왕이 죽자 로타르가 제국 전체를 노렸고, 독일인 루트비히와 샤를이 맞서 841년 6월 25일 퐁트누아에서 로타르와 조카 피핀 2세를 꺾었다(사료가 전하는 사망자 수는 과장으로 본다). 842년 2월 두 동생은 스트라스부르에서 군대 앞에서 맹세를 주고받았다(고대 독일어·고대 프랑스어로 적힌 서약문). 843년 8월 베르됭 조약으로 로타르는 이탈리아와 아헨·로마를 잇는 가운데 땅과 황제 칭호를, 샤를은 스헬더·뫼즈·손·론강의 서쪽을, 루트비히는 라인강 동쪽을 받았다. 지도는 843년에 카롤루스 제국을 서프랑크·중프랑크·동프랑크로 나눈다."
+  subjects: [carolingian-empire, west-francia, middle-francia, east-francia, navarre, papal-states, avar-khaganate]
+  links:
+    - { from: carolingian-empire, to: west-francia, note: "베르됭 조약(843)의 서쪽 땅" }
+    - { from: carolingian-empire, to: middle-francia, note: "베르됭 조약(843)의 가운데 땅" }
+    - { from: carolingian-empire, to: east-francia, note: "베르됭 조약(843)의 동쪽 땅" }
+  tags: [war, politics]
+  sources: ["Janet L. Nelson, Charles the Bald (1992)", "Bernhard Walter Scholz 옮김, Carolingian Chronicles: Royal Frankish Annals and Nithard's Histories (1970)", "Rosamond McKitterick, The Frankish Kingdoms under the Carolingians, 751–987 (1983)"]
+  places: [{ name: 퐁트누아, at: [3.30, 47.65], year: 841 }]
+
+- id: navarre-castile-barcelona-824
+  year: 824
+  endYear: 988
+  title:
+    ko: "팜플로나(나바라)·카스티야·바르셀로나: 이니고 아리스타(824)에서 보렐 2세(988)까지"
+  summary:
+    ko: "824년 론세스바예스에서 프랑크군이 바스크인에게 진 뒤 이니고 아리스타(재위 824 무렵~852)가 팜플로나를 이끌었다(앞의 사건). 그는 코르도바 아미르국의 변경 가문 바누 카시와 혼인으로 얽혔다. 산초 가르세스 1세(재위 905~925)가 새 왕조를 열어 923년 무렵 나헤라 쪽으로 나아갔다(지도는 924년 라리오하를 나바라 땅으로). 924년 압드 알라흐만 3세는 팜플로나를 약탈하고 도시를 허물었다. 카스티야는 레온 왕국의 동쪽 변경으로, 페르난 곤살레스(재위 931 무렵~970)가 백작령을 하나로 묶어 939년 시망카스에서 싸웠고(앞의 사건) 레온 왕과 갈라서고 화해하기를 거듭하며 사실상 자립했다(지도는 931년부터 카스티야 백국). 아들 가르시 페르난데스(970~995)가 이었다. 팜플로나에서는 산초 가르세스 1세의 아들 가르시아 산체스 1세(재위 925~970)와 그 아들 산초 2세 아바르카(재위 970~994)가 이었다. 동쪽 히스파니아 변경에서는 카롤루스 제국이 801년 바르셀로나를 얻어 에스파냐 변경령을 세웠고, 878년 기프레 1세(털보)가 바르셀로나·지로나·우르헬·세르다냐를 모아 백작령을 세습으로 이었다(지도는 888년부터 바르셀로나 백국). 보렐 2세(재위 947~993)는 985년 알만수르의 원정으로 바르셀로나가 약탈당하자(뒤의 사건) 서프랑크 왕에게 도움을 청했으나 얻지 못했고, 987~988년 위그 카페가 원조를 약속한 편지에 답하지 않고 새로 충성을 서약하지도 않았다. 이것이 카탈루냐 백령이 프랑크 왕관에서 떨어져 나간 일로 흔히 꼽힌다. 세 변경 모두 레온과 코르도바 사이에서 균형을 잡으며 독립 왕국·백국으로 자랐다."
+  subjects: [navarre, castile-county, barcelona-county, leon, cordoba-emirate, cordoba-caliphate, west-francia, carolingian-empire]
+  links:
+    - { from: cordoba-emirate, to: navarre, note: "팜플로나 약탈(924)" }
+    - { from: west-francia, to: barcelona-county, note: "보렐 2세의 충성 서약 거부(988)" }
+  tags: [politics]
+  sources: ["Roger Collins, Early Medieval Spain: Unity in Diversity, 400–1000 (2판, 1995)", "Thomas N. Bisson, The Medieval Crown of Aragon: A Short History (1986)", "Hugh Kennedy, Muslim Spain and Portugal: A Political History of al-Andalus (1996)"]
+
+- id: sicily-conquest-827
+  year: 827
+  endYear: 902
+  title:
+    ko: "아랍의 시칠리아 정복과 크레타(827~902), 바리 토후국과 루도비코 2세(847~871)"
+  summary:
+    ko: "아글라브 왕조(이프리키야)의 군대가 827년 6월 동로마 반란자 에우페미오스의 청을 받아 시칠리아 마자라에 상륙했다. 시라쿠사 포위는 실패했으나 831년 팔레르모, 843년 메시나, 859년 엔나, 878년 5월 시라쿠사(아홉 달 포위), 902년 타오르미나가 차례로 떨어졌다(지도는 시칠리아 토후국을 831년 팔레르모, 842년 아그리젠토, 843년 메시나, 859년 엔나, 878년 시라쿠사로 넓힌다). 정복은 약탈과 포로 노예 무역을 낳았고, 시라쿠사 함락을 겪은 수사 테오도시오스의 편지는 주민의 학살과 끌려간 포로를 적는다. 한편 코르도바 아미르국에서 쫓겨난 안달루스 사람들이 824~828년 사이 크레타를 차지해 칸닥스를 중심으로 토후국을 세웠다(지도는 827년부터 크레타 토후국). 남이탈리아에서는 840년 무렵 타란토를 얻은 무슬림이 아드리아해까지 위협해 베네치아 함대도 크게 졌다고 베네치아 연대기는 적으며, 847년 무렵 바리에 토후국이 섰다. 846년 무슬림 습격대가 로마 성벽 밖의 성 베드로 대성당을 약탈하자 교황 레오 4세는 레오 성벽을 쌓았다. 871년 2월 이탈리아 왕국의 황제 루도비코 2세가 바리를 함락했고(동로마 함대도 869년부터 포위에 함께했다) 두 제국은 공을 두고 다투었다(지도는 바리를 876년 동로마 땅으로, 877년 버전). 880년 타란토가 동로마로 돌아왔고, 롬바르드·캄파니아 공국들(베네벤토·살레르노·나폴리 등)은 서로 싸우며 무슬림 용병을 쓰기도 했다. 아글라브 왕조가 909년 파티마 왕조에 무너진 뒤에도 토후국은 이어졌고 965년 로메타를 끝으로 섬 전체가 이슬람 땅이 되었다."
+  subjects: [sicily-emirate, byzantine-empire, crete-emirate, lombard-principalities, italy-carolingian, papal-states, venice, cordoba-emirate]
+  links:
+    - { from: sicily-emirate, to: byzantine-empire, note: "시칠리아 정복(827~902)" }
+    - { from: italy-carolingian, to: lombard-principalities, note: "루도비코 2세의 남이탈리아 원정과 바리(871)" }
+  tags: [war]
+  sources: ["Alex Metcalfe, The Muslims of Medieval Italy (2009)", "Christopher Wickham, Early Medieval Italy: Central Power and Local Society, 400–1000 (1981)", "Warren Treadgold, A History of the Byzantine State and Society (1997)", "게오르크 오스트로고르스키, 『비잔티움 제국사』(한정숙·김경연 옮김, 까치글방)"]
+  places: [{ name: 마자라, at: [12.59, 37.65], year: 827 }, { name: 팔레르모, at: [13.36, 38.12], year: 831 }, { name: 엔나(카스트로조반니), at: [14.28, 37.57], year: 859 }, { name: 바리, at: [16.87, 41.12], year: 871 }, { name: 시라쿠사, at: [15.29, 37.07], year: 878 }, { name: 타오르미나, at: [15.29, 37.85], year: 902 }]
+
+- id: great-moravia-833
+  year: 833
+  endYear: 907
+  title:
+    ko: "대모라비아: 모이미르 1세(833)에서 프레스부르크 전투(907)까지, 키릴로스와 메토디오스(863)"
+  summary:
+    ko: "모이미르 1세는 833년 니트라의 프리비나를 쫓아내고 모라비아와 니트라를 합쳐 서슬라브 부족의 큰 나라 대모라비아의 바탕을 이루었다(지도는 833년). 846년 독일인 루트비히가 그를 몰아내고 조카 라스티슬라프(재위 846~870)를 세웠으나, 라스티슬라프는 동프랑크의 간섭에서 벗어나려 862년 동로마 황제 미카엘 3세에게 슬라브어로 가르칠 사람을 청했다. 863년 테살로니키의 콘스탄티노스(키릴로스)와 메토디오스 형제가 글라골 문자와 슬라브어 전례를 가지고 왔고(콘스탄티노스는 그에 앞서 860~861년 하자르 칸국에 사절로 갔다), 869년 키릴로스가 로마에서 죽은 뒤 메토디오스는 대주교가 되었으나 바이에른 주교들에게 870~873년 갇혔다. 870년 라스티슬라프는 조카 스바토플루크의 배신으로 동프랑크에 사로잡혔다(눈이 멀었다고 전한다). 스바토플루크 1세(재위 870~894)는 874년 포르히하임 화약으로 공물을 바친다는 조건 아래 사실상 독립을 지키고 보헤미아(보르지보이 1세, 지도는 870년부터 보헤미아 공국)·비슬라니에·판노니아까지 넓혔으며(884년 툴른 부근에서 카를 3세 비만왕과 만나 신서했고, 지도는 884년에 판노니아를 대모라비아 땅으로 옮긴다), 885년 메토디오스가 죽고 교황 스테파노 5세가 슬라브어 전례를 금하자 제자들은 쫓겨나 불가리아 제1제국으로 갔다. 894년 스바토플루크가 죽은 뒤 아들들이 다투었고, 아르눌프가 끌어들인 마자르가 침입해 902~906년 대모라비아를 무너뜨렸다. 907년 7월 4~6일 프레스부르크 전투에서 마자르가 바이에른군을 크게 이겼다(싸움터는 브라티슬라바설과 잘라바르설이 갈리고, 지도는 907년). 도읍의 위치와 영역은 고고학과 사료로 논쟁 중이다."
+  subjects: [great-moravia, east-francia, bohemia-duchy, slavic-tribes, byzantine-empire, papal-states, magyars, first-bulgarian-empire, khazar-khaganate]
+  links:
+    - { from: byzantine-empire, to: great-moravia, note: "키릴로스와 메토디오스의 파견(863)" }
+    - { from: magyars, to: great-moravia, note: "마자르의 침입과 프레스부르크 전투(907)" }
+  tags: [politics, culture]
+  sources: ["Francis Dvornik, Byzantine Missions among the Slavs: SS. Constantine-Cyril and Methodius (1970)", "Timothy Reuter 옮김, The Annals of Fulda (1992)", "Florin Curta, Southeastern Europe in the Middle Ages, 500–1250 (2006)", "Paul M. Barford, The Early Slavs: Culture and Society in Early Medieval Eastern Europe (2001)"]
+  places: [{ name: "프레스부르크(브라티슬라바설, 위치는 불확실)", at: [17.11, 48.14], year: 907 }]
+
+- id: magyars-838
+  year: 838
+  endYear: 955
+  title:
+    ko: "마자르의 이주와 습격: 에텔쾨즈(838 무렵)에서 카르파티아 분지의 정착(895)과 레히펠트(955)까지"
+  summary:
+    ko: "마자르는 하자르 칸국에 속한 서쪽 초원 에텔쾨즈(드니프로강에서 프루트강 사이)에서 살았다. 동로마 『게오르기오스 수도사 연대기』의 이어쓴이가 837~838년 무렵 이들을 '우그로이'로 적은 것이 가장 이른 기록으로 꼽히고(지도는 838년부터 마자르 공국), 862년 『생베르탱 연대기』는 동프랑크에 처음 쳐들어온 '운그리'를 전한다. 894~895년 마자르가 동로마의 청으로 불가리아 제1제국을 친 사이 시메온과 손잡은 페체네그가 에텔쾨즈를 차지했고(지도는 895년), 아르파드가 이끄는 일곱 부족은 카바르 세 부족과 함께 베레츠케 고개를 넘어 카르파티아 분지로 들어왔다. 900년에는 판노니아, 902~906년에는 대모라비아를 차지했고 907년 프레스부르크에서 바이에른군을 이겼다(지도는 900·907년). 마자르의 경기병은 899년 브렌타강에서 이탈리아 왕국의 베렌가리오 1세를 꺾은 뒤 이탈리아, 작센, 바이에른, 부르군트, 프로방스까지 나아가 수도원과 도시를 약탈하고 사람을 잡아 팔았다. 동프랑크의 하인리히 1세는 924~926년 무렵 공물을 주고 휴전을 산 뒤 성을 쌓고 기병을 길러 933년 3월 리아데에서 이겼다. 955년 8월 레히펠트에서 오토 1세가 마자르의 대군을 꺾었고(뒤의 사건) 지도자 불추와 슈르 등이 처형되었다고 전한다. 이후 서방 원정은 그쳤고 탁소니(955 무렵~972 무렵)에 이어 게저 대공(972~997)이 정착과 개종을 이끌었다. 같은 시기 동쪽 초원 끝에서는 거란의 야율아보기가 916년 황제에 올라(지도는 916년부터 요) 926년 발해를 멸망시켰다(`balhae-falls-926`)."
+  subjects: [magyars, pecheneg-tribes, khazar-khaganate, first-bulgarian-empire, great-moravia, east-francia, byzantine-empire, italy-carolingian]
+  links:
+    - { from: pecheneg-tribes, to: magyars, note: "에텔쾨즈 점령(895)" }
+    - { from: east-francia, to: magyars, note: "공물과 휴전(924~926 무렵)·리아데(933)" }
+  tags: [war]
+  sources: ["András Róna-Tas, Hungarians and Europe in the Early Middle Ages: An Introduction to Early Hungarian History (1999)", "Pál Engel, The Realm of St Stephen: A History of Medieval Hungary, 895–1526 (2001)", "Constantine Porphyrogenitus, De Administrando Imperio (Gy. Moravcsik·R. J. H. Jenkins 엮음, 1967)", "Timothy Reuter, Germany in the Early Middle Ages, c. 800–1056 (1991)"]
+
+- id: scotland-kenneth-843
+  year: 843
+  endYear: 976
+  title:
+    ko: "스코틀랜드 왕국의 형성: 케네스 1세(843 무렵)에서 로디언(973)까지"
+  summary:
+    ko: "포스강 북쪽에는 픽트인의 왕국(포트리우)이 있었고 서쪽 아가일의 달 리아타는 9세기 초 픽트 왕가의 영향 아래 있었다고 보나 직접 지배했는지는 견해가 갈린다. 839년 픽트가 바이킹에게 크게 져 왕 에오가난이 죽었다. 그 뒤 달 리아타 왕 알핀의 아들로 전하는 케네스 1세(키나에드 막 알핀)가 840~841년 달 리아타 왕이 되고 픽트 왕위도 차지했다(어머니나 아내를 통한 픽트 혈통 주장이 있다)(후대의 왕명록은 843년이라 하며, 지도도 이해에 픽트 왕국을 스코틀랜드 왕국으로 이름만 바꾼다). 870년 더블린의 노르드 왕 올라프와 이바르가 클라이드강의 덤바턴 바위(알트 클루트)를 넉 달 포위해 무너뜨리고 많은 사람을 포로로 끌고 갔으며, 스트래스클라이드 왕국은 중심을 고반으로 옮겼다. 헤브리디스와 맨섬은 872년부터 노르웨이 땅으로 그린다(지도). 10세기에 알바 왕들은 잉글랜드 왕과 얽혔다. 콘스탄틴 2세(재위 900~943)는 927년 이먼트에서 애설스탠에게 신종했고 937년 브루넌버에서 더블린의 올라프 구트프리트손과 손잡았다가 졌다(뒤의 사건). 945년 에드먼드가 컴브리아를 맬컴 1세에게 주면서 스트래스클라이드 왕국의 항목이 끝나고 그 땅은 알바 왕가의 하위 왕국이 되었다. 954~962년 인둘프가 에든버러를 차지했고, 후대 스코틀랜드 전승은 973년 체스터에서 에드거를 만난 케네스 2세가 로디언을 넘겨받았다고 전한다(지도는 976년 버전)."
+  subjects: [picts, scotland, strathclyde, england, norway-medieval]
+  links:
+    - { from: england, to: scotland, note: "컴브리아(945)와 로디언(973)" }
+    - { from: norway-medieval, to: scotland, note: "헤브리디스와 맨섬의 노르드인(872)" }
+  tags: [politics]
+  sources: ["Alex Woolf, From Pictland to Alba, 789–1070 (2007)", "Alfred P. Smyth, Warlords and Holy Men: Scotland AD 80–1000 (1984)", "The Anglo-Saxon Chronicle (Michael Swanton 영역, 1996)"]
+  places: [{ name: 덤바턴 바위(알트 클루트), at: [-4.57, 55.94], year: 870 }]
+
+- id: photios-macedonian-843
+  year: 843
+  endYear: 886
+  title:
+    ko: "성상 파괴의 끝(843)에서 포티오스 분열과 마케도니아 왕조(867), 남이탈리아의 회복(886)까지"
+  summary:
+    ko: "843년 3월 섭정 테오도라가 성상 공경을 되살려 두 차례(726~787, 815~843)에 걸친 성상 파괴 논쟁을 끝냈다(정교회가 '정교의 승리'로 기리는 날이다). 855~856년 미카엘 3세와 삼촌 바르다스가 실권을 잡았고, 858년 총대주교 이그나티오스가 밀려난 자리에 평신도 학자 포티오스가 올랐다. 교황 니콜라우스 1세는 이를 인정하지 않았고 불가리아 제1제국의 교구를 두고 로마와 콘스탄티노폴리스가 다투면서(864년 보리스 1세의 개종) 갈등이 커져, 867년 포티오스는 '필리오케'를 비판하며 교황을 단죄했다. 같은 해 9월 바실리오스(1세)가 미카엘 3세를 죽이고 황제가 되어 마케도니아 왕조(867~1056)를 열었다. 그는 이그나티오스를 복위시켰다가 877년 포티오스를 다시 세웠고 879~880년 공의회에서 서방과 화해했다(이 분열은 1054년 동서 교회 분열과 다른 일이다). 바실리오스 1세가 886년 죽고 아들 레온 6세(재위 886~912)가 이어 포티오스를 다시 물러나게 했다. 860년 6월에는 루스의 배들이 콘스탄티노폴리스를 습격했다고 포티오스가 설교에서 전한다. 남이탈리아에서는 바실리오스가 이탈리아 왕국의 루도비코 2세와 손잡았고 루도비코가 바리를 함락했으나(871) 시칠리아의 시라쿠사를 잃었다(878). 그 뒤 동로마 장군들이 876년 바리, 880년 타란토, 885~886년 칼라브리아와 루카니아를 되찾았다(지도는 877·880·886년 버전). 이 지역의 롬바르드·캄파니아 공국들은 동로마와 시칠리아 토후국 사이에서 움직였다."
+  subjects: [byzantine-empire, papal-states, first-bulgarian-empire, lombard-principalities, sicily-emirate, italy-carolingian]
+  links:
+    - { from: papal-states, to: byzantine-empire, note: "포티오스 분열(867)" }
+    - { from: byzantine-empire, to: lombard-principalities, note: "바리(876)·타란토(880)·칼라브리아(886) 회복" }
+  tags: [politics, culture]
+  sources: ["게오르크 오스트로고르스키, 『비잔티움 제국사』(한정숙·김경연 옮김, 까치글방)", "Francis Dvornik, The Photian Schism: History and Legend (1948)", "Warren Treadgold, A History of the Byzantine State and Society (1997)", "Jonathan Shepard 엮음, The Cambridge History of the Byzantine Empire, c. 500–1492 (2008)"]
+  places: [{ name: 타란토, at: [17.24, 40.47], year: 880 }]
+
+- id: west-francia-principalities-843
+  year: 843
+  endYear: 898
+  title:
+    ko: "서프랑크 대봉토의 형성: 샤를 대머리왕에서 오도까지(843~898)"
+  summary:
+    ko: "843년 서프랑크를 받은 샤를 대머리왕(재위 843~877)은 바이킹과 브르타뉴·아키텐의 반란에 시달렸고, 왕이 지켜 주지 못한 변경에서 지방의 군사 지도자들이 세습 영지를 쌓았다. 플랑드르에서는 보두앵 1세 철완이 861년 말 왕의 딸 주디트를 데리고 달아났다가 863년 10월 왕과 화해하고 12월 혼인했고, 아들 보두앵 2세(재위 879~918)가 아르투아까지 넓혔다. 아키텐에서는 푸아티에 백작 가문이 힘을 키워 라눌프 2세가 888년 아키텐 왕을 칭했고 경건공 기욤(893~918)이 공작이 되었다. 가스코뉴는 864년 무렵 산초 미타라 같은 공작들의 땅으로 전하고, 툴루즈의 레몽 가문은 셉티마니아(고티아)를 아울렀으며, 바르셀로나에서는 878년 기프레 1세(털보)가 바르셀로나와 지로나 백작이 되어 백령을 세습으로 이었다. 앙주는 870년 무렵부터 백작령으로 자라 929년 무렵 붉은 풀크가 백작이 되었다. 샤를 대머리왕이 877년 죽은 뒤 말더듬이 루이 2세(877~879), 그 아들 루이 3세(879~882)와 카를로만 2세(879~884), 동프랑크의 카를 3세 비만왕(884~887)이 차례로 서프랑크를 맡았으나 봉토의 자립을 막지 못했다. 로베르 가문의 강건공 로베르가 866년 바이킹과 싸우다 죽었고 아들 오도가 파리를 지켜(885~886) 888년 초 귀족들이 오도를 서프랑크 왕으로 뽑았다. 지도는 이 888년부터 플랑드르·아키텐·가스코뉴·툴루즈(고티아 포함)·바르셀로나를 서프랑크에서 떼어 따로 그리고 앙주는 930년 버전으로 그린다(브르타뉴는 851년부터). 898년 오도가 죽자 샤를 단순왕이 이었다."
+  subjects: [west-francia, flanders, aquitaine, gascony-duchy, county-of-toulouse, anjou, barcelona-county, brittany-kingdom]
+  links:
+    - { from: west-francia, to: flanders, note: "보두앵 1세와 주디트의 혼인(862~863)" }
+    - { from: west-francia, to: aquitaine, note: "라눌프 2세의 아키텐 왕 칭호(888)" }
+    - { from: west-francia, to: barcelona-county, note: "기프레 1세의 백작령(878)" }
+  tags: [politics]
+  sources: ["Janet L. Nelson, Charles the Bald (1992)", "Jean Dunbabin, France in the Making, 843–1180 (2판, 2000)", "Pierre Riché, The Carolingians: A Family Who Forged Europe (Michael Idomir Allen 옮김, 1993)", "Rosamond McKitterick, The Frankish Kingdoms under the Carolingians, 751–987 (1983)"]
+
+- id: vikings-francia-845
+  year: 845
+  endYear: 933
+  title:
+    ko: "센강의 바이킹: 파리 습격(845)과 포위(885~886)에서 노르망디 공국(911)까지"
+  summary:
+    ko: "데인인과 노르드인은 9세기 초부터 프랑크 해안을 노렸다. 834~837년 도레스타트가 해마다 약탈당했고, 841년 5월 루앙, 843년 6월 낭트가 습격받았다. 845년 3월 지도자(전승은 라그나르라 한다)가 120척으로 센강을 올라 파리를 차지하자 샤를 대머리왕은 은 7,000리브르를 주고 돌려보냈다(『생베르탱 연대기』). 같은 해 덴마크 왕 호리크 1세의 함대가 함부르크를 불태웠다. 바이킹은 수도원과 도시를 약탈하고 사람을 잡아 몸값을 받거나 팔았다. 프랑크 왕들도 중프랑크의 로타르 1세가 바이킹 로리크에게 프리슬란트를 봉토로 주는 식으로 한쪽을 끌어들였고 돈을 주고 돌려보냈다. 881년 사쿠르에서 서프랑크의 루이 3세가, 891년 루뱅에서 동프랑크의 아르눌프가 바이킹 군대를 꺾었다. 885년 11월부터 886년 10월까지 이어진 파리 포위에서는 백작 오도와 주교 고즐랭이 도시를 지켰고(아보는 바이킹이 700척이라 적었으나 과장으로 본다), 황제 카를 3세 비만왕은 886년 10월 바이킹을 치지 않고 센강 위쪽 부르고뉴를 약탈하도록 놓아두었고 이듬해 봄 은 700리브르를 주어 비난받았다. 바이킹은 브르타뉴 왕국도 짓밟았다(919~936). 911년 샤를 단순왕은 생클레르쉬르엡트에서 롤로에게 루앙 일대를 맡기고 세례를 받게 했다(지도는 911년부터 노르망디 공국). 924년 라울이 베생과 이에무아를, 933년 롤로의 아들 기욤 장검공이 코탕탱과 아브랑섕을 받았다(지도는 924·933년)."
+  subjects: [west-francia, east-francia, middle-francia, normandy-duchy, brittany-kingdom, denmark-early]
+  links:
+    - { from: denmark-early, to: west-francia, note: "센강 원정(845·885~886)" }
+    - { from: west-francia, to: normandy-duchy, note: "생클레르쉬르엡트 조약(911)" }
+  tags: [war, politics]
+  sources: ["Janet L. Nelson 옮김, The Annals of St-Bertin (1991)", "Janet L. Nelson, Charles the Bald (1992)", "Abbo of Saint-Germain-des-Prés, Viking Attacks on Paris: The Bella parisiacae urbis of Abbo of Saint-Germain-des-Prés (Nirmal Dass 옮김, 2007)", "Dudo of Saint-Quentin, History of the Normans (Eric Christiansen 옮김, 1998)", "David Bates, Normandy before 1066 (1982)"]
+  places: [{ name: 파리(첫 점령), at: [2.35, 48.86], year: 845 }, { name: 파리 포위, at: [2.35, 48.86], year: [885, 886] }]
+
+- id: brittany-nominoe-845
+  year: 845
+  endYear: 939
+  title:
+    ko: "브르타뉴 왕국: 노미노에의 발롱 전투(845)에서 알랭 2세의 공국(939)까지"
+  summary:
+    ko: "브르타뉴는 799년 프랑크에 복속했으나, 831년 루트비히 경건왕이 앉힌 노미노에가 845년 11월 발롱에서 샤를 대머리왕을 꺾고 자립을 굳혔다. 851년 노미노에의 아들 에리스포에가 제앙글랑 전투(8월)에서 샤를을 꺾은 뒤 앙제 조약으로 왕관과 렌·낭트·레츠를 받았다(지도는 851년부터 브르타뉴 왕국). 857년 사촌 살로몽이 에리스포에를 죽이고 왕이 되어 863년 앙트람 조약으로 앙주 서부를, 867년 콩피에뉴 조약으로 코탕탱과 아브랑섕을 얻었다(지도는 867년). 874년 살로몽이 살해된 뒤 내분이 이어졌고 알랭 대왕(888~907)이 다시 묶었다. 907년 알랭이 죽은 뒤 바이킹이 919년 낭트를 차지하고 브르타뉴를 짓밟아 사제들은 성인의 유해를 안고 피난했다(지도는 바이킹이 점령한 919~936년도 브르타뉴 땅으로 그린다). 933년 코탕탱과 아브랑섕은 노르망디로 넘어갔다. 잉글랜드에서 애설스탠의 궁정에 머물던 알랭 2세(바르브토르트)는 936년 돌아와 바이킹과 싸워 938년 공(dux)으로 뽑혔고 939년 8월 트랑스라포레에서 노르드인을 꺾었다(지도는 939년부터 브르타뉴 공국). 이 시기 브르타뉴와 맞닿은 앙주는 870년 무렵부터 백작령으로 자랐고, 서프랑크 왕의 힘은 브르타뉴에 거의 미치지 못했다."
+  subjects: [brittany-kingdom, brittany, west-francia, normandy-duchy, anjou, england]
+  links:
+    - { from: west-francia, to: brittany-kingdom, note: "앙제 조약(851)·앙트람 조약(863)·콩피에뉴 조약(867)" }
+    - { from: england, to: brittany, note: "알랭 2세의 망명과 귀환(936)" }
+  tags: [war, politics]
+  sources: ["Janet L. Nelson, Charles the Bald (1992)", "Julia M. H. Smith, Province and Empire: Brittany and the Carolingians (1992)", "Flodoard, The Annals of Flodoard of Reims, 919–966 (Steven Fanning·Bernard S. Bachrach 옮김, 2004)", "Wendy Davies, Small Worlds: The Village Community in Early Medieval Brittany (1988)"]
+  places: [{ name: "발롱(레동 부근, 위치는 불확실)", at: [-2.07, 47.70], year: 845 }, { name: 트랑스라포레, at: [-1.60, 48.50], year: 939 }]
+
+- id: middle-francia-meerssen-855
+  year: 855
+  endYear: 888
+  title:
+    ko: "중프랑크의 분할: 프륌 조약(855)에서 메르센(870)·리베몽(880) 조약과 카를 3세 비만왕의 재통일·폐위(884~888)까지"
+  summary:
+    ko: "855년 9월 로타르 1세가 프륌 수도원에서 죽으며 중프랑크를 세 아들에게 나눴다. 루도비코 2세는 이탈리아와 황제 칭호를, 로타르 2세는 북해에서 알자스까지의 로타링기아를, 막내 샤를은 프로방스와 리옹·비엔을 받았다(지도는 855년에 이탈리아 왕국·프로방스 왕국을 세운다). 859년 로타르 2세가 제네바·로잔·시옹의 트란스유라를 루도비코 2세에게 넘겼고(지도는 859년), 863년 샤를이 죽어 프로방스는 루도비코 2세에게, 리옹·비엔은 로타르 2세에게 갔다(지도는 863년). 로타르 2세는 아내 테우트베르가와 이혼하려다 교황과 맞섰고 869년 후계자 없이 죽었다. 샤를 대머리왕이 로타링기아 왕으로 대관했으나 독일인 루트비히와 맞서 870년 8월 메르센 조약으로 리옹·비엔·브장송·툴·베르됭 등 서쪽을, 루트비히가 아헨·쾰른·트리어·위트레흐트·알자스 등 동쪽을 나눠 가졌다(지도는 870년). 875년 성탄절 샤를이 황제관을 받았고 877년 죽었다. 그 앞 876년 독일인 루트비히가 죽자 동프랑크는 아들 카를로만(바이에른)·루트비히 젊은왕(작센·프랑켄)·카를(슈바벤, 뒤의 카를 3세)이 셋으로 나눠 가졌다. 879년 만텔 회의에서 보소가 프로방스 왕으로 뽑혔고(지도는 879년), 880년 리베몽 조약으로 서프랑크의 루이 3세와 카를로만 2세가 로타링기아 서쪽마저 동프랑크의 루트비히 젊은왕에게 넘겼다(지도는 880년). 884년 12월 카를로만 2세가 사냥 사고로 죽자 서프랑크 귀족들은 카를 3세 비만왕(뚱보 샤를)을 불러 885년 왕으로 받아들였고, 보소의 프로방스를 뺀 옛 카롤루스 제국을 한 사람이 다스렸다(881년 황제 대관). 그러나 비만왕은 파리 포위(앞의 사건)에서 바이킹과 돈으로 화해해 신망을 잃고 887년 11월 트리부르에서 폐위되어 888년 1월 죽었다. 888년 서프랑크(오도)·동프랑크(아르눌프)·이탈리아(베렌가리오 1세)·상부르군트(루돌프 1세)가 각자 왕을 세웠고 제국은 다시 합쳐지지 않았다(지도는 888년 트란스유라와 브장송을 상부르군트에 넣는다)."
+  subjects: [middle-francia, west-francia, east-francia, italy-carolingian, provence-kingdom, burgundy-kingdom]
+  links:
+    - { from: west-francia, to: middle-francia, note: "메르센 조약(870)의 서쪽 로타링기아" }
+    - { from: east-francia, to: middle-francia, note: "메르센 조약(870)의 동쪽 로타링기아" }
+  tags: [politics, diplomacy]
+  sources: ["Simon MacLean, Kingship and Politics in the Late Ninth Century: Charles the Fat and the End of the Carolingian Empire (2003)", "Timothy Reuter 옮김, The Annals of Fulda (1992)", "Janet L. Nelson, Charles the Bald (1992)", "Rosamond McKitterick, The Frankish Kingdoms under the Carolingians, 751–987 (1983)"]
+
+- id: rus-formation-862
+  year: 862
+  endYear: 964
+  title:
+    ko: "루스의 형성: 류리크와 올레그(862~882), 이고리와 올가(912~957)"
+  summary:
+    ko: "『원초 연대기』(12세기 초 편찬)는 862년 일멘 슬로베네·크리비치·추드·메랴가 바랴그인 류리크를 불러 노브고로드(라도가)에 세웠고 그 형제와 부하들이 벨로오제로·이즈보르스크·폴로츠크·로스토프·무롬을 맡았다고 전한다(설화적이며 연도는 연대기가 맞춘 것이다. 지도는 862년부터 이 땅을 루스로 그리고, 메랴·베스 같은 핀우그르 부족의 땅도 862년에 루스로 옮긴다). 882년 올레그가 키예프를 차지하고 아스콜드와 디르를 죽여 키예프 루스가 되었으며(지도는 882년), 883년 드레블랴네, 884년 세베랴네, 885년 라디미치가 공납을 바치게 되었다(지도는 해마다 넓힌다). 남쪽 동슬라브 부족은 하자르 칸국에 공물을 바치던 터였다. 907년 올레그의 콘스탄티노폴리스 원정(동로마 사료에는 없다)과 911년 조약으로 루스 상인이 무역 특권을 얻었다고 한다(지도는 907년 드레고비치, 940년 울리치·티베르치). 941년 이고리의 함대가 콘스탄티노폴리스를 쳤으나 동로마의 '그리스의 불'에 졌고(사료의 배 수는 1천 척에서 1만 척으로 과장), 이고리는 페체네그를 끌어들여 944년 조약을 맺었다. 945년 이고리는 드레블랴네에 공물을 거듭 거두러 갔다가 살해되었다(레오 부제는 휘어진 두 나무에 묶어 찢었다고 적는다). 아내 올가는 어린 스뱌토슬라프를 대신해 복수에 나서 사절을 죽이고 도시 이스코로스텐을 불태웠다고 전한다(설화적이다). 이어 공물을 정하고 걷는 곳(포고스트)을 두었다. 올가는 957년 무렵 콘스탄티노폴리스에서 세례를 받았고, 959년 오토 1세(962년부터 신성 로마 황제)에게 선교사를 청했으나 960년대 초 온 주교 아달베르트는 성과 없이 돌아갔다."
+  subjects: [rurikid-rus, kievan-rus, east-slavic-tribes, finnic-tribes, khazar-khaganate, byzantine-empire, pecheneg-tribes, holy-roman-empire]
+  links:
+    - { from: kievan-rus, to: byzantine-empire, note: "907·911·941·944년의 원정과 조약" }
+    - { from: khazar-khaganate, to: east-slavic-tribes, note: "폴랴네·세베랴네·라디미치·뱌티치의 공납" }
+  tags: [politics, war]
+  sources: ["Samuel Hazzard Cross·Olgerd P. Sherbowitz-Wetzor 옮김, The Russian Primary Chronicle: Laurentian Text (1953)", "Simon Franklin·Jonathan Shepard, The Emergence of Rus, 750–1200 (1996)", "니콜라스 V. 랴자놉스키·마크 D. 스타인버그, 『러시아의 역사』 상(조호연 옮김, 까치, 2011)", "세르히 플로히, 『유럽의 문 우크라이나: 독립과 생존을 위한 투쟁의 역사』(허승철 옮김, 한길사, 2022)"]
+  places: [{ name: 콘스탄티노폴리스, at: [28.98, 41.01], year: 941 }, { name: 이스코로스텐(코로스텐), at: [28.64, 50.95], year: [945, 946] }]
+
+- id: bulgaria-boris-simeon-864
+  year: 864
+  endYear: 933
+  title:
+    ko: "보리스 1세의 개종(864)에서 시메온 1세의 불가리아(893~927)까지"
+  summary:
+    ko: "불가리아 제1제국의 칸 보리스 1세(재위 852~889)는 864년 무렵 동로마 황제 미카엘 3세를 대부로 세례를 받았다(동로마군의 침공과 기근이 압박이었다고 전한다). 그는 866년 교황 니콜라우스 1세에게 질문서를 보냈으나, 870년 콘스탄티노폴리스 공의회가 불가리아 교회를 콘스탄티노폴리스에 속하게 했다. 대모라비아에서 쫓겨난 메토디오스의 제자들이 885~886년 불가리아로 오자 보리스는 이들을 받아들여 플리스카와 오흐리드에서 슬라브어 문헌을 만들게 했다. 889년 물러났다가 893년 돌아와 아들 블라디미르를 눈멀게 하고 시메온을 세웠으며, 프레슬라프 회의는 슬라브어를 교회어로 정했다. 시메온 1세(재위 893~927)는 894년 교역 문제로 레온 6세(재위 886~912)의 동로마와 싸웠고, 동로마가 끌어들인 마자르를 페체네그와 손잡고 몰아냈다(마자르가 불가리아를 친 사이 페체네그가 에텔쾨즈를 차지해 지도는 895년 다뉴브강 북쪽을 페체네그 땅으로 옮긴다). 896년 8월 불가로피곤에서 동로마군을 크게 이겼다. 904년 아랍 함대가 테살로니키를 약탈한 해 동로마는 화약으로 중앙 마케도니아를 넘겼고(지도는 904년 나라쉬 경계), 913년 콘스탄티노폴리스 앞에서 황제와 같은 예우를 받았으며, 917년 8월 아켈로오스에서 동로마군을 무너뜨린 뒤 '불가르인과 로마인의 차르'를 칭했다. 924년 세르비아를 정복했으나(지도는 924년) 926년 무렵 크로아티아의 토미슬라브에게 군대를 잃었다고 전한다. 927년 시메온이 죽자 아들 페타르 1세가 동로마와 화해해 차르 칭호와 총대주교구를 인정받았고(황제의 손녀 마리아 레카페네와 혼인), 927~933년 사이(연구마다 갈리고 시메온이 죽은 927년 뒤로 보는 설이 최근 힘을 얻는다) 차슬라프가 동로마의 도움으로 세르비아를 되살려 지도는 933년에 라스를 남슬라브 공국들로 돌린다."
+  subjects: [first-bulgarian-empire, byzantine-empire, papal-states, south-slavic-principalities, croatia-kingdom, magyars, pecheneg-tribes, great-moravia]
+  links:
+    - { from: first-bulgarian-empire, to: byzantine-empire, note: "불가로피곤(896)과 아켈로오스(917)" }
+    - { from: first-bulgarian-empire, to: south-slavic-principalities, note: "시메온의 세르비아 정복(924)" }
+  tags: [politics, war]
+  sources: ["John V. A. Fine Jr., The Early Medieval Balkans: A Critical Survey from the Sixth to the Late Twelfth Century (1983)", "Dimitri Obolensky, The Byzantine Commonwealth: Eastern Europe, 500–1453 (1971)", "Florin Curta, Southeastern Europe in the Middle Ages, 500–1250 (2006)", "게오르크 오스트로고르스키, 『비잔티움 제국사』(한정숙·김경연 옮김, 까치글방)"]
+  places: [{ name: 불가로피곤(바바에스키), at: [27.09, 41.43], year: 896 }, { name: 아켈로오스강(안키알로스 부근), at: [27.62, 42.60], year: 917 }]
+
+- id: volga-route-870
+  year: 870
+  endYear: 922
+  title:
+    ko: "볼가 교역로와 루스 상인: 이븐 후르다드베의 『도로와 왕국 총람』에서 이븐 파들란(922)까지"
+  summary:
+    ko: "9세기 중엽 이후 스칸디나비아에서 라도가와 볼가강을 따라 이어진 교역로로 루스(바랴그, 882년 뒤에는 키예프 루스) 상인이 모피와 노예를 싣고 하자르 칸국의 이틸과 카스피해를 거쳐 바그다드까지 갔다. 바그다드의 관리 이븐 후르다드베의 『도로와 왕국 총람』(초판은 846년에서 870년 무렵 사이로 연대가 갈리고 885년 무렵 고쳐 씀)은 '슬라브의 한 갈래'인 루스 상인이 비버 가죽과 검은 여우 가죽을 가지고 동로마 제국 황제에게 십일세를 내고 팔거나, 하자르 통치자에게 십일세를 내고 이틸을 지나 카스피해로 간다고 적었다. 같은 책은 중국 동쪽 끝에 알실라(신라)가 있다고 적어, 금이 많고 공기가 좋아 이곳에 간 무슬림이 눌러산다고 했다. 9세기 중엽 신라에서는 장보고의 청해진(`cheonghaejin-828`)이 당·일본과의 바닷길 무역을 이끌다 846년 그가 피살되었다(`jang-bogo-846`). 스웨덴 고틀란드와 러시아·발트 일대의 보물 더미에서 나온 많은 아랍 은화(디르함)가 이 교역의 규모를 보여 준다. 921년 칼리프 알무크타디르의 사절 이븐 파들란은 볼가강 중류의 불가르인에게 가서 922년 5월 알무시 왕을 만났다. 알무시는 하자르에 공물을 바치다 칼리프의 보호를 청해 이슬람을 받아들였고(볼가 불가리아, 지도는 922년), 이븐 파들란은 볼가강에서 본 루스 상인의 모습과, 족장의 배 장례에서 노예 소녀를 죽이는 의식을 자세히 적었다. 루스 상인은 모피·꿀·밀랍과 함께 동슬라브 부족과 핀우그르 부족 사람을 잡아 노예로 팔았다."
+  subjects: [rurikid-rus, kievan-rus, khazar-khaganate, volga-bulgaria, east-slavic-tribes, finnic-tribes, byzantine-empire, silla]
+  links:
+    - { from: kievan-rus, to: khazar-khaganate, note: "이틸의 십일세와 카스피해 교역" }
+    - { from: volga-bulgaria, to: khazar-khaganate, note: "공납과 칼리프의 보호 요청(922)" }
+  tags: [economy, society]
+  sources: ["Paul Lunde·Caroline Stone 옮김, Ibn Fadlan and the Land of Darkness: Arab Travellers in the Far North (2012)", "Simon Franklin·Jonathan Shepard, The Emergence of Rus, 750–1200 (1996)", "Thomas S. Noonan, Why Dirhams First Reached Russia: The Role of Arab-Khazar Relations in the Development of the Earliest Islamic Trade with Eastern Europe (Archivum Eurasiae Medii Aevi 4, 1984)", "Ibn Khurdadhbih, Kitab al-Masalik wa'l-Mamalik (M. J. de Goeje 엮음, 1889)"]
+
+- id: bohemia-premyslids-870
+  year: 870
+  endYear: 995
+  title:
+    ko: "보헤미아 공국: 보르지보이 1세(870 무렵)에서 슬라브니크 가문의 몰락(995)까지"
+  summary:
+    ko: "프르제미슬 가문의 보르지보이 1세는 870년 무렵 보헤미아를 다스리기 시작해 875~880년 무렵 프라하 성으로 근거를 옮겼고(지도는 870년부터 서슬라브 부족의 땅에서 보헤미아 공국을 떼어 그린다), 죽을 때까지(888~890년 무렵) 대모라비아의 스바토플루크의 신하였다(890년 아르눌프도 보헤미아를 스바토플루크 몫으로 인정했다). 아들 슈피티흐녜프 1세(재위 894~915)가 895년 레겐스부르크에서 동프랑크의 아르눌프에게 신서했고, 동생 브라티슬라프 1세(재위 915~921)가 이었다. 그 아들 바츨라프(재위 921~935 무렵)는 929년 무렵 하인리히 1세에게 공물을 약속했고, 동생 볼레슬라프 1세(재위 935~972)에게 살해되었다(바츨라프는 곧 성인으로 기려져 체코의 수호성인이 되었다). 볼레슬라프 1세는 오토 1세와 싸우다 950년 복종했고 955년 레히펠트에서 마자르를 상대로 오토 편에 섰으며, 그 뒤 모라비아·슐레지엔·크라쿠프를 얻은 것으로 지도에 그렸다(근거가 갈림, 지도는 955년). 이브라힘 이븐 야쿠브는 965년 무렵 프라하를 노예·주석·모피의 큰 시장으로 적었다. 973년 프라하에 주교구가 서 신성 로마 제국의 마인츠 대주교구에 속했다. 볼레슬라프 2세(재위 972~999)는 976년 바이에른의 하인리히 2세를 편들었고, 990년 폴란드의 미에슈코 1세와 슐레지엔을 두고 다투다 슐레지엔 서부를 폴란드에 넘겼다(985년 무렵부터라는 설도 있고, 지도는 990년). 995년 9월 프르제미슬 가문은 경쟁 가문인 슬라브니크 가문의 근거지 리비체를 습격해 프라하 주교 아달베르트의 형제들을 죽였다. 아달베르트는 997년 프로이센에서 순교했다. 999년 볼레스와프 1세 용감공이 크라쿠프와 모라비아를 차지했다(지도는 999년, 뒤의 사건)."
+  subjects: [bohemia-duchy, great-moravia, east-francia, holy-roman-empire, magyars, piast-poland, slavic-tribes]
+  links:
+    - { from: east-francia, to: bohemia-duchy, note: "하인리히 1세에 신종(929 무렵)과 오토 1세의 복종 요구(950)" }
+    - { from: piast-poland, to: bohemia-duchy, note: "슐레지엔을 둘러싼 다툼(990)" }
+  tags: [politics]
+  sources: ["Nora Berend·Przemysław Urbańczyk·Przemysław Wiszewski, Central Europe in the High Middle Ages: Bohemia, Hungary and Poland, c. 900–c. 1300 (2013)", "Lisa Wolverton 옮김, Cosmas of Prague: The Chronicle of the Czechs (2009)", "Timothy Reuter, Germany in the Early Middle Ages, c. 800–1056 (1991)"]
+
+- id: norway-atlantic-872
+  year: 872
+  endYear: 985
+  title:
+    ko: "하프르스피오르(872 무렵)에서 그린란드(985 무렵)까지: 노르웨이 왕국과 북대서양의 정착"
+  summary:
+    ko: "『헤임스크링글라』는 하랄 미발왕이 하프르스피오르 해전에서 서노르웨이의 작은 왕들을 꺾고 노르웨이를 하나로 묶었다고 전한다(연대는 학자마다 870년대에서 900년 무렵까지 갈리며, 지도는 872년부터 노르웨이 왕국을 그린다). 이에 반발한 족장 가운데 일부가 아이슬란드, 오크니, 헤브리디스, 맨섬, 아일랜드로 옮겨 갔다고 한다. 『정착의 책』은 잉골푸르 아르나르손이 874년 무렵 레이캬비크에 자리 잡았다고 전하고, 정착은 930년 무렵까지 이어졌다(이주민 가운데에는 아일랜드와 스코틀랜드 출신의 여자와 노예도 많았다고 본다). 지도는 헤브리디스와 맨섬을 872년부터 노르웨이 땅으로 그리며, 이곳과 더블린의 노르드 사람들이 아일랜드 왕국들의 해안 도시를 이루었다. 930년 족장(고디)들이 싱그베틀리르에 모여 알팅을 열고 왕 없이 법으로 다스리는 아이슬란드 자유국이 시작되었다. 노르웨이에서는 하랄의 아들 에이리크 피도끼왕이 934년 이복동생 호콘 선량왕(잉글랜드 애설스탠의 궁정에서 자랐다)에게 쫓겨나 먼저 오크니로 갔다가 잉글랜드로 가 요크의 왕(데인로)이 되었다가 954년 쫓겨났다. 호콘이 961년 피트야르 전투의 상처로 죽은 뒤 에이리크의 아들들이 이었고, 970년 무렵 덴마크 왕국의 하랄 푸른이빨이 라데의 호콘 시구르손을 서·북 노르웨이의 백작으로 세웠다(지도는 970~974년 덴마크의 종주 관계로 적는다). 아이슬란드에서 살인죄로 쫓겨난 붉은 에이리크는 982년 무렵 서쪽 땅을 탐험했고 985년 무렵 그린란드에 정착지를 세웠다(그린란드는 지도에 없다)."
+  subjects: [norway-medieval, iceland-commonwealth, scotland, irish-kingdoms, denmark-medieval, england, danelaw]
+  links:
+    - { from: norway-medieval, to: iceland-commonwealth, note: "아이슬란드 정착(874 무렵~930)" }
+    - { from: denmark-medieval, to: norway-medieval, note: "호콘 백작의 종주 관계(970~974)" }
+  tags: [society, politics]
+  sources: ["Lee M. Hollander 옮김, Snorri Sturluson, Heimskringla: History of the Kings of Norway (1964)", "Hermann Pálsson·Paul Edwards 옮김, The Book of Settlements: Landnámabók (1972)", "Jesse L. Byock, Viking Age Iceland (2001)", "Birgit Sawyer·Peter Sawyer, Medieval Scandinavia: From Conversion to Reformation, circa 800–1500 (1993)"]
+  places: [{ name: 하프르스피오르(스타방에르 부근), at: [5.67, 58.93], year: 872 }]
+
+- id: caliphate-almanzor-880
+  year: 880
+  endYear: 1000
+  title:
+    ko: "압드 알라흐만 3세의 칼리프 선언(929)과 알만수르(알만소르)의 원정(981~997)"
+  summary:
+    ko: "코르도바 아미르국은 880년 무렵부터 보바스트로의 이븐 하프순을 비롯한 무왈라드와 호족의 반란에 시달렸다. 이븐 하프순은 899년 무렵 그리스도교로 개종했다고 하며 917년 죽었다. 912년 즉위한 압드 알라흐만 3세는 928년 이븐 하프순의 아들 하프스의 항복으로 보바스트로를 얻어 반란을 끝내고 929년 1월 16일 '신자들의 지도자', 곧 칼리프를 칭했다(지도는 929년에 후우마이야 칼리프국으로 이름만 바꾼다). 이프리키야의 파티마 왕조와 바그다드의 아바스 왕조에 맞선 선언이었다. 코르도바는 서유럽에서 가장 큰 도시 가운데 하나로 자랐고 936년부터 교외에 궁성 메디나 아자하라를 지었다. 939년 시망카스에서 졌으나(앞의 사건) 북쪽 왕국들에게서 공납을 받았다. 하캄 2세(재위 961~976) 때 학문이 꽃피었고, 아들 히샴 2세(재위 976~1009)가 어려 시종 무함마드 이븐 아비 아미르, 곧 알만수르(알만소르)가 981년부터 실권을 쥐었다. 알만수르는 50여 차례 원정을 했다고 전한다. 985년 바르셀로나를 약탈해 주민을 죽이거나 포로로 끌고 갔고, 987년 코임브라를 차지했으며(지도는 987년에 코임브라 일대를 레온 왕국에서 칼리프국으로 옮긴다), 988년 레온을 약탈하고 997년 산티아고 데 콤포스텔라 대성당을 파괴했다. 이때 포로가 된 그리스도교인이 성당의 종을 코르도바까지 날랐다고 전한다. 베르베르와 슬라브(사카리바) 병사를 중심으로 한 군대는 북쪽의 레온 왕국·나바라 왕국·카스티야 백국·바르셀로나 백국을 눌렀으나, 그가 1002년 죽자 곧 내란이 시작되었다(뒤의 사건)."
+  subjects: [cordoba-emirate, cordoba-caliphate, leon, navarre, castile-county, barcelona-county]
+  links:
+    - { from: cordoba-caliphate, to: barcelona-county, note: "바르셀로나 약탈(985)" }
+    - { from: cordoba-caliphate, to: leon, note: "코임브라(987)와 레온(988)" }
+  tags: [politics, war]
+  sources: ["Hugh Kennedy, Muslim Spain and Portugal: A Political History of al-Andalus (1996)", "Maribel Fierro, Abd al-Rahman III: The First Cordoban Caliph (2005)", "Roger Collins, Early Medieval Spain: Unity in Diversity, 400–1000 (2판, 1995)"]
+  places: [{ name: 보바스트로, at: [-4.78, 36.90], year: 928 }, { name: 바르셀로나, at: [2.17, 41.39], year: 985 }, { name: 코임브라, at: [-8.42, 40.21], year: 987 }, { name: 산티아고 데 콤포스텔라, at: [-8.54, 42.88], year: 997 }]
+
+- id: west-francia-capetian-888
+  year: 888
+  endYear: 987
+  title:
+    ko: "서프랑크의 오도에서 위그 카페까지: 카롤링거와 로베르 가문의 왕위 다툼(888~987)"
+  summary:
+    ko: "888년 서프랑크 귀족들은 파리 백작 오도를 왕으로 뽑았고, 893년 반대파가 카롤링거의 샤를 단순왕(재위 898~922)을 세웠다. 922년 오도의 동생 로베르 1세가 왕이 되었다가 923년 6월 수아송 전투에서 죽었고(샤를은 사로잡혀 929년 갇힌 채 죽었다), 사위인 부르고뉴 공 라울(재위 923~936)이 이었다. 936년 잉글랜드로 망명했던 샤를의 아들 루이 4세가 위그 대공(로베르 1세의 아들)에게 불려 와 즉위했다(재위 936~954). 왕이 직접 다스린 곳은 카롤링거 왕의 랑과 로베르 가문의 파리·오를레앙 둘레 같은 작은 땅뿐이었고 플랑드르·아키텐·가스코뉴·툴루즈 같은 큰 봉토는 거의 독립해 있었다. 911년 노르망디 공국이 서고(지도는 911·924·933년), 929년 무렵 앙주 백국이 자랐으며(지도는 930년), 933년 상부르군트의 루돌프 2세가 위그(아를)에게서 프로방스를 받아 프로방스 왕국과 합쳐 부르군트 왕국(아를 왕국)을 이루었다(지도는 933년). 925년 로타링기아는 동프랑크로 넘어갔고 959년 상·하로렌으로 나뉘어 로렌 공국이 생겼다(뒤의 사건). 954년 즉위한 로테르(재위 954~986)는 오토 1세의 조카였으나 로렌을 두고 오토 가문과 다투었다(978년 아헨 습격은 뒤의 사건). 987년 5월 그의 아들 루이 5세가 사냥 사고로 죽자 랭스 대주교 아달베롱이 위그 대공의 아들 위그 카페를 추천했고, 7월 위그가 누아용에서 왕이 되었다. 카롤링거 계통의 숙부 로렌 공 샤를은 맞섰으나 991년 잡혔다. 위그는 987년 12월 아들 로베르를 공동 왕으로 세워 세습을 굳혔다(지도는 987년에 서프랑크 왕국을 프랑스 왕국으로 이름만 바꾼다)."
+  subjects: [west-francia, france, normandy-duchy, flanders, anjou, aquitaine, county-of-toulouse, gascony-duchy, burgundy-kingdom, provence-kingdom, lorraine, east-francia]
+  links:
+    - { from: east-francia, to: west-francia, note: "로타링기아 다툼(911·925)과 혼인 동맹" }
+  tags: [politics]
+  sources: ["Jim Bradbury, The Capetians: Kings of France, 987–1328 (2007)", "Jean Dunbabin, France in the Making, 843–1180 (2판, 2000)", "Steven Fanning·Bernard S. Bachrach 옮김, The Annals of Flodoard of Reims, 919–966 (2004)", "Justin Lake 옮김, Richer of Saint-Rémi: Histories (2011)"]
+  places: [{ name: 수아송, at: [3.33, 49.38], year: 923 }]
+
+- id: england-unification-899
+  year: 899
+  endYear: 954
+  title:
+    ko: "웨식스의 잉글랜드 통일: 에드워드와 애설플레드(910~918), 애설스탠의 브루넌버(937), 요크 왕국의 끝(954)"
+  summary:
+    ko: "앨프레드의 아들 에드워드 장형왕(재위 899~924)은 누이인 머시아의 애설플레드와 함께 데인로를 되찾았다. 910년 8월 테튼홀에서 노섬브리아의 데인군을 크게 이겼고, 917년 템스퍼드와 콜체스터를 차지해 동앵글리아의 데인군을 복속시켰다(지도는 917년에 동앵글리아와 에식스를 웨식스 땅으로). 애설플레드는 917년 더비를 얻고 918년 레스터의 항복을 받은 뒤 6월 죽었으며, 에드워드는 918년 스탬퍼드와 노팅엄을 얻고 남부 데인로(베드퍼드·노샘프턴)를 거두어 머시아까지 아울렀다(다섯 버러 가운데 링컨은 기록이 불분명하며, 지도는 918년에 다섯 버러(레스터·노팅엄·더비·링컨·스탬퍼드)와 남부 데인로를 웨식스 땅으로 그린다). 애설스탠(재위 924~939)은 927년 요크를 얻고 7월 이먼트에서 스코틀랜드 왕 콘스탄틴 2세, 웨일스 공국들의 하이웰, 밤버러의 이얼드레드의 신종을 받았다(지도는 927년에 웨식스를 잉글랜드 왕국으로 이름만 바꾸고 앵글로색슨 왕국들 항목이 끝난다). 937년 브루넌버에서 애설스탠은 더블린의 올라프 구트프리트손(아일랜드 왕국들의 노르드 도시 왕)과 스코틀랜드·스트래스클라이드 왕의 동맹군을 꺾었다(『앵글로색슨 연대기』는 다섯 왕과 일곱 백작이 전사했다고 노래하나 사망자 수는 과장일 수 있다). 939년 애설스탠이 죽자 올라프가 요크를 되찾았고(지도는 939년), 940년 다섯 버러도 얻었으나 941년 죽었다(지도는 940년). 애설스탠의 이복동생 에드먼드(재위 939~946)가 942년 다섯 버러를, 944년 요크를 되찾았다. 947년 노르웨이의 에이리크 피도끼왕이 요크에 올랐다가 948년 에드먼드의 동생 에드레드(재위 946~955)에게 쫓겨났고, 949년 올라프 시흐트릭손이 돌아왔다가 952년 다시 에이리크에게 밀렸다. 954년 에이리크가 쫓겨나 죽으면서 요크 왕국이 끝나고 노섬브리아는 잉글랜드 왕의 땅이 되었다(지도는 954년에 데인로 항목이 끝난다)."
+  subjects: [wessex, anglo-saxon-kingdoms, danelaw, england, scotland, strathclyde, welsh-principalities, irish-kingdoms, norway-medieval]
+  links:
+    - { from: wessex, to: danelaw, note: "에드워드와 애설플레드의 재정복(910~918)" }
+    - { from: england, to: danelaw, note: "요크 왕국의 끝(954)" }
+  tags: [war, politics]
+  sources: ["The Anglo-Saxon Chronicle (Michael Swanton 영역, 1996)", "Sarah Foot, Æthelstan: The First King of England (2011)", "Alfred P. Smyth, Scandinavian York and Dublin: The History and Archaeology of Two Related Viking Kingdoms, 2 vols. (1975~1979)"]
+  places: [{ name: 테튼홀, at: [-2.17, 52.60], year: 910 }, { name: "브루넌버(위치는 불확실, 브롬버러 설)", at: [-2.99, 53.32], year: 937 }]
+
+- id: cluny-910
+  year: 910
+  endYear: 994
+  title:
+    ko: "클뤼니 수도원(910)과 수도원 개혁: 베르노에서 마이욜까지"
+  summary:
+    ko: "910년 9월 아키텐 공작이자 오베르뉴 백작인 경건공 기욤은 서프랑크 왕국 안 부르고뉴의 클뤼니에 자기 땅을 내놓아 수도원을 세웠다. 설립 증서는 수도원을 베네딕토 규칙에 따라 운영하게 하고, 세속 영주나 지방 주교가 아니라 사도 베드로와 바울, 곧 교황에게만 속하게 했으며, 수도사들이 원장을 직접 뽑게 했다. 첫 원장 베르노(재위 910~927)와 오도(927~942)는 이탈리아의 수도원들(로마와 수비아코 등)까지 개혁했고, 아이마르·마이욜(954~994)·오딜로(994~1049)로 이어지는 긴 임기의 원장들이 클뤼니의 영향을 넓혔다. 수도사들은 하루 대부분을 전례와 죽은 이를 위한 기도에 썼고, 많은 귀족이 기도를 바라며 땅을 바쳤다. 마이욜은 오토 1세(962년부터 신성 로마 황제)와 황후 아델라이데의 존경을 받았다. 그는 972년 또는 973년 알프스를 넘다가 부르군트 왕국(아를 왕국) 프로방스 해안의 프락시네툼에 근거를 둔 무슬림 약탈자들에게 붙잡혀 몸값을 치르고 풀려났고, 이 일은 프로방스 영주들이 973년 무렵 그 근거지를 없애는 계기가 되었다. 왕과 제후의 힘이 약한 때에 교황 직속의 독립된 수도원이 자라난 것이 클뤼니의 특징이며, 12세기에는 분원이 수백 곳(314곳이라는 셈도 있다)에 이르렀다고 한다."
+  subjects: [west-francia, aquitaine, papal-states, holy-roman-empire, burgundy-kingdom]
+  links:
+    - { from: aquitaine, to: papal-states, note: "경건공 기욤의 클뤼니 기증(910)" }
+  tags: [culture, society]
+  sources: ["Barbara H. Rosenwein, To Be the Neighbor of Saint Peter: The Social Meaning of Cluny's Property, 909–1049 (1989)", "C. H. Lawrence, Medieval Monasticism: Forms of Religious Life in Western Europe in the Middle Ages (3판, 2001)", "H. E. J. Cowdrey, The Cluniacs and the Gregorian Reform (1970)"]
+
+- id: henry-fowler-911
+  year: 911
+  endYear: 936
+  title:
+    ko: "작센 왕조의 성립: 콘라트 1세(911)와 하인리히 1세(919~936)"
+  summary:
+    ko: "911년 9월 루트비히 4세 어린이왕이 죽어 동프랑크의 카롤링거 계통이 끊기자 귀족들은 프랑켄 공 콘라트 1세를 왕으로 뽑았고, 로타링기아 귀족들은 서프랑크의 샤를 단순왕을 택했다(지도는 911년에 로타링기아 전체(아헨·쾰른 포함)를 서프랑크 땅으로 옮기고 알자스는 근사로 동프랑크에 둔다). 콘라트는 슈바벤·바이에른 공작들을 누르지 못한 채 918년 죽으며 오랜 적수 작센 공 하인리히를 후계로 지명했다. 하인리히 1세(재위 919~936)는 919년 프리츨라르에서 왕으로 뽑혀 공작들에게 자치를 인정하고 921년 서프랑크 왕과 본에서 대등한 협정을 맺었다. 923년 샤를 단순왕이 사로잡히자 925년 로타링기아가 동프랑크로 돌아왔다(지도는 925년). 924~926년 무렵 마자르에게 공물을 주고 휴전을 산 뒤 성(부르크)을 쌓고 기병을 길러 933년 3월 리아데에서 이겼다. 928~929년 겨울 서슬라브 부족인 헤벨리의 브레나보르(브란덴부르크)를 차지했고, 929년 달레민치의 가나를 함락해 어른 남자를 모두 죽이고 여자와 아이를 끌고 갔다고 비두킨트는 전한다. 9월 렌첸에서 오보트리트 연합을 꺾었고, 보헤미아 공 바츨라프는 프라하가 포위되자 공물을 약속했다(929년 무렵, 지도는 929년에 브란덴부르크와 마이센 일대를 동프랑크 땅으로 옮긴다). 934년에는 덴마크의 헤데비 일대를 쳐 변경령을 두었다. 936년 7월 하인리히가 죽자 아들 오토가 이었다."
+  subjects: [east-francia, west-francia, slavic-tribes, bohemia-duchy, magyars, denmark-early]
+  links:
+    - { from: east-francia, to: slavic-tribes, note: "브란덴부르크(928~929)와 가나(929)" }
+    - { from: east-francia, to: magyars, note: "공물과 휴전(924~926 무렵)·리아데(933)" }
+  tags: [politics, war]
+  sources: ["Widukind of Corvey, Deeds of the Saxons (Bernard S. Bachrach·David S. Bachrach 옮김, 2014)", "Timothy Reuter, Germany in the Early Middle Ages, c. 800–1056 (1991)", "Karl J. Leyser, Rule and Conflict in an Early Medieval Society: Ottonian Saxony (1979)"]
+  places: [{ name: 브란덴부르크(브레나보르), at: [12.55, 52.41], year: 929 }, { name: 렌첸, at: [11.47, 53.08], year: 929 }]
+
+- id: macedonian-reconquest-934
+  year: 934
+  endYear: 969
+  title:
+    ko: "마케도니아 왕조의 반격: 멜리테네(934)에서 크레타(961)·안티오크(969)까지"
+  summary:
+    ko: "로마노스 1세 레카페노스(재위 920~944) 아래 장군 요안니스 쿠르쿠아스가 동쪽 변경의 아랍 토후국들을 쳐 934년 5월 멜리테네(말라티아)를 얻었다(지도는 934년). 지도는 949년 버전에 테오도시오폴리스(에르주룸)와 하르푸트·에르진잔 일대를 동로마 땅으로 옮기고, 콘스탄티노스 7세(단독 통치 945~959) 때인 958년 요안니스 치미스키스가 사모사타를 되찾았다. 로마노스 2세(재위 959~963)가 보낸 원정군을 니케포로스 포카스가 이끌어 960년 크레타에 상륙했고, 칸닥스(이라클리오)를 960년 여름부터 961년 3월까지 여덟아홉 달 포위한 끝에 함락시켰다. 도시는 약탈되고 많은 사람이 노예가 되었으며 크레타 토후국은 끝났다(지도는 961년). 그는 962년 12월 알레포를 약탈했고, 963년 로마노스 2세가 죽은 뒤 황제 니케포로스 2세가 되어 965년 킬리키아의 타르소스와 몹수에스티아를 얻고 키프로스도 되찾았다(지도는 965년). 966~968년 타론 공국의 바그라투니 가문이 땅을 동로마에 넘겼다(지도는 966년, 아르메니아 왕국들 묶음의 한 몫). 같은 시기 시칠리아에서는 965년 로메타가 시칠리아 토후국에 넘어가 섬 전체가 이슬람 땅이 되었다. 969년 10월 안티오크가 동로마로 돌아왔고(지도는 969년) 니케포로스는 그해 12월 치미스키스 등의 음모로 죽었다. 이 반격으로 동로마는 동쪽 국경을 유프라테스강 쪽으로 밀었고, 688년부터 이어진 키프로스의 공동 통치도 끝났다."
+  subjects: [byzantine-empire, crete-emirate, armenian-kingdoms, sicily-emirate]
+  links:
+    - { from: byzantine-empire, to: crete-emirate, note: "칸닥스 함락(961)" }
+    - { from: armenian-kingdoms, to: byzantine-empire, note: "타론의 양도(966 무렵)" }
+  tags: [war, politics]
+  sources: ["Warren Treadgold, A History of the Byzantine State and Society (1997)", "John Haldon, The Byzantine Wars: Battles and Campaigns of the Byzantine Era (2001)", "Alice-Mary Talbot·Denis F. Sullivan 옮김, The History of Leo the Deacon: Byzantine Military Expansion in the Tenth Century (2005)", "게오르크 오스트로고르스키, 『비잔티움 제국사』(한정숙·김경연 옮김, 까치글방)"]
+  places: [{ name: 멜리테네(말라티아), at: [38.31, 38.35], year: 934 }, { name: 칸닥스(이라클리오), at: [25.14, 35.34], year: [960, 961] }, { name: 타르소스, at: [34.89, 36.92], year: 965 }, { name: 안티오크, at: [36.16, 36.20], year: 969 }]
+
+- id: otto-i-empire-936
+  year: 936
+  endYear: 973
+  title:
+    ko: "오토 1세: 레히펠트(955)와 황제 대관(962)"
+  summary:
+    ko: "936년 8월 아헨에서 오토 1세(재위 936~973)가 왕으로 대관했다(같은 해 한반도에서는 고려가 후삼국을 통일했다, `unification-936`). 937~941년 공작들과 동생 하인리히의 반란을 눌렀고, 변경백 게로(동쪽)와 헤르만 빌룽(북쪽)에게 서슬라브 부족과 맞댄 변경을 맡겼다. 게로는 939년 슬라브 족장 서른 명을 잔치에서 죽였다고 비두킨트는 전한다. 948년 하벨베르크와 브란덴부르크 주교구를 세웠고 950년 보헤미아 공 볼레슬라프 1세를 복종시켰다. 951년 이탈리아 왕 로타르 2세의 미망인 아델라이데의 청으로 이탈리아에 들어가 그와 혼인하고 롬바르드 왕을 칭했으며, 952년 아우크스부르크 회의에서 베렌가리오 2세를 봉신으로 삼고 베로나와 아퀼레이아를 바이에른에 붙였다(지도는 952년). 953~954년 아들 리우돌프와 사위 콘라트의 반란 속에 마자르가 독일 깊이 들어왔고, 955년 8월 10일 아우크스부르크 가까운 레히펠트에서 오토는 마자르를 크게 이겼다. 같은 해 보헤미아의 볼레슬라프 1세는 모라비아·슐레지엔·크라쿠프를 얻은 것으로 지도에 그렸다(근거가 갈림, 지도는 955년). 959년 동생 브루노가 로타링기아를 상·하로렌으로 나눴다(지도는 959년 로렌 공국). 961~962년 교황 요한 12세가 베렌가리오 2세에 맞설 도움을 청하자 이탈리아로 가 962년 2월 2일 로마에서 황제로 대관했고, 교황령을 보장하는 오토 특허장(2월 13일)을 내렸다(지도는 962년에 동프랑크를 신성 로마 제국으로, 이탈리아 왕국을 이탈리아 소국들로 바꾼다). 963년 요한 12세를 폐위했고 게로가 라우지츠를 얻었다(지도는 965년). 968년 마그데부르크 대주교구를 세웠으며, 972년 아들 오토 2세가 동로마 황제 요안니스 1세 치미스키스의 조카딸 테오파누와 혼인했다. 오토는 973년 5월 죽었다."
+  subjects: [east-francia, holy-roman-empire, italy-carolingian, italian-minor-states, papal-states, lorraine, bohemia-duchy, slavic-tribes, magyars, byzantine-empire]
+  links:
+    - { from: east-francia, to: italy-carolingian, note: "베렌가리오 2세의 신서(952)" }
+    - { from: east-francia, to: magyars, note: "레히펠트(955)" }
+    - { from: holy-roman-empire, to: papal-states, note: "황제 대관과 오토 특허장(962)" }
+  tags: [politics, war]
+  sources: ["Timothy Reuter, Germany in the Early Middle Ages, c. 800–1056 (1991)", "Widukind of Corvey, Deeds of the Saxons (Bernard S. Bachrach·David S. Bachrach 옮김, 2014)", "Paolo Squatriti 옮김, The Complete Works of Liudprand of Cremona (2007)", "Karl J. Leyser, Rule and Conflict in an Early Medieval Society: Ottonian Saxony (1979)"]
+  places: [{ name: 레히펠트(아우크스부르크 부근), at: [10.92, 48.35], year: 955 }]
+
+- id: piast-mieszko-960
+  year: 960
+  endYear: 992
+  title:
+    ko: "미에슈코 1세와 피아스트 폴란드의 성립: 세례(966)에서 '다고메 이우덱스'(991)까지"
+  summary:
+    ko: "피아스트 가문의 미에슈코 1세(재위 960 무렵~992)는 폴란인의 땅(그니에즈노·포즈난)을 다스렸고, 963년 비두킨트의 『작센인의 업적』에 오토 1세(962년부터 신성 로마 제국의 황제)의 '친구'이자 바르타강까지의 공납자로 처음 나온다(지도는 960년부터 피아스트 폴란드). 965년 보헤미아 공 볼레슬라프 1세의 딸 도브라바와 혼인했고 966년(전승은 4월 14일 부활절) 세례를 받았으며, 첫 주교 요르단이 포즈난에 왔다(968년이라는 설이 많다). 안달루스 출신 유대인 상인 이브라힘 이븐 야쿠브는 965~966년 프라하를 거쳐 '메스코'가 3천 명의 중무장한 병사를 거느렸다고 적었다. 지도는 966년에 대폴란드·쿠야비아·마조프셰와 렌디치 땅을 서슬라브 부족에서 폴란드로 옮긴다. 972년 6월 24일 미에슈코는 체디니아에서 오토 1세의 변경백 호도를 이겼고, 979년 무렵 작센 변경백 디트리히의 딸 오다와 혼인했다. 981년 『원초 연대기』는 키예프 루스의 블라디미르가 폴란드인의 체르벤 도시들을 쳤다고 적는다(뒤의 사건). 990년 미에슈코는 슐레지엔을 두고 보헤미아의 볼레슬라프 2세와 다투어 슐레지엔을 차지했고(985년 무렵부터라는 설도 있다), 그단스크 일대 포메렐리아는 별도로 일찍부터 복속시킨 것으로 본다(지도는 슐레지엔 서부와 포메렐리아를 990년에 폴란드로 옮긴다). 991년 무렵 '다고메 이우덱스' 문서로 자기 나라를 성 베드로(교황)에게 바쳐 보호를 청하고 경계를 적었는데, 사본이 후대의 것이라 해석이 갈린다. 미에슈코는 포메른의 슬라브 부족과 발트 부족인 프로이센인과도 싸웠고, 992년 죽어 맏아들 볼레스와프 1세가 이었다."
+  subjects: [piast-poland, slavic-tribes, bohemia-duchy, holy-roman-empire, papal-states, kievan-rus, baltic-tribes]
+  links:
+    - { from: bohemia-duchy, to: piast-poland, note: "도브라바와의 혼인(965)과 세례(966)" }
+    - { from: holy-roman-empire, to: piast-poland, note: "공납(963)과 체디니아(972)" }
+  tags: [politics, culture]
+  sources: ["Nora Berend·Przemysław Urbańczyk·Przemysław Wiszewski, Central Europe in the High Middle Ages: Bohemia, Hungary and Poland, c. 900–c. 1300 (2013)", "Norman Davies, God's Playground: A History of Poland, vol. 1 (1981)", "Widukind of Corvey, Deeds of the Saxons (Bernard S. Bachrach·David S. Bachrach 옮김, 2014)"]
+  places: [{ name: 체디니아, at: [14.20, 52.88], year: 972 }]
+
+- id: svyatoslav-khazars-bulgaria-964
+  year: 964
+  endYear: 972
+  title:
+    ko: "스뱌토슬라프의 원정: 하자르 칸국의 몰락(965~969)과 불가리아 원정(968~971)"
+  summary:
+    ko: "키예프 루스의 스뱌토슬라프는 945년 아버지 이고리가 죽었을 때 어렸고 962년 무렵부터 직접 군대를 이끌었다. 964년 오카강 쪽에서 동슬라브 부족 뱌티치를 만났고 공납은 966년에 받았다고 하며(지도는 966년), 965년 무렵(연대는 논쟁이 있다) 하자르 칸국을 공격해 사르켈(벨라야 베자)을 점령했다(『원초 연대기』). 968~969년에는 이틸과 세멘데르, 볼가 불가리아의 도시 불가르도 무너졌다고 이븐 하우칼은 적는다. 하자르 칸국의 중심은 사라졌고 그 초원은 지도에서 페체네그에 넘어간다(돈강 지역 965년, 볼가강 하류 969년). 다만 스뱌토슬라프가 하자르 소멸의 유일한 원인이었는지는 학자마다 달리 본다. 968년 동로마 황제 니케포로스 2세 포카스는 사절 칼로키로스에게 금을 주어 스뱌토슬라프가 불가리아 제1제국을 치도록 부추겼고, 그가 다뉴브강의 페레야슬라베츠에 이르렀으나 페체네그가 키예프를 포위해 돌아왔다. 969년 어머니 올가가 죽자 아들들에게 루스를 나눠 맡기고(야로폴크 키예프, 올레그 드레블랴네, 블라디미르 노브고로드, 『원초 연대기』는 970년) 다시 불가리아로 가 프레슬라프를 차지하고 보리스 2세를 사실상 손에 넣었다. 969~970년 트라키아로 들어가 필리포폴리스를 점령하고 주민 2만 명을 꼬챙이에 꿰었다고 비잔티움 사료는 적는다(과장으로 본다). 971년 4월 요안니스 1세 치미스키스가 프레슬라프를 점령해 루스 수비대를 거의 죽였고, 4월부터 7월까지 도로스톨론(실리스트라)을 포위한 끝에 화약을 맺어 스뱌토슬라프는 물러났다. 불가리아 동부는 동로마 땅이 되었고(지도는 971년), 라스의 남슬라브 공국들 땅도 동로마 카테파노령이 되었다. 스뱌토슬라프는 972년 봄 드니프로강 급류에서 페체네그에게 죽었고, 연대기는 그 두개골이 술잔이 되었다고 전한다."
+  subjects: [kievan-rus, khazar-khaganate, pecheneg-tribes, east-slavic-tribes, volga-bulgaria, first-bulgarian-empire, byzantine-empire, south-slavic-principalities]
+  links:
+    - { from: kievan-rus, to: khazar-khaganate, note: "사르켈(965)과 이틸(968~969)" }
+    - { from: kievan-rus, to: first-bulgarian-empire, note: "불가리아 원정(968~971)" }
+    - { from: byzantine-empire, to: kievan-rus, note: "도로스톨론의 화약(971)" }
+  tags: [war]
+  sources: ["Samuel Hazzard Cross·Olgerd P. Sherbowitz-Wetzor 옮김, The Russian Primary Chronicle: Laurentian Text (1953)", "Alice-Mary Talbot·Denis F. Sullivan 옮김, The History of Leo the Deacon: Byzantine Military Expansion in the Tenth Century (2005)", "Simon Franklin·Jonathan Shepard, The Emergence of Rus, 750–1200 (1996)", "니콜라스 V. 랴자놉스키·마크 D. 스타인버그, 『러시아의 역사』 상(조호연 옮김, 까치, 2011)"]
+  places: [{ name: 사르켈(벨라야 베자), at: [42.27, 47.70], year: 965 }, { name: 필리포폴리스(플로브디프), at: [24.75, 42.15], year: 970 }, { name: 프레슬라프, at: [26.82, 43.17], year: 971 }, { name: 도로스톨론(실리스트라), at: [27.26, 44.12], year: 971 }]
+
+- id: otto-ii-iii-973
+  year: 973
+  endYear: 999
+  title:
+    ko: "오토 2세와 오토 3세: 케른텐 분리와 오스트마르크(976), 슬라브 대반란(983), 로마의 황제(996)"
+  summary:
+    ko: "오토 2세(재위 973~983)는 974년 사촌 바이에른 공 하인리히 2세의 반란을 맞았고 같은 해 덴마크 왕 하랄 푸른이빨에게서 다네비르케를 빼앗았다(983년 하랄이 되찾았다). 976년 하인리히 2세를 폐위하고 케른텐을 바이에른에서 떼어 따로 공작령으로 삼았으며 동쪽 변경에는 바벤베르크 가문의 레오폴트 1세를 변경백으로 앉혔다(지도는 976년에 비너발트 동쪽을 마자르에서 신성 로마 제국으로 옮긴다). 978년 서프랑크의 로타르가 아헨을 기습하자 오토는 파리까지 쫓아갔고 980년 마르귀 조약으로 로렌을 확정했다. 이탈리아 소국들과 남이탈리아를 두고 동로마·시칠리아 토후국과 맞섰으나, 982년 7월 칼라브리아 콜로네 곶에서 칼브 가문 토후국군에게 크게 졌고 983년 12월 로마에서 죽었다. 그해 여름 엘베강 건너 슬라브 부족(류티치 등)이 봉기해 하벨베르크와 브란덴부르크 주교구를 불태우고 사제들을 내쫓았다(슬라브 대반란, 지도는 983년에 브란덴부르크 일대를 서슬라브 땅으로 돌린다). 세 살 오토 3세(재위 983~1002)는 어머니 테오파누와 할머니 아델라이데의 섭정을 받았다. 990년 폴란드와 보헤미아가 슐레지엔을 다투었고(앞의 사건), 996년 오토 3세는 로마에서 황제로 대관하며 사촌 브루노를 첫 독일인 교황 그레고리오 5세로 세웠고 999년에는 제르베르를 교황 실베스테르 2세로 세웠다. 오토 3세는 1000년 그니에즈노를 순례했다(뒤의 사건)."
+  subjects: [holy-roman-empire, slavic-tribes, magyars, denmark-medieval, west-francia, lorraine, italian-minor-states, papal-states, byzantine-empire, sicily-emirate, piast-poland, bohemia-duchy]
+  links:
+    - { from: slavic-tribes, to: holy-roman-empire, note: "슬라브 대반란(983)" }
+    - { from: sicily-emirate, to: holy-roman-empire, note: "콜로네 곶의 승리(982)" }
+  tags: [politics, war]
+  sources: ["Timothy Reuter, Germany in the Early Middle Ages, c. 800–1056 (1991)", "Gerd Althoff, Otto III (Phyllis G. Jestice 옮김, 2003)", "David A. Warner 옮김, Ottonian Germany: The Chronicon of Thietmar of Merseburg (2001)"]
+  places: [{ name: 콜로네 곶(크로토네 부근), at: [17.20, 39.03], year: 982 }, { name: 하벨베르크, at: [12.09, 52.83], year: 983 }]
+
+- id: basil-samuel-976
+  year: 976
+  endYear: 997
+  title:
+    ko: "바실리오스 2세의 즉위(976)와 사무일의 불가리아: 트라야누스 관문(986)에서 스페르케이오스(997)까지"
+  summary:
+    ko: "동로마 제국의 요안니스 1세 치미스키스가 976년 1월 죽자 어린 바실리오스 2세(재위 976~1025)가 동생 콘스탄티노스 8세와 함께 공동 황제가 되었고, 실권은 환관 바실리오스 레카페노스가 쥐었다. 아나톨리아의 바르다스 스클레로스가 976년 반란을 일으켰으나 979년 다비트 3세(타오-클라르제티)의 이베리아 기병의 도움으로 눌렸다. 987년 바르다스 포카스가 일어나자 바실리오스는 키예프 루스의 블라디미르에게 군사를 청해(6천 명, 바랑기아 근위대의 시작) 989년 4월 아비도스에서 포카스가 죽은 뒤 스클레로스가 반란을 이어받았다가 곧 굴복하며 반란이 끝났다. 불가리아 제1제국은 971년 동부를 잃은 뒤 970년대에 코메토풀로이(서불가리아 총독 니콜라스의 네 아들 다비트·모세·아론·사무일)의 봉기를 맞았다(연대는 970년부터 976년까지 갈린다). 형제들이 차례로 죽은 뒤(아론은 사무일에게 죽었고 그 해는 976년 또는 987~988년으로 갈린다) 사무일이 실권을 쥐었고(명목상 황제는 페타르 1세의 아들 로만, 재위 977~997) 오흐리드와 프레스파를 중심으로 라리사와 테살리아를 차지했다(라리사 함락은 986년설이 많고 지도는 986년). 986년 8월 바실리오스가 세르디카를 포위하다 돌아가는 길에 트라야누스 관문에서 매복에 당해 크게 졌다. 사무일은 로만이 죽은 997년 차르를 칭했고 두클랴 같은 남슬라브 공국들을 복속시켰다(997~998). 라리사와 코린토스를 위협하며 남쪽으로 내려온 사무일은 997년 7월 스페르케이오스강에서 니케포로스 우라노스의 기습에 져 군대를 거의 잃고 달아났다(지도는 997년부터 테살리아를 다시 동로마 땅으로 그린다). 바실리오스는 1014년 클레이디온에서 이 싸움을 끝낸다(뒤의 사건)."
+  subjects: [byzantine-empire, first-bulgarian-empire, south-slavic-principalities, tao-klarjeti, kievan-rus]
+  links:
+    - { from: first-bulgarian-empire, to: byzantine-empire, note: "트라야누스 관문(986)" }
+    - { from: byzantine-empire, to: first-bulgarian-empire, note: "스페르케이오스(997)" }
+    - { from: tao-klarjeti, to: byzantine-empire, note: "다비트 3세의 군사 지원(979)" }
+  tags: [war, politics]
+  sources: ["Paul Stephenson, Byzantium's Balkan Frontier: A Political Study of the Northern Balkans, 900–1204 (2000)", "Catherine Holmes, Basil II and the Governance of Empire (976–1025) (2005)", "Warren Treadgold, A History of the Byzantine State and Society (1997)", "게오르크 오스트로고르스키, 『비잔티움 제국사』(한정숙·김경연 옮김, 까치글방)"]
+  places: [{ name: 트라야누스 관문(이흐티만 고개), at: [23.92, 42.36], year: 986 }, { name: 스페르케이오스강(라미아 부근), at: [22.43, 38.90], year: 997 }]
+
+- id: vladimir-baptism-977
+  year: 977
+  endYear: 992
+  title:
+    ko: "블라디미르 1세: 키예프 루스의 확장(980~992)과 세례(988)"
+  summary:
+    ko: "키예프 루스의 스뱌토슬라프가 죽은(972) 뒤 아들들이 다투어 야로폴크가 977년(『원초 연대기』의 연도이며 현대 개설은 976년으로 본다) 동생 올레그를 쳐 죽이자 노브고로드의 블라디미르는 스칸디나비아로 달아났다. 그는 980년(현대 개설은 978년) 바랴그 용병과 돌아와 폴로츠크의 로그볼로드와 아들들을 죽이고 딸 로그네다를 아내로 삼았으며, 키예프를 차지해 야로폴크를 죽였다. 블라디미르는 페룬을 비롯한 이교 신상을 세웠고, 연대기는 983년 야트빙기아 원정 뒤 제비로 뽑힌 그리스도교인 바랴그인 부자가 제물이 되기를 거부해 군중에게 살해되었다고 전한다. 981~982년 체르벤 도시들(볼히니아)을 폴란드에게서 빼앗고(지도는 981년), 뱌티치를 다시 복속시켰으며, 983년에는 발트 부족인 야트빙기아인을 쳤고(지도는 983년), 984년 라디미치를 다시 복속시켰으며, 985년 볼가 불가리아를 쳐 화약을 맺었다. 『원초 연대기』는 986년 불가르(이슬람)·독일(로마 교회)·하자르(유대교)·그리스(정교)의 사절이 믿음을 권했고 블라디미르가 그리스를 골랐다고 전한다(설화이다). 실제로는 987년 바르다스 포카스의 반란에 몰린 동로마 제국의 바실리오스 2세가 블라디미르에게 군사를 청해(안티오키아의 야히야는 6천 명이라 적는다) 바랑기아 근위대가 생겼고, 그 대가로 황제의 누이 안나와 혼인하기로 했다. 블라디미르는 988년(989년으로 보기도 한다) 크림의 케르소네소스(코르순)를 포위해 차지하고 세례를 받았으며, 키예프 사람들을 드니프로강에서 세례했다. 이교 신상은 부서졌고 십일조 교회가 세워졌다. 992년 하얀 크로아티아인(서우크라이나)을 복속시키면서 지도는 동슬라브 부족 항목을 마치고 키예프 루스로 이어 쓴다. 블라디미르는 페체네그의 습격에 맞서 드니프로강 둘레에 성채선을 쌓았다."
+  subjects: [kievan-rus, east-slavic-tribes, baltic-tribes, byzantine-empire, piast-poland, pecheneg-tribes, volga-bulgaria]
+  links:
+    - { from: kievan-rus, to: byzantine-empire, note: "바랑기아 군사 6천 명(987~988)" }
+    - { from: byzantine-empire, to: kievan-rus, note: "안나와의 혼인과 세례(988)" }
+    - { from: kievan-rus, to: piast-poland, note: "체르벤 도시들(981)" }
+  tags: [politics, culture]
+  sources: ["Samuel Hazzard Cross·Olgerd P. Sherbowitz-Wetzor 옮김, The Russian Primary Chronicle: Laurentian Text (1953)", "Andrzej Poppe, The Rise of Christian Russia (1982)", "Simon Franklin·Jonathan Shepard, The Emergence of Rus, 750–1200 (1996)", "니콜라스 V. 랴자놉스키·마크 D. 스타인버그, 『러시아의 역사』 상(조호연 옮김, 까치, 2011)", "세르히 플로히, 『유럽의 문 우크라이나: 독립과 생존을 위한 투쟁의 역사』(허승철 옮김, 한길사, 2022)"]
+  places: [{ name: 케르소네소스(코르순), at: [33.49, 44.61], year: [988, 989] }]

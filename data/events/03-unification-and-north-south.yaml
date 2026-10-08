@@ -458,7 +458,7 @@
     ko: 선왕과 해동성국
   summary:
     ko: "선왕이 말갈 부족을 복속시키고 요동 방면으로 진출해 발해의 영토가 가장 넓어졌다. 당은 이 무렵의 발해를 해동성국이라 불렀다. 선왕은 '건흥'이라는 연호를 썼다."
-  subjects: [balhae]
+  subjects: [balhae, malgal, liaodong-disputed]
   links:
     - { from: balhae, to: tang, note: "해동성국이라 불림" }
   tags: [politics]
