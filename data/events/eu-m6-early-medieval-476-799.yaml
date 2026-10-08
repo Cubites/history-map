@@ -1,0 +1,519 @@
+# 유럽 중세 사건 6차 묶음: 서로마 제국의 끝에서 카롤루스의 정복 전쟁·성상 파괴·바이킹의 첫 습격까지 (476 ~ 799, 작업 EVM6)
+# 범위: 서로마의 끝과 오도아케르·테오도리쿠스의 동고트 왕국, 클로비스와 메로빙거 분할·아우스트라시아와 네우스트리아·궁재의 시대·투르-푸아티에·피핀의 즉위와 기증,
+#   카롤루스의 롬바르드 정복·작센 전쟁·바이에른 병합·아바르 원정·론세스바예스, 서고트의 톨레도 왕국과 유대인 정책, 우마이야의 이베리아 정복과 아스투리아스·코르도바 아미르국,
+#   유스티니아노스의 재정복(아프리카·고트 전쟁)과 법전·니카 반란·하기아 소피아·역병, 롬바르드의 이탈리아, 스클라베니·아바르·사모, 헤라클레이오스와 사산 전쟁, 아랍의 정복과 콘스탄티노폴리스 포위,
+#   쿠브라트와 불가리아 제1제국, 하자르 칸국, 캅카스의 이베리아·라지카, 성상 파괴와 이레네, 앵글로색슨 7왕국(오거스틴의 선교·휘트비 시노드·머시아의 오파), 아일랜드·스코틀랜드의 수도원,
+#   브르타뉴, 프리지아 선교와 린디스판 습격, 돌궐의 성립과 아바르의 서진.
+# 깊이: 고등학교 세계사 교과서 본문 수준에, 476~799년 지도에서 생기거나 끝난 유럽 항목(서로마 제국 481, 수아송 왕국 487, 롬바르드 왕국 489, 동고트 왕국 493, 웨식스 519, 서슬라브·남슬라브 부족 527,
+#   반달 왕국·부르군트 왕국 534, 바이에른 공국 555, 아바르 칸국 567, 이베리아 왕국 580, 수에비 왕국 585, 이베리아 공국 588, 사모 왕국 623, 대불가리아 632, 하자르 칸국 650, 우마이야 칼리프국 661,
+#   아키텐 공국 670, 불가리아 제1제국 681, 베네치아 697, 덴마크 700, 아스투리아스 718, 서고트 왕국 끝 721, 달리어타 741, 이탈리아 소국들 752, 교황령·코르도바 아미르국 756, 툴루즈 백국·아브하지아 778,
+#   카헤티-헤레티 787, 게르만 부족 798 등)을 subjects로 이음(docs/REGION_GUIDE.md §5, 점검 방식은 EVM1~EVM5의 성립·소멸 점검과 같음). 지도의 큰 변화(1만 km² 넘는 유럽 버전 해)도 사건으로 이음.
+# 한국사와 닿는 점: 돌궐의 성립(552)과 아바르의 서진 사건에 고구려(551 돌궐의 신성 공격)·수(581)를, 헤라클레이오스와 사산 전쟁 사건에 수·당·고구려(살수 대첩 612)를, 아랍의 정복 사건에 당·신라
+#   (혜초의 서역 기행 727, 탈라스 전투 751)를 subjects로 이었다. 02·03번 파일에 있는 사건은 다시 만들지 않았다.
+# 사건 연도 규칙: subjects·links의 나라는 사건 기간(year~endYear)과 존재 기간이 겹치면 된다(DATA_GUIDE.md §3).
+# 날짜: 1582년 10월 그레고리력 개정 전의 날짜는 당시 쓰던 율리우스력이라 양력(그레고리력)과 6~10일 차이가 나므로 달까지만 적거나 통설의 날짜를 적었다.
+# places의 year: 기간이 있는 사건은 장소마다 싸운 해를 적어 그 해에만 전투 표시가 보이게 했다. 전투·포위가 없는 사건에는 places를 달지 않았다.
+# 서술은 새로 작성. 출처는 사료와 표준 개설서(한국어 번역본이 확인된 것만 번역본으로). 병력·사상자·인구는 사료가 과장하는 일이 많아 범위와 '추산'으로 적었다. 운영자 검수 필요.
+
+- id: western-empire-end-476
+  year: 476
+  endYear: 493
+  title:
+    ko: "서로마 제국의 끝: 오도아케르의 이탈리아(476)와 율리우스 네포스의 죽음(480)"
+  summary:
+    ko: "474~475년 서로마 황제 율리우스 네포스가 장군 오레스테스에게 쫓겨 달마티아로 달아나자, 오레스테스는 어린 아들 로물루스 아우구스툴루스를 황제로 세웠다. 476년 8월 이탈리아의 게르만계 용병들이 땅의 3분의 1을 달라고 요구했으나 오레스테스가 거부하자, 용병 지휘관 오도아케르가 군대의 추대로 왕에 올라 오레스테스를 죽이고 9월 4일 무렵 로물루스를 폐위해 캄파니아로 보냈다. 원로원은 동로마 황제 제논에게 사절을 보내 서쪽에는 따로 황제가 필요 없다고 알렸으나, 제논은 네포스가 합법적인 황제라 답하고 오도아케르에게는 파트리키오스 칭호를 주었다. 오도아케르는 제논의 이름 아래 원로원과 로마의 관직을 그대로 두고 다스렸다. 476년 말~477년 초 반달 왕에게 공납하는 조건으로 시칠리아를 넘겨받았고(릴리바이움은 제외), 480년 네포스가 달마티아에서 부하에게 살해되자 481~482년 달마티아를 차지했다. 같은 476년 갈리아에서는 서고트 왕 에우리크가 아를과 마르세유를 얻었다. 487~488년 오도아케르는 도나우강 북안의 루기인 같은 게르만 부족을 쳐서 노리쿰의 로마 주민을 이탈리아로 옮겼고, 489년 무렵 그 땅(루길란트)에 롬바르드가 들어왔다. 같은 해 제논의 승인을 받은 동고트 왕 테오도리쿠스가 쳐들어와 오도아케르는 493년 3월 라벤나에서 죽임을 당했다(뒤의 사건). 6세기의 연대기 작가 마르켈리누스 코메스는 476년을 서쪽 제국이 사라진 해로 꼽았으나 당시 사람들이 그 변화를 크게 느끼지 못했다고 보는 학자가 많다. 지도는 476~480년 서로마 제국을 네포스의 달마티아만으로 그리고(481년에 이 항목이 끝난다), 오도아케르의 이탈리아는 이탈리아·라이티아·노리쿰에 477년 시칠리아, 481년 달마티아를 더해 그린다."
+  subjects: [western-roman-empire, odoacer-italy, byzantine-empire, vandal-kingdom, visigothic-kingdom, germanic-tribes, lombard-kingdom, ostrogothic-kingdom]
+  links:
+    - { from: byzantine-empire, to: western-roman-empire, note: "제논의 네포스 인정(~480)" }
+    - { from: odoacer-italy, to: vandal-kingdom, note: "시칠리아를 받고 공납(477)" }
+  tags: [politics]
+  sources: ["The Chronicle of Marcellinus (Brian Croke 영역, 1995)", "Jordanes, The Gothic History of Jordanes (Charles C. Mierow 영역, 1915)", "Peter Heather, The Fall of the Roman Empire (2005)", "Paul the Deacon, History of the Lombards (William Dudley Foulke 영역, 1907)"]
+
+- id: anglo-saxon-476
+  year: 476
+  endYear: 616
+  title:
+    ko: "앵글로색슨의 브리튼 정착과 오거스틴의 선교(597)"
+  summary:
+    ko: "로마가 410년 브리타니아를 떠난 뒤 앵글인·색슨인·유트인이 브리튼 동부와 남부에 자리 잡았다. 비드는 헹기스트와 호사가 449년 무렵 켄트에 상륙했다고 전하나, 고고학은 정착이 더 오래 점진적으로 이루어졌다고 본다. 브리튼인 쪽 기록인 길다스(6세기)는 500년 무렵 바던산에서 브리튼인이 이겨 한동안 평화가 있었다고 적고, 아서 이야기는 훨씬 뒤의 전설이다. 9세기에 엮은 『앵글로색슨 연대기』는 477년 앨레의 서식스 상륙, 495~519년 체르딕과 키네릭의 웨식스, 547년 이다의 밤버러(버니시아), 552년 세아로부르흐, 560년 앨레의 데이라, 571년 쿠스울프의 베드캔퍼드, 577년 디럼 전투(글로스터·사이렌세스터·바스)를 적는다(초기 연대는 전승이라 믿기 어려운 것이 많다). 지도는 템스강 어귀와 동앵글리아·린지는 476년부터 앵글로색슨 왕국들로 그리고, 서식스·서리 493년, 웨식스 523년, 버니시아 547년, 데이라 560년, 베드캔퍼드 572년, 디럼 582년, 머시아 585년으로 바꿔 그린다. 브리튼인 왕국들(묶음)은 웨일스 공국들과 콘월, 컴브리아, 아르모리카(브르타뉴)로 밀렸다. 켄트의 에설버트(재위 589 무렵~616, 비드의 560년 즉위는 전통 연대)는 프랑크 공주 베르타와 혼인했고, 교황 그레고리우스 1세가 보낸 수도사 오거스틴이 597년 켄트에 상륙해 에설버트에게 세례를 주고 캔터베리에 교회를 세웠다(오거스틴은 604년 무렵 죽었다). 616년 노섬브리아 왕 애설프리스가 체스터에서 브리튼인 군대를 쳐부수고 수도사 1,200명이 죽었다고 비드는 전한다."
+  subjects: [anglo-saxon-kingdoms, brittonic-kingdoms, wessex, welsh-principalities]
+  links:
+    - { from: anglo-saxon-kingdoms, to: brittonic-kingdoms, note: "디럼(577)과 체스터(616)" }
+  tags: [politics, war]
+  sources: ["Bede, Ecclesiastical History of the English People (Leo Sherley-Price 영역, 1990)", "The Anglo-Saxon Chronicle (Michael Swanton 영역, 1996)", "Barbara Yorke, Kings and Kingdoms of Early Anglo-Saxon England (1990)", "Frank Stenton, Anglo-Saxon England (3판, 1971)", "Nicholas Brooks, The Early History of the Church of Canterbury (1984)"]
+  places: [{ name: 디럼, at: [-2.4, 51.46], year: 577 }, { name: 체스터, at: [-2.89, 53.19], year: 616 }]
+
+- id: clovis-franks-481
+  year: 481
+  endYear: 511
+  title:
+    ko: "클로비스 1세: 수아송(486)·세례·부예(507)와 프랑크 왕국의 성립"
+  summary:
+    ko: "킬데리크 1세의 아들 클로비스는 481년 열다섯 살 무렵 투르네의 살리 프랑크 왕이 되었다. 486년 수아송에서 로마 장군 시아그리우스를 꺾었다(시아그리우스는 서고트 왕 알라리크 2세에게 달아났다가 넘겨져 죽었다고 투르의 그레고리우스가 전한다). 493년 부르군트 왕 군도바드의 조카딸인 가톨릭 신자 클로틸데와 혼인했고, 알레만인과의 큰 싸움(전통은 톨비악, 496년 무렵이나 연대는 학자마다 갈린다)에서 이기면 세례를 받겠다고 맹세했다고 한다. 랭스 주교 레미기우스에게 세례를 받았고(전통은 496년 12월 25일, 498~508년설도 있다) 병사 3천여 명이 함께 받았다고 그레고리우스는 적는다. 동고트·서고트·부르군트 왕이 모두 아리우스파인 서방에서 가톨릭 신자 왕이 되어 갈리아 주교들의 지지를 얻었다. 506년 알레만인 같은 게르만 부족을 다시 눌러 알자스와 라인강 중류 일대를 얻었고, 507년 푸아티에 가까운 부예에서 알라리크 2세를 직접 죽이고(그레고리우스) 툴루즈의 보물과 아키텐을 차지했다. 508년 동고트의 장군 이바스가 아를 포위를 풀어 프로방스는 동고트가 지켰고, 서고트에는 셉티마니아가 남았다. 이해 클로비스는 동로마 황제 아나스타시우스 1세가 보낸 명예 집정관 칭호를 투르에서 받았다. 그는 파리를 도읍으로 삼았고, 라인강 가 리푸아리 프랑크 왕 시기베르트 부자가 죽은 뒤 쾰른 왕위도 얻었으며(그레고리우스는 클로비스가 다른 프랑크 왕들을 계략으로 제거했다고 적는다), 『살리카 법전』을 정리했다고 본다. 511년 7월 오를레앙 공의회를 열었고 11월 27일 파리에서 죽었다. 지도는 486년 수아송 왕국을, 506년 알레만인의 땅을, 507년 서고트의 아키텐을 프랑크 땅으로 그리며 쾰른 일대는 476년부터 프랑크 왕국으로 그린다."
+  subjects: [frankish-kingdom, domain-of-soissons, visigothic-kingdom, burgundian-kingdom, ostrogothic-kingdom, byzantine-empire, germanic-tribes]
+  links:
+    - { from: frankish-kingdom, to: domain-of-soissons, note: "수아송 전투(486)" }
+    - { from: frankish-kingdom, to: visigothic-kingdom, note: "부예 전투(507)" }
+    - { from: ostrogothic-kingdom, to: frankish-kingdom, note: "아를 포위 격퇴(508)" }
+  tags: [politics, war]
+  sources: ["Gregory of Tours, The History of the Franks (Lewis Thorpe 영역, 1974)", "Ian Wood, The Merovingian Kingdoms 450–751 (1994)", "Patrick J. Geary, Before France and Germany: The Creation and Transformation of the Merovingian World (1988)", "Edward James, The Franks (1988)"]
+  places: [{ name: 수아송, at: [3.32, 49.38], year: 486 }, { name: 톨비악(쥘피히), at: [6.65, 50.69], year: 496 }, { name: 부예, at: [0.33, 46.58], year: 507 }, { name: 아를, at: [4.63, 43.68], year: 508 }]
+
+- id: theodoric-ostrogoths-489
+  year: 489
+  endYear: 535
+  title:
+    ko: "테오도리쿠스의 동고트 왕국: 이탈리아 정복(489~493)에서 보에티우스(524)와 아말라순타까지"
+  summary:
+    ko: "동고트 왕 테오도리쿠스(약 454~526)는 동로마 황제 제논의 승인을 받아 489년 이탈리아로 들어왔다(병사와 가족을 합쳐 4만~10만 명이라는 것이 학계의 추산이다). 489년 이손초강과 베로나, 490년 8월 아다강에서 오도아케르군을 이기고 라벤나를 포위하자 오도아케르의 이탈리아 왕국은 갇힌 처지가 되었고, 493년 2월 협정을 맺은 뒤 3월 15일 연회에서 테오도리쿠스가 오도아케르를 죽였다. 그는 고트인에게는 군역과 아리우스파 신앙을, 로마인에게는 민정과 가톨릭 신앙을 맡기는 이중 체제로 다스렸다(고트인이 받은 것이 토지인지 세수의 몫인지는 학자들이 다툰다). 카시오도루스의 공문서 모음 『바리아에』가 이 행정을 전한다. 504년 시르미움을 게피드에게서 얻었고, 507년 부예 전투 뒤 508년 프랑크와 부르군트의 아를 포위를 풀어 프로방스를 얻었으며, 523년 프랑크가 부르군트를 칠 때 뒤랑스강~이제르강 사이(아비뇽·발랑스 쪽)를 차지했다. 서고트에서는 507~511년 알라리크 2세의 서자 게살레크가 왕이 되었다가 이바스에게 격파되었고, 테오도리쿠스가 511년부터 외손자 아말라리크의 섭정을 맡았으며 혼인으로 프랑크·부르군트·반달·튀링겐 왕가와 이어졌다. 523년 동로마 황제 유스티노스 1세가 아리우스파를 누르자 관계가 나빠졌고, 원로원 귀족 보에티우스가 반역 혐의로 갇혀 524년 무렵(525년설도 있다) 처형되었다(그는 감옥에서 『철학의 위안』을 썼다). 동로마에 사절로 다녀온 교황 요한 1세도 526년 5월 라벤나 감옥에서 죽었다. 테오도리쿠스는 526년 8월 30일 죽었고 딸 아말라순타가 외손자 아탈라리크의 섭정을 맡았다. 534년 아탈라리크가 죽은 뒤 아말라순타가 사촌 테오다하드를 공동 왕으로 세웠으나 그에게 갇혀 535년 살해되었고, 유스티니아노스는 이를 구실로 고트 전쟁을 일으켰다(뒤의 사건). 같은 시기 529년 무렵 누르시아의 베네딕투스가 몬테카시노에 수도원을 세웠다고 전한다."
+  subjects: [ostrogothic-kingdom, odoacer-italy, byzantine-empire, gepid-kingdom, burgundian-kingdom, visigothic-kingdom, frankish-kingdom, vandal-kingdom]
+  links:
+    - { from: ostrogothic-kingdom, to: odoacer-italy, note: "이탈리아 정복(489~493)" }
+    - { from: ostrogothic-kingdom, to: gepid-kingdom, note: "시르미움 차지(504)" }
+    - { from: ostrogothic-kingdom, to: burgundian-kingdom, note: "아비뇽·발랑스 차지(523)" }
+  tags: [politics, war]
+  sources: ["Cassiodorus, Variae (S. J. B. Barnish 영역, 1992)", "Boethius, The Consolation of Philosophy (V. E. Watts 영역, 1969)", "John Moorhead, Theoderic in Italy (1992)", "Procopius, History of the Wars (H. B. Dewing 영역, Loeb, 1914~1928)", "Peter Heather, The Fall of the Roman Empire (2005)"]
+  places: [{ name: 베로나, at: [10.99, 45.44], year: 489 }, { name: 아다강, at: [9.52, 45.53], year: 490 }, { name: 라벤나, at: [12.2, 44.42], year: 493 }, { name: 아를, at: [4.63, 43.68], year: 508 }]
+
+- id: clovis-sons-511
+  year: 511
+  endYear: 561
+  title:
+    ko: "클로비스의 아들들: 메로빙거 분할(511)·튀링겐(531)·부르군트 왕국의 끝(534)·프로방스(537)"
+  summary:
+    ko: "클로비스가 죽은 511년 프랑크 왕국은 네 아들에게 나뉘었다: 테우데리크 1세(랭스·메스, 뒤의 아우스트라시아), 클로도메르(오를레앙), 킬데베르트 1세(파리), 클로타르 1세(수아송). 왕국을 아들들이 나눠 갖는 것이 프랑크의 관습이었고 왕국은 하나라는 생각은 이어졌다. 524년 부르군트 원정에서 클로도메르가 죽자 킬데베르트와 클로타르는 조카들을 죽이고 그 땅을 나눴다(막내 클로도알드만 살아남았다고 그레고리우스는 적는다). 531년 테우데리크와 클로타르가 튀링겐 왕 헤르만프리트를 쳐서 튀링겐 왕국(지도는 게르만 부족 묶음)이 무너졌고(지도는 마인강 상류의 프랑켄을 531년 프랑크 땅으로 그린다), 532년 오툉에서 이긴 킬데베르트와 클로타르가 534년 부르군트 왕 고도마르를 몰아내 왕국을 나눠 가졌다(지도는 534년). 동고트와 동로마가 고트 전쟁(535~)을 시작하자 양쪽 모두 프랑크의 도움을 구했고, 537년 동고트의 비티기스가 프로방스와 알레만니아·라이티아의 권리를 프랑크에 넘겼다(프로코피우스, 지도는 537년). 테우데리크의 아들 테우데베르트 1세(재위 533~548)는 539년 이탈리아로 쳐들어가 동고트와 동로마 양쪽을 털었고, 자기 이름을 새긴 금화를 찍었다. 아들 테우데발트(548~555)가 후사 없이 죽자 클로타르 1세가 아우스트라시아를 합쳤다. 이 무렵 바이에른 사람들이 처음 사료에 나타나고(요르다네스, 551), 555년 무렵 가리발트 1세가 프랑크의 종주 아래 아길롤핑 가문의 공이 되었다(지도는 555년부터 바이에른 공국을 따로 그린다). 558년 킬데베르트가 죽은 뒤 클로타르 1세가 왕국 전체를 다스리다 561년 죽었다."
+  subjects: [frankish-kingdom, burgundian-kingdom, ostrogothic-kingdom, bavaria-duchy, germanic-tribes]
+  links:
+    - { from: frankish-kingdom, to: burgundian-kingdom, note: "부르군트 왕국 분할(534)" }
+    - { from: ostrogothic-kingdom, to: frankish-kingdom, note: "프로방스 양도(537)" }
+  tags: [politics, war]
+  sources: ["Gregory of Tours, The History of the Franks (Lewis Thorpe 영역, 1974)", "Procopius, History of the Wars (H. B. Dewing 영역, Loeb, 1914~1928)", "Jordanes, The Gothic History of Jordanes (Charles C. Mierow 영역, 1915)", "Ian Wood, The Merovingian Kingdoms 450–751 (1994)"]
+
+- id: justinian-532
+  year: 527
+  endYear: 565
+  title:
+    ko: "유스티니아노스 1세의 치세: 『로마법 대전』·니카 반란(532)·하기아 소피아(537)와 541년의 역병"
+  summary:
+    ko: "동로마 황제 유스티노스 1세의 조카 유스티니아노스는 527년 즉위해 565년까지 다스렸다. 황후 테오도라가 곁에서 정치를 도왔고, 법학자 트리보니아누스가 이끈 위원회가 529년 『칙법집』, 533년 『학설휘찬』과 『법학제요』를 펴냈다(뒤의 『신칙법』까지 합쳐 『로마법 대전』이라 부른다). 532년 1월 콘스탄티노폴리스 경주장의 파벌 청색당과 녹색당이 세금과 관리들에게 항의하는 '니카' 반란을 일으켜 히파티우스를 황제로 추대했다. 황제가 도망치려다 테오도라의 만류로 남았다고 전하며, 벨리사리우스와 문두스의 군대가 경주장에 갇힌 군중을 덮쳐 3만 명이 죽었다고 프로코피우스는 적는다(과장 가능성이 크다). 반란에 불탄 성당 자리에 트랄레스의 안테미오스와 밀레토스의 이시도로스가 지은 하기아 소피아는 537년 12월 27일 봉헌되었다. 529년에는 아테네의 플라톤 학원을 닫는 칙령도 냈다. 사산과는 540년 호스로 1세의 안티오키아 약탈 등으로 싸우다 562년 50년 화약을 맺었다. 541년 이집트 펠루시움에서 시작한 역병이 542년 콘스탄티노폴리스에 닿아 지중해 전역으로 퍼졌다. 프로코피우스는 하루 1만 명이 죽었다고 적으나 과장으로 보며, 이 첫 번째 역병 대유행(541~549, 750년 무렵까지 되풀이)은 유전자 분석으로 페스트균에 의한 것으로 확인되었지만 사망자 수는 학자마다 크게 갈린다(수천만 명 설과 영향이 작았다는 설). 거듭된 전쟁과 세금, 역병에 지친 제국은 565년 11월 유스티니아노스가 죽은 뒤 국경을 지킬 힘이 약해졌다. 아프리카와 이탈리아 재정복은 따로 있다(뒤의 사건)."
+  subjects: [byzantine-empire]
+  tags: [politics, society, culture]
+  sources: ["Procopius, History of the Wars (H. B. Dewing 영역, Loeb, 1914~1928)", "John Moorhead, Justinian (1994)", "Michael Maas 엮음, The Cambridge Companion to the Age of Justinian (2005)", "Lester K. Little 엮음, Plague and the End of Antiquity: The Pandemic of 541–750 (2007)", "윌리엄 H. 맥닐, 『전염병의 세계사』(김우영 옮김, 이산, 2005)", "게오르크 오스트로고르스키, 『비잔티움 제국사』(한정숙·김경연 옮김, 까치글방)"]
+
+- id: slavs-sclaveni-527
+  year: 527
+  endYear: 602
+  title:
+    ko: "스클라베니와 안테스: 슬라브의 등장과 도나우강 방어선(527~602)"
+  summary:
+    ko: "6세기 사료는 도나우강 북쪽에서 '스클라베니'와 '안테스'가 갑자기 나타났다고 적는다. 요르다네스(551)는 비스와강 쪽의 베네티가 스클라베니와 안테스로 나뉜다고 했고, 프로코피우스는 유스티니아노스 때부터 두 무리가 도나우강을 넘어 트라키아와 일리리아를 약탈했다고 썼다. 545년 유스티니아노스는 안테스를 동맹으로 삼아 도나우강 북안을 맡겼고, 540년대 후반 스클라베니는 디라키온 가까이와 테살로니키 부근까지 이르렀다. 559년에는 쿠트리구르 같은 훈·불가르계 유목민이 얼어붙은 강을 건너 콘스탄티노폴리스 근처까지 닿았다. 고고학은 프라하-코르차크, 펜코프카 같은 문화를 슬라브인과 잇지만, 플로린 쿠르타 등은 '슬라브'라는 정체성이 도나우 국경에서 동로마와 주고받는 가운데 6세기에 만들어졌다고 본다. 567년 이후 아바르 칸국(게르만 부족의 땅이던 판노니아를 차지했다)이 이들 가운데 많은 무리를 부렸고, 『프레데가리우스 연대기』는 아바르가 슬라브인을 싸움의 앞줄에 세웠다고 적는다. 티베리오스 2세(578~582) 때인 570년대 말~581년(연도는 579·581설이 있다) 슬라브 약 10만 명이 트라키아를 휩쓸었다고 에페소스의 요한은 전한다(과장 가능성이 크다). 587년 슬라브가 펠로폰네소스에 자리 잡았다는 『모넴바시아 연대기』의 기사는 훗날 기록이라 믿을 수 있는지 논쟁이 있다. 590년대 황제 마우리키오스는 도나우강 너머로 원정을 보냈으나 602년 겨울을 강 북쪽에서 나라는 명령에 군대가 반란을 일으켜 그가 폐위되었다(뒤의 사건). 같은 602년 아바르가 안테스를 쳐서 사료에서 안테스가 사라진다(테오필락투스). 지도는 527년부터 폴란드와 비스와강 일대를 서슬라브 부족으로, 왈라키아 쪽을 남슬라브 공국들로, 드네스트르~드니프로강을 동슬라브 부족(안테스)으로 그리고, 568년 롬바르드가 이탈리아로 떠나자 엘베강 동쪽과 보헤미아·모라비아·슬로바키아의 게르만 부족 땅을 서슬라브 부족으로, 카란타니아를 남슬라브로 바꾸고, 587년 펠로폰네소스를 남슬라브로 바꾸며 602년 드네스트르~드니프로강의 숲초원을 비운다."
+  subjects: [slavic-tribes, south-slavic-principalities, east-slavic-tribes, hunnic-bulgar-tribes, germanic-tribes, byzantine-empire, avar-khaganate]
+  links:
+    - { from: avar-khaganate, to: east-slavic-tribes, note: "안테스 원정(602)" }
+    - { from: byzantine-empire, to: south-slavic-principalities, note: "도나우강 방어선과 펠로폰네소스(587)" }
+  tags: [society, war]
+  sources: ["Procopius, History of the Wars (H. B. Dewing 영역, Loeb, 1914~1928)", "Jordanes, The Gothic History of Jordanes (Charles C. Mierow 영역, 1915)", "Florin Curta, The Making of the Slavs: History and Archaeology of the Lower Danube Region, c. 500–700 (2001)", "Florin Curta, Southeastern Europe in the Middle Ages, 500–1250 (2006)", "Paul M. Barford, The Early Slavs: Culture and Society in Early Medieval Eastern Europe (2001)"]
+
+- id: vandal-africa-533
+  year: 533
+  endYear: 534
+  title:
+    ko: "유스티니아노스의 아프리카 재정복: 반달 왕국의 멸망(533~534)"
+  summary:
+    ko: "반달 왕 힐데리크가 530년 사촌 겔리메르에게 쫓겨나자 유스티니아노스는 이를 구실로 533년 6월 벨리사리우스에게 보병 1만, 기병 5천, 배 500척(프로코피우스의 수)을 주어 보냈다. 반달 군의 일부는 사르데냐에 가 있었고, 동고트의 아말라순타는 시칠리아에서 보급을 허락했다. 벨리사리우스는 9월 튀니지 연안에 상륙해 13일 아드 데키뭄에서 겔리메르의 군을 흩뜨리고 15일 카르타고에 들어갔다(도시는 거의 싸우지 않고 열렸다). 12월 트리카마룸에서 겔리메르의 마지막 군대가 졌고, 겔리메르는 누미디아의 산에서 겨울을 난 끝에 534년 3월 항복했다. 그는 콘스탄티노폴리스에서 벨리사리우스의 개선식에 끌려 나갔고 갈라티아에 땅을 받았다. 반달 병사 가운데 일부는 동로마 기병으로 뽑혀 동방으로 보내졌다. 동로마는 반달이 가톨릭 교회를 박해했다고 선전했고(가이세리크와 훈네리크 때의 박해는 사료에 있다), 534년 4월 아프리카 총독령을 세웠으나 마우리(베르베르) 부족의 저항과 군대의 반란으로 548년까지 전쟁이 이어졌다. 사르데냐와 코르시카, 발레아레스, 세우타는 534년 동로마에 들어왔다(지도는 534년 사르데냐·코르시카·발레아레스를 동로마 땅으로 그리고, 북아프리카 본토는 이 구간 지도에 없다)."
+  subjects: [vandal-kingdom, byzantine-empire, ostrogothic-kingdom]
+  links:
+    - { from: byzantine-empire, to: vandal-kingdom, note: "아프리카 원정(533~534)" }
+  tags: [war]
+  sources: ["Procopius, History of the Wars (H. B. Dewing 영역, Loeb, 1914~1928)", "John Moorhead, Justinian (1994)", "Peter Heather, The Restoration of Rome: Barbarian Popes and Imperial Pretenders (2013)", "게오르크 오스트로고르스키, 『비잔티움 제국사』(한정숙·김경연 옮김, 까치글방)"]
+  places: [{ name: 아드 데키뭄, at: [10.22, 36.77], year: 533 }, { name: 카르타고, at: [10.32, 36.85], year: 533 }, { name: 트리카마룸(위치 불확실), at: [10.0, 36.8], year: 533 }]
+
+- id: gothic-war-535
+  year: 535
+  endYear: 554
+  title:
+    ko: "고트 전쟁(535~554): 벨리사리우스와 나르세스, 토틸라의 이탈리아"
+  summary:
+    ko: "동고트 왕 테오다하드가 아말라순타를 죽였다는 구실로 유스티니아노스는 535년 두 길로 군대를 보냈다. 벨리사리우스(군사 약 8천 명, 프로코피우스)는 535년 시칠리아를 차지하고 536년 나폴리(벨리사리우스의 군대가 약탈하자 그가 학살을 말렸다)와 12월 로마에 들어갔으며, 문두스는 달마티아의 살로나를 얻었다. 새 고트 왕 비티기스가 537년 3월부터 로마를 1년 가까이 포위했으나 풀지 못했고, 539년 프랑크의 테우데베르트 1세가 이탈리아에 들어와 양쪽을 털었다. 540년 벨리사리우스는 라벤나에 들어가 고트인이 내민 서쪽 황제 자리를 받아들이는 척하며 비티기스를 사로잡았다. 비티기스가 끌려간 뒤 고트인은 일디바드(540~541)와 에라리크를 거쳐 541년 가을 토틸라를 왕으로 뽑았고, 토틸라는 이탈리아 대부분을 되찾았고, 546년 12월 로마가 그에게 떨어지자 토틸라는 성벽 일부를 헐고 원로원 귀족들을 캄파니아로 보냈으며, 로마가 40일쯤 비었다는 전승이 있다(과장일 수 있다). 550년 로마를 다시 차지한 토틸라는 시칠리아도 노렸다. 547년 유스티니아노스는 롬바르드에게 판노니아와 노리쿰을 주어 힘을 보태게 했다(지도는 547년 이 땅을 게르만 부족에서 롬바르드 땅으로 그린다). 551년 환관 나르세스가 군을 맡아 552년 6월 부스타 갈로룸에서 토틸라를 죽였고 10월 몬스 락타리우스에서 마지막 고트 왕 테이아가 전사했다. 553~554년 프랑크·알레만인 부틸린과 로타리의 침입 가운데 로타리는 병으로 죽고 부틸린은 카실리눔(볼투르누스 강가)에서 졌고, 554년 유스티니아노스는 『국사 조칙』(프라그마티카 상크티오)으로 이탈리아의 행정을 정했다. 20년 가까운 전쟁으로 이탈리아는 황폐해졌고(『비사』가 말하는 인명 피해는 부풀려졌으나 도시 인구가 줄고 교역이 끊긴 것은 분명하다), 이는 롬바르드의 침입(568)으로 이어졌다. 지도는 535년 시칠리아·달마티아, 540년 라벤나·이스트리아, 552년 중부·남부, 554년 북부를 동로마 땅으로 그린다. 537년 게피드가 시르미움을 되찾은 것도 지도에 그려진다."
+  subjects: [ostrogothic-kingdom, byzantine-empire, frankish-kingdom, lombard-kingdom, gepid-kingdom, germanic-tribes]
+  links:
+    - { from: byzantine-empire, to: ostrogothic-kingdom, note: "고트 전쟁(535~554)" }
+    - { from: byzantine-empire, to: lombard-kingdom, note: "판노니아와 노리쿰 양도(547)" }
+  tags: [war]
+  sources: ["Procopius, History of the Wars (H. B. Dewing 영역, Loeb, 1914~1928)", "Peter Heather, The Restoration of Rome: Barbarian Popes and Imperial Pretenders (2013)", "Chris Wickham, Early Medieval Italy: Central Power and Local Society, 400–1000 (1981)", "게오르크 오스트로고르스키, 『비잔티움 제국사』(한정숙·김경연 옮김, 까치글방)"]
+  places: [{ name: 나폴리, at: [14.25, 40.85], year: 536 }, { name: 로마, at: [12.5, 41.9], year: 537 }, { name: 라벤나, at: [12.2, 44.42], year: 540 }, { name: 부스타 갈로룸, at: [12.78, 43.23], year: 552 }, { name: 몬스 락타리우스, at: [14.52, 40.65], year: 552 }, { name: 카실리눔, at: [14.21, 41.11], year: 554 }]
+
+- id: turks-avars-551
+  year: 551
+  endYear: 583
+  title:
+    ko: "돌궐의 성립(552)과 아바르의 서진: 게피드의 멸망(567)과 동로마-돌궐 동맹(568)"
+  summary:
+    ko: "552년 돌궐의 부민이 몽골 초원의 유연을 무너뜨렸고 유연 카간 아나괴는 자살했다. 부민이 죽자 아들 이식 카간(552~553)을 거쳐 목간 카간(553~572)이 유연의 남은 무리를 쫓아 초원의 주인이 되었고 부민의 동생 이스테미가 서쪽을 맡아 559년 무렵 사산과 손잡고 에프탈을 눌렀다. 551년 돌궐이 고구려의 신성과 백암성을 쳤다는 『삼국사기』의 기록이 있다(이해 고구려는 한강 유역을 백제·신라에 잃었다). 돌궐에 밀려난 일부 유목민이 서쪽으로 움직여 558년 아바르를 자처하는 무리가 콘스탄티노폴리스에 사절을 보내 땅과 선물을 청했다(아바르가 유연의 후예인지는 학계가 다툰다). 유스티니아노스는 이들로 훈·불가르계 유목민(우니구르·잘리·사비르 등, 메난드로스)을 누르게 했고, 아바르는 560년대 튀링겐까지 올라가 프랑크와 부딪쳤다. 567년 아바르는 롬바르드와 손잡고 게피드 왕국을 무너뜨렸고, 568년 알보인의 롬바르드가 이탈리아로 떠난 뒤 판노니아에 바얀 카간의 칸국을 세웠다(지도는 567년 시르미움을 동로마 땅으로, 568년 판노니아를 아바르 땅으로 그린다). 같은 568년 소그드인 마니아흐가 이끈 돌궐의 사절이 동로마 황제 유스티노스 2세를 찾았고, 동로마의 제마르코스가 돌궐 땅을 다녀와 사산에 맞서는 동맹을 맺었다(메난드로스). 576년 돌궐은 크림의 보스포로스를 차지했다(지도에는 그리지 않는다). 582년 바얀은 3년 포위 끝에 시르미움을 얻었다(지도는 582년). 동쪽에서는 581년 양견이 수를 세운 뒤 돌궐 안의 다툼을 부추겨 돌궐이 동과 서로 갈라졌다(지도는 582년에 돌궐을 끝내고 583년 동돌궐을 따로 그린다). 607년 수 양제가 동돌궐 계민 카간의 장막에서 고구려 사신을 보았다고 『수서』는 적는다."
+  subjects: [gokturk, rouran, eastern-turks, avar-khaganate, gepid-kingdom, lombard-kingdom, byzantine-empire, hunnic-bulgar-tribes, sui, goguryeo]
+  links:
+    - { from: gokturk, to: byzantine-empire, note: "마니아흐와 제마르코스의 사절, 사산에 맞선 동맹(568~)" }
+    - { from: avar-khaganate, to: gepid-kingdom, note: "게피드 멸망(567)" }
+  tags: [war, diplomacy]
+  sources: ["The History of Menander the Guardsman (R. C. Blockley 영역, 1985)", "Walter Pohl, The Avars: A Steppe Empire in Central Europe, 567–822 (2018)", "Peter B. Golden, An Introduction to the History of the Turkic Peoples (1992)", "『수서』 돌궐전", "『삼국사기』 고구려본기 양원왕 7년(551)"]
+
+- id: toledo-kingdom-552
+  year: 552
+  endYear: 624
+  title:
+    ko: "서고트의 톨레도 왕국: 스파니아(552)·레오비길드와 수에비 병합(585)·레카레드의 개종(589)"
+  summary:
+    ko: "고트 왕 아길라 1세(549~554)에 맞선 귀족 아타나길드가 551년 반란을 일으키며 유스티니아노스에게 도움을 청했고, 동로마 장군 리베리우스의 군대가 552년 남동 해안에 상륙했다. 아타나길드(554~567)는 왕이 된 뒤에도 이들을 몰아내지 못했고, 카르타헤나와 말라가를 낀 동로마 속주 '스파니아'가 남았다(지도는 552년부터 남동 해안을 동로마 땅으로 그린다). 리우바 1세(567~572 무렵)의 아우 레오비길드(공동왕 568~, 단독 572~586)는 톨레도를 중심으로 왕국을 다시 모았다. 571~572년 아시도나와 코르도바 쪽 동로마 땅을 되찾았고(지도는 572년), 574년 칸타브리아의 아마야를 차지했으며(지도는 574년), 578년 아들 레카레드를 위해 도시 레코폴리스를 세웠다. 아들 헤르메네길드가 가톨릭으로 개종해 세비야에서 일으킨 반란(579~584)을 수에비는 도왔으나 동로마는 레오비길드에게 금화 3만을 받고 물러났고, 레오비길드가 눌렀고 헤르메네길드는 585년 처형되었다. 같은 585년 레오비길드는 수에비 왕국을 병합해 갈리시아를 차지했다. 레카레드 1세(586~601)는 589년 제3차 톨레도 공의회에서 서고트 왕국의 가톨릭 개종을 선언하고 아리우스파 주교들의 귀의를 받았다. 이 뒤 왕이 주교들과 함께 공의회에서 법을 정하는 체제가 굳었다. 리우바 2세·비테리크·군데마르·시세부트·레카레드 2세를 거친 수인틸라(621~631)는 624년 동로마의 마지막 스파니아 거점(카르타헤나로 본다)을 차지해 처음으로 반도 전체를 한 왕이 다스리게 했다(지도는 624년 스파니아를 서고트 땅으로 그린다)."
+  subjects: [visigothic-kingdom, suebi-kingdom, byzantine-empire]
+  links:
+    - { from: byzantine-empire, to: visigothic-kingdom, note: "스파니아 속주(552~624)" }
+    - { from: visigothic-kingdom, to: suebi-kingdom, note: "수에비 병합(585)" }
+  tags: [politics, war]
+  sources: ["Isidore of Seville, History of the Goths, Vandals, and Suevi (Guido Donini·Gordon B. Ford 영역, 2판, 1970)", "Roger Collins, Visigothic Spain, 409–711 (2004)", "E. A. Thompson, The Goths in Spain (1969)", "Roger Collins, Early Medieval Spain: Unity in Diversity, 400–1000 (2판, 1995)"]
+  places: [{ name: 코르도바, at: [-4.78, 37.88], year: 572 }, { name: 카르타헤나, at: [-0.98, 37.6], year: 624 }]
+
+- id: bavaria-agilolfings-555
+  year: 555
+  endYear: 788
+  title:
+    ko: "아길롤핑 가문의 바이에른 공국: 가리발트 1세(555 무렵)에서 타실로 3세의 폐위(788)까지"
+  summary:
+    ko: "바이에른 사람들은 6세기 중엽 사료에 처음 나타나고(요르다네스, 551), 555년 무렵 가리발트 1세가 프랑크의 종주 아래 첫 공(아길롤핑 가문인지는 학계가 다툰다)이 되어 레겐스부르크를 중심으로 다스렸다. 그의 딸 테오델린다는 롬바르드 왕 아우타리와 아길룰프의 왕비가 되었다. 타실로 1세(591 무렵~610 무렵)에 이어 700년 무렵 테오도 공은 잘츠부르크의 루페르트를 불러 교회를 세웠다고 전한다. 후그베르트(725~736 무렵)에 이은 오딜로 공(736~748)은 카롤루스 마르텔의 딸 힐트루트와 혼인했고, 739년 보니파티우스가 잘츠부르크·레겐스부르크·프라이징·파사우의 주교구를 정비했다. 마르텔이 죽은 뒤 맞서다 743년 레흐강에서 피핀과 카를로만에게 졌다. 오딜로가 죽자 피핀의 이복동생 그리포가 한때 바이에른을 차지했으나 피핀이 몰아냈고, 오딜로의 아들 타실로 3세(공 748~788)는 어려서 즉위해 피핀의 후견 아래 757년 콩피에뉴에서 신서했으나 763년 피핀의 아키텐 원정 중 군대를 이끌고 돌아가 버렸고(하리슬리츠), 롬바르드 왕 데시데리우스의 딸 리우트페르가와 혼인해 롬바르드와 이어졌다. 772년 카란타니아(알프스 슬라브, 지도는 남슬라브 공국들로 그린다)를 쳐서 보호 아래 두고 777년 크렘스뮌스터 수도원을 세웠다. 774년 롬바르드 왕국이 무너지자 고립된 그는 아바르와 손잡았다는 의심을 샀고, 788년 잉겔하임 제국 회의에서 카롤루스가 763년의 탈영과 반역 혐의로 사형을 선고했다가 수도원으로 보내는 것으로 바꾸었다. 바이에른은 카롤루스의 처남 게롤트가 맡는 프랑크 왕국의 속주가 되었다. 지도는 555~787년 바이에른 공국을 따로 그리고(772~787년 카란타니아 포함), 788년 프랑크 땅으로 그린다."
+  subjects: [bavaria-duchy, frankish-kingdom, lombard-kingdom, avar-khaganate, south-slavic-principalities]
+  links:
+    - { from: frankish-kingdom, to: bavaria-duchy, note: "종주와 신서(757), 폐위(788)" }
+    - { from: bavaria-duchy, to: south-slavic-principalities, note: "카란타니아 정복(772)" }
+  tags: [politics]
+  sources: ["Bernhard Walter Scholz 옮김, Carolingian Chronicles: Royal Frankish Annals and Nithard's Histories (1970)", "Jordanes, The Gothic History of Jordanes (Charles C. Mierow 영역, 1915)", "Paul the Deacon, History of the Lombards (William Dudley Foulke 영역, 1907)", "Rosamond McKitterick, The Frankish Kingdoms under the Carolingians, 751–987 (1983)", "Timothy Reuter, Germany in the Early Middle Ages, c. 800–1056 (1991)"]
+
+- id: austrasia-neustria-561
+  year: 561
+  endYear: 687
+  title:
+    ko: "아우스트라시아와 네우스트리아: 브룬힐데와 프레데군트에서 테르트리 전투(687)까지"
+  summary:
+    ko: "561년 클로타르 1세가 죽자 네 아들이 다시 왕국을 나눴다: 샤리베르트 1세(파리), 군트람(오를레앙·부르군디아), 시기베르트 1세(랭스·메스, 아우스트라시아), 킬페리크 1세(수아송, 네우스트리아). 시기베르트가 서고트 왕 아타나길드의 딸 브룬힐데와 혼인하자 킬페리크는 그 언니 갈스윈타를 맞았다가 그녀가 목 졸려 죽은 뒤(그레고리우스는 킬페리크가 죽였다고 적는다) 프레데군트와 혼인했고, 두 왕비를 둘러싼 원한이 반세기 가까이 싸움으로 이어졌다(시기베르트는 575년, 킬페리크는 584년에 살해되었다). 군트람이 592년 죽자 브룬힐데의 아들 킬데베르트 2세(575~595)가 아우스트라시아와 부르군디아를 이었고, 그가 죽은 뒤 브룬힐데는 손자 테우데베르트 2세·테우데리크 2세를 앞세워 다스렸으나, 613년 귀족들이 네우스트리아 왕 클로타르 2세 편에 서서 그녀를 넘겼고 클로타르는 그녀를 말에 매달아 죽였다(『프레데가리우스 연대기』). 614년 파리 칙령으로 귀족과 교회의 권리가 커졌다. 다고베르트 1세(629~639)는 마지막으로 힘 있는 메로빙거 왕이었으나 631년 슬라브 왕 사모에게 패했고(뒤의 사건), 이후 왕들은 어려서 즉위하거나 일찍 죽어 실권이 궁재에게 넘어갔다(아인하르트는 이 왕들을 소달구지를 타는 허수아비로 그린다). 아우스트라시아의 궁재 가문(랑덴의 피핀 1세, 메스의 아르눌프의 후손)은 656년 그리모알트의 쿠데타에 실패하고도 다시 일어서 네우스트리아의 궁재 에브루앵(658~673, 675~680)과 오래 다퉜다. 아키텐에서는 670년대 루푸스 공이 사실상 자립했다고 하나 왕에 대한 충성 여부는 학계에서 갈린다. 687년 테르트리 전투에서 아우스트라시아의 궁재 피핀 2세(헤르스탈)가 네우스트리아 왕 테우데리크 3세와 궁재 베르카르를 꺾어 프랑크 전체의 실권자가 되었다. 지도는 아우스트라시아·네우스트리아·부르군디아를 한 나라(프랑크 왕국)로 그리고, 아키텐은 718년부터 따로 그린다."
+  subjects: [frankish-kingdom, visigothic-kingdom, aquitaine-early, samo-kingdom]
+  links:
+    - { from: visigothic-kingdom, to: frankish-kingdom, note: "아타나길드의 딸 브룬힐데의 혼인(567)" }
+    - { from: frankish-kingdom, to: samo-kingdom, note: "다고베르트 1세의 원정(631)" }
+  tags: [politics]
+  sources: ["Gregory of Tours, The History of the Franks (Lewis Thorpe 영역, 1974)", "The Fourth Book of the Chronicle of Fredegar with Its Continuations (J. M. Wallace-Hadrill 영역, 1960)", "Einhard, Life of Charlemagne (Lewis Thorpe 영역, 1969)", "Ian Wood, The Merovingian Kingdoms 450–751 (1994)", "Paul Fouracre·Richard A. Gerberding, Late Merovingian France: History and Hagiography, 640–720 (1996)"]
+  places: [{ name: 테르트리, at: [3.07, 49.86], year: 687 }]
+
+- id: celtic-north-563
+  year: 563
+  endYear: 741
+  title:
+    ko: "아일랜드와 스코틀랜드의 수도원: 콜룸바(563)·콜룸바누스·넥탄스미어(685)·달리어타의 끝(741)"
+  summary:
+    ko: "아일랜드는 5세기 파트리키오스의 선교 뒤 부족마다 수도원이 중심이 되는 교회로 자랐다. 563년 콜룸바(콜름 킬레)가 달리어타로 건너가 아이오나에 수도원을 세웠고 픽트 왕 브리데이를 찾았다고 아도마난의 『콜룸바 전』은 전한다. 아일랜드 수도사들은 '순례'로 바다를 건너 선교했다. 콜룸바누스(543 무렵~615)는 590년 프랑크 왕국의 갈리아로 가서 뤽쇠이 수도원을 세웠다가 610년 테우데리크 2세와 브룬힐데에게 쫓겨났고 614년 롬바르드 왕 아길룰프의 보호를 받아 보비오에 정착했다. 아이오나의 에이단은 635년 노섬브리아의 린디스판으로 갔다(뒤의 사건). 685년 넥탄스미어에서 픽트 왕 브리데이 막 벨리가 노섬브리아 왕 에크프리스를 죽여 노섬브리아의 북쪽 지배가 끝났다. 달리어타 왕국은 아일랜드 북동부의 왕가가 스코틀랜드 서해안에 세운 나라로, 741년 픽트 왕 앵거스 막 퍼구사(729년 드레스트를 이긴 뒤 732년 무렵부터 왕, ~761)가 정복했다(얼스터 연대기. 지도는 741년부터 아가일을 픽트 땅으로 그린다). 앵거스는 756년 노섬브리아와 함께 스트래스클라이드 왕국의 알트 클루트(덤바턴)를 에워싸 항복을 받았다. 아일랜드 왕국들(묶음)은 이 시기 우이 닐 가문의 대왕 자리를 두고 다투었고 수도원은 땅과 부를 쌓았다. 지도는 아일랜드 전체를 아일랜드 왕국들로, 스코틀랜드 북부를 픽트 왕국으로 그린다."
+  subjects: [irish-kingdoms, picts, dal-riata, strathclyde, frankish-kingdom, lombard-kingdom]
+  links:
+    - { from: picts, to: dal-riata, note: "앵거스 막 퍼구사의 정복(741)" }
+  tags: [culture, politics]
+  sources: ["Adomnán of Iona, Life of St Columba (Richard Sharpe 영역, 1995)", "Thomas Charles-Edwards, Early Christian Ireland (2000)", "Alfred P. Smyth, Warlords and Holy Men: Scotland AD 80–1000 (1984)", "Ian N. Wood, The Missionary Life: Saints and the Evangelisation of Europe, 400–1050 (2001)"]
+  places: [{ name: 넥탄스미어(던니첸), at: [-2.78, 56.63], year: 685 }]
+
+- id: lombard-italy-568
+  year: 568
+  endYear: 751
+  title:
+    ko: "롬바르드의 이탈리아(568)와 라벤나 총독령: 알보인에서 아이스툴프까지"
+  summary:
+    ko: "568년 4월 롬바르드의 알보인은 판노니아를 아바르에게 넘기고 이탈리아로 옮겼다(작센인 등 다른 무리도 따랐다고 파울루스 디아코누스는 전한다). 569년 9월 밀라노를 차지했고 파비아는 3년 포위 끝에 572년 항복해 도읍이 되었으며, 알보인은 572년 아내 로자문다가 꾸민 일로 살해되었고, 다음 왕 클레프(572~574)도 살해된 뒤 574~584년 왕 없이 공작들이 다스리다 프랑크의 위협 앞에 아우타리(584~590)가 왕권을 되살렸고, 아길룰프(591~616)와 가톨릭 왕비 테오델린다는 교황 그레고리우스 1세(590~604)와 화평을 오가며 이탈리아의 정세를 이끌었고, 아달로알드(616~626)와 아리오알드(626~636)가 이었다. 동로마는 롬바르드에 맞서 라벤나에 총독(엑사르코스)을 두어 군정과 민정을 맡겼다. 로타리(636~652)가 643년 리구리아를 얻고 법전을 펴냈다. 콘스탄스 2세는 그리모알트(662~671) 때인 663년 이탈리아에 원정했으나 베네벤토를 꺾지 못하고 시칠리아로 갔다. 베네벤토 공 로무알드 1세가 660년대 후반~670년대에 타란토와 브린디시를 얻었다(지도는 바리·타란토를 681년으로 그린다). 리우트프란드(712~744)는 727~728년 볼로냐 등을 차지하고 수트리 땅을 교황에게 넘겼다(수트리의 기증, 728). 라치스(744~749)에 이어 왕이 된 아이스툴프가 751년 라벤나 총독령을 끝냈다(뒤의 사건). 697년 베네치아 석호에서 첫 도제를 뽑았다는 전승이 있고, 베네치아는 동로마의 종주 아래 자치 공국으로 자랐다. 그레고리우스 1세의 편지는 롬바르드의 약탈과 살육, 동로마 관리의 무거운 세금, 로마의 굶주림을 하소연한다. 지도는 568년 알보인의 이탈리아를 시작으로 569·572·576·603·643·681·736·751년 롬바르드와 동로마의 경계를 바꿔 그린다."
+  subjects: [lombard-kingdom, byzantine-empire, venice, avar-khaganate, frankish-kingdom]
+  links:
+    - { from: avar-khaganate, to: lombard-kingdom, note: "판노니아 양도와 롬바르드의 이주(568)" }
+    - { from: lombard-kingdom, to: byzantine-empire, note: "이탈리아 정복과 라벤나 총독령의 대립" }
+  tags: [war, politics]
+  sources: ["Paul the Deacon, History of the Lombards (William Dudley Foulke 영역, 1907)", "Chris Wickham, Early Medieval Italy: Central Power and Local Society, 400–1000 (1981)", "Neil Christie, The Lombards: The Ancient Longobards (1995)", "Thomas F. X. Noble, The Republic of St. Peter: The Birth of the Papal State, 680–825 (1984)", "게오르크 오스트로고르스키, 『비잔티움 제국사』(한정숙·김경연 옮김, 까치글방)"]
+  places: [{ name: 밀라노, at: [9.19, 45.46], year: 569 }, { name: 파비아, at: [9.16, 45.19], year: 572 }]
+
+- id: brittany-578
+  year: 578
+  endYear: 799
+  title:
+    ko: "브르타뉴: 브리튼인의 이주와 프랑크의 브르타뉴 변경(799)"
+  summary:
+    ko: "로마가 브리타니아를 떠나고 앵글로색슨이 들어오자 5~7세기에 브리튼인이 바다를 건너 아르모리카(오늘의 브르타뉴)로 옮겨 가 돔노네·코르누아유·브로 와로크 같은 작은 나라를 세웠다. 투르의 그레고리우스는 578년 프랑크 왕 킬페리크 1세가 보낸 군대와 브로 와로크의 와로크 2세가 싸운 끝에 와로크가 벤느에 대한 프랑크의 주권을 인정하고 인질과 공납을 약속했다고 적으며, 589~590년 무렵 군트람의 원정군이 다시 와로크와 싸웠다고 적는다. 636년 무렵 돔노네의 유디카엘이 다고베르트 1세를 찾아 평화를 맺었다(『프레데가리우스 연대기』). 『메스 연대기』는 753년 피핀 3세가 벤느를 차지하고 브르타뉴를 복속시켰다고 적는데, 실제로는 벤느·렌·낭트를 낀 변경령을 세운 정도로 본다. 778년 론세스바예스에서 죽은 롤랑이 변경백이었다. 786년 집사 아다울프가 이끈 프랑크군이 브리튼인에게서 인질을 받았고, 799년 변경백 귀도(비도)가 브르타뉴의 우두머리들에게서 무기를 거두어 카롤루스에게 바쳤다고 『프랑크 왕국 연대기』는 적는다. 프랑크의 지배는 오래가지 못해 브르타뉴는 그 뒤에도 자립을 이어 갔다(뒤의 사건). 지도는 브르타뉴 서쪽(코트다르모르·피니스테르·모르비앙)을 799년 프랑크 땅으로 그리고 브리튼인 왕국들(묶음) 항목을 800년에 끝낸다."
+  subjects: [brittonic-kingdoms, frankish-kingdom]
+  links:
+    - { from: frankish-kingdom, to: brittonic-kingdoms, note: "브르타뉴 변경령(753)과 정복(799)" }
+  tags: [politics]
+  sources: ["Gregory of Tours, The History of the Franks (Lewis Thorpe 영역, 1974)", "Julia M. H. Smith, Province and Empire: Brittany and the Carolingians (1992)", "Wendy Davies, Small Worlds: The Village Community in Early Medieval Brittany (1988)", "Bernhard Walter Scholz 옮김, Carolingian Chronicles: Royal Frankish Annals and Nithard's Histories (1970)"]
+
+- id: caucasus-580
+  year: 580
+  endYear: 787
+  title:
+    ko: "캅카스의 이베리아와 라지카: 사산·동로마·아랍 사이(580~787)"
+  summary:
+    ko: "카르틀리(동조지아, 이베리아)의 호스로이 왕조 왕국은 사산 페르시아의 종주 아래 있었고, 580년 호르미즈드 4세가 왕정을 없앴다. 588년 구아람 1세가 동로마 황제 마우리키오스에게서 쿠로팔라테스 칭호를 받아 이베리아 공국(대공 에리스타비)을 열었다. 591년 마우리키오스와 호스로 2세의 조약으로 동로마는 아르메니아 서부(타론·바그레반드·시라크)를 얻었다. 627년 헤라클레이오스가 하자르와 함께 트빌리시를 에워쌌고, 뒤에 카르틀리는 사산, 동로마, 아랍 칼리프국의 종주를 차례로 받았다. 서조지아의 라지카 왕국(에그리시)은 522년 차트 1세가 콘스탄티노폴리스에서 세례를 받고 동로마의 종주를 받았고, 라지카 전쟁(541~562)에서 페르시아가 541년 페트라를 차지했다가 550~551년 동로마가 되찾아 성벽을 허물었고, 562년 50년 화약은 라지카를 동로마의 종속국으로 인정했다. 736년 마르완 이븐 무함마드의 원정으로 트빌리시에 아랍 토후가 들어서자 이베리아 공국의 카르틀리·메스헤티·클라르제티는 지도에서 빈 땅이 되고(근사), 아르칠 공(후대 전승은 왕)은 카헤티로 물러나 786년 아랍에게 순교했다고 전한다. 787년 그리골이 카헤티 공국을 세웠다. 서쪽에서는 778년 무렵 라지카와 아바스기아의 레온 2세가 동로마의 종주에서 벗어나 아브하지아 왕을 칭하고 쿠타이시를 도읍으로 삼았다고 한다(하자르의 도움이 있었다는 전승이 있으며 연대는 780년대로 보기도 한다). 지도는 580년 이베리아 왕국을 지우고 588년 이베리아 공국을, 778년 라지카를 아브하지아 왕국으로, 787년 이베리아 공국을 카헤티-헤레티 왕국으로 바꿔 그린다."
+  subjects: [iberia-kingdom, iberia-principate, lazica, abkhazia-kingdom, kakheti-hereti, byzantine-empire, khazar-khaganate]
+  links:
+    - { from: byzantine-empire, to: iberia-principate, note: "구아람 1세의 쿠로팔라테스 칭호(588)" }
+    - { from: byzantine-empire, to: lazica, note: "종주와 라지카 전쟁(541~562)" }
+  tags: [politics]
+  sources: ["Cyril Toumanoff, Studies in Christian Caucasian History (1963)", "Ronald Grigor Suny, The Making of the Georgian Nation (2판, 1994)", "Donald Rayfield, Edge of Empires: A History of Georgia (2012)", "Stephen H. Rapp Jr., Studies in Medieval Georgian Historiography: Early Texts and Eurasian Contexts (2003)"]
+
+- id: heraclius-persia-602
+  year: 602
+  endYear: 628
+  title:
+    ko: "헤라클레이오스와 사산 전쟁(602~628): 예루살렘 함락과 콘스탄티노폴리스 포위(626)"
+  summary:
+    ko: "602년 군대가 반란을 일으켜 황제 마우리키오스를 죽이고 포카스를 세우자 사산의 호스로 2세는 '마우리키오스의 복수'를 내걸고 쳐들어왔다. 페르시아군은 604~605년 다라, 611~613년 안티오키아, 613년 다마스쿠스, 614년 예루살렘(성십자가를 가져갔고 『안티오코스 스트라테고스』는 수만 명이 죽었다고 적으나 과장 가능성이 크다), 619년 알렉산드리아를 차지했다. 610년 카르타고 총독의 아들 헤라클레이오스가 포카스를 쫓아내고 즉위했으나 몇 해 동안 막지 못했고 615년 페르시아군이 칼케돈까지 닿았다(617년 함락). 622년 헤라클레이오스는 반격에 나서 아르메니아와 캅카스를 거쳐 사산 땅 깊이 쳐들어가 624년 간자크의 불의 신전을 부수고 628년 초 다스타기르드의 궁을 약탈했다(동로마 쪽의 파괴도 있었다). 626년 페르시아군이 칼케돈에 머무는 가운데 6월 29일 아바르의 선봉(약 3만)이 성벽 앞에 이르고 7월 말~8월 초 카간과 슬라브인이 육지 성벽을 공격했을 때 총대주교 세르기오스와 귀족 보노스가 도시를 지켰다. 8월 6~8일 공격이 실패하고 슬라브의 통나무배는 동로마 함대가 부쉈으며 아바르는 물러났다. 627년 헤라클레이오스는 튀르크계 하자르의 지에벨과 손잡고 트빌리시를 에워쌌고, 12월 12일 니네베 가까이에서 페르시아군을 꺾었다. 628년 2월 호스로 2세가 아들 카바드 2세에게 죽고 평화가 맺어졌으며, 헤라클레이오스는 630년 3월 성십자가를 예루살렘에 되돌렸다. 두 제국은 20여 년의 전쟁으로 지쳤고 몇 해 뒤 아랍이 쳐들어왔다(뒤의 사건). 같은 때 동아시아에서는 수가 고구려를 침공했다가 612년 살수에서 크게 지고(살수 대첩) 618년 당에게 자리를 내주었다. 지도는 페르시아의 점령(611~626)을 그리지 않고 동로마의 동쪽 국경을 591년 아르메니아에서 637년 아랍 변경까지 그대로 둔다."
+  subjects: [byzantine-empire, avar-khaganate, sui, tang, goguryeo]
+  links:
+    - { from: avar-khaganate, to: byzantine-empire, note: "콘스탄티노폴리스 포위(626)" }
+  tags: [war]
+  sources: ["Walter E. Kaegi, Heraclius, Emperor of Byzantium (2003)", "John F. Haldon, Byzantium in the Seventh Century: The Transformation of a Culture (개정판, 1997)", "Cyril Mango·Roger Scott 옮김, The Chronicle of Theophanes Confessor (1997)", "Michael Whitby·Mary Whitby 옮김, Chronicon Paschale 284–628 AD (1989)", "『수서』 양제기"]
+  places: [{ name: 콘스탄티노폴리스, at: [28.95, 41.01], year: 626 }, { name: 니네베, at: [43.15, 36.36], year: 627 }]
+
+- id: balkan-samo-602
+  year: 602
+  endYear: 659
+  title:
+    ko: "도나우강 방어선의 붕괴(602~615)와 사모 왕국(623~658)"
+  summary:
+    ko: "602년 마우리키오스를 쫓아낸 포카스(602~610)가 사산과의 전쟁에 군대를 돌리자 도나우강 방어선이 무너졌다. 아바르와 슬라브는 발칸 안쪽까지 쳐들어와 614년 살로나(스플리트 곁, 피난민은 디오클레티아누스 궁전으로 갔다), 615년 나이수스(니시)와 세르디카(소피아)를 약탈하거나 차지했다. 테살로니키는 슬라브의 포위를 여러 번 견뎠다(『성 데메트리오스의 기적』). 이 뒤 내륙은 동로마가 실제로 다스리지 못하는 땅이 되어 슬라브 부족의 '스클라비니아'가 자리 잡았고(지도는 615년부터 발칸 내륙을 남슬라브 공국들로 그린다), 해안 도시는 동로마가 지켰다. 아바르에 눌려 있던 서쪽 슬라브는 623~624년 프랑크 상인 사모를 왕으로 추대해 아바르에 맞섰다(『프레데가리우스 연대기』). 사모는 35년을 다스렸고 631년 보가스티스부르크에서 다고베르트 1세의 프랑크군을 물리쳤으며 소르브인의 공 데르반이 그를 따랐다. 사모 왕국의 도읍과 영역은 확실하지 않아 학자들은 보헤미아와 모라비아 일대로 본다(지도는 623~658년 보헤미아와 모라비아를 사모 왕국으로 그리고 659년부터 다시 서슬라브 부족으로 그린다). 658년 무렵 사모가 죽자 나라는 흩어졌다. 사모에 관한 기록은 사실상 이 연대기뿐이다. 동로마 쪽에서는 콘스탄스 2세가 658년 슬라브 땅을 쳐서 많은 사람을 잡아 옮겼다고 테오파네스가 전한다."
+  subjects: [south-slavic-principalities, slavic-tribes, samo-kingdom, byzantine-empire, avar-khaganate, frankish-kingdom]
+  links:
+    - { from: samo-kingdom, to: avar-khaganate, note: "슬라브의 반란과 독립(623~)" }
+    - { from: samo-kingdom, to: frankish-kingdom, note: "보가스티스부르크 승리(631)" }
+  tags: [war, politics]
+  sources: ["The Fourth Book of the Chronicle of Fredegar with Its Continuations (J. M. Wallace-Hadrill 영역, 1960)", "Florin Curta, Southeastern Europe in the Middle Ages, 500–1250 (2006)", "John V. A. Fine Jr., The Early Medieval Balkans: A Critical Survey from the Sixth to the Late Twelfth Century (1983)", "Cyril Mango·Roger Scott 옮김, The Chronicle of Theophanes Confessor (1997)"]
+  places: [{ name: 살로나, at: [16.48, 43.54], year: 614 }, { name: 나이수스(니시), at: [21.9, 43.32], year: 615 }, { name: 세르디카(소피아), at: [23.32, 42.7], year: 615 }]
+
+- id: visigoth-jews-612
+  year: 612
+  endYear: 694
+  title:
+    ko: "서고트의 유대인 정책: 시세부트의 강제 개종(612)에서 톨레도 제17차 공의회(694)까지"
+  summary:
+    ko: "서고트 왕국의 유대인은 로마 시대부터 이베리아에 살았고, 아리우스파 왕들 아래서는 비교적 방해받지 않았다. 589년 레카레드의 가톨릭 개종 뒤 공의회와 왕들은 유대인을 공직과 기독교인 노예 소유에서 배제하기 시작했고, 시세부트(612~621)는 612년 무렵 칙령으로 유대인에게 세례를 받거나 떠나라고 명했다(많은 수가 세례를 받았고 일부는 떠났다고 한다). 633년 제4차 톨레도 공의회는 세비야의 이시도루스의 뜻에 따라 앞으로는 억지로 믿게 해서는 안 된다고 하면서도 이미 세례받은 이들이 유대교로 돌아가는 것은 막았다. 킨틸라(636~639) 때 638년 제6차 공의회가 개종한 유대인의 신앙 서약을 요구했고, 킨다스빈트(642~653)는 강제 개종을 다시 밀어붙였으며, 레세스빈트(653~672)의 『서고트 법』(654)은 유대교 의례(할례·유월절·음식 규정)와 기독교인과의 혼인을 금했다. 밤바(672~680)를 거쳐 에르비히(680~687)는 681년 제12차 공의회에서 유대인이 정해진 기한까지 세례를 받지 않으면 재산을 몰수하고 매질한 뒤 추방한다는 법을 냈다. 에기카(687~702)는 694년 제17차 공의회에서, 유대인이 바다 건너 같은 신앙인들과 짜고 왕국을 뒤엎으려 했다는 혐의(사실 여부는 알 수 없다)로 모든 유대인의 재산을 몰수하고 노예로 삼으며 일곱 살 넘는 아이들을 기독교인 가정에 맡기라고 명했다. 이 법들이 되풀이된 것은 집행이 고르지 않았음을 보여 준다고 보며, 711년 정복 때 유대인이 아랍을 도왔다는 전승은 뒷날 사료에서 나오고 학자들은 의심한다. 이 정책의 주체는 왕과 주교들이며 남은 기록도 교회와 왕실의 것이다."
+  subjects: [visigothic-kingdom]
+  tags: [society, politics]
+  sources: ["Roger Collins, Visigothic Spain, 409–711 (2004)", "E. A. Thompson, The Goths in Spain (1969)", "Roger Collins, Early Medieval Spain: Unity in Diversity, 400–1000 (2판, 1995)"]
+
+- id: northumbria-616
+  year: 616
+  endYear: 735
+  title:
+    ko: "노섬브리아의 시대: 에드윈에서 휘트비 시노드(664)와 베다(735)까지"
+  summary:
+    ko: "앵글로색슨 왕국들 가운데 노섬브리아에서 애설프리스를 이은 에드윈(616~633)은 엘멧을 차지하고 627년 파울리누스에게 세례를 받았으나 633년 해트필드 체이스에서 웨일스 공국들(귀네드)의 캐드월런과 머시아의 펜다에게 죽었다(지도는 623년 엘멧과 체스터 쪽을 앵글로색슨 땅으로 그린다). 버니시아의 에안프리스와 데이라의 오스릭이 이었으나 둘 다 634년까지 캐드월런에게 죽었고, 오스월드(634~642)가 하늘의 들판에서 캐드월런을 물리치고 아이오나의 수도사 에이단을 불러 린디스판에 수도원을 세우게 했다. 642년 오스월드가 펜다에게 죽은 뒤 동생 오스위(642~670)가 655년 위닌 강가에서 펜다를 죽여 우위를 되찾았다. 638년 노섬브리아가 에든버러를 포위해 로디언을 얻었고(지도는 638년), 오스위는 브리튼인 왕국들의 레게드(컴브리아)를 혼인으로 이은 것으로 본다. 664년 휘트비 시노드에서 오스위는 아일랜드 전통 대신 로마의 부활절 계산을 따르기로 했고, 669년 타르소스의 테오도로스가 캔터베리 대주교로 와서 교구를 정비했다. 685년 에크프리스가 넥탄스미어에서 픽트 왕국의 군대에 죽어 노섬브리아의 북쪽 팽창은 끝났다(앞의 사건). 8세기 노섬브리아는 학문의 중심이 되었다. 자로와 몽크위어머스 수도원의 베다(673 무렵~735)가 731년 『잉글랜드 교회사』를 마쳤고, 그는 그리스도 탄생 뒤로 해를 세는 방식을 널리 퍼뜨렸으며, 린디스판 복음서도 8세기 초에 만들어졌다. 노섬브리아는 8세기 중엽부터 왕위 다툼으로 약해졌고 머시아가 앞섰다(뒤의 사건)."
+  subjects: [anglo-saxon-kingdoms, brittonic-kingdoms, welsh-principalities, picts]
+  links:
+    - { from: picts, to: anglo-saxon-kingdoms, note: "넥탄스미어(685)" }
+    - { from: anglo-saxon-kingdoms, to: brittonic-kingdoms, note: "에든버러 포위(638)와 레게드" }
+  tags: [politics, culture]
+  sources: ["Bede, Ecclesiastical History of the English People (Leo Sherley-Price 영역, 1990)", "The Anglo-Saxon Chronicle (Michael Swanton 영역, 1996)", "Frank Stenton, Anglo-Saxon England (3판, 1971)", "Barbara Yorke, Kings and Kingdoms of Early Anglo-Saxon England (1990)"]
+  places: [{ name: 해트필드 체이스, at: [-0.95, 53.55], year: 633 }]
+
+- id: mercia-offa-626
+  year: 626
+  endYear: 796
+  title:
+    ko: "머시아의 패권: 펜다에서 오파와 오파의 방벽까지"
+  summary:
+    ko: "앵글로색슨 왕국들의 하나인 머시아(트렌트강 상류, 탬워스)는 펜다(626 무렵~655)가 628년 사이렌세스터에서 웨식스와 맞붙어 휘시 땅(글로스터셔·우스터)을 얻으며 커졌다(지도는 632년). 이교도 펜다는 웨일스 공국들의 캐드월런과 손잡고 633년 노섬브리아의 에드윈을 죽였고 642년 오스월드를 죽였으나 655년 오스위에게 졌다. 아들 피다가 오스위의 도움으로 남머시아를 맡았다 656년 살해되었고 오스위가 658년까지 직접 다스렸다. 658년 웨식스의 쿠엔왈흐가 페온난에서 브리튼인 왕국들(묶음)을 쳐 도싯과 서머싯을 얻었고(지도는 659년), 펜다의 다른 아들 울프헤어(658~675)가 661년 웨식스를 눌러 템스강 상류와 칠턴 땅을 얻었다(지도는 668년). 웨식스의 이네(688~726)는 710년 브리튼인의 덤노니아 왕 게런트를 쳐 데번을 차지하고 법전을 펴냈다(지도는 711년). 머시아의 에설발드(716~757)는 험버강 남쪽의 여러 왕국을 복속시켰다고 베다가 쓸 만큼 컸으나 752년 버퍼드에서 웨식스에 졌고 757년 살해되었다. 베오른레드가 잠깐 왕이었다가 오파(757~796)가 쫓아내고 올랐다. 오파는 켄트·서식스·동앵글리아를 눌렀고 은화(페니)를 정비했으며 787년 릭필드 대주교구를 세웠다. 794년 동앵글리아 왕 에설베르트가 오파 쪽에 살해되었고, 796년 오파는 프랑크 왕국의 카롤루스와 서신을 주고받으며 상인 보호를 합의했다. 웨일스와의 경계를 따라 난 오파의 방벽(현존하고 이어지는 구간은 약 100~130km이고 바다에서 바다까지 이었다고 본 추정은 약 240km)은 어서의 『알프레드 전』이 오파가 쌓았다고 전하나, 얼마나 오파 때 만들어졌는지는 학자들이 다툰다. 오파가 죽은 뒤 머시아는 약해져 825년 엘렌던에서 웨식스에 졌다(뒤의 사건)."
+  subjects: [anglo-saxon-kingdoms, wessex, brittonic-kingdoms, welsh-principalities, frankish-kingdom]
+  links:
+    - { from: anglo-saxon-kingdoms, to: welsh-principalities, note: "오파의 방벽" }
+    - { from: wessex, to: brittonic-kingdoms, note: "페온난(658)과 이네의 덤노니아 정복(710)" }
+  tags: [politics, war]
+  sources: ["The Anglo-Saxon Chronicle (Michael Swanton 영역, 1996)", "Frank Stenton, Anglo-Saxon England (3판, 1971)", "Simon Keynes·Michael Lapidge 옮김, Alfred the Great: Asser's Life of King Alfred and Other Contemporary Sources (1983)", "David Hill·Margaret Worthington 엮음, Offa's Dyke: History and Guide (2003)"]
+  places: [{ name: 사이렌세스터, at: [-1.97, 51.72], year: 628 }, { name: 버퍼드, at: [-1.64, 51.81], year: 752 }]
+
+- id: kubrat-asparukh-632
+  year: 632
+  endYear: 777
+  title:
+    ko: "불가리아의 시작: 쿠브라트의 대불가리아(632)에서 아스파루흐(681)·테르벨(705)까지"
+  summary:
+    ko: "훈 제국이 무너진 뒤 흑해 북쪽 초원에는 쿠트리구르·우티구르·오노구르 같은 불가르계 유목민이 흩어져 있었다(지도는 이들을 훈·불가르계 유목민 묶음으로 그린다). 아바르에 눌려 있던 오노구르의 지도자 쿠브라트는 동로마 황제 헤라클레이오스와 손잡았고(총대주교 니케포로스는 황제가 그에게 파트리키오스 칭호를 주었다고 전한다), 632년 무렵 아바르에서 벗어나 아조프해와 쿠반강 둘레에 대불가리아를 세웠다. 쿠브라트가 죽은 665년 무렵 아들들이 하자르에 밀려 흩어졌고(지도는 668년에 이 항목을 끝낸다), 아스파루흐는 무리를 이끌고 다뉴브강 어귀로 옮겼다. 680년 콘스탄티노스 4세가 보낸 군대가 도나우강 삼각주의 오노글로스에서 졌고, 681년 동로마는 아스파루흐에게 해마다 공물을 바치기로 하고 모이시아 땅을 인정했다. 이로써 불가리아 제1제국이 생겼다(지도는 681년 모이시아와 도브루자·부자크·왈라키아를 불가리아로 그린다). 소수의 불가르 지배층 아래 일곱 슬라브 부족과 세베리가 있었다고 테오파네스는 적는다(지도는 이 슬라브 땅을 남슬라브 공국들로 그리다 681년 불가리아로 옮긴다). 695년 폐위되었다가 705년 불가리아 칸 테르벨의 도움으로 복위한 유스티니아노스 2세가 보답으로 자고라(스타라 플라니나 남쪽)를 넘기고 카이사르 칭호를 주었다(지도는 705년). 756년부터 콘스탄티노스 5세가 거듭 불가리아를 쳐서 763년 안키알로스에서 이겼고(지도는 763년 자고라를 동로마 땅으로 그린다), 불가리아에서는 칸이 자주 바뀌었다. 텔레리그(768~777)는 777년 동로마로 달아났고 카르담이 이었다. 803년 이후의 크룸은 뒤의 사건이다. 하자르는 650년 무렵 볼가강 하류에서 일어나 668년 쿠브라트의 옛 땅을 차지했다."
+  subjects: [hunnic-bulgar-tribes, old-great-bulgaria, first-bulgarian-empire, khazar-khaganate, byzantine-empire, avar-khaganate, south-slavic-principalities]
+  links:
+    - { from: khazar-khaganate, to: old-great-bulgaria, note: "하자르의 압박과 대불가리아의 해체(668)" }
+    - { from: first-bulgarian-empire, to: byzantine-empire, note: "오노글로스 승리(680)와 공납 화약(681)" }
+  tags: [politics, war]
+  sources: ["Cyril Mango·Roger Scott 옮김, The Chronicle of Theophanes Confessor (1997)", "Cyril Mango 옮김, Nikephoros, Patriarch of Constantinople: Short History (1990)", "John V. A. Fine Jr., The Early Medieval Balkans: A Critical Survey from the Sixth to the Late Twelfth Century (1983)", "Dimitri Obolensky, The Byzantine Commonwealth: Eastern Europe, 500–1453 (1971)", "Florin Curta, Southeastern Europe in the Middle Ages, 500–1250 (2006)"]
+  places: [{ name: 안키알로스, at: [27.62, 42.56], year: 763 }]
+
+- id: arab-conquests-634
+  year: 634
+  endYear: 751
+  title:
+    ko: "아랍의 정복과 동로마: 야르무크(636)·이집트·카르타고(698)와 우마이야 칼리프국"
+  summary:
+    ko: "622년 이슬람 공동체를 세운 무함마드가 632년 죽자 칼리프 아부 바크르와 우마르(634~644), 우스만(644~656) 아래 아랍군은 오랜 전쟁에 지친 두 제국을 빠르게 무너뜨렸다. 636년 8월 야르무크 강가에서 동로마군이 졌다(양쪽 병력은 사료에서 부풀려졌고 현대 학자는 각각 1만 5천~4만 명 안팎으로 본다). 637년 안티오키아와 예루살렘(총대주교 소프로니오스의 항복, 637년과 638년설이 갈린다)이 넘어갔고, 640~641년 아므르 이븐 알아스가 이집트를 차지해 641년 협정으로 알렉산드리아가 열려 642년 9월 아므르가 입성했다. 사산 제국은 642년 니하반드에서 무너져 651년 끝났다. 아르메니아 귀족 테오도로스 르슈투니가 653년 무아위야와 조약을 맺어 아르메니아가 아랍의 종주 아래 들어갔고, 649~654년 키프로스와 로도스가 공격받았다. 우스만이 죽은 뒤 알리(656~661)와 무아위야가 다툰 제1차 내전 끝에 661년 무아위야가 칼리프에 올라 다마스쿠스를 도읍으로 우마이야 칼리프국을 열었다. 688년 유스티니아노스 2세와 압드 알말리크가 키프로스를 공동 통치하기로 했고, 698년 카르타고가 우마이야에 넘어갔다(레온티오스(695~698)의 함대가 한때 되찾았다가 졌고, 그 패배로 일어난 반란에 티베리오스 3세(698~705)가 즉위했다). 703년 킬리키아(몹수에스티아)가 아랍의 변경이 되었다. 동로마의 세금 부담과 단성론파 교회에 대한 압박이 지역 주민이 아랍을 받아들이게 했다는 해석과, 협정으로 신앙과 자치를 지킨 곳이 많았다는 해석이 함께 있다. 이 뒤 동로마는 아나톨리아를 중심으로 군관구(테마) 제도를 갖춘 나라로 바뀌었다. 지도는 637년 안티오키아·키로스, 639년 에데사·아미다, 653년 서아르메니아, 688년 키프로스, 703년 킬리키아를 동로마 땅에서 뺀다. 동쪽 끝에서는 727년 신라 승려 혜초가 인도에서 돌아오며 페르시아를 지배하는 대식(아랍)을 적었고, 751년 탈라스 강가에서 당군(고구려 유민 출신 고선지가 이끌었다)이 아바스 군에게 졌다(지도에 없는 중앙아시아의 일이다)."
+  subjects: [byzantine-empire, umayyad-caliphate, tang, silla]
+  links:
+    - { from: umayyad-caliphate, to: byzantine-empire, note: "시리아·이집트·아르메니아·키프로스의 상실과 변경" }
+  tags: [war, politics]
+  sources: ["Hugh Kennedy, The Great Arab Conquests: How the Spread of Islam Changed the World We Live In (2007)", "Fred M. Donner, The Early Islamic Conquests (1981)", "John F. Haldon, Byzantium in the Seventh Century: The Transformation of a Culture (개정판, 1997)", "Cyril Mango·Roger Scott 옮김, The Chronicle of Theophanes Confessor (1997)", "혜초, 『왕오천축국전』", "『구당서』 고선지전"]
+  places: [{ name: 야르무크, at: [35.95, 32.81], year: 636 }]
+
+- id: khazars-650
+  year: 650
+  endYear: 799
+  title:
+    ko: "하자르 칸국의 성립(650 무렵)과 아랍-하자르 전쟁, 동슬라브의 공납"
+  summary:
+    ko: "하자르는 서돌궐에서 갈라진 튀르크계 유목민으로 650년 무렵 볼가강 하류와 북캅카스 초원에서 일어났고, 668년 쿠브라트의 대불가리아가 흩어진 뒤 흑해 북쪽 초원을 차지했다(지도는 650년 볼가강 하류와 다게스탄 북쪽, 668년 대불가리아의 초원을 그린다). 627년 헤라클레이오스와 손잡았던 하자르는 아랍과 오래 싸웠다. 정통 칼리프 시기인 652년 발란자르에서 아랍군이 크게 졌고, 우마이야 칼리프국의 아랍군이 722~737년 데르벤트를 넘어 되풀이해 쳐들어왔으며 737년 마르완 이븐 무함마드가 하자르의 도읍 가까이에 이르러 카간에게 이슬람을 받아들이겠다는 약속을 받았다. 동로마와는 혼인 동맹을 맺어, 레온 3세의 아들 콘스탄티노스(뒤의 콘스탄티노스 5세)가 732~733년 하자르 공주(세례명 이레네)와 혼인했고 그 아들이 레온 4세이다. 하자르 지배층은 8세기 말~9세기 초 유대교를 받아들였다고 하나 연대는 갈린다. 『원초 연대기』는 폴랴네·세베랴네·뱌티치 같은 동슬라브 부족이 하자르에게 공납했다고 적는다(연대기는 이 공납을 859년 항목에 적으며 공납물은 판본마다 다르다). 지도는 700년부터 드니프로강 상류·일멘호·오카강의 숲 지대를 발트 부족(묶음)과 핀우그르 부족(묶음)에서 동슬라브 부족으로 바꿔 그리는데(7~8세기 슬라브 정착의 근사이며 연대기의 해는 없다), 키이우 쪽의 폴랴네와 세베랴네는 476년부터 동슬라브로 그린다. 크림 반도의 고트인 주교 요안니스가 하자르에 맞서 787년 반란을 일으켰다는 전승이 있다(지도는 787년 크림 고티아를 하자르 땅으로 그린다)."
+  subjects: [khazar-khaganate, east-slavic-tribes, baltic-tribes, finnic-tribes, byzantine-empire, umayyad-caliphate]
+  links:
+    - { from: umayyad-caliphate, to: khazar-khaganate, note: "아랍-하자르 전쟁(722~737)" }
+    - { from: khazar-khaganate, to: east-slavic-tribes, note: "공납(『원초 연대기』)" }
+    - { from: khazar-khaganate, to: byzantine-empire, note: "혼인 동맹(732~733)" }
+  tags: [politics, war]
+  sources: ["Peter B. Golden, Khazar Studies: An Historico-Philological Inquiry into the Origins of the Khazars (1980)", "Douglas M. Dunlop, The History of the Jewish Khazars (1954)", "Samuel Hazzard Cross·Olgerd P. Sherbowitz-Wetzor 옮김, The Russian Primary Chronicle: Laurentian Text (1953)", "Cyril Mango·Roger Scott 옮김, The Chronicle of Theophanes Confessor (1997)", "Thomas S. Noonan, Why Dirhams First Reached Russia: The Role of Arab-Khazar Relations in the Development of the Earliest Islamic Trade with Eastern Europe (Archivum Eurasiae Medii Aevi 4, 1984)"]
+
+- id: constantinople-sieges-674
+  year: 674
+  endYear: 718
+  title:
+    ko: "아랍의 콘스탄티노폴리스 포위(674~678·717~718)와 그리스의 불"
+  summary:
+    ko: "우마이야의 무아위야는 674년부터 해마다 콘스탄티노폴리스 앞에 함대를 보냈다(키지코스를 겨울 기지로 삼아 봄마다 도시를 공격했다고 테오파네스는 적는데, 지속 포위를 의심하는 설과 667~669년설도 있다). 동로마는 시리아 출신 기술자 칼리니코스가 만든 것으로 전하는 '그리스의 불'(불붙는 액체를 뿜는 무기)로 아랍 함대를 막았다. 678년 콘스탄티노스 4세와 30년 화약을 맺었고 우마이야가 해마다 금과 노예, 말을 바쳤다고 테오파네스는 적는다(아랍 사료는 이를 적지 않는다). 717년 7~8월 칼리프 술라이만의 동생 마슬라마가 대군(수는 사료마다 크게 다르고 현대 학자는 수만 명으로 본다)과 함대를 이끌고 다시 도시를 에워쌌다. 그해 3월 갓 황제가 된 레온 3세는 불가리아 제1제국의 칸 테르벨과 맺은 동맹으로 아랍 야영지를 뒤에서 쳤고, 겨울의 혹한과 굶주림, 역병, 그리스의 불로 약해진 아랍군은 새 칼리프 우마르 2세(717~720)의 명으로 718년 8월 15일(테오파네스의 연대) 포위를 풀었다(돌아가던 함대는 폭풍에 많이 잃었다). 술라이만은 포위 중 죽었다. 이 방어는 도시를 지켰고 아나톨리아가 칼리프국 손에 넘어가는 것을 막았다. 지도는 포위로 영토가 바뀌지 않아 따로 그리지 않는다."
+  subjects: [byzantine-empire, umayyad-caliphate, first-bulgarian-empire]
+  links:
+    - { from: umayyad-caliphate, to: byzantine-empire, note: "콘스탄티노폴리스 포위(674~678·717~718)" }
+    - { from: first-bulgarian-empire, to: umayyad-caliphate, note: "테르벨의 아랍 야영지 공격(718)" }
+  tags: [war]
+  sources: ["Cyril Mango·Roger Scott 옮김, The Chronicle of Theophanes Confessor (1997)", "John F. Haldon, Byzantium in the Seventh Century: The Transformation of a Culture (개정판, 1997)", "Warren Treadgold, A History of the Byzantine State and Society (1997)", "Hugh Kennedy, The Great Arab Conquests: How the Spread of Islam Changed the World We Live In (2007)"]
+  places: [{ name: 콘스탄티노폴리스, at: [28.95, 41.01], year: [674, 678] }, { name: 콘스탄티노폴리스, at: [28.95, 41.01], year: [717, 718] }]
+
+- id: mayors-palace-687
+  year: 687
+  endYear: 741
+  title:
+    ko: "궁재의 시대: 카롤루스 마르텔과 투르-푸아티에(732)"
+  summary:
+    ko: "테르트리 전투(687) 뒤 프랑크의 실권을 쥔 피핀 2세는 714년 12월 죽었다. 과부 플렉트루데가 어린 손자들을 앞세워 권력을 지키려 하자 서자 카롤루스(뒷날 마르텔)가 감옥을 벗어나 715년 일어섰고, 717년 뱅시와 718년 수아송에서 네우스트리아의 왕 킬페리크 2세(715~721)와 궁재 라겐프리드를 꺾었다. 그는 717년 아우스트라시아에 클로타르 4세를 세웠고 721년 킬페리크 2세가 죽자 테우데리크 4세(721~737)를 세웠다. 킬페리크 2세와 손잡았던 아키텐의 오도(외드) 공은 사실상 독립했고(지도는 718년부터 아키텐 공국을 따로 그린다), 카롤루스는 프리지아인과 작센인 같은 게르만 부족, 알레만니아, 바이에른을 거듭 쳤다. 우마이야의 총독 알삼흐 이븐 말리크가 720년(719년설도 있다) 나르본을 차지하고 721년 툴루즈를 포위했으나 6월 9일 오도에게 패해 죽었다(교황에게 보낸 오도의 보고를 옮긴 『교황 열전』은 사라센 37만 5천 명이 죽었다고 적으나 터무니없는 과장이며, 같은 수가 뒤에 투르-푸아티에로 옮겨졌다). 732년 총독 압드 알라흐만 알가피키가 가론강에서 오도를 꺾고 보르도를 약탈하자 오도가 카롤루스에게 도움을 청했고, 10월 투르와 푸아티에 사이에서 카롤루스의 보병이 우마이야군을 막았다(알가피키 전사). 아랍 사료는 이곳을 '순교자들의 길'이라 부르며 패배를 짧게 적는다. 카롤루스는 군대를 키우려 교회 땅을 군인에게 나눠 주어 교회의 반발을 샀고, 736~739년 론강 가의 아비뇽과 프로방스를 되찾았으나 737년 나르본 포위는 실패했다. 737년 왕 테우데리크 4세가 죽은 뒤 왕을 세우지 않고 다스리다 741년 10월 22일 죽었다. 지도는 718년 아키텐을 프랑크에서 떼어 그리고, 720년 나르본 쪽 셉티마니아를 우마이야 땅으로 그린다."
+  subjects: [frankish-kingdom, aquitaine-early, umayyad-caliphate, germanic-tribes, bavaria-duchy]
+  links:
+    - { from: umayyad-caliphate, to: aquitaine-early, note: "툴루즈(721)와 가론강(732)의 원정" }
+    - { from: frankish-kingdom, to: umayyad-caliphate, note: "투르-푸아티에(732)" }
+  tags: [politics, war]
+  sources: ["Paul Fouracre, The Age of Charles Martel (2000)", "The Fourth Book of the Chronicle of Fredegar with Its Continuations (J. M. Wallace-Hadrill 영역, 1960)", "Roger Collins, The Arab Conquest of Spain, 710–797 (1989)", "Pierre Riché, The Carolingians: A Family Who Forged Europe (Michael Idomir Allen 옮김, 1993)", "Kenneth Baxter Wolf 옮김, Conquerors and Chroniclers of Early Medieval Spain (2판, 1999)"]
+  places: [{ name: 툴루즈, at: [1.44, 43.6], year: 721 }, { name: 투르-푸아티에, at: [0.54, 46.78], year: 732 }, { name: 나르본, at: [3.0, 43.18], year: 737 }]
+
+- id: north-sea-690
+  year: 690
+  endYear: 795
+  title:
+    ko: "북해의 이교도 세계: 프리지아·데인인 선교(690)와 린디스판 습격(793)"
+  summary:
+    ko: "690년 노섬브리아 출신 수도사 윌리브로드가 열한 명의 동료와 프리지아로 건너가 선교를 시작했다. 피핀 2세가 689년 도레스타드에서 프리지아 왕 라드보드를 물리쳐 서프리지아를 얻은 터라 프랑크의 보호가 따랐고, 695년 윌리브로드는 로마에서 프리지아인의 대주교로 서임되어 위트레흐트에 주교좌를, 에흐테르나흐에 수도원(698)을 두었다(지도는 697년 도레스타드 일대를 프랑크 땅으로 그린다). 카롤루스 마르텔이 719년 라드보드가 죽은 뒤와 734년에 프리지아를 눌렀고(지도는 720·736년), 754년 보니파티우스가 도쿰에서 프리지아인에게 죽었다. 알쿠인의 『윌리브로드 전』은 윌리브로드가 700년 무렵 덴마크의 왕 옹겐두스를 찾았으나 '야수보다 사납고 돌보다 단단한' 왕이 개종하지 않았다고 적는다(지도는 700년 덴마크 왕국(초기)을 세우고 게르만 부족의 땅을 줄인다). 737년 무렵 데인인은 남쪽 경계에 다네비르케를 쌓기 시작했다. 777년 작센의 비두킨트가 덴마크 왕 시구프레드에게 달아났다. 793년 6월 8일(『앵글로색슨 연대기』의 날짜는 1월 8일이나 학계는 6월 8일의 잘못으로 본다) '이교도들'이 린디스판 수도원을 약탈하고 수도사들을 죽이거나 잡아갔다고 『앵글로색슨 연대기』는 적는다. 이듬해 자로와 몽크위어머스, 795년 아일랜드 왕국들의 북쪽 해안(렉루 섬)이 습격받았고 802년 아이오나가 불탔다. 알쿠인은 노섬브리아 왕에게 이런 공포는 앵글로색슨 왕국들이 사는 브리튼에 일찍이 없었다고 편지를 썼다. 습격자는 노르웨이 서부 쪽 사람들로 추정하나 확실하지 않으며, 이 습격이 '바이킹 시대'의 시작으로 꼽힌다(뒤의 사건)."
+  subjects: [germanic-tribes, denmark-early, frankish-kingdom, anglo-saxon-kingdoms, irish-kingdoms]
+  links:
+    - { from: frankish-kingdom, to: germanic-tribes, note: "프리지아 복속과 윌리브로드의 선교" }
+  tags: [culture, society]
+  sources: ["C. H. Talbot 옮김, The Anglo-Saxon Missionaries in Germany (1954)", "The Anglo-Saxon Chronicle (Michael Swanton 영역, 1996)", "Alcuin of York (Stephen Allott 영역, 1974)", "Ian N. Wood, The Missionary Life: Saints and the Evangelisation of Europe, 400–1050 (2001)", "Birgit Sawyer·Peter Sawyer, Medieval Scandinavia: From Conversion to Reformation, circa 800–1500 (1993)"]
+  places: [{ name: 도레스타드, at: [5.34, 52.0], year: 697 }, { name: 도쿰, at: [6.0, 53.33], year: 754 }, { name: 린디스판, at: [-1.8, 55.67], year: 793 }]
+
+- id: muslim-iberia-asturias-711
+  year: 711
+  endYear: 757
+  title:
+    ko: "우마이야의 이베리아 정복: 과달레테(711)·나르본(720)과 아스투리아스의 시작(코바동가 718)"
+  summary:
+    ko: "서고트 왕 로데리크는 710년 왕이 되었으나 앞 왕 위티자의 일가와 갈라져 있었다고 전한다. 북아프리카 총독 무사 이븐 누사이르의 부하 타리크 이븐 지야드(베르베르 출신)가 711년 4월 지브롤터(자발 타리크)에 상륙했고(병력은 7천 명에서 1만 2천 명으로 늘었다고 아랍 사료는 전한다), 7월 과달레테 부근에서 로데리크를 꺾었다. 로데리크는 죽고 타리크는 코르도바와 톨레도로 나아갔다. 712년 무사가 군대를 이끌고 건너와 세비야와 메리다(713년 항복)를 차지했으며, 713년 서고트 귀족 테오데미르가 무르시아 일대 일곱 도시를 지키는 대신 공물을 내는 조약을 맺었다. 정복은 항복 조약을 맺은 도시와 맞서다 약탈당한 도시가 섞여 이루어졌고, 항복한 이들은 신앙을 지키는 대신 세금을 냈다. 714년 사라고사와 북서부, 716~718년 바르셀로나와 타라고나를 차지했고 720년 나르본에서 서고트 왕국의 마지막 조각(셉티마니아의 아르도)이 사라졌다(지도는 711·713·714·718·720년 버전). 718년 귀족 펠라요가 아스투리아스에서 우마이야 총독 무누자에게 맞서 코바동가에서 알카마의 군대를 물리쳤다고 『알폰소 3세 연대기』는 전한다(718년과 722년 설이 갈리고 당시 아랍 사료는 거의 언급하지 않아 작은 충돌이었다고 본다). 펠라요는 737년 죽고 아들 파빌라(737~739)를 거쳐 사위 알폰소 1세(739~757)가 740~741년 베르베르인의 반란으로 북쪽 수비대가 빠진 틈에 갈리시아·레온·칸타브리아를 차례로 아울렀다(740년대~750년대에 걸친 일이며, 지도는 718년부터 아스투리아스를 그리고 741년 일괄 근사로 갈리시아·레온·칸타브리아를 그 땅에 더하며 두에로강 유역은 비운다. 이곳이 비었다는 '두에로강 사막' 설은 학계에서 논쟁 중이다). 756년 압드 알라흐만 1세가 코르도바 아미르국을 세워 총독 시대가 끝났다(뒤의 사건)."
+  subjects: [visigothic-kingdom, umayyad-caliphate, asturias, cordoba-emirate]
+  links:
+    - { from: umayyad-caliphate, to: visigothic-kingdom, note: "과달레테 전투(711)와 정복(712~720)" }
+    - { from: umayyad-caliphate, to: asturias, note: "코바동가(718), 베르베르인의 반란 뒤 북부의 공백(741)" }
+  tags: [war, politics]
+  sources: ["Roger Collins, The Arab Conquest of Spain, 710–797 (1989)", "Kenneth Baxter Wolf 옮김, Conquerors and Chroniclers of Early Medieval Spain (2판, 1999)", "Hugh Kennedy, Muslim Spain and Portugal: A Political History of al-Andalus (1996)", "Joseph F. O'Callaghan, A History of Medieval Spain (1975)", "Roger Collins, Early Medieval Spain: Unity in Diversity, 400–1000 (2판, 1995)"]
+  places: [{ name: 과달레테, at: [-6.22, 36.6], year: 711 }, { name: 나르본, at: [3.0, 43.18], year: 720 }, { name: 코바동가, at: [-5.06, 43.31], year: 718 }]
+
+- id: iconoclasm-726
+  year: 726
+  endYear: 797
+  title:
+    ko: "동로마의 성상 파괴(726~787)와 이레네: 제2차 니케아 공의회(787)"
+  summary:
+    ko: "레온 3세(717~741)는 726년 무렵 성상을 떼어 내기 시작했다고 전한다(테오파네스. 칙령의 연대와 규모는 학계가 의심하며 730년 설도 있다). 아랍에게 지는 것이 신의 벌이라는 믿음과 726년 에게해의 화산 분출이 계기였다고 전한다. 총대주교 게르마노스는 730년 물러났고, 다마스쿠스의 요한은 칼리프국 안에서 성상 공경을 옹호했다. 콘스탄티노스 5세(741~775)는 754년 히에리아 공의회(주교 338명)에서 성상 숭배를 이단으로 정하고 성상을 지지하는 수도원을 눌렀다(수도사 스테파노스는 765년 처형되었다). 교황은 이를 거부했고, 751년 라벤나 총독령이 무너져 동로마의 보호를 기대하기 어려워지자 교황은 프랑크 쪽으로 기울었다(뒤의 사건. 지도는 751년 라벤나, 752년 사르데냐를 동로마 땅에서 빼고 756년 로마 공국을 교황령으로 그린다). 콘스탄티노스 5세는 756년부터 불가리아 제1제국을 쳐서 763년 안키알로스에서 이겼다(앞의 사건. 지도는 763년 자고라를 동로마 땅으로 그린다). 레온 4세(775~780)가 죽자 황후 이레네가 어린 콘스탄티노스 6세의 섭정이 되었다. 783년 장군 스타우라키오스가 그리스의 슬라브를 공납국으로 만들었다(지도는 783년 그리스를 동로마 땅으로 그리고 남슬라브 공국들 범위를 줄인다). 8세기 중엽부터 사실상 자립한 나폴리 공국과 가에타를 지도는 774년 롬바르드·캄파니아 공국들로 옮긴다. 787년 니케아에서 열린 제2차 니케아 공의회(일곱 번째 공의회, 총대주교 타라시오스, 교황 사절 참석)가 성상 공경을 되살렸다. 카롤루스의 궁정은 그리스어 번역의 오류('숭배'와 '공경'의 구별)로 이 공의회를 비판해 『카롤루스의 책』(790 무렵)을 냈고 794년 프랑크푸르트 회의에서 이를 거부했다. 790년 콘스탄티노스 6세가 이레네를 밀어냈다가 792년 다시 공동 통치하게 되었고, 797년 8월 이레네는 아들의 눈을 멀게 하고 홀로 다스렸다(여성이 단독 황제가 된 첫 예). 성상 파괴는 815~843년 한 번 더 이어졌다(뒤의 사건)."
+  subjects: [byzantine-empire, papal-states, frankish-kingdom, first-bulgarian-empire, south-slavic-principalities, lombard-principalities]
+  links:
+    - { from: byzantine-empire, to: south-slavic-principalities, note: "스타우라키오스의 원정(783)" }
+  tags: [politics, culture, society]
+  sources: ["Cyril Mango·Roger Scott 옮김, The Chronicle of Theophanes Confessor (1997)", "Leslie Brubaker·John Haldon, Byzantium in the Iconoclast Era, c. 680–850: A History (2011)", "Warren Treadgold, A History of the Byzantine State and Society (1997)", "게오르크 오스트로고르스키, 『비잔티움 제국사』(한정숙·김경연 옮김, 까치글방)"]
+
+- id: pippin-papal-states-741
+  year: 741
+  endYear: 756
+  title:
+    ko: "피핀 3세의 즉위(751)와 피핀의 기증(756): 카롤링거 왕조와 교황령의 시작"
+  summary:
+    ko: "카롤루스 마르텔이 죽자(741) 아들 카를로만(아우스트라시아)과 피핀 3세(네우스트리아·부르군디아)가 나눠 다스렸고, 이복형제 그리포는 몫을 요구하다 라옹에서 포위되어 갇혔다. 두 형제는 743년 메로빙거의 마지막 왕 킬데리크 3세를 세워 체면을 지키면서 아키텐의 후날드와 바이에른의 오딜로, 알레만인의 반란을 눌렀고, 웨식스 출신 선교사 보니파티우스와 함께 프랑크 교회를 정비했다. 747년 카를로만이 몬테카시노로 물러나 피핀이 홀로 서자, 749~750년 사절(부르카르트 주교와 풀라드)이 교황 자카리아스에게 '권력을 가진 자가 왕으로 불리는 것이 낫지 않느냐'고 물어 긍정의 답을 얻었고, 751년 11월 수아송에서 피핀이 왕으로 뽑혀 도유를 받고 킬데리크 3세는 수도원에 보내졌다. 같은 751년 무렵(750년설도 있다) 롬바르드 왕 아이스툴프가 라벤나를 차지해 동로마의 총독령이 끝났고(지도는 751년), 그는 로마까지 위협했다. 동로마가 돕지 못하자 교황 스테파누스 2세가 754년 알프스를 넘어 생드니에서 피핀과 두 아들에게 도유하고 그를 '로마인의 보호자'로 불렀다. 피핀은 755년과 756년 두 차례 롬바르드를 쳤고 756년 파비아 포위 끝에 아이스툴프가 빼앗은 라벤나 총독령과 펜타폴리스 등의 도시를 교황에게 넘기게 했다(피핀의 기증). 동로마 사절이 반환을 요구했으나 피핀은 거절했다. 이 땅이 교황령의 시작이 되었고, 지도는 로마 공국과 라벤나·펜타폴리스·페루자를 756년부터 교황령으로 그린다(774년부터 라벤나 쪽은 이탈리아 왕국 땅으로 바꾼다). 라벤나 총독령이 무너진 뒤 동로마 본토와 이어지기 어려워진 사르데냐는 지도에서 752년부터 이탈리아 소국들(묶음)로 그린다(근사)."
+  subjects: [frankish-kingdom, papal-states, lombard-kingdom, byzantine-empire, italian-minor-states, bavaria-duchy, aquitaine-early]
+  links:
+    - { from: papal-states, to: frankish-kingdom, note: "스테파누스 2세의 도유와 보호 요청(754)" }
+    - { from: frankish-kingdom, to: papal-states, note: "피핀의 기증(756)" }
+    - { from: lombard-kingdom, to: byzantine-empire, note: "라벤나 점령(751)" }
+  tags: [politics, diplomacy]
+  sources: ["Bernhard Walter Scholz 옮김, Carolingian Chronicles: Royal Frankish Annals and Nithard's Histories (1970)", "Raymond Davis 옮김, The Lives of the Eighth-Century Popes (Liber Pontificalis) (1992)", "Thomas F. X. Noble, The Republic of St. Peter: The Birth of the Papal State, 680–825 (1984)", "Pierre Riché, The Carolingians: A Family Who Forged Europe (Michael Idomir Allen 옮김, 1993)", "Rosamond McKitterick, The Frankish Kingdoms under the Carolingians, 751–987 (1983)"]
+  places: [{ name: 라벤나, at: [12.2, 44.42], year: 751 }, { name: 파비아, at: [9.16, 45.19], year: 756 }]
+
+- id: cordoba-emirate-756
+  year: 756
+  endYear: 799
+  title:
+    ko: "압드 알라흐만 1세와 코르도바 아미르국(756), 카롤루스의 에스파냐 원정과 론세스바예스(778)"
+  summary:
+    ko: "아바스 혁명(750)으로 다마스쿠스의 우마이야 가문이 몰살될 때 살아남은 압드 알라흐만 1세(731~788)는 북아프리카를 떠돌다 755년 알안달루스에 상륙했다. 756년 5월 코르도바 가까이에서 총독 유수프 알피흐리를 꺾고 아미르를 칭했으며 아바스 칼리프를 인정하지 않았다(그전까지 알안달루스는 칼리프국의 총독이 다스렸다). 763년에는 아바스가 보낸 원정군을 무찔렀다. 북쪽에서는 피핀이 759년 나르본을 차지했고(지도는 759년 나르본을 프랑크 땅으로 그린다), 777년 바르셀로나의 총독 술라이만 알아라비가 압드 알라흐만에 맞서 카롤루스에게 도움을 청했다. 778년 카롤루스는 팜플로나를 거쳐 사라고사로 나아갔으나 도시는 문을 열지 않았고, 그는 인질을 받고 돌아서며 팜플로나의 성벽을 허물었다. 8월 15일(전승) 피레네 산길 론세스바예스에서 후위가 습격당해 궁정 집사 에기하르트와 브르타뉴 변경백 흐루오틀란트(롤랑)가 죽었다. 습격한 쪽은 바스크인으로 적혔으나(아인하르트) 뒷날 『롤랑의 노래』는 사라센으로 바꾸었다. 카롤루스는 778년 툴루즈에 백작을 두었고 781년 아들 루트비히를 아키텐 왕으로 세워 에스파냐 변경을 맡겼다. 785년 지로나가 프랑크 쪽에 들었다(지도는 785년). 788년 압드 알라흐만이 죽은 뒤 히샴 1세(788~796)는 793년 셉티마니아로 쳐들어갔고 하캄 1세(796~822)가 이었으며, 799년 팜플로나 사람들이 코르도바가 세운 총독 무타리프를 죽여 지도는 그해 팜플로나를 비우고 하카 일대를 프랑크 땅으로 그린다."
+  subjects: [cordoba-emirate, umayyad-caliphate, frankish-kingdom, county-of-toulouse]
+  links:
+    - { from: frankish-kingdom, to: cordoba-emirate, note: "사라고사 원정(778)" }
+    - { from: cordoba-emirate, to: frankish-kingdom, note: "지로나(785)·팜플로나(799) 변경 다툼" }
+  tags: [politics, war]
+  sources: ["Roger Collins, The Arab Conquest of Spain, 710–797 (1989)", "Bernhard Walter Scholz 옮김, Carolingian Chronicles: Royal Frankish Annals and Nithard's Histories (1970)", "Einhard, Life of Charlemagne (Lewis Thorpe 영역, 1969)", "Hugh Kennedy, Muslim Spain and Portugal: A Political History of al-Andalus (1996)", "Roger Collins, Caliphs and Kings: Spain, 796–1031 (2012)"]
+  places: [{ name: 사라고사, at: [-0.88, 41.65], year: 778 }, { name: 론세스바예스, at: [-1.32, 43.02], year: 778 }, { name: 지로나, at: [2.82, 41.98], year: 785 }]
+
+- id: charlemagne-lombards-768
+  year: 768
+  endYear: 781
+  title:
+    ko: "카롤루스의 롬바르드 정복: 파비아의 함락(774)과 롬바르드 왕국의 끝"
+  summary:
+    ko: "768년 9월 피핀 3세가 죽자 왕국은 카롤루스(북서쪽의 네우스트리아와 아키텐 북부)와 카를로만(남동쪽의 부르군디아·프로방스·알자스)에게 나뉘었다. 카롤루스는 769년 후날드 2세의 아키텐 반란을 눌렀고(768년 와이파르 공이 살해되었고 지도는 768년부터 아키텐을 프랑크 땅으로 그린다), 771년 12월 카를로만이 죽자 홀로 왕이 되었다. 카롤루스가 770년 롬바르드 왕 데시데리우스의 딸과 혼인했다가 이듬해 돌려보내 사이가 틀어졌고, 데시데리우스는 카를로만의 미망인과 아들들을 감쌌다. 772년 교황 하드리아누스 1세가 롬바르드의 라벤나 일대 점령에 항의하며 도움을 청하자, 카롤루스는 773년 알프스를 넘어 키우사 고개의 롬바르드 방어선을 우회해 데시데리우스가 틀어박힌 파비아를 포위했다. 아들 아델키스는 베로나에서 바다를 건너 동로마로 달아났다. 카롤루스는 파비아를 포위하던 774년 4월 부활절에 로마에 가서 하드리아누스 1세와 피핀의 기증을 확인했고(그 범위는 학자마다 갈린다), 6월 파비아가 항복하자 데시데리우스를 코르비 수도원으로 보내고 '프랑크와 롬바르드의 왕'을 칭했다. 롬바르드 귀족은 법과 땅을 지켰으나 왕국은 사라졌다. 스폴레토 공은 교황에게 신서했으나 곧 프랑크의 영향 아래 들어갔고, 베네벤토 공 아리키스 2세는 '프린켑스'를 칭하며 독립을 이어 갔다(지도는 774년 베네벤토를 롬바르드·캄파니아 공국들로, 스폴레토를 프랑크로, 리에티(사비나)를 교황령으로 그린다). 776년 프리울리 공 흐로트가우트의 반란이 진압되었고, 781년 카롤루스는 아들 피핀을 이탈리아 왕, 루트비히를 아키텐 왕으로 세웠다."
+  subjects: [frankish-kingdom, lombard-kingdom, papal-states, aquitaine-early, lombard-principalities, byzantine-empire]
+  links:
+    - { from: papal-states, to: frankish-kingdom, note: "하드리아누스 1세의 원군 요청(772)" }
+    - { from: frankish-kingdom, to: lombard-kingdom, note: "파비아 함락(774)" }
+  tags: [politics, war]
+  sources: ["Bernhard Walter Scholz 옮김, Carolingian Chronicles: Royal Frankish Annals and Nithard's Histories (1970)", "Einhard, Life of Charlemagne (Lewis Thorpe 영역, 1969)", "Raymond Davis 옮김, The Lives of the Eighth-Century Popes (Liber Pontificalis) (1992)", "Rosamond McKitterick, Charlemagne: The Formation of a European Identity (2008)", "Chris Wickham, Early Medieval Italy: Central Power and Local Society, 400–1000 (1981)"]
+  places: [{ name: 키우사 고개, at: [7.33, 45.12], year: 773 }, { name: 파비아, at: [9.16, 45.19], year: 774 }]
+
+- id: saxon-wars-772
+  year: 772
+  endYear: 804
+  title:
+    ko: "카롤루스의 작센 전쟁(772~804): 베르덴 학살(782)과 강제 개종"
+  summary:
+    ko: "작센인(엥게른·베스트팔렌·오스트팔렌과 엘베강 북쪽의 노르달빙기아)은 프랑크 왕국 동북쪽의 이교도 부족으로 변경을 자주 침범했다. 카롤루스는 772년 에레스부르크를 차지하고 작센인이 받들던 이르민술 기둥을 허물며 30년 넘게 이어질 전쟁을 시작했다. 777년 파더보른 제국 회의에서 많은 작센 귀족이 신서했으나 비두킨트는 덴마크 왕 시구프레드에게 달아났다. 782년 비두킨트가 돌아와 쥔텔 산 기슭에서 프랑크군을 무찌르자(사절 아달기스·게일로와 백작 여럿이 전사했다) 카롤루스는 베르덴에서 작센인 4,500명의 목을 베게 했다(『프랑크 왕국 연대기』. 수와 성격에는 논쟁이 있다). 작센 전체가 봉기해 783년 데트몰트와 하제강에서 싸웠고, 785년 비두킨트가 아티니에서 세례를 받았다. 카롤루스는 이 무렵 『작센 지방 칙령』으로 세례를 거부하거나 교회를 해치면 사형에 처한다고 정했다. 학자 알쿠인은 796년 믿음은 강요할 수 없다고 비판했다. 793~799년에도 반란이 이어졌고 798년 프랑크 편에 선 오보드리트(지도는 서슬라브 부족 묶음)가 보른회베드에서 노르달빙기아의 작센인을 이겼다. 카롤루스는 반란 지역 주민을 가족째 프랑크 땅으로 옮겼고, 804년에는 엘베강 건너 작센인을 옮기고 그 땅을 오보드리트에게 주었다고 연대기는 적는다(후대 요약은 약 1만 명이라 하나 연대기에 수는 없다). 작센은 브레멘·파더보른 등 주교구와 백작령으로 프랑크 왕국에 들었다. 지도는 785년 작센을, 798년 노르달빙기아를 프랑크 땅으로 그리고 게르만 부족(묶음)이 798년에 끝난다."
+  subjects: [frankish-kingdom, germanic-tribes, slavic-tribes, denmark-early]
+  links:
+    - { from: frankish-kingdom, to: germanic-tribes, note: "작센 정복(772~804)" }
+    - { from: frankish-kingdom, to: slavic-tribes, note: "오보드리트와의 동맹(798 보른회베드)" }
+  tags: [war, politics, society]
+  sources: ["Bernhard Walter Scholz 옮김, Carolingian Chronicles: Royal Frankish Annals and Nithard's Histories (1970)", "Einhard, Life of Charlemagne (Lewis Thorpe 영역, 1969)", "Rosamond McKitterick, Charlemagne: The Formation of a European Identity (2008)", "Alcuin of York (Stephen Allott 영역, 1974)", "Pierre Riché, The Carolingians: A Family Who Forged Europe (Michael Idomir Allen 옮김, 1993)"]
+  places: [{ name: 에레스부르크, at: [8.85, 51.47], year: 772 }, { name: 쥔텔, at: [9.3, 52.2], year: 782 }, { name: 베르덴, at: [9.23, 52.92], year: 782 }, { name: 데트몰트, at: [8.88, 51.94], year: 783 }, { name: 보른회베드, at: [10.23, 54.07], year: 798 }]
+
+- id: avar-campaigns-791
+  year: 791
+  endYear: 803
+  title:
+    ko: "카롤루스의 아바르 원정(791~803): 링의 함락과 아바르 칸국의 몰락"
+  summary:
+    ko: "567년부터 판노니아를 차지한 아바르 칸국은 8세기 말 바이에른과 프리울리를 거듭 노렸고, 788년 바이에른 공 타실로가 폐위된 뒤 국경이 프랑크와 맞닿았다. 791년 카롤루스는 도나우강을 따라 아바르 땅으로 쳐들어가 엔스강을 넘어 라브강 근처까지 땅을 쑥대밭으로 만들었다(큰 싸움은 없었고 말 대부분이 병으로 죽었다고 전한다). 792년 작센의 반란으로 원정은 이어지지 못했다. 아바르 안에서는 카간과 유구루스가 살해되는 내분이 벌어졌고, 795년 프리울리 공 에리크가 아바르 지배층의 요새 '링'을 약탈해 보물을 아헨으로 보냈다. 796년 카롤루스의 아들 피핀이 다시 링을 무너뜨리고 막대한 전리품을 가져왔다(아인하르트는 수 세대에 걸쳐 모은 이 재물로 프랑크인이 부유해졌다고 쓴다). 795~796년 아바르 투둔이 카롤루스에게 사절을 보내 세례를 청했고, 796년 칸이 피핀에게 항복했으며, 803년 말 아바르와 슬라브의 수령들이 레겐스부르크에서 카롤루스에게 신서했다. 799년에는 바이에른 총독 게롤트도 아바르와 싸우다 전사했다. 지도는 791년 니더외스터라이히를, 796년 판노니아와 시르미움을 프랑크 땅으로 그리며 티서강 평원의 아바르 칸국은 800년 뒤까지 남긴다(뒤의 사건). 799년 에리크는 아드리아해의 타르사티카에서 주민의 매복으로 죽었다. 아바르가 6세기 이래 동로마·프랑크·롬바르드에 가한 약탈과 슬라브 신민에게 받은 공납, 프랑크군의 791년 파괴와 796년 전리품 반출이 모두 사료에 나온다."
+  subjects: [frankish-kingdom, avar-khaganate]
+  links:
+    - { from: frankish-kingdom, to: avar-khaganate, note: "아바르 원정(791·795·796)" }
+  tags: [war]
+  sources: ["Bernhard Walter Scholz 옮김, Carolingian Chronicles: Royal Frankish Annals and Nithard's Histories (1970)", "Einhard, Life of Charlemagne (Lewis Thorpe 영역, 1969)", "Walter Pohl, The Avars: A Steppe Empire in Central Europe, 567–822 (2018)", "Rosamond McKitterick, Charlemagne: The Formation of a European Identity (2008)"]
+  places: [{ name: 엔스강, at: [14.52, 48.24], year: 791 }, { name: 타르사티카(리예카), at: [14.44, 45.33], year: 799 }]

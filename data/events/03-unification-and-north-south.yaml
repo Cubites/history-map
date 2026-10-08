@@ -12,7 +12,7 @@
     ko: 수 멸망과 당 건국
   summary:
     ko: 고구려 원정 실패와 무리한 토목 공사로 수가 무너지고 이연이 당을 세웠다.
-  subjects: [tang, sui]
+  subjects: [tang, sui, goguryeo]
   links:
     - { from: sui, to: tang, note: "왕조 교체" }
   tags: [politics]
@@ -38,7 +38,7 @@
     ko: 동돌궐 멸망
   summary:
     ko: 당 태종이 동돌궐을 무너뜨려 북방의 위협을 없앴다. 이후 당은 고구려를 압박하기 시작했다.
-  subjects: [eastern-turks, tang]
+  subjects: [eastern-turks, tang, goguryeo]
   links:
     - { from: tang, to: eastern-turks, note: "당 태종의 원정" }
   tags: [war]
@@ -62,7 +62,7 @@
     ko: 대야성 전투
   summary:
     ko: 백제 의자왕이 신라의 대야성(합천)을 비롯한 40여 성을 빼앗았다. 위기에 몰린 신라는 김춘추를 고구려와 당에 보내 도움을 청했다.
-  subjects: [baekje, silla]
+  subjects: [baekje, silla, goguryeo, tang]
   links:
     - { from: baekje, to: silla, note: "대야성 등 40여 성 공격" }
   tags: [war]
@@ -111,7 +111,7 @@
     ko: 나당 동맹
   summary:
     ko: 김춘추가 당에 건너가 당 태종과 군사 동맹을 맺었다. 백제와 고구려를 함께 치기로 약속했다.
-  subjects: [silla, tang]
+  subjects: [silla, tang, goguryeo, baekje]
   links:
     - { from: silla, to: tang, note: "김춘추의 외교" }
     - { from: tang, to: silla, note: "군사 동맹 약속" }
@@ -314,7 +314,7 @@
     ko: 당, 패강 이남 신라 영토 인정
   summary:
     ko: 발해를 견제하려는 당이 패강(대동강) 이남의 땅을 신라의 영토로 공식 인정했다.
-  subjects: [silla, tang]
+  subjects: [silla, tang, balhae]
   links:
     - { from: tang, to: silla, note: "패강 이남 영토 인정" }
   tags: [diplomacy]
@@ -621,7 +621,7 @@
     ko: 발해 무왕의 흑수말갈 정벌 추진
   summary:
     ko: "당이 흑수말갈과 손잡고 발해를 견제하자 무왕은 흑수말갈 정벌을 추진했다. 이에 반대한 동생 대문예가 당으로 망명하면서 발해와 당의 대립이 깊어졌다. 무왕(대무예)은 '인안'이라는 독자적인 연호를 쓰고, 동북방의 여러 세력을 복속해 영토를 넓혔다."
-  subjects: [balhae, tang]
+  subjects: [balhae, tang, malgal]
   links:
     - { from: tang, to: balhae, note: "흑수말갈과 연결해 발해 견제" }
     - { from: balhae, to: tang, note: "당과 대립, 이후 등주 공격(732)" }
@@ -645,7 +645,7 @@
     ko: 안사의 난
   summary:
     ko: 당의 절도사 안녹산과 사사명이 일으킨 반란으로 당이 크게 약해졌다. 이후 당의 요동 지배가 사실상 끝났다.
-  subjects: [tang]
+  subjects: [tang, liaodong-disputed]
   tags: [war]
   sources: ["『구당서』 현종본기 천보 14재"]
 
@@ -744,7 +744,7 @@
     ko: 원광의 걸사표
   summary:
     ko: 고구려의 잦은 침입에 시달리던 진평왕이 승려 원광에게 수에 군사를 청하는 글(걸사표)을 짓게 했다(611년 수에 전달). 원광은 화랑 귀산과 추항에게 세속 5계를 준 것으로도 알려져 있다.
-  subjects: [silla, sui]
+  subjects: [silla, sui, goguryeo]
   links:
     - { from: silla, to: sui, note: "고구려 원정 요청" }
   tags: [diplomacy]
@@ -823,7 +823,7 @@
     ko: 계림대도독부 설치
   summary:
     ko: 당이 신라를 계림대도독부로 삼고 문무왕을 계림주 대도독으로 임명했다. 백제 땅의 웅진도독부, 뒤의 안동도호부와 함께 한반도 전체를 지배하려는 당의 의도를 드러낸 것으로, 뒷날 나당 전쟁의 원인이 되었다.
-  subjects: [tang, silla]
+  subjects: [tang, silla, ungjin-dodokbu]
   links:
     - { from: tang, to: silla, note: "신라를 도독부로 삼으려 함" }
   tags: [politics, diplomacy]
@@ -858,7 +858,7 @@
     ko: 기벌포 전투
   summary:
     ko: "시득이 이끄는 신라 수군이 금강 하구 기벌포에서 설인귀의 당 수군을 물리쳤다. 당은 이미 이해 2월 안동도호부를 평양에서 요동으로 옮긴 상태였으며, 이 승리로 신라는 대동강에서 원산만에 이르는 이남 땅을 차지해 삼국 통일을 이루었다."
-  subjects: [silla, tang]
+  subjects: [silla, tang, andong-dohobu]
   links:
     - { from: silla, to: tang, note: "당 수군 격퇴" }
   tags: [war]
@@ -1017,7 +1017,7 @@
     ko: 9서당 10정 정비
   summary:
     ko: 신문왕 때 중앙군인 9서당과 지방군인 10정을 갖추었다. 9서당에는 신라인뿐 아니라 고구려·백제·말갈 사람도 편성해 민족 융합을 꾀했고, 10정은 9주에 하나씩(한주에는 둘) 두었다.
-  subjects: [silla]
+  subjects: [silla, malgal]
   tags: [politics]
   sources: ["『삼국사기』 직관지 무관조"]
 

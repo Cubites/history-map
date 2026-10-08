@@ -630,7 +630,7 @@
     ko: 수의 중국 통일
   summary:
     ko: 북주를 이은 수가 남조의 진을 무너뜨려 약 300년 만에 중국을 통일했다. 수의 팽창은 고구려에 큰 위협이 되었다.
-  subjects: [sui, chen]
+  subjects: [sui, chen, goguryeo]
   links:
     - { from: sui, to: chen, note: "진 정복" }
   tags: [war]
@@ -642,7 +642,7 @@
     ko: 고구려의 요서 공격과 수 문제의 침입
   summary:
     ko: 고구려 영양왕이 말갈군을 이끌고 요서를 먼저 공격했다. 수 문제가 30만 대군으로 쳐들어왔으나 장마와 전염병, 풍랑으로 크게 패하고 물러났다.
-  subjects: [goguryeo, sui]
+  subjects: [goguryeo, sui, malgal]
   links:
     - { from: goguryeo, to: sui, note: "요서 선제공격" }
     - { from: sui, to: goguryeo, note: "30만 대군 침입" }
