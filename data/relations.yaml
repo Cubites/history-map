@@ -710,3 +710,5 @@
 - { type: vassal_of, subject: lazica, object: byzantine-empire, from: 522, to: 696 } # 697 파트리키오스 세르기오스가 라지카를 아랍에 넘김(테오파네스)
 - { type: vassal_of, subject: iberia-principate, object: byzantine-empire, from: 588, to: 626 } # 구아람 1세·스테파노스 1세(627 헤라클레이오스의 트빌리시 포위)
 - { type: vassal_of, subject: venice, object: byzantine-empire, from: 697, to: 799 } # 800년 표의 종속(840 로타르 협약)과 이음
+# ── 작업 FIX4 (2026-10-08): 중세 국경 정리 ──
+- { type: vassal_of, subject: eastern-anatolian-beyliks, object: rum-sultanate, from: 1202, to: 1227 } # 살투크 왕조가 없어진 뒤(1202) 묶음에 남은 멩귀젝 왕조의 에르진잔(바흐람샤·다우드샤)은 룸의 봉신, 1228 카이쿠바드 1세의 병합
