@@ -1,5 +1,6 @@
 # 3번 묶음: 삼국 통일과 남북국 (600 ~ 935)
 # 깊이: 중고등학교 한국사 교과서 수준에 한국사능력검정시험(심화) 수준 보충. 서술은 새로 작성, 출처는 해당 기록이 실린 사료. 운영자 검수 필요.
+# 2026-10-09(작업 C2): 동아시아 맥락 사건 8개를 더했다(당의 주변 정리, 토번의 토욕혼 병합, 후돌궐의 성립·멸망과 위구르, 다이호 율령과 국호 일본, 위구르·토번의 붕괴, 당의 멸망과 후삼국의 대중 외교, 거란의 요 건국과 발해 정복). 기존 사건의 연도·subjects도 넓혔다.
 #
 # links: 영향 관계. 선택한 나라가 to면 들어오는 화살표(파랑), from이면 나가는 화살표(주황).
 # 사건에 나오는 나라는 모두 그 해에 존재해야 한다 (예: 663년 백강 전투에 멸망한 백제는 넣을 수 없음).
@@ -17,6 +18,24 @@
     - { from: sui, to: tang, note: "왕조 교체" }
   tags: [politics]
   sources: ["『구당서』 고조본기"]
+
+- id: tang-borders-618
+  year: 618
+  endYear: 646
+  title:
+    ko: 당의 주변 정리와 고구려 원정 준비
+  summary:
+    ko: "당은 건국 뒤 고구려 원정에 앞서 주변을 하나씩 다졌다. 거란과 실위는 무덕 연간(618~626)부터 당에 사신을 보냈고(실위는 정관 3년(629) 공물), 630년 동돌궐이 무너지자 당 쪽으로 기울었다(지도는 630년에 거란과 실위의 땅을 되돌려 그린다). 서쪽에서는 송첸감포가 티베트 고원을 통일한 토번이 일어나(시기는 학설이 갈린다) 634년 처음 사신을 보냈고 문성공주가 시집갔으며(641), 토욕혼은 635년 당에 복속했다. 동돌궐 뒤 초원을 차지한 설연타는 당의 책봉을 받았다. 고구려의 연개소문이 설연타와 손잡으려 했으나(645) 설연타는 움직이지 않았다. 당은 645년 설연타의 이남 가한이 죽은 뒤 이듬해(646) 설연타를 무너뜨렸고, 철륵 부족들을 다스리려 연연도호부(뒤의 안북도호부)를 두었다(설치는 646~647년으로 갈린다). 북쪽의 위협이 사라지자 당은 647~648년 고구려에 소규모 원정군을 거듭 보냈다."
+  subjects: [tang, tibet, tuyuhun, eastern-turks, xueyantuo, anbuk-dohobu, khitan, shiwei, goguryeo]
+  links:
+    - { from: tang, to: eastern-turks, note: "동돌궐 멸망(630)" }
+    - { from: tang, to: tuyuhun, note: "토욕혼 복속(635)" }
+    - { from: tibet, to: tang, note: "혼인(641)" }
+    - { from: tang, to: xueyantuo, note: "설연타 멸망(646)" }
+    - { from: tang, to: anbuk-dohobu, note: "연연도호부 설치(646~647)" }
+    - { from: goguryeo, to: xueyantuo, note: "연개소문의 연합 시도(설연타는 움직이지 않음)" }
+  tags: [war, diplomacy]
+  sources: ["『구당서』 토번전·토욕혼전·철륵전", "『신당서』 설연타전", "『자치통감』 당기 정관 19년~20년"]
 
 - id: salsu-612
   year: 612
@@ -159,6 +178,20 @@
   tags: [war]
   sources: ["『삼국사기』 백제본기 의자왕 20년 이후 기사", "『일본서기』 사이메이·덴지 기"]
   front: { war: silla-tang-war, date: 663-08-00 }
+
+- id: tibet-tuyuhun-662
+  year: 662
+  endYear: 670
+  title:
+    ko: 토번의 토욕혼 병합과 대비천 전투
+  summary:
+    ko: "토번은 663년 토욕혼을 멸망시키고 칭하이 일대를 차지했다(지도는 663년부터 칭하이 북부를 토번 땅으로 그린다). 당은 토욕혼을 되찾으려 했으나 670년 설인귀가 이끈 당군이 칭하이호 남쪽 대비천에서 토번에 크게 졌고 안서 4진도 토번에 빼앗겼다. 같은 670년 신라는 압록강 방면과 옛 백제 땅에서 당과 싸우기 시작했다(나당 전쟁). 당이 서쪽에도 병력을 묶어 둔 것이 신라에 유리하게 작용했다고 본다."
+  subjects: [tuyuhun, tibet, tang, silla]
+  links:
+    - { from: tibet, to: tuyuhun, note: "토욕혼 멸망(663)" }
+    - { from: tibet, to: tang, note: "대비천 전투 승리(670)" }
+  tags: [war]
+  sources: ["『구당서』 토번전·토욕혼전·설인귀전", "『삼국사기』 신라본기 문무왕 10년"]
 
 - id: baekgang-663
   year: 663
@@ -373,6 +406,19 @@
   tags: [economy]
   sources: ["『삼국사기』 신라본기 흥덕왕 3년"]
 
+- id: uyghur-collapse-839
+  year: 839
+  endYear: 842
+  title:
+    ko: 위구르의 붕괴와 토번의 해체
+  summary:
+    ko: "839년 위구르에 큰 눈과 기근, 내분이 겹쳤고 840년 키르기스가 위구르의 수도를 무너뜨려 위구르는 서쪽과 남쪽으로 흩어졌다. 몽골 초원에는 달단(타타르) 등 여러 부족이 남았다. 티베트의 토번도 842년 왕 랑다르마가 죽은 뒤 왕실이 갈라지면서 무너졌다. 당은 서북과 북방의 두 큰 위협이 한꺼번에 사라졌지만 번진과 환관의 힘이 커져 안으로 어지러웠다. 같은 시기 신라에서는 장보고가 피살되었다(일본 기록은 841년, 『삼국사기』는 846년.)."
+  subjects: [uyghur, zubu, tibet, tang, silla]
+  links:
+    - { from: tang, to: uyghur, note: "위구르 붕괴로 북방 위협 해소" }
+  tags: [politics]
+  sources: ["『신당서』 회흘전·토번전", "『구당서』 무종기"]
+
 - id: jang-bogo-846
   year: 846
   title:
@@ -407,6 +453,32 @@
     - { from: malgal, to: balhae, note: "말갈 세력의 참여" }
   tags: [politics]
   sources: ["『구당서』 발해말갈전", "『신당서』 발해전"]
+
+- id: second-turks-679
+  year: 679
+  endYear: 698
+  title:
+    ko: 후돌궐의 성립과 거란의 난
+  summary:
+    ko: "679년부터 돌궐 부족들이 당의 지배에 맞서 거듭 일어났고, 682년 골돌록(일테리시 카간)이 돌궐을 다시 세웠다(후돌궐, 돌궐 제2제국). 안북도호부는 후돌궐에 밀려 몽골 초원에서 물러났다(685년 치소를 간쑤 쪽으로 옮겨 이어졌다. 지도는 681년까지 그린다). 골돌록의 뒤는 동생 묵철(691~716)이 이었다. 696년 거란의 이진충이 영주를 점령하며 당의 동북 지배가 흔들리자 고구려 유민과 말갈이 동쪽으로 옮겨 갔고, 대조영은 698년 동모산에서 발해를 세웠다. 『신당서』는 대조영이 돌궐에 사신을 보내 통교했다고 적는다."
+  subjects: [anbuk-dohobu, second-turks, tang, khitan, malgal, balhae]
+  links:
+    - { from: second-turks, to: tang, note: "반란과 재건(679~682)" }
+    - { from: khitan, to: tang, note: "영주 점령(696)" }
+    - { from: second-turks, to: balhae, note: "통교(698)" }
+  tags: [war, politics]
+  sources: ["『구당서』 돌궐전", "『신당서』 돌궐전·발해전"]
+
+- id: wa-japan-700
+  year: 700
+  endYear: 702
+  title:
+    ko: 다이호 율령과 국호 '일본'
+  summary:
+    ko: "백제가 망하고(660) 백강 전투에서 졌지만(663) 왜는 백제 유민을 받아들이며 율령 국가로 나아갔다. 701년 다이호 율령이 완성되어 일본이라는 이름을 쓰는 중앙 집권 국가의 틀이 갖추어졌고, 당에 간 사신은 새 국호를 알렸다. 국호를 일본으로 바꾼 시기는 7세기 후반으로 학설이 갈린다(지도는 다이호 율령의 701년을 기준으로 한다). 『삼국사기』는 670년(문무왕 10년) 왜가 국호를 일본으로 고쳤다고 적는다. 일본은 신라·발해와 사신을 주고받았다."
+  subjects: [wa, japan, silla, balhae]
+  tags: [politics]
+  sources: ["『속일본기』 대보 원년", "『신당서』 일본전", "『삼국사기』 신라본기 문무왕 10년"]
 
 - id: balhae-japan-727
   year: 727
@@ -457,8 +529,8 @@
   title:
     ko: 선왕과 해동성국
   summary:
-    ko: "선왕이 말갈 부족을 복속시키고 요동 방면으로 진출해 발해의 영토가 가장 넓어졌다. 당은 이 무렵의 발해를 해동성국이라 불렀다. 선왕은 '건흥'이라는 연호를 썼다."
-  subjects: [balhae, malgal, liaodong-disputed]
+    ko: "선왕이 말갈 부족을 복속시키고 요동 방면으로 진출했으며, 북서쪽으로 눈강·쑹화강 합류부 일대의 실위 땅까지 이르러(지도의 추정) 발해의 영토가 가장 넓어졌다. 당은 이 무렵의 발해를 해동성국이라 불렀다. 선왕은 '건흥'이라는 연호를 썼다."
+  subjects: [balhae, malgal, liaodong-disputed, shiwei]
   links:
     - { from: balhae, to: tang, note: "해동성국이라 불림" }
   tags: [politics]
@@ -477,6 +549,23 @@
   tags: [war]
   sources: ["『요사』 태조본기 천현 원년", "『고려사』 세가 태조"]
   places: [{ name: "상경 용천부", at: [129.1, 44.0] }]
+
+- id: khitan-liao-907
+  year: 907
+  endYear: 926
+  title:
+    ko: 거란의 요 건국과 발해 정복
+  summary:
+    ko: "907년 야율아보기가 거란 8부의 칸이 되어 부족을 통합했고 916년 황제를 칭했다(국호는 거란이었고 947년 요로 고쳤다). 요는 요서로 세력을 넓히며(지도는 916년과 923년에 요서 일대를 요의 땅으로 넓혀 그린다) 초원의 조복(달단)과 실위 등을 복속했다. 925년 말 발해를 쳐 이듬해 정월 상경 홀한성을 함락했고 옛 발해 땅에 동단국을 두었다. 요동도 이때 요의 땅이 되었다. 발해에 속했던 말갈 계통 사람들은 점차 여진이라 불리게 되었고, 많은 발해 유민이 고려로 넘어왔다."
+  subjects: [khitan, liao, shiwei, zubu, malgal, jurchen, liaodong-disputed, balhae, goryeo]
+  links:
+    - { from: khitan, to: liao, note: "부족 통합과 황제 즉위(916)" }
+    - { from: liao, to: zubu, note: "초원 복속" }
+    - { from: liao, to: shiwei, note: "복속" }
+    - { from: liao, to: balhae, note: "발해 정복(926)" }
+    - { from: balhae, to: goryeo, note: "유민 이주" }
+  tags: [war, politics]
+  sources: ["『요사』 태조본기", "『고려사』 세가 태조"]
 
 # ── 후삼국 (900 ~ 935) ───────────────────────────────────
 
@@ -616,11 +705,12 @@
   sources: ["『삼국유사』 권4 원효불기·의상전교", "『송고승전』 원효전·의상전"]
 
 - id: balhae-heishui-726
-  year: 726
+  year: 719
+  endYear: 726
   title:
     ko: 발해 무왕의 흑수말갈 정벌 추진
   summary:
-    ko: "당이 흑수말갈과 손잡고 발해를 견제하자 무왕은 흑수말갈 정벌을 추진했다. 이에 반대한 동생 대문예가 당으로 망명하면서 발해와 당의 대립이 깊어졌다. 무왕(대무예)은 '인안'이라는 독자적인 연호를 쓰고, 동북방의 여러 세력을 복속해 영토를 넓혔다."
+    ko: "당이 흑수말갈과 손잡고 발해를 견제하자 무왕은 흑수말갈 정벌을 추진했다. 이에 반대한 동생 대문예가 당으로 망명하면서 발해와 당의 대립이 깊어졌다. 무왕(대무예)은 719년 즉위해 '인안'이라는 독자적인 연호를 쓰고, 동북방의 여러 세력을 복속해 영토를 넓혔다(지도는 719년부터 발해의 영토를 넓혀 그린다)."
   subjects: [balhae, tang, malgal]
   links:
     - { from: tang, to: balhae, note: "흑수말갈과 연결해 발해 견제" }
@@ -638,14 +728,28 @@
   tags: [culture]
   sources: ["혜초, 『왕오천축국전』"]
 
+- id: turks-uyghur-743
+  year: 743
+  endYear: 745
+  title:
+    ko: 후돌궐의 멸망과 위구르 칸국
+  summary:
+    ko: "744년 위구르가 후돌궐을 무너뜨리고 몽골 초원을 차지했다. 당은 북방의 큰 위협을 덜었지만 755년 안사의 난에서는 위구르의 도움을 받아야 했다. 10여 년 뒤 신라는 경덕왕이 한화 정책을 펴고 발해는 문왕이 체제를 정비했으며, 두 나라 모두 당과 사신을 주고받았다."
+  subjects: [second-turks, uyghur, tang, silla, balhae]
+  links:
+    - { from: uyghur, to: second-turks, note: "후돌궐 멸망(744)" }
+    - { from: uyghur, to: tang, note: "뒤에 안사의 난 때 지원" }
+  tags: [war, politics]
+  sources: ["『신당서』 회흘전·돌궐전", "『구당서』 회흘전"]
+
 - id: an-lushan-755
   year: 755
   endYear: 763
   title:
     ko: 안사의 난
   summary:
-    ko: 당의 절도사 안녹산과 사사명이 일으킨 반란으로 당이 크게 약해졌다. 이후 당의 요동 지배가 사실상 끝났다.
-  subjects: [tang, liaodong-disputed]
+    ko: 당의 절도사 안녹산과 사사명이 일으킨 반란으로 당이 크게 약해졌다. 당은 위구르의 군대를 빌려 반란을 가라앉혔다. 이 혼란 속에 안동도호부도 756~761년 사이에 사실상 없어졌고(연도는 설이 갈린다) 당의 요동 지배가 끝났다.
+  subjects: [tang, liaodong-disputed, uyghur, andong-dohobu]
   tags: [war]
   sources: ["『구당서』 현종본기 천보 14재"]
 
@@ -857,8 +961,8 @@
   title:
     ko: 기벌포 전투
   summary:
-    ko: "시득이 이끄는 신라 수군이 금강 하구 기벌포에서 설인귀의 당 수군을 물리쳤다. 당은 이미 이해 2월 안동도호부를 평양에서 요동으로 옮긴 상태였으며, 이 승리로 신라는 대동강에서 원산만에 이르는 이남 땅을 차지해 삼국 통일을 이루었다."
-  subjects: [silla, tang, andong-dohobu]
+    ko: "시득이 이끄는 신라 수군이 금강 하구 기벌포에서 설인귀의 당 수군을 물리쳤다. 당은 이미 이해 2월 안동도호부를 평양에서 요동으로 옮긴 상태였으며, 이 승리로 신라는 대동강에서 원산만에 이르는 이남 땅을 차지해 삼국 통일을 이루었다. 같은 해 웅진도독부도 요동의 건안성으로 옮겨졌다. 당이 물러난 옛 고구려 땅 가운데 신라와 안동도호부 밖의 곳은 말갈과 고구려 유민이 사는 땅으로 남았고(지도는 676년부터 이곳을 말갈로 그린다), 뒤에 이곳에서 발해가 일어났다."
+  subjects: [silla, tang, andong-dohobu, ungjin-dodokbu, malgal]
   links:
     - { from: silla, to: tang, note: "당 수군 격퇴" }
   tags: [war]
@@ -1007,6 +1111,22 @@
   subjects: [hugoguryeo]
   tags: [politics]
   sources: ["『삼국사기』 열전 궁예"]
+
+- id: tang-fall-907
+  year: 907
+  endYear: 925
+  title:
+    ko: 당의 멸망과 오대의 시작, 후삼국의 대중 외교
+  summary:
+    ko: "907년 주전충이 당 애제의 선양을 받아 후량을 세우면서 당이 망하고 오대 십국 시대가 열렸다. 923년에는 이존욱(장종)이 후량을 무너뜨리고 후당을 세웠다. 중국이 갈라진 이 시기에 후삼국의 견훤(후백제)은 오월에 이어 925년 후당에서 백제왕으로 책봉되었고, 왕건(고려)도 후량(923)과 후당에 사신을 보냈다(고려가 후당의 책봉을 받은 것은 933년, 조서는 932년)."
+  subjects: [tang, later-liang, later-tang, hubaekje, goryeo]
+  links:
+    - { from: later-liang, to: later-tang, note: "왕조 교체(923)" }
+    - { from: later-tang, to: hubaekje, note: "견훤을 백제왕에 책봉(925)" }
+    - { from: goryeo, to: later-liang, note: "왕건의 사신(923)" }
+    - { from: goryeo, to: later-tang, note: "왕건의 사신" }
+  tags: [diplomacy, politics]
+  sources: ["『구오대사』 양서 태조기·당서 장종기", "『삼국사기』 견훤전", "『고려사』 세가 태조"]
 
 # ── 한국사능력검정시험(심화) 빈출 주제 보충 (2026-09-28) ────────────────
 

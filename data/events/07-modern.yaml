@@ -1,5 +1,6 @@
 # 7번 묶음: 근대 (1876 ~ 1945)
 # 깊이: 한국사능력검정시험(심화) 수준. 서술은 새로 작성, 출처는 해당 기록이 실린 사료·자료. 운영자 검수 필요.
+# 2026-10-09(작업 C2): 동아시아 맥락 사건 4개를 더했다(간도 감계 회담, 신해혁명, 몽골 인민 혁명, 중일 전쟁과 일본군 점령지). 한국과 닿은 유럽 쪽 항목은 subjects로 이었다.
 # 강화도 조약(1876)은 6번 묶음에 있다. 광복 이후는 8번 묶음에서 다룬다.
 # 『고종실록』: 고종 1년 = 1864년. 『순종실록』: 순종 1년 = 1908년.
 # 1910~1945년 한국 안의 사건은 'occupied-korea'(일제 강점기의 한국)에 둔다. 대한민국 임시정부는 영토가 없어 따로 나라로 두지 않았다.
@@ -26,7 +27,7 @@
     ko: 『조선책략』 유포와 영남 만인소
   summary:
     ko: "2차 수신사 김홍집이 청의 황쭌셴이 쓴 『조선책략』을 들여왔다. 러시아를 막으려면 청과 친하고 일본과 맺고 미국과 연결해야 한다는 내용이었다. 이에 반발해 이만손 등 영남 유생이 만인소를 올리는 등 위정척사 운동이 거세졌다. 같은 해(1881) 강원도 유생 홍재학은 만언척사소를 올려 개화 정책을 추진한 관리들을 비판하다 처형되었다."
-  subjects: [joseon, qing, japan]
+  subjects: [joseon, qing, japan, russia]
   links:
     - { from: joseon, to: japan, note: "2차 수신사 김홍집" }
     - { from: qing, to: joseon, note: "『조선책략』 전래" }
@@ -79,11 +80,26 @@
     ko: 근대 시설과 『한성순보』
   summary:
     ko: "박문국에서 최초의 근대 신문인 『한성순보』를 펴내고, 화폐를 찍는 전환국을 설치했다. 함경도 덕원 주민들이 최초의 근대 사립 학교인 원산 학사를 세웠다. 같은 해 영국·독일과도 수교했다. 『한성순보』는 열흘마다 순한문으로 펴낸 관보 성격의 신문이었다. 갑신정변 때 중단되었다가 1886년 국한문을 섞어 쓴 『한성주보』로 다시 나와 처음으로 상업 광고를 실었다."
-  subjects: [joseon, uk]
+  subjects: [joseon, uk, german-empire]
   links:
     - { from: joseon, to: uk, note: "조영 수호 통상 조약" }
+    - { from: joseon, to: german-empire, note: "조독 수호 통상 조약(1883)" }
   tags: [culture]
   sources: ["『고종실록』 고종 20년", "『한성순보』"]
+
+- id: gando-gamgye-1883
+  year: 1883
+  endYear: 1887
+  title:
+    ko: 간도 문제와 감계 회담
+  summary:
+    ko: "19세기 중엽부터 조선 사람이 간도로 건너가 살았고, 1881년 청이 만주 일대의 봉금을 풀고 이주를 장려하자 더 늘었다. 1712년 백두산정계비에 적힌 '토문'이 어느 강인지를 두고 조선은 쑹화강 지류로, 청은 두만강으로 보았다. 조선은 1883년 어윤중을 보내 이를 조사하고 청에 국경 확정을 요구했고, 두 차례 감계 회담(1885·1887, 조선 대표 이중하)을 열었으나 결론을 내지 못했다. 이 땅은 간도 귀속 논쟁의 출발점이다(지도는 1883년부터 간도를 '귀속 논쟁' 지역으로 따로 표시한다)."
+  subjects: [joseon, qing, gando-disputed]
+  links:
+    - { from: joseon, to: qing, note: "감계 요구" }
+    - { from: qing, to: joseon, note: "토문강은 두만강이라는 주장" }
+  tags: [diplomacy]
+  sources: ["『고종실록』 고종 20년·22년·24년", "국사편찬위원회 『한국사』"]
 
 - id: gapsin-1884
   year: 1884
@@ -398,7 +414,7 @@
     ko: 헤이그 특사와 고종 강제 퇴위
   summary:
     ko: 고종이 네덜란드 헤이그의 만국 평화 회의에 이준·이상설·이위종을 특사로 보내 을사늑약의 무효를 알리려 했으나 실패했다. 일본은 이를 구실로 고종을 강제로 물러나게 하고 한일 신협약(정미 7조약)을 맺어 차관 정치를 시작했으며, 대한제국 군대를 해산했다.
-  subjects: [daehan-jeguk, japan]
+  subjects: [daehan-jeguk, japan, netherlands]
   links:
     - { from: japan, to: daehan-jeguk, note: "고종 강제 퇴위, 군대 해산" }
   tags: [politics, diplomacy]
@@ -466,12 +482,13 @@
   places: [{ name: "하얼빈역", at: [126.63, 45.76] }]
 
 - id: gando-convention-1909
-  year: 1909
+  year: 1907
+  endYear: 1909
   title:
     ko: 기유각서와 간도 협약
   summary:
-    ko: 일본이 기유각서로 대한제국의 사법권을 빼앗았다. 또 청과 간도 협약을 맺어 남만주 철도 부설권을 얻는 대가로 간도를 청의 영토로 인정했다.
-  subjects: [daehan-jeguk, japan, qing]
+    ko: 일본은 1907년 통감부 간도 파출소를 세워 한인 보호를 구실로 간도에 개입했다. 1909년에는 기유각서로 대한제국의 사법권을 빼앗았다. 또 청과 간도 협약을 맺어 남만주 철도 부설권을 얻는 대가로 간도를 청의 영토로 인정했다.
+  subjects: [daehan-jeguk, japan, qing, gando-disputed]
   links:
     - { from: japan, to: daehan-jeguk, note: "사법권 강탈" }
     - { from: japan, to: qing, note: "간도를 청 영토로 인정" }
@@ -519,6 +536,20 @@
     - { from: occupied-korea, to: usa, note: "하와이 대조선 국민 군단" }
   tags: [politics]
   sources: ["국사편찬위원회 『한국독립운동사』"]
+
+- id: xinhai-1911
+  year: 1911
+  endYear: 1912
+  title:
+    ko: 신해혁명과 중화민국 수립
+  summary:
+    ko: "1911년 우창 봉기로 시작된 혁명이 번져 이듬해 1월 쑨원이 난징에서 임시 대총통에 올라 중화민국이 세워졌다(1912). 2월 선통제가 물러나 청이 무너지고 위안스카이가 임시 대총통이 되었다(3월). 신규식은 중국 혁명가들과 교류하며 1912년 상하이에서 동제사를 만들어 독립운동의 기반을 닦았고, 이후 중화민국은 대한민국 임시정부와 한국광복군을 지원했다."
+  subjects: [qing, roc, occupied-korea]
+  links:
+    - { from: qing, to: roc, note: "혁명, 선통제 퇴위(1912)" }
+    - { from: roc, to: occupied-korea, note: "독립운동 지원" }
+  tags: [politics]
+  sources: ["『청사고』 선통제본기", "국사편찬위원회 『한국독립운동사』"]
 
 - id: secret-societies-1912
   year: 1912
@@ -621,6 +652,19 @@
   tags: [war]
   sources: ["국사편찬위원회 『한국독립운동사』"]
   front: { war: independence-war-1920, date: 1921-06-28 }
+
+- id: mongolia-revolution-1921
+  year: 1921
+  title:
+    ko: 몽골 인민 혁명과 몽골의 성립
+  summary:
+    ko: "신해혁명으로 청이 흔들리자 외몽골은 1911년 12월 독립을 선언했고, 1915년 캬흐타 조약으로 중국의 종주권 아래 자치를 얻었으나 중화민국이 군대를 보내 자치를 없앴다(1919). 1921년 러시아 백군 운게른의 군대가 중국군을 몰아내고 우르가(지금의 울란바토르)를 점령했고, 소비에트 러시아(뒤의 소련)의 적군 도움을 받은 수흐바타르 등이 7월 인민 혁명 정부를 세웠다(1924년 몽골 인민 공화국). 지도는 1921년부터 몽골을 중국에서 떼어 따로 그린다. 몽골에서 의사로 일하던 한국인 이태준은 운게른의 군대에 피살된 것으로 알려진다."
+  subjects: [mongolia, roc, soviet-union, occupied-korea]
+  links:
+    - { from: roc, to: mongolia, note: "자치 철폐 시도(1919)" }
+    - { from: soviet-union, to: mongolia, note: "적군의 지원" }
+  tags: [politics]
+  sources: ["Robert A. Rupen, *Mongols of the Twentieth Century* (1964)", "국가보훈부 독립유공자 공훈록 「이태준」"]
 
 - id: self-strength-1920
   year: 1920
@@ -769,6 +813,21 @@
   tags: [war, politics]
   sources: ["『조선총독부 관보』", "국사편찬위원회 『한국사』", "국사편찬위원회 우리역사넷 『한국사 연대기』 중일전쟁"]
   places: [{ name: "루거우차오", at: [116.22, 39.85] }]
+
+- id: sino-japanese-occupation-1937
+  year: 1937
+  endYear: 1945
+  title:
+    ko: 중일 전쟁과 일본군 점령지
+  summary:
+    ko: "1937년 7월 루거우차오 사건으로 시작된 중일 전쟁에서 일본군은 12월 난징을 함락했고 1938년 쉬저우·우한·광저우를 차지해 화북과 화중·화남의 큰 도시와 철도를 점령했다. 중화민국 정부는 충칭으로 옮겨 항전했다. 일본은 점령지에 괴뢰 정권을 세웠고(1940, 왕징웨이의 난징 정부) 1944년 대륙 타통 작전으로 허난·후난·광시 일대까지 점령 범위를 크게 넓혔다(지도의 '중일 전쟁 일본군 점령지'는 점령 범위를 해마다 따로 그린다). 1945년 8월 소련군이 만주국을 무너뜨리고 일본이 항복하면서 점령지는 모두 사라졌다. 조선 의용대(1938, 우한(한커우))와 한국광복군(1940, 충칭)이 이 전쟁 속에서 만들어졌다."
+  subjects: [japan, roc, occupied-china, manchukuo, soviet-union, occupied-korea]
+  links:
+    - { from: japan, to: roc, note: "전면 침략" }
+    - { from: soviet-union, to: manchukuo, note: "소련군의 만주 진공(1945.8)" }
+    - { from: roc, to: occupied-korea, note: "임시정부·광복군 지원" }
+  tags: [war]
+  sources: ["「일본 항복 문서」(1945)", "Hans van de Ven, *China at War* (2018)", "국사편찬위원회 『한국사』"]
 
 - id: korean-volunteers-1938
   year: 1938
@@ -1007,7 +1066,7 @@
     ko: "『황성신문』·『제국신문』과 『대한매일신보』"
   summary:
     ko: "1898년 남궁억 등이 국한문 혼용의 『황성신문』을, 이종일이 순한글의 『제국신문』을 창간했다. 『황성신문』은 유생과 지식층을, 『제국신문』은 서민과 부녀자를 주된 독자로 삼았으며, 『황성신문』은 을사늑약 때 「시일야방성대곡」을 실었다. 1904년 양기탁과 영국인 베델이 창간한 『대한매일신보』는 베델의 치외 법권 덕분에 일제의 검열을 피할 수 있어, 강한 항일 논조를 펴고 국채 보상 운동을 이끌었다."
-  subjects: [daehan-jeguk]
+  subjects: [daehan-jeguk, uk]
   tags: [culture]
   sources: ["『황성신문』", "『제국신문』", "『대한매일신보』", "국사편찬위원회 『신편 한국사』 46"]
 

@@ -1,5 +1,6 @@
 # 2번 묶음: 삼국의 성립과 발전 (기원전 57 ~ 600)
 # 깊이: 한국사능력검정시험(심화) 수준. 서술은 새로 작성, 출처는 해당 기록이 실린 사료. 운영자 검수 필요.
+# 2026-10-09(작업 C2): 동아시아 맥락 사건 4개를 더했다(남조의 송·제·양 교체, 백제의 영산강·섬진강 진출, 북위의 분열과 북제·북주, 북주의 화북 통일과 수의 건국). 기존 사건의 연도·subjects도 넓혔다.
 # 연도는 천문 연도: 기원전 57년 = -56. 『삼국사기』는 즉위한 해를 원년으로 센다.
 # 광개토대왕 관련 연도는 『삼국사기』보다 1년 앞서는 광개토대왕릉비의 영락 연호를 따른다.
 # 600년 이후는 3번 묶음에서 다룬다.
@@ -397,6 +398,23 @@
   tags: [diplomacy]
   sources: ["『남제서』 동남이전 가라국"]
 
+- id: southern-dynasties-479
+  year: 479
+  endYear: 502
+  title:
+    ko: 남조의 송·제·양 교체와 고구려·백제·대가야의 책봉
+  summary:
+    ko: "479년 소도성이 송 순제의 선양을 받아 제를 세웠고, 502년 소연(양 무제)이 제의 선양을 받아 양을 세웠다. 새 왕조는 즉위하면 주변국 왕에게 관작을 내려 주었다. 제는 고구려 장수왕을 표기대장군에 올렸고(『남제서』는 479년, 『삼국사기』는 480년으로 적는다. 대가야의 하지도 479년 남제에 사신을 보내 관작을 받았다), 양은 고구려 문자명왕과 백제 왕의 관작을 높여 주었다(502, 백제의 동성왕은 이미 501년에 죽은 뒤였다). 고구려와 백제는 남조와 함께 북위에도 사신을 보내 외교의 균형을 잡았다."
+  subjects: [liu-song, southern-qi, liang, northern-wei, goguryeo, baekje, gaya]
+  links:
+    - { from: southern-qi, to: liang, note: "선양(502)" }
+    - { from: southern-qi, to: goguryeo, note: "장수왕을 표기대장군에 책봉(479~480)" }
+    - { from: southern-qi, to: gaya, note: "대가야 하지에게 관작(479)" }
+    - { from: liang, to: goguryeo, note: "문자명왕을 거기대장군에 책봉(502)" }
+    - { from: liang, to: baekje, note: "백제 왕을 정동대장군에 책봉(502)" }
+  tags: [diplomacy]
+  sources: ["『남제서』 동남이전", "『양서』 무제기·제이전", "『삼국사기』 고구려본기 장수왕 68년"]
+
 - id: marriage-alliance-493
   year: 493
   title:
@@ -422,6 +440,20 @@
     - { from: buyeo, to: goguryeo, note: "왕실의 항복" }
   tags: [politics]
   sources: ["『삼국사기』 고구려본기 문자명왕 3년"]
+
+- id: baekje-south-497
+  year: 497
+  endYear: 513
+  title:
+    ko: 백제의 영산강·섬진강 유역 진출
+  summary:
+    ko: "5세기 말 백제는 남쪽으로 세력을 넓혔다. 동성왕은 498년 무진주(광주)까지 내려와 탐라가 사죄하자 정벌을 그쳤고, 이 무렵부터 영산강 유역에 대한 백제의 영향이 커졌다(직접 지배 시기는 5세기 말~6세기 중반으로 학설이 갈린다. 지도는 498년부터 영산강 유역과 남해안을 백제 땅으로 그린다). 이어 무령왕 때 섬진강 유역의 기문·대사를 두고 대가야와 다툰 끝에 기문을 차지했다(513). 『일본서기』에는 512년 왜가 임나 4현을 백제에 넘겨주었다고 하나 그 위치와 사실 여부는 논쟁이 있다."
+  subjects: [baekje, yeongsan-disputed, seomjin-disputed, gaya, tamna, wa]
+  links:
+    - { from: baekje, to: tamna, note: "탐라의 사죄(498)" }
+    - { from: baekje, to: gaya, note: "기문 차지(513)" }
+  tags: [politics, war]
+  sources: ["『삼국사기』 백제본기 동성왕 20년·무령왕", "『일본서기』 계체천황 6년·7년"]
 
 # ── 6세기: 백제의 중흥과 신라의 발전 ────────────────────
 
@@ -493,6 +525,22 @@
     - { from: silla, to: gaya, note: "금관가야 병합" }
   tags: [war, politics]
   sources: ["『삼국사기』 신라본기 법흥왕 19년"]
+
+- id: northern-dynasties-534
+  year: 534
+  endYear: 560
+  title:
+    ko: 북위의 분열과 동위·서위, 북제·북주의 성립
+  summary:
+    ko: "534년 북위 효무제가 실권자 고환을 피해 우문태에게 달아나자 고환이 효정제를 세워 업으로 옮기면서 동위가 섰고, 이듬해 우문태가 문제를 세워 서위가 되었다(535). 동위는 550년 고양(북제 문선제)에게, 서위는 557년 우문각(북주 효민제)에게 넘어가 북제와 북주가 되었다. 남조에서는 후경의 난(548~552)을 겪은 양이 554년 서위에 강릉을 빼앗기고 원제가 죽었으며(서위는 그 땅에 서량(後梁)을 세웠다) 557년 진패선에게 선양해 진이 섰다. 고구려는 동위와 북제에도 사신을 보냈다. 동북의 물길은 6세기 중엽부터 말갈이라는 이름으로 북제에 조공했다(지도는 560년부터 말갈로 그린다)."
+  subjects: [northern-wei, eastern-wei, western-wei, northern-qi, northern-zhou, liang, chen, mulgil, malgal, goguryeo]
+  links:
+    - { from: eastern-wei, to: northern-qi, note: "선양(550)" }
+    - { from: western-wei, to: northern-zhou, note: "선양(557)" }
+    - { from: liang, to: chen, note: "선양(557)" }
+    - { from: mulgil, to: malgal, note: "말갈로 이어짐" }
+  tags: [politics]
+  sources: ["『위서』 효정제기", "『북제서』 문선제기", "『주서』 효민제기", "『진서』(陳書) 고조본기", "『북사』 물길전·고구려전"]
 
 - id: geonwon-536
   year: 536
@@ -623,6 +671,22 @@
   subjects: [silla]
   tags: [society]
   sources: ["『삼국사기』 신라본기 진흥왕 37년"]
+
+- id: northern-zhou-sui-577
+  year: 577
+  endYear: 585
+  title:
+    ko: 북주의 화북 통일과 수의 건국
+  summary:
+    ko: "북주 무제가 577년 북제를 멸망시켜 화북을 통일했다. 580년 선제의 장인 양견이 어린 정제를 대신해 실권을 잡고 이듬해(581) 선양을 받아 수를 세웠다. 고구려 평원왕은 북주(577)에 이어 수가 서자마자(581) 사신을 보내 대장군 요동군공에 책봉되었다(『수서』는 고려왕으로 고쳐 봉했다고 적는다). 돌궐의 지배 아래 있던 동북의 거란은 584년 막하불(부족장)들을 이끌고 수를 찾아왔고 585년 부족 전체가 귀부했다. 지도는 동돌궐이 선 583년부터 시라무렌강 상류 일대를 동돌궐의 땅으로 그려 그만큼 거란과 실위의 땅이 줄어든다."
+  subjects: [northern-qi, northern-zhou, sui, goguryeo, gokturk, eastern-turks, khitan, shiwei]
+  links:
+    - { from: northern-zhou, to: sui, note: "선양(581)" }
+    - { from: northern-zhou, to: goguryeo, note: "평원왕 책봉(577)" }
+    - { from: sui, to: goguryeo, note: "평원왕 책봉(581)" }
+    - { from: khitan, to: sui, note: "귀부(585)" }
+  tags: [politics, diplomacy]
+  sources: ["『주서』 무제기", "『수서』 고조기·북적전", "『삼국사기』 고구려본기 평원왕 19년·23년"]
 
 - id: sui-unification-589
   year: 589
