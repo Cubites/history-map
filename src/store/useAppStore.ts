@@ -9,7 +9,7 @@ interface AppState {
   selectedId: string | null;
   hoveredEventId: string | null;
   /**
-   * 눌러서 고정한 사건 (2026-10-05). 마우스가 떠나도 화살표를 계속 보여 주고, 그 사건을 다시 누르거나 사건 밖을 누르면 풀린다.
+   * 눌러서 고정한 사건 (2026-10-05). 마우스가 떠나도 화살표를 계속 보여 주고, 그 사건을 다시 누르거나 사건 밖을 클릭하면 풀린다(지도를 끌거나 확대할 때는 그대로, 2026-10-09).
    * 화살표는 마우스를 올린 사건(hoveredEventId)이 있으면 그것을, 없으면 고정한 사건을 그린다(activeEventId)
    */
   pinnedEventId: string | null;

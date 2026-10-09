@@ -7,6 +7,9 @@ import { formatDecade, formatRange, formatYear, isAlive, prehistoryStage } from 
 import type { HistoryEvent } from '../schema/index.ts';
 import { useAppStore } from '../store/useAppStore.ts';
 
+/** 고정한 사건을 풀 때 클릭으로 칠 움직임 한도(px). 지도의 끌기 판정(WorldMap의 d3-zoom clickDistance)과 같다 */
+const CLICK_DISTANCE = 4;
+
 export function EventPanel({ data }: { data: StaticData }) {
   const year = useAppStore((s) => s.year);
   const selectedId = useAppStore((s) => s.selectedId);
@@ -18,16 +21,45 @@ export function EventPanel({ data }: { data: StaticData }) {
   const warId = useAppStore((s) => s.warId);
   // 마우스가 없는 화면(휴대폰·태블릿)에서는 안내 문구를 바꾼다
   const touch = useMediaQuery('(hover: none)');
-  // 눌러서 고정한 사건은 사건 밖(지도·패널의 다른 곳 등)을 누르면 풀린다. 다른 사건을 누르면 그 사건으로 바뀐다 (EventItem)
+  // 눌러서 고정한 사건은 사건 밖(지도·패널의 다른 곳 등)을 '클릭'하면 풀린다. 다른 사건을 누르면 그 사건으로 바뀐다 (EventItem)
+  // 지도를 끌어 옮기거나 두 손가락으로 확대·축소할 때는 풀리지 않는다(2026-10-09): 누른 자리에서 CLICK_DISTANCE 넘게 움직였거나,
+  // 다른 포인터가 함께 눌렸거나, 브라우저가 스크롤로 가져가면(pointercancel) 클릭으로 치지 않는다
   const pinned = useAppStore((s) => s.pinnedEventId);
   const pinEvent = useAppStore((s) => s.pinEvent);
   useEffect(() => {
     if (!pinned) return;
+    const downs = new Map<number, { x: number; y: number; outside: boolean; moved: boolean }>();
     const onPointerDown = (e: PointerEvent) => {
-      if (!(e.target instanceof Element && e.target.closest('.event'))) pinEvent(null);
+      // 이미 눌린 포인터가 있으면(두 손가락 확대 등) 모두 클릭이 아니다
+      const multi = downs.size > 0;
+      for (const d of downs.values()) d.moved = true;
+      const outside = !(e.target instanceof Element && e.target.closest('.event'));
+      downs.set(e.pointerId, { x: e.clientX, y: e.clientY, outside, moved: multi });
+    };
+    const onPointerMove = (e: PointerEvent) => {
+      const d = downs.get(e.pointerId);
+      if (d && Math.hypot(e.clientX - d.x, e.clientY - d.y) > CLICK_DISTANCE) d.moved = true;
+    };
+    const onPointerUp = (e: PointerEvent) => {
+      const d = downs.get(e.pointerId);
+      downs.delete(e.pointerId);
+      if (!d || d.moved || !d.outside) return;
+      if (Math.hypot(e.clientX - d.x, e.clientY - d.y) > CLICK_DISTANCE) return;
+      pinEvent(null);
+    };
+    const onPointerCancel = (e: PointerEvent) => {
+      downs.delete(e.pointerId);
     };
     document.addEventListener('pointerdown', onPointerDown);
-    return () => document.removeEventListener('pointerdown', onPointerDown);
+    document.addEventListener('pointermove', onPointerMove);
+    document.addEventListener('pointerup', onPointerUp);
+    document.addEventListener('pointercancel', onPointerCancel);
+    return () => {
+      document.removeEventListener('pointerdown', onPointerDown);
+      document.removeEventListener('pointermove', onPointerMove);
+      document.removeEventListener('pointerup', onPointerUp);
+      document.removeEventListener('pointercancel', onPointerCancel);
+    };
   }, [pinned, pinEvent]);
 
   const entity = selectedId ? data.entities.get(selectedId) : undefined;
@@ -35,7 +67,7 @@ export function EventPanel({ data }: { data: StaticData }) {
     return (
       <aside className="panel">
         <p className="panel-guide">지도에서 나라를 누르면 그 시기의 사건이 여기에 나타납니다.</p>
-        <p className="panel-guide">사건에 {touch ? '손가락을 대면' : '마우스를 올리면'} 영향을 주고받은 나라가 화살표로 표시됩니다. 사건을 누르면 화살표가 계속 남고, 그 사건을 다시 누르거나 다른 곳을 누르면 사라집니다.</p>
+        <p className="panel-guide">사건에 {touch ? '손가락을 대면' : '마우스를 올리면'} 영향을 주고받은 나라가 화살표로 표시됩니다. 사건을 누르면 화살표가 계속 남아 지도를 옮기거나 확대해도 그대로이고, 그 사건을 다시 누르거나 사건 밖을 클릭하면 사라집니다.</p>
         <p className="panel-note">현재는 선사 시대(구석기·신석기)와 고조선(기원전 2333년)부터 현대까지의 한국사 전 시대 자료와 유럽(국경 기원전 264년~, 사건 476년~현재) 자료가 들어 있습니다.</p>
       </aside>
     );
