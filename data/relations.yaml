@@ -749,3 +749,28 @@
 - { type: vassal_of, subject: arsacid-armenia, object: roman-empire, from: 63, to: 113 } # 란데이아의 타협(티리다테스 1세, 66 네로의 대관)
 - { type: vassal_of, subject: arsacid-armenia, object: roman-empire, from: 117, to: 251 } # 하드리아누스가 돌려준 뒤(163~166 루키우스 베루스가 소하이무스를 세움), 252 샤푸르 1세
 - { type: vassal_of, subject: iberia-kingdom, object: roman-empire, from: -26, to: 251 } # 기원전 65 폼페이우스 뒤 로마의 동맹 왕국(75 베스파시아누스의 하르모지카 성벽, 141 파라스마네스 2세의 로마 방문)
+
+# ── 작업 AN3 (2026-10-09): 기원전 264~28년 ──
+# 계승(AN-⑩): 기원전 27년 원수정(renames), 마케도니아 왕국 → 네 공화국(168), 유증으로 넘어간 페르가몬(133)·비티니아(74). 종속 왕국의 병합·정복은 계승으로 적지 않음(AN1·AN2와 같음)
+- { type: successor_of, subject: roman-empire, object: roman-republic, from: -26, to: null } # 기원전 27년 옥타비아누스가 아우구스투스가 됨(renames, 같은 색)
+- { type: successor_of, subject: macedonian-republics, object: macedonia-kingdom, from: -167, to: null } # 168 피드나, 167 아이밀리우스 파울루스의 네 공화국
+- { type: successor_of, subject: roman-republic, object: macedonian-republics, from: -147, to: null } # 148 메텔루스가 안드리스코스를 이기고 마케도니아 속주
+- { type: successor_of, subject: roman-republic, object: pergamon-kingdom, from: -132, to: null } # 133 아탈로스 3세의 유증(129 아시아 속주)
+- { type: successor_of, subject: roman-republic, object: bithynia-kingdom, from: -73, to: null } # 74 니코메데스 4세의 유증
+- { type: successor_of, subject: arsacid-armenia, object: sophene-kingdom, from: -94, to: null } # 95 무렵 티그라네스 2세가 소페네를 합침
+- { type: successor_of, subject: pontus-kingdom, object: lesser-armenia, from: -111, to: null } # 112 무렵 안티파트로스가 미트리다테스 6세를 후계로 삼음(검토 반영)
+# 종속(AN-④): 로마 공화정의 종속 왕국·공화국(포함 끝 해 기준, 지도의 해와 같음). 기원전 27년부터는 AN2 줄(로마 제국)
+- { type: vassal_of, subject: syracuse, object: roman-republic, from: -262, to: -214 } # 263 히에론 2세의 조약(215 그가 죽은 뒤 히에로니모스가 카르타고 편)
+- { type: vassal_of, subject: illyrian-kingdom, object: roman-republic, from: -227, to: -171 } # 228 테우타의 조약(공물, 리소스 남쪽으로 배를 보내지 않음), 172 겐티우스가 페르세우스 편
+- { type: vassal_of, subject: macedonian-republics, object: roman-republic, from: -167, to: -148 } # 공납 공화국(리비우스 45.29)
+- { type: vassal_of, subject: noricum-kingdom, object: roman-republic, from: -169, to: -27 } # 170 킨키빌리스 왕의 사절(리비우스 43.5), 로마의 친구(hospitium publicum)
+- { type: vassal_of, subject: lycian-league, object: roman-republic, from: -166, to: -27 } # 167 로도스에서 풀려난 뒤 로마의 자유 동맹국(46 조약)
+- { type: vassal_of, subject: cappadocia-kingdom, object: roman-republic, from: -94, to: -27 } # 95 원로원이 세운 아리오바르자네스 1세, 63 폼페이우스가 넓힘
+- { type: vassal_of, subject: commagene, object: roman-republic, from: -63, to: -27 } # 64 폼페이우스가 안티오코스 1세를 인정
+- { type: vassal_of, subject: galatia-kingdom, object: roman-republic, from: -62, to: -27 } # 63 데이오타로스의 왕호(폼페이우스), 36 아민타스
+- { type: vassal_of, subject: paphlagonia-kingdom, object: roman-republic, from: -62, to: -27 } # 63 폼페이우스가 필라이메네스·아탈로스에게 내륙을 줌, 36 데이오타로스 필라델포스
+- { type: vassal_of, subject: colchis, object: roman-republic, from: -62, to: -37 } # 65~63 폼페이우스가 세운 아리스타르코스
+- { type: vassal_of, subject: bosporan-kingdom, object: roman-republic, from: -62, to: -27 } # 63 파르나케스 2세가 로마의 친구·동맹이 됨, 47~ 아산드로스
+- { type: vassal_of, subject: iberia-kingdom, object: roman-republic, from: -64, to: -27 } # 65 폼페이우스의 원정 뒤 아르타고스(아르톡)
+- { type: vassal_of, subject: arsacid-armenia, object: roman-republic, from: -65, to: -34 } # 66 티그라네스 2세가 폼페이우스에게 항복, 34 안토니우스가 아르타바스데스 2세를 사로잡음
+- { type: vassal_of, subject: polemonid-pontus, object: roman-republic, from: -36, to: -27 } # 37/36 안토니우스가 세운 폴레몬 1세
