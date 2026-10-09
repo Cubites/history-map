@@ -4,7 +4,7 @@
 // 중일 전쟁 점령지(R38·OCC_*·ROC_1937~1945 등)는 1937년 모양이 1938년 도형과의 교집합이라 이 파일 안에 원래 순서대로 함께 둔다.
 // 구획 제목의 '○번 묶음'은 원래 generate-geo.mjs의 조사 묶음(시대)이다. 파일 사이에서 맞물리는 점은 이름으로 가져다 쓴다('값만 같은 점'은 shared.mjs 머리 주석 참고).
 import { D, I, P, U, box, bx, rev, ring } from '../lib.mjs';
-import { AMUR_BAND, CHINA, HUABEI, HUABEI_938, KHABAROVSK, KWANTUNG, L33, LIAODONG, LIAOXI, LX916, LX923, L_NORTH, NORTH_OF_YANYUN, PRIMORYE, TAIWAN, XIXIA, YANYUN } from '../shared.mjs';
+import { AMUR_BAND, CHINA, HUABEI, HUABEI_938, ISLANDS_W, KWANTUNG, L33, LIAODONG, LIAOXI, LX916, LX923, L_NORTH, NORTH_OF_YANYUN, OM_LEFT, OM_RIGHT, OUTER_MANCHURIA, PRIMORYE, TAIWAN, UDA, XIXIA, YANYUN } from '../shared.mjs';
 import { BAEKJE, GOGURYEO, HYEONDO_2, L_YALU_TUMEN, noNokdun } from './korea.mjs';
 import { ALXA, EASTERN_TURKS, ET_NE, HUGEUM_1621, KHITAN_W, MANCHURIA_NORTH, NE_FAR, OUTER_MONGOLIA, QH_N, TIBET, XILIN_N } from './inner-asia.mjs';
 
@@ -22,13 +22,20 @@ const QING_1644 = U(QING_1636, [CHINA]);
 const QING_1691 = U(QING_1644, [EASTERN_TURKS], [ALXA]); // 알라산 호쇼트부는 1686년 목지를 받고 1697년 기로 편성됐으나 외몽골과 함께 1691년부터 (2026-09-29)
 const QING_1720 = U(QING_1691, [TIBET]);
 const QING_1724 = U(QING_1720, QH_N); // 롭상 단진의 난(1723~1724)을 진압하고 칭하이 호쇼트부를 병합 (2026-09-29)
-const QING_1860 = D(QING_1724, [PRIMORYE]);
+// 1858년(아이훈 조약) 뒤에는 외만주(흑룡강 북쪽)도 뺀다. 발해 북쪽 경계(MANCHURIA_NORTH의 북쪽 변) 안쪽이 퉁장·뤄베이 쪽에서 흑룡강 북쪽(유대인 자치주 남부)까지 걸치기 때문(작업 C1)
+const QING_1860 = D(QING_1724, [PRIMORYE], [OUTER_MANCHURIA]);
+// 청의 북쪽 땅(1689~1857, 작업 C1): 흑룡강 띠, 만주 동북부 끝(NE_FAR, 1636~1690년처럼. 하바롭스크 동쪽 흑룡강 하류 오른쪽 기슭이 1691~1859년 비던 것을 고침),
+// 네르친스크 조약(1689)으로 청 땅이 된 외만주(외흥안령 남쪽). 조약이 정하지 않고 남긴 우다강 유역(UDA)은 칠하지 않는다
+const QING_NORTH = U(AMUR_BAND, NE_FAR, D([OUTER_MANCHURIA], [UDA]));
+// 1858~1859년: 아이훈 조약으로 흑룡강 왼쪽 기슭(shared.mjs의 OM_LEFT, 실카강 북쪽 고르비차까지)을 러시아에 넘긴 뒤. 우수리강 하구에서 바다까지의 오른쪽 기슭(OM_RIGHT)과
+// 우수리강 동쪽(연해주)은 조약의 공동 관리지라 1860년 베이징 조약까지 청으로 둔다(작업 C1 검토 반영. 전에는 하류 오른쪽 기슭 약 9만 km²가 1858년부터 러시아)
+const QING_NORTH_1858 = U(AMUR_BAND, NE_FAR, [OM_RIGHT]);
 
 // ── 7번 묶음 (1876 ~ 1945) ─────────────────────────────────
-// QING_1860_BAND: 흑룡강 띠까지의 청(2026-10-07 작업 FIX1 전의 QING_BASE와 같은 도형). 러시아 손 도형(europe.mjs의 1860년 전 한계)과 간도는 이것을 그대로 써서 바이트까지 바뀌지 않게 한다.
-// QING_BASE: 1860년 베이징 조약 뒤의 청. 하바롭스크 쐐기(shared.mjs의 KHABAROVSK)를 뺀다(전에는 하바롭스크가 청·중화민국·중화인민공화국 땅으로 칠해짐)
-export const QING_1860_BAND = U(QING_1860, [AMUR_BAND]);
-export const QING_BASE = D(QING_1860_BAND, [KHABAROVSK]);
+// QING_1860_BAND: 흑룡강 띠까지의 청(연해주 안의 하바롭스크 쪽 띠까지). 러시아 손 도형(europe.mjs의 1860년 전 한계)과 간도는 이것을 쓴다.
+// QING_BASE: 1860년 베이징 조약 뒤의 청. 연해주(우수리강 동쪽, 하바롭스크 앞 두 섬 포함)를 뺀다(작업 FIX1에서 하바롭스크 쐐기를 빼던 것을 작업 C1에서 연해주째로 바꿈)
+export const QING_1860_BAND = U(QING_1860, AMUR_BAND);
+export const QING_BASE = D(QING_1860_BAND, [PRIMORYE]);
 const QING_1895 = QING_BASE;
 const QING_1898 = D(QING_BASE, [KWANTUNG]);
 const ROC_1912 = QING_1898;
@@ -41,9 +48,9 @@ const L_WALL_E = [[119.8, 39.95], [119.4, 40.15], [118.8, 40.35], [118.3, 40.42]
 const OUTSIDE_WALL = I(U([CHINA], [EASTERN_TURKS]), [ring(L_WALL_E, [[116.0, 42.6], [123.0, 42.6], [123.0, 39.6]])]);
 // 러허성: 1933년 3월 열하 작전으로 만주국에 편입. 요서 회랑(수중·싱청·진저우·이현)은 펑톈성으로 1932년부터 만주국
 const REHE = I(OUTSIDE_WALL, [ring([[115.0, 39.0], [119.8, 39.95], [120.2, 40.6], [120.9, 41.6], [121.1, 42.6], [115.0, 42.6]])]);
-// MANCHUKUO_AREA는 2026-10-07(작업 FIX1) 전의 만주국 도형(중일 전쟁 점령지 계산 occ가 그대로 쓴다). 만주국은 여기서 하바롭스크 쐐기를 뺀다
-const MANCHUKUO_AREA = D(U(MANCHURIA_NORTH, [LIAODONG], KHITAN_W, [AMUR_BAND], OUTSIDE_WALL, ET_NE), [PRIMORYE], [KWANTUNG], OUTER_MONGOLIA, XILIN_N);
-const MANCHUKUO = D(MANCHUKUO_AREA, [KHABAROVSK]);
+// MANCHUKUO_AREA: 만주국 도형(중일 전쟁 점령지 계산 occ도 쓴다). 연해주(하바롭스크 쪽 포함)와 흑룡강 북쪽(외만주)을 뺀다(작업 C1. 작업 FIX1에서는 하바롭스크 쐐기를 따로 뺐다)
+const MANCHUKUO_AREA = D(U(MANCHURIA_NORTH, [LIAODONG], KHITAN_W, AMUR_BAND, OUTSIDE_WALL, ET_NE), [PRIMORYE], [OUTER_MANCHURIA], [KWANTUNG], OUTER_MONGOLIA, XILIN_N);
+const MANCHUKUO = MANCHUKUO_AREA;
 const MANCHUKUO_1932 = D(MANCHUKUO, REHE);
 const ROC_1932 = D(ROC_1921, MANCHUKUO_1932);
 const ROC_1933 = D(ROC_1921, MANCHUKUO);
@@ -160,6 +167,8 @@ const ROC_1937 = D(ROC_1933, OCC_CHINA_1937);
 // ── 8번 묶음 (1945 ~ 현재) ─────────────────────────────────
 // 중국: 광복 뒤 중화민국(1946~1949)은 만주·타이완을 되찾음. 1949년부터 본토는 중화인민공화국, 타이완은 중화민국
 const PRC = D(U(QING_BASE, [KWANTUNG]), OUTER_MONGOLIA);
+// 2008년 10월: 2004년 중러 국경 보충 협정으로 타라바로프섬(인룽섬)과 볼쇼이우수리스키섬(헤이샤쯔섬) 서쪽 부분을 넘겨받음(shared.mjs의 ISLANDS_W, 작업 C1)
+const PRC_2008 = U(PRC, [ISLANDS_W]);
 const ROC_1946 = U(PRC, [TAIWAN]);
 
 // ── 2번 묶음 (기원전 57 ~ 600) ─────────────────────────────
@@ -195,10 +204,11 @@ const GANDO = I(QING_1860_BAND, [ring(L_YALU_TUMEN.slice(5, 11), [[131.3, 43.0],
 export const versions = {
   'yan-state': [[-399, -281, YAN_EARLY], [-281, -221, YAN_281]],
   qin: [[-220, -204, HAN_EMPIRE]], // 기원전 206년 멸망 (검수 2026-09-28)
-  // 1860년까지는 조선 땅 녹둔도를 뺀다
-  qing: [[1636, 1644, noNokdun(U(QING_1636, NE_FAR))], [1644, 1683, noNokdun(U(QING_1644, NE_FAR))], [1683, 1691, noNokdun(U(QING_1644, [TAIWAN], NE_FAR))], [1691, 1720, noNokdun(U(QING_1691, [TAIWAN], [AMUR_BAND]))], [1720, 1724, noNokdun(U(QING_1720, [TAIWAN], [AMUR_BAND]))], [1724, 1860, noNokdun(U(QING_1724, [TAIWAN], [AMUR_BAND]))], [1860, 1883, U(QING_BASE, [TAIWAN])], [1883, 1895, D(U(QING_BASE, [TAIWAN]), GANDO)], [1895, 1898, D(QING_1895, GANDO)], [1898, 1909, D(QING_1898, GANDO)], [1909, 1912, QING_1898]],
+  // 1860년까지는 조선 땅 녹둔도를 뺀다. 1689년(네르친스크 조약)부터 1857년까지 외만주(고르비차까지, 우다강 유역 빼고)와 흑룡강 띠, 1858~1859년은 흑룡강 왼쪽 기슭을 뺀다(작업 C1).
+  // 1689~1690년은 아직 칼카(외몽골)가 복속하기 전이라 흑룡강 띠가 몽골 초원과 겹치는 후룬베이얼 서쪽 모서리를 뺀다
+  qing: [[1636, 1644, noNokdun(U(QING_1636, NE_FAR))], [1644, 1683, noNokdun(U(QING_1644, NE_FAR))], [1683, 1689, noNokdun(U(QING_1644, [TAIWAN], NE_FAR))], [1689, 1691, noNokdun(U(QING_1644, [TAIWAN], D(QING_NORTH, [EASTERN_TURKS])))], [1691, 1720, noNokdun(U(QING_1691, [TAIWAN], QING_NORTH))], [1720, 1724, noNokdun(U(QING_1720, [TAIWAN], QING_NORTH))], [1724, 1858, noNokdun(U(QING_1724, [TAIWAN], QING_NORTH))], [1858, 1860, noNokdun(D(U(QING_1724, [TAIWAN], QING_NORTH_1858), [OM_LEFT]))], [1860, 1883, U(QING_BASE, [TAIWAN])], [1883, 1895, D(U(QING_BASE, [TAIWAN]), GANDO)], [1895, 1898, D(QING_1895, GANDO)], [1898, 1909, D(QING_1898, GANDO)], [1909, 1912, QING_1898]],
   roc: [[1912, 1921, ROC_1912], [1921, 1932, ROC_1921], [1932, 1933, ROC_1932], [1933, 1937, ROC_1933], [1937, 1938, ROC_1937], [1938, 1939, ROC_1938], [1939, 1940, ROC_1939], [1940, 1941, ROC_1940], [1941, 1942, ROC_1941], [1942, 1943, ROC_1942], [1943, 1944, ROC_1943], [1944, 1945, ROC_1944], [1945, 1946, ROC_1945], [1946, 1949, ROC_1946], [1949, null, [[TAIWAN]]]],
-  prc: [[1949, null, PRC]],
+  prc: [[1949, 2008, PRC], [2008, null, PRC_2008]],
   manchukuo: [[1932, 1933, MANCHUKUO_1932], [1933, 1946, MANCHUKUO]],
   'occupied-china': [[1937, 1938, OCC_CHINA_1937], [1938, 1939, OCC_CHINA], [1939, 1940, OCC_1939], [1940, 1941, OCC_1940], [1941, 1942, OCC_1941], [1942, 1943, OCC_1942], [1943, 1944, OCC_1943], [1944, 1945, OCC_1944], [1945, 1946, OCC_1945]],
   'western-han': [[-201, -74, HAN_EMPIRE], [-74, 9, HAN_XT]],
