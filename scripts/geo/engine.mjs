@@ -17,8 +17,9 @@ function geometry(multi) {
 // 권역 파일이 source를 내보내지 않을 때 쓰는 기본 출처 문구 (지금 권역은 모두 이 문구를 쓴다)
 const ESTIMATED = '중고등학교 한국사 교과서 시대별 지도의 일반적인 경계를 따른 대략적인 추정. 운영자 검수 필요';
 
-// 권역 파일이 내보내는 약속된 이름. fill·version·source·gap으로 시작하는 다른 이름(대소문자 무시)은 이 넷의 오타로 보고 멈춘다
-const AREA_EXPORTS = new Set(['versions', 'fillSpecs', 'source', 'gapZones']);
+// 권역 파일이 내보내는 약속된 이름. fill·version·source·gap·void로 시작하는 다른 이름(대소문자 무시)은 이 다섯의 오타로 보고 멈춘다
+// voids(2026-10-09 작업 AN4 검토 반영): 권역이 일부러 비운 땅(소유표의 주인 없는 단위) [[from, to(끝 없음은 null), 멀티폴리곤], ...]. 틈새 구멍 메우기가 이 땅과 겹치는 구멍을 메우지 않게 한다
+const AREA_EXPORTS = new Set(['versions', 'fillSpecs', 'source', 'gapZones', 'voids']);
 
 // 권역 파일들의 versions·fillSpecs·source를 AREAS 순서대로 합친다. 아래 경우에는 data/geo를 지우기 전에 멈춘다.
 // - 권역이 versions를 내보내지 않거나, 약속된 이름과 헷갈리는 이름(fillSpec, version, sources, gapZone 등)을 내보냄
@@ -32,16 +33,22 @@ const AREA_EXPORTS = new Set(['versions', 'fillSpecs', 'source', 'gapZones']);
 export function mergeAreas(areas, areaDir) {
   const versions = {};
   const fillSpecs = [];
+  const voids = [];
   const sources = {};
   const owner = {};
   const filler = {};
   for (const [name, area] of areas) {
     if (!area.versions || typeof area.versions !== 'object') throw new Error(`권역 ${name}이 versions를 내보내지 않음`);
     for (const key of Object.keys(area)) {
-      if (/^(fill|version|source|gap)/i.test(key) && !AREA_EXPORTS.has(key)) throw new Error(`권역 ${name}의 export '${key}': versions·fillSpecs·source·gapZones의 오타가 아닌지 확인`);
+      if (/^(fill|version|source|gap|void)/i.test(key) && !AREA_EXPORTS.has(key)) throw new Error(`권역 ${name}의 export '${key}': versions·fillSpecs·source·gapZones·voids의 오타가 아닌지 확인`);
     }
     if (area.fillSpecs !== undefined && !Array.isArray(area.fillSpecs)) throw new Error(`권역 ${name}의 fillSpecs가 배열이 아님`);
     if (area.source !== undefined && (typeof area.source !== 'string' || !area.source.trim())) throw new Error(`권역 ${name}의 source가 비어 있지 않은 문자열이 아님`);
+    if (area.voids !== undefined && !Array.isArray(area.voids)) throw new Error(`권역 ${name}의 voids가 배열이 아님`);
+    for (const v of area.voids ?? []) {
+      if (!Array.isArray(v) || !Number.isInteger(v[0]) || !(v[1] === null || (Number.isInteger(v[1]) && v[0] < v[1])) || !Array.isArray(v[2])) throw new Error(`권역 ${name}의 voids 한 줄 모양이 틀림: [from, to(끝 없음은 null), 멀티폴리곤]이어야 함`);
+      voids.push(v);
+    }
     for (const [id, list] of Object.entries(area.versions)) {
       if (Object.hasOwn(owner, id)) throw new Error(`나라 id '${id}'가 ${owner[id]}와 ${name} 두 곳에 있음`);
       owner[id] = name;
@@ -71,7 +78,7 @@ export function mergeAreas(areas, areaDir) {
     const unlisted = entries.filter((e) => e.isFile() && e.name.endsWith('.mjs')).map((e) => e.name.slice(0, -'.mjs'.length)).filter((n) => !listed.has(n));
     if (unlisted.length) throw new Error(`권역 파일 ${unlisted.join(', ')}이(가) AREAS 목록에 없음 (scripts/geo/area-list.mjs에 등록)`);
   }
-  return { versions, fillSpecs, sources };
+  return { versions, fillSpecs, sources, voids };
 }
 
 // 빈 땅 검사 구역 (DESIGN.md §5.4): 권역 파일의 gapZones를 AREAS 순서대로 모은다. npm run check:gaps가 이 순서대로 검사해 출력하고,
@@ -219,20 +226,39 @@ export function fillEmptyLand(versions, specs) {
  * 틈새 구멍 메우기: 조각을 합칠 때 경계가 살짝 어긋나 영토 안에 생긴 틈새 구멍을 메운다 (2026-09-27).
  * 그대로 두면 구멍 테두리가 영토 안의 점선으로 보였다 (동예·고구려·청 등).
  * 같은 시기에 다른 나라 영토가 들어 있는 구멍(마한 안의 백제, 금 안의 몽골 등)은 남긴다.
+ * 같은 시기 권역이 일부러 비운 땅(voids)이 구멍 안의 한 점을 덮는 구멍(넓이 약 50km² 이상)도 남긴다(2026-10-09 작업 AN4 검토 반영: 페르시아 땅에 둘러싸인 기원전 401~334년 리카오니아·피시디아).
+ * 다른 나라로 남기는 판정을 먼저 하므로, 비운 땅과 겹치지 않는 구멍의 결과는 voids가 없을 때와 같다.
  * 구멍의 범위 상자와 떨어진 나라는 교집합을 구하지 않는다 (2026-09-30, 교집합이 비는 것이 확실하므로 결과는 같다. 나라가 늘어도 느려지지 않게).
  * holeOwners(versions): 모든 영토 버전 [{ entityId, from, to(끝 없음은 Infinity), multi, box }]
  * keepHoles: 버전 하나의 구멍 가운데 그 기간 다른 나라가 든 구멍(occupied(구멍 링, 다른 버전)이 참)만 남긴 멀티폴리곤. 메운 구멍마다 onFilled()
  */
 const holeOwners = (versions) => Object.entries(versions).flatMap(([entityId, list]) => list.map(([from, to, multi]) => ({ entityId, from, to: to ?? Infinity, multi, box: boundsOf(multi) })));
 const overlapsInTime = (a, b) => a.from < b.to && b.from < a.to;
-function keepHoles(all, entityId, from, to, multi, occupied, onFilled) {
+// 비운 땅 판정은 빠르게: 넓이 0.005도²(약 50km²) 미만의 틈새(조각 경계의 어긋남)는 보지 않고, 구멍 안의 한 점이 비운 땅 안에 있는지만 본다
+// (구멍 안의 점: 구멍 범위 상자의 가운데 가로줄이 구멍 테두리와 만나는 구간 가운데 가장 긴 구간의 가운데)
+const ringArea = (r) => { let a = 0; for (let i = 0, j = r.length - 1; i < r.length; j = i++) a += (r[j][0] + r[i][0]) * (r[j][1] - r[i][1]); return Math.abs(a / 2); };
+const inRing = ([x, y], r) => { let c = false; for (let i = 0, j = r.length - 1; i < r.length; j = i++) { const [xi, yi] = r[i], [xj, yj] = r[j]; if ((yi > y) !== (yj > y) && x < ((xj - xi) * (y - yi)) / (yj - yi) + xi) c = !c; } return c; };
+const inMulti = (p, m) => m.some(([outer, ...holes]) => inRing(p, outer) && !holes.some((h) => inRing(p, h)));
+const pointInHole = (h) => {
+  const ys = h.map((q) => q[1]); const y = (Math.min(...ys) + Math.max(...ys)) / 2 + 1e-7;
+  const xs = [];
+  for (let i = 0, j = h.length - 1; i < h.length; j = i++) { const [xi, yi] = h[i], [xj, yj] = h[j]; if ((yi > y) !== (yj > y)) xs.push(((xj - xi) * (y - yi)) / (yj - yi) + xi); }
+  xs.sort((p, q) => p - q);
+  let best = null; for (let i = 0; i + 1 < xs.length; i += 2) if (!best || xs[i + 1] - xs[i] > best[1] - best[0]) best = [xs[i], xs[i + 1]];
+  return best ? [(best[0] + best[1]) / 2, y] : null;
+};
+const VOID_MIN_DEG2 = 0.005;
+const voidOwners = (voids) => voids.map(([from, to, multi]) => ({ from, to: to ?? Infinity, multi, box: boundsOf(multi) }));
+const voidCovers = (h, v) => { if (ringArea(h) < VOID_MIN_DEG2) return false; const p = pointInHole(h); return p !== null && inMulti(p, v.multi); };
+function keepHoles(all, entityId, from, to, multi, occupied, onFilled, voidList = []) {
   const me = { from, to: to ?? Infinity };
   const others = all.filter((o) => o.entityId !== entityId && overlapsInTime(me, o));
+  const empties = voidList.filter((v) => overlapsInTime(me, v));
   return multi.map(([outer, ...holes]) => [
     outer,
     ...holes.filter((h) => {
       const holeBox = boundsOf([[h]]);
-      const kept = others.some((o) => !apart(holeBox, o.box) && occupied(h, o));
+      const kept = others.some((o) => !apart(holeBox, o.box) && occupied(h, o)) || empties.some((v) => !apart(holeBox, v.box) && voidCovers(h, v));
       if (!kept) onFilled();
       return kept;
     }),
@@ -271,7 +297,7 @@ serveParallel('engine-holes', (data, i) => {
 
 // data/geo 쓰기: 지우기 전 대조 → 기존 geojson 삭제 → 틈새 구멍 메우기 → 나라마다 <id>.geojson(FeatureCollection 하나, 버전마다 한 줄 + 개행).
 // sources는 mergeAreas가 만든 나라 id → 출처 문구 표다. 없는 나라는 ESTIMATED를 쓴다
-export function writeGeo(project, versions, { prune = false, sources = {} } = {}) {
+export function writeGeo(project, versions, { prune = false, sources = {}, voids = [] } = {}) {
   const outDir = path.join(project, 'data/geo');
   mkdirSync(outDir, { recursive: true });
   // 지우기 전 대조: 이번에 쓰지 않을 geojson이 이미 있으면 멈춘다 (권역 등록 빠뜨림, 생성기 밖에서 손으로 그린 파일 등).
@@ -284,7 +310,8 @@ export function writeGeo(project, versions, { prune = false, sources = {} } = {}
   for (const f of readdirSync(outDir)) if (f.endsWith('.geojson')) rmSync(path.join(outDir, f));
   let filled = 0;
   const occupiedBy = (h, o) => polyclip.intersection([[h]], o.multi).length > 0;
-  const fillEmptyHoles = (entityId, from, to, multi) => keepHoles(all, entityId, from, to, multi, occupiedBy, () => filled++);
+  const voidList = voidOwners(voids);
+  const fillEmptyHoles = (entityId, from, to, multi) => keepHoles(all, entityId, from, to, multi, occupiedBy, () => filled++, voidList);
 
   for (const [entityId, list] of Object.entries(versions)) {
     const fc = {

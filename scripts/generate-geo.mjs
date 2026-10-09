@@ -31,6 +31,6 @@ const { AREAS } = await import('./geo/area-list.mjs');
 const { mergeAreas, fillEmptyLand, writeGeo } = await import('./geo/engine.mjs');
 // 권역 목록(AREAS, scripts/geo/area-list.mjs)의 순서대로 합치고 채운다. AREA_DIR(권역 파일 폴더)에 목록에 없는 권역 파일이 있으면 지우기 전에 멈춘다
 const AREA_DIR = path.join(path.dirname(fileURLToPath(import.meta.url)), 'geo/areas');
-const { versions, fillSpecs, sources } = mergeAreas(AREAS, AREA_DIR);
+const { versions, fillSpecs, sources, voids } = mergeAreas(AREAS, AREA_DIR);
 fillEmptyLand(versions, fillSpecs);
-writeGeo(project, versions, { prune, sources });
+writeGeo(project, versions, { prune, sources, voids });

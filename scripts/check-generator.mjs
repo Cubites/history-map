@@ -339,6 +339,21 @@ try {
   expectStop(`같은 나라 id '${dupId}'가 두 권역에`, '두 곳에 있음', () => engine.mergeAreas([...areas, ['check-dup', { versions: { [dupId]: [] } }]]));
   expectStop('source 이름 오타(sources)', "'sources'", () => engine.mergeAreas(swap(lastName, { ...lastArea, sources: '시험' })));
   expectStop('source가 빈 문자열', '비어 있지 않은 문자열', () => engine.mergeAreas(swap(lastName, { ...lastArea, source: ' ' })));
+  // 일부러 비운 땅(voids, 2026-10-09 작업 AN4 검토 반영): 이름 오타·모양을 잡고, 틈새 구멍 메우기가 비운 땅과 겹치는 구멍은 남기고 그 기간 밖에서는 메우는지 본다
+  expectStop('voids 이름 오타(void)', "'void'", () => engine.mergeAreas(swap(lastName, { ...lastArea, void: [] })));
+  expectStop('voids 한 줄 모양이 틀림(from ≥ to)', 'voids 한 줄 모양', () => engine.mergeAreas(swap(lastName, { ...lastArea, voids: [[1, 0, []]] })));
+  {
+    const outer = [[0, 0], [1, 0], [1, 1], [0, 1], [0, 0]];
+    const hole = [[0.3, 0.3], [0.3, 0.7], [0.7, 0.7], [0.7, 0.3], [0.3, 0.3]];
+    const vproj = path.join(tmp, 'voids-test');
+    mkdirSync(path.join(vproj, 'data/geo'), { recursive: true });
+    const log = console.log; console.log = () => {};
+    try { engine.writeGeo(vproj, { 'check-void': [[0, 5, [[outer, hole]]], [5, 10, [[outer, hole]]]] }, { voids: [[0, 5, [[[[0.3, 0.3], [0.7, 0.3], [0.7, 0.7], [0.3, 0.7], [0.3, 0.3]]]]]] }); } finally { console.log = log; }
+    const feats = JSON.parse(readFileSync(path.join(vproj, 'data/geo/check-void.geojson'), 'utf8')).features;
+    const holesOf = (ft) => (ft.geometry.type === 'Polygon' ? [ft.geometry.coordinates] : ft.geometry.coordinates).reduce((n, p) => n + p.length - 1, 0);
+    if (holesOf(feats[0]) === 1 && holesOf(feats[1]) === 0) ok('틈새 구멍 메우기: 같은 기간 비운 땅(voids)과 겹치는 구멍은 남기고, 비운 땅이 없는 기간의 같은 구멍은 메움');
+    else bad(`비운 땅(voids) 구멍 판정이 틀림: 0~5년 구멍 ${holesOf(feats[0])}개(1이어야 함), 5~10년 ${holesOf(feats[1])}개(0이어야 함)`);
+  }
 
   // 빈 땅 검사 구역(gapZones): 권역 목록 순서대로 모여 check:gaps의 구역 이름·순서가 되고, 새 권역은 AREAS에 등록하고 gapZones만 내보내면 끝에 붙는다.
   // 모양이 틀리면 생성기가 data/geo를 지우기 전에 멈춘다(mergeAreas가 collectGapZones로 검사)

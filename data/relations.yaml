@@ -774,3 +774,13 @@
 - { type: vassal_of, subject: iberia-kingdom, object: roman-republic, from: -64, to: -27 } # 65 폼페이우스의 원정 뒤 아르타고스(아르톡)
 - { type: vassal_of, subject: arsacid-armenia, object: roman-republic, from: -65, to: -34 } # 66 티그라네스 2세가 폼페이우스에게 항복, 34 안토니우스가 아르타바스데스 2세를 사로잡음
 - { type: vassal_of, subject: polemonid-pontus, object: roman-republic, from: -36, to: -27 } # 37/36 안토니우스가 세운 폴레몬 1세
+
+# ── 작업 AN4 (2026-10-09): 기원전 800~265년 ──
+# 계승(AN-⑩): 기원전 509년 로마 왕국 → 로마 공화정(renames). 정복·병합(리디아·프리기아·우라르투·아케메네스·안티고노스 1세·리시마코스 땅의 넘김)은 계승으로 적지 않음(AN1~AN3과 같음)
+- { type: successor_of, subject: roman-republic, object: roman-kingdom, from: -508, to: null } # 509 타르퀴니우스 수페르부스를 몰아냄(renames, 같은 색)
+# 종속(AN-④와 같은 생각, 포함 끝 해 기준, 지도의 해와 같음): 페르시아·마케도니아·리시마코스·셀레우코스의 종속 왕국
+- { type: vassal_of, subject: macedonia-kingdom, object: achaemenid-empire, from: -512, to: -479 } # 512 아민타스 1세가 메가바조스에게 흙과 물을 바침, 492 마르도니오스가 다시 복속, 479 플라타이아 뒤 벗어남(헤로도토스 5.17~21·6.44)
+- { type: vassal_of, subject: cilicia-kingdom, object: achaemenid-empire, from: -544, to: -400 } # 시엔네시스 왕가의 공납(헤로도토스 3.90), 401 키루스의 원정 뒤 사트라페이아
+- { type: vassal_of, subject: paeonia-kingdom, object: macedonia-kingdom, from: -357, to: -285 } # 358 필리포스 2세가 아기스를 이김, 리페이오스·파트라오스·아우돌레온(아리아노스 1.5)
+- { type: vassal_of, subject: odrysian-kingdom, object: lysimachus-kingdom, from: -312, to: -281 } # 313 세우테스 3세가 다시 복속(디오도로스 19.73), 281 리시마코스의 죽음
+- { type: vassal_of, subject: pergamon-kingdom, object: seleucid-empire, from: -280, to: -264 } # 필레타이로스가 셀레우코스 1세·안티오코스 1세의 종주를 인정, 263 에우메네스 1세의 자립(기원전 264년 표부터 따로)
