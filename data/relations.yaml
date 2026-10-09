@@ -721,9 +721,31 @@
 - { type: successor_of, subject: hunnic-empire, object: bosporan-kingdom, from: 376, to: null } # 370년대 훈족의 진출(보스포로스 왕국이 사료에서 사라짐, 정할 점 AN1-⑫)
 - { type: successor_of, subject: hunnic-bulgar-tribes, object: hunnic-empire, from: 469, to: null } # 뎅기지크가 죽음(『부활절 연대기』)
 # 종속(AN-④, 운영자 승인 2026-10-09): 로마의 종속 왕국. 298 니시비스 조약(이베리아 왕은 로마가 세움), 363 요비아누스가 아르메니아를 돕지 않기로 함, 370 발렌스가 파프를 세움, 387 분할
-- { type: vassal_of, subject: bosporan-kingdom, object: roman-empire, from: 284, to: 375 } # 기원전 1세기부터 로마의 종속 왕국(라스쿠포리스 6세의 화폐에 황제 초상)
+- { type: vassal_of, subject: bosporan-kingdom, object: roman-empire, from: -26, to: 375 } # 기원전 1세기부터 로마의 종속 왕국(아산드로스·폴레몬 1세·아스푸르고스, 라스쿠포리스 6세의 화폐에 황제 초상, 작업 AN2에서 기원전 27년부터로 넓힘)
 - { type: vassal_of, subject: arsacid-armenia, object: roman-empire, from: 287, to: 362 } # 티리다테스 3세(287 복위, 298 니시비스 조약)
 - { type: vassal_of, subject: arsacid-armenia, object: roman-empire, from: 370, to: 386 } # 파프·바라즈다트·아르사케스 3세(387 분할 뒤 서쪽은 로마 땅, 동쪽은 페르시아 종주)
 - { type: vassal_of, subject: iberia-kingdom, object: roman-empire, from: 298, to: 362 } # 미리안 3세(니시비스 조약)
-- { type: vassal_of, subject: lazica, object: roman-empire, from: 284, to: 394 } # 2세기 아리아노스가 적은 로마 종속 왕(라지인)
+- { type: vassal_of, subject: lazica, object: roman-empire, from: 117, to: 394 } # 아리아노스(131)가 적은 로마 종속 왕(라지인의 말라사스는 하드리아누스에게 왕위를 받음, 작업 AN2에서 117년부터로 넓힘)
 - { type: vassal_of, subject: lazica, object: byzantine-empire, from: 395, to: 455 } # 동로마의 종속 왕국(검토 반영), 456 구바제스 1세가 동로마에 맞섬(프리스쿠스), 그 뒤는 476~799 표의 522년부터
+
+# ── 작업 AN2 (2026-10-09): 기원전 27~기원후 283년 ──
+# 계승(AN-⑩): 274 아우렐리아누스가 갈리아 제국을 되찾음. 종속 왕국의 병합(속주화)은 로마 제국이 이어지는 땅 넘김이라 계승으로 적지 않음(AN1과 같음)
+- { type: successor_of, subject: roman-empire, object: gallic-empire, from: 274, to: null } # 샬롱 전투에서 테트리쿠스가 항복
+# 종속(AN-④, 운영자 승인 2026-10-09): 로마의 종속 왕국·동맹 연방(병합 전 해까지)
+- { type: vassal_of, subject: galatia-kingdom, object: roman-empire, from: -26, to: -25 } # 아민타스(기원전 36년 안토니우스, 기원전 31년 악티움 뒤 아우구스투스가 인정), 기원전 25년 죽음
+- { type: vassal_of, subject: cappadocia-kingdom, object: roman-empire, from: -26, to: 37 } # 아르켈라오스(기원전 36~기원후 17)와 킬리키아 트라케이아의 아르켈라오스 2세(17~37, 검토 반영)
+- { type: vassal_of, subject: polemonid-pontus, object: roman-empire, from: -26, to: 63 } # 폴레몬 1세·피토도리스·폴레몬 2세
+- { type: vassal_of, subject: paphlagonia-kingdom, object: roman-empire, from: -26, to: -6 } # 데이오타로스 필라델포스
+- { type: vassal_of, subject: commagene, object: roman-empire, from: -26, to: 16 } # 안티오코스 3세까지
+- { type: vassal_of, subject: commagene, object: roman-empire, from: 38, to: 71 } # 안티오코스 4세(칼리굴라가 복위, 72 병합)
+- { type: vassal_of, subject: lycian-league, object: roman-empire, from: -26, to: 42 } # 로마의 '자유 동맹국'(43 클라우디우스의 병합)
+- { type: vassal_of, subject: odrysian-kingdom, object: roman-empire, from: -26, to: 45 } # 로이메탈케스 1세~로이메탈케스 3세(타키투스 『연대기』 2.64)
+- { type: vassal_of, subject: noricum-kingdom, object: roman-empire, from: -26, to: -16 } # 로마의 친구(hospitium publicum), 기원전 16 편입
+- { type: vassal_of, subject: cottian-alps, object: roman-empire, from: -26, to: 63 } # 코티우스(기원전 13 속주장관)·코티우스 2세
+- { type: vassal_of, subject: british-client-kingdoms, object: roman-empire, from: 43, to: 77 } # 이케니·레그니·브리간테스(묶음, 각 왕국의 끝 해는 europe.yaml)
+- { type: vassal_of, subject: dacian-kingdom, object: roman-empire, from: 89, to: 105 } # 89 도미티아누스와의 강화(보조금), 102 트라야누스와의 강화
+- { type: vassal_of, subject: osroene, object: roman-empire, from: 165, to: 213 } # 165 루키우스 베루스의 원정 뒤 로마의 종속, 214 카라칼라의 병합
+- { type: vassal_of, subject: arsacid-armenia, object: roman-empire, from: -19, to: 51 } # 기원전 20 티베리우스가 세운 티그라네스 3세부터 미트리다테스(이베리아 왕가)까지 로마가 세운 왕들(기원전 1~기원후 1 무렵 파르티아가 세운 티그라네스 4세는 근사)
+- { type: vassal_of, subject: arsacid-armenia, object: roman-empire, from: 63, to: 113 } # 란데이아의 타협(티리다테스 1세, 66 네로의 대관)
+- { type: vassal_of, subject: arsacid-armenia, object: roman-empire, from: 117, to: 251 } # 하드리아누스가 돌려준 뒤(163~166 루키우스 베루스가 소하이무스를 세움), 252 샤푸르 1세
+- { type: vassal_of, subject: iberia-kingdom, object: roman-empire, from: -26, to: 251 } # 기원전 65 폼페이우스 뒤 로마의 동맹 왕국(75 베스파시아누스의 하르모지카 성벽, 141 파라스마네스 2세의 로마 방문)
