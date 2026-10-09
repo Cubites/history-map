@@ -712,3 +712,18 @@
 - { type: vassal_of, subject: venice, object: byzantine-empire, from: 697, to: 799 } # 800년 표의 종속(840 로타르 협약)과 이음
 # ── 작업 FIX4 (2026-10-08): 중세 국경 정리 ──
 - { type: vassal_of, subject: eastern-anatolian-beyliks, object: rum-sultanate, from: 1202, to: 1227 } # 살투크 왕조가 없어진 뒤(1202) 묶음에 남은 멩귀젝 왕조의 에르진잔(바흐람샤·다우드샤)은 룸의 봉신, 1228 카이쿠바드 1세의 병합
+
+# ── 작업 AN1 (2026-10-09): 284~475년 ──
+# 계승(AN-⑩): 395년 테오도시우스 1세가 죽어 로마 제국이 서로마·동로마로 나뉨, 296 콘스탄티우스의 브리타니아 회복, 376 훈족의 보스포로스, 469 뎅기지크가 죽은 뒤 초원의 유목민. 앞 나라가 그 뒤에도 이어지는 부분 넘김(411 히스파니아·418 아키타니아·454 게피드·461 수아송 등)은 계승으로 적지 않음(M6과 같음)
+- { type: successor_of, subject: western-roman-empire, object: roman-empire, from: 395, to: null } # 호노리우스
+- { type: successor_of, subject: byzantine-empire, object: roman-empire, from: 395, to: null } # 아르카디우스
+- { type: successor_of, subject: roman-empire, object: britannic-empire, from: 296, to: null } # 콘스탄티우스 클로루스가 알렉투스를 이김
+- { type: successor_of, subject: hunnic-empire, object: bosporan-kingdom, from: 376, to: null } # 370년대 훈족의 진출(보스포로스 왕국이 사료에서 사라짐, 정할 점 AN1-⑫)
+- { type: successor_of, subject: hunnic-bulgar-tribes, object: hunnic-empire, from: 469, to: null } # 뎅기지크가 죽음(『부활절 연대기』)
+# 종속(AN-④, 운영자 승인 2026-10-09): 로마의 종속 왕국. 298 니시비스 조약(이베리아 왕은 로마가 세움), 363 요비아누스가 아르메니아를 돕지 않기로 함, 370 발렌스가 파프를 세움, 387 분할
+- { type: vassal_of, subject: bosporan-kingdom, object: roman-empire, from: 284, to: 375 } # 기원전 1세기부터 로마의 종속 왕국(라스쿠포리스 6세의 화폐에 황제 초상)
+- { type: vassal_of, subject: arsacid-armenia, object: roman-empire, from: 287, to: 362 } # 티리다테스 3세(287 복위, 298 니시비스 조약)
+- { type: vassal_of, subject: arsacid-armenia, object: roman-empire, from: 370, to: 386 } # 파프·바라즈다트·아르사케스 3세(387 분할 뒤 서쪽은 로마 땅, 동쪽은 페르시아 종주)
+- { type: vassal_of, subject: iberia-kingdom, object: roman-empire, from: 298, to: 362 } # 미리안 3세(니시비스 조약)
+- { type: vassal_of, subject: lazica, object: roman-empire, from: 284, to: 394 } # 2세기 아리아노스가 적은 로마 종속 왕(라지인)
+- { type: vassal_of, subject: lazica, object: byzantine-empire, from: 395, to: 455 } # 동로마의 종속 왕국(검토 반영), 456 구바제스 1세가 동로마에 맞섬(프리스쿠스), 그 뒤는 476~799 표의 522년부터
