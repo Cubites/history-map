@@ -753,7 +753,7 @@
 # ── 작업 AN3 (2026-10-09): 기원전 264~28년 ──
 # 계승(AN-⑩): 기원전 27년 원수정(renames), 마케도니아 왕국 → 네 공화국(168), 유증으로 넘어간 페르가몬(133)·비티니아(74). 종속 왕국의 병합·정복은 계승으로 적지 않음(AN1·AN2와 같음)
 - { type: successor_of, subject: roman-empire, object: roman-republic, from: -26, to: null } # 기원전 27년 옥타비아누스가 아우구스투스가 됨(renames, 같은 색)
-- { type: successor_of, subject: macedonian-republics, object: macedonia-kingdom, from: -167, to: null } # 168 피드나, 167 아이밀리우스 파울루스의 네 공화국
+- { type: successor_of, subject: macedonian-republics, object: macedonia-kingdom, from: -166, to: null } # 168 피드나, 167 아이밀리우스 파울루스의 네 공화국(작업 FIX5b에서 −166)
 - { type: successor_of, subject: roman-republic, object: macedonian-republics, from: -147, to: null } # 148 메텔루스가 안드리스코스를 이기고 마케도니아 속주
 - { type: successor_of, subject: roman-republic, object: pergamon-kingdom, from: -132, to: null } # 133 아탈로스 3세의 유증(129 아시아 속주)
 - { type: successor_of, subject: roman-republic, object: bithynia-kingdom, from: -73, to: null } # 74 니코메데스 4세의 유증
@@ -762,7 +762,7 @@
 # 종속(AN-④): 로마 공화정의 종속 왕국·공화국(포함 끝 해 기준, 지도의 해와 같음). 기원전 27년부터는 AN2 줄(로마 제국)
 - { type: vassal_of, subject: syracuse, object: roman-republic, from: -262, to: -214 } # 263 히에론 2세의 조약(215 그가 죽은 뒤 히에로니모스가 카르타고 편)
 - { type: vassal_of, subject: illyrian-kingdom, object: roman-republic, from: -227, to: -171 } # 228 테우타의 조약(공물, 리소스 남쪽으로 배를 보내지 않음), 172 겐티우스가 페르세우스 편
-- { type: vassal_of, subject: macedonian-republics, object: roman-republic, from: -167, to: -148 } # 공납 공화국(리비우스 45.29)
+- { type: vassal_of, subject: macedonian-republics, object: roman-republic, from: -166, to: -148 } # 공납 공화국(리비우스 45.29, 작업 FIX5b에서 −166)
 - { type: vassal_of, subject: noricum-kingdom, object: roman-republic, from: -169, to: -27 } # 170 킨키빌리스 왕의 사절(리비우스 43.5), 로마의 친구(hospitium publicum)
 - { type: vassal_of, subject: lycian-league, object: roman-republic, from: -166, to: -27 } # 167 로도스에서 풀려난 뒤 로마의 자유 동맹국(46 조약)
 - { type: vassal_of, subject: cappadocia-kingdom, object: roman-republic, from: -94, to: -27 } # 95 원로원이 세운 아리오바르자네스 1세, 63 폼페이우스가 넓힘
