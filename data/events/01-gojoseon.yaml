@@ -88,7 +88,7 @@
     ko: 연 진개의 침입과 중심지 이동
   summary:
     ko: 연의 장수 진개가 고조선을 공격해 서쪽 땅 2천여 리를 빼앗고 만번한을 경계로 삼았다. 고조선은 요동을 잃고 중심지를 대동강 유역(왕검성)으로 옮긴 것으로 본다.
-  subjects: [gojoseon, yan-state]
+  subjects: [gojoseon, yan-state, manbeonhan-disputed]
   links:
     - { from: yan-state, to: gojoseon, note: "진개의 침입, 서쪽 2천여 리 탈취" }
   tags: [war]
