@@ -57,7 +57,7 @@
     ko: 유리왕의 양맥 정벌과 고구려현 습격
   summary:
     ko: "고구려 유리왕이 오이·마리에게 군사 2만을 주어 서쪽의 양맥을 쳐 없애고, 나아가 현도군에 속한 한의 고구려현을 습격했다. 앞서 12년에는 신의 왕망이 흉노를 치려고 고구려 군사를 동원하다 반발을 사자 고구려의 우두머리를 꾀어 죽이고 고구려를 '하구려'로 낮추어 불렀다. 현도군은 이 뒤에도 107년 무렵까지 신빈 일대에 남았다."
-  subjects: [goguryeo, hyeondo, xin]
+  subjects: [goguryeo, hyeondo, xin, xiongnu]
   links:
     - { from: goguryeo, to: hyeondo, note: "고구려현 습격" }
     - { from: xin, to: goguryeo, note: "하구려로 낮춤" }
