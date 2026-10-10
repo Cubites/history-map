@@ -155,7 +155,7 @@
     ko: 한 무제의 침입과 고조선 멸망
   summary:
     ko: "한의 사신 섭하가 돌아가는 길에 자신을 전송하던 고조선의 비왕 장을 죽이고 요동 동부도위가 되자, 고조선이 섭하를 공격해 죽였고 한 무제는 이를 구실로 수륙 양면으로 쳐들어왔다. 고조선은 1년 가까이 버텼으나 지배층이 분열해 우거왕이 살해되고, 대신 성기가 끝까지 싸웠지만 기원전 108년 왕검성이 함락되었다. 한 무제는 고조선과 흉노의 연결을 끊으려 했다."
-  subjects: [gojoseon, western-han]
+  subjects: [gojoseon, western-han, xiongnu]
   links:
     - { from: western-han, to: gojoseon, note: "수륙 양면 침입, 왕검성 함락" }
     - { from: gojoseon, to: western-han, note: "1년 가까운 항전" }
@@ -182,7 +182,7 @@
     ko: 진번·임둔군 폐지와 현도군 이동
   summary:
     ko: "토착 세력의 저항으로 한은 진번군과 임둔군을 폐지해 낙랑군과 현도군에 나누어 합쳤고(기원전 82), 현도군을 서북쪽으로 옮기면서(기원전 75) 옛 임둔 지역인 영동 7현은 낙랑군 동부도위가 맡게 되었다. 낙랑군은 313년 고구려 미천왕에게 쫓겨날 때까지 남았다."
-  subjects: [nangnang, western-han]
+  subjects: [nangnang, western-han, hyeondo]
   links:
     - { from: western-han, to: nangnang, note: "군현 통폐합" }
   tags: [politics]
@@ -222,7 +222,7 @@
     ko: 삼한의 성립과 제정 분리
   summary:
     ko: "고조선 멸망 뒤 유이민이 남쪽으로 내려오면서 진국이 마한·진한·변한의 삼한으로 발전했다. 마한의 목지국 지배자가 삼한을 이끌었고, 신지·견지(큰 세력)와 읍차·부례(작은 세력)라는 군장이 있었다. 제사장인 천군이 다스리는 신성 지역 소도에는 군장의 권력이 미치지 못해 제정이 분리되어 있었다. 5월 수릿날과 10월 계절제를 지냈고, 벼농사를 위해 저수지를 만들었다(김제 벽골제 등). 변한은 철이 많이 나서 낙랑과 왜에 수출하고 화폐처럼 썼다. 마한은 54개, 진한과 변한은 각각 12개의 소국으로 이루어졌는데, 마한의 백제국·진한의 사로국·변한의 구야국이 뒤에 각각 백제·신라·금관가야로 성장했다. 소도에는 큰 나무를 세우고 방울과 북을 매달아 귀신을 섬겼으며, 죄지은 사람이 도망쳐 들어가도 잡아가지 못했다. 진한에는 아이의 머리를 돌로 눌러 납작하게 만드는 편두 풍습이 있었다."
-  subjects: [mahan, jinhan, byeonhan, jin-guk]
+  subjects: [mahan, jinhan, byeonhan, jin-guk, silla, baekje]
   links:
     - { from: jin-guk, to: mahan, note: "진국에서 삼한으로" }
     - { from: byeonhan, to: nangnang, note: "철 수출" }
