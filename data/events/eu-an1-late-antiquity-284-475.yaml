@@ -1,0 +1,422 @@
+# 유럽 고대 사건 1차 묶음: 디오클레티아누스의 사두 정치에서 서로마의 마지막 황제들까지 (284 ~ 475, 작업 EVA1)
+# 범위: 디오클레티아누스의 즉위와 사두 정치·속주 개편·가격 칙령, 카라우시우스와 알렉투스의 브리타니아 제국, 사산 페르시아와의 전쟁(니시비스 조약 298·요비아누스의 조약 363),
+#   그리스도교 대박해와 콘스탄티누스의 등장(요크 306·밀비우스 다리 312·밀라노 협약 313·니케아 공의회 325·콘스탄티노폴리스 330), 콘스탄티우스 2세·율리아누스, 프랑크인과 북갈리아,
+#   발렌티니아누스 1세와 발렌스, 훈족의 서진과 고트족의 도나우 도하(376)·아드리아노폴리스(378)·382년 정착, 테오도시우스 1세와 395년 동서 분리, 아르메니아 분할(387)과 아르사케스 왕조의 끝(428),
+#   동로마의 아르카디우스·테오도시우스 2세, 스틸리코·알라리크와 로마 약탈(410)·서고트의 아키텐 정착(418), 라인 도하(406)와 히스파니아 분할(411), 로마의 브리타니아 포기(410), 수에비 왕국, 부르군트 왕국,
+#   훈 제국의 전성기와 카탈라우눔(451)·네다오(454), 반달의 아프리카(429~439)와 로마 약탈(455), 성 패트릭, 에페소스·칼케돈 공의회, 앵글로색슨의 도래, 서로마의 마지막 황제들과 서고트 에우리크의 확장, 레오 1세의 반달 원정(468).
+# 깊이: 고등학교 세계사 교과서 본문 수준에, 284~475년 지도에서 생기거나 끝난 유럽 항목(브리타니아 제국 286~296, 픽트 왕국 297, 산마리노 301, 훈 제국 370, 보스포로스 왕국 376, 서로마·동로마 제국 395, 로마 제국 395,
+#   수에비·반달·알란(히스파니아) 409, 웨일스·브리튼인 왕국들 410, 부르군트 왕국 411, 서고트 왕국 418, 아르메니아 왕국 428, 앵글로색슨·스트래스클라이드·달리어타 450, 게피드·훈·불가르계 유목민 454,
+#   수아송 왕국·프랑크 왕국 457, 캅카스 알바니아 461 등)을 ±2년 기준으로 subjects에 이음(docs/REGION_GUIDE.md §5). 지도의 큰 변화(1만 km² 넘는 유럽 버전 해)도 사건으로 이음.
+# 한국사와 닿는 점: 훈족의 서진 사건에 같은 때의 전진(370 전연 멸망)과 고구려 소수림왕(372 승려 순도)을, 스틸리코와 알라리크 사건에 같은 때의 고구려 광개토왕(391~413)을 견주었다. 02번 파일에 있는 사건은 다시 만들지 않았다.
+# 사건 연도 규칙: subjects·links의 나라는 사건 기간(year~endYear)과 존재 기간이 겹치면 된다(DATA_GUIDE.md §3).
+# 날짜: 1582년 10월 그레고리력 개정 전의 날짜는 당시 쓰던 율리우스력이라 양력(그레고리력)과 며칠 차이가 나므로 달까지만 적거나 통설의 날짜를 적었다. 연도는 기원후라 천문 연도와 같다.
+# places의 year: 기간이 있는 사건은 장소마다 싸운 해를 적어 그 해에만 전투 표시가 보이게 했다. 전투·포위가 없는 사건에는 places를 달지 않았다.
+# 서술은 새로 작성. 출처는 고대 사료와 표준 개설서의 원서(한국어 번역본은 저장소에 이미 있는 오스트로고르스키만). 병력·사상자·인구는 사료가 과장하는 일이 많아 범위와 '추산'으로 적었다. 운영자 검수 필요.
+
+- id: diocletian-tetrarchy-284
+  year: 284
+  endYear: 305
+  title:
+    ko: "디오클레티아누스의 즉위(284)와 사두 정치·속주 개편·가격 칙령(301)"
+  summary:
+    ko: "카루스의 아들 누메리아누스가 죽은 뒤 군대가 달마티아 출신 근위대 장교 디오클레티아누스를 284년 11월 20일 황제로 추대했고, 이듬해 마르구스 전투에서 누메리아누스의 형 카리누스를 꺾어 제국을 홀로 차지했다(카리누스는 285년 부하에게 살해되었다). 286년 동료 장군 막시미아누스를 공동 정제로 세워 서쪽을 맡기고, 293년 두 정제 밑에 부제 갈레리우스(동)와 콘스탄티우스 1세 클로루스(서)를 두는 '사두 정치'를 열었다. 황제들은 니코메디아·시르미움·밀라노·트리어 같은 전선 가까운 도시에 머물렀다. 속주를 100곳 안팎으로 잘게 나눠 관구로 묶고 군정과 민정을 갈랐으며, 군대를 늘리고 세금을 인구와 토지에 매기는 제도로 고쳤다. 301년 물가 상승을 누르려 상품과 임금의 최고가격을 정한 '가격 칙령'을 내렸으나 시장에서 지켜지지 않아 흐지부지되었다. 287년 무렵(298년이라는 설도 있다) 로마의 도움으로 티리다테스 3세가 아르메니아 왕위에 돌아왔다(그전에는 사산의 왕족 나르세가 아르메니아를 맡았다). 303년부터 그리스도교 박해를 시작했고(뒤의 사건), 305년 5월 1일 디오클레티아누스는 막시미아누스와 함께 퇴위해 스플리트 가까운 궁전에서 지냈다. 지도는 사두 정치의 분담을 그리지 않고 로마 제국을 한 나라로, 아르메니아는 287년부터 그린다."
+  subjects: [roman-empire, arsacid-armenia]
+  links:
+    - { from: roman-empire, to: arsacid-armenia, note: "티리다테스 3세의 복위(287 무렵)" }
+  tags: [politics]
+  sources: ["Stephen Williams, Diocletian and the Roman Recovery (1985)", "Timothy D. Barnes, The New Empire of Diocletian and Constantine (1982)", "Averil Cameron, The Later Roman Empire: AD 284–430 (1993)", "Alan K. Bowman·Peter Garnsey·Averil Cameron 엮음, The Cambridge Ancient History XII: The Crisis of Empire, A.D. 193–337 (2005)", "Lactantius, De mortibus persecutorum (J. L. Creed 영역, 1984)"]
+
+- id: carausius-britannic-empire-286
+  year: 286
+  endYear: 297
+  title:
+    ko: "카라우시우스와 알렉투스의 브리타니아 제국(286~296)"
+  summary:
+    ko: "메나피이 부족(지금의 벨기에 북부) 출신 함대 지휘관 카라우시우스는 갈리아 북해안의 해적 토벌을 맡았다가 약탈품을 가로챘다는 혐의로 막시미아누스가 처형을 명하자(에우트로피우스) 286년 브리타니아로 건너가 스스로 황제를 칭했다. 브리타니아와 갈리아 북부 해안(불로뉴)을 쥐고 함대와 브리타니아 군단으로 버티며 자기 주화를 찍었는데, 주화에 막시미아누스·디오클레티아누스와 함께 '형제'로 새겨 인정받기를 바랐다. 289년 막시미아누스의 원정이 실패한 뒤 로마는 한동안 그의 자리를 사실상 받아들였다. 그러나 293년 부제가 된 콘스탄티우스 1세 클로루스가 불로뉴를 포위해 함락시켰고, 같은 해 재무관 알렉투스가 카라우시우스를 죽이고 뒤를 이었다. 296년 콘스탄티우스와 친위대장관 아스클레피오도투스가 두 갈래로 바다를 건너 알렉투스를 쓰러뜨렸고 콘스탄티우스는 런던에서 환영받았다고 297년 『라틴 찬가집』의 찬사가 전한다. 이 찬사에 처음으로 칼레도니아의 '픽트인'이라는 이름이 나온다. 지도는 브리타니아 제국을 286~295년 브리타니아(하드리아누스 방벽까지)로 그리고 불로뉴는 그리지 않으며, 296년 브리타니아를 로마에 돌려주고 297년 칼레도니아를 켈트 부족에서 픽트인으로 바꿔 그린다."
+  subjects: [roman-empire, britannic-empire, picts, celtic-tribes]
+  links:
+    - { from: roman-empire, to: britannic-empire, note: "콘스탄티우스의 불로뉴 함락(293)과 브리타니아 회복(296)" }
+  tags: [politics, war]
+  sources: ["John Casey, Carausius and Allectus: The British Usurpers (1994)", "C. E. V. Nixon·Barbara Saylor Rodgers 옮김, In Praise of Later Roman Emperors: The Panegyrici Latini (1994)", "Eutropius, Breviarium (H. W. Bird 영역, 1993)", "Aurelius Victor, De Caesaribus (H. W. Bird 영역, 1994)", "Stephen Williams, Diocletian and the Roman Recovery (1985)"]
+  places: [{ name: 불로뉴(게소리아쿰), at: [1.6, 50.73], year: 293 }]
+
+- id: sasanian-wars-296
+  year: 296
+  endYear: 363
+  title:
+    ko: "로마와 사산 페르시아: 갈레리우스의 승리와 니시비스 조약(298), 율리아누스의 원정과 요비아누스의 조약(363)"
+  summary:
+    ko: "사산 왕 나르세가 아르메니아에서 티리다테스 3세를 쫓아내자 로마는 296년(297년설도 있다) 반격에 나섰으나 부제 갈레리우스가 칼리니쿰 부근에서 졌다. 297~298년 갈레리우스는 아르메니아의 사탈라 가까이에서 나르세의 진영을 쳐 왕의 아내와 딸들을 사로잡았고, 298년(299년설도 있다) 니시비스에서 맺은 조약(6세기 페트로스 파트리키오스의 기록)으로 티그리스강 건너 다섯 지방(인길레네·소페네·아르자네네·코르두에네·자브디케네)을 얻었으며 아르메니아 왕을 지키고 이베리아(카르틀리)의 왕을 로마가 세우기로 했다. 이 평화는 40년쯤 이어졌다. 샤푸르 2세(재위 309~379)는 337년 콘스탄티누스 1세가 죽은 직후 전쟁을 되살려 니시비스를 거듭 포위했고(338·346·350), 359년 아미다를 함락시켰다. 363년 율리아누스가 크테시폰 앞까지 진격했다가 퇴각 중 6월 26일 전사하자 군대가 추대한 요비아누스는 30년 평화를 맺으며 니시비스와 싱가라(카스트라 마우로룸 포함), 티그리스강 건너 다섯 지방(298년의 목록과 달리 아르자네네·모크소에네·자브디케네·레히메네·코르두에네, 암미아누스)을 사산에 넘기고 아르메니아를 돕지 않기로 했다(암미아누스는 이를 치욕으로 적는다). 지도는 298년부터 소페네 등 남쪽 사트라피아를 로마로 그리고, 363년 아르자네네·코르두에네 등을 사산 땅이라 비운다. 니시비스는 근사로 로마·동로마 땅에 둔다."
+  subjects: [roman-empire, arsacid-armenia, iberia-kingdom]
+  links:
+    - { from: roman-empire, to: arsacid-armenia, note: "니시비스 조약(298)과 아르메니아 방치(363)" }
+    - { from: roman-empire, to: iberia-kingdom, note: "이베리아 왕의 임명권(298)" }
+  tags: [war, diplomacy]
+  sources: ["Ammianus Marcellinus, Res Gestae(『역사』) (John C. Rolfe 영역, Loeb, 1935~1940)", "Ehsan Yarshater 엮음, The Cambridge History of Iran 3(1): The Seleucid, Parthian and Sasanian Periods (1983)", "Touraj Daryaee, Sasanian Persia: The Rise and Fall of an Empire (2009)", "Timothy D. Barnes, The New Empire of Diocletian and Constantine (1982)", "G. W. Bowersock, Julian the Apostate (1978)"]
+  places: [{ name: 칼리니쿰(라카), at: [39.01, 35.95], year: 296 }, { name: 사탈라, at: [39.59, 40.03], year: 298 }, { name: 아미다(디야르바크르), at: [40.23, 37.91], year: 359 }, { name: 크테시폰, at: [44.58, 33.09], year: 363 }]
+
+- id: great-persecution-303
+  year: 303
+  endYear: 311
+  title:
+    ko: "그리스도교 대박해(303~311)와 갈레리우스의 관용 칙령"
+  summary:
+    ko: "디오클레티아누스는 로마 제국이 옛 신들의 보호로 유지된다는 생각에서, 부제 갈레리우스의 부추김(락탄티우스의 설명)도 받아 303년 2월 23일 무렵 니코메디아의 성당을 헐게 하고 이튿날 칙령으로 성당 파괴와 성서 소각을 명했으며 신자의 공직과 법적 권리를 빼앗았다. 이어 성직자를 가두라(303)는 칙령과 모든 사람에게 신들에게 제사를 지내라(304)는 칙령이 나왔다. 서쪽에서는 콘스탄티우스 1세가 성당만 헐고 신자는 해치지 않아 브리타니아·갈리아는 피해가 적었고, 막시미아누스의 이탈리아·히스파니아·아프리카와 갈레리우스·막시미누스 다이아의 동쪽에서는 심했다. 희생자는 수천 명으로 현대 학자는 3,000~3,500명쯤으로 어림하나(프렌드 등) 순교자 기록은 신자 쪽 사료가 부풀렸다는 비판이 있다. 박해 때 성서를 넘긴 성직자(트라디토레스)를 둘러싼 갈등은 북아프리카 도나투스파의 분열로 이어졌다. 한편 아르메니아에서는 전통 연대로 301년 무렵 티리다테스 3세가 그레고리오스에게 세례를 받고 그리스도교를 국교로 삼았다고 전한다. 305년 두 정제가 퇴위한 뒤에도 동쪽에서 이어지다가 311년 4월 30일 병든 갈레리우스가 신자의 신앙과 집회를 허용하는 칙령(세르디카 칙령이라고도 한다)을 냈다. 달마티아 라브섬의 석공 마리누스가 박해를 피해 티타노산에 정착해 산마리노를 세웠다는 전승이 있다(전승의 연대 301년은 대박해가 시작된 303년보다 앞서 어긋난다)."
+  subjects: [roman-empire, arsacid-armenia, san-marino]
+  tags: [society, religion]
+  sources: ["Eusebius, The History of the Church from Christ to Constantine (G. A. Williamson 영역, 1965)", "Lactantius, De mortibus persecutorum (J. L. Creed 영역, 1984)", "W. H. C. Frend, Martyrdom and Persecution in the Early Church (1965)", "G. E. M. de Ste. Croix, Christian Persecution, Martyrdom, and Orthodoxy (Michael Whitby·Joseph Streeter 엮음, 2006)", "Timothy D. Barnes, Constantine and Eusebius (1981)"]
+
+- id: constantine-rise-306
+  year: 306
+  endYear: 324
+  title:
+    ko: "콘스탄티누스의 등장: 요크의 추대(306)·밀비우스 다리(312)·리키니우스와의 내전(324)"
+  summary:
+    ko: "콘스탄티우스 1세 클로루스가 306년 7월 25일 요크(에보라쿰)에서 죽자 아버지의 군대가 아들 콘스탄티누스를 정제로 추대했고, 갈레리우스는 그를 부제로만 인정했다. 사두 정치가 무너져 막시미아누스의 아들 막센티우스가 306년 10월 로마에서 황제를 칭했고, 은퇴했던 막시미아누스도 한때 다시 정제를 칭했다가 310년 죽었다. 서쪽 정제가 된 세베루스 2세(306~307)는 막센티우스를 치다 져서 죽었고, 308년 카르눈툼 회의에서 리키니우스가 정제가 되었다. 콘스탄티누스는 312년 이탈리아로 쳐들어와 토리노·베로나를 얻은 뒤 10월 28일 로마 북쪽 밀비우스 다리 부근에서 막센티우스를 물리쳤다(막센티우스는 티베르강에서 익사했다). 전투 전에 하늘의 표지를 보고 병사의 방패에 그리스도의 표지를 새겼다고 하나, 락탄티우스는 꿈으로, 에우세비오스는 콘스탄티누스에게 들은 환상으로 달리 적는다. 313년 동쪽의 리키니우스에게 이복누이 콘스탄티아를 시집보내 손잡았고(그해 리키니우스는 동쪽의 막시미누스 다이아(305 부제, 310 정제)를 꺾어 죽게 했다), 316~317년 키발라이 등지에서 싸운 뒤 화해했다. 324년 7월 3일 아드리아노폴리스, 9월 18일 크리소폴리스에서 리키니우스를 꺾어 제국 전체의 단독 황제가 되었고 리키니우스는 324년에 세운 공동 정제 마르티니아누스와 함께 이듬해 처형되었다. 사두 정치의 분담은 지도에 그리지 않는다."
+  subjects: [roman-empire]
+  tags: [politics, war]
+  sources: ["Timothy D. Barnes, Constantine and Eusebius (1981)", "Timothy D. Barnes, Constantine: Dynasty, Religion and Power in the Later Roman Empire (2011)", "Noel Lenski 엮음, The Cambridge Companion to the Age of Constantine (2006)", "Lactantius, De mortibus persecutorum (J. L. Creed 영역, 1984)", "Eusebius, Life of Constantine (Averil Cameron·Stuart G. Hall 영역, 1999)"]
+  places: [{ name: 밀비우스 다리, at: [12.47, 41.93], year: 312 }, { name: 키발라이(빈코브치), at: [18.8, 45.29], year: 316 }, { name: 아드리아노폴리스, at: [26.55, 41.68], year: 324 }, { name: 크리소폴리스(위스퀴다르), at: [29.02, 41.03], year: 324 }]
+
+- id: christian-recognition-313
+  year: 313
+  endYear: 325
+  title:
+    ko: "그리스도교의 공인: 밀라노 협약(313)과 니케아 공의회(325)"
+  summary:
+    ko: "313년 로마 제국의 두 정제 콘스탄티누스와 리키니우스가 밀라노에서 만나 누구나 자기가 고른 신앙을 따를 자유와 몰수한 교회 재산의 반환에 합의했다(흔히 '밀라노 칙령'이라 하나 락탄티우스와 에우세비오스가 전하는 리키니우스의 동방 포고가 남아 있을 뿐이고, 하나의 칙령이 아니었다고 보는 학자가 많다). 콘스탄티누스는 교회에 세금 면제와 재판권 같은 혜택을 주고 321년 일요일을 쉬는 날로 정했지만 이교 제사를 곧바로 금하지는 않았다. 교회 안에서는 북아프리카의 도나투스파 분열과, 알렉산드리아 사제 아리우스가 성자는 성부와 같은 본질이 아니라고 가르친다는 주교 알렉산드로스의 단죄가 불거졌고 황제가 개입했다. 325년 5월 니케아에 모인 공의회(참석 주교는 300명 안팎이라 하나 사료마다 다르다)는 성자가 성부와 '같은 본질(호모우시오스)'이라는 니케아 신경을 채택하고 아리우스를 추방했으며 부활절 날짜를 정하는 원칙을 세웠다. 알렉산드리아의 부제로 따라갔다가 328년 주교가 된 아타나시오스는 평생 이 신경을 지켰다. 결정이 곧 받아들여진 것은 아니어서 아리우스를 둘러싼 다툼은 380년대까지 이어졌다(뒤의 사건). 콘스탄티누스는 337년 죽기 직전 니코메디아의 에우세비오스에게 세례를 받았다."
+  subjects: [roman-empire]
+  tags: [religion, politics]
+  sources: ["Eusebius, The History of the Church from Christ to Constantine (G. A. Williamson 영역, 1965)", "Lactantius, De mortibus persecutorum (J. L. Creed 영역, 1984)", "Henry Chadwick, The Church in Ancient Society: From Galilee to Gregory the Great (2001)", "Timothy D. Barnes, Constantine and Eusebius (1981)", "Noel Lenski 엮음, The Cambridge Companion to the Age of Constantine (2006)"]
+
+- id: constantinople-324
+  year: 324
+  endYear: 337
+  title:
+    ko: "콘스탄티노폴리스의 건설(324~330)과 콘스탄티누스의 죽음(337)"
+  summary:
+    ko: "단독 황제가 된 콘스탄티누스는 324년 옛 그리스 도시 비잔티온을 새 수도로 삼기로 하고 성벽을 넓혀, 330년 5월 11일 '새 로마'를 봉헌했다(황제의 이름을 딴 콘스탄티노폴리스로 불렸다). 이곳에는 원로원과 곡물 배급, 경주장·궁전·성당을 두어 제2의 로마로 꾸몄다. 309~310년에 금화 솔리두스를 내어 통화를 안정시켰고, 군대를 황제의 이동군(코미타텐세스)과 변경군(리미타네이)으로 나누고 문관과 무관을 갈라 디오클레티아누스의 틀을 굳혔다. 332년 도나우강 북쪽의 게르만계 고트족을 눌러 조약을 맺었고, 334년에는 사르마티아·알란 부족 가운데 사르마티아인의 내분 뒤 많은 수를 제국 안에 정착시켰다(30만 명이라 전하나 믿기 어렵다). 337년 5월 22일 페르시아 원정을 준비하다 니코메디아 가까이에서 죽었고, 몇 달 뒤 군대가 이복형제와 조카 등 친족 여럿을 죽인 끝에 세 아들 콘스탄티누스 2세·콘스탄티우스 2세·콘스탄스가 정제가 되어 제국을 나누었다(뒤의 사건). 이후 콘스탄티노폴리스는 395년 동로마 제국의 수도가 되어 1453년 오스만 제국에 정복될 때까지 이어진다."
+  subjects: [roman-empire, germanic-tribes, sarmatian-alan-tribes]
+  tags: [politics, society]
+  sources: ["게오르크 오스트로고르스키, 『비잔티움 제국사』(한정숙·김경연 옮김, 까치글방)", "Timothy D. Barnes, Constantine: Dynasty, Religion and Power in the Later Roman Empire (2011)", "Eusebius, Life of Constantine (Averil Cameron·Stuart G. Hall 영역, 1999)", "Zosimus, New History(『새 역사』) (Ronald T. Ridley 영역, 1982)", "Averil Cameron, The Later Roman Empire: AD 284–430 (1993)"]
+
+- id: constantius-julian-337
+  year: 337
+  endYear: 363
+  title:
+    ko: "콘스탄티누스의 아들들과 율리아누스(337~363)"
+  summary:
+    ko: "337년 로마 제국의 정제가 된 세 아들 가운데 콘스탄티누스 2세는 340년 동생 콘스탄스와 싸우다 죽었고, 콘스탄스는 350년 장군 마그넨티우스에게 살해되었다(같은 해 판노니아에서 베트라니오가, 로마에서 네포티아누스가 황제를 칭했으나 베트라니오는 물러났고 네포티아누스는 죽었다). 콘스탄티우스 2세는 351년 9월 28일 무르사에서 마그넨티우스를 꺾어(양쪽 전사자가 5만 4천 명이라는 조시모스의 수는 과장일 수 있다) 353년 마그넨티우스가 자결하자 홀로 제국을 차지했다. 콘스탄티우스는 354년 부제 갈루스를 처형한 뒤 355년 사촌 율리아누스를 부제로 삼아 갈리아로 보냈다. 율리아누스는 357년 스트라스부르(아르겐토라툼) 부근에서 알레만인(게르만 부족) 왕 크노도마리우스를 사로잡았고, 358년 살리 프랑크를 톡산드리아에 받아들였다(뒤의 사건). 360년 파리에서 군대가 율리아누스를 정제로 추대하자 콘스탄티우스가 맞서려다 361년 11월 병으로 죽었다. 단독 황제 율리아누스는 그리스도교로 자랐으나 옛 신들의 신전을 되살리고, 362년 그리스도교인 교사가 고전을 가르치지 못하게 하는 칙령을 내려 반발을 샀다(그리스도교 쪽은 그를 '배교자'라 불렀고 이 별칭이 통용된다). 363년 3월 안티오키아에서 사산 원정을 떠났다가 6월 26일 퇴각 중 전사했고 장군 요비아누스가 뒤를 이어 이듬해 죽었다(앞의 사건). 지도는 사두 정치 이후의 분담을 그리지 않는다."
+  subjects: [roman-empire, germanic-tribes]
+  tags: [politics, war, religion]
+  sources: ["Ammianus Marcellinus, Res Gestae(『역사』) (John C. Rolfe 영역, Loeb, 1935~1940)", "Zosimus, New History(『새 역사』) (Ronald T. Ridley 영역, 1982)", "G. W. Bowersock, Julian the Apostate (1978)", "Averil Cameron·Peter Garnsey 엮음, The Cambridge Ancient History XIII: The Late Empire, A.D. 337–425 (1998)", "Averil Cameron, The Later Roman Empire: AD 284–430 (1993)"]
+  places: [{ name: 무르사(오시예크), at: [18.69, 45.55], year: 351 }, { name: 스트라스부르(아르겐토라툼), at: [7.75, 48.58], year: 357 }]
+
+- id: franks-north-gaul-358
+  year: 358
+  endYear: 475
+  title:
+    ko: "프랑크인과 북갈리아: 톡산드리아(358)·킬데리크 1세(457)·수아송 왕국(461)"
+  summary:
+    ko: "358년 율리아누스는 라인강 하구 가까이 톡산드리아(지금의 네덜란드 남부와 벨기에 북부)에 있던 게르만 부족 살리 프랑크를 로마의 동맹자로 받아들여 그곳에 살게 했다. 프랑크 사람은 로마군에서 높은 자리에 올랐는데, 4세기 후반의 아르보가스트는 군사령관(388~394)에 이르렀다. 이들 게르만 부족 출신 장교가 로마 정치의 한 축이 되었다. 406년 라인강이 뚫릴 때 프랑크는 로마 편에서 반달과 싸웠다고 투르의 그레고리우스가 인용한 사료가 전한다(반달 왕 곤데기셀이 이때 전사). 5세기 중엽 살리 프랑크 왕 클로디오가 캉브레 쪽을 차지했으나 448년 무렵 비쿠스 헬레나에서 아이티우스가 이끈 로마군(기병은 훗날 황제 마요리아누스가 지휘)에게 패했다고 시도니우스는 읊는다. 457년 무렵 투르네를 근거지로 킬데리크 1세(전승의 메로베크의 아들, 클로비스의 아버지)가 살리 프랑크를 이끌었고, 450년대 말~460년대 중반(학설에 따라 457·459·463~464년) 라인강 중류의 리푸아리 프랑크가 쾰른과 트리어를 차지했다(두 도시가 같은 해에 넘어갔는지는 사료가 약하다). 한편 북갈리아의 로마 군사령관 아이기디우스는 461년 마요리아누스가 제거된 뒤 서로마 정부와 갈라서 수아송을 근거지로 삼았고, 464~465년 죽은 뒤 아들 시아그리우스가 이었다. 킬데리크는 한때 아이기디우스와 손잡고 463년 무렵 오를레앙에서 서고트와 싸웠다. 이 수아송의 로마 영역(수아송 왕국)은 클로비스에게 넘어간다(뒤의 사건). 지도는 405년까지 톡산드리아를 로마 땅으로, 457년 투르네·캉브레를 프랑크로, 459년 쾰른을 프랑크로(근사), 461~475년 북갈리아를 수아송 왕국으로 그린다."
+  subjects: [roman-empire, western-roman-empire, frankish-kingdom, domain-of-soissons, visigothic-kingdom, germanic-tribes]
+  links:
+    - { from: roman-empire, to: germanic-tribes, note: "살리 프랑크의 톡산드리아 정착(358)" }
+    - { from: western-roman-empire, to: domain-of-soissons, note: "아이기디우스의 갈라섬(461)" }
+  tags: [politics, society]
+  sources: ["Ammianus Marcellinus, Res Gestae(『역사』) (John C. Rolfe 영역, Loeb, 1935~1940)", "Gregory of Tours, The History of the Franks (Lewis Thorpe 영역, 1974)", "Sidonius Apollinaris, Poems and Letters (W. B. Anderson 영역, Loeb, 1936~1965)", "Edward James, The Franks (1988)", "Ian Wood, The Merovingian Kingdoms 450–751 (1994)", "Penny MacGeorge, Late Roman Warlords (2002)"]
+
+- id: valentinian-valens-364
+  year: 364
+  endYear: 375
+  title:
+    ko: "발렌티니아누스 1세와 발렌스: 제국의 분담(364)과 브리타니아의 대음모 수습(368)"
+  summary:
+    ko: "요비아누스가 364년 2월 죽자 로마 제국의 군대는 판노니아 출신 장교 발렌티니아누스 1세를 황제로 뽑았고, 그는 동생 발렌스를 공동 정제로 삼아 서쪽(밀라노·트리어)과 동쪽(콘스탄티노폴리스)을 나누어 다스렸다. 발렌티니아누스는 367년 아들 그라티아누스를 정제로 삼았고, 라인강·도나우강에 요새를 쌓으며 알레만인 같은 게르만 부족과 싸웠다. 367년 브리타니아에서는 픽트·스코티·색슨 등이 정찰병의 배신과 겹쳐 한꺼번에 침입했는데('대음모', 암미아누스는 바르바리카 콘스피라티오라 불렀다) 장군 테오도시우스(훗날 황제 테오도시우스 1세의 아버지)가 368~369년 수습했다. 발렌티니아누스는 375년 11월 17일 브리게티오(지금의 헝가리 코마롬)에서 콰디 사절에게 화를 내다 쓰러져 죽었고 서쪽은 아들 그라티아누스와 네 살의 발렌티니아누스 2세가 이었다. 발렌스는 365~366년 율리아누스의 친척 프로코피우스의 반란을 눌렀고, 367~369년 도나우강을 건너 테르빙기 고트족 지도자 아타나리크와 싸워 강 위의 배에서 조약을 맺었다. 발렌스는 아리우스파에 기울어 니케아파 주교들을 쫓아냈다. 이 무렵 훈이 흑해 북쪽에 나타났다(뒤의 사건). 지도는 사두 정치 이후의 분담을 그리지 않는다."
+  subjects: [roman-empire, germanic-tribes, picts]
+  links:
+    - { from: picts, to: roman-empire, note: "브리타니아 침입(367)과 테오도시우스의 수습(368~369)" }
+  tags: [politics, war]
+  sources: ["Ammianus Marcellinus, Res Gestae(『역사』) (John C. Rolfe 영역, Loeb, 1935~1940)", "Noel Lenski, Failure of Empire: Valens and the Roman State in the Fourth Century A.D. (2002)", "Peter Heather, Goths and Romans 332–489 (1991)", "Averil Cameron·Peter Garnsey 엮음, The Cambridge Ancient History XIII: The Late Empire, A.D. 337–425 (1998)", "Peter Salway, Roman Britain (1981)"]
+
+- id: huns-westward-370
+  year: 370
+  endYear: 376
+  title:
+    ko: "훈족의 서진: 알란과 그레우퉁기의 정복(370년대)과 보스포로스 왕국의 사라짐"
+  summary:
+    ko: "암미아누스는 마이오티스(아조프)해 너머에서 온 낯선 유목민 훈이 370년 무렵 돈강 동쪽의 알란(사르마티아·알란 부족)을 꺾고, 375~376년 흑해 북쪽 초원의 게르만 부족인 고트 그레우퉁기를 이끌던 에르마나리크가 훈에 몰려 자결했으며 뒤를 이은 비티미리스도 전사했다고 전한다. 이 무렵 케르치 해협 양쪽의 보스포로스 왕국이 사료에서 사라진다(훈의 진출과 겹치나 정확한 끝은 알 수 없다). 남은 그레우퉁기 일부는 훈의 종주 아래 들어갔고, 테르빙기 고트족의 지도자 아타나리크가 훈을 막으려다 물러나자 프리티게른이 이끄는 무리가 376년 로마 땅으로 피신을 청했다(뒤의 사건). 훈이 누구인가는 논쟁이다. 18세기 이래 중국 사서의 흉노(북흉노의 후예)와 같은 무리라는 견해가 있고, 311년 뤄양 함락을 'xwn'의 일로 전한 소그드어 『고서간』(312~313년 무렵 작성)이 근거로 거론되나(드 라 바이시에르 2005), 마엔헬펜(1973)은 이름만 닮았을 뿐 문화적 연결이 약하다며 회의적이다. 같은 때 동아시아에서는 전진(351~394)이 370년 전연을 멸망시켰고, 372년 고구려 소수림왕에게 승려 순도와 불상을 보내 불교를 전했다(`sosurim-372`). 지도는 370년 돈강 동쪽 알란의 땅을, 376년 보스포로스와 흑해 북쪽 고트의 땅(포딜리아·키이우·몰다비아·왈라키아)을 훈 제국으로 그린다."
+  subjects: [hunnic-empire, sarmatian-alan-tribes, bosporan-kingdom, germanic-tribes, former-qin, former-yan, goguryeo]
+  links:
+    - { from: hunnic-empire, to: sarmatian-alan-tribes, note: "알란 정복(370 무렵)" }
+    - { from: hunnic-empire, to: germanic-tribes, note: "그레우퉁기의 붕괴(375~376)" }
+    - { from: former-qin, to: goguryeo, note: "승려 순도와 불상(372)" }
+  tags: [war, society]
+  sources: ["Ammianus Marcellinus, Res Gestae(『역사』) (John C. Rolfe 영역, Loeb, 1935~1940)", "Otto J. Maenchen-Helfen, The World of the Huns (1973)", "E. A. Thompson, The Huns (Peter Heather 개정, 1996)", "Étienne de la Vaissière, 'Huns et Xiongnu', Central Asiatic Journal 49 (2005)", "Peter Heather, The Fall of the Roman Empire (2005)", "『삼국사기』 고구려본기 소수림왕 2년"]
+
+- id: gothic-crossing-376
+  year: 376
+  endYear: 382
+  title:
+    ko: "고트족의 도나우 도하(376)·아드리아노폴리스 전투(378)와 382년의 정착"
+  summary:
+    ko: "훈에 쫓긴 테르빙기 고트족(프리티게른과 알라비우스가 이끈 무리)이 376년 도나우강 남쪽에 살게 해 달라고 청하자 발렌스는 받아들여 이들을 건너게 했다. 암미아누스는 로마 관리 루피키누스와 막시무스가 건너는 사람을 헤아리지도 못하고, 굶주린 고트족에게 개 한 마리 값으로 노예 한 명을 요구했다고 비난한다. 에우나피오스는 건넌 수를 20만으로 적는데 렌스키는 이를 이주민 전체의 수로 받아들이고 히더는 테르빙기 전사 1만 명에 모두 5만 명 안팎(그레우퉁기까지 합쳐 10만 명 남짓)으로 어림한다. 377년 마르키아노폴리스에서 루피키누스가 고트 지도자를 연회에서 죽이려던 계략이 어긋나 고트족이 반란을 일으켰고 그레우퉁기 무리도 합세했다. 훈 제국의 압박이 이 사태의 뿌리였다. 378년 8월 9일 발렌스는 서쪽 황제 그라티아누스의 원군을 기다리지 않고 아드리아노폴리스 가까이에서 싸우다 기병에게 무너졌고, 암미아누스는 군대의 3분의 1만 살아남았다고 적는다(현대의 어림은 로마군 1만~2만 명 전사). 황제도 죽었고 시신을 찾지 못했다. 이 소식에 로마 쪽 동방 군사령관 율리우스가 동방 도시에 있던 고트 병사들을 하루에 모두 죽이게 했다. 379년 1월 그라티아누스가 히스파니아 출신 장군 테오도시우스를 동방 정제로 세웠고, 382년 10월 3일 조약으로 게르만 부족인 고트족은 로마 제국의 도나우강 이남(모이시아)에서 독립 집단으로 살며 로마를 위해 싸울 병사를 내기로 했다. 지도는 이 정착지를 로마 땅으로 그린다."
+  subjects: [germanic-tribes, roman-empire, hunnic-empire]
+  links:
+    - { from: hunnic-empire, to: germanic-tribes, note: "훈에 쫓긴 테르빙기의 도하(376)" }
+    - { from: germanic-tribes, to: roman-empire, note: "아드리아노폴리스 전투(378)" }
+    - { from: roman-empire, to: germanic-tribes, note: "382년 조약과 정착" }
+  tags: [war, society]
+  sources: ["Ammianus Marcellinus, Res Gestae(『역사』) (John C. Rolfe 영역, Loeb, 1935~1940)", "Noel Lenski, Failure of Empire: Valens and the Roman State in the Fourth Century A.D. (2002)", "Michael Kulikowski, Rome's Gothic Wars: From the Third Century to Alaric (2007)", "Peter Heather, Goths and Romans 332–489 (1991)", "Peter Heather, The Fall of the Roman Empire (2005)"]
+  places: [{ name: 마르키아노폴리스(데브냐), at: [27.58, 43.22], year: 377 }, { name: 아드리아노폴리스, at: [26.55, 41.68], year: 378 }]
+
+- id: theodosius-i-379
+  year: 379
+  endYear: 395
+  title:
+    ko: "테오도시우스 1세: 테살로니키 칙령(380)·학살(390)·프리기두스 전투(394)와 395년의 동서 분리"
+  summary:
+    ko: "테오도시우스 1세(재위 379~395)는 380년 2월 27일 콘스탄티노폴리스 시민에게 내린 칙령에서 모든 백성이 사도 베드로가 전한 신앙, 곧 니케아 신앙을 따르라고 명했고, 381년 콘스탄티노폴리스 공의회에서 니케아 신경이 다시 확정되어 아리우스파는 예배와 공직의 제약을 받았다. 383년 브리타니아에서 마그누스 막시무스가 황제를 칭해 그라티아누스를 죽이고 갈리아·브리타니아·히스파니아를 차지했다. 387년 이탈리아로 쳐들어와 공동 정제 발렌티니아누스 2세를 동방으로 쫓아냈으나 388년 시스키아(사바강)와 포에토비오(드라바강)에서 테오도시우스에게 지고 아퀼레이아에서 처형되었다(8월 28일). 388년 칼리니쿰에서 그곳 주교가 부추긴 무리가 유대 회당을 태우자 황제가 주교에게 재건을 명했으나 밀라노 주교 암브로시우스가 반대해 물러났다. 390년 테살로니키에서 군사령관 부테리크가 군중에게 죽자 황제의 명(또는 군의 과잉 진압)으로 군중이 경기장에서 학살되었는데 테오도레토스는 7천 명이라 적는다(사료의 수). 암브로시우스가 한동안 황제를 성찬에서 배제해 참회하게 했다. 391~392년 칙령으로 이교 제사를 금했고 알렉산드리아 주교 테오필로스가 이끈 그리스도교인들이 군대의 도움으로 세라페움을 헐었다(391). 발렌티니아누스 2세가 392년 5월 죽자(자살인지 살해인지 사료가 갈린다) 장군 아르보가스트(게르만 부족인 프랑크 출신)가 문관 에우게니우스를 서방 황제로 세우자 테오도시우스는 394년 9월 5~6일 프리기두스강 가에서 격파했다(아르보가스트는 자결). 395년 1월 17일 밀라노에서 죽으며 제국을 두 아들, 서쪽 호노리우스와 동쪽 아르카디우스에게 맡겼다. 387년 아르메니아 분할은 따로 있다(뒤의 사건). 지도는 395년부터 서로마와 동로마로 그린다."
+  subjects: [roman-empire, western-roman-empire, byzantine-empire, germanic-tribes]
+  links:
+    - { from: roman-empire, to: western-roman-empire, note: "서쪽을 호노리우스에게(395)" }
+    - { from: roman-empire, to: byzantine-empire, note: "동쪽을 아르카디우스에게(395)" }
+  tags: [politics, religion, war]
+  sources: ["Ammianus Marcellinus, Res Gestae(『역사』) (John C. Rolfe 영역, Loeb, 1935~1940)", "Neil McLynn, Ambrose of Milan: Church and Court in a Christian Capital (1994)", "Stephen Williams·Gerard Friell, Theodosius: The Empire at Bay (1994)", "Clyde Pharr 옮김, The Theodosian Code and Novels and the Sirmondian Constitutions (1952)", "Peter Heather, The Fall of the Roman Empire (2005)"]
+  places: [{ name: 아퀼레이아, at: [13.37, 45.77], year: 388 }, { name: 테살로니키, at: [22.94, 40.64], year: 390 }, { name: 프리기두스강(비파바 계곡), at: [13.94, 45.87], year: 394 }]
+
+- id: armenia-caucasus-387
+  year: 387
+  endYear: 461
+  title:
+    ko: "캅카스의 아르메니아 분할(387)과 아르사케스 왕조의 끝(428), 아바라이르 전투(451)"
+  summary:
+    ko: "386~387년 합의로 테오도시우스 1세와 사산 왕 샤푸르 3세가 아르메니아를 나누어 서쪽 작은 몫(카린·아킬리세네·스페르)은 로마가, 동쪽 대부분은 사산의 종주 아래 아르사케스 왕가의 왕이 맡았다(조약 문서는 남아 있지 않아 연도와 경계는 학자마다 다르다). 로마는 자기 몫의 아르사케스 왕정을 없애 속주로 삼았다(서쪽 왕 아르샤크 3세는 390년 무렵 죽었다). 동쪽에서는 메스로프 마슈토츠가 405년 무렵 아르메니아 문자를 만들고 성서를 번역해 교회와 문화가 자랐다. 428년 아르사케스 왕 아르탁세스 4세가 귀족들의 청으로 사산 왕 바흐람 5세에게 폐위되어 아르메니아의 왕정이 끝나고 사산의 총독(마르즈판)이 다스렸다. 451년 5월 26일 야즈데게르드 2세가 조로아스터교를 강요하자 바르단 마미코니안이 이끈 귀족과 성직자가 아바라이르 평원에서 맞섰다가 졌고 바르단도 죽었으나, 그 뒤의 저항이 484년 느바르삭 조약으로 신앙의 자유를 얻게 했다고 아르메니아 사료는 그린다. 이웃 캅카스 알바니아는 387년 아르메니아의 우티크와 아르차흐를 얻었고 462년 무렵(461~463년설) 바체 2세가 물러나 아르사케스 왕정이 끝나고 사산의 마르즈판령이 되었다. 이베리아 왕국(카르틀리)은 4세기 전반(330년대 무렵) 그리스도교를 받아들였다고 전하며, 라지카는 로마(동로마)의 종주 아래 있었다. 지도는 387년 분할대로 카린 등 서쪽을 로마로, 우티크 등을 알바니아로 그리고, 428년 아르메니아를 비우고, 알바니아는 단순화해 461년부터 비운다(사산 직할지)."
+  subjects: [arsacid-armenia, caucasian-albania, iberia-kingdom, lazica, roman-empire, byzantine-empire]
+  links:
+    - { from: roman-empire, to: arsacid-armenia, note: "샤푸르 3세와의 분할(387)" }
+    - { from: arsacid-armenia, to: caucasian-albania, note: "우티크·아르차흐 양도(387)" }
+    - { from: byzantine-empire, to: lazica, note: "동로마의 종주" }
+  tags: [politics, war, religion]
+  sources: ["Nina G. Garsoïan 옮김, The Epic Histories Attributed to P'awstos Buzand (1989)", "Robert W. Thomson 옮김, Elishē, History of Vardan and the Armenian War (1982)", "Cyril Toumanoff, Studies in Christian Caucasian History (1963)", "Ronald Grigor Suny, The Making of the Georgian Nation (2판, 1994)", "Stephen H. Rapp Jr., Studies in Medieval Georgian Historiography: Early Texts and Eurasian Contexts (2003)"]
+
+- id: theodosian-east-395
+  year: 395
+  endYear: 450
+  title:
+    ko: "아르카디우스와 테오도시우스 2세의 동로마: 성벽(413)·히파티아(415)·법전(438)"
+  summary:
+    ko: "395년 동쪽을 이은 아르카디우스(395~408)는 환관 에우트로피우스 같은 궁정 실력자에게 휘둘렸고, 아들 테오도시우스 2세(408~450)는 일곱 살에 즉위해 친위대장관 안테미우스와 누이 풀케리아의 보살핌 속에 자랐다. 안테미우스는 413년 콘스탄티노폴리스의 육지 성벽(테오도시우스 성벽)을 쌓았고, 447년 지진으로 무너진 성벽은 곧 다시 세워졌다. 동로마는 서로마보다 도시와 재정 기반이 단단해 침입을 성벽과 돈으로 막을 수 있었다. 서쪽에서는 호노리우스가 421년 장군 콘스탄티우스를 공동 황제 콘스탄티우스 3세로 세웠으나 그가 그해 죽었고, 423년 호노리우스가 죽은 뒤 요안네스가 황제를 칭하자(423~425) 테오도시우스 2세가 425년 군대를 보내 사촌 발렌티니아누스 3세(425~455, 어머니 갈라 플라키디아가 섭정)를 세웠다. 415년 알렉산드리아에서 신플라톤주의 철학자 히파티아가 낭독자 페트로스가 이끈 그리스도교 군중에게 죽임을 당했다. 소크라테스 스콜라스티코스는 총독 오레스테스와 주교 키릴로스의 갈등 속에서 일어난 일로 적으며, 키릴로스가 직접 지시했는지는 학자들이 갈린다. 같은 시기 황제의 법은 이교 제사를 금하고 유대인의 공직을 막았으며(438년 신칙법), 유대인 총대주교직도 425년 무렵 가말리엘 6세가 죽은 뒤 429년까지 폐지되었다. 428년 콘스탄티노폴리스 총대주교가 된 네스토리오스의 논쟁은 에페소스 공의회로 이어졌다(뒤의 사건). 438년 『테오도시우스 법전』은 콘스탄티누스 이후 황제의 법을 모았다. 440년대 아틸라의 훈 제국은 도나우강 남쪽에서 거액의 공납을 받아 냈다(뒤의 사건). 450년 7월 테오도시우스 2세가 말에서 떨어져 죽자 군대가 아스파르의 지지로 군인 마르키아누스(450~457)를 8월에 정제로 추대했고 풀케리아는 그와 혼인해 정통성을 뒷받침했다."
+  subjects: [byzantine-empire, western-roman-empire, hunnic-empire]
+  links:
+    - { from: hunnic-empire, to: byzantine-empire, note: "공납과 도나우강 남쪽 땅(440년대)" }
+    - { from: byzantine-empire, to: western-roman-empire, note: "발렌티니아누스 3세의 옹립(425)" }
+  tags: [politics, society, culture]
+  sources: ["Fergus Millar, A Greek Roman Empire: Power and Belief under Theodosius II, 408–450 (2006)", "Maria Dzielska, Hypatia of Alexandria (Frederick Lyra 영역, 1995)", "Socrates Scholasticus, Ecclesiastical History (A. C. Zenos 영역, 1890)", "Clyde Pharr 옮김, The Theodosian Code and Novels and the Sirmondian Constitutions (1952)", "게오르크 오스트로고르스키, 『비잔티움 제국사』(한정숙·김경연 옮김, 까치글방)"]
+
+- id: alaric-stilicho-395
+  year: 395
+  endYear: 418
+  title:
+    ko: "스틸리코와 알라리크: 로마 약탈(410)에서 서고트의 아키텐 정착(418)까지"
+  summary:
+    ko: "스틸리코(반달계 군인의 아들, 테오도시우스의 조카딸 세레나의 남편)는 395년 테오도시우스가 죽자 어린 서로마 황제 호노리우스의 후견인을 자처했고, 동로마를 맡은 아르카디우스의 궁정과 맞섰다. 프리기두스에서 싸운 고트인 알라리크는 보상을 받지 못하자 반란을 일으켜 발칸을 휩쓸었고 401년 이탈리아로 들어왔으나 402년 폴렌티아·베로나에서 스틸리코에게 막혔다. 호노리우스는 402년 궁정을 라벤나로 옮겼다. 406년 8월 스틸리코는 피에솔레에서 라다가이수스의 무리를 꺾었다. 408년 8월 22일 스틸리코가 반역 혐의로 처형되자 이탈리아의 로마 병사들이 도시마다 게르만 병사의 가족을 학살했고, 조시모스는 병사 3만 명이 알라리크에게 합류했다고 적으나 히더는 지나치게 많다고 본다. 알라리크는 408~410년 로마를 거듭 포위하며 409년 원로원 의원 아탈루스를 황제로 세웠다가 410년 폐위했고(아타울프가 414~415년 다시 세웠다), 410년 8월 24일 밤 성문이 열리자 사흘 동안 도시를 약탈하고 호노리우스의 이복누이 갈라 플라키디아를 인질로 데려갔다(문이 열린 경위는 배신인지 굶주림 끝의 항복인지 사료가 갈린다). 약탈은 주로 재물에 한정되고 성당은 건드리지 않았다고 오로시우스는 적으나, 800년 만의 로마 함락은 큰 충격이었고 아우구스티누스는 『신국론』을 쓰게 되었다. 알라리크는 410년 말 남이탈리아 코센차에서 죽었고, 처남 아타울프가 갈리아로 올라가 414년 나르본에서 호노리우스의 이복누이 갈라 플라키디아와 혼인했다. 415년 아타울프가 암살되고 시게리크가 며칠 만에 죽은 뒤 왈리아(415~418)가 히스파니아에서 반달·알란과 싸웠고, 418년 로마와 맺은 조약으로 아키텐에 자리 잡아 서고트 왕국이 시작되었고, 왈리아의 뒤를 이은 테오도리쿠스 1세(418~451)가 왕국을 굳혔다. 같은 시기 동아시아에서는 고구려 광개토왕(재위 391~413)이 백제와 후연을 치며 영토를 넓혔다(`gwanggaeto-391`). 지도는 410년의 로마 점령을 그리지 않고 418년부터 서고트의 아키텐을 그린다."
+  subjects: [western-roman-empire, byzantine-empire, visigothic-kingdom, germanic-tribes, goguryeo]
+  links:
+    - { from: western-roman-empire, to: visigothic-kingdom, note: "418년 조약과 아키텐 정착" }
+  tags: [politics, war]
+  sources: ["Peter Heather, The Fall of the Roman Empire (2005)", "Michael Kulikowski, Rome's Gothic Wars: From the Third Century to Alaric (2007)", "Alan Cameron·Jacqueline Long, Barbarians and Politics at the Court of Arcadius (1993)", "Orosius, Seven Books of History against the Pagans (Roy J. Deferrari 영역, 1964)", "Zosimus, New History(『새 역사』) (Ronald T. Ridley 영역, 1982)", "R. C. Blockley 엮음·옮김, The Fragmentary Classicising Historians of the Later Roman Empire, 2권 (1983)"]
+  places: [{ name: 폴렌티아(폴렌초), at: [7.9, 44.68], year: 402 }, { name: 피에솔레, at: [11.3, 43.81], year: 406 }, { name: 로마, at: [12.5, 41.9], year: 410 }]
+
+- id: rhine-crossing-406
+  year: 406
+  endYear: 429
+  title:
+    ko: "라인 도하(406)와 반달·알란·수에비의 히스파니아 분할(411)"
+  summary:
+    ko: "406년 마지막 날(통설)에 얼어붙은 라인강을 반달·알란·수에비가 건너 마인츠 일대의 갈리아로 들어왔다. 프랑크가 로마 편에서 막아 반달 왕 곤데기셀이 전사했으나 알란이 도와 반달이 살아남았다고 투르의 그레고리우스가 인용한 사료가 전한다. 이들은 갈리아를 휩쓸다 409년 피레네를 넘어 히스파니아로 들어왔고, 411년 제비뽑기로 땅을 나누었다고 히다티우스는 적는다: 하스딩 반달은 갈라이키아의 동쪽, 수에비는 서쪽, 알란은 루시타니아와 카르타기넨시스, 실링 반달은 바이티카. 416~418년 서로마 황제 호노리우스의 청으로 싸운 왈리아의 서고트가 실링 반달과 알란 왕 아다크를 무너뜨려 남은 알란(사르마티아·알란 부족 가운데 서쪽으로 간 무리)은 하스딩 반달 왕 군데리크를 따랐다('반달과 알란의 왕'). 419년 무렵 하스딩이 수에비와 다투다 바이티카로 옮겼고, 425년 카르타고 노바와 발레아레스를 약탈했다. 428년 군데리크가 죽고 이복동생 가이세리크가 왕이 되었다. 429년 5월 가이세리크가 반달과 알란을 이끌고 북아프리카로 건너갔다(빅토르 비텐시스와 프로코피우스는 노약자까지 합해 8만 명이라 하나 과장일 수 있다). 지도는 406년 라인강 하류의 톡산드리아를 게르만 부족으로 바꾸고, 슐레지엔의 반달이 떠난 폴란드 일대는 근거가 약해 비우며, 411년 제비뽑기대로 알란 왕국을 411~417년 그린다. 420~428년 하스딩 반달은 바이티카를 차지한 것으로 그린다."
+  subjects: [vandal-kingdom, alans-hispania, suebi-kingdom, sarmatian-alan-tribes, western-roman-empire, visigothic-kingdom, germanic-tribes]
+  links:
+    - { from: visigothic-kingdom, to: alans-hispania, note: "왈리아의 원정(416~418)" }
+    - { from: western-roman-empire, to: vandal-kingdom, note: "히스파니아의 반달" }
+  tags: [war, society]
+  sources: ["Hydatius, Chronicle(『연대기』) (R. W. Burgess 영역, 1993)", "Orosius, Seven Books of History against the Pagans (Roy J. Deferrari 영역, 1964)", "Gregory of Tours, The History of the Franks (Lewis Thorpe 영역, 1974)", "Andy Merrills·Richard Miles, The Vandals (2010)", "Guy Halsall, Barbarian Migrations and the Roman West, 376–568 (2007)", "Roger Collins, Early Medieval Spain: Unity in Diversity, 400–1000 (1983)"]
+  places: [{ name: 마인츠, at: [8.27, 50.0], year: 406 }, { name: 카르타고 노바(카르타헤나), at: [-0.99, 37.6], year: 425 }]
+
+- id: britain-end-407
+  year: 407
+  endYear: 446
+  title:
+    ko: "로마의 브리타니아 포기: 콘스탄티누스 3세(407)와 호노리우스의 편지(410)"
+  summary:
+    ko: "383년 마그누스 막시무스가 브리타니아의 병력을 데리고 갈리아로 건너간 뒤 방벽 북쪽의 픽트, 아일랜드의 스코티, 북해의 색슨 같은 게르만 부족의 습격에 대한 방어가 약해졌고, 406년 말 라인강이 뚫리자 브리타니아 주둔군은 406~407년 마르쿠스와 그라티아누스를 차례로 세웠다가 죽이고 콘스탄티누스 3세를 추대했다. 그는 남은 병력을 갈리아와 히스파니아로 데려가 407~411년 서방 일부를 다스리다 서로마 황제 호노리우스의 장군 콘스탄티우스에게 졌다. 조시모스는 409~410년 색슨의 침입에 맞서 브리튼 사람들이 스스로 무장해 로마 관리를 쫓아냈고, 호노리우스가 브리타니아의 도시들에 스스로 지키라는 편지(410)를 보냈다고 적는다(수신처가 이탈리아 남부의 브룻티움이라는 해석도 있다). 이후 로마의 행정과 군대, 화폐 공급이 끊겼고 고고학은 5세기 전반에 도시 생활과 도기 생산, 화폐 유통이 줄어 사라졌다고 본다. 길다스는 446년 무렵 브리튼인이 아이티우스에게 구원을 청한 '브리튼인의 신음'을 적었고, 『452년 갈리아 연대기』는 441~442년 브리타니아가 색슨의 지배에 들어갔다고 쓴다. 색슨의 도래는 뒤의 사건이다. 지도는 410년 브리타니아를 브리튼인 왕국들(묶음)과 웨일스 공국들로 바꿔 그리고, 맨섬과 방벽 사이에 있던 켈트 부족의 묶음은 이때 끝난다."
+  subjects: [western-roman-empire, brittonic-kingdoms, welsh-principalities, celtic-tribes, picts, germanic-tribes]
+  links:
+    - { from: western-roman-empire, to: brittonic-kingdoms, note: "호노리우스의 편지(410)" }
+  tags: [politics, society]
+  sources: ["Zosimus, New History(『새 역사』) (Ronald T. Ridley 영역, 1982)", "Gildas, The Ruin of Britain and Other Works (Michael Winterbottom 영역, 1978)", "Robin Fleming, Britain after Rome: The Fall and Rise, 400 to 1070 (2010)", "A. S. Esmonde Cleary, The Ending of Roman Britain (1989)", "Peter Salway, Roman Britain (1981)"]
+
+- id: suebi-hispania-409
+  year: 409
+  endYear: 469
+  title:
+    ko: "수에비 왕국: 갈라이키아에서 메리다(439)·오르비고강 전투(456)까지"
+  summary:
+    ko: "411년 제비뽑기로 수에비는 갈라이키아 서쪽(지금의 갈리시아와 북부 포르투갈)에, 하스딩 반달은 그 동쪽에 자리 잡았다. 헤르메리크(409 무렵~438)가 병들어 물러난 뒤 아들 레킬라(438~448)가 439년 메리다를, 441년 바이티카와 카르타기넨시스의 세비야 일대를 차지해 히스파니아에서 가장 강한 세력이 되었다. 448년 즉위한 레키아르는 서고트 왕 테오도리쿠스 1세의 딸과 혼인해 그의 사위가 되었고 타라코넨시스의 바스콘족 땅과 사라고사·레리다를 약탈했다. 카르타기넨시스는 로마에 돌아가 있었는데(지도는 453년) 수에비가 455년 다시 약탈하자 아비투스와 서고트가 사절을 보냈다고 히다티우스는 적는다. 서로마 황제 아비투스를 세운 서고트 왕 테오도리쿠스 2세가 456년 10월 5일 오르비고강 가에서 레키아르를 꺾었고, 레키아르는 포르투에서 사로잡혀 12월 처형되었다. 그 뒤 서고트가 세운 아이울프, 그 뒤 수에비가 뽑은 말드라스와 프루마리우스·레미스문드 같은 왕들이 다투는 사이 서고트의 영향이 커졌고, 히다티우스는 468년 코님브리가가 약탈되고 469년 리스본이 수에비에게 넘어갔다고 적는다(그의 연대기는 469년에 끝난다). 지도는 411년 수에비에 갈라이키아 서쪽을, 420년 갈라이키아 전체를, 439년 루시타니아를, 441년 바이티카·카르타기넨시스를 주었다가 457년 서고트가 루시타니아·바이티카를 차지하는 것으로, 468년 포르투갈 중부(코님브리가 일대)는 수에비 땅으로 돌려 그린다. 수에비 왕국은 585년까지 갈라이키아에 남는다(뒤의 사건)."
+  subjects: [suebi-kingdom, visigothic-kingdom, western-roman-empire, vandal-kingdom]
+  links:
+    - { from: visigothic-kingdom, to: suebi-kingdom, note: "오르비고강 전투(456)" }
+  tags: [politics, war]
+  sources: ["Hydatius, Chronicle(『연대기』) (R. W. Burgess 영역, 1993)", "Roger Collins, Early Medieval Spain: Unity in Diversity, 400–1000 (1983)", "E. A. Thompson, Romans and Barbarians: The Decline of the Western Empire (1982)", "Guy Halsall, Barbarian Migrations and the Roman West, 376–568 (2007)"]
+  places: [{ name: 메리다, at: [-6.34, 38.92], year: 439 }, { name: 오르비고강, at: [-5.87, 42.47], year: 456 }]
+
+- id: burgundians-411
+  year: 411
+  endYear: 474
+  title:
+    ko: "부르군트 왕국: 보름스(413)·훈의 공격(436)·사파우디아(443)"
+  summary:
+    ko: "라인강 동쪽의 게르만 부족 부르군트는 411년 마인츠에서 황제를 칭한 요비누스를 왕 군디카리우스(군다하르)가 알란 왕 고아르와 함께 지지하며 서쪽 역사에 나온다. 413년 로마는 이들을 라인강 왼쪽(마인츠·보름스·슈파이어 일대)에 동맹자로 정착시켰다(보름스는 『니벨룽의 노래』의 도읍이라는 전승에 기대어 정한 통설이다). 435년 아이티우스가 군디카리우스를 꺾어 강화했으나 곧 훈이 왕과 그 백성을 쓸어 버렸다고 프로스페르는 적고, 히다티우스는 437년 부르군트 2만 명이 죽었다고 적는다(숫자는 과장일 수 있고, 아이티우스가 훈 제국에서 온 용병을 썼다고 보는 것이 보통이다). 지도는 436년 보름스 왕국을 지우고 서로마 땅으로 돌린다. 443년 아이티우스가 살아남은 부르군트를 사파우디아(제네바호와 사부아)에 정착시켰다(『452년 갈리아 연대기』). 부르군트는 451년 카탈라우눔에서 서로마 편에 섰고(뒤의 사건), 456년 서고트의 히스파니아 원정(오르비고강 전투)에 왕 군디오크가 따랐다고 하며 형제 킬페리크 1세와 함께 다스렸다고 본다. 아이티우스가 죽고 로마의 중앙 권력이 흔들리자 457~458년 리옹 반란이 마요리아누스에게 눌렸다가(시도니우스) 461년 마요리아누스가 죽은 뒤 리옹을 차지했고, 470년대 비바레·가프·느베르 쪽과 아비뇽·발랑스로 퍼졌다(지도는 474년). 군디오크의 아들 군도바드는 472~473년 서로마의 파트리키우스로 있다가 돌아와 왕이 되었다(뒤의 사건)."
+  subjects: [burgundian-kingdom, western-roman-empire, hunnic-empire, germanic-tribes]
+  links:
+    - { from: hunnic-empire, to: burgundian-kingdom, note: "아이티우스가 쓴 훈 용병의 공격(436)" }
+    - { from: western-roman-empire, to: burgundian-kingdom, note: "사파우디아 정착(443)" }
+  tags: [politics, war]
+  sources: ["Prosper of Aquitaine, Epitoma Chronicon (Steven Muhlberger, The Fifth-Century Chroniclers, 1990에 실린 영역)", "Sidonius Apollinaris, Poems and Letters (W. B. Anderson 영역, Loeb, 1936~1965)", "Ian Wood, The Merovingian Kingdoms 450–751 (1994)", "Peter Heather, The Fall of the Roman Empire (2005)", "Guy Halsall, Barbarian Migrations and the Roman West, 376–568 (2007)"]
+  places: [{ name: 보름스, at: [8.36, 49.63], year: 436 }]
+
+- id: attila-huns-420
+  year: 420
+  endYear: 450
+  title:
+    ko: "훈 제국의 전성기: 루아와 아틸라, 동로마의 공납(420~450)"
+  summary:
+    ko: "훈은 5세기 초 중심을 판노니아 평원(지금의 헝가리)으로 옮겨 게르만·사르마티아 부족을 거느린 연합체가 되었다. 서로마의 아이티우스가 훈에 머문 적이 있어 훈 용병을 자주 썼고 433년 무렵 판노니아 일부를 훈에 넘겼다는 서술이 있다. 울딘(400 무렵)과 카라톤(412) 같은 왕을 거쳐 루아의 형제 옥타르가 430년 무렵 죽은 뒤 홀로 다스리던 루아가 434년 죽자 조카 블레다와 아틸라가 함께 다스렸고, 435년 마르구스에서 동로마가 공납을 해마다 금 350파운드에서 700파운드로 두 배 올렸다(프리스쿠스). 441년 훈은 마르구스 주교가 훈 왕의 무덤을 도굴했다는 구실로 도나우강을 건너 싱기두눔·시르미움을 차지했고, 443년 나이수스·세르디카까지 쳐서 동로마에서 밀린 공납 6천 파운드와 해마다 2천 1백 파운드를 받기로 했다. 445년 아틸라가 블레다를 죽이고 홀로 왕이 되었다. 447년 우투스강에서 동로마군을 꺾고 발칸을 휩쓸어 테르모필레까지 이르렀으나 콘스탄티노폴리스는 재건한 성벽으로 지켜졌고 아나톨리우스가 맺은 조약으로 도나우강 남쪽 '닷새 길' 띠를 훈에 넘기고 물러났다. 449년 동로마 사절 막시미누스와 역사가 프리스쿠스가 아틸라의 막사를 찾은 이야기가 프리스쿠스의 단편에 남아 있다(손님을 후하게 맞는 모습도 적는다). 450년 서로마 황제의 누이 호노리아가 반지와 함께 구혼을 보냈다고 알려져 아틸라는 이를 구실로 서쪽으로 향했다(뒤의 사건). 지도는 420년 판노니아 평원과 트란실바니아, 433년 판노니아, 441년 시르미움, 447년 아나톨리우스의 띠를 훈 제국 땅으로 그린다."
+  subjects: [hunnic-empire, byzantine-empire, western-roman-empire, germanic-tribes]
+  links:
+    - { from: hunnic-empire, to: byzantine-empire, note: "공납과 도나우강 남쪽 땅(435~447)" }
+    - { from: western-roman-empire, to: hunnic-empire, note: "판노니아 양도(433 무렵)" }
+  tags: [war, diplomacy]
+  sources: ["R. C. Blockley 엮음·옮김, The Fragmentary Classicising Historians of the Later Roman Empire, 2권 (1983)", "Christopher Kelly, Attila the Hun: Barbarian Terror and the Fall of the Roman Empire (2008)", "E. A. Thompson, The Huns (Peter Heather 개정, 1996)", "Otto J. Maenchen-Helfen, The World of the Huns (1973)", "Jordanes, The Gothic History of Jordanes (Charles C. Mierow 영역, 1915)"]
+  places: [{ name: 싱기두눔(베오그라드), at: [20.46, 44.82], year: 441 }, { name: 시르미움(스렘스카미트로비차), at: [19.6, 44.97], year: 441 }, { name: 나이수스(니시), at: [21.9, 43.32], year: 443 }, { name: 우투스강(비트강) 하구, at: [24.74, 43.68], year: 447 }]
+
+- id: vandal-africa-429
+  year: 429
+  endYear: 456
+  title:
+    ko: "가이세리크의 반달 왕국: 아프리카 이동(429)·카르타고(439)·로마 약탈(455)"
+  summary:
+    ko: "가이세리크(재위 428~477)는 429년 5월 반달과 알란을 이끌고 지브롤터 해협을 건너 북아프리카로 갔다. 아프리카 총독 보니파키우스가 불렀다는 프로코피우스의 이야기는 믿기 어렵다고 보는 학자가 많다. 430년 5월부터 히포 레기우스를 14개월 포위했고 포위 중 8월 28일 주교 아우구스티누스가 죽었다. 435년 조약으로 누미디아 일부의 정착을 인정받았다가, 439년 10월 19일 카르타고를 불시에 점령하며 서로마의 곡창을 쥐었다. 442년 조약으로 아프리카 프로콘술라리스·비자케나와 누미디아 일부를 차지하고 서로마에는 모레타니아와 누미디아 서부를 남겼다(트리폴리타니아가 누구 몫이었는지는 사료가 갈린다). 아리우스파인 반달 왕은 가톨릭 주교와 사제를 쫓고 교회 재산을 몰수했다고 가톨릭 쪽 사료(빅토르 비텐시스)가 적는데 선전이 섞여 있다. 455년 3월 발렌티니아누스 3세가 암살되자 가이세리크는 6월 로마에 닿아 약 2주 동안 약탈했다. 교황 레오 1세의 간청으로 사람을 죽이거나 도시를 불태우지는 않았으나 보물과 황후 에우독시아, 두 딸을 끌고 갔고 딸 에우도키아는 가이세리크의 아들 훈네리크와 혼인했다. 이어 사르데냐·코르시카·발레아레스를 차지했다. 이 무렵 북아프리카는 이 구간 지도에 없고 지도는 456년 세 섬을 반달 땅으로 그린다. 468년 동로마의 원정이 실패한다(뒤의 사건)."
+  subjects: [vandal-kingdom, western-roman-empire]
+  links:
+    - { from: vandal-kingdom, to: western-roman-empire, note: "로마 약탈(455)과 섬들(456)" }
+  tags: [war, politics]
+  sources: ["Andy Merrills·Richard Miles, The Vandals (2010)", "Victor of Vita, History of the Vandal Persecution (John Moorhead 영역, 1992)", "Procopius, History of the Wars (H. B. Dewing 영역, Loeb, 1914~1928)", "Hydatius, Chronicle(『연대기』) (R. W. Burgess 영역, 1993)", "R. C. Blockley 엮음·옮김, The Fragmentary Classicising Historians of the Later Roman Empire, 2권 (1983)"]
+  places: [{ name: 히포 레기우스(안나바), at: [7.76, 36.9], year: 430 }, { name: 카르타고, at: [10.32, 36.85], year: 439 }, { name: 로마, at: [12.5, 41.9], year: 455 }]
+
+- id: patrick-ireland-431
+  year: 431
+  endYear: 461
+  title:
+    ko: "성 패트릭과 아일랜드의 그리스도교(5세기)"
+  summary:
+    ko: "아일랜드는 로마 제국 밖이었고 5세기 초까지 그리스도교인이 드물었다. 교황 켈레스티누스 1세가 431년 팔라디우스를 '그리스도를 믿는 아일랜드인'의 첫 주교로 보냈다(프로스페르). 패트릭(라틴어 파트리키우스)은 브리튼의 로마계 집안 출신으로 열여섯 살 무렵 아일랜드 해적에게 끌려가 목동으로 6년을 지내다 탈출했고, 뒤에 주교가 되어 아일랜드로 돌아와 교회를 세웠다고 『고백록』과 『코로티쿠스에게 보내는 편지』에서 스스로 적는다. 편지는 브리튼 왕 코로티쿠스의 병사들이 새 신자를 죽이고 노예로 팔아넘긴 것에 항의한다(코로티쿠스를 브리튼인 왕국들 가운데 알트 클루트의 왕 케레티크로 보는 견해가 있다). 전통 연대는 432년 도착, 461년 죽음이나, 학자들은 패트릭의 활동을 5세기 후반(493년 죽음설)으로 늦춰 보기도 한다. 7세기 무이르추의 전기가 전설을 더했고 축일은 3월 17일이다. 이 무렵 아일랜드 왕국들이 서로 다투었고, 전승은 아일랜드 북부의 달리어타 사람들이 500년 무렵 페르구스 모르를 따라 스코틀랜드 서부 아가일로 건너갔다고 하나 고고학은 이를 의심한다. 지도는 450년 무렵부터 아가일을 달리어타로, 클라이드강 일대를 스트래스클라이드(알트 클루트)로 그린다."
+  subjects: [irish-kingdoms, brittonic-kingdoms, strathclyde, dal-riata]
+  tags: [culture, religion]
+  sources: ["Ludwig Bieler 옮김, The Works of St. Patrick (1953)", "Thomas Charles-Edwards, Early Christian Ireland (2000)", "E. A. Thompson, Who Was Saint Patrick? (1985)", "Prosper of Aquitaine, Epitoma Chronicon (Steven Muhlberger, The Fifth-Century Chroniclers, 1990에 실린 영역)", "Robin Fleming, Britain after Rome: The Fall and Rise, 400 to 1070 (2010)"]
+
+- id: ephesus-chalcedon-431
+  year: 431
+  endYear: 451
+  title:
+    ko: "교리 논쟁: 에페소스 공의회(431)와 칼케돈 공의회(451)"
+  summary:
+    ko: "428년 콘스탄티노폴리스 총대주교가 된 네스토리오스는 동로마 교회에서 마리아를 '그리스도의 어머니'라 부르자고 해, '하느님의 어머니'라는 호칭을 쓰는 알렉산드리아 총대주교 키릴로스와 맞섰다. 431년 6월 테오도시우스 2세가 소집한 에페소스 공의회에서 키릴로스는 안티오키아 주교단이 도착하기 전에 회의를 열어 네스토리오스를 폐위했고, 늦게 도착한 동방 주교들이 맞서 두 공의회로 갈렸다가 433년 화해 문서로 수습되었다. 네스토리오스는 435년 페트라로, 뒤에 이집트 오아시스로 유배되었고, 그를 따른 교회는 페르시아로 퍼져 '동방 교회'가 되었다. 한편 수도원장 에우티케스는 그리스도의 인성이 신성에 흡수되었다고 주장하다 448년 단죄되었고, 449년 에페소스의 두 번째 공의회('강도 공의회')는 에우티케스를 복권시키고 서로마 교회를 대표한 교황 레오 1세의 서한(「토무스」)을 읽지도 않고 묵살했다. 450년 마르키아누스가 즉위하자 451년 10월 칼케돈에 500명 안팎의 주교가 모여 그리스도가 두 본성으로 혼합 없이 한 인격에 있다는 정의를 채택했다. 이집트·시리아의 많은 신자가 이를 받아들이지 않아 콥트 교회와 시리아 정교회 같은 '단성론'(스스로는 '합성론'이라 부른다) 교회로 갈라졌다. 칼케돈은 또 콘스탄티노폴리스 총대주교에게 로마 다음의 서열을 준 28조를 정했는데 교황 레오 1세가 이를 거부했다."
+  subjects: [byzantine-empire, western-roman-empire]
+  tags: [religion, politics]
+  sources: ["Richard Price·Michael Gaddis 옮김, The Acts of the Council of Chalcedon, 3권 (2005)", "Henry Chadwick, The Church in Ancient Society: From Galilee to Gregory the Great (2001)", "Fergus Millar, A Greek Roman Empire: Power and Belief under Theodosius II, 408–450 (2006)", "Averil Cameron·Bryan Ward-Perkins·Michael Whitby 엮음, The Cambridge Ancient History XIV: Late Antiquity: Empire and Successors, A.D. 425–600 (2000)"]
+
+- id: anglo-saxon-arrival-449
+  year: 449
+  endYear: 475
+  title:
+    ko: "앵글로색슨의 도래(449 무렵)와 브리튼인의 이주"
+  summary:
+    ko: "비드는 브리튼의 통치자 보르티게른이 북쪽의 픽트와 스코티에 맞서려고 불러들인 앵글인·색슨인·유트인 용병이 마르키아누스 황제 때인 449년 헹기스트와 호사의 인솔로 켄트에 상륙했다고 전하고, 『앵글로색슨 연대기』도 449년을 적는다. 길다스(6세기)는 이름을 대지 않고 '오만한 폭군'이 색슨을 불렀다고 쓰며, 연대와 인명은 후대의 윤색이 섞여 있다. 고고학은 5세기 초부터 북해 건너 이주와 용병의 정착이 이어졌고 5세기 중엽 일부가 브리튼인과 갈라서면서 브리타니아 동부와 남부로 퍼졌다고 본다. 이주의 규모(소규모 지배층의 교체인지 대규모 이주인지)는 학자들이 갈린다. 브리튼인은 서쪽 웨일스 공국들과 콘월로 밀려나거나 앵글로색슨 사회에 섞였고, 일부는 바다를 건너 아르모리카로 옮겼다(뒤의 브르타뉴). 요르다네스는 469년 무렵 '브리튼인의 왕' 리오타무스가 1만 2천 명(요르다네스의 수)을 이끌고 갈리아에서 서고트에 맞섰다고 적는다. 길다스는 로마계 지도자 암브로시우스 아우렐리아누스가 저항을 이끌었다고 쓴다. 북쪽에서는 클라이드강 일대의 알트 클루트(스트래스클라이드)가 브리튼인 왕국으로 자리 잡았고, 아가일의 달리어타는 아일랜드에서 건너온 이들의 왕국이라 전하나 연대는 불확실하다. 지도는 450년 무렵부터 템스강 어귀·켄트·동앵글리아·린지를 앵글로색슨 왕국들로, 아가일을 달리어타로, 클라이드강 일대를 스트래스클라이드로 그리고 461년 아르모리카 서쪽을 브리튼인 왕국들로 그린다. 476년부터의 일은 뒤의 사건이다."
+  subjects: [anglo-saxon-kingdoms, brittonic-kingdoms, welsh-principalities, strathclyde, dal-riata, picts]
+  links:
+    - { from: anglo-saxon-kingdoms, to: brittonic-kingdoms, note: "정착과 브리튼인의 이주(449 무렵~)" }
+  tags: [society, war]
+  sources: ["Bede, Ecclesiastical History of the English People (Leo Sherley-Price 영역, 1990)", "The Anglo-Saxon Chronicle (Michael Swanton 영역, 1996)", "Gildas, The Ruin of Britain and Other Works (Michael Winterbottom 영역, 1978)", "Robin Fleming, Britain after Rome: The Fall and Rise, 400 to 1070 (2010)", "Jordanes, The Gothic History of Jordanes (Charles C. Mierow 영역, 1915)"]
+
+- id: catalaunian-451
+  year: 451
+  endYear: 453
+  title:
+    ko: "카탈라우눔 평원 전투(451)와 아틸라의 이탈리아 원정(452)·죽음(453)"
+  summary:
+    ko: "450년 서로마 황제의 누이 호노리아가 보낸 구혼을 빌미로 아틸라는 지참금으로 서로마 땅의 절반을 요구했고, 451년 봄 라인강을 건너 갈리아로 들어왔다. 군대는 훈 제국의 훈과 게피드·동고트·루기·스키리 같은 게르만 부족 신민의 연합이었고 수는 알 수 없다. 4월 7일 메스가 불탔고 6월 오를레앙 포위는 로마와 서고트 구원군이 와서 풀렸다. 서로마 장군 아이티우스는 서고트 왕 테오도리쿠스 1세, 알란 왕 상기반, 부르군트, 프랑크, 아르모리카인 등을 모아 6월 20일 무렵 카탈라우눔 평원(상파뉴, 샬롱이나 트루아 부근이나 정확한 곳은 알 수 없다)에서 맞섰다. 테오도리쿠스는 전사했고 아틸라는 마차 진으로 물러났다. 요르다네스는 사상자를 16만 5천 명으로, 히다티우스는 30만 명으로 적으나 과장이다. 아이티우스는 서고트를 돌려보내고 추격하지 않았다. 452년 아틸라는 이탈리아로 들어와 아퀼레이아를 함락시켜 파괴했고(주민이 석호로 피해 베네치아가 시작되었다는 전승이 있다) 포강 유역을 약탈한 뒤 만토바 부근 민초강에서 교황 레오 1세의 사절단을 만나 물러났다. 전염병과 보급 문제, 동로마 마르키아누스가 도나우강 방면을 쳤다는 사정이 더 컸다고 본다. 453년 아틸라는 새 아내 일디코와의 혼인 잔치 밤에 출혈로 죽었다(프리스쿠스를 인용한 요르다네스). 지도는 451~452년의 원정을 그리지 않는다."
+  subjects: [hunnic-empire, western-roman-empire, visigothic-kingdom, burgundian-kingdom, byzantine-empire, germanic-tribes]
+  links:
+    - { from: hunnic-empire, to: western-roman-empire, note: "갈리아와 이탈리아 원정(451~452)" }
+    - { from: visigothic-kingdom, to: hunnic-empire, note: "카탈라우눔 전투(451)" }
+  tags: [war]
+  sources: ["Jordanes, The Gothic History of Jordanes (Charles C. Mierow 영역, 1915)", "Hydatius, Chronicle(『연대기』) (R. W. Burgess 영역, 1993)", "R. C. Blockley 엮음·옮김, The Fragmentary Classicising Historians of the Later Roman Empire, 2권 (1983)", "Christopher Kelly, Attila the Hun: Barbarian Terror and the Fall of the Roman Empire (2008)", "Peter Heather, The Fall of the Roman Empire (2005)"]
+  places: [{ name: 메스, at: [6.18, 49.12], year: 451 }, { name: 오를레앙, at: [1.9, 47.9], year: 451 }, { name: 카탈라우눔 평원(샬롱 부근으로 위치 불확실), at: [4.37, 48.96], year: 451 }, { name: 아퀼레이아, at: [13.37, 45.77], year: 452 }]
+
+- id: nedao-454
+  year: 454
+  endYear: 469
+  title:
+    ko: "네다오 전투(454)와 훈 제국의 해체(469)"
+  summary:
+    ko: "아틸라가 죽자(453) 아들들이 제국을 나눠 다투었다. 454년 판노니아의 네다오 강가에서 게피드 왕 아르다리크가 이끈 반란 부족들(루기·스키리·헤룰리 등)이 아틸라의 맏아들 엘락이 이끈 훈과 그 편의 부족들을 크게 꺾었고 엘락이 죽었다(요르다네스는 3만 명이 죽었다고 적으나 숫자는 의심스럽다). 훈 제국은 사실상 무너져 게피드가 옛 다키아(트란실바니아·티서강 평원)를 차지했고(마르키아누스가 해마다 금 100파운드를 보조) 시르미움은 동고트가 판노니아를 떠난 473년에 얻었다(지도는 454년부터 시르미움까지 게피드 왕국으로 근사해 그린다). 서로마가 넘겼던 판노니아는 루기·스키리 같은 게르만 부족과 동고트가 차지했다. 동로마 황제 마르키아누스는 동고트를 동맹자로 판노니아에 받아들였다. 아틸라의 아들 뎅기지크와 에르낙은 도나우강 하류 북쪽 초원으로 물러났다. 463년 사라구르·우루구르·오노구르 같은 튀르크계 유목민이 흑해 북쪽에 새로 나타났다고 프리스쿠스는 적는다(지도는 454년부터 이 초원을 훈·불가르계 유목민으로 그린다). 468년 뎅기지크가 동로마를 치다 469년 장군 아나가스테스에게 패해 죽었고 그의 머리가 콘스탄티노폴리스에서 전시되었다(『부활절 연대기』). 에르낙은 도나우강 하류 쪽에 남았다고 요르다네스는 쓴다. 훈의 이름은 이후 불가르계 유목민의 호칭으로 이어졌다."
+  subjects: [hunnic-empire, gepid-kingdom, hunnic-bulgar-tribes, byzantine-empire, germanic-tribes]
+  links:
+    - { from: gepid-kingdom, to: hunnic-empire, note: "네다오 전투(454)" }
+    - { from: byzantine-empire, to: hunnic-empire, note: "뎅기지크의 패배(469)" }
+  tags: [war]
+  sources: ["Jordanes, The Gothic History of Jordanes (Charles C. Mierow 영역, 1915)", "R. C. Blockley 엮음·옮김, The Fragmentary Classicising Historians of the Later Roman Empire, 2권 (1983)", "Michael Whitby·Mary Whitby 옮김, Chronicon Paschale 284–628 AD (1989)", "Otto J. Maenchen-Helfen, The World of the Huns (1973)", "Walter Pohl, The Avars: A Steppe Empire in Central Europe, 567–822 (2018)"]
+
+- id: last-western-emperors-455
+  year: 455
+  endYear: 475
+  title:
+    ko: "서로마의 마지막 황제들: 발렌티니아누스 3세의 죽음(455)에서 율리우스 네포스(475)까지"
+  summary:
+    ko: "아이티우스를 454년 손수 죽인 발렌티니아누스 3세는 455년 3월 아이티우스의 부하들에게 살해되었다. 이어 페트로니우스 막시무스(455)는 반달이 다가오자 달아나다 죽었고, 서고트의 지지를 받은 갈리아 귀족 아비투스(455~456)는 군사령관 리키메르에게 쫓겨났다. 리키메르는 스스로 황제가 될 수 없는 게르만계 군인이라 황제를 세우고 갈아치웠다: 마요리아누스(457~461)는 갈리아와 히스파니아에서 서고트와 반달에 맞서 회복에 힘썼으나 460년 반달이 매수한 배신자들이 카르타기넨시스 해안(일리키 부근)에서 함대를 불태운 뒤 461년 리키메르에게 처형되었다. 리비우스 세베루스(461~465) 뒤 황제 없이 지내다 동로마 황제 레오 1세가 보낸 안테미우스(467~472)가 즉위했고(그의 468년 반달 원정은 뒤의 사건), 472년 4월 리키메르가 올리브리우스를 세우고 로마를 포위해 7월 함락시킨 뒤 조카 군도바드(부르군트 왕족)가 안테미우스를 죽이게 했으나(7월 11일) 리키메르(8월)도 올리브리우스(11월)도 그해 죽었다. 군도바드가 세운 글리케리우스(473~474)를 레오 1세가 보낸 율리우스 네포스(474~475)가 몰아냈다. 475년 8월 네포스의 군사령관 오레스테스가 라벤나에서 반란을 일으키자 네포스는 달마티아로 달아났고, 오레스테스는 10월 어린 아들 로물루스 아우구스툴루스를 황제로 세웠다. 그사이 갈리아의 대부분은 서고트(462 나르본·471 아키텐 1주·475 아르베르니)와 부르군트(461 리옹)에, 북갈리아는 아이기디우스의 수아송 왕국에, 455년 이후 알레만인이 알자스에 퍼졌다. 지도는 이를 해마다 넘긴 해로 그린다. 476년의 끝은 뒤의 사건이다."
+  subjects: [western-roman-empire, byzantine-empire, vandal-kingdom, visigothic-kingdom, burgundian-kingdom, domain-of-soissons, germanic-tribes]
+  links:
+    - { from: byzantine-empire, to: western-roman-empire, note: "안테미우스(467)와 네포스(474)의 파견" }
+  tags: [politics]
+  sources: ["Penny MacGeorge, Late Roman Warlords (2002)", "Peter Heather, The Fall of the Roman Empire (2005)", "Bryan Ward-Perkins, The Fall of Rome and the End of Civilization (2005)", "Sidonius Apollinaris, Poems and Letters (W. B. Anderson 영역, Loeb, 1936~1965)", "R. C. Blockley 엮음·옮김, The Fragmentary Classicising Historians of the Later Roman Empire, 2권 (1983)"]
+  places: [{ name: 포르투스 일리키타누스(산타폴라 부근), at: [-0.57, 38.19], year: 460 }, { name: 로마, at: [12.5, 41.9], year: 472 }]
+
+- id: euric-visigoths-456
+  year: 456
+  endYear: 475
+  title:
+    ko: "테오도리쿠스 2세와 에우리크의 서고트 왕국: 히스파니아와 갈리아의 확장(456~475)"
+  summary:
+    ko: "서고트 왕 테오도리쿠스 2세는 453년 형 토리스문드를 죽이고 왕이 되어 455년 서로마 황제 아비투스를 세우는 데 힘을 보탰고, 456년 10월 5일 오르비고강에서 수에비 왕 레키아르를 꺾어 히스파니아 서쪽을 휩쓸었다. 아비투스가 456년 폐위된 뒤 마요리아누스가 갈리아를 되찾으려 했으나 서고트는 458~459년 아를 부근에서 막혀 조약을 맺었다. 마요리아누스가 461년 죽자 서고트는 462년 나르본을 얻었다(아그리피누스의 양도, 히다티우스). 466년 동생 에우리크가 테오도리쿠스를 죽이고 왕이 되었다. 에우리크(466~484)는 469년 무렵 데올 부근에서 '브리튼인의 왕' 리오타무스(브리튼인 왕국 쪽 사람으로 보이나 출신은 확실하지 않다)의 군대를 격파하고 베리와 오베르뉴 쪽을 위협했으며 471년 아를에서 로마군을 눌렀다. 시도니우스가 주교로 있던 클레르몽은 에크디키우스가 475년까지 버텼으나 율리우스 네포스가 아르베르니를 서고트에 넘겼다. 같은 때 에우리크의 장군들이 472~473년 팜플로나·사라고사를 차지하고 카르타기넨시스를 얻어 히스파니아 대부분을 장악했다. 에우리크 때 나온 법전(475년 무렵, 476년설도 있다)은 서고트 법의 첫 성문법이다. 아를과 마르세유는 476년에 얻는다(뒤의 사건). 지도는 457년 루시타니아·바이티카, 462년 나르본·노벰포풀라니아 남부, 471년 아키텐 1주·님·투르, 473년 타라코넨시스 내륙과 카르타기넨시스, 475년 아르베르니와 타라코 해안을 서고트 땅으로 그리며 468년 포르투갈 중부는 수에비 땅으로 돌린다."
+  subjects: [visigothic-kingdom, suebi-kingdom, western-roman-empire, brittonic-kingdoms]
+  links:
+    - { from: visigothic-kingdom, to: western-roman-empire, note: "나르본(462)과 아르베르니(475)의 차지" }
+    - { from: visigothic-kingdom, to: brittonic-kingdoms, note: "데올 전투(469)" }
+  tags: [politics, war]
+  sources: ["Hydatius, Chronicle(『연대기』) (R. W. Burgess 영역, 1993)", "Sidonius Apollinaris, Poems and Letters (W. B. Anderson 영역, Loeb, 1936~1965)", "Jordanes, The Gothic History of Jordanes (Charles C. Mierow 영역, 1915)", "Roger Collins, Early Medieval Spain: Unity in Diversity, 400–1000 (1983)", "Herwig Wolfram, History of the Goths (Thomas J. Dunlap 영역, 1988)"]
+  places: [{ name: 아를, at: [4.63, 43.68], year: 471 }, { name: 데올(부르-드-데올), at: [1.7, 46.85], year: 469 }]
+
+- id: leo-vandal-expedition-457
+  year: 457
+  endYear: 474
+  title:
+    ko: "동로마의 레오 1세와 468년 반달 원정의 실패"
+  summary:
+    ko: "트라키아 출신 장교 레오 1세는 457년 마르키아누스가 죽자 알란계 실력자 아스파르의 손으로 황제가 되었다. 레오는 아스파르의 고트·알란 군대에 맞서려고 이사우리아인을 끌어들여 466년 이사우리아 장군 타라시코디사(제논)를 사위로 삼았고, 471년 아스파르와 그 아들 아르다부리우스를 궁정에서 죽였다. 서쪽에서는 467년 안테미우스를 서로마 황제로 보냈다. 468년 레오는 처남 바실리스쿠스에게 대함대를 맡겨 반달을 치게 했다. 배는 케드레노스가 1,113척이라 적고 군사 수는 사료마다 크게 다르다(히더는 군사 약 3만 명, 선원과 마르켈리누스·헤라클리우스의 군까지 합쳐 5만 명 안팎으로 본다). 비용은 프리스쿠스와 프로코피우스가 금 13만 파운드, 요안니스 리도스가 금 6만 4천 파운드와 은 70만 파운드, 칸디두스가 금 6만 5천 파운드와 은 70만 파운드라 한다. 바실리스쿠스는 카르타고 가까운 메르쿠리움 곶(케이프 본)에서 가이세리크의 닷새 휴전 요청을 받아들였다가 바람이 부는 밤 반달의 불배에 함대 상당수를 잃었다. 같은 468년 달마티아의 군사령관 마르켈리누스가 시칠리아에서 살해되었고 시칠리아는 반달에 넘어갔다(지도는 468년). 이 실패로 동서 로마가 힘을 합쳐 아프리카를 되찾을 길이 막혔다. 469년 동로마가 뎅기지크의 훈·불가르계 유목민을 꺾은 일은 앞의 사건에 있다. 474년 1월 레오가 죽자 일곱 살 손자 레오 2세가 아버지 제논과 함께 다스리다 그해 11월 죽었고 제논이 단독 황제가 되었다(474~491). 475년 1월 제논은 장군 바실리스쿠스에게 쫓겨났다가 476년 돌아와 다시 즉위한다."
+  subjects: [byzantine-empire, vandal-kingdom, western-roman-empire, hunnic-bulgar-tribes]
+  links:
+    - { from: byzantine-empire, to: vandal-kingdom, note: "468년 원정의 실패" }
+  tags: [war, politics]
+  sources: ["Procopius, History of the Wars (H. B. Dewing 영역, Loeb, 1914~1928)", "Andy Merrills·Richard Miles, The Vandals (2010)", "Averil Cameron·Bryan Ward-Perkins·Michael Whitby 엮음, The Cambridge Ancient History XIV: Late Antiquity: Empire and Successors, A.D. 425–600 (2000)", "게오르크 오스트로고르스키, 『비잔티움 제국사』(한정숙·김경연 옮김, 까치글방)", "R. C. Blockley 엮음·옮김, The Fragmentary Classicising Historians of the Later Roman Empire, 2권 (1983)"]
+  places: [{ name: 메르쿠리움 곶(케이프 본), at: [11.04, 37.08], year: 468 }]
