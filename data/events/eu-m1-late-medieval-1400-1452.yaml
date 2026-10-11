@@ -14,6 +14,7 @@
 # 날짜: 1582년 10월 그레고리력 개정 전의 날짜는 당시 쓰던 율리우스력이라 양력(그레고리력)과 9~10일 차이가 나므로 달까지만 적는다.
 # places의 year: 기간이 있는 사건은 장소마다 싸운 해를 적어 그 해에만 전투 표시가 보이게 했다. 전투·포위가 없는 사건에는 places를 달지 않았다.
 # 서술은 새로 작성. 출처는 조약·법령 원문과 표준 개설서(번역본이 있으면 번역본). 병력·사상자·인구는 연구자마다 크게 달라 범위와 '추산'으로 적었다. 운영자 검수 필요.
+# 2026-10-11 (작업 H1a): 1400~1452년 지도에서 생기거나 끝나거나 크게 바뀐 항목 가운데 사건에 이어지지 않던 것을 더 이었다(새 사건 neumark-1402·mehmed1-1416).
 
 # ── 1402 ~ 1413년: 앙카라 전투와 공백기, 세르비아의 전제공국, 스몰렌스크 ──────
 
@@ -69,6 +70,18 @@
   tags: [war, politics]
   sources: ["Zigmantas Kiaupa·Jūratė Kiaupienė·Albinas Kunevičius, The History of Lithuania before 1795 (2000)", "Janet Martin, Medieval Russia 980–1584 (2판, 2007)"]
   places: [{ name: "스몰렌스크", at: [32.04, 54.78], year: 1404 }]
+
+- id: neumark-1402
+  year: 1402
+  title:
+    ko: 튜턴 기사단의 노이마르크 저당 인수
+  summary:
+    ko: "노이마르크는 오데르강 동쪽에 있던 브란덴부르크 변경백령의 한 부분으로, 변경백령은 룩셈부르크 가문 안에서 저당과 상속으로 주인이 자주 바뀌던 땅이었다. 변경백 지위를 가졌던 헝가리 왕 지기스문트는 돈이 필요해 1402년 9월 이 땅을 튜턴 기사단에 저당으로 넘겼다(저당금은 1409년과 1410년의 증서로 더 늘어났다). 기사단장 콘라트 폰 융깅겐(재위 1393~1407)에게 이 땅은 프로이센의 기사단 영지와 신성 로마 제국 안쪽의 포메른·브란덴부르크 쪽을 잇는 통로였고, 폴란드 왕국 서쪽(대폴란드) 국경에 닿는 발판이기도 했다. 지도는 이때부터 노이마르크를 튜턴 기사단국의 땅으로 그린다. 노이마르크는 13년 전쟁(「13년 전쟁과 제2차 토룬 조약」, 뒤의 사건)으로 돈이 급해진 기사단이 1454년 2월 22일 쾰른(Cölln, 슈프레강가 베를린의 쌍둥이 도시이며 라인강의 쾰른이 아니다) 조약으로 브란덴부르크 선제후 프리드리히 2세에게 다시 저당 잡히고 1455년 메베 조약으로 팔렸다. 그러니 소유권은 1455년까지 기사단에 있었고(저당 뒤 실제 지배는 브란덴부르크가 넘겨받았다), 지도는 1454년까지 기사단국 땅으로 그린다."
+  subjects: [teutonic-order, holy-roman-empire, hungary-kingdom, poland-kingdom]
+  links:
+    - { from: teutonic-order, to: holy-roman-empire, note: "노이마르크 저당 인수 (1402)" }
+  tags: [politics]
+  sources: ["William Urban, The Teutonic Knights: A Military History (2003)", "Norman Davies, God's Playground: A History of Poland, Vol. 1 (개정판, 2005)"]
 
 - id: venice-terraferma-1404
   year: 1404
@@ -180,6 +193,22 @@
   tags: [war, economy, society]
   sources: ["Peter Russell, Prince Henry 'the Navigator': A Life (2000)", "Bailey W. Diffie·George D. Winius, Foundations of the Portuguese Empire, 1415–1580 (1977)"]
   places: [{ name: "세우타", at: [-5.31, 35.89], year: 1415 }, { name: "탕헤르", at: [-5.8, 35.77], year: 1437 }]
+
+- id: mehmed1-1416
+  year: 1416
+  endYear: 1420
+  title:
+    ko: 메흐메트 1세의 재건과 도브루자·발로나
+  summary:
+    ko: "내전(오스만 공백기)을 이기고 1413년 술탄이 된 메흐메트 1세(재위 1413~1421)는 나라를 다시 세우는 동안 서쪽 변경에서 베네치아와 부딪쳤다. 1416년 5월 갈리폴리 앞바다에서 오스만 함대가 베네치아 함대에 크게 졌다. 같은 해 무사 밑에서 군법관을 지낸 세이크 베드레딘이 도브루자 쪽에서 세금과 신분 차별에 맞서 이슬람교도와 그리스도교도를 함께 모아 봉기했으나 진압되어 1420년 세레스에서 처형되었다. 도브루자(도나우강 어귀 남쪽)는 왈라키아 공 미르체아 1세가 차지하고 있었는데, 오스만군이 1417년 봄 이곳과 도나우강변의 지우르지우 요새를 쳐서 미르체아가 공물을 약속하게 했다고 전한다(도브루자가 넘어간 해를 1419~1420년으로 보는 설도 있어 자료마다 갈린다. 지도는 1417년부터 오스만 땅으로 그린다). 미르체아가 1418년 1월 죽은 뒤 아들 미하일 1세(재위 1418~1420)가 공물을 끊자 오스만군이 1419년 세베린 쪽으로, 1420년 다시 쳐들어와 미하일이 죽었고, 왈라키아는 오스만에 공물을 바치는 공국으로 남았다. 알바니아·제타의 영주국들 가운데 발로나(블로러)와 카닌 성은 1417년 7월 오스만군에게 넘어갔다. 제타의 발샤 가문 출신으로 남편 므르카 자르코비치가 죽은 뒤(1414) 이곳을 다스리던 루지나 발시치는 땅을 베네치아에 팔려다 뜻을 이루지 못하고 코르푸로 달아났다. 메흐메트 1세가 1421년 5월 죽자 아들 무라드 2세가 뒤를 이어 아나톨리아의 베이국들을 다시 합쳤다(「무라드 2세의 즉위와 아나톨리아 재병합」, 뒤의 사건)."
+  subjects: [ottoman, wallachia, albanian-principalities, venice]
+  links:
+    - { from: venice, to: ottoman, note: "갈리폴리 해전 (1416)" }
+    - { from: ottoman, to: wallachia, note: "도브루자·지우르지우 (1417~1420)" }
+    - { from: ottoman, to: albanian-principalities, note: "발로나·카닌 (1417)" }
+  tags: [war]
+  sources: ["Dimitris J. Kastritsis, The Sons of Bayezid: Empire Building and Representation in the Ottoman Civil War of 1402–13 (2007, 1413년 즉위까지)", "Halil İnalcık, The Ottoman Empire: The Classical Age 1300–1600 (1973)", "캐럴라인 핑클, 『오스만제국사: 창건부터 튀르키예공화국 수립까지』(이재황 옮김, 책과함께, 2025)"]
+  places: [{ name: "갈리폴리", at: [26.67, 40.41], year: 1416 }, { name: "발로나", at: [19.49, 40.47], year: 1417 }]
 
 - id: hussite-wars-1419
   year: 1419
