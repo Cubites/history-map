@@ -160,6 +160,20 @@ export default function WorldMap({ data }: { data: StaticData }) {
   const snapshot = warView ? snapshotFor(warView, year, frontDate, hoveredEvent) : undefined;
   // 점령 지역 도형은 전쟁 보기를 열 때 따로 받는다 (받는 동안은 평소 영토를 그린다)
   const warShapes = useWarShapes(war?.id ?? null);
+  /**
+   * 전쟁 보기에서 나라 경계·이름표를 보일 항목 (2026-10-13): 지역 항목이나 그해 점령된 땅이 아닌 나라, 그리고 전역이 시작되기 전부터
+   * 있던 항목(예: 1910년부터의 일제 강점기 한국). 전쟁 중에 생긴 점령 지역 항목(임진왜란 점령지·중일 전쟁 점령지·총독부 등)은
+   * 연 단위 범위가 날짜별 점령선과 어긋나므로 뺀다
+   */
+  const isWarCountry = useCallback(
+    (entityId: string) => {
+      const e = data.entities.get(entityId);
+      if (!e) return false;
+      if (theater && e.from < theater.from) return true;
+      return e.level !== 'region' && !occupierAt(data.relations, entityId, year);
+    },
+    [data.entities, data.relations, year, theater],
+  );
   // 평소 지도에는 그 해에 진행 중인 전역마다 전쟁 표시만 둔다. 권역 필터에 맞는 전쟁만 (DESIGN.md §6.4.2)
   const warMarkers = useMemo(
     () => (warId ? [] : theatersInYear(data.wars, year).filter(({ war: w, theater: t }) => inRegionFilter(regionFilter, t.region ?? w.region))),
@@ -217,17 +231,22 @@ export default function WorldMap({ data }: { data: StaticData }) {
       lines: snapshot.lines.map((line) => ({ feature: { type: 'Feature', properties: null, geometry: { type: 'LineString', coordinates: line } }, bbox: lineBox(line) }) as Shape),
     };
   }, [war, theater, snapshot, warShapes, data.entities]);
-  // 전쟁 중에는 영토 대신 칠하는 나라의 이름표를 그 나라 진영의 점령 지역 안쪽에 둔다
+  // 전쟁 중 영토 대신 진영 색으로 칠하는 나라(replaces)도 이름표는 그 나라 자기 영토에 둔다 (2026-10-13, 같은 진영 나라들이 한 나라처럼
+  // 보이지 않게). 자기 영토의 이름표 자리가 전역 범위 밖이면(예: 소련은 시베리아) 그 나라 진영의 점령 지역 안쪽에 둔다.
+  // 점령 지역용 항목(지역 항목·그해 점령된 땅, 예: 임진왜란 점령지)은 연 단위 범위가 날짜별 점령선과 어긋나므로 숨긴다
   const labelTerritories = useMemo(() => {
-    if (!snapshot) return active;
-    const replaces = new Set(theater?.replaces ?? []);
+    if (!snapshot || !theater) return active;
+    const replaces = new Set(theater.replaces);
+    const [[w, s], [e, n]] = theater.bounds;
+    const inBounds = ([x, y]: [number, number]) => w <= x && x <= e && s <= y && y <= n;
     return active.flatMap((t) => {
+      if (!replaces.has(t.entityId)) return [t];
+      if (!isWarCountry(t.entityId)) return [];
+      if (inBounds(t.anchor)) return [t];
       const anchor = snapshot.labels?.find((l) => l.entity === t.entityId)?.anchor;
-      if (anchor) return [{ ...t, anchor }];
-      // 영토를 그리지 않는 나라(진영의 대표가 아닌 replaces 나라, 예: 임진왜란 점령지)는 이름표도 숨긴다
-      return replaces.has(t.entityId) ? [] : [t];
+      return anchor ? [{ ...t, anchor }] : [];
     });
-  }, [active, snapshot, theater]);
+  }, [active, snapshot, theater, isWarCountry]);
 
   // ── 도형 불러오기 ─────────────────────────────────────────
   const geo = useRef(new Map<string, Map<string, TerritoryFeature>>());
@@ -335,17 +354,23 @@ export default function WorldMap({ data }: { data: StaticData }) {
       front = {
         areas: frontShapes.areas.map((a) => ({ shapes: [a.shape], color: a.color, highlight: width(a.entity) })),
         lines: frontShapes.lines,
+        borders: [],
       };
     }
     for (const entry of active) {
       if (!isVisible(entry.bbox, bounds, v)) continue;
-      // 전쟁 보기에서는 replaces 나라의 영토 대신 점령 지역을 칠한다
-      if (front && frontShapes?.replaces.has(entry.entityId)) continue;
       const feature = featureFor(entry, lod);
       if (!feature) continue;
       const tiled = useTiles ? geoTiled.current.get(`${lod}/${entry.entityId}`)?.get(entry.key) : undefined;
       const plain = [{ feature, bbox: entry.bbox }];
       const shapes = tiled ? { fill: visiblePieces(tiled.tiles), stroke: visiblePieces(tiled.lines) } : { fill: plain, stroke: plain };
+      if (front) {
+        // 전쟁 보기: 진영 색 위에 그해 나라 경계를 다시 긋는다. 점령 지역용 항목(지역 항목·그해 점령된 땅)의 연 단위 경계는
+        // 날짜별 점령선과 어긋나므로 긋지 않는다 (2026-10-13)
+        if (isWarCountry(entry.entityId)) front.borders.push({ stroke: shapes.stroke, certainty: entry.certainty });
+        // replaces 나라는 영토 대신 점령 지역을 칠한다
+        if (frontShapes?.replaces.has(entry.entityId)) continue;
+      }
       const color = data.entities.get(entry.entityId)?.color ?? '#999999';
       const occupier = occupierAt(data.relations, entry.entityId, year);
       const hatch = occupier && data.entities.get(occupier.object)?.color;
@@ -384,7 +409,7 @@ export default function WorldMap({ data }: { data: StaticData }) {
     drawMap(ctx, projection, createProjection(size, s0, v, true), v, size, land, territories, paletteRef.current, front);
     // 이름표·화살표(SVG)도 방금 그린 지도와 같은 프레임에 맞춘다. 늦게 그리면 움직이는 동안 지도에서 밀려 보인다
     flushSync(() => setView(v));
-  }, [size, s0, year, active, frontShapes, data.entities, data.relations, ensureLoaded, ensureTiled, featureFor, landFor]);
+  }, [size, s0, year, active, frontShapes, data.entities, data.relations, ensureLoaded, ensureTiled, featureFor, landFor, isWarCountry]);
 
   const requestDraw = useCallback(() => {
     cancelAnimationFrame(frame.current);

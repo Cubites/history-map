@@ -44,6 +44,8 @@ const FRONT_LINE_WIDTH = 3;
 export interface DrawFront {
   areas: { shapes: Shape[]; color: string; /** 선택·hover한 진영의 강조 테두리 두께(px) */ highlight?: number }[];
   lines: Shape[];
+  /** 진영 색 위에 다시 그을 그해 나라 경계 (같은 진영 나라들이 한 나라처럼 보이지 않게, 2026-10-13) */
+  borders: { stroke: Shape[]; certainty?: string }[];
 }
 
 const HATCH_SPACING = 7;
@@ -380,6 +382,21 @@ export function drawMap(
       ctx.fillStyle = area.color;
       ctx.fill();
       ctx.stroke();
+    }
+    // 그해 나라 경계를 진영 색 위에 다시 긋는다 (진영 지역 안에서만, 평소 지도와 같은 선)
+    if (front.borders.length && front.areas.length) {
+      ctx.save();
+      ctx.beginPath();
+      trace(front.areas.flatMap((a) => a.shapes));
+      ctx.clip();
+      for (const b of front.borders) {
+        ctx.beginPath();
+        trace(b.stroke);
+        ctx.setLineDash(b.certainty === 'confirmed' ? [] : [4, 3]);
+        ctx.stroke();
+      }
+      ctx.setLineDash([]);
+      ctx.restore();
     }
     // 전선은 점령 지역 안에서만 보이게 자른다 (원래 선은 바다까지 그어져 있다)
     if (front.lines.length) {
