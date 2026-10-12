@@ -184,6 +184,7 @@ export function crossesSeam(bbox: BBox, view: View): boolean {
 /**
  * 도형들을 합친 바깥선만 그린다: 화면 밖 캔버스에 두 배 두께로 테두리를 그린 뒤 도형 안쪽을 지우면
  * 바깥쪽 절반만 남는다. 도형끼리 맞닿은 안쪽 경계는 양쪽에서 지워져 사라진다.
+ * keepInside가 있으면 그 도형들 안에 든 부분만 남긴다 (바깥쪽 절반은 이웃 도형 위에 놓이므로, 맞닿은 경계만 남고 해안선은 지워진다)
  */
 function drawUnionOutline(
   ctx: CanvasRenderingContext2D,
@@ -193,6 +194,7 @@ function drawUnionOutline(
   shapes: DrawShapes,
   width: number,
   color: string,
+  keepInside?: Shape[],
 ) {
   const { width: w, height: h } = ctx.canvas;
   outlineCanvas ??= document.createElement('canvas');
@@ -218,6 +220,11 @@ function drawUnionOutline(
   trace(shapes.fill);
   off.globalCompositeOperation = 'destination-out';
   off.fill();
+  if (keepInside) {
+    trace(keepInside);
+    off.globalCompositeOperation = 'destination-in';
+    off.fill();
+  }
   off.globalCompositeOperation = 'source-over';
   ctx.save();
   ctx.setTransform(1, 0, 0, 1, 0, 0);
@@ -341,8 +348,14 @@ export function drawMap(
     groups.set(width, { fill: [...g.fill, ...shapes.fill], stroke: [...g.stroke, ...shapes.stroke] });
   };
   for (const t of territories) addGroup(t.highlight, t.outline ?? t);
-  for (const area of front?.areas ?? []) addGroup(area.highlight, { fill: area.shapes, stroke: area.shapes });
   for (const [width, shapes] of [...groups].sort((a, b) => a[0] - b[0])) drawUnionOutline(ctx, projection, preciseProjection, view, shapes, width, palette.highlight);
+  // 전쟁 보기의 진영 점령 지역은 다른 진영과 맞닿은 경계에만 강조선을 긋는다. 해안까지 두르면 진군로·이름표의
+  // 흰 테두리에 가려 군데군데 끊긴 굵은 선처럼 보였다 (2026-10-12 운영자 요청)
+  for (const area of front?.areas ?? []) {
+    if (!area.highlight) continue;
+    const others = front!.areas.filter((a) => a !== area).flatMap((a) => a.shapes);
+    drawUnionOutline(ctx, projection, preciseProjection, view, { fill: area.shapes, stroke: area.shapes }, area.highlight, palette.highlight, others);
+  }
   ctx.restore();
 
   ctx.beginPath();
