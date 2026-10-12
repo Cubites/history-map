@@ -211,6 +211,8 @@ export const TheaterSchema = z.object({
   name: z.string().min(1),
   /** 전쟁 보기에서 영토 대신 점령 지역으로 칠할 나라들 (split은 이 나라들의 영토를 나눈다) */
   replaces: z.array(z.string()).default([]),
+  /** 권역(regions.ts의 REGION_FILTER_OF 키, 예: japan). 없으면 전쟁 파일의 권역. 한 전쟁의 전역이 여러 권역에 걸칠 때 쓴다 (예: 제2차 세계 대전의 아시아·태평양) */
+  region: z.string().optional(),
   /** 평소 지도에 전쟁 표시를 둘 곳. 없으면 첫 스냅샷 범위의 가운데 */
   marker: LonLatSchema.optional(),
   /** 전쟁 보기를 열 때 확대할 범위 [[서, 남], [동, 북]]. 없으면 점령 지역 범위에 여백을 둔다 */
@@ -262,6 +264,8 @@ export interface TheaterOut {
   from: Year;
   to: Year;
   replaces: string[];
+  /** 전역의 권역. 없으면 전쟁의 권역 */
+  region?: string;
   marker: LonLat;
   bounds: [[number, number], [number, number]];
   routes: Route[];

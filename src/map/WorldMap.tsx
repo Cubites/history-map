@@ -159,7 +159,7 @@ export default function WorldMap({ data }: { data: StaticData }) {
   const snapshot = warView ? snapshotFor(warView, year, frontDate, hoveredEvent) : undefined;
   // 평소 지도에는 그 해에 진행 중인 전역마다 전쟁 표시만 둔다. 권역 필터에 맞는 전쟁만 (DESIGN.md §6.4.2)
   const warMarkers = useMemo(
-    () => (warId ? [] : theatersInYear(data.wars, year).filter(({ war: w }) => inRegionFilter(regionFilter, w.region))),
+    () => (warId ? [] : theatersInYear(data.wars, year).filter(({ war: w, theater: t }) => inRegionFilter(regionFilter, t.region ?? w.region))),
     [data.wars, warId, year, regionFilter],
   );
   // 전쟁 보기가 없는 전쟁·전투 사건은 그 해에 싸운 곳만 작게 표시한다 (DESIGN.md §4.5).

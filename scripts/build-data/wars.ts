@@ -13,7 +13,7 @@ import {
   type War,
   type WarIndexEntry,
 } from '../../src/schema/index.ts';
-import { STORY_FILE_PREFIXES, regionOfWarFile } from '../../src/schema/regions.ts';
+import { REGION_FILTER_OF, STORY_FILE_PREFIXES, regionOfWarFile } from '../../src/schema/regions.ts';
 import {
   anchorPoint,
   bbox,
@@ -80,6 +80,11 @@ export async function readWars(files: string[], errors: string[], rel: (f: strin
     if (region === undefined) {
       errors.push(`${rel(file)}: 파일 이름 앞머리 '${path.basename(file).split('-')[0]}-'를 모름. src/schema/regions.ts의 STORY_FILE_PREFIXES(지금 ${STORY_FILE_PREFIXES.map(([p]) => p).join(', ')})에 한 줄 더할 것`);
       continue;
+    }
+    for (const t of result.data.theaters) {
+      if (t.region !== undefined && !Object.hasOwn(REGION_FILTER_OF, t.region)) {
+        errors.push(`${rel(file)} 전역 ${t.id}: region '${t.region}'을 모름. src/schema/regions.ts의 REGION_FILTER_OF 키(${Object.keys(REGION_FILTER_OF).join(', ')}) 가운데 하나`);
+      }
     }
     wars.push({ ...result.data, region });
   }
@@ -269,6 +274,7 @@ export async function buildWars(wars: RegionalWar[], geo: WarGeoSources, errors:
         from,
         to,
         replaces: t.replaces,
+        ...(t.region ? { region: t.region } : {}),
         marker: t.marker ?? [(first[0] + first[2]) / 2, (first[1] + first[3]) / 2],
         bounds: t.bounds ?? [[all[0] - 1.5, all[1] - 1], [all[2] + 1.5, all[3] + 1]],
         routes: t.routes,
