@@ -171,10 +171,10 @@ export interface WarGeoSources {
   dir: string;
 }
 
-/** 전역 범위에 여백(경도 폭의 1/4, 위도 폭의 1/4)을 둔 상자. 경도는 ±180, 위도는 ±85를 넘지 않는다 */
-function boundsBox([[w, s], [e, n]]: [[number, number], [number, number]]): MultiCoords {
-  const dx = (e - w) / 4;
-  const dy = (n - s) / 4;
+/** 전역 범위에 여백(기본 경도·위도 폭의 1/4)을 둔 상자. 경도는 ±180, 위도는 ±85를 넘지 않는다 */
+function boundsBox([[w, s], [e, n]]: [[number, number], [number, number]], margin = 0.25): MultiCoords {
+  const dx = (e - w) * margin;
+  const dy = (n - s) * margin;
   const W = Math.max(-180, w - dx), E = Math.min(180, e + dx), S = Math.max(-85, s - dy), N = Math.min(85, n + dy);
   return [[[[W, S], [E, S], [E, N], [W, N], [W, S]]]];
 }
@@ -261,7 +261,10 @@ export async function buildWars(wars: RegionalWar[], geo: WarGeoSources, errors:
         // 영토 대신 칠하는 나라의 이름표는 그 나라 진영의 점령 지역 안쪽에 둔다
         const labels = w.factions.flatMap((f) => {
           const coords = byFaction.get(f.id);
-          return t.replaces.includes(f.entity) && coords?.length ? [{ entity: f.entity, anchor: anchorPoint(coords) }] : [];
+          if (!t.replaces.includes(f.entity) || !coords?.length) return [];
+          // 전역 범위를 정했으면 이름표는 여백 없는 범위 안쪽 땅에 둔다 (덩어리를 여백까지 잘라도 무게중심이 화면 밖일 수 있음)
+          const inView = t.bounds ? intersect(coords, boundsBox(t.bounds, 0)) : [];
+          return [{ entity: f.entity, anchor: anchorPoint(inView.length ? inView : coords) }];
         });
         snapshots.push({
           date: s.date,
