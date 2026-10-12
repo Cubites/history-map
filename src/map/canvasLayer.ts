@@ -36,6 +36,9 @@ export interface DrawTerritory extends DrawShapes {
 
 const VASSAL_BORDER_WIDTH = 3;
 const FRONT_LINE_WIDTH = 3;
+/** 전쟁 보기의 선택·hover 강조: 보통 굵기 점선 */
+const FRONT_HIGHLIGHT_WIDTH = 1;
+const FRONT_HIGHLIGHT_DASH = [4, 3];
 
 /**
  * 전쟁 보기 (DESIGN.md §4.5). 진영별 점령 지역을 칠하고 전선을 굵게 긋는다.
@@ -334,15 +337,27 @@ export function drawMap(
   // (귀속 논쟁 지역을 포함한 선택 나라, 여러 조각이나 격자 조각으로 된 영토도 안쪽 경계선 없이)
   // 테두리는 테두리용 선(stroke)으로, 안쪽 지우기는 칠하기용 도형(fill)으로 한다. 격자 조각(fill)의 테두리를 그리면
   // 조각을 잇는 폭 0인 "다리"(칸 경계를 따라 바다 위를 지나기도 함)가 지워지지 않고 영토 밖의 선으로 남는다
-  const groups = new Map<number, DrawShapes>();
-  const addGroup = (width: number | undefined, shapes: DrawShapes) => {
-    if (!width) return;
-    const g = groups.get(width) ?? { fill: [], stroke: [] };
-    groups.set(width, { fill: [...g.fill, ...shapes.fill], stroke: [...g.stroke, ...shapes.stroke] });
-  };
-  for (const t of territories) addGroup(t.highlight, t.outline ?? t);
-  for (const area of front?.areas ?? []) addGroup(area.highlight, { fill: area.shapes, stroke: area.shapes });
-  for (const [width, shapes] of [...groups].sort((a, b) => a[0] - b[0])) drawUnionOutline(ctx, projection, preciseProjection, view, shapes, width, palette.highlight);
+  // 전쟁 보기에서는 굵은 바깥선 대신 보통 굵기 점선으로 그린다. 굵은 선은 진군로·이름표의 흰 테두리에 가려
+  // 점령 지역 둘레가 군데군데 끊긴 굵은 선처럼 보였다 (2026-10-12)
+  if (front) {
+    ctx.beginPath();
+    for (const t of territories) if (t.highlight) trace((t.outline ?? t).stroke);
+    for (const area of front.areas) if (area.highlight) trace(area.shapes);
+    ctx.lineWidth = FRONT_HIGHLIGHT_WIDTH;
+    ctx.setLineDash(FRONT_HIGHLIGHT_DASH);
+    ctx.strokeStyle = palette.highlight;
+    ctx.stroke();
+    ctx.setLineDash([]);
+  } else {
+    const groups = new Map<number, DrawShapes>();
+    const addGroup = (width: number | undefined, shapes: DrawShapes) => {
+      if (!width) return;
+      const g = groups.get(width) ?? { fill: [], stroke: [] };
+      groups.set(width, { fill: [...g.fill, ...shapes.fill], stroke: [...g.stroke, ...shapes.stroke] });
+    };
+    for (const t of territories) addGroup(t.highlight, t.outline ?? t);
+    for (const [width, shapes] of [...groups].sort((a, b) => a[0] - b[0])) drawUnionOutline(ctx, projection, preciseProjection, view, shapes, width, palette.highlight);
+  }
   ctx.restore();
 
   ctx.beginPath();
