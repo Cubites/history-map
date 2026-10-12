@@ -166,6 +166,21 @@ export interface WarGeoSources {
   dir: string;
 }
 
+/** 링의 평면 넓이(경위도 제곱도) */
+function ringArea(ring: [number, number][]): number {
+  let a = 0;
+  for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) a += (ring[j][0] + ring[i][0]) * (ring[j][1] - ring[i][1]);
+  return Math.abs(a / 2);
+}
+
+/**
+ * 반올림으로 넓이가 거의 0이 된 조각(약 0.1 km² 미만)을 뺀다. 점령 지역을 빼고 남은 해안의 가는 띠가 선처럼 남아,
+ * 칠해지지는 않지만 그 진영을 고를 때 강조선이 그 선을 따라 그려졌다
+ */
+function dropSlivers(coords: MultiCoords): MultiCoords {
+  return coords.filter((polygon) => ringArea(polygon[0] as [number, number][]) > 1e-5);
+}
+
 async function readAreaGeojson(file: string, errors: string[]): Promise<MultiCoords> {
   try {
     const fc = JSON.parse(await readFile(file, 'utf8')) as FeatureCollection;
@@ -203,9 +218,16 @@ export async function buildWars(wars: RegionalWar[], geo: WarGeoSources, errors:
           add(s.split.south, difference(region, north));
         }
         for (const a of s.areas) {
-          const coords = a.entities
-            ? union(...a.entities.map((id) => geo.territory(id, year)).filter((c): c is MultiCoords => !!c && c.length > 0))
-            : clipToLand(await readAreaGeojson(path.join(geo.dir, a.geojson!), errors), geo.land);
+          let coords: MultiCoords;
+          if (a.entities) {
+            coords = union(...a.entities.map((id) => geo.territory(id, year)).filter((c): c is MultiCoords => !!c && c.length > 0));
+          } else {
+            // 손으로 그린 점령 지역은 먼저 칠한 지역 안에서는 그 지역의 해안선으로 자른다. 육지 도형으로만 자르면
+            // 해안선이 영토 도형과 조금 어긋나 해안을 따라 앞 지역의 가는 띠가 남고, 그 진영을 고를 때 강조선이 그 띠를 둘렀다
+            const raw = await readAreaGeojson(path.join(geo.dir, a.geojson!), errors);
+            const under = union(...layers.map((l) => l.coords));
+            coords = under.length ? union(intersect(raw, under), difference(clipToLand(raw, geo.land), under)) : clipToLand(raw, geo.land);
+          }
           if (!coords.length) errors.push(`전쟁 ${w.id} 전역 ${t.id} ${s.date}: 점령 지역이 비어 있음 (${a.entities?.join(', ') ?? a.geojson})`);
           add(a.faction, coords);
         }
@@ -214,7 +236,7 @@ export async function buildWars(wars: RegionalWar[], geo: WarGeoSources, errors:
         for (const l of layers) if (l.coords.length) byFaction.set(l.faction, byFaction.has(l.faction) ? union(byFaction.get(l.faction)!, l.coords) : l.coords);
         const areas = [...byFaction].map(([faction, coords]) => ({
           faction,
-          coords: rewindForD3(roundCoords(coords, 3)) as [number, number][][][],
+          coords: rewindForD3(dropSlivers(roundCoords(coords, 3))) as [number, number][][][],
           bbox: bbox(coords),
         }));
         // 영토 대신 칠하는 나라의 이름표는 그 나라 진영의 점령 지역 안쪽에 둔다
