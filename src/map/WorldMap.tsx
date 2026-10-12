@@ -19,7 +19,7 @@ import {
   type TerritoryFeature,
 } from '../data/staticData.ts';
 import { focusTarget, placeActive } from '../lib/events.ts';
-import { activeWarView, factionColor, snapshotFor, theatersInYear } from '../lib/wars.ts';
+import { activeWarView, factionColor, frontBattleSpots, nearBy, snapshotFor, theatersInYear } from '../lib/wars.ts';
 import { formatRange } from '../lib/year.ts';
 import { REGION_FILTER_INFO, inRegionFilter } from '../schema/regions.ts';
 import type { Lod, TerritoryIndexEntry } from '../schema/index.ts';
@@ -164,7 +164,9 @@ export default function WorldMap({ data }: { data: StaticData }) {
   );
   // 전쟁 보기가 없는 전쟁·전투 사건은 그 해에 싸운 곳만 작게 표시한다 (DESIGN.md §4.5).
   // 장소에 year(싸운 해, 기간이면 [from, to])가 있으면 그 해에만, 없으면 사건 기간 내내 보인다 (placeActive, 2026-10-06).
-  // 권역 필터에 맞는 사건만. 다만 검색·전투 표시로 고른 사건(focusedEventId)은 필터와 상관없이 보여 준다
+  // 권역 필터에 맞는 사건만. 다만 검색·전투 표시로 고른 사건(focusedEventId)은 필터와 상관없이 보여 준다.
+  // 전쟁 보기에 이어진 사건(front)은 그 전역의 전투 목록에 없는 장소만 보여 준다 (2026-10-12: 세계 대전의 칭다오·유틀란트처럼
+  // 전쟁 보기 범위 밖이거나 전투로 넣지 않은 곳이 어디에도 보이지 않던 문제)
   const battlePins = useMemo<BattlePin[]>(
     () =>
       warId
@@ -172,13 +174,17 @@ export default function WorldMap({ data }: { data: StaticData }) {
         : data.events
             .filter(
               (e) =>
-                !e.front &&
                 e.year <= year &&
                 year <= (e.endYear ?? e.year) &&
                 (e.id === focusedEventId || inRegionFilter(regionFilter, e.region)),
             )
-            .flatMap((event) => (event.places ?? []).filter((p) => placeActive(event, p, year)).map((p) => ({ event, name: p.name, at: p.at }))),
-    [data.events, warId, year, regionFilter, focusedEventId],
+            .flatMap((event) => {
+              const covered = event.front ? frontBattleSpots(data.wars, event.front) : [];
+              return (event.places ?? [])
+                .filter((p) => placeActive(event, p, year) && !covered.some((b) => nearBy(b, p.at)))
+                .map((p) => ({ event, name: p.name, at: p.at }));
+            }),
+    [data.events, data.wars, warId, year, regionFilter, focusedEventId],
   );
   const openBattlePin = (pin: BattlePin) => {
     // 그 해에 있던 나라 가운데 사건의 첫 주체를 골라 패널에 사건을 띄운다.

@@ -171,6 +171,14 @@ export interface WarGeoSources {
   dir: string;
 }
 
+/** 전역 범위에 여백(경도 폭의 1/4, 위도 폭의 1/4)을 둔 상자. 경도는 ±180, 위도는 ±85를 넘지 않는다 */
+function boundsBox([[w, s], [e, n]]: [[number, number], [number, number]]): MultiCoords {
+  const dx = (e - w) / 4;
+  const dy = (n - s) / 4;
+  const W = Math.max(-180, w - dx), E = Math.min(180, e + dx), S = Math.max(-85, s - dy), N = Math.min(85, n + dy);
+  return [[[[W, S], [E, S], [E, N], [W, N], [W, S]]]];
+}
+
 /** 링의 평면 넓이(경위도 제곱도) */
 function ringArea(ring: [number, number][]): number {
   let a = 0;
@@ -239,6 +247,12 @@ export async function buildWars(wars: RegionalWar[], geo: WarGeoSources, errors:
         // 진영마다 한 덩어리로 합친다
         const byFaction = new Map<string, MultiCoords>();
         for (const l of layers) if (l.coords.length) byFaction.set(l.faction, byFaction.has(l.faction) ? union(byFaction.get(l.faction)!, l.coords) : l.coords);
+        // 전역 범위(bounds)를 정했으면 진영 덩어리를 그 범위에 여백을 둔 상자로 자른다. 소련 영토 전체(시베리아)처럼
+        // 전역 밖의 점이 wars.json을 키우고, 이름표 자리(덩어리 안쪽)가 화면 밖으로 가던 문제 (2026-10-12)
+        if (t.bounds) {
+          const box = boundsBox(t.bounds);
+          for (const [faction, coords] of byFaction) byFaction.set(faction, intersect(coords, box));
+        }
         const areas = [...byFaction].map(([faction, coords]) => ({
           faction,
           coords: rewindForD3(dropSlivers(roundCoords(coords, 3))) as [number, number][][][],

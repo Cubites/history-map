@@ -1,5 +1,5 @@
 // 전쟁 보기 (DESIGN.md §4.5): 전쟁·전역·스냅샷 고르기와 진영 색
-import type { FrontSnapshotOut, HistoryEvent, TheaterOut, WarIndexEntry } from '../schema/index.ts';
+import type { FrontSnapshotOut, HistoryEvent, LonLat, TheaterOut, WarIndexEntry } from '../schema/index.ts';
 
 export interface WarTheater {
   war: WarIndexEntry;
@@ -102,4 +102,16 @@ export function dateKey(date: string): number {
 export function factionStroke(war: WarIndexEntry, factionId: string, entityColor: (id: string) => string | undefined): string {
   const i = factionIndex(war, factionId);
   return i === 0 ? 'var(--front-north)' : i === 1 ? 'var(--front-south)' : factionColor(war, factionId, entityColor);
+}
+
+/** 사건이 이어진 전역(front)의 전투 자리들. 평소 지도에서 전쟁 보기와 겹치는 전투 표시를 빼는 데 쓴다 */
+export function frontBattleSpots(wars: WarIndexEntry[], front: { war: string; theater?: string }): LonLat[] {
+  const war = wars.find((w) => w.id === front.war);
+  const theater = war && (war.theaters.find((t) => t.id === front.theater) ?? war.theaters[0]);
+  return theater ? theater.battles.map((b) => b.at) : [];
+}
+
+/** 두 자리가 같은 싸움터로 볼 만큼 가까운지 (경위도 0.3° 안, 약 30km) */
+export function nearBy(a: LonLat, b: LonLat): boolean {
+  return Math.abs(a[0] - b[0]) <= 0.3 && Math.abs(a[1] - b[1]) <= 0.3;
 }

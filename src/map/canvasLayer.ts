@@ -225,6 +225,72 @@ function drawUnionOutline(
   ctx.restore();
 }
 
+let maskCanvas: HTMLCanvasElement | null = null;
+/** 바깥선 두께를 채우는 방향 수 (많을수록 모서리가 둥글고 매끄럽다) */
+const OUTLINE_DIRECTIONS = 16;
+
+/**
+ * 전쟁 보기의 강조선: 칠한 도형(fill)에서 다른 진영이 덮은 곳(hidden)을 뺀, 화면에 실제로 보이는 땅의 바깥선을 그린다.
+ * 보이는 땅을 화면 밖 캔버스에 칠한 뒤(가림판) 둘레 여러 방향으로 두께만큼 밀어 겹쳐 찍고 가림판 자리를 지우면 바깥 테두리만 남는다.
+ * 나라의 연 단위 영토가 다른 진영 점령 지역 밑에 깔려 있어도(예: 1939년 9월 1일 독일 영토인 서폴란드) 강조선이 그 밑을 두르지 않고,
+ * 해안선 차이로 남은 가는 띠도 따로 둘러지지 않는다 (2026-10-12)
+ */
+function drawVisibleOutline(
+  ctx: CanvasRenderingContext2D,
+  projection: GeoProjection,
+  preciseProjection: GeoProjection,
+  view: View,
+  fill: Shape[],
+  hidden: Shape[],
+  width: number,
+  color: string,
+) {
+  const { width: w, height: h } = ctx.canvas;
+  outlineCanvas ??= document.createElement('canvas');
+  maskCanvas ??= document.createElement('canvas');
+  for (const c of [outlineCanvas, maskCanvas]) {
+    if (c.width !== w || c.height !== h) {
+      c.width = w;
+      c.height = h;
+    }
+  }
+  const mask = maskCanvas.getContext('2d')!;
+  mask.setTransform(1, 0, 0, 1, 0, 0);
+  mask.clearRect(0, 0, w, h);
+  mask.setTransform(ctx.getTransform());
+  const fast = geoPath(projection, mask);
+  const precise = geoPath(preciseProjection, mask);
+  const trace = (list: Shape[]) => {
+    mask.beginPath();
+    for (const s of list) (crossesSeam(s.bbox, view) ? precise : fast)(s.feature);
+  };
+  trace(fill);
+  mask.fillStyle = color;
+  mask.fill();
+  if (hidden.length) {
+    trace(hidden);
+    mask.globalCompositeOperation = 'destination-out';
+    mask.fill();
+    mask.globalCompositeOperation = 'source-over';
+  }
+  const off = outlineCanvas.getContext('2d')!;
+  off.setTransform(1, 0, 0, 1, 0, 0);
+  off.clearRect(0, 0, w, h);
+  // 두께는 CSS 픽셀 기준이라 기기 픽셀로 바꾼다
+  const r = width * ctx.getTransform().a;
+  for (let k = 0; k < OUTLINE_DIRECTIONS; k++) {
+    const a = (2 * Math.PI * k) / OUTLINE_DIRECTIONS;
+    off.drawImage(maskCanvas, r * Math.cos(a), r * Math.sin(a));
+  }
+  off.globalCompositeOperation = 'destination-out';
+  off.drawImage(maskCanvas, 0, 0);
+  off.globalCompositeOperation = 'source-over';
+  ctx.save();
+  ctx.setTransform(1, 0, 0, 1, 0, 0);
+  ctx.drawImage(outlineCanvas, 0, 0);
+  ctx.restore();
+}
+
 export function drawMap(
   ctx: CanvasRenderingContext2D,
   projection: GeoProjection,
@@ -342,7 +408,13 @@ export function drawMap(
   };
   for (const t of territories) addGroup(t.highlight, t.outline ?? t);
   for (const area of front?.areas ?? []) addGroup(area.highlight, { fill: area.shapes, stroke: area.shapes });
-  for (const [width, shapes] of [...groups].sort((a, b) => a[0] - b[0])) drawUnionOutline(ctx, projection, preciseProjection, view, shapes, width, palette.highlight);
+  for (const [width, shapes] of [...groups].sort((a, b) => a[0] - b[0])) {
+    if (front) {
+      // 전쟁 보기: 다른 진영이 덮은 곳을 뺀, 보이는 땅의 바깥선
+      const hidden = front.areas.filter((a) => a.highlight !== width).flatMap((a) => a.shapes);
+      drawVisibleOutline(ctx, projection, preciseProjection, view, shapes.fill, hidden, width, palette.highlight);
+    } else drawUnionOutline(ctx, projection, preciseProjection, view, shapes, width, palette.highlight);
+  }
   ctx.restore();
 
   ctx.beginPath();

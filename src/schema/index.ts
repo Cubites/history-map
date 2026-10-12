@@ -93,7 +93,7 @@ export const EventSchema = z.object({
   front: z.object({ war: z.string(), theater: z.string().optional(), date: z.string() }).optional(),
   /**
    * 싸움이 벌어진 곳. 전쟁 보기가 없는 전쟁·전투는 그 해 지도에 작은 전투 표시(⊗)로 나타난다 (DESIGN.md §4.5)
-   * 전쟁 보기가 있는 사건(front)에는 적지 않는다.
+   * 전쟁 보기가 있는 사건(front)은 그 전역의 전투 목록과 30km 안에서 겹치지 않는 장소만 평소 지도에 보인다(2026-10-12, 전쟁 보기 범위 밖의 싸움터 등).
    * year(선택, 2026-10-06): 그 장소에서 싸운 해, 기간이면 [from, to]. 있으면 그 해에만, 없으면 사건 기간 내내 보인다.
    * 사건 기간 안이어야 한다(build-data가 검사)
    */
