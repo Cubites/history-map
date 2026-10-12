@@ -3,6 +3,7 @@
 // 가져와도 되는 것: lib.mjs, shared.mjs, areas/korea.mjs, areas/inner-asia.mjs. 위층 권역(west)이 쓰는 QING_BASE를 export한다.
 // 중일 전쟁 점령지(R38·OCC_*·ROC_1937~1945 등)는 1937년 모양이 1938년 도형과의 교집합이라 이 파일 안에 원래 순서대로 함께 둔다.
 // 구획 제목의 '○번 묶음'은 원래 generate-geo.mjs의 조사 묶음(시대)이다. 파일 사이에서 맞물리는 점은 이름으로 가져다 쓴다('값만 같은 점'은 shared.mjs 머리 주석 참고).
+// 2026-10-12(작업 I1): shared.mjs의 외만주 서쪽 변(고르비차강을 따라 발원지까지, 그 뒤 흑룡강·레나강 분수령)과 흑룡강 하류(L_AMUR_LOW)를 강줄기대로 다시 그어 청 1689~1859 도형이 바뀜(이 파일의 코드는 그대로)
 import { D, I, P, U, box, bx, rev, ring } from '../lib.mjs';
 import { AMUR_BAND, CHINA, HUABEI, HUABEI_938, ISLANDS_W, KWANTUNG, L33, LIAODONG, LIAOXI, LX916, LX923, L_NORTH, NORTH_OF_YANYUN, OM_LEFT, OM_RIGHT, OUTER_MANCHURIA, PRIMORYE, TAIWAN, UDA, XIXIA, YANYUN } from '../shared.mjs';
 import { BAEKJE, GOGURYEO, HYEONDO_2, L_YALU_TUMEN, noNokdun } from './korea.mjs';
