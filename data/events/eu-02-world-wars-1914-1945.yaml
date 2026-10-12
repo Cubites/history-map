@@ -603,6 +603,7 @@
     - { from: soviet-union, to: lithuania, note: "병합 (1940)" }
   tags: [war, diplomacy]
   sources: ["「독소 불가침 조약」과 「비밀 추가 의정서」(1939)", "「독소 국경 우호 조약」(1939)", "앤터니 비버, 『제2차 세계대전』(글항아리, 2017)"]
+  front: { war: world-war-2, theater: europe, date: 1939-09-01 }
   places: [{ name: "베스테르플라테", at: [18.67, 54.41] }, { name: "바르샤바", at: [21.01, 52.23] }, { name: "수오무살미", at: [28.91, 64.89] }]
 
 - id: bohemia-moravia-1939
@@ -640,6 +641,7 @@
     - { from: uk, to: nazi-germany, note: "노르웨이·프랑스에서 교전, 됭케르크 철수" }
   tags: [war, politics]
   sources: ["「1940년 콩피에뉴 휴전 협정」", "「1940년 7월 10일 헌법적 법률」", "앤터니 비버, 『제2차 세계대전』(글항아리, 2017)"]
+  front: { war: world-war-2, theater: europe, date: 1940-06-22 }
   places: [{ name: "나르비크", at: [17.43, 68.44] }, { name: "스당", at: [4.94, 49.7] }, { name: "됭케르크", at: [2.38, 51.03] }]
 
 - id: battle-of-britain-1940
@@ -656,6 +658,7 @@
     - { from: usa, to: soviet-union, note: "무기 대여 (1941)" }
   tags: [war, diplomacy]
   sources: ["「무기 대여법」(1941)", "「대서양 헌장」(1941)", "「연합국 공동 선언」(1942)"]
+  front: { war: world-war-2, theater: europe, date: 1940-09-15 }
   places: [{ name: "런던", at: [-0.13, 51.51] }]
 
 - id: tripartite-pact-1940
@@ -695,6 +698,7 @@
     - { from: soviet-union, to: serbia-occupied, note: "베오그라드 해방 (1944.10, 파르티잔과 함께)" }
   tags: [war]
   sources: ["미국 홀로코스트 기념관 『홀로코스트 백과사전』 「크로아티아 독립국」·「야세노바츠」", "Jozo Tomasevich, War and Revolution in Yugoslavia 1941–1945", "마크 마조워, 『암흑의 대륙』(후마니타스, 2009)"]
+  front: { war: world-war-2, theater: europe, date: 1941-06-22 }
 
 - id: barbarossa-1941
   year: 1941
@@ -713,6 +717,7 @@
     - { from: finland, to: karelia-occupied, note: "점령 (1941)" }
   tags: [war]
   sources: ["「총통 지령 21호(바르바로사 작전)」(1940)", "앤터니 비버, 『제2차 세계대전』(글항아리, 2017)"]
+  front: { war: world-war-2, theater: europe, date: 1941-06-22 }
   places: [{ name: "레닌그라드", at: [30.31, 59.94] }, { name: "모스크바", at: [37.62, 55.75] }, { name: "키이우", at: [30.52, 50.45] }]
 
 - id: holocaust-1941
@@ -748,6 +753,7 @@
     - { from: italy, to: france-italian-occupied, note: "프랑스 남동부·코르시카 점령 (1942.11)" }
   tags: [war]
   sources: ["앤터니 비버, 『피의 기록, 스탈린그라드 전투』(다른세상, 2012)", "앤터니 비버, 『제2차 세계대전』(글항아리, 2017)"]
+  front: { war: world-war-2, theater: europe, date: 1942-11-19 }
   places: [{ name: "스탈린그라드", at: [44.52, 48.7] }, { name: "엘알라메인", at: [28.95, 30.83] }, { name: "쿠르스크", at: [36.1, 51.7] }]
 
 - id: italy-surrender-1943
@@ -767,6 +773,7 @@
     - { from: nazi-germany, to: france-italian-occupied, note: "이탈리아 점령 구역을 넘겨받음 (1943.9)" }
   tags: [war, diplomacy]
   sources: ["「카시빌레 휴전 협정」(1943)", "「카이로 선언」(1943)", "「테헤란 회담 선언」(1943)", "앤터니 비버, 『제2차 세계대전』(글항아리, 2017)"]
+  front: { war: world-war-2, theater: europe, date: 1943-09-08 }
   places: [{ name: "시칠리아(젤라)", at: [14.25, 37.07] }, { name: "살레르노", at: [14.77, 40.68] }, { name: "몬테카시노", at: [13.81, 41.49] }]
 
 - id: normandy-1944
@@ -786,6 +793,7 @@
     - { from: soviet-union, to: karelia-occupied, note: "되찾음 (1944.6~8)" }
   tags: [war]
   sources: ["「모스크바 휴전 협정」(1944, 핀란드)", "앤터니 비버, 『제2차 세계대전』(글항아리, 2017)"]
+  front: { war: world-war-2, theater: europe, date: 1944-06-06 }
   places: [{ name: "노르망디", at: [-0.6, 49.33] }, { name: "바르샤바 봉기", at: [21.01, 52.23] }, { name: "바스토뉴", at: [5.72, 50.0] }]
 
 - id: yalta-1945
@@ -803,6 +811,7 @@
     - { from: usa, to: occupied-korea, note: "신탁 통치 구상 (루스벨트·스탈린 대화)" }
   tags: [diplomacy]
   sources: ["「얄타 회담 의정서」(1945)", "「소련의 대일 참전에 관한 협정(얄타 비밀 협정)」(1945)", "미국 국무부 『미국 외교 문서(FRUS)』 1945 몰타·얄타 회담"]
+  front: { war: world-war-2, theater: europe, date: 1945-02-04 }
 
 - id: german-surrender-1945
   year: 1945
@@ -818,6 +827,7 @@
     - { from: france, to: nazi-germany, note: "라인강 도하, 남서부 진격" }
   tags: [war]
   sources: ["「독일 항복 문서」(1945)", "「베를린 선언」(1945)", "앤터니 비버, 『제2차 세계대전』(글항아리, 2017)"]
+  front: { war: world-war-2, theater: europe, date: 1945-05-08 }
   places: [{ name: "베를린", at: [13.4, 52.52] }]
 
 - id: potsdam-1945

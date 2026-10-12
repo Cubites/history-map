@@ -1,0 +1,388 @@
+# 제2차 세계 대전 (DESIGN.md §4.5)
+# 전역 둘: 유럽·북아프리카(europe)와 아시아·태평양(asia-pacific, 권역 japan). 진영 다섯은 두 전역이 함께 쓴다.
+# 유럽·북아프리카 전역의 점령 지역은 스냅샷마다 진영별 한 덩어리 ww2-europe/<날짜>-<진영>.geojson (서로 겹치지 않음, 빌드가 해안선으로 자름).
+# 덩어리는 작업 스크립트가 저장소 나라 영토(data/geo, 해안선으로 자르기 전)를 깔고 그날 전선이 지난 도시·마을·강을 이은 선과 포위지 다각형으로
+# 덮어 만들었다(만든 순서는 진영마다 주석). 나라 영토(entities) 위에 geojson을 여러 겹 덮으면 빌드의 도형 계산(polyclip-ts)이 해안·경계의
+# 가는 조각에서 깨져서 이렇게 했다. 경유점·근거·어림 오차는 작업 결과 노트에 있다. 중립국(에스파냐·포르투갈·스위스·스웨덴·튀르키예·아일랜드 등)은 칠하지 않는다.
+# 북아프리카·중동은 그 시기 나라 영토가 지도에 없어 식민지 경계를 다각형으로 대략 그렸다. 운영자 검수 필요.
+# 다시 만드는 법: 생성 스크립트와 입력(경유점·식민지 경계)은 저장소 밖 history-map-handoff/ww-generators/w2/ 에 있다.
+#   그 폴더에서 HISTORY_MAP_REPO=<저장소 경로> node gen.mjs (이 YAML과 ww2-europe/*.geojson을 다시 씀, 미리보기는 --png). 경유점은 fronts*.mjs, 장면 구성은 spec*.mjs.
+
+id: world-war-2
+name: 제2차 세계 대전
+factions:
+  - { id: allies, name: 연합국, entity: uk, color: "#4a72b8" }
+  - { id: axis, name: 추축국, entity: nazi-germany, color: "#62666e" }
+  - { id: soviet, name: 소련, entity: soviet-union, color: "#c2453b" }
+  - { id: japan, name: 일본, entity: japan, color: "#c77a9e" }
+  - { id: china, name: 중국, entity: roc, color: "#d9a43a" }
+# 참전국. 편을 바꾼 나라는 기간을 나눠 두 번 적는다. 소련은 독소 불가침 시기(1939~1941)와 동부 전선을 따로 보이려고 연합국과 다른 진영으로 둔다.
+# 루마니아·불가리아는 1944년 편을 바꾼 뒤 소련군 지휘 아래 독일과 싸워 소련 진영으로 적는다.
+participants:
+  - { entity: poland, faction: allies, from: 1939-09-01 }
+  # 영국·프랑스는 9월 3일 독일에 선전 포고. 프랑스는 1940년 6월 항복 뒤 드골의 자유 프랑스가 싸움을 이었다
+  - { entity: uk, faction: allies, from: 1939-09-03 }
+  - { entity: france, faction: allies, from: 1939-09-03 }
+  - { entity: norway, faction: allies, from: 1940-04-09 }
+  - { entity: netherlands, faction: allies, from: 1940-05-10 }
+  - { entity: belgium, faction: allies, from: 1940-05-10 }
+  - { entity: luxembourg, faction: allies, from: 1940-05-10 }
+  - { entity: greece, faction: allies, from: 1940-10-28 }
+  - { entity: yugoslavia, faction: allies, from: 1941-04-06 }
+  # 미국은 진주만 공격 이튿날(12월 8일) 일본에, 12월 11일 독일·이탈리아에 맞서 참전
+  - { entity: usa, faction: allies, from: 1941-12-08 }
+  # 이탈리아는 1943년 9월 8일 휴전, 10월 13일 독일에 선전 포고(공동 교전국)
+  - { entity: italy, faction: allies, from: 1943-10-13 }
+  - { entity: nazi-germany, faction: axis, from: 1939-09-01, to: 1945-05-08 }
+  - { entity: slovakia, faction: axis, from: 1939-09-01, to: 1945-04-04 }
+  - { entity: italy, faction: axis, from: 1940-06-10, to: 1943-09-08 }
+  - { entity: bulgaria, faction: axis, from: 1941-03-01, to: 1944-09-08 }
+  - { entity: croatia-ndh, faction: axis, from: 1941-04-10, to: 1945-05-08 }
+  - { entity: hungary, faction: axis, from: 1941-04-11, to: 1945-05-08 }
+  - { entity: romania, faction: axis, from: 1941-06-22, to: 1944-08-23 }
+  # 핀란드는 겨울 전쟁(1939-11-30~1940-03-13)을 홀로 치렀고, 1941년 6월 25일 독일 편으로 다시 싸웠다(계속 전쟁, 1944년 9월 19일 휴전)
+  - { entity: finland, faction: axis, from: 1941-06-25, to: 1944-09-19 }
+  # 소련은 1939년 9월 17일 폴란드 동부를 침공, 1945년 8월 8일 일본에 선전 포고
+  - { entity: soviet-union, faction: soviet, from: 1939-09-17 }
+  - { entity: romania, faction: soviet, from: 1944-08-24, to: 1945-05-08 }
+  - { entity: bulgaria, faction: soviet, from: 1944-09-09, to: 1945-05-08 }
+  # 몽골 인민 공화국은 1945년 8월 10일 일본에 선전 포고
+  - { entity: mongolia, faction: soviet, from: 1945-08-10, to: 1945-09-02 }
+  # 아시아·태평양: 1937년 7월 7일 루거우차오 사건으로 중일 전쟁 시작, 1945년 9월 2일 일본 항복 문서 조인
+  - { entity: japan, faction: japan, from: 1937-07-07, to: 1945-09-02 }
+  - { entity: manchukuo, faction: japan, from: 1937-07-07, to: 1945-08-18 }
+  - { entity: roc, faction: china, from: 1937-07-07, to: 1945-09-02 }
+sources: ["미 육군사관학교 역사학과 『제2차 세계 대전 지도첩(West Point Atlas)』", "미 육군 군사사 센터(CMH) 공간사(Ziemke 『Stalingrad to Berlin』, 『Moscow to Stalingrad』 등)", "영국 공식 전사 『The Mediterranean and Middle East』(Playfair)", "위키백과 각 전투·작전 문서와 커먼즈 전황도", "국사편찬위원회 『고등학교 세계사』 교과서"]
+
+theaters:
+  - id: europe
+    name: 유럽·북아프리카
+    # 영토 대신 진영 색으로 칠할 나라: 해마다 같은 모양인 연 단위 영토가 날짜별 전선과 어긋나는 나라와 점령지 항목.
+    # 나머지 참전국(영국·프랑스·이탈리아·헝가리 등)은 평소 영토와 이름표를 그대로 두고 그 위를 진영 색으로 덮는다(중립이던 때는 평소 영토로 보임).
+    # 비시 프랑스(1940-06~1942-11)와 그 식민지는 독일에 협력한 정부라 추축국 색으로 칠한다. 이탈리아는 참전(1940-06-10) 전 세 장면에서 칠하지 않는다.
+    replaces: [soviet-union, soviet-occupied, karelia-occupied, general-government, bohemia-moravia, free-city-danzig, italy-occupied, serbia-occupied, montenegro-occupied, germany-zone-us, germany-zone-uk, germany-zone-fr, germany-zone-su, berlin-western-sectors, berlin-soviet-sector]
+    # 평소 지도의 전쟁 표시 위치 (독일·폴란드 경계 부근)
+    marker: [15.5, 51.2]
+    bounds: [[-11, 27], [50, 70.5]]
+    battles:
+      - { name: 겨울 전쟁, at: [28.95, 60.6], date: 1939-11-30, winner: soviet, summary: "소련이 핀란드를 침공했다. 핀란드군은 만네르헤임 선에서 석 달 넘게 버텼으나 1940년 3월 모스크바 강화 조약으로 카렐리야 지협 등을 내주었다." }
+      - { name: 스당 돌파, at: [4.94, 49.7], date: 1940-05-13, winner: axis, summary: "독일 기갑 부대가 아르덴 숲을 지나 스당에서 뫼즈강을 건너 프랑스군 전선을 뚫고 영국 해협으로 내달렸다." }
+      - { name: 됭케르크 철수, at: [2.38, 51.03], date: 1940-05-26, summary: "해안에 몰린 영국·프랑스군 33만여 명이 6월 4일까지 크고 작은 배로 영국에 철수했다." }
+      - { name: 나르비크 전투, at: [17.43, 68.44], date: 1940-05-28, winner: allies, summary: "영국·프랑스·폴란드·노르웨이군이 나르비크를 되찾았으나, 프랑스 전선이 무너지자 6월 8일 철수했다." }
+      - { name: 영국 본토 항공전, at: [0.1, 51.3], date: 1940-09-15, winner: allies, summary: "영국 공군이 레이더와 전투기로 독일 공군의 큰 공습을 물리쳤다. 히틀러는 영국 상륙(바다사자 작전)을 미루었다." }
+      - { name: 콤파스 작전 (베다폼), at: [20.27, 31.63], date: 1941-02-07, winner: allies, summary: "영국군이 이집트에서 반격해 이탈리아 제10군을 베다폼에서 에워싸 무너뜨리고 키레나이카를 차지했다." }
+      - { name: 토브루크 포위전, at: [23.96, 32.08], date: 1941-04-10, winner: allies, summary: "롬멜의 독일·이탈리아군에 에워싸인 토브루크 요새를 오스트레일리아군 등이 241일 동안 지켜 냈다." }
+      - { name: 크레타 전투, at: [23.85, 35.52], date: 1941-05-20, winner: axis, summary: "독일 공수 부대가 말레메 비행장을 차지하고 크레타섬을 점령했다. 공수 부대의 손실이 커서 독일은 이후 대규모 공수 작전을 하지 않았다." }
+      - { name: 레닌그라드 포위전, at: [30.32, 59.94], date: 1941-09-08, winner: soviet, summary: "독일군과 핀란드군이 레닌그라드를 에워쌌다. 시민 수십만 명이 굶주림으로 죽었으나 도시는 1944년 1월 27일 포위가 풀릴 때까지 872일을 버텼다." }
+      - { name: 키이우 포위전, at: [30.52, 50.45], date: 1941-09-19, winner: axis, summary: "독일군이 키이우 동쪽에서 소련 남서 전선군을 에워싸 60만여 명을 사로잡았다." }
+      - { name: 모스크바 전투, at: [37.62, 55.75], date: 1941-12-05, winner: soviet, summary: "모스크바 30km 앞까지 온 독일군을 주코프의 소련군이 시베리아 증원군과 함께 반격해 100~250km 밀어냈다. 독일군의 첫 큰 패배였다." }
+      - { name: 가잘라 전투·토브루크 함락, at: [23.36, 32.14], date: 1942-06-21, winner: axis, summary: "롬멜이 가잘라 선의 영국군을 깨뜨리고 6월 21일 토브루크를 함락한 뒤 이집트로 들어가 엘알라메인까지 나아갔다." }
+      - { name: 세바스토폴 함락, at: [33.52, 44.6], date: 1942-07-04, winner: axis, summary: "250일 동안 버틴 크림반도의 해군 기지 세바스토폴이 독일·루마니아군의 공격에 함락되었다." }
+      - { name: 스탈린그라드 전투, at: [44.52, 48.71], date: 1942-08-23, winner: soviet, summary: "볼가강 가의 스탈린그라드에서 시가전이 벌어졌다. 11월 소련군의 반격(천왕성 작전)으로 에워싸인 독일 제6군이 1943년 2월 2일 항복해 독소 전쟁의 흐름이 바뀌었다." }
+      - { name: 제2차 엘알라메인 전투, at: [28.95, 30.83], date: 1942-11-04, winner: allies, summary: "몽고메리의 영국 제8군이 10월 23일부터 공격해 11월 4일 롬멜의 독일·이탈리아군을 무너뜨렸다. 추축군은 리비아로 물러났다." }
+      - { name: 횃불 작전, at: [3.06, 36.75], date: 1942-11-08, winner: allies, summary: "미국·영국군이 프랑스령 모로코·알제리의 카사블랑카·오랑·알제에 상륙했다. 비시 프랑스군은 사흘 만에 싸움을 멈추었다." }
+      - { name: 튀니스 함락, at: [10.18, 36.8], date: 1943-05-13, winner: allies, summary: "5월 7일 튀니스와 비제르트가 함락되고 13일 튀니지의 독일·이탈리아군 약 25만 명이 항복해 북아프리카 전역이 끝났다." }
+      - { name: 쿠르스크 전투, at: [36.73, 51.04], date: 1943-07-05, winner: soviet, summary: "독일군이 쿠르스크 돌출부를 남북에서 공격했으나(성채 작전) 깊은 방어선에 막혔다. 7월 12일 프로호로프카에서 큰 전차전이 벌어졌고, 소련군은 곧 반격으로 넘어갔다." }
+      - { name: 시칠리아 상륙, at: [14.25, 37.07], date: 1943-07-10, winner: allies, summary: "미국·영국군이 시칠리아 남동 해안에 상륙해 8월 17일 섬을 차지했다. 그사이 7월 25일 무솔리니가 실각했다." }
+      - { name: 살레르노 상륙, at: [14.95, 40.55], date: 1943-09-09, winner: allies, summary: "이탈리아의 휴전 발표 이튿날 미국·영국군이 살레르노에 상륙해 독일군의 반격을 막고 10월 1일 나폴리에 들어갔다." }
+      - { name: 안치오 상륙, at: [12.63, 41.45], date: 1944-01-22, winner: allies, summary: "연합군이 구스타프 선 뒤쪽 안치오에 상륙했으나 독일군에 막혀 넉 달 동안 교두보에 갇혔다." }
+      - { name: 몬테카시노 전투, at: [13.81, 41.49], date: 1944-05-18, winner: allies, summary: "로마로 가는 길을 막은 구스타프 선의 몬테카시노를 네 번째 공격 끝에 폴란드군이 차지했다. 연합군은 6월 4일 로마에 들어갔다." }
+      - { name: 노르망디 상륙 작전, at: [-0.85, 49.37], date: 1944-06-06, winner: allies, summary: "미국·영국·캐나다군이 노르망디 해안 다섯 곳(유타·오마하·골드·주노·소드)에 상륙했다. 첫날에만 15만여 명이 땅을 밟았다." }
+      - { name: 바그라티온 작전, at: [28.5, 54], date: 1944-06-22, winner: soviet, summary: "소련군이 벨라루스에서 대공세를 펴 독일 중부 집단군을 무너뜨리고 7월 3일 민스크를 되찾은 뒤 바르샤바 앞 비스와강까지 나아갔다." }
+      - { name: 바르샤바 봉기, at: [21.01, 52.23], date: 1944-08-01, winner: axis, summary: "폴란드 국내군이 바르샤바에서 봉기했으나 소련군은 비스와강 건너편에 머물렀고, 63일 만인 10월 2일 독일군에 진압되었다." }
+      - { name: 마켓 가든 작전, at: [5.9, 51.98], date: 1944-09-17, winner: axis, summary: "연합군이 네덜란드의 다리들을 공수 부대로 차지해 라인강을 건너려 했으나 아른험 다리에서 막혔다." }
+      - { name: 벌지 전투, at: [5.72, 50], date: 1944-12-16, winner: allies, summary: "독일군이 아르덴 숲에서 마지막 대반격을 했다. 미군이 바스토뉴를 지켜 냈고, 1945년 1월 말 독일군은 처음 선으로 밀려났다." }
+      - { name: 부다페스트 포위전, at: [19.04, 47.5], date: 1944-12-26, winner: soviet, summary: "소련군이 부다페스트를 에워쌌다. 페스트는 1945년 1월 18일, 부다는 2월 13일 함락되었다." }
+      - { name: 비스와-오데르 공세, at: [21.75, 50.68], date: 1945-01-12, winner: soviet, summary: "소련군이 비스와강 교두보에서 공세를 펴 3주 만에 바르샤바(1월 17일)·크라쿠프를 지나 오데르강에 이르렀다." }
+      - { name: 베를린 전투, at: [13.4, 52.52], date: 1945-04-16, winner: soviet, summary: "소련군이 오데르강의 젤로 고지를 넘어 베를린을 에워쌌다. 4월 30일 히틀러가 자살하고 5월 2일 베를린 수비대가 항복했다." }
+    snapshots:
+      - date: 1939-09-01
+        title: 독일의 폴란드 침공
+        summary: "독일군이 선전 포고 없이 폴란드로 쳐들어가 제2차 세계 대전이 시작되었습니다. 9월 3일 영국과 프랑스가 독일에 선전 포고했지만 서부 전선에서는 큰 싸움이 없었습니다. 독일과 강철 조약을 맺은 이탈리아는 아직 참전하지 않았습니다(비교전국)."
+        # 폴란드는 전쟁 전 국경(저장소 1922~1938년 영토). 단치히는 이날 독일이 병합을 선언해 추축국 쪽에 둔다
+        # 이탈리아(리비아·알바니아 포함)는 1940-06-10 참전 전이라 칠하지 않는다(운영자 결정 2026-10-12)
+        areas:
+          # 연합국: 나라 영토 uk, france + 전쟁 전 폴란드 (1939년 9월 1일 국경) + 프랑스령 모로코·알제리 + 프랑스령 튀니지 + 시리아·레바논 + 이집트(영국군 주둔) + 영국 위임 통치령 팔레스타인·트란스요르단
+          - { faction: allies, geojson: ww2-europe/1939-09-01-allies.geojson }
+          # 추축국: 나라 영토 nazi-germany, bohemia-moravia, slovakia
+          - { faction: axis, geojson: ww2-europe/1939-09-01-axis.geojson }
+          # 소련: 나라 영토 soviet-union
+          - { faction: soviet, geojson: ww2-europe/1939-09-01-soviet.geojson }
+        arrows:
+          - { faction: axis, path: [[20.6, 53.55], [20.95, 52.85], [21, 52.35]], label: 북부 집단군 (동프로이센) }
+          - { faction: axis, path: [[16.9, 53.65], [18.3, 53.4]], label: 폴란드 회랑 }
+          - { faction: axis, path: [[18.7, 50.85], [19.6, 51.55], [20.8, 52.1]], label: 남부 집단군 }
+          - { faction: axis, path: [[19.9, 49.35], [21.2, 49.95], [23.4, 49.85]], label: 크라쿠프·르비우 방면 }
+
+      - date: 1939-09-28
+        title: 폴란드 분할
+        summary: "9월 17일 소련군이 폴란드 동부로 들어왔고, 27일 바르샤바가 항복했습니다. 28일 독일과 소련은 국경 우호 조약으로 폴란드를 부크강을 경계로 나누었습니다. 이탈리아는 아직 참전하지 않았습니다."
+        # 경계는 9월 28일 조약선(피사·나레프·부크·산강). 빌뉴스 지역은 10월 10일 리투아니아에 넘기기 전까지 소련군이 차지
+        areas:
+          # 연합국: 나라 영토 uk, france + 프랑스령 모로코·알제리 + 프랑스령 튀니지 + 시리아·레바논 + 이집트(영국군 주둔) + 영국 위임 통치령 팔레스타인·트란스요르단
+          - { faction: allies, geojson: ww2-europe/1939-09-28-allies.geojson }
+          # 추축국: 나라 영토 nazi-germany, general-government, bohemia-moravia, slovakia
+          - { faction: axis, geojson: ww2-europe/1939-09-28-axis.geojson }
+          # 소련: 나라 영토 soviet-union + 소련군이 차지한 빌뉴스 지역(10월 10일 리투아니아에 넘김)
+          - { faction: soviet, geojson: ww2-europe/1939-09-28-soviet.geojson }
+        arrows:
+          - { faction: soviet, path: [[27.3, 53.95], [25.3, 53.5], [23.9, 53.1]], label: 소련 벨라루스 전선군 (9월 17일) }
+          - { faction: soviet, path: [[26.9, 50.15], [25.3, 49.95], [24.1, 49.85]], label: 소련 우크라이나 전선군 }
+        holds:
+          - { name: 헬반도 (10월 2일 항복), at: [18.8, 54.61], faction: allies }
+          - { name: 모들린 요새 (9월 29일 항복), at: [20.7, 52.44], faction: allies }
+
+      - date: 1940-05-10
+        title: 독일의 서부 공세
+        summary: "4월 9일 덴마크와 노르웨이를 침공한 독일은 5월 10일 네덜란드·벨기에·룩셈부르크로 쳐들어가 서부 공세를 시작했습니다. 같은 날 영국에서는 처칠이 총리가 되었습니다. 3월에는 소련과 싸운 핀란드가 모스크바 강화 조약으로 카렐리야 지협 등을 내주었습니다. 이탈리아는 아직 참전 전이었습니다."
+        # 노르웨이는 독일군이 남·중부(모셰엔 남쪽까지)와 나르비크를 쥐고 북부는 노르웨이·연합군. 발트 3국과 베사라비아는 아직 소련 땅이 아님(칠하지 않음)
+        areas:
+          # 연합국: 나라 영토 uk, france, france-occupied, netherlands, belgium, norway + 알자스-모젤·룩셈부르크·오이펜-말메디 (1940년 뒤 독일 영토로 그린 곳) + 프랑스령 모로코·알제리 + 프랑스령 튀니지 + 시리아·레바논 + 이집트(영국군 주둔) + 영국 위임 통치령 팔레스타인·트란스요르단
+          - { faction: allies, geojson: ww2-europe/1940-05-10-allies.geojson }
+          # 추축국: 나라 영토 nazi-germany, general-government, bohemia-moravia, slovakia, denmark + 독일군이 쥔 남·중부 노르웨이 + 나르비크의 독일군 지역
+          - { faction: axis, geojson: ww2-europe/1940-05-10-axis.geojson }
+          # 소련: 소련 (발트 3국·베사라비아 제외, 3월 모스크바 강화로 얻은 카렐리야 포함)
+          - { faction: soviet, geojson: ww2-europe/1940-05-10-soviet.geojson }
+        arrows:
+          - { faction: axis, path: [[7, 52.05], [6, 52], [5, 51.95]], label: B 집단군 (네덜란드) }
+          - { faction: axis, path: [[6.4, 50.85], [5.6, 50.8], [4.7, 50.85]], label: B 집단군 (벨기에) }
+          - { faction: axis, path: [[6.6, 50.1], [5.6, 49.85], [4.95, 49.7]], label: A 집단군 (아르덴) }
+          - { faction: axis, path: [[12.32, 64.46], [13.3, 65.5], [13.19, 65.84]], label: 북진 (모셰엔) }
+        holds:
+          - { name: 헴네스베르게트 (독일군 상륙), at: [13.72, 66.22], faction: axis }
+
+      - date: 1940-06-22
+        title: 프랑스의 항복
+        summary: "됭케르크에서 영국·프랑스군이 철수하고(6월 4일) 14일 파리가 함락되자, 프랑스는 6월 22일 콩피에뉴에서 독일과 휴전 협정을 맺었습니다. 북부와 대서양 해안은 독일 점령 지구가 되고, 남부와 식민지는 독일에 협력한 페탱의 비시 정부가 다스렸습니다. 6월 10일 참전한 이탈리아는 알프스 국경의 좁은 땅을 차지했습니다."
+        # 점령 지구는 휴전 협정의 경계선(6월 25일 발효). 그날 독일군은 이 선보다 남쪽(리옹·클레르몽페랑·앙굴렘 등)까지 나가 있었으나 7월 초 물러났다
+        # 독일에 협력한 비시 정부 땅(남부)과 그 식민지(프랑스령 북아프리카·시리아·레바논)는 추축국 색(운영자 결정 2026-10-12). 소련은 6월 중순 발트 3국을 점령했고 베사라비아는 6월 28일에 차지했다
+        areas:
+          # 연합국: 나라 영토 uk + 이집트(영국군 주둔) + 영국 위임 통치령 팔레스타인·트란스요르단
+          - { faction: allies, geojson: ww2-europe/1940-06-22-allies.geojson }
+          # 추축국: 나라 영토 nazi-germany, general-government, bohemia-moravia, slovakia, italy, albania, denmark, norway, netherlands, belgium, france + 휴전 경계선 북·서쪽의 독일 점령 지구 + 비시 프랑스령 모로코·알제리 + 비시 프랑스령 튀니지 (1942-11부터 추축군) + 비시 프랑스 위임 통치령 시리아·레바논 + 이탈리아령 리비아
+          - { faction: axis, geojson: ww2-europe/1940-06-22-axis.geojson }
+          # 소련: 소련 (발트 3국 포함, 베사라비아 제외)
+          - { faction: soviet, geojson: ww2-europe/1940-06-22-soviet.geojson }
+        arrows:
+          - { faction: axis, path: [[5.04, 47.32], [4.84, 45.76], [5.64, 45.29]], label: 클라이스트 기갑 집단 }
+          - { faction: axis, path: [[5.59, 47.45], [6.36, 46.9]], label: 구데리안 (스위스 국경) }
+          - { faction: axis, path: [[-1.55, 47.22], [-1.03, 45.62]], label: 대서양 해안 남하 }
+          - { faction: axis, path: [[7.61, 43.79], [7.5, 43.78]], label: 이탈리아군 (6월 21일) }
+        holds:
+          - { name: 망통 (이탈리아 점령), at: [7.5, 43.78], faction: axis }
+
+      - date: 1940-09-15
+        title: 영국 본토 항공전
+        summary: "프랑스를 무너뜨린 독일은 영국 상륙을 준비하며 7월부터 공군으로 영국을 공격했으나, 9월 15일 큰 공습이 영국 공군에 막혀 제공권을 얻지 못했습니다. 이탈리아군은 9월 13일 리비아에서 이집트로 쳐들어갔습니다. 소련은 6~8월 발트 3국과 베사라비아를 차지했습니다."
+        # 이탈리아군은 이튿날(16일) 시디바라니까지 나아가 멈췄다. 헝가리(11월 20일)·루마니아(11월 23일)는 아직 삼국 동맹에 들기 전이라 칠하지 않는다
+        areas:
+          # 연합국: 나라 영토 uk + 이집트(영국군 주둔) + 영국 위임 통치령 팔레스타인·트란스요르단
+          - { faction: allies, geojson: ww2-europe/1940-09-15-allies.geojson }
+          # 추축국: 나라 영토 nazi-germany, general-government, bohemia-moravia, slovakia, italy, albania, denmark, norway, netherlands, belgium, france + 독일 점령 지구 (휴전 경계선 북·서쪽) + 채널 제도 (6월 30일 독일 점령) + 비시 프랑스령 모로코·알제리 + 비시 프랑스령 튀니지 (1942-11부터 추축군) + 비시 프랑스 위임 통치령 시리아·레바논 + 이탈리아령 리비아 + 이탈리아군이 차지한 이집트 해안 띠 (살룸~부크부크)
+          - { faction: axis, geojson: ww2-europe/1940-09-15-axis.geojson }
+          # 소련: 나라 영토 soviet-union
+          - { faction: soviet, geojson: ww2-europe/1940-09-15-soviet.geojson }
+        arrows:
+          - { faction: axis, path: [[2.2, 50.7], [0.8, 51.2], [-0.1, 51.5]], label: 독일 공군의 런던 공습 }
+          - { faction: axis, path: [[25.03, 31.6], [25.58, 31.58], [25.93, 31.62]], label: 이탈리아 제10군 (시디바라니) }
+
+      - date: 1941-06-22
+        title: 독소 전쟁의 시작
+        summary: "독일은 4월 유고슬라비아와 그리스를 점령하고 5월 크레타섬까지 차지해 발칸반도를 손에 넣었습니다. 6월 22일 독일과 동맹국 군대가 불가침 조약을 깨고 세 갈래로 소련을 침공했습니다(바르바로사 작전). 북아프리카에서는 롬멜의 독일군이 토브루크를 에워싸고 이집트 국경까지 나아갔습니다."
+        # 소련은 1941년 6월 22일 국경(저장소 1940년 영토). 핀란드는 25일 참전했으나 독일군이 머물던 동맹국이라 추축국에 넣는다
+        areas:
+          # 연합국: 나라 영토 uk + 이집트(영국군 주둔) + 영국 위임 통치령 팔레스타인·트란스요르단 + 이라크 (1941년 5월부터 영국군 점령) + 토브루크 요새 (포위된 연합군) + 연합군이 차지한 시리아·레바논 남부 (6월 21일 다마스쿠스)
+          - { faction: allies, geojson: ww2-europe/1941-06-22-allies.geojson }
+          # 추축국: 나라 영토 nazi-germany, general-government, bohemia-moravia, slovakia, italy, albania, denmark, norway, netherlands, belgium, hungary, romania, bulgaria, croatia-ndh, serbia-occupied, montenegro-occupied, greece, finland, france + 독일 점령 지구 + 채널 제도 + 비시 프랑스령 모로코·알제리 + 비시 프랑스령 튀니지 (1942-11부터 추축군) + 비시 프랑스 위임 통치령 시리아·레바논 + 이탈리아령 리비아 + 추축군이 쥔 살룸·할파야 고개
+          - { faction: axis, geojson: ww2-europe/1941-06-22-axis.geojson }
+          # 소련: 소련 (6월 22일 국경)
+          - { faction: soviet, geojson: ww2-europe/1941-06-22-soviet.geojson }
+        arrows:
+          - { faction: axis, path: [[21.6, 55.1], [24, 56.6], [27.5, 58.2], [30, 59.6]], label: 북부 집단군 (레닌그라드) }
+          - { faction: axis, path: [[23.6, 52.6], [27.5, 53.9], [32, 54.8], [37, 55.7]], label: 중부 집단군 (모스크바) }
+          - { faction: axis, path: [[24, 50.6], [27, 50.2], [30.3, 50.4]], label: 남부 집단군 (키이우) }
+          - { faction: axis, path: [[27.6, 47.3], [29.2, 46.9], [30.6, 46.5]], label: 루마니아군 (오데사) }
+
+      - date: 1941-12-05
+        title: 모스크바 앞에서 멈춘 독일군
+        summary: "독일군은 레닌그라드를 에워싸고 우크라이나를 차지한 뒤 모스크바를 30km 앞에 두었으나, 추위와 소련군의 저항에 막혀 멈춰 섰습니다. 12월 5일 소련군이 모스크바 앞에서 반격을 시작했고, 이틀 뒤 일본의 진주만 공격으로 미국이 참전했습니다. 북아프리카에서는 영국군의 크루세이더 작전으로 토브루크 포위가 풀려 갔습니다."
+        # 레닌그라드·오라니엔바움·세바스토폴은 에워싸인 소련군 지역. 툴라는 세 면이 포위된 채 소련군이 지켰다
+        areas:
+          # 연합국: 나라 영토 uk + 시리아·레바논 + 이집트(영국군 주둔) + 영국 위임 통치령 팔레스타인·트란스요르단 + 이라크 (1941년 5월부터 영국군 점령) + 이란 남서부 영국 점령 구역 + 크루세이더 작전으로 영국군이 되찾은 키레나이카 동부
+          - { faction: allies, geojson: ww2-europe/1941-12-05-allies.geojson }
+          # 추축국: 나라 영토 nazi-germany, general-government, bohemia-moravia, slovakia, italy, albania, denmark, norway, netherlands, belgium, hungary, romania, bulgaria, croatia-ndh, serbia-occupied, montenegro-occupied, greece, finland, france + 독일 점령 지구 + 채널 제도 + 동부 전선의 독일 쪽 (라도가호 → 타간로크만) + 핀란드·독일군이 쥔 카렐리야와 리차강 서쪽 (1941-12 ~ 1944-06 고정) + 비시 프랑스령 모로코·알제리 + 비시 프랑스령 튀니지 (1942-11부터 추축군) + 이탈리아령 리비아 + 바르디아의 추축군 거점 (1942년 1월 2일 항복) + 살룸·할파야의 추축군 거점 (1942년 1월 항복)
+          - { faction: axis, geojson: ww2-europe/1941-12-05-axis.geojson }
+          # 소련: 나라 영토 soviet-union, soviet-occupied, karelia-occupied + 포위된 레닌그라드 + 세 면이 포위된 채 소련군이 지킨 툴라 + 오라니엔바움 교두보 + 포위된 세바스토폴 + 이란 북부 소련 점령 구역
+          - { faction: soviet, geojson: ww2-europe/1941-12-05-soviet.geojson }
+        arrows:
+          - { faction: soviet, path: [[36.05, 56.75], [35.92, 56.86]], label: 칼리닌 전선군 반격 }
+          - { faction: soviet, path: [[37.48, 56.28], [36.73, 56.33], [35.96, 56.03]], label: 클린-솔네치노고르스크 작전 }
+          - { faction: soviet, path: [[38.15, 54.83], [38.22, 54.58], [38.27, 54.35], [38.27, 54.03]], label: 툴라 반격 }
+          - { faction: soviet, path: [[33.7, 59.75], [33.54, 59.64], [32.45, 59.29]], label: 티흐빈 탈환 (12월 9일) }
+          - { faction: allies, path: [[24.95, 31.4], [24.5, 31.8], [24.08, 31.99]], label: 크루세이더 작전 }
+        holds:
+          - { name: 툴라 (세 면이 포위됨), at: [37.62, 54.2], faction: soviet }
+
+      - date: 1942-11-19
+        title: 스탈린그라드 반격
+        summary: "1942년 여름 캅카스 유전과 스탈린그라드를 노린 독일군의 공세로 추축국의 점령지가 가장 넓어졌습니다. 11월 4일 영국군이 엘알라메인에서 이기고 8일 미국·영국군이 모로코·알제리에 상륙하자, 독일은 비시 프랑스 땅도 점령했습니다. 11월 19일 소련군은 스탈린그라드의 독일 제6군을 에워싸는 반격을 시작했습니다(천왕성 작전)."
+        # 스탈린그라드 시내는 볼가강 가의 소련 제62군 띠만 남았다. 칼미크 초원과 캅카스 고개 지대는 이어진 전선이 아니라 거점이 흩어진 곳이라 어림(±20~30km)
+        areas:
+          # 연합국: 나라 영토 uk + 프랑스령 모로코·알제리 + 시리아·레바논 + 이집트(영국군 주둔) + 영국 위임 통치령 팔레스타인·트란스요르단 + 이라크 (1941년 5월부터 영국군 점령) + 이란 남서부 영국 점령 구역 + 영국 제8군이 되찾은 키레나이카 (벵가지 동쪽까지) + 연합군·자유 프랑스군이 쥔 튀니지 서부 (제벨아비오드·메제즈엘바브 앞·르케프·가프사, 동쪽 해안과 튀니스·비제르트는 추축군)
+          - { faction: allies, geojson: ww2-europe/1942-11-19-allies.geojson }
+          # 추축국: 나라 영토 nazi-germany, general-government, bohemia-moravia, slovakia, italy, albania, denmark, norway, netherlands, belgium, hungary, romania, bulgaria, croatia-ndh, serbia-occupied, montenegro-occupied, greece, finland, france, france-occupied, france-italian-occupied + 동부 전선의 독일 쪽 (라도가호 → 스탈린그라드 → 캅카스) + 핀란드·독일군이 쥔 카렐리야와 리차강 서쪽 (1941-12 ~ 1944-06 고정) + 채널 제도 + 비시 프랑스령 튀니지 (1942-11부터 추축군) + 이탈리아령 리비아
+          - { faction: axis, geojson: ww2-europe/1942-11-19-axis.geojson }
+          # 소련: 나라 영토 soviet-union, soviet-occupied, karelia-occupied + 포위된 레닌그라드 + 오라니엔바움 교두보 + 스탈린그라드 시내의 소련군 (제62군·고로호프 집단) + 이란 북부 소련 점령 구역
+          - { faction: soviet, geojson: ww2-europe/1942-11-19-soviet.geojson }
+        arrows:
+          - { faction: soviet, path: [[42.73, 49.58], [42.48, 49.15], [43.53, 48.68]], label: 천왕성 작전 (북쪽) }
+          - { faction: soviet, path: [[43.06, 49.31], [43.1, 48.95], [43.5, 48.7]], label: 제21·65군 }
+          - { faction: soviet, path: [[44.65, 48.17], [44.13, 48.13], [43.63, 48.6]], label: "천왕성 작전 (남쪽, 11월 20일)" }
+          - { faction: allies, path: [[23.96, 32.08], [22.64, 32.76], [20.08, 32.12]], label: 영국 제8군 추격 }
+          - { faction: allies, path: [[3.06, 36.75], [7.75, 36.9], [9.06, 37.02]], label: 튀니스로 (횃불 작전 뒤) }
+
+      - date: 1943-07-12
+        title: 쿠르스크 전투와 시칠리아 상륙
+        summary: "스탈린그라드의 독일 제6군(2월 2일)과 튀니지의 추축군(5월 13일)이 항복해 전세가 연합국 쪽으로 기울었습니다. 7월 5일 독일군이 쿠르스크 돌출부를 공격했으나 12일 프로호로프카 전차전 무렵 막혔고, 같은 날 소련군이 오룔에서 반격에 나섰습니다. 7월 10일에는 미국·영국군이 시칠리아에 상륙했습니다."
+        # 레닌그라드는 1월 이스크라 작전으로 라도가호 남쪽에 좁은 육로가 열려 포위 지역이 아니다(남쪽 포위선은 그대로). 시칠리아 교두보는 대략 ±10km
+        areas:
+          # 연합국: 나라 영토 uk + 판텔레리아(6월 11일 항복)·람페두사(6월 12일) + 시칠리아 연합군 교두보 (7월 12일 무렵) + 프랑스령 모로코·알제리 + 프랑스령 튀니지 + 시리아·레바논 + 리비아 (영국·자유 프랑스 군정) + 이집트(영국군 주둔) + 영국 위임 통치령 팔레스타인·트란스요르단 + 이라크 (1941년 5월부터 영국군 점령) + 이란 남서부 영국 점령 구역
+          - { faction: allies, geojson: ww2-europe/1943-07-12-allies.geojson }
+          # 추축국: 나라 영토 nazi-germany, general-government, bohemia-moravia, slovakia, italy, albania, denmark, norway, netherlands, belgium, hungary, romania, bulgaria, croatia-ndh, serbia-occupied, montenegro-occupied, greece, finland, france, france-occupied + 이탈리아 (1941~1943년 영토, 1943년 영토가 휴전 뒤 모양이라 덮음) + 동부 전선의 독일 쪽 (핀란드만 → 쿠르스크 → 미우스강) + 핀란드·독일군이 쥔 카렐리야와 리차강 서쪽 (1941-12 ~ 1944-06 고정) + 쿠반 교두보 (푸른 선) + 채널 제도
+          - { faction: axis, geojson: ww2-europe/1943-07-12-axis.geojson }
+          # 소련: 나라 영토 soviet-union, soviet-occupied, karelia-occupied + 오라니엔바움 교두보 + 말라야 제믈랴 (노보로시스크 남쪽 소련 교두보) + 이란 북부 소련 점령 구역
+          - { faction: soviet, geojson: ww2-europe/1943-07-12-soviet.geojson }
+        arrows:
+          - { faction: soviet, path: [[36.73, 51.03], [36.66, 51.02], [36.62, 50.99]], label: 제5 근위 전차군 (프로호로프카) }
+          - { faction: axis, path: [[36.79, 50.7], [36.83, 50.87], [36.8, 50.95]], label: 독일 제3 기갑 군단 }
+          - { faction: soviet, path: [[35.6, 53.85], [35.54, 53.72], [35.4, 53.1]], label: 쿠투조프 작전 (오룔) }
+          - { faction: soviet, path: [[37.05, 52.97], [36.57, 53.28], [36.08, 52.97]], label: 브랸스크 전선군 }
+          - { faction: allies, path: [[14.3, 36.5], [14.25, 37]], label: 허스키 작전 (시칠리아 상륙) }
+
+      - date: 1943-09-08
+        title: 이탈리아의 항복
+        summary: "무솔리니가 실각한 뒤 이탈리아의 바돌리오 정부는 9월 3일 연합국과 비밀리에 휴전하고 8일 이를 발표했습니다. 독일군은 곧바로 로마와 이탈리아 중·북부를 차지했습니다. 동부 전선에서는 소련군이 하르키우를 되찾고(8월 23일) 이날 돈바스의 스탈리노를 해방하며 드네프르강으로 나아갔습니다."
+        # 연합군은 시칠리아 전체(8월 17일)와 칼라브리아 남부(9월 3일 상륙)를 쥐었다. 이탈리아 본토와 점령지는 아직 독일·이탈리아군 쪽으로 칠한다
+        areas:
+          # 연합국: 나라 영토 uk + 판텔레리아(6월 11일 항복)·람페두사(6월 12일) + 연합군이 차지한 시칠리아와 칼라브리아 남부 + 프랑스령 모로코·알제리 + 프랑스령 튀니지 + 시리아·레바논 + 리비아 (영국·자유 프랑스 군정) + 이집트(영국군 주둔) + 영국 위임 통치령 팔레스타인·트란스요르단 + 이라크 (1941년 5월부터 영국군 점령) + 이란 남서부 영국 점령 구역
+          - { faction: allies, geojson: ww2-europe/1943-09-08-allies.geojson }
+          # 추축국: 나라 영토 nazi-germany, general-government, bohemia-moravia, slovakia, italy, albania, denmark, norway, netherlands, belgium, hungary, romania, bulgaria, croatia-ndh, serbia-occupied, montenegro-occupied, greece, finland, france, france-occupied + 이탈리아 (1941~1943년 영토, 1943년 영토가 휴전 뒤 모양이라 덮음) + 동부 전선의 독일 쪽 (스몰렌스크 앞 → 돈바스) + 핀란드·독일군이 쥔 카렐리야와 리차강 서쪽 (1941-12 ~ 1944-06 고정) + 쿠반 교두보 (푸른 선) + 채널 제도
+          - { faction: axis, geojson: ww2-europe/1943-09-08-axis.geojson }
+          # 소련: 나라 영토 soviet-union, soviet-occupied, karelia-occupied + 오라니엔바움 교두보 + 말라야 제믈랴 + 이란 북부 소련 점령 구역
+          - { faction: soviet, geojson: ww2-europe/1943-09-08-soviet.geojson }
+        arrows:
+          - { faction: allies, path: [[15.55, 38.19], [15.65, 38.11], [16.1, 38.6]], label: 베이타운 작전 (칼라브리아) }
+          - { faction: allies, path: [[14.5, 39.9], [15, 40.45]], label: 살레르노 상륙 (9월 9일) }
+          - { faction: soviet, path: [[33.17, 54.57], [32.6, 54.7], [32.04, 54.78]], label: 스몰렌스크 작전 }
+          - { faction: soviet, path: [[33.2, 51.24], [32.83, 51.18], [31.89, 51.05], [30.5, 50.95]], label: 중앙 전선군 (드네프르강으로) }
+          - { faction: soviet, path: [[37.8, 48], [37.48, 47.6], [37.56, 47.13]], label: 남부 전선군 (마리우폴) }
+
+      - date: 1944-06-06
+        title: 노르망디 상륙 작전
+        summary: "6월 6일 아이젠하워가 이끄는 미국·영국·캐나다군이 프랑스 노르망디 해안에 상륙했습니다(오버로드 작전). 이틀 전 이탈리아에서는 연합군이 로마를 해방했고, 동부 전선의 소련군은 우크라이나와 크림반도를 되찾아 루마니아 국경을 넘었습니다."
+        # 노르망디는 그날 해 질 무렵의 교두보. 핀란드 쪽은 1941~1944년 고정된 전선(저장소의 핀란드 점령 동카렐리야 항목)
+        areas:
+          # 연합국: 나라 영토 uk + 이탈리아 남부와 사르데냐·코르시카 (로마 해방 6월 4일) + 노르망디 교두보 (6월 6일 해 질 무렵) + 프랑스령 모로코·알제리 + 프랑스령 튀니지 + 시리아·레바논 + 리비아 (영국·자유 프랑스 군정) + 이집트(영국군 주둔) + 영국 위임 통치령 팔레스타인·트란스요르단 + 이라크 (1941년 5월부터 영국군 점령) + 이란 남서부 영국 점령 구역
+          - { faction: allies, geojson: ww2-europe/1944-06-06-allies.geojson }
+          # 추축국: 나라 영토 nazi-germany, general-government, poland, bohemia-moravia, slovakia, hungary, romania, bulgaria, croatia-ndh, yugoslavia, greece, albania, italy, italy-occupied, france, denmark, norway, netherlands, belgium, luxembourg + 동부 전선의 독일 쪽 (나르바 → 드네스트르 리만) + 핀란드·독일군이 쥔 카렐리야와 리차강 서쪽 (1941-12 ~ 1944-06 고정) + 채널 제도
+          - { faction: axis, geojson: ww2-europe/1944-06-06-axis.geojson }
+          # 소련: 나라 영토 soviet-union, soviet-occupied + 동부 전선의 소련 쪽 (루마니아 북동부 포함) + 이란 북부 소련 점령 구역
+          - { faction: soviet, geojson: ww2-europe/1944-06-06-soviet.geojson }
+        arrows:
+          - { faction: allies, path: [[-1, 50.4], [-0.9, 49.75], [-0.75, 49.4]], label: 오버로드 작전 (상륙) }
+          - { faction: allies, path: [[-1.6, 49.9], [-1.25, 49.45]], label: 유타 해안 (미군) }
+          - { faction: allies, path: [[12.5, 41.9], [12.15, 42.05], [11.8, 42.09]], label: 미 제5군 (치비타베키아) }
+
+      - date: 1944-08-25
+        title: 파리 해방
+        summary: "노르망디에서 빠져나온 연합군이 8월 25일 파리를 해방했고, 15일에는 남프랑스에도 상륙했습니다. 루아르강 남쪽에서는 독일군이 물러나던 중이었습니다. 소련군은 6월 22일부터 바그라티온 작전으로 독일 중부 집단군을 무너뜨려 바르샤바 앞 비스와강에 이르렀고, 8월 23일 루마니아가 편을 바꾸었습니다."
+        # 프랑스: 북서부는 센강·루아르강 선, 남동부는 드라군 작전 지역. 루아르강 남쪽과 론강 서쪽은 독일군이 철수하던 중이라 독일 쪽으로 남겨 두었다(툴루즈·리모주 등은 이미 레지스탕스가 해방)
+        # 루마니아는 23일 편을 바꾸어 소련 진영으로 칠한다. 바르샤바에서는 8월 1일부터 국내군이 봉기 중
+        areas:
+          # 연합국: 나라 영토 uk + 연합군이 해방한 프랑스 북서부 (센강·루아르강 선) + 드라군 작전으로 해방한 남프랑스 + 이탈리아 남·중부 (아르노강 선) + 프랑스령 모로코·알제리 + 프랑스령 튀니지 + 시리아·레바논 + 리비아 (영국·자유 프랑스 군정) + 이집트(영국군 주둔) + 영국 위임 통치령 팔레스타인·트란스요르단 + 이라크 (1941년 5월부터 영국군 점령) + 이란 남서부 영국 점령 구역
+          - { faction: allies, geojson: ww2-europe/1944-08-25-allies.geojson }
+          # 추축국: 나라 영토 nazi-germany, general-government, poland, bohemia-moravia, slovakia, hungary, bulgaria, croatia-ndh, yugoslavia, greece, albania, italy, italy-occupied, france, denmark, norway, netherlands, belgium, luxembourg + 동부 전선의 독일 쪽 (시니메 → 카르파티아) + 헝가리가 쥔 북트란실바니아 (1940년 2차 빈 중재) + 핀란드군이 쥔 지역 (비보르크 공세 뒤의 선) + 브레스트 독일군 거점 + 로리앙 독일군 거점 + 생나제르 독일군 거점 + 채널 제도
+          - { faction: axis, geojson: ww2-europe/1944-08-25-axis.geojson }
+          # 소련: 나라 영토 soviet-union, soviet-occupied + 동부 전선의 소련 쪽 + 편을 바꾼 루마니아 (8월 23일) + 이란 북부 소련 점령 구역
+          - { faction: soviet, geojson: ww2-europe/1944-08-25-soviet.geojson }
+        arrows:
+          - { faction: allies, path: [[2.4, 48.6], [3.3, 48.3], [4.08, 48.3], [4.58, 48.73]], label: 패튼의 미 제3군 }
+          - { faction: allies, path: [[1.48, 49.09], [1.9, 49.5], [2.3, 49.89]], label: 영국·캐나다군 센강 도하 }
+          - { faction: allies, path: [[6.4, 43.3], [5.94, 44.2], [4.9, 44.6]], label: 드라군 작전 (남프랑스) }
+          - { faction: soviet, path: [[27.59, 47.16], [27.67, 46.23], [27.18, 45.7]], label: 야시-키시너우 공세 }
+        holds:
+          - { name: 바르샤바 봉기 (8월 1일~10월 2일), at: [21.01, 52.23], faction: allies }
+
+      - date: 1944-12-16
+        title: 벌지 전투
+        summary: "가을에 독일 국경까지 밀린 독일군은 12월 16일 아르덴 숲에서 마지막 대반격을 시작했습니다(벌지 전투). 동쪽에서는 소련군이 루마니아·불가리아를 거쳐 베오그라드를 해방하고(10월 20일) 부다페스트를 에워싸기 시작했으며, 핀란드는 9월 소련과 휴전했습니다."
+        # 서부 전선은 벌지 전투 첫날 선(Cole 『The Ardennes』 4장). 핀란드는 휴전 뒤라 칠하지 않는다(라플란드의 독일군은 노르웨이로 물러나는 중)
+        # 유고슬라비아는 파르티잔이 해방한 지역을 연합국, 크로아티아 독립국과 독일군 지역을 추축국으로 칠한다(보스니아의 경계는 대략)
+        areas:
+          # 연합국: 나라 영토 uk, france, belgium, luxembourg, italy, greece, albania, yugoslavia + 파르티잔이 해방한 달마티아 해안 (스플리트 10월 26일, 크닌 12월 4일) + 서부 전선의 연합군 쪽 (북해 → 스위스) + 파르티잔이 해방한 유고슬라비아 (스렘 동부·보이보디나 포함) + 이탈리아 남·중부 (고딕 선 겨울 선) + 프랑스령 모로코·알제리 + 프랑스령 튀니지 + 시리아·레바논 + 리비아 (영국·자유 프랑스 군정) + 이집트(영국군 주둔) + 영국 위임 통치령 팔레스타인·트란스요르단 + 이라크 (1941년 5월부터 영국군 점령) + 이란 남서부 영국 점령 구역
+          - { faction: allies, geojson: ww2-europe/1944-12-16-allies.geojson }
+          # 추축국: 나라 영토 nazi-germany, general-government, poland, bohemia-moravia, slovakia, hungary, croatia-ndh, italy-occupied, denmark, norway, netherlands + 콜마르 포위지 (독일군) + 됭케르크 독일군 거점 + 로리앙 독일군 거점 + 생나제르 독일군 거점 + 라로셸·레섬 독일군 거점 + 루아양·푸앵트드그라브 독일군 거점 + 채널 제도 + 쿠를란트 포위지 + 메멜 교두보 + 크레타 서부 하니아 일대 독일군 (1945년 5월 항복) + 도데카네스 제도 독일군 (1945년 5월 항복)
+          - { faction: axis, geojson: ww2-europe/1944-12-16-axis.geojson }
+          # 소련: 나라 영토 soviet-union, soviet-occupied, romania, bulgaria + 동부 전선의 소련 쪽 (쿠르스키 석호 → 사바강) + 소련군이 해방한 동핀마르크 (1944년 10월 키르케네스) + 이란 북부 소련 점령 구역
+          - { faction: soviet, geojson: ww2-europe/1944-12-16-soviet.geojson }
+        arrows:
+          - { faction: axis, path: [[6.34, 50.4], [6.03, 50.43], [5.57, 50.63]], label: 독일 제6 친위 기갑군 }
+          - { faction: axis, path: [[6.13, 50.05], [5.72, 50], [4.91, 50.26]], label: 독일 제5 기갑군 (뫼즈강) }
+          - { faction: soviet, path: [[18.95, 48.07], [18.85, 47.9], [18.74, 47.79]], label: 부다페스트 북쪽 포위 }
+          - { faction: soviet, path: [[18.6, 47.2], [18.64, 47.49], [18.74, 47.79]], label: 부다페스트 남쪽 포위 }
+
+      - date: 1945-02-04
+        title: 얄타 회담
+        summary: "1월 소련군이 비스와강에서 오데르강까지 밀고 나가 베를린을 70km 앞에 두었고, 서부 전선에서는 벌지의 독일군이 밀려났습니다. 2월 4일 크림반도의 얄타에서 루스벨트·처칠·스탈린이 독일 분할 점령과 전후 처리를 논의했습니다."
+        # 1945년 지도에는 나치 독일 항목이 없어(독일 점령 지구로 바뀜) 1944년의 독일·위성국 영토를 추축국 본토로 깐다. 부다는 2월 13일까지 포위된 채 버텼다
+        areas:
+          # 연합국: 나라 영토 uk, france, belgium, luxembourg, italy, greece, albania, yugoslavia + 서부 전선의 연합군 쪽 (벌지 해소 뒤) + 파르티잔이 해방한 유고슬라비아 (스렘 동부·보이보디나 포함) + 파르티잔이 해방한 달마티아 해안 (스플리트 10월 26일, 크닌 12월 4일) + 이탈리아 남·중부 (겨울 선) + 프랑스령 모로코·알제리 + 프랑스령 튀니지 + 시리아·레바논 + 리비아 (영국·자유 프랑스 군정) + 이집트(영국군 주둔) + 영국 위임 통치령 팔레스타인·트란스요르단 + 이라크 (1941년 5월부터 영국군 점령) + 이란 남서부 영국 점령 구역
+          - { faction: allies, geojson: ww2-europe/1945-02-04-allies.geojson }
+          # 추축국: 독일과 보호령·위성국 (1944년 영토) + 나라 영토 denmark, norway, netherlands + 독일군이 쥔 이탈리아 북부 + 콜마르 포위지 잔여 (2월 9일 소멸) + 됭케르크 독일군 거점 + 로리앙 독일군 거점 + 생나제르 독일군 거점 + 라로셸·레섬 독일군 거점 + 루아양·푸앵트드그라브 독일군 거점 + 채널 제도 + 크로아티아 독립국·독일군 지역 + 독일·이탈리아가 병합했던 슬로베니아 (1945년 5월까지 독일군) + 쿠를란트 포위지 + 잠란트 (필라우) + 쾨니히스베르크 + 하일리겐바일 포위지 (독일 제4군) + 부다 (2월 13일 함락) + 포즈난 요새 (1월 24일~2월 23일 포위) + 슈나이데뮐 요새 (2월 14일 함락) + 퀴스트린 요새 (3월 30일 함락) + 그라우덴츠 요새 (3월 6일 함락) + 글로가우 요새 (4월 1일 함락) + 크레타 서부 하니아 일대 독일군 (1945년 5월 항복) + 도데카네스 제도 독일군 (1945년 5월 항복)
+          - { faction: axis, geojson: ww2-europe/1945-02-04-axis.geojson }
+          # 소련: 나라 영토 soviet-union, romania, bulgaria + 동부 전선의 소련 쪽 (프리셰스 하프 → 사바강) + 소련군이 해방한 동핀마르크 (1944년 10월 키르케네스) + 이란 북부 소련 점령 구역
+          - { faction: soviet, geojson: ww2-europe/1945-02-04-soviet.geojson }
+        arrows:
+          - { faction: soviet, path: [[21.37, 51.78], [19.46, 51.76], [16.93, 52.41], [14.44, 52.67]], label: 제1 벨라루스 전선군 (오데르강) }
+          - { faction: soviet, path: [[21.5, 50.55], [20.63, 50.87], [19.12, 50.81], [16.42, 51.4]], label: 제1 우크라이나 전선군 }
+          - { faction: soviet, path: [[21.4, 52.88], [20.38, 53.11], [19.53, 54.32]], label: 제2 벨라루스 전선군 }
+        holds:
+          - { name: 얄타 회담, at: [34.16, 44.5], faction: soviet }
+
+      - date: 1945-04-25
+        title: 엘베강의 만남
+        summary: "소련군이 베를린을 에워싸고 시가전을 벌이던 4월 25일, 미군과 소련군이 엘베강 가의 토르가우에서 만나 독일이 남북으로 갈라졌습니다. 이탈리아 북부에서는 연합군의 진격과 파르티잔 봉기로 독일군이 무너졌습니다."
+        # 베를린·할베·브레슬라우와 쿠를란트·헬반도·비스와강 삼각주, 대서양 거점은 독일군이 쥔 포위지. 홀란트(네덜란드 서부)도 독일군
+        areas:
+          # 연합국: 나라 영토 uk, france, belgium, luxembourg, italy, greece, albania, yugoslavia + 파르티잔이 해방한 유고슬라비아 + 서방 연합군 진출선의 서쪽 + 연합군·파르티잔이 해방한 이탈리아 (포강 북쪽까지) + 프랑스령 모로코·알제리 + 프랑스령 튀니지 + 시리아·레바논 + 리비아 (영국·자유 프랑스 군정) + 이집트(영국군 주둔) + 영국 위임 통치령 팔레스타인·트란스요르단 + 이라크 (1941년 5월부터 영국군 점령) + 이란 남서부 영국 점령 구역
+          - { faction: allies, geojson: ww2-europe/1945-04-25-allies.geojson }
+          # 추축국: 독일과 보호령·위성국 (1944년 영토) + 나라 영토 denmark, norway, netherlands + 독일군이 쥔 이탈리아 북부 + 홀란트 요새 (독일군) + 베를린 (포위된 독일군) + 할베 포위지 (독일 제9군) + 브레슬라우 요새 + 쿠를란트 포위지 + 헬반도 + 비스와강 삼각주·프리셰 네룽 + 됭케르크 독일군 거점 + 로리앙 독일군 거점 + 생나제르 독일군 거점 + 라로셸·레섬 독일군 거점 + 채널 제도 + 독일군·크로아티아군이 아직 쥔 유고슬라비아 북서부 + 크레타 서부 하니아 일대 독일군 (1945년 5월 항복) + 도데카네스 제도 독일군 (1945년 5월 항복)
+          - { faction: axis, geojson: ww2-europe/1945-04-25-axis.geojson }
+          # 소련: 나라 영토 soviet-union, romania, bulgaria + 동부 전선의 소련 쪽 (슈비네뮌데 → 슬라보니아) + 소련군이 해방한 동핀마르크 (1944년 10월 키르케네스) + 이란 북부 소련 점령 구역
+          - { faction: soviet, geojson: ww2-europe/1945-04-25-soviet.geojson }
+        arrows:
+          - { faction: soviet, path: [[14.38, 52.53], [13.9, 52.52], [13.4, 52.52]], label: 제1 벨라루스 전선군 (베를린) }
+          - { faction: soviet, path: [[14.65, 51.74], [13.45, 52.22], [12.85, 52.48]], label: 제1 우크라이나 전선군 }
+          - { faction: allies, path: [[12.4, 51.4], [12.75, 51.5], [13, 51.56]], label: 미 제1군 (토르가우) }
+          - { faction: allies, path: [[11, 48.6], [11.4, 48.3], [11.58, 48.14]], label: 미 제7군 (뮌헨) }
+        holds:
+          - { name: 토르가우 (미·소 연결), at: [13, 51.56], faction: allies }
+
+      - date: 1945-05-08
+        title: 독일의 항복
+        summary: "4월 30일 히틀러가 베를린의 지하 벙커에서 자살하고 5월 2일 베를린이 함락되었습니다. 독일은 5월 7일 랭스에서, 8일 베를린에서 무조건 항복 문서에 서명해 유럽의 전쟁이 끝났습니다. 지도는 항복할 때 서방 연합군과 소련군이 차지한 지역입니다."
+        # 추축국으로 남은 곳은 항복할 때까지 독일군이 쥐던 지역(노르웨이, 보헤미아의 중부 집단군, 쿠를란트, 대서양 거점 등). 네덜란드·덴마크의 독일군은 5월 5일 항복
+        # 보헤미아의 미군 정지선(카를로비바리~플젠~체스케부데요비체)은 합의된 선으로, 그 동쪽은 소련군이 닿기 전이었다(프라하는 5월 9일)
+        areas:
+          # 연합국: 나라 영토 uk, france, belgium, luxembourg, netherlands, denmark, italy, greece, albania, yugoslavia + 서방 연합군이 차지한 지역 (소련군과의 접촉선 서쪽) + 이탈리아 (4월 29일 카세르타 항복, 5월 2일 발효) + 프랑스령 모로코·알제리 + 프랑스령 튀니지 + 시리아·레바논 + 리비아 (영국·자유 프랑스 군정) + 이집트(영국군 주둔) + 영국 위임 통치령 팔레스타인·트란스요르단 + 이라크 (1941년 5월부터 영국군 점령) + 이란 남서부 영국 점령 구역
+          - { faction: allies, geojson: ww2-europe/1945-05-08-allies.geojson }
+          # 추축국: 독일과 보호령·위성국 (1944년 영토) + 나라 영토 norway + 독일군·크로아티아군이 아직 쥔 유고슬라비아 북서부 + 쿠를란트 포위지 (5월 10일 항복) + 헬반도 + 비스와강 삼각주·프리셰 네룽 + 보른홀름섬 (5월 9일 소련군 상륙) + 됭케르크 독일군 거점 + 로리앙 독일군 거점 + 생나제르 독일군 거점 + 라로셸·레섬 독일군 거점 + 채널 제도 (5월 9일 해방) + 크레타 서부 하니아 일대 독일군 (1945년 5월 항복) + 도데카네스 제도 독일군 (1945년 5월 항복)
+          - { faction: axis, geojson: ww2-europe/1945-05-08-axis.geojson }
+          # 소련: 나라 영토 soviet-union, romania, bulgaria + 소련군이 차지한 지역 + 소련군이 해방한 동핀마르크 (1944년 10월 키르케네스) + 이란 북부 소련 점령 구역
+          - { faction: soviet, geojson: ww2-europe/1945-05-08-soviet.geojson }
+        arrows:
+          - { faction: soviet, path: [[13.74, 51.05], [13.83, 50.64], [14.42, 50.08]], label: 프라하 공세 (5월 9일) }
+          - { faction: soviet, path: [[16.37, 48.21], [15.63, 48.2], [14.87, 48.12]], label: 제3 우크라이나 전선군 }
+        holds:
+          - { name: 베를린 (5월 2일 함락), at: [13.4, 52.52], faction: soviet }
+          - { name: 프라하 봉기 (5월 5일~), at: [14.42, 50.09], faction: allies }
