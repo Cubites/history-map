@@ -240,6 +240,7 @@ export type Hold = z.infer<typeof HoldSchema>;
 /** wars.json: 빌드가 스냅샷마다 진영별 점령 지역을 계산해 넣는다 */
 export interface FrontAreaOut {
   faction: string;
+  /** wars.json에서는 비어 있다. 도형은 wars/<전쟁 id>.json(WarShapesOut)에 따로 있고 전쟁 보기를 열 때 받는다 */
   coords: MultiPolygonCoords;
   bbox: BBox;
 }
@@ -286,6 +287,9 @@ export interface WarIndexEntry {
   region: string;
 }
 type MultiPolygonCoords = [number, number][][][];
+
+/** wars/<전쟁 id>.json: 전역 id → 스냅샷 순서 → 점령 지역 순서(wars.json의 areas와 같은 순서) → 도형 (2026-10-12) */
+export type WarShapesOut = Record<string, MultiPolygonCoords[][]>;
 
 // ── 빌드 결과물 (public/data/) ──────────────────────────────
 

@@ -19,6 +19,7 @@ import {
   type TerritoryFeature,
 } from '../data/staticData.ts';
 import { focusTarget, placeActive } from '../lib/events.ts';
+import { useWarShapes } from '../data/warShapes.ts';
 import { activeWarView, factionColor, frontBattleSpots, nearBy, snapshotFor, theatersInYear } from '../lib/wars.ts';
 import { formatRange } from '../lib/year.ts';
 import { REGION_FILTER_INFO, inRegionFilter } from '../schema/regions.ts';
@@ -157,6 +158,8 @@ export default function WorldMap({ data }: { data: StaticData }) {
   const war = warView?.war;
   const theater = warView?.theater;
   const snapshot = warView ? snapshotFor(warView, year, frontDate, hoveredEvent) : undefined;
+  // 점령 지역 도형은 전쟁 보기를 열 때 따로 받는다 (받는 동안은 평소 영토를 그린다)
+  const warShapes = useWarShapes(war?.id ?? null);
   // 평소 지도에는 그 해에 진행 중인 전역마다 전쟁 표시만 둔다. 권역 필터에 맞는 전쟁만 (DESIGN.md §6.4.2)
   const warMarkers = useMemo(
     () => (warId ? [] : theatersInYear(data.wars, year).filter(({ war: w, theater: t }) => inRegionFilter(regionFilter, t.region ?? w.region))),
@@ -195,7 +198,10 @@ export default function WorldMap({ data }: { data: StaticData }) {
     focusEvent(target.subject, pin.event.id);
   };
   const frontShapes = useMemo(() => {
-    if (!war || !theater || !snapshot) return undefined;
+    if (!war || !theater || !snapshot || !warShapes) return undefined;
+    // 도형은 따로 받은 wars/<전쟁 id>.json에서 (전역 → 스냅샷 순서 → 점령 지역 순서)
+    const snapshotShapes = warShapes[theater.id]?.[theater.snapshots.indexOf(snapshot)];
+    if (!snapshotShapes) return undefined;
     const lineBox = (line: [number, number][]): [number, number, number, number] => {
       const xs = line.map((p) => p[0]);
       const ys = line.map((p) => p[1]);
@@ -203,14 +209,14 @@ export default function WorldMap({ data }: { data: StaticData }) {
     };
     return {
       replaces: new Set(theater.replaces),
-      areas: snapshot.areas.map((a) => ({
+      areas: snapshot.areas.map((a, i) => ({
         entity: war.factions.find((f) => f.id === a.faction)?.entity ?? '',
         color: factionColor(war, a.faction, (id) => data.entities.get(id)?.color),
-        shape: { feature: { type: 'Feature', properties: null, geometry: { type: 'MultiPolygon', coordinates: a.coords } }, bbox: a.bbox } as Shape,
+        shape: { feature: { type: 'Feature', properties: null, geometry: { type: 'MultiPolygon', coordinates: snapshotShapes[i] ?? [] } }, bbox: a.bbox } as Shape,
       })),
       lines: snapshot.lines.map((line) => ({ feature: { type: 'Feature', properties: null, geometry: { type: 'LineString', coordinates: line } }, bbox: lineBox(line) }) as Shape),
     };
-  }, [war, theater, snapshot, data.entities]);
+  }, [war, theater, snapshot, warShapes, data.entities]);
   // 전쟁 중에는 영토 대신 칠하는 나라의 이름표를 그 나라 진영의 점령 지역 안쪽에 둔다
   const labelTerritories = useMemo(() => {
     if (!snapshot) return active;

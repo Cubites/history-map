@@ -187,7 +187,7 @@ interface EventLink {
 
 연 단위 영토로는 전쟁 중 전선의 움직임이 보이지 않는다 (예: 6·25 전쟁 1950~1953년이 모두 38도선). 그래서 전쟁마다 **날짜별 전선 스냅샷**을 따로 둔다. 네 가지 표현 방법을 시험 페이지로 비교한 뒤, "날짜별 전선 + 단계별 작전 화살표"를 골랐다.
 
-- **데이터** (2026-09-27 2단계에서 일반화): `data/wars/<전쟁 id>.yaml` → 빌드(`scripts/build-data/wars.ts`) → `public/data/wars.json`
+- **데이터** (2026-09-27 2단계에서 일반화): `data/wars/<전쟁 id>.yaml` → 빌드(`scripts/build-data/wars.ts`) → `public/data/wars.json` (점령 지역 도형은 전쟁마다 `public/data/wars/<전쟁 id>.json`으로 떼어 내 전쟁 보기를 열 때만 받는다, 2026-10-12: 세계 대전이 들어가 wars.json이 7MB가 되던 문제. 받는 동안은 평소 영토를 그린다, `src/data/warShapes.ts`)
   - 전쟁 → 진영(`factions`) · 참전국(`participants`) · 전역(`theaters`) → 전역마다 날짜 스냅샷(`snapshots`)
   - **진영**: `id`, `name`, 대표 나라 `entity`(색·이름표·클릭 대상), 선택 `color`. 두 편으로 고정하지 않는다 (30년 전쟁, 나폴레옹 전쟁처럼 여러 진영).
   - **참전국**: `entity`, `faction`, 선택 `from`/`to`(날짜). 편을 바꾼 나라는 기간을 나눠 두 번 적는다. 사건 패널의 "이 시기의 전쟁"에 쓰인다.

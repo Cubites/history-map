@@ -19,6 +19,7 @@ import {
   type TerritoryIndexEntry,
   type TerritoryProps,
   type TimelineIndex,
+  type WarShapesOut,
 } from '../../src/schema/index.ts';
 import { DEFAULT_STORY_REGION, REGION_FILTER_OF, STORY_FILE_PREFIXES, regionOfEntityFile, regionOfEventFile } from '../../src/schema/regions.ts';
 import { buildLodTopology, countPoints, subTopology, tiledTopology } from './topo.ts';
@@ -458,6 +459,17 @@ async function main() {
   const territory = (entityId: string, year: number) => clipped.find((t) => t.entityId === entityId && active(t, year))?.clipped ?? null;
   const warIndex = await buildWars(wars, { territory, land: land50.pieces, dir: path.join(DATA, 'wars') }, errors);
   if (errors.length) return finish();
+  // 점령 지역 도형은 전쟁마다 wars/<전쟁 id>.json으로 떼어 낸다. 전쟁 보기를 열 때만 받는다 (2026-10-12, 세계 대전이 들어가
+  // wars.json이 7MB가 되어 첫 화면에서 모든 방문자가 받던 문제). wars.json의 areas[].coords는 비워 둔다
+  await rm(path.join(OUT, 'wars'), { recursive: true, force: true });
+  for (const war of warIndex) {
+    const shapes: WarShapesOut = {};
+    for (const t of war.theaters) {
+      shapes[t.id] = t.snapshots.map((s) => s.areas.map((a) => a.coords));
+      for (const s of t.snapshots) for (const a of s.areas) a.coords = [];
+    }
+    await writeJson(path.join(OUT, 'wars', `${war.id}.json`), shapes);
+  }
   await writeJson(path.join(OUT, 'wars.json'), warIndex);
 
   console.log(`build:data  나라 ${entities.size} · 영토 ${clipped.length} · 사건 ${events.length} · 전쟁 ${wars.length}(스냅샷 ${wars.reduce((n, w) => n + w.theaters.reduce((m, t) => m + t.snapshots.length, 0), 0)}) · ${lodSummary}`);
