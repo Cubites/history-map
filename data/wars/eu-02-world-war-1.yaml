@@ -1,0 +1,271 @@
+# 제1차 세계 대전 (DESIGN.md §4.5). 2026-10-12 작업 W1
+# 전역 하나(유럽): 서부·동부·이탈리아·발칸 전선과, 유럽 지도에 걸리는 만큼의 오스만 제국(갈리폴리·캅카스 전선).
+# 스냅샷마다 진영별 본토를 나라 영토(entities)로 깔고, 남의 땅을 차지한 곳을 geojson(ww1/<날짜>-<진영>.geojson)으로 덮는다.
+#   geojson은 전선 경유점(마을·강·고지, 위키데이터 좌표로 확인)으로 그은 선과 저장소의 그 해 나라 영토를 겹쳐 만든 것이다
+#   (생성 방법·경유점·근거·어림 오차는 W1 결과 노트). 서부 전선은 2km 안, 동부·발칸 전선은 대부분 5~10km 안(1918년 우크라이나·캅카스는 대략)이다.
+# 진영: 협상국(대표 프랑스)·동맹국(대표 독일 제국)·러시아 제국(협상국이지만 1917년 혁명과 1918년 강화로 전쟁에서 빠져 따로 둠).
+#   1918년 강화 뒤의 소비에트 러시아와 핀란드는 칠하지 않아 평소 영토로 보인다(전쟁 밖). 1918년 캅카스는 오스만군이 차지한 것이 확실한 땅
+#   (바투미·아르다한·카르스·알렉산드로폴·수르말루·나히체반, 11월은 바쿠 더함)만 칠하고, 독일 보호 아래의 조지아와 아제르바이잔은 칠하지 않았다.
+# 참전 전의 중립 기간(이탈리아 1915.5, 불가리아 1915.10, 루마니아 1916.8, 그리스 1917.6 전)에는 그 나라를 칠하지 않아 평소 영토로 보인다.
+#   그래서 replaces에는 1918년 판 영토가 전쟁 뒤 모습(바이마르 공화국·체코슬로바키아·유고슬라비아 등)인 나라만 넣었다(이름표가 1918년 3~7월에 미리 나오지 않게).
+# 1918년 판 영토는 전쟁 뒤 국경이다(이탈리아에 트렌티노·트리에스테, 루마니아에 트란실바니아·베사라비아). 그래서 1918년 스냅샷은
+#   그 땅을 geojson으로 동맹국 색으로 덮는다(1917년 오스트리아-헝가리 영토와 겹친 곳).
+# 운영자 검수 필요.
+
+id: world-war-1
+name: 제1차 세계 대전
+factions:
+  - { id: entente, name: 협상국, entity: france, color: "#6d93c9" }
+  - { id: central, name: 동맹국, entity: german-empire, color: "#c98b52" }
+  - { id: russia, name: 러시아 제국 (협상국), entity: russia, color: "#7aa465" }
+# 참전국 (선전 포고·참전 날짜). 지도에 없는 나라(브라질·시암 등)는 뺐다
+participants:
+  - { entity: france, faction: entente }
+  - { entity: uk, faction: entente }
+  - { entity: belgium, faction: entente }
+  - { entity: serbia, faction: entente }
+  - { entity: montenegro, faction: entente }
+  - { entity: russia, faction: russia, to: 1917-11-07 }
+  # 10월 혁명 뒤 소비에트 정부가 12월 휴전, 1918년 3월 3일 강화
+  - { entity: soviet-union, faction: russia, from: 1917-11-07, to: 1918-03-03 }
+  - { entity: japan, faction: entente, from: 1914-08-23 }
+  - { entity: italy, faction: entente, from: 1915-05-23 }
+  - { entity: portugal, faction: entente, from: 1916-03-09 }
+  # 루마니아는 1918년 5월 7일 부쿠레슈티 조약으로 빠졌다가 11월 10일 다시 참전
+  - { entity: romania, faction: entente, from: 1916-08-27, to: 1918-05-07 }
+  - { entity: romania, faction: entente, from: 1918-11-10 }
+  - { entity: usa, faction: entente, from: 1917-04-06 }
+  - { entity: greece, faction: entente, from: 1917-06-30 }
+  - { entity: roc, faction: entente, from: 1917-08-14 }
+  - { entity: german-empire, faction: central }
+  - { entity: austria-hungary, faction: central }
+  - { entity: ottoman, faction: central, from: 1914-10-29 }
+  - { entity: bulgaria, faction: central, from: 1915-10-14 }
+sources:
+  - "미 육군사관학교(West Point) 전사 지도첩 1차 세계 대전 지도 (위키미디어 공용, 미국 정부 저작물)"
+  - "존 키건, 『1차세계대전사』(청어람미디어, 2009)"
+  - "「브레스트-리토프스크 조약」(1918)과 부속 지도"
+  - "「콩피에뉴 휴전 협정」(1918)"
+  - "위키백과 각 전투 문서와 위키데이터 마을 좌표"
+
+theaters:
+  - id: europe
+    name: 유럽
+    replaces: [weimar-republic, austria-republic, hungary, czechoslovakia, yugoslavia, poland, lithuania, latvia, estonia]
+    # 평소 지도의 전쟁 표시 위치 (독일 서부, 서부 전선과 동부 전선 사이)
+    marker: [8.0, 50.2]
+    bounds: [[-6.0, 35.0], [46.0, 61.0]]
+    battles:
+      - { name: 리에주 전투, at: [5.57, 50.63], date: 1914-08-05, winner: central, summary: "독일군이 벨기에의 리에주 요새를 공격해 8월 16일 함락했습니다. 벨기에의 저항으로 독일군의 진격이 며칠 늦어졌습니다." }
+      - { name: 체르 전투, at: [19.55, 44.6], date: 1914-08-16, winner: entente, summary: "세르비아군이 침공해 온 오스트리아-헝가리군을 체르산에서 물리쳤습니다. 연합국의 첫 승리로 꼽힙니다." }
+      - { name: 탄넨베르크 전투, at: [20.2, 53.55], date: 1914-08-26, winner: central, summary: "힌덴부르크와 루덴도르프가 이끈 독일군이 동프로이센에 들어온 러시아 제2군을 포위해 무찔렀습니다." }
+      - { name: 리비우(렘베르크) 점령, at: [24.03, 49.84], date: 1914-09-03, winner: russia, summary: "갈리치아 전투에서 러시아군이 오스트리아-헝가리군을 크게 이기고 리비우(렘베르크)를 차지했습니다." }
+      - { name: 마른 전투, at: [3.38, 49.02], date: 1914-09-05, winner: entente, summary: "파리 앞까지 온 독일군을 프랑스군과 영국 원정군이 9월 12일까지 반격해 엔강까지 밀어냈습니다. 슐리펜 계획이 무너졌습니다." }
+      - { name: 1차 이프르 전투, at: [2.88, 50.85], date: 1914-10-19, winner: entente, summary: "바다로 가는 경주 끝에 영국·프랑스·벨기에군이 이프르를 지켜 냈습니다. 이로써 북해에서 스위스까지 참호선이 이어졌습니다." }
+      - { name: 콜루바라 전투, at: [20.05, 44.3], date: 1914-12-03, winner: entente, summary: "세르비아군이 반격해 오스트리아-헝가리군을 몰아내고 12월 15일 베오그라드를 되찾았습니다." }
+      - { name: 사르카므쉬 전투, at: [42.58, 40.34], date: 1914-12-22, winner: russia, summary: "엔베르 파샤가 이끈 오스만군이 한겨울 산악에서 러시아군을 포위하려다 크게 졌습니다." }
+      - { name: 2차 이프르 전투, at: [2.92, 50.88], date: 1915-04-22, winner: central, summary: "독일군이 처음으로 염소 가스를 대규모로 써 이프르 돌출부를 좁혔습니다." }
+      - { name: 갈리폴리 상륙, at: [26.25, 40.1], date: 1915-04-25, winner: central, summary: "영국·프랑스·안작군이 갈리폴리반도에 상륙했으나 오스만군에 막혀 1916년 1월 물러났습니다." }
+      - { name: 고를리체-타르누프 돌파, at: [21.16, 49.66], date: 1915-05-02, winner: central, summary: "마켄젠의 독일·오스트리아-헝가리군이 러시아군 전선을 뚫었습니다. 러시아군은 가을까지 폴란드·리투아니아에서 물러났습니다(대후퇴)." }
+      - { name: 에르주룸 함락, at: [41.27, 39.9], date: 1916-02-16, winner: russia, summary: "러시아 캅카스군이 한겨울에 오스만 제국의 요새 에르주룸을 차지했습니다." }
+      - { name: 베르됭 전투, at: [5.39, 49.2], date: 1916-02-21, winner: entente, summary: "독일군이 베르됭을 공격했으나 페탱의 프랑스군이 12월까지 버텼습니다. 양쪽 사상자가 70만 명을 넘었습니다." }
+      - { name: 브루실로프 공세, at: [25.33, 50.75], date: 1916-06-04, winner: russia, summary: "브루실로프가 이끈 러시아군이 넓은 전선에서 동시에 공격해 루츠크와 부코비나를 되찾았습니다." }
+      - { name: 솜 전투, at: [2.75, 50.0], date: 1916-07-01, summary: "영국·프랑스군이 솜강 일대에서 대공세를 폈습니다. 첫날 영국군 사상자만 5만 7천 명이었고, 9월에 처음으로 전차가 쓰였습니다." }
+      - { name: 모나스티르 탈환, at: [21.33, 41.03], date: 1916-11-19, winner: entente, summary: "살로니카 전선의 프랑스·세르비아군이 비톨라(모나스티르)를 되찾았습니다." }
+      - { name: 부쿠레슈티 함락, at: [26.1, 44.43], date: 1916-12-06, winner: central, summary: "8월에 참전한 루마니아를 독일·오스트리아-헝가리·불가리아군이 반격해 수도 부쿠레슈티를 차지했습니다." }
+      - { name: 비미 능선·아라스 전투, at: [2.8, 50.37], date: 1917-04-09, winner: entente, summary: "캐나다군이 비미 능선을 차지하는 등 영국군이 아라스 일대에서 몇 km 나아갔습니다." }
+      - { name: 슈맹 데 담 전투 (니벨 공세), at: [3.7, 49.44], date: 1917-04-16, winner: central, summary: "니벨의 프랑스군 대공세가 큰 희생만 내고 실패해 프랑스군 곳곳에서 항명 사태가 일어났습니다." }
+      - { name: 3차 이프르 전투 (파스상달), at: [3.02, 50.9], date: 1917-07-31, summary: "영국군이 진흙탕 속에서 11월까지 공격해 파스상달 능선을 차지했으나 사상자가 수십만 명에 이르렀습니다." }
+      - { name: 마러셰슈티 전투, at: [27.23, 45.88], date: 1917-08-06, winner: entente, summary: "루마니아군과 러시아군이 몰다비아로 들어오려는 독일군을 막아 냈습니다." }
+      - { name: 리가 함락, at: [24.5, 56.83], date: 1917-09-01, winner: central, summary: "독일군이 다우가바강을 건너 9월 3일 리가를 차지했습니다." }
+      - { name: 카포레토 전투, at: [13.58, 46.25], date: 1917-10-24, winner: central, summary: "독일·오스트리아-헝가리군이 이손초 전선을 뚫어 이탈리아군이 피아베강까지 100km 넘게 물러났습니다." }
+      - { name: 캉브레 전투, at: [3.1, 50.13], date: 1917-11-20, summary: "영국군이 전차 수백 대로 힌덴부르크선을 뚫었으나 독일군의 반격으로 얻은 땅의 상당 부분을 되잃었습니다." }
+      - { name: 미하엘 작전 (춘계 공세), at: [3.0, 49.85], date: 1918-03-21, winner: central, summary: "동부에서 옮겨 온 병력으로 독일군이 솜강 일대에서 대공세를 펴 60km 가까이 나아갔으나 아미앵 앞에서 멈췄습니다." }
+      - { name: 2차 마른 전투, at: [3.6, 49.1], date: 1918-07-15, winner: entente, summary: "독일군의 마지막 공세가 랭스 양쪽에서 막혔고, 7월 18일 연합군이 반격에 나섰습니다." }
+      - { name: 아미앵 전투, at: [2.5, 49.85], date: 1918-08-08, winner: entente, summary: "영국·오스트레일리아·캐나다·프랑스군이 전차를 앞세워 크게 이겼습니다. 루덴도르프는 이날을 독일군의 암흑의 날이라 불렀습니다(100일 공세의 시작)." }
+      - { name: 도브로폴레 돌파, at: [21.88, 41.06], date: 1918-09-15, winner: entente, summary: "살로니카 전선의 연합군이 불가리아군 전선을 뚫어 9월 29일 불가리아가 휴전했습니다." }
+      - { name: 뫼즈-아르곤 공세, at: [5.1, 49.3], date: 1918-09-26, winner: entente, summary: "미군과 프랑스군이 아르곤 숲과 뫼즈강 사이에서 휴전 때까지 공격을 이어 갔습니다." }
+      - { name: 비토리오 베네토 전투, at: [12.3, 45.98], date: 1918-10-24, winner: entente, summary: "이탈리아군이 피아베강을 건너 오스트리아-헝가리군을 무너뜨렸습니다. 11월 3일 빌라 주스티 휴전이 맺어졌습니다." }
+    snapshots:
+      - date: 1914-08-04
+        title: 개전과 벨기에 침공
+        summary: 사라예보 사건 뒤 오스트리아-헝가리가 세르비아에 선전 포고하자(7월 28일) 동맹이 잇따라 움직였습니다. 독일은 러시아·프랑스에 선전 포고하고 중립국 벨기에로 쳐들어갔으며(8월 4일), 영국이 이날 독일에 선전 포고했습니다.
+        areas:
+          - { faction: entente, entities: [france, uk, belgium, serbia, montenegro] }
+          - { faction: central, entities: [german-empire, austria-hungary, luxembourg] }
+          - { faction: russia, entities: [russia] }
+        arrows:
+          - { faction: central, path: [[6.1, 50.75], [5.57, 50.63], [4.35, 50.85], [3.3, 50.1], [2.6, 49.3]], label: 슐리펜 계획 (독일군 우익) }
+          - { faction: central, path: [[19.3, 44.95], [19.6, 44.5]], label: 세르비아 침공 }
+          - { faction: russia, path: [[23.0, 54.6], [21.9, 54.6]], label: 동프로이센 진공 }
+          - { faction: russia, path: [[25.8, 50.2], [24.5, 49.9]], label: 갈리치아 진공 }
+
+      - date: 1914-09-05
+        title: 마른 전투
+        summary: 독일군이 벨기에와 북프랑스를 지나 파리 동쪽 마른강 너머까지 내려왔으나, 9월 5일부터 프랑스군과 영국 원정군이 반격해 엔강까지 밀어냈습니다. 동부에서는 독일군이 탄넨베르크에서 이겼고, 러시아군은 갈리치아에서 리비우(렘베르크)를 차지했습니다.
+        areas:
+          - { faction: entente, entities: [france, uk, belgium, serbia, montenegro] }
+          - { faction: central, entities: [german-empire, austria-hungary, luxembourg] }
+          - { faction: russia, entities: [russia] }
+          - { faction: central, geojson: ww1/1914-09-05-central.geojson }
+          - { faction: entente, geojson: ww1/1914-09-05-entente.geojson }
+          - { faction: russia, geojson: ww1/1914-09-05-russia.geojson }
+        arrows:
+          - { faction: entente, path: [[2.7, 49.0], [3.15, 49.15]], label: 우르크강 반격 (프랑스 제6군) }
+          - { faction: entente, path: [[3.45, 48.6], [3.6, 49.05]], label: 마른 반격 }
+          - { faction: central, path: [[3.3, 49.6], [3.15, 48.85]], label: 독일 제1군 (클루크) }
+          - { faction: russia, path: [[24.9, 49.75], [24.05, 49.84]], label: 리비우(렘베르크) 점령 }
+
+      - date: 1914-12-31
+        title: 참호전의 시작
+        summary: 바다로 가는 경주와 1차 이프르 전투 끝에 북해에서 스위스 국경까지 참호선이 이어졌습니다. 동부에서는 독일군이 폴란드 서부를, 러시아군이 갈리치아를 차지했고, 10월 말 오스만 제국이 동맹국 편으로 참전했습니다.
+        areas:
+          - { faction: entente, entities: [france, uk, belgium, serbia, montenegro, cyprus-british] }
+          - { faction: central, entities: [german-empire, austria-hungary, luxembourg, ottoman] }
+          - { faction: russia, entities: [russia] }
+          - { faction: central, geojson: ww1/1914-12-31-central.geojson }
+          - { faction: entente, geojson: ww1/1914-12-31-entente.geojson }
+          - { faction: russia, geojson: ww1/1914-12-31-russia.geojson }
+        arrows:
+          - { faction: central, path: [[19.2, 51.6], [19.9, 52.0]], label: 우치 전투 }
+          - { faction: entente, path: [[20.0, 44.1], [20.35, 44.7]], label: 콜루바라 반격 }
+          - { faction: central, path: [[41.9, 40.1], [42.55, 40.3]], label: 사르카므쉬 공세 }
+          - { faction: russia, path: [[21.7, 49.65], [21.9, 49.2]], label: 카르파티아 공세 }
+
+      - date: 1915-04-25
+        title: 갈리폴리 상륙
+        summary: 영국·프랑스는 다르다넬스 해협을 뚫어 러시아와 바닷길을 이으려고 4월 25일 갈리폴리반도에 상륙했습니다. 서부에서는 독일군이 이프르에서 처음 독가스를 썼고, 동부에서는 러시아군이 3월에 프셰미실 요새를 함락했습니다.
+        areas:
+          - { faction: entente, entities: [france, uk, belgium, serbia, montenegro] }
+          - { faction: central, entities: [german-empire, austria-hungary, luxembourg, ottoman] }
+          - { faction: russia, entities: [russia] }
+          - { faction: central, geojson: ww1/1915-04-25-central.geojson }
+          - { faction: entente, geojson: ww1/1915-04-25-entente.geojson }
+          - { faction: russia, geojson: ww1/1915-04-25-russia.geojson }
+        arrows:
+          - { faction: entente, path: [[25.85, 39.9], [26.19, 40.05]], label: 헬레스곶 상륙 }
+          - { faction: entente, path: [[25.95, 40.2], [26.28, 40.24]], label: 안작 상륙 }
+          - { faction: central, path: [[2.97, 50.94], [2.9, 50.88]], label: 독가스 공격 (2차 이프르) }
+
+      - date: 1915-12-15
+        title: 동부 전선의 대후퇴와 세르비아 점령
+        summary: 5월 고를리체-타르누프 돌파 뒤 러시아군은 폴란드와 리투아니아에서 물러나 리가 앞에서 루마니아 국경까지 새 선을 그었습니다. 10월 불가리아가 동맹국 편으로 참전해 세르비아가 점령되었고, 5월 협상국 편으로 참전한 이탈리아는 이손초강에서 공세를 이어 갔습니다.
+        areas:
+          - { faction: entente, entities: [france, uk, belgium, serbia, montenegro, italy, dodecanese-occupied] }
+          - { faction: central, entities: [german-empire, austria-hungary, luxembourg, ottoman, bulgaria] }
+          - { faction: russia, entities: [russia] }
+          - { faction: central, geojson: ww1/1915-12-15-central.geojson }
+          - { faction: entente, geojson: ww1/1915-12-15-entente.geojson }
+          - { faction: russia, geojson: ww1/1915-12-15-russia.geojson }
+        arrows:
+          - { faction: central, path: [[21.2, 49.7], [22.8, 50.4], [24.0, 51.5]], label: 고를리체 돌파 뒤 진격 }
+          - { faction: central, path: [[20.5, 45.0], [20.6, 44.0]], label: 세르비아 침공 }
+          - { faction: central, path: [[23.0, 43.2], [21.9, 42.6]], label: 불가리아군 }
+          - { faction: entente, path: [[20.6, 42.3], [19.7, 41.6]], label: 세르비아군 알바니아로 후퇴 }
+
+      - date: 1916-02-21
+        title: 베르됭 전투
+        summary: 독일군 참모 총장 팔켄하인은 프랑스군을 소모시키려고 2월 21일 베르됭을 공격했습니다. 발칸에서는 몬테네그로와 알바니아 북부가 점령되었고, 캅카스에서는 러시아군이 에르주룸을 차지했습니다.
+        areas:
+          - { faction: entente, entities: [france, uk, belgium, serbia, montenegro, italy, dodecanese-occupied] }
+          - { faction: central, entities: [german-empire, austria-hungary, luxembourg, ottoman, bulgaria] }
+          - { faction: russia, entities: [russia] }
+          - { faction: central, geojson: ww1/1916-02-21-central.geojson }
+          - { faction: entente, geojson: ww1/1916-02-21-entente.geojson }
+          - { faction: russia, geojson: ww1/1916-02-21-russia.geojson }
+        arrows:
+          - { faction: central, path: [[5.55, 49.35], [5.42, 49.22]], label: 베르됭 공격 }
+          - { faction: russia, path: [[42.4, 40.1], [41.35, 39.9]], label: 에르주룸 점령 }
+          - { faction: central, path: [[19.6, 42.7], [19.5, 41.9]], label: 몬테네그로·알바니아 점령 }
+
+      - date: 1916-12-06
+        title: 솜 전투와 부쿠레슈티 함락
+        summary: 7월부터 영국·프랑스군이 솜강에서 공세를 폈으나 10km 안팎을 나아가는 데 그쳤고, 프랑스군은 가을에 베르됭의 요새들을 되찾았습니다. 동부에서는 브루실로프 공세로 러시아군이 부코비나를 되찾았으나, 8월 협상국 편으로 참전한 루마니아는 12월 6일 수도 부쿠레슈티를 빼앗겼습니다.
+        areas:
+          - { faction: entente, entities: [france, uk, belgium, serbia, montenegro, italy, dodecanese-occupied, romania, portugal] }
+          - { faction: central, entities: [german-empire, austria-hungary, luxembourg, ottoman, bulgaria] }
+          - { faction: russia, entities: [russia] }
+          - { faction: central, geojson: ww1/1916-12-06-central.geojson }
+          - { faction: entente, geojson: ww1/1916-12-06-entente.geojson }
+          - { faction: russia, geojson: ww1/1916-12-06-russia.geojson }
+        arrows:
+          - { faction: entente, path: [[2.6, 49.98], [2.9, 50.04]], label: 솜 공세 }
+          - { faction: russia, path: [[26.1, 50.5], [25.2, 50.75]], label: 브루실로프 공세 }
+          - { faction: central, path: [[24.0, 43.9], [25.2, 44.2], [26.05, 44.42]], label: 부쿠레슈티 진격 }
+          - { faction: central, path: [[25.6, 45.75], [25.9, 45.1]], label: 트란실바니아에서 남하 }
+          - { faction: entente, path: [[21.45, 40.8], [21.34, 41.0]], label: 모나스티르 탈환 }
+
+      - date: 1917-04-06
+        title: 미국의 참전과 힌덴부르크선
+        summary: 독일의 무제한 잠수함 작전과 치머만 전보로 미국이 4월 6일 독일에 선전 포고했습니다. 서부에서는 독일군이 3월에 누아용 돌출부를 버리고 힌덴부르크선으로 물러났고, 러시아에서는 3월 혁명(2월 혁명)으로 차르가 물러났습니다.
+        areas:
+          - { faction: entente, entities: [france, uk, belgium, serbia, montenegro, italy, dodecanese-occupied, romania, portugal] }
+          - { faction: central, entities: [german-empire, austria-hungary, luxembourg, ottoman, bulgaria] }
+          - { faction: russia, entities: [russia] }
+          - { faction: central, geojson: ww1/1917-04-06-central.geojson }
+          - { faction: entente, geojson: ww1/1917-04-06-entente.geojson }
+          - { faction: russia, geojson: ww1/1917-04-06-russia.geojson }
+        arrows:
+          - { faction: central, path: [[2.85, 49.75], [3.2, 49.78]], label: 힌덴부르크선으로 철수 }
+          - { faction: entente, path: [[2.6, 50.33], [2.85, 50.35]], label: 아라스·비미 공격 (4.9) }
+          - { faction: entente, path: [[3.6, 49.33], [3.68, 49.45]], label: 니벨 공세 (4.16) }
+
+      - date: 1917-11-12
+        title: 카포레토 전투와 러시아 10월 혁명
+        summary: 10월 카포레토에서 진 이탈리아군이 피아베강까지 물러났고, 동부에서는 독일군이 9월에 리가를 차지했습니다. 11월 7일 러시아에서 볼셰비키가 권력을 잡아 곧 휴전을 제안했습니다. 서부에서는 영국군이 파스상달 능선까지 나아갔고, 6월 그리스가 협상국 편으로 참전했습니다.
+        areas:
+          - { faction: entente, entities: [france, uk, belgium, serbia, montenegro, italy, dodecanese-occupied, romania, portugal, greece] }
+          - { faction: central, entities: [german-empire, austria-hungary, luxembourg, ottoman, bulgaria] }
+          - { faction: russia, entities: [russia] }
+          - { faction: central, geojson: ww1/1917-11-12-central.geojson }
+          - { faction: entente, geojson: ww1/1917-11-12-entente.geojson }
+          - { faction: russia, geojson: ww1/1917-11-12-russia.geojson }
+        arrows:
+          - { faction: central, path: [[13.72, 46.2], [13.3, 46.1], [12.3, 45.88]], label: 카포레토 돌파 }
+          - { faction: central, path: [[24.5, 56.75], [24.2, 56.95]], label: 리가 점령 }
+          - { faction: central, path: [[23.0, 57.6], [22.6, 58.3]], label: 알비온 작전 (에스토니아 섬들) }
+          - { faction: entente, path: [[2.92, 50.86], [3.02, 50.9]], label: 파스상달 }
+
+      - date: 1918-03-03
+        title: 브레스트-리토프스크 조약
+        summary: 강화 협상이 늦어지자 독일군이 2월 18일 다시 진격해 나르바 앞·프스코프·폴로츠크·오르샤·고멜·키이우까지 나아갔습니다. 3월 3일 소비에트 정부가 조약에 서명해 러시아는 전쟁에서 빠졌고, 핀란드·발트 지역·폴란드·우크라이나에서 손을 뗐습니다. 휴전 중인 루마니아는 3월 5일 예비 강화를 맺었습니다.
+        areas:
+          - { faction: entente, entities: [france, uk, belgium, italy, dodecanese-occupied, romania, portugal, greece] }
+          # 에스토니아는 나르바(3.4 점령)를 빼려고 entities 대신 geojson으로 칠한다
+          - { faction: central, entities: [weimar-republic, austria-republic, hungary, czechoslovakia, yugoslavia, poland, lithuania, latvia, luxembourg, ottoman, bulgaria] }
+          - { faction: central, geojson: ww1/1918-03-03-central.geojson }
+          - { faction: entente, geojson: ww1/1918-03-03-entente.geojson }
+        arrows:
+          - { faction: central, path: [[26.5, 55.9], [27.4, 57.0], [28.3, 57.75]], label: 파우스트슐라크 작전 (2.18~) }
+          - { faction: central, path: [[24.8, 59.3], [27.9, 59.35]], label: 나르바 (3.4) }
+          - { faction: central, path: [[27.6, 53.9], [29.2, 54.3], [30.4, 54.5]], label: 오르샤 (3.3) }
+          - { faction: central, path: [[29.25, 53.1], [30.0, 52.9], [30.95, 52.45]], label: 고멜 (3.1) }
+          - { faction: central, path: [[26.0, 50.6], [28.6, 50.3], [30.45, 50.45]], label: 키이우 (3.2) }
+
+      - date: 1918-07-15
+        title: 독일군 춘계 공세와 2차 마른 전투
+        summary: 독일군은 미군이 오기 전에 이기려고 3월 21일부터 다섯 차례 대공세를 펴 아미앵 앞과 마른강까지 다시 나아갔으나, 7월 15일 마지막 공세가 랭스 양쪽에서 막혔습니다. 동부에서는 독일군이 우크라이나와 크림, 돈강 하류까지 차지했고, 루마니아는 5월 부쿠레슈티 조약으로 전쟁에서 빠졌습니다.
+        areas:
+          - { faction: entente, entities: [france, uk, belgium, italy, dodecanese-occupied, portugal, greece] }
+          - { faction: central, entities: [weimar-republic, austria-republic, hungary, czechoslovakia, yugoslavia, poland, lithuania, latvia, estonia, luxembourg, ottoman, bulgaria] }
+          - { faction: central, geojson: ww1/1918-07-15-central.geojson }
+          - { faction: entente, geojson: ww1/1918-07-15-entente.geojson }
+        arrows:
+          - { faction: central, path: [[3.1, 49.85], [2.55, 49.85]], label: 미하엘 작전 (3.21) }
+          - { faction: central, path: [[2.95, 50.62], [2.66, 50.7]], label: 게오르게테 작전 (4.9) }
+          - { faction: central, path: [[3.6, 49.5], [3.45, 49.1]], label: 블뤼허 작전 (5.27) }
+          - { faction: central, path: [[3.7, 49.2], [3.75, 49.0]], label: 마른 도하 (7.15) }
+
+      - date: 1918-11-11
+        title: 휴전
+        summary: 8월 아미앵 전투부터 연합군의 100일 공세가 이어졌고, 불가리아(9.29)·오스만 제국(10.30)·오스트리아-헝가리(11.3)가 차례로 손을 들었습니다. 10월 말부터 체코슬로바키아·폴란드 등이 독립을 선언했습니다. 독일에서는 11월 혁명으로 황제가 물러났고, 11월 11일 콩피에뉴에서 휴전 협정이 맺어졌습니다. 동부의 독일군은 아직 철수하지 않았습니다.
+        areas:
+          - { faction: entente, entities: [france, uk, belgium, italy, dodecanese-occupied, romania, portugal, greece, yugoslavia, albania] }
+          - { faction: central, entities: [weimar-republic, austria-republic, hungary, czechoslovakia, poland, lithuania, latvia, estonia, luxembourg, ottoman, bulgaria] }
+          - { faction: central, geojson: ww1/1918-11-11-central.geojson }
+          - { faction: entente, geojson: ww1/1918-11-11-entente.geojson }
+        arrows:
+          - { faction: entente, path: [[2.5, 49.85], [3.3, 50.05], [3.95, 50.4]], label: 100일 공세 }
+          - { faction: entente, path: [[5.1, 49.25], [5.2, 49.5]], label: 뫼즈-아르곤 공세 }
+          - { faction: entente, path: [[12.25, 45.85], [12.3, 46.0], [13.2, 46.05]], label: 비토리오 베네토 }
+          - { faction: entente, path: [[21.9, 41.05], [21.6, 42.0], [20.5, 44.75]], label: 살로니카 전선 돌파 }

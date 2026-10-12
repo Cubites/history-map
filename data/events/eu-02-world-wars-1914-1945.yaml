@@ -35,6 +35,7 @@
   tags: [war]
   sources: ["존 키건, 『1차세계대전사』(청어람미디어, 2009)", "에릭 홉스봄, 『극단의 시대』(까치, 1997)"]
   places: [{ name: "탄넨베르크", at: [20.2, 53.55] }, { name: "마른", at: [3.38, 49.02] }, { name: "이프르", at: [2.88, 50.85] }]
+  front: { war: world-war-1, theater: europe, date: 1914-09-05 }
 
 - id: gallipoli-1915
   year: 1914
@@ -57,6 +58,7 @@
   tags: [war, diplomacy]
   sources: ["「런던 조약」(1915)", "존 키건, 『1차세계대전사』(청어람미디어, 2009)"]
   places: [{ name: "갈리폴리", at: [26.28, 40.24] }, { name: "카포레토", at: [13.64, 46.21] }]
+  front: { war: world-war-1, theater: europe, date: 1915-04-25 }
 
 - id: twenty-one-demands-1915
   year: 1915
@@ -89,6 +91,7 @@
   tags: [war, society]
   sources: ["존 키건, 『1차세계대전사』(청어람미디어, 2009)", "에릭 홉스봄, 『극단의 시대』(까치, 1997)"]
   places: [{ name: "베르됭", at: [5.42, 49.21] }, { name: "솜", at: [2.7, 50.02] }]
+  front: { war: world-war-1, theater: europe, date: 1916-12-06 }
 
 - id: us-entry-1917
   year: 1915
@@ -106,6 +109,7 @@
   tags: [war, diplomacy]
   sources: ["「미국 의회의 대독일 선전 포고 결의」(1917)", "「치머만 전보」(1917)", "존 키건, 『1차세계대전사』(청어람미디어, 2009)"]
   places: [{ name: "유틀란트 해전", at: [5.9, 56.7] }]
+  front: { war: world-war-1, theater: europe, date: 1917-04-06 }
 
 - id: february-revolution-1917
   year: 1917
@@ -118,6 +122,7 @@
     - { from: german-empire, to: russia, note: "레닌의 귀국 열차 허용 (러시아의 전쟁 이탈을 노림)" }
   tags: [politics, society]
   sources: ["「니콜라이 2세의 퇴위 선언」(1917)", "쉴라 피츠패트릭, 『러시아혁명 1917-1938』(사계절, 2017)"]
+  front: { war: world-war-1, theater: europe, date: 1917-04-06 }
 
 - id: october-revolution-1917
   year: 1917
@@ -129,6 +134,7 @@
   subjects: [soviet-union, russia]
   tags: [politics, society]
   sources: ["「평화에 관한 포고」(1917)", "「토지에 관한 포고」(1917)", "쉴라 피츠패트릭, 『러시아혁명 1917-1938』(사계절, 2017)"]
+  front: { war: world-war-1, theater: europe, date: 1917-11-12 }
 
 - id: finland-independence-1917
   year: 1917
@@ -157,6 +163,7 @@
     - { from: soviet-union, to: ottoman, note: "카르스·아르다한·바투미를 넘김" }
   tags: [diplomacy, war]
   sources: ["「브레스트-리토프스크 조약」(1918)", "쉴라 피츠패트릭, 『러시아혁명 1917-1938』(사계절, 2017)"]
+  front: { war: world-war-1, theater: europe, date: 1918-03-03 }
 
 - id: baltic-independence-1918
   year: 1918
@@ -192,6 +199,7 @@
   tags: [war, politics]
   sources: ["「콩피에뉴 휴전 협정」(1918)", "「무드로스 휴전 협정」(1918)", "「빌라 주스티 휴전 협정」(1918)", "존 키건, 『1차세계대전사』(청어람미디어, 2009)"]
   places: [{ name: "아미앵", at: [2.3, 49.89] }, { name: "비토리오 베네토", at: [12.3, 45.98] }]
+  front: { war: world-war-1, theater: europe, date: 1918-11-11 }
 
 # ── 러시아 내전과 시베리아 출병 (1918 ~ 1922) ─────────
 
@@ -317,6 +325,7 @@
     - { from: bulgaria, to: greece, note: "서트라키아를 잃음 (1920년 그리스로)" }
   tags: [diplomacy, politics]
   sources: ["「생제르맹 조약」(1919)", "「뇌이 조약」(1919)", "「트리아농 조약」(1920)"]
+  front: { war: world-war-1, theater: europe, date: 1918-11-11 }
 
 - id: sevres-1920
   year: 1919

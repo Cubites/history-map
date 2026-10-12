@@ -971,3 +971,4 @@
   tags: [war, diplomacy]
   sources: ["「오스트리아-헝가리의 대세르비아 최후통첩」(1914)", "크리스토퍼 클라크, 『몽유병자들』(책과함께, 2019)"]
   places: [{ name: "칭다오", at: [120.38, 36.07] }]
+  front: { war: world-war-1, theater: europe, date: 1914-08-04 }
