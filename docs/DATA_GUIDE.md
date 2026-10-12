@@ -209,7 +209,7 @@ factions:                       # 진영: 지도에서 한 색으로 칠하는 �
   - { id: south, name: 국군·유엔군, entity: rok, color: "#3e8ab8" }   # color는 선택
 participants:                   # 참전국 (편을 바꾼 나라는 기간을 나눠 두 번)
   - { entity: prc, faction: north, from: 1950-10-19 }
-sources: ["국방부 군사편찬연구소 『6·25 전쟁사』"]
+sources: ["국방부 군사편찬연구소 『6·25전쟁사』"]
 theaters:                       # 전역: 동시에 여러 곳에서 싸웠으면 나눈다 (예: 유럽, 태평양)
   - id: korea
     name: 한반도

@@ -193,7 +193,7 @@
     - { from: france, to: rok, note: "전투 부대 파병" }
     - { from: turkey, to: rok, note: "전투 부대 파병" }
   tags: [war]
-  sources: ["유엔 안전 보장 이사회 결의 제82·83·84호", "국방부 군사편찬연구소 『6·25 전쟁사』"]
+  sources: ["유엔 안전 보장 이사회 결의 제82·83·84호", "국방부 군사편찬연구소 『6·25전쟁사』"]
   front: { war: korean-war, date: 1950-06-25 }
 
 - id: nakdong-1950
@@ -207,7 +207,7 @@
     - { from: dprk, to: rok, note: "낙동강 총공세" }
     - { from: rok, to: dprk, note: "다부동 방어" }
   tags: [war]
-  sources: ["국방부 군사편찬연구소 『6·25 전쟁사』"]
+  sources: ["국방부 군사편찬연구소 『6·25전쟁사』"]
   front: { war: korean-war, date: 1950-08-31 }
 
 - id: incheon-1950
@@ -221,7 +221,7 @@
     - { from: usa, to: dprk, note: "인천 상륙 작전" }
     - { from: rok, to: dprk, note: "서울 수복" }
   tags: [war]
-  sources: ["국방부 군사편찬연구소 『6·25 전쟁사』"]
+  sources: ["국방부 군사편찬연구소 『6·25전쟁사』"]
   front: { war: korean-war, date: 1950-09-28 }
 
 - id: north-advance-1950
@@ -235,7 +235,7 @@
     - { from: rok, to: dprk, note: "북진, 평양 탈환" }
     - { from: usa, to: dprk, note: "북진" }
   tags: [war]
-  sources: ["국방부 군사편찬연구소 『6·25 전쟁사』"]
+  sources: ["국방부 군사편찬연구소 『6·25전쟁사』"]
   front: { war: korean-war, date: 1950-10-19 }
 
 - id: chinese-entry-1950
@@ -249,7 +249,7 @@
     - { from: prc, to: rok, note: "중국군 참전" }
     - { from: prc, to: usa, note: "중국군 공세" }
   tags: [war]
-  sources: ["국방부 군사편찬연구소 『6·25 전쟁사』"]
+  sources: ["국방부 군사편찬연구소 『6·25전쟁사』"]
   front: { war: korean-war, date: 1950-12-24 }
 
 - id: january-4-retreat-1951
@@ -263,7 +263,7 @@
     - { from: prc, to: rok, note: "서울 재점령" }
     - { from: usa, to: prc, note: "반격, 서울 재수복" }
   tags: [war]
-  sources: ["국방부 군사편찬연구소 『6·25 전쟁사』"]
+  sources: ["국방부 군사편찬연구소 『6·25전쟁사』"]
   front: { war: korean-war, date: 1951-01-24 }
 
 - id: armistice-talks-1951
@@ -276,7 +276,7 @@
   links:
     - { from: soviet-union, to: usa, note: "정전 회담 제의" }
   tags: [war, diplomacy]
-  sources: ["국방부 군사편찬연구소 『6·25 전쟁사』"]
+  sources: ["국방부 군사편찬연구소 『6·25전쟁사』"]
   front: { war: korean-war, date: 1951-07-10 }
 
 - id: armistice-1953
