@@ -386,3 +386,342 @@ theaters:
         holds:
           - { name: 베를린 (5월 2일 함락), at: [13.4, 52.52], faction: soviet }
           - { name: 프라하 봉기 (5월 5일~), at: [14.42, 50.09], faction: allies }
+
+  # ── 아시아·태평양 전역 (묶음 W3, 2026-10-12) ─────────────────────────
+  # 기간: 1937년 7월 7일 루거우차오 사건(중일 전쟁)부터 1945년 9월 9일 조선 총독 항복(38도선 분할 점령 시작)까지. 날짜는 그레고리력.
+  # 진영은 전쟁 머리의 allies(연합국)·soviet(소련)·japan(일본)·china(중국)를 쓴다. axis(추축국)는 이 전역에 나오지 않는다.
+  # 이 전역에 필요한 참전국(전쟁 머리 participants에 W2 것과 합칠 것): japan·manchukuo(japan, 1937-07-07~1945-09-02), roc(china, 1937-07-07~1945-09-02),
+  #   usa·uk(allies, 1941-12-08~), soviet-union(soviet, 대일 참전 1945-08-08~), mongolia(soviet, 1945-08-10~).
+  # 칠하는 순서(뒤가 앞을 덮음): 연합국 식민지 바탕(ww2-asia/allied-colonies.geojson, 1941년 12월부터) → 미국 → 중화민국(+ 저장소 영토가 비어 있는 윈난 서부 ww2-asia/yunnan-west) → 소련 → 일본·조선·만주국·중국 점령지
+  #   → 그날의 일본 점령 지역(ww2-asia/<날짜>-japan) → 아직 함락되지 않은 중국 땅(<날짜>-china) → 연합군이 되찾은 섬 등(<날짜>-allies) → 소련 점령지(<날짜>-soviet).
+  # 동남아시아·태평양은 이 시기 나라 영토가 지도에 없어서 연합국 식민지·자치령(영국령 인도·버마·말라야, 네덜란드령 동인도, 미국령 필리핀, 오스트레일리아 등)을
+  #   geojson으로 연합국 색으로 칠한다. 중립국 타이(1941.12.21 일본과 동맹 뒤로는 일본 진영)·포르투갈령 티모르·마카오·네팔·부탄은 칠하지 않는다.
+  # 중국 점령지는 해마다 그해 말(1945년은 8월) 범위인 occupied-china 항목을 쓰고, 스냅샷 날짜와 다른 곳만 geojson으로 손본다.
+  # 근거와 경유점은 결과 노트(W3) 참고. 운영자 검수 필요.
+  - id: asia-pacific
+    name: 아시아·태평양
+    region: japan
+    replaces: [japan, occupied-korea, manchukuo, roc, occupied-china, soviet-union, usa]
+    marker: [114.3, 30.6]
+    bounds: [[88.0, -14.0], [180.0, 54.0]]
+    battles:
+      - { name: 루거우차오 사건, at: [116.21, 39.85], date: 1937-07-07, summary: 베이핑 서남쪽 루거우차오(노구교) 부근에서 일본군과 중국군이 충돌했다. 일본은 이를 구실로 화북에 대군을 보내 중일 전쟁을 일으켰다. }
+      - { name: 쑹후 회전 (제2차 상하이 사변), at: [121.47, 31.23], date: 1937-08-13, winner: japan, summary: "상하이에서 석 달 동안 이어진 격전. 일본군은 11월 항저우만에 상륙해 중국군의 뒤를 찌르고 11월 12일 상하이를 차지했다." }
+      - { name: 핑싱관 전투, at: [113.93, 39.33], date: 1937-09-25, winner: china, summary: 팔로군(공산당군)이 산시 북부의 핑싱관에서 일본군 수송 부대를 매복 공격해 이겼다. }
+      - { name: 난징 함락, at: [118.78, 32.06], date: 1937-12-13, winner: japan, summary: "일본군이 중화민국 수도 난징을 차지하고 수많은 포로와 민간인을 학살했다(난징 대학살)." }
+      - { name: 타이얼좡 전투, at: [117.73, 34.56], date: 1938-04-07, winner: china, summary: 중국군이 산둥 남부 타이얼좡에서 일본군을 포위해 물리쳤다. 중일 전쟁 초기 중국군의 첫 큰 승리. }
+      - { name: 우한 전투, at: [114.3, 30.59], date: 1938-10-25, winner: japan, summary: "넉 달에 걸친 싸움 끝에 일본군이 우한을 차지했다. 국민 정부는 충칭으로 옮겨 항전을 이어 갔다." }
+      - { name: 할힌골 전투 (노몬한 사건), at: [118.1, 47.75], date: 1939-08-20, winner: soviet, summary: "만주국·몽골 국경 할힌골(노몬한)에서 소련·몽골군이 일본 관동군을 크게 무찔렀다. 일본은 이 뒤 북쪽(소련) 대신 남쪽(동남아시아)으로 나아가는 길을 택했다." }
+      - { name: 백단 대전, at: [113.2, 37.85], date: 1940-08-20, winner: china, summary: 팔로군이 화북 일대에서 철도·도로와 일본군 거점을 한꺼번에 공격했다. }
+      - { name: 진주만 공습, at: [-157.95, 21.35], date: 1941-12-07, winner: japan, summary: "일본 해군 항공 모함 부대가 하와이 진주만의 미국 태평양 함대를 기습했다(한국·일본 시각 12월 8일). 미국이 곧 일본에 선전 포고했다." }
+      - { name: 말레이 상륙 (코타바루), at: [102.3, 6.1], date: 1941-12-08, winner: japan, summary: 진주만 공습보다 조금 앞서 일본군이 말레이반도 코타바루와 타이 남부 싱고라·파타니에 상륙했다. }
+      - { name: 싱가포르 함락, at: [103.82, 1.35], date: 1942-02-15, winner: japan, summary: 말레이반도를 내려온 일본군에 영국군 8만여 명이 항복했다. 영국 역사상 가장 큰 패배로 꼽힌다. }
+      - { name: 자와해 해전, at: [112.5, -6.0], date: 1942-02-27, winner: japan, summary: 연합군(미국·영국·네덜란드·오스트레일리아) 함대가 일본 함대에 져서 네덜란드령 동인도의 방어가 무너졌다. }
+      - { name: 바탄·코레히도르 전투, at: [120.5, 14.6], date: 1942-04-09, winner: japan, summary: "필리핀 바탄반도의 미군·필리핀군이 4월 9일 항복했고, 코레히도르섬도 5월 6일 함락되었다. 포로들은 '바탄 죽음의 행진'으로 많이 숨졌다." }
+      - { name: 산호해 해전, at: [154.0, -15.0], date: 1942-05-08, winner: allies, summary: 항공 모함끼리 싸운 첫 해전. 일본은 뉴기니 포트모르즈비를 바다로 공격하려던 계획을 접었다. }
+      - { name: 미드웨이 해전, at: [-177.37, 28.21], date: 1942-06-04, winner: allies, summary: "일본 해군이 항공 모함 4척을 잃었다. 태평양 전쟁의 흐름이 바뀐 전투." }
+      - { name: 과달카날 전투, at: [159.95, -9.43], date: 1942-08-07, winner: allies, summary: "미군이 솔로몬 제도 과달카날에 상륙해 반년 동안 싸운 끝에 1943년 2월 일본군을 몰아냈다. 연합군 반격의 시작." }
+      - { name: 타라와 전투, at: [172.98, 1.42], date: 1943-11-20, winner: allies, summary: "미 해병대가 길버트 제도 타라와에 상륙해 사흘 만에 차지했다. 중부 태평양 '섬 건너뛰기' 작전의 시작." }
+      - { name: 임팔 작전, at: [93.94, 24.8], date: 1944-03-08, winner: allies, summary: "일본군이 버마에서 인도 임팔·코히마로 쳐들어갔으나 보급이 끊겨 7월 큰 피해를 입고 물러났다." }
+      - { name: 형양 전투, at: [112.57, 26.9], date: 1944-06-22, winner: japan, summary: "대륙 타통 작전 중 중국군이 형양을 47일 동안 지키다 8월 8일 함락되었다." }
+      - { name: 사이판 전투, at: [145.75, 15.19], date: 1944-06-15, winner: allies, summary: "미군이 마리아나 제도 사이판을 7월 9일 차지했다. 이 패배로 7월 18일 도조 내각이 물러났다." }
+      - { name: 필리핀해 해전, at: [137.0, 15.0], date: 1944-06-19, winner: allies, summary: 마리아나 제도를 지키러 나선 일본 항공 모함 부대가 미군에 크게 졌다. }
+      - { name: 레이테만 해전, at: [125.4, 10.9], date: 1944-10-23, winner: allies, summary: "필리핀 레이테섬 상륙을 막으려던 일본 해군이 크게 져 함대의 힘을 거의 잃었다. 가미카제 특공이 처음 나왔다." }
+      - { name: 마닐라 전투, at: [120.98, 14.6], date: 1945-02-03, winner: allies, summary: 미군과 일본군의 시가전으로 마닐라가 폐허가 되고 시민 10만여 명이 숨졌다. }
+      - { name: 이오지마 전투, at: [141.32, 24.78], date: 1945-02-19, winner: allies, summary: "미군이 한 달여 싸운 끝에 일본 본토와 마리아나 사이의 이오지마를 차지했다(3월 26일)." }
+      - { name: 만달레이·메이크틸라 전투, at: [95.86, 20.88], date: 1945-03-03, winner: allies, summary: "영국군(인도군 포함)이 3월 3일 메이크틸라, 20일 만달레이를 차지해 버마 중부의 일본군을 무너뜨렸다." }
+      - { name: 오키나와 전투, at: [127.75, 26.3], date: 1945-04-01, winner: allies, summary: "미군이 4월 1일 오키나와에 상륙해 6월 하순까지 싸웠다. 주민 9만여 명이 희생되었고 집단 자결을 강요당한 이들도 있었다." }
+      - { name: 히로시마 원자 폭탄, at: [132.46, 34.39], date: 1945-08-06, winner: allies, summary: "미국이 히로시마에 원자 폭탄을 떨어뜨렸다. 강제 동원 등으로 그곳에 있던 한국인도 많이 피폭되었다." }
+      - { name: 나가사키 원자 폭탄, at: [129.87, 32.75], date: 1945-08-09, winner: allies, summary: 미국이 나가사키에 두 번째 원자 폭탄을 떨어뜨렸다. }
+      - { name: 무단장 전투, at: [129.63, 44.55], date: 1945-08-12, winner: soviet, summary: "만주로 진공한 소련 제1 극동 전선군이 나흘 동안 싸운 끝에 8월 16일 무단장을 차지했다." }
+      - { name: 청진 전투, at: [129.78, 41.79], date: 1945-08-13, winner: soviet, summary: "소련 태평양 함대의 해군 보병이 청진에 상륙해 16일 도시를 차지했다." }
+      - { name: 슘슈섬 전투, at: [156.3, 50.72], date: 1945-08-18, winner: soviet, summary: "일본의 항복 방송 뒤 소련군이 쿠릴 열도 북쪽 끝 슘슈섬에 상륙해 일본군과 싸웠다. 소련은 9월 초까지 쿠릴 열도 전체를 차지했다." }
+    snapshots:
+      - date: 1937-07-07
+        title: 루거우차오 사건과 중일 전쟁
+        summary: 7월 7일 베이핑 교외 루거우차오(노구교)에서 일어난 충돌을 계기로 일본이 중국을 전면 침략해 중일 전쟁이 시작되었습니다. 일본은 이미 만주국(1932)을 세웠고, 허베이 동부(기동 방공 자치 정부)와 차하얼 북부(몽골 군정부)에도 괴뢰 정권을 두고 있었습니다.
+        areas:
+          - { faction: china, entities: [roc, occupied-china] }
+          - { faction: china, geojson: ww2-asia/yunnan-west.geojson }
+          - { faction: soviet, entities: [soviet-union] }
+          - { faction: japan, entities: [japan, occupied-korea, manchukuo] }
+          - { faction: japan, geojson: ww2-asia/1937-07-07-japan.geojson }
+        arrows:
+          - { faction: japan, path: [[117.2, 39.12], [116.7, 39.6], [116.3, 39.85]], label: 베이핑·톈진 공격 }
+          - { faction: japan, path: [[122.5, 33.0], [121.5, 31.3]], label: 상하이 (8월) }
+
+      - date: 1937-12-13
+        title: 난징 함락
+        summary: 일본군은 7월 말 베이핑·톈진을 차지하고, 석 달 동안의 격전 끝에 11월 상하이를 점령한 뒤 12월 13일 수도 난징을 함락했습니다. 일본군은 난징에서 수많은 포로와 민간인을 학살했습니다(난징 대학살). 국민 정부는 우한을 거쳐 충칭으로 옮겨 항전을 이어 갔습니다.
+        areas:
+          - { faction: china, entities: [roc] }
+          - { faction: china, geojson: ww2-asia/yunnan-west.geojson }
+          - { faction: soviet, entities: [soviet-union] }
+          - { faction: japan, entities: [japan, occupied-korea, manchukuo, occupied-china] }
+          - { faction: japan, geojson: ww2-asia/mengjiang.geojson }
+          - { faction: japan, geojson: ww2-asia/1937-12-13-japan.geojson }
+          - { faction: china, geojson: ww2-asia/1937-12-13-china.geojson }
+        arrows:
+          - { faction: japan, path: [[121.4, 31.3], [120.3, 31.55], [119.4, 31.85], [118.85, 32.03]], label: 난징 공격 }
+          - { faction: japan, path: [[116.4, 39.75], [115.45, 38.85], [114.5, 38.05], [114.35, 36.1]], label: 핑한 철도 }
+          - { faction: japan, path: [[117.2, 39.05], [116.6, 37.45], [117.0, 36.8]], label: 진푸 철도 }
+          - { faction: japan, path: [[113.3, 40.1], [112.55, 37.87]], label: 타이위안 }
+
+      - date: 1938-10-27
+        title: 우한·광저우 함락
+        summary: 일본군은 1938년 5월 쉬저우를 차지해 화북과 화중의 점령지를 잇고, 10월 광저우(21일)와 우한(25~27일)을 함락했습니다. 그러나 중국은 충칭을 임시 수도로 삼아 버텼고, 일본군은 넓은 땅의 도시와 철도만 지키는 장기전에 빠졌습니다.
+        areas:
+          - { faction: china, entities: [roc] }
+          - { faction: china, geojson: ww2-asia/yunnan-west.geojson }
+          - { faction: soviet, entities: [soviet-union] }
+          - { faction: japan, entities: [japan, occupied-korea, manchukuo, occupied-china] }
+          - { faction: japan, geojson: ww2-asia/mengjiang.geojson }
+          - { faction: japan, geojson: ww2-asia/1938-10-27-japan.geojson }
+          - { faction: china, geojson: ww2-asia/pearl-delta-revert.geojson }
+          - { faction: china, geojson: ww2-asia/1938-10-27-china.geojson }
+        arrows:
+          - { faction: japan, path: [[117.0, 36.6], [117.1, 35.3], [117.2, 34.3]], label: 쉬저우 (5월) }
+          - { faction: japan, path: [[118.8, 32.0], [117.05, 30.5], [116.0, 29.72], [114.4, 30.6]], label: 우한 공략 }
+          - { faction: japan, path: [[114.6, 22.4], [114.0, 22.9], [113.3, 23.12]], label: 광저우 }
+        holds:
+          - { name: 충칭 (임시 수도), at: [106.55, 29.56], faction: china }
+
+      - date: 1941-12-08
+        title: 태평양 전쟁 발발
+        summary: 중일 전쟁이 길어지자 일본은 1941년 4월 소련과 중립 조약을 맺어 북쪽을 안정시키고, 자원을 얻으려 프랑스령 인도차이나에 진주했습니다(1940~1941). 미국은 석유 수출 금지로 맞섰습니다. 일본은 12월 8일(하와이 시각 7일) 진주만의 미국 태평양 함대를 기습하고 말레이반도·필리핀·홍콩을 공격해 태평양 전쟁을 일으켰습니다. 지도에서 영국·미국·네덜란드 등의 식민지는 연합국 색으로 칠했습니다.
+        areas:
+          - { faction: allies, geojson: ww2-asia/allied-colonies.geojson }
+          - { faction: allies, entities: [usa] }
+          - { faction: china, entities: [roc] }
+          - { faction: china, geojson: ww2-asia/yunnan-west.geojson }
+          - { faction: soviet, entities: [soviet-union] }
+          - { faction: japan, entities: [japan, occupied-korea, manchukuo, occupied-china] }
+          - { faction: japan, geojson: ww2-asia/mengjiang.geojson }
+          - { faction: japan, geojson: ww2-asia/1941-12-08-japan.geojson }
+          - { faction: china, geojson: ww2-asia/pearl-delta-revert.geojson }
+          - { faction: allies, geojson: ww2-asia/1941-12-08-allies.geojson }
+        arrows:
+          - { faction: japan, path: [[147.6, 45.0], [170.0, 38.0], [-158.0, 21.4]], label: 진주만 }
+          - { faction: japan, path: [[106.5, 9.5], [102.4, 6.2]], label: 말레이 상륙 }
+          - { faction: japan, path: [[121.0, 22.6], [120.6, 15.3]], label: 필리핀 }
+          - { faction: japan, path: [[114.1, 22.75], [114.17, 22.35]], label: 홍콩 }
+        holds:
+          - { name: 웨이크섬, at: [166.63, 19.28], faction: allies }
+          - { name: 미드웨이, at: [-177.37, 28.21], faction: allies }
+
+      - date: 1942-06-07
+        title: 미드웨이 해전
+        summary: 일본은 반년 만에 필리핀·말레이반도·싱가포르·네덜란드령 동인도·버마(미얀마)를 차지하고 '대동아 공영권'을 내세웠습니다. 그러나 6월 4~7일 미드웨이 해전에서 항공 모함 4척을 잃으면서 태평양의 주도권이 미국으로 넘어가기 시작했습니다. 같은 때 일본군은 알류샨 열도의 애투·키스카섬을 차지했습니다.
+        areas:
+          - { faction: allies, geojson: ww2-asia/allied-colonies.geojson }
+          - { faction: allies, entities: [usa] }
+          - { faction: china, entities: [roc] }
+          - { faction: china, geojson: ww2-asia/yunnan-west.geojson }
+          - { faction: soviet, entities: [soviet-union] }
+          - { faction: japan, entities: [japan, occupied-korea, manchukuo, occupied-china] }
+          - { faction: japan, geojson: ww2-asia/mengjiang.geojson }
+          - { faction: japan, geojson: ww2-asia/1942-06-07-japan.geojson }
+          - { faction: china, geojson: ww2-asia/pearl-delta-revert.geojson }
+        arrows:
+          - { faction: japan, path: [[136.0, 33.0], [160.0, 31.0], [-177.4, 28.4]], label: 미드웨이 공격 }
+          - { faction: japan, path: [[147.0, 44.0], [165.0, 49.5], [173.2, 52.8]], label: 알류샨 }
+          - { faction: japan, path: [[96.15, 16.85], [96.1, 21.9], [97.4, 25.35]], label: 버마 북진 }
+          - { faction: allies, path: [[152.0, -18.0], [154.0, -15.2]], label: 산호해 (5월) }
+        holds:
+          - { name: 마킨, at: [172.79, 3.07], faction: japan }
+          - { name: 웨이크섬, at: [166.63, 19.28], faction: japan }
+          - { name: 미드웨이, at: [-177.37, 28.21], faction: allies }
+          - { name: 포트모르즈비, at: [147.18, -9.44], faction: allies }
+
+      - date: 1943-11-23
+        title: 카이로 회담
+        summary: 연합군은 과달카날 전투(1942.8~1943.2)에서 이긴 뒤 솔로몬 제도와 뉴기니를 따라 북쪽으로 나아갔고, 11월 20~23일 길버트 제도의 타라와·마킨을 차지했습니다. 11월 22일부터 카이로에서 미국·영국·중국 정상이 만나 일본이 빼앗은 땅을 돌려받고 한국을 적당한 시기에 독립시키기로 했습니다.
+        areas:
+          - { faction: allies, geojson: ww2-asia/allied-colonies.geojson }
+          - { faction: allies, entities: [usa] }
+          - { faction: china, entities: [roc] }
+          - { faction: china, geojson: ww2-asia/yunnan-west.geojson }
+          - { faction: soviet, entities: [soviet-union] }
+          - { faction: japan, entities: [japan, occupied-korea, manchukuo, occupied-china] }
+          - { faction: japan, geojson: ww2-asia/mengjiang.geojson }
+          - { faction: japan, geojson: ww2-asia/1943-11-23-japan.geojson }
+          - { faction: china, geojson: ww2-asia/pearl-delta-revert.geojson }
+        arrows:
+          - { faction: allies, path: [[160.0, -9.5], [157.3, -8.25], [155.05, -6.3]], label: 솔로몬 북상 }
+          - { faction: allies, path: [[147.15, -9.4], [147.0, -6.8], [147.85, -6.6]], label: 뉴기니 (라에·핀슈하펜) }
+          - { faction: allies, path: [[-158.0, 21.3], [-175.0, 10.0], [173.1, 1.6]], label: 길버트 제도 }
+        holds:
+          - { name: 타라와, at: [172.93, 1.35], faction: allies }
+          - { name: 마킨, at: [172.79, 3.07], faction: allies }
+          - { name: 콰잘레인, at: [167.73, 8.72], faction: japan }
+          - { name: 트루크, at: [151.85, 7.42], faction: japan }
+          - { name: 웨이크섬, at: [166.63, 19.28], faction: japan }
+          - { name: 라바울, at: [152.17, -4.2], faction: japan }
+
+      - date: 1944-07-09
+        title: 사이판 함락
+        summary: 미군은 마셜 제도를 거쳐 7월 9일 마리아나 제도의 사이판을 함락했고, 이곳에서 B-29 폭격기로 일본 본토를 폭격할 수 있게 되었습니다. 버마에서는 일본군의 임팔 작전이 실패했고, 중국에서는 일본군이 대륙 타통 작전(이치고 작전)으로 허난과 창사를 차지하고 형양을 에워쌌습니다.
+        areas:
+          - { faction: allies, geojson: ww2-asia/allied-colonies.geojson }
+          - { faction: allies, entities: [usa] }
+          - { faction: china, entities: [roc] }
+          - { faction: china, geojson: ww2-asia/yunnan-west.geojson }
+          - { faction: soviet, entities: [soviet-union] }
+          - { faction: japan, entities: [japan, occupied-korea, manchukuo, occupied-china] }
+          - { faction: japan, geojson: ww2-asia/mengjiang.geojson }
+          - { faction: japan, geojson: ww2-asia/1944-07-09-japan.geojson }
+          - { faction: china, geojson: ww2-asia/pearl-delta-revert.geojson }
+          - { faction: china, geojson: ww2-asia/1944-07-09-china.geojson }
+          - { faction: allies, geojson: ww2-asia/1944-07-09-allies.geojson }
+        arrows:
+          - { faction: allies, path: [[167.7, 9.2], [162.3, 11.5], [145.8, 15.2]], label: 마리아나 }
+          - { faction: allies, path: [[147.0, -6.0], [145.8, -5.2], [140.7, -2.55], [136.1, -1.0]], label: 뉴기니 북안 }
+          - { faction: japan, path: [[95.0, 23.6], [94.4, 24.3], [93.95, 24.75]], label: 임팔 작전 (실패) }
+          - { faction: japan, path: [[113.0, 28.25], [112.9, 27.4], [112.6, 26.95]], label: 대륙 타통 작전 }
+        holds:
+          - { name: 콰잘레인, at: [167.73, 8.72], faction: allies }
+          - { name: 에니웨톡, at: [162.3, 11.5], faction: allies }
+          - { name: 마주로, at: [171.38, 7.09], faction: allies }
+          - { name: 워트제, at: [170.23, 9.46], faction: japan }
+          - { name: 말로엘라프, at: [171.23, 8.71], faction: japan }
+          - { name: 잴루잇, at: [169.6, 5.92], faction: japan }
+          - { name: 밀리, at: [171.73, 6.08], faction: japan }
+          - { name: 트루크, at: [151.85, 7.42], faction: japan }
+          - { name: 형양 (포위), at: [112.57, 26.9], faction: china }
+          - { name: 미치나 (포위), at: [97.4, 25.38], faction: japan }
+          - { name: 웨이크섬, at: [166.63, 19.28], faction: japan }
+
+      - date: 1944-10-25
+        title: 레이테만 해전
+        summary: 미군은 10월 20일 필리핀 레이테섬에 상륙했고, 23~26일 레이테만 해전에서 일본 해군 주력을 무찔렀습니다. 이 해전에서 일본군은 처음으로 가미카제 특공을 했습니다. 중국에서는 일본군이 광시로 들어가 구이린·류저우를 향해 나아갔습니다.
+        areas:
+          - { faction: allies, geojson: ww2-asia/allied-colonies.geojson }
+          - { faction: allies, entities: [usa] }
+          - { faction: china, entities: [roc] }
+          - { faction: china, geojson: ww2-asia/yunnan-west.geojson }
+          - { faction: soviet, entities: [soviet-union] }
+          - { faction: japan, entities: [japan, occupied-korea, manchukuo, occupied-china] }
+          - { faction: japan, geojson: ww2-asia/mengjiang.geojson }
+          - { faction: japan, geojson: ww2-asia/1944-10-25-japan.geojson }
+          - { faction: china, geojson: ww2-asia/pearl-delta-revert.geojson }
+          - { faction: china, geojson: ww2-asia/1944-10-25-china.geojson }
+          - { faction: allies, geojson: ww2-asia/1944-10-25-allies.geojson }
+        arrows:
+          - { faction: allies, path: [[134.5, 7.5], [128.5, 9.5], [125.15, 11.0]], label: 레이테 상륙 }
+          - { faction: japan, path: [[114.9, 5.1], [119.5, 11.0], [123.5, 12.6], [125.3, 11.4]], label: 쇼 1호 작전 }
+          - { faction: japan, path: [[111.1, 25.9], [110.65, 25.6], [110.4, 25.3]], label: 구이린 }
+          - { faction: japan, path: [[111.3, 23.48], [110.39, 23.54], [109.75, 23.6]], label: 시장강 }
+        holds:
+          - { name: 울리시, at: [139.67, 10.02], faction: allies }
+          - { name: 앙가우르, at: [134.13, 6.91], faction: allies }
+          - { name: 코로르, at: [134.48, 7.34], faction: japan }
+          - { name: 펠렐리우, at: [134.24, 7.0], faction: allies }
+          - { name: 웨이크섬, at: [166.63, 19.28], faction: japan }
+
+      - date: 1945-06-23
+        title: 오키나와 전투
+        summary: 미군은 2~3월 마닐라와 이오지마를 차지하고, 4월 1일 오키나와에 상륙해 6월 하순까지 싸웠습니다. 이 전투에서 오키나와 주민 9만여 명이 희생되었습니다. 버마에서는 영국군이 5월 3일 랑군을 되찾았고, 오스트레일리아군은 보르네오에 상륙했습니다.
+        areas:
+          - { faction: allies, geojson: ww2-asia/allied-colonies.geojson }
+          - { faction: allies, entities: [usa] }
+          - { faction: china, entities: [roc] }
+          - { faction: china, geojson: ww2-asia/yunnan-west.geojson }
+          - { faction: soviet, entities: [soviet-union] }
+          - { faction: japan, entities: [japan, occupied-korea, manchukuo, occupied-china] }
+          - { faction: japan, geojson: ww2-asia/mengjiang.geojson }
+          - { faction: japan, geojson: ww2-asia/1945-06-23-japan.geojson }
+          - { faction: china, geojson: ww2-asia/pearl-delta-revert.geojson }
+          - { faction: allies, geojson: ww2-asia/1945-06-23-allies.geojson }
+        arrows:
+          - { faction: allies, path: [[130.5, 24.0], [128.3, 25.6], [127.75, 26.3]], label: 오키나와 }
+          - { faction: allies, path: [[95.86, 20.9], [96.43, 18.94], [96.16, 16.85]], label: 랑군 탈환 }
+          - { faction: allies, path: [[119.0, 2.0], [117.65, 3.3]], label: 보르네오 상륙 }
+          - { faction: china, path: [[107.4, 23.3], [108.3, 22.85]], label: 광시 반격 }
+        holds:
+          - { name: 라부안, at: [115.22, 5.3], faction: allies }
+          - { name: 이오지마, at: [141.32, 24.78], faction: allies }
+          - { name: 웨이크섬, at: [166.63, 19.28], faction: japan }
+          - { name: 트루크, at: [151.85, 7.42], faction: japan }
+
+      - date: 1945-08-15
+        title: 일본의 항복 선언
+        summary: 미국은 8월 6일 히로시마, 9일 나가사키에 원자 폭탄을 떨어뜨렸고, 소련은 8일 일본에 선전 포고한 뒤 9일 만주와 한반도 북동부로 쳐들어왔습니다. 일본은 15일 포츠담 선언을 받아들여 무조건 항복한다고 발표했고, 한국은 광복을 맞았습니다.
+        areas:
+          - { faction: allies, geojson: ww2-asia/allied-colonies.geojson }
+          - { faction: allies, entities: [usa] }
+          - { faction: china, entities: [roc] }
+          - { faction: china, geojson: ww2-asia/yunnan-west.geojson }
+          - { faction: soviet, entities: [soviet-union] }
+          - { faction: japan, entities: [japan, occupied-korea, manchukuo, occupied-china] }
+          - { faction: japan, geojson: ww2-asia/mengjiang.geojson }
+          - { faction: japan, geojson: ww2-asia/1945-08-15-japan.geojson }
+          - { faction: china, geojson: ww2-asia/pearl-delta-revert.geojson }
+          - { faction: allies, geojson: ww2-asia/1945-08-15-allies.geojson }
+          - { faction: soviet, geojson: ww2-asia/1945-08-15-soviet.geojson }
+        arrows:
+          - { faction: soviet, path: [[115.5, 47.6], [119.5, 46.0], [121.0, 44.6], [122.8, 45.35]], label: 자바이칼 전선군 }
+          - { faction: soviet, path: [[131.2, 44.4], [130.4, 44.6], [129.7, 44.58]], label: 제1 극동 전선군 }
+          - { faction: soviet, path: [[132.6, 47.7], [131.6, 47.3], [130.4, 46.85]], label: 제2 극동 전선군 }
+          - { faction: soviet, path: [[131.6, 42.4], [130.6, 41.9], [129.85, 41.8]], label: 청진 상륙 }
+          - { faction: allies, path: [[145.6, 15.0], [133.5, 32.0], [132.46, 34.39]], label: 원자 폭탄 }
+        holds:
+          - { name: 라부안, at: [115.22, 5.3], faction: allies }
+          - { name: 후터우 요새, at: [133.68, 45.98], faction: japan }
+          - { name: 둥닝 요새, at: [131.15, 43.98], faction: japan }
+          - { name: 쑨우 요새, at: [127.33, 49.42], faction: japan }
+          - { name: 하이라얼 (포위), at: [119.74, 49.21], faction: japan }
+          - { name: 이오지마, at: [141.32, 24.78], faction: allies }
+          - { name: 웨이크섬, at: [166.63, 19.28], faction: japan }
+
+      - date: 1945-09-02
+        title: 항복 문서 조인
+        summary: 9월 2일 도쿄만의 미주리호에서 일본이 항복 문서에 서명해 제2차 세계 대전이 끝났습니다. 소련군은 그사이 만주·남사할린·쿠릴 열도와 북위 38도선 북쪽의 한반도를 차지했습니다. 같은 날 나온 연합군의 일반 명령 제1호에 따라 38도선 남쪽은 미군, 북쪽은 소련군이 일본군의 항복을 받게 되었습니다.
+        areas:
+          - { faction: allies, geojson: ww2-asia/allied-colonies.geojson }
+          - { faction: allies, entities: [usa] }
+          - { faction: china, entities: [roc] }
+          - { faction: china, geojson: ww2-asia/yunnan-west.geojson }
+          - { faction: soviet, entities: [soviet-union] }
+          - { faction: japan, entities: [japan, manchukuo, occupied-china] }
+          - { faction: japan, geojson: ww2-asia/mengjiang.geojson }
+          - { faction: japan, geojson: ww2-asia/1945-09-02-japan.geojson }
+          - { faction: japan, geojson: ww2-asia/korea-south.geojson }
+          - { faction: china, geojson: ww2-asia/pearl-delta-revert.geojson }
+          - { faction: allies, geojson: ww2-asia/1945-09-02-allies.geojson }
+          - { faction: soviet, entities: [manchukuo] }
+          - { faction: soviet, geojson: ww2-asia/1945-09-02-soviet.geojson }
+        lines:
+          - [[124.6, 38.0], [128.65, 38.0]]
+        arrows:
+          - { faction: soviet, path: [[125.3, 43.9], [123.4, 41.8], [121.25, 38.85]], label: 뤼순·다롄 }
+          - { faction: soviet, path: [[129.8, 41.8], [127.5, 39.9], [125.75, 39.03]], label: 평양 (8.24) }
+          - { faction: soviet, path: [[156.4, 50.7], [148.0, 45.2], [145.9, 44.0]], label: 쿠릴 열도 }
+          - { faction: allies, path: [[142.0, 33.0], [139.65, 35.3]], label: 미군 일본 진주 }
+        holds:
+          - { name: 이오지마, at: [141.32, 24.78], faction: allies }
+          - { name: 웨이크섬, at: [166.63, 19.28], faction: japan }
+
+      - date: 1945-09-09
+        title: 미군의 서울 진주
+        summary: 미군이 9월 8일 인천에 상륙하고 9일 서울에서 조선 총독의 항복을 받아, 38도선을 경계로 한 미·소의 분할 점령이 시작되었습니다. 같은 날 난징에서 중국 전구의 일본군이 항복했고, 홍콩(8월 30일)과 싱가포르(9월 5일)에는 영국군이 돌아왔습니다.
+        areas:
+          - { faction: allies, geojson: ww2-asia/allied-colonies.geojson }
+          - { faction: allies, entities: [usa] }
+          - { faction: china, entities: [roc] }
+          - { faction: china, geojson: ww2-asia/yunnan-west.geojson }
+          - { faction: soviet, entities: [soviet-union] }
+          - { faction: japan, entities: [japan, manchukuo, occupied-china] }
+          - { faction: japan, geojson: ww2-asia/mengjiang.geojson }
+          - { faction: japan, geojson: ww2-asia/1945-09-09-japan.geojson }
+          - { faction: allies, geojson: ww2-asia/korea-south.geojson }
+          - { faction: china, geojson: ww2-asia/pearl-delta-revert.geojson }
+          - { faction: allies, geojson: ww2-asia/1945-09-09-allies.geojson }
+          - { faction: soviet, entities: [manchukuo] }
+          - { faction: soviet, geojson: ww2-asia/1945-09-09-soviet.geojson }
+        lines:
+          - [[124.6, 38.0], [128.65, 38.0]]
+        arrows:
+          - { faction: allies, path: [[124.8, 36.6], [126.0, 37.3], [126.62, 37.47]], label: 인천 상륙 }
+          - { faction: allies, path: [[96.0, 7.0], [100.33, 5.4], [103.85, 1.3]], label: 페낭·싱가포르 }
+        holds:
+          - { name: 이오지마, at: [141.32, 24.78], faction: allies }

@@ -34,6 +34,7 @@
     - { from: soviet-union, to: usa, note: "미소 공동 위원회, 양군 동시 철수 제안 (1947)" }
   tags: [war, politics, diplomacy]
   sources: ["국사편찬위원회 『신편 한국사』 52 대한민국의 성립", "국사편찬위원회 우리역사넷 『사료로 본 한국사』 「북한 점령 치스차코프 대장의 포고문」"]
+  front: { war: world-war-2, theater: asia-pacific, date: 1945-09-02 }
   places: [{ name: "청진", at: [129.78, 41.79] }]
 
 - id: uk-welfare-state-1945

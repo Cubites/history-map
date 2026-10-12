@@ -17,6 +17,7 @@
     - { from: soviet-union, to: soviet-north, note: "38도선 이북 점령" }
   tags: [politics]
   sources: ["「맥아더 포고 제1호」", "국사편찬위원회 『한국사』"]
+  front: { war: world-war-2, theater: asia-pacific, date: 1945-09-09 }
 
 - id: okinawa-1945
   year: 1945
@@ -30,6 +31,7 @@
     - { from: usa, to: ryukyu-us, note: "군정 실시" }
   tags: [war]
   sources: ["「연합군 최고 사령관 각서 제677호(SCAPIN-677)」(1946)", "국사편찬위원회 『한국사』"]
+  front: { war: world-war-2, theater: asia-pacific, date: 1945-06-23 }
 
 - id: moscow-conference-1945
   year: 1945

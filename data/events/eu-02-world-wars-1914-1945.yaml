@@ -844,6 +844,7 @@
     - { from: soviet-union, to: japan, note: "대일 선전 포고, 선언 참여 (8.8)" }
   tags: [diplomacy, war]
   sources: ["「포츠담 협정(베를린 회담 의정서)」(1945)", "「포츠담 선언」(1945)", "「일본 항복 문서」(1945)"]
+  front: { war: world-war-2, theater: asia-pacific, date: 1945-08-15 }
 
 - id: united-nations-1945
   year: 1944

@@ -813,6 +813,7 @@
   tags: [war, politics]
   sources: ["『조선총독부 관보』", "국사편찬위원회 『한국사』", "국사편찬위원회 우리역사넷 『한국사 연대기』 중일전쟁"]
   places: [{ name: "루거우차오", at: [116.22, 39.85] }]
+  front: { war: world-war-2, theater: asia-pacific, date: 1937-07-07 }
 
 - id: sino-japanese-occupation-1937
   year: 1937
@@ -828,6 +829,7 @@
     - { from: roc, to: occupied-korea, note: "임시정부·광복군 지원" }
   tags: [war]
   sources: ["「일본 항복 문서」(1945)", "Hans van de Ven, *China at War* (2018)", "국사편찬위원회 『한국사』"]
+  front: { war: world-war-2, theater: asia-pacific, date: 1938-10-27 }
 
 - id: korean-volunteers-1938
   year: 1938
@@ -880,6 +882,7 @@
   tags: [war]
   sources: ["미국 의회 대일 선전 포고 결의"]
   places: [{ name: "진주만", at: [-157.95, 21.35] }]
+  front: { war: world-war-2, theater: asia-pacific, date: 1941-12-08 }
 
 - id: allies-operations-1943
   year: 1943
@@ -895,6 +898,7 @@
   tags: [war]
   sources: ["국사편찬위원회 『한국독립운동사』"]
   places: [{ name: "인도·미얀마 전선 (임팔)", at: [93.94, 24.8] }]
+  front: { war: world-war-2, theater: asia-pacific, date: 1944-07-09 }
 
 - id: cairo-1943
   year: 1943
@@ -909,6 +913,7 @@
     - { from: roc, to: occupied-korea, note: "한국 독립 약속" }
   tags: [diplomacy]
   sources: ["「카이로 선언」"]
+  front: { war: world-war-2, theater: asia-pacific, date: 1943-11-23 }
 
 - id: founding-alliance-1944
   year: 1944
@@ -933,6 +938,7 @@
     - { from: japan, to: occupied-korea, note: "무조건 항복, 광복" }
   tags: [politics, war]
   sources: ["「포츠담 선언」", "일본 항복 문서"]
+  front: { war: world-war-2, theater: asia-pacific, date: 1945-08-15 }
 
 # ── 한국사능력검정시험(심화) 빈출 주제 보충 (2026-09-28) ────────────────
 
