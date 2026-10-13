@@ -530,6 +530,8 @@
 - { type: successor_of, subject: kartli-kakheti, object: kakheti, from: 1762, to: null }
 - { type: vassal_of, subject: kartli-kakheti, object: russia, from: 1783, to: 1800 }
 - { type: vassal_of, subject: imereti, object: ottoman, from: 1555, to: 1803 } # 1555 아마시아 조약으로 오스만의 세력권, 공물(1804 엘라즈나우리 조약으로 러시아 보호국)
+- { type: vassal_of, subject: kartli, object: ottoman, from: 1590, to: 1611 } # 1590 콘스탄티노폴리스 조약으로 오스만 쪽에(실제 지배는 트빌리시·고리 요새 수비대, 왕국은 종속국으로 이어짐. 시몬 1세의 공물, 1612 나수흐 파샤 조약으로 사파비에). 세션 J, 정할 점 J1-④
+- { type: vassal_of, subject: kakheti, object: ottoman, from: 1590, to: 1611 } # 알렉산드레 2세가 1578년 오스만 종주를 받아들이고 1590 조약으로 굳음, 1612 나수흐 파샤 조약으로 사파비에. 세션 J, 정할 점 J1-④
 # ── 유럽 1200~1299 (작업 M3, 2026-10-07) ──
 # 위의 모스크바 대공국(1283)·트베리(1247)·랴잔(1243)·루스 공국들(1243)·갈리치아-볼히니아(1246)·스몰렌스크(1243)의 킵차크 칸국 종속, 보스니아 바나트의 헝가리 종속(1200), 마요르카 왕국의 아라곤 종속(1279),
 # 아카이아의 나폴리 종속(1282), 아테네 공국의 아카이아 종속(1259)은 시작 해를 앞당겼다

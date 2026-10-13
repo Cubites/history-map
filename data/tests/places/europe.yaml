@@ -1576,3 +1576,120 @@
   url: "https://en.wikipedia.org/wiki/Moldavian_Campaign_(1484%E2%80%931486)"
   from: "세션 I1 결과노트"
   note: "킬리아·아케르만·예디산 1484(I1-⑤)"
+
+# 세션 J(작업 J1, 2026-10-13): 세션 H의 지도 FIX 후보 넷을 다시 정한 해의 앞뒤
+- name: "노보체르카스크"
+  at: [40.09, 47.42]
+  years: [1569, 1570, 1600, 1670]
+  expect: none
+  region: europe
+  url: "https://ru.wikipedia.org/wiki/Войско_Донское"
+  from: "세션 J1 결과노트"
+  note: "돈 초원은 1671 서약까지 비움(J1-①) · 고치기 전 HEAD와 달랐던 구간(1570~1670)"
+
+- name: "노보체르카스크"
+  at: [40.09, 47.42]
+  years: [1671, 1699, 1700]
+  expect: russia-tsardom
+  url: "https://ru.wikipedia.org/wiki/Войско_Донское"
+  from: "세션 J1 결과노트"
+  note: "돈 코사크의 첫 충성 서약 1671(J1-①)"
+
+- name: "루한스크"
+  at: [39.33, 48.57]
+  years: [1570, 1670]
+  expect: none
+  region: europe
+  url: "https://ru.wikisource.org/wiki/ВЭ/ДО/Донское_казачье_войско"
+  from: "세션 J1 결과노트"
+  note: "돈 초원은 1671 서약까지 비움(J1-①) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "루한스크"
+  at: [39.33, 48.57]
+  year: 1671
+  expect: russia-tsardom
+  url: "https://ru.wikisource.org/wiki/ВЭ/ДО/Донское_казачье_войско"
+  from: "세션 J1 결과노트"
+  note: "돈 코사크의 첫 충성 서약 1671(J1-①)"
+
+- name: "볼고그라드(차리친)"
+  at: [44.51, 48.71]
+  years: [1521, 1522]
+  expect: none
+  region: europe
+  url: "https://en.wikipedia.org/wiki/Nogai_Horde"
+  from: "세션 J1 결과노트"
+  note: "노가이 오르다 1523(J1-②) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "볼고그라드(차리친)"
+  at: [44.51, 48.71]
+  years: [1523, 1555]
+  expect: nogai-horde
+  url: "https://en.wikipedia.org/wiki/Mehmed_I_Giray"
+  from: "세션 J1 결과노트"
+  note: "1523 아스트라한 일과 노가이의 재정복(그해 말, J1-②)"
+
+- name: "사라토프"
+  at: [46.03, 51.53]
+  year: 1522
+  expect: none
+  region: europe
+  url: "https://ru.wikipedia.org/wiki/Ногайская_Орда"
+  from: "세션 J1 결과노트"
+  note: "노가이 오르다 1523(J1-②) · 고치기 전 HEAD와 달랐던 구간(1521~1522)"
+
+- name: "사라토프"
+  at: [46.03, 51.53]
+  year: 1523
+  expect: nogai-horde
+  url: "https://ru.wikipedia.org/wiki/Ногайская_Орда"
+  from: "세션 J1 결과노트"
+  note: "노가이 오르다 1523(J1-②)"
+
+- name: "콘스탄차"
+  at: [28.63, 44.17]
+  years: [1417, 1419]
+  expect: wallachia
+  url: "https://en.wikipedia.org/wiki/Wallachian_campaign_(1420)"
+  from: "세션 J1 결과노트"
+  note: "도브루자는 1420 오스만(J1-③) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "바바다그"
+  at: [28.71, 44.89]
+  year: 1419
+  expect: wallachia
+  url: "https://en.wikipedia.org/wiki/Dobruja"
+  from: "세션 J1 결과노트"
+  note: "도브루자는 1420 오스만(J1-③) · 고치기 전 HEAD와 달랐던 구간(1417~1419)"
+
+- name: "바바다그"
+  at: [28.71, 44.89]
+  year: 1420
+  expect: ottoman
+  url: "https://en.wikipedia.org/wiki/Dobruja"
+  from: "세션 J1 결과노트"
+  note: "1420 메흐메트 1세의 결정적 정복(J1-③)"
+
+- name: "트빌리시"
+  at: [44.79, 41.72]
+  years: [1589, 1590, 1611, 1612]
+  expect: kartli
+  url: "https://en.wikipedia.org/wiki/Kingdom_of_Kartli"
+  from: "세션 J1 결과노트"
+  note: "1590~1611 오스만 종주는 관계로, 땅은 카르틀리(J1-④, 파샬르크 수비대는 근사) · 1590~1611은 고치기 전 HEAD와 달랐던 구간"
+
+- name: "고리"
+  at: [44.11, 41.98]
+  year: 1595
+  expect: kartli
+  url: "https://en.wikipedia.org/wiki/Simon_I_of_Kartli"
+  from: "세션 J1 결과노트"
+  note: "1590~1611 오스만 종주는 관계로(J1-④) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "텔라비"
+  at: [45.48, 41.92]
+  years: [1590, 1605]
+  expect: kakheti
+  url: "https://en.wikipedia.org/wiki/Alexander_II_of_Kakheti"
+  from: "세션 J1 결과노트"
+  note: "1590~1611 오스만 종주는 관계로(J1-④) · 고치기 전 HEAD와 달랐던 구간"
