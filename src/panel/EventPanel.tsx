@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { useMediaQuery } from '../lib/useMediaQuery.ts';
 import { claimantsAt, claimedRegionsAt, occupierAt, overlordAt, type StaticData } from '../data/staticData.ts';
 import { eventYearFor, eventsOf, formatEventYears, inDecade, linkDirection } from '../lib/events.ts';
@@ -67,7 +67,7 @@ export function EventPanel({ data }: { data: StaticData }) {
     return (
       <aside className="panel">
         <p className="panel-guide">지도에서 나라를 누르면 그 시기의 사건이 여기에 나타납니다.</p>
-        <p className="panel-guide">사건에 {touch ? '손가락을 대면' : '마우스를 올리면'} 영향을 주고받은 나라가 화살표로 표시됩니다. 사건을 누르면 화살표가 계속 남아 지도를 옮기거나 확대해도 그대로이고, 그 사건을 다시 누르거나 사건 밖을 클릭하면 사라집니다.</p>
+        <p className="panel-guide">사건에 {touch ? '손가락을 대면' : '마우스를 올리면'} 영향을 주고받은 나라가 화살표로 표시됩니다. 사건을 누르면 자세한 내용이 펼쳐지고 화살표가 계속 남아 지도를 옮기거나 확대해도 그대로이며, 그 사건을 다시 누르거나 사건 밖을 클릭하면 접히고 화살표도 사라집니다.</p>
         <p className="panel-note">현재는 선사 시대(구석기·신석기)와 고조선(기원전 2333년)부터 현대까지의 한국사 전 시대 자료와 유럽(국경·사건 기원전 800년~현재) 자료가 들어 있습니다.</p>
       </aside>
     );
@@ -156,8 +156,7 @@ export function EventPanel({ data }: { data: StaticData }) {
           )}
         </div>
       </header>
-      {entity.summary && <p className="panel-summary">{entity.summary}</p>}
-      {entity.basis?.foundingNote && <p className="panel-note">{entity.basis.foundingNote}</p>}
+      <EntityAbout key={entity.id} summary={entity.summary} note={entity.basis?.foundingNote} />
 
       {!isAlive(entity, year) && (
         <div className="panel-absent">
@@ -242,6 +241,64 @@ export function EventPanel({ data }: { data: StaticData }) {
   );
 }
 
+/** 나라 설명을 펼쳐 둘지 (보는 사람의 브라우저에만 기억. 저장소를 못 쓰면 늘 접힘으로 시작) */
+const ABOUT_OPEN_KEY = 'history-map:entity-about-open';
+const readAboutOpen = () => {
+  try {
+    return localStorage.getItem(ABOUT_OPEN_KEY) === '1';
+  } catch {
+    return false;
+  }
+};
+const writeAboutOpen = (open: boolean) => {
+  try {
+    localStorage.setItem(ABOUT_OPEN_KEY, open ? '1' : '0');
+  } catch {
+    // 저장하지 못해도 이번 화면에서는 그대로 동작한다
+  }
+};
+
+/**
+ * 나라 설명과 건국 메모. 설명이 긴 나라가 많아 사건 목록이 아래로 밀리므로 처음에는 설명 앞 두 줄만 보이고,
+ * '더 보기'로 나머지와 건국 메모를 펼친다(2026-10-13). 펼친 상태는 다른 나라를 골라도 이어진다
+ */
+function EntityAbout({ summary, note }: { summary?: string; note?: string }) {
+  const [open, setOpen] = useState(readAboutOpen);
+  const [clipped, setClipped] = useState(false);
+  const ref = useRef<HTMLParagraphElement>(null);
+  // 접힌 상태에서 두 줄을 넘는지 잰다(패널 폭이 바뀌면 다시 잼)
+  useLayoutEffect(() => {
+    const el = ref.current;
+    if (open || !el) return;
+    const measure = () => setClipped(el.scrollHeight > el.clientHeight + 1);
+    measure();
+    const observer = new ResizeObserver(measure);
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [open, summary]);
+  if (!summary && !note) return null;
+  const toggle = () => {
+    setOpen(!open);
+    writeAboutOpen(!open);
+  };
+  const canOpen = clipped || !!note || !summary;
+  return (
+    <div className="panel-about">
+      {summary && (
+        <p ref={ref} className={open ? 'panel-summary' : 'panel-summary panel-summary-clamped'}>
+          {summary}
+        </p>
+      )}
+      {open && note && <p className="panel-note">{note}</p>}
+      {(open || canOpen) && (
+        <button type="button" className="link-button panel-about-toggle" aria-expanded={open} onClick={toggle}>
+          {open ? '접기 ▴' : '더 보기 ▾'}
+        </button>
+      )}
+    </div>
+  );
+}
+
 function EventItem({ event, data, selectedId, highlight }: { event: HistoryEvent; data: StaticData; selectedId: string; highlight: boolean }) {
   const hoverEvent = useAppStore((s) => s.hoverEvent);
   const pinEvent = useAppStore((s) => s.pinEvent);
@@ -280,9 +337,14 @@ function EventItem({ event, data, selectedId, highlight }: { event: HistoryEvent
     } else pinEvent(event.id);
   };
 
+  // 평소에는 기간과 제목만 보이고, 눌러서 고정한 사건만 자세한 내용을 펼친다(2026-10-13). 마우스를 올리기만 해서는 펼치지 않는다
+  // (펼쳐질 때마다 아래 사건이 밀려 목록이 출렁이고, 터치 화면에는 hover가 없음). 사건 밖을 클릭해 고정이 풀리면 접힌다
+  const expanded = pinned;
+
   return (
     <li
       ref={itemRef}
+      aria-expanded={expanded}
       className={['event', (hovered || pinned || focused) && 'event-hovered', pinned && 'event-pinned', highlight && 'event-current'].filter(Boolean).join(' ')}
       onMouseEnter={() => hoverEvent(event.id)}
       onMouseLeave={() => hoverEvent(null)}
@@ -299,7 +361,30 @@ function EventItem({ event, data, selectedId, highlight }: { event: HistoryEvent
       <div className="event-head">
         <span className="event-year">{formatEventYears(event)}</span>
         <span className="event-title">{event.title.ko}</span>
+        <span className="event-toggle" aria-hidden="true">{expanded ? '▴' : '▾'}</span>
       </div>
+      {expanded && <EventDetails event={event} war={war || undefined} inCurrentView={inCurrentView} openFront={openFront} name={name} selectedId={selectedId} />}
+    </li>
+  );
+}
+
+function EventDetails({
+  event,
+  war,
+  inCurrentView,
+  openFront,
+  name,
+  selectedId,
+}: {
+  event: HistoryEvent;
+  war: StaticData['wars'][number] | undefined;
+  inCurrentView: boolean;
+  openFront: () => void;
+  name: (id: string) => string;
+  selectedId: string;
+}) {
+  return (
+    <>
       <p className="event-summary">{event.summary.ko}</p>
       {event.links.length > 0 && (
         <ul className="event-links">
@@ -326,6 +411,6 @@ function EventItem({ event, data, selectedId, highlight }: { event: HistoryEvent
         </button>
       )}
       <div className="event-sources">{event.sources.join(' · ')}</div>
-    </li>
+    </>
   );
 }
