@@ -1,0 +1,66 @@
+# 전쟁 보기 지점 정답표: world-war-2 / overview(세계 개관). 만든 곳: 인계 폴더 ww-generators/w4/places.mjs (gen-places.mjs가 이 파일을 씀).
+# 기대: 진영 id | none | front(전선 위, tolerance km 안). 좌표는 위키백과(ko·en API, 없으면 위키데이터 P625)에서 대조한 도시 중심이고,
+# 해안·전선에 너무 가까워 개관의 단순화(10km)에 흔들리는 도시는 note에 적고 안쪽으로 옮긴 점을 쓴다. 지점마다 근거 url은 그 도시의 위키백과 문서.
+
+# 1939-09-01
+- { name: "바르샤바", at: [21.008, 52.232], war: world-war-2, theater: overview, date: "1939-09-01", expect: allies, url: "https://ko.wikipedia.org/wiki/바르샤바", from: "세계 개관 (작업 A)", note: "전쟁 전 폴란드(연합국 쪽)" }
+- { name: "베를린", at: [13.405, 52.52], war: world-war-2, theater: overview, date: "1939-09-01", expect: axis, url: "https://ko.wikipedia.org/wiki/베를린", from: "세계 개관 (작업 A)" }
+- { name: "카라치", at: [67.1, 24.95], war: world-war-2, theater: overview, date: "1939-09-01", expect: allies, url: "https://ko.wikipedia.org/wiki/카라치", from: "세계 개관 (작업 A)", note: "도심(67.01, 24.86)은 해안에서 6km라 개관의 단순화(10km)에 취약해 북쪽 17km 안쪽 점으로 옮김. 영국령 인도(이음매 동쪽, 결정 4)" }
+- { name: "콜카타", at: [88.37, 22.567], war: world-war-2, theater: overview, date: "1939-09-01", expect: allies, url: "https://ko.wikipedia.org/wiki/콜카타", from: "세계 개관 (작업 A)", note: "영국령 인도(결정 4)" }
+- { name: "하노이", at: [105.85, 21], war: world-war-2, theater: overview, date: "1939-09-01", expect: allies, url: "https://ko.wikipedia.org/wiki/하노이", from: "세계 개관 (작업 A)", note: "프랑스령 인도차이나(1941년에는 일본). 저장소 중화민국 영토가 통킹을 덮는 문제를 개관 전용 층으로 피함" }
+- { name: "쿠알라룸푸르", at: [101.695, 3.148], war: world-war-2, theater: overview, date: "1939-09-01", expect: allies, url: "https://ko.wikipedia.org/wiki/쿠알라룸푸르", from: "세계 개관 (작업 A)", note: "영국령 말라야(결정 4)" }
+- { name: "우한", at: [114.283, 30.583], war: world-war-2, theater: overview, date: "1939-09-01", expect: japan, url: "https://ko.wikipedia.org/wiki/우한시", from: "세계 개관 (작업 A)", note: "1938-10 함락" }
+- { name: "진청", at: [112.85, 35.49], war: world-war-2, theater: overview, date: "1939-09-01", expect: china, url: "https://ko.wikipedia.org/wiki/진청시", from: "세계 개관 (작업 A)", note: "1939-07 동산시 작전으로 일본군이 차지했다가 8-21 중국군이 되찾음. 1939년판 영토가 덮는 곳을 중국으로 되돌림" }
+- { name: "가오핑", at: [112.92, 35.79], war: world-war-2, theater: overview, date: "1939-09-01", expect: china, url: "https://ko.wikipedia.org/wiki/가오핑시", from: "세계 개관 (작업 A)", note: "1939-07-18 일본군 점령, 8-23 중국군 탈환" }
+- { name: "창즈", at: [113.12, 36.2], war: world-war-2, theater: overview, date: "1939-09-01", expect: japan, url: "https://ko.wikipedia.org/wiki/창즈시", from: "세계 개관 (작업 A)", note: "동산시 작전 뒤에도 일본 쪽(상자 밖이라 되돌리지 않음)" }
+- { name: "난닝", at: [108.315, 22.819], war: world-war-2, theater: overview, date: "1939-09-01", expect: china, url: "https://ko.wikipedia.org/wiki/난닝시", from: "세계 개관 (작업 A)", note: "일본 점령은 1939-11-24. 1939년판 영토가 덮는 곳을 중국으로 되돌림" }
+
+# 1941-12-08
+- { name: "키이우", at: [30.524, 50.45], war: world-war-2, theater: overview, date: "1941-12-08", expect: axis, url: "https://ko.wikipedia.org/wiki/키이우", from: "세계 개관 (작업 A)", note: "1941-09-19 점령" }
+- { name: "모스크바", at: [37.617, 55.751], war: world-war-2, theater: overview, date: "1941-12-08", expect: soviet, url: "https://ko.wikipedia.org/wiki/모스크바", from: "세계 개관 (작업 A)", note: "독일군이 30km 앞까지 옴" }
+- { name: "테헤란", at: [51.423, 35.696], war: world-war-2, theater: overview, date: "1941-12-08", expect: none, url: "https://ko.wikipedia.org/wiki/테헤란", from: "세계 개관 (작업 A)", note: "영·소 점령 구역 사이의 비점령 중부(유럽 전역 W2 판정과 같음)" }
+- { name: "타브리즈", at: [46.296, 38.074], war: world-war-2, theater: overview, date: "1941-12-08", expect: soviet, url: "https://ko.wikipedia.org/wiki/타브리즈", from: "세계 개관 (작업 A)", note: "소련 점령 구역(이란 북부)" }
+- { name: "카라치", at: [67.1, 24.95], war: world-war-2, theater: overview, date: "1941-12-08", expect: allies, url: "https://ko.wikipedia.org/wiki/카라치", from: "세계 개관 (작업 A)", note: "도심(67.01, 24.86)은 해안에서 6km라 개관의 단순화(10km)에 취약해 북쪽 17km 안쪽 점으로 옮김. 영국령 인도(이음매 동쪽, 아시아 전역 장면)" }
+- { name: "하노이", at: [105.85, 21], war: world-war-2, theater: overview, date: "1941-12-08", expect: japan, url: "https://ko.wikipedia.org/wiki/하노이", from: "세계 개관 (작업 A)", note: "1940~41 일본군 진주(아시아 전역 W3 판정과 같음)" }
+- { name: "방콕", at: [100.494, 13.752], war: world-war-2, theater: overview, date: "1941-12-08", expect: none, url: "https://ko.wikipedia.org/wiki/방콕", from: "세계 개관 (작업 A)", note: "중립 타이(12-21 동맹 전)" }
+- { name: "마닐라", at: [121.1, 14.65], war: world-war-2, theater: overview, date: "1941-12-08", expect: allies, url: "https://ko.wikipedia.org/wiki/마닐라", from: "세계 개관 (작업 A)", note: "도심(120.98, 14.60)은 마닐라만 해안에서 3km라 동쪽 내륙 17km 점으로 옮김. 미국령 필리핀" }
+
+# 1942-11-19
+- { name: "스탈린그라드(볼고그라드)", at: [44.515, 48.709], war: world-war-2, theater: overview, date: "1942-11-19", expect: front, url: "https://ko.wikipedia.org/wiki/볼고그라드", from: "세계 개관 (작업 A)", tolerance: 12, note: "천왕성 작전 첫날 시가지가 전선 위(기준 5km보다 넓혀 개관의 단순화(10km) 오차를 둠)" }
+- { name: "키이우", at: [30.524, 50.45], war: world-war-2, theater: overview, date: "1942-11-19", expect: axis, url: "https://ko.wikipedia.org/wiki/키이우", from: "세계 개관 (작업 A)" }
+- { name: "카이로", at: [31.236, 30.044], war: world-war-2, theater: overview, date: "1942-11-19", expect: allies, url: "https://ko.wikipedia.org/wiki/카이로", from: "세계 개관 (작업 A)" }
+- { name: "캔버라", at: [149.124, -35.308], war: world-war-2, theater: overview, date: "1942-11-19", expect: allies, url: "https://ko.wikipedia.org/wiki/캔버라", from: "세계 개관 (작업 A)", note: "오스트레일리아(영연방 자치령, 아시아 전역 장면의 연합국 색)" }
+- { name: "마닐라", at: [121.1, 14.65], war: world-war-2, theater: overview, date: "1942-11-19", expect: japan, url: "https://ko.wikipedia.org/wiki/마닐라", from: "세계 개관 (작업 A)", note: "도심(120.98, 14.60)은 마닐라만 해안에서 3km라 동쪽 내륙 17km 점으로 옮김. 1942-01 점령" }
+- { name: "양곤(랑군)", at: [96.16, 16.95], war: world-war-2, theater: overview, date: "1942-11-19", expect: japan, url: "https://ko.wikipedia.org/wiki/양곤", from: "세계 개관 (작업 A)", note: "도심(96.16, 16.80)은 강 하구 해안에서 4km라 북쪽 20km 안쪽 점으로 옮김. 1942-03 점령" }
+- { name: "방콕", at: [100.494, 13.752], war: world-war-2, theater: overview, date: "1942-11-19", expect: japan, url: "https://ko.wikipedia.org/wiki/방콕", from: "세계 개관 (작업 A)", note: "타이는 1942년부터 일본 진영 색(W3-③)" }
+- { name: "콜카타", at: [88.37, 22.567], war: world-war-2, theater: overview, date: "1942-11-19", expect: allies, url: "https://ko.wikipedia.org/wiki/콜카타", from: "세계 개관 (작업 A)" }
+
+# 1944-06-06
+- { name: "파리", at: [2.352, 48.857], war: world-war-2, theater: overview, date: "1944-06-06", expect: axis, url: "https://ko.wikipedia.org/wiki/파리", from: "세계 개관 (작업 A)", note: "1944-08-25 해방 전" }
+- { name: "로마", at: [12.5, 41.9], war: world-war-2, theater: overview, date: "1944-06-06", expect: allies, url: "https://ko.wikipedia.org/wiki/로마", from: "세계 개관 (작업 A)", note: "6월 4일 해방, 전선은 로마 북동쪽 약 19km" }
+- { name: "키이우", at: [30.524, 50.45], war: world-war-2, theater: overview, date: "1944-06-06", expect: soviet, url: "https://ko.wikipedia.org/wiki/키이우", from: "세계 개관 (작업 A)", note: "1943-11-06 수복" }
+- { name: "민스크", at: [27.567, 53.9], war: world-war-2, theater: overview, date: "1944-06-06", expect: axis, url: "https://ko.wikipedia.org/wiki/민스크", from: "세계 개관 (작업 A)", note: "1944-07-03 수복(바그라티온 작전 전)" }
+- { name: "마닐라", at: [121.1, 14.65], war: world-war-2, theater: overview, date: "1944-06-06", expect: japan, url: "https://ko.wikipedia.org/wiki/마닐라", from: "세계 개관 (작업 A)", note: "도심(120.98, 14.60)은 마닐라만 해안에서 3km라 동쪽 내륙 17km 점으로 옮김" }
+- { name: "양곤(랑군)", at: [96.16, 16.95], war: world-war-2, theater: overview, date: "1944-06-06", expect: japan, url: "https://ko.wikipedia.org/wiki/양곤", from: "세계 개관 (작업 A)", note: "도심(96.16, 16.80)은 강 하구 해안에서 4km라 북쪽 20km 안쪽 점으로 옮김" }
+- { name: "하노이", at: [105.85, 21], war: world-war-2, theater: overview, date: "1944-06-06", expect: japan, url: "https://ko.wikipedia.org/wiki/하노이", from: "세계 개관 (작업 A)" }
+- { name: "충칭", at: [106.507, 29.55], war: world-war-2, theater: overview, date: "1944-06-06", expect: china, url: "https://ko.wikipedia.org/wiki/충칭시", from: "세계 개관 (작업 A)" }
+
+# 1945-05-08
+- { name: "베를린", at: [13.405, 52.52], war: world-war-2, theater: overview, date: "1945-05-08", expect: soviet, url: "https://ko.wikipedia.org/wiki/베를린", from: "세계 개관 (작업 A)", note: "5월 2일 소련군이 함락" }
+- { name: "파리", at: [2.352, 48.857], war: world-war-2, theater: overview, date: "1945-05-08", expect: allies, url: "https://ko.wikipedia.org/wiki/파리", from: "세계 개관 (작업 A)" }
+- { name: "빈", at: [16.372, 48.209], war: world-war-2, theater: overview, date: "1945-05-08", expect: soviet, url: "https://ko.wikipedia.org/wiki/빈", from: "세계 개관 (작업 A)", note: "1945-04-13 소련군 점령" }
+- { name: "유즈노사할린스크", at: [142.733, 46.95], war: world-war-2, theater: overview, date: "1945-05-08", expect: japan, url: "https://ko.wikipedia.org/wiki/유즈노사할린스크", from: "세계 개관 (작업 A)", note: "남사할린은 8월까지 일본령(아시아 전역 장면 층을 이음매 동쪽에 씀)" }
+- { name: "서울", at: [126.99, 37.56], war: world-war-2, theater: overview, date: "1945-05-08", expect: japan, url: "https://ko.wikipedia.org/wiki/서울특별시", from: "세계 개관 (작업 A)" }
+- { name: "마닐라", at: [121.1, 14.65], war: world-war-2, theater: overview, date: "1945-05-08", expect: allies, url: "https://ko.wikipedia.org/wiki/마닐라", from: "세계 개관 (작업 A)", note: "도심(120.98, 14.60)은 마닐라만 해안에서 3km라 동쪽 내륙 17km 점으로 옮김. 1945-02~03 탈환" }
+- { name: "양곤(랑군)", at: [96.16, 16.95], war: world-war-2, theater: overview, date: "1945-05-08", expect: allies, url: "https://ko.wikipedia.org/wiki/양곤", from: "세계 개관 (작업 A)", note: "도심(96.16, 16.80)은 강 하구 해안에서 4km라 북쪽 20km 안쪽 점으로 옮김. 5월 3일 영국군 탈환" }
+- { name: "하노이", at: [105.85, 21], war: world-war-2, theater: overview, date: "1945-05-08", expect: japan, url: "https://ko.wikipedia.org/wiki/하노이", from: "세계 개관 (작업 A)" }
+
+# 1945-09-02
+- { name: "베를린", at: [13.405, 52.52], war: world-war-2, theater: overview, date: "1945-09-02", expect: soviet, url: "https://ko.wikipedia.org/wiki/베를린", from: "세계 개관 (작업 A)", note: "유럽 쪽은 독일 항복 때 모습" }
+- { name: "평양", at: [125.748, 39.017], war: world-war-2, theater: overview, date: "1945-09-02", expect: soviet, url: "https://ko.wikipedia.org/wiki/평양직할시", from: "세계 개관 (작업 A)" }
+- { name: "서울", at: [126.99, 37.56], war: world-war-2, theater: overview, date: "1945-09-02", expect: japan, url: "https://ko.wikipedia.org/wiki/서울특별시", from: "세계 개관 (작업 A)", note: "38도선 남쪽은 미군 진주(9-09) 전이라 일본 진영(W3 판정과 같음)" }
+- { name: "창춘", at: [125.323, 43.88], war: world-war-2, theater: overview, date: "1945-09-02", expect: soviet, url: "https://ko.wikipedia.org/wiki/창춘시", from: "세계 개관 (작업 A)", note: "소련군 점령 만주" }
+- { name: "유즈노사할린스크", at: [142.733, 46.95], war: world-war-2, theater: overview, date: "1945-09-02", expect: soviet, url: "https://ko.wikipedia.org/wiki/유즈노사할린스크", from: "세계 개관 (작업 A)", note: "8~9월 소련군 점령" }
+- { name: "마닐라", at: [121.1, 14.65], war: world-war-2, theater: overview, date: "1945-09-02", expect: allies, url: "https://ko.wikipedia.org/wiki/마닐라", from: "세계 개관 (작업 A)", note: "도심(120.98, 14.60)은 마닐라만 해안에서 3km라 동쪽 내륙 17km 점으로 옮김" }
+- { name: "양곤(랑군)", at: [96.16, 16.95], war: world-war-2, theater: overview, date: "1945-09-02", expect: allies, url: "https://ko.wikipedia.org/wiki/양곤", from: "세계 개관 (작업 A)", note: "도심(96.16, 16.80)은 강 하구 해안에서 4km라 북쪽 20km 안쪽 점으로 옮김" }
+- { name: "난징", at: [118.767, 32.05], war: world-war-2, theater: overview, date: "1945-09-02", expect: japan, url: "https://ko.wikipedia.org/wiki/난징시", from: "세계 개관 (작업 A)", note: "중국 전구 항복은 9-09" }
