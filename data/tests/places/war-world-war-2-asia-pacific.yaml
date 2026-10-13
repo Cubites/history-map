@@ -1,0 +1,432 @@
+# 전쟁 보기 지점 정답표: world-war-2 / asia-pacific. 재료 세계 대전 W3 검토의 p-*.json(세션 ww 작업 폴더). 옛 지점이라 url은 아직 '필요'(legacy).
+# 기대: 진영 id | none | front(전선 위, tolerance km 안). 재료의 '?'·'x'는 뺐고, 지금 지도와 다른 지점은 _review-needed.yaml에 있다.
+
+# 1937-07-07
+- { name: "베이핑", at: [116.4, 39.9], war: world-war-2, theater: asia-pacific, date: "1937-07-07", expect: china, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "톈진", at: [117.2, 39.13], war: world-war-2, theater: asia-pacific, date: "1937-07-07", expect: china, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "퉁저우(기동 수도)", at: [116.66, 39.91], war: world-war-2, theater: asia-pacific, date: "1937-07-07", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "창핑", at: [116.23, 40.22], war: world-war-2, theater: asia-pacific, date: "1937-07-07", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "기동22현" }
+- { name: "바오디", at: [117.31, 39.72], war: world-war-2, theater: asia-pacific, date: "1937-07-07", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "닝허", at: [117.82, 39.33], war: world-war-2, theater: asia-pacific, date: "1937-07-07", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "탕산", at: [118.18, 39.63], war: world-war-2, theater: asia-pacific, date: "1937-07-07", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "산하이관", at: [119.77, 40], war: world-war-2, theater: asia-pacific, date: "1937-07-07", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "쭌화", at: [117.96, 40.19], war: world-war-2, theater: asia-pacific, date: "1937-07-07", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "장베이", at: [114.7, 41.16], war: world-war-2, theater: asia-pacific, date: "1937-07-07", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "상두", at: [113.57, 41.56], war: world-war-2, theater: asia-pacific, date: "1937-07-07", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "화더", at: [114.01, 41.9], war: world-war-2, theater: asia-pacific, date: "1937-07-07", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "둬룬", at: [116.48, 42.2], war: world-war-2, theater: asia-pacific, date: "1937-07-07", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "시린호트", at: [116.07, 43.93], war: world-war-2, theater: asia-pacific, date: "1937-07-07", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "캉바오", at: [114.6, 41.85], war: world-war-2, theater: asia-pacific, date: "1937-07-07", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "구위안", at: [115.69, 41.67], war: world-war-2, theater: asia-pacific, date: "1937-07-07", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "바오창(타이푸쓰)", at: [115.28, 41.88], war: world-war-2, theater: asia-pacific, date: "1937-07-07", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+
+# 1937-12-13
+- { name: "난징", at: [118.78, 32.06], war: world-war-2, theater: asia-pacific, date: "1937-12-13", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "우후", at: [118.38, 31.33], war: world-war-2, theater: asia-pacific, date: "1937-12-13", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "12.10" }
+- { name: "항저우", at: [120.16, 30.27], war: world-war-2, theater: asia-pacific, date: "1937-12-13", expect: china, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "12.24" }
+- { name: "후저우", at: [120.09, 30.89], war: world-war-2, theater: asia-pacific, date: "1937-12-13", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "11.24" }
+- { name: "광더", at: [119.42, 30.89], war: world-war-2, theater: asia-pacific, date: "1937-12-13", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "11.30" }
+- { name: "전장", at: [119.45, 32.2], war: world-war-2, theater: asia-pacific, date: "1937-12-13", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "12.8" }
+- { name: "양저우", at: [119.42, 32.39], war: world-war-2, theater: asia-pacific, date: "1937-12-13", expect: china, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "추저우", at: [118.31, 32.3], war: world-war-2, theater: asia-pacific, date: "1937-12-13", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "12.11 무렵" }
+- { name: "지난", at: [117, 36.67], war: world-war-2, theater: asia-pacific, date: "1937-12-13", expect: china, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "12.27" }
+- { name: "타이안", at: [117.09, 36.19], war: world-war-2, theater: asia-pacific, date: "1937-12-13", expect: china, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "12.31" }
+- { name: "더저우", at: [116.3, 37.45], war: world-war-2, theater: asia-pacific, date: "1937-12-13", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "10.3" }
+- { name: "스자좡", at: [114.51, 38.04], war: world-war-2, theater: asia-pacific, date: "1937-12-13", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "10.10" }
+- { name: "한단", at: [114.49, 36.61], war: world-war-2, theater: asia-pacific, date: "1937-12-13", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "10.17" }
+- { name: "안양", at: [114.39, 36.1], war: world-war-2, theater: asia-pacific, date: "1937-12-13", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "11.5" }
+- { name: "신샹", at: [113.92, 35.3], war: world-war-2, theater: asia-pacific, date: "1937-12-13", expect: china, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "1938.2" }
+- { name: "타이위안", at: [112.55, 37.87], war: world-war-2, theater: asia-pacific, date: "1937-12-13", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "11.8" }
+- { name: "린펀", at: [111.52, 36.08], war: world-war-2, theater: asia-pacific, date: "1937-12-13", expect: china, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "1938.2" }
+- { name: "다퉁", at: [113.3, 40.08], war: world-war-2, theater: asia-pacific, date: "1937-12-13", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "바오터우", at: [109.84, 40.66], war: world-war-2, theater: asia-pacific, date: "1937-12-13", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "쑤저우", at: [120.62, 31.3], war: world-war-2, theater: asia-pacific, date: "1937-12-13", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "11.19" }
+- { name: "자싱", at: [120.75, 30.75], war: world-war-2, theater: asia-pacific, date: "1937-12-13", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "11.19" }
+- { name: "허페이", at: [117.28, 31.86], war: world-war-2, theater: asia-pacific, date: "1937-12-13", expect: china, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "1938.5" }
+- { name: "벙부", at: [117.39, 32.92], war: world-war-2, theater: asia-pacific, date: "1937-12-13", expect: china, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "1938.2" }
+- { name: "푸커우", at: [118.62, 32.08], war: world-war-2, theater: asia-pacific, date: "1937-12-13", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "장베이", at: [114.7, 41.16], war: world-war-2, theater: asia-pacific, date: "1937-12-13", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "캉바오", at: [114.6, 41.85], war: world-war-2, theater: asia-pacific, date: "1937-12-13", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "구위안", at: [115.69, 41.67], war: world-war-2, theater: asia-pacific, date: "1937-12-13", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "바오창(타이푸쓰)", at: [115.28, 41.88], war: world-war-2, theater: asia-pacific, date: "1937-12-13", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "상두", at: [113.57, 41.56], war: world-war-2, theater: asia-pacific, date: "1937-12-13", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "화더", at: [114.01, 41.9], war: world-war-2, theater: asia-pacific, date: "1937-12-13", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "둬룬", at: [116.48, 42.2], war: world-war-2, theater: asia-pacific, date: "1937-12-13", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "시린호트", at: [116.07, 43.93], war: world-war-2, theater: asia-pacific, date: "1937-12-13", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "바이링먀오", at: [110.43, 41.7], war: world-war-2, theater: asia-pacific, date: "1937-12-13", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "구이쑤", at: [111.65, 40.82], war: world-war-2, theater: asia-pacific, date: "1937-12-13", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "장자커우", at: [114.88, 40.82], war: world-war-2, theater: asia-pacific, date: "1937-12-13", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+
+# 1938-10-27
+- { name: "한커우", at: [114.27, 30.59], war: world-war-2, theater: asia-pacific, date: "1938-10-27", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "우창", at: [114.31, 30.55], war: world-war-2, theater: asia-pacific, date: "1938-10-27", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "광저우", at: [113.26, 23.13], war: world-war-2, theater: asia-pacific, date: "1938-10-27", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "후이저우", at: [114.42, 23.11], war: world-war-2, theater: asia-pacific, date: "1938-10-27", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "10.15" }
+- { name: "웨양", at: [113.13, 29.37], war: world-war-2, theater: asia-pacific, date: "1938-10-27", expect: china, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "11.11" }
+- { name: "신양", at: [114.07, 32.13], war: world-war-2, theater: asia-pacific, date: "1938-10-27", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "10.12" }
+- { name: "카이펑", at: [114.31, 34.8], war: world-war-2, theater: asia-pacific, date: "1938-10-27", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "6.6" }
+- { name: "정저우", at: [113.62, 34.75], war: world-war-2, theater: asia-pacific, date: "1938-10-27", expect: china, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "주장", at: [116, 29.71], war: world-war-2, theater: asia-pacific, date: "1938-10-27", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "7.26" }
+- { name: "난창", at: [115.86, 28.68], war: world-war-2, theater: asia-pacific, date: "1938-10-27", expect: china, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "1939.3" }
+- { name: "안칭", at: [117.05, 30.52], war: world-war-2, theater: asia-pacific, date: "1938-10-27", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "6.12" }
+- { name: "허페이", at: [117.28, 31.86], war: world-war-2, theater: asia-pacific, date: "1938-10-27", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "5.14" }
+- { name: "쉬저우", at: [117.18, 34.26], war: world-war-2, theater: asia-pacific, date: "1938-10-27", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "5.19" }
+- { name: "샤먼", at: [118.09, 24.48], war: world-war-2, theater: asia-pacific, date: "1938-10-27", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "5.13" }
+- { name: "이창", at: [111.29, 30.69], war: world-war-2, theater: asia-pacific, date: "1938-10-27", expect: china, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "1940.6" }
+- { name: "뤄양", at: [112.45, 34.62], war: world-war-2, theater: asia-pacific, date: "1938-10-27", expect: china, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "시안", at: [108.94, 34.34], war: world-war-2, theater: asia-pacific, date: "1938-10-27", expect: china, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "린펀", at: [111.52, 36.08], war: world-war-2, theater: asia-pacific, date: "1938-10-27", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "1938.2" }
+- { name: "창사", at: [112.94, 28.23], war: world-war-2, theater: asia-pacific, date: "1938-10-27", expect: china, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "푸저우(푸젠)", at: [119.3, 26.08], war: world-war-2, theater: asia-pacific, date: "1938-10-27", expect: china, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "장베이", at: [114.7, 41.16], war: world-war-2, theater: asia-pacific, date: "1938-10-27", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "캉바오", at: [114.6, 41.85], war: world-war-2, theater: asia-pacific, date: "1938-10-27", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "구위안", at: [115.69, 41.67], war: world-war-2, theater: asia-pacific, date: "1938-10-27", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "바오창(타이푸쓰)", at: [115.28, 41.88], war: world-war-2, theater: asia-pacific, date: "1938-10-27", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "상두", at: [113.57, 41.56], war: world-war-2, theater: asia-pacific, date: "1938-10-27", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "화더", at: [114.01, 41.9], war: world-war-2, theater: asia-pacific, date: "1938-10-27", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "둬룬", at: [116.48, 42.2], war: world-war-2, theater: asia-pacific, date: "1938-10-27", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "시린호트", at: [116.07, 43.93], war: world-war-2, theater: asia-pacific, date: "1938-10-27", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "바이링먀오", at: [110.43, 41.7], war: world-war-2, theater: asia-pacific, date: "1938-10-27", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "구이쑤", at: [111.65, 40.82], war: world-war-2, theater: asia-pacific, date: "1938-10-27", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "바오터우", at: [109.84, 40.66], war: world-war-2, theater: asia-pacific, date: "1938-10-27", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "장자커우", at: [114.88, 40.82], war: world-war-2, theater: asia-pacific, date: "1938-10-27", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+
+# 1941-12-08
+- { name: "하노이", at: [105.85, 21.03], war: world-war-2, theater: asia-pacific, date: "1941-12-08", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "사이공", at: [106.7, 10.78], war: world-war-2, theater: asia-pacific, date: "1941-12-08", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "방콕", at: [100.5, 13.75], war: world-war-2, theater: asia-pacific, date: "1941-12-08", expect: none, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "바탐방(1941 타이 편입)", at: [103.2, 13.1], war: world-war-2, theater: asia-pacific, date: "1941-12-08", expect: none, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "사야부리(1941 타이 편입)", at: [101.75, 19.25], war: world-war-2, theater: asia-pacific, date: "1941-12-08", expect: none, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "비엔티안", at: [102.6, 17.97], war: world-war-2, theater: asia-pacific, date: "1941-12-08", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "싱가포르", at: [103.82, 1.35], war: world-war-2, theater: asia-pacific, date: "1941-12-08", expect: allies, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "마닐라", at: [120.98, 14.6], war: world-war-2, theater: asia-pacific, date: "1941-12-08", expect: allies, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "바타비아", at: [106.85, -6.2], war: world-war-2, theater: asia-pacific, date: "1941-12-08", expect: allies, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "딜리(포르투갈령)", at: [125.58, -8.56], war: world-war-2, theater: asia-pacific, date: "1941-12-08", expect: none, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "괌", at: [144.79, 13.47], war: world-war-2, theater: asia-pacific, date: "1941-12-08", expect: allies, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "12.10 함락" }
+- { name: "난닝", at: [108.37, 22.82], war: world-war-2, theater: asia-pacific, date: "1941-12-08", expect: china, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "1940.10 철수" }
+- { name: "정저우", at: [113.62, 34.75], war: world-war-2, theater: asia-pacific, date: "1941-12-08", expect: china, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "1941.10 일시 점령" }
+- { name: "푸저우(푸젠)", at: [119.3, 26.08], war: world-war-2, theater: asia-pacific, date: "1941-12-08", expect: china, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "1941.9 철수" }
+- { name: "닝보", at: [121.55, 29.87], war: world-war-2, theater: asia-pacific, date: "1941-12-08", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "1941.4" }
+- { name: "진화", at: [119.65, 29.08], war: world-war-2, theater: asia-pacific, date: "1941-12-08", expect: china, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "1942.5" }
+- { name: "이창", at: [111.29, 30.69], war: world-war-2, theater: asia-pacific, date: "1941-12-08", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "난창", at: [115.86, 28.68], war: world-war-2, theater: asia-pacific, date: "1941-12-08", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "창사", at: [112.94, 28.23], war: world-war-2, theater: asia-pacific, date: "1941-12-08", expect: china, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "하이커우", at: [110.33, 20.03], war: world-war-2, theater: asia-pacific, date: "1941-12-08", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "마카오", at: [113.54, 22.19], war: world-war-2, theater: asia-pacific, date: "1941-12-08", expect: none, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "장베이", at: [114.7, 41.16], war: world-war-2, theater: asia-pacific, date: "1941-12-08", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "캉바오", at: [114.6, 41.85], war: world-war-2, theater: asia-pacific, date: "1941-12-08", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "구위안", at: [115.69, 41.67], war: world-war-2, theater: asia-pacific, date: "1941-12-08", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "바오창(타이푸쓰)", at: [115.28, 41.88], war: world-war-2, theater: asia-pacific, date: "1941-12-08", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "상두", at: [113.57, 41.56], war: world-war-2, theater: asia-pacific, date: "1941-12-08", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "화더", at: [114.01, 41.9], war: world-war-2, theater: asia-pacific, date: "1941-12-08", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "둬룬", at: [116.48, 42.2], war: world-war-2, theater: asia-pacific, date: "1941-12-08", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "시린호트", at: [116.07, 43.93], war: world-war-2, theater: asia-pacific, date: "1941-12-08", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "바이링먀오", at: [110.43, 41.7], war: world-war-2, theater: asia-pacific, date: "1941-12-08", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "구이쑤", at: [111.65, 40.82], war: world-war-2, theater: asia-pacific, date: "1941-12-08", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "바오터우", at: [109.84, 40.66], war: world-war-2, theater: asia-pacific, date: "1941-12-08", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "장자커우", at: [114.88, 40.82], war: world-war-2, theater: asia-pacific, date: "1941-12-08", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+
+# 1942-06-07
+- { name: "미치나", at: [97.4, 25.38], war: world-war-2, theater: asia-pacific, date: "1942-06-07", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "5.8" }
+- { name: "바모", at: [97.24, 24.27], war: world-war-2, theater: asia-pacific, date: "1942-06-07", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "칼레와", at: [94.3, 23.2], war: world-war-2, theater: asia-pacific, date: "1942-06-07", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "포트 허츠", at: [97.4, 27.33], war: world-war-2, theater: asia-pacific, date: "1942-06-07", expect: allies, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "임팔", at: [93.94, 24.8], war: world-war-2, theater: asia-pacific, date: "1942-06-07", expect: allies, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "티딤", at: [93.66, 23.38], war: world-war-2, theater: asia-pacific, date: "1942-06-07", expect: allies, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "팔람", at: [93.68, 22.92], war: world-war-2, theater: asia-pacific, date: "1942-06-07", expect: allies, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "하카", at: [93.61, 22.64], war: world-war-2, theater: asia-pacific, date: "1942-06-07", expect: allies, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "텅충", at: [98.49, 25.02], war: world-war-2, theater: asia-pacific, date: "1942-06-07", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "5.10" }
+- { name: "바오산", at: [99.16, 25.11], war: world-war-2, theater: asia-pacific, date: "1942-06-07", expect: china, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "취저우", at: [118.87, 28.97], war: world-war-2, theater: asia-pacific, date: "1942-06-07", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "6.7" }
+- { name: "린촨", at: [116.36, 27.98], war: world-war-2, theater: asia-pacific, date: "1942-06-07", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "6.4" }
+- { name: "진화", at: [119.65, 29.08], war: world-war-2, theater: asia-pacific, date: "1942-06-07", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "5.28" }
+- { name: "장산", at: [118.62, 28.74], war: world-war-2, theater: asia-pacific, date: "1942-06-07", expect: china, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "6.11" }
+- { name: "상라오", at: [117.94, 28.45], war: world-war-2, theater: asia-pacific, date: "1942-06-07", expect: china, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "6.14" }
+- { name: "둥샹", at: [116.6, 28.24], war: world-war-2, theater: asia-pacific, date: "1942-06-07", expect: china, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "6.7 수복" }
+- { name: "라에", at: [147, -6.73], war: world-war-2, theater: asia-pacific, date: "1942-06-07", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "핀슈하펜", at: [147.85, -6.6], war: world-war-2, theater: asia-pacific, date: "1942-06-07", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "부나", at: [148.4, -8.67], war: world-war-2, theater: asia-pacific, date: "1942-06-07", expect: allies, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "7.21 상륙" }
+- { name: "포트모르즈비", at: [147.18, -9.44], war: world-war-2, theater: asia-pacific, date: "1942-06-07", expect: allies, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "키스카", at: [177.5, 51.98], war: world-war-2, theater: asia-pacific, date: "1942-06-07", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "애투(치차고프)", at: [173.2, 52.9], war: world-war-2, theater: asia-pacific, date: "1942-06-07", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "나우루", at: [166.93, -0.52], war: world-war-2, theater: asia-pacific, date: "1942-06-07", expect: allies, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "8월 점령" }
+- { name: "딜리", at: [125.58, -8.56], war: world-war-2, theater: asia-pacific, date: "1942-06-07", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "1942.2 점령" }
+- { name: "포트블레어", at: [92.73, 11.62], war: world-war-2, theater: asia-pacific, date: "1942-06-07", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "크리스마스섬", at: [105.67, -10.45], war: world-war-2, theater: asia-pacific, date: "1942-06-07", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "3.31" }
+- { name: "메라우케", at: [140.4, -8.5], war: world-war-2, theater: asia-pacific, date: "1942-06-07", expect: allies, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "홀란디아", at: [140.7, -2.55], war: world-war-2, theater: asia-pacific, date: "1942-06-07", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "방콕", at: [100.5, 13.75], war: world-war-2, theater: asia-pacific, date: "1942-06-07", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "괌", at: [144.79, 13.47], war: world-war-2, theater: asia-pacific, date: "1942-06-07", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "타이산", at: [112.79, 22.25], war: world-war-2, theater: asia-pacific, date: "1942-06-07", expect: china, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "카이핑", at: [112.67, 22.38], war: world-war-2, theater: asia-pacific, date: "1942-06-07", expect: china, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "포산", at: [113.12, 23.02], war: world-war-2, theater: asia-pacific, date: "1942-06-07", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "장먼", at: [113.08, 22.58], war: world-war-2, theater: asia-pacific, date: "1942-06-07", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "장베이", at: [114.7, 41.16], war: world-war-2, theater: asia-pacific, date: "1942-06-07", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "캉바오", at: [114.6, 41.85], war: world-war-2, theater: asia-pacific, date: "1942-06-07", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "구위안", at: [115.69, 41.67], war: world-war-2, theater: asia-pacific, date: "1942-06-07", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "바오창(타이푸쓰)", at: [115.28, 41.88], war: world-war-2, theater: asia-pacific, date: "1942-06-07", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "상두", at: [113.57, 41.56], war: world-war-2, theater: asia-pacific, date: "1942-06-07", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "화더", at: [114.01, 41.9], war: world-war-2, theater: asia-pacific, date: "1942-06-07", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "둬룬", at: [116.48, 42.2], war: world-war-2, theater: asia-pacific, date: "1942-06-07", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "시린호트", at: [116.07, 43.93], war: world-war-2, theater: asia-pacific, date: "1942-06-07", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "바이링먀오", at: [110.43, 41.7], war: world-war-2, theater: asia-pacific, date: "1942-06-07", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "구이쑤", at: [111.65, 40.82], war: world-war-2, theater: asia-pacific, date: "1942-06-07", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "바오터우", at: [109.84, 40.66], war: world-war-2, theater: asia-pacific, date: "1942-06-07", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "장자커우", at: [114.88, 40.82], war: world-war-2, theater: asia-pacific, date: "1942-06-07", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+
+# 1943-11-23
+- { name: "라에", at: [147, -6.73], war: world-war-2, theater: asia-pacific, date: "1943-11-23", expect: allies, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "핀슈하펜", at: [147.85, -6.6], war: world-war-2, theater: asia-pacific, date: "1943-11-23", expect: allies, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "사텔베르크", at: [147.75, -6.52], war: world-war-2, theater: asia-pacific, date: "1943-11-23", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "11.25" }
+- { name: "둠푸", at: [145.73, -5.87], war: world-war-2, theater: asia-pacific, date: "1943-11-23", expect: allies, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "콜롬방가라", at: [157.08, -7.95], war: world-war-2, theater: asia-pacific, date: "1943-11-23", expect: allies, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "토로키나", at: [155.05, -6.23], war: world-war-2, theater: asia-pacific, date: "1943-11-23", expect: allies, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "부인", at: [155.68, -6.75], war: world-war-2, theater: asia-pacific, date: "1943-11-23", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "애투", at: [173.2, 52.9], war: world-war-2, theater: asia-pacific, date: "1943-11-23", expect: allies, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "키스카", at: [177.5, 51.98], war: world-war-2, theater: asia-pacific, date: "1943-11-23", expect: allies, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "나우루", at: [166.93, -0.52], war: world-war-2, theater: asia-pacific, date: "1943-11-23", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "마웅도", at: [92.36, 20.82], war: world-war-2, theater: asia-pacific, date: "1943-11-23", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "1944.1.9" }
+- { name: "티딤", at: [93.66, 23.38], war: world-war-2, theater: asia-pacific, date: "1943-11-23", expect: allies, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "팔람", at: [93.68, 22.92], war: world-war-2, theater: asia-pacific, date: "1943-11-23", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "하카", at: [93.61, 22.64], war: world-war-2, theater: asia-pacific, date: "1943-11-23", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "포트화이트", at: [93.73, 23.3], war: world-war-2, theater: asia-pacific, date: "1943-11-23", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "신빙양", at: [96.18, 26.68], war: world-war-2, theater: asia-pacific, date: "1943-11-23", expect: allies, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "창더", at: [111.7, 29.03], war: world-war-2, theater: asia-pacific, date: "1943-11-23", expect: china, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "11.29 함락 직전 공방" }
+- { name: "장베이", at: [114.7, 41.16], war: world-war-2, theater: asia-pacific, date: "1943-11-23", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "캉바오", at: [114.6, 41.85], war: world-war-2, theater: asia-pacific, date: "1943-11-23", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "구위안", at: [115.69, 41.67], war: world-war-2, theater: asia-pacific, date: "1943-11-23", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "바오창(타이푸쓰)", at: [115.28, 41.88], war: world-war-2, theater: asia-pacific, date: "1943-11-23", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "상두", at: [113.57, 41.56], war: world-war-2, theater: asia-pacific, date: "1943-11-23", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "화더", at: [114.01, 41.9], war: world-war-2, theater: asia-pacific, date: "1943-11-23", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "둬룬", at: [116.48, 42.2], war: world-war-2, theater: asia-pacific, date: "1943-11-23", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "시린호트", at: [116.07, 43.93], war: world-war-2, theater: asia-pacific, date: "1943-11-23", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "바이링먀오", at: [110.43, 41.7], war: world-war-2, theater: asia-pacific, date: "1943-11-23", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "구이쑤", at: [111.65, 40.82], war: world-war-2, theater: asia-pacific, date: "1943-11-23", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "바오터우", at: [109.84, 40.66], war: world-war-2, theater: asia-pacific, date: "1943-11-23", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "장자커우", at: [114.88, 40.82], war: world-war-2, theater: asia-pacific, date: "1943-11-23", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+
+# 1944-07-09
+- { name: "사이판", at: [145.75, 15.19], war: world-war-2, theater: asia-pacific, date: "1944-07-09", expect: allies, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "티니안", at: [145.63, 15], war: world-war-2, theater: asia-pacific, date: "1944-07-09", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "괌", at: [144.79, 13.47], war: world-war-2, theater: asia-pacific, date: "1944-07-09", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "홀란디아", at: [140.7, -2.55], war: world-war-2, theater: asia-pacific, date: "1944-07-09", expect: allies, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "누미포르", at: [134.87, -1.03], war: world-war-2, theater: asia-pacific, date: "1944-07-09", expect: allies, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "웨와크", at: [143.63, -3.55], war: world-war-2, theater: asia-pacific, date: "1944-07-09", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "마누스(로렝가우)", at: [147.27, -2.03], war: world-war-2, theater: asia-pacific, date: "1944-07-09", expect: allies, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "미치나", at: [97.4, 25.38], war: world-war-2, theater: asia-pacific, date: "1944-07-09", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "8.3" }
+- { name: "모가웅", at: [96.94, 25.3], war: world-war-2, theater: asia-pacific, date: "1944-07-09", expect: allies, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "6.26" }
+- { name: "카마잉", at: [96.7, 25.52], war: world-war-2, theater: asia-pacific, date: "1944-07-09", expect: allies, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "코히마", at: [94.11, 25.67], war: world-war-2, theater: asia-pacific, date: "1944-07-09", expect: allies, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "타무", at: [94.31, 24.22], war: world-war-2, theater: asia-pacific, date: "1944-07-09", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "비셴푸르", at: [93.77, 24.6], war: world-war-2, theater: asia-pacific, date: "1944-07-09", expect: allies, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "티딤", at: [93.66, 23.38], war: world-war-2, theater: asia-pacific, date: "1944-07-09", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "텅충", at: [98.49, 25.02], war: world-war-2, theater: asia-pacific, date: "1944-07-09", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "9.14" }
+- { name: "쑹산", at: [98.82, 24.6], war: world-war-2, theater: asia-pacific, date: "1944-07-09", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "9.7" }
+- { name: "룽링", at: [98.69, 24.59], war: world-war-2, theater: asia-pacific, date: "1944-07-09", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "11.3" }
+- { name: "창사", at: [112.94, 28.23], war: world-war-2, theater: asia-pacific, date: "1944-07-09", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "6.18" }
+- { name: "샹탄", at: [112.94, 27.83], war: world-war-2, theater: asia-pacific, date: "1944-07-09", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "주저우", at: [113.13, 27.83], war: world-war-2, theater: asia-pacific, date: "1944-07-09", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "리링", at: [113.5, 27.65], war: world-war-2, theater: asia-pacific, date: "1944-07-09", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "형양", at: [112.57, 26.89], war: world-war-2, theater: asia-pacific, date: "1944-07-09", expect: china, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "8.8" }
+- { name: "창더", at: [111.7, 29.03], war: world-war-2, theater: asia-pacific, date: "1944-07-09", expect: china, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "뤄양", at: [112.45, 34.62], war: world-war-2, theater: asia-pacific, date: "1944-07-09", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "5.25" }
+- { name: "정저우", at: [113.62, 34.75], war: world-war-2, theater: asia-pacific, date: "1944-07-09", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "원저우", at: [120.67, 28], war: world-war-2, theater: asia-pacific, date: "1944-07-09", expect: china, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "9.9" }
+- { name: "푸저우(푸젠)", at: [119.3, 26.08], war: world-war-2, theater: asia-pacific, date: "1944-07-09", expect: china, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "10.4" }
+- { name: "구이린", at: [110.29, 25.27], war: world-war-2, theater: asia-pacific, date: "1944-07-09", expect: china, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "장베이", at: [114.7, 41.16], war: world-war-2, theater: asia-pacific, date: "1944-07-09", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "캉바오", at: [114.6, 41.85], war: world-war-2, theater: asia-pacific, date: "1944-07-09", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "구위안", at: [115.69, 41.67], war: world-war-2, theater: asia-pacific, date: "1944-07-09", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "바오창(타이푸쓰)", at: [115.28, 41.88], war: world-war-2, theater: asia-pacific, date: "1944-07-09", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "상두", at: [113.57, 41.56], war: world-war-2, theater: asia-pacific, date: "1944-07-09", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "화더", at: [114.01, 41.9], war: world-war-2, theater: asia-pacific, date: "1944-07-09", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "둬룬", at: [116.48, 42.2], war: world-war-2, theater: asia-pacific, date: "1944-07-09", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "시린호트", at: [116.07, 43.93], war: world-war-2, theater: asia-pacific, date: "1944-07-09", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "바이링먀오", at: [110.43, 41.7], war: world-war-2, theater: asia-pacific, date: "1944-07-09", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "구이쑤", at: [111.65, 40.82], war: world-war-2, theater: asia-pacific, date: "1944-07-09", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "바오터우", at: [109.84, 40.66], war: world-war-2, theater: asia-pacific, date: "1944-07-09", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "장자커우", at: [114.88, 40.82], war: world-war-2, theater: asia-pacific, date: "1944-07-09", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "샹샹", at: [112.53, 27.73], war: world-war-2, theater: asia-pacific, date: "1944-07-09", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "헝산", at: [112.87, 27.23], war: world-war-2, theater: asia-pacific, date: "1944-07-09", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+
+# 1944-10-25
+- { name: "타클로반", at: [125, 11.24], war: world-war-2, theater: asia-pacific, date: "1944-10-25", expect: allies, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "둘라그", at: [125.03, 10.95], war: world-war-2, theater: asia-pacific, date: "1944-10-25", expect: allies, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "오르모크", at: [124.61, 11], war: world-war-2, theater: asia-pacific, date: "1944-10-25", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "모로타이(남부)", at: [128.3, 2.05], war: world-war-2, theater: asia-pacific, date: "1944-10-25", expect: allies, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "야프", at: [138.13, 9.52], war: world-war-2, theater: asia-pacific, date: "1944-10-25", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "괌", at: [144.79, 13.47], war: world-war-2, theater: asia-pacific, date: "1944-10-25", expect: allies, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "티니안", at: [145.63, 15], war: world-war-2, theater: asia-pacific, date: "1944-10-25", expect: allies, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "구이린", at: [110.29, 25.27], war: world-war-2, theater: asia-pacific, date: "1944-10-25", expect: china, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "11.10" }
+- { name: "류저우", at: [109.41, 24.33], war: world-war-2, theater: asia-pacific, date: "1944-10-25", expect: china, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "11.10" }
+- { name: "난닝", at: [108.37, 22.82], war: world-war-2, theater: asia-pacific, date: "1944-10-25", expect: china, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "11.24" }
+- { name: "우저우", at: [111.28, 23.48], war: world-war-2, theater: asia-pacific, date: "1944-10-25", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "9.22" }
+- { name: "취안저우(광시)", at: [111.07, 25.93], war: world-war-2, theater: asia-pacific, date: "1944-10-25", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "9.14" }
+- { name: "링링", at: [111.61, 26.22], war: world-war-2, theater: asia-pacific, date: "1944-10-25", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "9.7" }
+- { name: "샤오양", at: [111.47, 27.24], war: world-war-2, theater: asia-pacific, date: "1944-10-25", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "형양", at: [112.57, 26.89], war: world-war-2, theater: asia-pacific, date: "1944-10-25", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "원저우", at: [120.67, 28], war: world-war-2, theater: asia-pacific, date: "1944-10-25", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "9.9" }
+- { name: "푸저우(푸젠)", at: [119.3, 26.08], war: world-war-2, theater: asia-pacific, date: "1944-10-25", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "10.4" }
+- { name: "티딤", at: [93.66, 23.38], war: world-war-2, theater: asia-pacific, date: "1944-10-25", expect: allies, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "10.18 무렵" }
+- { name: "케네디봉", at: [93.77, 23.32], war: world-war-2, theater: asia-pacific, date: "1944-10-25", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "11.4 무렵" }
+- { name: "포트화이트", at: [93.73, 23.3], war: world-war-2, theater: asia-pacific, date: "1944-10-25", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "11.8" }
+- { name: "칼레묘", at: [94.07, 23.19], war: world-war-2, theater: asia-pacific, date: "1944-10-25", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "11.14" }
+- { name: "바모", at: [97.24, 24.27], war: world-war-2, theater: asia-pacific, date: "1944-10-25", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "12.15" }
+- { name: "미치나", at: [97.4, 25.38], war: world-war-2, theater: asia-pacific, date: "1944-10-25", expect: allies, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "텅충", at: [98.49, 25.02], war: world-war-2, theater: asia-pacific, date: "1944-10-25", expect: china, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "쑹산", at: [98.82, 24.6], war: world-war-2, theater: asia-pacific, date: "1944-10-25", expect: china, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "룽링", at: [98.69, 24.59], war: world-war-2, theater: asia-pacific, date: "1944-10-25", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "11.3" }
+- { name: "망스", at: [98.58, 24.43], war: world-war-2, theater: asia-pacific, date: "1944-10-25", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "11.20" }
+- { name: "완딩", at: [98.07, 24.08], war: world-war-2, theater: asia-pacific, date: "1944-10-25", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "1945.1" }
+- { name: "장베이", at: [114.7, 41.16], war: world-war-2, theater: asia-pacific, date: "1944-10-25", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "캉바오", at: [114.6, 41.85], war: world-war-2, theater: asia-pacific, date: "1944-10-25", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "구위안", at: [115.69, 41.67], war: world-war-2, theater: asia-pacific, date: "1944-10-25", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "바오창(타이푸쓰)", at: [115.28, 41.88], war: world-war-2, theater: asia-pacific, date: "1944-10-25", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "상두", at: [113.57, 41.56], war: world-war-2, theater: asia-pacific, date: "1944-10-25", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "화더", at: [114.01, 41.9], war: world-war-2, theater: asia-pacific, date: "1944-10-25", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "둬룬", at: [116.48, 42.2], war: world-war-2, theater: asia-pacific, date: "1944-10-25", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "시린호트", at: [116.07, 43.93], war: world-war-2, theater: asia-pacific, date: "1944-10-25", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "바이링먀오", at: [110.43, 41.7], war: world-war-2, theater: asia-pacific, date: "1944-10-25", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "구이쑤", at: [111.65, 40.82], war: world-war-2, theater: asia-pacific, date: "1944-10-25", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "바오터우", at: [109.84, 40.66], war: world-war-2, theater: asia-pacific, date: "1944-10-25", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "장자커우", at: [114.88, 40.82], war: world-war-2, theater: asia-pacific, date: "1944-10-25", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "샹샹", at: [112.53, 27.73], war: world-war-2, theater: asia-pacific, date: "1944-10-25", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "헝산", at: [112.87, 27.23], war: world-war-2, theater: asia-pacific, date: "1944-10-25", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+
+# 1945-06-23
+- { name: "랑군", at: [96.16, 16.8], war: world-war-2, theater: asia-pacific, date: "1945-06-23", expect: allies, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "페구", at: [96.48, 17.34], war: world-war-2, theater: asia-pacific, date: "1945-06-23", expect: allies, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "토웅구", at: [96.43, 18.94], war: world-war-2, theater: asia-pacific, date: "1945-06-23", expect: allies, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "라시오", at: [97.75, 22.94], war: world-war-2, theater: asia-pacific, date: "1945-06-23", expect: allies, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "3.7" }
+- { name: "시포", at: [97.3, 22.62], war: world-war-2, theater: asia-pacific, date: "1945-06-23", expect: allies, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "타웅지", at: [97.03, 20.78], war: world-war-2, theater: asia-pacific, date: "1945-06-23", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "?" }
+- { name: "켕퉁", at: [99.6, 21.29], war: world-war-2, theater: asia-pacific, date: "1945-06-23", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "타이 점령" }
+- { name: "바기오", at: [120.6, 16.41], war: world-war-2, theater: asia-pacific, date: "1945-06-23", expect: allies, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "4.27" }
+- { name: "본톡", at: [120.98, 17.09], war: world-war-2, theater: asia-pacific, date: "1945-06-23", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "키앙안", at: [121.09, 16.78], war: world-war-2, theater: asia-pacific, date: "1945-06-23", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "마닐라", at: [120.98, 14.6], war: world-war-2, theater: asia-pacific, date: "1945-06-23", expect: allies, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "타라칸", at: [117.6, 3.3], war: world-war-2, theater: asia-pacific, date: "1945-06-23", expect: allies, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "5.1" }
+- { name: "브루나이", at: [114.94, 4.89], war: world-war-2, theater: asia-pacific, date: "1945-06-23", expect: allies, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "6.13" }
+- { name: "미리", at: [113.99, 4.4], war: world-war-2, theater: asia-pacific, date: "1945-06-23", expect: allies, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "6.23 무렵" }
+- { name: "보퍼트", at: [115.75, 5.35], war: world-war-2, theater: asia-pacific, date: "1945-06-23", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "6.27" }
+- { name: "쿠칭", at: [110.35, 1.55], war: world-war-2, theater: asia-pacific, date: "1945-06-23", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "나하", at: [127.68, 26.21], war: world-war-2, theater: asia-pacific, date: "1945-06-23", expect: allies, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "류저우", at: [109.41, 24.33], war: world-war-2, theater: asia-pacific, date: "1945-06-23", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "6.30" }
+- { name: "구이린", at: [110.29, 25.27], war: world-war-2, theater: asia-pacific, date: "1945-06-23", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "7.28" }
+- { name: "난닝", at: [108.37, 22.82], war: world-war-2, theater: asia-pacific, date: "1945-06-23", expect: china, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "5.26" }
+- { name: "웨와크", at: [143.63, -3.55], war: world-war-2, theater: asia-pacific, date: "1945-06-23", expect: allies, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "5.11" }
+- { name: "부인", at: [155.68, -6.75], war: world-war-2, theater: asia-pacific, date: "1945-06-23", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "시에라마드레(안티폴로 동쪽)", at: [121.35, 14.65], war: world-war-2, theater: asia-pacific, date: "1945-06-23", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "삼발레스 산지", at: [120.25, 15.25], war: world-war-2, theater: asia-pacific, date: "1945-06-23", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "네그로스 내륙", at: [122.95, 10.25], war: world-war-2, theater: asia-pacific, date: "1945-06-23", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "파나이 내륙", at: [122.45, 11.15], war: world-war-2, theater: asia-pacific, date: "1945-06-23", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "세부 북부 내륙", at: [123.95, 10.75], war: world-war-2, theater: asia-pacific, date: "1945-06-23", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "장베이", at: [114.7, 41.16], war: world-war-2, theater: asia-pacific, date: "1945-06-23", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "캉바오", at: [114.6, 41.85], war: world-war-2, theater: asia-pacific, date: "1945-06-23", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "구위안", at: [115.69, 41.67], war: world-war-2, theater: asia-pacific, date: "1945-06-23", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "바오창(타이푸쓰)", at: [115.28, 41.88], war: world-war-2, theater: asia-pacific, date: "1945-06-23", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "상두", at: [113.57, 41.56], war: world-war-2, theater: asia-pacific, date: "1945-06-23", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "화더", at: [114.01, 41.9], war: world-war-2, theater: asia-pacific, date: "1945-06-23", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "둬룬", at: [116.48, 42.2], war: world-war-2, theater: asia-pacific, date: "1945-06-23", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "시린호트", at: [116.07, 43.93], war: world-war-2, theater: asia-pacific, date: "1945-06-23", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "바이링먀오", at: [110.43, 41.7], war: world-war-2, theater: asia-pacific, date: "1945-06-23", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "구이쑤", at: [111.65, 40.82], war: world-war-2, theater: asia-pacific, date: "1945-06-23", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "바오터우", at: [109.84, 40.66], war: world-war-2, theater: asia-pacific, date: "1945-06-23", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "장자커우", at: [114.88, 40.82], war: world-war-2, theater: asia-pacific, date: "1945-06-23", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "샤오양", at: [111.47, 27.24], war: world-war-2, theater: asia-pacific, date: "1945-06-23", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "샹샹", at: [112.53, 27.73], war: world-war-2, theater: asia-pacific, date: "1945-06-23", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "헝산", at: [112.87, 27.23], war: world-war-2, theater: asia-pacific, date: "1945-06-23", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+
+# 1945-08-15
+- { name: "만저우리", at: [117.38, 49.6], war: world-war-2, theater: asia-pacific, date: "1945-08-15", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "8.9" }
+- { name: "야커스", at: [120.71, 49.29], war: world-war-2, theater: asia-pacific, date: "1945-08-15", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "?" }
+- { name: "부허두", at: [121.95, 48.77], war: world-war-2, theater: asia-pacific, date: "1945-08-15", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "8.18까지 교전?" }
+- { name: "자란툰", at: [122.74, 48], war: world-war-2, theater: asia-pacific, date: "1945-08-15", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "15일 접근전" }
+- { name: "솔룬", at: [121.22, 46.6], war: world-war-2, theater: asia-pacific, date: "1945-08-15", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "왕예먀오", at: [122.08, 46.08], war: world-war-2, theater: asia-pacific, date: "1945-08-15", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "14일까지" }
+- { name: "타오난", at: [122.79, 45.33], war: world-war-2, theater: asia-pacific, date: "1945-08-15", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "14일까지" }
+- { name: "투취안", at: [121.6, 45.38], war: world-war-2, theater: asia-pacific, date: "1945-08-15", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "루베이", at: [120.92, 44.55], war: world-war-2, theater: asia-pacific, date: "1945-08-15", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "12일" }
+- { name: "린시", at: [118.05, 43.6], war: world-war-2, theater: asia-pacific, date: "1945-08-15", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "14일까지" }
+- { name: "장베이", at: [114.7, 41.16], war: world-war-2, theater: asia-pacific, date: "1945-08-15", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "장자커우", at: [114.88, 40.82], war: world-war-2, theater: asia-pacific, date: "1945-08-15", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "츠펑", at: [118.96, 42.27], war: world-war-2, theater: asia-pacific, date: "1945-08-15", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "치치하얼", at: [123.95, 47.35], war: world-war-2, theater: asia-pacific, date: "1945-08-15", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "창춘", at: [125.32, 43.88], war: world-war-2, theater: asia-pacific, date: "1945-08-15", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "하얼빈", at: [126.63, 45.75], war: world-war-2, theater: asia-pacific, date: "1945-08-15", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "무단장", at: [129.63, 44.55], war: world-war-2, theater: asia-pacific, date: "1945-08-15", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "16일" }
+- { name: "무링", at: [130.52, 44.92], war: world-war-2, theater: asia-pacific, date: "1945-08-15", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "둥닝", at: [131.12, 44.06], war: world-war-2, theater: asia-pacific, date: "1945-08-15", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "10일" }
+- { name: "쑤이펀허", at: [131.15, 44.4], war: world-war-2, theater: asia-pacific, date: "1945-08-15", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "9일" }
+- { name: "미산", at: [131.87, 45.55], war: world-war-2, theater: asia-pacific, date: "1945-08-15", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "린커우", at: [130.27, 45.28], war: world-war-2, theater: asia-pacific, date: "1945-08-15", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "13일 무렵" }
+- { name: "바오칭", at: [132.2, 46.33], war: world-war-2, theater: asia-pacific, date: "1945-08-15", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "14일" }
+- { name: "보리", at: [130.58, 45.75], war: world-war-2, theater: asia-pacific, date: "1945-08-15", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "?" }
+- { name: "자무쓰", at: [130.36, 46.8], war: world-war-2, theater: asia-pacific, date: "1945-08-15", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "17일" }
+- { name: "푸진", at: [132.04, 47.25], war: world-war-2, theater: asia-pacific, date: "1945-08-15", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "퉁장", at: [132.51, 47.65], war: world-war-2, theater: asia-pacific, date: "1945-08-15", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "허강(싱산)", at: [130.3, 47.35], war: world-war-2, theater: asia-pacific, date: "1945-08-15", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "14일" }
+- { name: "쑨우", at: [127.33, 49.42], war: world-war-2, theater: asia-pacific, date: "1945-08-15", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "15~18일 교전" }
+- { name: "헤이허", at: [127.49, 50.24], war: world-war-2, theater: asia-pacific, date: "1945-08-15", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "아이훈", at: [127.5, 49.97], war: world-war-2, theater: asia-pacific, date: "1945-08-15", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "?" }
+- { name: "후마", at: [126.66, 51.73], war: world-war-2, theater: asia-pacific, date: "1945-08-15", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "?" }
+- { name: "모허", at: [122.53, 52.97], war: world-war-2, theater: asia-pacific, date: "1945-08-15", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "?" }
+- { name: "타허", at: [124.7, 52.33], war: world-war-2, theater: asia-pacific, date: "1945-08-15", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "?" }
+- { name: "넌장", at: [125.22, 49.18], war: world-war-2, theater: asia-pacific, date: "1945-08-15", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "베이안", at: [126.5, 48.24], war: world-war-2, theater: asia-pacific, date: "1945-08-15", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "이춘", at: [128.9, 47.73], war: world-war-2, theater: asia-pacific, date: "1945-08-15", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "?" }
+- { name: "훈춘", at: [130.37, 42.87], war: world-war-2, theater: asia-pacific, date: "1945-08-15", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "10일" }
+- { name: "투먼", at: [129.84, 42.96], war: world-war-2, theater: asia-pacific, date: "1945-08-15", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "10일" }
+- { name: "왕칭", at: [129.76, 43.31], war: world-war-2, theater: asia-pacific, date: "1945-08-15", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "?" }
+- { name: "옌지", at: [129.5, 42.9], war: world-war-2, theater: asia-pacific, date: "1945-08-15", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "?" }
+- { name: "웅기", at: [130.4, 42.33], war: world-war-2, theater: asia-pacific, date: "1945-08-15", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "12일" }
+- { name: "나진", at: [130.3, 42.25], war: world-war-2, theater: asia-pacific, date: "1945-08-15", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "12일" }
+- { name: "청진", at: [129.78, 41.79], war: world-war-2, theater: asia-pacific, date: "1945-08-15", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "교전 중" }
+- { name: "포로나이스크(시스카)", at: [143.1, 49.22], war: world-war-2, theater: asia-pacific, date: "1945-08-15", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "고톤(포베디노)", at: [142.77, 49.83], war: world-war-2, theater: asia-pacific, date: "1945-08-15", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "18일" }
+- { name: "캉바오", at: [114.6, 41.85], war: world-war-2, theater: asia-pacific, date: "1945-08-15", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "구위안", at: [115.69, 41.67], war: world-war-2, theater: asia-pacific, date: "1945-08-15", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "바오창(타이푸쓰)", at: [115.28, 41.88], war: world-war-2, theater: asia-pacific, date: "1945-08-15", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "상두", at: [113.57, 41.56], war: world-war-2, theater: asia-pacific, date: "1945-08-15", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "시린호트", at: [116.07, 43.93], war: world-war-2, theater: asia-pacific, date: "1945-08-15", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "바이링먀오", at: [110.43, 41.7], war: world-war-2, theater: asia-pacific, date: "1945-08-15", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "구이쑤", at: [111.65, 40.82], war: world-war-2, theater: asia-pacific, date: "1945-08-15", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "바오터우", at: [109.84, 40.66], war: world-war-2, theater: asia-pacific, date: "1945-08-15", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "샤오양", at: [111.47, 27.24], war: world-war-2, theater: asia-pacific, date: "1945-08-15", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "샹샹", at: [112.53, 27.73], war: world-war-2, theater: asia-pacific, date: "1945-08-15", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "헝산", at: [112.87, 27.23], war: world-war-2, theater: asia-pacific, date: "1945-08-15", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+
+# 1945-09-02
+- { name: "평양", at: [125.75, 39.03], war: world-war-2, theater: asia-pacific, date: "1945-09-02", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "해주", at: [125.72, 38.04], war: world-war-2, theater: asia-pacific, date: "1945-09-02", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "개성", at: [126.55, 37.97], war: world-war-2, theater: asia-pacific, date: "1945-09-02", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "소련군 8.25~9월 중순 주둔, 38선 남쪽" }
+- { name: "서울", at: [126.98, 37.57], war: world-war-2, theater: asia-pacific, date: "1945-09-02", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "다롄", at: [121.6, 38.91], war: world-war-2, theater: asia-pacific, date: "1945-09-02", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "유즈노사할린스크", at: [142.73, 46.96], war: world-war-2, theater: asia-pacific, date: "1945-09-02", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "시코탄", at: [146.75, 43.8], war: world-war-2, theater: asia-pacific, date: "1945-09-02", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "9.1" }
+- { name: "청더", at: [117.94, 40.95], war: world-war-2, theater: asia-pacific, date: "1945-09-02", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "8.19" }
+- { name: "츠펑", at: [118.96, 42.27], war: world-war-2, theater: asia-pacific, date: "1945-09-02", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "베이징", at: [116.4, 39.9], war: world-war-2, theater: asia-pacific, date: "1945-09-02", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "바이링먀오", at: [110.43, 41.7], war: world-war-2, theater: asia-pacific, date: "1945-09-02", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "구이쑤", at: [111.65, 40.82], war: world-war-2, theater: asia-pacific, date: "1945-09-02", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "바오터우", at: [109.84, 40.66], war: world-war-2, theater: asia-pacific, date: "1945-09-02", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "샤오양", at: [111.47, 27.24], war: world-war-2, theater: asia-pacific, date: "1945-09-02", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "샹샹", at: [112.53, 27.73], war: world-war-2, theater: asia-pacific, date: "1945-09-02", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "헝산", at: [112.87, 27.23], war: world-war-2, theater: asia-pacific, date: "1945-09-02", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+
+# 1945-09-09
+- { name: "서울", at: [126.98, 37.57], war: world-war-2, theater: asia-pacific, date: "1945-09-09", expect: allies, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "개성", at: [126.55, 37.97], war: world-war-2, theater: asia-pacific, date: "1945-09-09", expect: allies, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "?" }
+- { name: "싱가포르", at: [103.82, 1.35], war: world-war-2, theater: asia-pacific, date: "1945-09-09", expect: allies, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "페낭", at: [100.33, 5.41], war: world-war-2, theater: asia-pacific, date: "1945-09-09", expect: allies, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "쿠알라룸푸르", at: [101.69, 3.14], war: world-war-2, theater: asia-pacific, date: "1945-09-09", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "9.12" }
+- { name: "사이공", at: [106.7, 10.78], war: world-war-2, theater: asia-pacific, date: "1945-09-09", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "하노이", at: [105.85, 21.03], war: world-war-2, theater: asia-pacific, date: "1945-09-09", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "난징", at: [118.78, 32.06], war: world-war-2, theater: asia-pacific, date: "1945-09-09", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "도쿄", at: [139.69, 35.69], war: world-war-2, theater: asia-pacific, date: "1945-09-09", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "바이링먀오", at: [110.43, 41.7], war: world-war-2, theater: asia-pacific, date: "1945-09-09", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "구이쑤", at: [111.65, 40.82], war: world-war-2, theater: asia-pacific, date: "1945-09-09", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "바오터우", at: [109.84, 40.66], war: world-war-2, theater: asia-pacific, date: "1945-09-09", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "샤오양", at: [111.47, 27.24], war: world-war-2, theater: asia-pacific, date: "1945-09-09", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "샹샹", at: [112.53, 27.73], war: world-war-2, theater: asia-pacific, date: "1945-09-09", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "헝산", at: [112.87, 27.23], war: world-war-2, theater: asia-pacific, date: "1945-09-09", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }

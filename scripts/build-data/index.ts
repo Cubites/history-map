@@ -1,4 +1,14 @@
 // 데이터 빌드 (DESIGN.md §5.3): 원본 YAML/GeoJSON → 검증 → 지오 처리 → public/data/
+//
+// 사용법 (npm run build:data -- <인자>, 인자 없이 쓰면 전체 빌드):
+//   --check                  검증만 하고 public/data/에 쓰지 않음 (npm run check:data)
+//   --war <id>[,<id>]        그 전쟁만 다시 계산해 public/data/wars/<id>.json과 wars.json의 그 항목만 바꿈
+//                            (겹침·월경지·LOD·지우기 생략. 전체 빌드를 한 번 한 뒤에 쓸 것. 장면 캐시가 있으면 바뀐 장면만 계산)
+//   --no-wars                전쟁만 빼고 모두 (public/data/wars/와 wars.json은 지우지 않고 그대로 둠)
+//   --events-only            YAML 읽기·검증 뒤 events.json·entities.json·relations.json만 씀 (해안선·겹침·월경지·LOD·전쟁 생략)
+//   --region <r>             --check와 함께: 겹침·월경지를 그 권역 항목이 낀 것만 검사. r은 europe·east-asia 또는 나라 파일 이름(korea 등)
+// 전쟁 장면 계산 결과는 .cache/build-data-wars/에 캐시된다(war-cache.ts). 부분 빌드는 끝 줄에 생략한 단계를 알린다
+// 전쟁 결과(wars.json의 항목, wars/<id>.json)를 쓰면 전쟁마다 입력·출력 해시를 .cache/build-data-wars/built.json에 남긴다(war-inputs.ts). test:geo places가 그 결과가 지금 입력의 것인지 판정하는 데 쓴다(public 출력은 그대로)
 import { mkdir, readdir, readFile, rm, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -19,12 +29,15 @@ import {
   type TerritoryIndexEntry,
   type TerritoryProps,
   type TimelineIndex,
+  type WarIndexEntry,
   type WarShapesOut,
 } from '../../src/schema/index.ts';
-import { DEFAULT_STORY_REGION, REGION_FILTER_OF, STORY_FILE_PREFIXES, regionOfEntityFile, regionOfEventFile } from '../../src/schema/regions.ts';
+import { DEFAULT_STORY_REGION, REGION_FILTERS, REGION_FILTER_OF, STORY_FILE_PREFIXES, regionOfEntityFile, regionOfEventFile } from '../../src/schema/regions.ts';
 import { buildLodTopology, countPoints, subTopology, tiledTopology } from './topo.ts';
 import { chunkOutlines, tilePolygons } from './tiles.ts';
 import { buildWars, checkWars, findCutText, readWars } from './wars.ts';
+import { stats as warCacheStats } from './war-cache.ts';
+import { BUILT_FILE, readBuilt, shaOf, warInputHashes, type BuiltFile } from './war-inputs.ts';
 import { keyOf, runCached } from './cache.ts';
 import { loadLand, type Land } from './tasks.ts';
 import { AllowedExclaveSchema, EXCLAVE_REPORT_KM2, findExclaves, formatPiece, matchExclaves, type AllowedExclave } from './exclaves.ts';
@@ -46,6 +59,53 @@ const DATA = path.join(ROOT, 'data');
 const OUT = path.join(ROOT, 'public/data');
 /** --check: 검증만 하고 public/data/에 쓰지 않는다 */
 const CHECK_ONLY = process.argv.includes('--check');
+
+// ── 명령줄 (부분 빌드, 2026-10-13) ─────────────────────────────
+
+interface Args {
+  /** --war: 이 전쟁들만 (없으면 null) */
+  wars: string[] | null;
+  noWars: boolean;
+  eventsOnly: boolean;
+  /** --region: 겹침·월경지 검사를 거를 권역 (europe·east-asia 또는 나라 파일 이름) */
+  region: string | null;
+}
+
+function parseArgs(argv: string[]): Args {
+  const usage = '사용법: build:data [--check] [--war <id>[,<id>]] [--no-wars] [--events-only] [--region <europe|east-asia|나라 파일 이름>(--check와 함께)]';
+  const fail = (msg: string): never => {
+    console.error(`build:data 인자 오류: ${msg}\n${usage}`);
+    process.exit(2);
+  };
+  const args: Args = { wars: null, noWars: false, eventsOnly: false, region: null };
+  const valueOf = (i: number, name: string) => {
+    const v = argv[i + 1];
+    if (v === undefined || v.startsWith('--')) fail(`${name}에 값이 필요함`);
+    return v;
+  };
+  for (let i = 0; i < argv.length; i++) {
+    const a = argv[i];
+    const eq = a.startsWith('--') ? a.indexOf('=') : -1;
+    const [name, inline] = eq >= 0 ? [a.slice(0, eq), a.slice(eq + 1)] : [a, undefined];
+    if (name === '--check') continue;
+    else if (name === '--no-wars') args.noWars = true;
+    else if (name === '--events-only') args.eventsOnly = true;
+    else if (name === '--war' || name === '--region') {
+      const v = inline ?? valueOf(i, name);
+      if (inline === undefined) i++;
+      if (name === '--war') args.wars = [...(args.wars ?? []), ...v.split(',').filter(Boolean)];
+      else args.region = v;
+    } else fail(`모르는 인자 '${a}'`);
+  }
+  if (args.wars && args.wars.length === 0) fail('--war에 전쟁 id가 필요함');
+  if (args.wars && args.noWars) fail('--war와 --no-wars는 함께 쓸 수 없음');
+  if (args.eventsOnly && (args.wars || args.noWars || args.region)) fail('--events-only는 다른 부분 빌드 인자와 함께 쓸 수 없음');
+  if (args.region && !CHECK_ONLY) fail('--region은 --check와 함께만 씀 (부분 검사 결과로 public/data/를 만들지 않기 위해)');
+  if (args.region && !Object.hasOwn(REGION_FILTER_OF, args.region) && !(REGION_FILTERS as readonly string[]).includes(args.region))
+    fail(`--region '${args.region}'을 모름. ${[...new Set([...REGION_FILTERS, ...Object.keys(REGION_FILTER_OF)])].join(', ')} 가운데 하나`);
+  return args;
+}
+const ARGS = parseArgs(process.argv.slice(2));
 
 /** 타임라인 범위: 고조선 건국(기원전 2333년) ~ 올해 (DESIGN.md D9) */
 const RANGE: [number, number] = [-2332, new Date().getFullYear()];
@@ -313,7 +373,7 @@ async function writeTiled(lod: Lod, topo: ReturnType<typeof buildLodTopology>, b
  * 겹침 검사: 구간마다 범위 상자가 겹치는 영토 버전 쌍의 겹친 넓이를 잰다. 같은 쌍이 여러 구간에 걸쳐 있어도 한 번만(처음 만난 구간에서) 검사하고 보고한다.
  * 쌍을 먼저 모두 모은 뒤 넓이를 worker들에 나눠 재고(캐시, cache.ts), 오류는 쌍을 모은 순서대로 적는다 (2026-10-03)
  */
-async function checkOverlaps(intervals: { from: number; members: ClippedTerritory[] }[]) {
+async function checkOverlaps(intervals: { from: number; members: ClippedTerritory[] }[], inScope: (t: ClippedTerritory) => boolean = () => true) {
   const checkedPairs = new Set<string>();
   const pairs: { a: ClippedTerritory; b: ClippedTerritory; from: number }[] = [];
   for (const { from, members } of intervals)
@@ -321,7 +381,7 @@ async function checkOverlaps(intervals: { from: number; members: ClippedTerritor
       for (let j = i + 1; j < members.length; j++) {
         const [a, b] = [members[i], members[j]];
         const pair = `${a.where}|${b.where}`;
-        if (checkedPairs.has(pair) || !bboxIntersects(a.box, b.box)) continue;
+        if (checkedPairs.has(pair) || !bboxIntersects(a.box, b.box) || !(inScope(a) || inScope(b))) continue;
         checkedPairs.add(pair);
         pairs.push({ a, b, from });
       }
@@ -337,8 +397,8 @@ async function checkOverlaps(intervals: { from: number; members: ClippedTerritor
 }
 
 /** 월경지 검사 (DESIGN.md §5.5): 같은 육지 위 본토와 떨어진 조각 가운데 허용 목록에 없는 것을 알린다 */
-function checkExclaves(clipped: ClippedTerritory[], land: Land, allow: AllowedExclave[], entities: Map<string, Entity>) {
-  const { unexpected, stale } = matchExclaves(findExclaves(clipped, land.pieces), allow);
+function checkExclaves(clipped: ClippedTerritory[], land: Land, allow: AllowedExclave[], entities: Map<string, Entity>, inScope: (entityId: string) => boolean = () => true) {
+  const { unexpected, stale } = matchExclaves(findExclaves(clipped.filter((t) => inScope(t.entityId)), land.pieces), allow.filter((a) => inScope(a.entity)));
   const report = EXCLAVES_ARE_ERRORS ? errors : warnings;
   for (const p of unexpected.filter((p) => p.km2 >= EXCLAVE_REPORT_KM2))
     report.push(`월경지: ${formatPiece(p, entities.get(p.entityId)?.names.ko)} — 허용 목록(data/exclaves.yaml)에 없음. 생성기 경계를 확인`);
@@ -427,21 +487,72 @@ async function main() {
   checkIntegrity(entities, territories, events, relations);
   checkWars(wars, entities, events, errors);
   checkArrowAnchors(events, territories);
+  if (ARGS.wars) {
+    const unknown = ARGS.wars.filter((id) => !wars.some((w) => w.id === id));
+    if (unknown.length) errors.push(`--war: 없는 전쟁 '${unknown.join("', '")}' (있는 전쟁: ${wars.map((w) => w.id).join(', ')})`);
+  }
   if (errors.length) return finish();
+
+  const sortedEvents = [...events].sort((a, b) => a.year - b.year || a.id.localeCompare(b.id));
+  const entitiesOut = () => entityList.map(({ region, ...e }, i) => ({ ...e, color: colorFor(e, i), region }));
+  if (ARGS.eventsOnly) {
+    // 사건·나라·관계 YAML만 고쳤을 때: 영토에 손대지 않으므로 해안선 자르기 이후를 모두 건너뛴다
+    if (CHECK_ONLY) console.log(`check:data --events-only  이상 없음 (나라 ${entities.size} · 사건 ${events.length}) — 해안선·겹침·월경지 검사 생략`);
+    else {
+      await writeJson(path.join(OUT, 'entities.json'), entitiesOut());
+      await writeJson(path.join(OUT, 'relations.json'), relations);
+      await writeJson(path.join(OUT, 'events.json'), sortedEvents);
+      console.log(`build:data --events-only  나라 ${entities.size} · 사건 ${events.length} — entities·relations·events.json만 씀 (영토·전쟁·LOD는 그대로)`);
+    }
+    return finish();
+  }
+
+  // 권역 거르기: 그 권역(필터 단위 또는 나라 파일 이름)의 나라
+  const regionOfEntity = new Map(entityList.map((e) => [e.id, e.region]));
+  const inRegion = (entityId: string) => {
+    if (!ARGS.region) return true;
+    const r = regionOfEntity.get(entityId) ?? '';
+    return r === ARGS.region || REGION_FILTER_OF[r] === ARGS.region;
+  };
 
   const [land50, land110] = [loadLand('50m'), loadLand('110m')];
   const clipped = await clipAll(territories);
   const { intervals, changeYears } = buildIntervals(clipped);
-  await checkOverlaps(intervals);
-  checkExclaves(clipped, land50, await readYamlList(path.join(DATA, 'exclaves.yaml'), AllowedExclaveSchema), entities);
+  const skipped: string[] = [];
+  if (ARGS.wars) skipped.push('겹침·월경지·LOD');
+  else {
+    await checkOverlaps(intervals, (t) => inRegion(t.entityId));
+    checkExclaves(clipped, land50, await readYamlList(path.join(DATA, 'exclaves.yaml'), AllowedExclaveSchema), entities, inRegion);
+    if (ARGS.region) skipped.push(`${ARGS.region} 밖 항목만 낀 겹침·월경지`);
+  }
   if (errors.length) return finish();
 
+  const territory = (entityId: string, year: number) => clipped.find((t) => t.entityId === entityId && active(t, year))?.clipped ?? null;
+  const warGeo = { territory, land: land50.pieces, dir: path.join(DATA, 'wars') };
+  /** 장면 캐시 적중·계산 수를 알리는 글 (계산한 장면이 있을 때만) */
+  const warCacheNote = () =>
+    warCacheStats.sceneHit + warCacheStats.sceneMiss > 0 ? `전쟁 장면 캐시: 적중 ${warCacheStats.sceneHit} · 계산 ${warCacheStats.sceneMiss}` : '';
+  const sceneCount = (list: { theaters: { snapshots: unknown[] }[] }[]) => list.reduce((n, w) => n + w.theaters.reduce((m, t) => m + t.snapshots.length, 0), 0);
+
   if (CHECK_ONLY) {
-    console.log(`check:data  이상 없음 (나라 ${entities.size} · 영토 ${clipped.length} · 사건 ${events.length})`);
+    if (ARGS.wars) {
+      // 쓰지는 않고 전쟁 장면이 오류 없이 계산되는지만 본다
+      await buildWars(wars.filter((w) => ARGS.wars!.includes(w.id)), warGeo, errors);
+      if (errors.length) return finish();
+    }
+    const note = warCacheNote();
+    console.log(`check:data  이상 없음 (나라 ${entities.size} · 영토 ${clipped.length} · 사건 ${events.length})${ARGS.wars ? ` · 전쟁 ${ARGS.wars.join(',')} 계산 확인` : ''}${note ? ` · ${note}` : ''}${skipped.length ? ` — 부분 검사: ${skipped.join(', ')} 생략` : ''}`);
     return finish();
   }
 
-  await rm(OUT, { recursive: true, force: true });
+  if (ARGS.wars) return partialWars(wars, ARGS.wars, warGeo, errors, warCacheNote, sceneCount);
+
+  // 전체 빌드는 public/data/를 모두 지우고 다시 쓴다. --no-wars는 전쟁 결과(wars/·wars.json)만 남긴다
+  if (ARGS.noWars) {
+    await mkdir(OUT, { recursive: true });
+    for (const name of await readdir(OUT)) if (name !== 'wars' && name !== 'wars.json') await rm(path.join(OUT, name), { recursive: true, force: true });
+    if (!(await readdir(OUT)).includes('wars.json')) warnings.push('public/data/wars.json이 없음. 전쟁 보기에 필요하면 npm run build:data -- --war <id> 또는 전체 빌드를 할 것');
+  } else await rm(OUT, { recursive: true, force: true });
   const lodSummary = await writeLods(clipped, land50, land110);
 
   const timeline: TimelineIndex = { range: RANGE, changeYears };
@@ -452,27 +563,89 @@ async function main() {
   await writeJson(path.join(OUT, 'timeline.json'), timeline);
   await writeJson(path.join(OUT, 'territories.json'), index);
   // 권역(region)은 항목 끝에 둔다
-  await writeJson(path.join(OUT, 'entities.json'), entityList.map(({ region, ...e }, i) => ({ ...e, color: colorFor(e, i), region })));
+  await writeJson(path.join(OUT, 'entities.json'), entitiesOut());
   await writeJson(path.join(OUT, 'relations.json'), relations);
-  await writeJson(path.join(OUT, 'events.json'), [...events].sort((a, b) => a.year - b.year || a.id.localeCompare(b.id)));
+  await writeJson(path.join(OUT, 'events.json'), sortedEvents);
+  if (ARGS.noWars) {
+    console.log(`build:data --no-wars  나라 ${entities.size} · 영토 ${clipped.length} · 사건 ${events.length} · ${lodSummary} — 전쟁 생략(public/data/wars·wars.json은 그대로)`);
+    return finish();
+  }
   // 전쟁: 스냅샷마다 진영별 점령 지역을 계산한다 (DESIGN.md §4.5)
-  const territory = (entityId: string, year: number) => clipped.find((t) => t.entityId === entityId && active(t, year))?.clipped ?? null;
-  const warIndex = await buildWars(wars, { territory, land: land50.pieces, dir: path.join(DATA, 'wars') }, errors);
+  const warIndex = await buildWars(wars, warGeo, errors);
   if (errors.length) return finish();
   // 점령 지역 도형은 전쟁마다 wars/<전쟁 id>.json으로 떼어 낸다. 전쟁 보기를 열 때만 받는다 (2026-10-12, 세계 대전이 들어가
   // wars.json이 7MB가 되어 첫 화면에서 모든 방문자가 받던 문제). wars.json의 areas[].coords는 비워 둔다
   await rm(path.join(OUT, 'wars'), { recursive: true, force: true });
+  const warInputs = warInputHashes(ROOT);
+  const built: BuiltFile = {};
   for (const war of warIndex) {
-    const shapes: WarShapesOut = {};
-    for (const t of war.theaters) {
-      shapes[t.id] = t.snapshots.map((s) => s.areas.map((a) => a.coords));
-      for (const s of t.snapshots) for (const a of s.areas) a.coords = [];
-    }
-    await writeJson(path.join(OUT, 'wars', `${war.id}.json`), shapes);
+    await writeWarShapes(war);
+    built[war.id] = await builtRecord(war, warInputs);
   }
   await writeJson(path.join(OUT, 'wars.json'), warIndex);
+  await writeBuilt(built);
 
-  console.log(`build:data  나라 ${entities.size} · 영토 ${clipped.length} · 사건 ${events.length} · 전쟁 ${wars.length}(스냅샷 ${wars.reduce((n, w) => n + w.theaters.reduce((m, t) => m + t.snapshots.length, 0), 0)}) · ${lodSummary}`);
+  console.log(`build:data  나라 ${entities.size} · 영토 ${clipped.length} · 사건 ${events.length} · 전쟁 ${wars.length}(스냅샷 ${sceneCount(wars)}) · ${lodSummary}`);
+  if (warCacheNote()) console.log(`  ${warCacheNote()}`);
+  finish();
+}
+
+/** 전쟁 하나의 점령 지역 도형을 wars/<id>.json으로 떼어 쓰고, 항목의 areas[].coords는 비운다 (전체 빌드·--war가 같이 씀) */
+async function writeWarShapes(war: WarIndexEntry) {
+  const shapes: WarShapesOut = {};
+  for (const t of war.theaters) {
+    shapes[t.id] = t.snapshots.map((s) => s.areas.map((a) => a.coords));
+    for (const s of t.snapshots) for (const a of s.areas) a.coords = [];
+  }
+  await writeJson(path.join(OUT, 'wars', `${war.id}.json`), shapes);
+}
+
+/** 전쟁 결과 기록 한 건(war-inputs.ts): writeWarShapes가 coords를 비운 뒤의 항목과 wars/<id>.json으로 만든다 */
+async function builtRecord(war: WarIndexEntry, inputs: Map<string, string>) {
+  return { inputs: inputs.get(war.id) ?? 'missing', shapes: shaOf(await readFile(path.join(OUT, 'wars', `${war.id}.json`))), entry: shaOf(JSON.stringify(war)) };
+}
+
+/** .cache/build-data-wars/built.json을 쓴다 (public 출력과 별개, test:geo places가 '오래됨'을 판정하는 데 씀) */
+async function writeBuilt(built: BuiltFile) {
+  const file = path.join(ROOT, BUILT_FILE);
+  await mkdir(path.dirname(file), { recursive: true });
+  await writeFile(file, JSON.stringify(Object.fromEntries(Object.entries(built).sort(([a], [b]) => a.localeCompare(b))), null, 1) + '\n');
+}
+
+/**
+ * --war: 고른 전쟁만 계산해 wars/<id>.json을 다시 쓰고, wars.json은 읽어서 그 항목만 바꾼다(순서는 data/wars 파일 이름 순서 그대로).
+ * public/data/의 나머지는 건드리지 않는다. wars.json이 없으면 고른 전쟁만 든 파일이 되므로 경고한다
+ */
+async function partialWars(
+  wars: Awaited<ReturnType<typeof readWars>>,
+  ids: string[],
+  geo: Parameters<typeof buildWars>[1],
+  errs: string[],
+  cacheNote: () => string,
+  sceneCount: (list: { theaters: { snapshots: unknown[] }[] }[]) => number,
+) {
+  const selected = wars.filter((w) => ids.includes(w.id));
+  const built = await buildWars(selected, geo, errs);
+  if (errs.length) return finish();
+  const warInputs = warInputHashes(ROOT);
+  const record = readBuilt(ROOT);
+  for (const war of built) {
+    await writeWarShapes(war);
+    record[war.id] = await builtRecord(war, warInputs);
+  }
+  let old: WarIndexEntry[] = [];
+  try {
+    old = JSON.parse(await readFile(path.join(OUT, 'wars.json'), 'utf8')) as WarIndexEntry[];
+  } catch {
+    warnings.push('public/data/wars.json을 읽지 못해 고른 전쟁만 담아 새로 씀. 나머지 전쟁은 전체 빌드나 --war로 채울 것');
+  }
+  const byId = new Map([...old, ...built].map((e) => [e.id, e]));
+  const merged = wars.flatMap((w) => (byId.has(w.id) ? [byId.get(w.id)!] : []));
+  const missing = wars.filter((w) => !byId.has(w.id)).map((w) => w.id);
+  if (missing.length) warnings.push(`wars.json에 없는 전쟁: ${missing.join(', ')} (전체 빌드나 --war로 채울 것)`);
+  await writeJson(path.join(OUT, 'wars.json'), merged);
+  await writeBuilt(record);
+  console.log(`build:data --war ${ids.join(',')}  전쟁 ${selected.length}(스냅샷 ${sceneCount(selected)}) → wars/·wars.json 갱신${cacheNote() ? ` · ${cacheNote()}` : ''} — 부분 빌드: 겹침·월경지·LOD 생략`);
   finish();
 }
 

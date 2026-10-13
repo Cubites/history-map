@@ -1,0 +1,12 @@
+# test:geo 허용 목록: 도형 품질(shapes) — 의도하여 그대로 두는 것 (검사 c, scripts/test-geo/checks/shapes.ts)
+# 한 항목: key(검사가 내는 열쇠), reason(이유), decided(누가 언제 정했는가). key 끝 `*` 하나는 앞부분이 같은 모든 열쇠를 허용.
+#   gaps     `<구역> <해>`                 예) '한반도 -2332'   (옛 빚은 허용이 아니라 baseline/gaps.txt에 둔다)
+#   overlap  `겹침 <id>@<from> <id>@<from>`
+#   strips   `띠 @경도,위도 <넓이>km²`     예) '띠 @21.86,38.33 3km²'
+#   zero     `영 @경도,위도 <넓이>km²`
+#   islands  `섬 <해> @경도,위도`          예) '섬 799 @2.98,39.61'
+#   gen      `생성 다름 <파일>`·`생성 없음 <파일>`·`생성 더 있음 <파일>`
+# 아무 항목에도 맞지 않는 줄은 요약에서 '낡은 허용 줄'로 알린다.
+# 옛 빚(gaps 734칸·strips 25조각·zero 5조각·islands 108건)은 data/tests/baseline/*.txt에 있다. 그 가운데 의도한 것으로 확인된 것은 여기로 옮기고 이유를 적는다.
+# 지금은 비어 있다.
+[]

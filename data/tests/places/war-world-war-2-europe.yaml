@@ -1,0 +1,499 @@
+# 전쟁 보기 지점 정답표: world-war-2 / europe. 재료 세계 대전 W2 검토의 p-*.json(세션 ww 작업 폴더). 옛 지점이라 url은 아직 '필요'(legacy).
+# 기대: 진영 id | none | front(전선 위, tolerance km 안). 재료의 '?'·'x'는 뺐고, 지금 지도와 다른 지점은 _review-needed.yaml에 있다.
+
+# 1939-09-01
+- { name: "로마", at: [12.5, 41.9], war: world-war-2, theater: europe, date: "1939-09-01", expect: none, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "비참전 (정할 점)" }
+- { name: "트리폴리", at: [13.19, 32.89], war: world-war-2, theater: europe, date: "1939-09-01", expect: none, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "비참전" }
+
+# 1940-05-10
+- { name: "로마", at: [12.5, 41.9], war: world-war-2, theater: europe, date: "1940-05-10", expect: none, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "비참전" }
+- { name: "오슬로", at: [10.75, 59.91], war: world-war-2, theater: europe, date: "1940-05-10", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "모셰엔", at: [13.19, 65.84], war: world-war-2, theater: europe, date: "1940-05-10", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "5.10 연합군 (16일께 함락)" }
+- { name: "트론헤임", at: [10.4, 63.43], war: world-war-2, theater: europe, date: "1940-05-10", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "나므소스", at: [11.5, 64.47], war: world-war-2, theater: europe, date: "1940-05-10", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "5.3 철수" }
+- { name: "무 이 라나", at: [14.14, 66.31], war: world-war-2, theater: europe, date: "1940-05-10", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "5.10 연합군" }
+
+# 1940-06-22
+- { name: "파리", at: [2.35, 48.86], war: world-war-2, theater: europe, date: "1940-06-22", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "보르도", at: [-0.58, 44.84], war: world-war-2, theater: europe, date: "1940-06-22", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "투르", at: [0.69, 47.39], war: world-war-2, theater: europe, date: "1940-06-22", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "물랭", at: [3.33, 46.57], war: world-war-2, theater: europe, date: "1940-06-22", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "알리에강 북안 점령구" }
+- { name: "샬롱쉬르손", at: [4.85, 46.78], war: world-war-2, theater: europe, date: "1940-06-22", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "앙굴렘", at: [0.16, 45.65], war: world-war-2, theater: europe, date: "1940-06-22", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "몽드마르상", at: [-0.5, 43.89], war: world-war-2, theater: europe, date: "1940-06-22", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+
+# 1940-09-15
+- { name: "시디바라니", at: [25.9, 31.61], war: world-war-2, theater: europe, date: "1940-09-15", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "9.16 이탈리아 점령" }
+- { name: "살룸", at: [25.15, 31.56], war: world-war-2, theater: europe, date: "1940-09-15", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "메르사마트루", at: [27.24, 31.35], war: world-war-2, theater: europe, date: "1940-09-15", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+
+# 1941-06-22
+- { name: "몰타", at: [14.45, 35.9], war: world-war-2, theater: europe, date: "1941-06-22", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "토브루크", at: [23.96, 32.08], war: world-war-2, theater: europe, date: "1941-06-22", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "바르디아", at: [25.08, 31.76], war: world-war-2, theater: europe, date: "1941-06-22", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "할파야", at: [25.18, 31.55], war: world-war-2, theater: europe, date: "1941-06-22", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "시디오마르", at: [25, 31.4], war: world-war-2, theater: europe, date: "1941-06-22", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "?" }
+- { name: "벵가지", at: [20.07, 32.12], war: world-war-2, theater: europe, date: "1941-06-22", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "다마스쿠스", at: [36.29, 33.51], war: world-war-2, theater: europe, date: "1941-06-22", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "6.21" }
+- { name: "베이루트", at: [35.5, 33.89], war: world-war-2, theater: europe, date: "1941-06-22", expect: none, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "비시 (7.14 항복)" }
+- { name: "바그다드", at: [44.36, 33.31], war: world-war-2, theater: europe, date: "1941-06-22", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "케르치", at: [36.47, 45.36], war: world-war-2, theater: europe, date: "1941-06-22", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+
+# 1941-12-05
+- { name: "칼리닌(트베리)", at: [35.9, 56.86], war: world-war-2, theater: europe, date: "1941-12-05", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "10.14~12.16 독일" }
+- { name: "클린", at: [36.73, 56.33], war: world-war-2, theater: europe, date: "1941-12-05", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "11.23~12.15" }
+- { name: "솔네치노고르스크", at: [36.98, 56.18], war: world-war-2, theater: europe, date: "1941-12-05", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "11.23~12.12" }
+- { name: "야흐로마", at: [37.48, 56.29], war: world-war-2, theater: europe, date: "1941-12-05", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "11.28 독일 도하, 29일 밀려남" }
+- { name: "드미트로프", at: [37.52, 56.34], war: world-war-2, theater: europe, date: "1941-12-05", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "크라스나야폴랴나", at: [37.53, 56], war: world-war-2, theater: europe, date: "1941-12-05", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "11.30~12.7" }
+- { name: "로브냐", at: [37.48, 56.01], war: world-war-2, theater: europe, date: "1941-12-05", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "이스트라", at: [36.85, 55.91], war: world-war-2, theater: europe, date: "1941-12-05", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "11.27~12.11" }
+- { name: "나로포민스크", at: [36.73, 55.39], war: world-war-2, theater: europe, date: "1941-12-05", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "말로야로슬라베츠", at: [36.47, 55.01], war: world-war-2, theater: europe, date: "1941-12-05", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "10.18~1.2" }
+- { name: "칼루가", at: [36.25, 54.53], war: world-war-2, theater: europe, date: "1941-12-05", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "10.12~12.30" }
+- { name: "알렉신", at: [37.07, 54.51], war: world-war-2, theater: europe, date: "1941-12-05", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "10월말~12.17" }
+- { name: "타루사", at: [37.18, 54.72], war: world-war-2, theater: europe, date: "1941-12-05", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "10.24~12.19" }
+- { name: "세르푸호프", at: [37.41, 54.92], war: world-war-2, theater: europe, date: "1941-12-05", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "툴라", at: [37.62, 54.19], war: world-war-2, theater: europe, date: "1941-12-05", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "카시라", at: [38.15, 54.83], war: world-war-2, theater: europe, date: "1941-12-05", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "베뇨프", at: [38.27, 54.35], war: world-war-2, theater: europe, date: "1941-12-05", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "11.25~12.29" }
+- { name: "스탈리노고르스크", at: [38.29, 54.01], war: world-war-2, theater: europe, date: "1941-12-05", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "11.22~12.11" }
+- { name: "미하일로프", at: [39.03, 54.23], war: world-war-2, theater: europe, date: "1941-12-05", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "11.24~12.8" }
+- { name: "랴잔", at: [39.74, 54.63], war: world-war-2, theater: europe, date: "1941-12-05", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "예프레모프", at: [38.12, 53.15], war: world-war-2, theater: europe, date: "1941-12-05", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "11.22~12.13" }
+- { name: "리브니", at: [37.6, 52.42], war: world-war-2, theater: europe, date: "1941-12-05", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "11월~12월 (확인 필요)" }
+- { name: "쿠르스크", at: [36.19, 51.73], war: world-war-2, theater: europe, date: "1941-12-05", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "11.2" }
+- { name: "팀", at: [37.11, 51.62], war: world-war-2, theater: europe, date: "1941-12-05", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "벨고로드", at: [36.59, 50.6], war: world-war-2, theater: europe, date: "1941-12-05", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "10.24" }
+- { name: "하르키우", at: [36.23, 49.99], war: world-war-2, theater: europe, date: "1941-12-05", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "10.24" }
+- { name: "이지움", at: [37.26, 49.21], war: world-war-2, theater: europe, date: "1941-12-05", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "아르템우스크(바흐무트)", at: [38, 48.6], war: world-war-2, theater: europe, date: "1941-12-05", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "10.31 점령 (확인 필요)" }
+- { name: "크라마토르스크", at: [37.56, 48.72], war: world-war-2, theater: europe, date: "1941-12-05", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "10.27" }
+- { name: "보로실로프그라드(루한스크)", at: [39.31, 48.57], war: world-war-2, theater: europe, date: "1941-12-05", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "로스토프", at: [39.72, 47.23], war: world-war-2, theater: europe, date: "1941-12-05", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "11.29 탈환" }
+- { name: "타간로크", at: [38.9, 47.21], war: world-war-2, theater: europe, date: "1941-12-05", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "티흐빈", at: [33.6, 59.64], war: world-war-2, theater: europe, date: "1941-12-05", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "11.8~12.9" }
+- { name: "볼호프", at: [32.33, 59.92], war: world-war-2, theater: europe, date: "1941-12-05", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "므가", at: [31.06, 59.75], war: world-war-2, theater: europe, date: "1941-12-05", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "슐리셀부르크", at: [31.04, 59.95], war: world-war-2, theater: europe, date: "1941-12-05", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "콜피노", at: [30.6, 59.75], war: world-war-2, theater: europe, date: "1941-12-05", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "푸시킨", at: [30.4, 59.72], war: world-war-2, theater: europe, date: "1941-12-05", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "페테르고프", at: [29.9, 59.88], war: world-war-2, theater: europe, date: "1941-12-05", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "오라니엔바움", at: [29.77, 59.92], war: world-war-2, theater: europe, date: "1941-12-05", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "말라야비셰라", at: [32.24, 58.85], war: world-war-2, theater: europe, date: "1941-12-05", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "11.23 탈환? (확인)" }
+- { name: "오스타시코프", at: [33.1, 57.15], war: world-war-2, theater: europe, date: "1941-12-05", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "르제프", at: [34.33, 56.26], war: world-war-2, theater: europe, date: "1941-12-05", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "케르치", at: [36.47, 45.36], war: world-war-2, theater: europe, date: "1941-12-05", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "세바스토폴", at: [33.52, 44.6], war: world-war-2, theater: europe, date: "1941-12-05", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "페오도시야", at: [35.38, 45.03], war: world-war-2, theater: europe, date: "1941-12-05", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "오데사", at: [30.73, 46.48], war: world-war-2, theater: europe, date: "1941-12-05", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "무르만스크", at: [33.08, 68.97], war: world-war-2, theater: europe, date: "1941-12-05", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "페트로자보츠크", at: [34.35, 61.79], war: world-war-2, theater: europe, date: "1941-12-05", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "10.1 핀란드" }
+- { name: "메드베지예고르스크", at: [34.46, 62.91], war: world-war-2, theater: europe, date: "1941-12-05", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "12.5~6 핀란드 점령" }
+- { name: "칸달락샤", at: [32.41, 67.16], war: world-war-2, theater: europe, date: "1941-12-05", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "알라쿠르티", at: [30.35, 66.97], war: world-war-2, theater: europe, date: "1941-12-05", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "토브루크", at: [23.96, 32.08], war: world-war-2, theater: europe, date: "1941-12-05", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "가잘라", at: [23.29, 32.13], war: world-war-2, theater: europe, date: "1941-12-05", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "시디레제그", at: [23.83, 31.73], war: world-war-2, theater: europe, date: "1941-12-05", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "?" }
+- { name: "테헤란", at: [51.39, 35.69], war: world-war-2, theater: europe, date: "1941-12-05", expect: none, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "아바즈", at: [48.67, 31.32], war: world-war-2, theater: europe, date: "1941-12-05", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "타브리즈", at: [46.29, 38.08], war: world-war-2, theater: europe, date: "1941-12-05", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "바게로보", at: [36.25, 45.4], war: world-war-2, theater: europe, date: "1941-12-05", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "레니네", at: [35.78, 45.3], war: world-war-2, theater: europe, date: "1941-12-05", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "타만", at: [36.72, 45.21], war: world-war-2, theater: europe, date: "1941-12-05", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "코스아야고라", at: [37.53, 54.11], war: world-war-2, theater: europe, date: "1941-12-05", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "툴라 남쪽" }
+- { name: "데딜로보", at: [37.88, 53.98], war: world-war-2, theater: europe, date: "1941-12-05", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "야스노고르스크(라프테보)", at: [37.69, 54.48], war: world-war-2, theater: europe, date: "1941-12-05", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "툴라 북쪽 회랑" }
+- { name: "툴라 북 20km", at: [37.6, 54.37], war: world-war-2, theater: europe, date: "1941-12-05", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "툴라 서 20km", at: [37.3, 54.2], war: world-war-2, theater: europe, date: "1941-12-05", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+
+# 1942-11-19
+- { name: "보로네시 도심(우안)", at: [39.2, 51.67], war: world-war-2, theater: europe, date: "1942-11-19", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "도심 독일, 좌안 소련" }
+- { name: "보로네시 좌안", at: [39.27, 51.66], war: world-war-2, theater: europe, date: "1942-11-19", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "클레츠카야", at: [43.06, 49.31], war: world-war-2, theater: europe, date: "1942-11-19", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "소련 교두보" }
+- { name: "칼라치나도누", at: [43.53, 48.69], war: world-war-2, theater: europe, date: "1942-11-19", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "베케톱카", at: [44.47, 48.6], war: world-war-2, theater: europe, date: "1942-11-19", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "크라스노아르메이스크(스탈린그라드 남부)", at: [44.55, 48.52], war: world-war-2, theater: europe, date: "1942-11-19", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "스탈린그라드 마마이 언덕", at: [44.53, 48.74], war: world-war-2, theater: europe, date: "1942-11-19", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "정상 다툼" }
+- { name: "엘리스타", at: [44.27, 46.31], war: world-war-2, theater: europe, date: "1942-11-19", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "8.12~12.31" }
+- { name: "모즈도크", at: [44.65, 43.73], war: world-war-2, theater: europe, date: "1942-11-19", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "8.25" }
+- { name: "날치크", at: [43.62, 43.49], war: world-war-2, theater: europe, date: "1942-11-19", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "10.28" }
+- { name: "오르조니키제(블라디캅카스)", at: [44.68, 43.02], war: world-war-2, theater: europe, date: "1942-11-19", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "알라기르", at: [44.21, 43.04], war: world-war-2, theater: europe, date: "1942-11-19", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "11.1" }
+- { name: "그로즈니", at: [45.69, 43.32], war: world-war-2, theater: europe, date: "1942-11-19", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "마이코프", at: [40.1, 44.61], war: world-war-2, theater: europe, date: "1942-11-19", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "8.9" }
+- { name: "투압세", at: [39.07, 44.1], war: world-war-2, theater: europe, date: "1942-11-19", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "크라스노다르", at: [38.98, 45.04], war: world-war-2, theater: europe, date: "1942-11-19", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "노보로시스크 도심", at: [37.77, 44.72], war: world-war-2, theater: europe, date: "1942-11-19", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "르제프", at: [34.33, 56.26], war: world-war-2, theater: europe, date: "1942-11-19", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "벨리키예루키", at: [30.53, 56.34], war: world-war-2, theater: europe, date: "1942-11-19", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "1943.1.17 해방" }
+- { name: "데먄스크", at: [32.47, 57.64], war: world-war-2, theater: europe, date: "1942-11-19", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "토로페츠", at: [31.63, 56.5], war: world-war-2, theater: europe, date: "1942-11-19", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "벨리", at: [32.85, 55.83], war: world-war-2, theater: europe, date: "1942-11-19", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "뱌지마", at: [34.3, 55.21], war: world-war-2, theater: europe, date: "1942-11-19", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "키로프(칼루가주)", at: [34.31, 54.08], war: world-war-2, theater: europe, date: "1942-11-19", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "수히니치", at: [35.34, 54.1], war: world-war-2, theater: europe, date: "1942-11-19", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "오룔", at: [36.07, 52.97], war: world-war-2, theater: europe, date: "1942-11-19", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "므첸스크", at: [36.55, 53.28], war: world-war-2, theater: europe, date: "1942-11-19", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "리브니", at: [37.6, 52.42], war: world-war-2, theater: europe, date: "1942-11-19", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "카스토르노예", at: [38.13, 51.82], war: world-war-2, theater: europe, date: "1942-11-19", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "7월 점령" }
+- { name: "로소시", at: [39.58, 50.2], war: world-war-2, theater: europe, date: "1942-11-19", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "카라치", at: [43.5, 48.69], war: world-war-2, theater: europe, date: "1942-11-19", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "노브고로드", at: [31.27, 58.52], war: world-war-2, theater: europe, date: "1942-11-19", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "스타라야루사", at: [31.36, 57.99], war: world-war-2, theater: europe, date: "1942-11-19", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "키리시", at: [32.02, 59.45], war: world-war-2, theater: europe, date: "1942-11-19", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "독일 교두보" }
+- { name: "므가", at: [31.06, 59.75], war: world-war-2, theater: europe, date: "1942-11-19", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "레닌그라드", at: [30.32, 59.94], war: world-war-2, theater: europe, date: "1942-11-19", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "스몰렌스크", at: [32.04, 54.78], war: world-war-2, theater: europe, date: "1942-11-19", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "쿠르스크", at: [36.19, 51.73], war: world-war-2, theater: europe, date: "1942-11-19", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "하르키우", at: [36.23, 49.99], war: world-war-2, theater: europe, date: "1942-11-19", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "로스토프", at: [39.72, 47.23], war: world-war-2, theater: europe, date: "1942-11-19", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "케르치", at: [36.47, 45.36], war: world-war-2, theater: europe, date: "1942-11-19", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "세바스토폴", at: [33.52, 44.6], war: world-war-2, theater: europe, date: "1942-11-19", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "아스트라한", at: [48.03, 46.35], war: world-war-2, theater: europe, date: "1942-11-19", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "부됸놉스크", at: [44.78, 44.78], war: world-war-2, theater: europe, date: "1942-11-19", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "체르케스크", at: [42.06, 44.22], war: world-war-2, theater: europe, date: "1942-11-19", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "수후미", at: [41.02, 43], war: world-war-2, theater: europe, date: "1942-11-19", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "몰타", at: [14.45, 35.9], war: world-war-2, theater: europe, date: "1942-11-19", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "키프로스", at: [33.4, 35.1], war: world-war-2, theater: europe, date: "1942-11-19", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "토브루크", at: [23.96, 32.08], war: world-war-2, theater: europe, date: "1942-11-19", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "11.13" }
+- { name: "데르나", at: [22.64, 32.76], war: world-war-2, theater: europe, date: "1942-11-19", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "11.15" }
+- { name: "벵가지", at: [20.07, 32.12], war: world-war-2, theater: europe, date: "1942-11-19", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "11.20" }
+- { name: "아제다비아", at: [20.22, 30.76], war: world-war-2, theater: europe, date: "1942-11-19", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "11.23" }
+- { name: "튀니스", at: [10.18, 36.8], war: world-war-2, theater: europe, date: "1942-11-19", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "메제즈엘바브", at: [9.61, 36.65], war: world-war-2, theater: europe, date: "1942-11-19", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "?" }
+- { name: "베자", at: [9.18, 36.73], war: world-war-2, theater: europe, date: "1942-11-19", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "수스", at: [10.64, 35.83], war: world-war-2, theater: europe, date: "1942-11-19", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "11월 중순 추축 점령 (확인)" }
+- { name: "가베스", at: [10.1, 33.88], war: world-war-2, theater: europe, date: "1942-11-19", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "(확인)" }
+- { name: "가프사", at: [8.78, 34.42], war: world-war-2, theater: europe, date: "1942-11-19", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "?" }
+- { name: "알제", at: [3.06, 36.75], war: world-war-2, theater: europe, date: "1942-11-19", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "카사블랑카", at: [-7.59, 33.57], war: world-war-2, theater: europe, date: "1942-11-19", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "트리폴리", at: [13.19, 32.89], war: world-war-2, theater: europe, date: "1942-11-19", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+
+# 1943-07-12
+- { name: "쿠르스크", at: [36.19, 51.73], war: world-war-2, theater: europe, date: "1943-07-12", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "벨고로드", at: [36.59, 50.6], war: world-war-2, theater: europe, date: "1943-07-12", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "오룔", at: [36.07, 52.97], war: world-war-2, theater: europe, date: "1943-07-12", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "프로호로프카", at: [36.73, 51.04], war: world-war-2, theater: europe, date: "1943-07-12", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "포니리", at: [36.29, 52.31], war: world-war-2, theater: europe, date: "1943-07-12", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "볼호프", at: [36, 53.45], war: world-war-2, theater: europe, date: "1943-07-12", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "브랸스크", at: [34.37, 53.25], war: world-war-2, theater: europe, date: "1943-07-12", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "스몰렌스크", at: [32.04, 54.78], war: world-war-2, theater: europe, date: "1943-07-12", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "르제프", at: [34.33, 56.26], war: world-war-2, theater: europe, date: "1943-07-12", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "3.3" }
+- { name: "뱌지마", at: [34.3, 55.21], war: world-war-2, theater: europe, date: "1943-07-12", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "3.12" }
+- { name: "벨리키예루키", at: [30.53, 56.34], war: world-war-2, theater: europe, date: "1943-07-12", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "네벨", at: [29.93, 56.02], war: world-war-2, theater: europe, date: "1943-07-12", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "10.6" }
+- { name: "벨리시", at: [31.19, 55.6], war: world-war-2, theater: europe, date: "1943-07-12", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "9.20" }
+- { name: "데먄스크", at: [32.47, 57.64], war: world-war-2, theater: europe, date: "1943-07-12", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "3월 철수" }
+- { name: "스타라야루사", at: [31.36, 57.99], war: world-war-2, theater: europe, date: "1943-07-12", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "노브고로드", at: [31.27, 58.52], war: world-war-2, theater: europe, date: "1943-07-12", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "슐리셀부르크", at: [31.04, 59.95], war: world-war-2, theater: europe, date: "1943-07-12", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "1.18" }
+- { name: "므가", at: [31.06, 59.75], war: world-war-2, theater: europe, date: "1943-07-12", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "하르키우", at: [36.23, 49.99], war: world-war-2, theater: europe, date: "1943-07-12", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "이지움", at: [37.26, 49.21], war: world-war-2, theater: europe, date: "1943-07-12", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "타간로크", at: [38.9, 47.21], war: world-war-2, theater: europe, date: "1943-07-12", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "로스토프", at: [39.72, 47.23], war: world-war-2, theater: europe, date: "1943-07-12", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "노보로시스크", at: [37.77, 44.72], war: world-war-2, theater: europe, date: "1943-07-12", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "케르치", at: [36.47, 45.36], war: world-war-2, theater: europe, date: "1943-07-12", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "보로실로프그라드", at: [39.31, 48.57], war: world-war-2, theater: europe, date: "1943-07-12", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "스탈리노", at: [37.8, 48], war: world-war-2, theater: europe, date: "1943-07-12", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "옐냐", at: [33.17, 54.57], war: world-war-2, theater: europe, date: "1943-07-12", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "키로프", at: [34.31, 54.08], war: world-war-2, theater: europe, date: "1943-07-12", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "지즈드라", at: [34.24, 53.75], war: world-war-2, theater: europe, date: "1943-07-12", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "수미", at: [34.8, 50.91], war: world-war-2, theater: europe, date: "1943-07-12", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "리시찬스크", at: [38.43, 48.92], war: world-war-2, theater: europe, date: "1943-07-12", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "판텔레리아", at: [11.95, 36.82], war: world-war-2, theater: europe, date: "1943-07-12", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "6.11" }
+- { name: "튀니스", at: [10.18, 36.8], war: world-war-2, theater: europe, date: "1943-07-12", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "시라쿠사", at: [15.29, 37.07], war: world-war-2, theater: europe, date: "1943-07-12", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "젤라", at: [14.25, 37.07], war: world-war-2, theater: europe, date: "1943-07-12", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "라구사", at: [14.73, 36.93], war: world-war-2, theater: europe, date: "1943-07-12", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "7.11" }
+- { name: "카타니아", at: [15.09, 37.5], war: world-war-2, theater: europe, date: "1943-07-12", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "비토리아", at: [14.53, 36.95], war: world-war-2, theater: europe, date: "1943-07-12", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "코미소", at: [14.6, 36.95], war: world-war-2, theater: europe, date: "1943-07-12", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "팔라촐로아크레이데", at: [14.9, 37.06], war: world-war-2, theater: europe, date: "1943-07-12", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "7.11" }
+- { name: "판텔레리아", at: [11.95, 36.79], war: world-war-2, theater: europe, date: "1943-07-12", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "6.11" }
+
+# 1943-09-08
+- { name: "스몰렌스크", at: [32.04, 54.78], war: world-war-2, theater: europe, date: "1943-09-08", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "브랸스크", at: [34.37, 53.25], war: world-war-2, theater: europe, date: "1943-09-08", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "옐냐", at: [33.17, 54.57], war: world-war-2, theater: europe, date: "1943-09-08", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "8.30" }
+- { name: "도로고부시", at: [33.29, 54.91], war: world-war-2, theater: europe, date: "1943-09-08", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "9.1" }
+- { name: "야르체보", at: [32.69, 55.07], war: world-war-2, theater: europe, date: "1943-09-08", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "9.16" }
+- { name: "두홉시나", at: [32.42, 55.2], war: world-war-2, theater: europe, date: "1943-09-08", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "9.19" }
+- { name: "세프스크", at: [34.48, 52.15], war: world-war-2, theater: europe, date: "1943-09-08", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "8.27" }
+- { name: "글루호우", at: [33.92, 51.68], war: world-war-2, theater: europe, date: "1943-09-08", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "8.30" }
+- { name: "코노토프", at: [33.2, 51.24], war: world-war-2, theater: europe, date: "1943-09-08", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "9.6" }
+- { name: "바흐마치", at: [32.83, 51.18], war: world-war-2, theater: europe, date: "1943-09-08", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "9.9" }
+- { name: "니진", at: [31.88, 51.05], war: world-war-2, theater: europe, date: "1943-09-08", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "9.15" }
+- { name: "롬니", at: [33.49, 50.75], war: world-war-2, theater: europe, date: "1943-09-08", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "9.16" }
+- { name: "하디아치", at: [34, 50.37], war: world-war-2, theater: europe, date: "1943-09-08", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "9.18" }
+- { name: "레베딘", at: [34.48, 50.59], war: world-war-2, theater: europe, date: "1943-09-08", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "8.19" }
+- { name: "수미", at: [34.8, 50.91], war: world-war-2, theater: europe, date: "1943-09-08", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "9.2" }
+- { name: "오흐티르카", at: [34.9, 50.31], war: world-war-2, theater: europe, date: "1943-09-08", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "8.25" }
+- { name: "폴타바", at: [34.55, 49.59], war: world-war-2, theater: europe, date: "1943-09-08", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "9.23" }
+- { name: "하르키우", at: [36.23, 49.99], war: world-war-2, theater: europe, date: "1943-09-08", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "8.23" }
+- { name: "메레파", at: [36.05, 49.82], war: world-war-2, theater: europe, date: "1943-09-08", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "9.6?" }
+- { name: "로조바", at: [36.32, 48.89], war: world-war-2, theater: europe, date: "1943-09-08", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "9.16" }
+- { name: "크라마토르스크", at: [37.56, 48.72], war: world-war-2, theater: europe, date: "1943-09-08", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "9.6" }
+- { name: "스탈리노", at: [37.8, 48], war: world-war-2, theater: europe, date: "1943-09-08", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "9.8" }
+- { name: "볼노바하", at: [37.5, 47.6], war: world-war-2, theater: europe, date: "1943-09-08", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "9.10" }
+- { name: "마리우폴", at: [37.55, 47.1], war: world-war-2, theater: europe, date: "1943-09-08", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "9.10" }
+- { name: "타간로크", at: [38.9, 47.21], war: world-war-2, theater: europe, date: "1943-09-08", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "8.30" }
+- { name: "노보로시스크", at: [37.77, 44.72], war: world-war-2, theater: europe, date: "1943-09-08", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "9.16" }
+- { name: "트루브첸스크", at: [33.06, 52.58], war: world-war-2, theater: europe, date: "1943-09-08", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "9.16" }
+- { name: "카라체프", at: [35.13, 53.12], war: world-war-2, theater: europe, date: "1943-09-08", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "8.15" }
+- { name: "드미트로우스크", at: [35.14, 52.51], war: world-war-2, theater: europe, date: "1943-09-08", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "8.12" }
+- { name: "파블로흐라드", at: [35.87, 48.53], war: world-war-2, theater: europe, date: "1943-09-08", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "9.18" }
+- { name: "코르시카", at: [9, 42], war: world-war-2, theater: europe, date: "1943-09-08", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "레조칼라브리아", at: [15.65, 38.11], war: world-war-2, theater: europe, date: "1943-09-08", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "카탄차로", at: [16.6, 38.91], war: world-war-2, theater: europe, date: "1943-09-08", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "9.10?" }
+- { name: "살레르노", at: [14.77, 40.68], war: world-war-2, theater: europe, date: "1943-09-08", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "팔레르모", at: [13.36, 38.12], war: world-war-2, theater: europe, date: "1943-09-08", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "칼리아리", at: [9.11, 39.22], war: world-war-2, theater: europe, date: "1943-09-08", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+
+# 1944-06-06
+- { name: "나르바", at: [28.19, 59.38], war: world-war-2, theater: europe, date: "1944-06-06", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "프스코프", at: [28.33, 57.82], war: world-war-2, theater: europe, date: "1944-06-06", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "7.23" }
+- { name: "오스트로프", at: [28.36, 57.34], war: world-war-2, theater: europe, date: "1944-06-06", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "폴로츠크", at: [28.8, 55.49], war: world-war-2, theater: europe, date: "1944-06-06", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "7.4" }
+- { name: "비텝스크", at: [30.2, 55.19], war: world-war-2, theater: europe, date: "1944-06-06", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "6.26" }
+- { name: "오르샤", at: [30.4, 54.51], war: world-war-2, theater: europe, date: "1944-06-06", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "6.27" }
+- { name: "모길료프", at: [30.33, 53.9], war: world-war-2, theater: europe, date: "1944-06-06", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "6.28" }
+- { name: "로가초프", at: [30.05, 53.09], war: world-war-2, theater: europe, date: "1944-06-06", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "2.24" }
+- { name: "즐로빈", at: [30.03, 52.89], war: world-war-2, theater: europe, date: "1944-06-06", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "6.26" }
+- { name: "보브루이스크", at: [29.22, 53.14], war: world-war-2, theater: europe, date: "1944-06-06", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "6.29" }
+- { name: "모지르", at: [29.25, 52.05], war: world-war-2, theater: europe, date: "1944-06-06", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "1.14" }
+- { name: "핀스크", at: [26.1, 52.12], war: world-war-2, theater: europe, date: "1944-06-06", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "7.14" }
+- { name: "코벨", at: [24.71, 51.21], war: world-war-2, theater: europe, date: "1944-06-06", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "7.6" }
+- { name: "루츠크", at: [25.32, 50.75], war: world-war-2, theater: europe, date: "1944-06-06", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "2.2" }
+- { name: "브로디", at: [25.15, 50.08], war: world-war-2, theater: europe, date: "1944-06-06", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "7.22" }
+- { name: "테르노필", at: [25.6, 49.55], war: world-war-2, theater: europe, date: "1944-06-06", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "4.15" }
+- { name: "스타니슬라프", at: [24.71, 48.92], war: world-war-2, theater: europe, date: "1944-06-06", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "7.27" }
+- { name: "콜로미야", at: [25.04, 48.53], war: world-war-2, theater: europe, date: "1944-06-06", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "3.28" }
+- { name: "체르니우치", at: [25.94, 48.29], war: world-war-2, theater: europe, date: "1944-06-06", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "3.29" }
+- { name: "보토샤니", at: [26.67, 47.75], war: world-war-2, theater: europe, date: "1944-06-06", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "4.7" }
+- { name: "야시", at: [27.59, 47.16], war: world-war-2, theater: europe, date: "1944-06-06", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "키시너우", at: [28.86, 47], war: world-war-2, theater: europe, date: "1944-06-06", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "8.24" }
+- { name: "벤데르", at: [29.48, 46.83], war: world-war-2, theater: europe, date: "1944-06-06", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "8.23" }
+- { name: "오데사", at: [30.73, 46.48], war: world-war-2, theater: europe, date: "1944-06-06", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "4.10" }
+- { name: "세바스토폴", at: [33.52, 44.6], war: world-war-2, theater: europe, date: "1944-06-06", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "5.9" }
+- { name: "르비우", at: [24.03, 49.84], war: world-war-2, theater: europe, date: "1944-06-06", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "파슈카니", at: [26.72, 47.25], war: world-war-2, theater: europe, date: "1944-06-06", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "트르구프루모스", at: [27.01, 47.21], war: world-war-2, theater: europe, date: "1944-06-06", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "비보르크", at: [28.75, 60.71], war: world-war-2, theater: europe, date: "1944-06-06", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "6.20" }
+- { name: "페트로자보츠크", at: [34.35, 61.79], war: world-war-2, theater: europe, date: "1944-06-06", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "6.28" }
+- { name: "코르시카", at: [9, 42], war: world-war-2, theater: europe, date: "1944-06-06", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "엘바", at: [10.3, 42.77], war: world-war-2, theater: europe, date: "1944-06-06", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "6.17" }
+- { name: "생트메르에글리즈", at: [-1.32, 49.41], war: world-war-2, theater: europe, date: "1944-06-06", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "카랑탕", at: [-1.25, 49.3], war: world-war-2, theater: europe, date: "1944-06-06", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "6.12" }
+- { name: "바이외", at: [-0.7, 49.28], war: world-war-2, theater: europe, date: "1944-06-06", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "6.7" }
+- { name: "캉", at: [-0.37, 49.18], war: world-war-2, theater: europe, date: "1944-06-06", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "7월" }
+- { name: "우이스트레암", at: [-0.26, 49.28], war: world-war-2, theater: europe, date: "1944-06-06", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "크뢸리", at: [-0.54, 49.28], war: world-war-2, theater: europe, date: "1944-06-06", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "캐나다군 6일 저녁 도달? (확인)" }
+- { name: "로마", at: [12.5, 41.9], war: world-war-2, theater: europe, date: "1944-06-06", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "치비타베키아", at: [11.8, 42.09], war: world-war-2, theater: europe, date: "1944-06-06", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "6.7" }
+- { name: "페스카라", at: [14.21, 42.46], war: world-war-2, theater: europe, date: "1944-06-06", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "6.10" }
+
+# 1944-08-25
+- { name: "리가", at: [24.1, 56.95], war: world-war-2, theater: europe, date: "1944-08-25", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "타르투", at: [26.72, 58.38], war: world-war-2, theater: europe, date: "1944-08-25", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "8.25 당일" }
+- { name: "탈린", at: [24.75, 59.44], war: world-war-2, theater: europe, date: "1944-08-25", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "옐가바", at: [23.72, 56.65], war: world-war-2, theater: europe, date: "1944-08-25", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "투쿰스", at: [23.15, 56.97], war: world-war-2, theater: europe, date: "1944-08-25", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "8.20 독 탈환" }
+- { name: "샤울랴이", at: [23.32, 55.93], war: world-war-2, theater: europe, date: "1944-08-25", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "카우나스", at: [23.9, 54.9], war: world-war-2, theater: europe, date: "1944-08-25", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "빌카비슈키스", at: [23.03, 54.65], war: world-war-2, theater: europe, date: "1944-08-25", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "(확인)" }
+- { name: "수바우키", at: [22.93, 54.1], war: world-war-2, theater: europe, date: "1944-08-25", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "10.23" }
+- { name: "아우구스투프", at: [22.98, 53.84], war: world-war-2, theater: europe, date: "1944-08-25", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "7.29? (확인)" }
+- { name: "비아위스토크", at: [23.16, 53.13], war: world-war-2, theater: europe, date: "1944-08-25", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "워므자", at: [22.07, 53.18], war: world-war-2, theater: europe, date: "1944-08-25", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "9.13" }
+- { name: "오스트로우엥카", at: [21.57, 53.08], war: world-war-2, theater: europe, date: "1944-08-25", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "9.6" }
+- { name: "바르샤바 프라가", at: [21.05, 52.25], war: world-war-2, theater: europe, date: "1944-08-25", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "9.14" }
+- { name: "바르샤바 도심", at: [21.01, 52.23], war: world-war-2, theater: europe, date: "1944-08-25", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "라지민", at: [21.18, 52.41], war: world-war-2, theater: europe, date: "1944-08-25", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "?" }
+- { name: "시에들체", at: [22.27, 52.17], war: world-war-2, theater: europe, date: "1944-08-25", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "마그누셰프", at: [21.38, 51.78], war: world-war-2, theater: europe, date: "1944-08-25", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "교두보" }
+- { name: "라돔", at: [21.15, 51.4], war: world-war-2, theater: europe, date: "1944-08-25", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "산도미에시", at: [21.75, 50.68], war: world-war-2, theater: europe, date: "1944-08-25", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "8.18" }
+- { name: "크라쿠프", at: [19.94, 50.06], war: world-war-2, theater: europe, date: "1944-08-25", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "제슈프", at: [22, 50.04], war: world-war-2, theater: europe, date: "1944-08-25", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "8.2" }
+- { name: "데비차", at: [21.41, 50.05], war: world-war-2, theater: europe, date: "1944-08-25", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "8.23" }
+- { name: "크로스노", at: [21.77, 49.69], war: world-war-2, theater: europe, date: "1944-08-25", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "9.11 (확인)" }
+- { name: "사노크", at: [22.2, 49.56], war: world-war-2, theater: europe, date: "1944-08-25", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "8.7" }
+- { name: "무카체보", at: [22.72, 48.44], war: world-war-2, theater: europe, date: "1944-08-25", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "부쿠레슈티", at: [26.1, 44.43], war: world-war-2, theater: europe, date: "1944-08-25", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "클루지", at: [23.6, 46.77], war: world-war-2, theater: europe, date: "1944-08-25", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "소피아", at: [23.32, 42.7], war: world-war-2, theater: europe, date: "1944-08-25", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "파리", at: [2.35, 48.86], war: world-war-2, theater: europe, date: "1944-08-25", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "루앙", at: [1.1, 49.44], war: world-war-2, theater: europe, date: "1944-08-25", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "8.30" }
+- { name: "트루아", at: [4.08, 48.3], war: world-war-2, theater: europe, date: "1944-08-25", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "8.25~26" }
+- { name: "랭스", at: [4.03, 49.26], war: world-war-2, theater: europe, date: "1944-08-25", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "8.30" }
+- { name: "샬롱", at: [4.36, 48.96], war: world-war-2, theater: europe, date: "1944-08-25", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "오를레앙", at: [1.91, 47.9], war: world-war-2, theater: europe, date: "1944-08-25", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "8.16" }
+- { name: "투르", at: [0.69, 47.39], war: world-war-2, theater: europe, date: "1944-08-25", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "9.1" }
+- { name: "앙제", at: [-0.55, 47.47], war: world-war-2, theater: europe, date: "1944-08-25", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "8.10" }
+- { name: "낭트", at: [-1.55, 47.22], war: world-war-2, theater: europe, date: "1944-08-25", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "8.12" }
+- { name: "로리앙", at: [-3.37, 47.75], war: world-war-2, theater: europe, date: "1944-08-25", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "브레스트", at: [-4.49, 48.39], war: world-war-2, theater: europe, date: "1944-08-25", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "렌", at: [-1.68, 48.11], war: world-war-2, theater: europe, date: "1944-08-25", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "그르노블", at: [5.72, 45.19], war: world-war-2, theater: europe, date: "1944-08-25", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "8.22" }
+- { name: "아비뇽", at: [4.81, 43.95], war: world-war-2, theater: europe, date: "1944-08-25", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "8.25" }
+- { name: "리옹", at: [4.84, 45.76], war: world-war-2, theater: europe, date: "1944-08-25", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "9.3" }
+- { name: "몽텔리마르", at: [4.75, 44.56], war: world-war-2, theater: europe, date: "1944-08-25", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "툴루즈", at: [1.44, 43.6], war: world-war-2, theater: europe, date: "1944-08-25", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "레지스탕스 8.19 해방 (정할 점)" }
+- { name: "보르도", at: [-0.58, 44.84], war: world-war-2, theater: europe, date: "1944-08-25", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "8.28" }
+- { name: "피렌체", at: [11.25, 43.77], war: world-war-2, theater: europe, date: "1944-08-25", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "피사 남부", at: [10.4, 43.71], war: world-war-2, theater: europe, date: "1944-08-25", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "리미니", at: [12.57, 44.06], war: world-war-2, theater: europe, date: "1944-08-25", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "페사로", at: [12.91, 43.91], war: world-war-2, theater: europe, date: "1944-08-25", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+
+# 1944-12-16
+- { name: "부다페스트", at: [19.04, 47.5], war: world-war-2, theater: europe, date: "1944-12-16", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "미슈콜츠", at: [20.78, 48.1], war: world-war-2, theater: europe, date: "1944-12-16", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "에스테르곰", at: [18.74, 47.79], war: world-war-2, theater: europe, date: "1944-12-16", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "세케슈페헤르바르", at: [18.41, 47.19], war: world-war-2, theater: europe, date: "1944-12-16", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "카포슈바르", at: [17.79, 46.36], war: world-war-2, theater: europe, date: "1944-12-16", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "너지커니저", at: [16.99, 46.45], war: world-war-2, theater: europe, date: "1944-12-16", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "부코바르", at: [19, 45.35], war: world-war-2, theater: europe, date: "1944-12-16", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "베오그라드", at: [20.46, 44.82], war: world-war-2, theater: europe, date: "1944-12-16", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "사라예보", at: [18.41, 43.86], war: world-war-2, theater: europe, date: "1944-12-16", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "모스타르", at: [17.81, 43.34], war: world-war-2, theater: europe, date: "1944-12-16", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "자그레브", at: [15.98, 45.81], war: world-war-2, theater: europe, date: "1944-12-16", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "코시체", at: [21.26, 48.72], war: world-war-2, theater: europe, date: "1944-12-16", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "1.19" }
+- { name: "리가", at: [24.1, 56.95], war: world-war-2, theater: europe, date: "1944-12-16", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "투쿰스", at: [23.15, 56.97], war: world-war-2, theater: europe, date: "1944-12-16", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "메멜", at: [21.13, 55.71], war: world-war-2, theater: europe, date: "1944-12-16", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "굼비넨", at: [22.19, 54.57], war: world-war-2, theater: europe, date: "1944-12-16", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "골다프", at: [22.3, 54.31], war: world-war-2, theater: europe, date: "1944-12-16", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "바르샤바", at: [21.01, 52.23], war: world-war-2, theater: europe, date: "1944-12-16", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "프라가", at: [21.05, 52.25], war: world-war-2, theater: europe, date: "1944-12-16", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "크라쿠프", at: [19.94, 50.06], war: world-war-2, theater: europe, date: "1944-12-16", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "야스워", at: [21.47, 49.75], war: world-war-2, theater: europe, date: "1944-12-16", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "두클라", at: [21.68, 49.56], war: world-war-2, theater: europe, date: "1944-12-16", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "10.6?" }
+- { name: "우쥬호로드", at: [22.29, 48.62], war: world-war-2, theater: europe, date: "1944-12-16", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "10.27" }
+- { name: "하트반", at: [19.67, 47.67], war: world-war-2, theater: europe, date: "1944-12-16", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "샤히", at: [18.95, 48.07], war: world-war-2, theater: europe, date: "1944-12-16", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "로도스", at: [28.22, 36.43], war: world-war-2, theater: europe, date: "1944-12-16", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "하니아", at: [24.02, 35.51], war: world-war-2, theater: europe, date: "1944-12-16", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "이라클리온", at: [25.13, 35.34], war: world-war-2, theater: europe, date: "1944-12-16", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "로바니에미", at: [25.73, 66.5], war: world-war-2, theater: europe, date: "1944-12-16", expect: none, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "아헨", at: [6.08, 50.78], war: world-war-2, theater: europe, date: "1944-12-16", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "뒤렌", at: [6.48, 50.8], war: world-war-2, theater: europe, date: "1944-12-16", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "율리히", at: [6.36, 50.92], war: world-war-2, theater: europe, date: "1944-12-16", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "장크트비트", at: [6.13, 50.28], war: world-war-2, theater: europe, date: "1944-12-16", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "바스토뉴", at: [5.72, 50], war: world-war-2, theater: europe, date: "1944-12-16", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "트리어", at: [6.64, 49.75], war: world-war-2, theater: europe, date: "1944-12-16", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "메스", at: [6.18, 49.12], war: world-war-2, theater: europe, date: "1944-12-16", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "자르브뤼켄", at: [6.99, 49.23], war: world-war-2, theater: europe, date: "1944-12-16", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "스트라스부르", at: [7.75, 48.58], war: world-war-2, theater: europe, date: "1944-12-16", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "콜마르", at: [7.36, 48.08], war: world-war-2, theater: europe, date: "1944-12-16", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "뮐루즈", at: [7.34, 47.75], war: world-war-2, theater: europe, date: "1944-12-16", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "비상부르", at: [7.94, 49.04], war: world-war-2, theater: europe, date: "1944-12-16", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "12.16" }
+- { name: "하게나우", at: [7.79, 48.82], war: world-war-2, theater: europe, date: "1944-12-16", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "네이메헌", at: [5.85, 51.84], war: world-war-2, theater: europe, date: "1944-12-16", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "아른험", at: [5.9, 51.98], war: world-war-2, theater: europe, date: "1944-12-16", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "벤로", at: [6.17, 51.37], war: world-war-2, theater: europe, date: "1944-12-16", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "루르몬트", at: [5.99, 51.19], war: world-war-2, theater: europe, date: "1944-12-16", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "하인스베르크", at: [6.1, 51.06], war: world-war-2, theater: europe, date: "1944-12-16", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "도르드레흐트", at: [4.67, 51.81], war: world-war-2, theater: europe, date: "1944-12-16", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "브레다", at: [4.78, 51.59], war: world-war-2, theater: europe, date: "1944-12-16", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "됭케르크", at: [2.38, 51.03], war: world-war-2, theater: europe, date: "1944-12-16", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "라벤나", at: [12.2, 44.42], war: world-war-2, theater: europe, date: "1944-12-16", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "12.4" }
+- { name: "볼로냐", at: [11.34, 44.49], war: world-war-2, theater: europe, date: "1944-12-16", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "포를리", at: [12.04, 44.22], war: world-war-2, theater: europe, date: "1944-12-16", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "마사", at: [10.14, 44.04], war: world-war-2, theater: europe, date: "1944-12-16", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+
+# 1945-02-04
+- { name: "포즈난 도심", at: [16.93, 52.41], war: world-war-2, theater: europe, date: "1945-02-04", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "포위 2.23까지" }
+- { name: "슈나이데뮐", at: [16.74, 53.15], war: world-war-2, theater: europe, date: "1945-02-04", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "포위 2.14까지" }
+- { name: "퀴스트린", at: [14.65, 52.58], war: world-war-2, theater: europe, date: "1945-02-04", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "프랑크푸르트(오데르)", at: [14.55, 52.35], war: world-war-2, theater: europe, date: "1945-02-04", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "엘빙", at: [19.4, 54.16], war: world-war-2, theater: europe, date: "1945-02-04", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "2.10" }
+- { name: "그라우덴츠", at: [18.75, 53.48], war: world-war-2, theater: europe, date: "1945-02-04", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "3.6" }
+- { name: "토룬", at: [18.6, 53.01], war: world-war-2, theater: europe, date: "1945-02-04", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "글로가우", at: [16.08, 51.66], war: world-war-2, theater: europe, date: "1945-02-04", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "브레슬라우", at: [17.03, 51.11], war: world-war-2, theater: europe, date: "1945-02-04", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "오펠른", at: [17.93, 50.67], war: world-war-2, theater: europe, date: "1945-02-04", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "(우안)" }
+- { name: "라티보르", at: [18.22, 50.09], war: world-war-2, theater: europe, date: "1945-02-04", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "카토비체", at: [19.02, 50.26], war: world-war-2, theater: europe, date: "1945-02-04", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "비엘스코", at: [19.04, 49.82], war: world-war-2, theater: europe, date: "1945-02-04", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "2.12" }
+- { name: "크라쿠프", at: [19.94, 50.06], war: world-war-2, theater: europe, date: "1945-02-04", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "반스카비스트리차", at: [19.15, 48.74], war: world-war-2, theater: europe, date: "1945-02-04", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "코시체", at: [21.26, 48.72], war: world-war-2, theater: europe, date: "1945-02-04", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "페스트", at: [19.07, 47.5], war: world-war-2, theater: europe, date: "1945-02-04", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "부다", at: [19.03, 47.5], war: world-war-2, theater: europe, date: "1945-02-04", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "세케슈페헤르바르", at: [18.41, 47.19], war: world-war-2, theater: europe, date: "1945-02-04", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "1.22 독 탈환" }
+- { name: "쾨니히스베르크", at: [20.51, 54.71], war: world-war-2, theater: europe, date: "1945-02-04", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "인스터부르크", at: [21.8, 54.63], war: world-war-2, theater: europe, date: "1945-02-04", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "1.22" }
+- { name: "알렌슈타인", at: [20.48, 53.78], war: world-war-2, theater: europe, date: "1945-02-04", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "1.22" }
+- { name: "하일스베르크", at: [20.58, 54.13], war: world-war-2, theater: europe, date: "1945-02-04", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "2.?" }
+- { name: "메멜", at: [21.13, 55.71], war: world-war-2, theater: europe, date: "1945-02-04", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "1.28" }
+- { name: "단치히", at: [18.65, 54.35], war: world-war-2, theater: europe, date: "1945-02-04", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "슈테틴", at: [14.55, 53.43], war: world-war-2, theater: europe, date: "1945-02-04", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "란츠베르크", at: [15.24, 52.73], war: world-war-2, theater: europe, date: "1945-02-04", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "도이치크로네", at: [16.27, 53.27], war: world-war-2, theater: europe, date: "1945-02-04", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "2.11" }
+- { name: "콜마르", at: [7.36, 48.08], war: world-war-2, theater: europe, date: "1945-02-04", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "2.2" }
+- { name: "노이브라이자흐", at: [7.53, 48.02], war: world-war-2, theater: europe, date: "1945-02-04", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "2.6" }
+- { name: "하인스베르크", at: [6.1, 51.06], war: world-war-2, theater: europe, date: "1945-02-04", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "1.24~26 블랙콕" }
+- { name: "루르몬트", at: [5.99, 51.19], war: world-war-2, theater: europe, date: "1945-02-04", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "3.1" }
+- { name: "장크트비트", at: [6.13, 50.28], war: world-war-2, theater: europe, date: "1945-02-04", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "하게나우", at: [7.79, 48.82], war: world-war-2, theater: europe, date: "1945-02-04", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+
+# 1945-04-25
+- { name: "브레멘", at: [8.8, 53.08], war: world-war-2, theater: europe, date: "1945-04-25", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "4.26~27" }
+- { name: "함부르크", at: [9.99, 53.55], war: world-war-2, theater: europe, date: "1945-04-25", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "올덴부르크", at: [8.21, 53.14], war: world-war-2, theater: europe, date: "1945-04-25", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "흐로닝언", at: [6.57, 53.22], war: world-war-2, theater: europe, date: "1945-04-25", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "암스테르담", at: [4.9, 52.37], war: world-war-2, theater: europe, date: "1945-04-25", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "위트레흐트", at: [5.12, 52.09], war: world-war-2, theater: europe, date: "1945-04-25", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "에더", at: [5.67, 52.04], war: world-war-2, theater: europe, date: "1945-04-25", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "라이프치히", at: [12.37, 51.34], war: world-war-2, theater: europe, date: "1945-04-25", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "드레스덴", at: [13.74, 51.05], war: world-war-2, theater: europe, date: "1945-04-25", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "켐니츠", at: [12.92, 50.83], war: world-war-2, theater: europe, date: "1945-04-25", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "플라우엔", at: [12.12, 50.5], war: world-war-2, theater: europe, date: "1945-04-25", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "레겐스부르크", at: [12.1, 49.02], war: world-war-2, theater: europe, date: "1945-04-25", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "4.27" }
+- { name: "잉골슈타트", at: [11.42, 48.77], war: world-war-2, theater: europe, date: "1945-04-25", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "4.26" }
+- { name: "아우크스부르크", at: [10.9, 48.37], war: world-war-2, theater: europe, date: "1945-04-25", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "4.28" }
+- { name: "울름", at: [9.99, 48.4], war: world-war-2, theater: europe, date: "1945-04-25", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "4.24" }
+- { name: "뮌헨", at: [11.58, 48.14], war: world-war-2, theater: europe, date: "1945-04-25", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "슈투트가르트", at: [9.18, 48.78], war: world-war-2, theater: europe, date: "1945-04-25", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "뉘른베르크", at: [11.08, 49.45], war: world-war-2, theater: europe, date: "1945-04-25", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "빈", at: [16.37, 48.21], war: world-war-2, theater: europe, date: "1945-04-25", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "브르노", at: [16.61, 49.2], war: world-war-2, theater: europe, date: "1945-04-25", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "4.26" }
+- { name: "브라티슬라바", at: [17.11, 48.15], war: world-war-2, theater: europe, date: "1945-04-25", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "그라츠", at: [15.44, 47.07], war: world-war-2, theater: europe, date: "1945-04-25", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "볼로냐", at: [11.34, 44.49], war: world-war-2, theater: europe, date: "1945-04-25", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "베로나", at: [10.99, 45.44], war: world-war-2, theater: europe, date: "1945-04-25", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "4.26" }
+- { name: "만토바", at: [10.79, 45.16], war: world-war-2, theater: europe, date: "1945-04-25", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "?" }
+- { name: "파르마", at: [10.33, 44.8], war: world-war-2, theater: europe, date: "1945-04-25", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "제노바", at: [8.93, 44.41], war: world-war-2, theater: europe, date: "1945-04-25", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "밀라노", at: [9.19, 45.46], war: world-war-2, theater: europe, date: "1945-04-25", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "파르티잔 봉기 4.25" }
+- { name: "토리노", at: [7.68, 45.07], war: world-war-2, theater: europe, date: "1945-04-25", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "파도바", at: [11.88, 45.41], war: world-war-2, theater: europe, date: "1945-04-25", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "트리에스테", at: [13.77, 45.65], war: world-war-2, theater: europe, date: "1945-04-25", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "포츠담", at: [13.06, 52.4], war: world-war-2, theater: europe, date: "1945-04-25", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "슈테틴", at: [14.55, 53.43], war: world-war-2, theater: europe, date: "1945-04-25", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "4.26" }
+- { name: "슈트랄준트", at: [13.09, 54.31], war: world-war-2, theater: europe, date: "1945-04-25", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+
+# 1945-05-08
+- { name: "보른홀름", at: [14.9, 55.1], war: world-war-2, theater: europe, date: "1945-05-08", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "됭케르크", at: [2.38, 51], war: world-war-2, theater: europe, date: "1945-05-08", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "채널 제도 저지", at: [-2.13, 49.21], war: world-war-2, theater: europe, date: "1945-05-08", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "프라하", at: [14.42, 50.09], war: world-war-2, theater: europe, date: "1945-05-08", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "플젠", at: [13.38, 49.75], war: world-war-2, theater: europe, date: "1945-05-08", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "드레스덴", at: [13.74, 51.05], war: world-war-2, theater: europe, date: "1945-05-08", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "린츠", at: [14.29, 48.31], war: world-war-2, theater: europe, date: "1945-05-08", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "그라츠", at: [15.44, 47.07], war: world-war-2, theater: europe, date: "1945-05-08", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "클라겐푸르트", at: [14.31, 46.62], war: world-war-2, theater: europe, date: "1945-05-08", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "비스마르", at: [11.46, 53.89], war: world-war-2, theater: europe, date: "1945-05-08", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "슈베린", at: [11.41, 53.63], war: world-war-2, theater: europe, date: "1945-05-08", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "루트비히슬루스트", at: [11.5, 53.33], war: world-war-2, theater: europe, date: "1945-05-08", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "로스토크", at: [12.13, 54.09], war: world-war-2, theater: europe, date: "1945-05-08", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "올로모우츠", at: [17.25, 49.59], war: world-war-2, theater: europe, date: "1945-05-08", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "5.8" }
+- { name: "이흘라바", at: [15.59, 49.4], war: world-war-2, theater: europe, date: "1945-05-08", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "5.9" }
+- { name: "류블랴나", at: [14.51, 46.06], war: world-war-2, theater: europe, date: "1945-05-08", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "5.9" }
+- { name: "자그레브", at: [15.98, 45.81], war: world-war-2, theater: europe, date: "1945-05-08", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "5.8" }
+- { name: "리예카", at: [14.44, 45.33], war: world-war-2, theater: europe, date: "1945-05-08", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "5.3" }
+- { name: "트리에스테", at: [13.77, 45.65], war: world-war-2, theater: europe, date: "1945-05-08", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "5.1~2" }
+- { name: "오슬로", at: [10.75, 59.91], war: world-war-2, theater: europe, date: "1945-05-08", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "됭케르크", at: [2.38, 51.03], war: world-war-2, theater: europe, date: "1945-05-08", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "5.9" }

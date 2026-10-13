@@ -1,4 +1,5 @@
 // 전쟁 (DESIGN.md §4.5): data/wars/*.yaml → 검증 → 스냅샷마다 진영별 점령 지역 계산 → wars.json
+// 장면(스냅샷) 하나의 계산은 computeScene이고, 결과는 war-cache.ts가 .cache/build-data-wars/에 둔다(바뀐 장면만 다시 계산, 2026-10-13)
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 import type { FeatureCollection, MultiPolygon, Polygon } from 'geojson';
@@ -14,6 +15,8 @@ import {
   type WarIndexEntry,
 } from '../../src/schema/index.ts';
 import { REGION_FILTER_OF, STORY_FILE_PREFIXES, regionOfWarFile } from '../../src/schema/regions.ts';
+import { keyOf } from './cache.ts';
+import { cacheKey, cached, fileHash } from './war-cache.ts';
 import {
   anchorPoint,
   bbox,
@@ -206,66 +209,126 @@ async function readAreaGeojson(file: string, errors: string[]): Promise<MultiCoo
   }
 }
 
-export async function buildWars(wars: RegionalWar[], geo: WarGeoSources, errors: string[]): Promise<WarIndexEntry[]> {
+/** 전역이 시작된 해의 replaces 나라 영토를 합친 것 */
+function regionOf(t: RegionalWar['theaters'][number], from: number, geo: WarGeoSources): MultiCoords {
+  return union(...t.replaces.map((id) => geo.territory(id, from)).filter((c): c is MultiCoords => !!c && c.length > 0));
+}
+
+/** 장면 하나의 계산 결과 (캐시에 두는 것). errors는 계산 중 알린 오류 글 — 캐시에서 읽어도 같은 순서로 다시 알린다 */
+interface SceneOut {
+  areas: FrontSnapshotOut['areas'];
+  labels: FrontSnapshotOut['labels'];
+  errors: string[];
+}
+
+/** 장면 하나의 진영별 점령 지역과 이름표. getRegion은 전역 범위(split을 쓰는 장면에서만 부름) */
+async function computeScene(w: RegionalWar, t: RegionalWar['theaters'][number], s: RegionalWar['theaters'][number]['snapshots'][number], getRegion: () => Promise<MultiCoords>, geo: WarGeoSources): Promise<SceneOut> {
+  const errors: string[] = [];
+  const year = yearOfDate(s.date);
+  // 뒤에 오는 지역이 앞의 지역을 덮는다
+  let layers: { faction: string; coords: MultiCoords }[] = [];
+  const add = (faction: string, coords: MultiCoords) => {
+    if (!coords.length) return;
+    layers = layers.map((l) => ({ ...l, coords: difference(l.coords, coords) }));
+    layers.push({ faction, coords });
+  };
+  if (s.split) {
+    const region = await getRegion();
+    const north = intersect(region, northRing(s.split.line));
+    add(s.split.north, north);
+    add(s.split.south, difference(region, north));
+  }
+  for (const a of s.areas) {
+    let coords: MultiCoords;
+    if (a.entities) {
+      coords = union(...a.entities.map((id) => geo.territory(id, year)).filter((c): c is MultiCoords => !!c && c.length > 0));
+    } else {
+      // 손으로 그린 점령 지역은 먼저 칠한 지역 안에서는 그 지역의 해안선으로 자른다. 육지 도형으로만 자르면
+      // 해안선이 영토 도형과 조금 어긋나 해안을 따라 앞 지역의 가는 띠가 남고, 그 진영을 고를 때 강조선이 그 띠를 둘렀다
+      const raw = await readAreaGeojson(path.join(geo.dir, a.geojson!), errors);
+      const under = union(...layers.map((l) => l.coords));
+      coords = under.length ? union(intersect(raw, under), difference(clipToLand(raw, geo.land), under)) : clipToLand(raw, geo.land);
+    }
+    if (!coords.length) errors.push(`전쟁 ${w.id} 전역 ${t.id} ${s.date}: 점령 지역이 비어 있음 (${a.entities?.join(', ') ?? a.geojson})`);
+    add(a.faction, coords);
+  }
+  // 진영마다 한 덩어리로 합친다
+  const byFaction = new Map<string, MultiCoords>();
+  for (const l of layers) if (l.coords.length) byFaction.set(l.faction, byFaction.has(l.faction) ? union(byFaction.get(l.faction)!, l.coords) : l.coords);
+  // 전역 범위(bounds)를 정했으면 진영 덩어리를 그 범위에 여백을 둔 상자로 자른다. 소련 영토 전체(시베리아)처럼
+  // 전역 밖의 점이 wars.json을 키우고, 이름표 자리(덩어리 안쪽)가 화면 밖으로 가던 문제 (2026-10-12)
+  if (t.bounds) {
+    const box = boundsBox(t.bounds);
+    for (const [faction, coords] of byFaction) byFaction.set(faction, intersect(coords, box));
+  }
+  const areas = [...byFaction].map(([faction, coords]) => ({
+    faction,
+    coords: rewindForD3(dropSlivers(roundCoords(coords, 3))) as [number, number][][][],
+    bbox: bbox(coords),
+  }));
+  // 영토 대신 칠하는 나라의 이름표는 그 나라 진영의 점령 지역 안쪽에 둔다
+  const labels = w.factions.flatMap((f) => {
+    const coords = byFaction.get(f.id);
+    if (!t.replaces.includes(f.entity) || !coords?.length) return [];
+    // 전역 범위를 정했으면 이름표는 여백 없는 범위 안쪽 땅에 둔다 (덩어리를 여백까지 잘라도 무게중심이 화면 밖일 수 있음)
+    const inView = t.bounds ? intersect(coords, boundsBox(t.bounds, 0)) : [];
+    return [{ entity: f.entity, anchor: anchorPoint(inView.length ? inView : coords) }];
+  });
+  return { areas, labels, errors };
+}
+
+/** 그 해 나라 영토의 내용 열쇠 (없거나 비었으면 null) */
+const territoryKey = (geo: WarGeoSources, id: string, year: number) => {
+  const c = geo.territory(id, year);
+  return c && c.length > 0 ? keyOf(c) : null;
+};
+
+/**
+ * 장면 캐시 열쇠: 계산에 들어가는 모든 것. 설명글·화살표·표시(holds)·경로는 계산에 안 쓰이므로 넣지 않는다.
+ * 전쟁·전역 id와 날짜는 오류 글에 들어가므로 넣는다
+ */
+function sceneKey(w: RegionalWar, t: RegionalWar['theaters'][number], s: RegionalWar['theaters'][number]['snapshots'][number], from: number, geo: WarGeoSources, landKey: string): string {
+  const year = yearOfDate(s.date);
+  return cacheKey('scene', {
+    war: w.id,
+    theater: t.id,
+    date: s.date,
+    split: s.split ?? null,
+    areas: s.areas,
+    replaces: t.replaces,
+    bounds: t.bounds ?? null,
+    factions: w.factions.map((f) => [f.id, f.entity]),
+    entities: s.areas.map((a) => a.entities?.map((id) => [id, territoryKey(geo, id, year)]) ?? null),
+    region: s.split ? t.replaces.map((id) => [id, territoryKey(geo, id, from)]) : null,
+    geojson: s.areas.map((a) => (a.geojson ? fileHash(path.join(geo.dir, a.geojson)) : null)),
+    land: landKey,
+  });
+}
+
+/** useCache가 false면 .cache/build-data-wars/를 쓰지 않는다 (결과는 같음). 환경 변수 HISTORY_MAP_CACHE=0도 같은 뜻 */
+export async function buildWars(wars: RegionalWar[], geo: WarGeoSources, errors: string[], useCache = true): Promise<WarIndexEntry[]> {
   const out: WarIndexEntry[] = [];
+  // 실제로 자를 때 쓰는 육지 자료의 내용 열쇠 (육지 파일·읽는 코드·축척이 바뀌면 낡은 장면을 쓰지 않도록). 빌드마다 한 번
+  const landKey = useCache ? keyOf(geo.land.map((p) => p.coords)) : '';
   for (const w of wars) {
     const theaters: TheaterOut[] = [];
     for (const t of w.theaters) {
       const from = yearOfDate(t.snapshots[0].date);
       const to = yearOfDate(t.snapshots[t.snapshots.length - 1].date);
-      // split이 나눌 범위: 전역이 시작된 해의 replaces 나라 영토를 합친 것
-      const region = union(...t.replaces.map((id) => geo.territory(id, from)).filter((c): c is MultiCoords => !!c && c.length > 0));
+      // split이 나눌 범위: 전역이 시작된 해의 replaces 나라 영토를 합친 것 (split을 쓰는 장면이 계산될 때만 만든다)
+      let region: Promise<MultiCoords> | null = null;
+      const getRegion = () =>
+        (region ??= useCache
+          ? cached('region', cacheKey('region', t.replaces.map((id) => [id, territoryKey(geo, id, from)])), () => regionOf(t, from, geo))
+          : Promise.resolve(regionOf(t, from, geo)));
       const snapshots: FrontSnapshotOut[] = [];
       for (const s of t.snapshots) {
         const year = yearOfDate(s.date);
-        // 뒤에 오는 지역이 앞의 지역을 덮는다
-        let layers: { faction: string; coords: MultiCoords }[] = [];
-        const add = (faction: string, coords: MultiCoords) => {
-          if (!coords.length) return;
-          layers = layers.map((l) => ({ ...l, coords: difference(l.coords, coords) }));
-          layers.push({ faction, coords });
-        };
-        if (s.split) {
-          const north = intersect(region, northRing(s.split.line));
-          add(s.split.north, north);
-          add(s.split.south, difference(region, north));
-        }
-        for (const a of s.areas) {
-          let coords: MultiCoords;
-          if (a.entities) {
-            coords = union(...a.entities.map((id) => geo.territory(id, year)).filter((c): c is MultiCoords => !!c && c.length > 0));
-          } else {
-            // 손으로 그린 점령 지역은 먼저 칠한 지역 안에서는 그 지역의 해안선으로 자른다. 육지 도형으로만 자르면
-            // 해안선이 영토 도형과 조금 어긋나 해안을 따라 앞 지역의 가는 띠가 남고, 그 진영을 고를 때 강조선이 그 띠를 둘렀다
-            const raw = await readAreaGeojson(path.join(geo.dir, a.geojson!), errors);
-            const under = union(...layers.map((l) => l.coords));
-            coords = under.length ? union(intersect(raw, under), difference(clipToLand(raw, geo.land), under)) : clipToLand(raw, geo.land);
-          }
-          if (!coords.length) errors.push(`전쟁 ${w.id} 전역 ${t.id} ${s.date}: 점령 지역이 비어 있음 (${a.entities?.join(', ') ?? a.geojson})`);
-          add(a.faction, coords);
-        }
-        // 진영마다 한 덩어리로 합친다
-        const byFaction = new Map<string, MultiCoords>();
-        for (const l of layers) if (l.coords.length) byFaction.set(l.faction, byFaction.has(l.faction) ? union(byFaction.get(l.faction)!, l.coords) : l.coords);
-        // 전역 범위(bounds)를 정했으면 진영 덩어리를 그 범위에 여백을 둔 상자로 자른다. 소련 영토 전체(시베리아)처럼
-        // 전역 밖의 점이 wars.json을 키우고, 이름표 자리(덩어리 안쪽)가 화면 밖으로 가던 문제 (2026-10-12)
-        if (t.bounds) {
-          const box = boundsBox(t.bounds);
-          for (const [faction, coords] of byFaction) byFaction.set(faction, intersect(coords, box));
-        }
-        const areas = [...byFaction].map(([faction, coords]) => ({
-          faction,
-          coords: rewindForD3(dropSlivers(roundCoords(coords, 3))) as [number, number][][][],
-          bbox: bbox(coords),
-        }));
-        // 영토 대신 칠하는 나라의 이름표는 그 나라 진영의 점령 지역 안쪽에 둔다
-        const labels = w.factions.flatMap((f) => {
-          const coords = byFaction.get(f.id);
-          if (!t.replaces.includes(f.entity) || !coords?.length) return [];
-          // 전역 범위를 정했으면 이름표는 여백 없는 범위 안쪽 땅에 둔다 (덩어리를 여백까지 잘라도 무게중심이 화면 밖일 수 있음)
-          const inView = t.bounds ? intersect(coords, boundsBox(t.bounds, 0)) : [];
-          return [{ entity: f.entity, anchor: anchorPoint(inView.length ? inView : coords) }];
-        });
+        const scene = useCache
+          ? await cached('scene', sceneKey(w, t, s, from, geo, landKey), () => computeScene(w, t, s, getRegion, geo))
+          : await computeScene(w, t, s, getRegion, geo);
+        errors.push(...scene.errors);
+        const { areas, labels } = scene;
         snapshots.push({
           date: s.date,
           year,

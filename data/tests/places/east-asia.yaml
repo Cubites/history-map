@@ -1,0 +1,720 @@
+# 동아시아·흑룡강·일본 국경 지점 정답표 (평소 지도)
+# 읽는 곳: scripts/test-geo (npm run test:geo -- --only places). 꼴은 docs/DATA_GUIDE.md의 정답표 절을 따른다.
+# 만든 방법: 세션 C1·I1 결과 노트의 '지점 판정' 표(흑룡강·우수리, 아마미·오키나와, 고르비차)와
+#   서울(평소 바뀌지 않아야 하는 지점)을 옮기고, data/geo 원자료로 다시 판정해 지금 지도와 같은 것만 넣었다.
+# expect: none 지점은 region(europe|east-asia)을 함께 적는다(--region 거르기에 걸리려면 필요). 새 지점은 url을 반드시 달 것. 해는 천문 연도(기원전 N년 = 1-N).
+
+- name: "하바롭스크"
+  at: [135.07, 48.48]
+  year: 1600
+  expect: jurchen
+  url: "https://en.wikipedia.org/wiki/Convention_of_Peking"
+  from: "세션 C1 결과노트"
+  note: "북경 조약(1860)"
+
+- name: "하바롭스크"
+  at: [135.07, 48.48]
+  years: [1700, 1857, 1858]
+  expect: qing
+  url: "https://en.wikipedia.org/wiki/Convention_of_Peking"
+  from: "세션 C1 결과노트"
+  note: "북경 조약(1860)"
+
+- name: "하바롭스크"
+  at: [135.07, 48.48]
+  years: [1860, 1900]
+  expect: russia
+  url: "https://en.wikipedia.org/wiki/Convention_of_Peking"
+  from: "세션 C1 결과노트"
+  note: "북경 조약(1860)"
+
+- name: "하바롭스크"
+  at: [135.07, 48.48]
+  year: 1950
+  expect: soviet-union
+  url: "https://en.wikipedia.org/wiki/Convention_of_Peking"
+  from: "세션 C1 결과노트"
+  note: "북경 조약(1860)"
+
+- name: "하바롭스크"
+  at: [135.07, 48.48]
+  years: [2007, 2008, 2024]
+  expect: russia-fed
+  url: "https://en.wikipedia.org/wiki/Convention_of_Peking"
+  from: "세션 C1 결과노트"
+  note: "북경 조약(1860)"
+
+- name: "헤이허"
+  at: [127.5, 50.25]
+  year: 1600
+  expect: none
+  region: east-asia
+  url: "https://en.wikipedia.org/wiki/Treaty_of_Aigun"
+  from: "세션 C1 결과노트"
+  note: "아이훈 조약(1858)·북경 조약(1860)"
+
+- name: "헤이허"
+  at: [127.5, 50.25]
+  years: [1700, 1857, 1858, 1860, 1900]
+  expect: qing
+  url: "https://en.wikipedia.org/wiki/Treaty_of_Aigun"
+  from: "세션 C1 결과노트"
+  note: "아이훈 조약(1858)·북경 조약(1860)"
+
+- name: "헤이허"
+  at: [127.5, 50.25]
+  years: [1950, 2007, 2008, 2024]
+  expect: prc
+  url: "https://en.wikipedia.org/wiki/Treaty_of_Aigun"
+  from: "세션 C1 결과노트"
+  note: "아이훈 조약(1858)·북경 조약(1860)"
+
+- name: "블라고베셴스크"
+  at: [127.53, 50.27]
+  year: 1600
+  expect: none
+  region: east-asia
+  url: "https://en.wikipedia.org/wiki/Treaty_of_Aigun"
+  from: "세션 C1 결과노트"
+  note: "아이훈 조약(1858)·북경 조약(1860)"
+
+- name: "블라고베셴스크"
+  at: [127.53, 50.27]
+  years: [1700, 1857]
+  expect: qing
+  url: "https://en.wikipedia.org/wiki/Treaty_of_Aigun"
+  from: "세션 C1 결과노트"
+  note: "아이훈 조약(1858)·북경 조약(1860)"
+
+- name: "블라고베셴스크"
+  at: [127.53, 50.27]
+  years: [1858, 1860, 1900]
+  expect: russia
+  url: "https://en.wikipedia.org/wiki/Treaty_of_Aigun"
+  from: "세션 C1 결과노트"
+  note: "아이훈 조약(1858)·북경 조약(1860)"
+
+- name: "블라고베셴스크"
+  at: [127.53, 50.27]
+  year: 1950
+  expect: soviet-union
+  url: "https://en.wikipedia.org/wiki/Treaty_of_Aigun"
+  from: "세션 C1 결과노트"
+  note: "아이훈 조약(1858)·북경 조약(1860)"
+
+- name: "블라고베셴스크"
+  at: [127.53, 50.27]
+  years: [2007, 2008, 2024]
+  expect: russia-fed
+  url: "https://en.wikipedia.org/wiki/Treaty_of_Aigun"
+  from: "세션 C1 결과노트"
+  note: "아이훈 조약(1858)·북경 조약(1860)"
+
+- name: "푸위안"
+  at: [134.29, 48.36]
+  year: 1600
+  expect: jurchen
+  url: "https://en.wikipedia.org/wiki/Treaty_of_Nerchinsk"
+  from: "세션 C1 결과노트"
+  note: "네르친스크 조약(1689)"
+
+- name: "푸위안"
+  at: [134.29, 48.36]
+  years: [1700, 1857, 1858, 1860, 1900]
+  expect: qing
+  url: "https://en.wikipedia.org/wiki/Treaty_of_Nerchinsk"
+  from: "세션 C1 결과노트"
+  note: "네르친스크 조약(1689)"
+
+- name: "푸위안"
+  at: [134.29, 48.36]
+  years: [1950, 2007, 2008, 2024]
+  expect: prc
+  url: "https://en.wikipedia.org/wiki/Treaty_of_Nerchinsk"
+  from: "세션 C1 결과노트"
+  note: "네르친스크 조약(1689)"
+
+- name: "모허"
+  at: [122.54, 52.97]
+  year: 1600
+  expect: none
+  region: east-asia
+  url: "https://en.wikipedia.org/wiki/Treaty_of_Nerchinsk"
+  from: "세션 C1 결과노트"
+  note: "네르친스크 조약(1689)"
+
+- name: "모허"
+  at: [122.54, 52.97]
+  years: [1700, 1857, 1858, 1860, 1900]
+  expect: qing
+  url: "https://en.wikipedia.org/wiki/Treaty_of_Nerchinsk"
+  from: "세션 C1 결과노트"
+  note: "네르친스크 조약(1689)"
+
+- name: "모허"
+  at: [122.54, 52.97]
+  years: [1950, 2007, 2008, 2024]
+  expect: prc
+  url: "https://en.wikipedia.org/wiki/Treaty_of_Nerchinsk"
+  from: "세션 C1 결과노트"
+  note: "네르친스크 조약(1689)"
+
+- name: "자바이칼스크"
+  at: [117.33, 49.65]
+  year: 1600
+  expect: none
+  region: east-asia
+  url: "https://en.wikipedia.org/wiki/Treaty_of_Nerchinsk"
+  from: "세션 C1 결과노트"
+  note: "네르친스크 조약(1689)"
+
+- name: "자바이칼스크"
+  at: [117.33, 49.65]
+  year: 1700
+  expect: russia-tsardom
+  url: "https://en.wikipedia.org/wiki/Treaty_of_Nerchinsk"
+  from: "세션 C1 결과노트"
+  note: "네르친스크 조약(1689)"
+
+- name: "자바이칼스크"
+  at: [117.33, 49.65]
+  years: [1857, 1858, 1860, 1900]
+  expect: russia
+  url: "https://en.wikipedia.org/wiki/Treaty_of_Nerchinsk"
+  from: "세션 C1 결과노트"
+  note: "네르친스크 조약(1689)"
+
+- name: "자바이칼스크"
+  at: [117.33, 49.65]
+  year: 1950
+  expect: soviet-union
+  url: "https://en.wikipedia.org/wiki/Treaty_of_Nerchinsk"
+  from: "세션 C1 결과노트"
+  note: "네르친스크 조약(1689)"
+
+- name: "자바이칼스크"
+  at: [117.33, 49.65]
+  years: [2007, 2008, 2024]
+  expect: russia-fed
+  url: "https://en.wikipedia.org/wiki/Treaty_of_Nerchinsk"
+  from: "세션 C1 결과노트"
+  note: "네르친스크 조약(1689)"
+
+- name: "만저우리"
+  at: [117.43, 49.6]
+  year: 1600
+  expect: none
+  region: east-asia
+  url: "https://en.wikipedia.org/wiki/Treaty_of_Nerchinsk"
+  from: "세션 C1 결과노트"
+  note: "네르친스크 조약(1689)"
+
+- name: "만저우리"
+  at: [117.43, 49.6]
+  years: [1700, 1857, 1858, 1860, 1900]
+  expect: qing
+  url: "https://en.wikipedia.org/wiki/Treaty_of_Nerchinsk"
+  from: "세션 C1 결과노트"
+  note: "네르친스크 조약(1689)"
+
+- name: "만저우리"
+  at: [117.43, 49.6]
+  years: [1950, 2007, 2008, 2024]
+  expect: prc
+  url: "https://en.wikipedia.org/wiki/Treaty_of_Nerchinsk"
+  from: "세션 C1 결과노트"
+  note: "네르친스크 조약(1689)"
+
+- name: "볼쇼이우수리스키섬 서부"
+  at: [134.75, 48.37]
+  year: 1600
+  expect: jurchen
+  url: "https://en.wikipedia.org/wiki/Bolshoy_Ussuriysky_Island"
+  from: "세션 C1 결과노트"
+  note: "볼쇼이우수리스키섬: 서부는 2008년부터 중국"
+
+- name: "볼쇼이우수리스키섬 서부"
+  at: [134.75, 48.37]
+  years: [1700, 1857, 1858]
+  expect: qing
+  url: "https://en.wikipedia.org/wiki/Bolshoy_Ussuriysky_Island"
+  from: "세션 C1 결과노트"
+  note: "볼쇼이우수리스키섬: 서부는 2008년부터 중국"
+
+- name: "볼쇼이우수리스키섬 서부"
+  at: [134.75, 48.37]
+  years: [1860, 1900]
+  expect: russia
+  url: "https://en.wikipedia.org/wiki/Bolshoy_Ussuriysky_Island"
+  from: "세션 C1 결과노트"
+  note: "볼쇼이우수리스키섬: 서부는 2008년부터 중국"
+
+- name: "볼쇼이우수리스키섬 서부"
+  at: [134.75, 48.37]
+  year: 1950
+  expect: soviet-union
+  url: "https://en.wikipedia.org/wiki/Bolshoy_Ussuriysky_Island"
+  from: "세션 C1 결과노트"
+  note: "볼쇼이우수리스키섬: 서부는 2008년부터 중국"
+
+- name: "볼쇼이우수리스키섬 서부"
+  at: [134.75, 48.37]
+  year: 2007
+  expect: russia-fed
+  url: "https://en.wikipedia.org/wiki/Bolshoy_Ussuriysky_Island"
+  from: "세션 C1 결과노트"
+  note: "볼쇼이우수리스키섬: 서부는 2008년부터 중국"
+
+- name: "볼쇼이우수리스키섬 서부"
+  at: [134.75, 48.37]
+  years: [2008, 2024]
+  expect: prc
+  url: "https://en.wikipedia.org/wiki/Bolshoy_Ussuriysky_Island"
+  from: "세션 C1 결과노트"
+  note: "볼쇼이우수리스키섬: 서부는 2008년부터 중국"
+
+- name: "볼쇼이우수리스키섬 동부"
+  at: [134.95, 48.4]
+  year: 1600
+  expect: jurchen
+  url: "https://en.wikipedia.org/wiki/Bolshoy_Ussuriysky_Island"
+  from: "세션 C1 결과노트"
+  note: "볼쇼이우수리스키섬: 서부는 2008년부터 중국"
+
+- name: "볼쇼이우수리스키섬 동부"
+  at: [134.95, 48.4]
+  years: [1700, 1857, 1858]
+  expect: qing
+  url: "https://en.wikipedia.org/wiki/Bolshoy_Ussuriysky_Island"
+  from: "세션 C1 결과노트"
+  note: "볼쇼이우수리스키섬: 서부는 2008년부터 중국"
+
+- name: "볼쇼이우수리스키섬 동부"
+  at: [134.95, 48.4]
+  years: [1860, 1900]
+  expect: russia
+  url: "https://en.wikipedia.org/wiki/Bolshoy_Ussuriysky_Island"
+  from: "세션 C1 결과노트"
+  note: "볼쇼이우수리스키섬: 서부는 2008년부터 중국"
+
+- name: "볼쇼이우수리스키섬 동부"
+  at: [134.95, 48.4]
+  year: 1950
+  expect: soviet-union
+  url: "https://en.wikipedia.org/wiki/Bolshoy_Ussuriysky_Island"
+  from: "세션 C1 결과노트"
+  note: "볼쇼이우수리스키섬: 서부는 2008년부터 중국"
+
+- name: "볼쇼이우수리스키섬 동부"
+  at: [134.95, 48.4]
+  years: [2007, 2008, 2024]
+  expect: russia-fed
+  url: "https://en.wikipedia.org/wiki/Bolshoy_Ussuriysky_Island"
+  from: "세션 C1 결과노트"
+  note: "볼쇼이우수리스키섬: 서부는 2008년부터 중국"
+
+- name: "하바롭스크"
+  at: [135.07, 48.48]
+  years: [1688, 1689, 1857, 1858, 1859]
+  expect: qing
+  url: "https://en.wikipedia.org/wiki/Treaty_of_Nerchinsk"
+  from: "세션 I1 결과노트"
+  note: "흑룡강 하류·고르비차 서쪽 변(I1-①)"
+
+- name: "하바롭스크"
+  at: [135.07, 48.48]
+  year: 1860
+  expect: russia
+  url: "https://en.wikipedia.org/wiki/Treaty_of_Nerchinsk"
+  from: "세션 I1 결과노트"
+  note: "흑룡강 하류·고르비차 서쪽 변(I1-①)"
+
+- name: "아무르스크"
+  at: [136.91, 50.227]
+  year: 1688
+  expect: none
+  region: east-asia
+  url: "https://en.wikipedia.org/wiki/Treaty_of_Nerchinsk"
+  from: "세션 I1 결과노트"
+  note: "흑룡강 하류·고르비차 서쪽 변(I1-①)"
+
+- name: "아무르스크"
+  at: [136.91, 50.227]
+  years: [1689, 1857]
+  expect: qing
+  url: "https://en.wikipedia.org/wiki/Treaty_of_Nerchinsk"
+  from: "세션 I1 결과노트"
+  note: "흑룡강 하류·고르비차 서쪽 변(I1-①)"
+
+- name: "아무르스크"
+  at: [136.91, 50.227]
+  years: [1858, 1859, 1860]
+  expect: russia
+  url: "https://en.wikipedia.org/wiki/Treaty_of_Nerchinsk"
+  from: "세션 I1 결과노트"
+  note: "흑룡강 하류·고르비차 서쪽 변(I1-①)"
+
+- name: "콤소몰스크나아무레"
+  at: [137.023, 50.543]
+  year: 1688
+  expect: none
+  region: east-asia
+  url: "https://en.wikipedia.org/wiki/Treaty_of_Nerchinsk"
+  from: "세션 I1 결과노트"
+  note: "흑룡강 하류·고르비차 서쪽 변(I1-①)"
+
+- name: "콤소몰스크나아무레"
+  at: [137.023, 50.543]
+  years: [1689, 1857]
+  expect: qing
+  url: "https://en.wikipedia.org/wiki/Treaty_of_Nerchinsk"
+  from: "세션 I1 결과노트"
+  note: "흑룡강 하류·고르비차 서쪽 변(I1-①)"
+
+- name: "콤소몰스크나아무레"
+  at: [137.023, 50.543]
+  years: [1858, 1859, 1860]
+  expect: russia
+  url: "https://en.wikipedia.org/wiki/Treaty_of_Nerchinsk"
+  from: "세션 I1 결과노트"
+  note: "흑룡강 하류·고르비차 서쪽 변(I1-①)"
+
+- name: "마린스코예"
+  at: [140.185, 51.728]
+  year: 1688
+  expect: none
+  region: east-asia
+  url: "https://en.wikipedia.org/wiki/Treaty_of_Nerchinsk"
+  from: "세션 I1 결과노트"
+  note: "흑룡강 하류·고르비차 서쪽 변(I1-①)"
+
+- name: "마린스코예"
+  at: [140.185, 51.728]
+  years: [1689, 1857, 1858, 1859]
+  expect: qing
+  url: "https://en.wikipedia.org/wiki/Treaty_of_Nerchinsk"
+  from: "세션 I1 결과노트"
+  note: "흑룡강 하류·고르비차 서쪽 변(I1-①)"
+
+- name: "마린스코예"
+  at: [140.185, 51.728]
+  year: 1860
+  expect: russia
+  url: "https://en.wikipedia.org/wiki/Treaty_of_Nerchinsk"
+  from: "세션 I1 결과노트"
+  note: "흑룡강 하류·고르비차 서쪽 변(I1-①)"
+
+- name: "니콜라옙스크나아무레"
+  at: [140.725, 53.139]
+  year: 1688
+  expect: none
+  region: east-asia
+  url: "https://en.wikipedia.org/wiki/Treaty_of_Nerchinsk"
+  from: "세션 I1 결과노트"
+  note: "흑룡강 하류·고르비차 서쪽 변(I1-①)"
+
+- name: "니콜라옙스크나아무레"
+  at: [140.725, 53.139]
+  years: [1689, 1857]
+  expect: qing
+  url: "https://en.wikipedia.org/wiki/Treaty_of_Nerchinsk"
+  from: "세션 I1 결과노트"
+  note: "흑룡강 하류·고르비차 서쪽 변(I1-①)"
+
+- name: "니콜라옙스크나아무레"
+  at: [140.725, 53.139]
+  years: [1858, 1859, 1860]
+  expect: russia
+  url: "https://en.wikipedia.org/wiki/Treaty_of_Nerchinsk"
+  from: "세션 I1 결과노트"
+  note: "흑룡강 하류·고르비차 서쪽 변(I1-①)"
+
+- name: "콘스탄티놉카"
+  at: [140.78, 53.08]
+  year: 1688
+  expect: none
+  region: east-asia
+  url: "https://en.wikipedia.org/wiki/Treaty_of_Nerchinsk"
+  from: "세션 I1 결과노트"
+  note: "흑룡강 하류·고르비차 서쪽 변(I1-①)"
+
+- name: "콘스탄티놉카"
+  at: [140.78, 53.08]
+  years: [1689, 1857, 1858, 1859]
+  expect: qing
+  url: "https://en.wikipedia.org/wiki/Treaty_of_Nerchinsk"
+  from: "세션 I1 결과노트"
+  note: "흑룡강 하류·고르비차 서쪽 변(I1-①)"
+
+- name: "콘스탄티놉카"
+  at: [140.78, 53.08]
+  year: 1860
+  expect: russia
+  url: "https://en.wikipedia.org/wiki/Treaty_of_Nerchinsk"
+  from: "세션 I1 결과노트"
+  note: "흑룡강 하류·고르비차 서쪽 변(I1-①)"
+
+- name: "고르비차 마을"
+  at: [119.2145, 53.0991]
+  years: [1688, 1689]
+  expect: russia-tsardom
+  url: "https://en.wikipedia.org/wiki/Treaty_of_Nerchinsk"
+  from: "세션 I1 결과노트"
+  note: "흑룡강 하류·고르비차 서쪽 변(I1-①)"
+
+- name: "고르비차 마을"
+  at: [119.2145, 53.0991]
+  years: [1857, 1858, 1859, 1860]
+  expect: russia
+  url: "https://en.wikipedia.org/wiki/Treaty_of_Nerchinsk"
+  from: "세션 I1 결과노트"
+  note: "흑룡강 하류·고르비차 서쪽 변(I1-①)"
+
+- name: "체르나야강 상류"
+  at: [118.95, 53.66]
+  years: [1688, 1689]
+  expect: russia-tsardom
+  url: "https://en.wikipedia.org/wiki/Treaty_of_Nerchinsk"
+  from: "세션 I1 결과노트"
+  note: "흑룡강 하류·고르비차 서쪽 변(I1-①)"
+
+- name: "체르나야강 상류"
+  at: [118.95, 53.66]
+  years: [1857, 1858, 1859, 1860]
+  expect: russia
+  url: "https://en.wikipedia.org/wiki/Treaty_of_Nerchinsk"
+  from: "세션 I1 결과노트"
+  note: "흑룡강 하류·고르비차 서쪽 변(I1-①)"
+
+- name: "모고차"
+  at: [119.73, 53.74]
+  year: 1688
+  expect: russia-tsardom
+  url: "https://en.wikipedia.org/wiki/Treaty_of_Nerchinsk"
+  from: "세션 I1 결과노트"
+  note: "흑룡강 하류·고르비차 서쪽 변(I1-①)"
+
+- name: "모고차"
+  at: [119.73, 53.74]
+  years: [1858, 1859, 1860]
+  expect: russia
+  url: "https://en.wikipedia.org/wiki/Treaty_of_Nerchinsk"
+  from: "세션 I1 결과노트"
+  note: "흑룡강 하류·고르비차 서쪽 변(I1-①)"
+
+- name: "모고차"
+  at: [119.73, 53.74]
+  years: [1689, 1857]
+  expect: qing
+  url: "https://en.wikipedia.org/wiki/Treaty_of_Nerchinsk"
+  from: "세션 I1 결과노트"
+  note: "흑룡강 하류·고르비차 서쪽 변(I1-①)"
+
+- name: "투피크"
+  at: [119.944, 54.427]
+  years: [1688, 1689]
+  expect: russia-tsardom
+  url: "https://en.wikipedia.org/wiki/Treaty_of_Nerchinsk"
+  from: "세션 I1 결과노트"
+  note: "흑룡강 하류·고르비차 서쪽 변(I1-①)"
+
+- name: "투피크"
+  at: [119.944, 54.427]
+  years: [1857, 1858, 1859, 1860]
+  expect: russia
+  url: "https://en.wikipedia.org/wiki/Treaty_of_Nerchinsk"
+  from: "세션 I1 결과노트"
+  note: "흑룡강 하류·고르비차 서쪽 변(I1-①)"
+
+- name: "우스티스트렐카"
+  at: [121.388, 53.322]
+  year: 1688
+  expect: none
+  region: east-asia
+  url: "https://en.wikipedia.org/wiki/Treaty_of_Nerchinsk"
+  from: "세션 I1 결과노트"
+  note: "흑룡강 하류·고르비차 서쪽 변(I1-①)"
+
+- name: "우스티스트렐카"
+  at: [121.388, 53.322]
+  years: [1689, 1857, 1858, 1859, 1860]
+  expect: qing
+  url: "https://en.wikipedia.org/wiki/Treaty_of_Nerchinsk"
+  from: "세션 I1 결과노트"
+  note: "흑룡강 하류·고르비차 서쪽 변(I1-①)"
+
+- name: "나제"
+  at: [129.49, 28.38]
+  years: [1945, 1953, 1971, 1972]
+  expect: japan
+  url: "https://en.wikipedia.org/wiki/Amami_Islands"
+  from: "세션 I1 결과노트"
+  note: "아마미 제도 1953 반환·오키나와 1972"
+
+- name: "나제"
+  at: [129.49, 28.38]
+  years: [1946, 1952]
+  expect: ryukyu-us
+  url: "https://en.wikipedia.org/wiki/Amami_Islands"
+  from: "세션 I1 결과노트"
+  note: "아마미 제도 1953 반환·오키나와 1972"
+
+- name: "와도마리"
+  at: [128.654, 27.392]
+  years: [1945, 1953, 1971, 1972]
+  expect: japan
+  url: "https://en.wikipedia.org/wiki/Amami_Islands"
+  from: "세션 I1 결과노트"
+  note: "아마미 제도 1953 반환·오키나와 1972"
+
+- name: "와도마리"
+  at: [128.654, 27.392]
+  years: [1946, 1952]
+  expect: ryukyu-us
+  url: "https://en.wikipedia.org/wiki/Amami_Islands"
+  from: "세션 I1 결과노트"
+  note: "아마미 제도 1953 반환·오키나와 1972"
+
+- name: "요론섬"
+  at: [128.4, 27.05]
+  years: [1945, 1953, 1971, 1972]
+  expect: japan
+  url: "https://en.wikipedia.org/wiki/Amami_Islands"
+  from: "세션 I1 결과노트"
+  note: "아마미 제도 1953 반환·오키나와 1972"
+
+- name: "요론섬"
+  at: [128.4, 27.05]
+  years: [1946, 1952]
+  expect: ryukyu-us
+  url: "https://en.wikipedia.org/wiki/Amami_Islands"
+  from: "세션 I1 결과노트"
+  note: "아마미 제도 1953 반환·오키나와 1972"
+
+- name: "나하"
+  at: [127.68, 26.21]
+  years: [1945, 1972]
+  expect: japan
+  url: "https://en.wikipedia.org/wiki/Amami_Islands"
+  from: "세션 I1 결과노트"
+  note: "아마미 제도 1953 반환·오키나와 1972"
+
+- name: "나하"
+  at: [127.68, 26.21]
+  years: [1946, 1952, 1953, 1971]
+  expect: ryukyu-us
+  url: "https://en.wikipedia.org/wiki/Amami_Islands"
+  from: "세션 I1 결과노트"
+  note: "아마미 제도 1953 반환·오키나와 1972"
+
+- name: "헤도곶"
+  at: [128.26, 26.86]
+  years: [1945, 1972]
+  expect: japan
+  url: "https://en.wikipedia.org/wiki/Amami_Islands"
+  from: "세션 I1 결과노트"
+  note: "아마미 제도 1953 반환·오키나와 1972"
+
+- name: "헤도곶"
+  at: [128.26, 26.86]
+  years: [1946, 1952, 1953, 1971]
+  expect: ryukyu-us
+  url: "https://en.wikipedia.org/wiki/Amami_Islands"
+  from: "세션 I1 결과노트"
+  note: "아마미 제도 1953 반환·오키나와 1972"
+
+- name: "서울"
+  at: [126.98, 37.57]
+  years: [1600, 1700, 1857, 1858, 1860]
+  expect: joseon
+  url: "https://ko.wikipedia.org/wiki/서울특별시"
+  from: "세션 C1 결과노트"
+  note: "평소 바뀌지 않아야 하는 지점(서울)"
+
+- name: "서울"
+  at: [126.98, 37.57]
+  year: 1900
+  expect: daehan-jeguk
+  url: "https://ko.wikipedia.org/wiki/서울특별시"
+  from: "세션 C1 결과노트"
+  note: "평소 바뀌지 않아야 하는 지점(서울)"
+
+- name: "서울"
+  at: [126.98, 37.57]
+  years: [1950, 2007, 2008, 2024]
+  expect: rok
+  url: "https://ko.wikipedia.org/wiki/서울특별시"
+  from: "세션 C1 결과노트"
+  note: "평소 바뀌지 않아야 하는 지점(서울)"
+
+- name: "서울"
+  at: [126.98, 37.57]
+  year: 1946
+  expect: usamgik
+  url: "https://ko.wikipedia.org/wiki/서울특별시"
+  from: "세션 I1 결과노트"
+  note: "평소 바뀌지 않아야 하는 지점(서울)"
+
+- name: "서울"
+  at: [126.98, 37.57]
+  year: 1972
+  expect: rok
+  url: "https://ko.wikipedia.org/wiki/서울특별시"
+  from: "세션 I1 결과노트"
+  note: "평소 바뀌지 않아야 하는 지점(서울)"
+
+- name: "서울"
+  at: [126.98, 37.57]
+  years: [-199, -150]
+  expect: jin-guk
+  url: "https://ko.wikipedia.org/wiki/서울특별시"
+  from: "세션 FIX5a 결과노트"
+  note: "평소 바뀌지 않아야 하는 지점(서울)"
+
+- name: "서울"
+  at: [126.98, 37.57]
+  years: [-107, -50]
+  expect: mahan
+  url: "https://ko.wikipedia.org/wiki/서울특별시"
+  from: "세션 FIX5a 결과노트"
+  note: "평소 바뀌지 않아야 하는 지점(서울)"
+
+- name: "서울"
+  at: [126.98, 37.57]
+  years: [-17, 100, 400]
+  expect: baekje
+  url: "https://ko.wikipedia.org/wiki/서울특별시"
+  from: "세션 FIX5a 결과노트"
+  note: "평소 바뀌지 않아야 하는 지점(서울)"
+
+- name: "서울"
+  at: [126.98, 37.57]
+  years: [475, 500]
+  expect: goguryeo
+  url: "https://ko.wikipedia.org/wiki/서울특별시"
+  from: "세션 FIX5a 결과노트"
+  note: "평소 바뀌지 않아야 하는 지점(서울)"
+
+- name: "서울"
+  at: [126.98, 37.57]
+  year: 551
+  expect: baekje
+  url: "https://ko.wikipedia.org/wiki/서울특별시"
+  from: "세션 FIX5a 결과노트"
+  note: "평소 바뀌지 않아야 하는 지점(서울)"
+
+- name: "서울"
+  at: [126.98, 37.57]
+  years: [553, 560]
+  expect: silla
+  url: "https://ko.wikipedia.org/wiki/서울특별시"
+  from: "세션 FIX5a 결과노트"
+  note: "평소 바뀌지 않아야 하는 지점(서울)"
+
+- name: "서울"
+  at: [126.98, 37.57]
+  years: [1466, 1471, 1484, 1486, 1689]
+  expect: joseon
+  url: "https://ko.wikipedia.org/wiki/서울특별시"
+  from: "세션 I1 결과노트"
+  note: "평소 바뀌지 않아야 하는 지점(서울)"

@@ -11,6 +11,8 @@
 ```bash
 npm install
 npm run check:data   # 데이터 검증만
+npm run test:geo     # 지형 테스트(지점·빈 땅·겹침·사건 연결·선), 요약 15줄 — 사용법은 docs/guides/border.md 5.1
+npm run build:data -- --war <전쟁 id>   # 전쟁 하나만 빌드 (--no-wars, --events-only도 됨)
 npm run dev      # http://localhost:5173/history-map/
 npm run build    # dist/ 생성
 ```

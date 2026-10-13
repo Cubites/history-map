@@ -1,0 +1,1578 @@
+# 유럽 국경 지점 정답표 (평소 지도: 해마다 이 지점을 덮는 항목)
+# 읽는 곳: scripts/test-geo (npm run test:geo -- --only places). 꼴은 docs/DATA_GUIDE.md의 정답표 절을 따른다.
+# 만든 방법: 세션 FIX5a·FIX5b·D2(AN4)·I1(돈강·테르스키 해안·킬리아) 결과 노트의 '지점 판정' 표에서 좌표와 승인된 소속을 옮기고,
+#   data/geo 원자료로 다시 판정해 지금 지도와 같은 것만 넣었다(다른 것은 검토 대기).
+# 기대값 expect = 항목 id. range는 양끝 포함(그 안에서 주인이 바뀌는 해마다 확인). url이 '필요'이면 legacy: true(근거를 나중에 채움).
+# expect: none 지점은 region(europe|east-asia)을 함께 적는다(--region 거르기에 걸리려면 필요). 새 지점은 url을 반드시 달 것. 해는 천문 연도(기원전 N년 = 1-N).
+
+- name: "키이우"
+  at: [30.52, 50.45]
+  range: [454, 526]
+  expect: none
+  region: europe
+  url: "https://en.wikipedia.org/wiki/Antes_(people)"
+  from: "세션 FIX5a 결과노트"
+  note: "동슬라브 부족은 527부터(FIX5a-①) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "체르카시"
+  at: [32.06, 49.44]
+  range: [454, 526]
+  expect: none
+  region: europe
+  url: "https://en.wikipedia.org/wiki/Antes_(people)"
+  from: "세션 FIX5a 결과노트"
+  note: "동슬라브 부족은 527부터(FIX5a-①) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "폴타바"
+  at: [34.55, 49.59]
+  range: [454, 526]
+  expect: none
+  region: europe
+  url: "https://en.wikipedia.org/wiki/Antes_(people)"
+  from: "세션 FIX5a 결과노트"
+  note: "동슬라브 부족은 527부터(FIX5a-①) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "체르니히우"
+  at: [31.29, 51.5]
+  range: [-300, 526]
+  expect: none
+  region: europe
+  url: "https://en.wikipedia.org/wiki/Antes_(people)"
+  from: "세션 FIX5a 결과노트"
+  note: "동슬라브 부족은 527부터(FIX5a-①) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "르비우"
+  at: [24.03, 49.84]
+  range: [406, 526]
+  expect: none
+  region: europe
+  url: "https://en.wikipedia.org/wiki/Antes_(people)"
+  from: "세션 FIX5a 결과노트"
+  note: "동슬라브 부족은 527부터(FIX5a-①) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "루츠크"
+  at: [25.33, 50.75]
+  range: [406, 526]
+  expect: none
+  region: europe
+  url: "https://en.wikipedia.org/wiki/Antes_(people)"
+  from: "세션 FIX5a 결과노트"
+  note: "동슬라브 부족은 527부터(FIX5a-①) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "암베르크"
+  at: [11.86, 49.44]
+  range: [-57, 530]
+  expect: germanic-tribes
+  url: "https://en.wikipedia.org/wiki/Thuringii"
+  from: "세션 FIX5a 결과노트"
+  note: "바이에른 도나우강 북쪽(FIX5a-②) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "암베르크"
+  at: [11.86, 49.44]
+  range: [531, 554]
+  expect: frankish-kingdom
+  url: "https://en.wikipedia.org/wiki/Thuringii"
+  from: "세션 FIX5a 결과노트"
+  note: "바이에른 도나우강 북쪽(FIX5a-②) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "바이덴"
+  at: [12.16, 49.68]
+  range: [-57, 530]
+  expect: germanic-tribes
+  url: "https://en.wikipedia.org/wiki/Thuringii"
+  from: "세션 FIX5a 결과노트"
+  note: "바이에른 도나우강 북쪽(FIX5a-②) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "바이덴"
+  at: [12.16, 49.68]
+  range: [531, 554]
+  expect: frankish-kingdom
+  url: "https://en.wikipedia.org/wiki/Thuringii"
+  from: "세션 FIX5a 결과노트"
+  note: "바이에른 도나우강 북쪽(FIX5a-②) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "레겐스부르크"
+  at: [12.1, 49.015]
+  range: [-14, 394]
+  expect: roman-empire
+  url: "https://en.wikipedia.org/wiki/Thuringii"
+  from: "세션 FIX5a 결과노트"
+  note: "바이에른 도나우강 북쪽(FIX5a-②)"
+
+- name: "뇌르틀링겐"
+  at: [10.49, 48.85]
+  range: [-57, 505]
+  expect: germanic-tribes
+  url: "https://en.wikipedia.org/wiki/Thuringii"
+  from: "세션 FIX5a 결과노트"
+  note: "바이에른 도나우강 북쪽(FIX5a-②) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "뇌르틀링겐"
+  at: [10.49, 48.85]
+  range: [506, 560]
+  expect: frankish-kingdom
+  url: "https://en.wikipedia.org/wiki/Thuringii"
+  from: "세션 FIX5a 결과노트"
+  note: "바이에른 도나우강 북쪽(FIX5a-②) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "메스"
+  at: [6.18, 49.12]
+  range: [461, 485]
+  expect: domain-of-soissons
+  url: "https://en.wikipedia.org/wiki/Metz"
+  from: "세션 FIX5a 결과노트"
+  note: "로렌 476~485 수아송 왕국(FIX5a-③) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "낭시"
+  at: [6.18, 48.69]
+  range: [461, 485]
+  expect: domain-of-soissons
+  url: "https://en.wikipedia.org/wiki/Metz"
+  from: "세션 FIX5a 결과노트"
+  note: "로렌 476~485 수아송 왕국(FIX5a-③) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "망굽(도로스)"
+  at: [33.8, 44.59]
+  range: [-149, 255]
+  expect: crimean-scythia
+  url: "https://en.wikipedia.org/wiki/Doros_(Crimea)"
+  from: "세션 FIX5a 결과노트"
+  note: "크림 고티아(FIX5a-④)"
+
+- name: "린츠"
+  at: [14.29, 48.306]
+  range: [-15, 394]
+  expect: roman-empire
+  url: "https://en.wikipedia.org/wiki/Noricum"
+  from: "세션 FIX5a 결과노트"
+  note: "도나우강 남쪽 노리쿰(FIX5a-⑨)"
+
+- name: "프라이슈타트"
+  at: [14.5, 48.51]
+  range: [-300, -8]
+  expect: celtic-tribes
+  url: "https://en.wikipedia.org/wiki/Marcomanni"
+  from: "세션 FIX5a 결과노트"
+  note: "도나우강 북쪽 오스트리아(FIX5a-⑤) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "프라이슈타트"
+  at: [14.5, 48.51]
+  range: [-7, 536]
+  expect: germanic-tribes
+  url: "https://en.wikipedia.org/wiki/Marcomanni"
+  from: "세션 FIX5a 결과노트"
+  note: "도나우강 북쪽 오스트리아(FIX5a-⑤) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "마우트하우젠"
+  at: [14.52, 48.24]
+  range: [-300, -7]
+  expect: celtic-tribes
+  url: "https://en.wikipedia.org/wiki/Marcomanni"
+  from: "세션 FIX5a 결과노트"
+  note: "도나우강 북쪽 오스트리아(FIX5a-⑤) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "마우트하우젠"
+  at: [14.52, 48.24]
+  range: [-6, 488]
+  expect: germanic-tribes
+  url: "https://en.wikipedia.org/wiki/Marcomanni"
+  from: "세션 FIX5a 결과노트"
+  note: "도나우강 북쪽 오스트리아(FIX5a-⑤) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "엔스"
+  at: [14.475, 48.213]
+  range: [-15, 394]
+  expect: roman-empire
+  url: "https://en.wikipedia.org/wiki/Noricum"
+  from: "세션 FIX5a 결과노트"
+  note: "도나우강 남쪽 노리쿰(FIX5a-⑨)"
+
+- name: "그라인"
+  at: [14.855, 48.226]
+  range: [-300, -7]
+  expect: celtic-tribes
+  url: "https://en.wikipedia.org/wiki/Marcomanni"
+  from: "세션 FIX5a 결과노트"
+  note: "도나우강 북쪽 오스트리아(FIX5a-⑤) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "그라인"
+  at: [14.855, 48.226]
+  range: [-6, 488]
+  expect: germanic-tribes
+  url: "https://en.wikipedia.org/wiki/Marcomanni"
+  from: "세션 FIX5a 결과노트"
+  note: "도나우강 북쪽 오스트리아(FIX5a-⑤) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "입스"
+  at: [15.083, 48.176]
+  range: [-59, -16]
+  expect: noricum-kingdom
+  url: "https://en.wikipedia.org/wiki/Noricum"
+  from: "세션 FIX5a 결과노트"
+  note: "도나우강 남쪽 노리쿰(FIX5a-⑨) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "멜크"
+  at: [15.33, 48.227]
+  range: [-59, -16]
+  expect: noricum-kingdom
+  url: "https://en.wikipedia.org/wiki/Noricum"
+  from: "세션 FIX5a 결과노트"
+  note: "도나우강 남쪽 노리쿰(FIX5a-⑨) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "크렘스"
+  at: [15.61, 48.41]
+  range: [-300, -7]
+  expect: celtic-tribes
+  url: "https://en.wikipedia.org/wiki/Marcomanni"
+  from: "세션 FIX5a 결과노트"
+  note: "도나우강 북쪽 오스트리아(FIX5a-⑤) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "크렘스"
+  at: [15.61, 48.41]
+  range: [-6, 488]
+  expect: germanic-tribes
+  url: "https://en.wikipedia.org/wiki/Marcomanni"
+  from: "세션 FIX5a 결과노트"
+  note: "도나우강 북쪽 오스트리아(FIX5a-⑤) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "마우테른"
+  at: [15.58, 48.392]
+  range: [-59, -16]
+  expect: noricum-kingdom
+  url: "https://en.wikipedia.org/wiki/Noricum"
+  from: "세션 FIX5a 결과노트"
+  note: "도나우강 남쪽 노리쿰(FIX5a-⑨) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "츠베틀"
+  at: [15.17, 48.6]
+  range: [-300, -7]
+  expect: celtic-tribes
+  url: "https://en.wikipedia.org/wiki/Marcomanni"
+  from: "세션 FIX5a 결과노트"
+  note: "도나우강 북쪽 오스트리아(FIX5a-⑤) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "츠베틀"
+  at: [15.17, 48.6]
+  range: [-6, 488]
+  expect: germanic-tribes
+  url: "https://en.wikipedia.org/wiki/Marcomanni"
+  from: "세션 FIX5a 결과노트"
+  note: "도나우강 북쪽 오스트리아(FIX5a-⑤) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "툴른"
+  at: [16.05, 48.33]
+  range: [-59, -16]
+  expect: noricum-kingdom
+  url: "https://en.wikipedia.org/wiki/Noricum"
+  from: "세션 FIX5a 결과노트"
+  note: "도나우강 남쪽 노리쿰(FIX5a-⑨) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "코르노이부르크"
+  at: [16.33, 48.345]
+  range: [-300, -7]
+  expect: celtic-tribes
+  url: "https://en.wikipedia.org/wiki/Marcomanni"
+  from: "세션 FIX5a 결과노트"
+  note: "도나우강 북쪽 오스트리아(FIX5a-⑤) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "코르노이부르크"
+  at: [16.33, 48.345]
+  range: [-6, 488]
+  expect: germanic-tribes
+  url: "https://en.wikipedia.org/wiki/Marcomanni"
+  from: "세션 FIX5a 결과노트"
+  note: "도나우강 북쪽 오스트리아(FIX5a-⑤) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "클로스터노이부르크"
+  at: [16.325, 48.305]
+  range: [-59, -16]
+  expect: noricum-kingdom
+  url: "https://en.wikipedia.org/wiki/Noricum"
+  from: "세션 FIX5a 결과노트"
+  note: "도나우강 남쪽 노리쿰(FIX5a-⑨) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "미스텔바흐"
+  at: [16.57, 48.57]
+  range: [-300, -7]
+  expect: celtic-tribes
+  url: "https://en.wikipedia.org/wiki/Marcomanni"
+  from: "세션 FIX5a 결과노트"
+  note: "도나우강 북쪽 오스트리아(FIX5a-⑤) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "미스텔바흐"
+  at: [16.57, 48.57]
+  range: [-6, 488]
+  expect: germanic-tribes
+  url: "https://en.wikipedia.org/wiki/Marcomanni"
+  from: "세션 FIX5a 결과노트"
+  note: "도나우강 북쪽 오스트리아(FIX5a-⑤) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "빈"
+  at: [16.37, 48.21]
+  range: [-59, -16]
+  expect: noricum-kingdom
+  url: "https://en.wikipedia.org/wiki/Noricum"
+  from: "세션 FIX5a 결과노트"
+  note: "도나우강 남쪽 노리쿰(FIX5a-⑨) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "플로리츠도르프"
+  at: [16.4, 48.26]
+  range: [-300, -7]
+  expect: celtic-tribes
+  url: "https://en.wikipedia.org/wiki/Marcomanni"
+  from: "세션 FIX5a 결과노트"
+  note: "도나우강 북쪽 오스트리아(FIX5a-⑤) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "플로리츠도르프"
+  at: [16.4, 48.26]
+  range: [-6, 488]
+  expect: germanic-tribes
+  url: "https://en.wikipedia.org/wiki/Marcomanni"
+  from: "세션 FIX5a 결과노트"
+  note: "도나우강 북쪽 오스트리아(FIX5a-⑤) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "장크트푈텐"
+  at: [15.63, 48.2]
+  range: [-59, -16]
+  expect: noricum-kingdom
+  url: "https://en.wikipedia.org/wiki/Noricum"
+  from: "세션 FIX5a 결과노트"
+  note: "도나우강 남쪽 노리쿰(FIX5a-⑨) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "카르눈툼"
+  at: [16.86, 48.11]
+  range: [-59, -16]
+  expect: noricum-kingdom
+  url: "https://en.wikipedia.org/wiki/Noricum"
+  from: "세션 FIX5a 결과노트"
+  note: "도나우강 남쪽 노리쿰(FIX5a-⑨) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "네이메헌"
+  at: [5.86, 51.84]
+  range: [-26, 259]
+  expect: roman-empire
+  url: "https://en.wikipedia.org/wiki/Limes_Germanicus"
+  from: "세션 FIX5a 결과노트"
+  note: "헬데를란트 라인강 북쪽(FIX5a-⑥)"
+
+- name: "아른험"
+  at: [5.91, 51.985]
+  range: [-50, 456]
+  expect: germanic-tribes
+  url: "https://en.wikipedia.org/wiki/Limes_Germanicus"
+  from: "세션 FIX5a 결과노트"
+  note: "헬데를란트 라인강 북쪽(FIX5a-⑥) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "바헤닝언"
+  at: [5.665, 51.97]
+  range: [-50, 456]
+  expect: germanic-tribes
+  url: "https://en.wikipedia.org/wiki/Limes_Germanicus"
+  from: "세션 FIX5a 결과노트"
+  note: "헬데를란트 라인강 북쪽(FIX5a-⑥) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "아펠도른"
+  at: [5.97, 52.21]
+  range: [-50, 456]
+  expect: germanic-tribes
+  url: "https://en.wikipedia.org/wiki/Limes_Germanicus"
+  from: "세션 FIX5a 결과노트"
+  note: "헬데를란트 라인강 북쪽(FIX5a-⑥) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "프라하"
+  at: [14.42, 50.08]
+  range: [-300, -8]
+  expect: celtic-tribes
+  url: "https://en.wikipedia.org/wiki/Marcomanni"
+  from: "세션 FIX5a 결과노트"
+  note: "보헤미아·슬로바키아 서부(FIX5a-⑦) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "플젠"
+  at: [13.38, 49.75]
+  range: [-300, -8]
+  expect: celtic-tribes
+  url: "https://en.wikipedia.org/wiki/Marcomanni"
+  from: "세션 FIX5a 결과노트"
+  note: "보헤미아·슬로바키아 서부(FIX5a-⑦) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "브르노"
+  at: [16.61, 49.2]
+  range: [-300, -7]
+  expect: celtic-tribes
+  url: "https://en.wikipedia.org/wiki/Marcomanni"
+  from: "세션 FIX5a 결과노트"
+  note: "보헤미아·슬로바키아 서부(FIX5a-⑦) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "브라티슬라바"
+  at: [17.11, 48.15]
+  range: [-300, -7]
+  expect: celtic-tribes
+  url: "https://en.wikipedia.org/wiki/Marcomanni"
+  from: "세션 FIX5a 결과노트"
+  note: "보헤미아·슬로바키아 서부(FIX5a-⑦) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "니트라"
+  at: [18.09, 48.31]
+  range: [-300, -7]
+  expect: celtic-tribes
+  url: "https://en.wikipedia.org/wiki/Marcomanni"
+  from: "세션 FIX5a 결과노트"
+  note: "보헤미아·슬로바키아 서부(FIX5a-⑦) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "트렌토"
+  at: [11.12, 46.07]
+  range: [-43, -27]
+  expect: roman-republic
+  url: "https://en.wikipedia.org/wiki/Tridentum"
+  from: "세션 FIX5a 결과노트"
+  note: "트렌토·손드리오(FIX5a-⑩) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "손드리오"
+  at: [9.87, 46.17]
+  range: [-300, -16]
+  expect: celtic-tribes
+  url: "https://en.wikipedia.org/wiki/Tridentum"
+  from: "세션 FIX5a 결과노트"
+  note: "트렌토·손드리오(FIX5a-⑩) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "얄타(고티아)"
+  at: [34.17, 44.5]
+  range: [256, 526]
+  expect: germanic-tribes
+  url: "https://en.wikipedia.org/wiki/Doros_(Crimea)"
+  from: "세션 FIX5a 결과노트"
+  note: "크림 고티아(FIX5a-④) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "수다크(고티아)"
+  at: [34.97, 44.85]
+  range: [256, 526]
+  expect: germanic-tribes
+  url: "https://en.wikipedia.org/wiki/Doros_(Crimea)"
+  from: "세션 FIX5a 결과노트"
+  note: "크림 고티아(FIX5a-④) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "알루시타(고티아)"
+  at: [34.41, 44.67]
+  range: [256, 526]
+  expect: germanic-tribes
+  url: "https://en.wikipedia.org/wiki/Doros_(Crimea)"
+  from: "세션 FIX5a 결과노트"
+  note: "크림 고티아(FIX5a-④) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "아우(북쪽 기슭)"
+  at: [14.58, 48.23]
+  range: [-300, -7]
+  expect: celtic-tribes
+  url: "https://en.wikipedia.org/wiki/Marcomanni"
+  from: "세션 FIX5a 결과노트"
+  note: "도나우강 북쪽 오스트리아(FIX5a-⑤) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "아우(북쪽 기슭)"
+  at: [14.58, 48.23]
+  range: [-6, 488]
+  expect: germanic-tribes
+  url: "https://en.wikipedia.org/wiki/Marcomanni"
+  from: "세션 FIX5a 결과노트"
+  note: "도나우강 북쪽 오스트리아(FIX5a-⑤) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "오텐스하임(북쪽 기슭)"
+  at: [14.183, 48.333]
+  range: [-7, 536]
+  expect: germanic-tribes
+  url: "https://en.wikipedia.org/wiki/Marcomanni"
+  from: "세션 FIX5a 결과노트"
+  note: "도나우강 북쪽 오스트리아(FIX5a-⑤)"
+
+- name: "빌헤링(남쪽 기슭)"
+  at: [14.19, 48.322]
+  range: [-15, 394]
+  expect: roman-empire
+  url: "https://en.wikipedia.org/wiki/Noricum"
+  from: "세션 FIX5a 결과노트"
+  note: "도나우강 남쪽 노리쿰(FIX5a-⑨)"
+
+- name: "우르파르(북쪽 기슭)"
+  at: [14.28, 48.315]
+  range: [-7, 536]
+  expect: germanic-tribes
+  url: "https://en.wikipedia.org/wiki/Marcomanni"
+  from: "세션 FIX5a 결과노트"
+  note: "도나우강 북쪽 오스트리아(FIX5a-⑤)"
+
+- name: "젤라(질레)"
+  at: [35.88, 40.3]
+  range: [-36, 63]
+  expect: polemonid-pontus
+  url: "https://en.wikipedia.org/wiki/Pythodorida_of_Pontus"
+  from: "세션 FIX5b 결과노트"
+  note: "토카트도(FIX5b-⑮) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "아마시아"
+  at: [35.83, 40.65]
+  range: [-549, -331]
+  expect: achaemenid-empire
+  url: "https://en.wikipedia.org/wiki/Pythodorida_of_Pontus"
+  from: "세션 FIX5b 결과노트"
+  note: "토카트도(FIX5b-⑮)"
+
+- name: "토카트"
+  at: [36.55, 40.31]
+  range: [-36, 63]
+  expect: polemonid-pontus
+  url: "https://en.wikipedia.org/wiki/Pythodorida_of_Pontus"
+  from: "세션 FIX5b 결과노트"
+  note: "토카트도(FIX5b-⑮) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "코마나 폰티카"
+  at: [36.62, 40.35]
+  range: [-36, 63]
+  expect: polemonid-pontus
+  url: "https://en.wikipedia.org/wiki/Pythodorida_of_Pontus"
+  from: "세션 FIX5b 결과노트"
+  note: "토카트도(FIX5b-⑮) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "니크사르(카비라)"
+  at: [36.96, 40.59]
+  range: [-36, 63]
+  expect: polemonid-pontus
+  url: "https://en.wikipedia.org/wiki/Pythodorida_of_Pontus"
+  from: "세션 FIX5b 결과노트"
+  note: "토카트도(FIX5b-⑮) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "펠라"
+  at: [22.52, 40.76]
+  range: [-699, -167]
+  expect: macedonia-kingdom
+  url: 필요
+  from: "세션 FIX5b 결과노트"
+  note: "마케도니아 네 공화국 -166(FIX5b-⑯, 리비우스 45.29) · 고치기 전 HEAD와 달랐던 구간"
+  legacy: true
+
+- name: "테살로니키"
+  at: [22.94, 40.64]
+  range: [-347, -167]
+  expect: macedonia-kingdom
+  url: 필요
+  from: "세션 FIX5b 결과노트"
+  note: "마케도니아 네 공화국 -166(FIX5b-⑯, 리비우스 45.29) · 고치기 전 HEAD와 달랐던 구간"
+  legacy: true
+
+- name: "암피폴리스"
+  at: [23.85, 40.82]
+  range: [-699, -167]
+  expect: macedonia-kingdom
+  url: 필요
+  from: "세션 FIX5b 결과노트"
+  note: "마케도니아 네 공화국 -166(FIX5b-⑯, 리비우스 45.29) · 고치기 전 HEAD와 달랐던 구간"
+  legacy: true
+
+- name: "헤라클레아 링케스티스(비톨라)"
+  at: [21.33, 41.01]
+  range: [-284, -167]
+  expect: macedonia-kingdom
+  url: 필요
+  from: "세션 FIX5b 결과노트"
+  note: "마케도니아 네 공화국 -166(FIX5b-⑯, 리비우스 45.29) · 고치기 전 HEAD와 달랐던 구간"
+  legacy: true
+
+- name: "도도나"
+  at: [20.79, 39.55]
+  range: [-429, -167]
+  expect: epirus
+  url: 필요
+  from: "세션 FIX5b 결과노트"
+  note: "마케도니아 네 공화국 -166(FIX5b-⑯, 리비우스 45.29) · 고치기 전 HEAD와 달랐던 구간"
+  legacy: true
+
+- name: "스코드라"
+  at: [19.51, 42.07]
+  range: [-429, -260]
+  expect: illyrian-tribes
+  url: "https://en.wikipedia.org/wiki/Ardiaei"
+  from: "세션 FIX5b 결과노트"
+  note: "일리리아 왕국 -259부터(FIX5b-⑱) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "스코드라"
+  at: [19.51, 42.07]
+  range: [-259, -167]
+  expect: illyrian-kingdom
+  url: "https://en.wikipedia.org/wiki/Ardiaei"
+  from: "세션 FIX5b 결과노트"
+  note: "일리리아 왕국 -259부터(FIX5b-⑱) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "리존(리산)"
+  at: [18.7, 42.51]
+  range: [-429, -260]
+  expect: illyrian-tribes
+  url: "https://en.wikipedia.org/wiki/Ardiaei"
+  from: "세션 FIX5b 결과노트"
+  note: "일리리아 왕국 -259부터(FIX5b-⑱) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "리존(리산)"
+  at: [18.7, 42.51]
+  range: [-259, -167]
+  expect: illyrian-kingdom
+  url: "https://en.wikipedia.org/wiki/Ardiaei"
+  from: "세션 FIX5b 결과노트"
+  note: "일리리아 왕국 -259부터(FIX5b-⑱) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "에피담노스(두러스)"
+  at: [19.45, 41.32]
+  range: [-615, -228]
+  expect: greek-city-states
+  url: 필요
+  from: "세션 FIX5b 결과노트"
+  legacy: true
+
+- name: "쿠커스(다르다니 남부)"
+  at: [20.42, 42.08]
+  range: [-429, -167]
+  expect: illyrian-tribes
+  url: 필요
+  from: "세션 FIX5b 결과노트"
+  note: "마케도니아 네 공화국 -166(FIX5b-⑯, 리비우스 45.29) · 고치기 전 HEAD와 달랐던 구간"
+  legacy: true
+
+- name: "필리포폴리스(플로브디프)"
+  at: [24.75, 42.15]
+  range: [-278, 45]
+  expect: odrysian-kingdom
+  url: "https://en.wikipedia.org/wiki/Rhoemetalces_I"
+  from: "세션 FIX5b 결과노트"
+  note: "트라키아 왕국 -10(FIX5b-⑧)"
+
+- name: "세르디카(소피아)"
+  at: [23.32, 42.7]
+  range: [-429, -11]
+  expect: thracian-tribes
+  url: "https://en.wikipedia.org/wiki/Rhoemetalces_I"
+  from: "세션 FIX5b 결과노트"
+  note: "트라키아 왕국 -10(FIX5b-⑧) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "스몰랸(로도페)"
+  at: [24.7, 41.57]
+  range: [-429, -11]
+  expect: thracian-tribes
+  url: "https://en.wikipedia.org/wiki/Rhoemetalces_I"
+  from: "세션 FIX5b 결과노트"
+  note: "트라키아 왕국 -10(FIX5b-⑧) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "크산티(서트라키아)"
+  at: [24.88, 41.14]
+  range: [-278, -11]
+  expect: thracian-tribes
+  url: "https://en.wikipedia.org/wiki/Rhoemetalces_I"
+  from: "세션 FIX5b 결과노트"
+  note: "트라키아 왕국 -10(FIX5b-⑧) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "니코폴리스(네스토스)"
+  at: [23.73, 41.57]
+  range: [-284, -167]
+  expect: macedonia-kingdom
+  url: 필요
+  from: "세션 FIX5b 결과노트"
+  note: "마케도니아 네 공화국 -166(FIX5b-⑯, 리비우스 45.29) · 고치기 전 HEAD와 달랐던 구간"
+  legacy: true
+
+- name: "오데소스(바르나)"
+  at: [27.91, 43.21]
+  range: [-43, -11]
+  expect: dacian-tribes
+  url: "https://en.wikipedia.org/wiki/Rhoemetalces_I"
+  from: "세션 FIX5b 결과노트"
+  note: "트라키아 왕국 -10(FIX5b-⑧) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "톰이스(콘스탄차)"
+  at: [28.63, 44.17]
+  range: [-43, -11]
+  expect: dacian-tribes
+  url: "https://en.wikipedia.org/wiki/Rhoemetalces_I"
+  from: "세션 FIX5b 결과노트"
+  note: "트라키아 왕국 -10(FIX5b-⑧) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "마살리아"
+  at: [5.37, 43.3]
+  range: [-599, -44]
+  expect: greek-city-states
+  url: "https://en.wikipedia.org/wiki/Massalia"
+  from: "세션 FIX5b 결과노트"
+  note: "마살리아 -43 로마(FIX5b-⑪) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "아를"
+  at: [4.63, 43.68]
+  range: [-599, -44]
+  expect: greek-city-states
+  url: "https://en.wikipedia.org/wiki/Massalia"
+  from: "세션 FIX5b 결과노트"
+  note: "마살리아 -43 로마(FIX5b-⑪) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "에부수스(이비사)"
+  at: [1.43, 38.91]
+  range: [-649, -146]
+  expect: carthage
+  url: "https://en.wikipedia.org/wiki/Ibiza"
+  from: "세션 FIX5b 결과노트"
+  note: "이비사 카르타고~-145(FIX5b-⑪) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "에부수스(이비사)"
+  at: [1.43, 38.91]
+  range: [-145, -27]
+  expect: roman-republic
+  url: "https://en.wikipedia.org/wiki/Ibiza"
+  from: "세션 FIX5b 결과노트"
+  note: "이비사 카르타고~-145(FIX5b-⑪) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "팔마(마요르카)"
+  at: [2.65, 39.57]
+  range: [-26, 99]
+  expect: roman-empire
+  url: 필요
+  from: "세션 FIX5b 결과노트"
+  legacy: true
+
+- name: "카타나"
+  at: [15.09, 37.5]
+  range: [-288, -260]
+  expect: greek-city-states
+  url: "https://en.wikipedia.org/wiki/Catania"
+  from: "세션 FIX5b 결과노트"
+  note: "카타나 -259 로마(FIX5b-⑪) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "트라페주스"
+  at: [39.72, 41]
+  range: [-630, -183]
+  expect: greek-city-states
+  url: "https://en.wikipedia.org/wiki/Mossynoeci"
+  from: "세션 FIX5b 결과노트"
+  note: "흑해 남안 해안·내륙(FIX5b-⑬)"
+
+- name: "케라수스(기레순)"
+  at: [38.39, 40.91]
+  range: [-630, -183]
+  expect: greek-city-states
+  url: "https://en.wikipedia.org/wiki/Mossynoeci"
+  from: "세션 FIX5b 결과노트"
+  note: "흑해 남안 해안·내륙(FIX5b-⑬)"
+
+- name: "코티오라(오르두)"
+  at: [37.88, 40.98]
+  range: [-630, -183]
+  expect: greek-city-states
+  url: "https://en.wikipedia.org/wiki/Mossynoeci"
+  from: "세션 FIX5b 결과노트"
+  note: "흑해 남안 해안·내륙(FIX5b-⑬)"
+
+- name: "마치카(트라브존 내륙)"
+  at: [39.61, 40.81]
+  range: [-700, -112]
+  expect: none
+  region: europe
+  url: "https://en.wikipedia.org/wiki/Mossynoeci"
+  from: "세션 FIX5b 결과노트"
+  note: "흑해 남안 해안·내륙(FIX5b-⑬) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "시빈카라히사르(기레순 내륙)"
+  at: [38.42, 40.29]
+  range: [-700, -112]
+  expect: none
+  region: europe
+  url: "https://en.wikipedia.org/wiki/Mossynoeci"
+  from: "세션 FIX5b 결과노트"
+  note: "흑해 남안 해안·내륙(FIX5b-⑬) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "메수디예(오르두 내륙)"
+  at: [37.77, 40.46]
+  range: [-700, -112]
+  expect: none
+  region: europe
+  url: "https://en.wikipedia.org/wiki/Mossynoeci"
+  from: "세션 FIX5b 결과노트"
+  note: "흑해 남안 해안·내륙(FIX5b-⑬) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "아르트빈"
+  at: [41.82, 41.18]
+  range: [-298, 99]
+  expect: iberia-kingdom
+  url: "https://en.wikipedia.org/wiki/Klarjeti"
+  from: "세션 FIX5b 결과노트"
+  note: "아르트빈도 북부 이베리아 -298(FIX5b-⑩) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "아르다누치"
+  at: [42.06, 41.13]
+  range: [-298, 99]
+  expect: iberia-kingdom
+  url: "https://en.wikipedia.org/wiki/Klarjeti"
+  from: "세션 FIX5b 결과노트"
+  note: "아르트빈도 북부 이베리아 -298(FIX5b-⑩) · 고치기 전 HEAD와 달랐던 구간"
+
+- name: "호파"
+  at: [41.42, 41.39]
+  range: [-599, -108]
+  expect: colchis
+  url: 필요
+  from: "세션 FIX5b 결과노트"
+  legacy: true
+
+- name: "수셰히르(소아르메니아)"
+  at: [38.08, 40.16]
+  range: [-330, -112]
+  expect: lesser-armenia
+  url: 필요
+  from: "세션 FIX5b 결과노트"
+  note: " · 고치기 전 HEAD와 달랐던 구간"
+  legacy: true
+
+- name: "피렌체"
+  at: [11.26, 43.77]
+  range: [-799, -280]
+  expect: etruscan-city-states
+  url: 필요
+  from: "세션 D2(AN4) 결과노트"
+  note: "기원전 800~265년 표(사실 판정 행)"
+  legacy: true
+
+- name: "칼리아리"
+  at: [9.11, 39.22]
+  range: [-508, -264]
+  expect: carthage
+  url: 필요
+  from: "세션 D2(AN4) 결과노트"
+  note: "기원전 800~265년 표(사실 판정 행)"
+  legacy: true
+
+- name: "아스트라한"
+  at: [48.03, 46.35]
+  range: [-429, -264]
+  expect: sarmatian-alan-tribes
+  url: 필요
+  from: "세션 D2(AN4) 결과노트"
+  note: "기원전 800~265년 표(사실 판정 행)"
+  legacy: true
+
+- name: "베오그라드"
+  at: [20.46, 44.82]
+  range: [-334, -264]
+  expect: illyrian-tribes
+  url: 필요
+  from: "세션 D2(AN4) 결과노트"
+  note: "기원전 800~265년 표(사실 판정 행)"
+  legacy: true
+
+- name: "야이체"
+  at: [17.27, 44.34]
+  range: [-429, -264]
+  expect: illyrian-tribes
+  url: 필요
+  from: "세션 D2(AN4) 결과노트"
+  note: "기원전 800~265년 표(사실 판정 행)"
+  legacy: true
+
+- name: "스플리트"
+  at: [16.44, 43.51]
+  range: [-429, -264]
+  expect: illyrian-tribes
+  url: 필요
+  from: "세션 D2(AN4) 결과노트"
+  note: "기원전 800~265년 표(사실 판정 행)"
+  legacy: true
+
+- name: "체티네"
+  at: [18.92, 42.39]
+  range: [-429, -280]
+  expect: illyrian-tribes
+  url: 필요
+  from: "세션 D2(AN4) 결과노트"
+  note: "기원전 800~265년 표(사실 판정 행)"
+  legacy: true
+
+- name: "두러스"
+  at: [19.45, 41.32]
+  range: [-615, -264]
+  expect: greek-city-states
+  url: 필요
+  from: "세션 D2(AN4) 결과노트"
+  note: "기원전 800~265년 표(사실 판정 행)"
+  legacy: true
+
+- name: "이라클리오"
+  at: [25.13, 35.34]
+  range: [-799, -264]
+  expect: greek-city-states
+  url: 필요
+  from: "세션 D2(AN4) 결과노트"
+  note: "기원전 800~265년 표(사실 판정 행)"
+  legacy: true
+
+- name: "시노프"
+  at: [35.15, 42.02]
+  range: [-630, -264]
+  expect: greek-city-states
+  url: 필요
+  from: "세션 D2(AN4) 결과노트"
+  note: "기원전 800~265년 표(사실 판정 행)"
+  legacy: true
+
+- name: "페루자"
+  at: [12.39, 43.11]
+  range: [-799, -280]
+  expect: etruscan-city-states
+  url: 필요
+  from: "세션 D2(AN4) 결과노트"
+  note: "기원전 800~265년 표(사실 판정 행)"
+  legacy: true
+
+- name: "아르타"
+  at: [20.98, 39.16]
+  range: [-615, -290]
+  expect: greek-city-states
+  url: 필요
+  from: "세션 D2(AN4) 결과노트"
+  note: "기원전 800~265년 표(사실 판정 행)"
+  legacy: true
+
+- name: "안탈리아"
+  at: [30.71, 36.9]
+  range: [-544, -333]
+  expect: achaemenid-empire
+  url: 필요
+  from: "세션 D2(AN4) 결과노트"
+  note: "기원전 800~265년 표(사실 판정 행)"
+  legacy: true
+
+- name: "시바스"
+  at: [37.02, 39.75]
+  range: [-549, -331]
+  expect: achaemenid-empire
+  url: 필요
+  from: "세션 D2(AN4) 결과노트"
+  note: "기원전 800~265년 표(사실 판정 행)"
+  legacy: true
+
+- name: "코르처"
+  at: [20.78, 40.62]
+  range: [-357, -264]
+  expect: macedonia-kingdom
+  url: 필요
+  from: "세션 D2(AN4) 결과노트"
+  note: "기원전 800~265년 표(사실 판정 행)"
+  legacy: true
+
+- name: "볼로스"
+  at: [22.94, 39.36]
+  range: [-799, -344]
+  expect: greek-city-states
+  url: 필요
+  from: "세션 D2(AN4) 결과노트"
+  note: "기원전 800~265년 표(사실 판정 행)"
+  legacy: true
+
+- name: "발르케시르"
+  at: [27.88, 39.65]
+  range: [-546, -334]
+  expect: achaemenid-empire
+  url: 필요
+  from: "세션 D2(AN4) 결과노트"
+  note: "기원전 800~265년 표(사실 판정 행)"
+  legacy: true
+
+- name: "얌볼"
+  at: [26.51, 42.48]
+  range: [-478, -342]
+  expect: odrysian-kingdom
+  url: 필요
+  from: "세션 D2(AN4) 결과노트"
+  note: "기원전 800~265년 표(사실 판정 행)"
+  legacy: true
+
+- name: "트리칼라"
+  at: [21.77, 39.56]
+  range: [-799, -344]
+  expect: greek-city-states
+  url: 필요
+  from: "세션 D2(AN4) 결과노트"
+  note: "기원전 800~265년 표(사실 판정 행)"
+  legacy: true
+
+- name: "코린토스"
+  at: [22.93, 37.94]
+  range: [-799, -264]
+  expect: greek-city-states
+  url: 필요
+  from: "세션 D2(AN4) 결과노트"
+  note: "기원전 800~265년 표(사실 판정 행)"
+  legacy: true
+
+- name: "트레비네"
+  at: [18.34, 42.71]
+  range: [-429, -264]
+  expect: illyrian-tribes
+  url: 필요
+  from: "세션 D2(AN4) 결과노트"
+  note: "기원전 800~265년 표(사실 판정 행)"
+  legacy: true
+
+- name: "시베니크"
+  at: [15.89, 43.73]
+  range: [-429, -264]
+  expect: illyrian-tribes
+  url: 필요
+  from: "세션 D2(AN4) 결과노트"
+  note: "기원전 800~265년 표(사실 판정 행)"
+  legacy: true
+
+- name: "아레초"
+  at: [11.88, 43.46]
+  range: [-799, -280]
+  expect: etruscan-city-states
+  url: 필요
+  from: "세션 D2(AN4) 결과노트"
+  note: "기원전 800~265년 표(사실 판정 행)"
+  legacy: true
+
+- name: "낙소스"
+  at: [25.47, 37.07]
+  range: [-799, -264]
+  expect: greek-city-states
+  url: 필요
+  from: "세션 D2(AN4) 결과노트"
+  note: "기원전 800~265년 표(사실 판정 행)"
+  legacy: true
+
+- name: "니코메디아"
+  at: [29.92, 40.77]
+  range: [-546, -334]
+  expect: achaemenid-empire
+  url: 필요
+  from: "세션 D2(AN4) 결과노트"
+  note: "기원전 800~265년 표(사실 판정 행)"
+  legacy: true
+
+- name: "쿠타이시"
+  at: [42.7, 42.27]
+  range: [-599, -264]
+  expect: colchis
+  url: 필요
+  from: "세션 D2(AN4) 결과노트"
+  note: "기원전 800~265년 표(사실 판정 행)"
+  legacy: true
+
+- name: "모넴바시아"
+  at: [23.05, 36.69]
+  range: [-799, -264]
+  expect: greek-city-states
+  url: 필요
+  from: "세션 D2(AN4) 결과노트"
+  note: "기원전 800~265년 표(사실 판정 행)"
+  legacy: true
+
+- name: "스폴레토"
+  at: [12.74, 42.73]
+  range: [-799, -280]
+  expect: etruscan-city-states
+  url: 필요
+  from: "세션 D2(AN4) 결과노트"
+  note: "기원전 800~265년 표(사실 판정 행)"
+  legacy: true
+
+- name: "도릴라이온(에스키셰히르)"
+  at: [30.52, 39.78]
+  range: [-546, -333]
+  expect: achaemenid-empire
+  url: 필요
+  from: "세션 D2(AN4) 결과노트"
+  note: "기원전 800~265년 표(사실 판정 행)"
+  legacy: true
+
+- name: "타란토"
+  at: [17.24, 40.47]
+  range: [-705, -272]
+  expect: greek-city-states
+  url: 필요
+  from: "세션 D2(AN4) 결과노트"
+  note: "기원전 800~265년 표(사실 판정 행)"
+  legacy: true
+
+- name: "이틸"
+  at: [47.9, 46.4]
+  range: [-429, -264]
+  expect: sarmatian-alan-tribes
+  url: 필요
+  from: "세션 D2(AN4) 결과노트"
+  note: "기원전 800~265년 표(사실 판정 행)"
+  legacy: true
+
+- name: "시사크"
+  at: [16.37, 45.48]
+  range: [-334, -264]
+  expect: illyrian-tribes
+  url: 필요
+  from: "세션 D2(AN4) 결과노트"
+  note: "기원전 800~265년 표(사실 판정 행)"
+  legacy: true
+
+- name: "아르다한"
+  at: [42.7, 41.11]
+  range: [-298, -264]
+  expect: iberia-kingdom
+  url: 필요
+  from: "세션 D2(AN4) 결과노트"
+  note: "기원전 800~265년 표(사실 판정 행)"
+  legacy: true
+
+- name: "시르미움"
+  at: [19.61, 44.97]
+  range: [-334, -264]
+  expect: illyrian-tribes
+  url: 필요
+  from: "세션 D2(AN4) 결과노트"
+  note: "기원전 800~265년 표(사실 판정 행)"
+  legacy: true
+
+- name: "페트라(라지카)"
+  at: [41.76, 41.77]
+  range: [-599, -264]
+  expect: colchis
+  url: 필요
+  from: "세션 D2(AN4) 결과노트"
+  note: "기원전 800~265년 표(사실 판정 행)"
+  legacy: true
+
+- name: "므츠헤타"
+  at: [44.72, 41.84]
+  range: [-298, -264]
+  expect: iberia-kingdom
+  url: 필요
+  from: "세션 D2(AN4) 결과노트"
+  note: "기원전 800~265년 표(사실 판정 행)"
+  legacy: true
+
+- name: "부다페스트(아퀸쿰)"
+  at: [19.05, 47.5]
+  range: [-334, -264]
+  expect: illyrian-tribes
+  url: 필요
+  from: "세션 D2(AN4) 결과노트"
+  note: "기원전 800~265년 표(사실 판정 행)"
+  legacy: true
+
+- name: "티그라노케르타(실반)"
+  at: [41.01, 38.14]
+  range: [-549, -331]
+  expect: achaemenid-empire
+  url: 필요
+  from: "세션 D2(AN4) 결과노트"
+  note: "기원전 800~265년 표(사실 판정 행)"
+  legacy: true
+
+- name: "스타브로폴"
+  at: [41.97, 45.04]
+  range: [-429, -264]
+  expect: sarmatian-alan-tribes
+  url: 필요
+  from: "세션 D2(AN4) 결과노트"
+  note: "기원전 800~265년 표(사실 판정 행)"
+  legacy: true
+
+- name: "아퀸쿰(부다)"
+  at: [19.05, 47.56]
+  range: [-334, -264]
+  expect: illyrian-tribes
+  url: 필요
+  from: "세션 D2(AN4) 결과노트"
+  note: "기원전 800~265년 표(사실 판정 행)"
+  legacy: true
+
+- name: "미라"
+  at: [29.98, 36.26]
+  range: [-544, -334]
+  expect: achaemenid-empire
+  url: 필요
+  from: "세션 D2(AN4) 결과노트"
+  note: "기원전 800~265년 표(사실 판정 행)"
+  legacy: true
+
+- name: "나로나"
+  at: [17.63, 43.05]
+  range: [-429, -280]
+  expect: illyrian-tribes
+  url: 필요
+  from: "세션 D2(AN4) 결과노트"
+  note: "기원전 800~265년 표(사실 판정 행)"
+  legacy: true
+
+- name: "펠라"
+  at: [22.52, 40.76]
+  range: [-699, -264]
+  expect: macedonia-kingdom
+  url: 필요
+  from: "세션 D2(AN4) 결과노트"
+  note: "기원전 800~265년 표(사실 판정 행)"
+  legacy: true
+
+- name: "도도나"
+  at: [20.79, 39.55]
+  range: [-429, -264]
+  expect: epirus
+  url: 필요
+  from: "세션 D2(AN4) 결과노트"
+  note: "기원전 800~265년 표(사실 판정 행)"
+  legacy: true
+
+- name: "아르고스"
+  at: [22.73, 37.63]
+  range: [-799, -264]
+  expect: greek-city-states
+  url: 필요
+  from: "세션 D2(AN4) 결과노트"
+  note: "기원전 800~265년 표(사실 판정 행)"
+  legacy: true
+
+- name: "할리카르나소스"
+  at: [27.42, 37.04]
+  range: [-544, -334]
+  expect: achaemenid-empire
+  url: 필요
+  from: "세션 D2(AN4) 결과노트"
+  note: "기원전 800~265년 표(사실 판정 행)"
+  legacy: true
+
+- name: "티아나"
+  at: [34.62, 37.83]
+  range: [-549, -331]
+  expect: achaemenid-empire
+  url: 필요
+  from: "세션 D2(AN4) 결과노트"
+  note: "기원전 800~265년 표(사실 판정 행)"
+  legacy: true
+
+- name: "고르디온"
+  at: [31.99, 39.65]
+  range: [-546, -333]
+  expect: achaemenid-empire
+  url: 필요
+  from: "세션 D2(AN4) 결과노트"
+  note: "기원전 800~265년 표(사실 판정 행)"
+  legacy: true
+
+- name: "타르퀴니아"
+  at: [11.76, 42.25]
+  range: [-799, -280]
+  expect: etruscan-city-states
+  url: 필요
+  from: "세션 D2(AN4) 결과노트"
+  note: "기원전 800~265년 표(사실 판정 행)"
+  legacy: true
+
+- name: "크로톤"
+  at: [17.13, 39.08]
+  range: [-705, -272]
+  expect: greek-city-states
+  url: 필요
+  from: "세션 D2(AN4) 결과노트"
+  note: "기원전 800~265년 표(사실 판정 행)"
+  legacy: true
+
+- name: "포세이도니아"
+  at: [15.01, 40.42]
+  range: [-599, -400]
+  expect: greek-city-states
+  url: 필요
+  from: "세션 D2(AN4) 결과노트"
+  note: "기원전 800~265년 표(사실 판정 행)"
+  legacy: true
+
+- name: "세우토폴리스"
+  at: [25.4, 42.62]
+  range: [-478, -342]
+  expect: odrysian-kingdom
+  url: 필요
+  from: "세션 D2(AN4) 결과노트"
+  note: "기원전 800~265년 표(사실 판정 행)"
+  legacy: true
+
+- name: "마자카"
+  at: [35.48, 38.72]
+  range: [-549, -331]
+  expect: achaemenid-empire
+  url: 필요
+  from: "세션 D2(AN4) 결과노트"
+  note: "기원전 800~265년 표(사실 판정 행)"
+  legacy: true
+
+- name: "켈라이나이"
+  at: [30.17, 38.07]
+  range: [-546, -333]
+  expect: achaemenid-empire
+  url: 필요
+  from: "세션 D2(AN4) 결과노트"
+  note: "기원전 800~265년 표(사실 판정 행)"
+  legacy: true
+
+- name: "보로네시"
+  at: [39.2, 51.67]
+  years: [-650, -430]
+  expect: none
+  region: europe
+  url: 필요
+  from: "세션 I1 결과노트"
+  note: "돈강 보로네시 쪽: 기원전 429~280 사르마티아(I1-②)"
+  legacy: true
+
+- name: "보로네시"
+  at: [39.2, 51.67]
+  years: [-429, -300, -280, -279, -264, -263]
+  expect: sarmatian-alan-tribes
+  url: 필요
+  from: "세션 I1 결과노트"
+  note: "돈강 보로네시 쪽: 기원전 429~280 사르마티아(I1-②)"
+  legacy: true
+
+- name: "세밀루키"
+  at: [39.02, 51.69]
+  years: [-650, -430]
+  expect: none
+  region: europe
+  url: 필요
+  from: "세션 I1 결과노트"
+  note: "돈강 보로네시 쪽: 기원전 429~280 사르마티아(I1-②)"
+  legacy: true
+
+- name: "세밀루키"
+  at: [39.02, 51.69]
+  years: [-429, -300, -280]
+  expect: scythian-tribes
+  url: 필요
+  from: "세션 I1 결과노트"
+  note: "돈강 보로네시 쪽: 기원전 429~280 사르마티아(I1-②)"
+  legacy: true
+
+- name: "세밀루키"
+  at: [39.02, 51.69]
+  years: [-279, -264, -263]
+  expect: sarmatian-alan-tribes
+  url: 필요
+  from: "세션 I1 결과노트"
+  note: "돈강 보로네시 쪽: 기원전 429~280 사르마티아(I1-②)"
+  legacy: true
+
+- name: "리스키"
+  at: [39.5, 50.983]
+  years: [-650, -430]
+  expect: none
+  region: europe
+  url: 필요
+  from: "세션 I1 결과노트"
+  note: "돈강 보로네시 쪽: 기원전 429~280 사르마티아(I1-②)"
+  legacy: true
+
+- name: "리스키"
+  at: [39.5, 50.983]
+  years: [-429, -300, -280, -279, -264, -263]
+  expect: sarmatian-alan-tribes
+  url: 필요
+  from: "세션 I1 결과노트"
+  note: "돈강 보로네시 쪽: 기원전 429~280 사르마티아(I1-②)"
+  legacy: true
+
+- name: "파블롭스크"
+  at: [40.07, 50.45]
+  years: [-650, -430]
+  expect: none
+  region: europe
+  url: 필요
+  from: "세션 I1 결과노트"
+  note: "돈강 보로네시 쪽: 기원전 429~280 사르마티아(I1-②)"
+  legacy: true
+
+- name: "파블롭스크"
+  at: [40.07, 50.45]
+  years: [-429, -300, -280]
+  expect: scythian-tribes
+  url: 필요
+  from: "세션 I1 결과노트"
+  note: "돈강 보로네시 쪽: 기원전 429~280 사르마티아(I1-②)"
+  legacy: true
+
+- name: "파블롭스크"
+  at: [40.07, 50.45]
+  years: [-279, -264, -263]
+  expect: sarmatian-alan-tribes
+  url: 필요
+  from: "세션 I1 결과노트"
+  note: "돈강 보로네시 쪽: 기원전 429~280 사르마티아(I1-②)"
+  legacy: true
+
+- name: "보구차르"
+  at: [40.56, 49.94]
+  years: [-650, -430]
+  expect: none
+  region: europe
+  url: 필요
+  from: "세션 I1 결과노트"
+  note: "돈강 보로네시 쪽: 기원전 429~280 사르마티아(I1-②)"
+  legacy: true
+
+- name: "보구차르"
+  at: [40.56, 49.94]
+  years: [-429, -300, -280]
+  expect: scythian-tribes
+  url: 필요
+  from: "세션 I1 결과노트"
+  note: "돈강 보로네시 쪽: 기원전 429~280 사르마티아(I1-②)"
+  legacy: true
+
+- name: "보구차르"
+  at: [40.56, 49.94]
+  years: [-279, -264, -263]
+  expect: sarmatian-alan-tribes
+  url: 필요
+  from: "세션 I1 결과노트"
+  note: "돈강 보로네시 쪽: 기원전 429~280 사르마티아(I1-②)"
+  legacy: true
+
+- name: "움바"
+  at: [34.33, 66.68]
+  years: [1453, 1465, 1466, 1470]
+  expect: none
+  region: europe
+  url: "https://ru.wikipedia.org/wiki/Терский_берег"
+  from: "세션 I1 결과노트"
+  note: "테르스키 해안 1471(I1-④)"
+
+- name: "움바"
+  at: [34.33, 66.68]
+  years: [1471, 1477]
+  expect: novgorod-republic
+  url: "https://ru.wikipedia.org/wiki/Терский_берег"
+  from: "세션 I1 결과노트"
+  note: "테르스키 해안 1471(I1-④)"
+
+- name: "움바"
+  at: [34.33, 66.68]
+  year: 1478
+  expect: grand-duchy-of-moscow
+  url: "https://ru.wikipedia.org/wiki/Терский_берег"
+  from: "세션 I1 결과노트"
+  note: "테르스키 해안 1471(I1-④)"
+
+- name: "바르주가"
+  at: [36.62, 66.4]
+  years: [1453, 1465, 1466, 1470]
+  expect: none
+  region: europe
+  url: "https://ru.wikipedia.org/wiki/Терский_берег"
+  from: "세션 I1 결과노트"
+  note: "테르스키 해안 1471(I1-④)"
+
+- name: "바르주가"
+  at: [36.62, 66.4]
+  years: [1471, 1477]
+  expect: novgorod-republic
+  url: "https://ru.wikipedia.org/wiki/Терский_берег"
+  from: "세션 I1 결과노트"
+  note: "테르스키 해안 1471(I1-④)"
+
+- name: "바르주가"
+  at: [36.62, 66.4]
+  year: 1478
+  expect: grand-duchy-of-moscow
+  url: "https://ru.wikipedia.org/wiki/Терский_берег"
+  from: "세션 I1 결과노트"
+  note: "테르스키 해안 1471(I1-④)"
+
+- name: "칸달락샤"
+  at: [32.41, 67.15]
+  years: [1453, 1465, 1466, 1470]
+  expect: none
+  region: europe
+  url: "https://ru.wikipedia.org/wiki/Терский_берег"
+  from: "세션 I1 결과노트"
+  note: "테르스키 해안 1471(I1-④)"
+
+- name: "칸달락샤"
+  at: [32.41, 67.15]
+  years: [1471, 1477]
+  expect: novgorod-republic
+  url: "https://ru.wikipedia.org/wiki/Терский_берег"
+  from: "세션 I1 결과노트"
+  note: "테르스키 해안 1471(I1-④)"
+
+- name: "칸달락샤"
+  at: [32.41, 67.15]
+  year: 1478
+  expect: grand-duchy-of-moscow
+  url: "https://ru.wikipedia.org/wiki/Терский_берег"
+  from: "세션 I1 결과노트"
+  note: "테르스키 해안 1471(I1-④)"
+
+- name: "노브고로드"
+  at: [31.27, 58.52]
+  years: [1453, 1465, 1466, 1470, 1471, 1477]
+  expect: novgorod-republic
+  url: "https://ru.wikipedia.org/wiki/Терский_берег"
+  from: "세션 I1 결과노트"
+  note: "테르스키 해안 1471(I1-④)"
+
+- name: "노브고로드"
+  at: [31.27, 58.52]
+  year: 1478
+  expect: grand-duchy-of-moscow
+  url: "https://ru.wikipedia.org/wiki/Терский_берег"
+  from: "세션 I1 결과노트"
+  note: "테르스키 해안 1471(I1-④)"
+
+- name: "킬리아"
+  at: [29.27, 45.45]
+  year: 1483
+  expect: moldavia
+  url: "https://en.wikipedia.org/wiki/Moldavian_Campaign_(1484%E2%80%931486)"
+  from: "세션 I1 결과노트"
+  note: "킬리아·아케르만·예디산 1484(I1-⑤)"
+
+- name: "킬리아"
+  at: [29.27, 45.45]
+  years: [1484, 1485, 1486, 1491, 1492]
+  expect: ottoman
+  url: "https://en.wikipedia.org/wiki/Moldavian_Campaign_(1484%E2%80%931486)"
+  from: "세션 I1 결과노트"
+  note: "킬리아·아케르만·예디산 1484(I1-⑤)"
+
+- name: "아케르만"
+  at: [30.35, 46.19]
+  year: 1483
+  expect: moldavia
+  url: "https://en.wikipedia.org/wiki/Moldavian_Campaign_(1484%E2%80%931486)"
+  from: "세션 I1 결과노트"
+  note: "킬리아·아케르만·예디산 1484(I1-⑤)"
+
+- name: "아케르만"
+  at: [30.35, 46.19]
+  years: [1484, 1485, 1486, 1491, 1492]
+  expect: ottoman
+  url: "https://en.wikipedia.org/wiki/Moldavian_Campaign_(1484%E2%80%931486)"
+  from: "세션 I1 결과노트"
+  note: "킬리아·아케르만·예디산 1484(I1-⑤)"
+
+- name: "오데사"
+  at: [30.73, 46.48]
+  year: 1483
+  expect: lithuania-grand-duchy
+  url: "https://en.wikipedia.org/wiki/Moldavian_Campaign_(1484%E2%80%931486)"
+  from: "세션 I1 결과노트"
+  note: "킬리아·아케르만·예디산 1484(I1-⑤)"
+
+- name: "오데사"
+  at: [30.73, 46.48]
+  years: [1484, 1485, 1486, 1491, 1492]
+  expect: ottoman
+  url: "https://en.wikipedia.org/wiki/Moldavian_Campaign_(1484%E2%80%931486)"
+  from: "세션 I1 결과노트"
+  note: "킬리아·아케르만·예디산 1484(I1-⑤)"
+
+- name: "티라스폴"
+  at: [29.63, 46.84]
+  years: [1483, 1484, 1485, 1486, 1491, 1492]
+  expect: moldavia
+  url: "https://en.wikipedia.org/wiki/Moldavian_Campaign_(1484%E2%80%931486)"
+  from: "세션 I1 결과노트"
+  note: "킬리아·아케르만·예디산 1484(I1-⑤)"

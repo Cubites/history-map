@@ -371,6 +371,17 @@ GeoJSON은 QGIS에서 바로 열어 볼 수 있고, 텍스트 파일이라 git�
 
 - **중러 국경과 외만주 (2026-10-09, 작업 C1)**: 흑룡강(`L_AMUR`)·우수리강(`L_USSURI`)이 8점·4점 직선이라 강줄기와 수십 km 어긋나던 것(헤이허가 러시아 쪽, 푸위안이 1691~1857년 빈 땅, 만저우리 북쪽 `L_AMUR` 끝 구간이 최대 약 58km 북쪽이라 자바이칼스크 일대 약 6,400km²가 1691년부터 청·중국 쪽)을 Natural Earth 10m admin-1의 중러 국경에서 뽑은 선(`shared.mjs`의 `L_USSURI`·`L_FUYUAN`·`L_AMUR_KH`·`L_AMUR_UP`·`L_ARGUN`)으로 바꿨다. 외만주(`OUTER_MANCHURIA`, 서쪽 끝은 네르친스크 조약의 고르비차강, 남쪽은 실카강·흑룡강)를 1689~1857년 청 땅으로(1858~1859년은 흑룡강 하류 오른쪽 기슭 약 9.6만 km²도 아이훈 조약의 공동 관리지라 청) 칠해 만주 구역의 1691~1857년 흑룡강 북쪽 띠(7,590km²)가 없어졌고, 1691~1859년 비던 하바롭스크 동쪽 흑룡강 하류 오른쪽 기슭(구역 밖, 약 1.6만 km²)도 청으로 채웠다. **일부러 비워 둔 곳**: 네르친스크 조약이 정하지 않고 남긴 우다강 유역(`UDA`, 약 4.1만 km²)과 샨타르 제도(1689~1857, 구역 밖). 3국 접경(`MN_TRIPOINT`)은 몽골 초원이 함께 써서 옮기지 않았다(실제와 약 3km).
 
+### 5.6 지형 테스트와 부분 빌드 (2026-10-13 추가)
+
+작업마다 되풀이하던 확인(지점 판정, 빈 땅·겹침, 1만 km² 변화와 사건 잇기)을 `npm run test:geo` 한 명령으로 묶고, 전체 빌드(`build:data` 6~18분) 대신 필요한 부분만 빌드한다. 사용법은 `docs/guides/border.md` 5.1.
+
+- **검사 모음** (`scripts/test-geo/`): 러너 `index.ts`가 `checks/*.ts`(각 파일이 `export const checks: Check[]`, 꼴은 `types.ts`)를 불러 돌리고, 검사가 낸 항목을 열쇠(`key`)로 ① 허용 목록(`data/tests/allow/<파일>.yaml`, 이유 필수) ② 기준선(`data/tests/baseline/<검사 id>.txt`) ③ 나머지는 새 실패로 가른다. 종료 코드 0(통과)·1(새 실패)·2(인자 오류·검사 예외). 요약은 15줄 안, 자세한 것은 `.cache/test-geo/report.md`·`report.json`.
+- **검사**: `places`(정답표 지점: 평소 지도·전쟁 보기) · `gaps`(빈 땅, `check:gaps`와 같은 칸·캐시) · `overlap`(겹침, `check:data`와 캐시 공유) · `strips`(가는 띠) · `zero`(넓이 0 조각) · `islands`(사라진 섬) · `gen`(`data/geo`가 생성기 결과와 같은가, `--ci`일 때만) · `events`(성립·소멸·1만 km² 버전 해와 사건 연결) · `lines`(손그림 선과 Natural Earth 강 사이의 거리). 옛 빚(gaps 734칸·strips·zero·islands)은 기준선에 두고 새로 생기는 것만 실패로 센다. gaps는 총넓이가 기준선보다 500km² 넘게 늘거나(고정 여유) 큰 조각 3개 가운데 기준선에 없는 상자가 나타나면 실패이고, `--years`를 좁혀도 범위 시작에 이미 효력이 있는 상태를 본다. lines는 최대 거리 허용에 더해 꼬리표의 `평균 M km`을 넘는 평균도 실패로 센다. 검사가 사정이 안 맞아 건너뛴 항목(결과가 낡은 전쟁 지점)은 머리 줄에 `건너뜀 N`으로 보이고 `--ci`에서는 실패다. 정답표는 지금 지도와 같은 점만 넣은 회귀 시험이다(지도가 맞다는 사실 확인이 아님). `url: 필요`+`legacy: true` 지점은 근거 확인 전이고, 근거 URL은 그 절의 대표 근거일 수 있어 지점마다의 근거가 아닐 수 있다. 지금 지도와 다른 지점은 `_review-needed.yaml`에 있다(러너가 읽지 않음).
+- **캐시**: 자르기·겹침·빈 땅은 `check:data`·`check:gaps`와 같은 `.cache/build-data` 열쇠를 쓰므로 따뜻하면 새 계산이 없다. 사건 대칭차는 `.cache/test-geo/xor/`. 전체는 캐시가 따뜻할 때 약 1분(`--ci` 포함 약 1분 10초), 처음 `events`는 약 1분 반 더. 캐시 열쇠가 읽는 `cache.ts`·`tasks.ts`·`geo.ts`·`worker.ts`·`check-gaps.ts`는 고치면 캐시 전체가 무효가 되니 건드리지 않는다.
+- **부분 빌드** (`scripts/build-data/index.ts` 머리 주석): `--war <id>[,<id>]`(그 전쟁만 다시 만들고 `wars.json`의 그 항목만 바꿈) · `--no-wars`(전쟁 빼고 전부) · `--events-only`(사건·나라 JSON만) · `--check --region <r>`(겹침·월경지를 그 권역만). 전쟁 장면 계산은 장면마다 `.cache/build-data-wars/`(`war-cache.ts`)에 저장해, 캐시가 따뜻하면 전쟁 전체가 약 6초(세계 대전 2 하나가 캐시 없이 약 4분 20초). 장면 열쇠에는 실제로 자르는 육지 자료의 내용 열쇠가 들어가 육지 파일·`loadLand`·topojson-client 판·축척이 바뀌면 낡은 장면을 쓰지 않는다. 전쟁 결과가 지금 입력의 것인지는 `build:data`가 남기는 `.cache/build-data-wars/built.json`(전쟁별 입력 해시·출력 해시, `war-inputs.ts`)으로 places가 판정한다(파일 시각을 보지 않음). 부분 빌드는 `rm(public/data)`를 부르지 않는다.
+- **강 기준선**: `npm run prep:rivers`가 Natural Earth 10m 강(퍼블릭 도메인)에서 꼬리표가 가리키는 강만 뽑아 `data/base/rivers/rivers.geojson`에 둔다. 출처는 `CREDITS.md`.
+- **CI**: `.github/workflows/test-geo.yml`이 push(main)·PR·수동 실행에서 `.cache`를 복원하고 `build:data` → `test:geo -- --ci`를 돌려 보고서를 올린다. 캐시는 `actions/cache/restore`와 `if: always()`인 `cache/save`로 나눠, 새 실패가 있는 실행에서도 저장한다(첫 실행은 호스트 러너에서 20분~1시간 넘게 걸릴 수 있어 job 150분·단계별 제한을 두었고, 처음 한 번 `workflow_dispatch`로 시간을 재 둔다). 배포(`deploy.yml`)와 따로 돌며 배포를 막지 않는다(처음 2주 보고만, 그 뒤 막을지 정함).
+
 ## 6. 화면과 상호작용
 
 ```

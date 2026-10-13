@@ -262,6 +262,28 @@ theaters:
 - `점령 지역이 비어 있음` → 그 해에 그 나라 영토가 없거나, GeoJSON이 육지와 겹치지 않습니다.
 - `사건 ...: ...에 날짜 스냅샷이 없음` → 사건의 `front.date`가 스냅샷 날짜와 정확히 같아야 합니다.
 
+## 5.7 지형 정답표 쓰는 법 (`data/tests/places/*.yaml`)
+
+`npm run test:geo`의 `places` 검사가 읽는 지점 표다. 국경·전선을 고칠 때 확인한 지점은 표에 한 줄씩 남겨 다음 작업이 같은 실수를 하지 않게 한다. 파일 이름이 `_`로 시작하면 읽지 않는다(`_review-needed.yaml`: 지금 지도와 달라 검토를 기다리는 지점).
+
+```yaml
+- name: 서울                       # 필수
+  at: [126.98, 37.57]              # [경도, 위도] 필수
+  year: 1592                       # 평소 지도: year, years: [..], range: [from, to](양끝 포함, 주인이 바뀌는 해마다 확인) 중 하나
+  expect: joseon                   # 항목 id, [id, id](이 중 하나), none(아무 항목도 덮지 않음)
+  region: east-asia                # expect: none일 때 함께 적는다(--region 거르기에 필요)
+  url: https://ko.wikipedia.org/wiki/…   # 필수: 그 판정의 근거. 옛 지점만 `url: 필요` + `legacy: true`
+  from: 세션 FIX5a 결과노트          # 필수: 어디서 왔는가
+  tolerance: 2                     # 선택 km: 기대 항목 경계까지 이 거리 안이면 통과 (경계 가까운 지점)
+  note: …                          # 선택
+# 전쟁 보기는 year 대신:  war: world-war-2 / date: "1943-07-10"(장면 날짜와 똑같이) / theater: europe(전역이 여럿일 때)
+#   expect: 진영 id · none · front(어느 진영 경계든 tolerance 안, 기본 5km)
+```
+- **정답표가 보증하는 것**: 정답표는 지금 지도와 같은 점만 넣은 회귀 시험이다(지도가 맞다는 사실 확인이 아님). `url: 필요`+`legacy: true` 지점은 근거 확인 전이고, 근거 URL은 그 절의 대표 근거일 수 있어 지점마다의 근거가 아닐 수 있다. 지금 지도와 다른 지점은 `_review-needed.yaml`에 있다(러너가 읽지 않음). 새로 확인한 지점만 지점마다 근거 URL을 붙인다.
+- 좌표는 육지 안쪽 도시를 쓴다(해안 밖은 data/geo 원자료로 판정하므로 바다 지점에 `none`을 쓰지 않는다). 겹침은 기대 항목 중 하나라도 덮으면 통과, 전쟁은 겹치면 마지막 진영.
+- 열쇠는 평소 `<해> <이름> [경도,위도]`, 전쟁 `<전쟁>/<전역> <날짜> <이름> [경도,위도]`. 허용 목록에는 이 열쇠를 적는다(`data/tests/allow/places.yaml`, 끝 `*` 하나는 앞부분 일치).
+- 모르는 필드·없는 항목 id·중복·URL 없음은 스키마 실패로 나온다. 선 기준선은 `scripts/geo`의 `L_` 상수 위에 `// @기준선 강 <키> [구간 i-j] [허용 N km] [평균 M km]`를 달고 `export` 한다(평균은 지금 평균을 소수 1자리로 올려 적어 두면 최대가 허용 안이어도 선이 나빠지는 것을 잡는다)(문법은 `scripts/test-geo/checks/lines.ts` 머리 주석, 키는 `scripts/prep-rivers.mjs`).
+
 ## 6. 검증 메시지 읽는 법
 
 `npm run check:data`는 문제가 있으면 **오류**(빌드 실패)와 **경고**(빌드는 됨)를 보여 줍니다.
