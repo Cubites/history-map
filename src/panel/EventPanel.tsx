@@ -12,6 +12,8 @@ const CLICK_DISTANCE = 4;
 
 export function EventPanel({ data }: { data: StaticData }) {
   const year = useAppStore((s) => s.year);
+  // 사건 목록과 '이 시기의 전쟁'은 목록 기준 연도로 고른다. 사건을 눌러 지도를 옮겨도 목록이 바뀌지 않게 (listYear)
+  const listYear = useAppStore((s) => s.listYear ?? s.year);
   const selectedId = useAppStore((s) => s.selectedId);
   const showAll = useAppStore((s) => s.showAllEvents);
   const setShowAll = useAppStore((s) => s.setShowAllEvents);
@@ -74,10 +76,10 @@ export function EventPanel({ data }: { data: StaticData }) {
   }
 
   const all = eventsOf(data.events, entity.id);
-  const current = all.filter((e) => inDecade(e, year));
+  const current = all.filter((e) => inDecade(e, listYear));
   const shown = showAll ? all : current;
-  const before = [...all].reverse().find((e) => (e.endYear ?? e.year) < year && !inDecade(e, year));
-  const after = all.find((e) => e.year > year && !inDecade(e, year));
+  const before = [...all].reverse().find((e) => (e.endYear ?? e.year) < listYear && !inDecade(e, listYear));
+  const after = all.find((e) => e.year > listYear && !inDecade(e, listYear));
   // 앞뒤 사건으로 옮길 때 이 나라가 있던 해로 맞춘다(사건 연도에 이 나라가 없을 수 있음, eventYearFor)
   const jumpTo = (e: HistoryEvent) => setYear(eventYearFor(e, entity, e.year) ?? e.year);
   const successors = data.relations
@@ -85,7 +87,7 @@ export function EventPanel({ data }: { data: StaticData }) {
     .map((r) => ({ relation: r, entity: data.entities.get(r.subject) }))
     .filter((s) => s.entity);
   // 이 나라가 참전한 전쟁 중 지금 보는 10년 구간과 겹치는 것 (DESIGN.md §4.5)
-  const decade = Math.floor(year / 10) * 10;
+  const decade = Math.floor(listYear / 10) * 10;
   const wars = warsOf(data.wars, entity.id, decade, decade + 9);
   const occupation = occupierAt(data.relations, entity.id, year);
   const occupier = occupation && data.entities.get(occupation.object);
@@ -201,7 +203,7 @@ export function EventPanel({ data }: { data: StaticData }) {
       )}
 
       <div className="panel-section-title">
-        <h3>{showAll ? '전체 사건' : year < data.timeline.range[0] ? `${prehistoryStage(year).name}` : `${formatDecade(year)} 사건`}</h3>
+        <h3>{showAll ? '전체 사건' : listYear < data.timeline.range[0] ? `${prehistoryStage(listYear).name}` : `${formatDecade(listYear)} 사건`}</h3>
         {all.length > 0 && (
           <button type="button" className="link-button" onClick={() => setShowAll(!showAll)}>
             {showAll ? '현재 구간만 보기' : `전체 사건 보기 (${all.length})`}
@@ -228,7 +230,7 @@ export function EventPanel({ data }: { data: StaticData }) {
       ) : (
         <ol className="event-list">
           {shown.map((event) => (
-            <EventItem key={event.id} event={event} data={data} selectedId={entity.id} highlight={showAll && inDecade(event, year)} />
+            <EventItem key={event.id} event={event} data={data} selectedId={entity.id} highlight={showAll && inDecade(event, listYear)} />
           ))}
         </ol>
       )}
@@ -302,6 +304,7 @@ function EntityAbout({ summary, note }: { summary?: string; note?: string }) {
 function EventItem({ event, data, selectedId, highlight }: { event: HistoryEvent; data: StaticData; selectedId: string; highlight: boolean }) {
   const hoverEvent = useAppStore((s) => s.hoverEvent);
   const pinEvent = useAppStore((s) => s.pinEvent);
+  const holdList = useAppStore((s) => s.holdList);
   const hovered = useAppStore((s) => s.hoveredEventId === event.id);
   const pinned = useAppStore((s) => s.pinnedEventId === event.id);
   const focused = useAppStore((s) => s.focusedEventId === event.id);
@@ -321,7 +324,10 @@ function EventItem({ event, data, selectedId, highlight }: { event: HistoryEvent
   const inCurrentView = !!event.front && event.front.war === warId && (event.front.theater ?? war?.theaters[0].id) === (theaterId ?? war?.theaters[0].id);
   const activate = () => {
     // 이미 고정한 사건을 다시 누르면 고정을 푼다. 연도 이동(setYear 등)이 고정을 지우므로 누르기 전 상태를 먼저 본다
-    const wasPinned = useAppStore.getState().pinnedEventId === event.id;
+    const before = useAppStore.getState();
+    const wasPinned = before.pinnedEventId === event.id;
+    // 지도는 사건의 해로 옮기되 목록은 누르기 전 구간에 둔다. 구간이 바뀌면 누른 사건 위에 앞 구간 사건이 끼어들어 목록이 밀린다 (listYear)
+    const listYear = before.listYear ?? before.year;
     // 전쟁 보기 중이면 그 전쟁의 사건은 그 날짜의 전선으로 옮긴다 (DESIGN.md §4.5)
     if (event.front && inCurrentView) setFront(yearOfFrontDate(event.front.date), event.front.date);
     else if (event.front && event.front.war === warId) openFront();
@@ -335,6 +341,7 @@ function EventItem({ event, data, selectedId, highlight }: { event: HistoryEvent
       pinEvent(null);
       hoverEvent(null);
     } else pinEvent(event.id);
+    holdList(listYear);
   };
 
   // 평소에는 기간과 제목만 보이고, 눌러서 고정한 사건만 자세한 내용을 펼친다(2026-10-13). 마우스를 올리기만 해서는 펼치지 않는다

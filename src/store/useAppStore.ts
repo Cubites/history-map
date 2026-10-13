@@ -6,6 +6,12 @@ const DEFAULT_YEAR = 640;
 
 interface AppState {
   year: number;
+  /**
+   * 사건 목록을 고르는 기준 연도. null이면 year를 따른다(2026-10-13).
+   * 패널에서 사건을 눌러 지도를 그 사건의 해로 옮길 때는 목록을 누르기 전 구간에 붙잡아 둔다(holdList).
+   * 그러지 않으면 구간이 바뀌어 누른 사건 위에 앞 구간 사건이 갑자기 끼어든다. 사용자가 연표·검색 등으로 직접 옮기면 풀린다
+   */
+  listYear: number | null;
   selectedId: string | null;
   hoveredEventId: string | null;
   /**
@@ -46,6 +52,8 @@ interface AppState {
   focusEvent: (entityId: string, eventId: string) => void;
   hoverEvent: (id: string | null) => void;
   pinEvent: (id: string | null) => void;
+  /** 사건 목록을 이 연도의 구간에 붙잡아 둔다 (listYear) */
+  holdList: (year: number) => void;
   setShowAllEvents: (value: boolean) => void;
   /** 권역 필터를 고른다. 지도 이동(regionFocus)도 함께 요청한다 */
   setRegionFilter: (filter: RegionFilter) => void;
@@ -75,16 +83,18 @@ export const useAppStore = create<AppState>((set) => ({
   focusedEventId: null,
   showAllEvents: false,
   regionFocus: 0,
-  setYear: (year) => set({ year, hoveredEventId: null, pinnedEventId: null, focusedEventId: null, frontDate: null }),
-  setFront: (year, frontDate) => set({ year, frontDate }),
+  listYear: null,
+  setYear: (year) => set({ year, listYear: null, hoveredEventId: null, pinnedEventId: null, focusedEventId: null, frontDate: null }),
+  setFront: (year, frontDate) => set({ year, frontDate, listYear: null }),
   enterWar: (warId, theaterId, year, frontDate) =>
-    set((s) => ({ warId, theaterId, year, frontDate, hoveredEventId: null, pinnedEventId: null, returnYear: s.warId ? s.returnYear : s.year })),
+    set((s) => ({ warId, theaterId, year, frontDate, listYear: null, hoveredEventId: null, pinnedEventId: null, returnYear: s.warId ? s.returnYear : s.year })),
   exitWar: () =>
-    set((s) => ({ warId: null, theaterId: null, frontDate: null, hoveredEventId: null, pinnedEventId: null, year: s.returnYear ?? s.year, returnYear: null })),
-  select: (selectedId) => set({ selectedId, hoveredEventId: null, pinnedEventId: null, focusedEventId: null, showAllEvents: false }),
-  focusEvent: (selectedId, eventId) => set({ selectedId, hoveredEventId: null, pinnedEventId: eventId, focusedEventId: eventId, showAllEvents: false }),
+    set((s) => ({ warId: null, theaterId: null, frontDate: null, listYear: null, hoveredEventId: null, pinnedEventId: null, year: s.returnYear ?? s.year, returnYear: null })),
+  select: (selectedId) => set({ selectedId, listYear: null, hoveredEventId: null, pinnedEventId: null, focusedEventId: null, showAllEvents: false }),
+  focusEvent: (selectedId, eventId) => set({ selectedId, listYear: null, hoveredEventId: null, pinnedEventId: eventId, focusedEventId: eventId, showAllEvents: false }),
   hoverEvent: (hoveredEventId) => set({ hoveredEventId }),
   pinEvent: (pinnedEventId) => set({ pinnedEventId }),
+  holdList: (listYear) => set({ listYear }),
   setShowAllEvents: (showAllEvents) => set({ showAllEvents }),
   setRegionFilter: (regionFilter) => set((s) => ({ regionFilter, regionFocus: s.regionFocus + 1 })),
 }));
