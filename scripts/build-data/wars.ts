@@ -2,7 +2,10 @@
 // 장면(스냅샷) 하나의 계산은 computeScene이고, 결과는 war-cache.ts가 .cache/build-data-wars/에 둔다(바뀐 장면만 다시 계산, 2026-10-13)
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
-import type { FeatureCollection, MultiPolygon, Polygon } from 'geojson';
+import type { Feature, FeatureCollection, MultiPolygon, Polygon } from 'geojson';
+import { feature } from 'topojson-client';
+import { topology } from 'topojson-server';
+import type { Topology } from 'topojson-specification';
 import { parse as parseYaml } from 'yaml';
 import {
   WarSchema,
@@ -30,6 +33,7 @@ import {
   type BBox,
   type MultiCoords,
   type PolygonCoords,
+  type Ring,
 } from './geo.ts';
 
 /** 날짜 비교용 수 (기원전 날짜도 순서대로) */
@@ -197,6 +201,141 @@ function dropSlivers(coords: MultiCoords): MultiCoords {
   return coords.filter((polygon) => ringArea(polygon[0] as [number, number][]) > 1e-5);
 }
 
+/** 점 p에서 선분 ab까지 거리(km). p 위도의 등장방형 근사 (수 km 허용 오차를 재는 데 충분) */
+function segmentKm(p: number[], a: number[], b: number[]): number {
+  const kx = 111.32 * Math.cos((p[1] * Math.PI) / 180);
+  const ky = 110.57;
+  const [ax, ay, bx, by] = [(a[0] - p[0]) * kx, (a[1] - p[1]) * ky, (b[0] - p[0]) * kx, (b[1] - p[1]) * ky];
+  const [dx, dy] = [bx - ax, by - ay];
+  const len2 = dx * dx + dy * dy;
+  const t = len2 > 0 ? Math.max(0, Math.min(1, -(ax * dx + ay * dy) / len2)) : 0;
+  return Math.hypot(ax + t * dx, ay + t * dy);
+}
+
+/** 더글러스-포이커: 양 끝은 남기고, 남긴 선에서 km보다 멀리 벗어난 점이 없을 때까지 점을 고른다 (되부름 대신 쌓기) */
+function douglasPeucker(line: number[][], km: number): number[][] {
+  if (line.length <= 2) return line;
+  const keep = new Uint8Array(line.length);
+  keep[0] = keep[line.length - 1] = 1;
+  const stack: [number, number][] = [[0, line.length - 1]];
+  while (stack.length) {
+    const [i, j] = stack.pop()!;
+    let far = -1;
+    let best = km;
+    for (let k = i + 1; k < j; k++) {
+      const d = segmentKm(line[k], line[i], line[j]);
+      if (d > best) [best, far] = [d, k];
+    }
+    if (far < 0) continue;
+    keep[far] = 1;
+    stack.push([i, far], [far, j]);
+  }
+  return line.filter((_, k) => keep[k]);
+}
+
+/**
+ * 진영 사이 경계 맞추기(노딩): 한 진영의 꼭짓점이 다른 진영 고리의 변 위(eps° 안, 양 끝 점 근처는 빼고)에 있으면 그 변에 끼워 넣는다.
+ * 점령 지역은 뒤 지역을 뺀 차집합이라 앞 지역 경계에는 뒤 지역 변 위의 교차점이 있지만 뒤 지역에는 그 점이 없다. 그대로 토폴로지로
+ * 묶으면 그 둘레가 양쪽에서 따로 줄어 진영 사이에 가는 삼각형 겹침·틈이 생겼다(시험: 뉴기니 전선에서 한 장면 34 km²).
+ * eps는 반올림(소수 셋째 자리) 오차를 덮는 0.002°(약 200m)
+ */
+function nodeFactions(factions: MultiCoords[], eps = 2e-3): MultiCoords[] {
+  const CELL = 0.1;
+  const at = (v: number) => Math.floor(v / CELL);
+  // 변 색인: 칸 → 변(진영·조각·고리·변 번호). 변은 eps만큼 넓힌 범위가 걸치는 칸마다 넣는다
+  const grid = new Map<string, [number, number, number, number][]>();
+  factions.forEach((mp, f) =>
+    mp.forEach((poly, p) =>
+      poly.forEach((ring, r) => {
+        for (let i = 0; i + 1 < ring.length; i++) {
+          const [a, b] = [ring[i], ring[i + 1]];
+          for (let x = at(Math.min(a[0], b[0]) - eps); x <= at(Math.max(a[0], b[0]) + eps); x++)
+            for (let y = at(Math.min(a[1], b[1]) - eps); y <= at(Math.max(a[1], b[1]) + eps); y++) {
+              const key = `${x},${y}`;
+              if (!grid.has(key)) grid.set(key, []);
+              grid.get(key)!.push([f, p, r, i]);
+            }
+        }
+      }),
+    ),
+  );
+  // 끼워 넣을 점: 변 → [변 위 위치 t, 점]
+  const inserts = new Map<string, [number, number[]][]>();
+  const near = (u: number[], v: number[]) => Math.abs(u[0] - v[0]) < eps && Math.abs(u[1] - v[1]) < eps;
+  factions.forEach((mp, f) =>
+    mp.forEach((poly) =>
+      poly.forEach((ring) => {
+        for (const v of ring) {
+          for (const [g, p, r, i] of grid.get(`${at(v[0])},${at(v[1])}`) ?? []) {
+            if (g === f) continue;
+            const [a, b] = [factions[g][p][r][i], factions[g][p][r][i + 1]];
+            if (near(v, a) || near(v, b)) continue;
+            const [dx, dy] = [b[0] - a[0], b[1] - a[1]];
+            const t = ((v[0] - a[0]) * dx + (v[1] - a[1]) * dy) / (dx * dx + dy * dy);
+            if (!(t > 0 && t < 1) ||Math.hypot(a[0] + t * dx - v[0], a[1] + t * dy - v[1]) >= eps) continue;
+            const key = `${g},${p},${r},${i}`;
+            if (!inserts.has(key)) inserts.set(key, []);
+            inserts.get(key)!.push([t, v]);
+          }
+        }
+      }),
+    ),
+  );
+  if (!inserts.size) return factions;
+  return factions.map((mp, f) =>
+    mp.map((poly, p) =>
+      poly.map((ring, r) => {
+        const out: Ring = [];
+        const push = (v: Ring[number]) => {
+          const last = out[out.length - 1];
+          if (!last || last[0] !== v[0] || last[1] !== v[1]) out.push(v);
+        };
+        ring.forEach((v, i) => {
+          push(v);
+          const extra = inserts.get(`${f},${p},${r},${i}`);
+          if (extra) for (const [, u] of extra.sort((x, y) => x[0] - y[0])) push(u);
+        });
+        return out;
+      }),
+    ),
+  );
+}
+
+/**
+ * 전역 simplify(km): 한 장면의 진영 덩어리를 한 토폴로지(topojson-server, topo.ts의 LOD와 같은 방법)로 묶고 경계선(arc)마다
+ * 더글러스-포이커로 줄인다. 두 진영이 맞닿은 선은 한 arc라 양쪽이 똑같이 줄어 진영 사이에 틈·겹침이 생기지 않고(먼저 nodeFactions로 꼭짓점을 맞춤),
+ * arc의 양 끝(세 덩어리 이상이 만나는 점)은 그대로 남는다. 넓이 기준인 topojson-simplify 대신 거리 기준을 쓴 것은 허용 오차를 km로 적기 위해서다.
+ * 줄인 뒤 점이 4개 미만이거나 넓이가 거의 0인 고리는 빼고(바깥 고리가 빠지면 그 조각째), 줄이며 생긴 자기 교차·자기 접촉은
+ * 반올림 → 자기 자신과 합집합을 결과가 안 변할 때까지(최대 3번) 되풀이해 푼다. 결과는 반올림(소수 셋째 자리)된 좌표다
+ */
+export function simplifyFactions(byFaction: Map<string, MultiCoords>, km: number): Map<string, MultiCoords> {
+  const ids = [...byFaction.keys()].filter((f) => byFaction.get(f)!.length);
+  const noded = nodeFactions(ids.map((f) => roundCoords(byFaction.get(f)!, 3)));
+  const topo = topology(
+    Object.fromEntries(ids.map((f, i) => [f, { type: 'MultiPolygon', coordinates: noded[i] } as MultiPolygon])),
+  ) as unknown as Topology;
+  topo.arcs = topo.arcs.map((arc) => douglasPeucker(arc, km) as typeof arc);
+  const ok = (ring: Ring) => ring.length >= 4 && ringArea(ring as [number, number][]) > 1e-5;
+  const out = new Map(byFaction);
+  for (const f of ids) {
+    const geom = (feature(topo, topo.objects[f]) as Feature<Polygon | MultiPolygon | null>).geometry;
+    let coords: MultiCoords = (geom ? toMulti(geom) : []).flatMap(([outer, ...holes]) => (ok(outer) ? [[outer, ...holes.filter(ok)]] : []));
+    for (let n = 0; n < 3 && coords.length; n++) {
+      const next = roundCoords(union(coords), 3);
+      const same = JSON.stringify(next) === JSON.stringify(coords);
+      coords = next;
+      if (same) break;
+    }
+    out.set(f, coords);
+  }
+  // 그래도 남은 겹침(입력에 이미 있던 폭이 거의 0인 가시 둘레 등, 시험에서 한 장면 14 km²)은 뒤 진영이 이기도록 앞 진영에서 뺀다
+  for (let i = 0; i + 1 < ids.length; i++) {
+    const later = ids.slice(i + 1).map((f) => out.get(f)!).filter((c) => c.length);
+    if (later.length && out.get(ids[i])!.length) out.set(ids[i], roundCoords(difference(out.get(ids[i])!, union(...later)), 3));
+  }
+  return out;
+}
+
 async function readAreaGeojson(file: string, errors: string[]): Promise<MultiCoords> {
   try {
     const fc = JSON.parse(await readFile(file, 'utf8')) as FeatureCollection;
@@ -261,6 +400,8 @@ async function computeScene(w: RegionalWar, t: RegionalWar['theaters'][number], 
     const box = boundsBox(t.bounds);
     for (const [faction, coords] of byFaction) byFaction.set(faction, intersect(coords, box));
   }
+  // 전역 simplify(km)를 정했으면 진영 덩어리를 함께 줄인다 (이름표·범위도 줄인 도형으로 정함)
+  if (t.simplify) for (const [faction, coords] of simplifyFactions(byFaction, t.simplify)) byFaction.set(faction, coords);
   const areas = [...byFaction].map(([faction, coords]) => ({
     faction,
     coords: rewindForD3(dropSlivers(roundCoords(coords, 3))) as [number, number][][][],
@@ -297,6 +438,7 @@ function sceneKey(w: RegionalWar, t: RegionalWar['theaters'][number], s: Regiona
     areas: s.areas,
     replaces: t.replaces,
     bounds: t.bounds ?? null,
+    simplify: t.simplify ?? null,
     factions: w.factions.map((f) => [f.id, f.entity]),
     entities: s.areas.map((a) => a.entities?.map((id) => [id, territoryKey(geo, id, year)]) ?? null),
     region: s.split ? t.replaces.map((id) => [id, territoryKey(geo, id, from)]) : null,
@@ -356,6 +498,8 @@ export async function buildWars(wars: RegionalWar[], geo: WarGeoSources, errors:
         replaces: t.replaces,
         ...(t.region ? { region: t.region } : {}),
         marker: t.marker ?? [(first[0] + first[2]) / 2, (first[1] + first[3]) / 2],
+        // 숨길 때만 적는다 (다른 전역의 wars.json 출력은 그대로). simplify는 빌드에서만 쓰므로 내보내지 않는다
+        ...(t.hideMarker ? { hideMarker: true as const } : {}),
         bounds: t.bounds ?? [[all[0] - 1.5, all[1] - 1], [all[2] + 1.5, all[3] + 1]],
         routes: t.routes,
         battles: [...t.battles].sort((a, b) => dateKey(a.date) - dateKey(b.date)),

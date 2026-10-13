@@ -217,6 +217,13 @@ export const TheaterSchema = z.object({
   marker: LonLatSchema.optional(),
   /** 전쟁 보기를 열 때 확대할 범위 [[서, 남], [동, 북]]. 없으면 점령 지역 범위에 여백을 둔다 */
   bounds: z.tuple([LonLatSchema, LonLatSchema]).optional(),
+  /**
+   * 점령 지역 도형 단순화 허용 오차(km). 장면마다 진영 덩어리를 한 토폴로지로 묶어 경계선을 이 오차 안에서 줄인다
+   * (맞닿은 진영 경계는 양쪽이 똑같이 줄어 틈·겹침이 없음). 넓은 범위를 거칠게 보는 전역용(예: 제2차 세계 대전의 세계 개관). 없으면 줄이지 않는다
+   */
+  simplify: z.number().positive().optional(),
+  /** true면 평소 지도에 이 전역의 전쟁 표시를 두지 않는다. 전쟁 보기 안의 전역 버튼으로만 들어간다 (예: 세계 개관) */
+  hideMarker: z.boolean().optional(),
   routes: z.array(RouteSchema).default([]),
   battles: z.array(BattleSchema).default([]),
   snapshots: z.array(FrontSnapshotSchema).min(1),
@@ -268,6 +275,8 @@ export interface TheaterOut {
   /** 전역의 권역. 없으면 전쟁의 권역 */
   region?: string;
   marker: LonLat;
+  /** 평소 지도에 전쟁 표시를 두지 않음 (true일 때만 있다) */
+  hideMarker?: true;
   bounds: [[number, number], [number, number]];
   routes: Route[];
   battles: Battle[];

@@ -1,8 +1,8 @@
 // 전쟁 장면 계산 캐시 (세션 T, 2026-10-13): wars.ts의 buildWars가 장면(스냅샷)마다 하는 polyclip 합·차·교 계산 결과를 .cache/build-data-wars/에 둔다.
 // 전쟁 장면 계산은 build:data의 가장 큰 몫(world-war-2 약 245초, 전체 약 5분)이고 장면끼리 서로 독립이므로, 바뀌지 않은 장면은 다시 계산하지 않는다.
-// - 열쇠 = 장면 정의(split·areas, 설명글·화살표·표시는 제외) + 전역의 replaces·bounds + 진영(id→나라) + 그 장면이 쓰는 나라 영토의 내용 열쇠(cache.ts의 keyOf)
+// - 열쇠 = 장면 정의(split·areas, 설명글·화살표·표시는 제외) + 전역의 replaces·bounds·simplify +진영(id→나라) + 그 장면이 쓰는 나라 영토의 내용 열쇠(cache.ts의 keyOf)
 //   + 손그림 geojson 파일 내용 해시 + 장면을 자를 때 쓰는 육지 자료의 내용 열쇠(빌드마다 한 번, wars.ts가 geo.land로 만듦: 육지 파일·그것을 읽는 tasks.ts의 loadLand·topojson-client 판·index.ts가 고르는 축척이 바뀌면 열쇠도 바뀜)
-//   + 코드 판(wars.ts·geo.ts·war-cache.ts 원문, polyclip-ts·bignumber.js·splaytree-ts·polylabel 판, Node 판)
+//   + 코드 판(wars.ts·geo.ts·war-cache.ts 원문, polyclip-ts·bignumber.js·splaytree-ts·polylabel·topojson-server·topojson-client 판, Node 판)
 // - 전역 범위(replaces 나라 영토의 합)도 따로 캐시한다(split이 있는 장면에서만 쓰임)
 // - cache.ts의 캐시(.cache/build-data/)와 따로 둔다: 이 파일들은 cache.ts·tasks.ts·geo.ts·worker.ts의 원문을 열쇠에 담지 않으므로 그 파일을 고쳐도 영향을 받지 않고,
 //   반대로 이 파일을 고쳐도 해안선 자르기·겹침 캐시(744MB)는 그대로다
@@ -42,6 +42,9 @@ const CODE_SALT = hashOf(
   packageVersion('bignumber.js', createRequire(require.resolve('polyclip-ts')).resolve('bignumber.js')),
   packageVersion('splaytree-ts', createRequire(require.resolve('polyclip-ts')).resolve('splaytree-ts')),
   packageVersion('polylabel', esm('polylabel')),
+  // 전역 simplify가 쓰는 토폴로지 묶기·풀기
+  packageVersion('topojson-server', require.resolve('topojson-server')),
+  packageVersion('topojson-client', require.resolve('topojson-client')),
   `node ${process.version}`,
 );
 

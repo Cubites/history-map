@@ -174,9 +174,10 @@ export default function WorldMap({ data }: { data: StaticData }) {
     },
     [data.entities, data.relations, year, theater],
   );
-  // 평소 지도에는 그 해에 진행 중인 전역마다 전쟁 표시만 둔다. 권역 필터에 맞는 전쟁만 (DESIGN.md §6.4.2)
+  // 평소 지도에는 그 해에 진행 중인 전역마다 전쟁 표시만 둔다. 권역 필터에 맞는 전쟁만 (DESIGN.md §6.4.2).
+  // hideMarker 전역(세계 개관)은 표시하지 않는다 — 전쟁 보기 안의 전역 버튼(FrontTimeline, 권역과 상관없이 전역 전부)으로 들어간다
   const warMarkers = useMemo(
-    () => (warId ? [] : theatersInYear(data.wars, year).filter(({ war: w, theater: t }) => inRegionFilter(regionFilter, t.region ?? w.region))),
+    () => (warId ? [] : theatersInYear(data.wars, year).filter(({ war: w, theater: t }) => !t.hideMarker && inRegionFilter(regionFilter, t.region ?? w.region))),
     [data.wars, warId, year, regionFilter],
   );
   // 전쟁 보기가 없는 전쟁·전투 사건은 그 해에 싸운 곳만 작게 표시한다 (DESIGN.md §4.5).
