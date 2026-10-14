@@ -6,6 +6,7 @@ name: Test geo
 # job 제한을 넉넉히(150분) 두었다. 처음 한 번은 workflow_dispatch로 돌려 시간을 재 둘 것. 로캘이 다른 로컬 캐시와는 공유되지 않는다.
 # 캐시 저장은 실패한 실행에서도 되도록 actions/cache를 restore/save로 나누고 save를 `if: always()`로 둔다(actions/cache@v4 하나는 job이 성공해야 저장해, 새 실패가 있는 동안 매번 차가운 캐시가 됨).
 # 그래서 느린 두 단계에는 단계별 제한이 있다: 단계가 제한에 걸려 실패해도 job은 취소되지 않아 저장 단계가 돈다.
+# 배포(deploy.yml)도 이 캐시를 읽기만 하므로 path 목록·key를 바꿀 때는 deploy.yml도 함께 바꾼다.
 # 보고서(.cache/test-geo/report.md·json)는 실행 요약(Step Summary)에 붙고 artifact로도 올라간다.
 
 on:

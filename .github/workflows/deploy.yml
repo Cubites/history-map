@@ -34,7 +34,23 @@ jobs:
           node-version: 24
           cache: npm
       - run: npm ci
+      # 지형 테스트(test-geo.yml)가 저장한 계산 캐시를 읽기만 한다. 캐시 없이 build:data를 하면 약 20분, 있으면 수 분.
+      # 열쇠는 입력·코드 해시라(scripts/build-data/cache.ts) 앞 커밋의 캐시를 써도 바뀐 곳만 다시 계산한다.
+      # path 목록은 test-geo.yml의 저장 단계와 같아야 한다(목록이 다르면 캐시 버전이 달라 복원되지 않음).
+      - uses: actions/cache/restore@v4
+        with:
+          path: |
+            .cache/build-data
+            .cache/geo-ops
+            .cache/test-geo
+            .cache/build-data-wars
+          key: geo-${{ hashFiles('package-lock.json') }}-${{ github.sha }}
+          restore-keys: |
+            geo-${{ hashFiles('package-lock.json') }}-
       - run: npm run build
+        env:
+          # 호스트 러너의 vCPU 수에 맞춤 (test-geo.yml과 같음)
+          HISTORY_MAP_WORKERS: 4
       - if: env.PUBLISH == 'true'
         uses: actions/upload-pages-artifact@v3
         with:
