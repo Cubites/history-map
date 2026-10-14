@@ -45,7 +45,7 @@
 - 판정 도구: `node ../history-map-handoff/pt-dh.mjs . '<[[이름,경도,위도],…]>' '<[해,…] 또는 {"from":a,"to":b}>'`(history-map 폴더에서). 영토 `to`는 미포함, 버전은 그해 말 모습. **강·경계선 위의 점은 판정이 엉뚱하게 나온다** — 실제 좌표(OSM 마을 좌표)로 다시 찍는다.
 - 천문 연도(기원전 N년 = 1−N)를 항목 `from`·`to`(포함), 영토 `from`·`to`(미포함), 표의 해, relations, 글 본문 모두에서 확인.
 - `check:data`의 `영토 없음` 경고는 일부러 비운 기간이면 정상이다(경고 52가 기준; 늘면 이유를 적는다).
-- 큰 파일(`docs/EUROPE_DRAFT.md` 66만 바이트·`scripts/geo/areas/europe.mjs` 1.3MB·`docs/REVIEW.md` 24만·`docs/DESIGN.md` 11만)은 통째로 읽지 않는다(읽기 도구는 한 번에 약 2.5만 토큰까지). `grep -n`으로 줄 번호를 찾고 `offset`/`limit`로 필요한 줄만.
+- 큰 파일(`docs/europe/08b-medieval-stages.md`·`09b-ancient-stages.md`·`06-progress-table.md` 각 12만~15만 바이트·`scripts/geo/areas/europe.mjs` 1.3MB·`docs/REVIEW.md` 24만·`docs/DESIGN.md` 11만)은 통째로 읽지 않는다(읽기 도구는 한 번에 약 2.5만 토큰까지). `grep -n`으로 줄 번호를 찾고 `offset`/`limit`로 필요한 줄만.
 - 화면 확인: 스크린샷은 최소(이미지는 끝까지 다시 읽힌다). 글자 판정(지점 표)을 먼저 쓰고 마지막에 한두 장만. 브라우저를 쓰면 소리를 음소거(`--mute-audio`, 열린 페이지는 `audio,video`의 `muted = true`).
 
 ## 절차
