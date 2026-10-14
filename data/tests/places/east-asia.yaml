@@ -719,7 +719,7 @@
   from: "세션 I1 결과노트"
   note: "평소 바뀌지 않아야 하는 지점(서울)"
 
-# 중화민국·중화인민공화국 서남 국경과 홍콩·마카오 (작업 K2, 2026-10-14). 청 도형은 그대로라 1911년 전 지점은 넣지 않았다
+# 중화민국·중화인민공화국 서남 국경과 홍콩·마카오 (작업 K2, 2026-10-14). 청(1911년 전) 지점은 아래 작업 L1 절
 - name: "텅충(윈난 서부)"
   at: [98.49, 25.02]
   years: [1912, 1930, 1948]
@@ -805,3 +805,169 @@
   expect: prc
   url: "https://en.wikipedia.org/wiki/Convention_for_the_Extension_of_Hong_Kong_Territory"
   from: "작업 K2 결과노트"
+
+# 청 서남 국경·홍콩 단계·마카오, 라다크 동남부·응아리, 맥마흔선 (작업 L1, 2026-10-14)
+- name: "텅충(윈난 서부)"
+  at: [98.49, 25.02]
+  years: [1700, 1880]
+  expect: qing
+  url: "https://en.wikipedia.org/wiki/Southern_Ming"
+  from: "작업 L1 결과노트"
+  note: "1659년 청군이 윈난을 차지. 전에는 청 도형이 윈난 서부를 덮지 않았다"
+
+- name: "하노이(통킹)"
+  at: [105.85, 21.03]
+  year: 1700
+  expect: none
+  region: east-asia
+  url: "https://en.wikipedia.org/wiki/Later_L%C3%AA_dynasty"
+  from: "작업 L1 결과노트"
+  note: "레 왕조는 청의 조공국(조공·명목 땅은 칠하지 않음). 전에는 청이 덮었다"
+
+- name: "하노이(통킹)"
+  at: [105.85, 21.03]
+  year: 1890
+  expect: none
+  region: east-asia
+  url: "https://en.wikipedia.org/wiki/Treaty_of_Tientsin_(1885)"
+  from: "작업 L1 결과노트"
+  note: "1885 톈진 조약으로 프랑스 보호령"
+
+- name: "카트만두(네팔)"
+  at: [85.32, 27.71]
+  year: 1800
+  expect: none
+  region: east-asia
+  url: "https://en.wikipedia.org/wiki/Nepal%E2%80%93China_relations"
+  from: "작업 L1 결과노트"
+
+- name: "부탄 북부(룽나나)"
+  at: [89.9, 28.1]
+  year: 1800
+  expect: none
+  region: east-asia
+  url: "https://en.wikipedia.org/wiki/Bhutan%E2%80%93China_relations"
+  from: "작업 L1 결과노트"
+  note: "전에는 1720년부터 티베트 남쪽 선이 덮었다"
+
+- name: "마카오(Natural Earth 50m 자리)"
+  at: [113.52, 22.225]
+  year: 1880
+  expect: qing
+  url: "https://en.wikipedia.org/wiki/Sino-Portuguese_Treaty_of_Peking"
+  from: "작업 L1 결과노트"
+  note: "1887년 베이징 조약 전"
+
+- name: "마카오(Natural Earth 50m 자리)"
+  at: [113.52, 22.225]
+  year: 1900
+  expect: none
+  region: east-asia
+  url: "https://en.wikipedia.org/wiki/Sino-Portuguese_Treaty_of_Peking"
+  from: "작업 L1 결과노트"
+
+- name: "홍콩섬"
+  at: [114.19, 22.25]
+  year: 1830
+  expect: qing
+  url: "https://en.wikipedia.org/wiki/Treaty_of_Nanking"
+  from: "작업 L1 결과노트"
+
+- name: "홍콩섬"
+  at: [114.19, 22.25]
+  year: 1850
+  expect: none
+  region: east-asia
+  url: "https://en.wikipedia.org/wiki/Treaty_of_Nanking"
+  from: "작업 L1 결과노트"
+  note: "1842년 난징 조약으로 할양"
+
+- name: "홍콩 주룽"
+  at: [114.17, 22.32]
+  year: 1850
+  expect: qing
+  url: "https://en.wikipedia.org/wiki/Convention_of_Peking"
+  from: "작업 L1 결과노트"
+
+- name: "홍콩 주룽"
+  at: [114.17, 22.32]
+  year: 1870
+  expect: none
+  region: east-asia
+  url: "https://en.wikipedia.org/wiki/Convention_of_Peking"
+  from: "작업 L1 결과노트"
+  note: "1860년 베이징 조약으로 바운더리가 남쪽 할양. 빌드 육지에는 주룽반도가 거의 없어 도형으로만 판정"
+
+- name: "란터우섬(홍콩 신계)"
+  at: [113.95, 22.26]
+  year: 1890
+  expect: qing
+  url: "https://en.wikipedia.org/wiki/Convention_for_the_Extension_of_Hong_Kong_Territory"
+  from: "작업 L1 결과노트"
+
+- name: "란터우섬(홍콩 신계)"
+  at: [113.95, 22.26]
+  year: 1900
+  expect: none
+  region: east-asia
+  url: "https://en.wikipedia.org/wiki/Convention_for_the_Extension_of_Hong_Kong_Territory"
+  from: "작업 L1 결과노트"
+  note: "1898년 신계 임차"
+
+- name: "한레(라다크 동남부)"
+  at: [78.97, 32.78]
+  years: [1800, 1930, 1960]
+  expect: none
+  region: east-asia
+  url: "https://en.wikipedia.org/wiki/Hanle"
+  from: "작업 L1 결과노트"
+  note: "라다크 동쪽 끝(1684 팅모스강 조약 뒤 라다크, https://en.wikipedia.org/wiki/Ladakh). 전에는 티베트 서쪽 선이 덮었다"
+
+- name: "자다(응아리, 옛 구게 왕국 도읍 톨링)"
+  at: [79.8, 31.48]
+  year: 1800
+  expect: qing
+  url: "https://en.wikipedia.org/wiki/Zanda_County"
+  from: "작업 L1 결과노트"
+  note: "전에는 티베트 서쪽 선이 빠뜨렸다"
+
+- name: "자다(응아리, 옛 구게 왕국 도읍 톨링)"
+  at: [79.8, 31.48]
+  year: 1930
+  expect: roc
+  url: "https://en.wikipedia.org/wiki/Zanda_County"
+  from: "작업 L1 결과노트"
+
+- name: "자다(응아리, 옛 구게 왕국 도읍 톨링)"
+  at: [79.8, 31.48]
+  year: 1960
+  expect: prc
+  url: "https://en.wikipedia.org/wiki/Zanda_County"
+  from: "작업 L1 결과노트"
+
+- name: "메추카(아루나찰 북부)"
+  at: [94.13, 28.6]
+  year: 1950
+  expect: none
+  region: east-asia
+  url: "https://en.wikipedia.org/wiki/McMahon_Line"
+  from: "작업 L1 결과노트"
+  note: "맥마흔선 남쪽은 1944년 영국령 인도가 직접 통치를 세웠고 중화인민공화국은 다스린 적이 없어 처음부터 비움(인도 항목 없음)"
+
+- name: "메추카(아루나찰 북부)"
+  at: [94.13, 28.6]
+  year: 1960
+  expect: none
+  region: east-asia
+  url: "https://en.wikipedia.org/wiki/McMahon_Line"
+  from: "작업 L1 결과노트"
+  note: "1944년부터 영국령 인도·인도가 직접 통치, 인도 항목 없음"
+
+- name: "타왕"
+  at: [91.86, 27.59]
+  year: 1960
+  expect: none
+  region: east-asia
+  url: "https://en.wikipedia.org/wiki/Tawang"
+  from: "작업 L1 결과노트"
+  note: "1951년 2월 인도가 티베트 행정을 걷어 냄. 타왕 읍은 청·중화민국의 티베트 남쪽 대략 선 밖이라 1951년 전에도 비어 있음(근사)"
