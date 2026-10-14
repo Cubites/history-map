@@ -393,3 +393,4 @@
 - { name: "생미엘", at: [5.54, 48.89], war: world-war-1, theater: europe, date: "1918-11-11", expect: entente, url: 필요, legacy: true, from: "세계 대전 W1 검토" }
 - { name: "발랑시엔", at: [3.52, 50.36], war: world-war-1, theater: europe, date: "1918-11-11", expect: entente, url: 필요, legacy: true, from: "세계 대전 W1 검토" }
 - { name: "릴", at: [3.06, 50.63], war: world-war-1, theater: europe, date: "1918-11-11", expect: entente, url: 필요, legacy: true, from: "세계 대전 W1 검토" }
+- { name: "마라베 테페", at: [55.957, 37.903], war: world-war-1, theater: europe, date: "1914-08-04", expect: none, url: "https://en.wikipedia.org/wiki/Maraveh_Tappeh", from: "작업 M2", note: "중립국 페르시아(이란) 땅. 옛 러시아 제국 도형이 이란 북동쪽 약 1.28만 km²를 덮던 곳이라 국경을 고친 뒤 진영 도형도 맞춤" }

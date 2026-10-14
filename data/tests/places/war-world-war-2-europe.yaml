@@ -497,3 +497,5 @@
 - { name: "트리에스테", at: [13.77, 45.65], war: world-war-2, theater: europe, date: "1945-05-08", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "5.1~2" }
 - { name: "오슬로", at: [10.75, 59.91], war: world-war-2, theater: europe, date: "1945-05-08", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
 - { name: "됭케르크", at: [2.38, 51.03], war: world-war-2, theater: europe, date: "1945-05-08", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "5.9" }
+- { name: "마라베 테페", at: [55.957, 37.903], war: world-war-2, theater: europe, date: "1939-09-01", expect: none, url: "https://en.wikipedia.org/wiki/Maraveh_Tappeh", from: "작업 M2", note: "이란 땅(1941년 8월 영국·소련 진주 전). 옛 소련 도형이 이란 북동쪽을 덮던 곳이라 국경을 고친 뒤 진영 도형도 맞춤" }
+- { name: "세르헤타바트(쿠슈카)", at: [62.324, 35.275], war: world-war-2, theater: europe, date: "1941-06-22", expect: soviet, url: "https://en.wikipedia.org/wiki/Serhetabat", from: "작업 M2", note: "투르크메니스탄 최남단, 소련 영토의 남쪽 끝(투르크메니스탄 남단 도형을 더한 뒤 진영 도형도 맞춤)" }

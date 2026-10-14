@@ -433,3 +433,5 @@
 - { name: "샤오양", at: [111.47, 27.24], war: world-war-2, theater: asia-pacific, date: "1945-09-09", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
 - { name: "샹샹", at: [112.53, 27.73], war: world-war-2, theater: asia-pacific, date: "1945-09-09", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
 - { name: "헝산", at: [112.87, 27.23], war: world-war-2, theater: asia-pacific, date: "1945-09-09", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "파이자바드", at: [70.58, 37.118], war: world-war-2, theater: asia-pacific, date: "1941-12-08", expect: none, url: "https://en.wikipedia.org/wiki/Fayzabad%2C_Badakhshan", from: "작업 M2", note: "아프가니스탄 바다흐샨 주도. 옛 소련 도형이 판즈강 남쪽 아프가니스탄 땅을 덮던 곳이라 국경을 고친 뒤 빠짐" }
+- { name: "무르갑", at: [73.965, 38.169], war: world-war-2, theater: asia-pacific, date: "1941-12-08", expect: soviet, url: "https://en.wikipedia.org/wiki/Murghob", from: "작업 M2", note: "타지크 소비에트 사회주의 공화국 동파미르. 1895년 러시아·영국 합의로 러시아가 갖게 된 땅이라 소련 영토에 더함" }
