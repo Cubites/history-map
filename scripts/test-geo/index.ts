@@ -5,7 +5,7 @@
 //   각 파일은 `export const checks: Check[]`를 내보낸다(꼴은 types.ts). --only·--skip은 검사 id 또는 파일 이름을 받는다.
 // - 판정 순서: 검사가 낸 항목마다 열쇠(key)로 ① 허용 목록(data/tests/allow/<검사 id 또는 파일 이름>.yaml, 사람이 이유와 함께 적음: key·reason·decided,
 //   key 끝에 `*` 하나는 앞부분 일치) ② 기준선(data/tests/baseline/<검사 id>.txt, 한 줄에 열쇠 하나, `#`은 주석. --update-baseline이 지금 열쇠를 정렬해 씀) ③ 나머지는 새 실패.
-//   아무 항목에도 맞지 않은 허용 줄은 '낡음' 경고(--region·--years 없이 돌렸을 때만).
+//   아무 항목에도 맞지 않은 허용 줄은 '낡음' 경고(--region·--years 없이 돌렸을 때만). 묶음 파일(예: shapes.yaml)의 줄은 그 묶음의 검사를 모두 돌렸을 때 어느 검사에도 맞지 않은 것만.
 // - 출력: 표준 출력에 머리 1줄 + 검사마다 1줄 + 새 실패 위 5줄 + 보고서 경로. 자세한 것은 .cache/test-geo/report.md(사람용)·report.json(기계용).
 //   --ci면 report.md를 $GITHUB_STEP_SUMMARY에도 덧붙이고, 느린 검사(gen)도 돌린다. 검사가 사정이 안 맞아 건너뛴 항목(결과가 낡은 전쟁 지점 등)은 머리 줄에 `건너뜀 N`으로 보이고, --ci에서는 검사가 실패로 낸다.
 //   검사가 `selfBaseline: true`면(gaps) 기준선 대조를 검사가 하고(줄은 `열쇠<TAB>값`), --update-baseline은 그 검사 파일이 내보낸 baselineText(id)로 기준선 글을 만든다. 기준선 줄은 TAB 앞이 열쇠.
@@ -114,6 +114,7 @@ function readAllow(check: Check, group: string): AllowEntry[] {
 }
 
 const matchAllow = (e: AllowEntry, key: string) => (e.key.endsWith('*') ? key.startsWith(e.key.slice(0, -1)) : e.key === key);
+const staleWarning = (e: AllowEntry): Item => ({ key: `낡음 ${e.key}`, msg: `${e.file}: 허용 줄 '${e.key}'에 맞는 항목이 없음 (낡음)`, warn: true });
 
 function baselinePath(id: string) {
   return path.join(ROOT, 'data/tests/baseline', `${id}.txt`);
@@ -241,12 +242,21 @@ async function main(): Promise<number> {
       }
       continue;
     }
+    // 묶음 파일(data/tests/allow/<묶음>.yaml)은 같은 묶음의 검사들이 함께 쓰므로, 묶음의 검사를 모두 돌렸을 때 어느 검사에도 맞지 않은 줄만 낡음으로 본다
+    const groupFile = `data/tests/allow/${group}.yaml`;
+    const groupUsed = new Set<string>();
+    const groupStale = new Map<string, { o: Outcome; e: AllowEntry }>();
+    let groupComplete = true;
     for (const check of loaded.checks) {
-      if (!selected(args, check, group)) continue;
+      if (!selected(args, check, group)) {
+        groupComplete = false;
+        continue;
+      }
       const o = blank(check.id, check.title, group);
       if (CI_ONLY.has(check.id) && !args.ci && !args.only?.includes(check.id)) {
         o.status = 'skip';
         o.why = '--ci에서만 (느림)';
+        groupComplete = false;
         outs.push(o);
         continue;
       }
@@ -271,12 +281,14 @@ async function main(): Promise<number> {
           else fresh.push(item);
         }
         o.newFailures = fresh;
+        for (const e of allow) if (e.used && e.file === groupFile) groupUsed.add(e.key);
         const unfiltered = args.region === null && args.years === null;
         if (unfiltered) {
-          o.staleAllow = allow.filter((e) => !e.used);
+          o.staleAllow = allow.filter((e) => !e.used && e.file !== groupFile);
           o.staleBaseline = [...base].filter((k) => !seenKeys.has(k)).length;
-          for (const e of o.staleAllow) o.warnings.push({ key: `낡음 ${e.key}`, msg: `${e.file}: 허용 줄 '${e.key}'에 맞는 항목이 없음 (낡음)`, warn: true });
-        }
+          for (const e of o.staleAllow) o.warnings.push(staleWarning(e));
+          for (const e of allow) if (!e.used && e.file === groupFile && !groupStale.has(e.key)) groupStale.set(e.key, { o, e });
+        } else groupComplete = false;
         if (args.updateBaseline === check.id) {
           const custom = loaded.baselineText?.(check.id) ?? null;
           const keys = [...new Set(res.items.filter((i) => !i.warn && !allow.some((e) => matchAllow(e, i.key))).map((i) => i.key))].sort();
@@ -291,9 +303,17 @@ async function main(): Promise<number> {
         o.status = 'error';
         o.why = `예외: ${(e as Error).stack?.split('\n').slice(0, 3).join(' / ') ?? String(e)}`;
         hadError = true;
+        groupComplete = false;
       }
       o.seconds = (performance.now() - start) / 1000;
       outs.push(o);
+    }
+    if (groupComplete) {
+      for (const [key, { o, e }] of groupStale) {
+        if (groupUsed.has(key)) continue;
+        o.staleAllow.push(e);
+        o.warnings.push(staleWarning(e));
+      }
     }
   }
   if (args.updateBaseline && !outs.some((o) => o.id === args.updateBaseline && o.status !== 'skip' && o.status !== 'error')) {

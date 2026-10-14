@@ -1,5 +1,6 @@
 # 검토 대기 지점: 세계 대전 W1~W3 검토 지점 중 지금(HEAD 03bb501) 지도와 달라 war-*.yaml에서 뺀 것. 이 파일은 test:geo가 읽지 않는다.
 # 검토 뒤 고쳐진 곳이거나 받아들인 근사일 수 있으니, 지도를 고칠 때 확인하고 맞으면 war-*.yaml로 옮길 것. 줄 끝 주석: 이번에 나온 실제 값.
+# 끝 기준(2026-10-15, docs/europe/06-open-items.md): 기대 쪽 경계까지 30km 넘는 78점만 세션 N2에서 본다(지브롤터·람페두사·태평양 작은 섬 none은 닫음). 30km 아래는 닫음 — 지도를 고치지 않고 이 파일에 그대로 둔다.
 
 # world-war-1/europe
 - { name: "나로치호 중앙", at: [26.75, 54.85], war: world-war-1, theater: europe, date: "1915-12-15", expect: front, url: 필요, legacy: true, from: "세계 대전 W1 검토", tolerance: 5 }  # 기대 front, 실제 russia (가장 가까운 진영 경계까지 8.1km, 허용 5km)
