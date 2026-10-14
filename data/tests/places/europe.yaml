@@ -1735,3 +1735,72 @@
   url: "https://en.wikipedia.org/wiki/Panjdeh_incident"
   from: "세션 K1 결과노트"
   note: "테젠강 동쪽 기슭(1884년 러시아가 세라흐스를 차지, K1-③) · 고치기 전 HEAD는 어느 영토도 덮지 않음"
+
+- name: "다르가즈(이란)"
+  at: [59.107, 37.443]
+  years: [1900, 1950]
+  expect: none
+  region: europe
+  url: "https://en.wikipedia.org/wiki/Iran–Turkmenistan_border"
+  from: "세션 M1 결과노트"
+  note: "코페트다그 남쪽의 이란 땅(1881 경계, 1893 아프가니스탄까지 늘림). 러시아 손 도형의 남쪽 변을 이란 국경으로(M1) · 고치기 전 HEAD는 1881~1991 러시아 제국·소련"
+
+- name: "바지기란(이란)"
+  at: [58.418, 37.621]
+  year: 1882
+  expect: none
+  region: europe
+  url: "https://en.wikipedia.org/wiki/Iran–Turkmenistan_border"
+  from: "세션 M1 결과노트"
+  note: "코페트다그 고개 남쪽 이란 국경 마을(1881 경계 확인 뒤) · 고치기 전 HEAD는 러시아 제국"
+
+- name: "아시가바트"
+  at: [58.38, 37.938]
+  year: 1900
+  expect: russia
+  url: "https://en.wikipedia.org/wiki/Treaty_of_Akhal"
+  from: "세션 M1 결과노트"
+  note: "1881 아할 조약 뒤 자카스피주, 국경 바로 북쪽(M1에서 남쪽 변을 이란 국경으로 바꾼 뒤에도 러시아 쪽)"
+
+- name: "안드호이(아프가니스탄)"
+  at: [65.117, 36.95]
+  years: [1890, 1950]
+  expect: none
+  region: europe
+  url: "https://en.wikipedia.org/wiki/Afghanistan–Turkmenistan_border"
+  from: "세션 M1 결과노트"
+  note: "아무다리야 남쪽의 아프가니스탄 땅(1873 합의, 1885~88 하미아브까지 국경) · 고치기 전 HEAD는 1884~1991 러시아 제국·소련"
+
+- name: "파이자바드(바다흐샨)"
+  at: [70.58, 37.118]
+  years: [1870, 1900, 1950]
+  expect: none
+  region: europe
+  url: "https://en.wikipedia.org/wiki/Afghanistan–Tajikistan_border"
+  from: "세션 M1 결과노트"
+  note: "판지강 남쪽 바다흐샨(1873 합의로 아프가니스탄) · 고치기 전 HEAD는 1868~1991 러시아 제국·소련"
+
+- name: "테르메즈"
+  at: [67.283, 37.217]
+  year: 1950
+  expect: soviet-union
+  url: "https://en.wikipedia.org/wiki/Afghanistan–Uzbekistan_border"
+  from: "세션 M1 결과노트"
+  tolerance: 2
+  note: "아무다리야 북쪽 기슭, 국경 바로 북쪽(M1 뒤에도 소련 쪽). Natural Earth 50m 국경(강 가운데 선)이 위키백과 시내 좌표를 바로 지나 2km 허용"
+
+- name: "무르가브(파미르)"
+  at: [73.965, 38.169]
+  years: [1900, 1917]
+  expect: russia
+  url: "https://en.wikipedia.org/wiki/Afghanistan–Tajikistan_border"
+  from: "세션 M1 결과노트"
+  note: "동파미르, 동쪽 구간 국경 1893~95 확정(파미르 구역 1895). 손 도형의 남동쪽 변을 중국·아프가니스탄 국경으로(M1) · 고치기 전 HEAD는 어느 영토도 덮지 않음"
+
+- name: "무르가브(파미르, 소련)"
+  at: [73.965, 38.169]
+  years: [1950, 1991]
+  expect: soviet-union
+  url: "https://en.wikipedia.org/wiki/Afghanistan–Tajikistan_border"
+  from: "세션 M1 결과노트"
+  note: "타지크 SSR 고르노바다흐샨(1946 국경 협정이 옛 선 유지) · 고치기 전 HEAD는 어느 영토도 덮지 않음"
