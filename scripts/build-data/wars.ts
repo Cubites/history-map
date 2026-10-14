@@ -136,6 +136,10 @@ export function checkWars(wars: War[], entities: Map<string, Entity>, events: Hi
         });
         s.arrows.forEach((a) => faction(a.faction, `${at} arrows`));
         s.holds.forEach((h) => faction(h.faction, `${at} holds ${h.name}`));
+        s.labelAs.forEach((l) => {
+          entity(l.entity, `${at} labelAs`);
+          l.instead.forEach((id) => entity(id, `${at} labelAs ${l.entity}의 instead`));
+        });
       });
       t.routes.forEach((r) => faction(r.faction, `전역 ${t.id} 경로 ${r.name}`));
       t.battles.forEach((b) => b.winner && faction(b.winner, `전역 ${t.id} 전투 ${b.name}`));
@@ -480,6 +484,8 @@ export async function buildWars(wars: RegionalWar[], geo: WarGeoSources, errors:
           lines: [...(s.split ? [s.split.line] : []), ...s.lines],
           arrows: s.arrows,
           labels,
+          // 정한 장면에서만 적는다 (다른 장면·전쟁의 wars.json 출력은 그대로)
+          ...(s.labelAs.length ? { labelAs: s.labelAs } : {}),
           holds: s.holds,
           bbox: areas.length
             ? mergeBox(areas.map((a) => a.bbox))

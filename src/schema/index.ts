@@ -191,6 +191,17 @@ export const HoldSchema = z.object({
   faction: z.string(),
 });
 
+/**
+ * 이름표 바꿔 달기: 이 장면에서 `instead` 나라들의 이름표를 숨기고 `entity`의 이름표를 대신 단다.
+ * 연 단위 영토는 해 끝 모습이라, 전쟁 보기의 장면이 그 해 중간이면 그때 있던 나라(예: 1918년 3·7월의 독일 제국)의 영토가 없어
+ * 이름표가 전쟁 뒤 나라로 나오기 때문이다. `at`을 안 적으면 `entity`의 마지막 영토 이름표 자리를 쓴다
+ */
+export const LabelAsSchema = z.object({
+  entity: z.string(),
+  instead: z.array(z.string()).min(1),
+  at: LonLatSchema.optional(),
+});
+
 export const FrontSnapshotSchema = z
   .object({
     date: FrontDate,
@@ -202,6 +213,7 @@ export const FrontSnapshotSchema = z
     lines: z.array(z.array(LonLatSchema).min(2)).default([]),
     arrows: z.array(FrontArrowSchema).default([]),
     holds: z.array(HoldSchema).default([]),
+    labelAs: z.array(LabelAsSchema).default([]),
   })
   .refine((s) => s.split || s.areas.length > 0 || s.holds.length > 0, { message: '점령 지역(split·areas)이나 거점(holds)이 없음' });
 
@@ -243,6 +255,7 @@ export type FrontArrow = z.infer<typeof FrontArrowSchema>;
 export type Route = z.infer<typeof RouteSchema>;
 export type Battle = z.infer<typeof BattleSchema>;
 export type Hold = z.infer<typeof HoldSchema>;
+export type LabelAs = z.infer<typeof LabelAsSchema>;
 
 /** wars.json: 빌드가 스냅샷마다 진영별 점령 지역을 계산해 넣는다 */
 export interface FrontAreaOut {
@@ -262,6 +275,8 @@ export interface FrontSnapshotOut {
   arrows: FrontArrow[];
   /** 영토 대신 칠하는 나라의 이름표 위치 (그 나라 진영의 점령 지역 안쪽) */
   labels: { entity: string; anchor: LonLat }[];
+  /** 이름표 바꿔 달기. 정한 장면에서만 내보낸다 */
+  labelAs?: LabelAs[];
   holds: Hold[];
   bbox: BBox;
 }

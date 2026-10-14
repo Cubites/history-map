@@ -5,9 +5,12 @@
 #   (생성 방법·경유점·근거·어림 오차는 W1 결과 노트). 서부 전선은 2km 안, 동부·발칸 전선은 대부분 5~10km 안(1918년 우크라이나·캅카스는 대략)이다.
 # 진영: 협상국(대표 프랑스)·동맹국(대표 독일 제국)·러시아 제국(협상국이지만 1917년 혁명과 1918년 강화로 전쟁에서 빠져 따로 둠).
 #   1918년 강화 뒤의 소비에트 러시아와 핀란드는 칠하지 않아 평소 영토로 보인다(전쟁 밖). 1918년 캅카스는 오스만군이 차지한 것이 확실한 땅
-#   (바투미·아르다한·카르스·알렉산드로폴·수르말루·나히체반, 11월은 바쿠 더함)만 칠하고, 독일 보호 아래의 조지아와 아제르바이잔은 칠하지 않았다.
+#   (바투미·아르다한·카르스·알렉산드로폴·수르말루·나히체반)만 칠하고, 독일 보호 아래의 조지아와 아제르바이잔은 칠하지 않았다.
+#   11월의 바쿠(9월 15일부터 오스만군 주둔, 11월 17일 영국군 진주)는 아제르바이잔 안의 한 도시라 이웃 칠과 이어 그릴 수 없어 칠하지 않고 거점(holds) 점 하나로 나타냈다.
 # 참전 전의 중립 기간(이탈리아 1915.5, 불가리아 1915.10, 루마니아 1916.8, 그리스 1917.6 전)에는 그 나라를 칠하지 않아 평소 영토로 보인다.
-#   그래서 replaces에는 1918년 판 영토가 전쟁 뒤 모습(바이마르 공화국·체코슬로바키아·유고슬라비아 등)인 나라만 넣었다(이름표가 1918년 3~7월에 미리 나오지 않게).
+#   그래서 replaces에는 1918년 판 영토가 전쟁 뒤 모습(바이마르 공화국·체코슬로바키아·유고슬라비아 등)인 나라만 넣었다.
+#   1918년 3·7월 장면은 이 나라들의 이름표를 숨기고 그때 있던 독일 제국·오스트리아-헝가리 제국 이름표를 labelAs로 대신 단다
+#   (11월 11일 장면은 독일 혁명과 합스부르크 제국 해체 뒤라 전쟁 뒤 나라 이름표 그대로).
 # 1918년 판 영토는 전쟁 뒤 국경이다(이탈리아에 트렌티노·트리에스테, 루마니아에 트란실바니아·베사라비아). 그래서 1918년 스냅샷은
 #   그 땅을 geojson으로 동맹국 색으로 덮는다(1917년 오스트리아-헝가리 영토와 겹친 곳).
 # 운영자 검수 필요.
@@ -229,6 +232,10 @@ theaters:
       - date: 1918-03-03
         title: 브레스트-리토프스크 조약
         summary: 강화 협상이 늦어지자 독일군이 2월 18일 다시 진격해 나르바 앞·프스코프·폴로츠크·오르샤·고멜·키이우까지 나아갔습니다. 3월 3일 소비에트 정부가 조약에 서명해 러시아는 전쟁에서 빠졌고, 핀란드·발트 지역·폴란드·우크라이나에서 손을 뗐습니다. 휴전 중인 루마니아는 3월 5일 예비 강화를 맺었습니다.
+        # 1918년 영토 항목은 전쟁 뒤 나라라, 이 날의 독일 제국·오스트리아-헝가리 제국 이름표를 대신 단다
+        labelAs:
+          - { entity: german-empire, instead: [weimar-republic] }
+          - { entity: austria-hungary, instead: [austria-republic, hungary, czechoslovakia, yugoslavia] }
         areas:
           - { faction: entente, entities: [france, uk, belgium, italy, dodecanese-occupied, romania, portugal, greece] }
           # 에스토니아는 나르바(3.4 점령)를 빼려고 entities 대신 geojson으로 칠한다
@@ -245,6 +252,9 @@ theaters:
       - date: 1918-07-15
         title: 독일군 춘계 공세와 2차 마른 전투
         summary: 독일군은 미군이 오기 전에 이기려고 3월 21일부터 다섯 차례 대공세를 펴 아미앵 앞과 마른강까지 다시 나아갔으나, 7월 15일 마지막 공세가 랭스 양쪽에서 막혔습니다. 동부에서는 독일군이 우크라이나와 크림, 돈강 하류까지 차지했고, 루마니아는 5월 부쿠레슈티 조약으로 전쟁에서 빠졌습니다.
+        labelAs:
+          - { entity: german-empire, instead: [weimar-republic] }
+          - { entity: austria-hungary, instead: [austria-republic, hungary, czechoslovakia, yugoslavia] }
         areas:
           - { faction: entente, entities: [france, uk, belgium, italy, dodecanese-occupied, portugal, greece] }
           - { faction: central, entities: [weimar-republic, austria-republic, hungary, czechoslovakia, yugoslavia, poland, lithuania, latvia, estonia, luxembourg, ottoman, bulgaria] }
@@ -258,7 +268,7 @@ theaters:
 
       - date: 1918-11-11
         title: 휴전
-        summary: 8월 아미앵 전투부터 연합군의 100일 공세가 이어졌고, 불가리아(9.29)·오스만 제국(10.30)·오스트리아-헝가리(11.3)가 차례로 손을 들었습니다. 10월 말부터 체코슬로바키아·폴란드 등이 독립을 선언했습니다. 독일에서는 11월 혁명으로 황제가 물러났고, 11월 11일 콩피에뉴에서 휴전 협정이 맺어졌습니다. 동부의 독일군은 아직 철수하지 않았습니다.
+        summary: 8월 아미앵 전투부터 연합군의 100일 공세가 이어졌고, 불가리아(9.29)·오스만 제국(10.30)·오스트리아-헝가리(11.3)가 차례로 손을 들었습니다. 10월 말부터 체코슬로바키아·폴란드 등이 독립을 선언했습니다. 독일에서는 11월 혁명으로 황제가 물러났고, 11월 11일 콩피에뉴에서 휴전 협정이 맺어졌습니다. 동부의 독일군은 아직 철수하지 않았고, 바쿠에는 오스만군이 남아 있다가 11월 17일 영국군이 들어왔습니다.
         areas:
           - { faction: entente, entities: [france, uk, belgium, italy, dodecanese-occupied, romania, portugal, greece, yugoslavia, albania] }
           - { faction: central, entities: [weimar-republic, austria-republic, hungary, czechoslovakia, poland, lithuania, latvia, estonia, luxembourg, ottoman, bulgaria] }
@@ -269,3 +279,5 @@ theaters:
           - { faction: entente, path: [[5.1, 49.25], [5.2, 49.5]], label: 뫼즈-아르곤 공세 }
           - { faction: entente, path: [[12.25, 45.85], [12.3, 46.0], [13.2, 46.05]], label: 비토리오 베네토 }
           - { faction: entente, path: [[21.9, 41.05], [21.6, 42.0], [20.5, 44.75]], label: 살로니카 전선 돌파 }
+        holds:
+          - { name: "바쿠 (오스만군 주둔, 11월 17일 영국군 진주)", at: [49.87, 40.41], faction: central }

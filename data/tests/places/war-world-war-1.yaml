@@ -371,7 +371,9 @@
 # 1918-11-11
 - { name: "카르스", at: [43.1, 40.6], war: world-war-1, theater: europe, date: "1918-11-11", expect: central, url: 필요, legacy: true, from: "세계 대전 W1 검토" }
 - { name: "바투미", at: [41.64, 41.64], war: world-war-1, theater: europe, date: "1918-11-11", expect: central, url: 필요, legacy: true, from: "세계 대전 W1 검토" }
-- { name: "바쿠", at: [49.87, 40.41], war: world-war-1, theater: europe, date: "1918-11-11", expect: central, url: 필요, legacy: true, from: "세계 대전 W1 검토" }
+- { name: "바쿠", at: [49.87, 40.41], war: world-war-1, theater: europe, date: "1918-11-11", expect: none, url: "https://en.wikipedia.org/wiki/Battle_of_Baku", from: "세션 K3", note: "오스만군 주둔 도시지만 칠하지 않고 거점(holds) 점으로만 나타냄(이웃 칠과 떨어진 섬이 되므로)" }
+- { name: "간자(옐리자베트폴)", at: [46.36, 40.68], war: world-war-1, theater: europe, date: "1918-11-11", expect: none, url: "https://en.wikipedia.org/wiki/Battle_of_Baku", from: "세션 K3", note: "아제르바이잔 내륙은 칠하지 않음(오스만군 주둔 지역이나 아제르바이잔 정부 아래)" }
+- { name: "나히체반", at: [45.41, 39.21], war: world-war-1, theater: europe, date: "1918-11-11", expect: central, url: "https://en.wikipedia.org/wiki/Nakhchivan_local_government", from: "세션 K3", note: "1918년 11월 오스만군이 철수를 시작했으나 제9사단장 셰브키 파샤가 지방 정부 수반을 임명하던 때(연말에 교체). 무드로스 휴전 뒤에도 오스만군이 남은 캅카스 땅. 바쿠는 이어 그리지 않고 점으로만 둠" }
 - { name: "트렌토", at: [11.12, 46.07], war: world-war-1, theater: europe, date: "1918-11-11", expect: entente, url: 필요, legacy: true, from: "세계 대전 W1 검토" }
 - { name: "트리에스테", at: [13.77, 45.65], war: world-war-1, theater: europe, date: "1918-11-11", expect: entente, url: 필요, legacy: true, from: "세계 대전 W1 검토" }
 - { name: "인스브루크", at: [11.39, 47.27], war: world-war-1, theater: europe, date: "1918-11-11", expect: central, url: 필요, legacy: true, from: "세계 대전 W1 검토" }

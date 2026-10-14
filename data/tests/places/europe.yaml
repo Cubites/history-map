@@ -1693,3 +1693,45 @@
   url: "https://en.wikipedia.org/wiki/Alexander_II_of_Kakheti"
   from: "세션 J1 결과노트"
   note: "1590~1611 오스만 종주는 관계로(J1-④) · 고치기 전 HEAD와 달랐던 구간"
+
+# 세션 K(작업 K1, 2026-10-14): 볼고그라드주의 돈 군단 땅(1671)과 투르크메니스탄 남단(1884)
+- name: "우류핀스크"
+  at: [42.017, 50.8]
+  range: [1502, 1670]
+  expect: none
+  region: europe
+  url: "https://ru.wikipedia.org/wiki/Хопёрский_округ_(Область_Войска_Донского)"
+  from: "세션 K1 결과노트"
+  note: "볼고그라드주의 돈 군단 땅은 돈 초원과 같이 1671 서약까지 비움(K1-①·②) · 1523~1670은 고치기 전 HEAD와 달랐던 구간"
+
+- name: "미하일롭카"
+  at: [43.25, 50.067]
+  year: 1671
+  expect: russia-tsardom
+  url: "https://ru.wikipedia.org/wiki/Усть-Медведицкий_округ"
+  from: "세션 K1 결과노트"
+  note: "돈 코사크의 첫 충성 서약 1671(J1-①과 같은 기준, K1-①)"
+
+- name: "카미신"
+  at: [45.4, 50.083]
+  years: [1523, 1555]
+  expect: nogai-horde
+  url: "https://ru.wikipedia.org/wiki/Ногайская_Орда"
+  from: "세션 K1 결과노트"
+  note: "볼고그라드주의 볼가 쪽은 노가이 오르다(1523~1555), 1556 러시아 그대로(K1-①)"
+
+- name: "세르헤타바트(쿠시카)"
+  at: [62.324, 35.275]
+  years: [1890, 1917]
+  expect: russia
+  url: "https://en.wikipedia.org/wiki/Panjdeh_incident"
+  from: "세션 K1 결과노트"
+  note: "투르크메니스탄 남단, 쿠시카 건설 1890(국경은 1887년 최종 의정서). 도형은 1884부터 칠한 근사라 그 앞 해는 재지 않음(K1-③) · 고치기 전 HEAD는 어느 영토도 덮지 않음"
+
+- name: "사락스(투르크메니스탄)"
+  at: [61.217, 36.533]
+  years: [1918, 1991]
+  expect: soviet-union
+  url: "https://en.wikipedia.org/wiki/Panjdeh_incident"
+  from: "세션 K1 결과노트"
+  note: "테젠강 동쪽 기슭(1884년 러시아가 세라흐스를 차지, K1-③) · 고치기 전 HEAD는 어느 영토도 덮지 않음"

@@ -392,7 +392,7 @@ theaters:
   # 진영은 전쟁 머리의 allies(연합국)·soviet(소련)·japan(일본)·china(중국)를 쓴다. axis(추축국)는 이 전역에 나오지 않는다.
   # 이 전역에 필요한 참전국(전쟁 머리 participants에 W2 것과 합칠 것): japan·manchukuo(japan, 1937-07-07~1945-09-02), roc(china, 1937-07-07~1945-09-02),
   #   usa·uk(allies, 1941-12-08~), soviet-union(soviet, 대일 참전 1945-08-08~), mongolia(soviet, 1945-08-10~).
-  # 칠하는 순서(뒤가 앞을 덮음): 연합국 식민지 바탕(ww2-asia/allied-colonies.geojson, 1941년 12월부터) → 미국 → 중화민국(+ 저장소 영토가 비어 있는 윈난 서부 ww2-asia/yunnan-west) → 소련 → 일본·조선·만주국·중국 점령지
+  # 칠하는 순서(뒤가 앞을 덮음): 연합국 식민지 바탕(ww2-asia/allied-colonies.geojson, 1941년 12월부터) → 미국 → 중화민국 → 소련 → 일본·조선·만주국·중국 점령지
   #   → 그날의 일본 점령 지역(ww2-asia/<날짜>-japan) → 아직 함락되지 않은 중국 땅(<날짜>-china) → 연합군이 되찾은 섬 등(<날짜>-allies) → 소련 점령지(<날짜>-soviet).
   # 동남아시아·태평양은 이 시기 나라 영토가 지도에 없어서 연합국 식민지·자치령(영국령 인도·버마·말라야, 네덜란드령 동인도, 미국령 필리핀, 오스트레일리아 등)을
   #   geojson으로 연합국 색으로 칠한다. 중립국 타이(1941.12.21 일본과 동맹 뒤로는 일본 진영)·포르투갈령 티모르·마카오·네팔·부탄은 칠하지 않는다.
@@ -442,7 +442,6 @@ theaters:
         summary: 7월 7일 베이핑 교외 루거우차오(노구교)에서 일어난 충돌을 계기로 일본이 중국을 전면 침략해 중일 전쟁이 시작되었습니다. 일본은 이미 만주국(1932)을 세웠고, 허베이 동부(기동 방공 자치 정부)와 차하얼 북부(몽골 군정부)에도 괴뢰 정권을 두고 있었습니다.
         areas:
           - { faction: china, entities: [roc, occupied-china] }
-          - { faction: china, geojson: ww2-asia/yunnan-west.geojson }
           - { faction: soviet, entities: [soviet-union] }
           - { faction: japan, entities: [japan, occupied-korea, manchukuo] }
           - { faction: japan, geojson: ww2-asia/1937-07-07-japan.geojson }
@@ -455,7 +454,6 @@ theaters:
         summary: 일본군은 7월 말 베이핑·톈진을 차지하고, 석 달 동안의 격전 끝에 11월 상하이를 점령한 뒤 12월 13일 수도 난징을 함락했습니다. 일본군은 난징에서 수많은 포로와 민간인을 학살했습니다(난징 대학살). 국민 정부는 우한을 거쳐 충칭으로 옮겨 항전을 이어 갔습니다.
         areas:
           - { faction: china, entities: [roc] }
-          - { faction: china, geojson: ww2-asia/yunnan-west.geojson }
           - { faction: soviet, entities: [soviet-union] }
           - { faction: japan, entities: [japan, occupied-korea, manchukuo, occupied-china] }
           - { faction: japan, geojson: ww2-asia/mengjiang.geojson }
@@ -472,7 +470,6 @@ theaters:
         summary: 일본군은 1938년 5월 쉬저우를 차지해 화북과 화중의 점령지를 잇고, 10월 광저우(21일)와 우한(25~27일)을 함락했습니다. 그러나 중국은 충칭을 임시 수도로 삼아 버텼고, 일본군은 넓은 땅의 도시와 철도만 지키는 장기전에 빠졌습니다.
         areas:
           - { faction: china, entities: [roc] }
-          - { faction: china, geojson: ww2-asia/yunnan-west.geojson }
           - { faction: soviet, entities: [soviet-union] }
           - { faction: japan, entities: [japan, occupied-korea, manchukuo, occupied-china] }
           - { faction: japan, geojson: ww2-asia/mengjiang.geojson }
@@ -493,7 +490,6 @@ theaters:
           - { faction: allies, geojson: ww2-asia/allied-colonies.geojson }
           - { faction: allies, entities: [usa] }
           - { faction: china, entities: [roc] }
-          - { faction: china, geojson: ww2-asia/yunnan-west.geojson }
           - { faction: soviet, entities: [soviet-union] }
           - { faction: japan, entities: [japan, occupied-korea, manchukuo, occupied-china] }
           - { faction: japan, geojson: ww2-asia/mengjiang.geojson }
@@ -516,7 +512,6 @@ theaters:
           - { faction: allies, geojson: ww2-asia/allied-colonies.geojson }
           - { faction: allies, entities: [usa] }
           - { faction: china, entities: [roc] }
-          - { faction: china, geojson: ww2-asia/yunnan-west.geojson }
           - { faction: soviet, entities: [soviet-union] }
           - { faction: japan, entities: [japan, occupied-korea, manchukuo, occupied-china] }
           - { faction: japan, geojson: ww2-asia/mengjiang.geojson }
@@ -540,7 +535,6 @@ theaters:
           - { faction: allies, geojson: ww2-asia/allied-colonies.geojson }
           - { faction: allies, entities: [usa] }
           - { faction: china, entities: [roc] }
-          - { faction: china, geojson: ww2-asia/yunnan-west.geojson }
           - { faction: soviet, entities: [soviet-union] }
           - { faction: japan, entities: [japan, occupied-korea, manchukuo, occupied-china] }
           - { faction: japan, geojson: ww2-asia/mengjiang.geojson }
@@ -565,7 +559,6 @@ theaters:
           - { faction: allies, geojson: ww2-asia/allied-colonies.geojson }
           - { faction: allies, entities: [usa] }
           - { faction: china, entities: [roc] }
-          - { faction: china, geojson: ww2-asia/yunnan-west.geojson }
           - { faction: soviet, entities: [soviet-union] }
           - { faction: japan, entities: [japan, occupied-korea, manchukuo, occupied-china] }
           - { faction: japan, geojson: ww2-asia/mengjiang.geojson }
@@ -598,7 +591,6 @@ theaters:
           - { faction: allies, geojson: ww2-asia/allied-colonies.geojson }
           - { faction: allies, entities: [usa] }
           - { faction: china, entities: [roc] }
-          - { faction: china, geojson: ww2-asia/yunnan-west.geojson }
           - { faction: soviet, entities: [soviet-union] }
           - { faction: japan, entities: [japan, occupied-korea, manchukuo, occupied-china] }
           - { faction: japan, geojson: ww2-asia/mengjiang.geojson }
@@ -625,7 +617,6 @@ theaters:
           - { faction: allies, geojson: ww2-asia/allied-colonies.geojson }
           - { faction: allies, entities: [usa] }
           - { faction: china, entities: [roc] }
-          - { faction: china, geojson: ww2-asia/yunnan-west.geojson }
           - { faction: soviet, entities: [soviet-union] }
           - { faction: japan, entities: [japan, occupied-korea, manchukuo, occupied-china] }
           - { faction: japan, geojson: ww2-asia/mengjiang.geojson }
@@ -650,7 +641,6 @@ theaters:
           - { faction: allies, geojson: ww2-asia/allied-colonies.geojson }
           - { faction: allies, entities: [usa] }
           - { faction: china, entities: [roc] }
-          - { faction: china, geojson: ww2-asia/yunnan-west.geojson }
           - { faction: soviet, entities: [soviet-union] }
           - { faction: japan, entities: [japan, occupied-korea, manchukuo, occupied-china] }
           - { faction: japan, geojson: ww2-asia/mengjiang.geojson }
@@ -680,7 +670,6 @@ theaters:
           - { faction: allies, geojson: ww2-asia/allied-colonies.geojson }
           - { faction: allies, entities: [usa] }
           - { faction: china, entities: [roc] }
-          - { faction: china, geojson: ww2-asia/yunnan-west.geojson }
           - { faction: soviet, entities: [soviet-union] }
           - { faction: japan, entities: [japan, manchukuo, occupied-china] }
           - { faction: japan, geojson: ww2-asia/mengjiang.geojson }
@@ -708,7 +697,6 @@ theaters:
           - { faction: allies, geojson: ww2-asia/allied-colonies.geojson }
           - { faction: allies, entities: [usa] }
           - { faction: china, entities: [roc] }
-          - { faction: china, geojson: ww2-asia/yunnan-west.geojson }
           - { faction: soviet, entities: [soviet-union] }
           - { faction: japan, entities: [japan, manchukuo, occupied-china] }
           - { faction: japan, geojson: ww2-asia/mengjiang.geojson }

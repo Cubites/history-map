@@ -235,19 +235,32 @@ export default function WorldMap({ data }: { data: StaticData }) {
   // 전쟁 중 영토 대신 진영 색으로 칠하는 나라(replaces)도 이름표는 그 나라 자기 영토에 둔다 (2026-10-13, 같은 진영 나라들이 한 나라처럼
   // 보이지 않게). 자기 영토의 이름표 자리가 전역 범위 밖이면(예: 소련은 시베리아) 그 나라 진영의 점령 지역 안쪽에 둔다.
   // 점령 지역용 항목(지역 항목·그해 점령된 땅, 예: 임진왜란 점령지)은 연 단위 범위가 날짜별 점령선과 어긋나므로 숨긴다
+  //
+  // 장면이 이름표 바꿔 달기(labelAs)를 정했으면, 숨길 나라(instead)의 이름표를 빼고 그 장면 때 있던 나라의 이름표를 대신 단다
+  // (2026-10-14: 1918년 3·7월에 영토 항목이 전쟁 뒤 나라뿐이라 독일 제국·오스트리아-헝가리 이름표가 없던 문제).
+  // 위치는 장면이 `at`을 정했으면 그것, 아니면 그 나라의 마지막 영토 이름표 자리
   const labelTerritories = useMemo(() => {
     if (!snapshot || !theater) return active;
     const replaces = new Set(theater.replaces);
     const [[w, s], [e, n]] = theater.bounds;
     const inBounds = ([x, y]: [number, number]) => w <= x && x <= e && s <= y && y <= n;
-    return active.flatMap((t) => {
+    const swaps = snapshot.labelAs ?? [];
+    const hidden = new Set(swaps.flatMap((l) => l.instead));
+    const shown = active.flatMap((t) => {
+      if (hidden.has(t.entityId)) return [];
       if (!replaces.has(t.entityId)) return [t];
       if (!isWarCountry(t.entityId)) return [];
       if (inBounds(t.anchor)) return [t];
       const anchor = snapshot.labels?.find((l) => l.entity === t.entityId)?.anchor;
       return anchor ? [{ ...t, anchor }] : [];
     });
-  }, [active, snapshot, theater, isWarCountry]);
+    const swapped = swaps.flatMap((l) => {
+      if (shown.some((t) => t.entityId === l.entity)) return [];
+      const last = data.territories.filter((t) => t.entityId === l.entity).reduce<TerritoryIndexEntry | undefined>((m, t) => (!m || t.from > m.from ? t : m), undefined);
+      return last ? [{ ...last, key: `label-as:${l.entity}`, anchor: l.at ?? last.anchor }] : [];
+    });
+    return [...shown, ...swapped];
+  }, [active, snapshot, theater, isWarCountry, data.territories]);
 
   // ── 도형 불러오기 ─────────────────────────────────────────
   const geo = useRef(new Map<string, Map<string, TerritoryFeature>>());

@@ -253,6 +253,8 @@ theaters:
       - date: ...
         holds:                  # 거점: 그 시점의 도시·요새 소속 (도시 국가 동맹 등)
           - { name: 아테네, at: [23.73, 37.98], faction: delian }
+        labelAs:                # 선택: 이 장면에서 instead 나라들의 이름표 대신 entity(그때 있던 나라)의 이름표를 단다 (at 생략하면 그 나라 마지막 영토 이름표 자리)
+          - { entity: german-empire, instead: [weimar-republic] }
 ```
 
 관련 사건에 `front: { war: 전쟁 id, theater: 전역 id, date: 날짜 }`를 붙이면 사건에서 그 날짜의 전쟁 보기로 들어갈 수 있습니다(전역이 하나면 theater 생략).

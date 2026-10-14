@@ -56,6 +56,9 @@
 - { name: "바이링먀오", at: [110.43, 41.7], war: world-war-2, theater: asia-pacific, date: "1937-12-13", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
 - { name: "구이쑤", at: [111.65, 40.82], war: world-war-2, theater: asia-pacific, date: "1937-12-13", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
 - { name: "장자커우", at: [114.88, 40.82], war: world-war-2, theater: asia-pacific, date: "1937-12-13", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "텅충", at: [98.49, 25.02], war: world-war-2, theater: asia-pacific, date: "1937-12-13", expect: china, url: "https://en.wikipedia.org/wiki/China%E2%80%93Myanmar_border", from: "작업 K2 결과노트", note: "윈난 서부를 중화민국 영토가 덮음(손그림 조각 없이)" }
+- { name: "마카오", at: [113.55, 22.2], war: world-war-2, theater: asia-pacific, date: "1937-12-13", expect: none, url: "https://en.wikipedia.org/wiki/Portuguese_Macau", from: "작업 K2 결과노트", note: "포르투갈령(1999년 반환). 고치기 전에는 중화민국 도형이 덮어 china" }
+- { name: "하노이", at: [105.85, 21.03], war: world-war-2, theater: asia-pacific, date: "1937-12-13", expect: none, url: "https://en.wikipedia.org/wiki/Treaty_of_Tientsin_(1885)", from: "작업 K2 결과노트", note: "프랑스령 인도차이나(1940년 일본 진주 전)" }
 
 # 1938-10-27
 - { name: "한커우", at: [114.27, 30.59], war: world-war-2, theater: asia-pacific, date: "1938-10-27", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }

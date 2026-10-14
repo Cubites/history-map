@@ -718,3 +718,90 @@
   url: "https://ko.wikipedia.org/wiki/서울특별시"
   from: "세션 I1 결과노트"
   note: "평소 바뀌지 않아야 하는 지점(서울)"
+
+# 중화민국·중화인민공화국 서남 국경과 홍콩·마카오 (작업 K2, 2026-10-14). 청 도형은 그대로라 1911년 전 지점은 넣지 않았다
+- name: "텅충(윈난 서부)"
+  at: [98.49, 25.02]
+  years: [1912, 1930, 1948]
+  expect: roc
+  url: "https://en.wikipedia.org/wiki/China%E2%80%93Myanmar_border"
+  from: "작업 K2 결과노트"
+  note: "1894 영국-청 협약 국경 안쪽. 전에는 중화민국 도형이 윈난 서부를 덮지 않았다"
+
+- name: "텅충(윈난 서부)"
+  at: [98.49, 25.02]
+  years: [1950, 2000]
+  expect: prc
+  url: "https://en.wikipedia.org/wiki/China%E2%80%93Myanmar_border"
+  from: "작업 K2 결과노트"
+
+- name: "징훙(시솽반나)"
+  at: [100.8, 22.01]
+  year: 1930
+  expect: roc
+  url: "https://en.wikipedia.org/wiki/China%E2%80%93Myanmar_border"
+  from: "작업 K2 결과노트"
+
+- name: "징훙(시솽반나)"
+  at: [100.8, 22.01]
+  year: 1960
+  expect: prc
+  url: "https://en.wikipedia.org/wiki/China%E2%80%93Myanmar_border"
+  from: "작업 K2 결과노트"
+
+- name: "하노이(통킹)"
+  at: [105.85, 21.03]
+  years: [1912, 1930, 1960]
+  expect: none
+  region: east-asia
+  url: "https://en.wikipedia.org/wiki/Treaty_of_Tientsin_(1885)"
+  from: "작업 K2 결과노트"
+  note: "1885 톈진 조약으로 프랑스 보호령. 전에는 중화민국·중화인민공화국이 덮었다"
+
+- name: "카트만두(네팔)"
+  at: [85.32, 27.71]
+  years: [1930, 1960]
+  expect: none
+  region: east-asia
+  url: "https://en.wikipedia.org/wiki/Nepal%E2%80%93China_relations"
+  from: "작업 K2 결과노트"
+
+- name: "부탄 북부(룽나나)"
+  at: [89.9, 28.1]
+  years: [1930, 1960]
+  expect: none
+  region: east-asia
+  url: "https://en.wikipedia.org/wiki/Bhutan%E2%80%93China_relations"
+  from: "작업 K2 결과노트"
+  note: "전에는 티베트 남쪽 선이 부탄 북부를 덮었다"
+
+- name: "마카오(Natural Earth 50m 자리)"
+  at: [113.52, 22.225]
+  years: [1930, 1990]
+  expect: none
+  region: east-asia
+  url: "https://en.wikipedia.org/wiki/Sino-Portuguese_Treaty_of_Peking"
+  from: "작업 K2 결과노트"
+  note: "빌드 육지(land-50m)에는 실제 마카오반도가 없어 Natural Earth가 마카오를 두는 해안 덩어리에 찍음"
+
+- name: "마카오(Natural Earth 50m 자리)"
+  at: [113.52, 22.225]
+  year: 2000
+  expect: prc
+  url: "https://en.wikipedia.org/wiki/Sino-Portuguese_Treaty_of_Peking"
+  from: "작업 K2 결과노트"
+
+- name: "홍콩 주룽"
+  at: [114.17, 22.32]
+  years: [1930, 1990]
+  expect: none
+  region: east-asia
+  url: "https://en.wikipedia.org/wiki/Convention_for_the_Extension_of_Hong_Kong_Territory"
+  from: "작업 K2 결과노트"
+
+- name: "홍콩 주룽"
+  at: [114.17, 22.32]
+  year: 1998
+  expect: prc
+  url: "https://en.wikipedia.org/wiki/Convention_for_the_Extension_of_Hong_Kong_Territory"
+  from: "작업 K2 결과노트"
