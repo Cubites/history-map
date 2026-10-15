@@ -1262,3 +1262,231 @@
   url: "https://www.naturalearthdata.com/downloads/10m-physical-vectors/10m-rivers-lake-centerlines/"
   from: "작업 N1b 결과노트"
   note: "좌표는 위키백과 Faku County. 톄링 쪽으로 동쪽에 휜 요하의 서쪽(전에는 요동)"
+
+# 전한 앞 시기의 남쪽 이웃 땅, 촉·오의 교주, 당의 남조 시기 윈난 (작업 N3, 2026-10-15)
+- name: "광저우(번우)"
+  at: [113.26, 23.13]
+  year: -150
+  expect: none
+  region: east-asia
+  url: "https://en.wikipedia.org/wiki/Han_conquest_of_Nanyue"
+  from: "작업 N3 결과노트"
+  note: "남월의 도읍. 기원전 111년(천문 연도 -110) 한이 정복"
+
+- name: "광저우(번우)"
+  at: [113.26, 23.13]
+  year: -100
+  expect: western-han
+  url: "https://en.wikipedia.org/wiki/Han_conquest_of_Nanyue"
+  from: "작업 N3 결과노트"
+  note: "남해군"
+
+- name: "하이커우"
+  at: [110.33, 20.03]
+  year: -150
+  expect: none
+  region: east-asia
+  url: "https://en.wikipedia.org/wiki/Han_conquest_of_Nanyue"
+  from: "작업 N3 결과노트"
+  note: "하이난섬은 기원전 111년 주애·담이군(9군) 전에는 한 땅이 아님"
+
+- name: "하노이(통킹)"
+  at: [105.85, 21.03]
+  year: -150
+  expect: none
+  region: east-asia
+  url: "https://en.wikipedia.org/wiki/Han_conquest_of_Nanyue"
+  from: "작업 N3 결과노트"
+  note: "남월 땅(교지)"
+
+- name: "하노이(통킹)"
+  at: [105.85, 21.03]
+  year: -100
+  expect: western-han
+  url: "https://en.wikipedia.org/wiki/Han_conquest_of_Nanyue"
+  from: "작업 N3 결과노트"
+  note: "교지군"
+
+- name: "난닝"
+  at: [108.37, 22.82]
+  year: -150
+  expect: none
+  region: east-asia
+  url: "https://en.wikipedia.org/wiki/Han_conquest_of_Nanyue"
+  from: "작업 N3 결과노트"
+  note: "남월 땅(광시)"
+
+- name: "푸저우"
+  at: [119.30, 26.08]
+  year: -150
+  expect: none
+  region: east-asia
+  url: "https://en.wikipedia.org/wiki/Han_campaigns_against_Minyue"
+  from: "작업 N3 결과노트"
+  note: "민월(지금 푸젠). 기원전 111년 말 동월 평정"
+
+- name: "푸저우"
+  at: [119.30, 26.08]
+  year: -100
+  expect: western-han
+  url: "https://en.wikipedia.org/wiki/Han_campaigns_against_Minyue"
+  from: "작업 N3 결과노트"
+
+- name: "원저우"
+  at: [120.70, 28.00]
+  year: -150
+  expect: none
+  url: "https://en.wikipedia.org/wiki/Dong%27ou"
+  from: "작업 N3 결과노트"
+  note: "동구(東甌, 지금 원저우·타이저우·리수이)는 기원전 111년 한에 합병되기 전까지 한의 땅이 아님(기원전 138년 동구 사람들이 강회로 옮긴 뒤에도 한의 군현이 아니었음)"
+
+- name: "원저우"
+  at: [120.70, 28.00]
+  year: -100
+  expect: western-han
+  url: "https://en.wikipedia.org/wiki/Dong%27ou"
+  from: "작업 N3 결과노트"
+  note: "동구는 기원전 111년 한에 합병됨(지도에는 기원전 110년부터)"
+
+- name: "타이저우(저장)"
+  at: [121.42, 28.66]
+  year: -150
+  expect: none
+  url: "https://en.wikipedia.org/wiki/Dong%27ou"
+  from: "작업 N3 결과노트"
+  note: "동구의 북쪽 땅(지금 타이저우). 기원전 111년 한에 합병되기 전까지 한의 땅이 아님"
+
+- name: "리수이"
+  at: [119.92, 28.45]
+  year: -150
+  expect: none
+  url: "https://zh.wikipedia.org/wiki/%E4%B8%9C%E7%93%AF"
+  from: "작업 N3 결과노트"
+  note: "동구는 지금의 원저우·리수이·타이저우(오강·영강 유역)를 아우름(중국어판). 기원전 111년 한에 합병되기 전까지 한의 땅이 아님"
+
+- name: "구이양"
+  at: [106.63, 26.65]
+  year: -150
+  expect: none
+  region: east-asia
+  url: "https://en.wikipedia.org/wiki/Yelang"
+  from: "작업 N3 결과노트"
+  note: "야랑 등 서남이(구이저우). 기원전 111년 남월 정복과 함께 한에 들어감"
+
+- name: "구이양"
+  at: [106.63, 26.65]
+  year: 240
+  expect: shu
+  url: "https://en.wikipedia.org/wiki/Shu_Han"
+  from: "작업 N3 결과노트"
+  note: "촉의 남중(장가군)"
+
+- name: "시창(공도)"
+  at: [102.26, 27.89]
+  year: -150
+  expect: none
+  region: east-asia
+  url: "https://zh.wikipedia.org/wiki/越巂郡"
+  from: "작업 N3 결과노트"
+  note: "원정 6년(기원전 111년) 공도국 땅에 월수군을 둠"
+
+- name: "시창(공도)"
+  at: [102.26, 27.89]
+  year: -100
+  expect: western-han
+  url: "https://zh.wikipedia.org/wiki/越巂郡"
+  from: "작업 N3 결과노트"
+
+- name: "쿤밍(전)"
+  at: [102.71, 25.04]
+  year: -110
+  expect: none
+  region: east-asia
+  url: "https://en.wikipedia.org/wiki/Dian_Kingdom"
+  from: "작업 N3 결과노트"
+  note: "천문 연도 -110 = 기원전 111년. 전은 기원전 109년 한에 항복(익주군)"
+
+- name: "쿤밍(전)"
+  at: [102.71, 25.04]
+  year: -100
+  expect: western-han
+  url: "https://en.wikipedia.org/wiki/Dian_Kingdom"
+  from: "작업 N3 결과노트"
+
+- name: "쿤밍"
+  at: [102.71, 25.04]
+  year: 240
+  expect: shu
+  url: "https://en.wikipedia.org/wiki/Shu_Han"
+  from: "작업 N3 결과노트"
+  note: "촉의 남중(건녕군)"
+
+- name: "청두"
+  at: [104.07, 30.67]
+  year: 240
+  expect: shu
+  url: "https://en.wikipedia.org/wiki/Shu_Han"
+  from: "작업 N3 결과노트"
+
+- name: "난닝"
+  at: [108.37, 22.82]
+  year: 240
+  expect: wu
+  url: "https://en.wikipedia.org/wiki/Jiaozhou_(province)"
+  from: "작업 N3 결과노트"
+  note: "오의 울림군 쪽(전에는 동경 109° 상자로 촉)"
+
+- name: "하노이(통킹)"
+  at: [105.85, 21.03]
+  years: [240, 250]
+  expect: wu
+  url: "https://en.wikipedia.org/wiki/Jiaozhou_(province)"
+  from: "작업 N3 결과노트"
+  note: "오의 교지군(전에는 동경 109° 상자로 촉)"
+
+- name: "하노이(통킹)"
+  at: [105.85, 21.03]
+  year: 264
+  expect: cao-wei
+  url: "https://en.wikipedia.org/wiki/Jiaozhou_(province)"
+  from: "작업 N3 결과노트"
+  note: "263년 여흥(Lã Hưng)의 반란으로 위·진에 붙음"
+
+- name: "하노이(통킹)"
+  at: [105.85, 21.03]
+  year: 267
+  expect: western-jin
+  url: "https://en.wikipedia.org/wiki/Jiaozhou_(province)"
+  from: "작업 N3 결과노트"
+
+- name: "하노이(통킹)"
+  at: [105.85, 21.03]
+  year: 275
+  expect: wu
+  url: "https://en.wikipedia.org/wiki/Jiaozhou_(province)"
+  from: "작업 N3 결과노트"
+  note: "271년 오가 교지의 항구와 큰 고을을 되찾음"
+
+- name: "쿤밍"
+  at: [102.71, 25.04]
+  year: 700
+  expect: tang
+  url: "https://en.wikipedia.org/wiki/Nanzhao"
+  from: "작업 N3 결과노트"
+
+- name: "쿤밍"
+  at: [102.71, 25.04]
+  year: 800
+  expect: none
+  region: east-asia
+  url: "https://en.wikipedia.org/wiki/Nanzhao"
+  from: "작업 N3 결과노트"
+  note: "750~754년 천보 전쟁 뒤 남조 땅(751년부터 당에서 뺌)"
+
+- name: "하노이(통킹)"
+  at: [105.85, 21.03]
+  year: 800
+  expect: tang
+  url: "https://en.wikipedia.org/wiki/Nanzhao"
+  from: "작업 N3 결과노트"
+  note: "안남도호부는 당에 남김(남조의 863~866년 점령은 3년이라 그리지 않음)"

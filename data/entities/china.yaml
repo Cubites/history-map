@@ -22,6 +22,7 @@
   basis:
     type: primary_source
     refs: ["『구당서』", "『신당서』"]
+    foundingNote: 윈난은 남조가 750~754년 천보 전쟁으로 당과 갈라서 토번 편에 선 뒤 독립 왕국이었으므로 751년부터 넣지 않음(남조는 따로 그리지 않음)
 
 # 당이 점령지를 다스리려고 둔 기구. 옛 나라의 색 위에 당의 색으로 빗금을 친다 (relations.yaml의 occupied_by).
 # 나라가 아니므로 level: region으로 둔다.
