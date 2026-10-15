@@ -21,6 +21,10 @@
 - { name: "샬롱쉬르손", at: [4.85, 46.78], war: world-war-2, theater: europe, date: "1940-06-22", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
 - { name: "앙굴렘", at: [0.16, 45.65], war: world-war-2, theater: europe, date: "1940-06-22", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
 - { name: "몽드마르상", at: [-0.5, 43.89], war: world-war-2, theater: europe, date: "1940-06-22", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "리옹", at: [4.84, 45.76], war: world-war-2, theater: europe, date: "1940-06-22", expect: axis, url: "https://en.wikipedia.org/wiki/Vichy_France", from: "세션 N2 정리(옛 검토 지점 기대값 고침)", note: "비시 프랑스 추축 색(운영자 결정)" }
+- { name: "비시", at: [3.43, 46.13], war: world-war-2, theater: europe, date: "1940-06-22", expect: axis, url: "https://en.wikipedia.org/wiki/Vichy_France", from: "세션 N2 정리(옛 검토 지점 기대값 고침)", note: "비시 프랑스 추축 색(운영자 결정)" }
+- { name: "리모주", at: [1.26, 45.83], war: world-war-2, theater: europe, date: "1940-06-22", expect: axis, url: "https://en.wikipedia.org/wiki/Vichy_France", from: "세션 N2 정리(옛 검토 지점 기대값 고침)", note: "비시 프랑스 추축 색(운영자 결정)" }
+- { name: "포", at: [-0.37, 43.3], war: world-war-2, theater: europe, date: "1940-06-22", expect: axis, url: "https://en.wikipedia.org/wiki/Vichy_France", from: "세션 N2 정리(옛 검토 지점 기대값 고침)", note: "비시 프랑스 추축 색(운영자 결정)" }
 
 # 1940-09-15
 - { name: "시디바라니", at: [25.9, 31.61], war: world-war-2, theater: europe, date: "1940-09-15", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "9.16 이탈리아 점령" }
@@ -38,6 +42,8 @@
 - { name: "베이루트", at: [35.5, 33.89], war: world-war-2, theater: europe, date: "1941-06-22", expect: none, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "비시 (7.14 항복)" }
 - { name: "바그다드", at: [44.36, 33.31], war: world-war-2, theater: europe, date: "1941-06-22", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
 - { name: "케르치", at: [36.47, 45.36], war: world-war-2, theater: europe, date: "1941-06-22", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "팔미라", at: [38.27, 34.55], war: world-war-2, theater: europe, date: "1941-06-22", expect: axis, url: "https://en.wikipedia.org/wiki/Syria%E2%80%93Lebanon_campaign", from: "세션 N2 정리(옛 검토 지점 기대값 고침)", note: "비시 프랑스 추축 색(운영자 결정), 팔미라 함락 1941-07-03" }
+- { name: "알레포", at: [37.16, 36.2], war: world-war-2, theater: europe, date: "1941-06-22", expect: axis, url: "https://en.wikipedia.org/wiki/Syria%E2%80%93Lebanon_campaign", from: "세션 N2 정리(옛 검토 지점 기대값 고침)", note: "비시 프랑스 추축 색(운영자 결정)" }
 
 # 1941-12-05
 - { name: "칼리닌(트베리)", at: [35.9, 56.86], war: world-war-2, theater: europe, date: "1941-12-05", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "10.14~12.16 독일" }
@@ -106,6 +112,7 @@
 - { name: "야스노고르스크(라프테보)", at: [37.69, 54.48], war: world-war-2, theater: europe, date: "1941-12-05", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "툴라 북쪽 회랑" }
 - { name: "툴라 북 20km", at: [37.6, 54.37], war: world-war-2, theater: europe, date: "1941-12-05", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
 - { name: "툴라 서 20km", at: [37.3, 54.2], war: world-war-2, theater: europe, date: "1941-12-05", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "스코핀", at: [39.55, 53.82], war: world-war-2, theater: europe, date: "1941-12-05", expect: soviet, url: "https://ru.wikipedia.org/wiki/%D0%A1%D0%BA%D0%BE%D0%BF%D0%B8%D0%BD", from: "세션 N2 정리(옛 검토 지점 기대값 고침)", note: "독일군 점령은 1941-11-25 하루 남짓" }
 
 # 1942-11-19
 - { name: "보로네시 도심(우안)", at: [39.2, 51.67], war: world-war-2, theater: europe, date: "1942-11-19", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토", note: "도심 독일, 좌안 소련" }
@@ -346,6 +353,7 @@
 - { name: "피사 남부", at: [10.4, 43.71], war: world-war-2, theater: europe, date: "1944-08-25", expect: allies, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
 - { name: "리미니", at: [12.57, 44.06], war: world-war-2, theater: europe, date: "1944-08-25", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
 - { name: "페사로", at: [12.91, 43.91], war: world-war-2, theater: europe, date: "1944-08-25", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }
+- { name: "콘스탄차", at: [28.63, 44.17], war: world-war-2, theater: europe, date: "1944-08-25", expect: soviet, url: "https://en.wikipedia.org/wiki/King_Michael%27s_Coup", from: "세션 N2 정리(옛 검토 지점 기대값 고침)", note: "1944-08-23 루마니아가 편을 바꿈" }
 
 # 1944-12-16
 - { name: "부다페스트", at: [19.04, 47.5], war: world-war-2, theater: europe, date: "1944-12-16", expect: axis, url: 필요, legacy: true, from: "세계 대전 W2 검토" }

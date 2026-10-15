@@ -19,6 +19,13 @@
 - { name: "캉바오", at: [114.6, 41.85], war: world-war-2, theater: asia-pacific, date: "1937-07-07", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
 - { name: "구위안", at: [115.69, 41.67], war: world-war-2, theater: asia-pacific, date: "1937-07-07", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
 - { name: "바오창(타이푸쓰)", at: [115.28, 41.88], war: world-war-2, theater: asia-pacific, date: "1937-07-07", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "바오터우", at: [109.84, 40.66], war: world-war-2, theater: asia-pacific, date: "1937-07-07", expect: china, url: "https://en.wikipedia.org/wiki/Mengjiang", from: "세션 N2 정리(옛 검토 지점 기대값 고침)", note: "일본군 함락은 1937-10" }
+- { name: "우위안", at: [108.27, 41.09], war: world-war-2, theater: asia-pacific, date: "1937-07-07", expect: china, url: "https://en.wikipedia.org/wiki/Battle_of_Wuyuan", from: "세션 N2 정리(옛 검토 지점 기대값 고침)", note: "1940-02 일본 점령, 1940-04-01 중국 탈환" }
+- { name: "린허", at: [107.4, 40.75], war: world-war-2, theater: asia-pacific, date: "1937-07-07", expect: china, url: "https://en.wikipedia.org/wiki/Battle_of_Wuyuan", from: "세션 N2 정리(옛 검토 지점 기대값 고침)", note: "1940-02 일본 점령 뒤 중국" }
+- { name: "샤오양", at: [111.47, 27.24], war: world-war-2, theater: asia-pacific, date: "1937-07-07", expect: china, url: "https://en.wikipedia.org/wiki/Operation_Ichi-Go", from: "세션 N2 정리(옛 검토 지점 기대값 고침)", note: "후난 남부 일본 점령은 1944 이치고 작전" }
+- { name: "샹샹", at: [112.53, 27.73], war: world-war-2, theater: asia-pacific, date: "1937-07-07", expect: china, url: "https://en.wikipedia.org/wiki/Operation_Ichi-Go", from: "세션 N2 정리(옛 검토 지점 기대값 고침)", note: "후난 남부 일본 점령은 1944 이치고 작전" }
+- { name: "롄위안", at: [111.67, 27.69], war: world-war-2, theater: asia-pacific, date: "1937-07-07", expect: china, url: "https://en.wikipedia.org/wiki/Operation_Ichi-Go", from: "세션 N2 정리(옛 검토 지점 기대값 고침)", note: "후난 남부 일본 점령은 1944 이치고 작전" }
+- { name: "헝산", at: [112.87, 27.23], war: world-war-2, theater: asia-pacific, date: "1937-07-07", expect: china, url: "https://en.wikipedia.org/wiki/Operation_Ichi-Go", from: "세션 N2 정리(옛 검토 지점 기대값 고침)", note: "후난 남부 일본 점령은 1944 이치고 작전" }
 
 # 1937-12-13
 - { name: "난징", at: [118.78, 32.06], war: world-war-2, theater: asia-pacific, date: "1937-12-13", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
@@ -59,6 +66,12 @@
 - { name: "텅충", at: [98.49, 25.02], war: world-war-2, theater: asia-pacific, date: "1937-12-13", expect: china, url: "https://en.wikipedia.org/wiki/China%E2%80%93Myanmar_border", from: "작업 K2 결과노트", note: "윈난 서부를 중화민국 영토가 덮음(손그림 조각 없이)" }
 - { name: "마카오", at: [113.55, 22.2], war: world-war-2, theater: asia-pacific, date: "1937-12-13", expect: none, url: "https://en.wikipedia.org/wiki/Portuguese_Macau", from: "작업 K2 결과노트", note: "포르투갈령(1999년 반환). 고치기 전에는 중화민국 도형이 덮어 china" }
 - { name: "하노이", at: [105.85, 21.03], war: world-war-2, theater: asia-pacific, date: "1937-12-13", expect: none, url: "https://en.wikipedia.org/wiki/Treaty_of_Tientsin_(1885)", from: "작업 K2 결과노트", note: "프랑스령 인도차이나(1940년 일본 진주 전)" }
+- { name: "우위안", at: [108.27, 41.09], war: world-war-2, theater: asia-pacific, date: "1937-12-13", expect: china, url: "https://en.wikipedia.org/wiki/Battle_of_Wuyuan", from: "세션 N2 정리(옛 검토 지점 기대값 고침)", note: "1940-02 일본 점령, 1940-04-01 중국 탈환" }
+- { name: "린허", at: [107.4, 40.75], war: world-war-2, theater: asia-pacific, date: "1937-12-13", expect: china, url: "https://en.wikipedia.org/wiki/Battle_of_Wuyuan", from: "세션 N2 정리(옛 검토 지점 기대값 고침)", note: "1940-02 일본 점령 뒤 중국" }
+- { name: "샤오양", at: [111.47, 27.24], war: world-war-2, theater: asia-pacific, date: "1937-12-13", expect: china, url: "https://en.wikipedia.org/wiki/Operation_Ichi-Go", from: "세션 N2 정리(옛 검토 지점 기대값 고침)", note: "후난 남부 일본 점령은 1944 이치고 작전" }
+- { name: "샹샹", at: [112.53, 27.73], war: world-war-2, theater: asia-pacific, date: "1937-12-13", expect: china, url: "https://en.wikipedia.org/wiki/Operation_Ichi-Go", from: "세션 N2 정리(옛 검토 지점 기대값 고침)", note: "후난 남부 일본 점령은 1944 이치고 작전" }
+- { name: "롄위안", at: [111.67, 27.69], war: world-war-2, theater: asia-pacific, date: "1937-12-13", expect: china, url: "https://en.wikipedia.org/wiki/Operation_Ichi-Go", from: "세션 N2 정리(옛 검토 지점 기대값 고침)", note: "후난 남부 일본 점령은 1944 이치고 작전" }
+- { name: "헝산", at: [112.87, 27.23], war: world-war-2, theater: asia-pacific, date: "1937-12-13", expect: china, url: "https://en.wikipedia.org/wiki/Operation_Ichi-Go", from: "세션 N2 정리(옛 검토 지점 기대값 고침)", note: "후난 남부 일본 점령은 1944 이치고 작전" }
 
 # 1938-10-27
 - { name: "한커우", at: [114.27, 30.59], war: world-war-2, theater: asia-pacific, date: "1938-10-27", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
@@ -93,6 +106,12 @@
 - { name: "구이쑤", at: [111.65, 40.82], war: world-war-2, theater: asia-pacific, date: "1938-10-27", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
 - { name: "바오터우", at: [109.84, 40.66], war: world-war-2, theater: asia-pacific, date: "1938-10-27", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
 - { name: "장자커우", at: [114.88, 40.82], war: world-war-2, theater: asia-pacific, date: "1938-10-27", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "우위안", at: [108.27, 41.09], war: world-war-2, theater: asia-pacific, date: "1938-10-27", expect: china, url: "https://en.wikipedia.org/wiki/Battle_of_Wuyuan", from: "세션 N2 정리(옛 검토 지점 기대값 고침)", note: "1940-02 일본 점령, 1940-04-01 중국 탈환" }
+- { name: "린허", at: [107.4, 40.75], war: world-war-2, theater: asia-pacific, date: "1938-10-27", expect: china, url: "https://en.wikipedia.org/wiki/Battle_of_Wuyuan", from: "세션 N2 정리(옛 검토 지점 기대값 고침)", note: "1940-02 일본 점령 뒤 중국" }
+- { name: "샤오양", at: [111.47, 27.24], war: world-war-2, theater: asia-pacific, date: "1938-10-27", expect: china, url: "https://en.wikipedia.org/wiki/Operation_Ichi-Go", from: "세션 N2 정리(옛 검토 지점 기대값 고침)", note: "후난 남부 일본 점령은 1944 이치고 작전" }
+- { name: "샹샹", at: [112.53, 27.73], war: world-war-2, theater: asia-pacific, date: "1938-10-27", expect: china, url: "https://en.wikipedia.org/wiki/Operation_Ichi-Go", from: "세션 N2 정리(옛 검토 지점 기대값 고침)", note: "후난 남부 일본 점령은 1944 이치고 작전" }
+- { name: "롄위안", at: [111.67, 27.69], war: world-war-2, theater: asia-pacific, date: "1938-10-27", expect: china, url: "https://en.wikipedia.org/wiki/Operation_Ichi-Go", from: "세션 N2 정리(옛 검토 지점 기대값 고침)", note: "후난 남부 일본 점령은 1944 이치고 작전" }
+- { name: "헝산", at: [112.87, 27.23], war: world-war-2, theater: asia-pacific, date: "1938-10-27", expect: china, url: "https://en.wikipedia.org/wiki/Operation_Ichi-Go", from: "세션 N2 정리(옛 검토 지점 기대값 고침)", note: "후난 남부 일본 점령은 1944 이치고 작전" }
 
 # 1941-12-08
 - { name: "하노이", at: [105.85, 21.03], war: world-war-2, theater: asia-pacific, date: "1941-12-08", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
@@ -128,6 +147,12 @@
 - { name: "구이쑤", at: [111.65, 40.82], war: world-war-2, theater: asia-pacific, date: "1941-12-08", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
 - { name: "바오터우", at: [109.84, 40.66], war: world-war-2, theater: asia-pacific, date: "1941-12-08", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
 - { name: "장자커우", at: [114.88, 40.82], war: world-war-2, theater: asia-pacific, date: "1941-12-08", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "우위안", at: [108.27, 41.09], war: world-war-2, theater: asia-pacific, date: "1941-12-08", expect: china, url: "https://en.wikipedia.org/wiki/Battle_of_Wuyuan", from: "세션 N2 정리(옛 검토 지점 기대값 고침)", note: "1940-02 일본 점령, 1940-04-01 중국 탈환" }
+- { name: "린허", at: [107.4, 40.75], war: world-war-2, theater: asia-pacific, date: "1941-12-08", expect: china, url: "https://en.wikipedia.org/wiki/Battle_of_Wuyuan", from: "세션 N2 정리(옛 검토 지점 기대값 고침)", note: "1940-02 일본 점령 뒤 중국" }
+- { name: "샤오양", at: [111.47, 27.24], war: world-war-2, theater: asia-pacific, date: "1941-12-08", expect: china, url: "https://en.wikipedia.org/wiki/Operation_Ichi-Go", from: "세션 N2 정리(옛 검토 지점 기대값 고침)", note: "후난 남부 일본 점령은 1944 이치고 작전" }
+- { name: "샹샹", at: [112.53, 27.73], war: world-war-2, theater: asia-pacific, date: "1941-12-08", expect: china, url: "https://en.wikipedia.org/wiki/Operation_Ichi-Go", from: "세션 N2 정리(옛 검토 지점 기대값 고침)", note: "후난 남부 일본 점령은 1944 이치고 작전" }
+- { name: "롄위안", at: [111.67, 27.69], war: world-war-2, theater: asia-pacific, date: "1941-12-08", expect: china, url: "https://en.wikipedia.org/wiki/Operation_Ichi-Go", from: "세션 N2 정리(옛 검토 지점 기대값 고침)", note: "후난 남부 일본 점령은 1944 이치고 작전" }
+- { name: "헝산", at: [112.87, 27.23], war: world-war-2, theater: asia-pacific, date: "1941-12-08", expect: china, url: "https://en.wikipedia.org/wiki/Operation_Ichi-Go", from: "세션 N2 정리(옛 검토 지점 기대값 고침)", note: "후난 남부 일본 점령은 1944 이치고 작전" }
 
 # 1942-06-07
 - { name: "미치나", at: [97.4, 25.38], war: world-war-2, theater: asia-pacific, date: "1942-06-07", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "5.8" }
@@ -176,6 +201,12 @@
 - { name: "구이쑤", at: [111.65, 40.82], war: world-war-2, theater: asia-pacific, date: "1942-06-07", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
 - { name: "바오터우", at: [109.84, 40.66], war: world-war-2, theater: asia-pacific, date: "1942-06-07", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
 - { name: "장자커우", at: [114.88, 40.82], war: world-war-2, theater: asia-pacific, date: "1942-06-07", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "우위안", at: [108.27, 41.09], war: world-war-2, theater: asia-pacific, date: "1942-06-07", expect: china, url: "https://en.wikipedia.org/wiki/Battle_of_Wuyuan", from: "세션 N2 정리(옛 검토 지점 기대값 고침)", note: "1940-02 일본 점령, 1940-04-01 중국 탈환" }
+- { name: "린허", at: [107.4, 40.75], war: world-war-2, theater: asia-pacific, date: "1942-06-07", expect: china, url: "https://en.wikipedia.org/wiki/Battle_of_Wuyuan", from: "세션 N2 정리(옛 검토 지점 기대값 고침)", note: "1940-02 일본 점령 뒤 중국" }
+- { name: "샤오양", at: [111.47, 27.24], war: world-war-2, theater: asia-pacific, date: "1942-06-07", expect: china, url: "https://en.wikipedia.org/wiki/Operation_Ichi-Go", from: "세션 N2 정리(옛 검토 지점 기대값 고침)", note: "후난 남부 일본 점령은 1944 이치고 작전" }
+- { name: "샹샹", at: [112.53, 27.73], war: world-war-2, theater: asia-pacific, date: "1942-06-07", expect: china, url: "https://en.wikipedia.org/wiki/Operation_Ichi-Go", from: "세션 N2 정리(옛 검토 지점 기대값 고침)", note: "후난 남부 일본 점령은 1944 이치고 작전" }
+- { name: "롄위안", at: [111.67, 27.69], war: world-war-2, theater: asia-pacific, date: "1942-06-07", expect: china, url: "https://en.wikipedia.org/wiki/Operation_Ichi-Go", from: "세션 N2 정리(옛 검토 지점 기대값 고침)", note: "후난 남부 일본 점령은 1944 이치고 작전" }
+- { name: "헝산", at: [112.87, 27.23], war: world-war-2, theater: asia-pacific, date: "1942-06-07", expect: china, url: "https://en.wikipedia.org/wiki/Operation_Ichi-Go", from: "세션 N2 정리(옛 검토 지점 기대값 고침)", note: "후난 남부 일본 점령은 1944 이치고 작전" }
 
 # 1943-11-23
 - { name: "라에", at: [147, -6.73], war: world-war-2, theater: asia-pacific, date: "1943-11-23", expect: allies, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
@@ -207,6 +238,13 @@
 - { name: "구이쑤", at: [111.65, 40.82], war: world-war-2, theater: asia-pacific, date: "1943-11-23", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
 - { name: "바오터우", at: [109.84, 40.66], war: world-war-2, theater: asia-pacific, date: "1943-11-23", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
 - { name: "장자커우", at: [114.88, 40.82], war: world-war-2, theater: asia-pacific, date: "1943-11-23", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "타무", at: [94.31, 24.22], war: world-war-2, theater: asia-pacific, date: "1943-11-23", expect: allies, url: "https://en.wikipedia.org/wiki/Battle_of_Imphal", from: "세션 N2 정리(옛 검토 지점 기대값 고침)", note: "1944-03 전 인도 제20사단이 타무를 지킴" }
+- { name: "우위안", at: [108.27, 41.09], war: world-war-2, theater: asia-pacific, date: "1943-11-23", expect: china, url: "https://en.wikipedia.org/wiki/Battle_of_Wuyuan", from: "세션 N2 정리(옛 검토 지점 기대값 고침)", note: "1940-02 일본 점령, 1940-04-01 중국 탈환" }
+- { name: "린허", at: [107.4, 40.75], war: world-war-2, theater: asia-pacific, date: "1943-11-23", expect: china, url: "https://en.wikipedia.org/wiki/Battle_of_Wuyuan", from: "세션 N2 정리(옛 검토 지점 기대값 고침)", note: "1940-02 일본 점령 뒤 중국" }
+- { name: "샤오양", at: [111.47, 27.24], war: world-war-2, theater: asia-pacific, date: "1943-11-23", expect: china, url: "https://en.wikipedia.org/wiki/Operation_Ichi-Go", from: "세션 N2 정리(옛 검토 지점 기대값 고침)", note: "후난 남부 일본 점령은 1944 이치고 작전" }
+- { name: "샹샹", at: [112.53, 27.73], war: world-war-2, theater: asia-pacific, date: "1943-11-23", expect: china, url: "https://en.wikipedia.org/wiki/Operation_Ichi-Go", from: "세션 N2 정리(옛 검토 지점 기대값 고침)", note: "후난 남부 일본 점령은 1944 이치고 작전" }
+- { name: "롄위안", at: [111.67, 27.69], war: world-war-2, theater: asia-pacific, date: "1943-11-23", expect: china, url: "https://en.wikipedia.org/wiki/Operation_Ichi-Go", from: "세션 N2 정리(옛 검토 지점 기대값 고침)", note: "후난 남부 일본 점령은 1944 이치고 작전" }
+- { name: "헝산", at: [112.87, 27.23], war: world-war-2, theater: asia-pacific, date: "1943-11-23", expect: china, url: "https://en.wikipedia.org/wiki/Operation_Ichi-Go", from: "세션 N2 정리(옛 검토 지점 기대값 고침)", note: "후난 남부 일본 점령은 1944 이치고 작전" }
 
 # 1944-07-09
 - { name: "사이판", at: [145.75, 15.19], war: world-war-2, theater: asia-pacific, date: "1944-07-09", expect: allies, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
@@ -251,6 +289,9 @@
 - { name: "장자커우", at: [114.88, 40.82], war: world-war-2, theater: asia-pacific, date: "1944-07-09", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
 - { name: "샹샹", at: [112.53, 27.73], war: world-war-2, theater: asia-pacific, date: "1944-07-09", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
 - { name: "헝산", at: [112.87, 27.23], war: world-war-2, theater: asia-pacific, date: "1944-07-09", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "우위안", at: [108.27, 41.09], war: world-war-2, theater: asia-pacific, date: "1944-07-09", expect: china, url: "https://en.wikipedia.org/wiki/Battle_of_Wuyuan", from: "세션 N2 정리(옛 검토 지점 기대값 고침)", note: "1940-02 일본 점령, 1940-04-01 중국 탈환" }
+- { name: "린허", at: [107.4, 40.75], war: world-war-2, theater: asia-pacific, date: "1944-07-09", expect: china, url: "https://en.wikipedia.org/wiki/Battle_of_Wuyuan", from: "세션 N2 정리(옛 검토 지점 기대값 고침)", note: "1940-02 일본 점령 뒤 중국" }
+- { name: "롄위안", at: [111.67, 27.69], war: world-war-2, theater: asia-pacific, date: "1944-07-09", expect: china, url: "https://en.wikipedia.org/wiki/Operation_Ichi-Go", from: "세션 N2 정리(옛 검토 지점 기대값 고침)", note: "후난 남부 일본 점령은 1944 이치고 작전" }
 
 # 1944-10-25
 - { name: "타클로반", at: [125, 11.24], war: world-war-2, theater: asia-pacific, date: "1944-10-25", expect: allies, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
@@ -295,6 +336,8 @@
 - { name: "장자커우", at: [114.88, 40.82], war: world-war-2, theater: asia-pacific, date: "1944-10-25", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
 - { name: "샹샹", at: [112.53, 27.73], war: world-war-2, theater: asia-pacific, date: "1944-10-25", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
 - { name: "헝산", at: [112.87, 27.23], war: world-war-2, theater: asia-pacific, date: "1944-10-25", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "우위안", at: [108.27, 41.09], war: world-war-2, theater: asia-pacific, date: "1944-10-25", expect: china, url: "https://en.wikipedia.org/wiki/Battle_of_Wuyuan", from: "세션 N2 정리(옛 검토 지점 기대값 고침)", note: "1940-02 일본 점령, 1940-04-01 중국 탈환" }
+- { name: "린허", at: [107.4, 40.75], war: world-war-2, theater: asia-pacific, date: "1944-10-25", expect: china, url: "https://en.wikipedia.org/wiki/Battle_of_Wuyuan", from: "세션 N2 정리(옛 검토 지점 기대값 고침)", note: "1940-02 일본 점령 뒤 중국" }
 
 # 1945-06-23
 - { name: "랑군", at: [96.16, 16.8], war: world-war-2, theater: asia-pacific, date: "1945-06-23", expect: allies, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
@@ -339,6 +382,8 @@
 - { name: "샤오양", at: [111.47, 27.24], war: world-war-2, theater: asia-pacific, date: "1945-06-23", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
 - { name: "샹샹", at: [112.53, 27.73], war: world-war-2, theater: asia-pacific, date: "1945-06-23", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
 - { name: "헝산", at: [112.87, 27.23], war: world-war-2, theater: asia-pacific, date: "1945-06-23", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "우위안", at: [108.27, 41.09], war: world-war-2, theater: asia-pacific, date: "1945-06-23", expect: china, url: "https://en.wikipedia.org/wiki/Battle_of_Wuyuan", from: "세션 N2 정리(옛 검토 지점 기대값 고침)", note: "1940-02 일본 점령, 1940-04-01 중국 탈환" }
+- { name: "린허", at: [107.4, 40.75], war: world-war-2, theater: asia-pacific, date: "1945-06-23", expect: china, url: "https://en.wikipedia.org/wiki/Battle_of_Wuyuan", from: "세션 N2 정리(옛 검토 지점 기대값 고침)", note: "1940-02 일본 점령 뒤 중국" }
 
 # 1945-08-15
 - { name: "만저우리", at: [117.38, 49.6], war: world-war-2, theater: asia-pacific, date: "1945-08-15", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W3 검토", note: "8.9" }
@@ -398,6 +443,8 @@
 - { name: "샤오양", at: [111.47, 27.24], war: world-war-2, theater: asia-pacific, date: "1945-08-15", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
 - { name: "샹샹", at: [112.53, 27.73], war: world-war-2, theater: asia-pacific, date: "1945-08-15", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
 - { name: "헝산", at: [112.87, 27.23], war: world-war-2, theater: asia-pacific, date: "1945-08-15", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "우위안", at: [108.27, 41.09], war: world-war-2, theater: asia-pacific, date: "1945-08-15", expect: china, url: "https://en.wikipedia.org/wiki/Battle_of_Wuyuan", from: "세션 N2 정리(옛 검토 지점 기대값 고침)", note: "1940-02 일본 점령, 1940-04-01 중국 탈환" }
+- { name: "린허", at: [107.4, 40.75], war: world-war-2, theater: asia-pacific, date: "1945-08-15", expect: china, url: "https://en.wikipedia.org/wiki/Battle_of_Wuyuan", from: "세션 N2 정리(옛 검토 지점 기대값 고침)", note: "1940-02 일본 점령 뒤 중국" }
 
 # 1945-09-02
 - { name: "평양", at: [125.75, 39.03], war: world-war-2, theater: asia-pacific, date: "1945-09-02", expect: soviet, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
@@ -418,6 +465,14 @@
 - { name: "헝산", at: [112.87, 27.23], war: world-war-2, theater: asia-pacific, date: "1945-09-02", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
 - { name: "신의주", at: [124.395, 40.1], war: world-war-2, theater: asia-pacific, date: "1945-09-02", expect: soviet, url: "https://adamcathcart.com/wp-content/uploads/2009/09/peripheral-influence-the-sinuiju-student-incident-and-the-soviet-occupation-of-north-korea-1945-1947.pdf", from: "작업 N1c", note: "압록강 남안(조선 쪽). 소련군이 8.30 신의주에 들어옴" }
 - { name: "단둥", at: [124.39, 40.135], war: world-war-2, theater: asia-pacific, date: "1945-09-02", expect: soviet, url: "https://zh.wikipedia.org/wiki/安东省_(中华人民共和国)", from: "작업 N1c", note: "압록강 북안(만주 쪽, 당시 안둥). 소련군 8.27 진주, 중공군 9.17" }
+- { name: "장베이", at: [114.7, 41.16], war: world-war-2, theater: asia-pacific, date: "1945-09-02", expect: soviet, url: "https://en.wikipedia.org/wiki/Soviet_invasion_of_Manchuria", from: "세션 N2 정리(옛 검토 지점 기대값 고침)", note: "소련·몽골군 내몽골 점령" }
+- { name: "캉바오", at: [114.6, 41.85], war: world-war-2, theater: asia-pacific, date: "1945-09-02", expect: soviet, url: "https://en.wikipedia.org/wiki/Soviet_invasion_of_Manchuria", from: "세션 N2 정리(옛 검토 지점 기대값 고침)", note: "소련·몽골군 내몽골 점령" }
+- { name: "바오창(타이푸쓰)", at: [115.28, 41.88], war: world-war-2, theater: asia-pacific, date: "1945-09-02", expect: soviet, url: "https://en.wikipedia.org/wiki/Soviet_invasion_of_Manchuria", from: "세션 N2 정리(옛 검토 지점 기대값 고침)", note: "소련·몽골군 내몽골 점령" }
+- { name: "화더", at: [114.01, 41.9], war: world-war-2, theater: asia-pacific, date: "1945-09-02", expect: soviet, url: "https://en.wikipedia.org/wiki/Soviet_invasion_of_Manchuria", from: "세션 N2 정리(옛 검토 지점 기대값 고침)", note: "소련·몽골군 내몽골 점령" }
+- { name: "둬룬", at: [116.48, 42.2], war: world-war-2, theater: asia-pacific, date: "1945-09-02", expect: soviet, url: "https://en.wikipedia.org/wiki/Soviet_invasion_of_Manchuria", from: "세션 N2 정리(옛 검토 지점 기대값 고침)", note: "소련·몽골군 내몽골 점령" }
+- { name: "시린호트", at: [116.07, 43.93], war: world-war-2, theater: asia-pacific, date: "1945-09-02", expect: soviet, url: "https://en.wikipedia.org/wiki/Soviet_invasion_of_Manchuria", from: "세션 N2 정리(옛 검토 지점 기대값 고침)", note: "소련·몽골군 내몽골 점령" }
+- { name: "우위안", at: [108.27, 41.09], war: world-war-2, theater: asia-pacific, date: "1945-09-02", expect: china, url: "https://en.wikipedia.org/wiki/Battle_of_Wuyuan", from: "세션 N2 정리(옛 검토 지점 기대값 고침)", note: "1940-02 일본 점령, 1940-04-01 중국 탈환" }
+- { name: "린허", at: [107.4, 40.75], war: world-war-2, theater: asia-pacific, date: "1945-09-02", expect: china, url: "https://en.wikipedia.org/wiki/Battle_of_Wuyuan", from: "세션 N2 정리(옛 검토 지점 기대값 고침)", note: "1940-02 일본 점령 뒤 중국" }
 
 # 1945-09-09
 - { name: "서울", at: [126.98, 37.57], war: world-war-2, theater: asia-pacific, date: "1945-09-09", expect: allies, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
@@ -437,3 +492,11 @@
 - { name: "헝산", at: [112.87, 27.23], war: world-war-2, theater: asia-pacific, date: "1945-09-09", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
 - { name: "파이자바드", at: [70.58, 37.118], war: world-war-2, theater: asia-pacific, date: "1941-12-08", expect: none, url: "https://en.wikipedia.org/wiki/Fayzabad%2C_Badakhshan", from: "작업 M2", note: "아프가니스탄 바다흐샨 주도. 옛 소련 도형이 판즈강 남쪽 아프가니스탄 땅을 덮던 곳이라 국경을 고친 뒤 빠짐" }
 - { name: "무르갑", at: [73.965, 38.169], war: world-war-2, theater: asia-pacific, date: "1941-12-08", expect: soviet, url: "https://en.wikipedia.org/wiki/Murghob", from: "작업 M2", note: "타지크 소비에트 사회주의 공화국 동파미르. 1895년 러시아·영국 합의로 러시아가 갖게 된 땅이라 소련 영토에 더함" }
+- { name: "장베이", at: [114.7, 41.16], war: world-war-2, theater: asia-pacific, date: "1945-09-09", expect: soviet, url: "https://en.wikipedia.org/wiki/Soviet_invasion_of_Manchuria", from: "세션 N2 정리(옛 검토 지점 기대값 고침)", note: "소련·몽골군 내몽골 점령" }
+- { name: "캉바오", at: [114.6, 41.85], war: world-war-2, theater: asia-pacific, date: "1945-09-09", expect: soviet, url: "https://en.wikipedia.org/wiki/Soviet_invasion_of_Manchuria", from: "세션 N2 정리(옛 검토 지점 기대값 고침)", note: "소련·몽골군 내몽골 점령" }
+- { name: "바오창(타이푸쓰)", at: [115.28, 41.88], war: world-war-2, theater: asia-pacific, date: "1945-09-09", expect: soviet, url: "https://en.wikipedia.org/wiki/Soviet_invasion_of_Manchuria", from: "세션 N2 정리(옛 검토 지점 기대값 고침)", note: "소련·몽골군 내몽골 점령" }
+- { name: "화더", at: [114.01, 41.9], war: world-war-2, theater: asia-pacific, date: "1945-09-09", expect: soviet, url: "https://en.wikipedia.org/wiki/Soviet_invasion_of_Manchuria", from: "세션 N2 정리(옛 검토 지점 기대값 고침)", note: "소련·몽골군 내몽골 점령" }
+- { name: "둬룬", at: [116.48, 42.2], war: world-war-2, theater: asia-pacific, date: "1945-09-09", expect: soviet, url: "https://en.wikipedia.org/wiki/Soviet_invasion_of_Manchuria", from: "세션 N2 정리(옛 검토 지점 기대값 고침)", note: "소련·몽골군 내몽골 점령" }
+- { name: "시린호트", at: [116.07, 43.93], war: world-war-2, theater: asia-pacific, date: "1945-09-09", expect: soviet, url: "https://en.wikipedia.org/wiki/Soviet_invasion_of_Manchuria", from: "세션 N2 정리(옛 검토 지점 기대값 고침)", note: "소련·몽골군 내몽골 점령" }
+- { name: "우위안", at: [108.27, 41.09], war: world-war-2, theater: asia-pacific, date: "1945-09-09", expect: china, url: "https://en.wikipedia.org/wiki/Battle_of_Wuyuan", from: "세션 N2 정리(옛 검토 지점 기대값 고침)", note: "1940-02 일본 점령, 1940-04-01 중국 탈환" }
+- { name: "린허", at: [107.4, 40.75], war: world-war-2, theater: asia-pacific, date: "1945-09-09", expect: china, url: "https://en.wikipedia.org/wiki/Battle_of_Wuyuan", from: "세션 N2 정리(옛 검토 지점 기대값 고침)", note: "1940-02 일본 점령 뒤 중국" }
