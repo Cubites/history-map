@@ -971,3 +971,294 @@
   url: "https://en.wikipedia.org/wiki/Tawang"
   from: "작업 L1 결과노트"
   note: "1951년 2월 인도가 티베트 행정을 걷어 냄. 타왕 읍은 청·중화민국의 티베트 남쪽 대략 선 밖이라 1951년 전에도 비어 있음(근사)"
+
+# 송·명·원의 통킹·윈난·히말라야, 악사이친 서부 (작업 N1a, 2026-10-15)
+- name: "하노이(통킹)"
+  at: [105.85, 21.03]
+  year: 1300
+  expect: none
+  region: east-asia
+  url: "https://en.wikipedia.org/wiki/Mongol_invasions_of_Vietnam"
+  from: "작업 N1a 결과노트"
+  note: "대월이 원의 세 차례 침입(1258·1285·1287~1288)을 물리치고 조공국으로 남음. 전에는 송·원 도형이 덮었다"
+
+- name: "하노이(통킹)"
+  at: [105.85, 21.03]
+  year: 1410
+  expect: ming
+  url: "https://en.wikipedia.org/wiki/Fourth_Chinese_domination_of_Vietnam"
+  from: "작업 N1a 결과노트"
+  note: "1407년 7월 안남을 교지로 고쳐 직접 다스림"
+
+- name: "하노이(통킹)"
+  at: [105.85, 21.03]
+  year: 1500
+  expect: none
+  region: east-asia
+  url: "https://en.wikipedia.org/wiki/Lam_S%C6%A1n_uprising"
+  from: "작업 N1a 결과노트"
+  note: "1427년 12월 동관 맹약 뒤 명군 철수, 1428년 레 왕조. 전에는 명 도형이 1368~1644년 내내 덮었다"
+
+- name: "빈(응에안, 교지 남부)"
+  at: [105.68, 18.67]
+  year: 1410
+  expect: ming
+  url: "https://en.wikipedia.org/wiki/Lam_S%C6%A1n_uprising"
+  from: "작업 N1a 결과노트"
+  note: "응에안은 교지의 부였고 1425년 7월 람선군이 차지. 전에는 어느 버전에도 덮이지 않았다"
+
+- name: "다리(대리국 도읍)"
+  at: [100.16, 25.69]
+  year: 1100
+  expect: none
+  region: east-asia
+  url: "https://en.wikipedia.org/wiki/Dali_Kingdom"
+  from: "작업 N1a 결과노트"
+  note: "937~1253 대리국(송의 조공국이나 사실상 독립), 1253년 몽골 정복 뒤 원, 1382년 명. 전에는 송이 덮었다"
+
+- name: "다리(대리국 도읍)"
+  at: [100.16, 25.69]
+  year: 1300
+  expect: yuan
+  url: "https://en.wikipedia.org/wiki/Dali_Kingdom"
+  from: "작업 N1a 결과노트"
+
+- name: "다리(대리국 도읍)"
+  at: [100.16, 25.69]
+  year: 1500
+  expect: ming
+  url: "https://en.wikipedia.org/wiki/Ming_conquest_of_Yunnan"
+  from: "작업 N1a 결과노트"
+
+- name: "바오산(윈난 서부)"
+  at: [99.16, 25.11]
+  year: 1100
+  expect: none
+  region: east-asia
+  url: "https://en.wikipedia.org/wiki/Dali_Kingdom"
+  from: "작업 N1a 결과노트"
+  note: "전에는 원·명 도형이 윈난 서부를 덮지 않았다"
+
+- name: "바오산(윈난 서부)"
+  at: [99.16, 25.11]
+  year: 1300
+  expect: yuan
+  url: "https://en.wikipedia.org/wiki/Dali_Kingdom"
+  from: "작업 N1a 결과노트"
+
+- name: "바오산(윈난 서부)"
+  at: [99.16, 25.11]
+  year: 1500
+  expect: ming
+  url: "https://en.wikipedia.org/wiki/Ming_conquest_of_Yunnan"
+  from: "작업 N1a 결과노트"
+
+- name: "쿤밍(선천)"
+  at: [102.71, 25.04]
+  year: 1370
+  expect: none
+  region: east-asia
+  url: "https://en.wikipedia.org/wiki/Ming_conquest_of_Yunnan"
+  from: "작업 N1a 결과노트"
+  note: "원의 양왕이 북원에 충성하며 다스리다 1382년 1월 자결. 전에는 명이 1368년부터 덮었다"
+
+- name: "쿤밍(선천)"
+  at: [102.71, 25.04]
+  year: 1390
+  expect: ming
+  url: "https://en.wikipedia.org/wiki/Ming_conquest_of_Yunnan"
+  from: "작업 N1a 결과노트"
+
+- name: "카트만두(네팔)"
+  at: [85.32, 27.71]
+  year: 1300
+  expect: none
+  region: east-asia
+  url: "https://en.wikipedia.org/wiki/Tibet_under_Yuan_rule"
+  from: "작업 N1a 결과노트"
+  note: "원의 티베트는 우짱·암도·캄. 전에는 원이 티베트 남쪽 대략 선으로 네팔 북부를 덮었다"
+
+- name: "팀푸(부탄)"
+  at: [89.64, 27.47]
+  year: 1300
+  expect: none
+  region: east-asia
+  url: "https://en.wikipedia.org/wiki/Tibet_under_Yuan_rule"
+  from: "작업 N1a 결과노트"
+  note: "위와 같음"
+
+- name: "악사이친 서부(실효 지배선 동쪽)"
+  at: [78.6, 34.9]
+  year: 1970
+  expect: prc
+  url: "https://en.wikipedia.org/wiki/Aksai_Chin"
+  from: "작업 N1a 결과노트"
+  note: "1950년대 도로를 닦아 차지, 1962년 전쟁 뒤 중국이 지배. 전에는 티베트 서쪽 직선 밖이라 비어 있었다"
+
+- name: "시창(西昌, 대리국 건창)"
+  at: [102.26, 27.89]
+  year: 1100
+  expect: none
+  region: east-asia
+  url: "https://en.wikipedia.org/wiki/Dali_Kingdom"
+  from: "작업 N1a 결과노트"
+  note: "송 태조가 대도하 남쪽을 대리 땅으로 인정해 송·대리 경계는 대도하. 대리국은 그리지 않아 비운다. 전에는 송이 대도하 남쪽 쓰촨을 덮었다"
+
+- name: "시창(西昌, 몽골 정복 뒤)"
+  at: [102.26, 27.89]
+  year: 1260
+  expect: mongol-empire
+  region: east-asia
+  url: "https://en.wikipedia.org/wiki/Xichang"
+  from: "작업 N1a 결과노트"
+  note: "몽골이 1253~1256년 이 땅을 정복하고 원은 윈난에 붙였다"
+
+- name: "러산(嘉州, 대도하 북쪽)"
+  at: [103.76, 29.58]
+  year: 1100
+  expect: song
+  region: east-asia
+  url: "https://en.wikipedia.org/wiki/Dali_Kingdom"
+  from: "작업 N1a 결과노트"
+  note: "대도하 북쪽은 송 땅으로 남는다"
+
+- name: "시창(西昌, 원 건창로)"
+  at: [102.26, 27.89]
+  year: 1375
+  expect: none
+  region: east-asia
+  url: "https://zh.wikisource.org/wiki/明史/卷43"
+  from: "작업 N1a 결과노트"
+  note: "원의 건창로는 운남행성 땅이라 양왕 쪽. 명은 홍무 15년(1382) 3월 건창부·건창위를 둠(『명사』 지리지 건창위군민지휘사사)"
+
+- name: "시창(西昌, 명 건창위)"
+  at: [102.26, 27.89]
+  year: 1390
+  expect: ming
+  region: east-asia
+  url: "https://zh.wikisource.org/wiki/明史/卷43"
+  from: "작업 N1a 결과노트"
+  note: "위와 같음"
+
+# 압록강 선(작업 N1b): 압록강 양쪽 도시. 좌표는 위키백과
+- name: "신의주"
+  at: [124.40, 40.10]
+  year: 400
+  expect: goguryeo
+  url: "https://en.wikipedia.org/wiki/Sinuiju"
+  from: "작업 N1b 결과노트"
+  note: "압록강 건너 단둥과 마주 봄. 요동 동쪽 경계가 하구에서 압록강을 따르므로 강 남쪽은 고구려"
+
+- name: "신의주"
+  at: [124.40, 40.10]
+  year: 1600
+  expect: joseon
+  url: "https://en.wikipedia.org/wiki/Sinuiju"
+  from: "작업 N1b 결과노트"
+
+- name: "신의주"
+  at: [124.40, 40.10]
+  year: 2000
+  expect: dprk
+  url: "https://en.wikipedia.org/wiki/Sinuiju"
+  from: "작업 N1b 결과노트"
+
+- name: "단둥"
+  at: [124.394, 40.121]
+  year: 400
+  expect: later-yan
+  url: "https://en.wikipedia.org/wiki/Dandong"
+  from: "작업 N1b 결과노트"
+  note: "압록강 서북쪽 기슭. 400년 요동은 후연"
+
+- name: "단둥"
+  at: [124.394, 40.121]
+  year: 1600
+  expect: ming
+  url: "https://en.wikipedia.org/wiki/Dandong"
+  from: "작업 N1b 결과노트"
+
+- name: "단둥"
+  at: [124.394, 40.121]
+  year: 2000
+  expect: prc
+  url: "https://en.wikipedia.org/wiki/Dandong"
+  from: "작업 N1b 결과노트"
+
+- name: "만포"
+  at: [126.29, 41.157]
+  years: [1600, 2000]
+  expect: [joseon, dprk]
+  url: "https://en.wikipedia.org/wiki/Manpo"
+  from: "작업 N1b 결과노트"
+  note: "압록강 건너 지안과 마주 봄"
+
+- name: "지안(국내성)"
+  at: [126.194, 41.125]
+  year: 400
+  expect: goguryeo
+  url: "https://en.wikipedia.org/wiki/Ji%27an,_Jilin"
+  from: "작업 N1b 결과노트"
+  note: "고구려 도읍 국내성(3~427년)"
+
+- name: "지안(국내성)"
+  at: [126.194, 41.125]
+  year: 1600
+  expect: jurchen
+  url: "https://en.wikipedia.org/wiki/Ji%27an,_Jilin"
+  from: "작업 N1b 결과노트"
+  note: "압록강을 사이에 두고 만포와 나뉨. 전에는 압록강선이 강 북쪽을 지나 조선·북한 쪽에 들었다"
+
+- name: "지안(국내성)"
+  at: [126.194, 41.125]
+  year: 2000
+  expect: prc
+  url: "https://en.wikipedia.org/wiki/Ji%27an,_Jilin"
+  from: "작업 N1b 결과노트"
+
+# 요하 선(작업 N1b): 요동(요하 동쪽)·요하 서쪽 도시. 좌표는 위키백과
+- name: "랴오양(양평)"
+  at: [123.176, 41.279]
+  year: -200
+  expect: western-han
+  url: "https://en.wikipedia.org/wiki/Liaoyang"
+  from: "작업 N1b 결과노트"
+  note: "연·진·한 요동군 치소(양평)"
+
+- name: "랴오양(양평)"
+  at: [123.176, 41.279]
+  year: 500
+  expect: goguryeo
+  url: "https://en.wikipedia.org/wiki/Liaoyang"
+  from: "작업 N1b 결과노트"
+
+- name: "랴오양(양평)"
+  at: [123.176, 41.279]
+  year: 1600
+  expect: ming
+  url: "https://en.wikipedia.org/wiki/Liaoyang"
+  from: "작업 N1b 결과노트"
+
+- name: "신민"
+  at: [122.823, 41.997]
+  year: 500
+  expect: khitan
+  url: "https://www.naturalearthdata.com/downloads/10m-physical-vectors/10m-rivers-lake-centerlines/"
+  from: "작업 N1b 결과노트"
+  note: "좌표는 위키백과 Xinmin, Liaoning. Natural Earth 요하 중심선 서쪽이라 요동(고구려) 밖. 전에는 요하선이 강 서쪽을 지나 고구려에 들었다"
+
+- name: "신민"
+  at: [122.823, 41.997]
+  year: 1600
+  expect: mongols
+  url: "https://www.naturalearthdata.com/downloads/10m-physical-vectors/10m-rivers-lake-centerlines/"
+  from: "작업 N1b 결과노트"
+  note: "요하 서쪽, 만리장성 선 북쪽"
+
+- name: "파쿠"
+  at: [123.411, 42.495]
+  years: [500, 1600]
+  expect: [khitan, mongols]
+  url: "https://www.naturalearthdata.com/downloads/10m-physical-vectors/10m-rivers-lake-centerlines/"
+  from: "작업 N1b 결과노트"
+  note: "좌표는 위키백과 Faku County. 톄링 쪽으로 동쪽에 휜 요하의 서쪽(전에는 요동)"
