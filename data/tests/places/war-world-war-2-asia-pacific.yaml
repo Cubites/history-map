@@ -416,6 +416,8 @@
 - { name: "샤오양", at: [111.47, 27.24], war: world-war-2, theater: asia-pacific, date: "1945-09-02", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
 - { name: "샹샹", at: [112.53, 27.73], war: world-war-2, theater: asia-pacific, date: "1945-09-02", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
 - { name: "헝산", at: [112.87, 27.23], war: world-war-2, theater: asia-pacific, date: "1945-09-02", expect: japan, url: 필요, legacy: true, from: "세계 대전 W3 검토" }
+- { name: "신의주", at: [124.395, 40.1], war: world-war-2, theater: asia-pacific, date: "1945-09-02", expect: soviet, url: "https://adamcathcart.com/wp-content/uploads/2009/09/peripheral-influence-the-sinuiju-student-incident-and-the-soviet-occupation-of-north-korea-1945-1947.pdf", from: "작업 N1c", note: "압록강 남안(조선 쪽). 소련군이 8.30 신의주에 들어옴" }
+- { name: "단둥", at: [124.39, 40.135], war: world-war-2, theater: asia-pacific, date: "1945-09-02", expect: soviet, url: "https://zh.wikipedia.org/wiki/安东省_(中华人民共和国)", from: "작업 N1c", note: "압록강 북안(만주 쪽, 당시 안둥). 소련군 8.27 진주, 중공군 9.17" }
 
 # 1945-09-09
 - { name: "서울", at: [126.98, 37.57], war: world-war-2, theater: asia-pacific, date: "1945-09-09", expect: allies, url: 필요, legacy: true, from: "세계 대전 W3 검토" }

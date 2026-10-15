@@ -107,7 +107,7 @@ npm run build:data -- --no-wars                    # 전쟁 빼고 전부 (약 3
 **지점 검사**: `npm run test:geo -- --only places`(전쟁 지점은 `data/tests/places/war-*.yaml`, 약 6초). 전쟁 지점 한 줄은 `war`·`date`(장면 날짜와 똑같이)·`theater`(전역이 여럿일 때)·`at`·`expect`(진영 id, `none`, 또는 전선 위를 뜻하는 `front` — 어느 진영 경계든 `tolerance` km 안, 기본 5)를 적는다. 겹치는 곳은 마지막 진영이 이긴다(빌드와 같음).
 - 새 장면·도시를 더하면 그 도시를 정답표에 한 줄씩 보탠다(도시×날짜 판정표를 대신한다). 새 지점은 `url`이 필수다(`필요`+`legacy: true`는 옛 지점만).
 - 전쟁 도형이 지금 입력(전쟁 YAML·손그림 geojson·쓰는 나라의 `data/geo`·빌드 코드)으로 만든 것이 아니면(입력 해시가 `.cache/build-data-wars/built.json`의 기록과 다름) 그 전쟁 지점은 `건너뜀`이고 머리 줄에 `건너뜀 N`이 붙는다. `--ci`에서는 실패다. 위 `--war`로 다시 만든다(파일 시각은 보지 않으므로 `gen:geo`로 시각만 바뀐 것은 문제 없음).
-- 전쟁 지점 정답표(`war-*.yaml` 1,242점)는 모두 `legacy`이고, 정답표 전체가 지금 지도와 같은 점만 넣은 회귀 시험이다(지도가 맞다는 사실 확인이 아님). `url: 필요`+`legacy: true` 지점은 근거 확인 전이고, 근거 URL은 그 절의 대표 근거일 수 있어 지점마다의 근거가 아닐 수 있다. 지금 지도와 다른 지점은 `_review-needed.yaml`에 있다(러너가 읽지 않음).
+- 전쟁 지점 정답표(`war-*.yaml` 1,307점)는 대부분(1,241점) `legacy`이고(나머지 66점은 지점마다 근거 URL이 있음), 정답표 전체가 지금 지도와 같은 점만 넣은 회귀 시험이다(지도가 맞다는 사실 확인이 아님). `url: 필요`+`legacy: true` 지점은 근거 확인 전이고, 근거 URL은 그 절의 대표 근거일 수 있어 지점마다의 근거가 아닐 수 있다. 지금 지도와 다른 지점은 `_review-needed.yaml`에 있다(러너가 읽지 않음).
 - 실패 줄 예: `✗ places 1943-07-10 world-war-2/europe 시라쿠사 [15.29,37.07] 기대 allies, 실제 axis (경계까지 3.1km)`. 전선을 고쳐야 하면 고치고, 일부러 그렇게 둔 것은 `data/tests/allow/places.yaml`에 `key`(열쇠 그대로)·`reason`·`decided`로 적는다. 아직 판단 못 한 지점은 `data/tests/places/_review-needed.yaml`(러너가 읽지 않음)에 둔다.
 - 가는 띠·넓이 0 조각은 `strips`·`zero` 검사가 data/geo 쪽을 본다(전쟁 도형의 조각 수·넓이는 빌드 뒤 `wars.json`에서 따로 뽑아 점검). 자세한 사용법: [border.md](border.md) 5.1.
 
