@@ -18,9 +18,6 @@
 - key: 'goryeo-khitan-war/korea 1019-01-00 평양 [125.75,39.02]'
   reason: 기대 쪽 경계까지 14.6km(끝 기준 30km 미만). 거란군이 개경으로 내려오는 장면의 서경 근처 손그림 경계 오차
   decided: 세션 S2-C
-- key: 'goryeo-khitan-war/korea 1019-02-01 의주 [124.53,40.20]'
-  reason: 기대 쪽 경계까지 15.2km(끝 기준 30km 미만). 고려 영토 자료의 북서 경계가 의주를 덮지 못해 거란군이 물러난 뒤에도 빈칸(none)으로 보임
-  decided: 세션 S2-C
 - key: 'goryeo-mongol-war/korea 1231-12-00 개성 [126.55,37.97]'
   reason: 기대 쪽 경계까지 10.1km(끝 기준 30km 미만). 몽골군이 개경 앞까지 닿은 장면의 손그림 경계 오차
   decided: 세션 S2-C
@@ -35,7 +32,4 @@
   decided: 세션 S2-C
 - key: 'korean-war/korea 1950-10-19 함흥 [127.53,39.92]'
   reason: 기대 쪽 경계까지 24.4km(끝 기준 30km 미만). 유엔군 북진 전선 근처의 손그림 경계 오차
-  decided: 세션 S2-C
-- key: 'later-three-kingdoms/korea 935-11-00 나주 [126.72,35.03]'
-  reason: 고려의 나주 월경지(903년부터)가 평소 국경 자료(고려 영토)에 없어 후백제로 칠해짐 — 전쟁 보기가 아니라 국경 쪽 문제, 국경 FIX 후보로 넘김
   decided: 세션 S2-C

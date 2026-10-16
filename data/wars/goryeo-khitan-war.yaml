@@ -66,7 +66,6 @@ theaters:
         areas:
           - { faction: goryeo, entities: [goryeo] }
           - { faction: liao, geojson: goryeo-khitan-war/1010-11-00-liao.geojson }
-          - { faction: goryeo, geojson: goryeo-khitan-war/1010-11-00-goryeo.geojson }
         holds:
           - { name: 흥화진 (양규), at: [124.72, 40.05], faction: goryeo }
         arrows:
@@ -78,7 +77,6 @@ theaters:
         areas:
           - { faction: goryeo, entities: [goryeo] }
           - { faction: liao, geojson: goryeo-khitan-war/1011-01-00-liao.geojson }
-          - { faction: goryeo, geojson: goryeo-khitan-war/1011-01-00-goryeo.geojson }
         holds:
           - { name: 흥화진 (양규), at: [124.72, 40.05], faction: goryeo }
           - { name: 서경, at: [125.75, 39.02], faction: goryeo }
@@ -91,7 +89,6 @@ theaters:
         areas:
           - { faction: goryeo, entities: [goryeo] }
           - { faction: liao, geojson: goryeo-khitan-war/1018-12-00-liao.geojson }
-          - { faction: goryeo, geojson: goryeo-khitan-war/1018-12-00-goryeo.geojson }
         holds:
           - { name: 흥화진, at: [124.72, 40.05], faction: goryeo }
 

@@ -1490,3 +1490,75 @@
   url: "https://en.wikipedia.org/wiki/Nanzhao"
   from: "작업 N3 결과노트"
   note: "안남도호부는 당에 남김(남조의 863~866년 점령은 3년이라 그리지 않음)"
+
+- name: "의주"
+  at: [124.53, 40.2]
+  years: [1000, 1200]
+  expect: goryeo
+  url: "https://encykorea.aks.ac.kr/Article/E0043403"
+  from: "세션 G1"
+  note: "993년 서희의 담판으로 압록강 동쪽을 얻고 흥화진을 둠. 거란의 보주(1014~1117)는 작아 그리지 않음"
+
+- name: "의주"
+  at: [124.53, 40.2]
+  year: 1280
+  expect: dongnyeong
+  url: "https://encykorea.aks.ac.kr/Article/E0043403"
+  from: "세션 G1"
+  note: "1269년 최탄 등이 원에 항복해 동녕부에 속함(1290년 돌려받음)"
+
+- name: "의주"
+  at: [124.53, 40.2]
+  year: 1400
+  expect: joseon
+  url: "https://encykorea.aks.ac.kr/Article/E0043403"
+  from: "세션 G1"
+  note: "1402년 정주·위원진을 합침(조선 초 의주)"
+
+- name: "삭주"
+  at: [125.05, 40.38]
+  year: 1100
+  expect: goryeo
+  url: "https://encykorea.aks.ac.kr/Article/E0026170"
+  from: "세션 G1"
+  note: "1018년 영새현을 삭주로 고쳐 방어사를 둠. 천리장성(1033~1044)이 지남"
+
+- name: "창성"
+  at: [125.25, 40.47]
+  year: 1100
+  expect: goryeo
+  url: "https://encykorea.aks.ac.kr/Article/E0055444"
+  from: "세션 G1"
+  note: "1035년 창주방어사를 둠. 지도는 994년부터 고려(1만 km² 아래라 해를 나누지 않음)"
+
+- name: "나주"
+  at: [126.72, 35.03]
+  year: 902
+  expect: hubaekje
+  url: "https://encykorea.aks.ac.kr/Article/E0059032"
+  from: "세션 G1"
+  note: "903년 왕건이 빼앗기 전의 금성군"
+
+- name: "나주"
+  at: [126.72, 35.03]
+  year: 910
+  expect: hugoguryeo
+  url: "https://encykorea.aks.ac.kr/Article/E0059032"
+  from: "세션 G1"
+  note: "903년 왕건이 금성군과 부근 10여 군현을 빼앗아 나주로 고침(떨어진 땅)"
+
+- name: "나주"
+  at: [126.72, 35.03]
+  year: 930
+  expect: goryeo
+  url: "https://encykorea.aks.ac.kr/Article/E0041304"
+  from: "세션 G1"
+  note: "고려의 떨어진 땅. 6년 동안 막혔던 나주를 935년 유금필이 경략"
+
+- name: "무안"
+  at: [126.48, 34.99]
+  year: 910
+  expect: hugoguryeo
+  url: "https://encykorea.aks.ac.kr/Article/E0059032"
+  from: "세션 G1"
+  note: "영산강 하류 군현(나주 부근 10여 군현)"

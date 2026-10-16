@@ -7,7 +7,7 @@
 // 2026-10-15(작업 N3): 윈난 경계선 L_YN_E를 export해 china.mjs의 전한·촉·오·당 도형도 쓰게 함(값은 그대로)
 import { D, I, P, U, box, bx, polyclip, rev, ring } from '../lib.mjs';
 import { AMUR_BAND, CHINA, HEXI, HEXI_W, HUABEI, HUABEI_938, LIAODONG, LIAOXI, LX916, LX923, L_KHITAN_N, L_NORTH, L_WEST, MN_BUIR, MN_TRIPOINT, NORTH_BOX, NORTH_OF_YANYUN, XIXIA, YANYUN, YANYUN_N, YANYUN_REST } from '../shared.mjs';
-import { BALHAE_698, BALHAE_719, BALHAE_818, BAND_6JIN, BAND_RIVERS, BOJU, BUYEO, GOGURYEO, G_BIG, KOREA, L_SSANGSEONG_W, L_YALU_TUMEN, NB_1107, NB_1258, NB_1270, NB_1356, NB_926, NB_936, NB_994, NB_994_NB, NINE_NORTH, OKJEO, SILLA_676, SOUTH_OF_RIVERS, YT_I, noNokdun } from './korea.mjs';
+import { BALHAE_698, BALHAE_719, BALHAE_818, BAND_6JIN, BAND_RIVERS, BUYEO, GOGURYEO, G_BIG, KOREA, L_SSANGSEONG_W, L_YALU_TUMEN, NB_1107, NB_1258, NB_1270, NB_1356, NB_926, NB_936, NB_994, NINE_NORTH, OKJEO, SILLA_676, SOUTH_OF_RIVERS, YT_I, noNokdun } from './korea.mjs';
 
 // ── 폴리곤 ─────────────────────────────────────────────────
 // 거란(요). 남쪽 끝은 연운 16주 북쪽 끝(shared.mjs의 YANYUN_N), 북쪽 변(L_KHITAN_N)은 흑룡강 띠(AMUR_BAND)의 남쪽 변과 함께 쓴다
@@ -368,10 +368,10 @@ export const versions = {
   jurchen: [
     [926, 936, U(NB_926, EAST_MAN, NE_FAR)],
     [936, 994, U(NB_936, EAST_MAN, NE_FAR)],
-    [994, 1014, U(NB_994, EAST_MAN, NE_FAR)],
-    [1014, 1107, U(NB_994_NB, EAST_MAN, NE_FAR)],
-    [1107, 1110, D(U(NB_1107, EAST_MAN, NE_FAR), NINE_NORTH, BOJU)],
-    [1110, 1115, U(NB_994_NB, EAST_MAN, NE_FAR)],
+    // 압록강 하류 남쪽(의주 일대)은 994년부터 고려. 거란의 보주(1014~1117)는 작아 따로 그리지 않는다
+    [994, 1107, U(NB_994, EAST_MAN, NE_FAR)],
+    [1107, 1110, D(U(NB_1107, EAST_MAN, NE_FAR), NINE_NORTH)],
+    [1110, 1115, U(NB_994, EAST_MAN, NE_FAR)],
     // 1115~1368년은 금·원의 영토에 포함
     [1368, 1388, NB_1356],
     [1388, 1392, U(MANCHURIA_NORTH, NB_1356, NE_FAR)],
@@ -429,9 +429,8 @@ export const versions = {
     // 936~1037년 알라산(거연)은 초원과 함께 요의 서쪽 끝으로 본 추정. 1038년부터 서하 (2026-09-29)
     [936, 938, U(LIAO_936, D(LIAOXI, HUABEI), LX923, [ALXA])],
     [938, 960, U(LIAO_938, D(LIAOXI, HUABEI_938), YANYUN_REST, [ALXA])],
-    [960, 1014, U(LIAO_938, LIAOXI, YANYUN_REST, [ALXA])],
-    [1014, 1038, U(LIAO_938, LIAOXI, YANYUN_REST, BOJU, [ALXA])],
-    [1038, 1115, U(LIAO_938, LIAOXI, YANYUN_REST, BOJU)],
+    [960, 1038, U(LIAO_938, LIAOXI, YANYUN_REST, [ALXA])],
+    [1038, 1115, U(LIAO_938, LIAOXI, YANYUN_REST)],
     [1115, 1125, U(LIAO_1115, LIAOXI, YANYUN_REST)],
   ],
 };
