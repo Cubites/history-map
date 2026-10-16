@@ -1,6 +1,6 @@
 # 안내서: 전쟁 보기 작업 (`data/wars`)
 
-> 대상: 전쟁 보기(날짜별 전선 스냅샷) 구현·독립 검토·반영 에이전트와 메인. 형식의 정식 설명은 `docs/DESIGN.md` §4.5와 `docs/DATA_GUIDE.md` §5.6, 스키마는 `src/schema/index.ts`(WarSchema~TheaterSchema), 계산은 `scripts/build-data/wars.ts`. 공통 함정은 [common-pitfalls.md](common-pitfalls.md).
+> 대상: 전쟁 보기(날짜별 전선 스냅샷) 구현·독립 검토·반영 에이전트와 메인. 형식의 정식 설명은 `docs/DESIGN.md` §4.5와 `docs/DATA_GUIDE.md` §5.6, 스키마는 `src/schema/index.ts`(WarSchema~TheaterSchema), 계산은 `scripts/build-data/wars.ts`. 공통 기준(그리기 방식·파일 이름·정답표·생성기 목표·색·글체·달력)은 [standards.md](standards.md) 4·8절, 공통 함정은 [common-pitfalls.md](common-pitfalls.md).
 
 ## 1. 언제 쓰나, 흐름, 모델
 
@@ -20,10 +20,10 @@
 | 무엇 | 어디 |
 |---|---|
 | 전쟁 정의 | `data/wars/<파일>.yaml` — 한국사는 `imjin-war.yaml`처럼 이름만, 다른 권역은 `<머리글자>-<두 자리 수>-<이름>.yaml`(`eu-02-world-war-1.yaml`). 머리글자는 `src/schema/regions.ts`의 `STORY_FILE_PREFIXES`에 있어야 함 |
-| 손으로 그린 점령 지역 | `data/wars/<이름>/<날짜>-<진영>.geojson`(EPSG:4326, 바다로 넉넉히 나가게; 빌드가 해안선으로 자름) |
+| 손으로 그린 점령 지역 | 지금은 `data/wars/<폴더>/<날짜>-<진영>.geojson`(한국 전쟁은 `<날짜>.geojson`), 표준 이름은 standards.md 8절(EPSG:4326, 바다로 넉넉히 나가게; 빌드가 해안선으로 자름) |
 | 사건에서 전쟁 보기로 | `data/events/*.yaml`의 사건에 `front: { war: 전쟁id, theater: 전역id, date: YYYY-MM-DD }` 한 줄. `date`는 스냅샷 날짜와 정확히 같아야 함 |
 | 빌드 출력(손대지 않음) | `public/data/wars.json`(전쟁 목록·진영·전투) + `public/data/wars/<전쟁id>.json`(점령 지역 도형, 전쟁 보기를 열 때만 받음) |
-| 생성 스크립트 | 저장소 밖 인계 폴더 `ww-generators/w1~w3`(경유점 `fronts*.mjs`, 장면 구성 `spec*.mjs`, 생성 `gen.mjs`, 검사 `check.mjs`). W2는 `HISTORY_MAP_REPO=<저장소> node gen.mjs`로 YAML과 geojson을 **바이트까지 같게** 다시 만든다 |
+| 생성 스크립트 | 지금은 저장소 밖 인계 폴더 `ww-generators/w1~w4`(경유점 `fronts*.mjs`, 장면 구성 `spec*.mjs`, 생성 `gen.mjs`, 검사 `check.mjs`). w1·w2·w4는 `HISTORY_MAP_REPO=<저장소> node gen.mjs`, **w3은 저장소 경로가 `'../repo'`로 고정**(`gen.mjs`의 import·출력 경로와 `lib.mjs`의 `REPO`가 `ww-generators/repo`를 가리키므로 그 자리에 사본을 두고 돌림)이고, 모두 YAML과 geojson을 **바이트까지 같게** 다시 만든다. 저장소 안 `scripts/wars/`·`npm run gen:wars`로 옮기는 것이 목표(standards.md 8절) |
 
 YAML 뼈대(실제 파일은 `data/wars/eu-02-world-war-2.yaml` 머리를 본다):
 
@@ -60,13 +60,13 @@ theaters:
 
 ## 3. 기준 (승인된 것만)
 
-- **고칠지는 끝 기준으로 정한다**(`docs/europe/06-open-items.md` '끝 기준', 2026-10-15): 전쟁 지점은 기대 진영 경계에서 30km 넘게 벗어날 때만 보고, 10km 미만과 화면에 보이지 않는 작은 섬은 닫는다. 기대값(정답표)이 틀렸을 수 있으니 사료로 기대값부터 확인한다. 검토는 기준에 못 미치는 새 후보를 올리지 않는다.
+- **고칠지는 끝 기준으로 정한다**: 전쟁 지점 30km 기준과 검토 범위는 [standards.md](standards.md) 2절.
 
 - **세계 대전 운영자 결정(2026-10-12)**: 1차 대전은 유럽 전역 하나, 2차 대전은 유럽·북아프리카 + 아시아·태평양(1937-07-07 루거우차오부터), **핵심 국면만**(장면 12 / 16 / 12), **실제 전선 지도에 가깝게(수 km)**. 비시 프랑스는 추축 색, 이탈리아는 1940-06-10 참전 전에는 칠하지 않음.
 - **2차 대전 진영 id 고정**: `allies`(entity `uk`), `axis`(`nazi-germany`), `soviet`(`soviet-union`, 독소 불가침 시기와 동부 전선을 따로 보이려 연합국과 분리), `japan`(`japan`), `china`(`roc`). 색은 #4a72b8 · #62666e · #c2453b · #c77a9e · #d9a43a.
 - **전쟁 보기는 날짜별 실제 점령을 그린다**(연 단위 국경의 '원정은 칠하지 않음'과 다름). 다만 참전 전 중립 기간은 칠하지 않고(평소 영토로 보임), `replaces`에는 1차 대전처럼 연 단위 영토가 전쟁 뒤 모습인 나라·점령지 항목만 넣는다.
-- 날짜는 그레고리력 `YYYY-MM-DD`, 기록에 날이 없으면 `00`. 전근대 전쟁은 음력으로 적고 이름에 "(날짜는 음력)".
-- 스냅샷당 화살표 2~5개, 전투는 전역마다 15~30개(summary 한두 문장, 교과서·개설서에 나오는 것), 진군로는 꼭 필요할 때만. 글체 '~했습니다', 책 『』, 표기는 저장소 기존 표기(리비우(렘베르크)처럼 병기).
+- 날짜·달력: [standards.md](standards.md) 4절(출처 달력 그대로, `YYYY-MM-DD`, 날이 없으면 `00`).
+- 스냅샷당 화살표 2~5개, 전투는 전역마다 15~30개(summary 한두 문장, 교과서·개설서에 나오는 것), 진군로는 꼭 필요할 때만. 글체는 standards.md 8절, 책 『』, 표기는 저장소 기존 표기(리비우(렘베르크)처럼 병기).
 - 정밀도: 서부 전선 참호선은 10~20km 간격 경유점, 경유점은 실제 위치(OSM·위키백과 좌표) 5km 안, 강을 따라가는 전선은 강줄기에 맞춤. 바다 쪽은 **넉넉히 바깥으로**(해안 쪽 가장자리가 해안선 안쪽에 머물면 가는 띠가 남음).
 - 공개 전선 GIS 자료는 라이선스가 저장소(데이터 CC BY-NC-SA, 출처 표기)와 맞을 때만, 불분명하면 경유점 방식. CShapes 좌표는 저장소에 넣지 않음. 출처는 `CREDITS.md`/README.
 - 연합국 식민지(동남아·태평양)는 1941-12-08 장면부터 칠함, 타이는 1942년부터 일본 진영 색, 몽강은 1937-12-13부터 일본 쪽(W3-②③, 검토 반영).
@@ -107,7 +107,7 @@ npm run build:data -- --no-wars                    # 전쟁 빼고 전부 (약 3
 **지점 검사**: `npm run test:geo -- --only places`(전쟁 지점은 `data/tests/places/war-*.yaml`, 약 6초). 전쟁 지점 한 줄은 `war`·`date`(장면 날짜와 똑같이)·`theater`(전역이 여럿일 때)·`at`·`expect`(진영 id, `none`, 또는 전선 위를 뜻하는 `front` — 어느 진영 경계든 `tolerance` km 안, 기본 5)를 적는다. 겹치는 곳은 마지막 진영이 이긴다(빌드와 같음).
 - 새 장면·도시를 더하면 그 도시를 정답표에 한 줄씩 보탠다(도시×날짜 판정표를 대신한다). 새 지점은 `url`이 필수다(`필요`+`legacy: true`는 옛 지점만).
 - 전쟁 도형이 지금 입력(전쟁 YAML·손그림 geojson·쓰는 나라의 `data/geo`·빌드 코드)으로 만든 것이 아니면(입력 해시가 `.cache/build-data-wars/built.json`의 기록과 다름) 그 전쟁 지점은 `건너뜀`이고 머리 줄에 `건너뜀 N`이 붙는다. `--ci`에서는 실패다. 위 `--war`로 다시 만든다(파일 시각은 보지 않으므로 `gen:geo`로 시각만 바뀐 것은 문제 없음).
-- 전쟁 지점 정답표(`war-*.yaml` 1,307점)는 대부분(1,241점) `legacy`이고(나머지 66점은 지점마다 근거 URL이 있음), 정답표 전체가 지금 지도와 같은 점만 넣은 회귀 시험이다(지도가 맞다는 사실 확인이 아님). `url: 필요`+`legacy: true` 지점은 근거 확인 전이고, 근거 URL은 그 절의 대표 근거일 수 있어 지점마다의 근거가 아닐 수 있다. 지금 지도와 다른 지점은 `_review-needed.yaml`에 있다(러너가 읽지 않음).
+- 전쟁 지점 정답표(`war-*.yaml`, 점수는 `npm run test:geo` 요약의 places 줄)는 대부분 `legacy`이고(새 지점은 지점마다 근거 URL), 정답표 전체가 지금 지도와 같은 점만 넣은 회귀 시험이다(지도가 맞다는 사실 확인이 아님). `url: 필요`+`legacy: true` 지점은 근거 확인 전이고, 근거 URL은 그 절의 대표 근거일 수 있어 지점마다의 근거가 아닐 수 있다. 지금 지도와 다른 지점은 `_review-needed.yaml`에 있다(러너가 읽지 않음).
 - 실패 줄 예: `✗ places 1943-07-10 world-war-2/europe 시라쿠사 [15.29,37.07] 기대 allies, 실제 axis (경계까지 3.1km)`. 전선을 고쳐야 하면 고치고, 일부러 그렇게 둔 것은 `data/tests/allow/places.yaml`에 `key`(열쇠 그대로)·`reason`·`decided`로 적는다. 아직 판단 못 한 지점은 `data/tests/places/_review-needed.yaml`(러너가 읽지 않음)에 둔다.
 - 가는 띠·넓이 0 조각은 `strips`·`zero` 검사가 data/geo 쪽을 본다(전쟁 도형의 조각 수·넓이는 빌드 뒤 `wars.json`에서 따로 뽑아 점검). 자세한 사용법: [border.md](border.md) 5.1.
 

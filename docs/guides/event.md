@@ -1,6 +1,6 @@
 # 안내서: 사건 작업 (`data/events`)
 
-> 대상: 사건 초안·사실 대조·반영 에이전트(Sonnet), 독립 검토(Opus), 메인. 형식의 정식 설명은 `docs/DATA_GUIDE.md` §3, 스키마는 `src/schema/index.ts`의 `EventSchema`, 검증은 `scripts/build-data/index.ts`. 공통 함정은 [common-pitfalls.md](common-pitfalls.md).
+> 대상: 사건 초안·사실 대조·반영 에이전트(Sonnet), 독립 검토(Opus), 메인. 형식의 정식 설명은 `docs/DATA_GUIDE.md` §3, 스키마는 `src/schema/index.ts`의 `EventSchema`, 검증은 `scripts/build-data/index.ts`. 공통 기준(깊이 등급·파일 이름·머리 주석·달력·이름 표기)은 [standards.md](standards.md) 4·5·7절, 공통 함정은 [common-pitfalls.md](common-pitfalls.md).
 
 ## 1. 언제 쓰나, 흐름, 모델
 
@@ -17,7 +17,7 @@
 
 ## 2. 고칠 파일과 진입점
 
-- 파일: `data/events/`. 한국사는 시대별 `01-gojoseon.yaml`~`08-contemporary.yaml`, 다른 권역은 `<머리글자>-<번호>-<이름>.yaml`(유럽 `eu-`, 중세 `eu-m1~m6`, 고대 `eu-an1~an4`, 근세 `eu-00a~d`, 근대 이후 `eu-01~03`). 새 앞머리는 `src/schema/regions.ts`의 `STORY_FILE_PREFIXES`에 한 줄. 파일 머리 주석에 범위·깊이·연도·날짜 규칙·한국사와 닿는 점을 적는다(본보기: `eu-an4-…yaml` 머리).
+- 파일: `data/events/`. 한국사는 시대별 `01-gojoseon.yaml`~`08-contemporary.yaml`, 다른 권역은 `<머리글자>-<번호>-<이름>.yaml`(유럽 `eu-`, 중세 `eu-m1~m6`, 고대 `eu-an1~an4`, 근세 `eu-00a~d`, 근대 이후 `eu-01~03`). 새 지역의 파일 이름·머리 주석 규칙은 [standards.md](standards.md) 7절(새 앞머리는 `src/schema/regions.ts`의 `STORY_FILE_PREFIXES`에 한 줄, 머리 주석 본보기: `eu-an4-…yaml` 머리).
 - 사건 한 개:
 
 ```yaml
@@ -25,7 +25,7 @@
   year: 1471                    # 천문 연도 (기원전 N년 = 1−N)
   endYear: 1478                 # 선택. 기간이 있으면
   title: { ko: … }
-  summary: { ko: "…" }          # 새로 쓴 글. 사이 군주·공동 통치까지, 길이는 1,100자 안팎
+  summary: { ko: "…" }          # 새로 쓴 글. 사이 군주·공동 통치까지, 길이는 깊이 등급대로(유럽 실측 약 1,400~1,600자, standards.md 7절)
   subjects: [grand-duchy-of-moscow, novgorod-republic]   # 본문에 이름이 나오는 항목만, 사건 기간과 존재 기간이 겹쳐야 함
   links:                        # 화살표. from = 노트 동사의 주어
     - { from: grand-duchy-of-moscow, to: novgorod-republic, note: "셸론강 전투와 코로스틴 조약 (1471)" }
@@ -46,9 +46,9 @@
 - **잇기 규칙**: 지도에서 항목이 생기거나 끝나는 해, 1만 km² 넘게 바뀐 버전 해마다 **±2년 안에 그 항목을 subjects에 둔 사건**이 있어야 한다(EV5·EVD2에서 정해 중세·고대에 적용). 사건 기간을 항목의 시작·끝 해 ±2년에 걸치게 짜는 것이 요령. 지도의 해가 사료와 어긋나 보이거나 이을 근거가 없으면 억지로 잇지 말고 결과 노트에 **'지도 FIX 후보'**(항목·해·넓이·근거)로 남긴다. (EUROPE_DRAFT 7.3-⑥, 8.5, REGION_GUIDE §6)
 - 기존 사건을 넓히는 쪽을 먼저, 없으면 새 사건. 넓힐 때는 본문에 그 항목 이름과 그 해의 일이 나오게 문장을 더하고, 기간을 넓힌 사건은 목록으로 보고.
 - 한국사와 닿는 점은 한두 문장으로 견주어 subjects로 잇는다(강요하지 않음). 한국사 파일을 고칠 때는 한능검(심화) 문체로 짧게.
-- 글: 새로 작성(복사 금지). 날짜는 1582년 전이면 율리우스력 여부를 밝히거나 달까지만. 숫자·추산은 범위와 출처, 병력·사상자는 '추산'. 조약은 이름·조건·서명 해와 비준 해를 구분. 나이는 만 나이. 확실하지 않은 날짜는 '무렵'. 원주민·피정복민 서술을 정복자 시각만으로 쓰지 않음. 낡은 말('야만') 금지(사료 인용 제외).
+- 글: 새로 작성(복사 금지). 날짜·달력은 [standards.md](standards.md) 4절. 숫자·추산은 범위와 출처, 병력·사상자는 '추산'. 조약은 이름·조건·서명 해와 비준 해를 구분. 나이는 만 나이. 확실하지 않은 날짜는 '무렵'. 원주민·피정복민 서술을 정복자 시각만으로 쓰지 않음. 낡은 말('야만') 금지(사료 인용 제외).
 - 서지: 저장소 기존 표기를 그대로, 새 책은 **웹에서 제목·저자(옮긴이)·출판사·연도를 확인한 경우만**(아니면 원서). 책 『』, 글·조약문·지도 이름 「」.
-- 표기: 한 인물·지명은 저장소 기존 표기 하나(`names.ko`와 맞춤).  표기가 갈리는 이름은 메인이 정해 지시문에 적는다.
+- 표기: 한 인물·지명은 저장소 기존 표기 하나(`names.ko`와 맞춤, 표기 원칙은 standards.md 5절). 표기가 갈리는 이름은 메인이 정해 지시문에 적는다.
 
 ## 4. 되풀이하지 말 것 (EVM·EVA·G·H 검토 지적에서)
 

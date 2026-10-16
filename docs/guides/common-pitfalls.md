@@ -1,6 +1,6 @@
 # 알려진 함정과 우회법 (모든 작업 공통)
 
-> 세 안내서([border.md](border.md)·[war.md](war.md)·[event.md](event.md))가 모두 이 글을 가리킨다. 지시문에는 이 글 전체를 붙이지 말고 해당 항목만 옮긴다. 새로 겪은 함정은 아래에 한 줄씩 보탠다(날짜·증상·우회법).
+> 세 안내서([border.md](border.md)·[war.md](war.md)·[event.md](event.md))가 모두 이 글을 가리킨다. 규칙(기준)은 [standards.md](standards.md), 이 글은 겪은 함정과 우회법만. 지시문에는 이 글 전체를 붙이지 말고 해당 항목만 옮긴다. 새로 겪은 함정은 아래에 한 줄씩 보탠다(날짜·증상·우회법).
 
 ## 환경·셸
 
@@ -14,7 +14,7 @@
 
 ## 사본·정션·줄바꿈
 
-- 작업은 원본이 아닌 사본에서: `git clone --no-hardlinks <원본> <작업 폴더>\repo`. 객체가 없다는 오류면 `--reference`나 alternates. (2026-10-09에 원본 `.git`에서 빈 트리 객체 4b825dc…가 빠져 있던 것을 `git hash-object -w -t tree`로 써넣어 `fsck`가 깨끗해졌다. 다시 같은 오류면 이 방법.)
+- 작업은 원본이 아닌 사본에서: `git clone --no-local <원본> <작업 폴더>/repo`(아래 줄의 이유로 `--no-hardlinks`는 쓰지 않는다). 객체가 없다는 오류면 `--reference`나 alternates. (2026-10-09에 원본 `.git`에서 빈 트리 객체 4b825dc…가 빠져 있던 것을 `git hash-object -w -t tree`로 써넣어 `fsck`가 깨끗해졌다. 다시 같은 오류면 이 방법.)
 - 로컬 `git clone --no-hardlinks`가 원본의 느슨한 객체 일부와 `.cache`의 admin-1 파일을 빠뜨려 `git show HEAD:…`(compare:geo)가 실패한 일이 있다(세션 N3). 사본은 `git clone --no-local`로 만들고, 빠졌으면 원본 `.git/objects`를 `cp -rn`으로 사본에 복사한다(원본은 읽기만).
 - **`node_modules`는 정션**: PowerShell에서 `cmd /c mklink /J <사본>\node_modules <원본>\node_modules`. **지울 때는 정션부터 떼고 지운다**: `cmd /c rmdir "<사본>\node_modules"`(`/s` 없이 — 정션만 사라진다), 그다음에 사본을 지운다. **`rm -rf`·`Remove-Item -Recurse`를 정션이 붙은 채로 돌리면 원본 `node_modules`가 지워진다**(2026-10-12 세계 대전 W2에서 실제로 일어날 뻔함 — package-lock과 대조해 이상 없음을 확인). 끝난 뒤에도 사본은 지우지 않는 것이 기본.
 - 원본 `.cache`(빌드 캐시)는 **읽기만**. 사본에서 쓰려면 사본 안에 복사(`robocopy`). 원본에는 아무것도 쓰지 않는다.
@@ -28,7 +28,7 @@
 - **Nominatim 사용 규칙**: 초당 1회 이하, 식별 가능한 User-Agent(용도만), 대량·반복 조회 금지, 결과를 캐시. 지명 좌표는 가능하면 **위키백과 API(coordinates 속성)**로 대조한다 — 인계 폴더 `ww-generators/w2/wikicheck.mjs`(이름 붙은 경유점 255개 중 43개가 1~8km 어긋나 있었다). 좌표를 기억에서 옮겨 적지 않는다.
 - **Overpass(OSM)가 504·500을 자주 낸다.** 같은 질의를 **다른 서버 주소로 번갈아** 재시도한다:
   `https://overpass-api.de/api/interpreter` → `https://overpass.kumi.systems/api/interpreter` → `https://overpass.private.coffee/api/interpreter`(POST, 본문 `data=<질의>`, 응답이 `{`로 시작하고 `remark`에 error가 없을 때만 성공, 시도 사이 3초 쉼, 9번까지). 세션 I의 재시도 도구 `ovp.mjs`(15줄, 사본을 이 안내서 결과 폴더에 둠 — 메인이 인계 폴더 `tools/`로 옮길 것, 사용: `node ovp.mjs <출력.json> '<질의>'`)가 이 방식이다. 새로 짜지 말고 같은 꼴로.
-- 자료 라이선스는 `docs/REGION_GUIDE.md` §4를 먼저: Natural Earth는 퍼블릭 도메인(가공 조각을 저장소에 넣어도 됨), **CShapes 좌표는 저장소에 넣지 않음**(`.cache`에서 대조만), Eurostat·GADM·geoBoundaries·Euratlas 등은 쓰지 않음. 새 외부 선(OSM 점 등)은 점 수십 개로 줄여 넣고 출처를 결과 노트·주석에 적는다.
+- 외부 자료를 어디에 쓰는지(원천·대조)는 [standards.md](standards.md) 1절, 자료 라이선스는 `docs/REGION_GUIDE.md` §4를 먼저: Natural Earth는 퍼블릭 도메인(가공 조각을 저장소에 넣어도 됨), **CShapes 좌표는 저장소에 넣지 않음**(`.cache`에서 대조만), Eurostat·GADM·geoBoundaries·Euratlas 등은 쓰지 않음. 새 외부 선(OSM 점 등)은 점 수십 개로 줄여 넣고 출처를 결과 노트·주석에 적는다.
 - 큰 자료를 받으려면 출처·크기·지문을 적고 **허락을 받은 뒤** 받는다(REGION_GUIDE §7). 웹 조사 결과로 뒷받침하는 문장은 그 쪽에 실제로 있는 것만 인용한다.
 
 ## 도형 계산(polyclip-ts)이 깨지는 모양
