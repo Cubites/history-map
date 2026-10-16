@@ -25,7 +25,7 @@
 ## 외부 자료·요청
 
 - **외부 요청(웹·API)의 User-Agent·본문·질의에 개인정보(이메일 등)를 넣지 않는다.** 2026-10-12 W2 구현 에이전트가 Nominatim 요청 한 번의 User-Agent에 사용자 이메일을 넣었다가 빼고 운영자에게 알렸다. User-Agent는 `history-map-research/1.0 (personal project)`처럼 용도만.
-- **Nominatim 사용 규칙**: 초당 1회 이하, 식별 가능한 User-Agent(용도만), 대량·반복 조회 금지, 결과를 캐시. 지명 좌표는 가능하면 **위키백과 API(coordinates 속성)**로 대조한다 — 인계 폴더 `ww-generators/w2/wikicheck.mjs`(이름 붙은 경유점 255개 중 43개가 1~8km 어긋나 있었다). 좌표를 기억에서 옮겨 적지 않는다.
+- **Nominatim 사용 규칙**: 초당 1회 이하, 식별 가능한 User-Agent(용도만), 대량·반복 조회 금지, 결과를 캐시. 지명 좌표는 가능하면 **위키백과 API(coordinates 속성)**로 대조한다 — 점검 도구 `wikicheck.mjs`는 저장소에 옮기지 않았고 인계 폴더 `ww-generators/w2/`에만 있다(이름 붙은 경유점 255개 중 43개가 1~8km 어긋나 있었다. 그 결과 위키 좌표는 `scripts/wars/world-war-2/europe/wikicache.json`으로 생성기가 읽는다). 좌표를 기억에서 옮겨 적지 않는다.
 - **Overpass(OSM)가 504·500을 자주 낸다.** 같은 질의를 **다른 서버 주소로 번갈아** 재시도한다:
   `https://overpass-api.de/api/interpreter` → `https://overpass.kumi.systems/api/interpreter` → `https://overpass.private.coffee/api/interpreter`(POST, 본문 `data=<질의>`, 응답이 `{`로 시작하고 `remark`에 error가 없을 때만 성공, 시도 사이 3초 쉼, 9번까지). 세션 I의 재시도 도구 `ovp.mjs`(15줄, 사본을 이 안내서 결과 폴더에 둠 — 메인이 인계 폴더 `tools/`로 옮길 것, 사용: `node ovp.mjs <출력.json> '<질의>'`)가 이 방식이다. 새로 짜지 말고 같은 꼴로.
 - 외부 자료를 어디에 쓰는지(원천·대조)는 [standards.md](standards.md) 1절, 자료 라이선스는 `docs/REGION_GUIDE.md` §4를 먼저: Natural Earth는 퍼블릭 도메인(가공 조각을 저장소에 넣어도 됨), **CShapes 좌표는 저장소에 넣지 않음**(`.cache`에서 대조만), Eurostat·GADM·geoBoundaries·Euratlas 등은 쓰지 않음. 새 외부 선(OSM 점 등)은 점 수십 개로 줄여 넣고 출처를 결과 노트·주석에 적는다.

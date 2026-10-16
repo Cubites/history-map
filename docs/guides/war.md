@@ -23,7 +23,7 @@
 | 손으로 그린 점령 지역 | 지금은 `data/wars/<폴더>/<날짜>-<진영>.geojson`(한국 전쟁은 `<날짜>.geojson`), 표준 이름은 standards.md 8절(EPSG:4326, 바다로 넉넉히 나가게; 빌드가 해안선으로 자름) |
 | 사건에서 전쟁 보기로 | `data/events/*.yaml`의 사건에 `front: { war: 전쟁id, theater: 전역id, date: YYYY-MM-DD }` 한 줄. `date`는 스냅샷 날짜와 정확히 같아야 함 |
 | 빌드 출력(손대지 않음) | `public/data/wars.json`(전쟁 목록·진영·전투) + `public/data/wars/<전쟁id>.json`(점령 지역 도형, 전쟁 보기를 열 때만 받음) |
-| 생성 스크립트 | 지금은 저장소 밖 인계 폴더 `ww-generators/w1~w4`(경유점 `fronts*.mjs`, 장면 구성 `spec*.mjs`, 생성 `gen.mjs`, 검사 `check.mjs`). w1·w2·w4는 `HISTORY_MAP_REPO=<저장소> node gen.mjs`, **w3은 저장소 경로가 `'../repo'`로 고정**(`gen.mjs`의 import·출력 경로와 `lib.mjs`의 `REPO`가 `ww-generators/repo`를 가리키므로 그 자리에 사본을 두고 돌림)이고, 모두 YAML과 geojson을 **바이트까지 같게** 다시 만든다. 저장소 안 `scripts/wars/`·`npm run gen:wars`로 옮기는 것이 목표(standards.md 8절) |
+| 생성 스크립트 | 저장소 `scripts/wars/`. **`npm run gen:wars`** 한 명령이 `world-war-1` → `europe` → `asia-pacific` → `overview` 차례로 다시 만든다(앞 결과를 뒤가 읽으므로 순서 고정). 공통 코드는 `engine.mjs`(저장소 경로·나라 영토·도형 연산·반올림·geojson/YAML 쓰기), 전쟁별은 `world-war-1/`(경유점 `fronts.mjs` + 장면·생성 `gen.mjs`), `world-war-2/europe/`(`fronts*.mjs` 경유점, `spec*.mjs` 장면, `colonies.mjs`, `wikicache.json` 위키 좌표, `gen.mjs`), `world-war-2/asia-pacific/gen.mjs`, `world-war-2/overview/`(`spec.mjs`·`geom.mjs`·`colonies39.mjs`·`gen.mjs`). 옵션: `npm run gen:wars -- [저장소 경로] [--out 폴더] [--only world-war-1,europe,asia-pacific,overview]`(`world-war-2`는 europe·asia-pacific·overview 셋. overview는 europe·asia-pacific이 만든 YAML·geojson을 읽으니 따로 돌릴 때도 그 뒤에 돌린다). `--out`은 `data/wars` 대신 `<폴더>/data/wars`에 쓴다(test:geo의 gen 검사가 씀, 저장소는 안 건드림). 같은 입력이면 YAML·geojson을 **바이트까지 같게** 다시 만든다(전체 약 3분: 1차 대전 7초·europe 2분·asia-pacific 10초·overview 40초). 생성기가 쓰는 파일은 `ww1/`·`ww2-europe/`·`ww2-asia/`·`ww2-overview/`의 geojson과 `eu-02-world-war-2.yaml`(머리·europe 전역·overview 전역, 손으로 쓴 asia-pacific 전역은 그대로 둠)이고, `eu-02-world-war-1.yaml`은 손으로 쓴 파일이다. `npm run test:geo -- --only gen`(또는 `--ci`)이 이 결과와 `data/wars` 파일을 바이트로 견주고, 입력(`data/geo`·`data/wars`·`scripts/wars` 등)이 지난 성공과 같으면 건너뛴다 |
 
 YAML 뼈대(실제 파일은 `data/wars/eu-02-world-war-2.yaml` 머리를 본다):
 
@@ -81,14 +81,14 @@ theaters:
 - **'칠하지 않음' 층이 없다**: 항목이 잘못 덮은 땅(예전 `roc`의 마카오·통킹)을 전쟁 보기에서 지울 수 없다. 저장소 국경 문제는 전쟁 보기 geojson으로 때우지 말고 국경 FIX 후보로 올리고, 우회 파일에는 표시한다(윈난 서부를 때우던 `ww2-asia/yunnan-west.geojson`은 세션 K에서 중화민국 국경을 고치고 지웠다).
 - **좌표 자릿수**: 빌드는 나라 영토 좌표를 소수 넷째 자리로 반올림한다. 손그림 geojson이 나라 국경과 같은 선을 다섯째 자리로 쓰면 몇 m 차이로 엇갈려 polyclip이 깨질 수 있다(세션 K, 1942-06-07 장면). 국경에 맞출 때는 손그림을 넷째 자리로 줄이거나 선을 조금 떨어뜨린다.
 - **가는 띠·넓이 0 조각**: 해안 앞에 앞 지역이 띠로 남아 강조선이 해안을 따라 그려진다. 빌드 뒤 `wars.json`에서 스냅샷×진영 조각 수·넓이를 뽑아 점검.
-- **국경을 고쳐도 geojson은 따라오지 않는다**(나라 영토를 깔고 만든 덩어리라). 국경 단계 뒤에는 인계 폴더 `gen.mjs`로 전쟁 geojson을 다시 만든다. 같은 차례로 `ww-generators`의 w1(1차 대전) → w2(2차 대전 유럽) → w3(아시아·태평양) → w4(세계 개관)를 돌리고(w4가 w2·w3 결과를 읽음), 같은 입력에서 바이트까지 같은지는 `data/wars` 파일 해시로 견준다. `areas`의 `entities: [...]`는 빌드가 영토를 그때그때 읽어 저절로 따라오고, `geojson:`만 다시 만들어야 한다(예: 1차 대전 러시아 제국, 2차 대전 아시아·태평양의 소련·중화민국은 `entities`라 자동, 2차 대전 유럽과 세계 개관은 전부 geojson). 세션 M2에서 이렇게 한 번 다시 만들었다(투르크메니스탄 남단·이란·아프가니스탄·동파미르·중화민국 서남 국경·홍콩·마카오). 세션 N1(악사이친 서부·압록강·두만강·요하 선을 고친 뒤)에 다시 돌렸더니 세계 개관 중화민국 진영 6장면에 악사이친 서부(+13,608 km²)만 더해지고 나머지 176개는 바이트까지 같았다. 압록강·두만강·요하 선은 어떤 전쟁 도형에도 닿지 않는다.
+- **국경을 고쳐도 geojson은 따라오지 않는다**(나라 영토를 깔고 만든 덩어리라). 국경 단계 뒤에는 `npm run gen:geo` → `npm run gen:wars`(w1 1차 대전 → w2 유럽 → w3 아시아·태평양 → w4 세계 개관, w4가 w2·w3 결과를 읽음) → `npm run test:geo -- --only gen`(전쟁 파일이 생성 결과와 바이트까지 같은지) → **한 커밋**으로 묶는다. `areas`의 `entities: [...]`는 빌드가 영토를 그때그때 읽어 저절로 따라오고, `geojson:`만 다시 만들어야 한다(예: 1차 대전 러시아 제국, 2차 대전 아시아·태평양의 소련·중화민국은 `entities`라 자동, 2차 대전 유럽과 세계 개관은 전부 geojson). 세션 M2에서 이렇게 한 번 다시 만들었다(투르크메니스탄 남단·이란·아프가니스탄·동파미르·중화민국 서남 국경·홍콩·마카오). 세션 N1(악사이친 서부·압록강·두만강·요하 선을 고친 뒤)에 다시 돌렸더니 세계 개관 중화민국 진영 6장면에 악사이친 서부(+13,608 km²)만 더해지고 나머지 176개는 바이트까지 같았다. 압록강·두만강·요하 선은 어떤 전쟁 도형에도 닿지 않는다.
 - 경유점 이름과 좌표는 기억에서 옮기지 말고 위키백과 API로 대조(W2: 이름 붙은 255개 중 43개를 1~8km 고침).
 - 날짜·참전 기간 오류(만주국 끝 1945-08-18, 루마니아·불가리아 1944 편 바꿈), 진영 이름('일본' 진영이 타이·만주국까지 덮음, 정할 점 W3-⑤).
 
 ## 5. 검사
 
 - 사건 `front:` 한 줄은 적용 스크립트가 **앵커**(`- id:` 블록의 `sources:` 뒤)로 넣고, 사건 파일의 다른 곳은 건드리지 않는다. 줄바꿈 유지, 두 번 돌려도 같음, 기준 HEAD 확인.
-- 현재 명령: `npm run build:data -- --war <id>`(이 전쟁만, 아래 5.1) → 단계 끝에 한 번 전체 `npm run build:data`(전쟁 오류 0, 전체 6~18분) → `npm run check:data`(경고 수 bash `grep -c '^  경고'`, 기준 52 — 늘면 이유) → `typecheck` → `build`. 작업 중에는 인계 폴더 `w2/check.mjs mini`(빌드와 같은 계산을 스냅샷마다 돌림)와 `check.mjs built`(빌드 뒤 조각·도시 판정표), 미리보기 `png.mjs`(스크린샷 대신).
+- 현재 명령: `npm run build:data -- --war <id>`(이 전쟁만, 아래 5.1) → 단계 끝에 한 번 전체 `npm run build:data`(전쟁 오류 0, 전체 6~18분) → `npm run check:data`(경고 수 bash `grep -c '^  경고'`, 기준 52 — 늘면 이유) → `typecheck` → `build`. 작업 중 점검 도구(옛 `w2/check.mjs mini`·`built`, 미리보기 `png.mjs`)는 저장소에 옮기지 않았고 인계 폴더 `ww-generators/`에만 남아 있다(생성기와 따로 돈다).
 - 결과 노트에 넣을 표: 스냅샷×진영 조각 수·넓이(넓이 0·가는 띠 없음), 도시×날짜 판정, 전투·화살표 좌표 5km, 사건 연결 표.
 
 ### 5.1 전쟁 하나만 빌드하고 지점 검사하기
@@ -116,5 +116,5 @@ npm run build:data -- --no-wars                    # 전쟁 빼고 전부 (약 3
 - 전쟁 16장면을 4장면씩 구현 에이전트 넷에 나눈다(에이전트 하나 20만 안). 진영 id·색·경계 규칙은 지시문에 박고, 이음매는 마지막에 한 에이전트가 맞춘다.
 - 웹 조사는 에이전트당 15번 안팎, 먼저 볼 출처(위키백과 전황도, West Point Atlas, 공식 전사)를 정해 주고 조사 메모를 공유한다.
 - 화면 스크린샷은 최소: 판정표와 미리보기 PNG를 쓰고, 사용자에게 보일 한두 장만 찍는다(이미지는 끝까지 다시 읽힘).
-- 반영이 '정해진 지점 몇 곳'이면 생성 스크립트 + 지적 파일만 든 새 작은 에이전트에게. 생성 스크립트·입력은 반드시 인계 폴더에 보관(재현성).
+- 반영이 '정해진 지점 몇 곳'이면 생성 스크립트 + 지적 파일만 든 새 작은 에이전트에게. 생성 스크립트·입력은 저장소 `scripts/wars/`에 둔다(재현성).
 - 외부 요청에 개인정보 금지(W2 사고), 정션 붙은 사본 `rm -rf` 금지.

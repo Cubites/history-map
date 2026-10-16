@@ -5,8 +5,8 @@
 # 덮어 만들었다(만든 순서는 진영마다 주석). 나라 영토(entities) 위에 geojson을 여러 겹 덮으면 빌드의 도형 계산(polyclip-ts)이 해안·경계의
 # 가는 조각에서 깨져서 이렇게 했다. 경유점·근거·어림 오차는 작업 결과 노트에 있다. 중립국(에스파냐·포르투갈·스위스·스웨덴·튀르키예·아일랜드 등)은 칠하지 않는다.
 # 북아프리카·중동은 그 시기 나라 영토가 지도에 없어 식민지 경계를 다각형으로 대략 그렸다. 운영자 검수 필요.
-# 다시 만드는 법: 생성 스크립트와 입력(경유점·식민지 경계)은 저장소 밖 history-map-handoff/ww-generators/w2/ 에 있다.
-#   그 폴더에서 HISTORY_MAP_REPO=<저장소 경로> node gen.mjs (이 YAML과 ww2-europe/*.geojson을 다시 씀, 미리보기는 --png). 경유점은 fronts*.mjs, 장면 구성은 spec*.mjs.
+# 다시 만드는 법: npm run gen:wars. 생성 스크립트와 입력(경유점·식민지 경계)은 저장소의 scripts/wars/world-war-2/europe/ 에 있다.
+#   이 YAML의 머리와 europe 전역, ww2-europe/*.geojson을 다시 쓴다(뒤에 붙은 다른 전역은 그대로). 이 전역만 다시 만들려면 npm run gen:wars -- --only europe. 경유점은 fronts*.mjs, 장면 구성은 spec*.mjs.
 
 id: world-war-2
 name: 제2차 세계 대전
@@ -720,7 +720,7 @@ theaters:
   # 진영마다 한 덩어리(서로 겹치지 않음) geojson ww2-overview/<날짜>-<진영>.geojson 으로 만들었다(나라 영토 위에 geojson을 여러 겹 덮으면 빌드의 polyclip이 깨져서). 빌드가 해안선으로 자른다.
   # 사하라 이남 아프리카·아메리카는 칠하지 않는다(두 전역 밖). 1939-09-01 장면은 아시아·태평양 전역에 없는 영국·프랑스 식민지와 영연방 자치령(영국령 인도·버마·실론·말라야·싱가포르·북보르네오·홍콩,
   # 오스트레일리아·뉴질랜드 등, 프랑스령 인도차이나)을 연합국 색으로 더했다. 네덜란드·미국·포르투갈령은 아직 참전 전이라 칠하지 않는다.
-  # 다시 만드는 법: 생성 스크립트는 저장소 밖 history-map-handoff/ww-generators/w4/ 에 있다. 그 폴더에서 HISTORY_MAP_REPO=<저장소 경로> node gen.mjs
+  # 다시 만드는 법: npm run gen:wars (생성 스크립트는 저장소의 scripts/wars/world-war-2/overview/, 이 전역만 다시 만들려면 npm run gen:wars -- --only overview)
   - id: overview
     name: 세계 개관
     hideMarker: true

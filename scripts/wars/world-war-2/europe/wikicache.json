@@ -1,0 +1,854 @@
+{
+ "Torgau": [
+  13.006,
+  51.56
+ ],
+ "Seelow": [
+  14.383,
+  52.517
+ ],
+ "Babruysk": [
+  29.233,
+  53.15
+ ],
+ "Kasserine Pass": [
+  8.742,
+  35.26
+ ],
+ "Salerno": [
+  14.759,
+  40.681
+ ],
+ "Yakhroma": [
+  37.467,
+  56.283
+ ],
+ "Pougny, Ain": [
+  5.95,
+  46.139
+ ],
+ "Quincy, Cher": [
+  2.158,
+  47.134
+ ],
+ "Riksgränsen": [
+  18.122,
+  68.428
+ ],
+ "Beisfjord": [
+  17.596,
+  68.376
+ ],
+ "Bellegarde-sur-Valserine": [
+  5.827,
+  46.108
+ ],
+ "Mijoux": [
+  5.996,
+  46.366
+ ],
+ "Mont-sous-Vaudrey": [
+  5.603,
+  46.981
+ ],
+ "Chalon-sur-Saône": [
+  4.853,
+  46.781
+ ],
+ "Montceau-les-Mines": [
+  4.37,
+  46.668
+ ],
+ "Digoin": [
+  3.981,
+  46.483
+ ],
+ "Vierzon": [
+  2.069,
+  47.222
+ ],
+ "Loches": [
+  0.996,
+  47.129
+ ],
+ "Le Grand-Pressigny": [
+  0.804,
+  46.921
+ ],
+ "Chauvigny": [
+  0.647,
+  46.569
+ ],
+ "Ribérac": [
+  0.34,
+  45.248
+ ],
+ "Langon, Gironde": [
+  -0.25,
+  44.55
+ ],
+ "Bazas": [
+  -0.211,
+  44.433
+ ],
+ "Orthez": [
+  -0.77,
+  43.49
+ ],
+ "Saint-Palais, Pyrénées-Atlantiques": [
+  -1.032,
+  43.329
+ ],
+ "Larceveau-Arros-Cibits": [
+  -1.095,
+  43.233
+ ],
+ "Saint-Jean-Pied-de-Port": [
+  -1.236,
+  43.165
+ ],
+ "Arnéguy": [
+  -1.28,
+  43.11
+ ],
+ "Velfjord": null,
+ "Bjørnå": null,
+ "Fellingfors": null,
+ "Hattfjelldal": null,
+ "Øyjord": null,
+ "Bjerkvik": [
+  17.557,
+  68.549
+ ],
+ "Elvegårdsmoen": null,
+ "Storebalak": null,
+ "Kuberget": null,
+ "Hartvikvatnet": [
+  17.681,
+  68.556
+ ],
+ "Ankenes": [
+  17.37,
+  68.421
+ ],
+ "La Cure": [
+  6.067,
+  46.467
+ ],
+ "Morez": [
+  6.023,
+  46.523
+ ],
+ "Saint-Laurent-en-Grandvaux": [
+  5.957,
+  46.576
+ ],
+ "Champagnole": [
+  5.908,
+  46.748
+ ],
+ "Parcey": [
+  5.487,
+  47.023
+ ],
+ "Chaussin": [
+  5.411,
+  46.965
+ ],
+ "Navilly": [
+  5.146,
+  46.937
+ ],
+ "Verdun-sur-le-Doubs": [
+  5.024,
+  46.897
+ ],
+ "Buxy": [
+  4.697,
+  46.712
+ ],
+ "Dompierre-sur-Besbre": [
+  3.682,
+  46.523
+ ],
+ "Thiel-sur-Acolin": [
+  3.583,
+  46.524
+ ],
+ "Toulon-sur-Allier": [
+  3.36,
+  46.519
+ ],
+ "Villeneuve-sur-Allier": [
+  3.249,
+  46.661
+ ],
+ "Apremont-sur-Allier": [
+  3.048,
+  46.906
+ ],
+ "Jussy-Champagne": [
+  2.644,
+  46.985
+ ],
+ "Plaimpied-Givaudins": [
+  2.455,
+  46.999
+ ],
+ "Morthomiers": [
+  2.277,
+  47.038
+ ],
+ "Châtres-sur-Cher": [
+  1.907,
+  47.266
+ ],
+ "Selles-sur-Cher": [
+  1.556,
+  47.276
+ ],
+ "Chissay-en-Touraine": [
+  1.134,
+  47.338
+ ],
+ "Bléré": [
+  0.991,
+  47.326
+ ],
+ "Ligueil": [
+  0.82,
+  47.044
+ ],
+ "La Roche-Posay": [
+  0.813,
+  46.787
+ ],
+ "Fleuré": null,
+ "Usson-du-Poitou": [
+  0.529,
+  46.279
+ ],
+ "Charroux, Vienne": [
+  0.404,
+  46.145
+ ],
+ "Champagne-Mouton": [
+  0.412,
+  45.992
+ ],
+ "Saint-Claud": [
+  0.466,
+  45.896
+ ],
+ "Chasseneuil-sur-Bonnieure": [
+  0.451,
+  45.825
+ ],
+ "La Rochefoucauld": null,
+ "Échourgnac": [
+  0.231,
+  45.126
+ ],
+ "Montpon-Ménestérol": [
+  0.16,
+  45.01
+ ],
+ "Lamothe-Montravel": [
+  0.026,
+  44.852
+ ],
+ "Castillon-la-Bataille": [
+  -0.043,
+  44.854
+ ],
+ "Sauveterre-de-Guyenne": [
+  -0.085,
+  44.694
+ ],
+ "Captieux": [
+  -0.259,
+  44.293
+ ],
+ "Sault-de-Navailles": [
+  -0.671,
+  43.552
+ ],
+ "Salies-de-Béarn": [
+  -0.925,
+  43.471
+ ],
+ "Sauveterre-de-Béarn": [
+  -0.939,
+  43.401
+ ],
+ "Narva-Jõesuu": [
+  28.041,
+  59.459
+ ],
+ "Ivangorod": [
+  28.217,
+  59.367
+ ],
+ "Krivasoo": [
+  28.083,
+  59.117
+ ],
+ "Vasknarva": [
+  27.739,
+  58.999
+ ],
+ "Beloostrov": [
+  30.012,
+  60.147
+ ],
+ "Lembolovo": [
+  30.333,
+  60.417
+ ],
+ "Lodeynoye Pole": [
+  33.55,
+  60.717
+ ],
+ "Podporozhye": null,
+ "Povenets": [
+  34.817,
+  62.85
+ ],
+ "Luunja": [
+  26.879,
+  58.357
+ ],
+ "Vecumnieki": [
+  24.522,
+  56.606
+ ],
+ "Kalnciems": [
+  23.583,
+  56.833
+ ],
+ "Jurbarkas": [
+  22.767,
+  55.083
+ ],
+ "Wizna": [
+  22.383,
+  53.2
+ ],
+ "Okuniew": [
+  21.3,
+  52.267
+ ],
+ "Taipale": null,
+ "Loimola": null,
+ "Rusnė": [
+  21.378,
+  55.297
+ ],
+ "Góra Kalwaria": [
+  21.214,
+  51.973
+ ],
+ "Annopol": [
+  21.857,
+  50.885
+ ],
+ "Šahy": [
+  18.95,
+  48.07
+ ],
+ "Fót": [
+  19.19,
+  47.618
+ ],
+ "Barcs": [
+  17.46,
+  45.96
+ ],
+ "Morović": [
+  19.2,
+  44.983
+ ],
+ "Džūkste": [
+  23.314,
+  56.79
+ ],
+ "Tolkmicko": [
+  19.531,
+  54.321
+ ],
+ "Jabłonka": null,
+ "Świnoujście": [
+  14.25,
+  53.917
+ ],
+ "Ketzin": [
+  12.845,
+  52.47
+ ],
+ "Beelitz": [
+  12.969,
+  52.238
+ ],
+ "Treuenbrietzen": [
+  12.871,
+  52.097
+ ],
+ "Strehla": [
+  13.226,
+  51.352
+ ],
+ "Lilienfeld": [
+  15.598,
+  48.013
+ ],
+ "Bad Radkersburg": [
+  15.989,
+  46.69
+ ],
+ "Dömitz": [
+  11.263,
+  53.138
+ ],
+ "Wittenberge": [
+  11.75,
+  53
+ ],
+ "Havelberg": [
+  12.074,
+  52.825
+ ],
+ "Tangermünde": [
+  11.969,
+  52.541
+ ],
+ "Magdeburg": [
+  11.639,
+  52.132
+ ],
+ "Dessau": [
+  12.25,
+  51.833
+ ],
+ "Bitterfeld": [
+  12.33,
+  51.624
+ ],
+ "Eilenburg": [
+  12.636,
+  51.461
+ ],
+ "Wurzen": [
+  12.717,
+  51.367
+ ],
+ "Grimma": [
+  12.725,
+  51.239
+ ],
+ "Karlovy Vary": [
+  12.873,
+  50.231
+ ],
+ "Plzeň": [
+  13.377,
+  49.748
+ ],
+ "České Budějovice": [
+  14.475,
+  48.975
+ ],
+ "Linz": [
+  14.286,
+  48.306
+ ],
+ "Enns": null,
+ "Znojmo": [
+  16.049,
+  48.856
+ ],
+ "Amstetten": null,
+ "Maribor": [
+  15.646,
+  46.557
+ ],
+ "Pizzo": null,
+ "Maida": null,
+ "Ladispoli": null,
+ "Cerveteri": [
+  12.105,
+  42.008
+ ],
+ "Anguillara Sabazia": null,
+ "Campagnano di Roma": [
+  12.383,
+  42.133
+ ],
+ "Civita Castellana": [
+  12.4,
+  42.283
+ ],
+ "Monterotondo": null,
+ "Tivoli, Lazio": [
+  12.798,
+  41.96
+ ],
+ "Subiaco": null,
+ "Sora, Lazio": null,
+ "Pescasseroli": [
+  13.783,
+  41.8
+ ],
+ "Castel di Sangro": [
+  14.1,
+  41.783
+ ],
+ "Palena": null,
+ "Orsogna": null,
+ "Marina di Pisa": [
+  10.277,
+  43.672
+ ],
+ "Pisa": [
+  10.4,
+  43.717
+ ],
+ "Cascina": null,
+ "Pontedera": [
+  10.633,
+  43.663
+ ],
+ "San Miniato": null,
+ "Empoli": [
+  10.95,
+  43.717
+ ],
+ "Signa": [
+  11.1,
+  43.783
+ ],
+ "Pontassieve": [
+  11.438,
+  43.775
+ ],
+ "Pratovecchio": [
+  11.724,
+  43.788
+ ],
+ "Bibbiena": [
+  11.817,
+  43.7
+ ],
+ "Pieve Santo Stefano": null,
+ "Sansepolcro": [
+  12.14,
+  43.571
+ ],
+ "Urbania": [
+  12.517,
+  43.667
+ ],
+ "Fossombrone": [
+  12.817,
+  43.7
+ ],
+ "Cinquale": null,
+ "Seravezza": null,
+ "Gallicano": null,
+ "Barga, Tuscany": [
+  10.482,
+  44.075
+ ],
+ "Cutigliano": null,
+ "Lizzano in Belvedere": [
+  10.9,
+  44.167
+ ],
+ "Grizzana Morandi": [
+  11.15,
+  44.25
+ ],
+ "Livergnano": null,
+ "Brisighella": [
+  11.774,
+  44.222
+ ],
+ "Faenza": [
+  11.883,
+  44.286
+ ],
+ "Mezzano, Ravenna": null,
+ "Cotignola": null,
+ "Fusignano": [
+  11.967,
+  44.467
+ ],
+ "Milan": [
+  9.19,
+  45.467
+ ],
+ "Badia Polesine": null,
+ "Honfleur": [
+  0.233,
+  49.419
+ ],
+ "Pont-l'Évêque, Calvados": [
+  0.185,
+  49.286
+ ],
+ "Bourgtheroulde-Infreville": [
+  0.874,
+  49.299
+ ],
+ "Elbeuf": [
+  1.01,
+  49.29
+ ],
+ "Louviers": [
+  1.17,
+  49.22
+ ],
+ "Vernon, Eure": [
+  1.49,
+  49.09
+ ],
+ "Mantes-la-Jolie": [
+  1.717,
+  48.991
+ ],
+ "Melun": [
+  2.66,
+  48.541
+ ],
+ "Fontainebleau": [
+  2.703,
+  48.41
+ ],
+ "Montereau-Fault-Yonne": [
+  2.951,
+  48.385
+ ],
+ "Sens": [
+  3.288,
+  48.197
+ ],
+ "Troyes": [
+  4.079,
+  48.3
+ ],
+ "Joigny": [
+  3.398,
+  47.983
+ ],
+ "Gien": [
+  2.63,
+  47.69
+ ],
+ "Orléans": [
+  1.909,
+  47.903
+ ],
+ "Tours": [
+  0.689,
+  47.394
+ ],
+ "Angers": [
+  -0.554,
+  47.474
+ ],
+ "Digne-les-Bains": [
+  6.236,
+  44.093
+ ],
+ "Gap, Hautes-Alpes": [
+  6.079,
+  44.559
+ ],
+ "Crest, Drôme": [
+  5.023,
+  44.729
+ ],
+ "Avignon": [
+  4.808,
+  43.95
+ ],
+ "Moerdijk": [
+  4.6,
+  51.65
+ ],
+ "Geertruidenberg": [
+  4.859,
+  51.7
+ ],
+ "Heusden": [
+  5.133,
+  51.683
+ ],
+ "Lith": null,
+ "Gennep": [
+  5.967,
+  51.7
+ ],
+ "Maasbracht": [
+  5.883,
+  51.15
+ ],
+ "Sittard": [
+  5.867,
+  51
+ ],
+ "Geilenkirchen": [
+  6.119,
+  50.965
+ ],
+ "Linnich": [
+  6.268,
+  50.979
+ ],
+ "Monschau": [
+  6.256,
+  50.56
+ ],
+ "Ouren": [
+  6.133,
+  50.133
+ ],
+ "Vianden": [
+  6.2,
+  49.9
+ ],
+ "Wallendorf": null,
+ "Wasserbillig": [
+  6.499,
+  49.715
+ ],
+ "Lauterbourg": [
+  8.174,
+  48.976
+ ],
+ "Ribeauvillé": [
+  7.32,
+  48.2
+ ],
+ "Kaysersberg": [
+  7.26,
+  48.14
+ ],
+ "Lapoutroie": [
+  7.17,
+  48.153
+ ],
+ "Cernay, Haut-Rhin": [
+  7.18,
+  47.81
+ ],
+ "Wittelsheim": [
+  7.238,
+  47.806
+ ],
+ "Ottmarsheim": [
+  7.51,
+  47.79
+ ],
+ "Rimling": [
+  7.265,
+  49.097
+ ],
+ "Reipertswiller": [
+  7.466,
+  48.933
+ ],
+ "Pfaffenhoffen": [
+  7.612,
+  48.845
+ ],
+ "Chalampé": [
+  7.54,
+  47.82
+ ],
+ "Vogelgrun": [
+  7.572,
+  48.013
+ ],
+ "Rhenen": [
+  5.567,
+  51.967
+ ],
+ "Veenendaal": [
+  5.55,
+  52.017
+ ],
+ "Nijkerk": [
+  5.483,
+  52.233
+ ],
+ "Bad Zwischenahn": [
+  8.01,
+  53.184
+ ],
+ "Lauenburg": [
+  10.567,
+  53.383
+ ],
+ "Dannenberg (Elbe)": [
+  11.083,
+  53.083
+ ],
+ "Barby": null,
+ "Colditz": [
+  12.807,
+  51.129
+ ],
+ "Zwickau": [
+  12.5,
+  50.717
+ ],
+ "Plauen": [
+  12.117,
+  50.483
+ ],
+ "Aš": [
+  12.195,
+  50.224
+ ],
+ "Cheb": [
+  12.371,
+  50.079
+ ],
+ "Weiden in der Oberpfalz": [
+  12.15,
+  49.667
+ ],
+ "Cham, Germany": [
+  12.65,
+  49.217
+ ],
+ "Ulm": [
+  9.991,
+  48.399
+ ],
+ "Konstanz": [
+  9.183,
+  47.667
+ ],
+ "Voznesenye, Leningrad Oblast": null,
+ "Shlisselburg": [
+  31.038,
+  59.954
+ ],
+ "Yelets": [
+  38.467,
+  52.617
+ ],
+ "Debaltseve": [
+  38.4,
+  48.333
+ ],
+ "Voronezh": [
+  39.211,
+  51.672
+ ],
+ "Bakhmach": [
+  32.83,
+  51.183
+ ]
+}

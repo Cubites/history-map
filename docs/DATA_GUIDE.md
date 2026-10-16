@@ -19,6 +19,7 @@ scripts/
   generate-geo.mjs  국경 생성기 진입 파일 (npm run gen:geo)
   geo/area-list.mjs 권역 목록 AREAS (생성기와 빈 땅 검사가 함께 씀)
   geo/areas/*.mjs   권역 파일: 권역마다 도형과 나라별 기간 영토 (data/entities의 같은 이름 YAML과 짝)
+  wars/index.mjs    전쟁 생성기 진입 파일 (npm run gen:wars): 세계 대전 점령 지역 geojson과 전쟁 YAML 일부. 공통 엔진 wars/engine.mjs, 전쟁별 world-war-1/·world-war-2/*/ (docs/guides/war.md 2절)
 ```
 
 > 현재 들어 있는 600~700년 데이터는 기능 확인용 **샘플**입니다. 국경은 대략적인 추정이고 서술과 출처도 검수가 필요합니다. 실제 데이터로 교체해 주세요.

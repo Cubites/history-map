@@ -1,4 +1,4 @@
-# 전쟁 보기 지점 정답표: world-war-2 / overview(세계 개관). 만든 곳: 인계 폴더 ww-generators/w4/places.mjs (gen-places.mjs가 이 파일을 씀).
+# 전쟁 보기 지점 정답표: world-war-2 / overview(세계 개관). 처음에는 인계 폴더 ww-generators/w4/places.mjs(gen-places.mjs)가 만들었고, 지금은 이 파일을 직접 고친다(생성기 scripts/wars에는 없음).
 # 기대: 진영 id | none | front(전선 위, tolerance km 안). 좌표는 위키백과(ko·en API, 없으면 위키데이터 P625)에서 대조한 도시 중심이고,
 # 해안·전선에 너무 가까워 개관의 단순화(10km)에 흔들리는 도시는 note에 적고 안쪽으로 옮긴 점을 쓴다. 지점마다 근거 url은 그 도시의 위키백과 문서.
 

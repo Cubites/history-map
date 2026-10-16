@@ -1,6 +1,6 @@
 // test:geo 검사 c. 도형 품질 (설계 3.3c): 빈 땅(gaps)·겹침(overlap)·가는 띠(strips)·넓이 0(zero)·사라진 섬(islands)·생성 일치(gen), 여섯 검사를 내보낸다.
 // 사용: npm run test:geo -- --only shapes [--region europe|east-asia|<나라 파일 이름>] [--years 1500-1600] [--skip islands] [--ci]
-//  (gen은 생성기를 임시 폴더에 한 번 돌리므로 --ci이거나 --only gen일 때만 한다.) 모든 검사는 --region·--years를 따른다.
+//  (gen은 국경 생성기와 전쟁 생성기를 임시 폴더에 돌려 data/geo·data/wars와 바이트 비교하므로 --ci이거나 --only gen일 때만 한다. 전쟁 쪽은 입력 해시가 지난 성공과 같으면 건너뜀.) 모든 검사는 --region·--years를 따른다.
 //
 // - gaps 빈 땅: check:gaps(scripts/check-gaps.ts)와 같은 (구역, 해) 칸·같은 캐시 열쇠로 계산해(그 파일 원문이 열쇠에 들어가므로 이 파일은 check-gaps.ts를 읽어 해시만 넘긴다) 두 명령이 캐시를 공유한다.
 //   옛 빚은 data/tests/baseline/gaps.txt(줄마다 `<구역> <해>` TAB `<총넓이 km²>` TAB `<큰 조각 상자 최대 3개, ';'로 이음>`)에 두고, 아래 셋 가운데 하나면 실패한다: ① 기준선에 없는 칸 ② 총넓이가 기준선보다 500km² 넘게 늘어남(고정 여유, 비율 아님)
@@ -374,9 +374,37 @@ async function runIslands(_ctx: Context, opt: Options): Promise<CheckResult> {
 }
 
 // ── gen ─────────────────────────────────────────────────────
+// 두 가지를 바이트 비교한다: ① data/geo를 국경 생성기(scripts/generate-geo.mjs)가 만든 것과 ② data/wars의 생성 대상(전쟁 생성기 scripts/wars, npm run gen:wars)을 생성기 결과와.
+// ②는 3분 넘게 걸리므로 입력(data/geo·data/wars·data/base/fragments·scripts/wars·scripts/build-data/geo.ts·package-lock.json)의 내용 해시를 .cache/test-geo/wars-gen.json에 두고,
+// 지난 성공 때와 같으면 건너뛴다(통과로 치고 notes에 '입력 그대로 — 지난 결과 재사용'). 국경·전쟁 파일·생성기 코드가 바뀐 커밋에서만 돈다. 실패한 실행은 해시를 남기지 않는다.
+// (genWars는 전쟁 쪽만 따로 시험·재사용할 수 있게 내보낸다.)
 
-async function runGen(_ctx: Context, opt: Options): Promise<CheckResult> {
-  if (!opt.ci && !opt.only?.includes('gen')) return { checked: 0, items: [], notes: ['건너뜀(--ci이거나 --only gen일 때만)'] };
+/** 전쟁 생성기가 만드는 data/wars 아래 파일: 맨 위 YAML(머리·europe 전역·overview 전역을 다시 쓰고 손으로 쓴 asia-pacific 전역은 그대로 둠)과 geojson 폴더 넷 */
+const WARS_GEN_YAML = ['eu-02-world-war-2.yaml'];
+const WARS_GEN_DIRS = ['ww1', 'ww2-europe', 'ww2-asia', 'ww2-overview'];
+/** 전쟁 생성이 읽는 입력: 폴더(안의 모든 파일)와 파일 */
+const WARS_GEN_INPUT_DIRS = ['data/geo', 'data/wars', 'data/base/fragments', 'scripts/wars'];
+const WARS_GEN_INPUT_FILES = ['scripts/build-data/geo.ts', 'package-lock.json'];
+
+function filesUnder(dir: string): string[] {
+  const out: string[] = [];
+  for (const e of readdirSync(dir, { withFileTypes: true }).sort((x, y) => (x.name < y.name ? -1 : 1))) {
+    const p = path.join(dir, e.name);
+    if (e.isDirectory()) out.push(...filesUnder(p));
+    else out.push(p);
+  }
+  return out;
+}
+/** 전쟁 생성 입력의 내용 해시 (경로와 내용) */
+function warsGenInputHash(): string {
+  const parts: (string | Uint8Array)[] = [];
+  for (const rel of [...WARS_GEN_INPUT_DIRS.flatMap((d) => filesUnder(path.join(ROOT, d)).map((p) => path.relative(ROOT, p))), ...WARS_GEN_INPUT_FILES]) {
+    parts.push(rel.split(path.sep).join('/'), readFileSync(path.join(ROOT, rel)));
+  }
+  return hashOf(...parts);
+}
+
+async function genGeo(): Promise<CheckResult> {
   const tmp = mkdtempSync(path.join(tmpdir(), 'test-geo-gen-'));
   try {
     writeFileSync(path.join(tmp, 'package.json'), '{}\n');
@@ -399,11 +427,61 @@ async function runGen(_ctx: Context, opt: Options): Promise<CheckResult> {
   }
 }
 
+export async function genWars(ctx: Context): Promise<CheckResult> {
+  const hash = warsGenInputHash();
+  const stateFile = path.join(ctx.cacheDir, 'wars-gen.json');
+  let last: string | null = null;
+  try {
+    last = (JSON.parse(readFileSync(stateFile, 'utf8')) as { hash?: string }).hash ?? null;
+  } catch {
+    // 지난 기록이 없거나 깨졌으면 새로 돌린다
+  }
+  const listed = (dir: string) => (existsSync(path.join(ROOT, 'data/wars', dir)) ? readdirSync(path.join(ROOT, 'data/wars', dir)).filter((f) => f.endsWith('.geojson')) : []);
+  const total = WARS_GEN_YAML.length + WARS_GEN_DIRS.reduce((n, d) => n + listed(d).length, 0);
+  if (last === hash) return { checked: total, items: [], notes: [`전쟁 생성: 입력 그대로 — 지난 결과 재사용(파일 ${total}개)`] };
+
+  const tmp = mkdtempSync(path.join(tmpdir(), 'test-geo-gen-wars-'));
+  try {
+    // 저장소 data/wars는 건드리지 않고 임시 폴더의 data/wars에 쓴다 (--out). 한 번 돌리는 데 3분 안팎(CI는 2~4배)
+    const r = spawnSync(process.execPath, ['--disable-warning=ExperimentalWarning', path.join(ROOT, 'scripts/wars/index.mjs'), ROOT, '--out', tmp], { encoding: 'utf8', timeout: 1500000, maxBuffer: 64 * 1024 * 1024 });
+    if (r.status !== 0) return { checked: 0, items: [{ key: '전쟁 생성 실패', msg: `전쟁 생성기 실행 실패(코드 ${r.status}): ${(r.stderr || String(r.error)).split('\n').find((l) => l.trim()) ?? ''}` }] };
+    const items: Item[] = [];
+    const compare = (rel: string, mine: string | null, made: string | null) => {
+      if (mine === null) items.push({ key: `생성 더 있음 ${rel}`, msg: `${rel}: 전쟁 생성기는 만드는데 data/wars에 없음` });
+      else if (made === null) items.push({ key: `생성 없음 ${rel}`, msg: `${rel}: data/wars에 있지만 전쟁 생성기가 만들지 않음 (옛 판이 남았거나 생성기 밖에서 만든 파일)` });
+      else if (!readFileSync(mine).equals(readFileSync(made))) items.push({ key: `생성 다름 ${rel}`, msg: `${rel}: 전쟁 생성기 결과와 다름 (npm run gen:wars를 돌렸는지)` });
+    };
+    const warsDir = path.join(ROOT, 'data/wars');
+    const outDir = path.join(tmp, 'data/wars');
+    for (const f of WARS_GEN_YAML) compare(`data/wars/${f}`, existsSync(path.join(warsDir, f)) ? path.join(warsDir, f) : null, existsSync(path.join(outDir, f)) ? path.join(outDir, f) : null);
+    for (const d of WARS_GEN_DIRS) {
+      const list = (base: string) => (existsSync(path.join(base, d)) ? readdirSync(path.join(base, d)).sort() : []);
+      const mine = list(warsDir), made = list(outDir);
+      for (const f of new Set([...mine, ...made]))
+        compare(`data/wars/${d}/${f}`, mine.includes(f) ? path.join(warsDir, d, f) : null, made.includes(f) ? path.join(outDir, d, f) : null);
+    }
+    if (!items.length) {
+      mkdirSync(ctx.cacheDir, { recursive: true });
+      writeFileSync(stateFile, JSON.stringify({ hash }) + '\n');
+    }
+    return { checked: total, items, notes: [`전쟁 생성: 파일 ${total}개를 생성기 결과와 바이트 비교`] };
+  } finally {
+    rmSync(tmp, { recursive: true, force: true });
+  }
+}
+
+async function runGen(ctx: Context, opt: Options): Promise<CheckResult> {
+  if (!opt.ci && !opt.only?.includes('gen')) return { checked: 0, items: [], notes: ['건너뜀(--ci이거나 --only gen일 때만)'] };
+  const wars = await genWars(ctx);
+  const geo = await genGeo();
+  return { checked: geo.checked + wars.checked, items: [...geo.items, ...wars.items], notes: [...(geo.notes ?? []), ...(wars.notes ?? [])] };
+}
+
 export const checks: Check[] = [
   { id: 'gaps', title: '빈 땅 (check:gaps와 같은 칸·캐시, 기준선 대조)', selfBaseline: true, run: runGaps },
   { id: 'overlap', title: '영토 겹침 (5km² 초과 실패)', run: runOverlap },
   { id: 'strips', title: '가는 띠 (폭 1km 미만·넓이 2km² 초과)', run: runStrips },
   { id: 'zero', title: '넓이 0 조각', run: runZero },
   { id: 'islands', title: '사라진 섬', run: runIslands },
-  { id: 'gen', title: 'data/geo가 생성기 결과와 같은가', run: runGen },
+  { id: 'gen', title: 'data/geo·data/wars가 생성기 결과와 같은가', run: runGen },
 ];
