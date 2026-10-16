@@ -16,6 +16,7 @@
 
 - 작업은 원본이 아닌 사본에서: `git clone --no-local <원본> <작업 폴더>/repo`(아래 줄의 이유로 `--no-hardlinks`는 쓰지 않는다). 객체가 없다는 오류면 `--reference`나 alternates. (2026-10-09에 원본 `.git`에서 빈 트리 객체 4b825dc…가 빠져 있던 것을 `git hash-object -w -t tree`로 써넣어 `fsck`가 깨끗해졌다. 다시 같은 오류면 이 방법.)
 - 로컬 `git clone --no-hardlinks`가 원본의 느슨한 객체 일부와 `.cache`의 admin-1 파일을 빠뜨려 `git show HEAD:…`(compare:geo)가 실패한 일이 있다(세션 N3). 사본은 `git clone --no-local`로 만들고, 빠졌으면 원본 `.git/objects`를 `cp -rn`으로 사본에 복사한다(원본은 읽기만).
+- **사본 커밋의 작성자 이메일**: 원본의 저장소 설정(`user.email` noreply)은 clone에 따라가지 않아, 사본에서 한 커밋은 전역 설정(개인 주소)으로 들어간다(2026-10-16 세션 S2). 사본 커밋 전에 `git -C <사본> config user.email <원본과 같은 noreply>`를 하거나, 원본에 옮긴 뒤 푸시 전에 `git log --format=%ae`로 보고 `git rebase origin/main --exec "git commit --amend --no-edit --reset-author"`로 고친다.
 - **`node_modules`는 정션**: PowerShell에서 `cmd /c mklink /J <사본>\node_modules <원본>\node_modules`. **지울 때는 정션부터 떼고 지운다**: `cmd /c rmdir "<사본>\node_modules"`(`/s` 없이 — 정션만 사라진다), 그다음에 사본을 지운다. **`rm -rf`·`Remove-Item -Recurse`를 정션이 붙은 채로 돌리면 원본 `node_modules`가 지워진다**(2026-10-12 세계 대전 W2에서 실제로 일어날 뻔함 — package-lock과 대조해 이상 없음을 확인). 끝난 뒤에도 사본은 지우지 않는 것이 기본.
 - 원본 `.cache`(빌드 캐시)는 **읽기만**. 사본에서 쓰려면 사본 안에 복사(`robocopy`). 원본에는 아무것도 쓰지 않는다.
 - **줄바꿈(CRLF)**: 원본 일부 파일은 CRLF다. 사본에 원본 파일을 덮어쓰면 git이 바뀐 파일로 보고 `apply.mjs`가 '작업 트리가 깨끗하지 않음'으로 멈춘다 — clone 그대로 쓴다. `apply.mjs`는 LF로 맞춘 sha256을 대조하고 **원래 줄바꿈을 유지**, 새 파일은 LF로 쓴다. 사건 patch는 CRLF 사본에도 시험한다.
