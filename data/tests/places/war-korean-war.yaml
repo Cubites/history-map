@@ -1,0 +1,70 @@
+# 전쟁 보기 지점 정답표: korean-war / korea. 세션 S2-C에서 근거 URL과 함께 만듦.
+# 기대: 진영 id | none | front(전선 위, tolerance km 안).
+
+# 1950-06-25
+- { name: "서울", at: [126.990, 37.560], war: korean-war, theater: korea, date: "1950-06-25", expect: south, url: "https://ko.wikipedia.org/wiki/제1차_서울_전투", from: "세션 S2-C", note: "서울은 6월 28일 새벽 함락됨. 25일에는 국군이 지킴" }
+- { name: "대전", at: [127.385, 36.351], war: korean-war, theater: korea, date: "1950-06-25", expect: south, url: "https://encykorea.aks.ac.kr/Article/E0014745", from: "세션 S2-C", note: "대전은 7월 20일 함락됨. 개전 때는 후방" }
+- { name: "평양", at: [125.748, 39.017], war: korean-war, theater: korea, date: "1950-06-25", expect: north, url: "https://encykorea.aks.ac.kr/Article/E0060021", from: "세션 S2-C", note: "평양은 10월 19일 국군·유엔군이 탈환할 때까지 북한 수도" }
+
+# 1950-06-28
+- { name: "서울", at: [126.990, 37.560], war: korean-war, theater: korea, date: "1950-06-28", expect: north, url: "https://ko.wikipedia.org/wiki/제1차_서울_전투", from: "세션 S2-C", note: "6월 28일 새벽 미아리 방어선이 뚫려 북한군이 서울을 차지함" }
+- { name: "대전", at: [127.385, 36.351], war: korean-war, theater: korea, date: "1950-06-28", expect: south, url: "https://encykorea.aks.ac.kr/Article/E0014745", from: "세션 S2-C", note: "대전은 7월 20일 함락됨. 28일에는 국군 쪽" }
+- { name: "평양", at: [125.748, 39.017], war: korean-war, theater: korea, date: "1950-06-28", expect: north, url: "https://encykorea.aks.ac.kr/Article/E0060021", from: "세션 S2-C", note: "평양은 10월 19일까지 북한 수도" }
+
+# 1950-07-20
+- { name: "대전", at: [127.385, 36.351], war: korean-war, theater: korea, date: "1950-07-20", expect: north, url: "https://encykorea.aks.ac.kr/Article/E0014745", from: "세션 S2-C", note: "7월 20일 대전 시가전. 딘 소장이 오후 철수를 결정해 북한군이 대전을 차지함" }
+- { name: "공주", at: [127.125, 36.456], war: korean-war, theater: korea, date: "1950-07-20", expect: north, url: "https://ko.wikipedia.org/wiki/대전_전투", from: "세션 S2-C", note: "북한군 제4사단이 공주를 거쳐 7월 15일 논산을 점령, 대전 북서쪽으로 진출" }
+- { name: "논산", at: [127.085, 36.204], war: korean-war, theater: korea, date: "1950-07-20", expect: north, url: "https://ko.wikipedia.org/wiki/대전_전투", from: "세션 S2-C", note: "7월 15일 북한군 제4사단이 논산을 점령함(선 가장자리, 약 9km 차)" }
+- { name: "대구", at: [128.601, 35.871], war: korean-war, theater: korea, date: "1950-07-20", expect: south, url: "https://ko.wikipedia.org/wiki/낙동강_방어선_전투", from: "세션 S2-C", note: "대구는 끝까지 국군·유엔군 쪽(8군 사령부)" }
+- { name: "부산", at: [129.076, 35.179], war: korean-war, theater: korea, date: "1950-07-20", expect: south, url: "https://ko.wikipedia.org/wiki/낙동강_방어선_전투", from: "세션 S2-C", note: "부산은 끝까지 국군·유엔군 쪽" }
+
+# 1950-08-31
+- { name: "진주", at: [128.083, 35.200], war: korean-war, theater: korea, date: "1950-08-31", expect: north, url: "https://ko.wikipedia.org/wiki/낙동강_방어선_전투", from: "세션 S2-C", note: "7월 말 제19연대가 패퇴해 진주가 북한군에 넘어감" }
+- { name: "마산", at: [128.488, 35.131], war: korean-war, theater: korea, date: "1950-08-31", expect: south, url: "https://ko.wikipedia.org/wiki/낙동강_방어선_전투", from: "세션 S2-C", note: "미 25사단이 마산 남쪽을 지켜 방어선이 유지됨" }
+- { name: "대구", at: [128.601, 35.871], war: korean-war, theater: korea, date: "1950-08-31", expect: south, url: "https://ko.wikipedia.org/wiki/낙동강_방어선_전투", from: "세션 S2-C", note: "대구는 북한군의 포위 목표였으나 지켜 냄" }
+- { name: "대전", at: [127.385, 36.351], war: korean-war, theater: korea, date: "1950-08-31", expect: north, url: "https://encykorea.aks.ac.kr/Article/E0014745", from: "세션 S2-C", note: "대전은 9월 28일 수복 전까지 북한군 차지" }
+- { name: "부산", at: [129.076, 35.179], war: korean-war, theater: korea, date: "1950-08-31", expect: south, url: "https://ko.wikipedia.org/wiki/낙동강_방어선_전투", from: "세션 S2-C", note: "부산 교두보를 지켜 냄" }
+
+# 1950-09-28
+- { name: "서울", at: [126.990, 37.560], war: korean-war, theater: korea, date: "1950-09-28", expect: south, url: "https://encykorea.aks.ac.kr/Article/E0005982", from: "세션 S2-C", note: "9월 28일 서울 수복" }
+- { name: "인천", at: [126.649, 37.464], war: korean-war, theater: korea, date: "1950-09-28", expect: south, url: "https://encykorea.aks.ac.kr/Article/E0047085", from: "세션 S2-C", note: "9월 15일 상륙 이튿날 인천을 장악" }
+- { name: "평양", at: [125.748, 39.017], war: korean-war, theater: korea, date: "1950-09-28", expect: north, url: "https://encykorea.aks.ac.kr/Article/E0060021", from: "세션 S2-C", note: "평양은 10월 19일 탈환됨. 28일에는 북한 쪽" }
+- { name: "원산", at: [127.446, 39.148], war: korean-war, theater: korea, date: "1950-09-28", expect: north, url: "https://encykorea.aks.ac.kr/Article/E0040699", from: "세션 S2-C", note: "원산은 10월 10일 국군이 탈환함. 28일에는 북한 쪽" }
+
+# 1950-10-19
+- { name: "평양", at: [125.748, 39.017], war: korean-war, theater: korea, date: "1950-10-19", expect: south, url: "https://encykorea.aks.ac.kr/Article/E0060021", from: "세션 S2-C", note: "10월 19일 국군 제1사단이 평양을 탈환함" }
+- { name: "원산", at: [127.446, 39.148], war: korean-war, theater: korea, date: "1950-10-19", expect: south, url: "https://encykorea.aks.ac.kr/Article/E0040699", from: "세션 S2-C", note: "10월 10일 국군 제1군단이 원산을 탈환함" }
+- { name: "함흥", at: [127.533, 39.917], war: korean-war, theater: korea, date: "1950-10-19", expect: south, url: "https://ko.wikipedia.org/wiki/제1군단_(대한민국)", from: "세션 S2-C", note: "10월 17일 국군 제1군단이 함흥·흥남을 점령함" }
+- { name: "서울", at: [126.990, 37.560], war: korean-war, theater: korea, date: "1950-10-19", expect: south, url: "https://encykorea.aks.ac.kr/Article/E0005982", from: "세션 S2-C", note: "9월 28일 수복 뒤 국군 쪽" }
+
+# 1950-11-24
+- { name: "평양", at: [125.748, 39.017], war: korean-war, theater: korea, date: "1950-11-24", expect: south, url: "https://ko.wikipedia.org/wiki/평양_철수", from: "세션 S2-C", note: "12월 초에야 평양에서 철수하므로 11월 24일에는 유엔군 쪽" }
+- { name: "원산", at: [127.446, 39.148], war: korean-war, theater: korea, date: "1950-11-24", expect: south, url: "https://encykorea.aks.ac.kr/Article/E0065977", from: "세션 S2-C", note: "원산 철수는 12월 3일부터이므로 11월 24일에는 국군·유엔군 쪽" }
+- { name: "함흥", at: [127.533, 39.917], war: korean-war, theater: korea, date: "1950-11-24", expect: south, url: "https://encykorea.aks.ac.kr/Article/E0065977", from: "세션 S2-C", note: "함흥·흥남 철수는 12월 중순 이후이므로 11월 24일에는 국군·유엔군 쪽" }
+- { name: "서울", at: [126.990, 37.560], war: korean-war, theater: korea, date: "1950-11-24", expect: south, url: "https://encykorea.aks.ac.kr/Article/E0005982", from: "세션 S2-C", note: "9월 28일 수복 뒤 1951년 1월 4일까지 국군 쪽" }
+
+# 1950-12-24
+- { name: "평양", at: [125.748, 39.017], war: korean-war, theater: korea, date: "1950-12-24", expect: north, url: "https://ko.wikipedia.org/wiki/평양_철수", from: "세션 S2-C", note: "12월 4~5일 유엔군이 평양에서 철수함" }
+- { name: "원산", at: [127.446, 39.148], war: korean-war, theater: korea, date: "1950-12-24", expect: north, url: "https://encykorea.aks.ac.kr/Article/E0065977", from: "세션 S2-C", note: "원산이 12월 초 적중에 넘어가 해상 철수가 불가피했음" }
+- { name: "서울", at: [126.990, 37.560], war: korean-war, theater: korea, date: "1950-12-24", expect: south, url: "https://encykorea.aks.ac.kr/Article/E0047221", from: "세션 S2-C", note: "서울은 1951년 1월 4일에야 함락됨" }
+
+# 1951-01-24
+- { name: "서울", at: [126.990, 37.560], war: korean-war, theater: korea, date: "1951-01-24", expect: north, url: "https://encykorea.aks.ac.kr/Article/E0047221", from: "세션 S2-C", note: "1월 4일 서울이 중국군에게 함락됨" }
+- { name: "수원", at: [127.029, 37.262], war: korean-war, theater: korea, date: "1951-01-24", expect: north, url: "https://encykorea.aks.ac.kr/Article/E0047221", from: "세션 S2-C", note: "오산·삼척선까지 후퇴" }
+- { name: "대전", at: [127.385, 36.351], war: korean-war, theater: korea, date: "1951-01-24", expect: south, url: "https://encykorea.aks.ac.kr/Article/E0047221", from: "세션 S2-C", note: "후퇴선은 오산·삼척이므로 대전은 국군·유엔군 쪽" }
+- { name: "부산", at: [129.076, 35.179], war: korean-war, theater: korea, date: "1951-01-24", expect: south, url: "https://encykorea.aks.ac.kr/Article/E0047221", from: "세션 S2-C", note: "임시 수도 부산은 국군 쪽" }
+
+# 1951-03-15
+- { name: "서울", at: [126.990, 37.560], war: korean-war, theater: korea, date: "1951-03-15", expect: south, url: "https://encykorea.aks.ac.kr/Article/E0047221", from: "세션 S2-C", note: "3월 14일 국군 제1사단이 서울에 진주, 3월 15일 수복으로 기록" }
+- { name: "평양", at: [125.748, 39.017], war: korean-war, theater: korea, date: "1951-03-15", expect: north, url: "https://ko.wikipedia.org/wiki/평양_철수", from: "세션 S2-C", note: "평양은 12월 철수 뒤 휴전까지 북한 쪽" }
+- { name: "원산", at: [127.446, 39.148], war: korean-war, theater: korea, date: "1951-03-15", expect: north, url: "https://encykorea.aks.ac.kr/Article/E0065977", from: "세션 S2-C", note: "원산은 12월 철수 뒤 휴전까지 북한 쪽" }
+
+# 1951-07-10
+- { name: "개성", at: [126.550, 37.967], war: korean-war, theater: korea, date: "1951-07-10", expect: north, url: "https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_i502950&code=kc_age_50", from: "세션 S2-C", note: "개성에서 정전 회담이 열림. 유엔군 쪽이 개성 지역 확보를 흥정하려 한 공산군 쪽 땅" }
+- { name: "서울", at: [126.990, 37.560], war: korean-war, theater: korea, date: "1951-07-10", expect: south, url: "https://encykorea.aks.ac.kr/Article/E0047221", from: "세션 S2-C", note: "3월 재수복 뒤 국군 쪽" }
+- { name: "평양", at: [125.748, 39.017], war: korean-war, theater: korea, date: "1951-07-10", expect: north, url: "https://ko.wikipedia.org/wiki/평양_철수", from: "세션 S2-C", note: "평양은 북한 쪽" }
+
+# 1953-07-27
+- { name: "개성", at: [126.550, 37.967], war: korean-war, theater: korea, date: "1953-07-27", expect: north, url: "https://ko.wikipedia.org/wiki/한반도_군사_분계선", from: "세션 S2-C", note: "개성시·개풍군 등 38선 이남 지역 대부분이 군사분계선 이북이 됨" }
+- { name: "서울", at: [126.990, 37.560], war: korean-war, theater: korea, date: "1953-07-27", expect: south, url: "https://ko.wikipedia.org/wiki/한반도_군사_분계선", from: "세션 S2-C", note: "서울은 남쪽" }
+- { name: "평양", at: [125.748, 39.017], war: korean-war, theater: korea, date: "1953-07-27", expect: north, url: "https://ko.wikipedia.org/wiki/평양_철수", from: "세션 S2-C", note: "평양은 북한 쪽" }

@@ -1,0 +1,33 @@
+# 전쟁 보기 지점 정답표: later-three-kingdoms / korea. 세션 S2-C에서 근거 URL과 함께 만듦.
+# 기대: 진영 id | none | front(전선 위, tolerance km 안).
+
+# 918-06-00
+- { name: "개성", at: [126.553, 37.972], war: later-three-kingdoms, theater: korea, date: "918-06-00", expect: goryeo, url: "https://encykorea.aks.ac.kr/Article/E0065744", from: "세션 S2-C", note: "918-06 왕건 즉위, 송악(개성)으로 도읍을 옮김" }
+- { name: "경주", at: [129.217, 35.85], war: later-three-kingdoms, theater: korea, date: "918-06-00", expect: silla, url: "https://encykorea.aks.ac.kr/Article/E0065744", from: "세션 S2-C", note: "신라 왕경(935-11 항복 때까지)" }
+- { name: "전주", at: [127.147, 35.824], war: later-three-kingdoms, theater: korea, date: "918-06-00", expect: hubaekje, url: "https://encykorea.aks.ac.kr/Article/E0065738", from: "세션 S2-C", note: "900년 견훤이 완산주로 도읍을 옮김" }
+
+# 927-00-00
+- { name: "개성", at: [126.553, 37.972], war: later-three-kingdoms, theater: korea, date: "927-00-00", expect: goryeo, url: "https://encykorea.aks.ac.kr/Article/E0065744", from: "세션 S2-C", note: "고려 도읍" }
+- { name: "경주", at: [129.217, 35.85], war: later-three-kingdoms, theater: korea, date: "927-00-00", expect: silla, url: "https://encykorea.aks.ac.kr/Article/E0065744", from: "세션 S2-C", note: "927-09 견훤이 경애왕을 죽이고 경순왕을 세움(신라는 존속)" }
+- { name: "전주", at: [127.147, 35.824], war: later-three-kingdoms, theater: korea, date: "927-00-00", expect: hubaekje, url: "https://encykorea.aks.ac.kr/Article/E0065738", from: "세션 S2-C", note: "후백제 도읍" }
+- { name: "공주", at: [127.117, 36.45], war: later-three-kingdoms, theater: korea, date: "927-00-00", expect: hubaekje, url: "https://encykorea.aks.ac.kr/Article/E0065738", from: "세션 S2-C", note: "918년 이후 후백제가 웅주 항복을 받음(웅진 이북 30여 성 고려 항복은 934년)" }
+
+# 930-01-00
+- { name: "경주", at: [129.217, 35.85], war: later-three-kingdoms, theater: korea, date: "930-01-00", expect: silla, url: "https://encykorea.aks.ac.kr/Article/E0065744", from: "세션 S2-C", note: "신라 왕경" }
+- { name: "전주", at: [127.147, 35.824], war: later-three-kingdoms, theater: korea, date: "930-01-00", expect: hubaekje, url: "https://encykorea.aks.ac.kr/Article/E0065738", from: "세션 S2-C", note: "후백제 도읍" }
+- { name: "공주", at: [127.117, 36.45], war: later-three-kingdoms, theater: korea, date: "930-01-00", expect: hubaekje, url: "https://encykorea.aks.ac.kr/Article/E0065738", from: "세션 S2-C", note: "웅주는 후백제 손에 있음" }
+
+# 934-09-00
+- { name: "개성", at: [126.553, 37.972], war: later-three-kingdoms, theater: korea, date: "934-09-00", expect: goryeo, url: "https://encykorea.aks.ac.kr/Article/E0065744", from: "세션 S2-C", note: "고려 도읍" }
+- { name: "경주", at: [129.217, 35.85], war: later-three-kingdoms, theater: korea, date: "934-09-00", expect: silla, url: "https://encykorea.aks.ac.kr/Article/E0065744", from: "세션 S2-C", note: "신라 왕경" }
+- { name: "전주", at: [127.147, 35.824], war: later-three-kingdoms, theater: korea, date: "934-09-00", expect: hubaekje, url: "https://encykorea.aks.ac.kr/Article/E0065738", from: "세션 S2-C", note: "후백제 도읍" }
+
+# 935-11-00
+- { name: "경주", at: [129.217, 35.85], war: later-three-kingdoms, theater: korea, date: "935-11-00", expect: goryeo, url: "https://encykorea.aks.ac.kr/Article/E0065744", from: "세션 S2-C", note: "935-11 경순왕 항복, 신라국을 폐지하고 경주로 고침" }
+- { name: "전주", at: [127.147, 35.824], war: later-three-kingdoms, theater: korea, date: "935-11-00", expect: hubaekje, url: "https://encykorea.aks.ac.kr/Article/E0065738", from: "세션 S2-C", note: "완산주(전주)는 936-09 멸망 때까지 후백제(전주 함락 기록 없음)" }
+- { name: "나주", at: [126.717, 35.033], war: later-three-kingdoms, theater: korea, date: "935-11-00", expect: goryeo, url: "https://ko.wikipedia.org/wiki/%ED%9B%84%EC%82%BC%EA%B5%AD_%EC%8B%9C%EB%8C%80", from: "세션 S2-C", note: "견훤이 고려의 월경지 나주를 거쳐 귀순(935)" }
+
+# 936-09-00
+- { name: "개성", at: [126.553, 37.972], war: later-three-kingdoms, theater: korea, date: "936-09-00", expect: goryeo, url: "https://encykorea.aks.ac.kr/Article/E0065744", from: "세션 S2-C", note: "고려 도읍" }
+- { name: "경주", at: [129.217, 35.85], war: later-three-kingdoms, theater: korea, date: "936-09-00", expect: goryeo, url: "https://encykorea.aks.ac.kr/Article/E0065744", from: "세션 S2-C", note: "935-11 이후 경주(고려)" }
+- { name: "논산", at: [127.083, 36.2], war: later-three-kingdoms, theater: korea, date: "936-09-00", expect: goryeo, url: "https://encykorea.aks.ac.kr/Article/E0065744", from: "세션 S2-C", note: "936-09 황산군에서 신검·양검·용검이 항복(황산은 지금의 논산 연산)" }

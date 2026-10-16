@@ -1,0 +1,68 @@
+# 전쟁 보기 지점 정답표: imjin-war / korea. 세션 S2-C에서 근거 URL과 함께 만듦.
+# 기대: 진영 id | none | front(전선 위, tolerance km 안).
+
+# 1592-04-15
+- { name: "부산", at: [129.076, 35.179], war: imjin-war, theater: korea, date: "1592-04-15", expect: japan, url: "https://contents.history.go.kr/front/nh/view.do?levelId=nh_029_0020_0020_0010", from: "세션 S2-C", note: "음력 4월 14일 고니시군이 부산진 함락" }
+- { name: "동래", at: [129.084, 35.204], war: imjin-war, theater: korea, date: "1592-04-15", expect: japan, url: "https://contents.history.go.kr/front/nh/view.do?levelId=nh_029_0020_0020_0010", from: "세션 S2-C", note: "15일 동래성 함락(송상현 전사)" }
+- { name: "상주", at: [128.159, 36.411], war: imjin-war, theater: korea, date: "1592-04-15", expect: joseon, url: "https://contents.history.go.kr/front/nh/view.do?levelId=nh_029_0020_0020_0010", from: "세션 S2-C", note: "상주 전투는 24일(일본군 도착 전)" }
+- { name: "서울", at: [126.978, 37.567], war: imjin-war, theater: korea, date: "1592-04-15", expect: joseon, url: "https://contents.history.go.kr/front/nh/view.do?levelId=nh_029_0020_0020_0010", from: "세션 S2-C", note: "일본군 입성은 5월 3일" }
+
+# 1592-05-03
+- { name: "서울", at: [126.978, 37.567], war: imjin-war, theater: korea, date: "1592-05-03", expect: japan, url: "https://contents.history.go.kr/front/nh/view.do?levelId=nh_029_0020_0020_0010", from: "세션 S2-C", note: "5월 2일 한강 도하, 3일 도성 입성" }
+- { name: "충주", at: [127.926, 36.991], war: imjin-war, theater: korea, date: "1592-05-03", expect: japan, url: "https://contents.history.go.kr/front/nh/view.do?levelId=nh_029_0020_0020_0010", from: "세션 S2-C", note: "4월 28일 탄금대 신립 패전" }
+- { name: "상주", at: [128.159, 36.411], war: imjin-war, theater: korea, date: "1592-05-03", expect: japan, url: "https://contents.history.go.kr/front/nh/view.do?levelId=nh_029_0020_0020_0010", from: "세션 S2-C", note: "4월 24일 이일이 상주에서 패함" }
+- { name: "개성", at: [126.550, 37.967], war: imjin-war, theater: korea, date: "1592-05-03", expect: joseon, url: "https://contents.history.go.kr/front/nh/view.do?levelId=nh_029_0020_0020_0010", from: "세션 S2-C", note: "4월 30일 선조가 거쳐 감, 일본군 개성 입성은 5월 말" }
+- { name: "평양", at: [125.748, 39.017], war: imjin-war, theater: korea, date: "1592-05-03", expect: joseon, url: "https://contents.history.go.kr/front/nh/view.do?levelId=nh_029_0020_0020_0010", from: "세션 S2-C", note: "5월 7일 선조 평양 도착, 일본군 평양 도착은 6월 13일" }
+
+# 1592-06-15
+- { name: "평양", at: [125.748, 39.017], war: imjin-war, theater: korea, date: "1592-06-15", expect: japan, url: "https://contents.history.go.kr/front/nh/view.do?levelId=nh_029_0020_0020_0010", from: "세션 S2-C", note: "6월 13일 대동강 도착, 14일 기습 실패로 평양성 방어선 붕괴" }
+- { name: "개성", at: [126.550, 37.967], war: imjin-war, theater: korea, date: "1592-06-15", expect: japan, url: "https://contents.history.go.kr/front/nh/view.do?levelId=nh_029_0020_0020_0010", from: "세션 S2-C", note: "임진강 도하(5월 27일) 뒤 개성 입성, 6월 1일 출발" }
+- { name: "서울", at: [126.978, 37.567], war: imjin-war, theater: korea, date: "1592-06-15", expect: japan, url: "https://contents.history.go.kr/front/nh/view.do?levelId=nh_029_0020_0020_0010", from: "세션 S2-C", note: "5월 3일 입성 이후 본거지" }
+- { name: "안주", at: [125.660, 39.620], war: imjin-war, theater: korea, date: "1592-06-15", expect: joseon, url: "https://contents.history.go.kr/front/nh/view.do?levelId=nh_029_0020_0020_0010", from: "세션 S2-C", note: "선조 일행이 평양을 떠나 숙천·안주를 거쳐 의주로 향함" }
+- { name: "의주", at: [124.532, 40.197], war: imjin-war, theater: korea, date: "1592-06-15", expect: joseon, url: "https://contents.history.go.kr/front/nh/view.do?levelId=nh_029_0020_0020_0010", from: "세션 S2-C", note: "6월 23일 선조가 의주에 이르러 행재소로 삼음" }
+
+# 1592-07-08
+- { name: "평양", at: [125.748, 39.017], war: imjin-war, theater: korea, date: "1592-07-08", expect: japan, url: "https://contents.history.go.kr/front/nh/view.do?levelId=nh_029_0020_0020_0010", from: "세션 S2-C", note: "6월 14일 이후 일본군 점령, 조승훈 1차 평양 수복 실패" }
+- { name: "서울", at: [126.978, 37.567], war: imjin-war, theater: korea, date: "1592-07-08", expect: japan, url: "https://contents.history.go.kr/front/nh/view.do?levelId=nh_029_0020_0020_0010", from: "세션 S2-C", note: "일본군 본거지" }
+- { name: "전주", at: [127.149, 35.822], war: imjin-war, theater: korea, date: "1592-07-08", expect: joseon, url: "https://contents.history.go.kr/front/nh/view.do?levelId=nh_029_0020_0020_0050_0010", from: "세션 S2-C", note: "7월 이치(배재) 전투에서 권율이 전주 침공을 막음" }
+- { name: "회령", at: [129.750, 42.433], war: imjin-war, theater: korea, date: "1592-07-08", expect: joseon, url: "https://contents.history.go.kr/front/nh/view.do?levelId=nh_029_0020_0020_0020", from: "세션 S2-C", note: "7월 22일 국경인 반란 전까지 조선 관할, 가토군 도착은 그 뒤" }
+
+# 1592-10-10
+- { name: "서울", at: [126.978, 37.567], war: imjin-war, theater: korea, date: "1592-10-10", expect: japan, url: "https://contents.history.go.kr/front/nh/view.do?levelId=nh_029_0020_0020_0010", from: "세션 S2-C", note: "일본군 본거지" }
+- { name: "평양", at: [125.748, 39.017], war: imjin-war, theater: korea, date: "1592-10-10", expect: japan, url: "https://contents.history.go.kr/front/nh/view.do?levelId=nh_029_0020_0020_0050_0020", from: "세션 S2-C", note: "1593년 1월 조·명군 수복 전" }
+- { name: "김해", at: [128.881, 35.234], war: imjin-war, theater: korea, date: "1592-10-10", expect: japan, url: "https://contents.history.go.kr/front/nh/view.do?levelId=nh_029_0020_0020_0050_0010", from: "세션 S2-C", note: "10월 초 김해 주둔 일본군이 진주성 공격" }
+- { name: "진주", at: [128.083, 35.200], war: imjin-war, theater: korea, date: "1592-10-10", expect: joseon, url: "https://contents.history.go.kr/front/nh/view.do?levelId=nh_029_0020_0020_0050_0010", from: "세션 S2-C", note: "1차 진주성 전투 승리" }
+- { name: "의령", at: [128.261, 35.319], war: imjin-war, theater: korea, date: "1592-10-10", expect: joseon, url: "https://contents.history.go.kr/front/nh/view.do?levelId=nh_029_0020_0020_0020", from: "세션 S2-C", note: "곽재우 의병이 의령을 거점으로 지킴" }
+- { name: "경성", at: [129.580, 41.605], war: imjin-war, theater: korea, date: "1592-10-10", expect: joseon, url: "https://contents.history.go.kr/front/nh/view.do?levelId=nh_029_0020_0020_0020", from: "세션 S2-C", note: "정문부 의병이 9월 16일 경성전투에서 승리해 경성 수복" }
+- { name: "회령", at: [129.750, 42.433], war: imjin-war, theater: korea, date: "1592-10-10", expect: joseon, url: "https://contents.history.go.kr/front/nh/view.do?levelId=nh_029_0020_0020_0020", from: "세션 S2-C", note: "정문부 의병이 경성전투 뒤 국경인을 회령에서 처단하고 수복" }
+- { name: "길주", at: [129.337, 40.962], war: imjin-war, theater: korea, date: "1592-10-10", expect: japan, url: "https://contents.history.go.kr/front/nh/view.do?levelId=nh_029_0020_0020_0020", from: "세션 S2-C", note: "10월 30일 정문부 의병이 길주의 일본군을 공격함" }
+
+# 1593-01-08
+- { name: "평양", at: [125.748, 39.017], war: imjin-war, theater: korea, date: "1593-01-08", expect: joseon, url: "https://contents.history.go.kr/front/nh/view.do?levelId=nh_029_0020_0020_0050_0020", from: "세션 S2-C", note: "1월 6일부터 3일간 평양성전투, 일본군 제압" }
+- { name: "개성", at: [126.550, 37.967], war: imjin-war, theater: korea, date: "1593-01-08", expect: japan, url: "https://contents.history.go.kr/front/nh/view.do?levelId=nh_029_0020_0020_0050_0020", from: "세션 S2-C", note: "평양 수복 뒤에야 개성의 일본군이 서울로 철수" }
+- { name: "서울", at: [126.978, 37.567], war: imjin-war, theater: korea, date: "1593-01-08", expect: japan, url: "https://contents.history.go.kr/front/nh/view.do?levelId=nh_029_0020_0020_0050_0020", from: "세션 S2-C", note: "평양 패전 뒤 일본군이 서울에 집결" }
+
+# 1593-02-12
+- { name: "평양", at: [125.748, 39.017], war: imjin-war, theater: korea, date: "1593-02-12", expect: joseon, url: "https://contents.history.go.kr/front/nh/view.do?levelId=nh_029_0020_0020_0050_0020", from: "세션 S2-C", note: "1월 수복 뒤 조·명군 거점" }
+- { name: "개성", at: [126.550, 37.967], war: imjin-war, theater: korea, date: "1593-02-12", expect: joseon, url: "https://contents.history.go.kr/front/nh/view.do?levelId=nh_029_0020_0020_0050_0020", from: "세션 S2-C", note: "명군이 동파에서 개성으로 물러나 주진을 둠" }
+- { name: "서울", at: [126.978, 37.567], war: imjin-war, theater: korea, date: "1593-02-12", expect: japan, url: "https://contents.history.go.kr/front/nh/view.do?levelId=nh_029_0020_0030_0010_0020_0010", from: "세션 S2-C", note: "일본군은 4월 19일에야 서울에서 철수" }
+- { name: "함흥", at: [127.533, 39.917], war: imjin-war, theater: korea, date: "1593-02-12", expect: joseon, url: "https://ko.wikipedia.org/wiki/%EC%9E%84%EC%A7%84%EC%99%9C%EB%9E%80", from: "세션 S2-C", note: "가토군이 함경도에서 철수해 한양에 집결, 행주산성을 함께 공격" }
+
+# 1593-04-20
+- { name: "서울", at: [126.978, 37.567], war: imjin-war, theater: korea, date: "1593-04-20", expect: joseon, url: "https://contents.history.go.kr/front/nh/view.do?levelId=nh_029_0020_0030_0010_0020_0010", from: "세션 S2-C", note: "4월 19일 일본군 서울에서 전군 철수" }
+- { name: "개성", at: [126.550, 37.967], war: imjin-war, theater: korea, date: "1593-04-20", expect: joseon, url: "https://contents.history.go.kr/front/nh/view.do?levelId=nh_029_0020_0020_0050_0020", from: "세션 S2-C", note: "명군 주진이 개성" }
+- { name: "부산", at: [129.076, 35.179], war: imjin-war, theater: korea, date: "1593-04-20", expect: japan, url: "https://ko.wikipedia.org/wiki/%EC%9E%84%EC%A7%84%EC%99%9C%EB%9E%80", from: "세션 S2-C", note: "일본군이 서생포에서 웅천에 이르는 남해안에 성을 쌓고 주둔" }
+
+# 1597-09-07
+- { name: "남원", at: [127.386, 35.410], war: imjin-war, theater: korea, date: "1597-09-07", expect: japan, url: "https://ko.wikipedia.org/wiki/%EC%A0%95%EC%9C%A0%EC%9E%AC%EB%9E%80", from: "세션 S2-C", note: "음력 8월 16일 남원성 함락" }
+- { name: "전주", at: [127.149, 35.822], war: imjin-war, theater: korea, date: "1597-09-07", expect: japan, url: "https://contents.history.go.kr/front/nh/view.do?levelId=nh_029_0020_0030_0030_0010", from: "세션 S2-C", note: "전주에 집결한 뒤 충청도·직산 방면으로 북상" }
+- { name: "서울", at: [126.978, 37.567], war: imjin-war, theater: korea, date: "1597-09-07", expect: joseon, url: "https://contents.history.go.kr/front/nh/view.do?levelId=nh_029_0020_0030_0030_0010", from: "세션 S2-C", note: "직산 전투로 일본군의 서울 진격이 좌절됨" }
+
+# 1597-09-16
+- { name: "서울", at: [126.978, 37.567], war: imjin-war, theater: korea, date: "1597-09-16", expect: joseon, url: "https://contents.history.go.kr/front/nh/view.do?levelId=nh_029_0020_0030_0030_0010", from: "세션 S2-C", note: "직산 전투로 일본군의 서울 진격이 좌절됨" }
+- { name: "천안", at: [127.147, 36.810], war: imjin-war, theater: korea, date: "1597-09-16", expect: joseon, url: "https://contents.history.go.kr/front/nh/view.do?levelId=nh_029_0020_0030_0030_0010", from: "세션 S2-C", note: "9월 5~6일 소사평(직산) 전투에서 일본군이 패퇴해 후퇴하기 시작함" }
+
+# 1598-11-19
+- { name: "서울", at: [126.978, 37.567], war: imjin-war, theater: korea, date: "1598-11-19", expect: joseon, url: "https://contents.history.go.kr/front/nh/view.do?levelId=nh_029_0020_0030_0030_0010", from: "세션 S2-C", note: "직산 전투(1597)에서 일본군의 서울 진격이 좌절됨" }
+- { name: "평양", at: [125.748, 39.017], war: imjin-war, theater: korea, date: "1598-11-19", expect: joseon, url: "https://contents.history.go.kr/front/nh/view.do?levelId=nh_029_0020_0020_0050_0020", from: "세션 S2-C", note: "1593년 1월 조·명군이 수복한 뒤 조선 쪽" }
+- { name: "전주", at: [127.149, 35.822], war: imjin-war, theater: korea, date: "1598-11-19", expect: joseon, url: "https://ko.wikipedia.org/wiki/%EC%A0%95%EC%9C%A0%EC%9E%AC%EB%9E%80", from: "세션 S2-C", note: "1598년 일본군은 순천·사천·울산 왜성에 갇혀 조명연합군의 공격을 받음(전주는 1597년 점령 뒤 그 후방)" }

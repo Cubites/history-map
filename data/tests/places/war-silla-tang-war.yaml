@@ -1,0 +1,38 @@
+# 전쟁 보기 지점 정답표: silla-tang-war / korea. 세션 S2-C에서 근거 URL과 함께 만듦.
+# 기대: 진영 id | none | front(전선 위, tolerance km 안).
+
+# 660-07-18
+- { name: "경주", at: [129.217, 35.85], war: silla-tang-war, theater: korea, date: "660-07-18", expect: silla, url: "https://encykorea.aks.ac.kr/Article/E0040554", from: "세션 S2-C", note: "신라 왕경" }
+- { name: "부여", at: [126.913, 36.282], war: silla-tang-war, theater: korea, date: "660-07-18", expect: tang, url: "https://encykorea.aks.ac.kr/Article/E0040554", from: "세션 S2-C", note: "사비도성에 백제도호부를 두고 당 유인원이 주둔(660-07)" }
+- { name: "공주", at: [127.117, 36.45], war: silla-tang-war, theater: korea, date: "660-07-18", expect: tang, url: "https://encykorea.aks.ac.kr/Article/E0040554", from: "세션 S2-C", note: "웅진도독부를 공주에 설치(660-07)" }
+- { name: "평양", at: [125.748, 39.017], war: silla-tang-war, theater: korea, date: "660-07-18", expect: goguryeo, url: "https://ko.wikipedia.org/wiki/%EA%B3%A0%EA%B5%AC%EB%A0%A4-%EB%8B%B9_%EC%A0%84%EC%9F%81", from: "세션 S2-C", note: "고구려는 668년까지 건재(661년 당군이 평양을 포위했으나 실패)" }
+
+# 663-08-00
+- { name: "경주", at: [129.217, 35.85], war: silla-tang-war, theater: korea, date: "663-08-00", expect: silla, url: "https://encykorea.aks.ac.kr/Article/E0040554", from: "세션 S2-C", note: "신라 왕경" }
+- { name: "공주", at: [127.117, 36.45], war: silla-tang-war, theater: korea, date: "663-08-00", expect: tang, url: "https://encykorea.aks.ac.kr/Article/E0040554", from: "세션 S2-C", note: "661-06 당군이 사비를 내주고 웅진으로 옮겨 옴. 웅진도독부는 676년까지" }
+- { name: "평양", at: [125.748, 39.017], war: silla-tang-war, theater: korea, date: "663-08-00", expect: goguryeo, url: "https://ko.wikipedia.org/wiki/%EA%B3%A0%EA%B5%AC%EB%A0%A4-%EB%8B%B9_%EC%A0%84%EC%9F%81", from: "세션 S2-C", note: "고구려 건재" }
+
+# 668-09-21
+- { name: "평양", at: [125.748, 39.017], war: silla-tang-war, theater: korea, date: "668-09-21", expect: tang, url: "https://ko.wikipedia.org/wiki/%EA%B3%A0%EA%B5%AC%EB%A0%A4-%EB%8B%B9_%EC%A0%84%EC%9F%81", from: "세션 S2-C", note: "나당 연합군이 평양성 함락(668-09), 안동도호부를 평양에 설치" }
+- { name: "경주", at: [129.217, 35.85], war: silla-tang-war, theater: korea, date: "668-09-21", expect: silla, url: "https://ko.wikipedia.org/wiki/%EB%82%98%EB%8B%B9_%EC%A0%84%EC%9F%81", from: "세션 S2-C", note: "신라 왕경" }
+- { name: "공주", at: [127.117, 36.45], war: silla-tang-war, theater: korea, date: "668-09-21", expect: tang, url: "https://encykorea.aks.ac.kr/Article/E0040554", from: "세션 S2-C", note: "웅진도독부 소재지. 신라가 공격한 것은 670년 이후" }
+
+# 670-03-00
+- { name: "평양", at: [125.748, 39.017], war: silla-tang-war, theater: korea, date: "670-03-00", expect: tang, url: "https://ko.wikipedia.org/wiki/%EB%82%98%EB%8B%B9_%EC%A0%84%EC%9F%81", from: "세션 S2-C", note: "고구려 멸망 뒤 안동도호부가 평양에 있었음(676년 이전)" }
+- { name: "경주", at: [129.217, 35.85], war: silla-tang-war, theater: korea, date: "670-03-00", expect: silla, url: "https://ko.wikipedia.org/wiki/%EB%82%98%EB%8B%B9_%EC%A0%84%EC%9F%81", from: "세션 S2-C", note: "신라 왕경" }
+- { name: "공주", at: [127.117, 36.45], war: silla-tang-war, theater: korea, date: "670-03-00", expect: tang, url: "https://encykorea.aks.ac.kr/Article/E0011307", from: "세션 S2-C", note: "신라가 웅진도독부 방면을 공격한 것은 670-07 이후" }
+
+# 671-07-00
+- { name: "부여", at: [126.913, 36.282], war: silla-tang-war, theater: korea, date: "671-07-00", expect: silla, url: "https://encykorea.aks.ac.kr/Article/E0040554", from: "세션 S2-C", note: "신라가 671년 사비도성 지역에 소부리주 설치" }
+- { name: "경주", at: [129.217, 35.85], war: silla-tang-war, theater: korea, date: "671-07-00", expect: silla, url: "https://ko.wikipedia.org/wiki/%EB%82%98%EB%8B%B9_%EC%A0%84%EC%9F%81", from: "세션 S2-C", note: "신라 왕경" }
+- { name: "평양", at: [125.748, 39.017], war: silla-tang-war, theater: korea, date: "671-07-00", expect: tang, url: "https://ko.wikipedia.org/wiki/%EB%82%98%EB%8B%B9_%EC%A0%84%EC%9F%81", from: "세션 S2-C", note: "안동도호부가 평양에 있음(671-07 당군이 평양으로 남하)" }
+
+# 675-09-29
+- { name: "경주", at: [129.217, 35.85], war: silla-tang-war, theater: korea, date: "675-09-29", expect: silla, url: "https://ko.wikipedia.org/wiki/%EB%82%98%EB%8B%B9_%EC%A0%84%EC%9F%81", from: "세션 S2-C", note: "신라 왕경" }
+- { name: "부여", at: [126.913, 36.282], war: silla-tang-war, theater: korea, date: "675-09-29", expect: silla, url: "https://encykorea.aks.ac.kr/Article/E0040554", from: "세션 S2-C", note: "소부리주(671~)" }
+- { name: "평양", at: [125.748, 39.017], war: silla-tang-war, theater: korea, date: "675-09-29", expect: tang, url: "https://ko.wikipedia.org/wiki/%EB%82%98%EB%8B%B9_%EC%A0%84%EC%9F%81", from: "세션 S2-C", note: "안동도호부는 676년에 평양에서 옮김(이전 시점은 676·677년 두 설)" }
+
+# 676-11-00
+- { name: "경주", at: [129.217, 35.85], war: silla-tang-war, theater: korea, date: "676-11-00", expect: silla, url: "https://ko.wikipedia.org/wiki/%EB%82%98%EB%8B%B9_%EC%A0%84%EC%9F%81", from: "세션 S2-C", note: "신라 왕경" }
+- { name: "부여", at: [126.913, 36.282], war: silla-tang-war, theater: korea, date: "676-11-00", expect: silla, url: "https://encykorea.aks.ac.kr/Article/E0040554", from: "세션 S2-C", note: "소부리주" }
+- { name: "공주", at: [127.117, 36.45], war: silla-tang-war, theater: korea, date: "676-11-00", expect: silla, url: "https://encykorea.aks.ac.kr/Article/E0040554", from: "세션 S2-C", note: "676-02 웅진도독부가 요동 건안고성으로 옮겨져 백제 옛 땅은 신라 직접 지배" }

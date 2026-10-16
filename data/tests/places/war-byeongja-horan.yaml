@@ -1,0 +1,27 @@
+# 전쟁 보기 지점 정답표: byeongja-horan / korea. 세션 S2-C에서 근거 URL과 함께 만듦.
+# 기대: 진영 id | none | front(전선 위, tolerance km 안).
+
+# 1636-12-09
+- { name: "평양", at: [125.748, 39.017], war: byeongja-horan, theater: korea, date: "1636-12-09", expect: joseon, url: "https://encykorea.aks.ac.kr/Article/E0023151", from: "세션 S2-C", note: "청군이 평양에 도착한 것은 13일" }
+- { name: "개성", at: [126.550, 37.967], war: byeongja-horan, theater: korea, date: "1636-12-09", expect: joseon, url: "https://encykorea.aks.ac.kr/Article/E0023151", from: "세션 S2-C", note: "청군이 개성을 지나간 것은 14일" }
+- { name: "서울", at: [126.978, 37.567], war: byeongja-horan, theater: korea, date: "1636-12-09", expect: joseon, url: "https://encykorea.aks.ac.kr/Article/E0023151", from: "세션 S2-C", note: "9일 압록강 도하, 서울 육박은 14일 무렵" }
+
+# 1636-12-14
+- { name: "평양", at: [125.748, 39.017], war: byeongja-horan, theater: korea, date: "1636-12-14", expect: qing, url: "https://encykorea.aks.ac.kr/Article/E0023151", from: "세션 S2-C", note: "13일 청군이 평양에 도착" }
+- { name: "개성", at: [126.550, 37.967], war: byeongja-horan, theater: korea, date: "1636-12-14", expect: qing, url: "https://encykorea.aks.ac.kr/Article/E0023151", from: "세션 S2-C", note: "14일 개성유수가 청군이 개성을 지나갔다고 보고" }
+- { name: "남한산성", at: [127.184, 37.478], war: byeongja-horan, theater: korea, date: "1636-12-14", expect: joseon, url: "https://encykorea.aks.ac.kr/Article/E0023151", from: "세션 S2-C", note: "14일 밤 인조가 남한산성으로 들어감" }
+- { name: "서울", at: [126.978, 37.567], war: byeongja-horan, theater: korea, date: "1636-12-14", expect: joseon, url: "https://encykorea.aks.ac.kr/Article/E0023151", from: "세션 S2-C", note: "마부대 선봉은 홍제원까지, 서울 입성은 16일 무렵(담태)" }
+
+# 1637-01-03
+- { name: "서울", at: [126.978, 37.567], war: byeongja-horan, theater: korea, date: "1637-01-03", expect: qing, url: "https://encykorea.aks.ac.kr/Article/E0023151", from: "세션 S2-C", note: "청군이 서울에 입성해 한강을 건너 남한산성을 포위(12월 16일 무렵)" }
+- { name: "남한산성", at: [127.184, 37.478], war: byeongja-horan, theater: korea, date: "1637-01-03", expect: joseon, url: "https://encykorea.aks.ac.kr/Article/E0023151", from: "세션 S2-C", note: "인조가 성안에서 농성" }
+- { name: "강화", at: [126.489, 37.739], war: byeongja-horan, theater: korea, date: "1637-01-03", expect: joseon, url: "https://encykorea.aks.ac.kr/Article/E0023151", from: "세션 S2-C", note: "청군이 강화를 침입한 것은 1월 21일 밤" }
+
+# 1637-01-22
+- { name: "강화", at: [126.489, 37.739], war: byeongja-horan, theater: korea, date: "1637-01-22", expect: qing, url: "https://encykorea.aks.ac.kr/Article/E0023151", from: "세션 S2-C", note: "1월 21일 밤 청군이 강화도를 침입해 부성 함락" }
+- { name: "서울", at: [126.978, 37.567], war: byeongja-horan, theater: korea, date: "1637-01-22", expect: qing, url: "https://encykorea.aks.ac.kr/Article/E0023151", from: "세션 S2-C", note: "청군이 서울을 지나 남한산성을 포위" }
+- { name: "남한산성", at: [127.184, 37.478], war: byeongja-horan, theater: korea, date: "1637-01-22", expect: joseon, url: "https://encykorea.aks.ac.kr/Article/E0023151", from: "세션 S2-C", note: "인조가 항복(1월 30일)할 때까지 농성" }
+
+# 1637-01-30
+- { name: "서울", at: [126.978, 37.567], war: byeongja-horan, theater: korea, date: "1637-01-30", expect: joseon, url: "https://encykorea.aks.ac.kr/Article/E0023151", from: "세션 S2-C", note: "인조가 삼전도에서 항복한 뒤 한강을 건너 서울로 돌아옴" }
+- { name: "남한산성", at: [127.184, 37.478], war: byeongja-horan, theater: korea, date: "1637-01-30", expect: joseon, url: "https://encykorea.aks.ac.kr/Article/E0023151", from: "세션 S2-C", note: "인조가 1월 30일 서문으로 출성" }

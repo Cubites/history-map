@@ -1,0 +1,33 @@
+# 전쟁 보기 지점 정답표: goryeo-khitan-war / korea. 세션 S2-C에서 근거 URL과 함께 만듦.
+# 기대: 진영 id | none | front(전선 위, tolerance km 안).
+
+# 993-10-00
+- { name: "개성", at: [126.553, 37.972], war: goryeo-khitan-war, theater: korea, date: "993-10-00", expect: goryeo, url: "https://encykorea.aks.ac.kr/Article/E0034935", from: "세션 S2-C", note: "1차 침입 때 거란군은 청천강 북쪽·안융진(평남 문덕)에서 막힘" }
+- { name: "평양", at: [125.748, 39.017], war: goryeo-khitan-war, theater: korea, date: "993-10-00", expect: goryeo, url: "https://encykorea.aks.ac.kr/Article/E0034935", from: "세션 S2-C", note: "안융진 전투에서 고려가 승리해 거란군 더 내려오지 못함" }
+
+# 994-00-00
+- { name: "개성", at: [126.553, 37.972], war: goryeo-khitan-war, theater: korea, date: "994-00-00", expect: goryeo, url: "https://encykorea.aks.ac.kr/Article/E0001049", from: "세션 S2-C", note: "서희 담판 뒤 거란군 철수" }
+- { name: "평양", at: [125.748, 39.017], war: goryeo-khitan-war, theater: korea, date: "994-00-00", expect: goryeo, url: "https://encykorea.aks.ac.kr/Article/E0001049", from: "세션 S2-C", note: "고려 영토" }
+
+# 1010-11-00
+- { name: "의주", at: [124.532, 40.197], war: goryeo-khitan-war, theater: korea, date: "1010-11-00", expect: goryeo, url: "https://encykorea.aks.ac.kr/Article/E0035425", from: "세션 S2-C", note: "흥화진(의주 동쪽)은 거란 성종이 포위했으나 양규가 지켜 함락되지 않음" }
+- { name: "개성", at: [126.553, 37.972], war: goryeo-khitan-war, theater: korea, date: "1010-11-00", expect: goryeo, url: "https://encykorea.aks.ac.kr/Article/E0035425", from: "세션 S2-C", note: "개경 함락은 1011년" }
+
+# 1011-01-00
+- { name: "개성", at: [126.553, 37.972], war: goryeo-khitan-war, theater: korea, date: "1011-01-00", expect: liao, url: "https://encykorea.aks.ac.kr/Article/E0035425", from: "세션 S2-C", note: "1011년 개경 함락, 현종은 나주로 피란" }
+- { name: "나주", at: [126.717, 35.033], war: goryeo-khitan-war, theater: korea, date: "1011-01-00", expect: goryeo, url: "https://encykorea.aks.ac.kr/Article/E0035425", from: "세션 S2-C", note: "현종이 나주까지 피란" }
+- { name: "의주", at: [124.532, 40.197], war: goryeo-khitan-war, theater: korea, date: "1011-01-00", expect: goryeo, url: "https://encykorea.aks.ac.kr/Article/E0035425", from: "세션 S2-C", note: "흥화진은 끝내 함락되지 않음(지도는 거란 진영으로 칠함)" }
+
+# 1018-12-00
+- { name: "개성", at: [126.553, 37.972], war: goryeo-khitan-war, theater: korea, date: "1018-12-00", expect: goryeo, url: "https://encykorea.aks.ac.kr/Article/E0000954", from: "세션 S2-C", note: "3차 침입의 거란군은 자주·신은현에서 패퇴해 개경을 침공하지 못함" }
+- { name: "평양", at: [125.748, 39.017], war: goryeo-khitan-war, theater: korea, date: "1018-12-00", expect: goryeo, url: "https://encykorea.aks.ac.kr/Article/E0000954", from: "세션 S2-C", note: "1018년 강감찬이 서경유수를 겸임(고려 서경)" }
+- { name: "의주", at: [124.532, 40.197], war: goryeo-khitan-war, theater: korea, date: "1018-12-00", expect: goryeo, url: "https://encykorea.aks.ac.kr/Article/E0000954", from: "세션 S2-C", note: "흥화진 수공으로 거란군이 큰 타격(함락 기록 없음)" }
+
+# 1019-01-00
+- { name: "개성", at: [126.553, 37.972], war: goryeo-khitan-war, theater: korea, date: "1019-01-00", expect: goryeo, url: "https://encykorea.aks.ac.kr/Article/E0000954", from: "세션 S2-C", note: "거란군이 신은현에서 패퇴, 개경은 함락되지 않음" }
+- { name: "평양", at: [125.748, 39.017], war: goryeo-khitan-war, theater: korea, date: "1019-01-00", expect: goryeo, url: "https://encykorea.aks.ac.kr/Article/E0000954", from: "세션 S2-C", note: "강감찬이 서경유수, 서경은 고려(지도는 거란 진영으로 칠함)" }
+
+# 1019-02-01
+- { name: "구성", at: [125.252, 39.979], war: goryeo-khitan-war, theater: korea, date: "1019-02-01", expect: goryeo, url: "https://encykorea.aks.ac.kr/Article/E0001049", from: "세션 S2-C", note: "귀주(龜州, 지금의 구성)에서 고려가 승리" }
+- { name: "개성", at: [126.553, 37.972], war: goryeo-khitan-war, theater: korea, date: "1019-02-01", expect: goryeo, url: "https://ko.wikipedia.org/wiki/%EA%B3%A0%EB%A0%A4-%EA%B1%B0%EB%9E%80_%EC%A0%84%EC%9F%81", from: "세션 S2-C", note: "고려 도읍" }
+- { name: "의주", at: [124.532, 40.197], war: goryeo-khitan-war, theater: korea, date: "1019-02-01", expect: goryeo, url: "https://ko.wikipedia.org/wiki/%EA%B3%A0%EB%A0%A4-%EA%B1%B0%EB%9E%80_%EC%A0%84%EC%9F%81", from: "세션 S2-C", note: "흥화진 등 강동 6주는 거란에 돌려주지 않음(지도는 이 장면에 고려로 칠하지 않음)" }

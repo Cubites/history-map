@@ -1,0 +1,32 @@
+# 전쟁 보기 지점 정답표: goryeo-mongol-war / korea. 세션 S2-C에서 근거 URL과 함께 만듦.
+# 기대: 진영 id | none | front(전선 위, tolerance km 안).
+
+# 1231-12-00
+- { name: "의주", at: [124.532, 40.197], war: goryeo-mongol-war, theater: korea, date: "1231-12-00", expect: mongol, url: "https://ko.wikipedia.org/wiki/여몽_전쟁", from: "세션 S2-C", note: "1231년 8월 몽골군이 함신진(의주)을 차지함(조숙창 투항)" }
+- { name: "귀주", at: [125.252, 39.979], war: goryeo-mongol-war, theater: korea, date: "1231-12-00", expect: goryeo, url: "https://encykorea.aks.ac.kr/Article/E0018774", from: "세션 S2-C", note: "귀주성 박서가 9~12월 몽골군을 막아 냄(이듬해 1월 항복). 몽골 휩쓴 지역 안의 고려 거점" }
+- { name: "개성", at: [126.550, 37.967], war: goryeo-mongol-war, theater: korea, date: "1231-12-00", expect: goryeo, url: "https://encykorea.aks.ac.kr/Article/E0018774", from: "세션 S2-C", note: "12월 몽골군이 개경을 포위했으나 함락하지 못하고 강화를 맺음" }
+- { name: "경주", at: [129.217, 35.850], war: goryeo-mongol-war, theater: korea, date: "1231-12-00", expect: goryeo, url: "https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_i200800&code=kc_age_20", from: "세션 S2-C", note: "1차 침입은 충주까지 진군했을 뿐 남부는 고려 영토" }
+
+# 1232-12-16
+- { name: "강화도", at: [126.489, 37.739], war: goryeo-mongol-war, theater: korea, date: "1232-12-16", expect: goryeo, url: "https://ko.wikipedia.org/wiki/여몽_전쟁", from: "세션 S2-C", note: "1232년 7월 천도. 몽골군은 해전에 약해 강화도를 함락하지 못함" }
+- { name: "처인성", at: [127.169, 37.148], war: goryeo-mongol-war, theater: korea, date: "1232-12-16", expect: goryeo, url: "https://encykorea.aks.ac.kr/Article/E0055719", from: "세션 S2-C", note: "1232년 12월 김윤후가 처인성에서 살리타를 사살해 몽골군이 철수함. 몽골 휩쓴 지역 안의 고려 거점" }
+- { name: "경주", at: [129.217, 35.850], war: goryeo-mongol-war, theater: korea, date: "1232-12-16", expect: goryeo, url: "https://contents.history.go.kr/mobile/kc/view.do?levelId=kc_i200800&code=kc_age_20", from: "세션 S2-C", note: "2차 침입은 경기 남부(처인성)까지였음" }
+
+# 1238-00-00
+- { name: "강화도", at: [126.489, 37.739], war: goryeo-mongol-war, theater: korea, date: "1238-00-00", expect: goryeo, url: "https://ko.wikipedia.org/wiki/여몽_전쟁", from: "세션 S2-C", note: "3차 침입 때도 강화도는 침공당하지 않음(1238년 고려가 강화를 제의)" }
+- { name: "죽주산성", at: [127.430, 37.089], war: goryeo-mongol-war, theater: korea, date: "1238-00-00", expect: goryeo, url: "https://ko.wikipedia.org/wiki/여몽_전쟁", from: "세션 S2-C", note: "1236년 송문주가 죽주산성을 지켜 몽골군을 물리침. 몽골 휩쓴 지역 안의 고려 거점" }
+
+# 1253-10-00
+- { name: "강화도", at: [126.489, 37.739], war: goryeo-mongol-war, theater: korea, date: "1253-10-00", expect: goryeo, url: "https://ko.wikipedia.org/wiki/여몽_전쟁", from: "세션 S2-C", note: "5차 침입 때도 몽골군은 강화도를 함락하지 못함" }
+- { name: "충주", at: [127.926, 36.991], war: goryeo-mongol-war, theater: korea, date: "1253-10-00", expect: goryeo, url: "https://encykorea.aks.ac.kr/Article/E0058221", from: "세션 S2-C", note: "1253년 10~12월 김윤후가 충주성을 70여 일 지켜 냄. 몽골 휩쓴 지역 안의 고려 거점" }
+- { name: "경주", at: [129.217, 35.850], war: goryeo-mongol-war, theater: korea, date: "1253-10-00", expect: goryeo, url: "https://encykorea.aks.ac.kr/Article/E0058221", from: "세션 S2-C", note: "5차 침입 몽골군은 충주성에서 막혀 더 남하하지 못함" }
+
+# 1259-04-00
+- { name: "강화도", at: [126.489, 37.739], war: goryeo-mongol-war, theater: korea, date: "1259-04-00", expect: goryeo, url: "https://ko.wikipedia.org/wiki/여몽_전쟁", from: "세션 S2-C", note: "1259년 3월 태자 입조·강화 때도 강화도가 고려의 임시 도읍(환도는 1270년)" }
+- { name: "영흥", at: [127.292, 39.543], war: goryeo-mongol-war, theater: korea, date: "1259-04-00", expect: none, url: "https://ko.wikipedia.org/wiki/쌍성총관부", from: "세션 S2-C", note: "1258년 몽골이 화주(영흥)에 쌍성총관부를 둠. 고려가 쥐지 못한 땅(몽골 직접 통치)" }
+- { name: "경주", at: [129.217, 35.850], war: goryeo-mongol-war, theater: korea, date: "1259-04-00", expect: goryeo, url: "https://encykorea.aks.ac.kr/Article/E0058221", from: "세션 S2-C", note: "5차 침입도 충주에서 멈췄고 강화 뒤 남부는 고려 영토" }
+
+# 1270-05-00
+- { name: "개성", at: [126.550, 37.967], war: goryeo-mongol-war, theater: korea, date: "1270-05-00", expect: goryeo, url: "https://ko.wikipedia.org/wiki/삼별초", from: "세션 S2-C", note: "1270년 5월 원종이 개경 환도를 단행함" }
+- { name: "영흥", at: [127.292, 39.543], war: goryeo-mongol-war, theater: korea, date: "1270-05-00", expect: none, url: "https://ko.wikipedia.org/wiki/쌍성총관부", from: "세션 S2-C", note: "쌍성총관부는 1356년 공민왕 때까지 이어짐. 고려가 쥐지 못한 땅" }
+- { name: "경주", at: [129.217, 35.850], war: goryeo-mongol-war, theater: korea, date: "1270-05-00", expect: goryeo, url: "https://ko.wikipedia.org/wiki/삼별초", from: "세션 S2-C", note: "삼별초의 거점은 6월 이후 진도·제주였고 영남은 고려 영토" }

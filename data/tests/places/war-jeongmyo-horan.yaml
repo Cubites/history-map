@@ -1,0 +1,32 @@
+# 전쟁 보기 지점 정답표: jeongmyo-horan / korea. 세션 S2-C에서 근거 URL과 함께 만듦.
+# 기대: 진영 id | none | front(전선 위, tolerance km 안).
+
+# 1627-01-14
+- { name: "의주", at: [124.532, 40.197], war: jeongmyo-horan, theater: korea, date: "1627-01-14", expect: hugeum, url: "https://contents.history.go.kr/front/nh/view.do?levelId=nh_029_0030_0020_0010", from: "세션 S2-C", note: "정월 13일 후금군이 의주를 공격해 함락(부사 이완 피살)" }
+- { name: "안주", at: [125.660, 39.620], war: jeongmyo-horan, theater: korea, date: "1627-01-14", expect: joseon, url: "https://contents.history.go.kr/front/nh/view.do?levelId=nh_029_0030_0020_0010", from: "세션 S2-C", note: "후금군은 20일 청천강을 건너 21일 안주를 공격" }
+- { name: "평양", at: [125.748, 39.017], war: jeongmyo-horan, theater: korea, date: "1627-01-14", expect: joseon, url: "https://contents.history.go.kr/front/nh/view.do?levelId=nh_029_0030_0020_0010", from: "세션 S2-C", note: "후금군 평양 진주는 24일" }
+- { name: "서울", at: [126.978, 37.567], war: jeongmyo-horan, theater: korea, date: "1627-01-14", expect: joseon, url: "https://encykorea.aks.ac.kr/Article/E0050194", from: "세션 S2-C", note: "후금군은 평산까지만 진출" }
+
+# 1627-01-21
+- { name: "안주", at: [125.660, 39.620], war: jeongmyo-horan, theater: korea, date: "1627-01-21", expect: hugeum, url: "https://contents.history.go.kr/front/nh/view.do?levelId=nh_029_0030_0020_0010", from: "세션 S2-C", note: "21일 새벽 공격으로 안주성 함락(남이흥 자결)" }
+- { name: "의주", at: [124.532, 40.197], war: jeongmyo-horan, theater: korea, date: "1627-01-21", expect: hugeum, url: "https://contents.history.go.kr/front/nh/view.do?levelId=nh_029_0030_0020_0010", from: "세션 S2-C", note: "의주에 대관 8명과 병사 1천 명을 남겨 지킴" }
+- { name: "평양", at: [125.748, 39.017], war: jeongmyo-horan, theater: korea, date: "1627-01-21", expect: joseon, url: "https://contents.history.go.kr/front/nh/view.do?levelId=nh_029_0030_0020_0010", from: "세션 S2-C", note: "후금군 평양 진주는 24일" }
+- { name: "서울", at: [126.978, 37.567], war: jeongmyo-horan, theater: korea, date: "1627-01-21", expect: joseon, url: "https://encykorea.aks.ac.kr/Article/E0050194", from: "세션 S2-C", note: "후금군은 평산까지만 진출" }
+
+# 1627-01-27
+- { name: "안주", at: [125.660, 39.620], war: jeongmyo-horan, theater: korea, date: "1627-01-27", expect: hugeum, url: "https://encykorea.aks.ac.kr/Article/E0050194", from: "세션 S2-C", note: "안주성을 점령하고 평양을 거쳐 황주까지 진출" }
+- { name: "평양", at: [125.748, 39.017], war: jeongmyo-horan, theater: korea, date: "1627-01-27", expect: hugeum, url: "https://contents.history.go.kr/front/nh/view.do?levelId=nh_029_0030_0020_0010", from: "세션 S2-C", note: "24일 후금군 평양 진주" }
+- { name: "황주", at: [125.724, 38.663], war: jeongmyo-horan, theater: korea, date: "1627-01-27", expect: hugeum, url: "https://contents.history.go.kr/front/nh/view.do?levelId=nh_029_0030_0020_0010", from: "세션 S2-C", note: "25일 황주 함락" }
+- { name: "개성", at: [126.550, 37.967], war: jeongmyo-horan, theater: korea, date: "1627-01-27", expect: joseon, url: "https://encykorea.aks.ac.kr/Article/E0050194", from: "세션 S2-C", note: "평산에 포진했던 장만이 개성으로 후퇴" }
+- { name: "서울", at: [126.978, 37.567], war: jeongmyo-horan, theater: korea, date: "1627-01-27", expect: joseon, url: "https://encykorea.aks.ac.kr/Article/E0050194", from: "세션 S2-C", note: "유도대장 김상용이 서울을 지킴" }
+
+# 1627-02-07
+- { name: "평양", at: [125.748, 39.017], war: jeongmyo-horan, theater: korea, date: "1627-02-07", expect: hugeum, url: "https://contents.history.go.kr/front/nh/view.do?levelId=nh_029_0030_0020_0010", from: "세션 S2-C", note: "후금군이 중화에서 평양으로 물러나 관망" }
+- { name: "개성", at: [126.550, 37.967], war: jeongmyo-horan, theater: korea, date: "1627-02-07", expect: joseon, url: "https://encykorea.aks.ac.kr/Article/E0050194", from: "세션 S2-C", note: "후금군은 평산 이남으로 더 나아가지 않음" }
+- { name: "서울", at: [126.978, 37.567], war: jeongmyo-horan, theater: korea, date: "1627-02-07", expect: joseon, url: "https://encykorea.aks.ac.kr/Article/E0050194", from: "세션 S2-C", note: "후금군은 평산 이남으로 더 나아가지 않음" }
+- { name: "강화", at: [126.489, 37.739], war: jeongmyo-horan, theater: korea, date: "1627-02-07", expect: joseon, url: "https://contents.history.go.kr/front/nh/view.do?levelId=nh_029_0030_0020_0010", from: "세션 S2-C", note: "인조가 1월 29일 강화에 들어가 화의 교섭" }
+
+# 1627-03-03
+- { name: "개성", at: [126.550, 37.967], war: jeongmyo-horan, theater: korea, date: "1627-03-03", expect: joseon, url: "https://encykorea.aks.ac.kr/Article/E0050194", from: "세션 S2-C", note: "후금군은 평산 이남으로 진출하지 않고 철병, 3월 3일 화의 성립" }
+- { name: "서울", at: [126.978, 37.567], war: jeongmyo-horan, theater: korea, date: "1627-03-03", expect: joseon, url: "https://encykorea.aks.ac.kr/Article/E0050194", from: "세션 S2-C", note: "후금군은 평산 이남으로 진출하지 않고 철병, 3월 3일 화의 성립" }
+- { name: "강화", at: [126.489, 37.739], war: jeongmyo-horan, theater: korea, date: "1627-03-03", expect: joseon, url: "https://encykorea.aks.ac.kr/Article/E0050194", from: "세션 S2-C", note: "인조의 피란처, 화의 성립" }

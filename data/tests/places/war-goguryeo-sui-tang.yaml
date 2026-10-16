@@ -1,0 +1,29 @@
+# 전쟁 보기 지점 정답표: goguryeo-sui-tang / liaodong. 세션 S2-C에서 근거 URL과 함께 만듦.
+# 기대: 진영 id | none | front(전선 위, tolerance km 안).
+
+# 598-06-00
+- { name: "평양", at: [125.748, 39.017], war: goguryeo-sui-tang, theater: liaodong, date: "598-06-00", expect: goguryeo, url: "https://encykorea.aks.ac.kr/Article/E0036400", from: "세션 S2-C", note: "598년 수의 1차 침입 때 고구려 도읍권(수는 요서 전진 기지만 공격받음)" }
+- { name: "요양", at: [123.176, 41.279], war: goguryeo-sui-tang, theater: liaodong, date: "598-06-00", expect: goguryeo, url: "https://encykorea.aks.ac.kr/Article/E0036400", from: "세션 S2-C", note: "요동성(지금 랴오양) 고구려 영토. 612년에도 수군이 함락하지 못함" }
+
+# 612-07-00
+- { name: "평양", at: [125.748, 39.017], war: goguryeo-sui-tang, theater: liaodong, date: "612-07-00", expect: goguryeo, url: "https://encykorea.aks.ac.kr/Article/E0036400", from: "세션 S2-C", note: "별동대가 평양성 부근까지 이르렀으나 살수에서 거의 전멸" }
+- { name: "요양", at: [123.176, 41.279], war: goguryeo-sui-tang, theater: liaodong, date: "612-07-00", expect: goguryeo, url: "https://encykorea.aks.ac.kr/Article/E0036400", from: "세션 S2-C", note: "요동성은 수군이 끝내 함락하지 못함(지도는 포위 구역을 수 진영으로 칠함)" }
+- { name: "푸순", at: [123.957, 41.881], war: goguryeo-sui-tang, theater: liaodong, date: "612-07-00", expect: goguryeo, url: "https://encykorea.aks.ac.kr/Article/E0036400", from: "세션 S2-C", note: "신성(무순 북쪽 고이산성). 수군이 요동성·신성 일대에서 저지됨" }
+
+# 645-09-00
+- { name: "요양", at: [123.176, 41.279], war: goguryeo-sui-tang, theater: liaodong, date: "645-09-00", expect: tang, url: "https://ko.wikipedia.org/wiki/%EA%B3%A0%EA%B5%AC%EB%A0%A4-%EB%8B%B9_%EC%A0%84%EC%9F%81", from: "세션 S2-C", note: "요동성 645-05-17 함락, 요주로 고침. 9월 퇴각 때도 당군이 점령 유지" }
+- { name: "푸순", at: [123.957, 41.881], war: goguryeo-sui-tang, theater: liaodong, date: "645-09-00", expect: goguryeo, url: "https://ko.wikipedia.org/wiki/%EA%B3%A0%EA%B5%AC%EB%A0%A4-%EB%8B%B9_%EC%A0%84%EC%9F%81", from: "세션 S2-C", note: "신성(무순 북쪽 고이산성)은 당군이 공격했으나 함락 못함" }
+- { name: "평양", at: [125.748, 39.017], war: goguryeo-sui-tang, theater: liaodong, date: "645-09-00", expect: goguryeo, url: "https://ko.wikipedia.org/wiki/%EA%B3%A0%EA%B5%AC%EB%A0%A4-%EB%8B%B9_%EC%A0%84%EC%9F%81", from: "세션 S2-C", note: "당 태종 친정은 요동 일대에 그침, 평양은 고구려" }
+
+# 662-02-00
+- { name: "평양", at: [125.748, 39.017], war: goguryeo-sui-tang, theater: liaodong, date: "662-02-00", expect: goguryeo, url: "https://ko.wikipedia.org/wiki/%EA%B3%A0%EA%B5%AC%EB%A0%A4-%EB%8B%B9_%EC%A0%84%EC%9F%81", from: "세션 S2-C", note: "당군이 포위했으나 662-02 사수 전투에서 방효태군이 무너져 물러남(지도는 포위 구역을 당 진영으로 칠함)" }
+- { name: "요양", at: [123.176, 41.279], war: goguryeo-sui-tang, theater: liaodong, date: "662-02-00", expect: goguryeo, url: "https://ko.wikipedia.org/wiki/%EA%B3%A0%EA%B5%AC%EB%A0%A4-%EB%8B%B9_%EC%A0%84%EC%9F%81", from: "세션 S2-C", note: "661·662년에도 고구려 주력은 요동에 있었음" }
+- { name: "푸순", at: [123.957, 41.881], war: goguryeo-sui-tang, theater: liaodong, date: "662-02-00", expect: goguryeo, url: "https://ko.wikipedia.org/wiki/%EA%B3%A0%EA%B5%AC%EB%A0%A4-%EB%8B%B9_%EC%A0%84%EC%9F%81", from: "세션 S2-C", note: "신성은 667년에야 함락(그 전까지 고구려)" }
+
+# 667-09-00
+- { name: "푸순", at: [123.957, 41.881], war: goguryeo-sui-tang, theater: liaodong, date: "667-09-00", expect: tang, url: "https://ko.wikipedia.org/wiki/%EA%B3%A0%EA%B5%AC%EB%A0%A4-%EB%8B%B9_%EC%A0%84%EC%9F%81", from: "세션 S2-C", note: "신성 667-09-14 함락, 계필하력이 수비. 연남건의 반격도 막아 냄" }
+- { name: "평양", at: [125.748, 39.017], war: goguryeo-sui-tang, theater: liaodong, date: "667-09-00", expect: goguryeo, url: "https://ko.wikipedia.org/wiki/%EA%B3%A0%EA%B5%AC%EB%A0%A4-%EB%8B%B9_%EC%A0%84%EC%9F%81", from: "세션 S2-C", note: "평양성은 668-09에야 함락" }
+
+# 668-09-00
+- { name: "평양", at: [125.748, 39.017], war: goguryeo-sui-tang, theater: liaodong, date: "668-09-00", expect: tang, url: "https://ko.wikipedia.org/wiki/%EA%B3%A0%EA%B5%AC%EB%A0%A4-%EB%8B%B9_%EC%A0%84%EC%9F%81", from: "세션 S2-C", note: "나당 연합군이 평양성 함락, 보장왕 항복" }
+- { name: "푸순", at: [123.957, 41.881], war: goguryeo-sui-tang, theater: liaodong, date: "668-09-00", expect: tang, url: "https://ko.wikipedia.org/wiki/%EA%B3%A0%EA%B5%AC%EB%A0%A4-%EB%8B%B9_%EC%A0%84%EC%9F%81", from: "세션 S2-C", note: "신성은 667년 이후 당군이 지킴(연남건의 수복 시도 실패)" }
