@@ -6,6 +6,7 @@
 
 id: korean-war
 name: 6·25 전쟁
+calendar: gregorian
 factions:
   - { id: north, name: 북한군·중국군, entity: dprk }
   - { id: south, name: 국군·유엔군, entity: rok }

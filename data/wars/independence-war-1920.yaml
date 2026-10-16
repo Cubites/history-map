@@ -4,6 +4,7 @@
 
 id: independence-war-1920
 name: 봉오동·청산리 전투 (만주 독립 전쟁)
+calendar: gregorian
 factions:
   - { id: independence, name: 독립군, entity: occupied-korea, color: "#2f6f9f" }
   - { id: japan, name: 일본군, entity: japan }

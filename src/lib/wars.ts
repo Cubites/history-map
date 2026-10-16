@@ -1,4 +1,5 @@
 // 전쟁 보기 (DESIGN.md §4.5): 전쟁·전역·스냅샷 고르기와 진영 색
+import { CALENDAR_SUFFIX, type Calendar } from '../schema/calendar.ts';
 import type { FrontSnapshotOut, HistoryEvent, LonLat, TheaterOut, WarIndexEntry } from '../schema/index.ts';
 
 export interface WarTheater {
@@ -70,14 +71,16 @@ export const factionIndex = (war: WarIndexEntry, factionId: string) => Math.max(
 
 /**
  * YYYY-MM-DD → 1950.6.25. 기록에 날이나 달이 없으면 00으로 적는다: 612-07-00 → 612.7, 927-00-00 → 927
- * (DESIGN.md §4.5)
+ * calendar를 주면 뒤에 달력을 괄호로 붙인다: 1592.4.13(음력), 1453.5.29(율리우스력). 양력(gregorian)·없음은 붙이지 않는다.
+ * 연도가 든 날짜에만 쓴다 (연도를 뺀 formatShortFrontDate에는 붙이지 않음). (DESIGN.md §4.5, standards.md 4절)
  */
-export function formatFrontDate(date: string): string {
+export function formatFrontDate(date: string, calendar?: Calendar): string {
   const [, y, m, d] = date.match(/^(-?\d+)-(\d+)-(\d+)$/)!;
   const year = Number(y);
   const yearText = year <= 0 ? `기원전 ${1 - year}` : String(year);
-  if (Number(m) === 0) return yearText;
-  return Number(d) === 0 ? `${yearText}.${Number(m)}` : `${yearText}.${Number(m)}.${Number(d)}`;
+  const suffix = calendar ? CALENDAR_SUFFIX[calendar] : '';
+  if (Number(m) === 0) return yearText + suffix;
+  return (Number(d) === 0 ? `${yearText}.${Number(m)}` : `${yearText}.${Number(m)}.${Number(d)}`) + suffix;
 }
 
 /** 연도를 뺀 짧은 날짜 (진군로 지점 옆): 12.13, 7월. 달을 모르면 빈 문자열 */

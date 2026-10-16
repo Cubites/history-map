@@ -4,7 +4,8 @@
 # 날짜는 음력이다 (예: 청군 압록강 도하 1636년 음력 12월 9일 = 양력 1637년 1월 4일). 위치는 교과서 수준의 대략적인 추정.
 
 id: byeongja-horan
-name: 병자호란 (날짜는 음력)
+name: 병자호란
+calendar: lunar
 factions:
   - { id: joseon, name: 조선군, entity: joseon }
   - { id: qing, name: 청군, entity: qing }

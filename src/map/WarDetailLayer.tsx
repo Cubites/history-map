@@ -134,7 +134,7 @@ export function WarDetailLayer({ war, theater, snapshot, projection, entityColor
             onPointerDown={(e) => e.stopPropagation()}
             onClick={(e) => e.stopPropagation()}
           >
-            <title>{`${b.name} (${formatFrontDate(b.date)})${winner ? ` · ${winner} 승리` : ''}${b.summary ? `\n${b.summary}` : ''}`}</title>
+            <title>{`${b.name} · ${formatFrontDate(b.date, war.calendar)}${winner ? ` · ${winner} 승리` : ''}${b.summary ? `\n${b.summary}` : ''}`}</title>
             <circle r={fresh ? 8 : 4.5} style={{ stroke: color }} />
             {/* 교차한 칼 모양 */}
             {fresh && <path d="M-4,-4 L4,4 M4,-4 L-4,4" style={{ stroke: color }} />}

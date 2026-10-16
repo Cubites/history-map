@@ -17,6 +17,7 @@ import {
   type War,
   type WarIndexEntry,
 } from '../../src/schema/index.ts';
+import { calendarDateProblem, defaultCalendar, type Calendar } from '../../src/schema/calendar.ts';
 import { REGION_FILTER_OF, STORY_FILE_PREFIXES, regionOfWarFile } from '../../src/schema/regions.ts';
 import { keyOf } from './cache.ts';
 import { cacheKey, cached, fileHash } from './war-cache.ts';
@@ -63,8 +64,8 @@ export function findCutText(node: unknown, where: string, errors: string[], trai
   }
 }
 
-/** 전쟁과 그 파일 이름이 정한 권역 (src/schema/regions.ts) */
-export type RegionalWar = War & { region: string };
+/** 전쟁과 그 파일 이름이 정한 권역 (src/schema/regions.ts), 날짜의 달력(YAML에 없으면 defaultCalendar로 채움) */
+export type RegionalWar = War & { region: string; calendar: Calendar };
 
 export async function readWars(files: string[], errors: string[], rel: (f: string) => string): Promise<RegionalWar[]> {
   const wars: RegionalWar[] = [];
@@ -93,12 +94,14 @@ export async function readWars(files: string[], errors: string[], rel: (f: strin
         errors.push(`${rel(file)} 전역 ${t.id}: region '${t.region}'을 모름. src/schema/regions.ts의 REGION_FILTER_OF 키(${Object.keys(REGION_FILTER_OF).join(', ')}) 가운데 하나`);
       }
     }
-    wars.push({ ...result.data, region });
+    // 달력은 YAML에 적은 값, 없으면 권역과 첫 장면 해로 정한 기본값 (src/schema/calendar.ts)
+    const firstYear = Math.min(...result.data.theaters.map((t) => yearOfDate(t.snapshots[0].date)));
+    wars.push({ ...result.data, region, calendar: result.data.calendar ?? defaultCalendar(region, firstYear) });
   }
   return wars;
 }
 
-export function checkWars(wars: War[], entities: Map<string, Entity>, events: HistoryEvent[], errors: string[]) {
+export function checkWars(wars: RegionalWar[], entities: Map<string, Entity>, events: HistoryEvent[], errors: string[]) {
   const ids = new Set<string>();
   for (const w of wars) {
     const where = `전쟁 ${w.id}`;
@@ -106,6 +109,11 @@ export function checkWars(wars: War[], entities: Map<string, Entity>, events: Hi
     ids.add(w.id);
     const factions = new Set(w.factions.map((f) => f.id));
     if (factions.size !== w.factions.length) errors.push(`${where}: 진영 id 중복`);
+    // 모든 날짜를 이 전쟁의 달력으로 검사 (장면·전투·진군로 지점·참전 기간. 사건의 front.date는 아래에서)
+    const date = (value: string | undefined, what: string) => {
+      const problem = value === undefined ? null : calendarDateProblem(value, w.calendar);
+      if (problem) errors.push(`${where}: ${what} 날짜 ${value}가 ${w.calendar} 달력에 맞지 않음 - ${problem}`);
+    };
     const entity = (id: string, what: string) => {
       if (!entities.has(id)) errors.push(`${where}: ${what}에 없는 나라 '${id}'`);
     };
@@ -115,6 +123,8 @@ export function checkWars(wars: War[], entities: Map<string, Entity>, events: Hi
     w.factions.forEach((f) => entity(f.entity, `진영 ${f.id}`));
     w.participants.forEach((p) => {
       entity(p.entity, '참전국');
+      date(p.from, `참전국 ${p.entity} from`);
+      date(p.to, `참전국 ${p.entity} to`);
       faction(p.faction, `참전국 ${p.entity}`);
     });
     const theaters = new Set<string>();
@@ -124,6 +134,7 @@ export function checkWars(wars: War[], entities: Map<string, Entity>, events: Hi
       t.replaces.forEach((id) => entity(id, `전역 ${t.id}의 replaces`));
       t.snapshots.forEach((s, i) => {
         const at = `전역 ${t.id} ${s.date}`;
+        date(s.date, `전역 ${t.id} 장면`);
         if (i > 0 && dateKey(s.date) <= dateKey(t.snapshots[i - 1].date)) errors.push(`${where}: ${at} 스냅샷이 날짜 순서대로가 아님`);
         if (s.split) {
           faction(s.split.north, `${at} split.north`);
@@ -141,8 +152,14 @@ export function checkWars(wars: War[], entities: Map<string, Entity>, events: Hi
           l.instead.forEach((id) => entity(id, `${at} labelAs ${l.entity}의 instead`));
         });
       });
-      t.routes.forEach((r) => faction(r.faction, `전역 ${t.id} 경로 ${r.name}`));
-      t.battles.forEach((b) => b.winner && faction(b.winner, `전역 ${t.id} 전투 ${b.name}`));
+      t.routes.forEach((r) => {
+        faction(r.faction, `전역 ${t.id} 경로 ${r.name}`);
+        r.points.forEach((p, i) => date(p.date, `전역 ${t.id} 경로 ${r.name} 지점 ${i + 1}`));
+      });
+      t.battles.forEach((b) => {
+        if (b.winner) faction(b.winner, `전역 ${t.id} 전투 ${b.name}`);
+        date(b.date, `전역 ${t.id} 전투 ${b.name}`);
+      });
     }
   }
   for (const ev of events) {
@@ -152,6 +169,8 @@ export function checkWars(wars: War[], entities: Map<string, Entity>, events: Hi
       errors.push(`사건 ${ev.id}: 없는 전쟁 '${ev.front.war}'`);
       continue;
     }
+    const problem = calendarDateProblem(ev.front.date, war.calendar);
+    if (problem) errors.push(`사건 ${ev.id}: front.date ${ev.front.date}가 전쟁 ${war.id}의 ${war.calendar} 달력에 맞지 않음 - ${problem}`);
     const theater = ev.front.theater ? war.theaters.find((t) => t.id === ev.front!.theater) : war.theaters[0];
     if (!theater) errors.push(`사건 ${ev.id}: 전쟁 ${war.id}에 없는 전역 '${ev.front.theater}'`);
     else if (!theater.snapshots.some((s) => s.date === ev.front!.date))
@@ -517,6 +536,7 @@ export async function buildWars(wars: RegionalWar[], geo: WarGeoSources, errors:
     out.push({
       id: w.id,
       name: w.name,
+      calendar: w.calendar,
       from,
       to,
       factions: w.factions,

@@ -4,7 +4,8 @@
 # 날짜는 『삼국사기』를 따른 음력이며, 날이 전하지 않으면 00으로 적는다. 위치는 교과서 수준의 대략적인 추정.
 
 id: silla-tang-war
-name: 삼국 통일 전쟁 (날짜는 음력)
+name: 삼국 통일 전쟁
+calendar: lunar
 factions:
   - { id: silla, name: 신라군, entity: silla }
   - { id: tang, name: 당군, entity: tang }

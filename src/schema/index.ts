@@ -2,6 +2,7 @@
 // 빌드 스크립트는 Node의 타입 제거 기능으로 이 파일을 직접 불러오므로
 // 상대 경로 import에는 .ts 확장자를 붙이고, enum 같은 런타임 문법은 쓰지 않는다.
 import { z } from 'zod';
+import { CALENDARS, type Calendar } from './calendar.ts';
 
 /** 천문 연도: 기원전 1년 = 0, 기원전 57년 = -56 */
 export const Year = z.number().int();
@@ -112,6 +113,10 @@ export type HistoryEvent = z.infer<typeof EventSchema>;
 // ── 전쟁 (DESIGN.md §4.5) ────────────────────────────────
 // 연 단위 영토로는 보이지 않는 전쟁 중의 변화를 전역(戰域)별 날짜 스냅샷으로 적는다.
 // 전쟁 → 진영·참전국 → 전역 → 스냅샷(점령 지역·전선·작전 화살표)
+
+/** 전쟁 날짜의 달력 (calendar.ts). 새 달력은 거기 CALENDARS에 더한다 */
+export const CalendarSchema = z.enum(CALENDARS);
+export type { Calendar };
 
 /** 날짜: YYYY-MM-DD (천문 연도, 기원전은 앞에 -) */
 export const FrontDate = z.string().regex(/^-?\d{1,4}-\d{2}-\d{2}$/, 'YYYY-MM-DD 형식이어야 함');
@@ -244,6 +249,8 @@ export const TheaterSchema = z.object({
 export const WarSchema = z.object({
   id: Id,
   name: z.string().min(1),
+  /** 날짜의 달력(전쟁 단위). 없으면 빌드가 권역과 첫 장면 해로 채운다 (defaultCalendar) */
+  calendar: CalendarSchema.optional(),
   factions: z.array(FactionSchema).min(2),
   participants: z.array(ParticipantSchema).default([]),
   sources: z.array(z.string().min(1)).min(1),
@@ -300,6 +307,8 @@ export interface TheaterOut {
 export interface WarIndexEntry {
   id: string;
   name: string;
+  /** 날짜의 달력. YAML에 없으면 빌드가 채우므로 wars.json에서는 늘 있다 */
+  calendar: Calendar;
   from: Year;
   to: Year;
   factions: Faction[];

@@ -17,6 +17,7 @@
 
 id: world-war-1
 name: 제1차 세계 대전
+calendar: gregorian
 factions:
   - { id: entente, name: 협상국, entity: france, color: "#6d93c9" }
   - { id: central, name: 동맹국, entity: german-empire, color: "#c98b52" }

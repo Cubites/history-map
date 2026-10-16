@@ -4,7 +4,8 @@
 # 날짜는 『고려사』를 따른 음력이며, 날·달이 전하지 않으면 00으로 적는다.
 
 id: goryeo-mongol-war
-name: 몽골의 침입 (날짜는 음력)
+name: 몽골의 침입
+calendar: lunar
 factions:
   - { id: goryeo, name: 고려군, entity: goryeo }
   - { id: mongol, name: 몽골군, entity: mongol-empire }

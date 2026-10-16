@@ -50,7 +50,7 @@ export function FrontTimeline({ data }: { data: StaticData }) {
           {formatYear(war.from, '')}–{formatYear(war.to, '')}
         </span>
         <span className="front-timeline-current">
-          {formatFrontDate(current.date)} · {current.title}
+          {formatFrontDate(current.date, war.calendar)} · {current.title}
         </span>
         <span className="front-timeline-legend">
           {war.factions.map((f) => (

@@ -414,7 +414,7 @@ function EventDetails({
             openFront();
           }}
         >
-          {war.name} · {formatFrontDate(event.front.date)} 전선 보기 →
+          {war.name} · {formatFrontDate(event.front.date, war.calendar)} 전선 보기 →
         </button>
       )}
       <div className="event-sources">{event.sources.join(' · ')}</div>

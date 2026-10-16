@@ -10,6 +10,7 @@
 
 id: world-war-2
 name: 제2차 세계 대전
+calendar: gregorian
 factions:
   - { id: allies, name: 연합국, entity: uk, color: "#4a72b8" }
   - { id: axis, name: 추축국, entity: nazi-germany, color: "#62666e" }

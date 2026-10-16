@@ -16,7 +16,7 @@ resetDir(OUTDIR);
 
 let y = [];
 y.push(...HEAD.comment.map((c) => `# ${c}`), '');
-y.push(`id: ${HEAD.id}`, `name: ${HEAD.name}`, 'factions:');
+y.push(`id: ${HEAD.id}`, `name: ${HEAD.name}`, 'calendar: gregorian', 'factions:');
 for (const f of HEAD.factions) y.push(`  - { id: ${f.id}, name: ${q(f.name)}, entity: ${f.entity}${f.color ? `, color: "${f.color}"` : ''} }`);
 y.push(...HEAD.participantsComment.map((c) => `# ${c}`), 'participants:');
 for (const p of HEAD.participants) {

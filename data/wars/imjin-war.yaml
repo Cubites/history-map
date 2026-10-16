@@ -5,7 +5,8 @@
 # 운영자가 국방부 군사편찬연구소 『임진왜란사』 전황도를 기준으로 검수·보정할 것.
 
 id: imjin-war
-name: 임진왜란·정유재란 (날짜는 음력)
+name: 임진왜란·정유재란
+calendar: lunar
 factions:
   - { id: joseon, name: 조선군·명군, entity: joseon }
   - { id: japan, name: 일본군, entity: japan }

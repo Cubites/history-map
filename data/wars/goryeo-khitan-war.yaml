@@ -3,7 +3,8 @@
 # 날짜는 『고려사』를 따른 음력이며, 날이 전하지 않으면 00으로 적는다. 위치는 교과서 수준의 대략적인 추정.
 
 id: goryeo-khitan-war
-name: 거란의 침입 (날짜는 음력)
+name: 거란의 침입
+calendar: lunar
 factions:
   - { id: goryeo, name: 고려군, entity: goryeo }
   - { id: liao, name: 거란군, entity: liao }
