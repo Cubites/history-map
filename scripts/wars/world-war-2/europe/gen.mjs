@@ -1,7 +1,7 @@
 // 제2차 세계 대전 유럽·북아프리카 전역 만들기: spec.mjs(글·화살표·전선 경유점) → 점령 지역 GeoJSON + 전쟁 YAML
 // 사용: npm run gen:wars -- --only europe  (저장소 경로·--out은 engine.mjs가 명령줄에서 읽는다)
-// 저장소의 data/wars/eu-02-world-war-2.yaml(머리와 europe 전역)과 data/wars/ww2-europe/를 다시 쓴다.
-// 이 YAML 끝에 다른 전역(아시아·태평양, 세계 개관)이 붙어 있으면 그 부분은 그대로 두고 유럽 전역 부분만 다시 쓴다(ww2-europe 폴더는 지우고 다시 만듦)
+// 저장소의 data/wars/eu-02-world-war-2.yaml(머리와 europe 전역)과 data/wars/world-war-2/europe/를 다시 쓴다.
+// 이 YAML 끝에 다른 전역(아시아·태평양, 세계 개관)이 붙어 있으면 그 부분은 그대로 두고 유럽 전역 부분만 다시 쓴다(world-war-2/europe 폴더는 지우고 다시 만듦)
 import { readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { G, WARS, pt, pts, pushArrowsHolds, q, resetDir, terr, writeGeojson } from '../../engine.mjs';
@@ -11,7 +11,7 @@ import './spec44.mjs';
 SNAPSHOTS.sort((a, b) => (a.date < b.date ? -1 : 1));
 BATTLES.sort((a, b) => (a.date < b.date ? -1 : 1));
 
-const OUTDIR = path.join(WARS, 'ww2-europe');
+const OUTDIR = path.join(WARS, 'world-war-2/europe');
 resetDir(OUTDIR);
 
 let y = [];
@@ -65,7 +65,7 @@ for (const s of SNAPSHOTS) {
     const file = `${s.date}-${f.id}.geojson`;
     writeGeojson(path.join(OUTDIR, file), coords, { note: `${s.date} ${f.name} 지역` }, 4);
     y.push(`          # ${f.name}: ${parts.get(f.id).join(' + ')}`);
-    y.push(`          - { faction: ${f.id}, geojson: ww2-europe/${file} }`);
+    y.push(`          - { faction: ${f.id}, geojson: world-war-2/europe/${file} }`);
   }
   if (s.lines?.length) {
     y.push('        lines:');

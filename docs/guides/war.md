@@ -20,7 +20,7 @@
 | 무엇 | 어디 |
 |---|---|
 | 전쟁 정의 | `data/wars/<파일>.yaml` — 한국사는 `imjin-war.yaml`처럼 이름만, 다른 권역은 `<머리글자>-<두 자리 수>-<이름>.yaml`(`eu-02-world-war-1.yaml`). 머리글자는 `src/schema/regions.ts`의 `STORY_FILE_PREFIXES`에 있어야 함 |
-| 손으로 그린 점령 지역 | 지금은 `data/wars/<폴더>/<날짜>-<진영>.geojson`(한국 전쟁은 `<날짜>.geojson`), 표준 이름은 standards.md 8절(EPSG:4326, 바다로 넉넉히 나가게; 빌드가 해안선으로 자름) |
+| 손으로 그린 점령 지역 | `data/wars/<전쟁 id>/<날짜>-<진영>.geojson`(전역이 여럿이면 `data/wars/<전쟁 id>/<전역 id>/…`), 표준 이름은 standards.md 8절(EPSG:4326, 바다로 넉넉히 나가게; 빌드가 해안선으로 자름) |
 | 사건에서 전쟁 보기로 | `data/events/*.yaml`의 사건에 `front: { war: 전쟁id, theater: 전역id, date: YYYY-MM-DD }` 한 줄. `date`는 스냅샷 날짜와 정확히 같아야 함 |
 | 빌드 출력(손대지 않음) | `public/data/wars.json`(전쟁 목록·진영·전투) + `public/data/wars/<전쟁id>.json`(점령 지역 도형, 전쟁 보기를 열 때만 받음) |
 | 생성 스크립트 | 저장소 `scripts/wars/`. **`npm run gen:wars`** 한 명령이 `world-war-1` → `europe` → `asia-pacific` → `overview` 차례로 다시 만든다(앞 결과를 뒤가 읽으므로 순서 고정). 공통 코드는 `engine.mjs`(저장소 경로·나라 영토·도형 연산·반올림·geojson/YAML 쓰기), 전쟁별은 `world-war-1/`(경유점 `fronts.mjs` + 장면·생성 `gen.mjs`), `world-war-2/europe/`(`fronts*.mjs` 경유점, `spec*.mjs` 장면, `colonies.mjs`, `wikicache.json` 위키 좌표, `gen.mjs`), `world-war-2/asia-pacific/gen.mjs`, `world-war-2/overview/`(`spec.mjs`·`geom.mjs`·`colonies39.mjs`·`gen.mjs`). 옵션: `npm run gen:wars -- [저장소 경로] [--out 폴더] [--only world-war-1,europe,asia-pacific,overview]`(`world-war-2`는 europe·asia-pacific·overview 셋. overview는 europe·asia-pacific이 만든 YAML·geojson을 읽으니 따로 돌릴 때도 그 뒤에 돌린다). `--out`은 `data/wars` 대신 `<폴더>/data/wars`에 쓴다(test:geo의 gen 검사가 씀, 저장소는 안 건드림). 같은 입력이면 YAML·geojson을 **바이트까지 같게** 다시 만든다(전체 약 3분: 1차 대전 7초·europe 2분·asia-pacific 10초·overview 40초). 생성기가 쓰는 파일은 `ww1/`·`ww2-europe/`·`ww2-asia/`·`ww2-overview/`의 geojson과 `eu-02-world-war-2.yaml`(머리·europe 전역·overview 전역, 손으로 쓴 asia-pacific 전역은 그대로 둠)이고, `eu-02-world-war-1.yaml`은 손으로 쓴 파일이다. `npm run test:geo -- --only gen`(또는 `--ci`)이 이 결과와 `data/wars` 파일을 바이트로 견주고, 입력(`data/geo`·`data/wars`·`scripts/wars` 등)이 지난 성공과 같으면 건너뛴다 |
@@ -50,7 +50,7 @@ theaters:
         summary: "2~3문장, '~했습니다' 꼴"
         areas:                 # 뒤에 적은 지역이 앞 지역을 덮는다
           - { faction: entente, entities: [france] }
-          - { faction: central, geojson: ww1/1914-09-05-central.geojson }
+          - { faction: central, geojson: world-war-1/1914-09-05-central.geojson }
         arrows: [ { faction: entente, path: [[…],[…]], label: … } ]
         holds: [ { name: 웨이크, at: [166.6, 19.3], faction: japan } ]   # 육지 자료에 없는 섬·포위된 거점
         labelAs: [ { entity: german-empire, instead: [weimar-republic] } ]   # 선택: 장면 때 있던 나라의 이름표로 바꿔 달기(연 단위 영토가 전쟁 뒤 모습일 때)

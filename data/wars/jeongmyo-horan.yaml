@@ -1,5 +1,5 @@
 # 정묘호란 (DESIGN.md §4.5)
-# 전역 하나(한반도). 스냅샷마다 조선 영토 전체를 조선 진영으로 칠한 뒤 후금군이 장악한 지역(jeongmyo/*.geojson)을 덮는다.
+# 전역 하나(한반도). 스냅샷마다 조선 영토 전체를 조선 진영으로 칠한 뒤 후금군이 장악한 지역(jeongmyo-horan/*.geojson)을 덮는다.
 # 후금군은 의주에서 평산까지 평안도·황해도의 큰길을 따라 내려왔다. 점령 지역은 진군로 주변만 칠한다.
 # 날짜는 음력이다 (예: 후금군 압록강 도하 1627년 음력 1월 13일 = 양력 2월 28일). 위치는 교과서 수준의 대략적인 추정.
 
@@ -43,7 +43,7 @@ theaters:
         summary: 친명배금 정책과 이괄의 난 잔당(한명련의 아들)의 부추김을 구실로 후금의 아민이 3만 군사를 이끌고 압록강을 건너 의주를 함락했습니다. 가도의 명 장수 모문룡을 치려는 목적도 있었습니다.
         areas:
           - { faction: joseon, entities: [joseon] }
-          - { faction: hugeum, geojson: jeongmyo/1627-01-14.geojson }
+          - { faction: hugeum, geojson: jeongmyo-horan/1627-01-14-hugeum.geojson }
         arrows:
           - { faction: hugeum, path: [[123.43, 41.8], [124.55, 40.25]], label: 후금군 }
 
@@ -52,7 +52,7 @@ theaters:
         summary: 후금군이 곽산·정주를 거쳐 청천강의 안주성을 함락했습니다. 남이흥이 끝까지 싸우다 전사했습니다.
         areas:
           - { faction: joseon, entities: [joseon] }
-          - { faction: hugeum, geojson: jeongmyo/1627-01-21.geojson }
+          - { faction: hugeum, geojson: jeongmyo-horan/1627-01-21-hugeum.geojson }
         arrows:
           - { faction: hugeum, path: [[124.6, 40.15], [125.6, 39.65]], label: 안주 }
 
@@ -61,7 +61,7 @@ theaters:
         summary: 후금군이 평양을 지나 황해도 황주까지 함락하자 인조는 강화도로 피란하고, 소현 세자는 전주로 내려가 분조를 이끌었습니다. 용골산성의 정봉수, 의주의 이립 등 의병이 후금군의 뒤를 괴롭혔습니다.
         areas:
           - { faction: joseon, entities: [joseon] }
-          - { faction: hugeum, geojson: jeongmyo/1627-01-27.geojson }
+          - { faction: hugeum, geojson: jeongmyo-horan/1627-01-27-hugeum.geojson }
         holds:
           - { name: 강화도, at: [126.49, 37.72], faction: joseon }
           - { name: 용골산성 (정봉수), at: [124.72, 39.98], faction: joseon }
@@ -74,7 +74,7 @@ theaters:
         summary: 평양으로 물러나 형세를 살피던 후금군이 2월 초 다시 황해도 평산까지 내려왔습니다. 후금군은 평산 남쪽으로는 더 나아가지 않았고, 강화도의 조정과 화의 교섭이 이어졌습니다.
         areas:
           - { faction: joseon, entities: [joseon] }
-          - { faction: hugeum, geojson: jeongmyo/1627-02-07.geojson }
+          - { faction: hugeum, geojson: jeongmyo-horan/1627-02-07-hugeum.geojson }
         holds:
           - { name: 강화도, at: [126.49, 37.72], faction: joseon }
           - { name: 용골산성 (정봉수), at: [124.72, 39.98], faction: joseon }
@@ -86,7 +86,7 @@ theaters:
         summary: 강화도에서 후금과 화의를 맺었습니다. 두 나라는 형제 관계를 맺고, 조선은 명과의 관계는 그대로 두기로 했습니다. 후금군은 물러났지만 한동안 의주에 군대를 남겼습니다.
         areas:
           - { faction: joseon, entities: [joseon] }
-          - { faction: hugeum, geojson: jeongmyo/1627-03-03.geojson }
+          - { faction: hugeum, geojson: jeongmyo-horan/1627-03-03-hugeum.geojson }
         holds:
           - { name: 강화도 (화의), at: [126.49, 37.72], faction: joseon }
           - { name: 용골산성 (정봉수), at: [124.72, 39.98], faction: joseon }

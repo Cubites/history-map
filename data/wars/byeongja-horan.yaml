@@ -1,5 +1,5 @@
 # 병자호란 (DESIGN.md §4.5)
-# 전역 하나(한반도). 스냅샷마다 조선 영토 전체를 조선 진영으로 칠한 뒤 청군이 장악한 지역(byeongja/*.geojson)을 덮는다.
+# 전역 하나(한반도). 스냅샷마다 조선 영토 전체를 조선 진영으로 칠한 뒤 청군이 장악한 지역(byeongja-horan/*.geojson)을 덮는다.
 # 청군은 산성을 지키던 조선군을 피해 의주~한양의 큰길로 곧장 내려왔으므로, 점령 지역은 넓은 땅이 아니라 진군로와 한양·경기 일대다.
 # 날짜는 음력이다 (예: 청군 압록강 도하 1636년 음력 12월 9일 = 양력 1637년 1월 4일). 위치는 교과서 수준의 대략적인 추정.
 
@@ -46,7 +46,7 @@ theaters:
         summary: 조선이 군신 관계 요구를 거부하자 청 태종이 12만 대군을 이끌고 쳐들어왔습니다. 선봉 마부대는 의주 백마산성의 임경업을 피해 곧장 한양으로 내달렸습니다.
         areas:
           - { faction: joseon, entities: [joseon] }
-          - { faction: qing, geojson: byeongja/1636-12-09.geojson }
+          - { faction: qing, geojson: byeongja-horan/1636-12-09-qing.geojson }
         holds:
           - { name: 백마산성 (임경업), at: [124.63, 40.13], faction: joseon }
         arrows:
@@ -57,7 +57,7 @@ theaters:
         summary: 청군이 닷새 만에 개성을 지나자 인조는 강화도로 가려 했으나 길이 막혀 남한산성으로 들어갔습니다. 세자빈과 봉림 대군 등은 강화도로 피란했습니다.
         areas:
           - { faction: joseon, entities: [joseon] }
-          - { faction: qing, geojson: byeongja/1636-12-14.geojson }
+          - { faction: qing, geojson: byeongja-horan/1636-12-14-qing.geojson }
         holds:
           - { name: 남한산성, at: [127.18, 37.48], faction: joseon }
           - { name: 강화도, at: [126.49, 37.72], faction: joseon }
@@ -71,7 +71,7 @@ theaters:
         summary: 청군이 남한산성을 에워쌌습니다. 각 도의 근왕병이 산성을 구하러 올라왔으나 쌍령 전투에서 크게 지는 등 포위를 풀지 못했습니다. 산성 안에서는 주화론(최명길)과 척화론(김상헌)이 맞섰습니다.
         areas:
           - { faction: joseon, entities: [joseon] }
-          - { faction: qing, geojson: byeongja/1637-01-03.geojson }
+          - { faction: qing, geojson: byeongja-horan/1637-01-03-qing.geojson }
         holds:
           - { name: 남한산성, at: [127.18, 37.48], faction: joseon }
           - { name: 강화도, at: [126.49, 37.72], faction: joseon }
@@ -85,7 +85,7 @@ theaters:
         summary: 청군이 강화도를 함락해 왕족을 사로잡았습니다. 식량이 떨어져 가던 남한산성 안에서는 더 버틸 수 없게 되었습니다.
         areas:
           - { faction: joseon, entities: [joseon] }
-          - { faction: qing, geojson: byeongja/1637-01-22.geojson }
+          - { faction: qing, geojson: byeongja-horan/1637-01-22-qing.geojson }
         holds:
           - { name: 남한산성, at: [127.18, 37.48], faction: joseon }
         arrows:

@@ -1,7 +1,7 @@
 // 제1차 세계 대전 점령 지역 geojson 생성기 (scripts/wars, 사용: npm run gen:wars)
 // 방법: 전선(경유점 선)으로 '한쪽' 다각형을 만들고, 그 다각형을 그 해 나라 영토(data/geo, 저장소 자료)와 겹쳐(교집합)
 //   '어느 진영이 남의 땅을 차지했는가'만 남긴다. 중립국(네덜란드·스위스 등)은 영토 가리개로 저절로 빠진다.
-// 출력: <data/wars>/ww1/<날짜>-<진영>.geojson (좌표 소수 넷째 자리). 경유점은 fronts.mjs, 장면 구성은 이 파일.
+// 출력: <data/wars>/world-war-1/<날짜>-<진영>.geojson (좌표 소수 넷째 자리). 경유점은 fronts.mjs, 장면 구성은 이 파일.
 // 저장소 경로·--out은 engine.mjs가 명령줄에서 읽는다. YAML(eu-02-world-war-1.yaml)은 손으로 쓴 파일이라 이 생성기가 쓰지 않는다.
 import fs from 'node:fs';
 import path from 'node:path';
@@ -284,7 +284,7 @@ const ITALY_AH = (y) => U(I(PIAVE, W(y, 'italy')), D(I(W(y, 'italy'), AH17), TRE
 
 // ── 쓰기 ──
 const round = (g) => G.roundCoords(g, 4);
-const outDir = path.join(WARS, 'ww1');
+const outDir = path.join(WARS, 'world-war-1');
 resetDir(outDir);
 const summary = [];
 for (const [date, byF] of Object.entries(out)) {

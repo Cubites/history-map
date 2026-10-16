@@ -1,6 +1,6 @@
 # 임진왜란·정유재란 (DESIGN.md §4.5)
 # 전역 하나(한반도). 스냅샷마다 조선 땅 전체(조선·일본군 점령지 영토)를 조선 진영으로 칠한 뒤,
-# 일본군 점령 지역(imjin/*.geojson)을 그 위에 덮는다. 점령 지역은 교과서 전황도 수준의 대략적인 추정.
+# 일본군 점령 지역(imjin-war/*.geojson)을 그 위에 덮는다. 점령 지역은 교과서 전황도 수준의 대략적인 추정.
 # 날짜는 우리 역사책이 흔히 쓰는 음력이다 (예: 부산 상륙 1592년 음력 4월 13일 = 양력 5월 23일).
 # 운영자가 국방부 군사편찬연구소 『임진왜란사』 전황도를 기준으로 검수·보정할 것.
 
@@ -75,7 +75,7 @@ theaters:
         summary: 음력 4월 13일 일본군이 부산에 상륙해 부산진(14일)과 동래성(15일)을 함락했습니다.
         areas:
           - { faction: joseon, entities: [joseon, imjin-occupied] }
-          - { faction: japan, geojson: imjin/1592-04-15.geojson }
+          - { faction: japan, geojson: imjin-war/1592-04-15-japan.geojson }
         arrows:
           - { faction: japan, path: [[129.3, 34.4], [129.05, 35.05]], label: 부산 상륙 }
 
@@ -84,7 +84,7 @@ theaters:
         summary: 일본군이 세 갈래로 북상해 상륙 20일 만에 한양을 차지했습니다. 선조는 4월 30일 한양을 떠나 개성·평양으로 피란했습니다.
         areas:
           - { faction: joseon, entities: [joseon, imjin-occupied] }
-          - { faction: japan, geojson: imjin/1592-05-03.geojson }
+          - { faction: japan, geojson: imjin-war/1592-05-03-japan.geojson }
         arrows:
           - { faction: japan, path: [[128.6, 35.9], [128.16, 36.41], [127.93, 36.99], [127.0, 37.5]], label: 중로 }
           - { faction: japan, path: [[129.22, 35.84], [128.5, 36.8], [127.3, 37.55]], label: 좌로 }
@@ -94,7 +94,7 @@ theaters:
         summary: 고니시의 일본군이 평양을 차지하고, 가토의 일본군은 함경도로 들어갔습니다. 선조는 의주로 피란해 명에 원군을 요청했습니다.
         areas:
           - { faction: joseon, entities: [joseon, imjin-occupied] }
-          - { faction: japan, geojson: imjin/1592-06-15.geojson }
+          - { faction: japan, geojson: imjin-war/1592-06-15-japan.geojson }
         arrows:
           - { faction: japan, path: [[126.55, 37.97], [125.8, 38.9]], label: 평양 }
           - { faction: japan, path: [[127.0, 37.7], [127.3, 38.95], [127.55, 39.8]], label: 함경도 }
@@ -104,7 +104,7 @@ theaters:
         summary: 가토의 일본군이 함경도 북쪽으로 올라가고 있었지만, 이순신이 한산도에서 일본 수군을 크게 물리치고 권율이 이치에서 일본군을 막아 전라도를 지켰습니다.
         areas:
           - { faction: joseon, entities: [joseon, imjin-occupied] }
-          - { faction: japan, geojson: imjin/1592-07-08.geojson }
+          - { faction: japan, geojson: imjin-war/1592-07-08-japan.geojson }
         arrows:
           - { faction: joseon, path: [[127.75, 34.75], [128.4, 34.78]], label: 조선 수군 }
           - { faction: japan, path: [[127.55, 39.9], [129.7, 42.3]], label: 회령 }
@@ -114,7 +114,7 @@ theaters:
         summary: 곽재우·고경명·조헌 등 의병과 승병이 곳곳에서 일어났고, 김시민이 진주성을 지켜 냈습니다(3대첩). 경상도 서부가 일본군의 손에서 벗어났습니다.
         areas:
           - { faction: joseon, entities: [joseon, imjin-occupied] }
-          - { faction: japan, geojson: imjin/1592-10-10.geojson }
+          - { faction: japan, geojson: imjin-war/1592-10-10-japan.geojson }
         holds:
           - { name: 진주성, at: [128.08, 35.19], faction: joseon }
           - { name: 의령 (곽재우), at: [128.26, 35.32], faction: joseon }
@@ -124,7 +124,7 @@ theaters:
         summary: 이여송이 이끄는 명군과 조선군이 평양성을 되찾았습니다. 일본군은 한양 쪽으로 물러났습니다.
         areas:
           - { faction: joseon, entities: [joseon, imjin-occupied] }
-          - { faction: japan, geojson: imjin/1593-01-08.geojson }
+          - { faction: japan, geojson: imjin-war/1593-01-08-japan.geojson }
         arrows:
           - { faction: joseon, path: [[124.55, 40.15], [125.75, 39.05]], label: 조·명 연합군 }
           - { faction: japan, path: [[125.75, 38.95], [126.5, 38.0]], label: 후퇴 }
@@ -134,7 +134,7 @@ theaters:
         summary: 권율이 행주산성에서 일본군을 크게 물리쳤습니다. 함경도의 가토 군도 한양으로 물러났고, 일본군은 한양 주변과 남쪽 길목만 지켰습니다.
         areas:
           - { faction: joseon, entities: [joseon, imjin-occupied] }
-          - { faction: japan, geojson: imjin/1593-02-12.geojson }
+          - { faction: japan, geojson: imjin-war/1593-02-12-japan.geojson }
         holds:
           - { name: 행주산성, at: [126.82, 37.6], faction: joseon }
         arrows:
@@ -145,7 +145,7 @@ theaters:
         summary: 명과 일본이 강화 회담을 열면서 일본군이 한양에서 물러나 경상도 남해안에 왜성을 쌓고 머물렀습니다. 조선은 훈련도감을 설치해 군대를 정비했습니다. 회담은 3년 넘게 이어지다 결렬되었습니다.
         areas:
           - { faction: joseon, entities: [joseon, imjin-occupied] }
-          - { faction: japan, geojson: imjin/1593-04-20.geojson }
+          - { faction: japan, geojson: imjin-war/1593-04-20-japan.geojson }
         arrows:
           - { faction: japan, path: [[127.0, 37.5], [128.3, 36.3], [128.9, 35.4]], label: 남해안으로 철수 }
 
@@ -154,7 +154,7 @@ theaters:
         summary: 강화 회담이 깨지자 일본군이 다시 쳐들어왔습니다(1597). 칠천량에서 조선 수군이 무너지고 남원·전주가 함락되었으나, 직산에서 조·명 연합군이 일본군의 북상을 막았습니다.
         areas:
           - { faction: joseon, entities: [joseon, imjin-occupied] }
-          - { faction: japan, geojson: imjin/1597-09-07.geojson }
+          - { faction: japan, geojson: imjin-war/1597-09-07-japan.geojson }
         arrows:
           - { faction: japan, path: [[128.3, 35.1], [127.39, 35.41], [127.15, 35.82], [127.15, 36.75]], label: 남원·전주 }
           - { faction: joseon, path: [[127.05, 37.3], [127.15, 36.95]], label: 명군 }
@@ -164,7 +164,7 @@ theaters:
         summary: 이순신이 남은 배 13척으로 울돌목에서 일본 수군을 물리쳤습니다. 서해로 가려던 일본군의 계획이 막히고, 일본군은 남해안의 왜성으로 물러났습니다.
         areas:
           - { faction: joseon, entities: [joseon, imjin-occupied] }
-          - { faction: japan, geojson: imjin/1597-09-16.geojson }
+          - { faction: japan, geojson: imjin-war/1597-09-16-japan.geojson }
         arrows:
           - { faction: joseon, path: [[125.9, 34.45], [126.3, 34.57]], label: 조선 수군 13척 }
 

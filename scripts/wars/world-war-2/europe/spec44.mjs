@@ -1,4 +1,4 @@
-// 1944~1945 스냅샷. 진영 본토(entities)를 깔고, 전선 경유점으로 만든 다각형(ww2-europe/*.geojson)을 차례로 덮는다
+// 1944~1945 스냅샷. 진영 본토(entities)를 깔고, 전선 경유점으로 만든 다각형(world-war-2/europe/*.geojson)을 차례로 덮는다
 import { G, P as poly } from '../../engine.mjs';
 import { P } from './fronts.mjs';
 import { SNAPSHOTS, T, U, minus, clean, side, W, northAfrica, channelIslands } from './spec.mjs';

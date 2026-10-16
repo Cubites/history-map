@@ -1,6 +1,6 @@
 # 제1차 세계 대전 (DESIGN.md §4.5). 2026-10-12 작업 W1
 # 전역 하나(유럽): 서부·동부·이탈리아·발칸 전선과, 유럽 지도에 걸리는 만큼의 오스만 제국(갈리폴리·캅카스 전선).
-# 스냅샷마다 진영별 본토를 나라 영토(entities)로 깔고, 남의 땅을 차지한 곳을 geojson(ww1/<날짜>-<진영>.geojson)으로 덮는다.
+# 스냅샷마다 진영별 본토를 나라 영토(entities)로 깔고, 남의 땅을 차지한 곳을 geojson(world-war-1/<날짜>-<진영>.geojson)으로 덮는다.
 #   geojson은 전선 경유점(마을·강·고지, 위키데이터 좌표로 확인)으로 그은 선과 저장소의 그 해 나라 영토를 겹쳐 만든 것이다
 #   (생성 방법·경유점·근거·어림 오차는 W1 결과 노트). 서부 전선은 2km 안, 동부·발칸 전선은 대부분 5~10km 안(1918년 우크라이나·캅카스는 대략)이다.
 # 진영: 협상국(대표 프랑스)·동맹국(대표 독일 제국)·러시아 제국(협상국이지만 1917년 혁명과 1918년 강화로 전쟁에서 빠져 따로 둠).
@@ -110,9 +110,9 @@ theaters:
           - { faction: entente, entities: [france, uk, belgium, serbia, montenegro] }
           - { faction: central, entities: [german-empire, austria-hungary, luxembourg] }
           - { faction: russia, entities: [russia] }
-          - { faction: central, geojson: ww1/1914-09-05-central.geojson }
-          - { faction: entente, geojson: ww1/1914-09-05-entente.geojson }
-          - { faction: russia, geojson: ww1/1914-09-05-russia.geojson }
+          - { faction: central, geojson: world-war-1/1914-09-05-central.geojson }
+          - { faction: entente, geojson: world-war-1/1914-09-05-entente.geojson }
+          - { faction: russia, geojson: world-war-1/1914-09-05-russia.geojson }
         arrows:
           - { faction: entente, path: [[2.7, 49.0], [3.15, 49.15]], label: 우르크강 반격 (프랑스 제6군) }
           - { faction: entente, path: [[3.45, 48.6], [3.6, 49.05]], label: 마른 반격 }
@@ -126,9 +126,9 @@ theaters:
           - { faction: entente, entities: [france, uk, belgium, serbia, montenegro, cyprus-british] }
           - { faction: central, entities: [german-empire, austria-hungary, luxembourg, ottoman] }
           - { faction: russia, entities: [russia] }
-          - { faction: central, geojson: ww1/1914-12-31-central.geojson }
-          - { faction: entente, geojson: ww1/1914-12-31-entente.geojson }
-          - { faction: russia, geojson: ww1/1914-12-31-russia.geojson }
+          - { faction: central, geojson: world-war-1/1914-12-31-central.geojson }
+          - { faction: entente, geojson: world-war-1/1914-12-31-entente.geojson }
+          - { faction: russia, geojson: world-war-1/1914-12-31-russia.geojson }
         arrows:
           - { faction: central, path: [[19.2, 51.6], [19.9, 52.0]], label: 우치 전투 }
           - { faction: entente, path: [[20.0, 44.1], [20.35, 44.7]], label: 콜루바라 반격 }
@@ -142,9 +142,9 @@ theaters:
           - { faction: entente, entities: [france, uk, belgium, serbia, montenegro] }
           - { faction: central, entities: [german-empire, austria-hungary, luxembourg, ottoman] }
           - { faction: russia, entities: [russia] }
-          - { faction: central, geojson: ww1/1915-04-25-central.geojson }
-          - { faction: entente, geojson: ww1/1915-04-25-entente.geojson }
-          - { faction: russia, geojson: ww1/1915-04-25-russia.geojson }
+          - { faction: central, geojson: world-war-1/1915-04-25-central.geojson }
+          - { faction: entente, geojson: world-war-1/1915-04-25-entente.geojson }
+          - { faction: russia, geojson: world-war-1/1915-04-25-russia.geojson }
         arrows:
           - { faction: entente, path: [[25.85, 39.9], [26.19, 40.05]], label: 헬레스곶 상륙 }
           - { faction: entente, path: [[25.95, 40.2], [26.28, 40.24]], label: 안작 상륙 }
@@ -157,9 +157,9 @@ theaters:
           - { faction: entente, entities: [france, uk, belgium, serbia, montenegro, italy, dodecanese-occupied] }
           - { faction: central, entities: [german-empire, austria-hungary, luxembourg, ottoman, bulgaria] }
           - { faction: russia, entities: [russia] }
-          - { faction: central, geojson: ww1/1915-12-15-central.geojson }
-          - { faction: entente, geojson: ww1/1915-12-15-entente.geojson }
-          - { faction: russia, geojson: ww1/1915-12-15-russia.geojson }
+          - { faction: central, geojson: world-war-1/1915-12-15-central.geojson }
+          - { faction: entente, geojson: world-war-1/1915-12-15-entente.geojson }
+          - { faction: russia, geojson: world-war-1/1915-12-15-russia.geojson }
         arrows:
           - { faction: central, path: [[21.2, 49.7], [22.8, 50.4], [24.0, 51.5]], label: 고를리체 돌파 뒤 진격 }
           - { faction: central, path: [[20.5, 45.0], [20.6, 44.0]], label: 세르비아 침공 }
@@ -173,9 +173,9 @@ theaters:
           - { faction: entente, entities: [france, uk, belgium, serbia, montenegro, italy, dodecanese-occupied] }
           - { faction: central, entities: [german-empire, austria-hungary, luxembourg, ottoman, bulgaria] }
           - { faction: russia, entities: [russia] }
-          - { faction: central, geojson: ww1/1916-02-21-central.geojson }
-          - { faction: entente, geojson: ww1/1916-02-21-entente.geojson }
-          - { faction: russia, geojson: ww1/1916-02-21-russia.geojson }
+          - { faction: central, geojson: world-war-1/1916-02-21-central.geojson }
+          - { faction: entente, geojson: world-war-1/1916-02-21-entente.geojson }
+          - { faction: russia, geojson: world-war-1/1916-02-21-russia.geojson }
         arrows:
           - { faction: central, path: [[5.55, 49.35], [5.42, 49.22]], label: 베르됭 공격 }
           - { faction: russia, path: [[42.4, 40.1], [41.35, 39.9]], label: 에르주룸 점령 }
@@ -188,9 +188,9 @@ theaters:
           - { faction: entente, entities: [france, uk, belgium, serbia, montenegro, italy, dodecanese-occupied, romania, portugal] }
           - { faction: central, entities: [german-empire, austria-hungary, luxembourg, ottoman, bulgaria] }
           - { faction: russia, entities: [russia] }
-          - { faction: central, geojson: ww1/1916-12-06-central.geojson }
-          - { faction: entente, geojson: ww1/1916-12-06-entente.geojson }
-          - { faction: russia, geojson: ww1/1916-12-06-russia.geojson }
+          - { faction: central, geojson: world-war-1/1916-12-06-central.geojson }
+          - { faction: entente, geojson: world-war-1/1916-12-06-entente.geojson }
+          - { faction: russia, geojson: world-war-1/1916-12-06-russia.geojson }
         arrows:
           - { faction: entente, path: [[2.6, 49.98], [2.9, 50.04]], label: 솜 공세 }
           - { faction: russia, path: [[26.1, 50.5], [25.2, 50.75]], label: 브루실로프 공세 }
@@ -205,9 +205,9 @@ theaters:
           - { faction: entente, entities: [france, uk, belgium, serbia, montenegro, italy, dodecanese-occupied, romania, portugal] }
           - { faction: central, entities: [german-empire, austria-hungary, luxembourg, ottoman, bulgaria] }
           - { faction: russia, entities: [russia] }
-          - { faction: central, geojson: ww1/1917-04-06-central.geojson }
-          - { faction: entente, geojson: ww1/1917-04-06-entente.geojson }
-          - { faction: russia, geojson: ww1/1917-04-06-russia.geojson }
+          - { faction: central, geojson: world-war-1/1917-04-06-central.geojson }
+          - { faction: entente, geojson: world-war-1/1917-04-06-entente.geojson }
+          - { faction: russia, geojson: world-war-1/1917-04-06-russia.geojson }
         arrows:
           - { faction: central, path: [[2.85, 49.75], [3.2, 49.78]], label: 힌덴부르크선으로 철수 }
           - { faction: entente, path: [[2.6, 50.33], [2.85, 50.35]], label: 아라스·비미 공격 (4.9) }
@@ -220,9 +220,9 @@ theaters:
           - { faction: entente, entities: [france, uk, belgium, serbia, montenegro, italy, dodecanese-occupied, romania, portugal, greece] }
           - { faction: central, entities: [german-empire, austria-hungary, luxembourg, ottoman, bulgaria] }
           - { faction: russia, entities: [russia] }
-          - { faction: central, geojson: ww1/1917-11-12-central.geojson }
-          - { faction: entente, geojson: ww1/1917-11-12-entente.geojson }
-          - { faction: russia, geojson: ww1/1917-11-12-russia.geojson }
+          - { faction: central, geojson: world-war-1/1917-11-12-central.geojson }
+          - { faction: entente, geojson: world-war-1/1917-11-12-entente.geojson }
+          - { faction: russia, geojson: world-war-1/1917-11-12-russia.geojson }
         arrows:
           - { faction: central, path: [[13.72, 46.2], [13.3, 46.1], [12.3, 45.88]], label: 카포레토 돌파 }
           - { faction: central, path: [[24.5, 56.75], [24.2, 56.95]], label: 리가 점령 }
@@ -240,8 +240,8 @@ theaters:
           - { faction: entente, entities: [france, uk, belgium, italy, dodecanese-occupied, romania, portugal, greece] }
           # 에스토니아는 나르바(3.4 점령)를 빼려고 entities 대신 geojson으로 칠한다
           - { faction: central, entities: [weimar-republic, austria-republic, hungary, czechoslovakia, yugoslavia, poland, lithuania, latvia, luxembourg, ottoman, bulgaria] }
-          - { faction: central, geojson: ww1/1918-03-03-central.geojson }
-          - { faction: entente, geojson: ww1/1918-03-03-entente.geojson }
+          - { faction: central, geojson: world-war-1/1918-03-03-central.geojson }
+          - { faction: entente, geojson: world-war-1/1918-03-03-entente.geojson }
         arrows:
           - { faction: central, path: [[26.5, 55.9], [27.4, 57.0], [28.3, 57.75]], label: 파우스트슐라크 작전 (2.18~) }
           - { faction: central, path: [[24.8, 59.3], [27.9, 59.35]], label: 나르바 (3.4) }
@@ -258,8 +258,8 @@ theaters:
         areas:
           - { faction: entente, entities: [france, uk, belgium, italy, dodecanese-occupied, portugal, greece] }
           - { faction: central, entities: [weimar-republic, austria-republic, hungary, czechoslovakia, yugoslavia, poland, lithuania, latvia, estonia, luxembourg, ottoman, bulgaria] }
-          - { faction: central, geojson: ww1/1918-07-15-central.geojson }
-          - { faction: entente, geojson: ww1/1918-07-15-entente.geojson }
+          - { faction: central, geojson: world-war-1/1918-07-15-central.geojson }
+          - { faction: entente, geojson: world-war-1/1918-07-15-entente.geojson }
         arrows:
           - { faction: central, path: [[3.1, 49.85], [2.55, 49.85]], label: 미하엘 작전 (3.21) }
           - { faction: central, path: [[2.95, 50.62], [2.66, 50.7]], label: 게오르게테 작전 (4.9) }
@@ -272,8 +272,8 @@ theaters:
         areas:
           - { faction: entente, entities: [france, uk, belgium, italy, dodecanese-occupied, romania, portugal, greece, yugoslavia, albania] }
           - { faction: central, entities: [weimar-republic, austria-republic, hungary, czechoslovakia, poland, lithuania, latvia, estonia, luxembourg, ottoman, bulgaria] }
-          - { faction: central, geojson: ww1/1918-11-11-central.geojson }
-          - { faction: entente, geojson: ww1/1918-11-11-entente.geojson }
+          - { faction: central, geojson: world-war-1/1918-11-11-central.geojson }
+          - { faction: entente, geojson: world-war-1/1918-11-11-entente.geojson }
         arrows:
           - { faction: entente, path: [[2.5, 49.85], [3.3, 50.05], [3.95, 50.4]], label: 100일 공세 }
           - { faction: entente, path: [[5.1, 49.25], [5.2, 49.5]], label: 뫼즈-아르곤 공세 }

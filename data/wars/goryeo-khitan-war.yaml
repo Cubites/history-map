@@ -1,5 +1,5 @@
 # 거란의 침입 (1~3차) (DESIGN.md §4.5)
-# 전역 하나(고려 북부). 스냅샷마다 고려 영토를 고려 진영으로 칠한 뒤 거란군이 장악한 지역(khitan/*.geojson)을 덮는다.
+# 전역 하나(고려 북부). 스냅샷마다 고려 영토를 고려 진영으로 칠한 뒤 거란군이 장악한 지역(goryeo-khitan-war/*.geojson)을 덮는다.
 # 날짜는 『고려사』를 따른 음력이며, 날이 전하지 않으면 00으로 적는다. 위치는 교과서 수준의 대략적인 추정.
 
 id: goryeo-khitan-war
@@ -45,7 +45,7 @@ theaters:
         summary: 송과 가까이 지내고 거란을 멀리하던 고려에 소손녕이 80만 대군을 이끌고 쳐들어왔습니다. 봉산군을 빼앗았으나 안융진에서 막혔습니다. 서희가 담판에 나서 고려가 고구려를 이었음을 밝히고, 여진을 몰아내면 거란과 교류하겠다고 약속했습니다.
         areas:
           - { faction: goryeo, entities: [goryeo] }
-          - { faction: liao, geojson: khitan/0993-10-00.geojson }
+          - { faction: liao, geojson: goryeo-khitan-war/0993-10-00-liao.geojson }
         arrows:
           - { faction: liao, path: [[123.5, 41.0], [125.5, 40.0]], label: 소손녕 }
 
@@ -64,8 +64,8 @@ theaters:
         summary: 강조가 목종을 몰아낸 정변(1009)을 구실로 거란 성종이 40만 대군을 이끌고 쳐들어왔습니다. 양규가 흥화진을 지켰으나, 강조의 주력군은 통주에서 무너졌습니다.
         areas:
           - { faction: goryeo, entities: [goryeo] }
-          - { faction: liao, geojson: khitan/1010-11-00.geojson }
-          - { faction: goryeo, geojson: khitan/1010-11-00-goryeo.geojson }
+          - { faction: liao, geojson: goryeo-khitan-war/1010-11-00-liao.geojson }
+          - { faction: goryeo, geojson: goryeo-khitan-war/1010-11-00-goryeo.geojson }
         holds:
           - { name: 흥화진 (양규), at: [124.72, 40.05], faction: goryeo }
         arrows:
@@ -76,8 +76,8 @@ theaters:
         summary: 거란군이 개경을 함락하고, 현종은 나주까지 피란했습니다. 현종이 거란에 직접 가서 예를 갖추기로 하자 거란군이 물러났고, 양규가 물러가는 거란군을 공격했습니다.
         areas:
           - { faction: goryeo, entities: [goryeo] }
-          - { faction: liao, geojson: khitan/1011-01-00.geojson }
-          - { faction: goryeo, geojson: khitan/1011-01-00-goryeo.geojson }
+          - { faction: liao, geojson: goryeo-khitan-war/1011-01-00-liao.geojson }
+          - { faction: goryeo, geojson: goryeo-khitan-war/1011-01-00-goryeo.geojson }
         holds:
           - { name: 흥화진 (양규), at: [124.72, 40.05], faction: goryeo }
           - { name: 서경, at: [125.75, 39.02], faction: goryeo }
@@ -89,8 +89,8 @@ theaters:
         summary: 현종이 거란에 가지 않고 강동 6주도 돌려주지 않자 소배압이 10만 대군으로 쳐들어왔습니다. 강감찬이 흥화진에서 물을 막았다 터뜨려 큰 타격을 주었습니다.
         areas:
           - { faction: goryeo, entities: [goryeo] }
-          - { faction: liao, geojson: khitan/1018-12-00.geojson }
-          - { faction: goryeo, geojson: khitan/1018-12-00-goryeo.geojson }
+          - { faction: liao, geojson: goryeo-khitan-war/1018-12-00-liao.geojson }
+          - { faction: goryeo, geojson: goryeo-khitan-war/1018-12-00-goryeo.geojson }
         holds:
           - { name: 흥화진, at: [124.72, 40.05], faction: goryeo }
 
@@ -99,7 +99,7 @@ theaters:
         summary: 소배압은 곧장 개경 가까이까지 내려왔으나, 고려가 들판을 비우고 성을 지키는 청야 전술로 맞서자 식량이 떨어져 물러났습니다.
         areas:
           - { faction: goryeo, entities: [goryeo] }
-          - { faction: liao, geojson: khitan/1019-01-00.geojson }
+          - { faction: liao, geojson: goryeo-khitan-war/1019-01-00-liao.geojson }
         holds:
           - { name: 개경, at: [126.55, 37.97], faction: goryeo }
 

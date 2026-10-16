@@ -5,10 +5,10 @@
 //                 처음에는 저장소 data/wars 맨 위 파일(YAML)만 복사해 시작하고 geojson 폴더는 새로 만든다.
 //   --only 이름   그 생성기만 돈다(쉼표로 여럿). 이름: world-war-1, europe, asia-pacific, overview (world-war-2 = europe·asia-pacific·overview 셋). 다른 이름·옵션은 오류
 // 순서와 하는 일 (앞 결과를 뒤가 읽으므로 순서를 바꾸지 않는다):
-//   1 world-war-1    data/wars/ww1/*.geojson
-//   2 europe         data/wars/ww2-europe/*.geojson + eu-02-world-war-2.yaml의 머리와 europe 전역(뒤에 붙은 다른 전역은 그대로 둠)
-//   3 asia-pacific   data/wars/ww2-asia/*.geojson (YAML은 손으로 쓴 asia-pacific 전역을 그대로 둠)
-//   4 overview       data/wars/ww2-overview/*.geojson + eu-02-world-war-2.yaml 끝의 overview 전역 (2·3의 YAML·geojson을 읽음)
+//   1 world-war-1    data/wars/world-war-1/*.geojson
+//   2 europe         data/wars/world-war-2/europe/*.geojson + eu-02-world-war-2.yaml의 머리와 europe 전역(뒤에 붙은 다른 전역은 그대로 둠)
+//   3 asia-pacific   data/wars/world-war-2/asia-pacific/*.geojson (YAML은 손으로 쓴 asia-pacific 전역을 그대로 둠)
+//   4 overview       data/wars/world-war-2/overview/*.geojson + eu-02-world-war-2.yaml 끝의 overview 전역 (2·3의 YAML·geojson을 읽음)
 // 국경(data/geo)을 고친 뒤에는 npm run gen:geo → npm run gen:wars 순서로 돌린다. 생성기는 한 번 돌리면 같은 입력에서 바이트까지 같은 결과를 낸다.
 import { spawnSync } from 'node:child_process';
 import path from 'node:path';

@@ -1,12 +1,12 @@
 # 제2차 세계 대전 (DESIGN.md §4.5)
 # 전역 둘: 유럽·북아프리카(europe)와 아시아·태평양(asia-pacific, 권역 japan). 진영 다섯은 두 전역이 함께 쓴다.
-# 유럽·북아프리카 전역의 점령 지역은 스냅샷마다 진영별 한 덩어리 ww2-europe/<날짜>-<진영>.geojson (서로 겹치지 않음, 빌드가 해안선으로 자름).
+# 유럽·북아프리카 전역의 점령 지역은 스냅샷마다 진영별 한 덩어리 world-war-2/europe/<날짜>-<진영>.geojson (서로 겹치지 않음, 빌드가 해안선으로 자름).
 # 덩어리는 작업 스크립트가 저장소 나라 영토(data/geo, 해안선으로 자르기 전)를 깔고 그날 전선이 지난 도시·마을·강을 이은 선과 포위지 다각형으로
 # 덮어 만들었다(만든 순서는 진영마다 주석). 나라 영토(entities) 위에 geojson을 여러 겹 덮으면 빌드의 도형 계산(polyclip-ts)이 해안·경계의
 # 가는 조각에서 깨져서 이렇게 했다. 경유점·근거·어림 오차는 작업 결과 노트에 있다. 중립국(에스파냐·포르투갈·스위스·스웨덴·튀르키예·아일랜드 등)은 칠하지 않는다.
 # 북아프리카·중동은 그 시기 나라 영토가 지도에 없어 식민지 경계를 다각형으로 대략 그렸다. 운영자 검수 필요.
 # 다시 만드는 법: npm run gen:wars. 생성 스크립트와 입력(경유점·식민지 경계)은 저장소의 scripts/wars/world-war-2/europe/ 에 있다.
-#   이 YAML의 머리와 europe 전역, ww2-europe/*.geojson을 다시 쓴다(뒤에 붙은 다른 전역은 그대로). 이 전역만 다시 만들려면 npm run gen:wars -- --only europe. 경유점은 fronts*.mjs, 장면 구성은 spec*.mjs.
+#   이 YAML의 머리와 europe 전역, world-war-2/europe/*.geojson을 다시 쓴다(뒤에 붙은 다른 전역은 그대로). 이 전역만 다시 만들려면 npm run gen:wars -- --only europe. 경유점은 fronts*.mjs, 장면 구성은 spec*.mjs.
 
 id: world-war-2
 name: 제2차 세계 대전
@@ -103,11 +103,11 @@ theaters:
         # 이탈리아(리비아·알바니아 포함)는 1940-06-10 참전 전이라 칠하지 않는다(운영자 결정 2026-10-12)
         areas:
           # 연합국: 나라 영토 uk, france + 전쟁 전 폴란드 (1939년 9월 1일 국경) + 프랑스령 모로코·알제리 + 프랑스령 튀니지 + 시리아·레바논 + 이집트(영국군 주둔) + 영국 위임 통치령 팔레스타인·트란스요르단
-          - { faction: allies, geojson: ww2-europe/1939-09-01-allies.geojson }
+          - { faction: allies, geojson: world-war-2/europe/1939-09-01-allies.geojson }
           # 추축국: 나라 영토 nazi-germany, bohemia-moravia, slovakia
-          - { faction: axis, geojson: ww2-europe/1939-09-01-axis.geojson }
+          - { faction: axis, geojson: world-war-2/europe/1939-09-01-axis.geojson }
           # 소련: 나라 영토 soviet-union
-          - { faction: soviet, geojson: ww2-europe/1939-09-01-soviet.geojson }
+          - { faction: soviet, geojson: world-war-2/europe/1939-09-01-soviet.geojson }
         arrows:
           - { faction: axis, path: [[20.6, 53.55], [20.95, 52.85], [21, 52.35]], label: 북부 집단군 (동프로이센) }
           - { faction: axis, path: [[16.9, 53.65], [18.3, 53.4]], label: 폴란드 회랑 }
@@ -120,11 +120,11 @@ theaters:
         # 경계는 9월 28일 조약선(피사·나레프·부크·산강). 빌뉴스 지역은 10월 10일 리투아니아에 넘기기 전까지 소련군이 차지
         areas:
           # 연합국: 나라 영토 uk, france + 프랑스령 모로코·알제리 + 프랑스령 튀니지 + 시리아·레바논 + 이집트(영국군 주둔) + 영국 위임 통치령 팔레스타인·트란스요르단
-          - { faction: allies, geojson: ww2-europe/1939-09-28-allies.geojson }
+          - { faction: allies, geojson: world-war-2/europe/1939-09-28-allies.geojson }
           # 추축국: 나라 영토 nazi-germany, general-government, bohemia-moravia, slovakia
-          - { faction: axis, geojson: ww2-europe/1939-09-28-axis.geojson }
+          - { faction: axis, geojson: world-war-2/europe/1939-09-28-axis.geojson }
           # 소련: 나라 영토 soviet-union + 소련군이 차지한 빌뉴스 지역(10월 10일 리투아니아에 넘김)
-          - { faction: soviet, geojson: ww2-europe/1939-09-28-soviet.geojson }
+          - { faction: soviet, geojson: world-war-2/europe/1939-09-28-soviet.geojson }
         arrows:
           - { faction: soviet, path: [[27.3, 53.95], [25.3, 53.5], [23.9, 53.1]], label: 소련 벨라루스 전선군 (9월 17일) }
           - { faction: soviet, path: [[26.9, 50.15], [25.3, 49.95], [24.1, 49.85]], label: 소련 우크라이나 전선군 }
@@ -138,11 +138,11 @@ theaters:
         # 노르웨이는 독일군이 남·중부(모셰엔 남쪽까지)와 나르비크를 쥐고 북부는 노르웨이·연합군. 발트 3국과 베사라비아는 아직 소련 땅이 아님(칠하지 않음)
         areas:
           # 연합국: 나라 영토 uk, france, france-occupied, netherlands, belgium, norway + 알자스-모젤·룩셈부르크·오이펜-말메디 (1940년 뒤 독일 영토로 그린 곳) + 프랑스령 모로코·알제리 + 프랑스령 튀니지 + 시리아·레바논 + 이집트(영국군 주둔) + 영국 위임 통치령 팔레스타인·트란스요르단
-          - { faction: allies, geojson: ww2-europe/1940-05-10-allies.geojson }
+          - { faction: allies, geojson: world-war-2/europe/1940-05-10-allies.geojson }
           # 추축국: 나라 영토 nazi-germany, general-government, bohemia-moravia, slovakia, denmark + 독일군이 쥔 남·중부 노르웨이 + 나르비크의 독일군 지역
-          - { faction: axis, geojson: ww2-europe/1940-05-10-axis.geojson }
+          - { faction: axis, geojson: world-war-2/europe/1940-05-10-axis.geojson }
           # 소련: 소련 (발트 3국·베사라비아 제외, 3월 모스크바 강화로 얻은 카렐리야 포함)
-          - { faction: soviet, geojson: ww2-europe/1940-05-10-soviet.geojson }
+          - { faction: soviet, geojson: world-war-2/europe/1940-05-10-soviet.geojson }
         arrows:
           - { faction: axis, path: [[7, 52.05], [6, 52], [5, 51.95]], label: B 집단군 (네덜란드) }
           - { faction: axis, path: [[6.4, 50.85], [5.6, 50.8], [4.7, 50.85]], label: B 집단군 (벨기에) }
@@ -158,11 +158,11 @@ theaters:
         # 독일에 협력한 비시 정부 땅(남부)과 그 식민지(프랑스령 북아프리카·시리아·레바논)는 추축국 색(운영자 결정 2026-10-12). 소련은 6월 중순 발트 3국을 점령했고 베사라비아는 6월 28일에 차지했다
         areas:
           # 연합국: 나라 영토 uk + 이집트(영국군 주둔) + 영국 위임 통치령 팔레스타인·트란스요르단
-          - { faction: allies, geojson: ww2-europe/1940-06-22-allies.geojson }
+          - { faction: allies, geojson: world-war-2/europe/1940-06-22-allies.geojson }
           # 추축국: 나라 영토 nazi-germany, general-government, bohemia-moravia, slovakia, italy, albania, denmark, norway, netherlands, belgium, france + 휴전 경계선 북·서쪽의 독일 점령 지구 + 비시 프랑스령 모로코·알제리 + 비시 프랑스령 튀니지 (1942-11부터 추축군) + 비시 프랑스 위임 통치령 시리아·레바논 + 이탈리아령 리비아
-          - { faction: axis, geojson: ww2-europe/1940-06-22-axis.geojson }
+          - { faction: axis, geojson: world-war-2/europe/1940-06-22-axis.geojson }
           # 소련: 소련 (발트 3국 포함, 베사라비아 제외)
-          - { faction: soviet, geojson: ww2-europe/1940-06-22-soviet.geojson }
+          - { faction: soviet, geojson: world-war-2/europe/1940-06-22-soviet.geojson }
         arrows:
           - { faction: axis, path: [[5.04, 47.32], [4.84, 45.76], [5.64, 45.29]], label: 클라이스트 기갑 집단 }
           - { faction: axis, path: [[5.59, 47.45], [6.36, 46.9]], label: 구데리안 (스위스 국경) }
@@ -177,11 +177,11 @@ theaters:
         # 이탈리아군은 이튿날(16일) 시디바라니까지 나아가 멈췄다. 헝가리(11월 20일)·루마니아(11월 23일)는 아직 삼국 동맹에 들기 전이라 칠하지 않는다
         areas:
           # 연합국: 나라 영토 uk + 이집트(영국군 주둔) + 영국 위임 통치령 팔레스타인·트란스요르단
-          - { faction: allies, geojson: ww2-europe/1940-09-15-allies.geojson }
+          - { faction: allies, geojson: world-war-2/europe/1940-09-15-allies.geojson }
           # 추축국: 나라 영토 nazi-germany, general-government, bohemia-moravia, slovakia, italy, albania, denmark, norway, netherlands, belgium, france + 독일 점령 지구 (휴전 경계선 북·서쪽) + 채널 제도 (6월 30일 독일 점령) + 비시 프랑스령 모로코·알제리 + 비시 프랑스령 튀니지 (1942-11부터 추축군) + 비시 프랑스 위임 통치령 시리아·레바논 + 이탈리아령 리비아 + 이탈리아군이 차지한 이집트 해안 띠 (살룸~부크부크)
-          - { faction: axis, geojson: ww2-europe/1940-09-15-axis.geojson }
+          - { faction: axis, geojson: world-war-2/europe/1940-09-15-axis.geojson }
           # 소련: 나라 영토 soviet-union
-          - { faction: soviet, geojson: ww2-europe/1940-09-15-soviet.geojson }
+          - { faction: soviet, geojson: world-war-2/europe/1940-09-15-soviet.geojson }
         arrows:
           - { faction: axis, path: [[2.2, 50.7], [0.8, 51.2], [-0.1, 51.5]], label: 독일 공군의 런던 공습 }
           - { faction: axis, path: [[25.03, 31.6], [25.58, 31.58], [25.93, 31.62]], label: 이탈리아 제10군 (시디바라니) }
@@ -192,11 +192,11 @@ theaters:
         # 소련은 1941년 6월 22일 국경(저장소 1940년 영토). 핀란드는 25일 참전했으나 독일군이 머물던 동맹국이라 추축국에 넣는다
         areas:
           # 연합국: 나라 영토 uk + 이집트(영국군 주둔) + 영국 위임 통치령 팔레스타인·트란스요르단 + 이라크 (1941년 5월부터 영국군 점령) + 토브루크 요새 (포위된 연합군) + 연합군이 차지한 시리아·레바논 남부 (6월 21일 다마스쿠스)
-          - { faction: allies, geojson: ww2-europe/1941-06-22-allies.geojson }
+          - { faction: allies, geojson: world-war-2/europe/1941-06-22-allies.geojson }
           # 추축국: 나라 영토 nazi-germany, general-government, bohemia-moravia, slovakia, italy, albania, denmark, norway, netherlands, belgium, hungary, romania, bulgaria, croatia-ndh, serbia-occupied, montenegro-occupied, greece, finland, france + 독일 점령 지구 + 채널 제도 + 비시 프랑스령 모로코·알제리 + 비시 프랑스령 튀니지 (1942-11부터 추축군) + 비시 프랑스 위임 통치령 시리아·레바논 + 이탈리아령 리비아 + 추축군이 쥔 살룸·할파야 고개
-          - { faction: axis, geojson: ww2-europe/1941-06-22-axis.geojson }
+          - { faction: axis, geojson: world-war-2/europe/1941-06-22-axis.geojson }
           # 소련: 소련 (6월 22일 국경)
-          - { faction: soviet, geojson: ww2-europe/1941-06-22-soviet.geojson }
+          - { faction: soviet, geojson: world-war-2/europe/1941-06-22-soviet.geojson }
         arrows:
           - { faction: axis, path: [[21.6, 55.1], [24, 56.6], [27.5, 58.2], [30, 59.6]], label: 북부 집단군 (레닌그라드) }
           - { faction: axis, path: [[23.6, 52.6], [27.5, 53.9], [32, 54.8], [37, 55.7]], label: 중부 집단군 (모스크바) }
@@ -209,11 +209,11 @@ theaters:
         # 레닌그라드·오라니엔바움·세바스토폴은 에워싸인 소련군 지역. 툴라는 세 면이 포위된 채 소련군이 지켰다
         areas:
           # 연합국: 나라 영토 uk + 시리아·레바논 + 이집트(영국군 주둔) + 영국 위임 통치령 팔레스타인·트란스요르단 + 이라크 (1941년 5월부터 영국군 점령) + 이란 남서부 영국 점령 구역 + 크루세이더 작전으로 영국군이 되찾은 키레나이카 동부
-          - { faction: allies, geojson: ww2-europe/1941-12-05-allies.geojson }
+          - { faction: allies, geojson: world-war-2/europe/1941-12-05-allies.geojson }
           # 추축국: 나라 영토 nazi-germany, general-government, bohemia-moravia, slovakia, italy, albania, denmark, norway, netherlands, belgium, hungary, romania, bulgaria, croatia-ndh, serbia-occupied, montenegro-occupied, greece, finland, france + 독일 점령 지구 + 채널 제도 + 동부 전선의 독일 쪽 (라도가호 → 타간로크만) + 핀란드·독일군이 쥔 카렐리야와 리차강 서쪽 (1941-12 ~ 1944-06 고정) + 비시 프랑스령 모로코·알제리 + 비시 프랑스령 튀니지 (1942-11부터 추축군) + 이탈리아령 리비아 + 바르디아의 추축군 거점 (1942년 1월 2일 항복) + 살룸·할파야의 추축군 거점 (1942년 1월 항복)
-          - { faction: axis, geojson: ww2-europe/1941-12-05-axis.geojson }
+          - { faction: axis, geojson: world-war-2/europe/1941-12-05-axis.geojson }
           # 소련: 나라 영토 soviet-union, soviet-occupied, karelia-occupied + 포위된 레닌그라드 + 세 면이 포위된 채 소련군이 지킨 툴라 + 오라니엔바움 교두보 + 포위된 세바스토폴 + 이란 북부 소련 점령 구역
-          - { faction: soviet, geojson: ww2-europe/1941-12-05-soviet.geojson }
+          - { faction: soviet, geojson: world-war-2/europe/1941-12-05-soviet.geojson }
         arrows:
           - { faction: soviet, path: [[36.05, 56.75], [35.92, 56.86]], label: 칼리닌 전선군 반격 }
           - { faction: soviet, path: [[37.48, 56.28], [36.73, 56.33], [35.96, 56.03]], label: 클린-솔네치노고르스크 작전 }
@@ -229,11 +229,11 @@ theaters:
         # 스탈린그라드 시내는 볼가강 가의 소련 제62군 띠만 남았다. 칼미크 초원과 캅카스 고개 지대는 이어진 전선이 아니라 거점이 흩어진 곳이라 어림(±20~30km)
         areas:
           # 연합국: 나라 영토 uk + 프랑스령 모로코·알제리 + 시리아·레바논 + 이집트(영국군 주둔) + 영국 위임 통치령 팔레스타인·트란스요르단 + 이라크 (1941년 5월부터 영국군 점령) + 이란 남서부 영국 점령 구역 + 영국 제8군이 되찾은 키레나이카 (벵가지 동쪽까지) + 연합군·자유 프랑스군이 쥔 튀니지 서부 (제벨아비오드·메제즈엘바브 앞·르케프·가프사, 동쪽 해안과 튀니스·비제르트는 추축군)
-          - { faction: allies, geojson: ww2-europe/1942-11-19-allies.geojson }
+          - { faction: allies, geojson: world-war-2/europe/1942-11-19-allies.geojson }
           # 추축국: 나라 영토 nazi-germany, general-government, bohemia-moravia, slovakia, italy, albania, denmark, norway, netherlands, belgium, hungary, romania, bulgaria, croatia-ndh, serbia-occupied, montenegro-occupied, greece, finland, france, france-occupied, france-italian-occupied + 동부 전선의 독일 쪽 (라도가호 → 스탈린그라드 → 캅카스) + 핀란드·독일군이 쥔 카렐리야와 리차강 서쪽 (1941-12 ~ 1944-06 고정) + 채널 제도 + 비시 프랑스령 튀니지 (1942-11부터 추축군) + 이탈리아령 리비아
-          - { faction: axis, geojson: ww2-europe/1942-11-19-axis.geojson }
+          - { faction: axis, geojson: world-war-2/europe/1942-11-19-axis.geojson }
           # 소련: 나라 영토 soviet-union, soviet-occupied, karelia-occupied + 포위된 레닌그라드 + 오라니엔바움 교두보 + 스탈린그라드 시내의 소련군 (제62군·고로호프 집단) + 이란 북부 소련 점령 구역
-          - { faction: soviet, geojson: ww2-europe/1942-11-19-soviet.geojson }
+          - { faction: soviet, geojson: world-war-2/europe/1942-11-19-soviet.geojson }
         arrows:
           - { faction: soviet, path: [[42.73, 49.58], [42.48, 49.15], [43.53, 48.68]], label: 천왕성 작전 (북쪽) }
           - { faction: soviet, path: [[43.06, 49.31], [43.1, 48.95], [43.5, 48.7]], label: 제21·65군 }
@@ -247,11 +247,11 @@ theaters:
         # 레닌그라드는 1월 이스크라 작전으로 라도가호 남쪽에 좁은 육로가 열려 포위 지역이 아니다(남쪽 포위선은 그대로). 시칠리아 교두보는 대략 ±10km
         areas:
           # 연합국: 나라 영토 uk + 판텔레리아(6월 11일 항복)·람페두사(6월 12일) + 시칠리아 연합군 교두보 (7월 12일 무렵) + 프랑스령 모로코·알제리 + 프랑스령 튀니지 + 시리아·레바논 + 리비아 (영국·자유 프랑스 군정) + 이집트(영국군 주둔) + 영국 위임 통치령 팔레스타인·트란스요르단 + 이라크 (1941년 5월부터 영국군 점령) + 이란 남서부 영국 점령 구역
-          - { faction: allies, geojson: ww2-europe/1943-07-12-allies.geojson }
+          - { faction: allies, geojson: world-war-2/europe/1943-07-12-allies.geojson }
           # 추축국: 나라 영토 nazi-germany, general-government, bohemia-moravia, slovakia, italy, albania, denmark, norway, netherlands, belgium, hungary, romania, bulgaria, croatia-ndh, serbia-occupied, montenegro-occupied, greece, finland, france, france-occupied + 이탈리아 (1941~1943년 영토, 1943년 영토가 휴전 뒤 모양이라 덮음) + 동부 전선의 독일 쪽 (핀란드만 → 쿠르스크 → 미우스강) + 핀란드·독일군이 쥔 카렐리야와 리차강 서쪽 (1941-12 ~ 1944-06 고정) + 쿠반 교두보 (푸른 선) + 채널 제도
-          - { faction: axis, geojson: ww2-europe/1943-07-12-axis.geojson }
+          - { faction: axis, geojson: world-war-2/europe/1943-07-12-axis.geojson }
           # 소련: 나라 영토 soviet-union, soviet-occupied, karelia-occupied + 오라니엔바움 교두보 + 말라야 제믈랴 (노보로시스크 남쪽 소련 교두보) + 이란 북부 소련 점령 구역
-          - { faction: soviet, geojson: ww2-europe/1943-07-12-soviet.geojson }
+          - { faction: soviet, geojson: world-war-2/europe/1943-07-12-soviet.geojson }
         arrows:
           - { faction: soviet, path: [[36.73, 51.03], [36.66, 51.02], [36.62, 50.99]], label: 제5 근위 전차군 (프로호로프카) }
           - { faction: axis, path: [[36.79, 50.7], [36.83, 50.87], [36.8, 50.95]], label: 독일 제3 기갑 군단 }
@@ -265,11 +265,11 @@ theaters:
         # 연합군은 시칠리아 전체(8월 17일)와 칼라브리아 남부(9월 3일 상륙)를 쥐었다. 이탈리아 본토와 점령지는 아직 독일·이탈리아군 쪽으로 칠한다
         areas:
           # 연합국: 나라 영토 uk + 판텔레리아(6월 11일 항복)·람페두사(6월 12일) + 연합군이 차지한 시칠리아와 칼라브리아 남부 + 프랑스령 모로코·알제리 + 프랑스령 튀니지 + 시리아·레바논 + 리비아 (영국·자유 프랑스 군정) + 이집트(영국군 주둔) + 영국 위임 통치령 팔레스타인·트란스요르단 + 이라크 (1941년 5월부터 영국군 점령) + 이란 남서부 영국 점령 구역
-          - { faction: allies, geojson: ww2-europe/1943-09-08-allies.geojson }
+          - { faction: allies, geojson: world-war-2/europe/1943-09-08-allies.geojson }
           # 추축국: 나라 영토 nazi-germany, general-government, bohemia-moravia, slovakia, italy, albania, denmark, norway, netherlands, belgium, hungary, romania, bulgaria, croatia-ndh, serbia-occupied, montenegro-occupied, greece, finland, france, france-occupied + 이탈리아 (1941~1943년 영토, 1943년 영토가 휴전 뒤 모양이라 덮음) + 동부 전선의 독일 쪽 (스몰렌스크 앞 → 돈바스) + 핀란드·독일군이 쥔 카렐리야와 리차강 서쪽 (1941-12 ~ 1944-06 고정) + 쿠반 교두보 (푸른 선) + 채널 제도
-          - { faction: axis, geojson: ww2-europe/1943-09-08-axis.geojson }
+          - { faction: axis, geojson: world-war-2/europe/1943-09-08-axis.geojson }
           # 소련: 나라 영토 soviet-union, soviet-occupied, karelia-occupied + 오라니엔바움 교두보 + 말라야 제믈랴 + 이란 북부 소련 점령 구역
-          - { faction: soviet, geojson: ww2-europe/1943-09-08-soviet.geojson }
+          - { faction: soviet, geojson: world-war-2/europe/1943-09-08-soviet.geojson }
         arrows:
           - { faction: allies, path: [[15.55, 38.19], [15.65, 38.11], [16.1, 38.6]], label: 베이타운 작전 (칼라브리아) }
           - { faction: allies, path: [[14.5, 39.9], [15, 40.45]], label: 살레르노 상륙 (9월 9일) }
@@ -283,11 +283,11 @@ theaters:
         # 노르망디는 그날 해 질 무렵의 교두보. 핀란드 쪽은 1941~1944년 고정된 전선(저장소의 핀란드 점령 동카렐리야 항목)
         areas:
           # 연합국: 나라 영토 uk + 이탈리아 남부와 사르데냐·코르시카 (로마 해방 6월 4일) + 노르망디 교두보 (6월 6일 해 질 무렵) + 프랑스령 모로코·알제리 + 프랑스령 튀니지 + 시리아·레바논 + 리비아 (영국·자유 프랑스 군정) + 이집트(영국군 주둔) + 영국 위임 통치령 팔레스타인·트란스요르단 + 이라크 (1941년 5월부터 영국군 점령) + 이란 남서부 영국 점령 구역
-          - { faction: allies, geojson: ww2-europe/1944-06-06-allies.geojson }
+          - { faction: allies, geojson: world-war-2/europe/1944-06-06-allies.geojson }
           # 추축국: 나라 영토 nazi-germany, general-government, poland, bohemia-moravia, slovakia, hungary, romania, bulgaria, croatia-ndh, yugoslavia, greece, albania, italy, italy-occupied, france, denmark, norway, netherlands, belgium, luxembourg + 동부 전선의 독일 쪽 (나르바 → 드네스트르 리만) + 핀란드·독일군이 쥔 카렐리야와 리차강 서쪽 (1941-12 ~ 1944-06 고정) + 채널 제도
-          - { faction: axis, geojson: ww2-europe/1944-06-06-axis.geojson }
+          - { faction: axis, geojson: world-war-2/europe/1944-06-06-axis.geojson }
           # 소련: 나라 영토 soviet-union, soviet-occupied + 동부 전선의 소련 쪽 (루마니아 북동부 포함) + 이란 북부 소련 점령 구역
-          - { faction: soviet, geojson: ww2-europe/1944-06-06-soviet.geojson }
+          - { faction: soviet, geojson: world-war-2/europe/1944-06-06-soviet.geojson }
         arrows:
           - { faction: allies, path: [[-1, 50.4], [-0.9, 49.75], [-0.75, 49.4]], label: 오버로드 작전 (상륙) }
           - { faction: allies, path: [[-1.6, 49.9], [-1.25, 49.45]], label: 유타 해안 (미군) }
@@ -300,11 +300,11 @@ theaters:
         # 루마니아는 23일 편을 바꾸어 소련 진영으로 칠한다. 바르샤바에서는 8월 1일부터 국내군이 봉기 중
         areas:
           # 연합국: 나라 영토 uk + 연합군이 해방한 프랑스 북서부 (센강·루아르강 선) + 드라군 작전으로 해방한 남프랑스 + 이탈리아 남·중부 (아르노강 선) + 프랑스령 모로코·알제리 + 프랑스령 튀니지 + 시리아·레바논 + 리비아 (영국·자유 프랑스 군정) + 이집트(영국군 주둔) + 영국 위임 통치령 팔레스타인·트란스요르단 + 이라크 (1941년 5월부터 영국군 점령) + 이란 남서부 영국 점령 구역
-          - { faction: allies, geojson: ww2-europe/1944-08-25-allies.geojson }
+          - { faction: allies, geojson: world-war-2/europe/1944-08-25-allies.geojson }
           # 추축국: 나라 영토 nazi-germany, general-government, poland, bohemia-moravia, slovakia, hungary, bulgaria, croatia-ndh, yugoslavia, greece, albania, italy, italy-occupied, france, denmark, norway, netherlands, belgium, luxembourg + 동부 전선의 독일 쪽 (시니메 → 카르파티아) + 헝가리가 쥔 북트란실바니아 (1940년 2차 빈 중재) + 핀란드군이 쥔 지역 (비보르크 공세 뒤의 선) + 브레스트 독일군 거점 + 로리앙 독일군 거점 + 생나제르 독일군 거점 + 채널 제도
-          - { faction: axis, geojson: ww2-europe/1944-08-25-axis.geojson }
+          - { faction: axis, geojson: world-war-2/europe/1944-08-25-axis.geojson }
           # 소련: 나라 영토 soviet-union, soviet-occupied + 동부 전선의 소련 쪽 + 편을 바꾼 루마니아 (8월 23일) + 이란 북부 소련 점령 구역
-          - { faction: soviet, geojson: ww2-europe/1944-08-25-soviet.geojson }
+          - { faction: soviet, geojson: world-war-2/europe/1944-08-25-soviet.geojson }
         arrows:
           - { faction: allies, path: [[2.4, 48.6], [3.3, 48.3], [4.08, 48.3], [4.58, 48.73]], label: 패튼의 미 제3군 }
           - { faction: allies, path: [[1.48, 49.09], [1.9, 49.5], [2.3, 49.89]], label: 영국·캐나다군 센강 도하 }
@@ -320,11 +320,11 @@ theaters:
         # 유고슬라비아는 파르티잔이 해방한 지역을 연합국, 크로아티아 독립국과 독일군 지역을 추축국으로 칠한다(보스니아의 경계는 대략)
         areas:
           # 연합국: 나라 영토 uk, france, belgium, luxembourg, italy, greece, albania, yugoslavia + 파르티잔이 해방한 달마티아 해안 (스플리트 10월 26일, 크닌 12월 4일) + 서부 전선의 연합군 쪽 (북해 → 스위스) + 파르티잔이 해방한 유고슬라비아 (스렘 동부·보이보디나 포함) + 이탈리아 남·중부 (고딕 선 겨울 선) + 프랑스령 모로코·알제리 + 프랑스령 튀니지 + 시리아·레바논 + 리비아 (영국·자유 프랑스 군정) + 이집트(영국군 주둔) + 영국 위임 통치령 팔레스타인·트란스요르단 + 이라크 (1941년 5월부터 영국군 점령) + 이란 남서부 영국 점령 구역
-          - { faction: allies, geojson: ww2-europe/1944-12-16-allies.geojson }
+          - { faction: allies, geojson: world-war-2/europe/1944-12-16-allies.geojson }
           # 추축국: 나라 영토 nazi-germany, general-government, poland, bohemia-moravia, slovakia, hungary, croatia-ndh, italy-occupied, denmark, norway, netherlands + 콜마르 포위지 (독일군) + 됭케르크 독일군 거점 + 로리앙 독일군 거점 + 생나제르 독일군 거점 + 라로셸·레섬 독일군 거점 + 루아양·푸앵트드그라브 독일군 거점 + 채널 제도 + 쿠를란트 포위지 + 메멜 교두보 + 크레타 서부 하니아 일대 독일군 (1945년 5월 항복) + 도데카네스 제도 독일군 (1945년 5월 항복)
-          - { faction: axis, geojson: ww2-europe/1944-12-16-axis.geojson }
+          - { faction: axis, geojson: world-war-2/europe/1944-12-16-axis.geojson }
           # 소련: 나라 영토 soviet-union, soviet-occupied, romania, bulgaria + 동부 전선의 소련 쪽 (쿠르스키 석호 → 사바강) + 소련군이 해방한 동핀마르크 (1944년 10월 키르케네스) + 이란 북부 소련 점령 구역
-          - { faction: soviet, geojson: ww2-europe/1944-12-16-soviet.geojson }
+          - { faction: soviet, geojson: world-war-2/europe/1944-12-16-soviet.geojson }
         arrows:
           - { faction: axis, path: [[6.34, 50.4], [6.03, 50.43], [5.57, 50.63]], label: 독일 제6 친위 기갑군 }
           - { faction: axis, path: [[6.13, 50.05], [5.72, 50], [4.91, 50.26]], label: 독일 제5 기갑군 (뫼즈강) }
@@ -337,11 +337,11 @@ theaters:
         # 1945년 지도에는 나치 독일 항목이 없어(독일 점령 지구로 바뀜) 1944년의 독일·위성국 영토를 추축국 본토로 깐다. 부다는 2월 13일까지 포위된 채 버텼다
         areas:
           # 연합국: 나라 영토 uk, france, belgium, luxembourg, italy, greece, albania, yugoslavia + 서부 전선의 연합군 쪽 (벌지 해소 뒤) + 파르티잔이 해방한 유고슬라비아 (스렘 동부·보이보디나 포함) + 파르티잔이 해방한 달마티아 해안 (스플리트 10월 26일, 크닌 12월 4일) + 이탈리아 남·중부 (겨울 선) + 프랑스령 모로코·알제리 + 프랑스령 튀니지 + 시리아·레바논 + 리비아 (영국·자유 프랑스 군정) + 이집트(영국군 주둔) + 영국 위임 통치령 팔레스타인·트란스요르단 + 이라크 (1941년 5월부터 영국군 점령) + 이란 남서부 영국 점령 구역
-          - { faction: allies, geojson: ww2-europe/1945-02-04-allies.geojson }
+          - { faction: allies, geojson: world-war-2/europe/1945-02-04-allies.geojson }
           # 추축국: 독일과 보호령·위성국 (1944년 영토) + 나라 영토 denmark, norway, netherlands + 독일군이 쥔 이탈리아 북부 + 콜마르 포위지 잔여 (2월 9일 소멸) + 됭케르크 독일군 거점 + 로리앙 독일군 거점 + 생나제르 독일군 거점 + 라로셸·레섬 독일군 거점 + 루아양·푸앵트드그라브 독일군 거점 + 채널 제도 + 크로아티아 독립국·독일군 지역 + 독일·이탈리아가 병합했던 슬로베니아 (1945년 5월까지 독일군) + 쿠를란트 포위지 + 잠란트 (필라우) + 쾨니히스베르크 + 하일리겐바일 포위지 (독일 제4군) + 부다 (2월 13일 함락) + 포즈난 요새 (1월 24일~2월 23일 포위) + 슈나이데뮐 요새 (2월 14일 함락) + 퀴스트린 요새 (3월 30일 함락) + 그라우덴츠 요새 (3월 6일 함락) + 글로가우 요새 (4월 1일 함락) + 크레타 서부 하니아 일대 독일군 (1945년 5월 항복) + 도데카네스 제도 독일군 (1945년 5월 항복)
-          - { faction: axis, geojson: ww2-europe/1945-02-04-axis.geojson }
+          - { faction: axis, geojson: world-war-2/europe/1945-02-04-axis.geojson }
           # 소련: 나라 영토 soviet-union, romania, bulgaria + 동부 전선의 소련 쪽 (프리셰스 하프 → 사바강) + 소련군이 해방한 동핀마르크 (1944년 10월 키르케네스) + 이란 북부 소련 점령 구역
-          - { faction: soviet, geojson: ww2-europe/1945-02-04-soviet.geojson }
+          - { faction: soviet, geojson: world-war-2/europe/1945-02-04-soviet.geojson }
         arrows:
           - { faction: soviet, path: [[21.37, 51.78], [19.46, 51.76], [16.93, 52.41], [14.44, 52.67]], label: 제1 벨라루스 전선군 (오데르강) }
           - { faction: soviet, path: [[21.5, 50.55], [20.63, 50.87], [19.12, 50.81], [16.42, 51.4]], label: 제1 우크라이나 전선군 }
@@ -355,11 +355,11 @@ theaters:
         # 베를린·할베·브레슬라우와 쿠를란트·헬반도·비스와강 삼각주, 대서양 거점은 독일군이 쥔 포위지. 홀란트(네덜란드 서부)도 독일군
         areas:
           # 연합국: 나라 영토 uk, france, belgium, luxembourg, italy, greece, albania, yugoslavia + 파르티잔이 해방한 유고슬라비아 + 서방 연합군 진출선의 서쪽 + 연합군·파르티잔이 해방한 이탈리아 (포강 북쪽까지) + 프랑스령 모로코·알제리 + 프랑스령 튀니지 + 시리아·레바논 + 리비아 (영국·자유 프랑스 군정) + 이집트(영국군 주둔) + 영국 위임 통치령 팔레스타인·트란스요르단 + 이라크 (1941년 5월부터 영국군 점령) + 이란 남서부 영국 점령 구역
-          - { faction: allies, geojson: ww2-europe/1945-04-25-allies.geojson }
+          - { faction: allies, geojson: world-war-2/europe/1945-04-25-allies.geojson }
           # 추축국: 독일과 보호령·위성국 (1944년 영토) + 나라 영토 denmark, norway, netherlands + 독일군이 쥔 이탈리아 북부 + 홀란트 요새 (독일군) + 베를린 (포위된 독일군) + 할베 포위지 (독일 제9군) + 브레슬라우 요새 + 쿠를란트 포위지 + 헬반도 + 비스와강 삼각주·프리셰 네룽 + 됭케르크 독일군 거점 + 로리앙 독일군 거점 + 생나제르 독일군 거점 + 라로셸·레섬 독일군 거점 + 채널 제도 + 독일군·크로아티아군이 아직 쥔 유고슬라비아 북서부 + 크레타 서부 하니아 일대 독일군 (1945년 5월 항복) + 도데카네스 제도 독일군 (1945년 5월 항복)
-          - { faction: axis, geojson: ww2-europe/1945-04-25-axis.geojson }
+          - { faction: axis, geojson: world-war-2/europe/1945-04-25-axis.geojson }
           # 소련: 나라 영토 soviet-union, romania, bulgaria + 동부 전선의 소련 쪽 (슈비네뮌데 → 슬라보니아) + 소련군이 해방한 동핀마르크 (1944년 10월 키르케네스) + 이란 북부 소련 점령 구역
-          - { faction: soviet, geojson: ww2-europe/1945-04-25-soviet.geojson }
+          - { faction: soviet, geojson: world-war-2/europe/1945-04-25-soviet.geojson }
         arrows:
           - { faction: soviet, path: [[14.38, 52.53], [13.9, 52.52], [13.4, 52.52]], label: 제1 벨라루스 전선군 (베를린) }
           - { faction: soviet, path: [[14.65, 51.74], [13.45, 52.22], [12.85, 52.48]], label: 제1 우크라이나 전선군 }
@@ -375,11 +375,11 @@ theaters:
         # 보헤미아의 미군 정지선(카를로비바리~플젠~체스케부데요비체)은 합의된 선으로, 그 동쪽은 소련군이 닿기 전이었다(프라하는 5월 9일)
         areas:
           # 연합국: 나라 영토 uk, france, belgium, luxembourg, netherlands, denmark, italy, greece, albania, yugoslavia + 서방 연합군이 차지한 지역 (소련군과의 접촉선 서쪽) + 이탈리아 (4월 29일 카세르타 항복, 5월 2일 발효) + 프랑스령 모로코·알제리 + 프랑스령 튀니지 + 시리아·레바논 + 리비아 (영국·자유 프랑스 군정) + 이집트(영국군 주둔) + 영국 위임 통치령 팔레스타인·트란스요르단 + 이라크 (1941년 5월부터 영국군 점령) + 이란 남서부 영국 점령 구역
-          - { faction: allies, geojson: ww2-europe/1945-05-08-allies.geojson }
+          - { faction: allies, geojson: world-war-2/europe/1945-05-08-allies.geojson }
           # 추축국: 독일과 보호령·위성국 (1944년 영토) + 나라 영토 norway + 독일군·크로아티아군이 아직 쥔 유고슬라비아 북서부 + 쿠를란트 포위지 (5월 10일 항복) + 헬반도 + 비스와강 삼각주·프리셰 네룽 + 보른홀름섬 (5월 9일 소련군 상륙) + 됭케르크 독일군 거점 + 로리앙 독일군 거점 + 생나제르 독일군 거점 + 라로셸·레섬 독일군 거점 + 채널 제도 (5월 9일 해방) + 크레타 서부 하니아 일대 독일군 (1945년 5월 항복) + 도데카네스 제도 독일군 (1945년 5월 항복)
-          - { faction: axis, geojson: ww2-europe/1945-05-08-axis.geojson }
+          - { faction: axis, geojson: world-war-2/europe/1945-05-08-axis.geojson }
           # 소련: 나라 영토 soviet-union, romania, bulgaria + 소련군이 차지한 지역 + 소련군이 해방한 동핀마르크 (1944년 10월 키르케네스) + 이란 북부 소련 점령 구역
-          - { faction: soviet, geojson: ww2-europe/1945-05-08-soviet.geojson }
+          - { faction: soviet, geojson: world-war-2/europe/1945-05-08-soviet.geojson }
         arrows:
           - { faction: soviet, path: [[13.74, 51.05], [13.83, 50.64], [14.42, 50.08]], label: 프라하 공세 (5월 9일) }
           - { faction: soviet, path: [[16.37, 48.21], [15.63, 48.2], [14.87, 48.12]], label: 제3 우크라이나 전선군 }
@@ -392,8 +392,8 @@ theaters:
   # 진영은 전쟁 머리의 allies(연합국)·soviet(소련)·japan(일본)·china(중국)를 쓴다. axis(추축국)는 이 전역에 나오지 않는다.
   # 이 전역에 필요한 참전국(전쟁 머리 participants에 W2 것과 합칠 것): japan·manchukuo(japan, 1937-07-07~1945-09-02), roc(china, 1937-07-07~1945-09-02),
   #   usa·uk(allies, 1941-12-08~), soviet-union(soviet, 대일 참전 1945-08-08~), mongolia(soviet, 1945-08-10~).
-  # 칠하는 순서(뒤가 앞을 덮음): 연합국 식민지 바탕(ww2-asia/allied-colonies.geojson, 1941년 12월부터) → 미국 → 중화민국 → 소련 → 일본·조선·만주국·중국 점령지
-  #   → 그날의 일본 점령 지역(ww2-asia/<날짜>-japan) → 아직 함락되지 않은 중국 땅(<날짜>-china) → 연합군이 되찾은 섬 등(<날짜>-allies) → 소련 점령지(<날짜>-soviet).
+  # 칠하는 순서(뒤가 앞을 덮음): 연합국 식민지 바탕(world-war-2/asia-pacific/allied-colonies.geojson, 1941년 12월부터) → 미국 → 중화민국 → 소련 → 일본·조선·만주국·중국 점령지
+  #   → 그날의 일본 점령 지역(world-war-2/asia-pacific/<날짜>-japan) → 아직 함락되지 않은 중국 땅(<날짜>-china) → 연합군이 되찾은 섬 등(<날짜>-allies) → 소련 점령지(<날짜>-soviet).
   # 동남아시아·태평양은 이 시기 나라 영토가 지도에 없어서 연합국 식민지·자치령(영국령 인도·버마·말라야, 네덜란드령 동인도, 미국령 필리핀, 오스트레일리아 등)을
   #   geojson으로 연합국 색으로 칠한다. 중립국 타이(1941.12.21 일본과 동맹 뒤로는 일본 진영)·포르투갈령 티모르·마카오·네팔·부탄은 칠하지 않는다.
   # 중국 점령지는 해마다 그해 말(1945년은 8월) 범위인 occupied-china 항목을 쓰고, 스냅샷 날짜와 다른 곳만 geojson으로 손본다.
@@ -444,7 +444,7 @@ theaters:
           - { faction: china, entities: [roc, occupied-china] }
           - { faction: soviet, entities: [soviet-union] }
           - { faction: japan, entities: [japan, occupied-korea, manchukuo] }
-          - { faction: japan, geojson: ww2-asia/1937-07-07-japan.geojson }
+          - { faction: japan, geojson: world-war-2/asia-pacific/1937-07-07-japan.geojson }
         arrows:
           - { faction: japan, path: [[117.2, 39.12], [116.7, 39.6], [116.3, 39.85]], label: 베이핑·톈진 공격 }
           - { faction: japan, path: [[122.5, 33.0], [121.5, 31.3]], label: 상하이 (8월) }
@@ -456,9 +456,9 @@ theaters:
           - { faction: china, entities: [roc] }
           - { faction: soviet, entities: [soviet-union] }
           - { faction: japan, entities: [japan, occupied-korea, manchukuo, occupied-china] }
-          - { faction: japan, geojson: ww2-asia/mengjiang.geojson }
-          - { faction: japan, geojson: ww2-asia/1937-12-13-japan.geojson }
-          - { faction: china, geojson: ww2-asia/1937-12-13-china.geojson }
+          - { faction: japan, geojson: world-war-2/asia-pacific/mengjiang.geojson }
+          - { faction: japan, geojson: world-war-2/asia-pacific/1937-12-13-japan.geojson }
+          - { faction: china, geojson: world-war-2/asia-pacific/1937-12-13-china.geojson }
         arrows:
           - { faction: japan, path: [[121.4, 31.3], [120.3, 31.55], [119.4, 31.85], [118.85, 32.03]], label: 난징 공격 }
           - { faction: japan, path: [[116.4, 39.75], [115.45, 38.85], [114.5, 38.05], [114.35, 36.1]], label: 핑한 철도 }
@@ -472,10 +472,10 @@ theaters:
           - { faction: china, entities: [roc] }
           - { faction: soviet, entities: [soviet-union] }
           - { faction: japan, entities: [japan, occupied-korea, manchukuo, occupied-china] }
-          - { faction: japan, geojson: ww2-asia/mengjiang.geojson }
-          - { faction: japan, geojson: ww2-asia/1938-10-27-japan.geojson }
-          - { faction: china, geojson: ww2-asia/pearl-delta-revert.geojson }
-          - { faction: china, geojson: ww2-asia/1938-10-27-china.geojson }
+          - { faction: japan, geojson: world-war-2/asia-pacific/mengjiang.geojson }
+          - { faction: japan, geojson: world-war-2/asia-pacific/1938-10-27-japan.geojson }
+          - { faction: china, geojson: world-war-2/asia-pacific/pearl-delta-revert.geojson }
+          - { faction: china, geojson: world-war-2/asia-pacific/1938-10-27-china.geojson }
         arrows:
           - { faction: japan, path: [[117.0, 36.6], [117.1, 35.3], [117.2, 34.3]], label: 쉬저우 (5월) }
           - { faction: japan, path: [[118.8, 32.0], [117.05, 30.5], [116.0, 29.72], [114.4, 30.6]], label: 우한 공략 }
@@ -487,15 +487,15 @@ theaters:
         title: 태평양 전쟁 발발
         summary: 중일 전쟁이 길어지자 일본은 1941년 4월 소련과 중립 조약을 맺어 북쪽을 안정시키고, 자원을 얻으려 프랑스령 인도차이나에 진주했습니다(1940~1941). 미국은 석유 수출 금지로 맞섰습니다. 일본은 12월 8일(하와이 시각 7일) 진주만의 미국 태평양 함대를 기습하고 말레이반도·필리핀·홍콩을 공격해 태평양 전쟁을 일으켰습니다. 지도에서 영국·미국·네덜란드 등의 식민지는 연합국 색으로 칠했습니다.
         areas:
-          - { faction: allies, geojson: ww2-asia/allied-colonies.geojson }
+          - { faction: allies, geojson: world-war-2/asia-pacific/allied-colonies.geojson }
           - { faction: allies, entities: [usa] }
           - { faction: china, entities: [roc] }
           - { faction: soviet, entities: [soviet-union] }
           - { faction: japan, entities: [japan, occupied-korea, manchukuo, occupied-china] }
-          - { faction: japan, geojson: ww2-asia/mengjiang.geojson }
-          - { faction: japan, geojson: ww2-asia/1941-12-08-japan.geojson }
-          - { faction: china, geojson: ww2-asia/pearl-delta-revert.geojson }
-          - { faction: allies, geojson: ww2-asia/1941-12-08-allies.geojson }
+          - { faction: japan, geojson: world-war-2/asia-pacific/mengjiang.geojson }
+          - { faction: japan, geojson: world-war-2/asia-pacific/1941-12-08-japan.geojson }
+          - { faction: china, geojson: world-war-2/asia-pacific/pearl-delta-revert.geojson }
+          - { faction: allies, geojson: world-war-2/asia-pacific/1941-12-08-allies.geojson }
         arrows:
           - { faction: japan, path: [[147.6, 45.0], [170.0, 38.0], [-158.0, 21.4]], label: 진주만 }
           - { faction: japan, path: [[106.5, 9.5], [102.4, 6.2]], label: 말레이 상륙 }
@@ -509,14 +509,14 @@ theaters:
         title: 미드웨이 해전
         summary: 일본은 반년 만에 필리핀·말레이반도·싱가포르·네덜란드령 동인도·버마(미얀마)를 차지하고 '대동아 공영권'을 내세웠습니다. 그러나 6월 4~7일 미드웨이 해전에서 항공 모함 4척을 잃으면서 태평양의 주도권이 미국으로 넘어가기 시작했습니다. 같은 때 일본군은 알류샨 열도의 애투·키스카섬을 차지했습니다.
         areas:
-          - { faction: allies, geojson: ww2-asia/allied-colonies.geojson }
+          - { faction: allies, geojson: world-war-2/asia-pacific/allied-colonies.geojson }
           - { faction: allies, entities: [usa] }
           - { faction: china, entities: [roc] }
           - { faction: soviet, entities: [soviet-union] }
           - { faction: japan, entities: [japan, occupied-korea, manchukuo, occupied-china] }
-          - { faction: japan, geojson: ww2-asia/mengjiang.geojson }
-          - { faction: japan, geojson: ww2-asia/1942-06-07-japan.geojson }
-          - { faction: china, geojson: ww2-asia/pearl-delta-revert.geojson }
+          - { faction: japan, geojson: world-war-2/asia-pacific/mengjiang.geojson }
+          - { faction: japan, geojson: world-war-2/asia-pacific/1942-06-07-japan.geojson }
+          - { faction: china, geojson: world-war-2/asia-pacific/pearl-delta-revert.geojson }
         arrows:
           - { faction: japan, path: [[136.0, 33.0], [160.0, 31.0], [-177.4, 28.4]], label: 미드웨이 공격 }
           - { faction: japan, path: [[147.0, 44.0], [165.0, 49.5], [173.2, 52.8]], label: 알류샨 }
@@ -532,14 +532,14 @@ theaters:
         title: 카이로 회담
         summary: 연합군은 과달카날 전투(1942.8~1943.2)에서 이긴 뒤 솔로몬 제도와 뉴기니를 따라 북쪽으로 나아갔고, 11월 20~23일 길버트 제도의 타라와·마킨을 차지했습니다. 11월 22일부터 카이로에서 미국·영국·중국 정상이 만나 일본이 빼앗은 땅을 돌려받고 한국을 적당한 시기에 독립시키기로 했습니다.
         areas:
-          - { faction: allies, geojson: ww2-asia/allied-colonies.geojson }
+          - { faction: allies, geojson: world-war-2/asia-pacific/allied-colonies.geojson }
           - { faction: allies, entities: [usa] }
           - { faction: china, entities: [roc] }
           - { faction: soviet, entities: [soviet-union] }
           - { faction: japan, entities: [japan, occupied-korea, manchukuo, occupied-china] }
-          - { faction: japan, geojson: ww2-asia/mengjiang.geojson }
-          - { faction: japan, geojson: ww2-asia/1943-11-23-japan.geojson }
-          - { faction: china, geojson: ww2-asia/pearl-delta-revert.geojson }
+          - { faction: japan, geojson: world-war-2/asia-pacific/mengjiang.geojson }
+          - { faction: japan, geojson: world-war-2/asia-pacific/1943-11-23-japan.geojson }
+          - { faction: china, geojson: world-war-2/asia-pacific/pearl-delta-revert.geojson }
         arrows:
           - { faction: allies, path: [[160.0, -9.5], [157.3, -8.25], [155.05, -6.3]], label: 솔로몬 북상 }
           - { faction: allies, path: [[147.15, -9.4], [147.0, -6.8], [147.85, -6.6]], label: 뉴기니 (라에·핀슈하펜) }
@@ -556,16 +556,16 @@ theaters:
         title: 사이판 함락
         summary: 미군은 마셜 제도를 거쳐 7월 9일 마리아나 제도의 사이판을 함락했고, 이곳에서 B-29 폭격기로 일본 본토를 폭격할 수 있게 되었습니다. 버마에서는 일본군의 임팔 작전이 실패했고, 중국에서는 일본군이 대륙 타통 작전(이치고 작전)으로 허난과 창사를 차지하고 형양을 에워쌌습니다.
         areas:
-          - { faction: allies, geojson: ww2-asia/allied-colonies.geojson }
+          - { faction: allies, geojson: world-war-2/asia-pacific/allied-colonies.geojson }
           - { faction: allies, entities: [usa] }
           - { faction: china, entities: [roc] }
           - { faction: soviet, entities: [soviet-union] }
           - { faction: japan, entities: [japan, occupied-korea, manchukuo, occupied-china] }
-          - { faction: japan, geojson: ww2-asia/mengjiang.geojson }
-          - { faction: japan, geojson: ww2-asia/1944-07-09-japan.geojson }
-          - { faction: china, geojson: ww2-asia/pearl-delta-revert.geojson }
-          - { faction: china, geojson: ww2-asia/1944-07-09-china.geojson }
-          - { faction: allies, geojson: ww2-asia/1944-07-09-allies.geojson }
+          - { faction: japan, geojson: world-war-2/asia-pacific/mengjiang.geojson }
+          - { faction: japan, geojson: world-war-2/asia-pacific/1944-07-09-japan.geojson }
+          - { faction: china, geojson: world-war-2/asia-pacific/pearl-delta-revert.geojson }
+          - { faction: china, geojson: world-war-2/asia-pacific/1944-07-09-china.geojson }
+          - { faction: allies, geojson: world-war-2/asia-pacific/1944-07-09-allies.geojson }
         arrows:
           - { faction: allies, path: [[167.7, 9.2], [162.3, 11.5], [145.8, 15.2]], label: 마리아나 }
           - { faction: allies, path: [[147.0, -6.0], [145.8, -5.2], [140.7, -2.55], [136.1, -1.0]], label: 뉴기니 북안 }
@@ -588,16 +588,16 @@ theaters:
         title: 레이테만 해전
         summary: 미군은 10월 20일 필리핀 레이테섬에 상륙했고, 23~26일 레이테만 해전에서 일본 해군 주력을 무찔렀습니다. 이 해전에서 일본군은 처음으로 가미카제 특공을 했습니다. 중국에서는 일본군이 광시로 들어가 구이린·류저우를 향해 나아갔습니다.
         areas:
-          - { faction: allies, geojson: ww2-asia/allied-colonies.geojson }
+          - { faction: allies, geojson: world-war-2/asia-pacific/allied-colonies.geojson }
           - { faction: allies, entities: [usa] }
           - { faction: china, entities: [roc] }
           - { faction: soviet, entities: [soviet-union] }
           - { faction: japan, entities: [japan, occupied-korea, manchukuo, occupied-china] }
-          - { faction: japan, geojson: ww2-asia/mengjiang.geojson }
-          - { faction: japan, geojson: ww2-asia/1944-10-25-japan.geojson }
-          - { faction: china, geojson: ww2-asia/pearl-delta-revert.geojson }
-          - { faction: china, geojson: ww2-asia/1944-10-25-china.geojson }
-          - { faction: allies, geojson: ww2-asia/1944-10-25-allies.geojson }
+          - { faction: japan, geojson: world-war-2/asia-pacific/mengjiang.geojson }
+          - { faction: japan, geojson: world-war-2/asia-pacific/1944-10-25-japan.geojson }
+          - { faction: china, geojson: world-war-2/asia-pacific/pearl-delta-revert.geojson }
+          - { faction: china, geojson: world-war-2/asia-pacific/1944-10-25-china.geojson }
+          - { faction: allies, geojson: world-war-2/asia-pacific/1944-10-25-allies.geojson }
         arrows:
           - { faction: allies, path: [[134.5, 7.5], [128.5, 9.5], [125.15, 11.0]], label: 레이테 상륙 }
           - { faction: japan, path: [[114.9, 5.1], [119.5, 11.0], [123.5, 12.6], [125.3, 11.4]], label: 쇼 1호 작전 }
@@ -614,15 +614,15 @@ theaters:
         title: 오키나와 전투
         summary: 미군은 2~3월 마닐라와 이오지마를 차지하고, 4월 1일 오키나와에 상륙해 6월 하순까지 싸웠습니다. 이 전투에서 오키나와 주민 9만여 명이 희생되었습니다. 버마에서는 영국군이 5월 3일 랑군을 되찾았고, 오스트레일리아군은 보르네오에 상륙했습니다.
         areas:
-          - { faction: allies, geojson: ww2-asia/allied-colonies.geojson }
+          - { faction: allies, geojson: world-war-2/asia-pacific/allied-colonies.geojson }
           - { faction: allies, entities: [usa] }
           - { faction: china, entities: [roc] }
           - { faction: soviet, entities: [soviet-union] }
           - { faction: japan, entities: [japan, occupied-korea, manchukuo, occupied-china] }
-          - { faction: japan, geojson: ww2-asia/mengjiang.geojson }
-          - { faction: japan, geojson: ww2-asia/1945-06-23-japan.geojson }
-          - { faction: china, geojson: ww2-asia/pearl-delta-revert.geojson }
-          - { faction: allies, geojson: ww2-asia/1945-06-23-allies.geojson }
+          - { faction: japan, geojson: world-war-2/asia-pacific/mengjiang.geojson }
+          - { faction: japan, geojson: world-war-2/asia-pacific/1945-06-23-japan.geojson }
+          - { faction: china, geojson: world-war-2/asia-pacific/pearl-delta-revert.geojson }
+          - { faction: allies, geojson: world-war-2/asia-pacific/1945-06-23-allies.geojson }
         arrows:
           - { faction: allies, path: [[130.5, 24.0], [128.3, 25.6], [127.75, 26.3]], label: 오키나와 }
           - { faction: allies, path: [[95.86, 20.9], [96.43, 18.94], [96.16, 16.85]], label: 랑군 탈환 }
@@ -638,16 +638,16 @@ theaters:
         title: 일본의 항복 선언
         summary: 미국은 8월 6일 히로시마, 9일 나가사키에 원자 폭탄을 떨어뜨렸고, 소련은 8일 일본에 선전 포고한 뒤 9일 만주와 한반도 북동부로 쳐들어왔습니다. 일본은 15일 포츠담 선언을 받아들여 무조건 항복한다고 발표했고, 한국은 광복을 맞았습니다.
         areas:
-          - { faction: allies, geojson: ww2-asia/allied-colonies.geojson }
+          - { faction: allies, geojson: world-war-2/asia-pacific/allied-colonies.geojson }
           - { faction: allies, entities: [usa] }
           - { faction: china, entities: [roc] }
           - { faction: soviet, entities: [soviet-union] }
           - { faction: japan, entities: [japan, occupied-korea, manchukuo, occupied-china] }
-          - { faction: japan, geojson: ww2-asia/mengjiang.geojson }
-          - { faction: japan, geojson: ww2-asia/1945-08-15-japan.geojson }
-          - { faction: china, geojson: ww2-asia/pearl-delta-revert.geojson }
-          - { faction: allies, geojson: ww2-asia/1945-08-15-allies.geojson }
-          - { faction: soviet, geojson: ww2-asia/1945-08-15-soviet.geojson }
+          - { faction: japan, geojson: world-war-2/asia-pacific/mengjiang.geojson }
+          - { faction: japan, geojson: world-war-2/asia-pacific/1945-08-15-japan.geojson }
+          - { faction: china, geojson: world-war-2/asia-pacific/pearl-delta-revert.geojson }
+          - { faction: allies, geojson: world-war-2/asia-pacific/1945-08-15-allies.geojson }
+          - { faction: soviet, geojson: world-war-2/asia-pacific/1945-08-15-soviet.geojson }
         arrows:
           - { faction: soviet, path: [[115.5, 47.6], [119.5, 46.0], [121.0, 44.6], [122.8, 45.35]], label: 자바이칼 전선군 }
           - { faction: soviet, path: [[131.2, 44.4], [130.4, 44.6], [129.7, 44.58]], label: 제1 극동 전선군 }
@@ -667,18 +667,18 @@ theaters:
         title: 항복 문서 조인
         summary: 9월 2일 도쿄만의 미주리호에서 일본이 항복 문서에 서명해 제2차 세계 대전이 끝났습니다. 소련군은 그사이 만주·남사할린·쿠릴 열도와 북위 38도선 북쪽의 한반도를 차지했습니다. 같은 날 나온 연합군의 일반 명령 제1호에 따라 38도선 남쪽은 미군, 북쪽은 소련군이 일본군의 항복을 받게 되었습니다.
         areas:
-          - { faction: allies, geojson: ww2-asia/allied-colonies.geojson }
+          - { faction: allies, geojson: world-war-2/asia-pacific/allied-colonies.geojson }
           - { faction: allies, entities: [usa] }
           - { faction: china, entities: [roc] }
           - { faction: soviet, entities: [soviet-union] }
           - { faction: japan, entities: [japan, manchukuo, occupied-china] }
-          - { faction: japan, geojson: ww2-asia/mengjiang.geojson }
-          - { faction: japan, geojson: ww2-asia/1945-09-02-japan.geojson }
-          - { faction: japan, geojson: ww2-asia/korea-south.geojson }
-          - { faction: china, geojson: ww2-asia/pearl-delta-revert.geojson }
-          - { faction: allies, geojson: ww2-asia/1945-09-02-allies.geojson }
+          - { faction: japan, geojson: world-war-2/asia-pacific/mengjiang.geojson }
+          - { faction: japan, geojson: world-war-2/asia-pacific/1945-09-02-japan.geojson }
+          - { faction: japan, geojson: world-war-2/asia-pacific/korea-south.geojson }
+          - { faction: china, geojson: world-war-2/asia-pacific/pearl-delta-revert.geojson }
+          - { faction: allies, geojson: world-war-2/asia-pacific/1945-09-02-allies.geojson }
           - { faction: soviet, entities: [manchukuo] }
-          - { faction: soviet, geojson: ww2-asia/1945-09-02-soviet.geojson }
+          - { faction: soviet, geojson: world-war-2/asia-pacific/1945-09-02-soviet.geojson }
         lines:
           - [[124.6, 38.0], [128.65, 38.0]]
         arrows:
@@ -694,18 +694,18 @@ theaters:
         title: 미군의 서울 진주
         summary: 미군이 9월 8일 인천에 상륙하고 9일 서울에서 조선 총독의 항복을 받아, 38도선을 경계로 한 미·소의 분할 점령이 시작되었습니다. 같은 날 난징에서 중국 전구의 일본군이 항복했고, 홍콩(8월 30일)과 싱가포르(9월 5일)에는 영국군이 돌아왔습니다.
         areas:
-          - { faction: allies, geojson: ww2-asia/allied-colonies.geojson }
+          - { faction: allies, geojson: world-war-2/asia-pacific/allied-colonies.geojson }
           - { faction: allies, entities: [usa] }
           - { faction: china, entities: [roc] }
           - { faction: soviet, entities: [soviet-union] }
           - { faction: japan, entities: [japan, manchukuo, occupied-china] }
-          - { faction: japan, geojson: ww2-asia/mengjiang.geojson }
-          - { faction: japan, geojson: ww2-asia/1945-09-09-japan.geojson }
-          - { faction: allies, geojson: ww2-asia/korea-south.geojson }
-          - { faction: china, geojson: ww2-asia/pearl-delta-revert.geojson }
-          - { faction: allies, geojson: ww2-asia/1945-09-09-allies.geojson }
+          - { faction: japan, geojson: world-war-2/asia-pacific/mengjiang.geojson }
+          - { faction: japan, geojson: world-war-2/asia-pacific/1945-09-09-japan.geojson }
+          - { faction: allies, geojson: world-war-2/asia-pacific/korea-south.geojson }
+          - { faction: china, geojson: world-war-2/asia-pacific/pearl-delta-revert.geojson }
+          - { faction: allies, geojson: world-war-2/asia-pacific/1945-09-09-allies.geojson }
           - { faction: soviet, entities: [manchukuo] }
-          - { faction: soviet, geojson: ww2-asia/1945-09-09-soviet.geojson }
+          - { faction: soviet, geojson: world-war-2/asia-pacific/1945-09-09-soviet.geojson }
         lines:
           - [[124.6, 38.0], [128.65, 38.0]]
         arrows:
@@ -717,7 +717,7 @@ theaters:
   # ── 세계 개관 (overview) ──
   # 두 전역(유럽·북아프리카, 아시아·태평양)의 장면을 한 화면에 합친 거친 개관. 세밀한 전선은 앞의 두 전역에서 본다. 평소 지도에 전쟁 표시는 띄우지 않는다(hideMarker).
   # 장면마다 유럽 전역 장면은 이란 동쪽 국경(Natural Earth)에서 동경 61.3도 선을 따라 북극해까지 그은 이음매의 서쪽, 아시아·태평양 전역 장면은 그 동쪽만 가져와
-  # 진영마다 한 덩어리(서로 겹치지 않음) geojson ww2-overview/<날짜>-<진영>.geojson 으로 만들었다(나라 영토 위에 geojson을 여러 겹 덮으면 빌드의 polyclip이 깨져서). 빌드가 해안선으로 자른다.
+  # 진영마다 한 덩어리(서로 겹치지 않음) geojson world-war-2/overview/<날짜>-<진영>.geojson 으로 만들었다(나라 영토 위에 geojson을 여러 겹 덮으면 빌드의 polyclip이 깨져서). 빌드가 해안선으로 자른다.
   # 사하라 이남 아프리카·아메리카는 칠하지 않는다(두 전역 밖). 1939-09-01 장면은 아시아·태평양 전역에 없는 영국·프랑스 식민지와 영연방 자치령(영국령 인도·버마·실론·말라야·싱가포르·북보르네오·홍콩,
   # 오스트레일리아·뉴질랜드 등, 프랑스령 인도차이나)을 연합국 색으로 더했다. 네덜란드·미국·포르투갈령은 아직 참전 전이라 칠하지 않는다.
   # 다시 만드는 법: npm run gen:wars (생성 스크립트는 저장소의 scripts/wars/world-war-2/overview/, 이 전역만 다시 만들려면 npm run gen:wars -- --only overview)
@@ -748,11 +748,11 @@ theaters:
         summary: "독일군이 선전 포고 없이 폴란드로 쳐들어가 제2차 세계 대전이 시작되었습니다. 9월 3일 영국과 프랑스가 독일에 선전 포고했고, 두 나라의 식민지와 오스트레일리아·뉴질랜드 같은 영연방 자치령도 같은 편에서 전쟁에 들어갔습니다. 아시아 쪽은 10개월 전인 1938년 10월 우한·광저우 함락 무렵의 장면에, 그 뒤 1939년 9월까지 일본이 더 차지한 하이난섬·난창·산터우 등을 더한 모습입니다."
         # 출처 장면: 유럽·북아프리카 1939-09-01(이음매 서쪽) + 아시아·태평양 1938-10-27(동쪽) + 영국·프랑스 식민지 바탕(영토는 1939년 기준, 난닝 일대·산시 남부는 중국으로 되돌림)
         areas:
-          - { faction: allies, geojson: ww2-overview/1939-09-01-allies.geojson }
-          - { faction: axis, geojson: ww2-overview/1939-09-01-axis.geojson }
-          - { faction: soviet, geojson: ww2-overview/1939-09-01-soviet.geojson }
-          - { faction: japan, geojson: ww2-overview/1939-09-01-japan.geojson }
-          - { faction: china, geojson: ww2-overview/1939-09-01-china.geojson }
+          - { faction: allies, geojson: world-war-2/overview/1939-09-01-allies.geojson }
+          - { faction: axis, geojson: world-war-2/overview/1939-09-01-axis.geojson }
+          - { faction: soviet, geojson: world-war-2/overview/1939-09-01-soviet.geojson }
+          - { faction: japan, geojson: world-war-2/overview/1939-09-01-japan.geojson }
+          - { faction: china, geojson: world-war-2/overview/1939-09-01-china.geojson }
         arrows:
           - { faction: axis, path: [[13.4, 52.52], [17, 52.4], [21, 52.23]], label: 독일군의 폴란드 침공 }
           - { faction: japan, path: [[121.45, 31.25], [118.8, 32.05], [114.3, 30.6]], label: 일본군의 중국 침공 (1937~38) }
@@ -762,11 +762,11 @@ theaters:
         summary: "일본이 12월 7일(하와이 시각) 진주만의 미국 태평양 함대를 기습하고 말레이반도·필리핀·홍콩을 공격해 태평양 전쟁이 시작되었습니다. 미국과 영국이 일본에 선전 포고했고, 12월 11일 독일과 이탈리아가 미국에 선전 포고하면서 유럽과 아시아의 전쟁이 하나로 이어졌습니다. 유럽 쪽은 3일 전인 12월 5일, 소련군이 모스크바 앞에서 반격을 시작한 날의 모습입니다."
         # 출처 장면: 유럽·북아프리카 1941-12-05(이음매 서쪽) + 아시아·태평양 1941-12-08(동쪽)
         areas:
-          - { faction: allies, geojson: ww2-overview/1941-12-08-allies.geojson }
-          - { faction: axis, geojson: ww2-overview/1941-12-08-axis.geojson }
-          - { faction: soviet, geojson: ww2-overview/1941-12-08-soviet.geojson }
-          - { faction: japan, geojson: ww2-overview/1941-12-08-japan.geojson }
-          - { faction: china, geojson: ww2-overview/1941-12-08-china.geojson }
+          - { faction: allies, geojson: world-war-2/overview/1941-12-08-allies.geojson }
+          - { faction: axis, geojson: world-war-2/overview/1941-12-08-axis.geojson }
+          - { faction: soviet, geojson: world-war-2/overview/1941-12-08-soviet.geojson }
+          - { faction: japan, geojson: world-war-2/overview/1941-12-08-japan.geojson }
+          - { faction: china, geojson: world-war-2/overview/1941-12-08-china.geojson }
         arrows:
           - { faction: japan, path: [[106.7, 10.8], [103.6, 8.3], [102.3, 6.1]], label: 일본군의 말레이 상륙 }
           - { faction: japan, path: [[121, 22.6], [120.6, 15.3]], label: 일본군의 필리핀 공격 }
@@ -780,11 +780,11 @@ theaters:
         summary: "독일·이탈리아는 유럽과 북아프리카에서, 일본은 동남아시아와 서태평양에서 점령지가 가장 넓게 뻗었던 무렵입니다(일본은 1942년 중반, 독일은 1942년 가을 무렵). 11월 19일 소련군이 스탈린그라드의 독일 제6군을 에워싸는 반격을 시작해 전쟁의 흐름이 바뀌기 시작했습니다. 아시아 쪽은 5개월 전인 1942년 6월 7일 미드웨이 해전 직후의 모습이어서, 8월에 시작된 과달카날 전투 이전의 점령 범위입니다."
         # 출처 장면: 유럽·북아프리카 1942-11-19(이음매 서쪽) + 아시아·태평양 1942-06-07(동쪽)
         areas:
-          - { faction: allies, geojson: ww2-overview/1942-11-19-allies.geojson }
-          - { faction: axis, geojson: ww2-overview/1942-11-19-axis.geojson }
-          - { faction: soviet, geojson: ww2-overview/1942-11-19-soviet.geojson }
-          - { faction: japan, geojson: ww2-overview/1942-11-19-japan.geojson }
-          - { faction: china, geojson: ww2-overview/1942-11-19-china.geojson }
+          - { faction: allies, geojson: world-war-2/overview/1942-11-19-allies.geojson }
+          - { faction: axis, geojson: world-war-2/overview/1942-11-19-axis.geojson }
+          - { faction: soviet, geojson: world-war-2/overview/1942-11-19-soviet.geojson }
+          - { faction: japan, geojson: world-war-2/overview/1942-11-19-japan.geojson }
+          - { faction: china, geojson: world-war-2/overview/1942-11-19-china.geojson }
         arrows:
           - { faction: soviet, path: [[42.73, 49.58], [42.48, 49.15], [43.53, 48.68]], label: 스탈린그라드 반격 (북쪽) }
           - { faction: soviet, path: [[44.65, 48.17], [44.13, 48.13], [43.63, 48.6]], label: 스탈린그라드 반격 (남쪽) }
@@ -798,11 +798,11 @@ theaters:
         summary: "미국·영국·캐나다군이 6월 6일 프랑스 노르망디에 상륙해 서유럽에 새 전선을 열었습니다(오버로드 작전). 이틀 전에는 연합군이 이탈리아에서 로마를 해방했고, 동부 전선의 소련군은 우크라이나 대부분을 되찾아 루마니아 국경에 이르렀습니다. 아시아 쪽은 한 달 뒤인 1944년 7월 9일 미군이 사이판을 차지한 때의 모습입니다."
         # 출처 장면: 유럽·북아프리카 1944-06-06(이음매 서쪽) + 아시아·태평양 1944-07-09(동쪽)
         areas:
-          - { faction: allies, geojson: ww2-overview/1944-06-06-allies.geojson }
-          - { faction: axis, geojson: ww2-overview/1944-06-06-axis.geojson }
-          - { faction: soviet, geojson: ww2-overview/1944-06-06-soviet.geojson }
-          - { faction: japan, geojson: ww2-overview/1944-06-06-japan.geojson }
-          - { faction: china, geojson: ww2-overview/1944-06-06-china.geojson }
+          - { faction: allies, geojson: world-war-2/overview/1944-06-06-allies.geojson }
+          - { faction: axis, geojson: world-war-2/overview/1944-06-06-axis.geojson }
+          - { faction: soviet, geojson: world-war-2/overview/1944-06-06-soviet.geojson }
+          - { faction: japan, geojson: world-war-2/overview/1944-06-06-japan.geojson }
+          - { faction: china, geojson: world-war-2/overview/1944-06-06-china.geojson }
         arrows:
           - { faction: allies, path: [[-1, 50.4], [-0.9, 49.75], [-0.75, 49.4]], label: 노르망디 상륙 (오버로드 작전) }
           - { faction: allies, path: [[14.25, 40.85], [13.8, 41.49], [12.5, 41.9]], label: 이탈리아 전선 (로마 해방) }
@@ -817,11 +817,11 @@ theaters:
         summary: "독일이 5월 7일 랭스에서, 8일 베를린에서 무조건 항복 문서에 서명해 유럽의 전쟁이 끝났습니다. 소련군은 오데르강을 넘어 베를린과 프라하 방면까지, 미국·영국군은 라인강을 건너 엘베강까지 나아가 독일 땅을 나누어 차지했습니다. 아시아 쪽은 한 달 반 뒤인 1945년 6월 23일 오키나와 전투가 끝난 무렵의 모습으로, 일본은 필리핀·버마 대부분과 태평양의 여러 섬을 잃었지만, 말레이반도·네덜란드령 동인도·인도차이나와 중국 동부는 아직 차지하고 있었습니다."
         # 출처 장면: 유럽·북아프리카 1945-05-08(이음매 서쪽) + 아시아·태평양 1945-06-23(동쪽)
         areas:
-          - { faction: allies, geojson: ww2-overview/1945-05-08-allies.geojson }
-          - { faction: axis, geojson: ww2-overview/1945-05-08-axis.geojson }
-          - { faction: soviet, geojson: ww2-overview/1945-05-08-soviet.geojson }
-          - { faction: japan, geojson: ww2-overview/1945-05-08-japan.geojson }
-          - { faction: china, geojson: ww2-overview/1945-05-08-china.geojson }
+          - { faction: allies, geojson: world-war-2/overview/1945-05-08-allies.geojson }
+          - { faction: axis, geojson: world-war-2/overview/1945-05-08-axis.geojson }
+          - { faction: soviet, geojson: world-war-2/overview/1945-05-08-soviet.geojson }
+          - { faction: japan, geojson: world-war-2/overview/1945-05-08-japan.geojson }
+          - { faction: china, geojson: world-war-2/overview/1945-05-08-china.geojson }
         arrows:
           - { faction: soviet, path: [[21, 52.23], [17, 52.4], [14.6, 52.35], [13.4, 52.52]], label: 소련군의 베를린 진공 }
           - { faction: allies, path: [[6.7, 51.65], [9.5, 51.3], [13, 51.55]], label: 서방 연합군의 독일 진공 }
@@ -837,11 +837,11 @@ theaters:
         summary: "9월 2일 도쿄만의 미주리호에서 일본이 항복 문서에 서명해 제2차 세계 대전이 끝났습니다. 소련군은 8월 9일 만주로 쳐들어가 남사할린과 쿠릴 열도, 북위 38도선 북쪽의 한반도를 차지했습니다. 유럽 쪽은 독일이 항복한 1945년 5월 8일의 모습입니다."
         # 출처 장면: 유럽·북아프리카 1945-05-08(이음매 서쪽) + 아시아·태평양 1945-09-02(동쪽)
         areas:
-          - { faction: allies, geojson: ww2-overview/1945-09-02-allies.geojson }
-          - { faction: axis, geojson: ww2-overview/1945-09-02-axis.geojson }
-          - { faction: soviet, geojson: ww2-overview/1945-09-02-soviet.geojson }
-          - { faction: japan, geojson: ww2-overview/1945-09-02-japan.geojson }
-          - { faction: china, geojson: ww2-overview/1945-09-02-china.geojson }
+          - { faction: allies, geojson: world-war-2/overview/1945-09-02-allies.geojson }
+          - { faction: axis, geojson: world-war-2/overview/1945-09-02-axis.geojson }
+          - { faction: soviet, geojson: world-war-2/overview/1945-09-02-soviet.geojson }
+          - { faction: japan, geojson: world-war-2/overview/1945-09-02-japan.geojson }
+          - { faction: china, geojson: world-war-2/overview/1945-09-02-china.geojson }
         arrows:
           - { faction: soviet, path: [[115.5, 47.6], [119.5, 46], [121, 44.6], [122.8, 45.35]], label: 소련군의 만주 진공 (8월 9일) }
           - { faction: soviet, path: [[156.4, 50.7], [148, 45.2], [145.9, 44]], label: 쿠릴 열도 }

@@ -1,5 +1,5 @@
 # 몽골의 침입 (DESIGN.md §4.5)
-# 전역 하나(고려). 스냅샷마다 고려 영토를 고려 진영으로 칠한 뒤 몽골군이 휩쓴 지역(mongol/*.geojson)을 덮는다.
+# 전역 하나(고려). 스냅샷마다 고려 영토를 고려 진영으로 칠한 뒤 몽골군이 휩쓴 지역(goryeo-mongol-war/*.geojson)을 덮는다.
 # 몽골군은 성을 모두 차지하지 않고 들판을 휩쓸었으므로, 칠한 범위는 "몽골군이 휩쓴 지역"의 대략적인 추정이다.
 # 날짜는 『고려사』를 따른 음력이며, 날·달이 전하지 않으면 00으로 적는다.
 
@@ -38,7 +38,7 @@ theaters:
         summary: 몽골 사신 저고여가 돌아가다 죽은 일을 구실로 살리타가 쳐들어왔습니다. 박서가 귀주성을 지켰으나 몽골군은 개경을 에워쌌고, 고려는 강화를 맺었습니다. 몽골은 다루가치를 두고 돌아갔습니다.
         areas:
           - { faction: goryeo, entities: [goryeo] }
-          - { faction: mongol, geojson: mongol/1231-12-00.geojson }
+          - { faction: mongol, geojson: goryeo-mongol-war/1231-12-00-mongol.geojson }
         holds:
           - { name: 귀주성 (박서), at: [125.3, 40.1], faction: goryeo }
           - { name: 자주성 (최춘명), at: [125.95, 39.4], faction: goryeo }
@@ -48,7 +48,7 @@ theaters:
         summary: 최우가 몽골의 지나친 요구에 맞서 6월에 천도를 결정하고 7월에 도읍을 강화도로 옮기자 몽골이 다시 쳐들어왔습니다. 처인성에서 김윤후와 부곡민이 살리타를 죽여 몽골군을 물리쳤습니다.
         areas:
           - { faction: goryeo, entities: [goryeo] }
-          - { faction: mongol, geojson: mongol/1232-12-16.geojson }
+          - { faction: mongol, geojson: goryeo-mongol-war/1232-12-16-mongol.geojson }
         holds:
           - { name: 강화도 (임시 수도), at: [126.49, 37.72], faction: goryeo }
           - { name: 처인성, at: [127.2, 37.23], faction: goryeo }
@@ -60,7 +60,7 @@ theaters:
         summary: 몽골군이 1235년부터 4년 동안 경상도까지 휩쓸어 경주 황룡사 9층 목탑이 불탔습니다(1238). 고려는 부처의 힘으로 몽골을 물리치려고 팔만대장경을 새기기 시작했습니다(1236~1251).
         areas:
           - { faction: goryeo, entities: [goryeo] }
-          - { faction: mongol, geojson: mongol/1238-00-00.geojson }
+          - { faction: mongol, geojson: goryeo-mongol-war/1238-00-00-mongol.geojson }
         holds:
           - { name: 강화도, at: [126.49, 37.72], faction: goryeo }
           - { name: 죽주산성 (송문주), at: [127.44, 37.07], faction: goryeo }
@@ -72,7 +72,7 @@ theaters:
         summary: 예쿠의 몽골군이 쳐들어오자 김윤후가 충주성에서 70여 일을 버텼습니다. 이어진 6차 침입(1254~1259)에서는 포로로 끌려간 사람만 20만 명이 넘었습니다.
         areas:
           - { faction: goryeo, entities: [goryeo] }
-          - { faction: mongol, geojson: mongol/1253-10-00.geojson }
+          - { faction: mongol, geojson: goryeo-mongol-war/1253-10-00-mongol.geojson }
         holds:
           - { name: 강화도, at: [126.49, 37.72], faction: goryeo }
           - { name: 충주성 (김윤후), at: [127.93, 36.99], faction: goryeo }

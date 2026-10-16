@@ -5,11 +5,11 @@
 // - 작은 섬: 빌드가 쓰는 육지(land-50m) 조각을 골라 볼록 껍질 + 여백으로 감싼다.
 // - 중국 쪽: 저장소 영토(roc·occupied-china·mongolia)를 빼서 동남아시아 점령 지역이 중국 땅을 덮지 않게 한다
 //   (윈난 서부처럼 일부러 덮는 곳은 따로 더한다).
-// 출력: <data/wars>/ww2-asia/<날짜>-<진영>.geojson (좌표 소수 다섯째 자리). YAML(eu-02-world-war-2.yaml의 asia-pacific 전역)은 손으로 쓴 파일이라 이 생성기가 쓰지 않는다.
+// 출력: <data/wars>/world-war-2/asia-pacific/<날짜>-<진영>.geojson (좌표 소수 다섯째 자리). YAML(eu-02-world-war-2.yaml의 asia-pacific 전역)은 손으로 쓴 파일이라 이 생성기가 쓰지 않는다.
 import path from 'node:path';
 import { D, G, I, P, U, WARS, box, convexHull, countryTable, loadLandPolygons, makeRegion, resetDir, roundSafe, terrParts, writeGeojson } from '../../engine.mjs';
 
-const OUT = path.join(WARS, 'ww2-asia');
+const OUT = path.join(WARS, 'world-war-2/asia-pacific');
 resetDir(OUT);
 
 // ── 자료 ──
@@ -253,7 +253,7 @@ const put = (name, geom, note) => { files[name] = { geom, note }; };
 const japanIslands = (minus = []) => U(kurils(), bonins(), mandate(minus));
 const dngEastCut = () => U(I(DNG_EAST, DNG_EAST), noemfoor());
 
-// (예전에는 저장소의 중화민국 영토가 덮지 않던 윈난 서부·남부를 ww2-asia/yunnan-west 파일로 중국 진영에 채웠다.
+// (예전에는 저장소의 중화민국 영토가 덮지 않던 윈난 서부·남부를 world-war-2/asia-pacific/yunnan-west 파일로 중국 진영에 채웠다.
 //  세션 K에서 중화민국 영토가 윈난 서부까지 고쳐져 이 파일은 필요 없어졌고 전쟁 정의에서도 뺐다. 다시 만들지 않는다.)
 put('allied-colonies', alliedBase(), '1941년 12월 태평양 전쟁 때 연합국(영국·미국·네덜란드·오스트레일리아 등)의 아시아·태평양 식민지·자치령. 영국령 인도·버마·실론·말라야·싱가포르·북보르네오·홍콩, 네덜란드령 동인도, 미국령 필리핀·괌·하와이·알류샨, 오스트레일리아·파푸아뉴기니·솔로몬·누벨칼레도니·뉴헤브리디스·피지·뉴질랜드·길버트·나우루. 중립인 타이·포르투갈령 티모르·마카오·네팔·부탄은 칠하지 않음');
 put('1937-07-07-japan', U(japanIslands(), jidong, chaharNorth), '중일 전쟁 직전 일본 쪽: 쿠릴·오가사와라·남양 군도, 기동 방공 자치 정부(22현), 몽골 군정부의 차하얼 북부 6현 (대략)');

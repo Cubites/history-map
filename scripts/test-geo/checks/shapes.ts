@@ -381,7 +381,7 @@ async function runIslands(_ctx: Context, opt: Options): Promise<CheckResult> {
 
 /** 전쟁 생성기가 만드는 data/wars 아래 파일: 맨 위 YAML(머리·europe 전역·overview 전역을 다시 쓰고 손으로 쓴 asia-pacific 전역은 그대로 둠)과 geojson 폴더 넷 */
 const WARS_GEN_YAML = ['eu-02-world-war-2.yaml'];
-const WARS_GEN_DIRS = ['ww1', 'ww2-europe', 'ww2-asia', 'ww2-overview'];
+const WARS_GEN_DIRS = ['world-war-1', 'world-war-2/europe', 'world-war-2/asia-pacific', 'world-war-2/overview'];
 /** 전쟁 생성이 읽는 입력: 폴더(안의 모든 파일)와 파일 */
 const WARS_GEN_INPUT_DIRS = ['data/geo', 'data/wars', 'data/base/fragments', 'scripts/wars'];
 const WARS_GEN_INPUT_FILES = ['scripts/build-data/geo.ts', 'package-lock.json'];

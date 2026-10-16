@@ -1,5 +1,5 @@
 # 고구려–수·당 전쟁 (DESIGN.md §4.5)
-# 전역 하나(요동·한반도 북부). 스냅샷마다 고구려 영토를 고구려 진영으로 칠한 뒤, 수·당군이 차지하거나 에워싼 지역(sui-tang/*.geojson)을 덮는다.
+# 전역 하나(요동·한반도 북부). 스냅샷마다 고구려 영토를 고구려 진영으로 칠한 뒤, 수·당군이 차지하거나 에워싼 지역(goguryeo-sui-tang/*.geojson)을 덮는다.
 # 날짜는 『삼국사기』·중국 사서를 따른 음력이며, 날이 전하지 않으면 00으로 적는다 (612-07-00 → "612.7").
 # 위치는 교과서 수준의 대략적인 추정.
 
@@ -60,7 +60,7 @@ theaters:
         summary: 수 양제가 113만 대군으로 쳐들어왔으나 요동성이 버텼습니다. 평양으로 곧장 내려간 별동대는 을지문덕의 유인 작전에 걸려 살수에서 크게 무너졌습니다.
         areas:
           - { faction: goguryeo, entities: [goguryeo] }
-          - { faction: sui, geojson: sui-tang/0612-07-00.geojson }
+          - { faction: sui, geojson: goguryeo-sui-tang/0612-07-00-sui.geojson }
         holds:
           - { name: 요동성, at: [123.17, 41.27], faction: goguryeo }
           - { name: 평양성, at: [125.75, 39.02], faction: goguryeo }
@@ -73,7 +73,7 @@ theaters:
         summary: 연개소문의 정변을 구실로 당 태종이 직접 쳐들어와 요동성·백암성·비사성 등을 빼앗았습니다. 그러나 안시성을 석 달 가까이 함락하지 못하고 물러났습니다.
         areas:
           - { faction: goguryeo, entities: [goguryeo] }
-          - { faction: tang, geojson: sui-tang/0645-09-00.geojson }
+          - { faction: tang, geojson: goguryeo-sui-tang/0645-09-00-tang.geojson }
         holds:
           - { name: 안시성, at: [122.75, 40.9], faction: goguryeo }
           - { name: 요동성, at: [123.17, 41.27], faction: tang }
@@ -86,7 +86,7 @@ theaters:
         summary: 백제를 무너뜨린 당이 평양성을 에워쌌으나, 연개소문이 사수에서 방효태의 당군을 전멸시켰습니다. 당군은 평양 포위를 풀고 물러났습니다.
         areas:
           - { faction: goguryeo, entities: [goguryeo] }
-          - { faction: tang, geojson: sui-tang/0662-02-00.geojson }
+          - { faction: tang, geojson: goguryeo-sui-tang/0662-02-00-tang.geojson }
         holds:
           - { name: 평양성, at: [125.75, 39.02], faction: goguryeo }
         arrows:
@@ -98,7 +98,7 @@ theaters:
         summary: 연개소문이 죽은 뒤(665년, 『삼국사기』와 중국 사서에는 666년) 아들들 사이에 권력 다툼이 벌어졌습니다. 맏아들 남생은 동생들에게 쫓겨 국내성으로 달아났다가 666년 당에 항복했습니다. 당의 이세적이 요동의 요충지 신성을 함락했습니다.
         areas:
           - { faction: goguryeo, entities: [goguryeo] }
-          - { faction: tang, geojson: sui-tang/0667-09-00.geojson }
+          - { faction: tang, geojson: goguryeo-sui-tang/0667-09-00-tang.geojson }
         holds:
           - { name: 신성, at: [123.95, 41.88], faction: tang }
         arrows:
