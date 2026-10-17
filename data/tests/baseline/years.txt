@@ -1,0 +1,18 @@
+# test:geo 기준선 years: 글 속 지도 해가 실제 지도 연도와 맞지 않거나(옛연도) 기원전 해가 천문 연도로 1 어긋난(천문연도) 의심 항목의 열쇠. 한 줄에 하나.
+# 2026-10-17 만듦. 지금 있는 어긋남 전부이고 실패로 세지 않는다. 진짜 오류인지 고칠지는 운영자가 정한다(사이트 글·데이터는 이 검사가 고치지 않음).
+# 열쇠 꼴: years <옛연도|천문연도> <나라·사건 id> <foundingNote|summary|year|id|생성기 파일 이름> <글 속 숫자(천문 연도)>
+# 고쳤으면 npm run test:geo -- --only years --update-baseline years 로 줄인다.
+years 옛연도 anglo-saxon-476 summary 476
+years 옛연도 arborea foundingNote 1399
+years 옛연도 magyars-838 summary 916
+years 옛연도 matteo-ricci-1601 summary 1603
+years 옛연도 norway-atlantic-872 summary 970
+years 옛연도 norway-atlantic-872 summary 974
+years 옛연도 scandinavia-denmark-sweden-804 summary 974
+years 옛연도 timoleon-agathocles-350bc summary -355
+years 옛연도 tylis-odrysian-212bc summary -263
+years 천문연도 carrhae-han-53bc year -52
+years 천문연도 celtiberian-lusitanian-wars-193bc year -191
+years 천문연도 cilicia-kingdom foundingNote -401
+years 천문연도 germanic-tribes europe.mjs -59
+years 천문연도 vercingetorix-alesia-53bc year -51

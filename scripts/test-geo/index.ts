@@ -1,10 +1,10 @@
 // 지형 테스트 러너 (npm run test:geo): 검사 모음(scripts/test-geo/checks/*.ts)을 한 번에 돌리고 결과를 몇 줄로 요약한다.
 // 사용: npm run test:geo -- [--region <europe|east-asia|항목 파일 이름>] [--years 1500-1600] [--only places,lines] [--skip islands]
 //                         [--ci] [--update-baseline <검사 id>] [--report <경로>]
-// - 검사 파일: checks/places.ts(지점)·shapes.ts(도형 품질)·events.ts(사건 연결)·lines.ts(선 기준선). 파일이 아직 없으면 '아직 없음'으로 건너뛴다.
+// - 검사 파일: checks/places.ts(지점)·shapes.ts(도형 품질)·events.ts(사건 연결)·lines.ts(선 기준선)·colors.ts(이웃 색)·years.ts(글 속 해)·spelling.ts(표기 사전). 파일이 아직 없으면 '아직 없음'으로 건너뛴다.
 //   각 파일은 `export const checks: Check[]`를 내보낸다(꼴은 types.ts). --only·--skip은 검사 id 또는 파일 이름을 받는다.
 // - 판정 순서: 검사가 낸 항목마다 열쇠(key)로 ① 허용 목록(data/tests/allow/<검사 id 또는 파일 이름>.yaml, 사람이 이유와 함께 적음: key·reason·decided,
-//   key 끝에 `*` 하나는 앞부분 일치) ② 기준선(data/tests/baseline/<검사 id>.txt, 한 줄에 열쇠 하나, `#`은 주석. --update-baseline이 지금 열쇠를 정렬해 씀) ③ 나머지는 새 실패.
+//   key 끝에 `*` 하나는 앞부분 일치) ② 기준선(data/tests/baseline/<검사 id>.txt, 한 줄에 열쇠 하나, `#`은 주석. --update-baseline이 지금 열쇠를 정렬해 씀) ③ 나머지는 새 실패. 기준선 파일 맨 위 `#` 줄(무엇인지·만든 날)은 다시 쓸 때도 그대로 둔다.
 //   아무 항목에도 맞지 않은 허용 줄은 '낡음' 경고(--region·--years 없이 돌렸을 때만). 묶음 파일(예: shapes.yaml)의 줄은 그 묶음의 검사를 모두 돌렸을 때 어느 검사에도 맞지 않은 것만.
 // - 출력: 표준 출력에 머리 1줄 + 검사마다 1줄 + 새 실패 위 5줄 + 보고서 경로. 자세한 것은 .cache/test-geo/report.md(사람용)·report.json(기계용).
 //   --ci면 report.md를 $GITHUB_STEP_SUMMARY에도 덧붙이고, 느린 검사(gen)도 돌린다. 검사가 사정이 안 맞아 건너뛴 항목(결과가 낡은 전쟁 지점 등)은 머리 줄에 `건너뜀 N`으로 보이고, --ci에서는 검사가 실패로 낸다.
@@ -19,7 +19,7 @@ import { ROOT, createContext } from './context.ts';
 import type { Check, Item, Options } from './types.ts';
 
 /** 검사 파일 이름(그룹). 파일이 없으면 '아직 없음' */
-const KNOWN_GROUPS = ['places', 'shapes', 'events', 'lines'];
+const KNOWN_GROUPS = ['places', 'shapes', 'events', 'lines', 'colors', 'years', 'spelling'];
 /** 느려서 --ci나 --only로 직접 고를 때만 도는 검사 id */
 const CI_ONLY = new Set(['gen']);
 
@@ -293,7 +293,12 @@ async function main(): Promise<number> {
           const custom = loaded.baselineText?.(check.id) ?? null;
           const keys = [...new Set(res.items.filter((i) => !i.warn && !allow.some((e) => matchAllow(e, i.key))).map((i) => i.key))].sort();
           mkdirSync(path.dirname(baselinePath(check.id)), { recursive: true });
-          writeFileSync(baselinePath(check.id), custom ?? `# test:geo 기준선 ${check.id}: 알려진 옛 문제의 열쇠(한 줄에 하나). npm run test:geo -- --update-baseline ${check.id}로 다시 씀\n${keys.join('\n')}${keys.length ? '\n' : ''}`);
+          // 기존 기준선 파일 맨 위의 '#' 줄(무엇인지·만든 날 등)은 그대로 둔다. 없으면 기본 머리 한 줄
+          const oldLines = existsSync(baselinePath(check.id)) ? readFileSync(baselinePath(check.id), 'utf8').split(/\r?\n/) : [];
+          const firstKey = oldLines.findIndex((l) => !l.startsWith('#'));
+          const oldHead = oldLines.slice(0, firstKey < 0 ? oldLines.length : firstKey);
+          const head = oldHead.length ? oldHead.join('\n') : `# test:geo 기준선 ${check.id}: 알려진 옛 문제의 열쇠(한 줄에 하나). npm run test:geo -- --update-baseline ${check.id}로 다시 씀`;
+          writeFileSync(baselinePath(check.id), custom ?? `${head}\n${keys.join('\n')}${keys.length ? '\n' : ''}`);
           o.baselined += o.newFailures.length;
           o.notes.push(`기준선 갱신 ${custom ? custom.split('\n').filter(Boolean).length : keys.length}`);
           o.newFailures = [];

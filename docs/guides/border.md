@@ -94,9 +94,9 @@ node ../history-map-handoff/tools/versions2.mjs <repo 절대경로> 476 2026 100
 ```
 npm run test:geo                                       # 전체: 요약 15줄 안, 자세한 것은 .cache/test-geo/report.md
 npm run test:geo -- --region europe --years 1500-1600  # 범위를 좁힘 (권역: europe·east-asia 또는 korea 같은 항목 파일 이름)
-npm run test:geo -- --only places,lines                # 검사 고르기 (--skip islands, 검사 id 또는 파일 이름 places·shapes·events·lines)
+npm run test:geo -- --only places,lines                # 검사 고르기 (--skip islands, 검사 id 또는 파일 이름 places·shapes·events·lines·colors·years·spelling)
 npm run test:geo -- --ci                               # 느린 gen(data/geo가 생성기 결과와 같은가, 약 30초)까지 — 단계 끝에 한 번
-npm run test:geo -- --update-baseline <검사 id>        # 기준선을 지금 결과로 다시 씀(범위 인자와 같이 못 씀)
+npm run test:geo -- --update-baseline <검사 id>        # 기준선을 지금 결과로 다시 씀(범위 인자와 같이 못 씀, --only <검사 id>를 함께 쓰면 빠름. 파일 맨 위 # 줄은 남김)
 ```
 여러 에이전트가 동시에 돌리면 `HISTORY_MAP_WORKERS=4`. 종료 코드: 새 실패가 있으면 1, 인자 오류나 검사 예외면 2, 아니면 0.
 
@@ -118,6 +118,9 @@ npm run area:geo -- --year 1000,1100 --box … --base <원본 저장소 경로> 
 | `strips`·`zero`·`islands` | 폭 1km 미만 가는 띠, 넓이 0 조각, 앞 버전이 덮던 섬이 사라짐 | 옛 빚은 기준선 안, 새로 생기면 실패 |
 | `events` | 성립·소멸 ±2년, 1만 km² 넘는 버전 해에 사건이 이어졌는가 | `lifecycle`·`versions2`와 줄 단위로 같은 결과 |
 | `lines` | 손그림 선(`// @기준선 강 <키> [허용 N km] [평균 M km]` 꼬리표 단 `L_` 상수)과 Natural Earth 강 사이의 거리. 최대가 허용을 넘거나 평균이 꼬리표의 평균 값을 넘으면 실패(평균은 허용 아래에서 선이 나빠지는 것을 잡으려고 지금 평균을 적어 둔 것, 선을 고쳐 줄면 값도 줄인다) | 새 강 경계 선을 그으면 꼬리표를 단다([DATA_GUIDE](../DATA_GUIDE.md)) |
+| `colors` | 같은 해 맞닿은 나라 쌍의 화면 색 ΔE(CIE76) 25 미만([standards.md](standards.md) 5·11절), 열쇠 `colors <id>\|<id>` | 새 나라·색을 넣으면 새 실패 0이 될 때까지 색을 고른다(손으로 재지 않음). 기준선 쌍의 색은 운영자 결정 없이 바꾸지 않는다 |
+| `years` | 글 속 지도 해와 실제 지도 해, 기원전 해의 천문 연도 ±1([standards.md](standards.md) 3절 6) | 버전 해·항목 해를 고치면 돌려 `foundingNote`·사건 글·생성기 주석에 옛 해가 남지 않았는지 본다 |
+| `spelling` | 표기 사전 `data/tests/spelling.yaml`의 쓰지 않을 표기 | 새 나라 이름·foundingNote도 사전을 먼저 본다 |
 | `gen` | `data/geo` 519개가 생성기 결과와 바이트까지 같은가 | `--ci`나 `--only gen`일 때만 |
 
 **출력 읽는 법**: 머리 줄(범위·걸린 시간·실패 수) → 검사마다 한 줄(`통과`·`실패`·`건너뜀`·`오류`, 검사한 수, 기준선·알려진 예외 수, 걸린 시간) → `✗` 새 실패 위 5건 → `!` 경고 → 보고서 경로. 건너뜀은 이유가 같은 줄에 있다(검사 파일 없음, `--ci`에서만, 전쟁 도형이 오래됨 등). 검사가 항목을 건너뛰면(결과가 낡은 전쟁 지점) 머리 줄에 `건너뜀 N`이 붙고 places 줄에 `전쟁 건너뜀 N`이 나온다. **`--ci`에서는 건너뜀이 실패다**(건너뛴 채 통과하지 않게).
@@ -127,8 +130,8 @@ npm run area:geo -- --year 1000,1100 --box … --base <원본 저장소 경로> 
 
 **실패를 처리하는 세 길** (판단은 사람이: 지도가 틀렸으면 고치고, 일부러 그런 것만 허용)
 1. 지도 오류 → `europe.mjs` 등을 고쳐 다시 돌린다.
-2. 의도한 예외 → `data/tests/allow/<파일>.yaml`(`places`·`shapes`·`events`·`lines`, 파일 하나가 그 그룹의 모든 검사를 덮음)에 `key`(실패 줄의 열쇠 그대로, 끝에 `*` 하나는 앞부분 일치)·`reason`(이유)·`decided`(누가 언제)를 적는다. 맞는 항목이 없어진 줄은 `낡음` 경고가 뜨니 지운다.
-3. 옛 빚 → 기준선(`data/tests/baseline/<검사 id>.txt`, `gaps`·`strips`·`zero`·`islands`). 고쳐서 줄었을 때만 `--update-baseline <검사 id>`로 다시 쓴다(`gaps`는 `--only gaps --update-baseline gaps`). 새 실패를 덮으려고 기준선을 늘리지 않는다.
+2. 의도한 예외 → `data/tests/allow/<파일>.yaml`(`places`·`shapes`·`events`·`lines`·`colors`·`years`·`spelling`, 파일 하나가 그 그룹의 모든 검사를 덮음)에 `key`(실패 줄의 열쇠 그대로, 끝에 `*` 하나는 앞부분 일치)·`reason`(이유)·`decided`(누가 언제)를 적는다. 맞는 항목이 없어진 줄은 `낡음` 경고가 뜨니 지운다.
+3. 옛 빚 → 기준선(`data/tests/baseline/<검사 id>.txt`, `gaps`·`strips`·`zero`·`islands`·`colors`·`years`·`spelling`). 고쳐서 줄었을 때만 `--update-baseline <검사 id>`로 다시 쓴다(`gaps`는 `--only gaps --update-baseline gaps`). 새 실패를 덮으려고 기준선을 늘리지 않는다.
 
 **부분 빌드**: `check:data` 전체는 6~18분이지만 캐시가 따뜻하면 약 18초다. 줄이는 법은 아래.
 ```

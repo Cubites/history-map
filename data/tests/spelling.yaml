@@ -1,0 +1,122 @@
+# 표기 사전 (docs/guides/standards.md 5절·9절 5a). 같은 이름을 하나로 쓰도록 바른 표기(use)와 쓰지 않을 표기(avoid)를 모은다.
+# 읽는 곳: test:geo 검사 `spelling` (scripts/test-geo/checks/spelling.ts). 형식이 틀리면 그 검사가 종료 코드 2로 멈춘다.
+# 새 이름을 쓸 때는 이 파일을 먼저 보고, 없으면 `grep`으로 저장소 기존 표기를 확인한 뒤 여기에 더한다.
+#
+# ── 한 항목의 칸 ─────────────────────────────────────────────────────────
+#   use     (필수, 글) 바른 표기 하나.
+#   avoid   (필수, 글 목록, 하나 이상) 쓰지 않을 표기. use와 같으면 안 되고, 같은 avoid가 두 항목에 있으면 안 된다.
+#           한국어는 조사가 붙으므로 검사는 사건·나라 글에서 부분 문자열로 찾는다. 낱말이 짧을수록 다른 낱말에 섞여 틀린 경보가 나니 저장소를 grep해서 정한다.
+#   note    (필수, 글) 무엇인지·근거 한 줄: 어느 검토가 정했는지, 원어, (검토가 안 정했으면) 저장소 grep 개수.
+#   scope   (선택, 글) 지역·시대 메모. 사람이 읽는 글일 뿐 코드는 이 값으로 가르지 않는다. 지역별로 나눌 필요가 생기면 같은 파일 안 항목의 scope로만 적는다.
+#   except  (선택, 글 목록) avoid 표기가 다른 대상을 가리켜 맞는 경우의 앞뒤 글 조각. 그 조각이 avoid 표기를 포함해야 하고,
+#           글에서 이 조각이 나온 자리에 걸친 avoid는 건너뛴다. 예: avoid '구스타프', except '구스타프선'(이탈리아 방어선).
+#   avoid가 use의 앞부분·일부라서 use가 나온 자리에 걸린 것은 건너뛴다(use 안의 글자는 틀린 경보가 아님).
+#
+# ── 검사가 보는 글 (화면에 나오는 글) ───────────────────────────────────
+#   사건: title.ko·summary.ko·links[].note·places[].name·sources[]   나라: names.ko·summary·basis.foundingNote·basis.refs[]
+#   (전쟁 보기 data/wars의 글, names.en·native는 보지 않는다.)
+#
+# ── 열쇠와 기준선 ─────────────────────────────────────────────────────
+#   열쇠 `spelling <대상 id> <필드> <avoid 표기>`. 지금 섞여 있는 표기는 data/tests/baseline/spelling.txt에 있고, 고치는 것은 사건 글을 손볼 때 한다.
+#   사건 글을 고치면 `npm run test:geo -- --only spelling --update-baseline spelling`으로 기준선을 줄인다.
+#
+# 첫판(2026-10-17): 검토 지적(인계 폴더 event-templates/h-review1.md·evm4~6-review1.md·eva1~4-review1.md·g-review1.md)과 docs/guides/event.md 58행 '표기 섞임' 줄.
+# 둘이 어긋나면 나중에 정리된 event.md를 따랐다. 일부러 뺀 것(키예프·안티오크 등)은 맨 아래 주석.
+
+- use: 드니스테르강
+  avoid: [드니스터강, 드니스트르강, 드니스터, 드니스트르]
+  note: "h-review1 H1a-1·H2-3: 저장소의 Dniester 표기. 확인 때 저장소에 드니스테르 20회, 드니스터·드니스트르 0회(이미 고쳐짐)"
+
+- use: 아흐메트
+  avoid: [아흐메드]
+  note: "h-review1 H1a-2: 오스만 인물은 메흐메트·바예지트처럼 -트(쾨프륄뤼 파즐 아흐메트). 아흐메트 5회·아흐메드 0회. 대오르다(타타르) 칸 '아흐마드'는 다른 표기라 이 항목과 무관하게 그대로"
+  scope: 오스만 인물(튀르크 이름)
+
+- use: 파즐
+  avoid: [파질]
+  note: "h-review1 H1b-5: 쾨프륄뤼 파즐 아흐메트 파샤(Fazıl). 파즐 2회·파질 0회"
+
+- use: 슐레지엔
+  avoid: [실레지아]
+  note: "h-review1 H1b-1·event.md 58행: 독일어 Schlesien. 슐레지엔 44회, 실레지아 0회(확인 때)"
+
+- use: 프레드릭스함
+  avoid: [프레데릭스함]
+  note: "h-review1 H1b-2: Fredrikshamn(하미나). 프레드릭스함 8회"
+
+- use: 테무라즈
+  avoid: [테이무라즈]
+  note: "h-review1 H1b-3: 카르틀리-카헤티 왕 Teimuraz. 항목 kartli는 테무라즈"
+
+- use: 옐리자베타
+  avoid: [엘리자베타]
+  note: "h-review1 H1b-4: 러시아 여제 Yelizaveta. 옐리자베타 4회"
+  scope: 러시아 인물(러시아어 Елизавета). 다른 나라 인물의 같은 이름은 except로 막는다
+  except: [딸 엘리자베타와, 엘리자베타의 사촌]
+
+- use: 킬리아
+  avoid: [킬리야]
+  note: "h-review1 H2-5: Chilia. 킬리아 11회"
+
+- use: 구스타브
+  avoid: [구스타프]
+  note: "h-review1 H2-6: 스웨덴 왕 Gustav. 구스타브 19회"
+  scope: 스웨덴 왕 이름
+  except: [구스타프선]
+
+- use: 게오르기옙스크
+  avoid: [게오르기예프스크]
+  note: "h-review1 H2-7(메인 결정): 1783년 게오르기옙스크 조약. 게오르기옙스크 6회"
+
+- use: 니케포로스
+  avoid: [니키포로스]
+  note: "evm5-review1 14·evm6-review1 8: 동로마 인물은 그리스식. 저장소 니케포로스 10회, 니키포로스 3회(thessaly·crete-emirate·old-great-bulgaria)"
+  scope: 동로마 인물
+
+- use: 파트리키오스
+  avoid: [파트리키우스]
+  note: "evm6-review1 8: 동로마 칭호 patrikios는 그리스식. 서로마·라틴어 이름으로 맞는 자리는 except"
+  scope: 동로마 칭호. 라틴어 Patricius(서로마 직함·성 패트릭의 라틴 이름)는 맞으므로 except
+  except: [서로마의 파트리키우스, 라틴어 파트리키우스]
+
+- use: 유스티노스
+  avoid: [유스티누스 1세, 유스티누스 2세]
+  note: "evm6-review1 8(메인 결정): 유스티니아노스·티베리오스처럼 동로마 황제는 그리스식. 역사가 유스티누스(폼페이우스 트로구스 요약자)는 건드리지 않으려고 '1세·2세'가 붙은 꼴만 avoid로 둔다"
+  scope: 동로마 황제 유스티노스 1세·2세
+
+- use: 볼시니
+  avoid: [볼시니이]
+  note: "eva4-review1 15: 에트루리아 도시 Volsinii. 저장소는 볼시니 9회·볼시니이 4회라 많은 쪽으로(roman-republic·etruscan-city-states 항목에 볼시니이가 남음)"
+  scope: 고대 에트루리아
+
+- use: 넵스키
+  avoid: [네프스키]
+  note: "evm3-review1 5: 알렉산드르 넵스키. 넵스키 3회·네프스키 0회"
+
+- use: 포메렐리아
+  avoid: [그단스크 포메라니아]
+  note: "evm4-review1 7: 폴란드 piast 시대 지명은 포메렐리아(그단스크 일대)로 poland-chrobry·eu-m2와 맞춤. 포메렐리아 16회"
+  scope: 폴란드 중세
+
+- use: 부크강
+  avoid: [남부흐강]
+  note: "event.md 58행 '부크강(남부흐강)': 부크강 5회, 남부흐강 1회(russo-turkish-war-1768). event.md 문구가 어느 쪽이 바른지 분명하지 않아 많은 쪽을 use로 둠 — 운영자 확인 필요"
+  scope: 남부 부크강(Southern Bug)
+
+- use: 호콘
+  avoid: [하콘]
+  note: "evm5-review1 14('호콘/하콘 — 같은 이름이면 하나로')는 어느 쪽인지 안 정함. 저장소에서 많이 쓰는 쪽: 호콘 20회·하콘 2회(norway-medieval·iceland-commonwealth)"
+  scope: 노르웨이 왕 호콘 4·5·6·7세 등
+
+- use: 묵돌
+  avoid: [묵특]
+  note: "g-review1 G-②: 저장소 항목(xiongnu)을 따라 묵돌. 처음 나오는 곳의 '묵돌(묵특)' 병기는 검토가 권했으므로 except. 묵돌 6회·묵특 2회"
+  scope: 흉노 선우 모둔
+  except: [묵돌(묵특)]
+
+# ── 일부러 뺀 것 (검토가 지적했으나 글자만으로 가를 수 없어 사전에 넣지 않음) ──
+#   키예프 → 키이우: 중세 '키예프 루스'·'키예프 대공'은 키예프가 맞아 저장소 중세 글에 키예프 62회(대부분 중세). 지금 글에서 근세 이후 키예프는 이미 없다(h-review1 H2-4는 고쳐짐).
+#                    시대를 보고 가려야 해서(글자만으로 불가) 뺐다. 근세 이후 사건 글에 키예프가 새로 생기면 표기 검사 대신 사건 검토에서 본다.
+#   안티오크 ↔ 안티오키아: 십자군 시대 글은 안티오크(35회), 고대·동로마 글은 안티오키아(9회)라 시대로 갈린다(eva2-review1 4). 글자만으로 불가.
+#   패트릭 ↔ 파트리키우스(성 패트릭): eva1-review1 14는 운영자 질문이었고 지금 저장소는 패트릭으로 통일돼 있다. 라틴어 설명은 파트리키오스 항목 except에서 막음.
+#   필리프 2세 별칭 용맹공/대담공(evm2-review1 4): 번역을 하지 않는 결정이라 표기 사전 대상이 아님.
