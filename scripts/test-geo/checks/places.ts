@@ -23,7 +23,7 @@ import { parse as parseYaml } from 'yaml';
 import type { Check, CheckResult, Item, Options } from '../types.ts';
 import type { BBox, Context, GeoVersion, MultiCoords } from '../context.ts';
 import { REGION_FILTER_OF } from '../../../src/schema/regions.ts';
-import { readBuilt, shaOf, warInputHashes } from '../../build-data/war-inputs.ts';
+import { readBuilt, shaOf, warInputHashes, type BuiltRecord } from '../../build-data/war-inputs.ts';
 
 type Pt = [number, number];
 
@@ -290,6 +290,20 @@ interface WarData {
 
 type WarLoad = { ok: true; data: WarData } | { ok: false; reason: string };
 
+/**
+ * 전쟁 결과가 지금 입력으로 만든 것이 아닌 이유(한국어 한 줄), 맞으면 null. places의 판정이고 npm run finish:border(scripts/finish-border.ts)도 같은 함수로 다시 빌드할 전쟁을 고른다.
+ * entry는 wars.json 안 그 전쟁 항목, rec는 빌드 기록의 그 전쟁, inputHash는 warInputHashes의 그 전쟁 값, shapesBytes는 public/data/wars/<id>.json 바이트
+ */
+export function warStaleReason(entry: unknown, rec: BuiltRecord | undefined, inputHash: string | undefined, shapesBytes: Buffer): string | null {
+  return !rec
+    ? '빌드 기록(.cache/build-data-wars/built.json)에 없음'
+    : rec.inputs !== inputHash
+      ? '입력(전쟁 YAML·손그림 geojson·나라 영토·빌드 코드)이 마지막 빌드 뒤에 바뀜'
+      : rec.shapes !== shaOf(shapesBytes) || rec.entry !== shaOf(JSON.stringify(entry))
+        ? 'public/data의 결과가 마지막 빌드의 것과 다름'
+        : null;
+}
+
 function loadWars(root: string): Map<string, WarLoad> {
   const out = new Map<string, WarLoad>();
   const idx = path.join(root, 'public/data/wars.json');
@@ -310,13 +324,7 @@ function loadWars(root: string): Map<string, WarLoad> {
     }
     const rec = built[w.id];
     const shapesBytes = readFileSync(shapesFile);
-    const stale = !rec
-      ? '빌드 기록(.cache/build-data-wars/built.json)에 없음'
-      : rec.inputs !== inputs.get(w.id)
-        ? '입력(전쟁 YAML·손그림 geojson·나라 영토·빌드 코드)이 마지막 빌드 뒤에 바뀜'
-        : rec.shapes !== shaOf(shapesBytes) || rec.entry !== shaOf(JSON.stringify(w))
-          ? 'public/data의 결과가 마지막 빌드의 것과 다름'
-          : null;
+    const stale = warStaleReason(w, rec, inputs.get(w.id), shapesBytes);
     if (stale) {
       out.set(w.id, { ok: false, reason: stale });
       continue;

@@ -81,7 +81,14 @@ node ../history-map-handoff/tools/lifecycle.mjs <repo 절대경로> 476 2026    
 node ../history-map-handoff/tools/versions2.mjs <repo 절대경로> 476 2026 10000   # 1만 km² 넘는 버전 해 미연결
 ```
 
-국경을 고친 뒤 순서: `gen:geo` → (영토 국경이면) `gen:wars` → `test:geo`. **`test:geo`가 '전쟁 입력이 바뀜'으로 전쟁을 건너뛰어 실패로 세면 그 전쟁만 `npm run build:data -- --war <id>`로 다시 빌드한 뒤 `test:geo`를 다시 돌린다**(생성물 변화 없음, 5.1절).
+국경을 고친 뒤에는 **`npm run finish:border` 한 명령**을 돌린다(`scripts/finish-border.ts`).
+```
+npm run finish:border                          # gen:geo → gen:wars → 낡은 전쟁만 재빌드 → test:geo. 단계마다 한 줄, 하위 출력은 .cache/finish-border/<단계>.log
+npm run finish:border -- --no-wars --ci        # 영토 국경이 아니면 gen:wars 생략(재빌드 판정은 함). 나머지 인자는 test:geo로(--ci 등)
+npm run finish:border -- --only test -- --only places   # test:geo 자신의 --only·--skip은 `--` 뒤에 쓴다(앞의 --only는 이 명령의 단계 고르기)
+npm run finish:border -- --from rebuild        # 예산(--budget 초, 기본 270) 때문에 종료 3으로 끊기면 화면의 "이어서: …" 줄 그대로 부른다 (--only rebuild,test처럼 단계를 골라도 됨)
+```
+명령이 하는 일(손으로 하던 순서): `gen:geo` → (영토 국경이면) `gen:wars` → `test:geo`가 '전쟁 입력이 바뀜'으로 건너뛸 전쟁(입력 해시가 빌드 기록과 다름·기록 없음·`public/data` 결과가 기록과 다름, places와 같은 함수)만 `npm run build:data -- --war <id,…>` → `test:geo`(재빌드는 gitignore된 `public/data`·`.cache`만 바꾼다, 5.1절). 첫 두 단계가 합쳐 4분 안팎이라 한 호출에 끝나지 않으면 위처럼 이어 부른다. 끝난 뒤 `git status`의 `data/geo`·`data/wars` 바뀐 파일은 묶음에 든 것뿐이어야 하고(화면의 gen:geo·gen:wars 줄에 파일 수) `test:geo` 실패 0이어야 한다. `public/data/wars.json`이 없으면 부분 빌드가 안 되므로 전체 `npm run build:data`가 먼저 필요하다(종료 1).
 
 운영자에게 보고할 때의 두 규칙:
 - 연도·넓이를 말하기 전에 기억이 아니라 **저장소 값을 읽어 확인**한다(세션 N1: 건창 1382년을 1372년으로 잘못 알림).
@@ -96,6 +103,7 @@ npm run test:geo                                       # 전체: 요약 15줄 �
 npm run test:geo -- --region europe --years 1500-1600  # 범위를 좁힘 (권역: europe·east-asia 또는 korea 같은 항목 파일 이름)
 npm run test:geo -- --only places,lines                # 검사 고르기 (--skip islands, 검사 id 또는 파일 이름 places·shapes·events·lines·colors·years·spelling)
 npm run test:geo -- --ci                               # 느린 gen(data/geo가 생성기 결과와 같은가, 약 30초)까지 — 단계 끝에 한 번
+npm run finish:border                                  # 국경을 고친 뒤: gen:geo → gen:wars → 낡은 전쟁만 재빌드 → test:geo (위 5절 첫머리)
 npm run test:geo -- --update-baseline <검사 id>        # 기준선을 지금 결과로 다시 씀(범위 인자와 같이 못 씀, --only <검사 id>를 함께 쓰면 빠름. 파일 맨 위 # 줄은 남김)
 ```
 여러 에이전트가 동시에 돌리면 `HISTORY_MAP_WORKERS=4`. 종료 코드: 새 실패가 있으면 1, 인자 오류나 검사 예외면 2, 아니면 0.
@@ -124,7 +132,7 @@ npm run area:geo -- --year 1000,1100 --box … --base <원본 저장소 경로> 
 | `gen` | `data/geo` 519개가 생성기 결과와 바이트까지 같은가 | `--ci`나 `--only gen`일 때만 |
 
 **출력 읽는 법**: 머리 줄(범위·걸린 시간·실패 수) → 검사마다 한 줄(`통과`·`실패`·`건너뜀`·`오류`, 검사한 수, 기준선·알려진 예외 수, 걸린 시간) → `✗` 새 실패 위 5건 → `!` 경고 → 보고서 경로. 건너뜀은 이유가 같은 줄에 있다(검사 파일 없음, `--ci`에서만, 전쟁 도형이 오래됨 등). 검사가 항목을 건너뛰면(결과가 낡은 전쟁 지점) 머리 줄에 `건너뜀 N`이 붙고 places 줄에 `전쟁 건너뜀 N`이 나온다. **`--ci`에서는 건너뜀이 실패다**(건너뛴 채 통과하지 않게).
-- 전쟁 지점이 `건너뜀`이면 그 전쟁의 `public/data` 결과가 지금 입력으로 만든 것이 아니다. 판정은 파일 시각이 아니라 내용 해시다: `build:data`가 전쟁마다 입력(전쟁 YAML·손그림 geojson·쓰는 나라의 `data/geo` 파일·`wars.ts`·`geo.ts`·`war-cache.ts`·육지 파일)의 해시와 출력의 해시를 `.cache/build-data-wars/built.json`에 남기고, places가 같은 해시를 다시 계산해 비교한다. `npm run build:data -- --war <id>`로 다시 만든다. `gen:geo`를 돌려도 바이트가 같으면 입력 해시가 그대로라 다시 만들 필요가 없다.
+- 전쟁 지점이 `건너뜀`이면 그 전쟁의 `public/data` 결과가 지금 입력으로 만든 것이 아니다. 판정은 파일 시각이 아니라 내용 해시다: `build:data`가 전쟁마다 입력(전쟁 YAML·손그림 geojson·쓰는 나라의 `data/geo` 파일·`wars.ts`·`geo.ts`·`war-cache.ts`·육지 파일)의 해시와 출력의 해시를 `.cache/build-data-wars/built.json`에 남기고, places가 같은 해시를 다시 계산해 비교한다. `npm run build:data -- --war <id>`로 다시 만든다(낡은 전쟁을 찾아 한 번에 다시 만드는 것이 `npm run finish:border`, 이 절 위쪽). `gen:geo`를 돌려도 바이트가 같으면 입력 해시가 그대로라 다시 만들 필요가 없다.
 - `lines` 꼬리표를 단 선 가운데 지도 FIX 후보: `L_VOLKHOV`(볼호프, 평균 6km). `L_LIAO`(요하)·`L_YALU_TUMEN` 압록강 쪽은 강줄기를 따라 다시 그었다(평균 0.3~0.4km, 최대 1~4km). 다른 도형이 이음 점을 가져갈 때는 `slice`·인덱스에 숫자 대신 이름(`LIAO_I`·`YT_I`)을 써서 선에 점을 더해도 뜻이 바뀌지 않게 한다. 두만강 쪽(최대 8km)과 꼬리표가 없는 선(`L_PRZEMSZA`·`L_CONGRESS_W`·`L_FUYUAN`·`L_VISTULA_UP` 올자강 구간)은 Natural Earth에 강이 없거나 근사라 잴 수 없다.
 - `오류`는 검사 자체가 예외를 던진 것(종료 코드 2). 보고서의 스택을 본다.
 
