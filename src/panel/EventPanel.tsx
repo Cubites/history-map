@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useMediaQuery } from '../lib/useMediaQuery.ts';
 import { claimantsAt, claimedRegionsAt, occupierAt, overlordAt, type StaticData } from '../data/staticData.ts';
 import { eventYearFor, eventsOf, formatEventYears, inDecade, linkDirection } from '../lib/events.ts';
@@ -260,37 +260,44 @@ const writeAboutOpen = (open: boolean) => {
   }
 };
 
+/** 접힌 설명에 보일 글자 수 어림. 이 안에 드는 앞 문장들만 보이고, 첫 문장은 길어도 통째로 보인다 */
+const ABOUT_LEAD_CHARS = 90;
+
+/** 설명을 괄호 밖의 '. '에서 문장으로 나눠, 접힌 상태에 보일 앞 문장들과 나머지로 가른다 */
+function splitLead(text: string): { lead: string; rest: string } {
+  const ends: number[] = [];
+  let depth = 0;
+  for (let i = 0; i < text.length; i++) {
+    const c = text[i];
+    if (c === '(' || c === '「' || c === '『') depth++;
+    else if ((c === ')' || c === '」' || c === '』') && depth > 0) depth--;
+    else if (c === '.' && depth === 0 && (i + 1 === text.length || text[i + 1] === ' ')) ends.push(i + 1);
+  }
+  let cut = ends.find((end) => end < text.length) ?? text.length;
+  for (const end of ends) {
+    if (end > ABOUT_LEAD_CHARS) break;
+    cut = end;
+  }
+  return { lead: text.slice(0, cut).trim(), rest: text.slice(cut).trim() };
+}
+
 /**
- * 나라 설명과 건국 메모. 설명이 긴 나라가 많아 사건 목록이 아래로 밀리므로 처음에는 설명 앞 두 줄만 보이고,
- * '더 보기'로 나머지와 건국 메모를 펼친다(2026-10-13). 펼친 상태는 다른 나라를 골라도 이어진다
+ * 나라 설명과 건국 메모. 설명이 긴 나라가 많아 사건 목록이 아래로 밀리므로 처음에는 설명 앞 문장만 보이고,
+ * '더 보기'로 나머지와 건국 메모를 펼친다(2026-10-13). 줄 수로 자르면 문장 가운데가 끊겨 문장 단위로 자른다(2026-10-18).
+ * 펼친 상태는 다른 나라를 골라도 이어진다
  */
 function EntityAbout({ summary, note }: { summary?: string; note?: string }) {
   const [open, setOpen] = useState(readAboutOpen);
-  const [clipped, setClipped] = useState(false);
-  const ref = useRef<HTMLParagraphElement>(null);
-  // 접힌 상태에서 두 줄을 넘는지 잰다(패널 폭이 바뀌면 다시 잼)
-  useLayoutEffect(() => {
-    const el = ref.current;
-    if (open || !el) return;
-    const measure = () => setClipped(el.scrollHeight > el.clientHeight + 1);
-    measure();
-    const observer = new ResizeObserver(measure);
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, [open, summary]);
   if (!summary && !note) return null;
   const toggle = () => {
     setOpen(!open);
     writeAboutOpen(!open);
   };
-  const canOpen = clipped || !!note || !summary;
+  const { lead, rest } = splitLead(summary ?? '');
+  const canOpen = !!rest || !!note;
   return (
     <div className="panel-about">
-      {summary && (
-        <p ref={ref} className={open ? 'panel-summary' : 'panel-summary panel-summary-clamped'}>
-          {summary}
-        </p>
-      )}
+      {summary && <p className="panel-summary">{open ? summary : lead}</p>}
       {open && note && <p className="panel-note">{note}</p>}
       {(open || canOpen) && (
         <button type="button" className="link-button panel-about-toggle" aria-expanded={open} onClick={toggle}>

@@ -91,7 +91,7 @@
   from: 947
   to: 950
   color: "#6a86a6"
-  summary: 5대 네 번째 왕조
+  summary: 후진이 거란에 무너진 뒤 화북에 세워진 5대 네 번째 왕조. 4년 만에 후주로 바뀜
   basis:
     type: primary_source
     refs: ["『구오대사』", "『신오대사』"]

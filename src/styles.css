@@ -219,13 +219,6 @@ button {
 .panel-occupation { font-size: 13px; font-weight: 600; }
 .panel-summary { margin: 8px 0 0; }
 .panel-about { margin-bottom: 8px; }
-.panel-summary-clamped {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  line-clamp: 2;
-  overflow: hidden;
-}
 .panel-about .panel-note { margin: 6px 0 0; }
 .panel-about-toggle { margin-top: 2px; font-size: 13px; }
 
