@@ -263,28 +263,69 @@ const writeAboutOpen = (open: boolean) => {
 /** 접힌 설명에 보일 글자 수 어림. 이 안에 드는 앞 문장들만 보이고, 첫 문장은 길어도 통째로 보인다 */
 const ABOUT_LEAD_CHARS = 90;
 
-/** 설명을 괄호 밖의 '. '에서 문장으로 나눠, 접힌 상태에 보일 앞 문장들과 나머지로 가른다 */
-function splitLead(text: string): { lead: string; rest: string } {
-  const ends: number[] = [];
+/** 문장이 이만큼 넘으면 펼친 설명을 문장별 목록으로 보인다(한두 문장은 그냥 문단) */
+const ABOUT_LIST_MIN = 3;
+
+/** 괄호·낫표 밖의 '. '에서 문장으로 나눈다(괄호 안의 마침표에서는 자르지 않음) */
+function splitSentences(text: string): string[] {
+  const sentences: string[] = [];
   let depth = 0;
+  let start = 0;
   for (let i = 0; i < text.length; i++) {
     const c = text[i];
     if (c === '(' || c === '「' || c === '『') depth++;
     else if ((c === ')' || c === '」' || c === '』') && depth > 0) depth--;
-    else if (c === '.' && depth === 0 && (i + 1 === text.length || text[i + 1] === ' ')) ends.push(i + 1);
+    else if (c === '.' && depth === 0 && (i + 1 === text.length || text[i + 1] === ' ')) {
+      sentences.push(text.slice(start, i + 1).trim());
+      start = i + 1;
+    }
   }
-  let cut = ends.find((end) => end < text.length) ?? text.length;
-  for (const end of ends) {
-    if (end > ABOUT_LEAD_CHARS) break;
-    cut = end;
+  const tail = text.slice(start).trim();
+  if (tail) sentences.push(tail);
+  return sentences;
+}
+
+/** 접힌 상태에 보일 앞 문장들(ABOUT_LEAD_CHARS 안, 첫 문장은 늘 통째로)과 나머지 문장들로 가른다 */
+function splitLead(sentences: string[]): { lead: string[]; rest: string[] } {
+  let n = 1;
+  let length = sentences[0]?.length ?? 0;
+  while (n < sentences.length && length + 1 + sentences[n].length <= ABOUT_LEAD_CHARS) length += 1 + sentences[n++].length;
+  return { lead: sentences.slice(0, n), rest: sentences.slice(n) };
+}
+
+/** 글 속 해(1453, 1801~1803, 기원전 108년, 57년 …)를 굵게. '6·25'·'2천여 리'·'16주' 같은 수는 두지 않는다 */
+const YEAR_RE = /(?:기원전 )?(?:\d{3,4}|\d{1,2}(?=년))(?:년)?(?:~(?:\d{1,4})?(?:년)?)?/g;
+function withYears(text: string): React.ReactNode[] {
+  const out: React.ReactNode[] = [];
+  let last = 0;
+  for (const m of text.matchAll(YEAR_RE)) {
+    const at = m.index;
+    // 더 긴 수의 한가운데는 건너뜀
+    if (at > 0 && /\d/.test(text[at - 1])) continue;
+    if (at > last) out.push(text.slice(last, at));
+    out.push(<b key={at} className="about-year">{m[0]}</b>);
+    last = at + m[0].length;
   }
-  return { lead: text.slice(0, cut).trim(), rest: text.slice(cut).trim() };
+  if (last < text.length) out.push(text.slice(last));
+  return out;
+}
+
+/** 문장들을 문단(짧을 때) 또는 문장별 목록(길 때)으로 보인다 */
+function Sentences({ sentences, className, list }: { sentences: string[]; className: string; list: boolean }) {
+  if (!list) return <p className={className}>{withYears(sentences.join(' '))}</p>;
+  return (
+    <ul className={`${className} about-sentences`}>
+      {sentences.map((s, i) => (
+        <li key={i}>{withYears(s)}</li>
+      ))}
+    </ul>
+  );
 }
 
 /**
  * 나라 설명과 건국 메모. 설명이 긴 나라가 많아 사건 목록이 아래로 밀리므로 처음에는 설명 앞 문장만 보이고,
  * '더 보기'로 나머지와 건국 메모를 펼친다(2026-10-13). 줄 수로 자르면 문장 가운데가 끊겨 문장 단위로 자른다(2026-10-18).
- * 펼친 상태는 다른 나라를 골라도 이어진다
+ * 펼치면 문장이 많은 글은 문장별 목록으로, 글 속 해는 굵게 보인다(2026-10-18). 펼친 상태는 다른 나라를 골라도 이어진다
  */
 function EntityAbout({ summary, note }: { summary?: string; note?: string }) {
   const [open, setOpen] = useState(readAboutOpen);
@@ -293,12 +334,24 @@ function EntityAbout({ summary, note }: { summary?: string; note?: string }) {
     setOpen(!open);
     writeAboutOpen(!open);
   };
-  const { lead, rest } = splitLead(summary ?? '');
-  const canOpen = !!rest || !!note;
+  const sentences = splitSentences(summary ?? '');
+  const noteSentences = splitSentences(note ?? '');
+  const { lead, rest } = splitLead(sentences);
+  const canOpen = rest.length > 0 || !!note;
   return (
     <div className="panel-about">
-      {summary && <p className="panel-summary">{open ? summary : lead}</p>}
-      {open && note && <p className="panel-note">{note}</p>}
+      {summary &&
+        (open ? (
+          <Sentences sentences={sentences} className="panel-summary" list={sentences.length >= ABOUT_LIST_MIN} />
+        ) : (
+          <Sentences sentences={lead} className="panel-summary" list={false} />
+        ))}
+      {open && note && (
+        <div className="about-note">
+          <h4>시작 기준과 지도 표시</h4>
+          <Sentences sentences={noteSentences} className="panel-note" list={noteSentences.length >= ABOUT_LIST_MIN} />
+        </div>
+      )}
       {(open || canOpen) && (
         <button type="button" className="link-button panel-about-toggle" aria-expanded={open} onClick={toggle}>
           {open ? '접기 ▴' : '더 보기 ▾'}

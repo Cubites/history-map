@@ -218,8 +218,15 @@ button {
 .panel-period { color: var(--muted); font-size: 13px; }
 .panel-occupation { font-size: 13px; font-weight: 600; }
 .panel-summary { margin: 8px 0 0; }
-.panel-about { margin-bottom: 8px; }
-.panel-about .panel-note { margin: 6px 0 0; }
+/* 나라 설명: 본문보다 한 단계 크고 줄 간격을 넓힘, 긴 글은 문장별 목록, 해는 굵게 (2026-10-18) */
+.panel-about { margin-bottom: 8px; font-size: 15px; line-height: 1.7; }
+.panel-about .about-sentences { padding-left: 1.1em; }
+.panel-about .about-sentences li { margin: 0 0 4px; }
+.panel-about .about-sentences li::marker { color: var(--muted); }
+.panel-about .about-year { font-weight: 600; }
+.about-note { margin-top: 10px; padding-top: 8px; border-top: 1px solid var(--border); }
+.about-note h4 { margin: 0 0 2px; font-size: 12px; font-weight: 600; color: var(--muted); }
+.panel-about .panel-note { margin: 0; font-size: 13px; line-height: 1.6; }
 .panel-about-toggle { margin-top: 2px; font-size: 13px; }
 
 .panel-absent {
