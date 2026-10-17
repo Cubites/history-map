@@ -9,7 +9,7 @@
 //   // @기준선 해안 [구간 <i>-<j>] [허용 <N>km] [평균 <M>km] [ — 메모]
 //   - <키>: scripts/prep-rivers.mjs의 RIVER_SETS 키(amur·danube 등). 기준 강선은 data/base/rivers/rivers.geojson(Natural Earth v5.1.2, npm run prep:rivers)
 //   - 구간 i-j: 선의 i번째~j번째 꼭짓점(0부터, 양끝 포함)과 그 사이 변만 잰다. 강을 떠나 육지·호수를 지나는 구간을 빼려고 쓴다. 없으면 선 전체
-//   - 허용: 기본 강 3km, 해안 2km. 근사로 그은 선은 지금 수준을 허용으로 적고(메모에 '지도 FIX 후보'), 나중에 선을 고치면 허용도 줄인다
+//   - 허용: 꼬리표의 값이 늘 우선. 없으면 정밀도 구역 파일(data/tests/zones.yaml)의 tests.lineTolKm — 선의 첫 꼭짓점(구간이 있으면 그 구간 첫 점)이 든 구역의 값(기본 강 3km, 해안 2km). 근사로 그은 선은 지금 수준을 허용으로 적고(메모에 '지도 FIX 후보'), 나중에 선을 고치면 허용도 줄인다
 //   - 평균: 최대만 보면 허용 아래에서 선이 나빠져도 통과하므로, 지금 평균(소수 1자리로 올림)을 적어 두면 평균이 그 값을 넘을 때도 실패로 낸다. 없으면 평균은 보지 않는다. 선을 고쳐 평균이 줄면 값도 줄인다
 //   - 해안: 기준은 world-atlas land-50m(Natural Earth 4.1.0) 해안선. areas/europe.mjs의 선은 유럽 조각 파일(data/base/fragments/europe.topo.json)의 권역 바깥선.
 //     선→해안 최대 거리 외에 반대 방향도 잰다: 선의 시작·끝에 가장 가까운 해안 꼭짓점(5×허용 또는 10km 이내, 같은 링) 사이의 해안을 링을 따라 따라가며, 그 해안 점이 선에서 허용보다 멀면 실패
@@ -23,6 +23,7 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 import { feature } from 'topojson-client';
 import type { Context } from '../context.ts';
 import type { Check, CheckResult, Item, Options } from '../types.ts';
+import { loadZones, zoneAt } from '../zones.ts';
 
 type P = [number, number];
 type Line = P[];
@@ -34,7 +35,6 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../.
 const GEO_DIR = process.env.TEST_GEO_LINES_DIR ? path.resolve(process.env.TEST_GEO_LINES_DIR) : path.join(ROOT, 'scripts/geo');
 const RIVERS_FILE = path.join(ROOT, 'data/base/rivers/rivers.geojson');
 const FRAGMENTS_FILE = path.join(ROOT, 'data/base/fragments/europe.topo.json');
-const DEFAULT_TOL = { 강: 3, 해안: 2 } as const;
 const KM = 111.32;
 const VERBOSE = process.env.TEST_GEO_LINES_VERBOSE === '1';
 
@@ -47,7 +47,8 @@ interface Tag {
   kind: '강' | '해안';
   river: string | null;
   range: [number, number] | null;
-  tol: number;
+  /** 꼬리표에 적힌 허용(km). 없으면 null → 구역 파일 값 */
+  tol: number | null;
   /** 평균 거리 상한(km). 꼬리표에 없으면 null */
   meanCap: number | null;
 }
@@ -98,7 +99,7 @@ function parseTag(file: string, line: number, name: string, text: string, items:
   const r = head.match(/구간\s*(\d+)-(\d+)/);
   const tol = head.match(/허용\s*(\d+(?:\.\d+)?)\s*km/);
   const mean = head.match(/평균\s*(\d+(?:\.\d+)?)\s*km/);
-  return { file, line, name, kind, river, range: r ? [Number(r[1]), Number(r[2])] : null, tol: tol ? Number(tol[1]) : DEFAULT_TOL[kind], meanCap: mean ? Number(mean[1]) : null };
+  return { file, line, name, kind, river, range: r ? [Number(r[1]), Number(r[2])] : null, tol: tol ? Number(tol[1]) : null, meanCap: mean ? Number(mean[1]) : null };
 }
 
 const tagKey = (t: Tag) => `${path.basename(t.file)} ${t.name} ${t.kind === '강' ? t.river : '해안'}${t.range ? ` ${t.range[0]}-${t.range[1]}` : ''}`;
@@ -261,6 +262,7 @@ async function run(_ctx: Context, opt: Options): Promise<CheckResult> {
     : new Map<string, SegIdx>();
   if (!rivers) items.push({ key: 'rivers.geojson 없음', msg: 'data/base/rivers/rivers.geojson이 없음: npm run prep:rivers로 만들 것' });
   const coasts = new Map<boolean, Coast>();
+  const precision = loadZones();
 
   const mods = new Map<string, any>();
   let checked = 0;
@@ -284,6 +286,7 @@ async function run(_ctx: Context, opt: Options): Promise<CheckResult> {
       items.push({ key: `${key} 구간 범위`, msg: `${t.file}:${t.line} ${t.name} 구간 ${from}-${to}이 점 ${line.length}개 선의 범위 밖` });
       continue;
     }
+    const tol = t.tol ?? zoneAt(line[from][0], line[from][1], precision).tests.lineTolKm[t.kind];
     const pts = sampleLine(line, from, to);
     let m: Measure;
     let extra = '';
@@ -292,15 +295,15 @@ async function run(_ctx: Context, opt: Options): Promise<CheckResult> {
       const idx = rivers!.get(t.river!);
       if (!idx) { items.push({ key: `${key} 기준 강 없음`, msg: `${t.file}:${t.line} 기준 강 '${t.river}'가 rivers.geojson에 없음: scripts/prep-rivers.mjs의 RIVER_SETS에 더하고 npm run prep:rivers` }); continue; }
       m = measure(pts, (p) => nearestKm(idx, p));
-      over = m.max > t.tol;
+      over = m.max > tol;
     } else {
       const europe = path.basename(t.file) === 'europe.mjs';
       if (!coasts.has(europe)) coasts.set(europe, await loadCoast(europe));
       const coast = coasts.get(europe)!;
       m = measure(pts, (p) => nearestKm(coast.idx, p));
-      over = m.max > t.tol;
-      const back = coastToLine(coast, line, from, to, t.tol);
-      if (back && back.max > t.tol) {
+      over = m.max > tol;
+      const back = coastToLine(coast, line, from, to, tol);
+      if (back && back.max > tol) {
         over = true;
         extra = ` / 해안→선 최대 ${f1(back.max)}km(해안 ${pt(back.at)})`;
       }
@@ -309,12 +312,12 @@ async function run(_ctx: Context, opt: Options): Promise<CheckResult> {
     const meanOver = t.meanCap !== null && m.mean > t.meanCap + 1e-9;
     if (meanOver) over = true;
     checked++;
-    if (VERBOSE) console.error(`lines ${key.padEnd(44)} 점 ${String(m.n).padStart(3)} 최대 ${f1(m.max).padStart(5)} 평균 ${f1(m.mean).padStart(5)} (꼬리표용 ${(Math.ceil(m.mean * 10 - 1e-9) / 10).toFixed(1)}km) 허용 ${t.tol}`);
-    const ratio = m.max / t.tol;
-    if (!worst || ratio > worst.ratio) worst = { name: `${t.name} ${t.kind === '강' ? t.river : '해안'}`, ratio, max: m.max, tol: t.tol };
+    if (VERBOSE) console.error(`lines ${key.padEnd(44)} 점 ${String(m.n).padStart(3)} 최대 ${f1(m.max).padStart(5)} 평균 ${f1(m.mean).padStart(5)} (꼬리표용 ${(Math.ceil(m.mean * 10 - 1e-9) / 10).toFixed(1)}km) 허용 ${tol}`);
+    const ratio = m.max / tol;
+    if (!worst || ratio > worst.ratio) worst = { name: `${t.name} ${t.kind === '강' ? t.river : '해안'}`, ratio, max: m.max, tol };
     if (over) {
       const range = t.range ? ` 구간 ${from}-${to}` : '';
-      items.push({ key, msg: `${t.name}${range} → ${t.kind === '강' ? `강 ${t.river}` : '해안'}: 최대 ${f1(m.max)}km (허용 ${t.tol}km), 평균 ${f1(m.mean)}km${meanOver ? ` (평균 허용 ${t.meanCap}km 넘음)` : ''}, 가장 먼 곳 ${pt(m.at)}${extra} [${t.file}:${t.line}]` });
+      items.push({ key, msg: `${t.name}${range} → ${t.kind === '강' ? `강 ${t.river}` : '해안'}: 최대 ${f1(m.max)}km (허용 ${tol}km), 평균 ${f1(m.mean)}km${meanOver ? ` (평균 허용 ${t.meanCap}km 넘음)` : ''}, 가장 먼 곳 ${pt(m.at)}${extra} [${t.file}:${t.line}]` });
     }
   }
   const notes = [`꼬리표 ${tags.length}개 (강 ${tags.filter((t) => t.kind === '강').length}·해안 ${tags.filter((t) => t.kind === '해안').length})`];

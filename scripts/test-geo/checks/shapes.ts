@@ -3,15 +3,18 @@
 //  (gen은 국경 생성기와 전쟁 생성기를 임시 폴더에 돌려 data/geo·data/wars와 바이트 비교하므로 --ci이거나 --only gen일 때만 한다. 전쟁 쪽은 입력 해시가 지난 성공과 같으면 건너뜀.) 모든 검사는 --region·--years를 따른다.
 //
 // - gaps 빈 땅: check:gaps(scripts/check-gaps.ts)와 같은 (구역, 해) 칸·같은 캐시 열쇠로 계산해(그 파일 원문이 열쇠에 들어가므로 이 파일은 check-gaps.ts를 읽어 해시만 넘긴다) 두 명령이 캐시를 공유한다.
-//   옛 빚은 data/tests/baseline/gaps.txt(줄마다 `<구역> <해>` TAB `<총넓이 km²>` TAB `<큰 조각 상자 최대 3개, ';'로 이음>`)에 두고, 아래 셋 가운데 하나면 실패한다: ① 기준선에 없는 칸 ② 총넓이가 기준선보다 500km² 넘게 늘어남(고정 여유, 비율 아님)
-//   ③ 큰 조각 3개 가운데 기준선에 없는 상자가 나타남(조각이 500km² 넘음. 같은 칸에서 옛 빈 땅이 줄고 다른 곳에 새로 생겨 총넓이가 그대로인 경우를 잡음. 옛 조각이 줄어 4번째가 3위로 올라와도 걸리니, 고친 뒤라면 --update-baseline gaps). 줄어든 칸은 '개선'으로 센다.
+//   옛 빚은 data/tests/baseline/gaps.txt(줄마다 `<구역> <해>` TAB `<총넓이 km²>` TAB `<큰 조각 상자 최대 3개, ';'로 이음>`)에 두고, 아래 셋 가운데 하나면 실패한다: ① 기준선에 없는 칸 ② 총넓이가 기준선보다 gapGrowKm2(지금 500)km² 넘게 늘어남(고정 여유, 비율 아님)
+//   ③ 큰 조각 3개 가운데 기준선에 없는 상자가 나타남(조각이 gapGrowKm2 넘음. 같은 칸에서 옛 빈 땅이 줄고 다른 곳에 새로 생겨 총넓이가 그대로인 경우를 잡음. 옛 조각이 줄어 4번째가 3위로 올라와도 걸리니, 고친 뒤라면 --update-baseline gaps). 줄어든 칸은 '개선'으로 센다.
 //   --years를 좁혀도 범위 시작 해에 이미 효력이 있는 상태(그 전의 가장 늦은 바뀌는 해 칸)를 함께 본다.
 //   기준선과 비교는 이 검사가 직접 하므로 항목은 새 실패만 낸다(러너의 기준선 대조에 의존하지 않음). 기준선 만들기: `npm run test:geo -- --only gaps --update-baseline gaps`(러너가 이 파일의 baselineText를 불러 씀. --region·--years와는 함께 못 씀).
 // - overlap 겹침: build-data/index.ts의 checkOverlaps와 같은 쌍·같은 'overlap' 캐시. 5km² 초과는 실패(check:data와 같음), 0.5~5km²는 경고.
 // - strips 가는 띠: 해안선으로 자른 조각 가운데 폭(≈2×넓이/둘레) 1km 미만이고 넓이 2km² 초과인 것. 같은 조각이 여러 버전에 되풀이되면 한 줄로 묶는다. 열쇠 `띠 @경도,위도 <넓이>km²`.
 // - zero 넓이 0: data/geo 원자료 조각의 넓이가 0.01km² 미만이거나 고리 점이 4개 미만. 열쇠 `영 <id>@<from> @경도,위도`.
-// - islands 사라진 섬: land-50m 섬(5~30,000km²)의 안쪽 점이 어떤 영토에 덮이다가 어느 해 아무 영토에도 덮이지 않게 된 때. 열쇠 `섬 <해> @경도,위도`.
+// - islands 사라진 섬: land-50m 섬(구역 파일 tests.islandKm2 범위, 지금 5~30,000km²)의 안쪽 점이 어떤 영토에 덮이다가 어느 해 아무 영토에도 덮이지 않게 된 때. 열쇠 `섬 <해> @경도,위도`.
 //   strips·zero·islands는 옛 빚이 많아 러너의 기준선(data/tests/baseline/<검사 id>.txt, 줄마다 열쇠)을 쓰고, 의도한 것은 data/tests/allow/shapes.yaml에 이유와 함께 옮긴다.
+// gaps·islands의 검사 값(gapMinKm2·gapGrowKm2·islandKm2)은 정밀도 구역 파일 data/tests/zones.yaml이 정한다(scripts/test-geo/zones.ts가 읽음):
+//   섬은 안쪽 점이 든 구역의 값. 칸(gapZone)은 해안으로 자른 그 도형과 겹치는 모든 구역(도형이 구역들 바깥으로도 나가면 기본 tests도)의 tests 가운데 가장 엄격한(작은) gapMinKm2·gapGrowKm2.
+//   값이 500이면 캐시 열쇠(minKm2)는 예전과 같다. check:gaps(scripts/check-gaps.ts)는 500 고정이라 구역 값을 바꾸면 두 명령의 결과가 갈린다(캐시 열쇠도 달라져 캐시를 공유하지 않음).
 // 계산은 build-data의 runCached(worker들에 나눔, HISTORY_MAP_WORKERS로 개수 조절)와 캐시를 쓴다. cache.ts·tasks.ts·geo.ts·check-gaps.ts는 고치지 않는다(캐시 열쇠가 그 원문을 담음).
 import { spawnSync } from 'node:child_process';
 import { existsSync, mkdirSync, mkdtempSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
@@ -27,6 +30,7 @@ import { areaKm2, bbox, bboxIntersects, roundCoords, toMulti, type BBox, type Mu
 import { loadLand } from '../../build-data/tasks.ts';
 import type { Context } from '../context.ts';
 import type { Check, CheckResult, Item, Options } from '../types.ts';
+import { describeZones, loadZones, zoneAt, type TestValues, type ZonesConfig } from '../zones.ts';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../..');
 const THIS_YEAR = new Date().getFullYear();
@@ -34,13 +38,10 @@ const THIS_YEAR = new Date().getFullYear();
 const RANGE_START = -2332;
 const OVERLAP_FAIL_KM2 = 5;
 const OVERLAP_WARN_KM2 = 0.5;
-const GAP_MIN_KM2 = 500;
-/** 기준선보다 총넓이가 이만큼 넘게 늘면 실패 (고정값: 큰 칸에서 비율 여유가 새 구멍을 가리던 문제를 없앰) */
-const GAP_GROW_KM2 = 500;
+// 빈 땅 조각 최소 넓이(gapMinKm2)·기준선 대비 늘어남 여유(gapGrowKm2)·섬 넓이 범위(islandKm2)는 구역 파일(data/tests/zones.yaml)에서 온다(../zones.ts).
 const STRIP_WIDTH_KM = 1;
 const STRIP_MIN_KM2 = 2;
 const ZERO_KM2 = 0.01;
-const ISLAND_KM2: [number, number] = [5, 30000];
 
 // ── 공통 읽기 ───────────────────────────────────────────────
 
@@ -120,6 +121,36 @@ let lastGaps: { cells: GapCell[]; filtered: boolean } | null = null;
 const GAPS_BASELINE = path.join(ROOT, 'data/tests/baseline/gaps.txt');
 const yearLabel = (y: number) => (y <= 0 ? `기원전 ${1 - y}` : String(y));
 
+/**
+ * 칸(구역 gapZone, 해안으로 자른 도형 region) 하나에 쓸 빈 땅 검사 값.
+ * region과 겹치는 모든 정밀도 구역의 tests에(region이 구역들 바깥으로도 나가면 기본 tests도) 든 gapMinKm2·gapGrowKm2 가운데 가장 엄격한(작은) 값을 각각 고른다.
+ * 대표 점 하나로 정하면 시기마다 도형의 대표 점이 옮겨 다녀 같은 칸이 어느 때는 느슨한 구역 값을 받는 문제가 있어서, 겹치는 구역 전부를 본다.
+ * 겹침: 상자가 겹치고 polyclip 교집합 넓이가 0보다 크면. polyclip이 깨지면 '겹침'으로 친다(엄격한 쪽). gapZone마다 한 번 계산한다.
+ * 참고: check:gaps는 500 고정이라 구역 값을 바꾸면 두 명령의 결과가 갈린다.
+ */
+function strictGapTests(region: MultiCoords, cfg: ZonesConfig): Pick<TestValues, 'gapMinKm2' | 'gapGrowKm2'> {
+  const pick = (all: TestValues[]) => ({ gapMinKm2: Math.min(...all.map((t) => t.gapMinKm2)), gapGrowKm2: Math.min(...all.map((t) => t.gapGrowKm2)) });
+  if (!region.length) return pick([cfg.tests]);
+  const rb = bbox(region);
+  const hit = cfg.zones.filter((z) => {
+    const poly: MultiCoords = [[z.polygon]];
+    if (!bboxIntersects(rb, bbox(poly))) return false;
+    try {
+      return areaKm2(polyclip.intersection(region as polyclip.Geom, poly as polyclip.Geom) as MultiCoords) > 0;
+    } catch {
+      return true;
+    }
+  });
+  let outside = hit.length === 0;
+  if (!outside)
+    try {
+      outside = areaKm2(polyclip.difference(region as polyclip.Geom, ...hit.map((z) => [[z.polygon]] as polyclip.Geom)) as MultiCoords) > 0;
+    } catch {
+      outside = true;
+    }
+  return pick([...hit.map((z) => z.tests), ...(outside ? [cfg.tests] : [])]);
+}
+
 /** 칸 글에서 큰 조각들: "[12,345km² 127.5,35.5,128.0,35.9]" → 넓이와 상자 글 */
 const piecesOf = (text: string) => [...text.matchAll(/\[([\d,]+)km² ([-\d.,]+)\]/g)].map((m) => ({ km2: Number(m[1].replaceAll(',', '')), box: m[2] }));
 
@@ -143,6 +174,7 @@ async function runGaps(_ctx: Context, opt: Options): Promise<CheckResult> {
   const { AREAS } = await import('../../geo/area-list.mjs');
   const { collectGapZones } = await import('../../geo/engine.mjs');
   const zones = collectGapZones(AREAS);
+  const precision = loadZones();
   const stats: RunStats = { hits: 0, computed: 0 };
   // check-gaps.ts와 같은 순서·같은 인자: 구역 자르기 → minus를 뺀 구역 → 구역마다 범위 상자가 겹치는 영토(파일 순서) → 해 목록 → 칸
   const clippedZones = await runCached<MultiCoords>('clip', zones.map(({ zone }) => ({ args: { g: keyOf(zone), land: '50m' }, geoms: new Map([[keyOf(zone), zone]]) })), '', stats);
@@ -151,6 +183,8 @@ async function runGaps(_ctx: Context, opt: Options): Promise<CheckResult> {
     const earlier = minus.map((m) => regions.find(([n]) => n === m)![1] as polyclip.Geom);
     regions.push([name, earlier.length ? (polyclip.difference(clippedZones[i] as polyclip.Geom, ...earlier) as MultiCoords) : clippedZones[i]]);
   }
+  // 칸(구역 gapZone)마다 겹치는 정밀도 구역들 가운데 가장 엄격한 검사 값(한 번만 계산). 조각이 없으면(해안으로 자르니 비었음) 기본값
+  const zoneTests = regions.map(([, r]) => strictGapTests(r, precision));
   const regionBoxes = regions.map(([, r]) => bbox(r));
   const all = loadTerritories();
   const boxes = new Map(all.map((t) => [t, bbox(t.coords)] as const));
@@ -164,17 +198,17 @@ async function runGaps(_ctx: Context, opt: Options): Promise<CheckResult> {
   const inZoneYears = (z: (typeof zones)[number], year: number) => (z.from === null || z.from <= year) && (z.to === null || year < z.to);
 
   const jobs = new Map<string, Job>();
-  const cells: { zone: string; year: number; id: string }[] = [];
+  const cells: { zone: string; year: number; id: string; grow: number }[] = [];
   for (const year of years) {
     if (!wanted(year)) continue;
     zones.forEach((z, zi) => {
       if (!inZoneYears(z, year) || !regionOk(opt.region, z.area)) return;
       const [name, region] = regions[zi];
       const active = nearZone[zi].filter((t) => t.from <= year && (t.to === null || year < t.to));
-      const args = { name, region: keyOf(region), active: active.map((t) => keyOf(t.coords)), minKm2: GAP_MIN_KM2 };
+      const args = { name, region: keyOf(region), active: active.map((t) => keyOf(t.coords)), minKm2: zoneTests[zi].gapMinKm2 };
       const id = JSON.stringify(args);
       if (!jobs.has(id)) jobs.set(id, { args, geoms: new Map<string, unknown>([[keyOf(region), region], ...active.map((t): [string, unknown] => [keyOf(t.coords), t.coords])]) });
-      cells.push({ zone: name, year, id });
+      cells.push({ zone: name, year, id, grow: zoneTests[zi].gapGrowKm2 });
     });
   }
   const ids = [...jobs.keys()];
@@ -197,10 +231,10 @@ async function runGaps(_ctx: Context, opt: Options): Promise<CheckResult> {
     const was = base.get(key);
     const label = `${yearLabel(c.year)}년 ${text}`;
     if (was === undefined) items.push({ key, msg: `${label} (기준선에 없는 새 빈 땅)` });
-    else if (!(total <= was.total + GAP_GROW_KM2)) items.push({ key: `${key} 늘어남`, msg: `${label} (기준선 ${fmt(was.total)}km²보다 ${fmt(total - was.total)}km² 늘어남)` });
+    else if (!(total <= was.total + c.grow)) items.push({ key: `${key} 늘어남`, msg: `${label} (기준선 ${fmt(was.total)}km²보다 ${fmt(total - was.total)}km² 늘어남)` });
     else {
       // 총넓이는 그대로여도 큰 조각 3개 가운데 기준선에 없는 상자가 있으면 새 빈 땅(옛 것이 줄고 다른 곳에 새로 생긴 경우)
-      const fresh = was.boxes ? piecesOf(text).filter((p) => p.km2 > GAP_GROW_KM2 && !was.boxes!.has(p.box)) : [];
+      const fresh = was.boxes ? piecesOf(text).filter((p) => p.km2 > c.grow && !was.boxes!.has(p.box)) : [];
       if (fresh.length) items.push({ key: `${key} 새 조각`, msg: `${label} (기준선에 없는 새 조각 ${fresh.map((p) => `${fmt(p.km2)}km² ${p.box}`).join(', ')})` });
       else {
         known++;
@@ -348,13 +382,23 @@ const inMulti = (p: number[], m: MultiCoords): boolean => m.some((poly) => inRin
 
 async function runIslands(_ctx: Context, opt: Options): Promise<CheckResult> {
   const sel = await selectedClipped(opt);
+  const precision = loadZones();
+  // 섬 안쪽 점이 든 구역의 islandKm2 범위로 거른다. polylabel은 모든 구역의 범위를 합친 넓이 범위 안의 조각에만 부른다
+  const ranges = [precision.tests.islandKm2, ...precision.zones.map((z) => z.tests.islandKm2)];
+  const lo = Math.min(...ranges.map((r) => r[0]));
+  const hi = Math.max(...ranges.map((r) => r[1]));
   const land = loadLand('50m')
     .pieces.map((p) => ({ coords: p.coords, a: areaKm2([p.coords]) }))
-    .filter((p) => p.a > ISLAND_KM2[0] && p.a < ISLAND_KM2[1]);
+    .filter((p) => p.a > lo && p.a < hi)
+    .map((p) => ({ ...p, pt: polylabel(p.coords as [number, number][][], 0.001) as unknown as number[] }))
+    .filter((p) => {
+      const [min, max] = zoneAt(p.pt[0], p.pt[1], precision).tests.islandKm2;
+      return p.a > min && p.a < max;
+    });
   const items = new Map<string, Item>();
   let covered = 0;
   for (const isl of land) {
-    const pt = polylabel(isl.coords as [number, number][][], 0.001) as unknown as number[];
+    const pt = isl.pt;
     // 범위 상자가 점을 품은 조각만 정확히 본다
     const cand = sel.filter((t) => t.box[0] <= pt[0] && pt[0] <= t.box[2] && t.box[1] <= pt[1] && pt[1] <= t.box[3] && inMulti(pt, t.clipped));
     if (!cand.length) continue;
@@ -370,7 +414,7 @@ async function runIslands(_ctx: Context, opt: Options): Promise<CheckResult> {
       prev = o;
     }
   }
-  return { checked: land.length, items: [...items.values()], notes: [`섬 ${land.length}(영토에 덮인 적 있음 ${covered})`] };
+  return { checked: land.length, items: [...items.values()], notes: [`섬 ${land.length}(영토에 덮인 적 있음 ${covered})`, describeZones(precision)] };
 }
 
 // ── gen ─────────────────────────────────────────────────────
