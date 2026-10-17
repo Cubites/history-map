@@ -67,15 +67,15 @@ export const lifecycleLines = (y0: number, y1: number, region: string | null = n
 
 // ── versions2.mjs ───────────────────────────────────────────
 
-type Multi = number[][][][];
-const asMulti = (g: { type: string; coordinates: unknown }): Multi => (g.type === 'Polygon' ? [g.coordinates as number[][][]] : (g.coordinates as Multi));
+export type Multi = number[][][][];
+export const asMulti = (g: { type: string; coordinates: unknown }): Multi => (g.type === 'Polygon' ? [g.coordinates as number[][][]] : (g.coordinates as Multi));
 function ringArea(ring: number[][]): number {
   let s = 0;
   for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) s += (ring[j][0] - ring[i][0]) * (ring[j][1] + ring[i][1]);
   return Math.abs(s / 2);
 }
 /** versions2.mjs의 넓이: 폴리곤마다 바깥 고리 평균 위도의 평면 근사 */
-function area(multi: Multi): number {
+export function area(multi: Multi): number {
   let t = 0;
   for (const poly of multi) {
     const lat = poly[0].reduce((s, p) => s + p[1], 0) / poly[0].length;

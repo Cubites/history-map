@@ -19,6 +19,7 @@
     "check:exclaves": "node --disable-warning=ExperimentalWarning scripts/check-exclaves.ts",
     "check:generator": "node scripts/check-generator.mjs",
     "compare:geo": "node scripts/compare-geo.mjs",
+    "area:geo": "node --disable-warning=ExperimentalWarning scripts/area-geo.ts",
     "prep:fragments": "node scripts/prep-fragments.mjs",
     "prep:rivers": "node scripts/prep-rivers.mjs",
     "check:fragments": "node scripts/check-fragments.mjs",
