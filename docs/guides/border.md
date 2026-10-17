@@ -81,6 +81,12 @@ node ../history-map-handoff/tools/lifecycle.mjs <repo 절대경로> 476 2026    
 node ../history-map-handoff/tools/versions2.mjs <repo 절대경로> 476 2026 10000   # 1만 km² 넘는 버전 해 미연결
 ```
 
+국경을 고친 뒤 순서: `gen:geo` → (영토 국경이면) `gen:wars` → `test:geo`. **`test:geo`가 '전쟁 입력이 바뀜'으로 전쟁을 건너뛰어 실패로 세면 그 전쟁만 `npm run build:data -- --war <id>`로 다시 빌드한 뒤 `test:geo`를 다시 돌린다**(생성물 변화 없음, 5.1절).
+
+운영자에게 보고할 때의 두 규칙:
+- 연도·넓이를 말하기 전에 기억이 아니라 **저장소 값을 읽어 확인**한다(세션 N1: 건창 1382년을 1372년으로 잘못 알림).
+- 넓이·개수의 **원천은 결과 노트 표**다. 진행 표·HANDOFF에는 그 값을 옮겨 적고, 문서끼리 다르면 결과 노트에 맞춘다(같은 땅 넓이가 문서마다 다르게 적힌 일 4번).
+
 ### 5.1 지형 테스트 `npm run test:geo`와 부분 빌드
 
 위 `compare:geo`·`check:gaps`·지점 판정·`lifecycle`·`versions2` 확인을 한 명령으로 묶은 것이다. 새 명령 하나가 5분을 넘지 않는다(캐시가 따뜻하면 전체 약 1~2분).
