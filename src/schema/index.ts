@@ -30,6 +30,10 @@ export const EntitySchema = z
     to: Year.nullable(),
     color: z.string().regex(/^#[0-9a-fA-F]{6}$/, '#rrggbb 형식이어야 함').optional(),
     summary: z.string().optional(),
+    /** 역사 개요(summary)에 다 못 담은 영토 변화·조약 나열. 패널에서 '자세한 흐름'으로 펼친다 */
+    details: z.string().optional(),
+    /** 지도에 그린 시기·땅·묶음 같은 지도 표시 설명. 역사 설명(summary)과 나눠 패널에 따로 접어 보인다 */
+    mapNote: z.string().optional(),
     /** 수록 근거 (DESIGN.md D9). 나라(polity)는 필수, 지역(region)은 선택 */
     basis: z
       .object({

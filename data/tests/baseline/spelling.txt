@@ -1,13 +1,14 @@
 # test:geo 기준선 spelling: 지금 사건·나라 글에 섞여 있는 표기(data/tests/spelling.yaml의 avoid 표기). 한 줄에 열쇠 하나.
 # 2026-10-17 만듦. 사이트 글은 고치지 않았다 — 고칠지는 운영자가 정하고, 고치는 것은 사건 글을 손볼 때 한다.
 # 글을 고친 뒤: npm run test:geo -- --only spelling --update-baseline spelling
+# 2026-10-18 나라 글의 지도 문장을 mapNote 칸으로 옮겨 etruscan-city-states·roman-republic 열쇠의 필드만 foundingNote에서 mapNote로 바꿈(글 내용은 그대로).
 spelling crete-emirate summary 니키포로스
-spelling etruscan-city-states foundingNote 볼시니이
+spelling etruscan-city-states mapNote 볼시니이
 spelling etruscan-city-states summary 볼시니이
 spelling iceland-commonwealth summary 하콘
 spelling norway-medieval summary 하콘
 spelling old-great-bulgaria refs 니키포로스
-spelling roman-republic foundingNote 볼시니이
+spelling roman-republic mapNote 볼시니이
 spelling russo-turkish-war-1768 summary 남부흐강
 spelling scipio-zama-210bc summary 묵특
 spelling thessaly refs 니키포로스

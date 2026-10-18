@@ -158,7 +158,7 @@ export function EventPanel({ data }: { data: StaticData }) {
           )}
         </div>
       </header>
-      <EntityAbout key={entity.id} summary={entity.summary} note={entity.basis?.foundingNote} />
+      <EntityAbout key={entity.id} summary={entity.summary} details={entity.details} note={entity.basis?.foundingNote} mapNote={entity.mapNote} />
 
       {!isAlive(entity, year) && (
         <div className="panel-absent">
@@ -325,19 +325,36 @@ function Sentences({ sentences, className, list }: { sentences: string[]; classN
 /**
  * 나라 설명과 건국 메모. 설명이 긴 나라가 많아 사건 목록이 아래로 밀리므로 처음에는 설명 앞 문장만 보이고,
  * '더 보기'로 나머지와 건국 메모를 펼친다(2026-10-13). 줄 수로 자르면 문장 가운데가 끊겨 문장 단위로 자른다(2026-10-18).
- * 펼치면 문장이 많은 글은 문장별 목록으로, 글 속 해는 굵게 보인다(2026-10-18). 펼친 상태는 다른 나라를 골라도 이어진다
+ * 펼치면 문장이 많은 글은 문장별 목록으로, 글 속 해는 굵게 보인다(2026-10-18). 펼친 상태는 다른 나라를 골라도 이어진다.
+ * 펼친 순서: 개요(summary) → 시작 기준(foundingNote) → 자세한 흐름(details)·지도 표시(mapNote)는 한 번 더 접힘
  */
-function EntityAbout({ summary, note }: { summary?: string; note?: string }) {
+function EntityAbout({ summary, details, note, mapNote }: { summary?: string; details?: string; note?: string; mapNote?: string }) {
   const [open, setOpen] = useState(readAboutOpen);
-  if (!summary && !note) return null;
+  if (!summary && !details && !note && !mapNote) return null;
   const toggle = () => {
     setOpen(!open);
     writeAboutOpen(!open);
   };
   const sentences = splitSentences(summary ?? '');
-  const noteSentences = splitSentences(note ?? '');
   const { lead, rest } = splitLead(sentences);
-  const canOpen = rest.length > 0 || !!note;
+  const canOpen = rest.length > 0 || !!details || !!note || !!mapNote;
+  /** 펼친 상태의 작은 제목 붙은 칸. folded면 제목만 보이고 눌러야 열린다(자세한 흐름·지도 표시) */
+  const section = (title: string, text: string | undefined, folded = false) => {
+    if (!text) return null;
+    const ss = splitSentences(text);
+    const body = <Sentences sentences={ss} className="panel-note" list={ss.length >= ABOUT_LIST_MIN} />;
+    return folded ? (
+      <details className="about-note about-fold">
+        <summary>{title}</summary>
+        {body}
+      </details>
+    ) : (
+      <div className="about-note">
+        <h4>{title}</h4>
+        {body}
+      </div>
+    );
+  };
   return (
     <div className="panel-about">
       {summary &&
@@ -346,12 +363,10 @@ function EntityAbout({ summary, note }: { summary?: string; note?: string }) {
         ) : (
           <Sentences sentences={lead} className="panel-summary" list={false} />
         ))}
-      {open && note && (
-        <div className="about-note">
-          <h4>시작 기준과 지도 표시</h4>
-          <Sentences sentences={noteSentences} className="panel-note" list={noteSentences.length >= ABOUT_LIST_MIN} />
-        </div>
-      )}
+      {open && section('시작 기준', note)}
+      {/* 긴 영토 변화 나열과 지도를 어떻게 그렸는지는 궁금한 사람만 보도록 한 번 더 접어 둔다(2026-10-18) */}
+      {open && section('자세한 흐름', details, true)}
+      {open && section('지도 표시', mapNote, true)}
       {(open || canOpen) && (
         <button type="button" className="link-button panel-about-toggle" aria-expanded={open} onClick={toggle}>
           {open ? '접기 ▴' : '더 보기 ▾'}

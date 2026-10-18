@@ -225,7 +225,10 @@ button {
 .panel-about .about-sentences li::marker { color: var(--muted); }
 .panel-about .about-year { font-weight: 600; }
 .about-note { margin-top: 10px; padding-top: 8px; border-top: 1px solid var(--border); }
-.about-note h4 { margin: 0 0 2px; font-size: 12px; font-weight: 600; color: var(--muted); }
+.about-note h4,
+.about-fold > summary { margin: 0 0 2px; font-size: 12px; font-weight: 600; color: var(--muted); }
+.about-fold > summary { cursor: pointer; }
+.about-fold > summary:hover { color: var(--fg); }
 .panel-about .panel-note { margin: 0; font-size: 13px; line-height: 1.6; }
 .panel-about-toggle { margin-top: 2px; font-size: 13px; }
 
