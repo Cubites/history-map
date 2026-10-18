@@ -5,7 +5,7 @@
 //
 // 규칙 (항목마다 구별어 `옛연도`·`천문연도`가 열쇠와 msg 머리말에 들어간다)
 //  1. 지도 연도 집합 S(나라) = 나라 항목 from·to + 영토 버전 from·(to−1)·to (ctx.geo의 속성만 쓴다).
-//  2. 지도 해를 말하는 글 — 나라 foundingNote·summary·details·mapNote·사건 summary에서 '지도' 낱말(지도는/지도에는/지도에서/지도의 …)이 나온 절(괄호 안이면 그 괄호 끝까지,
+//  2. 지도 해를 말하는 글 — 나라 foundingNote·summary·details·mapNote·endNote·features(줄을 이어 한 글로)·사건 summary에서 '지도' 낱말(지도는/지도에는/지도에서/지도의 …)이 나온 절(괄호 안이면 그 괄호 끝까지,
 //     아니면 문장 끝까지)에서, 지도를 바꾸는 해로 적힌 숫자만 센다(괄호 안은 하위 지역 해라 뺌):
 //       · 뒤가 `N년부터/까지/이후/이전`·`N년 버전`·`N년에 … 그린다/옮긴다/바꾼다`, 앞이 `지도는 N년`·쉼표/가운뎃점/와·과/을·를 뒤의 `N년`('지도는 외몽골을 1691년, 티베트를 1720년').
 //       · 범위 `A~B년`은 지도 낱말 바로 뒤(`지도에는 A~B년 …`)에서만. `… 그리지 않는다`가 뒤따르는 해, 년간·년대·년 동안·년 뒤 같은 기간 말은 제외.
@@ -14,7 +14,7 @@
 //       · '기원전' 뒤의 말 없는 숫자(`기원전 550년부터 …, 547년부터`)는 같은 문장(글 임자가 기원전이면 글 전체) 안에서 앞서 나온 기원전 숫자 이하일 때 기원전으로 읽는다.
 //     비교할 나라 = 글 임자(나라 글이면 그 나라, 사건이면 subjects·links) + 그 절에 이름(ko, 두 글자 이상, 앞이 한글이 아닌 자리)이 나온 나라. 한 나라라도 S에 그 해가 있으면 맞는 것.
 //     없으면 항목: S에 N±1이 있고 N 또는 그 해가 기원전과 이어지면(N ≤ 0 또는 어긋난 해 ≤ 0) '천문 연도 실수 의심'(열쇠 `years 천문연도 <id> <필드> <N>`),
-//     그 밖은 '옛 연도 의심'(`years 옛연도 <id> <필드> <N>`, 서기 해가 1 어긋난 것은 msg에 밝힌다). 필드는 foundingNote·summary·details·mapNote, <id>는 글 임자(나라 id 또는 사건 id),
+//     그 밖은 '옛 연도 의심'(`years 옛연도 <id> <필드> <N>`, 서기 해가 1 어긋난 것은 msg에 밝힌다). 필드는 foundingNote·summary·details·mapNote·endNote·features, <id>는 글 임자(나라 id 또는 사건 id),
 //     <N>은 글 속 숫자를 천문 연도로 바꾼 값.
 //  3. 사건 기원전 해 — year ≤ 0인 사건에서 제목의 기원전 해 모음 T(`(기원전 49~45)와 암살(44)`처럼 기원전 뒤 말 없는 숫자 포함)에 year가 없고 year±1이 있으면
 //     '천문 연도 실수 의심'(열쇠 `years 천문연도 <사건 id> year <T의 해>`). endYear와 summary는 견주지 않는다(기간이 제목의 마지막 해보다 뒷일까지 이어지는 일이 많음).
@@ -245,7 +245,7 @@ function mapYearSets(ctx: Context): Map<string, Set<number>> {
 
 // ── 자료 읽기 ─────────────────────────────────────────────────
 
-interface EntText { id: string; foundingNote: string; summary: string; details: string; mapNote: string }
+interface EntText { id: string; foundingNote: string; summary: string; details: string; mapNote: string; endNote: string; features: string }
 interface EvText { id: string; year: number; endYear: number | null; title: string; summary: string; related: string[] }
 
 const readYaml = (file: string) => (parseYaml(readFileSync(file, 'utf8')) as Record<string, unknown>[] | null) ?? [];
@@ -261,6 +261,8 @@ function readTexts(root: string): { ents: EntText[]; evs: EvText[] } {
         summary: String(e.summary ?? ''),
         details: String(e.details ?? ''),
         mapNote: String(e.mapNote ?? ''),
+        endNote: String(e.endNote ?? ''),
+        features: ((e.features as string[] | undefined) ?? []).map(String).join(' '),
       });
     }
   }
@@ -352,6 +354,8 @@ function checkTexts(ctx: Context, sets: Map<string, Set<number>>, names: NameInd
     handle(e.id, 'summary', e.summary, [e.id], `나라 ${e.id}의 summary`, ownerIsBc(e.id), true);
     handle(e.id, 'details', e.details, [e.id], `나라 ${e.id}의 details`, ownerIsBc(e.id), true);
     handle(e.id, 'mapNote', e.mapNote, [e.id], `나라 ${e.id}의 mapNote`, ownerIsBc(e.id), true);
+    handle(e.id, 'endNote', e.endNote, [e.id], `나라 ${e.id}의 endNote`, ownerIsBc(e.id), true);
+    handle(e.id, 'features', e.features, [e.id], `나라 ${e.id}의 features`, ownerIsBc(e.id), true);
   }
   for (const v of evs) {
     if (v.related.length && !v.related.some((id) => ctx.inRegion(id))) continue;

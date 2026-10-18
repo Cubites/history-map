@@ -1,12 +1,12 @@
 // test:geo 검사 `spelling` (표기). 사건·나라의 화면 글에 표기 사전(data/tests/spelling.yaml)의 '쓰지 않을 표기(avoid)'가 있는지 본다.
 // 사용: npm run test:geo -- --only spelling [--region europe] [--years 1500-1600]
-// 보는 글(화면에 나오는 글): 사건 title.ko·summary.ko·links[].note·places[].name·sources[] / 나라 names.ko·summary·details·mapNote·basis.foundingNote·basis.refs[].
+// 보는 글(화면에 나오는 글): 사건 title.ko·summary.ko·links[].note·places[].name·sources[] / 나라 names.ko·summary·details·mapNote·endNote·features[]·basis.foundingNote·basis.refs[].
 //   나라 이름의 별칭 칸은 지금 스키마에 없다(names.en·native는 원어라 보지 않음). 전쟁 보기(data/wars)의 글은 보지 않는다.
 // 사전 한 항목: use(바른 표기)·avoid[](쓰지 않을 표기)·note(근거 한 줄)·선택 scope(사람이 읽는 메모, 코드는 쓰지 않음)·선택 except[](avoid가 다른 대상을 가리켜 맞는 글 조각). 형식은 사전 파일 머리 주석에 있다.
 // 규칙: 한국어는 조사가 붙으므로 avoid를 부분 문자열로 찾는다. 걸린 자리가 (1) 그 항목 use가 나온 자리 안이거나 (2) except 조각이 나온 자리 안이면 건너뛴다.
 //   한 항목 안에서 더 긴 avoid가 같은 자리를 이미 잡았으면(예: 드니스터강과 드니스터) 짧은 쪽은 세지 않는다. 같은 (대상, 필드, avoid)는 한 건으로 묶고 msg에 횟수를 적는다.
 // 사전 파일 형식이 틀리면(필드 빠짐·모르는 칸·avoid가 use와 같음·같은 avoid가 두 항목에·except가 avoid를 담지 않음 등) SpellingError를 던져 러너가 종료 코드 2로 끝낸다(zones.ts와 같은 방식).
-// 열쇠: `spelling <대상 id> <필드> <avoid 표기>` (위치 없이. 필드는 title·summary·links.note·places.name·sources·names.ko·details·mapNote·foundingNote·refs). msg에 바른 표기와 글 앞뒤 15자.
+// 열쇠: `spelling <대상 id> <필드> <avoid 표기>` (위치 없이. 필드는 title·summary·links.note·places.name·sources·names.ko·details·mapNote·endNote·features·foundingNote·refs). msg에 바른 표기와 글 앞뒤 15자.
 // 기준선: data/tests/baseline/spelling.txt — 지금 섞여 있는 표기. 고치는 것은 사건 글을 손볼 때이고, 고친 뒤 `npm run test:geo -- --only spelling --update-baseline spelling`으로 줄인다.
 //   러너의 --update-baseline이 파일 맨 위 # 주석을 그대로 두고 열쇠만 다시 쓴다.
 // 한계(틀린 경보가 날 수 있는 곳): 글자만 보므로 같은 글자가 다른 대상을 가리키는 경우(예: 다른 나라 인물의 같은 이름)는 사전 항목의 except로 막아야 한다.
@@ -162,6 +162,8 @@ function collectTexts(ctx: Context, opt: Options): Text[] {
       add(id, ko, 'summary', e.summary);
       add(id, ko, 'details', e.details);
       add(id, ko, 'mapNote', e.mapNote);
+      add(id, ko, 'endNote', e.endNote);
+      for (const line of (e.features as unknown[] | undefined) ?? []) add(id, ko, 'features', line);
       const basis = e.basis as { foundingNote?: unknown; refs?: unknown[] } | undefined;
       add(id, ko, 'foundingNote', basis?.foundingNote);
       for (const r of basis?.refs ?? []) add(id, ko, 'refs', r);

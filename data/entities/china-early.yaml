@@ -10,6 +10,12 @@
   color: "#a8584a"
   summary: 중국 전국 시대 7웅의 하나로 지금의 베이징 일대에 있던 나라. 고조선과 대립했으며, 기원전 3세기 초 장수 진개가 고조선을 공격해 서쪽 땅 2천여 리를 빼앗았다. 명도전이 고조선 지역에서 많이 발견된다. 진에 멸망
   mapNote: 지도에는 전국 시대(기원전 4세기) 이후만 표시
+  endNote: 기원전 222년 진에 멸망함
+  features:
+    - 고조선과 대립해 기원전 3세기 초 장수 진개가 고조선의 서쪽 땅 2천여 리를 빼앗음
+    - 명도전이 고조선 지역에서 많이 발견됨
+  startEvents: []
+  endEvents: []
   basis:
     type: primary_source
     refs: ["『사기』 연소공세가", "『삼국지』 위서 동이전 주석 『위략』"]
@@ -22,9 +28,16 @@
   to: -205
   color: "#8c5a4a"
   summary: 시황제가 중국을 처음 통일한 왕조(기원전 221). 만리장성을 쌓고 요동까지 다스렸다. 고조선의 부왕은 진을 경계해 형식적으로 복속했다고 전한다. 15년 만에 무너짐
+  endNote: 기원전 206년 15년 만에 무너짐
+  features:
+    - 만리장성을 쌓고 요동까지 다스림
+    - 고조선의 부왕은 진을 경계해 형식적으로 복속했다고 전함
+  startEvents: [bu-jun-kings-220]
+  endEvents: []
   basis:
     type: primary_source
     refs: ["『사기』 진시황본기", "『삼국지』 위서 동이전 주석 『위략』"]
+    foundingNote: 시황제가 중국을 처음 통일한 기원전 221년을 시작으로 봄
 
 - id: western-han
   level: polity
@@ -33,10 +46,19 @@
   to: 8
   color: "#b04a3c"
   summary: 유방이 세운 왕조. 무제가 고조선을 멸망시키고(기원전 108) 옛 땅에 군현을 둠
+  mapNote: 진 멸망(기원전 206) 뒤 한 건국(기원전 202) 전까지인 기원전 205~203년(초한 쟁패기)은 지도에 중국 왕조를 표시하지 않음. 이때 요동은 연왕 장도의 땅(기원전 206년 요동왕 한광을 병합, 204년 한에 귀순). 남쪽의 남월(광둥·광시·하이난·베트남 북부)·동월(푸젠)·동구(저장 남부의 원저우·타이저우·리수이)·서남이(구이저우와 대도하 남쪽의 공도)는 기원전 112년까지, 전(윈난)은 기원전 110년까지 한의 땅이 아니라 넣지 않음(무제가 기원전 111년·109년에 정복)
+  endNote: 9년 왕망이 전한의 왕위를 빼앗아 신을 세우면서 끝남
+  features:
+    - 묵돌 선우에게 기원전 200년 평성의 백등산에서 한 고조가 포위된 뒤 화친을 맺고 해마다 비단·술·곡식을 보냄
+    - 장건이 서역으로 가는 길을 연 뒤(기원전 138~126) 기원전 60년 서역도호부를 두어 오아시스 도시들을 관리함
+    - 무제가 남월·민월·서남이를 정복함(기원전 112~109)
+    - 무제가 고조선을 멸망시키고(기원전 108) 옛 땅에 군현을 둠
+  startEvents: []
+  endEvents: []
   basis:
     type: primary_source
     refs: ["『사기』", "『한서』"]
-    foundingNote: 진 멸망(기원전 206) 뒤 한 건국(기원전 202) 전까지인 기원전 205~203년(초한 쟁패기)은 지도에 중국 왕조를 표시하지 않음. 이때 요동은 연왕 장도의 땅(기원전 206년 요동왕 한광을 병합, 204년 한에 귀순). 남쪽의 남월(광둥·광시·하이난·베트남 북부)·동월(푸젠)·동구(저장 남부의 원저우·타이저우·리수이)·서남이(구이저우와 대도하 남쪽의 공도)는 기원전 112년까지, 전(윈난)은 기원전 110년까지 한의 땅이 아니라 넣지 않음(무제가 기원전 111년·109년에 정복)
+    foundingNote: 진이 멸망한(기원전 206) 뒤 초한 쟁패기를 거쳐 유방이 한을 세운 기원전 202년을 시작으로 봄
 
 - id: xin
   level: polity
@@ -45,9 +67,16 @@
   to: 23
   color: "#b3604f"
   summary: 왕망이 전한의 왕위를 빼앗아 세운 왕조. 15년 만에 무너짐
+  endNote: 세운 지 15년 만인 23년에 무너짐
+  features:
+    - 12년 왕망이 흉노를 치려고 고구려 군사를 동원하다 반발을 사자 고구려의 우두머리를 꾀어 죽이고 고구려를 '하구려'로 낮추어 불렀음
+    - 신이 들어선 뒤 한과 서역의 관계가 끊김
+  startEvents: []
+  endEvents: []
   basis:
     type: primary_source
     refs: ["『한서』 왕망전"]
+    foundingNote: 왕망이 전한의 왕위를 빼앗아 신을 세운 9년을 시작으로 봄
 
 - id: eastern-han
   level: polity
@@ -56,10 +85,20 @@
   to: 220
   color: "#b04a3c"
   summary: 광무제가 한을 다시 세운 왕조. 뤄양에 도읍함. 고구려와 요동·현도를 두고 자주 충돌함
+  mapNote: 24년(경시제 시기)은 지도에 표시하지 않음
+  endNote: 220년 위가 뒤를 이어 서면서 끝남
+  features:
+    - 뤄양에 도읍함
+    - 57년 광무제가 왜의 노국왕에게 금인을 내림
+    - 반초가 73년부터 서역을 되찾아 91년 서역도호가 됨
+    - 97년 반초가 부하 감영을 대진(로마)에 보냈으나 감영은 조지에서 되돌아옴
+    - 고구려와 요동·현도를 두고 자주 충돌함
+  startEvents: []
+  endEvents: []
   basis:
     type: primary_source
     refs: ["『후한서』"]
-    foundingNote: 24년(경시제 시기)은 지도에 표시하지 않음
+    foundingNote: 25년 광무제가 한을 다시 세움
 
 - id: cao-wei
   level: polity
@@ -68,10 +107,19 @@
   to: 265
   color: "#a8584a"
   summary: 삼국 시대 화북의 왕조. 요동의 공손씨를 무너뜨리고(238), 관구검을 보내 고구려의 환도성을 함락함
+  mapNote: 요동은 238년까지 공손씨가 다스렸으나 지도에서는 위에 포함해 표시. 263년 촉을 멸망시킨 뒤에는 촉 땅과 함께, 같은 해 여흥이 오에 반기를 들고 바친 교지(베트남 북부)를 넣음
+  endNote: 265년 사마염이 위를 이어 서진을 세움
+  features:
+    - 238년 요동의 공손씨를 무너뜨림
+    - 관구검을 보내 고구려의 환도성을 함락함(244~245)
+    - 263년 촉을 멸망시킴
+    - 263년 교지군의 여흥이 오의 태수 손서를 죽이고 구진과 함께 위에 붙었고 위는 교지에 관리를 보냄
+  startEvents: []
+  endEvents: []
   basis:
     type: primary_source
     refs: ["『삼국지』 위서"]
-    foundingNote: 요동은 238년까지 공손씨가 다스렸으나 지도에서는 위에 포함해 표시. 263년 촉을 멸망시킨 뒤에는 촉 땅과 함께, 같은 해 여흥이 오에 반기를 들고 바친 교지(베트남 북부)를 넣음
+    foundingNote: 220년 한(후한)에 이어 위가 섬
 
 - id: shu
   level: polity
@@ -80,10 +128,14 @@
   to: 263
   color: "#b8765a"
   summary: 유비가 쓰촨에 세운 삼국 시대 왕조. 위에 멸망
+  mapNote: 남쪽은 남중(윈난·구이저우)까지 그리고, 광시와 베트남 북부(교주)는 오의 땅이라 넣지 않음
+  endNote: 263년 위에 멸망함. 오는 같은 해 교지의 여흥 반란 때문에 위가 촉을 칠 때 촉을 돕지 못함
+  startEvents: []
+  endEvents: []
   basis:
     type: primary_source
     refs: ["『삼국지』 촉서"]
-    foundingNote: 남쪽은 남중(윈난·구이저우)까지 그리고, 광시와 베트남 북부(교주)는 오의 땅이라 넣지 않음
+    foundingNote: 221년 유비가 쓰촨에 촉을 세움
 
 - id: wu
   level: polity
@@ -92,10 +144,18 @@
   to: 280
   color: "#c07a62"
   summary: 손권이 강남에 세운 삼국 시대 왕조. 바닷길로 고구려와 사신을 주고받음. 서진에 멸망
+  mapNote: 광시·광둥과 베트남 북부(교주)까지 그리되, 263년 여흥의 반란으로 위·서진에 붙은 교지(베트남 북부)는 263~270년에 넣지 않고 271년 되찾은 뒤 다시 넣음
+  endNote: 280년 서진에 멸망함
+  features:
+    - 지금의 광시·광둥과 베트남 북부(교지·구진·일남)를 다스림
+    - 바닷길로 고구려와 사신을 주고받음
+    - 263년 교지군의 여흥이 태수 손서를 죽이고 위에 붙었으나, 268년부터 군대를 보내 271년 되찾음
+  startEvents: []
+  endEvents: []
   basis:
     type: primary_source
     refs: ["『삼국지』 오서"]
-    foundingNote: 광시·광둥과 베트남 북부(교주)까지 그리되, 263년 여흥의 반란으로 위·서진에 붙은 교지(베트남 북부)는 263~270년에 넣지 않고 271년 되찾은 뒤 다시 넣음
+    foundingNote: 222년 손권이 강남에 오를 세움
 
 - id: western-jin
   level: polity
@@ -104,10 +164,18 @@
   to: 316
   color: "#a64d45"
   summary: 사마염이 위를 이어 세운 왕조. 오를 무너뜨리고 중국을 통일했으나(280), 북방 민족의 침입으로 무너짐
+  mapNote: 위에게서 이어받은 교지(베트남 북부)는 265~270년에 넣고, 271년 오가 되찾은 뒤로는 280년 오를 멸망시키기까지 넣지 않음
+  endNote: 311년 한(漢)군이 낙양을 함락해 회제를 사로잡았고, 316년 장안에서 이은 민제가 항복해 멸망함
+  features:
+    - 280년 오를 무너뜨리고 중국을 통일함
+    - 혜제 때 팔왕의 난(291~306)으로 약해짐
+    - 흉노 출신 유연이 304년 한(漢, 뒤의 전조)을 세워 맞섬
+  startEvents: []
+  endEvents: [yongjia-eastern-jin-311]
   basis:
     type: primary_source
     refs: ["『진서』"]
-    foundingNote: 위에게서 이어받은 교지(베트남 북부)는 265~270년에 넣고, 271년 오가 되찾은 뒤로는 280년 오를 멸망시키기까지 넣지 않음
+    foundingNote: 265년 사마염이 위를 이어 서진을 세움
 
 - id: eastern-jin
   level: polity
@@ -116,9 +184,16 @@
   to: 420
   color: "#a64d45"
   summary: 서진 왕실이 강남으로 옮겨 세운 왕조. 백제와 교류하고 침류왕 때 마라난타를 통해 불교를 전함
+  endNote: 420년 동진의 공제가 유유(송 무제)에게 선양해 끝나고 송(남조)이 섬
+  features:
+    - 383년 전진의 부견이 동진을 쳤으나 비수에서 사현 등에게 크게 패함
+    - 백제와 교류하고 침류왕 때 마라난타를 통해 불교를 전함
+  startEvents: [yongjia-eastern-jin-311]
+  endEvents: [liu-song-420]
   basis:
     type: primary_source
     refs: ["『진서』"]
+    foundingNote: 낭야왕 사마예가 건강(난징)에서 진왕에 오른 317년을 시작으로 봄
 
 - id: former-yan
   level: polity
@@ -127,9 +202,17 @@
   to: 370
   color: "#8f7a55"
   summary: 선비족 모용씨가 요서에 세운 나라. 342년 고구려 환도성을 함락하고 미천왕의 무덤을 파헤침. 전진에 멸망
+  endNote: 모용준이 360년 죽은 뒤 아들 모용위가 이었으나 370년 전진에 멸망함
+  features:
+    - 341년 용성을 쌓기 시작해 342년 도읍을 옮겼고 357년 업으로 다시 옮김
+    - 342년 겨울 고구려를 쳐 환도성을 함락하고 미천왕의 무덤을 파헤침
+    - 모용황이 348년 죽고 모용준이 이어, 350년 계(지금의 베이징)를 차지하고 352년 염위를 멸망시킨 뒤 황제를 칭함
+  startEvents: [former-yan-337]
+  endEvents: [former-qin-351]
   basis:
     type: primary_source
     refs: ["『진서』 모용황재기", "『삼국사기』 고구려본기 고국원왕 12년"]
+    foundingNote: 모용황이 연왕을 칭해 전연을 세운 337년을 시작으로 봄
 
 - id: former-qin
   level: polity
@@ -138,9 +221,17 @@
   to: 394
   color: "#9a8457"
   summary: 저족이 세운 나라. 부견이 화북을 통일하고(376) 고구려에 승려 순도와 불상·경문을 보냄. 비수 전투(383) 패배 뒤 무너짐
+  endNote: 383년 비수에서 크게 패한 뒤 무너져, 385년 부견이 요장에게 죽고 394년 부등이 죽은 뒤 아들 부숭이 곧 패해 사라짐
+  features:
+    - 357년 즉위한 부견이 왕맹을 등용해 나라를 정비함
+    - 370년 전연을, 376년 전량과 대(代)를 차례로 멸망시켜 화북을 통일함
+    - 372년 고구려 소수림왕에게 승려 순도와 불상·경문을 보냄
+  startEvents: [former-qin-351]
+  endEvents: [fei-river-383]
   basis:
     type: primary_source
     refs: ["『진서』 부견재기", "『삼국사기』 고구려본기 소수림왕 2년"]
+    foundingNote: 저족 출신 부건이 장안에서 천왕을 칭해 전진이 선 351년을 시작으로 봄
 
 - id: later-yan
   level: polity
@@ -149,9 +240,17 @@
   to: 407
   color: "#8f7a55"
   summary: 모용수가 전연을 다시 세운 나라. 광개토대왕과 요동을 두고 싸우다 요동을 잃음
+  endNote: 407년 정변으로 마지막 황제 모용희가 죽고 풍발 등이 고운을 천왕으로 세워 나라 이름을 연(북연)으로 함
+  features:
+    - 모용수가 386년 황제를 칭했고, 모용보(396~398)·모용성(398~401)·모용희(401~407)로 이어짐
+    - 고구려와 요동을 두고 다퉈 385년 요동·현도를 되찾았으나 광개토대왕에게 요동을 잃음(402~405)
+    - 395년 참합피에서 북위에 크게 패했고 397년부터 하북을 빼앗겨 용성으로 물러남
+  startEvents: [fei-river-383]
+  endEvents: [northern-yan-407]
   basis:
     type: primary_source
     refs: ["『진서』 모용수재기", "『삼국사기』 고구려본기 광개토왕"]
+    foundingNote: 모용수가 연왕을 칭해 후연을 세운 384년을 시작으로 봄
 
 - id: northern-yan
   level: polity
@@ -160,9 +259,16 @@
   to: 436
   color: "#8a7658"
   summary: 요서에 있던 나라. 북위에 멸망할 때 왕 풍홍이 고구려로 망명함
+  endNote: 436년 북위의 공격으로 무너지고 왕 풍홍이 고구려로 망명함
+  features:
+    - 고운은 『진서』에 '고구려의 지서(支庶)'로 적힌 고구려계 사람으로, 후연의 모용보에게 양자로 들어가 모용운이라 불림
+    - 409년 고운이 측근에게 살해되자 풍발이 천왕에 올랐고(재위 409~430), 동생 풍홍(재위 430~436)이 이음
+  startEvents: [northern-yan-407]
+  endEvents: [northern-yan-436]
   basis:
     type: primary_source
     refs: ["『위서』", "『삼국사기』 고구려본기 장수왕 24년"]
+    foundingNote: 풍발 등이 고운을 천왕으로 세워 나라 이름을 연(북연)이라 한 407년을 시작으로 봄(풍발이 즉위한 409년으로 보기도 함)
 
 - id: northern-wei
   level: polity
@@ -171,9 +277,18 @@
   to: 534
   color: "#9c7d4e"
   summary: 선비족 탁발씨가 세운 나라. 화북을 통일하고(439) 남조와 대립함. 장수왕은 북위와 남조 모두와 교류함
+  endNote: 534년 효무제가 실권자 고환을 피해 우문태에게 달아나자 고환이 효정제를 세워 업으로 옮기면서 동위가 서고, 이듬해 우문태가 문제를 세워 서위가 됨
+  features:
+    - 395년 참합피에서 후연을 크게 꺾고 397년부터 하북을 빼앗음
+    - 398년 탁발규가 평성에서 황제(도무제)를 칭함
+    - 439년 태무제가 화북을 통일하고 남조와 대립하는 남북조 시대가 열림
+    - 장수왕은 북위와 남조 모두와 교류함
+  startEvents: [fei-river-383]
+  endEvents: [northern-dynasties-534]
   basis:
     type: primary_source
     refs: ["『위서』"]
+    foundingNote: 선비 탁발부의 탁발규가 대왕에 올랐다가 위왕이 되어 북위를 연 386년을 시작으로 봄
 
 - id: eastern-wei
   level: polity
@@ -182,9 +297,13 @@
   to: 550
   color: "#a0814f"
   summary: 북위가 동서로 갈라져 생긴 나라. 북제로 이어짐
+  endNote: 550년 고양(북제 문선제)에게 넘어가 북제가 됨
+  startEvents: [northern-dynasties-534]
+  endEvents: [northern-dynasties-534]
   basis:
     type: primary_source
     refs: ["『위서』", "『북제서』"]
+    foundingNote: 고환이 효정제를 세우고 업으로 옮겨 동위가 선 534년을 시작으로 봄
 
 - id: western-wei
   level: polity
@@ -193,9 +312,13 @@
   to: 557
   color: "#93794f"
   summary: 북위가 동서로 갈라져 생긴 나라. 북주로 이어짐
+  endNote: 554년 서위가 양의 강릉을 빼앗았고(양 원제가 죽음) 그 땅에 서량(後梁)을 세웠으며, 557년 우문각(북주 효민제)에게 넘어가 북주가 됨
+  startEvents: [northern-dynasties-534]
+  endEvents: [northern-dynasties-534]
   basis:
     type: primary_source
     refs: ["『주서』"]
+    foundingNote: 우문태가 문제를 세워 서위가 된 535년을 시작으로 봄
 
 - id: northern-qi
   level: polity
@@ -204,9 +327,16 @@
   to: 577
   color: "#a0814f"
   summary: 동위를 이은 화북 동부의 왕조. 신라 진흥왕을 책봉함(565). 북주에 멸망
+  endNote: 577년 북주 무제에게 멸망함
+  features:
+    - 동북의 물길이 6세기 중엽부터 말갈이라는 이름으로 북제에 조공함
+    - 565년 신라 진흥왕을 책봉함
+  startEvents: [northern-dynasties-534]
+  endEvents: [northern-zhou-sui-577]
   basis:
     type: primary_source
     refs: ["『북제서』", "『삼국사기』 신라본기 진흥왕 26년"]
+    foundingNote: 고양(북제 문선제)이 동위를 넘겨받아 북제가 된 550년을 시작으로 봄
 
 - id: northern-zhou
   level: polity
@@ -215,9 +345,16 @@
   to: 581
   color: "#93794f"
   summary: 서위를 이은 왕조. 북제를 무너뜨리고 화북을 통일했으나(577) 수에 왕위를 넘김
+  endNote: 580년 양견이 어린 정제를 대신해 실권을 잡고, 이듬해 선양을 받아 수를 세움
+  features:
+    - 북주 무제가 577년 북제를 멸망시켜 화북을 통일함
+    - 고구려 평원왕이 577년 북주에 사신을 보냄
+  startEvents: [northern-dynasties-534]
+  endEvents: [northern-zhou-sui-577]
   basis:
     type: primary_source
     refs: ["『주서』"]
+    foundingNote: 우문각(북주 효민제)이 서위를 넘겨받아 북주가 된 557년을 시작으로 봄
 
 - id: liu-song
   level: polity
@@ -226,9 +363,16 @@
   to: 479
   color: "#b8604c"
   summary: 동진을 이은 남조의 첫 왕조. 고구려·백제·왜와 사신을 주고받음
+  endNote: 479년 소도성이 송 순제의 선양을 받아 제를 세움
+  features:
+    - 『송서』에 따르면 무제가 즉위하자 고구려 장수왕을 정동대장군, 백제 전지왕(여영)을 진동대장군으로 높임
+    - 421년 왜왕 찬에게도 관작을 내렸고, 이때부터 왜의 다섯 왕이 송에 사신을 보냄
+  startEvents: [liu-song-420]
+  endEvents: [southern-dynasties-479]
   basis:
     type: primary_source
     refs: ["『송서』 이만전"]
+    foundingNote: 동진의 공제가 유유(송 무제)에게 선양해 송이 선 420년을 시작으로 봄
 
 - id: southern-qi
   level: polity
@@ -237,9 +381,16 @@
   to: 502
   color: "#b8604c"
   summary: 송을 이은 남조 왕조. 대가야의 왕 하지가 사신을 보내 관작을 받음(479)
+  endNote: 502년 소연(양 무제)이 제의 선양을 받아 양을 세움
+  features:
+    - 고구려 장수왕을 표기대장군에 올림(『남제서』는 479년, 『삼국사기』는 480년으로 적음)
+    - 479년 대가야의 왕 하지가 사신을 보내 관작을 받음
+  startEvents: [southern-dynasties-479]
+  endEvents: [southern-dynasties-479]
   basis:
     type: primary_source
     refs: ["『남제서』 동남이전"]
+    foundingNote: 소도성이 송 순제의 선양을 받아 제를 세운 479년을 시작으로 봄
 
 - id: liang
   level: polity
@@ -248,9 +399,16 @@
   to: 557
   color: "#b8604c"
   summary: 남조의 왕조. 백제 무령왕·성왕과 활발히 교류해 무령왕릉의 벽돌무덤 양식 등에 영향을 줌
+  endNote: 후경의 난(548~552)을 겪은 뒤 554년 서위에 강릉을 빼앗기고 원제가 죽었으며, 557년 진패선에게 선양해 진이 섬
+  features:
+    - 502년 고구려 문자명왕과 백제 왕의 관작을 높여 줌
+    - 백제 무령왕·성왕과 활발히 교류해 무령왕릉의 벽돌무덤 양식 등에 영향을 줌
+  startEvents: [southern-dynasties-479]
+  endEvents: [northern-dynasties-534]
   basis:
     type: primary_source
     refs: ["『양서』 제이전"]
+    foundingNote: 소연(양 무제)이 제의 선양을 받아 양을 세운 502년을 시작으로 봄
 
 - id: chen
   level: polity
@@ -259,6 +417,10 @@
   to: 589
   color: "#b8604c"
   summary: 남조의 마지막 왕조. 수에 멸망하면서 중국이 다시 통일됨
+  endNote: 589년 북주를 이은 수에 멸망하면서 약 300년 만에 중국이 다시 통일됨
+  startEvents: [northern-dynasties-534]
+  endEvents: [sui-unification-589]
   basis:
     type: primary_source
     refs: ["『진서(陳書)』"]
+    foundingNote: 진패선이 양의 선양을 받아 진을 세운 557년을 시작으로 봄

@@ -260,6 +260,20 @@ function checkIntegrity(entities: Map<string, Entity>, territories: Territory[],
     }
   }
 
+  // 나라 탭의 시작·끝 사건(startEvents·endEvents)은 그 나라가 subjects에 든 사건이어야 패널에 걸린다 (2026-10-18)
+  const eventById = new Map(events.map((ev) => [ev.id, ev]));
+  for (const e of entities.values()) {
+    for (const field of ['startEvents', 'endEvents'] as const) {
+      for (const id of e[field] ?? []) {
+        const ev = eventById.get(id);
+        if (!ev) errors.push(`${e.id}: ${field}의 '${id}'는 없는 사건`);
+        else if (!ev.subjects.includes(e.id)) errors.push(`${e.id}: ${field}의 '${id}' 사건 subjects에 ${e.id}가 없음`);
+      }
+    }
+    if (e.to === null && e.endNote) errors.push(`${e.id}: 끝이 없는 나라(to: null)에 endNote가 있음`);
+    if (e.to === null && e.endEvents?.length) errors.push(`${e.id}: 끝이 없는 나라(to: null)에 endEvents가 있음`);
+  }
+
   for (const r of relations) {
     const where = `관계 ${r.type} ${r.subject}→${r.object}`;
     for (const id of [r.subject, r.object]) if (!entities.has(id)) errors.push(`${where}: 없는 나라 '${id}'`);

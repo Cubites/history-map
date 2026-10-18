@@ -34,6 +34,13 @@ export const EntitySchema = z
     details: z.string().optional(),
     /** 지도에 그린 시기·땅·묶음 같은 지도 표시 설명. 역사 설명(summary)과 나눠 패널에 따로 접어 보인다 */
     mapNote: z.string().optional(),
+    /** '시작과 끝' 탭의 끝 문장(어떻게 끝났는지). 끝이 있는 나라만. 없으면 설명에서 끝을 말하는 문장을 고른다 */
+    endNote: z.string().optional(),
+    /** '특징' 탭에 보일 줄(3~5줄). 없으면 설명의 둘째 문장부터를 쓴다 */
+    features: z.array(z.string().min(1)).optional(),
+    /** '시작과 끝' 탭에 걸 시작·끝 무렵 사건 id(그 나라가 subjects에 든 사건). 없으면 해로 고른다 */
+    startEvents: z.array(z.string()).optional(),
+    endEvents: z.array(z.string()).optional(),
     /** 수록 근거 (DESIGN.md D9). 나라(polity)는 필수, 지역(region)은 선택 */
     basis: z
       .object({
