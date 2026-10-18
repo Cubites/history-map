@@ -1,11 +1,11 @@
-import { useEffect, useRef, useState } from 'react';
-import { useMediaQuery } from '../lib/useMediaQuery.ts';
+import { useEffect, useRef } from 'react';
 import { claimantsAt, claimedRegionsAt, occupierAt, overlordAt, type StaticData } from '../data/staticData.ts';
 import { eventYearFor, eventsOf, formatEventYears, inDecade, linkDirection } from '../lib/events.ts';
 import { entryYear, formatFrontDate, warsOf, yearOfFrontDate } from '../lib/wars.ts';
 import { formatDecade, formatRange, formatYear, isAlive, prehistoryStage } from '../lib/year.ts';
 import type { HistoryEvent } from '../schema/index.ts';
 import { useAppStore } from '../store/useAppStore.ts';
+import { EntityTabs } from './EntityTabs.tsx';
 
 /** 고정한 사건을 풀 때 클릭으로 칠 움직임 한도(px). 지도의 끌기 판정(WorldMap의 d3-zoom clickDistance)과 같다 */
 const CLICK_DISTANCE = 4;
@@ -18,11 +18,10 @@ export function EventPanel({ data }: { data: StaticData }) {
   const showAll = useAppStore((s) => s.showAllEvents);
   const setShowAll = useAppStore((s) => s.setShowAllEvents);
   const setYear = useAppStore((s) => s.setYear);
+  const focusEvent = useAppStore((s) => s.focusEvent);
   const select = useAppStore((s) => s.select);
   const enterWar = useAppStore((s) => s.enterWar);
   const warId = useAppStore((s) => s.warId);
-  // 마우스가 없는 화면(휴대폰·태블릿)에서는 안내 문구를 바꾼다
-  const touch = useMediaQuery('(hover: none)');
   // 눌러서 고정한 사건은 사건 밖(지도·패널의 다른 곳 등)을 '클릭'하면 풀린다. 다른 사건을 누르면 그 사건으로 바뀐다 (EventItem)
   // 지도를 끌어 옮기거나 두 손가락으로 확대·축소할 때는 풀리지 않는다(2026-10-09): 누른 자리에서 CLICK_DISTANCE 넘게 움직였거나,
   // 다른 포인터가 함께 눌렸거나, 브라우저가 스크롤로 가져가면(pointercancel) 클릭으로 치지 않는다
@@ -69,7 +68,7 @@ export function EventPanel({ data }: { data: StaticData }) {
     return (
       <aside className="panel">
         <p className="panel-guide">지도에서 나라를 누르면 그 시기의 사건이 여기에 나타납니다.</p>
-        <p className="panel-guide">사건에 {touch ? '손가락을 대면' : '마우스를 올리면'} 영향을 주고받은 나라가 화살표로 표시됩니다. 사건을 누르면 자세한 내용이 펼쳐지고 화살표가 계속 남아 지도를 옮기거나 확대해도 그대로이며, 그 사건을 다시 누르거나 사건 밖을 클릭하면 접히고 화살표도 사라집니다.</p>
+        <p className="panel-guide">사건을 누르면 자세한 내용이 펼쳐집니다.</p>
         <p className="panel-note">현재는 선사 시대(구석기·신석기)와 고조선(기원전 2333년)부터 현대까지의 한국사 전 시대 자료와 유럽(국경·사건 기원전 800년~현재) 자료가 들어 있습니다.</p>
       </aside>
     );
@@ -101,7 +100,8 @@ export function EventPanel({ data }: { data: StaticData }) {
 
   return (
     <aside className="panel">
-      <header className="panel-header">
+      {/* 이름·기간 머리는 스크롤해도 패널 위에 붙어 있다(2026-10-18) */}
+      <header className="panel-header panel-header-sticky">
         <span
           className="panel-swatch"
           style={{
@@ -158,7 +158,20 @@ export function EventPanel({ data }: { data: StaticData }) {
           )}
         </div>
       </header>
-      <EntityAbout key={entity.id} summary={entity.summary} details={entity.details} note={entity.basis?.foundingNote} mapNote={entity.mapNote} />
+      <EntityTabs
+          key={entity.id}
+          entity={entity}
+          events={all}
+          successors={successors.map(({ relation, entity: next }) => ({ id: next!.id, name: next!.names.ko, from: relation.from }))}
+          onEvent={(e) => {
+            jumpTo(e);
+            focusEvent(entity.id, e.id);
+          }}
+          onSuccessor={(id, from) => {
+            select(id);
+            setYear(from);
+          }}
+      />
 
       {!isAlive(entity, year) && (
         <div className="panel-absent">
@@ -243,139 +256,6 @@ export function EventPanel({ data }: { data: StaticData }) {
   );
 }
 
-/** 나라 설명을 펼쳐 둘지 (보는 사람의 브라우저에만 기억. 저장소를 못 쓰면 늘 접힘으로 시작) */
-const ABOUT_OPEN_KEY = 'history-map:entity-about-open';
-const readAboutOpen = () => {
-  try {
-    return localStorage.getItem(ABOUT_OPEN_KEY) === '1';
-  } catch {
-    return false;
-  }
-};
-const writeAboutOpen = (open: boolean) => {
-  try {
-    localStorage.setItem(ABOUT_OPEN_KEY, open ? '1' : '0');
-  } catch {
-    // 저장하지 못해도 이번 화면에서는 그대로 동작한다
-  }
-};
-
-/** 접힌 설명에 보일 글자 수 어림. 이 안에 드는 앞 문장들만 보이고, 첫 문장은 길어도 통째로 보인다 */
-const ABOUT_LEAD_CHARS = 90;
-
-/** 문장이 이만큼 넘으면 펼친 설명을 문장별 목록으로 보인다(한두 문장은 그냥 문단) */
-const ABOUT_LIST_MIN = 3;
-
-/** 괄호·낫표 밖의 '. '에서 문장으로 나눈다(괄호 안의 마침표에서는 자르지 않음) */
-function splitSentences(text: string): string[] {
-  const sentences: string[] = [];
-  let depth = 0;
-  let start = 0;
-  for (let i = 0; i < text.length; i++) {
-    const c = text[i];
-    if (c === '(' || c === '「' || c === '『') depth++;
-    else if ((c === ')' || c === '」' || c === '』') && depth > 0) depth--;
-    else if (c === '.' && depth === 0 && (i + 1 === text.length || text[i + 1] === ' ')) {
-      sentences.push(text.slice(start, i + 1).trim());
-      start = i + 1;
-    }
-  }
-  const tail = text.slice(start).trim();
-  if (tail) sentences.push(tail);
-  return sentences;
-}
-
-/** 접힌 상태에 보일 앞 문장들(ABOUT_LEAD_CHARS 안, 첫 문장은 늘 통째로)과 나머지 문장들로 가른다 */
-function splitLead(sentences: string[]): { lead: string[]; rest: string[] } {
-  let n = 1;
-  let length = sentences[0]?.length ?? 0;
-  while (n < sentences.length && length + 1 + sentences[n].length <= ABOUT_LEAD_CHARS) length += 1 + sentences[n++].length;
-  return { lead: sentences.slice(0, n), rest: sentences.slice(n) };
-}
-
-/** 글 속 해(1453, 1801~1803, 기원전 108년, 57년 …)를 굵게. '6·25'·'2천여 리'·'16주' 같은 수는 두지 않는다 */
-const YEAR_RE = /(?:기원전 )?(?:\d{3,4}|\d{1,2}(?=년))(?:년)?(?:~(?:\d{1,4})?(?:년)?)?/g;
-function withYears(text: string): React.ReactNode[] {
-  const out: React.ReactNode[] = [];
-  let last = 0;
-  for (const m of text.matchAll(YEAR_RE)) {
-    const at = m.index;
-    // 더 긴 수의 한가운데는 건너뜀
-    if (at > 0 && /\d/.test(text[at - 1])) continue;
-    if (at > last) out.push(text.slice(last, at));
-    out.push(<b key={at} className="about-year">{m[0]}</b>);
-    last = at + m[0].length;
-  }
-  if (last < text.length) out.push(text.slice(last));
-  return out;
-}
-
-/** 문장들을 문단(짧을 때) 또는 문장별 목록(길 때)으로 보인다 */
-function Sentences({ sentences, className, list }: { sentences: string[]; className: string; list: boolean }) {
-  if (!list) return <p className={className}>{withYears(sentences.join(' '))}</p>;
-  return (
-    <ul className={`${className} about-sentences`}>
-      {sentences.map((s, i) => (
-        <li key={i}>{withYears(s)}</li>
-      ))}
-    </ul>
-  );
-}
-
-/**
- * 나라 설명과 건국 메모. 설명이 긴 나라가 많아 사건 목록이 아래로 밀리므로 처음에는 설명 앞 문장만 보이고,
- * '더 보기'로 나머지와 건국 메모를 펼친다(2026-10-13). 줄 수로 자르면 문장 가운데가 끊겨 문장 단위로 자른다(2026-10-18).
- * 펼치면 문장이 많은 글은 문장별 목록으로, 글 속 해는 굵게 보인다(2026-10-18). 펼친 상태는 다른 나라를 골라도 이어진다.
- * 펼친 순서: 개요(summary) → 시작 기준(foundingNote) → 자세한 흐름(details)·지도 표시(mapNote)는 한 번 더 접힘
- */
-function EntityAbout({ summary, details, note, mapNote }: { summary?: string; details?: string; note?: string; mapNote?: string }) {
-  const [open, setOpen] = useState(readAboutOpen);
-  if (!summary && !details && !note && !mapNote) return null;
-  const toggle = () => {
-    setOpen(!open);
-    writeAboutOpen(!open);
-  };
-  const sentences = splitSentences(summary ?? '');
-  const { lead, rest } = splitLead(sentences);
-  const canOpen = rest.length > 0 || !!details || !!note || !!mapNote;
-  /** 펼친 상태의 작은 제목 붙은 칸. folded면 제목만 보이고 눌러야 열린다(자세한 흐름·지도 표시) */
-  const section = (title: string, text: string | undefined, folded = false) => {
-    if (!text) return null;
-    const ss = splitSentences(text);
-    const body = <Sentences sentences={ss} className="panel-note" list={ss.length >= ABOUT_LIST_MIN} />;
-    return folded ? (
-      <details className="about-note about-fold">
-        <summary>{title}</summary>
-        {body}
-      </details>
-    ) : (
-      <div className="about-note">
-        <h4>{title}</h4>
-        {body}
-      </div>
-    );
-  };
-  return (
-    <div className="panel-about">
-      {summary &&
-        (open ? (
-          <Sentences sentences={sentences} className="panel-summary" list={sentences.length >= ABOUT_LIST_MIN} />
-        ) : (
-          <Sentences sentences={lead} className="panel-summary" list={false} />
-        ))}
-      {open && section('시작 기준', note)}
-      {/* 긴 영토 변화 나열과 지도를 어떻게 그렸는지는 궁금한 사람만 보도록 한 번 더 접어 둔다(2026-10-18) */}
-      {open && section('자세한 흐름', details, true)}
-      {open && section('지도 표시', mapNote, true)}
-      {(open || canOpen) && (
-        <button type="button" className="link-button panel-about-toggle" aria-expanded={open} onClick={toggle}>
-          {open ? '접기 ▴' : '더 보기 ▾'}
-        </button>
-      )}
-    </div>
-  );
-}
-
 function EventItem({ event, data, selectedId, highlight }: { event: HistoryEvent; data: StaticData; selectedId: string; highlight: boolean }) {
   const hoverEvent = useAppStore((s) => s.hoverEvent);
   const pinEvent = useAppStore((s) => s.pinEvent);
@@ -385,8 +265,24 @@ function EventItem({ event, data, selectedId, highlight }: { event: HistoryEvent
   const focused = useAppStore((s) => s.focusedEventId === event.id);
   const itemRef = useRef<HTMLLIElement>(null);
   useEffect(() => {
-    if (focused) itemRef.current?.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
-  }, [focused]);
+    const item = itemRef.current;
+    if (!item || !(focused || pinned)) return;
+    // 이름·기간 머리가 붙어 있는 패널이면(2026-10-18), 누르거나 지도·검색에서 고른 사건의 윗변을
+    // 머리 바로 아래(사건 사이 간격만큼 띄움)에 맞춘다. 그만큼 내릴 수 없으면 맨 아래까지만 내린다
+    const panel = item.closest<HTMLElement>('.panel');
+    const header = panel?.querySelector<HTMLElement>('.panel-header-sticky');
+    if (panel && header) {
+      const gap = parseFloat(getComputedStyle(item.parentElement!).rowGap) || 0;
+      const scrollportTop = panel.getBoundingClientRect().top + panel.clientTop;
+      const itemTop = item.getBoundingClientRect().top - scrollportTop + panel.scrollTop;
+      // 머리가 붙었을 때 아래 끝 = 패널 안쪽 여백 + 붙는 위치(top, 음수일 수 있음) + 머리 높이
+      // (sticky는 스크롤 영역의 안쪽 여백 끝을 기준으로 붙는다)
+      const headerBottom =
+        (parseFloat(getComputedStyle(panel).paddingTop) || 0) + (parseFloat(getComputedStyle(header).top) || 0) + header.offsetHeight;
+      const max = panel.scrollHeight - panel.clientHeight;
+      panel.scrollTo({ top: Math.max(0, Math.min(itemTop - headerBottom - gap, max)), behavior: 'smooth' });
+    } else if (focused) item.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+  }, [focused, pinned]);
   const setYear = useAppStore((s) => s.setYear);
   const setFront = useAppStore((s) => s.setFront);
   const enterWar = useAppStore((s) => s.enterWar);

@@ -23,6 +23,7 @@ import { useWarShapes } from '../data/warShapes.ts';
 import { activeWarView, factionColor, frontBattleSpots, nearBy, snapshotFor, theatersInYear } from '../lib/wars.ts';
 import { formatRange } from '../lib/year.ts';
 import { REGION_FILTER_INFO, inRegionFilter } from '../schema/regions.ts';
+import { useRegionChoice } from '../search/RegionFilter.tsx';
 import type { Lod, TerritoryIndexEntry } from '../schema/index.ts';
 import { activeEventId, useAppStore } from '../store/useAppStore.ts';
 import { ArrowLayer } from './ArrowLayer.tsx';
@@ -124,6 +125,7 @@ export default function WorldMap({ data }: { data: StaticData }) {
   const setYear = useAppStore((s) => s.setYear);
   const regionFilter = useAppStore((s) => s.regionFilter);
   const regionFocus = useAppStore((s) => s.regionFocus);
+  const { choose: chooseRegion, notice: regionNotice } = useRegionChoice(data);
   const focusedEventId = useAppStore((s) => s.focusedEventId);
 
   // 시점은 매 프레임 바뀌므로 ref에 두고, 화면 좌표 레이어(SVG)를 위해 프레임당 한 번 state로 복사한다.
@@ -689,8 +691,24 @@ export default function WorldMap({ data }: { data: StaticData }) {
       <div className="map-controls" onClick={(e) => e.stopPropagation()} onPointerDown={(e) => e.stopPropagation()}>
         <button type="button" className="map-zoom-button" aria-label="확대" onClick={() => zoomButton(1.6)}>+</button>
         <button type="button" className="map-zoom-button" aria-label="축소" onClick={() => zoomButton(1 / 1.6)}>−</button>
-        <button type="button" onClick={() => size && animateTo(fitBounds(size, s0, EAST_ASIA_BOUNDS))}>동아시아</button>
-        <button type="button" onClick={() => animateTo({ lon: viewRef.current.lon, lat: 0, k: MIN_ZOOM })}>세계</button>
+        {/* 권역 단추(2026-10-18: 머리글 권역 필터를 없애고 이리로 옮김)(권역 고르기·자료 없는 해면 옮기기·그 권역으로 지도 이동).
+            세계는 '전체'를 고르고 세계로 축소한다 */}
+        <button
+          type="button"
+          aria-pressed={regionFilter === 'all'}
+          onClick={() => {
+            chooseRegion('all');
+            animateTo({ lon: viewRef.current.lon, lat: 0, k: MIN_ZOOM });
+          }}
+        >
+          세계
+        </button>
+        <button type="button" aria-pressed={regionFilter === 'east-asia'} onClick={() => chooseRegion('east-asia')}>동아시아</button>
+        <button type="button" aria-pressed={regionFilter === 'europe'} onClick={() => chooseRegion('europe')}>유럽</button>
+      </div>
+      {/* 권역을 고를 때 연도를 옮겼다는 알림. 비어 있을 때도 두어야 화면 낭독기가 읽는다 */}
+      <div className="map-region-notice" role="status" aria-live="polite">
+        {regionNotice}
       </div>
     </div>
   );

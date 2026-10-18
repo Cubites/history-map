@@ -3,7 +3,6 @@ import WorldMap from './map/WorldMap.tsx';
 import { EventPanel } from './panel/EventPanel.tsx';
 import { Timeline } from './timeline/Timeline.tsx';
 import { SearchBox } from './search/SearchBox.tsx';
-import { RegionFilter } from './search/RegionFilter.tsx';
 import { UpdateNotice } from './UpdateNotice.tsx';
 
 export default function App() {
@@ -13,7 +12,6 @@ export default function App() {
     <div className="app">
       <header className="app-header">
         <h1>역사 지도</h1>
-        {data && <RegionFilter data={data} />}
         {data && <SearchBox data={data} />}
       </header>
       <UpdateNotice />

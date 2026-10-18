@@ -4,19 +4,19 @@ import { PREHISTORY, clampYear, decadeOf, formatYear, parseYearInput, prehistory
 import { useAppStore } from '../store/useAppStore.ts';
 import { FrontTimeline } from './FrontTimeline.tsx';
 import { activeWarView } from '../lib/wars.ts';
-import { inRegionFilter } from '../schema/regions.ts';
 
-/** 영토 데이터가 있는 기간을 겹치지 않게 합친다 (슬라이더 뒤 표시용) */
-function coverageRanges(data: StaticData): [number, number][] {
-  const end = data.timeline.range[1] + 1;
-  const sorted = data.territories.map((t) => [t.from, t.to ?? end] as [number, number]).sort((a, b) => a[0] - b[0]);
-  const merged: [number, number][] = [];
-  for (const [from, to] of sorted) {
-    const last = merged[merged.length - 1];
-    if (last && from <= last[1]) last[1] = Math.max(last[1], to);
-    else merged.push([from, to]);
-  }
-  return merged;
+/**
+ * 슬라이더 아래 연도 눈금 (2026-10-18: 영토 기간 띠·사건 눈금 대신).
+ * 100년마다 짧은 눈금, 500년마다 긴 눈금과 숫자. 휴대폰은 500년 눈금과 1000년 숫자만(CSS).
+ * 자리는 천문 연도(기원전 N년 = 1 - N). 숫자는 바가 좁아 짧게: 기원전은 'BC 2000', 서기는 숫자만, 경계는 'AD 1'
+ * (휴대폰 바는 약 240px. '기원전 2000'처럼 쓰면 이웃 숫자와 겹침)
+ */
+function yearMarks(min: number, max: number) {
+  const marks: { year: number; major: boolean; label?: string; k1000: boolean; m500: boolean }[] = [];
+  for (let n = 2300; n >= 100; n -= 100) marks.push({ year: 1 - n, major: n % 500 === 0, label: n % 500 === 0 ? `BC ${n}` : undefined, k1000: n % 1000 === 0, m500: n % 500 === 0 });
+  marks.push({ year: 1, major: true, label: 'AD 1', k1000: true, m500: true });
+  for (let n = 100; n <= 2000; n += 100) marks.push({ year: n, major: n % 500 === 0, label: n % 500 === 0 ? String(n) : undefined, k1000: n % 1000 === 0, m500: n % 500 === 0 });
+  return marks.filter((m) => m.year >= min && m.year <= max);
 }
 
 /**
@@ -45,13 +45,7 @@ export function Timeline({ data }: { data: StaticData }) {
   const nextChange = stops.find((y) => y > year && y <= range[1]);
   // 선사 단계에서 +10년은 다음 단계(또는 역사 시대의 시작)로
   const forward = () => (prehistoric ? go(stops.find((y) => y > year) ?? range[0]) : go(year + 10));
-  const coverage = useMemo(() => coverageRanges(data), [data]);
-  // 사건 눈금은 권역 필터에 맞는 사건만 (DESIGN.md §6.4.2)
-  const regionFilter = useAppStore((s) => s.regionFilter);
-  const ticks = useMemo(
-    () => data.events.filter((e) => e.year >= min && inRegionFilter(regionFilter, e.region)),
-    [data.events, min, regionFilter],
-  );
+  const marks = useMemo(() => yearMarks(min, max), [min, max]);
 
   const submit = () => {
     const parsed = parseYearInput(input);
@@ -128,14 +122,6 @@ export function Timeline({ data }: { data: StaticData }) {
         ))}
       </div>
       <div className="timeline-track">
-        <div className="timeline-bands" aria-hidden>
-          {coverage.map(([from, to]) => (
-            <span key={from} className="timeline-band" style={{ left: `${percent(from)}%`, width: `${Math.max(0.3, percent(to) - percent(from))}%` }} />
-          ))}
-          {ticks.map((e) => (
-            <span key={e.id} className="timeline-tick" style={{ left: `${percent(e.year)}%` }} />
-          ))}
-        </div>
         <input
           type="range"
           min={min}
@@ -146,9 +132,14 @@ export function Timeline({ data }: { data: StaticData }) {
           aria-label="연도"
           aria-valuetext={formatYear(year)}
         />
-        <div className="timeline-scale" aria-hidden>
-          <span>{formatYear(range[0])}</span>
-          <span>{formatYear(range[1])}</span>
+        <div className="timeline-years" aria-hidden>
+          {marks.map((m) => (
+            <span key={m.year} className={['timeline-mark', m.major && 'major', m.m500 && 'm500'].filter(Boolean).join(' ')} style={{ left: `${percent(m.year)}%` }}>
+              {m.label && (
+                <span className={['timeline-mark-label', m.k1000 && 'k1000', percent(m.year) > 95 && 'edge-r', percent(m.year) < 5 && 'edge-l'].filter(Boolean).join(' ')}>{m.label}</span>
+              )}
+            </span>
+          ))}
         </div>
       </div>
       </div>
