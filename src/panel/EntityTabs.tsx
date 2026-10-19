@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useMediaQuery } from '../lib/useMediaQuery.ts';
 import { formatYear } from '../lib/year.ts';
 import type { Entity, HistoryEvent } from '../schema/index.ts';
 import { ABOUT_LIST_MIN, Sentences, splitSentences, withYears } from './aboutText.tsx';
@@ -68,14 +69,17 @@ export function EntityTabs({
   onSuccessor: (id: string, year: number) => void;
 }) {
   const [tab, setTab] = useState<Tab>(readTab);
+  // 휴대폰: 개요 한 문장만 머리 아래에 보이고, 나머지는 '국가 상세정보' 단추로 펼친다(테스트 중). 나라를 바꾸면 접힘으로 시작(key={entity.id})
+  const mobile = useMediaQuery('(max-width: 768px)');
+  const [open, setOpen] = useState(false);
   const t = buildText(entity, events);
-  // 내용이 없는 탭은 숨긴다. 기억한 탭이 숨겨졌으면 개요를 연다
+  // 내용이 없는 탭은 숨긴다. 기억한 탭이 숨겨졌으면 개요(휴대폰은 시작과 끝)를 연다
   const tabs: [Tab, string][] = [
-    ['overview', '개요'],
+    ...(mobile ? [] : [['overview', '개요'] as [Tab, string]]),
     ['span', '시작과 끝'],
     ...(t.features.length > 0 || t.details ? [['features', '특징'] as [Tab, string]] : []),
   ];
-  const active: Tab = tabs.some(([key]) => key === tab) ? tab : 'overview';
+  const active: Tab = tabs.some(([key]) => key === tab) ? tab : tabs[0][0];
   const choose = (next: Tab) => {
     setTab(next);
     try {
@@ -98,15 +102,27 @@ export function EntityTabs({
     );
   const detailSentences = splitSentences(t.details ?? '');
   const mapSentences = splitSentences(entity.mapNote ?? '');
+  const tabRow = (
+    <div className="tab-row" role="tablist">
+      {tabs.map(([key, label]) => (
+        <button key={key} type="button" role="tab" aria-selected={active === key} className={active === key ? 'tab on' : 'tab'} onClick={() => choose(key)}>
+          {label}
+        </button>
+      ))}
+    </div>
+  );
   return (
-    <div className="entity-tabs">
-      <div className="tab-row" role="tablist">
-        {tabs.map(([key, label]) => (
-          <button key={key} type="button" role="tab" aria-selected={active === key} className={active === key ? 'tab on' : 'tab'} onClick={() => choose(key)}>
-            {label}
+    <div className={mobile ? 'entity-tabs entity-tabs-mobile' : 'entity-tabs'}>
+      {mobile && (
+        <>
+          {t.overview && <p className="tab-brief">{withYears(t.overview)}</p>}
+          <button type="button" className="detail-toggle" aria-expanded={open} onClick={() => setOpen(!open)}>
+            국가 상세정보 <span aria-hidden="true">{open ? '▴' : '▾'}</span>
           </button>
-        ))}
-      </div>
+        </>
+      )}
+      {(!mobile || open) && tabRow}
+      {(!mobile || open) && (
       <div className="tab-body" role="tabpanel">
         {active === 'overview' && (
           <>
@@ -146,6 +162,7 @@ export function EntityTabs({
             )}
           </>
         )}
+        {mobile && t.refs.length > 0 && <p className="tab-refs">근거 자료: {t.refs.join(' · ')}</p>}
         {entity.mapNote && (
           <details className="about-note about-fold">
             <summary>지도 표시</summary>
@@ -153,6 +170,7 @@ export function EntityTabs({
           </details>
         )}
       </div>
+      )}
     </div>
   );
 }

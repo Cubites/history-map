@@ -277,6 +277,21 @@ button {
 .tab-row .tab:hover { color: var(--fg); }
 .tab-row .tab.on { color: var(--fg); font-weight: 600; border-bottom-color: var(--accent); }
 .tab-body { padding-top: 8px; font-size: 15px; line-height: 1.7; }
+/* PC: 탭 본문을 고정 높이로 두고 넘치는 글은 안쪽에서 스크롤해, 탭을 바꿔도 아래 사건 영역이 움직이지 않게 한다(테스트 중).
+   위·아래에 더 있는 글은 그림자로 알린다 */
+@media (min-width: 769px) {
+  .tab-body {
+    height: var(--tab-body-h, 200px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    background:
+      linear-gradient(var(--surface) 30%, transparent) top / 100% 18px no-repeat local,
+      linear-gradient(transparent, var(--surface) 70%) bottom / 100% 18px no-repeat local,
+      linear-gradient(rgba(0, 0, 0, 0.14), transparent) top / 100% 7px no-repeat scroll,
+      linear-gradient(transparent, rgba(0, 0, 0, 0.14)) bottom / 100% 7px no-repeat scroll;
+    border-bottom: 1px solid var(--border);
+  }
+}
 .tab-body h4 { margin: 8px 0 2px; font-size: 12px; font-weight: 600; color: var(--muted); }
 .tab-body h4:first-child { margin-top: 0; }
 .tab-text { margin: 0 0 4px; }
@@ -473,6 +488,27 @@ button {
   .panel-section-title { margin: 10px 0 6px; }
   .event { padding: 8px 10px; }
   .panel-legend { margin: 0 0 6px; }
+
+  /* 휴대폰 나라 설명: 개요 한 문장 + '국가 상세정보' 단추(EntityTabs, 테스트 중) */
+  .entity-tabs-mobile { margin: 8px 0 4px; }
+  .tab-brief { margin: 0 0 4px; font-size: 14px; line-height: 1.55; }
+  .detail-toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    min-height: 40px;
+    padding: 0 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--bg);
+    color: var(--fg);
+    font: inherit;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  .entity-tabs-mobile .tab-row { margin-top: 6px; }
+  .entity-tabs-mobile .tab-row .tab { min-height: 40px; }
 }
 
 /* 전쟁 보기의 작전 화살표 (DESIGN.md §4.5): 첫 진영 실선, 둘째 긴 점선, 셋째부터 진영 색의 짧은 점선 */
