@@ -217,7 +217,8 @@ button {
 /* ── 사건 패널 ────────────────────────────────────────── */
 
 .panel {
-  width: 360px;
+  /* 화면 폭에 따라 360~440px(2026-10-19). 큰 화면일수록 글줄이 짧아져 사건 글이 덜 길어진다 */
+  width: clamp(360px, 32vw, 440px);
   flex-shrink: 0;
   overflow-y: auto;
   padding: 16px;
@@ -346,7 +347,6 @@ button {
 .event-toggle { color: var(--muted); font-size: 11px; flex-shrink: 0; }
 .event-head + .event-summary { margin-top: 6px; }
 .event-summary { margin: 4px 0 6px; font-size: 13px; }
-
 .event-links { list-style: none; margin: 0 0 6px; padding: 0; font-size: 12px; }
 .event-link { display: flex; flex-wrap: wrap; gap: 0 6px; padding-left: 16px; position: relative; }
 .event-link::before {
@@ -370,9 +370,7 @@ button {
   display: flex;
   flex-direction: column;
   gap: 2px;
-  margin-top: 16px;
-  padding-top: 8px;
-  border-top: 1px solid var(--border);
+  margin: 0 0 8px;
   font-size: 12px;
   color: var(--muted);
 }
@@ -474,7 +472,7 @@ button {
   .panel-header-sticky h2 .hanja { font-size: 15px; } /* 이름 17px와 기간 13px의 중간 */
   .panel-section-title { margin: 10px 0 6px; }
   .event { padding: 8px 10px; }
-  .panel-legend { margin-top: 10px; }
+  .panel-legend { margin: 0 0 6px; }
 }
 
 /* 전쟁 보기의 작전 화살표 (DESIGN.md §4.5): 첫 진영 실선, 둘째 긴 점선, 셋째부터 진영 색의 짧은 점선 */

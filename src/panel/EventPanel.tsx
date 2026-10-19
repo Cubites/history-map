@@ -5,6 +5,7 @@ import { entryYear, formatFrontDate, warsOf, yearOfFrontDate } from '../lib/wars
 import { formatDecade, formatRange, formatYear, isAlive, prehistoryStage } from '../lib/year.ts';
 import type { HistoryEvent } from '../schema/index.ts';
 import { useAppStore } from '../store/useAppStore.ts';
+import { ABOUT_LIST_MIN, Sentences, splitSentences } from './aboutText.tsx';
 import { EntityTabs } from './EntityTabs.tsx';
 
 /** 고정한 사건을 풀 때 클릭으로 칠 움직임 한도(px). 지도의 끌기 판정(WorldMap의 d3-zoom clickDistance)과 같다 */
@@ -224,6 +225,12 @@ export function EventPanel({ data }: { data: StaticData }) {
         )}
       </div>
 
+      {/* 화살표 뜻은 사건이 많아도 스크롤 밖으로 밀리지 않게 머리줄 바로 아래에 둔다(2026-10-19) */}
+      <div className="panel-legend">
+        <span><i className="legend-in" />영향을 준 나라 → {entity.names.ko}</span>
+        <span><i className="legend-out" />{entity.names.ko} → 영향을 받은 나라</span>
+      </div>
+
       {shown.length === 0 ? (
         <div className="panel-empty">
           <p>이 구간에 등록된 사건이 없습니다.</p>
@@ -247,11 +254,6 @@ export function EventPanel({ data }: { data: StaticData }) {
           ))}
         </ol>
       )}
-
-      <footer className="panel-legend">
-        <span><i className="legend-in" />영향을 준 나라 → {entity.names.ko}</span>
-        <span><i className="legend-out" />{entity.names.ko} → 영향을 받은 나라</span>
-      </footer>
     </aside>
   );
 }
@@ -361,9 +363,11 @@ function EventDetails({
   name: (id: string) => string;
   selectedId: string;
 }) {
+  const sentences = splitSentences(event.summary.ko);
   return (
     <>
-      <p className="event-summary">{event.summary.ko}</p>
+      {/* 3문장 넘으면 문장별 목록(나라 글과 같은 방식, 2026-10-19). 한두 문장은 그대로 문단 */}
+      <Sentences sentences={sentences} className="event-summary" list={sentences.length >= ABOUT_LIST_MIN} />
       {event.links.length > 0 && (
         <ul className="event-links">
           {event.links.map((link, i) => (
