@@ -19,7 +19,7 @@ import { AMUR_BAND, CHINA, HUABEI, HUABEI_938, ISLANDS_W, KWANTUNG, L33, LIAODON
 import { BAEKJE, GOGURYEO, HYEONDO_2, L_YALU_TUMEN, YT_I, noNokdun } from './korea.mjs';
 import { ALXA, DALI, EASTERN_TURKS, ET_NE, HUGEUM_1621, JIANCHANG, JIAOZHI, KHITAN_W, L_YN_E, MANCHURIA_NORTH, NE_FAR, OUT_SW, OUTER_MONGOLIA, QH_N, TIBET, XILIN_N, cnBorders, mcMahon, swEarly } from './inner-asia.mjs';
 import { joinEras } from '../shared.mjs';
-import { era as preQinEra } from './china/pre-qin.mjs';
+import { YAN_CHUNQIU, era as preQinEra } from './china/pre-qin.mjs';
 
 // ── 4번 묶음 (936 ~ 1392) ─────────────────────────────────
 // 북쪽 변은 북위 33°선(shared.mjs의 L33): 금 쪽 상자(NORTH_BOX)와 이 선에서 맞닿는다
@@ -326,7 +326,8 @@ const GANDO = I(QING_1860_BAND, [ring(L_YALU_TUMEN.slice(YT_I.junction, YT_I.tri
 // 나라 id: [[from, to, 멀티폴리곤, 확실성?], ...]. to가 null이면 지금까지, 확실성은 'disputed' 등(없으면 'estimated').
 // 출처(geojson의 source)는 나라별로 적지 않고 권역 파일의 source로 정한다(없으면 engine.mjs의 기본 문구)
 const ownVersions = {
-  'yan-state': [[-399, -281, YAN_EARLY], [-281, -221, YAN_281]],
+  // 중국 M1(2026-10-21, 00-scope 5절 영향표): 춘추 시대 연(베이징·톈진·허베이 북부 평원, 시대 파일 pre-qin.mjs의 칸)을 기원전 770년(천문 −769)부터 앞에 더함. 기원전 400년(−399) 뒤 두 버전은 그대로
+  'yan-state': [[-769, -399, YAN_CHUNQIU], [-399, -281, YAN_EARLY], [-281, -221, YAN_281]],
   qin: [[-220, -204, HAN_EMPIRE]], // 기원전 206년 멸망 (검수 2026-09-28)
   // 1860년까지는 조선 땅 녹둔도를 뺀다. 1689년(네르친스크 조약)부터 1857년까지 외만주(고르비차까지, 우다강 유역 빼고)와 흑룡강 띠, 1858~1859년은 흑룡강 왼쪽 기슭을 뺀다(작업 C1).
   // 1689~1690년은 아직 칼카(외몽골)가 복속하기 전이라 흑룡강 띠가 몽골 초원과 겹치는 후룬베이얼 서쪽 모서리를 뺀다

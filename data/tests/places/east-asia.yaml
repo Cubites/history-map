@@ -1562,3 +1562,102 @@
   url: "https://encykorea.aks.ac.kr/Article/E0059032"
   from: "세션 G1"
   note: "영산강 하류 군현(나주 부근 10여 군현)"
+
+# ── 중국 M1(2026-10-21): 상·서주·춘추 수도와 비운 소국 (그 나라 영토 기간 가운데 해, 좌표는 유적·옛 성 자리) ──
+- name: "정저우 상성"
+  at: [113.69, 34.76]
+  year: -1450
+  expect: shang
+  url: "https://en.wikipedia.org/wiki/Zhengzhou_Shang_City"
+  from: "중국 M1"
+  note: "상 앞 시기 도읍(박 또는 오로 보는 설)"
+
+- name: "은허(안양)"
+  at: [114.31, 36.13]
+  year: -1200
+  expect: shang
+  url: "https://en.wikipedia.org/wiki/Yinxu"
+  from: "중국 M1"
+  note: "반경 천도(기원전 1300년 무렵) 뒤 상 도읍 은"
+
+- name: "호경(풍호)"
+  at: [108.77, 34.23]
+  year: -900
+  expect: western-zhou
+  url: "https://en.wikipedia.org/wiki/Fenghao"
+  from: "중국 M1"
+  note: "서주 도읍(풍경·호경), 지금 시안 서남쪽"
+
+- name: "성주(뤄양)"
+  at: [112.45, 34.68]
+  year: -620
+  expect: eastern-zhou
+  url: "https://en.wikipedia.org/wiki/Eastern_Zhou"
+  from: "중국 M1"
+  note: "평왕이 옮긴 동주 도읍 낙읍"
+
+- name: "신전(허우마)"
+  at: [111.37, 35.62]
+  year: -550
+  expect: jin-chunqiu
+  url: "https://en.wikipedia.org/wiki/Jin_(Chinese_state)"
+  from: "중국 M1"
+  note: "진(晉)이 기원전 585년 옮긴 도읍"
+
+- name: "임치"
+  at: [118.35, 36.86]
+  year: -620
+  expect: qi-state
+  url: "https://en.wikipedia.org/wiki/Qi_(state)"
+  from: "중국 M1"
+  note: "제 도읍, 지금 쯔보시 린쯔구"
+
+- name: "영(징저우 기남성)"
+  at: [112.18, 30.42]
+  year: -550
+  expect: chu-state
+  url: "https://en.wikipedia.org/wiki/Chu_(state)"
+  from: "중국 M1"
+  note: "초 도읍 영"
+
+- name: "옹(펑샹)"
+  at: [107.38, 34.52]
+  year: -580
+  expect: qin-state
+  url: "https://en.wikipedia.org/wiki/Qin_(state)"
+  from: "중국 M1"
+  note: "진(秦)이 기원전 677년부터 도읍한 옹"
+
+- name: "고소(쑤저우)"
+  at: [120.62, 31.30]
+  year: -490
+  expect: wu-state
+  url: "https://en.wikipedia.org/wiki/Wu_(state)"
+  from: "중국 M1"
+  note: "오 도읍 고소"
+
+- name: "계(베이징)"
+  at: [116.35, 39.89]
+  year: -600
+  expect: yan-state
+  url: "https://zh.wikipedia.org/wiki/燕国"
+  from: "중국 M1"
+  note: "연 도읍 계(薊), 지금 베이징 광안먼 일대"
+
+- name: "곡부(노)"
+  at: [116.99, 35.60]
+  year: -600
+  expect: none
+  region: east-asia
+  url: "https://en.wikipedia.org/wiki/Lu_(state)"
+  from: "중국 M1"
+  note: "노는 5만 km² 미만 소국이라 비움"
+
+- name: "신정(정)"
+  at: [113.74, 34.40]
+  year: -600
+  expect: none
+  region: east-asia
+  url: "https://en.wikipedia.org/wiki/Zheng_(state)"
+  from: "중국 M1"
+  note: "정은 5만 km² 미만 소국이라 비움"

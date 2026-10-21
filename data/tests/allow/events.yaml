@@ -36,3 +36,80 @@
 - key: '200 tamna 성립'
   reason: 탐라의 성립 사건은 아직 없음 (지도 근사 해, 세션 G-①)
   decided: 세션 G·E 범위 밖, 그대로 둠 (세션 T 설계 8절 ③)
+
+# ── 중국 M1(2026-10-21): 상·서주·동주·춘추 제후국과 연(춘추) 버전. 중국 사건 파일(cn-01)이 생기면 이어 주고 이 줄을 지운다 ──
+- key: '-1599 shang 성립'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M1 기본값(00-scope 4절)
+- key: '-1045 shang 소멸'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M1 기본값(00-scope 4절)
+- key: '-1299 shang 버전'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M1 기본값(00-scope 4절)
+- key: '-1045 western-zhou 성립'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M1 기본값(00-scope 4절)
+- key: '-770 western-zhou 소멸'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M1 기본값(00-scope 4절)
+- key: '-769 eastern-zhou 성립'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M1 기본값(00-scope 4절)
+- key: '-255 eastern-zhou 소멸'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M1 기본값(00-scope 4절)
+- key: '-1041 jin-chunqiu 성립'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M1 기본값(00-scope 4절)
+- key: '-654 jin-chunqiu 버전'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M1 기본값(00-scope 4절)
+- key: '-593 jin-chunqiu 버전'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M1 기본값(00-scope 4절)
+- key: '-375 jin-chunqiu 소멸'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M1 기본값(00-scope 4절)
+- key: '-1045 qi-state 성립'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M1 기본값(00-scope 4절)
+- key: '-769 qi-state 버전'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M1 기본값(00-scope 4절)
+- key: '-220 qi-state 소멸'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M1 기본값(00-scope 4절)
+- key: '-1029 chu-state 성립'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M1 기본값(00-scope 4절)
+- key: '-687 chu-state 버전'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M1 기본값(00-scope 4절)
+- key: '-599 chu-state 버전'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M1 기본값(00-scope 4절)
+- key: '-222 chu-state 소멸'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M1 기본값(00-scope 4절)
+- key: '-769 qin-state 성립'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M1 기본값(00-scope 4절)
+- key: '-686 qin-state 버전'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M1 기본값(00-scope 4절)
+- key: '-221 qin-state 소멸'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M1 기본값(00-scope 4절)
+- key: '-584 wu-state 성립'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M1 기본값(00-scope 4절)
+- key: '-505 wu-state 버전'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M1 기본값(00-scope 4절)
+- key: '-472 wu-state 소멸'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M1 기본값(00-scope 4절)
+- key: '-769 yan-state 버전'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M1 기본값(00-scope 4절)
