@@ -1880,3 +1880,228 @@
   url: "https://en.wikipedia.org/wiki/Dai_(Sixteen_Kingdoms)"
   from: "중국 M3"
   note: "310년 탁발의로가 대공에 봉해지기 전"
+
+- name: "장안(후진)"
+  at: [108.94, 34.26]
+  year: 400
+  expect: later-qin
+  url: "https://en.wikipedia.org/wiki/Later_Qin"
+  from: "중국 M3"
+  note: "386년 요장이 차지한 후진의 도읍(지금 시안)"
+
+- name: "장안(하)"
+  at: [108.94, 34.26]
+  year: 420
+  expect: helian-xia
+  url: "https://en.wikipedia.org/wiki/Xia_(Sixteen_Kingdoms)"
+  from: "중국 M3"
+  note: "418년 혁련발발이 동진에게서 빼앗은 장안"
+
+- name: "장안(북위, 하에게서 얻은 뒤)"
+  at: [108.94, 34.26]
+  year: 433
+  expect: northern-wei
+  url: "https://en.wikipedia.org/wiki/Emperor_Taiwu_of_Northern_Wei"
+  from: "중국 M3"
+  note: "430년 북위가 관중을 차지함. 북위 427~438 하 옛 땅을 더함(운영자 결정 5)"
+
+- name: "통만성(하)"
+  at: [108.85, 37.99]
+  year: 415
+  expect: helian-xia
+  url: "https://en.wikipedia.org/wiki/Xia_(Sixteen_Kingdoms)"
+  from: "중국 M3"
+  note: "413년 혁련발발이 쌓은 하의 도읍(지금 위린 징볜 북쪽)"
+
+- name: "통만성(북위)"
+  at: [108.85, 37.99]
+  year: 428
+  expect: northern-wei
+  url: "https://en.wikipedia.org/wiki/Emperor_Taiwu_of_Northern_Wei"
+  from: "중국 M3"
+  note: "427년 북위 태무제가 통만성을 함락함(운영자 결정 5)"
+
+- name: "포한(서진(西秦))"
+  at: [103.21, 35.6]
+  year: 420
+  expect: western-qin
+  url: "https://en.wikipedia.org/wiki/Western_Qin"
+  from: "중국 M3"
+  note: "412년 걸복치반이 옮긴 서진(西秦)의 도읍(지금 린샤)"
+
+- name: "고장(후량(後涼))"
+  at: [102.64, 37.93]
+  year: 390
+  expect: later-liang-lu
+  url: "https://en.wikipedia.org/wiki/Later_Liang_(Sixteen_Kingdoms)"
+  from: "중국 M3"
+  note: "386년 여광이 들어간 후량(後涼)의 도읍(지금 우웨이)"
+
+- name: "고장(북량)"
+  at: [102.64, 37.93]
+  year: 425
+  expect: northern-liang
+  url: "https://en.wikipedia.org/wiki/Juqu_Mengxun"
+  from: "중국 M3"
+  note: "411년 저거몽손이 차지하고 412년 도읍을 옮김"
+
+- name: "낙도(남량)"
+  at: [102.4, 36.48]
+  year: 400
+  expect: southern-liang
+  url: "https://en.wikipedia.org/wiki/Southern_Liang_(Sixteen_Kingdoms)"
+  from: "중국 M3"
+  note: "남량의 도읍 낙도(지금 하이둥 러두)"
+
+- name: "장액(북량)"
+  at: [100.45, 38.93]
+  year: 405
+  expect: northern-liang
+  url: "https://en.wikipedia.org/wiki/Northern_Liang"
+  from: "중국 M3"
+  note: "398~412년 북량의 도읍(지금 장예)"
+
+- name: "돈황(서량)"
+  at: [94.66, 40.14]
+  year: 410
+  expect: western-liang
+  url: "https://en.wikipedia.org/wiki/Western_Liang_(Sixteen_Kingdoms)"
+  from: "중국 M3"
+  note: "400년 이고가 자립한 서량의 땅(지금 둔황)"
+
+- name: "광고(남연)"
+  at: [118.48, 36.7]
+  year: 405
+  expect: southern-yan
+  url: "https://zh.wikipedia.org/wiki/南燕_(十六國)"
+  from: "중국 M3"
+  note: "399년 모용덕이 차지한 남연의 도읍(지금 칭저우). 북위 399~409 도형에서 뺀 땅(운영자 결정 4)"
+
+- name: "광고(동진, 남연 멸망 뒤)"
+  at: [118.48, 36.7]
+  year: 412
+  expect: eastern-jin
+  url: "https://en.wikipedia.org/wiki/Emperor_Wu_of_Song"
+  from: "중국 M3"
+  note: "410년 유유가 광고를 함락함. 북위 410~438 도형에서 뺀 땅(운영자 결정 4)"
+
+- name: "지난(동진, 사현 북벌 뒤)"
+  at: [117, 36.67]
+  year: 390
+  expect: eastern-jin
+  url: "https://zh.wikipedia.org/wiki/謝玄"
+  from: "중국 M3"
+  note: "384년 사현이 연·청·사·예 4주를 되찾음. 후연 385~393 도형에서 뺀 땅(운영자 결정 4)"
+
+- name: "지난(후연)"
+  at: [117, 36.67]
+  year: 395
+  expect: later-yan
+  url: "https://en.wikipedia.org/wiki/Later_Yan"
+  from: "중국 M3"
+  note: "394년 후연이 산둥 서·북쪽을 차지함(광고 둘레 청주는 동진)"
+
+- name: "장자(서연)"
+  at: [112.87, 36.12]
+  year: 390
+  expect: western-yan
+  url: "https://en.wikipedia.org/wiki/Western_Yan"
+  from: "중국 M3"
+  note: "386년 모용영이 도읍한 장자(지금 창즈시 서남쪽 창쯔현)"
+
+- name: "청두(동진, 서촉 전)"
+  at: [104.07, 30.66]
+  year: 404
+  expect: eastern-jin
+  url: "https://en.wikipedia.org/wiki/Qiao_Zong"
+  from: "중국 M3"
+  note: "405년 초종이 일어나기 전"
+
+- name: "청두(서촉)"
+  at: [104.07, 30.66]
+  year: 408
+  expect: western-shu
+  url: "https://en.wikipedia.org/wiki/Qiao_Zong"
+  from: "중국 M3"
+  note: "405년 초종이 성도왕을 칭한 서촉의 도읍. 동진 405~412 도형에서 뺀 땅(승인 줄)"
+
+- name: "청두(동진, 서촉 멸망 뒤)"
+  at: [104.07, 30.66]
+  year: 414
+  expect: eastern-jin
+  url: "https://en.wikipedia.org/wiki/Qiao_Zong"
+  from: "중국 M3"
+  note: "413년 주령석이 청두를 함락함"
+
+- name: "평량(전진 잔존 정권)"
+  at: [106.67, 35.54]
+  year: 390
+  expect: former-qin
+  url: "https://en.wikipedia.org/wiki/Fu_Deng"
+  from: "중국 M3"
+  note: "부등이 다툰 룽둥(지금 핑량). 전진 385~393 잔존 정권(운영자 결정 6)"
+
+- name: "뤄양(후진)"
+  at: [112.45, 34.62]
+  year: 410
+  expect: later-qin
+  url: "https://en.wikipedia.org/wiki/Yao_Xing"
+  from: "중국 M3"
+  note: "399년 후진이 뤄양을 차지함"
+
+- name: "뤄양(동진, 유유 북벌 뒤)"
+  at: [112.45, 34.62]
+  year: 418
+  expect: eastern-jin
+  url: "https://en.wikipedia.org/wiki/Emperor_Wu_of_Song"
+  from: "중국 M3"
+  note: "416년 유유가 뤄양을 되찾음"
+
+- name: "우두(구지, 비운 땅)"
+  at: [104.92, 33.39]
+  year: 400
+  expect: none
+  region: east-asia
+  url: "https://en.wikipedia.org/wiki/Later_Qin"
+  from: "중국 M3"
+  note: "구지(양씨)·강족 땅이라 그리지 않음"
+
+- name: "린펀(북위, 산시 중남부)"
+  at: [111.52, 36.08]
+  year: 400
+  expect: northern-wei
+  url: "https://en.wikipedia.org/wiki/Emperor_Daowu_of_Northern_Wei"
+  from: "중국 M3"
+  note: "396년 가을 북위가 병주를 침. 북위 397~438 산시 중남부를 더함(운영자 결정 10)"
+
+- name: "오르도스(북위, 하 전)"
+  at: [109.78, 39.61]
+  year: 400
+  expect: northern-wei
+  url: "https://en.wikipedia.org/wiki/Emperor_Daowu_of_Northern_Wei"
+  from: "중국 M3"
+  note: "391년 북위가 유위진의 열박을 차지함. 북위 391~406 오르도스를 더함(운영자 결정 11)"
+
+- name: "뤄양(북위, 송에게서 빼앗은 뒤)"
+  at: [112.45, 34.62]
+  year: 430
+  expect: northern-wei
+  url: "https://en.wikipedia.org/wiki/Emperor_Taiwu_of_Northern_Wei"
+  from: "중국 M3"
+  note: "423년 북위가 허난 대부분을 차지함. 북위 423~438 뤄양·쉬창을 더함(운영자 결정 12)"
+
+- name: "포한(토욕혼, 서진(西秦) 옛 땅)"
+  at: [103.21, 35.6]
+  year: 435
+  expect: tuyuhun
+  url: "https://zh.wikipedia.org/wiki/乞伏暮末"
+  from: "중국 M3"
+  note: "430년 서진(西秦)의 서쪽 옛 땅을 토욕혼이 차지함. 토욕혼 430~438(운영자 결정 13)"
+
+- name: "서평(북량)"
+  at: [101.78, 36.62]
+  year: 435
+  expect: northern-liang
+  url: "https://en.wikipedia.org/wiki/Qifu_Mumo"
+  from: "중국 M3"
+  note: "429년 봄 저거몽손이 서평(지금 시닝)을 차지함(운영자 결정 13)"

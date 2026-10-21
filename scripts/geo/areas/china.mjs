@@ -21,7 +21,8 @@ import { ALXA, DALI, EASTERN_TURKS, ET_NE, HUGEUM_1621, JIANCHANG, JIAOZHI, KHIT
 import { joinEras } from '../shared.mjs';
 import { YAN_CHUNQIU, era as preQinEra } from './china/pre-qin.mjs';
 import { YAN_DAI, YAN_SOUTH, YAN_TO_QIN_226, era as warringStatesEra } from './china/warring-states.mjs';
-import { CHENG_HAN_LAND as CH, DAI_310_LAND, DAI_LAND, HAN_ZHAO_LAND as HZ, LIANG_LAND, NINGZHOU, SHU_373, YAN_SHANXI, cutOut, era as sixteenKingdomsEra } from './china/sixteen-kingdoms.mjs';
+import { CHENG_HAN_LAND as CH, DAI_310_LAND, DAI_LAND, HAN_ZHAO_LAND as HZ, LIANG_LAND, NINGZHOU, SHU_373, TUYUHUN_430, YAN_SHANXI, cutOut, era as sixteenKingdomsEra } from './china/sixteen-kingdoms.mjs';
+import { EASTERN_JIN_NORTH as EJN, FORMER_QIN_385, LIU_SONG_NORTH as LSN, SHANDONG_385, SHANDONG_394, SHANDONG_410, SOUTHERN_YAN_LAND, WEI_XIA_LAND as WXL, WESTERN_SHU_LAND as WS } from './china/sixteen-kingdoms.mjs';
 
 // ── 4번 묶음 (936 ~ 1392) ─────────────────────────────────
 // 북쪽 변은 북위 33°선(shared.mjs의 L33): 금 쪽 상자(NORTH_BOX)와 이 선에서 맞닿는다
@@ -359,22 +360,42 @@ const ownVersions = {
     [316, 317, cutOut(HAN_EMPIRE, CH[314], HZ[316], DAI_310_LAND)]],
   // 중국 M3a(00-scope 5절 영향표, 운영자 승인): 317~346년 성한 땅(쓰촨·충칭, 320년부터 월수, 330년부터 파동)과 333~346년 닝주(윈난·구이저우 서부),
   //   373~383년 전진이 차지한 쓰촨·충칭(SHU_373)을 뺌(2026-10-21 운영자 승인). 그 밖 기간은 SOUTH_PART 그대로
+  // 중국 M3b(00-scope 5절 영향표 405~413 서촉 줄과 2026-10-21 운영자 결정 4): 405~412년 서촉 땅(WS)을 빼고, 385~419년 회수 북쪽 땅(EJN, 시대 파일 sixteen-kingdoms.mjs)을 더함 —
+  //   385~393 허난(뤄양 포함)·화이베이·산둥(연·청·서주), 394~396 산둥은 광고 둘레 청주·낭야만, 397~398 산둥 없음, 399~409 뤄양을 후진에게, 410 남연 옛 땅, 416 뤄양. 384 버전은 그대로
   'eastern-jin': [[317, 320, cutOut(SOUTH_PART, CH[314])], [320, 330, cutOut(SOUTH_PART, CH[320])], [330, 333, cutOut(SOUTH_PART, CH[330])], [333, 347, cutOut(SOUTH_PART, CH[330], NINGZHOU)], [347, 373, SOUTH_PART],
-    [373, 384, cutOut(SOUTH_PART, SHU_373)], [384, 420, SOUTH_PART]],
+    [373, 384, cutOut(SOUTH_PART, SHU_373)], [384, 385, SOUTH_PART], [385, 394, U(SOUTH_PART, EJN[385])], [394, 397, U(SOUTH_PART, EJN[394])], [397, 399, U(SOUTH_PART, EJN[397])],
+    [399, 405, U(SOUTH_PART, EJN[399])], [405, 410, U(cutOut(SOUTH_PART, WS[405]), EJN[399])], [410, 413, U(cutOut(SOUTH_PART, WS[410]), EJN[410])], [413, 416, U(SOUTH_PART, EJN[410])], [416, 420, U(SOUTH_PART, EJN[416])]],
   // 중국 M3a(00-scope 5절 영향표, 2026-10-21 운영자 승인): 352~369년 산시 중부(동경 111~113°, 대 땅 빼고, YAN_SHANXI)를 더함. YAN_CHINA 좌표는 그대로
   'former-yan': [[337, 352, U(LIAOXI, [LIAODONG])], [352, 370, U(YAN_CHINA, [LIAODONG], YAN_SHANXI)]],
   // 중국 M3a(00-scope 5절 영향표, 운영자 승인): 351~375년 전량(허시 회랑·시닝)과 대(代)의 운중·삭주를 뺌. 373~383년 쓰촨·충칭(SHU_373)을 더함(2026-10-21 운영자 승인).
   //   384~385 버전은 원래 모양 그대로(M3b가 다시 봄)
   'former-qin': [[351, 370, cutOut(NORTH_WEST, LIANG_LAND, DAI_LAND)], [370, 373, cutOut(U(NORTH_PART, [LIAODONG]), LIANG_LAND, DAI_LAND)],
-    [373, 376, U(cutOut(U(NORTH_PART, [LIAODONG]), LIANG_LAND, DAI_LAND), SHU_373)], [376, 384, U(NORTH_PART, [LIAODONG], SHU_373)], [384, 385, U(NORTH_PART, [LIAODONG])]],
-  'later-yan': [[385, 397, U(YAN_CHINA, [LIAODONG])], [397, 405, U(LIAOXI, [LIAODONG])], [405, 407, LIAOXI]],
+    [373, 376, U(cutOut(U(NORTH_PART, [LIAODONG]), LIANG_LAND, DAI_LAND), SHU_373)], [376, 384, U(NORTH_PART, [LIAODONG], SHU_373)], [384, 385, U(NORTH_PART, [LIAODONG])],
+    // 중국 M3b(2026-10-21 운영자 결정 6): 385~393년 잔존 정권(부등: 남안·룽둥·톈수이·관중 서부·고평)을 같은 id로 더함(빈 땅 쪽만). 385~386 진양 부비는 그리지 않음
+    [385, 394, FORMER_QIN_385]],
+  // 중국 M3b(2026-10-21 운영자 결정 4): 385~393년 산둥(연·청·서주)을, 394~396년 광고 둘레 청주·낭야를 동진에게 뺌. YAN_CHINA·요동 좌표와 397년 뒤 버전은 그대로
+  'later-yan': [[385, 394, cutOut(U(YAN_CHINA, [LIAODONG]), SHANDONG_385)], [394, 397, cutOut(U(YAN_CHINA, [LIAODONG]), SHANDONG_394)], [397, 405, U(LIAOXI, [LIAODONG])], [405, 407, LIAOXI]],
   'northern-yan': [[407, 436, LIAOXI]],
-  'northern-wei': [[386, 397, SHANXI_N], [397, 436, D(U(YAN_CHINA, SHANXI_N), LIAOXI)], [436, 439, U(YAN_CHINA, SHANXI_N)], [439, 534, NORTH_PART]],
+  // 토욕혼: 엽연이 할아버지 이름을 국호로 삼은 329년부터. 609~617년은 수의 군현, 663년 토번에 멸망 (2026-09-29)
+  // 중국 M3 결정 13(00-scope 5절 영향표, 2026-10-21 운영자 승인): 430~438년 서진(西秦)의 서쪽 옛 땅(린샤·란저우·위중, 시대 파일 TUYUHUN_430)을 더함. 그 밖 기간은 QH_N 그대로
+  // 토욕혼 버전은 430~438년 확장 땅이 시대 파일(china/sixteen-kingdoms.mjs)에 있어 이 권역에 둔다(층 규칙: inner-asia는 china 시대 파일을 가져올 수 없음). QH_N은 inner-asia.mjs
+  tuyuhun: [[329, 430, QH_N], [430, 439, U(QH_N, TUYUHUN_430)], [439, 609, QH_N], [618, 663, QH_N]],
+  // 중국 M3b(2026-10-21 운영자 결정 4·5): 399~409년 남연 땅, 410~438년 산둥 동·남부(남연 옛 땅과 롄윈강·피저우 북쪽)를 동진·송에게 뺌.
+  //   427년 오르도스·샨베이·닝샤 북부, 430년 관중, 431년 핑량·칭양·구위안·톈수이(하의 옛 땅)를 더함.
+  //   중국 M3 결정 10~12(00-scope 5절 영향표, 2026-10-21 운영자 승인): 391~406년 오르도스·허타오 서부·위린 북부, 397~438년 산시 중남부(하동 빼고), 423~438년 뤄양·쉬창을 더함(WXL).
+  //   386~390 버전과 439년 뒤 버전은 그대로
+  'northern-wei': [[386, 391, SHANXI_N], [391, 397, U(SHANXI_N, WXL[391])], [397, 399, U(D(U(YAN_CHINA, SHANXI_N), LIAOXI), WXL[397])],
+    [399, 407, U(cutOut(D(U(YAN_CHINA, SHANXI_N), LIAOXI), SOUTHERN_YAN_LAND), WXL[397])], [407, 410, U(cutOut(D(U(YAN_CHINA, SHANXI_N), LIAOXI), SOUTHERN_YAN_LAND), WXL[407])],
+    [410, 423, U(cutOut(D(U(YAN_CHINA, SHANXI_N), LIAOXI), SHANDONG_410), WXL[407])], [423, 427, U(cutOut(D(U(YAN_CHINA, SHANXI_N), LIAOXI), SHANDONG_410), WXL[423])],
+    [427, 430, U(cutOut(D(U(YAN_CHINA, SHANXI_N), LIAOXI), SHANDONG_410), WXL[427])],
+    [430, 431, U(cutOut(D(U(YAN_CHINA, SHANXI_N), LIAOXI), SHANDONG_410), WXL[430])], [431, 436, U(cutOut(D(U(YAN_CHINA, SHANXI_N), LIAOXI), SHANDONG_410), WXL[431])],
+    [436, 439, U(cutOut(U(YAN_CHINA, SHANXI_N), SHANDONG_410), WXL[431])], [439, 534, NORTH_PART]],
   'eastern-wei': [[534, 550, NORTH_EAST]],
   'western-wei': [[535, 557, NORTH_WEST]],
   'northern-qi': [[550, 577, NORTH_EAST]],
   'northern-zhou': [[557, 577, NORTH_WEST], [577, 581, NORTH_PART]],
-  'liu-song': [[420, 479, SOUTH_PART]],
+  // 중국 M3b(2026-10-21 운영자 결정 4): 420~422년 화이베이·허난(뤄양 포함)·산둥 동·남부, 423~438년 뤄양·쉬창을 뺀 회수 북쪽 땅(LSN)을 더함. 439년 뒤는 그대로
+  'liu-song': [[420, 423, U(SOUTH_PART, LSN[420])], [423, 439, U(SOUTH_PART, LSN[423])], [439, 479, SOUTH_PART]],
   'southern-qi': [[479, 502, SOUTH_PART]],
   liang: [[502, 557, SOUTH_PART]],
   chen: [[557, 589, SOUTH_PART]],

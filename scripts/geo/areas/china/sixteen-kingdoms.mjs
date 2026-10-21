@@ -11,7 +11,7 @@
 // - source: (선택) 이 시대 나라의 출처 문구. 없으면 권역의 source나 기본 문구
 //
 // ── 중국 M3a (2026-10-21): 5호 16국 앞쪽 304 ~ 383년(영토는 384 미포함까지) ──────────────────────────
-// 등급 '일반'(00-scope 2·3절: 땅 1만 km², 선 평균 10 / 최대 25 km). 새 나라: 한/전조·성한·후조·전량·대(代). 384년부터의 나라(후연·후진 등)는 M3b가 이 파일에 더한다.
+// 등급 '일반'(00-scope 2·3절: 땅 1만 km², 선 평균 10 / 최대 25 km). 새 나라: 한/전조·성한·후조·전량·대(代). 384년부터의 나라(후진·서진(西秦)·허시의 네 량·남연·하·서연·서촉)는 아래 M3b 절(같은 파일)에 있다.
 // 짜임: M2 칸(warring-states.mjs의 WARRING_STATES_CELLS)을 이어 쓰고, 몇 칸을 칼선으로 더 쪼개며(합치면 원래 칸, M2 split 꼴), M2에 없던 성 조각
 //   (허시 회랑·간쑤 나머지·칭하이 동부·닝샤 북부·네이멍구 나머지·랴오닝 서부·쓰촨 나머지·윈난·구이저우 서부)의 칸을 더한 '바탕 칸'을 만든다.
 //   바탕 칸은 다시 기존 나라 도형(areas/china.mjs)의 경계선으로 '조각'을 낸다: 북위 33°선(shared.mjs NORTH_BOX, 동진 SOUTH_PART의 북쪽 변) 남쪽 S,
@@ -230,7 +230,218 @@ const segments = cuts.slice(0, -1).map((from, i) => {
 const versions = {};
 for (const [id, list] of Object.entries(TABLE)) versions[id] = list.map(([from, to, cells]) => [from, to, build(cells)]);
 
-/** 작업용: 조각 모음(결과 노트의 넓이 재기·M3b가 쓴다. 객체는 고치지 말고 U·D·I로 새 도형을 만든다) */
+// ── 중국 M3b (2026-10-21): 5호 16국 뒤쪽 384 ~ 439년(영토는 439년 말 모습까지, 440 미포함) ──────────────────────────
+// 새 나라: 후진(後秦)·서진(西秦)·후량(後涼)·남량·북량·서량·남연·하(夏)·서연·서촉. 기존 나라 줄(00-scope 5절 영향표와 2026-10-21 운영자 결정 4~6, scratchpad m3/decisions.md):
+//   동진 405~412 서촉 땅을 뺌, 후연 385~396 산둥을 동진에게(394년부터는 광고 둘레 청주·낭야만), 북위 399~409 남연 땅·410~438 산둥 동·남부를 동진·송에게,
+//   동진 385~419·송 420~438 화이베이·허난·산둥(사료 해대로)을 더함, 북위 427~438 오르도스·샨베이·관중·핑량(하 땅)을 더함, 전진 385~393 잔존 정권(부등)을 더함.
+// 짜임: M3a 조각을 다시 나눈 'M3b 조각'을 쓴다(M3a 조각·표·구간은 그대로 두어 304~383년 결과가 바뀌지 않게 함).
+//   - 북위 386~436 SHANXI_N(areas/china.mjs, 동경 110~113°·북위 37.5~41.5° 상자)과 같은 상자로 W·C 조각을 나눠 그 안을 구역 X(이름 '<칸>.XW'·'<칸>.XC')로 둔다.
+//     X는 386년부터 늘 기존 북위 땅이라 새 나라는 갖지 않는다(서연의 타이위안, 하의 오르도스 동쪽 끝 — 결과 노트 7절).
+//   - 허시 회랑(GS_LIANG.W)을 둔황(LG_DH, 동경 97° 서쪽)·주취안(LG_JQ, 97~99.3°)·장예(LG_ZY, 99.3~101.3°)·우웨이(LG_WW, 101.3° 동쪽·북위 37° 북쪽)·
+//     란저우·융덩(LZ_N, 북위 35.8~37°)·린샤(LZ_S, 북위 35.8° 남쪽)로, 간쑤 동부(GS_E.W)를 룽시·남안(GS_EW, 동경 105.3° 서쪽)·톈수이 남쪽(GS_ES, 북위 34.8° 남쪽)과 핑량·칭양(GS_EE)으로 나눈다.
+//   - 따로 떨어진 성 조각 끝(월경지가 되지 않게 이웃 묶음에 붙임): 칭하이의 쑤베이 남쪽 끝(QH_HX → 둔황 묶음), 간쑤의 환현·칭양 북쪽(GS_LDE → 핑량·칭양 묶음),
+//     섬서의 룽현 북쪽 끝(SNX_RW → 핑량·칭양 묶음), 산둥의 선현 쪽 끝(SD_WWX → 늘 기존 후연·북위)
+const SHANXI_N_BOX = box(110.0, 37.5, 113.0, 41.5); // 기존 북위 SHANXI_N과 같은 상자(좌표 베끼기 아님: 같은 기존 경계선)
+// 칼선: 동경 97°(둔황/주취안, 옥문 서쪽)·99.3°(주취안/장예, 가오타이 서쪽)·101.3°(장예/우웨이, 산단 동쪽)·북위 37°(우웨이 분지/융덩·톈주 남쪽)·북위 35.8°(란저우/린샤)·
+//   동경 105.3°(룽시·퉁웨이/징닝·핑량)·북위 34.8°(톈수이 남쪽/핑량). 나머지 상자는 성 조각의 떨어진 끝만 고름. 강 키 없음(경위도 상자 변)
+const SUBCUT = {
+  'GS_LIANG.W': [[['LG_DH', box(92.0, 35.0, 97.0, 43.0)], ['LG_JQ', box(97.0, 35.0, 99.3, 43.0)], ['LG_ZY', box(99.3, 35.0, 101.3, 43.0)], ['LG_WW', box(101.3, 37.0, 104.0, 43.0)], ['LZ_N', box(101.3, 35.8, 104.0, 37.0)]], 'LZ_S'],
+  'GS_E.W': [[['GS_EW', box(103.0, 33.0, 105.3, 38.0)], ['GS_ES', box(105.3, 33.0, 108.8, 34.8)]], 'GS_EE'],
+  'QH_C.W': [[['QH_HX', box(90.0, 38.3, 98.5, 41.0)]], 'QH_C'],
+  'GS_LD.W': [[['GS_LDE', box(106.0, 35.0, 108.0, 38.0)]], 'GS_LD'],
+  'SNX_R.W': [[['SNX_RW', box(106.0, 34.5, 107.3, 35.6)]], 'SNX_R'],
+  'SD_WW.Y': [[['SD_WWX', box(114.5, 35.75, 115.6, 36.0)]], 'SD_WW'],
+};
+const CELL_B = {};
+const ZONE_B = {};
+const PIECES_B = {};
+const addB = (cell, z, g, name = `${cell}.${z}`) => {
+  if (deg2(g) < 0.0001) return;
+  CELL_B[name] = g;
+  ZONE_B[name] = z;
+  (PIECES_B[cell] ??= []).push(name);
+};
+for (const [p, g0] of Object.entries(CELL)) {
+  const cell = p.slice(0, p.lastIndexOf('.'));
+  const z = ZONE[p];
+  let g = g0;
+  if (z === 'W' || z === 'C') {
+    addB(cell, 'X', I(g0, SHANXI_N_BOX), `${cell}.X${z}`);
+    g = D(g0, SHANXI_N_BOX);
+  }
+  if (SUBCUT[p]) {
+    const [parts, restName] = SUBCUT[p];
+    for (const [n, m] of Object.entries(split(g, parts, restName))) addB(n, z, m);
+  } else addB(cell, z, g, p);
+}
+const CELL_B_NAMES = Object.keys(CELL_B);
+/** 이름 → M3b 조각들. '칸'이면 X를 뺀 모든 조각, '칸.구역'이면 그 조각 */
+const pb = (...names) => [...new Set(names.flatMap((n) => {
+  if (CELL_B[n]) return [n];
+  const list = (PIECES_B[n] ?? []).filter((c) => ZONE_B[c] !== 'X');
+  if (!list.length) throw new Error(`중국 sixteen-kingdoms M3b: 모르는 칸 ${n}`);
+  return list;
+}))];
+const buildB = (cells) => U(...cells.map((c) => CELL_B[c]));
+
+// ── M3b 땅 묶음 ─────────────
+// 허시 회랑·룽시
+const DH = pb('LG_DH', 'XJ_E', 'QH_HX'); // 둔황·과저우(둔황군, 옥문 서쪽)와 그 서쪽 띠, 쑤베이 남쪽 끝
+const JQ = pb('LG_JQ'); // 주취안·자위관·위먼
+const ZY = pb('LG_ZY'); // 장예·가오타이(건강)·산단
+const WW = pb('LG_WW'); // 우웨이 분지(고장)·융창·구랑
+const LZN = pb('LZ_N'); // 란저우(금성)·융덩·톈주 남부
+const LZS = pb('LZ_S'); // 린샤(포한)·허정·지스산
+const QH = pb('QH_C'); // 시닝(서평)·하이둥(낙도)
+const LD = pb('GS_LD'); // 위중(용사성·원천)·바이인·징위안(도견산)·후이닝
+const GEW = pb('GS_EW'); // 룽시·린타오·웨이위안·퉁웨이(남안·농서)
+const GEE = pb('GS_EE', 'GS_LDE', 'SNX_RW'); // 핑량·칭양·징닝·징촨(안정·고평 남쪽)과 환현, 룽현 북쪽 끝
+const TSB = pb('TS', 'GS_ES'); // 톈수이(상규)와 그 남쪽·동쪽(후이현·칭수이)
+const NXS = pb('NX_S'); // 구위안(고평)
+const NXN = pb('NX_N'); // 닝샤 북부(인촨 평원)
+// 샨베이·오르도스·관중
+const ORDOS = pb('NM_X.W', 'SNX_N', 'NM_YZ.W'); // 오르도스·허타오 서부·위린 북부 장성 밖(동경 110° 동쪽은 기존 북위 SHANXI_N)
+const NSX = pb('SNX_R', 'SNX_SJ'); // 샨베이 장성 안(옌안·쑤이더·위린 남부·황룽)
+const GZE = pb('GZ_E2', 'GZ_HX'); // 관중 동·중부(시안·셴양·웨이난·퉁촨, 야오현 북지)·뤄허강 동쪽
+const GZW = pb('GZ_W'); // 관중 서부(바오지·펑샹)
+const SL = pb('SN_SL'); // 상뤄
+const HEDONG = pb('SX_YC'); // 윈청 분지(하동, 포판)
+// 산시 중남부(서연): 평양(린펀)·펀허강 중류·상당(창즈) 서쪽·뤼량산 남부와 북위 37.5° 남쪽 끝(타이위안 분지 남쪽 등)
+const WY_SX = pb('SX_JC1', 'SX_FEN', 'SX_SDN.C', 'SX_SDS.C', 'SX_LW', 'SX_LL.W', 'SX_LL.C', 'SX_TY.C', 'SX_XD.C');
+// 허난·화이베이·산둥
+const LUOYANG = pb('HA_LUO.C', 'HA_CW.C', 'HA_CW.W', 'HA_W.C', 'HA_W.W', 'HA_YZ.C', 'HA_ZZ.C'); // 뤄양 분지·산먼샤·이양·쑹현(사주)
+const HENAN_N = pb('HA_ZZ.H', 'HA_YZ.H', 'HA_KF.H', 'HA_LUO.H'); // 쉬창·핑딩산·위저우·웨이스(423년 북위가 차지)
+const HUAI_N = pb('HA_CS.H', 'SONG_HA.H', 'HA_NY.H', 'HA_NY.C', 'HA_NY.W', 'HB_SY.W', 'HB_XR.C', 'HB_XR.W', 'AH_XR.H', 'SONG_AH.H', 'SONG_JS.H', 'JS_XR.H', 'JS_XE.H', 'SD_LU.H', 'SD_SES.H'); // 북위 33~34.5°: 저우커우·상추·난양 북쪽·화이베이·쑤저우·쉬저우(팽성)·쑤첸
+const JSY = pb('JS_XE.Y', 'JS_XR.Y', 'SONG_JS.Y', 'SONG_AH.Y'); // 북위 34.5° 북쪽 장쑤·안후이 끝(롄윈강·간위·피저우 북쪽, 동해·낭야 남쪽)
+const SY = [...pb('SD_QI1.Y', 'SD_QI2.Y', 'SD_JDW.Y', 'SD_JDE.Y', 'SD_SEN.Y', 'SD_SES.Y', 'SD_LU.Y'), ...JSY]; // 남연: 동쪽 바다·남쪽 사수(롄윈강·피저우 북쪽까지)·서쪽 거야택·북쪽 황허강(zh 南燕)
+const SD_385 = [...SY, ...pb('SD_WW.Y', 'SONG_SD.Y')]; // 동진 385~393: 연·청·서주(옛 황허강 북쪽 랴오청·더저우와 타이첸은 후연)
+const SD_394 = [...pb('SD_QI1.Y', 'SD_JDW.Y', 'SD_JDE.Y', 'SD_SEN.Y', 'SD_SES.Y'), ...JSY]; // 동진 394~396: 광고 둘레 청주·자오둥·쥐현·낭야(후연이 산둥 서·북쪽)
+// 쓰촨(서촉)
+const WS_405 = pb('SC_SHU', 'SC_BA', 'SC_YB', 'SC_NE', 'CQ_W'); // 청두 평원·쓰촨 분지 동쪽·이빈 남부·파군(충칭 서부)
+const WS_410 = [...WS_405, ...pb('CQ_E', 'CQ_SE')]; // + 파동(펑제·우산)·부릉(충칭 동남부)
+
+// ── M3b 나라 표: [from, to, 조각 목록] (to 미포함). 기존 나라(전진·동진·송·북위)의 줄은 권역 파일이 기존 도형에 더하는 땅이고 era에는 넣지 않는다 ─────
+const LQ_386 = [...GZE, ...SL, ...NSX];
+const LQ_394 = [...LQ_386, ...GZW, ...GEE, ...TSB, ...NXS, ...HEDONG];
+const LQ_399 = [...LQ_394, ...LUOYANG];
+const LQ_400 = [...LQ_399, ...LD, ...LZN, ...LZS, ...GEW];
+const minus = (list, ...drop) => { const d = new Set(drop.flat()); return list.filter((c) => !d.has(c)); };
+const LQ_408 = minus(LQ_400, NSX, NXS);
+const LQ_409 = minus(LQ_408, LD, LZN);
+const LQ_412 = minus(LQ_409, LZS, GEW);
+const LQ_413 = minus(LQ_412, GEE);
+const LQ_416 = minus(LQ_413, LUOYANG);
+const XIA_407 = [...ORDOS, ...NXN];
+const XIA_408 = [...XIA_407, ...NXS, ...NSX];
+const XIA_413 = [...XIA_408, ...GEE];
+const XIA_418 = [...XIA_413, ...GZE, ...GZW, ...TSB, ...HEDONG];
+const XIA_427 = [...GZE, ...GZW, ...GEE, ...NXS, ...TSB];
+const XIA_430 = [...GEE, ...NXS, ...TSB];
+const EJ_N = { 385: [...HENAN_N, ...HUAI_N, ...LUOYANG, ...SD_385], 394: [...HENAN_N, ...HUAI_N, ...LUOYANG, ...SD_394], 397: [...HENAN_N, ...HUAI_N, ...LUOYANG], 399: [...HENAN_N, ...HUAI_N], 410: [...HENAN_N, ...HUAI_N, ...SY], 416: [...HENAN_N, ...HUAI_N, ...SY, ...LUOYANG] };
+const LS_N = { 420: EJ_N[416], 423: [...HUAI_N, ...SY] };
+// 북위에 더하는 땅(키 = 버전 첫 해): 391 오르도스(결정 11), 397 산시 중남부(결정 10), 407 오르도스를 하에게, 423 뤄양·쉬창(결정 12), 427·430·431 하 옛 땅(결정 5)
+const WEI_ADD = { 391: ORDOS, 397: [...ORDOS, ...WY_SX], 407: WY_SX, 423: [...WY_SX, ...LUOYANG, ...HENAN_N] };
+WEI_ADD[427] = [...WEI_ADD[423], ...ORDOS, ...NSX, ...NXN];
+WEI_ADD[430] = [...WEI_ADD[427], ...GZE, ...GZW];
+WEI_ADD[431] = [...WEI_ADD[430], ...GEE, ...NXS, ...TSB];
+const TYH_430 = [...LZS, ...LZN, ...LD]; // 토욕혼 430~438: 서진(西秦) 옛 땅(포한·금성·원천, 결정 13)
+const FQ_385 = [...GEW, ...pb('GS_EE', 'SNX_RW'), ...TSB, ...GZW, ...NXS]; // 환현(GS_LDE)은 비움: 391~393 북위 오르도스와 맞닿아 색이 비슷한 두 기존 나라가 붙지 않게(4천 km²대)
+const EXTERNAL = new Set(['former-qin', 'eastern-jin', 'liu-song', 'northern-wei', 'tuyuhun']);
+
+const TABLE_B = {
+  // 후진(後秦): 384년 요장이 북지(야오현)에서 만년진왕 → 386년 장안을 차지해 관중 동·중부·상뤄·샨베이 → 394년 전진 잔존 정권을 멸해 관중 서부·핑량·톈수이·구위안과 하동(포판) →
+  //   399년 뤄양 → 400년 서진(西秦) 땅(위중·란저우·린샤·룽시) → 408년 샨베이·고평을 하에게(en Yao Xing "all of modern northern Shaanxi to fall into Xia hands") →
+  //   409년 서진(西秦) 복국으로 위중·란저우 → 412년 린샤·룽시(서진(西秦) 포한 천도 무렵) → 413년 핑량·칭양을 하에게 → 416년 뤄양을 동진에게 → 417년 장안 함락으로 멸망.
+  //   403~406 고장(우웨이) 지배는 3년이라, 405년 한수 북쪽 12군 반환은 범위가 불확실해 그리지 않음
+  'later-qin': [[386, 394, LQ_386], [394, 399, LQ_394], [399, 400, LQ_399], [400, 408, LQ_400], [408, 409, LQ_408], [409, 412, LQ_409], [412, 413, LQ_412], [413, 416, LQ_413], [416, 417, LQ_416]],
+  // 서진(西秦): 385년 걸복국인이 용사천(위중)에서 일어남(388 금성 천도) → 394년 부등이 죽은 뒤 룽시·남안 → 400년 후진에게 망함 → 409년 원천·도견산(위중·징위안)에서 복국 →
+  //   412년 포한(린샤)으로 옮기며 린샤·룽시 → 414년 남량을 멸해 시닝·하이둥 → 429년 북량에게 서평(시닝)을 잃음(en Qifu_Mumo "In spring 429, Juqu Mengxun captured Xiping.") → 430년 토욕혼에게 서쪽 땅을 잃고 남안만 → 431년 하에게 멸망
+  'western-qin': [[385, 394, [...LD, ...LZN, ...LZS]], [394, 400, [...LD, ...LZN, ...LZS, ...GEW]], [409, 412, [...LD, ...LZN]], [412, 414, [...LD, ...LZN, ...LZS, ...GEW]], [414, 429, [...LD, ...LZN, ...LZS, ...GEW, ...QH]], [429, 430, [...LD, ...LZN, ...LZS, ...GEW]], [430, 431, GEW]],
+  // 후량(後涼): 386년 여광이 고장에 들어가 허시 회랑(둔황~우웨이)·시닝 → 397년 남량·북량이 갈라져 우웨이 분지만 → 403년 여륭이 후진에게 항복
+  'later-liang-lu': [[386, 397, [...DH, ...JQ, ...ZY, ...WW, ...QH]], [397, 403, WW]],
+  // 남량: 397년 독발오고가 서평왕(시닝·하이둥) → 406년 후진에게서 고장을 받음 → 410년 고장을 떠나 낙도로 → 414년 서진(西秦)에게 멸망
+  'southern-liang': [[397, 406, QH], [406, 410, [...QH, ...WW]], [410, 414, QH]],
+  // 북량: 397년 단업이 건강(가오타이)에서 일어나 장예·주취안·둔황 → 400년 둔황이 서량으로 → 401년 주취안이 서량으로 → 411년 고장(우웨이)을 차지(412 천도) →
+  //   420년 주취안 → 421년 둔황(서량 멸망) → 429년 서진(西秦)의 서평·낙도(시닝·하이둥, zh 沮渠安周 낙도 태수) → 439년 북위에게 멸망(고창 잔존은 그리지 않음)
+  'northern-liang': [[397, 400, [...DH, ...JQ, ...ZY]], [400, 401, [...JQ, ...ZY]], [401, 411, ZY], [411, 420, [...ZY, ...WW]], [420, 421, [...JQ, ...ZY, ...WW]], [421, 429, [...DH, ...JQ, ...ZY, ...WW]], [429, 439, [...DH, ...JQ, ...ZY, ...WW, ...QH]]],
+  // 서량: 400년 이고가 둔황에서 자립(옥문 서쪽) → 401년 주취안 → 420년 주취안을 북량에게 잃음 → 421년 둔황 함락으로 멸망
+  'western-liang': [[400, 401, DH], [401, 420, [...DH, ...JQ]], [420, 421, DH]],
+  // 남연: 398년 모용덕이 활대에서 연왕(활대 시기는 2년이라 그리지 않음) → 399년 청주를 차지해 광고에 자리 잡음(400년 칭제) → 410년 유유가 광고를 함락
+  'southern-yan': [[399, 410, SY]],
+  // 하(夏): 407년 혁련발발이 고평에서 몰혁간을 치고 오르도스(대성)·닝샤 북부 → 408년 샨베이·고평 → 413년 통만성을 쌓고 핑량·칭양(417년 전 룽둥) →
+  //   418년 장안을 함락해 관중·톈수이·하동 → 427년 북위가 통만성을 함락(오르도스·샨베이를 잃음, 하동은 426년 포기) → 430년 관중을 북위에게 → 431년 토욕혼에게 사로잡혀 멸망.
+  //   426~427 북위의 장안 점령은 428년 하가 되찾아(2년) 관중은 430년까지 하로 둠
+  'helian-xia': [[407, 408, XIA_407], [408, 413, XIA_408], [413, 418, XIA_413], [418, 427, XIA_418], [427, 430, XIA_427], [430, 431, XIA_430]],
+  // 서연: 384년 모용홍이 일어나 385~386 장안(1년, 그리지 않음) → 386년 모용영이 장자(창즈)에 도읍해 산시 중남부와 하동 → 394년 후연에게 멸망.
+  //   타이위안 둘레(북위 37.5° 북쪽)는 기존 북위 SHANXI_N, 타이항산 동쪽은 기존 후연 YAN_CHINA라 비켜 감(결과 노트 7절)
+  'western-yan': [[386, 394, [...WY_SX, ...HEDONG]]],
+  // 서촉: 405년 초종이 청두에서 성도왕(촉·파 서부) → 410년 무렵 파동·부릉 → 413년 주령석이 청두를 함락. 동진 405~412에서 뺌(승인 줄)
+  'western-shu': [[405, 410, WS_405], [410, 413, WS_410]],
+  // 기존 나라에 더하는 땅(권역 파일이 씀): 전진 385~393 잔존 정권(결정 6), 동진·송의 회수 북쪽(결정 4), 북위 391~406 오르도스(결정 11, en Emperor_Daowu 391 열박)·397~438 산시 중남부(결정 10, 396 가을 병주)·
+//   423~438 뤄양·쉬창(결정 12, en Taiwu)·427~438 하 옛 땅(결정 5), 토욕혼 430~438 서진(西秦) 서쪽 옛 땅(결정 13, zh 乞伏暮末 "西秦故地已為吐谷渾所佔領")
+  'former-qin': [[385, 394, FQ_385]],
+  'eastern-jin': [[385, 394, EJ_N[385]], [394, 397, EJ_N[394]], [397, 399, EJ_N[397]], [399, 410, EJ_N[399]], [410, 416, EJ_N[410]], [416, 420, EJ_N[416]]],
+  'liu-song': [[420, 423, LS_N[420]], [423, 439, LS_N[423]]],
+  'northern-wei': [[391, 397, WEI_ADD[391]], [397, 407, WEI_ADD[397]], [407, 423, WEI_ADD[407]], [423, 427, WEI_ADD[423]], [427, 430, WEI_ADD[427]], [430, 431, WEI_ADD[430]], [431, 439, WEI_ADD[431]]],
+  // 토욕혼(inner-asia.mjs)에 더하는 땅(결정 13): 430년 서진(西秦)의 서쪽 옛 땅
+  tuyuhun: [[430, 439, TYH_430]],
+};
+
+// 기존 나라(areas/china.mjs)가 그해 덮는 M3b 조각 (겹침 검사·비운 땅 계산에만 씀)
+function existingB(year, c) {
+  const z = ZONE_B[c];
+  if (z === 'S') return year < 420 ? 'eastern-jin' : 'liu-song'; // SOUTH_PART
+  if (year < 385) return 'former-qin'; // 384 NORTH_PART
+  if (year >= 439) return 'northern-wei'; // 439~ NORTH_PART
+  if (z === 'L') return year < 407 ? 'later-yan' : year < 436 ? 'northern-yan' : 'northern-wei'; // 요서
+  if (z === 'Y') return c === 'SD_JDE.Y' ? null : year < 397 ? 'later-yan' : 'northern-wei'; // YAN_CHINA(대각선 밖 자오둥 끝은 빈 땅으로 셈 — M3a와 같음)
+  if (z === 'X') return year >= 386 ? 'northern-wei' : null; // SHANXI_N
+  return null;
+}
+// 승인 줄(00-scope 5절 동진 405~413 서촉, 2026-10-21 운영자 결정 4): 이 기존 나라는 그해 새 나라·동진 땅을 권역 파일에서 뺀다
+const APPROVED_B = [
+  ['eastern-jin', 405, 413, ['western-shu']],
+  ['later-yan', 385, 397, ['eastern-jin']],
+  ['northern-wei', 399, 410, ['southern-yan']],
+  ['northern-wei', 410, 439, ['eastern-jin', 'liu-song']],
+];
+const approvedB = (owner, year, id) => APPROVED_B.some(([o, f, t, ids]) => o === owner && f <= year && year < t && ids.includes(id));
+const M3B_FROM = 384, M3B_TO = 440;
+const EXISTING_CUTS_B = [385, 386, 397, 407, 420, 436, 439];
+const cutsB = [...new Set([M3B_FROM, M3B_TO, ...EXISTING_CUTS_B, ...Object.values(TABLE_B).flatMap((list) => list.flatMap(([f, t]) => [f, t]))])].filter((y) => y >= M3B_FROM && y <= M3B_TO).sort((a, b) => a - b);
+const ownedB = (year) => {
+  const seen = new Map();
+  for (const [id, list] of Object.entries(TABLE_B)) {
+    for (const [f, t, cells] of list) {
+      if (!(f <= year && year < t)) continue;
+      for (const c of cells) {
+        if (!CELL_B[c]) throw new Error(`중국 sixteen-kingdoms M3b: 모르는 조각 ${c} (${id})`);
+        if (seen.has(c)) throw new Error(`중국 sixteen-kingdoms M3b: ${year}년 조각 ${c}를 ${seen.get(c)}와 ${id}가 함께 가짐`);
+        const ex = existingB(year, c);
+        if (ex && ex !== id && !approvedB(ex, year, id)) throw new Error(`중국 sixteen-kingdoms M3b: ${year}년 조각 ${c}를 기존 나라 ${ex}와 ${id}가 함께 가짐(승인 줄 밖)`);
+        seen.set(c, id);
+      }
+    }
+  }
+  for (const c of CELL_B_NAMES) if (!seen.has(c) && existingB(year, c)) seen.set(c, existingB(year, c));
+  return seen;
+};
+const DOMAIN_B = buildB(CELL_B_NAMES);
+const segmentsB = cutsB.slice(0, -1).map((from, i) => {
+  const own = ownedB(from);
+  return { from, to: cutsB[i + 1], empty: CELL_B_NAMES.filter((c) => !own.has(c)) };
+});
+// 비운 조각의 이유 (그해 아무도 갖지 않은 조각, 384~439)
+// - 385: 전진이 무너진 해 — 관중 동부(서연 모용충의 장안, 1년)·북지(요장)·산시 중남부(진양 부비, 1년)·허시 회랑(여광이 돌아오기 전)·시닝, 북위 SHANXI_N 서기 전의 산시 북부(X)
+// - 철불 흉노 유위신(386~390)의 오르도스·허타오 서부·위린 북부(391년부터 북위, 결정 11)와 386~406 닝샤 북부(인촨 평원), 385~393 환현(GS_LDE, 전진 잔존 정권과 북위 오르도스 사이)
+// - 강족·구지(양씨)의 간난·룽난(GS_S), 저·강족의 쓰촨 북부(SC_N.W), 동진과 구지·서촉이 다툰 한중 분지 북쪽(SN_HZW.W·SN_HZE.W), 하내 서부(지위안, HA_NW_W.C)
+// - 394~396: 서연이 망한 뒤 후연이 가진 산시 중남부(기존 후연 도형 밖, 397년부터 북위 — 결정 10), 417: 후진이 망하고 하가 오기 전 관중·톈수이·하동·상뤄(동진 유유의 1년 점령은 그리지 않음),
+//   418~: 상뤄(동진·하·북위가 다툼), 427~: 북위가 다시 차지한 하동, 431~: 톈수이 서쪽 서진(西秦) 옛 땅(토욕혼·북량이 다툼)
+// - 403~405·410: 우웨이 분지(후진의 고장 3년, 남량이 떠나고 북량이 오기 전 1년), 429: 위중·란저우·린샤 밖은 없음(시닝·하이둥은 429년부터 북량, 린샤·란저우·위중은 430년부터 토욕혼)
+// - 397~398: 자오둥 동쪽 끝(기존 북위 도형 대각선 밖). 423년부터 뤄양·쉬창은 북위(결정 12, 430년 도언지 북벌은 그리지 않음)
+for (const [id, list] of Object.entries(TABLE_B)) if (!EXTERNAL.has(id)) versions[id] = list.map(([from, to, cells]) => [from, to, buildB(cells)]);
+
+/** 작업용: 조각 모음(결과 노트의 넓이 재기·M3b 조각의 바탕. 객체는 고치지 말고 U·D·I로 새 도형을 만든다) */
 export const SIXTEEN_KINGDOMS_CELLS = CELL;
 /** 권역 파일이 기존 나라 도형에서 새 나라 땅을 뺄 때 쓴다: D(base, ...parts) 뒤 조각 경계의 어긋남으로 남는 넓이 0에 가까운 폴리곤(0.0001제곱도 미만)을 버린다 */
 export const cutOut = (base, ...parts) => D(base, ...parts).filter((poly) => deg2([poly]) >= 0.0001);
@@ -251,9 +462,34 @@ export const SHU_373 = build(SHU_373_CELLS);
 /** 전연 352~369의 산시 중부(동경 111~113°, 대 땅 빼고) — 전연에 더한다 */
 export const YAN_SHANXI = build(YAN_SHANXI_CELLS);
 
+// 중국 M3b: 권역 파일이 기존 나라 도형에 더하거나 빼는 땅 (00-scope 5절 동진 405~413 서촉 줄, 2026-10-21 운영자 결정 4~6)
+/** 서촉 버전 땅(405·410): 동진 405~412에서 뺀다 */
+export const WESTERN_SHU_LAND = { 405: buildB(WS_405), 410: buildB(WS_410) };
+/** 동진(385~419)·송(420~438)의 북위 33° 북쪽 땅(키 = 버전 첫 해): SOUTH_PART에 더한다 */
+export const EASTERN_JIN_NORTH = Object.fromEntries(Object.entries(EJ_N).map(([y, c]) => [y, buildB(c)]));
+export const LIU_SONG_NORTH = Object.fromEntries(Object.entries(LS_N).map(([y, c]) => [y, buildB(c)]));
+/** 후연에서 뺄 산둥: 385~393 연·청·서주(SHANDONG_385), 394~396 광고 둘레 청주·낭야(SHANDONG_394) */
+export const SHANDONG_385 = buildB(SD_385);
+export const SHANDONG_394 = buildB(SD_394);
+/** 북위에서 뺄 산둥: 399~409 남연 땅, 410~438 남연 옛 땅과 롄윈강·피저우 북쪽(동진·송) */
+export const SOUTHERN_YAN_LAND = buildB(SY);
+export const SHANDONG_410 = buildB(SY);
+/** 북위에 더할 땅(키 = 버전 첫 해): 391 오르도스, 397 + 산시 중남부, 407 오르도스를 하에게, 423 + 뤄양·쉬창, 427 + 하의 오르도스·샨베이·닝샤 북부, 430 + 관중, 431 + 핑량·칭양·구위안·톈수이 */
+export const WEI_XIA_LAND = Object.fromEntries(Object.entries(WEI_ADD).map(([y, c]) => [y, buildB(c)]));
+/** 토욕혼 430~438에 더할 서진(西秦) 서쪽 옛 땅(린샤·란저우·위중, 결정 13) */
+export const TUYUHUN_430 = buildB(TYH_430);
+/** 전진 385~393 잔존 정권(부등의 남안·룽둥·톈수이·관중 서부·고평) */
+export const FORMER_QIN_385 = buildB(FQ_385);
+
 export const era = {
   name: 'sixteen-kingdoms',
   versions,
-  gapZones: segments.map(({ from, to, empty }) => ({ name: `중국 5호 16국 ${from}~${to - 1}`, zone: empty.length ? D(DOMAIN, build(empty)) : DOMAIN, from, to })),
-  voids: segments.filter(({ empty }) => empty.length).map(({ from, to, empty }) => [from, to, build(empty)]),
+  gapZones: [
+    ...segments.map(({ from, to, empty }) => ({ name: `중국 5호 16국 ${from}~${to - 1}`, zone: empty.length ? D(DOMAIN, build(empty)) : DOMAIN, from, to })),
+    ...segmentsB.map(({ from, to, empty }) => ({ name: `중국 5호 16국 ${from}~${to - 1}`, zone: empty.length ? D(DOMAIN_B, buildB(empty)) : DOMAIN_B, from, to })),
+  ],
+  voids: [
+    ...segments.filter(({ empty }) => empty.length).map(({ from, to, empty }) => [from, to, build(empty)]),
+    ...segmentsB.filter(({ empty }) => empty.length).map(({ from, to, empty }) => [from, to, buildB(empty)]),
+  ],
 };
