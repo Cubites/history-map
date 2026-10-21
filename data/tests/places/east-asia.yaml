@@ -1783,3 +1783,100 @@
   url: "https://zh.wikipedia.org/wiki/長沙市"
   from: "중국 M2"
   note: "초가 오기의 남평백월(기원전 381년 전) 무렵 차지한 둥팅호·창사 둘레"
+
+- name: "평양(한의 도읍, 린펀)"
+  at: [111.52, 36.08]
+  year: 310
+  expect: han-zhao
+  url: "https://en.wikipedia.org/wiki/Han-Zhao"
+  from: "중국 M3"
+  note: "한(전조)이 308년 평양군을 차지하고 309년 도읍을 옮긴 곳. 서진에서 뺀 땅(승인 줄)"
+
+- name: "평양(서진, 한이 일어나기 전)"
+  at: [111.52, 36.08]
+  year: 303
+  expect: western-jin
+  url: "https://en.wikipedia.org/wiki/Han-Zhao"
+  from: "중국 M3"
+  note: "304년 유연이 일어나기 전 서진의 평양군"
+
+- name: "청두(성한)"
+  at: [104.07, 30.66]
+  year: 330
+  expect: cheng-han
+  url: "https://en.wikipedia.org/wiki/Li_Xiong"
+  from: "중국 M3"
+  note: "304년 이웅이 차지한 성한의 도읍. 동진에서 뺀 땅(승인 줄)"
+
+- name: "청두(동진, 성한 멸망 뒤)"
+  at: [104.07, 30.66]
+  year: 349
+  expect: eastern-jin
+  url: "https://en.wikipedia.org/wiki/Huan_Wen"
+  from: "중국 M3"
+  note: "347년 환온이 성한을 멸한 뒤"
+
+- name: "양국(후조, 싱타이)"
+  at: [114.50, 37.07]
+  year: 330
+  expect: later-zhao
+  url: "https://zh.wikipedia.org/wiki/后赵"
+  from: "중국 M3"
+  note: "319년 석륵이 조왕을 칭한 도읍(335년 업으로 옮김)"
+
+- name: "고장(전량, 우웨이)"
+  at: [102.64, 37.93]
+  year: 360
+  expect: former-liang
+  url: "https://en.wikipedia.org/wiki/Former_Liang"
+  from: "중국 M3"
+  note: "전량의 도읍. 전진 351~370 도형에서 뺀 땅(승인 줄)"
+
+- name: "고장(전진, 전량 멸망 뒤)"
+  at: [102.64, 37.93]
+  year: 377
+  expect: former-qin
+  url: "https://en.wikipedia.org/wiki/Former_Liang"
+  from: "중국 M3"
+  note: "376년 전진이 전량을 멸한 뒤"
+
+- name: "성락(대, 허린거얼)"
+  at: [111.82, 40.38]
+  year: 360
+  expect: tuoba-dai
+  url: "https://en.wikipedia.org/wiki/Dai_(Sixteen_Kingdoms)"
+  from: "중국 M3"
+  note: "대의 도읍. 전진이 없던 곳이라 승인 줄과 상관없음(전진은 동경 111° 서쪽만)"
+
+- name: "성락(전진, 대 멸망 뒤)"
+  at: [111.82, 40.38]
+  year: 377
+  expect: former-qin
+  url: "https://en.wikipedia.org/wiki/Dai_(Sixteen_Kingdoms)"
+  from: "중국 M3"
+  note: "376년 전진이 대를 멸한 뒤"
+
+- name: "업(서진이 무너진 뒤 비운 땅)"
+  at: [114.32, 36.33]
+  year: 318
+  expect: none
+  region: east-asia
+  url: "https://en.wikipedia.org/wiki/Later_Zhao"
+  from: "중국 M3"
+  note: "서진이 무너진 뒤 석륵이 조왕을 칭하는 319년 전까지 화북 평원은 비움"
+
+- name: "성락(대, 서진이 무너지기 전)"
+  at: [111.82, 40.38]
+  year: 312
+  expect: tuoba-dai
+  url: "https://en.wikipedia.org/wiki/Dai_(Sixteen_Kingdoms)"
+  from: "중국 M3"
+  note: "310년 대공 책봉 뒤의 대 땅. 서진 310~316 도형에서 뺀 땅(승인 줄)"
+
+- name: "성락(서진, 대공 책봉 전)"
+  at: [111.82, 40.38]
+  year: 309
+  expect: western-jin
+  url: "https://en.wikipedia.org/wiki/Dai_(Sixteen_Kingdoms)"
+  from: "중국 M3"
+  note: "310년 탁발의로가 대공에 봉해지기 전"

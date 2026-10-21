@@ -289,3 +289,93 @@
 - key: '-225 qin-state 버전'
   reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
   decided: 중국 M2 기본값(00-scope 4절)
+- key: '304 han-zhao 성립'
+  reason: 중국 위진 남북조 사건 묶음(cn-03) 전이라 아직 이을 사건이 없음
+  decided: 중국 M3 기본값(00-scope 4절)
+- key: '304 cheng-han 성립'
+  reason: 중국 위진 남북조 사건 묶음(cn-03) 전이라 아직 이을 사건이 없음
+  decided: 중국 M3 기본값(00-scope 4절)
+- key: '310 tuoba-dai 성립'
+  reason: 중국 위진 남북조 사건 묶음(cn-03) 전이라 아직 이을 사건이 없음
+  decided: 중국 M3 기본값(00-scope 4절)
+- key: '317 former-liang 성립'
+  reason: 중국 위진 남북조 사건 묶음(cn-03) 전이라 아직 이을 사건이 없음
+  decided: 중국 M3 기본값(00-scope 4절)
+- key: '319 later-zhao 성립'
+  reason: 중국 위진 남북조 사건 묶음(cn-03) 전이라 아직 이을 사건이 없음
+  decided: 중국 M3 기본값(00-scope 4절)
+- key: '329 han-zhao 소멸'
+  reason: 중국 위진 남북조 사건 묶음(cn-03) 전이라 아직 이을 사건이 없음
+  decided: 중국 M3 기본값(00-scope 4절)
+- key: '347 cheng-han 소멸'
+  reason: 중국 위진 남북조 사건 묶음(cn-03) 전이라 아직 이을 사건이 없음
+  decided: 중국 M3 기본값(00-scope 4절)
+- key: '351 later-zhao 소멸'
+  reason: 중국 위진 남북조 사건 묶음(cn-03) 전이라 아직 이을 사건이 없음
+  decided: 중국 M3 기본값(00-scope 4절)
+- key: '376 former-liang 소멸'
+  reason: 중국 위진 남북조 사건 묶음(cn-03) 전이라 아직 이을 사건이 없음
+  decided: 중국 M3 기본값(00-scope 4절)
+- key: '376 tuoba-dai 소멸'
+  reason: 중국 위진 남북조 사건 묶음(cn-03) 전이라 아직 이을 사건이 없음
+  decided: 중국 M3 기본값(00-scope 4절)
+- key: '304 western-jin 버전'
+  reason: 중국 위진 남북조 사건 묶음(cn-03) 전이라 아직 이을 사건이 없음
+  decided: 중국 M3 기본값(00-scope 4절)
+- key: '308 western-jin 버전'
+  reason: 중국 위진 남북조 사건 묶음(cn-03) 전이라 아직 이을 사건이 없음
+  decided: 중국 M3 기본값(00-scope 4절)
+- key: '308 han-zhao 버전'
+  reason: 중국 위진 남북조 사건 묶음(cn-03) 전이라 아직 이을 사건이 없음
+  decided: 중국 M3 기본값(00-scope 4절)
+- key: '311 cheng-han 버전'
+  reason: 중국 위진 남북조 사건 묶음(cn-03) 전이라 아직 이을 사건이 없음
+  decided: 중국 M3 기본값(00-scope 4절)
+- key: '314 cheng-han 버전'
+  reason: 중국 위진 남북조 사건 묶음(cn-03) 전이라 아직 이을 사건이 없음
+  decided: 중국 M3 기본값(00-scope 4절)
+- key: '316 han-zhao 버전'
+  reason: 중국 위진 남북조 사건 묶음(cn-03) 전이라 아직 이을 사건이 없음
+  decided: 중국 M3 기본값(00-scope 4절)
+- key: '317 tuoba-dai 버전'
+  reason: 중국 위진 남북조 사건 묶음(cn-03) 전이라 아직 이을 사건이 없음
+  decided: 중국 M3 기본값(00-scope 4절)
+- key: '318 han-zhao 버전'
+  reason: 중국 위진 남북조 사건 묶음(cn-03) 전이라 아직 이을 사건이 없음
+  decided: 중국 M3 기본값(00-scope 4절)
+- key: '323 han-zhao 버전'
+  reason: 중국 위진 남북조 사건 묶음(cn-03) 전이라 아직 이을 사건이 없음
+  decided: 중국 M3 기본값(00-scope 4절)
+- key: '323 later-zhao 버전'
+  reason: 중국 위진 남북조 사건 묶음(cn-03) 전이라 아직 이을 사건이 없음
+  decided: 중국 M3 기본값(00-scope 4절)
+- key: '329 later-zhao 버전'
+  reason: 중국 위진 남북조 사건 묶음(cn-03) 전이라 아직 이을 사건이 없음
+  decided: 중국 M3 기본값(00-scope 4절)
+- key: '330 eastern-jin 버전'
+  reason: 중국 위진 남북조 사건 묶음(cn-03) 전이라 아직 이을 사건이 없음
+  decided: 중국 M3 기본값(00-scope 4절)
+- key: '330 cheng-han 버전'
+  reason: 중국 위진 남북조 사건 묶음(cn-03) 전이라 아직 이을 사건이 없음
+  decided: 중국 M3 기본값(00-scope 4절)
+- key: '333 eastern-jin 버전'
+  reason: 중국 위진 남북조 사건 묶음(cn-03) 전이라 아직 이을 사건이 없음
+  decided: 중국 M3 기본값(00-scope 4절)
+- key: '333 cheng-han 버전'
+  reason: 중국 위진 남북조 사건 묶음(cn-03) 전이라 아직 이을 사건이 없음
+  decided: 중국 M3 기본값(00-scope 4절)
+- key: '347 eastern-jin 버전'
+  reason: 중국 위진 남북조 사건 묶음(cn-03) 전이라 아직 이을 사건이 없음
+  decided: 중국 M3 기본값(00-scope 4절)
+- key: '351 later-zhao 버전'
+  reason: 중국 위진 남북조 사건 묶음(cn-03) 전이라 아직 이을 사건이 없음
+  decided: 중국 M3 기본값(00-scope 4절)
+- key: '352 tuoba-dai 버전'
+  reason: 중국 위진 남북조 사건 묶음(cn-03) 전이라 아직 이을 사건이 없음
+  decided: 중국 M3 기본값(00-scope 4절)
+- key: '320 eastern-jin 버전'
+  reason: 중국 위진 남북조 사건 묶음(cn-03) 전이라 아직 이을 사건이 없음
+  decided: 중국 M3 기본값(00-scope 4절)
+- key: '320 cheng-han 버전'
+  reason: 중국 위진 남북조 사건 묶음(cn-03) 전이라 아직 이을 사건이 없음
+  decided: 중국 M3 기본값(00-scope 4절)

@@ -21,6 +21,7 @@ import { ALXA, DALI, EASTERN_TURKS, ET_NE, HUGEUM_1621, JIANCHANG, JIAOZHI, KHIT
 import { joinEras } from '../shared.mjs';
 import { YAN_CHUNQIU, era as preQinEra } from './china/pre-qin.mjs';
 import { YAN_DAI, YAN_SOUTH, YAN_TO_QIN_226, era as warringStatesEra } from './china/warring-states.mjs';
+import { CHENG_HAN_LAND as CH, DAI_310_LAND, DAI_LAND, HAN_ZHAO_LAND as HZ, LIANG_LAND, NINGZHOU, SHU_373, YAN_SHANXI, cutOut, era as sixteenKingdomsEra } from './china/sixteen-kingdoms.mjs';
 
 // ── 4번 묶음 (936 ~ 1392) ─────────────────────────────────
 // 북쪽 변은 북위 33°선(shared.mjs의 L33): 금 쪽 상자(NORTH_BOX)와 이 선에서 맞닿는다
@@ -350,10 +351,22 @@ const ownVersions = {
   'cao-wei': [[220, 263, WEI_220], [263, 265, WEI_263]],
   shu: [[221, 263, SHU_N]],
   wu: [[222, 263, WU_N], [263, 271, WU_263], [271, 280, WU_N]],
-  'western-jin': [[265, 271, WEI_263], [271, 280, WEI_271], [280, 317, HAN_EMPIRE]],
-  'eastern-jin': [[317, 420, SOUTH_PART]],
-  'former-yan': [[337, 352, U(LIAOXI, [LIAODONG])], [352, 370, U(YAN_CHINA, [LIAODONG])]],
-  'former-qin': [[351, 370, NORTH_WEST], [370, 385, U(NORTH_PART, [LIAODONG])]],
+  // 중국 M3a(2026-10-21, 00-scope 5절 영향표, 운영자 승인): 304~316년 성한(쓰촨)·한/전조(산시 서남부, 316년부터 관중) 땅을 해마다 뺌(시대 파일 sixteen-kingdoms.mjs의 버전 땅).
+  //   310~316년 대(代) 땅(운중·삭주·평성·장자커우 북쪽, DAI_310_LAND)도 뺌(2026-10-21 운영자 승인).
+  //   280~304 버전은 그대로
+  'western-jin': [[265, 271, WEI_263], [271, 280, WEI_271], [280, 304, HAN_EMPIRE], [304, 308, cutOut(HAN_EMPIRE, CH[304], HZ[304])], [308, 310, cutOut(HAN_EMPIRE, CH[304], HZ[308])],
+    [310, 311, cutOut(HAN_EMPIRE, CH[304], HZ[308], DAI_310_LAND)], [311, 314, cutOut(HAN_EMPIRE, CH[311], HZ[308], DAI_310_LAND)], [314, 316, cutOut(HAN_EMPIRE, CH[314], HZ[308], DAI_310_LAND)],
+    [316, 317, cutOut(HAN_EMPIRE, CH[314], HZ[316], DAI_310_LAND)]],
+  // 중국 M3a(00-scope 5절 영향표, 운영자 승인): 317~346년 성한 땅(쓰촨·충칭, 320년부터 월수, 330년부터 파동)과 333~346년 닝주(윈난·구이저우 서부),
+  //   373~383년 전진이 차지한 쓰촨·충칭(SHU_373)을 뺌(2026-10-21 운영자 승인). 그 밖 기간은 SOUTH_PART 그대로
+  'eastern-jin': [[317, 320, cutOut(SOUTH_PART, CH[314])], [320, 330, cutOut(SOUTH_PART, CH[320])], [330, 333, cutOut(SOUTH_PART, CH[330])], [333, 347, cutOut(SOUTH_PART, CH[330], NINGZHOU)], [347, 373, SOUTH_PART],
+    [373, 384, cutOut(SOUTH_PART, SHU_373)], [384, 420, SOUTH_PART]],
+  // 중국 M3a(00-scope 5절 영향표, 2026-10-21 운영자 승인): 352~369년 산시 중부(동경 111~113°, 대 땅 빼고, YAN_SHANXI)를 더함. YAN_CHINA 좌표는 그대로
+  'former-yan': [[337, 352, U(LIAOXI, [LIAODONG])], [352, 370, U(YAN_CHINA, [LIAODONG], YAN_SHANXI)]],
+  // 중국 M3a(00-scope 5절 영향표, 운영자 승인): 351~375년 전량(허시 회랑·시닝)과 대(代)의 운중·삭주를 뺌. 373~383년 쓰촨·충칭(SHU_373)을 더함(2026-10-21 운영자 승인).
+  //   384~385 버전은 원래 모양 그대로(M3b가 다시 봄)
+  'former-qin': [[351, 370, cutOut(NORTH_WEST, LIANG_LAND, DAI_LAND)], [370, 373, cutOut(U(NORTH_PART, [LIAODONG]), LIANG_LAND, DAI_LAND)],
+    [373, 376, U(cutOut(U(NORTH_PART, [LIAODONG]), LIANG_LAND, DAI_LAND), SHU_373)], [376, 384, U(NORTH_PART, [LIAODONG], SHU_373)], [384, 385, U(NORTH_PART, [LIAODONG])]],
   'later-yan': [[385, 397, U(YAN_CHINA, [LIAODONG])], [397, 405, U(LIAOXI, [LIAODONG])], [405, 407, LIAOXI]],
   'northern-yan': [[407, 436, LIAOXI]],
   'northern-wei': [[386, 397, SHANXI_N], [397, 436, D(U(YAN_CHINA, SHANXI_N), LIAOXI)], [436, 439, U(YAN_CHINA, SHANXI_N)], [439, 534, NORTH_PART]],
@@ -388,4 +401,4 @@ const ownVersions = {
 };
 
 // 시대 파일 잇기 (npm run new:area): 이 파일의 나라 다음에 시대 파일(areas/china/<시대>.mjs)의 나라·빈 땅 검사 구역·비운 땅을 붙인다(shared.mjs joinEras)
-export const { versions, gapZones, voids, sourceOf } = joinEras('china', { versions: ownVersions }, [preQinEra, warringStatesEra]);
+export const { versions, gapZones, voids, sourceOf } = joinEras('china', { versions: ownVersions }, [preQinEra, warringStatesEra, sixteenKingdomsEra]);
