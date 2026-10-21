@@ -17,13 +17,15 @@ function geometry(multi) {
 // 권역 파일이 source를 내보내지 않을 때 쓰는 기본 출처 문구 (지금 권역은 모두 이 문구를 쓴다)
 const ESTIMATED = '중고등학교 한국사 교과서 시대별 지도의 일반적인 경계를 따른 대략적인 추정. 운영자 검수 필요';
 
-// 권역 파일이 내보내는 약속된 이름. fill·version·source·gap·void로 시작하는 다른 이름(대소문자 무시)은 이 다섯의 오타로 보고 멈춘다
+// 권역 파일이 내보내는 약속된 이름. fill·version·source·gap·void로 시작하는 다른 이름(대소문자 무시)은 이 여섯의 오타로 보고 멈춘다
 // voids(2026-10-09 작업 AN4 검토 반영): 권역이 일부러 비운 땅(소유표의 주인 없는 단위) [[from, to(끝 없음은 null), 멀티폴리곤], ...]. 틈새 구멍 메우기가 이 땅과 겹치는 구멍을 메우지 않게 한다
-const AREA_EXPORTS = new Set(['versions', 'fillSpecs', 'source', 'gapZones', 'voids']);
+// sourceOf(2026-10-21 RULES-TOOLS 작업 11): 나라 id → 출처 문구. 시대 파일(areas/<권역>/<시대>.mjs)의 source를 shared.mjs의 joinEras가 그 시대 나라마다 적은 표다.
+//   그 권역 versions의 나라만 적을 수 있고, 적힌 나라는 권역의 source보다 이 문구를 쓴다
+const AREA_EXPORTS = new Set(['versions', 'fillSpecs', 'source', 'gapZones', 'voids', 'sourceOf']);
 
 // 권역 파일들의 versions·fillSpecs·source를 AREAS 순서대로 합친다. 아래 경우에는 data/geo를 지우기 전에 멈춘다.
 // - 권역이 versions를 내보내지 않거나, 약속된 이름과 헷갈리는 이름(fillSpec, version, sources, gapZone 등)을 내보냄
-// - fillSpecs가 배열이 아니거나 spec 모양이 틀림, source가 비어 있지 않은 문자열이 아님
+// - fillSpecs가 배열이 아니거나 spec 모양이 틀림, source가 비어 있지 않은 문자열이 아님, sourceOf가 문구 표가 아니거나 그 권역에 없는 나라를 적음
 // - 같은 나라 id가 두 권역에 있음 (나라 id가 곧 data/geo 파일 이름)
 // - 채우기 spec의 id가 다른 권역의 나라이거나, 같은 새 id를 두 권역이 채움
 // - 빈 땅 검사 구역(gapZones)의 모양이 틀림 (collectGapZones의 검사. 생성기는 구역을 쓰지 않지만 check:gaps보다 먼저 잡는다)
@@ -45,6 +47,10 @@ export function mergeAreas(areas, areaDir) {
     if (area.fillSpecs !== undefined && !Array.isArray(area.fillSpecs)) throw new Error(`권역 ${name}의 fillSpecs가 배열이 아님`);
     if (area.source !== undefined && (typeof area.source !== 'string' || !area.source.trim())) throw new Error(`권역 ${name}의 source가 비어 있지 않은 문자열이 아님`);
     if (area.voids !== undefined && !Array.isArray(area.voids)) throw new Error(`권역 ${name}의 voids가 배열이 아님`);
+    const sourceOf = area.sourceOf ?? {};
+    if (typeof sourceOf !== 'object' || sourceOf === null || Array.isArray(sourceOf) || Object.values(sourceOf).some((v) => typeof v !== 'string' || !v.trim())) throw new Error(`권역 ${name}의 sourceOf가 나라 id → 비어 있지 않은 문구 표가 아님`);
+    const strangers = Object.keys(sourceOf).filter((id) => !Object.hasOwn(area.versions, id));
+    if (strangers.length) throw new Error(`권역 ${name}의 sourceOf에 그 권역 versions에 없는 나라: ${strangers.join(', ')}`);
     for (const v of area.voids ?? []) {
       if (!Array.isArray(v) || !Number.isInteger(v[0]) || !(v[1] === null || (Number.isInteger(v[1]) && v[0] < v[1])) || !Array.isArray(v[2])) throw new Error(`권역 ${name}의 voids 한 줄 모양이 틀림: [from, to(끝 없음은 null), 멀티폴리곤]이어야 함`);
       voids.push(v);
@@ -53,7 +59,8 @@ export function mergeAreas(areas, areaDir) {
       if (Object.hasOwn(owner, id)) throw new Error(`나라 id '${id}'가 ${owner[id]}와 ${name} 두 곳에 있음`);
       owner[id] = name;
       versions[id] = list;
-      if (area.source !== undefined) sources[id] = area.source;
+      const source = Object.hasOwn(sourceOf, id) ? sourceOf[id] : area.source;
+      if (source !== undefined) sources[id] = source;
     }
   }
   for (const [name, area] of areas) {

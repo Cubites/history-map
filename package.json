@@ -24,6 +24,8 @@
     "prep:fragments": "node scripts/prep-fragments.mjs",
     "prep:rivers": "node scripts/prep-rivers.mjs",
     "check:fragments": "node scripts/check-fragments.mjs",
+    "near:fragments": "node scripts/near-fragments.mjs",
+    "new:area": "node scripts/new-area.mjs",
     "compare:cshapes": "node scripts/compare-cshapes.mjs",
     "build": "npm run build:data && tsc --noEmit && vite build",
     "preview": "vite preview"

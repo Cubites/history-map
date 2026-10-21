@@ -1,0 +1,4 @@
+# china pre-qin 나라 (시대 파일 scripts/geo/areas/china/pre-qin.mjs의 짝 항목 파일, npm run new:area가 만든 빈 틀)
+# 시대·범위: 상·서주·춘추(M1): 기원전 1600년 무렵(천문 −1599) ~ 기원전 476년(천문 −475). 동아시아 손그림 바깥 도형(shared.mjs의 CHINA 등) 안을 Natural Earth admin-1 조각(loadFragments('china'))과 칼선으로 나눈다(docs/china/00-scope.md 2절)
+# 나라를 넣을 때 아래 []를 지우고 - id: …로 적는다(docs/DATA_GUIDE.md). 권역 값은 파일 이름에서 정해진다(src/schema/regions.ts REGION_FILTER_OF의 'china-pre-qin').
+[]

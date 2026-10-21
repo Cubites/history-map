@@ -1,11 +1,14 @@
-// 행정구역 조각 가공 (DESIGN.md §5.2 '행정구역 조각'): Natural Earth 1:10m admin-1 v5.1.2 GeoJSON에서 권역 조각 파일을 만든다.
-// 사용: npm run prep:fragments -- <원본 geojson 경로>
+// 행정구역 조각 가공 (DESIGN.md §5.2 '행정구역 조각'): Natural Earth 1:10m admin-1 v5.1.2 GeoJSON에서 지역 조각 파일을 만든다.
+// 사용: npm run prep:fragments -- [--region <지역>] <원본 geojson 경로>
+//   지역(나라 목록·하위 지역 거르기·범위 상자·README 글)은 scripts/fragments/regions.mjs의 표에서 읽는다(이 파일에 지역 이름을 두지 않음, RULES-TOOLS 작업 11).
+//   --region을 주지 않으면 표의 default 지역(europe, 옛 사용법 그대로)이다.
 //   원본은 저장소에 넣지 않는다(.cache/natural-earth/v5.1.2/에 둠, .gitignore). 이 스크립트는 아무것도 내려받지 않는다.
-//   결과: data/base/fragments/europe.topo.json(조각 파일)과 README.md(출처·SHA·명령·매개변수·조각 표). 자체 검사가 하나라도 실패하면 쓰지 않는다.
+//   결과: data/base/fragments/<지역>.topo.json(조각 파일)과 그 지역 README(표의 readme 이름: europe은 README.md, china는 README.china.md. 출처·SHA·명령·매개변수·조각 표).
+//   자체 검사가 하나라도 실패하면 쓰지 않는다.
 // 조각은 국경 생성기 안에서만 쓴다(scripts/geo/lib.mjs의 loadFragments·F). level: region Entity로 내보내지 않는다(DESIGN.md §7 6번의 배타 가정).
 // 단계 (채택안의 가공 파이프라인, 작업 5)
-//  1) 고르기: 권역의 나라(adm0_a3) 목록과 러시아 유럽 쪽(NE region 속성). 권역 범위 상자 밖에 통째로 있는 폴리곤(프랑스 해외 데파르트망 등)은 뺀다.
-//     상자에 걸친 나머지 행정구역(북아프리카·중동·카자흐스탄·러시아 아시아 쪽 등)은 '이웃'으로 함께 가공해 권역 경계선을 같게 간략화하고 해안 조각을 나눌 때 쓴다(파일에는 넣지 않음)
+//  1) 고르기: 지역의 나라(adm0_a3) 목록과 일부만 넣는 나라의 하위 지역(표의 include, 유럽은 러시아 유럽 쪽의 NE region 속성). 범위 상자 밖에 통째로 있는 폴리곤(프랑스 해외 데파르트망 등)은 뺀다.
+//     상자에 걸친 나머지 행정구역(유럽이면 북아프리카·중동·카자흐스탄·러시아 아시아 쪽 등)은 '이웃'으로 함께 가공해 권역 경계선을 같게 간략화하고 해안 조각을 나눌 때 쓴다(파일에는 넣지 않음)
 //  2) id·속성: id는 ISO 3166-2 코드, 없으면 adm1_code, 그것도 알맞지 않으면 adm0_a3(조각 하나뿐인 나라). 겹치면 멈춘다
 //  3) 나라별 조각 수·단위 표(README)
 //  4) 1e-4° 격자 → 위상화(이웃 조각이 같은 arc를 씀) → 격자 때문에 스스로 엇갈린 arc 고리 자르기 → arc 단위 간략화(Visvalingam).
@@ -19,7 +22,7 @@
 //  6) T자 접점 고치기: 한쪽 조각에만 생긴 꼭짓점을 이웃 조각의 변에 끼워 넣는다(격자 공간 색인) → 다시 위상화, 엇갈린 arc 고리 자르기, 고정 transform(scale 1e-4, translate 0,0)
 //  7) 자체 검사: (a) 조각 쌍 겹침 1km² 미만 (b) 빌드가 쓰는 육지 가운데 조각 몫인데 덮이지 않은 곳 0.01km² 미만 (c) 이웃 조각이 arc를 실제로 공유
 //     (topojson merge 둘레 = 합집합 둘레) (d) 파일이 1MB를 넘으면 경고 (e) 처음부터 두 번 만들어 바이트가 같음. (a)~(c)·(e)가 실패하면 쓰지 않는다
-//  8) 쓰기와 보고: 이미 있는 파일과 조각별 면적 변화를 보이고 europe.topo.json과 README.md를 쓴다
+//  8) 쓰기와 보고: 이미 있는 파일과 조각별 면적 변화를 보이고 <지역>.topo.json과 그 지역 README를 쓴다
 // 넓이 비교(꼬임·겹침)는 평면 넓이로 한다(polyclip이 일직선 위 점을 빼도 값이 같음). 보고용 km²는 구면 식이다(scripts/fragments/common.mjs)
 import { createHash } from 'node:crypto';
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
@@ -32,6 +35,7 @@ import {
   PolygonIndex, SegIndex, areaKm2, bboxOf, boxesApart, cleanMulti, inPolygon, interiorPoint, loadCountries, loadLand,
   pairOverlaps, perimeterKm, planarArea, pointSeg, polyclip, segKm, snap, toMulti,
 } from './fragments/common.mjs';
+import { FRAGMENT_REGIONS, defaultFragmentRegion, fragmentRegion } from './fragments/regions.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const OUT_DIR = path.join(ROOT, 'data/base/fragments');
@@ -43,22 +47,7 @@ const SOURCE = {
   blobSha1: '4a8438f98ac7dfec7dc1739b1eaf91398ad33f22',
 };
 
-// 권역: 나라 목록(adm0_a3)과 러시아 유럽 쪽(NE region 속성. Northwestern·Central·Volga이고, NE의 Volga에는 남부·북캅카스 관구도 들어 있다).
-// 범위 상자 [서, 남, 동, 북] 밖에 통째로 있는 폴리곤은 뺀다(프랑스 해외 데파르트망, 네덜란드 카리브 특별 기초자치단체). 카나리아·마데이라·아조레스는 상자 안이다.
-// 카자흐스탄과 러시아 아시아 쪽(Urals·Siberian·Far Eastern)은 넣지 않는다(areas/europe.mjs가 손 도형으로 둔다). 권역마다 파일을 하나씩 만들고, 지금은 europe뿐이다
-const REGIONS = {
-  europe: {
-    adm0: [
-      'ALB', 'AND', 'AUT', 'BEL', 'BGR', 'BIH', 'BLR', 'CHE', 'CYP', 'CYN', 'CZE', 'DEU', 'DNK', 'ESP', 'EST', 'FIN', 'FRA', 'GBR', 'GRC', 'HRV',
-      'HUN', 'IRL', 'ISL', 'ITA', 'KOS', 'LIE', 'LTU', 'LUX', 'LVA', 'MCO', 'MDA', 'MKD', 'MLT', 'MNE', 'NLD', 'NOR', 'POL', 'PRT', 'ROU', 'SMR',
-      'SRB', 'SVK', 'SVN', 'SWE', 'UKR', 'VAT', 'TUR', 'GEO', 'ARM', 'AZE',
-      'ALD', 'FRO', 'IMN', 'JEY', 'GGY', 'GIB', 'ESB', 'WSB', // 올란드·페로·맨섬·저지·건지·지브롤터·데켈리아·아크로티리
-    ],
-    rusRegions: ['Northwestern', 'Central', 'Volga'],
-    box: [-32, 27, 70, 82],
-  },
-};
-const REGION = 'europe';
+// 지역 표(나라 목록·하위 지역 거르기·범위 상자·README 글)는 scripts/fragments/regions.mjs에 있다. 이 파일은 --region 인자로 그 가운데 하나를 고른다
 
 // 매개변수 (README에 그대로 적는다)
 const PARAMS = {
@@ -86,11 +75,20 @@ const stamp = () => `${((performance.now() - t0) / 1000).toFixed(1)}초`;
 
 // ── 인자와 원본 확인 ─────────────────────────────────────
 const args = process.argv.slice(2);
-if (args.some((a) => a.startsWith('-')) || args.length !== 1) {
-  console.error(`사용: npm run prep:fragments -- <원본 geojson 경로> (받은 인자: ${args.join(' ') || '없음'})\n원본: ${SOURCE.url}`);
+let REGION = defaultFragmentRegion();
+const rest = [];
+for (let i = 0; i < args.length; i++) {
+  if (args[i] === '--region' && i + 1 < args.length) REGION = args[++i];
+  else if (args[i].startsWith('--region=')) REGION = args[i].slice('--region='.length);
+  else rest.push(args[i]);
+}
+if (rest.some((a) => a.startsWith('-')) || rest.length !== 1 || !Object.hasOwn(FRAGMENT_REGIONS, REGION)) {
+  console.error(`사용: npm run prep:fragments -- [--region <지역>] <원본 geojson 경로> (받은 인자: ${args.join(' ') || '없음'})\n지역: ${Object.keys(FRAGMENT_REGIONS).join(', ')} (scripts/fragments/regions.mjs, 주지 않으면 ${defaultFragmentRegion()})\n원본: ${SOURCE.url}`);
   process.exit(2);
 }
-const srcPath = path.resolve(args[0]);
+const REGION_DEF = fragmentRegion(REGION);
+const README_FILE = REGION_DEF.readme;
+const srcPath = path.resolve(rest[0]);
 if (!existsSync(srcPath)) {
   console.error(`원본이 없음: ${srcPath}\n받는 곳: ${SOURCE.url} (프로젝트의 .cache/natural-earth/v5.1.2/에 둔다)`);
   process.exit(2);
@@ -101,12 +99,12 @@ if (buf.length !== SOURCE.bytes || blobSha1 !== SOURCE.blobSha1) {
   console.error(`원본이 기록과 다름: ${buf.length}B, git blob SHA-1 ${blobSha1} (기록: ${SOURCE.bytes}B, ${SOURCE.blobSha1})`);
   process.exit(1);
 }
-log(`원본 ${srcPath}: ${buf.length}B, git blob SHA-1 ${blobSha1} (기록과 같음)`);
+log(`원본 ${srcPath}: ${buf.length}B, git blob SHA-1 ${blobSha1} (기록과 같음), 지역 ${REGION}`);
 
 // 세계 육지(권역 상자에 걸친 것만): landTrue = (land-50m ∪ land-110m) ∩ 상자(빌드가 해안선으로 자를 때 쓰는 육지 그대로), L = 그것을 격자에 맞춘 것.
 // 해안 조각은 L을 격자 두 칸(PARAMS.coastMargin)만큼 부풀린 L⁺(L과, 대각선 네 방향으로 두 칸씩 옮긴 L의 합집합. 곧은 해안이면 어느 방향으로도 두 칸 이상 부푼다)에서 뺀다. 해안 조각의 꼭짓점 가운데
 // 조각 해안선과의 교차점은 격자에 맞출 때 최대 0.71칸 움직이므로, 부풀려 두어야 움직인 뒤에도 육지를 빈틈없이 덮는다(부푼 띠는 바다라 빌드가 잘라 낸다)
-const B = REGIONS[REGION].box;
+const B = REGION_DEF.box;
 const boxPoly = [[[B[0], B[1]], [B[2], B[1]], [B[2], B[3]], [B[0], B[3]], [B[0], B[1]]]];
 const near = (multi) => multi.filter((poly) => !boxesApart(bboxOf([poly]), B));
 const landTrue = polyclip.intersection(polyclip.union(near(loadLand('50m')), near(loadLand('110m'))), boxPoly);
@@ -120,8 +118,8 @@ const countries10 = loadCountries('10m');
 log(`[${stamp()}] 육지 L: 폴리곤 ${L.length}개, 꼭짓점 ${L.flat(2).length}개, ${Math.round(areaKm2(L)).toLocaleString()}km²`);
 
 // ── 만들기 (두 번 해서 같은지 본다: (e)) ─────────────────────
-const first = build(JSON.parse(buf.toString('utf8')), REGIONS[REGION], true);
-const second = build(JSON.parse(buf.toString('utf8')), REGIONS[REGION], false);
+const first = build(JSON.parse(buf.toString('utf8')), REGION_DEF, true);
+const second = build(JSON.parse(buf.toString('utf8')), REGION_DEF, false);
 const deterministic = first.text === second.text;
 log(`[${stamp()}] (e) 결정적 출력: ${deterministic ? '두 번 만든 결과가 바이트 단위로 같음' : '두 번 만든 결과가 다름'}`);
 
@@ -141,8 +139,8 @@ if (existsSync(outFile)) reportChange(readFileSync(outFile, 'utf8'), first.text)
 const readmeText = readme(first, checks);
 mkdirSync(OUT_DIR, { recursive: true });
 writeFileSync(outFile, first.text);
-writeFileSync(path.join(OUT_DIR, 'README.md'), readmeText);
-log(`[${stamp()}] 씀: ${path.relative(ROOT, outFile)} ${Buffer.byteLength(first.text).toLocaleString()}B, sha256 ${sha256(first.text)} 와 README.md`);
+writeFileSync(path.join(OUT_DIR, README_FILE), readmeText);
+log(`[${stamp()}] 씀: ${path.relative(ROOT, outFile)} ${Buffer.byteLength(first.text).toLocaleString()}B, sha256 ${sha256(first.text)} 와 ${README_FILE}`);
 
 // ════════════════════════════════════════════════════════
 function sha256(text) { return createHash('sha256').update(text).digest('hex'); }
@@ -152,12 +150,17 @@ function build(src, region, verbose) {
   const report = { dropped: [], islands: 0, islandFrags: [], keptSmall: 0, graded: 0, untwisted: new Set(), untwist: { count: 0, km2: 0 }, twistLeft: [], attached: 0, attachedKm2: 0, nearest: [], neighborKm2: 0, micro: [], split: [], unassigned: [], tfix: 0 };
 
   // 1) 고르기
-  const adm0Set = new Set(region.adm0), rusSet = new Set(region.rusRegions);
+  // 통째로 넣는 나라(adm0)와 일부만 넣는 나라(include: NE 속성 값으로 거름)
+  const adm0Set = new Set(region.adm0);
+  const partOf = (p) => (region.include ?? []).some((r) => r.adm0 === p.adm0_a3 && r.values.includes(p[r.prop]));
+  // 버리는 나라(drop): 조각에도 이웃에도 넣지 않는다. 그 땅은 5) 해안 맞추기에서 옆 조각이 덮는다(이웃 행정구역과 국경이 맞지 않아 arc를 공유하지 못하는 아주 작은 단위)
+  const dropSet = new Set(region.drop ?? []);
   let chosen = [];
   let neighbors = [];
   for (const f of src.features) {
     const p = f.properties;
-    const isChosen = adm0Set.has(p.adm0_a3) || (p.adm0_a3 === 'RUS' && rusSet.has(p.region));
+    if (dropSet.has(p.adm0_a3)) continue;
+    const isChosen = adm0Set.has(p.adm0_a3) || partOf(p);
     const all = toMulti(f.geometry);
     const polys = all.filter((poly) => !boxesApart(bboxOf([poly]), region.box));
     if (isChosen && polys.length < all.length) report.dropped.push(`${p.adm0_a3} ${p.name}(${p.type_en ?? '-'}): 폴리곤 ${all.length - polys.length}/${all.length}개`);
@@ -611,7 +614,7 @@ function readme(r, checks) {
   const t = JSON.parse(r.text);
   const bytes = Buffer.byteLength(r.text);
   const rp = r.report;
-  const region = REGIONS[REGION];
+  const region = REGION_DEF;
   const frags = t.objects.fragments.geometries;
   const L = [];
   L.push('# 행정구역 조각 (Natural Earth admin-1 파생)', '');
@@ -622,7 +625,7 @@ function readme(r, checks) {
   L.push('- 검사: ' + code('npm run check:fragments') + '(나라별 대조·겹침·빈틈·해안), 근현대 국경 대조는 ' + code('npm run compare:cshapes') + '(CShapes 2.0이 ' + code('.cache/cshapes/') + '에 있을 때만, 좌표는 저장소에 쓰지 않음).', '');
   L.push('## 다시 만들기', '');
   L.push('1. 위 원본을 받아 ' + code('.cache/natural-earth/v5.1.2/ne_10m_admin_1_states_provinces.geojson') + '에 둔다(' + code('.cache/') + '는 git에서 뺀다). 스크립트가 크기와 git blob SHA-1을 확인한다.');
-  L.push('2. ' + code('npm run prep:fragments -- .cache/natural-earth/v5.1.2/ne_10m_admin_1_states_provinces.geojson'));
+  L.push('2. ' + code('npm run prep:fragments -- ' + (region.default ? '' : '--region ' + REGION + ' ') + '.cache/natural-earth/v5.1.2/ne_10m_admin_1_states_provinces.geojson'));
   L.push('3. 처음부터 두 번 만들어 바이트가 같고 자체 검사를 모두 통과해야 쓴다. 이미 있는 파일과 다르면 조각별 면적 변화를 보인다.', '');
   L.push('## 파일', '');
   L.push('| 파일 | 크기 | sha256 |', '|---|---|---|');
@@ -634,14 +637,16 @@ function readme(r, checks) {
   L.push('## 조각 id', '');
   const rules = { iso: 0, adm1: 0, adm0: 0, hole: 0 };
   for (const row of r.table.values()) for (const [k, n] of row.rules) rules[k] += n;
-  L.push('- ISO 3166-2 코드(' + code('XX-YYY') + ', 예: ' + code('FR-67') + ')가 알맞고 겹치지 않으면 그 값: ' + rules.iso + '개');
-  L.push('- 아니면 NE adm1_code(' + code('ABC-1234') + ', 예: 코소보 ' + code('KOS-5899') + '): ' + rules.adm1 + '개');
-  L.push('- 그것도 아니면 조각이 하나뿐인 나라의 adm0_a3(' + ['MCO', 'VAT', 'GIB', 'CYN'].map(code).join('·') + ' 등): ' + rules.adm0 + '개' + (rules.hole ? ', 내륙 구멍으로 만든 조각(' + code('HOLE-n') + ') ' + rules.hole + '개' : ''));
+  const ex = region.idExamples;
+  L.push('- ISO 3166-2 코드(' + code('XX-YYY') + ', 예: ' + code(ex.iso) + ')가 알맞고 겹치지 않으면 그 값: ' + rules.iso + '개');
+  L.push('- 아니면 NE adm1_code(' + code('ABC-1234') + ', 예: ' + ex.adm1 + '): ' + rules.adm1 + '개');
+  L.push('- 그것도 아니면 조각이 하나뿐인 나라의 adm0_a3' + (ex.adm0.length ? '(' + ex.adm0.map(code).join('·') + ' 등)' : '') + ': ' + rules.adm0 + '개' + (rules.hole ? ', 내륙 구멍으로 만든 조각(' + code('HOLE-n') + ') ' + rules.hole + '개' : ''));
   L.push('- id는 NE 판을 올리면 바뀔 수 있다. 판을 바꿀 때는 생성기의 조각 소유표를 함께 고친다.', '');
   L.push('## 권역과 매개변수', '');
   L.push('- 나라(adm0_a3): ' + region.adm0.join(', '));
-  L.push('- 러시아(RUS): NE region 속성이 ' + region.rusRegions.join('·') + '인 연방 주체(NE의 Volga에는 남부·북캅카스 관구도 들어 있음). Urals·Siberian·Far Eastern과 카자흐스탄은 넣지 않는다(권역 바깥선이 된다).');
-  L.push('- 범위 상자 [서, 남, 동, 북] = [' + region.box.join(', ') + ']. 상자 밖에 통째로 있는 폴리곤은 뺐다: ' + rp.dropped.join('; '));
+  if (region.drop?.length) L.push('- 버린 나라(조각에도 이웃에도 넣지 않고, 그 땅은 해안 맞추기에서 옆 조각이 덮음): ' + region.drop.join(', '));
+  for (const inc of region.include ?? []) L.push('- ' + inc.note.replaceAll('{values}', inc.values.join('·')));
+  L.push('- 범위 상자 [서, 남, 동, 북] = [' + region.box.join(', ') + ']. 상자 밖에 통째로 있는 폴리곤은 뺐다: ' + (rp.dropped.join('; ') || '없음'));
   L.push('- 육지: world-atlas 2.0.2의 land-50m ∪ land-110m(Natural Earth 4.1.0, 빌드가 해안선으로 자를 때 쓰는 것과 같음). 구멍 조각 이름: world-atlas countries-10m.', '');
   L.push('| 매개변수 | 값 | 뜻 |', '|---|---|---|');
   for (const [k, v] of Object.entries(PARAMS)) L.push('| ' + code(k) + ' | ' + v + ' | ' + (paramDoc()[k] ?? '') + ' |');
@@ -660,15 +665,16 @@ function readme(r, checks) {
   L.push('- 자체 검사:');
   for (const c of checks) L.push('  - ' + (c.fail ? '실패' : c.warn ? '경고' : '통과') + ': ' + c.msg);
   L.push('  - 통과: (e) 처음부터 두 번 만든 결과가 바이트 단위로 같음', '');
-  L.push('## 따로 볼 곳', '');
+  // 지역마다 다른 줄은 표(regions.mjs)의 notes에서 읽는다. {adm0:id}·{count:adm0}·{param:이름}·{micro}를 값으로 바꾼다
   const prop = (id) => frags.find((g) => g.id === id)?.properties;
   const count = (a) => r.table.get(a)?.count ?? 0;
-  L.push('- 크림(' + code('UA-43') + ')·세바스토폴(' + code('UA-40') + '): NE v5.1.2 기본 파일에서 adm0가 ' + prop('UA-43')?.adm0 + '·' + prop('UA-40')?.adm0 + '이다(실제 지배 기준). id가 ISO 코드라 id는 소속과 상관없고, 어느 나라 것인지는 생성기의 조각 소유표가 정한다.');
-  L.push('- 코소보: KOS ' + count('KOS') + '개 구(id는 NE adm1_code). 세르비아(SRB) ' + count('SRB') + '개 조각과 겹치지 않는다.');
-  L.push('- 키프로스: 북키프로스는 조각 하나(' + code('CYN') + '), 아크로티리(' + code('WSB-5133') + ')·데켈리아(' + code('ESB-5132') + ')는 영국 주권 기지 지역 조각이다. 유엔 완충지대는 따로 조각이 없고 키프로스(CYP)의 니코시아·파마구스타 구(' + code('CY-01') + '·' + code('CY-04') + ')에 들어 있다.');
-  L.push('- 소국: 안도라 ' + count('AND') + '·리히텐슈타인 ' + count('LIE') + '·산마리노 ' + count('SMR') + '개 행정구역, 모나코(' + code('MCO') + ')·바티칸(' + code('VAT') + ')·지브롤터(' + code('GIB') + ')는 한 조각씩 들어 있다(NE v5.1.2에는 이들의 admin-1이 있음). 원래 넓이가 ' + PARAMS.keepSmallKm2 + 'km² 미만인 조각은 간략화하지 않아 모양이 그대로다. 조각 사이의 내륙 구멍은 ' + (rp.micro.length ? rp.micro.map((m) => m.name + ' ' + m.pc.km2.toFixed(1) + 'km²').join(', ') : '없었다') + '.');
-  L.push('- 바티칸(' + code('VAT') + '): NE admin-1 원본에서 이미 점 7개, 약 0.012km²짜리 작은 다각형이다(실제 넓이 약 0.44km²의 나머지는 로마 ' + code('IT-RM') + '에 들어 있음). 바티칸 시국을 그릴 때는 이 조각을 그대로 쓰지 말고 따로 긋는다.');
-  L.push('- 러시아: 유럽 쪽 조각 ' + count('RUS') + '개. 칼리닌그라드(' + code('RU-KGD') + ')는 월경지로 한 조각이다.', '');
+  const micro = rp.micro.length ? rp.micro.map((m) => m.name + ' ' + m.pc.km2.toFixed(1) + 'km²').join(', ') : '없었다';
+  const fill = (t) => t.replace(/\{(adm0|count|param):([^}]+)\}|\{micro\}/g, (m0, kind, arg) => (m0 === '{micro}' ? micro : kind === 'adm0' ? String(prop(arg)?.adm0) : kind === 'count' ? String(count(arg)) : String(PARAMS[arg])));
+  if (region.notes?.length) {
+    L.push('## 따로 볼 곳', '');
+    for (const n of region.notes) L.push('- ' + fill(n));
+    L.push('');
+  }
   L.push('## 나라별 조각 표', '');
   L.push('| adm0 | 이름(NE admin) | 조각 수 | 단위(NE type_en) |', '|---|---|---|---|');
   const cell = (v) => String(v).replaceAll('|', '\\|');

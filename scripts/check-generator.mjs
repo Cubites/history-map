@@ -5,7 +5,7 @@
 // [2] 안전장치: 잘못된 권역 구성·옵션·인자 오타에서 생성기가 data/geo를 지우기 전에(엉뚱한 폴더에 쓰지 않고) 멈추는지, --prune과 권역 출처(source)가 약속대로 도는지,
 //     빈 땅 검사 구역(gapZones)이 AREAS 순서대로 모이고 새 권역의 구역도 저절로 들어가는지, 구역 모양이 틀리면 멈추는지.
 // [3] 행정구역 조각(2026-09-30): topojson-client와 조각 파일(data/base/fragments)은 lib.mjs에서만 쓰는지(층 규칙은 [1]),
-//     조각 파일이 prep:fragments가 쓴 그대로인지(README.md의 크기·sha256), 형식·id·arc 번호가 맞는지, lib의 loadFragments·F가 약속대로 도는지.
+//     조각 파일이 prep:fragments가 쓴 그대로인지(그 지역 README의 크기·sha256: README.<지역>.md가 있으면 그것, 없으면 README.md), 형식·id·arc 번호가 맞는지, lib의 loadFragments·F가 약속대로 도는지.
 // 프로젝트의 data/geo는 건드리지 않는다. data/geo를 임시 폴더에 복사해 그곳에서 시험하고, 끝나면 임시 폴더를 지운다.
 // 생성기(scripts/generate-geo.mjs, scripts/geo/)를 고친 뒤와 권역을 더한 뒤에 돌린다. data/geo가 생성기 결과와 맞아야 한다(먼저 npm run gen:geo).
 import { spawnSync } from 'node:child_process';
@@ -407,6 +407,17 @@ try {
     && srcOf('check-a1') === '시험 출처' && typeof srcOf('check-b1') === 'string' && srcOf('check-b1') !== '시험 출처' && srcOf('check-b1').length > 0;
   if (sourceOk) ok(`권역 출처: source를 준 권역의 나라·채우기 나라는 그 문구, 안 준 권역은 기본 문구(${short(srcOf('check-b1')).slice(0, 30)}…)`);
   else bad(`권역 출처가 약속과 다름: ${JSON.stringify(s.sources)} / 쓴 값 ${srcOf('check-a1')} | ${srcOf('check-b1')}`);
+  // 시대 파일 잇기(2026-10-21 RULES-TOOLS 작업 11): shared.mjs의 joinEras가 시대 파일(era)을 권역 versions에 붙이고, 시대 source는 sourceOf로 그 시대 나라에만 붙는다
+  {
+    const { joinEras } = await import(pathToFileURL(path.join(GEO_SRC, 'shared.mjs')).href);
+    const j = joinEras('check-c', { versions: { 'check-c1': [[1900, null, sq(0)]] } }, [{ name: 'check-era', versions: { 'check-c2': [[1900, null, sq(2)]] }, source: '시험 시대 출처', gapZones: [], voids: [] }]);
+    const s2 = engine.mergeAreas([['check-c', { ...j, source: '시험 권역 출처' }]]);
+    if (Object.keys(j.versions).join() === 'check-c1,check-c2' && s2.sources['check-c1'] === '시험 권역 출처' && s2.sources['check-c2'] === '시험 시대 출처') ok('시대 파일 잇기: joinEras가 시대 나라를 권역 나라 뒤에 붙이고, 시대 source는 그 시대 나라에만(sourceOf) 붙음');
+    else bad(`시대 파일 잇기가 약속과 다름: ${JSON.stringify(Object.keys(j.versions))} / ${JSON.stringify(s2.sources)}`);
+    expectStop('시대 파일과 권역 파일에 같은 나라 id', '두 곳에 있음', () => joinEras('check-c', { versions: { 'check-c1': [] } }, [{ name: 'check-era', versions: { 'check-c1': [] } }]));
+    expectStop('시대 파일 칸 오타(versoins)', '모르는 칸 versoins', () => joinEras('check-c', { versions: {} }, [{ name: 'check-era', versoins: {} }]));
+    expectStop('sourceOf에 그 권역에 없는 나라', '없는 나라', () => engine.mergeAreas([['check-c', { versions: {}, sourceOf: { 'check-x': '문구' } }]]));
+  }
 
   // 진입 파일: 모르는 옵션, 인자 오타, 지우기 전 대조, --prune
   {
@@ -455,20 +466,24 @@ console.log('[3] 행정구역 조각 파일 (data/base/fragments)');
   const FRAG_DIR = path.join(PROJECT, 'data/base/fragments');
   const entries = existsSync(FRAG_DIR) ? readdirSync(FRAG_DIR) : [];
   const topoFiles = entries.filter((f) => f.endsWith('.topo.json')).sort();
-  const stray = entries.filter((f) => !f.endsWith('.topo.json') && f !== 'README.md');
+  // 지역 README: 기본 지역(유럽)은 README.md, 다른 지역은 README.<지역>.md(prep:fragments의 지역 표 readme, 2026-10-21 RULES-TOOLS 작업 11). 짝 조각 파일이 없는 README.<이름>.md는 다른 것으로 본다
+  const regionReadmes = entries.filter((f) => /^README\.[a-z][a-z0-9-]*\.md$/.test(f) && topoFiles.includes(f.slice('README.'.length, -'.md'.length) + '.topo.json'));
+  const stray = entries.filter((f) => !f.endsWith('.topo.json') && f !== 'README.md' && !regionReadmes.includes(f));
   if (!existsSync(FRAG_DIR)) ok('data/base/fragments 없음 (조각을 쓰는 권역이 없으면 괜찮다)');
-  else if (stray.length || !topoFiles.length || !entries.includes('README.md')) bad(`data/base/fragments에는 <권역>.topo.json과 README.md만 둔다: 다른 것 [${stray}], 조각 파일 ${topoFiles.length}개, README.md ${entries.includes('README.md') ? '있음' : '없음'}`);
-  else ok(`data/base/fragments: 조각 파일 ${topoFiles.length}개(${topoFiles.join(', ')})와 README.md`);
-  const readmeText = entries.includes('README.md') ? readFileSync(path.join(FRAG_DIR, 'README.md'), 'utf8') : '';
+  else if (stray.length || !topoFiles.length || !entries.includes('README.md')) bad(`data/base/fragments에는 <권역>.topo.json과 README.md(다른 지역은 README.<지역>.md)만 둔다: 다른 것 [${stray}], 조각 파일 ${topoFiles.length}개, README.md ${entries.includes('README.md') ? '있음' : '없음'}`);
+  else ok(`data/base/fragments: 조각 파일 ${topoFiles.length}개(${topoFiles.join(', ')})와 README.md${regionReadmes.length ? `·${regionReadmes.join('·')}` : ''}`);
+  const readmeOf = (name) => (regionReadmes.includes(`README.${name}.md`) ? `README.${name}.md` : 'README.md');
   const { loadFragments } = topoFiles.length ? await import(pathToFileURL(path.join(GEO_SRC, 'lib.mjs')).href) : {};
   for (const file of topoFiles) {
     const name = file.slice(0, -'.topo.json'.length);
     const buf = readFileSync(path.join(FRAG_DIR, file));
-    // prep:fragments가 쓴 그대로인지: README.md의 '| `파일` | 크기B | `sha256` |' 줄과 같아야 한다
+    // prep:fragments가 쓴 그대로인지: 그 지역 README의 '| `파일` | 크기B | `sha256` |' 줄과 같아야 한다
+    const readmeFile = readmeOf(name);
+    const readmeText = entries.includes(readmeFile) ? readFileSync(path.join(FRAG_DIR, readmeFile), 'utf8') : '';
     const row = readmeText.split('\n').map((l) => l.match(/^\| `([^`]+)` \| ([\d,]+)B \| `([0-9a-f]{64})` \|$/)).find((m) => m && m[1] === file);
-    if (!row) bad(`${file}: README.md에 크기·sha256 줄이 없음 (npm run prep:fragments로 다시 만든다)`);
-    else if (row[3] !== sha(buf) || Number(row[2].replaceAll(',', '')) !== buf.length) bad(`${file}: README.md의 크기·sha256과 다름 (손으로 고쳤거나 README를 함께 쓰지 않음. npm run prep:fragments로 다시 만든다)`);
-    else ok(`${file}: README.md의 크기·sha256과 같음 (${buf.length.toLocaleString('en-US')}B, ${row[3].slice(0, 12)}…)`);
+    if (!row) bad(`${file}: ${readmeFile}에 크기·sha256 줄이 없음 (npm run prep:fragments로 다시 만든다)`);
+    else if (row[3] !== sha(buf) || Number(row[2].replaceAll(',', '')) !== buf.length) bad(`${file}: ${readmeFile}의 크기·sha256과 다름 (손으로 고쳤거나 README를 함께 쓰지 않음. npm run prep:fragments로 다시 만든다)`);
+    else ok(`${file}: ${readmeFile}의 크기·sha256과 같음 (${buf.length.toLocaleString('en-US')}B, ${row[3].slice(0, 12)}…)`);
     // 형식·id·arc 번호
     const problems = [];
     let topo = null;

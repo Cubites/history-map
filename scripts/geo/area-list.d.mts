@@ -16,12 +16,16 @@ export interface GapZone {
   readonly to?: number | null;
 }
 
-/** 권역 파일이 내보내는 것: versions는 꼭, fillSpecs·source·gapZones는 선택. 위층 권역이 쓰는 도형도 export한다 */
+/** 권역 파일이 내보내는 것: versions는 꼭, fillSpecs·source·gapZones·voids·sourceOf는 선택. 위층 권역이 쓰는 도형도 export한다 */
 export interface AreaModule {
   readonly versions: Readonly<Record<string, readonly unknown[]>>;
   readonly fillSpecs?: readonly unknown[];
   readonly source?: string;
   readonly gapZones?: readonly GapZone[];
+  /** 일부러 비운 땅 [from, to(끝 없음은 null), 멀티폴리곤] */
+  readonly voids?: readonly unknown[];
+  /** 나라 id → 출처 문구 (시대 파일의 source를 joinEras가 모은 것. 권역 source보다 먼저 씀) */
+  readonly sourceOf?: Readonly<Record<string, string>>;
   readonly [name: string]: unknown;
 }
 

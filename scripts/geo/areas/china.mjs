@@ -1,6 +1,8 @@
 // 중국 권역 (DESIGN.md §5.2, 층 4): 중국 본토 왕조와 만주국·중일 전쟁 점령지 등의 도형과 versions.
 // 짝 entities 파일: data/entities/china-early.yaml과 china.yaml 두 파일. korea.yaml의 gando-disputed(간도)도 청 도형(QING_BASE)에서 잘라 여기서 만든다.
 // 가져와도 되는 것: lib.mjs, shared.mjs, areas/korea.mjs, areas/inner-asia.mjs. 위층 권역(west)이 쓰는 QING_BASE를 export한다.
+// 2026-10-21(RULES-TOOLS 작업 11): 시대표 하나에 파일 하나인 시대 파일(areas/china/<시대>.mjs, 짝 항목 파일 data/entities/china-<시대>.yaml)을 가져와
+// 이 파일의 나라(ownVersions) 다음에 붙인다(맨 끝의 joinEras 줄, shared.mjs). 시대 파일 틀은 npm run new:area -- china <시대>가 만들고 이 줄에 잇는다.
 // 중일 전쟁 점령지(R38·OCC_*·ROC_1937~1945 등)는 1937년 모양이 1938년 도형과의 교집합이라 이 파일 안에 원래 순서대로 함께 둔다.
 // 구획 제목의 '○번 묶음'은 원래 generate-geo.mjs의 조사 묶음(시대)이다. 파일 사이에서 맞물리는 점은 이름으로 가져다 쓴다('값만 같은 점'은 shared.mjs 머리 주석 참고).
 // 2026-10-12(작업 I1): shared.mjs의 외만주 서쪽 변(고르비차강을 따라 발원지까지, 그 뒤 흑룡강·레나강 분수령)과 흑룡강 하류(L_AMUR_LOW)를 강줄기대로 다시 그어 청 1689~1859 도형이 바뀜(이 파일의 코드는 그대로)
@@ -16,6 +18,8 @@ import { D, I, P, U, box, bx, rev, ring } from '../lib.mjs';
 import { AMUR_BAND, CHINA, HUABEI, HUABEI_938, ISLANDS_W, KWANTUNG, L33, LIAODONG, LIAOXI, LX916, LX923, L_NORTH, NORTH_OF_YANYUN, OM_LEFT, OM_RIGHT, OUTER_MANCHURIA, PRIMORYE, TAIWAN, UDA, XIXIA, YANYUN } from '../shared.mjs';
 import { BAEKJE, GOGURYEO, HYEONDO_2, L_YALU_TUMEN, YT_I, noNokdun } from './korea.mjs';
 import { ALXA, DALI, EASTERN_TURKS, ET_NE, HUGEUM_1621, JIANCHANG, JIAOZHI, KHITAN_W, L_YN_E, MANCHURIA_NORTH, NE_FAR, OUT_SW, OUTER_MONGOLIA, QH_N, TIBET, XILIN_N, cnBorders, mcMahon, swEarly } from './inner-asia.mjs';
+import { joinEras } from '../shared.mjs';
+import { era as preQinEra } from './china/pre-qin.mjs';
 
 // ── 4번 묶음 (936 ~ 1392) ─────────────────────────────────
 // 북쪽 변은 북위 33°선(shared.mjs의 L33): 금 쪽 상자(NORTH_BOX)와 이 선에서 맞닿는다
@@ -321,7 +325,7 @@ const GANDO = I(QING_1860_BAND, [ring(L_YALU_TUMEN.slice(YT_I.junction, YT_I.tri
 
 // 나라 id: [[from, to, 멀티폴리곤, 확실성?], ...]. to가 null이면 지금까지, 확실성은 'disputed' 등(없으면 'estimated').
 // 출처(geojson의 source)는 나라별로 적지 않고 권역 파일의 source로 정한다(없으면 engine.mjs의 기본 문구)
-export const versions = {
+const ownVersions = {
   'yan-state': [[-399, -281, YAN_EARLY], [-281, -221, YAN_281]],
   qin: [[-220, -204, HAN_EMPIRE]], // 기원전 206년 멸망 (검수 2026-09-28)
   // 1860년까지는 조선 땅 녹둔도를 뺀다. 1689년(네르친스크 조약)부터 1857년까지 외만주(고르비차까지, 우다강 유역 빼고)와 흑룡강 띠, 1858~1859년은 흑룡강 왼쪽 기슭을 뺀다(작업 C1).
@@ -377,3 +381,6 @@ export const versions = {
   // 1407년 호 왕조를 무너뜨리고 둔 교지(베트남 북부·북중부)는 1427년 12월 동관 맹약으로 물러나기까지 넣는다(JIAOZHI)
   ming: [[1368, 1382, D([CHINA], [OUT_SW], [DALI], [JIANCHANG])], [1382, 1387, swEarly([CHINA])], [1387, 1407, swEarly(MING_1387)], [1407, 1427, U(swEarly(MING_1387), [JIAOZHI])], [1427, 1621, swEarly(MING_1387)], [1621, 1644, swEarly(MING_1621)]],
 };
+
+// 시대 파일 잇기 (npm run new:area): 이 파일의 나라 다음에 시대 파일(areas/china/<시대>.mjs)의 나라·빈 땅 검사 구역·비운 땅을 붙인다(shared.mjs joinEras)
+export const { versions, gapZones, voids, sourceOf } = joinEras('china', { versions: ownVersions }, [preQinEra]);

@@ -220,3 +220,43 @@ export const KWANTUNG = bx(120.9, 38.6, 122.3, 39.5); // 랴오둥반도 끝 (�
 export const LIAOXI = I([CHINA], box(118.5, 39.3, 122.7, 42.5));
 // 중국 북쪽 경계와 연운 16주 사이에 남는 땅: 요의 땅
 export const YANYUN_REST = I(D([CHINA], XIXIA, [YANYUN], LIAOXI), [NORTH_OF_YANYUN]);
+
+// ── 시대 파일 잇기 (2026-10-21, RULES-TOOLS 작업 11) ─────────────────
+// 권역 파일(areas/<권역>.mjs)이 시대 파일(areas/<권역>/<시대>.mjs, 시대표 하나에 파일 하나)을 가져와 자기 versions·gapZones·voids에 합친다. 나라는 만들지 않는 도우미다.
+// 시대 파일은 export const era = { name, versions, gapZones?, voids?, source? } 하나로 생성기에 들어간다(칼선 같은 다른 이름의 export는 괜찮다)
+// (areas/<권역>/ 아래 도우미 모듈은 versions 같은 이름을 직접 내보내지 않는다: check:generator). 시대 파일 틀은 npm run new:area -- <권역> <시대>가 만든다.
+// 권역 파일: export const { versions, gapZones, voids, sourceOf } = joinEras('<권역>', { versions: 자기 나라, gapZones?, voids? }, [시대 파일의 era, …]);
+// - versions: 권역 파일 것 다음에 시대 파일 것을 목록 순서대로 붙인다. 같은 나라 id를 두 곳이 내면 멈춘다(엔진은 권역 사이만 보므로 여기서 본다)
+// - gapZones·voids: 같은 순서로 이어 붙인다(모양 검사는 엔진의 mergeAreas·collectGapZones가 한다)
+// - sourceOf: 시대 파일의 source(그 시대 나라의 출처 문구)를 그 시대 나라 id마다 적은 표. 엔진이 권역의 source보다 먼저 쓴다(source가 없는 시대의 나라는 권역 source나 기본 문구)
+// - 시대 파일의 모르는 칸(versoins 같은 오타), 알맞지 않은 이름, 같은 시대 파일을 두 번 넣음은 멈춘다
+// 시대 파일은 권역 파일(areas/<권역>.mjs)을 가져올 수 없다(순환). 권역 파일 안 도형이 필요하면 그 도형을 areas/<권역>/의 도우미 모듈로 옮겨 둘이 함께 가져온다
+const ERA_KEYS = new Set(['name', 'versions', 'gapZones', 'voids', 'source']);
+export function joinEras(area, own, eras) {
+  const versions = { ...own.versions };
+  const where = Object.fromEntries(Object.keys(versions).map((id) => [id, `${area} 권역 파일`]));
+  const gapZones = [...(own.gapZones ?? [])];
+  const voids = [...(own.voids ?? [])];
+  const sourceOf = {};
+  const names = new Set();
+  for (const era of eras) {
+    const label = `${area} 시대 파일 ${JSON.stringify(era?.name)}`;
+    if (!era || typeof era.name !== 'string' || !/^[a-z][a-z0-9-]*$/.test(era.name)) throw new Error(`${label}: era.name은 시대 파일 이름(영문 소문자·숫자·줄표)이어야 함`);
+    if (names.has(era.name)) throw new Error(`${label}: 같은 시대 파일을 두 번 넣음`);
+    names.add(era.name);
+    const unknown = Object.keys(era).filter((k) => !ERA_KEYS.has(k));
+    if (unknown.length) throw new Error(`${label}: 모르는 칸 ${unknown.join(', ')} (name·versions·gapZones·voids·source만 쓴다)`);
+    if (!era.versions || typeof era.versions !== 'object' || Array.isArray(era.versions)) throw new Error(`${label}: versions는 나라 id → 버전 목록 객체여야 함`);
+    for (const k of ['gapZones', 'voids']) if (era[k] !== undefined && !Array.isArray(era[k])) throw new Error(`${label}: ${k}는 배열이어야 함`);
+    if (era.source !== undefined && (typeof era.source !== 'string' || !era.source.trim())) throw new Error(`${label}: source는 비어 있지 않은 문자열이어야 함`);
+    for (const [id, list] of Object.entries(era.versions)) {
+      if (Object.hasOwn(versions, id)) throw new Error(`나라 id '${id}'가 ${where[id]}, ${label} 두 곳에 있음`);
+      versions[id] = list;
+      where[id] = label;
+      if (era.source !== undefined) sourceOf[id] = era.source;
+    }
+    gapZones.push(...(era.gapZones ?? []));
+    voids.push(...(era.voids ?? []));
+  }
+  return { versions, gapZones, voids, sourceOf };
+}

@@ -6,12 +6,15 @@
 // [3] 해안 맞춤: 빌드가 해안선으로 자를 때 쓰는 육지(low는 land-110m, mid·high는 land-50m)마다, 조각에 닿는데 덮이지 않은 육지.
 //     1km² 미만(해안 부스러기)의 합이 0.01km²를 넘으면 실패. 1km² 이상은 권역 밖 이웃 땅(카자흐스탄·시리아 등)이라 목록만 보인다
 // 조각 파일을 만드는 것은 npm run prep:fragments다(자체 검사를 같은 기준으로 한 번 더 한다). 이 검사는 원본(.cache) 없이 돈다.
+// 지역마다 다른 값(나라별 대조에 쓰는 countries-50m 이름표 countries50m, 소속을 따로 견줄 조각 checkIds)은 scripts/fragments/regions.mjs의 지역 표에서 읽는다(RULES-TOOLS 작업 11).
+// 표에 없는 지역 파일은 나라별 대조를 건너뛰고 [2]·[3]만 본다.
 import { readdirSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import {
   SegIndex, areaKm2, bboxOf, boxesApart, inPolygon, interiorPoint, loadCountries, loadLand, pairOverlaps, planarArea, localKm2, pointSeg, polyclip,
 } from './fragments/common.mjs';
+import { FRAGMENT_REGIONS } from './fragments/regions.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DIR = path.join(ROOT, 'data/base/fragments');
@@ -25,16 +28,6 @@ if (args.some((a) => a.startsWith('-')) || args.length > 1) {
 const names = args.length ? args : readdirSync(DIR).filter((f) => f.endsWith('.topo.json')).map((f) => f.slice(0, -'.topo.json'.length)).sort();
 if (!names.length) { console.error('data/base/fragments에 조각 파일이 없음 (npm run prep:fragments)'); process.exit(2); }
 
-// Natural Earth adm0_a3 → world-atlas countries-50m 이름. 50m에 따로 없는 곳(지브롤터, 아크로티리·데켈리아)은 비교하지 않는다
-const ADM0_50M = {
-  ALB: 'Albania', AND: 'Andorra', AUT: 'Austria', BEL: 'Belgium', BGR: 'Bulgaria', BIH: 'Bosnia and Herz.', BLR: 'Belarus', CHE: 'Switzerland', CYP: 'Cyprus',
-  CYN: 'N. Cyprus', CZE: 'Czechia', DEU: 'Germany', DNK: 'Denmark', ESP: 'Spain', EST: 'Estonia', FIN: 'Finland', FRA: 'France', GBR: 'United Kingdom',
-  GRC: 'Greece', HRV: 'Croatia', HUN: 'Hungary', IRL: 'Ireland', ISL: 'Iceland', ITA: 'Italy', KOS: 'Kosovo', LIE: 'Liechtenstein', LTU: 'Lithuania',
-  LUX: 'Luxembourg', LVA: 'Latvia', MCO: 'Monaco', MDA: 'Moldova', MKD: 'Macedonia', MLT: 'Malta', MNE: 'Montenegro', NLD: 'Netherlands', NOR: 'Norway',
-  POL: 'Poland', PRT: 'Portugal', ROU: 'Romania', SMR: 'San Marino', SRB: 'Serbia', SVK: 'Slovakia', SVN: 'Slovenia', SWE: 'Sweden', UKR: 'Ukraine',
-  VAT: 'Vatican', TUR: 'Turkey', GEO: 'Georgia', ARM: 'Armenia', AZE: 'Azerbaijan', RUS: 'Russia', ALD: 'Åland', FRO: 'Faeroe Is.', IMN: 'Isle of Man',
-  JEY: 'Jersey', GGY: 'Guernsey',
-};
 const km = (v) => (v >= 100 ? Math.round(v).toLocaleString('en-US') : v.toFixed(v >= 1 ? 1 : 3));
 const pct = (a, b) => (b > 0 ? `${((a / b) * 100).toFixed(1)}%` : '-');
 
@@ -46,6 +39,8 @@ let failed = 0;
 for (const name of names) {
   const t0 = performance.now();
   const set = loadFragments(name);
+  // Natural Earth adm0_a3 → world-atlas countries-50m 이름(지역 표의 countries50m). 표에 없는 나라는 비교하지 않는다
+  const ADM0_50M = FRAGMENT_REGIONS[name]?.countries50m ?? {};
   const frags = set.ids.map((id) => ({ id, props: set.props.get(id), multi: set.F(id) }));
   const box = bboxOf(set.domain);
   const near = (multi) => multi.filter((poly) => !boxesApart(bboxOf([poly]), box));
@@ -70,8 +65,8 @@ for (const name of names) {
   }
   const big = rows.filter((r) => r.diff !== null).sort((a, b) => b.diff / b.theirs - a.diff / a.theirs).slice(0, 5);
   console.log(`  비율이 큰 나라: ${big.map((r) => `${r.adm0} ${pct(r.diff, r.theirs)}`).join(', ')}`);
-  // 크림·세바스토폴: NE v5.1.2 admin-1은 RUS로, countries-50m(NE 4.1.0)은 어느 나라로 두는지
-  for (const id of ['UA-43', 'UA-40']) {
+  // 지역 표의 checkIds(유럽은 크림·세바스토폴): NE v5.1.2 admin-1의 소속과 countries-50m(NE 4.1.0)의 소속을 견준다
+  for (const id of FRAGMENT_REGIONS[name]?.checkIds ?? []) {
     if (!set.props.has(id)) continue;
     const at = interiorPoint(set.F(id)[0]);
     const c = countries50.find((x) => x.multi.some((poly) => inPolygon(at, poly)));
