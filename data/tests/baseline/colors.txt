@@ -43,6 +43,7 @@ colors cao-wei|goguryeo
 colors cao-wei|wu
 colors carolingian-empire|san-marino
 colors champagne|holy-roman-empire
+colors chu-state|qin-state
 colors cisalpine-republic|etruria
 colors cisalpine-republic|france
 colors cisalpine-republic|san-marino
@@ -221,6 +222,8 @@ colors papal-states|spain
 colors poland-kingdom|polish-duchies
 colors prussia|sweden-kingdom
 colors prussia|sweden-norway
+colors qin-state|xiongnu
+colors qin-state|yan-state
 colors qin|wuhuan
 colors qin|xiongnu
 colors qin|yemaek

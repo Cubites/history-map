@@ -226,7 +226,9 @@ export const YANYUN_REST = I(D([CHINA], XIXIA, [YANYUN], LIAOXI), [NORTH_OF_YANY
 // 시대 파일은 export const era = { name, versions, gapZones?, voids?, source? } 하나로 생성기에 들어간다(칼선 같은 다른 이름의 export는 괜찮다)
 // (areas/<권역>/ 아래 도우미 모듈은 versions 같은 이름을 직접 내보내지 않는다: check:generator). 시대 파일 틀은 npm run new:area -- <권역> <시대>가 만든다.
 // 권역 파일: export const { versions, gapZones, voids, sourceOf } = joinEras('<권역>', { versions: 자기 나라, gapZones?, voids? }, [시대 파일의 era, …]);
-// - versions: 권역 파일 것 다음에 시대 파일 것을 목록 순서대로 붙인다. 같은 나라 id를 두 곳이 내면 멈춘다(엔진은 권역 사이만 보므로 여기서 본다)
+// - versions: 권역 파일 것 다음에 시대 파일 것을 목록 순서대로 붙인다. 같은 나라 id를 두 곳이 내면(앞 시대에서 이어지는 나라) 뒤 것의 모든 버전이 앞 것의 모든 버전보다
+//   늦을 때(뒤 것의 가장 이른 from ≥ 앞 것의 가장 늦은 to, 끝 없음(null)은 무한) 앞 버전 뒤에 이어 붙이고, 기간이 겹치면 멈춘다(엔진은 권역 사이만 보므로 여기서 본다).
+//   이어 붙인 나라의 출처 문구는 하나라서(geojson source), 앞 것과 뒤 것의 시대 source가 다르면(한쪽만 있어도) 멈춘다
 // - gapZones·voids: 같은 순서로 이어 붙인다(모양 검사는 엔진의 mergeAreas·collectGapZones가 한다)
 // - sourceOf: 시대 파일의 source(그 시대 나라의 출처 문구)를 그 시대 나라 id마다 적은 표. 엔진이 권역의 source보다 먼저 쓴다(source가 없는 시대의 나라는 권역 source나 기본 문구)
 // - 시대 파일의 모르는 칸(versoins 같은 오타), 알맞지 않은 이름, 같은 시대 파일을 두 번 넣음은 멈춘다
@@ -250,7 +252,17 @@ export function joinEras(area, own, eras) {
     for (const k of ['gapZones', 'voids']) if (era[k] !== undefined && !Array.isArray(era[k])) throw new Error(`${label}: ${k}는 배열이어야 함`);
     if (era.source !== undefined && (typeof era.source !== 'string' || !era.source.trim())) throw new Error(`${label}: source는 비어 있지 않은 문자열이어야 함`);
     for (const [id, list] of Object.entries(era.versions)) {
-      if (Object.hasOwn(versions, id)) throw new Error(`나라 id '${id}'가 ${where[id]}, ${label} 두 곳에 있음`);
+      if (Object.hasOwn(versions, id)) {
+        const prev = versions[id];
+        const lastTo = Math.max(...prev.map((v) => v[1] ?? Infinity));
+        const firstFrom = Math.min(...list.map((v) => v[0]));
+        if (!prev.length || !list.length) throw new Error(`나라 id '${id}'가 ${where[id]}, ${label} 두 곳에 있음: 한쪽 버전 목록이 비어 기간을 견줄 수 없음`);
+        if (firstFrom < lastTo) throw new Error(`나라 id '${id}'가 ${where[id]}, ${label} 두 곳에 있음: 기간이 겹침(뒤 것의 첫 from ${firstFrom} < 앞 것의 끝 to ${lastTo}) — 이어지는 나라면 뒤 시대 버전을 앞 시대 끝 해부터 낸다`);
+        if (sourceOf[id] !== era.source) throw new Error(`나라 id '${id}'가 ${where[id]}, ${label} 두 곳에 있음: 출처 문구(source)가 다름 — 이어 붙인 나라는 출처 문구가 하나여야 함`);
+        versions[id] = [...prev, ...list];
+        where[id] = `${where[id]}·${label}`;
+        continue;
+      }
       versions[id] = list;
       where[id] = label;
       if (era.source !== undefined) sourceOf[id] = era.source;

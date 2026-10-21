@@ -1661,3 +1661,125 @@
   url: "https://en.wikipedia.org/wiki/Zheng_(state)"
   from: "중국 M1"
   note: "정은 5만 km² 미만 소국이라 비움"
+
+# ── 중국 M2(2026-10-21): 전국 시대 수도·연 남쪽 이웃·비운 땅 (그 나라 영토 기간 가운데 해, 좌표는 옛 성 자리) ──
+- name: "신정(한)"
+  at: [113.74, 34.40]
+  year: -300
+  expect: han-state
+  url: "https://zh.wikipedia.org/wiki/韓國_(戰國)"
+  from: "중국 M2"
+  note: "한(韓)이 기원전 375년 정을 멸하고 옮긴 도읍"
+
+- name: "한단"
+  at: [114.47, 36.60]
+  year: -300
+  expect: zhao-state
+  url: "https://en.wikipedia.org/wiki/Zhao_(state)"
+  from: "중국 M2"
+  note: "조가 기원전 386년 옮긴 도읍"
+
+- name: "대량(카이펑)"
+  at: [114.35, 34.80]
+  year: -300
+  expect: wei-state
+  url: "https://en.wikipedia.org/wiki/Wei_(state)"
+  from: "중국 M2"
+  note: "위(魏)가 기원전 361년 옮긴 도읍"
+
+- name: "회계(사오싱)"
+  at: [120.58, 30.00]
+  year: -400
+  expect: yue-state
+  url: "https://en.wikipedia.org/wiki/Yue_(state)"
+  from: "중국 M2"
+  note: "월의 본래 도읍"
+
+- name: "영수(핑산)"
+  at: [114.10, 38.30]
+  year: -340
+  expect: zhongshan-state
+  url: "https://zh.wikipedia.org/wiki/中山國"
+  from: "중국 M2"
+  note: "중산이 다시 일어난 뒤의 도읍, 지금 핑산현 싼지향"
+
+- name: "상추(송)"
+  at: [115.65, 34.42]
+  year: -400
+  expect: song-state
+  url: "https://en.wikipedia.org/wiki/Song_(state)"
+  from: "중국 M2"
+  note: "송 도읍 상구"
+
+- name: "함양"
+  at: [108.70, 34.33]
+  year: -300
+  expect: qin-state
+  url: "https://en.wikipedia.org/wiki/Qin_(state)"
+  from: "중국 M2"
+  note: "진(秦)이 기원전 350년 옮긴 도읍"
+
+- name: "수춘(서우현)"
+  at: [116.78, 32.57]
+  year: -235
+  expect: chu-state
+  url: "https://en.wikipedia.org/wiki/Qin%27s_wars_of_unification"
+  from: "중국 M2"
+  note: "초의 마지막 도읍(기원전 241년부터)"
+
+- name: "임치(전국)"
+  at: [118.35, 36.86]
+  year: -300
+  expect: qi-state
+  url: "https://en.wikipedia.org/wiki/Qi_(state)"
+  from: "중국 M2"
+  note: "제 도읍. 연 상자 안이던 곳(남쪽 띠를 뺀 뒤 제)"
+
+- name: "계(전국)"
+  at: [116.35, 39.89]
+  year: -300
+  expect: yan-state
+  url: "https://zh.wikipedia.org/wiki/燕国"
+  from: "중국 M2"
+  note: "연 도읍 계, 남쪽 띠를 뺀 뒤에도 연"
+
+- name: "스자좡(중산)"
+  at: [114.51, 38.04]
+  year: -300
+  expect: zhongshan-state
+  url: "https://zh.wikipedia.org/wiki/中山國"
+  from: "중국 M2"
+  note: "연 남쪽 띠를 뺀 곳의 이웃 나라(전에는 연으로 칠해짐)"
+
+- name: "청두(촉, 정복 전)"
+  at: [104.07, 30.67]
+  year: -330
+  expect: none
+  region: east-asia
+  url: "https://en.wikipedia.org/wiki/Ba_(state)"
+  from: "중국 M2"
+  note: "파·촉은 진(秦)이 정복한 기원전 316년 전까지 비움"
+
+- name: "계(진(秦) 차지 뒤)"
+  at: [116.35, 39.89]
+  year: -224
+  expect: qin-state
+  url: "https://zh.wikipedia.org/wiki/秦滅燕之戰"
+  from: "중국 M2"
+  note: "기원전 226년 진(秦)이 계를 함락해 연은 요동으로 옮김"
+
+- name: "영수(위 통치기)"
+  at: [114.10, 38.30]
+  year: -390
+  expect: wei-state
+  url: "https://zh.wikipedia.org/wiki/中山國"
+  from: "중국 M2"
+  note: "위(魏)가 중산을 멸하고 태자를 봉해 다스린 기원전 406~381년"
+
+- name: "창사(초)"
+  at: [112.94, 28.23]
+  year: -300
+  expect: chu-state
+  url: "https://zh.wikipedia.org/wiki/長沙市"
+  from: "중국 M2"
+  note: "초가 오기의 남평백월(기원전 381년 전) 무렵 차지한 둥팅호·창사 둘레"

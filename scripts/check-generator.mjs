@@ -414,7 +414,13 @@ try {
     const s2 = engine.mergeAreas([['check-c', { ...j, source: '시험 권역 출처' }]]);
     if (Object.keys(j.versions).join() === 'check-c1,check-c2' && s2.sources['check-c1'] === '시험 권역 출처' && s2.sources['check-c2'] === '시험 시대 출처') ok('시대 파일 잇기: joinEras가 시대 나라를 권역 나라 뒤에 붙이고, 시대 source는 그 시대 나라에만(sourceOf) 붙음');
     else bad(`시대 파일 잇기가 약속과 다름: ${JSON.stringify(Object.keys(j.versions))} / ${JSON.stringify(s2.sources)}`);
-    expectStop('시대 파일과 권역 파일에 같은 나라 id', '두 곳에 있음', () => joinEras('check-c', { versions: { 'check-c1': [] } }, [{ name: 'check-era', versions: { 'check-c1': [] } }]));
+    // 같은 나라 id(앞 시대에서 이어지는 나라, 2026-10-21 중국 M2): 기간이 겹치지 않으면 앞 버전 뒤에 이어 붙이고, 겹치거나 출처 문구가 다르면 멈춘다
+    const jj = joinEras('check-c', { versions: { 'check-c1': [[1800, 1900, sq(0)]] } }, [{ name: 'check-era', versions: { 'check-c1': [[1900, null, sq(2)]] } }]);
+    if (jj.versions['check-c1'].map((v) => v[0]).join() === '1800,1900') ok('시대 파일 잇기: 같은 나라 id라도 기간이 겹치지 않으면 앞 버전 뒤에 이어 붙임');
+    else bad(`시대 파일 잇기(같은 id 이어 붙이기)가 약속과 다름: ${JSON.stringify(jj.versions['check-c1'].map((v) => v.slice(0, 2)))}`);
+    expectStop('시대 파일과 권역 파일에 같은 나라 id(기간 겹침)', '기간이 겹침', () => joinEras('check-c', { versions: { 'check-c1': [[1800, 1950, sq(0)]] } }, [{ name: 'check-era', versions: { 'check-c1': [[1900, null, sq(2)]] } }]));
+    expectStop('시대 파일과 권역 파일에 같은 나라 id(빈 목록)', '두 곳에 있음', () => joinEras('check-c', { versions: { 'check-c1': [] } }, [{ name: 'check-era', versions: { 'check-c1': [] } }]));
+    expectStop('이어 붙이는 나라의 출처 문구가 다름', '출처 문구', () => joinEras('check-c', { versions: { 'check-c1': [[1800, 1900, sq(0)]] } }, [{ name: 'check-era', versions: { 'check-c1': [[1900, null, sq(2)]] }, source: '다른 출처' }]));
     expectStop('시대 파일 칸 오타(versoins)', '모르는 칸 versoins', () => joinEras('check-c', { versions: {} }, [{ name: 'check-era', versoins: {} }]));
     expectStop('sourceOf에 그 권역에 없는 나라', '없는 나라', () => engine.mergeAreas([['check-c', { versions: {}, sourceOf: { 'check-x': '문구' } }]]));
   }

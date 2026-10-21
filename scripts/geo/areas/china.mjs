@@ -20,6 +20,7 @@ import { BAEKJE, GOGURYEO, HYEONDO_2, L_YALU_TUMEN, YT_I, noNokdun } from './kor
 import { ALXA, DALI, EASTERN_TURKS, ET_NE, HUGEUM_1621, JIANCHANG, JIAOZHI, KHITAN_W, L_YN_E, MANCHURIA_NORTH, NE_FAR, OUT_SW, OUTER_MONGOLIA, QH_N, TIBET, XILIN_N, cnBorders, mcMahon, swEarly } from './inner-asia.mjs';
 import { joinEras } from '../shared.mjs';
 import { YAN_CHUNQIU, era as preQinEra } from './china/pre-qin.mjs';
+import { YAN_DAI, YAN_SOUTH, YAN_TO_QIN_226, era as warringStatesEra } from './china/warring-states.mjs';
 
 // ── 4번 묶음 (936 ~ 1392) ─────────────────────────────────
 // 북쪽 변은 북위 33°선(shared.mjs의 L33): 금 쪽 상자(NORTH_BOX)와 이 선에서 맞닿는다
@@ -327,7 +328,10 @@ const GANDO = I(QING_1860_BAND, [ring(L_YALU_TUMEN.slice(YT_I.junction, YT_I.tri
 // 출처(geojson의 source)는 나라별로 적지 않고 권역 파일의 source로 정한다(없으면 engine.mjs의 기본 문구)
 const ownVersions = {
   // 중국 M1(2026-10-21, 00-scope 5절 영향표): 춘추 시대 연(베이징·톈진·허베이 북부 평원, 시대 파일 pre-qin.mjs의 칸)을 기원전 770년(천문 −769)부터 앞에 더함. 기원전 400년(−399) 뒤 두 버전은 그대로
-  'yan-state': [[-769, -399, YAN_CHUNQIU], [-399, -281, YAN_EARLY], [-281, -221, YAN_281]],
+  // 중국 M2(2026-10-21, 00-scope 5절 영향표, 2026-10-21 운영자 승인): 남쪽 경계를 연 남장성·역수 선(시대 파일 warring-states.mjs의 L_YAN_S)으로 줄임. 기원전 475년(−474)부터 그 남쪽 띠(YAN_SOUTH)를 빼고
+  //   (조·중산·제 땅), 서쪽 끝 대(代) 땅(YAN_DAI, 조의 대군)도 뺌. 북쪽 경계와 요서·요동은 그대로. 기원전 226년(−225) 계 함락 뒤에는 허베이·베이징(YAN_TO_QIN_226)을 진(秦)에게 주고
+  //   요서·요동만 남김(2026-10-21 운영자 결정). −474 앞 춘추 버전은 그대로
+  'yan-state': [[-769, -474, YAN_CHUNQIU], [-474, -399, D(YAN_CHUNQIU, YAN_SOUTH, YAN_DAI)], [-399, -281, D(YAN_EARLY, YAN_SOUTH, YAN_DAI)], [-281, -225, D(YAN_281, YAN_SOUTH, YAN_DAI)], [-225, -221, D(YAN_281, YAN_SOUTH, YAN_DAI, YAN_TO_QIN_226)]],
   qin: [[-220, -204, HAN_EMPIRE]], // 기원전 206년 멸망 (검수 2026-09-28)
   // 1860년까지는 조선 땅 녹둔도를 뺀다. 1689년(네르친스크 조약)부터 1857년까지 외만주(고르비차까지, 우다강 유역 빼고)와 흑룡강 띠, 1858~1859년은 흑룡강 왼쪽 기슭을 뺀다(작업 C1).
   // 1689~1690년은 아직 칼카(외몽골)가 복속하기 전이라 흑룡강 띠가 몽골 초원과 겹치는 후룬베이얼 서쪽 모서리를 뺀다
@@ -384,4 +388,4 @@ const ownVersions = {
 };
 
 // 시대 파일 잇기 (npm run new:area): 이 파일의 나라 다음에 시대 파일(areas/china/<시대>.mjs)의 나라·빈 땅 검사 구역·비운 땅을 붙인다(shared.mjs joinEras)
-export const { versions, gapZones, voids, sourceOf } = joinEras('china', { versions: ownVersions }, [preQinEra]);
+export const { versions, gapZones, voids, sourceOf } = joinEras('china', { versions: ownVersions }, [preQinEra, warringStatesEra]);

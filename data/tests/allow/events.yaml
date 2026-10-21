@@ -113,3 +113,179 @@
 - key: '-769 yan-state 버전'
   reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
   decided: 중국 M1 기본값(00-scope 4절)
+
+# ── 중국 M2(2026-10-21): 전국 시대 새 나라(한·조·위·월·중산·송)의 성립·소멸과 전국 시대 버전. 중국 사건 파일(cn-01)이 생기면 이어 주고 이 줄을 지운다 ──
+- key: '-1041 song-state 성립'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M2 기본값(00-scope 4절)
+- key: '-509 yue-state 성립'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M2 기본값(00-scope 4절)
+- key: '-505 zhongshan-state 성립'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M2 기본값(00-scope 4절)
+- key: '-452 han-state 성립'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M2 기본값(00-scope 4절)
+- key: '-452 zhao-state 성립'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M2 기본값(00-scope 4절)
+- key: '-452 wei-state 성립'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M2 기본값(00-scope 4절)
+- key: '-332 yue-state 소멸'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M2 기본값(00-scope 4절)
+- key: '-295 zhongshan-state 소멸'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M2 기본값(00-scope 4절)
+- key: '-285 song-state 소멸'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M2 기본값(00-scope 4절)
+- key: '-229 han-state 소멸'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M2 기본값(00-scope 4절)
+- key: '-227 zhao-state 소멸'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M2 기본값(00-scope 4절)
+- key: '-224 wei-state 소멸'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M2 기본값(00-scope 4절)
+- key: '-474 jin-chunqiu 버전'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M2 기본값(00-scope 4절)
+- key: '-474 qi-state 버전'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M2 기본값(00-scope 4절)
+- key: '-474 chu-state 버전'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M2 기본값(00-scope 4절)
+- key: '-474 zhongshan-state 버전'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M2 기본값(00-scope 4절)
+- key: '-474 song-state 버전'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M2 기본값(00-scope 4절)
+- key: '-472 yue-state 버전'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M2 기본값(00-scope 4절)
+- key: '-408 wei-state 버전'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M2 기본값(00-scope 4절)
+- key: '-374 han-state 버전'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M2 기본값(00-scope 4절)
+- key: '-339 qin-state 버전'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M2 기본값(00-scope 4절)
+- key: '-332 chu-state 버전'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M2 기본값(00-scope 4절)
+- key: '-327 qin-state 버전'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M2 기본값(00-scope 4절)
+- key: '-327 wei-state 버전'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M2 기본값(00-scope 4절)
+- key: '-315 qin-state 버전'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M2 기본값(00-scope 4절)
+- key: '-311 qin-state 버전'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M2 기본값(00-scope 4절)
+- key: '-306 qin-state 버전'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M2 기본값(00-scope 4절)
+- key: '-306 han-state 버전'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M2 기본값(00-scope 4절)
+- key: '-299 zhao-state 버전'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M2 기본값(00-scope 4절)
+- key: '-300 chu-state 버전'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M2 기본값(00-scope 4절)
+- key: '-300 han-state 버전'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M2 기본값(00-scope 4절)
+- key: '-295 zhao-state 버전'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M2 기본값(00-scope 4절)
+- key: '-289 qin-state 버전'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M2 기본값(00-scope 4절)
+- key: '-289 han-state 버전'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M2 기본값(00-scope 4절)
+- key: '-289 wei-state 버전'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M2 기본값(00-scope 4절)
+- key: '-285 chu-state 버전'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M2 기본값(00-scope 4절)
+- key: '-285 wei-state 버전'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M2 기본값(00-scope 4절)
+- key: '-277 chu-state 버전'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M2 기본값(00-scope 4절)
+- key: '-277 qin-state 버전'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M2 기본값(00-scope 4절)
+- key: '-271 qin-state 버전'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M2 기본값(00-scope 4절)
+- key: '-259 qin-state 버전'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M2 기본값(00-scope 4절)
+- key: '-259 han-state 버전'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M2 기본값(00-scope 4절)
+- key: '-248 chu-state 버전'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M2 기본값(00-scope 4절)
+- key: '-246 qin-state 버전'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M2 기본값(00-scope 4절)
+- key: '-246 zhao-state 버전'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M2 기본값(00-scope 4절)
+- key: '-241 qin-state 버전'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M2 기본값(00-scope 4절)
+- key: '-241 wei-state 버전'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M2 기본값(00-scope 4절)
+- key: '-229 qin-state 버전'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M2 기본값(00-scope 4절)
+- key: '-227 qin-state 버전'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M2 기본값(00-scope 4절)
+- key: '-224 qin-state 버전'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M2 기본값(00-scope 4절)
+- key: '-222 qin-state 버전'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M2 기본값(00-scope 4절)
+- key: '-474 yan-state 버전'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M2 기본값(00-scope 4절)
+- key: '-444 chu-state 버전'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M2 기본값(00-scope 4절)
+- key: '-430 qi-state 버전'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M2 기본값(00-scope 4절)
+- key: '-405 wei-state 버전'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M2 기본값(00-scope 4절)
+- key: '-380 chu-state 버전'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M2 기본값(00-scope 4절)
+- key: '-379 wei-state 버전'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M2 기본값(00-scope 4절)
+- key: '-225 qin-state 버전'
+  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
+  decided: 중국 M2 기본값(00-scope 4절)
