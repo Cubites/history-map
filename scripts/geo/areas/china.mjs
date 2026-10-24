@@ -23,6 +23,7 @@ import { YAN_CHUNQIU, era as preQinEra } from './china/pre-qin.mjs';
 import { YAN_DAI, YAN_SOUTH, YAN_TO_QIN_226, era as warringStatesEra } from './china/warring-states.mjs';
 import { CHENG_HAN_LAND as CH, DAI_310_LAND, DAI_LAND, HAN_ZHAO_LAND as HZ, LIANG_LAND, NINGZHOU, SHU_373, TUYUHUN_430, YAN_SHANXI, cutOut, era as sixteenKingdomsEra } from './china/sixteen-kingdoms.mjs';
 import { EASTERN_JIN_NORTH as EJN, FORMER_QIN_385, LIU_SONG_NORTH as LSN, SHANDONG_385, SHANDONG_394, SHANDONG_410, SOUTHERN_YAN_LAND, WEI_XIA_LAND as WXL, WESTERN_SHU_LAND as WS } from './china/sixteen-kingdoms.mjs';
+import { JINGNAN_LAND, LATER_LIANG_OUT as LLO, LATER_SHU_LAND, LATER_TANG_SHU, NORTHERN_HAN_LAND, SHU_NORTH, era as tenKingdomsEra } from './china/ten-kingdoms.mjs';
 
 // ── 4번 묶음 (936 ~ 1392) ─────────────────────────────────
 // 북쪽 변은 북위 33°선(shared.mjs의 L33): 금 쪽 상자(NORTH_BOX)와 이 선에서 맞닿는다
@@ -409,17 +410,24 @@ const ownVersions = {
   // 귀속 논쟁: 안동도호부가 없어진 뒤 발해가 요를 만나기까지의 요동 (claimed_by로 후보 나라를 적는다)
   'liaodong-disputed': [[756, 926, P(LIAODONG), 'disputed']],
   'gando-disputed': [[1883, 1909, GANDO, 'disputed']],
-  'later-liang': [[907, 916, HUABEI], [916, 923, D(HUABEI, LX916)]],
-  'later-tang': [[923, 936, D(HUABEI, LX923)]],
-  'later-jin': [[936, 938, D(HUABEI, LX923)], [938, 947, HUABEI_938]],
-  'later-han': [[947, 951, HUABEI_938]],
-  'later-zhou': [[951, 960, HUABEI_938]],
+  // 중국 M4a(2026-10-24, 00-scope 5절 영향표, 2026-10-21/2026-10-24 운영자 승인): 후량 907~922년 진(晉, 하동)·기(岐) 땅(승인 줄)과 연(燕, 유수광)·의창·위박(결정 1)·성덕·의무(결정 2)·
+  //   전촉의 한중·4주(결정 3) 땅을 해마다 뺌(시대 파일 china/ten-kingdoms.mjs의 LATER_LIANG_OUT). 후당 923~924는 한중·4주(전촉), 후당 934~935·후진(後晉) 936~946은 한중만(4주는 후당·후진 땅, 2026-10-25 결정 8), 후한 947~950·후주 951~954는 한중·4주(947년 후촉에 귀순), 후주 955~959는 한중만 빼고(SHU_NORTH),
+  //   후당 925~933은 전촉을 멸하고 가진 쓰촨을 더하며(승인 줄, 빈 땅 쪽만), 후주 951~959는 북한(北漢) 땅을 뺌(승인 줄). 기간 밖 버전과 원래 식(HUABEI·LX916·LX923·HUABEI_938)은 그대로
+  'later-liang': [[907, 909, cutOut(HUABEI, LLO[907])], [909, 910, cutOut(HUABEI, LLO[909])], [910, 915, cutOut(HUABEI, LLO[910])], [915, 916, cutOut(HUABEI, LLO[915])], [916, 923, cutOut(D(HUABEI, LX916), LLO[916])]],
+  'later-tang': [[923, 925, cutOut(D(HUABEI, LX923), SHU_NORTH[915])], [925, 934, U(D(HUABEI, LX923), LATER_TANG_SHU)], [934, 936, cutOut(D(HUABEI, LX923), SHU_NORTH[934])]],
+  'later-jin': [[936, 938, cutOut(D(HUABEI, LX923), SHU_NORTH[934])], [938, 947, cutOut(HUABEI_938, SHU_NORTH[934])]],
+  'later-han': [[947, 951, cutOut(HUABEI_938, SHU_NORTH[947])]],
+  'later-zhou': [[951, 955, cutOut(HUABEI_938, NORTHERN_HAN_LAND, SHU_NORTH[947])], [955, 960, cutOut(HUABEI_938, NORTHERN_HAN_LAND, SHU_NORTH[955])]],
   // 송은 요서를 가진 적이 없어 뺀다 (요서는 요의 땅). 통킹(968년부터 대월)과 대리국(937~1253, 지금 윈난성 경계와 대도하 남쪽 쓰촨의 건창 — 송·대리 경계는 대도하)도 송이 다스리지 않아 뺀다(작업 N1a)
-  song: [[960, 1127, D(SONG_960, LIAOXI, [OUT_SW], [DALI], [JIANCHANG])], [1127, 1279, D(SONG_1127, [OUT_SW], [DALI], [JIANCHANG])]],
+  // 중국 M4a(2026-10-24, 00-scope 5절 영향표 송 960~979 줄, 2026-10-21 운영자 승인): 아직 정복하지 않은 형남(963년까지)·후촉(965년까지)·북한(979년까지) 땅을 뺌(시대 파일 china/ten-kingdoms.mjs).
+  //   남쪽 10국 몫은 M4b. 979~1127년 버전은 원래 식 그대로
+  song: [[960, 963, cutOut(D(SONG_960, LIAOXI, [OUT_SW], [DALI], [JIANCHANG]), JINGNAN_LAND, LATER_SHU_LAND, NORTHERN_HAN_LAND)],
+    [963, 965, cutOut(D(SONG_960, LIAOXI, [OUT_SW], [DALI], [JIANCHANG]), LATER_SHU_LAND, NORTHERN_HAN_LAND)], [965, 979, cutOut(D(SONG_960, LIAOXI, [OUT_SW], [DALI], [JIANCHANG]), NORTHERN_HAN_LAND)],
+    [979, 1127, D(SONG_960, LIAOXI, [OUT_SW], [DALI], [JIANCHANG])], [1127, 1279, D(SONG_1127, [OUT_SW], [DALI], [JIANCHANG])]],
   // 명(작업 N1a): 윈난은 원 잔존 세력(양왕 바살라와르미)이 1382년 1월까지 다스려 1368~1381년은 빼고(대도하 남쪽 건창도 원 운남행성 땅이라 함께 빼고 1382년 3월 건창부·건창위를 둠, 『명사』 지리지), 1382년부터 청 1644~1719년과 같은 서남 국경(swEarly, 윈난 서부·남부를 넣고 통킹을 뺌).
   // 1407년 호 왕조를 무너뜨리고 둔 교지(베트남 북부·북중부)는 1427년 12월 동관 맹약으로 물러나기까지 넣는다(JIAOZHI)
   ming: [[1368, 1382, D([CHINA], [OUT_SW], [DALI], [JIANCHANG])], [1382, 1387, swEarly([CHINA])], [1387, 1407, swEarly(MING_1387)], [1407, 1427, U(swEarly(MING_1387), [JIAOZHI])], [1427, 1621, swEarly(MING_1387)], [1621, 1644, swEarly(MING_1621)]],
 };
 
 // 시대 파일 잇기 (npm run new:area): 이 파일의 나라 다음에 시대 파일(areas/china/<시대>.mjs)의 나라·빈 땅 검사 구역·비운 땅을 붙인다(shared.mjs joinEras)
-export const { versions, gapZones, voids, sourceOf } = joinEras('china', { versions: ownVersions }, [preQinEra, warringStatesEra, sixteenKingdomsEra]);
+export const { versions, gapZones, voids, sourceOf } = joinEras('china', { versions: ownVersions }, [preQinEra, warringStatesEra, sixteenKingdomsEra, tenKingdomsEra]);

@@ -565,3 +565,104 @@
 - key: '439 tuyuhun 버전'
   reason: 중국 위진 남북조 사건 묶음(cn-03) 전이라 아직 이을 사건이 없음
   decided: 중국 M3 기본값(00-scope 4절)
+
+# ── 중국 M4a(2026-10-24): 5대 10국 북부·서부 지도의 새 나라·버전 해 (송·요·금 사건 묶음 cn-05가 채움) ──
+- key: '907 jin-hedong 성립'
+  reason: 중국 송·요·금 사건 묶음(cn-05) 전이라 아직 이을 사건이 없음
+  decided: 중국 M4 기본값(00-scope 4절)
+- key: '907 qi-fengxiang 성립'
+  reason: 중국 송·요·금 사건 묶음(cn-05) 전이라 아직 이을 사건이 없음
+  decided: 중국 M4 기본값(00-scope 4절)
+- key: '907 yan-liu 성립'
+  reason: 중국 송·요·금 사건 묶음(cn-05) 전이라 아직 이을 사건이 없음
+  decided: 중국 M4 기본값(00-scope 4절)
+- key: '907 former-shu 성립'
+  reason: 중국 송·요·금 사건 묶음(cn-05) 전이라 아직 이을 사건이 없음
+  decided: 중국 M4 기본값(00-scope 4절)
+- key: '907 guiyi 성립'
+  reason: 중국 송·요·금 사건 묶음(cn-05) 전이라 아직 이을 사건이 없음
+  decided: 중국 M4 기본값(00-scope 4절)
+- key: '907 ganzhou-uyghur 성립'
+  reason: 중국 송·요·금 사건 묶음(cn-05) 전이라 아직 이을 사건이 없음
+  decided: 중국 M4 기본값(00-scope 4절)
+- key: '910 chengde 성립'
+  reason: 중국 송·요·금 사건 묶음(cn-05) 전이라 아직 이을 사건이 없음
+  decided: 중국 M4 기본값(00-scope 4절)
+- key: '910 yiwu 성립'
+  reason: 중국 송·요·금 사건 묶음(cn-05) 전이라 아직 이을 사건이 없음
+  decided: 중국 M4 기본값(00-scope 4절)
+- key: '913 yan-liu 소멸'
+  reason: 중국 송·요·금 사건 묶음(cn-05) 전이라 아직 이을 사건이 없음
+  decided: 중국 M4 기본값(00-scope 4절)
+- key: '921 chengde 소멸'
+  reason: 중국 송·요·금 사건 묶음(cn-05) 전이라 아직 이을 사건이 없음
+  decided: 중국 M4 기본값(00-scope 4절)
+- key: '922 yiwu 소멸'
+  reason: 중국 송·요·금 사건 묶음(cn-05) 전이라 아직 이을 사건이 없음
+  decided: 중국 M4 기본값(00-scope 4절)
+- key: '923 jin-hedong 소멸'
+  reason: 중국 송·요·금 사건 묶음(cn-05) 전이라 아직 이을 사건이 없음
+  decided: 중국 M4 기본값(00-scope 4절)
+- key: '924 qi-fengxiang 소멸'
+  reason: 중국 송·요·금 사건 묶음(cn-05) 전이라 아직 이을 사건이 없음
+  decided: 중국 M4 기본값(00-scope 4절)
+- key: '924 jingnan 성립'
+  reason: 중국 송·요·금 사건 묶음(cn-05) 전이라 아직 이을 사건이 없음
+  decided: 중국 M4 기본값(00-scope 4절)
+- key: '925 former-shu 소멸'
+  reason: 중국 송·요·금 사건 묶음(cn-05) 전이라 아직 이을 사건이 없음
+  decided: 중국 M4 기본값(00-scope 4절)
+- key: '934 later-shu 성립'
+  reason: 중국 송·요·금 사건 묶음(cn-05) 전이라 아직 이을 사건이 없음
+  decided: 중국 M4 기본값(00-scope 4절)
+- key: '951 northern-han 성립'
+  reason: 중국 송·요·금 사건 묶음(cn-05) 전이라 아직 이을 사건이 없음
+  decided: 중국 M4 기본값(00-scope 4절)
+- key: '963 jingnan 소멸'
+  reason: 중국 송·요·금 사건 묶음(cn-05) 전이라 아직 이을 사건이 없음
+  decided: 중국 M4 기본값(00-scope 4절)
+- key: '965 later-shu 소멸'
+  reason: 중국 송·요·금 사건 묶음(cn-05) 전이라 아직 이을 사건이 없음
+  decided: 중국 M4 기본값(00-scope 4절)
+- key: '979 northern-han 소멸'
+  reason: 중국 송·요·금 사건 묶음(cn-05) 전이라 아직 이을 사건이 없음
+  decided: 중국 M4 기본값(00-scope 4절)
+- key: '1028 ganzhou-uyghur 소멸'
+  reason: 중국 송·요·금 사건 묶음(cn-05) 전이라 아직 이을 사건이 없음
+  decided: 중국 M4 기본값(00-scope 4절)
+- key: '1036 guiyi 소멸'
+  reason: 중국 송·요·금 사건 묶음(cn-05) 전이라 아직 이을 사건이 없음
+  decided: 중국 M4 기본값(00-scope 4절)
+- key: '909 yan-liu 버전'
+  reason: 중국 송·요·금 사건 묶음(cn-05) 전이라 아직 이을 사건이 없음
+  decided: 중국 M4 기본값(00-scope 4절)
+- key: '913 jin-hedong 버전'
+  reason: 중국 송·요·금 사건 묶음(cn-05) 전이라 아직 이을 사건이 없음
+  decided: 중국 M4 기본값(00-scope 4절)
+- key: '915 qi-fengxiang 버전'
+  reason: 중국 송·요·금 사건 묶음(cn-05) 전이라 아직 이을 사건이 없음
+  decided: 중국 M4 기본값(00-scope 4절)
+- key: '915 former-shu 버전'
+  reason: 중국 송·요·금 사건 묶음(cn-05) 전이라 아직 이을 사건이 없음
+  decided: 중국 M4 기본값(00-scope 4절)
+- key: '916 jin-hedong 버전'
+  reason: 중국 송·요·금 사건 묶음(cn-05) 전이라 아직 이을 사건이 없음
+  decided: 중국 M4 기본값(00-scope 4절)
+- key: '922 jin-hedong 버전'
+  reason: 중국 송·요·금 사건 묶음(cn-05) 전이라 아직 이을 사건이 없음
+  decided: 중국 M4 기본값(00-scope 4절)
+- key: '925 jingnan 버전'
+  reason: 중국 송·요·금 사건 묶음(cn-05) 전이라 아직 이을 사건이 없음
+  decided: 중국 M4 기본값(00-scope 4절)
+- key: '947 later-shu 버전'
+  reason: 중국 송·요·금 사건 묶음(cn-05) 전이라 아직 이을 사건이 없음
+  decided: 중국 M4 기본값(00-scope 4절)
+- key: '955 later-shu 버전'
+  reason: 중국 송·요·금 사건 묶음(cn-05) 전이라 아직 이을 사건이 없음
+  decided: 중국 M4 기본값(00-scope 4절)
+- key: '955 later-zhou 버전'
+  reason: 중국 송·요·금 사건 묶음(cn-05) 전이라 아직 이을 사건이 없음
+  decided: 중국 M4 기본값(00-scope 4절)
+- key: '979 song 버전'
+  reason: 중국 송·요·금 사건 묶음(cn-05) 전이라 아직 이을 사건이 없음
+  decided: 중국 M4 기본값(00-scope 4절)

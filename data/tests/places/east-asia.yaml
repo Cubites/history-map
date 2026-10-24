@@ -2105,3 +2105,213 @@
   url: "https://en.wikipedia.org/wiki/Qifu_Mumo"
   from: "중국 M3"
   note: "429년 봄 저거몽손이 서평(지금 시닝)을 차지함(운영자 결정 13)"
+
+- name: "태원부(진(晉, 하동))"
+  at: [112.55, 37.87]
+  year: 910
+  expect: jin-hedong
+  url: "https://en.wikipedia.org/wiki/Li_Cunxu"
+  from: "중국 M4"
+  note: "하동의 진(이극용·이존욱)의 도읍"
+
+- name: "유주(연(燕, 유수광))"
+  at: [116.37, 39.88]
+  year: 910
+  expect: yan-liu
+  url: "https://en.wikipedia.org/wiki/Liu_Shouguang"
+  from: "중국 M4"
+  note: "907년 유수광이 유주를 차지함, 913년 말 진에게 함락"
+
+- name: "유주(진(晉, 하동), 연을 멸한 뒤)"
+  at: [116.37, 39.88]
+  year: 915
+  expect: jin-hedong
+  url: "https://en.wikipedia.org/wiki/Liu_Shouguang"
+  from: "중국 M4"
+  note: "913년 말 진의 주덕위가 유주를 함락함(운영자 결정 1)"
+
+- name: "봉상부(기(岐))"
+  at: [107.39, 34.52]
+  year: 920
+  expect: qi-fengxiang
+  url: "https://en.wikipedia.org/wiki/Li_Maozhen"
+  from: "중국 M4"
+  note: "915년 뒤 기는 봉상 둘레만 남음"
+
+- name: "진주(성덕군(조))"
+  at: [114.57, 38.15]
+  year: 915
+  expect: chengde
+  url: "https://zh.wikipedia.org/wiki/王鎔"
+  from: "중국 M4"
+  note: "910년 후량과 끊고 진과 손잡음(운영자 결정 2)"
+
+- name: "정주(의무군)"
+  at: [114.99, 38.51]
+  year: 915
+  expect: yiwu
+  url: "https://zh.wikipedia.org/wiki/王鎔"
+  from: "중국 M4"
+  note: "910년 성덕군과 함께 진과 손잡음(운영자 결정 2)"
+
+- name: "위주(진(晉, 하동), 위박을 얻은 뒤)"
+  at: [115.15, 36.28]
+  year: 918
+  expect: jin-hedong
+  url: "https://en.wikipedia.org/wiki/Li_Cunxu"
+  from: "중국 M4"
+  note: "915~916년 위박이 진에 넘어감(운영자 결정 1)"
+
+- name: "성도(전촉)"
+  at: [104.07, 30.67]
+  year: 915
+  expect: former-shu
+  url: "https://zh.wikipedia.org/wiki/前蜀"
+  from: "중국 M4"
+  note: "907년 왕건이 성도에서 칭제"
+
+- name: "성도(후당, 전촉을 멸한 뒤)"
+  at: [104.07, 30.67]
+  year: 930
+  expect: later-tang
+  url: "https://zh.wikipedia.org/wiki/後唐"
+  from: "중국 M4"
+  note: "925년 곽숭도가 전촉을 멸함, 후당 925~933 쓰촨(승인 줄)"
+
+- name: "성도(후촉)"
+  at: [104.07, 30.67]
+  year: 950
+  expect: later-shu
+  url: "https://zh.wikipedia.org/wiki/後蜀"
+  from: "중국 M4"
+  note: "934년 맹지상이 성도에서 칭제"
+
+- name: "성도(후촉, 송 정복 앞)"
+  at: [104.07, 30.67]
+  year: 963
+  expect: later-shu
+  url: "https://zh.wikipedia.org/wiki/後蜀"
+  from: "중국 M4"
+  note: "965년 정월 맹창이 송에 항복(00-scope 8절)"
+
+- name: "성도(송, 후촉을 멸한 뒤)"
+  at: [104.07, 30.67]
+  year: 966
+  expect: song
+  url: "https://zh.wikipedia.org/wiki/後蜀"
+  from: "중국 M4"
+  note: "965년 송이 후촉을 멸함(00-scope 8절)"
+
+- name: "흥원부(전촉, 한중)"
+  at: [107.03, 33.07]
+  year: 910
+  expect: former-shu
+  url: "https://en.wikipedia.org/wiki/Li_Maozhen"
+  from: "중국 M4"
+  note: "902년 왕건이 산남서도를 차지함. 후량 907~922에서 뺌(운영자 결정 3)"
+
+- name: "흥원부(후촉, 한중)"
+  at: [107.03, 33.07]
+  year: 940
+  expect: later-shu
+  url: "https://zh.wikipedia.org/wiki/後蜀"
+  from: "중국 M4"
+  note: "934년 산남서도가 후촉에 귀순함. 후진(後晉) 936~946에서 한중을 뺌(운영자 결정 3·8)"
+
+- name: "진주(후진, 톈수이)"
+  at: [105.72, 34.58]
+  year: 940
+  expect: later-jin
+  url: "https://zh.wikipedia.org/wiki/何重建"
+  from: "중국 M4"
+  note: "진·봉·성·계 4주는 946년까지 후진 땅(웅무군 절도사 하중건), 947년 후촉에 귀순함(운영자 결정 8)"
+
+- name: "진주(후촉, 톈수이)"
+  at: [105.72, 34.58]
+  year: 950
+  expect: later-shu
+  url: "https://zh.wikipedia.org/wiki/後蜀"
+  from: "중국 M4"
+  note: "947년 하중건이 진·계·성주를 후촉에 바침. 955년 후주에게 넘어감(운영자 결정 8)"
+
+- name: "진주(후주, 톈수이)"
+  at: [105.72, 34.58]
+  year: 957
+  expect: later-zhou
+  url: "https://zh.wikipedia.org/wiki/周世宗"
+  from: "중국 M4"
+  note: "955년 후주 세종이 진·봉·성·계 4주를 얻음"
+
+- name: "강릉부(형남)"
+  at: [112.19, 30.33]
+  year: 930
+  expect: jingnan
+  url: "https://zh.wikipedia.org/wiki/荆南"
+  from: "중국 M4"
+  note: "고계흥이 924년 남평왕, 925년 귀·협주를 얻음"
+
+- name: "태원부(북한(北漢))"
+  at: [112.47, 37.77]
+  year: 955
+  expect: northern-han
+  url: "https://zh.wikipedia.org/wiki/北汉"
+  from: "중국 M4"
+  note: "951년 유숭이 태원에서 칭제"
+
+- name: "태원부(북한(北漢), 송 정복 앞)"
+  at: [112.47, 37.77]
+  year: 978
+  expect: northern-han
+  url: "https://zh.wikipedia.org/wiki/北汉"
+  from: "중국 M4"
+  note: "979년 6월 송에 항복(00-scope 8절)"
+
+- name: "태원부(송, 북한(北漢)을 멸한 뒤)"
+  at: [112.47, 37.77]
+  year: 980
+  expect: song
+  url: "https://zh.wikipedia.org/wiki/北汉"
+  from: "중국 M4"
+  note: "979년 송 태종이 북한을 멸함(00-scope 8절)"
+
+- name: "카이펑(후주)"
+  at: [114.31, 34.8]
+  year: 955
+  expect: later-zhou
+  url: "https://zh.wikipedia.org/wiki/後周"
+  from: "중국 M4"
+  note: "후주의 도읍(변경)"
+
+- name: "사주(귀의군, 둔황)"
+  at: [94.66, 40.14]
+  year: 1000
+  expect: guiyi
+  url: "https://en.wikipedia.org/wiki/Guiyi_Circuit"
+  from: "중국 M4"
+  note: "조씨 귀의군의 치소(운영자 결정 5)"
+
+- name: "감주(감주 위구르, 장예)"
+  at: [100.45, 38.93]
+  year: 1000
+  expect: ganzhou-uyghur
+  url: "https://en.wikipedia.org/wiki/Ganzhou_Uyghur_Kingdom"
+  from: "중국 M4"
+  note: "감주 위구르의 도읍(운영자 결정 5)"
+
+- name: "양주(우웨이, 비운 땅)"
+  at: [102.64, 37.93]
+  year: 1000
+  expect: none
+  region: east-asia
+  url: "https://en.wikipedia.org/wiki/Ganzhou_Uyghur_Kingdom"
+  from: "중국 M4"
+  note: "육곡부 등 토번계 땅이라 그리지 않음(1009년 감주 위구르가 잠시 차지)"
+
+- name: "강릉부(형남이 강릉 한 성뿐이던 때, 비운 땅)"
+  at: [112.19, 30.33]
+  year: 915
+  expect: none
+  region: east-asia
+  url: "https://zh.wikipedia.org/wiki/荆南"
+  from: "중국 M4"
+  note: "907~924년 형남은 강릉 한 성(1만 km² 미만)이라 그리지 않음"
