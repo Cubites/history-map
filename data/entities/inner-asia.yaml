@@ -529,7 +529,7 @@
     - 몽케 칸이 남송을 남서쪽에서 에워싸려고 동생 쿠빌라이에게 대리를 치게 했고, 1253~1256년 몽골의 대리 정복이 이루어짐
     - 1231년 1차 침입을 시작으로 30여 년 동안 고려를 침입함
   startEvents: [genghis-1206]
-  endEvents: []
+  endEvents: [kubilai-ariq-boke-1260]
   basis:
     type: primary_source
     refs: ["『원사』 태조본기", "『몽골비사』", "『원사』 헌종본기"]
