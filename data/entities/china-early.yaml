@@ -14,8 +14,8 @@
   features:
     - 고조선과 대립해 기원전 3세기 초 장수 진개가 고조선의 서쪽 땅 2천여 리를 빼앗음
     - 명도전이 고조선 지역에서 많이 발견됨
-  startEvents: []
-  endEvents: []
+  startEvents: [muye-1046bc]
+  endEvents: [qin-yan-jingke-227bc]
   basis:
     type: primary_source
     refs: ["『사기』 연소공세가", "『삼국지』 위서 동이전 주석 『위략』"]

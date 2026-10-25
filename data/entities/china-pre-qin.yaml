@@ -19,8 +19,8 @@
     - 거북 껍데기와 소뼈에 점친 내용을 새긴 갑골문을 남김
     - 청동 제기와 무기를 만드는 청동기 문화가 꽃핌
     - 왕이 점을 쳐 나라 일을 정하는 신권 정치를 폄
-  startEvents: []
-  endEvents: []
+  startEvents: [shang-founding-1600bc]
+  endEvents: [muye-1046bc]
   basis:
     type: primary_source
     refs: ["『사기』 은본기", "하상주 단대공정 연표(2000)"]
@@ -40,8 +40,8 @@
     - 왕족과 공신을 제후로 봉해 다스리는 봉건 제도를 폄
     - 하늘의 명이 덕 있는 이에게 옮겨 간다는 천명 사상을 내세움
     - 주공이 동쪽의 반란을 누르고 낙읍을 세움
-  startEvents: []
-  endEvents: []
+  startEvents: [muye-1046bc]
+  endEvents: [haojing-fall-771bc]
   basis:
     type: primary_source
     refs: ["『사기』 주본기", "하상주 단대공정 연표(2000)"]
@@ -61,8 +61,8 @@
     - 다스린 땅은 뤄양 둘레의 좁은 왕기뿐임
     - 춘추 시대에는 패자가 왕을 받든다는 명분으로 제후를 이끎
     - 전국 시대에는 제후들이 왕을 칭해 이름만 남음
-  startEvents: []
-  endEvents: []
+  startEvents: [haojing-fall-771bc]
+  endEvents: [eastern-zhou-end-256bc]
   basis:
     type: primary_source
     refs: ["『사기』 주본기", "『춘추좌씨전』"]
@@ -83,8 +83,8 @@
     - 문공이 기원전 632년 성복 전투에서 초를 깨고 패자가 됨
     - 기원전 594년 적적의 노씨를 멸해 상당으로 넓힘
     - 경대부의 힘이 커져 한·조·위 세 집안이 나라를 나눔
-  startEvents: []
-  endEvents: []
+  startEvents: [zhougong-fengjian-1042bc]
+  endEvents: [jin-partition-403bc]
   basis:
     type: primary_source
     refs: ["『사기』 진세가", "『춘추좌씨전』"]
@@ -105,8 +105,8 @@
     - 환공이 관중을 재상으로 삼아 춘추 시대 첫 패자가 됨
     - 기원전 386년 전씨가 강씨를 대신해 제후가 됨
     - 기원전 284년 연의 악의에게 임치를 빼앗겼다가 기원전 279년 전단이 되찾음
-  startEvents: []
-  endEvents: []
+  startEvents: [muye-1046bc]
+  endEvents: [qin-qi-221bc]
   basis:
     type: primary_source
     refs: ["『사기』 제태공세가", "『사기』 전경중완세가"]
@@ -127,8 +127,8 @@
     - 한수이강·화이허강 유역의 소국을 차례로 병합함
     - 장왕이 기원전 597년 필 전투에서 진(晉)을 깨고 패자가 됨
     - 기원전 506년 오의 침입으로 도읍 영을 빼앗기기도 함
-  startEvents: []
-  endEvents: []
+  startEvents: [zhougong-fengjian-1042bc, chu-wuwang-704bc]
+  endEvents: [qin-wei-chu-225bc]
   basis:
     type: primary_source
     refs: ["『사기』 초세가", "『춘추좌씨전』"]
@@ -149,8 +149,8 @@
     - 목공이 서융을 제압해 패자로 불림
     - 전국 시대 상앙의 개혁으로 강해짐
     - 기원전 350년 함양으로 도읍을 옮기고 기원전 316년 파·촉을 차지함
-  startEvents: []
-  endEvents: []
+  startEvents: [haojing-fall-771bc]
+  endEvents: [qin-qi-221bc]
   basis:
     type: primary_source
     refs: ["『사기』 진본기"]
@@ -170,8 +170,8 @@
     - 기원전 585년 수몽이 왕을 칭하며 중원과 교류함
     - 합려가 기원전 506년 백거 전투에서 초를 깨고 도읍 영을 점령함
     - 부차가 월을 굴복시키고 기원전 482년 황지에서 회맹함
-  startEvents: []
-  endEvents: []
+  startEvents: [wu-rise-585bc]
+  endEvents: [wu-yue-496bc]
   basis:
     type: primary_source
     refs: ["『사기』 오태백세가", "『춘추좌씨전』"]

@@ -19,8 +19,8 @@
     - 소후 때 신불해를 재상으로 삼아 법으로 나라를 다스림
     - 기원전 262년 진(秦)에게 길이 끊긴 상당을 조에 바쳐 장평 싸움의 불씨가 됨
     - 법가 사상을 모은 한비가 이 나라 공자였음
-  startEvents: []
-  endEvents: []
+  startEvents: [jin-six-ministers-497bc, jin-partition-403bc]
+  endEvents: [qin-han-zhao-230bc]
   basis:
     type: primary_source
     refs: ["『사기』 한세가", "『전국책』 한책"]
@@ -41,8 +41,8 @@
     - 임호·누번을 쳐서 안문·운중으로 넓히고 기원전 296년 중산을 멸함
     - 기원전 260년 장평 싸움에서 진(秦)에게 크게 짐
     - 인상여·염파·이목 같은 이름난 신하와 장수가 있었음
-  startEvents: []
-  endEvents: []
+  startEvents: [jin-six-ministers-497bc, jin-partition-403bc]
+  endEvents: [qin-han-zhao-230bc]
   basis:
     type: primary_source
     refs: ["『사기』 조세가", "『전국책』 조책"]
@@ -63,8 +63,8 @@
     - 기원전 409년 진(秦)에게서 하서를 빼앗아 서하군을 둠
     - 기원전 406년 중산을 멸하고 태자를 봉해 25년 동안 다스림
     - 계릉(기원전 353)·마릉(기원전 342) 싸움에서 제에게 짐
-  startEvents: []
-  endEvents: []
+  startEvents: [jin-six-ministers-497bc, jin-partition-403bc]
+  endEvents: [qin-wei-chu-225bc]
   basis:
     type: primary_source
     refs: ["『사기』 위세가", "『전국책』 위책"]
@@ -84,8 +84,8 @@
     - 구천이 기원전 494년 오에게 진 뒤 힘을 길러 기원전 473년 오를 멸함
     - 범려·문종이 구천을 도움
     - 청동 칼을 잘 만들어 월왕 구천의 칼이 전함
-  startEvents: []
-  endEvents: []
+  startEvents: [wu-baiju-515bc]
+  endEvents: [chu-conquers-yue-333bc]
   basis:
     type: primary_source
     refs: ["『사기』 월왕구천세가", "『춘추좌씨전』"]
@@ -105,8 +105,8 @@
     - 백적 계통 선우족(鮮虞)이 세운 나라로 화하 문화를 받아들임
     - 기원전 323년 무렵 한·조·위·연과 함께 왕을 칭함
     - 핑산의 중산왕 무덤에서 긴 글을 새긴 청동기가 나옴
-  startEvents: []
-  endEvents: []
+  startEvents: [zhongshan-506bc]
+  endEvents: [zhao-wuling-307bc]
   basis:
     type: primary_source
     refs: ["『사기』 조세가", "『전국책』 중산책"]
@@ -127,8 +127,8 @@
     - 양공이 기원전 638년 홍수 싸움에서 초에게 짐
     - 기원전 328년 무렵 언(강왕)이 왕을 칭함
     - 장자가 이 나라 몽 사람으로 전함
-  startEvents: []
-  endEvents: []
+  startEvents: [zhougong-fengjian-1042bc]
+  endEvents: [qi-song-286bc]
   basis:
     type: primary_source
     refs: ["『사기』 송미자세가", "『춘추좌씨전』"]
