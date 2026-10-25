@@ -265,7 +265,7 @@
     - 1933년 열하 작전으로 러허성을 편입함
     - 탕구 정전 협정(1933)으로 만리장성이 중화민국과의 사실상 경계가 됨
     - 조선 혁명군(양세봉)과 한국 독립군(지청천)이 1932~1933년 중국 의용군과 함께 일본군과 만주국군을 물리침
-  startEvents: []
+  startEvents: [manchukuo-1932]
   endEvents: [sino-japanese-occupation-1937]
   basis:
     type: primary_source
