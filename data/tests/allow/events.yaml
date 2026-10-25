@@ -77,9 +77,6 @@
 - key: '-769 qi-state 버전'
   reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
   decided: 중국 M1 기본값(00-scope 4절)
-- key: '-220 qi-state 소멸'
-  reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
-  decided: 중국 M1 기본값(00-scope 4절)
 - key: '-1029 chu-state 성립'
   reason: 중국 선진 시대 사건 묶음(cn-01) 전이라 아직 이을 사건이 없음
   decided: 중국 M1 기본값(00-scope 4절)

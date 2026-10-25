@@ -33,7 +33,7 @@
     - 만리장성을 쌓고 요동까지 다스림
     - 고조선의 부왕은 진을 경계해 형식적으로 복속했다고 전함
   startEvents: [bu-jun-kings-220]
-  endEvents: []
+  endEvents: [qin-fall-207bc]
   basis:
     type: primary_source
     refs: ["『사기』 진시황본기", "『삼국지』 위서 동이전 주석 『위략』"]
@@ -53,8 +53,8 @@
     - 장건이 서역으로 가는 길을 연 뒤(기원전 138~126) 기원전 60년 서역도호부를 두어 오아시스 도시들을 관리함
     - 무제가 남월·민월·서남이를 정복함(기원전 112~109)
     - 무제가 고조선을 멸망시키고(기원전 108) 옛 땅에 군현을 둠
-  startEvents: []
-  endEvents: []
+  startEvents: [chu-han-war-204bc, gaozu-founding-202bc]
+  endEvents: [wang-mang-xin-9]
   basis:
     type: primary_source
     refs: ["『사기』", "『한서』"]
@@ -71,8 +71,8 @@
   features:
     - 12년 왕망이 흉노를 치려고 고구려 군사를 동원하다 반발을 사자 고구려의 우두머리를 꾀어 죽이고 고구려를 '하구려'로 낮추어 불렀음
     - 신이 들어선 뒤 한과 서역의 관계가 끊김
-  startEvents: []
-  endEvents: []
+  startEvents: [wang-mang-xin-9]
+  endEvents: [xin-fall-17]
   basis:
     type: primary_source
     refs: ["『한서』 왕망전"]
@@ -93,7 +93,7 @@
     - 반초가 73년부터 서역을 되찾아 91년 서역도호가 됨
     - 97년 반초가 부하 감영을 대진(로마)에 보냈으나 감영은 조지에서 되돌아옴
     - 고구려와 요동·현도를 두고 자주 충돌함
-  startEvents: []
+  startEvents: [guangwu-founding-25]
   endEvents: []
   basis:
     type: primary_source
