@@ -286,7 +286,7 @@
   features:
     - 당의 책봉을 받음
     - 고구려의 연개소문이 당을 견제하려고 손잡으려 했다는 기록이 있으나(645) 설연타는 움직이지 않음
-  startEvents: []
+  startEvents: [xueyantuo-628]
   endEvents: [tang-borders-618]
   basis:
     type: primary_source
