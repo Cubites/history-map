@@ -21,8 +21,8 @@
     - 911년 백향 싸움에서 성덕·의무와 함께 후량군을 크게 깨뜨림
     - 913년 유주를 함락해 연의 유수광을 사로잡음
     - 923년 후당으로 이어짐
-  startEvents: []
-  endEvents: []
+  startEvents: [zhu-wen-later-liang-907]
+  endEvents: [li-cunxu-later-tang-923]
   basis:
     type: primary_source
     refs: ["『구오대사』 당서 무황기·장종기", "『신오대사』", "『자치통감』"]
@@ -42,8 +42,8 @@
     - 당 연호를 쓰며 후량을 인정하지 않음
     - 915년 천웅군 4주를 전촉에, 정난군(빈주)을 후량에 잃음
     - 918~920년 전촉의 봉상 공격을 막아 냄
-  startEvents: []
-  endEvents: []
+  startEvents: [zhu-wen-later-liang-907]
+  endEvents: [wang-jian-former-shu-907]
   basis:
     type: primary_source
     refs: ["『구오대사』 이무정전", "『신오대사』 이무정전", "『자치통감』"]
@@ -63,8 +63,8 @@
     - 908년 후량에게서 연왕에 봉해짐
     - 911년 대연 황제를 칭하고 연호를 응천이라 함
     - 913년 진에게 멸망
-  startEvents: []
-  endEvents: []
+  startEvents: [yan-liu-baixiang-907]
+  endEvents: [yan-liu-baixiang-907]
   basis:
     type: primary_source
     refs: ["『구오대사』 유수광전", "『신오대사』 유수광전", "『자치통감』"]
@@ -83,8 +83,8 @@
     - 치소는 진주(지금 정딩)
     - 왕용이 후량에게서 조왕에 봉해짐
     - 911년 백향 싸움에서 진과 함께 후량군을 깨뜨림
-  startEvents: []
-  endEvents: []
+  startEvents: [yan-liu-baixiang-907]
+  endEvents: [li-cunxu-later-tang-923]
   basis:
     type: primary_source
     refs: ["『구오대사』 왕용전", "『신오대사』", "『자치통감』"]
@@ -103,8 +103,8 @@
     - 치소는 정주(지금 딩저우)
     - 왕처직이 북평왕을 칭함
     - 911년 연의 침공을 진의 도움으로 막아 냄
-  startEvents: []
-  endEvents: []
+  startEvents: [yan-liu-baixiang-907]
+  endEvents: [li-cunxu-later-tang-923]
   basis:
     type: primary_source
     refs: ["『구오대사』 왕처직전", "『신오대사』", "『자치통감』"]
@@ -124,8 +124,8 @@
     - 917년 국호를 한(漢)으로 바꾸었다가 이듬해 촉으로 되돌림
     - 915년 기의 천웅군 4주를 얻음
     - 925년 후당에게 70일 만에 멸망
-  startEvents: []
-  endEvents: []
+  startEvents: [wang-jian-former-shu-907]
+  endEvents: [later-tang-conquers-shu-925]
   basis:
     type: primary_source
     refs: ["『구오대사』 참위열전", "『신오대사』 전촉세가", "『십국춘추』"]
@@ -146,8 +146,8 @@
     - 947년 진·봉·성·계 4주가 귀순함
     - 955년 4주를 후주에게 잃음
     - 965년 송에 항복
-  startEvents: []
-  endEvents: []
+  startEvents: [meng-zhixiang-later-shu-934]
+  endEvents: [song-conquers-shu-965]
   basis:
     type: primary_source
     refs: ["『구오대사』 참위열전", "『신오대사』 후촉세가", "『십국춘추』"]
@@ -167,8 +167,8 @@
     - 924년 고계흥이 후당에게서 남평왕에 봉해짐
     - 925년 전촉이 망한 뒤 귀·협주를 얻음
     - 963년 송에 땅을 바침
-  startEvents: []
-  endEvents: []
+  startEvents: [later-tang-conquers-shu-925]
+  endEvents: [song-conquers-jingnan-chu-963]
   basis:
     type: primary_source
     refs: ["『구오대사』 세습열전", "『신오대사』 남평세가", "『십국춘추』"]
@@ -188,8 +188,8 @@
     - 거란(요)에 의지해 후주·송과 맞섬
     - 954년 고평 싸움에서 후주 세종에게 크게 짐
     - 979년 송에 항복해 10국 시대가 끝남
-  startEvents: []
-  endEvents: []
+  startEvents: [later-han-later-zhou-951]
+  endEvents: [song-conquers-northern-han-979]
   basis:
     type: primary_source
     refs: ["『구오대사』 참위열전", "『신오대사』 동한세가", "『십국춘추』"]
@@ -208,8 +208,8 @@
     - 치소는 사주(지금 둔황)
     - 914년부터 조씨 가문이 다스림
     - 둔황 막고굴의 벽화와 문서를 많이 남김
-  startEvents: []
-  endEvents: []
+  startEvents: [hexi-guiyi-ganzhou-848]
+  endEvents: [xixia-conquers-hexi-1028]
   basis:
     type: primary_source
     refs: ["『신오대사』 사이부록", "『송사』 외국전", "둔황 문서"]
@@ -228,8 +228,8 @@
     - 도읍은 감주(지금 장예)
     - 비단길 무역으로 5대 왕조·송·요와 교류
     - 925년 귀의군에게 진 뒤 혼인으로 맺음
-  startEvents: []
-  endEvents: []
+  startEvents: [hexi-guiyi-ganzhou-848]
+  endEvents: [xixia-conquers-hexi-1028]
   basis:
     type: primary_source
     refs: ["『신오대사』 사이부록", "『송사』 외국전"]
@@ -251,8 +251,8 @@
     - 909년 위전풍을 깨고 장시 중·남부를 얻음
     - 919년 무석 싸움에서 오월군을 깨뜨림
     - 931년 서지고가 금릉으로 옮기고 937년 선양받아 남당을 세움
-  startEvents: []
-  endEvents: []
+  startEvents: [yang-wu-902]
+  endEvents: [xu-zhigao-southern-tang-937]
   basis:
     type: primary_source
     refs: ["『구오대사』 참위열전", "『신오대사』 오세가", "『자치통감』"]
@@ -272,8 +272,8 @@
     - 후량의 백승군으로 인정받고 오에도 명목상 귀부함
     - 911~912년 소주를 남한에게 잃음
     - 918년 오에 병합됨
-  startEvents: []
-  endEvents: []
+  startEvents: [yang-wu-902]
+  endEvents: [yang-wu-902]
   basis:
     type: primary_source
     refs: ["『자치통감』", "『구오대사』", "『십국춘추』"]
@@ -294,8 +294,8 @@
     - 958년 강북 14주를 후주에 넘기고 칭신함
     - 971년 국호를 강남으로 낮춤
     - 마지막 임금 이욱은 사(詞)의 대가로 이름남
-  startEvents: []
-  endEvents: []
+  startEvents: [xu-zhigao-southern-tang-937]
+  endEvents: [song-conquers-southern-tang-975]
   basis:
     type: primary_source
     refs: ["『구오대사』 참위열전", "『신오대사』 남당세가", "『자치통감』", "『송사』 세가"]
@@ -316,8 +316,8 @@
     - 첸탕강 제방을 쌓고 바다 무역으로 부를 쌓음
     - 947년 이인달이 바친 복주를 얻음
     - 978년 송에 땅을 바침
-  startEvents: []
-  endEvents: []
+  startEvents: [wuyue-qian-liu-907]
+  endEvents: [wuyue-qingyuan-submit-978]
   basis:
     type: primary_source
     refs: ["『구오대사』 세습열전", "『신오대사』 오월세가", "『자치통감』"]
@@ -338,8 +338,8 @@
     - 933년 왕연균이 황제를 칭함
     - 943년 왕연정이 건주(建州)에서 은(殷)을 세움
     - 945년 남당에 망함
-  startEvents: []
-  endEvents: []
+  startEvents: [min-wang-shenzhi-907]
+  endEvents: [min-fall-945]
   basis:
     type: primary_source
     refs: ["『구오대사』 세습열전", "『신오대사』 민세가", "『자치통감』"]
@@ -359,8 +359,8 @@
     - 남당의 절도사로 명목상 신하였음
     - 964년 송이 평해군으로 이름을 고침
     - 바다 무역 항구 천주를 다스림
-  startEvents: []
-  endEvents: []
+  startEvents: [min-fall-945]
+  endEvents: [wuyue-qingyuan-submit-978]
   basis:
     type: primary_source
     refs: ["『송사』 세가", "『십국춘추』", "『자치통감』"]
@@ -381,8 +381,8 @@
     - 938년 교주(베트남 북부) 원정이 실패함
     - 951년 초의 내분 틈에 광시 북부를 얻음
     - 971년 송에 항복함
-  startEvents: []
-  endEvents: []
+  startEvents: [southern-han-liu-yin-905]
+  endEvents: [song-conquers-southern-han-971]
   basis:
     type: primary_source
     refs: ["『구오대사』 참위열전", "『신오대사』 남한세가", "『자치통감』"]
@@ -403,8 +403,8 @@
     - 911년 용관을 남한에게 잃음
     - 947년부터 마씨 형제의 다툼이 이어짐
     - 951년 남당에 망함
-  startEvents: []
-  endEvents: []
+  startEvents: [ma-chu-ma-yin-907]
+  endEvents: [ma-chu-fall-wuping-951]
   basis:
     type: primary_source
     refs: ["『구오대사』 세습열전", "『신오대사』 초세가", "『자치통감』"]
@@ -423,8 +423,8 @@
     - 치소는 낭주(지금 창더), 주행봉 때부터 담주도 다스림
     - 후주와 송에 칭신함
     - 963년 송의 형호 출병으로 평정됨
-  startEvents: []
-  endEvents: []
+  startEvents: [ma-chu-fall-wuping-951]
+  endEvents: [song-conquers-jingnan-chu-963]
   basis:
     type: primary_source
     refs: ["『송사』 세가", "『자치통감』", "『십국춘추』"]
