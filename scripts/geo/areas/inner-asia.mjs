@@ -419,7 +419,7 @@ export const versions = {
   'eastern-turks': [[583, 630, U([EASTERN_TURKS], [ALXA])]],
   // 663년 토욕혼을 무너뜨린 뒤 칭하이 북부도 토번 (2026-09-29)
   tibet: [[618, 663, P(TIBET)], [663, 843, U([TIBET], QH_N)]],
-  // 요서: 5대 왕조의 화북에 들지 않은 북쪽은 요, 960년 송 건국 뒤로는 요서 전체가 요
+  // 요서: 5대 왕조의 화북에 들지 않은 북쪽은 요, 960년 송 건국 뒤로는 요서 전체가 요. 916~922년 유관 동쪽 요서 회랑의 서쪽 끝(LX916 밖)은 아래 빈 땅 채우기가 더함(2026-10-26)
   liao: [
     [916, 923, U(KHITAN_W, D(LIAOXI, HUABEI), LX916)],
     [923, 926, U(KHITAN_W, D(LIAOXI, HUABEI), LX923)],
@@ -439,7 +439,7 @@ export const versions = {
 // 서부 남쪽: 동호 → 오환(요서 북쪽)·선비 → 선비 → 거란 부족 / 서부 북쪽: 동호 → 선비 → 실위
 // 동부: 숙신 → 읍루 → 물길 → 말갈 (읍루·물길·말갈은 이미 있는 영토에 덧붙인다)
 // 구역 상수와 fillSpecs: 엔진(engine.mjs의 fillEmptyLand)이 모든 권역을 합친 뒤 이 순서대로 채운다. spec 순서가 땅 배분을 정하므로 바꾸지 않는다.
-// spec 28개, 나라 id 20개 가운데 17개는 채우기로만 만들고, eupru·mulgil·malgal은 위 versions에 덧붙인다. 끝 없음은 to: 3000
+// spec 29개, 나라 id 21개 가운데 17개는 채우기로만 만들고, eupru·mulgil·malgal·liao는 위 versions에 덧붙인다. 끝 없음은 to: 3000
 // 요동은 늘 연·진·한·위·진·전연·고구려 등이 가졌으므로 채우지 않는다. 중국 왕조 사이 빈 해(기원전 206~201년, 24년)에는 빈 땅으로 둔다 (2026-09-28)
 const MAN_REGION = D(box(118.5, 38.5, 136.0, 49.5), KOREA, [CHINA], [LIAODONG]);
 const NORTH_W = I(MAN_REGION, box(118.5, 45.5, 126.5, 49.5));
@@ -464,7 +464,9 @@ export const fillSpecs = [
   { id: 'xianbei', zone: U(LIAOXI, [LIAODONG]), from: 317, to: 337 },
   { id: 'khitan', zone: WEST_S, from: 388, to: 916 },
   // 당이 무너진 뒤 요서 북쪽은 거란이 차지했다 (916년 요 건국 뒤로는 요의 땅)
+  // 유관(산하이관) 동쪽 요서 회랑(진저우·후루다오·싱청·쑤이중 둘레)도 후량·연이 다스리지 않아 빈 땅이므로 907~915년은 거란, 916~922년 요 LX916 밖 서쪽 끝은 요가 채운다 (2026-10-26)
   { id: 'khitan', zone: LIAOXI, from: 907, to: 916 },
+  { id: 'liao', zone: LIAOXI, from: 916, to: 923 },
   { id: 'shiwei', zone: NORTH_W, from: 400, to: 916 },
   // 719~818년 눈강·송화강 합류부 서쪽(발해 북서쪽 모서리)은 실위(황두실위·달구 등)의 땅으로 본 추정 (『신당서』 동이전 유귀조의 달말루·달구 기사). 말갈 조각으로 떨어지던 곳 (2026-09-28)
   { id: 'shiwei', zone: I(MAN_REGION, [ring([[124.5, 45.0], [125.4, 45.5], [124.5, 45.5]])]), from: 719, to: 818 },

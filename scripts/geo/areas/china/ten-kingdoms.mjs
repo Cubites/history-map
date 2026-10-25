@@ -22,7 +22,7 @@
 //   모든 조각을 이 시대 기존 도형의 경계선으로 다시 나눈 'M4 조각'을 쓴다: h = 5대 왕조 도형 상자 안(shared.mjs HUABEI, 북위 32.8°·동경 103°·북위 41.2°),
 //   n = 연운 16주 남쪽 경계 북쪽(NORTH_OF_YANYUN), 3·6 = 요서 해안(LX923·LX916), x = 서하 상자(XIXIA, 송 도형이 뺌), l = 요서(LIAOXI), j = 건창(JIANCHANG, 대도하 남쪽), d = 대리(DALI).
 //   조각 이름은 '<조각>~<구역 글자>'(구역 밖이면 꼬리 없음)이고, 표에는 M2·M3 칸 이름·M3 조각 이름·이 파일에서 쪼갠 칸 이름을 쓰면 그 아래 모든 M4 조각이다.
-//   기존 나라가 어느 해 어느 조각을 덮는지는 existing()이 구역 글자로 정하고(생성물로 대조함: 거란 907~915 = 요서 중 HUABEI 밖, 요 916~/923~ = 그에 LX916/LX923,
+//   기존 나라가 어느 해 어느 조각을 덮는지는 existing()이 구역 글자로 정하고(생성물로 대조함: 거란 907~915 = 요서 중 HUABEI 밖과 유관 동쪽 요서 회랑, 요 916~922 = 그에 LX916과 회랑 서쪽 끝, 923~ = 그에 LX923,
 //   요 938~ = 연운 남쪽 경계 북쪽(서하 상자 밖)과 요서, 송 960~ = n·x·l·j·d 밖), 새 나라 표(TABLE)와 같은 해 한 조각을 함께 가지면 멈춘다(승인 줄 APPROVED만 통과).
 // 근거: 위키백과 en·zh(scratchpad m4/research/notes-a.md, 결과 노트 1절). 수도 정답표: data/tests/places/east-asia.yaml(중국 M4 줄)
 import { D, I, U, box, loadFragments, ring } from '../../lib.mjs';
@@ -176,7 +176,12 @@ const build = (cells) => U(...cells.map((c) => CELL[c]));
 const JIN_907 = pc('SX_TY', 'SX_FEN', 'SX_LL', 'SX_XD', 'SX_XN', 'Y_SX', 'ZS_SX', 'SX_SDN', 'SX_SDS', 'Y_HD', 'Y_YND', 'NM_FZ', 'NM_YZ', 'NM_X.C', 'SNX_R.C', 'SNX_N.C');
 // 연(燕, 유수광): 노룡군 — 유·계·단·순·탁·영·막·평주와 산후의 규·유(儒)·무·신주(베이징·톈진 북쪽·탕산·랑팡·허젠·청더 남부·친황다오, 장자커우 동쪽). 장성 선 밖(HUABEI 밖)은 거란 쪽이라 뺌.
 // 평주(노룡현, 친황다오 서쪽)는 허베이성 안이라 포함. 유관(산하이관) 동쪽 요서 회랑(랴오닝 조각 LN_X의 HUABEI 안, 진저우·후루다오 쪽 해안)은 노룡군이 다스린 땅이 아니라 넣지 않음.
-// 이 땅은 기존 후량(907~915 HUABEI)·916~ 후량/요(LX916) 도형이 그대로 덮는다: 비우면 만주 빈 땅 채우기(inner-asia 거란 907~916 요서 채우기)가 거란에게 줘 거란 도형이 바뀌므로 비우지 않음(알려진 근사)
+// 이 회랑은 후량 도형에서도 뺀다(LATER_LIANG_OUT, 2026-10-26 운영자 승인): 907~915는 만주 빈 땅 채우기(inner-asia 거란 907~916 요서 채우기)가 거란에게,
+//   916~922는 요 LX916 밖 서쪽 끝(동경 119.8° 서쪽, 쑤이중·젠창 둘레)을 inner-asia 요 916~923 요서 채우기가 요에게 준다(유관 동쪽을 다스린 중국 쪽 세력 기록이 없고, 기존 요서 북쪽 처리와 같은 해).
+//   회랑 = LN_X 중 HUABEI 안·연운 남쪽 경계 북쪽(구역 글자 h·n). 요하 하구 서쪽 끝 띠(LN_X의 h 중 n 밖, 1만 km² 미만)는 923년 뒤 후당 도형(D(HUABEI, LX923))처럼 5대 왕조 도형 그대로(알려진 근사)
+const LX_CORRIDOR = pc('LN_X').filter(has('h')).filter(has('n'));
+const LX_CORRIDOR_W = LX_CORRIDOR.filter(not('6'));
+const IN_LX_CORRIDOR = new Set(LX_CORRIDOR), IN_LX_CORRIDOR_W = new Set(LX_CORRIDOR_W);
 const YAN_907 = pc('YAN_YN', 'YAN_ZH', 'YAN_CZ', 'YAN_TJ', 'BJ_Y', 'BJ_X', 'Y_HXW', 'Y_HXE', 'Y_HXL', 'Y_HXB').filter(has('h'));
 // 의창군(창·경·덕·체주): 909년 유수광이 형 유수문을 사로잡고 차지 → 913년 진
 const YICHANG = pc('HE_CE', 'YC_CZ', 'YC_YN', 'QI_YN', 'YC_TJ', 'TJ_S', 'Y_HC', 'YC_QI1', 'YC_QI2', 'YC_WN');
@@ -307,8 +312,8 @@ const EXTERNAL = new Set(['later-liang', 'later-tang', 'later-jin', 'later-han',
 function existing(year, c) {
   const f = FLAG[c];
   const h = f.includes('h'), n = f.includes('n'), x = f.includes('x'), l = f.includes('l');
-  if (year < 916) return h ? 'later-liang' : l ? 'khitan' : null; // HUABEI / 거란(요서 중 HUABEI 밖)
-  if (year < 923) return h && !f.includes('6') ? 'later-liang' : (l && !h) || f.includes('6') ? 'liao' : null; // D(HUABEI, LX916)
+  if (year < 916) return h && !IN_LX_CORRIDOR.has(c) ? 'later-liang' : l ? 'khitan' : null; // HUABEI에서 요서 회랑을 뺀 곳 / 거란(요서 중 HUABEI 밖과 회랑, 빈 땅 채우기)
+  if (year < 923) return h && !f.includes('6') && !IN_LX_CORRIDOR_W.has(c) ? 'later-liang' : (l && !h) || f.includes('6') || IN_LX_CORRIDOR_W.has(c) ? 'liao' : null; // D(HUABEI, LX916)에서 회랑 서쪽 끝을 뺀 곳 / 요(회랑 서쪽 끝은 빈 땅 채우기)
   if (year < 938) return h && !f.includes('3') ? (year < 936 ? 'later-tang' : 'later-jin') : (l && !h) || f.includes('3') ? 'liao' : null; // D(HUABEI, LX923)
   if (year < 960) return h && !n ? (year < 947 ? 'later-jin' : year < 951 ? 'later-han' : 'later-zhou') : (n && !x) || l ? 'liao' : null; // HUABEI_938
   if ((n && !x) || l) return 'liao';
@@ -376,8 +381,8 @@ export const TEN_KINGDOMS_NW_CELLS = CELL;
 export const TEN_KINGDOMS_NW_FLAGS = FLAG;
 // 권역 파일(areas/china.mjs)이 기존 나라 도형에서 빼거나 더하는 땅 (00-scope 5절 승인 줄, 2026-10-24 운영자 결정 1~3)
 const takenIn = (year) => [...new Set(Object.entries(TABLE).filter(([id]) => !EXTERNAL.has(id)).flatMap(([, list]) => list.filter(([f, t]) => f <= year && year < t).flatMap(([, , cells]) => cells)))].filter(has('h'));
-/** 후량에서 뺄 땅(키 = 버전 첫 해): 진·기·연·성덕·의무와 전촉의 한중·4주(HUABEI 안) */
-export const LATER_LIANG_OUT = Object.fromEntries([907, 909, 910, 915, 916].map((y) => [y, build(takenIn(y))]));
+/** 후량에서 뺄 땅(키 = 버전 첫 해): 진·기·연·성덕·의무와 전촉의 한중·4주(HUABEI 안), 유관 동쪽 요서 회랑(907~915 전부, 916~922는 LX916 밖 서쪽 끝 — 2026-10-26 운영자 승인) */
+export const LATER_LIANG_OUT = Object.fromEntries([907, 909, 910, 915, 916].map((y) => [y, build([...takenIn(y), ...(y < 916 ? LX_CORRIDOR : LX_CORRIDOR_W)])]));
 /** 5대 왕조에서 뺄 전촉·후촉의 북쪽 땅(HUABEI 안: 한중·문주 끝·리주 끝, 4주 포함 여부는 키 = 버전 첫 해: 915·947은 4주 포함, 934·955는 한중만) */
 export const SHU_NORTH = { 907: build(FS_907.filter(has('h'))), 915: build(FS_915.filter(has('h'))), 934: build(LS_934.filter(has('h'))), 947: build(LS_947.filter(has('h'))), 955: build(LS_955.filter(has('h'))) };
 /** 후당 925~933에 더할 쓰촨(전촉 땅에서 귀·협주와 HUABEI 안을 뺀 것) */
