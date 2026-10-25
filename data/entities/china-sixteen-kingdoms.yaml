@@ -19,8 +19,8 @@
     - 311년 뤄양을 함락하고 서진 회제를 사로잡음(영가의 난)
     - 316년 장안을 함락해 서진 민제의 항복을 받음
     - 323년 진안을 깨고 룽유(톈수이·핑량)를 차지함
-  startEvents: []
-  endEvents: []
+  startEvents: [han-zhao-304]
+  endEvents: [later-zhao-319]
   basis:
     type: primary_source
     refs: ["『진서』 유원해재기·유요재기", "『자치통감』"]
@@ -40,8 +40,8 @@
     - 306년 이웅이 황제를 칭하고 국호를 대성이라 함
     - 333년 닝주 자사 윤봉이 항복해 남중을 차지함
     - 338년 이수가 이기를 몰아내고 국호를 한으로 바꿈
-  startEvents: []
-  endEvents: []
+  startEvents: [cheng-han-304]
+  endEvents: [cheng-han-304, huan-wen-347]
   basis:
     type: primary_source
     refs: ["『진서』 이특재기·이웅재기", "『화양국지』"]
@@ -61,8 +61,8 @@
     - 319년 조왕을 칭하고 330년 황제를 칭함
     - 328년 뤄양 싸움에서 전조의 유요를 사로잡음
     - 서역 승려 불도징을 받들어 불교가 화북에 퍼짐
-  startEvents: []
-  endEvents: []
+  startEvents: [later-zhao-319]
+  endEvents: [later-zhao-shi-hu-333]
   basis:
     type: primary_source
     refs: ["『진서』 석륵재기·석계룡재기", "『자치통감』"]
@@ -81,8 +81,8 @@
     - 도읍은 고장(지금 우웨이)
     - 서진이 무너진 뒤에도 민제의 연호 건흥을 이어 씀
     - 중원에서 피난 온 사람들을 받아들여 학문이 이어짐
-  startEvents: []
-  endEvents: []
+  startEvents: [former-liang-301]
+  endEvents: [former-liang-301]
   basis:
     type: primary_source
     refs: ["『진서』 장궤전", "『자치통감』"]
@@ -101,8 +101,8 @@
     - 도읍은 성락(지금 후허하오터 남쪽 허린거얼)
     - 310년 서진의 유곤을 도와 대공에 봉해지고 315년 대왕이 됨
     - 313년 평성(지금 다퉁)을 남도로 삼음
-  startEvents: []
-  endEvents: []
+  startEvents: [tuoba-dai-310]
+  endEvents: [tuoba-dai-310]
   basis:
     type: primary_source
     refs: ["『위서』 서기", "『진서』 유곤전"]
@@ -124,8 +124,8 @@
     - 394년 부등을 꺾어 전진의 남은 땅을 차지함
     - 399년 뤄양을, 400년 서진(西秦)을 차지하고 403년 후량(後涼)의 항복을 받음
     - 요흥이 구마라집을 장안에 맞아 불경 번역을 도움
-  startEvents: []
-  endEvents: []
+  startEvents: [later-qin-yao-chang-384]
+  endEvents: [liu-yu-later-qin-416]
   basis:
     type: primary_source
     refs: ["『진서』 요장재기·요흥재기", "『자치통감』"]
@@ -144,8 +144,8 @@
     - 도읍은 용사천·금성·서성·원천을 거쳐 412년 포한(지금 린샤)
     - 400년 후진에게 항복해 나라가 끊겼다가 409년 다시 세움
     - 414년 남량을 멸하고 시닝·하이둥을 차지함
-  startEvents: []
-  endEvents: []
+  startEvents: [western-qin-385]
+  endEvents: [western-qin-385]
   basis:
     type: primary_source
     refs: ["『진서』 걸복국인재기·걸복건귀재기", "『자치통감』"]
@@ -164,8 +164,8 @@
     - 도읍은 고장(지금 우웨이)
     - 여광은 전진의 명으로 쿠차(구자)를 치고 구마라집을 데려옴
     - 397년 독발오고(남량)와 단업(북량)이 갈라져 나감
-  startEvents: []
-  endEvents: []
+  startEvents: [later-liang-lu-382]
+  endEvents: [later-liang-lu-382]
   basis:
     type: primary_source
     refs: ["『진서』 여광재기", "『자치통감』"]
@@ -184,8 +184,8 @@
     - 도읍은 낙도·서평(지금 시닝)·고장을 거쳐 410년 다시 낙도
     - 404년 후진에 칭신했다가 408년 다시 왕을 칭함
     - 406년 후진에게서 고장을 받았으나 410년 북량에 밀려 떠남
-  startEvents: []
-  endEvents: []
+  startEvents: [three-liang-397]
+  endEvents: [three-liang-397, western-qin-385]
   basis:
     type: primary_source
     refs: ["『진서』 독발오고재기·독발녹단재기", "『자치통감』"]
@@ -205,8 +205,8 @@
     - 401년 저거몽손이 단업을 죽이고 나라를 이음
     - 421년 서량을 멸해 허시 회랑을 통일함
     - 불교를 크게 받들어 담무참이 불경을 번역함
-  startEvents: []
-  endEvents: []
+  startEvents: [three-liang-397]
+  endEvents: [juqu-mengxun-401, northern-wei-unification-424]
   basis:
     type: primary_source
     refs: ["『진서』 저거몽손재기", "『송서』 저거몽손전", "『자치통감』"]
@@ -225,8 +225,8 @@
     - 도읍은 돈황(지금 둔황)에서 405년 주천(지금 주취안)
     - 이고는 당 왕실이 조상으로 받든 사람임
     - 동진에 사신을 보내 진의 신하를 자처함
-  startEvents: []
-  endEvents: []
+  startEvents: [three-liang-397]
+  endEvents: [three-liang-397]
   basis:
     type: primary_source
     refs: ["『진서』 양무소왕전", "『자치통감』"]
@@ -245,8 +245,8 @@
     - 도읍은 활대에서 399년 광고(지금 칭저우)
     - 모용덕은 전연을 세운 모용황의 아들로 후연 모용수의 아우
     - 모용초가 동진의 회수 북쪽을 노략해 유유의 북벌을 부름
-  startEvents: []
-  endEvents: []
+  startEvents: [southern-yan-398]
+  endEvents: [southern-yan-398]
   basis:
     type: primary_source
     refs: ["『진서』 모용덕재기·모용초재기", "『자치통감』"]
@@ -265,8 +265,8 @@
     - 도읍은 통만성. 427년 통만성을 잃은 뒤 상규(지금 톈수이)·핑량으로 옮김
     - 407년 혁련발발이 장인 몰혁간을 치고 그 무리를 빼앗아 섬
     - 418년 동진에게서 장안을 빼앗고 파상에서 황제를 칭함
-  startEvents: []
-  endEvents: []
+  startEvents: [helian-xia-407]
+  endEvents: [helian-xia-407, northern-wei-unification-424]
   basis:
     type: primary_source
     refs: ["『진서』 혁련발발재기", "『위서』 철불유호전", "『자치통감』"]
@@ -285,8 +285,8 @@
     - 도읍은 장안을 거쳐 386년 장자(지금 창즈)
     - 384~386년 사이 왕이 여러 번 바뀐 끝에 모용영이 즉위함
     - 394년 같은 모용씨의 후연에게 멸망함
-  startEvents: []
-  endEvents: []
+  startEvents: [western-yan-384]
+  endEvents: [western-yan-384]
   basis:
     type: primary_source
     refs: ["『진서』 모용충재기", "『자치통감』"]
@@ -305,8 +305,8 @@
     - 도읍은 청두
     - 405년 동진 익주의 군사 반란으로 초종이 성도왕에 오름
     - 후진에 칭신해 도움을 받음
-  startEvents: []
-  endEvents: []
+  startEvents: [western-shu-405]
+  endEvents: [western-shu-405]
   basis:
     type: primary_source
     refs: ["『진서』 초종전", "『자치통감』"]

@@ -94,7 +94,7 @@
     - 97년 반초가 부하 감영을 대진(로마)에 보냈으나 감영은 조지에서 되돌아옴
     - 고구려와 요동·현도를 두고 자주 충돌함
   startEvents: [guangwu-founding-25]
-  endEvents: []
+  endEvents: [three-kingdoms-220]
   basis:
     type: primary_source
     refs: ["『후한서』"]
@@ -114,8 +114,8 @@
     - 관구검을 보내 고구려의 환도성을 함락함(244~245)
     - 263년 촉을 멸망시킴
     - 263년 교지군의 여흥이 오의 태수 손서를 죽이고 구진과 함께 위에 붙었고 위는 교지에 관리를 보냄
-  startEvents: []
-  endEvents: []
+  startEvents: [three-kingdoms-220]
+  endEvents: [sima-seizure-249]
   basis:
     type: primary_source
     refs: ["『삼국지』 위서"]
@@ -130,8 +130,8 @@
   summary: 유비가 쓰촨에 세운 삼국 시대 왕조. 위에 멸망
   mapNote: 남쪽은 남중(윈난·구이저우)까지 그리고, 광시와 베트남 북부(교주)는 오의 땅이라 넣지 않음
   endNote: 263년 위에 멸망함. 오는 같은 해 교지의 여흥 반란 때문에 위가 촉을 칠 때 촉을 돕지 못함
-  startEvents: []
-  endEvents: []
+  startEvents: [three-kingdoms-220]
+  endEvents: [sima-seizure-249]
   basis:
     type: primary_source
     refs: ["『삼국지』 촉서"]
@@ -150,8 +150,8 @@
     - 지금의 광시·광둥과 베트남 북부(교지·구진·일남)를 다스림
     - 바닷길로 고구려와 사신을 주고받음
     - 263년 교지군의 여흥이 태수 손서를 죽이고 위에 붙었으나, 268년부터 군대를 보내 271년 되찾음
-  startEvents: []
-  endEvents: []
+  startEvents: [three-kingdoms-220]
+  endEvents: [jin-unification-280]
   basis:
     type: primary_source
     refs: ["『삼국지』 오서"]
@@ -170,7 +170,7 @@
     - 280년 오를 무너뜨리고 중국을 통일함
     - 혜제 때 팔왕의 난(291~306)으로 약해짐
     - 흉노 출신 유연이 304년 한(漢, 뒤의 전조)을 세워 맞섬
-  startEvents: []
+  startEvents: [sima-seizure-249]
   endEvents: [yongjia-eastern-jin-311]
   basis:
     type: primary_source
