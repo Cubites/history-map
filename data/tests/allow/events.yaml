@@ -666,3 +666,104 @@
 - key: '979 song 버전'
   reason: 중국 송·요·금 사건 묶음(cn-05) 전이라 아직 이을 사건이 없음
   decided: 중국 M4 기본값(00-scope 4절)
+
+# ── 중국 M4b(2026-10-25): 5대 10국 남부·동남 지도의 새 나라·버전 해 (송·요·금 사건 묶음 cn-05가 채움) ──
+- key: '907 yang-wu 성립'
+  reason: 중국 송·요·금 사건 묶음(cn-05) 전이라 아직 이을 사건이 없음
+  decided: 중국 M4 기본값(00-scope 4절)
+- key: '907 qianzhou-baisheng 성립'
+  reason: 중국 송·요·금 사건 묶음(cn-05) 전이라 아직 이을 사건이 없음
+  decided: 중국 M4 기본값(00-scope 4절)
+- key: '907 wuyue 성립'
+  reason: 중국 송·요·금 사건 묶음(cn-05) 전이라 아직 이을 사건이 없음
+  decided: 중국 M4 기본값(00-scope 4절)
+- key: '907 ma-chu 성립'
+  reason: 중국 송·요·금 사건 묶음(cn-05) 전이라 아직 이을 사건이 없음
+  decided: 중국 M4 기본값(00-scope 4절)
+- key: '907 min-kingdom 성립'
+  reason: 중국 송·요·금 사건 묶음(cn-05) 전이라 아직 이을 사건이 없음
+  decided: 중국 M4 기본값(00-scope 4절)
+- key: '907 southern-han 성립'
+  reason: 중국 송·요·금 사건 묶음(cn-05) 전이라 아직 이을 사건이 없음
+  decided: 중국 M4 기본값(00-scope 4절)
+- key: '918 qianzhou-baisheng 소멸'
+  reason: 중국 송·요·금 사건 묶음(cn-05) 전이라 아직 이을 사건이 없음
+  decided: 중국 M4 기본값(00-scope 4절)
+- key: '937 yang-wu 소멸'
+  reason: 중국 송·요·금 사건 묶음(cn-05) 전이라 아직 이을 사건이 없음
+  decided: 중국 M4 기본값(00-scope 4절)
+- key: '937 southern-tang 성립'
+  reason: 중국 송·요·금 사건 묶음(cn-05) 전이라 아직 이을 사건이 없음
+  decided: 중국 M4 기본값(00-scope 4절)
+- key: '945 min-kingdom 소멸'
+  reason: 중국 송·요·금 사건 묶음(cn-05) 전이라 아직 이을 사건이 없음
+  decided: 중국 M4 기본값(00-scope 4절)
+- key: '949 qingyuan-jun 성립'
+  reason: 중국 송·요·금 사건 묶음(cn-05) 전이라 아직 이을 사건이 없음
+  decided: 중국 M4 기본값(00-scope 4절)
+- key: '951 ma-chu 소멸'
+  reason: 중국 송·요·금 사건 묶음(cn-05) 전이라 아직 이을 사건이 없음
+  decided: 중국 M4 기본값(00-scope 4절)
+- key: '952 wuping-jun 성립'
+  reason: 중국 송·요·금 사건 묶음(cn-05) 전이라 아직 이을 사건이 없음
+  decided: 중국 M4 기본값(00-scope 4절)
+- key: '963 wuping-jun 소멸'
+  reason: 중국 송·요·금 사건 묶음(cn-05) 전이라 아직 이을 사건이 없음
+  decided: 중국 M4 기본값(00-scope 4절)
+- key: '971 southern-han 소멸'
+  reason: 중국 송·요·금 사건 묶음(cn-05) 전이라 아직 이을 사건이 없음
+  decided: 중국 M4 기본값(00-scope 4절)
+- key: '975 southern-tang 소멸'
+  reason: 중국 송·요·금 사건 묶음(cn-05) 전이라 아직 이을 사건이 없음
+  decided: 중국 M4 기본값(00-scope 4절)
+- key: '978 wuyue 소멸'
+  reason: 중국 송·요·금 사건 묶음(cn-05) 전이라 아직 이을 사건이 없음
+  decided: 중국 M4 기본값(00-scope 4절)
+- key: '978 qingyuan-jun 소멸'
+  reason: 중국 송·요·금 사건 묶음(cn-05) 전이라 아직 이을 사건이 없음
+  decided: 중국 M4 기본값(00-scope 4절)
+- key: '909 yang-wu 버전'
+  reason: 중국 송·요·금 사건 묶음(cn-05) 전이라 아직 이을 사건이 없음
+  decided: 중국 M4 기본값(00-scope 4절)
+- key: '911 southern-han 버전'
+  reason: 중국 송·요·금 사건 묶음(cn-05) 전이라 아직 이을 사건이 없음
+  decided: 중국 M4 기본값(00-scope 4절)
+- key: '911 ma-chu 버전'
+  reason: 중국 송·요·금 사건 묶음(cn-05) 전이라 아직 이을 사건이 없음
+  decided: 중국 M4 기본값(00-scope 4절)
+- key: '912 qianzhou-baisheng 버전'
+  reason: 중국 송·요·금 사건 묶음(cn-05) 전이라 아직 이을 사건이 없음
+  decided: 중국 M4 기본값(00-scope 4절)
+- key: '912 southern-han 버전'
+  reason: 중국 송·요·금 사건 묶음(cn-05) 전이라 아직 이을 사건이 없음
+  decided: 중국 M4 기본값(00-scope 4절)
+- key: '918 yang-wu 버전'
+  reason: 중국 송·요·금 사건 묶음(cn-05) 전이라 아직 이을 사건이 없음
+  decided: 중국 M4 기본값(00-scope 4절)
+- key: '945 southern-tang 버전'
+  reason: 중국 송·요·금 사건 묶음(cn-05) 전이라 아직 이을 사건이 없음
+  decided: 중국 M4 기본값(00-scope 4절)
+- key: '947 wuyue 버전'
+  reason: 중국 송·요·금 사건 묶음(cn-05) 전이라 아직 이을 사건이 없음
+  decided: 중국 M4 기본값(00-scope 4절)
+- key: '949 southern-tang 버전'
+  reason: 중국 송·요·금 사건 묶음(cn-05) 전이라 아직 이을 사건이 없음
+  decided: 중국 M4 기본값(00-scope 4절)
+- key: '951 southern-han 버전'
+  reason: 중국 송·요·금 사건 묶음(cn-05) 전이라 아직 이을 사건이 없음
+  decided: 중국 M4 기본값(00-scope 4절)
+- key: '958 southern-tang 버전'
+  reason: 중국 송·요·금 사건 묶음(cn-05) 전이라 아직 이을 사건이 없음
+  decided: 중국 M4 기본값(00-scope 4절)
+- key: '958 later-zhou 버전'
+  reason: 중국 송·요·금 사건 묶음(cn-05) 전이라 아직 이을 사건이 없음
+  decided: 중국 M4 기본값(00-scope 4절)
+- key: '971 song 버전'
+  reason: 중국 송·요·금 사건 묶음(cn-05) 전이라 아직 이을 사건이 없음
+  decided: 중국 M4 기본값(00-scope 4절)
+- key: '975 song 버전'
+  reason: 중국 송·요·금 사건 묶음(cn-05) 전이라 아직 이을 사건이 없음
+  decided: 중국 M4 기본값(00-scope 4절)
+- key: '978 song 버전'
+  reason: 중국 송·요·금 사건 묶음(cn-05) 전이라 아직 이을 사건이 없음
+  decided: 중국 M4 기본값(00-scope 4절)

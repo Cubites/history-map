@@ -2315,3 +2315,222 @@
   url: "https://zh.wikipedia.org/wiki/荆南"
   from: "중국 M4"
   note: "907~924년 형남은 강릉 한 성(1만 km² 미만)이라 그리지 않음"
+
+- name: "강도부(양저우, 오(吳, 양씨))"
+  at: [119.42, 32.39]
+  year: 920
+  expect: yang-wu
+  url: "https://zh.wikipedia.org/wiki/杨吴"
+  from: "중국 M4"
+  note: "양행밀이 세운 오의 도읍(광릉)"
+
+- name: "양저우(후주가 회남을 얻은 뒤)"
+  at: [119.42, 32.39]
+  year: 959
+  expect: later-zhou
+  url: "https://zh.wikipedia.org/wiki/后周攻南唐之战"
+  from: "중국 M4"
+  note: "958년 화의로 남당이 창장강 북쪽 14주를 후주에 넘김"
+
+- name: "건주(虔州, 간저우)"
+  at: [114.93, 25.83]
+  year: 915
+  expect: qianzhou-baisheng
+  url: "https://zh.wikipedia.org/wiki/谭全播"
+  from: "중국 M4"
+  note: "노광조·담전파의 건주(虔州), 918년 오에 병합"
+
+- name: "금릉(난징, 남당)"
+  at: [118.78, 32.05]
+  year: 956
+  expect: southern-tang
+  url: "https://zh.wikipedia.org/wiki/南唐"
+  from: "중국 M4"
+  note: "남당의 도읍(강녕부)"
+
+- name: "금릉(난징, 남당 끝 무렵)"
+  at: [118.78, 32.05]
+  year: 974
+  expect: southern-tang
+  url: "https://zh.wikipedia.org/wiki/宋灭南唐之战"
+  from: "중국 M4"
+  note: "975년 11월(음력) 금릉 함락 전"
+
+- name: "난징(송이 남당을 멸한 뒤)"
+  at: [118.78, 32.05]
+  year: 976
+  expect: song
+  url: "https://zh.wikipedia.org/wiki/宋灭南唐之战"
+  from: "중국 M4"
+  note: "975년 금릉 함락으로 남당이 망함"
+
+- name: "항저우(오월)"
+  at: [120.16, 30.25]
+  year: 930
+  expect: wuyue
+  url: "https://zh.wikipedia.org/wiki/吴越国"
+  from: "중국 M4"
+  note: "오월의 도읍(서부)"
+
+- name: "항저우(오월 끝 무렵)"
+  at: [120.16, 30.25]
+  year: 977
+  expect: wuyue
+  url: "https://en.wikipedia.org/wiki/Wuyue"
+  from: "중국 M4"
+  note: "978년 전홍숙의 납토 전"
+
+- name: "항저우(오월 납토 뒤)"
+  at: [120.16, 30.25]
+  year: 979
+  expect: song
+  url: "https://en.wikipedia.org/wiki/Wuyue"
+  from: "중국 M4"
+  note: "978년 전홍숙이 송에 땅을 바침"
+
+- name: "장락부(푸저우, 민(閩))"
+  at: [119.30, 26.08]
+  year: 930
+  expect: min-kingdom
+  url: "https://zh.wikipedia.org/wiki/闽国"
+  from: "중국 M4"
+  note: "민의 도읍(복주, 932년 장락부)"
+
+- name: "복주(푸저우, 이인달이 버틴 때, 비운 땅)"
+  at: [119.30, 26.08]
+  year: 946
+  expect: none
+  region: east-asia
+  url: "https://zh.wikipedia.org/wiki/闽国"
+  from: "중국 M4"
+  note: "945년 민이 망한 뒤 이인달이 남당·오월 사이에서 버팀(2년, 947년 오월)"
+
+- name: "복주(푸저우, 오월)"
+  at: [119.30, 26.08]
+  year: 950
+  expect: wuyue
+  url: "https://zh.wikipedia.org/wiki/吴越国"
+  from: "중국 M4"
+  note: "947년 이인달이 오월에 복주를 바침"
+
+- name: "건주(建州, 젠어우, 민 말기)"
+  at: [118.32, 27.04]
+  year: 944
+  expect: min-kingdom
+  url: "https://zh.wikipedia.org/wiki/闽国"
+  from: "중국 M4"
+  note: "943~945년 은(殷)의 도읍이었으나 지도는 민으로 칠함"
+
+- name: "건주(建州, 젠어우, 남당)"
+  at: [118.32, 27.04]
+  year: 948
+  expect: southern-tang
+  url: "https://zh.wikipedia.org/wiki/闽国"
+  from: "중국 M4"
+  note: "945년 남당이 건주를 함락해 민이 망함"
+
+- name: "천주(취안저우, 청원군)"
+  at: [118.59, 24.91]
+  year: 960
+  expect: qingyuan-jun
+  url: "https://zh.wikipedia.org/wiki/清源军"
+  from: "중국 M4"
+  note: "유종효·진홍진의 청원군 치소"
+
+- name: "흥왕부(광저우, 남한(南漢))"
+  at: [113.26, 23.13]
+  year: 930
+  expect: southern-han
+  url: "https://zh.wikipedia.org/wiki/南汉"
+  from: "중국 M4"
+  note: "남한의 도읍"
+
+- name: "광저우(남한 끝 무렵)"
+  at: [113.26, 23.13]
+  year: 970
+  expect: southern-han
+  url: "https://zh.wikipedia.org/wiki/宋灭南汉之战"
+  from: "중국 M4"
+  note: "971년 2월(음력) 유창의 항복 전"
+
+- name: "광저우(송이 남한을 멸한 뒤)"
+  at: [113.26, 23.13]
+  year: 972
+  expect: song
+  url: "https://zh.wikipedia.org/wiki/宋灭南汉之战"
+  from: "중국 M4"
+  note: "971년 유창이 송에 항복함"
+
+- name: "장사부(창사, 초(楚, 마씨))"
+  at: [112.94, 28.23]
+  year: 930
+  expect: ma-chu
+  url: "https://zh.wikipedia.org/wiki/马殷"
+  from: "중국 M4"
+  note: "마은이 세운 초의 도읍(담주)"
+
+- name: "장사(창사, 남당 점령 1년, 비운 땅)"
+  at: [112.94, 28.23]
+  year: 951
+  expect: none
+  region: east-asia
+  url: "https://zh.wikipedia.org/wiki/周行逢"
+  from: "중국 M4"
+  note: "951년 남당이 초를 멸하고 장사를 접수했다가 952년 쫓겨남(1년, 그리지 않음)"
+
+- name: "창사(송이 무평군을 평정한 뒤)"
+  at: [112.94, 28.23]
+  year: 964
+  expect: song
+  url: "https://zh.wikipedia.org/wiki/荆湖之战"
+  from: "중국 M4"
+  note: "963년 송의 형호 출병으로 후난이 송에 들어감"
+
+- name: "계주(구이린, 초)"
+  at: [110.29, 25.27]
+  year: 940
+  expect: ma-chu
+  url: "https://zh.wikipedia.org/wiki/南汉州县列表"
+  from: "중국 M4"
+  note: "정강군(계주)은 951년까지 초 땅"
+
+- name: "계주(구이린, 남한)"
+  at: [110.29, 25.27]
+  year: 955
+  expect: southern-han
+  url: "https://zh.wikipedia.org/wiki/南汉州县列表"
+  from: "중국 M4"
+  note: "951년 남한이 초의 내분 틈에 정강군을 얻음"
+
+- name: "낭주(창더, 무평군)"
+  at: [111.69, 29.03]
+  year: 960
+  expect: wuping-jun
+  url: "https://zh.wikipedia.org/wiki/周行逢"
+  from: "중국 M4"
+  note: "무평군 절도사의 치소"
+
+- name: "옹주(난닝, 건무군 때, 비운 땅)"
+  at: [108.37, 22.82]
+  year: 908
+  expect: none
+  region: east-asia
+  url: "https://zh.wikipedia.org/wiki/南汉州县列表"
+  from: "중국 M4"
+  note: "907~910년 건무군 엽광략의 땅(5년 미만, 그리지 않음), 911년 남한"
+
+- name: "양주(襄州, 샹양)"
+  at: [112.12, 32.04]
+  year: 930
+  expect: later-tang
+  url: "https://zh.wikipedia.org/wiki/山南东道节度使"
+  from: "중국 M4"
+  note: "산남동도 절도사의 치소, 5대 왕조 땅(형남·오·남당 몫 아님)"
+
+- name: "안주(安州, 안루)"
+  at: [113.69, 31.26]
+  year: 950
+  expect: later-han
+  url: "https://zh.wikipedia.org/wiki/安远军节度使"
+  from: "중국 M4"
+  note: "안원군 절도사의 치소, 5대 왕조 땅(오·남당과는 동경 114.25° 선)"

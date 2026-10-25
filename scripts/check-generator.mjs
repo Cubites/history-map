@@ -190,6 +190,7 @@ const ALLOWED_REPEATS = [
   { kind: '값만 같은 점', points: [[107.9, 17.5]], names: ['areas/china.mjs:GX', 'areas/china.mjs:HAN_SOUTH_OUT', 'areas/inner-asia.mjs:JIAOZHI', 'areas/inner-asia.mjs:OUT_SW'], why: '베트남 쪽 바깥 닫는 점, OUT_SW에 덮임' },
   { kind: '값만 같은 점', points: [[105.6, 22.6]], names: ['areas/china.mjs:GX', 'areas/china.mjs:HAN_SOUTH_OUT', 'areas/inner-asia.mjs:DALI'], why: '베트남 쪽 바깥 닫는 점, OUT_SW에 덮임' },
   { kind: '값만 같은 점', points: [[141.5, 48.5]], names: ['shared.mjs:PRIMORYE', 'areas/inner-asia.mjs:NE_FAR'], why: '타타르 해협 바다 쪽 점, 쓰이는 때가 다름' },
+  { kind: '값만 같은 점', points: [[120.9, 31.85]], names: ['areas/china.mjs:OCC_C_1937', 'areas/china/ten-kingdoms.mjs:L_YANGTZE'], why: '창장강 물길 점, 쓰이는 때가 다름(1937 점령선·5대 10국)' },
 ];
 const pointKey = ([x, y]) => `(${x}, ${y})`;
 const numberOf = (n) => (ts.isNumericLiteral(n) ? Number(n.text)
