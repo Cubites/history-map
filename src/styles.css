@@ -182,6 +182,7 @@ button {
   flex-direction: column;
   gap: 4px;
 }
+.map-controls button,
 .timeline button {
   min-width: 36px;
   height: 32px;
@@ -190,17 +191,6 @@ button {
   border-radius: 6px;
   background: var(--control-bg);
   font-size: 14px;
-  cursor: pointer;
-}
-/* PC 지도 단추는 타임라인 단추보다 약 30% 크게(높이 32→42px, 글자 14→18px, 2026-10-26) */
-.map-controls button {
-  min-width: 47px;
-  height: 42px;
-  padding: 0 13px;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  background: var(--control-bg);
-  font-size: 18px;
   cursor: pointer;
 }
 .map-controls button:hover,
@@ -523,7 +513,7 @@ button {
   .map-controls.map-theaters { top: auto; bottom: 8px; flex-direction: column; }
   .map-region-notice { top: 44px; font-size: 12px; }
   .map-zoom { display: none; }
-  .map-controls button { min-width: 36px; height: 28px; padding: 0 8px; border-radius: 6px; font-size: 12px; }
+  .map-controls button { height: 28px; padding: 0 8px; font-size: 12px; }
   .map-war-close {
     display: block;
     position: absolute;
