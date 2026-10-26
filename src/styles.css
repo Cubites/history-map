@@ -662,9 +662,10 @@ button {
 .war-marker-sub { font-size: 11px; fill: var(--label); opacity: 0; transition: opacity .15s; }
 .war-marker:hover .war-marker-sub, .war-marker:focus-visible .war-marker-sub { opacity: 1; }
 
+/* 전쟁 보기 띠(이름·닫기)는 지도 아래 가운데(2026-10-26: 위에서 옮김). 휴대폰은 아래 @media에서 숨김 */
 .war-banner {
   position: absolute;
-  top: 10px;
+  bottom: 12px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -678,8 +679,10 @@ button {
   white-space: nowrap;
   z-index: 2;
 }
-.war-banner-title { color: var(--front-line); font-weight: 700; }
-.war-banner button { font-size: 12px; padding: 2px 10px; border-radius: 999px; }
+.war-banner-title { min-width: 0; overflow: hidden; text-overflow: ellipsis; color: var(--front-line); font-weight: 700; }
+.war-banner button { flex: 0 0 auto; font-size: 12px; padding: 2px 10px; border-radius: 999px; }
+/* 지도가 좁으면 왼쪽 아래 전역 단추와 겹치지 않게 양쪽 150px씩 비우고 제목을 줄인다 */
+.war-banner { max-width: calc(100% - 300px); }
 
 .timeline-war .front-timeline { margin-top: 0; padding-top: 0; border-top: none; }
 .front-timeline-period { color: var(--muted); font-variant-numeric: tabular-nums; }
