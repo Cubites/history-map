@@ -20,8 +20,8 @@ import {
 } from '../data/staticData.ts';
 import { focusTarget, placeActive } from '../lib/events.ts';
 import { useWarShapes } from '../data/warShapes.ts';
-import { activeWarView, factionColor, frontBattleSpots, nearBy, snapshotFor, theatersInYear } from '../lib/wars.ts';
-import { formatRange } from '../lib/year.ts';
+import { activeWarView, entryYear, factionColor, frontBattleSpots, nearBy, snapshotFor, theatersInYear } from '../lib/wars.ts';
+import { formatRange, formatYear } from '../lib/year.ts';
 import { REGION_FILTER_INFO, inRegionFilter } from '../schema/regions.ts';
 import { useRegionChoice } from '../search/RegionFilter.tsx';
 import type { Lod, TerritoryIndexEntry } from '../schema/index.ts';
@@ -120,6 +120,7 @@ export default function WorldMap({ data }: { data: StaticData }) {
   const theaterId = useAppStore((s) => s.theaterId);
   const enterWar = useAppStore((s) => s.enterWar);
   const exitWar = useAppStore((s) => s.exitWar);
+  const returnYear = useAppStore((s) => s.returnYear);
   const selectEntity = useAppStore((s) => s.select);
   const focusEvent = useAppStore((s) => s.focusEvent);
   const setYear = useAppStore((s) => s.setYear);
@@ -598,8 +599,18 @@ export default function WorldMap({ data }: { data: StaticData }) {
     if (!activeWarView(data.wars, warId, theaterId, year)) useAppStore.setState({ warId: null, theaterId: null, frontDate: null, returnYear: null });
   }, [warId, theaterId, year, data.wars]);
 
-  const zoomButton = (factor: number) => {
-    if (size) animateTo({ ...toGeoView(size, s0, viewRef.current), k: viewRef.current.k * factor });
+  // 오른쪽 아래 세로 축척 막대(2026-10-26, +/− 단추를 대신함). 막대 위치 0~1은 배율의 로그 눈금(MIN_ZOOM~MAX_ZOOM)이고,
+  // 올리면 확대·내리면 축소한다. 화면 가운데를 기준으로 확대한다
+  const zoomLevel = Math.log(view.k / MIN_ZOOM) / Math.log(MAX_ZOOM / MIN_ZOOM);
+  const zoomTo = (level: number) => {
+    if (!size) return;
+    cancelAnimationFrame(animation.current);
+    const center: [number, number] = [size.width / 2, size.height / 2];
+    viewRef.current = zoomAround(size, s0, viewRef.current, center, MIN_ZOOM * (MAX_ZOOM / MIN_ZOOM) ** level, center);
+    setMoving(true);
+    draw();
+    syncZoom();
+    setMoving(false);
   };
 
   // ── 마우스·터치 ────────────────────────────────────────────
@@ -688,23 +699,61 @@ export default function WorldMap({ data }: { data: StaticData }) {
           </button>
         </div>
       )}
-      <div className={warId ? 'map-controls map-controls-war' : 'map-controls'} onClick={(e) => e.stopPropagation()} onPointerDown={(e) => e.stopPropagation()}>
-        <button type="button" className="map-zoom-button" aria-label="확대" onClick={() => zoomButton(1.6)}>+</button>
-        <button type="button" className="map-zoom-button" aria-label="축소" onClick={() => zoomButton(1 / 1.6)}>−</button>
-        {/* 권역 단추(2026-10-18: 머리글 권역 필터를 없애고 이리로 옮김)(권역 고르기·자료 없는 해면 옮기기·그 권역으로 지도 이동).
-            세계는 '전체'를 고르고 세계로 축소한다 */}
+      {/* 권역 단추(2026-10-18: 머리글 권역 필터를 없애고 이리로 옮김)(권역 고르기·자료 없는 해면 옮기기·그 권역으로 지도 이동).
+          세계는 '전체'를 고르고 세계로 축소한다. 전쟁 보기 중에는 전역 단추가 그 자리에 오므로 숨긴다(2026-10-26) */}
+      {!war && (
+        <div className="map-controls" onClick={(e) => e.stopPropagation()} onPointerDown={(e) => e.stopPropagation()}>
+          <button
+            type="button"
+            aria-pressed={regionFilter === 'all'}
+            onClick={() => {
+              chooseRegion('all');
+              animateTo({ lon: viewRef.current.lon, lat: 0, k: MIN_ZOOM });
+            }}
+          >
+            세계
+          </button>
+          <button type="button" aria-pressed={regionFilter === 'east-asia'} onClick={() => chooseRegion('east-asia')}>동아시아</button>
+          <button type="button" aria-pressed={regionFilter === 'europe'} onClick={() => chooseRegion('europe')}>유럽</button>
+        </div>
+      )}
+      {/* 전쟁 보기의 전역 단추(2026-10-26: 타임라인에서 지도 왼쪽 아래로 옮김). 전역 순서대로 위에서 아래로 */}
+      {war && theater && war.theaters.length > 1 && (
+        <div className="map-controls map-theaters" role="group" aria-label="전역" onClick={(e) => e.stopPropagation()} onPointerDown={(e) => e.stopPropagation()}>
+          {war.theaters.map((t) => (
+            <button key={t.id} type="button" aria-pressed={t.id === theater.id} onClick={() => enterWar(war.id, t.id, entryYear(t, year), null)}>
+              {t.name}
+            </button>
+          ))}
+        </div>
+      )}
+      {/* 휴대폰 전쟁 보기의 닫기 단추는 지도 아래 가운데(2026-10-26). PC는 위 띠와 타임라인 머리줄에 닫기가 있어 숨긴다 */}
+      {war && (
         <button
           type="button"
-          aria-pressed={regionFilter === 'all'}
-          onClick={() => {
-            chooseRegion('all');
-            animateTo({ lon: viewRef.current.lon, lat: 0, k: MIN_ZOOM });
+          className="map-war-close"
+          aria-label={`닫고 ${formatYear(returnYear ?? year)} 지도로`}
+          onClick={(e) => {
+            e.stopPropagation();
+            exitWar();
           }}
+          onPointerDown={(e) => e.stopPropagation()}
         >
-          세계
+          닫기
         </button>
-        <button type="button" aria-pressed={regionFilter === 'east-asia'} onClick={() => chooseRegion('east-asia')}>동아시아</button>
-        <button type="button" aria-pressed={regionFilter === 'europe'} onClick={() => chooseRegion('europe')}>유럽</button>
+      )}
+      <div className="map-zoom" onClick={(e) => e.stopPropagation()} onPointerDown={(e) => e.stopPropagation()}>
+        <span aria-hidden="true">+</span>
+        <input
+          type="range"
+          aria-label="지도 확대·축소"
+          min={0}
+          max={1}
+          step={0.005}
+          value={zoomLevel}
+          onChange={(e) => zoomTo(Number(e.currentTarget.value))}
+        />
+        <span aria-hidden="true">−</span>
       </div>
       {/* 권역을 고를 때 연도를 옮겼다는 알림. 비어 있을 때도 두어야 화면 낭독기가 읽는다 */}
       <div className="map-region-notice" role="status" aria-live="polite">

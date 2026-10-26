@@ -1,12 +1,12 @@
 import { useEffect, useRef } from 'react';
 import type { StaticData } from '../data/staticData.ts';
-import { activeWarView, entryYear, factionColor, formatFrontDate, snapshotFor } from '../lib/wars.ts';
+import { activeWarView, factionColor, formatFrontDate, snapshotFor } from '../lib/wars.ts';
 import { formatYear } from '../lib/year.ts';
 import { activeEventId, useAppStore } from '../store/useAppStore.ts';
 
 /**
  * 전쟁 보기의 타임라인 (DESIGN.md §4.5): 연도 타임라인 대신 그 전역의 날짜를 늘어놓는다.
- * 전역이 여럿이면 전역을 바꿔 볼 수 있다. 날짜를 고르면 지도가 그 날의 점령 지역·전선·작전 화살표를 보여 준다.
+ * 전역 단추는 지도 왼쪽 아래에 있다(WorldMap, 2026-10-26). 날짜를 고르면 지도가 그 날의 점령 지역·전선·작전 화살표를 보여 준다.
  */
 export function FrontTimeline({ data }: { data: StaticData }) {
   const year = useAppStore((s) => s.year);
@@ -15,11 +15,9 @@ export function FrontTimeline({ data }: { data: StaticData }) {
   const frontDate = useAppStore((s) => s.frontDate);
   const hoveredEventId = useAppStore(activeEventId);
   const setFront = useAppStore((s) => s.setFront);
-  const enterWar = useAppStore((s) => s.enterWar);
   const exitWar = useAppStore((s) => s.exitWar);
   const returnYear = useAppStore((s) => s.returnYear);
   const listRef = useRef<HTMLOListElement>(null);
-  const theatersRef = useRef<HTMLDivElement>(null);
 
   const warView = activeWarView(data.wars, warId, theaterId, year);
   const hoveredEvent = hoveredEventId ? data.events.find((e) => e.id === hoveredEventId) : undefined;
@@ -35,18 +33,8 @@ export function FrontTimeline({ data }: { data: StaticData }) {
     list.scrollTo({ left: Math.max(0, target), behavior: 'smooth' });
   }, [index, warView?.theater.id]);
 
-  // 휴대폰에서 전역 버튼 줄이 넘칠 때 고른 전역이 보이도록 좌우로만 스크롤한다
-  useEffect(() => {
-    const bar = theatersRef.current;
-    const item = bar?.querySelector<HTMLElement>('[aria-pressed="true"]');
-    if (!bar || !item || bar.scrollWidth <= bar.clientWidth) return;
-    const target = item.offsetLeft - bar.offsetLeft - (bar.clientWidth - item.offsetWidth) / 2;
-    bar.scrollTo({ left: Math.max(0, target) });
-  }, [warView?.theater.id]);
-
   if (!warView || !current) return null;
   const { war, theater } = warView;
-  const closeLabel = `닫고 ${formatYear(returnYear ?? year)} 지도로`;
   const go = (i: number) => {
     const s = theater.snapshots[i];
     if (s) setFront(s.year, s.date);
@@ -71,24 +59,8 @@ export function FrontTimeline({ data }: { data: StaticData }) {
             </span>
           ))}
         </span>
-        <button type="button" className="front-timeline-close front-timeline-close-wide" onClick={exitWar}>
-          {closeLabel}
-        </button>
-      </div>
-      {/* 휴대폰에서는 닫기 버튼을 전역 버튼 줄 오른쪽 끝에 붙이고, 전역 버튼이 넘치면 그 줄만 좌우로 스크롤한다(2026-10-26).
-          PC에서는 이 줄이 없는 것처럼(display: contents) 전역 버튼만 보이고 닫기는 머리줄에 있다 */}
-      <div className="front-timeline-bar">
-        {war.theaters.length > 1 && (
-          <div ref={theatersRef} className="front-timeline-theaters" role="group" aria-label="전역">
-            {war.theaters.map((t) => (
-              <button key={t.id} type="button" aria-pressed={t.id === theater.id} onClick={() => enterWar(war.id, t.id, entryYear(t, year), null)}>
-                {t.name}
-              </button>
-            ))}
-          </div>
-        )}
-        <button type="button" className="front-timeline-close front-timeline-close-narrow" onClick={exitWar} aria-label={closeLabel}>
-          닫기
+        <button type="button" className="front-timeline-close" onClick={exitWar}>
+          닫고 {formatYear(returnYear ?? year)} 지도로
         </button>
       </div>
       <div className="front-timeline-dates">

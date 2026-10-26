@@ -173,15 +173,15 @@ button {
   pointer-events: none;
 }
 
+/* 지도 왼쪽 아래 단추 묶음(2026-10-26: 왼쪽 위에서 옮김): 평소엔 권역 단추, 전쟁 보기에선 전역 단추(.map-theaters) */
 .map-controls {
   position: absolute;
-  top: 12px;
+  bottom: 12px;
   left: 12px;
   display: flex;
   flex-direction: column;
   gap: 4px;
 }
-.map-controls button,
 .timeline button {
   min-width: 36px;
   height: 32px;
@@ -192,11 +192,52 @@ button {
   font-size: 14px;
   cursor: pointer;
 }
+/* PC 지도 단추는 타임라인 단추보다 약 30% 크게(높이 32→42px, 글자 14→18px, 2026-10-26) */
+.map-controls button {
+  min-width: 47px;
+  height: 42px;
+  padding: 0 13px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--control-bg);
+  font-size: 18px;
+  cursor: pointer;
+}
 .map-controls button:hover,
 .timeline button:hover:not(:disabled) { border-color: var(--muted); }
 .timeline button:disabled { opacity: 0.4; cursor: default; }
-/* 지도 왼쪽 위 권역 단추(2026-10-18)(세계·동아시아·유럽)의 고른 상태와 연도 이동 알림 */
+/* 지도 왼쪽 아래 권역 단추(세계·동아시아·유럽)·전역 단추의 고른 상태와 연도 이동 알림 */
 .map-controls button[aria-pressed='true'] { border-color: var(--accent); color: var(--accent); font-weight: 600; }
+.map-theaters button[aria-pressed='true'] { border-color: var(--front-line); color: var(--front-line); font-weight: 700; }
+/* 오른쪽 아래 세로 축척 막대(2026-10-26, +/− 단추를 대신함): 올리면 확대, 내리면 축소 */
+.map-zoom {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 6px 4px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--control-bg);
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1;
+  user-select: none;
+}
+.map-zoom input[type='range'] {
+  writing-mode: vertical-lr;
+  direction: rtl; /* 위가 최대(확대) */
+  width: 24px;
+  height: 140px;
+  margin: 4px 0;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+/* 휴대폰 전쟁 보기의 지도 아래 가운데 닫기 단추. PC에서는 숨김(아래 @media에서 보임) */
+.map-war-close { display: none; }
 .map-region-notice:empty { display: none; }
 .map-region-notice {
   position: absolute;
@@ -476,11 +517,29 @@ button {
   .timeline-mark-label:not(.k1000) { display: none; }
   .timeline-mark-label { font-size: 10px; }
 
-  /* 모바일은 두 손가락으로 확대하므로 +/− 버튼은 숨기고 시점 버튼만 한 줄로 */
-  .map-controls { top: 8px; left: 8px; flex-direction: row; }
+  /* 모바일은 두 손가락으로 확대하므로 축척 막대는 숨기고 권역 단추만 왼쪽 위에 한 줄로.
+     전쟁 보기의 전역 단추는 왼쪽 아래에 세로로(2026-10-26) */
+  .map-controls { top: 8px; bottom: auto; left: 8px; flex-direction: row; }
+  .map-controls.map-theaters { top: auto; bottom: 8px; flex-direction: column; }
   .map-region-notice { top: 44px; font-size: 12px; }
-  .map-controls .map-zoom-button { display: none; }
-  .map-controls button { height: 28px; padding: 0 8px; font-size: 12px; }
+  .map-zoom { display: none; }
+  .map-controls button { min-width: 36px; height: 28px; padding: 0 8px; border-radius: 6px; font-size: 12px; }
+  .map-war-close {
+    display: block;
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 32px;
+    padding: 0 18px;
+    border: 1px solid var(--front-line);
+    border-radius: 999px;
+    background: var(--control-bg);
+    color: var(--front-line);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+  }
 
   .panel-header h2 { font-size: 17px; }
   .panel-header-sticky { top: -10px; margin: -10px -12px 0; padding: 10px 12px 6px; }
@@ -544,9 +603,6 @@ button {
 .front-timeline-legend { flex-wrap: wrap; }
 .front-legend-item { display: inline-flex; align-items: center; gap: 4px; margin-right: 8px; }
 .front-legend-swatch { display: inline-block; width: 12px; height: 10px; border-radius: 2px; }
-.front-timeline-theaters { display: flex; flex-wrap: wrap; gap: 4px; }
-.front-timeline-theaters button { font-size: 12px; padding: 2px 10px; border-radius: 999px; }
-.front-timeline-theaters button[aria-pressed='true'] { border-color: var(--front-line); color: var(--front-line); font-weight: 700; }
 .front-timeline-dates { display: flex; align-items: center; gap: 4px; min-width: 0; }
 .front-timeline-dates > button { flex: 0 0 auto; }
 /* 날짜가 많으면 모두 보이려 하지 않고 좌우로 스크롤한다 */
@@ -615,17 +671,9 @@ button {
 .timeline-war .front-timeline { margin-top: 0; padding-top: 0; border-top: none; }
 .front-timeline-period { color: var(--muted); font-variant-numeric: tabular-nums; }
 .front-timeline-close { margin-left: auto; font-size: 12px; }
-/* 닫기 버튼 두 벌: PC는 머리줄(-wide), 휴대폰은 전역 버튼 줄 오른쪽(-narrow). 모바일 칸은 아래 @media */
-.front-timeline-bar { display: contents; }
-.front-timeline-close-narrow { display: none; }
 @media (max-width: 768px) {
-  /* 닫기는 전역 버튼 줄 오른쪽 끝에 고정, 전역 버튼이 넘치면 그 부분만 좌우로 스크롤(2026-10-26) */
-  .front-timeline-close-wide { display: none; }
-  .front-timeline-bar { display: flex; align-items: center; gap: 8px; min-width: 0; }
-  .front-timeline-close-narrow { display: inline-block; flex: 0 0 auto; margin-left: auto; padding: 2px 10px; border-radius: 999px; }
-  .front-timeline-theaters { flex: 1 1 0; min-width: 0; flex-wrap: nowrap; overflow-x: auto; overscroll-behavior-x: contain; scrollbar-width: none; }
-  .front-timeline-theaters::-webkit-scrollbar { display: none; }
-  .front-timeline-theaters button { flex: 0 0 auto; white-space: nowrap; }
+  /* 휴대폰 닫기 단추는 지도 아래 가운데(.map-war-close, 2026-10-26) */
+  .front-timeline-close { display: none; }
   /* 머리줄의 날짜·제목은 아래 글 영역 첫 줄로 옮기고, 글 영역은 4줄(18px × 4) 높이로 고정해 넘치면 세로 스크롤(2026-10-26) */
   .front-timeline-current { display: none; }
   .front-timeline-summary { height: 72px; line-height: 18px; overflow-y: auto; overscroll-behavior-y: contain; }
@@ -675,12 +723,10 @@ button {
 .war-battle-past { opacity: 0.55; }
 .war-battle-label { font-size: 12px; font-weight: 700; }
 
-/* 모바일은 위쪽 날짜 영역에 전쟁 이름과 닫기 버튼이 있으므로, 지도 버튼을 가리는 띠는 숨긴다.
-   기본 .war-banner 규칙보다 뒤에 있어야 덮어쓴다.
-   전쟁 보기에서는 권역 단추도 숨긴다(위쪽 전역 단추가 그 일을 함, 휴대폰은 확대 단추도 없어 지도 버튼 묶음 전체, 2026-10-26) */
+/* 모바일은 위쪽 날짜 영역에 전쟁 이름이, 지도 아래 가운데에 닫기 단추가 있으므로, 지도 버튼을 가리는 띠는 숨긴다.
+   기본 .war-banner 규칙보다 뒤에 있어야 덮어쓴다 */
 @media (max-width: 768px) {
   .war-banner { display: none; }
-  .map-controls-war { display: none; }
 }
 
 /* 귀속 논쟁 (DESIGN.md §4.3) */
