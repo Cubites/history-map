@@ -69,6 +69,8 @@ const SELECTED_WIDTH = 2.5;
 const HOVER_WIDTH = 1.5;
 /** 영토 파일을 받지 못했을 때 다시 시도하기까지의 시간(ms) */
 const RETRY_MS = 5000;
+/** 지도 위에 띄운 단추·블럭(.map-ui) 위의 포인터인가. 그 위에서는 지도가 강조·툴팁·끌기·휠·클릭에 반응하지 않는다(2026-10-27) */
+const onMapUi = (target: EventTarget | null) => target instanceof Element && !!target.closest('.map-ui');
 
 /**
  * 정밀도 단계 (DESIGN.md §3.1). 움직이는 동안에는 가볍게, 멈추거나 확대하면 정밀하게 그린다.
@@ -498,11 +500,11 @@ export default function WorldMap({ data }: { data: StaticData }) {
     const behavior = zoom<HTMLDivElement, unknown>()
       .scaleExtent([MIN_ZOOM, MAX_ZOOM])
       .clickDistance(4)
-      // 축척 막대 상자 안에서 누른 것은 지도 끌기로 가져가지 않는다(d3-zoom이 누름의 기본 동작을 막아 막대 손잡이를 끌 수 없었음, 2026-10-27).
-      // 휠은 상자 위에서도 지도를 확대·축소한다
+      // 지도 위 단추·블럭(.map-ui)에서 누르거나 휠을 굴린 것은 지도 끌기·확대로 가져가지 않는다
+      // (d3-zoom이 누름의 기본 동작을 막아 축척 막대 손잡이를 끌 수 없었음, 2026-10-27)
       .filter((event: MouseEvent) => {
         if ((event.ctrlKey && event.type !== 'wheel') || event.button) return false;
-        return event.type === 'wheel' || !(event.target instanceof Element && event.target.closest('.map-zoom'));
+        return !onMapUi(event.target);
       })
       .on('start', () => {
         if (!syncing.current) setMoving(true);
@@ -673,12 +675,17 @@ export default function WorldMap({ data }: { data: StaticData }) {
       className="world-map"
       onPointerMove={(e) => {
         if (e.pointerType !== 'mouse' || e.buttons) return;
+        if (onMapUi(e.target)) {
+          setHovered((h) => (h ? null : h));
+          return;
+        }
         const [x, y] = localPoint(e);
         const id = hitTest(x, y);
         setHovered(id ? { id, x, y } : null);
       }}
       onPointerLeave={() => setHovered(null)}
       onClick={(e) => {
+        if (onMapUi(e.target)) return;
         const [x, y] = localPoint(e);
         selectEntity(hitTest(x, y));
       }}
@@ -709,12 +716,12 @@ export default function WorldMap({ data }: { data: StaticData }) {
       )}
       {error && <div className="map-status map-status-error">지도를 불러오지 못했습니다: {error}</div>}
       {active.length === 0 && (
-        <div className="map-notice">
+        <div className="map-notice map-ui">
           {year < data.timeline.range[0] ? '나라가 생기기 전입니다. 유적(●)을 누르면 그 시대의 생활을 볼 수 있습니다' : '이 시기의 영토 데이터는 아직 없습니다'}
         </div>
       )}
       {war && (
-        <div className="war-banner" onClick={(e) => e.stopPropagation()} onPointerDown={(e) => e.stopPropagation()}>
+        <div className="war-banner map-ui" onClick={(e) => e.stopPropagation()} onPointerDown={(e) => e.stopPropagation()}>
           <span className="war-banner-title">
             전쟁 보기 · {war.name}
             {war.theaters.length > 1 && theater && ` · ${theater.name}`}
@@ -728,7 +735,7 @@ export default function WorldMap({ data }: { data: StaticData }) {
           세계는 '전체'를 고르고 세계로 축소한다. 전쟁 보기 중에는 전역 단추가 그 자리에 오므로 숨긴다(2026-10-26) */}
       {!war && (
         <div className="map-bottom-left">
-        <div className="map-controls" onClick={(e) => e.stopPropagation()} onPointerDown={(e) => e.stopPropagation()}>
+        <div className="map-controls map-ui" onClick={(e) => e.stopPropagation()} onPointerDown={(e) => e.stopPropagation()}>
           <button
             type="button"
             aria-pressed={regionFilter === 'all'}
@@ -744,7 +751,7 @@ export default function WorldMap({ data }: { data: StaticData }) {
         </div>
         {/* 사건 화살표 뜻(2026-10-26: 사건 목록 머리줄 아래에서 권역 단추 오른쪽으로 옮김). 나라를 골랐을 때만, 전쟁 보기에서는 숨긴다 */}
         {selectedEntity && (
-          <div className="map-legend">
+          <div className="map-legend map-ui">
             <span><i className="legend-in" />영향을 준 나라 → {selectedEntity.names.ko}</span>
             <span><i className="legend-out" />{selectedEntity.names.ko} → 영향을 받은 나라</span>
           </div>
@@ -753,7 +760,7 @@ export default function WorldMap({ data }: { data: StaticData }) {
       )}
       {/* 전쟁 보기의 전역 단추(2026-10-26: 타임라인에서 지도 왼쪽 아래로 옮김). 전역 순서대로 위에서 아래로 */}
       {war && theater && war.theaters.length > 1 && (
-        <div className="map-controls map-theaters" role="group" aria-label="전역" onClick={(e) => e.stopPropagation()} onPointerDown={(e) => e.stopPropagation()}>
+        <div className="map-controls map-theaters map-ui" role="group" aria-label="전역" onClick={(e) => e.stopPropagation()} onPointerDown={(e) => e.stopPropagation()}>
           {war.theaters.map((t) => (
             <button key={t.id} type="button" aria-pressed={t.id === theater.id} onClick={() => enterWar(war.id, t.id, entryYear(t, year), null)}>
               {t.name}
@@ -765,7 +772,7 @@ export default function WorldMap({ data }: { data: StaticData }) {
       {war && (
         <button
           type="button"
-          className="map-war-close"
+          className="map-war-close map-ui"
           aria-label={`닫고 ${formatYear(returnYear ?? year)} 지도로`}
           onClick={(e) => {
             e.stopPropagation();
@@ -777,7 +784,7 @@ export default function WorldMap({ data }: { data: StaticData }) {
         </button>
       )}
       <div className="map-zoom-wrap">
-      <div className="map-zoom" onClick={(e) => e.stopPropagation()} onPointerDown={(e) => e.stopPropagation()}>
+      <div className="map-zoom map-ui" onClick={(e) => e.stopPropagation()} onPointerDown={(e) => e.stopPropagation()}>
         <button type="button" aria-label="확대" onClick={() => zoomStep(1.6)}>+</button>
         <input
           type="range"
@@ -791,14 +798,14 @@ export default function WorldMap({ data }: { data: StaticData }) {
         <button type="button" aria-label="축소" onClick={() => zoomStep(1 / 1.6)}>−</button>
       </div>
       {distanceScale && (
-        <div className="map-scale" aria-label={`축척: 막대 길이 ${distanceScale.km.toLocaleString('ko-KR')} km`}>
+        <div className="map-scale map-ui" aria-label={`축척: 막대 길이 ${distanceScale.km.toLocaleString('ko-KR')} km`}>
           <span>{distanceScale.km.toLocaleString('ko-KR')} km</span>
           <i style={{ width: distanceScale.width }} />
         </div>
       )}
       </div>
       {/* 권역을 고를 때 연도를 옮겼다는 알림. 비어 있을 때도 두어야 화면 낭독기가 읽는다 */}
-      <div className="map-region-notice" role="status" aria-live="polite">
+      <div className="map-region-notice map-ui" role="status" aria-live="polite">
         {regionNotice}
       </div>
     </div>

@@ -95,6 +95,9 @@ button {
 /* 육지·영토는 Canvas, 강조·화살표·이름표는 그 위의 SVG (DESIGN.md §3) */
 .map-canvas { position: absolute; inset: 0; display: block; }
 .map-overlay { position: absolute; inset: 0; pointer-events: none; overflow: visible; }
+/* 지도 위에 띄운 단추·블럭: 포인터를 받아 뒤의 지도가 반응하지 않게 한다(WorldMap의 onMapUi, 2026-10-27). 글만 있는 블럭도 지도 끌기 손 모양 대신 기본 화살표 */
+.world-map .map-ui { pointer-events: auto; cursor: default; }
+.world-map .map-ui button { cursor: pointer; }
 
 /* 선택·hover한 영토의 강조 테두리는 지도와 같은 프레임에 맞추려고 Canvas에서 그린다 (canvasLayer.ts, DESIGN.md §6.1) */
 
@@ -264,7 +267,6 @@ button {
   font-size: 11px;
   line-height: 1.2;
   font-variant-numeric: tabular-nums;
-  pointer-events: none !important;
 }
 .map-scale i {
   display: block;
