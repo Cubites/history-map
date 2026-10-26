@@ -113,13 +113,13 @@ export function EntityTabs({
   );
   return (
     <div className={mobile ? 'entity-tabs entity-tabs-mobile' : 'entity-tabs'}>
+      {mobile && t.overview && <p className="tab-brief">{withYears(t.overview)}</p>}
+      {/* 휴대폰은 '국가 상세정보' 단추와 펼친 탭·내용을 한 테두리 상자에 담아, 펼친 글이 그 단추의 내용임을 알게 한다(2026-10-26) */}
+      <div className={mobile ? (open ? 'detail-box open' : 'detail-box') : undefined}>
       {mobile && (
-        <>
-          {t.overview && <p className="tab-brief">{withYears(t.overview)}</p>}
-          <button type="button" className="detail-toggle" aria-expanded={open} onClick={() => setOpen(!open)}>
-            국가 상세정보 <span aria-hidden="true">{open ? '▴' : '▾'}</span>
-          </button>
-        </>
+        <button type="button" className="detail-toggle" aria-expanded={open} onClick={() => setOpen(!open)}>
+          국가 상세정보 <span aria-hidden="true">{open ? '▴' : '▾'}</span>
+        </button>
       )}
       {(!mobile || open) && tabRow}
       {(!mobile || open) && (
@@ -171,6 +171,7 @@ export function EntityTabs({
         )}
       </div>
       )}
+      </div>
     </div>
   );
 }
