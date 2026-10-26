@@ -67,7 +67,7 @@ export function EventPanel({ data }: { data: StaticData }) {
   const entity = selectedId ? data.entities.get(selectedId) : undefined;
   if (!entity) {
     return (
-      <aside className="panel">
+      <aside className={warId ? 'panel panel-war-mode' : 'panel'}>
         <p className="panel-guide">지도에서 나라를 누르면 그 시기의 사건이 여기에 나타납니다.</p>
         <p className="panel-guide">사건을 누르면 자세한 내용이 펼쳐집니다.</p>
         <p className="panel-note">현재는 선사 시대(구석기·신석기)와 고조선(기원전 2333년)부터 현대까지의 한국사 전 시대 자료와 유럽(국경·사건 기원전 800년~현재) 자료가 들어 있습니다.</p>
@@ -100,7 +100,7 @@ export function EventPanel({ data }: { data: StaticData }) {
     `repeating-linear-gradient(135deg, ${colors.map((c, i) => `${c} ${i * 4}px ${(i + 1) * 4}px`).join(', ')})`;
 
   return (
-    <aside className="panel">
+    <aside className={warId ? 'panel panel-war-mode' : 'panel'}>
       {/* 이름·기간 머리는 스크롤해도 패널 위에 붙어 있다(2026-10-18) */}
       <header className="panel-header panel-header-sticky">
         <span

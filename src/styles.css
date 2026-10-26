@@ -613,6 +613,23 @@ button {
 .timeline-war .front-timeline { margin-top: 0; padding-top: 0; border-top: none; }
 .front-timeline-period { color: var(--muted); font-variant-numeric: tabular-nums; }
 .front-timeline-close { margin-left: auto; font-size: 12px; }
+/* 닫기 버튼 두 벌: PC는 머리줄(-wide), 휴대폰은 전역 버튼 줄 오른쪽(-narrow). 모바일 칸은 아래 @media */
+.front-timeline-bar { display: contents; }
+.front-timeline-close-narrow { display: none; }
+@media (max-width: 768px) {
+  /* 닫기는 전역 버튼 줄 오른쪽 끝에 고정, 전역 버튼이 넘치면 그 부분만 좌우로 스크롤(2026-10-26) */
+  .front-timeline-close-wide { display: none; }
+  .front-timeline-bar { display: flex; align-items: center; gap: 8px; min-width: 0; }
+  .front-timeline-close-narrow { display: inline-block; flex: 0 0 auto; margin-left: auto; padding: 2px 10px; border-radius: 999px; }
+  .front-timeline-theaters { flex: 1 1 0; min-width: 0; flex-wrap: nowrap; overflow-x: auto; overscroll-behavior-x: contain; scrollbar-width: none; }
+  .front-timeline-theaters::-webkit-scrollbar { display: none; }
+  .front-timeline-theaters button { flex: 0 0 auto; white-space: nowrap; }
+  /* 전쟁 보기에서는 지도를 넓게 보도록 아래 패널에 나라 이름·원어명·기간만 둔다(2026-10-26) */
+  .panel-war-mode > :not(.panel-header),
+  .panel-war-mode .panel-occupation,
+  .panel-war-mode .panel-claims { display: none; }
+  .panel-war-mode:not(:has(.panel-header)) { display: none; }
+}
 
 .panel-wars { margin: 10px 0 4px; }
 .panel-wars h3 { font-size: 13px; color: var(--muted); font-weight: 600; margin: 0 0 4px; }

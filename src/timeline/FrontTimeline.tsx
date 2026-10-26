@@ -19,6 +19,7 @@ export function FrontTimeline({ data }: { data: StaticData }) {
   const exitWar = useAppStore((s) => s.exitWar);
   const returnYear = useAppStore((s) => s.returnYear);
   const listRef = useRef<HTMLOListElement>(null);
+  const theatersRef = useRef<HTMLDivElement>(null);
 
   const warView = activeWarView(data.wars, warId, theaterId, year);
   const hoveredEvent = hoveredEventId ? data.events.find((e) => e.id === hoveredEventId) : undefined;
@@ -34,8 +35,18 @@ export function FrontTimeline({ data }: { data: StaticData }) {
     list.scrollTo({ left: Math.max(0, target), behavior: 'smooth' });
   }, [index, warView?.theater.id]);
 
+  // 휴대폰에서 전역 버튼 줄이 넘칠 때 고른 전역이 보이도록 좌우로만 스크롤한다
+  useEffect(() => {
+    const bar = theatersRef.current;
+    const item = bar?.querySelector<HTMLElement>('[aria-pressed="true"]');
+    if (!bar || !item || bar.scrollWidth <= bar.clientWidth) return;
+    const target = item.offsetLeft - bar.offsetLeft - (bar.clientWidth - item.offsetWidth) / 2;
+    bar.scrollTo({ left: Math.max(0, target) });
+  }, [warView?.theater.id]);
+
   if (!warView || !current) return null;
   const { war, theater } = warView;
+  const closeLabel = `닫고 ${formatYear(returnYear ?? year)} 지도로`;
   const go = (i: number) => {
     const s = theater.snapshots[i];
     if (s) setFront(s.year, s.date);
@@ -60,19 +71,26 @@ export function FrontTimeline({ data }: { data: StaticData }) {
             </span>
           ))}
         </span>
-        <button type="button" className="front-timeline-close" onClick={exitWar}>
-          닫고 {formatYear(returnYear ?? year)} 지도로
+        <button type="button" className="front-timeline-close front-timeline-close-wide" onClick={exitWar}>
+          {closeLabel}
         </button>
       </div>
-      {war.theaters.length > 1 && (
-        <div className="front-timeline-theaters" role="group" aria-label="전역">
-          {war.theaters.map((t) => (
-            <button key={t.id} type="button" aria-pressed={t.id === theater.id} onClick={() => enterWar(war.id, t.id, entryYear(t, year), null)}>
-              {t.name}
-            </button>
-          ))}
-        </div>
-      )}
+      {/* 휴대폰에서는 닫기 버튼을 전역 버튼 줄 오른쪽 끝에 붙이고, 전역 버튼이 넘치면 그 줄만 좌우로 스크롤한다(2026-10-26).
+          PC에서는 이 줄이 없는 것처럼(display: contents) 전역 버튼만 보이고 닫기는 머리줄에 있다 */}
+      <div className="front-timeline-bar">
+        {war.theaters.length > 1 && (
+          <div ref={theatersRef} className="front-timeline-theaters" role="group" aria-label="전역">
+            {war.theaters.map((t) => (
+              <button key={t.id} type="button" aria-pressed={t.id === theater.id} onClick={() => enterWar(war.id, t.id, entryYear(t, year), null)}>
+                {t.name}
+              </button>
+            ))}
+          </div>
+        )}
+        <button type="button" className="front-timeline-close front-timeline-close-narrow" onClick={exitWar} aria-label={closeLabel}>
+          닫기
+        </button>
+      </div>
       <div className="front-timeline-dates">
         <button type="button" disabled={index <= 0} onClick={() => go(index - 1)} aria-label="이전 날짜">◀</button>
         <ol ref={listRef}>
