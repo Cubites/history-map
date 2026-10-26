@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { flushSync } from 'react-dom';
-import { geoContains } from 'd3-geo';
+import { geoContains, geoDistance } from 'd3-geo';
 import { select } from 'd3-selection';
 import { zoom, zoomIdentity, type ZoomBehavior, type ZoomTransform } from 'd3-zoom';
 import {
@@ -498,6 +498,12 @@ export default function WorldMap({ data }: { data: StaticData }) {
     const behavior = zoom<HTMLDivElement, unknown>()
       .scaleExtent([MIN_ZOOM, MAX_ZOOM])
       .clickDistance(4)
+      // 축척 막대 상자 안에서 누른 것은 지도 끌기로 가져가지 않는다(d3-zoom이 누름의 기본 동작을 막아 막대 손잡이를 끌 수 없었음, 2026-10-27).
+      // 휠은 상자 위에서도 지도를 확대·축소한다
+      .filter((event: MouseEvent) => {
+        if ((event.ctrlKey && event.type !== 'wheel') || event.button) return false;
+        return event.type === 'wheel' || !(event.target instanceof Element && event.target.closest('.map-zoom'));
+      })
       .on('start', () => {
         if (!syncing.current) setMoving(true);
       })
@@ -612,6 +618,10 @@ export default function WorldMap({ data }: { data: StaticData }) {
     syncZoom();
     setMoving(false);
   };
+  // 막대 위 +, 아래 − 단추: 한 번에 1.6배씩 부드럽게
+  const zoomStep = (factor: number) => {
+    if (size) animateTo({ ...toGeoView(size, s0, viewRef.current), k: viewRef.current.k * factor });
+  };
 
   // ── 마우스·터치 ────────────────────────────────────────────
   const hitTest = useCallback(
@@ -642,6 +652,20 @@ export default function WorldMap({ data }: { data: StaticData }) {
   const projection = useMemo(() => (size ? createProjection(size, s0, view) : null), [size, s0, view]);
   const hoveredEntity = hovered ? data.entities.get(hovered.id) : undefined;
   const selectedEntity = selectedId ? data.entities.get(selectedId) : undefined;
+  // 거리 축척(2026-10-27): 화면 가운데 가로 100px의 실제 거리로 1·2·5×10ⁿ km 가운데 막대가 최대 80px 안에 드는 가장 긴 값을 고른다
+  const distanceScale = useMemo(() => {
+    if (!size || !projection) return null;
+    const [cx, cy] = [size.width / 2, size.height / 2];
+    const a = invertPoint(projection, [cx - 50, cy]);
+    const b = invertPoint(projection, [cx + 50, cy]);
+    if (!a || !b) return null;
+    const kmPerPx = (geoDistance(a, b) * 6371) / 100;
+    if (!(kmPerPx > 0)) return null;
+    const max = kmPerPx * 80;
+    const unit = 10 ** Math.floor(Math.log10(max));
+    const km = [5, 2, 1].map((m) => m * unit).find((v) => v <= max) ?? unit;
+    return { km, width: km / kmPerPx };
+  }, [size, projection]);
 
   return (
     <div
@@ -752,8 +776,9 @@ export default function WorldMap({ data }: { data: StaticData }) {
           닫기
         </button>
       )}
+      <div className="map-zoom-wrap">
       <div className="map-zoom" onClick={(e) => e.stopPropagation()} onPointerDown={(e) => e.stopPropagation()}>
-        <span aria-hidden="true">+</span>
+        <button type="button" aria-label="확대" onClick={() => zoomStep(1.6)}>+</button>
         <input
           type="range"
           aria-label="지도 확대·축소"
@@ -763,7 +788,14 @@ export default function WorldMap({ data }: { data: StaticData }) {
           value={zoomLevel}
           onChange={(e) => zoomTo(Number(e.currentTarget.value))}
         />
-        <span aria-hidden="true">−</span>
+        <button type="button" aria-label="축소" onClick={() => zoomStep(1 / 1.6)}>−</button>
+      </div>
+      {distanceScale && (
+        <div className="map-scale" aria-label={`축척: 막대 길이 ${distanceScale.km.toLocaleString('ko-KR')} km`}>
+          <span>{distanceScale.km.toLocaleString('ko-KR')} km</span>
+          <i style={{ width: distanceScale.width }} />
+        </div>
+      )}
       </div>
       {/* 권역을 고를 때 연도를 옮겼다는 알림. 비어 있을 때도 두어야 화면 낭독기가 읽는다 */}
       <div className="map-region-notice" role="status" aria-live="polite">

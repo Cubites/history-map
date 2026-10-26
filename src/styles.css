@@ -211,10 +211,19 @@ button {
 .map-controls button[aria-pressed='true'] { border-color: var(--accent); color: var(--accent); font-weight: 600; }
 .map-theaters button[aria-pressed='true'] { border-color: var(--front-line); color: var(--front-line); font-weight: 700; }
 /* 오른쪽 아래 세로 축척 막대(2026-10-26, +/− 단추를 대신함): 올리면 확대, 내리면 축소 */
-.map-zoom {
+/* 축척 막대와 그 아래 거리 축척을 오른쪽 아래에 세로로 쌓는다 */
+.map-zoom-wrap {
   position: absolute;
   right: 12px;
   bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  pointer-events: none;
+}
+.map-zoom-wrap > * { pointer-events: auto; }
+.map-zoom {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -227,6 +236,41 @@ button {
   font-size: 16px;
   line-height: 1;
   user-select: none;
+}
+.map-zoom button {
+  width: 24px;
+  height: 22px;
+  padding: 0;
+  border: none;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+}
+.map-zoom button:hover { background: var(--bg); color: var(--fg); }
+/* 거리 축척(2026-10-27): 숫자 아래 끝이 꺾인 막대. 글만 보여 주므로 지도 끌기를 막지 않는다 */
+.map-scale {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+  padding: 3px 6px;
+  border-radius: 4px;
+  background: var(--control-bg);
+  color: var(--fg);
+  font-size: 11px;
+  line-height: 1.2;
+  font-variant-numeric: tabular-nums;
+  pointer-events: none !important;
+}
+.map-scale i {
+  display: block;
+  height: 5px;
+  border: 1.5px solid var(--fg);
+  border-top: none;
 }
 .map-zoom input[type='range'] {
   writing-mode: vertical-lr;
@@ -527,7 +571,7 @@ button {
   .map-controls, .map-bottom-left { bottom: 8px; left: 8px; }
   .map-bottom-left { right: 8px; }
   .map-region-notice { top: 8px; font-size: 12px; }
-  .map-zoom { display: none; }
+  .map-zoom-wrap { display: none; }
   .map-controls button { height: 28px; padding: 0 8px; font-size: 12px; }
   .map-war-close {
     display: block;
