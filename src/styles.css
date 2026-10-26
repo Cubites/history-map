@@ -674,6 +674,9 @@ button {
   /* 전쟁 보기에서는 고른 나라 정보를 지도 위로, 전쟁 정보(이름·진영·날짜·글)를 지도 아래로 바꿔 둔다(2026-10-26) */
   .panel-war-mode { order: 1; border-top: none; border-bottom: 1px solid var(--border); }
   .timeline-war { order: 3; border-bottom: none; border-top: 1px solid var(--border); }
+  /* 패널에 이름 머리만 남으므로 머리 아래 구분선과 패널 아래 여백을 없앤다. 남기면 패널 아래 테두리와 함께 얇은 막대처럼 보인다(2026-10-26) */
+  .panel-war-mode { padding-bottom: 0; }
+  .panel-war-mode .panel-header-sticky { border-bottom: none; }
 }
 
 .panel-wars { margin: 10px 0 4px; }
