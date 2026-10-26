@@ -577,6 +577,8 @@ button {
   font-weight: 700;
 }
 .front-timeline-summary { margin: 0; font-size: 12.5px; color: var(--muted); }
+.front-timeline-summary p { margin: 0; }
+.front-timeline-summary-title { display: none; }
 .event-front { font-size: 11.5px; color: var(--front-line); margin-top: 2px; }
 
 /* ── 전쟁 보기 (DESIGN.md §4.5) ─────────────────────────── */
@@ -624,6 +626,10 @@ button {
   .front-timeline-theaters { flex: 1 1 0; min-width: 0; flex-wrap: nowrap; overflow-x: auto; overscroll-behavior-x: contain; scrollbar-width: none; }
   .front-timeline-theaters::-webkit-scrollbar { display: none; }
   .front-timeline-theaters button { flex: 0 0 auto; white-space: nowrap; }
+  /* 머리줄의 날짜·제목은 아래 글 영역 첫 줄로 옮기고, 글 영역은 4줄(18px × 4) 높이로 고정해 넘치면 세로 스크롤(2026-10-26) */
+  .front-timeline-current { display: none; }
+  .front-timeline-summary { height: 72px; line-height: 18px; overflow-y: auto; overscroll-behavior-y: contain; }
+  .front-timeline-summary-title { display: block; color: var(--fg); font-weight: 600; font-variant-numeric: tabular-nums; }
   /* 전쟁 보기에서는 지도를 넓게 보도록 아래 패널에 나라 이름·원어명·기간만 둔다(2026-10-26) */
   .panel-war-mode > :not(.panel-header),
   .panel-war-mode .panel-occupation,

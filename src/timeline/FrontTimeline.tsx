@@ -104,7 +104,14 @@ export function FrontTimeline({ data }: { data: StaticData }) {
         </ol>
         <button type="button" disabled={index >= theater.snapshots.length - 1} onClick={() => go(index + 1)} aria-label="다음 날짜">▶</button>
       </div>
-      <p className="front-timeline-summary">{current.summary}</p>
+      {/* 휴대폰에서는 머리줄의 날짜·제목을 이 글 영역 첫 줄로 옮기고, 영역 높이를 4줄로 고정해 넘치면 세로로 스크롤한다(2026-10-26).
+          날짜·전역이 바뀌면 key로 새로 그려 스크롤을 맨 위로 되돌린다 */}
+      <div key={`${theater.id}-${current.date}`} className="front-timeline-summary">
+        <strong className="front-timeline-summary-title">
+          {formatFrontDate(current.date, war.calendar)} · {current.title}
+        </strong>
+        <p>{current.summary}</p>
+      </div>
     </section>
   );
 }
