@@ -676,9 +676,11 @@ button {
 .war-battle-label { font-size: 12px; font-weight: 700; }
 
 /* 모바일은 위쪽 날짜 영역에 전쟁 이름과 닫기 버튼이 있으므로, 지도 버튼을 가리는 띠는 숨긴다.
-   기본 .war-banner 규칙보다 뒤에 있어야 덮어쓴다 */
+   기본 .war-banner 규칙보다 뒤에 있어야 덮어쓴다.
+   전쟁 보기에서는 권역 단추도 숨긴다(위쪽 전역 단추가 그 일을 함, 휴대폰은 확대 단추도 없어 지도 버튼 묶음 전체, 2026-10-26) */
 @media (max-width: 768px) {
   .war-banner { display: none; }
+  .map-controls-war { display: none; }
 }
 
 /* 귀속 논쟁 (DESIGN.md §4.3) */
