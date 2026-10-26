@@ -1,7 +1,8 @@
 name: Test geo
 
 # 지형 테스트(npm run test:geo): 지점 정답표·도형 품질·사건 연결·선 기준선을 확인한다 (docs/DESIGN.md 지형 테스트 절).
-# 배포(deploy.yml)와 따로 돌고 배포를 막지 않는다 - 처음 2주는 보고만 하고, 거짓 실패가 없으면 deploy를 이 결과에 묶을지 정한다.
+# 2026-10-26부터 push·PR의 지형 테스트는 배포(deploy.yml)의 첫 job(test-geo)이 돌고, 통과해야 빌드·배포한다(운영자 결정, 2주 보고 기간 66번 모두 성공).
+# 이 파일은 지형 테스트만 따로 돌리는 수동 실행(workflow_dispatch)용이다. job 단계는 deploy.yml의 test-geo job과 같게 둔다(바꿀 때는 둘을 함께).
 # 계산 캐시(.cache)를 복원해 두 번째 실행부터 빠르다. 첫 실행은 캐시가 없어 20~30분 어림(16 논리 프로세서 PC 기준)이고, 호스트 러너(vCPU 2~4개)에서는 2~4배 걸릴 수 있어
 # job 제한을 넉넉히(150분) 두었다. 처음 한 번은 workflow_dispatch로 돌려 시간을 재 둘 것. 로캘이 다른 로컬 캐시와는 공유되지 않는다.
 # 캐시 저장은 실패한 실행에서도 되도록 actions/cache를 restore/save로 나누고 save를 `if: always()`로 둔다(actions/cache@v4 하나는 job이 성공해야 저장해, 새 실패가 있는 동안 매번 차가운 캐시가 됨).
@@ -10,9 +11,6 @@ name: Test geo
 # 보고서(.cache/test-geo/report.md·json)는 실행 요약(Step Summary)에 붙고 artifact로도 올라간다.
 
 on:
-  push:
-    branches: [main]
-  pull_request:
   workflow_dispatch:
 
 permissions:
