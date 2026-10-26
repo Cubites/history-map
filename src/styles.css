@@ -671,6 +671,9 @@ button {
   .panel-war-mode .panel-occupation,
   .panel-war-mode .panel-claims { display: none; }
   .panel-war-mode:not(:has(.panel-header)) { display: none; }
+  /* 전쟁 보기에서는 고른 나라 정보를 지도 위로, 전쟁 정보(이름·진영·날짜·글)를 지도 아래로 바꿔 둔다(2026-10-26) */
+  .panel-war-mode { order: 1; border-top: none; border-bottom: 1px solid var(--border); }
+  .timeline-war { order: 3; border-bottom: none; border-top: 1px solid var(--border); }
 }
 
 .panel-wars { margin: 10px 0 4px; }
