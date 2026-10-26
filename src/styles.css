@@ -507,11 +507,9 @@ button {
   .timeline-mark-label:not(.k1000) { display: none; }
   .timeline-mark-label { font-size: 10px; }
 
-  /* 모바일은 두 손가락으로 확대하므로 축척 막대는 숨기고 권역 단추만 왼쪽 위에 한 줄로.
-     전쟁 보기의 전역 단추는 왼쪽 아래에 세로로(2026-10-26) */
-  .map-controls { top: 8px; bottom: auto; left: 8px; flex-direction: row; }
-  .map-controls.map-theaters { top: auto; bottom: 8px; flex-direction: column; }
-  .map-region-notice { top: 44px; font-size: 12px; }
+  /* 모바일은 두 손가락으로 확대하므로 축척 막대는 숨긴다. 권역 단추·전쟁 보기의 전역 단추는 PC처럼 왼쪽 아래에 세로로(2026-10-26) */
+  .map-controls { bottom: 8px; left: 8px; }
+  .map-region-notice { top: 8px; font-size: 12px; }
   .map-zoom { display: none; }
   .map-controls button { height: 28px; padding: 0 8px; font-size: 12px; }
   .map-war-close {
