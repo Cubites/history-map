@@ -173,7 +173,18 @@ button {
   pointer-events: none;
 }
 
-/* 지도 왼쪽 아래 단추 묶음(2026-10-26: 왼쪽 위에서 옮김): 평소엔 권역 단추, 전쟁 보기에선 전역 단추(.map-theaters) */
+/* 지도 왼쪽 아래 단추 묶음(2026-10-26: 왼쪽 위에서 옮김): 평소엔 권역 단추와 그 오른쪽 화살표 뜻(.map-bottom-left), 전쟁 보기에선 전역 단추(.map-theaters) */
+.map-bottom-left {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  pointer-events: none;
+}
+.map-bottom-left .map-controls { position: static; pointer-events: auto; }
 .map-controls {
   position: absolute;
   bottom: 12px;
@@ -412,15 +423,20 @@ button {
 
 .event-sources { font-size: 11px; color: var(--muted); }
 
-.panel-legend {
+/* 사건 화살표 뜻: 지도 왼쪽 아래 권역 단추 오른쪽(2026-10-26). 글만 보여 주므로 지도 끌기·누르기를 막지 않는다 */
+.map-legend {
   display: flex;
   flex-direction: column;
   gap: 2px;
-  margin: 0 0 8px;
+  padding: 4px 8px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--control-bg);
   font-size: 12px;
   color: var(--muted);
+  pointer-events: none;
 }
-.panel-legend i { display: inline-block; width: 18px; margin-right: 6px; vertical-align: middle; }
+.map-legend i { display: inline-block; width: 18px; margin-right: 6px; vertical-align: middle; }
 .legend-in { border-top: 2.5px solid var(--arrow-in); }
 .legend-out { border-top: 2.5px dashed var(--arrow-out); }
 
@@ -508,7 +524,8 @@ button {
   .timeline-mark-label { font-size: 10px; }
 
   /* 모바일은 두 손가락으로 확대하므로 축척 막대는 숨긴다. 권역 단추·전쟁 보기의 전역 단추는 PC처럼 왼쪽 아래에 세로로(2026-10-26) */
-  .map-controls { bottom: 8px; left: 8px; }
+  .map-controls, .map-bottom-left { bottom: 8px; left: 8px; }
+  .map-bottom-left { right: 8px; }
   .map-region-notice { top: 8px; font-size: 12px; }
   .map-zoom { display: none; }
   .map-controls button { height: 28px; padding: 0 8px; font-size: 12px; }
@@ -534,7 +551,7 @@ button {
   .panel-header-sticky h2 .hanja { font-size: 15px; } /* 이름 17px와 기간 13px의 중간 */
   .panel-section-title { margin: 10px 0 6px; }
   .event { padding: 8px 10px; }
-  .panel-legend { margin: 0 0 6px; }
+  .map-legend { font-size: 11px; padding: 3px 6px; }
 
   /* 휴대폰 나라 설명: 개요 한 문장 + '국가 상세정보' 단추(EntityTabs, 테스트 중) */
   .entity-tabs-mobile { margin: 8px 0 4px; }

@@ -225,11 +225,6 @@ export function EventPanel({ data }: { data: StaticData }) {
         )}
       </div>
 
-      {/* 화살표 뜻은 사건이 많아도 스크롤 밖으로 밀리지 않게 머리줄 바로 아래에 둔다(2026-10-19) */}
-      <div className="panel-legend">
-        <span><i className="legend-in" />영향을 준 나라 → {entity.names.ko}</span>
-        <span><i className="legend-out" />{entity.names.ko} → 영향을 받은 나라</span>
-      </div>
 
       {shown.length === 0 ? (
         <div className="panel-empty">

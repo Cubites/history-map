@@ -641,6 +641,7 @@ export default function WorldMap({ data }: { data: StaticData }) {
   // ── 화면 좌표 레이어 (SVG) ─────────────────────────────────
   const projection = useMemo(() => (size ? createProjection(size, s0, view) : null), [size, s0, view]);
   const hoveredEntity = hovered ? data.entities.get(hovered.id) : undefined;
+  const selectedEntity = selectedId ? data.entities.get(selectedId) : undefined;
 
   return (
     <div
@@ -702,6 +703,7 @@ export default function WorldMap({ data }: { data: StaticData }) {
       {/* 권역 단추(2026-10-18: 머리글 권역 필터를 없애고 이리로 옮김)(권역 고르기·자료 없는 해면 옮기기·그 권역으로 지도 이동).
           세계는 '전체'를 고르고 세계로 축소한다. 전쟁 보기 중에는 전역 단추가 그 자리에 오므로 숨긴다(2026-10-26) */}
       {!war && (
+        <div className="map-bottom-left">
         <div className="map-controls" onClick={(e) => e.stopPropagation()} onPointerDown={(e) => e.stopPropagation()}>
           <button
             type="button"
@@ -715,6 +717,14 @@ export default function WorldMap({ data }: { data: StaticData }) {
           </button>
           <button type="button" aria-pressed={regionFilter === 'east-asia'} onClick={() => chooseRegion('east-asia')}>동아시아</button>
           <button type="button" aria-pressed={regionFilter === 'europe'} onClick={() => chooseRegion('europe')}>유럽</button>
+        </div>
+        {/* 사건 화살표 뜻(2026-10-26: 사건 목록 머리줄 아래에서 권역 단추 오른쪽으로 옮김). 나라를 골랐을 때만, 전쟁 보기에서는 숨긴다 */}
+        {selectedEntity && (
+          <div className="map-legend">
+            <span><i className="legend-in" />영향을 준 나라 → {selectedEntity.names.ko}</span>
+            <span><i className="legend-out" />{selectedEntity.names.ko} → 영향을 받은 나라</span>
+          </div>
+        )}
         </div>
       )}
       {/* 전쟁 보기의 전역 단추(2026-10-26: 타임라인에서 지도 왼쪽 아래로 옮김). 전역 순서대로 위에서 아래로 */}
