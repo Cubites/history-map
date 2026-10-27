@@ -10,16 +10,16 @@ export default function App() {
 
   return (
     <div className="app">
-      <header className="app-header">
-        <h1>역사 지도</h1>
-        {data && <SearchBox data={data} />}
-      </header>
       <UpdateNotice />
       {data ? (
         <>
           <div className="app-body">
             <main className="app-main">
               <WorldMap data={data} />
+              {/* 사건·나라 검색창은 지도 왼쪽 위(2026-10-27: '역사 지도' 머리글을 없애고 옮김). 지도(.world-map) 밖이라 지도 끌기·휠이 닿지 않는다 */}
+              <div className="map-search">
+                <SearchBox data={data} />
+              </div>
             </main>
             <EventPanel data={data} />
           </div>
