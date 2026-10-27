@@ -10,7 +10,7 @@ import {
   type GeoRawProjection,
 } from 'd3-geo';
 import type { LonLat } from '../schema/index.ts';
-import { REGION_FILTER_INFO } from '../schema/regions.ts';
+import { REGION_FILTERS, REGION_FILTER_INFO, type RegionFilter } from '../schema/regions.ts';
 
 export type Size = { width: number; height: number };
 
@@ -288,4 +288,24 @@ export function recenter(size: Size, s0: number, view: View, target: [number, nu
   // 지도 바깥(세계 타원 밖)을 잡았으면 Equal Earth 기준으로 근사한다
   const lon = view.lon + (target[0] - center[0]) / (EQUATOR_PER_DEGREE * s0 * view.k);
   return constrain(size, s0, { lon, k, ty, dx: view.dx });
+}
+
+/** 권역 범위가 꽉 차는 배율(fitBounds)의 이 비율보다 더 축소하면 특정 권역이 아니라 세계를 보는 것으로 친다(권역 폭의 약 2배가 보일 때) */
+const REGION_ZOOM_MIN = 0.5;
+
+/**
+ * 지금 시점이 보는 권역 (2026-10-27, 지도를 옮기면 권역 단추를 그에 맞춰 고른다. DESIGN.md §6.4.2).
+ * 화면 가운데가 권역 범위(REGION_FILTER_INFO.bounds) 안이고, 배율이 그 권역 단추를 눌렀을 때 배율의 REGION_ZOOM_MIN배 이상이면 그 권역.
+ * 아니면(너무 축소했거나 어느 권역도 아닌 곳) 'all'(세계). 배율로 재므로 화면 비율(PC 가로, 휴대폰 세로)과 위도에 상관없이 같은 기준이 된다
+ */
+export function regionOfView(size: Size, s0: number, view: View): RegionFilter {
+  const center = invertPoint(createProjection(size, s0, view), [size.width / 2 + view.dx, size.height / 2]);
+  if (!center) return 'all';
+  const [lon, lat] = [normalizeLon(center[0]), center[1]];
+  for (const id of REGION_FILTERS) {
+    const bounds = REGION_FILTER_INFO[id].bounds!;
+    const [[west, south], [east, north]] = bounds;
+    if (west <= lon && lon <= east && south <= lat && lat <= north && view.k >= fitBounds(size, s0, bounds).k * REGION_ZOOM_MIN) return id;
+  }
+  return 'all';
 }

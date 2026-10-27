@@ -271,22 +271,6 @@ button {
   border: 1.5px solid var(--fg);
   border-top: none;
 }
-.map-region-notice:empty { display: none; }
-.map-region-notice {
-  position: absolute;
-  top: 56px; /* 왼쪽 위 검색창 아래(2026-10-27) */
-  left: 50%;
-  transform: translateX(-50%);
-  max-width: calc(100% - 24px);
-  padding: 6px 10px;
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  background: var(--control-bg);
-  color: var(--fg);
-  font-size: 13px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
-  pointer-events: none;
-}
 
 /* ── 사건 패널 ────────────────────────────────────────── */
 
@@ -576,8 +560,7 @@ button {
   /* 모바일은 두 손가락으로 확대하므로 축척 막대는 숨긴다. 권역 단추·전쟁 보기의 전역 단추는 PC처럼 왼쪽 아래에 세로로(2026-10-26) */
   .map-controls, .map-bottom-left { bottom: 8px; left: 8px; }
   .map-bottom-left { right: 96px; }
-  .map-notice, .map-region-notice { top: 48px; }
-  .map-region-notice { font-size: 12px; }
+  .map-notice { top: 48px; }
   .map-zoom-wrap { right: 8px; bottom: 8px; }
   .map-zoom { padding: 3px; }
   .map-zoom button { width: 30px; height: 30px; font-size: 18px; } /* 손가락으로 누르기 쉽게 */

@@ -54,6 +54,7 @@ import {
   MAX_ZOOM,
   MIN_ZOOM,
   recenter,
+  regionOfView,
   zoomAround,
   toGeoView,
   toView,
@@ -128,7 +129,7 @@ export default function WorldMap({ data }: { data: StaticData }) {
   const setYear = useAppStore((s) => s.setYear);
   const regionFilter = useAppStore((s) => s.regionFilter);
   const regionFocus = useAppStore((s) => s.regionFocus);
-  const { choose: chooseRegion, notice: regionNotice } = useRegionChoice(data);
+  const chooseRegion = useRegionChoice();
   const focusedEventId = useAppStore((s) => s.focusedEventId);
 
   // 시점은 매 프레임 바뀌므로 ref에 두고, 화면 좌표 레이어(SVG)를 위해 프레임당 한 번 state로 복사한다.
@@ -468,6 +469,17 @@ export default function WorldMap({ data }: { data: StaticData }) {
   const syncing = useRef(false);
   const settleTimer = useRef(0);
 
+  // 지도가 멈추면 보는 곳에 맞춰 권역 단추를 고른다(2026-10-27). 지도 이동(regionFocus)은 일으키지 않는다.
+  // 전쟁 보기 중에는 권역 단추가 없고 시점이 전쟁 지역에 묶이므로 고르지 않는다
+  const followRegion = useCallback(() => {
+    const { warId: inWar, regionFilter: current } = useAppStore.getState();
+    if (!size || inWar) return;
+    const next = regionOfView(size, s0, viewRef.current);
+    if (next !== current) useAppStore.setState({ regionFilter: next });
+  }, [size, s0]);
+  // 처음 화면(동아시아)과 창 크기가 바뀐 뒤에도 맞춘다
+  useEffect(() => followRegion(), [followRegion]);
+
   const setMoving = useCallback(
     (moving: boolean) => {
       window.clearTimeout(settleTimer.current);
@@ -478,9 +490,10 @@ export default function WorldMap({ data }: { data: StaticData }) {
       settleTimer.current = window.setTimeout(() => {
         movingRef.current = false;
         requestDraw();
+        followRegion();
       }, SETTLE_MS);
     },
-    [requestDraw],
+    [requestDraw, followRegion],
   );
 
   /** d3-zoom 내부 배율을 현재 시점과 맞춘다 (버튼으로 시점을 바꾼 뒤) */
@@ -850,10 +863,6 @@ export default function WorldMap({ data }: { data: StaticData }) {
           <i style={{ width: distanceScale.width }} />
         </div>
       )}
-      </div>
-      {/* 권역을 고를 때 연도를 옮겼다는 알림. 비어 있을 때도 두어야 화면 낭독기가 읽는다 */}
-      <div className="map-region-notice map-ui" role="status" aria-live="polite">
-        {regionNotice}
       </div>
     </div>
   );
