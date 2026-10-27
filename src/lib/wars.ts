@@ -9,10 +9,11 @@ export interface WarTheater {
 
 const inRange = (r: { from: number; to: number }, year: number) => r.from <= year && year <= r.to;
 
-/** 그 해에 진행 중인 전역들 (평소 지도의 전쟁 표시용) */
-export function theatersInYear(wars: WarIndexEntry[], year: number): WarTheater[] {
-  return wars.flatMap((war) => war.theaters.filter((t) => inRange(t, year)).map((theater) => ({ war, theater })));
-}
+/**
+ * 세계적인 전쟁: 지도 왼쪽 위 "주요 사건" 목록에 어느 권역을 보든 늘 뜬다 (MajorEvents.tsx, 2026-10-27).
+ * 여기 없는 전쟁은 그 전쟁(전역)의 권역을 보고 있을 때만 뜬다. 세계적인 전쟁 보기를 새로 만들면 여기에 id를 더한다
+ */
+export const WORLD_SCALE_WARS: ReadonlySet<string> = new Set(['world-war-1', 'world-war-2']);
 
 /** 그 나라가 [from, to] 구간에 참전한 전쟁들 (사건 패널의 "이 시기의 전쟁") */
 export function warsOf(wars: WarIndexEntry[], entityId: string, from: number, to: number): WarIndexEntry[] {

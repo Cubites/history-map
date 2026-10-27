@@ -20,7 +20,7 @@ import {
 } from '../data/staticData.ts';
 import { focusTarget, placeActive } from '../lib/events.ts';
 import { useWarShapes } from '../data/warShapes.ts';
-import { activeWarView, entryYear, factionColor, frontBattleSpots, nearBy, snapshotFor, theatersInYear } from '../lib/wars.ts';
+import { activeWarView, entryYear, factionColor, frontBattleSpots, nearBy, snapshotFor } from '../lib/wars.ts';
 import { formatRange, formatYear } from '../lib/year.ts';
 import { REGION_FILTER_INFO } from '../schema/regions.ts';
 import { useRegionChoice } from '../search/RegionFilter.tsx';
@@ -28,7 +28,7 @@ import type { Lod, TerritoryIndexEntry } from '../schema/index.ts';
 import { activeEventId, useAppStore } from '../store/useAppStore.ts';
 import { ArrowLayer } from './ArrowLayer.tsx';
 import { FrontArrowLayer } from './FrontArrowLayer.tsx';
-import { WarMarkerLayer } from './WarMarkerLayer.tsx';
+import { MajorEvents } from './MajorEvents.tsx';
 import { BattlePinLayer, type BattlePin } from './BattlePinLayer.tsx';
 import { WarDetailLayer } from './WarDetailLayer.tsx';
 import {
@@ -178,12 +178,6 @@ export default function WorldMap({ data }: { data: StaticData }) {
       return e.level !== 'region' && !occupierAt(data.relations, entityId, year);
     },
     [data.entities, data.relations, year, theater],
-  );
-  // 평소 지도에는 그 해에 진행 중인 전역마다 전쟁 표시만 둔다. 권역 필터와 상관없이 늘 전부 (DESIGN.md §6.4.2, 2026-10-27).
-  // hideMarker 전역(세계 개관)은 표시하지 않는다 — 전쟁 보기 안의 전역 버튼(FrontTimeline, 권역과 상관없이 전역 전부)으로 들어간다
-  const warMarkers = useMemo(
-    () => (warId ? [] : theatersInYear(data.wars, year).filter(({ theater: t }) => !t.hideMarker)),
-    [data.wars, warId, year],
   );
   // 전쟁 보기가 없는 전쟁·전투 사건은 그 해에 싸운 곳만 작게 표시한다 (DESIGN.md §4.5).
   // 장소에 year(싸운 해, 기간이면 [from, to])가 있으면 그 해에만, 없으면 사건 기간 내내 보인다 (placeActive, 2026-10-06).
@@ -775,9 +769,6 @@ export default function WorldMap({ data }: { data: StaticData }) {
           )}
           {snapshot && war && <FrontArrowLayer war={war} snapshot={snapshot} projection={projection} entityColor={(id) => data.entities.get(id)?.color} />}
           {battlePins.length > 0 && <BattlePinLayer pins={battlePins} projection={projection} onOpen={openBattlePin} />}
-          {warMarkers.length > 0 && (
-            <WarMarkerLayer items={warMarkers} projection={projection} onOpen={({ war: w, theater: t }) => enterWar(w.id, t.id, year, null)} />
-          )}
           <LabelLayer territories={labelTerritories} entities={data.entities} selectedId={selectedId} projection={projection} view={view} size={size} />
           {hoveredEvent && selectedId && (
             <ArrowLayer data={data} event={hoveredEvent} selectedId={selectedId} projection={projection} />
@@ -811,6 +802,8 @@ export default function WorldMap({ data }: { data: StaticData }) {
       )}
       {/* 권역 단추(2026-10-18: 머리글 권역 필터를 없애고 이리로 옮김)(권역 고르기·자료 없는 해면 옮기기·그 권역으로 지도 이동).
           세계는 '전체'를 고르고 세계로 축소한다. 전쟁 보기 중에는 전역 단추가 그 자리에 오므로 숨긴다(2026-10-26) */}
+      {/* 지도 왼쪽 위 "주요 사건" 단추와 목록(2026-10-27, 지도의 전쟁 표시 ⚔ 대신). 전쟁 보기 중에는 숨긴다 */}
+      {!war && <MajorEvents data={data} />}
       {!war && (
         <div className="map-bottom-left">
         <div className="map-controls map-ui" onClick={(e) => e.stopPropagation()} onPointerDown={(e) => e.stopPropagation()}>

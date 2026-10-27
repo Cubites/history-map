@@ -211,6 +211,16 @@ button {
 /* 지도 왼쪽 아래 권역 단추(세계·동아시아·유럽)·전역 단추의 고른 상태와 연도 이동 알림 */
 .map-controls button[aria-pressed='true'] { border-color: var(--accent); color: var(--accent); font-weight: 600; }
 .map-theaters button[aria-pressed='true'] { border-color: var(--front-line); color: var(--front-line); font-weight: 700; }
+/* 지도 왼쪽 위 "주요 사건" 단추와 그 아래 목록(2026-10-27, 지도의 전쟁 표시 ⚔ 대신). 목록이 길면 지도 높이 안에서 세로 스크롤. 휴대폰은 지도 위 검색창 아래 */
+.major-events { position: absolute; top: 12px; left: 12px; z-index: 4; display: flex; flex-direction: column; align-items: flex-start; max-width: calc(100% - 24px); max-height: calc(100% - 24px); }
+.major-events-toggle { height: 32px; padding: 0 12px; border: 1px solid var(--border); border-radius: 6px; background: var(--control-bg); color: var(--fg); font: inherit; font-size: 14px; font-weight: 600; cursor: pointer; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08); }
+.major-events-toggle:hover { border-color: var(--muted); }
+.major-events-toggle[aria-expanded='true'] { border-color: var(--front-line); color: var(--front-line); }
+.major-events-list { list-style: none; min-height: 0; overflow-y: auto; margin: 6px 0 0; padding: 4px; border: 1px solid var(--border); border-radius: 6px; background: var(--control-bg); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12); }
+.major-events-list button { display: flex; align-items: baseline; justify-content: space-between; gap: 14px; width: 100%; padding: 6px 8px; border: none; border-radius: 4px; background: transparent; color: var(--fg); font: inherit; font-size: 14px; text-align: left; cursor: pointer; }
+.major-events-list button:hover, .major-events-list button:focus-visible { background: var(--highlight); outline: none; }
+.major-events-years { flex-shrink: 0; font-size: 12px; color: var(--muted); }
+.major-events-empty { padding: 6px 8px; font-size: 13px; color: var(--muted); }
 /* 오른쪽 아래 확대·축소 단추(+ 위, − 아래)와 그 아래 거리 축척을 세로로 쌓는다(2026-10-27: 조절 막대 없앰, 휴대폰에도 보임) */
 .map-zoom-wrap {
   position: absolute;
@@ -671,16 +681,6 @@ button {
 .event-front { font-size: 11.5px; color: var(--front-line); margin-top: 2px; }
 
 /* ── 전쟁 보기 (DESIGN.md §4.5) ─────────────────────────── */
-.war-marker { cursor: pointer; pointer-events: auto; }
-.war-marker-disc { fill: var(--surface); stroke: var(--front-line); stroke-width: 1.5; }
-.war-marker:hover .war-marker-disc, .war-marker:focus-visible .war-marker-disc { fill: var(--front-line); }
-.war-marker-icon { fill: none; stroke: var(--front-line); stroke-width: 2; stroke-linecap: round; }
-.war-marker:hover .war-marker-icon, .war-marker:focus-visible .war-marker-icon { stroke: var(--surface); }
-.war-marker:focus, .war-marker:focus-visible { outline: none; }
-.war-marker-label, .war-marker-sub { paint-order: stroke; stroke: var(--label-halo); stroke-width: 3.5px; }
-.war-marker-label { font-size: 12.5px; font-weight: 700; fill: var(--front-line); }
-.war-marker-sub { font-size: 11px; fill: var(--label); opacity: 0; transition: opacity .15s; }
-.war-marker:hover .war-marker-sub, .war-marker:focus-visible .war-marker-sub { opacity: 1; }
 
 /* 전쟁 보기 띠(이름·닫기)는 지도 아래 가운데(2026-10-26: 위에서 옮김). 휴대폰은 아래 @media에서 닫기 단추만 남긴다 */
 .war-banner {
@@ -809,6 +809,7 @@ button {
 .search-empty { padding: 6px 10px; color: var(--muted); font-size: 13px; }
 @media (max-width: 768px) {
   .map-search { display: block; top: 8px; left: 8px; right: 8px; } /* 화면 폭보다 살짝 작게 */
+  .major-events { top: 52px; left: 8px; max-width: calc(100% - 16px); max-height: calc(100% - 60px); } /* 검색창(8px + 높이) 아래 */
   .search-input { font-size: 16px; padding: 5px 8px; } /* 16px 미만이면 iOS가 입력 시 화면을 확대한다 */
   /* 검색창이 좁으므로 결과 목록은 지도 폭에 맞춘다 */
 

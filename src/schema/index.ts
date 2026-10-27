@@ -250,7 +250,7 @@ export const TheaterSchema = z.object({
    * (맞닿은 진영 경계는 양쪽이 똑같이 줄어 틈·겹침이 없음). 넓은 범위를 거칠게 보는 전역용(예: 제2차 세계 대전의 세계 개관). 없으면 줄이지 않는다
    */
   simplify: z.number().positive().optional(),
-  /** true면 평소 지도에 이 전역의 전쟁 표시를 두지 않는다. 전쟁 보기 안의 전역 버튼으로만 들어간다 (예: 세계 개관) */
+  /** true면 "주요 사건" 목록에서 이 전역으로 바로 들어가지 않는다(2026-10-27 전에는 평소 지도의 전쟁 표시를 숨김). 전쟁 보기 안의 전역 버튼으로만 들어간다 (예: 세계 개관) */
   hideMarker: z.boolean().optional(),
   routes: z.array(RouteSchema).default([]),
   battles: z.array(BattleSchema).default([]),
