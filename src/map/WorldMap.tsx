@@ -22,7 +22,7 @@ import { focusTarget, placeActive } from '../lib/events.ts';
 import { useWarShapes } from '../data/warShapes.ts';
 import { activeWarView, entryYear, factionColor, frontBattleSpots, nearBy, snapshotFor, theatersInYear } from '../lib/wars.ts';
 import { formatRange, formatYear } from '../lib/year.ts';
-import { REGION_FILTER_INFO, inRegionFilter } from '../schema/regions.ts';
+import { REGION_FILTER_INFO } from '../schema/regions.ts';
 import { useRegionChoice } from '../search/RegionFilter.tsx';
 import type { Lod, TerritoryIndexEntry } from '../schema/index.ts';
 import { activeEventId, useAppStore } from '../store/useAppStore.ts';
@@ -130,7 +130,6 @@ export default function WorldMap({ data }: { data: StaticData }) {
   const regionFilter = useAppStore((s) => s.regionFilter);
   const regionFocus = useAppStore((s) => s.regionFocus);
   const chooseRegion = useRegionChoice();
-  const focusedEventId = useAppStore((s) => s.focusedEventId);
 
   // 시점은 매 프레임 바뀌므로 ref에 두고, 화면 좌표 레이어(SVG)를 위해 프레임당 한 번 state로 복사한다.
   const viewRef = useRef<View>({ lon: DEFAULT_LON, k: 1, ty: 0, dx: 0 });
@@ -188,7 +187,7 @@ export default function WorldMap({ data }: { data: StaticData }) {
   );
   // 전쟁 보기가 없는 전쟁·전투 사건은 그 해에 싸운 곳만 작게 표시한다 (DESIGN.md §4.5).
   // 장소에 year(싸운 해, 기간이면 [from, to])가 있으면 그 해에만, 없으면 사건 기간 내내 보인다 (placeActive, 2026-10-06).
-  // 권역 필터에 맞는 사건만. 다만 검색·전투 표시로 고른 사건(focusedEventId)은 필터와 상관없이 보여 준다.
+  // 권역 필터와 상관없이 늘 전부 보여 준다 (2026-10-27, 한 해에 많아야 11개라 부담이 없음).
   // 전쟁 보기에 이어진 사건(front)은 그 전역의 전투 목록에 없는 장소만 보여 준다 (2026-10-12: 세계 대전의 칭다오·유틀란트처럼
   // 전쟁 보기 범위 밖이거나 전투로 넣지 않은 곳이 어디에도 보이지 않던 문제)
   const battlePins = useMemo<BattlePin[]>(
@@ -196,19 +195,14 @@ export default function WorldMap({ data }: { data: StaticData }) {
       warId
         ? []
         : data.events
-            .filter(
-              (e) =>
-                e.year <= year &&
-                year <= (e.endYear ?? e.year) &&
-                (e.id === focusedEventId || inRegionFilter(regionFilter, e.region)),
-            )
+            .filter((e) => e.year <= year && year <= (e.endYear ?? e.year))
             .flatMap((event) => {
               const covered = event.front ? frontBattleSpots(data.wars, event.front) : [];
               return (event.places ?? [])
                 .filter((p) => placeActive(event, p, year) && !covered.some((b) => nearBy(b, p.at)))
                 .map((p) => ({ event, name: p.name, at: p.at }));
             }),
-    [data.events, data.wars, warId, year, regionFilter, focusedEventId],
+    [data.events, data.wars, warId, year],
   );
   const openBattlePin = (pin: BattlePin) => {
     // 그 해에 있던 나라 가운데 사건의 첫 주체를 골라 패널에 사건을 띄운다.
