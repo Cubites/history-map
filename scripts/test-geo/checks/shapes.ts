@@ -453,7 +453,9 @@ async function genGeo(): Promise<CheckResult> {
   try {
     writeFileSync(path.join(tmp, 'package.json'), '{}\n');
     mkdirSync(path.join(tmp, 'data/entities'), { recursive: true });
-    const r = spawnSync(process.execPath, [path.join(ROOT, 'scripts/generate-geo.mjs'), tmp], { encoding: 'utf8', cwd: tmp, timeout: 280000, maxBuffer: 64 * 1024 * 1024 });
+    // 제한 25분(2026-10-27, 280초에서 늘림): 생성기 연산 캐시(.cache/geo-ops)의 열쇠에 Node 판이 들어가, Node를 바꾼 첫 CI 실행은
+    // 캐시 없이 처음부터 계산해 280초를 넘겼다(316875c, ETIMEDOUT). 캐시가 있으면 1분 안팎이다. 전쟁 생성기(genWars)와 같은 제한
+    const r = spawnSync(process.execPath, [path.join(ROOT, 'scripts/generate-geo.mjs'), tmp], { encoding: 'utf8', cwd: tmp, timeout: 1500000, maxBuffer: 64 * 1024 * 1024 });
     if (r.status !== 0) return { checked: 0, items: [{ key: '생성 실패', msg: `생성기 실행 실패(코드 ${r.status}): ${(r.stderr || String(r.error)).split('\n').find((l) => l.trim()) ?? ''}` }] };
     const mine = path.join(ROOT, 'data/geo');
     const made = path.join(tmp, 'data/geo');
