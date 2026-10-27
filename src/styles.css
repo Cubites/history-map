@@ -213,11 +213,11 @@ button {
 .map-theaters button[aria-pressed='true'] { border-color: var(--front-line); color: var(--front-line); font-weight: 700; }
 /* 지도 왼쪽 위 "주요 사건" 단추와 그 아래 목록(2026-10-27, 지도의 전쟁 표시 ⚔ 대신). 목록이 길면 지도 높이 안에서 세로 스크롤. 휴대폰은 지도 위 검색창 아래 */
 .major-events { position: absolute; top: 12px; left: 12px; z-index: 4; display: flex; flex-direction: column; align-items: flex-start; max-width: calc(100% - 24px); max-height: calc(100% - 24px); }
-/* 단추는 눈에 띄게 빨간 바탕·흰 글자(2026-10-27). 밝은·어두운 화면 모두 같은 색(흰 글자 대비 약 5.6:1) */
-.major-events-toggle { height: 32px; padding: 0 12px; border: 1px solid #a31f1f; border-radius: 6px; background: #c62828; color: #fff; font: inherit; font-size: 14px; font-weight: 700; cursor: pointer; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2); }
-.major-events-toggle:hover { background: #b71c1c; }
-.major-events-toggle[aria-expanded='true'] { background: #8e1616; border-color: #8e1616; }
-.major-events-toggle:focus-visible { outline: 2px solid #fff; outline-offset: -4px; }
+/* 단추는 눈에 띄게 흰 바탕에 붉은 테두리·글자(2026-10-27). 밝은·어두운 화면 모두 같은 색(흰 바탕 대비 약 5.6:1) */
+.major-events-toggle { height: 32px; padding: 0 12px; border: 1.5px solid #c62828; border-radius: 6px; background: #fff; color: #c62828; font: inherit; font-size: 14px; font-weight: 700; cursor: pointer; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15); }
+.major-events-toggle:hover { background: #fdecea; }
+.major-events-toggle[aria-expanded='true'] { background: #fbdcd9; }
+.major-events-toggle:focus-visible { outline: 2px solid #c62828; outline-offset: 2px; }
 .major-events-list { list-style: none; min-height: 0; overflow-y: auto; margin: 6px 0 0; padding: 4px; border: 1px solid var(--border); border-radius: 6px; background: var(--control-bg); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12); }
 .major-events-list button { display: flex; align-items: baseline; justify-content: space-between; gap: 14px; width: 100%; padding: 6px 8px; border: none; border-radius: 4px; background: transparent; color: var(--fg); font: inherit; font-size: 14px; text-align: left; cursor: pointer; }
 .major-events-list button:hover, .major-events-list button:focus-visible { background: var(--highlight); outline: none; }
