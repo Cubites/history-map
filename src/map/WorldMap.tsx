@@ -690,20 +690,7 @@ export default function WorldMap({ data }: { data: StaticData }) {
     if (!activeWarView(data.wars, warId, theaterId, year)) useAppStore.setState({ warId: null, theaterId: null, frontDate: null, returnYear: null });
   }, [warId, theaterId, year, data.wars]);
 
-  // 오른쪽 아래 세로 축척 막대(2026-10-26, +/− 단추를 대신함). 막대 위치 0~1은 배율의 로그 눈금(MIN_ZOOM~MAX_ZOOM)이고,
-  // 올리면 확대·내리면 축소한다. 화면 가운데를 기준으로 확대한다
-  const zoomLevel = Math.log(view.k / MIN_ZOOM) / Math.log(MAX_ZOOM / MIN_ZOOM);
-  const zoomTo = (level: number) => {
-    if (!size) return;
-    cancelAnimationFrame(animation.current);
-    const center: [number, number] = [size.width / 2, size.height / 2];
-    viewRef.current = zoomAround(size, s0, viewRef.current, center, MIN_ZOOM * (MAX_ZOOM / MIN_ZOOM) ** level, center);
-    setMoving(true);
-    draw();
-    syncZoom();
-    setMoving(false);
-  };
-  // 막대 위 +, 아래 − 단추: 한 번에 1.6배씩 부드럽게
+  // 오른쪽 아래 +, − 단추: 한 번에 1.6배씩 부드럽게(2026-10-27: 그 사이의 조절 막대는 없앰)
   const zoomStep = (factor: number) => {
     if (size) animateTo({ ...toGeoView(size, s0, viewRef.current), k: viewRef.current.k * factor });
   };
@@ -855,15 +842,6 @@ export default function WorldMap({ data }: { data: StaticData }) {
       <div className="map-zoom-wrap">
       <div className="map-zoom map-ui" onClick={(e) => e.stopPropagation()} onPointerDown={(e) => e.stopPropagation()}>
         <button type="button" aria-label="확대" onClick={() => zoomStep(1.6)}>+</button>
-        <input
-          type="range"
-          aria-label="지도 확대·축소"
-          min={0}
-          max={1}
-          step={0.005}
-          value={zoomLevel}
-          onChange={(e) => zoomTo(Number(e.currentTarget.value))}
-        />
         <button type="button" aria-label="축소" onClick={() => zoomStep(1 / 1.6)}>−</button>
       </div>
       {distanceScale && (

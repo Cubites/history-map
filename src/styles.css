@@ -181,7 +181,7 @@ button {
   position: absolute;
   bottom: 12px;
   left: 12px;
-  right: 12px;
+  right: 112px; /* 오른쪽 아래 확대 단추·거리 축척 자리를 비운다 */
   display: flex;
   align-items: flex-end;
   gap: 8px;
@@ -213,8 +213,7 @@ button {
 /* 지도 왼쪽 아래 권역 단추(세계·동아시아·유럽)·전역 단추의 고른 상태와 연도 이동 알림 */
 .map-controls button[aria-pressed='true'] { border-color: var(--accent); color: var(--accent); font-weight: 600; }
 .map-theaters button[aria-pressed='true'] { border-color: var(--front-line); color: var(--front-line); font-weight: 700; }
-/* 오른쪽 아래 세로 축척 막대(2026-10-26, +/− 단추를 대신함): 올리면 확대, 내리면 축소 */
-/* 축척 막대와 그 아래 거리 축척을 오른쪽 아래에 세로로 쌓는다 */
+/* 오른쪽 아래 확대·축소 단추(+ 위, − 아래)와 그 아래 거리 축척을 세로로 쌓는다(2026-10-27: 조절 막대 없앰, 휴대폰에도 보임) */
 .map-zoom-wrap {
   position: absolute;
   right: 12px;
@@ -273,15 +272,6 @@ button {
   height: 5px;
   border: 1.5px solid var(--fg);
   border-top: none;
-}
-.map-zoom input[type='range'] {
-  writing-mode: vertical-lr;
-  direction: rtl; /* 위가 최대(확대) */
-  width: 24px;
-  height: 140px;
-  margin: 4px 0;
-  accent-color: var(--accent);
-  cursor: pointer;
 }
 .map-region-notice:empty { display: none; }
 .map-region-notice {
@@ -569,9 +559,11 @@ button {
 
   /* 모바일은 두 손가락으로 확대하므로 축척 막대는 숨긴다. 권역 단추·전쟁 보기의 전역 단추는 PC처럼 왼쪽 아래에 세로로(2026-10-26) */
   .map-controls, .map-bottom-left { bottom: 8px; left: 8px; }
-  .map-bottom-left { right: 8px; }
+  .map-bottom-left { right: 96px; }
   .map-region-notice { top: 8px; font-size: 12px; }
-  .map-zoom-wrap { display: none; }
+  .map-zoom-wrap { right: 8px; bottom: 8px; }
+  .map-zoom { padding: 3px; }
+  .map-zoom button { width: 30px; height: 30px; font-size: 18px; } /* 손가락으로 누르기 쉽게 */
   .map-controls button { height: 28px; padding: 0 8px; font-size: 12px; }
 
   .panel-header h2 { font-size: 17px; }
