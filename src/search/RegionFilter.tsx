@@ -29,7 +29,7 @@ function yearWithData(data: StaticData, unit: RegionFilterUnit, year: number): n
 
 /**
  * 권역 고르기 (지도 왼쪽 위 세계·동아시아·유럽 단추, DESIGN.md §6.4.2). 2026-10-18 머리글 권역 필터를 없애고 이 단추로 옮김.
- * 고른 권역의 전투 표시만 보여 주고, 검색은 그 권역을 먼저 보여 주며, 지도를 그 권역으로 한 번 옮긴다.
+ * 고른 권역의 전투 표시만 보여 주고(전쟁 표시 ⚔는 권역과 상관없이 늘 전부, 2026-10-27), 검색은 그 권역을 먼저 보여 주며, 지도를 그 권역으로 한 번 옮긴다.
  * 지금 연도에 그 권역의 자료가 없으면 자료가 있는 연도로 옮기고 짧은 알림 글(notice)을 돌려준다
  */
 export function useRegionChoice(data: StaticData) {
