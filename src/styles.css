@@ -483,14 +483,16 @@ button {
 }
 
 .timeline-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
-/* 연도 표시: 숫자 부분이 곧 입력 칸(2026-10-27). 평소엔 글처럼 보이고 점선 밑줄로 고칠 수 있음을 알린다. Enter로만 옮긴다 */
+/* 연도 표시: 숫자 부분이 곧 입력 칸(2026-10-27). 검색창처럼 테두리 있는 상자로 보이고 Enter로만 옮긴다.
+   글자 크기·색은 선사 단계 이름(신석기·구석기)과 연도가 같다 */
 .timeline-year {
   display: inline-flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: center;
+  gap: 4px;
   min-width: 128px;
   margin: 0;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 800;
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
@@ -498,18 +500,18 @@ button {
 .timeline-year input {
   width: auto;
   min-width: 2ch;
-  padding: 0 2px;
-  border: none;
-  border-bottom: 2px dotted var(--muted);
-  border-radius: 0;
-  background: none;
+  height: 30px;
+  box-sizing: border-box;
+  padding: 0 8px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface);
   color: inherit;
   font: inherit;
   text-align: center;
 }
-.timeline-year input:focus { outline: none; border-bottom: 2px solid var(--accent); background: var(--bg); }
-.timeline-year input[aria-invalid='true'] { border-bottom-color: var(--error); }
-.timeline-year-stage { font-size: 0.8em; color: var(--muted); }
+.timeline-year input:focus { outline: 2px solid var(--front-line); outline-offset: -1px; }
+.timeline-year input[aria-invalid='true'] { border-color: var(--error); outline-color: var(--error); }
 
 .timeline-track { position: relative; margin-top: 6px; }
 .timeline-track input[type='range'] { width: 100%; margin: 0; position: relative; accent-color: var(--accent); }
@@ -550,7 +552,7 @@ button {
   .timeline-controls { flex-wrap: nowrap; justify-content: space-between; gap: 4px; }
   .timeline-button-label { display: none; }
   .timeline button { min-width: 0; padding: 0 8px; }
-  .timeline-year { min-width: 0; flex: 1; font-size: 18px; } /* 입력 칸 글자 18px: 16px 미만이면 iOS가 입력 시 화면을 확대한다 */
+  .timeline-year { min-width: 0; flex: 1; } /* 입력 칸 글자 16px: 16px 미만이면 iOS가 입력 시 화면을 확대한다 */
   .timeline-year-stage { display: none; } /* 폭이 좁아 겹치므로, 선사 단계는 아래 줄의 구석기·신석기 단추 강조로만 보인다 */
   .timeline-scale { display: none; }
   /* 휴대폰: 500년 눈금과 1000년 숫자만 */
