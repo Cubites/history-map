@@ -16,12 +16,19 @@ export default function App() {
           <div className="app-body">
             <main className="app-main">
               <WorldMap data={data} />
-              {/* 사건·나라 검색창은 지도 왼쪽 위(2026-10-27: '역사 지도' 머리글을 없애고 옮김). 지도(.world-map) 밖이라 지도 끌기·휠이 닿지 않는다 */}
+              {/* 사건·나라 검색창: 휴대폰은 지도 위쪽(2026-10-27: '역사 지도' 머리글을 없애고 옮김), PC는 아래 왼쪽 칸 맨 위(.side-search).
+                  지도(.world-map) 밖이라 지도 끌기·휠이 닿지 않는다 */}
               <div className="map-search">
                 <SearchBox data={data} />
               </div>
             </main>
-            <EventPanel data={data} />
+            {/* PC 왼쪽 칸: 검색창(스크롤해도 맨 위에 남음) + 나라 정보·사건 패널. 휴대폰은 display: contents로 칸이 없는 것처럼 */}
+            <div className="side">
+              <div className="side-search">
+                <SearchBox data={data} />
+              </div>
+              <EventPanel data={data} />
+            </div>
           </div>
           <Timeline data={data} />
         </>

@@ -290,16 +290,28 @@ button {
 
 /* ── 사건 패널 ────────────────────────────────────────── */
 
-.panel {
-  /* 화면 폭에 따라 360~440px(2026-10-19). 큰 화면일수록 글줄이 짧아져 사건 글이 덜 길어진다.
-     PC에서는 지도 왼쪽에 둔다(2026-10-27, 전에는 오른쪽). 휴대폰은 아래 @media의 order가 정한다 */
+/* PC 왼쪽 칸: 맨 위 검색창 + 그 아래 나라 정보·사건 패널(패널만 스크롤).
+   화면 폭에 따라 360~440px(2026-10-19). 큰 화면일수록 글줄이 짧아져 사건 글이 덜 길어진다.
+   지도 왼쪽에 둔다(2026-10-27, 전에는 오른쪽). 휴대폰은 아래 @media에서 칸을 풀고(display: contents) order가 정한다 */
+.side {
   order: -1;
   width: clamp(360px, 32vw, 440px);
   flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+}
+/* 검색창: 칸 폭보다 조금 작게(양옆 12px), 높이는 지도 위에 있을 때(32px)보다 40% 크게, 모서리는 덜 둥글게(2026-10-27) */
+.side-search { position: relative; z-index: 5; padding: 12px 12px 4px; }
+.side-search .search-input { height: 45px; padding: 0 12px; font-size: 15px; border-radius: 3px; }
+.panel {
+  flex: 1;
+  min-height: 0;
   overflow-y: auto;
   padding: 16px;
   background: var(--surface);
-  border-right: 1px solid var(--border);
   font-size: 14px;
   line-height: 1.55;
 }
@@ -530,7 +542,10 @@ button {
 @media (max-width: 768px) {
   .app { height: 100dvh; }
   .app-body { display: contents; }
-  .timeline { order: 1; padding: 6px 12px 4px; border-top: none; border-bottom: 1px solid var(--border); min-width: 0; max-width: 100vw; }
+  /* 연도 조절은 화면 맨 아래(2026-10-27: 지도·패널 아래로 옮김, 전에는 맨 위). 전쟁 보기는 아래 .timeline-war 규칙 */
+  .timeline { order: 4; padding: 6px 12px calc(4px + env(safe-area-inset-bottom)); border-bottom: none; border-top: 1px solid var(--border); min-width: 0; max-width: 100vw; }
+  .side { display: contents; }
+  .side-search { display: none; }
   .front-timeline-head { font-size: 12px; gap: 2px 8px; }
   .front-timeline-legend { font-size: 11px; }
   .front-timeline-dates ol button { height: 26px; }
@@ -797,7 +812,8 @@ button {
 .battle-pin-label { font-size: 11.5px; font-weight: 600; fill: var(--front-line); paint-order: stroke; stroke: var(--label-halo); stroke-width: 3.5px; }
 
 /* 검색: 지도 왼쪽 위(2026-10-27, 전에는 머리글) */
-.map-search { position: absolute; top: 12px; left: 12px; z-index: 5; width: min(320px, calc(100% - 24px)); }
+/* 지도 위 검색창은 휴대폰만(PC는 왼쪽 칸 맨 위 .side-search) */
+.map-search { display: none; position: absolute; z-index: 5; }
 .search { position: relative; min-width: 0; }
 .search-input { width: 100%; box-sizing: border-box; padding: 6px 10px; font: inherit; font-size: 14px; color: var(--fg); background: var(--surface); border: 1px solid var(--border); border-radius: 6px; }
 .search-input:focus { outline: 2px solid var(--front-line); outline-offset: -1px; }
@@ -809,10 +825,10 @@ button {
 .search-sub { color: var(--muted); font-size: 12px; }
 .search-empty { padding: 6px 10px; color: var(--muted); font-size: 13px; }
 @media (max-width: 768px) {
-  .map-search { top: 8px; left: 8px; width: min(260px, calc(100% - 16px)); }
+  .map-search { display: block; top: 8px; left: 8px; right: 8px; } /* 화면 폭보다 살짝 작게 */
   .search-input { font-size: 16px; padding: 5px 8px; } /* 16px 미만이면 iOS가 입력 시 화면을 확대한다 */
   /* 검색창이 좁으므로 결과 목록은 지도 폭에 맞춘다 */
-  .search-results { right: auto; width: calc(100vw - 16px); }
+
 }
 
 /* 새 버전 알림 */
