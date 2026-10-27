@@ -483,29 +483,33 @@ button {
 }
 
 .timeline-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
-.timeline .timeline-year {
+/* 연도 표시: 숫자 부분이 곧 입력 칸(2026-10-27). 평소엔 글처럼 보이고 점선 밑줄로 고칠 수 있음을 알린다. Enter로만 옮긴다 */
+.timeline-year {
+  display: inline-flex;
+  align-items: baseline;
+  justify-content: center;
   min-width: 128px;
-  height: auto;
-  border: none;
-  background: none;
-  text-align: center;
+  margin: 0;
   font-size: 20px;
   font-weight: 800;
   font-variant-numeric: tabular-nums;
+  white-space: nowrap;
 }
-.timeline-input { display: flex; gap: 4px; margin-left: auto; }
-.timeline-input input {
-  width: 150px;
-  height: 32px;
-  padding: 0 8px;
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  background: var(--bg);
-  color: var(--fg);
+.timeline-year input {
+  width: auto;
+  min-width: 2ch;
+  padding: 0 2px;
+  border: none;
+  border-bottom: 2px dotted var(--muted);
+  border-radius: 0;
+  background: none;
+  color: inherit;
   font: inherit;
-  font-size: 14px;
+  text-align: center;
 }
-.timeline-input input[aria-invalid='true'] { border-color: var(--error); }
+.timeline-year input:focus { outline: none; border-bottom: 2px solid var(--accent); background: var(--bg); }
+.timeline-year input[aria-invalid='true'] { border-bottom-color: var(--error); }
+.timeline-year-stage { font-size: 0.8em; color: var(--muted); }
 
 .timeline-track { position: relative; margin-top: 6px; }
 .timeline-track input[type='range'] { width: 100%; margin: 0; position: relative; accent-color: var(--accent); }
@@ -546,11 +550,8 @@ button {
   .timeline-controls { flex-wrap: nowrap; justify-content: space-between; gap: 4px; }
   .timeline-button-label { display: none; }
   .timeline button { min-width: 0; padding: 0 8px; }
-  .timeline .timeline-year { min-width: 0; flex: 1; font-size: 18px; text-decoration: underline dotted var(--muted); text-underline-offset: 4px; }
-  .timeline-input { display: none; }
-  .timeline[data-editing='true'] .timeline-controls { flex-wrap: wrap; }
-  .timeline[data-editing='true'] .timeline-input { display: flex; flex-basis: 100%; margin: 4px 0 0; }
-  .timeline-input input { flex: 1; width: auto; font-size: 16px; /* 16px 미만이면 iOS가 입력 시 화면을 확대한다 */ }
+  .timeline-year { min-width: 0; flex: 1; font-size: 18px; } /* 입력 칸 글자 18px: 16px 미만이면 iOS가 입력 시 화면을 확대한다 */
+  .timeline-year-stage { display: none; } /* 폭이 좁아 겹치므로, 선사 단계는 아래 줄의 구석기·신석기 단추 강조로만 보인다 */
   .timeline-scale { display: none; }
   /* 휴대폰: 500년 눈금과 1000년 숫자만 */
   .timeline-mark:not(.m500) { display: none; }
