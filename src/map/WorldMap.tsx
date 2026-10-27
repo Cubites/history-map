@@ -541,6 +541,89 @@ export default function WorldMap({ data }: { data: StaticData }) {
     };
   }, [containerRef, size, s0, requestDraw, setMoving, syncZoom]);
 
+  // 한 손가락 확대(2026-10-27): 빠르게 두 번 터치하고 두 번째 터치를 누른 채 움직이면, 손가락이 화면 가운데에서 멀어질수록 확대·가까워질수록 축소한다.
+  // 첫 터치를 '짧게 누름'으로 기억해 두고, 그 뒤 DOUBLE_TAP_MS 안에 가까운 곳을 다시 누르면 d3-zoom보다 먼저(캡처 단계) 받아 지도 끌기로 넘기지 않는다
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el || !size) return;
+    const DOUBLE_TAP_MS = 300;
+    const TAP_MOVE = 12; // 짧게 누름으로 치는 움직임 한도(px)
+    const TAP_NEAR = 40; // 두 번째 터치가 첫 터치에서 이만큼 안이어야 함(px)
+    const PX_PER_E = 120; // 가운데에서 이만큼 멀어질 때마다 e(약 2.7)배
+    let tapStart: { x: number; y: number; t: number } | null = null;
+    let lastTap: { x: number; y: number; t: number } | null = null;
+    let gesture: { d0: number; view: View } | null = null;
+    const local = (t: Touch) => {
+      const r = el.getBoundingClientRect();
+      return [t.clientX - r.left, t.clientY - r.top] as const;
+    };
+    const fromCenter = (x: number, y: number) => Math.hypot(x - size.width / 2, y - size.height / 2);
+    const swallow = (e: TouchEvent) => {
+      e.preventDefault();
+      e.stopImmediatePropagation();
+    };
+    const onStart = (e: TouchEvent) => {
+      if (e.touches.length !== 1 || onMapUi(e.target)) {
+        tapStart = null;
+        gesture = null;
+        return;
+      }
+      const [x, y] = local(e.touches[0]);
+      const now = performance.now();
+      if (lastTap && now - lastTap.t < DOUBLE_TAP_MS && Math.hypot(x - lastTap.x, y - lastTap.y) < TAP_NEAR) {
+        lastTap = null;
+        tapStart = null;
+        cancelAnimationFrame(animation.current);
+        gesture = { d0: fromCenter(x, y), view: viewRef.current };
+        setMoving(true);
+        swallow(e);
+        return;
+      }
+      tapStart = { x, y, t: now };
+    };
+    const onMove = (e: TouchEvent) => {
+      if (!gesture) {
+        if (tapStart && e.touches.length === 1) {
+          const [x, y] = local(e.touches[0]);
+          if (Math.hypot(x - tapStart.x, y - tapStart.y) > TAP_MOVE) tapStart = null;
+        }
+        return;
+      }
+      swallow(e);
+      const [x, y] = local(e.touches[0]);
+      const k = Math.min(MAX_ZOOM, Math.max(MIN_ZOOM, gesture.view.k * Math.exp((fromCenter(x, y) - gesture.d0) / PX_PER_E)));
+      const center: [number, number] = [size.width / 2, size.height / 2];
+      viewRef.current = zoomAround(size, s0, gesture.view, center, k, center);
+      setHovered(null);
+      requestDraw();
+    };
+    const onEnd = (e: TouchEvent) => {
+      if (gesture) {
+        swallow(e);
+        if (e.touches.length === 0) {
+          gesture = null;
+          syncZoom();
+          setMoving(false);
+        }
+        return;
+      }
+      if (tapStart && e.touches.length === 0 && performance.now() - tapStart.t < DOUBLE_TAP_MS) lastTap = { ...tapStart, t: performance.now() };
+      else lastTap = null;
+      tapStart = null;
+    };
+    const opts = { capture: true, passive: false } as const;
+    el.addEventListener('touchstart', onStart, opts);
+    el.addEventListener('touchmove', onMove, opts);
+    el.addEventListener('touchend', onEnd, opts);
+    el.addEventListener('touchcancel', onEnd, opts);
+    return () => {
+      el.removeEventListener('touchstart', onStart, opts);
+      el.removeEventListener('touchmove', onMove, opts);
+      el.removeEventListener('touchend', onEnd, opts);
+      el.removeEventListener('touchcancel', onEnd, opts);
+    };
+  }, [containerRef, size, s0, requestDraw, setMoving, syncZoom]);
+
   const animation = useRef(0);
   /** 경위도 시점으로 부드럽게 이동 (버튼). 한 프레임마다 지도 끝 붙이기 규칙을 적용한다 */
   const animateTo = useCallback(
