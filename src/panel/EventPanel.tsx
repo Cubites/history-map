@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { claimantsAt, claimedRegionsAt, occupierAt, overlordAt, type StaticData } from '../data/staticData.ts';
 import { eventYearFor, eventsOf, formatEventYears, inDecade, linkDirection } from '../lib/events.ts';
-import { entryYear, formatFrontDate, warsOf, yearOfFrontDate } from '../lib/wars.ts';
+import { formatFrontDate, yearOfFrontDate } from '../lib/wars.ts';
 import { formatDecade, formatRange, formatYear, isAlive, prehistoryStage } from '../lib/year.ts';
 import type { HistoryEvent } from '../schema/index.ts';
 import { useAppStore } from '../store/useAppStore.ts';
@@ -13,7 +13,7 @@ const CLICK_DISTANCE = 4;
 
 export function EventPanel({ data }: { data: StaticData }) {
   const year = useAppStore((s) => s.year);
-  // 사건 목록과 '이 시기의 전쟁'은 목록 기준 연도로 고른다. 사건을 눌러 지도를 옮겨도 목록이 바뀌지 않게 (listYear)
+  // 사건 목록은 목록 기준 연도로 고른다. 사건을 눌러 지도를 옮겨도 목록이 바뀌지 않게 (listYear)
   const listYear = useAppStore((s) => s.listYear ?? s.year);
   const selectedId = useAppStore((s) => s.selectedId);
   const showAll = useAppStore((s) => s.showAllEvents);
@@ -21,7 +21,6 @@ export function EventPanel({ data }: { data: StaticData }) {
   const setYear = useAppStore((s) => s.setYear);
   const focusEvent = useAppStore((s) => s.focusEvent);
   const select = useAppStore((s) => s.select);
-  const enterWar = useAppStore((s) => s.enterWar);
   const warId = useAppStore((s) => s.warId);
   // 눌러서 고정한 사건은 사건 밖(지도·패널의 다른 곳 등)을 '클릭'하면 풀린다. 다른 사건을 누르면 그 사건으로 바뀐다 (EventItem)
   // 지도를 끌어 옮기거나 두 손가락으로 확대·축소할 때는 풀리지 않는다(2026-10-09): 누른 자리에서 CLICK_DISTANCE 넘게 움직였거나,
@@ -86,9 +85,6 @@ export function EventPanel({ data }: { data: StaticData }) {
     .filter((r) => r.type === 'successor_of' && r.object === entity.id)
     .map((r) => ({ relation: r, entity: data.entities.get(r.subject) }))
     .filter((s) => s.entity);
-  // 이 나라가 참전한 전쟁 중 지금 보는 10년 구간과 겹치는 것 (DESIGN.md §4.5)
-  const decade = Math.floor(listYear / 10) * 10;
-  const wars = warsOf(data.wars, entity.id, decade, decade + 9);
   const occupation = occupierAt(data.relations, entity.id, year);
   const occupier = occupation && data.entities.get(occupation.object);
   const vassalage = overlordAt(data.relations, entity.id, year);
@@ -193,29 +189,7 @@ export function EventPanel({ data }: { data: StaticData }) {
         </div>
       )}
 
-      {wars.length > 0 && (
-        <div className="panel-wars">
-          <h3>이 시기의 전쟁</h3>
-          <ul>
-            {wars.map((w) => (
-              <li key={w.id}>
-                <span className="panel-war-name">{w.name}</span>
-                <span className="panel-war-period">
-                  {formatYear(w.from, '')}–{formatYear(w.to, '')}
-                </span>
-                {warId === w.id ? (
-                  <span className="panel-war-open">보는 중</span>
-                ) : (
-                  <button type="button" className="link-button" onClick={() => enterWar(w.id, null, entryYear(w, year), null)}>
-                    전선 보기 →
-                  </button>
-                )}
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
-
+      {/* 2026-10-28: '이 시기의 전쟁'(고른 나라가 참전한 전쟁 목록)은 지도 왼쪽 위 "주요 사건" 목록과 겹쳐 없앰 */}
       <div className="panel-section-title">
         <h3>{showAll ? '전체 사건' : listYear < data.timeline.range[0] ? `${prehistoryStage(listYear).name}` : `${formatDecade(listYear)} 사건`}</h3>
         {all.length > 0 && (

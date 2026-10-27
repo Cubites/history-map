@@ -15,10 +15,6 @@ const inRange = (r: { from: number; to: number }, year: number) => r.from <= yea
  */
 export const WORLD_SCALE_WARS: ReadonlySet<string> = new Set(['world-war-1', 'world-war-2']);
 
-/** 그 나라가 [from, to] 구간에 참전한 전쟁들 (사건 패널의 "이 시기의 전쟁") */
-export function warsOf(wars: WarIndexEntry[], entityId: string, from: number, to: number): WarIndexEntry[] {
-  return wars.filter((w) => w.participants.some((p) => p.entity === entityId && p.from <= to && from <= p.to));
-}
 
 /** 전역 고르기: 지정한 전역 → 그 해에 진행 중인 첫 전역 → 첫 전역 */
 export function theaterFor(war: WarIndexEntry, theaterId: string | null, year: number): TheaterOut {

@@ -727,21 +727,6 @@ button {
   .panel-war-mode .panel-header-sticky { border-bottom: none; }
 }
 
-.panel-wars { margin: 10px 0 4px; }
-.panel-wars h3 { font-size: 13px; color: var(--muted); font-weight: 600; margin: 0 0 4px; }
-.panel-wars ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
-.panel-wars li {
-  display: flex;
-  align-items: baseline;
-  gap: 8px;
-  padding: 6px 10px;
-  border: 1px solid var(--border);
-  border-left: 3px solid var(--front-line);
-}
-.panel-war-name { font-weight: 700; }
-.panel-war-period { color: var(--muted); font-size: 12px; font-variant-numeric: tabular-nums; }
-.panel-wars li > :last-child { margin-left: auto; }
-.panel-war-open { font-size: 12px; color: var(--front-line); }
 
 /* 전쟁 보기의 진군 경로·전투·거점 (DESIGN.md §4.5) */
 .war-route-ahead { fill: none; stroke-width: 2; stroke-dasharray: 2 5; stroke-linecap: round; opacity: 0.55; }
