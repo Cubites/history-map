@@ -1,4 +1,4 @@
-import { useLayoutEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import type { StaticData } from '../data/staticData.ts';
 import { PREHISTORY, clampYear, decadeOf, formatYear, parseYearInput, prehistoryStage } from '../lib/year.ts';
 import { useAppStore } from '../store/useAppStore.ts';
@@ -38,6 +38,31 @@ export function Timeline({ data }: { data: StaticData }) {
     inputRef.current?.select();
   }, [draft]);
   const inWar = useAppStore((s) => !!activeWarView(data.wars, s.warId, s.theaterId, s.year));
+
+  // 휴대폰에서 연도를 고치는 동안 화면 키보드가 아래를 가리면, 가려진 만큼 연도 막대를 위로 올려 키보드 바로 위에 둔다(2026-10-28).
+  // 가려진 높이 = 화면(layout viewport) 아래 끝과 키보드를 뺀 보이는 영역(visualViewport) 아래 끝의 차이. iOS Safari는 키보드가 떠도 화면 높이가 그대로라 이 값이 키보드 높이다.
+  // Android Chrome은 index.html viewport의 interactive-widget=resizes-content로 화면 자체가 줄어 이 값이 0이다
+  const rootRef = useRef<HTMLDivElement>(null);
+  const [typing, setTyping] = useState(false);
+  useEffect(() => {
+    const vv = window.visualViewport;
+    const el = rootRef.current;
+    if (!typing || !vv || !el) return;
+    const place = () => {
+      const hidden = Math.max(0, Math.round(window.innerHeight - vv.height - vv.offsetTop));
+      el.style.transform = hidden ? `translateY(${-hidden}px)` : '';
+      el.style.zIndex = hidden ? '20' : '';
+    };
+    place();
+    vv.addEventListener('resize', place);
+    vv.addEventListener('scroll', place);
+    return () => {
+      vv.removeEventListener('resize', place);
+      vv.removeEventListener('scroll', place);
+      el.style.transform = '';
+      el.style.zIndex = '';
+    };
+  }, [typing]);
 
   const range = data.timeline.range;
   const [min, max] = [decadeOf(range[0]), decadeOf(range[1])];
@@ -82,7 +107,7 @@ export function Timeline({ data }: { data: StaticData }) {
   }
 
   return (
-    <div className="timeline">
+    <div className="timeline" ref={rootRef}>
       <div className="timeline-controls">
         <button type="button" disabled={prevChange === undefined} onClick={() => prevChange !== undefined && go(prevChange)} title="이전 지도 변화" aria-label="이전 지도 변화">
           ◀<span className="timeline-button-label"> 이전 변화</span>
@@ -103,6 +128,7 @@ export function Timeline({ data }: { data: StaticData }) {
             value={shown}
             size={Math.max(2, shown.length)}
             onFocus={() => {
+              setTyping(true);
               selectAfterRender.current = true;
               setDraft(String(bc ? -(1 - year) : year));
             }}
@@ -112,6 +138,7 @@ export function Timeline({ data }: { data: StaticData }) {
             }}
             onBlur={() => {
               // Enter 없이 벗어나면 옮기지 않고 지금 연도로 되돌린다
+              setTyping(false);
               setDraft(null);
               setInvalid(false);
             }}

@@ -29,7 +29,7 @@ P.narvik400510 = [
   ['Øyjord', 17.42, 68.47], ['Bjerkvik', 17.56, 68.55], ['Elvegårdsmoen', 17.60, 68.53], ['Storebalak', 17.72, 68.60], ['Kuberget', 17.85, 68.56],
   ['Hartvikvatnet', 17.92, 68.52], [18.10, 68.50], ['Riksgränsen', 18.12, 68.43], [18.08, 68.36], ['Beisfjord', 17.70, 68.36], ['Ankenes', 17.36, 68.42],
 ];
-// 1940-06-22 프랑스 휴전 경계선 (스위스 국경 → 에스파냐 국경, 북·서쪽이 점령 지구). 근거: fr.wikipedia Ligne de démarcation (France) 'Tracé'
+// 1940-06-22 프랑스 휴전 경계선 (스위스 국경 → 스페인 국경, 북·서쪽이 점령 지구). 근거: fr.wikipedia Ligne de démarcation (France) 'Tracé'
 P.demarcation = [
   ['Pougny, Ain', 5.95, 46.14], ['Bellegarde-sur-Valserine', 5.83, 46.11], ['Mijoux', 6.00, 46.37], ['La Cure', 6.07, 46.46], ['Morez', 6.03, 46.52],
   ['Saint-Laurent-en-Grandvaux', 5.96, 46.58], ['Champagnole', 5.91, 46.75], [5.74, 46.87], ['Mont-sous-Vaudrey', 5.60, 46.98], ['Parcey', 5.49, 47.02],

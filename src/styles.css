@@ -486,6 +486,7 @@ button {
 /* ── 타임라인 ─────────────────────────────────────────── */
 
 .timeline {
+  position: relative; /* 휴대폰 키보드 위로 올릴 때(Timeline.tsx의 transform·zIndex) 지도·패널 위에 그려지게 */
   padding: 8px 16px 6px;
   border-top: 1px solid var(--border);
   background: var(--surface);
