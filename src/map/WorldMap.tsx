@@ -720,13 +720,14 @@ export default function WorldMap({ data }: { data: StaticData }) {
           {year < data.timeline.range[0] ? '나라가 생기기 전입니다. 유적(●)을 누르면 그 시대의 생활을 볼 수 있습니다' : '이 시기의 영토 데이터는 아직 없습니다'}
         </div>
       )}
+      {/* 전쟁 보기 띠(제목·닫기). 닫기 단추는 PC·휴대폰이 이 하나를 쓴다(2026-10-27 통합): PC는 띠 안, 휴대폰은 제목을 숨겨 단추만 지도 아래 가운데 */}
       {war && (
         <div className="war-banner map-ui" onClick={(e) => e.stopPropagation()} onPointerDown={(e) => e.stopPropagation()}>
           <span className="war-banner-title">
             전쟁 보기 · {war.name}
             {war.theaters.length > 1 && theater && ` · ${theater.name}`}
           </span>
-          <button type="button" onClick={exitWar}>
+          <button type="button" className="war-banner-close" aria-label={`닫고 ${formatYear(returnYear ?? year)} 지도로`} onClick={exitWar}>
             닫기
           </button>
         </div>
@@ -767,21 +768,6 @@ export default function WorldMap({ data }: { data: StaticData }) {
             </button>
           ))}
         </div>
-      )}
-      {/* 휴대폰 전쟁 보기의 닫기 단추는 지도 아래 가운데(2026-10-26). PC는 위 띠와 타임라인 머리줄에 닫기가 있어 숨긴다 */}
-      {war && (
-        <button
-          type="button"
-          className="map-war-close map-ui"
-          aria-label={`닫고 ${formatYear(returnYear ?? year)} 지도로`}
-          onClick={(e) => {
-            e.stopPropagation();
-            exitWar();
-          }}
-          onPointerDown={(e) => e.stopPropagation()}
-        >
-          닫기
-        </button>
       )}
       <div className="map-zoom-wrap">
       <div className="map-zoom map-ui" onClick={(e) => e.stopPropagation()} onPointerDown={(e) => e.stopPropagation()}>

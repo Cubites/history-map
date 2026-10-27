@@ -6,7 +6,7 @@ import { activeEventId, useAppStore } from '../store/useAppStore.ts';
 
 /**
  * 전쟁 보기의 타임라인 (DESIGN.md §4.5): 연도 타임라인 대신 그 전역의 날짜를 늘어놓는다.
- * 전역 단추는 지도 왼쪽 아래에 있다(WorldMap, 2026-10-26). 날짜를 고르면 지도가 그 날의 점령 지역·전선·작전 화살표를 보여 준다.
+ * 전역 단추는 지도 왼쪽 아래, 닫기 단추는 지도 아래 가운데에 있다(WorldMap, 2026-10-26·27). 날짜를 고르면 지도가 그 날의 점령 지역·전선·작전 화살표를 보여 준다.
  */
 export function FrontTimeline({ data }: { data: StaticData }) {
   const year = useAppStore((s) => s.year);
@@ -15,8 +15,6 @@ export function FrontTimeline({ data }: { data: StaticData }) {
   const frontDate = useAppStore((s) => s.frontDate);
   const hoveredEventId = useAppStore(activeEventId);
   const setFront = useAppStore((s) => s.setFront);
-  const exitWar = useAppStore((s) => s.exitWar);
-  const returnYear = useAppStore((s) => s.returnYear);
   const listRef = useRef<HTMLOListElement>(null);
 
   const warView = activeWarView(data.wars, warId, theaterId, year);
@@ -59,9 +57,6 @@ export function FrontTimeline({ data }: { data: StaticData }) {
             </span>
           ))}
         </span>
-        <button type="button" className="front-timeline-close" onClick={exitWar}>
-          닫고 {formatYear(returnYear ?? year)} 지도로
-        </button>
       </div>
       <div className="front-timeline-dates">
         <button type="button" disabled={index <= 0} onClick={() => go(index - 1)} aria-label="이전 날짜">◀</button>

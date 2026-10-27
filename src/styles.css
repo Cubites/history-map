@@ -283,8 +283,6 @@ button {
   accent-color: var(--accent);
   cursor: pointer;
 }
-/* 휴대폰 전쟁 보기의 지도 아래 가운데 닫기 단추. PC에서는 숨김(아래 @media에서 보임) */
-.map-war-close { display: none; }
 .map-region-notice:empty { display: none; }
 .map-region-notice {
   position: absolute;
@@ -575,22 +573,6 @@ button {
   .map-region-notice { top: 8px; font-size: 12px; }
   .map-zoom-wrap { display: none; }
   .map-controls button { height: 28px; padding: 0 8px; font-size: 12px; }
-  .map-war-close {
-    display: block;
-    position: absolute;
-    bottom: 8px;
-    left: 50%;
-    transform: translateX(-50%);
-    height: 32px;
-    padding: 0 18px;
-    border: 1px solid var(--front-line);
-    border-radius: 999px;
-    background: var(--control-bg);
-    color: var(--front-line);
-    font-size: 13px;
-    font-weight: 600;
-    cursor: pointer;
-  }
 
   .panel-header h2 { font-size: 17px; }
   .panel-header-sticky { top: -10px; margin: -10px -12px 0; padding: 10px 12px 6px; }
@@ -708,7 +690,7 @@ button {
 .war-marker-sub { font-size: 11px; fill: var(--label); opacity: 0; transition: opacity .15s; }
 .war-marker:hover .war-marker-sub, .war-marker:focus-visible .war-marker-sub { opacity: 1; }
 
-/* 전쟁 보기 띠(이름·닫기)는 지도 아래 가운데(2026-10-26: 위에서 옮김). 휴대폰은 아래 @media에서 숨김 */
+/* 전쟁 보기 띠(이름·닫기)는 지도 아래 가운데(2026-10-26: 위에서 옮김). 휴대폰은 아래 @media에서 닫기 단추만 남긴다 */
 .war-banner {
   position: absolute;
   bottom: 12px;
@@ -732,10 +714,7 @@ button {
 
 .timeline-war .front-timeline { margin-top: 0; padding-top: 0; border-top: none; }
 .front-timeline-period { color: var(--muted); font-variant-numeric: tabular-nums; }
-.front-timeline-close { margin-left: auto; font-size: 12px; }
 @media (max-width: 768px) {
-  /* 휴대폰 닫기 단추는 지도 아래 가운데(.map-war-close, 2026-10-26) */
-  .front-timeline-close { display: none; }
   /* 머리줄의 날짜·제목은 아래 글 영역 첫 줄로 옮기고, 글 영역은 4줄(18px × 4) 높이로 고정해 넘치면 세로 스크롤(2026-10-26) */
   .front-timeline-current { display: none; }
   .front-timeline-summary { height: 72px; line-height: 18px; overflow-y: auto; overscroll-behavior-y: contain; }
@@ -791,10 +770,22 @@ button {
 .war-battle-past { opacity: 0.55; }
 .war-battle-label { font-size: 12px; font-weight: 700; }
 
-/* 모바일은 위쪽 날짜 영역에 전쟁 이름이, 지도 아래 가운데에 닫기 단추가 있으므로, 지도 버튼을 가리는 띠는 숨긴다.
+/* 모바일은 전쟁 이름이 아래 전쟁 정보에 있으므로 띠의 제목·테두리를 숨기고, 같은 닫기 단추만 지도 아래 가운데에 키워 둔다(2026-10-27 통합).
    기본 .war-banner 규칙보다 뒤에 있어야 덮어쓴다 */
 @media (max-width: 768px) {
-  .war-banner { display: none; }
+  .war-banner { bottom: 8px; max-width: none; padding: 0; border: none; background: none; }
+  .war-banner-title { display: none; }
+  .war-banner .war-banner-close {
+    height: 32px;
+    padding: 0 18px;
+    border: 1px solid var(--front-line);
+    border-radius: 999px;
+    background: var(--control-bg);
+    color: var(--front-line);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+  }
 }
 
 /* 귀속 논쟁 (DESIGN.md §4.3) */
