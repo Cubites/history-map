@@ -9,6 +9,7 @@
 //   --region <r>             --check와 함께: 겹침·월경지를 그 권역 항목이 낀 것만 검사. r은 europe·east-asia 또는 나라 파일 이름(korea 등)
 // 전쟁 장면 계산 결과는 .cache/build-data-wars/에 캐시된다(war-cache.ts). 부분 빌드는 끝 줄에 생략한 단계를 알린다
 // 전쟁 결과(wars.json의 항목, wars/<id>.json)를 쓰면 전쟁마다 입력·출력 해시를 .cache/build-data-wars/built.json에 남긴다(war-inputs.ts). test:geo places가 그 결과가 지금 입력의 것인지 판정하는 데 쓴다(public 출력은 그대로)
+import { appendFileSync } from 'node:fs';
 import { mkdir, readdir, readFile, rm, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -38,7 +39,7 @@ import { chunkOutlines, tilePolygons } from './tiles.ts';
 import { buildWars, checkWars, findCutText, readWars } from './wars.ts';
 import { stats as warCacheStats } from './war-cache.ts';
 import { BUILT_FILE, readBuilt, shaOf, warInputHashes, type BuiltFile } from './war-inputs.ts';
-import { keyOf, runCached } from './cache.ts';
+import { keyOf, runCached, totals as cacheTotals } from './cache.ts';
 import { loadLand, type Land } from './tasks.ts';
 import { AllowedExclaveSchema, EXCLAVE_REPORT_KM2, findExclaves, formatPiece, matchExclaves, type AllowedExclave } from './exclaves.ts';
 import {
@@ -53,6 +54,18 @@ import {
   type BBox,
   type MultiCoords,
 } from './geo.ts';
+
+// CI 요약 한 줄(2026-10-27): 배포가 느려지면 로그인 없이 원인을 보도록 러너 이미지·Node 판·캐시 적중 수를 $GITHUB_STEP_SUMMARY에 남긴다.
+// 작업마다 Node 판이나 이미지가 다르면 계산 캐시가 맞지 않아 '계산' 수가 수천이 된다 (DESIGN.md §13)
+process.on('exit', () => {
+  const summary = process.env.GITHUB_STEP_SUMMARY;
+  if (!summary) return;
+  const image = `${process.env.ImageOS ?? '?'} ${process.env.ImageVersion ?? '?'}`;
+  appendFileSync(
+    summary,
+    `자료 빌드(${process.env.GITHUB_JOB ?? '?'}): 이미지 ${image} · Node ${process.version} · 계산 캐시 적중 ${cacheTotals.hits} · 계산 ${cacheTotals.computed} · 전쟁 장면 캐시 적중 ${warCacheStats.sceneHit} · 계산 ${warCacheStats.sceneMiss}\n\n`,
+  );
+});
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const DATA = path.join(ROOT, 'data');

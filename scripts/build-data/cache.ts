@@ -154,6 +154,9 @@ function cacheEnabled(): boolean {
  */
 const WORKER_STALL_MS = 3 * 60 * 1000;
 
+/** 이번 실행 전체에서 캐시에서 읽은 계산과 새로 한 계산 (CI 요약 줄용, 2026-10-27) */
+export const totals = { hits: 0, computed: 0 };
+
 /** runCached가 더해 가는 수: 캐시에서 읽은 계산(hits)과 새로 한 계산(computed) */
 export interface RunStats {
   hits: number;
@@ -174,6 +177,8 @@ export async function runCached<T>(task: TaskName, jobs: Job[], extraKey = '', s
     if (c.hit) out[i] = c.value as T;
     else misses.push({ i, key });
   });
+  totals.hits += jobs.length - misses.length;
+  totals.computed += misses.length;
   if (stats) {
     stats.hits += jobs.length - misses.length;
     stats.computed += misses.length;
