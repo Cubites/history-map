@@ -8,6 +8,7 @@ import { useAppStore } from '../store/useAppStore.ts';
 import { ABOUT_LIST_MIN, Sentences, splitSentences } from './aboutText.tsx';
 import { CountryList } from './CountryList.tsx';
 import { EntityTabs } from './EntityTabs.tsx';
+import { useBottomSheet } from './useBottomSheet.ts';
 
 /** 고정한 사건을 풀 때 클릭으로 칠 움직임 한도(px). 지도의 끌기 판정(WorldMap의 d3-zoom clickDistance)과 같다 */
 const CLICK_DISTANCE = 4;
@@ -64,11 +65,18 @@ export function EventPanel({ data }: { data: StaticData }) {
     };
   }, [pinned, pinEvent]);
 
+  // 휴대폰에서 아래 패널은 끌어 올리는 판(useBottomSheet). 전쟁 보기에서는 패널이 지도 위로 가므로 쓰지 않는다
+  const sheet = useBottomSheet(!warId, selectedId);
+  const sheetHandle = !warId && (
+    <button type="button" className="sheet-handle" aria-label={sheet.open ? '나라 정보 접기' : '나라 정보 펼치기'} aria-expanded={sheet.open} {...sheet.handleProps} />
+  );
+
   const entity = selectedId ? data.entities.get(selectedId) : undefined;
   if (!entity) {
     return (
-      <aside className={warId ? 'panel panel-war-mode' : 'panel'}>
-        <p className="panel-guide">아래 목록 혹은 지도에서 나라를 누르면 상세 정보가 표시됩니다.</p>
+      <aside ref={sheet.ref} className={warId ? 'panel panel-war-mode' : 'panel sheet'}>
+        {sheetHandle}
+        <p className="panel-guide" data-sheet-head>아래 목록 혹은 지도에서 나라를 누르면 상세 정보가 표시됩니다.</p>
         {/* 2026-10-28: 자료 범위 안내 글을 없애고 그 자리에 지금 권역의 나라 목록 */}
         <CountryList data={data} />
       </aside>
@@ -97,9 +105,10 @@ export function EventPanel({ data }: { data: StaticData }) {
     `repeating-linear-gradient(135deg, ${colors.map((c, i) => `${c} ${i * 4}px ${(i + 1) * 4}px`).join(', ')})`;
 
   return (
-    <aside className={warId ? 'panel panel-war-mode' : 'panel'}>
-      {/* 이름·기간 머리는 스크롤해도 패널 위에 붙어 있다(2026-10-18) */}
-      <header className="panel-header panel-header-sticky">
+    <aside ref={sheet.ref} className={warId ? 'panel panel-war-mode' : 'panel sheet'}>
+      {sheetHandle}
+      {/* 이름·기간 머리는 스크롤해도 패널 위에 붙어 있다(2026-10-18). 휴대폰 접힌 판은 이 머리 높이까지(data-sheet-head) */}
+      <header className="panel-header panel-header-sticky" data-sheet-head>
         <span
           className="panel-swatch"
           style={{

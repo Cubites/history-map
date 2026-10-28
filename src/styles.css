@@ -314,6 +314,7 @@ button {
 }
 
 .panel-guide { margin: 0 0 8px; }
+.sheet-handle { display: none; } /* 휴대폰 아래 판의 손잡이(아래 @media). PC에서는 숨김 */
 .panel-note { margin: 4px 0 8px; font-size: 12px; color: var(--muted); }
 /* 나라를 고르지 않았을 때의 나라 목록(2026-10-28, CountryList.tsx): 색 견본·이름·원문 이름 한 줄씩, 누르면 그 나라를 고름 */
 .country-list h3 { margin: 12px 0 6px; font-size: 13px; font-weight: 600; color: var(--muted); }
@@ -567,6 +568,29 @@ button {
     border-right: none;
     border-top: 1px solid var(--border);
   }
+  /* 아래 패널은 끌어 올리는 판(2026-10-28, useBottomSheet.ts): 접히면 손잡이 + 나라 이름란 높이(--sheet-peek), 위로 끌면 검색창 아래까지(--sheet-h).
+     높이가 늘어난 만큼 위 여백을 음수로 줘서 흐름 속 크기는 늘 접힌 높이 그대로 → 지도 크기는 바뀌지 않고 판이 지도 위를 덮는다 */
+  .panel.sheet {
+    position: relative;
+    z-index: 6;
+    height: var(--sheet-h, var(--sheet-peek, 96px));
+    max-height: none;
+    margin-top: calc(var(--sheet-peek, 96px) - var(--sheet-h, var(--sheet-peek, 96px)));
+    box-sizing: border-box;
+    padding-top: 0;
+    overflow: hidden;
+    border-radius: 14px 14px 0 0;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.12);
+    transition: height 0.22s ease, margin-top 0.22s ease;
+  }
+  .panel.sheet:not([data-sheet='open']) { padding-bottom: 0; }
+  .panel.sheet[data-sheet='open'] { overflow-y: auto; overscroll-behavior-y: contain; }
+  .panel.sheet[data-sheet='drag'] { transition: none; }
+  /* 손잡이: 판 위 가운데 가로로 긴 슬릿. 판 위 끝에 붙어 스크롤해도 남는다. 끌기는 브라우저 스크롤로 가져가지 않게(touch-action) */
+  .panel.sheet .sheet-handle { position: sticky; top: 0; z-index: 4; display: flex; align-items: center; justify-content: center; width: calc(100% + 24px); height: 22px; margin: 0 -12px; padding: 0; border: none; border-radius: 14px 14px 0 0; background: var(--surface); cursor: grab; touch-action: none; }
+  .panel.sheet .sheet-handle::before { content: ''; width: 40px; height: 5px; border-radius: 3px; background: var(--muted); opacity: 0.55; }
+  .panel.sheet .sheet-handle:focus-visible { outline: 2px solid var(--front-line); outline-offset: -2px; }
+  .panel.sheet .panel-header-sticky { top: 22px; margin-top: 0; padding-top: 2px; }
   .app-footer { display: none; }
 
   /* 날짜 조절: 한 줄에 버튼과 연도, 입력 칸은 연도를 눌렀을 때만 */
