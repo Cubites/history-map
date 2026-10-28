@@ -378,7 +378,7 @@
 
 - id: mongolia
   level: polity
-  names: { ko: 몽골, en: Mongolia }
+  names: { ko: 몽골, en: Mongolia, native: "Монгол Улс" }
   from: 1921
   to: null
   color: "#6f8c9c"
@@ -517,7 +517,7 @@
 
 - id: mongol-empire
   level: polity
-  names: { ko: 몽골 제국, en: Mongol Empire }
+  names: { ko: 몽골 제국, en: Mongol Empire, hanja: "大蒙古國" }
   from: 1206
   to: 1270
   color: "#7d6b99"

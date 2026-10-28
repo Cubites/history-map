@@ -3,7 +3,7 @@
 
 - id: south-vietnam
   level: polity
-  names: { ko: 베트남 공화국, en: Republic of Vietnam }
+  names: { ko: 베트남 공화국, en: Republic of Vietnam, native: "Việt Nam Cộng hòa" }
   from: 1955
   to: 1975
   color: "#c7a03e"

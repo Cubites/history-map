@@ -70,7 +70,7 @@
 
 - id: soviet-union
   level: polity
-  names: { ko: 소련, en: Soviet Union }
+  names: { ko: 소련, en: Soviet Union, native: "Союз Советских Социалистических Республик" }
   from: 1917
   to: 1991
   color: "#7c8c63"
@@ -93,7 +93,7 @@
 
 - id: russia-fed
   level: polity
-  names: { ko: 러시아 연방, en: Russian Federation }
+  names: { ko: 러시아 연방, en: Russian Federation, native: "Российская Федерация" }
   from: 1991
   to: null
   color: "#6f8f6f"
@@ -370,7 +370,7 @@
 
 - id: german-states
   level: polity
-  names: { ko: 독일 연방 국가들 (묶음), en: States of the German Confederation (grouped) }
+  names: { ko: 독일 연방 국가들 (묶음), en: States of the German Confederation (grouped), native: "Staaten des Deutschen Bundes" }
   from: 1814
   to: 1866
   color: "#a8b48e"
@@ -409,7 +409,7 @@
 
 - id: south-german-states
   level: polity
-  names: { ko: 남독일 국가들 (묶음), en: South German states (grouped) }
+  names: { ko: 남독일 국가들 (묶음), en: South German states (grouped), native: "Süddeutsche Staaten" }
   from: 1866
   to: 1870
   color: "#a8b48e"
@@ -492,7 +492,7 @@
 
 - id: bosnia-occupied
   level: region
-  names: { ko: 보스니아 헤르체고비나 (오스트리아-헝가리 점령지), en: Bosnia and Herzegovina (Austro-Hungarian occupation) }
+  names: { ko: 보스니아 헤르체고비나 (오스트리아-헝가리 점령지), en: Bosnia and Herzegovina (Austro-Hungarian occupation), native: "Bosna i Hercegovina" }
   from: 1878
   to: 1908
   color: "#b5845a"
@@ -609,7 +609,7 @@
 
 - id: italian-duchies
   level: polity
-  names: { ko: 중부 이탈리아 공국들 (묶음), en: Central Italian duchies (grouped) }
+  names: { ko: 중부 이탈리아 공국들 (묶음), en: Central Italian duchies (grouped), native: "Ducati dell'Italia centrale" }
   from: 1814
   to: 1860
   color: "#b6a0c8"
@@ -892,7 +892,7 @@
 
 - id: cyprus-british
   level: region
-  names: { ko: 키프로스 (영국 관리지), en: Cyprus (British administration) }
+  names: { ko: 키프로스 (영국 관리지), en: Cyprus (British administration), native: "Κύπρος" }
   from: 1878
   to: 1914
   color: "#b5845a"
@@ -910,7 +910,7 @@
 
 - id: dodecanese-occupied
   level: region
-  names: { ko: 도데카니사 제도 (이탈리아 점령지), en: Dodecanese (Italian occupation) }
+  names: { ko: 도데카니사 제도 (이탈리아 점령지), en: Dodecanese (Italian occupation), native: "Isole italiane dell'Egeo" }
   from: 1912
   to: 1922
   color: "#b5845a"
@@ -1313,7 +1313,7 @@
 
 - id: parma-modena-lucca
   level: polity
-  names: { ko: 파르마·모데나·루카 (묶음), en: "Parma, Modena and Lucca (grouped)" }
+  names: { ko: 파르마·모데나·루카 (묶음), en: "Parma, Modena and Lucca (grouped)", native: "Parma, Modena e Lucca" }
   from: 1545
   to: 1813
   color: "#78c0b8"
@@ -3104,7 +3104,7 @@
 
 - id: ottoman-greek-occupation
   level: region
-  names: { ko: 그리스 점령지 (스미르나·동트라키아), en: Greek-occupied Smyrna and Eastern Thrace }
+  names: { ko: 그리스 점령지 (스미르나·동트라키아), en: Greek-occupied Smyrna and Eastern Thrace, native: "Ζώνη Σμύρνης και Ανατολική Θράκη" }
   from: 1919
   to: 1922
   color: "#b5845a"
@@ -3144,7 +3144,7 @@
 
 - id: soviet-occupied
   level: region
-  names: { ko: 독일 점령 소련, en: German-occupied Soviet territory }
+  names: { ko: 독일 점령 소련, en: German-occupied Soviet territory, native: "Оккупированная территория СССР" }
   from: 1941
   to: 1945
   color: "#7c8c63"
@@ -3198,7 +3198,7 @@
 
 - id: france-italian-occupied
   level: region
-  names: { ko: 이탈리아 점령 프랑스 남동부, en: Italian-occupied southeastern France }
+  names: { ko: 이탈리아 점령 프랑스 남동부, en: Italian-occupied southeastern France, native: "Zona di occupazione italiana in Francia" }
   from: 1942
   to: 1943
   color: "#6d7fb8"
@@ -3234,7 +3234,7 @@
 # 1945년 독일 점령
 - id: germany-zone-us
   level: region
-  names: { ko: 미국 점령 지구 (독일), en: American occupation zone in Germany }
+  names: { ko: 미국 점령 지구 (독일), en: American occupation zone in Germany, native: "Amerikanische Besatzungszone" }
   from: 1945
   to: 1949
   color: "#5f6f8f"
@@ -3253,7 +3253,7 @@
 
 - id: germany-zone-uk
   level: region
-  names: { ko: 영국 점령 지구 (독일), en: British occupation zone in Germany }
+  names: { ko: 영국 점령 지구 (독일), en: British occupation zone in Germany, native: "Britische Besatzungszone" }
   from: 1945
   to: 1949
   color: "#5f6f8f"
@@ -3272,7 +3272,7 @@
 
 - id: germany-zone-fr
   level: region
-  names: { ko: 프랑스 점령 지구 (독일), en: French occupation zone in Germany }
+  names: { ko: 프랑스 점령 지구 (독일), en: French occupation zone in Germany, native: "Französische Besatzungszone" }
   from: 1945
   to: 1949
   color: "#5f6f8f"
@@ -3291,7 +3291,7 @@
 
 - id: germany-zone-su
   level: region
-  names: { ko: 소련 점령 지구 (독일), en: Soviet occupation zone in Germany }
+  names: { ko: 소련 점령 지구 (독일), en: Soviet occupation zone in Germany, native: "Sowjetische Besatzungszone" }
   from: 1945
   to: 1949
   color: "#5f6f8f"
@@ -3309,7 +3309,7 @@
 
 - id: berlin-western-sectors
   level: region
-  names: { ko: 서베를린 (미국·영국·프랑스 관리 구역), en: Western sectors of Berlin }
+  names: { ko: 서베를린 (미국·영국·프랑스 관리 구역), en: Western sectors of Berlin, native: "Westsektoren Berlins" }
   from: 1945
   to: 1990
   color: "#5f6f8f"
@@ -3328,7 +3328,7 @@
 
 - id: berlin-soviet-sector
   level: region
-  names: { ko: 동베를린 (소련 관리 구역), en: Soviet sector of Berlin }
+  names: { ko: 동베를린 (소련 관리 구역), en: Soviet sector of Berlin, native: "Sowjetischer Sektor Berlins" }
   from: 1945
   to: 1949
   color: "#5f6f8f"

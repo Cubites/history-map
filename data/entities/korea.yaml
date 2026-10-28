@@ -526,7 +526,7 @@
 # 일제 강점기. 대한제국 땅 위에 일본 색으로 빗금 (DESIGN.md D8)
 - id: occupied-korea
   level: region
-  names: { ko: 일제 강점기의 한국, en: Korea under Japanese rule }
+  names: { ko: 일제 강점기의 한국, en: Korea under Japanese rule, hanja: "日帝強占期" }
   from: 1910
   to: 1945
   color: "#3e8ab8"
@@ -551,7 +551,7 @@
 
 - id: usamgik
   level: region
-  names: { ko: 미군정기 남한, en: US Army Military Government in Korea }
+  names: { ko: 미군정기 남한, en: US Army Military Government in Korea, hanja: "在朝鮮美國陸軍司令部軍政廳" }
   from: 1945
   to: 1948
   color: "#3e8ab8"
@@ -572,7 +572,7 @@
 
 - id: soviet-north
   level: region
-  names: { ko: 소련군정기 북한, en: Soviet Civil Administration in North Korea }
+  names: { ko: 소련군정기 북한, en: Soviet Civil Administration in North Korea, hanja: "蘇聯民政廳" }
   from: 1945
   to: 1948
   color: "#3e8ab8"
@@ -612,7 +612,7 @@
 
 - id: dprk
   level: polity
-  names: { ko: 북한, en: North Korea }
+  names: { ko: 북한, en: North Korea, hanja: "朝鮮民主主義人民共和國" }
   from: 1948
   to: null
   color: "#8a78ad"

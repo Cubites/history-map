@@ -331,7 +331,8 @@ button {
 /* 원어·한자 이름은 다음 줄에, 나라 이름(20px)과 기간(13px)의 중간 크기로 */
 .panel-header-sticky h2 .hanja { display: block; font-size: 16.5px; line-height: 1.35; }
 .panel-swatch { width: 14px; height: 14px; margin-top: 7px; border-radius: 3px; flex-shrink: 0; }
-.panel-period { color: var(--muted); font-size: 13px; }
+/* 이름 아래 존속 기간: 바로 아래 성립 글과 상세정보에 해가 있어 숨긴다(2026-10-28, 요소는 남겨 둠. 다시 보이려면 display 줄만 지움) */
+.panel-period { display: none; color: var(--muted); font-size: 13px; }
 .panel-occupation { font-size: 13px; font-weight: 600; }
 /* 나라 설명 글: 긴 글은 문장별 목록, 글 속 해는 굵게 (2026-10-18, aboutText.tsx) */
 .about-sentences { padding-left: 1.1em; }

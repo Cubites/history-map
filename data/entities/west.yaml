@@ -4,7 +4,7 @@
 
 - id: usa
   level: polity
-  names: { ko: 미국, en: United States }
+  names: { ko: 미국, en: United States, native: "United States of America" }
   from: 1776
   to: null
   color: "#5a8f6e"

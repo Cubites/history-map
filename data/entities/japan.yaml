@@ -42,7 +42,7 @@
 
 - id: ryukyu-us
   level: region
-  names: { ko: 미국 통치하의 오키나와, en: Okinawa under US administration }
+  names: { ko: 미국 통치하의 오키나와, en: Okinawa under US administration, hanja: "琉球列島米国民政府" }
   from: 1945
   to: 1972
   color: "#b86b8a"

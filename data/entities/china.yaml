@@ -274,7 +274,7 @@
 
 - id: occupied-china
   level: region
-  names: { ko: 중일 전쟁 일본군 점령지, en: Japanese-occupied China }
+  names: { ko: 중일 전쟁 일본군 점령지, en: Japanese-occupied China, hanja: "淪陷區" }
   from: 1937
   to: 1945
   color: "#b8504a"
