@@ -134,6 +134,46 @@ export function MapYearControls({ data }: { data: StaticData }) {
     };
   }, [typing]);
 
+  // 키보드가 열릴 때 브라우저가 입력 칸을 보이려고 화면(문서·지도를 감싼 틀)을 위로 밀어 올리는데, 키보드가 닫혀도 그 자리에 남아
+  // 지도 영역이 올라간 채로 보였다(2026-10-28). 감싼 틀(.app-main·.app 등 연도 칸의 조상)은 원래 스크롤되지 않으므로 밀리면 바로 되돌리고,
+  // 입력이 끝나면(키보드가 닫히는 동안 몇 번 더) 문서 스크롤도 맨 위로 돌린다
+  const typingRef = useRef(false);
+  typingRef.current = typing;
+  useEffect(() => {
+    const ancestors = () => {
+      const list: Element[] = [];
+      for (let n = boxRef.current?.parentElement; n; n = n.parentElement) list.push(n);
+      return list;
+    };
+    const resetAll = () => {
+      for (const n of ancestors()) if (n.scrollTop || n.scrollLeft) n.scrollTo(0, 0);
+      if (window.scrollY || window.scrollX) window.scrollTo(0, 0);
+    };
+    // 조상 틀이 밀리면(문서 스크롤은 키보드가 떠 있는 동안 브라우저에 맡김) 바로 되돌린다
+    const onScroll = (e: Event) => {
+      const t = e.target;
+      if (t instanceof Element && t !== document.documentElement && t !== document.body && t.contains(boxRef.current)) t.scrollTo(0, 0);
+      else if (!typingRef.current && (window.scrollY || window.scrollX)) window.scrollTo(0, 0);
+    };
+    document.addEventListener('scroll', onScroll, true);
+    // 키보드가 닫혀 보이는 영역이 다시 화면 높이만큼 되면 맨 위로
+    const vv = window.visualViewport;
+    const onViewport = () => {
+      if (!typingRef.current && vv && vv.height >= window.innerHeight - 1) resetAll();
+    };
+    vv?.addEventListener('resize', onViewport);
+    let timers: number[] = [];
+    if (!typing) {
+      resetAll();
+      timers = [150, 400, 800].map((ms) => window.setTimeout(resetAll, ms));
+    }
+    return () => {
+      document.removeEventListener('scroll', onScroll, true);
+      vv?.removeEventListener('resize', onViewport);
+      timers.forEach((t) => window.clearTimeout(t));
+    };
+  }, [typing]);
+
   if (inWar) return null;
 
   return (
