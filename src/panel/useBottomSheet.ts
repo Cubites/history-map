@@ -6,6 +6,8 @@ const DRAG_MIN = 5;
 const SNAP = 30;
 /** 펼쳤을 때 패널 위 끝과 지도 위 검색창 아래 끝 사이 간격(px) */
 const GAP_BELOW_SEARCH = 8;
+/** 연도 칸을 고치는 동안(화면 키보드, MapYearControls) 키보드 때문에 생긴 화면 크기 변화로는 판 높이를 다시 재지 않는다(지도가 옮겨지지 않게) */
+const keyboardHeld = () => document.documentElement.classList.contains('keyboard-hold');
 
 /**
  * 휴대폰 아래 나라 정보 패널을 끌어 올리는 판(바텀 시트)으로 (2026-10-28, DESIGN.md §6.5).
@@ -47,10 +49,11 @@ export function useBottomSheet(active: boolean, contentKey: unknown) {
     measure();
     const ro = new ResizeObserver(measure);
     if (head) ro.observe(head);
-    window.addEventListener('resize', measure);
+    const onResize = () => !keyboardHeld() && measure();
+    window.addEventListener('resize', onResize);
     return () => {
       ro.disconnect();
-      window.removeEventListener('resize', measure);
+      window.removeEventListener('resize', onResize);
     };
   }, [active, contentKey]);
 
@@ -67,8 +70,9 @@ export function useBottomSheet(active: boolean, contentKey: unknown) {
     const place = () => el.style.setProperty('--sheet-h', `${openHeight(el)}px`);
     place();
     el.dataset.sheet = 'open';
-    window.addEventListener('resize', place);
-    return () => window.removeEventListener('resize', place);
+    const onResize = () => !keyboardHeld() && place();
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
   }, [active, open]);
 
   // 전쟁 보기로 바뀌면(패널이 지도 위로 감) 접는다

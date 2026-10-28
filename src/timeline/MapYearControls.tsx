@@ -15,6 +15,70 @@ const virtualKeyboard = (navigator as Navigator & { virtualKeyboard?: VirtualKey
 // 연도 칸만 키보드 위로 올릴 수 있다(아래 MapYearControls). 이 API가 없는 브라우저(iOS Safari 등)는 visualViewport로 처리
 if (virtualKeyboard) virtualKeyboard.overlaysContent = true;
 
+/** 키보드가 떠 있는 동안 화면을 붙잡아 두는 상태(MapYearControls의 holdScreen). 붙잡는 동안 <html>에 keyboard-hold 클래스 */
+type ScreenHold = { app: HTMLElement; box: HTMLElement; frame: number; until: number; shift: number; lift: number; base: number; seen: boolean; stop: () => void };
+
+/**
+ * 연도 칸을 고치는 동안 매 프레임(과 키보드·보이는 영역·스크롤 이벤트 때): 앱 높이를 묶고, 브라우저가 밀어 올린 만큼 앱을 반대로 옮기고, 연도 칸만 키보드 위로 올린다.
+ * typing()이 거짓이 되고 until이 지나면 놓는다. 초점이 남은 채 키보드만 닫히면(Android 뒤로 단추) endTyping을 부른다
+ */
+function holdScreen(app: HTMLElement, box: HTMLElement, typing: () => boolean, endTyping: () => void, ref: { current: ScreenHold | null }): ScreenHold {
+  const h: ScreenHold = { app, box, frame: 0, until: Infinity, shift: 0, lift: 0, base: window.innerHeight, seen: false, stop: () => {} };
+  app.style.height = `${app.getBoundingClientRect().height}px`;
+  document.documentElement.classList.add('keyboard-hold');
+  const vv0 = window.visualViewport;
+  const step = () => {
+    if (ref.current !== h) return;
+    const vv = window.visualViewport;
+    const vvTop = vv?.offsetTop ?? 0;
+    const vvHeight = vv?.height ?? window.innerHeight;
+    const now = typing();
+    // 감싼 틀의 스크롤은 늘, 문서 스크롤은 입력이 끝난 뒤에만 되돌린다(입력 중에는 브라우저에 맡기고 앱을 옮겨 맞춤)
+    for (let n = box.parentElement; n && n !== document.body; n = n.parentElement) if (n.scrollTop || n.scrollLeft) n.scrollTo(0, 0);
+    if (!now && (window.scrollY || window.scrollX)) window.scrollTo(0, 0);
+    // 앱 위 끝을 보이는 영역 위 끝에 맞춘다(getBoundingClientRect는 레이아웃 뷰포트 기준)
+    const shift = Math.round(vvTop - (app.getBoundingClientRect().top - h.shift));
+    if (shift !== h.shift) app.style.transform = shift ? `translateY(${shift}px)` : '';
+    h.shift = shift;
+    // 키보드 위 끝(보이는 영역 기준): VirtualKeyboard API가 있으면 화면 높이 − 키보드 높이, 없으면 보이는 영역의 아래 끝
+    const kb = virtualKeyboard?.overlaysContent ? virtualKeyboard.boundingRect.height : 0;
+    const keyboardTop = kb > 0 ? window.innerHeight - kb - vvTop : vvHeight;
+    const lift = now ? Math.max(0, Math.round(box.getBoundingClientRect().bottom + h.lift - vvTop + 8 - keyboardTop)) : 0;
+    if (lift !== h.lift) box.style.transform = lift ? `translate(-50%, ${-lift}px)` : '';
+    h.lift = lift;
+    const open = kb > 0 || vvHeight < h.base - 80;
+    if (open) h.seen = true;
+    else if (h.seen && now) endTyping();
+    if (!now && performance.now() >= h.until) releaseScreen(ref);
+  };
+  const tick = () => {
+    step();
+    if (ref.current === h) h.frame = requestAnimationFrame(tick);
+  };
+  // 프레임이 멈춘 화면(백그라운드 등)에서도 놓을 수 있게 0.1초마다도 맞춘다
+  const timer = window.setInterval(step, 100);
+  const targets: [EventTarget | null | undefined, string][] = [[vv0, 'resize'], [vv0, 'scroll'], [window, 'scroll'], [window, 'resize'], [virtualKeyboard, 'geometrychange']];
+  for (const [t, type] of targets) t?.addEventListener(type, step);
+  h.stop = () => {
+    cancelAnimationFrame(h.frame);
+    window.clearInterval(timer);
+    for (const [t, type] of targets) t?.removeEventListener(type, step);
+  };
+  h.frame = requestAnimationFrame(tick);
+  return h;
+}
+
+function releaseScreen(ref: { current: ScreenHold | null }) {
+  const h = ref.current;
+  if (!h) return;
+  h.stop();
+  h.app.style.removeProperty('height');
+  h.app.style.removeProperty('transform');
+  h.box.style.removeProperty('transform');
+  document.documentElement.classList.remove('keyboard-hold');
+  ref.current = null;
+}
+
 function yearMarks(min: number, max: number) {
   const marks: { year: number; major: boolean; label?: string; m500: boolean }[] = [];
   for (let n = 2300; n >= 100; n -= 100) marks.push({ year: 1 - n, major: n % 500 === 0, label: n % 500 === 0 ? `BC ${n}` : undefined, m500: n % 500 === 0 });
@@ -103,76 +167,29 @@ export function MapYearControls({ data }: { data: StaticData }) {
   const label = stage ? stage.short : bc ? `기원전 ${1 - year}년` : `${year}년`;
   const shown = draft ?? label;
 
-  // 휴대폰에서 고치는 동안 화면 키보드가 연도 칸을 가리면 연도 칸만 키보드 바로 위로 올린다(2026-10-28: 나라 정보 판은 키보드 뒤에 그대로).
-  // 키보드 위 끝: VirtualKeyboard API가 있으면 화면 높이 − 키보드 높이, 없으면 키보드를 뺀 보이는 영역(visualViewport)의 아래 끝
+  // 휴대폰 화면 키보드 (2026-10-28 다시 고침: 실제 휴대폰에서 키보드가 뜨면 지도 자리가 옮겨졌음).
+  // 입력하는 동안 지도·나라 정보 판은 키보드가 뜨기 전 화면 자리 그대로 두고, 연도 칸(◀ 칸 ▶)만 키보드 바로 위(8px)로 올린다.
+  // 브라우저마다 키보드가 화면을 바꾸는 방식이 달라 모두 되돌린다(holdScreen):
+  //  · 화면 높이를 줄임(100dvh·innerHeight가 작아짐) → 앱 높이를 입력 시작 때 높이(px)로 묶어 지도 크기가 바뀌지 않게
+  //  · 입력 칸을 보이려고 보이는 영역(visualViewport)을 밀거나 문서를 스크롤(iOS Safari 등) → 앱 전체를 그만큼 반대로 옮겨 화면에서는 제자리
+  //  · 연도 칸을 감싼 틀(.app-main 등)이 스크롤됨 → 바로 되돌림
+  // 키보드가 열리고 닫히는 동안 값이 계속 바뀌므로 입력하는 동안과 끝난 뒤 0.8초는 매 프레임 다시 맞춘다
   const boxRef = useRef<HTMLDivElement>(null);
   const [typing, setTyping] = useState(false);
-  useEffect(() => {
-    const vv = window.visualViewport;
-    const el = boxRef.current;
-    if (!typing || !el) return;
-    const place = () => {
-      el.style.transform = '';
-      const keyboardTop =
-        virtualKeyboard?.overlaysContent && virtualKeyboard.boundingRect.height > 0
-          ? window.innerHeight - virtualKeyboard.boundingRect.height
-          : vv
-            ? vv.height + vv.offsetTop
-            : window.innerHeight;
-      const hidden = Math.max(0, Math.round(el.getBoundingClientRect().bottom + 8 - keyboardTop));
-      el.style.transform = hidden ? `translate(-50%, ${-hidden}px)` : '';
-    };
-    place();
-    virtualKeyboard?.addEventListener('geometrychange', place);
-    vv?.addEventListener('resize', place);
-    vv?.addEventListener('scroll', place);
-    return () => {
-      virtualKeyboard?.removeEventListener('geometrychange', place);
-      vv?.removeEventListener('resize', place);
-      vv?.removeEventListener('scroll', place);
-      el.style.transform = '';
-    };
-  }, [typing]);
-
-  // 키보드가 열릴 때 브라우저가 입력 칸을 보이려고 화면(문서·지도를 감싼 틀)을 위로 밀어 올리는데, 키보드가 닫혀도 그 자리에 남아
-  // 지도 영역이 올라간 채로 보였다(2026-10-28). 감싼 틀(.app-main·.app 등 연도 칸의 조상)은 원래 스크롤되지 않으므로 밀리면 바로 되돌리고,
-  // 입력이 끝나면(키보드가 닫히는 동안 몇 번 더) 문서 스크롤도 맨 위로 돌린다
   const typingRef = useRef(false);
   typingRef.current = typing;
+  const hold = useRef<ScreenHold | null>(null);
   useEffect(() => {
-    const ancestors = () => {
-      const list: Element[] = [];
-      for (let n = boxRef.current?.parentElement; n; n = n.parentElement) list.push(n);
-      return list;
-    };
-    const resetAll = () => {
-      for (const n of ancestors()) if (n.scrollTop || n.scrollLeft) n.scrollTo(0, 0);
-      if (window.scrollY || window.scrollX) window.scrollTo(0, 0);
-    };
-    // 조상 틀이 밀리면(문서 스크롤은 키보드가 떠 있는 동안 브라우저에 맡김) 바로 되돌린다
-    const onScroll = (e: Event) => {
-      const t = e.target;
-      if (t instanceof Element && t !== document.documentElement && t !== document.body && t.contains(boxRef.current)) t.scrollTo(0, 0);
-      else if (!typingRef.current && (window.scrollY || window.scrollX)) window.scrollTo(0, 0);
-    };
-    document.addEventListener('scroll', onScroll, true);
-    // 키보드가 닫혀 보이는 영역이 다시 화면 높이만큼 되면 맨 위로
-    const vv = window.visualViewport;
-    const onViewport = () => {
-      if (!typingRef.current && vv && vv.height >= window.innerHeight - 1) resetAll();
-    };
-    vv?.addEventListener('resize', onViewport);
-    let timers: number[] = [];
-    if (!typing) {
-      resetAll();
-      timers = [150, 400, 800].map((ms) => window.setTimeout(resetAll, ms));
+    if (hold.current) {
+      // 입력이 끝나면 0.8초 더 맞추고 놓는다. 그동안 다시 누르면 그대로 이어 간다
+      hold.current.until = typing ? Infinity : performance.now() + 800;
+      return;
     }
-    return () => {
-      document.removeEventListener('scroll', onScroll, true);
-      vv?.removeEventListener('resize', onViewport);
-      timers.forEach((t) => window.clearTimeout(t));
-    };
+    const box = boxRef.current;
+    const app = box?.closest<HTMLElement>('.app');
+    if (typing && box && app) hold.current = holdScreen(app, box, () => typingRef.current, () => inputRef.current?.blur(), hold);
   }, [typing]);
+  useEffect(() => () => releaseScreen(hold), []);
 
   if (inWar) return null;
 
