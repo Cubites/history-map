@@ -3,6 +3,7 @@ import type { StaticData } from '../data/staticData.ts';
 import { PREHISTORY, clampYear, decadeOf, formatYear, parseYearInput, prehistoryStage } from '../lib/year.ts';
 import { activeWarView } from '../lib/wars.ts';
 import { useAppStore } from '../store/useAppStore.ts';
+import { useMediaQuery } from '../lib/useMediaQuery.ts';
 
 /**
  * 연도 눈금 (2026-10-18). 100년마다 짧은 눈금, 500년마다 긴 눈금과 숫자. 휴대폰은 500년 눈금만(CSS).
@@ -89,8 +90,9 @@ function yearMarks(min: number, max: number) {
 
 /**
  * 지도 위 연도 조절 (2026-10-28 시험 중, DESIGN.md D7). 전쟁 보기에서는 아래 줄의 전쟁 날짜 축(Timeline)을 쓰므로 그리지 않는다.
- * - 지도 오른쪽: 세로 연도 막대(위가 최근). 눈금은 막대 위에 그리고, 눈금 숫자(BC 2000 등)는 막대를 끄는 동안만 보인다.
+ * - 휴대폰은 지도 오른쪽: 세로 연도 막대(위가 최근). 눈금은 막대 위에 그리고, 눈금 숫자(BC 2000 등)는 막대를 끄는 동안만 보인다.
  *   막대 아래에 신석기·구석기 단추(신석기가 위).
+ * - PC는 지도 아래 따로 둔 띠: 가로 연도 막대(오른쪽이 최근), 눈금 숫자는 늘 막대 아래, 막대 왼쪽에 구석기·신석기 단추(2026-10-28).
  * - 지도 아래 가운데: ◀ 이전 변화 · 연도 입력 칸 · 다음 변화 ▶ (2026-10-28 −10·+10 단추와 감싼 상자를 없앰).
  *   입력 칸은 평소 "1700년"(기원전은 "기원전 57년", 선사 시대는 "신석기"·"구석기"만)으로 보이고, 누르면 숫자만 입력(음수는 기원전), Enter로 옮긴다.
  */
@@ -111,15 +113,25 @@ export function MapYearControls({ data }: { data: StaticData }) {
   // 선사 단계에서 +10년은 다음 단계(또는 역사 시대의 시작)로
   const forward = () => (prehistoric ? go(stops.find((y) => y > year) ?? range[0]) : go(year + 10));
   const marks = useMemo(() => yearMarks(min, max), [min, max]);
-  // 막대 위 자리(%): 위가 최근(max)
-  const topOf = (y: number) => ((max - y) / (max - min)) * 100;
+  // PC는 가로 막대(지도 아래 띠), 휴대폰은 세로 막대(지도 오른쪽)
+  const across = useMediaQuery('(min-width: 769px)');
+  // 막대 위 자리: 세로는 위가 최근(max), 가로는 오른쪽이 최근
+  const at = (y: number) => {
+    const p = ((y - min) / (max - min)) * 100;
+    return across ? { left: `${p}%` } : { top: `${100 - p}%` };
+  };
+  // 채운 부분은 막대의 오래된 끝(세로는 아래, 가로는 왼쪽)부터 손잡이까지
+  const fillTo = (y: number) => {
+    const p = ((y - min) / (max - min)) * 100;
+    return across ? { right: `${100 - p}%` } : { top: `${100 - p}%` };
+  };
 
   // ── 세로 막대 끌기 ──
   const trackRef = useRef<HTMLDivElement>(null);
   const [dragging, setDragging] = useState(false);
-  const yearAt = (clientY: number) => {
+  const yearAt = (e: ReactPointerEvent) => {
     const r = trackRef.current!.getBoundingClientRect();
-    const t = Math.min(1, Math.max(0, (r.bottom - clientY) / r.height));
+    const t = Math.min(1, Math.max(0, across ? (e.clientX - r.left) / r.width : (r.bottom - e.clientY) / r.height));
     return min + Math.round((t * (max - min)) / 10) * 10;
   };
   const onTrackDown = (e: ReactPointerEvent<HTMLDivElement>) => {
@@ -132,10 +144,10 @@ export function MapYearControls({ data }: { data: StaticData }) {
       // 붙잡지 못해도 막대 위에서는 그대로 끌린다
     }
     setDragging(true);
-    go(yearAt(e.clientY));
+    go(yearAt(e));
   };
   const onTrackMove = (e: ReactPointerEvent<HTMLDivElement>) => {
-    if (dragging) go(yearAt(e.clientY));
+    if (dragging) go(yearAt(e));
   };
   const onTrackUp = () => setDragging(false);
 
@@ -193,16 +205,28 @@ export function MapYearControls({ data }: { data: StaticData }) {
 
   if (inWar) return null;
 
+  // 선사 단계 단추: 세로 막대에서는 막대 아래(신석기가 구석기 위), 가로 막대에서는 막대 왼쪽(구석기, 신석기 차례)
+  const prehistory = (
+    <div className="map-yearbar-prehistory" role="group" aria-label="선사 시대">
+      {(across ? PREHISTORY : [...PREHISTORY].reverse()).map((s) => (
+        <button key={s.year} type="button" aria-pressed={stage?.year === s.year} onClick={() => setYear(s.year)} title={`${s.name} (${formatYear(s.year)})`}>
+          {s.short}
+        </button>
+      ))}
+    </div>
+  );
+
   return (
     <>
-      <div className={dragging ? 'map-yearbar map-ui dragging' : 'map-yearbar map-ui'} onClick={(e) => e.stopPropagation()} onPointerDown={(e) => e.stopPropagation()}>
+      <div className={['map-yearbar map-ui', across && 'across', dragging && 'dragging'].filter(Boolean).join(' ')} onClick={(e) => e.stopPropagation()} onPointerDown={(e) => e.stopPropagation()}>
+        {across && prehistory}
         <div
           ref={trackRef}
           className="map-yearbar-track"
           role="slider"
           tabIndex={0}
           aria-label="연도"
-          aria-orientation="vertical"
+          aria-orientation={across ? 'horizontal' : 'vertical'}
           aria-valuemin={min}
           aria-valuemax={max}
           aria-valuenow={Math.max(min, decadeOf(year))}
@@ -220,22 +244,15 @@ export function MapYearControls({ data }: { data: StaticData }) {
         >
           {/* 두꺼운 막대와, 막대 아래 끝부터 손잡이까지 채운 부분(2026-10-28) */}
           <i className="map-yearbar-rail" />
-          {!prehistoric && <i className="map-yearbar-fill" style={{ top: `${topOf(Math.max(min, decadeOf(year)))}%` }} />}
+          {!prehistoric && <i className="map-yearbar-fill" style={fillTo(Math.max(min, decadeOf(year)))} />}
           {marks.map((m) => (
-            <span key={m.year} className={['map-yearbar-mark', m.major && 'major', m.m500 && 'm500', m.year === 1 && 'ad1'].filter(Boolean).join(' ')} style={{ top: `${topOf(m.year)}%` }}>
+            <span key={m.year} className={['map-yearbar-mark', m.major && 'major', m.m500 && 'm500', m.year === 1 && 'ad1'].filter(Boolean).join(' ')} style={at(m.year)}>
               {m.label && <span className="map-yearbar-label">{m.label}</span>}
             </span>
           ))}
-          {!prehistoric && <span className="map-yearbar-thumb" style={{ top: `${topOf(Math.max(min, decadeOf(year)))}%` }} />}
+          {!prehistoric && <span className="map-yearbar-thumb" style={at(Math.max(min, decadeOf(year)))} />}
         </div>
-        {/* 선사 단계 단추: 눈금 아래, 신석기가 구석기 위 */}
-        <div className="map-yearbar-prehistory" role="group" aria-label="선사 시대">
-          {[...PREHISTORY].reverse().map((s) => (
-            <button key={s.year} type="button" aria-pressed={stage?.year === s.year} onClick={() => setYear(s.year)} title={`${s.name} (${formatYear(s.year)})`}>
-              {s.short}
-            </button>
-          ))}
-        </div>
+        {!across && prehistory}
       </div>
 
       <div ref={boxRef} className="map-yearbox map-ui" onClick={(e) => e.stopPropagation()} onPointerDown={(e) => e.stopPropagation()}>

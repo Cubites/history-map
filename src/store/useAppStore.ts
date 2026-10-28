@@ -14,6 +14,8 @@ interface AppState {
   listYear: number | null;
   selectedId: string | null;
   hoveredEventId: string | null;
+  /** 나라를 고르지 않았을 때 패널 나라 목록(CountryList)에서 마우스를 올린 나라. 지도에 그 영토의 hover 테두리를 그린다(2026-10-28) */
+  listHoverId: string | null;
   /**
    * 눌러서 고정한 사건 (2026-10-05). 마우스가 떠나도 화살표를 계속 보여 주고, 그 사건을 다시 누르거나 사건 밖을 클릭하면 풀린다(지도를 끌거나 확대할 때는 그대로, 2026-10-09).
    * 화살표는 마우스를 올린 사건(hoveredEventId)이 있으면 그것을, 없으면 고정한 사건을 그린다(activeEventId)
@@ -51,6 +53,7 @@ interface AppState {
   /** 사건의 나라를 고르고 그 사건을 패널에서 보여 준다 (지도의 전투 표시를 눌렀을 때) */
   focusEvent: (entityId: string, eventId: string) => void;
   hoverEvent: (id: string | null) => void;
+  hoverCountry: (id: string | null) => void;
   pinEvent: (id: string | null) => void;
   /** 사건 목록을 이 연도의 구간에 붙잡아 둔다 (listYear) */
   holdList: (year: number) => void;
@@ -79,6 +82,7 @@ function readUrl() {
 export const useAppStore = create<AppState>((set) => ({
   ...readUrl(),
   hoveredEventId: null,
+  listHoverId: null,
   pinnedEventId: null,
   focusedEventId: null,
   showAllEvents: false,
@@ -90,9 +94,10 @@ export const useAppStore = create<AppState>((set) => ({
     set((s) => ({ warId, theaterId, year, frontDate, listYear: null, hoveredEventId: null, pinnedEventId: null, returnYear: s.warId ? s.returnYear : s.year })),
   exitWar: () =>
     set((s) => ({ warId: null, theaterId: null, frontDate: null, listYear: null, hoveredEventId: null, pinnedEventId: null, year: s.returnYear ?? s.year, returnYear: null })),
-  select: (selectedId) => set({ selectedId, listYear: null, hoveredEventId: null, pinnedEventId: null, focusedEventId: null, showAllEvents: false }),
+  select: (selectedId) => set({ selectedId, listYear: null, hoveredEventId: null, listHoverId: null, pinnedEventId: null, focusedEventId: null, showAllEvents: false }),
   focusEvent: (selectedId, eventId) => set({ selectedId, listYear: null, hoveredEventId: null, pinnedEventId: eventId, focusedEventId: eventId, showAllEvents: false }),
   hoverEvent: (hoveredEventId) => set({ hoveredEventId }),
+  hoverCountry: (listHoverId) => set({ listHoverId }),
   pinEvent: (pinnedEventId) => set({ pinnedEventId }),
   holdList: (listYear) => set({ listYear }),
   setShowAllEvents: (showAllEvents) => set({ showAllEvents }),

@@ -522,6 +522,7 @@ button {
 .map-yearbar-rail { position: absolute; top: -5px; bottom: -5px; left: 50%; width: 10px; box-sizing: border-box; transform: translateX(-50%); border: 1px solid var(--muted); border-radius: 5px; background: var(--control-bg); box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15), 0 1px 3px rgba(0, 0, 0, 0.12); }
 .map-yearbar-fill { position: absolute; bottom: -5px; left: 50%; width: 10px; box-sizing: border-box; transform: translateX(-50%); border: 1px solid var(--muted); border-top: none; border-radius: 0 0 5px 5px; background: var(--accent); opacity: 0.85; }
 .map-yearbar-mark { position: absolute; left: 50%; width: 10px; height: 1px; transition: width 0.12s ease; transform: translate(-50%, -50%); background: color-mix(in srgb, var(--fg) 55%, transparent); pointer-events: none; }
+.map-yearbar-mark:not(.m500) { display: none; } /* 눈금은 500년마다만(2026-10-28, 전에는 PC에서 100년마다) */
 .map-yearbar-mark.ad1 { height: 3px; background: color-mix(in srgb, var(--fg) 85%, transparent); }
 .map-yearbar-label { display: none; position: absolute; top: 50%; right: calc(100% + 10px); transform: translateY(-50%); padding: 0 4px; border-radius: 3px; background: var(--control-bg); color: var(--fg); font-size: 11px; line-height: 1.5; white-space: nowrap; }
 .map-yearbar.dragging .map-yearbar-label { display: block; }
@@ -539,6 +540,23 @@ button {
 .map-yearbox input { box-sizing: border-box; height: 30px; padding: 0 6px; border: 1px solid var(--border); border-radius: 6px; background: var(--control-bg); box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12); color: var(--fg); font: inherit; font-size: 16px; font-weight: 800; text-align: center; font-variant-numeric: tabular-nums; }
 .map-yearbox input:focus { outline: 2px solid var(--front-line); outline-offset: -1px; }
 .map-yearbox input[aria-invalid='true'] { border-color: var(--error); outline-color: var(--error); }
+/* PC 연도 막대(2026-10-28): 지도 위에 띄우지 않고 지도 아래 따로 둔 띠(지도 칸 폭만, 왼쪽 나라 정보 칸 아래로는 가지 않음).
+   지도는 띠 높이만큼 짧아지고, 연도 칸(◀ 연도 ▶)은 지도 아래 가운데 그대로(띠 위). 막대는 가로(오른쪽이 최근), 눈금 숫자는 늘 막대 아래 */
+.app-main:has(> .map-yearbar.across) { --yearstrip-h: 52px; }
+.app-main:has(> .map-yearbar.across) .world-map { bottom: var(--yearstrip-h); }
+.app-main:has(> .map-yearbar.across) .map-yearbox { bottom: calc(var(--yearstrip-h) + 12px); }
+.map-yearbar.across { top: auto; right: 0; bottom: 0; left: 0; height: var(--yearstrip-h); box-sizing: border-box; flex-direction: row; align-items: flex-start; gap: 14px; padding: 6px 24px 0 12px; border-top: 1px solid var(--border); background: var(--surface); }
+.map-yearbar.across .map-yearbar-track { flex: 1; width: auto; height: 24px; min-height: 0; margin: 0 5px; }
+.map-yearbar.across .map-yearbar-rail { top: 50%; bottom: auto; left: -5px; right: -5px; width: auto; height: 10px; transform: translateY(-50%); }
+.map-yearbar.across .map-yearbar-fill { top: 50%; bottom: auto; left: -5px; width: auto; height: 10px; transform: translateY(-50%); border-top: 1px solid var(--muted); border-right: none; border-radius: 5px 0 0 5px; }
+.map-yearbar.across .map-yearbar-mark { top: 50%; width: 1px; height: 10px; transition: height 0.12s ease; }
+.map-yearbar.across .map-yearbar-mark.ad1 { width: 3px; height: 10px; }
+.map-yearbar.across.dragging .map-yearbar-mark { width: 1px; height: 18px; }
+.map-yearbar.across.dragging .map-yearbar-mark.ad1 { width: 3px; }
+.map-yearbar.across .map-yearbar-label { display: block; top: 15px; right: auto; left: 50%; transform: translateX(-50%); padding: 0; background: none; color: var(--muted); }
+.map-yearbar.across.dragging .map-yearbar-label { top: 19px; }
+.map-yearbar.across .map-yearbar-thumb { top: 50%; }
+.map-yearbar.across .map-yearbar-prehistory { flex-direction: row; }
 
 /* ── 타임라인 ─────────────────────────────────────────── */
 
@@ -668,10 +686,9 @@ button {
   .map-regions button[aria-pressed='true'] { order: 9; }
   /* 지도가 판 뒤로 14px 길어졌으므로 지도 아래쪽 단추·축척·주요 사건 목록을 그만큼 올린다(전쟁 보기는 판이 아니라 그대로) */
   .app:has(.panel.sheet) .map-controls, .app:has(.panel.sheet) .map-bottom-left, .app:has(.panel.sheet) .map-zoom-wrap { bottom: 22px; }
-  /* 지도 위 연도 조절: 막대는 검색창 아래부터 확대 단추·축척(아래 22px + 약 102px) 위까지. 막대 눈금은 500년만.
+  /* 지도 위 연도 조절: 막대는 검색창 아래부터 확대 단추·축척(아래 22px + 약 102px) 위까지.
      연도 칸(◀ 연도 ▶)은 권역 단추와 같은 높이(아래 22px) 가운데 */
   .map-yearbar { top: 62px; right: 6px; bottom: 134px; gap: 14px; }
-  .map-yearbar-mark:not(.m500) { display: none; }
   .map-yearbox { bottom: 22px; }
   .map-yearbox button { min-width: 28px; padding: 0 6px; font-size: 12px; }
   .map-yearbox input { padding: 0 4px; }

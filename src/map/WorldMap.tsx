@@ -117,6 +117,8 @@ export default function WorldMap({ data }: { data: StaticData }) {
 
   const year = useAppStore((s) => s.year);
   const selectedId = useAppStore((s) => s.selectedId);
+  // 패널 나라 목록에서 마우스를 올린 나라(나라를 고르지 않았을 때만): 지도 위 hover와 같은 테두리
+  const listHoverId = useAppStore((s) => (s.selectedId ? null : s.listHoverId));
   const hoveredEventId = useAppStore(activeEventId);
   const frontDate = useAppStore((s) => s.frontDate);
   const warId = useAppStore((s) => s.warId);
@@ -160,7 +162,7 @@ export default function WorldMap({ data }: { data: StaticData }) {
   const [geoVersion, setGeoVersion] = useState(0);
   // 강조 테두리는 Canvas에서 그리므로(그리기 함수가 매번 새로 만들어지지 않게) ref로 넘긴다
   const highlightRef = useRef<{ selected: string | null; hovered: string | null }>({ selected: null, hovered: null });
-  highlightRef.current = { selected: selectedId, hovered: hovered?.id ?? null };
+  highlightRef.current = { selected: selectedId, hovered: hovered?.id ?? listHoverId };
 
   const s0 = useMemo(() => (size ? baseScale(size) : 1), [size]);
 
@@ -446,7 +448,7 @@ export default function WorldMap({ data }: { data: StaticData }) {
 
   useEffect(() => {
     requestDraw();
-  }, [requestDraw, geoVersion, selectedId, hovered?.id]);
+  }, [requestDraw, geoVersion, selectedId, hovered?.id, listHoverId]);
 
   // 다크 모드 전환 시 색을 다시 읽는다
   useEffect(() => {
