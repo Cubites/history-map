@@ -212,14 +212,18 @@ button {
 .map-controls button[aria-pressed='true'] { border-color: var(--accent); color: var(--accent); font-weight: 600; }
 .map-theaters button[aria-pressed='true'] { border-color: var(--front-line); color: var(--front-line); font-weight: 700; }
 /* 지도 왼쪽 위 "주요 사건" 단추와 그 아래 목록(2026-10-27, 지도의 전쟁 표시 ⚔ 대신). 목록이 길면 지도 높이 안에서 세로 스크롤. 휴대폰은 지도 위 검색창 아래 */
-.major-events { position: absolute; top: 12px; left: 12px; z-index: 4; display: flex; flex-direction: column; align-items: flex-start; max-width: calc(100% - 24px); max-height: calc(100% - 24px); }
+/* 지도 왼쪽 위 묶음(2026-10-28): "주요 사건" 단추(+ 목록)와 그 오른쪽 사건 화살표 뜻 */
+.map-top-left { position: absolute; top: 12px; left: 12px; z-index: 6; display: flex; align-items: flex-start; gap: 8px; max-width: calc(100% - 90px); max-height: calc(100% - 24px); pointer-events: none; }
+.map-top-left > * { pointer-events: auto; }
+.major-events { position: relative; flex-shrink: 0; }
 /* 단추는 아래 목록과 같은 바탕(--control-bg)에 붉은 테두리·글자(--front-line). 둘 다 어두운 화면에서 바뀐다(2026-10-28).
    올리면·목록이 열리면 바탕에 붉은색을 조금 섞는다 */
 .major-events-toggle { height: 32px; padding: 0 12px; border: 1.5px solid var(--front-line); border-radius: 6px; background: var(--control-bg); color: var(--front-line); font: inherit; font-size: 14px; font-weight: 700; cursor: pointer; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15); }
 .major-events-toggle:hover { background: color-mix(in srgb, var(--front-line) 10%, var(--control-bg)); }
 .major-events-toggle[aria-expanded='true'] { background: color-mix(in srgb, var(--front-line) 18%, var(--control-bg)); }
 .major-events-toggle:focus-visible { outline: 2px solid var(--front-line); outline-offset: 2px; }
-.major-events-list { list-style: none; min-height: 0; overflow-y: auto; margin: 6px 0 0; padding: 4px; border: 1px solid var(--border); border-radius: 6px; background: var(--control-bg); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12); }
+/* 목록은 단추 아래에 떠서(absolute) 오른쪽 화살표 뜻을 밀지 않고 그 위를 덮는다(2026-10-28). 비치지 않게 불투명 바탕. 최대 높이는 MajorEvents.tsx가 지도 아래 끝까지로 맞춤 */
+.major-events-list { position: absolute; top: calc(100% + 6px); left: 0; z-index: 2; width: max-content; max-width: min(360px, calc(100vw - 32px)); max-height: 60vh; list-style: none; overflow-y: auto; margin: 0; padding: 4px; border: 1px solid var(--border); border-radius: 6px; background: var(--surface); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18); }
 .major-events-list button { display: flex; align-items: baseline; justify-content: space-between; gap: 14px; width: 100%; padding: 6px 8px; border: none; border-radius: 4px; background: transparent; color: var(--fg); font: inherit; font-size: 14px; text-align: left; cursor: pointer; }
 .major-events-list button:hover, .major-events-list button:focus-visible { background: var(--highlight); outline: none; }
 .major-events-years { flex-shrink: 0; font-size: 12px; color: var(--muted); }
@@ -494,6 +498,35 @@ button {
 .legend-in { border-top: 2.5px solid var(--arrow-in); }
 .legend-out { border-top: 2.5px dashed var(--arrow-out); }
 
+/* ── 지도 위 연도 조절 (2026-10-28 시험 중, MapYearControls.tsx) ──
+   오른쪽: 세로 연도 막대(위가 최근). 막대 안 눈금, 눈금 숫자는 끄는 동안만(.dragging). 아래에 신석기·구석기 단추(신석기가 위).
+   아래 가운데: ◀ [연도] ▶ (감싼 상자 없이, 2026-10-28) */
+.map-yearbar { position: absolute; top: 22px; right: 12px; bottom: 150px; z-index: 4; display: flex; flex-direction: column; align-items: center; gap: 16px; }
+.map-yearbar-track { position: relative; flex: 1; width: 28px; min-height: 60px; margin-bottom: 4px; cursor: pointer; touch-action: none; }
+/* 막대(2026-10-28): 조금 두꺼운 둥근 막대(10px) 위를 원형 손잡이가 위아래로 움직이고, 막대 아래 끝부터 손잡이까지는 채운다.
+   눈금은 막대 위에 그리고 막대 양옆으로 4px씩 튀어나온다. 두께는 모두 1px, AD 1만 3px. 누르는 영역(.map-yearbar-track)은 28px로 넓게 둔다 */
+.map-yearbar-track:focus-visible { outline: none; }
+.map-yearbar-track:focus-visible .map-yearbar-rail { border-color: var(--front-line); }
+.map-yearbar-rail { position: absolute; top: -5px; bottom: -5px; left: 50%; width: 10px; box-sizing: border-box; transform: translateX(-50%); border: 1px solid var(--muted); border-radius: 5px; background: var(--control-bg); box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15), 0 1px 3px rgba(0, 0, 0, 0.12); }
+.map-yearbar-fill { position: absolute; bottom: -5px; left: 50%; width: 10px; box-sizing: border-box; transform: translateX(-50%); border: 1px solid var(--muted); border-top: none; border-radius: 0 0 5px 5px; background: var(--accent); opacity: 0.85; }
+.map-yearbar-mark { position: absolute; left: 50%; width: 18px; height: 1px; transform: translate(-50%, -50%); background: color-mix(in srgb, var(--fg) 55%, transparent); pointer-events: none; }
+.map-yearbar-mark.ad1 { height: 3px; background: color-mix(in srgb, var(--fg) 85%, transparent); }
+.map-yearbar-label { display: none; position: absolute; top: 50%; right: calc(100% + 10px); transform: translateY(-50%); padding: 0 4px; border-radius: 3px; background: var(--control-bg); color: var(--fg); font-size: 11px; line-height: 1.5; white-space: nowrap; }
+.map-yearbar.dragging .map-yearbar-label { display: block; }
+.map-yearbar-thumb { position: absolute; z-index: 1; left: 50%; width: 18px; height: 18px; transform: translate(-50%, -50%); border: 2px solid var(--surface); border-radius: 50%; background: var(--accent); box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); pointer-events: none; }
+.map-yearbar-prehistory { display: flex; flex-direction: column; gap: 3px; }
+.map-yearbar-prehistory button { height: 24px; padding: 0 6px; white-space: nowrap; border: 1px solid var(--border); border-radius: 4px; background: var(--control-bg); color: var(--fg); font: inherit; font-size: 12px; cursor: pointer; }
+.map-yearbar-prehistory button[aria-pressed='true'] { border-color: var(--front-line); color: var(--front-line); font-weight: 700; }
+.map-yearbox { position: absolute; bottom: 12px; left: 50%; z-index: 4; display: flex; align-items: center; gap: 4px; transform: translateX(-50%); }
+.map-yearbox button { min-width: 30px; height: 30px; padding: 0 8px; border: 1px solid var(--border); border-radius: 6px; background: var(--control-bg); color: var(--fg); font: inherit; font-size: 13px; cursor: pointer; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12); }
+.map-yearbox button:hover:not(:disabled) { border-color: var(--muted); }
+.map-yearbox button:disabled { opacity: 0.4; cursor: default; }
+.map-yearbox-form { display: flex; }
+/* 입력 칸 글자 16px: 16px 미만이면 iOS가 입력 시 화면을 확대한다 */
+.map-yearbox input { box-sizing: border-box; height: 30px; padding: 0 6px; border: 1px solid var(--border); border-radius: 6px; background: var(--control-bg); box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12); color: var(--fg); font: inherit; font-size: 16px; font-weight: 800; text-align: center; font-variant-numeric: tabular-nums; }
+.map-yearbox input:focus { outline: 2px solid var(--front-line); outline-offset: -1px; }
+.map-yearbox input[aria-invalid='true'] { border-color: var(--error); outline-color: var(--error); }
+
 /* ── 타임라인 ─────────────────────────────────────────── */
 
 .timeline {
@@ -622,6 +655,13 @@ button {
   .map-regions button[aria-pressed='true'] { order: 9; }
   /* 지도가 판 뒤로 14px 길어졌으므로 지도 아래쪽 단추·축척·주요 사건 목록을 그만큼 올린다(전쟁 보기는 판이 아니라 그대로) */
   .app:has(.panel.sheet) .map-controls, .app:has(.panel.sheet) .map-bottom-left, .app:has(.panel.sheet) .map-zoom-wrap { bottom: 22px; }
+  /* 지도 위 연도 조절: 막대는 검색창 아래부터 확대 단추·축척(아래 22px + 약 102px) 위까지. 막대 눈금은 500년만.
+     연도 칸(◀ 연도 ▶)은 권역 단추와 같은 높이(아래 22px) 가운데 */
+  .map-yearbar { top: 62px; right: 6px; bottom: 134px; gap: 14px; }
+  .map-yearbar-mark:not(.m500) { display: none; }
+  .map-yearbox { bottom: 22px; }
+  .map-yearbox button { min-width: 28px; padding: 0 6px; font-size: 12px; }
+  .map-yearbox input { padding: 0 4px; }
 
   .panel-header h2 { font-size: 17px; }
   .panel-header-sticky { top: -10px; margin: -10px -12px 0; padding: 10px 12px 6px; }
@@ -841,8 +881,8 @@ button {
 .search-empty { padding: 6px 10px; color: var(--muted); font-size: 13px; }
 @media (max-width: 768px) {
   .map-search { display: block; top: 8px; left: 8px; right: 8px; } /* 화면 폭보다 살짝 작게 */
-  .major-events { top: 52px; left: 8px; max-width: calc(100% - 16px); max-height: calc(100% - 60px); } /* 검색창(8px + 높이) 아래 */
-  .app:has(.panel.sheet) .major-events { max-height: calc(100% - 74px); } /* 판 뒤로 길어진 14px만큼 */
+  .map-top-left { top: 52px; left: 8px; max-width: calc(100% - 66px); max-height: calc(100% - 60px); } /* 검색창(8px + 높이) 아래, 오른쪽은 연도 막대 */
+  .app:has(.panel.sheet) .map-top-left { max-height: calc(100% - 74px); } /* 판 뒤로 길어진 14px만큼 */
   .search-input { font-size: 16px; padding: 5px 8px; } /* 16px 미만이면 iOS가 입력 시 화면을 확대한다 */
   /* 검색창이 좁으므로 결과 목록은 지도 폭에 맞춘다 */
 

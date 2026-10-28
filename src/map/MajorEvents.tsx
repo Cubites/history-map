@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import type { StaticData } from '../data/staticData.ts';
 import { WORLD_SCALE_WARS, entryYear } from '../lib/wars.ts';
 import { formatYear } from '../lib/year.ts';
@@ -32,6 +32,22 @@ export function MajorEvents({ data }: { data: StaticData }) {
     [data.wars, regionFilter],
   );
 
+  // 목록은 단추 아래에 떠서(absolute) 오른쪽의 화살표 뜻을 밀지 않고 덮는다(2026-10-28). 높이는 지도 아래 끝까지(넘치면 스크롤)
+  const listRef = useRef<HTMLUListElement>(null);
+  useLayoutEffect(() => {
+    const list = listRef.current;
+    const map = list?.closest('.app-main');
+    if (!open || !list || !map) return;
+    const fit = () => {
+      // 휴대폰은 지도 아래 14px가 나라 정보 판 뒤에 있으므로 그만큼 더 띄운다
+      const bottomGap = document.querySelector('.panel.sheet') ? 26 : 12;
+      list.style.maxHeight = `${Math.max(120, Math.round(map.getBoundingClientRect().bottom - list.getBoundingClientRect().top - bottomGap))}px`;
+    };
+    fit();
+    window.addEventListener('resize', fit);
+    return () => window.removeEventListener('resize', fit);
+  }, [open]);
+
   // 목록 밖을 누르면 닫는다
   useEffect(() => {
     if (!open) return;
@@ -48,7 +64,7 @@ export function MajorEvents({ data }: { data: StaticData }) {
         주요 사건
       </button>
       {open && (
-        <ul id="major-events-list" className="major-events-list">
+        <ul ref={listRef} id="major-events-list" className="major-events-list">
           {items.length === 0 && <li className="major-events-empty">이 권역의 주요 사건이 없습니다</li>}
           {items.map(({ war, theater }) => (
             <li key={war.id}>

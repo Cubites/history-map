@@ -823,7 +823,18 @@ export default function WorldMap({ data }: { data: StaticData }) {
       {/* 권역 단추(2026-10-18: 머리글 권역 필터를 없애고 이리로 옮김)(권역 고르기·자료 없는 해면 옮기기·그 권역으로 지도 이동).
           세계는 '전체'를 고르고 세계로 축소한다. 전쟁 보기 중에는 전역 단추가 그 자리에 오므로 숨긴다(2026-10-26) */}
       {/* 지도 왼쪽 위 "주요 사건" 단추와 목록(2026-10-27, 지도의 전쟁 표시 ⚔ 대신). 전쟁 보기 중에는 숨긴다 */}
-      {!war && <MajorEvents data={data} />}
+      {!war && (
+        <div className="map-top-left">
+          <MajorEvents data={data} />
+          {/* 사건 화살표 뜻(2026-10-28: 권역 단추 오른쪽에서 "주요 사건" 단추 오른쪽으로). 나라를 골랐을 때만 */}
+          {selectedEntity && (
+            <div className="map-legend map-ui">
+              <span><i className="legend-in" />영향을 받은 경우</span>
+              <span><i className="legend-out" />영향을 준 경우</span>
+            </div>
+          )}
+        </div>
+      )}
       {!war && (
         <div className="map-bottom-left">
         <div ref={regionsRef} className="map-controls map-regions map-ui" data-open={regionsOpen || undefined} onClick={(e) => e.stopPropagation()} onPointerDown={(e) => e.stopPropagation()}>
@@ -842,13 +853,6 @@ export default function WorldMap({ data }: { data: StaticData }) {
           <button type="button" aria-pressed={regionFilter === 'east-asia'} onClick={() => pickRegion(() => chooseRegion('east-asia'))}>동아시아</button>
           <button type="button" aria-pressed={regionFilter === 'europe'} onClick={() => pickRegion(() => chooseRegion('europe'))}>유럽</button>
         </div>
-        {/* 사건 화살표 뜻(2026-10-26: 사건 목록 머리줄 아래에서 권역 단추 오른쪽으로 옮김). 나라를 골랐을 때만, 전쟁 보기에서는 숨긴다 */}
-        {selectedEntity && (
-          <div className="map-legend map-ui">
-            <span><i className="legend-in" />영향을 준 나라 → {selectedEntity.names.ko}</span>
-            <span><i className="legend-out" />{selectedEntity.names.ko} → 영향을 받은 나라</span>
-          </div>
-        )}
         </div>
       )}
       {/* 전쟁 보기의 전역 단추(2026-10-26: 타임라인에서 지도 왼쪽 아래로 옮김). 전역 순서대로 위에서 아래로 */}
