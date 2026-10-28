@@ -35,7 +35,14 @@ export function useBottomSheet(active: boolean, contentKey: unknown) {
     const handle = el.querySelector<HTMLElement>('.sheet-handle');
     const measure = () => {
       const byHead = Math.ceil((handle?.offsetHeight ?? 0) + (head?.offsetHeight ?? 0) + 6);
+      // 처음 잴 때는 움직임 없이 바로 맞춘다(그러지 않으면 화면을 열 때 CSS 기본 높이에서 늘어나는 움직임이 보임, 2026-10-28)
+      const first = !el.style.getPropertyValue('--sheet-peek');
+      if (first) el.style.transition = 'none';
       el.style.setProperty('--sheet-peek', `${Math.max(byHead, Math.round(window.innerHeight / 3))}px`);
+      if (first) {
+        void el.offsetHeight;
+        requestAnimationFrame(() => el.style.removeProperty('transition'));
+      }
     };
     measure();
     const ro = new ResizeObserver(measure);

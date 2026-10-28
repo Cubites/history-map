@@ -8,6 +8,13 @@ import { useAppStore } from '../store/useAppStore.ts';
  * 연도 눈금 (2026-10-18). 100년마다 짧은 눈금, 500년마다 긴 눈금과 숫자. 휴대폰은 500년 눈금만(CSS).
  * 자리는 천문 연도(기원전 N년 = 1 - N). 숫자는 짧게: 기원전은 'BC 2000', 서기는 숫자만, 경계는 'AD 1'
  */
+/** 화면 키보드 정보(VirtualKeyboard API, Chrome Android 등). 표준 lib 타입에 아직 없어 필요한 만큼만 적는다 */
+type VirtualKeyboard = EventTarget & { overlaysContent: boolean; boundingRect: DOMRectReadOnly };
+const virtualKeyboard = (navigator as Navigator & { virtualKeyboard?: VirtualKeyboard }).virtualKeyboard;
+// 키보드가 화면을 줄이거나 밀어 올리지 않고 위에 덮이게 한다(2026-10-28). 그래야 나라 정보 판은 키보드 뒤에 그대로 있고
+// 연도 칸만 키보드 위로 올릴 수 있다(아래 MapYearControls). 이 API가 없는 브라우저(iOS Safari 등)는 visualViewport로 처리
+if (virtualKeyboard) virtualKeyboard.overlaysContent = true;
+
 function yearMarks(min: number, max: number) {
   const marks: { year: number; major: boolean; label?: string; m500: boolean }[] = [];
   for (let n = 2300; n >= 100; n -= 100) marks.push({ year: 1 - n, major: n % 500 === 0, label: n % 500 === 0 ? `BC ${n}` : undefined, m500: n % 500 === 0 });
@@ -96,24 +103,33 @@ export function MapYearControls({ data }: { data: StaticData }) {
   const label = stage ? stage.short : bc ? `기원전 ${1 - year}년` : `${year}년`;
   const shown = draft ?? label;
 
-  // 휴대폰에서 고치는 동안 화면 키보드가 입력 칸을 가리면 가려진 만큼 위로 올린다(Timeline.tsx에서 옮김, 2026-10-28)
+  // 휴대폰에서 고치는 동안 화면 키보드가 연도 칸을 가리면 연도 칸만 키보드 바로 위로 올린다(2026-10-28: 나라 정보 판은 키보드 뒤에 그대로).
+  // 키보드 위 끝: VirtualKeyboard API가 있으면 화면 높이 − 키보드 높이, 없으면 키보드를 뺀 보이는 영역(visualViewport)의 아래 끝
   const boxRef = useRef<HTMLDivElement>(null);
   const [typing, setTyping] = useState(false);
   useEffect(() => {
     const vv = window.visualViewport;
     const el = boxRef.current;
-    if (!typing || !vv || !el) return;
+    if (!typing || !el) return;
     const place = () => {
       el.style.transform = '';
-      const hidden = Math.max(0, Math.round(el.getBoundingClientRect().bottom + 8 - (vv.height + vv.offsetTop)));
+      const keyboardTop =
+        virtualKeyboard?.overlaysContent && virtualKeyboard.boundingRect.height > 0
+          ? window.innerHeight - virtualKeyboard.boundingRect.height
+          : vv
+            ? vv.height + vv.offsetTop
+            : window.innerHeight;
+      const hidden = Math.max(0, Math.round(el.getBoundingClientRect().bottom + 8 - keyboardTop));
       el.style.transform = hidden ? `translate(-50%, ${-hidden}px)` : '';
     };
     place();
-    vv.addEventListener('resize', place);
-    vv.addEventListener('scroll', place);
+    virtualKeyboard?.addEventListener('geometrychange', place);
+    vv?.addEventListener('resize', place);
+    vv?.addEventListener('scroll', place);
     return () => {
-      vv.removeEventListener('resize', place);
-      vv.removeEventListener('scroll', place);
+      virtualKeyboard?.removeEventListener('geometrychange', place);
+      vv?.removeEventListener('resize', place);
+      vv?.removeEventListener('scroll', place);
       el.style.transform = '';
     };
   }, [typing]);
