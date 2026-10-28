@@ -688,7 +688,7 @@ button {
   .app:has(.panel.sheet) .map-controls, .app:has(.panel.sheet) .map-bottom-left, .app:has(.panel.sheet) .map-zoom-wrap { bottom: 22px; }
   /* 지도 위 연도 조절: 막대는 검색창 아래부터 확대 단추·축척(아래 22px + 약 102px) 위까지.
      연도 칸(◀ 연도 ▶)은 권역 단추와 같은 높이(아래 22px) 가운데 */
-  .map-yearbar { top: 62px; right: 6px; bottom: 134px; gap: 14px; }
+  .map-yearbar { top: 69px; right: 6px; bottom: 134px; gap: 14px; }
   .map-yearbox { bottom: 22px; }
   .map-yearbox button { min-width: 28px; padding: 0 6px; font-size: 12px; }
   .map-yearbox input { padding: 0 4px; }
@@ -912,9 +912,11 @@ button {
 .search-empty { padding: 6px 10px; color: var(--muted); font-size: 13px; }
 @media (max-width: 768px) {
   .map-search { display: block; top: 8px; left: 8px; right: 8px; } /* 화면 폭보다 살짝 작게 */
-  .map-top-left { top: 52px; left: 8px; max-width: calc(100% - 66px); max-height: calc(100% - 60px); } /* 검색창(8px + 높이) 아래, 오른쪽은 연도 막대 */
+  .map-top-left { top: 59px; left: 8px; max-width: calc(100% - 66px); max-height: calc(100% - 60px); } /* 검색창(8px + 높이) 아래, 오른쪽은 연도 막대 */
   .app:has(.panel.sheet) .map-top-left { max-height: calc(100% - 74px); } /* 판 뒤로 길어진 14px만큼 */
-  .search-input { font-size: 16px; padding: 5px 8px; } /* 16px 미만이면 iOS가 입력 시 화면을 확대한다 */
+  /* 글자 16px: 16px 미만이면 iOS가 입력 시 화면을 확대한다. 지도 위 검색창은 높이 40px(2026-10-29: 33px에서 약 20% 늘림), 양 끝이 반원인 알약 모양 */
+  .search-input { font-size: 16px; padding: 5px 8px; }
+  .map-search .search-input { height: 40px; padding: 0 18px; border-radius: 20px; }
   /* 검색창이 좁으므로 결과 목록은 지도 폭에 맞춘다 */
 
 }
