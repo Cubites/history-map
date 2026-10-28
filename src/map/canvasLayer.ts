@@ -376,12 +376,14 @@ export function drawMap(
   if (front) {
     ctx.lineWidth = 1;
     ctx.strokeStyle = palette.territoryStroke;
+    // 진영 지역은 칠하기만 하고 테두리는 긋지 않는다(2026-10-28). 빌드가 진영 덩어리를 전역 범위 상자로 잘라(wars.ts boundsBox)
+    // 그 잘린 가장자리(1차 대전 러시아의 동경 59°·북위 67.5° 등)에 실제 국경이 아닌 흰 선이 생겼다.
+    // 실제 나라 경계·해안선은 아래에서 진영 색 위에 다시 긋고, 진영 밖 쪽 절반은 영토를 그릴 때 이미 그어져 있다
     for (const area of front.areas) {
       ctx.beginPath();
       trace(area.shapes);
       ctx.fillStyle = area.color;
       ctx.fill();
-      ctx.stroke();
     }
     // 그해 나라 경계를 진영 색 위에 다시 긋는다 (진영 지역 안에서만, 평소 지도와 같은 선)
     if (front.borders.length && front.areas.length) {
