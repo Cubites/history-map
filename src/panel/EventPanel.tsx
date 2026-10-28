@@ -6,6 +6,7 @@ import { formatDecade, formatRange, formatYear, isAlive, prehistoryStage } from 
 import type { HistoryEvent } from '../schema/index.ts';
 import { useAppStore } from '../store/useAppStore.ts';
 import { ABOUT_LIST_MIN, Sentences, splitSentences } from './aboutText.tsx';
+import { CountryList } from './CountryList.tsx';
 import { EntityTabs } from './EntityTabs.tsx';
 
 /** 고정한 사건을 풀 때 클릭으로 칠 움직임 한도(px). 지도의 끌기 판정(WorldMap의 d3-zoom clickDistance)과 같다 */
@@ -67,9 +68,9 @@ export function EventPanel({ data }: { data: StaticData }) {
   if (!entity) {
     return (
       <aside className={warId ? 'panel panel-war-mode' : 'panel'}>
-        <p className="panel-guide">지도에서 나라를 누르면 그 시기의 사건이 여기에 나타납니다.</p>
-        <p className="panel-guide">사건을 누르면 자세한 내용이 펼쳐집니다.</p>
-        <p className="panel-note">현재는 선사 시대(구석기·신석기)와 고조선(기원전 2333년)부터 현대까지의 한국사 전 시대 자료와 유럽(국경·사건 기원전 800년~현재) 자료가 들어 있습니다.</p>
+        <p className="panel-guide">아래 목록 혹은 지도에서 나라를 누르면 상세 정보가 표시됩니다.</p>
+        {/* 2026-10-28: 자료 범위 안내 글을 없애고 그 자리에 지금 권역의 나라 목록 */}
+        <CountryList data={data} />
       </aside>
     );
   }

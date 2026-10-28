@@ -315,6 +315,15 @@ button {
 
 .panel-guide { margin: 0 0 8px; }
 .panel-note { margin: 4px 0 8px; font-size: 12px; color: var(--muted); }
+/* 나라를 고르지 않았을 때의 나라 목록(2026-10-28, CountryList.tsx): 색 견본·이름·원문 이름 한 줄씩, 누르면 그 나라를 고름 */
+.country-list h3 { margin: 12px 0 6px; font-size: 13px; font-weight: 600; color: var(--muted); }
+.country-list-count { margin-left: 4px; font-weight: 400; font-variant-numeric: tabular-nums; }
+.country-list ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+.country-list button { display: flex; align-items: center; gap: 8px; width: 100%; padding: 6px 8px; border: 1px solid transparent; border-radius: 6px; background: transparent; color: var(--fg); font: inherit; font-size: 14px; text-align: left; cursor: pointer; }
+.country-list button:hover, .country-list button:focus-visible { background: var(--highlight); border-color: var(--border); outline: none; }
+.country-list-swatch { flex-shrink: 0; width: 12px; height: 12px; border-radius: 3px; border: 1px solid rgba(0, 0, 0, 0.15); }
+.country-list-name { flex-shrink: 0; font-weight: 600; white-space: nowrap; }
+.country-list-native { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 12px; color: var(--muted); }
 
 .panel-header { display: flex; gap: 10px; align-items: flex-start; }
 .panel-header h2 { margin: 0; font-size: 20px; }
