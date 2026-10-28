@@ -130,6 +130,26 @@ export default function WorldMap({ data }: { data: StaticData }) {
   const regionFilter = useAppStore((s) => s.regionFilter);
   const regionFocus = useAppStore((s) => s.regionFocus);
   const chooseRegion = useRegionChoice();
+  // 휴대폰 권역 단추(2026-10-28): 평소에는 지금 권역 단추만 보이고, 누르면 다른 권역이 그 위에 펼쳐진다.
+  // 펼친 뒤 어느 단추든 누르면 그 권역을 고르고 다시 접힌다. 밖을 눌러도 접힌다. PC는 늘 셋 다 보이고 누르면 바로 고른다
+  const [regionsOpen, setRegionsOpen] = useState(false);
+  const regionsRef = useRef<HTMLDivElement>(null);
+  const pickRegion = (choose: () => void) => {
+    if (!regionsOpen && window.matchMedia('(max-width: 768px)').matches) {
+      setRegionsOpen(true);
+      return;
+    }
+    setRegionsOpen(false);
+    choose();
+  };
+  useEffect(() => {
+    if (!regionsOpen) return;
+    const close = (e: PointerEvent) => {
+      if (!regionsRef.current?.contains(e.target as Node)) setRegionsOpen(false);
+    };
+    document.addEventListener('pointerdown', close);
+    return () => document.removeEventListener('pointerdown', close);
+  }, [regionsOpen]);
 
   // 시점은 매 프레임 바뀌므로 ref에 두고, 화면 좌표 레이어(SVG)를 위해 프레임당 한 번 state로 복사한다.
   const viewRef = useRef<View>({ lon: DEFAULT_LON, k: 1, ty: 0, dx: 0 });
@@ -806,19 +826,21 @@ export default function WorldMap({ data }: { data: StaticData }) {
       {!war && <MajorEvents data={data} />}
       {!war && (
         <div className="map-bottom-left">
-        <div className="map-controls map-ui" onClick={(e) => e.stopPropagation()} onPointerDown={(e) => e.stopPropagation()}>
+        <div ref={regionsRef} className="map-controls map-regions map-ui" data-open={regionsOpen || undefined} onClick={(e) => e.stopPropagation()} onPointerDown={(e) => e.stopPropagation()}>
           <button
             type="button"
             aria-pressed={regionFilter === 'all'}
-            onClick={() => {
-              chooseRegion('all');
-              animateTo({ lon: viewRef.current.lon, lat: 0, k: MIN_ZOOM });
-            }}
+            onClick={() =>
+              pickRegion(() => {
+                chooseRegion('all');
+                animateTo({ lon: viewRef.current.lon, lat: 0, k: MIN_ZOOM });
+              })
+            }
           >
             세계
           </button>
-          <button type="button" aria-pressed={regionFilter === 'east-asia'} onClick={() => chooseRegion('east-asia')}>동아시아</button>
-          <button type="button" aria-pressed={regionFilter === 'europe'} onClick={() => chooseRegion('europe')}>유럽</button>
+          <button type="button" aria-pressed={regionFilter === 'east-asia'} onClick={() => pickRegion(() => chooseRegion('east-asia'))}>동아시아</button>
+          <button type="button" aria-pressed={regionFilter === 'europe'} onClick={() => pickRegion(() => chooseRegion('europe'))}>유럽</button>
         </div>
         {/* 사건 화살표 뜻(2026-10-26: 사건 목록 머리줄 아래에서 권역 단추 오른쪽으로 옮김). 나라를 골랐을 때만, 전쟁 보기에서는 숨긴다 */}
         {selectedEntity && (

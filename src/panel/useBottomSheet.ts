@@ -9,7 +9,7 @@ const GAP_BELOW_SEARCH = 8;
 
 /**
  * 휴대폰 아래 나라 정보 패널을 끌어 올리는 판(바텀 시트)으로 (2026-10-28, DESIGN.md §6.5).
- * 접힌 높이는 손잡이 + 나라 이름란([data-sheet-head])이고, 손잡이를 위로 끌면 지도 위 검색창 아래까지 펼쳐진다.
+ * 접힌 높이는 화면 높이의 1/3(2026-10-28, 이름란이 그보다 크면 손잡이 + 나라 이름란([data-sheet-head]))이고, 손잡이를 위로 끌면 지도 위 검색창 아래까지 펼쳐진다.
  * 아래로 끌거나 검색창을 누르면 접힌다. 손잡이를 짧게 누르면 펼치기·접기를 바꾼다.
  * 높이는 CSS 변수(--sheet-peek 접힌 높이, --sheet-h 지금 높이)로만 넘기고, 휴대폰 CSS(.panel.sheet)가 높이와 음수 위 여백을 같이 바꿔
  * 흐름 속 크기는 늘 접힌 높이 그대로다. 그래서 펼쳐도 지도 크기가 바뀌지 않고 패널이 지도 위를 덮는다. PC에서는 CSS가 이 변수를 쓰지 않는다
@@ -27,17 +27,24 @@ export function useBottomSheet(active: boolean, contentKey: unknown) {
     return search ? Math.max(peekOf(el), Math.round(el.getBoundingClientRect().bottom - search.bottom - GAP_BELOW_SEARCH)) : peekOf(el);
   };
 
-  // 접힌 높이 = 손잡이 + 나라 이름란 높이. 이름이 두 줄이 되는 등 이름란 크기가 바뀌면 다시 잰다
+  // 접힌 높이 = 화면 높이의 1/3과 (손잡이 + 나라 이름란 높이) 가운데 큰 것. 이름란이나 화면 크기가 바뀌면 다시 잰다
   useLayoutEffect(() => {
     const el = ref.current;
     if (!el || !active) return;
     const head = el.querySelector<HTMLElement>('[data-sheet-head]');
     const handle = el.querySelector<HTMLElement>('.sheet-handle');
-    const measure = () => el.style.setProperty('--sheet-peek', `${Math.ceil((handle?.offsetHeight ?? 0) + (head?.offsetHeight ?? 0) + 6)}px`);
+    const measure = () => {
+      const byHead = Math.ceil((handle?.offsetHeight ?? 0) + (head?.offsetHeight ?? 0) + 6);
+      el.style.setProperty('--sheet-peek', `${Math.max(byHead, Math.round(window.innerHeight / 3))}px`);
+    };
     measure();
     const ro = new ResizeObserver(measure);
     if (head) ro.observe(head);
-    return () => ro.disconnect();
+    window.addEventListener('resize', measure);
+    return () => {
+      ro.disconnect();
+      window.removeEventListener('resize', measure);
+    };
   }, [active, contentKey]);
 
   // 펼침·접힘을 패널에 반영한다. 화면 크기가 바뀌면 펼친 높이를 다시 잰다
