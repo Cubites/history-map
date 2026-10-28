@@ -65,6 +65,19 @@ export function EventPanel({ data }: { data: StaticData }) {
     };
   }, [pinned, pinEvent]);
 
+  // 나라를 고른 동안 Esc로 선택을 푼다(2026-10-28, 이름 줄의 × 단추와 같음). 글을 쓰는 칸(검색창·연도 칸)에서는 그 칸이 Esc를 쓴다
+  useEffect(() => {
+    if (!selectedId) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key !== 'Escape' || e.defaultPrevented) return;
+      const t = e.target;
+      if (t instanceof HTMLElement && (t.isContentEditable || t.closest('input, textarea, select'))) return;
+      select(null);
+    };
+    document.addEventListener('keydown', onKeyDown);
+    return () => document.removeEventListener('keydown', onKeyDown);
+  }, [selectedId, select]);
+
   // 휴대폰에서 아래 패널은 끌어 올리는 판(useBottomSheet). 전쟁 보기에서는 패널이 지도 위로 가므로 쓰지 않는다
   const sheet = useBottomSheet(!warId, selectedId);
   const sheetHandle = !warId && (
@@ -164,6 +177,12 @@ export function EventPanel({ data }: { data: StaticData }) {
             </div>
           )}
         </div>
+        {/* 나라 선택 해제(2026-10-28): 이름 줄 오른쪽 끝. 풀면 이 자리에 안내 글과 나라 목록이 나온다. PC는 Esc도 같음 */}
+        <button type="button" className="panel-deselect" onClick={() => select(null)} aria-label="나라 선택 해제" title="나라 선택 해제 (Esc)">
+          <svg viewBox="0 0 14 14" width="14" height="14" aria-hidden>
+            <path d="M2 2 12 12M12 2 2 12" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+          </svg>
+        </button>
       </header>
       <EntityTabs
           key={entity.id}
