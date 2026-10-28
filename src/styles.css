@@ -502,17 +502,20 @@ button {
    오른쪽: 세로 연도 막대(위가 최근). 막대 안 눈금, 눈금 숫자는 끄는 동안만(.dragging). 아래에 신석기·구석기 단추(신석기가 위).
    아래 가운데: ◀ [연도] ▶ (감싼 상자 없이, 2026-10-28) */
 .map-yearbar { position: absolute; top: 22px; right: 12px; bottom: 150px; z-index: 4; display: flex; flex-direction: column; align-items: center; gap: 16px; }
+/* 휴대폰에서 막대·단추를 누르거나 끌 때 글자 선택(파란 네모)과 누름 강조색이 비치지 않게(2026-10-28) */
+.map-yearbar, .map-yearbox button { -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; -webkit-tap-highlight-color: transparent; }
 .map-yearbar-track { position: relative; flex: 1; width: 28px; min-height: 60px; margin-bottom: 4px; cursor: pointer; touch-action: none; }
 /* 막대(2026-10-28): 조금 두꺼운 둥근 막대(10px) 위를 원형 손잡이가 위아래로 움직이고, 막대 아래 끝부터 손잡이까지는 채운다.
-   눈금은 막대 위에 그리고 막대 양옆으로 4px씩 튀어나온다. 두께는 모두 1px, AD 1만 3px. 누르는 영역(.map-yearbar-track)은 28px로 넓게 둔다 */
+   눈금은 막대 위에 그리고 평소에는 막대 폭 안(10px), 손잡이를 끄는 동안만 양옆으로 4px씩 튀어나온다(18px). 두께는 모두 1px, AD 1만 3px. 누르는 영역(.map-yearbar-track)은 28px로 넓게 둔다 */
 .map-yearbar-track:focus-visible { outline: none; }
 .map-yearbar-track:focus-visible .map-yearbar-rail { border-color: var(--front-line); }
 .map-yearbar-rail { position: absolute; top: -5px; bottom: -5px; left: 50%; width: 10px; box-sizing: border-box; transform: translateX(-50%); border: 1px solid var(--muted); border-radius: 5px; background: var(--control-bg); box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15), 0 1px 3px rgba(0, 0, 0, 0.12); }
 .map-yearbar-fill { position: absolute; bottom: -5px; left: 50%; width: 10px; box-sizing: border-box; transform: translateX(-50%); border: 1px solid var(--muted); border-top: none; border-radius: 0 0 5px 5px; background: var(--accent); opacity: 0.85; }
-.map-yearbar-mark { position: absolute; left: 50%; width: 18px; height: 1px; transform: translate(-50%, -50%); background: color-mix(in srgb, var(--fg) 55%, transparent); pointer-events: none; }
+.map-yearbar-mark { position: absolute; left: 50%; width: 10px; height: 1px; transition: width 0.12s ease; transform: translate(-50%, -50%); background: color-mix(in srgb, var(--fg) 55%, transparent); pointer-events: none; }
 .map-yearbar-mark.ad1 { height: 3px; background: color-mix(in srgb, var(--fg) 85%, transparent); }
 .map-yearbar-label { display: none; position: absolute; top: 50%; right: calc(100% + 10px); transform: translateY(-50%); padding: 0 4px; border-radius: 3px; background: var(--control-bg); color: var(--fg); font-size: 11px; line-height: 1.5; white-space: nowrap; }
 .map-yearbar.dragging .map-yearbar-label { display: block; }
+.map-yearbar.dragging .map-yearbar-mark { width: 18px; }
 .map-yearbar-thumb { position: absolute; z-index: 1; left: 50%; width: 18px; height: 18px; transform: translate(-50%, -50%); border: 2px solid var(--surface); border-radius: 50%; background: var(--accent); box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); pointer-events: none; }
 .map-yearbar-prehistory { display: flex; flex-direction: column; gap: 3px; }
 .map-yearbar-prehistory button { height: 24px; padding: 0 6px; white-space: nowrap; border: 1px solid var(--border); border-radius: 4px; background: var(--control-bg); color: var(--fg); font: inherit; font-size: 12px; cursor: pointer; }

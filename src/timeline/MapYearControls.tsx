@@ -53,6 +53,8 @@ export function MapYearControls({ data }: { data: StaticData }) {
   };
   const onTrackDown = (e: ReactPointerEvent<HTMLDivElement>) => {
     if (e.button !== 0) return;
+    // 끄는 동안 글자가 선택되며 파란 네모가 비치지 않게 기본 동작을 막는다(2026-10-28)
+    e.preventDefault();
     try {
       e.currentTarget.setPointerCapture(e.pointerId);
     } catch {

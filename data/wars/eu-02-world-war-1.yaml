@@ -21,7 +21,9 @@ calendar: gregorian
 factions:
   - { id: entente, name: 협상국, entity: france, color: "#6d93c9" }
   - { id: central, name: 동맹국, entity: german-empire, color: "#c98b52" }
-  - { id: russia, name: 러시아 제국 (협상국), entity: russia, color: "#7aa465" }
+  # 러시아 진영은 색을 따로 정하지 않고 러시아 제국의 나라색을 쓴다(2026-10-28). 진영 칠은 유럽 쪽(동경 59° 무렵)까지라,
+  # 따로 정한 색이면 그 동쪽의 평소 영토 색과 갈라져 보였다
+  - { id: russia, name: 러시아 제국 (협상국), entity: russia }
 # 참전국 (선전 포고·참전 날짜). 지도에 없는 나라(브라질·시암 등)는 뺐다
 participants:
   - { entity: france, faction: entente }
