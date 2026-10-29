@@ -571,3 +571,386 @@
   expect: pahlavi-iran
   url: https://en.wikipedia.org/wiki/Pahlavi_Iran
   from: 서아시아 A1a-2 결과노트
+
+# 서아시아 A1b(2026-10-29): 이집트·리비아·마그레브·서사하라 1918~현재. 새 항목마다 수도 1점과 바뀌는 해 앞뒤, 시나이 중간선·스페인 보호령 구역 경계·타르파야 띠·북위 27°40′ 양쪽, 리비아 실효 지배 단계, 세우타 이음매(유럽 조각 쪽 값)
+- name: 카이로
+  at: [31.235, 30.044]
+  year: 1920
+  expect: british-egypt
+  url: https://en.wikipedia.org/wiki/Sultanate_of_Egypt
+  from: 서아시아 A1b 결과노트
+- name: 카이로
+  at: [31.235, 30.044]
+  year: 1930
+  expect: egypt
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Egypt
+  from: 서아시아 A1b 결과노트
+- name: 카이로
+  at: [31.235, 30.044]
+  year: 1960
+  expect: united-arab-republic
+  url: https://en.wikipedia.org/wiki/United_Arab_Republic
+  from: 서아시아 A1b 결과노트
+- name: 카이로
+  at: [31.235, 30.044]
+  year: 1975
+  expect: arab-republic-of-egypt
+  url: https://en.wikipedia.org/wiki/Egypt%E2%80%93Israel_peace_treaty
+  from: 서아시아 A1b 결과노트
+- name: 아스완
+  at: [32.9, 24.09]
+  year: 1950
+  expect: egypt
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Egypt
+  from: 서아시아 A1b 결과노트
+- name: 시와 오아시스
+  at: [25.52, 29.2]
+  year: 1930
+  expect: egypt
+  url: https://en.wikipedia.org/wiki/Siwa_Oasis
+  from: 서아시아 A1b 결과노트
+- name: 수에즈(운하 서쪽)
+  at: [32.52, 29.98]
+  year: 1970
+  expect: united-arab-republic
+  url: https://en.wikipedia.org/wiki/Suez
+  from: 서아시아 A1b 결과노트
+- name: 샤름엘셰이크
+  at: [34.33, 27.91]
+  year: 1970
+  expect: sinai-israeli-occupation
+  url: https://en.wikipedia.org/wiki/Sinai_Peninsula
+  from: 서아시아 A1b 결과노트
+- name: 샤름엘셰이크
+  at: [34.33, 27.91]
+  year: 1981
+  expect: sinai-israeli-occupation
+  url: https://en.wikipedia.org/wiki/Egypt%E2%80%93Israel_peace_treaty
+  from: 서아시아 A1b 결과노트
+- name: 샤름엘셰이크
+  at: [34.33, 27.91]
+  year: 1983
+  expect: arab-republic-of-egypt
+  url: https://en.wikipedia.org/wiki/Sinai_Peninsula
+  from: 서아시아 A1b 결과노트
+- name: 세인트캐서린
+  at: [33.95, 28.56]
+  year: 1970
+  expect: sinai-israeli-occupation
+  url: https://en.wikipedia.org/wiki/Sinai_Peninsula
+  from: 서아시아 A1b 결과노트
+- name: 세인트캐서린
+  at: [33.95, 28.56]
+  year: 1981
+  expect: arab-republic-of-egypt
+  url: https://en.wikipedia.org/wiki/Egypt%E2%80%93Israel_peace_treaty
+  from: 서아시아 A1b 결과노트
+- name: 할라이브
+  at: [36.6, 22.25]
+  year: 2010
+  expect: arab-republic-of-egypt
+  url: https://en.wikipedia.org/wiki/Halaib_Triangle
+  from: 서아시아 A1b 결과노트
+- name: 트리폴리(리비아)
+  at: [13.18, 32.87]
+  year: 1921
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Italian_Tripolitania
+  from: 서아시아 A1b 결과노트
+- name: 트리폴리(리비아)
+  at: [13.18, 32.87]
+  year: 1930
+  expect: italian-libya
+  url: https://en.wikipedia.org/wiki/Italian_Tripolitania
+  from: 서아시아 A1b 결과노트
+- name: 트리폴리(리비아)
+  at: [13.18, 32.87]
+  year: 1945
+  expect: libya-british-admin
+  url: https://en.wikipedia.org/wiki/Italian_Libya
+  from: 서아시아 A1b 결과노트
+- name: 트리폴리(리비아)
+  at: [13.18, 32.87]
+  year: 1960
+  expect: libya
+  url: https://en.wikipedia.org/wiki/Italian_Libya
+  from: 서아시아 A1b 결과노트
+- name: 미수라타
+  at: [15.09, 32.37]
+  year: 1921
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Italian_Tripolitania
+  from: 서아시아 A1b 결과노트
+- name: 미수라타
+  at: [15.09, 32.37]
+  year: 1925
+  expect: italian-libya
+  url: https://en.wikipedia.org/wiki/Italian_Tripolitania
+  from: 서아시아 A1b 결과노트
+- name: 가다메스
+  at: [9.5, 30.13]
+  year: 1927
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Italian_Tripolitania
+  from: 서아시아 A1b 결과노트
+- name: 가다메스
+  at: [9.5, 30.13]
+  year: 1929
+  expect: italian-libya
+  url: https://en.wikipedia.org/wiki/Italian_Tripolitania
+  from: 서아시아 A1b 결과노트
+- name: 가다메스
+  at: [9.5, 30.13]
+  year: 1945
+  expect: libya-french-fezzan
+  url: https://en.wikipedia.org/wiki/Italian_Libya
+  from: 서아시아 A1b 결과노트
+- name: 벵가지
+  at: [20.07, 32.11]
+  year: 1925
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Second_Italo-Senussi_War
+  from: 서아시아 A1b 결과노트
+- name: 벵가지
+  at: [20.07, 32.11]
+  year: 1929
+  expect: italian-libya
+  url: https://en.wikipedia.org/wiki/Second_Italo-Senussi_War
+  from: 서아시아 A1b 결과노트
+- name: 세브하
+  at: [14.43, 27.04]
+  year: 1929
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Second_Italo-Senussi_War
+  from: 서아시아 A1b 결과노트
+- name: 세브하
+  at: [14.43, 27.04]
+  year: 1930
+  expect: italian-libya
+  url: https://en.wikipedia.org/wiki/Second_Italo-Senussi_War
+  from: 서아시아 A1b 결과노트
+- name: 세브하
+  at: [14.43, 27.04]
+  year: 1945
+  expect: libya-french-fezzan
+  url: https://en.wikipedia.org/wiki/Italian_Libya
+  from: 서아시아 A1b 결과노트
+- name: 쿠프라
+  at: [23.3, 24.18]
+  year: 1930
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Second_Italo-Senussi_War
+  from: 서아시아 A1b 결과노트
+- name: 쿠프라
+  at: [23.3, 24.18]
+  year: 1932
+  expect: italian-libya
+  url: https://en.wikipedia.org/wiki/Italian_Libya
+  from: 서아시아 A1b 결과노트
+- name: 쿠프라
+  at: [23.3, 24.18]
+  year: 1945
+  expect: libya-british-admin
+  url: https://en.wikipedia.org/wiki/Italian_Libya
+  from: 서아시아 A1b 결과노트
+- name: 튀니스
+  at: [10.15, 36.8]
+  year: 1920
+  expect: french-tunisia
+  url: https://en.wikipedia.org/wiki/French_protectorate_of_Tunisia
+  from: 서아시아 A1b 결과노트
+- name: 튀니스
+  at: [10.15, 36.8]
+  year: 1960
+  expect: tunisia
+  url: https://en.wikipedia.org/wiki/French_protectorate_of_Tunisia
+  from: 서아시아 A1b 결과노트
+- name: 타타윈
+  at: [10.45, 32.93]
+  year: 1930
+  expect: french-tunisia
+  url: https://en.wikipedia.org/wiki/French_protectorate_of_Tunisia
+  from: 서아시아 A1b 결과노트
+- name: 알제
+  at: [3.04, 36.73]
+  year: 1930
+  expect: french-algeria
+  url: https://en.wikipedia.org/wiki/French_Algeria
+  from: 서아시아 A1b 결과노트
+- name: 알제
+  at: [3.04, 36.73]
+  year: 1970
+  expect: algeria
+  url: https://en.wikipedia.org/wiki/French_Algeria
+  from: 서아시아 A1b 결과노트
+- name: 타만라세트
+  at: [5.53, 22.79]
+  year: 1930
+  expect: french-algeria
+  url: https://en.wikipedia.org/wiki/French_Algeria
+  from: 서아시아 A1b 결과노트
+- name: 틴두프
+  at: [-8.15, 27.67]
+  year: 1950
+  expect: french-algeria
+  url: https://en.wikipedia.org/wiki/Sand_War
+  from: 서아시아 A1b 결과노트
+- name: 틴두프
+  at: [-8.15, 27.67]
+  year: 1970
+  expect: algeria
+  url: https://en.wikipedia.org/wiki/Sand_War
+  from: 서아시아 A1b 결과노트
+- name: 라바트
+  at: [-6.83, 34]
+  year: 1930
+  expect: french-morocco
+  url: https://en.wikipedia.org/wiki/French_protectorate_in_Morocco
+  from: 서아시아 A1b 결과노트
+- name: 라바트
+  at: [-6.83, 34]
+  year: 1960
+  expect: morocco
+  url: https://en.wikipedia.org/wiki/French_protectorate_in_Morocco
+  from: 서아시아 A1b 결과노트
+- name: 마라케시
+  at: [-8, 31.63]
+  year: 1920
+  expect: french-morocco
+  url: https://en.wikipedia.org/wiki/French_protectorate_in_Morocco
+  from: 서아시아 A1b 결과노트
+- name: 와잔
+  at: [-5.58, 34.8]
+  year: 1930
+  expect: french-morocco
+  url: https://en.wikipedia.org/wiki/Spanish_protectorate_in_Morocco
+  from: 서아시아 A1b 결과노트
+- name: 테투안
+  at: [-5.37, 35.57]
+  year: 1930
+  expect: spanish-morocco
+  url: https://en.wikipedia.org/wiki/Spanish_protectorate_in_Morocco
+  from: 서아시아 A1b 결과노트
+- name: 테투안
+  at: [-5.37, 35.57]
+  year: 1960
+  expect: morocco
+  url: https://en.wikipedia.org/wiki/Spanish_protectorate_in_Morocco
+  from: 서아시아 A1b 결과노트
+- name: 크사르엘케비르
+  at: [-5.9, 35]
+  year: 1930
+  expect: spanish-morocco
+  url: https://en.wikipedia.org/wiki/Ksar_el-Kebir
+  from: 서아시아 A1b 결과노트
+- name: 알호세이마
+  at: [-3.93, 35.24]
+  year: 1924
+  expect: spanish-morocco
+  url: https://en.wikipedia.org/wiki/Rif_Republic
+  from: 서아시아 A1b 결과노트
+- name: 나도르
+  at: [-2.93, 35.17]
+  year: 1930
+  expect: spanish-morocco
+  url: https://en.wikipedia.org/wiki/Spanish_protectorate_in_Morocco
+  from: 서아시아 A1b 결과노트
+- name: 베르칸
+  at: [-2.32, 34.92]
+  year: 1930
+  expect: french-morocco
+  url: https://en.wikipedia.org/wiki/Spanish_protectorate_in_Morocco
+  from: 서아시아 A1b 결과노트
+- name: 세우타
+  at: [-5.32, 35.89]
+  year: 1930
+  expect: spain
+  url: https://en.wikipedia.org/wiki/Spanish_protectorate_in_Morocco
+  from: 서아시아 A1b 결과노트
+- name: 굴밈
+  at: [-10.06, 28.99]
+  year: 1950
+  expect: french-morocco
+  url: https://en.wikipedia.org/wiki/Tarfaya_Strip
+  from: 서아시아 A1b 결과노트
+- name: 탄탄
+  at: [-11.1, 28.44]
+  year: 1950
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Tarfaya_Strip
+  from: 서아시아 A1b 결과노트
+- name: 탄탄
+  at: [-11.1, 28.44]
+  year: 1960
+  expect: morocco
+  url: https://en.wikipedia.org/wiki/Tarfaya_Strip
+  from: 서아시아 A1b 결과노트
+- name: 타르파야
+  at: [-12.88, 27.93]
+  year: 1950
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Tarfaya_Strip
+  from: 서아시아 A1b 결과노트
+- name: 타르파야
+  at: [-12.88, 27.93]
+  year: 1960
+  expect: morocco
+  url: https://en.wikipedia.org/wiki/Tarfaya_Strip
+  from: 서아시아 A1b 결과노트
+- name: 스마라
+  at: [-11.67, 26.74]
+  year: 1930
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Spanish_Sahara
+  from: 서아시아 A1b 결과노트
+- name: 스마라
+  at: [-11.67, 26.74]
+  year: 1950
+  expect: spanish-sahara
+  url: https://en.wikipedia.org/wiki/Spanish_Sahara
+  from: 서아시아 A1b 결과노트
+- name: 엘아이운
+  at: [-13.2, 27.15]
+  year: 1950
+  expect: spanish-sahara
+  url: https://en.wikipedia.org/wiki/Spanish_Sahara
+  from: 서아시아 A1b 결과노트
+- name: 엘아이운
+  at: [-13.2, 27.15]
+  year: 1990
+  expect: western-sahara-disputed
+  url: https://en.wikipedia.org/wiki/Western_Sahara_conflict
+  from: 서아시아 A1b 결과노트
+- name: 다클라
+  at: [-15.93, 23.71]
+  year: 1977
+  expect: western-sahara-disputed
+  url: https://en.wikipedia.org/wiki/Tiris_al-Gharbiyya
+  from: 서아시아 A1b 결과노트
+- name: 다클라
+  at: [-15.93, 23.71]
+  year: 2000
+  expect: western-sahara-disputed
+  url: https://en.wikipedia.org/wiki/Western_Sahara_conflict
+  from: 서아시아 A1b 결과노트
+- name: 티파리티
+  at: [-10.57, 26.16]
+  year: 1980
+  expect: western-sahara-disputed
+  url: https://en.wikipedia.org/wiki/Moroccan_Wall
+  from: 서아시아 A1b 결과노트
+- name: 티파리티
+  at: [-10.57, 26.16]
+  year: 1990
+  expect: western-sahara-free-zone
+  url: https://en.wikipedia.org/wiki/Moroccan_Wall
+  from: 서아시아 A1b 결과노트

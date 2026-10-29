@@ -3925,3 +3925,10 @@
   at: [56.27, 24.46]
   reason: 1920년 시브 조약 뒤 내륙(다힐리야·자히라·북샤르키야)은 오만 이맘국이 다스려, 술탄의 땅은 바티나·무스카트 해안과 남쪽(수르·우스타·도파르)이 내륙으로는 끊기고 바닷길로 이어졌다. 1959년 술탄이 내륙을 평정한 뒤 이어진다
   sources: ["위키백과 영어판 「Imamate of Oman」 https://en.wikipedia.org/wiki/Imamate_of_Oman", "위키백과 영어판 「Sultanate of Muscat and Oman」 https://en.wikipedia.org/wiki/Sultanate_of_Muscat_and_Oman"]
+
+- entity: united-arab-republic
+  from: 1958
+  to: 1961
+  at: [38.18, 35.03]
+  reason: 1958~1961년 아랍 연합 공화국의 시리아 쪽 땅(북부 지역)은 이집트(남부 지역)와 이스라엘·요르단 땅을 사이에 두고 떨어져 있었다. 1961년 9월 시리아가 떨어져 나갔다
+  sources: ["위키백과 영어판 「United Arab Republic」 https://en.wikipedia.org/wiki/United_Arab_Republic"]

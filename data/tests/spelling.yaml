@@ -1353,3 +1353,49 @@
   avoid: [루브알할리, 루브 알할리, 룹 알할리]
   note: "al-Rubʿ al-Khālī. 정관사 알을 뒤 낱말에 붙여 씀(00-scope 6절). 더한 날 avoid 0회"
   scope: 서아시아·북아프리카 현대
+
+# ── 서아시아·북아프리카 A1b(2026-10-29, 이집트·리비아·마그레브·서사하라 1918~현재): 개수는 더한 날 data·src grep ──
+- use: 사누시
+  avoid: [세누시, 사누시야]
+  note: "al-Sanūsīya(키레나이카의 이슬람 교단, 리비아 왕 이드리스 1세의 집안). 더한 날 avoid 0회"
+  scope: 서아시아·북아프리카 현대
+
+- use: 자마히리야
+  avoid: [자마히리아]
+  note: "Jamāhīrīya(1977~2011 리비아 국호). 더한 날 avoid 0회"
+  scope: 서아시아·북아프리카 현대
+
+- use: 할라이브
+  avoid: [할라입]
+  note: "Ḥalāʾib(이집트–수단 국경의 삼각지대). 더한 날 avoid 0회"
+  scope: 서아시아·북아프리카 현대
+
+- use: 모래 전쟁
+  avoid: [샌드 전쟁]
+  note: "Sand War(1963 알제리–모로코). 더한 날 avoid 0회"
+  scope: 서아시아·북아프리카 현대
+
+- use: 폴리사리오 전선
+  avoid: [포리사리오, 폴리사리오 해방 전선]
+  note: "Frente Polisario. 위키백과 한국어판 '폴리사리오 전선'. 더한 날 avoid 0회"
+  scope: 서아시아·북아프리카 현대
+
+- use: 사하라 아랍 민주 공화국
+  avoid: [사흐라위 아랍 민주 공화국]
+  note: "Sahrawi Arab Democratic Republic. 위키백과 한국어판 표제어 '사하라 아랍 민주 공화국'(사람은 '사흐라위인'). 더한 날 avoid 0회"
+  scope: 서아시아·북아프리카 현대
+
+- use: 모로코 장벽
+  avoid: [서사하라 장벽]
+  note: "Moroccan Wall(모래 둑, 1980~1987). 위키백과 한국어판 '모로코 장벽'. 더한 날 avoid 0회"
+  scope: 서아시아·북아프리카 현대
+
+- use: 압드 엘크림
+  avoid: [압델크림, 압둘 크림]
+  note: "ʿAbd al-Karīm al-Khaṭṭābī(리프 공화국 지도자). 더한 날 avoid 0회"
+  scope: 서아시아·북아프리카 현대
+
+- use: 아누알 전투
+  avoid: [아누왈]
+  note: "Battle of Annual(1921 리프 전쟁). 더한 날 avoid 0회"
+  scope: 서아시아·북아프리카 현대

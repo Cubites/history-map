@@ -10,16 +10,18 @@
 // - voids: 일부러 비운 땅 [[from, to(끝 없음은 null), 멀티폴리곤]] (이유는 그 줄 주석에)
 // - source: (선택) 이 시대 나라의 출처 문구. 없으면 권역의 source나 기본 문구
 //
-// ── 서아시아·북아프리카 A1a-1 (2026-10-29): 레반트·이라크·쿠웨이트 1918~현재, A1a-2 (같은 날): 아라비아 반도·이란 1918~현재 ──────────────
-// 등급 '일반'(00-scope 3절: 땅 1만 km², 선 평균 10 / 최대 25 km), 아라비아 내륙은 '주변'(zones.yaml arabia-interior: 땅 5만 km², 선 25 / 50 km). 운영자 결정은 scratchpad a1/decisions.md(질문 창구 ①②), 사료는 a1/research/notes-a.md.
+// ── 서아시아·북아프리카 A1a-1 (2026-10-29): 레반트·이라크·쿠웨이트 1918~현재, A1a-2 (같은 날): 아라비아 반도·이란 1918~현재,
+//    A1b (같은 날): 이집트·리비아·튀니지·알제리·모로코·서사하라 1918~현재(사하라 내륙은 '주변', zones.yaml sahara-interior) ──────────────
+// 등급 '일반'(00-scope 3절: 땅 1만 km², 선 평균 10 / 최대 25 km), 아라비아 내륙은 '주변'(zones.yaml arabia-interior: 땅 5만 km², 선 25 / 50 km). 운영자 결정은 scratchpad a1/decisions.md(질문 창구 ①②), 사료는 a1/research/notes-a.md(A1b는 notes-b.md).
 // 짜임: 조각 소유표 하나(T1918, 1918~지금). 표의 꼴은 도우미 모듈 table.mjs(유럽 makeTable과 같은 꼴). 표의 모든 조각을 한 번씩 쓰고,
-//   아직 그리지 않은 땅(이집트·마그레브는 A1b)과 일부러 비운 땅은 주인 null로 둔다. 다음 단계는 그 줄을 나라로 바꾼다.
+//   일부러 비운 땅은 주인 null로 둔다(빈 땅 검사 구역에서 그해 빠짐, 생성기의 구멍 메우기를 막으려고 voids에도 적음).
 // 식민지·보호국·위임 통치령은 본국을 넓히지 않고 따로 항목(관계 vassal_of), 주권이 남은 군사 점령은 옛 나라 색 계열의 지역 항목(occupied_by): 운영자 결정 2.
 // 내전·전쟁 중의 실효 지배는 그리지 않는다(운영자 결정 3). 하타이(TR-31)는 유럽 조각이라 이 파일이 칠하지 않는다(유럽이 1918~1938 비워 둠).
 // 이음매: 튀르키예–시리아·튀르키예–이라크 선은 조각 준비(prep:fragments의 under: 'europe')에서 유럽 조각 바깥선 그대로라 이 파일은 손대지 않는다.
 // 근거: 위키백과 en(Occupied Enemy Territory Administration, French Mandate for Syria and the Lebanon, Greater Lebanon, Mandatory Palestine, Emirate of Transjordan,
 //   1949 Armistice Agreements, Golan Heights, Mandatory Iraq, Mosul Question, United Arab Republic, Syrian Republic (1930–1963), Kuwait), A1a-2: Kingdom of Hejaz, Emirate of Jabal Shammar, Idrisid Emirate of Asir, Asir Province, Saudi–Yemeni War (1934), Mutawakkilite Kingdom of Yemen,
-//   Aden Protectorate, Sultanate of Muscat and Oman, Imamate of Oman, Trucial States, Pahlavi Iran, Qajar Iran. 수도 정답표: data/tests/places/middle-east.yaml
+//   Aden Protectorate, Sultanate of Muscat and Oman, Imamate of Oman, Trucial States, Pahlavi Iran, Qajar Iran, A1b: Sultanate of Egypt, Kingdom of Egypt, Egypt–Israel peace treaty, Sinai Peninsula, Italian Libya, Italian Tripolitania,
+//   Second Italo-Senussi War, French protectorate of Tunisia, French Algeria, French protectorate in Morocco, Spanish protectorate in Morocco, Tarfaya Strip, Spanish Sahara, Moroccan Wall. 수도 정답표: data/tests/places/middle-east.yaml
 import { D, I, box } from '../../lib.mjs';
 import { versions as EU_VERSIONS } from '../europe.mjs';
 import { ME, build, idsOf, joinTables, makeTable, minus } from './table.mjs';
@@ -47,6 +49,28 @@ const HEJAZ_N = box(34.0, 27.0, 37.0, 32.5);
 const HAJJAH_TIHAMA = box(42.5, 15.4, 43.3, 16.8);
 // 나흐와(샤르자의 월경지, 약 3 km²): 오만 월경지 마다(무산담 주 OM-MU) 안에 다시 박힌 땅이라 아랍에미리트 도형에 폭 1 km 안팎의 가는 띠를 만든다. 오만 쪽에 둔다(1만 km² 미만).
 const NAHWA = box(56.255, 25.24, 56.29, 25.29);
+
+// ── A1b 칼선 (이집트·마그레브·서사하라) ──
+// 시나이 중간선(운영자 결정 4): 1979 이집트–이스라엘 평화 조약의 단계 철수로 1980년 1월 이스라엘이 엘아리시(동경 33.80°·북위 31.13°)~라스무함마드(34.25°·27.73°) 선 서쪽을 돌려주고,
+// 그 동쪽(약 2만 km²)은 1982년 4월까지 점령했다. 두 점을 잇는 곧은 선을 바다 쪽으로 같은 방향으로 늘였다(어림 선). 이 선으로는 북시나이 EG-SIN·남시나이 EG-JS만 나눈다.
+const SINAI_E = [[[33.75, 31.6], [33.8, 31.13], [34.25, 27.73], [34.28, 27.4], [35.5, 27.4], [35.5, 31.6], [33.75, 31.6]]];
+// 수에즈 운하 동쪽 기슭: 포트사이드 EG-PTS·이스마일리아 EG-IS·수에즈 EG-SUZ 주가 운하 동쪽 땅(약 4,700 km²)을 품고 있어, 1967~1979년 이스라엘 점령(운하까지)에 넣으려고
+// 운하(포트사이드~칸타라~팀사호~그레이트비터호~수에즈)와 수에즈만 가운데를 잇는 어림 선으로 나눈다. 이 선으로는 이 세 조각만 나눈다.
+const SUEZ_E = [[[32.3, 31.7], [32.3, 31.27], [32.32, 30.85], [32.3, 30.6], [32.33, 30.45], [32.36, 30.4], [32.45, 30.25], [32.5, 30.12], [32.55, 30.0], [32.57, 29.92],
+  [32.55, 29.6], [32.62, 29.3], [32.8, 29.0], [32.95, 28.8], [33.2, 28.8], [33.2, 31.7], [32.3, 31.7]]];
+// 홍해 주 EG-BA의 둘째 폴리곤(약 740 km²)은 수에즈만 건너 시나이 서쪽 기슭(아부루데이스~엘투르 둘레)이다. 칼선 대신 그 폴리곤을 골라 시나이 쪽에 넣는다
+const BA_SINAI = ME.F('EG-BA').filter((poly) => poly[0].every(([x, y]) => x > 32.7 && x < 33.9 && y > 27.7));
+if (BA_SINAI.length !== 1) throw new Error(`middle-east modern: 홍해 주의 시나이 쪽 폴리곤을 하나로 고르지 못함 (${BA_SINAI.length}개)`);
+// 스페인 보호령 북부 구역(1912 프랑스–스페인 조약): 남쪽 경계를 대서양(라라슈·크사르엘케비르는 스페인, 물레이부셀함은 프랑스)에서 와잔 북쪽, 케타마·타르기스트(스페인)와
+// 타우나트·아크눌(프랑스) 사이 산지를 지나 물루야강 하류까지, 물루야강을 따라 하구까지 잇는 어림 선(수 km 오차). 탕헤르 국제 지대(382 km²)는 이 구역에 묶는다.
+// 이 선으로는 탕헤르-테투안 MA-01·타자-알호세이마-타우나트 MA-03·동부 MA-04만 나눈다. 세우타·멜리야는 유럽 조각(스페인)이라 이 파일이 칠하지 않는다.
+const SPANISH_ZONE = [[[-6.6, 34.98], [-6.25, 34.98], [-5.95, 34.93], [-5.55, 34.92], [-5.3, 34.9], [-5.05, 34.88], [-4.75, 34.88], [-4.45, 34.87], [-4.1, 34.8],
+  [-3.8, 34.78], [-3.4, 34.72], [-3.05, 34.65], [-2.8, 34.75], [-2.6, 34.95], [-2.4, 35.05], [-2.33, 35.13], [-2.2, 35.3], [-2.2, 36.2], [-6.6, 36.2], [-6.6, 34.98]]];
+// 서사하라 북쪽 경계 북위 27°40′(1904·1912 프랑스–스페인 조약): 그 남쪽은 서사하라(스페인령 사하라 → 귀속 논쟁 지역). 굴밈-에스세마라 MA-14·라윤 MA-15가 이 선을 넘어 걸친다.
+const WS_SOUTH = box(-18.0, 20.0, -8.0, 27.667);
+// 타르파야 띠(케이프 주비, 스페인 보호령 남부 구역): 북위 27°40′와 드라강 사이, 서경 8°40′(파리 기준 서경 11°) 서쪽. 드라강은 하구~서경 8°40′을 잇는 어림 선(주변 구역 선 기준 안).
+// 1958년 4월 모로코에 돌아갔다. 이 선으로는 MA-14·MA-15만 나눈다(MA-14의 서사하라 쪽은 WS_SOUTH가 먼저 가져감).
+const TARFAYA = [[[-13.6, 27.667], [-8.667, 27.667], [-8.667, 28.85], [-9.0, 28.62], [-10.0, 28.5], [-10.8, 28.55], [-11.13, 28.69], [-11.5, 29.0], [-13.6, 29.0], [-13.6, 27.667]]];
 
 // ── 조각 소유표 (1918~지금) ─────────────────────────
 const T1918 = makeTable(1918, PRESENT + 1);
@@ -125,8 +149,51 @@ const T1918 = makeTable(1918, PRESENT + 1);
   own([...whole(...minus(idsOf('IRN'), 'IR-27', 'IR-30', 'IR-31')), IR_NE.이란], IRAN);
   own([IR_NE.소련겹침], [[1918, null], [1992, 'iran']]); // 소련 도형이 덮는 해(1918~1991)는 주인 없음(유럽 쪽 선), 1992년부터 이란
 
-  // 아직 그리지 않은 땅: 이집트·마그레브·서사하라는 A1b가 이 줄을 나라로 바꾼다
-  own(whole(...idsOf('EGY', 'LBY', 'TUN', 'DZA', 'MAR', 'SAH')), [[1918, null]]);
+  // ── 이집트·리비아·마그레브·서사하라 (A1b, 2026-10-29) ──
+  // 이집트: 영국 보호국 이집트 술탄국(1914-12-19) → 1922-02-28 영국의 일방 독립 선언·3월 15일 왕국(1953-06-18 공화국, 같은 항목 egypt) → 1958-02-01 아랍 연합 공화국
+  // (1961년 시리아가 떨어져 나간 뒤에도 이집트가 1971-09-02까지 이 이름을 씀) → 이집트 아랍 공화국. 할라이브(EG-BA 안, 북위 22도 북쪽)는 Natural Earth대로 이집트 땅
+  const EGYPT = [[1918, 'british-egypt'], [1922, 'egypt'], [1958, 'united-arab-republic']];
+  const ARE = 'arab-republic-of-egypt';
+  const SIO = 'sinai-israeli-occupation';
+  const CANAL = split('운하', ['EG-PTS', 'EG-IS', 'EG-SUZ'], [['동쪽', SUEZ_E]], '서쪽');
+  const EG_BA = split('EG-BA', ['EG-BA'], [['시나이서안', BA_SINAI]], '홍해');
+  own([...whole(...minus(idsOf('EGY'), 'EG-SIN', 'EG-JS', 'EG-PTS', 'EG-IS', 'EG-SUZ', 'EG-BA')), CANAL.서쪽, EG_BA.홍해], [...EGYPT, [1971, ARE]]);
+  // 시나이(운영자 결정 4): 1967년 6일 전쟁부터 이스라엘 점령(운하 동쪽 기슭까지, 이집트 땅 그대로 점령 지역 항목), 1980년 1월 중간선 서쪽 반환, 1982년 4월 25일 나머지 반환.
+  // 1956~1957년 점령과 1973년 전쟁 뒤 1974·1975년 협정의 후퇴(운하 동쪽 띠 반환 등)는 그리지 않는다
+  const SIN = split('SIN', ['EG-SIN', 'EG-JS'], [['동부', SINAI_E]], '서부');
+  own([SIN.서부, CANAL.동쪽, EG_BA.시나이서안], [...EGYPT, [1967, SIO], [1980, ARE]]);
+  own([SIN.동부], [...EGYPT, [1967, SIO], [1982, ARE]]);
+
+  // 리비아(운영자 결정 6): 1918~1921년은 이탈리아가 해안 거점만 지배해 비움(트리폴리타니아 공화국·사누시 아미르국은 그리지 않음).
+  // 이탈리아령 리비아는 실효 지배 4단계, 행정구 단위: 1922 미수라타 점령·나푸사 산지, 1928 시르테·가다메스(1924)·주프라·키레나이카(29번째 평행선 작전), 1930 페잔, 1931 쿠프라.
+  // 1943년 연합군 점령 뒤 1951년까지 군정(이탈리아 주권은 1947 평화 조약까지): 영국(트리폴리타니아·키레나이카)과 프랑스(페잔·가다메스) 두 점령 지역 항목. 1951-12-24 독립
+  const IL = 'italian-libya';
+  const LBA = 'libya-british-admin';
+  const LFZ = 'libya-french-fezzan';
+  const LY_1928 = ['LY-SR', 'LY-JU', 'LY-AJ', 'LY-BA', 'LY-MJ', 'LY-JA', 'LY-QB', 'LY-BU']; // 시르테·주프라·아즈다비야·키레나이카 해안(벵가지·마르즈·제벨아흐다르·쿠바·부트난)
+  const LY_FEZZAN = ['LY-SB', 'LY-WD', 'LY-MQ', 'LY-GT', 'LY-WS']; // 세브하·와디알하야·무르주크·가트·샤티
+  own(whole('LY-JI', 'LY-TN', 'LY-ZA', 'LY-NQ', 'LY-MB', 'LY-MI', 'LY-MZ'), [[1918, null], [1922, IL], [1943, LBA], [1951, 'libya']]);
+  own(whole(...LY_1928), [[1918, null], [1928, IL], [1943, LBA], [1951, 'libya']]);
+  own(whole('LY-GD'), [[1918, null], [1928, IL], [1943, LFZ], [1951, 'libya']]);
+  own(whole(...LY_FEZZAN), [[1918, null], [1930, IL], [1943, LFZ], [1951, 'libya']]);
+  own(whole('LY-KF'), [[1918, null], [1931, IL], [1943, LBA], [1951, 'libya']]);
+
+  // 튀니지: 프랑스 보호령(1881 바르도 조약) → 1956-03-20 독립(1957 공화국, 같은 항목). 지금 국경 한 모양
+  own(whole(...idsOf('TUN')), [[1918, 'french-tunisia'], [1956, 'tunisia']]);
+  // 알제리: 프랑스령 알제리(남부 영토·1957 사하라 도 포함 한 항목, 틴두프·베샤르 포함) → 1962-07-05 독립. 지금 국경 한 모양
+  own(whole(...idsOf('DZA')), [[1918, 'french-algeria'], [1962, 'algeria']]);
+  // 모로코: 프랑스 보호령(1912 페스 조약 범위 전체, 실효 평정은 1934년이나 조약 범위로 그림: 운영자 결정 7)과 스페인 보호령 북부 구역(1912-11-27) → 1956년 독립.
+  // 이프니(약 1,500 km², 1934~1969 스페인)는 따로 그리지 않고 프랑스 보호령·모로코 쪽에 둔다. 타르파야 띠는 1955년까지 비우고 1956년 모로코에 넣는다(1958년 반환, 운영자 결정 5)
+  const MA_N = split('MA-N', ['MA-01', 'MA-03', 'MA-04'], [['스페인', SPANISH_ZONE]], '프랑스');
+  const MA_S = split('MA-S', ['MA-14', 'MA-15'], [['서사하라', WS_SOUTH], ['타르파야', TARFAYA]], '모로코');
+  own([...whole(...minus(idsOf('MAR'), 'MA-01', 'MA-03', 'MA-04', 'MA-14', 'MA-15', 'MA-16')), MA_N.프랑스, MA_S.모로코], [[1918, 'french-morocco'], [1956, 'morocco']]);
+  own([MA_N.스페인], [[1918, 'spanish-morocco'], [1956, 'morocco']]);
+  own([MA_S.타르파야], [[1918, null], [1956, 'morocco']]); // 1916년 스페인이 케이프 주비를 차지했으나 해안 거점뿐이라 비움
+  // 서사하라(운영자 결정 5): 1933년까지 스페인은 해안 거점(빌라시스네로스·케이프 보하도르)만 지배해 비움, 1934년 5월 다오라·스마라 점령부터 스페인령 사하라 한 모양.
+  // 1975-11-14 마드리드 협정과 1976년 2월 스페인 철수 뒤 전체가 귀속 논쟁 지역(모로코·사하라 아랍 민주 공화국, 1979년 8월까지 모리타니: 관계),
+  // 1987년 4월 모로코 장벽(모래 둑) 완성부터 장벽 동쪽(Natural Earth SAH 조각)을 따로 지역 항목. 1976~1979년 모로코·모리타니 몫은 나누지 않는다
+  own([...whole('MA-16'), MA_S.서사하라], [[1918, null], [1934, 'spanish-sahara'], [1976, 'western-sahara-disputed']]);
+  own(whole('SAH'), [[1918, null], [1934, 'spanish-sahara'], [1976, 'western-sahara-disputed'], [1987, 'western-sahara-free-zone']]);
 }
 
 // ── 소유표 → 버전 ─────────────────────────────────
@@ -147,6 +214,12 @@ const voids = [
   [1918, 1921, build(['YE-HU'])], // 1918~1920년 호데이다: 영국군 항구 점령과 티하마 부족 땅(1921년 이드리스 가에 넘김 전)
   [1918, 1922, build(['SA-08', 'SA-12/자우프'])], // 1918~1921년 북부 국경·자우프: 루왈라 부족과 유목 부족 땅(1922년 네지드 전)
   [1918, 1934, build(['SA-10/나지란'])], // 1918~1933년 나지란 오아시스: 귀속이 정해지지 않은 얌 부족 땅(1934년 사우디 전)
+  [1918, 1922, build(idsOf('LBY'))], // 1918~1921년 리비아: 이탈리아는 트리폴리·호무스 등 해안 거점만 지배(운영자 결정 6, 1922년 재정복 전)
+  [1922, 1928, build(minus(idsOf('LBY'), 'LY-JI', 'LY-TN', 'LY-ZA', 'LY-NQ', 'LY-MB', 'LY-MI', 'LY-MZ'))], // 1922~1927년 리비아 내륙·키레나이카: 이탈리아가 아직 다스리지 않은 땅
+  [1928, 1930, build(['LY-GT', 'LY-KF', 'LY-MQ', 'LY-SB', 'LY-WD', 'LY-WS'])], // 1928~1929년 페잔·쿠프라: 1930년 페잔 정복 전
+  [1930, 1931, build(['LY-KF'])], // 1930년 쿠프라: 1931년 1월 점령 전
+  [1918, 1934, build(['MA-16', 'MA-S/서사하라', 'SAH'])], // 1918~1933년 서사하라: 스페인은 해안 거점만 지배(1934년 다오라·스마라 점령 전, 운영자 결정 5)
+  [1918, 1956, build(['MA-S/타르파야'])], // 1918~1955년 타르파야 띠: 스페인 보호령 남부 구역(해안 거점, 1958년 모로코 반환을 1956년 모로코 모양에 미리 넣음)
 ];
 
 export const era = {

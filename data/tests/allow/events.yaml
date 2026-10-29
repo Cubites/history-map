@@ -286,3 +286,146 @@
 - key: '1990 yemen-arab-republic 소멸'
   reason: me-08 사건 묶음이 채움
   decided: 2026-10-29 운영자 A1 승인
+
+# ── 서아시아·북아프리카 A1b (2026-10-29): 이집트·리비아·마그레브·서사하라 새 항목의 성립·소멸·버전 해. 사건 묶음 me-08이 사건을 쓰며 이 줄을 지운다 ──
+- key: '1830 french-algeria 성립'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1881 french-tunisia 성립'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1884 spanish-sahara 성립'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1912 italian-libya 성립'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1912 french-morocco 성립'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1912 spanish-morocco 성립'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1914 british-egypt 성립'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1922 british-egypt 소멸'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1922 egypt 성립'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1943 italian-libya 소멸'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1943 libya-british-admin 성립'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1943 libya-french-fezzan 성립'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1951 libya-british-admin 소멸'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1951 libya-french-fezzan 소멸'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1951 libya 성립'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1956 french-tunisia 소멸'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1956 tunisia 성립'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1956 french-morocco 소멸'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1956 spanish-morocco 소멸'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1956 morocco 성립'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1958 egypt 소멸'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1960 mauritania 성립'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1962 french-algeria 소멸'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1962 algeria 성립'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1967 sinai-israeli-occupation 성립'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1971 arab-republic-of-egypt 성립'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1976 spanish-sahara 소멸'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1976 western-sahara-disputed 성립'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1976 sahrawi-republic 성립'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1982 sinai-israeli-occupation 소멸'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1987 western-sahara-free-zone 성립'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1918 british-egypt 버전'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1918 french-tunisia 버전'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1918 french-algeria 버전'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1918 french-morocco 버전'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1918 spanish-morocco 버전'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1922 italian-libya 버전'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1928 italian-libya 버전'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1930 italian-libya 버전'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1931 italian-libya 버전'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1934 spanish-sahara 버전'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1961 united-arab-republic 버전'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1967 united-arab-republic 버전'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1980 arab-republic-of-egypt 버전'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1980 sinai-israeli-occupation 버전'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1982 arab-republic-of-egypt 버전'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1987 western-sahara-disputed 버전'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인

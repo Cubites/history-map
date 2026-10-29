@@ -831,3 +831,33 @@
 - { type: successor_of, subject: united-arab-emirates, object: trucial-states, from: 1971, to: null }
 - { type: successor_of, subject: pahlavi-iran, object: qajar-iran, from: 1925, to: null }
 - { type: successor_of, subject: iran, object: pahlavi-iran, from: 1979, to: null }
+
+# ── 서아시아·북아프리카 A1b (2026-10-29): 이집트·리비아·튀니지·알제리·모로코·서사하라 1918~현재 ──
+# 보호국·식민지는 vassal_of 본국(운영자 결정 2, 병합 식민지 프랑스령 알제리도 같은 꼴). 주권이 남은 군사 점령(시나이, 이탈리아 주권이 남은 리비아 군정, 가자)은 occupied_by. 끝 해는 포함(그해 말 모습 기준)
+- { type: vassal_of, subject: british-egypt, object: uk, from: 1914, to: 1921 } # 1914-12-19 보호국 선포, 1922-02-28 일방 독립 선언
+- { type: vassal_of, subject: egypt, object: uk, from: 1922, to: 1935 } # 네 가지 유보 조항과 영국군 주둔, 1936-08-27 영국-이집트 조약으로 운하 지대 밖 철수
+- { type: vassal_of, subject: italian-libya, object: italy, from: 1912, to: 1942 } # 1912 로잔 조약, 1943년 초 연합군 점령
+- { type: vassal_of, subject: french-tunisia, object: france, from: 1881, to: 1955 } # 1881-05-12 바르도 조약, 1956-03-20 독립
+- { type: vassal_of, subject: french-algeria, object: france, from: 1830, to: 1961 } # 1830 알제 점령(1848 도 편입), 1962-07-05 독립
+- { type: vassal_of, subject: french-morocco, object: france, from: 1912, to: 1955 } # 1912-03-30 페스 조약, 1956-03-02 독립
+- { type: vassal_of, subject: spanish-morocco, object: spain, from: 1912, to: 1955 } # 1912-11-27 프랑스-스페인 조약, 1956-04-07 독립
+- { type: vassal_of, subject: spanish-sahara, object: spain, from: 1884, to: 1975 } # 1884 보호령 선포, 1976-02-26 스페인 철수
+- { type: occupied_by, subject: sinai-israeli-occupation, object: israel, from: 1967, to: 1981 } # 1967-06 6일 전쟁, 1982-04-25 마지막 철수
+- { type: occupied_by, subject: libya-british-admin, object: uk, from: 1943, to: 1950 } # 1943 연합군 점령, 1951-12-24 독립
+- { type: occupied_by, subject: libya-french-fezzan, object: france, from: 1943, to: 1950 } # 1943 자유 프랑스군 점령, 1951-12-24 독립
+- { type: occupied_by, subject: gaza-strip, object: egypt, from: 1949, to: 1957 } # 1949-02-24 휴전 협정(1958년부터는 아랍 연합 공화국 줄)
+- { type: successor_of, subject: egypt, object: british-egypt, from: 1922, to: null }
+- { type: successor_of, subject: united-arab-republic, object: egypt, from: 1958, to: null } # 1958-02-01 시리아와 합침
+- { type: successor_of, subject: arab-republic-of-egypt, object: united-arab-republic, from: 1971, to: null } # 1971-09-02 나라 이름 바꿈
+- { type: successor_of, subject: libya, object: libya-british-admin, from: 1951, to: null }
+- { type: successor_of, subject: libya, object: libya-french-fezzan, from: 1951, to: null }
+- { type: successor_of, subject: tunisia, object: french-tunisia, from: 1956, to: null }
+- { type: successor_of, subject: algeria, object: french-algeria, from: 1962, to: null }
+- { type: successor_of, subject: morocco, object: french-morocco, from: 1956, to: null }
+- { type: successor_of, subject: morocco, object: spanish-morocco, from: 1956, to: null }
+# 서사하라(운영자 결정 5): 1976년 스페인 철수 뒤 귀속 논쟁. 모리타니는 1979-08-05 알제 협정으로 주장을 거둠(그해 말 모습 기준 1978까지). 1987년 장벽 완성부터 장벽 동쪽은 따로 지역
+- { type: claimed_by, subject: western-sahara-disputed, object: morocco, from: 1976, to: null }
+- { type: claimed_by, subject: western-sahara-disputed, object: sahrawi-republic, from: 1976, to: null }
+- { type: claimed_by, subject: western-sahara-disputed, object: mauritania, from: 1976, to: 1978 }
+- { type: claimed_by, subject: western-sahara-free-zone, object: sahrawi-republic, from: 1987, to: null }
+- { type: claimed_by, subject: western-sahara-free-zone, object: morocco, from: 1987, to: null }
