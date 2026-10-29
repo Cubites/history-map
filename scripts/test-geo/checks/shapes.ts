@@ -418,7 +418,7 @@ async function runIslands(_ctx: Context, opt: Options): Promise<CheckResult> {
 }
 
 // ── gen ─────────────────────────────────────────────────────
-// 두 가지를 바이트 비교한다: ① data/geo를 국경 생성기(scripts/generate-geo.mjs)가 만든 것과 ② data/wars의 생성 대상(전쟁 생성기 scripts/wars, npm run gen:wars)을 생성기 결과와.
+// 두 가지를 바이트 비교한다: ① data/geo(home/ 포함)를 국경 생성기(scripts/generate-geo.mjs)가 만든 것과 ② data/wars의 생성 대상(전쟁 생성기 scripts/wars, npm run gen:wars)을 생성기 결과와.
 // ②는 3분 넘게 걸리므로 입력(data/geo·data/wars·data/base/fragments·scripts/wars·scripts/build-data/geo.ts·package-lock.json)의 내용 해시를 .cache/test-geo/wars-gen.json에 두고,
 // 지난 성공 때와 같으면 건너뛴다(통과로 치고 notes에 '입력 그대로 — 지난 결과 재사용'). 국경·전쟁 파일·생성기 코드가 바뀐 커밋에서만 돈다. 실패한 실행은 해시를 남기지 않는다.
 // (genWars는 전쟁 쪽만 따로 시험·재사용할 수 있게 내보낸다.)
@@ -457,17 +457,23 @@ async function genGeo(): Promise<CheckResult> {
     // 캐시 없이 처음부터 계산해 280초를 넘겼다(316875c, ETIMEDOUT). 캐시가 있으면 1분 안팎이다. 전쟁 생성기(genWars)와 같은 제한
     const r = spawnSync(process.execPath, [path.join(ROOT, 'scripts/generate-geo.mjs'), tmp], { encoding: 'utf8', cwd: tmp, timeout: 1500000, maxBuffer: 64 * 1024 * 1024 });
     if (r.status !== 0) return { checked: 0, items: [{ key: '생성 실패', msg: `생성기 실행 실패(코드 ${r.status}): ${(r.stderr || String(r.error)).split('\n').find((l) => l.trim()) ?? ''}` }] };
-    const mine = path.join(ROOT, 'data/geo');
-    const made = path.join(tmp, 'data/geo');
-    const want = readdirSync(mine).filter((f) => f.endsWith('.geojson')).sort();
-    const got = readdirSync(made).filter((f) => f.endsWith('.geojson')).sort();
+    // data/geo 바로 아래와 home/(뒤 권역이 늘린 나라의 원래 권역 모양, scripts/geo/engine.mjs '앞 권역 나라 늘리기')
     const items: Item[] = [];
-    for (const f of want) {
-      if (!got.includes(f)) items.push({ key: `생성 없음 ${f}`, msg: `${f}: data/geo에 있지만 생성기가 만들지 않음` });
-      else if (!readFileSync(path.join(mine, f)).equals(readFileSync(path.join(made, f)))) items.push({ key: `생성 다름 ${f}`, msg: `${f}: data/geo가 생성기 결과와 다름 (npm run gen:geo를 돌렸는지)` });
+    let checked = 0;
+    for (const sub of ['', 'home/']) {
+      const mine = path.join(ROOT, 'data/geo', sub);
+      const made = path.join(tmp, 'data/geo', sub);
+      const list = (dir: string) => (existsSync(dir) ? readdirSync(dir).filter((f) => f.endsWith('.geojson')).sort() : []);
+      const want = list(mine);
+      const got = list(made);
+      checked += want.length;
+      for (const f of want) {
+        if (!got.includes(f)) items.push({ key: `생성 없음 ${sub}${f}`, msg: `${sub}${f}: data/geo에 있지만 생성기가 만들지 않음` });
+        else if (!readFileSync(path.join(mine, f)).equals(readFileSync(path.join(made, f)))) items.push({ key: `생성 다름 ${sub}${f}`, msg: `${sub}${f}: data/geo가 생성기 결과와 다름 (npm run gen:geo를 돌렸는지)` });
+      }
+      for (const f of got) if (!want.includes(f)) items.push({ key: `생성 더 있음 ${sub}${f}`, msg: `${sub}${f}: 생성기는 만드는데 data/geo에 없음` });
     }
-    for (const f of got) if (!want.includes(f)) items.push({ key: `생성 더 있음 ${f}`, msg: `${f}: 생성기는 만드는데 data/geo에 없음` });
-    return { checked: want.length, items, notes: [`파일 ${want.length}개를 생성기 결과와 바이트 비교`] };
+    return { checked, items, notes: [`파일 ${checked}개(home/ 포함)를 생성기 결과와 바이트 비교`] };
   } finally {
     rmSync(tmp, { recursive: true, force: true });
   }

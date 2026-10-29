@@ -16,7 +16,7 @@ export interface GapZone {
   readonly to?: number | null;
 }
 
-/** 권역 파일이 내보내는 것: versions는 꼭, fillSpecs·source·gapZones·voids·sourceOf는 선택. 위층 권역이 쓰는 도형도 export한다 */
+/** 권역 파일이 내보내는 것: versions는 꼭, fillSpecs·source·gapZones·voids·sourceOf·extendable·extensions는 선택. 위층 권역이 쓰는 도형도 export한다 */
 export interface AreaModule {
   readonly versions: Readonly<Record<string, readonly unknown[]>>;
   readonly fillSpecs?: readonly unknown[];
@@ -26,6 +26,10 @@ export interface AreaModule {
   readonly voids?: readonly unknown[];
   /** 나라 id → 출처 문구 (시대 파일의 source를 joinEras가 모은 것. 권역 source보다 먼저 씀) */
   readonly sourceOf?: Readonly<Record<string, string>>;
+  /** 늘려도 되는 앞 권역 나라 id → [첫 해, 끝 해(미포함)] (engine.mjs '앞 권역 나라 늘리기') */
+  readonly extendable?: Readonly<Record<string, readonly [number, number]>>;
+  /** 앞 권역 나라에 더할 땅: 나라 id → [from, to(미포함), 멀티폴리곤] 목록 */
+  readonly extensions?: Readonly<Record<string, readonly unknown[]>>;
   readonly [name: string]: unknown;
 }
 

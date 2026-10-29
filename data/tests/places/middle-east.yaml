@@ -954,3 +954,673 @@
   expect: western-sahara-free-zone
   url: https://en.wikipedia.org/wiki/Moroccan_Wall
   from: 서아시아 A1b 결과노트
+
+# 서아시아 A2a-1(2026-10-29): 이란·이라크 1453~1917. 새 항목마다 수도 1점과 바뀌는 해 앞뒤, 오스만 늘림 앞뒤(모술·바그다드·바스라·타브리즈·케르만샤), 튀르키예 이음매(디야르바크르·반: 유럽 조각 쪽 값 그대로인지)
+- name: 타브리즈
+  at: [46.292, 38.08]
+  year: 1460
+  expect: qara-qoyunlu
+  url: https://en.wikipedia.org/wiki/Qara_Qoyunlu
+  from: 서아시아 A2a-1 결과노트
+- name: 타브리즈
+  at: [46.292, 38.08]
+  year: 1470
+  expect: aq-qoyunlu
+  url: https://en.wikipedia.org/wiki/Aq_Qoyunlu
+  from: 서아시아 A2a-1 결과노트
+- name: 타브리즈
+  at: [46.292, 38.08]
+  year: 1520
+  expect: safavid-iran
+  url: https://en.wikipedia.org/wiki/Safavid_Iran
+  from: 서아시아 A2a-1 결과노트
+- name: 타브리즈
+  at: [46.292, 38.08]
+  year: 1595
+  expect: ottoman
+  url: https://en.wikipedia.org/wiki/Treaty_of_Constantinople_(1590)
+  from: 서아시아 A2a-1 결과노트
+- name: 타브리즈
+  at: [46.292, 38.08]
+  year: 1610
+  expect: safavid-iran
+  url: https://en.wikipedia.org/wiki/Abbas_the_Great
+  from: 서아시아 A2a-1 결과노트
+- name: 타브리즈
+  at: [46.292, 38.08]
+  year: 1727
+  expect: ottoman
+  url: https://en.wikipedia.org/wiki/Ottoman–Persian_War_(1722–1727)
+  from: 서아시아 A2a-1 결과노트
+- name: 타브리즈
+  at: [46.292, 38.08]
+  year: 1740
+  expect: afsharid-iran
+  url: https://en.wikipedia.org/wiki/Afsharid_dynasty
+  from: 서아시아 A2a-1 결과노트
+- name: 타브리즈
+  at: [46.292, 38.08]
+  year: 1770
+  expect: zand-dynasty
+  url: https://en.wikipedia.org/wiki/Zand_dynasty
+  from: 서아시아 A2a-1 결과노트
+- name: 타브리즈
+  at: [46.292, 38.08]
+  year: 1795
+  expect: qajar-iran
+  url: https://en.wikipedia.org/wiki/Agha_Mohammad_Khan_Qajar
+  from: 서아시아 A2a-1 결과노트
+- name: 바그다드
+  at: [44.366, 33.315]
+  year: 1460
+  expect: qara-qoyunlu
+  url: https://en.wikipedia.org/wiki/Qara_Qoyunlu
+  from: 서아시아 A2a-1 결과노트
+- name: 바그다드
+  at: [44.366, 33.315]
+  year: 1490
+  expect: aq-qoyunlu
+  url: https://en.wikipedia.org/wiki/Aq_Qoyunlu
+  from: 서아시아 A2a-1 결과노트
+- name: 바그다드
+  at: [44.366, 33.315]
+  year: 1520
+  expect: safavid-iran
+  url: https://en.wikipedia.org/wiki/Aq_Qoyunlu
+  from: 서아시아 A2a-1 결과노트
+- name: 바그다드
+  at: [44.366, 33.315]
+  year: 1540
+  expect: ottoman
+  url: https://en.wikipedia.org/wiki/Ottoman_Empire
+  from: 서아시아 A2a-1 결과노트
+- name: 바그다드
+  at: [44.366, 33.315]
+  year: 1630
+  expect: safavid-iran
+  url: https://en.wikipedia.org/wiki/Ottoman–Safavid_War_(1623–1639)
+  from: 서아시아 A2a-1 결과노트
+- name: 바그다드
+  at: [44.366, 33.315]
+  year: 1640
+  expect: ottoman
+  url: https://en.wikipedia.org/wiki/Ottoman–Safavid_War_(1623–1639)
+  from: 서아시아 A2a-1 결과노트
+- name: 바그다드
+  at: [44.366, 33.315]
+  year: 1800
+  expect: ottoman
+  url: https://en.wikipedia.org/wiki/Mamluk_dynasty_(Iraq)
+  from: 서아시아 A2a-1 결과노트
+- name: 모술
+  at: [43.13, 36.34]
+  year: 1515
+  expect: safavid-iran
+  url: https://en.wikipedia.org/wiki/Mosul_Eyalet
+  from: 서아시아 A2a-1 결과노트
+- name: 모술
+  at: [43.13, 36.34]
+  year: 1520
+  expect: ottoman
+  url: https://en.wikipedia.org/wiki/Mosul_Eyalet
+  from: 서아시아 A2a-1 결과노트
+- name: 바스라
+  at: [47.78, 30.51]
+  year: 1550
+  expect: ottoman
+  url: https://en.wikipedia.org/wiki/Ottoman_Empire
+  from: 서아시아 A2a-1 결과노트
+- name: 바스라
+  at: [47.78, 30.51]
+  year: 1630
+  expect: ottoman
+  url: https://en.wikipedia.org/wiki/Ottoman–Safavid_War_(1623–1639)
+  from: 서아시아 A2a-1 결과노트
+- name: 호베이제
+  at: [48.07, 31.46]
+  year: 1480
+  expect: musha-sha
+  url: https://en.wikipedia.org/wiki/Musha'sha'iyyah
+  from: 서아시아 A2a-1 결과노트
+- name: 호베이제
+  at: [48.07, 31.46]
+  year: 1520
+  expect: safavid-iran
+  url: https://en.wikipedia.org/wiki/Musha'sha'iyyah
+  from: 서아시아 A2a-1 결과노트
+- name: 호베이제
+  at: [48.07, 31.46]
+  year: 1595
+  expect: ottoman
+  url: https://en.wikipedia.org/wiki/Treaty_of_Constantinople_(1590)
+  from: 서아시아 A2a-1 결과노트
+- name: 이스파한
+  at: [51.67, 32.654]
+  year: 1460
+  expect: qara-qoyunlu
+  url: https://en.wikipedia.org/wiki/Qara_Qoyunlu
+  from: 서아시아 A2a-1 결과노트
+- name: 이스파한
+  at: [51.67, 32.654]
+  year: 1650
+  expect: safavid-iran
+  url: https://en.wikipedia.org/wiki/Safavid_Iran
+  from: 서아시아 A2a-1 결과노트
+- name: 이스파한
+  at: [51.67, 32.654]
+  year: 1725
+  expect: hotak-dynasty
+  url: https://en.wikipedia.org/wiki/Hotak_dynasty
+  from: 서아시아 A2a-1 결과노트
+- name: 이스파한
+  at: [51.67, 32.654]
+  year: 1730
+  expect: safavid-iran
+  url: https://en.wikipedia.org/wiki/Hotak_dynasty
+  from: 서아시아 A2a-1 결과노트
+- name: 이스파한
+  at: [51.67, 32.654]
+  year: 1760
+  expect: zand-dynasty
+  url: https://en.wikipedia.org/wiki/Zand_dynasty
+  from: 서아시아 A2a-1 결과노트
+- name: 이스파한
+  at: [51.67, 32.654]
+  year: 1790
+  expect: qajar-iran
+  url: https://en.wikipedia.org/wiki/Agha_Mohammad_Khan_Qajar
+  from: 서아시아 A2a-1 결과노트
+- name: 케르만샤
+  at: [47.07, 34.31]
+  year: 1726
+  expect: ottoman
+  url: https://en.wikipedia.org/wiki/Ottoman–Persian_War_(1722–1727)
+  from: 서아시아 A2a-1 결과노트
+- name: 케르만샤
+  at: [47.07, 34.31]
+  year: 1740
+  expect: afsharid-iran
+  url: https://en.wikipedia.org/wiki/Afsharid_dynasty
+  from: 서아시아 A2a-1 결과노트
+- name: 카즈빈
+  at: [50.0, 36.27]
+  year: 1580
+  expect: safavid-iran
+  url: https://en.wikipedia.org/wiki/Safavid_Iran
+  from: 서아시아 A2a-1 결과노트
+- name: 케르만
+  at: [57.08, 30.28]
+  year: 1490
+  expect: aq-qoyunlu
+  url: https://en.wikipedia.org/wiki/Aq_Qoyunlu
+  from: 서아시아 A2a-1 결과노트
+- name: 케르만
+  at: [57.08, 30.28]
+  year: 1793
+  expect: zand-dynasty
+  url: https://en.wikipedia.org/wiki/Zand_dynasty
+  from: 서아시아 A2a-1 결과노트
+- name: 케르만
+  at: [57.08, 30.28]
+  year: 1795
+  expect: qajar-iran
+  url: https://en.wikipedia.org/wiki/Agha_Mohammad_Khan_Qajar
+  from: 서아시아 A2a-1 결과노트
+- name: 시라즈
+  at: [52.54, 29.61]
+  year: 1770
+  expect: zand-dynasty
+  url: https://en.wikipedia.org/wiki/Zand_dynasty
+  from: 서아시아 A2a-1 결과노트
+- name: 시라즈
+  at: [52.54, 29.61]
+  year: 1793
+  expect: qajar-iran
+  url: https://en.wikipedia.org/wiki/Agha_Mohammad_Khan_Qajar
+  from: 서아시아 A2a-1 결과노트
+- name: 마슈하드
+  at: [59.6, 36.3]
+  year: 1480
+  expect: timurid-empire
+  url: https://en.wikipedia.org/wiki/Timurid_Empire
+  from: 서아시아 A2a-1 결과노트
+- name: 마슈하드
+  at: [59.6, 36.3]
+  year: 1520
+  expect: safavid-iran
+  url: https://en.wikipedia.org/wiki/Safavid_Iran
+  from: 서아시아 A2a-1 결과노트
+- name: 마슈하드
+  at: [59.6, 36.3]
+  year: 1770
+  expect: afsharid-iran
+  url: https://en.wikipedia.org/wiki/Afsharid_dynasty
+  from: 서아시아 A2a-1 결과노트
+- name: 마슈하드
+  at: [59.6, 36.3]
+  year: 1800
+  expect: qajar-iran
+  url: https://en.wikipedia.org/wiki/Agha_Mohammad_Khan_Qajar
+  from: 서아시아 A2a-1 결과노트
+- name: 테헤란
+  at: [51.389, 35.689]
+  year: 1800
+  expect: qajar-iran
+  url: https://en.wikipedia.org/wiki/Qajar_Iran
+  from: 서아시아 A2a-1 결과노트
+- name: 사리(마잔다란)
+  at: [53.06, 36.56]
+  year: 1790
+  expect: qajar-iran
+  url: https://en.wikipedia.org/wiki/Agha_Mohammad_Khan_Qajar
+  from: 서아시아 A2a-1 결과노트
+- name: 라슈트(길란)
+  at: [49.584, 37.28]
+  year: 1650
+  expect: safavid-iran
+  url: https://en.wikipedia.org/wiki/Abbas_the_Great
+  from: 서아시아 A2a-1 결과노트
+- name: 디야르바크르(이음매)
+  at: [40.23, 37.91]
+  year: 1600
+  expect: ottoman
+  url: https://en.wikipedia.org/wiki/Ottoman_Empire
+  from: 서아시아 A2a-1 결과노트
+- name: 반(이음매)
+  at: [43.38, 38.5]
+  year: 1650
+  expect: ottoman
+  url: https://en.wikipedia.org/wiki/Ottoman_Empire
+  from: 서아시아 A2a-1 결과노트
+
+# 서아시아 A2a-2(2026-10-29): 레반트·아라비아 1453~1917. 새 항목마다 수도 1점과 바뀌는 해 앞뒤, 오스만 늘림 앞뒤(다마스쿠스·데이르에조르·아카바·메디나·타부크·호푸프·자비드·사나·쿠웨이트), A1 항목 1918년 전 버전
+- name: 다마스쿠스
+  at: [36.29, 33.51]
+  year: 1515
+  expect: mamluk-sultanate
+  url: https://en.wikipedia.org/wiki/Mamluk_Sultanate
+  from: 서아시아 A2a-2 결과노트
+- name: 다마스쿠스
+  at: [36.29, 33.51]
+  year: 1517
+  expect: ottoman
+  url: https://en.wikipedia.org/wiki/Mamluk_Sultanate
+  from: 서아시아 A2a-2 결과노트
+- name: 알레포
+  at: [37.16, 36.2]
+  year: 1453
+  expect: mamluk-sultanate
+  url: https://en.wikipedia.org/wiki/Mamluk_Sultanate
+  from: 서아시아 A2a-2 결과노트
+- name: 예루살렘
+  at: [35.23, 31.77]
+  year: 1455
+  expect: mamluk-sultanate
+  url: https://en.wikipedia.org/wiki/Mamluk_Sultanate
+  from: 서아시아 A2a-2 결과노트
+- name: 다마스쿠스
+  at: [36.29, 33.51]
+  year: 1835
+  expect: muhammad-ali-egypt
+  url: https://en.wikipedia.org/wiki/Egyptian–Ottoman_War_(1831–1833)
+  from: 서아시아 A2a-2 결과노트
+- name: 다마스쿠스
+  at: [36.29, 33.51]
+  year: 1845
+  expect: ottoman
+  url: https://en.wikipedia.org/wiki/Egyptian–Ottoman_War_(1839–1841)
+  from: 서아시아 A2a-2 결과노트
+- name: 데이르에조르
+  at: [40.14, 35.33]
+  year: 1520
+  expect: none
+  url: https://en.wikipedia.org/wiki/Ottoman_Empire
+  from: 서아시아 A2a-2 결과노트
+- name: 데이르에조르
+  at: [40.14, 35.33]
+  year: 1540
+  expect: ottoman
+  url: https://en.wikipedia.org/wiki/Ottoman_Empire
+  from: 서아시아 A2a-2 결과노트
+- name: 아카바
+  at: [35.02, 29.55]
+  year: 1916
+  expect: ottoman
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Hejaz
+  from: 서아시아 A2a-2 결과노트
+- name: 아카바
+  at: [35.02, 29.55]
+  year: 1917
+  expect: hejaz-kingdom
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Hejaz
+  from: 서아시아 A2a-2 결과노트
+- name: 메카
+  at: [39.83, 21.42]
+  year: 1480
+  expect: sharifate-of-mecca
+  url: https://en.wikipedia.org/wiki/Sharifate_of_Mecca
+  from: 서아시아 A2a-2 결과노트
+- name: 메카
+  at: [39.83, 21.42]
+  year: 1805
+  expect: emirate-of-diriyah
+  url: https://en.wikipedia.org/wiki/Emirate_of_Diriyah
+  from: 서아시아 A2a-2 결과노트
+- name: 메카
+  at: [39.83, 21.42]
+  year: 1815
+  expect: muhammad-ali-egypt
+  url: https://en.wikipedia.org/wiki/Ottoman–Wahhabi_War
+  from: 서아시아 A2a-2 결과노트
+- name: 메카
+  at: [39.83, 21.42]
+  year: 1850
+  expect: sharifate-of-mecca
+  url: https://en.wikipedia.org/wiki/Sharifate_of_Mecca
+  from: 서아시아 A2a-2 결과노트
+- name: 메카
+  at: [39.83, 21.42]
+  year: 1916
+  expect: hejaz-kingdom
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Hejaz
+  from: 서아시아 A2a-2 결과노트
+- name: 메디나
+  at: [39.61, 24.47]
+  year: 1917
+  expect: ottoman
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Hejaz
+  from: 서아시아 A2a-2 결과노트
+- name: 웨지
+  at: [36.6, 26.25]
+  year: 1917
+  expect: hejaz-kingdom
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Hejaz
+  from: 서아시아 A2a-2 결과노트
+- name: 타부크
+  at: [36.57, 28.38]
+  year: 1600
+  expect: ottoman
+  url: https://en.wikipedia.org/wiki/Sharifate_of_Mecca
+  from: 서아시아 A2a-2 결과노트
+- name: 타부크
+  at: [36.57, 28.38]
+  year: 1835
+  expect: muhammad-ali-egypt
+  url: https://en.wikipedia.org/wiki/Egyptian–Ottoman_War_(1831–1833)
+  from: 서아시아 A2a-2 결과노트
+- name: 디리야
+  at: [46.57, 24.73]
+  year: 1790
+  expect: emirate-of-diriyah
+  url: https://en.wikipedia.org/wiki/Emirate_of_Diriyah
+  from: 서아시아 A2a-2 결과노트
+- name: 리야드
+  at: [46.72, 24.63]
+  year: 1860
+  expect: emirate-of-nejd
+  url: https://en.wikipedia.org/wiki/Emirate_of_Nejd
+  from: 서아시아 A2a-2 결과노트
+- name: 리야드
+  at: [46.72, 24.63]
+  year: 1888
+  expect: jabal-shammar
+  url: https://en.wikipedia.org/wiki/Muhammad_bin_Abdullah_Al_Rashid
+  from: 서아시아 A2a-2 결과노트
+- name: 리야드
+  at: [46.72, 24.63]
+  year: 1903
+  expect: nejd
+  url: https://en.wikipedia.org/wiki/Emirate_of_Nejd
+  from: 서아시아 A2a-2 결과노트
+- name: 부라이다
+  at: [43.97, 26.33]
+  year: 1795
+  expect: emirate-of-diriyah
+  url: https://en.wikipedia.org/wiki/Emirate_of_Diriyah
+  from: 서아시아 A2a-2 결과노트
+- name: 부라이다
+  at: [43.97, 26.33]
+  year: 1888
+  expect: emirate-of-nejd
+  url: https://en.wikipedia.org/wiki/Al-Qassim_Province
+  from: 서아시아 A2a-2 결과노트
+- name: 부라이다
+  at: [43.97, 26.33]
+  year: 1895
+  expect: jabal-shammar
+  url: https://en.wikipedia.org/wiki/Al-Qassim_Province
+  from: 서아시아 A2a-2 결과노트
+- name: 부라이다
+  at: [43.97, 26.33]
+  year: 1905
+  expect: nejd
+  url: https://en.wikipedia.org/wiki/Al-Qassim_Province
+  from: 서아시아 A2a-2 결과노트
+- name: 하일
+  at: [41.69, 27.52]
+  year: 1850
+  expect: jabal-shammar
+  url: https://en.wikipedia.org/wiki/Emirate_of_Jabal_Shammar
+  from: 서아시아 A2a-2 결과노트
+- name: 사카카(자우프)
+  at: [40.21, 29.97]
+  year: 1880
+  expect: jabal-shammar
+  url: https://en.wikipedia.org/wiki/Emirate_of_Jabal_Shammar
+  from: 서아시아 A2a-2 결과노트
+- name: 호푸프
+  at: [49.58, 25.38]
+  year: 1460
+  expect: jabrid-emirate
+  url: https://en.wikipedia.org/wiki/Jabrids
+  from: 서아시아 A2a-2 결과노트
+- name: 호푸프
+  at: [49.58, 25.38]
+  year: 1600
+  expect: ottoman
+  url: https://en.wikipedia.org/wiki/Lahsa_Eyalet
+  from: 서아시아 A2a-2 결과노트
+- name: 호푸프
+  at: [49.58, 25.38]
+  year: 1700
+  expect: bani-khalid-emirate
+  url: https://en.wikipedia.org/wiki/Bani_Khalid_Emirate
+  from: 서아시아 A2a-2 결과노트
+- name: 호푸프
+  at: [49.58, 25.38]
+  year: 1800
+  expect: emirate-of-diriyah
+  url: https://en.wikipedia.org/wiki/Emirate_of_Diriyah
+  from: 서아시아 A2a-2 결과노트
+- name: 호푸프
+  at: [49.58, 25.38]
+  year: 1825
+  expect: bani-khalid-emirate
+  url: https://en.wikipedia.org/wiki/Bani_Khalid_Emirate
+  from: 서아시아 A2a-2 결과노트
+- name: 호푸프
+  at: [49.58, 25.38]
+  year: 1850
+  expect: emirate-of-nejd
+  url: https://en.wikipedia.org/wiki/Emirate_of_Nejd
+  from: 서아시아 A2a-2 결과노트
+- name: 호푸프
+  at: [49.58, 25.38]
+  year: 1880
+  expect: ottoman
+  url: https://en.wikipedia.org/wiki/Sheikhdom_of_Kuwait
+  from: 서아시아 A2a-2 결과노트
+- name: 호푸프
+  at: [49.58, 25.38]
+  year: 1915
+  expect: nejd
+  url: https://en.wikipedia.org/wiki/Emirate_of_Nejd
+  from: 서아시아 A2a-2 결과노트
+- name: 아브하
+  at: [42.5, 18.22]
+  year: 1900
+  expect: ottoman
+  url: https://en.wikipedia.org/wiki/Asir
+  from: 서아시아 A2a-2 결과노트
+- name: 사비야
+  at: [42.625, 17.149]
+  year: 1835
+  expect: muhammad-ali-egypt
+  url: https://en.wikipedia.org/wiki/Qasimid_State
+  from: 서아시아 A2a-2 결과노트
+- name: 사비야
+  at: [42.625, 17.149]
+  year: 1912
+  expect: idrisid-emirate
+  url: https://en.wikipedia.org/wiki/Idrisid_Emirate_of_Asir
+  from: 서아시아 A2a-2 결과노트
+- name: 자비드
+  at: [43.31, 14.2]
+  year: 1460
+  expect: tahirid-sultanate
+  url: https://en.wikipedia.org/wiki/Tahirid_Sultanate
+  from: 서아시아 A2a-2 결과노트
+- name: 자비드
+  at: [43.31, 14.2]
+  year: 1560
+  expect: ottoman
+  url: https://en.wikipedia.org/wiki/Yemen_Eyalet
+  from: 서아시아 A2a-2 결과노트
+- name: 자비드
+  at: [43.31, 14.2]
+  year: 1650
+  expect: qasimid-state
+  url: https://en.wikipedia.org/wiki/Qasimid_State
+  from: 서아시아 A2a-2 결과노트
+- name: 자비드
+  at: [43.31, 14.2]
+  year: 1835
+  expect: muhammad-ali-egypt
+  url: https://en.wikipedia.org/wiki/Qasimid_State
+  from: 서아시아 A2a-2 결과노트
+- name: 자비드
+  at: [43.31, 14.2]
+  year: 1860
+  expect: ottoman
+  url: https://en.wikipedia.org/wiki/Yemen_Eyalet
+  from: 서아시아 A2a-2 결과노트
+- name: 사나
+  at: [44.21, 15.35]
+  year: 1510
+  expect: tahirid-sultanate
+  url: https://en.wikipedia.org/wiki/Tahirid_Sultanate
+  from: 서아시아 A2a-2 결과노트
+- name: 사나
+  at: [44.21, 15.35]
+  year: 1550
+  expect: ottoman
+  url: https://en.wikipedia.org/wiki/Özdemir_Pasha
+  from: 서아시아 A2a-2 결과노트
+- name: 사나
+  at: [44.21, 15.35]
+  year: 1650
+  expect: qasimid-state
+  url: https://en.wikipedia.org/wiki/Qasimid_State
+  from: 서아시아 A2a-2 결과노트
+- name: 사나
+  at: [44.21, 15.35]
+  year: 1880
+  expect: ottoman
+  url: https://en.wikipedia.org/wiki/Yemen_Eyalet
+  from: 서아시아 A2a-2 결과노트
+- name: 사나
+  at: [44.21, 15.35]
+  year: 1915
+  expect: zaydi-imamate-yahya
+  url: https://en.wikipedia.org/wiki/Yemen_Eyalet
+  from: 서아시아 A2a-2 결과노트
+- name: 타이즈
+  at: [44.02, 13.58]
+  year: 1915
+  expect: ottoman
+  url: https://en.wikipedia.org/wiki/Yemen_Eyalet
+  from: 서아시아 A2a-2 결과노트
+- name: 라헤즈
+  at: [44.88, 13.06]
+  year: 1800
+  expect: lahej-sultanate
+  url: https://en.wikipedia.org/wiki/Sultanate_of_Lahej
+  from: 서아시아 A2a-2 결과노트
+- name: 라헤즈
+  at: [44.88, 13.06]
+  year: 1900
+  expect: aden-protectorate
+  url: https://en.wikipedia.org/wiki/Aden_Protectorate
+  from: 서아시아 A2a-2 결과노트
+- name: 니즈와
+  at: [57.53, 22.93]
+  year: 1480
+  expect: nabhani-dynasty
+  url: https://en.wikipedia.org/wiki/Yaruba_dynasty
+  from: 서아시아 A2a-2 결과노트
+- name: 니즈와
+  at: [57.53, 22.93]
+  year: 1650
+  expect: yaruba-dynasty
+  url: https://en.wikipedia.org/wiki/Yaruba_dynasty
+  from: 서아시아 A2a-2 결과노트
+- name: 니즈와
+  at: [57.53, 22.93]
+  year: 1800
+  expect: busaid-oman
+  url: https://en.wikipedia.org/wiki/Yaruba_dynasty
+  from: 서아시아 A2a-2 결과노트
+- name: 니즈와
+  at: [57.53, 22.93]
+  year: 1900
+  expect: oman
+  url: https://en.wikipedia.org/wiki/Sultanate_of_Muscat_and_Oman
+  from: 서아시아 A2a-2 결과노트
+- name: 무스카트
+  at: [58.38, 23.58]
+  year: 1600
+  expect: none
+  url: https://en.wikipedia.org/wiki/Yaruba_dynasty
+  from: 서아시아 A2a-2 결과노트
+- name: 무스카트
+  at: [58.38, 23.58]
+  year: 1700
+  expect: yaruba-dynasty
+  url: https://en.wikipedia.org/wiki/Yaruba_dynasty
+  from: 서아시아 A2a-2 결과노트
+- name: 쿠웨이트 시
+  at: [47.98, 29.37]
+  year: 1880
+  expect: ottoman
+  url: https://en.wikipedia.org/wiki/Sheikhdom_of_Kuwait
+  from: 서아시아 A2a-2 결과노트
+- name: 쿠웨이트 시
+  at: [47.98, 29.37]
+  year: 1900
+  expect: kuwait
+  url: https://en.wikipedia.org/wiki/Sheikhdom_of_Kuwait
+  from: 서아시아 A2a-2 결과노트
+- name: 도하
+  at: [51.5, 25.28]
+  year: 1900
+  expect: none
+  url: https://en.wikipedia.org/wiki/Qatar
+  from: 서아시아 A2a-2 결과노트
+- name: 도하
+  at: [51.5, 25.28]
+  year: 1917
+  expect: qatar
+  url: https://en.wikipedia.org/wiki/Qatar
+  from: 서아시아 A2a-2 결과노트
+- name: 알아인
+  at: [55.74, 24.2]
+  year: 1900
+  expect: trucial-states
+  url: https://en.wikipedia.org/wiki/Trucial_States
+  from: 서아시아 A2a-2 결과노트
+- name: 마나마
+  at: [50.57, 26.21]
+  year: 1900
+  expect: bahrain
+  url: https://en.wikipedia.org/wiki/History_of_Bahrain
+  from: 서아시아 A2a-2 결과노트

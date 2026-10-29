@@ -861,3 +861,25 @@
 - { type: claimed_by, subject: western-sahara-disputed, object: mauritania, from: 1976, to: 1978 }
 - { type: claimed_by, subject: western-sahara-free-zone, object: sahrawi-republic, from: 1987, to: null }
 - { type: claimed_by, subject: western-sahara-free-zone, object: morocco, from: 1987, to: null }
+
+# ── 서아시아·북아프리카 A2a-1 (2026-10-29): 이란·이라크 1453~1917 (이란 왕조는 모두 독립, 계승만 잇는다) ──
+- { type: successor_of, subject: aq-qoyunlu, object: qara-qoyunlu, from: 1468, to: null } # 1467 차파크추르 전투 뒤 1468년 이라크·아제르바이잔·이란 서부를 차지
+- { type: successor_of, subject: safavid-iran, object: aq-qoyunlu, from: 1508, to: null } # 1501 타브리즈, 1503 이란 중·남부, 1508 메소포타미아
+- { type: successor_of, subject: safavid-iran, object: musha-sha, from: 1508, to: null } # 1508 호베이제 점령, 가문은 사파비 아래 총독으로 이어짐
+- { type: successor_of, subject: afsharid-iran, object: safavid-iran, from: 1736, to: null } # 1736년 3월 나디르가 아바스 3세를 폐위하고 즉위
+- { type: successor_of, subject: qajar-iran, object: zand-dynasty, from: 1794, to: null } # 1794 케르만에서 로트프 알리 칸을 사로잡음
+- { type: successor_of, subject: qajar-iran, object: afsharid-iran, from: 1796, to: null } # 1796 마슈하드에 들어와 샤로흐 샤를 폐위
+
+# ── 서아시아·북아프리카 A2a-2 (2026-10-29): 레반트·아라비아 1453~1917 (반자치 세습 정권·샤리프국은 vassal_of, 왕조 교체는 successor_of) ──
+- { type: vassal_of, subject: sharifate-of-mecca, object: mamluk-sultanate, from: 1350, to: 1516 } # 1350년 무렵 맘루크가 히자즈를 속주로 삼고 샤리프를 인정함
+- { type: vassal_of, subject: sharifate-of-mecca, object: ottoman, from: 1517, to: 1915 } # 1517 샤리프 바라카트가 셀림 1세를 칼리프로 인정, 1916-06 아랍 반란
+- { type: vassal_of, subject: muhammad-ali-egypt, object: ottoman, from: 1805, to: 1914 } # 1805 총독 임명, 1840 런던 협약으로 세습 인정, 1914-12 영국 보호국
+- { type: vassal_of, subject: zaydi-imamate-yahya, object: ottoman, from: 1911, to: 1917 } # 1911-10 다안 조약(자이드파 지역 자치), 1918-10 독립 선언
+- { type: vassal_of, subject: lahej-sultanate, object: uk, from: 1872, to: 1967 } # 1839 아덴 점령 뒤 우호 협약, 1872 보호 관계, 1886부터 아덴 보호령의 일원
+- { type: successor_of, subject: emirate-of-nejd, object: emirate-of-diriyah, from: 1824, to: null } # 1824 투르키 빈 압둘라가 리야드를 되찾음
+- { type: successor_of, subject: nejd, object: emirate-of-nejd, from: 1902, to: null } # 1902-01-13 압둘아지즈가 리야드를 되찾음
+- { type: successor_of, subject: hejaz-kingdom, object: sharifate-of-mecca, from: 1916, to: null } # 1916-06 샤리프 후세인의 아랍 반란과 왕 선언
+- { type: successor_of, subject: yaruba-dynasty, object: nabhani-dynasty, from: 1624, to: null } # 1624 나시르 빈 무르시드 이맘 선출
+- { type: successor_of, subject: busaid-oman, object: yaruba-dynasty, from: 1749, to: null } # 1749 아흐마드 빈 사이드 단독 통치
+- { type: successor_of, subject: oman, object: busaid-oman, from: 1856, to: null } # 1856 사이드 빈 술탄 사후 오만·잔지바르 분리
+- { type: successor_of, subject: yemen-kingdom, object: zaydi-imamate-yahya, from: 1918, to: null } # 1918-10-30 야흐야의 독립 선언

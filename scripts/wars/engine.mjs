@@ -77,11 +77,13 @@ export function convexHull(points) {
 // ── 나라 영토·나라 경계·육지 ─────────────────────────────────
 
 const geoCache = new Map();
-/** data/geo/<id>.geojson (한 번만 읽음) */
+/** data/geo/<id>.geojson (한 번만 읽음). 뒤 권역이 늘린 나라는 늘리기 전 원래 권역 모양 data/geo/home/<id>.geojson을 읽는다
+ *  (scripts/geo/engine.mjs '앞 권역 나라 늘리기': 1차 대전 오스만처럼 전쟁 장면이 늘린 땅까지 칠하지 않게, A2 운영자 결정 3) */
 export function entityCollection(id) {
   let fc = geoCache.get(id);
   if (!fc) {
-    fc = JSON.parse(readFileSync(path.join(REPO, 'data', 'geo', `${id}.geojson`), 'utf8'));
+    const home = path.join(REPO, 'data', 'geo', 'home', `${id}.geojson`);
+    fc = JSON.parse(readFileSync(existsSync(home) ? home : path.join(REPO, 'data', 'geo', `${id}.geojson`), 'utf8'));
     geoCache.set(id, fc);
   }
   return fc;

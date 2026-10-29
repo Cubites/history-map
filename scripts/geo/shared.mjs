@@ -225,7 +225,7 @@ export const YANYUN_REST = I(D([CHINA], XIXIA, [YANYUN], LIAOXI), [NORTH_OF_YANY
 // 권역 파일(areas/<권역>.mjs)이 시대 파일(areas/<권역>/<시대>.mjs, 시대표 하나에 파일 하나)을 가져와 자기 versions·gapZones·voids에 합친다. 나라는 만들지 않는 도우미다.
 // 시대 파일은 export const era = { name, versions, gapZones?, voids?, source? } 하나로 생성기에 들어간다(칼선 같은 다른 이름의 export는 괜찮다)
 // (areas/<권역>/ 아래 도우미 모듈은 versions 같은 이름을 직접 내보내지 않는다: check:generator). 시대 파일 틀은 npm run new:area -- <권역> <시대>가 만든다.
-// 권역 파일: export const { versions, gapZones, voids, sourceOf } = joinEras('<권역>', { versions: 자기 나라, gapZones?, voids? }, [시대 파일의 era, …]);
+// 권역 파일: export const { versions, gapZones, voids, sourceOf } = joinEras('<권역>', { versions: 자기 나라, gapZones?, voids? }, [시대 파일의 era, …]); (늘리기를 쓰면 extensions, extendable도 export, own에 extendable)
 // - versions: 권역 파일 것 다음에 시대 파일 것을 목록 순서대로 붙인다. 같은 나라 id를 두 곳이 내면(앞 시대에서 이어지는 나라) 뒤 것의 모든 버전이 앞 것의 모든 버전보다
 //   늦을 때(뒤 것의 가장 이른 from ≥ 앞 것의 가장 늦은 to, 끝 없음(null)은 무한) 앞 버전 뒤에 이어 붙이고, 기간이 겹치면 멈춘다(엔진은 권역 사이만 보므로 여기서 본다).
 //   이어 붙인 나라의 출처 문구는 하나라서(geojson source), 앞 것과 뒤 것의 시대 source가 다르면(한쪽만 있어도) 멈춘다
@@ -233,6 +233,10 @@ export const YANYUN_REST = I(D([CHINA], XIXIA, [YANYUN], LIAOXI), [NORTH_OF_YANY
 // - sourceOf: 시대 파일의 source(그 시대 나라의 출처 문구)를 그 시대 나라 id마다 적은 표. 엔진이 권역의 source보다 먼저 쓴다(source가 없는 시대의 나라는 권역 source나 기본 문구)
 // - 시대 파일의 모르는 칸(versoins 같은 오타), 알맞지 않은 이름, 같은 시대 파일을 두 번 넣음은 멈춘다
 // 시대 파일은 권역 파일(areas/<권역>.mjs)을 가져올 수 없다(순환). 권역 파일 안 도형이 필요하면 그 도형을 areas/<권역>/의 도우미 모듈로 옮겨 둘이 함께 가져온다
+// - 시대 파일 목록은 과거 시대가 앞이다(같은 나라 id의 옛 버전이 앞에 붙어야 하므로. 거꾸로면 '기간이 겹침'으로 멈춤)
+// - extendable(2026-10-29 서아시아·북아프리카 A2-0, 선택): 권역 파일이 own에 { 앞 권역 나라 id: [첫 해, 끝 해] }를 주면, 다 이은 versions에서 그 나라를 빼
+//   extensions(나라 id → 버전 목록과 같은 꼴 [[from, to, 멀티폴리곤]])로 옮기고(sourceOf에서도 뺌) extendable과 함께 돌려준다. 시대 파일은 소유표에 그 나라 id를 주인으로 쓰기만 한다.
+//   권역 파일은 둘을 그대로 export하고, 엔진(engine.mjs '앞 권역 나라 늘리기')이 앞 권역 나라 버전에 더한다
 const ERA_KEYS = new Set(['name', 'versions', 'gapZones', 'voids', 'source']);
 export function joinEras(area, own, eras) {
   const versions = { ...own.versions };
@@ -257,7 +261,7 @@ export function joinEras(area, own, eras) {
         const lastTo = Math.max(...prev.map((v) => v[1] ?? Infinity));
         const firstFrom = Math.min(...list.map((v) => v[0]));
         if (!prev.length || !list.length) throw new Error(`나라 id '${id}'가 ${where[id]}, ${label} 두 곳에 있음: 한쪽 버전 목록이 비어 기간을 견줄 수 없음`);
-        if (firstFrom < lastTo) throw new Error(`나라 id '${id}'가 ${where[id]}, ${label} 두 곳에 있음: 기간이 겹침(뒤 것의 첫 from ${firstFrom} < 앞 것의 끝 to ${lastTo}) — 이어지는 나라면 뒤 시대 버전을 앞 시대 끝 해부터 낸다`);
+        if (firstFrom < lastTo) throw new Error(`나라 id '${id}'가 ${where[id]}, ${label} 두 곳에 있음: 기간이 겹침(뒤 것의 첫 from ${firstFrom} < 앞 것의 끝 to ${lastTo}) — 이어지는 나라면 뒤 시대 버전을 앞 시대 끝 해부터 내고, 시대 파일 목록은 과거 시대를 앞에 둔다`);
         if (sourceOf[id] !== era.source) throw new Error(`나라 id '${id}'가 ${where[id]}, ${label} 두 곳에 있음: 출처 문구(source)가 다름 — 이어 붙인 나라는 출처 문구가 하나여야 함`);
         versions[id] = [...prev, ...list];
         where[id] = `${where[id]}·${label}`;
@@ -270,5 +274,14 @@ export function joinEras(area, own, eras) {
     gapZones.push(...(era.gapZones ?? []));
     voids.push(...(era.voids ?? []));
   }
-  return { versions, gapZones, voids, sourceOf };
+  // 앞 권역 나라 늘리기: extendable의 나라는 versions가 아니라 extensions로 (모양 검사는 엔진이 함)
+  const extendable = own.extendable ?? {};
+  const extensions = {};
+  for (const id of Object.keys(extendable)) {
+    if (!Object.hasOwn(versions, id)) continue;
+    extensions[id] = versions[id];
+    delete versions[id];
+    delete sourceOf[id];
+  }
+  return { versions, gapZones, voids, sourceOf, extensions, extendable };
 }

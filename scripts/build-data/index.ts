@@ -180,9 +180,10 @@ interface Territory extends TerritoryProps {
   where: string;
 }
 
-async function readTerritories(): Promise<Territory[]> {
+/** dir 바로 아래 geojson의 영토 버전. 기본은 data/geo. data/geo/home/(뒤 권역이 늘린 나라의 원래 권역 모양, scripts/geo/engine.mjs '앞 권역 나라 늘리기')은 전쟁 장면만 따로 읽는다 */
+async function readTerritories(dir = path.join(DATA, 'geo')): Promise<Territory[]> {
   const territories: Territory[] = [];
-  for (const file of await listFiles(path.join(DATA, 'geo'), '.geojson')) {
+  for (const file of await listFiles(dir, '.geojson')) {
     const fc = JSON.parse(await readFile(file, 'utf8')) as FeatureCollection;
     fc.features.forEach((f, i) => {
       const where = `${rel(file)} [${i}]`;
@@ -509,6 +510,7 @@ async function main() {
     )
   ).flat();
   const territories = await readTerritories();
+  const homeTerritories = await readTerritories(path.join(DATA, 'geo/home'));
   const wars = await readWars(await listFiles(path.join(DATA, 'wars'), '.yaml'), errors, rel);
 
   checkIntegrity(entities, territories, events, relations);
@@ -554,7 +556,10 @@ async function main() {
   }
   if (errors.length) return finish();
 
-  const territory = (entityId: string, year: number) => clipped.find((t) => t.entityId === entityId && active(t, year))?.clipped ?? null;
+  // 전쟁 장면은 늘린 나라의 원래 권역 모양을 쓴다(1차 대전 동맹국 칠이 오스만의 중동 땅까지 번지지 않게, A2 운영자 결정 3). 해안선 자르기는 같은 함수·캐시
+  const homeClipped = homeTerritories.length ? await clipAll(homeTerritories) : [];
+  const homeIds = new Set(homeClipped.map((t) => t.entityId));
+  const territory = (entityId: string, year: number) => (homeIds.has(entityId) ? homeClipped : clipped).find((t) => t.entityId === entityId && active(t, year))?.clipped ?? null;
   const warGeo = { territory, land: land50.pieces, dir: path.join(DATA, 'wars') };
   /** 장면 캐시 적중·계산 수를 알리는 글 (계산한 장면이 있을 때만) */
   const warCacheNote = () =>

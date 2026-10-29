@@ -1399,3 +1399,85 @@
   avoid: [아누왈]
   note: "Battle of Annual(1921 리프 전쟁). 더한 날 avoid 0회"
   scope: 서아시아·북아프리카 현대
+
+# ── 서아시아·북아프리카 A2a-1(2026-10-29, 이란·이라크 1453~1917): 튀르크멘·이란 왕조 이름. 개수는 더한 날 data/entities·data/events·src grep ──
+- use: 카라코윤루
+  avoid: [카라 코윤루, 카라쿠윤루, 흑양 왕조]
+  note: "Qara Qoyunlu. 카라코윤루 3회·나머지 0회"
+  scope: 서아시아·북아프리카 튀르크
+
+- use: 아크코윤루
+  avoid: [아크쿠윤루, 백양 왕조]
+  note: "Aq Qoyunlu. 아크코윤루 10회·아크쿠윤루 0회('아크 코윤루' 1회는 유럽 사건 글 eu-m2, 띄어 쓴 꼴은 사전에서 막지 않음)"
+  scope: 서아시아·북아프리카 튀르크
+
+- use: 호타키 왕조
+  avoid: [호타크 왕조, 호탁 왕조, 호타키드]
+  note: "Hotak dynasty(나라 id hotak-dynasty). 호타키 왕조 2회·나머지 0회"
+  scope: 서아시아·북아프리카 이란
+
+- use: 아프샤르 왕조
+  avoid: [아프샤리드]
+  note: "Afsharid dynasty. 아프샤르 2회·나머지 0회"
+  scope: 서아시아·북아프리카 이란
+
+- use: 잔드 왕조
+  avoid: [잔디 왕조]
+  note: "Zand dynasty. 잔드 왕조 1회·나머지 0회"
+  scope: 서아시아·북아프리카 이란
+
+- use: 나디르 샤
+  avoid: [나데르 샤]
+  note: "Nāder Shāh. 나디르 샤 6회·나머지 0회"
+  scope: 서아시아·북아프리카 이란
+
+- use: 아가 무함마드 칸
+  avoid: [아가 모하마드 칸, 아가 모하메드 칸]
+  note: "Āghā Moḥammad Khān Qājār. 아가 무함마드 칸 7회·나머지 0회"
+  scope: 서아시아·북아프리카 이란
+
+- use: 주하브 조약
+  avoid: [조합 조약, 주합 조약]
+  note: "Treaty of Zuhab(1639). 주하브 조약 2회·나머지 0회"
+  scope: 서아시아·북아프리카 이란
+
+# ── A2a-2(2026-10-29) 레반트·아라비아 1453~1917: 사료 노트 7절과 저장소 grep 뒤 더함 ──
+- use: 디리야
+  avoid: [디리이야, 드리야]
+  note: "ad-Dirʿiyya(제1차 사우디 국가의 도읍). 더한 날 avoid 0회"
+  scope: 서아시아·북아프리카 근세
+
+- use: 바니 할리드
+  avoid: [바니 칼리드, 바누 할리드]
+  note: "Banū Khālid(알하사의 부족·토후국). 더한 날 avoid 0회"
+  scope: 서아시아·북아프리카 근세
+
+- use: 자브르 토후국
+  avoid: [자브리드 토후국, 자브리드 왕조]
+  note: "Jabrids(알하사, 1417~1521). 더한 날 avoid 0회"
+  scope: 서아시아·북아프리카 근세
+
+- use: 카심 왕조
+  avoid: [카시미드 왕조, 카시미드]
+  note: "al-Qāsimiyya(예멘 자이드파 이맘국, 1597~1872). 사우디의 카심 지방과는 글로 가름. 더한 날 avoid 0회"
+  scope: 서아시아·북아프리카 근세
+
+- use: 나브하니 왕조
+  avoid: [나브하니드]
+  note: "Nabhānī(오만 내륙). 더한 날 avoid 0회"
+  scope: 서아시아·북아프리카 근세
+
+- use: 야루바 왕조
+  avoid: [야루비드, 야아리바]
+  note: "al-Yaʿāriba(오만, 1624~1749). 더한 날 avoid 0회"
+  scope: 서아시아·북아프리카 근세
+
+- use: 라헤즈
+  avoid: [라헤지, 라히즈]
+  note: "Laḥij(아덴 북쪽 술탄국). A1 아덴 보호령 글의 '라헤즈'를 따름. 더한 날 avoid 0회"
+  scope: 서아시아·북아프리카 근세
+
+- use: 퀴타히아 조약
+  avoid: [쿠타히아 조약, 퀴타히야 조약]
+  note: "Kütahya(1833, 이집트–오스만). 튀르키예 도시 퀴타히아와 같은 표기. 더한 날 avoid 0회"
+  scope: 서아시아·북아프리카 근대

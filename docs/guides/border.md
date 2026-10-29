@@ -33,7 +33,8 @@
 | 실제로 떨어져 있던 영토 | `data/exclaves.yaml` |
 | 두 권역이 같이 쓰는 선(흑룡강 등) | `scripts/geo/shared.mjs` |
 | 권역 등록 | `scripts/geo/area-list.mjs`, 화면 필터 `src/schema/regions.ts` |
-| 생성 결과(손대지 않음) | `data/geo/*.geojson` — `npm run gen:geo`가 통째로 다시 씀 |
+| 앞 권역 나라를 뒤 권역 땅으로 늘리기(영향표의 나라만, 예: 중동의 `ottoman`) | 뒤 권역 파일의 `EXTENDABLE` + 시대 파일 소유표에 그 나라 id를 주인으로. 방법·멈춤 규칙의 원천은 `scripts/geo/engine.mjs` 머리의 '앞 권역 나라 늘리기' |
+| 생성 결과(손대지 않음) | `data/geo/*.geojson` — `npm run gen:geo`가 통째로 다시 씀. 늘린 나라의 원래 권역 모양은 `data/geo/home/`(전쟁 화면과 `compare:geo`가 씀) |
 
 `europe.mjs`의 구조(위에서 아래로, `grep -n '^const T\|^const makeTable\|^const TABLES\|^const LATER_LIST_SEAMS\|^export const versions\|^export const voids' scripts/geo/areas/europe.mjs`로 줄 번호를 찾는다):
 1. **머리 주석**: 작업(E1~I1)마다 한 줄 이상. 새 작업은 여기에 줄을 더한다.

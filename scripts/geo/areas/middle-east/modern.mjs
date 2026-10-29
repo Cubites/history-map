@@ -24,7 +24,9 @@
 //   Second Italo-Senussi War, French protectorate of Tunisia, French Algeria, French protectorate in Morocco, Spanish protectorate in Morocco, Tarfaya Strip, Spanish Sahara, Moroccan Wall. 수도 정답표: data/tests/places/middle-east.yaml
 import { D, I, box } from '../../lib.mjs';
 import { versions as EU_VERSIONS } from '../europe.mjs';
-import { ME, build, idsOf, joinTables, makeTable, minus } from './table.mjs';
+import { ME, idsOf, minus, tableKit } from './table.mjs';
+
+const { build, joinTables, makeTable } = tableKit('modern'); // 이 시대 파일의 소유표 꾸러미(단위 이름은 early-modern.mjs와 따로)
 
 const PRESENT = 2026; // 지금 해. 표는 PRESENT년 말까지 정하고, 끝까지 이어지는 버전은 to: null(지금까지)
 
@@ -44,11 +46,13 @@ const NAJRAN = [[[43.5, 16.8], [45.0, 16.8], [45.0, 19.7], [43.5, 19.7], [43.5, 
 const SOVIET_IRN = I(EU_VERSIONS['soviet-union'].at(-1)[2], box(53.5, 35.0, 61.5, 38.6));
 // 히자즈 북부: 조각 SA-12(Natural Earth 'Al Jawf')는 자우프·사카카 오아시스뿐 아니라 요르단 남쪽 경계를 따라 아카바만 기슭(하클)까지 띠처럼 뻗어 있다.
 // 동경 37도 서쪽(하클~타부크 북쪽 띠, 약 1.37만 km²)은 히자즈 왕국 땅으로 떼어 마안·아카바와 히자즈 본토를 잇는다. 이 선으로는 SA-12만 나눈다(사막 속 어림 선).
-const HEJAZ_N = box(34.0, 27.0, 37.0, 32.5);
+// early-modern.mjs도 1917년까지 이 띠를 타부크 쪽(다마스쿠스 주)으로 떼려고 가져다 쓴다(좌표를 베끼지 않음).
+export const HEJAZ_N = box(34.0, 27.0, 37.0, 32.5);
 // 하자 티하마: 조각 YE-HJ(하자 주)의 해안 평야(미디·압스·하라드)는 이드리스 가 땅이고 산지(하자)는 무타와킬 왕국 땅이었다. 동경 43.3도 서쪽을 떼어 지잔과 호데이다를 잇는다(어림 선, YE-HJ만 나눔).
 const HAJJAH_TIHAMA = box(42.5, 15.4, 43.3, 16.8);
 // 나흐와(샤르자의 월경지, 약 3 km²): 오만 월경지 마다(무산담 주 OM-MU) 안에 다시 박힌 땅이라 아랍에미리트 도형에 폭 1 km 안팎의 가는 띠를 만든다. 오만 쪽에 둔다(1만 km² 미만).
-const NAHWA = box(56.255, 25.24, 56.29, 25.29);
+// early-modern.mjs도 1853~1917년 트루셜 국가들 도형에서 이 띠를 떼려고 가져다 쓴다.
+export const NAHWA = box(56.255, 25.24, 56.29, 25.29);
 
 // ── A1b 칼선 (이집트·마그레브·서사하라) ──
 // 시나이 중간선(운영자 결정 4): 1979 이집트–이스라엘 평화 조약의 단계 철수로 1980년 1월 이스라엘이 엘아리시(동경 33.80°·북위 31.13°)~라스무함마드(34.25°·27.73°) 선 서쪽을 돌려주고,

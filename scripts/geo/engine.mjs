@@ -1,4 +1,4 @@
-// 국경 생성기 엔진 (DESIGN.md §5.2): 모든 권역을 합친 뒤 도는 단계. 권역 합치기(검사 포함) → 빈 땅 채우기 → 지우기 전 대조 → 틈새 구멍 메우기 → data/geo 쓰기.
+// 국경 생성기 엔진 (DESIGN.md §5.2): 모든 권역을 합친 뒤 도는 단계. 권역 합치기(검사 포함, 앞 권역 나라 늘리기 포함) → 빈 땅 채우기 → 지우기 전 대조 → 틈새 구멍 메우기 → data/geo 쓰기(늘린 나라의 원래 권역 모양은 data/geo/home/).
 // 빈 땅 검사(npm run check:gaps)가 쓰는 검사 구역 모으기(collectGapZones)도 여기 둔다.
 // 가져와도 되는 것: node 내장 모듈과 lib.mjs. 권역 파일과 권역 목록(area-list.mjs)은 가져오지 않는다(부르는 쪽이 AREAS를 넘겨줌).
 // .ts 스크립트가 가져올 때 tsc가 쓰는 타입 선언은 engine.d.mts에 있다(.ts가 쓰는 export만).
@@ -17,11 +17,69 @@ function geometry(multi) {
 // 권역 파일이 source를 내보내지 않을 때 쓰는 기본 출처 문구 (지금 권역은 모두 이 문구를 쓴다)
 const ESTIMATED = '중고등학교 한국사 교과서 시대별 지도의 일반적인 경계를 따른 대략적인 추정. 운영자 검수 필요';
 
-// 권역 파일이 내보내는 약속된 이름. fill·version·source·gap·void로 시작하는 다른 이름(대소문자 무시)은 이 여섯의 오타로 보고 멈춘다
+// 권역 파일이 내보내는 약속된 이름. fill·version·source·gap·void·exten으로 시작하는 다른 이름(대소문자 무시)은 이 여덟의 오타로 보고 멈춘다
 // voids(2026-10-09 작업 AN4 검토 반영): 권역이 일부러 비운 땅(소유표의 주인 없는 단위) [[from, to(끝 없음은 null), 멀티폴리곤], ...]. 틈새 구멍 메우기가 이 땅과 겹치는 구멍을 메우지 않게 한다
 // sourceOf(2026-10-21 RULES-TOOLS 작업 11): 나라 id → 출처 문구. 시대 파일(areas/<권역>/<시대>.mjs)의 source를 shared.mjs의 joinEras가 그 시대 나라마다 적은 표다.
 //   그 권역 versions의 나라만 적을 수 있고, 적힌 나라는 권역의 source보다 이 문구를 쓴다
-const AREA_EXPORTS = new Set(['versions', 'fillSpecs', 'source', 'gapZones', 'voids', 'sourceOf']);
+// extendable·extensions(2026-10-29 서아시아·북아프리카 A2-0): 앞 권역 나라 늘리기. 아래 '앞 권역 나라 늘리기' 설명(이 방법의 원천)
+const AREA_EXPORTS = new Set(['versions', 'fillSpecs', 'source', 'gapZones', 'voids', 'sourceOf', 'extendable', 'extensions']);
+
+// ── 앞 권역 나라 늘리기 (2026-10-29 서아시아·북아프리카 A2-0) ─────────────────
+// 뒤 권역(AREAS에서 뒤)이 앞 권역 나라의 버전에 자기 땅을 더한다(예: middle-east가 europe의 ottoman에 시리아·이집트·이라크를 더함). 나라 id·항목 파일·출처 문구(source)는 원래 권역 것 그대로다.
+// - extendable: { 나라 id: [첫 해, 끝 해(미포함)] } 이 권역이 늘려도 되는 앞 권역 나라와 기간. 원천은 그 권역 범위 문서의 영향표(예: docs/middle-east/00-scope.md 5절)이고,
+//   여기 없는 앞 권역 나라는 늘릴 수 없다(같은 id를 versions에 쓰면 '두 곳에 있음'으로 멈춤). 권역 파일이 joinEras에 넘기면 시대 파일 소유표의 그 나라 버전이 extensions로 간다
+// - extensions: { 나라 id: [[from, to, 멀티폴리곤], ...] } 더할 땅(to는 미포함 정수, 같은 나라 조각끼리는 기간이 겹쳐도 됨). 그 해의 원래 버전과 합집합(U)을 하고,
+//   더할 땅의 기간 경계에서 원래 버전을 나눈다(나뉜 앞뒤는 원래 도형 객체 그대로). 확실성(네 번째 값)은 원래 버전 것
+// - 멈추는 경우: extendable 모양이 틀림, 그 id가 앞 권역 나라가 아님(자기 권역·뒤 권역·없는 id), extensions의 id가 extendable에 없음, 조각이 그 기간 밖,
+//   그 해에 원래 권역 버전이 없음(늘리기는 새 해를 만들지 않음), 더할 땅이 그 해 원래 도형과 OVERLAP_MAX_DEG2(약 1km²) 넘게 겹침(선은 아래층이 가짐: 늘리는 권역 조각은 앞 권역 조각을 뺀 것이라 겹침 0이 정상),
+//   늘린 나라가 빈 땅 채우기(fillSpecs) 대상임(채우기가 원래 모양에 들어가지 않으므로)
+// - 원래 권역 모양은 data/geo/home/<id>.geojson에 늘리기 전과 같은 바이트로 따로 쓴다(writeGeo). data/geo/<id>.geojson은 늘린 모양이다.
+//   전쟁 쪽(gen:wars의 scripts/wars/engine.mjs, build:data의 전쟁 장면)은 home 파일이 있으면 그것을 쓴다: 1차 대전 동맹국 칠 등 전쟁 화면이 바이트 그대로(A2 운영자 결정 3).
+//   compare:geo는 home 파일을 기준과 대조해 '원래 권역 모양 그대로'를 확인한다
+const OVERLAP_MAX_DEG2 = 1e-4;
+const multiArea = (m) => m.reduce((sum, poly) => sum + poly.reduce((s2, r, k) => { let a2 = 0; for (let i = 0, j = r.length - 1; i < r.length; j = i++) a2 += (r[j][0] + r[i][0]) * (r[j][1] - r[i][1]); return s2 + (k === 0 ? 1 : -1) * Math.abs(a2 / 2); }, 0), 0);
+function extendVersions(id, list, pieces, where) {
+  const label = `${where}의 ${id} 늘리기`;
+  // 늘리는 해마다 원래 버전이 있어야 한다
+  for (const [from, to] of pieces) {
+    let y = from;
+    for (const [f, t] of [...list].sort((a, b) => a[0] - b[0])) if (f <= y && y < (t ?? Infinity)) y = Math.min(t ?? Infinity, to);
+    if (y < to) throw new Error(`${label}: ${y}년에 원래 권역 버전이 없음 (늘리기는 원래 버전이 있는 해에만 땅을 더함, 조각 [${from}, ${to}))`);
+  }
+  const unions = new Map();
+  const out = [];
+  for (const v of list) {
+    const [f, t, m, ...rest] = v;
+    const T = t ?? Infinity;
+    const mine = pieces.filter(([a, b]) => a < T && f < b);
+    if (!mine.length) { out.push(v); continue; }
+    // 겹침 검사: 이 버전과 기간이 겹치는 조각마다 (도형 객체가 같으면 한 번)
+    for (const [a, b, g] of mine) {
+      if (apart(boundsOf(m), boundsOf(g))) continue;
+      const over = multiArea(polyclip.intersection(m, g));
+      if (over > OVERLAP_MAX_DEG2) throw new Error(`${label}: 더할 땅(${a}~${b - 1})이 원래 권역 도형(${f}~${t === null ? '' : t - 1})과 약 ${Math.round(over * 111.32 ** 2 * 0.8)}km² 겹침 (선은 앞 권역이 가짐: 겹치는 땅을 빼고 더한다)`);
+    }
+    // 원래 버전 하나 안에서만 나누고 잇는다(원래 버전 배열은 고치지 않음: home 파일이 그대로 씀)
+    const start = out.length;
+    const cuts = [...new Set([f, T, ...mine.flatMap(([a, b]) => [a, b]).filter((y) => f < y && y < T)])].sort((x, y) => x - y);
+    for (let k = 0; k < cuts.length - 1; k++) {
+      const [a, b] = [cuts[k], cuts[k + 1]];
+      const active = [...new Set(mine.filter(([pa, pb]) => pa <= a && b <= pb).map(([, , g]) => g))];
+      let g = m;
+      if (active.length) {
+        const key = active.map((x) => pieces.findIndex((p) => p[2] === x)).join(' ');
+        if (!unions.has(m)) unions.set(m, new Map());
+        const byKey = unions.get(m);
+        if (!byKey.has(key)) byKey.set(key, polyclip.union(m, ...active));
+        g = byKey.get(key);
+      }
+      const last = out.length > start ? out.at(-1) : null;
+      if (last && last[2] === g) last[1] = b === Infinity ? null : b;
+      else out.push([a, b === Infinity ? null : b, g, ...rest]);
+    }
+  }
+  return out;
+}
 
 // 권역 파일들의 versions·fillSpecs·source를 AREAS 순서대로 합친다. 아래 경우에는 data/geo를 지우기 전에 멈춘다.
 // - 권역이 versions를 내보내지 않거나, 약속된 이름과 헷갈리는 이름(fillSpec, version, sources, gapZone 등)을 내보냄
@@ -31,7 +89,9 @@ const AREA_EXPORTS = new Set(['versions', 'fillSpecs', 'source', 'gapZones', 'vo
 // - 빈 땅 검사 구역(gapZones)의 모양이 틀림 (collectGapZones의 검사. 생성기는 구역을 쓰지 않지만 check:gaps보다 먼저 잡는다)
 // - areaDir(권역 파일 폴더)에 AREAS 목록에 없는 권역 파일이나, 등록된 권역 이름이 아닌 하위 폴더가 있음
 //   (areas/ 바로 아래에는 권역 파일만 둔다. 한 권역만 쓰는 도우미 모듈은 areas/<권역>/에, 두 권역 이상이 쓰는 것은 앞 권역 파일(export)이나 shared.mjs에 둔다)
+// - 앞 권역 나라 늘리기(extendable·extensions)의 멈춤 경우(위 '앞 권역 나라 늘리기')
 // sources(나라 id → 출처 문구)에는 source를 내보낸 권역의 나라와, 그 권역의 채우기가 새로 만드는 나라만 들어간다. 나머지는 writeGeo가 ESTIMATED를 쓴다
+// homes: 늘린 나라 id → 늘리기 전 원래 권역 버전 목록 (writeGeo가 data/geo/home/에 씀). versions의 그 나라는 늘린 버전이다
 export function mergeAreas(areas, areaDir) {
   const versions = {};
   const fillSpecs = [];
@@ -42,7 +102,7 @@ export function mergeAreas(areas, areaDir) {
   for (const [name, area] of areas) {
     if (!area.versions || typeof area.versions !== 'object') throw new Error(`권역 ${name}이 versions를 내보내지 않음`);
     for (const key of Object.keys(area)) {
-      if (/^(fill|version|source|gap|void)/i.test(key) && !AREA_EXPORTS.has(key)) throw new Error(`권역 ${name}의 export '${key}': versions·fillSpecs·source·gapZones·voids의 오타가 아닌지 확인`);
+      if (/^(fill|version|source|gap|void|exten)/i.test(key) && !AREA_EXPORTS.has(key)) throw new Error(`권역 ${name}의 export '${key}': versions·fillSpecs·source·gapZones·voids·extendable·extensions의 오타가 아닌지 확인`);
     }
     if (area.fillSpecs !== undefined && !Array.isArray(area.fillSpecs)) throw new Error(`권역 ${name}의 fillSpecs가 배열이 아님`);
     if (area.source !== undefined && (typeof area.source !== 'string' || !area.source.trim())) throw new Error(`권역 ${name}의 source가 비어 있지 않은 문자열이 아님`);
@@ -56,7 +116,7 @@ export function mergeAreas(areas, areaDir) {
       voids.push(v);
     }
     for (const [id, list] of Object.entries(area.versions)) {
-      if (Object.hasOwn(owner, id)) throw new Error(`나라 id '${id}'가 ${owner[id]}와 ${name} 두 곳에 있음`);
+      if (Object.hasOwn(owner, id)) throw new Error(`나라 id '${id}'가 ${owner[id]}와 ${name} 두 곳에 있음 (앞 권역 나라를 뒤 권역 땅으로 늘리려면 범위 문서 영향표에 올리고 뒤 권역 파일의 extendable에 적는다: engine.mjs '앞 권역 나라 늘리기')`);
       owner[id] = name;
       versions[id] = list;
       const source = Object.hasOwn(sourceOf, id) ? sourceOf[id] : area.source;
@@ -85,7 +145,37 @@ export function mergeAreas(areas, areaDir) {
     const unlisted = entries.filter((e) => e.isFile() && e.name.endsWith('.mjs')).map((e) => e.name.slice(0, -'.mjs'.length)).filter((n) => !listed.has(n));
     if (unlisted.length) throw new Error(`권역 파일 ${unlisted.join(', ')}이(가) AREAS 목록에 없음 (scripts/geo/area-list.mjs에 등록)`);
   }
-  return { versions, fillSpecs, sources, voids };
+  // 앞 권역 나라 늘리기: 모든 권역의 versions를 모으고 권역 등록을 본 뒤 AREAS 순서대로 더한다(원래 버전 목록은 homes에 남김)
+  const homes = {};
+  const areaIndex = new Map(areas.map(([name], i) => [name, i]));
+  const isInt = (v) => Number.isInteger(v);
+  for (const [name, area] of areas) {
+    const allow = area.extendable ?? {};
+    const ext = area.extensions ?? {};
+    const isTable = (o) => typeof o === 'object' && o !== null && !Array.isArray(o);
+    if (!isTable(allow)) throw new Error(`권역 ${name}의 extendable이 나라 id → [첫 해, 끝 해] 표가 아님`);
+    if (!isTable(ext)) throw new Error(`권역 ${name}의 extensions가 나라 id → 조각 목록 표가 아님`);
+    for (const [id, range] of Object.entries(allow)) {
+      if (!Array.isArray(range) || range.length !== 2 || !isInt(range[0]) || !isInt(range[1]) || range[0] >= range[1]) throw new Error(`권역 ${name}의 extendable '${id}': [첫 해, 끝 해(미포함)] 정수이고 첫 해 < 끝 해여야 함`);
+      if (!Object.hasOwn(owner, id)) throw new Error(`권역 ${name}의 extendable '${id}': 어느 권역의 나라도 아님 (id 오타?)`);
+      if (!(areaIndex.get(owner[id]) < areaIndex.get(name))) throw new Error(`권역 ${name}의 extendable '${id}': ${owner[id]} 권역의 나라라 늘릴 수 없음 (앞 권역(AREAS에서 앞) 나라만 늘린다)`);
+      if (fillSpecs.some((sp) => sp.id === id)) throw new Error(`권역 ${name}의 extendable '${id}': 빈 땅 채우기(fillSpecs) 대상 나라는 늘릴 수 없음`);
+    }
+    for (const [id, pieces] of Object.entries(ext)) {
+      if (!Object.hasOwn(allow, id)) throw new Error(`권역 ${name}의 extensions '${id}': extendable에 없는 나라 (늘려도 되는 나라는 범위 문서 영향표에 올리고 권역 파일의 extendable에 적는다)`);
+      const [lo, hi] = allow[id];
+      if (!Array.isArray(pieces)) throw new Error(`권역 ${name}의 extensions '${id}'가 배열이 아님`);
+      for (const p of pieces) {
+        if (!Array.isArray(p) || !isInt(p[0]) || !isInt(p[1]) || p[0] >= p[1] || !Array.isArray(p[2]) || p.length !== 3) throw new Error(`권역 ${name}의 extensions '${id}' 한 줄 모양이 틀림: [from, to(미포함 정수), 멀티폴리곤]이어야 함`);
+        if (p[0] < lo || p[1] > hi) throw new Error(`권역 ${name}의 extensions '${id}' 조각 [${p[0]}, ${p[1]})이 extendable 기간 [${lo}, ${hi}) 밖`);
+      }
+      const nonEmpty = pieces.filter((p) => p[2].length);
+      if (!nonEmpty.length) continue;
+      if (!Object.hasOwn(homes, id)) homes[id] = versions[id];
+      versions[id] = extendVersions(id, versions[id], nonEmpty, `권역 ${name}`);
+    }
+  }
+  return { versions, fillSpecs, sources, voids, homes };
 }
 
 // 빈 땅 검사 구역 (DESIGN.md §5.4): 권역 파일의 gapZones를 AREAS 순서대로 모은다. npm run check:gaps가 이 순서대로 검사해 출력하고,
@@ -304,7 +394,9 @@ serveParallel('engine-holes', (data, i) => {
 
 // data/geo 쓰기: 지우기 전 대조 → 기존 geojson 삭제 → 틈새 구멍 메우기 → 나라마다 <id>.geojson(FeatureCollection 하나, 버전마다 한 줄 + 개행).
 // sources는 mergeAreas가 만든 나라 id → 출처 문구 표다. 없는 나라는 ESTIMATED를 쓴다
-export function writeGeo(project, versions, { prune = false, sources = {}, voids = [] } = {}) {
+// homes(mergeAreas, 앞 권역 나라 늘리기)의 나라는 늘리기 전 버전을 data/geo/home/<id>.geojson에 같은 방식(구멍 메우기 포함)으로 쓴다.
+// 빌드·검사 스크립트는 data/geo 바로 아래만 읽으므로 home 파일은 나라로 읽히지 않는다(읽는 곳: 전쟁 쪽과 compare:geo)
+export function writeGeo(project, versions, { prune = false, sources = {}, voids = [], homes = {} } = {}) {
   const outDir = path.join(project, 'data/geo');
   mkdirSync(outDir, { recursive: true });
   // 지우기 전 대조: 이번에 쓰지 않을 geojson이 이미 있으면 멈춘다 (권역 등록 빠뜨림, 생성기 밖에서 손으로 그린 파일 등).
@@ -318,22 +410,29 @@ export function writeGeo(project, versions, { prune = false, sources = {}, voids
   let filled = 0;
   const occupiedBy = (h, o) => polyclip.intersection([[h]], o.multi).length > 0;
   const voidList = voidOwners(voids);
-  const fillEmptyHoles = (entityId, from, to, multi) => keepHoles(all, entityId, from, to, multi, occupiedBy, () => filled++, voidList);
-
+  // 네 번째 값으로 확실성을 바꿀 수 있다 (예: 'disputed' — 학설 차이가 큰 고조선 초기). 출처는 권역의 source(없으면 ESTIMATED)
+  // 버전(feature)마다 한 줄로 쓴다. 들여쓰기 형식보다 약 3분의 1 크기이고, git diff는 바뀐 버전 줄만 보인다 (2026-10-01)
+  const writeEntity = (file, entityId, list, onFilled) => {
+    const features = list.map(([from, to, multi, certainty]) => ({
+      type: 'Feature',
+      properties: { entityId, from, to, certainty: certainty ?? 'estimated', source: Object.hasOwn(sources, entityId) ? sources[entityId] : ESTIMATED },
+      geometry: geometry(keepHoles(all, entityId, from, to, multi, occupiedBy, onFilled, voidList)),
+    }));
+    const lines = features.map((f) => JSON.stringify(f)).join(',\n');
+    writeFileSync(file, `{"type":"FeatureCollection","features":[\n${lines}\n]}\n`);
+  };
   for (const [entityId, list] of Object.entries(versions)) {
-    const fc = {
-      type: 'FeatureCollection',
-      // 네 번째 값으로 확실성을 바꿀 수 있다 (예: 'disputed' — 학설 차이가 큰 고조선 초기). 출처는 권역의 source(없으면 ESTIMATED)
-      features: list.map(([from, to, multi, certainty]) => ({
-        type: 'Feature',
-        properties: { entityId, from, to, certainty: certainty ?? 'estimated', source: Object.hasOwn(sources, entityId) ? sources[entityId] : ESTIMATED },
-        geometry: geometry(fillEmptyHoles(entityId, from, to, multi)),
-      })),
-    };
-    // 버전(feature)마다 한 줄로 쓴다. 들여쓰기 형식보다 약 3분의 1 크기이고, git diff는 바뀐 버전 줄만 보인다 (2026-10-01)
-    const lines = fc.features.map((f) => JSON.stringify(f)).join(',\n');
-    writeFileSync(path.join(outDir, `${entityId}.geojson`), `{"type":"FeatureCollection","features":[\n${lines}\n]}\n`);
+    writeEntity(path.join(outDir, `${entityId}.geojson`), entityId, list, () => filled++);
     console.log(entityId, list.map(([f, t, m]) => `${f}-${t}:${m.length}`).join(' '));
   }
   console.log(`빈 틈새 구멍 ${filled}개를 메움`);
+  // 늘린 나라의 원래 권역 모양 (구멍 메우기 수는 위 줄에 세지 않음). home/은 생성기가 통째로 다시 쓰고, 늘린 나라가 없으면 지운다
+  const homeDir = path.join(outDir, 'home');
+  rmSync(homeDir, { recursive: true, force: true });
+  const homeIds = Object.keys(homes);
+  if (homeIds.length) {
+    mkdirSync(homeDir, { recursive: true });
+    for (const entityId of homeIds) writeEntity(path.join(homeDir, `${entityId}.geojson`), entityId, homes[entityId], () => {});
+    console.log(`늘린 나라 ${homeIds.length}개의 원래 권역 모양을 data/geo/home/에 씀: ${homeIds.join(', ')}`);
+  }
 }

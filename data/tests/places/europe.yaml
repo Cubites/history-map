@@ -1739,11 +1739,11 @@
 - name: "다르가즈(이란)"
   at: [59.107, 37.443]
   years: [1900]
-  expect: none
+  expect: qajar-iran
   region: europe
   url: "https://en.wikipedia.org/wiki/Iran–Turkmenistan_border"
   from: "세션 M1 결과노트"
-  note: "코페트다그 남쪽의 이란 땅(1881 경계, 1893 아프가니스탄까지 늘림). 러시아 손 도형의 남쪽 변을 이란 국경으로(M1) · 고치기 전 HEAD는 1881~1991 러시아 제국·소련 · 1950은 서아시아 A1a부터 팔라비 왕조(아래 줄)"
+  note: "코페트다그 남쪽의 이란 땅(1881 경계, 1893 아프가니스탄까지 늘림). 러시아 손 도형의 남쪽 변을 이란 국경으로(M1) · 고치기 전 HEAD는 1881~1991 러시아 제국·소련 · 1950은 서아시아 A1a부터 팔라비 왕조(아래 줄) · 1900은 서아시아 A2a-1부터 카자르 왕조(전에는 none)"
 
 - name: "다르가즈(이란)"
   at: [59.107, 37.443]
@@ -1757,11 +1757,11 @@
 - name: "바지기란(이란)"
   at: [58.418, 37.621]
   year: 1882
-  expect: none
+  expect: qajar-iran
   region: europe
   url: "https://en.wikipedia.org/wiki/Iran–Turkmenistan_border"
   from: "세션 M1 결과노트"
-  note: "코페트다그 고개 남쪽 이란 국경 마을(1881 경계 확인 뒤) · 고치기 전 HEAD는 러시아 제국"
+  note: "코페트다그 고개 남쪽 이란 국경 마을(1881 경계 확인 뒤) · 고치기 전 HEAD는 러시아 제국 · 서아시아 A2a-1부터 카자르 왕조(전에는 none)"
 
 - name: "아시가바트"
   at: [58.38, 37.938]

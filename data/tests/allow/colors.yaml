@@ -7,3 +7,4 @@
 - { key: 'colors oeta-east|oeta-west', reason: '오스만 땅 위의 영국·프랑스 점령 지역이라 둘 다 옛 나라(오스만) 색, 점령국 표시로 구별', decided: '운영자 결정 7(A1 질문 창구 ②, 2026-10-29)' }
 - { key: 'colors oeta-east|ottoman', reason: '점령 지역은 옛 나라(오스만) 색(standards 2절 점령 항목), 점령국 영국은 관계 표시로 구별', decided: '운영자 결정 7(A1 질문 창구 ②, 2026-10-29)' }
 - { key: 'colors oeta-south|oeta-west', reason: '오스만 땅 위의 영국·프랑스 점령 지역이라 둘 다 옛 나라(오스만) 색, 점령국 표시로 구별', decided: '운영자 결정 7(A1 질문 창구 ②, 2026-10-29)' }
+- { key: 'colors jabal-shammar|ottoman', reason: '자발 샴마르(A1 항목, 1918년부터 바이트 그대로)와 오스만(유럽 항목) 색은 이 단계에서 바꾸지 않음. 1841~1917년 하일·타부크 경계에서 맞닿음', decided: '서아시아 A2a-2 구현(2026-10-29) 확정(기본)' }

@@ -1,9 +1,10 @@
 // 국경 생성기 구조·안전장치 검사 (DESIGN.md §5.2). 사용: npm run check:generator [-- 프로젝트 폴더]
-// [1] 구조: polyclip-ts는 lib에서만, scripts/geo는 명령줄 인자를 모름, import 층 규칙, 권역 등록(area-list.mjs), data/geo 평면 폴더,
+// [1] 구조: polyclip-ts는 lib에서만, scripts/geo는 명령줄 인자를 모름, import 층 규칙, 권역 등록(area-list.mjs), data/geo 평면 폴더(생성기가 쓰는 home/ 말고),
 //     타입 선언(.d.mts)과 export가 맞음, 빈 땅 검사(check-gaps.ts)가 좌표를 복사하지 않고 권역 파일의 gapZones를 씀,
 //     scripts/geo의 파일끼리 같은 좌표를 이름 없이 되풀이하지 않음('값만 같은 점' 허용 목록 ALLOWED_REPEATS만).
 // [2] 안전장치: 잘못된 권역 구성·옵션·인자 오타에서 생성기가 data/geo를 지우기 전에(엉뚱한 폴더에 쓰지 않고) 멈추는지, --prune과 권역 출처(source)가 약속대로 도는지,
-//     빈 땅 검사 구역(gapZones)이 AREAS 순서대로 모이고 새 권역의 구역도 저절로 들어가는지, 구역 모양이 틀리면 멈추는지.
+//     빈 땅 검사 구역(gapZones)이 AREAS 순서대로 모이고 새 권역의 구역도 저절로 들어가는지, 구역 모양이 틀리면 멈추는지,
+//     앞 권역 나라 늘리기(extendable·extensions, 2026-10-29)가 약속대로 더하고 원래 모양을 home/에 같은 바이트로 쓰는지, 허용 목록 밖·겹침 등에서 멈추는지.
 // [3] 행정구역 조각(2026-09-30): topojson-client와 조각 파일(data/base/fragments)은 lib.mjs에서만 쓰는지(층 규칙은 [1]),
 //     조각 파일이 prep:fragments가 쓴 그대로인지(그 지역 README의 크기·sha256: README.<지역>.md가 있으면 그것, 없으면 README.md), 형식·id·arc 번호가 맞는지, lib의 loadFragments·F가 약속대로 도는지.
 // 프로젝트의 data/geo는 건드리지 않는다. data/geo를 임시 폴더에 복사해 그곳에서 시험하고, 끝나면 임시 폴더를 지운다.
@@ -155,8 +156,8 @@ if (AREAS.length) {
 const argvUsers = files.filter((f) => /\bprocess\.|\bargv\b/.test(f.text)).map((f) => f.rel);
 if (!argvUsers.length) ok('scripts/geo는 process·argv를 쓰지 않음 (다른 스크립트가 권역 파일을 가져와도 됨)');
 else bad(`process·argv를 쓰는 파일: [${argvUsers}]`);
-const helperExports = files.filter((f) => /^areas\/[^/]+\//.test(f.rel)).flatMap((f) => [...f.text.matchAll(/^export\s+(?:const|let|function)\s+(\w+)/gm)].filter((m) => /^(fill|version|source|gap)/i.test(m[1])).map((m) => `${f.rel}의 ${m[1]}`));
-if (helperExports.length) bad(`도우미 모듈이 versions·fillSpecs·source·gapZones 같은 이름을 내보냄 (권역 파일에만 둔다): ${helperExports.join(', ')}`);
+const helperExports = files.filter((f) => /^areas\/[^/]+\//.test(f.rel)).flatMap((f) => [...f.text.matchAll(/^export\s+(?:const|let|function)\s+(\w+)/gm)].filter((m) => /^(fill|version|source|gap|exten)/i.test(m[1])).map((m) => `${f.rel}의 ${m[1]}`));
+if (helperExports.length) bad(`도우미 모듈이 versions·fillSpecs·source·gapZones·extendable·extensions 같은 이름을 내보냄 (권역 파일에만 둔다): ${helperExports.join(', ')}`);
 // 타입 선언(.d.mts): .ts 스크립트가 .mjs를 가져올 때 tsc가 쓴다. 선언한 이름이 짝 .mjs의 export에 있어야 한다(없으면 tsc는 통과해도 실행할 때 멈춘다)
 const decls = readdirSync(GEO_SRC).filter((f) => f.endsWith('.d.mts')).map((d) => {
   const mjs = d.slice(0, -'.d.mts'.length) + '.mjs';
@@ -244,21 +245,25 @@ if (!repeatCheck.extra.length && !repeatCheck.gone.length) ok(`파일 사이 좌
 {
   const single = [...repeats.byPoint].find(([, users]) => new Set([...users].map((u) => u.split(':')[0])).size === 1);
   const listed = ALLOWED_REPEATS[0];
-  for (const [label, from, pt] of [
-    ['목록 밖 점', single && [...single[1]][0], single?.[0]],
-    ['허용 목록의 점', listed.names[0], pointKey(listed.points[0])],
+  // 시대 파일(areas/<권역>/<시대>.mjs)도 같은 검사를 받는다: 늘리기 땅을 그리며 앞 권역(europe.mjs 등)의 선 좌표를 베끼면 잡혀야 한다(2026-10-29 A2-0)
+  const eraDir = AREAS.map((a) => a.name).find((n) => files.some((f) => f.rel.startsWith(`areas/${n}/`))) ?? AREAS[0]?.name;
+  for (const [label, from, pt, rel] of [
+    ['목록 밖 점', single && [...single[1]][0], single?.[0], 'areas/check-copy.mjs'],
+    ['허용 목록의 점', listed.names[0], pointKey(listed.points[0]), 'areas/check-copy.mjs'],
+    ['목록 밖 점(시대 파일)', single && [...single[1]][0], single?.[0], `areas/${eraDir}/check-copy.mjs`],
   ]) {
     if (!pt) { bad(`좌표 되풀이 시험(${label}): 베낄 좌표를 찾지 못함`); continue; }
-    const fake = { rel: 'areas/check-copy.mjs', text: `// 시험: 다른 파일의 좌표를 베낌\nexport const CHECK_COPY = [[${pt.slice(1, -1)}]];\n` };
+    const fake = { rel, text: `// 시험: 다른 파일의 좌표를 베낌\nexport const CHECK_COPY = [[${pt.slice(1, -1)}]];\n` };
     const probe = compareRepeats(repeatedPoints([...files, fake]).groups);
-    const caught = probe.extra.find((e) => e.includes('areas/check-copy.mjs:CHECK_COPY') && e.includes(pt));
-    if (caught) ok(`좌표 되풀이를 잡음 (시험: 가짜 권역 파일이 ${from}의 ${label} ${pt}를 베끼면 → ${short(caught)})`);
-    else bad(`좌표 되풀이 시험(${label}): 가짜 권역 파일이 ${from}의 ${pt}를 베껴도 잡지 못함`);
+    const caught = probe.extra.find((e) => e.includes(`${rel}:CHECK_COPY`) && e.includes(pt));
+    if (caught) ok(`좌표 되풀이를 잡음 (시험: 가짜 ${rel}이 ${from}의 ${label} ${pt}를 베끼면 → ${short(caught)})`);
+    else bad(`좌표 되풀이 시험(${label}): 가짜 ${rel}이 ${from}의 ${pt}를 베껴도 잡지 못함`);
   }
 }
-const geoDirs = readdirSync(PROJECT_GEO, { withFileTypes: true }).filter((e) => e.isDirectory()).map((e) => e.name);
-if (!geoDirs.length) ok('data/geo에 하위 폴더 없음 (빌드·검사 스크립트는 평면 폴더만 읽음)');
-else bad(`data/geo에 하위 폴더: [${geoDirs}]`);
+// data/geo 하위 폴더는 생성기가 쓰는 home/(뒤 권역이 늘린 나라의 원래 권역 모양, engine.mjs '앞 권역 나라 늘리기')뿐이다. 빌드·검사 스크립트는 바로 아래만 나라로 읽는다
+const geoDirs = readdirSync(PROJECT_GEO, { withFileTypes: true }).filter((e) => e.isDirectory()).map((e) => e.name).filter((n) => n !== 'home');
+if (!geoDirs.length) ok('data/geo에 하위 폴더 없음 (생성기가 쓰는 home/ 말고. 빌드·검사 스크립트는 평면 폴더만 나라로 읽음)');
+else bad(`data/geo에 하위 폴더: [${geoDirs}] (생성기가 쓰는 home/만 둔다)`);
 
 // ── [2] 안전장치 ─────────────────────────────────────────
 console.log('[2] 안전장치 (data/geo를 임시 폴더에 복사해 시험)');
@@ -272,7 +277,7 @@ const restore = () => {
   mkdirSync(tmpGeo, { recursive: true });
   for (const f of readdirSync(PROJECT_GEO)) if (f.endsWith('.geojson')) copyFileSync(path.join(PROJECT_GEO, f), path.join(tmpGeo, f));
 };
-const snapshot = () => readdirSync(tmpGeo).sort().map((f) => `${f} ${sha(readFileSync(path.join(tmpGeo, f)))}`).join('\n');
+const snapshot = () => readdirSync(tmpGeo).filter((f) => f.endsWith('.geojson')).sort().map((f) => `${f} ${sha(readFileSync(path.join(tmpGeo, f)))}`).join('\n');
 // 생성기 로그(채우기 기간 수, 나라별 줄)는 시험 결과를 가리므로 감춘다
 const quiet = (fn) => { const log = console.log; console.log = () => {}; try { return fn(); } finally { console.log = log; } };
 // fn이 needle이 든 오류로 멈추고, 임시 data/geo가 그대로여야 통과
@@ -428,6 +433,44 @@ try {
     expectStop('sourceOf에 그 권역에 없는 나라', '없는 나라', () => engine.mergeAreas([['check-c', { versions: {}, sourceOf: { 'check-x': '문구' } }]]));
   }
 
+  // 앞 권역 나라 늘리기(2026-10-29 서아시아·북아프리카 A2-0, engine.mjs '앞 권역 나라 늘리기'): 뒤 권역이 extendable에 적은 앞 권역 나라의 버전에 땅을 더하고,
+  // 원래 버전은 homes로 남겨 data/geo/home/에 늘리기 전과 같은 바이트로 쓴다. 허용 목록 밖·기간 밖·원래 버전 없는 해·원래 도형과 겹침·채우기 대상이면 멈춘다
+  {
+    const { joinEras } = await import(pathToFileURL(path.join(GEO_SRC, 'shared.mjs')).href);
+    const sqr = (x) => [[[[x, 10], [x + 1, 10], [x + 1, 11], [x, 11], [x, 10]]]]; // 시험용 정사각형
+    const home = sqr(0);
+    const homeList = [[1800, 1900, home], [1900, null, home]];
+    const areaA = ['check-a', { versions: { 'check-e1': homeList } }];
+    const jb = joinEras('check-b', { versions: {}, extendable: { 'check-e1': [1800, 1950] } }, [{ name: 'check-era', versions: { 'check-e1': [[1850, 1920, sqr(1)]], 'check-b1': [[1800, null, sqr(5)]] }, source: '시험 시대 출처' }]);
+    const routed = Object.keys(jb.versions).join() === 'check-b1' && Object.keys(jb.extensions).join() === 'check-e1' && !Object.hasOwn(jb.sourceOf, 'check-e1') && jb.extendable['check-e1'].join() === '1800,1950';
+    if (routed) ok('늘리기: joinEras가 extendable의 나라(시대 파일 소유표의 주인)를 versions에서 extensions로 옮기고 sourceOf에서 뺌');
+    else bad(`늘리기: joinEras 옮기기가 약속과 다름: versions ${Object.keys(jb.versions)} / extensions ${Object.keys(jb.extensions)} / sourceOf ${Object.keys(jb.sourceOf)}`);
+    const m = engine.mergeAreas([areaA, ['check-b', jb]]);
+    const got = m.versions['check-e1'];
+    const spans = got.map(([f, t]) => `${f}-${t}`).join(',');
+    const geomOk = got[0][2] === home && got.at(-1)[2] === home && got[1][2] !== home && Math.abs(got[1][2].reduce((s, poly) => s + poly.length, 0) - 1) === 0;
+    if (spans === '1800-1850,1850-1900,1900-1920,1920-null' && geomOk && m.homes['check-e1'] === homeList && !Object.hasOwn(m.sources, 'check-e1')) ok(`늘리기: 원래 버전을 더할 땅의 기간 경계에서 나누고 그 기간만 합집합 (${spans}, 나뉜 앞뒤는 원래 도형 그대로), 원래 버전 목록은 homes, 출처는 원래 권역 것`);
+    else bad(`늘리기 결과가 약속과 다름: ${spans}, 앞뒤 원래 도형 ${got[0][2] === home}/${got.at(-1)[2] === home}, homes ${m.homes['check-e1'] === homeList}`);
+    // home 파일은 늘리지 않았을 때 쓴 <id>.geojson과 바이트가 같아야 한다
+    const extProject = path.join(tmp, 'extend-test'), plainProject = path.join(tmp, 'extend-plain');
+    quiet(() => engine.writeGeo(extProject, m.versions, { sources: m.sources, homes: m.homes }));
+    quiet(() => engine.writeGeo(plainProject, { 'check-e1': homeList, 'check-b1': [[1800, null, sqr(5)]] }, { sources: m.sources }));
+    const homeBytes = readFileSync(path.join(extProject, 'data/geo/home/check-e1.geojson'));
+    if (homeBytes.equals(readFileSync(path.join(plainProject, 'data/geo/check-e1.geojson'))) && !existsSync(path.join(plainProject, 'data/geo/home'))) ok('늘리기: data/geo/home/<id>.geojson이 늘리지 않았을 때의 <id>.geojson과 바이트가 같고, 늘린 나라가 없으면 home/을 만들지 않음');
+    else bad('늘리기: home 파일이 늘리지 않았을 때의 파일과 다르거나, 늘린 나라가 없는데 home/이 생김');
+    const extB = (ext, allow = { 'check-e1': [1800, 1950] }) => engine.mergeAreas([areaA, ['check-b', { versions: {}, extendable: allow, extensions: ext }]]);
+    expectStop('늘리기: 허용 목록(extendable)에 없는 나라를 늘림', 'extendable에 없는 나라', () => engine.mergeAreas([areaA, ['check-b', { versions: {}, extensions: { 'check-e1': [[1850, 1920, sqr(1)]] } }]]));
+    expectStop('늘리기: 허용 목록 없이 앞 권역 나라 id를 versions에 씀(영향표에 없는 나라, 예: spain)', '두 곳에 있음', () => engine.mergeAreas([areaA, ['check-b', { versions: { 'check-e1': [[1850, 1920, sqr(1)]] } }]]));
+    expectStop('늘리기: 자기 권역 나라를 extendable에 적음', '늘릴 수 없음', () => engine.mergeAreas([areaA, ['check-b', { versions: { 'check-b1': [[1800, null, sqr(5)]] }, extendable: { 'check-b1': [1800, 1900] } }]]));
+    expectStop('늘리기: extendable의 id 오타', '어느 권역의 나라도 아님', () => extB({}, { 'check-zz': [1800, 1900] }));
+    expectStop('늘리기: 조각이 extendable 기간 밖', 'extendable 기간', () => extB({ 'check-e1': [[1850, 1920, sqr(1)]] }, { 'check-e1': [1800, 1850] }));
+    expectStop('늘리기: 원래 권역 버전이 없는 해', '원래 권역 버전이 없음', () => engine.mergeAreas([['check-a', { versions: { 'check-e1': [[1800, 1900, home]] } }], ['check-b', { versions: {}, extendable: { 'check-e1': [1800, 1950] }, extensions: { 'check-e1': [[1850, 1920, sqr(1)]] } }]]));
+    expectStop('늘리기: 더할 땅이 원래 도형과 겹침', '겹침', () => extB({ 'check-e1': [[1850, 1920, sqr(0.5)]] }));
+    expectStop('늘리기: 조각 모양(to가 null)', '한 줄 모양', () => extB({ 'check-e1': [[1850, null, sqr(1)]] }));
+    expectStop('늘리기: 채우기(fillSpecs) 대상 나라', '채우기', () => engine.mergeAreas([['check-a', { versions: { 'check-e1': homeList }, fillSpecs: [{ id: 'check-e1', zone: sqr(9), from: 1800, to: 1900 }] }], ['check-b', { versions: {}, extendable: { 'check-e1': [1800, 1950] } }]]));
+    expectStop('늘리기: export 이름 오타(extention)', "'extention'", () => engine.mergeAreas([areaA, ['check-b', { versions: {}, extention: {} }]]));
+  }
+
   // 진입 파일: 모르는 옵션, 인자 오타, 지우기 전 대조, --prune
   {
     const before = snapshot();
@@ -452,7 +495,7 @@ try {
     if (r1.status !== 0 && r1.stderr.includes(`사라질 파일 1개: ${stray}`) && snapshot() === before) ok(`생성기 밖 파일이 있으면 지우기 전에 멈춤 → ${short(firstLine(r1.stderr).trim())}`);
     else bad(`지우기 전 대조: rc=${r1.status} ${short(firstLine(r1.stderr))}`);
     const r2 = runEntry(tmp, '--prune');
-    const now = readdirSync(tmpGeo).sort();
+    const now = readdirSync(tmpGeo).filter((f) => f.endsWith('.geojson')).sort();
     const want = readdirSync(PROJECT_GEO).filter((f) => f.endsWith('.geojson')).sort();
     if (r2.status !== 0) bad(`--prune 실행 실패: rc=${r2.status} ${short(firstLine(r2.stderr))}`);
     else if (now.includes(stray)) bad('--prune인데 생성기 밖 파일이 남음');

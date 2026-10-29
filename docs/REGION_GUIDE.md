@@ -22,6 +22,7 @@
 2. **뼈대부터 만든다.** 여러 나라가 얽힌 권역은 나라별로 따로 하면 경계가 계속 어긋난다. 시대별 나라 목록(`data/entities/<권역>.yaml`)과 **조각 소유표**(기간마다 어느 조각이 어느 나라 것인지)를 권역 전체에 대해 한 번에 설계한다.
 3. **권역을 등록한다.** `area-list.mjs`에 import와 `AREAS` 한 줄, 권역 파일에 `export const source`(근거 문구, 없으면 한국사 교과서 문구가 붙는다)와 `export const gapZones`(비어 있으면 안 되는 지역)를 둔다.
    - 2026-10-21(RULES-TOOLS 작업 11): `npm run new:area -- <지역> [<시대>] --filter <필터 단위> [--prefix <앞머리->] [--title <시대·범위>]`가 이 단계(아래 두 줄 포함)와 정답표 틀을 한 번에 만든다. 이미 등록된 지역은 시대 파일 틀(`scripts/geo/areas/<지역>/<시대>.mjs`의 `export const era`)과 짝 항목 파일(`data/entities/<지역>-<시대>.yaml`)만 만들고 권역 파일이 `shared.mjs`의 `joinEras`로 합치게 잇는다. 빈 틀이라 `gen:geo` 결과는 그대로다.
+   - 2026-10-29(서아시아·북아프리카 A2-0): 앞 권역 나라(영향표에 승인된 것만)를 새 권역 땅으로 늘릴 때는 같은 id를 새로 만들지 않고, 권역 파일의 `EXTENDABLE`(joinEras의 own에 `extendable`)에 적은 뒤 시대 파일 소유표의 주인으로 쓴다. 시대 파일 목록은 과거 시대가 앞이다(`new:area`는 끝에 붙이므로 옮긴다). 원천: `scripts/geo/engine.mjs` 머리의 '앞 권역 나라 늘리기'.
    - **권역 필터 대응표에 한 줄** (2026-10-05): `src/schema/regions.ts`의 `REGION_FILTER_OF`에 `'<권역>': '<필터 단위>',`를 더한다(예: 중동을 유럽 필터에 넣으려면 `'middle-east': 'europe',`). 빠뜨리면 `build:data`·`check:data`가 그 나라 파일을 대응표에 없다고 멈춘다. 권역 값은 YAML에 적지 않고 빌드가 파일 이름에서 정한다.
    - 그 권역의 사건·전쟁 파일에 새 앞머리를 쓰면(예: `me-01-….yaml`) 같은 파일의 `STORY_FILE_PREFIXES`에도 `['me-', 'middle-east']` 한 줄을 더한다. 빠뜨리면 빌드가 멈춘다: 사건 파일은 알려진 앞머리나 한국사 시대 파일(두 자리 수로 시작, `01-gojoseon.yaml` 등)이어야 하고, 전쟁 파일은 `<영문자>-<두 자리 수>-` 꼴인데 앞머리를 모르면 오류다. 그 밖의 전쟁 파일(`imjin-war.yaml` 등)은 한국사(`korea`)로 본다.
    - 화면에 새 필터 단추가 필요하면 `REGION_FILTERS`·`REGION_FILTER_INFO`(이름·짧은 이름·지도 범위)에 더한다(DESIGN.md §6.4.2).

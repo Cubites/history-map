@@ -3932,3 +3932,131 @@
   at: [38.18, 35.03]
   reason: 1958~1961년 아랍 연합 공화국의 시리아 쪽 땅(북부 지역)은 이집트(남부 지역)와 이스라엘·요르단 땅을 사이에 두고 떨어져 있었다. 1961년 9월 시리아가 떨어져 나갔다
   sources: ["위키백과 영어판 「United Arab Republic」 https://en.wikipedia.org/wiki/United_Arab_Republic"]
+
+- entity: ottoman
+  from: 1624
+  to: 1638
+  at: [47.78, 30.51]
+  reason: 1624년 1월 사파비 왕조가 바그다드와 이라크 중·북부를 차지한 뒤 1638년 12월 오스만이 되찾기까지, 오스만 쪽 바스라(아프라시얍 가문의 세습 총독)는 사파비 땅에 막혀 사막과 걸프 바닷길로만 오스만 본토와 이어졌다
+  sources: ["위키백과 영어판 「Ottoman–Safavid War (1623–1639)」 https://en.wikipedia.org/wiki/Ottoman–Safavid_War_(1623–1639)"]
+
+# ── 서아시아·북아프리카 A2a-2 (2026-10-29): 레반트·아라비아 1453~1917 (바닷길·칠하지 않은 사막 너머의 땅) ──
+
+- entity: ottoman
+  from: 1538
+  to: 1636
+  at: [43.24, 14.9]
+  reason: 오스만 예멘 주(1538년 아덴·티하마, 1547년 고지대, 1636년 철수)는 히자즈(메카 샤리프국)와 아시르 너머에 있어 홍해 바닷길로만 오스만 본토와 이어졌다
+  sources: ["위키백과 영어판 「Yemen Eyalet」 https://en.wikipedia.org/wiki/Yemen_Eyalet"]
+
+- entity: ottoman
+  from: 1538
+  to: 1547
+  at: [44.76, 13.17]
+  reason: 1538~1546년 오스만의 아덴·라헤즈는 타이즈(1547년 정복 전)에 막혀 티하마와도 떨어진 바닷길 거점이었다
+  sources: ["위키백과 영어판 「Yemen Eyalet」 https://en.wikipedia.org/wiki/Yemen_Eyalet"]
+
+- entity: ottoman
+  from: 1552
+  to: 1670
+  at: [49.78, 25.48]
+  reason: 오스만 라흐사 주(알하사·카티프)는 바스라에서 걸프 바닷길과 사막으로 이어졌고, 사이의 사막 내륙은 이 지도에서 칠하지 않는다
+  sources: ["위키백과 영어판 「Lahsa Eyalet」 https://en.wikipedia.org/wiki/Lahsa_Eyalet"]
+
+- entity: ottoman
+  from: 1871
+  to: 1913
+  at: [49.78, 25.48]
+  reason: 1871년 미드하트 파샤의 원정으로 되찾은 알하사는 바스라 주의 산자크로 걸프 바닷길과 사막으로 이어졌다(사막 내륙은 칠하지 않음)
+  sources: ["위키백과 영어판 「Sheikhdom of Kuwait」 https://en.wikipedia.org/wiki/Sheikhdom_of_Kuwait"]
+
+- entity: ottoman
+  from: 1849
+  to: 1918
+  at: [43.24, 14.9]
+  reason: 1849년 티하마, 1872년 사나를 되찾은 오스만 예멘 주(와 아시르)는 메카 샤리프국 너머에 있어 홍해 바닷길로 이어졌다(1869년 수에즈 운하)
+  sources: ["위키백과 영어판 「Yemen Eyalet」 https://en.wikipedia.org/wiki/Yemen_Eyalet"]
+
+- entity: ottoman
+  from: 1911
+  to: 1918
+  at: [43.07, 19.32]
+  reason: 1911년 다안 조약으로 자이드파 고지대가 야흐야 이맘국의 자치 땅이 되자 아시르 고원의 오스만 수비대 땅은 예멘 남부와도 떨어졌다
+  sources: ["위키백과 영어판 「Yemen Eyalet」 https://en.wikipedia.org/wiki/Yemen_Eyalet"]
+
+- entity: emirate-of-diriyah
+  from: 1795
+  to: 1818
+  at: [49.78, 25.48]
+  reason: 제1차 사우디 국가의 알하사는 나지드와 다흐나 사막으로 이어졌고, 사막 내륙은 이 지도에서 칠하지 않는다
+  sources: ["위키백과 영어판 「Emirate of Diriyah」 https://en.wikipedia.org/wiki/Emirate_of_Diriyah"]
+
+- entity: emirate-of-nejd
+  from: 1830
+  to: 1871
+  at: [49.78, 25.48]
+  reason: 제2차 사우디 국가의 알하사는 나지드와 다흐나 사막으로 이어졌고, 사막 내륙은 이 지도에서 칠하지 않는다
+  sources: ["위키백과 영어판 「Emirate of Nejd」 https://en.wikipedia.org/wiki/Emirate_of_Nejd"]
+
+- entity: nejd
+  from: 1913
+  to: 1918
+  at: [49.78, 25.48]
+  reason: 1913년 이븐 사우드가 차지한 알하사는 나지드와 사막으로 이어졌고, 1918년 전 사막 내륙은 이 지도에서 칠하지 않는다
+  sources: ["위키백과 영어판 「Emirate of Nejd」 https://en.wikipedia.org/wiki/Emirate_of_Nejd"]
+
+- entity: yaruba-dynasty
+  from: 1650
+  to: 1749
+  at: [56.29, 26.1]
+  reason: 무산담 반도는 트루셜 해안 너머에 있는 오만의 월경지다(호르무즈 해협 남쪽 기슭)
+  sources: ["위키백과 영어판 「Musandam Governorate」 https://en.wikipedia.org/wiki/Musandam_Governorate"]
+
+- entity: yaruba-dynasty
+  from: 1650
+  to: 1749
+  at: [56.27, 25.29]
+  reason: 마다는 샤르자·푸자이라 땅에 둘러싸인 오만의 작은 월경지다
+  sources: ["위키백과 영어판 「Madha」 https://en.wikipedia.org/wiki/Madha"]
+
+- entity: busaid-oman
+  from: 1749
+  to: 1856
+  at: [56.29, 26.1]
+  reason: 무산담 반도는 트루셜 해안 너머에 있는 오만의 월경지다(호르무즈 해협 남쪽 기슭)
+  sources: ["위키백과 영어판 「Musandam Governorate」 https://en.wikipedia.org/wiki/Musandam_Governorate"]
+
+- entity: busaid-oman
+  from: 1749
+  to: 1856
+  at: [56.27, 25.29]
+  reason: 마다는 샤르자·푸자이라 땅에 둘러싸인 오만의 작은 월경지다
+  sources: ["위키백과 영어판 「Madha」 https://en.wikipedia.org/wiki/Madha"]
+
+- entity: oman
+  from: 1856
+  to: 1918
+  at: [56.29, 26.1]
+  reason: 무산담 반도는 트루셜 국가들 땅 너머에 있는 오만의 월경지다(1918년부터 줄과 같음)
+  sources: ["위키백과 영어판 「Musandam Governorate」 https://en.wikipedia.org/wiki/Musandam_Governorate"]
+
+- entity: oman
+  from: 1856
+  to: 1918
+  at: [56.27, 25.29]
+  reason: 마다는 샤르자·푸자이라 땅에 둘러싸인 오만의 작은 월경지다(1918년부터 줄과 같음)
+  sources: ["위키백과 영어판 「Madha」 https://en.wikipedia.org/wiki/Madha"]
+
+- entity: hejaz-kingdom
+  from: 1917
+  to: 1918
+  at: [35.33, 29.63]
+  reason: 1917년 7월 아랍 반란군이 차지한 아카바는 오스만 수비대가 남은 마안·타부크와 하클 해안에 막혀 홍해 바닷길로 히자즈와 이어졌다
+  sources: ["위키백과 영어판 「Kingdom of Hejaz」 https://en.wikipedia.org/wiki/Kingdom_of_Hejaz"]
+
+- entity: muhammad-ali-egypt
+  from: 1833
+  to: 1841
+  at: [43.24, 14.9]
+  reason: 무함마드 알리 왕조의 예멘 티하마(1833~1840)는 카심 왕조의 하자 해안과 아시르에 막혀 홍해 바닷길로 히자즈와 이어졌다
+  sources: ["위키백과 영어판 「Qasimid State」 https://en.wikipedia.org/wiki/Qasimid_State"]
