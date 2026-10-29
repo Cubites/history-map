@@ -3904,3 +3904,24 @@
   at: [107.42, 26.93]
   reason: 구이저우(토착 수령 땅)는 기존 송 도형(960~)이 덮는데, 960~962년에는 송이 아직 정복하지 않은 후촉(충칭)·무평군(후난)·남한(광시)과 윈난(대리) 사이에 있어 본토와 떨어져 보인다. 963년 무평군을 평정한 뒤 이어진다(실제 송 땅은 아니고 기존 도형 그대로 둠)
   sources: ["위키백과 중국어판 「荆湖之战」 https://zh.wikipedia.org/wiki/荆湖之战"]
+
+- entity: oman
+  from: 1918
+  to: null
+  at: [56.29, 26.10]
+  reason: 무산담 반도는 트루셜 국가들(지금 아랍에미리트)의 라스알카이마·푸자이라 땅 너머에 있는 오만의 월경지다(호르무즈 해협 남쪽 기슭)
+  sources: ["위키백과 영어판 「Musandam Governorate」 https://en.wikipedia.org/wiki/Musandam_Governorate"]
+
+- entity: oman
+  from: 1918
+  to: null
+  at: [56.27, 25.29]
+  reason: 마다는 샤르자·푸자이라 땅에 둘러싸인 오만의 작은 월경지다(안에 다시 박힌 샤르자의 나흐와 약 3 km²는 오만 쪽에 둠)
+  sources: ["위키백과 영어판 「Madha」 https://en.wikipedia.org/wiki/Madha"]
+
+- entity: oman
+  from: 1920
+  to: 1959
+  at: [56.27, 24.46]
+  reason: 1920년 시브 조약 뒤 내륙(다힐리야·자히라·북샤르키야)은 오만 이맘국이 다스려, 술탄의 땅은 바티나·무스카트 해안과 남쪽(수르·우스타·도파르)이 내륙으로는 끊기고 바닷길로 이어졌다. 1959년 술탄이 내륙을 평정한 뒤 이어진다
+  sources: ["위키백과 영어판 「Imamate of Oman」 https://en.wikipedia.org/wiki/Imamate_of_Oman", "위키백과 영어판 「Sultanate of Muscat and Oman」 https://en.wikipedia.org/wiki/Sultanate_of_Muscat_and_Oman"]

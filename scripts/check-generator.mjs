@@ -317,7 +317,9 @@ try {
   const without = (obj, key) => { const o = { ...obj }; delete o[key]; return o; };
   const sq = (x) => [[[[x, 0], [x + 1, 0], [x + 1, 1], [x, 0]]]]; // 시험용 작은 멀티폴리곤
 
-  expectStop(`AREAS에서 ${lastName}를 빠뜨림(파일은 남음)`, 'AREAS 목록에 없음', () => engine.mergeAreas(areas.slice(0, -1), AREA_DIR));
+  // 시대 하위 폴더가 있는 권역을 빼면 하위 폴더 검사가 먼저 멈추므로, 하위 폴더가 없는 권역 가운데 마지막 것을 뺀다(2026-10-29: 시대 폴더를 가진 middle-east가 마지막 권역이 됨)
+  const [plainName] = areas.filter(([n]) => !existsSync(path.join(AREA_DIR, n))).at(-1);
+  expectStop(`AREAS에서 ${plainName}를 빠뜨림(파일은 남음)`, 'AREAS 목록에 없음', () => engine.mergeAreas(areas.filter(([n]) => n !== plainName), AREA_DIR));
   // 권역 파일째 없어지면 이름 검사로는 못 잡고, 지우기 전 대조가 잡는다. data/geo에 geojson이 있는 권역 가운데 마지막 것을 뺀다
   // (나라 없이 gapZones만 내보내는 권역은 만드는 파일이 없어 건너뛴다)
   const filesOf = ([, a]) => [...Object.keys(a.versions), ...(a.fillSpecs ?? []).map((s) => s.id).filter((id) => !owned.has(id))].map((id) => `${id}.geojson`).filter((f) => readdirSync(tmpGeo).includes(f));

@@ -9,6 +9,7 @@
 // 단계 (채택안의 가공 파이프라인, 작업 5)
 //  1) 고르기: 지역의 나라(adm0_a3) 목록과 일부만 넣는 나라의 하위 지역(표의 include, 유럽은 러시아 유럽 쪽의 NE region 속성). 범위 상자 밖에 통째로 있는 폴리곤(프랑스 해외 데파르트망 등)은 뺀다.
 //     상자에 걸친 나머지 행정구역(유럽이면 북아프리카·중동·카자흐스탄·러시아 아시아 쪽 등)은 '이웃'으로 함께 가공해 권역 경계선을 같게 간략화하고 해안 조각을 나눌 때 쓴다(파일에는 넣지 않음)
+//     표에 under(아래층 지역)가 있으면 그 지역 행정구역 대신 이미 만든 그 지역 조각을 이웃으로 쓰고, 이 지역 조각에서 그와 겹치는 땅을 뺀다(그 arc는 4)에서 간략화하지 않음)
 //  2) id·속성: id는 ISO 3166-2 코드, 없으면 adm1_code, 그것도 알맞지 않으면 adm0_a3(조각 하나뿐인 나라). 겹치면 멈춘다
 //  3) 나라별 조각 수·단위 표(README)
 //  4) 1e-4° 격자 → 위상화(이웃 조각이 같은 arc를 씀) → 격자 때문에 스스로 엇갈린 arc 고리 자르기 → arc 단위 간략화(Visvalingam).
@@ -117,6 +118,18 @@ for (const poly of L) for (const r of poly) for (const p of r) landVertexIndex.a
 const countries10 = loadCountries('10m');
 log(`[${stamp()}] 육지 L: 폴리곤 ${L.length}개, 꼭짓점 ${L.flat(2).length}개, ${Math.round(areaKm2(L)).toLocaleString()}km²`);
 
+// 아래층 조각(표의 under, 2026-10-29 서아시아): 이미 만든 다른 지역 조각 파일을 읽어 이웃으로 쓴다(아래 build의 1)·4) 참고). 그 파일은 읽기만 한다
+const UNDER = REGION_DEF.under ? loadUnder(REGION_DEF.under) : null;
+function loadUnder(name) {
+  const file = path.join(OUT_DIR, `${name}.topo.json`);
+  if (!existsSync(file)) throw new Error(`아래층 조각 파일이 없음: ${path.relative(ROOT, file)} (먼저 npm run prep:fragments -- --region ${name})`);
+  const text = readFileSync(file, 'utf8');
+  const topo = JSON.parse(text);
+  const frags = topo.objects.fragments.geometries.map((g) => ({ id: g.id, adm0: g.properties.adm0, multi: cleanMulti(toMulti(feature(topo, g).geometry)) }))
+    .map((u) => ({ ...u, multi: u.multi.filter((poly) => !boxesApart(bboxOf([poly]), B)) })).filter((u) => u.multi.length);
+  return { name, sha: createHash('sha256').update(text).digest('hex'), frags };
+}
+
 // ── 만들기 (두 번 해서 같은지 본다: (e)) ─────────────────────
 const first = build(JSON.parse(buf.toString('utf8')), REGION_DEF, true);
 const second = build(JSON.parse(buf.toString('utf8')), REGION_DEF, false);
@@ -147,7 +160,7 @@ function sha256(text) { return createHash('sha256').update(text).digest('hex'); 
 
 function build(src, region, verbose) {
   const say = verbose ? log : () => {};
-  const report = { dropped: [], islands: 0, islandFrags: [], keptSmall: 0, graded: 0, untwisted: new Set(), untwist: { count: 0, km2: 0 }, twistLeft: [], attached: 0, attachedKm2: 0, nearest: [], neighborKm2: 0, micro: [], split: [], unassigned: [], tfix: 0 };
+  const report = { dropped: [], islands: 0, islandFrags: [], keptSmall: 0, graded: 0, untwisted: new Set(), untwist: { count: 0, km2: 0 }, twistLeft: [], attached: 0, attachedKm2: 0, nearest: [], neighborKm2: 0, micro: [], split: [], unassigned: [], tfix: 0, underCut: [] };
 
   // 1) 고르기
   // 통째로 넣는 나라(adm0)와 일부만 넣는 나라(include: NE 속성 값으로 거름)
@@ -166,6 +179,27 @@ function build(src, region, verbose) {
     if (isChosen && polys.length < all.length) report.dropped.push(`${p.adm0_a3} ${p.name}(${p.type_en ?? '-'}): 폴리곤 ${all.length - polys.length}/${all.length}개`);
     if (!polys.length) continue;
     (isChosen ? chosen : neighbors).push({ p, multi: polys });
+  }
+  // 아래층 조각(표의 under): 아래층 지역이 고르는 행정구역(그 지역의 adm0·include·drop)은 원본 대신 아래층 조각 파일의 조각(간략화·해안 맞추기를 마친 것)을 이웃으로 쓰고,
+  // 이 지역 조각에서 아래층 조각과 겹치는 땅을 뺀다. 두 지역 원본 행정구역이 서로 겹치거나 비는 곳(NE의 아라스강·세우타 등)에서도 선이 아래층 조각 바깥선 그대로가 된다.
+  // 아래층 조각이 쓰는 arc는 4)에서 간략화하지 않는다(아래층 꼭짓점을 그대로 지킴)
+  if (UNDER) {
+    const ur = fragmentRegion(UNDER.name);
+    const uAdm0 = new Set([...ur.adm0, ...(ur.drop ?? [])]);
+    const uPart = (p) => (ur.include ?? []).some((x) => x.adm0 === p.adm0_a3 && x.values.includes(p[x.prop]));
+    neighbors = neighbors.filter(({ p }) => !(uAdm0.has(p.adm0_a3) || uPart(p)));
+    const uNear = UNDER.frags.map((u) => ({ p: { adm0_a3: u.adm0, name: `${u.id}(${UNDER.name} 조각)` }, multi: u.multi, under: true }));
+    neighbors.push(...uNear);
+    for (const c of chosen) {
+      const bb = bboxOf(c.multi);
+      const hit = uNear.filter((u) => !boxesApart(bboxOf(u.multi), bb));
+      if (!hit.length) continue;
+      const km0 = areaKm2(c.multi);
+      const cut = polyclip.difference(c.multi, ...hit.map((u) => u.multi));
+      const d = km0 - areaKm2(cut);
+      if (d > 1e-6) { c.multi = cut; report.underCut.push(`${c.p.adm0_a3} ${c.p.name} ${d.toFixed(3)}km²`); }
+    }
+    say(`[${stamp()}]    아래층 조각 ${UNDER.name}: 이웃으로 ${uNear.length}개, 겹쳐서 깎은 조각 ${report.underCut.length}개(${report.underCut.join(', ') || '없음'})`);
   }
   const missing = region.adm0.filter((a) => !chosen.some((c) => c.p.adm0_a3 === a));
   if (missing.length) throw new Error(`원본에 없는 나라: ${missing.join(', ')}`);
@@ -226,6 +260,7 @@ function build(src, region, verbose) {
     if (w === 0) report.keptSmall++; else report.graded++;
     for (const a of arcsOf(geoms[i])) localWeight.set(a, Math.min(localWeight.get(a) ?? PARAMS.simplifyWeight, w));
   });
+  all.forEach((x, i) => { if (x.under) for (const a of arcsOf(geoms[i])) localWeight.set(a, 0); }); // 아래층 조각 arc는 간략화하지 않는다
   for (let round = 0; ; round++) {
     const simple = { ...pre, arcs: pre.arcs.map((arc, i) => arc.filter((p) => p[2] >= (localWeight.get(i) ?? PARAMS.simplifyWeight)).map((p) => [p[0], p[1]])) };
     all.forEach((x, i) => { x.multi = cleanMulti(toMulti(feature(simple, geoms[i]).geometry), false); });
@@ -256,9 +291,12 @@ function build(src, region, verbose) {
   if (verbose) {
     const rows = chosen.map((c) => {
       const raw = gridMulti.get(c.id).filter((poly) => c.multi.some((q) => !boxesApart(bboxOf([q]), bboxOf([poly]))));
-      const x = planarArea(polyclip.xor(raw, c.multi)), a = planarArea(raw);
+      // polyclip이 드물게 링을 잇지 못하고 멈추면(2026-10-29 서아시아에서 처음) 그 조각은 이 보고에서만 뺀다(조각 도형과 다른 단계에는 영향 없음)
+      let x;
+      try { x = planarArea(polyclip.xor(raw, c.multi)); } catch { (report.fidelitySkipped ??= []).push(c.id); return null; }
+      const a = planarArea(raw);
       return { id: c.id, x, a, r: a > 0 ? x / a : 0 };
-    }).sort((u, v) => v.r - u.r || (u.id < v.id ? -1 : 1));
+    }).filter(Boolean).sort((u, v) => v.r - u.r || (u.id < v.id ? -1 : 1));
     const med = rows.map((r) => r.r).sort((u, v) => u - v)[Math.floor(rows.length / 2)];
     report.fidelity = { mean: rows.reduce((t, r) => t + r.x, 0) / rows.reduce((t, r) => t + r.a, 0), median: med, worst: rows.slice(0, 5).map((r) => `${r.id} ${(r.r * 100).toFixed(1)}%`) };
   }
@@ -647,6 +685,7 @@ function readme(r, checks) {
   if (region.drop?.length) L.push('- 버린 나라(조각에도 이웃에도 넣지 않고, 그 땅은 해안 맞추기에서 옆 조각이 덮음): ' + region.drop.join(', '));
   for (const inc of region.include ?? []) L.push('- ' + inc.note.replaceAll('{values}', inc.values.join('·')));
   L.push('- 범위 상자 [서, 남, 동, 북] = [' + region.box.join(', ') + ']. 상자 밖에 통째로 있는 폴리곤은 뺐다: ' + (rp.dropped.join('; ') || '없음'));
+  if (UNDER) L.push('- 아래층 조각: ' + code(UNDER.name + '.topo.json') + '(sha256 ' + UNDER.sha.slice(0, 16) + '…)의 조각을 그 지역 원본 행정구역 대신 이웃으로 쓰고(그 arc는 간략화하지 않음), 이 지역 조각에서 그와 겹치는 땅을 뺐다: ' + (rp.underCut.join('; ') || '없음') + '. 이음매 선은 아래층 조각 바깥선 그대로다.');
   L.push('- 육지: world-atlas 2.0.2의 land-50m ∪ land-110m(Natural Earth 4.1.0, 빌드가 해안선으로 자를 때 쓰는 것과 같음). 구멍 조각 이름: world-atlas countries-10m.', '');
   L.push('| 매개변수 | 값 | 뜻 |', '|---|---|---|');
   for (const [k, v] of Object.entries(PARAMS)) L.push('| ' + code(k) + ' | ' + v + ' | ' + (paramDoc()[k] ?? '') + ' |');
@@ -654,7 +693,7 @@ function readme(r, checks) {
   L.push('## 가공 결과', '');
   L.push('- 고르기: ' + r.table.size + '개 나라에서 조각 ' + frags.length + '개. 육지(50m·110m)와 닿지 않아 뺀 섬 폴리곤 ' + rp.islands + '개, 그래서 통째로 빠진 조각 ' + rp.islandFrags.length + '개(' + (rp.islandFrags.join(', ') || '없음') + ').');
   L.push('- 격자·간략화: 꼭짓점 ' + num(r.rawPoints) + '개(조각별 합) → ' + num(r.simplePoints) + '개. 간략화하지 않은 작은 조각 ' + rp.keptSmall + '개, 넓이에 비례해 덜 간략화한 조각 ' + rp.graded + '개. 간략화가 링을 꼬이게 해 그 arc만 덜 간략화한 조각 ' + rp.untwisted.size + '개(' + ([...rp.untwisted].join(', ') || '없음') + '). 격자에 맞추며 스스로 엇갈린 arc 고리 ' + rp.untwist.count + '개를 잘라 냈다(' + rp.untwist.km2.toFixed(3) + 'km²).');
-  if (rp.fidelity) L.push('- 간략화 정도(격자에 맞춘 원래 도형과의 대칭차 / 원래 넓이): 전체 ' + (rp.fidelity.mean * 100).toFixed(2) + '%, 조각 가운데값 ' + (rp.fidelity.median * 100).toFixed(2) + '%, 큰 것 ' + rp.fidelity.worst.join(', ') + '.');
+  if (rp.fidelity) L.push('- 간략화 정도(격자에 맞춘 원래 도형과의 대칭차 / 원래 넓이): 전체 ' + (rp.fidelity.mean * 100).toFixed(2) + '%, 조각 가운데값 ' + (rp.fidelity.median * 100).toFixed(2) + '%, 큰 것 ' + rp.fidelity.worst.join(', ') + '.' + (rp.fidelitySkipped ? ` (polyclip이 대칭차를 계산하지 못해 뺀 조각: ${rp.fidelitySkipped.join(', ')})` : ''));
   L.push('- 해안 맞추기: 조각에 붙인 해안 조각 ' + num(rp.attached) + '개 ' + num(Math.round(rp.attachedKm2)) + 'km²(110m 육지가 만·다도해·갯벌을 덮는 곳이 대부분). 이웃 행정구역 쪽으로 보고 버린 것 ' + num(Math.round(rp.neighborKm2)) + 'km². 가까운 조각끼리 나눈 큰 해안 조각 ' + rp.split.length + '개, 닿는 조각 없이 가까운 조각에 붙인 것 ' + rp.nearest.length + '개, 붙일 곳이 없는 것 ' + rp.unassigned.length + '개, 내륙 구멍으로 만든 조각 ' + rp.micro.length + '개. 해안 조각과 조각 변의 교차점 ' + num(rp.pieceInserts) + '개를 양쪽 링에 끼웠다.');
   const bigSplit = rp.split.slice().sort((a, b) => b.km2 - a.km2).slice(0, 12);
   if (bigSplit.length) {

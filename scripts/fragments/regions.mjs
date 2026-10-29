@@ -9,6 +9,8 @@
 // - adm0: 통째로 넣는 나라(Natural Earth adm0_a3)
 // - include: 나라 일부만 넣을 때 [{ adm0, prop(NE 속성 이름), values(그 속성 값 목록), note(README 한 줄, {values}는 값을 '·'로 이은 것) }]
 // - drop: (선택) 조각에도 이웃에도 넣지 않는 나라(adm0_a3). 그 땅은 해안 맞추기에서 옆 조각이 덮는다(옆 행정구역과 국경이 맞지 않아 arc를 공유하지 못하는 아주 작은 단위)
+// - under: (선택) 아래층 지역 이름. 그 지역이 고르는 행정구역은 원본 대신 이미 만든 그 지역 조각 파일의 조각을 이웃으로 쓰고(그 arc는 간략화하지 않음), 이 지역 조각에서 그와 겹치는 땅을 뺀다.
+//   이음매 선이 아래층 조각 바깥선 그대로가 된다(아래층 파일은 읽기만 하고 바뀌지 않음, 2026-10-29 서아시아)
 // - box: 범위 상자 [서, 남, 동, 북]. 상자 밖에 통째로 있는 폴리곤은 빼고, 상자에 걸친 다른 행정구역은 '이웃'으로 함께 가공한다(파일에는 넣지 않음)
 // - idExamples: README '조각 id' 절의 보기 { iso: ISO 3166-2 보기, adm1: adm1_code 보기 글(마크다운), adm0: adm0_a3 보기 목록(없으면 []) }
 // - notes: README '따로 볼 곳' 줄(마크다운). {adm0:<조각 id>}는 그 조각의 adm0, {count:<adm0>}는 그 나라 조각 수, {param:<매개변수>}는 매개변수 값,
@@ -74,6 +76,29 @@ export const FRAGMENT_REGIONS = {
     // 조각 합에는 홍콩·마카오가 들어 있어 50m China와 그만큼(약 1,100km²) 다르다
     countries50m: { CHN: 'China' },
     checkIds: [],
+  },
+  // 서아시아·북아프리카 (2026-10-29, A1-0 등록): 이 지역 A1~A4가 이 조각과 칼선으로 나라를 만든다(docs/middle-east/00-scope.md 2절).
+  // 튀르키예·캅카스·키프로스·세우타·멜리야는 유럽 조각(europe.topo.json)이라 이웃이다. 원본 NE에서 이란과 아제르바이잔(아라스강)·모로코와 세우타 행정구역이 서로 겹치거나 비어
+  // 따로 가공하면 이음매가 어긋나므로(겹침 약 7.5km²), under로 유럽 조각을 그대로 이웃으로 쓰고 겹치는 땅을 뺀다
+  'middle-east': {
+    readme: 'README.middle-east.md',
+    under: 'europe',
+    adm0: ['IRN', 'IRQ', 'SYR', 'LBN', 'ISR', 'PSX', 'JOR', 'SAU', 'YEM', 'OMN', 'ARE', 'QAT', 'BHR', 'KWT', 'EGY', 'LBY', 'TUN', 'DZA', 'MAR', 'SAH'],
+    // 서사하라 서쪽 끝(라구에라 약 서경 17.1°)·남쪽 끝(약 북위 20.8°), 소코트라(약 북위 12.1°·동경 54.6°), 이란 동쪽 끝(약 동경 63.3°)·북쪽 끝(약 북위 39.8°), 튀니지 북쪽 끝(약 북위 37.4°)을 덮는다
+    box: [-17.5, 11.5, 63.6, 40],
+    idExamples: { iso: 'IR-07', adm1: '팔레스타인 서안 `WEB+00?`', adm0: ['SAH'] },
+    notes: [
+      '서사하라: NE v5.1.2 admin-1은 모로코가 다스리는 서쪽(장벽 서쪽)을 모로코(MAR) 조각 셋에 넣는다. 라윤-부즈두르-사키아엘함라(`MA-15`)·우에드에드다합(`MA-16`)은 서사하라 땅, 굴밈-에스세마라(`MA-14`)는 북위 27°40′ 선을 넘어 모로코 본토와 서사하라 북부(스마라)에 걸친다. 서사하라(`SAH`, 조각 {count:SAH}개)는 장벽 동쪽만이다. 법적 서사하라 경계는 생성기의 칼선으로 정한다.',
+      '골란 고원: 이스라엘이 다스리는 쪽은 이스라엘 북부 지구(`IL-Z`)에, 유엔 완충지대는 시리아 `SYR-5261`(UNDOF), 나머지는 쿠네이트라(`SY-QU`)에 들어 있다. 동예루살렘은 이스라엘 예루살렘 지구(`IL-JM`)에 들어 있고, 서안(`WEB+00?`)·가자(`GAZ+00?`)는 팔레스타인(PSX) 조각 하나씩이다.',
+      '할라이브 삼각지대는 이집트 홍해주(`EG-BA`)에 들어 있고 비르타윌은 수단(이웃)이다. 사우디–쿠웨이트 옛 중립 지대는 북쪽이 쿠웨이트 아흐마디(`KW-AH`), 남쪽이 사우디 동부주(`SA-04`)로 나뉘어 있다. 원본에서 이란 호르모즈간(`IR-23`)에 든 아부무사와 대툰브·소툰브, 바레인의 하와르 제도·무하라크(`BH-15`)는 육지(50m·110m)와 닿지 않는 섬이라 조각에 없다. 소코트라는 하드라마우트(`YE-HD`)의 둘째 폴리곤이다. 시나이는 북시나이(`EG-SIN`)·남시나이(`EG-JS`) 두 조각이다.',
+      '조각 수: 이란 {count:IRN}·이라크 {count:IRQ}·시리아 {count:SYR}·사우디 {count:SAU}·예멘 {count:YEM}·이집트 {count:EGY}·리비아 {count:LBY}·튀니지 {count:TUN}·알제리 {count:DZA}·모로코 {count:MAR}. 조각 사이의 내륙 구멍은 {micro}.',
+    ],
+    countries50m: {
+      IRN: 'Iran', IRQ: 'Iraq', SYR: 'Syria', LBN: 'Lebanon', ISR: 'Israel', PSX: 'Palestine', JOR: 'Jordan', SAU: 'Saudi Arabia', YEM: 'Yemen', OMN: 'Oman',
+      ARE: 'United Arab Emirates', QAT: 'Qatar', BHR: 'Bahrain', KWT: 'Kuwait', EGY: 'Egypt', LBY: 'Libya', TUN: 'Tunisia', DZA: 'Algeria', MAR: 'Morocco', SAH: 'W. Sahara',
+    },
+    // 서사하라 장벽 서쪽(모로코 조각)과 골란·동예루살렘(이스라엘 조각): countries-50m의 소속과 따로 견준다
+    checkIds: ['MA-15', 'MA-16', 'MA-14', 'IL-Z', 'IL-JM'],
   },
 };
 

@@ -1,0 +1,9 @@
+# test:geo 허용 목록: 이웃 나라 색(colors) — 의도한 같은 색·같은 계열이라 그대로 두는 쌍 (검사 scripts/test-geo/checks/colors.ts)
+# 한 항목: key(검사가 내는 열쇠 `colors <id작은쪽>|<id큰쪽>`), reason(이유), decided(누가 언제 정했는가). 지금 있는 옛 쌍은 data/tests/baseline/colors.txt에 둔다.
+# 서아시아 1918~1920 점령 지역(점령지 행정 셋·영국 점령 메소포타미아)은 오스만의 법적 주권이 남은 땅이라 옛 나라(오스만) 색으로 칠하고, 점령국은 관계(occupied_by)의 빗금·테두리로 구별한다.
+- { key: 'colors british-mesopotamia|oeta-east', reason: '둘 다 오스만 땅 위의 영국 점령 지역이라 옛 나라(오스만) 색, 점령국 표시로 구별', decided: '운영자 결정 7(A1 질문 창구 ②, 2026-10-29)' }
+- { key: 'colors british-mesopotamia|ottoman', reason: '점령 지역은 옛 나라(오스만) 색(standards 2절 점령 항목), 점령국 영국은 관계 표시로 구별', decided: '운영자 결정 7(A1 질문 창구 ②, 2026-10-29)' }
+- { key: 'colors oeta-east|oeta-south', reason: '둘 다 오스만 땅 위의 영국 점령 지역이라 옛 나라(오스만) 색, 점령국 표시로 구별', decided: '운영자 결정 7(A1 질문 창구 ②, 2026-10-29)' }
+- { key: 'colors oeta-east|oeta-west', reason: '오스만 땅 위의 영국·프랑스 점령 지역이라 둘 다 옛 나라(오스만) 색, 점령국 표시로 구별', decided: '운영자 결정 7(A1 질문 창구 ②, 2026-10-29)' }
+- { key: 'colors oeta-east|ottoman', reason: '점령 지역은 옛 나라(오스만) 색(standards 2절 점령 항목), 점령국 영국은 관계 표시로 구별', decided: '운영자 결정 7(A1 질문 창구 ②, 2026-10-29)' }
+- { key: 'colors oeta-south|oeta-west', reason: '오스만 땅 위의 영국·프랑스 점령 지역이라 둘 다 옛 나라(오스만) 색, 점령국 표시로 구별', decided: '운영자 결정 7(A1 질문 창구 ②, 2026-10-29)' }

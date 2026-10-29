@@ -9,7 +9,7 @@
 // 빌드 스크립트가 Node의 타입 제거 기능으로 직접 불러오므로 enum 같은 런타임 문법과 외부 패키지는 쓰지 않는다.
 
 /** 화면의 권역 필터 단위. '전체'(all)는 따로 둔다 */
-export const REGION_FILTERS = ['east-asia', 'europe'] as const;
+export const REGION_FILTERS = ['east-asia', 'europe', 'middle-east'] as const;
 export type RegionFilterUnit = (typeof REGION_FILTERS)[number];
 export type RegionFilter = 'all' | RegionFilterUnit;
 
@@ -31,10 +31,12 @@ export const REGION_FILTER_OF: Record<string, RegionFilterUnit> = {
   'china-warring-states': 'east-asia',
   'china-sixteen-kingdoms': 'east-asia',
   'china-ten-kingdoms': 'east-asia',
+  'middle-east': 'middle-east',
+  'middle-east-modern': 'middle-east',
 };
 
 /** 사건·전쟁 파일 이름 앞머리 → 권역. 앞에서부터 처음 맞는 것을 쓴다 (예: eu-01-revolutions-1789-1914.yaml → europe) */
-export const STORY_FILE_PREFIXES: [prefix: string, region: string][] = [['eu-', 'europe'], ['cn-', 'china']];
+export const STORY_FILE_PREFIXES: [prefix: string, region: string][] = [['eu-', 'europe'], ['cn-', 'china'], ['me-', 'middle-east']];
 /** 한국사 사건 파일(01-gojoseon.yaml~08-contemporary.yaml)과 앞머리가 없는 전쟁 파일(imjin-war.yaml 등)의 권역 */
 export const DEFAULT_STORY_REGION = 'korea';
 
@@ -45,6 +47,8 @@ export const REGION_FILTER_INFO: Record<RegionFilter, { label: string; short: st
   'east-asia': { label: '한국·동아시아', short: '동아시아', bounds: [[88, 18], [146, 54]] },
   // 아일랜드·포르투갈 ~ 볼가강(스탈린그라드), 크레타·키프로스 ~ 노르웨이 북단
   europe: { label: '유럽', short: '유럽', bounds: [[-11, 34], [48, 71]] },
+  // 서사하라·모로코 대서양 기슭 ~ 이란 동쪽 끝, 예멘·사헬 북쪽 가장자리 ~ 튀르키예 북쪽 해안. 유럽 범위와 겹치는 곳의 자동 고르기는 view.ts의 REGION_PICK_FIRST
+  'middle-east': { label: '서아시아·북아프리카', short: '서아시아', bounds: [[-17, 12], [63.5, 42]] },
 };
 
 /** 파일 경로에서 확장자를 뺀 이름 (경로 구분자는 / 와 \ 모두) */

@@ -1262,3 +1262,94 @@
   avoid: [아글라비드]
   note: "Aghlabid(아글라브 왕조). 아글라브 4회"
   scope: 서아시아·북아프리카 마그레브
+
+# ── 서아시아·북아프리카 A1a-1(2026-10-29, 레반트·이라크·쿠웨이트 1918~현재): 위임 통치·현대 나라 이름. 개수는 더한 날 data/entities·data/events·src grep
+- use: 트란스요르단
+  avoid: [트랜스요르단, 트랜스요르다니아]
+  note: "Transjordan(요르단강 동쪽 위임 통치령, 나라 id transjordan). 더한 날 avoid 0회"
+  scope: 서아시아·북아프리카 현대
+
+- use: 파이살
+  avoid: [페이살, 파이잘]
+  note: "Fayṣal(시리아 아랍 왕국·이라크 왕국의 파이살 1세). 더한 날 avoid 0회"
+  scope: 서아시아·북아프리카 현대
+
+- use: 압둘라
+  avoid: [아브둘라]
+  note: "ʿAbd Allāh(트란스요르단·요르단의 압둘라 1세). 국립국어원 용례 '압둘라'. 아브둘라 1회(이 단계 글에서 고침)"
+  scope: 서아시아·북아프리카 현대
+
+- use: 위임 통치령
+  avoid: [위임통치령, 위탁 통치령]
+  note: "League of Nations mandate. 저장소 '위임 통치' 띄어 씀. 더한 날 avoid 0회"
+  scope: 서아시아·북아프리카 현대
+
+- use: 골란 고원
+  avoid: [골란고원]
+  note: "Golan Heights. 더한 날 avoid 0회"
+  scope: 서아시아·북아프리카 현대
+
+- use: 가자 지구
+  avoid: [가자지구]
+  note: "Gaza Strip(지역 항목 gaza-strip). 더한 날 avoid 0회"
+  scope: 서아시아·북아프리카 현대
+
+- use: 요르단강 서안
+  avoid: [웨스트뱅크, 웨스트 뱅크]
+  note: "West Bank(지역 항목 west-bank, 이름 '요르단강 서안 지구'). 더한 날 avoid 0회"
+  scope: 서아시아·북아프리카 현대
+
+- use: 사우디아라비아
+  avoid: [사우디 아라비아, 사우디아라비야]
+  note: "Saudi Arabia. 외교부·표준국어대사전 붙여 씀. 1926~1932 이름 '히자즈·네지드 왕국'은 글로. 더한 날 avoid 0회"
+  scope: 서아시아·북아프리카 현대
+
+- use: 이븐 사우드
+  avoid: [이븐사우드, 이븐 사우디]
+  note: "Ibn Saʿūd(압둘아지즈). 더한 날 avoid 0회"
+  scope: 서아시아·북아프리카 현대
+
+- use: 네지드
+  avoid: [네즈드, 네지디]
+  note: "Najd. 나라 이름(네지드 아미르국·술탄국)은 '네지드'. 지역 이름으로 쓴 '나지드'(범위 문서·구역 파일)는 avoid에 넣지 않음. 더한 날 avoid 0회"
+  scope: 서아시아·북아프리카 현대
+
+- use: 자발 샴마르
+  avoid: [자발 샤마르, 제벨 샴마르]
+  note: "Jabal Shammar(하일의 라시드 가문 아미르국). 더한 날 avoid 0회"
+  scope: 서아시아·북아프리카 현대
+
+- use: 무타와킬
+  avoid: [무타왁킬, 무타왓킬]
+  note: "al-Mutawakkilīya(예멘 무타와킬 왕국). 더한 날 avoid 0회"
+  scope: 서아시아·북아프리카 현대
+
+- use: 이드리스 가
+  avoid: [이드리시 가]
+  note: "al-Adārisa(아시르 에미르국을 세운 가문). 마그레브의 이드리스 왕조(8~10세기)와 같은 표기, 나라 이름은 '아시르 에미르국 (이드리스 가)'. 더한 날 avoid 0회"
+  scope: 서아시아·북아프리카 현대
+
+- use: 트루셜 국가들
+  avoid: [트루시얼 국가들, 휴전 토후국]
+  note: "Trucial States. 더한 날 avoid 0회"
+  scope: 서아시아·북아프리카 현대
+
+- use: 아랍에미리트
+  avoid: [아랍 토후국 연방]
+  note: "United Arab Emirates. 외교부·위키백과 한국어판 붙여 씀. 이미 있는 띄어 쓴 꼴은 다른 권역 사건 글이라 avoid에 넣지 않음"
+  scope: 서아시아·북아프리카 현대
+
+- use: 팔라비 왕조
+  avoid: [파흘라비 왕조]
+  note: "Pahlavi. 위키백과 한국어판 정보 상자 '팔라비 왕조'(표제 '팔라비 제국', '팔레비 왕조'는 넘겨주기). 더한 날 avoid 0회"
+  scope: 서아시아·북아프리카 이란
+
+- use: 오만 이맘국
+  avoid: [오만 이마메이트]
+  note: "Imamate of Oman(1920~1959 내륙). 더한 날 avoid 0회"
+  scope: 서아시아·북아프리카 현대
+
+- use: 룹알할리
+  avoid: [루브알할리, 루브 알할리, 룹 알할리]
+  note: "al-Rubʿ al-Khālī. 정관사 알을 뒤 낱말에 붙여 씀(00-scope 6절). 더한 날 avoid 0회"
+  scope: 서아시아·북아프리카 현대

@@ -1738,12 +1738,21 @@
 
 - name: "다르가즈(이란)"
   at: [59.107, 37.443]
-  years: [1900, 1950]
+  years: [1900]
   expect: none
   region: europe
   url: "https://en.wikipedia.org/wiki/Iran–Turkmenistan_border"
   from: "세션 M1 결과노트"
-  note: "코페트다그 남쪽의 이란 땅(1881 경계, 1893 아프가니스탄까지 늘림). 러시아 손 도형의 남쪽 변을 이란 국경으로(M1) · 고치기 전 HEAD는 1881~1991 러시아 제국·소련"
+  note: "코페트다그 남쪽의 이란 땅(1881 경계, 1893 아프가니스탄까지 늘림). 러시아 손 도형의 남쪽 변을 이란 국경으로(M1) · 고치기 전 HEAD는 1881~1991 러시아 제국·소련 · 1950은 서아시아 A1a부터 팔라비 왕조(아래 줄)"
+
+- name: "다르가즈(이란)"
+  at: [59.107, 37.443]
+  years: [1950]
+  expect: pahlavi-iran
+  region: europe
+  url: "https://en.wikipedia.org/wiki/Iran–Turkmenistan_border"
+  from: "서아시아·북아프리카 A1a"
+  note: "이란 땅을 그리기 시작한 A1a부터 팔라비 왕조. 소련 도형과의 이음매(코페트다그 남쪽)가 이란 쪽에 남는지 보는 지점"
 
 - name: "바지기란(이란)"
   at: [58.418, 37.621]

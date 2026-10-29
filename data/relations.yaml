@@ -786,3 +786,48 @@
 - { type: vassal_of, subject: paeonia-kingdom, object: macedonia-kingdom, from: -357, to: -285 } # 358 필리포스 2세가 아기스를 이김, 리페이오스·파트라오스·아우돌레온(아리아노스 1.5)
 - { type: vassal_of, subject: odrysian-kingdom, object: lysimachus-kingdom, from: -312, to: -281 } # 313 세우테스 3세가 다시 복속(디오도로스 19.73), 281 리시마코스의 죽음
 - { type: vassal_of, subject: pergamon-kingdom, object: seleucid-empire, from: -280, to: -264 } # 필레타이로스가 셀레우코스 1세·안티오코스 1세의 종주를 인정, 263 에우메네스 1세의 자립(기원전 264년 표부터 따로)
+
+# ── 서아시아·북아프리카 A1a-1 (2026-10-29): 레반트·이라크·쿠웨이트 1918~현재 ──
+# 운영자 결정 2(A1 질문 창구 ①): 위임 통치령·보호국은 vassal_of 본국, 주권이 남은 군사 점령(점령지 행정·영국 점령 메소포타미아, 법적 국경 원칙의 서안·가자)은 occupied_by. 끝 해는 포함(그해 말 모습 기준)
+- { type: occupied_by, subject: oeta-south, object: uk, from: 1918, to: 1919 } # 1918-10-23 점령지 행정, 1920-07-01 민간 행정
+- { type: occupied_by, subject: oeta-west, object: france, from: 1918, to: 1919 } # 1920-09-01 대레바논 선포
+- { type: occupied_by, subject: oeta-east, object: uk, from: 1918, to: 1919 } # 영국군 최고 지휘 아래 파이살의 아랍 정부, 1920-07-24 마이살룬
+- { type: occupied_by, subject: british-mesopotamia, object: uk, from: 1918, to: 1920 } # 1921-08-23 파이살 1세 즉위
+- { type: vassal_of, subject: french-mandate-syria, object: france, from: 1920, to: 1945 } # 위임 통치, 1946-04-17 프랑스군 철수
+- { type: vassal_of, subject: greater-lebanon, object: france, from: 1920, to: 1942 } # 위임 통치, 1943-11-22 독립
+- { type: vassal_of, subject: mandatory-palestine, object: uk, from: 1920, to: 1947 } # 위임 통치, 1948-05-14 끝
+- { type: vassal_of, subject: transjordan, object: uk, from: 1921, to: 1945 } # 위임 통치, 1946-05-25 하심 왕국
+- { type: vassal_of, subject: iraq-kingdom, object: uk, from: 1921, to: 1931 } # 1922 영국-이라크 조약(위임 통치), 1932-10-03 독립
+- { type: vassal_of, subject: kuwait, object: uk, from: 1899, to: 1960 } # 1899-01-23 협정, 1961-06-19 독립
+- { type: successor_of, subject: lebanon, object: greater-lebanon, from: 1943, to: null }
+- { type: successor_of, subject: syria-republic, object: french-mandate-syria, from: 1946, to: null }
+- { type: successor_of, subject: united-arab-republic, object: syria-republic, from: 1958, to: null } # 이집트 쪽 잇기는 A1b
+- { type: successor_of, subject: syria, object: united-arab-republic, from: 1961, to: null } # 1961-09-28 이탈
+- { type: successor_of, subject: jordan, object: transjordan, from: 1946, to: null }
+- { type: successor_of, subject: iraq-kingdom, object: british-mesopotamia, from: 1921, to: null }
+- { type: successor_of, subject: iraq, object: iraq-kingdom, from: 1958, to: null }
+# 서안·가자(운영자 결정 4): 1949 휴전 협정부터 점령(가자의 1949~1957 이집트 점령 줄은 egypt 항목을 만드는 A1b가 더함), 1967년 6일 전쟁부터 이스라엘 점령, 가자는 2005년 9월 이스라엘 철수 뒤 팔레스타인(영토 없는 나라 항목)을 귀속 후보로
+- { type: occupied_by, subject: west-bank, object: jordan, from: 1949, to: 1966 } # 1950 병합 선언은 몇 나라만 승인
+- { type: occupied_by, subject: west-bank, object: israel, from: 1967, to: null }
+- { type: occupied_by, subject: gaza-strip, object: united-arab-republic, from: 1958, to: 1966 }
+- { type: occupied_by, subject: gaza-strip, object: israel, from: 1967, to: 2004 }
+- { type: claimed_by, subject: gaza-strip, object: palestine, from: 2005, to: null }
+
+# ── 서아시아·북아프리카 A1a-2 (2026-10-29): 아라비아 반도·이란 1918~현재 ──
+# 보호국·보호령은 vassal_of uk(운영자 결정 2). 무스카트 오만은 공식 보호국이 아니었으나 1891 배타 협정 뒤 사실상 보호를 받아 같은 꼴로 둔다. 끝 해는 포함(그해 말 모습 기준)
+- { type: vassal_of, subject: aden-protectorate, object: uk, from: 1886, to: 1966 } # 보호 조약들, 1937 전에는 영국령 인도가 맡음, 1967-11-30 남예멘 독립
+- { type: vassal_of, subject: oman, object: uk, from: 1891, to: 1970 } # 1891 배타 협정(사실상 보호), 1970 카부스 즉위·나라 이름 바꿈, 1971 영국의 걸프 철수
+- { type: vassal_of, subject: bahrain, object: uk, from: 1892, to: 1970 } # 1892 배타 협정, 1971-08-15 독립
+- { type: vassal_of, subject: trucial-states, object: uk, from: 1892, to: 1970 } # 1892 배타 협정, 1971-12-01 조약 끝
+- { type: vassal_of, subject: qatar, object: uk, from: 1916, to: 1970 } # 1916-11-03 조약, 1971-09 독립
+- { type: vassal_of, subject: nejd, object: uk, from: 1915, to: 1925 } # 1915-12-26 다린 조약(영국 보호), 1927-05-20 지다 조약으로 대체
+- { type: vassal_of, subject: saudi-arabia, object: uk, from: 1926, to: 1926 } # 다린 조약이 1927-05-20 지다 조약(영국의 완전 독립 인정)까지 이어짐
+- { type: vassal_of, subject: idrisid-emirate, object: saudi-arabia, from: 1926, to: 1933 } # 1926 메카 조약으로 사우디 종주권, 1930 히자즈·네지드 왕국에 편입, 1932~1933 반란 진압, 1934 타이프 조약으로 귀속이 굳어짐
+- { type: successor_of, subject: saudi-arabia, object: nejd, from: 1926, to: null } # 1926-01-08 히자즈 왕, 1932-09-23 사우디아라비아로 이름만 바뀜
+- { type: successor_of, subject: yemen-arab-republic, object: yemen-kingdom, from: 1962, to: null }
+- { type: successor_of, subject: south-yemen, object: aden-protectorate, from: 1967, to: null }
+- { type: successor_of, subject: yemen, object: yemen-arab-republic, from: 1990, to: null }
+- { type: successor_of, subject: yemen, object: south-yemen, from: 1990, to: null }
+- { type: successor_of, subject: united-arab-emirates, object: trucial-states, from: 1971, to: null }
+- { type: successor_of, subject: pahlavi-iran, object: qajar-iran, from: 1925, to: null }
+- { type: successor_of, subject: iran, object: pahlavi-iran, from: 1979, to: null }

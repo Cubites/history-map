@@ -10,7 +10,7 @@ import {
   type GeoRawProjection,
 } from 'd3-geo';
 import type { LonLat } from '../schema/index.ts';
-import { REGION_FILTERS, REGION_FILTER_INFO, type RegionFilter } from '../schema/regions.ts';
+import { REGION_FILTERS, REGION_FILTER_INFO, type RegionFilter, type RegionFilterUnit } from '../schema/regions.ts';
 
 export type Size = { width: number; height: number };
 
@@ -290,6 +290,25 @@ export function recenter(size: Size, s0: number, view: View, target: [number, nu
   return constrain(size, s0, { lon, k, ty, dx: view.dx });
 }
 
+type Bounds = [[west: number, south: number], [east: number, north: number]];
+
+/**
+ * 자동 고르기에서 REGION_FILTERS 순서보다 먼저 보는 좁은 상자 (2026-10-29, 서아시아 단위를 더하며).
+ * 유럽 범위(남 34°)와 서아시아 범위(북 42°)는 지중해 남쪽 기슭·시리아 북부·이란 서북에서 겹친다. 순서만으로는
+ * 튀니스·알제가 유럽이 되므로, 겹치는 곳 가운데 아프리카·아시아 쪽 땅만 서아시아로 먼저 고르고(안달루시아 남쪽 해안·시칠리아·
+ * 판텔레리아·몰타·키프로스·하타이·튀르키예 남동부는 상자 밖이라 유럽), 아제르바이잔 동부(바쿠·렌코란, 경도 48° 동쪽이라 유럽 범위 밖)는 유럽으로 먼저 고른다.
+ * 국경 근처 수십 km는 어느 쪽이든 될 수 있다(배율이 낮으면 차이가 보이지 않음)
+ */
+const REGION_PICK_FIRST: { id: RegionFilterUnit; box: Bounds }[] = [
+  { id: 'middle-east', box: [[-11, 34], [-2, 35.95]] }, // 모로코 북부·알제리 서부 (탕헤르 35.77°, 타리파 36.01°부터 유럽)
+  { id: 'middle-east', box: [[-2, 34], [11.5, 37.3]] }, // 알제리·튀니지 해안 (알메리아는 서경 2° 서쪽, 아길라스 37.4°·판텔레리아 동경 11.9°는 밖)
+  { id: 'middle-east', box: [[35, 34], [36.6, 35.8]] }, // 레바논 북부·시리아 해안 (키프로스 동쪽 끝 34.6°, 하타이 남쪽 끝 35.8°)
+  { id: 'middle-east', box: [[36.6, 34], [38, 36.6]] }, // 시리아 북부 알레포 쪽 (튀르키예 국경 36.6~37°)
+  { id: 'middle-east', box: [[38, 34], [44.8, 37]] }, // 유프라테스 동쪽 시리아·이라크 북부 (모술·아르빌)
+  { id: 'middle-east', box: [[44.8, 34], [48, 38.4]] }, // 이란 서북 (타브리즈·우르미아, 나히체반·아르메니아 남쪽 끝 38.8°는 밖)
+  { id: 'europe', box: [[48, 38.4], [50.8, 42]] }, // 아제르바이잔 동부 (바쿠·렌코란, 유럽 조각)
+];
+
 /** 권역 범위가 꽉 차는 배율(fitBounds)의 이 비율보다 더 축소하면 특정 권역이 아니라 세계를 보는 것으로 친다(권역 폭의 약 2배가 보일 때) */
 const REGION_ZOOM_MIN = 0.5;
 
@@ -302,10 +321,10 @@ export function regionOfView(size: Size, s0: number, view: View): RegionFilter {
   const center = invertPoint(createProjection(size, s0, view), [size.width / 2 + view.dx, size.height / 2]);
   if (!center) return 'all';
   const [lon, lat] = [normalizeLon(center[0]), center[1]];
-  for (const id of REGION_FILTERS) {
-    const bounds = REGION_FILTER_INFO[id].bounds!;
-    const [[west, south], [east, north]] = bounds;
-    if (west <= lon && lon <= east && south <= lat && lat <= north && view.k >= fitBounds(size, s0, bounds).k * REGION_ZOOM_MIN) return id;
-  }
+  const inBox = ([[west, south], [east, north]]: Bounds) => west <= lon && lon <= east && south <= lat && lat <= north;
+  // 배율 기준은 늘 그 권역 단추의 범위(REGION_FILTER_INFO.bounds)로 잰다. 자동 고르기에만 쓰는 좁은 상자를 먼저 보고, 그다음 REGION_FILTERS 순서
+  const zoomedIn = (id: RegionFilterUnit) => view.k >= fitBounds(size, s0, REGION_FILTER_INFO[id].bounds!).k * REGION_ZOOM_MIN;
+  for (const { id, box } of REGION_PICK_FIRST) if (inBox(box) && zoomedIn(id)) return id;
+  for (const id of REGION_FILTERS) if (inBox(REGION_FILTER_INFO[id].bounds!) && zoomedIn(id)) return id;
   return 'all';
 }

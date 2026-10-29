@@ -1,0 +1,3 @@
+# middle-east 권역 나라 (npm run new:area가 만든 빈 틀)
+# 나라를 넣을 때 아래 []를 지우고 - id: …로 적는다(docs/DATA_GUIDE.md). 권역 값은 파일 이름에서 정해진다(src/schema/regions.ts REGION_FILTER_OF).
+[]

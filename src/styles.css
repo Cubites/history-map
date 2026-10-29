@@ -214,7 +214,7 @@ button {
 .map-controls button:hover,
 .timeline button:hover:not(:disabled) { border-color: var(--muted); }
 .timeline button:disabled { opacity: 0.4; cursor: default; }
-/* 지도 왼쪽 아래 권역 단추(세계·동아시아·유럽)·전역 단추의 고른 상태와 연도 이동 알림 */
+/* 지도 왼쪽 아래 권역 단추(세계·동아시아·유럽·서아시아)·전역 단추의 고른 상태와 연도 이동 알림 */
 .map-controls button[aria-pressed='true'] { border-color: var(--accent); color: var(--accent); font-weight: 600; }
 .map-theaters button[aria-pressed='true'] { border-color: var(--front-line); color: var(--front-line); font-weight: 700; }
 /* 지도 왼쪽 위 "주요 사건" 단추와 그 아래 목록(2026-10-27, 지도의 전쟁 표시 ⚔ 대신). 목록이 길면 지도 높이 안에서 세로 스크롤. 휴대폰은 지도 위 검색창 아래 */
@@ -678,7 +678,7 @@ button {
   .map-zoom button { width: 30px; height: 30px; font-size: 18px; } /* 손가락으로 누르기 쉽게 */
   .map-controls button { height: 28px; padding: 0 8px; font-size: 12px; }
   /* 권역 단추(2026-10-28): 평소에는 지금 권역만, 누르면 다른 권역이 그 위에(지금 권역은 맨 아래 자리 그대로) */
-  /* 접혀 있을 때도 단추 셋을 한 칸(grid 1/1)에 겹쳐 두고 지금 권역만 보이게: 칸 폭이 가장 긴 단추(동아시아) 폭이 되어 늘 같은 크기.
+  /* 접혀 있을 때도 단추 넷을 한 칸(grid 1/1)에 겹쳐 두고 지금 권역만 보이게: 칸 폭이 가장 긴 단추(동아시아·서아시아, 네 글자) 폭이 되어 늘 같은 크기.
      펼치면 세로로 늘어서고 폭은 가장 긴 단추에 맞춰 늘어난다(flex 기본 stretch) */
   .map-regions:not([data-open]) { display: grid; }
   .map-regions:not([data-open]) button { grid-area: 1 / 1; }

@@ -1,0 +1,573 @@
+# middle-east 권역 국경 지점 정답표 (평소 지도)
+# 읽는 곳: scripts/test-geo (npm run test:geo -- --only places). 꼴은 docs/DATA_GUIDE.md의 정답표 절을 따른다. 나라·시대마다 몇 점인지는 시작 때 정한다(standards.md 9절 10).
+# 해는 천문 연도(기원전 N년 = 1-N), 새 지점은 url을 반드시 단다.
+# 서아시아 A1a-1(2026-10-29): 레반트·이라크·쿠웨이트 1918~현재. 새 항목마다 수도 1점과 바뀌는 해 앞뒤, 골란 칼선 양쪽, 튀르키예 이음매(안타키아·샨르우르파: 유럽 조각 쪽 값 그대로인지)
+
+- name: 예루살렘
+  at: [35.217, 31.768]
+  year: 1919
+  expect: oeta-south
+  url: https://en.wikipedia.org/wiki/Occupied_Enemy_Territory_Administration
+  from: 서아시아 A1a-1 결과노트
+- name: 예루살렘
+  at: [35.217, 31.768]
+  year: 1930
+  expect: mandatory-palestine
+  url: https://en.wikipedia.org/wiki/Mandatory_Palestine
+  from: 서아시아 A1a-1 결과노트
+- name: 예루살렘(서쪽)
+  at: [35.2, 31.78]
+  year: 1960
+  expect: israel
+  url: https://en.wikipedia.org/wiki/1949_Armistice_Agreements
+  from: 서아시아 A1a-1 결과노트
+- name: 베이루트
+  at: [35.501, 33.894]
+  year: 1919
+  expect: oeta-west
+  url: https://en.wikipedia.org/wiki/Occupied_Enemy_Territory_Administration
+  from: 서아시아 A1a-1 결과노트
+- name: 베이루트
+  at: [35.501, 33.894]
+  year: 1930
+  expect: greater-lebanon
+  url: https://en.wikipedia.org/wiki/Greater_Lebanon
+  from: 서아시아 A1a-1 결과노트
+- name: 베이루트
+  at: [35.501, 33.894]
+  year: 1960
+  expect: lebanon
+  url: https://en.wikipedia.org/wiki/Greater_Lebanon
+  from: 서아시아 A1a-1 결과노트
+- name: 다마스쿠스
+  at: [36.292, 33.51]
+  year: 1919
+  expect: oeta-east
+  url: https://en.wikipedia.org/wiki/Occupied_Enemy_Territory_Administration
+  from: 서아시아 A1a-1 결과노트
+- name: 다마스쿠스
+  at: [36.292, 33.51]
+  year: 1925
+  expect: french-mandate-syria
+  url: https://en.wikipedia.org/wiki/French_Mandate_for_Syria_and_the_Lebanon
+  from: 서아시아 A1a-1 결과노트
+- name: 다마스쿠스
+  at: [36.292, 33.51]
+  year: 1950
+  expect: syria-republic
+  url: https://en.wikipedia.org/wiki/Syrian_Republic_(1930–1963)
+  from: 서아시아 A1a-1 결과노트
+- name: 다마스쿠스
+  at: [36.292, 33.51]
+  year: 1959
+  expect: united-arab-republic
+  url: https://en.wikipedia.org/wiki/United_Arab_Republic
+  from: 서아시아 A1a-1 결과노트
+- name: 다마스쿠스
+  at: [36.292, 33.51]
+  year: 1990
+  expect: syria
+  url: https://en.wikipedia.org/wiki/United_Arab_Republic
+  from: 서아시아 A1a-1 결과노트
+- name: 알레포
+  at: [37.161, 36.202]
+  year: 1930
+  expect: french-mandate-syria
+  url: https://en.wikipedia.org/wiki/French_Mandate_for_Syria_and_the_Lebanon
+  from: 서아시아 A1a-1 결과노트
+- name: 라타키아
+  at: [35.782, 35.517]
+  year: 1919
+  expect: oeta-west
+  url: https://en.wikipedia.org/wiki/Occupied_Enemy_Territory_Administration
+  from: 서아시아 A1a-1 결과노트
+- name: 라타키아
+  at: [35.782, 35.517]
+  year: 1930
+  expect: french-mandate-syria
+  url: https://en.wikipedia.org/wiki/French_Mandate_for_Syria_and_the_Lebanon
+  from: 서아시아 A1a-1 결과노트
+- name: 암만
+  at: [35.928, 31.954]
+  year: 1919
+  expect: oeta-east
+  url: https://en.wikipedia.org/wiki/Occupied_Enemy_Territory_Administration
+  from: 서아시아 A1a-1 결과노트
+- name: 암만
+  at: [35.928, 31.954]
+  year: 1920
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Emirate_of_Transjordan
+  from: 서아시아 A1a-1 결과노트
+- name: 암만
+  at: [35.928, 31.954]
+  year: 1930
+  expect: transjordan
+  url: https://en.wikipedia.org/wiki/Emirate_of_Transjordan
+  from: 서아시아 A1a-1 결과노트
+- name: 암만
+  at: [35.928, 31.954]
+  year: 1960
+  expect: jordan
+  url: https://en.wikipedia.org/wiki/Emirate_of_Transjordan
+  from: 서아시아 A1a-1 결과노트
+- name: 마안
+  at: [35.736, 30.196]
+  year: 1926
+  expect: transjordan
+  url: https://en.wikipedia.org/wiki/Emirate_of_Transjordan
+  from: 서아시아 A1a-1 결과노트
+- name: 아카바
+  at: [35.006, 29.532]
+  year: 1926
+  expect: transjordan
+  url: https://en.wikipedia.org/wiki/Emirate_of_Transjordan
+  from: 서아시아 A1a-1 결과노트
+- name: 텔아비브
+  at: [34.782, 32.085]
+  year: 1930
+  expect: mandatory-palestine
+  url: https://en.wikipedia.org/wiki/Mandatory_Palestine
+  from: 서아시아 A1a-1 결과노트
+- name: 텔아비브
+  at: [34.782, 32.085]
+  year: 1950
+  expect: israel
+  url: https://en.wikipedia.org/wiki/1949_Armistice_Agreements
+  from: 서아시아 A1a-1 결과노트
+- name: 하이파
+  at: [34.99, 32.79]
+  year: 1970
+  expect: israel
+  url: https://en.wikipedia.org/wiki/1949_Armistice_Agreements
+  from: 서아시아 A1a-1 결과노트
+- name: 나블루스
+  at: [35.26, 32.22]
+  year: 1930
+  expect: mandatory-palestine
+  url: https://en.wikipedia.org/wiki/Mandatory_Palestine
+  from: 서아시아 A1a-1 결과노트
+- name: 나블루스
+  at: [35.26, 32.22]
+  year: 1948
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Jordanian_annexation_of_the_West_Bank
+  from: 서아시아 A1a-1 결과노트
+- name: 나블루스
+  at: [35.26, 32.22]
+  year: 1950
+  expect: west-bank
+  url: https://en.wikipedia.org/wiki/Jordanian_annexation_of_the_West_Bank
+  from: 서아시아 A1a-1 결과노트
+- name: 나블루스
+  at: [35.26, 32.22]
+  year: 1980
+  expect: west-bank
+  url: https://en.wikipedia.org/wiki/Jordanian_annexation_of_the_West_Bank
+  from: 서아시아 A1a-1 결과노트
+- name: 가자
+  at: [34.467, 31.502]
+  year: 1948
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/All-Palestine_Government
+  from: 서아시아 A1a-1 결과노트
+- name: 가자
+  at: [34.467, 31.502]
+  year: 1950
+  expect: gaza-strip
+  url: https://en.wikipedia.org/wiki/All-Palestine_Government
+  from: 서아시아 A1a-1 결과노트
+- name: 가자
+  at: [34.467, 31.502]
+  year: 2010
+  expect: gaza-strip
+  url: https://en.wikipedia.org/wiki/All-Palestine_Government
+  from: 서아시아 A1a-1 결과노트
+- name: 쿠네이트라
+  at: [35.824, 33.126]
+  year: 1990
+  expect: syria
+  url: https://en.wikipedia.org/wiki/Golan_Heights
+  from: 서아시아 A1a-1 결과노트
+- name: 카츠린(골란)
+  at: [35.69, 32.99]
+  year: 1990
+  expect: syria
+  url: https://en.wikipedia.org/wiki/Golan_Heights
+  from: 서아시아 A1a-1 결과노트
+- name: 마즈달샴스(골란)
+  at: [35.77, 33.27]
+  year: 2000
+  expect: syria
+  url: https://en.wikipedia.org/wiki/Golan_Heights
+  from: 서아시아 A1a-1 결과노트
+- name: 카츠린(골란)
+  at: [35.69, 32.99]
+  year: 1930
+  expect: french-mandate-syria
+  url: https://en.wikipedia.org/wiki/Golan_Heights
+  from: 서아시아 A1a-1 결과노트
+- name: 티베리아스
+  at: [35.53, 32.79]
+  year: 1990
+  expect: israel
+  url: https://en.wikipedia.org/wiki/Golan_Heights
+  from: 서아시아 A1a-1 결과노트
+- name: 사페드
+  at: [35.5, 32.965]
+  year: 1990
+  expect: israel
+  url: https://en.wikipedia.org/wiki/Golan_Heights
+  from: 서아시아 A1a-1 결과노트
+- name: 바그다드
+  at: [44.366, 33.315]
+  year: 1919
+  expect: british-mesopotamia
+  url: https://en.wikipedia.org/wiki/Mandatory_Iraq
+  from: 서아시아 A1a-1 결과노트
+- name: 바그다드
+  at: [44.366, 33.315]
+  year: 1950
+  expect: iraq-kingdom
+  url: https://en.wikipedia.org/wiki/Mandatory_Iraq
+  from: 서아시아 A1a-1 결과노트
+- name: 바그다드
+  at: [44.366, 33.315]
+  year: 1990
+  expect: iraq
+  url: https://en.wikipedia.org/wiki/Mandatory_Iraq
+  from: 서아시아 A1a-1 결과노트
+- name: 모술
+  at: [43.119, 36.34]
+  year: 1919
+  expect: british-mesopotamia
+  url: https://en.wikipedia.org/wiki/Mosul_Question
+  from: 서아시아 A1a-1 결과노트
+- name: 모술
+  at: [43.119, 36.34]
+  year: 1924
+  expect: iraq-kingdom
+  url: https://en.wikipedia.org/wiki/Mosul_Question
+  from: 서아시아 A1a-1 결과노트
+- name: 바스라
+  at: [47.81, 30.51]
+  year: 1930
+  expect: iraq-kingdom
+  url: https://en.wikipedia.org/wiki/Mandatory_Iraq
+  from: 서아시아 A1a-1 결과노트
+- name: 자코
+  at: [42.68, 37.14]
+  year: 1930
+  expect: iraq-kingdom
+  url: https://en.wikipedia.org/wiki/Mosul_Question
+  from: 서아시아 A1a-1 결과노트
+- name: 카미실리
+  at: [41.23, 37.05]
+  year: 1930
+  expect: french-mandate-syria
+  url: https://en.wikipedia.org/wiki/French_Mandate_for_Syria_and_the_Lebanon
+  from: 서아시아 A1a-1 결과노트
+- name: 쿠웨이트 시
+  at: [47.978, 29.376]
+  year: 1950
+  expect: kuwait
+  url: https://en.wikipedia.org/wiki/Kuwait
+  from: 서아시아 A1a-1 결과노트
+- name: 쿠웨이트 시
+  at: [47.978, 29.376]
+  year: 1990
+  expect: kuwait
+  url: https://en.wikipedia.org/wiki/Kuwait
+  from: 서아시아 A1a-1 결과노트
+- name: 안타키아(이음매)
+  at: [36.16, 36.2]
+  year: 1930
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Hatay_State
+  from: 서아시아 A1a-1 결과노트
+- name: 안타키아(이음매)
+  at: [36.16, 36.2]
+  year: 1950
+  expect: turkey
+  url: https://en.wikipedia.org/wiki/Hatay_State
+  from: 서아시아 A1a-1 결과노트
+- name: 샨르우르파(이음매)
+  at: [38.79, 37.16]
+  year: 1930
+  expect: turkey
+  url: https://en.wikipedia.org/wiki/French_Mandate_for_Syria_and_the_Lebanon
+  from: 서아시아 A1a-1 결과노트
+
+# 서아시아 A1a-2(2026-10-29): 아라비아 반도·이란 1918~현재. 새 항목마다 수도 1점과 바뀌는 해 앞뒤, 일부러 비운 땅(자우프·아시르 고원·호데이다·나지란)은 none, 주변 구역은 오아시스 도시만(리야드·부라이다·하일·사카카)
+- name: 마안
+  at: [35.736, 30.196]
+  year: 1923
+  expect: hejaz-kingdom
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Hejaz
+  from: 서아시아 A1a-2 결과노트
+- name: 아카바
+  at: [35.006, 29.532]
+  year: 1923
+  expect: hejaz-kingdom
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Hejaz
+  from: 서아시아 A1a-2 결과노트
+- name: 메카
+  at: [39.826, 21.389]
+  year: 1922
+  expect: hejaz-kingdom
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Hejaz
+  from: 서아시아 A1a-2 결과노트
+- name: 메카
+  at: [39.826, 21.389]
+  year: 1930
+  expect: saudi-arabia
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Hejaz_and_Nejd
+  from: 서아시아 A1a-2 결과노트
+- name: 메디나
+  at: [39.611, 24.468]
+  year: 1922
+  expect: hejaz-kingdom
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Hejaz
+  from: 서아시아 A1a-2 결과노트
+- name: 제다
+  at: [39.173, 21.543]
+  year: 1924
+  expect: hejaz-kingdom
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Hejaz
+  from: 서아시아 A1a-2 결과노트
+- name: 리야드
+  at: [46.717, 24.713]
+  year: 1919
+  expect: nejd
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Hejaz_and_Nejd
+  from: 서아시아 A1a-2 결과노트
+- name: 리야드
+  at: [46.717, 24.713]
+  year: 1960
+  expect: saudi-arabia
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Hejaz_and_Nejd
+  from: 서아시아 A1a-2 결과노트
+- name: 부라이다
+  at: [43.975, 26.326]
+  year: 1919
+  expect: nejd
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Hejaz_and_Nejd
+  from: 서아시아 A1a-2 결과노트
+- name: 호푸프
+  at: [49.586, 25.383]
+  year: 1919
+  expect: nejd
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Hejaz_and_Nejd
+  from: 서아시아 A1a-2 결과노트
+- name: 하일
+  at: [41.69, 27.524]
+  year: 1920
+  expect: jabal-shammar
+  url: https://en.wikipedia.org/wiki/Emirate_of_Jabal_Shammar
+  from: 서아시아 A1a-2 결과노트
+- name: 하일
+  at: [41.69, 27.524]
+  year: 1922
+  expect: nejd
+  url: https://en.wikipedia.org/wiki/Emirate_of_Jabal_Shammar
+  from: 서아시아 A1a-2 결과노트
+- name: 사카카(자우프)
+  at: [40.206, 29.97]
+  year: 1920
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Emirate_of_Jabal_Shammar
+  from: 서아시아 A1a-2 결과노트
+- name: 사카카(자우프)
+  at: [40.206, 29.97]
+  year: 1923
+  expect: nejd
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Hejaz_and_Nejd
+  from: 서아시아 A1a-2 결과노트
+- name: 아브하
+  at: [42.505, 18.216]
+  year: 1919
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Asir_Province
+  from: 서아시아 A1a-2 결과노트
+- name: 아브하
+  at: [42.505, 18.216]
+  year: 1921
+  expect: nejd
+  url: https://en.wikipedia.org/wiki/Asir_Province
+  from: 서아시아 A1a-2 결과노트
+- name: 사비야
+  at: [42.625, 17.149]
+  year: 1925
+  expect: idrisid-emirate
+  url: https://en.wikipedia.org/wiki/Idrisid_Emirate_of_Asir
+  from: 서아시아 A1a-2 결과노트
+- name: 사비야
+  at: [42.625, 17.149]
+  year: 1935
+  expect: saudi-arabia
+  url: https://en.wikipedia.org/wiki/Idrisid_Emirate_of_Asir
+  from: 서아시아 A1a-2 결과노트
+- name: 호데이다
+  at: [42.955, 14.798]
+  year: 1919
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Idrisid_Emirate_of_Asir
+  from: 서아시아 A1a-2 결과노트
+- name: 호데이다
+  at: [42.955, 14.798]
+  year: 1923
+  expect: idrisid-emirate
+  url: https://en.wikipedia.org/wiki/Idrisid_Emirate_of_Asir
+  from: 서아시아 A1a-2 결과노트
+- name: 호데이다
+  at: [42.955, 14.798]
+  year: 1927
+  expect: yemen-kingdom
+  url: https://en.wikipedia.org/wiki/Mutawakkilite_Kingdom_of_Yemen
+  from: 서아시아 A1a-2 결과노트
+- name: 나지란
+  at: [44.13, 17.49]
+  year: 1930
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Saudi%E2%80%93Yemeni_War_(1934)
+  from: 서아시아 A1a-2 결과노트
+- name: 나지란
+  at: [44.13, 17.49]
+  year: 1935
+  expect: saudi-arabia
+  url: https://en.wikipedia.org/wiki/Saudi%E2%80%93Yemeni_War_(1934)
+  from: 서아시아 A1a-2 결과노트
+- name: 사나
+  at: [44.207, 15.352]
+  year: 1930
+  expect: yemen-kingdom
+  url: https://en.wikipedia.org/wiki/Mutawakkilite_Kingdom_of_Yemen
+  from: 서아시아 A1a-2 결과노트
+- name: 사나
+  at: [44.207, 15.352]
+  year: 1970
+  expect: yemen-arab-republic
+  url: https://en.wikipedia.org/wiki/Yemen_Arab_Republic
+  from: 서아시아 A1a-2 결과노트
+- name: 사나
+  at: [44.207, 15.352]
+  year: 2000
+  expect: yemen
+  url: https://en.wikipedia.org/wiki/Yemen
+  from: 서아시아 A1a-2 결과노트
+- name: 타이즈
+  at: [44.02, 13.579]
+  year: 1955
+  expect: yemen-kingdom
+  url: https://en.wikipedia.org/wiki/Mutawakkilite_Kingdom_of_Yemen
+  from: 서아시아 A1a-2 결과노트
+- name: 아덴
+  at: [45.037, 12.785]
+  year: 1950
+  expect: aden-protectorate
+  url: https://en.wikipedia.org/wiki/Aden_Protectorate
+  from: 서아시아 A1a-2 결과노트
+- name: 아덴
+  at: [45.037, 12.785]
+  year: 1970
+  expect: south-yemen
+  url: https://en.wikipedia.org/wiki/South_Yemen
+  from: 서아시아 A1a-2 결과노트
+- name: 무칼라
+  at: [49.124, 14.54]
+  year: 1950
+  expect: aden-protectorate
+  url: https://en.wikipedia.org/wiki/Aden_Protectorate
+  from: 서아시아 A1a-2 결과노트
+- name: 무칼라
+  at: [49.124, 14.54]
+  year: 1980
+  expect: south-yemen
+  url: https://en.wikipedia.org/wiki/South_Yemen
+  from: 서아시아 A1a-2 결과노트
+- name: 무스카트
+  at: [58.408, 23.588]
+  year: 1950
+  expect: oman
+  url: https://en.wikipedia.org/wiki/Sultanate_of_Muscat_and_Oman
+  from: 서아시아 A1a-2 결과노트
+- name: 니즈와
+  at: [57.531, 22.933]
+  year: 1919
+  expect: oman
+  url: https://en.wikipedia.org/wiki/Imamate_of_Oman
+  from: 서아시아 A1a-2 결과노트
+- name: 니즈와
+  at: [57.531, 22.933]
+  year: 1930
+  expect: oman-imamate
+  url: https://en.wikipedia.org/wiki/Imamate_of_Oman
+  from: 서아시아 A1a-2 결과노트
+- name: 니즈와
+  at: [57.531, 22.933]
+  year: 1960
+  expect: oman
+  url: https://en.wikipedia.org/wiki/Imamate_of_Oman
+  from: 서아시아 A1a-2 결과노트
+- name: 아부다비
+  at: [54.377, 24.454]
+  year: 1950
+  expect: trucial-states
+  url: https://en.wikipedia.org/wiki/Trucial_States
+  from: 서아시아 A1a-2 결과노트
+- name: 아부다비
+  at: [54.377, 24.454]
+  year: 1975
+  expect: united-arab-emirates
+  url: https://en.wikipedia.org/wiki/Trucial_States
+  from: 서아시아 A1a-2 결과노트
+- name: 도하
+  at: [51.531, 25.286]
+  year: 1950
+  expect: qatar
+  url: https://en.wikipedia.org/wiki/Qatar
+  from: 서아시아 A1a-2 결과노트
+- name: 마나마
+  at: [50.586, 26.228]
+  year: 1950
+  expect: bahrain
+  url: https://en.wikipedia.org/wiki/Bahrain
+  from: 서아시아 A1a-2 결과노트
+- name: 테헤란
+  at: [51.389, 35.689]
+  year: 1920
+  expect: qajar-iran
+  url: https://en.wikipedia.org/wiki/Qajar_Iran
+  from: 서아시아 A1a-2 결과노트
+- name: 테헤란
+  at: [51.389, 35.689]
+  year: 1950
+  expect: pahlavi-iran
+  url: https://en.wikipedia.org/wiki/Pahlavi_Iran
+  from: 서아시아 A1a-2 결과노트
+- name: 테헤란
+  at: [51.389, 35.689]
+  year: 1990
+  expect: iran
+  url: https://en.wikipedia.org/wiki/Pahlavi_Iran
+  from: 서아시아 A1a-2 결과노트
+- name: 라슈트(길란)
+  at: [49.584, 37.28]
+  year: 1921
+  expect: qajar-iran
+  url: https://en.wikipedia.org/wiki/Persian_Socialist_Soviet_Republic
+  from: 서아시아 A1a-2 결과노트
+- name: 타브리즈
+  at: [46.292, 38.08]
+  year: 1946
+  expect: pahlavi-iran
+  url: https://en.wikipedia.org/wiki/Pahlavi_Iran
+  from: 서아시아 A1a-2 결과노트

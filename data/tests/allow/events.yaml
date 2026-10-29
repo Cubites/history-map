@@ -33,3 +33,256 @@
 - key: '200 tamna 성립'
   reason: 탐라의 성립 사건은 아직 없음 (지도 근사 해, 세션 G-①)
   decided: 세션 G·E 범위 밖, 그대로 둠 (세션 T 설계 8절 ③)
+
+# ── 서아시아·북아프리카 A1a-1 (2026-10-29): 레반트·이라크·쿠웨이트 새 항목의 성립·소멸·버전 해. 사건 묶음 me-08이 사건을 쓰며 이 줄을 지운다 ──
+- key: '1899 kuwait 성립'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1918 british-mesopotamia 성립'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1918 kuwait 버전'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1918 oeta-east 성립'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1918 oeta-south 성립'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1918 oeta-west 성립'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1920 french-mandate-syria 성립'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1920 greater-lebanon 성립'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1920 mandatory-palestine 성립'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1920 oeta-east 소멸'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1920 oeta-south 소멸'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1920 oeta-west 소멸'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1921 british-mesopotamia 소멸'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1921 iraq-kingdom 성립'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1921 transjordan 성립'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1925 transjordan 버전'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1943 greater-lebanon 소멸'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1943 lebanon 성립'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1946 french-mandate-syria 소멸'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1946 jordan 성립'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1946 syria-republic 성립'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1946 transjordan 소멸'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1948 israel 성립'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1948 mandatory-palestine 소멸'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1949 gaza-strip 성립'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1949 west-bank 성립'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1958 iraq 성립'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1958 iraq-kingdom 소멸'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1958 syria-republic 소멸'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1958 united-arab-republic 성립'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1961 syria 성립'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1971 united-arab-republic 소멸'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1988 palestine 성립'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+
+# ── 서아시아·북아프리카 A1a-2 (2026-10-29): 아라비아 반도·이란 새 항목의 성립·소멸·버전 해. 사건 묶음 me-08이 사건을 쓰며 이 줄을 지운다 ──
+- key: '1789 qajar-iran 성립'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1836 jabal-shammar 성립'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1853 trucial-states 성립'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1856 oman 성립'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1886 aden-protectorate 성립'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1892 bahrain 성립'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1902 nejd 성립'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1907 idrisid-emirate 성립'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1916 hejaz-kingdom 성립'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1916 qatar 성립'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1918 aden-protectorate 버전'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1918 hejaz-kingdom 버전'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1918 idrisid-emirate 버전'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1918 jabal-shammar 버전'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1918 nejd 버전'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1918 oman 버전'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1918 qajar-iran 버전'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1918 qatar 버전'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1918 trucial-states 버전'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1918 yemen-kingdom 성립'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1920 nejd 버전'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1920 oman 버전'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1920 oman-imamate 성립'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1921 idrisid-emirate 버전'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1921 jabal-shammar 소멸'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1921 nejd 버전'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1922 nejd 버전'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1925 hejaz-kingdom 소멸'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1925 idrisid-emirate 버전'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1925 nejd 버전'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1925 nejd 소멸'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1925 pahlavi-iran 성립'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1925 qajar-iran 소멸'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1925 yemen-kingdom 버전'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1926 saudi-arabia 성립'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1934 idrisid-emirate 소멸'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1934 saudi-arabia 버전'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1959 oman 버전'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1959 oman-imamate 소멸'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1962 yemen-arab-republic 성립'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1962 yemen-kingdom 소멸'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1967 aden-protectorate 소멸'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1967 south-yemen 성립'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1971 trucial-states 소멸'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1971 united-arab-emirates 성립'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1979 iran 성립'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1979 pahlavi-iran 소멸'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1990 south-yemen 소멸'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1990 yemen 성립'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
+- key: '1990 yemen-arab-republic 소멸'
+  reason: me-08 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A1 승인
