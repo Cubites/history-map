@@ -1741,3 +1741,221 @@
   avoid: [우크바 이븐 나피으]
   note: "ʿUqba ibn Nāfiʿ(카이라완을 세운 정복자)"
   scope: 서아시아·북아프리카 이슬람
+
+# ── 서아시아·북아프리카 A3b-3(2026-10-30, 이집트·레반트·아라비아 1000~1452): 십자군 시대 왕조·인물·지명. 개수는 더한 날 data/entities·data/events·src grep(avoid 모두 0회) ──
+- use: 미르다스 왕조
+  avoid: [미르다시드]
+  note: "Mirdasids(알레포, 1025~1080)"
+  scope: 서아시아·북아프리카 이슬람
+
+- use: 루울루
+  avoid: [룰루 알카비르, 루루 알카비르]
+  note: "Lu'lu' al-Kabīr(알레포 함단 왕조의 가신, 1004~1008/9). 모술의 바드르 앗딘 루울루와 다른 사람"
+  scope: 서아시아·북아프리카 이슬람
+
+- use: 시리아 셀주크 왕조
+  avoid: [시리아 셀주크조]
+  note: "Seljuks of Syria(투투시 가문, 다마스쿠스·알레포)"
+  scope: 서아시아·북아프리카 이슬람
+
+- use: 투투시
+  avoid: [투투쉬, 투튜시]
+  note: "Tutush I"
+  scope: 서아시아·북아프리카 이슬람
+
+- use: 투그테긴
+  avoid: [투그테킨, 토그테긴]
+  note: "Ṭughtakīn(부리 왕조를 연 다마스쿠스 아타베그)"
+  scope: 서아시아·북아프리카 이슬람
+
+- use: 부리 왕조
+  avoid: [부리드 왕조]
+  note: "Burids(다마스쿠스, 1104~1154)"
+  scope: 서아시아·북아프리카 이슬람
+
+- use: 아르투크 왕조
+  avoid: [아르투키드, 아르투크조]
+  note: "Artuqids(마르딘·히슨 카이파, 알레포 1118~1128)"
+  scope: 서아시아·북아프리카 이슬람
+
+- use: 장기 왕조
+  avoid: [장기드, 잔기 왕조, 젠기 왕조]
+  note: "Zengids. 인물은 이마드 앗딘 장기"
+  scope: 서아시아·북아프리카 이슬람
+
+- use: 누르 앗딘
+  avoid: [누레딘, 누르 알딘]
+  note: "Nūr al-Dīn Maḥmūd(장기 왕조, 1146~1174)"
+  scope: 서아시아·북아프리카 이슬람
+
+- use: 오트르조르댕
+  avoid: [외트르조르댕, 오트레요르단]
+  note: "Oultrejordain(요르단 건너편의 십자군 영주령, 카라크·몽레알)"
+  scope: 서아시아·북아프리카 이슬람
+
+- use: 라믈라 조약
+  avoid: [람라 조약]
+  note: "Treaty of Ramla(1192)"
+  scope: 서아시아·북아프리카 이슬람
+
+- use: 야파 조약
+  avoid: [자파 조약]
+  note: "Treaty of Jaffa(1229)"
+  scope: 서아시아·북아프리카 이슬람
+
+- use: 나자흐 왕조
+  avoid: [나자히드, 나자하이드]
+  note: "Najahids(자비드, 1022~1158)"
+  scope: 서아시아·북아프리카 이슬람
+
+- use: 술라이흐 왕조
+  avoid: [술라이히드, 술레이히 왕조]
+  note: "Sulayhids(예멘, 1047~1138). 인물 이름은 알리 알술라이히"
+  scope: 서아시아·북아프리카 이슬람
+
+- use: 주라이 왕조
+  avoid: [주라이드, 주라이이드]
+  note: "Zurayids(아덴, 1083~1174)"
+  scope: 서아시아·북아프리카 이슬람
+
+- use: 마흐디 왕조
+  avoid: [마흐디드]
+  note: "Mahdids(자비드, 1159~1174). 북아프리카 도시 마흐디야와 다름"
+  scope: 서아시아·북아프리카 이슬람
+
+- use: 라술 왕조
+  avoid: [라술리드, 라술조]
+  note: "Rasulids(예멘, 1229~1454)"
+  scope: 서아시아·북아프리카 이슬람
+
+- use: 우윤 왕조
+  avoid: [우유니드]
+  note: "Uyunids(알하사, 1077~1253)"
+  scope: 서아시아·북아프리카 이슬람
+
+- use: 우스푸르 왕조
+  avoid: [우스푸리드]
+  note: "Usfurids(알하사, 1253~1320)"
+  scope: 서아시아·북아프리카 이슬람
+
+- use: 자르완 왕조
+  avoid: [자르와니드]
+  note: "Jarwanids(카티프, 1320~1417)"
+  scope: 서아시아·북아프리카 이슬람
+
+# ── 서아시아·북아프리카 A3b-4a(2026-10-30, 이라크·이란 1000~1220): 셀주크 시대 이란·이라크 왕조. 개수는 더한 날 data/entities·data/events·src grep(avoid 모두 0회) ──
+- use: 가즈니 왕조
+  avoid: [가즈나 왕조, 가즈나비드, 가즈나조]
+  note: "Ghaznavids(977~1186). 지명 가즈니에 맞춤(notes-4 13절)"
+  scope: 서아시아·북아프리카 이란
+
+- use: 카쿠이 왕조
+  avoid: [카쿠야 왕조, 카쿠이드]
+  note: "Kakuyids(이스파한·야즈드, 1008~1141)"
+  scope: 서아시아·북아프리카 이란
+
+- use: 안나즈 왕조
+  avoid: [안나지드]
+  note: "Annazids(훌완, 990~1117)"
+  scope: 서아시아·북아프리카 이란
+
+- use: 마즈야드 왕조
+  avoid: [마지야드, 마자디드]
+  note: "Mazyadids / Banu Mazyad(힐라, 961~1163)"
+  scope: 서아시아·북아프리카 이슬람
+
+- use: 바반드 왕조
+  avoid: [바반디드, 바완드 왕조]
+  note: "Bavand dynasty(타바리스탄, 651~1349)"
+  scope: 서아시아·북아프리카 이란
+
+- use: 케르만 셀주크 술탄국
+  avoid: [키르만 셀주크]
+  note: "Kerman Seljuk Sultanate(1041~1187). 지명 케르만"
+  scope: 서아시아·북아프리카 튀르크
+
+- use: 이라크 셀주크 술탄국
+  avoid: [이라크 셀주크조]
+  note: "Seljuk Sultanate of Iraq(하마단, 1118~1194)"
+  scope: 서아시아·북아프리카 튀르크
+
+- use: 엘디구즈 왕조
+  avoid: [일데니즈, 엘디귀즈]
+  note: "Eldiguzids(아제르바이잔 아타베그, 1136~1225)"
+  scope: 서아시아·북아프리카 튀르크
+
+- use: 살구르 왕조
+  avoid: [살가르 왕조, 살구리드]
+  note: "Salghurids(파르스 아타베그, 1148~1282)"
+  scope: 서아시아·북아프리카 튀르크
+
+- use: 하자라스프 왕조
+  avoid: [하자라습]
+  note: "Hazaraspids(대 루르 아타베그, 1115~1424)"
+  scope: 서아시아·북아프리카 이란
+
+- use: 호라즘 제국
+  avoid: [호레즘, 화라즘]
+  note: "Khwarazmian Empire(1077~1231). 저장소 '호라즘' 12회"
+  scope: 서아시아·북아프리카 튀르크
+
+- use: 잘랄 앗딘
+  avoid: [잘랄 알딘, 잘랄웃딘]
+  note: "Jalal al-Din Mingburnu(호라즘 마지막 술탄). 정관사 '앗'(6절 인명 규칙), 저장소 9회"
+  scope: 서아시아·북아프리카 튀르크
+
+# ── 서아시아·북아프리카 A3b-4b(2026-10-30, 이라크·이란 1221~1452): 일 칸국 뒤 왕조·인물·지명. 개수는 더한 날 data/entities·data/events·src grep(avoid 모두 0회) ──
+- use: 쿠틀루그 칸 왕조
+  avoid: [쿠틀룩 한, 쿠틀룩칸]
+  note: "Qutlugh-Khanids(케르만, 1222~1306). 저장소 '쿠틀루그' 4회"
+  scope: 서아시아·북아프리카 이란
+
+- use: 루울루 정권
+  avoid: [룰루 정권, 루루 정권]
+  note: "Lu'lu'id(모술, 1234~1262). 인명 바드르 앗딘 루울루(사전 '루울루'와 같은 표기, 알레포의 루울루 알카비르와 다른 사람)"
+  scope: 서아시아·북아프리카 이라크
+
+- use: 잘라이르 술탄국
+  avoid: [잘라이리드, 잘라이르조]
+  note: "Jalayirid Sultanate(1335~1432). 저장소 '잘라이르' 6회(A2 글의 '잘라이르 왕조'는 그대로 둠)"
+  scope: 서아시아·북아프리카 몽골
+
+- use: 초바니 왕조
+  avoid: [추판 왕조, 추파니, 초반조]
+  note: "Chobanids(1338~1357). 조상 장군의 이름은 '초반'"
+  scope: 서아시아·북아프리카 몽골
+
+- use: 인주 왕조
+  avoid: [인주드, 인주조]
+  note: "Injuids(파르스, 1335~1357)"
+  scope: 서아시아·북아프리카 이란
+
+- use: 무자파르 왕조
+  avoid: [무자파리드, 모자파르 왕조]
+  note: "Muzaffarids(1314~1393). 저장소 '무자파르' 7회"
+  scope: 서아시아·북아프리카 이란
+
+- use: 사르바다르 왕조
+  avoid: [사르베다르, 사르바다리드]
+  note: "Sarbadars(세브제바르, 1337~1381)"
+  scope: 서아시아·북아프리카 이란
+
+- use: 하산 부주르그
+  avoid: [하산 보조르그, 하산 부즈루그]
+  note: "Hasan Buzurg(잘라이르 술탄국을 세움)"
+  scope: 서아시아·북아프리카 몽골
+
+- use: 하산 쿠첵
+  avoid: [하산 쿠착, 하산 퀴췩]
+  note: "Hasan Kuchak(초바니 왕조). 저장소 2회"
+  scope: 서아시아·북아프리카 몽골
+
+- use: 술타니예
+  avoid: [술타니야, 솔타니예]
+  note: "Soltaniyeh(일 칸국 도읍 1306~). 저장소 5회"
+  scope: 서아시아·북아프리카 이란
+
+- use: 세브제바르
+  avoid: [사브제바르, 사브자바르]
+  note: "Sabzevar(사르바다르 도읍). 저장소 3회"
+  scope: 서아시아·북아프리카 이란

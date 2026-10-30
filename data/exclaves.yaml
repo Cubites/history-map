@@ -4411,3 +4411,75 @@
   at: [47.17, 37.77]
   reason: 642년 니하반드 전투 뒤 사산 제국의 아제르바이잔은 정통 칼리프국이 차지한 자발(메디아)에 막혀 동쪽 땅과 떨어졌다(643~645년 정복됨)
   sources: ["위키백과 영어판 「Muslim conquest of Azerbaijan」 https://en.wikipedia.org/wiki/Muslim_conquest_of_Azerbaijan", "위키백과 영어판 「Muslim conquest of Persia」 https://en.wikipedia.org/wiki/Muslim_conquest_of_Persia"]
+
+# ── 서아시아·북아프리카 A3b (2026-10-30): 1000~1452 (칠하지 않은 땅·십자군 국가 너머의 땅, 정복 순서로 떨어진 땅) ──
+
+- entity: fatimid-caliphate
+  from: 1099
+  to: 1109
+  at: [35.82, 34.17]
+  reason: 1099년 예루살렘 왕국이 팔레스타인 해안을 차지한 뒤 파티마 쪽 레바논 해안 도시(티레·시돈·베이루트·트리폴리)는 이집트와 바닷길로만 이어졌다(1109~1110년 십자군에게 넘어감)
+  sources: ["위키백과 영어판 「Fatimid Caliphate」 https://en.wikipedia.org/wiki/Fatimid_Caliphate", "위키백과 영어판 「Kingdom of Jerusalem」 https://en.wikipedia.org/wiki/Kingdom_of_Jerusalem"]
+
+- entity: fatimid-caliphate
+  from: 1109
+  to: 1110
+  at: [35.47, 33.42]
+  reason: 위와 같음(1109년 트리폴리 함락 뒤 남은 베이루트·시돈·티레 해안)
+  sources: ["위키백과 영어판 「Kingdom of Jerusalem」 https://en.wikipedia.org/wiki/Kingdom_of_Jerusalem"]
+
+- entity: uqaylid-dynasty
+  from: 1080
+  to: 1086
+  at: [37.47, 36.07]
+  reason: 1080~1085년 우카일 왕조의 알레포는 비운 라까(유프라테스 중류)와 아나톨리아 남동부(칠하지 않은 유럽 조각) 너머에 있어 모술·자지라 본토와 땅으로 이어지지 않게 보인다
+  sources: ["위키백과 영어판 「Mirdasid dynasty」 https://en.wikipedia.org/wiki/Mirdasid_dynasty"]
+
+- entity: zengid-dynasty
+  from: 1128
+  to: 1138
+  at: [37.47, 36.07]
+  reason: 장기 왕조의 알레포와 모술은 에데사·하란 쪽 자지라(아나톨리아 남동부, 칠하지 않은 유럽 조각)와 비운 하사카·데이르에조르로 이어졌다(시리아 자지라는 라까만 칠함, 운영자 결정 창구 ② 15)
+  sources: ["위키백과 영어판 「Zengid dynasty」 https://en.wikipedia.org/wiki/Zengid_dynasty"]
+
+- entity: zengid-dynasty
+  from: 1138
+  to: 1174
+  at: [42.17, 35.87]
+  reason: 위와 같음(1138년 홈스·하마, 1154년 다마스쿠스를 더해 시리아 쪽이 커진 뒤 모술 쪽이 떨어진 조각으로 보임)
+  sources: ["위키백과 영어판 「Zengid dynasty」 https://en.wikipedia.org/wiki/Zengid_dynasty"]
+
+- entity: zengid-dynasty
+  from: 1174
+  to: 1183
+  at: [38.24, 36.15]
+  reason: 위와 같음(1174년 다마스쿠스·홈스·하마를 살라딘에게 잃은 뒤 알레포·라까가 떨어진 조각)
+  sources: ["위키백과 영어판 「Zengid dynasty」 https://en.wikipedia.org/wiki/Zengid_dynasty"]
+
+- entity: ayyubid-dynasty
+  from: 1174
+  to: 1187
+  at: [37.31, 33.32]
+  reason: 1174~1186년 아이유브 왕조의 시리아는 예루살렘 왕국(네게브·오트르조르댕·아카바 포함)이 가로막아 이집트와 시나이 사막길·바닷길로만 이어졌다(1187년 하틴 뒤 이어짐)
+  sources: ["위키백과 영어판 「Ayyubid dynasty」 https://en.wikipedia.org/wiki/Ayyubid_dynasty", "위키백과 영어판 「Lordship of Oultrejordain」 https://en.wikipedia.org/wiki/Lordship_of_Oultrejordain"]
+
+- entity: buyid-dynasty
+  from: 1023
+  to: 1029
+  at: [51.32, 35.04]
+  reason: 1023년 카쿠이 왕조가 하마단을 차지한 뒤 라이의 부와이 갈래(마즈드 앗다울라)는 이라크·파르스의 부와이 땅과 카쿠이·지야르 땅을 사이에 두고 떨어졌다(1029년 가즈니 왕조가 라이를 차지함)
+  sources: ["위키백과 영어판 「Buyid dynasty」 https://en.wikipedia.org/wiki/Buyid_dynasty", "위키백과 영어판 「Kakuyids」 https://en.wikipedia.org/wiki/Kakuyids"]
+
+- entity: ghaznavid-empire
+  from: 1029
+  to: 1040
+  at: [51.32, 35.04]
+  reason: 1029년 마흐무드가 라이를 차지한 뒤 가즈니 왕조의 라이·카즈빈은 호라산과 가신 지야르 왕조의 쿠미스를 사이에 두고 떨어졌다(1040년 단다나칸 전투 뒤 셀주크에 넘어감)
+  sources: ["위키백과 영어판 「Ghaznavid Empire」 https://en.wikipedia.org/wiki/Ghaznavid_Empire", "위키백과 영어판 「Buyid dynasty」 https://en.wikipedia.org/wiki/Buyid_dynasty"]
+
+- entity: mongol-empire
+  from: 1221
+  to: 1260
+  at: [58.80, 36.21]
+  reason: 1221~1259년 몽골 제국의 이란·이라크 땅(호라즘 정복 뒤 굳은 땅, 1258년 이라크)은 몽골 초원 본토와 아직 그리지 않은 중앙아시아(3묶음)를 사이에 두고 떨어져 보인다(영향표 A3 mongol-empire 줄, 1260년부터 일 칸국)
+  sources: ["위키백과 영어판 「Khwarazmian Empire」 https://en.wikipedia.org/wiki/Khwarazmian_Empire", "위키백과 영어판 「Chormaqan」 https://en.wikipedia.org/wiki/Chormaqan", "위키백과 영어판 「Ilkhanate」 https://en.wikipedia.org/wiki/Ilkhanate"]

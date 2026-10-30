@@ -3028,3 +3028,1079 @@
   expect: ikhshidid-dynasty
   url: https://en.wikipedia.org/wiki/Ikhshidid_dynasty
   from: 서아시아 A3a 반영 결과노트
+
+# ── 서아시아·북아프리카 A3b-3 (2026-10-30): 이집트·레반트·아라비아 1000~1452 — 새 항목 수도·바뀌는 해 앞뒤·십자군 해안·빈 땅 ──
+- name: 카이로
+  at: [31.24, 30.04]
+  year: 1050
+  expect: fatimid-caliphate
+  url: https://en.wikipedia.org/wiki/Fatimid_Caliphate
+  from: 서아시아 A3b-3 결과노트
+- name: 카이로
+  at: [31.24, 30.04]
+  year: 1200
+  expect: ayyubid-dynasty
+  url: https://en.wikipedia.org/wiki/Ayyubid_dynasty
+  from: 서아시아 A3b-3 결과노트
+- name: 카이로
+  at: [31.24, 30.04]
+  year: 1300
+  expect: mamluk-sultanate
+  url: https://en.wikipedia.org/wiki/Mamluk_Sultanate
+  from: 서아시아 A3b-3 결과노트
+- name: 알렉산드리아
+  at: [29.92, 31.20]
+  year: 1100
+  expect: fatimid-caliphate
+  url: https://en.wikipedia.org/wiki/Fatimid_Caliphate
+  from: 서아시아 A3b-3 결과노트
+- name: 다마스쿠스
+  at: [36.29, 33.51]
+  year: 1050
+  expect: fatimid-caliphate
+  url: https://en.wikipedia.org/wiki/Fatimid_Caliphate
+  from: 서아시아 A3b-3 결과노트
+- name: 다마스쿠스
+  at: [36.29, 33.51]
+  year: 1090
+  expect: seljuks-of-syria
+  url: https://en.wikipedia.org/wiki/Tutush_I
+  from: 서아시아 A3b-3 결과노트
+- name: 다마스쿠스
+  at: [36.29, 33.51]
+  year: 1130
+  expect: burid-dynasty
+  url: https://en.wikipedia.org/wiki/Burid_dynasty
+  from: 서아시아 A3b-3 결과노트
+- name: 다마스쿠스
+  at: [36.29, 33.51]
+  year: 1160
+  expect: zengid-dynasty
+  url: https://en.wikipedia.org/wiki/Zengid_dynasty
+  from: 서아시아 A3b-3 결과노트
+- name: 다마스쿠스
+  at: [36.29, 33.51]
+  year: 1200
+  expect: ayyubid-dynasty
+  url: https://en.wikipedia.org/wiki/Ayyubid_dynasty
+  from: 서아시아 A3b-3 결과노트
+- name: 다마스쿠스
+  at: [36.29, 33.51]
+  year: 1300
+  expect: mamluk-sultanate
+  url: https://en.wikipedia.org/wiki/Mamluk_Sultanate
+  from: 서아시아 A3b-3 결과노트
+- name: 예루살렘
+  at: [35.23, 31.78]
+  year: 1050
+  expect: fatimid-caliphate
+  url: https://en.wikipedia.org/wiki/Fatimid_Caliphate
+  from: 서아시아 A3b-3 결과노트
+- name: 예루살렘
+  at: [35.23, 31.78]
+  year: 1090
+  expect: seljuks-of-syria
+  url: https://en.wikipedia.org/wiki/Tutush_I
+  from: 서아시아 A3b-3 결과노트
+- name: 예루살렘
+  at: [35.23, 31.78]
+  year: 1150
+  expect: jerusalem-kingdom
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Jerusalem
+  from: 서아시아 A3b-3 결과노트
+- name: 예루살렘
+  at: [35.23, 31.78]
+  year: 1200
+  expect: ayyubid-dynasty
+  url: https://en.wikipedia.org/wiki/Ayyubid_dynasty
+  from: 서아시아 A3b-3 결과노트
+- name: 예루살렘
+  at: [35.23, 31.78]
+  year: 1300
+  expect: mamluk-sultanate
+  url: https://en.wikipedia.org/wiki/Mamluk_Sultanate
+  from: 서아시아 A3b-3 결과노트
+- name: 아크레
+  at: [35.07, 32.92]
+  year: 1250
+  expect: jerusalem-kingdom
+  url: https://en.wikipedia.org/wiki/Treaty_of_Ramla
+  from: 서아시아 A3b-3 결과노트
+- name: 아크레
+  at: [35.07, 32.92]
+  year: 1300
+  expect: mamluk-sultanate
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Jerusalem
+  from: 서아시아 A3b-3 결과노트
+- name: 야파
+  at: [34.76, 32.05]
+  year: 1200
+  expect: jerusalem-kingdom
+  url: https://en.wikipedia.org/wiki/Treaty_of_Ramla
+  from: 서아시아 A3b-3 결과노트
+- name: 베이루트
+  at: [35.50, 33.89]
+  year: 1150
+  expect: jerusalem-kingdom
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Jerusalem
+  from: 서아시아 A3b-3 결과노트
+- name: 나블루스
+  at: [35.26, 32.22]
+  year: 1200
+  expect: ayyubid-dynasty
+  url: https://en.wikipedia.org/wiki/Treaty_of_Ramla
+  from: 서아시아 A3b-3 결과노트
+- name: 카라크
+  at: [35.70, 31.18]
+  year: 1150
+  expect: jerusalem-kingdom
+  url: https://en.wikipedia.org/wiki/Lordship_of_Oultrejordain
+  from: 서아시아 A3b-3 결과노트
+- name: 카라크
+  at: [35.70, 31.18]
+  year: 1200
+  expect: ayyubid-dynasty
+  url: https://en.wikipedia.org/wiki/Lordship_of_Oultrejordain
+  from: 서아시아 A3b-3 결과노트
+- name: 트리폴리(레바논)
+  at: [35.85, 34.44]
+  year: 1200
+  expect: tripoli-county
+  url: https://en.wikipedia.org/wiki/County_of_Tripoli
+  from: 서아시아 A3b-3 결과노트
+- name: 타르투스
+  at: [35.89, 34.89]
+  year: 1200
+  expect: tripoli-county
+  url: https://en.wikipedia.org/wiki/County_of_Tripoli
+  from: 서아시아 A3b-3 결과노트
+- name: 트리폴리(레바논)
+  at: [35.85, 34.44]
+  year: 1300
+  expect: mamluk-sultanate
+  url: https://en.wikipedia.org/wiki/County_of_Tripoli
+  from: 서아시아 A3b-3 결과노트
+- name: 알레포
+  at: [37.16, 36.20]
+  year: 1010
+  expect: luluids-of-aleppo
+  url: https://en.wikipedia.org/wiki/Lu'lu'_al-Kabir
+  from: 서아시아 A3b-3 결과노트
+- name: 알레포
+  at: [37.16, 36.20]
+  year: 1030
+  expect: mirdasid-dynasty
+  url: https://en.wikipedia.org/wiki/Mirdasid_dynasty
+  from: 서아시아 A3b-3 결과노트
+- name: 알레포
+  at: [37.16, 36.20]
+  year: 1082
+  expect: uqaylid-dynasty
+  url: https://en.wikipedia.org/wiki/Mirdasid_dynasty
+  from: 서아시아 A3b-3 결과노트
+- name: 알레포
+  at: [37.16, 36.20]
+  year: 1090
+  expect: seljuks-of-syria
+  url: https://en.wikipedia.org/wiki/Tutush_I
+  from: 서아시아 A3b-3 결과노트
+- name: 알레포
+  at: [37.16, 36.20]
+  year: 1120
+  expect: artuqid-dynasty
+  url: https://en.wikipedia.org/wiki/Ilghazi
+  from: 서아시아 A3b-3 결과노트
+- name: 알레포
+  at: [37.16, 36.20]
+  year: 1150
+  expect: zengid-dynasty
+  url: https://en.wikipedia.org/wiki/Zengid_dynasty
+  from: 서아시아 A3b-3 결과노트
+- name: 알레포
+  at: [37.16, 36.20]
+  year: 1200
+  expect: ayyubid-dynasty
+  url: https://en.wikipedia.org/wiki/Ayyubid_dynasty
+  from: 서아시아 A3b-3 결과노트
+- name: 알레포
+  at: [37.16, 36.20]
+  year: 1300
+  expect: mamluk-sultanate
+  url: https://en.wikipedia.org/wiki/Mamluk_Sultanate
+  from: 서아시아 A3b-3 결과노트
+- name: 홈스
+  at: [36.72, 34.73]
+  year: 1050
+  expect: fatimid-caliphate
+  url: https://en.wikipedia.org/wiki/Fatimid_Caliphate
+  from: 서아시아 A3b-3 결과노트
+- name: 홈스
+  at: [36.72, 34.73]
+  year: 1120
+  expect: burid-dynasty
+  url: https://en.wikipedia.org/wiki/Burid_dynasty
+  from: 서아시아 A3b-3 결과노트
+- name: 홈스
+  at: [36.72, 34.73]
+  year: 1160
+  expect: zengid-dynasty
+  url: https://en.wikipedia.org/wiki/Zengid_dynasty
+  from: 서아시아 A3b-3 결과노트
+- name: 라까
+  at: [39.01, 35.95]
+  year: 1150
+  expect: zengid-dynasty
+  url: https://en.wikipedia.org/wiki/Zengid_dynasty
+  from: 서아시아 A3b-3 결과노트
+- name: 모술
+  at: [43.13, 36.34]
+  year: 1150
+  expect: zengid-dynasty
+  url: https://en.wikipedia.org/wiki/Zengid_dynasty
+  from: 서아시아 A3b-3 결과노트
+- name: 메카
+  at: [39.83, 21.42]
+  year: 1100
+  expect: sharifate-of-mecca
+  url: https://en.wikipedia.org/wiki/Sharifate_of_Mecca
+  from: 서아시아 A3b-3 결과노트
+- name: 메카
+  at: [39.83, 21.42]
+  year: 1400
+  expect: sharifate-of-mecca
+  url: https://en.wikipedia.org/wiki/Sharifate_of_Mecca
+  from: 서아시아 A3b-3 결과노트
+- name: 메디나
+  at: [39.61, 24.47]
+  year: 1200
+  expect: sharifate-of-mecca
+  url: https://en.wikipedia.org/wiki/Sharifate_of_Mecca
+  from: 서아시아 A3b-3 결과노트
+- name: 타부크
+  at: [36.57, 28.38]
+  year: 1300
+  expect: mamluk-sultanate
+  url: https://en.wikipedia.org/wiki/Mamluk_Sultanate
+  from: 서아시아 A3b-3 결과노트
+- name: 자비드
+  at: [43.31, 14.20]
+  year: 1030
+  expect: najahid-dynasty
+  url: https://en.wikipedia.org/wiki/Najahid_dynasty
+  from: 서아시아 A3b-3 결과노트
+- name: 자비드
+  at: [43.31, 14.20]
+  year: 1070
+  expect: sulayhid-dynasty
+  url: https://en.wikipedia.org/wiki/Sulayhid_dynasty
+  from: 서아시아 A3b-3 결과노트
+- name: 자비드
+  at: [43.31, 14.20]
+  year: 1100
+  expect: najahid-dynasty
+  url: https://en.wikipedia.org/wiki/Najahid_dynasty
+  from: 서아시아 A3b-3 결과노트
+- name: 자비드
+  at: [43.31, 14.20]
+  year: 1165
+  expect: mahdid-dynasty
+  url: https://en.wikipedia.org/wiki/Najahid_dynasty
+  from: 서아시아 A3b-3 결과노트
+- name: 자비드
+  at: [43.31, 14.20]
+  year: 1200
+  expect: ayyubid-yemen
+  url: https://en.wikipedia.org/wiki/History_of_Yemen
+  from: 서아시아 A3b-3 결과노트
+- name: 자비드
+  at: [43.31, 14.20]
+  year: 1300
+  expect: rasulid-dynasty
+  url: https://en.wikipedia.org/wiki/Rasulid_dynasty
+  from: 서아시아 A3b-3 결과노트
+- name: 사나
+  at: [44.21, 15.35]
+  year: 1070
+  expect: sulayhid-dynasty
+  url: https://en.wikipedia.org/wiki/Sulayhid_dynasty
+  from: 서아시아 A3b-3 결과노트
+- name: 사나
+  at: [44.21, 15.35]
+  year: 1130
+  expect: hamdanid-sultanate-of-sanaa
+  url: https://en.wikipedia.org/wiki/History_of_Yemen
+  from: 서아시아 A3b-3 결과노트
+- name: 사나
+  at: [44.21, 15.35]
+  year: 1200
+  expect: ayyubid-yemen
+  url: https://en.wikipedia.org/wiki/History_of_Yemen
+  from: 서아시아 A3b-3 결과노트
+- name: 아덴
+  at: [45.03, 12.78]
+  year: 1120
+  expect: zurayid-dynasty
+  url: https://en.wikipedia.org/wiki/Zurayid_dynasty
+  from: 서아시아 A3b-3 결과노트
+- name: 아덴
+  at: [45.03, 12.78]
+  year: 1300
+  expect: rasulid-dynasty
+  url: https://en.wikipedia.org/wiki/Rasulid_dynasty
+  from: 서아시아 A3b-3 결과노트
+- name: 사다
+  at: [43.76, 16.94]
+  year: 1300
+  expect: zaydi-imamate
+  url: https://en.wikipedia.org/wiki/History_of_Yemen
+  from: 서아시아 A3b-3 결과노트
+- name: 후푸프
+  at: [49.58, 25.38]
+  year: 1050
+  expect: qarmatian-state
+  url: https://en.wikipedia.org/wiki/Qarmatians
+  from: 서아시아 A3b-3 결과노트
+- name: 후푸프
+  at: [49.58, 25.38]
+  year: 1150
+  expect: uyunid-dynasty
+  url: https://en.wikipedia.org/wiki/Uyunid_dynasty
+  from: 서아시아 A3b-3 결과노트
+- name: 후푸프
+  at: [49.58, 25.38]
+  year: 1280
+  expect: usfurid-dynasty
+  url: https://en.wikipedia.org/wiki/Jarwanid_dynasty
+  from: 서아시아 A3b-3 결과노트
+- name: 후푸프
+  at: [49.58, 25.38]
+  year: 1370
+  expect: jarwanid-dynasty
+  url: https://en.wikipedia.org/wiki/Jarwanid_dynasty
+  from: 서아시아 A3b-3 결과노트
+- name: 니즈와
+  at: [57.53, 22.93]
+  year: 1100
+  expect: ibadi-imamate-of-oman
+  url: https://en.wikipedia.org/wiki/Imamate_of_Oman
+  from: 서아시아 A3b-3 결과노트
+- name: 바흘라
+  at: [57.30, 22.96]
+  year: 1200
+  expect: nabhani-dynasty
+  url: https://en.wikipedia.org/wiki/History_of_Oman
+  from: 서아시아 A3b-3 결과노트
+- name: 무스카트
+  at: [58.41, 23.61]
+  year: 1200
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Hormuz
+  from: 서아시아 A3b-3 결과노트
+- name: 라타키아
+  at: [35.78, 35.52]
+  year: 1150
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Principality_of_Antioch
+  from: 서아시아 A3b-3 결과노트
+- name: 하사카
+  at: [40.75, 36.50]
+  year: 1200
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Zengid_dynasty
+  from: 서아시아 A3b-3 결과노트
+
+# ── 서아시아·북아프리카 A3b-4a (2026-10-30): 이라크·이란 1000~1220 — 새 항목 수도·바뀌는 해 앞뒤·빈 땅(호라산 1157~·시스탄·후제스탄 1194~ 등) ──
+- name: 시라즈
+  at: [52.54, 29.59]
+  year: 1020
+  expect: buyid-dynasty
+  url: https://en.wikipedia.org/wiki/Buyid_dynasty
+  from: 서아시아 A3b-4a 결과노트
+- name: 바그다드
+  at: [44.36, 33.31]
+  year: 1020
+  expect: buyid-dynasty
+  url: https://en.wikipedia.org/wiki/Buyid_dynasty
+  from: 서아시아 A3b-4a 결과노트
+- name: 바그다드
+  at: [44.36, 33.31]
+  year: 1060
+  expect: seljuk-empire
+  url: https://en.wikipedia.org/wiki/Seljuk_Empire
+  from: 서아시아 A3b-4a 결과노트
+- name: 바그다드
+  at: [44.36, 33.31]
+  year: 1200
+  expect: abbasid-caliphate
+  url: https://en.wikipedia.org/wiki/Al-Muqtafi
+  from: 서아시아 A3b-4a 결과노트
+- name: 이스파한
+  at: [51.67, 32.65]
+  year: 1020
+  expect: kakuyid-dynasty
+  url: https://en.wikipedia.org/wiki/Kakuyids
+  from: 서아시아 A3b-4a 결과노트
+- name: 이스파한
+  at: [51.67, 32.65]
+  year: 1060
+  expect: seljuk-empire
+  url: https://en.wikipedia.org/wiki/Seljuk_Empire
+  from: 서아시아 A3b-4a 결과노트
+- name: 이스파한
+  at: [51.67, 32.65]
+  year: 1180
+  expect: eldiguzid-dynasty
+  url: https://en.wikipedia.org/wiki/Eldiguzids
+  from: 서아시아 A3b-4a 결과노트
+- name: 이스파한
+  at: [51.67, 32.65]
+  year: 1195
+  expect: khwarazmian-empire
+  url: https://en.wikipedia.org/wiki/Ala_al-Din_Tekish
+  from: 서아시아 A3b-4a 결과노트
+- name: 이스파한
+  at: [51.67, 32.65]
+  year: 1201
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Muhammad_II_of_Khwarazm
+  from: 서아시아 A3b-4a 결과노트
+- name: 라이
+  at: [51.43, 35.59]
+  year: 1015
+  expect: buyid-dynasty
+  url: https://en.wikipedia.org/wiki/Buyid_dynasty
+  from: 서아시아 A3b-4a 결과노트
+- name: 라이
+  at: [51.43, 35.59]
+  year: 1035
+  expect: ghaznavid-empire
+  url: https://en.wikipedia.org/wiki/Ghaznavid_Empire
+  from: 서아시아 A3b-4a 결과노트
+- name: 라이
+  at: [51.43, 35.59]
+  year: 1048
+  expect: seljuk-empire
+  url: https://en.wikipedia.org/wiki/Seljuk_Empire
+  from: 서아시아 A3b-4a 결과노트
+- name: 라이
+  at: [51.43, 35.59]
+  year: 1195
+  expect: khwarazmian-empire
+  url: https://en.wikipedia.org/wiki/Ala_al-Din_Tekish
+  from: 서아시아 A3b-4a 결과노트
+- name: 라이
+  at: [51.43, 35.59]
+  year: 1218
+  expect: khwarazmian-empire
+  url: https://en.wikipedia.org/wiki/Muhammad_II_of_Khwarazm
+  from: 서아시아 A3b-4a 결과노트
+- name: 니샤푸르
+  at: [58.80, 36.21]
+  year: 1010
+  expect: ghaznavid-empire
+  url: https://en.wikipedia.org/wiki/Ghaznavid_Empire
+  from: 서아시아 A3b-4a 결과노트
+- name: 니샤푸르
+  at: [58.80, 36.21]
+  year: 1045
+  expect: seljuk-empire
+  url: https://en.wikipedia.org/wiki/Seljuk_Empire
+  from: 서아시아 A3b-4a 결과노트
+- name: 니샤푸르
+  at: [58.80, 36.21]
+  year: 1170
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Seljuk_Empire
+  from: 서아시아 A3b-4a 결과노트
+- name: 니샤푸르
+  at: [58.80, 36.21]
+  year: 1210
+  expect: khwarazmian-empire
+  url: https://en.wikipedia.org/wiki/Khwarazmian_Empire
+  from: 서아시아 A3b-4a 결과노트
+- name: 타브리즈
+  at: [46.30, 38.08]
+  year: 1010
+  expect: rawadid-dynasty
+  url: https://en.wikipedia.org/wiki/Rawadid_dynasty
+  from: 서아시아 A3b-4a 결과노트
+- name: 타브리즈
+  at: [46.30, 38.08]
+  year: 1100
+  expect: seljuk-empire
+  url: https://en.wikipedia.org/wiki/Seljuk_Empire
+  from: 서아시아 A3b-4a 결과노트
+- name: 타브리즈
+  at: [46.30, 38.08]
+  year: 1180
+  expect: eldiguzid-dynasty
+  url: https://en.wikipedia.org/wiki/Eldiguzids
+  from: 서아시아 A3b-4a 결과노트
+- name: 모술
+  at: [43.13, 36.34]
+  year: 1010
+  expect: uqaylid-dynasty
+  url: https://en.wikipedia.org/wiki/Uqaylid_dynasty
+  from: 서아시아 A3b-4a 결과노트
+- name: 모술
+  at: [43.13, 36.34]
+  year: 1100
+  expect: seljuk-empire
+  url: https://en.wikipedia.org/wiki/Uqaylid_dynasty
+  from: 서아시아 A3b-4a 결과노트
+- name: 모술
+  at: [43.13, 36.34]
+  year: 1120
+  expect: iraq-seljuk-sultanate
+  url: https://en.wikipedia.org/wiki/Seljuk_Empire
+  from: 서아시아 A3b-4a 결과노트
+- name: 힐라
+  at: [44.42, 32.47]
+  year: 1050
+  expect: mazyadid-dynasty
+  url: https://en.wikipedia.org/wiki/Banu_Mazyad
+  from: 서아시아 A3b-4a 결과노트
+- name: 힐라
+  at: [44.42, 32.47]
+  year: 1160
+  expect: abbasid-caliphate
+  url: https://en.wikipedia.org/wiki/Al-Muqtafi
+  from: 서아시아 A3b-4a 결과노트
+- name: 케르만샤
+  at: [47.07, 34.31]
+  year: 1030
+  expect: annazid-dynasty
+  url: https://en.wikipedia.org/wiki/Annazids
+  from: 서아시아 A3b-4a 결과노트
+- name: 야즈드
+  at: [54.37, 31.90]
+  year: 1100
+  expect: kakuyid-dynasty
+  url: https://en.wikipedia.org/wiki/Kakuyids
+  from: 서아시아 A3b-4a 결과노트
+- name: 야즈드
+  at: [54.37, 31.90]
+  year: 1150
+  expect: iraq-seljuk-sultanate
+  url: https://en.wikipedia.org/wiki/Kakuyids
+  from: 서아시아 A3b-4a 결과노트
+- name: 케르만
+  at: [57.08, 30.28]
+  year: 1100
+  expect: kirman-seljuk-sultanate
+  url: https://en.wikipedia.org/wiki/Kerman_Seljuk_Sultanate
+  from: 서아시아 A3b-4a 결과노트
+- name: 케르만
+  at: [57.08, 30.28]
+  year: 1190
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Kerman_Seljuk_Sultanate
+  from: 서아시아 A3b-4a 결과노트
+- name: 케르만
+  at: [57.08, 30.28]
+  year: 1205
+  expect: khwarazmian-empire
+  url: https://en.wikipedia.org/wiki/Kerman_Seljuk_Sultanate
+  from: 서아시아 A3b-4a 결과노트
+- name: 사리
+  at: [53.06, 36.56]
+  year: 1150
+  expect: bavandid-dynasty
+  url: https://en.wikipedia.org/wiki/Bavand_dynasty
+  from: 서아시아 A3b-4a 결과노트
+- name: 아몰
+  at: [52.35, 36.47]
+  year: 1050
+  expect: ziyarid-dynasty
+  url: https://en.wikipedia.org/wiki/Ziyarid_dynasty
+  from: 서아시아 A3b-4a 결과노트
+- name: 고르간
+  at: [54.44, 36.84]
+  year: 1100
+  expect: seljuk-empire
+  url: https://en.wikipedia.org/wiki/Ziyarid_dynasty
+  from: 서아시아 A3b-4a 결과노트
+- name: 하마단
+  at: [48.52, 34.80]
+  year: 1130
+  expect: iraq-seljuk-sultanate
+  url: https://en.wikipedia.org/wiki/Seljuk_Empire
+  from: 서아시아 A3b-4a 결과노트
+- name: 하마단
+  at: [48.52, 34.80]
+  year: 1165
+  expect: eldiguzid-dynasty
+  url: https://en.wikipedia.org/wiki/Shams_al-Din_Ildeniz
+  from: 서아시아 A3b-4a 결과노트
+- name: 하마단
+  at: [48.52, 34.80]
+  year: 1210
+  expect: eldiguzid-dynasty
+  url: https://en.wikipedia.org/wiki/Muhammad_II_of_Khwarazm
+  from: 서아시아 A3b-4a 결과노트
+- name: 하마단
+  at: [48.52, 34.80]
+  year: 1218
+  expect: khwarazmian-empire
+  url: https://en.wikipedia.org/wiki/Muhammad_II_of_Khwarazm
+  from: 서아시아 A3b-4a 결과노트
+- name: 시라즈
+  at: [52.54, 29.59]
+  year: 1170
+  expect: salghurid-dynasty
+  url: https://en.wikipedia.org/wiki/Salghurids
+  from: 서아시아 A3b-4a 결과노트
+- name: 호람아바드
+  at: [48.35, 33.49]
+  year: 1150
+  expect: hazaraspid-dynasty
+  url: https://en.wikipedia.org/wiki/Hazaraspids
+  from: 서아시아 A3b-4a 결과노트
+- name: 아흐바즈
+  at: [48.67, 31.32]
+  year: 1180
+  expect: iraq-seljuk-sultanate
+  url: https://en.wikipedia.org/wiki/Seljuk_Empire
+  from: 서아시아 A3b-4a 결과노트
+- name: 아흐바즈
+  at: [48.67, 31.32]
+  year: 1200
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Khwarazmian_Empire
+  from: 서아시아 A3b-4a 결과노트
+- name: 바스라
+  at: [47.78, 30.51]
+  year: 1180
+  expect: iraq-seljuk-sultanate
+  url: https://en.wikipedia.org/wiki/Seljuk_Empire
+  from: 서아시아 A3b-4a 결과노트
+- name: 바스라
+  at: [47.78, 30.51]
+  year: 1200
+  expect: abbasid-caliphate
+  url: https://en.wikipedia.org/wiki/Al-Nasir_li-Din_Allah
+  from: 서아시아 A3b-4a 결과노트
+- name: 자헤단
+  at: [60.86, 29.50]
+  year: 1100
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Nasrid_dynasty_(Sistan)
+  from: 서아시아 A3b-4a 결과노트
+- name: 아르빌
+  at: [44.01, 36.19]
+  year: 1150
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Uqaylid_dynasty
+  from: 서아시아 A3b-4a 결과노트
+# ── 서아시아·북아프리카 A3b-4b (2026-10-30): 이라크·이란 1221~1452 — 몽골 늘림 앞뒤·새 항목 수도·바뀌는 해 앞뒤·빈 땅(이스파한 1231~1236·라이 1357~·셈난 1335~ 등) ──
+- name: 니샤푸르
+  at: [58.80, 36.21]
+  year: 1225
+  expect: mongol-empire
+  url: https://en.wikipedia.org/wiki/Khwarazmian_Empire
+  from: 서아시아 A3b-4b 결과노트
+- name: 라이
+  at: [51.43, 35.59]
+  year: 1225
+  expect: khwarazmian-empire
+  url: https://en.wikipedia.org/wiki/Khwarazmian_Empire
+  from: 서아시아 A3b-4b 결과노트
+- name: 타브리즈
+  at: [46.30, 38.08]
+  year: 1228
+  expect: khwarazmian-empire
+  url: https://en.wikipedia.org/wiki/Khwarazmian_Empire
+  from: 서아시아 A3b-4b 결과노트
+- name: 타브리즈
+  at: [46.30, 38.08]
+  year: 1222
+  expect: eldiguzid-dynasty
+  url: https://en.wikipedia.org/wiki/Eldiguzids
+  from: 서아시아 A3b-4b 결과노트
+- name: 라이
+  at: [51.43, 35.59]
+  year: 1235
+  expect: mongol-empire
+  url: https://en.wikipedia.org/wiki/Chormaqan
+  from: 서아시아 A3b-4b 결과노트
+- name: 이스파한
+  at: [51.67, 32.65]
+  year: 1234
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Chormaqan
+  from: 서아시아 A3b-4b 결과노트
+- name: 이스파한
+  at: [51.67, 32.65]
+  year: 1240
+  expect: mongol-empire
+  url: https://en.wikipedia.org/wiki/Chormaqan
+  from: 서아시아 A3b-4b 결과노트
+- name: 케르만
+  at: [57.08, 30.28]
+  year: 1250
+  expect: qutlugh-khanid-dynasty
+  url: https://en.wikipedia.org/wiki/Qutlugh-Khanids
+  from: 서아시아 A3b-4b 결과노트
+- name: 케르만
+  at: [57.08, 30.28]
+  year: 1310
+  expect: ilkhanate
+  url: https://en.wikipedia.org/wiki/Qutlugh-Khanids
+  from: 서아시아 A3b-4b 결과노트
+- name: 모술
+  at: [43.13, 36.34]
+  year: 1250
+  expect: lulu-dynasty
+  url: https://en.wikipedia.org/wiki/Zengid_dynasty
+  from: 서아시아 A3b-4b 결과노트
+- name: 모술
+  at: [43.13, 36.34]
+  year: 1270
+  expect: ilkhanate
+  url: https://en.wikipedia.org/wiki/Ilkhanate
+  from: 서아시아 A3b-4b 결과노트
+- name: 바그다드
+  at: [44.36, 33.31]
+  year: 1257
+  expect: abbasid-caliphate
+  url: https://en.wikipedia.org/wiki/Ilkhanate
+  from: 서아시아 A3b-4b 결과노트
+- name: 바그다드
+  at: [44.36, 33.31]
+  year: 1259
+  expect: mongol-empire
+  url: https://en.wikipedia.org/wiki/Ilkhanate
+  from: 서아시아 A3b-4b 결과노트
+- name: 바그다드
+  at: [44.36, 33.31]
+  year: 1262
+  expect: ilkhanate
+  url: https://en.wikipedia.org/wiki/Ilkhanate
+  from: 서아시아 A3b-4b 결과노트
+- name: 아르빌
+  at: [44.01, 36.19]
+  year: 1240
+  expect: abbasid-caliphate
+  url: https://en.wikipedia.org/wiki/Al-Mustansir
+  from: 서아시아 A3b-4b 결과노트
+- name: 아흐바즈
+  at: [48.67, 31.32]
+  year: 1250
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Khuzestan_province
+  from: 서아시아 A3b-4b 결과노트
+- name: 아흐바즈
+  at: [48.67, 31.32]
+  year: 1300
+  expect: ilkhanate
+  url: https://en.wikipedia.org/wiki/Ilkhanate
+  from: 서아시아 A3b-4b 결과노트
+- name: 마라게
+  at: [46.24, 37.39]
+  year: 1260
+  expect: ilkhanate
+  url: https://en.wikipedia.org/wiki/Ilkhanate
+  from: 서아시아 A3b-4b 결과노트
+- name: 술타니예
+  at: [48.80, 36.43]
+  year: 1320
+  expect: ilkhanate
+  url: https://en.wikipedia.org/wiki/Ilkhanate
+  from: 서아시아 A3b-4b 결과노트
+- name: 마슈하드
+  at: [59.60, 36.30]
+  year: 1260
+  expect: ilkhanate
+  url: https://en.wikipedia.org/wiki/Ilkhanate
+  from: 서아시아 A3b-4b 결과노트
+- name: 사리
+  at: [53.06, 36.56]
+  year: 1230
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Bavand_dynasty
+  from: 서아시아 A3b-4b 결과노트
+- name: 아몰
+  at: [52.35, 36.47]
+  year: 1300
+  expect: bavandid-dynasty
+  url: https://en.wikipedia.org/wiki/Bavand_dynasty
+  from: 서아시아 A3b-4b 결과노트
+- name: 아몰
+  at: [52.35, 36.47]
+  year: 1360
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Bavand_dynasty
+  from: 서아시아 A3b-4b 결과노트
+- name: 시라즈
+  at: [52.54, 29.59]
+  year: 1275
+  expect: salghurid-dynasty
+  url: https://en.wikipedia.org/wiki/Salghurids
+  from: 서아시아 A3b-4b 결과노트
+- name: 시라즈
+  at: [52.54, 29.59]
+  year: 1290
+  expect: ilkhanate
+  url: https://en.wikipedia.org/wiki/Salghurids
+  from: 서아시아 A3b-4b 결과노트
+- name: 호람아바드
+  at: [48.35, 33.49]
+  year: 1300
+  expect: hazaraspid-dynasty
+  url: https://en.wikipedia.org/wiki/Hazaraspids
+  from: 서아시아 A3b-4b 결과노트
+- name: 호람아바드
+  at: [48.35, 33.49]
+  year: 1430
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Hazaraspids
+  from: 서아시아 A3b-4b 결과노트
+- name: 야즈드
+  at: [54.37, 31.90]
+  year: 1325
+  expect: muzaffarid-dynasty
+  url: https://en.wikipedia.org/wiki/Muzaffarids_(Iran)
+  from: 서아시아 A3b-4b 결과노트
+- name: 바그다드
+  at: [44.36, 33.31]
+  year: 1350
+  expect: jalayirid-sultanate
+  url: https://en.wikipedia.org/wiki/Jalayirid_Sultanate
+  from: 서아시아 A3b-4b 결과노트
+- name: 모술
+  at: [43.13, 36.34]
+  year: 1350
+  expect: jalayirid-sultanate
+  url: https://en.wikipedia.org/wiki/Jalayirid_Sultanate
+  from: 서아시아 A3b-4b 결과노트
+- name: 타브리즈
+  at: [46.30, 38.08]
+  year: 1336
+  expect: jalayirid-sultanate
+  url: https://en.wikipedia.org/wiki/Jalayirid_Sultanate
+  from: 서아시아 A3b-4b 결과노트
+- name: 타브리즈
+  at: [46.30, 38.08]
+  year: 1345
+  expect: chobanid-dynasty
+  url: https://en.wikipedia.org/wiki/Chobanids
+  from: 서아시아 A3b-4b 결과노트
+- name: 하마단
+  at: [48.52, 34.80]
+  year: 1350
+  expect: chobanid-dynasty
+  url: https://en.wikipedia.org/wiki/Chobanids
+  from: 서아시아 A3b-4b 결과노트
+- name: 이스파한
+  at: [51.67, 32.65]
+  year: 1340
+  expect: chobanid-dynasty
+  url: https://en.wikipedia.org/wiki/Chobanids
+  from: 서아시아 A3b-4b 결과노트
+- name: 타브리즈
+  at: [46.30, 38.08]
+  year: 1370
+  expect: jalayirid-sultanate
+  url: https://en.wikipedia.org/wiki/Jalayirid_Sultanate
+  from: 서아시아 A3b-4b 결과노트
+- name: 시라즈
+  at: [52.54, 29.59]
+  year: 1337
+  expect: injuid-dynasty
+  url: https://en.wikipedia.org/wiki/Injuids
+  from: 서아시아 A3b-4b 결과노트
+- name: 시라즈
+  at: [52.54, 29.59]
+  year: 1341
+  expect: chobanid-dynasty
+  url: https://en.wikipedia.org/wiki/Injuids
+  from: 서아시아 A3b-4b 결과노트
+- name: 이스파한
+  at: [51.67, 32.65]
+  year: 1350
+  expect: injuid-dynasty
+  url: https://en.wikipedia.org/wiki/Injuids
+  from: 서아시아 A3b-4b 결과노트
+- name: 시라즈
+  at: [52.54, 29.59]
+  year: 1370
+  expect: muzaffarid-dynasty
+  url: https://en.wikipedia.org/wiki/Muzaffarids_(Iran)
+  from: 서아시아 A3b-4b 결과노트
+- name: 케르만
+  at: [57.08, 30.28]
+  year: 1360
+  expect: muzaffarid-dynasty
+  url: https://en.wikipedia.org/wiki/Muzaffarids_(Iran)
+  from: 서아시아 A3b-4b 결과노트
+- name: 케르만
+  at: [57.08, 30.28]
+  year: 1337
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Muzaffarids_(Iran)
+  from: 서아시아 A3b-4b 결과노트
+- name: 이스파한
+  at: [51.67, 32.65]
+  year: 1370
+  expect: muzaffarid-dynasty
+  url: https://en.wikipedia.org/wiki/Injuids
+  from: 서아시아 A3b-4b 결과노트
+- name: 세브제바르
+  at: [57.68, 36.21]
+  year: 1350
+  expect: sarbadar-dynasty
+  url: https://en.wikipedia.org/wiki/Sarbadars
+  from: 서아시아 A3b-4b 결과노트
+- name: 마슈하드
+  at: [59.60, 36.30]
+  year: 1350
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Sarbadars
+  from: 서아시아 A3b-4b 결과노트
+- name: 셈난
+  at: [53.40, 35.58]
+  year: 1360
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Sarbadars
+  from: 서아시아 A3b-4b 결과노트
+- name: 테헤란
+  at: [51.39, 35.69]
+  year: 1370
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Timur
+  from: 서아시아 A3b-4b 결과노트
+- name: 라이
+  at: [51.43, 35.59]
+  year: 1375
+  expect: jalayirid-sultanate
+  url: https://en.wikipedia.org/wiki/Shaikh_Uvais
+  from: 서아시아 A3b 반영 결과노트
+- name: 마슈하드
+  at: [59.60, 36.30]
+  year: 1382
+  expect: timurid-empire
+  url: https://en.wikipedia.org/wiki/Timur
+  from: 서아시아 A3b-4b 결과노트
+- name: 테헤란
+  at: [51.39, 35.69]
+  year: 1385
+  expect: timurid-empire
+  url: https://en.wikipedia.org/wiki/Timur
+  from: 서아시아 A3b-4b 결과노트
+- name: 술타니예
+  at: [48.80, 36.43]
+  year: 1385
+  expect: timurid-empire
+  url: https://en.wikipedia.org/wiki/Jalayirid_Sultanate
+  from: 서아시아 A3b-4b 결과노트
+- name: 타브리즈
+  at: [46.30, 38.08]
+  year: 1390
+  expect: timurid-empire
+  url: https://en.wikipedia.org/wiki/Timur
+  from: 서아시아 A3b-4b 결과노트
+- name: 시라즈
+  at: [52.54, 29.59]
+  year: 1400
+  expect: timurid-empire
+  url: https://en.wikipedia.org/wiki/Timur
+  from: 서아시아 A3b-4b 결과노트
+- name: 바그다드
+  at: [44.36, 33.31]
+  year: 1400
+  expect: jalayirid-sultanate
+  url: https://en.wikipedia.org/wiki/Jalayirid_Sultanate
+  from: 서아시아 A3b-4b 결과노트
+- name: 타브리즈
+  at: [46.30, 38.08]
+  year: 1408
+  expect: qara-qoyunlu
+  url: https://en.wikipedia.org/wiki/Qara_Yusuf
+  from: 서아시아 A3b-4b 결과노트
+- name: 바그다드
+  at: [44.36, 33.31]
+  year: 1420
+  expect: qara-qoyunlu
+  url: https://en.wikipedia.org/wiki/Qara_Yusuf
+  from: 서아시아 A3b-4b 결과노트
+- name: 바스라
+  at: [47.78, 30.51]
+  year: 1420
+  expect: jalayirid-sultanate
+  url: https://en.wikipedia.org/wiki/Jalayirid_Sultanate
+  from: 서아시아 A3b-4b 결과노트
+- name: 힐라
+  at: [44.42, 32.47]
+  year: 1420
+  expect: jalayirid-sultanate
+  url: https://en.wikipedia.org/wiki/Jalayirid_Sultanate
+  from: 서아시아 A3b-4b 결과노트
+- name: 힐라
+  at: [44.42, 32.47]
+  year: 1440
+  expect: qara-qoyunlu
+  url: https://en.wikipedia.org/wiki/Jalayirid_Sultanate
+  from: 서아시아 A3b-4b 결과노트
+- name: 바스라
+  at: [47.78, 30.51]
+  year: 1440
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Jalayirid_Sultanate
+  from: 서아시아 A3b-4b 결과노트
+- name: 시라즈
+  at: [52.54, 29.59]
+  year: 1430
+  expect: timurid-empire
+  url: https://en.wikipedia.org/wiki/Shah_Rukh
+  from: 서아시아 A3b-4b 결과노트
+- name: 시라즈
+  at: [52.54, 29.59]
+  year: 1450
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Shah_Rukh
+  from: 서아시아 A3b-4b 결과노트
+- name: 이스파한
+  at: [51.67, 32.65]
+  year: 1452
+  expect: qara-qoyunlu
+  url: https://en.wikipedia.org/wiki/Qara_Qoyunlu
+  from: 서아시아 A3b-4b 결과노트
+- name: 마슈하드
+  at: [59.60, 36.30]
+  year: 1450
+  expect: timurid-empire
+  url: https://en.wikipedia.org/wiki/Shah_Rukh
+  from: 서아시아 A3b-4b 결과노트
+- name: 호베이제
+  at: [48.07, 31.47]
+  year: 1445
+  expect: musha-sha
+  url: https://en.wikipedia.org/wiki/Musha%27sha%27iyyah
+  from: 서아시아 A3b-4b 결과노트
+- name: 아흐바즈
+  at: [48.67, 31.32]
+  year: 1420
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Jalayirid_Sultanate
+  from: 서아시아 A3b-4b 결과노트

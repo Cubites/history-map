@@ -446,15 +446,6 @@
 - key: '1796 afsharid-iran 소멸'
   reason: me-05~07 사건 묶음이 채움
   decided: 2026-10-29 운영자 A2 승인
-- key: '1453 qara-qoyunlu 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1453 timurid-empire 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1453 musha-sha 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
 - key: '1458 qara-qoyunlu 버전'
   reason: me-05~07 사건 묶음이 채움
   decided: 2026-10-29 운영자 A2 승인
@@ -647,15 +638,6 @@
   reason: me-05~07 사건 묶음이 채움
   decided: 2026-10-29 운영자 A2 승인
 - key: '1967 lahej-sultanate 소멸'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1453 mamluk-sultanate 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1453 jabrid-emirate 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1453 nabhani-dynasty 버전'
   reason: me-05~07 사건 묶음이 채움
   decided: 2026-10-29 운영자 A2 승인
 - key: '1504 tahirid-sultanate 버전'
@@ -982,9 +964,6 @@
   reason: me-02~05 사건 묶음이 채움
   decided: 2026-10-30 운영자 A3 승인
 - key: '934 buyid-dynasty 성립'
-  reason: me-02~05 사건 묶음이 채움
-  decided: 2026-10-30 운영자 A3 승인
-- key: '945 ibadi-imamate-of-oman 소멸'
   reason: me-02~05 사건 묶음이 채움
   decided: 2026-10-30 운영자 A3 승인
 - key: '955 rawadid-dynasty 성립'
@@ -1380,5 +1359,634 @@
   reason: me-02~05 사건 묶음이 채움
   decided: 2026-10-30 운영자 A3 승인
 - key: '987 maghrawa-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+
+# ── 서아시아·북아프리카 A3b-3 (2026-10-30): 이집트·레반트·아라비아 1000~1452 새 항목·앞 버전의 성립·소멸·버전 해. 사건 묶음 me-02~05가 사건을 쓰며 이 줄을 지운다 ──
+- key: '1004 luluids-of-aleppo 성립'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1014 mirdasid-dynasty 성립'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1016 luluids-of-aleppo 소멸'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1022 najahid-dynasty 성립'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1047 sulayhid-dynasty 성립'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1076 seljuks-of-syria 성립'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1077 uyunid-dynasty 성립'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1080 mirdasid-dynasty 소멸'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1083 zurayid-dynasty 성립'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1098 hamdanid-sultanate-of-sanaa 성립'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1099 jerusalem-kingdom 성립'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1101 artuqid-dynasty 성립'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1102 tripoli-county 성립'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1104 burid-dynasty 성립'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1117 seljuks-of-syria 소멸'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1127 zengid-dynasty 성립'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1138 sulayhid-dynasty 소멸'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1154 burid-dynasty 소멸'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1158 najahid-dynasty 소멸'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1159 mahdid-dynasty 성립'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1164 ibadi-imamate-of-oman 소멸'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1171 ayyubid-dynasty 성립'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1174 zurayid-dynasty 소멸'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1174 mahdid-dynasty 소멸'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1174 ayyubid-yemen 성립'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1189 hamdanid-sultanate-of-sanaa 소멸'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1229 ayyubid-yemen 소멸'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1229 rasulid-dynasty 성립'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1234 zengid-dynasty 소멸'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1253 uyunid-dynasty 소멸'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1253 usfurid-dynasty 성립'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1260 ayyubid-dynasty 소멸'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1289 tripoli-county 소멸'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1291 jerusalem-kingdom 소멸'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1320 usfurid-dynasty 소멸'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1320 jarwanid-dynasty 성립'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1409 artuqid-dynasty 소멸'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1417 jarwanid-dynasty 소멸'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1454 rasulid-dynasty 소멸'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1000 hamdanid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1000 fatimid-caliphate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1016 ibadi-imamate-of-oman 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1017 fatimid-caliphate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1025 fatimid-caliphate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1025 mirdasid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1038 mirdasid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1060 sulayhid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1063 sulayhid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1076 fatimid-caliphate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1080 uqaylid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1083 sulayhid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1086 uqaylid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1086 seljuks-of-syria 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1089 sulayhid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1098 sulayhid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1099 seljuks-of-syria 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1104 seljuks-of-syria 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1118 burid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1118 artuqid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1118 jerusalem-kingdom 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1128 zengid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1138 burid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1138 zengid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1144 zengid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1153 fatimid-caliphate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1153 jerusalem-kingdom 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1154 zengid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1174 zengid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1174 ayyubid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1183 zengid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1183 ayyubid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1187 jerusalem-kingdom 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1187 ayyubid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1189 ayyubid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1189 ayyubid-yemen 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1192 jerusalem-kingdom 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1250 ayyubid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1253 mamluk-sultanate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1253 ayyubid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1260 mamluk-sultanate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1261 mamluk-sultanate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1263 mamluk-sultanate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1324 rasulid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+
+# ── 서아시아·북아프리카 A3b-4a (2026-10-30): 이라크·이란 1000~1220 새 항목·이어 쓴 항목의 성립·소멸·버전 해. 사건 묶음 me-02~05가 사건을 쓰며 이 줄을 지운다 ──
+- key: '651 bavandid-dynasty 성립'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '961 mazyadid-dynasty 성립'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '977 ghaznavid-empire 성립'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '990 annazid-dynasty 성립'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1008 kakuyid-dynasty 성립'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1037 seljuk-empire 성립'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1041 kirman-seljuk-sultanate 성립'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1077 khwarazmian-empire 성립'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1115 hazaraspid-dynasty 성립'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1117 annazid-dynasty 소멸'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1118 iraq-seljuk-sultanate 성립'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1136 eldiguzid-dynasty 성립'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1141 kakuyid-dynasty 소멸'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1148 salghurid-dynasty 성립'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1163 mazyadid-dynasty 소멸'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1186 ghaznavid-empire 소멸'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1187 kirman-seljuk-sultanate 소멸'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1194 seljuk-empire 소멸'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1194 iraq-seljuk-sultanate 소멸'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1225 eldiguzid-dynasty 소멸'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1231 khwarazmian-empire 소멸'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1282 salghurid-dynasty 소멸'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1349 bavandid-dynasty 소멸'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1424 hazaraspid-dynasty 소멸'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1000 buyid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1000 ghaznavid-empire 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1008 buyid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1012 buyid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1012 mazyadid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1015 annazid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1023 buyid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1023 kakuyid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1029 buyid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1029 ghaznavid-empire 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1040 ziyarid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1040 seljuk-empire 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1041 buyid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1051 buyid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1051 kakuyid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1051 seljuk-empire 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1054 seljuk-empire 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1055 buyid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1055 seljuk-empire 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1062 seljuk-empire 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1090 bavandid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1090 seljuk-empire 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1096 seljuk-empire 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1118 seljuk-empire 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1127 iraq-seljuk-sultanate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1136 iraq-seljuk-sultanate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1141 iraq-seljuk-sultanate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1144 iraq-seljuk-sultanate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1148 iraq-seljuk-sultanate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1148 hazaraspid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1152 abbasid-caliphate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1152 iraq-seljuk-sultanate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1160 iraq-seljuk-sultanate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1160 eldiguzid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1169 iraq-seljuk-sultanate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1169 eldiguzid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1175 iraq-seljuk-sultanate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1175 eldiguzid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1194 abbasid-caliphate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1194 eldiguzid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1194 khwarazmian-empire 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1196 khwarazmian-empire 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1198 khwarazmian-empire 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1200 khwarazmian-empire 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1204 eldiguzid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1210 khwarazmian-empire 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1217 eldiguzid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1217 khwarazmian-empire 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+# ── 서아시아·북아프리카 A3b-4b (2026-10-30): 이라크·이란 1221~1452 새 항목·이어 쓴 항목·A2 항목 앞 버전의 성립·소멸·버전 해. 사건 묶음 me-02~05가 사건을 쓰며 이 줄을 지운다 ──
+- key: '1222 qutlugh-khanid-dynasty 성립'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1234 lulu-dynasty 성립'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1256 ilkhanate 성립'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1262 lulu-dynasty 소멸'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1306 qutlugh-khanid-dynasty 소멸'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1314 muzaffarid-dynasty 성립'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1335 ilkhanate 소멸'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1335 jalayirid-sultanate 성립'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1335 injuid-dynasty 성립'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1337 sarbadar-dynasty 성립'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1338 chobanid-dynasty 성립'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1357 chobanid-dynasty 소멸'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1357 injuid-dynasty 소멸'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1381 sarbadar-dynasty 소멸'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1393 muzaffarid-dynasty 소멸'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1432 jalayirid-sultanate 소멸'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1221 khwarazmian-empire 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1222 khwarazmian-empire 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1225 khwarazmian-empire 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1232 abbasid-caliphate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1260 ilkhanate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1262 ilkhanate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1282 ilkhanate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1306 ilkhanate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1319 ilkhanate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1319 muzaffarid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1338 jalayirid-sultanate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1339 chobanid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1340 muzaffarid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1343 chobanid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1343 injuid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1353 injuid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1353 muzaffarid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1357 muzaffarid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1358 jalayirid-sultanate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1381 timurid-empire 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1384 timurid-empire 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1371 jalayirid-sultanate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1384 jalayirid-sultanate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1386 timurid-empire 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1386 jalayirid-sultanate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1393 timurid-empire 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1405 timurid-empire 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1406 qara-qoyunlu 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1406 timurid-empire 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1410 qara-qoyunlu 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1410 timurid-empire 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1410 jalayirid-sultanate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1431 qara-qoyunlu 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1431 jalayirid-sultanate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1441 musha-sha 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1447 timurid-empire 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1452 qara-qoyunlu 버전'
   reason: me-02~05 사건 묶음이 채움
   decided: 2026-10-30 운영자 A3 승인

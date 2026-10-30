@@ -934,4 +934,80 @@
 - { type: vassal_of, subject: zirid-dynasty, object: fatimid-caliphate, from: 972, to: 1048 } # 파티마가 세운 이프리키야 세습 총독, 1048/49 알무이즈 이븐 바디스가 파티마와 결별
 - { type: vassal_of, subject: maghrawa-dynasty, object: cordoba-caliphate, from: 980, to: 1031 } # 980 코르도바가 시질마사 총독으로, 987 지리 이븐 아티야를 마그레브 아미르로 임명
 - { type: vassal_of, subject: sharifate-of-mecca, object: ikhshidid-dynasty, from: 967, to: 968 } # 964년 무렵 카푸르가 샤리프를 세움
-- { type: vassal_of, subject: sharifate-of-mecca, object: fatimid-caliphate, from: 969, to: 999 } # 969 뒤 메카에서 파티마 칼리프 이름으로 금요 예배(1000년부터는 A3b 범위)
+- { type: vassal_of, subject: sharifate-of-mecca, object: fatimid-caliphate, from: 969, to: 1170 } # 969 뒤 메카에서 파티마 칼리프 이름으로 금요 예배(1062~1067 무렵 술라이흐 왕조의 영향 포함), 1171 파티마 끝
+
+# ── 서아시아·북아프리카 A3b-3 (2026-10-30): 이집트·레반트·아라비아 1000~1452 (명목 종주는 vassal_of, 같은 땅을 이은 나라는 successor_of. 셀주크 제국 종주 줄은 구현 ④가 seljuk-empire 항목과 함께 더함) ──
+- { type: successor_of, subject: luluids-of-aleppo, object: hamdanid-dynasty, from: 1004, to: null } # 1003~1004 루울루가 함단 가문의 아들들을 이집트로 내보냄
+- { type: successor_of, subject: ayyubid-dynasty, object: fatimid-caliphate, from: 1171, to: null } # 1171-09 살라딘이 파티마 칼리프의 이름을 금요 예배에서 뺌
+- { type: successor_of, subject: mamluk-sultanate, object: ayyubid-dynasty, from: 1250, to: null } # 1250 투란샤 살해, 샤자르 앗두르 즉위
+- { type: successor_of, subject: burid-dynasty, object: seljuks-of-syria, from: 1104, to: null } # 1104 두카크 죽음 뒤 아타베그 투그테긴
+- { type: successor_of, subject: najahid-dynasty, object: ziyadid-dynasty, from: 1022, to: null } # 지야드 왕조의 노예 출신 재상 나자흐가 자비드를 쥠
+- { type: successor_of, subject: rasulid-dynasty, object: ayyubid-yemen, from: 1229, to: null } # 1229 무렵 아이유브 대리인 우마르 이븐 알리의 독립
+- { type: successor_of, subject: uyunid-dynasty, object: qarmatian-state, from: 1077, to: null } # 1077 압둘라 알우윤이 카르마트를 무너뜨림
+- { type: successor_of, subject: usfurid-dynasty, object: uyunid-dynasty, from: 1253, to: null } # 1253 우스푸르 가문이 알하사를 넘겨받음
+- { type: successor_of, subject: jarwanid-dynasty, object: usfurid-dynasty, from: 1320, to: null } # 1320 무렵 자르완 가문
+- { type: successor_of, subject: jabrid-emirate, object: jarwanid-dynasty, from: 1417, to: null } # 1417 자브르 가문이 알하사를 차지
+- { type: successor_of, subject: nabhani-dynasty, object: ibadi-imamate-of-oman, from: 1154, to: null } # 1154 무렵 나브하니 가문이 오만 내륙을 쥠
+- { type: vassal_of, subject: luluids-of-aleppo, object: fatimid-caliphate, from: 1004, to: 1016 } # 995 루울루가 알아지즈를 칼리프로 인정, 만수르도 파티마를 받듦(동로마에 공납)
+- { type: vassal_of, subject: mirdasid-dynasty, object: fatimid-caliphate, from: 1025, to: 1069 } # 살리흐·티말이 파티마 칼리프를 받듦(1030~1050년대 동로마 신하이기도 함), 1070 무렵 아바스·셀주크 쪽으로 돌아섬
+- { type: vassal_of, subject: ayyubid-dynasty, object: zengid-dynasty, from: 1171, to: 1174 } # 살라딘이 누르 앗딘의 장수로 이집트를 다스림, 1174 누르 앗딘 죽음
+- { type: vassal_of, subject: tripoli-county, object: jerusalem-kingdom, from: 1109, to: 1187 } # 트리폴리 백작이 예루살렘 왕을 받듦(1187 뒤 안티오키아와 같은 군주)
+- { type: vassal_of, subject: sharifate-of-mecca, object: ayyubid-dynasty, from: 1171, to: 1249 } # 1174 투란샤 뒤 아이유브 술탄 이름으로 금요 예배, 1201 카타다가 아이유브 승인
+- { type: vassal_of, subject: najahid-dynasty, object: abbasid-caliphate, from: 1022, to: 1158 } # 아바스 칼리프 알카디르가 나자흐를 인정
+- { type: vassal_of, subject: sulayhid-dynasty, object: fatimid-caliphate, from: 1047, to: 1131 } # 이스마일파 포교 조직의 왕조, 1132 계승 문제로 카이로와 결별
+- { type: vassal_of, subject: zurayid-dynasty, object: sulayhid-dynasty, from: 1083, to: 1109 } # 술라이흐 왕조에 조공하는 아덴 신하, 1110 무렵 독립
+- { type: vassal_of, subject: ayyubid-yemen, object: ayyubid-dynasty, from: 1174, to: 1228 } # 카이로의 아이유브 술탄이 보낸 통치자들
+- { type: vassal_of, subject: rasulid-dynasty, object: ayyubid-dynasty, from: 1229, to: 1234 } # 독립 뒤에도 아이유브 술탄을 명목상 받들다 1235 아바스 칼리프의 승인을 받음
+
+# ── 서아시아·북아프리카 A3b-4a (2026-10-30): 이라크·이란 1000~1220 (셀주크 제국 종주 줄은 구현 ③ 항목 몫까지 함께, 몽골·일 칸국 종주는 A3b-4b) ──
+- { type: successor_of, subject: ghaznavid-empire, object: samanid-empire, from: 999, to: null } # 999 사만 왕조가 무너지고 마흐무드가 호라산을 가져감
+- { type: successor_of, subject: seljuk-empire, object: ghaznavid-empire, from: 1040, to: null } # 1040 단다나칸 전투 뒤 호라산을 넘겨받음
+- { type: successor_of, subject: iraq-seljuk-sultanate, object: seljuk-empire, from: 1118, to: null } # 1118 마흐무드 2세가 서쪽 술탄 자리를 이음
+- { type: successor_of, subject: khwarazmian-empire, object: iraq-seljuk-sultanate, from: 1194, to: null } # 1194 테키시가 토그릴 3세를 무찌르고 페르시아 이라크를 차지
+- { type: vassal_of, subject: ghaznavid-empire, object: samanid-empire, from: 977, to: 998 } # 사부크티긴·마흐무드가 사만 왕조의 총독으로 가즈니·호라산을 다스림
+- { type: vassal_of, subject: ziyarid-dynasty, object: ghaznavid-empire, from: 1012, to: 1040 } # 1012 카부스가 죽은 뒤 마누치르가 마흐무드의 종주를 받아들임
+- { type: vassal_of, subject: ziyarid-dynasty, object: seljuk-empire, from: 1041, to: 1090 } # 아누시르완 때 셀주크 종주를 인정
+- { type: vassal_of, subject: kakuyid-dynasty, object: buyid-dynasty, from: 1008, to: 1027 } # 부와이 왕조가 세운 이스파한 총독, 1028 무렵부터 사실상 자립
+- { type: vassal_of, subject: kakuyid-dynasty, object: seljuk-empire, from: 1051, to: 1141 } # 1051 파라무르즈가 야즈드·아바르쿠를 셀주크 봉토로 받음
+- { type: vassal_of, subject: annazid-dynasty, object: buyid-dynasty, from: 990, to: 1054 } # 부와이 바하 앗다울라의 승인을 받은 쿠르드 영주
+- { type: vassal_of, subject: annazid-dynasty, object: seljuk-empire, from: 1055, to: 1117 } # 투그릴이 1050년 무렵 다시 세운 뒤 셀주크 아래 영지
+- { type: vassal_of, subject: mazyadid-dynasty, object: buyid-dynasty, from: 961, to: 1054 } # 부와이 왕조에게서 칭호·보조금을 받음
+- { type: vassal_of, subject: mazyadid-dynasty, object: seljuk-empire, from: 1055, to: 1117 } # 셀주크 아래 대체로 자치
+- { type: vassal_of, subject: mazyadid-dynasty, object: iraq-seljuk-sultanate, from: 1118, to: 1151 } # 이라크 셀주크 술탄의 아미르, 1152 칼리프의 힐라 점령
+- { type: vassal_of, subject: uqaylid-dynasty, object: seljuk-empire, from: 1056, to: 1096 } # 투그릴의 바그다드 입성 뒤 셀주크 우위를 인정
+- { type: vassal_of, subject: kirman-seljuk-sultanate, object: seljuk-empire, from: 1041, to: 1157 } # 카부르트가 투그릴 아래 케르만을 맡음(1073 반란 뒤에도 대셀주크를 받듦)
+- { type: vassal_of, subject: bavandid-dynasty, object: seljuk-empire, from: 1090, to: 1157 } # 이스파바디야 갈래가 셀주크 술탄을 받듦
+- { type: vassal_of, subject: iraq-seljuk-sultanate, object: seljuk-empire, from: 1118, to: 1157 } # 산자르가 대술탄으로 서쪽 술탄을 종주
+- { type: vassal_of, subject: eldiguzid-dynasty, object: iraq-seljuk-sultanate, from: 1136, to: 1194 } # 아타베그로 술탄을 내세워 다스림
+- { type: vassal_of, subject: salghurid-dynasty, object: iraq-seljuk-sultanate, from: 1148, to: 1194 } # 셀주크 술탄의 아타베그를 칭함
+- { type: vassal_of, subject: salghurid-dynasty, object: khwarazmian-empire, from: 1217, to: 1230 } # 사드 1세가 호라즘 샤에게 사로잡혀 종주를 받아들임
+- { type: vassal_of, subject: seljuks-of-syria, object: seljuk-empire, from: 1076, to: 1117 } # 투투시와 그 아들들이 대셀주크 술탄의 갈래로 다스림
+- { type: vassal_of, subject: burid-dynasty, object: seljuk-empire, from: 1104, to: 1154 } # 투그테긴 가문이 셀주크 술탄의 이름으로 다마스쿠스를 다스림
+- { type: vassal_of, subject: artuqid-dynasty, object: seljuk-empire, from: 1118, to: 1127 } # 일가지·발라크가 셀주크 술탄을 받들며 알레포를 다스림
+- { type: vassal_of, subject: zengid-dynasty, object: seljuk-empire, from: 1127, to: 1157 } # 장기는 셀주크 술탄이 세운 모술 아타베그(산자르 죽음까지)
+- { type: vassal_of, subject: uyunid-dynasty, object: seljuk-empire, from: 1077, to: 1157 } # 카르마트를 무너뜨릴 때 셀주크 군의 도움을 받고 명목상 받듦
+- { type: vassal_of, subject: mirdasid-dynasty, object: seljuk-empire, from: 1070, to: 1080 } # 1070 마흐무드 이븐 나스르가 아바스·셀주크 쪽으로 돌아서고 1071 알프 아르슬란에게 항복
+# ── 서아시아·북아프리카 A3b-4b (2026-10-30): 이라크·이란 1221~1452 (몽골·일 칸국 종주, 일 칸국 뒤 왕조, 티무르·카라코윤루) ──
+- { type: vassal_of, subject: ilkhanate, object: mongol-empire, from: 1260, to: 1270 } # 쿠빌라이가 훌라구에게 일 칸 칭호를 줌(몽골 제국 항목은 1270까지)
+- { type: vassal_of, subject: qutlugh-khanid-dynasty, object: khwarazmian-empire, from: 1222, to: 1230 } # 바라크 하지브가 잘랄 앗딘의 종주를 받아들임
+- { type: vassal_of, subject: qutlugh-khanid-dynasty, object: mongol-empire, from: 1231, to: 1259 } # 아들 루크 앗딘을 오고데이 궁정에 보내 항복
+- { type: vassal_of, subject: qutlugh-khanid-dynasty, object: ilkhanate, from: 1260, to: 1306 } # 일 칸국 아래 케르만 지배, 1306 울제이투가 끝냄
+- { type: vassal_of, subject: salghurid-dynasty, object: mongol-empire, from: 1231, to: 1259 } # 아부 바크르가 일찍 항복해 파르스를 지킴
+- { type: vassal_of, subject: salghurid-dynasty, object: ilkhanate, from: 1260, to: 1282 } # 훌라구 뒤 이름만 남은 아타베그
+- { type: vassal_of, subject: hazaraspid-dynasty, object: ilkhanate, from: 1256, to: 1335 } # 대 루르 아타베그가 일 칸국의 종주를 받아들임
+- { type: vassal_of, subject: hazaraspid-dynasty, object: timurid-empire, from: 1393, to: 1424 } # 1393 티무르의 서방 원정 뒤
+- { type: vassal_of, subject: bavandid-dynasty, object: mongol-empire, from: 1238, to: 1259 } # 킨흐와리야 갈래가 몽골의 가신으로 아몰에서 다시 일어섬
+- { type: vassal_of, subject: bavandid-dynasty, object: ilkhanate, from: 1260, to: 1335 } # 일 칸국의 가신
+- { type: vassal_of, subject: lulu-dynasty, object: mongol-empire, from: 1245, to: 1259 } # 1243 쾨세다그 전투 뒤 몽골의 종주를 받아들임(기억값)
+- { type: vassal_of, subject: lulu-dynasty, object: ilkhanate, from: 1260, to: 1260 } # 1261 아들 알살리흐가 반란을 일으키기 전까지
+- { type: vassal_of, subject: muzaffarid-dynasty, object: ilkhanate, from: 1314, to: 1335 } # 무바리즈 앗딘이 일 칸국의 마이부드·야즈드 총독
+- { type: vassal_of, subject: muzaffarid-dynasty, object: timurid-empire, from: 1387, to: 1392 } # 1387 티무르가 이스파한을 친 뒤 왕자들을 가신으로 되돌려 앉힘
+- { type: vassal_of, subject: qara-qoyunlu, object: timurid-empire, from: 1435, to: 1447 } # 자한 샤가 샤 루흐의 종주를 받아들임
+- { type: successor_of, subject: lulu-dynasty, object: zengid-dynasty, from: 1234, to: null } # 1234 루울루가 마지막 장기 군주를 없앰
+- { type: successor_of, subject: qutlugh-khanid-dynasty, object: khwarazmian-empire, from: 1222, to: null } # 1222 바라크 하지브가 호라즘 총독에게서 케르만을 빼앗음
+- { type: successor_of, subject: jalayirid-sultanate, object: ilkhanate, from: 1335, to: null } # 1335 아부 사이드 죽음 뒤 바그다드를 넘겨받음
+- { type: successor_of, subject: injuid-dynasty, object: ilkhanate, from: 1335, to: null } # 1335 파르스 직할지 관리 가문이 자립
+- { type: successor_of, subject: muzaffarid-dynasty, object: injuid-dynasty, from: 1353, to: null } # 1353 시라즈 함락, 1357 이스파한
+- { type: successor_of, subject: sarbadar-dynasty, object: ilkhanate, from: 1337, to: null } # 1337 세브제바르 봉기
+- { type: successor_of, subject: timurid-empire, object: muzaffarid-dynasty, from: 1393, to: null } # 1393 무자파르 왕자들을 처형하고 파르스·이스파한을 합침
+- { type: successor_of, subject: qara-qoyunlu, object: jalayirid-sultanate, from: 1410, to: null } # 1410 카라 유수프가 아흐마드를 처형하고 바그다드를 차지
