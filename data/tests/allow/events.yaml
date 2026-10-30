@@ -652,9 +652,6 @@
 - key: '1453 mamluk-sultanate 버전'
   reason: me-05~07 사건 묶음이 채움
   decided: 2026-10-29 운영자 A2 승인
-- key: '1453 sharifate-of-mecca 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
 - key: '1453 jabrid-emirate 버전'
   reason: me-05~07 사건 묶음이 채움
   decided: 2026-10-29 운영자 A2 승인
@@ -899,3 +896,489 @@
 - key: '1912 alaouite-morocco 소멸'
   reason: me-05~07 사건 묶음이 채움
   decided: 2026-10-29 운영자 A2 승인
+
+# ── 서아시아·북아프리카 A3-0 (2026-10-30): 알모하드 항목 끝 해 1228 → 1269(마라케시 함락, A3 운영자 결정 2). 사건 묶음 me-03~05가 사건을 쓰며 이 줄을 지운다 ──
+- key: '1269 almohads 소멸'
+  reason: me-03~05 사건 묶음이 채움(1269년 마린 왕조의 마라케시 함락)
+  decided: 2026-10-30 운영자 A3 승인
+
+# ── 서아시아·북아프리카 A3a-1 (2026-10-30): 레반트·이라크·아라비아·이란 632~999 새 항목·앞 버전의 성립·소멸·버전 해. 사건 묶음 me-02~05가 사건을 쓰며 이 줄을 지운다 ──
+- key: '224 sasanian-empire 성립'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '632 rashidun-caliphate 성립'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '642 dabuyid-dynasty 성립'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '651 sasanian-empire 소멸'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '661 rashidun-caliphate 소멸'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '750 abbasid-caliphate 성립'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '760 dabuyid-dynasty 소멸'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '793 ibadi-imamate-of-oman 성립'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '819 samanid-empire 성립'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '819 ziyadid-dynasty 성립'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '821 tahirid-dynasty 성립'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '847 yufirid-dynasty 성립'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '861 dulafid-dynasty 성립'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '861 saffarid-dynasty 성립'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '864 alid-tabaristan 성립'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '873 tahirid-dynasty 소멸'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '889 sajid-dynasty 성립'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '890 hamdanid-dynasty 성립'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '896 dulafid-dynasty 소멸'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '897 zaydi-imamate 성립'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '899 qarmatian-state 성립'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '919 sallarid-dynasty 성립'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '928 alid-tabaristan 소멸'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '929 sajid-dynasty 소멸'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '931 ziyarid-dynasty 성립'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '932 ilyasid-dynasty 성립'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '934 buyid-dynasty 성립'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '945 ibadi-imamate-of-oman 소멸'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '955 rawadid-dynasty 성립'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '959 hasanwayhid-dynasty 성립'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '968 ilyasid-dynasty 소멸'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '990 uqaylid-dynasty 성립'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '997 yufirid-dynasty 소멸'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '999 samanid-empire 소멸'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1003 saffarid-dynasty 소멸'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1004 hamdanid-dynasty 소멸'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1015 hasanwayhid-dynasty 소멸'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1018 ziyadid-dynasty 소멸'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1054 rawadid-dynasty 소멸'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1062 buyid-dynasty 소멸'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1062 sallarid-dynasty 소멸'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1077 qarmatian-state 소멸'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1090 ziyarid-dynasty 소멸'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1096 uqaylid-dynasty 소멸'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1258 abbasid-caliphate 소멸'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1597 zaydi-imamate 소멸'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '632 sasanian-empire 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '637 rashidun-caliphate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '637 sasanian-empire 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '639 rashidun-caliphate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '642 rashidun-caliphate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '642 sasanian-empire 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '644 rashidun-caliphate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '644 sasanian-empire 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '650 rashidun-caliphate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '650 sasanian-empire 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '651 rashidun-caliphate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '760 abbasid-caliphate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '793 abbasid-caliphate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '819 abbasid-caliphate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '821 abbasid-caliphate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '847 abbasid-caliphate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '861 abbasid-caliphate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '864 abbasid-caliphate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '866 abbasid-caliphate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '867 abbasid-caliphate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '867 saffarid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '870 abbasid-caliphate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '870 saffarid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '873 saffarid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '878 abbasid-caliphate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '886 abbasid-caliphate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '893 abbasid-caliphate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '896 abbasid-caliphate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '897 abbasid-caliphate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '897 yufirid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '898 abbasid-caliphate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '899 abbasid-caliphate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '900 saffarid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '900 samanid-empire 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '901 abbasid-caliphate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '901 sajid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '905 abbasid-caliphate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '908 abbasid-caliphate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '908 saffarid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '912 samanid-empire 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '914 samanid-empire 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '923 samanid-empire 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '928 samanid-empire 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '929 abbasid-caliphate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '929 hamdanid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '931 abbasid-caliphate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '931 samanid-empire 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '932 abbasid-caliphate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '934 abbasid-caliphate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '935 abbasid-caliphate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '935 ziyarid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '935 buyid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '941 sallarid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '943 abbasid-caliphate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '943 ziyarid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '943 buyid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '944 abbasid-caliphate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '944 hamdanid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '945 buyid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '959 buyid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '967 buyid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '968 buyid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '979 buyid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '979 hamdanid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '980 buyid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '984 sallarid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '984 rawadid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '990 buyid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '998 buyid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+
+# ── 서아시아·북아프리카 A3a-2 (2026-10-30): 이집트·리비아·마그레브 632~999 새 항목의 성립·소멸·버전 해(이집트 왕조의 시리아·히자즈 포함). 사건 묶음 me-02~05가 사건을 쓰며 이 줄을 지운다 ──
+- key: '744 barghawata-confederacy 성립'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '745 fihrid-emirate 성립'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '757 fihrid-emirate 소멸'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '758 midrarid-dynasty 성립'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '777 rustamid-imamate 성립'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '788 idrisid-dynasty 성립'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '800 aghlabid-dynasty 성립'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '868 tulunid-dynasty 성립'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '905 tulunid-dynasty 소멸'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '909 aghlabid-dynasty 소멸'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '909 rustamid-imamate 소멸'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '909 fatimid-caliphate 성립'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '935 ikhshidid-dynasty 성립'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '969 ikhshidid-dynasty 소멸'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '972 zirid-dynasty 성립'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '974 idrisid-dynasty 소멸'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '976 midrarid-dynasty 소멸'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '976 maghrawa-dynasty 성립'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1059 barghawata-confederacy 소멸'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1080 maghrawa-dynasty 소멸'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1148 zirid-dynasty 소멸'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1171 fatimid-caliphate 소멸'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '647 rashidun-caliphate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '762 abbasid-caliphate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '790 idrisid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '800 abbasid-caliphate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '868 abbasid-caliphate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '878 tulunid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '885 rustamid-imamate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '886 tulunid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '898 tulunid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '921 idrisid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '921 fatimid-caliphate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '932 fatimid-caliphate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '945 ikhshidid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '967 ikhshidid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '969 ikhshidid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '969 fatimid-caliphate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '972 fatimid-caliphate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '978 fatimid-caliphate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '978 zirid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '979 fatimid-caliphate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '983 fatimid-caliphate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '987 maghrawa-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인

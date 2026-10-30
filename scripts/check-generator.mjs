@@ -434,7 +434,8 @@ try {
   }
 
   // 앞 권역 나라 늘리기(2026-10-29 서아시아·북아프리카 A2-0, engine.mjs '앞 권역 나라 늘리기'): 뒤 권역이 extendable에 적은 앞 권역 나라의 버전에 땅을 더하고,
-  // 원래 버전은 homes로 남겨 data/geo/home/에 늘리기 전과 같은 바이트로 쓴다. 허용 목록 밖·기간 밖·원래 버전 없는 해·원래 도형과 겹침·채우기 대상이면 멈춘다
+  // 원래 버전은 homes로 남겨 data/geo/home/에 늘리기 전과 같은 바이트로 쓴다. 허용 목록 밖·기간 밖·원래 도형과 겹침·채우기 대상이면 멈춘다.
+  // 원래 버전이 없는 해(2026-10-30 A3-0)는 더할 땅만으로 새 버전(네 번째 값 없음)을 만든다
   {
     const { joinEras } = await import(pathToFileURL(path.join(GEO_SRC, 'shared.mjs')).href);
     const sqr = (x) => [[[[x, 10], [x + 1, 10], [x + 1, 11], [x, 11], [x, 10]]]]; // 시험용 정사각형
@@ -464,7 +465,17 @@ try {
     expectStop('늘리기: 자기 권역 나라를 extendable에 적음', '늘릴 수 없음', () => engine.mergeAreas([areaA, ['check-b', { versions: { 'check-b1': [[1800, null, sqr(5)]] }, extendable: { 'check-b1': [1800, 1900] } }]]));
     expectStop('늘리기: extendable의 id 오타', '어느 권역의 나라도 아님', () => extB({}, { 'check-zz': [1800, 1900] }));
     expectStop('늘리기: 조각이 extendable 기간 밖', 'extendable 기간', () => extB({ 'check-e1': [[1850, 1920, sqr(1)]] }, { 'check-e1': [1800, 1850] }));
-    expectStop('늘리기: 원래 권역 버전이 없는 해', '원래 권역 버전이 없음', () => engine.mergeAreas([['check-a', { versions: { 'check-e1': [[1800, 1900, home]] } }], ['check-b', { versions: {}, extendable: { 'check-e1': [1800, 1950] }, extensions: { 'check-e1': [[1850, 1920, sqr(1)]] } }]]));
+    {
+      // 원래 버전이 없는 해: 앞(1760~1779)·뒤(1900~1929)에 새 버전, 조각이 겹치는 해(1910~1919)는 두 조각의 합집합, 원래 버전(확실성 disputed)은 그대로 나뉨
+      const e1 = sqr(1), e2 = sqr(2), e3 = sqr(3);
+      const mm = engine.mergeAreas([['check-a', { versions: { 'check-e1': [[1800, 1900, home, 'disputed']] } }], ['check-b', { versions: {}, extendable: { 'check-e1': [1750, 1950] }, extensions: { 'check-e1': [[1760, 1780, e2], [1850, 1920, e1], [1910, 1930, e3]] } }]]);
+      const gv = mm.versions['check-e1'];
+      const sp = gv.map(([f, t]) => `${f}-${t}`).join(',');
+      const newOnes = gv.filter(([f]) => f < 1800 || f >= 1900);
+      const shapeOk = gv[0][2] === e2 && gv[1][2] === home && gv[1][3] === 'disputed' && gv[2][3] === 'disputed' && gv[3][2] === e1 && gv[5][2] === e3 && newOnes.every((v) => v.length === 3) && gv[4][2].length === 2;
+      if (sp === '1760-1780,1800-1850,1850-1900,1900-1910,1910-1920,1920-1930' && shapeOk) ok(`늘리기: 원래 권역 버전이 없는 해는 더할 땅만으로 새 버전을 만듦 (${sp}, 새 버전은 확실성 기본값, 원래 버전 나눔은 그대로)`);
+      else bad(`늘리기: 원래 버전 없는 해의 새 버전이 약속과 다름: ${sp}, 모양 ${shapeOk}`);
+    }
     expectStop('늘리기: 더할 땅이 원래 도형과 겹침', '겹침', () => extB({ 'check-e1': [[1850, 1920, sqr(0.5)]] }));
     expectStop('늘리기: 조각 모양(to가 null)', '한 줄 모양', () => extB({ 'check-e1': [[1850, null, sqr(1)]] }));
     expectStop('늘리기: 채우기(fillSpecs) 대상 나라', '채우기', () => engine.mergeAreas([['check-a', { versions: { 'check-e1': homeList }, fillSpecs: [{ id: 'check-e1', zone: sqr(9), from: 1800, to: 1900 }] }], ['check-b', { versions: {}, extendable: { 'check-e1': [1800, 1950] } }]]));

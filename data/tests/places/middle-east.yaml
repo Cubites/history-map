@@ -2339,3 +2339,692 @@
   expect: ottoman
   url: https://en.wikipedia.org/wiki/Ghat,_Libya
   from: 서아시아 A2b 반영 결과노트
+
+# 서아시아 A3a-1(2026-10-30): 레반트·이라크·아라비아·이란 632~999. 새 항목마다 수도 1점과 바뀌는 해 앞뒤, 늘린 동로마·우마이야 앞뒤(이음매 안타키아·샨르우르파는 기존 값 그대로)
+- name: 메디나
+  at: [39.61, 24.47]
+  year: 640
+  expect: rashidun-caliphate
+  url: https://en.wikipedia.org/wiki/Rashidun_Caliphate
+  from: 서아시아 A3a-1 결과노트
+- name: 쿠파
+  at: [44.40, 32.03]
+  year: 658
+  expect: rashidun-caliphate
+  url: https://en.wikipedia.org/wiki/Rashidun_Caliphate
+  from: 서아시아 A3a-1 결과노트
+- name: 다마스쿠스
+  at: [36.31, 33.51]
+  year: 635
+  expect: byzantine-empire
+  url: https://en.wikipedia.org/wiki/Muslim_conquest_of_the_Levant
+  from: 서아시아 A3a-1 결과노트
+- name: 다마스쿠스
+  at: [36.31, 33.51]
+  year: 640
+  expect: rashidun-caliphate
+  url: https://en.wikipedia.org/wiki/Muslim_conquest_of_the_Levant
+  from: 서아시아 A3a-1 결과노트
+- name: 다마스쿠스
+  at: [36.31, 33.51]
+  year: 700
+  expect: umayyad-caliphate
+  url: https://en.wikipedia.org/wiki/Umayyad_Caliphate
+  from: 서아시아 A3a-1 결과노트
+- name: 라까
+  at: [39.01, 35.95]
+  year: 638
+  expect: byzantine-empire
+  url: https://en.wikipedia.org/wiki/Muslim_conquest_of_the_Levant
+  from: 서아시아 A3a-1 결과노트
+- name: 라까
+  at: [39.01, 35.95]
+  year: 640
+  expect: rashidun-caliphate
+  url: https://en.wikipedia.org/wiki/Muslim_conquest_of_the_Levant
+  from: 서아시아 A3a-1 결과노트
+- name: 크테시폰
+  at: [44.58, 33.09]
+  year: 635
+  expect: sasanian-empire
+  url: https://en.wikipedia.org/wiki/Muslim_conquest_of_Persia
+  from: 서아시아 A3a-1 결과노트
+- name: 크테시폰
+  at: [44.58, 33.09]
+  year: 640
+  expect: rashidun-caliphate
+  url: https://en.wikipedia.org/wiki/Muslim_conquest_of_Persia
+  from: 서아시아 A3a-1 결과노트
+- name: 이스파한
+  at: [51.67, 32.65]
+  year: 641
+  expect: sasanian-empire
+  url: https://en.wikipedia.org/wiki/Muslim_conquest_of_Persia
+  from: 서아시아 A3a-1 결과노트
+- name: 이스파한
+  at: [51.67, 32.65]
+  year: 645
+  expect: rashidun-caliphate
+  url: https://en.wikipedia.org/wiki/Muslim_conquest_of_Persia
+  from: 서아시아 A3a-1 결과노트
+- name: 니샤푸르
+  at: [58.80, 36.21]
+  year: 650
+  expect: sasanian-empire
+  url: https://en.wikipedia.org/wiki/Muslim_conquest_of_Persia
+  from: 서아시아 A3a-1 결과노트
+- name: 니샤푸르
+  at: [58.80, 36.21]
+  year: 700
+  expect: umayyad-caliphate
+  url: https://en.wikipedia.org/wiki/Umayyad_Caliphate
+  from: 서아시아 A3a-1 결과노트
+- name: 푸만(길란)
+  at: [49.31, 37.22]
+  year: 700
+  expect: dabuyid-dynasty
+  url: https://en.wikipedia.org/wiki/Dabuyid_dynasty
+  from: 서아시아 A3a-1 결과노트
+- name: 아물
+  at: [52.35, 36.47]
+  year: 770
+  expect: abbasid-caliphate
+  url: https://en.wikipedia.org/wiki/Tabaristan
+  from: 서아시아 A3a-1 결과노트
+- name: 바그다드
+  at: [44.37, 33.31]
+  year: 800
+  expect: abbasid-caliphate
+  url: https://en.wikipedia.org/wiki/Abbasid_Caliphate
+  from: 서아시아 A3a-1 결과노트
+- name: 바그다드
+  at: [44.37, 33.31]
+  year: 950
+  expect: buyid-dynasty
+  url: https://en.wikipedia.org/wiki/Buyid_dynasty
+  from: 서아시아 A3a-1 결과노트
+- name: 니샤푸르
+  at: [58.80, 36.21]
+  year: 840
+  expect: tahirid-dynasty
+  url: https://en.wikipedia.org/wiki/Tahirid_dynasty
+  from: 서아시아 A3a-1 결과노트
+- name: 니샤푸르
+  at: [58.80, 36.21]
+  year: 880
+  expect: saffarid-dynasty
+  url: https://en.wikipedia.org/wiki/Saffarid_dynasty
+  from: 서아시아 A3a-1 결과노트
+- name: 니샤푸르
+  at: [58.80, 36.21]
+  year: 950
+  expect: samanid-empire
+  url: https://en.wikipedia.org/wiki/Samanid_Empire
+  from: 서아시아 A3a-1 결과노트
+- name: 자헤단(시스탄)
+  at: [60.86, 29.50]
+  year: 870
+  expect: saffarid-dynasty
+  url: https://en.wikipedia.org/wiki/Saffarid_dynasty
+  from: 서아시아 A3a-1 결과노트
+- name: 이스파한
+  at: [51.67, 32.65]
+  year: 880
+  expect: dulafid-dynasty
+  url: https://en.wikipedia.org/wiki/Dulafids
+  from: 서아시아 A3a-1 결과노트
+- name: 이스파한
+  at: [51.67, 32.65]
+  year: 900
+  expect: abbasid-caliphate
+  url: https://en.wikipedia.org/wiki/Dulafids
+  from: 서아시아 A3a-1 결과노트
+- name: 아물
+  at: [52.35, 36.47]
+  year: 880
+  expect: alid-tabaristan
+  url: https://en.wikipedia.org/wiki/Alavids
+  from: 서아시아 A3a-1 결과노트
+- name: 아물
+  at: [52.35, 36.47]
+  year: 910
+  expect: samanid-empire
+  url: https://en.wikipedia.org/wiki/Alavids
+  from: 서아시아 A3a-1 결과노트
+- name: 아르다빌
+  at: [48.30, 38.25]
+  year: 910
+  expect: sajid-dynasty
+  url: https://en.wikipedia.org/wiki/Sajid_dynasty
+  from: 서아시아 A3a-1 결과노트
+- name: 시라즈
+  at: [52.53, 29.59]
+  year: 880
+  expect: saffarid-dynasty
+  url: https://en.wikipedia.org/wiki/Saffarid_dynasty
+  from: 서아시아 A3a-1 결과노트
+- name: 시라즈
+  at: [52.53, 29.59]
+  year: 920
+  expect: abbasid-caliphate
+  url: https://en.wikipedia.org/wiki/Saffarid_dynasty
+  from: 서아시아 A3a-1 결과노트
+- name: 시라즈
+  at: [52.53, 29.59]
+  year: 950
+  expect: buyid-dynasty
+  url: https://en.wikipedia.org/wiki/Buyid_dynasty
+  from: 서아시아 A3a-1 결과노트
+- name: 케르만
+  at: [57.08, 30.28]
+  year: 950
+  expect: ilyasid-dynasty
+  url: https://en.wikipedia.org/wiki/Ilyasids
+  from: 서아시아 A3a-1 결과노트
+- name: 케르만
+  at: [57.08, 30.28]
+  year: 970
+  expect: buyid-dynasty
+  url: https://en.wikipedia.org/wiki/Ilyasids
+  from: 서아시아 A3a-1 결과노트
+- name: 라이(테헤란)
+  at: [51.43, 35.59]
+  year: 935
+  expect: ziyarid-dynasty
+  url: https://en.wikipedia.org/wiki/Ziyarid_dynasty
+  from: 서아시아 A3a-1 결과노트
+- name: 라이(테헤란)
+  at: [51.43, 35.59]
+  year: 950
+  expect: buyid-dynasty
+  url: https://en.wikipedia.org/wiki/Buyid_dynasty
+  from: 서아시아 A3a-1 결과노트
+- name: 고르간
+  at: [54.43, 36.84]
+  year: 950
+  expect: ziyarid-dynasty
+  url: https://en.wikipedia.org/wiki/Ziyarid_dynasty
+  from: 서아시아 A3a-1 결과노트
+- name: 고르간
+  at: [54.43, 36.84]
+  year: 990
+  expect: buyid-dynasty
+  url: https://en.wikipedia.org/wiki/Ziyarid_dynasty
+  from: 서아시아 A3a-1 결과노트
+- name: 디나바르(케르만샤)
+  at: [47.06, 34.31]
+  year: 970
+  expect: hasanwayhid-dynasty
+  url: https://en.wikipedia.org/wiki/Hasanwayhid_dynasty
+  from: 서아시아 A3a-1 결과노트
+- name: 모술
+  at: [43.14, 36.34]
+  year: 950
+  expect: hamdanid-dynasty
+  url: https://en.wikipedia.org/wiki/Hamdanid_dynasty
+  from: 서아시아 A3a-1 결과노트
+- name: 모술
+  at: [43.14, 36.34]
+  year: 985
+  expect: buyid-dynasty
+  url: https://en.wikipedia.org/wiki/Hamdanid_dynasty
+  from: 서아시아 A3a-1 결과노트
+- name: 모술
+  at: [43.14, 36.34]
+  year: 995
+  expect: uqaylid-dynasty
+  url: https://en.wikipedia.org/wiki/Uqaylid_dynasty
+  from: 서아시아 A3a-1 결과노트
+- name: 알레포
+  at: [37.16, 36.20]
+  year: 950
+  expect: hamdanid-dynasty
+  url: https://en.wikipedia.org/wiki/Hamdanid_dynasty
+  from: 서아시아 A3a-1 결과노트
+- name: 홈스
+  at: [36.72, 34.73]
+  year: 950
+  expect: hamdanid-dynasty
+  url: https://en.wikipedia.org/wiki/Sayf_al-Dawla
+  from: 서아시아 A3a-1 결과노트
+- name: 타브리즈
+  at: [46.30, 38.08]
+  year: 950
+  expect: sallarid-dynasty
+  url: https://en.wikipedia.org/wiki/Sallarid_dynasty
+  from: 서아시아 A3a-1 결과노트
+- name: 타브리즈
+  at: [46.30, 38.08]
+  year: 990
+  expect: rawadid-dynasty
+  url: https://en.wikipedia.org/wiki/Rawwadid_dynasty
+  from: 서아시아 A3a-1 결과노트
+- name: 알후푸프
+  at: [49.62, 25.35]
+  year: 950
+  expect: qarmatian-state
+  url: https://en.wikipedia.org/wiki/Qarmatians
+  from: 서아시아 A3a-1 결과노트
+- name: 자비드
+  at: [43.31, 14.20]
+  year: 900
+  expect: ziyadid-dynasty
+  url: https://en.wikipedia.org/wiki/Ziyadid_dynasty
+  from: 서아시아 A3a-1 결과노트
+- name: 사나
+  at: [44.21, 15.35]
+  year: 900
+  expect: yufirid-dynasty
+  url: https://en.wikipedia.org/wiki/Yu%27firids
+  from: 서아시아 A3a-1 결과노트
+- name: 사다
+  at: [43.76, 16.94]
+  year: 950
+  expect: zaydi-imamate
+  url: https://en.wikipedia.org/wiki/Rassids
+  from: 서아시아 A3a-1 결과노트
+- name: 니즈와
+  at: [57.53, 22.93]
+  year: 850
+  expect: ibadi-imamate-of-oman
+  url: https://en.wikipedia.org/wiki/Imamate_of_Oman
+  from: 서아시아 A3a-1 결과노트
+- name: 니즈와
+  at: [57.53, 22.93]
+  year: 895
+  expect: abbasid-caliphate
+  url: https://en.wikipedia.org/wiki/Imamate_of_Oman
+  from: 서아시아 A3a-1 결과노트
+- name: 소하르
+  at: [56.75, 24.35]
+  year: 980
+  expect: buyid-dynasty
+  url: https://en.wikipedia.org/wiki/Imamate_of_Oman
+  from: 서아시아 A3a-1 결과노트
+- name: 메카
+  at: [39.83, 21.42]
+  year: 970
+  expect: sharifate-of-mecca
+  url: https://en.wikipedia.org/wiki/Sharifate_of_Mecca
+  from: 서아시아 A3a-1 결과노트
+- name: 리야드(야마마)
+  at: [46.72, 24.63]
+  year: 800
+  expect: abbasid-caliphate
+  url: https://en.wikipedia.org/wiki/Abbasid_Caliphate
+  from: 서아시아 A3a-1 결과노트
+
+# 서아시아 A3a-2(2026-10-30): 이집트·리비아·마그레브 632~999. 새 항목마다 수도 1점과 바뀌는 해 앞뒤, 늘린 동로마·우마이야 앞뒤(이음매 세우타는 기존 값 그대로)
+- name: 알렉산드리아
+  at: [29.92, 31.20]
+  year: 640
+  expect: byzantine-empire
+  url: https://en.wikipedia.org/wiki/Muslim_conquest_of_Egypt
+  from: 서아시아 A3a-2 결과노트
+- name: 알렉산드리아
+  at: [29.92, 31.20]
+  year: 645
+  expect: rashidun-caliphate
+  url: https://en.wikipedia.org/wiki/Muslim_conquest_of_Egypt
+  from: 서아시아 A3a-2 결과노트
+- name: 푸스타트
+  at: [31.24, 30.00]
+  year: 650
+  expect: rashidun-caliphate
+  url: https://en.wikipedia.org/wiki/Muslim_conquest_of_Egypt
+  from: 서아시아 A3a-2 결과노트
+- name: 푸스타트
+  at: [31.24, 30.00]
+  year: 700
+  expect: umayyad-caliphate
+  url: https://en.wikipedia.org/wiki/Muslim_conquest_of_Egypt
+  from: 서아시아 A3a-2 결과노트
+- name: 푸스타트
+  at: [31.24, 30.00]
+  year: 800
+  expect: abbasid-caliphate
+  url: https://en.wikipedia.org/wiki/Abbasid_Egypt
+  from: 서아시아 A3a-2 결과노트
+- name: 푸스타트
+  at: [31.24, 30.00]
+  year: 900
+  expect: tulunid-dynasty
+  url: https://en.wikipedia.org/wiki/Tulunid_dynasty
+  from: 서아시아 A3a-2 결과노트
+- name: 푸스타트
+  at: [31.24, 30.00]
+  year: 920
+  expect: abbasid-caliphate
+  url: https://en.wikipedia.org/wiki/Abbasid_Egypt
+  from: 서아시아 A3a-2 결과노트
+- name: 푸스타트
+  at: [31.24, 30.00]
+  year: 950
+  expect: ikhshidid-dynasty
+  url: https://en.wikipedia.org/wiki/Ikhshidid_dynasty
+  from: 서아시아 A3a-2 결과노트
+- name: 푸스타트
+  at: [31.24, 30.00]
+  year: 980
+  expect: fatimid-caliphate
+  url: https://en.wikipedia.org/wiki/Fatimid_conquest_of_Egypt
+  from: 서아시아 A3a-2 결과노트
+- name: 알아리쉬(시나이)
+  at: [33.80, 31.12]
+  year: 700
+  expect: umayyad-caliphate
+  url: https://en.wikipedia.org/wiki/Muslim_conquest_of_Egypt
+  from: 서아시아 A3a-2 결과노트
+- name: 알마르지(바르카)
+  at: [20.83, 32.50]
+  year: 640
+  expect: byzantine-empire
+  url: https://en.wikipedia.org/wiki/Muslim_conquest_of_the_Maghreb
+  from: 서아시아 A3a-2 결과노트
+- name: 알마르지(바르카)
+  at: [20.83, 32.50]
+  year: 700
+  expect: umayyad-caliphate
+  url: https://en.wikipedia.org/wiki/Muslim_conquest_of_the_Maghreb
+  from: 서아시아 A3a-2 결과노트
+- name: 알마르지(바르카)
+  at: [20.83, 32.50]
+  year: 900
+  expect: tulunid-dynasty
+  url: https://en.wikipedia.org/wiki/Tulunid_dynasty
+  from: 서아시아 A3a-2 결과노트
+- name: 트리폴리(리비아)
+  at: [13.19, 32.89]
+  year: 645
+  expect: byzantine-empire
+  url: https://en.wikipedia.org/wiki/Muslim_conquest_of_the_Maghreb
+  from: 서아시아 A3a-2 결과노트
+- name: 트리폴리(리비아)
+  at: [13.19, 32.89]
+  year: 650
+  expect: rashidun-caliphate
+  url: https://en.wikipedia.org/wiki/Muslim_conquest_of_the_Maghreb
+  from: 서아시아 A3a-2 결과노트
+- name: 트리폴리(리비아)
+  at: [13.19, 32.89]
+  year: 700
+  expect: umayyad-caliphate
+  url: https://en.wikipedia.org/wiki/Muslim_conquest_of_the_Maghreb
+  from: 서아시아 A3a-2 결과노트
+- name: 트리폴리(리비아)
+  at: [13.19, 32.89]
+  year: 975
+  expect: fatimid-caliphate
+  url: https://en.wikipedia.org/wiki/Zirid_dynasty
+  from: 서아시아 A3a-2 결과노트
+- name: 트리폴리(리비아)
+  at: [13.19, 32.89]
+  year: 990
+  expect: zirid-dynasty
+  url: https://en.wikipedia.org/wiki/Zirid_dynasty
+  from: 서아시아 A3a-2 결과노트
+- name: 카르타고
+  at: [10.32, 36.85]
+  year: 690
+  expect: byzantine-empire
+  url: https://en.wikipedia.org/wiki/Exarchate_of_Africa
+  from: 서아시아 A3a-2 결과노트
+- name: 카르타고
+  at: [10.32, 36.85]
+  year: 700
+  expect: umayyad-caliphate
+  url: https://en.wikipedia.org/wiki/Muslim_conquest_of_the_Maghreb
+  from: 서아시아 A3a-2 결과노트
+- name: 카이라완
+  at: [10.10, 35.68]
+  year: 660
+  expect: byzantine-empire
+  url: https://en.wikipedia.org/wiki/Muslim_conquest_of_the_Maghreb
+  from: 서아시아 A3a-2 결과노트
+- name: 카이라완
+  at: [10.10, 35.68]
+  year: 680
+  expect: umayyad-caliphate
+  url: https://en.wikipedia.org/wiki/Muslim_conquest_of_the_Maghreb
+  from: 서아시아 A3a-2 결과노트
+- name: 카이라완
+  at: [10.10, 35.68]
+  year: 750
+  expect: fihrid-emirate
+  url: https://en.wikipedia.org/wiki/Ifriqiya
+  from: 서아시아 A3a-2 결과노트
+- name: 카이라완
+  at: [10.10, 35.68]
+  year: 759
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Ifriqiya
+  from: 서아시아 A3a-2 결과노트
+- name: 카이라완
+  at: [10.10, 35.68]
+  year: 780
+  expect: abbasid-caliphate
+  url: https://en.wikipedia.org/wiki/Ifriqiya
+  from: 서아시아 A3a-2 결과노트
+- name: 카이라완
+  at: [10.10, 35.68]
+  year: 850
+  expect: aghlabid-dynasty
+  url: https://en.wikipedia.org/wiki/Aghlabids
+  from: 서아시아 A3a-2 결과노트
+- name: 카이라완
+  at: [10.10, 35.68]
+  year: 930
+  expect: fatimid-caliphate
+  url: https://en.wikipedia.org/wiki/Fatimid_Caliphate
+  from: 서아시아 A3a-2 결과노트
+- name: 카이라완
+  at: [10.10, 35.68]
+  year: 980
+  expect: zirid-dynasty
+  url: https://en.wikipedia.org/wiki/Zirid_dynasty
+  from: 서아시아 A3a-2 결과노트
+- name: 바트나(아우레스)
+  at: [6.17, 35.56]
+  year: 690
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Muslim_conquest_of_the_Maghreb
+  from: 서아시아 A3a-2 결과노트
+- name: 알제
+  at: [3.06, 36.75]
+  year: 720
+  expect: umayyad-caliphate
+  url: https://en.wikipedia.org/wiki/Musa_ibn_Nusayr
+  from: 서아시아 A3a-2 결과노트
+- name: 알제
+  at: [3.06, 36.75]
+  year: 990
+  expect: zirid-dynasty
+  url: https://en.wikipedia.org/wiki/Zirid_dynasty
+  from: 서아시아 A3a-2 결과노트
+- name: 타헤르트(티아렛)
+  at: [1.32, 35.37]
+  year: 720
+  expect: umayyad-caliphate
+  url: https://en.wikipedia.org/wiki/Musa_ibn_Nusayr
+  from: 서아시아 A3a-2 결과노트
+- name: 타헤르트(티아렛)
+  at: [1.32, 35.37]
+  year: 800
+  expect: rustamid-imamate
+  url: https://en.wikipedia.org/wiki/Rustamid_dynasty
+  from: 서아시아 A3a-2 결과노트
+- name: 타헤르트(티아렛)
+  at: [1.32, 35.37]
+  year: 920
+  expect: fatimid-caliphate
+  url: https://en.wikipedia.org/wiki/Rustamid_dynasty
+  from: 서아시아 A3a-2 결과노트
+- name: 타헤르트(티아렛)
+  at: [1.32, 35.37]
+  year: 980
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Zirid_dynasty
+  from: 서아시아 A3a-2 결과노트
+- name: 젤파
+  at: [3.25, 34.67]
+  year: 850
+  expect: rustamid-imamate
+  url: https://en.wikipedia.org/wiki/Rustamid_dynasty
+  from: 서아시아 A3a-2 결과노트
+- name: 젤파
+  at: [3.25, 34.67]
+  year: 895
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Rustamid_dynasty
+  from: 서아시아 A3a-2 결과노트
+- name: 틀렘센
+  at: [-1.32, 34.88]
+  year: 800
+  expect: idrisid-dynasty
+  url: https://en.wikipedia.org/wiki/Idrisid_dynasty
+  from: 서아시아 A3a-2 결과노트
+- name: 틀렘센
+  at: [-1.32, 34.88]
+  year: 925
+  expect: fatimid-caliphate
+  url: https://en.wikipedia.org/wiki/Fatimid_Caliphate
+  from: 서아시아 A3a-2 결과노트
+- name: 탕헤르
+  at: [-5.81, 35.77]
+  year: 720
+  expect: umayyad-caliphate
+  url: https://en.wikipedia.org/wiki/Musa_ibn_Nusayr
+  from: 서아시아 A3a-2 결과노트
+- name: 탕헤르
+  at: [-5.81, 35.77]
+  year: 760
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Berber_Revolt
+  from: 서아시아 A3a-2 결과노트
+- name: 탕헤르
+  at: [-5.81, 35.77]
+  year: 950
+  expect: idrisid-dynasty
+  url: https://en.wikipedia.org/wiki/Idrisid_dynasty
+  from: 서아시아 A3a-2 결과노트
+- name: 페스
+  at: [-5.00, 34.04]
+  year: 800
+  expect: idrisid-dynasty
+  url: https://en.wikipedia.org/wiki/Idrisid_dynasty
+  from: 서아시아 A3a-2 결과노트
+- name: 페스
+  at: [-5.00, 34.04]
+  year: 925
+  expect: fatimid-caliphate
+  url: https://en.wikipedia.org/wiki/Fatimid_Caliphate
+  from: 서아시아 A3a-2 결과노트
+- name: 페스
+  at: [-5.00, 34.04]
+  year: 950
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Idrisid_dynasty
+  from: 서아시아 A3a-2 결과노트
+- name: 페스
+  at: [-5.00, 34.04]
+  year: 990
+  expect: maghrawa-dynasty
+  url: https://en.wikipedia.org/wiki/Maghrawa_(tribe)
+  from: 서아시아 A3a-2 결과노트
+- name: 시질마사(리사니)
+  at: [-4.27, 31.28]
+  year: 850
+  expect: midrarid-dynasty
+  url: https://en.wikipedia.org/wiki/Midrarid_dynasty
+  from: 서아시아 A3a-2 결과노트
+- name: 시질마사(리사니)
+  at: [-4.27, 31.28]
+  year: 990
+  expect: maghrawa-dynasty
+  url: https://en.wikipedia.org/wiki/Sijilmasa
+  from: 서아시아 A3a-2 결과노트
+- name: 카사블랑카
+  at: [-7.62, 33.59]
+  year: 850
+  expect: barghawata-confederacy
+  url: https://en.wikipedia.org/wiki/Barghawata
+  from: 서아시아 A3a-2 결과노트
+- name: 라바트
+  at: [-6.84, 34.02]
+  year: 720
+  expect: umayyad-caliphate
+  url: https://en.wikipedia.org/wiki/Musa_ibn_Nusayr
+  from: 서아시아 A3a-2 결과노트
+- name: 라바트
+  at: [-6.84, 34.02]
+  year: 900
+  expect: barghawata-confederacy
+  url: https://en.wikipedia.org/wiki/Barghawata
+  from: 서아시아 A3a-2 결과노트
+- name: 다마스쿠스
+  at: [36.30, 33.51]
+  year: 890
+  expect: tulunid-dynasty
+  url: https://en.wikipedia.org/wiki/Tulunid_dynasty
+  from: 서아시아 A3a-2 결과노트
+- name: 다마스쿠스
+  at: [36.30, 33.51]
+  year: 950
+  expect: ikhshidid-dynasty
+  url: https://en.wikipedia.org/wiki/Ikhshidid_dynasty
+  from: 서아시아 A3a-2 결과노트
+- name: 다마스쿠스
+  at: [36.30, 33.51]
+  year: 975
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Al-Aziz_Billah
+  from: 서아시아 A3a-2 결과노트
+- name: 다마스쿠스
+  at: [36.30, 33.51]
+  year: 990
+  expect: fatimid-caliphate
+  url: https://en.wikipedia.org/wiki/Al-Aziz_Billah
+  from: 서아시아 A3a-2 결과노트
+- name: 예루살렘
+  at: [35.23, 31.77]
+  year: 950
+  expect: ikhshidid-dynasty
+  url: https://en.wikipedia.org/wiki/Ikhshidid_dynasty
+  from: 서아시아 A3a-2 결과노트
+- name: 예루살렘
+  at: [35.23, 31.77]
+  year: 981
+  expect: fatimid-caliphate
+  url: https://en.wikipedia.org/wiki/Al-Aziz_Billah
+  from: 서아시아 A3a-2 결과노트
+- name: 알레포
+  at: [37.16, 36.20]
+  year: 890
+  expect: tulunid-dynasty
+  url: https://en.wikipedia.org/wiki/Tulunid_dynasty
+  from: 서아시아 A3a-2 결과노트
+- name: 알레포
+  at: [37.16, 36.20]
+  year: 900
+  expect: abbasid-caliphate
+  url: https://en.wikipedia.org/wiki/Tulunid_dynasty
+  from: 서아시아 A3a-2 결과노트
+- name: 메카
+  at: [39.83, 21.42]
+  year: 950
+  expect: ikhshidid-dynasty
+  url: https://en.wikipedia.org/wiki/Ikhshidid_dynasty
+  from: 서아시아 A3a-2 결과노트
+- name: 타부크
+  at: [36.57, 28.38]
+  year: 955
+  expect: ikhshidid-dynasty
+  url: https://en.wikipedia.org/wiki/Ikhshidid_dynasty
+  from: 서아시아 A3a 반영 결과노트

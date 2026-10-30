@@ -24,14 +24,17 @@ const ESTIMATED = '중고등학교 한국사 교과서 시대별 지도의 일�
 // extendable·extensions(2026-10-29 서아시아·북아프리카 A2-0): 앞 권역 나라 늘리기. 아래 '앞 권역 나라 늘리기' 설명(이 방법의 원천)
 const AREA_EXPORTS = new Set(['versions', 'fillSpecs', 'source', 'gapZones', 'voids', 'sourceOf', 'extendable', 'extensions']);
 
-// ── 앞 권역 나라 늘리기 (2026-10-29 서아시아·북아프리카 A2-0) ─────────────────
+// ── 앞 권역 나라 늘리기 (2026-10-29 서아시아·북아프리카 A2-0, 2026-10-30 A3-0에서 원래 버전 없는 해로 넓힘) ─────────────────
 // 뒤 권역(AREAS에서 뒤)이 앞 권역 나라의 버전에 자기 땅을 더한다(예: middle-east가 europe의 ottoman에 시리아·이집트·이라크를 더함). 나라 id·항목 파일·출처 문구(source)는 원래 권역 것 그대로다.
 // - extendable: { 나라 id: [첫 해, 끝 해(미포함)] } 이 권역이 늘려도 되는 앞 권역 나라와 기간. 원천은 그 권역 범위 문서의 영향표(예: docs/middle-east/00-scope.md 5절)이고,
 //   여기 없는 앞 권역 나라는 늘릴 수 없다(같은 id를 versions에 쓰면 '두 곳에 있음'으로 멈춤). 권역 파일이 joinEras에 넘기면 시대 파일 소유표의 그 나라 버전이 extensions로 간다
 // - extensions: { 나라 id: [[from, to, 멀티폴리곤], ...] } 더할 땅(to는 미포함 정수, 같은 나라 조각끼리는 기간이 겹쳐도 됨). 그 해의 원래 버전과 합집합(U)을 하고,
 //   더할 땅의 기간 경계에서 원래 버전을 나눈다(나뉜 앞뒤는 원래 도형 객체 그대로). 확실성(네 번째 값)은 원래 버전 것
+// - 원래 권역 버전이 없는 해(A3-0, 예: 우마이야 661~710·알모라비드 1040~1090·알모하드 1229~1268): 더할 땅만으로 새 버전을 만든다(그 해 조각들의 합집합,
+//   같은 도형이 이어지면 한 버전). 새 버전은 네 번째 값을 두지 않아 확실성은 writeGeo 기본값 'estimated'(이 권역 나라와 같음), 출처 문구는 나라마다 하나라 원래 권역 것.
+//   새 해를 허용하는 기간도 extendable이 막는다(그 밖의 해·나라는 멈춤). 항목 기간(from~to) 밖의 버전은 생성기가 모르고 build:data 검사('존속 기간을 벗어남')가 잡는다
 // - 멈추는 경우: extendable 모양이 틀림, 그 id가 앞 권역 나라가 아님(자기 권역·뒤 권역·없는 id), extensions의 id가 extendable에 없음, 조각이 그 기간 밖,
-//   그 해에 원래 권역 버전이 없음(늘리기는 새 해를 만들지 않음), 더할 땅이 그 해 원래 도형과 OVERLAP_MAX_DEG2(약 1km²) 넘게 겹침(선은 아래층이 가짐: 늘리는 권역 조각은 앞 권역 조각을 뺀 것이라 겹침 0이 정상),
+//   더할 땅이 그 해 원래 도형과 OVERLAP_MAX_DEG2(약 1km²) 넘게 겹침(선은 아래층이 가짐: 늘리는 권역 조각은 앞 권역 조각을 뺀 것이라 겹침 0이 정상),
 //   늘린 나라가 빈 땅 채우기(fillSpecs) 대상임(채우기가 원래 모양에 들어가지 않으므로)
 // - 원래 권역 모양은 data/geo/home/<id>.geojson에 늘리기 전과 같은 바이트로 따로 쓴다(writeGeo). data/geo/<id>.geojson은 늘린 모양이다.
 //   전쟁 쪽(gen:wars의 scripts/wars/engine.mjs, build:data의 전쟁 장면)은 home 파일이 있으면 그것을 쓴다: 1차 대전 동맹국 칠 등 전쟁 화면이 바이트 그대로(A2 운영자 결정 3).
@@ -40,12 +43,6 @@ const OVERLAP_MAX_DEG2 = 1e-4;
 const multiArea = (m) => m.reduce((sum, poly) => sum + poly.reduce((s2, r, k) => { let a2 = 0; for (let i = 0, j = r.length - 1; i < r.length; j = i++) a2 += (r[j][0] + r[i][0]) * (r[j][1] - r[i][1]); return s2 + (k === 0 ? 1 : -1) * Math.abs(a2 / 2); }, 0), 0);
 function extendVersions(id, list, pieces, where) {
   const label = `${where}의 ${id} 늘리기`;
-  // 늘리는 해마다 원래 버전이 있어야 한다
-  for (const [from, to] of pieces) {
-    let y = from;
-    for (const [f, t] of [...list].sort((a, b) => a[0] - b[0])) if (f <= y && y < (t ?? Infinity)) y = Math.min(t ?? Infinity, to);
-    if (y < to) throw new Error(`${label}: ${y}년에 원래 권역 버전이 없음 (늘리기는 원래 버전이 있는 해에만 땅을 더함, 조각 [${from}, ${to}))`);
-  }
   const unions = new Map();
   const out = [];
   for (const v of list) {
@@ -78,7 +75,25 @@ function extendVersions(id, list, pieces, where) {
       else out.push([a, b === Infinity ? null : b, g, ...rest]);
     }
   }
-  return out;
+  // 원래 버전이 없는 해: 더할 땅만으로 새 버전(네 번째 값 없음). 경계는 조각과 원래 버전의 해라 나뉜 기간마다 원래 버전이 통째로 있거나 없다
+  const covered = (y) => list.some(([f, t]) => f <= y && y < (t ?? Infinity));
+  const cuts = [...new Set([...pieces.flatMap(([a, b]) => [a, b]), ...list.flatMap(([f, t]) => (t === null ? [f] : [f, t]))])].sort((x, y) => x - y);
+  const added = [];
+  const alone = new Map();
+  for (let k = 0; k < cuts.length - 1; k++) {
+    const [a, b] = [cuts[k], cuts[k + 1]];
+    if (covered(a)) continue;
+    const active = [...new Set(pieces.filter(([pa, pb]) => pa <= a && b <= pb).map(([, , g]) => g))];
+    if (!active.length) continue;
+    const key = active.map((x) => pieces.findIndex((p) => p[2] === x)).join(' ');
+    if (!alone.has(key)) alone.set(key, active.length === 1 ? active[0] : polyclip.union(...active));
+    const g = alone.get(key);
+    const last = added.at(-1);
+    if (last && last[1] === a && last[2] === g) last[1] = b;
+    else added.push([a, b, g]);
+  }
+  if (!added.length) return out;
+  return [...out, ...added].sort((x, y) => x[0] - y[0]);
 }
 
 // 권역 파일들의 versions·fillSpecs·source를 AREAS 순서대로 합친다. 아래 경우에는 data/geo를 지우기 전에 멈춘다.
@@ -89,7 +104,7 @@ function extendVersions(id, list, pieces, where) {
 // - 빈 땅 검사 구역(gapZones)의 모양이 틀림 (collectGapZones의 검사. 생성기는 구역을 쓰지 않지만 check:gaps보다 먼저 잡는다)
 // - areaDir(권역 파일 폴더)에 AREAS 목록에 없는 권역 파일이나, 등록된 권역 이름이 아닌 하위 폴더가 있음
 //   (areas/ 바로 아래에는 권역 파일만 둔다. 한 권역만 쓰는 도우미 모듈은 areas/<권역>/에, 두 권역 이상이 쓰는 것은 앞 권역 파일(export)이나 shared.mjs에 둔다)
-// - 앞 권역 나라 늘리기(extendable·extensions)의 멈춤 경우(위 '앞 권역 나라 늘리기')
+// - 앞 권역 나라 늘리기(extendable·extensions)의 멈춤 경우(위 '앞 권역 나라 늘리기'. 원래 버전이 없는 해는 멈추지 않고 새 버전을 만든다)
 // sources(나라 id → 출처 문구)에는 source를 내보낸 권역의 나라와, 그 권역의 채우기가 새로 만드는 나라만 들어간다. 나머지는 writeGeo가 ESTIMATED를 쓴다
 // homes: 늘린 나라 id → 늘리기 전 원래 권역 버전 목록 (writeGeo가 data/geo/home/에 씀). versions의 그 나라는 늘린 버전이다
 export function mergeAreas(areas, areaDir) {

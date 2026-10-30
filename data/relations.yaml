@@ -901,3 +901,37 @@
 - { type: successor_of, subject: french-algeria, object: regency-of-algiers, from: 1830, to: null } # 1830-07-05 알제 항복
 - { type: successor_of, subject: french-tunisia, object: husainid-tunisia, from: 1881, to: null } # 1881-05-12 바르도 조약(베이는 보호국 아래 남음)
 - { type: successor_of, subject: french-morocco, object: alaouite-morocco, from: 1912, to: null } # 1912-03-30 페스 조약(술탄은 보호국 아래 남음)
+
+# ── 서아시아·북아프리카 A3a-1 (2026-10-30): 레반트·이라크·아라비아·이란 632~999 (칼리프를 명목으로 받든 세습 지방 왕조는 vassal_of, 칼리프국 교체는 successor_of) ──
+- { type: successor_of, subject: umayyad-caliphate, object: rashidun-caliphate, from: 661, to: null } # 661 알리 암살·하산 퇴위, 무아위야 1세 즉위
+- { type: successor_of, subject: abbasid-caliphate, object: umayyad-caliphate, from: 750, to: null } # 750-01 자브 전투
+- { type: successor_of, subject: saffarid-dynasty, object: tahirid-dynasty, from: 873, to: null } # 873 야쿠브 이븐 알라이스의 니샤푸르 점령
+- { type: successor_of, subject: rawadid-dynasty, object: sallarid-dynasty, from: 984, to: null } # 984 무렵 살라르 왕조의 아제르바이잔 땅을 차지
+- { type: successor_of, subject: uqaylid-dynasty, object: hamdanid-dynasty, from: 990, to: null } # 990 디야르 라비아·모술(함단 모술 가지는 979 부와이에 짐)
+- { type: vassal_of, subject: tahirid-dynasty, object: abbasid-caliphate, from: 821, to: 872 } # 칼리프가 임명한 호라산 총독 가문
+- { type: vassal_of, subject: dulafid-dynasty, object: abbasid-caliphate, from: 861, to: 895 } # 카라지·이스파한 영지, 896 알무타디드가 거둠
+- { type: vassal_of, subject: saffarid-dynasty, object: abbasid-caliphate, from: 870, to: 900 } # 870년대 칼리프가 시스탄·파르스·케르만 총독으로 인정, 900 발흐 패배
+- { type: vassal_of, subject: saffarid-dynasty, object: samanid-empire, from: 923, to: 999 } # 912 사만의 시스탄 점령 뒤 923 복귀한 아부 자파르 아흐마드가 사만에 조공
+- { type: vassal_of, subject: sajid-dynasty, object: abbasid-caliphate, from: 889, to: 911 } # 칼리프에게 조공, 912 조공을 끊음
+- { type: vassal_of, subject: samanid-empire, object: abbasid-caliphate, from: 819, to: 999 } # 칼리프의 임명장으로 다스림
+- { type: vassal_of, subject: ilyasid-dynasty, object: samanid-empire, from: 932, to: 967 } # 명목 종주
+- { type: vassal_of, subject: ziyarid-dynasty, object: samanid-empire, from: 935, to: 966 } # 935 부시무르기르가 사만 종주를 받아들임
+- { type: vassal_of, subject: ziyarid-dynasty, object: buyid-dynasty, from: 967, to: 979 } # 967 비수툰이 부와이 종주를 받아들임, 980 카부스 추방
+- { type: vassal_of, subject: hasanwayhid-dynasty, object: buyid-dynasty, from: 970, to: 1014 } # 970 공납을 조건으로 자치
+- { type: vassal_of, subject: hamdanid-dynasty, object: abbasid-caliphate, from: 929, to: 978 } # 929 나시르 앗다울라가 칼리프의 모술 총독, 979 모술 가지가 부와이에 짐
+- { type: vassal_of, subject: uqaylid-dynasty, object: buyid-dynasty, from: 990, to: 1055 } # 부와이 바하 앗다울라와 조약, 명목 종주
+- { type: vassal_of, subject: ziyadid-dynasty, object: abbasid-caliphate, from: 819, to: 1018 } # 칼리프 알마문이 보낸 총독 가문, 칼리프 이름으로 금요 예배
+- { type: vassal_of, subject: yufirid-dynasty, object: abbasid-caliphate, from: 847, to: 997 } # 칼리프를 받든 사나의 세습 정권
+
+# ── 서아시아·북아프리카 A3a-2 (2026-10-30): 이집트·리비아·마그레브 632~999 (칼리프를 명목으로 받든 세습 지방 왕조는 vassal_of, 같은 땅을 이은 나라는 successor_of) ──
+- { type: successor_of, subject: fatimid-caliphate, object: aghlabid-dynasty, from: 909, to: null } # 909-03 쿠타마 군의 라카다 입성
+- { type: successor_of, subject: fatimid-caliphate, object: ikhshidid-dynasty, from: 969, to: null } # 969-07 자우하르의 푸스타트 입성
+- { type: successor_of, subject: maghrawa-dynasty, object: midrarid-dynasty, from: 976, to: null } # 976~977 하즈룬 이븐 풀풀의 시질마사 점령
+- { type: vassal_of, subject: aghlabid-dynasty, object: abbasid-caliphate, from: 800, to: 908 } # 하룬 알라시드가 세습 아미르로 임명, 칼리프 이름으로 금요 예배
+- { type: vassal_of, subject: tulunid-dynasty, object: abbasid-caliphate, from: 868, to: 904 } # 칼리프가 임명한 이집트 총독 가문, 886 조약으로 이집트·시리아 30년 위임
+- { type: vassal_of, subject: ikhshidid-dynasty, object: abbasid-caliphate, from: 935, to: 969 } # 939 칼리프가 '이흐시드' 칭호를 줌, 944 이집트·시리아·히자즈 30년 위임
+- { type: vassal_of, subject: idrisid-dynasty, object: fatimid-caliphate, from: 921, to: 927 } # 917~921 마살라 이븐 하부스의 원정 뒤 파티마를 받듦
+- { type: vassal_of, subject: zirid-dynasty, object: fatimid-caliphate, from: 972, to: 1048 } # 파티마가 세운 이프리키야 세습 총독, 1048/49 알무이즈 이븐 바디스가 파티마와 결별
+- { type: vassal_of, subject: maghrawa-dynasty, object: cordoba-caliphate, from: 980, to: 1031 } # 980 코르도바가 시질마사 총독으로, 987 지리 이븐 아티야를 마그레브 아미르로 임명
+- { type: vassal_of, subject: sharifate-of-mecca, object: ikhshidid-dynasty, from: 967, to: 968 } # 964년 무렵 카푸르가 샤리프를 세움
+- { type: vassal_of, subject: sharifate-of-mecca, object: fatimid-caliphate, from: 969, to: 999 } # 969 뒤 메카에서 파티마 칼리프 이름으로 금요 예배(1000년부터는 A3b 범위)

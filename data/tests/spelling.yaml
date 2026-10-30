@@ -1548,3 +1548,196 @@
   avoid: [말리크 마흐무드, 말렉 마흐무드, 말릭 마흐무드]
   note: "Malek Mahmud Sistani(1722~1726 마슈하드의 지배자). 말레크 마흐무드 1회·avoid 0회"
   scope: 서아시아·북아프리카 근세
+
+# ── 서아시아·북아프리카 A3a-1(2026-10-30, 레반트·이라크·아라비아·이란 632~999): 칼리프국·이란·이라크·아라비아 왕조와 지명. 개수는 더한 날 data/entities·data/events·src grep ──
+
+- use: 정통 칼리프
+  avoid: [라시둔 칼리프, 라시둔]
+  note: "Rashidun Caliphate(632~661). 교과서 꼴"
+  scope: 서아시아·북아프리카 이슬람
+
+- use: 타히르 왕조
+  avoid: [타히리드]
+  note: "Tahirid dynasty(호라산, 821~873). 예멘 타히르 술탄국(tahirid-sultanate)과 다른 나라"
+  scope: 서아시아·북아프리카 이란
+
+- use: 사파르 왕조
+  avoid: [사파리드, 사파르 왕국]
+  note: "Saffarid dynasty(시스탄, 861~1003)"
+  scope: 서아시아·북아프리카 이란
+
+- use: 사만 왕조
+  avoid: [사마니드]
+  note: "Samanid Empire(부하라, 819~999)"
+  scope: 서아시아·북아프리카 이란
+
+- use: 부와이 왕조
+  avoid: [부와이드, 부와이히]
+  note: "Buyid dynasty(934~1062)"
+  scope: 서아시아·북아프리카 이란
+
+- use: 지야르 왕조
+  avoid: [지야리드]
+  note: "Ziyarid dynasty(931~1090)"
+  scope: 서아시아·북아프리카 이란
+
+- use: 함단 왕조
+  avoid: [함다니드]
+  note: "Hamdanid dynasty(모술·알레포, 890~1004)"
+  scope: 서아시아·북아프리카 이슬람
+
+- use: 우카일 왕조
+  avoid: [우카일리드]
+  note: "Uqaylid dynasty(모술, 990~1096)"
+  scope: 서아시아·북아프리카 이슬람
+
+- use: 카르마트
+  avoid: [카라미타, 카르마타이]
+  note: "Qarmatians(바레인 지방, 899~1077). 나라 이름은 '카르마트 국가'"
+  scope: 서아시아·북아프리카 이슬람
+
+- use: 둘라프 왕조
+  avoid: [둘라피드]
+  note: "Dulafid dynasty(카라지·이스파한, 861~896)"
+  scope: 서아시아·북아프리카 이란
+
+- use: 살라르 왕조
+  avoid: [살라리드]
+  note: "Sallarid dynasty(무사피르 가문, 919~1062)"
+  scope: 서아시아·북아프리카 이란
+
+- use: 하산와이 왕조
+  avoid: [하산와이드]
+  note: "Hasanwayhid dynasty(디나바르, 959~1015)"
+  scope: 서아시아·북아프리카 이란
+
+- use: 일리아스 왕조
+  avoid: [일리아시드]
+  note: "Ilyasid dynasty(케르만, 932~968)"
+  scope: 서아시아·북아프리카 이란
+
+- use: 다부이 왕조
+  avoid: [다부이드]
+  note: "Dabuyid dynasty(길란·타바리스탄, 642~760)"
+  scope: 서아시아·북아프리카 이란
+
+- use: 지야드 왕조
+  avoid: [지야디드]
+  note: "Ziyadid dynasty(자비드, 819~1018)"
+  scope: 서아시아·북아프리카 이슬람
+
+- use: 유피르 왕조
+  avoid: [유피리드, 야으피르]
+  note: "Yu'firid dynasty(사나, 847~997)"
+  scope: 서아시아·북아프리카 이슬람
+
+- use: 라와드 왕조
+  avoid: [라와디드]
+  note: "Rawadid dynasty(타브리즈, 955~1054)"
+  scope: 서아시아·북아프리카 이란
+
+- use: 아두드 앗다울라
+  avoid: [아두드 알다울라]
+  note: "ʿAḍud al-Dawla(부와이 왕조, 949~983). 정관사 동화 꼴"
+  scope: 서아시아·북아프리카 이란
+
+- use: 카디시야
+  avoid: [카디시아]
+  note: "al-Qādisiyya(636 전투)"
+  scope: 서아시아·북아프리카 지명
+
+- use: 니하반드
+  avoid: [나하반드]
+  note: "Nahavand(642 전투)"
+  scope: 서아시아·북아프리카 지명
+
+- use: 크테시폰
+  avoid: [티스폰]
+  note: "Ctesiphon(사산 제국 도읍). 기존 굳은 표기"
+  scope: 서아시아·북아프리카 지명
+
+- use: 오만 이바드 이맘국
+  avoid: [오만 이바디 이맘국, 이바디 이맘국]
+  note: "Ibadi Imamate of Oman(793~893·897~940년대 둘째·셋째 이맘국). 1920~1959 근대 '오만 이맘국'과 다른 항목. 더한 날 avoid 0회"
+  scope: 서아시아·북아프리카 이슬람
+
+# ── 서아시아·북아프리카 A3a-2(2026-10-30, 이집트·리비아·마그레브 632~999): 이집트·마그레브 왕조와 지명. 개수는 더한 날 data/entities·data/events·src grep(avoid 모두 0회) ──
+- use: 이프리키야
+  avoid: [아프리키야, 이프리퀴야]
+  note: "Ifrīqiya(지금 튀니지·알제리 동부·트리폴리타니아). 기존 표기"
+  scope: 서아시아·북아프리카 지명
+
+- use: 카이라완
+  avoid: [카이루안, 카이로우안]
+  note: "al-Qayrawān(670년 우크바 이븐 나피가 세운 군영 도시)"
+  scope: 서아시아·북아프리카 지명
+
+- use: 푸스타트
+  avoid: [푸스탓]
+  note: "al-Fusṭāṭ(642년 아므르 이븐 알아스가 세운 이집트 군영 도시, 지금 카이로 남부)"
+  scope: 서아시아·북아프리카 지명
+
+- use: 시질마사
+  avoid: [시질마싸]
+  note: "Sijilmāsa(타필랄트 오아시스, 지금 리사니 둘레)"
+  scope: 서아시아·북아프리카 지명
+
+- use: 타헤르트
+  avoid: [티하르트, 타하르트]
+  note: "Tāhart(루스탐 이맘국 도읍, 지금 알제리 티아렛)"
+  scope: 서아시아·북아프리카 지명
+
+- use: 마흐디야
+  avoid: [마흐디아]
+  note: "al-Mahdiyya(파티마 칼리프국 921~948, 지리 왕조 1057~1148 도읍)"
+  scope: 서아시아·북아프리카 지명
+
+- use: 툴룬 왕조
+  avoid: [툴루니드]
+  note: "Ṭūlūnids(이집트, 868~905). 아흐마드 이븐 툴룬"
+  scope: 서아시아·북아프리카 이슬람
+
+- use: 이흐시드 왕조
+  avoid: [이크시드, 이히시드]
+  note: "al-Ikhshīd(이집트, 935~969). 아랍어 kh는 'ㅎ'(국립국어원 아랍어 표기), 한국어 위키백과 표제는 '이크시드'"
+  scope: 서아시아·북아프리카 이슬람
+
+- use: 루스탐 이맘국
+  avoid: [루스툼, 루스타미드]
+  note: "Rustamid Imamate(타헤르트, 777~909)"
+  scope: 서아시아·북아프리카 이슬람
+
+- use: 미드라르 왕조
+  avoid: [미드라리드]
+  note: "Banū Midrār(시질마사, 758~976)"
+  scope: 서아시아·북아프리카 이슬람
+
+- use: 마그라와 왕조
+  avoid: [마그라위]
+  note: "Maghrāwa(제나타 베르베르, 976~1080)"
+  scope: 서아시아·북아프리카 이슬람
+
+- use: 지리 왕조
+  avoid: [지리드]
+  note: "Zīrids(이프리키야, 972~1148). 그라나다의 '지리 가문'과 같은 이름 표기"
+  scope: 서아시아·북아프리카 이슬람
+
+- use: 피흐르 토후국
+  avoid: [피흐리드]
+  note: "Fihrids(카이라완, 745~757)"
+  scope: 서아시아·북아프리카 이슬람
+
+- use: 이드리스 왕조
+  avoid: [이드리시드]
+  note: "al-Adārisa(모로코 북부, 788~974). 아시르 에미르국의 '이드리스 가'와 같은 표기"
+  scope: 서아시아·북아프리카 이슬람
+
+- use: 자우하르
+  avoid: [가우하르, 조하르]
+  note: "Jawhar al-Ṣiqillī(969년 이집트를 정복한 파티마 장군)"
+  scope: 서아시아·북아프리카 이슬람
+
+- use: 우크바 이븐 나피
+  avoid: [우크바 이븐 나피으]
+  note: "ʿUqba ibn Nāfiʿ(카이라완을 세운 정복자)"
+  scope: 서아시아·북아프리카 이슬람

@@ -4143,3 +4143,271 @@
   at: [55.05, 35.83]
   reason: 1724~1725년 타흐마스프 2세의 카스피해 쪽 땅(마잔다란·테헤란·카즈빈 둘레)은 호타키 왕조의 이스파한·야즈드, 오스만이 차지한 서부, 말레크 마흐무드 시스타니의 호라산에 막혀 남쪽 파르스·케르만·시스탄과 떨어졌다
   sources: ["위키백과 영어판 「Tahmasp II」 https://en.wikipedia.org/wiki/Tahmasp_II", "위키백과 영어판 「Siege of Mashhad (1726)」 https://en.wikipedia.org/wiki/Siege_of_Mashhad_(1726)"]
+
+# ── 서아시아·북아프리카 A3a (2026-10-30): 632~999 (칠하지 않은 사막·바다 너머의 땅, 정복 순서로 떨어진 땅) ──
+
+- entity: byzantine-empire
+  from: 632
+  to: 642
+  at: [21.88, 32.01]
+  reason: 동로마의 키레나이카 해안(펜타폴리스)은 칠하지 않은 마르마리카 사막(리비아 내륙) 너머에 있어 해안 길과 바닷길로 이집트와 이어졌다(642년 이집트와 함께 잃음)
+  sources: ["위키백과 영어판 「Cyrenaica」 https://en.wikipedia.org/wiki/Cyrenaica", "위키백과 영어판 「Exarchate of Africa」 https://en.wikipedia.org/wiki/Exarchate_of_Africa"]
+
+- entity: rashidun-caliphate
+  from: 642
+  to: 661
+  at: [21.88, 32.01]
+  reason: 키레나이카 해안(바르카)은 칠하지 않은 마르마리카 사막(리비아 내륙) 너머에 있어 해안 길과 바닷길로 이집트와 이어졌다
+  sources: ["위키백과 영어판 「Cyrenaica」 https://en.wikipedia.org/wiki/Cyrenaica", "위키백과 영어판 「Muslim conquest of the Maghreb」 https://en.wikipedia.org/wiki/Muslim_conquest_of_the_Maghreb"]
+
+- entity: umayyad-caliphate
+  from: 661
+  to: 750
+  at: [21.88, 32.01]
+  reason: 키레나이카 해안(바르카)은 칠하지 않은 마르마리카 사막(리비아 내륙) 너머에 있어 해안 길과 바닷길로 이집트와 이어졌다
+  sources: ["위키백과 영어판 「Cyrenaica」 https://en.wikipedia.org/wiki/Cyrenaica", "위키백과 영어판 「Umayyad Caliphate」 https://en.wikipedia.org/wiki/Umayyad_Caliphate"]
+
+- entity: abbasid-caliphate
+  from: 750
+  to: 935
+  at: [21.88, 32.01]
+  reason: 키레나이카 해안(바르카)은 칠하지 않은 마르마리카 사막(리비아 내륙) 너머에 있어 해안 길과 바닷길로 이집트와 이어졌다
+  sources: ["위키백과 영어판 「Cyrenaica」 https://en.wikipedia.org/wiki/Cyrenaica", "위키백과 영어판 「Abbasid Caliphate」 https://en.wikipedia.org/wiki/Abbasid_Caliphate"]
+
+- entity: tulunid-dynasty
+  from: 868
+  to: 905
+  at: [21.88, 32.01]
+  reason: 키레나이카 해안(바르카)은 칠하지 않은 마르마리카 사막(리비아 내륙) 너머에 있어 해안 길과 바닷길로 이집트와 이어졌다
+  sources: ["위키백과 영어판 「Cyrenaica」 https://en.wikipedia.org/wiki/Cyrenaica", "위키백과 영어판 「Tulunids」 https://en.wikipedia.org/wiki/Tulunids"]
+
+- entity: ikhshidid-dynasty
+  from: 935
+  to: 969
+  at: [21.88, 32.01]
+  reason: 키레나이카 해안(바르카)은 칠하지 않은 마르마리카 사막(리비아 내륙) 너머에 있어 해안 길과 바닷길로 이집트와 이어졌다
+  sources: ["위키백과 영어판 「Cyrenaica」 https://en.wikipedia.org/wiki/Cyrenaica", "위키백과 영어판 「Ikhshidid dynasty」 https://en.wikipedia.org/wiki/Ikhshidid_dynasty"]
+
+- entity: fatimid-caliphate
+  from: 969
+  to: 1000
+  at: [21.88, 32.01]
+  reason: 키레나이카 해안(바르카)은 칠하지 않은 마르마리카 사막(리비아 내륙) 너머에 있어 해안 길과 바닷길로 이집트와 이어졌다
+  sources: ["위키백과 영어판 「Cyrenaica」 https://en.wikipedia.org/wiki/Cyrenaica", "위키백과 영어판 「Fatimid Caliphate」 https://en.wikipedia.org/wiki/Fatimid_Caliphate"]
+
+- entity: rashidun-caliphate
+  from: 647
+  to: 661
+  at: [13.64, 32.43]
+  reason: 트리폴리타니아 해안은 칠하지 않은 시르테만 둘레·리비아 내륙 너머에 있어 해안 길로 키레나이카·이집트와 이어졌다
+  sources: ["위키백과 영어판 「Tripolitania」 https://en.wikipedia.org/wiki/Tripolitania", "위키백과 영어판 「Muslim conquest of the Maghreb」 https://en.wikipedia.org/wiki/Muslim_conquest_of_the_Maghreb"]
+
+- entity: umayyad-caliphate
+  from: 661
+  to: 670
+  at: [13.64, 32.43]
+  reason: 트리폴리타니아 해안은 칠하지 않은 시르테만 둘레·리비아 내륙 너머에 있어 해안 길로 키레나이카·이집트와 이어졌다
+  sources: ["위키백과 영어판 「Tripolitania」 https://en.wikipedia.org/wiki/Tripolitania", "위키백과 영어판 「Muslim conquest of the Maghreb」 https://en.wikipedia.org/wiki/Muslim_conquest_of_the_Maghreb"]
+
+- entity: fatimid-caliphate
+  from: 972
+  to: 978
+  at: [13.64, 32.43]
+  reason: 트리폴리타니아 해안은 칠하지 않은 시르테만 둘레·리비아 내륙 너머에 있어 해안 길로 키레나이카·이집트와 이어졌다(파티마 칼리프국이 이집트로 옮긴 뒤)
+  sources: ["위키백과 영어판 「Tripolitania」 https://en.wikipedia.org/wiki/Tripolitania", "위키백과 영어판 「Fatimid Caliphate」 https://en.wikipedia.org/wiki/Fatimid_Caliphate"]
+
+- entity: byzantine-empire
+  from: 632
+  to: 670
+  at: [9.09, 35.43]
+  reason: 아프리카 총독부(카르타고·비자케나·누미디아)는 칠하지 않은 리비아 내륙·시르테 너머에 있어 바닷길로 동로마 본토와 이어졌다
+  sources: ["위키백과 영어판 「Exarchate of Africa」 https://en.wikipedia.org/wiki/Exarchate_of_Africa"]
+
+- entity: byzantine-empire
+  from: 670
+  to: 698
+  at: [7.84, 36.15]
+  reason: 670년 카이라완이 세워진 뒤 동로마의 카르타고·누미디아 해안은 바닷길로만 본토와 이어졌다(698년 카르타고 함락)
+  sources: ["위키백과 영어판 「Exarchate of Africa」 https://en.wikipedia.org/wiki/Exarchate_of_Africa", "위키백과 영어판 「Muslim conquest of the Maghreb」 https://en.wikipedia.org/wiki/Muslim_conquest_of_the_Maghreb"]
+
+- entity: umayyad-caliphate
+  from: 670
+  to: 698
+  at: [8.96, 33.79]
+  reason: 670년 우크바 이븐 나피가 세운 카이라완 둘레 이프리키야는 칠하지 않은 리비아 내륙 너머에 있어 해안 길로 이집트와 이어졌다
+  sources: ["위키백과 영어판 「Muslim conquest of the Maghreb」 https://en.wikipedia.org/wiki/Muslim_conquest_of_the_Maghreb"]
+
+- entity: umayyad-caliphate
+  from: 698
+  to: 705
+  at: [9.09, 35.43]
+  reason: 698년 카르타고를 차지한 뒤의 이프리키야는 칠하지 않은 리비아 내륙 너머에 있어 해안 길로 이집트와 이어졌다
+  sources: ["위키백과 영어판 「Muslim conquest of the Maghreb」 https://en.wikipedia.org/wiki/Muslim_conquest_of_the_Maghreb"]
+
+- entity: umayyad-caliphate
+  from: 705
+  to: 741
+  at: [3.36, 34.88]
+  reason: 마그레브(이프리키야·알제리·모로코 북부)는 칠하지 않은 리비아 내륙·시르테 너머에 있어 해안 길로 이집트와 이어졌다
+  sources: ["위키백과 영어판 「Muslim conquest of the Maghreb」 https://en.wikipedia.org/wiki/Muslim_conquest_of_the_Maghreb", "위키백과 영어판 「Umayyad Caliphate」 https://en.wikipedia.org/wiki/Umayyad_Caliphate"]
+
+- entity: umayyad-caliphate
+  from: 741
+  to: 745
+  at: [8.76, 35.27]
+  reason: 741년 베르베르 반란 뒤 남은 이프리키야는 칠하지 않은 리비아 내륙 너머에 있어 해안 길로 이집트와 이어졌다
+  sources: ["위키백과 영어판 「Muslim conquest of the Maghreb」 https://en.wikipedia.org/wiki/Muslim_conquest_of_the_Maghreb", "위키백과 영어판 「Umayyad Caliphate」 https://en.wikipedia.org/wiki/Umayyad_Caliphate"]
+
+- entity: abbasid-caliphate
+  from: 762
+  to: 800
+  at: [8.76, 35.27]
+  reason: 이프리키야(카이라완)는 칠하지 않은 리비아 내륙 너머에 있어 해안 길로 이집트와 이어졌다(800년 아글라브 왕조가 이어받음)
+  sources: ["위키백과 영어판 「Abbasid Caliphate」 https://en.wikipedia.org/wiki/Abbasid_Caliphate"]
+
+- entity: fatimid-caliphate
+  from: 969
+  to: 972
+  at: [8.75, 35.26]
+  reason: 파티마 칼리프국이 이집트로 옮긴 뒤 이프리키야는 칠하지 않은 리비아 내륙 너머에 남았다(972년 지리 왕조에 맡김)
+  sources: ["위키백과 영어판 「Fatimid Caliphate」 https://en.wikipedia.org/wiki/Fatimid_Caliphate"]
+
+- entity: fatimid-caliphate
+  from: 921
+  to: 932
+  at: [-6.01, 34.55]
+  reason: 파티마 칼리프국의 모로코 북부(921~931년)는 칠하지 않은 서알제리 제나타 부족 땅 너머에 있었다
+  sources: ["위키백과 영어판 「Fatimid Caliphate」 https://en.wikipedia.org/wiki/Fatimid_Caliphate"]
+
+- entity: rashidun-caliphate
+  from: 642
+  to: 661
+  at: [43.18, 23.54]
+  reason: 아라비아 반도의 정주 지대(히자즈·나지드·예멘)는 칠하지 않은 북부 국경·자우프 사막 너머에 있어 대상로와 순례길로 이라크·시리아와 이어졌다
+  sources: ["위키백과 영어판 「Rashidun Caliphate」 https://en.wikipedia.org/wiki/Rashidun_Caliphate"]
+
+- entity: umayyad-caliphate
+  from: 661
+  to: 750
+  at: [43.18, 23.54]
+  reason: 아라비아 반도의 정주 지대(히자즈·나지드·예멘)는 칠하지 않은 북부 국경·자우프 사막 너머에 있어 대상로와 순례길로 이라크·시리아와 이어졌다
+  sources: ["위키백과 영어판 「Umayyad Caliphate」 https://en.wikipedia.org/wiki/Umayyad_Caliphate"]
+
+- entity: abbasid-caliphate
+  from: 750
+  to: 866
+  at: [43.19, 23.54]
+  reason: 아라비아 반도의 정주 지대(히자즈·나지드·예멘)는 칠하지 않은 북부 국경·자우프 사막 너머에 있어 대상로와 순례길로 이라크·시리아와 이어졌다
+  sources: ["위키백과 영어판 「Abbasid Caliphate」 https://en.wikipedia.org/wiki/Abbasid_Caliphate"]
+
+- entity: abbasid-caliphate
+  from: 866
+  to: 945
+  at: [40.93, 21.88]
+  reason: 나지드를 비운 866년부터 히자즈·타부크·아시르는 칠하지 않은 사막 너머에 있어 순례길로 이라크·시리아와 이어졌다
+  sources: ["위키백과 영어판 「Abbasid Caliphate」 https://en.wikipedia.org/wiki/Abbasid_Caliphate"]
+
+- entity: ikhshidid-dynasty
+  from: 945
+  to: 967
+  at: [40.93, 21.88]
+  reason: 히자즈·타부크·아시르는 칠하지 않은 하클·자우프 사막 띠 너머에 있어 순례길로 이흐시드 왕조의 시리아·이집트와 이어졌다
+  sources: ["위키백과 영어판 「Ikhshidid dynasty」 https://en.wikipedia.org/wiki/Ikhshidid_dynasty"]
+
+- entity: rashidun-caliphate
+  from: 632
+  to: 661
+  at: [49.78, 25.48]
+  reason: 알하사·카티프 오아시스는 칠하지 않은 동부 사막 너머에 있어 대상로와 걸프 바닷길로 이라크와 이어졌다
+  sources: ["위키백과 영어판 「Bahrain (historical region)」 https://en.wikipedia.org/wiki/Bahrain_(historical_region)", "위키백과 영어판 「Rashidun Caliphate」 https://en.wikipedia.org/wiki/Rashidun_Caliphate"]
+
+- entity: umayyad-caliphate
+  from: 661
+  to: 750
+  at: [49.78, 25.48]
+  reason: 알하사·카티프 오아시스는 칠하지 않은 동부 사막 너머에 있어 대상로와 걸프 바닷길로 이라크와 이어졌다
+  sources: ["위키백과 영어판 「Bahrain (historical region)」 https://en.wikipedia.org/wiki/Bahrain_(historical_region)", "위키백과 영어판 「Umayyad Caliphate」 https://en.wikipedia.org/wiki/Umayyad_Caliphate"]
+
+- entity: abbasid-caliphate
+  from: 750
+  to: 899
+  at: [49.78, 25.48]
+  reason: 알하사·카티프 오아시스는 칠하지 않은 동부 사막 너머에 있어 대상로와 걸프 바닷길로 이라크와 이어졌다(899년 카르마트가 차지함)
+  sources: ["위키백과 영어판 「Bahrain (historical region)」 https://en.wikipedia.org/wiki/Bahrain_(historical_region)", "위키백과 영어판 「Abbasid Caliphate」 https://en.wikipedia.org/wiki/Abbasid_Caliphate"]
+
+- entity: rashidun-caliphate
+  from: 632
+  to: 661
+  at: [51.19, 25.15]
+  reason: 카타르·바레인은 칠하지 않은 동부 사막과 바다 너머에 있어 걸프 바닷길로 이라크와 이어졌다
+  sources: ["위키백과 영어판 「Bahrain (historical region)」 https://en.wikipedia.org/wiki/Bahrain_(historical_region)", "위키백과 영어판 「Rashidun Caliphate」 https://en.wikipedia.org/wiki/Rashidun_Caliphate"]
+
+- entity: umayyad-caliphate
+  from: 661
+  to: 750
+  at: [51.19, 25.15]
+  reason: 카타르·바레인은 칠하지 않은 동부 사막과 바다 너머에 있어 걸프 바닷길로 이라크와 이어졌다
+  sources: ["위키백과 영어판 「Bahrain (historical region)」 https://en.wikipedia.org/wiki/Bahrain_(historical_region)", "위키백과 영어판 「Umayyad Caliphate」 https://en.wikipedia.org/wiki/Umayyad_Caliphate"]
+
+- entity: abbasid-caliphate
+  from: 750
+  to: 899
+  at: [51.19, 25.15]
+  reason: 카타르·바레인은 칠하지 않은 동부 사막과 바다 너머에 있어 걸프 바닷길로 이라크와 이어졌다
+  sources: ["위키백과 영어판 「Bahrain (historical region)」 https://en.wikipedia.org/wiki/Bahrain_(historical_region)", "위키백과 영어판 「Abbasid Caliphate」 https://en.wikipedia.org/wiki/Abbasid_Caliphate"]
+
+- entity: rashidun-caliphate
+  from: 632
+  to: 661
+  at: [55.59, 23.86]
+  reason: 오만·아랍에미리트는 칠하지 않은 룹알할리와 알우스타 사막 너머에 있어 걸프 바닷길로 이라크와 이어졌다
+  sources: ["위키백과 영어판 「History of Oman」 https://en.wikipedia.org/wiki/History_of_Oman", "위키백과 영어판 「Rashidun Caliphate」 https://en.wikipedia.org/wiki/Rashidun_Caliphate"]
+
+- entity: umayyad-caliphate
+  from: 661
+  to: 750
+  at: [55.59, 23.86]
+  reason: 오만·아랍에미리트는 칠하지 않은 룹알할리와 알우스타 사막 너머에 있어 걸프 바닷길로 이라크와 이어졌다
+  sources: ["위키백과 영어판 「History of Oman」 https://en.wikipedia.org/wiki/History_of_Oman", "위키백과 영어판 「Umayyad Caliphate」 https://en.wikipedia.org/wiki/Umayyad_Caliphate"]
+
+- entity: abbasid-caliphate
+  from: 750
+  to: 897
+  at: [55.59, 23.86]
+  reason: 오만·아랍에미리트는 칠하지 않은 룹알할리와 알우스타 사막 너머에 있어 걸프 바닷길로 이라크와 이어졌다(793~892년은 이바드 이맘국)
+  sources: ["위키백과 영어판 「History of Oman」 https://en.wikipedia.org/wiki/History_of_Oman", "위키백과 영어판 「Abbasid Caliphate」 https://en.wikipedia.org/wiki/Abbasid_Caliphate"]
+
+- entity: buyid-dynasty
+  from: 967
+  to: 1000
+  at: [55.59, 23.86]
+  reason: 부와이 왕조가 967년 정복한 오만·아랍에미리트는 칠하지 않은 사막 너머에 있어 걸프 건너 파르스와 바닷길로 이어졌다
+  sources: ["위키백과 영어판 「History of Oman」 https://en.wikipedia.org/wiki/History_of_Oman", "위키백과 영어판 「Buyid dynasty」 https://en.wikipedia.org/wiki/Buyid_dynasty"]
+
+- entity: byzantine-empire
+  from: 637
+  to: 642
+  at: [33.09, 39.06]
+  reason: 637년 정통 칼리프국이 시리아를 차지한 뒤 아나톨리아와 이집트는 육지로 떨어져 바닷길로만 이어졌다(642년 이집트를 잃음)
+  sources: ["위키백과 영어판 「Muslim conquest of the Levant」 https://en.wikipedia.org/wiki/Muslim_conquest_of_the_Levant"]
+
+- entity: rashidun-caliphate
+  from: 637
+  to: 639
+  at: [43.22, 33.11]
+  reason: 637년 정복한 이라크(사와드)와 둘레는 칠하지 않은 북부 국경·자우프 사막에 막혀 대상로로 메디나와 이어졌다
+  sources: ["위키백과 영어판 「Muslim conquest of Persia」 https://en.wikipedia.org/wiki/Muslim_conquest_of_Persia", "위키백과 영어판 「Rashidun Caliphate」 https://en.wikipedia.org/wiki/Rashidun_Caliphate"]
+
+- entity: rashidun-caliphate
+  from: 639
+  to: 642
+  at: [41, 34.43]
+  reason: 이라크와 639년 차지한 자지라 동부는 칠하지 않은 북부 국경·자우프 사막에 막혀 대상로로 메디나와 이어졌다
+  sources: ["위키백과 영어판 「Muslim conquest of Persia」 https://en.wikipedia.org/wiki/Muslim_conquest_of_Persia", "위키백과 영어판 「Rashidun Caliphate」 https://en.wikipedia.org/wiki/Rashidun_Caliphate"]
+
+- entity: sasanian-empire
+  from: 642
+  to: 644
+  at: [47.17, 37.77]
+  reason: 642년 니하반드 전투 뒤 사산 제국의 아제르바이잔은 정통 칼리프국이 차지한 자발(메디아)에 막혀 동쪽 땅과 떨어졌다(643~645년 정복됨)
+  sources: ["위키백과 영어판 「Muslim conquest of Azerbaijan」 https://en.wikipedia.org/wiki/Muslim_conquest_of_Azerbaijan", "위키백과 영어판 「Muslim conquest of Persia」 https://en.wikipedia.org/wiki/Muslim_conquest_of_Persia"]

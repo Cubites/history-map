@@ -4,6 +4,7 @@
 // 0보다 크면 도형이 실제로 바뀐 것이다. 면적은 경위도 평면 넓이(제곱도)를 그 위도의 대략적인 km²로 바꿔 보인다.
 // 뒤 권역이 늘린 나라(scripts/geo/engine.mjs '앞 권역 나라 늘리기', data/geo/home/<id>.geojson이 있는 나라, 2026-10-29 A2-0)는 원래 권역 모양(home, 기준에 home이 없으면 기준 <id>.geojson)을
 // 기준과 위처럼 견주고, 늘린 모양(<id>.geojson)은 원래 권역 모양을 모두 품는지(빠진 땅 0)와 기간마다 더한 땅의 넓이만 보인다. 원래 권역 모양이 같고 빠진 땅이 없으면 '늘림만 다름'(문제 아님).
+// 원래 권역 버전이 없는 해의 늘린 버전(2026-10-30 A3-0)은 빠진 땅이 없고, 그 버전 넓이 전부를 '더한 땅 (원래 버전 없는 해)'로 보인다.
 import { execFileSync } from 'node:child_process';
 import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import path from 'node:path';
@@ -56,6 +57,9 @@ function periods(oldText, curText, op = 'xor') {
     const [y0, y1] = [years[i], years[i + 1]];
     const a = pick(A, (y0 + y1) / 2), b = pick(B, (y0 + y1) / 2);
     if (!a && !b) continue;
+    // 원래 권역 버전이 없는 해의 늘린 버전: 빠진 땅은 없고(minus), 그 버전 전부가 더한 땅(plus)
+    if (!a && op === 'minus') continue;
+    if (!a && op === 'plus') { const mb = multi(b.geometry); const d = Math.abs(area(mb)); if (d > EPS) diffs.push(`${y0}~${y1}: 더한 땅 약 ${km2(mb, d).toFixed(0)}km² (원래 버전 없는 해)`); continue; }
     if (!a || !b) { diffs.push(`${y0}~${y1}: ${a ? '지금' : '기준'}에는 영토 없음`); continue; }
     if (op === 'xor' && (a.properties.certainty !== b.properties.certainty || a.properties.source !== b.properties.source)) diffs.push(`${y0}~${y1}: 확실성·출처가 다름`);
     const [ma, mb] = [multi(a.geometry), multi(b.geometry)];
