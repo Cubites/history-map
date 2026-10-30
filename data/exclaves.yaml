@@ -4047,6 +4047,20 @@
   reason: 마다는 샤르자·푸자이라 땅에 둘러싸인 오만의 작은 월경지다(1918년부터 줄과 같음)
   sources: ["위키백과 영어판 「Madha」 https://en.wikipedia.org/wiki/Madha"]
 
+- entity: oman
+  from: 1879
+  to: 1918
+  at: [58.05, 22.49]
+  reason: 1879년 술탄 투르키가 다스리게 된 도파르와 무스카트·내륙 오만은 바닷길로 이어졌다(사이의 알우스타 사막은 이 지도에서 칠하지 않음, 더 넓은 도파르 쪽이 본토로 잡혀 북쪽 무스카트 쪽을 적음)
+  sources: ["위키백과 영어판 「Dhofar Governorate」 https://en.wikipedia.org/wiki/Dhofar_Governorate"]
+
+- entity: ottoman
+  from: 1871
+  to: 1916
+  at: [51.53, 25.29]
+  reason: 1871년 말 오스만 수비대가 들어간 카타르(도하)는 나지드 산자크 아래 땅으로 알하사와 걸프 바닷길로 이어졌다(사이의 사막은 이 지도에서 칠하지 않음, 1913년 알하사를 잃은 뒤에도 수비대가 1915년까지 남음)
+  sources: ["위키백과 영어판 「History of Qatar」 https://en.wikipedia.org/wiki/History_of_Qatar"]
+
 - entity: hejaz-kingdom
   from: 1917
   to: 1918
@@ -4060,3 +4074,72 @@
   at: [43.24, 14.9]
   reason: 무함마드 알리 왕조의 예멘 티하마(1833~1840)는 카심 왕조의 하자 해안과 아시르에 막혀 홍해 바닷길로 히자즈와 이어졌다
   sources: ["위키백과 영어판 「Qasimid State」 https://en.wikipedia.org/wiki/Qasimid_State"]
+
+# ── 서아시아·북아프리카 A2b-1 (2026-10-30): 이집트·리비아 1453~1917 (칠하지 않은 시르테만 동쪽 사막·바다 너머의 땅) ──
+
+- entity: ottoman
+  from: 1551
+  to: 1711
+  at: [13.59, 31.16]
+  reason: 오스만 트리폴리 주(1551년 정복)는 칠하지 않은 시르테만 동쪽의 아즈다비야 사막에 막혀 바닷길과 해안 대상로로 키레나이카·이집트와 이어졌다
+  sources: ["위키백과 영어판 「Eyalet of Tripolitania」 https://en.wikipedia.org/wiki/Eyalet_of_Tripolitania"]
+
+- entity: ottoman
+  from: 1835
+  to: 1912
+  at: [13.59, 31.16]
+  reason: 1835년 직할로 돌아온 트리폴리 주와 페잔은 무함마드 알리 왕조의 이집트와 아즈다비야 사막 너머에 있어 지중해 바닷길로 오스만 본토와 이어졌다
+  sources: ["위키백과 영어판 「Karamanli dynasty」 https://en.wikipedia.org/wiki/Karamanli_dynasty"]
+
+- entity: ottoman
+  from: 1835
+  to: 1912
+  at: [20.07, 32.12]
+  reason: 벵가지를 중심으로 한 키레나이카 해안은 무함마드 알리 왕조의 이집트와 아즈다비야 사막 사이에 있어 바닷길로 오스만 본토·트리폴리와 이어졌다
+  sources: ["위키백과 영어판 「Cyrenaica」 https://en.wikipedia.org/wiki/Cyrenaica"]
+
+- entity: karamanli-tripolitania
+  from: 1711
+  to: 1835
+  at: [20.07, 32.12]
+  reason: 카라만리 왕조가 다스린 키레나이카 해안은 칠하지 않은 아즈다비야 사막 너머에 있어 시르테만 바닷길과 해안 대상로로 트리폴리와 이어졌다
+  sources: ["위키백과 영어판 「Karamanli dynasty」 https://en.wikipedia.org/wiki/Karamanli_dynasty"]
+
+- entity: muhammad-ali-egypt
+  from: 1813
+  to: 1833
+  at: [39.83, 21.42]
+  reason: 무함마드 알리 왕조의 히자즈(1813년 메카·제다 탈환)는 오스만 다마스쿠스 주에 속한 타부크·아카바에 막혀 홍해 바닷길로 이집트와 이어졌다
+  sources: ["위키백과 영어판 「Ottoman–Wahhabi War」 https://en.wikipedia.org/wiki/Ottoman%E2%80%93Wahhabi_war"]
+
+# ── 서아시아·북아프리카 A2b-2 (2026-10-30): 마그레브 1453~1917 (전쟁 중이라 칠하지 않은 땅 너머의 프랑스 거점, 하프스·자이얀 땅 너머의 오스만 알제) ──
+
+- entity: french-algeria
+  from: 1837
+  to: 1843
+  at: [-0.63, 35.7]
+  reason: 타프나 조약(1837)으로 프랑스가 지킨 오랑·모스타가넴 둘레는 압델카데르 토후국에 막혀 바닷길로 알제·콘스탄틴과 이어졌다(1843년 압델카데르의 옛 땅을 차지해 이어짐)
+  sources: ["위키백과 영어판 「Treaty of Tafna」 https://en.wikipedia.org/wiki/Treaty_of_Tafna"]
+
+- entity: french-algeria
+  from: 1837
+  to: 1843
+  at: [3.06, 36.75]
+  reason: 알제·미티자 평야는 서쪽·남쪽 압델카데르 토후국과 동쪽 카빌리에 막혀 바닷길로 콘스탄틴 쪽과 이어졌다(1843년 티테리·음실라를 차지해 이어짐)
+  sources: ["위키백과 영어판 「French conquest of Algeria」 https://en.wikipedia.org/wiki/French_conquest_of_Algeria"]
+
+- entity: ottoman
+  from: 1529
+  to: 1574
+  at: [3.06, 36.75]
+  reason: 오스만 알제(1529년 페뇬 요새 함락, 1542·1554년 넓힘)는 하프스 왕조의 튀니스에 막혀 1574년 튀니스 정복 전까지 바닷길로 오스만 본토와 이어졌다
+  sources: ["위키백과 영어판 「Regency of Algiers」 https://en.wikipedia.org/wiki/Regency_of_Algiers"]
+
+# ── 서아시아·북아프리카 A2b 반영 (2026-10-30, 질문 창구 ③): 호라산을 비운 1724~1725년 사파비 땅 ──
+
+- entity: safavid-iran
+  from: 1724
+  to: 1726
+  at: [55.05, 35.83]
+  reason: 1724~1725년 타흐마스프 2세의 카스피해 쪽 땅(마잔다란·테헤란·카즈빈 둘레)은 호타키 왕조의 이스파한·야즈드, 오스만이 차지한 서부, 말레크 마흐무드 시스타니의 호라산에 막혀 남쪽 파르스·케르만·시스탄과 떨어졌다
+  sources: ["위키백과 영어판 「Tahmasp II」 https://en.wikipedia.org/wiki/Tahmasp_II", "위키백과 영어판 「Siege of Mashhad (1726)」 https://en.wikipedia.org/wiki/Siege_of_Mashhad_(1726)"]

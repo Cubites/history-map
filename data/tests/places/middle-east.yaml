@@ -1603,9 +1603,9 @@
 - name: 도하
   at: [51.5, 25.28]
   year: 1900
-  expect: none
-  url: https://en.wikipedia.org/wiki/Qatar
-  from: 서아시아 A2a-2 결과노트
+  expect: ottoman
+  url: https://en.wikipedia.org/wiki/History_of_Qatar
+  from: 서아시아 A2b 반영 결과노트
 - name: 도하
   at: [51.5, 25.28]
   year: 1917
@@ -1624,3 +1624,718 @@
   expect: bahrain
   url: https://en.wikipedia.org/wiki/History_of_Bahrain
   from: 서아시아 A2a-2 결과노트
+
+# 서아시아 A2b-1(2026-10-30): 이집트·리비아 1453~1917. 새 항목마다 수도 1점과 바뀌는 해 앞뒤, 오스만 늘림 앞뒤(카이로·트리폴리·벵가지·무르주크·가다메스), 비운 사막 내륙(주프라·쿠프라), A1 이집트 술탄국 1914년 버전
+- name: 카이로
+  at: [31.235, 30.044]
+  year: 1500
+  expect: mamluk-sultanate
+  url: https://en.wikipedia.org/wiki/Mamluk_Sultanate
+  from: 서아시아 A2b-1 결과노트
+- name: 카이로
+  at: [31.235, 30.044]
+  year: 1516
+  expect: mamluk-sultanate
+  url: https://en.wikipedia.org/wiki/Mamluk_Sultanate
+  from: 서아시아 A2b-1 결과노트
+- name: 카이로
+  at: [31.235, 30.044]
+  year: 1517
+  expect: ottoman
+  url: https://en.wikipedia.org/wiki/Egypt_Eyalet
+  from: 서아시아 A2b-1 결과노트
+- name: 카이로
+  at: [31.235, 30.044]
+  year: 1804
+  expect: ottoman
+  url: https://en.wikipedia.org/wiki/Egypt_Eyalet
+  from: 서아시아 A2b-1 결과노트
+- name: 카이로
+  at: [31.235, 30.044]
+  year: 1805
+  expect: muhammad-ali-egypt
+  url: https://en.wikipedia.org/wiki/Muhammad_Ali_of_Egypt
+  from: 서아시아 A2b-1 결과노트
+- name: 카이로
+  at: [31.235, 30.044]
+  year: 1913
+  expect: muhammad-ali-egypt
+  url: https://en.wikipedia.org/wiki/Khedivate_of_Egypt
+  from: 서아시아 A2b-1 결과노트
+- name: 카이로
+  at: [31.235, 30.044]
+  year: 1914
+  expect: british-egypt
+  url: https://en.wikipedia.org/wiki/Sultanate_of_Egypt
+  from: 서아시아 A2b-1 결과노트
+- name: 알렉산드리아
+  at: [29.92, 31.2]
+  year: 1799
+  expect: ottoman
+  url: https://en.wikipedia.org/wiki/French_campaign_in_Egypt_and_Syria
+  from: 서아시아 A2b-1 결과노트
+- name: 성 카타리나 수도원
+  at: [33.95, 28.56]
+  year: 1850
+  expect: muhammad-ali-egypt
+  url: https://en.wikipedia.org/wiki/Taba_Crisis
+  from: 서아시아 A2b-1 결과노트
+- name: 시와
+  at: [25.52, 29.2]
+  year: 1700
+  expect: ottoman
+  url: https://en.wikipedia.org/wiki/Siwa_Oasis
+  from: 서아시아 A2b-1 결과노트
+- name: 트리폴리(리비아)
+  at: [13.18, 32.87]
+  year: 1500
+  expect: hafsid-sultanate
+  url: https://en.wikipedia.org/wiki/Hafsid_dynasty
+  from: 서아시아 A2b-1 결과노트
+- name: 트리폴리(리비아)
+  at: [13.18, 32.87]
+  year: 1509
+  expect: hafsid-sultanate
+  url: https://en.wikipedia.org/wiki/Hafsid_dynasty
+  from: 서아시아 A2b-1 결과노트
+- name: 트리폴리(리비아)
+  at: [13.18, 32.87]
+  year: 1510
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Eyalet_of_Tripolitania
+  from: 서아시아 A2b-1 결과노트
+- name: 트리폴리(리비아)
+  at: [13.18, 32.87]
+  year: 1550
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Eyalet_of_Tripolitania
+  from: 서아시아 A2b-1 결과노트
+- name: 트리폴리(리비아)
+  at: [13.18, 32.87]
+  year: 1551
+  expect: ottoman
+  url: https://en.wikipedia.org/wiki/Eyalet_of_Tripolitania
+  from: 서아시아 A2b-1 결과노트
+- name: 트리폴리(리비아)
+  at: [13.18, 32.87]
+  year: 1710
+  expect: ottoman
+  url: https://en.wikipedia.org/wiki/Karamanli_dynasty
+  from: 서아시아 A2b-1 결과노트
+- name: 트리폴리(리비아)
+  at: [13.18, 32.87]
+  year: 1711
+  expect: karamanli-tripolitania
+  url: https://en.wikipedia.org/wiki/Karamanli_dynasty
+  from: 서아시아 A2b-1 결과노트
+- name: 트리폴리(리비아)
+  at: [13.18, 32.87]
+  year: 1834
+  expect: karamanli-tripolitania
+  url: https://en.wikipedia.org/wiki/Karamanli_dynasty
+  from: 서아시아 A2b-1 결과노트
+- name: 트리폴리(리비아)
+  at: [13.18, 32.87]
+  year: 1835
+  expect: ottoman
+  url: https://en.wikipedia.org/wiki/Karamanli_dynasty
+  from: 서아시아 A2b-1 결과노트
+- name: 트리폴리(리비아)
+  at: [13.18, 32.87]
+  year: 1911
+  expect: ottoman
+  url: https://en.wikipedia.org/wiki/Italo-Turkish_War
+  from: 서아시아 A2b-1 결과노트
+- name: 트리폴리(리비아)
+  at: [13.18, 32.87]
+  year: 1912
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Italo-Turkish_War
+  from: 서아시아 A2b-1 결과노트
+- name: 시르테
+  at: [16.59, 31.21]
+  year: 1600
+  expect: ottoman
+  url: https://en.wikipedia.org/wiki/Eyalet_of_Tripolitania
+  from: 서아시아 A2b-1 결과노트
+- name: 벵가지
+  at: [20.07, 32.12]
+  year: 1500
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Cyrenaica
+  from: 서아시아 A2b-1 결과노트
+- name: 벵가지
+  at: [20.07, 32.12]
+  year: 1600
+  expect: ottoman
+  url: https://en.wikipedia.org/wiki/Cyrenaica
+  from: 서아시아 A2b-1 결과노트
+- name: 벵가지
+  at: [20.07, 32.12]
+  year: 1750
+  expect: karamanli-tripolitania
+  url: https://en.wikipedia.org/wiki/Karamanli_dynasty
+  from: 서아시아 A2b-1 결과노트
+- name: 벵가지
+  at: [20.07, 32.12]
+  year: 1900
+  expect: ottoman
+  url: https://en.wikipedia.org/wiki/Cyrenaica
+  from: 서아시아 A2b-1 결과노트
+- name: 토브루크
+  at: [23.96, 32.08]
+  year: 1600
+  expect: ottoman
+  url: https://en.wikipedia.org/wiki/Cyrenaica
+  from: 서아시아 A2b-1 결과노트
+- name: 무르주크
+  at: [13.92, 25.92]
+  year: 1549
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Fezzan
+  from: 서아시아 A2b-1 결과노트
+- name: 무르주크
+  at: [13.92, 25.92]
+  year: 1550
+  expect: fezzan-sultanate
+  url: https://en.wikipedia.org/wiki/Fezzan
+  from: 서아시아 A2b-1 결과노트
+- name: 무르주크
+  at: [13.92, 25.92]
+  year: 1812
+  expect: fezzan-sultanate
+  url: https://en.wikipedia.org/wiki/Fezzan
+  from: 서아시아 A2b-1 결과노트
+- name: 무르주크
+  at: [13.92, 25.92]
+  year: 1813
+  expect: karamanli-tripolitania
+  url: https://en.wikipedia.org/wiki/Fezzan
+  from: 서아시아 A2b-1 결과노트
+- name: 무르주크
+  at: [13.92, 25.92]
+  year: 1850
+  expect: ottoman
+  url: https://en.wikipedia.org/wiki/Fezzan
+  from: 서아시아 A2b-1 결과노트
+- name: 가다메스
+  at: [9.5, 30.13]
+  year: 1859
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Eyalet_of_Tripolitania
+  from: 서아시아 A2b-1 결과노트
+- name: 가다메스
+  at: [9.5, 30.13]
+  year: 1860
+  expect: ottoman
+  url: https://en.wikipedia.org/wiki/Eyalet_of_Tripolitania
+  from: 서아시아 A2b-1 결과노트
+- name: 훈(주프라)
+  at: [15.95, 29.12]
+  year: 1800
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Fezzan
+  from: 서아시아 A2b-1 결과노트
+- name: 쿠프라
+  at: [23.3, 24.2]
+  year: 1900
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Cyrenaica
+  from: 서아시아 A2b-1 결과노트
+
+# 서아시아 A2b-2(2026-10-30): 마그레브 1453~1917. 새 항목마다 수도 1점과 바뀌는 해 앞뒤, 오스만 늘림 앞뒤(튀니스·콘스탄틴·알제·틀렘센), 프랑스령 알제리 단계 앞뒤, 비운 땅(1830~1836 알제, 모로코의 빈 해, 서사하라·틴두프)
+- name: 튀니스
+  at: [10.17, 36.8]
+  year: 1500
+  expect: hafsid-sultanate
+  url: https://en.wikipedia.org/wiki/Hafsid_dynasty
+  from: 서아시아 A2b-2 결과노트
+- name: 튀니스
+  at: [10.17, 36.8]
+  year: 1573
+  expect: hafsid-sultanate
+  url: https://en.wikipedia.org/wiki/Hafsid_dynasty
+  from: 서아시아 A2b-2 결과노트
+- name: 튀니스
+  at: [10.17, 36.8]
+  year: 1574
+  expect: ottoman
+  url: https://en.wikipedia.org/wiki/Beylik_of_Tunis
+  from: 서아시아 A2b-2 결과노트
+- name: 튀니스
+  at: [10.17, 36.8]
+  year: 1704
+  expect: ottoman
+  url: https://en.wikipedia.org/wiki/Beylik_of_Tunis
+  from: 서아시아 A2b-2 결과노트
+- name: 튀니스
+  at: [10.17, 36.8]
+  year: 1705
+  expect: husainid-tunisia
+  url: https://en.wikipedia.org/wiki/Beylik_of_Tunis
+  from: 서아시아 A2b-2 결과노트
+- name: 튀니스
+  at: [10.17, 36.8]
+  year: 1880
+  expect: husainid-tunisia
+  url: https://en.wikipedia.org/wiki/Beylik_of_Tunis
+  from: 서아시아 A2b-2 결과노트
+- name: 튀니스
+  at: [10.17, 36.8]
+  year: 1881
+  expect: french-tunisia
+  url: https://en.wikipedia.org/wiki/French_protectorate_of_Tunisia
+  from: 서아시아 A2b-2 결과노트
+- name: 튀니스
+  at: [10.17, 36.8]
+  year: 1900
+  expect: french-tunisia
+  url: https://en.wikipedia.org/wiki/French_protectorate_of_Tunisia
+  from: 서아시아 A2b-2 결과노트
+- name: 가베스
+  at: [10.1, 33.88]
+  year: 1600
+  expect: ottoman
+  url: https://en.wikipedia.org/wiki/Beylik_of_Tunis
+  from: 서아시아 A2b-2 결과노트
+- name: 콘스탄틴
+  at: [6.61, 36.36]
+  year: 1500
+  expect: hafsid-sultanate
+  url: https://en.wikipedia.org/wiki/Hafsid_dynasty
+  from: 서아시아 A2b-2 결과노트
+- name: 콘스탄틴
+  at: [6.61, 36.36]
+  year: 1541
+  expect: hafsid-sultanate
+  url: https://en.wikipedia.org/wiki/Hafsid_dynasty
+  from: 서아시아 A2b-2 결과노트
+- name: 콘스탄틴
+  at: [6.61, 36.36]
+  year: 1542
+  expect: ottoman
+  url: https://en.wikipedia.org/wiki/Regency_of_Algiers
+  from: 서아시아 A2b-2 결과노트
+- name: 콘스탄틴
+  at: [6.61, 36.36]
+  year: 1700
+  expect: regency-of-algiers
+  url: https://en.wikipedia.org/wiki/Regency_of_Algiers
+  from: 서아시아 A2b-2 결과노트
+- name: 콘스탄틴
+  at: [6.61, 36.36]
+  year: 1835
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/French_conquest_of_Algeria
+  from: 서아시아 A2b-2 결과노트
+- name: 콘스탄틴
+  at: [6.61, 36.36]
+  year: 1837
+  expect: french-algeria
+  url: https://en.wikipedia.org/wiki/French_conquest_of_Algeria
+  from: 서아시아 A2b-2 결과노트
+- name: 알제
+  at: [3.06, 36.75]
+  year: 1500
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Regency_of_Algiers
+  from: 서아시아 A2b-2 결과노트
+- name: 알제
+  at: [3.06, 36.75]
+  year: 1529
+  expect: ottoman
+  url: https://en.wikipedia.org/wiki/Regency_of_Algiers
+  from: 서아시아 A2b-2 결과노트
+- name: 알제
+  at: [3.06, 36.75]
+  year: 1658
+  expect: ottoman
+  url: https://en.wikipedia.org/wiki/Regency_of_Algiers
+  from: 서아시아 A2b-2 결과노트
+- name: 알제
+  at: [3.06, 36.75]
+  year: 1659
+  expect: regency-of-algiers
+  url: https://en.wikipedia.org/wiki/Regency_of_Algiers
+  from: 서아시아 A2b-2 결과노트
+- name: 알제
+  at: [3.06, 36.75]
+  year: 1829
+  expect: regency-of-algiers
+  url: https://en.wikipedia.org/wiki/Regency_of_Algiers
+  from: 서아시아 A2b-2 결과노트
+- name: 알제
+  at: [3.06, 36.75]
+  year: 1832
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/French_conquest_of_Algeria
+  from: 서아시아 A2b-2 결과노트
+- name: 알제
+  at: [3.06, 36.75]
+  year: 1840
+  expect: french-algeria
+  url: https://en.wikipedia.org/wiki/French_conquest_of_Algeria
+  from: 서아시아 A2b-2 결과노트
+- name: 틀렘센
+  at: [-1.31, 34.88]
+  year: 1500
+  expect: zayyanid-kingdom
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Tlemcen
+  from: 서아시아 A2b-2 결과노트
+- name: 틀렘센
+  at: [-1.31, 34.88]
+  year: 1553
+  expect: zayyanid-kingdom
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Tlemcen
+  from: 서아시아 A2b-2 결과노트
+- name: 틀렘센
+  at: [-1.31, 34.88]
+  year: 1554
+  expect: ottoman
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Tlemcen
+  from: 서아시아 A2b-2 결과노트
+- name: 틀렘센
+  at: [-1.31, 34.88]
+  year: 1700
+  expect: regency-of-algiers
+  url: https://en.wikipedia.org/wiki/Regency_of_Algiers
+  from: 서아시아 A2b-2 결과노트
+- name: 틀렘센
+  at: [-1.31, 34.88]
+  year: 1840
+  expect: abdelkader-emirate
+  url: https://en.wikipedia.org/wiki/Treaty_of_Tafna
+  from: 서아시아 A2b-2 결과노트
+- name: 틀렘센
+  at: [-1.31, 34.88]
+  year: 1845
+  expect: french-algeria
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Tlemcen
+  from: 서아시아 A2b 반영 결과노트
+- name: 틀렘센
+  at: [-1.31, 34.88]
+  year: 1850
+  expect: french-algeria
+  url: https://en.wikipedia.org/wiki/French_conquest_of_Algeria
+  from: 서아시아 A2b-2 결과노트
+- name: 마스카라
+  at: [0.14, 35.4]
+  year: 1840
+  expect: abdelkader-emirate
+  url: https://en.wikipedia.org/wiki/Emirate_of_Abdelkader
+  from: 서아시아 A2b-2 결과노트
+- name: 오랑
+  at: [-0.63, 35.7]
+  year: 1840
+  expect: french-algeria
+  url: https://en.wikipedia.org/wiki/Treaty_of_Tafna
+  from: 서아시아 A2b-2 결과노트
+- name: 비스크라
+  at: [5.73, 34.85]
+  year: 1840
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/French_conquest_of_Algeria
+  from: 서아시아 A2b-2 결과노트
+- name: 비스크라
+  at: [5.73, 34.85]
+  year: 1860
+  expect: french-algeria
+  url: https://en.wikipedia.org/wiki/French_conquest_of_Algeria
+  from: 서아시아 A2b-2 결과노트
+- name: 라구아트
+  at: [2.88, 33.8]
+  year: 1850
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/French_conquest_of_Algeria
+  from: 서아시아 A2b-2 결과노트
+- name: 라구아트
+  at: [2.88, 33.8]
+  year: 1860
+  expect: french-algeria
+  url: https://en.wikipedia.org/wiki/French_conquest_of_Algeria
+  from: 서아시아 A2b-2 결과노트
+- name: 가르다이아
+  at: [3.67, 32.49]
+  year: 1870
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/French_conquest_of_Algeria
+  from: 서아시아 A2b-2 결과노트
+- name: 가르다이아
+  at: [3.67, 32.49]
+  year: 1890
+  expect: french-algeria
+  url: https://en.wikipedia.org/wiki/French_conquest_of_Algeria
+  from: 서아시아 A2b-2 결과노트
+- name: 인살라
+  at: [2.47, 27.2]
+  year: 1890
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/French_Algeria
+  from: 서아시아 A2b-2 결과노트
+- name: 인살라
+  at: [2.47, 27.2]
+  year: 1910
+  expect: french-algeria
+  url: https://en.wikipedia.org/wiki/French_Algeria
+  from: 서아시아 A2b-2 결과노트
+- name: 타만라세트
+  at: [5.52, 22.79]
+  year: 1900
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/French_conquest_of_Algeria
+  from: 서아시아 A2b-2 결과노트
+- name: 타만라세트
+  at: [5.52, 22.79]
+  year: 1910
+  expect: french-algeria
+  url: https://en.wikipedia.org/wiki/French_conquest_of_Algeria
+  from: 서아시아 A2b-2 결과노트
+- name: 틴두프
+  at: [-8.15, 27.67]
+  year: 1910
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/French_Algeria
+  from: 서아시아 A2b-2 결과노트
+- name: 페스
+  at: [-4.98, 34.03]
+  year: 1460
+  expect: marinid-sultanate
+  url: https://en.wikipedia.org/wiki/Wattasid_dynasty
+  from: 서아시아 A2b-2 결과노트
+- name: 페스
+  at: [-4.98, 34.03]
+  year: 1468
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Wattasid_dynasty
+  from: 서아시아 A2b-2 결과노트
+- name: 페스
+  at: [-4.98, 34.03]
+  year: 1500
+  expect: wattasid-sultanate
+  url: https://en.wikipedia.org/wiki/Wattasid_dynasty
+  from: 서아시아 A2b-2 결과노트
+- name: 페스
+  at: [-4.98, 34.03]
+  year: 1600
+  expect: saadi-sultanate
+  url: https://en.wikipedia.org/wiki/Saadi_dynasty
+  from: 서아시아 A2b-2 결과노트
+- name: 페스
+  at: [-4.98, 34.03]
+  year: 1650
+  expect: dila-zawiya
+  url: https://en.wikipedia.org/wiki/Zawiya_Dila'iya
+  from: 서아시아 A2b-2 결과노트
+- name: 페스
+  at: [-4.98, 34.03]
+  year: 1665
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Zawiya_Dila'iya
+  from: 서아시아 A2b-2 결과노트
+- name: 페스
+  at: [-4.98, 34.03]
+  year: 1700
+  expect: alaouite-morocco
+  url: https://en.wikipedia.org/wiki/Alaouite_dynasty
+  from: 서아시아 A2b-2 결과노트
+- name: 페스
+  at: [-4.98, 34.03]
+  year: 1915
+  expect: french-morocco
+  url: https://en.wikipedia.org/wiki/French_conquest_of_Morocco
+  from: 서아시아 A2b-2 결과노트
+- name: 마라케시
+  at: [-7.99, 31.63]
+  year: 1500
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Wattasid_dynasty
+  from: 서아시아 A2b-2 결과노트
+- name: 마라케시
+  at: [-7.99, 31.63]
+  year: 1530
+  expect: saadi-sultanate
+  url: https://en.wikipedia.org/wiki/Saadi_dynasty
+  from: 서아시아 A2b-2 결과노트
+- name: 마라케시
+  at: [-7.99, 31.63]
+  year: 1650
+  expect: saadi-sultanate
+  url: https://en.wikipedia.org/wiki/Saadi_dynasty
+  from: 서아시아 A2b-2 결과노트
+- name: 마라케시
+  at: [-7.99, 31.63]
+  year: 1662
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Saadi_dynasty
+  from: 서아시아 A2b-2 결과노트
+- name: 마라케시
+  at: [-7.99, 31.63]
+  year: 1700
+  expect: alaouite-morocco
+  url: https://en.wikipedia.org/wiki/Alaouite_dynasty
+  from: 서아시아 A2b-2 결과노트
+- name: 마라케시
+  at: [-7.99, 31.63]
+  year: 1915
+  expect: french-morocco
+  url: https://en.wikipedia.org/wiki/French_conquest_of_Morocco
+  from: 서아시아 A2b-2 결과노트
+- name: 아가디르
+  at: [-9.6, 30.43]
+  year: 1520
+  expect: saadi-sultanate
+  url: https://en.wikipedia.org/wiki/Saadi_dynasty
+  from: 서아시아 A2b-2 결과노트
+- name: 우지다
+  at: [-1.91, 34.68]
+  year: 1650
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Alaouite_dynasty
+  from: 서아시아 A2b-2 결과노트
+- name: 우지다
+  at: [-1.91, 34.68]
+  year: 1700
+  expect: alaouite-morocco
+  url: https://en.wikipedia.org/wiki/Alaouite_dynasty
+  from: 서아시아 A2b-2 결과노트
+- name: 테투안
+  at: [-5.37, 35.57]
+  year: 1800
+  expect: alaouite-morocco
+  url: https://en.wikipedia.org/wiki/Alaouite_dynasty
+  from: 서아시아 A2b-2 결과노트
+- name: 테투안
+  at: [-5.37, 35.57]
+  year: 1915
+  expect: spanish-morocco
+  url: https://en.wikipedia.org/wiki/Spanish_protectorate_in_Morocco
+  from: 서아시아 A2b-2 결과노트
+- name: 굴밈
+  at: [-10.06, 28.99]
+  year: 1800
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/History_of_Western_Sahara
+  from: 서아시아 A2b-2 결과노트
+- name: 굴밈
+  at: [-10.06, 28.99]
+  year: 1915
+  expect: french-morocco
+  url: https://en.wikipedia.org/wiki/French_conquest_of_Morocco
+  from: 서아시아 A2b-2 결과노트
+- name: 아이운(라유네)
+  at: [-13.2, 27.15]
+  year: 1800
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/History_of_Western_Sahara
+  from: 서아시아 A2b-2 결과노트
+- name: 아이운(라유네)
+  at: [-13.2, 27.15]
+  year: 1915
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/History_of_Western_Sahara
+  from: 서아시아 A2b-2 결과노트
+# 서아시아 A2b 반영(2026-10-30, 질문 창구 ③): 도파르 1879 오만, 타부크 맘루크, 카타르 오스만, 호라산 1722~1725 비움, 수스·타필랄트 1641~1667 비움, 프랑스령 알제리 1843 단계, 가트 1875
+- name: 살랄라
+  at: [54.09, 17.02]
+  year: 1870
+  expect: none
+  url: https://en.wikipedia.org/wiki/Dhofar_Governorate
+  from: 서아시아 A2b 반영 결과노트
+- name: 살랄라
+  at: [54.09, 17.02]
+  year: 1880
+  expect: oman
+  url: https://en.wikipedia.org/wiki/Dhofar_Governorate
+  from: 서아시아 A2b 반영 결과노트
+- name: 타부크
+  at: [36.57, 28.38]
+  year: 1500
+  expect: mamluk-sultanate
+  url: https://en.wikipedia.org/wiki/Mamluk_Sultanate
+  from: 서아시아 A2b 반영 결과노트
+- name: 마슈하드
+  at: [59.6, 36.3]
+  year: 1724
+  expect: none
+  url: https://en.wikipedia.org/wiki/Siege_of_Mashhad_(1726)
+  from: 서아시아 A2b 반영 결과노트
+- name: 마슈하드
+  at: [59.6, 36.3]
+  year: 1727
+  expect: safavid-iran
+  url: https://en.wikipedia.org/wiki/Nader_Shah
+  from: 서아시아 A2b 반영 결과노트
+- name: 아가디르
+  at: [-9.6, 30.43]
+  year: 1650
+  expect: none
+  url: https://en.wikipedia.org/wiki/Tazerwalt
+  from: 서아시아 A2b 반영 결과노트
+- name: 리사니
+  at: [-4.27, 31.28]
+  year: 1650
+  expect: none
+  url: https://en.wikipedia.org/wiki/Tazerwalt
+  from: 서아시아 A2b 반영 결과노트
+- name: 리사니
+  at: [-4.27, 31.28]
+  year: 1700
+  expect: alaouite-morocco
+  url: https://en.wikipedia.org/wiki/Alaouite_dynasty
+  from: 서아시아 A2b 반영 결과노트
+- name: 미델트
+  at: [-4.74, 32.68]
+  year: 1650
+  expect: dila-zawiya
+  url: https://en.wikipedia.org/wiki/Zawiya_Dila%27iya
+  from: 서아시아 A2b 반영 결과노트
+- name: 마스카라
+  at: [0.14, 35.4]
+  year: 1845
+  expect: french-algeria
+  url: https://en.wikipedia.org/wiki/French_conquest_of_Algeria
+  from: 서아시아 A2b 반영 결과노트
+- name: 메데아
+  at: [2.75, 36.27]
+  year: 1845
+  expect: french-algeria
+  url: https://en.wikipedia.org/wiki/French_conquest_of_Algeria
+  from: 서아시아 A2b 반영 결과노트
+- name: 가트
+  at: [10.17, 24.96]
+  year: 1865
+  expect: none
+  url: https://en.wikipedia.org/wiki/Ghat,_Libya
+  from: 서아시아 A2b 반영 결과노트
+- name: 가트
+  at: [10.17, 24.96]
+  year: 1880
+  expect: ottoman
+  url: https://en.wikipedia.org/wiki/Ghat,_Libya
+  from: 서아시아 A2b 반영 결과노트

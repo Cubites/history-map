@@ -360,19 +360,7 @@
 - key: '1987 western-sahara-free-zone 성립'
   reason: me-08 사건 묶음이 채움
   decided: 2026-10-29 운영자 A1 승인
-- key: '1918 british-egypt 버전'
-  reason: me-08 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A1 승인
-- key: '1918 french-tunisia 버전'
-  reason: me-08 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A1 승인
 - key: '1918 french-algeria 버전'
-  reason: me-08 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A1 승인
-- key: '1918 french-morocco 버전'
-  reason: me-08 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A1 승인
-- key: '1918 spanish-morocco 버전'
   reason: me-08 사건 묶음이 채움
   decided: 2026-10-29 운영자 A1 승인
 - key: '1922 italian-libya 버전'
@@ -528,6 +516,9 @@
   reason: me-05~07 사건 묶음이 채움
   decided: 2026-10-29 운영자 A2 승인
 - key: '1725 safavid-iran 버전'
+  reason: me-05~07 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A2 승인
+- key: '1726 safavid-iran 버전'
   reason: me-05~07 사건 묶음이 채움
   decided: 2026-10-29 운영자 A2 승인
 - key: '1727 safavid-iran 버전'
@@ -767,5 +758,144 @@
   reason: me-05~07 사건 묶음이 채움
   decided: 2026-10-29 운영자 A2 승인
 - key: '1872 ottoman 버전'
+  reason: me-05~07 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A2 승인
+- key: '1879 oman 버전'
+  reason: me-05~07 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A2 승인
+
+# ── 서아시아·북아프리카 A2b-1 (2026-10-30): 이집트·리비아 1453~1917 새 항목·이집트 땅을 더한 항목의 성립·소멸·버전 해. 이집트 술탄국은 1914년부터 같은 모양이라 1918 버전 줄을 지움 ──
+- key: '1229 hafsid-sultanate 성립'
+  reason: me-05~07 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A2 승인
+- key: '1453 hafsid-sultanate 버전'
+  reason: me-05~07 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A2 승인
+- key: '1516 mamluk-sultanate 버전'
+  reason: me-05~07 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A2 승인
+- key: '1550 fezzan-sultanate 성립'
+  reason: me-05~07 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A2 승인
+- key: '1574 hafsid-sultanate 소멸'
+  reason: me-05~07 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A2 승인
+- key: '1711 karamanli-tripolitania 성립'
+  reason: me-05~07 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A2 승인
+- key: '1813 fezzan-sultanate 소멸'
+  reason: me-05~07 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A2 승인
+- key: '1813 karamanli-tripolitania 버전'
+  reason: me-05~07 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A2 승인
+- key: '1835 karamanli-tripolitania 소멸'
+  reason: me-05~07 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A2 승인
+- key: '1841 muhammad-ali-egypt 버전'
+  reason: me-05~07 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A2 승인
+
+# ── 서아시아·북아프리카 A2b-2 (2026-10-30): 마그레브 1453~1917 새 항목의 성립·소멸·버전 해와 프랑스령 알제리의 1918년 전 단계. 프랑스령 튀니지·모로코 보호령 둘은 1881·1912년부터 같은 모양이라 1918 버전 줄을 지움 ──
+- key: '1236 zayyanid-kingdom 성립'
+  reason: me-05~07 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A2 승인
+- key: '1244 marinid-sultanate 성립'
+  reason: me-05~07 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A2 승인
+- key: '1453 zayyanid-kingdom 버전'
+  reason: me-05~07 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A2 승인
+- key: '1453 marinid-sultanate 버전'
+  reason: me-05~07 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A2 승인
+- key: '1465 marinid-sultanate 소멸'
+  reason: me-05~07 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A2 승인
+- key: '1472 wattasid-sultanate 성립'
+  reason: me-05~07 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A2 승인
+- key: '1510 saadi-sultanate 성립'
+  reason: me-05~07 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A2 승인
+- key: '1510 hafsid-sultanate 버전'
+  reason: me-05~07 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A2 승인
+- key: '1525 saadi-sultanate 버전'
+  reason: me-05~07 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A2 승인
+- key: '1542 hafsid-sultanate 버전'
+  reason: me-05~07 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A2 승인
+- key: '1549 saadi-sultanate 버전'
+  reason: me-05~07 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A2 승인
+- key: '1554 zayyanid-kingdom 소멸'
+  reason: me-05~07 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A2 승인
+- key: '1554 wattasid-sultanate 소멸'
+  reason: me-05~07 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A2 승인
+- key: '1641 dila-zawiya 성립'
+  reason: me-05~07 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A2 승인
+- key: '1641 saadi-sultanate 버전'
+  reason: me-05~07 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A2 승인
+- key: '1659 regency-of-algiers 성립'
+  reason: me-05~07 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A2 승인
+- key: '1659 saadi-sultanate 소멸'
+  reason: me-05~07 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A2 승인
+- key: '1666 alaouite-morocco 성립'
+  reason: me-05~07 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A2 승인
+- key: '1668 dila-zawiya 소멸'
+  reason: me-05~07 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A2 승인
+- key: '1668 alaouite-morocco 버전'
+  reason: me-05~07 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A2 승인
+- key: '1705 husainid-tunisia 성립'
+  reason: me-05~07 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A2 승인
+- key: '1830 regency-of-algiers 소멸'
+  reason: me-05~07 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A2 승인
+- key: '1832 abdelkader-emirate 성립'
+  reason: me-05~07 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A2 승인
+- key: '1837 abdelkader-emirate 버전'
+  reason: me-05~07 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A2 승인
+- key: '1837 french-algeria 버전'
+  reason: me-05~07 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A2 승인
+- key: '1843 french-algeria 버전'
+  reason: me-05~07 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A2 승인
+- key: '1847 abdelkader-emirate 소멸'
+  reason: me-05~07 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A2 승인
+- key: '1847 french-algeria 버전'
+  reason: me-05~07 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A2 승인
+- key: '1855 french-algeria 버전'
+  reason: me-05~07 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A2 승인
+- key: '1881 husainid-tunisia 소멸'
+  reason: me-05~07 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A2 승인
+- key: '1882 french-algeria 버전'
+  reason: me-05~07 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A2 승인
+- key: '1901 french-algeria 버전'
+  reason: me-05~07 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A2 승인
+- key: '1905 french-algeria 버전'
+  reason: me-05~07 사건 묶음이 채움
+  decided: 2026-10-29 운영자 A2 승인
+- key: '1912 alaouite-morocco 소멸'
   reason: me-05~07 사건 묶음이 채움
   decided: 2026-10-29 운영자 A2 승인

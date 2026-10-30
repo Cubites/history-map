@@ -883,3 +883,21 @@
 - { type: successor_of, subject: busaid-oman, object: yaruba-dynasty, from: 1749, to: null } # 1749 아흐마드 빈 사이드 단독 통치
 - { type: successor_of, subject: oman, object: busaid-oman, from: 1856, to: null } # 1856 사이드 빈 술탄 사후 오만·잔지바르 분리
 - { type: successor_of, subject: yemen-kingdom, object: zaydi-imamate-yahya, from: 1918, to: null } # 1918-10-30 야흐야의 독립 선언
+
+# ── 서아시아·북아프리카 A2b-1 (2026-10-30): 이집트·리비아 1453~1917 (반자치 세습 정권·페잔은 vassal_of ottoman, 영국의 이집트 점령은 occupied_by) ──
+- { type: occupied_by, subject: muhammad-ali-egypt, object: uk, from: 1882, to: 1914 } # 1882-09 텔엘케비르 전투 뒤 영국군 주둔, 헤디브와 오스만 종주는 남음(운영자 결정 19)
+- { type: vassal_of, subject: karamanli-tripolitania, object: ottoman, from: 1711, to: 1835 } # 1711 아흐메트 카라만리를 술탄이 파샤로 인정, 명목 조공
+- { type: vassal_of, subject: fezzan-sultanate, object: ottoman, from: 1574, to: 1813 } # 1574 트리폴리의 오스만 군대가 페잔을 쳐 조공국으로 삼음
+- { type: successor_of, subject: karamanli-tripolitania, object: fezzan-sultanate, from: 1813, to: null } # 1811~1812 유수프 카라만리의 페잔 전면 점령, 1813부터 직접 지배
+
+# ── 서아시아·북아프리카 A2b-2 (2026-10-30): 마그레브 1453~1917 (섭정·후사인 왕조는 vassal_of ottoman, 하프스의 스페인 종속, 왕조 교체와 식민 지배의 시작은 successor_of) ──
+- { type: vassal_of, subject: hafsid-sultanate, object: spain, from: 1535, to: 1573 } # 1535 카를 5세가 튀니스를 차지하고 물라이 하산을 속국 군주로 다시 앉힘, 1574 오스만 재정복
+- { type: vassal_of, subject: regency-of-algiers, object: ottoman, from: 1659, to: 1829 } # 1659 예니체리 혁명 뒤 아가·데이 정권, 술탄의 종주만 인정. 1830 프랑스 점령
+- { type: vassal_of, subject: husainid-tunisia, object: ottoman, from: 1705, to: 1880 } # 1705 후사인 1세, 술탄의 종주 인정. 1881 바르도 조약
+- { type: successor_of, subject: wattasid-sultanate, object: marinid-sultanate, from: 1472, to: null } # 1472 무함마드 알셰이크가 페스를 차지
+- { type: successor_of, subject: saadi-sultanate, object: wattasid-sultanate, from: 1549, to: null } # 1549 사드 왕조의 페스 점령
+- { type: successor_of, subject: alaouite-morocco, object: dila-zawiya, from: 1668, to: null } # 1668-06 라시드가 딜라를 무너뜨림
+- { type: successor_of, subject: alaouite-morocco, object: saadi-sultanate, from: 1668, to: null } # 1668-07 라시드의 마라케시 점령(사드 왕조는 1659년 끝)
+- { type: successor_of, subject: french-algeria, object: regency-of-algiers, from: 1830, to: null } # 1830-07-05 알제 항복
+- { type: successor_of, subject: french-tunisia, object: husainid-tunisia, from: 1881, to: null } # 1881-05-12 바르도 조약(베이는 보호국 아래 남음)
+- { type: successor_of, subject: french-morocco, object: alaouite-morocco, from: 1912, to: null } # 1912-03-30 페스 조약(술탄은 보호국 아래 남음)
