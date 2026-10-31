@@ -1034,3 +1034,16 @@
 - { type: vassal_of, subject: ituraea, object: roman-republic, from: -63, to: -27 } # 기원전 64년 폼페이우스가 프톨레마이오스 메나이오스의 왕위를 인정
 - { type: vassal_of, subject: nabataean-kingdom, object: roman-republic, from: -61, to: -27 } # 기원전 62년 스카우루스의 페트라 원정 뒤 로마의 우위를 인정
 - { type: successor_of, subject: herodian-judea, object: hasmonean-judea, from: -36, to: null } # 헤롯이 하스몬의 유대 왕위를 이음
+
+# ── 서아시아·북아프리카 A4b-⑦a (2026-10-31): 레반트·시리아 자지라 기원전 30년~631년 (A4a-⑥a의 로마 공화정 종속 줄을 로마 제국 쪽으로 이음) ──
+- { type: vassal_of, subject: herodian-judea, object: roman-empire, from: -26, to: 92 } # 아우구스투스 뒤 헤롯·아르켈라오스·안티파스·필리포스·아그리파 1세·2세가 로마를 받듦
+- { type: vassal_of, subject: ituraea, object: roman-empire, from: -26, to: 49 } # 49년 소하이무스가 죽어 시리아 속주에 합쳐질 때까지
+- { type: vassal_of, subject: nabataean-kingdom, object: roman-empire, from: -26, to: 106 } # 106년 트라야누스의 병합까지
+
+# ── 서아시아·북아프리카 A4b-⑦b (2026-10-31): 이라크·이란 기원전 30년~631년 (파르티아 종속 왕국의 사산 쪽 종주와 라흠 왕국) ──
+- { type: vassal_of, subject: atropatene, object: sasanian-empire, from: 224, to: 226 } # 아르타바누스 4세가 진 뒤 226년 무렵 사산에 합쳐질 때까지
+- { type: vassal_of, subject: adiabene, object: sasanian-empire, from: 224, to: 379 } # 379년 무렵 사산 속주가 될 때까지(마지막 왕 아르다시르 2세)
+- { type: vassal_of, subject: lakhmid-kingdom, object: sasanian-empire, from: 293, to: 602 } # 알히라의 왕들이 사산의 서쪽 사막 변경을 지킴, 602년 호스로 2세가 누만 3세를 없앰
+
+# ── 서아시아·북아프리카 A4b-⑦c (2026-10-31): 아라비아 반도 기원전 30년~631년 (힘야르 땅을 이은 악숨령 예멘. 종주 악숨은 항목이 없어 글로만) ──
+- { type: successor_of, subject: aksumite-yemen, object: himyarite-kingdom, from: 525, to: null } # 525년 두 누와스가 진 뒤 악숨의 총독과 아브라하가 힘야르 땅과 왕호를 이음

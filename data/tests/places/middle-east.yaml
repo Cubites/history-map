@@ -5020,3 +5020,501 @@
   expect: characene
   url: https://en.wikipedia.org/wiki/Characene
   from: 서아시아 A4a-⑥b 결과노트
+
+# ── 서아시아·북아프리카 A4b-⑦a (2026-10-31): 레반트·시리아 자지라 기원전 30년~631년 — 헤롯·이투라이아·나바테아 끝 앞뒤, 로마 제국 병합(6·47·92·106·195) 앞뒤, 동로마 395, 사산 점령(자지라 610·레반트 615~628) 앞뒤, 자지라 빈 땅. 이음매 안타키아·샨르우르파는 기존 값 그대로 ──
+- name: 예루살렘
+  at: [35.22, 31.78]
+  year: -10
+  expect: herodian-judea
+  url: https://en.wikipedia.org/wiki/Herodian_kingdom
+  from: 서아시아 A4b-⑦a 결과노트
+- name: 예루살렘
+  at: [35.22, 31.78]
+  year: 20
+  expect: roman-empire
+  url: https://en.wikipedia.org/wiki/Judea_(Roman_province)
+  from: 서아시아 A4b-⑦a 결과노트
+- name: 예루살렘
+  at: [35.22, 31.78]
+  year: 620
+  expect: sasanian-empire
+  url: https://en.wikipedia.org/wiki/Byzantine–Sasanian_War_of_602–628
+  from: 서아시아 A4b-⑦a 결과노트
+- name: 예루살렘
+  at: [35.22, 31.78]
+  year: 630
+  expect: byzantine-empire
+  url: https://en.wikipedia.org/wiki/Byzantine–Sasanian_War_of_602–628
+  from: 서아시아 A4b-⑦a 결과노트
+- name: 카이사레아
+  at: [34.89, 32.5]
+  year: 0
+  expect: herodian-judea
+  url: https://en.wikipedia.org/wiki/Caesarea_Maritima
+  from: 서아시아 A4b-⑦a 결과노트
+- name: 카이사레아
+  at: [34.89, 32.5]
+  year: 10
+  expect: roman-empire
+  url: https://en.wikipedia.org/wiki/Judea_(Roman_province)
+  from: 서아시아 A4b-⑦a 결과노트
+- name: 티베리아스
+  at: [35.53, 32.79]
+  year: 30
+  expect: herodian-judea
+  url: https://en.wikipedia.org/wiki/Herod_Antipas
+  from: 서아시아 A4b-⑦a 결과노트
+- name: 티베리아스
+  at: [35.53, 32.79]
+  year: 95
+  expect: roman-empire
+  url: https://en.wikipedia.org/wiki/Agrippa_II
+  from: 서아시아 A4b-⑦a 결과노트
+- name: 다마스쿠스
+  at: [36.31, 33.51]
+  year: -28
+  expect: roman-republic
+  url: https://en.wikipedia.org/wiki/Syria_(Roman_province)
+  from: 서아시아 A4b-⑦a 결과노트
+- name: 다마스쿠스
+  at: [36.31, 33.51]
+  year: 0
+  expect: roman-empire
+  url: https://en.wikipedia.org/wiki/Syria_(Roman_province)
+  from: 서아시아 A4b-⑦a 결과노트
+- name: 다마스쿠스
+  at: [36.31, 33.51]
+  year: 400
+  expect: byzantine-empire
+  url: https://en.wikipedia.org/wiki/Byzantine–Sasanian_War_of_602–628
+  from: 서아시아 A4b-⑦a 결과노트
+- name: 다마스쿠스
+  at: [36.31, 33.51]
+  year: 620
+  expect: sasanian-empire
+  url: https://en.wikipedia.org/wiki/Byzantine–Sasanian_War_of_602–628
+  from: 서아시아 A4b-⑦a 결과노트
+- name: 수와이다(아우라니티스)
+  at: [36.57, 32.71]
+  year: -25
+  expect: ituraea
+  url: https://en.wikipedia.org/wiki/Ituraea
+  from: 서아시아 A4b-⑦a 결과노트
+- name: 수와이다(아우라니티스)
+  at: [36.57, 32.71]
+  year: -10
+  expect: herodian-judea
+  url: https://en.wikipedia.org/wiki/Herod_the_Great
+  from: 서아시아 A4b-⑦a 결과노트
+- name: 수와이다(아우라니티스)
+  at: [36.57, 32.71]
+  year: 100
+  expect: roman-empire
+  url: https://en.wikipedia.org/wiki/Agrippa_II
+  from: 서아시아 A4b-⑦a 결과노트
+- name: 안자르(칼키스)
+  at: [35.93, 33.73]
+  year: -28
+  expect: ituraea
+  url: https://en.wikipedia.org/wiki/Ituraea
+  from: 서아시아 A4b-⑦a 결과노트
+- name: 안자르(칼키스)
+  at: [35.93, 33.73]
+  year: 46
+  expect: ituraea
+  url: https://en.wikipedia.org/wiki/Ituraea
+  from: 서아시아 A4b-⑦a 결과노트
+- name: 안자르(칼키스)
+  at: [35.93, 33.73]
+  year: 48
+  expect: roman-empire
+  url: https://en.wikipedia.org/wiki/Syria_(Roman_province)
+  from: 서아시아 A4b-⑦a 결과노트
+- name: 페트라
+  at: [35.44, 30.33]
+  year: 50
+  expect: nabataean-kingdom
+  url: https://en.wikipedia.org/wiki/Nabataean_Kingdom
+  from: 서아시아 A4b-⑦a 결과노트
+- name: 페트라
+  at: [35.44, 30.33]
+  year: 150
+  expect: roman-empire
+  url: https://en.wikipedia.org/wiki/Arabia_Petraea
+  from: 서아시아 A4b-⑦a 결과노트
+- name: 팔미라
+  at: [38.27, 34.55]
+  year: 272
+  expect: roman-empire
+  url: https://en.wikipedia.org/wiki/Palmyrene_Empire
+  from: 서아시아 A4b-⑦a 결과노트
+- name: 락카(니케포리온)
+  at: [39.01, 35.95]
+  year: 150
+  expect: none
+  url: https://en.wikipedia.org/wiki/Roman–Parthian_Wars
+  from: 서아시아 A4b-⑦a 결과노트
+- name: 락카(니케포리온)
+  at: [39.01, 35.95]
+  year: 250
+  expect: roman-empire
+  url: https://en.wikipedia.org/wiki/Mesopotamia_(Roman_province)
+  from: 서아시아 A4b-⑦a 결과노트
+- name: 락카(니케포리온)
+  at: [39.01, 35.95]
+  year: 500
+  expect: byzantine-empire
+  url: https://en.wikipedia.org/wiki/Mesopotamia_(Roman_province)
+  from: 서아시아 A4b-⑦a 결과노트
+- name: 락카(니케포리온)
+  at: [39.01, 35.95]
+  year: 612
+  expect: sasanian-empire
+  url: https://en.wikipedia.org/wiki/Byzantine–Sasanian_War_of_602–628
+  from: 서아시아 A4b-⑦a 결과노트
+- name: 락카(니케포리온)
+  at: [39.01, 35.95]
+  year: 630
+  expect: byzantine-empire
+  url: https://en.wikipedia.org/wiki/Byzantine–Sasanian_War_of_602–628
+  from: 서아시아 A4b-⑦a 결과노트
+- name: 알레포
+  at: [37.16, 36.2]
+  year: 613
+  expect: byzantine-empire
+  url: https://en.wikipedia.org/wiki/Byzantine–Sasanian_War_of_602–628
+  from: 서아시아 A4b-⑦a 결과노트
+- name: 알레포
+  at: [37.16, 36.2]
+  year: 620
+  expect: sasanian-empire
+  url: https://en.wikipedia.org/wiki/Byzantine–Sasanian_War_of_602–628
+  from: 서아시아 A4b-⑦a 결과노트
+- name: 크테시폰
+  at: [44.58, 33.09]
+  year: 100
+  expect: parthian-empire
+  url: https://en.wikipedia.org/wiki/Ctesiphon
+  from: 서아시아 A4b-⑦b 결과노트
+- name: 크테시폰
+  at: [44.58, 33.09]
+  year: 224
+  expect: parthian-empire
+  url: https://en.wikipedia.org/wiki/Ctesiphon
+  from: 서아시아 A4b-⑦b 결과노트
+- name: 크테시폰
+  at: [44.58, 33.09]
+  year: 300
+  expect: sasanian-empire
+  url: https://en.wikipedia.org/wiki/Ctesiphon
+  from: 서아시아 A4b-⑦b 결과노트
+- name: 엑바타나(하마단)
+  at: [48.51, 34.8]
+  year: 150
+  expect: parthian-empire
+  url: https://en.wikipedia.org/wiki/Parthian_Empire
+  from: 서아시아 A4b-⑦b 결과노트
+- name: 엑바타나(하마단)
+  at: [48.51, 34.8]
+  year: 300
+  expect: sasanian-empire
+  url: https://en.wikipedia.org/wiki/Sasanian_Empire
+  from: 서아시아 A4b-⑦b 결과노트
+- name: 이스타크르
+  at: [52.89, 29.99]
+  year: 223
+  expect: persis-kingdom
+  url: https://en.wikipedia.org/wiki/Ardashir_I
+  from: 서아시아 A4b-⑦b 결과노트
+- name: 이스타크르
+  at: [52.89, 29.99]
+  year: 224
+  expect: sasanian-empire
+  url: https://en.wikipedia.org/wiki/Ardashir_I
+  from: 서아시아 A4b-⑦b 결과노트
+- name: 수사
+  at: [48.26, 32.19]
+  year: 100
+  expect: elymais
+  url: https://en.wikipedia.org/wiki/Elymais
+  from: 서아시아 A4b-⑦b 결과노트
+- name: 수사
+  at: [48.26, 32.19]
+  year: 230
+  expect: sasanian-empire
+  url: https://en.wikipedia.org/wiki/Ardashir_I
+  from: 서아시아 A4b-⑦b 결과노트
+- name: 카락스 스파시누(바스라 둘레)
+  at: [47.81, 30.51]
+  year: 100
+  expect: characene
+  url: https://en.wikipedia.org/wiki/Characene
+  from: 서아시아 A4b-⑦b 결과노트
+- name: 카락스 스파시누(바스라 둘레)
+  at: [47.81, 30.51]
+  year: 223
+  expect: persis-kingdom
+  url: https://en.wikipedia.org/wiki/Ardashir_I
+  from: 서아시아 A4b-⑦b 결과노트
+- name: 카락스 스파시누(바스라 둘레)
+  at: [47.81, 30.51]
+  year: 230
+  expect: sasanian-empire
+  url: https://en.wikipedia.org/wiki/Ardashir_I
+  from: 서아시아 A4b-⑦b 결과노트
+- name: 간자크(타흐테솔레이만)
+  at: [47.23, 36.6]
+  year: 100
+  expect: atropatene
+  url: https://en.wikipedia.org/wiki/Atropatene
+  from: 서아시아 A4b-⑦b 결과노트
+- name: 간자크(타흐테솔레이만)
+  at: [47.23, 36.6]
+  year: 300
+  expect: sasanian-empire
+  url: https://en.wikipedia.org/wiki/Sasanian_Empire
+  from: 서아시아 A4b-⑦b 결과노트
+- name: 아르벨라(에르빌)
+  at: [44.01, 36.19]
+  year: 150
+  expect: adiabene
+  url: https://en.wikipedia.org/wiki/Adiabene
+  from: 서아시아 A4b-⑦b 결과노트
+- name: 아르벨라(에르빌)
+  at: [44.01, 36.19]
+  year: 300
+  expect: adiabene
+  url: https://en.wikipedia.org/wiki/Adiabene
+  from: 서아시아 A4b-⑦b 결과노트
+- name: 아르벨라(에르빌)
+  at: [44.01, 36.19]
+  year: 400
+  expect: sasanian-empire
+  url: https://en.wikipedia.org/wiki/Adiabene
+  from: 서아시아 A4b-⑦b 결과노트
+- name: 알히라
+  at: [44.39, 31.98]
+  year: 290
+  expect: sasanian-empire
+  url: https://en.wikipedia.org/wiki/Al-Hirah
+  from: 서아시아 A4b-⑦b 결과노트
+- name: 알히라
+  at: [44.39, 31.98]
+  year: 400
+  expect: lakhmid-kingdom
+  url: https://en.wikipedia.org/wiki/Al-Hirah
+  from: 서아시아 A4b-⑦b 결과노트
+- name: 알히라
+  at: [44.39, 31.98]
+  year: 610
+  expect: sasanian-empire
+  url: https://en.wikipedia.org/wiki/Lakhmids
+  from: 서아시아 A4b-⑦b 결과노트
+- name: 니샤푸르
+  at: [58.8, 36.21]
+  year: 100
+  expect: parthian-empire
+  url: https://en.wikipedia.org/wiki/Parthian_Empire
+  from: 서아시아 A4b-⑦b 결과노트
+- name: 니샤푸르
+  at: [58.8, 36.21]
+  year: 230
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Ardashir_I
+  from: 서아시아 A4b-⑦b 결과노트
+- name: 니샤푸르
+  at: [58.8, 36.21]
+  year: 250
+  expect: sasanian-empire
+  url: https://en.wikipedia.org/wiki/Ardashir_I
+  from: 서아시아 A4b-⑦b 결과노트
+- name: 이란샤르(발루치스탄)
+  at: [60.68, 27.2]
+  year: 400
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Sasanian_Empire
+  from: 서아시아 A4b-⑦b 결과노트
+
+# ── 서아시아·북아프리카 A4b-⑦c (2026-10-31): 아라비아 반도 기원전 30년~631년 — 리히얀 끝·나바테아·로마의 헤그라, 사바의 사나·힘야르 합병·통일, 악숨령 예멘·사산 예멘과 628 비움, 마준·알하사, 쿠웨이트 ──
+- name: 데단(알울라)
+  at: [37.92, 26.62]
+  year: -25
+  expect: lihyan
+  url: https://en.wikipedia.org/wiki/Lihyan
+  from: 서아시아 A4b-⑦c 결과노트
+- name: 데단(알울라)
+  at: [37.92, 26.62]
+  year: -20
+  expect: nabataean-kingdom
+  url: https://en.wikipedia.org/wiki/Lihyan
+  from: 서아시아 A4b-⑦c 결과노트
+- name: 헤그라
+  at: [37.95, 26.79]
+  year: 50
+  expect: nabataean-kingdom
+  url: https://en.wikipedia.org/wiki/Hegra_(Mada'in_Salih)
+  from: 서아시아 A4b-⑦c 결과노트
+- name: 헤그라
+  at: [37.95, 26.79]
+  year: 150
+  expect: roman-empire
+  url: https://en.wikipedia.org/wiki/Hegra_(Mada'in_Salih)
+  from: 서아시아 A4b-⑦c 결과노트
+- name: 헤그라
+  at: [37.95, 26.79]
+  year: 250
+  expect: none
+  url: https://en.wikipedia.org/wiki/Hegra_(Mada'in_Salih)
+  from: 서아시아 A4b-⑦c 결과노트
+- name: 타부크
+  at: [36.57, 28.38]
+  year: 150
+  expect: none
+  url: https://en.wikipedia.org/wiki/Arabia_Petraea
+  from: 서아시아 A4b-⑦c 결과노트
+- name: 마리브
+  at: [45.33, 15.43]
+  year: 100
+  expect: saba-kingdom
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Saba
+  from: 서아시아 A4b-⑦c 결과노트
+- name: 마리브
+  at: [45.33, 15.43]
+  year: 280
+  expect: himyarite-kingdom
+  url: https://en.wikipedia.org/wiki/Himyarite_Kingdom
+  from: 서아시아 A4b-⑦c 결과노트
+- name: 사나
+  at: [44.21, 15.35]
+  year: 0
+  expect: none
+  url: https://en.wikipedia.org/wiki/Sanaa
+  from: 서아시아 A4b-⑦c 결과노트
+- name: 사나
+  at: [44.21, 15.35]
+  year: 100
+  expect: saba-kingdom
+  url: https://en.wikipedia.org/wiki/Sanaa
+  from: 서아시아 A4b-⑦c 결과노트
+- name: 사나
+  at: [44.21, 15.35]
+  year: 400
+  expect: himyarite-kingdom
+  url: https://en.wikipedia.org/wiki/Himyarite_Kingdom
+  from: 서아시아 A4b-⑦c 결과노트
+- name: 사나
+  at: [44.21, 15.35]
+  year: 524
+  expect: himyarite-kingdom
+  url: https://en.wikipedia.org/wiki/Himyarite_Kingdom
+  from: 서아시아 A4b-⑦c 결과노트
+- name: 사나
+  at: [44.21, 15.35]
+  year: 526
+  expect: aksumite-yemen
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Aksum
+  from: 서아시아 A4b-⑦c 결과노트
+- name: 사나
+  at: [44.21, 15.35]
+  year: 569
+  expect: aksumite-yemen
+  url: https://en.wikipedia.org/wiki/Abraha
+  from: 서아시아 A4b-⑦c 결과노트
+- name: 사나
+  at: [44.21, 15.35]
+  year: 571
+  expect: sasanian-empire
+  url: https://en.wikipedia.org/wiki/Aksumite%E2%80%93Persian_wars
+  from: 서아시아 A4b-⑦c 결과노트
+- name: 사나
+  at: [44.21, 15.35]
+  year: 629
+  expect: none
+  url: https://en.wikipedia.org/wiki/Mazun_(Sasanian_province)
+  from: 서아시아 A4b-⑦c 결과노트
+- name: 팀나
+  at: [45.7, 14.8]
+  year: 150
+  expect: qataban
+  url: https://en.wikipedia.org/wiki/Qataban
+  from: 서아시아 A4b-⑦c 결과노트
+- name: 팀나
+  at: [45.7, 14.8]
+  year: 250
+  expect: hadramawt-kingdom
+  url: https://en.wikipedia.org/wiki/Qataban
+  from: 서아시아 A4b-⑦c 결과노트
+- name: 샤브와
+  at: [47.01, 15.31]
+  year: 100
+  expect: hadramawt-kingdom
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Hadramaut
+  from: 서아시아 A4b-⑦c 결과노트
+- name: 샤브와
+  at: [47.01, 15.31]
+  year: 295
+  expect: himyarite-kingdom
+  url: https://en.wikipedia.org/wiki/Himyarite_Kingdom
+  from: 서아시아 A4b-⑦c 결과노트
+- name: 자파르
+  at: [44.36, 14.37]
+  year: 200
+  expect: himyarite-kingdom
+  url: https://en.wikipedia.org/wiki/Himyarite_Kingdom
+  from: 서아시아 A4b-⑦c 결과노트
+- name: 나지란
+  at: [44.13, 17.49]
+  year: 400
+  expect: none
+  url: https://en.wikipedia.org/wiki/Najran
+  from: 서아시아 A4b-⑦c 결과노트
+- name: 소하르
+  at: [56.71, 24.35]
+  year: 200
+  expect: none
+  url: https://en.wikipedia.org/wiki/Mazun_(Sasanian_province)
+  from: 서아시아 A4b-⑦c 결과노트
+- name: 소하르
+  at: [56.71, 24.35]
+  year: 300
+  expect: sasanian-empire
+  url: https://en.wikipedia.org/wiki/Mazun_(Sasanian_province)
+  from: 서아시아 A4b-⑦c 결과노트
+- name: 소하르
+  at: [56.71, 24.35]
+  year: 629
+  expect: none
+  url: https://en.wikipedia.org/wiki/Mazun_(Sasanian_province)
+  from: 서아시아 A4b-⑦c 결과노트
+- name: 호푸프(하자르)
+  at: [49.59, 25.38]
+  year: 400
+  expect: sasanian-empire
+  url: https://en.wikipedia.org/wiki/Mazun_(Sasanian_province)
+  from: 서아시아 A4b-⑦c 결과노트
+- name: 니즈와(오만 내륙)
+  at: [57.53, 22.93]
+  year: 400
+  expect: none
+  url: https://en.wikipedia.org/wiki/Mazun_(Sasanian_province)
+  from: 서아시아 A4b-⑦c 결과노트
+- name: 자흐라(쿠웨이트)
+  at: [47.66, 29.34]
+  year: 100
+  expect: characene
+  url: https://en.wikipedia.org/wiki/Characene
+  from: 서아시아 A4b-⑦c 결과노트
+- name: 자흐라(쿠웨이트)
+  at: [47.66, 29.34]
+  year: 300
+  expect: sasanian-empire
+  url: https://en.wikipedia.org/wiki/Characene
+  from: 서아시아 A4b-⑦c 결과노트
+- name: 자흐라(쿠웨이트)
+  at: [47.66, 29.34]
+  year: 631
+  expect: sasanian-empire
+  url: https://en.wikipedia.org/wiki/Sasanian_Empire
+  from: 서아시아 A4b-⑦c 결과노트

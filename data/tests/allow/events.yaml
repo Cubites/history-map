@@ -1011,9 +1011,6 @@
 - key: '1597 zaydi-imamate 소멸'
   reason: me-02~05 사건 묶음이 채움
   decided: 2026-10-30 운영자 A3 승인
-- key: '632 sasanian-empire 버전'
-  reason: me-02~05 사건 묶음이 채움
-  decided: 2026-10-30 운영자 A3 승인
 - key: '637 rashidun-caliphate 버전'
   reason: me-02~05 사건 묶음이 채움
   decided: 2026-10-30 운영자 A3 승인
@@ -2233,5 +2230,83 @@
   reason: me-01·02 사건 묶음이 채움
   decided: 2026-10-31 운영자 A4 승인
 - key: '-109 qataban 버전'
+  reason: me-01·02 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A4 승인
+# ── 서아시아·북아프리카 A4b-⑦a (2026-10-31): 레반트·시리아 자지라 기원전 30년~631년 이어 쓴 항목(헤롯·이투라이아)과 사산 점령(610·615)의 새 버전 해. 사건 묶음 me-01·me-02가 사건을 쓰며 이 줄을 지운다 ──
+- key: '-29 ituraea 버전'
+  reason: me-01·02 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A4 승인
+- key: '-21 herodian-judea 버전'
+  reason: me-01·02 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A4 승인
+- key: '-21 ituraea 버전'
+  reason: me-01·02 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A4 승인
+- key: '6 herodian-judea 버전'
+  reason: me-01·02 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A4 승인
+- key: '610 sasanian-empire 버전'
+  reason: me-01·02 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A4 승인
+- key: '615 sasanian-empire 버전'
+  reason: me-01·02 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A4 승인
+# ── 서아시아·북아프리카 A4b-⑦b (2026-10-31): 이라크·이란 기원전 30년~631년 라흠 왕국의 성립·소멸과 이어 쓴 항목(카라케네·페르시스)·사산 몸통의 새 버전 해. 사건 묶음 me-01·me-02가 사건을 쓰며 이 줄을 지운다 ──
+- key: '293 lakhmid-kingdom 성립'
+  reason: me-01·02 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A4 승인
+- key: '602 lakhmid-kingdom 소멸'
+  reason: me-01·02 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A4 승인
+- key: '222 persis-kingdom 버전'
+  reason: me-01·02 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A4 승인
+- key: '225 sasanian-empire 버전'
+  reason: me-01·02 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A4 승인
+- key: '226 sasanian-empire 버전'
+  reason: me-01·02 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A4 승인
+- key: '240 sasanian-empire 버전'
+  reason: me-01·02 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A4 승인
+- key: '293 sasanian-empire 버전'
+  reason: me-01·02 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A4 승인
+- key: '379 sasanian-empire 버전'
+  reason: me-01·02 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A4 승인
+- key: '602 sasanian-empire 버전'
+  reason: me-01·02 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A4 승인
+- key: '629 sasanian-empire 버전'
+  reason: me-01·02 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A4 승인
+# ── 서아시아·북아프리카 A4b-⑦c (2026-10-31): 아라비아 반도 기원전 30년~631년 악숨령 예멘의 성립·소멸과 이어 쓴 항목(나바테아·사바·하드라마우트·힘야르)·사산(예멘 570, 반도 철수 628)의 새 버전 해. 사건 묶음 me-01·me-02가 사건을 쓰며 이 줄을 지운다 ──
+- key: '525 aksumite-yemen 성립'
+  reason: me-01·02 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A4 승인
+- key: '570 aksumite-yemen 소멸'
+  reason: me-01·02 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A4 승인
+- key: '-23 nabataean-kingdom 버전'
+  reason: me-01·02 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A4 승인
+- key: '50 saba-kingdom 버전'
+  reason: me-01·02 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A4 승인
+- key: '200 hadramawt-kingdom 버전'
+  reason: me-01·02 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A4 승인
+- key: '275 himyarite-kingdom 버전'
+  reason: me-01·02 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A4 승인
+- key: '290 himyarite-kingdom 버전'
+  reason: me-01·02 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A4 승인
+- key: '570 sasanian-empire 버전'
+  reason: me-01·02 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A4 승인
+- key: '628 sasanian-empire 버전'
   reason: me-01·02 사건 묶음이 채움
   decided: 2026-10-31 운영자 A4 승인
