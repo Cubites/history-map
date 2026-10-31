@@ -4104,3 +4104,420 @@
   region: middle-east
   url: https://en.wikipedia.org/wiki/Jalayirid_Sultanate
   from: 서아시아 A3b-4b 결과노트
+
+# ── 서아시아·북아프리카 A3c-5 (2026-10-31): 리비아·마그레브 1000~1452 — 새 항목 수도·바뀌는 해 앞뒤·알모라비드·알모하드 늘림 앞뒤·1452/1453 이음매(하프스·마린)·빈 땅(키레나이카·튀니지 내륙 등). 이음매 세우타는 기존 값 그대로 ──
+- name: 카이라완
+  at: [10.10, 35.68]
+  year: 1020
+  expect: zirid-dynasty
+  url: https://en.wikipedia.org/wiki/Zirid_dynasty
+  from: 서아시아 A3c-5 결과노트
+- name: 카이라완
+  at: [10.10, 35.68]
+  year: 1100
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Zirid_dynasty
+  from: 서아시아 A3c-5 결과노트
+- name: 카이라완
+  at: [10.10, 35.68]
+  year: 1170
+  expect: almohads
+  url: https://en.wikipedia.org/wiki/Almohad_Caliphate
+  from: 서아시아 A3c-5 결과노트
+- name: 카이라완
+  at: [10.10, 35.68]
+  year: 1250
+  expect: hafsid-sultanate
+  url: https://en.wikipedia.org/wiki/Hafsid_dynasty
+  from: 서아시아 A3c-5 결과노트
+- name: 마흐디야
+  at: [11.06, 35.50]
+  year: 1100
+  expect: zirid-dynasty
+  url: https://en.wikipedia.org/wiki/Zirid_dynasty
+  from: 서아시아 A3c-5 결과노트
+- name: 마흐디야
+  at: [11.06, 35.50]
+  year: 1154
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Africa
+  from: 서아시아 A3c-5 결과노트
+- name: 마흐디야
+  at: [11.06, 35.50]
+  year: 1170
+  expect: almohads
+  url: https://en.wikipedia.org/wiki/Almohad_Caliphate
+  from: 서아시아 A3c-5 결과노트
+- name: 튀니스
+  at: [10.17, 36.80]
+  year: 1100
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Zirid_dynasty
+  from: 서아시아 A3c-5 결과노트
+- name: 튀니스
+  at: [10.17, 36.80]
+  year: 1200
+  expect: almohads
+  url: https://en.wikipedia.org/wiki/Almohad_Caliphate
+  from: 서아시아 A3c-5 결과노트
+- name: 튀니스
+  at: [10.17, 36.80]
+  year: 1300
+  expect: hafsid-sultanate
+  url: https://en.wikipedia.org/wiki/Hafsid_dynasty
+  from: 서아시아 A3c-5 결과노트
+- name: 튀니스
+  at: [10.17, 36.80]
+  year: 1452
+  expect: hafsid-sultanate
+  url: https://en.wikipedia.org/wiki/Hafsid_dynasty
+  from: 서아시아 A3c-5 결과노트
+- name: 트리폴리(리비아)
+  at: [13.19, 32.89]
+  year: 1050
+  expect: khazrunid-dynasty
+  url: https://en.wikipedia.org/wiki/Banu_Khazrun
+  from: 서아시아 A3c-5 결과노트
+- name: 트리폴리(리비아)
+  at: [13.19, 32.89]
+  year: 1150
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Africa
+  from: 서아시아 A3c-5 결과노트
+- name: 트리폴리(리비아)
+  at: [13.19, 32.89]
+  year: 1180
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Sharaf_al-Din_Qaraqush
+  from: 서아시아 A3c-5 결과노트
+- name: 트리폴리(리비아)
+  at: [13.19, 32.89]
+  year: 1200
+  expect: almohads
+  url: https://en.wikipedia.org/wiki/Almohad_Caliphate
+  from: 서아시아 A3c-5 결과노트
+- name: 트리폴리(리비아)
+  at: [13.19, 32.89]
+  year: 1300
+  expect: hafsid-sultanate
+  url: https://en.wikipedia.org/wiki/Hafsid_dynasty
+  from: 서아시아 A3c-5 결과노트
+- name: 미스라타
+  at: [15.09, 32.38]
+  year: 1350
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Hafsid_dynasty
+  from: 서아시아 A3c-5 결과노트
+- name: 미스라타
+  at: [15.09, 32.38]
+  year: 1420
+  expect: hafsid-sultanate
+  url: https://en.wikipedia.org/wiki/Hafsid_dynasty
+  from: 서아시아 A3c-5 결과노트
+- name: 알마르지(바르카)
+  at: [20.83, 32.50]
+  year: 1050
+  expect: fatimid-caliphate
+  url: https://en.wikipedia.org/wiki/Cyrenaica
+  from: 서아시아 A3c-5 결과노트
+- name: 알마르지(바르카)
+  at: [20.83, 32.50]
+  year: 1060
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Cyrenaica
+  from: 서아시아 A3c-5 결과노트
+- name: 벵가지
+  at: [20.07, 32.12]
+  year: 1400
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Cyrenaica
+  from: 서아시아 A3c-5 결과노트
+- name: 칼아 베니 함마드
+  at: [4.50, 35.82]
+  year: 1050
+  expect: hammadid-dynasty
+  url: https://en.wikipedia.org/wiki/Hammadid_dynasty
+  from: 서아시아 A3c-5 결과노트
+- name: 칼아 베니 함마드
+  at: [4.50, 35.82]
+  year: 1100
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Hammadid_dynasty
+  from: 서아시아 A3c-5 결과노트
+- name: 베자이아
+  at: [5.08, 36.75]
+  year: 1100
+  expect: hammadid-dynasty
+  url: https://en.wikipedia.org/wiki/Hammadid_dynasty
+  from: 서아시아 A3c-5 결과노트
+- name: 베자이아
+  at: [5.08, 36.75]
+  year: 1200
+  expect: almohads
+  url: https://en.wikipedia.org/wiki/Almohad_Caliphate
+  from: 서아시아 A3c-5 결과노트
+- name: 베자이아
+  at: [5.08, 36.75]
+  year: 1300
+  expect: hafsid-sultanate
+  url: https://en.wikipedia.org/wiki/Hafsid_dynasty
+  from: 서아시아 A3c-5 결과노트
+- name: 콘스탄틴
+  at: [6.61, 36.36]
+  year: 1030
+  expect: zirid-dynasty
+  url: https://en.wikipedia.org/wiki/Zirid_dynasty
+  from: 서아시아 A3c-5 결과노트
+- name: 콘스탄틴
+  at: [6.61, 36.36]
+  year: 1100
+  expect: hammadid-dynasty
+  url: https://en.wikipedia.org/wiki/Hammadid_dynasty
+  from: 서아시아 A3c-5 결과노트
+- name: 콘스탄틴
+  at: [6.61, 36.36]
+  year: 1200
+  expect: almohads
+  url: https://en.wikipedia.org/wiki/Almohad_Caliphate
+  from: 서아시아 A3c-5 결과노트
+- name: 콘스탄틴
+  at: [6.61, 36.36]
+  year: 1250
+  expect: hafsid-sultanate
+  url: https://en.wikipedia.org/wiki/Hafsid_dynasty
+  from: 서아시아 A3c-5 결과노트
+- name: 알제
+  at: [3.06, 36.75]
+  year: 1010
+  expect: zirid-dynasty
+  url: https://en.wikipedia.org/wiki/Zirid_dynasty
+  from: 서아시아 A3c-5 결과노트
+- name: 알제
+  at: [3.06, 36.75]
+  year: 1050
+  expect: hammadid-dynasty
+  url: https://en.wikipedia.org/wiki/Hammadid_dynasty
+  from: 서아시아 A3c-5 결과노트
+- name: 알제
+  at: [3.06, 36.75]
+  year: 1100
+  expect: almoravids
+  url: https://en.wikipedia.org/wiki/Almoravid_dynasty
+  from: 서아시아 A3c-5 결과노트
+- name: 알제
+  at: [3.06, 36.75]
+  year: 1300
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Tlemcen
+  from: 서아시아 A3c-5 결과노트
+- name: 틀렘센
+  at: [-1.32, 34.88]
+  year: 1050
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Banu_Ifran
+  from: 서아시아 A3c-5 결과노트
+- name: 틀렘센
+  at: [-1.32, 34.88]
+  year: 1100
+  expect: almoravids
+  url: https://en.wikipedia.org/wiki/Almoravid_dynasty
+  from: 서아시아 A3c-5 결과노트
+- name: 틀렘센
+  at: [-1.32, 34.88]
+  year: 1200
+  expect: almohads
+  url: https://en.wikipedia.org/wiki/Almohad_Caliphate
+  from: 서아시아 A3c-5 결과노트
+- name: 틀렘센
+  at: [-1.32, 34.88]
+  year: 1250
+  expect: zayyanid-kingdom
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Tlemcen
+  from: 서아시아 A3c-5 결과노트
+- name: 틀렘센
+  at: [-1.32, 34.88]
+  year: 1340
+  expect: marinid-sultanate
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Tlemcen
+  from: 서아시아 A3c-5 결과노트
+- name: 틀렘센
+  at: [-1.32, 34.88]
+  year: 1400
+  expect: zayyanid-kingdom
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Tlemcen
+  from: 서아시아 A3c-5 결과노트
+- name: 페스
+  at: [-5.00, 34.04]
+  year: 1010
+  expect: maghrawa-dynasty
+  url: https://en.wikipedia.org/wiki/Maghrawa_(tribe)
+  from: 서아시아 A3c-5 결과노트
+- name: 페스
+  at: [-5.00, 34.04]
+  year: 1100
+  expect: almoravids
+  url: https://en.wikipedia.org/wiki/Almoravid_dynasty
+  from: 서아시아 A3c-5 결과노트
+- name: 페스
+  at: [-5.00, 34.04]
+  year: 1200
+  expect: almohads
+  url: https://en.wikipedia.org/wiki/Almohad_Caliphate
+  from: 서아시아 A3c-5 결과노트
+- name: 페스
+  at: [-5.00, 34.04]
+  year: 1300
+  expect: marinid-sultanate
+  url: https://en.wikipedia.org/wiki/Marinid_dynasty
+  from: 서아시아 A3c-5 결과노트
+- name: 페스
+  at: [-5.00, 34.04]
+  year: 1452
+  expect: marinid-sultanate
+  url: https://en.wikipedia.org/wiki/Marinid_dynasty
+  from: 서아시아 A3c-5 결과노트
+- name: 시질마사
+  at: [-4.27, 31.28]
+  year: 1020
+  expect: maghrawa-dynasty
+  url: https://en.wikipedia.org/wiki/Maghrawa_(tribe)
+  from: 서아시아 A3c-5 결과노트
+- name: 시질마사
+  at: [-4.27, 31.28]
+  year: 1070
+  expect: almoravids
+  url: https://en.wikipedia.org/wiki/Almoravid_dynasty
+  from: 서아시아 A3c-5 결과노트
+- name: 시질마사
+  at: [-4.27, 31.28]
+  year: 1300
+  expect: marinid-sultanate
+  url: https://en.wikipedia.org/wiki/Abu_Yusuf_Yaqub
+  from: 서아시아 A3c-5 결과노트
+- name: 와르자자트(드라아 골짜기 위쪽)
+  at: [-6.91, 30.92]
+  year: 1290
+  expect: marinid-sultanate
+  url: https://en.wikipedia.org/wiki/Abu_Yusuf_Yaqub_ibn_Abd_al-Haqq
+  from: 서아시아 A3c 검토 반영
+- name: 마라케시
+  at: [-7.99, 31.63]
+  year: 1050
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Almoravid_dynasty
+  from: 서아시아 A3c-5 결과노트
+- name: 마라케시
+  at: [-7.99, 31.63]
+  year: 1100
+  expect: almoravids
+  url: https://en.wikipedia.org/wiki/Almoravid_dynasty
+  from: 서아시아 A3c-5 결과노트
+- name: 마라케시
+  at: [-7.99, 31.63]
+  year: 1200
+  expect: almohads
+  url: https://en.wikipedia.org/wiki/Almohad_Caliphate
+  from: 서아시아 A3c-5 결과노트
+- name: 마라케시
+  at: [-7.99, 31.63]
+  year: 1260
+  expect: almohads
+  url: https://en.wikipedia.org/wiki/Almohad_Caliphate
+  from: 서아시아 A3c-5 결과노트
+- name: 마라케시
+  at: [-7.99, 31.63]
+  year: 1280
+  expect: marinid-sultanate
+  url: https://en.wikipedia.org/wiki/Abu_Yusuf_Yaqub
+  from: 서아시아 A3c-5 결과노트
+- name: 마라케시
+  at: [-7.99, 31.63]
+  year: 1400
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Hintata
+  from: 서아시아 A3c-5 결과노트
+- name: 카사블랑카
+  at: [-7.62, 33.59]
+  year: 1030
+  expect: barghawata-confederacy
+  url: https://en.wikipedia.org/wiki/Barghawata
+  from: 서아시아 A3c-5 결과노트
+- name: 카사블랑카
+  at: [-7.62, 33.59]
+  year: 1100
+  expect: almoravids
+  url: https://en.wikipedia.org/wiki/Almoravid_dynasty
+  from: 서아시아 A3c-5 결과노트
+- name: 탕헤르
+  at: [-5.81, 35.77]
+  year: 1100
+  expect: almoravids
+  url: https://en.wikipedia.org/wiki/Almoravid_dynasty
+  from: 서아시아 A3c-5 결과노트
+- name: 탕헤르
+  at: [-5.81, 35.77]
+  year: 1300
+  expect: marinid-sultanate
+  url: https://en.wikipedia.org/wiki/Abu_Yusuf_Yaqub
+  from: 서아시아 A3c-5 결과노트
+- name: 우지다
+  at: [-1.91, 34.68]
+  year: 1075
+  expect: maghrawa-dynasty
+  url: https://en.wikipedia.org/wiki/Maghrawa_(tribe)
+  from: 서아시아 A3c-5 결과노트
+- name: 우지다
+  at: [-1.91, 34.68]
+  year: 1100
+  expect: almoravids
+  url: https://en.wikipedia.org/wiki/Almoravid_dynasty
+  from: 서아시아 A3c-5 결과노트
+- name: 우지다
+  at: [-1.91, 34.68]
+  year: 1250
+  expect: zayyanid-kingdom
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Tlemcen
+  from: 서아시아 A3c-5 결과노트
+- name: 우지다
+  at: [-1.91, 34.68]
+  year: 1300
+  expect: marinid-sultanate
+  url: https://en.wikipedia.org/wiki/Abu_Yusuf_Yaqub
+  from: 서아시아 A3c-5 결과노트
+- name: 오랑
+  at: [-0.64, 35.70]
+  year: 1300
+  expect: zayyanid-kingdom
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Tlemcen
+  from: 서아시아 A3c-5 결과노트
+- name: 비스크라
+  at: [5.73, 34.85]
+  year: 1080
+  expect: hammadid-dynasty
+  url: https://en.wikipedia.org/wiki/Hammadid_dynasty
+  from: 서아시아 A3c-5 결과노트
+- name: 비스크라
+  at: [5.73, 34.85]
+  year: 1200
+  expect: almohads
+  url: https://en.wikipedia.org/wiki/Almohad_Caliphate
+  from: 서아시아 A3c-5 결과노트
+- name: 비스크라
+  at: [5.73, 34.85]
+  year: 1300
+  expect: hafsid-sultanate
+  url: https://en.wikipedia.org/wiki/Hafsid_dynasty
+  from: 서아시아 A3c-5 결과노트

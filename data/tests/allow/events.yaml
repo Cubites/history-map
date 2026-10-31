@@ -747,9 +747,6 @@
 - key: '1229 hafsid-sultanate 성립'
   reason: me-05~07 사건 묶음이 채움
   decided: 2026-10-29 운영자 A2 승인
-- key: '1453 hafsid-sultanate 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
 - key: '1516 mamluk-sultanate 버전'
   reason: me-05~07 사건 묶음이 채움
   decided: 2026-10-29 운영자 A2 승인
@@ -780,12 +777,6 @@
   reason: me-05~07 사건 묶음이 채움
   decided: 2026-10-29 운영자 A2 승인
 - key: '1244 marinid-sultanate 성립'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1453 zayyanid-kingdom 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1453 marinid-sultanate 버전'
   reason: me-05~07 사건 묶음이 채움
   decided: 2026-10-29 운영자 A2 승인
 - key: '1465 marinid-sultanate 소멸'
@@ -1988,5 +1979,88 @@
   reason: me-02~05 사건 묶음이 채움
   decided: 2026-10-30 운영자 A3 승인
 - key: '1452 qara-qoyunlu 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+
+# ── 서아시아·북아프리카 A3c-5 (2026-10-31): 리비아·마그레브 1000~1452 새 항목·이어 쓴 항목·늘린 알모하드·A2 항목 앞 버전의 성립·소멸·버전 해. 하프스·자이얀·마린은 1452년 모습이 1453년과 같아 A2의 1453 버전 줄 셋을 지움. 사건 묶음 me-02~05가 사건을 쓰며 이 줄을 지운다 ──
+- key: '1001 khazrunid-dynasty 성립'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1015 hammadid-dynasty 성립'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1146 khazrunid-dynasty 소멸'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1152 hammadid-dynasty 소멸'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1001 zirid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1015 zirid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1052 fatimid-caliphate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1056 maghrawa-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1057 zirid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1062 zirid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1062 hammadid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1070 maghrawa-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1082 hammadid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1090 hammadid-dynasty 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1230 hafsid-sultanate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1236 almohads 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1248 almohads 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1248 marinid-sultanate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1269 marinid-sultanate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1274 zayyanid-kingdom 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1274 marinid-sultanate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1306 marinid-sultanate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1337 marinid-sultanate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1348 marinid-sultanate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1352 marinid-sultanate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1359 marinid-sultanate 버전'
+  reason: me-02~05 사건 묶음이 채움
+  decided: 2026-10-30 운영자 A3 승인
+- key: '1401 hafsid-sultanate 버전'
   reason: me-02~05 사건 묶음이 채움
   decided: 2026-10-30 운영자 A3 승인

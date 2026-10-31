@@ -4483,3 +4483,47 @@
   at: [58.80, 36.21]
   reason: 1221~1259년 몽골 제국의 이란·이라크 땅(호라즘 정복 뒤 굳은 땅, 1258년 이라크)은 몽골 초원 본토와 아직 그리지 않은 중앙아시아(3묶음)를 사이에 두고 떨어져 보인다(영향표 A3 mongol-empire 줄, 1260년부터 일 칸국)
   sources: ["위키백과 영어판 「Khwarazmian Empire」 https://en.wikipedia.org/wiki/Khwarazmian_Empire", "위키백과 영어판 「Chormaqan」 https://en.wikipedia.org/wiki/Chormaqan", "위키백과 영어판 「Ilkhanate」 https://en.wikipedia.org/wiki/Ilkhanate"]
+
+# ── 서아시아·북아프리카 A3c (2026-10-31): 1000~1452 서 (지브롤터 해협 너머의 이베리아, 칠하지 않은 땅 너머의 땅, 정복 순서로 떨어진 땅) ──
+
+- entity: fatimid-caliphate
+  from: 1000
+  to: 1052
+  at: [21.88, 32.01]
+  reason: 키레나이카 해안(바르카)은 칠하지 않은 마르마리카 사막(리비아 내륙) 너머에 있어 해안 길과 바닷길로 이집트와 이어졌다(1051~1052년 바르카 에미르가 지리 왕조 쪽으로 돌아섬)
+  sources: ["위키백과 영어판 「Cyrenaica」 https://en.wikipedia.org/wiki/Cyrenaica", "위키백과 영어판 「Fatimid Caliphate」 https://en.wikipedia.org/wiki/Fatimid_Caliphate"]
+
+- entity: zirid-dynasty
+  from: 1057
+  to: 1062
+  at: [10.63, 35.30]
+  reason: 1057년 카이라완을 버린 뒤 지리 왕조의 사헬·스팍스·가베스 해안(마흐디야)은 바누 힐랄이 차지한 튀니지 내륙(비움) 너머에 있어 알제리 동부의 누미디아 텔과 땅으로 이어지지 않았다(1062년 누미디아 텔을 함마드 왕조에 넘김)
+  sources: ["위키백과 영어판 「Zirid dynasty」 https://en.wikipedia.org/wiki/Zirid_dynasty", "위키백과 영어판 「Hammadid dynasty」 https://en.wikipedia.org/wiki/Hammadid_dynasty"]
+
+- entity: almoravids
+  from: 1091
+  to: 1145
+  at: [-5.99, 37.39]
+  reason: 알모라비드 왕조의 알안달루스는 지브롤터 해협 너머에 있어 마그레브 본토(모로코·알제리 서부)와 바닷길로 이어졌다
+  sources: ["위키백과 영어판 「Almoravid dynasty」 https://en.wikipedia.org/wiki/Almoravid_dynasty"]
+
+- entity: almoravids
+  from: 1145
+  to: 1147
+  at: [-2.19, 39.93]
+  reason: 위와 같음(1144~1145년 반란 뒤 남은 알안달루스 동부 땅)
+  sources: ["위키백과 영어판 「Almoravid dynasty」 https://en.wikipedia.org/wiki/Almoravid_dynasty"]
+
+- entity: almohads
+  from: 1147
+  to: 1229
+  at: [-5.99, 37.39]
+  reason: 알모하드 칼리프국의 알안달루스는 지브롤터 해협 너머에 있어 마그레브 본토와 바닷길로 이어졌다(1228년 알마문이 이베리아를 떠남)
+  sources: ["위키백과 영어판 「Almohad Caliphate」 https://en.wikipedia.org/wiki/Almohad_Caliphate"]
+
+- entity: almohads
+  from: 1248
+  to: 1269
+  at: [-5.62, 35.35]
+  reason: 1248년 마린 왕조가 페스·타자·메크네스·라바트를 차지한 뒤 알모하드 쪽 탕헤르·테투안은 마라케시 쪽 본토와 땅으로 이어지지 않았다(1273~1274년 마린 종주)
+  sources: ["위키백과 영어판 「Marinid dynasty」 https://en.wikipedia.org/wiki/Marinid_dynasty", "위키백과 영어판 「Almohad Caliphate」 https://en.wikipedia.org/wiki/Almohad_Caliphate"]
