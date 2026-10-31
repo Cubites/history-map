@@ -3602,12 +3602,6 @@
   region: middle-east
   url: https://en.wikipedia.org/wiki/Kerman_Seljuk_Sultanate
   from: 서아시아 A3b-4a 결과노트
-- name: 케르만
-  at: [57.08, 30.28]
-  year: 1205
-  expect: khwarazmian-empire
-  url: https://en.wikipedia.org/wiki/Kerman_Seljuk_Sultanate
-  from: 서아시아 A3b-4a 결과노트
 - name: 사리
   at: [53.06, 36.56]
   year: 1150
@@ -4521,3 +4515,508 @@
   expect: hafsid-sultanate
   url: https://en.wikipedia.org/wiki/Hafsid_dynasty
   from: 서아시아 A3c-5 결과노트
+# ── 서아시아·북아프리카 A3 질문 창구 ③ 고침 (2026-10-31): 이스파한 1236 몽골, 고르간 토가 테무르·아미르 왈리, 케르만 1214 호라즘(앞 케르만 1205 호라즘 점은 지움) ──
+- name: 이스파한
+  at: [51.67, 32.65]
+  year: 1235
+  expect: none
+  region: middle-east
+  url: https://fa.wikipedia.org/wiki/حمله_مغول_به_ایران
+  from: 서아시아 A3 창구 ③ 고침 결과노트
+- name: 이스파한
+  at: [51.67, 32.65]
+  year: 1237
+  expect: mongol-empire
+  url: https://en.wikipedia.org/wiki/Chormaqan
+  from: 서아시아 A3 창구 ③ 고침 결과노트
+- name: 아스타라바드(고르간)
+  at: [54.44, 36.84]
+  year: 1348
+  expect: togha-temur-domain
+  url: https://en.wikipedia.org/wiki/Togha_Temür
+  from: 서아시아 A3 창구 ③ 고침 결과노트
+- name: 아스타라바드(고르간)
+  at: [54.44, 36.84]
+  year: 1360
+  expect: amir-vali-astarabad
+  url: https://en.wikipedia.org/wiki/Amir_Vali
+  from: 서아시아 A3 창구 ③ 고침 결과노트
+- name: 아스타라바드(고르간)
+  at: [54.44, 36.84]
+  year: 1370
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Sarbadars
+  from: 서아시아 A3 창구 ③ 고침 결과노트
+- name: 케르만
+  at: [57.08, 30.28]
+  year: 1200
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Muhammad_II_of_Khwarazm
+  from: 서아시아 A3 창구 ③ 고침 결과노트
+- name: 케르만
+  at: [57.08, 30.28]
+  year: 1216
+  expect: khwarazmian-empire
+  url: https://en.wikipedia.org/wiki/Muhammad_II_of_Khwarazm
+  from: 서아시아 A3 창구 ③ 고침 결과노트
+
+# ── 서아시아·북아프리카 A4a-⑥a (2026-10-31): 레반트·이라크·이란 기원전 550~31년 — 새 항목 수도·바뀌는 해 앞뒤·늘린 나라(아케메네스·알렉산드로스·안티고노스·셀레우코스·프톨레마이오스·로마 공화정·티그라네스) 앞뒤·빈 땅(동부 이란·발루치스탄·자지라). 이음매 안타키아·샨르우르파는 기존 값 그대로 ──
+- name: 바빌론
+  at: [44.42, 32.54]
+  year: -545
+  expect: neo-babylonian-empire
+  url: https://en.wikipedia.org/wiki/Neo-Babylonian_Empire
+  from: 서아시아 A4a-⑥a 결과노트
+- name: 바빌론
+  at: [44.42, 32.54]
+  year: -536
+  expect: achaemenid-empire
+  url: https://en.wikipedia.org/wiki/Achaemenid_Empire
+  from: 서아시아 A4a-⑥a 결과노트
+- name: 바빌론
+  at: [44.42, 32.54]
+  year: -320
+  expect: macedonia-kingdom
+  url: https://en.wikipedia.org/wiki/Wars_of_the_Diadochi
+  from: 서아시아 A4a-⑥a 결과노트
+- name: 바빌론
+  at: [44.42, 32.54]
+  year: -314
+  expect: antigonid-asia
+  url: https://en.wikipedia.org/wiki/Wars_of_the_Diadochi
+  from: 서아시아 A4a-⑥a 결과노트
+- name: 바빌론
+  at: [44.42, 32.54]
+  year: -200
+  expect: seleucid-empire
+  url: https://en.wikipedia.org/wiki/Seleucid_Empire
+  from: 서아시아 A4a-⑥a 결과노트
+- name: 바빌론
+  at: [44.42, 32.54]
+  year: -130
+  expect: parthian-empire
+  url: https://en.wikipedia.org/wiki/Mithridates_I_of_Parthia
+  from: 서아시아 A4a-⑥a 결과노트
+- name: 크테시폰
+  at: [44.58, 33.09]
+  year: -50
+  expect: parthian-empire
+  url: https://en.wikipedia.org/wiki/Parthian_Empire
+  from: 서아시아 A4a-⑥a 결과노트
+- name: 다마스쿠스
+  at: [36.29, 33.51]
+  year: -545
+  expect: neo-babylonian-empire
+  url: https://en.wikipedia.org/wiki/Neo-Babylonian_Empire
+  from: 서아시아 A4a-⑥a 결과노트
+- name: 다마스쿠스
+  at: [36.29, 33.51]
+  year: -331
+  expect: macedonia-kingdom
+  url: https://en.wikipedia.org/wiki/Alexander_the_Great
+  from: 서아시아 A4a-⑥a 결과노트
+- name: 다마스쿠스
+  at: [36.29, 33.51]
+  year: -250
+  expect: ptolemaic-kingdom
+  url: https://en.wikipedia.org/wiki/Coele-Syria
+  from: 서아시아 A4a-⑥a 결과노트
+- name: 다마스쿠스
+  at: [36.29, 33.51]
+  year: -150
+  expect: seleucid-empire
+  url: https://en.wikipedia.org/wiki/Fifth_Syrian_War
+  from: 서아시아 A4a-⑥a 결과노트
+- name: 다마스쿠스
+  at: [36.29, 33.51]
+  year: -75
+  expect: nabataean-kingdom
+  url: https://en.wikipedia.org/wiki/Aretas_III
+  from: 서아시아 A4a-⑥a 결과노트
+- name: 다마스쿠스
+  at: [36.29, 33.51]
+  year: -50
+  expect: roman-republic
+  url: https://en.wikipedia.org/wiki/Syria_(Roman_province)
+  from: 서아시아 A4a-⑥a 결과노트
+- name: 예루살렘
+  at: [35.22, 31.78]
+  year: -400
+  expect: achaemenid-empire
+  url: https://en.wikipedia.org/wiki/Achaemenid_Empire
+  from: 서아시아 A4a-⑥a 결과노트
+- name: 예루살렘
+  at: [35.22, 31.78]
+  year: -250
+  expect: ptolemaic-kingdom
+  url: https://en.wikipedia.org/wiki/Coele-Syria
+  from: 서아시아 A4a-⑥a 결과노트
+- name: 예루살렘
+  at: [35.22, 31.78]
+  year: -150
+  expect: seleucid-empire
+  url: https://en.wikipedia.org/wiki/Fifth_Syrian_War
+  from: 서아시아 A4a-⑥a 결과노트
+- name: 예루살렘
+  at: [35.22, 31.78]
+  year: -80
+  expect: hasmonean-judea
+  url: https://en.wikipedia.org/wiki/Hasmonean_dynasty
+  from: 서아시아 A4a-⑥a 결과노트
+- name: 예루살렘
+  at: [35.22, 31.78]
+  year: -32
+  expect: herodian-judea
+  url: https://en.wikipedia.org/wiki/Herod_the_Great
+  from: 서아시아 A4a-⑥a 결과노트
+- name: 엑바타나(하마단)
+  at: [48.51, 34.8]
+  year: -545
+  expect: achaemenid-empire
+  url: https://en.wikipedia.org/wiki/Achaemenid_Empire
+  from: 서아시아 A4a-⑥a 결과노트
+- name: 엑바타나(하마단)
+  at: [48.51, 34.8]
+  year: -200
+  expect: seleucid-empire
+  url: https://en.wikipedia.org/wiki/Seleucid_Empire
+  from: 서아시아 A4a-⑥a 결과노트
+- name: 엑바타나(하마단)
+  at: [48.51, 34.8]
+  year: -140
+  expect: parthian-empire
+  url: https://en.wikipedia.org/wiki/Mithridates_I_of_Parthia
+  from: 서아시아 A4a-⑥a 결과노트
+- name: 이스타크르
+  at: [52.89, 29.99]
+  year: -400
+  expect: achaemenid-empire
+  url: https://en.wikipedia.org/wiki/Achaemenid_Empire
+  from: 서아시아 A4a-⑥a 결과노트
+- name: 이스타크르
+  at: [52.89, 29.99]
+  year: -250
+  expect: seleucid-empire
+  url: https://en.wikipedia.org/wiki/Seleucid_Empire
+  from: 서아시아 A4a-⑥a 결과노트
+- name: 이스타크르
+  at: [52.89, 29.99]
+  year: -100
+  expect: persis-kingdom
+  url: https://en.wikipedia.org/wiki/Kings_of_Persis
+  from: 서아시아 A4a-⑥a 결과노트
+- name: 수사
+  at: [48.26, 32.19]
+  year: -145
+  expect: elymais
+  url: https://en.wikipedia.org/wiki/Elymais
+  from: 서아시아 A4a-⑥a 결과노트
+- name: 수사
+  at: [48.26, 32.19]
+  year: -120
+  expect: parthian-empire
+  url: https://en.wikipedia.org/wiki/Elymais
+  from: 서아시아 A4a-⑥a 결과노트
+- name: 수사
+  at: [48.26, 32.19]
+  year: -60
+  expect: elymais
+  url: https://en.wikipedia.org/wiki/Elymais
+  from: 서아시아 A4a-⑥a 결과노트
+- name: 헤카톰필로스(담간 둘레)
+  at: [54.4, 36.02]
+  year: -200
+  expect: parthian-empire
+  url: https://en.wikipedia.org/wiki/Parthian_Empire
+  from: 서아시아 A4a-⑥a 결과노트
+- name: 간자크(타흐테솔레이만)
+  at: [47.23, 36.6]
+  year: -200
+  expect: atropatene
+  url: https://en.wikipedia.org/wiki/Atropatene
+  from: 서아시아 A4a-⑥a 결과노트
+- name: 사리(마잔다란)
+  at: [53.06, 36.56]
+  year: -170
+  expect: seleucid-empire
+  url: https://en.wikipedia.org/wiki/Phraates_I
+  from: 서아시아 A4a-⑥a 결과노트
+- name: 사리(마잔다란)
+  at: [53.06, 36.56]
+  year: -160
+  expect: parthian-empire
+  url: https://en.wikipedia.org/wiki/Phraates_I
+  from: 서아시아 A4a-⑥a 결과노트
+- name: 아르벨라(에르빌)
+  at: [44.01, 36.19]
+  year: -100
+  expect: parthian-empire
+  url: https://en.wikipedia.org/wiki/Adiabene
+  from: 서아시아 A4a-⑥a 결과노트
+- name: 아르벨라(에르빌)
+  at: [44.01, 36.19]
+  year: -50
+  expect: adiabene
+  url: https://en.wikipedia.org/wiki/Adiabene
+  from: 서아시아 A4a-⑥a 결과노트
+- name: 카락스 스파시누(바스라 북쪽)
+  at: [47.8, 30.6]
+  year: -100
+  expect: characene
+  url: https://en.wikipedia.org/wiki/Characene
+  from: 서아시아 A4a-⑥a 결과노트
+- name: 페트라
+  at: [35.44, 30.33]
+  year: -250
+  expect: ptolemaic-kingdom
+  url: https://en.wikipedia.org/wiki/Coele-Syria
+  from: 서아시아 A4a-⑥a 결과노트
+- name: 페트라
+  at: [35.44, 30.33]
+  year: -100
+  expect: nabataean-kingdom
+  url: https://en.wikipedia.org/wiki/Nabataean_Kingdom
+  from: 서아시아 A4a-⑥a 결과노트
+- name: 보스라
+  at: [36.48, 32.52]
+  year: -75
+  expect: nabataean-kingdom
+  url: https://en.wikipedia.org/wiki/Aretas_III
+  from: 서아시아 A4a-⑥a 결과노트
+- name: 보스라
+  at: [36.48, 32.52]
+  year: -50
+  expect: roman-republic
+  url: https://en.wikipedia.org/wiki/Syria_(Roman_province)
+  from: 서아시아 A4a-⑥a 결과노트
+- name: 칼키스(안자르)
+  at: [35.93, 33.73]
+  year: -50
+  expect: ituraea
+  url: https://en.wikipedia.org/wiki/Ituraea
+  from: 서아시아 A4a-⑥a 결과노트
+- name: 알레포
+  at: [37.16, 36.2]
+  year: -310
+  expect: antigonid-asia
+  url: https://en.wikipedia.org/wiki/Wars_of_the_Diadochi
+  from: 서아시아 A4a-⑥a 결과노트
+- name: 알레포
+  at: [37.16, 36.2]
+  year: -250
+  expect: seleucid-empire
+  url: https://en.wikipedia.org/wiki/Seleucid_Empire
+  from: 서아시아 A4a-⑥a 결과노트
+- name: 알레포
+  at: [37.16, 36.2]
+  year: -75
+  expect: arsacid-armenia
+  url: https://en.wikipedia.org/wiki/Tigranes_the_Great
+  from: 서아시아 A4a-⑥a 결과노트
+- name: 알레포
+  at: [37.16, 36.2]
+  year: -66
+  expect: seleucid-empire
+  url: https://en.wikipedia.org/wiki/Seleucid_Empire
+  from: 서아시아 A4a-⑥a 결과노트
+- name: 알레포
+  at: [37.16, 36.2]
+  year: -50
+  expect: roman-republic
+  url: https://en.wikipedia.org/wiki/Syria_(Roman_province)
+  from: 서아시아 A4a-⑥a 결과노트
+- name: 하사카
+  at: [40.75, 36.5]
+  year: -200
+  expect: seleucid-empire
+  url: https://en.wikipedia.org/wiki/Seleucid_Empire
+  from: 서아시아 A4a-⑥a 결과노트
+- name: 하사카(빈 땅)
+  at: [40.75, 36.5]
+  year: -100
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Osroene
+  from: 서아시아 A4a-⑥a 결과노트
+- name: 하사카
+  at: [40.75, 36.5]
+  year: -75
+  expect: arsacid-armenia
+  url: https://en.wikipedia.org/wiki/Tigranes_the_Great
+  from: 서아시아 A4a-⑥a 결과노트
+- name: 다이르에조르(빈 땅)
+  at: [40.14, 35.33]
+  year: -75
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Osroene
+  from: 서아시아 A4a-⑥a 결과노트
+- name: 마슈하드(빈 땅)
+  at: [59.6, 36.3]
+  year: -545
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Achaemenid_Empire
+  from: 서아시아 A4a-⑥a 결과노트
+- name: 마슈하드
+  at: [59.6, 36.3]
+  year: -400
+  expect: achaemenid-empire
+  url: https://en.wikipedia.org/wiki/Achaemenid_Empire
+  from: 서아시아 A4a-⑥a 결과노트
+- name: 마슈하드(빈 땅)
+  at: [59.6, 36.3]
+  year: -310
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Wars_of_the_Diadochi
+  from: 서아시아 A4a-⑥a 결과노트
+- name: 마슈하드
+  at: [59.6, 36.3]
+  year: -250
+  expect: seleucid-empire
+  url: https://en.wikipedia.org/wiki/Seleucid_Empire
+  from: 서아시아 A4a-⑥a 결과노트
+- name: 마슈하드
+  at: [59.6, 36.3]
+  year: -200
+  expect: parthian-empire
+  url: https://en.wikipedia.org/wiki/Parthian_Empire
+  from: 서아시아 A4a-⑥a 결과노트
+- name: 케르만
+  at: [57.08, 30.28]
+  year: -250
+  expect: seleucid-empire
+  url: https://en.wikipedia.org/wiki/Seleucid_Empire
+  from: 서아시아 A4a-⑥a 결과노트
+- name: 케르만
+  at: [57.08, 30.28]
+  year: -100
+  expect: parthian-empire
+  url: https://en.wikipedia.org/wiki/Parthian_Empire
+  from: 서아시아 A4a-⑥a 결과노트
+- name: 이란샤르(발루치스탄)
+  at: [60.7, 27.2]
+  year: -400
+  expect: achaemenid-empire
+  url: https://en.wikipedia.org/wiki/Achaemenid_Empire
+  from: 서아시아 A4a-⑥a 결과노트
+- name: 이란샤르(빈 땅)
+  at: [60.7, 27.2]
+  year: -200
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Seleucid–Mauryan_war
+  from: 서아시아 A4a-⑥a 결과노트
+
+# ── 서아시아·북아프리카 A4a-⑥b (2026-10-31): 아라비아 반도 기원전 550~31년 — 새 항목 수도·바뀌는 해 앞뒤(카타반 최대기 기원전 250·힘야르 110·도파르 250), 칼선 양쪽(바이한/샤브와·알울라), 비운 땅(사나·타이마·아비얀), 쿠웨이트 ──
+- name: 마리브
+  at: [45.33, 15.43]
+  year: -199
+  expect: saba-kingdom
+  url: https://en.wikipedia.org/wiki/Sheba
+  from: 서아시아 A4a-⑥b 결과노트
+- name: 팀나
+  at: [45.7, 14.8]
+  year: -449
+  expect: qataban
+  url: https://en.wikipedia.org/wiki/Qataban
+  from: 서아시아 A4a-⑥b 결과노트
+- name: 팀나
+  at: [45.7, 14.8]
+  year: -149
+  expect: qataban
+  url: https://en.wikipedia.org/wiki/Qataban
+  from: 서아시아 A4a-⑥b 결과노트
+- name: 자파르
+  at: [44.36, 14.37]
+  year: -300
+  expect: none
+  url: https://en.wikipedia.org/wiki/Qataban
+  from: 서아시아 A4a-⑥b 결과노트
+- name: 자파르
+  at: [44.36, 14.37]
+  year: -200
+  expect: qataban
+  url: https://en.wikipedia.org/wiki/Qataban
+  from: 서아시아 A4a-⑥b 결과노트
+- name: 자파르
+  at: [44.36, 14.37]
+  year: -50
+  expect: himyarite-kingdom
+  url: https://en.wikipedia.org/wiki/Himyarite_Kingdom
+  from: 서아시아 A4a-⑥b 결과노트
+- name: 아비얀(진지바르)
+  at: [45.38, 13.13]
+  year: -200
+  expect: qataban
+  url: https://en.wikipedia.org/wiki/Qataban
+  from: 서아시아 A4a-⑥b 결과노트
+- name: 아비얀(진지바르)
+  at: [45.38, 13.13]
+  year: -100
+  expect: none
+  url: https://en.wikipedia.org/wiki/Awsan
+  from: 서아시아 A4a-⑥b 결과노트
+- name: 샤브와
+  at: [47.01, 15.31]
+  year: -300
+  expect: hadramawt-kingdom
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Hadramaut
+  from: 서아시아 A4a-⑥b 결과노트
+- name: 카나(비르 알리)
+  at: [48.33, 14.02]
+  year: -100
+  expect: hadramawt-kingdom
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Hadramaut
+  from: 서아시아 A4a-⑥b 결과노트
+- name: 수무람(코르 로리)
+  at: [54.62, 17.03]
+  year: -300
+  expect: none
+  url: https://en.wikipedia.org/wiki/Sumhuram
+  from: 서아시아 A4a-⑥b 결과노트
+- name: 수무람(코르 로리)
+  at: [54.62, 17.03]
+  year: -200
+  expect: hadramawt-kingdom
+  url: https://en.wikipedia.org/wiki/Sumhuram
+  from: 서아시아 A4a-⑥b 결과노트
+- name: 사나
+  at: [44.21, 15.35]
+  year: -100
+  expect: none
+  url: https://en.wikipedia.org/wiki/Sheba
+  from: 서아시아 A4a-⑥b 결과노트
+- name: 데단(알울라)
+  at: [37.92, 26.62]
+  year: -450
+  expect: none
+  url: https://en.wikipedia.org/wiki/Lihyan
+  from: 서아시아 A4a-⑥b 결과노트
+- name: 데단(알울라)
+  at: [37.92, 26.62]
+  year: -200
+  expect: lihyan
+  url: https://en.wikipedia.org/wiki/Lihyan
+  from: 서아시아 A4a-⑥b 결과노트
+- name: 타이마
+  at: [38.54, 27.63]
+  year: -545
+  expect: none
+  url: https://en.wikipedia.org/wiki/Arabia_(satrapy)
+  from: 서아시아 A4a-⑥b 결과노트
+- name: 자흐라(쿠웨이트)
+  at: [47.66, 29.34]
+  year: -200
+  expect: seleucid-empire
+  url: https://en.wikipedia.org/wiki/Failaka_Island
+  from: 서아시아 A4a-⑥b 결과노트
+- name: 자흐라(쿠웨이트)
+  at: [47.66, 29.34]
+  year: -100
+  expect: characene
+  url: https://en.wikipedia.org/wiki/Characene
+  from: 서아시아 A4a-⑥b 결과노트

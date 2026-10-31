@@ -1009,6 +1009,8 @@
 - { type: successor_of, subject: injuid-dynasty, object: ilkhanate, from: 1335, to: null } # 1335 파르스 직할지 관리 가문이 자립
 - { type: successor_of, subject: muzaffarid-dynasty, object: injuid-dynasty, from: 1353, to: null } # 1353 시라즈 함락, 1357 이스파한
 - { type: successor_of, subject: sarbadar-dynasty, object: ilkhanate, from: 1337, to: null } # 1337 세브제바르 봉기
+- { type: successor_of, subject: togha-temur-domain, object: ilkhanate, from: 1338, to: null } # 아부 사이드 죽음 뒤 호라산 아미르들이 일 칸으로 내세움(A3 창구 ③)
+- { type: successor_of, subject: amir-vali-astarabad, object: togha-temur-domain, from: 1356, to: null } # 토가 테무르의 아스타라바드 총독 집안이 그 땅을 이음(A3 창구 ③)
 - { type: successor_of, subject: timurid-empire, object: muzaffarid-dynasty, from: 1393, to: null } # 1393 무자파르 왕자들을 처형하고 파르스·이스파한을 합침
 - { type: successor_of, subject: qara-qoyunlu, object: jalayirid-sultanate, from: 1410, to: null } # 1410 카라 유수프가 아흐마드를 처형하고 바그다드를 차지
 
@@ -1018,3 +1020,17 @@
 - { type: successor_of, subject: hafsid-sultanate, object: almohads, from: 1229, to: null } # 1229 아부 자카리야가 알모하드에서 독립 선언
 - { type: successor_of, subject: zayyanid-kingdom, object: almohads, from: 1236, to: null } # 1235~1236 야그무라센이 틀렘센에서 자립
 - { type: successor_of, subject: marinid-sultanate, object: almohads, from: 1269, to: null } # 1269-09 마린 왕조의 마라케시 점령으로 알모하드가 끝남
+
+# ── 서아시아·북아프리카 A4a-⑥a (2026-10-31): 레반트·메소포타미아·이란 기원전 550~31년 (자기 왕이 대를 이은 종속 왕국은 vassal_of, 같은 땅을 이은 왕조는 successor_of. 로마 제국·사산 쪽 줄은 A4b가 더함) ──
+- { type: vassal_of, subject: atropatene, object: seleucid-empire, from: -219, to: -147 } # 기원전 220년 안티오코스 3세가 아르타바자네스를 복속시킴
+- { type: vassal_of, subject: atropatene, object: parthian-empire, from: -146, to: 224 } # 기원전 147년 무렵 미트리다테스 1세의 메디아 정복 뒤
+- { type: vassal_of, subject: persis-kingdom, object: seleucid-empire, from: -199, to: -139 } # 프라타라카가 셀레우코스 아래 다스림
+- { type: vassal_of, subject: persis-kingdom, object: parthian-empire, from: -138, to: 224 } # 기원전 139년 뒤 파르티아의 종주
+- { type: vassal_of, subject: elymais, object: parthian-empire, from: -81, to: 224 } # 기원전 82년 왕조가 돌아와 파르티아를 받듦(그전 140/139~83년은 파르티아 직할)
+- { type: vassal_of, subject: characene, object: parthian-empire, from: -123, to: 222 } # 기원전 124년 히스파오시네스가 파르티아를 받듦
+- { type: vassal_of, subject: adiabene, object: parthian-empire, from: -68, to: 224 }
+- { type: vassal_of, subject: hasmonean-judea, object: roman-republic, from: -62, to: -36 } # 기원전 63년 폼페이우스의 예루살렘 점령
+- { type: vassal_of, subject: herodian-judea, object: roman-republic, from: -36, to: -27 } # 원로원이 왕으로 세운 헤롯
+- { type: vassal_of, subject: ituraea, object: roman-republic, from: -63, to: -27 } # 기원전 64년 폼페이우스가 프톨레마이오스 메나이오스의 왕위를 인정
+- { type: vassal_of, subject: nabataean-kingdom, object: roman-republic, from: -61, to: -27 } # 기원전 62년 스카우루스의 페트라 원정 뒤 로마의 우위를 인정
+- { type: successor_of, subject: herodian-judea, object: hasmonean-judea, from: -36, to: null } # 헤롯이 하스몬의 유대 왕위를 이음

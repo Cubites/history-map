@@ -1800,9 +1800,6 @@
 - key: '1194 khwarazmian-empire 버전'
   reason: me-02~05 사건 묶음이 채움
   decided: 2026-10-30 운영자 A3 승인
-- key: '1196 khwarazmian-empire 버전'
-  reason: me-02~05 사건 묶음이 채움
-  decided: 2026-10-30 운영자 A3 승인
 - key: '1198 khwarazmian-empire 버전'
   reason: me-02~05 사건 묶음이 채움
   decided: 2026-10-30 운영자 A3 승인
@@ -2064,3 +2061,177 @@
 - key: '1401 hafsid-sultanate 버전'
   reason: me-02~05 사건 묶음이 채움
   decided: 2026-10-30 운영자 A3 승인
+# ── 서아시아·북아프리카 A3 질문 창구 ③ 고침 (2026-10-31): 케르만 1214 호라즘·고르간 새 항목 둘(토가 테무르·아미르 왈리)의 성립·소멸·버전 해. 사건 묶음 me-04·05가 사건을 쓰며 이 줄을 지운다 ──
+- key: '1214 khwarazmian-empire 버전'
+  reason: me-04·05 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A3 창구 ③
+- key: '1338 togha-temur-domain 성립'
+  reason: me-04·05 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A3 창구 ③
+- key: '1344 togha-temur-domain 버전'
+  reason: me-04·05 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A3 창구 ③
+- key: '1353 togha-temur-domain 소멸'
+  reason: me-04·05 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A3 창구 ③
+- key: '1356 amir-vali-astarabad 성립'
+  reason: me-04·05 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A3 창구 ③
+- key: '1384 amir-vali-astarabad 소멸'
+  reason: me-04·05 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A3 창구 ③
+# ── 서아시아·북아프리카 A4a-⑥a (2026-10-31): 레반트·메소포타미아·이란 기원전 550~31년 새 항목의 성립·소멸과 새 버전 해. 사건 묶음 me-01·me-02가 사건을 쓰며 이 줄을 지운다 ──
+- key: '-625 neo-babylonian-empire 성립'
+  reason: me-01·02 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A4 승인
+- key: '-538 neo-babylonian-empire 소멸'
+  reason: me-01·02 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A4 승인
+- key: '-322 atropatene 성립'
+  reason: me-01·02 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A4 승인
+- key: '-246 parthian-empire 성립'
+  reason: me-01·02 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A4 승인
+- key: '-199 persis-kingdom 성립'
+  reason: me-01·02 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A4 승인
+- key: '-167 nabataean-kingdom 성립'
+  reason: me-01·02 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A4 승인
+- key: '-146 elymais 성립'
+  reason: me-01·02 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A4 승인
+- key: '-139 hasmonean-judea 성립'
+  reason: me-01·02 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A4 승인
+- key: '-126 characene 성립'
+  reason: me-01·02 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A4 승인
+- key: '-84 ituraea 성립'
+  reason: me-01·02 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A4 승인
+- key: '-68 adiabene 성립'
+  reason: me-01·02 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A4 승인
+- key: '-36 hasmonean-judea 소멸'
+  reason: me-01·02 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A4 승인
+- key: '-36 herodian-judea 성립'
+  reason: me-01·02 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A4 승인
+- key: '49 ituraea 소멸'
+  reason: me-01·02 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A4 승인
+- key: '92 herodian-judea 소멸'
+  reason: me-01·02 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A4 승인
+- key: '106 nabataean-kingdom 소멸'
+  reason: me-01·02 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A4 승인
+- key: '222 characene 소멸'
+  reason: me-01·02 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A4 승인
+- key: '224 parthian-empire 소멸'
+  reason: me-01·02 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A4 승인
+- key: '224 persis-kingdom 소멸'
+  reason: me-01·02 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A4 승인
+- key: '224 elymais 소멸'
+  reason: me-01·02 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A4 승인
+- key: '226 atropatene 소멸'
+  reason: me-01·02 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A4 승인
+- key: '379 adiabene 소멸'
+  reason: me-01·02 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A4 승인
+- key: '-549 neo-babylonian-empire 버전'
+  reason: me-01·02 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A4 승인
+- key: '-237 seleucid-empire 버전'
+  reason: me-01·02 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A4 승인
+- key: '-237 parthian-empire 버전'
+  reason: me-01·02 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A4 승인
+- key: '-164 parthian-empire 버전'
+  reason: me-01·02 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A4 승인
+- key: '-146 parthian-empire 버전'
+  reason: me-01·02 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A4 승인
+- key: '-140 parthian-empire 버전'
+  reason: me-01·02 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A4 승인
+- key: '-139 parthian-empire 버전'
+  reason: me-01·02 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A4 승인
+- key: '-126 parthian-empire 버전'
+  reason: me-01·02 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A4 승인
+- key: '-103 hasmonean-judea 버전'
+  reason: me-01·02 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A4 승인
+- key: '-84 nabataean-kingdom 버전'
+  reason: me-01·02 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A4 승인
+- key: '-81 parthian-empire 버전'
+  reason: me-01·02 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A4 승인
+- key: '-68 parthian-empire 버전'
+  reason: me-01·02 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A4 승인
+- key: '-63 nabataean-kingdom 버전'
+  reason: me-01·02 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A4 승인
+# ── 서아시아·북아프리카 A4a-⑥b (2026-10-31): 아라비아 반도 기원전 550~31년 새 항목(사바·카타반·하드라마우트·힘야르·리히얀)의 성립·소멸과 새 버전 해. 사건 묶음 me-01·me-02가 사건을 쓰며 이 줄을 지운다 ──
+- key: '-999 hadramawt-kingdom 성립'
+  reason: me-01·02 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A4 승인
+- key: '-799 saba-kingdom 성립'
+  reason: me-01·02 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A4 승인
+- key: '-649 qataban 성립'
+  reason: me-01·02 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A4 승인
+- key: '-399 lihyan 성립'
+  reason: me-01·02 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A4 승인
+- key: '-109 himyarite-kingdom 성립'
+  reason: me-01·02 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A4 승인
+- key: '-23 lihyan 소멸'
+  reason: me-01·02 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A4 승인
+- key: '200 qataban 소멸'
+  reason: me-01·02 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A4 승인
+- key: '275 saba-kingdom 소멸'
+  reason: me-01·02 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A4 승인
+- key: '290 hadramawt-kingdom 소멸'
+  reason: me-01·02 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A4 승인
+- key: '525 himyarite-kingdom 소멸'
+  reason: me-01·02 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A4 승인
+- key: '-549 saba-kingdom 버전'
+  reason: me-01·02 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A4 승인
+- key: '-549 qataban 버전'
+  reason: me-01·02 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A4 승인
+- key: '-549 hadramawt-kingdom 버전'
+  reason: me-01·02 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A4 승인
+- key: '-249 qataban 버전'
+  reason: me-01·02 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A4 승인
+- key: '-249 hadramawt-kingdom 버전'
+  reason: me-01·02 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A4 승인
+- key: '-109 qataban 버전'
+  reason: me-01·02 사건 묶음이 채움
+  decided: 2026-10-31 운영자 A4 승인

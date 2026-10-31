@@ -35,6 +35,7 @@ export const REGION_FILTER_OF: Record<string, RegionFilterUnit> = {
   'middle-east-modern': 'middle-east',
   'middle-east-early-modern': 'middle-east',
   'middle-east-medieval': 'middle-east',
+  'middle-east-ancient': 'middle-east',
 };
 
 /** 사건·전쟁 파일 이름 앞머리 → 권역. 앞에서부터 처음 맞는 것을 쓴다 (예: eu-01-revolutions-1789-1914.yaml → europe) */

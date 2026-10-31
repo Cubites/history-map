@@ -4,6 +4,7 @@
 // 권역 출처 문구(export const source)는 이 권역 나라 모두에 붙는다(없으면 엔진의 기본 문구). 시대마다 다르면 시대 파일의 era.source에 적는다.
 // 빈 땅 검사 구역(gapZones: [{ name, zone, minus?, from?, to? }])은 비어 있으면 안 되는 지역을 적는다(engine.mjs collectGapZones). 일부러 비운 땅은 voids에 이유와 함께.
 import { joinEras } from '../shared.mjs';
+import { era as ancientEra } from './middle-east/ancient.mjs';
 import { era as medievalEra } from './middle-east/medieval.mjs';
 import { era as earlyModernEra } from './middle-east/early-modern.mjs';
 import { era as modernEra } from './middle-east/modern.mjs';
@@ -13,12 +14,29 @@ const ownVersions = {};
 
 // 늘려도 되는 앞 권역 나라 (engine.mjs '앞 권역 나라 늘리기'): 나라 id → [첫 해, 끝 해(미포함)]. 원천은 docs/middle-east/00-scope.md 5절 영향표(A2는 운영자 결정 2로
 // '새 범위 안 실제 지배 땅 전부'로 넓힘). 기간은 넓게(항목 존속 끝 1922년까지) 둔다. 시대 파일 소유표에 이 나라 id를 주인으로 쓰면 그 땅이 원래 권역 나라에 더해지고,
-// 여기 없는 앞 권역 나라(spain 등)를 주인으로 쓰면 생성기가 멈춘다. A4가 영향표 줄(achaemenid-empire 등)을 이 표에 더한다
+// 여기 없는 앞 권역 나라(spain 등)를 주인으로 쓰면 생성기가 멈춘다. A4 줄(achaemenid-empire 등)은 아래 A4 절
 // A3(632~1452, 2026-10-30 A3-0): 영향표 A3 줄 나라. 끝 해는 미포함(ottoman 줄과 같은 꼴). 원래 권역 버전이 없는 해(우마이야 661~710·알모라비드 1040~1090·
 // 알모하드 1229~1268)도 이 기간 안이면 이 권역 땅만으로 버전이 생긴다. mongol-empire는 inner-asia 권역(AREAS 2번째)이라 이 권역보다 앞이다
+// A4(기원전 550년(−549)~631, 2026-10-31 A4-0): 영향표 A4 줄 나라. 끝 해는 미포함이고 항목 to(포함)+1을 넘지 않는다(항목 기간은 data/entities/europe.yaml).
+// byzantine-empire는 A3의 [632, 699]를 395년(항목 from)부터로 넓혔다(ancient.mjs 395~631 + medieval.mjs 632~698이 한 나라 버전에 이어 더해짐).
+// 더 넣는 나라(예: 운영자 결정을 받은 antigonid-asia·arsacid-armenia)는 같은 꼴로 한 줄: 'id': [첫 해, 항목 to+1 이하], 기간은 항목 기간 안
 const EXTENDABLE = {
+  // ── A4 (천문 연도: 기원전 N년 = 1−N) ──
+  'achaemenid-empire': [-549, -328], // 기원전 550~330년(−549~−329)
+  'macedonia-kingdom': [-332, -316], // 알렉산드로스와 섭정의 제국 기원전 333~317년(−332~−317): 레반트는 유럽 쪽 버전 해 −332, 섭정기 끝은 안티고노스로 넘어가는 유럽 버전 해 −316(질문 창구 ①로 정해짐)
+  'seleucid-empire': [-311, -62], // 기원전 312~64년(−311~−63)
+  'ptolemaic-kingdom': [-322, -28], // 기원전 323~30년(−322~−29)
+  carthage: [-549, -144], // 기원전 550~146년(−549~−145)
+  'roman-republic': [-145, -25], // 기원전 146~27년(−145~−26)
+  'roman-empire': [-26, 396], // 기원전 27년(−26)~395년
+  'western-roman-empire': [395, 482], // 395~481년
+  'vandal-kingdom': [429, 535], // 429~534년
+  osroene: [-131, 215], // 기원전 132년(−131)~214년
+  'antigonid-asia': [-316, -300], // 기원전 317~302년(−316~−301): 메소포타미아·이란 317~312년, 시리아·레반트 317~302년(질문 창구 ① 4)
+  'arsacid-armenia': [-82, -68], // 티그라네스 2세 기원전 83~70년(−82~−69): 시리아 북부·홈스·하사카(질문 창구 ① 4)
+  // ── A3 ──
   'umayyad-caliphate': [661, 751],
-  'byzantine-empire': [632, 699],
+  'byzantine-empire': [395, 699], // A3 632~698에 A4 395~631을 더함
   'cordoba-caliphate': [929, 1032],
   almoravids: [1040, 1148],
   almohads: [1147, 1270],
@@ -30,5 +48,5 @@ const EXTENDABLE = {
 
 // 시대 파일 잇기 (npm run new:area): 이 파일의 나라 다음에 시대 파일(areas/middle-east/<시대>.mjs)의 나라·빈 땅 검사 구역·비운 땅을 붙인다(shared.mjs joinEras)
 // 시대 파일 목록은 과거 시대가 앞이다(A1 항목 qajar-iran·kuwait 등의 1918년 전 버전이 1918년부터 버전 앞에, A2 항목 mamluk-sultanate 등의 1453년 전 버전이 1453년부터 버전 앞에 붙음).
-// new:area는 새 시대를 끝에 붙이므로 손으로 옮긴다(medieval은 A3-0에서 맨 앞으로 옮김)
-export const { versions, gapZones, voids, sourceOf, extensions, extendable } = joinEras('middle-east', { versions: ownVersions, gapZones: [], voids: [], extendable: EXTENDABLE }, [medievalEra, earlyModernEra, modernEra]);
+// new:area는 새 시대를 끝에 붙이므로 손으로 옮긴다(medieval은 A3-0, ancient는 A4-0에서 맨 앞으로 옮김: sasanian-empire 등 A3 항목의 632년 전 버전이 632년부터 버전 앞에 붙음)
+export const { versions, gapZones, voids, sourceOf, extensions, extendable } = joinEras('middle-east', { versions: ownVersions, gapZones: [], voids: [], extendable: EXTENDABLE }, [ancientEra, medievalEra, earlyModernEra, modernEra]);
