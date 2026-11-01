@@ -40,7 +40,7 @@
     - 조로아스터교를 국교로 받듦
     - 602~628년 동로마와 마지막 큰 전쟁을 치름
     - 636년 카디시야, 642년 니하반드에서 아랍군에 짐
-  startEvents: []
+  startEvents: [ardashir-unification-222]
   endEvents: []
   basis:
     type: primary_source

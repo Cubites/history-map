@@ -39,7 +39,7 @@
     - 기원전 96년 미트리다테스 2세의 사절이 술라와 만나 유프라테스강을 로마와의 경계로 삼음
     - 기원전 53년 크라수스가 이끈 로마군을 무찌름
   startEvents: [arsaces-parni-247bc]
-  endEvents: []
+  endEvents: [ardashir-unification-222]
   basis:
     type: primary_source
     refs: ["유스티누스, 『필리포스사 요약』 41~42권", "스트라본, 『지리지』 11·16권", "플루타르코스, 『영웅전』 크라수스"]
@@ -59,7 +59,7 @@
     - 기원전 36년 안토니우스의 프라아스파 포위를 버텨 냄
     - 아제르바이잔이라는 땅 이름이 이 나라 이름에서 나옴
   startEvents: [atropatene-328bc]
-  endEvents: []
+  endEvents: [ardashir-unification-222]
   basis:
     type: primary_source
     refs: ["스트라본, 『지리지』 11.13", "폴리비오스, 『역사』 5.55", "플루타르코스, 『영웅전』 안토니우스"]
@@ -79,7 +79,7 @@
     - 왕들이 아람 문자 명문의 은화를 찍었음
     - 주화 뒷면에 조로아스터교의 불의 제단을 새김
   startEvents: [persis-fratarakas-200bc]
-  endEvents: []
+  endEvents: [ardashir-unification-222]
   basis:
     type: primary_source
     refs: ["스트라본, 『지리지』 15.3", "페르시스 왕들의 주화 명문"]
@@ -99,7 +99,7 @@
     - 기원전 187년 안티오코스 3세가 이 땅의 신전을 털다가 죽음
     - 왕들이 그리스 문자와 아람 문자 명문의 주화를 찍음
   startEvents: [elymais-147bc]
-  endEvents: []
+  endEvents: [ardashir-unification-222]
   basis:
     type: primary_source
     refs: ["스트라본, 『지리지』 16.1", "엘리마이스 왕들의 주화 명문"]
@@ -119,7 +119,7 @@
     - 페르시아만과 인도를 잇는 바다 장사로 부유했음
     - 팔미라 상인들이 이 나라 항구를 거쳐 무역함
   startEvents: [characene-sacae-130bc]
-  endEvents: []
+  endEvents: [ardashir-unification-222]
   basis:
     type: primary_source
     refs: ["플리니우스, 『박물지』 6.31", "카라케네 왕들의 주화 명문"]
@@ -139,7 +139,7 @@
     - 2세기에 시리아 그리스도교가 일찍 퍼진 곳임
     - 대자브강·소자브강 사이의 비옥한 평야를 차지함
   startEvents: [adiabene-69bc]
-  endEvents: []
+  endEvents: [shapur-ii-309]
   basis:
     type: primary_source
     refs: ["요세푸스, 『유대 고대사』 20권", "플루타르코스, 『영웅전』 루쿨루스"]
@@ -180,7 +180,7 @@
     - 지중해 해안에 항구 도시 카이사레아를 세움
     - 기원전 4년 헤롯이 죽은 뒤 아들 셋이 나눠 다스림
   startEvents: [herod-accession-63bc]
-  endEvents: []
+  endEvents: [agrippa-ituraea-annexed-37]
   basis:
     type: primary_source
     refs: ["요세푸스, 『유대 고대사』 14~20권", "요세푸스, 『유대 전쟁사』 1~2권"]
@@ -200,7 +200,7 @@
     - 헤르몬산과 안티레바논산맥의 산지 사람들을 거느림
     - 기원전 40년 리사니아스가 파르티아의 유대 침공을 도움
   startEvents: [ituraea-85bc]
-  endEvents: []
+  endEvents: [agrippa-ituraea-annexed-37]
   basis:
     type: primary_source
     refs: ["스트라본, 『지리지』 16.2", "요세푸스, 『유대 고대사』 13~15권"]
@@ -221,7 +221,7 @@
     - 아레타스 4세(기원전 9~기원후 40) 때 가장 번성함
     - 나바테아 문자는 뒤에 아랍 문자의 바탕이 됨
   startEvents: [nabataean-petra-168bc]
-  endEvents: []
+  endEvents: [arabia-province-106]
   basis:
     type: primary_source
     refs: ["『마카베오기』 2권 5장", "스트라본, 『지리지』 16.4", "디오도로스, 『역사 총서』 19권"]
@@ -242,7 +242,7 @@
     - 기원전 7세기 카리브일 와타르가 남아라비아 대부분을 정복함
     - 남아랍 문자로 쓴 비문을 많이 남김
   startEvents: []
-  endEvents: []
+  endEvents: [himyar-unification-275]
   basis:
     type: primary_source
     refs: ["사바 비문(카리브일 와타르의 승전비)", "스트라본, 『지리지』 16.4.2", "플리니우스, 『박물지』 6.32"]
@@ -262,7 +262,7 @@
     - 팀나 시장의 장사 규칙을 새긴 비문이 남아 있음
     - 달신 암을 나라의 신으로 섬김
   startEvents: []
-  endEvents: []
+  endEvents: [south-arabia-rivals-50]
   basis:
     type: primary_source
     refs: ["카타반 비문(팀나)", "스트라본, 『지리지』 16.4.2", "플리니우스, 『박물지』 6.32"]
@@ -282,7 +282,7 @@
     - 바닷길 항구는 카나(지금 비르 알리)와 수무람(코르 로리)
     - 달신 시얀을 나라의 신으로 섬김
   startEvents: []
-  endEvents: []
+  endEvents: [himyar-unification-275]
   basis:
     type: primary_source
     refs: ["하드라마우트 비문(샤브와)", "스트라본, 『지리지』 16.4.2", "플리니우스, 『박물지』 6.32"]
@@ -302,7 +302,7 @@
     - 홍해 입구의 항구로 인도양 장사를 이어받음
     - 힘야르 연호는 기원전 110년 무렵을 원년으로 셈
   startEvents: [himyar-110bc]
-  endEvents: []
+  endEvents: [dhu-nuwas-najran-518]
   basis:
     type: primary_source
     refs: ["힘야르 비문(자파르)", "플리니우스, 『박물지』 6.32"]
@@ -323,7 +323,7 @@
     - 마인 상인들의 거류지가 데단에 있었음
     - 리히얀 문자로 쓴 비문과 바위 무덤을 남김
   startEvents: [incense-lihyan-400bc]
-  endEvents: []
+  endEvents: [nabataea-petra-hegra-30bc]
   basis:
     type: primary_source
     refs: ["데단·리히얀 비문(알울라)"]
@@ -344,8 +344,8 @@
     - 사산 제국의 서쪽 사막 변경을 지키며 동로마 편의 가산 왕조와 맞섬
     - 알문디르 3세(505~554 무렵) 때 가장 강해 시리아까지 쳐들어감
     - 알히라는 동방 교회 그리스도교와 아랍어 시의 중심지였음
-  startEvents: []
-  endEvents: []
+  startEvents: [lakhmid-kingdom-293]
+  endEvents: [lakhmid-kingdom-293]
   basis:
     type: primary_source
     refs: ["나르세의 파이쿨리 비문", "나마라 비문(328년)", "타바리, 『예언자들과 왕들의 역사』"]
@@ -366,8 +366,8 @@
     - 아브라하는 총독을 몰아내고 사바·두 라이단·하드라마우트의 왕을 칭함
     - 사나에 큰 교회 알칼리스를 세움
     - 548년 무렵 마리브 댐을 고친 비문을 남김
-  startEvents: []
-  endEvents: []
+  startEvents: [dhu-nuwas-najran-518, aksumite-yemen-abraha-525]
+  endEvents: [aksumite-yemen-abraha-525, sasanian-yemen-570]
   basis:
     type: primary_source
     refs: ["아브라하의 마리브 댐 비문", "프로코피오스, 『전쟁사』 1.20", "타바리, 『예언자들과 왕들의 역사』"]
@@ -511,7 +511,7 @@
     - 기원전 38년 보쿠스 2세가 보구드의 서쪽 땅을 차지해 왕국을 다시 하나로 묶음
     - 유바 2세는 클레오파트라 셀레네와 혼인하고 이올을 카이사레아로 고쳐 도읍으로 삼음
   startEvents: [mauretania-baga-225bc]
-  endEvents: []
+  endEvents: [mauretania-annexed-40]
   basis:
     type: primary_source
     refs: ["살루스티우스, 『유구르타 전쟁』", "스트라본, 『지리지』 17권", "카시우스 디오, 『로마사』 48~49권"]
@@ -551,8 +551,8 @@
     - 508년 알타바 비문에 마수나가 '무어인과 로마인의 왕'으로 새겨짐
     - 마수나는 반달 왕국에 맞서 동로마와 손잡음
     - 가르물이 560년대 말부터 동로마 아프리카를 여러 차례 침범함
-  startEvents: []
-  endEvents: []
+  startEvents: [moorish-kingdoms-477]
+  endEvents: [garmul-altava-570]
   basis:
     type: primary_source
     refs: ["알타바 마수나 비문(508년)", "프로코피오스, 『전쟁사』 반달 전쟁", "비클라룸의 요한네스, 『연대기』"]
@@ -571,7 +571,7 @@
     - 578년부터 670년대까지 왕 이름은 사료에 전하지 않음
     - 670년대 동로마 혈통이라는 세케르디드가 다스림
     - 쿠사일라가 아우라바 부족을 이끌고 우마이야의 마그레브 원정에 맞섬
-  startEvents: []
+  startEvents: [garmul-altava-570]
   endEvents: []
   basis:
     type: primary_source
@@ -591,7 +591,7 @@
     - 마스티스는 아리스 비문에서 스스로 '임페라토르'를 칭함
     - 이아브다스가 539년 동로마군에 져 마우레타니아로 달아남
     - 디히야는 35년 다스렸다고 전하며 아랍 원정군을 한때 물리침
-  startEvents: []
+  startEvents: [moorish-kingdoms-477]
   endEvents: []
   basis:
     type: primary_source
