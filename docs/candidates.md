@@ -45,6 +45,10 @@
 | 서아시아 항목 해의 학설 폭: `mauretania` to 42(40~44), `lihyan` to −23(한 추정), `characene` 자립(지도 127·위키 141), `elymais` 파르티아 지배 시점, `dabuyid-dynasty` to 760(760~761), `dulafid-dynasty` 해 | 지도 해 확인(1만 km² 넘는지 아직 안 잼) | me-01·me-02·me-03 결과 노트 6절 | 2026-11-01 |
 | 유럽 사건 글이 서아시아 지도와 어긋남: `marius-cimbri-jugurtha-113bc` 끝 문장(누미디아를 그리지 않는다 — 지금은 그림), `arab-conquests-634` 키프로스 688(689설), `heraclius-persia-602` 안티오키아 611~613(613), `caesar-civil-war-49bc` 탑수스 달 | 글 고침 | me-01·me-02·me-03 사실 대조 장부 후보 | 2026-11-01 |
 | 표기 섞임(유럽·서아시아 파일 사이): 후네리크/훈네리크, 비클라룸의 요한네스/비클라로의 요안네스, 무어/마우리, 프로코피오스/프로코피우스, '이두메아' 사전 항목 | 표기 사전 보강 | me-01·me-02 사실 대조 장부 후보 | 2026-11-01 |
+| 서아시아 항목 글이 사건 2묶음 사실 대조와 어긋남: `ziyadid-dynasty` endNote 1018 나자흐(1018 실권은 나피스, 나자흐는 1022), `rasulid-dynasty` from 1229(1235 독립 선언), `eldiguzid-dynasty` mapNote 1194 호라즘(사건은 라이 일대), `ayyubid-dynasty` to 1260(하마 가문 1341까지), `jalayirid-sultanate` to 1432·endNote 1431, `mamluk-sultanate` endNote '알구리'(사건은 칸수 알가우리), 셀주크 항목 글의 '토그릴'(사건은 투그릴) | 글 고침(운영자 확인) | me-04·me-05 결과 노트 9절 | 2026-11-01 |
+| 서아시아 항목 해의 학설 폭(2묶음): `hamdanid-sultanate-of-sanaa` from 1098, `uyunid-dynasty` 끝 1253/1240, `khwarazmian-empire` 1198 호라산, `rawadid-dynasty` 984/979·to 1054, `barghawata-confederacy` to 1059/1060, `ayyubid-yemen` 1174, `usfurid-dynasty`·`jarwanid-dynasty` 1320, `marinid-sultanate` 탕헤르 1274/1273, `jabrid-emirate` 끝 1521/1524, `busaid-oman` from 1744/1749, `hafsid-sultanate` 콘스탄틴 1542/1529, `zayyanid-kingdom` 끝 1554/1557 | 지도 해 확인(1만 km² 넘는지 아직 안 잼) | me-04·me-05·me-06 결과 노트 6·9절 | 2026-11-01 |
+| 유럽 사건 글이 서아시아 사건과 어긋남: eu-m4 `crusader-states-1098` 끝 문장(트리폴리 백국·예루살렘 왕국은 권역 밖이라 그리지 않는다 — 지금은 그림), 표기 갈림 eu-m4 '말리크 샤'(말리크샤)·eu-00a '마르지 다비크'(마르즈 다비크)·eu-00b '알카세르키비르'(알카사르키비르)·'바르바로스' 7곳(바르바로사) | 글 고침 | 2묶음 독립 검토·me-06 결과 노트 9절 | 2026-11-01 |
+| 서지: 핑클 『오스만제국사』의 부제·출간 해가 저장소 꼴과 신간 소개가 다름 | 서지 확인 | me-06 결과 노트 9절 | 2026-11-01 |
 
 ## 닫음 (다시 열지 않음)
 
