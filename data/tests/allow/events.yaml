@@ -2078,45 +2078,6 @@
   reason: me-04·05 사건 묶음이 채움
   decided: 2026-10-31 운영자 A3 창구 ③
 # ── 서아시아·북아프리카 A4a-⑥a (2026-10-31): 레반트·메소포타미아·이란 기원전 550~31년 새 항목의 성립·소멸과 새 버전 해. 사건 묶음 me-01·me-02가 사건을 쓰며 이 줄을 지운다 ──
-- key: '-625 neo-babylonian-empire 성립'
-  reason: me-01·02 사건 묶음이 채움
-  decided: 2026-10-31 운영자 A4 승인
-- key: '-538 neo-babylonian-empire 소멸'
-  reason: me-01·02 사건 묶음이 채움
-  decided: 2026-10-31 운영자 A4 승인
-- key: '-322 atropatene 성립'
-  reason: me-01·02 사건 묶음이 채움
-  decided: 2026-10-31 운영자 A4 승인
-- key: '-246 parthian-empire 성립'
-  reason: me-01·02 사건 묶음이 채움
-  decided: 2026-10-31 운영자 A4 승인
-- key: '-199 persis-kingdom 성립'
-  reason: me-01·02 사건 묶음이 채움
-  decided: 2026-10-31 운영자 A4 승인
-- key: '-167 nabataean-kingdom 성립'
-  reason: me-01·02 사건 묶음이 채움
-  decided: 2026-10-31 운영자 A4 승인
-- key: '-146 elymais 성립'
-  reason: me-01·02 사건 묶음이 채움
-  decided: 2026-10-31 운영자 A4 승인
-- key: '-139 hasmonean-judea 성립'
-  reason: me-01·02 사건 묶음이 채움
-  decided: 2026-10-31 운영자 A4 승인
-- key: '-126 characene 성립'
-  reason: me-01·02 사건 묶음이 채움
-  decided: 2026-10-31 운영자 A4 승인
-- key: '-84 ituraea 성립'
-  reason: me-01·02 사건 묶음이 채움
-  decided: 2026-10-31 운영자 A4 승인
-- key: '-68 adiabene 성립'
-  reason: me-01·02 사건 묶음이 채움
-  decided: 2026-10-31 운영자 A4 승인
-- key: '-36 hasmonean-judea 소멸'
-  reason: me-01·02 사건 묶음이 채움
-  decided: 2026-10-31 운영자 A4 승인
-- key: '-36 herodian-judea 성립'
-  reason: me-01·02 사건 묶음이 채움
-  decided: 2026-10-31 운영자 A4 승인
 - key: '49 ituraea 소멸'
   reason: me-01·02 사건 묶음이 채움
   decided: 2026-10-31 운영자 A4 승인
@@ -2144,60 +2105,15 @@
 - key: '379 adiabene 소멸'
   reason: me-01·02 사건 묶음이 채움
   decided: 2026-10-31 운영자 A4 승인
-- key: '-549 neo-babylonian-empire 버전'
-  reason: me-01·02 사건 묶음이 채움
-  decided: 2026-10-31 운영자 A4 승인
-- key: '-237 seleucid-empire 버전'
-  reason: me-01·02 사건 묶음이 채움
-  decided: 2026-10-31 운영자 A4 승인
-- key: '-237 parthian-empire 버전'
-  reason: me-01·02 사건 묶음이 채움
-  decided: 2026-10-31 운영자 A4 승인
-- key: '-164 parthian-empire 버전'
-  reason: me-01·02 사건 묶음이 채움
-  decided: 2026-10-31 운영자 A4 승인
-- key: '-146 parthian-empire 버전'
-  reason: me-01·02 사건 묶음이 채움
-  decided: 2026-10-31 운영자 A4 승인
-- key: '-140 parthian-empire 버전'
-  reason: me-01·02 사건 묶음이 채움
-  decided: 2026-10-31 운영자 A4 승인
-- key: '-139 parthian-empire 버전'
-  reason: me-01·02 사건 묶음이 채움
-  decided: 2026-10-31 운영자 A4 승인
-- key: '-126 parthian-empire 버전'
-  reason: me-01·02 사건 묶음이 채움
-  decided: 2026-10-31 운영자 A4 승인
-- key: '-103 hasmonean-judea 버전'
-  reason: me-01·02 사건 묶음이 채움
-  decided: 2026-10-31 운영자 A4 승인
-- key: '-84 nabataean-kingdom 버전'
-  reason: me-01·02 사건 묶음이 채움
-  decided: 2026-10-31 운영자 A4 승인
-- key: '-81 parthian-empire 버전'
-  reason: me-01·02 사건 묶음이 채움
-  decided: 2026-10-31 운영자 A4 승인
-- key: '-68 parthian-empire 버전'
-  reason: me-01·02 사건 묶음이 채움
-  decided: 2026-10-31 운영자 A4 승인
-- key: '-63 nabataean-kingdom 버전'
-  reason: me-01·02 사건 묶음이 채움
-  decided: 2026-10-31 운영자 A4 승인
 # ── 서아시아·북아프리카 A4a-⑥b (2026-10-31): 아라비아 반도 기원전 550~31년 새 항목(사바·카타반·하드라마우트·힘야르·리히얀)의 성립·소멸과 새 버전 해. 사건 묶음 me-01·me-02가 사건을 쓰며 이 줄을 지운다 ──
 - key: '-999 hadramawt-kingdom 성립'
-  reason: me-01·02 사건 묶음이 채움
+  reason: '사건 묶음 me-01에서 이을 사건 없음: 성립 해(기원전 1천년기 초)가 비문에서 짐작한 어림이라 사료로 잡을 사건이 없고 지도 시작(기원전 550년)보다 앞섬'
   decided: 2026-10-31 운영자 A4 승인
 - key: '-799 saba-kingdom 성립'
-  reason: me-01·02 사건 묶음이 채움
+  reason: '사건 묶음 me-01에서 이을 사건 없음: 성립 해(기원전 8세기 무렵)가 비문에서 짐작한 어림이라 사료로 잡을 사건이 없고 지도 시작(기원전 550년)보다 앞섬'
   decided: 2026-10-31 운영자 A4 승인
 - key: '-649 qataban 성립'
-  reason: me-01·02 사건 묶음이 채움
-  decided: 2026-10-31 운영자 A4 승인
-- key: '-399 lihyan 성립'
-  reason: me-01·02 사건 묶음이 채움
-  decided: 2026-10-31 운영자 A4 승인
-- key: '-109 himyarite-kingdom 성립'
-  reason: me-01·02 사건 묶음이 채움
+  reason: '사건 묶음 me-01에서 이을 사건 없음: 성립 해(기원전 7세기 말)가 비문에서 짐작한 어림이라 사료로 잡을 사건이 없고 지도 시작(기원전 550년)보다 앞섬'
   decided: 2026-10-31 운영자 A4 승인
 - key: '-23 lihyan 소멸'
   reason: me-01·02 사건 묶음이 채움
@@ -2212,24 +2128,6 @@
   reason: me-01·02 사건 묶음이 채움
   decided: 2026-10-31 운영자 A4 승인
 - key: '525 himyarite-kingdom 소멸'
-  reason: me-01·02 사건 묶음이 채움
-  decided: 2026-10-31 운영자 A4 승인
-- key: '-549 saba-kingdom 버전'
-  reason: me-01·02 사건 묶음이 채움
-  decided: 2026-10-31 운영자 A4 승인
-- key: '-549 qataban 버전'
-  reason: me-01·02 사건 묶음이 채움
-  decided: 2026-10-31 운영자 A4 승인
-- key: '-549 hadramawt-kingdom 버전'
-  reason: me-01·02 사건 묶음이 채움
-  decided: 2026-10-31 운영자 A4 승인
-- key: '-249 qataban 버전'
-  reason: me-01·02 사건 묶음이 채움
-  decided: 2026-10-31 운영자 A4 승인
-- key: '-249 hadramawt-kingdom 버전'
-  reason: me-01·02 사건 묶음이 채움
-  decided: 2026-10-31 운영자 A4 승인
-- key: '-109 qataban 버전'
   reason: me-01·02 사건 묶음이 채움
   decided: 2026-10-31 운영자 A4 승인
 # ── 서아시아·북아프리카 A4b-⑦a (2026-10-31): 레반트·시리아 자지라 기원전 30년~631년 이어 쓴 항목(헤롯·이투라이아)과 사산 점령(610·615)의 새 버전 해. 사건 묶음 me-01·me-02가 사건을 쓰며 이 줄을 지운다 ──
@@ -2312,81 +2210,12 @@
   decided: 2026-10-31 운영자 A4 승인
 
 # ── 서아시아·북아프리카 A4c-⑧a (2026-11-01): 이집트·시나이·키레나이카 기원전 550년~631년 새 항목(사이스 왕조·키레네·후기 왕조·키레나이카 왕국)의 성립·소멸과 사산(이집트 621)의 새 버전 해. 사건 묶음 me-01·me-02가 사건을 쓰며 이 줄을 지운다 ──
-- key: '-663 saite-egypt 성립'
-  reason: me-01·02 사건 묶음이 채움
-  decided: 2026-11-01 운영자 A4 승인
-- key: '-524 saite-egypt 소멸'
-  reason: me-01·02 사건 묶음이 채움
-  decided: 2026-11-01 운영자 A4 승인
-- key: '-549 saite-egypt 버전'
-  reason: me-01·02 사건 묶음이 채움
-  decided: 2026-11-01 운영자 A4 승인
-- key: '-630 cyrene-kingdom 성립'
-  reason: me-01·02 사건 묶음이 채움
-  decided: 2026-11-01 운영자 A4 승인
-- key: '-321 cyrene-kingdom 소멸'
-  reason: me-01·02 사건 묶음이 채움
-  decided: 2026-11-01 운영자 A4 승인
-- key: '-549 cyrene-kingdom 버전'
-  reason: me-01·02 사건 묶음이 채움
-  decided: 2026-11-01 운영자 A4 승인
-- key: '-403 egypt-late-dynasties 성립'
-  reason: me-01·02 사건 묶음이 채움
-  decided: 2026-11-01 운영자 A4 승인
-- key: '-342 egypt-late-dynasties 소멸'
-  reason: me-01·02 사건 묶음이 채움
-  decided: 2026-11-01 운영자 A4 승인
-- key: '-399 egypt-late-dynasties 버전'
-  reason: me-01·02 사건 묶음이 채움
-  decided: 2026-11-01 운영자 A4 승인
-- key: '-275 cyrenaica-kingdom 성립'
-  reason: me-01·02 사건 묶음이 채움
-  decided: 2026-11-01 운영자 A4 승인
-- key: '-95 cyrenaica-kingdom 소멸'
-  reason: me-01·02 사건 묶음이 채움
-  decided: 2026-11-01 운영자 A4 승인
 - key: '621 sasanian-empire 버전'
-  reason: me-01·02 사건 묶음이 채움
-  decided: 2026-11-01 운영자 A4 승인
-- key: '-275 ptolemaic-kingdom 버전'
-  reason: me-01·02 사건 묶음이 채움
-  decided: 2026-11-01 운영자 A4 승인
-- key: '-245 ptolemaic-kingdom 버전'
   reason: me-01·02 사건 묶음이 채움
   decided: 2026-11-01 운영자 A4 승인
 
 # ── 서아시아·북아프리카 A4c-⑧b (2026-11-01): 트리폴리타니아·마그레브 기원전 550년~31년 새 항목(마사이실리·누미디아·마우레타니아)의 성립·소멸·버전 해와 카르타고(엠포리아 상실 −161)의 새 버전 해. 사건 묶음 me-01·me-02가 사건을 쓰며 이 줄을 지운다 ──
-- key: '-224 mauretania 성립'
-  reason: me-01·02 사건 묶음이 채움
-  decided: 2026-11-01 운영자 A4 승인
-- key: '-219 masaesyli 성립'
-  reason: me-01·02 사건 묶음이 채움
-  decided: 2026-11-01 운영자 A4 승인
-- key: '-219 numidia 성립'
-  reason: me-01·02 사건 묶음이 채움
-  decided: 2026-11-01 운영자 A4 승인
-- key: '-202 masaesyli 소멸'
-  reason: me-01·02 사건 묶음이 채움
-  decided: 2026-11-01 운영자 A4 승인
-- key: '-45 numidia 소멸'
-  reason: me-01·02 사건 묶음이 채움
-  decided: 2026-11-01 운영자 A4 승인
 - key: '42 mauretania 소멸'
-  reason: me-01·02 사건 묶음이 채움
-  decided: 2026-11-01 운영자 A4 승인
-- key: '-201 numidia 버전'
-  reason: me-01·02 사건 묶음이 채움
-  decided: 2026-11-01 운영자 A4 승인
-- key: '-161 carthage 버전'
-  reason: me-01·02 사건 묶음이 채움
-  decided: 2026-11-01 운영자 A4 승인
-- key: '-161 numidia 버전'
-  reason: me-01·02 사건 묶음이 채움
-  decided: 2026-11-01 운영자 A4 승인
-- key: '-104 numidia 버전'
-  reason: me-01·02 사건 묶음이 채움
-  decided: 2026-11-01 운영자 A4 승인
-- key: '-104 mauretania 버전'
   reason: me-01·02 사건 묶음이 채움
   decided: 2026-11-01 운영자 A4 승인
 
