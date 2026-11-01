@@ -365,7 +365,7 @@
     - 1905년 한때 사나를 차지했으나 오스만군에 다시 빼앗김
     - 1차 대전 동안 오스만 제국 편에 섬
   startEvents: [yahya-1904]
-  endEvents: []
+  endEvents: [yemen-mutawakkilite-1918]
   basis:
     type: primary_source
     refs: ["다안 조약(1911)"]
@@ -385,7 +385,7 @@
     - 1839년 영국에 아덴을 빼앗김
     - 아덴 보호령에서 손꼽히는 큰 술탄국이었음
   startEvents: [qasimid-mocha-1636]
-  endEvents: []
+  endEvents: [aden-independence-1963]
   basis:
     type: primary_source
     refs: ["1839년 영국의 아덴 점령"]

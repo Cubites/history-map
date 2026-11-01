@@ -19,8 +19,8 @@
     - 영국군 사령관 앨런비가 이끈 이집트 원정군이 1917년 12월 예루살렘에 들어감
     - 군정관이 오스만 법과 행정 체계를 대체로 그대로 두고 다스림
     - 1919년 파리 강화 회의에서 팔레스타인의 장래가 다투어짐
-  startEvents: []
-  endEvents: []
+  startEvents: [mudros-occupation-1918]
+  endEvents: [san-remo-mandates-1920]
   basis:
     type: primary_source
     refs: ["무드로스 휴전 협정(1918)", "산레모 회의 결의(1920)"]
@@ -39,8 +39,8 @@
     - 프랑스 고등 판무관이 베이루트에서 행정을 맡음
     - 1916년 사이크스-피코 협정에서 프랑스 직접 통치 구역으로 정한 해안이 중심
     - 레바논 산의 마론파 지도층은 프랑스 아래 대레바논을 바람
-  startEvents: []
-  endEvents: []
+  startEvents: [mudros-occupation-1918]
+  endEvents: [san-remo-mandates-1920]
   basis:
     type: primary_source
     refs: ["사이크스-피코 협정(1916)", "산레모 회의 결의(1920)"]
@@ -60,8 +60,8 @@
     - 1919년 9월 영국·프랑스 합의로 영국군이 내륙에서 철수함
     - 1920년 3월 시리아 국민 회의가 파이살을 왕으로 추대함
     - 동쪽 데이르에조르와 남쪽 마안 쪽 경계는 정해지지 않음
-  startEvents: []
-  endEvents: []
+  startEvents: [mudros-occupation-1918]
+  endEvents: [mudros-occupation-1918, san-remo-mandates-1920]
   basis:
     type: primary_source
     refs: ["무드로스 휴전 협정(1918)", "산레모 회의 결의(1920)"]
@@ -82,8 +82,8 @@
     - 1925~1927년 자발 드루즈에서 시작한 시리아 대반란을 프랑스군이 진압함
     - 1936년 프랑스-시리아 조약이 맺어졌으나 프랑스 의회가 비준하지 않음
     - 1938년 알렉산드레타가 하타이 국이 되고 1939년 튀르키예에 넘어감
-  startEvents: []
-  endEvents: []
+  startEvents: [san-remo-mandates-1920]
+  endEvents: [mandate-syria-lebanon-1925]
   basis:
     type: primary_source
     refs: ["산레모 회의 결의(1920)", "국제 연맹 시리아·레바논 위임 통치 규약(1922)"]
@@ -102,8 +102,8 @@
     - 도읍은 베이루트
     - 마론파·수니파·시아파·드루즈 등 여러 종파가 함께 사는 땅으로 넓힘
     - 1932년 인구 조사가 뒤의 종파별 권력 나눔의 바탕이 됨
-  startEvents: []
-  endEvents: []
+  startEvents: [san-remo-mandates-1920]
+  endEvents: [mandate-syria-lebanon-1925]
   basis:
     type: primary_source
     refs: ["구로 장군 칙령 318호(1920)", "레바논 헌법(1926)"]
@@ -122,7 +122,7 @@
     - 1945년 아랍 연맹과 유엔 창설에 참여함
     - 1975~1990년 내전 동안 이스라엘과 시리아가 군대를 들여보냄
     - 2005년 하리리 전 총리가 암살된 뒤 시리아군이 물러남
-  startEvents: []
+  startEvents: [mandate-syria-lebanon-1925]
   endEvents: []
   basis:
     type: primary_source
@@ -143,8 +143,8 @@
     - 1948년 아랍-이스라엘 전쟁에 참전하고 1949년 7월 이스라엘과 휴전 협정을 맺음
     - 1949년 후스니 알자임 등의 쿠데타가 잇따름
     - 바트당이 힘을 키워 이집트와의 통합을 이끎
-  startEvents: []
-  endEvents: []
+  startEvents: [mandate-syria-lebanon-1925]
+  endEvents: [free-officers-1952]
   basis:
     type: primary_source
     refs: ["이스라엘-시리아 휴전 협정(1949)"]
@@ -165,8 +165,8 @@
     - 1958년 예멘 무타와킬 왕국과 느슨한 아랍 국가 연합을 맺음
     - 시리아 쪽 불만이 쌓여 1961년 군부가 이탈을 선언함
     - 1970년 이집트에서 아스완 하이 댐이 완공됨
-  startEvents: []
-  endEvents: []
+  startEvents: [free-officers-1952]
+  endEvents: [sadat-egypt-1970]
   basis:
     type: primary_source
     refs: ["아랍 연합 공화국 임시 헌법(1958)"]
@@ -186,7 +186,7 @@
     - 1967년 6일 전쟁에서 골란 고원을 이스라엘에 빼앗김
     - 1981년 이스라엘의 골란 병합 선언을 유엔 안보리 결의 497호가 무효라고 함
     - 1976~2005년 레바논에 군대를 둠
-  startEvents: []
+  startEvents: [free-officers-1952]
   endEvents: []
   basis:
     type: primary_source
@@ -208,8 +208,8 @@
     - 1922년 처칠 백서로 요르단강 동쪽(트란스요르단)을 유대인 민족 고향 조항에서 뺌
     - 1936~1939년 아랍 반란 뒤 1939년 백서가 유대인 이주를 제한함
     - 1947년 11월 유엔 총회가 분할안(결의 181호)을 채택함
-  startEvents: []
-  endEvents: []
+  startEvents: [san-remo-mandates-1920]
+  endEvents: [palestine-war-1947]
   basis:
     type: primary_source
     refs: ["밸푸어 선언(1917)", "국제 연맹 팔레스타인 위임 통치 규약(1922)", "유엔 총회 결의 181호(1947)"]
@@ -228,8 +228,8 @@
     - 도읍은 암만
     - 영국 장교가 이끈 아랍 군단이 나라를 지킴
     - 1927년 지다 조약에서 이븐 사우드가 마안·아카바 편입을 사적으로 받아들임
-  startEvents: []
-  endEvents: []
+  startEvents: [san-remo-mandates-1920]
+  endEvents: [jordan-kingdom-1946]
   basis:
     type: primary_source
     refs: ["카이로 회의(1921)", "영국-트란스요르단 조약(1928)"]
@@ -248,7 +248,7 @@
     - 1951년 압둘라 1세가 예루살렘에서 암살됨
     - 1970년 팔레스타인 해방 기구와 내전(검은 9월)을 겪음
     - 1965년 사우디아라비아와 땅을 바꿔 아카바 해안을 넓힘
-  startEvents: []
+  startEvents: [jordan-kingdom-1946]
   endEvents: []
   basis:
     type: primary_source
@@ -268,7 +268,7 @@
     - 1950년 귀환법으로 세계 유대인의 이주를 받음
     - 1980년 기본법으로 예루살렘 전체를 수도로 선언했으나 유엔 안보리 결의 478호가 무효라고 함
     - 1994년 요르단과 평화 조약을 맺음
-  startEvents: []
+  startEvents: [palestine-war-1947]
   endEvents: []
   basis:
     type: primary_source
@@ -287,7 +287,7 @@
     - 유엔 회원국의 다수가 승인했으나 이스라엘·미국 등은 승인하지 않음
     - 1995년 오슬로 II 협정으로 서안이 A·B·C 구역으로 나뉨
     - 2007년부터 가자 지구는 하마스가, 서안의 자치 지역은 파타가 이끄는 자치 정부가 다스림
-  startEvents: []
+  startEvents: [intifada-1987]
   endEvents: []
   basis:
     type: primary_source
@@ -307,7 +307,7 @@
     - 유엔 안보리 결의 242호(1967)는 점령지에서의 철수를 요구함
     - 1988년 요르단이 서안과의 법적·행정적 관계를 끊음
     - 2004년 국제 사법 재판소가 분리 장벽 건설이 국제법에 어긋난다는 권고 의견을 냄
-  startEvents: []
+  startEvents: [palestine-war-1947]
   endEvents: []
   basis:
     type: primary_source
@@ -326,7 +326,7 @@
     - 1948년 9월 이집트가 세운 전 팔레스타인 정부는 명목에 그침
     - 1994년 가자-예리코 협정으로 팔레스타인 자치 정부가 다스리기 시작함
     - 2023년 10월 하마스의 이스라엘 공격 뒤 전쟁이 이어짐
-  startEvents: []
+  startEvents: [palestine-war-1947]
   endEvents: []
   basis:
     type: primary_source
@@ -347,8 +347,8 @@
     - 영국 민정관이 인도 행정 방식으로 다스림
     - 1920년 6~10월 위임 통치에 맞선 대반란을 영국군이 진압함
     - 모술 주의 귀속은 로잔 조약 뒤 국제 연맹에 맡겨짐
-  startEvents: []
-  endEvents: []
+  startEvents: [mudros-occupation-1918]
+  endEvents: [san-remo-mandates-1920]
   basis:
     type: primary_source
     refs: ["무드로스 휴전 협정(1918)", "산레모 회의 결의(1920)"]
@@ -368,8 +368,8 @@
     - 1925년 국제 연맹이 모술 주를 이라크에 붙이고 1926년 국경 조약을 맺음
     - 1927년 키르쿠크에서 석유가 터져 나옴
     - 1955년 바그다드 조약에 참여함
-  startEvents: []
-  endEvents: []
+  startEvents: [san-remo-mandates-1920]
+  endEvents: [iraq-revolution-1958]
   basis:
     type: primary_source
     refs: ["영국-이라크 조약(1922)", "국제 연맹 이사회 모술 결정(1925)"]
@@ -388,7 +388,7 @@
     - 1975년 알제 협정으로 이란과 샤트알아랍 경계를 정했다가 1980년 폐기함
     - 1991년부터 북부 쿠르드 지역이 자치를 넓힘
     - 2005년 새 헌법으로 연방 공화국이 됨
-  startEvents: []
+  startEvents: [iraq-revolution-1958]
   endEvents: []
   basis:
     type: primary_source
@@ -431,7 +431,7 @@
     - 메디나의 오스만 수비대는 1919년 1월에야 항복함
     - 메카 순례 관리와 히자즈 철도가 나라의 큰 일이었음
   startEvents: [arab-revolt-1915]
-  endEvents: []
+  endEvents: [ibn-saud-conquests-1919]
   basis:
     type: primary_source
     refs: ["후세인-맥마흔 서한(1915~1916)", "베르사유 조약(1919)"]
@@ -452,7 +452,7 @@
     - 1915년 다린 조약으로 영국의 보호를 받아들임
     - 1922년 우카이르 의정서로 이라크·쿠웨이트와 경계와 중립 지대를 정함
   startEvents: [ibn-saud-1902]
-  endEvents: []
+  endEvents: [ibn-saud-conquests-1919]
   basis:
     type: primary_source
     refs: ["다린 조약(1915)", "우카이르 의정서(1922)"]
@@ -471,7 +471,7 @@
     - 1927년 지다 조약으로 영국이 완전한 독립을 인정함
     - 1926년 메카 조약으로 이드리스 가의 아시르를 보호국으로 삼고 1930년 편입함
     - 1960년 석유 수출국 기구(OPEC) 창립에 참여함
-  startEvents: []
+  startEvents: [ibn-saud-conquests-1919, saudi-oil-1932]
   endEvents: []
   basis:
     type: primary_source
@@ -492,7 +492,7 @@
     - 메카 순례길과 대상로를 지키며 세력을 키움
     - 1891년 물라이다 전투에서 사우드 가문을 이겨 리야드를 차지함
   startEvents: [nejd-1824]
-  endEvents: []
+  endEvents: [ibn-saud-conquests-1919]
   basis:
     type: primary_source
     refs: ["하일 항복(1921)"]
@@ -512,7 +512,7 @@
     - 수피 교단을 이끈 이드리스 가문이 다스림
     - 1915년 영국과 조약을 맺어 오스만 제국에 맞섬
   startEvents: [idrisi-asir-1907]
-  endEvents: []
+  endEvents: [yemen-mutawakkilite-1918]
   basis:
     type: primary_source
     refs: ["영국-이드리스 조약(1915)", "타이프 조약(1934)"]
@@ -533,8 +533,8 @@
     - 1948년 이맘 야흐야가 암살되고 아들 아흐마드가 뒤를 이음
     - 바깥 세계와 거의 교류하지 않는 고립 정책을 폄
     - 1958년 아랍 연합 공화국과 느슨한 아랍 국가 연합을 맺음
-  startEvents: []
-  endEvents: []
+  startEvents: [yemen-mutawakkilite-1918]
+  endEvents: [yemen-republic-1962]
   basis:
     type: primary_source
     refs: ["무드로스 휴전 협정(1918)", "타이프 조약(1934)", "사나 조약(1934)"]
@@ -553,8 +553,8 @@
     - 도읍은 사나
     - 북예멘이라고도 불림
     - 1984년 마리브 둘레에서 석유가 발견됨
-  startEvents: []
-  endEvents: []
+  startEvents: [yemen-republic-1962]
+  endEvents: [aden-independence-1963]
   basis:
     type: primary_source
     refs: ["예멘 아랍 공화국 선포(1962)", "예멘 통일 협정(1990)"]
@@ -574,7 +574,7 @@
     - 1937년부터 라헤즈(서)·무칼라(동)에 영국 정치관이 머묾
     - 1963년부터 독립 세력의 무장 투쟁(아덴 비상 사태)이 이어짐
   startEvents: [aden-1839]
-  endEvents: []
+  endEvents: [aden-independence-1963]
   basis:
     type: primary_source
     refs: ["남아라비아 보호 조약들(1886~1914)", "남아라비아 연방 헌장(1959)"]
@@ -593,8 +593,8 @@
     - 도읍은 아덴
     - 소련과 가까웠고 예멘 사회당이 나라를 이끎
     - 1970년대 오만 도파르의 반란 세력을 도움
-  startEvents: []
-  endEvents: []
+  startEvents: [aden-independence-1963]
+  endEvents: [aden-independence-1963]
   basis:
     type: primary_source
     refs: ["남예멘 독립(1967)", "예멘 통일 협정(1990)"]
@@ -612,7 +612,7 @@
     - 도읍은 사나
     - 2015년부터 사우디아라비아가 이끄는 연합군이 내전에 끼어듦
     - 소코트라섬은 고유한 생물로 세계 유산에 오름
-  startEvents: []
+  startEvents: [aden-independence-1963]
   endEvents: []
   basis:
     type: primary_source
@@ -653,8 +653,8 @@
     - 도읍은 니즈와
     - 내륙 부족들이 이맘을 골라 세우는 이바드파 전통을 따름
     - 1957~1959년 자발 아크다르 전쟁을 치름
-  startEvents: []
-  endEvents: []
+  startEvents: [oman-sib-treaty-1920]
+  endEvents: [oman-sib-treaty-1920]
   basis:
     type: primary_source
     refs: ["시브 조약(1920)"]
@@ -674,7 +674,7 @@
     - 1952년 3월 토후들의 회의(트루셜 국가 협의회)가 생김
     - 1952~1955년 부라이미 오아시스를 두고 사우디아라비아와 다툼
   startEvents: [gulf-treaty-1819]
-  endEvents: []
+  endEvents: [gulf-independence-1961]
   basis:
     type: primary_source
     refs: ["영구 해상 휴전(1853)", "배타 협정(1892)"]
@@ -692,7 +692,7 @@
     - 도읍은 아부다비
     - 아부다비 토후가 대통령, 두바이 토후가 부통령 겸 총리를 맡음
     - 1974년 지다 조약으로 사우디아라비아와 경계를 정함
-  startEvents: []
+  startEvents: [gulf-independence-1961]
   endEvents: []
   basis:
     type: primary_source
@@ -752,7 +752,7 @@
     - 1907년 영국·러시아 협상으로 북쪽은 러시아, 남동쪽은 영국의 세력권이 됨
     - 1908년 마스지드 술레이만에서 석유가 터져 나옴
   startEvents: [qajar-rise-1779]
-  endEvents: []
+  endEvents: [reza-khan-1921]
   basis:
     type: primary_source
     refs: ["이란 헌법(1906)", "영국-러시아 협상(1907)"]
@@ -771,8 +771,8 @@
     - 도읍은 테헤란
     - 1951~1953년 모사데크 총리가 석유 국유화를 밀어붙였다가 정변으로 물러남
     - 1963년부터 토지 개혁 등 백색 혁명을 폄
-  startEvents: []
-  endEvents: []
+  startEvents: [reza-khan-1921]
+  endEvents: [iran-revolution-1978]
   basis:
     type: primary_source
     refs: ["의회의 카자르 왕조 폐위 결의(1925)"]
@@ -790,7 +790,7 @@
     - 도읍은 테헤란
     - 1979년 11월 미국 대사관 인질 사건이 일어남
     - 2015년 핵 합의를 맺었으나 2018년 미국이 탈퇴함
-  startEvents: []
+  startEvents: [iran-revolution-1978]
   endEvents: []
   basis:
     type: primary_source
@@ -816,7 +816,7 @@
     - 제1차 세계 대전 동안 수에즈 운하를 지키는 영국군의 근거지였음
     - 1919년 사드 자글룰의 망명을 계기로 전국적인 반영 봉기가 일어남
   startEvents: [british-egypt-1883]
-  endEvents: []
+  endEvents: [egypt-revolution-1919]
   basis:
     type: primary_source
     refs: ["영국의 이집트 보호국 선포(1914)"]
@@ -836,8 +836,8 @@
     - 1948~1949년 이스라엘과 싸운 뒤 휴전선으로 가자 지구를 다스림
     - 1954년 영국군의 운하 지대 철수 협정을 맺음
     - 1956년 나세르가 수에즈 운하를 국유화해 영국·프랑스·이스라엘과 싸움
-  startEvents: []
-  endEvents: []
+  startEvents: [egypt-revolution-1919]
+  endEvents: [free-officers-1952]
   basis:
     type: primary_source
     refs: ["영국의 이집트 독립 선언(1922)", "영국-이집트 조약(1936)"]
@@ -856,7 +856,7 @@
     - 1978년 캠프 데이비드 협정을 맺고 1979년 평화 조약에 서명함
     - 1989년 국제 중재로 타바를 되찾음
     - 수단과 할라이브 삼각지대를 두고 다툼
-  startEvents: []
+  startEvents: [sadat-egypt-1970]
   endEvents: []
   basis:
     type: primary_source
@@ -876,8 +876,8 @@
     - 이스라엘이 1969년부터 수에즈 운하 동쪽 기슭에 바르레브 방어선을 둠
     - 1973년 10월 전쟁에서 이집트군이 운하를 건넘
     - 반환 뒤 다국적 감시군이 남아 비무장 구역을 지킴
-  startEvents: []
-  endEvents: []
+  startEvents: [six-day-war-1967]
+  endEvents: [sadat-egypt-1970]
   basis:
     type: primary_source
     refs: ["유엔 안전 보장 이사회 결의 242호(1967)", "이집트-이스라엘 평화 조약(1979)"]
@@ -899,7 +899,7 @@
     - 1930년부터 키레나이카 유목민을 수용소에 가둠
     - 1937년 해안을 잇는 발보 도로가 개통됨
   startEvents: [italian-libya-1911]
-  endEvents: []
+  endEvents: [libya-independence-1943]
   basis:
     type: primary_source
     refs: ["로잔(우시) 조약(1912)", "이탈리아 평화 조약(1947)"]
@@ -918,8 +918,8 @@
     - 1949년 영국이 키레나이카에 이드리스의 자치 정부를 인정함
     - 트리폴리와 벵가지에 영국군 기지가 남음
     - 1949년 유엔 총회 결의 289호가 1952년 1월 1일 전 독립을 정함
-  startEvents: []
-  endEvents: []
+  startEvents: [libya-independence-1943]
+  endEvents: [libya-independence-1943]
   basis:
     type: primary_source
     refs: ["이탈리아 평화 조약(1947)", "유엔 총회 결의 289호(1949)"]
@@ -938,8 +938,8 @@
     - 프랑스가 알제리 남부 영토와 이어 군사 구역으로 다스림
     - 중심지는 세브하
     - 1955년 프랑스-리비아 조약으로 프랑스군이 물러나기로 함
-  startEvents: []
-  endEvents: []
+  startEvents: [libya-independence-1943]
+  endEvents: [libya-independence-1943]
   basis:
     type: primary_source
     refs: ["이탈리아 평화 조약(1947)", "유엔 총회 결의 289호(1949)"]
@@ -958,7 +958,7 @@
     - 1959년 큰 유전이 발견됨
     - 1994년 국제 사법 재판소 판결로 아우주 띠를 차드에 돌려줌
     - 2014년부터 동부와 서부에 정부가 갈라짐
-  startEvents: []
+  startEvents: [libya-independence-1943]
   endEvents: []
   basis:
     type: primary_source
@@ -980,7 +980,7 @@
     - 베이(군주)는 그대로 두고 프랑스 총주재관이 실권을 쥠
     - 1942~1943년 추축군과 연합군이 싸운 튀니지 전역의 무대가 됨
   startEvents: [tunisia-bardo-1878]
-  endEvents: []
+  endEvents: [tunisia-independence-1952]
   basis:
     type: primary_source
     refs: ["바르도 조약(1881)", "라마르사 협약(1883)"]
@@ -998,7 +998,7 @@
     - 도읍은 튀니스
     - 1961년 비제르트 기지를 둘러싸고 프랑스군과 충돌함
     - 2010년 말 시디부지드의 시위가 아랍의 봄의 시작이 됨
-  startEvents: []
+  startEvents: [tunisia-independence-1952]
   endEvents: []
   basis:
     type: primary_source
@@ -1020,7 +1020,7 @@
     - 1958년 알제의 위기로 프랑스 제4공화국이 무너지고 드골이 돌아옴
     - 1960~1966년 사하라에서 프랑스가 핵실험을 함
   startEvents: [algiers-1827]
-  endEvents: []
+  endEvents: [algerian-independence-1962]
   basis:
     type: primary_source
     refs: ["알제 항복 협약(1830)", "에비앙 협정(1962)"]
@@ -1039,7 +1039,7 @@
     - 1963년 모로코와 틴두프·베샤르를 두고 모래 전쟁을 치름
     - 1971년 석유·가스 산업을 국유화함
     - 틴두프에 서사하라 난민촌과 폴리사리오 전선의 근거지가 있음
-  startEvents: []
+  startEvents: [algerian-independence-1962]
   endEvents: []
   basis:
     type: primary_source
@@ -1061,7 +1061,7 @@
     - 1925~1926년 리프 전쟁에서 스페인과 함께 압드 엘크림을 누름
     - 1953년 프랑스가 술탄 무함마드 5세를 마다가스카르로 내쫓았다가 1955년 돌려보냄
   startEvents: [morocco-protectorate-1906]
-  endEvents: []
+  endEvents: [morocco-independence-1953]
   basis:
     type: primary_source
     refs: ["페스 조약(1912)", "프랑스-모로코 공동 선언(1956)"]
@@ -1081,7 +1081,7 @@
     - 1921~1926년 압드 엘크림의 리프 공화국이 스페인 지배에 맞섬
     - 1936년 프랑코가 이곳의 아프리카군을 이끌고 스페인 내전을 일으킴
   startEvents: [morocco-protectorate-1906]
-  endEvents: []
+  endEvents: [morocco-independence-1953]
   basis:
     type: primary_source
     refs: ["프랑스-스페인 조약(1912)"]
@@ -1100,7 +1100,7 @@
     - 1963년 알제리와 모래 전쟁을 치름
     - 1975년 녹색 행진으로 스페인령 사하라에 들어감
     - 1980~1987년 서사하라에 모로코 장벽을 쌓음
-  startEvents: []
+  startEvents: [morocco-independence-1953]
   endEvents: []
   basis:
     type: primary_source
@@ -1122,7 +1122,7 @@
     - 부크라의 인광석 광산이 큰 수입원이 됨
     - 1973년 폴리사리오 전선이 독립 투쟁을 시작함
   startEvents: [spanish-sahara-1884]
-  endEvents: []
+  endEvents: [western-sahara-1975]
   basis:
     type: primary_source
     refs: ["프랑스-스페인 협약(1900)", "마드리드 협정(1975)"]
@@ -1140,7 +1140,7 @@
     - 유엔은 비자치 지역으로 보고 주민 투표를 약속했으나 열리지 않음
     - 1975년 국제 사법 재판소는 모로코·모리타니와의 옛 유대가 영토 주권은 아니라고 권고함
     - 2020년 미국이 모로코의 주권을 인정함
-  startEvents: []
+  startEvents: [western-sahara-1975]
   endEvents: []
   basis:
     type: primary_source
@@ -1159,7 +1159,7 @@
     - 1991년 휴전 뒤 유엔 서사하라 주민 투표 지원단이 장벽 양쪽을 감시함
     - 비르라흘루·티파리티가 중심지
     - 2020년 11월 휴전이 깨져 장벽을 사이에 둔 싸움이 다시 일어남
-  startEvents: []
+  startEvents: [western-sahara-1975]
   endEvents: []
   basis:
     type: primary_source
@@ -1178,7 +1178,7 @@
     - 1984년 아프리카 단결 기구에 가입해 모로코가 탈퇴함(2017년 모로코 복귀)
     - 승인한 나라의 수는 늘고 줄기를 되풀이함
     - 엘아이운을 수도로 내세우고 티파리티를 임시 수도로 둠
-  startEvents: []
+  startEvents: [western-sahara-1975]
   endEvents: []
   basis:
     type: primary_source
@@ -1197,7 +1197,7 @@
     - 도읍은 누악쇼트
     - 1979년 8월 폴리사리오 전선과 평화 협정을 맺고 서사하라에서 물러남
     - 1981년 노예제를 법으로 없앰
-  startEvents: []
+  startEvents: [morocco-independence-1953]
   endEvents: []
   basis:
     type: primary_source
