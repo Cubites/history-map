@@ -321,7 +321,7 @@
     ko: 그리스 독립 전쟁
   summary:
     ko: "오스만 제국의 지배를 받던 그리스인이 독립 전쟁을 일으켰다(1821). 빈 체제는 민족 운동을 막으려 했으나 고대 그리스를 동경한 유럽 여론이 그리스를 도왔고(영국 시인 바이런도 참전했다가 병사), 영국·프랑스·러시아 연합 함대가 나바리노 해전(1827)에서 오스만·이집트 함대를 무찔렀다. 러시아-튀르크 전쟁 뒤 아드리아노플 조약(1829)을 거쳐 런던 의정서(1830)로 그리스의 독립이 국제적으로 인정되었다. 빈 체제가 처음으로 크게 흔들린 사건이었다."
-  subjects: [ottoman, uk, france, russia, greece]
+  subjects: [ottoman, uk, france, russia, greece, muhammad-ali-egypt]
   links:
     - { from: uk, to: ottoman, note: "나바리노 해전" }
     - { from: france, to: ottoman, note: "나바리노 해전" }
@@ -882,7 +882,7 @@
     ko: 영국-프랑스 협상과 모로코 위기
   summary:
     ko: "독일의 해군 확장과 세계 정책에 위협을 느낀 영국은 '영광스러운 고립'을 버리고 일본과 동맹을 맺은 데 이어(1902), 러일 전쟁이 시작된 직후 프랑스와 협상을 맺었다(1904년 4월). 이집트는 영국, 모로코는 프랑스의 세력권으로 서로 인정해 식민지 다툼을 끝냈다. 일본의 동맹국 영국과 러시아의 동맹국 프랑스가 러일 전쟁에 휘말리지 않으려는 뜻도 있었다. 독일은 빌헬름 2세의 탕헤르 방문(1905)과 아가디르 군함 파견(1911)으로 모로코 문제에 끼어들었으나, 알헤시라스 회의(1906)에서 영국이 프랑스를 지지하는 등 오히려 영불 협력만 굳어졌고 모로코는 프랑스의 보호국이 되었다(1912)."
-  subjects: [uk, france, german-empire]
+  subjects: [uk, france, german-empire, alaouite-morocco]
   links:
     - { from: uk, to: france, note: "협상, 모로코에서 프랑스 우위 인정" }
     - { from: france, to: uk, note: "이집트에서 영국 우위 인정" }
@@ -955,7 +955,7 @@
     ko: 발칸 전쟁
   summary:
     ko: "이탈리아-튀르크 전쟁(1911~1912)으로 오스만 제국이 리비아와 도데카니사 제도를 잃고 약해지자, 러시아의 후원으로 세르비아·불가리아·그리스·몬테네그로가 발칸 동맹을 맺고 오스만을 공격했다(1차 발칸 전쟁, 1912년 10월). 오스만은 쿠마노보 등에서 지고 아드리아노플(에디르네)까지 빼앗겨, 런던 조약(1913년 5월)으로 이스탄불 부근을 뺀 유럽 쪽 땅 대부분과 크레타섬을 내주었다(크레타는 그해 12월 그리스에 합쳐짐). 오스트리아-헝가리와 이탈리아의 주장으로 알바니아가 독립국이 되어(1912년 선언) 세르비아의 아드리아해 진출이 막혔다. 마케도니아를 두고 불가리아가 옛 동맹국을 공격했으나 루마니아와 오스만까지 가세한 2차 발칸 전쟁(1913년 6~8월)에서 져 부쿠레슈티 조약으로 땅을 잃었고, 오스만은 에디르네를 되찾았다. 커진 세르비아와 오스트리아-헝가리의 갈등, 복수를 노리는 불가리아의 독일 쪽 접근으로 발칸은 '유럽의 화약고'가 되었다."
-  subjects: [ottoman, serbia, bulgaria, greece, montenegro, albania, romania, russia, austria-hungary, italy, dodecanese-occupied, cretan-state]
+  subjects: [ottoman, serbia, bulgaria, greece, montenegro, albania, romania, russia, austria-hungary, italy, dodecanese-occupied, cretan-state, italian-libya]
   links:
     - { from: italy, to: ottoman, note: "이탈리아-튀르크 전쟁 (1911~1912)" }
     - { from: russia, to: serbia, note: "발칸 동맹 후원" }

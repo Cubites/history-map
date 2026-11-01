@@ -35,9 +35,6 @@
   decided: 세션 G·E 범위 밖, 그대로 둠 (세션 T 설계 8절 ③)
 
 # ── 서아시아·북아프리카 A1a-1 (2026-10-29): 레반트·이라크·쿠웨이트 새 항목의 성립·소멸·버전 해. 사건 묶음 me-08이 사건을 쓰며 이 줄을 지운다 ──
-- key: '1899 kuwait 성립'
-  reason: me-08 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A1 승인
 - key: '1918 british-mesopotamia 성립'
   reason: me-08 사건 묶음이 채움
   decided: 2026-10-29 운영자 A1 승인
@@ -133,33 +130,6 @@
   decided: 2026-10-29 운영자 A1 승인
 
 # ── 서아시아·북아프리카 A1a-2 (2026-10-29): 아라비아 반도·이란 새 항목의 성립·소멸·버전 해. 사건 묶음 me-08이 사건을 쓰며 이 줄을 지운다 ──
-- key: '1836 jabal-shammar 성립'
-  reason: me-08 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A1 승인
-- key: '1853 trucial-states 성립'
-  reason: me-08 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A1 승인
-- key: '1856 oman 성립'
-  reason: me-08 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A1 승인
-- key: '1886 aden-protectorate 성립'
-  reason: me-08 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A1 승인
-- key: '1892 bahrain 성립'
-  reason: me-08 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A1 승인
-- key: '1902 nejd 성립'
-  reason: me-08 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A1 승인
-- key: '1907 idrisid-emirate 성립'
-  reason: me-08 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A1 승인
-- key: '1916 hejaz-kingdom 성립'
-  reason: me-08 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A1 승인
-- key: '1916 qatar 성립'
-  reason: me-08 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A1 승인
 - key: '1918 hejaz-kingdom 버전'
   reason: me-08 사건 묶음이 채움
   decided: 2026-10-29 운영자 A1 승인
@@ -264,27 +234,6 @@
   decided: 2026-10-29 운영자 A1 승인
 
 # ── 서아시아·북아프리카 A1b (2026-10-29): 이집트·리비아·마그레브·서사하라 새 항목의 성립·소멸·버전 해. 사건 묶음 me-08이 사건을 쓰며 이 줄을 지운다 ──
-- key: '1830 french-algeria 성립'
-  reason: me-08 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A1 승인
-- key: '1881 french-tunisia 성립'
-  reason: me-08 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A1 승인
-- key: '1884 spanish-sahara 성립'
-  reason: me-08 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A1 승인
-- key: '1912 italian-libya 성립'
-  reason: me-08 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A1 승인
-- key: '1912 french-morocco 성립'
-  reason: me-08 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A1 승인
-- key: '1912 spanish-morocco 성립'
-  reason: me-08 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A1 승인
-- key: '1914 british-egypt 성립'
-  reason: me-08 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A1 승인
 - key: '1922 british-egypt 소멸'
   reason: me-08 사건 묶음이 채움
   decided: 2026-10-29 운영자 A1 승인
@@ -394,167 +343,7 @@
   reason: me-08 사건 묶음이 채움
   decided: 2026-10-29 운영자 A1 승인
 # ── 서아시아·북아프리카 A2a-2 (2026-10-29): 레반트·아라비아 1453~1917 새 항목·A1 항목 1918년 전 버전·오스만 늘림의 성립·소멸·버전 해. 사건 묶음 me-05~07이 사건을 쓰며 이 줄을 지운다 ──
-- key: '1805 muhammad-ali-egypt 성립'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1818 emirate-of-diriyah 소멸'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1824 emirate-of-nejd 성립'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1830 bani-khalid-emirate 소멸'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1856 busaid-oman 소멸'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1872 qasimid-state 소멸'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1891 emirate-of-nejd 소멸'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1904 zaydi-imamate-yahya 성립'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1914 muhammad-ali-egypt 소멸'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1916 sharifate-of-mecca 소멸'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1918 zaydi-imamate-yahya 소멸'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
 - key: '1967 lahej-sultanate 소멸'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1803 emirate-of-diriyah 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1803 qasimid-state 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1813 muhammad-ali-egypt 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1813 emirate-of-diriyah 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1818 qasimid-state 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1830 emirate-of-nejd 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1833 muhammad-ali-egypt 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1833 qasimid-state 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1869 jabal-shammar 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1871 emirate-of-nejd 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1887 emirate-of-nejd 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1887 jabal-shammar 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1891 jabal-shammar 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1902 jabal-shammar 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1904 nejd 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1904 jabal-shammar 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1909 jabal-shammar 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1909 idrisid-emirate 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1911 zaydi-imamate-yahya 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1913 nejd 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1917 hejaz-kingdom 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1871 ottoman 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1872 ottoman 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1879 oman 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-
-# ── 서아시아·북아프리카 A2b-1 (2026-10-30): 이집트·리비아 1453~1917 새 항목·이집트 땅을 더한 항목의 성립·소멸·버전 해. 이집트 술탄국은 1914년부터 같은 모양이라 1918 버전 줄을 지움 ──
-- key: '1813 fezzan-sultanate 소멸'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1813 karamanli-tripolitania 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1835 karamanli-tripolitania 소멸'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1841 muhammad-ali-egypt 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-
-# ── 서아시아·북아프리카 A2b-2 (2026-10-30): 마그레브 1453~1917 새 항목의 성립·소멸·버전 해와 프랑스령 알제리의 1918년 전 단계. 프랑스령 튀니지·모로코 보호령 둘은 1881·1912년부터 같은 모양이라 1918 버전 줄을 지움 ──
-- key: '1830 regency-of-algiers 소멸'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1832 abdelkader-emirate 성립'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1837 abdelkader-emirate 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1837 french-algeria 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1843 french-algeria 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1847 abdelkader-emirate 소멸'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1847 french-algeria 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1855 french-algeria 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1881 husainid-tunisia 소멸'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1882 french-algeria 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1901 french-algeria 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1905 french-algeria 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1912 alaouite-morocco 소멸'
   reason: me-05~07 사건 묶음이 채움
   decided: 2026-10-29 운영자 A2 승인
 # ── 서아시아·북아프리카 A4a-⑥b (2026-10-31): 아라비아 반도 기원전 550~31년 새 항목(사바·카타반·하드라마우트·힘야르·리히얀)의 성립·소멸과 새 버전 해. 사건 묶음 me-01·me-02가 사건을 쓰며 이 줄을 지운다 ──

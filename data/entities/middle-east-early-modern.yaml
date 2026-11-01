@@ -204,7 +204,7 @@
     - 1517년 샤리프 바라카트가 셀림 1세를 칼리프로 받들어 지위를 지킴
     - 오스만 시대에는 술탄이 가문 안에서 샤리프를 골라 임명함
   startEvents: [sharifate-mecca-967]
-  endEvents: []
+  endEvents: [arab-revolt-1915]
   basis:
     type: primary_source
     refs: ["1517년 샤리프 바라카트의 오스만 종주 수용"]
@@ -224,8 +224,8 @@
     - 1811년 성채에서 맘루크 지도자들을 없애고 권력을 굳힘
     - 1840년 런던 협약으로 시리아·히자즈를 내주고 이집트 세습 통치를 인정받음
     - 1869년 수에즈 운하가 열림
-  startEvents: []
-  endEvents: []
+  startEvents: [muhammad-ali-1805]
+  endEvents: [british-egypt-1883]
   basis:
     type: primary_source
     refs: ["퀴타히아 조약(1833)", "런던 협약(1840)"]
@@ -245,7 +245,7 @@
     - 1802년 카르발라를 약탈하고 1803년 메카에 들어감
     - 1811~1818년 오스만–와하브 전쟁에서 이집트군에 짐
   startEvents: [diriyah-1744]
-  endEvents: []
+  endEvents: [egypt-wahhabi-1811]
   basis:
     type: primary_source
     refs: ["디리야 맹약(1744)", "디리야 함락(1818)"]
@@ -264,8 +264,8 @@
     - 도읍은 리야드
     - 파이살 빈 투르키(재위 1834~1838, 1843~1865) 때 가장 안정됨
     - 1871년 오스만 제국이 내분을 틈타 알하사를 차지함
-  startEvents: []
-  endEvents: []
+  startEvents: [nejd-1824]
+  endEvents: [ottoman-hasa-1865]
   basis:
     type: primary_source
     refs: ["물라이다 전투(1891)"]
@@ -285,7 +285,7 @@
     - 우라이르 가문이 아미르를 맡음
     - 나지드의 사우디 세력과 오랫동안 다툼
   startEvents: [al-hasa-1521]
-  endEvents: []
+  endEvents: [nejd-1824]
   basis:
     type: primary_source
     refs: ["1670년 알하사 오스만 수비대 축출"]
@@ -345,7 +345,7 @@
     - 모카 항의 커피 수출로 부유해짐
     - 알무타와킬 이스마일 때 가장 넓었음
   startEvents: [qasimid-1597]
-  endEvents: []
+  endEvents: [ottoman-yemen-1849]
   basis:
     type: primary_source
     refs: ["1636년 오스만 군대 철수"]
@@ -364,7 +364,7 @@
     - 도읍은 사나
     - 1905년 한때 사나를 차지했으나 오스만군에 다시 빼앗김
     - 1차 대전 동안 오스만 제국 편에 섬
-  startEvents: []
+  startEvents: [yahya-1904]
   endEvents: []
   basis:
     type: primary_source
@@ -445,7 +445,7 @@
     - 1798년 영국과 조약을 맺음
     - 1840년 사이드 빈 술탄이 도읍을 잔지바르로 옮김
   startEvents: [busaid-oman-1737]
-  endEvents: []
+  endEvents: [oman-zanzibar-1856]
   basis:
     type: primary_source
     refs: ["영국–오만 조약(1798)"]
@@ -489,7 +489,7 @@
     - 1801~1805년 미국과 제1차 바르바리 전쟁을 치름
     - 유수프 카라만리(1795~1832) 때 페잔을 점령해 직접 다스림
   startEvents: [husainid-karamanli-1705]
-  endEvents: []
+  endEvents: [karamanli-1801]
   basis:
     type: primary_source
     refs: ["제1차 바르바리 전쟁(1801~1805)"]
@@ -510,7 +510,7 @@
     - 트리폴리의 오스만 군대가 여러 번 쳐들어와 조공을 받아 감
     - 사하라를 건너는 대상로의 교역에서 세금을 거둠
   startEvents: [tripoli-fezzan-1530]
-  endEvents: []
+  endEvents: [karamanli-1801]
   basis:
     type: primary_source
     refs: ["트리폴리의 페잔 원정(1574)"]
@@ -532,7 +532,7 @@
     - 1846년 노예제를 없애고 1861년 아랍 세계 첫 헌법을 폄
     - 1869년 나라 빚을 갚지 못해 영국·프랑스·이탈리아의 재정 위원회가 생김
   startEvents: [husainid-karamanli-1705]
-  endEvents: []
+  endEvents: [tunisia-bardo-1878]
   basis:
     type: primary_source
     refs: ["이븐 아비 디야프, 『이트하프 아흘 알자만』", "바르도 조약(1881)"]
@@ -574,7 +574,7 @@
     - 1708년 스페인에게서 오랑을 빼앗고, 1732년 잃었다가 1792년 되찾음
     - 1816년 영국·네덜란드 함대가 알제를 포격해 기독교도 노예를 풀어 줌
   startEvents: [algiers-regency-1659]
-  endEvents: []
+  endEvents: [algiers-1827]
   basis:
     type: primary_source
     refs: ["디에고 데 아에도, 『알제의 지형과 역사』(1612)"]
@@ -594,8 +594,8 @@
     - 1834년 데스미셸 조약, 1837년 타프나 조약으로 프랑스가 땅을 인정함
     - 1839년 프랑스군의 철문 통과를 조약 위반으로 보고 전쟁을 다시 일으킴
     - 압델카데르는 뒤에 다마스쿠스로 망명해 1860년 기독교도 학살을 막음
-  startEvents: []
-  endEvents: []
+  startEvents: [abdelkader-1832]
+  endEvents: [abdelkader-1832]
   basis:
     type: primary_source
     refs: ["타프나 조약(1837)", "데스미셸 조약(1834)"]
@@ -700,7 +700,7 @@
     - 1844년 이슬리 전투에서 프랑스에 지고 1845년 랄라 마그니아 조약을 맺음
     - 1859~1860년 스페인과의 전쟁에서 져 테투안을 잠시 빼앗김
   startEvents: [alaouite-1666]
-  endEvents: []
+  endEvents: [morocco-protectorate-1906]
   basis:
     type: primary_source
     refs: ["알나시리, 『키타브 알이스티크사』", "페스 조약(1912)"]

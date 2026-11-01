@@ -408,7 +408,7 @@
     - 1920년 자흐라 전투에서 네지드의 이흐완 군을 막아 냄
     - 1990년 8월 이라크에 점령되었다가 1991년 2월 걸프 전쟁으로 되찾음
     - 1962년 헌법으로 국민 의회를 둠
-  startEvents: []
+  startEvents: [kuwait-1896]
   endEvents: []
   basis:
     type: primary_source
@@ -430,7 +430,7 @@
     - 아랍 반란에서 아들 파이살과 압둘라가 군을 이끎
     - 메디나의 오스만 수비대는 1919년 1월에야 항복함
     - 메카 순례 관리와 히자즈 철도가 나라의 큰 일이었음
-  startEvents: []
+  startEvents: [arab-revolt-1915]
   endEvents: []
   basis:
     type: primary_source
@@ -451,7 +451,7 @@
     - 와하브파 이흐완 정착촌의 부족 군대가 정복을 이끎
     - 1915년 다린 조약으로 영국의 보호를 받아들임
     - 1922년 우카이르 의정서로 이라크·쿠웨이트와 경계와 중립 지대를 정함
-  startEvents: []
+  startEvents: [ibn-saud-1902]
   endEvents: []
   basis:
     type: primary_source
@@ -491,7 +491,7 @@
     - 도읍은 하일
     - 메카 순례길과 대상로를 지키며 세력을 키움
     - 1891년 물라이다 전투에서 사우드 가문을 이겨 리야드를 차지함
-  startEvents: []
+  startEvents: [nejd-1824]
   endEvents: []
   basis:
     type: primary_source
@@ -511,7 +511,7 @@
     - 도읍은 사비야
     - 수피 교단을 이끈 이드리스 가문이 다스림
     - 1915년 영국과 조약을 맺어 오스만 제국에 맞섬
-  startEvents: []
+  startEvents: [idrisi-asir-1907]
   endEvents: []
   basis:
     type: primary_source
@@ -573,7 +573,7 @@
     - 동쪽 하드라마우트의 쿠아이티·카시리 술탄국이 가장 컸음
     - 1937년부터 라헤즈(서)·무칼라(동)에 영국 정치관이 머묾
     - 1963년부터 독립 세력의 무장 투쟁(아덴 비상 사태)이 이어짐
-  startEvents: []
+  startEvents: [aden-1839]
   endEvents: []
   basis:
     type: primary_source
@@ -633,7 +633,7 @@
     - 1970년 7월 23일 카부스가 아버지를 몰아내고 술탄이 되어 오만 술탄국으로 이름을 바꿈
     - 1958년 파키스탄 해안의 과다르를 팔았음
     - 무산담 반도는 아랍에미리트 땅 너머의 월경지임
-  startEvents: []
+  startEvents: [oman-zanzibar-1856]
   endEvents: []
   basis:
     type: primary_source
@@ -673,7 +673,7 @@
     - 1820년 해적 행위를 막는 일반 해상 조약을 맺음
     - 1952년 3월 토후들의 회의(트루셜 국가 협의회)가 생김
     - 1952~1955년 부라이미 오아시스를 두고 사우디아라비아와 다툼
-  startEvents: []
+  startEvents: [gulf-treaty-1819]
   endEvents: []
   basis:
     type: primary_source
@@ -711,7 +711,7 @@
     - 도읍은 도하
     - 1940년대 두칸 유전에서 석유 생산을 시작함
     - 2001년 국제 사법 재판소 판결로 바레인과의 섬 다툼을 끝냄
-  startEvents: []
+  startEvents: [qatar-1868]
   endEvents: []
   basis:
     type: primary_source
@@ -730,7 +730,7 @@
     - 도읍은 마나마
     - 1986년 사우디아라비아와 둑길로 이어짐
     - 2002년 헌법을 고쳐 왕국이 됨
-  startEvents: []
+  startEvents: [bahrain-1820]
   endEvents: []
   basis:
     type: primary_source
@@ -815,7 +815,7 @@
     - 도읍은 카이로
     - 제1차 세계 대전 동안 수에즈 운하를 지키는 영국군의 근거지였음
     - 1919년 사드 자글룰의 망명을 계기로 전국적인 반영 봉기가 일어남
-  startEvents: []
+  startEvents: [british-egypt-1883]
   endEvents: []
   basis:
     type: primary_source
@@ -898,7 +898,7 @@
     - 1923~1931년 오마르 무크타르가 키레나이카에서 사누시 저항을 이끎
     - 1930년부터 키레나이카 유목민을 수용소에 가둠
     - 1937년 해안을 잇는 발보 도로가 개통됨
-  startEvents: []
+  startEvents: [italian-libya-1911]
   endEvents: []
   basis:
     type: primary_source
@@ -979,7 +979,7 @@
     - 도읍은 튀니스
     - 베이(군주)는 그대로 두고 프랑스 총주재관이 실권을 쥠
     - 1942~1943년 추축군과 연합군이 싸운 튀니지 전역의 무대가 됨
-  startEvents: []
+  startEvents: [tunisia-bardo-1878]
   endEvents: []
   basis:
     type: primary_source
@@ -1019,7 +1019,7 @@
     - 유럽계 정착민(피에누아르)이 100만 명 안팎에 이름
     - 1958년 알제의 위기로 프랑스 제4공화국이 무너지고 드골이 돌아옴
     - 1960~1966년 사하라에서 프랑스가 핵실험을 함
-  startEvents: []
+  startEvents: [algiers-1827]
   endEvents: []
   basis:
     type: primary_source
@@ -1060,7 +1060,7 @@
     - 도읍은 라바트
     - 1925~1926년 리프 전쟁에서 스페인과 함께 압드 엘크림을 누름
     - 1953년 프랑스가 술탄 무함마드 5세를 마다가스카르로 내쫓았다가 1955년 돌려보냄
-  startEvents: []
+  startEvents: [morocco-protectorate-1906]
   endEvents: []
   basis:
     type: primary_source
@@ -1080,7 +1080,7 @@
     - 도읍은 테투안
     - 1921~1926년 압드 엘크림의 리프 공화국이 스페인 지배에 맞섬
     - 1936년 프랑코가 이곳의 아프리카군을 이끌고 스페인 내전을 일으킴
-  startEvents: []
+  startEvents: [morocco-protectorate-1906]
   endEvents: []
   basis:
     type: primary_source
@@ -1121,7 +1121,7 @@
     - 1957~1958년 이프니 전쟁에서 모로코 해방군과 싸움
     - 부크라의 인광석 광산이 큰 수입원이 됨
     - 1973년 폴리사리오 전선이 독립 투쟁을 시작함
-  startEvents: []
+  startEvents: [spanish-sahara-1884]
   endEvents: []
   basis:
     type: primary_source
