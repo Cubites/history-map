@@ -18,8 +18,8 @@
     - 도읍은 타브리즈
     - 이름은 '검은 양'이라는 뜻의 튀르크어
     - 1452~1453년 자한 샤가 이스파한·시라즈·야즈드를 차지함
-  startEvents: []
-  endEvents: []
+  startEvents: [turkmen-confederations-1375]
+  endEvents: [jahan-shah-1438, uzun-hasan-1467]
   basis:
     type: primary_source
     refs: ["1467년 차파크추르 전투"]
@@ -39,7 +39,7 @@
     - 우준 하산 때 도읍을 타브리즈로 옮김
     - 베네치아와 손잡고 오스만에 맞서려 함
     - 1478년 우준 하산이 죽은 뒤 왕위 다툼으로 약해짐
-  startEvents: []
+  startEvents: [turkmen-confederations-1375]
   endEvents: []
   basis:
     type: primary_source
@@ -59,7 +59,7 @@
     - 15세기 후반 도읍은 헤라트
     - 1469~1506년 후사인 바이카라가 헤라트에서 다스림
     - 시인 자미와 화가 비흐자드가 활동함
-  startEvents: []
+  startEvents: [timur-rise-1370]
   endEvents: []
   basis:
     type: primary_source
@@ -79,7 +79,7 @@
     - 중심지는 호베이제
     - 1441년 호베이제를 차지함
     - 카라코윤루·아크코윤루와 겨루며 버팀
-  startEvents: []
+  startEvents: [musha-sha-1435]
   endEvents: []
   basis:
     type: primary_source
@@ -183,7 +183,7 @@
     - 아바스 가문의 칼리프를 카이로에 두고 그 권위를 빌림
     - 1468~1496년 카이트바이가 다스리며 마지막으로 번성함
   startEvents: [mamluk-rise-1249]
-  endEvents: []
+  endEvents: [mamluk-end-1501]
   basis:
     type: primary_source
     refs: ["마르즈 다비크 전투(1516)", "리다니야 전투(1517)"]
@@ -304,7 +304,7 @@
     - 도읍은 알하사 오아시스
     - 걸프의 진주 채취와 대상로를 쥐고 번성함
     - 1521년 포르투갈이 바레인을 차지하며 힘을 잃음
-  startEvents: []
+  startEvents: [alhasa-1320]
   endEvents: []
   basis:
     type: primary_source
@@ -324,7 +324,7 @@
     - 도읍은 라다아·주반, 겨울에는 자비드
     - 1513년 포르투갈의 아덴 공격을 막아 냄
     - 라다아의 아미리야 학교를 세움
-  startEvents: []
+  startEvents: [rasulid-tahirid-1443]
   endEvents: []
   basis:
     type: primary_source
@@ -616,7 +616,7 @@
     - 1420년부터 와타스 가문 재상이 섭정으로 실권을 쥠
     - 페스에 학교(마드라사)를 많이 세움
   startEvents: [almohad-fall-1229]
-  endEvents: []
+  endEvents: [marinid-end-wattasid-1465]
   basis:
     type: primary_source
     refs: ["이븐 할둔, 『역사서(키타브 알이바르)』"]
@@ -636,7 +636,7 @@
     - 무함마드 알셰이크가 1472년 페스를 차지해 왕조를 엶
     - 1527년 타들라 조약으로 사드 왕조와 모로코를 나눠 가짐
     - 레오 아프리카누스가 이 왕조 때의 페스를 글로 남김
-  startEvents: []
+  startEvents: [marinid-end-wattasid-1465]
   endEvents: []
   basis:
     type: primary_source
