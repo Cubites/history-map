@@ -19,8 +19,8 @@
     - 636년 야르무크 전투와 카디시야 전투에서 동로마·사산 군대를 이김
     - 우마르 때 군영 도시 바스라·쿠파를 세움
     - 우스만 때 쿠란을 한 책으로 엮음
-  startEvents: []
-  endEvents: []
+  startEvents: [abu-bakr-ridda-632]
+  endEvents: [first-fitna-656]
   basis:
     type: primary_source
     refs: ["타바리, 『예언자들과 왕들의 역사』", "발라두리, 『여러 나라의 정복』"]
@@ -41,7 +41,7 @@
     - 602~628년 동로마와 마지막 큰 전쟁을 치름
     - 636년 카디시야, 642년 니하반드에서 아랍군에 짐
   startEvents: [ardashir-unification-222]
-  endEvents: []
+  endEvents: [nihavand-iran-conquest-642]
   basis:
     type: primary_source
     refs: ["타바리, 『예언자들과 왕들의 역사』", "낙시 로스탐의 샤푸르 1세 비문"]
@@ -60,8 +60,8 @@
     - 도읍은 길란의 푸만
     - 716년 야지드 이븐 알무할라브의 침공을 파루칸이 막아 냄
     - 바반드·카린 가문 같은 산지 영주들을 거느림
-  startEvents: []
-  endEvents: []
+  startEvents: [tabaristan-dabuyid-642]
+  endEvents: [tabaristan-dabuyid-642, mansur-baghdad-754]
   basis:
     type: primary_source
     refs: ["이븐 이스판디야르, 『타바리스탄사』"]
@@ -80,7 +80,7 @@
     - 도읍은 쿠파·안바르, 762년부터 바그다드, 836~892년 사마라
     - 하룬 알라시드와 알마문 때 '지혜의 집'에서 그리스 학문을 아랍어로 옮김
     - 861년 뒤 투르크 군인들이 칼리프를 갈아치우는 혼란을 겪음
-  startEvents: []
+  startEvents: [abbasid-revolution-747]
   endEvents: []
   basis:
     type: primary_source
@@ -100,8 +100,8 @@
     - 도읍은 메르브, 뒤에 니샤푸르
     - 아바스 칼리프의 총독으로서 칼리프 이름으로 금요 예배를 올림
     - 압둘라 이븐 타히르 때 농민을 보호하는 정책으로 이름남
-  startEvents: []
-  endEvents: []
+  startEvents: [mamun-civil-war-809]
+  endEvents: [saffarid-yaqub-861]
   basis:
     type: primary_source
     refs: ["가르디지, 『자인 알아흐바르』"]
@@ -120,8 +120,8 @@
     - 도읍은 카라지
     - 9세기 초 아부 둘라프가 칼리프에게서 영지를 받아 가문의 기반을 닦음
     - 아부 둘라프는 시인·학자로도 이름남
-  startEvents: []
-  endEvents: []
+  startEvents: [samarra-anarchy-861]
+  endEvents: [mutadid-muktafi-recovery-892]
   basis:
     type: primary_source
     refs: ["타바리, 『예언자들과 왕들의 역사』"]
@@ -140,7 +140,7 @@
     - 도읍은 자란즈, 870~908년 파르스의 시라즈도 함께 씀
     - 876년 바그다드로 진군했으나 다이르 알아쿨에서 칼리프 군에 짐
     - 페르시아어 궁정 시를 처음 후원한 왕조로 꼽힘
-  startEvents: []
+  startEvents: [saffarid-yaqub-861]
   endEvents: []
   basis:
     type: primary_source
@@ -160,8 +160,8 @@
     - 도읍은 아물
     - 864년 하산 이븐 자이드가 타히르 총독에 맞서 봉기함
     - 914년 하산 알우트루시가 다일람·길란 사람들을 모아 다시 일으킴
-  startEvents: []
-  endEvents: []
+  startEvents: [alid-tabaristan-864]
+  endEvents: [alid-tabaristan-864]
   basis:
     type: primary_source
     refs: ["이븐 이스판디야르, 『타바리스탄사』"]
@@ -180,8 +180,8 @@
     - 도읍은 마라가, 901년부터 아르다빌
     - 유수프 이븐 아비 앗사지가 아르메니아의 바그라투니 왕국과 싸움
     - 912년 칼리프에게 바치던 조공을 끊음
-  startEvents: []
-  endEvents: []
+  startEvents: [azerbaijan-sajid-sallarid-889]
+  endEvents: [azerbaijan-sajid-sallarid-889]
   basis:
     type: primary_source
     refs: ["타바리, 『예언자들과 왕들의 역사』"]
@@ -200,7 +200,7 @@
     - 도읍은 부하라
     - 900년 이스마일 이븐 아흐마드가 발흐에서 사파르 왕조의 아므르를 사로잡음
     - 시인 루다키와 학자 이븐 시나가 이 왕조의 궁정에서 활동함
-  startEvents: []
+  startEvents: [mamun-civil-war-809]
   endEvents: []
   basis:
     type: primary_source
@@ -220,7 +220,7 @@
     - 도읍은 바르다시르(지금의 케르만 시)
     - 무함마드 이븐 일리아스가 30여 년 다스림
     - 사만 왕조와 부와이 왕조 사이에서 자립을 지킴
-  startEvents: []
+  startEvents: [ziyarid-mardavij-928]
   endEvents: []
   basis:
     type: primary_source
@@ -240,7 +240,7 @@
     - 도읍은 이스파한, 935년부터 라이, 943년부터 고르간
     - 카부스 이븐 부시무르기르는 학자이자 시인으로 이름남
     - 980년 카부스가 부와이에 쫓겨났다가 998년 돌아옴
-  startEvents: []
+  startEvents: [ziyarid-mardavij-928]
   endEvents: []
   basis:
     type: primary_source
@@ -260,7 +260,7 @@
     - 도읍은 시라즈·라이·바그다드(형제가 나누어 다스림)
     - 칼리프에게서 '앗다울라' 칭호를 받고 대아미르로 실권을 쥠
     - 아두드 앗다울라 때 가장 넓어져 '샤한샤' 칭호를 씀
-  startEvents: []
+  startEvents: [buyid-rise-934]
   endEvents: []
   basis:
     type: primary_source
@@ -280,7 +280,7 @@
     - 도읍은 타롬의 사미란 성
     - 941년 마르주반 이븐 무함마드가 다이삼에게서 아제르바이잔을 빼앗음
     - 마르주반은 948년 부와이 왕조와 싸우다 사로잡힘
-  startEvents: []
+  startEvents: [azerbaijan-sajid-sallarid-889]
   endEvents: []
   basis:
     type: primary_source
@@ -340,7 +340,7 @@
     - 도읍은 모술과 알레포
     - 사이프 앗다울라가 945~967년 알레포를 다스리며 동로마와 해마다 싸움
     - 962년 동로마의 니케포로스 포카스가 알레포를 약탈함
-  startEvents: []
+  startEvents: [hamdanid-mosul-aleppo-890]
   endEvents: []
   basis:
     type: primary_source
@@ -381,7 +381,7 @@
     - 도읍은 알아사(지금의 알후푸프)
     - 930년 메카를 약탈해 검은 돌을 가져갔다가 951년 돌려줌
     - 지도자 회의가 다스리는 공동체 체제로 알려짐
-  startEvents: []
+  startEvents: [qarmatian-bahrain-899]
   endEvents: []
   basis:
     type: primary_source
@@ -401,7 +401,7 @@
     - 도읍은 자비드
     - 981년 뒤 노예 출신 재상들이 실권을 쥠
     - 아바스 칼리프를 명목상 받듦
-  startEvents: []
+  startEvents: [yemen-ziyadid-zaydi-819]
   endEvents: []
   basis:
     type: primary_source
@@ -421,7 +421,7 @@
     - 도읍은 샤밤 카우카반, 뒤에 사나
     - 916년 카르마트에게서 사나를 되찾음
     - 힘야르 계통 가문으로 아바스 칼리프를 받듦
-  startEvents: []
+  startEvents: [yemen-ziyadid-zaydi-819]
   endEvents: []
   basis:
     type: primary_source
@@ -441,7 +441,7 @@
     - 도읍은 사다
     - 897년 알하디 야흐야 이븐 알후사인이 사다에 들어와 이맘이 됨
     - 이맘은 학식과 혈통을 갖춘 알리의 후손 가운데서 섬
-  startEvents: []
+  startEvents: [yemen-ziyadid-zaydi-819]
   endEvents: []
   basis:
     type: primary_source
@@ -462,7 +462,7 @@
     - 이맘국에 앞서 752~793년 줄란다 가문이 아바스 칼리프의 총독으로 다스림
     - 893년 아바스 장수 무함마드 이븐 누르의 정복으로 둘째 이맘국이 끊김
     - 931~934년 걸프의 카르마트가 오만을 지배함
-  startEvents: []
+  startEvents: [oman-ibadi-imamate-793]
   endEvents: []
   basis:
     type: primary_source
@@ -484,8 +484,8 @@
     - 도읍은 카이라완
     - 이프리키야를 정복한 우크바 이븐 나피의 집안
     - 750년 뒤 아바스 칼리프국의 권위를 받아들이지 않음
-  startEvents: []
-  endEvents: []
+  startEvents: [fihrid-emirate-745]
+  endEvents: [fihrid-emirate-745]
   basis:
     type: primary_source
     refs: ["이븐 압드 알하캄, 『이집트와 마그리브 정복사』", "이븐 이다리, 『알바얀 알무그리브』"]
@@ -505,8 +505,8 @@
     - 827년부터 시칠리아를 정복함
     - 카이라완 대모스크를 다시 짓고 해안에 요새(리바트)를 둠
     - 902~907년 쿠타마 베르베르에게 밀라·세티프·바가야를 잃음
-  startEvents: []
-  endEvents: []
+  startEvents: [aghlabid-ifriqiya-800]
+  endEvents: [aghlabid-ifriqiya-800, fatimid-rise-893]
   basis:
     type: primary_source
     refs: ["이븐 이다리, 『알바얀 알무그리브』", "이븐 할둔, 『이바르의 책』"]
@@ -525,8 +525,8 @@
     - 도읍은 타헤르트
     - 공동체가 이맘을 뽑는 이바드파 원칙을 따름
     - 사하라 남쪽과 잇는 대상 무역으로 번영함
-  startEvents: []
-  endEvents: []
+  startEvents: [kharijite-states-maghreb-758]
+  endEvents: [kharijite-states-maghreb-758, fatimid-rise-893]
   basis:
     type: primary_source
     refs: ["이븐 사기르, 『루스탐 이맘들의 연대기』", "이븐 할둔, 『이바르의 책』"]
@@ -546,7 +546,7 @@
     - 789년 무렵 이드리스 1세가 페스를 세우고 이드리스 2세가 넓힘
     - 828년 이드리스 2세가 죽은 뒤 아들들이 땅을 나누어 다스림
     - 917~921년 파티마의 원정 뒤 그 가신이 됨
-  startEvents: []
+  startEvents: [idrisid-fez-788]
   endEvents: []
   basis:
     type: primary_source
@@ -566,7 +566,7 @@
     - 도읍은 시질마사(지금 리사니 둘레)
     - 사하라 남쪽 가나와 잇는 금 무역의 북쪽 관문
     - 909년 파티마의 알마흐디가 이곳에 갇혀 있다 풀려남
-  startEvents: []
+  startEvents: [kharijite-states-maghreb-758]
   endEvents: []
   basis:
     type: primary_source
@@ -586,7 +586,7 @@
     - 중심은 타메스나 평야(지금 카사블랑카·라바트 둘레)
     - 살리흐 이븐 타리프가 예언자를 칭하고 베르베르어 경전을 내놓음
     - 코르도바와 사절을 주고받았으나 10세기 말 사이가 틀어짐
-  startEvents: []
+  startEvents: [berber-great-revolt-739]
   endEvents: []
   basis:
     type: primary_source
@@ -627,8 +627,8 @@
     - 아흐마드 이븐 툴룬 모스크를 지음
     - 886년 조약으로 칼리프가 이집트·시리아를 30년 동안 맡김
     - 893년 후마라와이흐의 딸이 칼리프 알무타디드와 혼인함
-  startEvents: []
-  endEvents: []
+  startEvents: [tulunid-egypt-868]
+  endEvents: [tulunid-egypt-868]
   basis:
     type: primary_source
     refs: ["알킨디, 『이집트 총독들의 책』", "타바리, 『예언자들과 왕들의 역사』"]
@@ -648,7 +648,7 @@
     - 939년 칼리프에게 소그드 왕호 '이흐시드'를 받음
     - 946~968년 환관 카푸르가 섭정하다 966년 스스로 다스림
     - 947년 함단 왕조의 사이프 앗다울라와 시리아를 나눔
-  startEvents: []
+  startEvents: [ikhshidid-egypt-935]
   endEvents: []
   basis:
     type: primary_source
@@ -669,7 +669,7 @@
     - 910년 1월 알마흐디가 라카다에서 칼리프를 선포함
     - 969년 장군 자우하르가 이집트를 정복하고 카이로를 세움
     - 970~972년 카이로에 알아즈하르 모스크를 지음
-  startEvents: []
+  startEvents: [fatimid-rise-893]
   endEvents: []
   basis:
     type: primary_source
@@ -1185,7 +1185,7 @@
     - 군주는 옛 이란의 '이스파흐바드' 칭호를 씀
     - 1210년 루스탐 5세가 살해되고 호라즘이 땅을 차지함
     - 1238년 킨흐와리야 갈래가 아몰에서 다시 일어남
-  startEvents: []
+  startEvents: [tabaristan-dabuyid-642]
   endEvents: []
   basis:
     type: primary_source

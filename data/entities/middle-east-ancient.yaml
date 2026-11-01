@@ -532,7 +532,7 @@
     - 니제르강 굽이와 차드호 쪽으로 가는 사하라 대상로를 쥠
     - 타크파리나스의 반란을 돕고 로마의 해안 정착지를 약탈함
   startEvents: []
-  endEvents: []
+  endEvents: [kahina-maghreb-693]
   basis:
     type: primary_source
     refs: ["헤로도토스, 『역사』 4권", "대 플리니우스, 『박물지』 5권", "타키투스, 『연대기』 4권"]
@@ -572,7 +572,7 @@
     - 670년대 동로마 혈통이라는 세케르디드가 다스림
     - 쿠사일라가 아우라바 부족을 이끌고 우마이야의 마그레브 원정에 맞섬
   startEvents: [garmul-altava-570]
-  endEvents: []
+  endEvents: [kahina-maghreb-693]
   basis:
     type: primary_source
     refs: ["이븐 아브드 알하캄, 『이집트와 마그레브 정복기』", "이븐 할둔, 『베르베르인의 역사』"]
@@ -592,7 +592,7 @@
     - 이아브다스가 539년 동로마군에 져 마우레타니아로 달아남
     - 디히야는 35년 다스렸다고 전하며 아랍 원정군을 한때 물리침
   startEvents: [moorish-kingdoms-477]
-  endEvents: []
+  endEvents: [kahina-maghreb-693]
   basis:
     type: primary_source
     refs: ["아리스 마스티스 비문", "프로코피오스, 『전쟁사』 반달 전쟁", "이븐 할둔, 『베르베르인의 역사』"]

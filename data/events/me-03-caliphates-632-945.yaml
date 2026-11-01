@@ -1,0 +1,538 @@
+# 서아시아·북아프리카 사건 3차 묶음(me-03): 정통 칼리프·우마이야·아바스, 마그레브의 왕조들, 이란·이라크·이집트·예멘의 지방 왕조, 파티마의 흥기 (632 ~ 945)
+# 범위: 아부 바크르의 선출과 리다 전쟁, 아랍의 이라크·이란 정복과 사산 제국의 끝, 우마르의 통치 제도, 이집트 정복과 푸스타트, 우스만과 쿠란 정본, 제1차 내전과 알리,
+#   무아위야와 우마이야 칼리프국, 카르발라와 시아의 형성, 제2차 내전, 압드 알말리크의 개혁, 카스피해 남안의 다부이·바반드, 마그레브 정복과 베르베르의 저항(쿠사일라·카히나),
+#   베르베르 대반란과 바르가와타, 피흐르 토후국, 아바스 혁명과 바그다드 건설, 미드라르·루스탐·이드리스·아글라브, 하룬 알라시드, 오만 이바드 이맘국, 알마문과 지방 왕조의 시작,
+#   번역 운동, 예멘의 지야드·유피르·자이드파, 사마라 천도와 혼란, 사파르·알리 가문(타바리스탄)·툴룬·잔지 반란, 아바스의 회복과 쇠퇴, 카르마트와 흑석 탈취,
+#   함단·사지·살라르·사만·지야르·일리아스·부와이 왕조, 아미르 알우마라 제도, 파티마 칼리프국의 성립과 팽창, 이흐시드 왕조.
+# 깊이: 고등학교 세계사 교과서 본문 수준(summary 800~1,600자)에, 632~945년 지도에서 생기거나 끝난 항목과 1만 km²를 넘게 바뀐 버전 해를 ±2년 기준으로 subjects에 이음.
+#   긴 과정은 한 사건에 여러 왕조를 함께 묶고 실제 과정의 기간만 잡았다.
+# 한국사와 닿는 점: 이 시대 서아시아와 직접 닿는 한국 항목은 없어 subjects로 잇지 않았다.
+#   유럽·중국 파일의 아랍의 정복과 동로마·콘스탄티노폴리스 포위·우마이야의 이베리아 정복·코르도바 아미르국·카롤루스의 황제 대관·시칠리아 정복·마케도니아 왕조의 반격·탈라스 전투는
+#   다시 쓰지 않고 「제목」으로 가리켰다. 부와이의 바그다드 입성(945/946) 뒤와 파티마의 이집트 정복(969)은 다음 묶음의 몫이다.
+# 날짜: 1582년 전이라 율리우스력이다. 히즈라력 날짜는 양력 해로 바꾸어 적었고 확실하지 않은 날짜는 '무렵'으로 적었다. 사료마다 해가 갈리는 일(카디시야·바그다드 입성 등)은 갈린다고 밝혔다.
+# 이름 규칙: 아랍어·페르시아어 인명은 국립국어원 용례와 교과서의 굳은 표기(무함마드·칼리프·쿠란·하룬 알라시드)를 따르고 정관사는 뒤 낱말에 붙여 '알'로 적으며, 지명은 지금도 쓰는 이름은 지금 나라 말(바그다드·다마스쿠스·카이라완·시라즈),
+#   옛 도시는 굳은 표기(크테시폰·푸스타트). 종파 이름은 저장소 기존 표기(카리지파·이바드파·수프리파)로 맞췄고 나라 이름은 항목 이름을 따랐다.
+# 사건 연도 규칙: subjects·links의 나라는 사건 기간(year~endYear)과 존재 기간이 겹치면 된다. 서술은 새로 작성. 출처는 사료와 표준 개설서의 원서(한국어 번역본은 쓰지 않음).
+#   병력·사상자·인구는 사료가 과장하는 일이 많아 범위와 '추산'으로 적었다. 피정복민·소수자와 종파 서술은 한쪽 입장만 따르지 않고 전승과 학설을 구분했다.
+
+- id: abu-bakr-ridda-632
+  year: 632
+  endYear: 634
+  title:
+    ko: "아부 바크르의 선출과 리다 전쟁(632~634)"
+  summary:
+    ko: "632년 6월 무함마드가 메디나에서 죽자 공동체는 후계 문제에 부딪혔다. 메디나의 안사르(무함마드를 맞아 준 메디나 사람들)가 사키파에서 따로 모였을 때 우마르와 아부 우바이다가 아부 바크르에게 충성을 맹세해 그가 '신의 사도의 후계자', 곧 칼리프로 인정되었다. 알리와 일부 하심 가문 사람들은 한동안 맹세를 미뤘다고 전승이 전하며, 수니파는 아부 바크르를 첫 칼리프로 보고 시아파는 알리가 정당한 후계자였다고 본다. 아부 바크르는 무함마드가 죽기 전 꾸려 둔 우사마 이븐 자이드의 시리아 원정군을 그대로 보냈다. 이어 아라비아 여러 부족이 자카트(공동체에 내는 세)를 거부하거나 무함마드와 맺은 동맹을 끊었는데, 뒤의 사료는 이를 '리다'(배교)라 부른다. 부족 쪽에서는 신앙을 버린 것이 아니라 메디나에 세를 바치는 일을 거부한 것이라는 해석이 있고, 현대 학자들도 종교와 정치·재정 문제가 얽혔다고 본다. 아사드 부족의 투라이하, 야마마의 무사일리마, 타밈 부족의 여성 사자 같은 이들이 스스로 예언자를 칭하며 일어났다. 아부 바크르는 여러 갈래의 군을 보냈고, 할리드 이븐 알왈리드가 632년 12월 무렵(사료에 따라 633년 초) 야마마의 아크라바에서 무사일리마를 물리쳤다(쿠란을 외우던 이들이 이 싸움에서 많이 죽자 우마르가 쿠란을 모아 적자고 권했다고 전승은 전한다). 633년 안에 바레인·오만·예멘·하드라마우트가 다시 메디나 아래로 들어와 아라비아가 하나로 묶였고, 이 힘은 곧 이라크와 시리아로 향했다. 아부 바크르는 무함마드의 오랜 동료이자 아내 아이샤의 아버지였고, 무함마드가 병든 동안 예배를 대신 이끌었다는 일이 후계의 근거로 거론되었다고 전승은 전한다. 이 선출과 리다 전쟁을 거치며 메디나의 공동체는 부족 연합이 아니라 세금을 거두고 군대를 보내는 국가의 모습을 갖추기 시작했다. 이로써 아부 바크르에서 알리까지 네 칼리프가 차례로 이끈 정통 칼리프국의 시대가 열렸다. 634년 8월 아부 바크르는 병으로 죽으며 우마르를 후계로 지명했다."
+  subjects: [rashidun-caliphate]
+  tags: [politics, war, religion]
+  sources: ["Wilferd Madelung, The Succession to Muhammad: A Study of the Early Caliphate (Cambridge University Press, 1997)", "Fred M. Donner, The Early Islamic Conquests (1981)", "Hugh Kennedy, The Great Arab Conquests: How the Spread of Islam Changed the World We Live In (2007)", "al-Ṭabarī, Taʾrīkh al-rusul wa-l-mulūk (영역: The History of al-Ṭabarī, 전 40권, State University of New York Press, 1985~2007)"]
+
+- id: arab-iraq-conquest-633
+  year: 633
+  endYear: 642
+  title:
+    ko: "아랍의 이라크 정복: 카디시야와 크테시폰(633~642)"
+  summary:
+    ko: "사산 제국은 628~632년 사이 왕이 여러 번 바뀌는 내분을 겪은 끝에 632년 어린 야즈데게르드 3세를 왕으로 세운 참이었다. 633년 무렵 무타나 이븐 하리사와 할리드 이븐 알왈리드가 이끄는 아랍군이 이라크 남부 국경을 넘어 알히라 둘레의 도시들과 공납 협정을 맺었다. 할리드가 시리아로 옮겨 간 뒤 아랍군은 634년 다리 전투에서 졌으나 같은 해 부와이브에서 만회했다. 사령관 사드 이븐 아비 와카스가 이끈 카디시야 전투(636년 또는 637년, 사료마다 갈린다)에서 사산의 장군 로스탐 파루흐자드가 죽었다. 양쪽 병력은 사료가 크게 부풀려 믿기 어렵다. 이어 아랍군은 티그리스강을 건너 637년 사산의 도읍 크테시폰을 차지했고, 야즈데게르드 3세는 이란 고원의 훌완 쪽으로 물러났다. 잘룰라 전투(637~638)와 이어진 싸움으로 이라크 전역이 아랍 손에 들어갔다. 정복자들은 선주민을 쫓아내지 않고 바스라와 쿠파 같은 군영 도시를 새로 세워 군인을 따로 모아 살게 했고, 이라크의 농민과 기독교·유대교·조로아스터교 공동체는 세금을 내고 신앙을 지켰다. 639~640년에는 이야드 이븐 가놈이 자지라 북부의 라카·에데사 같은 도시를 협정으로 얻었는데, 이 도시들은 사산이 아니라 동로마 땅이었다. 후제스탄에서는 638년부터 이어진 싸움 끝에 마르즈반 호르무잔이 642년 무렵 항복했다. 정통 칼리프국의 군대는 대부분 아랍 부족 병사였고, 낙타의 기동력으로 사막 가장자리와 강 사이를 오가며 싸웠다. 사산 제국은 628년까지 이어진 동로마와의 긴 전쟁으로 재정과 군대가 지친 데다 귀족들이 왕위를 두고 갈라져 있었다. 알히라 같은 이라크 남부의 아랍계 주민 가운데는 아랍군과 협정을 맺거나 그 편에 선 부족도 있었다고 사료는 적는다. 시리아와 동로마 쪽의 일은 「아랍의 정복과 동로마: 야르무크(636)·이집트·카르타고(698)와 우마이야 칼리프국」(뒤의 사건)에 있다."
+  subjects: [rashidun-caliphate, sasanian-empire]
+  links:
+    - { from: rashidun-caliphate, to: sasanian-empire, note: "이라크 정복 (633~642)" }
+  tags: [war, politics]
+  sources: ["Hugh Kennedy, The Great Arab Conquests: How the Spread of Islam Changed the World We Live In (2007)", "Fred M. Donner, The Early Islamic Conquests (1981)", "The Cambridge History of Iran, vol. 4: The Period from the Arab Invasion to the Saljuqs (R. N. Frye 편, Cambridge University Press, 1975)", "al-Balādhurī, Futūḥ al-buldān (영역: The Origins of the Islamic State, Philip K. Hitti·Francis C. Murgotten 옮김, Columbia University, 1916~1924)"]
+
+- id: umar-administration-634
+  year: 634
+  endYear: 644
+  title:
+    ko: "우마르의 통치와 군영 도시·디완(634~644)"
+  summary:
+    ko: "아부 바크르의 지명으로 칼리프에 오른 우마르는 634년부터 644년까지 이라크·시리아·이집트가 한꺼번에 공동체 아래로 들어온 시기를 다스렸다. 그는 '아미르 알무미닌'(신자들의 지휘자)을 칭했다고 전하며, 정복지의 땅을 군인에게 나누어 주지 않고 공동체의 몫으로 두어 농민에게 세금(하라즈)을 걷고 비무슬림 성인 남자에게 인두세(지즈야)를 매기는 틀을 세웠다. 아랍 군인은 바스라와 쿠파 같은 군영 도시와 뒤의 푸스타트에 모여 살며 정복지 농민과 섞이지 않았고, 전승에 따르면 디완(군인 명부와 재정 관청)에 이름이 오른 이들은 전리품과 세금에서 나오는 연금을 받았다. 디완은 사산과 동로마의 행정 관행을 이어받았다고 보며, 언제 만들었는지는 학자마다 다르다. 우마르는 정복한 도시에 협정으로 신앙과 재산을 보장해 주었다고 전하는데, 이른바 「우마르 협정」(비무슬림의 의무를 적은 문서)은 후대에 다듬어졌다는 견해가 많다. 638~639년에는 아라비아에 가뭄과 기근이 들어 우마르가 시리아와 이라크에서 곡식을 들여왔고, 이어 시리아에 아므와스의 역병이 번져 군인과 주민이 크게 죽었다. 전승은 우마르가 총독들의 재산을 조사해 불어난 재산을 나누게 했고, 아랍인이 정복지의 땅을 사들이는 것도 제한했다고 전한다. 정통 칼리프국의 재정과 군사 제도는 이렇게 정복과 함께 한꺼번에 만들어졌다. 히즈라(622년)를 원년으로 한 히즈라력도 그의 시기에 쓰이기 시작했다고 전한다. 644년 11월 메디나의 모스크에서 페르시아 출신 노예 아부 루울루아의 칼에 찔려 죽기 전 우마르는 여섯 사람의 협의체가 후계를 정하게 했다. 야르무크와 시리아·예루살렘의 정복은 「아랍의 정복과 동로마: 야르무크(636)·이집트·카르타고(698)와 우마이야 칼리프국」(같은 시기의 사건)에 있다."
+  subjects: [rashidun-caliphate]
+  tags: [politics, society]
+  sources: ["Hugh Kennedy, The Prophet and the Age of the Caliphates: The Islamic Near East from the 6th to the 11th Century (Longman, 1986)", "Fred M. Donner, The Early Islamic Conquests (1981)", "Hugh Kennedy, The Great Arab Conquests: How the Spread of Islam Changed the World We Live In (2007)", "al-Ṭabarī, Taʾrīkh al-rusul wa-l-mulūk (영역: The History of al-Ṭabarī, 전 40권, State University of New York Press, 1985~2007)"]
+
+- id: amr-egypt-conquest-639
+  year: 639
+  endYear: 647
+  title:
+    ko: "아므르 이븐 알아스의 이집트 정복과 푸스타트(639~647)"
+  summary:
+    ko: "아므르 이븐 알아스는 639년 말에서 640년 초 사이 수천 명의 군을 이끌고 시나이를 지나 이집트로 들어갔다. 640년 7월 헬리오폴리스에서 동로마 군을 이기고 바빌론 요새를 포위해 641년 4월 얻었으며, 641년 알렉산드리아 총대주교 키로스와 맺은 협정으로 알렉산드리아가 열려 642년 9월 아므르가 입성했다. 조건은 공납과 일정 기간의 휴전이었고, 동로마 제국의 군대는 배로 떠났다. 아므르는 바빌론 요새 곁에 군영 도시 푸스타트를 세웠고, 그곳의 모스크가 이집트 이슬람의 첫 중심이 되었다. 푸스타트는 750년 아바스가 도읍을 이웃의 알아스카르로 옮긴 뒤에도 경제와 행정의 중심으로 남아 969년 카이로가 서기까지 이어졌다. 이집트 주민 대다수는 콥트 교회를 따르는 기독교도였고, 협정 아래 지즈야와 토지세를 내며 신앙을 지켰다. 동로마 황제가 지지한 칼케돈 신조를 따르지 않던 콥트 교회가 아랍 지배를 오히려 받아들였다는 해석과, 협정과 세금이 주된 이유였다는 해석이 함께 있다. 642~643년 아므르는 키레나이카와 트리폴리 쪽으로 나아갔다. 우스만이 아므르를 해임하고 압둘라 이븐 사아드를 앉히자(645년 무렵) 동로마 함대가 알렉산드리아를 잠시 되찾았고(645/646년), 아므르가 복귀해 니키우에서 이기고 도시를 되찾았다고 전한다. 647년에는 후임 총독 압둘라 이븐 사아드가 이프리키야로 원정해 수페툴라 둘레에서 동로마 총독 그레고리오스를 물리쳤으나 아랍군은 곧 이집트로 돌아갔다. 이 정복은 정통 칼리프국이 동로마 제국에서 가장 값진 곡창을 빼앗은 일이었다. 알렉산드리아의 곡물은 오래도록 콘스탄티노폴리스의 식량을 지탱했다. 그 뒤 이집트의 세금과 곡물은 아랍 군인의 연금과 메디나의 식량으로 쓰였고, 우마르가 이집트의 곡물을 홍해 쪽으로 보내려고 옛 운하를 다시 파게 했다고 전한다."
+  subjects: [rashidun-caliphate, byzantine-empire]
+  links:
+    - { from: rashidun-caliphate, to: byzantine-empire, note: "이집트·키레나이카·트리폴리타니아 해안 정복 (639~647)" }
+  tags: [war, politics]
+  sources: ["Hugh Kennedy, The Great Arab Conquests: How the Spread of Islam Changed the World We Live In (2007)", "Fred M. Donner, The Early Islamic Conquests (1981)", "Ibn ʿAbd al-Ḥakam, Futūḥ Miṣr wa-l-Maghrib wa-l-Andalus", "The Cambridge History of Egypt, vol. 1: Islamic Egypt, 640–1517 (Carl F. Petry 편, Cambridge University Press, 1998)"]
+
+- id: nihavand-iran-conquest-642
+  year: 642
+  endYear: 651
+  title:
+    ko: "니하반드 전투와 이란 정복, 야즈데게르드 3세의 죽음(642~651)"
+  summary:
+    ko: "642년 사산 군이 이란 고원 서부 니하반드에서 아랍군에 졌다. 아랍 쪽 사령관 누만 이븐 무카린이 이 싸움에서 죽었고, 아랍 사료는 이를 '승리 중의 승리'라 불렀다. 야즈데게르드 3세는 이스파한·케르만·시스탄을 거쳐 동쪽 메르브 쪽으로 물러났고, 아랍군은 뒤를 쫓아 지방별로 협정 또는 공략으로 이란 고원을 차지해 갔다. 라이와 하마단, 이스파한이 642~643년 무렵 넘어갔고, 644년 무렵 아제르바이잔이 아랍의 종주 아래 들어갔다. 우스만 시기인 650년 무렵 압둘라 이븐 아미르가 이끈 군이 파르스의 이스타크르를 차지했다. 이어 케르만과 시스탄이 협정으로 넘어갔고 651년에는 호라산의 니샤푸르·메르브가 열렸다. 정통 칼리프국이 이란 고원을 얻은 데에는 병력만이 아니라 협정이 컸다. 도시마다 사정이 달라 조약(술흐)으로 공납을 정하고 항복한 곳과 힘으로 점령된 곳의 대우가 갈렸다. 아랍군은 정복한 지방에 군영을 두어 이란 고원으로 나가는 거점으로 삼았다. 이란의 지방 귀족과 조로아스터교 사제 계층은 한동안 지방 행정을 맡았고, 세금 체계는 사산 제국의 틀을 대부분 이어받았다. 많은 도시와 지방 귀족(데흐칸)은 공납과 지즈야를 약속하고 땅과 신앙을 지켰으며, 조로아스터교의 불의 신전은 한동안 그대로 남았다. 정복 뒤에도 서부와 파르스에서는 아랍 총독에 맞선 반란이 이어졌다. 651년 야즈데게르드 3세가 메르브 가까이에서 죽었다. 방앗간 주인에게 살해되었다는 이야기가 널리 퍼져 있으나 사료마다 죽음의 경위가 다르고, 이로써 사산 제국이 끝났다. 카스피해 남쪽 산악의 다부이 왕조와 타바리스탄의 영주들은 협정으로 아랍군이 들어오지 못하게 막았다. 이 시기 이란 정복의 병력과 연대는 사료마다 차이가 커서 한 해로 못 박기 어렵다."
+  subjects: [rashidun-caliphate, sasanian-empire, dabuyid-dynasty]
+  links:
+    - { from: rashidun-caliphate, to: sasanian-empire, note: "니하반드 전투와 이란 고원 정복 (642~651)" }
+  tags: [war, politics]
+  sources: ["The Cambridge History of Iran, vol. 4: The Period from the Arab Invasion to the Saljuqs (R. N. Frye 편, Cambridge University Press, 1975)", "Hugh Kennedy, The Great Arab Conquests: How the Spread of Islam Changed the World We Live In (2007)", "Fred M. Donner, The Early Islamic Conquests (1981)", "al-Ṭabarī, Taʾrīkh al-rusul wa-l-mulūk (영역: The History of al-Ṭabarī, 전 40권, State University of New York Press, 1985~2007)"]
+  places: [{ name: 니하반드 전투, at: [48.37, 34.19], year: 642 }]
+
+- id: uthman-quran-644
+  year: 644
+  endYear: 656
+  title:
+    ko: "우스만의 칼리프 시대와 쿠란 정본(644~656)"
+  summary:
+    ko: "644년 11월 우마르가 죽은 뒤 여섯 사람의 협의체가 알리와 우스만을 두고 의견을 모아 우스만 이븐 아판을 칼리프로 뽑았다. 우마이야 가문 출신인 우스만의 12년 동안 파르스(650년 무렵)와 호라산(651)이 열렸고 시리아 총독 무아위야는 649년 키프로스로 함대를 보냈다. 655년 무렵 아랍 함대는 동로마 제국의 황제 콘스탄스 2세의 함대를 소아시아 남해안에서 물리쳤다(돛대 전투). 함대는 이집트와 시리아의 조선소에서 만들어졌고 이곳의 기독교도 선원이 많이 움직였다고 한다. 정통 칼리프국의 수도 메디나에는 정복지에서 거둔 재물이 쌓였으나 그 분배를 두고 말이 많았다. 이 시기 가장 이름난 일은 쿠란 정본이다. 전승에 따르면 우스만이 자이드 이븐 사비트 등에게 쿠란 필사본을 하나로 맞추게 하고(650년 무렵) 그 사본을 쿠파·바스라·다마스쿠스 같은 중심 도시에 보내 다른 본문을 불태우게 했다. 현대 학자들은 정본이 이루어진 시기와 과정을 놓고 더 이르다거나 더 늦다는 의견을 내며, 무함마드 생전에 이미 정리되었다고 보는 견해도 있고 시아파가 이를 받아들인다. 한편 우스만이 친족을 총독 자리에 앉히고(시리아의 무아위야, 쿠파의 알왈리드 이븐 우크바, 이집트의 압둘라 이븐 사아드) 전리품을 불공평하게 나눈다는 불만이 쿠파·바스라·이집트의 군인들 사이에 쌓였다. 656년 6월 이집트에서 온 반란자들이 메디나로 들어와 집을 에워싸고 우스만을 죽였다. 수니파는 우스만을 셋째 정통 칼리프로 꼽고, 시아파는 그의 정책을 비판하며, 뒤에 카리지파가 되는 이들은 우스만과 알리를 둘 다 비난했다. 동로마와의 전쟁은 「아랍의 정복과 동로마: 야르무크(636)·이집트·카르타고(698)와 우마이야 칼리프국」(앞의 사건)에 이어진다."
+  subjects: [rashidun-caliphate, byzantine-empire]
+  tags: [politics, religion, war]
+  sources: ["Wilferd Madelung, The Succession to Muhammad: A Study of the Early Caliphate (Cambridge University Press, 1997)", "Hugh Kennedy, The Prophet and the Age of the Caliphates: The Islamic Near East from the 6th to the 11th Century (Longman, 1986)", "Fred M. Donner, The Early Islamic Conquests (1981)", "al-Ṭabarī, Taʾrīkh al-rusul wa-l-mulūk (영역: The History of al-Ṭabarī, 전 40권, State University of New York Press, 1985~2007)"]
+
+- id: first-fitna-656
+  year: 656
+  endYear: 661
+  title:
+    ko: "알리와 제1차 내전: 낙타 전투·시핀·카리지파(656~661)"
+  summary:
+    ko: "656년 6월 우스만이 살해된 뒤 메디나에서 알리 이븐 아비 탈리브가 칼리프로 추대되었다. 우스만의 피를 갚으라는 요구로 탈하와 주바이르, 무함마드의 아내 아이샤가 바스라로 가서 맞섰고, 656년 12월 바스라 근처의 낙타 전투에서 알리가 이겼다(탈하와 주바이르가 죽었고 아이샤는 메디나로 돌려보내졌다). 알리는 쿠파를 새 근거지로 삼았다. 우스만의 친족인 시리아 총독 무아위야는 알리의 즉위를 인정하지 않고 우스만의 복수를 내세웠다. 657년 7월 유프라테스 상류의 시핀에서 두 군이 맞붙어 여러 날 싸운 끝에 무아위야 쪽이 쿠란 구절을 창끝에 걸어 중재를 청했다. 중재(타크킴)를 받아들이자 알리의 진영에서 '판결은 오직 신의 몫'이라며 이탈한 사람들이 나왔는데, 이들이 카리지파다. 알리는 658년 나흐라완에서 이들을 쳤으나 그 뒤로도 카리지파는 두 편 모두를 불의하다고 보며 저항했다. 이 내전으로 정통 칼리프국의 중심은 메디나가 아니라 이라크의 쿠파로 옮겨 갔고 싸움의 무대는 시리아와 이라크가 되었다. 알리를 지지한 사람들(뒤의 시아파)과 알리를 떠난 카리지파, 우스만의 가문과 시리아 군을 이끈 무아위야의 세력으로 이슬람 공동체의 큰 갈래가 이때 그어졌다. 658년 아므르 이븐 알아스가 무아위야를 위해 이집트를 차지했고, 660년 무아위야는 예루살렘에서 칼리프로 인정받았다고 전한다. 661년 1월 쿠파에서 카리지파 이븐 물잠이 알리를 칼로 쳐 알리가 죽자, 알리의 맏아들 하산이 잠시 칼리프로 인정되었다가 같은 해 무아위야와 협정을 맺고 물러났다. 이로써 정통 칼리프국의 시대가 끝나고 무아위야의 우마이야 칼리프국이 열렸다. 수니파는 알리를 넷째 정통 칼리프로, 시아파는 첫째 이맘으로 받든다."
+  subjects: [rashidun-caliphate, umayyad-caliphate]
+  links:
+    - { from: umayyad-caliphate, to: rashidun-caliphate, note: "알리 암살과 하산의 양위로 칼리프 자리 이어받음 (661)" }
+  tags: [war, politics, religion]
+  sources: ["Wilferd Madelung, The Succession to Muhammad: A Study of the Early Caliphate (Cambridge University Press, 1997)", "Hugh Kennedy, The Prophet and the Age of the Caliphates: The Islamic Near East from the 6th to the 11th Century (Longman, 1986)", "G. R. Hawting, The First Dynasty of Islam: The Umayyad Caliphate AD 661–750 (Routledge, 1986)", "al-Ṭabarī, Taʾrīkh al-rusul wa-l-mulūk (영역: The History of al-Ṭabarī, 전 40권, State University of New York Press, 1985~2007)"]
+
+- id: muawiya-umayyad-661
+  year: 661
+  endYear: 680
+  title:
+    ko: "무아위야와 우마이야 칼리프국의 성립(661~680)"
+  summary:
+    ko: "661년 알리가 죽고 하산이 물러난 뒤 시리아 총독이던 무아위야 이븐 아비 수프얀이 칼리프로 인정받았다. 무아위야는 우스만과 같은 우마이야 가문 출신이며, 다마스쿠스를 도읍으로 삼아 우마이야 칼리프국을 열었다. 무아위야의 힘은 시리아의 아랍 부족 군대에서 나왔고 특히 칼브 부족과 혼인으로 이어져 있었다. 661년은 훗날 '공동체가 하나가 된 해'(아므 알자마아)로 불렸다. 무아위야는 아라비아의 유력 가문을 후한 선물로 달래면서 시리아의 아랍 부족 군대를 기둥으로 삼았고, 무함마드의 동료들이 모인 메디나는 더 이상 정치의 중심이 아니었다. 그는 동로마의 행정 관행과 그리스어를 쓰는 관리들을 그대로 두었고 기독교도 관리를 곁에 두었다. 이라크는 지야드 이븐 아비히 같은 총독이 엄하게 다스렸고, 이프리키야에서는 670년 우크바 이븐 나피가 카이라완을 세웠다. 호라산 총독들은 트란스옥시아나로 원정했다. 동로마 제국과는 해마다 변경을 다투었고 674~678년 콘스탄티노폴리스를 포위하기에 이르렀다(「아랍의 콘스탄티노폴리스 포위(674~678·717~718)와 그리스의 불」(뒤의 사건)). 무아위야는 676년 무렵 아들 야지드를 후계자로 정해 사람들의 맹세를 받게 했다. 칼리프 자리를 아들에게 물려주려는 이 시도에 메디나와 메카의 유력자들이 반발했고, 후대의 비판자들은 이것을 칼리프 제도가 왕조로 바뀐 시작으로 본다. 반면 수니 쪽 전승은 무아위야를 무함마드의 동료이자 유능한 통치자로 평가한다. 680년 4월 무아위야가 죽고 야지드 1세가 뒤를 이었다. 무아위야 시기에 우마이야 칼리프국은 동쪽으로 호라산, 서쪽으로 이프리키야까지 넓어졌고 세금과 징병은 지방 총독이 맡았다. 알리의 아들 후사인은 맹세를 거부했다."
+  subjects: [umayyad-caliphate, byzantine-empire]
+  tags: [politics]
+  sources: ["G. R. Hawting, The First Dynasty of Islam: The Umayyad Caliphate AD 661–750 (Routledge, 1986)", "Hugh Kennedy, The Prophet and the Age of the Caliphates: The Islamic Near East from the 6th to the 11th Century (Longman, 1986)", "Wilferd Madelung, The Succession to Muhammad: A Study of the Early Caliphate (Cambridge University Press, 1997)", "al-Ṭabarī, Taʾrīkh al-rusul wa-l-mulūk (영역: The History of al-Ṭabarī, 전 40권, State University of New York Press, 1985~2007)"]
+
+- id: karbala-680
+  year: 680
+  endYear: 687
+  title:
+    ko: "카르발라(680)와 시아의 형성(680~687)"
+  summary:
+    ko: "680년 무아위야가 죽고 야지드 1세가 칼리프가 되자 알리의 아들 후사인은 충성 맹세를 거부하고 메디나에서 메카로 옮겼다. 쿠파 사람들이 편지로 그를 이맘으로 청하자 후사인은 사촌 무슬림 이븐 아낄을 먼저 보내고 가족과 추종자 일흔 명 안팎을 이끌고 쿠파로 향했다. 쿠파 총독 우바이드 알라 이븐 지야드가 무슬림을 죽이고 도시를 눌러 지지가 사라졌다. 680년 10월 10일(무하람월 10일, 아슈라) 후사인 일행은 유프라테스 서안의 카르발라에서 우마르 이븐 사드가 이끈 수천 명의 우마이야 칼리프국 군에게 둘러싸여 후사인과 남자들이 거의 다 죽었다. 여자와 아이들은 쿠파를 거쳐 다마스쿠스로 끌려갔다가 뒤에 야지드가 메디나로 돌려보냈다고 전한다. 이 일은 알리를 따르던 이들에게 깊은 죄책감을 남겼다. 684년 '속죄자들'(타와분)이 쿠파를 떠나 우마이야 군과 싸우다 쓰러졌고, 685~687년에는 무크타르 이븐 아비 우바이드가 쿠파에서 알리의 아들 무함마드 이븐 알하나피야를 이맘으로 내세워 후사인의 복수를 내걸고 비아랍 개종자들까지 모아 우마이야 쪽을 쳤으나 687년 바스라에서 온 이븐 알주바이르 쪽 무스압의 군에게 죽었다. 후사인의 머리가 쿠파 총독 앞과 다마스쿠스의 야지드 앞에 보내졌다는 이야기가 전하며 사료마다 세부가 다르다. 야지드가 이 일을 얼마나 지시했는지는 학자들 사이에서도 갈린다. 683년에는 메디나 사람들이 야지드에게 반기를 들었으나 알하라 싸움에서 우마이야 군에게 꺾였고 도시가 약탈당했다. 뒤에 시아파는 아슈라의 애도 의례와 알리의 후손을 이맘으로 받드는 교리를 다듬어 갔고, 수니파는 후사인을 순교한 무함마드의 외손자로 존경하면서 야지드의 책임을 둘러싸고 의견이 갈린다."
+  subjects: [umayyad-caliphate]
+  tags: [war, religion, politics]
+  sources: ["Wilferd Madelung, The Succession to Muhammad: A Study of the Early Caliphate (Cambridge University Press, 1997)", "G. R. Hawting, The First Dynasty of Islam: The Umayyad Caliphate AD 661–750 (Routledge, 1986)", "Hugh Kennedy, The Prophet and the Age of the Caliphates: The Islamic Near East from the 6th to the 11th Century (Longman, 1986)", "al-Ṭabarī, Taʾrīkh al-rusul wa-l-mulūk (영역: The History of al-Ṭabarī, 전 40권, State University of New York Press, 1985~2007)"]
+  places: [{ name: 카르발라 전투, at: [44.03, 32.61], year: 680 }]
+
+- id: second-fitna-683
+  year: 683
+  endYear: 692
+  title:
+    ko: "제2차 내전: 이븐 알주바이르와 마르완 가문의 승리(683~692)"
+  summary:
+    ko: "683년 야지드 1세가 죽자 우마이야 칼리프국은 흔들렸다. 어린 아들 무아위야 2세는 몇 주에서 두어 달 만에 죽었고(물러났다는 전승도 있다) 후계를 지명하지 않았다. 메카에서 일찍부터 야지드에게 맞서 온 압둘라 이븐 알주바이르가 칼리프를 칭하자 히자즈와 이라크, 이집트의 많은 곳이 그를 받아들였다. 683년 야지드의 군이 메카를 포위해 카바 신전이 불에 상했으나, 야지드가 그해 11월 죽자 포위군은 물러났다. 시리아에서는 부족 연합이 갈렸다. 684년 8월 마르즈 라히트에서 우마이야 가문의 마르완 1세가 칼브 부족을 중심으로 한 이들과 함께 카이스 부족 쪽을 물리쳐 칼리프로 인정받았다. 마르완은 685년 이집트를 되찾고 곧 죽었으며 아들 압드 알말리크가 이었다. 한편 쿠파에서는 685~687년 무크타르가 일어났다가 이븐 알주바이르의 동생 무스압에게 꺾였다. 압드 알말리크는 691년 이라크로 쳐들어가 마스킨 전투에서 무스압을 죽였고, 이어 장군 하자즈 이븐 유수프가 692년 3월부터 메카를 포위해 10~11월 이븐 알주바이르를 쓰러뜨렸다. 이로써 우마이야 칼리프국이 마르완 가문의 손으로 다시 하나가 되었다. 내전 내내 카리지파는 이라크와 이란 남부에서 따로 싸웠다. 이븐 알주바이르는 메카에서 칼리프를 칭했을 때 알리 가문이나 카리지파와도 다른 길을 걸었고 히자즈의 지지를 받았다. 이 내전에서는 정복의 이익을 나누는 방식과 누가 칼리프가 될 자격이 있는지를 둘러싼 물음이 한꺼번에 터져 나왔다. 이 내전은 시리아의 아랍 부족 군대가 칼리프 자리를 좌우한다는 사실과 부족 사이의 대립이 오래 남는다는 사실을 보였다."
+  subjects: [umayyad-caliphate]
+  tags: [war, politics]
+  sources: ["G. R. Hawting, The First Dynasty of Islam: The Umayyad Caliphate AD 661–750 (Routledge, 1986)", "Hugh Kennedy, The Prophet and the Age of the Caliphates: The Islamic Near East from the 6th to the 11th Century (Longman, 1986)", "al-Ṭabarī, Taʾrīkh al-rusul wa-l-mulūk (영역: The History of al-Ṭabarī, 전 40권, State University of New York Press, 1985~2007)"]
+
+- id: abd-al-malik-reforms-692
+  year: 692
+  endYear: 705
+  title:
+    ko: "압드 알말리크의 개혁: 바위의 돔·아랍어 행정·화폐(692~705)"
+  summary:
+    ko: "내전을 이긴 압드 알말리크(685~705)는 제국의 체제를 다시 짰다. 692년 무렵 예루살렘 성전산에 바위의 돔이 완성되었다. 지금 남은 가장 오래된 이슬람 기념 건축으로 팔각 구조에 쿠란 구절과 무함마드를 가리키는 비문이 둘려 있다. 같은 시기 비잔티움식 모양을 따르던 금화와 사산식 은화를 대신해 십자가나 사람 모습이 없고 아랍어 신앙 문구를 새긴 디나르(696~697년 무렵)와 디르함(698~699년 무렵)이 새로 만들어졌다. 이는 동로마 제국의 황제 유스티니아노스 2세와의 긴장 속에서 나온 조치로 해석된다. 바위의 돔이 선 곳은 유대교의 옛 성전이 있던 성전산이며 무함마드가 하늘에 올랐다고 전해지는 밤의 여행과 이어진다. 예루살렘 기독교의 성묘 교회와 견줄 만한 크기로 지어져 이슬람의 존재를 드러내려는 뜻이 있었다고 해석된다. 이 개혁은 서기관에게 아랍어를 아는 것을 요구해 비아랍 개종자(마와알리)의 몫과 지위 문제를 더 키우기도 했다. 행정 언어도 바뀌었다. 700년 무렵부터 이라크의 디완에서 페르시아어가, 시리아와 이집트의 디완에서 그리스어와 콥트어가 차례로 아랍어로 바뀌어 갔다. 이라크 총독 하자즈 이븐 유수프는 와시트를 새 군영 도시로 세우고(702년 무렵) 개종한 비아랍인을 도시에서 마을로 돌려보내 개종자에게도 지즈야를 거두었다고 사료는 적는데, 그를 가혹하게 그린 서술에는 뒤의 아바스 쪽 시각이 섞였다는 평가도 있다. 우편 제도(바리드)도 정비되었다. 이 개혁으로 우마이야 칼리프국은 부족 군대의 연합에서 아랍어와 이슬람 상징을 내세운 제국으로 바뀌었다는 평가가 널리 받아들여지나, 일부 학자는 변화가 더 점진적이었다고 본다. 압드 알말리크는 내전으로 흩어진 총독과 부족을 다시 묶어야 했고, 이 개혁은 칼리프국이 왕조 국가의 제도를 갖추는 과정이었다. 압드 알말리크가 705년 10월 죽고 아들 알왈리드 1세가 이었다."
+  subjects: [umayyad-caliphate, byzantine-empire]
+  tags: [politics, culture, economy]
+  sources: ["G. R. Hawting, The First Dynasty of Islam: The Umayyad Caliphate AD 661–750 (Routledge, 1986)", "Hugh Kennedy, The Prophet and the Age of the Caliphates: The Islamic Near East from the 6th to the 11th Century (Longman, 1986)", "The Cambridge History of Iran, vol. 4: The Period from the Arab Invasion to the Saljuqs (R. N. Frye 편, Cambridge University Press, 1975)"]
+
+- id: tabaristan-dabuyid-642
+  year: 642
+  endYear: 761
+  title:
+    ko: "카스피해 남안의 다부이 왕조와 바반드 왕조: 아랍에 맞선 산악 영주들(642~761)"
+  summary:
+    ko: "사산 제국이 무너진 뒤에도 카스피해 남쪽의 산악과 해안, 곧 길란·다일람·타바리스탄 일대는 아랍군에게 쉽게 열리지 않았다. 이 지방에서는 길 가브바라가 642년 무렵부터 이스파바드(옛 이란의 군사 칭호)를 칭하며 다스리기 시작했고, 그의 가문인 다부이 가문이 조로아스터교를 지키며 타바리스탄을 이어서 다스렸다. 가문은 자신들이 사산 왕가의 한 갈래라는 전승을 내세웠다. 지방 귀족들은 아랍군이 허락 없이 들어오지 않는다는 협정을 맺고 필요할 때 공물을 보내며 자립을 지켰다. 카스피해 남쪽의 숲과 알보르즈 산맥은 사산 시대에도 방어에 유리해 자립하는 귀족을 길러 냈고, 말을 탄 군대가 들어가기 어려운 지형이었다. 길 가브바라에서 다부야를 거쳐 이름 높은 파로한 대왕에 이르기까지 군주가 이어졌고, 파로한은 716~717년 우마이야 칼리프국의 장군 야지드 이븐 알무할랍이 고르간을 거쳐 쳐들어온 것을 물리쳤다. 파로한 대왕 뒤에는 다드부르즈미흐르와 섭정 파로한 소를 거쳐 쿠르시드가 올랐다. 651년 무렵 시작되었다고 전하는 바반드 왕조(전설상의 시조 바브)도 산지의 영주로 자리를 잡았다. 이 가문은 사산 왕 카바드 1세의 아들 카우스의 후손이라 내세웠으나 역사가들은 이를 의심한다. 이슬람은 이 지방에 느리게 퍼졌다. 아바스 칼리프국의 칼리프 알만수르는 호라산 반란을 구실로 759년 군을 보내 마지막 이스파바드 쿠르시드를 불시에 쳤고, 쿠르시드는 길란으로 달아났다가 760~761년 사로잡혔으며 그의 가족은 스스로 목숨을 끊었다고 전한다. 이로써 다부이 왕조가 끝나고 타바리스탄은 아바스 칼리프국의 지배 아래 들어왔다. 바반드 가문은 아바스 지배 아래에서도 산지에서 힘을 이어 갔다."
+  subjects: [dabuyid-dynasty, bavandid-dynasty, abbasid-caliphate, umayyad-caliphate]
+  links:
+    - { from: abbasid-caliphate, to: dabuyid-dynasty, note: "타바리스탄 정복과 다부이 왕조의 끝 (759~760)" }
+  tags: [politics, war]
+  sources: ["The Cambridge History of Iran, vol. 4: The Period from the Arab Invasion to the Saljuqs (R. N. Frye 편, Cambridge University Press, 1975)", "C. E. Bosworth, The New Islamic Dynasties: A Chronological and Genealogical Manual (Columbia University Press, 1996)", "Hugh Kennedy, The Early Abbasid Caliphate: A Political History (Croom Helm, 1981)", "al-Ṭabarī, Taʾrīkh al-rusul wa-l-mulūk (영역: The History of al-Ṭabarī, 전 40권, State University of New York Press, 1985~2007)"]
+
+- id: ifriqiya-kairouan-665
+  year: 665
+  endYear: 688
+  title:
+    ko: "우크바 이븐 나피와 카이라완의 건설, 쿠사일라의 저항(665~688)"
+  summary:
+    ko: "이집트에서 서쪽으로 나아간 아랍군은 이프리키야(지금의 튀니지와 알제리 동부)에서 동로마 제국의 총독령과 베르베르 부족들을 상대해야 했다. 665년 무렵 무아위야 이븐 후다이즈가 이프리키야를 원정해 동로마군을 쳤고, 670년 우크바 이븐 나피 알피흐리가 해안에서 떨어진 내륙에 군영 도시 카이라완을 세웠다. 바다에서 오는 동로마 함대의 공격을 피하고 군인을 모아 둘 수 있는 자리였다. 이프리키야는 옛 카르타고 이래 지중해의 곡창으로 동로마 제국에 중요한 땅이어서 카르타고와 해안 도시는 오래도록 동로마의 손에 남았다. 우마이야 칼리프국의 총독들이 해안이 아니라 내륙의 카이라완을 거점으로 삼은 까닭이다. 군영 도시 카이라완은 곧 모스크와 학문의 도시가 되어 뒤에 마그레브 이슬람의 중심이 되었다. 전승에 따르면 우크바는 이에 앞서 페잔의 가라마 둘레까지 원정했다고 한다. 674~675년 무렵 우크바가 물러나고 아부 알무하지르 디나르가 총독이 되어 베르베르 지도자 쿠사일라를 사로잡았다가 풀어 주고 이슬람을 받아들이게 했다. 681년 우크바가 총독으로 되돌아와 서쪽으로 나아가 대서양 해안까지 이르렀다고 전하나 이 이야기는 훨씬 뒤의 사료에 담겨 있다. 683년 우크바는 돌아오는 길에 비스크라 가까운 타후다에서 쿠사일라가 이끄는 베르베르와 동로마 병사들에게 둘러싸여 죽었다. 쿠사일라는 본래 그리스도교를 믿은 베르베르 왕으로 전하며, 아우라바 부족의 지도자이자 알타바 왕국의 왕이었다고 보는 견해가 있다. 그는 카이라완을 차지해 683년부터 몇 해 동안 이프리키야를 다스렸고 이 기간 아랍군은 키레나이카의 바르카까지 물러났다. 우크바가 카이라완에 남겨 두었던 주하이르 이븐 카이스가 총독이 되어 686~688년 무렵(690년설도 있다) 맘마에서 쿠사일라를 쳐 죽였고, 주하이르는 688년 바르카에서 동로마 습격대에게 죽었다. 이 사건들은 이슬람이 마그레브에 뿌리내리는 일이 베르베르 지도자들과의 관계에 크게 달려 있음을 보였다."
+  subjects: [umayyad-caliphate, altava-kingdom, byzantine-empire]
+  tags: [war, politics]
+  sources: ["Michael Brett·Elizabeth Fentress, The Berbers (Blackwell, 1996)", "Abdallah Laroui, The History of the Maghrib: An Interpretive Essay (Princeton University Press, 1977)", "Ibn ʿAbd al-Ḥakam, Futūḥ Miṣr wa-l-Maghrib wa-l-Andalus", "Hugh Kennedy, The Great Arab Conquests: How the Spread of Islam Changed the World We Live In (2007)"]
+
+- id: kahina-maghreb-693
+  year: 693
+  endYear: 711
+  title:
+    ko: "카히나의 저항과 마그레브 정복의 완성(693~711)"
+  summary:
+    ko: "693년 무렵 압드 알말리크는 하산 이븐 알누만을 이프리키야 총독으로 보내 다시 서쪽을 공략하게 했다. 하산이 카르타고를 차지한 일(698)은 「아랍의 정복과 동로마: 야르무크(636)·이집트·카르타고(698)와 우마이야 칼리프국」(앞의 사건)에 있다. 이 승리 뒤 하산은 베르베르의 저항에 부딪혔다. 아우레스 산지의 자나타 계통 자라와 부족(앗티자니는 루와타라고 한다)을 이끌던 여왕 디히야(아랍 이름 알카히나)가 하산의 군을 한때 물리쳐 키레나이카 쪽으로 물러나게 했다고 전한다. 디히야가 유대교를 믿었다는 전승이 있으나 현대 학자들은 그리스도교 신자였을 가능성을 가장 높게 보거나 토착 신앙으로 보며 정하지 못한다. 원군을 얻은 하산이 703년 무렵 디히야를 쓰러뜨려 아우레스 왕국이 끝났다. 아랍 사료는 디히야가 자기 땅을 불태워 아랍군이 얻을 것이 없게 했다고 적는데, 이는 정복자 쪽의 서술이다. 700년대 초 무사 이븐 누사이르가 총독이 되어 마그레브 중부와 서부를 눌렀고 708년 알타바 왕국이 우마이야 칼리프국에 합쳐졌다. 무사는 베르베르 사람들을 이슬람으로 이끌어 병사로 받아들였고 타리크 이븐 지야드를 탕헤르 총독으로 두었다. 페잔의 가라만테스는 오아시스 도시 가라마를 중심으로 독자 왕국을 이어 갔으나 지하수가 줄어드는 가운데 아랍에 굴복했고 700년 무렵 왕국이 사라졌다. 아랍 정복이 마무리된 뒤 베르베르 사람들은 점차 이슬람으로 돌아섰고 많은 이들이 아랍 군대에서 병사로 복무했다. 그러나 개종한 베르베르는 마와알리로 취급되어 세금과 전리품 분배에서 차별받는다고 느꼈고, 이 불만이 뒤에 카리지파 사상과 만나 터져 나왔다. 이 무렵 마그레브 서쪽 끝까지 아랍 총독의 손이 닿았고, 711년 타리크가 이베리아로 건너가는 길이 열렸다(「우마이야의 이베리아 정복: 과달레테(711)·나르본(720)과 아스투리아스의 시작(코바동가 718)」(뒤의 사건))."
+  subjects: [umayyad-caliphate, aures-kingdom, altava-kingdom, garamantes]
+  links:
+    - { from: umayyad-caliphate, to: aures-kingdom, note: "카히나의 패배와 아우레스 정복 (703)" }
+    - { from: umayyad-caliphate, to: altava-kingdom, note: "알타바 왕국 합병 (708)" }
+  tags: [war, politics]
+  sources: ["Michael Brett·Elizabeth Fentress, The Berbers (Blackwell, 1996)", "Abdallah Laroui, The History of the Maghrib: An Interpretive Essay (Princeton University Press, 1977)", "Ibn ʿAbd al-Ḥakam, Futūḥ Miṣr wa-l-Maghrib wa-l-Andalus", "Hugh Kennedy, Muslim Spain and Portugal: A Political History of al-Andalus (1996)"]
+
+- id: berber-great-revolt-739
+  year: 739
+  endYear: 744
+  title:
+    ko: "베르베르 대반란과 바르가와타 연합(739~744)"
+  summary:
+    ko: "이슬람으로 돌아선 베르베르 사람들은 우마이야 총독들의 세금 압박과 차별에 불만이 컸다. 개종한 이들은 마와알리(비아랍 개종자)로 불리며 아랍 군인보다 낮은 대접을 받았고, 전승에 따르면 일부 총독은 개종자에게도 인두세를 물리고 노예로 삼을 베르베르 사람들을 요구했다. 740년(사료에 따라 739년 말) 탕헤르에서 마이사라 알마트가리가 일어나 카리지파 가운데 수프리파의 평등 사상을 내걸고 서쪽 마그레브를 휩쓸었다. 마이사라는 곧 자기 편에게 쫓겨 죽었고, 할리드 이븐 하미드 알자나티가 이어 같은 해 '귀족들의 전투'에서 아랍군을 크게 이겼다. 741년 2월 우마이야 칼리프 히샴이 칼툼 이븐 이야드에게 시리아·이집트 군 3만 명 안팎(사료의 수치)을 주어 보냈으나 칼툼은 그해 10~11월 바구라 전투에서 크게 져 죽었고 살아남은 발즈 이븐 비슈르의 군은 세우타에 갇혔다가 이베리아로 건너가 그곳의 베르베르 반란을 눌렀다(「우마이야의 이베리아 정복: 과달레테(711)·나르본(720)과 아스투리아스의 시작(코바동가 718)」(앞의 사건)). 그 뒤 히샴이 보낸 핸달라 이븐 사프완이 742년 알카른과 알아스남에서 베르베르 군을 물리쳐 카이라완을 지켰다. 이 반란에서 베르베르 사람들은 이슬람을 버린 것이 아니라 카리지파의 평등 사상으로 이슬람을 자기 것으로 만들었다. 이 반란으로 마그레브 서부는 우마이야 칼리프국의 손을 떠났고 카리지파 베르베르 국가들이 서는 길이 열렸다. 744년 모로코 대서양 평야의 타메스나에서는 바르가와타 연합을 이루고 살리흐 이븐 타리프가 베르베르어로 된 경전을 내세운 독자 종교를 폈다고 후대 아랍 사료는 전한다. 이 사료들은 적대 쪽에서 쓴 것이라 서술에 편견이 섞여 있다."
+  subjects: [umayyad-caliphate, barghawata-confederacy]
+  tags: [war, society, religion]
+  sources: ["Michael Brett·Elizabeth Fentress, The Berbers (Blackwell, 1996)", "Abdallah Laroui, The History of the Maghrib: An Interpretive Essay (Princeton University Press, 1977)", "G. R. Hawting, The First Dynasty of Islam: The Umayyad Caliphate AD 661–750 (Routledge, 1986)", "Ibn ʿAbd al-Ḥakam, Futūḥ Miṣr wa-l-Maghrib wa-l-Andalus"]
+
+- id: fihrid-emirate-745
+  year: 745
+  endYear: 772
+  title:
+    ko: "피흐르 토후국과 아바스의 이프리키야 회복(745~772)"
+  summary:
+    ko: "우마이야 칼리프국이 무너져 가던 744년 말 압드 알라흐만 이븐 하비브 알피흐리가 튀니스에서 이프리키야의 아미르를 칭했고, 총독 핸달라는 745년 2월 다마스쿠스로 돌아갔다. 압드 알라흐만은 정복자 우크바 이븐 나피의 증손이며 피흐르 토후국을 열었다. 피흐르 가문은 정복자의 후손이라는 권위로 이프리키야의 아랍 군인 사회를 이끌었으나 아바스 칼리프와 이프리키야의 베르베르 사이에서 어느 쪽에도 뿌리내리지 못했다. 이 시기 마그레브 서쪽에서는 카리지파 베르베르의 나라들이 하나씩 서고 있었다. 750년 아바스 칼리프국이 우마이야 칼리프국을 무너뜨리자 그는 금요 예배에서 아바스 칼리프의 이름을 부르지 않았다. 755년 동생 일리아스가 그를 카이라완에서 암살했고 뒤에 압드 알라흐만의 아들 하비브가 일리아스를 죽였다. 757년 카리지파 베르베르 와르판주마와 수프리파 동맹이 카이라완을 차지해 하비브가 죽고 피흐르 토후국이 끝났다. 이듬해 이바드파 아부 알카타브 알마아피리가 트리폴리와 카이라완을 차지했다. 아바스의 알만수르는 761~762년 무렵 장군 무함마드 이븐 알아슈아스를 보내 이프리키야를 되찾았다(이븐 알아슈아스는 762~765년 총독). 그 뒤 알아글라브 이븐 살림(765~767년, 아글라브 가문의 선조) 같은 총독이 짧게 거쳤고 카이라완은 베르베르의 공격을 되풀이해 받았다. 768년 무렵 총독 우마르 이븐 하프스 때 반란이 이어지다 771년 그가 죽자 야지드 이븐 하팀 알무할라비가 대군을 이끌고 와서 772년 이바드파를 물리치고 지도자 아부 하팀을 죽여 도시를 안정시켰다. 무할라브 가문 사람들이 그 뒤 20년 남짓 이프리키야를 맡았다. 카이라완은 이 혼란 속에서도 학자와 상인의 도시로 이어졌고 아랍 정주민과 베르베르 부족 사이의 긴장은 가라앉지 않았다. 이 일은 아바스가 먼 이프리키야를 직접 다스리기 어렵다는 사실을 보였다."
+  subjects: [fihrid-emirate, abbasid-caliphate, umayyad-caliphate]
+  tags: [politics, war]
+  sources: ["Michael Brett·Elizabeth Fentress, The Berbers (Blackwell, 1996)", "Abdallah Laroui, The History of the Maghrib: An Interpretive Essay (Princeton University Press, 1977)", "Hugh Kennedy, The Early Abbasid Caliphate: A Political History (Croom Helm, 1981)", "Ibn ʿAbd al-Ḥakam, Futūḥ Miṣr wa-l-Maghrib wa-l-Andalus"]
+
+- id: abbasid-revolution-747
+  year: 747
+  endYear: 750
+  title:
+    ko: "아바스 혁명과 우마이야 칼리프국의 몰락(747~750)"
+  summary:
+    ko: "우마이야 칼리프국은 말기에 부족 사이의 대립과 내전으로 힘이 줄었고, 호라산의 아랍 이주민과 비아랍 개종자는 불만이 컸다. 아바스 가문(무함마드의 숙부 아바스의 후손)은 이를 이용해 '무함마드 가문에서 나올 마흐디'를 내세워 은밀히 포교했고 출신이 분명하지 않으나 페르시아계로 전해지는 아부 무슬림이 이 일을 맡았다. 선전은 '무함마드 가문의 마흐디'라는 모호한 구호로 알리 가문 지지자와 아바스 가문 지지자를 한데 모았다. 호라산의 군대는 아랍 이주민과 이란 출신 개종자가 섞여 있었고 우마이야가 이란을 아랍 중심으로 다스린다는 불만이 컸다. 747년 6월 아부 무슬림이 메르브 둘레에서 검은 깃발을 올렸고 748년 메르브를 차지했다. 카흐타바 이븐 샤비브가 서쪽으로 군을 이끌어 이란 고원을 거쳐 이라크로 나아갔으나 749년 8월 유프라테스 가까이에서 죽었고, 그의 아들 하산이 749년 9월 쿠파에 들어갔다. 749년 말 아부 알아바스 알사파흐가 쿠파에서 칼리프로 선언되었다. 750년 1월 자브강 전투에서 우마이야의 마지막 칼리프 마르완 2세가 졌고 마르완은 이집트로 달아나 같은 해 8월 죽었다. 이어 우마이야 일족이 널리 학살되었다. 살아남은 압드 알라흐만은 이베리아로 건너가 코르도바 아미르국을 세웠다(「압드 알라흐만 1세와 코르도바 아미르국(756), 카롤루스의 스페인 원정과 론세스바예스(778)」(뒤의 사건)). 아바스 칼리프국은 알리 가문을 기대한 시아파 지지자들에게는 실망을 주어 반발을 낳았다. 이 혁명으로 아바스 칼리프국은 아랍 부족 귀족 중심에서 이란 출신 관료와 비아랍 개종자를 아우르는 체제로 바뀌었다고 평가된다. 아바스 칼리프국의 군대는 751년 중앙아시아의 탈라스에서 당군과 만났다(「고선지의 서역 원정과 탈라스 전투(747~755)」(같은 시기의 사건))."
+  subjects: [abbasid-caliphate, umayyad-caliphate]
+  links:
+    - { from: abbasid-caliphate, to: umayyad-caliphate, note: "자브 전투와 우마이야 칼리프국 타도 (750)" }
+  tags: [war, politics]
+  sources: ["Elton L. Daniel, The Political and Social History of Khurasan under Abbasid Rule, 747–820 (Bibliotheca Islamica, 1979)", "Hugh Kennedy, The Early Abbasid Caliphate: A Political History (Croom Helm, 1981)", "G. R. Hawting, The First Dynasty of Islam: The Umayyad Caliphate AD 661–750 (Routledge, 1986)", "al-Ṭabarī, Taʾrīkh al-rusul wa-l-mulūk (영역: The History of al-Ṭabarī, 전 40권, State University of New York Press, 1985~2007)"]
+
+- id: mansur-baghdad-754
+  year: 754
+  endYear: 775
+  title:
+    ko: "알만수르와 바그다드의 건설(754~775)"
+  summary:
+    ko: "754년 알사파흐가 죽고 동생 알만수르가 칼리프에 올랐다. 숙부 압둘라 이븐 알리가 자기가 후계자라며 일어났으나 아부 무슬림이 이를 꺾었고, 알만수르는 755년 공을 세운 아부 무슬림마저 불러들여 죽였다. 호라산에서는 그를 따르던 이들의 반란이 이어졌다. 알리 가문 쪽에서는 762년 무함마드 알나프스 알자키야가 메디나에서, 그의 동생 이브라힘이 바스라에서 일어났으나 763년 모두 꺾였다. 알만수르는 이런 반란의 무대가 되기 쉬운 쿠파를 떠나 762년 티그리스강 서안에 원형 도시 '평화의 도시'(마디나트 알살람), 곧 아바스 칼리프국의 새 도읍 바그다드를 세우기 시작해 766년 무렵 완성했다. 바그다드는 이라크의 곡창과 운하·강의 교통을 쥔 자리에 있었다. 도시는 지름 2킬로미터 남짓의 원형 성벽 안에 궁전과 대모스크, 관청과 근위대 병영을 모으고 바깥에 시장과 주택가가 이어지게 지었다. 건설에는 시리아·이란·이라크 각지에서 일꾼과 장인이 모였다고 하며 그 수는 사료마다 다르다. 759년에 군을 보내 760~761년 무렵 타바리스탄의 다부이 왕조를 끝냈고, 이프리키야는 761~762년 무렵 되찾았다. 알만수르는 이란 출신 관료 가문인 바르마크 가문의 할리드를 곁에 두었고, 재상·재정·우편·정보를 맡는 관청을 정비해 칼리프가 다스리는 체제를 다졌다. 775년 10월 메카 순례길에 죽었다. 알만수르는 검소하고 재정에 엄한 칼리프로 알려졌으며, 그의 시기 아바스 칼리프국의 땅은 동쪽의 호라산에서 서쪽의 이프리키야까지 닿았다. 764년 알만수르가 조카 이사 이븐 무사를 제치고 아들 알마흐디를 후계자로 올려 부자 상속이 자리 잡았다. 이후 바그다드는 이슬람 세계에서 가장 큰 도시로 자랐으나 인구 추산은 사료마다 크게 다르다."
+  subjects: [abbasid-caliphate, dabuyid-dynasty]
+  tags: [politics, war]
+  sources: ["Hugh Kennedy, The Early Abbasid Caliphate: A Political History (Croom Helm, 1981)", "Hugh Kennedy, When Baghdad Ruled the Muslim World: The Rise and Fall of Islam's Greatest Dynasty (Da Capo Press, 2004)", "Elton L. Daniel, The Political and Social History of Khurasan under Abbasid Rule, 747–820 (Bibliotheca Islamica, 1979)", "al-Ṭabarī, Taʾrīkh al-rusul wa-l-mulūk (영역: The History of al-Ṭabarī, 전 40권, State University of New York Press, 1985~2007)"]
+
+- id: kharijite-states-maghreb-758
+  year: 758
+  endYear: 909
+  title:
+    ko: "마그레브 내륙의 카리지파 국가: 시질마사의 미드라르 왕조와 타헤르트의 루스탐 이맘국(758~909)"
+  summary:
+    ko: "카리지파는 공동체의 지도자를 혈통이 아니라 신앙과 덕으로 뽑아야 한다고 주장했고, 이 가르침은 마그레브의 베르베르 사이에 널리 퍼졌다. 757~758년 무렵 수프리파 카리지 베르베르(미크나사 부족)가 사하라 대상로의 북쪽 끝 시질마사를 세우고 삼구 이븐 와술(아부 알카심)이 이끌었다. 미드라르 왕조의 이름은 823~824년 무렵 이곳에 자리 잡은 미드라르 이븐 야사에서 왔으며 두 계보가 어떻게 이어지는지는 분명하지 않다. 시질마사는 사하라 남쪽의 금과 소금, 노예를 지중해 쪽으로 보내는 대상 무역의 길목이어서 번영했다. 한편 이바드파 카리지는 이프리키야에서 아바스에 밀린 뒤 761년 무렵 페르시아 출신 압드 알라흐만 이븐 루스탐이 타헤르트(지금 알제리 티아렛 둘레)를 세웠고, 777년 무렵 이바드파 이맘으로 뽑혔다. 루스탐 이맘국은 공동체가 이맘을 뽑는다는 이바드파의 원칙을 내세웠으나 실제로는 루스탐 가문에서 이맘이 이어졌고, 873~874년 무렵 후계 다툼을 겪었다. 타헤르트는 상인과 학자의 도시로 사하라 교역을 이바드파 상인 망으로 묶었다. 이 두 나라는 베르베르 사람들이 아랍 총독의 지배에서 벗어나 이슬람의 틀 안에서 스스로 지도자를 세운 모습이며, 사하라 이남의 금과 소금 교역이 경제를 떠받쳤다. 타헤르트의 이맘은 이웃 나라들과 사절을 주고받았고 코르도바의 우마이야 아미르와도 우호 관계를 맺었다고 전한다. 루스탐 이맘국은 아글라브 왕조·이드리스 왕조와 맞서거나 손잡으며 힘을 지켰으나 880년대에는 타헤르트 둘레로 줄어들었다. 909년 훗날 파티마 칼리프국을 세우게 되는 아부 압둘라 알시이의 쿠타마 군이 타헤르트를 차지해 이맘국이 끝났고, 이바드파 공동체는 사하라의 우아르글라 쪽으로 옮겨 갔다. 같은 해 시질마사에서는 감옥에 있던 이스마일파 마흐디가 아부 압둘라의 도움으로 풀려났다고 전한다."
+  subjects: [midrarid-dynasty, rustamid-imamate, aghlabid-dynasty, idrisid-dynasty, fatimid-caliphate]
+  tags: [politics, religion, economy]
+  sources: ["Michael Brett·Elizabeth Fentress, The Berbers (Blackwell, 1996)", "Abdallah Laroui, The History of the Maghrib: An Interpretive Essay (Princeton University Press, 1977)", "John C. Wilkinson, The Imamate Tradition of Oman (Cambridge University Press, 1987)", "Heinz Halm, The Empire of the Mahdi: The Rise of the Fatimids (Brill, 1996)"]
+
+- id: idrisid-fez-788
+  year: 788
+  endYear: 921
+  title:
+    ko: "이드리스 왕조와 페스(788~921)"
+  summary:
+    ko: "786년 메카 가까이 파크흐에서 알리 가문의 후사인 이븐 알리가 아바스 칼리프국의 칼리프 알하디에 맞서 일어났다가 졌다. 이 싸움에서 살아남은 이드리스 이븐 압둘라(무함마드의 외손자 하산의 증손)는 마그레브로 달아나 788년 옛 로마 도시 볼루빌리스, 곧 왈릴리에 자리 잡았다. 그곳의 베르베르 아우라바 부족이 그를 이맘으로 받들어 모로코 북부에 이드리스 왕조가 섰다. 이드리스는 아우라바 부족의 지지를 얻어 이맘으로 추대되었고 주변의 다른 베르베르 부족에게도 영향을 넓혔다. 이 왕조는 알리와 파티마의 후손이 마그레브에 세운 첫 나라로서 이슬람의 정통성을 둘러싼 논쟁의 중심에 있었다. 이드리스는 789년 페스를 세웠다고 전하나 791년 아바스 칼리프 하룬 알라시드가 보냈다는 사자에게 독살되었다는 전승이 있다. 이드리스 2세는 아버지가 죽은 뒤 태어났고 아우라바 사람들의 보호 아래 자라 802년 무렵 이맘으로 추대되었으며 809년 도읍을 왈릴리에서 페스로 옮겼다. 그는 안달루스와 이프리키야에서 온 이주민을 받아들여 페스를 이슬람 학문과 상업의 중심으로 키웠고, 모로코의 이슬람화가 이 시기에 크게 나아갔다. 828년 이드리스 2세가 죽자 아들 무함마드가 땅을 형제들에게 나누어 주어 왕조의 힘이 흩어졌다. 10세기에는 이프리키야의 파티마 칼리프국과 코르도바의 우마이야 사이에 끼여 이드리스 가문은 두 쪽의 가신 노릇을 해야 했다. 9세기 중엽 페스에는 카이라완에서 온 이주민 구역과 안달루스에서 온 이주민 구역이 나뉘어 생겼고, 파티마 알피흐리가 859년 카라위인 모스크를 세웠다고 전한다. 무함마드 이후 알리 1세·야히야 1세·야히야 2세·알리 2세·야히야 3세를 거쳐 야히야 4세에 이르렀고, 파티마의 쿠타마 장군 마살라 이븐 후부스가 페스를 차지해 야히야 4세를 폐위한 뒤 미크나사의 무사 이븐 아비 알아피야에게 서부를 맡겼다(해는 917~922년 사이로 사료마다 갈린다). 이드리스 가문은 리프와 북부 산지로 밀려났다."
+  subjects: [idrisid-dynasty, abbasid-caliphate, fatimid-caliphate]
+  tags: [politics, religion]
+  sources: ["Michael Brett·Elizabeth Fentress, The Berbers (Blackwell, 1996)", "Abdallah Laroui, The History of the Maghrib: An Interpretive Essay (Princeton University Press, 1977)", "Ibn ʿAbd al-Ḥakam, Futūḥ Miṣr wa-l-Maghrib wa-l-Andalus"]
+
+- id: harun-al-rashid-786
+  year: 786
+  endYear: 809
+  title:
+    ko: "하룬 알라시드의 통치와 아바스의 전성기(786~809)"
+  summary:
+    ko: "하룬 알라시드는 알마흐디의 아들로, 786년 형 알하디가 죽은 뒤 아바스 칼리프국의 다섯째 칼리프에 올랐다. 초기에는 바르마크 가문의 야흐야 이븐 할리드가 재상으로 국정을 이끌었고 그의 아들 파들과 자파르가 요직을 맡았다. 하룬은 796년 무렵 유프라테스 강가의 라카에 궁정을 옮겨 오래 머물렀다. 803년 1월 그는 자파르를 죽이고 바르마크 가문의 권력을 거두었는데 이유는 사료마다 다르다. 동로마 제국과는 해마다 변경에서 싸웠고, 806년 하룬이 직접 소아시아로 들어가 헤라클레아를 공략하자 동로마 제국의 황제 니케포로스 1세가 공물을 약속했다. 이 시기 바그다드는 상업과 학문의 중심으로 커 가고 있었고 하룬의 궁정에는 시인과 음악가, 학자가 모였다. 하룬이 보낸 코끼리 아불 아바스가 800년 황제로 대관한 카롤루스에게 802년 닿았다고 프랑크 연대기는 적는다(「카롤루스의 황제 대관(800)과 아헨 화약(812): 서방 제국과 동로마의 인정」(뒤의 사건)). 하룬은 제국을 아들들에게 나누어 물려줄 계획을 세워 802년 메카 카바에 문서를 걸게 했다. 알아민을 첫째 후계자로, 알마문을 둘째 후계자(호라산 총독)로, 알무타만(알카심)을 셋째 후계자로 정하는 내용이었다. 이 약속은 하룬이 죽은 뒤 내전의 씨앗이 되었다. 하룬의 궁정은 후대에 『천일야화』의 하룬 이야기로 전해졌으나 그 이야기들은 역사와 거리가 먼 설화다. 한편 먼 땅은 이미 칼리프의 손을 떠나고 있었다. 788년 모로코에서는 이드리스가 이맘으로 추대되었고 793년에는 오만에서 이맘국이 서서 총독의 지배를 벗어났다. 800년에는 이프리키야 총독 이브라힘 이븐 알아글라브에게 총독 자리를 세습하게 했다. 809년 3월 하룬은 호라산의 반란을 누르러 가다 투스에서 죽었다."
+  subjects: [abbasid-caliphate, byzantine-empire]
+  tags: [politics, diplomacy, war]
+  sources: ["Hugh Kennedy, The Early Abbasid Caliphate: A Political History (Croom Helm, 1981)", "Hugh Kennedy, When Baghdad Ruled the Muslim World: The Rise and Fall of Islam's Greatest Dynasty (Da Capo Press, 2004)", "al-Ṭabarī, Taʾrīkh al-rusul wa-l-mulūk (영역: The History of al-Ṭabarī, 전 40권, State University of New York Press, 1985~2007)"]
+
+- id: oman-ibadi-imamate-793
+  year: 793
+  endYear: 897
+  title:
+    ko: "오만 이바드 이맘국의 성립과 아바스의 정복(793~897)"
+  summary:
+    ko: "오만 이바드 이맘국이 선 오만은 아라비아 남동쪽 끝에서 이바드파를 받아들인 땅이다. 이바드파는 카리지파에서 갈라진 온건한 갈래로, 이맘은 혈통이 아니라 공동체가 뽑으며 학식과 덕을 갖춰야 하고 옳지 못하면 물러나야 한다고 본다. 749~751년 무렵 줄란다 이븐 마수드가 첫 이맘으로 뽑혔으나 아바스 칼리프국의 군에게 꺾였다. 793년 무함마드 이븐 아비 아판이 이맘으로 뽑혀 둘째 이맘국이 서고 오만 내륙의 니즈와가 중심이 되었다. 801년 무렵에는 와리스 이븐 카으브 알카루시가 이맘이 되었다. 9세기 내내 이맘들은 내륙 부족 연합의 지지를 받아 오만을 다스렸다. 893년 아바스 칼리프국의 칼리프 알무타디드의 군이 오만을 정복해 마지막 이맘 아잔 이븐 타밈이 죽고 둘째 이맘국이 끝났고 893~896년에는 아바스 총독이 다스렸다. 그러나 897년 이바드파 공동체가 새 이맘을 세워 셋째 이맘국이 서면서 오만은 다시 이맘국의 땅이 되었다. 오만 내륙의 이맘국은 해안의 항구 도시들을 통해 인도양 교역과 이어져 있었다. 오만의 이바드파 상인은 인도와 동아프리카 해안으로 퍼져 공동체를 넓혔다고 본다. 이맘은 부족 지도자와 학자의 협의로 뽑혔고, 이맘이 공동체의 정의를 지키지 못하면 폐위할 수 있다는 원칙은 때로 이맘의 권위를 약하게 하고 이맘국을 흔들었다. 오만에는 이바드파 말고도 수니파 주민과 해안의 상인 사회가 있었고 이맘국의 힘이 해안까지 미치는지는 시기마다 달랐다. 이바드파 이맘국은 오만의 정치 질서를 이웃 이슬람 나라들과 다르게 만들었고 오만 사람들의 정체성에도 이바드파가 깊이 새겨졌다. 오만 이바드파의 이맘 제도는 마그레브의 루스탐 이맘국과 같은 이바드파 신학을 공유하며 뒤에도 오만 정치의 바탕이 되었다."
+  subjects: [ibadi-imamate-of-oman, abbasid-caliphate, rustamid-imamate]
+  links:
+    - { from: abbasid-caliphate, to: ibadi-imamate-of-oman, note: "오만 이맘국 정복 (893)" }
+  tags: [politics, religion]
+  sources: ["John C. Wilkinson, The Imamate Tradition of Oman (Cambridge University Press, 1987)", "C. E. Bosworth, The New Islamic Dynasties: A Chronological and Genealogical Manual (Columbia University Press, 1996)"]
+
+- id: aghlabid-ifriqiya-800
+  year: 800
+  endYear: 909
+  title:
+    ko: "아글라브 왕조와 이프리키야(800~909)"
+  summary:
+    ko: "800년 아바스 칼리프국의 칼리프 하룬 알라시드는 이프리키야 총독이던 이브라힘 이븐 알아글라브에게 총독 자리를 세습하게 하고 해마다 정해진 금액(80만 디르함이라는 수치가 전한다)을 바치게 했다. 이로써 카이라완을 근거로 한 아글라브 왕조가 섰다. 아미르는 금요 예배와 화폐에 칼리프의 이름을 쓰면서 사실상 독립해 다스렸다. 이브라힘은 카이라완 가까이에 새 궁정 도시 알아바시야를 세웠다. 이브라힘 1세(800~812)와 아들 압둘라 1세(812~817)에 이어 오른 지야다트 알라 1세(817~838) 때 군인의 반란을 누르고 827년 시칠리아 정복을 시작했다(「아랍의 시칠리아 정복과 크레타(827~902), 바리 토후국과 루도비코 2세(847~871)」(뒤의 사건)). 시칠리아는 뒤에 아글라브 아미르가 보낸 총독들이 다스렸고 909년 아글라브 왕조가 무너진 뒤에도 시칠리아 토후국으로 이어졌다. 836년 무렵 지야다트 알라 1세가 카이라완 대모스크를 오늘의 모습으로 크게 다시 지었다. 학자 사흐눈이 정리한 말리크 법학파의 『무다우와나』가 이프리키야에서 마그레브 서쪽과 뒤에 안달루스까지 말리크파가 퍼지는 바탕이 되었다. 이 왕조는 카리지파 베르베르, 이웃한 루스탐 이맘국과 맞서는 한편 동로마 제국과 시칠리아·남이탈리아에서 싸웠다. 아글라브 왕조의 군대는 아랍계 군인과 노예 병사, 베르베르 부족병으로 이루어졌고 아랍 군인의 불만과 반란이 자주 일어났다. 재정은 이프리키야의 올리브와 곡물 농업, 지중해와 사하라 교역, 시칠리아 원정의 전리품에 기댔다. 지야다트 알라 1세 뒤 알아글라브·무함마드 1세·아흐마드·지야다트 알라 2세·무함마드 2세를 거쳐 이브라힘 2세(875~902)가 올랐다. 이브라힘 2세는 시칠리아를 마저 공략했으나 902년 칼라브리아 원정 중에 죽었고, 아들 압둘라 2세가 이었으나 903년 암살되어 그의 아들 지야다트 알라 3세가 올랐다. 지야다트 알라 3세는 909년 3월 쿠타마 베르베르를 이끈 이스마일파 선교사 아부 압둘라 알시이에게 라카다를 내주고 동쪽으로 달아나 왕조가 끝났다. 이프리키야는 파티마 칼리프국에 넘어갔다."
+  subjects: [aghlabid-dynasty, abbasid-caliphate, sicily-emirate, byzantine-empire, rustamid-imamate, fatimid-caliphate]
+  tags: [politics, war, religion]
+  sources: ["Michael Brett·Elizabeth Fentress, The Berbers (Blackwell, 1996)", "Abdallah Laroui, The History of the Maghrib: An Interpretive Essay (Princeton University Press, 1977)", "Heinz Halm, The Empire of the Mahdi: The Rise of the Fatimids (Brill, 1996)", "Hugh Kennedy, The Prophet and the Age of the Caliphates: The Islamic Near East from the 6th to the 11th Century (Longman, 1986)"]
+
+- id: mamun-civil-war-809
+  year: 809
+  endYear: 833
+  title:
+    ko: "알아민과 알마문의 내전, 알마문의 칼리프국과 지방 총독 왕조의 시작(809~833)"
+  summary:
+    ko: "809년 하룬이 죽자 칼리프 알아민과 호라산 총독 알마문 사이에 아버지가 정한 상속이 어긋나기 시작했다. 알아민이 810년 자기 아들을 후계자로 세우려 하자 알마문이 이를 거부했고 811년 전쟁이 터졌다. 알마문의 장군 타히르 이븐 후사인이 811년 라이에서 알아민의 군을 크게 이겼고 812~813년 바그다드를 포위했으며, 알아민은 813년 9월 붙잡혀 죽었다. 이 싸움으로 바그다드는 큰 피해를 입었다. 내전 동안 바그다드 시민들은 스스로 무기를 들고 알마문의 군에 맞서기도 했다. 알마문 시기에 아바스 칼리프국은 먼 땅의 총독에게 세습 권한을 내주고 그 대신 세금과 충성을 받는 방식으로 제국을 다스리는 길에 접어들었다. 알마문은 메르브에 머물며 칼리프가 되었고 817년 알리 가문의 알리 알리다를 후계자로 지명해 시아파와 화해하려 했다. 이에 바그다드의 아바스 가문이 반발해 이브라힘 이븐 알마흐디를 칼리프로 세웠고, 알리 알리다가 818년 죽자 알마문은 819년 바그다드로 돌아왔다. 알마문은 821년 타히르를 호라산 총독에 앉혔고 타히르 가문은 호라산을 세습하며 이름뿐인 아바스의 종주를 인정했다(타히르 왕조). 라피 이븐 알라이스의 반란(806~810년 무렵)을 누르는 데 공을 세운 사만 가문의 네 형제 누흐·아흐마드·야흐야·일리야스에게 819년 무렵 호라산 총독이 사마르칸트·페르가나·샤시·헤라트를 맡겼고, 이는 사만 왕조의 출발점이 되었다. 같은 때 예멘의 반란을 누르러 알마문이 보낸 무함마드 이븐 지야드는 티하마에 자비드를 세워 지야드 왕조를 열었다. 알마문은 학문을 후원했으나 833년 무타질라 신학을 국가가 내세워 쿠란이 창조되었다는 교리를 관리와 법관에게 강요하기 시작했다(미흐나). 알마문은 833년 8월 동로마 원정 중 죽었다."
+  subjects: [abbasid-caliphate, tahirid-dynasty, samanid-empire, ziyadid-dynasty]
+  tags: [war, politics, religion]
+  sources: ["Hugh Kennedy, The Early Abbasid Caliphate: A Political History (Croom Helm, 1981)", "Hugh Kennedy, When Baghdad Ruled the Muslim World: The Rise and Fall of Islam's Greatest Dynasty (Da Capo Press, 2004)", "C. E. Bosworth, The New Islamic Dynasties: A Chronological and Genealogical Manual (Columbia University Press, 1996)", "The Cambridge History of Iran, vol. 4: The Period from the Arab Invasion to the Saljuqs (R. N. Frye 편, Cambridge University Press, 1975)"]
+  places: [{ name: 바그다드 포위, at: [44.37, 33.33], year: 813 }]
+
+- id: baghdad-translation-movement-754
+  year: 754
+  endYear: 850
+  title:
+    ko: "바그다드의 번역 운동과 지혜의 집(754~850)"
+  summary:
+    ko: "아바스 칼리프국은 그리스·페르시아·인도의 학문을 아랍어로 옮기는 큰 작업을 후원했다. 알만수르 때 바그다드가 서면서 사산 궁정의 문헌과 인도 천문학서가 번역되었고, 이븐 알무카파가 팔레비어 우화집 『칼릴라와 딤나』를 아랍어로 옮겼다고 전한다. 종이를 만드는 법은 751년 탈라스 전투에서 사로잡힌 당 포로가 사마르칸트에 전했다는 전승이 있으나 학계는 이를 의심하며 종이가 그 전부터 중앙아시아에서 쓰였다고 본다(「고선지의 서역 원정과 탈라스 전투(747~755)」(앞의 사건)). 하룬 때 바그다드에 종이 공방이 생겼다고 한다. 값싼 종이는 책을 베끼는 일을 크게 늘렸다. 알마문은 바그다드의 '지혜의 집'(바이트 알히크마, 책을 모으고 옮기는 기관)을 후원해 번역을 이끌었다고 알려지나, 이 기관의 규모와 성격은 뒤에 부풀려졌다는 견해가 있다. 번역을 이끈 이로는 네스토리우스파 기독교도 의사 후나인 이븐 이스하크가 이름 높고, 갈레노스와 히포크라테스, 플라톤과 아리스토텔레스의 글이 그와 제자들의 손을 거쳐 아랍어로 옮겨졌다. 이 번역의 큰 줄기는 850년 무렵까지 이루어졌다. 바누 무사 형제 같은 부유한 후원자들이 동로마 제국 영토에서 그리스어 사본을 구해 오게 했다. 알콰리즈미는 인도 숫자와 방정식 풀이를 다룬 책을 써서 대수학(알자브르)의 이름이 되었고, 알킨디는 그리스 철학을 이슬람 사상과 맞추려 했다. 이 작업은 이슬람 세계의 의학·천문학·수학·철학의 바탕이 되었고 뒤에 아랍어에서 라틴어로 옮겨져 유럽의 학문에도 영향을 주었다. 번역과 학문의 후원에는 칼리프의 궁정뿐 아니라 바그다드의 관료와 상인 가문의 개인 후원도 컸다. 번역은 칼리프와 관료의 필요, 이슬람 이전 학문의 자산, 기독교도·유대교도·조로아스터교도 학자의 협력이 겹쳐 이루어졌다."
+  subjects: [abbasid-caliphate, byzantine-empire]
+  tags: [culture, society]
+  sources: ["Dimitri Gutas, Greek Thought, Arabic Culture: The Graeco-Arabic Translation Movement in Baghdad and Early ʿAbbāsid Society (Routledge, 1998)", "Hugh Kennedy, When Baghdad Ruled the Muslim World: The Rise and Fall of Islam's Greatest Dynasty (Da Capo Press, 2004)"]
+
+- id: yemen-ziyadid-zaydi-819
+  year: 819
+  endYear: 897
+  title:
+    ko: "예멘의 지야드 왕조와 유피르 왕조, 자이드파 이맘국의 성립(819~897)"
+  summary:
+    ko: "예멘은 이슬람 이전에 힘야르와 악숨의 지배를 겪고 무함마드 시기에 공동체에 들어온 땅이다. 아바스 시기 중앙의 힘이 약해지자 예멘은 지역별로 쪼개졌다. 819~820년 무렵 알마문이 보낸 무함마드 이븐 지야드가 홍해 쪽 티하마의 반란을 누르고 자비드를 세워 지야드 왕조를 열었다. 지야드 왕조는 아바스 칼리프국의 칼리프를 받들면서 사실상 독립해 자비드를 도읍으로 삼았고, 티하마는 홍해 교역과 학문의 중심이 되었다. 자비드에는 법학과 신학을 가르치는 학교가 서서 예멘 학문의 중심으로 자랐다. 예멘의 땅은 티하마 평야와 중부 고지, 북쪽 산악, 하드라마우트로 나뉘어 중앙 권력이 닿기 어려웠고 이 지형이 지역 왕조들이 따로 서는 바탕이 되었다. 한편 예멘 고지에서는 847년 무렵 힘야르 계통을 내세운 유피르 가문(유피르 이븐 아브드 알라흐만)이 사나 북서쪽의 산성을 근거지로 일어나 사나와 주변 고지를 다스리는 유피르 왕조가 되었고, 형식으로는 아바스 칼리프를 받들면서도 한때 자비드의 지야드 군주에게 자신의 종주권을 인정하게 했다. 북쪽 사다에서는 부족 사이의 다툼이 길어지자 897년 알리의 후손 알하디 일라 알하크 야흐야 이븐 알후사인이 부족 지도자들의 초청으로 사다에 들어와 이맘으로 추대되었다. 알하디는 자이드파 학자 알카심 알라시의 손자로, 이맘은 알리와 파티마의 후손 가운데 학식과 무력을 갖춘 사람이 나서서 선언하고 부족이 지지할 때 선다는 자이드파 이맘국의 틀을 만들었다. 이 이맘국은 사다 둘레에서 부족 분쟁을 중재하는 역할로 뿌리내렸다. 세 세력의 근거지인 티하마와 사나, 사다는 서로 다른 지형과 부족 사회 위에 서 있었다. 이 세 세력은 한 곳에 모이지 못한 채 서로 다투었다."
+  subjects: [ziyadid-dynasty, yufirid-dynasty, zaydi-imamate, abbasid-caliphate]
+  tags: [politics, religion]
+  sources: ["C. E. Bosworth, The New Islamic Dynasties: A Chronological and Genealogical Manual (Columbia University Press, 1996)", "Hugh Kennedy, The Prophet and the Age of the Caliphates: The Islamic Near East from the 6th to the 11th Century (Longman, 1986)", "Wilferd Madelung, The Succession to Muhammad: A Study of the Early Caliphate (Cambridge University Press, 1997)"]
+
+- id: samarra-turkish-guards-833
+  year: 833
+  endYear: 861
+  title:
+    ko: "알무타심의 투르크 군인과 사마라 천도(833~861)"
+  summary:
+    ko: "833년 알마문이 죽고 동생 알무타심이 아바스 칼리프국의 칼리프가 되었다. 알무타심은 중앙아시아에서 사들인 투르크 노예 군인(굴람)을 대규모로 모아 직속 군대로 삼았는데, 이들이 바그다드 주민과 자주 부딪히자 836년 바그다드에서 티그리스강을 따라 120킬로미터쯤 올라간 곳에 사마라를 세워 도읍을 옮겼다. 사마라는 50년 넘게 칼리프의 도읍이었고 궁궐과 병영, 대모스크가 들어섰다. 알무타심은 837~838년 아제르바이잔에서 오래 저항한 바박(후라미야파)을 쳐서 이겼고 838년 동로마 제국의 아모리온을 함락시켰다. 알와티크(842~847)에 이어 알무타와킬(847~861)은 알마문 때부터 이어진 미흐나를 848~851년 무렵 거두고 수니 법학자들과 화해했으며, 사마라에 나선형 첨탑 말위야가 있는 대모스크를 세웠다. 사마라는 바그다드와 달리 칼리프와 군인만을 위한 새 도시여서 투르크·페르가나·이집트 병사 같은 출신별 구역이 나뉘어 있었다고 한다. 도시 건설에 든 큰 비용은 재정에 부담이 되었다. 이 시기 칼리프국의 동쪽에서는 타히르 왕조가 호라산을 세습해 다스렸고, 이집트와 이프리키야, 예멘에서도 총독들이 점점 자립의 길을 걸었다. 투르크 군인 지휘관들은 칼리프보다 강해졌다. 861년 12월 알무타와킬은 아들 알문타시르와 투르크 장군들의 음모로 암살되었다. 칼리프가 군인에게 기대는 구조는 투르크 군인의 봉급과 정복의 전리품에 달려 있었다. 이 군대를 유지할 재정은 점점 기울었고 지방 총독과 장군의 세력이 커졌다. 알무타와킬은 투르크 장군들의 힘을 줄이려다 반감을 샀다고 한다. 이로써 장군들이 칼리프를 세우고 폐하는 사마라의 혼란이 시작되었다."
+  subjects: [abbasid-caliphate, tahirid-dynasty, byzantine-empire]
+  tags: [politics, war]
+  sources: ["Hugh Kennedy, When Baghdad Ruled the Muslim World: The Rise and Fall of Islam's Greatest Dynasty (Da Capo Press, 2004)", "Hugh Kennedy, The Armies of the Caliphs: Military and Society in the Early Islamic State (Routledge, 2001)", "al-Ṭabarī, Taʾrīkh al-rusul wa-l-mulūk (영역: The History of al-Ṭabarī, 전 40권, State University of New York Press, 1985~2007)"]
+
+- id: samarra-anarchy-861
+  year: 861
+  endYear: 892
+  title:
+    ko: "사마라의 혼란과 알무와파크, 지방 총독의 자립(861~892)"
+  summary:
+    ko: "861년 알무타와킬이 암살된 뒤 약 10년 동안 투르크 장군들이 칼리프를 세우고 폐했다. 알문타시르(861~862)가 반년 만에 죽은 뒤 알무스타인(862~866)이 즉위해 투르크 군의 압력을 피해 바그다드로 옮겼다가 폐위되었고, 알무타즈(866~869)와 알무흐타디(869~870)도 차례로 폐위되어 죽었다. 재정이 바닥나 군인에게 봉급을 제때 주지 못한 일이 되풀이되었다. 870년 즉위한 알무타미드(870~892)는 이름뿐인 칼리프였고, 실권은 동생 알무와파크가 쥐고 이라크를 지켰다. 이 시기 아바스 칼리프국의 군대는 아랍 부족병이 아니라 투르크 노예 군인이 중심이었고 이들의 봉급은 이라크와 이란의 세금으로 충당되었다. 세금이 줄면 봉급이 밀리고 군인이 반란을 일으키는 악순환이 이어졌으며, 지방 총독들은 칼리프에게 보내는 몫을 줄이거나 끊었다. 이 틈에 총독들이 자립했다. 이란 서부 카라지와 이스파한에서는 둘라프 왕조가 사마라의 혼란 때부터 사실상 독립한 채 칼리프를 받들었고, 동쪽 시스탄에서는 사파르 왕조의 야쿠브 이븐 알라이스가 일어났다. 이집트에서는 868년 툴룬 왕조의 아흐마드 이븐 툴룬이 자리를 잡았고, 이라크 남부에서는 869년 잔지 반란이 터졌다. 한편 호라산에서는 타히르 왕조가 873년 사파르 왕조에 무너졌다. 알무와파크는 잔지 반란을 883년 누르는 등 칼리프국을 지키는 군인 정치가 노릇을 했다. 알무와파크는 투르크 군인과 아프리카 출신 군인, 이란 출신 군인을 아우르는 직속 군대를 키웠고 사파르 왕조 야쿠브의 바그다드 진군(876)을 막아 냈다. 그의 아들 알무타디드가 892년 칼리프가 되어 도읍을 바그다드로 확정했다."
+  subjects: [abbasid-caliphate, dulafid-dynasty, saffarid-dynasty, tulunid-dynasty, tahirid-dynasty]
+  tags: [politics, society]
+  sources: ["Hugh Kennedy, When Baghdad Ruled the Muslim World: The Rise and Fall of Islam's Greatest Dynasty (Da Capo Press, 2004)", "Hugh Kennedy, The Prophet and the Age of the Caliphates: The Islamic Near East from the 6th to the 11th Century (Longman, 1986)", "C. E. Bosworth, The New Islamic Dynasties: A Chronological and Genealogical Manual (Columbia University Press, 1996)"]
+
+- id: saffarid-yaqub-861
+  year: 861
+  endYear: 902
+  title:
+    ko: "야쿠브 이븐 알라이스와 사파르 왕조(861~902)"
+  summary:
+    ko: "구리 장인(사파르) 집안의 야쿠브 이븐 알라이스는 시스탄에서 치안을 지키던 의용 무리(아이야룬)의 우두머리가 되어 861년 시스탄을 장악하고 아미르가 되었다. 그는 아바스 칼리프국의 칼리프를 받든다고 내세우면서 동쪽의 헤라트와 보스트 쪽으로, 서쪽으로는 케르만(867년 무렵)과 파르스(869~870년 무렵)로 땅을 넓혀 사파르 왕조를 이루었다. 사파르 군대는 시스탄의 의용 무리 출신 병사들로 이루어졌고 야쿠브는 병사들과 같은 음식을 먹으며 지냈다는 일화가 전한다. 이 정복으로 이란 동부와 남부의 대부분이 아바스의 직접 통제 밖으로 나갔다. 873년에는 니샤푸르에 들어가 타히르 왕조의 마지막 군주 무함마드 이븐 타히르를 사로잡아 타히르 왕조를 끝내고 호라산을 차지했다. 칼리프에게서 호라산 총독 임명을 받지 못하자 876년 바그다드로 진군했으나 디르 알아쿨 싸움에서 알무와파크에게 졌고, 879년 후제스탄의 군디샤푸르에서 죽었다. 동생 아므르 이븐 알라이스(879~901)는 칼리프와 화해해 호라산과 파르스, 케르만, 시스탄, 신드의 총독으로 인정받았다. 그러나 트란스옥시아나를 다스리던 사만 가문의 이스마일 이븐 아흐마드와 호라산을 놓고 부딪혀 900년 발크 가까이에서 져 사로잡혔고, 바그다드로 끌려가 902년 처형되었다. 호라산은 사만 왕조에 넘어갔고 사파르 가문의 땅은 시스탄과 파르스·케르만 일부로 줄어들었다. 야쿠브의 군사 정복은 이란 고원 동부와 남부에서 아랍 총독과 지방 귀족의 옛 질서를 흔들었다. 야쿠브가 궁정시인에게 아랍어를 못 알아듣는 자기 앞에서 페르시아어로 시를 지으라 했다는 일화가 전하는데, 이는 페르시아어가 다시 글말로 쓰이던 분위기를 보여 준다."
+  subjects: [saffarid-dynasty, tahirid-dynasty, abbasid-caliphate, samanid-empire]
+  links:
+    - { from: saffarid-dynasty, to: tahirid-dynasty, note: "니샤푸르 점령과 타히르 왕조 정복 (873)" }
+    - { from: samanid-empire, to: saffarid-dynasty, note: "발크 전투와 호라산 병합 (900)" }
+  tags: [politics, war]
+  sources: ["The Cambridge History of Iran, vol. 4: The Period from the Arab Invasion to the Saljuqs (R. N. Frye 편, Cambridge University Press, 1975)", "C. E. Bosworth, The New Islamic Dynasties: A Chronological and Genealogical Manual (Columbia University Press, 1996)", "al-Ṭabarī, Taʾrīkh al-rusul wa-l-mulūk (영역: The History of al-Ṭabarī, 전 40권, State University of New York Press, 1985~2007)"]
+
+- id: alid-tabaristan-864
+  year: 864
+  endYear: 928
+  title:
+    ko: "타바리스탄의 자이드파 알리 가문 토후국(864~928)"
+  summary:
+    ko: "9세기 중엽 타히르 왕조의 총독들이 호라산과 함께 타바리스탄을 다스리며 세금을 무겁게 걷고 토지를 빼앗자 산지 사람들의 불만이 커졌다. 864년 하산 이븐 자이드가 아물에서 자이드파 이맘으로 추대되어 타히르 가문 총독을 몰아냈고, 이로써 알리 가문의 자이드파 이맘들이 타바리스탄과 길란에 세운 타바리스탄 알리 가문 토후국이 섰다. 하산(864~884)은 알다이 일라 알하크('진리로 부르는 이')라 불렸고, 869년과 874년의 침공을 피해 다일람으로 잠시 물러난 일도 있었다. 자이드파는 알리와 파티마의 후손 가운데 무력으로 일어나 공동체를 이끌 자격을 갖춘 사람을 이맘으로 보는 시아파의 한 갈래다. 타바리스탄의 이맘들은 법학과 신학에서 독자 전통을 세웠고 이맘 아래에서 지방 법관과 징세 체계도 갖추었다. 884년 하산이 죽은 뒤 동생 무함마드 이븐 자이드가 이었으나 900년 호라산으로 나아가려다 사만의 이스마일이 보낸 군에게 져서 죽었고, 사만 왕조가 타바리스탄을 차지하자 알리 가문은 다일람으로 피했다. 914년 하산 이븐 알리 알웃루쉬(나시르)가 돌아와 타바리스탄을 되찾고 다일람 사람들을 자이드파로 이끌었다. 917년 그가 죽은 뒤 알웃루쉬의 아들들과 하산 이븐 알카심 알다이가 번갈아 이맘을 칭했고 다일람 장수들의 다툼으로 나라가 약해졌고, 928년 무렵 사만 왕조와 아바스 칼리프의 이름이 다시 예배에 오르면서 알리 가문의 독립 통치가 끝났다. 산지의 영주들과 다일람 사람들이 알리 가문의 군대에 합류하면서 이슬람이 카스피해 남쪽 산악까지 퍼졌고, 자이드파는 이 지방과 예멘에서 오래 이어지는 시아파의 한 갈래가 되었다. 이 지방에는 이슬람 이전의 조로아스터교 전통이 오래 남아 있어 알리 가문의 포교는 지방 영주와 협력하는 가운데 진행되었다."
+  subjects: [alid-tabaristan, tahirid-dynasty, samanid-empire]
+  links:
+    - { from: samanid-empire, to: alid-tabaristan, note: "타바리스탄 정복과 알리 가문의 망명 (900)" }
+  tags: [politics, religion]
+  sources: ["The Cambridge History of Iran, vol. 4: The Period from the Arab Invasion to the Saljuqs (R. N. Frye 편, Cambridge University Press, 1975)", "C. E. Bosworth, The New Islamic Dynasties: A Chronological and Genealogical Manual (Columbia University Press, 1996)", "Wilferd Madelung, Religious Trends in Early Islamic Iran (Bibliotheca Persica, 1988)"]
+
+- id: tulunid-egypt-868
+  year: 868
+  endYear: 905
+  title:
+    ko: "아흐마드 이븐 툴룬과 툴룬 왕조(868~905)"
+  summary:
+    ko: "툴룬 왕조를 연 투르크 군인 출신 아흐마드 이븐 툴룬(툴룬은 부하라에서 칼리프 알마문에게 바쳐진 노예였던 아버지의 이름이다)은 868년 9월 이집트 총독의 부총독으로 푸스타트에 들어왔다. 사마라의 혼란 속에 아바스 칼리프국의 통제가 약해진 때였다. 그는 투르크 군에 더해 노예 병사들로 직속 군대를 만들고 이집트의 세금을 거두어 일부만 칼리프에게 보냈다. 아흐마드는 이집트 농업을 되살리려 관개를 정비했다고 전하며, 이집트의 풍부한 세수는 시리아 원정과 대규모 건설을 뒷받침했다. 870년 푸스타트 북동쪽에 새 도읍 알카타이를 지었고 876~879년 그곳에 이븐 툴룬 모스크를 세웠다. 878년 시리아 남부를 차지해 이집트와 시리아를 함께 다스렸다. 아흐마드는 알무와파크와 갈등을 겪었고 877년 칼리프국이 군대를 보내 압박했으나 이듬해 시리아를 차지해 오히려 힘을 넓혔다. 금요 예배와 화폐에 칼리프의 이름을 두었지만 사실상 세습 왕조의 시작이었다. 884년 아흐마드가 죽고 아들 쿠마라와이가 이었으며, 886년 12월 아바스 쪽이 쿠마라와이를 이집트와 시리아 총독으로 인정하고 30년 동안 후손에게 물려줄 수 있게 했다(해마다 공물을 바치는 조건). 쿠마라와이는 궁정을 호화롭게 꾸며 재정이 기울었다. 896년 쿠마라와이가 죽은 뒤 아들 자이시와 하룬이 이었으나 군인들이 실권을 쥐었고, 알무타디드가 북시리아를 되찾아 알레포·킨나스린이 칼리프 손에 돌아갔다(898년 무렵). 아흐마드의 군대는 투르크 군인과 아프리카 출신 흑인 병사, 그리스 출신 병사로 이루어져 칼리프의 군대와 따로 선 힘이 되었다. 마지막 아미르 샤이반 때인 905년 1월 아바스 장군 무함마드 이븐 술라이만이 푸스타트에 들어와 툴룬 가문을 바그다드로 끌고 갔고, 이집트는 다시 칼리프 직할이 되었다."
+  subjects: [tulunid-dynasty, abbasid-caliphate]
+  links:
+    - { from: abbasid-caliphate, to: tulunid-dynasty, note: "푸스타트 점령과 이집트 직할 회복 (905)" }
+  tags: [politics, economy]
+  sources: ["The Cambridge History of Egypt, vol. 1: Islamic Egypt, 640–1517 (Carl F. Petry 편, Cambridge University Press, 1998)", "C. E. Bosworth, The New Islamic Dynasties: A Chronological and Genealogical Manual (Columbia University Press, 1996)", "Hugh Kennedy, The Prophet and the Age of the Caliphates: The Islamic Near East from the 6th to the 11th Century (Longman, 1986)"]
+
+- id: zanj-revolt-869
+  year: 869
+  endYear: 883
+  title:
+    ko: "잔지 반란(869~883)"
+  summary:
+    ko: "이라크 남부 바스라 둘레의 소금기 낀 늪지에서는 동아프리카 출신 흑인 노예(잔지)들이 땅의 소금 껍질을 걷어내는 고된 노동을 했다. 869년 9월 알리 이븐 무함마드가 이들을 이끌고 일어났다. 그는 자신이 알리 가문의 후손이라 내세웠고 카리지파의 평등 사상을 빌렸다고 하나, 반란군도 포로를 노예로 부렸다. 이들은 동아프리카 해안에서 사들여진 사람들이었고 먹는 것과 처우가 매우 나빴다고 사료는 적는다. 알리 이븐 무함마드는 노예들에게 자유와 땅을 약속했고 반란군에는 노예뿐 아니라 가난한 농민과 일부 베두인도 합류했다고 하며, 잔지가 참가자의 다수였는지를 포함해 구성은 학자마다 달리 본다. 반란은 바스라 남쪽 늪지에서 번져 871년 바스라를 약탈해 큰 학살과 파괴를 일으켰고, 와시트와 아흐와즈 같은 도시도 한때 반란군 손에 들어갔다. 지도자 알리는 스스로 아미르를 칭하고 화폐를 만들었다고 전한다. 반란군은 알무크타라라는 요새 도시를 근거지로 삼아 칼리프의 군대를 여러 번 꺾었다. 칼리프 쪽 사료는 반란군의 잔혹함을 강조하지만 진압군도 포로와 주민에게 가혹했다고 전한다. 알무타미드의 동생 알무와파크가 879년 말부터 아들 알무타디드와 함께 반격에 나서 881년 요새를 포위해 883년 8월 알무크타라가 무너지고 알리가 죽어 반란이 끝났다. 반란의 규모와 노예의 수는 사료가 정확히 알려 주지 않고 사료가 전하는 사망자 수도 50만에서 250만 명까지 크게 갈려 현대 학자들은 크게 부풀려졌다고 보며, 사료도 칼리프 쪽 기록이 대부분이다. 이 반란은 같은 시기 사파르 왕조의 진군과 함께 아바스 칼리프국을 안팎에서 흔들었고 툴룬 왕조와 사파르 왕조가 자리를 굳힐 틈을 키웠다. 알리 이븐 무함마드는 바스라 남쪽 늪지의 갈대밭을 근거로 삼아 칼리프 군의 접근을 어렵게 했다. 이 반란으로 이라크 남부의 농업과 바스라의 번영이 크게 해쳐졌고 칼리프국의 재정이 기울었다."
+  subjects: [abbasid-caliphate]
+  tags: [war, society]
+  sources: ["Alexandre Popovic, The Revolt of African Slaves in Iraq in the 3rd/9th Century (Markus Wiener, 1999)", "Hugh Kennedy, When Baghdad Ruled the Muslim World: The Rise and Fall of Islam's Greatest Dynasty (Da Capo Press, 2004)", "al-Ṭabarī, Taʾrīkh al-rusul wa-l-mulūk (영역: The History of al-Ṭabarī, 전 40권, State University of New York Press, 1985~2007)"]
+
+- id: mutadid-muktafi-recovery-892
+  year: 892
+  endYear: 908
+  title:
+    ko: "알무타디드와 알무크타피의 회복(892~908)"
+  summary:
+    ko: "892년 즉위한 알무타디드(892~902)는 사마라의 혼란 속에 흩어진 칼리프의 권위를 되찾으려 했다. 그는 도읍을 바그다드로 확정하고 재정을 다잡아 군대를 유지하며 자립한 총독들을 하나씩 눌렀다. 893년에는 쿠마라와이가 이집트와 시리아를 맡는 것을 다시 인정하고 해마다 공물을 받기로 했다. 이 시기 아바스 칼리프국은 이라크와 서부 이란(지발·라이·이스파한)을 직접 다스리는 땅으로 되돌렸고 이집트와 시리아는 툴룬 가문의 아미르가 조공을 바치는 조건으로 이어서 맡았으며, 호라산과 이란 동부는 사만 왕조의 몫이었다. 893년에는 오만에 군을 보냈고, 896년에는 이스파한의 둘라프 왕조를 몰아내고 아바스 총독을 앉혔다. 마지막 둘라프 가문 사람은 897~898년 싸움에서 죽었다고 전한다. 900년 호라산에서는 사파르 왕조의 아므르가 사만 왕조의 이스마일에게 져서 사로잡혀 바그다드로 압송되었다. 한편 899년 바레인 지방에서 카르마트 국가가 일어나 906년 순례 행렬을 습격하는 등 칼리프국의 새 위협이 되었다. 알무크타피(902~908)는 905년 장군 무함마드 이븐 술라이만을 보내 툴룬 왕조를 무너뜨리고 이집트를 다시 칼리프가 직접 다스리는 땅으로 되돌렸다. 사파르 가문은 호라산을 사만에 잃고 파르스·케르만·시스탄으로 줄어들었다. 이 회복은 칼리프 개인의 능력에 기대어 짧았다. 알무타디드 시기 바그다드에서는 궁전과 관청을 새로 짓는 사업이 활발했고, 궁정 관료제는 재상과 재정 관청, 우편·정보 기관으로 짜여 있었다. 이 시기 바그다드는 인구가 늘고 시장과 학문이 번성해 이슬람 세계에서 가장 큰 도시로 자랐다. 908년 알무크타피가 죽고 열세 살의 알무크타디르가 칼리프에 올랐다."
+  subjects: [abbasid-caliphate, dulafid-dynasty, saffarid-dynasty, samanid-empire, tulunid-dynasty, qarmatian-state]
+  tags: [politics, war]
+  sources: ["Hugh Kennedy, When Baghdad Ruled the Muslim World: The Rise and Fall of Islam's Greatest Dynasty (Da Capo Press, 2004)", "C. E. Bosworth, The New Islamic Dynasties: A Chronological and Genealogical Manual (Columbia University Press, 1996)", "The Cambridge History of Egypt, vol. 1: Islamic Egypt, 640–1517 (Carl F. Petry 편, Cambridge University Press, 1998)"]
+
+- id: qarmatian-bahrain-899
+  year: 899
+  endYear: 930
+  title:
+    ko: "카르마트 국가와 메카의 흑석 탈취(899~930)"
+  summary:
+    ko: "카르마트는 이스마일파에서 갈라진 한 갈래다. 쿠파 둘레에서 함단 카르마트가 이끈 포교가 퍼진 뒤, 이스마일파의 이맘 계승을 둘러싼 갈등 속에서 899년 일부 신도들이 이맘의 자리를 주장하는 우바이드 알라(뒤의 파티마 칼리프국의 첫 칼리프)를 인정하지 않고 갈라섰다. 아부 사이드 알잔나비는 899년까지 아라비아 동부 알하사를 비롯한 바레인 지방 대부분을 장악하고 903년 무렵 하자르를 차지해 카르마트 국가를 세웠다. 이 공동체는 재산을 함께 쓰고 신도끼리 평등하게 대하는 이상을 내세웠다고 전하나, 학자들은 얼마나 실천했는지에 의견이 갈린다. 906년 카르마트가 이라크로 돌아가던 순례 행렬을 습격해 많은 사람이 죽었다(사료가 적은 수는 수천에서 2만 명까지 크게 다르고 부풀려졌을 수 있다). 아부 사이드가 913년 무렵 피살되자 큰아들 아부 알카심 사이드가 잠시 이었고, 막내 아부 타히르 알잔나비가 923년 무렵 권력을 쥐어 그해 바스라를 습격했다. 이어 926~927년 쿠파를 약탈하고 928년 바그다드 둘레까지 나아가 위협했다. 930년 1월 아부 타히르는 순례철의 메카를 쳐서 순례자를 죽이고 카바 신전의 흑석을 뽑아 바레인 지방으로 가져갔다. 카르마트 공동체는 임명된 대리인들이 생산과 분배를 맡았다고 하나 적대하는 쪽 사료의 서술이라 확실하지 않고, 바레인 지방의 농업과 대상 교역, 순례 행렬에서 받는 몫으로 재정을 마련했다고 전한다. 이들은 아바스 칼리프국과 수니파를 불의한 지배자로 보았고 바그다드를 위협해 칼리프에게 공물을 요구했다고 전한다. 메카 습격 뒤 몇 해 동안 순례가 끊기다시피 했다. 카르마트의 바레인 지방은 대추야자 농업과 진주잡이, 걸프 교역이 이어지는 땅이었고 이 부가 군사력의 바탕이 되었다. 카르마트의 평등 이상은 가난한 농민과 상인에게 호소력이 있었다고 한다. 이 일은 아바스 칼리프국과 파티마 칼리프국 모두를 향한 도전이었고 이슬람 세계에 큰 충격을 주었다."
+  subjects: [qarmatian-state, abbasid-caliphate, fatimid-caliphate]
+  tags: [war, religion]
+  sources: ["Farhad Daftary, The Ismāʿīlīs: Their History and Doctrines (Cambridge University Press, 1990)", "Heinz Halm, The Empire of the Mahdi: The Rise of the Fatimids (Brill, 1996)", "Hugh Kennedy, When Baghdad Ruled the Muslim World: The Rise and Fall of Islam's Greatest Dynasty (Da Capo Press, 2004)"]
+
+- id: hamdanid-mosul-aleppo-890
+  year: 890
+  endYear: 945
+  title:
+    ko: "함단 왕조: 모술에서 알레포까지(890~945)"
+  summary:
+    ko: "함단 왕조는 아랍 타글리브 부족의 함단 이븐 함둔이 890년대 초 마르딘 둘레에서 세력을 이룬 데서 시작되었다. 함단은 892년 무렵 마르딘을 차지해 근거지로 삼았으나 아바스 칼리프국 군에 꺾였다. 그의 아들 후사인과 형제들은 아바스 군의 장군이 되었고, 아부 알하이자 압둘라 이븐 함단이 905~906년 무렵 모술 총독이 되면서 이 가문의 근거지가 모술로 옮겨졌다. 929년 압둘라의 아들 나시르 앗다울라 하산이 모술과 디야르 라비아 총독이 되어 자지라 북부를 다스렸고, 아바스 칼리프가 약해지자 바그다드 정치에도 끼어들었다. 942년 봄부터 943년 5월까지 나시르 앗다울라는 바그다드에서 아미르 알우마라 자리에 있었으나 투르크 군인들의 반란으로 쫓겨났다. 그의 동생 사이프 앗다울라(알리)는 944~945년 무렵 알레포를 차지해 북시리아에 함단 가문의 두 번째 나라를 세웠다. 이 땅을 두고 이집트의 이흐시드 왕조 무함마드 이븐 투그즈와 다퉈 사이프는 다마스쿠스까지 나아갔으나 945년 이흐시드에게 밀려 알레포 둘레로 물러났다. 모술의 함단 가문은 쿠르드와 아랍 부족을 아우르는 군대로 자지라 북부의 세금을 걷었고, 알레포의 함단 가문은 동로마 제국과 맞서는 변경의 수호자로 이슬람 세계에서 이름을 얻었다. 두 가문은 서로 돕기도 하고 다투기도 했다. 모술은 티그리스강 상류의 교역 도시로 곡창인 자지라 북부를 끼고 있어 함단 가문의 재정 기반이 되었다. 모술의 아미르 자리는 아바스 칼리프가 임명했으나 함단 가문은 세금을 바치지 않거나 군사를 보내는 일로 자주 칼리프와 부딪혔다. 두 갈래의 함단 가문은 동로마 제국과도 싸웠다(「마케도니아 왕조의 반격: 멜리테네(934)에서 크레타(961)·안티오크(969)까지」(뒤의 사건))."
+  subjects: [hamdanid-dynasty, abbasid-caliphate, ikhshidid-dynasty, byzantine-empire]
+  tags: [politics, war]
+  sources: ["C. E. Bosworth, The New Islamic Dynasties: A Chronological and Genealogical Manual (Columbia University Press, 1996)", "Hugh Kennedy, The Prophet and the Age of the Caliphates: The Islamic Near East from the 6th to the 11th Century (Longman, 1986)", "Hugh Kennedy, When Baghdad Ruled the Muslim World: The Rise and Fall of Islam's Greatest Dynasty (Da Capo Press, 2004)"]
+
+- id: azerbaijan-sajid-sallarid-889
+  year: 889
+  endYear: 941
+  title:
+    ko: "아제르바이잔의 사지 왕조와 살라르 왕조(889~941)"
+  summary:
+    ko: "아제르바이잔은 이란 고원 북서쪽, 아라스강 남쪽의 땅이다. 889년 아바스 칼리프국의 칼리프가 중앙아시아 우스루샤나 출신 군인 가문의 무함마드 이븐 아비 앗사지를 이곳 총독으로 보냈다. 그는 마라가를 근거지로 칼리프에게 조공을 바치면서 아르메니아 쪽까지 힘을 뻗었고 이로써 사지 왕조가 섰다. 이 땅은 아르메니아 왕국과 조지아·아란의 영주들이 얽힌 정치 지형 속에 있었다. 사지 가문은 칼리프에게서 총독으로 임명받으면서도 칼리프에 맞서 반란을 일으킨 일이 있었다. 901년 무렵 무함마드의 아들 데브다드가 잠깐 이은 뒤 무함마드의 동생 유수프 이븐 아비 앗사지가 올라 캅카스 쪽으로 더 넓게 나아가 아르메니아 왕 스므바트 1세를 사로잡아 처형하기도 했다(914 무렵). 유수프가 아바스에 붙잡혀 있던 919~922년에는 수북이 대신 다스렸고 유수프는 돌아와 928년까지 다스렸다. 그의 아들 파트가 928~929년 다스리다 아르다빌에서 노예에게 독살되어 929년 사지 왕조가 끝났다. 이어 아제르바이잔은 다일람 출신 군인들과 쿠르드 출신 다이삼 같은 세력이 다투는 땅이 되었다. 한편 다일람 산지 타롬에서는 무함마드 이븐 무사피르가 919년 무렵 자립해 살라르 왕조를 열었다. 아제르바이잔의 아르다빌과 마라가, 타브리즈는 이란 고원에서 캅카스와 아나톨리아로 나가는 길목의 교역 도시였다. 이 지방에는 이란계와 쿠르드, 아랍 주민이 섞여 살았고 카스피해 쪽의 다일람 사람들이 산악에서 내려와 군인으로 일했다. 사지 왕조는 처음에는 마라가와 바르다아를, 나중에는 아르다빌을 도읍으로 삼았다. 살라르 왕조는 타롬과 잔잔 일대를 근거지로 삼았고, 941년 무함마드 이븐 무사피르의 아들 와흐수단과 마르즈반이 아버지를 가두었다. 마르즈반은 다이삼에게서 아제르바이잔을 빼앗아 살라르 왕조가 이 지방의 주인이 되었다."
+  subjects: [sajid-dynasty, sallarid-dynasty, abbasid-caliphate]
+  tags: [politics]
+  sources: ["C. E. Bosworth, The New Islamic Dynasties: A Chronological and Genealogical Manual (Columbia University Press, 1996)", "The Cambridge History of Iran, vol. 4: The Period from the Arab Invasion to the Saljuqs (R. N. Frye 편, Cambridge University Press, 1975)"]
+
+- id: samanid-iran-900
+  year: 900
+  endYear: 943
+  title:
+    ko: "사만 왕조의 호라산과 이란(900~943)"
+  summary:
+    ko: "사만 왕조는 부하라와 사마르칸트를 중심으로 트란스옥시아나를 다스린 이란계 왕조다. 이 사건은 그 가운데 지금 이란 땅에 닿은 일을 본다. 892~907년 이스마일 이븐 아흐마드가 부하라를 도읍으로 사만 가문을 하나로 묶었다. 900년 발크 가까이에서 사파르 왕조의 아므르를 이기자 아바스 칼리프는 이스마일에게 호라산 총독의 지위를 주었다. 같은 해 사만의 군대가 타바리스탄을 차지해 타바리스탄 알리 가문 토후국을 다일람으로 몰아냈고, 정복을 이끈 장군이 반란을 일으키자 이스마일이 901년 타바리스탄과 고르간을 다시 차지했다. 아흐마드 이븐 이스마일(907~914)은 910년대 초 시스탄을 사만의 땅으로 넣었으나 914년 투르크 노예 군인들에게 살해되었다. 여덟 살의 나스르 2세(914~943)가 이어 오래 다스렸다. 이 시기 사만 궁정은 페르시아어 시인 루다키를 후원해 페르시아어 문학이 꽃피기 시작했고 호라산의 이슬람 학문과 상업도 번성했다. 사만 왕조의 호라산은 니샤푸르·메르브·헤라트 같은 도시가 교역과 학문으로 번성한 땅이었다. 사만 군대의 핵심은 투르크 노예 군인과 호라산의 지방 기병이었다. 사만 왕조는 교역과 세금으로 부유해져 부하라에서 은화를 대량으로 만들었고, 이 은화는 볼가강을 따라 북유럽까지 퍼진 것이 발견된다. 이 왕조는 아바스 칼리프를 받들며 수니파 정통을 후원했다. 사만 왕조의 관료는 이란 귀족과 페르시아어 서기관 전통에 기대어 세금과 우편 제도를 운영했다. 타바리스탄은 928~930년 사만의 지배 아래 돌아왔다가 930년대 초 다일람 장수들의 손으로 넘어갔고 지야르 왕조의 마르다비즈가 그곳의 힘센 주인이 되었다."
+  subjects: [samanid-empire, saffarid-dynasty, alid-tabaristan, ziyarid-dynasty]
+  links:
+    - { from: samanid-empire, to: saffarid-dynasty, note: "호라산 병합과 시스탄 편입 (900~910년대 초)" }
+  tags: [politics, culture]
+  sources: ["The Cambridge History of Iran, vol. 4: The Period from the Arab Invasion to the Saljuqs (R. N. Frye 편, Cambridge University Press, 1975)", "C. E. Bosworth, The New Islamic Dynasties: A Chronological and Genealogical Manual (Columbia University Press, 1996)"]
+
+- id: fatimid-rise-893
+  year: 893
+  endYear: 910
+  title:
+    ko: "아부 압둘라 알시이와 파티마 칼리프국의 성립(893~910)"
+  summary:
+    ko: "이스마일파는 알리의 후손인 이맘이 숨어 있다가 마흐디로 나타난다고 믿었다. 893년 예멘 출신 이스마일파 선교사 아부 압둘라 알시이가 이프리키야 서쪽 이크잔의 쿠타마 베르베르 사이에 자리 잡았다. 쿠타마는 아글라브 왕조의 세금과 징병에 불만이 컸고, 아부 압둘라는 이들을 군대로 모아 902~909년 사이 밀라·세티프 같은 도시를 차례로 차지했다. 아부 압둘라는 소박한 생활과 정의를 내세워 쿠타마의 신뢰를 얻었고 병사들에게 전리품을 고르게 나누어 주었다고 한다. 아글라브 왕조의 마지막 아미르 지야다트 알라 3세는 궁정의 쾌락에 빠졌다는 비난을 받았고 전투에서 거듭 졌다. 이스마일파는 이맘의 이름을 숨기는 비밀 조직으로 선교사(다이)를 보내 포교했고 북아프리카와 예멘, 이집트가 그 거점이었다. 한편 시리아 살라미야에 있던 이스마일파 이맘 우바이드 알라(알마흐디)는 아바스의 추적을 피해 이집트를 거쳐 마그레브로 향했다. 909년 3월 아부 압둘라의 군이 아글라브 왕조의 궁정 도시 라카다에 들어가 아글라브 왕조가 끝났다. 같은 해 타헤르트의 루스탐 이맘국이 쿠타마 군에게 무너졌다. 알마흐디는 시질마사의 미드라르 왕조 군주에게 억류되어 있다가 아부 압둘라가 가서 풀어 주었다고 전하며, 910년 1월 라카다에서 칼리프로 선포되었다. 이로써 아바스 칼리프국과 맞서는 이스마일파의 파티마 칼리프국이 섰다. 이 선교는 공동체가 이맘의 지도를 받아야 한다고 보는 시아파의 한 갈래인 이스마일파의 교리에 기대고 있었다. 우바이드 알라가 알리와 파티마의 후손이라는 주장은 아바스 쪽과 수니파 학자들이 의심했고 지금도 학계에 논쟁이 있다."
+  subjects: [fatimid-caliphate, aghlabid-dynasty, rustamid-imamate, midrarid-dynasty, abbasid-caliphate]
+  links:
+    - { from: fatimid-caliphate, to: aghlabid-dynasty, note: "라카다 점령과 이프리키야 정복 (909)" }
+    - { from: fatimid-caliphate, to: rustamid-imamate, note: "타헤르트 정복과 이맘국의 끝 (909)" }
+  tags: [politics, religion, war]
+  sources: ["Heinz Halm, The Empire of the Mahdi: The Rise of the Fatimids (Brill, 1996)", "Farhad Daftary, The Ismāʿīlīs: Their History and Doctrines (Cambridge University Press, 1990)", "Michael Brett·Elizabeth Fentress, The Berbers (Blackwell, 1996)"]
+
+- id: fatimid-mahdiya-910
+  year: 910
+  endYear: 934
+  title:
+    ko: "마흐디야의 건설과 파티마의 팽창(910~934)"
+  summary:
+    ko: "910년 파티마 칼리프국의 첫 칼리프에 오른 우바이드 알마흐디는 911년 자신을 세운 공로자 아부 압둘라 알시이를 처형했고, 이에 반발한 쿠타마의 반란을 눌렀다. 이집트는 파티마가 노리던 땅이어서 913~915년과 919~921년 두 차례 원정군을 보냈으나 아바스 칼리프국의 군에 막혔다. 916년 알마흐디는 라카다 남동쪽 해안 반도에 새 도읍 마흐디야를 세우기 시작해 921년 2월 낙성했다. 마흐디야는 성벽과 항구를 갖춘 요새 도시로 파티마 함대의 근거지였다. 알마흐디는 시칠리아에 총독을 두어 다스리게 했고 파티마 함대는 이탈리아 남부와 지중해 서쪽 해안을 습격했다. 새 화폐를 만들고 이스마일파 선교사들을 사방으로 보내 아바스 칼리프국 안의 이스마일파 신도에게도 영향을 넓혔다. 서쪽에서는 쿠타마 장군 마살라 이븐 후부스가 921년 무렵 페스를 차지해 이드리스 가문의 야히야 4세를 폐위하고 미크나사의 무사 이븐 아비 알아피야에게 서부를 맡겨 이드리스 왕조를 가신으로 눌렀으나 이 땅의 지배는 오래가지 못했다. 932년 무렵 미크나사의 무사 이븐 아비 알아피야가 코르도바 쪽으로 돌아서 파티마는 모로코를 잃었다. 929년 후우마이야 칼리프국의 압드 알라흐만 3세가 코르도바에서 칼리프를 칭하자(「압드 알라흐만 3세의 칼리프 선언(929)과 알만수르(알만소르)의 원정(981~997)」(앞의 사건)) 바그다드·마흐디야·코르도바에 칼리프가 나란히 서는 일이 벌어졌다. 카르마트 국가가 930년 메카에서 흑석을 가져간 일도 파티마의 이스마일파 권위에 부담이 되었다. 마흐디야는 바다로 튀어나온 반도에 서서 방어가 튼튼했고 육지 쪽으로는 성문 하나만 두었다고 전한다. 마흐디야는 완성된 뒤 파티마 칼리프국의 도읍으로 기능했다. 934년 3월 알마흐디가 죽고 아들 알카임이 이었다."
+  subjects: [fatimid-caliphate, abbasid-caliphate, idrisid-dynasty, cordoba-caliphate, qarmatian-state]
+  links:
+    - { from: fatimid-caliphate, to: idrisid-dynasty, note: "페스 점령과 이드리스 왕조의 가신화 (921)" }
+  tags: [politics, war, religion]
+  sources: ["Heinz Halm, The Empire of the Mahdi: The Rise of the Fatimids (Brill, 1996)", "Farhad Daftary, The Ismāʿīlīs: Their History and Doctrines (Cambridge University Press, 1990)", "Michael Brett·Elizabeth Fentress, The Berbers (Blackwell, 1996)"]
+
+- id: ziyarid-mardavij-928
+  year: 928
+  endYear: 935
+  title:
+    ko: "마르다비즈와 지야르 왕조, 일리아스 왕조(928~935)"
+  summary:
+    ko: "사만 왕조의 지배가 타바리스탄 알리 가문 토후국을 끝낸 뒤 다일람 출신 장수들이 이 지방의 힘센 자리를 차지했다. 아스파르 이븐 시루야는 928~930년 사이 타바리스탄과 고르간을 차지했으나 부하이던 길란 출신 마르다비즈 이븐 지야르가 그를 쓰러뜨리고 지야르 왕조를 열었다. 마르다비즈는 930~931년 무렵 아바스 칼리프국이 다스리던 이스파한·하마단·디나바르를 차지해 이란 서부와 중부를 아우르고 아흐와즈까지 나아가 칼리프를 위협했다. 마르다비즈는 다일람 군대와 투르크 군대 사이의 갈등을 다스리지 못했고 투르크 군인에 대한 거친 처우가 그가 살해된 한 원인이었다고 한다. 이 시기 이란 서부는 사만 왕조와 아바스 칼리프국, 다일람 장수들이 맞부딪히는 무대였다. 그는 옛 사산의 영광을 되살려 이스파한을 도읍 삼아 왕관 쓴 군주로 행세하려 했다고 전한다. 군대는 다일람 보병과 투르크 노예 기병으로 이루어졌고 훗날 부와이 왕조를 세우는 알리·하산·아흐마드 삼형제도 한동안 그의 장수로 일했다(932년 알리는 카라지를 영지로 받았으나 마르다비즈의 암살 계획을 피해 달아났다). 한편 929년 쿠데타가 실패한 뒤 사만을 떠난 군인 무함마드 이븐 일리아스는 남쪽으로 달아나 932년 케르만에 자리 잡고 일리아스 왕조를 열었고, 사만과 부와이 사이에서 자립을 지켰다. 935년 마르다비즈가 투르크 군인들에게 살해되자 지야르 왕조는 흔들렸다. 지야르 왕조의 확장은 이란 서부 도시들의 세금과 투르크 군인의 봉급을 둘러싼 갈등을 키웠다. 지야르 왕조의 군대는 길란과 다일람 산악에서 모은 보병이 바탕이었다. 동생 보슈마기르가 라이에서 왕위에 올랐으나 부와이 형제가 이스파한·파르스·후제스탄을 차지해 갔다."
+  subjects: [ziyarid-dynasty, ilyasid-dynasty, buyid-dynasty, samanid-empire, alid-tabaristan, abbasid-caliphate]
+  links:
+    - { from: ziyarid-dynasty, to: abbasid-caliphate, note: "이스파한·하마단 등 지발 점령 (930~931년 무렵)" }
+  tags: [politics, war]
+  sources: ["The Cambridge History of Iran, vol. 4: The Period from the Arab Invasion to the Saljuqs (R. N. Frye 편, Cambridge University Press, 1975)", "C. E. Bosworth, The New Islamic Dynasties: A Chronological and Genealogical Manual (Columbia University Press, 1996)", "Roy P. Mottahedeh, Loyalty and Leadership in an Early Islamic Society (Princeton University Press, 1980)"]
+
+- id: buyid-rise-934
+  year: 934
+  endYear: 945
+  title:
+    ko: "부와이 형제의 흥기: 이란 서부의 장악(934~945)"
+  summary:
+    ko: "부와이 왕조를 세운 가문은 다일람 산지 출신으로 아버지 부야가 어부였다는 전승이 있다. 이 가문의 세 아들 알리·하산·아흐마드가 일어섰다. 다일람 사람들은 이슬람을 비교적 늦게 받아들였고 알리 가문의 자이드파 포교로 시아파에 가까워졌다고 한다. 알리는 마르다비즈 밑에서 일하다 932년 카라지를 영지로 받아 다일람 병사를 모았고, 934년 파르스를 차지해 시라즈를 도읍으로 삼았다. 이때 알리는 아바스 칼리프에게서 총독 지위를 받아 형식상 칼리프의 신하로 행세했다. 935년 마르다비즈가 죽자 알리와 아흐마드는 후제스탄을, 하산은 이스파한을 차지했다. 하산은 938년 지야르 왕조의 보슈마기르에게 이스파한을 빼앗겼으나 943년 라이를 차지했다. 세 형제가 '이마드 앗다울라'(나라의 기둥)·'룩큰 앗다울라'(나라의 버팀목)·'무이즈 앗다울라'(나라의 지원자)의 칭호를 받은 해는 934~935년과 945년으로 사료가 갈린다. 보슈마기르는 사만 왕조의 도움에 기대어 버텼다. 부와이 형제는 다일람 보병과 투르크 기병을 아우르는 군대로 이란 서부와 남부를 차례로 차지했고, 이 두 부대의 대립을 다스리는 일이 큰 과제였다. 형제는 이란 서부의 세금과 곡창 지대로 군대의 봉급을 마련했고 지역을 나누어 맡으면서도 맏형 알리를 가장 높은 어른으로 인정했다. 아흐마드는 945년 12월 무렵(946년 1월설도 있음) 군을 이끌고 바그다드에 들어갔다. 마르다비즈의 죽음과 지야르 왕조의 동요는 「마르다비즈와 지야르 왕조, 일리아스 왕조(928~935)」(앞의 사건)에, 바그다드의 혼란은 「아미르 알우마라 제도와 칼리프의 무력화(936~945)」(같은 시기의 사건)에 있다. 부와이 형제는 시아파를 따랐지만 아바스 칼리프국의 칼리프를 없애지 않고 칼리프의 이름으로 정치를 이어 갔다."
+  subjects: [buyid-dynasty, ziyarid-dynasty, samanid-empire, abbasid-caliphate]
+  links:
+    - { from: buyid-dynasty, to: ziyarid-dynasty, note: "라이 점령 (943)" }
+  tags: [politics, war]
+  sources: ["The Cambridge History of Iran, vol. 4: The Period from the Arab Invasion to the Saljuqs (R. N. Frye 편, Cambridge University Press, 1975)", "Roy P. Mottahedeh, Loyalty and Leadership in an Early Islamic Society (Princeton University Press, 1980)", "C. E. Bosworth, The New Islamic Dynasties: A Chronological and Genealogical Manual (Columbia University Press, 1996)"]
+
+- id: muqtadir-decline-908
+  year: 908
+  endYear: 936
+  title:
+    ko: "알무크타디르와 칼리프 정권의 쇠퇴(908~936)"
+  summary:
+    ko: "908년 열세 살의 알무크타디르가 아바스 칼리프국의 칼리프에 오르자 재상들과 궁정의 여인, 환관 장군들이 실권을 나눠 가졌다. 어머니 샤그브와 환관 군사령관 무니스, 재상 이븐 알푸라트 같은 이들이 맞서 재상이 여러 번 바뀌었다. 징세를 청부에 맡기는 일이 늘면서 재정이 기울었다. 알무크타디르는 낭비가 심하고 정사를 어머니와 환관들에게 맡긴다는 비판을 받았으며, 이 서술에는 그를 폐위한 쪽의 시각이 섞여 있다. 908년 12월 이븐 알무으타즈가 하루 칼리프로 추대되었다가 진압되었고, 929년 2월에는 궁정 쿠데타로 알카히르가 잠깐 세워졌다가 알무크타디르가 며칠 만에 복위했다. 멀리서는 910년 이프리키야에서 파티마 칼리프국의 칼리프가, 929년 코르도바에서 후우마이야 칼리프국의 압드 알라흐만 3세가 칼리프를 칭해 바그다드 칼리프의 권위를 정면으로 부정했다. 이라크 안에서는 카르마트 국가가 923년 바스라, 927년 쿠파를 약탈했고 930년에는 메카의 흑석까지 가져갔다. 929년 함단 왕조의 나시르 앗다울라가 모술을 맡았고 931년 무렵 지야르 왕조의 마르다비즈가 이란 서부를 차지했으며 934년에는 부와이 왕조의 형제가 파르스를 차지했다. 932년 10월 무니스가 군을 이끌고 바그다드로 진군하자 칼리프가 맞서 싸우다 죽었고, 무니스는 알카히르(932~934)를 세웠다. 알카히르는 곧 무니스를 죽이고(933) 934년 폐위되어 눈이 멀었다. 알라디(934~940)가 이었으나 이라크의 세금이 바그다드에 제대로 들어오지 않았다. 935년 이집트에서는 이흐시드 왕조의 무함마드 이븐 투그즈가 총독으로 들어가 칼리프에게 명목상의 충성만 보냈다. 이 기간 칼리프의 권위가 약해진 배경에는 지방 총독이 세금을 보내지 않고 자립하는 오랜 흐름이 있었다. 이 시기 칼리프가 직접 다스리는 땅은 바그다드와 이라크 중부로 줄었다."
+  subjects: [abbasid-caliphate, fatimid-caliphate, cordoba-caliphate, qarmatian-state, hamdanid-dynasty, ziyarid-dynasty, buyid-dynasty, ikhshidid-dynasty]
+  tags: [politics]
+  sources: ["Hugh Kennedy, When Baghdad Ruled the Muslim World: The Rise and Fall of Islam's Greatest Dynasty (Da Capo Press, 2004)", "Hugh Kennedy, The Prophet and the Age of the Caliphates: The Islamic Near East from the 6th to the 11th Century (Longman, 1986)", "Roy P. Mottahedeh, Loyalty and Leadership in an Early Islamic Society (Princeton University Press, 1980)"]
+
+- id: amir-al-umara-936
+  year: 936
+  endYear: 945
+  title:
+    ko: "아미르 알우마라 제도와 칼리프의 무력화(936~945)"
+  summary:
+    ko: "936년 아바스 칼리프국의 칼리프 알라디는 군을 쥐고 있던 장군 이븐 라이크를 '아미르 알우마라'(아미르들의 아미르)로 임명했다. 이 자리는 재정과 군사를 맡고 금요 예배에서 칼리프와 함께 이름이 불리는 최고 권력자였고, 칼리프는 종교의 상징으로 남았다. 칼리프가 직접 다스리는 땅은 사실상 이라크 중부로 줄었다. 아미르 알우마라가 된 사람은 바그다드의 세금을 거두고 군인에게 봉급을 주는 일을 모두 맡아 칼리프가 쥐고 있던 재상 자리도 눌렀다. 이 제도는 지방 총독이 칼리프를 이름으로만 받들고 실제로는 자립한 현실이 바그다드 안에도 들어온 모습이다. 938년 투르크 장군 바지캄이 이븐 라이크를 몰아내고 이 자리를 차지했다. 940년 즉위한 알무타키는 바지캄이 길러 낸 칼리프였다. 941년 쿠란키지가 잠시 자리를 차지했다가 이븐 라이크가 되돌아왔고, 942년 봄부터 943년 5월까지 함단 왕조의 나시르 앗다울라가 이 자리에 있었으나 투르크 군인들의 반란으로 쫓겨났다. 943년 투르크 장군 투준이 아미르 알우마라가 되었다. 알무타키는 바그다드를 떠나 함단 왕조와 이흐시드 왕조의 도움을 구했으나 944년 투준에게 폐위되어 눈이 멀었고, 알무스타크피(944~946)가 올랐다. 945년 투준이 죽자 그의 서기관 이븐 시르자드가 자리를 이었다. 이 혼란 속에 다일람의 부와이 왕조 아흐마드가 945년 12월 무렵(946년 1월설도 있음) 바그다드에 들어갔다. 아미르 알우마라 자리를 둘러싼 다툼은 투르크 군인과 다일람 군인, 아랍 부족 군대가 서로 다른 후보를 밀며 격화되었다. 아미르 알우마라에 대한 충성은 칼리프의 이름으로 표현되어 칼리프는 정치의 상징으로 계속 인정받았다. 이로써 칼리프는 그 뒤 이름뿐인 존재가 되었다."
+  subjects: [abbasid-caliphate, hamdanid-dynasty, ikhshidid-dynasty, buyid-dynasty]
+  tags: [politics]
+  sources: ["Hugh Kennedy, When Baghdad Ruled the Muslim World: The Rise and Fall of Islam's Greatest Dynasty (Da Capo Press, 2004)", "Hugh Kennedy, The Prophet and the Age of the Caliphates: The Islamic Near East from the 6th to the 11th Century (Longman, 1986)", "Roy P. Mottahedeh, Loyalty and Leadership in an Early Islamic Society (Princeton University Press, 1980)"]
+
+- id: ikhshidid-egypt-935
+  year: 935
+  endYear: 945
+  title:
+    ko: "이흐시드 왕조의 이집트와 시리아(935~945)"
+  summary:
+    ko: "투르크 계통의 무함마드 이븐 투그즈는 아버지 때부터 아바스 칼리프국의 군에서 일했고 933년 이집트 총독에 임명되었으나 부임하지 못하다가 935년 8월 푸스타트에 들어왔다. 툴룬 왕조가 무너진 뒤 이집트는 총독이 자주 바뀌고 파티마의 침공(「마흐디야의 건설과 파티마의 팽창(910~934)」(앞의 사건))을 거듭 받아 혼란했는데, 그는 군대를 가다듬어 질서를 되찾았다. 939년 7월 칼리프에게서 '이흐시드' 칭호(중앙아시아 페르가나 군주들이 쓰던 칭호로 그의 선조가 그 지방에서 왔음을 보여 준다)를 공식으로 인정받아 이흐시드 왕조라 부른다. 939년 아바스의 아미르 알우마라 이븐 라이크가 시리아를 차지하자 이흐시드와 이븐 라이크는 라믈라와 티베리아 사이를 경계로 나누어 가졌고, 이후 이흐시드는 다마스쿠스 쪽으로 힘을 넓혔다. 944년 아바스 칼리프가 이집트와 시리아, 히자즈의 총독 자리를 그의 가문에 30년 동안 맡기기로 했다. 이흐시드는 알레포를 차지한 함단 왕조의 사이프 앗다울라와 북시리아를 두고 다투었고, 945년 다마스쿠스 둘레에서 사이프를 물리쳤다. 이흐시드 가문은 칼리프를 받드는 모습을 유지해 금요 예배와 화폐에 바그다드 칼리프의 이름을 올렸다. 이집트의 풍부한 세수로 큰 군대를 유지했고 푸스타트는 상업과 학문의 도시로 번성했다. 이흐시드의 이집트는 서쪽의 파티마 칼리프국과 동쪽의 바그다드 칼리프, 북쪽의 함단 왕조 사이에 있어 사방을 경계해야 했다. 이집트 행정에서는 콥트 교회를 따르는 기독교도 서기관들이 오랜 전통대로 재정을 맡았다고 한다. 이집트는 바그다드에서 멀리 떨어진 채 이흐시드 가문의 군이 지켰다."
+  subjects: [ikhshidid-dynasty, abbasid-caliphate, hamdanid-dynasty]
+  tags: [politics, war]
+  sources: ["The Cambridge History of Egypt, vol. 1: Islamic Egypt, 640–1517 (Carl F. Petry 편, Cambridge University Press, 1998)", "C. E. Bosworth, The New Islamic Dynasties: A Chronological and Genealogical Manual (Columbia University Press, 1996)", "Hugh Kennedy, The Prophet and the Age of the Caliphates: The Islamic Near East from the 6th to the 11th Century (Longman, 1986)"]

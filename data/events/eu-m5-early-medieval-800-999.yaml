@@ -156,7 +156,7 @@
     ko: "아랍의 시칠리아 정복과 크레타(827~902), 바리 토후국과 루도비코 2세(847~871)"
   summary:
     ko: "아글라브 왕조(이프리키야)의 군대가 827년 6월 동로마 반란자 에우페미오스의 청을 받아 시칠리아 마자라에 상륙했다. 시라쿠사 포위는 실패했으나 831년 팔레르모, 843년 메시나, 859년 엔나, 878년 5월 시라쿠사(아홉 달 포위), 902년 타오르미나가 차례로 떨어졌다(지도는 시칠리아 토후국을 831년 팔레르모, 842년 아그리젠토, 843년 메시나, 859년 엔나, 878년 시라쿠사로 넓힌다). 정복은 약탈과 포로 노예 무역을 낳았고, 시라쿠사 함락을 겪은 수사 테오도시오스의 편지는 주민의 학살과 끌려간 포로를 적는다. 한편 코르도바 아미르국에서 쫓겨난 안달루스 사람들이 824~828년 사이 크레타를 차지해 칸닥스를 중심으로 토후국을 세웠다(지도는 827년부터 크레타 토후국). 남이탈리아에서는 840년 무렵 타란토를 얻은 무슬림이 아드리아해까지 위협해 베네치아 함대도 크게 졌다고 베네치아 연대기는 적으며, 847년 무렵 바리에 토후국이 섰다. 846년 무슬림 습격대가 로마 성벽 밖의 성 베드로 대성당을 약탈하자 교황 레오 4세는 레오 성벽을 쌓았다. 871년 2월 이탈리아 왕국의 황제 루도비코 2세가 바리를 함락했고(동로마 함대도 869년부터 포위에 함께했다) 두 제국은 공을 두고 다투었다(지도는 바리를 876년 동로마 땅으로, 877년 버전). 880년 타란토가 동로마로 돌아왔고, 롬바르드·캄파니아 공국들(베네벤토·살레르노·나폴리 등)은 서로 싸우며 무슬림 용병을 쓰기도 했다. 아글라브 왕조가 909년 파티마 왕조에 무너진 뒤에도 토후국은 이어졌고 965년 로메타를 끝으로 섬 전체가 이슬람 땅이 되었다."
-  subjects: [sicily-emirate, byzantine-empire, crete-emirate, lombard-principalities, italy-carolingian, papal-states, venice, cordoba-emirate]
+  subjects: [sicily-emirate, byzantine-empire, crete-emirate, lombard-principalities, italy-carolingian, papal-states, venice, cordoba-emirate, aghlabid-dynasty]
   links:
     - { from: sicily-emirate, to: byzantine-empire, note: "시칠리아 정복(827~902)" }
     - { from: italy-carolingian, to: lombard-principalities, note: "루도비코 2세의 남이탈리아 원정과 바리(871)" }
