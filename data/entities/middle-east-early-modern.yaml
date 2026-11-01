@@ -182,7 +182,7 @@
     - 술탄은 세습보다 맘루크 군인들의 추대로 오르는 일이 많았음
     - 아바스 가문의 칼리프를 카이로에 두고 그 권위를 빌림
     - 1468~1496년 카이트바이가 다스리며 마지막으로 번성함
-  startEvents: []
+  startEvents: [mamluk-rise-1249]
   endEvents: []
   basis:
     type: primary_source
@@ -203,7 +203,7 @@
     - 1201년 무렵부터 카타다 가문이 대를 이어 샤리프 자리를 맡음
     - 1517년 샤리프 바라카트가 셀림 1세를 칼리프로 받들어 지위를 지킴
     - 오스만 시대에는 술탄이 가문 안에서 샤리프를 골라 임명함
-  startEvents: []
+  startEvents: [sharifate-mecca-967]
   endEvents: []
   basis:
     type: primary_source
@@ -404,7 +404,7 @@
     - 도읍은 바흘라
     - 바흘라 성은 세계 유산임
     - 이바드파 이맘국 전통과 왕조 지배가 엇갈림
-  startEvents: []
+  startEvents: [oman-ibadi-1016]
   endEvents: []
   basis:
     type: primary_source
@@ -467,7 +467,7 @@
     - 1510년 스페인에 트리폴리를 잃음
     - 1542년 알제의 오스만 정권에 콘스탄틴·비스크라 쪽을 잃음
     - 1535년 카를 5세가 튀니스를 차지하고 술탄을 속국 군주로 다시 앉힘
-  startEvents: []
+  startEvents: [almohad-fall-1229]
   endEvents: []
   basis:
     type: primary_source
@@ -552,7 +552,7 @@
     - 1509년 스페인이 오랑을 빼앗고 왕들이 한때 스페인에 조공함
     - 1517~1518년 알제의 오스만 해적 세력과 스페인이 틀렘센을 두고 다툼
     - 사하라를 건너 오는 금 교역의 북쪽 끝 시장으로 번성함
-  startEvents: []
+  startEvents: [almohad-fall-1229]
   endEvents: []
   basis:
     type: primary_source
@@ -615,7 +615,7 @@
     - 1415년 포르투갈에 세우타를 잃음
     - 1420년부터 와타스 가문 재상이 섭정으로 실권을 쥠
     - 페스에 학교(마드라사)를 많이 세움
-  startEvents: []
+  startEvents: [almohad-fall-1229]
   endEvents: []
   basis:
     type: primary_source

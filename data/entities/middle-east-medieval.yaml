@@ -81,7 +81,7 @@
     - 하룬 알라시드와 알마문 때 '지혜의 집'에서 그리스 학문을 아랍어로 옮김
     - 861년 뒤 투르크 군인들이 칼리프를 갈아치우는 혼란을 겪음
   startEvents: [abbasid-revolution-747]
-  endEvents: []
+  endEvents: [hulagu-baghdad-1256]
   basis:
     type: primary_source
     refs: ["타바리, 『예언자들과 왕들의 역사』", "야쿠비, 『여러 나라의 책』"]
@@ -141,7 +141,7 @@
     - 876년 바그다드로 진군했으나 다이르 알아쿨에서 칼리프 군에 짐
     - 페르시아어 궁정 시를 처음 후원한 왕조로 꼽힘
   startEvents: [saffarid-yaqub-861]
-  endEvents: []
+  endEvents: [ghaznavid-977]
   basis:
     type: primary_source
     refs: ["『타리히 시스탄』(시스탄사)"]
@@ -201,7 +201,7 @@
     - 900년 이스마일 이븐 아흐마드가 발흐에서 사파르 왕조의 아므르를 사로잡음
     - 시인 루다키와 학자 이븐 시나가 이 왕조의 궁정에서 활동함
   startEvents: [mamun-civil-war-809]
-  endEvents: []
+  endEvents: [ghaznavid-977]
   basis:
     type: primary_source
     refs: ["나르샤히, 『부하라사』"]
@@ -221,7 +221,7 @@
     - 무함마드 이븐 일리아스가 30여 년 다스림
     - 사만 왕조와 부와이 왕조 사이에서 자립을 지킴
   startEvents: [ziyarid-mardavij-928]
-  endEvents: []
+  endEvents: [adud-al-dawla-949]
   basis:
     type: primary_source
     refs: ["이븐 알아시르, 『완전한 역사』"]
@@ -241,7 +241,7 @@
     - 카부스 이븐 부시무르기르는 학자이자 시인으로 이름남
     - 980년 카부스가 부와이에 쫓겨났다가 998년 돌아옴
   startEvents: [ziyarid-mardavij-928]
-  endEvents: []
+  endEvents: [alamut-1090]
   basis:
     type: primary_source
     refs: ["이븐 이스판디야르, 『타바리스탄사』", "카부스 나마"]
@@ -261,7 +261,7 @@
     - 칼리프에게서 '앗다울라' 칭호를 받고 대아미르로 실권을 쥠
     - 아두드 앗다울라 때 가장 넓어져 '샤한샤' 칭호를 씀
   startEvents: [buyid-rise-934]
-  endEvents: []
+  endEvents: [tughril-seljuk-1037]
   basis:
     type: primary_source
     refs: ["미스카와이흐, 『여러 민족의 경험』"]
@@ -281,7 +281,7 @@
     - 941년 마르주반 이븐 무함마드가 다이삼에게서 아제르바이잔을 빼앗음
     - 마르주반은 948년 부와이 왕조와 싸우다 사로잡힘
   startEvents: [azerbaijan-sajid-sallarid-889]
-  endEvents: []
+  endEvents: [tughril-seljuk-1037]
   basis:
     type: primary_source
     refs: ["미스카와이흐, 『여러 민족의 경험』"]
@@ -300,8 +300,8 @@
     - 도읍은 타브리즈
     - 984년 무렵 살라르 왕조의 아제르바이잔 땅을 차지함
     - 아랍계 가문이 쿠르드 사회에 섞여 쿠르드 왕조가 됨
-  startEvents: []
-  endEvents: []
+  startEvents: [northwest-dynasties-955]
+  endEvents: [tughril-seljuk-1037]
   basis:
     type: primary_source
     refs: ["이븐 알아시르, 『완전한 역사』"]
@@ -320,8 +320,8 @@
     - 도읍은 디나바르
     - 바드르 이븐 하산와이가 1000년 무렵까지 30여 년 다스림
     - 부와이 왕조에 공납을 바치며 자그로스 산지의 자치를 지킴
-  startEvents: []
-  endEvents: []
+  startEvents: [northwest-dynasties-955]
+  endEvents: [northwest-dynasties-955]
   basis:
     type: primary_source
     refs: ["이븐 알아시르, 『완전한 역사』"]
@@ -341,7 +341,7 @@
     - 사이프 앗다울라가 945~967년 알레포를 다스리며 동로마와 해마다 싸움
     - 962년 동로마의 니케포로스 포카스가 알레포를 약탈함
   startEvents: [hamdanid-mosul-aleppo-890]
-  endEvents: []
+  endEvents: [sayf-al-dawla-aleppo-946]
   basis:
     type: primary_source
     refs: ["무타납비의 사이프 앗다울라 찬가", "이븐 알아디무, 『알레포사』"]
@@ -361,8 +361,8 @@
     - 도읍은 모술
     - 996년 알무칼라드가 부와이 총독을 몰아내고 모술을 손에 넣음
     - 시아파를 받든 아랍 부족 왕조
-  startEvents: []
-  endEvents: []
+  startEvents: [buyid-decline-983]
+  endEvents: [seljuk-split-1092]
   basis:
     type: primary_source
     refs: ["이븐 알아시르, 『완전한 역사』"]
@@ -382,7 +382,7 @@
     - 930년 메카를 약탈해 검은 돌을 가져갔다가 951년 돌려줌
     - 지도자 회의가 다스리는 공동체 체제로 알려짐
   startEvents: [qarmatian-bahrain-899]
-  endEvents: []
+  endEvents: [qarmatian-hasa-951]
   basis:
     type: primary_source
     refs: ["나시르 후스라우, 『여행기』"]
@@ -402,7 +402,7 @@
     - 981년 뒤 노예 출신 재상들이 실권을 쥠
     - 아바스 칼리프를 명목상 받듦
   startEvents: [yemen-ziyadid-zaydi-819]
-  endEvents: []
+  endEvents: [yemen-end-997]
   basis:
     type: primary_source
     refs: ["우마라 알야마니, 『예멘사』"]
@@ -422,7 +422,7 @@
     - 916년 카르마트에게서 사나를 되찾음
     - 힘야르 계통 가문으로 아바스 칼리프를 받듦
   startEvents: [yemen-ziyadid-zaydi-819]
-  endEvents: []
+  endEvents: [yemen-end-997]
   basis:
     type: primary_source
     refs: ["함다니, 『이클릴』"]
@@ -463,7 +463,7 @@
     - 893년 아바스 장수 무함마드 이븐 누르의 정복으로 둘째 이맘국이 끊김
     - 931~934년 걸프의 카르마트가 오만을 지배함
   startEvents: [oman-ibadi-imamate-793]
-  endEvents: []
+  endEvents: [oman-ibadi-1016]
   basis:
     type: primary_source
     refs: ["살릴 이븐 라지크, 『오만 이맘과 사이드들의 역사』"]
@@ -547,7 +547,7 @@
     - 828년 이드리스 2세가 죽은 뒤 아들들이 땅을 나누어 다스림
     - 917~921년 파티마의 원정 뒤 그 가신이 됨
   startEvents: [idrisid-fez-788]
-  endEvents: []
+  endEvents: [maghrawa-974]
   basis:
     type: primary_source
     refs: ["이븐 아비 자르, 『라우드 알키르타스』", "이븐 할둔, 『이바르의 책』"]
@@ -567,7 +567,7 @@
     - 사하라 남쪽 가나와 잇는 금 무역의 북쪽 관문
     - 909년 파티마의 알마흐디가 이곳에 갇혀 있다 풀려남
   startEvents: [kharijite-states-maghreb-758]
-  endEvents: []
+  endEvents: [maghrawa-974]
   basis:
     type: primary_source
     refs: ["알바크리, 『길과 나라들의 책』", "이븐 할둔, 『이바르의 책』"]
@@ -587,7 +587,7 @@
     - 살리흐 이븐 타리프가 예언자를 칭하고 베르베르어 경전을 내놓음
     - 코르도바와 사절을 주고받았으나 10세기 말 사이가 틀어짐
   startEvents: [berber-great-revolt-739]
-  endEvents: []
+  endEvents: [almoravid-maghreb-1040]
   basis:
     type: primary_source
     refs: ["알바크리, 『길과 나라들의 책』", "이븐 할둔, 『이바르의 책』"]
@@ -606,8 +606,8 @@
     - 도읍은 시질마사, 987년 무렵부터 페스
     - 987년 지리 이븐 아티야가 알만수르에게 마그레브 아미르로 임명됨
     - 994년 우지다를 세움
-  startEvents: []
-  endEvents: []
+  startEvents: [maghrawa-974]
+  endEvents: [almoravid-maghreb-1040]
   basis:
     type: primary_source
     refs: ["이븐 아비 자르, 『라우드 알키르타스』", "이븐 할둔, 『이바르의 책』"]
@@ -649,7 +649,7 @@
     - 946~968년 환관 카푸르가 섭정하다 966년 스스로 다스림
     - 947년 함단 왕조의 사이프 앗다울라와 시리아를 나눔
   startEvents: [ikhshidid-egypt-935]
-  endEvents: []
+  endEvents: [fatimid-egypt-968]
   basis:
     type: primary_source
     refs: ["알킨디, 『이집트 총독들의 책』", "알마크리지, 『히타트』"]
@@ -670,7 +670,7 @@
     - 969년 장군 자우하르가 이집트를 정복하고 카이로를 세움
     - 970~972년 카이로에 알아즈하르 모스크를 지음
   startEvents: [fatimid-rise-893]
-  endEvents: []
+  endEvents: [fatimid-fall-1153]
   basis:
     type: primary_source
     refs: ["카디 알누만, 『포교의 시작』", "알마크리지, 『이티아즈 알후나파』"]
@@ -690,8 +690,8 @@
     - 아버지 지리 이븐 마나드가 아시르를 세우고 부룩킨이 알제를 다시 세움
     - 1015년 함마드 가문이 알제리 쪽에서 갈라져 나감
     - 1050년대 바누 힐랄의 침입으로 내륙을 잃음
-  startEvents: []
-  endEvents: []
+  startEvents: [zirid-ifriqiya-972]
+  endEvents: [almohad-maghreb-1120]
   basis:
     type: primary_source
     refs: ["이븐 이다리, 『알바얀 알무그리브』", "이븐 할둔, 『이바르의 책』"]
@@ -712,8 +712,8 @@
     - 루울루는 991년부터 함단 군주 사이드 앗다울라의 섭정으로 실권을 쥠
     - 1003~1004년 함단 가문의 아들들을 이집트로 내보내고 홀로 다스림
     - 1008~1009년 루울루가 죽고 아들 만수르가 뒤를 이음
-  startEvents: []
-  endEvents: []
+  startEvents: [sayf-al-dawla-aleppo-946]
+  endEvents: [sayf-al-dawla-aleppo-946]
   basis:
     type: primary_source
     refs: ["이븐 알아디무, 『알레포사』"]
@@ -733,8 +733,8 @@
     - 1022년 라까·라피카를 손에 넣음
     - 1029년 우크후와나 전투에서 살리흐 이븐 미르다스가 파티마 군에 전사함
     - 1048~1050년 무렵 티말이 동로마의 신하가 됨
-  startEvents: []
-  endEvents: []
+  startEvents: [mirdasid-1014]
+  endEvents: [mirdasid-1014]
   basis:
     type: primary_source
     refs: ["이븐 알아디무, 『알레포사』"]
@@ -754,8 +754,8 @@
     - 1079년 투투시가 다마스쿠스의 아트시즈를 처형하고 그 땅을 넘겨받음
     - 1092년 말리크샤가 죽자 투투시가 술탄을 칭하다 1095년 전사함
     - 두카크와 리드완이 다투는 사이 제1차 십자군이 시리아 해안을 지나감
-  startEvents: []
-  endEvents: []
+  startEvents: [syria-seljuks-1071]
+  endEvents: [syria-seljuks-1071]
   basis:
     type: primary_source
     refs: ["이븐 알칼라니시, 『다마스쿠스 연대기 속편』"]
@@ -775,8 +775,8 @@
     - 투그테긴은 예루살렘 왕국과 싸우기도 하고 휴전하기도 함
     - 1148년 제2차 십자군의 다마스쿠스 포위를 막아 냄
     - 1138년 무렵 홈스·하마를 장기에게 잃음
-  startEvents: []
-  endEvents: []
+  startEvents: [syria-seljuks-1071]
+  endEvents: [zengi-nur-1127]
   basis:
     type: primary_source
     refs: ["이븐 알칼라니시, 『다마스쿠스 연대기 속편』"]
@@ -796,7 +796,7 @@
     - 1119년 일가지가 '피의 들판' 전투에서 안티오키아 군을 무찌름
     - 1123년 발라크가 예루살렘 왕 보두앵 2세를 사로잡음
     - 알레포는 1128년 장기에게 넘어감
-  startEvents: []
+  startEvents: [syria-seljuks-1071]
   endEvents: []
   basis:
     type: primary_source
@@ -817,7 +817,7 @@
     - 1100년 보두앵 1세가 첫 왕을 칭함
     - 트리폴리 백국·안티오키아 공국의 명목상 종주국
     - 1187년 10월 살라딘에게 예루살렘을 잃음
-  startEvents: []
+  startEvents: [jerusalem-tripoli-1099]
   endEvents: []
   basis:
     type: primary_source
@@ -838,7 +838,7 @@
     - 1102년 레몽이 트리폴리 앞 '순례자의 산'에 성을 쌓고 포위를 시작함
     - 1187년 뒤 안티오키아 공국과 같은 군주를 받듦
     - 1271년 맘루크가 크라크 데 슈발리에를 빼앗음
-  startEvents: []
+  startEvents: [jerusalem-tripoli-1099]
   endEvents: []
   basis:
     type: primary_source
@@ -859,8 +859,8 @@
     - 1144년 12월 장기가 에데사 백국의 도읍 에데사를 함락함
     - 1146년 장기가 죽자 아들들이 모술과 알레포로 나눠 다스림
     - 1169년 장수 시르쿠가 이집트에 들어가 파티마의 재상이 됨
-  startEvents: []
-  endEvents: []
+  startEvents: [zengi-nur-1127]
+  endEvents: [lulu-mosul-1234]
   basis:
     type: primary_source
     refs: ["이븐 알아시르, 『아타베그 왕조의 빛나는 역사』"]
@@ -880,7 +880,7 @@
     - 1187년 7월 하틴 전투에서 이기고 10월 예루살렘에 들어감
     - 1193년 살라딘이 죽은 뒤 아들들과 동생 알아딜이 땅을 다툼
     - 1229년 야파 조약으로 예루살렘을 프리드리히 2세에게 내줌
-  startEvents: []
+  startEvents: [saladin-1171]
   endEvents: []
   basis:
     type: primary_source
@@ -900,8 +900,8 @@
     - 도읍은 자비드
     - 아비시니아 출신 노예 군인 집안
     - 1060년 무렵 나자흐가 술라이흐 왕조에게 독살당했다고 전함
-  startEvents: []
-  endEvents: []
+  startEvents: [yemen-end-997]
+  endEvents: [yemen-after-1158]
   basis:
     type: primary_source
     refs: ["우마라 알야마니, 『예멘사』"]
@@ -921,8 +921,8 @@
     - 1062년 알리 알술라이히가 메카에 들어가 샤리프를 세움
     - 아르와 여왕이 1086년부터 50년 넘게 실권을 쥠
     - 1132년 파티마 칼리프의 계승 문제로 카이로와 갈라짐
-  startEvents: []
-  endEvents: []
+  startEvents: [sulayhid-yemen-1047]
+  endEvents: [sulayhid-yemen-1047]
   basis:
     type: primary_source
     refs: ["우마라 알야마니, 『예멘사』", "이드리스 이마드 앗딘, 『소식의 샘』"]
@@ -941,8 +941,8 @@
     - 도읍은 아덴
     - 인도양 무역항 아덴의 관세로 부를 쌓음
     - 처음에는 알아바스와 알마스우드 형제가 함께 다스림
-  startEvents: []
-  endEvents: []
+  startEvents: [sulayhid-yemen-1047]
+  endEvents: [yemen-after-1158]
   basis:
     type: primary_source
     refs: ["우마라 알야마니, 『예멘사』"]
@@ -961,8 +961,8 @@
     - 도읍은 사나
     - 1173년 주라이 왕조와 함께 마흐디 왕조를 막아 냄
     - 1175년 뒤 아이유브 군에 맞서 사나를 지키다 물러남
-  startEvents: []
-  endEvents: []
+  startEvents: [sulayhid-yemen-1047]
+  endEvents: [yemen-after-1158]
   basis:
     type: primary_source
     refs: ["우마라 알야마니, 『예멘사』"]
@@ -981,8 +981,8 @@
     - 도읍은 자비드
     - 1164년 아덴을 에워쌌으나 빼앗지 못함
     - 1173년 주라이 왕조와 사나 함단 술탄국에 짐
-  startEvents: []
-  endEvents: []
+  startEvents: [yemen-after-1158]
+  endEvents: [yemen-after-1158]
   basis:
     type: primary_source
     refs: ["우마라 알야마니, 『예멘사』"]
@@ -1001,8 +1001,8 @@
     - 도읍은 자비드, 뒤에 타이즈
     - 1174년 5월 자비드, 6월 아덴을 차지함
     - 1219년 자이드파 이맘과 휴전함
-  startEvents: []
-  endEvents: []
+  startEvents: [yemen-after-1158]
+  endEvents: [yemen-after-1158]
   basis:
     type: primary_source
     refs: ["알하즈라지, 『라술 왕조의 진주 목걸이』"]
@@ -1022,7 +1022,7 @@
     - 1235년 아바스 칼리프의 승인을 받음
     - 앗무자파르 유수프 1세(1249~1295년) 때 가장 번성함
     - 1350년 알무자히드 알리가 메카에서 맘루크에게 붙잡힘
-  startEvents: []
+  startEvents: [yemen-after-1158]
   endEvents: []
   basis:
     type: primary_source
@@ -1042,8 +1042,8 @@
     - 도읍은 알하사, 1119년 무렵부터 카티프
     - 아랍 압둘 카이스 부족 계통 가문
     - 시인 이븐 알무카르랍이 왕조의 일을 노래함
-  startEvents: []
-  endEvents: []
+  startEvents: [uyunid-arabia-1077]
+  endEvents: [uyunid-arabia-1077]
   basis:
     type: primary_source
     refs: ["이븐 알무카르랍, 『시집』"]
@@ -1062,7 +1062,7 @@
     - 도읍은 알하사
     - 걸프 건너 호르무즈 왕국과 해상 무역을 다툼
     - 유목 부족의 힘을 바탕으로 오아시스를 다스림
-  startEvents: []
+  startEvents: [uyunid-arabia-1077]
   endEvents: []
   basis:
     type: primary_source
@@ -1104,8 +1104,8 @@
     - 마흐무드가 1000년 무렵부터 북인도로 여러 차례 원정함
     - 시인 피르다우시가 『샤나메』를 마흐무드에게 바침
     - 1040년 단다나칸 전투에서 셀주크에 져 호라산을 잃음
-  startEvents: []
-  endEvents: []
+  startEvents: [ghaznavid-977]
+  endEvents: [katwan-ghur-1141]
   basis:
     type: primary_source
     refs: ["바이하키, 『마수드사』"]
@@ -1124,8 +1124,8 @@
     - 도읍은 이스파한, 1051년부터 야즈드
     - 철학자 이븐 시나가 알라 앗다울라의 궁정에서 일함
     - 1051년 뒤 셀주크 술탄 가문과 혼인하고 그 봉신이 됨
-  startEvents: []
-  endEvents: []
+  startEvents: [buyid-decline-983]
+  endEvents: [katwan-ghur-1141]
   basis:
     type: primary_source
     refs: ["이븐 알아시르, 『완전한 역사』"]
@@ -1144,8 +1144,8 @@
     - 도읍은 훌완(지금 이란·이라크 국경의 사르폴자하브 둘레)
     - 1015년 하산와이 왕조가 무너진 뒤 디나바르·케르만샤를 차지함
     - 1040년대 서쪽으로 온 셀주크 군대와 싸우다 그 아래로 들어감
-  startEvents: []
-  endEvents: []
+  startEvents: [northwest-dynasties-955]
+  endEvents: [seljuk-split-1092]
   basis:
     type: primary_source
     refs: ["이븐 알아시르, 『완전한 역사』"]
@@ -1164,8 +1164,8 @@
     - 1012년 알리 1세가 힐라를 세워 도읍으로 삼음
     - 사다카 1세(1086~1108)가 힐라에 성벽을 쌓고 가장 강성해짐
     - 1108년 사다카가 셀주크 술탄 무함마드 1세와 싸우다 전사함
-  startEvents: []
-  endEvents: []
+  startEvents: [adud-al-dawla-949]
+  endEvents: [iraq-seljuk-end-1152]
   basis:
     type: primary_source
     refs: ["이븐 알아시르, 『완전한 역사』"]
@@ -1206,8 +1206,8 @@
     - 1071년 알프 아르슬란이 만지케르트에서 동로마 황제를 사로잡음
     - 재상 니잠 알물크가 바그다드 등에 니자미야 학원을 세움
     - 1153년 산자르가 오구즈에게 사로잡혔다가 1156년 풀려남
-  startEvents: []
-  endEvents: []
+  startEvents: [tughril-seljuk-1037]
+  endEvents: [iraq-seljuk-end-1152]
   basis:
     type: primary_source
     refs: ["라완디, 『가슴의 휴식』", "이븐 알아시르, 『완전한 역사』"]
@@ -1227,8 +1227,8 @@
     - 1073년 카부르트가 말리크샤에게 맞섰다가 져 죽음
     - 바다 건너 오만을 한동안 다스림
     - 12세기 후반 왕자들의 다툼으로 쇠약해짐
-  startEvents: []
-  endEvents: []
+  startEvents: [kirman-seljuk-1041]
+  endEvents: [kirman-seljuk-1041]
   basis:
     type: primary_source
     refs: ["무함마드 이브라힘, 『케르만 셀주크사』"]
@@ -1247,8 +1247,8 @@
     - 도읍은 하마단
     - 아타베그(술탄의 후견인)들이 어린 술탄을 세우고 실권을 다툼
     - 1157년 술탄 무함마드 2세가 바그다드를 에워쌌으나 함락하지 못함
-  startEvents: []
-  endEvents: []
+  startEvents: [seljuk-split-1092]
+  endEvents: [iraq-seljuk-end-1152]
   basis:
     type: primary_source
     refs: ["라완디, 『가슴의 휴식』"]
@@ -1268,8 +1268,8 @@
     - 엘디구즈가 술탄 토그릴 2세의 과부와 혼인해 아르슬란샤를 술탄으로 세움
     - 무함마드 자한 파흘라반(1175~1186) 때 가장 강성함
     - 시인 니자미 간자비가 이 왕조 군주들에게 작품을 바침
-  startEvents: []
-  endEvents: []
+  startEvents: [seljuk-split-1092]
+  endEvents: [mongol-khwarazm-1219]
   basis:
     type: primary_source
     refs: ["라완디, 『가슴의 휴식』"]
@@ -1289,7 +1289,7 @@
     - 사드 1세가 호라즘 샤에게 사로잡혀 그 종주를 받아들임
     - 아부 바크르 때 시인 사디가 『과수원』·『장미원』을 지어 바침
     - 몽골이 오자 일찍 항복해 파르스를 전란에서 지킴
-  startEvents: []
+  startEvents: [seljuk-split-1092]
   endEvents: []
   basis:
     type: primary_source
@@ -1310,7 +1310,7 @@
     - 유수프 샤 1세가 후제스탄 북부를 더함
     - 1296년 아프라시얍 1세가 일 칸 가잔에게 처형됨
     - 일 칸국과 티무르 왕조의 종주를 받아들임
-  startEvents: []
+  startEvents: [seljuk-split-1092]
   endEvents: []
   basis:
     type: primary_source
@@ -1331,8 +1331,8 @@
     - 1194년 테키시가 라이에서 마지막 이라크 셀주크 술탄을 무찌름
     - 1218년 오트라르에서 몽골 상단을 죽여 칭기즈 칸의 침공을 부름
     - 1225년 잘랄 앗딘이 타브리즈를 도읍으로 삼음
-  startEvents: []
-  endEvents: []
+  startEvents: [khwarazm-rise-1077]
+  endEvents: [mongol-khwarazm-1219]
   basis:
     type: primary_source
     refs: ["주와이니, 『세계 정복자의 역사』", "나사위, 『잘랄 앗딘 전기』"]
@@ -1353,7 +1353,7 @@
     - 바라크 하지브가 아들을 오고데이 궁정에 보내 몽골에 항복함
     - 쿠틀루그 투르칸 하툰이 1257~1282년 다스리며 나라를 안정시킴
     - 파디샤 하툰이 일 칸 아바카와 게이하투의 왕비가 됨
-  startEvents: []
+  startEvents: [mongol-khwarazm-1219]
   endEvents: []
   basis:
     type: primary_source
@@ -1374,7 +1374,7 @@
     - 루울루가 장기 왕조의 섭정으로 실권을 쥔 뒤 1234년 자기 이름으로 동전을 찍음
     - 1243년 쾨세다그 전투 뒤 몽골의 종주를 받아들임
     - 1258년 훌라구의 바그다드 원정을 도움
-  startEvents: []
+  startEvents: [lulu-mosul-1234]
   endEvents: []
   basis:
     type: primary_source
@@ -1395,7 +1395,7 @@
     - 1260년 아인 잘루트에서 맘루크에게 져 시리아로 나아가지 못함
     - 1295년 가잔 칸이 이슬람으로 개종하고 세제·역참을 고침
     - 재상 라시드 앗딘이 세계사 『집사』를 엮음
-  startEvents: []
+  startEvents: [hulagu-baghdad-1256]
   endEvents: []
   basis:
     type: primary_source
@@ -1565,8 +1565,8 @@
     - 1017년 지리 왕조의 알무이즈와 싸운 뒤 화평을 맺어 자립을 굳힘
     - 알나시르(재위 1062~1088) 때 가장 넓었고 1067년 무렵 베자이아를 세움
     - 아바스와 파티마 칼리프 사이에서 받드는 쪽을 여러 번 바꿈
-  startEvents: []
-  endEvents: []
+  startEvents: [zirid-ifriqiya-972]
+  endEvents: [almohad-maghreb-1120]
   basis:
     type: primary_source
     refs: ["이븐 할둔, 『이바르의 책』", "이븐 이다리, 『알바얀 알무그리브』"]
@@ -1585,8 +1585,8 @@
     - 1009년 풀풀이 죽은 뒤 지리 왕조가 트리폴리를 잠시 되찾았으나 1022년 넘겨줌
     - 1026~1027년 파티마 칼리프 알자히르에게서 트리폴리 총독 지위를 인정받음
     - 1051~1052년 바누 힐랄이 쳐들어올 때 지리 왕조를 도우면서도 트리폴리를 지킴
-  startEvents: []
-  endEvents: []
+  startEvents: [zirid-ifriqiya-972]
+  endEvents: [almohad-maghreb-1120]
   basis:
     type: primary_source
     refs: ["이븐 할둔, 『이바르의 책』", "이븐 이다리, 『알바얀 알무그리브』"]
