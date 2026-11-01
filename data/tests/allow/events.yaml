@@ -133,9 +133,6 @@
   decided: 2026-10-29 운영자 A1 승인
 
 # ── 서아시아·북아프리카 A1a-2 (2026-10-29): 아라비아 반도·이란 새 항목의 성립·소멸·버전 해. 사건 묶음 me-08이 사건을 쓰며 이 줄을 지운다 ──
-- key: '1789 qajar-iran 성립'
-  reason: me-08 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A1 승인
 - key: '1836 jabal-shammar 성립'
   reason: me-08 사건 묶음이 채움
   decided: 2026-10-29 운영자 A1 승인
@@ -396,175 +393,7 @@
 - key: '1987 western-sahara-disputed 버전'
   reason: me-08 사건 묶음이 채움
   decided: 2026-10-29 운영자 A1 승인
-
-# ── 서아시아·북아프리카 A2a-1 (2026-10-29): 이란·이라크 1453~1917 새 항목·카자르 1918년 전 버전의 성립·소멸·버전 해. 사건 묶음 me-05~07이 사건을 쓰며 이 줄을 지운다 ──
-- key: '1501 safavid-iran 성립'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1507 timurid-empire 소멸'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1508 aq-qoyunlu 소멸'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1508 musha-sha 소멸'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1709 hotak-dynasty 성립'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1736 safavid-iran 소멸'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1736 afsharid-iran 성립'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1738 hotak-dynasty 소멸'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1751 zand-dynasty 성립'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1794 zand-dynasty 소멸'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1796 afsharid-iran 소멸'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1501 aq-qoyunlu 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1503 aq-qoyunlu 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1503 safavid-iran 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1508 safavid-iran 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1510 safavid-iran 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1517 safavid-iran 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1534 safavid-iran 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1589 safavid-iran 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1590 safavid-iran 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1591 safavid-iran 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1598 safavid-iran 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1601 safavid-iran 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1603 safavid-iran 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1624 safavid-iran 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1638 safavid-iran 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1722 safavid-iran 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1722 hotak-dynasty 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1724 safavid-iran 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1725 safavid-iran 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1726 safavid-iran 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1727 safavid-iran 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1729 safavid-iran 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1730 safavid-iran 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1751 afsharid-iran 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1760 zand-dynasty 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1763 zand-dynasty 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1779 zand-dynasty 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1782 zand-dynasty 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1785 zand-dynasty 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1791 qajar-iran 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1792 zand-dynasty 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1792 qajar-iran 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1794 qajar-iran 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1796 qajar-iran 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-
 # ── 서아시아·북아프리카 A2a-2 (2026-10-29): 레반트·아라비아 1453~1917 새 항목·A1 항목 1918년 전 버전·오스만 늘림의 성립·소멸·버전 해. 사건 묶음 me-05~07이 사건을 쓰며 이 줄을 지운다 ──
-- key: '1517 tahirid-sultanate 소멸'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1521 jabrid-emirate 소멸'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1597 qasimid-state 성립'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1624 nabhani-dynasty 소멸'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1624 yaruba-dynasty 성립'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1669 bani-khalid-emirate 성립'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1728 lahej-sultanate 성립'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1744 emirate-of-diriyah 성립'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1744 busaid-oman 성립'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1749 yaruba-dynasty 소멸'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
 - key: '1805 muhammad-ali-egypt 성립'
   reason: me-05~07 사건 묶음이 채움
   decided: 2026-10-29 운영자 A2 승인
@@ -599,36 +428,6 @@
   reason: me-05~07 사건 묶음이 채움
   decided: 2026-10-29 운영자 A2 승인
 - key: '1967 lahej-sultanate 소멸'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1504 tahirid-sultanate 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1628 qasimid-state 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1636 qasimid-state 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1650 yaruba-dynasty 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1670 bani-khalid-emirate 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1728 qasimid-state 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1749 busaid-oman 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1773 emirate-of-diriyah 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1792 emirate-of-diriyah 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1795 emirate-of-diriyah 버전'
   reason: me-05~07 사건 묶음이 채움
   decided: 2026-10-29 운영자 A2 승인
 - key: '1803 emirate-of-diriyah 버전'
@@ -705,15 +504,6 @@
   decided: 2026-10-29 운영자 A2 승인
 
 # ── 서아시아·북아프리카 A2b-1 (2026-10-30): 이집트·리비아 1453~1917 새 항목·이집트 땅을 더한 항목의 성립·소멸·버전 해. 이집트 술탄국은 1914년부터 같은 모양이라 1918 버전 줄을 지움 ──
-- key: '1550 fezzan-sultanate 성립'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1574 hafsid-sultanate 소멸'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1711 karamanli-tripolitania 성립'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
 - key: '1813 fezzan-sultanate 소멸'
   reason: me-05~07 사건 묶음이 채움
   decided: 2026-10-29 운영자 A2 승인
@@ -728,51 +518,6 @@
   decided: 2026-10-29 운영자 A2 승인
 
 # ── 서아시아·북아프리카 A2b-2 (2026-10-30): 마그레브 1453~1917 새 항목의 성립·소멸·버전 해와 프랑스령 알제리의 1918년 전 단계. 프랑스령 튀니지·모로코 보호령 둘은 1881·1912년부터 같은 모양이라 1918 버전 줄을 지움 ──
-- key: '1510 saadi-sultanate 성립'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1510 hafsid-sultanate 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1525 saadi-sultanate 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1542 hafsid-sultanate 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1549 saadi-sultanate 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1554 zayyanid-kingdom 소멸'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1554 wattasid-sultanate 소멸'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1641 dila-zawiya 성립'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1641 saadi-sultanate 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1659 regency-of-algiers 성립'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1659 saadi-sultanate 소멸'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1666 alaouite-morocco 성립'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1668 dila-zawiya 소멸'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1668 alaouite-morocco 버전'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
-- key: '1705 husainid-tunisia 성립'
-  reason: me-05~07 사건 묶음이 채움
-  decided: 2026-10-29 운영자 A2 승인
 - key: '1830 regency-of-algiers 소멸'
   reason: me-05~07 사건 묶음이 채움
   decided: 2026-10-29 운영자 A2 승인
@@ -812,10 +557,6 @@
 - key: '1912 alaouite-morocco 소멸'
   reason: me-05~07 사건 묶음이 채움
   decided: 2026-10-29 운영자 A2 승인
-# ── 서아시아·북아프리카 A3a-1 (2026-10-30): 레반트·이라크·아라비아·이란 632~999 새 항목·앞 버전의 성립·소멸·버전 해. 사건 묶음 me-02~05가 사건을 쓰며 이 줄을 지운다 ──
-- key: '1597 zaydi-imamate 소멸'
-  reason: me-02~05 사건 묶음이 채움
-  decided: 2026-10-30 운영자 A3 승인
 # ── 서아시아·북아프리카 A4a-⑥b (2026-10-31): 아라비아 반도 기원전 550~31년 새 항목(사바·카타반·하드라마우트·힘야르·리히얀)의 성립·소멸과 새 버전 해. 사건 묶음 me-01·me-02가 사건을 쓰며 이 줄을 지운다 ──
 - key: '-999 hadramawt-kingdom 성립'
   reason: '사건 묶음 me-01에서 이을 사건 없음: 성립 해(기원전 1천년기 초)가 비문에서 짐작한 어림이라 사료로 잡을 사건이 없고 지도 시작(기원전 550년)보다 앞섬'

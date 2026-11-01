@@ -405,7 +405,7 @@
     ko: 셀림 1세의 맘루크 정복과 술레이만 1세의 베오그라드·로도스 점령
   summary:
     ko: "아버지 바예지트 2세를 물러나게 하고 술탄이 된 셀림 1세(재위 1512~1520)는 아나톨리아의 튀르크멘(크즐바시)을 끌어들이던 이란의 사파비 왕조를 쳐, 1514년 8월 찰디란 전투에서 대포와 화승총을 갖춘 예니체리로 이스마일 1세의 기병을 무찔렀다. 원정에 앞서 셀림은 아나톨리아에서 사파비를 따른다고 의심한 사람을 대거 죽이거나 가두었다(오스만 쪽 기록의 4만 명은 과장이라는 견해가 많음). 1515년에는 맘루크의 종주 아래 있던 둘카디르 베이국의 베이를 죽이고 자기 편을 세웠다. 이어 1516년 8월 마르지 다비크, 1517년 1월 리다니야에서 맘루크 술탄국을 무찔러 시리아·이집트와 메카·메디나의 보호권을 손에 넣고 이슬람 세계의 중심 세력이 되었다. 뒤를 이은 술레이만 1세(재위 1520~1566)는 1521년 8월 헝가리 왕국의 베오그라드를 함락하고, 1522년 여섯 달 가까운 포위 끝에 12월 로도스 기사단국의 항복을 받았다(기사단은 섬을 떠나 1530년 몰타에 자리 잡음). 같은 해 둘카디르 베이국도 오스만의 직할령이 되었다."
-  subjects: [ottoman, dulkadir-beylik, hungary-kingdom, knights-hospitaller, mamluk-sultanate]
+  subjects: [ottoman, dulkadir-beylik, hungary-kingdom, knights-hospitaller, mamluk-sultanate, safavid-iran]
   links:
     - { from: ottoman, to: dulkadir-beylik, note: "종주 (1515), 병합 (1522)" }
     - { from: ottoman, to: hungary-kingdom, note: "베오그라드 함락 (1521)" }

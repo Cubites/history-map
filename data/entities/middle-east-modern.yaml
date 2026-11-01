@@ -751,7 +751,7 @@
     - 도읍은 테헤란
     - 1907년 영국·러시아 협상으로 북쪽은 러시아, 남동쪽은 영국의 세력권이 됨
     - 1908년 마스지드 술레이만에서 석유가 터져 나옴
-  startEvents: []
+  startEvents: [qajar-rise-1779]
   endEvents: []
   basis:
     type: primary_source

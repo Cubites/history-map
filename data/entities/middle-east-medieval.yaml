@@ -442,7 +442,7 @@
     - 897년 알하디 야흐야 이븐 알후사인이 사다에 들어와 이맘이 됨
     - 이맘은 학식과 혈통을 갖춘 알리의 후손 가운데서 섬
   startEvents: [yemen-ziyadid-zaydi-819]
-  endEvents: []
+  endEvents: [qasimid-1597]
   basis:
     type: primary_source
     refs: ["『알하디 야흐야 전기』"]
