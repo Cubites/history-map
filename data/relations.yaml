@@ -1047,3 +1047,10 @@
 
 # ── 서아시아·북아프리카 A4b-⑦c (2026-10-31): 아라비아 반도 기원전 30년~631년 (힘야르 땅을 이은 악숨령 예멘. 종주 악숨은 항목이 없어 글로만) ──
 - { type: successor_of, subject: aksumite-yemen, object: himyarite-kingdom, from: 525, to: null } # 525년 두 누와스가 진 뒤 악숨의 총독과 아브라하가 힘야르 땅과 왕호를 이음
+
+# ── 서아시아·북아프리카 A4c-⑧a (2026-11-01): 이집트·키레나이카 기원전 550년~631년 (자기 왕이 대를 이은 종속 왕국은 vassal_of) ──
+- { type: vassal_of, subject: cyrene-kingdom, object: achaemenid-empire, from: -524, to: -400 } # 기원전 525년 아르케실라오스 3세가 캄비세스 2세에게 공물을 바침, 401년 이집트가 떨어져 나갈 때까지
+
+# ── 서아시아·북아프리카 A4c-⑧c (2026-11-01): 트리폴리타니아·마그레브 기원전 30년~631년 (유바 2세의 마우레타니아는 로마 종속, 무어 왕국의 이음은 successor_of) ──
+- { type: vassal_of, subject: mauretania, object: roman-empire, from: -24, to: 42 } # 기원전 25년 아우구스투스가 유바 2세를 왕으로 세움, 40년 프톨레마이오스 왕이 죽고 42년 두 속주가 될 때까지
+- { type: successor_of, subject: altava-kingdom, object: mauro-roman-kingdom, from: 578, to: null } # 578년 가르물이 죽은 뒤 알타바 둘레의 작은 왕국이 이음

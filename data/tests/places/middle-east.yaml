@@ -5370,10 +5370,16 @@
   from: 서아시아 A4b-⑦c 결과노트
 - name: 타부크
   at: [36.57, 28.38]
+  year: 50
+  expect: nabataean-kingdom
+  url: https://en.wikipedia.org/wiki/Leuke_Kome
+  from: 서아시아 A4b 질문 창구 ③ 답(타부크 칠함)
+- name: 타부크
+  at: [36.57, 28.38]
   year: 150
-  expect: none
+  expect: roman-empire
   url: https://en.wikipedia.org/wiki/Arabia_Petraea
-  from: 서아시아 A4b-⑦c 결과노트
+  from: 서아시아 A4b 질문 창구 ③ 답(타부크 칠함)
 - name: 마리브
   at: [45.33, 15.43]
   year: 100
@@ -5518,3 +5524,691 @@
   expect: sasanian-empire
   url: https://en.wikipedia.org/wiki/Sasanian_Empire
   from: 서아시아 A4b-⑦c 결과노트
+
+# ── 서아시아·북아프리카 A4c-⑧a (2026-11-01): 이집트·시나이·키레나이카 기원전 550년~631년 — 새 항목 수도·바뀌는 해 앞뒤(아케메네스 525·401/400·343·332/331, 알렉산드로스·프톨레마이오스·로마·동로마·사산 621~628), 키레나이카 세 토막과 비운 땅(96~74, 마르마리카·시르테) ──
+- name: 사이스
+  at: [30.77, 30.97]
+  year: -540
+  expect: saite-egypt
+  url: https://en.wikipedia.org/wiki/Twenty-sixth_Dynasty_of_Egypt
+  from: 서아시아 A4c-⑧a 결과노트
+- name: 멤피스
+  at: [31.25, 29.85]
+  year: -525
+  expect: saite-egypt
+  url: https://en.wikipedia.org/wiki/Twenty-sixth_Dynasty_of_Egypt
+  from: 서아시아 A4c-⑧a 결과노트
+- name: 멤피스
+  at: [31.25, 29.85]
+  year: -500
+  expect: achaemenid-empire
+  url: https://en.wikipedia.org/wiki/Twenty-seventh_Dynasty_of_Egypt
+  from: 서아시아 A4c-⑧a 결과노트
+- name: 카르가(히비스)
+  at: [30.55, 25.45]
+  year: -500
+  expect: achaemenid-empire
+  url: https://en.wikipedia.org/wiki/Kharga_Oasis
+  from: 서아시아 A4c-⑧a 결과노트
+- name: 멤피스
+  at: [31.25, 29.85]
+  year: -400
+  expect: achaemenid-empire
+  url: https://en.wikipedia.org/wiki/Twenty-seventh_Dynasty_of_Egypt
+  from: 서아시아 A4c-⑧a 결과노트
+- name: 멤피스
+  at: [31.25, 29.85]
+  year: -399
+  expect: egypt-late-dynasties
+  url: https://en.wikipedia.org/wiki/Twenty-eighth_Dynasty_of_Egypt
+  from: 서아시아 A4c-⑧a 결과노트
+- name: 멘데스
+  at: [31.52, 30.96]
+  year: -390
+  expect: egypt-late-dynasties
+  url: https://en.wikipedia.org/wiki/Twenty-ninth_Dynasty_of_Egypt
+  from: 서아시아 A4c-⑧a 결과노트
+- name: 멤피스
+  at: [31.25, 29.85]
+  year: -343
+  expect: egypt-late-dynasties
+  url: https://en.wikipedia.org/wiki/Thirtieth_Dynasty_of_Egypt
+  from: 서아시아 A4c-⑧a 결과노트
+- name: 멤피스
+  at: [31.25, 29.85]
+  year: -335
+  expect: achaemenid-empire
+  url: https://en.wikipedia.org/wiki/Thirty-first_Dynasty_of_Egypt
+  from: 서아시아 A4c-⑧a 결과노트
+- name: 멤피스
+  at: [31.25, 29.85]
+  year: -331
+  expect: achaemenid-empire
+  url: https://en.wikipedia.org/wiki/Thirty-first_Dynasty_of_Egypt
+  from: 서아시아 A4c-⑧a 결과노트
+- name: 멤피스
+  at: [31.25, 29.85]
+  year: -330
+  expect: macedonia-kingdom
+  url: https://en.wikipedia.org/wiki/Thirty-first_Dynasty_of_Egypt
+  from: 서아시아 A4c-⑧a 결과노트
+- name: 알렉산드리아
+  at: [29.92, 31.20]
+  year: -321
+  expect: ptolemaic-kingdom
+  url: https://en.wikipedia.org/wiki/Ptolemaic_Kingdom
+  from: 서아시아 A4c-⑧a 결과노트
+- name: 시와
+  at: [25.52, 29.20]
+  year: -300
+  expect: ptolemaic-kingdom
+  url: https://en.wikipedia.org/wiki/Siwa_Oasis
+  from: 서아시아 A4c-⑧a 결과노트
+- name: 알렉산드리아
+  at: [29.92, 31.20]
+  year: -30
+  expect: ptolemaic-kingdom
+  url: https://en.wikipedia.org/wiki/Ptolemaic_Kingdom
+  from: 서아시아 A4c-⑧a 결과노트
+- name: 알렉산드리아
+  at: [29.92, 31.20]
+  year: -28
+  expect: roman-republic
+  url: https://en.wikipedia.org/wiki/Roman_Egypt
+  from: 서아시아 A4c-⑧a 결과노트
+- name: 알렉산드리아
+  at: [29.92, 31.20]
+  year: 100
+  expect: roman-empire
+  url: https://en.wikipedia.org/wiki/Roman_Egypt
+  from: 서아시아 A4c-⑧a 결과노트
+- name: 시에네(아스완)
+  at: [32.90, 24.09]
+  year: 300
+  expect: roman-empire
+  url: https://en.wikipedia.org/wiki/Roman_Egypt
+  from: 서아시아 A4c-⑧a 결과노트
+- name: 알렉산드리아
+  at: [29.92, 31.20]
+  year: 500
+  expect: byzantine-empire
+  url: https://en.wikipedia.org/wiki/Byzantine_Egypt
+  from: 서아시아 A4c-⑧a 결과노트
+- name: 알렉산드리아
+  at: [29.92, 31.20]
+  year: 620
+  expect: byzantine-empire
+  url: https://en.wikipedia.org/wiki/Sasanian_conquest_of_Egypt
+  from: 서아시아 A4c-⑧a 결과노트
+- name: 알렉산드리아
+  at: [29.92, 31.20]
+  year: 625
+  expect: sasanian-empire
+  url: https://en.wikipedia.org/wiki/Sasanian_conquest_of_Egypt
+  from: 서아시아 A4c-⑧a 결과노트
+- name: 엘아리시(시나이 북부)
+  at: [33.80, 31.13]
+  year: 625
+  expect: sasanian-empire
+  url: https://en.wikipedia.org/wiki/Sasanian_conquest_of_Egypt
+  from: 서아시아 A4c-⑧a 결과노트
+- name: 알렉산드리아
+  at: [29.92, 31.20]
+  year: 629
+  expect: byzantine-empire
+  url: https://en.wikipedia.org/wiki/Sasanian_conquest_of_Egypt
+  from: 서아시아 A4c-⑧a 결과노트
+- name: 알렉산드리아
+  at: [29.92, 31.20]
+  year: 631
+  expect: byzantine-empire
+  url: https://en.wikipedia.org/wiki/Byzantine_Egypt
+  from: 서아시아 A4c-⑧a 결과노트
+- name: 키레네
+  at: [21.86, 32.82]
+  year: -500
+  expect: cyrene-kingdom
+  url: https://en.wikipedia.org/wiki/Cyrene,_Libya
+  from: 서아시아 A4c-⑧a 결과노트
+- name: 키레네
+  at: [21.86, 32.82]
+  year: -400
+  expect: cyrene-kingdom
+  url: https://en.wikipedia.org/wiki/Cyrene,_Libya
+  from: 서아시아 A4c-⑧a 결과노트
+- name: 키레네
+  at: [21.86, 32.82]
+  year: -310
+  expect: ptolemaic-kingdom
+  url: https://en.wikipedia.org/wiki/Ophellas
+  from: 서아시아 A4c-⑧a 결과노트
+- name: 키레네
+  at: [21.86, 32.82]
+  year: -260
+  expect: cyrenaica-kingdom
+  url: https://en.wikipedia.org/wiki/Magas_of_Cyrene
+  from: 서아시아 A4c-⑧a 결과노트
+- name: 키레네
+  at: [21.86, 32.82]
+  year: -200
+  expect: ptolemaic-kingdom
+  url: https://en.wikipedia.org/wiki/Cyrene,_Libya
+  from: 서아시아 A4c-⑧a 결과노트
+- name: 키레네
+  at: [21.86, 32.82]
+  year: -150
+  expect: cyrenaica-kingdom
+  url: https://en.wikipedia.org/wiki/Ptolemy_VIII_Physcon
+  from: 서아시아 A4c-⑧a 결과노트
+- name: 키레네
+  at: [21.86, 32.82]
+  year: -130
+  expect: ptolemaic-kingdom
+  url: https://en.wikipedia.org/wiki/Ptolemy_VIII_Physcon
+  from: 서아시아 A4c-⑧a 결과노트
+- name: 키레네
+  at: [21.86, 32.82]
+  year: -100
+  expect: cyrenaica-kingdom
+  url: https://en.wikipedia.org/wiki/Ptolemy_Apion
+  from: 서아시아 A4c-⑧a 결과노트
+- name: 키레네
+  at: [21.86, 32.82]
+  year: -80
+  expect: none
+  url: https://en.wikipedia.org/wiki/Cyrene,_Libya
+  from: 서아시아 A4c-⑧a 결과노트
+- name: 키레네
+  at: [21.86, 32.82]
+  year: -50
+  expect: roman-republic
+  url: https://en.wikipedia.org/wiki/Crete_and_Cyrenaica
+  from: 서아시아 A4c-⑧a 결과노트
+- name: 키레네
+  at: [21.86, 32.82]
+  year: 100
+  expect: roman-empire
+  url: https://en.wikipedia.org/wiki/Cyrene,_Libya
+  from: 서아시아 A4c-⑧a 결과노트
+- name: 키레네
+  at: [21.86, 32.82]
+  year: 625
+  expect: byzantine-empire
+  url: https://en.wikipedia.org/wiki/Cyrenaica
+  from: 서아시아 A4c-⑧a 결과노트
+- name: 토브루크(마르마리카)
+  at: [23.96, 32.08]
+  year: 100
+  expect: none
+  url: https://en.wikipedia.org/wiki/Marmarica
+  from: 서아시아 A4c-⑧a 결과노트
+- name: 아즈다비야
+  at: [20.22, 30.76]
+  year: -300
+  expect: none
+  url: https://en.wikipedia.org/wiki/Cyrenaica
+  from: 서아시아 A4c-⑧a 결과노트
+- name: 카르타고
+  at: [10.32, 36.85]
+  year: -400
+  expect: carthage
+  url: https://en.wikipedia.org/wiki/Carthage
+  from: 서아시아 A4c-⑧b 결과노트
+- name: 카르타고
+  at: [10.32, 36.85]
+  year: -146
+  expect: carthage
+  url: https://en.wikipedia.org/wiki/Third_Punic_War
+  from: 서아시아 A4c-⑧b 결과노트
+- name: 카르타고
+  at: [10.32, 36.85]
+  year: -145
+  expect: roman-republic
+  url: https://en.wikipedia.org/wiki/Third_Punic_War
+  from: 서아시아 A4c-⑧b 결과노트
+- name: 카르타고
+  at: [10.32, 36.85]
+  year: -100
+  expect: roman-republic
+  url: https://en.wikipedia.org/wiki/Africa_(Roman_province)
+  from: 서아시아 A4c-⑧b 결과노트
+- name: 렙티스 마그나
+  at: [14.29, 32.64]
+  year: -300
+  expect: carthage
+  url: https://en.wikipedia.org/wiki/Leptis_Magna
+  from: 서아시아 A4c-⑧b 결과노트
+- name: 렙티스 마그나
+  at: [14.29, 32.64]
+  year: -162
+  expect: carthage
+  url: https://en.wikipedia.org/wiki/Leptis_Magna
+  from: 서아시아 A4c-⑧b 결과노트
+- name: 렙티스 마그나
+  at: [14.29, 32.64]
+  year: -161
+  expect: numidia
+  url: https://en.wikipedia.org/wiki/Numidia
+  from: 서아시아 A4c-⑧b 결과노트
+- name: 렙티스 마그나
+  at: [14.29, 32.64]
+  year: -40
+  expect: roman-republic
+  url: https://en.wikipedia.org/wiki/Leptis_Magna
+  from: 서아시아 A4c-⑧b 결과노트
+- name: 시가(타쿰브리트)
+  at: [-1.43, 35.17]
+  year: -230
+  expect: none
+  url: https://en.wikipedia.org/wiki/Syphax
+  from: 서아시아 A4c-⑧b 결과노트
+- name: 시가(타쿰브리트)
+  at: [-1.43, 35.17]
+  year: -210
+  expect: masaesyli
+  url: https://en.wikipedia.org/wiki/Syphax
+  from: 서아시아 A4c-⑧b 결과노트
+- name: 시가(타쿰브리트)
+  at: [-1.43, 35.17]
+  year: -150
+  expect: numidia
+  url: https://en.wikipedia.org/wiki/Numidia
+  from: 서아시아 A4c-⑧b 결과노트
+- name: 시가(타쿰브리트)
+  at: [-1.43, 35.17]
+  year: -105
+  expect: numidia
+  url: https://en.wikipedia.org/wiki/Jugurthine_War
+  from: 서아시아 A4c-⑧b 결과노트
+- name: 시가(타쿰브리트)
+  at: [-1.43, 35.17]
+  year: -104
+  expect: mauretania
+  url: https://en.wikipedia.org/wiki/Jugurthine_War
+  from: 서아시아 A4c-⑧b 결과노트
+- name: 시가(타쿰브리트)
+  at: [-1.43, 35.17]
+  year: -80
+  expect: mauretania
+  url: https://en.wikipedia.org/wiki/Mauretania
+  from: 서아시아 A4c-⑧b 결과노트
+- name: 키르타(콩스탄틴)
+  at: [6.61, 36.37]
+  year: -230
+  expect: none
+  url: https://en.wikipedia.org/wiki/Numidia
+  from: 서아시아 A4c-⑧b 결과노트
+- name: 키르타(콩스탄틴)
+  at: [6.61, 36.37]
+  year: -100
+  expect: numidia
+  url: https://en.wikipedia.org/wiki/Numidia
+  from: 서아시아 A4c-⑧b 결과노트
+- name: 키르타(콩스탄틴)
+  at: [6.61, 36.37]
+  year: -46
+  expect: numidia
+  url: https://en.wikipedia.org/wiki/Numidia
+  from: 서아시아 A4c-⑧b 결과노트
+- name: 키르타(콩스탄틴)
+  at: [6.61, 36.37]
+  year: -40
+  expect: roman-republic
+  url: https://en.wikipedia.org/wiki/Numidia
+  from: 서아시아 A4c-⑧b 결과노트
+- name: 이올(셰르셸)
+  at: [2.19, 36.61]
+  year: -150
+  expect: numidia
+  url: https://en.wikipedia.org/wiki/Mauretania
+  from: 서아시아 A4c-⑧b 결과노트
+- name: 이올(셰르셸)
+  at: [2.19, 36.61]
+  year: -50
+  expect: mauretania
+  url: https://en.wikipedia.org/wiki/Mauretania
+  from: 서아시아 A4c-⑧b 결과노트
+- name: 탕헤르(팅기스)
+  at: [-5.81, 35.78]
+  year: -230
+  expect: none
+  url: https://en.wikipedia.org/wiki/Mauretania
+  from: 서아시아 A4c-⑧b 결과노트
+- name: 탕헤르(팅기스)
+  at: [-5.81, 35.78]
+  year: -100
+  expect: mauretania
+  url: https://en.wikipedia.org/wiki/Mauretania
+  from: 서아시아 A4c-⑧b 결과노트
+- name: 탕헤르(팅기스)
+  at: [-5.81, 35.78]
+  year: -33
+  expect: mauretania
+  url: https://en.wikipedia.org/wiki/Mauretania
+  from: 서아시아 A4c-⑧b 결과노트
+- name: 탕헤르(팅기스)
+  at: [-5.81, 35.78]
+  year: -32
+  expect: roman-republic
+  url: https://en.wikipedia.org/wiki/Mauretania
+  from: 서아시아 A4c-⑧b 결과노트
+- name: 우지다(물루야강 동쪽)
+  at: [-1.91, 34.68]
+  year: -150
+  expect: numidia
+  url: https://en.wikipedia.org/wiki/Numidia
+  from: 서아시아 A4c-⑧b 결과노트
+- name: 나도르(물루야강 서쪽)
+  at: [-2.93, 35.17]
+  year: -150
+  expect: mauretania
+  url: https://en.wikipedia.org/wiki/Mauretania
+  from: 서아시아 A4c-⑧b 결과노트
+- name: 부아르파(모로코 동부 고원)
+  at: [-1.95, 32.53]
+  year: -150
+  expect: none
+  url: https://en.wikipedia.org/wiki/Numidia
+  from: 서아시아 A4c-⑧b 결과노트
+- name: 타바르카(튀니지 서부)
+  at: [8.76, 36.95]
+  year: -250
+  expect: none
+  url: https://en.wikipedia.org/wiki/Numidia
+  from: 서아시아 A4c-⑧b 결과노트
+- name: 타바르카(튀니지 서부)
+  at: [8.76, 36.95]
+  year: -150
+  expect: numidia
+  url: https://en.wikipedia.org/wiki/Numidia
+  from: 서아시아 A4c-⑧b 결과노트
+- name: 자마
+  at: [9.2, 36.3]
+  year: -40
+  expect: roman-republic
+  url: https://en.wikipedia.org/wiki/Numidia
+  from: 서아시아 A4c-⑧b 결과노트
+- name: 토제르(제리드)
+  at: [8.13, 33.92]
+  year: -100
+  expect: none
+  url: https://en.wikipedia.org/wiki/Fossatum_Africae
+  from: 서아시아 A4c-⑧b 결과노트
+- name: 시르트(필라이니 제단 쪽)
+  at: [16.59, 31.21]
+  year: -300
+  expect: none
+  url: https://en.wikipedia.org/wiki/Tripolitania
+  from: 서아시아 A4c-⑧b 결과노트
+- name: 가라마(젬)
+  at: [13.03, 26.55]
+  year: -100
+  expect: none
+  url: https://en.wikipedia.org/wiki/Garamantes
+  from: 서아시아 A4c-⑧b 결과노트
+
+# ── 서아시아·북아프리카 A4c-⑧c (2026-11-01): 트리폴리타니아·페잔·마그레브 기원전 30년~631년 — 새 항목 수도·바뀌는 해 앞뒤(유바 2세 기원전 25년, 두 속주 43, 아우레스 105, 튀니지 남부 195, 팅기타나 286, 서로마 395·429·439·455, 무어 왕국 477·484·578, 동로마 534·539~543), 비운 땅 ──
+- name: 카르타고
+  at: [10.32, 36.85]
+  year: -20
+  expect: roman-empire
+  url: https://en.wikipedia.org/wiki/Africa_(Roman_province)
+  from: 서아시아 A4c-⑧c 결과노트
+- name: 카르타고
+  at: [10.32, 36.85]
+  year: 400
+  expect: western-roman-empire
+  url: https://en.wikipedia.org/wiki/Vandals
+  from: 서아시아 A4c-⑧c 결과노트
+- name: 카르타고
+  at: [10.32, 36.85]
+  year: 450
+  expect: vandal-kingdom
+  url: https://en.wikipedia.org/wiki/Vandal_Kingdom
+  from: 서아시아 A4c-⑧c 결과노트
+- name: 카르타고
+  at: [10.32, 36.85]
+  year: 631
+  expect: byzantine-empire
+  url: https://en.wikipedia.org/wiki/Exarchate_of_Africa
+  from: 서아시아 A4c-⑧c 결과노트
+- name: 렙티스 마그나
+  at: [14.29, 32.64]
+  year: 100
+  expect: roman-empire
+  url: https://en.wikipedia.org/wiki/Leptis_Magna
+  from: 서아시아 A4c-⑧c 결과노트
+- name: 렙티스 마그나
+  at: [14.29, 32.64]
+  year: 450
+  expect: vandal-kingdom
+  url: https://en.wikipedia.org/wiki/Vandal_Kingdom
+  from: 서아시아 A4c-⑧c 결과노트
+- name: 렙티스 마그나
+  at: [14.29, 32.64]
+  year: 550
+  expect: byzantine-empire
+  url: https://en.wikipedia.org/wiki/Praetorian_prefecture_of_Africa
+  from: 서아시아 A4c-⑧c 결과노트
+- name: 이올 카이사레아(셰르셸)
+  at: [2.19, 36.61]
+  year: -25
+  expect: roman-empire
+  url: https://en.wikipedia.org/wiki/Mauretania
+  from: 서아시아 A4c-⑧c 결과노트
+- name: 이올 카이사레아(셰르셸)
+  at: [2.19, 36.61]
+  year: 10
+  expect: mauretania
+  url: https://en.wikipedia.org/wiki/Mauretania
+  from: 서아시아 A4c-⑧c 결과노트
+- name: 이올 카이사레아(셰르셸)
+  at: [2.19, 36.61]
+  year: 100
+  expect: roman-empire
+  url: https://en.wikipedia.org/wiki/Mauretania_Caesariensis
+  from: 서아시아 A4c-⑧c 결과노트
+- name: 이올 카이사레아(셰르셸)
+  at: [2.19, 36.61]
+  year: 460
+  expect: none
+  url: https://en.wikipedia.org/wiki/Mauro-Roman_Kingdom
+  from: 서아시아 A4c-⑧c 결과노트
+- name: 이올 카이사레아(셰르셸)
+  at: [2.19, 36.61]
+  year: 500
+  expect: mauro-roman-kingdom
+  url: https://en.wikipedia.org/wiki/Mauro-Roman_Kingdom
+  from: 서아시아 A4c-⑧c 결과노트
+- name: 볼루빌리스
+  at: [-5.55, 34.07]
+  year: 0
+  expect: mauretania
+  url: https://en.wikipedia.org/wiki/Volubilis
+  from: 서아시아 A4c-⑧c 결과노트
+- name: 볼루빌리스
+  at: [-5.55, 34.07]
+  year: 100
+  expect: roman-empire
+  url: https://en.wikipedia.org/wiki/Volubilis
+  from: 서아시아 A4c-⑧c 결과노트
+- name: 볼루빌리스
+  at: [-5.55, 34.07]
+  year: 300
+  expect: none
+  url: https://en.wikipedia.org/wiki/Volubilis
+  from: 서아시아 A4c-⑧c 결과노트
+- name: 페스
+  at: [-5.00, 34.03]
+  year: 10
+  expect: mauretania
+  url: https://en.wikipedia.org/wiki/Mauretania
+  from: 서아시아 A4c-⑧c 결과노트
+- name: 페스
+  at: [-5.00, 34.03]
+  year: 100
+  expect: none
+  url: https://en.wikipedia.org/wiki/Mauretania_Tingitana
+  from: 서아시아 A4c-⑧c 결과노트
+- name: 살라(라바트)
+  at: [-6.82, 34.02]
+  year: 200
+  expect: roman-empire
+  url: https://en.wikipedia.org/wiki/Mauretania_Tingitana
+  from: 서아시아 A4c-⑧c 결과노트
+- name: 살라(라바트)
+  at: [-6.82, 34.02]
+  year: 300
+  expect: none
+  url: https://en.wikipedia.org/wiki/Volubilis
+  from: 서아시아 A4c-⑧c 결과노트
+- name: 탕헤르
+  at: [-5.81, 35.78]
+  year: 350
+  expect: roman-empire
+  url: https://en.wikipedia.org/wiki/Mauretania_Tingitana
+  from: 서아시아 A4c-⑧c 결과노트
+- name: 탕헤르
+  at: [-5.81, 35.78]
+  year: 400
+  expect: western-roman-empire
+  url: https://en.wikipedia.org/wiki/Mauretania_Tingitana
+  from: 서아시아 A4c-⑧c 결과노트
+- name: 탕헤르
+  at: [-5.81, 35.78]
+  year: 450
+  expect: none
+  url: https://en.wikipedia.org/wiki/Mauretania_Tingitana
+  from: 서아시아 A4c-⑧c 결과노트
+- name: 우지다
+  at: [-1.91, 34.68]
+  year: 100
+  expect: roman-empire
+  url: https://en.wikipedia.org/wiki/Mauretania_Caesariensis
+  from: 서아시아 A4c-⑧c 결과노트
+- name: 우지다
+  at: [-1.91, 34.68]
+  year: 500
+  expect: none
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Altava
+  from: 서아시아 A4c-⑧c 결과노트
+- name: 알타바
+  at: [-1.03, 34.88]
+  year: 400
+  expect: western-roman-empire
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Altava
+  from: 서아시아 A4c-⑧c 결과노트
+- name: 알타바
+  at: [-1.03, 34.88]
+  year: 470
+  expect: none
+  url: https://en.wikipedia.org/wiki/Mauro-Roman_Kingdom
+  from: 서아시아 A4c-⑧c 결과노트
+- name: 알타바
+  at: [-1.03, 34.88]
+  year: 500
+  expect: mauro-roman-kingdom
+  url: https://en.wikipedia.org/wiki/Mauro-Roman_Kingdom
+  from: 서아시아 A4c-⑧c 결과노트
+- name: 알타바
+  at: [-1.03, 34.88]
+  year: 600
+  expect: altava-kingdom
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Altava
+  from: 서아시아 A4c-⑧c 결과노트
+- name: 람바이시스
+  at: [6.26, 35.49]
+  year: 50
+  expect: none
+  url: https://en.wikipedia.org/wiki/Numidia_(Roman_province)
+  from: 서아시아 A4c-⑧c 결과노트
+- name: 람바이시스
+  at: [6.26, 35.49]
+  year: 200
+  expect: roman-empire
+  url: https://en.wikipedia.org/wiki/Numidia_(Roman_province)
+  from: 서아시아 A4c-⑧c 결과노트
+- name: 아리스(바트나)
+  at: [6.35, 35.26]
+  year: 470
+  expect: none
+  url: https://en.wikipedia.org/wiki/Kingdom_of_the_Aur%C3%A8s
+  from: 서아시아 A4c-⑧c 결과노트
+- name: 아리스(바트나)
+  at: [6.35, 35.26]
+  year: 500
+  expect: aures-kingdom
+  url: https://en.wikipedia.org/wiki/Kingdom_of_the_Aur%C3%A8s
+  from: 서아시아 A4c-⑧c 결과노트
+- name: 아리스(바트나)
+  at: [6.35, 35.26]
+  year: 540
+  expect: byzantine-empire
+  url: https://en.wikipedia.org/wiki/Kingdom_of_the_Aur%C3%A8s
+  from: 서아시아 A4c-⑧c 결과노트
+- name: 아리스(바트나)
+  at: [6.35, 35.26]
+  year: 550
+  expect: aures-kingdom
+  url: https://en.wikipedia.org/wiki/Kingdom_of_the_Aur%C3%A8s
+  from: 서아시아 A4c-⑧c 결과노트
+- name: 시티피스(세티프)
+  at: [5.41, 36.19]
+  year: 500
+  expect: none
+  url: https://en.wikipedia.org/wiki/Mauretania_Sitifensis
+  from: 서아시아 A4c-⑧c 결과노트
+- name: 시티피스(세티프)
+  at: [5.41, 36.19]
+  year: 550
+  expect: byzantine-empire
+  url: https://en.wikipedia.org/wiki/Praetorian_prefecture_of_Africa
+  from: 서아시아 A4c-⑧c 결과노트
+- name: 히포 레기우스
+  at: [7.76, 36.90]
+  year: 400
+  expect: western-roman-empire
+  url: https://en.wikipedia.org/wiki/Vandals
+  from: 서아시아 A4c-⑧c 결과노트
+- name: 히포 레기우스
+  at: [7.76, 36.90]
+  year: 450
+  expect: vandal-kingdom
+  url: https://en.wikipedia.org/wiki/Vandals
+  from: 서아시아 A4c-⑧c 결과노트
+- name: 키르타
+  at: [6.61, 36.37]
+  year: 445
+  expect: vandal-kingdom
+  url: https://en.wikipedia.org/wiki/Vandals
+  from: 서아시아 A4c-⑧c 결과노트
+- name: 토제르
+  at: [8.13, 33.92]
+  year: 100
+  expect: none
+  url: https://en.wikipedia.org/wiki/Fossatum_Africae
+  from: 서아시아 A4c-⑧c 결과노트
+- name: 토제르
+  at: [8.13, 33.92]
+  year: 300
+  expect: roman-empire
+  url: https://en.wikipedia.org/wiki/Fossatum_Africae
+  from: 서아시아 A4c-⑧c 결과노트
+- name: 가라마(젬)
+  at: [13.03, 26.55]
+  year: 100
+  expect: none
+  url: https://en.wikipedia.org/wiki/Garamantes
+  from: 서아시아 A4c-⑧c 결과노트
+- name: 가라마(젬)
+  at: [13.03, 26.55]
+  year: 250
+  expect: garamantes
+  url: https://en.wikipedia.org/wiki/Garamantes
+  from: 서아시아 A4c-⑧c 결과노트
+- name: 가라마(젬)
+  at: [13.03, 26.55]
+  year: 631
+  expect: garamantes
+  url: https://en.wikipedia.org/wiki/Garamantes
+  from: 서아시아 A4c-⑧c 결과노트

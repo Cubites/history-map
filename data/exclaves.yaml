@@ -4525,15 +4525,15 @@
 - entity: nabataean-kingdom
   from: -23
   to: 106
-  at: [37.97, 26.47]
-  reason: 헤그라(마다인 살리흐)와 데단(알울라 골짜기). 기원전 24년 무렵 리히얀을 합쳐 나바테아의 둘째 도읍이 되었으나, 본토(에돔·아카바)와는 칠하지 않은 타부크·타이마(대상로만 지난 땅)를 사이에 두어 육지로 이어 그리지 않았다
+  at: [35.75, 30.25]
+  reason: 에돔(페트라)·모압·아카바와 네게브·가자. 기원전 24년 무렵 리히얀의 헤그라와 타부크(히스마·레우케 코메)를 더한 뒤로는 히자즈 북부 쪽이 더 넓어 그쪽이 본토로 잡히고, 두 덩어리 사이에는 칠하지 않은 자우프 사막(지금 사우디 자우프주 조각의 서쪽 끝)이 끼어 육지로 이어 그리지 않았다
   sources: ["스트라본, 『지리지』 16.4.24", "위키백과 영어판 「Hegra (Mada'in Salih)」 https://en.wikipedia.org/wiki/Hegra_(Mada%27in_Salih)"]
 
 - entity: roman-empire
   from: 106
   to: 195
   at: [37.97, 26.47]
-  reason: 헤그라(알울라 골짜기). 106년 나바테아 병합과 함께 아라비아 속주에 들고 제3 키레나이카 군단 분견대가 지켰으나(175~177년 라틴 비문), 요르단 남부의 속주 본토와는 칠하지 않은 타부크·타이마를 사이에 두었다. 2세기 말~3세기 초 로마군이 떠남
+  reason: 타부크(히스마·레우케 코메)와 헤그라(알울라 골짜기). 106년 나바테아 병합과 함께 아라비아 속주에 들고 제3 키레나이카 군단 분견대가 지켰으나(175~177년 라틴 비문, 165~169년 루와파 비문), 요르단 남부의 속주 본토와는 칠하지 않은 자우프 사막(지금 사우디 자우프주 조각의 서쪽 끝)을 사이에 두었다. 2세기 말~3세기 초 로마군이 떠남
   sources: ["헤그라 라틴 비문(175~177년, civitas Hegrenorum)", "위키백과 영어판 「Hegra (Mada'in Salih)」 https://en.wikipedia.org/wiki/Hegra_(Mada%27in_Salih)"]
 
 - entity: sasanian-empire
@@ -4563,3 +4563,147 @@
   at: [44.98, 15.3]
   reason: 예멘(사나·지금 예멘 전체). 570년 와흐리즈가 악숨 세력을 몰아낸 뒤 샤가 보낸 총독이 다스렸으나, 이라크·이란 본토와는 칠하지 않은 나지드·룹알할리 너머 바다로만 이어졌다. 628년 무렵 내전 속 총독 바잔이 떨어져 나감
   sources: ["타바리, 『예언자들과 왕들의 역사』(와흐리즈의 예멘 원정)", "위키백과 영어판 「Aksumite–Persian wars」 https://en.wikipedia.org/wiki/Aksumite%E2%80%93Persian_wars"]
+
+# ── 서아시아·북아프리카 A4c-⑧a (2026-11-01): 기원전 550년~631년 이집트·키레나이카 (칠하지 않은 마르마리카 너머의 키레나이카, 이웃 나라 너머의 이집트, 이집트가 더 넓어 본토가 바뀐 늘린 나라의 다른 덩어리) ──
+- entity: ptolemaic-kingdom
+  from: -321
+  to: -115
+  at: [21.88, 32.01]
+  reason: 키레나이카 해안(펜타폴리스)은 칠하지 않은 마르마리카 사막(리비아 내륙) 너머에 있어 해안 길과 바닷길로 이집트와 이어졌다(기원전 276~247·163~146년은 키레나이카 왕국)
+  sources: ["디오도로스, 『역사 총서』 18.21", "위키백과 영어판 「Cyrenaica」 https://en.wikipedia.org/wiki/Cyrenaica"]
+
+- entity: ptolemaic-kingdom
+  from: -199
+  to: -195
+  at: [29.95, 36.59]
+  reason: 리키아(기원전 197년까지 프톨레마이오스 땅). 기원전 200년 코엘레시리아를 셀레우코스에 잃은 뒤 이집트 본토와는 셀레우코스의 시리아·킬리키아에 막혀 바닷길로 이어졌다
+  sources: ["폴리비오스, 『역사』 18.40", "위키백과 영어판 「Coele-Syria」 https://en.wikipedia.org/wiki/Coele-Syria"]
+
+- entity: ptolemaic-kingdom
+  from: -36
+  to: -29
+  at: [33.66, 36.61]
+  reason: 킬리키아 트라케이아(기원전 37~31년 안토니우스가 클레오파트라에게 준 땅). 이집트와는 로마 속주 시리아와 헤롯 왕국에 막혀 바닷길로 이어졌다
+  sources: ["플루타르코스, 『안토니우스전』 36", "위키백과 영어판 「Donations of Alexandria」 https://en.wikipedia.org/wiki/Donations_of_Alexandria"]
+
+- entity: achaemenid-empire
+  from: -332
+  to: -330
+  at: [29.27, 26.28]
+  reason: 이집트. 기원전 333년 이소스 싸움 뒤 레반트가 알렉산드로스에게 넘어가 마자케스가 지킨 이집트 사트라페이아는 본토와 떨어졌다(332년 말 항복)
+  sources: ["아리아노스, 『알렉산드로스 원정기』 3.1", "위키백과 영어판 「Thirty-first Dynasty of Egypt」 https://en.wikipedia.org/wiki/Thirty-first_Dynasty_of_Egypt"]
+
+- entity: roman-republic
+  from: -73
+  to: -26
+  at: [21.88, 32.01]
+  reason: 키레나이카 해안(펜타폴리스)은 칠하지 않은 마르마리카 사막(리비아 내륙) 너머에 있어 해안 길과 바닷길로 로마 속주들과 이어졌다(크레타·키레나이카 속주)
+  sources: ["위키백과 영어판 「Crete and Cyrenaica」 https://en.wikipedia.org/wiki/Crete_and_Cyrenaica", "위키백과 영어판 「Marmarica」 https://en.wikipedia.org/wiki/Marmarica"]
+
+- entity: roman-republic
+  from: -29
+  to: -26
+  at: [29.27, 26.28]
+  reason: 이집트. 기원전 30년 옥타비아누스가 얻었으나 시나이 동쪽 네게브·가자는 나바테아 왕국, 유대는 헤롯 왕국이라 시리아 속주와 육지로 이어지지 않고 바닷길로 이어졌다
+  sources: ["위키백과 영어판 「Roman Egypt」 https://en.wikipedia.org/wiki/Roman_Egypt"]
+
+- entity: roman-empire
+  from: -26
+  to: 106
+  at: [29.27, 26.28]
+  reason: 이집트. 시나이 동쪽 네게브·가자는 105년까지 나바테아 왕국이라 시리아·유대 속주와 육지로 이어지지 않고 바닷길로 이어졌다(106년 아라비아 속주로 이어짐)
+  sources: ["위키백과 영어판 「Roman Egypt」 https://en.wikipedia.org/wiki/Roman_Egypt", "위키백과 영어판 「Arabia Petraea」 https://en.wikipedia.org/wiki/Arabia_Petraea"]
+
+- entity: roman-empire
+  from: -26
+  to: 395
+  at: [21.88, 32.01]
+  reason: 키레나이카 해안(펜타폴리스)은 칠하지 않은 마르마리카 사막(리비아 내륙) 너머에 있어 해안 길과 바닷길로 이집트와 이어졌다(크레타·키레나이카 속주, 약 300년부터 리비아 상부 속주)
+  sources: ["위키백과 영어판 「Cyrenaica」 https://en.wikipedia.org/wiki/Cyrenaica", "위키백과 영어판 「Marmarica」 https://en.wikipedia.org/wiki/Marmarica"]
+
+- entity: roman-empire
+  from: 260
+  to: 274
+  at: [22.57, 42.85]
+  reason: 유럽 쪽 로마 땅(이탈리아·발칸). 260~273년 갈리아 제국이 서쪽을 떼어 간 동안 넓이로는 해협 너머 아나톨리아·레반트·이집트 덩어리가 더 커 그쪽이 본토로 잡힌다
+  sources: ["위키백과 영어판 「Gallic Empire」 https://en.wikipedia.org/wiki/Gallic_Empire"]
+
+- entity: byzantine-empire
+  from: 395
+  to: 632
+  at: [21.88, 32.01]
+  reason: 키레나이카 해안(펜타폴리스)은 칠하지 않은 마르마리카 사막(리비아 내륙) 너머에 있어 해안 길과 바닷길로 이집트와 이어졌다(632년부터는 A3 줄)
+  sources: ["위키백과 영어판 「Diocese of Egypt」 https://en.wikipedia.org/wiki/Diocese_of_Egypt", "위키백과 영어판 「Cyrenaica」 https://en.wikipedia.org/wiki/Cyrenaica"]
+
+- entity: byzantine-empire
+  from: 615
+  to: 621
+  at: [33.08, 39.05]
+  reason: 아나톨리아(유럽 쪽 동로마 땅). 615년 사산이 레반트를 차지한 뒤 621년 이집트를 잃기까지 이집트와 육지로 떨어졌고, 넓이로는 이집트가 더 커 그쪽이 본토로 잡힌다
+  sources: ["위키백과 영어판 「Byzantine–Sasanian War of 602–628」 https://en.wikipedia.org/wiki/Byzantine%E2%80%93Sasanian_War_of_602%E2%80%93628"]
+
+
+# ── 서아시아·북아프리카 A4c-⑧b (2026-11-01): 기원전 550년~31년 트리폴리타니아·마그레브 (바다 건너 아프리카 땅과 유럽 쪽 땅, 칠하지 않은 튀니지 남부 너머의 엠포리아) ──
+- entity: carthage
+  from: -236
+  to: -227
+  at: [-5.55, 36.97]
+  reason: 히스파니아 남부(기원전 237년 하밀카르 바르카가 가데스에 건너와 투르데타니아를 차지). 아프리카 본령이 더 넓어 본토로 잡히고, 둘 사이는 바다(가데스 해협)로만 이어졌다
+  sources: ["폴리비오스, 『역사』 2.1", "위키백과 영어판 「Carthage」 https://en.wikipedia.org/wiki/Carthage"]
+
+- entity: carthage
+  from: -227
+  to: -205
+  at: [10.17, 35.24]
+  reason: 아프리카 본령과 엠포리아(지금 튀니지 북부·동부와 트리폴리타니아 해안). 바르카 가문의 히스파니아가 더 넓어 그쪽이 본토로 잡히고, 둘 사이는 바다로만 이어졌다
+  sources: ["폴리비오스, 『역사』 3.33", "위키백과 영어판 「Carthage」 https://en.wikipedia.org/wiki/Carthage"]
+
+- entity: numidia
+  from: -161
+  to: -45
+  at: [11.79, 32.69]
+  reason: 엠포리아(지금 튀니지 메데닌과 리비아 트리폴리타니아 해안). 기원전 162년 마시니사가 카르타고에게서 빼앗았으나, 누미디아 본토와는 카르타고(146년부터 로마 아프리카 속주)의 가베스와 칠하지 않은 튀니지 남부(네프자와·타타윈)를 사이에 두었다
+  sources: ["폴리비오스, 『역사』 31.21", "위키백과 영어판 「Numidia」 https://en.wikipedia.org/wiki/Numidia"]
+
+- entity: roman-republic
+  from: -145
+  to: -26
+  at: [10.17, 35.24]
+  reason: 아프리카 속주(기원전 146년 카르타고 본령, 46년 아프리카 노바, 33년 마우레타니아를 더함). 이탈리아·히스파니아·갈리아의 본토와는 바다로만 이어졌다
+  sources: ["아피아노스, 『리비아 전쟁』 135", "위키백과 영어판 「Africa (Roman province)」 https://en.wikipedia.org/wiki/Africa_(Roman_province)"]
+
+# ── 서아시아·북아프리카 A4c-⑧c (2026-11-01): 기원전 30년~631년 트리폴리타니아·마그레브 (칠하지 않은 시르테 너머·바다 건너 아프리카 땅, 칠하지 않은 리프 너머의 팅기타나) ──
+- entity: roman-empire
+  from: -26
+  to: 395
+  at: [10.17, 35.24]
+  reason: 아프리카 속주(지금 튀니지·알제리 동부 텔과 트리폴리타니아 해안, 43년부터 마우레타니아 카이사리엔시스). 이집트·키레나이카와는 칠하지 않은 시르테 사막 해안(미스라타·시르테)을, 이탈리아와는 바다를 사이에 두었다
+  sources: ["위키백과 영어판 「Africa (Roman province)」 https://en.wikipedia.org/wiki/Africa_(Roman_province)", "위키백과 영어판 「Tripolitania」 https://en.wikipedia.org/wiki/Tripolitania"]
+
+- entity: roman-empire
+  from: 43
+  to: 395
+  at: [-5.62, 35.35]
+  reason: 마우레타니아 팅기타나(탕헤르에서 살라·볼루빌리스까지, 286년부터 탕헤르 둘레 해안만). 카이사리엔시스와는 육지로 이어지지 않고(리프·타자 쪽은 속주 밖) 히스파니아 바이티카와 지브롤터 해협 바닷길로 이어졌다
+  sources: ["위키백과 영어판 「Mauretania Tingitana」 https://en.wikipedia.org/wiki/Mauretania_Tingitana", "위키백과 영어판 「Volubilis」 https://en.wikipedia.org/wiki/Volubilis"]
+
+- entity: western-roman-empire
+  from: 395
+  to: 455
+  at: [5.41, 36.19]
+  reason: 아프리카 관구(395년부터 지금 튀니지·트리폴리타니아 해안·알제리 북부, 439년부터는 반달에 남기지 않은 마우레타니아·시티펜시스와 아우레스). 이탈리아 본토와는 바다로만 이어졌다
+  sources: ["위키백과 영어판 「Vandals」 https://en.wikipedia.org/wiki/Vandals", "위키백과 영어판 「Praetorian prefecture of Africa」 https://en.wikipedia.org/wiki/Praetorian_prefecture_of_Africa"]
+
+- entity: western-roman-empire
+  from: 395
+  to: 429
+  at: [-5.62, 35.35]
+  reason: 팅기타나 해안(탕헤르 둘레). 히스파니아 관구에 속했으나 히스파니아와는 지브롤터 해협, 카이사리엔시스와는 칠하지 않은 리프를 사이에 두었다
+  sources: ["위키백과 영어판 「Mauretania Tingitana」 https://en.wikipedia.org/wiki/Mauretania_Tingitana"]
+
+- entity: byzantine-empire
+  from: 534
+  to: 632
+  at: [10.17, 35.24]
+  reason: 아프리카 총독부 땅(534년 벨리사리우스가 되찾은 지금 튀니지·트리폴리타니아 해안·알제리 동부 텔과 시티피스 둘레, 539~543년 아우레스 포함). 이집트·키레나이카와는 칠하지 않은 시르테 사막 해안을 사이에 두고 바닷길로 이어졌다(632년부터는 A3 줄)
+  sources: ["위키백과 영어판 「Praetorian prefecture of Africa」 https://en.wikipedia.org/wiki/Praetorian_prefecture_of_Africa", "위키백과 영어판 「Exarchate of Africa」 https://en.wikipedia.org/wiki/Exarchate_of_Africa"]
