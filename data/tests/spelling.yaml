@@ -2567,3 +2567,13 @@
   avoid: [하마트]
   note: "Hamath(하마를 도읍으로 한 시리아 중부 왕국). 도시 이름은 지금 꼴 하마, 왕국은 하맛"
   scope: 서아시아·북아프리카 고대
+
+- use: 므낫세
+  avoid: [므나쎄]
+  note: "Manasseh(유다 왕, 기원전 7세기 전반). 개역 성경 꼴. 더한 날 avoid 0회. 사건 묶음 me-00에서 통일"
+  scope: 서아시아·북아프리카 고대
+
+- use: 샤바타카
+  avoid: [셰비트쿠, 세비트쿠]
+  note: "Shabataka(Shebitku, 이집트 제25왕조). 더한 날 avoid 0회. 사건 묶음 me-00에서 통일"
+  scope: 서아시아·북아프리카 고대

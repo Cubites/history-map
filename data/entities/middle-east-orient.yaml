@@ -22,7 +22,7 @@
     - 티글라트필레세르 3세(기원전 745~727)가 정복지를 속주로 나누고 주민을 대규모로 옮김
     - 아슈르바니팔(기원전 669~631)이 니네베 궁전에 쐐기문자 서판을 모음
   startEvents: []
-  endEvents: []
+  endEvents: [assyria-last-kings-631bc]
   basis:
     type: primary_source
     refs: ["아시리아 연명관(림무) 목록", "아시리아 왕 비문(연대기)", "『바빌로니아 연대기』"]
@@ -43,7 +43,7 @@
     - 기원전 720년 엘람 군대가 데르에서 사르곤 2세를 막아 바빌론의 자립이 10년 넘게 이어짐
     - 기원전 8세기에는 칼데아·아람 부족이 바빌로니아 시골을 나눠 쥠
   startEvents: []
-  endEvents: []
+  endEvents: [merodach-baladan-721bc]
   basis:
     type: primary_source
     refs: ["『바빌로니아 연대기』", "바빌로니아 왕 목록", "아시리아 왕 비문(연대기)"]
@@ -62,8 +62,8 @@
     - 기원전 614년 아슈르를 무너뜨린 뒤 바빌로니아의 나보폴라사르와 손잡음
     - 키악사레스의 군대가 기원전 612년 바빌로니아군과 함께 니네베를 함락함
     - 고딘 테페·누시잔·바바잔 같은 자그로스 고원의 요새 마을 유적이 남음
-  startEvents: []
-  endEvents: []
+  startEvents: [media-rise-716bc]
+  endEvents: [cyrus-anshan-559bc]
   basis:
     type: primary_source
     refs: ["『바빌로니아 연대기』", "『나보니두스 연대기』", "헤로도토스, 『역사』 1권"]
@@ -82,8 +82,8 @@
     - 기원전 720년 훔반니카시 1세가 데르에서 사르곤 2세와 싸워 바빌로니아를 도움
     - 기원전 653년 울라이강 싸움에서 테움만이 아슈르바니팔에게 져 죽음
     - 엘람어 쐐기문자로 왕 비문과 행정 서판을 남기고 수사의 인슈시나크 신을 섬김
-  startEvents: []
-  endEvents: []
+  startEvents: [neo-elamite-760bc]
+  endEvents: [elam-ulai-susa-653bc, cyrus-anshan-559bc]
   basis:
     type: primary_source
     refs: ["아시리아 왕 비문(아슈르바니팔 연대기)", "『바빌로니아 연대기』"]
@@ -102,8 +102,8 @@
     - 『나보니두스 연대기』와 키루스 원통이 키루스를 ‘안샨 왕’으로 부름
     - 키루스 원통이 테이스페스·키루스 1세·캄비세스 1세를 키루스 2세의 조상으로 적음
     - 도읍 안샨은 옛 엘람의 고지 도시로 지금 시라즈 북쪽 탈레 말리얀 유적
-  startEvents: []
-  endEvents: []
+  startEvents: [cyrus-anshan-559bc]
+  endEvents: [cyrus-anshan-559bc]
   basis:
     type: primary_source
     refs: ["『나보니두스 연대기』", "키루스 원통"]
@@ -126,7 +126,7 @@
     - 벤하닷 3세가 하즈락에서 하맛 왕 자쿠르를 에워쌌으나 물러남
     - 르신이 기원전 738년 아시리아에 공물을 바쳤다가 이스라엘과 손잡고 맞섬
   startEvents: []
-  endEvents: []
+  endEvents: [syrian-ephraimite-war-734bc]
   basis:
     type: primary_source
     refs: ["샬마네세르 3세의 쿠르흐 비문", "자쿠르 비문", "티글라트필레세르 3세 연대기"]
@@ -147,7 +147,7 @@
     - 므나헴이 기원전 738년 티글라트필레세르 3세에게 공물을 바쳐 아시리아를 받듦
     - 베가가 다마스쿠스와 손잡고 맞서다 기원전 732년 갈릴리·길르앗을 잃음
   startEvents: []
-  endEvents: []
+  endEvents: [samaria-fall-722bc]
   basis:
     type: primary_source
     refs: ["샬마네세르 3세의 쿠르흐 비문·검은 오벨리스크", "사마리아 오스트라카", "티글라트필레세르 3세 연대기", "『열왕기』 하권"]
@@ -168,7 +168,7 @@
     - 요시야가 기원전 609년 므깃도에서 이집트 왕 네코 2세에게 져 죽음
     - 기원전 597년 예루살렘이 처음 함락되고 왕이 바뀐 일이 바빌로니아 연대기에 적힘
   startEvents: []
-  endEvents: []
+  endEvents: [judah-last-kings-609bc]
   basis:
     type: primary_source
     refs: ["텔 단 비문", "센나케리브 연대기", "바빌로니아 연대기", "라기스 문서", "『열왕기』 하권"]
@@ -188,7 +188,7 @@
     - 자쿠르 비문에 하맛과 루아시의 왕 자쿠르가 하즈락에서 포위를 견딘 일이 새겨짐
     - 앞선 왕들은 루위어 상형문자 비문을, 자쿠르는 아람어 비문을 남김
   startEvents: []
-  endEvents: []
+  endEvents: [samaria-fall-722bc]
   basis:
     type: primary_source
     refs: ["샬마네세르 3세의 쿠르흐 비문", "자쿠르 비문", "사르곤 2세 연대기"]
@@ -208,7 +208,7 @@
     - 세피레 비문에 왕 마티일루가 카트카 왕 바르가야와 맺은 아람어 조약이 새겨짐
     - 기원전 743년 우라르투 왕 사르두리 2세와 손잡았다가 티글라트필레세르 3세에게 짐
   startEvents: []
-  endEvents: []
+  endEvents: [tiglath-pileser-iii-745bc]
   basis:
     type: primary_source
     refs: ["세피레 조약 비문", "샬마네세르 3세 연대기", "티글라트필레세르 3세 연대기"]
@@ -231,8 +231,8 @@
     - 피예가 하이집트까지 쳐내려가 삼각주 군주들의 항복을 받고 승전비를 세움
     - 타하르카가 멤피스에서 왕관을 받고 테베와 누비아에 신전을 크게 지음
     - 기원전 671년 에사르하돈, 667년 아슈르바니팔의 아시리아군에게 하이집트를 빼앗김
-  startEvents: []
-  endEvents: []
+  startEvents: [libyan-kashta-egypt-800bc]
+  endEvents: [kush-end-664bc]
   basis:
     type: primary_source
     refs: ["피예 승전비", "타누타문 꿈 석비", "에사르하돈·아슈르바니팔 연대기", "헤로도토스, 『역사』 2권"]

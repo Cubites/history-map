@@ -43,148 +43,25 @@
 - key: '-649 qataban 성립'
   reason: '사건 묶음 me-01에서 이을 사건 없음: 성립 해(기원전 7세기 말)가 비문에서 짐작한 어림이라 사료로 잡을 사건이 없고 지도 시작(기원전 550년)보다 앞섬'
   decided: 2026-10-31 운영자 A4 승인
-# ── 서아시아·북아프리카 A5b (2026-11-02): 이집트 기원전 800~551년 새 항목(쿠시 왕조)의 성립·소멸과 새 버전 해. 사건 묶음 me-00이 사건을 쓰며 이 줄을 지운다 ──
-- key: '-746 kushite-egypt 성립'
-  reason: me-00 사건 묶음이 채움
-  decided: 2026-11-02 운영자 A5 승인
-- key: '-656 kushite-egypt 소멸'
-  reason: me-00 사건 묶음이 채움
-  decided: 2026-11-02 운영자 A5 승인
-- key: '-727 kushite-egypt 버전'
-  reason: me-00 사건 묶음이 채움
-  decided: 2026-11-02 운영자 A5 승인
-- key: '-713 kushite-egypt 버전'
-  reason: me-00 사건 묶음이 채움
-  decided: 2026-11-02 운영자 A5 승인
-- key: '-670 kushite-egypt 버전'
-  reason: me-00 사건 묶음이 채움
-  decided: 2026-11-02 운영자 A5 승인
-- key: '-668 kushite-egypt 버전'
-  reason: me-00 사건 묶음이 채움
-  decided: 2026-11-02 운영자 A5 승인
-- key: '-666 kushite-egypt 버전'
-  reason: me-00 사건 묶음이 채움
-  decided: 2026-11-02 운영자 A5 승인
-- key: '-670 neo-assyrian-empire 버전'
-  reason: me-00 사건 묶음이 채움
-  decided: 2026-11-02 운영자 A5 승인
-- key: '-668 neo-assyrian-empire 버전'
-  reason: me-00 사건 묶음이 채움
-  decided: 2026-11-02 운영자 A5 승인
-- key: '-666 neo-assyrian-empire 버전'
-  reason: me-00 사건 묶음이 채움
-  decided: 2026-11-02 운영자 A5 승인
-- key: '-663 neo-assyrian-empire 버전'
-  reason: me-00 사건 묶음이 채움
-  decided: 2026-11-02 운영자 A5 승인
-# ── 서아시아·북아프리카 A5a-1 (2026-11-02): 메소포타미아·이란 기원전 800~551년 새 항목(신아시리아·바빌로니아 왕국·메디아·신엘람·안샨)의 성립·소멸과 새 버전 해. 사건 묶음 me-00이 사건을 쓰며 이 줄을 지운다 ──
-- key: '-799 neo-assyrian-empire 버전'
-  reason: 'me-00 사건 묶음이 채움'
-  decided: 2026-11-02 운영자 A5 승인
-- key: '-728 neo-assyrian-empire 버전'
-  reason: 'me-00 사건 묶음이 채움'
-  decided: 2026-11-02 운영자 A5 승인
-- key: '-720 neo-assyrian-empire 버전'
-  reason: 'me-00 사건 묶음이 채움'
-  decided: 2026-11-02 운영자 A5 승인
-- key: '-709 neo-assyrian-empire 버전'
-  reason: 'me-00 사건 묶음이 채움'
-  decided: 2026-11-02 운영자 A5 승인
-- key: '-625 neo-assyrian-empire 버전'
-  reason: 'me-00 사건 묶음이 채움'
-  decided: 2026-11-02 운영자 A5 승인
-- key: '-614 neo-assyrian-empire 버전'
-  reason: 'me-00 사건 묶음이 채움'
-  decided: 2026-11-02 운영자 A5 승인
-- key: '-611 neo-assyrian-empire 버전'
-  reason: 'me-00 사건 묶음이 채움'
-  decided: 2026-11-02 운영자 A5 승인
-- key: '-608 neo-assyrian-empire 소멸'
-  reason: 'me-00 사건 묶음이 채움'
-  decided: 2026-11-02 운영자 A5 승인
-- key: '-799 babylonia-kingdom 버전'
-  reason: 'me-00 사건 묶음이 채움'
-  decided: 2026-11-02 운영자 A5 승인
-- key: '-709 babylonia-kingdom 소멸'
-  reason: 'me-00 사건 묶음이 채움'
-  decided: 2026-11-02 운영자 A5 승인
-- key: '-614 media-kingdom 성립'
-  reason: 'me-00 사건 묶음이 채움'
-  decided: 2026-11-02 운영자 A5 승인
-- key: '-611 media-kingdom 버전'
-  reason: 'me-00 사건 묶음이 채움'
-  decided: 2026-11-02 운영자 A5 승인
-- key: '-759 elam-neo-elamite 성립'
-  reason: 'me-00 사건 묶음이 채움'
-  decided: 2026-11-02 운영자 A5 승인
-- key: '-558 anshan-kingdom 성립'
-  reason: 'me-00 사건 묶음이 채움'
-  decided: 2026-11-02 운영자 A5 승인
-- key: '-910 neo-assyrian-empire 성립'
-  reason: 'me-00 사건 묶음이 채움'
-  decided: 2026-11-02 운영자 A5 승인
+# ── 서아시아·북아프리카 A5 (2026-11-02): 사건 묶음 me-00 몫(기원전 800~551년)보다 앞선 성립 해 — 지도 시작(기원전 800년) 전이라 이을 사건 없음, 운영자 검수 권장 ──
 - key: '-973 babylonia-kingdom 성립'
-  reason: 'me-00 사건 묶음이 채움'
-  decided: 2026-11-02 운영자 A5 승인
-- key: '-549 media-kingdom 소멸'
-  reason: 'me-00 사건 묶음이 채움'
-  decided: 2026-11-02 운영자 A5 승인
-- key: '-549 elam-neo-elamite 소멸'
-  reason: 'me-00 사건 묶음이 채움'
-  decided: 2026-11-02 운영자 A5 승인
-- key: '-549 anshan-kingdom 소멸'
-  reason: 'me-00 사건 묶음이 채움'
-  decided: 2026-11-02 운영자 A5 승인
-
-# ── 서아시아·북아프리카 A5a-2 (2026-11-02): 레반트 기원전 800~551년 새 항목(아람 다마스쿠스·이스라엘·유다·하맛·아르파드)의 소멸·첫 버전과 레반트 땅 때문에 생긴 신아시리아 버전 해. 사건 묶음 me-00이 사건을 쓰며 이 줄을 지운다 ──
+  reason: '사건 묶음 me-00에서 이을 사건 없음: 성립 해(바빌론 E 왕조가 시작된 기원전 974년 무렵)가 사건 몫(기원전 800~551년)과 지도 시작(기원전 800년)보다 앞섬'
+  decided: 2026-11-02 사건 묶음 me-00 제안(운영자 검수 권장)
+- key: '-910 neo-assyrian-empire 성립'
+  reason: '사건 묶음 me-00에서 이을 사건 없음: 성립 해(아다드니라리 2세가 왕이 된 기원전 911년)가 사건 몫(기원전 800~551년)과 지도 시작(기원전 800년)보다 앞섬'
+  decided: 2026-11-02 사건 묶음 me-00 제안(운영자 검수 권장)
 - key: '-857 arpad-kingdom 성립'
-  reason: me-00 사건 묶음이 채움
-  decided: 2026-11-02 운영자 A5 승인
+  reason: '사건 묶음 me-00에서 이을 사건 없음: 성립 해(아르파드 왕이 샬마네세르 3세에게 공물을 바친 기원전 858년)가 사건 몫(기원전 800~551년)과 지도 시작(기원전 800년)보다 앞섬'
+  decided: 2026-11-02 사건 묶음 me-00 제안(운영자 검수 권장)
 - key: '-852 aram-damascus 성립'
-  reason: me-00 사건 묶음이 채움
-  decided: 2026-11-02 운영자 A5 승인
+  reason: '사건 묶음 me-00에서 이을 사건 없음: 성립 해(카르카르 싸움에 나오는 기원전 853년)가 사건 몫(기원전 800~551년)과 지도 시작(기원전 800년)보다 앞섬'
+  decided: 2026-11-02 사건 묶음 me-00 제안(운영자 검수 권장)
 - key: '-852 israel-kingdom 성립'
-  reason: me-00 사건 묶음이 채움
-  decided: 2026-11-02 운영자 A5 승인
+  reason: '사건 묶음 me-00에서 이을 사건 없음: 성립 해(카르카르 싸움에 나오는 기원전 853년)가 사건 몫(기원전 800~551년)과 지도 시작(기원전 800년)보다 앞섬'
+  decided: 2026-11-02 사건 묶음 me-00 제안(운영자 검수 권장)
 - key: '-852 hamath-kingdom 성립'
-  reason: me-00 사건 묶음이 채움
-  decided: 2026-11-02 운영자 A5 승인
+  reason: '사건 묶음 me-00에서 이을 사건 없음: 성립 해(카르카르 싸움에 나오는 기원전 853년)가 사건 몫(기원전 800~551년)과 지도 시작(기원전 800년)보다 앞섬'
+  decided: 2026-11-02 사건 묶음 me-00 제안(운영자 검수 권장)
 - key: '-839 judah-kingdom 성립'
-  reason: me-00 사건 묶음이 채움
-  decided: 2026-11-02 운영자 A5 승인
-- key: '-799 aram-damascus 버전'
-  reason: me-00 사건 묶음이 채움
-  decided: 2026-11-02 운영자 A5 승인
-- key: '-731 aram-damascus 소멸'
-  reason: me-00 사건 묶음이 채움
-  decided: 2026-11-02 운영자 A5 승인
-- key: '-799 israel-kingdom 버전'
-  reason: me-00 사건 묶음이 채움
-  decided: 2026-11-02 운영자 A5 승인
-- key: '-721 israel-kingdom 소멸'
-  reason: me-00 사건 묶음이 채움
-  decided: 2026-11-02 운영자 A5 승인
-- key: '-586 judah-kingdom 소멸'
-  reason: me-00 사건 묶음이 채움
-  decided: 2026-11-02 운영자 A5 승인
-- key: '-799 hamath-kingdom 버전'
-  reason: me-00 사건 묶음이 채움
-  decided: 2026-11-02 운영자 A5 승인
-- key: '-719 hamath-kingdom 소멸'
-  reason: me-00 사건 묶음이 채움
-  decided: 2026-11-02 운영자 A5 승인
-- key: '-799 arpad-kingdom 버전'
-  reason: me-00 사건 묶음이 채움
-  decided: 2026-11-02 운영자 A5 승인
-- key: '-739 arpad-kingdom 소멸'
-  reason: me-00 사건 묶음이 채움
-  decided: 2026-11-02 운영자 A5 승인
-- key: '-739 neo-assyrian-empire 버전'
-  reason: me-00 사건 묶음이 채움
-  decided: 2026-11-02 운영자 A5 승인
-- key: '-731 neo-assyrian-empire 버전'
-  reason: me-00 사건 묶음이 채움
-  decided: 2026-11-02 운영자 A5 승인
-- key: '-719 neo-assyrian-empire 버전'
-  reason: me-00 사건 묶음이 채움
-  decided: 2026-11-02 운영자 A5 승인
+  reason: '사건 묶음 me-00에서 이을 사건 없음: 성립 해(텔 단 비문에 ‘다윗의 집’이 나오는 기원전 840년 무렵)가 사건 몫(기원전 800~551년)과 지도 시작(기원전 800년)보다 앞섬'
+  decided: 2026-11-02 사건 묶음 me-00 제안(운영자 검수 권장)
