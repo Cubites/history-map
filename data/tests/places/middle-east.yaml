@@ -6212,3 +6212,207 @@
   expect: garamantes
   url: https://en.wikipedia.org/wiki/Garamantes
   from: 서아시아 A4c-⑧c 결과노트
+# ── 서아시아·북아프리카 A5b (2026-11-02): 이집트·키레나이카·카르타고 기원전 800~551년 — 새 항목 수도·바뀌는 해 앞뒤(쿠시 747·728·714·664, 사이스 664·656, 키레네 631, 카르타고 800), 비운 땅(분열기·시나이·사막 양분기·벵가지·하드루메툼), 기원전 551/550 이음매 ──
+- name: 엘레판티네(아스완)
+  at: [32.89, 24.08]
+  year: -790
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Third_Intermediate_Period_of_Egypt
+  from: 서아시아 A5b 결과노트
+- name: 엘레판티네(아스완)
+  at: [32.89, 24.08]
+  year: -740
+  expect: kushite-egypt
+  url: https://en.wikipedia.org/wiki/Kashta
+  from: 서아시아 A5b 결과노트
+- name: 테베(룩소르)
+  at: [32.64, 25.70]
+  year: -760
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Twenty-third_Dynasty_of_Egypt
+  from: 서아시아 A5b 결과노트
+- name: 테베(룩소르)
+  at: [32.64, 25.70]
+  year: -740
+  expect: kushite-egypt
+  url: https://en.wikipedia.org/wiki/Kashta
+  from: 서아시아 A5b 결과노트
+- name: 테베(룩소르)
+  at: [32.64, 25.70]
+  year: -662
+  expect: kushite-egypt
+  url: https://en.wikipedia.org/wiki/Tantamani
+  from: 서아시아 A5b 결과노트
+- name: 테베(룩소르)
+  at: [32.64, 25.70]
+  year: -650
+  expect: saite-egypt
+  url: https://en.wikipedia.org/wiki/Psamtik_I
+  from: 서아시아 A5b 결과노트
+- name: 헤라클레오폴리스
+  at: [30.93, 29.08]
+  year: -740
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Piye
+  from: 서아시아 A5b 결과노트
+- name: 헤라클레오폴리스
+  at: [30.93, 29.08]
+  year: -720
+  expect: kushite-egypt
+  url: https://en.wikipedia.org/wiki/Victory_Stele_of_Piye
+  from: 서아시아 A5b 결과노트
+- name: 멤피스
+  at: [31.25, 29.85]
+  year: -720
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Twenty-fourth_Dynasty_of_Egypt
+  from: 서아시아 A5b 결과노트
+- name: 멤피스
+  at: [31.25, 29.85]
+  year: -700
+  expect: kushite-egypt
+  url: https://en.wikipedia.org/wiki/Shabaka
+  from: 서아시아 A5b 결과노트
+- name: 멤피스
+  at: [31.25, 29.85]
+  year: -667
+  expect: kushite-egypt
+  url: https://en.wikipedia.org/wiki/Taharqa
+  from: 서아시아 A5b 결과노트
+- name: 멤피스
+  at: [31.25, 29.85]
+  year: -662
+  expect: saite-egypt
+  url: https://en.wikipedia.org/wiki/Psamtik_I
+  from: 서아시아 A5b 결과노트
+- name: 사이스
+  at: [30.77, 30.97]
+  year: -720
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Twenty-fourth_Dynasty_of_Egypt
+  from: 서아시아 A5b 결과노트
+- name: 사이스
+  at: [30.77, 30.97]
+  year: -700
+  expect: kushite-egypt
+  url: https://en.wikipedia.org/wiki/Shabaka
+  from: 서아시아 A5b 결과노트
+- name: 사이스
+  at: [30.77, 30.97]
+  year: -662
+  expect: saite-egypt
+  url: https://en.wikipedia.org/wiki/Psamtik_I
+  from: 서아시아 A5b 결과노트
+- name: 사이스
+  at: [30.77, 30.97]
+  year: -550
+  expect: saite-egypt
+  url: https://en.wikipedia.org/wiki/Twenty-sixth_Dynasty_of_Egypt
+  from: 서아시아 A5b 결과노트
+- name: 카르가 오아시스(히비스)
+  at: [30.55, 25.48]
+  year: -700
+  expect: kushite-egypt
+  url: https://en.wikipedia.org/wiki/Shabaka
+  from: 서아시아 A5b 결과노트
+- name: 카르가 오아시스(히비스)
+  at: [30.55, 25.48]
+  year: -660
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Psamtik_I
+  from: 서아시아 A5b 결과노트
+- name: 카르가 오아시스(히비스)
+  at: [30.55, 25.48]
+  year: -650
+  expect: saite-egypt
+  url: https://en.wikipedia.org/wiki/Kharga_Oasis
+  from: 서아시아 A5b 결과노트
+- name: 엘아리시(시나이 북부)
+  at: [33.80, 31.13]
+  year: -700
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Sinai_Peninsula
+  from: 서아시아 A5b 결과노트
+- name: 엘아리시(시나이 북부)
+  at: [33.80, 31.13]
+  year: -650
+  expect: saite-egypt
+  url: https://en.wikipedia.org/wiki/Brook_of_Egypt
+  from: 서아시아 A5b 결과노트
+- name: 키레네
+  at: [21.86, 32.82]
+  year: -640
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Cyrene,_Libya
+  from: 서아시아 A5b 결과노트
+- name: 키레네
+  at: [21.86, 32.82]
+  year: -620
+  expect: cyrene-kingdom
+  url: https://en.wikipedia.org/wiki/Cyrene,_Libya
+  from: 서아시아 A5b 결과노트
+- name: 바르카(알마르지)
+  at: [20.83, 32.50]
+  year: -560
+  expect: cyrene-kingdom
+  url: https://en.wikipedia.org/wiki/Cyrene,_Libya
+  from: 서아시아 A5b 결과노트
+- name: 벵가지(에우에스페리데스)
+  at: [20.07, 32.12]
+  year: -550
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Cyrene,_Libya
+  from: 서아시아 A5b 결과노트
+- name: 벵가지(에우에스페리데스)
+  at: [20.07, 32.12]
+  year: -549
+  expect: cyrene-kingdom
+  url: https://en.wikipedia.org/wiki/Cyrene,_Libya
+  from: 서아시아 A5b 결과노트
+- name: 카르타고
+  at: [10.32, 36.85]
+  year: -790
+  expect: carthage
+  url: https://en.wikipedia.org/wiki/Carthage
+  from: 서아시아 A5b 결과노트
+- name: 카르타고
+  at: [10.32, 36.85]
+  year: -550
+  expect: carthage
+  url: https://en.wikipedia.org/wiki/Carthage
+  from: 서아시아 A5b 결과노트
+- name: 우티카
+  at: [10.06, 37.06]
+  year: -700
+  expect: carthage
+  url: https://en.wikipedia.org/wiki/Utica,_Tunisia
+  from: 서아시아 A5b 결과노트
+- name: 하드루메툼(수스)
+  at: [10.64, 35.83]
+  year: -550
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/History_of_Carthage
+  from: 서아시아 A5b 결과노트
+- name: 하드루메툼(수스)
+  at: [10.64, 35.83]
+  year: -549
+  expect: carthage
+  url: https://en.wikipedia.org/wiki/History_of_Carthage
+  from: 서아시아 A5b 결과노트
+- name: 트리폴리(오에아)
+  at: [13.19, 32.89]
+  year: -600
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/History_of_Carthage
+  from: 서아시아 A5b 결과노트

@@ -43,3 +43,25 @@
 - key: '-649 qataban 성립'
   reason: '사건 묶음 me-01에서 이을 사건 없음: 성립 해(기원전 7세기 말)가 비문에서 짐작한 어림이라 사료로 잡을 사건이 없고 지도 시작(기원전 550년)보다 앞섬'
   decided: 2026-10-31 운영자 A4 승인
+# ── 서아시아·북아프리카 A5b (2026-11-02): 이집트 기원전 800~551년 새 항목(쿠시 왕조)의 성립·소멸과 새 버전 해. 사건 묶음 me-00이 사건을 쓰며 이 줄을 지운다 ──
+- key: '-746 kushite-egypt 성립'
+  reason: me-00 사건 묶음이 채움
+  decided: 2026-11-02 운영자 A5 승인
+- key: '-656 kushite-egypt 소멸'
+  reason: me-00 사건 묶음이 채움
+  decided: 2026-11-02 운영자 A5 승인
+- key: '-727 kushite-egypt 버전'
+  reason: me-00 사건 묶음이 채움
+  decided: 2026-11-02 운영자 A5 승인
+- key: '-713 kushite-egypt 버전'
+  reason: me-00 사건 묶음이 채움
+  decided: 2026-11-02 운영자 A5 승인
+- key: '-670 kushite-egypt 버전'
+  reason: me-00 사건 묶음이 채움
+  decided: 2026-11-02 운영자 A5 승인
+- key: '-668 kushite-egypt 버전'
+  reason: me-00 사건 묶음이 채움
+  decided: 2026-11-02 운영자 A5 승인
+- key: '-666 kushite-egypt 버전'
+  reason: me-00 사건 묶음이 채움
+  decided: 2026-11-02 운영자 A5 승인
