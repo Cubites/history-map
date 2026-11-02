@@ -4,17 +4,24 @@
 // 단계 (이름 → 하는 일):
 //   geo      npm run gen:geo      data/geo 다시 만들기(60~90초). 앞뒤 git status 차이로 센 바뀐 파일 수를 보임
 //   wars     npm run gen:wars     전쟁 손그림 geojson·YAML 다시 만들기(약 3분). 앞뒤 차이로 센 바뀐 전쟁 파일 수를 보임. --no-wars면 건너뜀
+//            자동 건너뜀: '마지막으로 gen:wars가 성공했을 때'와 견준 data/geo(home/ 포함)의 바뀐 영토 버전이 생성기가 만드는 전쟁의 기간(data/wars YAML의 날짜에서 읽음)과
+//            하나도 겹치지 않고, 전쟁 생성 입력(data/wars·data/base/fragments·scripts/wars·scripts/build-data/geo.ts·package-lock.json)도 그대로면 이유 한 줄과 함께 건너뜀.
+//            기준은 HEAD가 아니다: gen:wars가 성공하면 그때 입력 기록(HEAD 커밋·data/geo 버전 열쇠·입력 해시)을 state.json의 warsGen에 적고 다음 판정은 그 기록과 견준다
+//            (그래서 data/geo 고침을 커밋한 뒤 --from wars로 이어 불러도 건너뛰지 않음). 기록이 없거나 기록의 커밋이 HEAD의 조상이 아니면 upstream(origin/main 등) 기준,
+//            upstream도 없으면 돈다. --wars를 주거나 --only로 wars를 직접 고르면 판정 없이 늘 돈다. 판단은 scripts/test-geo/changed.ts의 planWars(geo 단계 뒤 작업 트리). 판단이 서지 않으면 돈다
 //   rebuild  다시 빌드할 전쟁 찾기 → npm run build:data -- --war <id,…>
 //            찾는 판정은 test:geo places와 같은 함수(warStaleReason)·같은 기록(.cache/build-data-wars/built.json, war-inputs.ts)이다:
 //            입력 해시가 빌드 기록과 다름 / 기록 없음 / public/data의 결과가 기록과 다름 / wars/<id>.json 없음 / wars.json에 없는 전쟁. 고를 것이 없으면 건너뜀
 //   test     npm run test:geo     검사(인자는 그대로 넘김: --ci 등)
-// 사용: npm run finish:border -- [--from <단계>] [--only <단계,…>] [--no-wars] [--budget <초>] [test:geo 인자…] [-- test:geo 인자…]
+// 사용: npm run finish:border -- [--from <단계>] [--only <단계,…>] [--no-wars|--wars] [--budget <초>] [test:geo 인자…] [-- test:geo 인자…]
 //   --from <단계>    그 단계부터 끝까지(앞 단계는 건너뜀). 예산 때문에 끊긴 뒤 안내대로 이어 부를 때 씀
 //   --only <단계,…>  고른 단계만(--from과 함께 쓰지 못함). test:geo의 --only와 이름이 겹치므로 test:geo의 --only·--skip은 `--` 뒤에 쓴다
 //   --no-wars        gen:wars를 건너뜀(영토 국경이 아닐 때). rebuild는 그래도 함
+//   --wars           gen:wars 자동 건너뜀을 끄고 늘 돌림(--no-wars와 함께 못 씀). --only에 wars를 넣어도 자동 건너뜀을 하지 않음
+//   test:geo에 --changed를 넘기면(예: `-- --changed`) 검사도 바뀐 것만 한다(test:geo 머리 주석). 단계 끝 메인 검사는 지금처럼 전체로 둔다
 //   --budget <초>    이 명령의 시간 예산(기본 270). 다음 단계를 시작하기 전에 (지금까지 시간 + 그 단계의 지난 시간)이 예산을 넘으면 시작하지 않고 이어서 부를 줄과 함께 끝낸다(종료 3)
 //   그 밖의 인자는 모두 test:geo로 넘긴다(`--` 뒤는 무엇이든). 이어서 줄도 test:geo 인자 앞에 `--`를 붙여 낸다
-// 단계마다 걸린 시간은 .cache/finish-border/state.json에 적는다(처음이면 어림: geo 90초, wars 200초, 전쟁 하나 빌드 30초, test 120초).
+// 단계마다 걸린 시간과 마지막 gen:wars 성공 기록(warsGen)은 .cache/finish-border/state.json에 적는다(처음이면 어림: geo 90초, wars 200초, 전쟁 하나 빌드 30초, test 120초).
 //   rebuild는 한 번에 예산 안에서 빌드할 수 있는 만큼의 전쟁만 빌드하고 나머지는 이어서 부르게 한다(다음 호출이 낡은 전쟁을 다시 찾으므로 남은 것만 고른다).
 //   아무 단계도 안 한 처음 단계는 예산보다 길어 보여도 한다(안 그러면 이어 부를 수 없음).
 // 하위 명령은 package.json scripts를 읽어 `node …` 꼴이면 process.execPath로 직접 부른다(npm.cmd를 거치지 않으므로 Windows에서도 같고, 명령의 원천이 package.json 하나). 출력은 .cache/finish-border/<단계>.log에 받고 화면은 요약만(test:geo 전체는 test-geo.log).
@@ -25,6 +32,7 @@ import { closeSync, existsSync, mkdirSync, openSync, readFileSync, writeFileSync
 import path from 'node:path';
 import { warInputHashes, readBuilt } from './build-data/war-inputs.ts';
 import { warStaleReason } from './test-geo/checks/places.ts';
+import { planWars, warsGenRecord, type WarsGenRecord } from './test-geo/changed.ts';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
 const CACHE = path.join(ROOT, '.cache/finish-border');
@@ -38,7 +46,7 @@ const NPM_SCRIPT: Partial<Record<Step, string>> = { geo: 'gen:geo', wars: 'gen:w
 const DEFAULT_BUDGET = 270;
 
 const USAGE =
-  '사용: npm run finish:border -- [--from <단계>] [--only <단계,…>] [--no-wars] [--budget <초>] [test:geo 인자…] [-- test:geo 인자…]  (단계: geo·wars·rebuild·test)';
+  '사용: npm run finish:border -- [--from <단계>] [--only <단계,…>] [--no-wars|--wars] [--budget <초>] [test:geo 인자…] [-- test:geo 인자…]  (단계: geo·wars·rebuild·test)';
 
 class UsageError extends Error {}
 
@@ -46,6 +54,8 @@ interface Args {
   from: Step | null;
   only: Step[] | null;
   noWars: boolean;
+  /** gen:wars 자동 건너뜀을 끔 */
+  wars: boolean;
   budget: number;
   testArgs: string[];
 }
@@ -56,7 +66,7 @@ function parseStep(v: string | undefined, flag: string): Step {
 }
 
 function parseArgs(argv: string[]): Args {
-  const a: Args = { from: null, only: null, noWars: false, budget: DEFAULT_BUDGET, testArgs: [] };
+  const a: Args = { from: null, only: null, noWars: false, wars: false, budget: DEFAULT_BUDGET, testArgs: [] };
   for (let i = 0; i < argv.length; i++) {
     const f = argv[i];
     if (f === '--') {
@@ -69,6 +79,7 @@ function parseArgs(argv: string[]): Args {
       if (!v) throw new UsageError('--only에 단계 목록이 필요함');
       a.only = [...(a.only ?? []), ...v.split(',').filter(Boolean).map((s) => parseStep(s, '--only'))];
     } else if (f === '--no-wars') a.noWars = true;
+    else if (f === '--wars') a.wars = true;
     else if (f === '--budget') {
       const n = Number(argv[++i]);
       if (!Number.isFinite(n) || n <= 0) throw new UsageError('--budget에는 0보다 큰 초가 필요함');
@@ -77,6 +88,7 @@ function parseArgs(argv: string[]): Args {
     else a.testArgs.push(f);
   }
   if (a.from && a.only) throw new UsageError('--from과 --only는 함께 쓸 수 없음');
+  if (a.noWars && a.wars) throw new UsageError('--no-wars와 --wars는 함께 쓸 수 없음');
   return a;
 }
 
@@ -88,6 +100,8 @@ interface State {
   steps: Partial<Record<string, { seconds: number; at: string }>>;
   /** 전쟁 하나 빌드에 든 시간(초, 마지막 호출의 평균) */
   rebuildPerWar?: number;
+  /** gen:wars가 마지막으로 성공했을 때의 입력 기록(자동 건너뜀의 기준, changed.ts planWars) */
+  warsGen?: WarsGenRecord;
 }
 
 function readState(): State {
@@ -247,6 +261,7 @@ ${USAGE}`);
     const q = (s: string) => (/\s/.test(s) ? `"${s}"` : s);
     const parts = ['npm run finish:border --', ...(args.only ? ['--only', plan.slice(plan.indexOf(from)).join(',')] : ['--from', from])];
     if (args.noWars) parts.push('--no-wars');
+    if (args.wars) parts.push('--wars');
     if (args.budget !== DEFAULT_BUDGET) parts.push('--budget', String(args.budget));
     if (args.testArgs.length) parts.push('--', ...args.testArgs.map(q));
     return `이어서: ${parts.join(' ')}`;
@@ -278,11 +293,28 @@ ${USAGE}`);
 
   for (const step of plan) {
     if (step === 'geo' || step === 'wars') {
+      // --wars 또는 --only로 wars를 직접 고르면 자동 건너뜀 없이 돈다
+      if (step === 'wars' && !args.wars && !args.only?.includes('wars')) {
+        const p = planWars(ROOT, state.warsGen ?? null);
+        if (!p.run) {
+          say(`② gen:wars       건너뜀 · ${p.reason} (늘 돌리려면 --wars)`);
+          continue;
+        }
+      }
       if (overBudget(est(step))) return stopForBudget(step, est(step));
       const before = snapshot();
       const r = run(step, [...scriptArgs(NPM_SCRIPT[step]!)]);
       ran++;
       if (r.status !== 0) return stepFailed(step, r);
+      if (step === 'wars') {
+        try {
+          state.warsGen = warsGenRecord(ROOT);
+        } catch (e) {
+          // 기록을 못 남기면 옛 기록도 지운다(다음 판정은 upstream 기준이나 돎 — 안전 쪽)
+          delete state.warsGen;
+          say(`  ! gen:wars 성공 기록을 남기지 못함: ${(e as Error).message.split('\n')[0]}`);
+        }
+      }
       record(step, r.seconds);
       const changed = changedBy(before, snapshot());
       if (step === 'geo') {
@@ -341,7 +373,7 @@ ${USAGE}`);
       }
       testFailed = r.status === 1;
       say(`④ test:geo       ${fmt(r.seconds)} · ${head || (testFailed ? '실패' : '통과')}`);
-      for (const l of out) if (/^\s+(✗|…|실패 |오류 )/.test(l)) say(l.slice(0, 220));
+      for (const l of out) if (/^\s+(✗|…|실패 |오류 )/.test(l) || l.startsWith('바뀐 것만:')) say(l.slice(0, 220));
       say(`  전체 출력: ${rel(path.join(CACHE, 'test-geo.log'))}`);
     }
   }

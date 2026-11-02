@@ -1,6 +1,6 @@
 // 지형 테스트 러너 (npm run test:geo): 검사 모음(scripts/test-geo/checks/*.ts)을 한 번에 돌리고 결과를 몇 줄로 요약한다.
 // 사용: npm run test:geo -- [--region <europe|east-asia|항목 파일 이름>] [--years 1500-1600] [--only places,lines] [--skip islands]
-//                         [--ci] [--update-baseline <검사 id>] [--report <경로>]
+//                         [--ci] [--update-baseline <검사 id>] [--report <경로>] [--changed [<기준 커밋>]]
 // - 검사 파일: checks/places.ts(지점)·shapes.ts(도형 품질)·events.ts(사건 연결)·lines.ts(선 기준선)·colors.ts(이웃 색)·years.ts(글 속 해)·spelling.ts(표기 사전). 파일이 아직 없으면 '아직 없음'으로 건너뛴다.
 //   각 파일은 `export const checks: Check[]`를 내보낸다(꼴은 types.ts). --only·--skip은 검사 id 또는 파일 이름을 받는다.
 // - 판정 순서: 검사가 낸 항목마다 열쇠(key)로 ① 허용 목록(data/tests/allow/<검사 id 또는 파일 이름>.yaml, 사람이 이유와 함께 적음: key·reason·decided,
@@ -11,11 +11,19 @@
 //   검사가 `selfBaseline: true`면(gaps) 기준선 대조를 검사가 하고(줄은 `열쇠<TAB>값`), --update-baseline은 그 검사 파일이 내보낸 baselineText(id)로 기준선 글을 만든다. 기준선 줄은 TAB 앞이 열쇠.
 // - 종료 코드: 새 실패가 있으면 1, 인자 오류나 검사 중 예외면 2, 아니면 0.
 // - 여러 에이전트가 동시에 돌리면 환경 변수 HISTORY_MAP_WORKERS=4를 권한다(자르기·겹침 worker 수).
+// - --changed [<기준 커밋>] (기본 HEAD): 바뀐 것만. 기준과 지금 작업 트리(스테이지·추적 안 된 새 파일 포함)의 git 차이에서 범위를 고른다(고르는 법은 changed.ts 머리 주석).
+//   해 범위를 좁히는 것은 느린 gaps·overlap뿐이고 나머지 검사는 전체 범위로 돈다. 고른 범위와 이유는 `바뀐 것만:` 한 줄로 맨 먼저 보인다.
+//   판단이 서지 않거나 검사 코드·설정·바탕 자료가 바뀌면 전체 모드(이유 한 줄). 영토·빈 땅 구역·그 기준선이 그대로면 gaps·overlap을 건너뛴다.
+//   전체 모드는 한 명령이 5분을 넘을 수 있어 해 구간 둘(--ci면 --only gen까지 셋)로 나눠 부를 명령 줄을 하나 더 보이고, 그대로 끝까지 돈다.
+//   규칙: --update-baseline과 함께 못 씀. --years를 손으로 주면 손으로 준 것이 이긴다(--changed는 범위를 고르지 않고 모든 검사가 그 범위). --region을 주면 모든 검사에 그대로 쓴다.
+//   범위를 좁힌 gaps·overlap은 낡은 허용 줄을 세지 않는다(--years와 같음). 기준 커밋에 이미 있던 실패는 범위 밖이면 보이지 않는다.
+//   구현 중 반복 검사용이다. **단계 끝 메인 검사는 지금처럼 전체로 둔다**(--changed 없이).
 import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync, appendFileSync } from 'node:fs';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { parse as parseYaml } from 'yaml';
 import { ROOT, createContext } from './context.ts';
+import { ChangedUsageError, RANGE_CHECKS, describePlan, planChanged, type ChangedPlan } from './changed.ts';
 import type { Check, Item, Options } from './types.ts';
 
 /** 검사 파일 이름(그룹). 파일이 없으면 '아직 없음' */
@@ -23,17 +31,19 @@ const KNOWN_GROUPS = ['places', 'shapes', 'events', 'lines', 'colors', 'years', 
 /** 느려서 --ci나 --only로 직접 고를 때만 도는 검사 id */
 const CI_ONLY = new Set(['gen']);
 
-const USAGE = `사용: npm run test:geo -- [--region <europe|east-asia|항목 파일 이름>] [--years 1500-1600] [--only places,lines] [--skip islands] [--ci] [--update-baseline <검사 id>] [--report <경로>]`;
+const USAGE = `사용: npm run test:geo -- [--region <europe|east-asia|항목 파일 이름>] [--years 1500-1600] [--only places,lines] [--skip islands] [--ci] [--update-baseline <검사 id>] [--report <경로>] [--changed [<기준 커밋>]]`;
 
 class UsageError extends Error {}
 
 interface Args extends Options {
   updateBaseline: string | null;
   report: string | null;
+  /** --changed의 기준 커밋(값 없이 주면 HEAD). 없으면 null */
+  changed: string | null;
 }
 
 function parseArgs(argv: string[]): Args {
-  const a: Args = { region: null, years: null, only: null, skip: [], ci: false, updateBaseline: null, report: null };
+  const a: Args = { region: null, years: null, only: null, skip: [], ci: false, updateBaseline: null, report: null, changed: null };
   const value = (i: number, flag: string) => {
     const v = argv[i + 1];
     if (v === undefined || v.startsWith('--')) throw new UsageError(`${flag}에 값이 필요함`);
@@ -51,9 +61,13 @@ function parseArgs(argv: string[]): Args {
     else if (f === '--skip') a.skip.push(...value(i++, f).split(',').filter(Boolean));
     else if (f === '--update-baseline') a.updateBaseline = value(i++, f);
     else if (f === '--report') a.report = value(i++, f);
-    else throw new UsageError(`모르는 인자 '${f}'`);
+    else if (f === '--changed') {
+      const v = argv[i + 1];
+      a.changed = v !== undefined && !v.startsWith('--') ? (i++, v) : 'HEAD';
+    } else throw new UsageError(`모르는 인자 '${f}'`);
   }
   if (a.updateBaseline && (a.region || a.years)) throw new UsageError('--update-baseline은 --region·--years와 함께 쓸 수 없음(기준선에서 범위 밖 열쇠가 사라짐)');
+  if (a.updateBaseline && a.changed) throw new UsageError('--update-baseline은 --changed와 함께 쓸 수 없음(기준선에서 범위 밖 열쇠가 사라짐)');
   return a;
 }
 
@@ -214,6 +228,38 @@ async function main(): Promise<number> {
     }
   }
 
+  // --changed: 바뀐 것만 (changed.ts). 고른 범위는 gaps·overlap에만 쓰고 나머지 검사는 args 그대로(전체 범위)
+  let plan: ChangedPlan | null = null;
+  let planLine = '';
+  if (args.changed !== null) {
+    const rangeSelected = [...groups.values()].some((g) => g.checks.some((c) => RANGE_CHECKS.has(c.id) && selected(args, c, g.group)));
+    if (args.years) planLine = `바뀐 것만: --years를 손으로 줘서 범위를 고르지 않음(모든 검사가 ${args.years[0]}~${args.years[1]}년)`;
+    else if (!rangeSelected) planLine = `바뀐 것만: ${[...RANGE_CHECKS].join('·')}를 돌리지 않아 범위를 고르지 않음(고른 검사는 모두 전체 범위)`;
+    else {
+      try {
+        plan = await planChanged(ROOT, args.changed, { region: args.region });
+      } catch (e) {
+        if (e instanceof ChangedUsageError) {
+          console.error(`test:geo: ${e.message}\n${USAGE}`);
+          return 2;
+        }
+        plan = { base: args.changed, mode: 'full', years: null, reasons: [`바뀐 것을 판단하지 못함: ${(e as Error).message.split('\n')[0]}`], files: 0 };
+      }
+      planLine = describePlan(plan);
+    }
+    console.log(planLine);
+    // 전체 모드는 한 명령이 5분을 넘을 수 있다(전체 test:geo 약 4~6분). 그대로 돌리되, 나눠 부를 명령을 먼저 보인다(HANDOFF 메인 검사 나눔과 같은 꼴)
+    if (plan?.mode === 'full') {
+      const keep = [args.region ? `--region ${args.region}` : '', args.only ? `--only ${args.only.join(',')}` : '', args.skip.length ? `--skip ${args.skip.join(',')}` : '', args.ci ? '--ci' : ''].filter(Boolean);
+      const cmd = (extra: string[]) => `npm run test:geo -- ${[...keep, ...extra].join(' ')}`;
+      const gen = args.ci || args.only?.includes('gen');
+      const split = [cmd(['--years -3000-631', ...(gen ? ['--skip gen'] : [])]), cmd(['--years 632-2030', ...(gen ? ['--skip gen'] : [])]), ...(gen ? [`npm run test:geo -- ${args.region ? `--region ${args.region} ` : ''}--only gen${args.ci ? ' --ci' : ''}`] : [])];
+      console.log(`바뀐 것만: 전체 모드는 한 명령이 5분을 넘을 수 있음 — 나눠 부르려면 ${split.join(' · ')}`);
+    }
+  }
+  const rangeOpt: Options = plan?.mode === 'range' ? { ...args, years: plan.years } : args;
+  const optFor = (check: { id: string }): Options => (RANGE_CHECKS.has(check.id) ? rangeOpt : args);
+
   const ctxStart = performance.now();
   const ctx = createContext(args);
   const ctxSec = (performance.now() - ctxStart) / 1000;
@@ -260,11 +306,18 @@ async function main(): Promise<number> {
         outs.push(o);
         continue;
       }
+      if (plan?.mode === 'none' && RANGE_CHECKS.has(check.id)) {
+        o.status = 'skip';
+        o.why = '바뀐 것 없음(--changed: 영토·빈 땅 구역·그 기준선이 기준과 같음)';
+        groupComplete = false;
+        outs.push(o);
+        continue;
+      }
       const start = performance.now();
       try {
         const allow = readAllow(check, group);
         const base = check.selfBaseline ? new Set<string>() : readBaseline(check, group);
-        const res = await check.run(ctx, args);
+        const res = await check.run(ctx, optFor(check));
         o.checked = res.checked;
         o.notes = res.notes ?? [];
         o.skipped = res.skipped ?? 0;
@@ -282,7 +335,7 @@ async function main(): Promise<number> {
         }
         o.newFailures = fresh;
         for (const e of allow) if (e.used && e.file === groupFile) groupUsed.add(e.key);
-        const unfiltered = args.region === null && args.years === null;
+        const unfiltered = args.region === null && optFor(check).years === null;
         if (unfiltered) {
           o.staleAllow = allow.filter((e) => !e.used && e.file !== groupFile);
           o.staleBaseline = [...base].filter((k) => !seenKeys.has(k)).length;
@@ -328,7 +381,8 @@ async function main(): Promise<number> {
 
   const total = (performance.now() - t0) / 1000;
   const failures = outs.reduce((n, o) => n + o.newFailures.length, 0);
-  const scope = [args.region ? `권역 ${args.region}` : null, args.years ? `${args.years[0]}~${args.years[1]}년` : null].filter(Boolean).join(' ') || '전체';
+  const changedScope = !plan ? null : plan.mode === 'range' ? `gaps·overlap ${plan.years![0]}~${plan.years![1]}년·나머지 전체(바뀐 것만)` : plan.mode === 'none' ? 'gaps·overlap 건너뜀·나머지 전체(바뀐 것만)' : '(바뀐 것만: 전체 모드)';
+  const scope = [args.region ? `권역 ${args.region}` : null, args.years ? `${args.years[0]}~${args.years[1]}년` : null, changedScope].filter(Boolean).join(' ') || '전체';
   const skippedItems = outs.reduce((n, o) => n + o.skipped, 0);
   const head = `test:geo 범위 ${scope} · ${fmtDur(total)} · ${hadError ? `오류 ${outs.filter((o) => o.status === 'error').length} · ` : ''}${failures ? `실패 ${failures}` : '실패 0'}${skippedItems ? ` · 건너뜀 ${skippedItems.toLocaleString()}` : ''}`;
 
@@ -359,13 +413,14 @@ async function main(): Promise<number> {
 
   const reportPath = path.resolve(args.report ?? path.join(ctx.cacheDir, 'report.md'));
   mkdirSync(path.dirname(reportPath), { recursive: true });
-  const md = reportMd(head + (ctxSec > 1 ? ` (자료 읽기 ${fmtDur(ctxSec)})` : ''), outs);
+  const md = reportMd(head + (ctxSec > 1 ? ` (자료 읽기 ${fmtDur(ctxSec)})` : '') + (planLine ? `\n\n${planLine}` : ''), outs);
   writeFileSync(reportPath, md);
   writeFileSync(
     reportPath.replace(/\.md$/, '') + '.json',
     JSON.stringify(
       {
         scope,
+        ...(args.changed !== null ? { changed: plan ?? { note: planLine } } : {}),
         seconds: Math.round(total * 10) / 10,
         newFailures: failures,
         checks: outs.map((o) => ({

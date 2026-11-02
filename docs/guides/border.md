@@ -80,7 +80,8 @@
 ```
 node apply.mjs <사본> --dry-run  →  node apply.mjs <사본>
 npm run gen:geo                     # 60~90초. 뒤의 git status 파일 수 = 묶음 파일 수여야 함
-npm run compare:geo                 # 종료 1이 정상(바뀐 파일 목록). 경계 해 이후·한국사 파일은 바이트 같음 확인
+npm run compare:geo                 # 종료 1이 정상(바뀐 파일 목록). 경계 해 이후·한국사 파일은 바이트 같음 확인. 보존 확인(검토 포함)은 이것으로 하고 비교 스크립트를 새로 짜지 않는다
+npm run entity:where -- <id> [--year Y]   # 나라의 항목 줄·geojson 버전 줄·생성기 정의 줄·사건 수·이웃. 큰 파일을 grep·cat으로 읽기 전에 먼저(scripts/entity-where.ts 머리 주석)
 npm run check:data                  # 6~18분(캐시 없이 첫 빌드 약 18분). 경고 수는 bash: grep -c '^  경고'  (기준 52)
 npm run check:gaps | check:exclaves | typecheck | build | check:generator(약 3.5분)
 node ../history-map-handoff/pt-dh.mjs . '<[[이름,경도,위도],…] JSON>' '<[연도,…] 또는 {"from":a,"to":b}>'   # 서울은 바뀌지 않아야
@@ -92,6 +93,7 @@ node ../history-map-handoff/tools/versions2.mjs <repo 절대경로> 476 2026 100
 ```
 npm run finish:border                          # gen:geo → gen:wars → 낡은 전쟁만 재빌드 → test:geo. 단계마다 한 줄, 하위 출력은 .cache/finish-border/<단계>.log
 npm run finish:border -- --no-wars --ci        # 영토 국경이 아니면 gen:wars 생략(재빌드 판정은 함). 나머지 인자는 test:geo로(--ci 등)
+npm run finish:border -- --wars                # gen:wars를 억지로 돈다. 인자가 없어도 마지막 gen:wars 성공 때(기록 없으면 upstream) 뒤 바뀐 해가 전쟁(1·2차 대전) 기간과 안 겹치면 이유 한 줄과 함께 저절로 건너뜀(고대·중세 단계). `--only`에 wars를 넣어도 늘 돈다
 npm run finish:border -- --only test -- --only places   # test:geo 자신의 --only·--skip은 `--` 뒤에 쓴다(앞의 --only는 이 명령의 단계 고르기)
 npm run finish:border -- --from rebuild        # 예산(--budget 초, 기본 270) 때문에 종료 3으로 끊기면 화면의 "이어서: …" 줄 그대로 부른다 (--only rebuild,test처럼 단계를 골라도 됨)
 ```
@@ -108,7 +110,8 @@ npm run finish:border -- --from rebuild        # 예산(--budget 초, 기본 270
 ```
 npm run test:geo                                       # 전체: 요약 15줄 안, 자세한 것은 .cache/test-geo/report.md
 npm run test:geo -- --region europe --years 1500-1600  # 범위를 좁힘 (권역: europe·east-asia 또는 korea 같은 항목 파일 이름)
-npm run test:geo -- --only places,lines                # 검사 고르기 (--skip islands, 검사 id 또는 파일 이름 places·shapes·events·lines·colors·years·spelling)
+npm run test:geo -- --changed [<기준 커밋>]            # 구현·검토 중 반복용: 기준(기본 HEAD)과 git 차이로 gaps·overlap 해 범위만 좁힘(나머지 검사는 전체 범위, 한 명령 약 2분 반). 맨 위 '바뀐 것만:' 줄에 범위·이유, 검사 코드·설정이 바뀌면 전체 모드. 단계 끝 메인 검사는 전체 그대로(자세한 규칙은 scripts/test-geo/changed.ts 머리 주석)
+npm run test:geo -- --only places,lines                # 검사 고르기 (--skip islands, 검사 id 또는 파일 이름 places·shapes·events·lines·colors·years·spelling·subjects)
 npm run test:geo -- --ci                               # 느린 gen(data/geo가 생성기 결과와 같은가, 약 30초)까지 — 단계 끝에 한 번
 npm run finish:border                                  # 국경을 고친 뒤: gen:geo → gen:wars → 낡은 전쟁만 재빌드 → test:geo (위 5절 첫머리)
 npm run test:geo -- --update-baseline <검사 id>        # 기준선을 지금 결과로 다시 씀(범위 인자와 같이 못 씀, --only <검사 id>를 함께 쓰면 빠름. 파일 맨 위 # 줄은 남김)
@@ -136,6 +139,7 @@ npm run area:geo -- --year 1000,1100 --box … --base <원본 저장소 경로> 
 | `colors` | 같은 해 맞닿은 나라 쌍의 화면 색 ΔE(CIE76) 25 미만([standards.md](standards.md) 5·11절), 열쇠 `colors <id>\|<id>` | 새 나라·색을 넣으면 새 실패 0이 될 때까지 색을 고른다(손으로 재지 않음). 기준선 쌍의 색은 운영자 결정 없이 바꾸지 않는다 |
 | `years` | 글 속 지도 해와 실제 지도 해, 기원전 해의 천문 연도 ±1([standards.md](standards.md) 3절 6) | 버전 해·항목 해를 고치면 돌려 `foundingNote`·사건 글·생성기 주석에 옛 해가 남지 않았는지 본다 |
 | `spelling` | 표기 사전 `data/tests/spelling.yaml`의 쓰지 않을 표기 | 새 나라 이름·foundingNote도 사전을 먼저 본다 |
+| `subjects` | 사건 subjects 나라 이름이 그 사건 제목·본문에 있는가([event.md](event.md) 5.1) | 새 나라를 사건 subjects에 넣을 때 |
 | `gen` | `data/geo` 519개가 생성기 결과와 바이트까지 같은가 | `--ci`나 `--only gen`일 때만 |
 
 **출력 읽는 법**: 머리 줄(범위·걸린 시간·실패 수) → 검사마다 한 줄(`통과`·`실패`·`건너뜀`·`오류`, 검사한 수, 기준선·알려진 예외 수, 걸린 시간) → `✗` 새 실패 위 5건 → `!` 경고 → 보고서 경로. 건너뜀은 이유가 같은 줄에 있다(검사 파일 없음, `--ci`에서만, 전쟁 도형이 오래됨 등). 검사가 항목을 건너뛰면(결과가 낡은 전쟁 지점) 머리 줄에 `건너뜀 N`이 붙고 places 줄에 `전쟁 건너뜀 N`이 나온다. **`--ci`에서는 건너뜀이 실패다**(건너뛴 채 통과하지 않게).
@@ -145,8 +149,8 @@ npm run area:geo -- --year 1000,1100 --box … --base <원본 저장소 경로> 
 
 **실패를 처리하는 세 길** (판단은 사람이: 지도가 틀렸으면 고치고, 일부러 그런 것만 허용)
 1. 지도 오류 → `europe.mjs` 등을 고쳐 다시 돌린다.
-2. 의도한 예외 → `data/tests/allow/<파일>.yaml`(`places`·`shapes`·`events`·`lines`·`colors`·`years`·`spelling`, 파일 하나가 그 그룹의 모든 검사를 덮음)에 `key`(실패 줄의 열쇠 그대로, 끝에 `*` 하나는 앞부분 일치)·`reason`(이유)·`decided`(누가 언제)를 적는다. 맞는 항목이 없어진 줄은 `낡음` 경고가 뜨니 지운다.
-3. 옛 빚 → 기준선(`data/tests/baseline/<검사 id>.txt`, `gaps`·`strips`·`zero`·`islands`·`colors`·`years`·`spelling`). 고쳐서 줄었을 때만 `--update-baseline <검사 id>`로 다시 쓴다(`gaps`는 `--only gaps --update-baseline gaps`). 새 실패를 덮으려고 기준선을 늘리지 않는다.
+2. 의도한 예외 → `data/tests/allow/<파일>.yaml`(`places`·`shapes`·`events`·`lines`·`colors`·`years`·`spelling`·`subjects`, 파일 하나가 그 그룹의 모든 검사를 덮음)에 `key`(실패 줄의 열쇠 그대로, 끝에 `*` 하나는 앞부분 일치)·`reason`(이유)·`decided`(누가 언제)를 적는다. 맞는 항목이 없어진 줄은 `낡음` 경고가 뜨니 지운다.
+3. 옛 빚 → 기준선(`data/tests/baseline/<검사 id>.txt`, `gaps`·`strips`·`zero`·`islands`·`colors`·`years`·`spelling`·`subjects`). 고쳐서 줄었을 때만 `--update-baseline <검사 id>`로 다시 쓴다(`gaps`는 `--only gaps --update-baseline gaps`). 새 실패를 덮으려고 기준선을 늘리지 않는다. 허용·기준선 줄을 손으로 만들기 전에 `npm run baseline:suggest -- --report <report.json>… [--from-exclaves <check:exclaves 출력> --exclaves-before <바꾸기 전 출력>] [--write]`(낡은 events 허용 줄·다른 권역 옛 빈 땅 gaps 줄·사막 비움 해안 월경지 줄을 규칙대로 만들어 보여 줌, 다시 계산 안 함, `--update-baseline`처럼 새 실패를 통째로 받아들이지 않음). 쓴 뒤 이유·근거는 사람이 확인해 고쳐 쓴다(`scripts/baseline-suggest.ts` 머리 주석).
 
 **부분 빌드**: `check:data` 전체는 6~18분이지만 캐시가 따뜻하면 약 18초다. 줄이는 법은 아래.
 ```

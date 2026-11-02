@@ -169,8 +169,8 @@ function readEvents(root: string): EventInfo[] {
   return out;
 }
 
-/** 해안선 자르기 결과: build:data의 clipAll과 같은 작업·같은 열쇠(runCached('clip'))라 캐시를 공유한다 */
-async function clipGeo(geo: GeoVersion[]): Promise<ClippedVersion[]> {
+/** 해안선 자르기 결과: build:data의 clipAll과 같은 작업·같은 열쇠(runCached('clip'))라 캐시를 공유한다. scripts/entity-where.ts도 일부 버전만 자를 때 쓴다 */
+export async function clipGeo(geo: GeoVersion[]): Promise<ClippedVersion[]> {
   const { keyOf, runCached } = await import(pathToFileURL(path.join(ROOT, 'scripts/build-data/cache.ts')).href);
   const { roundCoords } = await import(pathToFileURL(path.join(ROOT, 'scripts/build-data/geo.ts')).href);
   const jobs = geo.map((g) => ({ args: { g: keyOf(g.coords), land: '50m' }, geoms: new Map([[keyOf(g.coords), g.coords]]) }));
