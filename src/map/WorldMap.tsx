@@ -65,6 +65,8 @@ import {
 
 /** 움직임이 멈췄다고 보는 시간(ms). 이후 정밀한 단계로 다시 그린다 */
 const SETTLE_MS = 150;
+/** 이보다 적게 움직이고 뗀 누르기는 클릭으로 친다(px). d3-zoom의 clickDistance와 같은 값 */
+const CLICK_DISTANCE = 4;
 /** 선택·hover한 영토의 강조 테두리 두께(px) */
 const SELECTED_WIDTH = 2.5;
 const HOVER_WIDTH = 1.5;
@@ -476,6 +478,8 @@ export default function WorldMap({ data }: { data: StaticData }) {
   // ── 끌기·확대 ──────────────────────────────────────────────
   // d3-zoom은 끌기, 휠, 핀치 제스처만 담당한다. 이동량을 받아 도법 회전(중앙 경선 이동)으로 바꾼다.
   const lastTransform = useRef<ZoomTransform>(zoomIdentity);
+  /** 이번 누르기(d3-zoom start)를 시작할 때의 변환. 클릭인지 실제 이동인지 가른다 */
+  const gestureStart = useRef<ZoomTransform>(zoomIdentity);
   const syncing = useRef(false);
   const settleTimer = useRef(0);
 
@@ -522,7 +526,7 @@ export default function WorldMap({ data }: { data: StaticData }) {
     if (!el || !size) return;
     const behavior = zoom<HTMLDivElement, unknown>()
       .scaleExtent([MIN_ZOOM, MAX_ZOOM])
-      .clickDistance(4)
+      .clickDistance(CLICK_DISTANCE)
       // 지도 위 단추·블럭(.map-ui)에서 누르거나 휠을 굴린 것은 지도 끌기·확대로 가져가지 않는다
       // (d3-zoom이 누름의 기본 동작을 막아 축척 막대 손잡이를 끌 수 없었음, 2026-10-27)
       .filter((event: MouseEvent) => {
@@ -530,12 +534,18 @@ export default function WorldMap({ data }: { data: StaticData }) {
         return !onMapUi(event.target);
       })
       .on('start', () => {
-        if (!syncing.current) setMoving(true);
+        gestureStart.current = lastTransform.current;
+        // 앞 동작의 멈춤 대기 중에 다시 눌렀으면 그대로 움직이는 중으로 이어 간다
+        if (!syncing.current && movingRef.current) setMoving(true);
       })
       .on('zoom', (event: { transform: ZoomTransform }) => {
         if (syncing.current) return;
         const t0 = lastTransform.current;
         const t1 = event.transform;
+        // 실제로 움직였을 때만 '움직이는 중'으로 친다. 누르기만 해도(start) 움직임으로 치면, 나라를 클릭해 고르거나
+        // 풀 때 그 클릭의 다시 그리기가 가벼운 단계(배율 12 아래는 mid, 4 아래는 low)로 그려져 해안선·국경이 잠깐 뭉개져 보였다 (2026-11-02)
+        const g0 = gestureStart.current;
+        if (!movingRef.current && (t1.k !== g0.k || Math.hypot(t1.x - g0.x, t1.y - g0.y) > CLICK_DISTANCE)) setMoving(true);
         lastTransform.current = t1;
         // 새 화면 가운데에 올 점을, 옮기기 전 화면 좌표로 구한다 (끌기와 기준점 확대 모두 처리)
         const center: [number, number] = [size.width / 2, size.height / 2];
@@ -553,7 +563,7 @@ export default function WorldMap({ data }: { data: StaticData }) {
         requestDraw();
       })
       .on('end', () => {
-        if (!syncing.current) setMoving(false);
+        if (!syncing.current && movingRef.current) setMoving(false);
       });
     zoomRef.current = behavior;
     // 더블클릭은 나중에 지역 단위 드릴다운에 쓴다 (DESIGN.md §7).
