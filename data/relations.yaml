@@ -1064,3 +1064,15 @@
 - { type: vassal_of, subject: judah-kingdom, object: neo-babylonian-empire, from: -603, to: -586 } # 기원전 604년 여호야김이 네부카드네자르 2세를 받듦, 587년 예루살렘 함락
 - { type: vassal_of, subject: aram-damascus, object: neo-assyrian-empire, from: -739, to: -733 } # 기원전 740년 아르파드가 무너진 뒤 르신이 티글라트필레세르 3세에게 공물, 734년 베가와 손잡고 맞서기 전까지
 - { type: vassal_of, subject: hamath-kingdom, object: neo-assyrian-empire, from: -737, to: -719 } # 기원전 738년 북쪽·해안 고을을 떼인 뒤 남은 하마가 공물을 바침, 720년 병합
+
+# ── 남아시아 S1 (2026-11-02): 1947~현재 ──
+# 식민지·보호국은 vassal_of 본국·종주국(00-scope 2절), 1947년 말 미가입 토후국의 속령은 vassal_of 칼라트(칸이 속령으로 봄, 영국과는 따로 보조 동맹). 끝 해는 포함(그해 말 모습 기준)
+# 인도·파키스탄의 분리 독립과 방글라데시의 독립은 successor_of로 잇지 않는다(이어진 나라가 아니라 갈라져 선 나라)
+- { type: vassal_of, subject: british-ceylon, object: uk, from: 1947, to: 1947 } # 직할 식민지, 1948-02-04 자치령 실론
+- { type: vassal_of, subject: french-india, object: france, from: 1947, to: 1953 } # 1954-11-01 사실상 인도에 이양
+- { type: vassal_of, subject: portuguese-india, object: portugal, from: 1947, to: 1960 } # 1961-12-19 인도군 접수
+- { type: vassal_of, subject: sikkim, object: india, from: 1950, to: 1974 } # 1950-12-05 인도·시킴 조약(보호국), 1975-05-16 인도의 주
+- { type: vassal_of, subject: kharan, object: kalat, from: 1947, to: 1947 } # 1948-03-17 따로 파키스탄 가입
+- { type: vassal_of, subject: makran, object: kalat, from: 1947, to: 1947 } # 1948-03 따로 파키스탄 가입
+- { type: vassal_of, subject: las-bela, object: kalat, from: 1947, to: 1947 } # 1948-03 따로 파키스탄 가입
+- { type: successor_of, subject: sri-lanka, object: british-ceylon, from: 1948, to: null } # 1948-02-04 자치령 실론, 1972-05-22 스리랑카 공화국

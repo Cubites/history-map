@@ -65,3 +65,88 @@
 - key: '-839 judah-kingdom 성립'
   reason: '사건 묶음 me-00에서 이을 사건 없음: 성립 해(텔 단 비문에 ‘다윗의 집’이 나오는 기원전 840년 무렵)가 사건 몫(기원전 800~551년)과 지도 시작(기원전 800년)보다 앞섬'
   decided: 2026-11-02 사건 묶음 me-00 제안(운영자 검수 권장)
+# ── 남아시아 S1 (2026-11-02): 1947~현재 새 항목의 성립·소멸과 1만 km² 넘는 버전 해. 사건 묶음 sa-08이 사건을 쓰며 이 줄을 지운다 ──
+- key: '1947 india 성립'
+  reason: sa-08 사건 묶음이 채움
+  decided: 2026-11-02 남아시아 S1 구현(사건은 다음 세션)
+- key: '1947 pakistan 성립'
+  reason: sa-08 사건 묶음이 채움
+  decided: 2026-11-02 남아시아 S1 구현(사건은 다음 세션)
+- key: '1947 nepal 성립'
+  reason: sa-08 사건 묶음이 채움
+  decided: 2026-11-02 남아시아 S1 구현(사건은 다음 세션)
+- key: '1947 bhutan 성립'
+  reason: sa-08 사건 묶음이 채움
+  decided: 2026-11-02 남아시아 S1 구현(사건은 다음 세션)
+- key: '1947 sikkim 성립'
+  reason: sa-08 사건 묶음이 채움
+  decided: 2026-11-02 남아시아 S1 구현(사건은 다음 세션)
+- key: '1947 british-ceylon 성립'
+  reason: sa-08 사건 묶음이 채움
+  decided: 2026-11-02 남아시아 S1 구현(사건은 다음 세션)
+- key: '1947 hyderabad-state 성립'
+  reason: sa-08 사건 묶음이 채움
+  decided: 2026-11-02 남아시아 S1 구현(사건은 다음 세션)
+- key: '1947 kalat 성립'
+  reason: sa-08 사건 묶음이 채움
+  decided: 2026-11-02 남아시아 S1 구현(사건은 다음 세션)
+- key: '1947 kharan 성립'
+  reason: sa-08 사건 묶음이 채움
+  decided: 2026-11-02 남아시아 S1 구현(사건은 다음 세션)
+- key: '1947 makran 성립'
+  reason: sa-08 사건 묶음이 채움
+  decided: 2026-11-02 남아시아 S1 구현(사건은 다음 세션)
+- key: '1947 las-bela 성립'
+  reason: sa-08 사건 묶음이 채움
+  decided: 2026-11-02 남아시아 S1 구현(사건은 다음 세션)
+- key: '1947 french-india 성립'
+  reason: sa-08 사건 묶음이 채움
+  decided: 2026-11-02 남아시아 S1 구현(사건은 다음 세션)
+- key: '1947 portuguese-india 성립'
+  reason: sa-08 사건 묶음이 채움
+  decided: 2026-11-02 남아시아 S1 구현(사건은 다음 세션)
+- key: '1948 british-ceylon 소멸'
+  reason: sa-08 사건 묶음이 채움
+  decided: 2026-11-02 남아시아 S1 구현(사건은 다음 세션)
+- key: '1948 sri-lanka 성립'
+  reason: sa-08 사건 묶음이 채움
+  decided: 2026-11-02 남아시아 S1 구현(사건은 다음 세션)
+- key: '1948 hyderabad-state 소멸'
+  reason: sa-08 사건 묶음이 채움
+  decided: 2026-11-02 남아시아 S1 구현(사건은 다음 세션)
+- key: '1948 kalat 소멸'
+  reason: sa-08 사건 묶음이 채움
+  decided: 2026-11-02 남아시아 S1 구현(사건은 다음 세션)
+- key: '1948 kharan 소멸'
+  reason: sa-08 사건 묶음이 채움
+  decided: 2026-11-02 남아시아 S1 구현(사건은 다음 세션)
+- key: '1948 makran 소멸'
+  reason: sa-08 사건 묶음이 채움
+  decided: 2026-11-02 남아시아 S1 구현(사건은 다음 세션)
+- key: '1948 las-bela 소멸'
+  reason: sa-08 사건 묶음이 채움
+  decided: 2026-11-02 남아시아 S1 구현(사건은 다음 세션)
+- key: '1954 french-india 소멸'
+  reason: sa-08 사건 묶음이 채움
+  decided: 2026-11-02 남아시아 S1 구현(사건은 다음 세션)
+- key: '1961 portuguese-india 소멸'
+  reason: sa-08 사건 묶음이 채움
+  decided: 2026-11-02 남아시아 S1 구현(사건은 다음 세션)
+- key: '1971 bangladesh 성립'
+  reason: sa-08 사건 묶음이 채움
+  decided: 2026-11-02 남아시아 S1 구현(사건은 다음 세션)
+- key: '1975 sikkim 소멸'
+  reason: sa-08 사건 묶음이 채움
+  decided: 2026-11-02 남아시아 S1 구현(사건은 다음 세션)
+- key: '1948 india 버전'
+  reason: sa-08 사건 묶음이 채움
+  decided: 2026-11-02 남아시아 S1 구현(사건은 다음 세션)
+- key: '1948 pakistan 버전'
+  reason: sa-08 사건 묶음이 채움
+  decided: 2026-11-02 남아시아 S1 구현(사건은 다음 세션)
+- key: '1949 india 버전'
+  reason: sa-08 사건 묶음이 채움
+  decided: 2026-11-02 남아시아 S1 구현(사건은 다음 세션)
+- key: '1971 pakistan 버전'
+  reason: sa-08 사건 묶음이 채움
+  decided: 2026-11-02 남아시아 S1 구현(사건은 다음 세션)

@@ -1,0 +1,317 @@
+# south-asia 권역 국경 지점 정답표 (평소 지도, npm run new:area가 만든 빈 틀)
+# 읽는 곳: scripts/test-geo (npm run test:geo -- --only places). 꼴은 docs/DATA_GUIDE.md의 정답표 절을 따른다. 나라·시대마다 몇 점인지는 시작 때 정한다(standards.md 9절 10).
+# 해는 천문 연도(기원전 N년 = 1-N), 새 지점은 url을 반드시 단다.
+# 남아시아 S1(2026-11-02): 1947~현재. 새 항목마다 수도 1점과 바뀌는 해 앞뒤, 칼선 양쪽(마라트와다·칼랴나 카르나타카·칼라트 무리), 카슈미르 실효 지배선 양쪽, 중국 이음매(타왕·이타나가르)
+
+- name: 뉴델리
+  at: [77.209, 28.614]
+  year: 1990
+  expect: india
+  url: https://en.wikipedia.org/wiki/Partition_of_India
+  from: 남아시아 S1 결과노트
+- name: 하이데라바드
+  at: [78.487, 17.385]
+  year: 1947
+  expect: hyderabad-state
+  url: https://en.wikipedia.org/wiki/Hyderabad_State
+  from: 남아시아 S1 결과노트
+- name: 하이데라바드
+  at: [78.487, 17.385]
+  year: 1949
+  expect: india
+  url: https://en.wikipedia.org/wiki/Annexation_of_Hyderabad
+  from: 남아시아 S1 결과노트
+- name: 아우랑가바드(마라트와다)
+  at: [75.343, 19.876]
+  year: 1947
+  expect: hyderabad-state
+  url: https://en.wikipedia.org/wiki/Marathwada
+  from: 남아시아 S1 결과노트
+- name: 아우랑가바드(마라트와다)
+  at: [75.343, 19.876]
+  year: 1949
+  expect: india
+  url: https://en.wikipedia.org/wiki/Marathwada
+  from: 남아시아 S1 결과노트
+- name: 칼라부라기(굴바르가)
+  at: [76.834, 17.33]
+  year: 1947
+  expect: hyderabad-state
+  url: https://en.wikipedia.org/wiki/Kalyana-Karnataka
+  from: 남아시아 S1 결과노트
+- name: 푸네
+  at: [73.856, 18.52]
+  year: 1947
+  expect: india
+  url: https://en.wikipedia.org/wiki/Political_integration_of_India
+  from: 남아시아 S1 결과노트
+- name: 카라치
+  at: [67.01, 24.861]
+  year: 1950
+  expect: pakistan
+  url: https://en.wikipedia.org/wiki/Partition_of_India
+  from: 남아시아 S1 결과노트
+- name: 라호르
+  at: [74.344, 31.55]
+  year: 1947
+  expect: pakistan
+  url: https://en.wikipedia.org/wiki/Radcliffe_Line
+  from: 남아시아 S1 결과노트
+- name: 암리차르
+  at: [74.872, 31.634]
+  year: 1947
+  expect: india
+  url: https://en.wikipedia.org/wiki/Radcliffe_Line
+  from: 남아시아 S1 결과노트
+- name: 퀘타
+  at: [67, 30.18]
+  year: 1947
+  expect: pakistan
+  url: https://en.wikipedia.org/wiki/Balochistan,_Pakistan
+  from: 남아시아 S1 결과노트
+- name: 칼라트
+  at: [66.59, 29.023]
+  year: 1947
+  expect: kalat
+  url: https://en.wikipedia.org/wiki/Khanate_of_Kalat
+  from: 남아시아 S1 결과노트
+- name: 칼라트
+  at: [66.59, 29.023]
+  year: 1949
+  expect: pakistan
+  url: https://en.wikipedia.org/wiki/Khanate_of_Kalat
+  from: 남아시아 S1 결과노트
+- name: 카란
+  at: [65.417, 28.583]
+  year: 1947
+  expect: kharan
+  url: https://en.wikipedia.org/wiki/Kharan_(princely_state)
+  from: 남아시아 S1 결과노트
+- name: 투르바트(케치)
+  at: [63.05, 26]
+  year: 1947
+  expect: makran
+  url: https://en.wikipedia.org/wiki/Makran_(princely_state)
+  from: 남아시아 S1 결과노트
+- name: 벨라
+  at: [66.31, 26.23]
+  year: 1947
+  expect: las-bela
+  url: https://en.wikipedia.org/wiki/Las_Bela_(princely_state)
+  from: 남아시아 S1 결과노트
+- name: 과다르
+  at: [62.325, 25.13]
+  year: 1960
+  expect: pakistan
+  url: https://en.wikipedia.org/wiki/Gwadar
+  from: 남아시아 S1 결과노트
+- name: 다카
+  at: [90.413, 23.81]
+  year: 1970
+  expect: pakistan
+  url: https://en.wikipedia.org/wiki/Bangladesh_Liberation_War
+  from: 남아시아 S1 결과노트
+- name: 다카
+  at: [90.413, 23.81]
+  year: 1972
+  expect: bangladesh
+  url: https://en.wikipedia.org/wiki/Bangladesh_Liberation_War
+  from: 남아시아 S1 결과노트
+- name: 카트만두
+  at: [85.324, 27.717]
+  year: 1980
+  expect: nepal
+  url: https://en.wikipedia.org/wiki/Nepal
+  from: 남아시아 S1 결과노트
+- name: 팀푸
+  at: [89.639, 27.473]
+  year: 1980
+  expect: bhutan
+  url: https://en.wikipedia.org/wiki/Bhutan
+  from: 남아시아 S1 결과노트
+- name: 강토크
+  at: [88.614, 27.339]
+  year: 1974
+  expect: sikkim
+  url: https://en.wikipedia.org/wiki/Sikkim
+  from: 남아시아 S1 결과노트
+- name: 강토크
+  at: [88.614, 27.339]
+  year: 1976
+  expect: india
+  url: https://en.wikipedia.org/wiki/Sikkim
+  from: 남아시아 S1 결과노트
+- name: 콜롬보
+  at: [79.861, 6.927]
+  year: 1947
+  expect: british-ceylon
+  url: https://en.wikipedia.org/wiki/British_Ceylon
+  from: 남아시아 S1 결과노트
+- name: 콜롬보
+  at: [79.861, 6.927]
+  year: 1960
+  expect: sri-lanka
+  url: https://en.wikipedia.org/wiki/Dominion_of_Ceylon
+  from: 남아시아 S1 결과노트
+- name: 퐁디셰리
+  at: [79.808, 11.94]
+  year: 1950
+  expect: french-india
+  url: https://en.wikipedia.org/wiki/French_India
+  from: 남아시아 S1 결과노트
+  tolerance: 2
+  note: 푸두체리 조각이 간략화로 해안 쪽이 줄어 시내 지점이 경계 밖 약 0.7 km
+- name: 퐁디셰리
+  at: [79.808, 11.94]
+  year: 1955
+  expect: india
+  url: https://en.wikipedia.org/wiki/French_India
+  from: 남아시아 S1 결과노트
+- name: 파나지(고아)
+  at: [73.828, 15.491]
+  year: 1960
+  expect: portuguese-india
+  url: https://en.wikipedia.org/wiki/Portuguese_India
+  from: 남아시아 S1 결과노트
+- name: 파나지(고아)
+  at: [73.828, 15.491]
+  year: 1962
+  expect: india
+  url: https://en.wikipedia.org/wiki/Annexation_of_Goa
+  from: 남아시아 S1 결과노트
+- name: 실바사(나가르 하벨리)
+  at: [73.017, 20.277]
+  year: 1950
+  expect: portuguese-india
+  url: https://en.wikipedia.org/wiki/Dadra_and_Nagar_Haveli
+  from: 남아시아 S1 결과노트
+- name: 실바사(나가르 하벨리)
+  at: [73.017, 20.277]
+  year: 1962
+  expect: india
+  url: https://en.wikipedia.org/wiki/Dadra_and_Nagar_Haveli
+  from: 남아시아 S1 결과노트
+- name: 스리나가르
+  at: [74.797, 34.084]
+  year: 1960
+  expect: india
+  url: https://en.wikipedia.org/wiki/Line_of_Control
+  from: 남아시아 S1 결과노트
+- name: 레(라다크)
+  at: [77.577, 34.153]
+  year: 1960
+  expect: india
+  url: https://en.wikipedia.org/wiki/Line_of_Control
+  from: 남아시아 S1 결과노트
+- name: 무자파라바드
+  at: [73.471, 34.37]
+  year: 1960
+  expect: pakistan
+  url: https://en.wikipedia.org/wiki/Line_of_Control
+  from: 남아시아 S1 결과노트
+- name: 길기트
+  at: [74.308, 35.922]
+  year: 1948
+  expect: pakistan
+  url: https://en.wikipedia.org/wiki/Indo-Pakistani_war_of_1947%E2%80%931948
+  from: 남아시아 S1 결과노트
+- name: 스카르두
+  at: [75.633, 35.297]
+  year: 1950
+  expect: pakistan
+  url: https://en.wikipedia.org/wiki/Baltistan
+  from: 남아시아 S1 결과노트
+- name: 타왕
+  at: [91.86, 27.59]
+  year: 1948
+  expect: india
+  url: https://en.wikipedia.org/wiki/McMahon_Line
+  from: 남아시아 S1 결과노트
+  note: 타왕 읍은 중화민국의 티베트 남쪽 대략 선 밖이라 1947년부터 인도 쪽(1951년 2월 인도가 티베트 행정을 걷어 냄, 근사)
+- name: 메추카(아루나찰 북부)
+  at: [94.12, 28.6]
+  year: 1948
+  expect: roc
+  url: https://en.wikipedia.org/wiki/McMahon_Line
+  from: 남아시아 S1 결과노트
+  note: 중화민국 도형은 청과 같은 티베트 남쪽 대략 선이라 맥마흔선 남쪽 북부를 덮음(동아시아 결정)
+- name: 메추카(아루나찰 북부)
+  at: [94.12, 28.6]
+  year: 1949
+  expect: india
+  url: https://en.wikipedia.org/wiki/McMahon_Line
+  from: 남아시아 S1 결과노트
+- name: 이타나가르(아루나찰)
+  at: [93.62, 27.08]
+  year: 1960
+  expect: india
+  url: https://en.wikipedia.org/wiki/McMahon_Line
+  from: 남아시아 S1 결과노트
+- name: 자이살메르(타르 사막)
+  at: [70.908, 26.916]
+  year: 1960
+  expect: india
+  url: https://en.wikipedia.org/wiki/Thar_Desert
+  from: 남아시아 S1 결과노트
+# S1 검토 1차 반영: 마라트와다·칼랴나 카르나타카 칼선 양쪽 확인 지점(1947)
+- name: 소이가온(아우랑가바드 지구)
+  at: [75.618, 20.594]
+  year: 1947
+  expect: hyderabad-state
+  url: https://en.wikipedia.org/wiki/Soegaon
+  from: 남아시아 S1 검토 1차
+- name: 바이자푸르(아우랑가바드 지구)
+  at: [74.73, 19.92]
+  year: 1947
+  expect: hyderabad-state
+  url: https://en.wikipedia.org/wiki/Vaijapur
+  from: 남아시아 S1 검토 1차
+- name: 셰브가온(아마드나가르 지구)
+  at: [75.233, 19.35]
+  year: 1947
+  expect: india
+  url: https://en.wikipedia.org/wiki/Shevgaon
+  from: 남아시아 S1 검토 1차
+- name: 바르시(숄라푸르 지구)
+  at: [75.695, 18.234]
+  year: 1947
+  expect: india
+  url: https://en.wikipedia.org/wiki/Barshi
+  from: 남아시아 S1 검토 1차
+- name: 신다기(비자푸르 지구)
+  at: [76.234, 16.92]
+  year: 1947
+  expect: india
+  url: https://en.wikipedia.org/wiki/Sindagi
+  from: 남아시아 S1 검토 1차
+- name: 탈리코타(비자푸르 지구)
+  at: [76.32, 16.48]
+  year: 1947
+  expect: india
+  url: https://en.wikipedia.org/wiki/Talikota
+  from: 남아시아 S1 검토 1차
+# S1 재검토 반영: 마라트와다 칼선 동쪽 끝(펜강가·워르다강) 양쪽 확인 지점(1947)
+- name: 마후르(난데드 지구)
+  at: [77.92, 19.83]
+  year: 1947
+  expect: hyderabad-state
+  url: https://en.wikipedia.org/wiki/Mahur
+  from: 남아시아 S1 재검토
+- name: 라주라(옛 아딜라바드 지구)
+  at: [79.366, 19.778]
+  year: 1947
+  expect: hyderabad-state
+  url: https://en.wikipedia.org/wiki/Rajura
+  from: 남아시아 S1 재검토
+- name: 우마르케드(야바트말 지구)
+  at: [77.7, 19.6]
+  year: 1947
+  expect: india
+  url: https://en.wikipedia.org/wiki/Umarkhed
+  from: 남아시아 S1 재검토
+- name: 발라르푸르(찬드라푸르 지구)
+  at: [79.35, 19.85]
+  year: 1947
+  expect: india
+  url: https://en.wikipedia.org/wiki/Ballarpur
+  from: 남아시아 S1 재검토

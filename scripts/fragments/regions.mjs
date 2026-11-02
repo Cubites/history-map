@@ -100,6 +100,25 @@ export const FRAGMENT_REGIONS = {
     // 서사하라 장벽 서쪽(모로코 조각)과 골란·동예루살렘(이스라엘 조각): countries-50m의 소속과 따로 견준다
     checkIds: ['MA-15', 'MA-16', 'MA-14', 'IL-Z', 'IL-JM'],
   },
+  // 남아시아 (2026-11-02, 0단계 등록): 이 지역 S1~S4가 이 조각과 칼선으로 나라를 만든다(docs/south-asia/00-scope.md 2절).
+  // 이란은 서아시아 조각(middle-east.topo.json)이라 under로 그대로 이웃으로 쓴다(파키스탄–이란 이음매가 그 바깥선 그대로). 아프가니스탄·미얀마·중국은 넣지 않는다
+  // (중국 쪽 이음매는 동아시아 손그림 도형이 정하고 생성기가 그 도형을 빼서 맞춘다)
+  'south-asia': {
+    readme: 'README.south-asia.md',
+    under: 'middle-east',
+    adm0: ['IND', 'PAK', 'BGD', 'NPL', 'BTN', 'LKA', 'MDV', 'KAS'],
+    // 파키스탄 서쪽 끝(약 동경 60.9°)·인도 동쪽 끝(아루나찰 약 97.4°)·북쪽 끝(카라코람 약 북위 37.1°)·몰디브 남쪽 끝(아두 약 남위 0.7°)을 덮는다
+    box: [60.5, -1, 97.5, 37.2],
+    idExamples: { iso: 'IN-TG', adm1: '시아첸 빙하 `-99-X06~`', adm0: ['KAS'] },
+    notes: [
+      '카슈미르: NE v5.1.2 admin-1은 실제 지배 기준이다. 인도 쪽은 잠무 카슈미르(`IN-JK`)·라다크(`IN-LA`), 파키스탄 쪽은 아자드 카슈미르(`PK-JK`)·길기트발티스탄(`PK-GB`, NE 이름 Northern Areas), 시아첸 빙하는 따로 조각 하나(`-99-X06~`, adm0 {adm0:-99-X06~})다. 악사이친과 샥스감은 중국(이웃이 아니라 넣지 않음) 땅이다.',
+      '인도 행정구역은 주·연방 직할지 {count:IND}개뿐이라 거칠다(텔랑가나 `IN-TG` 등). 다드라 나가르 하벨리와 다만 디우는 2020년 합친 한 조각(`IN-DH`, 떨어진 조각 여럿)이다. 찬다나가르는 서벵골(`IN-WB`) 안이다.',
+      '파키스탄 행정구역은 {count:PAK}개(펀자브·신드·발루치스탄·카이베르파크툰크와·연방 직할 부족 지역·수도·아자드 카슈미르·길기트발티스탄)로 가장 거칠다. 방글라데시 {count:BGD}·네팔 {count:NPL}·부탄 {count:BTN}·스리랑카 {count:LKA}·몰디브 {count:MDV}. 조각 사이의 내륙 구멍은 {micro}.',
+    ],
+    countries50m: { IND: 'India', PAK: 'Pakistan', BGD: 'Bangladesh', NPL: 'Nepal', BTN: 'Bhutan', LKA: 'Sri Lanka', MDV: 'Maldives' },
+    // 카슈미르 실제 지배선 양쪽: countries-50m의 소속과 따로 견준다
+    checkIds: ['IN-JK', 'IN-LA', 'PK-JK', 'PK-GB'],
+  },
 };
 
 /** 지역 이름 → 항목. 모르는 이름이면 오류(알려진 이름을 함께 적음) */
