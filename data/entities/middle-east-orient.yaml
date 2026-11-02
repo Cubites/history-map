@@ -1,0 +1,15 @@
+# middle-east orient 나라 (시대 파일 scripts/geo/areas/middle-east/orient.mjs의 짝 항목 파일, npm run new:area가 만든 빈 틀)
+# 시대·범위: 기원전 800~551: 신아시리아·신바빌로니아·메디아 핵심·엘람·레반트 왕국, 이집트 25·26왕조·키레네·카르타고
+# 나라를 넣을 때 아래 []를 지우고 - id: …로 적는다(docs/DATA_GUIDE.md). 권역 값은 파일 이름에서 정해진다(src/schema/regions.ts REGION_FILTER_OF의 'middle-east-orient').
+# 기원전 800년 전에 시작한 나라는 from을 실제 해로 적고 도형은 기원전 800년(−799)부터. 기원전 551년(−550) 뒤에도 이어지는 나라(neo-babylonian-empire·saite-egypt·cyrene-kingdom)는
+# 항목이 middle-east-ancient.yaml에 있으므로 여기 두지 않는다(두 항목 파일에 같은 id를 두지 않음).
+# 칸 나눔(a5-plan 3절): 구현 A5a(동)는 '# ── A5a 동 ──' 칸, A5b(서)는 '# ── A5b 서 ──' 칸 아래에만 쓴다. 맨 위 []는 나라를 넣는 쪽이 지운다(두 쪽이 같이 지워도 합칠 때 같은 고침).
+[]
+
+# ── A5a 동 (신아시리아·신바빌로니아 앞쪽 제외·메디아 핵심·엘람·이스라엘·유다·다마스쿠스 등) ──
+
+# ── A5a 끝 ──
+
+# ── A5b 서 (이집트 25왕조 등·키레네 앞쪽 제외·카르타고 제외) ──
+
+# ── A5b 끝 ──

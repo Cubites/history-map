@@ -4,6 +4,7 @@
 // 권역 출처 문구(export const source)는 이 권역 나라 모두에 붙는다(없으면 엔진의 기본 문구). 시대마다 다르면 시대 파일의 era.source에 적는다.
 // 빈 땅 검사 구역(gapZones: [{ name, zone, minus?, from?, to? }])은 비어 있으면 안 되는 지역을 적는다(engine.mjs collectGapZones). 일부러 비운 땅은 voids에 이유와 함께.
 import { joinEras } from '../shared.mjs';
+import { era as orientEra } from './middle-east/orient.mjs';
 import { era as ancientEra } from './middle-east/ancient.mjs';
 import { era as medievalEra } from './middle-east/medieval.mjs';
 import { era as earlyModernEra } from './middle-east/early-modern.mjs';
@@ -48,5 +49,5 @@ const EXTENDABLE = {
 
 // 시대 파일 잇기 (npm run new:area): 이 파일의 나라 다음에 시대 파일(areas/middle-east/<시대>.mjs)의 나라·빈 땅 검사 구역·비운 땅을 붙인다(shared.mjs joinEras)
 // 시대 파일 목록은 과거 시대가 앞이다(A1 항목 qajar-iran·kuwait 등의 1918년 전 버전이 1918년부터 버전 앞에, A2 항목 mamluk-sultanate 등의 1453년 전 버전이 1453년부터 버전 앞에 붙음).
-// new:area는 새 시대를 끝에 붙이므로 손으로 옮긴다(medieval은 A3-0, ancient는 A4-0에서 맨 앞으로 옮김: sasanian-empire 등 A3 항목의 632년 전 버전이 632년부터 버전 앞에 붙음)
-export const { versions, gapZones, voids, sourceOf, extensions, extendable } = joinEras('middle-east', { versions: ownVersions, gapZones: [], voids: [], extendable: EXTENDABLE }, [ancientEra, medievalEra, earlyModernEra, modernEra]);
+// new:area는 새 시대를 끝에 붙이므로 손으로 옮긴다(medieval은 A3-0, ancient는 A4-0, orient는 A5 뼈대에서 맨 앞으로 옮김: sasanian-empire 등 A3 항목의 632년 전 버전이 632년부터 버전 앞에, neo-babylonian-empire 등 A4 항목의 기원전 551년 전 버전이 기원전 550년부터 버전 앞에 붙음)
+export const { versions, gapZones, voids, sourceOf, extensions, extendable } = joinEras('middle-east', { versions: ownVersions, gapZones: [], voids: [], extendable: EXTENDABLE }, [orientEra, ancientEra, medievalEra, earlyModernEra, modernEra]);
