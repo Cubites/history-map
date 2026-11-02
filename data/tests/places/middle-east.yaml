@@ -6416,3 +6416,446 @@
   region: middle-east
   url: https://en.wikipedia.org/wiki/History_of_Carthage
   from: 서아시아 A5b 결과노트
+- name: 멤피스
+  at: [31.25, 29.85]
+  year: -669
+  expect: neo-assyrian-empire
+  url: https://en.wikipedia.org/wiki/Assyrian_conquest_of_Egypt
+  from: 서아시아 A5b 결과노트
+- name: 사이스
+  at: [30.77, 30.97]
+  year: -665
+  expect: neo-assyrian-empire
+  url: https://en.wikipedia.org/wiki/Assyrian_conquest_of_Egypt
+  from: 서아시아 A5b 결과노트
+# ── 서아시아·북아프리카 A5a-1 (2026-11-02): 메소포타미아·이란 기원전 800~551년 — 새 항목 수도·바뀌는 해 앞뒤(바빌로니아 729·721·710·626·남쪽 바닷가 620, 메디아 615·612, 하란 609, 남쪽 바닷가 620), −550 이음 지점(바빌론·쿠웨이트·하마단·수사), 비운 땅(쿠웨이트 621 전, 자그로스·후제스탄·파르스 앞, 이란 중부·아제르바이잔), 튀르키예 이음매 남쪽 자호 ──
+- name: 니네베
+  at: [43.15, 36.36]
+  year: -699
+  expect: neo-assyrian-empire
+  url: https://en.wikipedia.org/wiki/Neo-Assyrian_Empire
+  from: 서아시아 A5a-1 결과노트
+- name: 아슈르
+  at: [43.26, 35.46]
+  year: -799
+  expect: neo-assyrian-empire
+  url: https://en.wikipedia.org/wiki/Neo-Assyrian_Empire
+  from: 서아시아 A5a-1 결과노트
+- name: 아슈르(메디아 함락 앞)
+  at: [43.26, 35.46]
+  year: -614
+  expect: neo-assyrian-empire
+  url: https://en.wikipedia.org/wiki/Fall_of_Nineveh
+  from: 서아시아 A5a-1 결과노트
+- name: 아슈르(니네베 함락 뒤)
+  at: [43.26, 35.46]
+  year: -610
+  expect: neo-babylonian-empire
+  url: https://en.wikipedia.org/wiki/Neo-Babylonian_Empire
+  from: 서아시아 A5a-1 결과노트
+- name: 니네베(함락 뒤)
+  at: [43.15, 36.36]
+  year: -610
+  expect: media-kingdom
+  url: https://en.wikipedia.org/wiki/Neo-Babylonian_Empire
+  from: 서아시아 A5a-1 결과노트
+- name: 아르빌(함락 앞)
+  at: [44.01, 36.19]
+  year: -612
+  expect: neo-assyrian-empire
+  url: https://en.wikipedia.org/wiki/Fall_of_Nineveh
+  from: 서아시아 A5a-1 결과노트
+- name: 키르쿠크(아라파, 메디아 앞)
+  at: [44.39, 35.47]
+  year: -616
+  expect: neo-assyrian-empire
+  url: https://en.wikipedia.org/wiki/Median_Empire
+  from: 서아시아 A5a-1 결과노트
+- name: 키르쿠크(아라파)
+  at: [44.39, 35.47]
+  year: -613
+  expect: media-kingdom
+  url: https://en.wikipedia.org/wiki/Median_Empire
+  from: 서아시아 A5a-1 결과노트
+- name: 자호(튀르키예 이음매 남쪽)
+  at: [42.68, 37.14]
+  year: -700
+  expect: neo-assyrian-empire
+  url: https://en.wikipedia.org/wiki/Neo-Assyrian_Empire
+  from: 서아시아 A5a-1 결과노트
+- name: 락카
+  at: [39.02, 35.95]
+  year: -700
+  expect: neo-assyrian-empire
+  url: https://en.wikipedia.org/wiki/Neo-Assyrian_Empire
+  from: 서아시아 A5a-1 결과노트
+- name: 락카(하란 함락 앞)
+  at: [39.02, 35.95]
+  year: -609
+  expect: neo-assyrian-empire
+  url: https://en.wikipedia.org/wiki/Nabopolassar
+  from: 서아시아 A5a-1 결과노트
+- name: 락카(하란 함락 뒤)
+  at: [39.02, 35.95]
+  year: -607
+  expect: neo-babylonian-empire
+  url: https://en.wikipedia.org/wiki/Nabopolassar
+  from: 서아시아 A5a-1 결과노트
+- name: 하사카
+  at: [40.75, 36.5]
+  year: -551
+  expect: neo-babylonian-empire
+  url: https://en.wikipedia.org/wiki/Neo-Babylonian_Empire
+  from: 서아시아 A5a-1 결과노트
+- name: 바빌론
+  at: [44.42, 32.54]
+  year: -799
+  expect: babylonia-kingdom
+  url: https://en.wikipedia.org/wiki/List_of_kings_of_Babylon
+  from: 서아시아 A5a-1 결과노트
+- name: 바빌론(티글라트필레세르 3세)
+  at: [44.42, 32.54]
+  year: -725
+  expect: neo-assyrian-empire
+  url: https://en.wikipedia.org/wiki/Tiglath-Pileser_III
+  from: 서아시아 A5a-1 결과노트
+- name: 바빌론(마르두크아플라이딘나 2세)
+  at: [44.42, 32.54]
+  year: -715
+  expect: babylonia-kingdom
+  url: https://en.wikipedia.org/wiki/Marduk-apla-iddina_II
+  from: 서아시아 A5a-1 결과노트
+- name: 바빌론
+  at: [44.42, 32.54]
+  year: -690
+  expect: neo-assyrian-empire
+  url: https://en.wikipedia.org/wiki/Sargon_II
+  from: 서아시아 A5a-1 결과노트
+- name: 바빌론(나보폴라사르 앞)
+  at: [44.42, 32.54]
+  year: -626
+  expect: neo-assyrian-empire
+  url: https://en.wikipedia.org/wiki/Nabopolassar
+  from: 서아시아 A5a-1 결과노트
+- name: 바빌론
+  at: [44.42, 32.54]
+  year: -600
+  expect: neo-babylonian-empire
+  url: https://en.wikipedia.org/wiki/Nabopolassar
+  from: 서아시아 A5a-1 결과노트
+- name: 바빌론(이음)
+  at: [44.42, 32.54]
+  year: -550
+  expect: neo-babylonian-empire
+  url: https://en.wikipedia.org/wiki/Neo-Babylonian_Empire
+  from: 서아시아 A5a-1 결과노트
+- name: 우루크(나보폴라사르 앞)
+  at: [45.64, 31.32]
+  year: -627
+  expect: neo-assyrian-empire
+  url: https://en.wikipedia.org/wiki/Nabopolassar
+  from: 서아시아 A5a-1 결과노트
+- name: 우루크
+  at: [45.64, 31.32]
+  year: -600
+  expect: neo-babylonian-empire
+  url: https://en.wikipedia.org/wiki/Nabopolassar
+  from: 서아시아 A5a-1 결과노트
+- name: 쿠웨이트시(비움)
+  at: [47.98, 29.37]
+  year: -621
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Chaldea
+  from: 서아시아 A5a-1 결과노트
+- name: 쿠웨이트시
+  at: [47.98, 29.37]
+  year: -550
+  expect: neo-babylonian-empire
+  url: https://en.wikipedia.org/wiki/Neo-Babylonian_Empire
+  from: 서아시아 A5a-1 결과노트
+- name: 엑바타나(하마단, 비움)
+  at: [48.51, 34.8]
+  year: -700
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Medes
+  from: 서아시아 A5a-1 결과노트
+- name: 엑바타나(하마단)
+  at: [48.51, 34.8]
+  year: -613
+  expect: media-kingdom
+  url: https://en.wikipedia.org/wiki/Median_Empire
+  from: 서아시아 A5a-1 결과노트
+- name: 엑바타나(하마단, 이음)
+  at: [48.51, 34.8]
+  year: -550
+  expect: media-kingdom
+  url: https://en.wikipedia.org/wiki/Medes
+  from: 서아시아 A5a-1 결과노트
+- name: 케르만샤(비움)
+  at: [47.06, 34.31]
+  year: -700
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Medes
+  from: 서아시아 A5a-1 결과노트
+- name: 수사(비움)
+  at: [48.24, 32.19]
+  year: -770
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/List_of_kings_of_Elam
+  from: 서아시아 A5a-1 결과노트
+- name: 수사
+  at: [48.24, 32.19]
+  year: -700
+  expect: elam-neo-elamite
+  url: https://en.wikipedia.org/wiki/Elam
+  from: 서아시아 A5a-1 결과노트
+- name: 수사(이음)
+  at: [48.24, 32.19]
+  year: -550
+  expect: elam-neo-elamite
+  url: https://en.wikipedia.org/wiki/Elam
+  from: 서아시아 A5a-1 결과노트
+- name: 안샨(탈레 말리얀, 비움)
+  at: [52.4, 30.01]
+  year: -560
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Teispes
+  from: 서아시아 A5a-1 결과노트
+- name: 안샨(탈레 말리얀)
+  at: [52.4, 30.01]
+  year: -555
+  expect: anshan-kingdom
+  url: https://en.wikipedia.org/wiki/Cyrus_the_Great
+  from: 서아시아 A5a-1 결과노트
+- name: 이스파한(비움)
+  at: [51.67, 32.65]
+  year: -600
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Median_Empire
+  from: 서아시아 A5a-1 결과노트
+- name: 타브리즈(비움)
+  at: [46.29, 38.08]
+  year: -650
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Mannaeans
+  from: 서아시아 A5a-1 결과노트
+
+# 서아시아 A5a-2(2026-11-02): 레반트·아라비아 기원전 800~551년(천문 −799~−550). 새 항목마다 수도와 바뀌는 해 앞뒤, 소국 비움·아시리아 색, −550 이음(ancient.mjs −549와 같은 주인)
+- name: 다마스쿠스
+  at: [36.292, 33.51]
+  year: -765
+  expect: aram-damascus
+  url: https://en.wikipedia.org/wiki/Aram-Damascus
+  from: 서아시아 A5a-2 결과노트
+- name: 다마스쿠스
+  at: [36.292, 33.51]
+  year: -732
+  expect: aram-damascus
+  url: https://en.wikipedia.org/wiki/Aram-Damascus
+  from: 서아시아 A5a-2 결과노트
+- name: 다마스쿠스
+  at: [36.292, 33.51]
+  year: -731
+  expect: neo-assyrian-empire
+  url: https://en.wikipedia.org/wiki/Aram-Damascus
+  from: 서아시아 A5a-2 결과노트
+- name: 다마스쿠스
+  at: [36.292, 33.51]
+  year: -606
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Necho_II
+  from: 서아시아 A5a-2 결과노트
+- name: 다마스쿠스
+  at: [36.292, 33.51]
+  year: -550
+  expect: neo-babylonian-empire
+  url: https://en.wikipedia.org/wiki/Neo-Babylonian_Empire
+  from: 서아시아 A5a-2 결과노트
+- name: 사마리아(세바스티야)
+  at: [35.193, 32.277]
+  year: -760
+  expect: israel-kingdom
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Israel_(Samaria)
+  from: 서아시아 A5a-2 결과노트
+- name: 사마리아(세바스티야)
+  at: [35.193, 32.277]
+  year: -722
+  expect: israel-kingdom
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Israel_(Samaria)
+  from: 서아시아 A5a-2 결과노트
+- name: 사마리아(세바스티야)
+  at: [35.193, 32.277]
+  year: -721
+  expect: neo-assyrian-empire
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Israel_(Samaria)
+  from: 서아시아 A5a-2 결과노트
+- name: 므깃도
+  at: [35.184, 32.585]
+  year: -732
+  expect: israel-kingdom
+  url: https://en.wikipedia.org/wiki/Tiglath-Pileser_III
+  from: 서아시아 A5a-2 결과노트
+- name: 므깃도
+  at: [35.184, 32.585]
+  year: -731
+  expect: neo-assyrian-empire
+  url: https://en.wikipedia.org/wiki/Tiglath-Pileser_III
+  from: 서아시아 A5a-2 결과노트
+- name: 예루살렘
+  at: [35.217, 31.768]
+  year: -692
+  expect: judah-kingdom
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Judah
+  from: 서아시아 A5a-2 결과노트
+- name: 예루살렘
+  at: [35.217, 31.768]
+  year: -587
+  expect: judah-kingdom
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Judah
+  from: 서아시아 A5a-2 결과노트
+- name: 예루살렘
+  at: [35.217, 31.768]
+  year: -586
+  expect: neo-babylonian-empire
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Judah
+  from: 서아시아 A5a-2 결과노트
+- name: 라기스
+  at: [34.849, 31.565]
+  year: -750
+  expect: judah-kingdom
+  url: https://en.wikipedia.org/wiki/Lachish
+  from: 서아시아 A5a-2 결과노트
+- name: 하마
+  at: [36.755, 35.133]
+  year: -759
+  expect: hamath-kingdom
+  url: https://en.wikipedia.org/wiki/Hamath
+  from: 서아시아 A5a-2 결과노트
+- name: 하마
+  at: [36.755, 35.133]
+  year: -720
+  expect: hamath-kingdom
+  url: https://en.wikipedia.org/wiki/Hamath
+  from: 서아시아 A5a-2 결과노트
+- name: 하마
+  at: [36.755, 35.133]
+  year: -719
+  expect: neo-assyrian-empire
+  url: https://en.wikipedia.org/wiki/Hamath
+  from: 서아시아 A5a-2 결과노트
+- name: 아르파드(텔 리파아트)
+  at: [37.1, 36.47]
+  year: -769
+  expect: arpad-kingdom
+  url: https://en.wikipedia.org/wiki/Bit_Agusi
+  from: 서아시아 A5a-2 결과노트
+- name: 아르파드(텔 리파아트)
+  at: [37.1, 36.47]
+  year: -740
+  expect: arpad-kingdom
+  url: https://en.wikipedia.org/wiki/Bit_Agusi
+  from: 서아시아 A5a-2 결과노트
+- name: 아르파드(텔 리파아트)
+  at: [37.1, 36.47]
+  year: -739
+  expect: neo-assyrian-empire
+  url: https://en.wikipedia.org/wiki/Bit_Agusi
+  from: 서아시아 A5a-2 결과노트
+- name: 알레포
+  at: [37.161, 36.202]
+  year: -609
+  expect: neo-assyrian-empire
+  url: https://en.wikipedia.org/wiki/Necho_II
+  from: 서아시아 A5a-2 결과노트
+- name: 알레포
+  at: [37.161, 36.202]
+  year: -604
+  expect: neo-babylonian-empire
+  url: https://en.wikipedia.org/wiki/Neo-Babylonian_Empire
+  from: 서아시아 A5a-2 결과노트
+- name: 티레
+  at: [35.197, 33.273]
+  year: -750
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Phoenicia
+  from: 서아시아 A5a-2 결과노트
+- name: 티레
+  at: [35.197, 33.273]
+  year: -649
+  expect: neo-assyrian-empire
+  url: https://en.wikipedia.org/wiki/Phoenicia
+  from: 서아시아 A5a-2 결과노트
+- name: 아스글론
+  at: [34.551, 31.664]
+  year: -750
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Philistia
+  from: 서아시아 A5a-2 결과노트
+- name: 아스글론
+  at: [34.551, 31.664]
+  year: -603
+  expect: neo-babylonian-empire
+  url: https://en.wikipedia.org/wiki/Philistia
+  from: 서아시아 A5a-2 결과노트
+- name: 가자
+  at: [34.467, 31.502]
+  year: -559
+  expect: neo-babylonian-empire
+  url: https://en.wikipedia.org/wiki/Philistia
+  from: 서아시아 A5a-2 결과노트
+- name: 암만
+  at: [35.931, 31.953]
+  year: -750
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Ammon
+  from: 서아시아 A5a-2 결과노트
+- name: 암만
+  at: [35.931, 31.953]
+  year: -569
+  expect: neo-babylonian-empire
+  url: https://en.wikipedia.org/wiki/Ammon
+  from: 서아시아 A5a-2 결과노트
+- name: 팔미라 사막(홈스)
+  at: [38.3, 34.5]
+  year: -729
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Hamath
+  from: 서아시아 A5a-2 결과노트
+- name: 팔미라 사막(홈스)
+  at: [38.3, 34.5]
+  year: -649
+  expect: neo-assyrian-empire
+  url: https://en.wikipedia.org/wiki/Hamath
+  from: 서아시아 A5a-2 결과노트
+- name: 페트라
+  at: [35.444, 30.329]
+  year: -553
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Nabonidus
+  from: 서아시아 A5a-2 결과노트
+- name: 페트라
+  at: [35.444, 30.329]
+  year: -552
+  expect: neo-babylonian-empire
+  url: https://en.wikipedia.org/wiki/Nabonidus
+  from: 서아시아 A5a-2 결과노트
+- name: 타이마
+  at: [38.55, 27.63]
+  year: -550
+  expect: none
+  region: middle-east
+  url: https://en.wikipedia.org/wiki/Nabonidus
+  from: 서아시아 A5a-2 결과노트

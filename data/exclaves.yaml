@@ -4707,3 +4707,27 @@
   at: [10.17, 35.24]
   reason: 아프리카 총독부 땅(534년 벨리사리우스가 되찾은 지금 튀니지·트리폴리타니아 해안·알제리 동부 텔과 시티피스 둘레, 539~543년 아우레스 포함). 이집트·키레나이카와는 칠하지 않은 시르테 사막 해안을 사이에 두고 바닷길로 이어졌다(632년부터는 A3 줄)
   sources: ["위키백과 영어판 「Praetorian prefecture of Africa」 https://en.wikipedia.org/wiki/Praetorian_prefecture_of_Africa", "위키백과 영어판 「Exarchate of Africa」 https://en.wikipedia.org/wiki/Exarchate_of_Africa"]
+
+# ── 서아시아·북아프리카 A5b (2026-11-02): 이집트 기원전 800~551년 (비운 시나이 너머의 아시리아 하이집트) ──
+- entity: neo-assyrian-empire
+  from: -670
+  to: -668
+  at: [31.0, 30.8]
+  reason: 하이집트(삼각주·멤피스). 기원전 671년 에사르하돈이 차지했으나 레반트의 아시리아 땅과는 칠하지 않은 시나이 사막을 사이에 두고 해안 길로 이어졌다
+  sources: ["에사르하돈 비문(센지를리 석비)", "위키백과 영어판 「Assyrian conquest of Egypt」 https://en.wikipedia.org/wiki/Assyrian_conquest_of_Egypt"]
+
+- entity: neo-assyrian-empire
+  from: -666
+  to: -663
+  at: [31.0, 30.8]
+  reason: 하이집트(삼각주·멤피스). 기원전 667년 아슈르바니팔이 타하르카를 몰아내고 되찾았으나 레반트의 아시리아 땅과는 칠하지 않은 시나이 사막을 사이에 두었다
+  sources: ["아슈르바니팔 원통 비문(라삼 원통)", "위키백과 영어판 「Assyrian conquest of Egypt」 https://en.wikipedia.org/wiki/Assyrian_conquest_of_Egypt"]
+
+# ── 서아시아·북아프리카 A5a-1 (2026-11-02): 기원전 800년~551년 메소포타미아·이란 (니네베 함락 앞 메디아의 아라파) ──
+
+- entity: media-kingdom
+  from: -614
+  to: -611
+  at: [44.12, 35.31]
+  reason: 아라파(지금 키르쿠크) 둘레. 기원전 615년 메디아 군대가 이 땅에 나타난 뒤 아시리아 본토 북부(술라이마니야·아르빌)가 니네베 함락(기원전 612년)까지 아시리아 땅으로 남아 자그로스 쪽 메디아 땅과 떨어져 있었다
+  sources: ["위키백과 영어판 「Median Empire」 https://en.wikipedia.org/wiki/Median_Empire", "위키백과 영어판 「Fall of Nineveh」 https://en.wikipedia.org/wiki/Fall_of_Nineveh"]

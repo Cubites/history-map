@@ -10,4 +10,5 @@ spelling roman-republic mapNote 볼시니이
 spelling russo-turkish-war-1768 summary 남부흐강
 spelling scipio-zama-210bc summary 묵특
 spelling thessaly refs 니키포로스
+spelling urartu-phrygia-800bc summary 티글랏빌레세르
 spelling yaroslav-wise-1015 summary 엘리자베타

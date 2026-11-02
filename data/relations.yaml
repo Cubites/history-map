@@ -1054,3 +1054,13 @@
 # ── 서아시아·북아프리카 A4c-⑧c (2026-11-01): 트리폴리타니아·마그레브 기원전 30년~631년 (유바 2세의 마우레타니아는 로마 종속, 무어 왕국의 이음은 successor_of) ──
 - { type: vassal_of, subject: mauretania, object: roman-empire, from: -24, to: 42 } # 기원전 25년 아우구스투스가 유바 2세를 왕으로 세움, 40년 프톨레마이오스 왕이 죽고 42년 두 속주가 될 때까지
 - { type: successor_of, subject: altava-kingdom, object: mauro-roman-kingdom, from: 578, to: null } # 578년 가르물이 죽은 뒤 알타바 둘레의 작은 왕국이 이음
+
+# ── 서아시아·북아프리카 A5b (2026-11-02): 이집트 기원전 800~551년 (사이스 왕조의 아시리아 종속) ──
+- { type: vassal_of, subject: saite-egypt, object: neo-assyrian-empire, from: -663, to: -656 } # 기원전 664년 아슈르바니팔이 프삼티크 1세를 사이스·멤피스 왕으로 세움(충성 서약), 기원전 656년 무렵 자립하기 전 657년까지
+
+# ── 서아시아·북아프리카 A5a-2 (2026-11-02): 레반트 기원전 800~551년 (공물을 바치며 자기 왕이 대를 이은 이스라엘·유다·하맛은 vassal_of) ──
+- { type: vassal_of, subject: israel-kingdom, object: neo-assyrian-empire, from: -737, to: -721 } # 기원전 738년 므나헴이 티글라트필레세르 3세에게 공물, 호세아까지 이어져 722년 사마리아 함락
+- { type: vassal_of, subject: judah-kingdom, object: neo-assyrian-empire, from: -733, to: -608 } # 기원전 734년 아하스의 공물부터 아시리아가 끝난 609년까지
+- { type: vassal_of, subject: judah-kingdom, object: neo-babylonian-empire, from: -603, to: -586 } # 기원전 604년 여호야김이 네부카드네자르 2세를 받듦, 587년 예루살렘 함락
+- { type: vassal_of, subject: aram-damascus, object: neo-assyrian-empire, from: -739, to: -733 } # 기원전 740년 아르파드가 무너진 뒤 르신이 티글라트필레세르 3세에게 공물, 734년 베가와 손잡고 맞서기 전까지
+- { type: vassal_of, subject: hamath-kingdom, object: neo-assyrian-empire, from: -737, to: -719 } # 기원전 738년 북쪽·해안 고을을 떼인 뒤 남은 하마가 공물을 바침, 720년 병합
