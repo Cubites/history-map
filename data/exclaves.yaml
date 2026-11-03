@@ -4970,3 +4970,201 @@
   at: [72.86, 20.42]
   reason: 다만. 고아와 떨어진 포르투갈 땅
   sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Daman_and_Diu"]
+
+# ── 남아시아 S3 동 (2026-11-03): 1206~1756 떨어진 상관·바닷가 지구와 1만 km² 미만 토후국을 이웃 색으로 칠해 생긴 섬. baseline:suggest 규칙 3 제안을 고쳐 씀 ──
+- entity: bundelkhand-states
+  from: 1731
+  to: 1757
+  at: [78.52, 25.73]
+  reason: 다티아 주. 괄리오르 북부와 잔시 쪽 땅에 둘러싸여 분델칸드의 다른 토후국들과 떨어졌다
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Datia_State"]
+
+- entity: dutch-ceylon
+  from: 1658
+  to: 1757
+  at: [81.45, 7.82]
+  reason: 바티칼로아 바닷가 지구. 칸디 왕국 땅을 사이에 두고 콜롬보·갈 쪽 해안 지구와 떨어져 바닷길로 이어졌다
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Dutch_Ceylon"]
+
+- entity: french-india
+  from: 1674
+  to: 1757
+  at: [79.8, 10.92]
+  reason: 카라이칼. 퐁디셰리와 떨어진 프랑스 상관
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/French_India"]
+
+- entity: french-india
+  from: 1674
+  to: 1757
+  at: [75.26, 12.06]
+  reason: 마헤(말라바르 해안). 퐁디셰리와 떨어진 프랑스 상관
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/French_India"]
+
+- entity: french-india
+  from: 1674
+  to: 1757
+  at: [82.21, 16.72]
+  reason: 야남(고다바리 삼각주). 퐁디셰리와 떨어진 프랑스 상관
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/French_India"]
+
+- entity: kotte-kingdom
+  from: 1565
+  to: 1594
+  at: [79.97, 8.03]
+  reason: 푸탈람 해안. 시타와카가 내륙 저지를 차지한 뒤 코테(포르투갈의 보호)는 바닷가 지구만 남아 서로 떨어졌다
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Kingdom_of_Sitawaka"]
+
+- entity: kotte-kingdom
+  from: 1565
+  to: 1594
+  at: [79.95, 6.85]
+  reason: 콜롬보. 1565년 코테가 콜롬보 요새로 물러난 뒤 칼루타라 쪽이 시타와카 땅이 되어 갈·마타라 해안과 떨어졌다
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Kingdom_of_Kotte"]
+
+- entity: maratha-peshwa
+  from: 1738
+  to: 1757
+  at: [75.58, 24.55]
+  reason: 람푸라–반푸라(실제로는 홀카르의 떨어진 땅, 1만 km² 미만이라 이웃 색으로 어림). 메와르·코타·괄리오르 땅에 둘러싸여 말와 쪽과 떨어졌다
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Indore_State"]
+
+- entity: nagpur-kingdom
+  from: 1751
+  to: 1757
+  at: [86.33, 20.63]
+  reason: 오리사 해안(발라소르·쿠타크·푸리, 1751년 벵골 나와브에게서 얻음). 나그푸르 본토와는 오리사 산지 토후국들(가르자트)을 사이에 두고 떨어졌다
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Nagpur_Kingdom"]
+
+- entity: mughal-empire
+  from: 1722
+  to: 1733
+  at: [85.97, 25.09]
+  reason: 비하르 수바(무굴 총독). 1722년 아와드 나와브가 오우드·바라나시를 맡은 뒤 델리 쪽 무굴 땅과 떨어졌다가 1733년 벵골 나와브 관할이 됨
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Bihar_Subah"]
+
+# ── 남아시아 S3 서·합치기 (2026-11-04 반영 1): 1206~1756 델리 술탄국·무굴·마라타·비자푸르 등이 이웃 나라 땅을 사이에 두고 떨어진 땅(진짜 떨어진 땅만 — 칼선 부스러기는 칼선을 고쳐 없앰). baseline:suggest 규칙 3 제안을 고쳐 씀 ──
+- entity: afsharid-iran
+  from: 1739
+  to: 1748
+  at: [70.55, 32.48]
+  reason: 인더스강 서쪽(1739년 나디르 샤가 무굴에게서 받은 땅, 운영자 결정 7). 이란 본토와는 다른 권역인 아프가니스탄 땅을 사이에 두고 떨어져 칠해짐
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Nader_Shah's_invasion_of_India"]
+
+- entity: baroda-state
+  from: 1734
+  to: 1753
+  at: [73.31, 22.33]
+  reason: 바로다 도시 쪽(1734 필라지 가이크와드). 카디 쪽 본령과 사이에 무굴 아마다바드 땅이 있어 1753년 아마다바드 함락까지 떨어짐
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Baroda_State"]
+
+- entity: bijapur-sultanate
+  from: 1646
+  to: 1686
+  at: [77.52, 13.23]
+  reason: 1638~1646년 정복한 카르나타카 땅(방갈루루·시라·콜라르). 본령과 사이 퉁가바드라강 남쪽은 나야카 소국 땅(비움)이라 떨어짐
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Bijapur_Sultanate"]
+
+- entity: bijapur-sultanate
+  from: 1649
+  to: 1677
+  at: [79.08, 12.31]
+  reason: 1649년 진지를 얻은 북타밀 땅. 본령과 사이 라야랄라시마·카르나타카 남부가 골콘다·나야카 땅이라 떨어짐
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Gingee_Fort"]
+
+- entity: delhi-sultanate
+  from: 1303
+  to: 1304
+  at: [74.07, 24.73]
+  reason: 1303년 알라웃딘 할지가 함락한 치토르(메와르). 델리 본령과 사이 아지메르·분디 쪽 소국 땅(비움)이 있어 떨어짐
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Siege_of_Chittorgarh_(1303)"]
+
+- entity: delhi-sultanate
+  from: 1304
+  to: 1305
+  at: [72.19, 23.36]
+  reason: 1304년 정복한 구자라트. 1305년 말와 정복 전이라 델리 본령과 떨어짐
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Alauddin_Khalji"]
+
+- entity: delhi-sultanate
+  from: 1336
+  to: 1346
+  at: [79.63, 13.87]
+  reason: 남쪽을 잃은 뒤 남은 라야랄라시마·넬로르 쪽 땅(1346년 비자야나가라). 데칸 북쪽이 바흐마니 성립 전 반란 세력 땅이 되어 떨어짐
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Tughlaq_dynasty"]
+
+- entity: delhi-sultanate
+  from: 1394
+  to: 1518
+  at: [76.33, 26.24]
+  reason: 란탐보르. 델리 본령과 사이 메와트·동부 라지푸타나 소국 땅(비움)이 있어 떨어짐(1518년 메와르가 차지)
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Ranthambore_Fort"]
+
+- entity: maratha-peshwa
+  from: 1677
+  to: 1698
+  at: [79.08, 12.31]
+  reason: 시바지의 남부 원정(1677)으로 얻은 진지 쪽. 데칸 본령과 사이 비자푸르·골콘다 땅이 있어 떨어짐(1698년 진지 함락)
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Gingee_Fort"]
+
+- entity: maratha-peshwa
+  from: 1731
+  to: 1738
+  at: [78.73, 23.89]
+  reason: 1731년 차트라살이 페슈와에게 준 분델칸드 사가르 쪽. 1738년 말와를 얻기 전이라 데칸 본령과 떨어짐
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Chhatrasal"]
+
+- entity: maratha-peshwa
+  from: 1738
+  to: 1742
+  at: [74.91, 22.54]
+  reason: 말와(1738 보팔 조약). 칸데시·아마드나가르 쪽이 1724~1751년 하이데라바드 땅이라(S3 창구 ③ 결정 2) 데칸 본령과 떨어짐
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Treaty_of_Bhopal"]
+
+- entity: maratha-peshwa
+  from: 1742
+  to: 1752
+  at: [74.96, 16.79]
+  reason: 데칸 본령. 말와 쪽이 더 넓어 본토로 잡힌 해의 데칸 쪽 — 칸데시·아마드나가르가 1752년 발키 조약까지 하이데라바드 땅이라 떨어짐
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Treaty_of_Bhalki"]
+
+- entity: mughal-empire
+  from: 1686
+  to: 1687
+  at: [77.52, 13.23]
+  reason: 비자푸르에게서 넘겨받은 방갈루루·시라 쪽(1687년 방갈루루를 마이소르에 팖). 사이 퉁가바드라강 남쪽이 나야카 땅이라 떨어짐
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Sira_(Mughal_province)"]
+
+- entity: mughal-empire
+  from: 1701
+  to: 1737
+  at: [68.1, 25.04]
+  reason: 하부 신드(타타, 운영자 결정 5). 상부·중부 신드가 1701년부터 칼호라 땅이라 무굴 본령과 떨어짐
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Thatta"]
+
+- entity: mughal-empire
+  from: 1738
+  to: 1753
+  at: [71.56, 24.2]
+  reason: 구자라트(아마다바드 쪽). 말와가 1738년 마라타 땅이 되어 델리 쪽 본령과 떨어짐(1753 아마다바드 함락)
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Gujarat_Subah"]
+
+- entity: mughal-empire
+  from: 1738
+  to: 1754
+  at: [76.33, 26.24]
+  reason: 란탐보르. 말와·분디 쪽이 마라타·소국 땅이 되어 떨어짐(1754년 자이푸르에 넘김)
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Ranthambore_Fort"]
+
+- entity: portuguese-india
+  from: 1535
+  to: 1757
+  at: [73.02, 20.11]
+  reason: 다드라·나가르 하벨리(1만 km² 미만, 실제 얻은 해는 1779~1783 — 알려진 근사). 다만·디우·고아와 떨어진 포르투갈 땅
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Dadra_and_Nagar_Haveli"]
+
+- entity: portuguese-india
+  from: 1535
+  to: 1757
+  at: [72.86, 20.42]
+  reason: 다만(실제 얻은 해는 1559 — 알려진 근사). 고아·디우와 바닷길로 이어진 포르투갈 해안 지구
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Daman,_India"]

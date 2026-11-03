@@ -1195,3 +1195,37 @@
 - { type: vassal_of, subject: french-india, object: france, from: 1757, to: 1946 }
 - { type: vassal_of, subject: portuguese-india, object: portugal, from: 1757, to: 1946 }
 - { type: successor_of, subject: british-ceylon, object: dutch-ceylon, from: 1796, to: null } # 바닷가 지구를 이어 다스림
+# ── 남아시아 S3 서 (2026-11-03): 1206~1756 파키스탄·카슈미르·펀자브·라지푸타나·구자라트·데칸 서부. 끝 해 포함, 무굴의 라지푸트 종주는 아우랑제브가 죽은 1707년까지(그 뒤는 명목이라 글로만) ──
+- { type: vassal_of, subject: jaipur-state, object: mughal-empire, from: 1562, to: 1707 } # 1562 바르말의 혼인 동맹
+- { type: vassal_of, subject: bikaner-state, object: mughal-empire, from: 1570, to: 1707 } # 1570 나가우르 회합
+- { type: vassal_of, subject: jaisalmer-state, object: mughal-empire, from: 1570, to: 1707 }
+- { type: vassal_of, subject: jodhpur-state, object: mughal-empire, from: 1583, to: 1707 } # 1583 우다이 싱의 복속
+- { type: vassal_of, subject: mewar-state, object: mughal-empire, from: 1615, to: 1707 } # 1615 아마르 싱 1세와 자한기르의 조약
+- { type: vassal_of, subject: kota-state, object: mughal-empire, from: 1631, to: 1707 }
+- { type: vassal_of, subject: south-rajputana-states, object: mughal-empire, from: 1577, to: 1707 } # 1577 무렵 둥가르푸르·반스와라의 아크바르 복속
+- { type: vassal_of, subject: talpur-sindh, object: mughal-empire, from: 1701, to: 1738 } # 칼호라는 무굴의 신드 총독으로 출발
+- { type: vassal_of, subject: talpur-sindh, object: afsharid-iran, from: 1739, to: 1747 } # 1739 나디르 샤에게 공물
+- { type: vassal_of, subject: talpur-sindh, object: durrani-empire, from: 1748, to: 1756 }
+- { type: vassal_of, subject: baroda-state, object: maratha-peshwa, from: 1734, to: 1756 } # 가이크와드는 페슈와의 구자라트 총독
+- { type: vassal_of, subject: nagpur-kingdom, object: maratha-peshwa, from: 1739, to: 1756 } # 본슬레의 명목 종속
+- { type: vassal_of, subject: portuguese-india, object: portugal, from: 1510, to: 1756 }
+
+# ── 남아시아 S3 동 (2026-11-03): 1206~1756 동 칸 항목의 속국·공납 관계(무굴 후기 나와브의 종주는 명목). 끝 해는 포함 ──
+- { type: vassal_of, subject: portuguese-ceylon, object: portugal, from: 1597, to: 1657 } # 1597 다르마팔라의 양도
+- { type: vassal_of, subject: golconda-sultanate, object: mughal-empire, from: 1636, to: 1686 } # 1636 샤 자한에게 복속 문서(공납)
+- { type: vassal_of, subject: garha-mandla-kingdom, object: mughal-empire, from: 1564, to: 1741 } # 1564 아사프 칸의 원정 뒤 공납
+- { type: vassal_of, subject: deogarh-kingdom, object: mughal-empire, from: 1600, to: 1706 } # 무굴 베라르 수바에 공납
+- { type: vassal_of, subject: chanda-kingdom, object: mughal-empire, from: 1600, to: 1706 } # 무굴 베라르 수바에 공납
+- { type: vassal_of, subject: madurai-nayak, object: vijayanagara-empire, from: 1529, to: 1599 } # 비자야나가라의 나야크(총독)로 시작
+- { type: vassal_of, subject: gingee-nayak, object: vijayanagara-empire, from: 1509, to: 1599 } # 비자야나가라의 나야크(총독)로 시작
+- { type: vassal_of, subject: rewa-state, object: mughal-empire, from: 1617, to: 1756 } # 1597 반다브가르 점령 뒤 공납
+- { type: vassal_of, subject: orissa-states, object: mughal-empire, from: 1592, to: 1750 } # 1592 무굴의 오리사 정복 뒤 공납
+- { type: vassal_of, subject: orissa-states, object: nagpur-kingdom, from: 1751, to: 1756 } # 1751 오리사 할양 뒤 나그푸르 본슬레에 공물
+- { type: vassal_of, subject: mayurbhanj-state, object: mughal-empire, from: 1592, to: 1750 } # 1592 무굴의 오리사 정복 뒤 공납
+- { type: vassal_of, subject: mayurbhanj-state, object: nagpur-kingdom, from: 1751, to: 1756 } # 1751 무렵부터 마라타에 공물
+- { type: vassal_of, subject: chhattisgarh-states, object: nagpur-kingdom, from: 1741, to: 1756 } # 1741 라탄푸르 몰락 뒤 본슬레에 공물
+- { type: vassal_of, subject: carnatic-nawab, object: hyderabad-state, from: 1724, to: 1756 } # 아르코트 나와브는 니잠의 아래 직위(명목)
+- { type: vassal_of, subject: bengal-nawabs, object: mughal-empire, from: 1717, to: 1756 } # 무굴 황제의 수바다르(명목 종주)
+- { type: vassal_of, subject: awadh, object: mughal-empire, from: 1722, to: 1756 } # 무굴 황제의 수바다르·와지르(명목 종주)
+- { type: vassal_of, subject: hyderabad-state, object: mughal-empire, from: 1724, to: 1756 } # 니잠은 무굴 황제의 데칸 총독(명목 종주)
+- { type: vassal_of, subject: rohilkhand, object: mughal-empire, from: 1721, to: 1756 } # 무굴 황제가 나와브 칭호를 줌(명목 종주)

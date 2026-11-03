@@ -69,9 +69,6 @@
 - key: '734 mewar-state 성립'
   reason: S4 사건 묶음이 채움(성립 해가 1206년 앞)
   decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1128 jaipur-state 성립'
-  reason: S4 사건 묶음이 채움(성립 해가 1206년 앞)
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
 - key: '1147 cutch-state 성립'
   reason: S4 사건 묶음이 채움(성립 해가 1206년 앞)
   decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
@@ -81,16 +78,10 @@
 - key: '1459 jodhpur-state 성립'
   reason: S3 사건 묶음이 채움(성립 해가 1757년 지도 앞)
   decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1460 ladakh-kingdom 성립'
-  reason: S3 사건 묶음이 채움(성립 해가 1757년 지도 앞)
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
 - key: '1465 bikaner-state 성립'
   reason: S3 사건 묶음이 채움(성립 해가 1757년 지도 앞)
   decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
 - key: '1631 kota-state 성립'
-  reason: S3 사건 묶음이 채움(성립 해가 1757년 지도 앞)
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1660 chitral-kingdom 성립'
   reason: S3 사건 묶음이 채움(성립 해가 1757년 지도 앞)
   decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
 - key: '1666 kalat 성립'
@@ -100,9 +91,6 @@
   reason: S3 사건 묶음이 채움(성립 해가 1757년 지도 앞)
   decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
 - key: '1701 talpur-sindh 성립'
-  reason: S3 사건 묶음이 채움(성립 해가 1757년 지도 앞)
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1721 baroda-state 성립'
   reason: S3 사건 묶음이 채움(성립 해가 1757년 지도 앞)
   decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
 - key: '1740 makran 성립'
@@ -117,68 +105,11 @@
 - key: '1748 bahawalpur-state 성립'
   reason: S3 사건 묶음이 채움(성립 해가 1757년 지도 앞)
   decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1757 kathiawar-states 성립'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1757 punjab-hill-states 성립'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
 - key: '1757 east-rajputana-states 성립'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1757 ladakh-kingdom 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1757 chitral-kingdom 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1757 bahawalpur-state 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1757 talpur-sindh 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1757 cutch-state 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1757 baroda-state 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1757 jodhpur-state 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1757 bikaner-state 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1757 jaisalmer-state 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1757 jaipur-state 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1757 mewar-state 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1757 kota-state 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1757 kalat 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1757 kharan 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1757 makran 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1757 las-bela 버전'
   reason: sa-07 사건 묶음이 채움
   decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
 # ── 남아시아 S2 동 (2026-11-03): 1757~1946 동 칸 항목의 성립·소멸과 1만 km² 넘는 버전 해(동 칸 땅이 만든 괄리오르 1788·나그푸르 1803 포함). 사건 묶음 sa-07이 사건을 쓰며 이 줄을 지운다 ──
 - key: '700 kumaon-kingdom 성립'
-  reason: S4 사건 묶음이 채움(성립 해가 1206년 앞)
-  decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
-- key: '823 garhwal-kingdom 성립'
   reason: S4 사건 묶음이 채움(성립 해가 1206년 앞)
   decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
 - key: '1100 mayurbhanj-state 성립'
@@ -186,9 +117,6 @@
   decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
 - key: '1110 manipur 성립'
   reason: S4 사건 묶음이 채움(성립 해가 1206년 앞)
-  decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
-- key: '1228 ahom-kingdom 성립'
-  reason: S3 사건 묶음이 채움(성립 해가 1757년 지도 앞)
   decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
 - key: '1324 bastar-state 성립'
   reason: S3 사건 묶음이 채움(성립 해가 1757년 지도 앞)
@@ -211,46 +139,7 @@
 - key: '1722 awadh 성립'
   reason: S3 사건 묶음이 채움(성립 해가 1757년 지도 앞)
   decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
-- key: '1757 orissa-states 성립'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
-- key: '1757 chhattisgarh-states 성립'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
-- key: '1757 kumaon-kingdom 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
-- key: '1757 garhwal-kingdom 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
-- key: '1757 ahom-kingdom 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
-- key: '1757 manipur 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
-- key: '1757 tripura 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
-- key: '1757 mayurbhanj-state 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
-- key: '1757 bastar-state 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
-- key: '1757 surguja-state 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
-- key: '1757 bhutan 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
 # ── 남아시아 S2 남 (2026-11-03): 1757~1946 데칸·중앙 인도·남인도·실론 항목의 성립·소멸과 1만 km² 넘는 버전 해. 1757년 버전은 지도 첫 해, 1757년 전 성립은 S3 몫. 사건 묶음이 사건을 쓰며 이 줄을 지운다 ──
-- key: '1399 mysore 성립'
-  reason: S3 사건 묶음이 채움(성립 해가 1757년 지도 앞)
-  decided: 2026-11-03 남아시아 S2 남 구현(사건은 다음 세션)
-- key: '1469 kandy 성립'
-  reason: S3 사건 묶음이 채움(성립 해가 1757년 지도 앞)
-  decided: 2026-11-03 남아시아 S2 남 구현(사건은 다음 세션)
 - key: '1510 portuguese-india 성립'
   reason: S3 사건 묶음이 채움(성립 해가 1757년 지도 앞)
   decided: 2026-11-03 남아시아 S2 남 구현(사건은 다음 세션)
@@ -258,9 +147,6 @@
   reason: S3 사건 묶음이 채움(성립 해가 1757년 지도 앞)
   decided: 2026-11-03 남아시아 S2 남 구현(사건은 다음 세션)
 - key: '1658 dutch-ceylon 성립'
-  reason: S3 사건 묶음이 채움(성립 해가 1757년 지도 앞)
-  decided: 2026-11-03 남아시아 S2 남 구현(사건은 다음 세션)
-- key: '1674 maratha-peshwa 성립'
   reason: S3 사건 묶음이 채움(성립 해가 1757년 지도 앞)
   decided: 2026-11-03 남아시아 S2 남 구현(사건은 다음 세션)
 - key: '1674 french-india 성립'
@@ -290,35 +176,945 @@
 - key: '1739 nagpur-kingdom 성립'
   reason: S3 사건 묶음이 채움(성립 해가 1757년 지도 앞)
   decided: 2026-11-03 남아시아 S2 남 구현(사건은 다음 세션)
-- key: '1757 nagpur-kingdom 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 남 구현(사건은 다음 세션)
-- key: '1757 mysore 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 남 구현(사건은 다음 세션)
-- key: '1757 travancore 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 남 구현(사건은 다음 세션)
-- key: '1757 bhopal-state 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 남 구현(사건은 다음 세션)
-- key: '1757 rewa-state 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 남 구현(사건은 다음 세션)
-- key: '1757 bundelkhand-states 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 남 구현(사건은 다음 세션)
-- key: '1757 kandy 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 남 구현(사건은 다음 세션)
-- key: '1757 dutch-ceylon 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 남 구현(사건은 다음 세션)
 - key: '1785 nagpur-kingdom 버전'
   reason: sa-07 사건 묶음이 채움
   decided: 2026-11-03 남아시아 S2 남 구현(사건은 다음 세션)
 # ── 남아시아 S2 반영 1 (2026-11-03): 검토 고칠 점으로 더한 묶음 다섯(남부 라지푸타나·팔란푸르·마히칸타·레와칸타·데칸 토후국들)의 성립·소멸과 움에르코트·타르파르카르(1779·1813)·사타라(1849) 버전 해. 사건 묶음 sa-07이 사건을 쓰며 이 줄을 지운다 ──
-- key: '1757 south-rajputana-states 성립'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 반영 1(사건은 다음 세션)
+# ── 남아시아 S3 서 (2026-11-03): 1206~1756 서 칸 항목(델리 술탄국·무굴·데칸 술탄국·신드·카슈미르·구자라트 등)의 성립·소멸과 1만 km² 넘는 버전 해, 앞당긴 S1·S2 항목의 새 첫 해. 사건 묶음 sa-05(1206~1525)·sa-06(1526~1756)이 채움 ──
+- key: '930 ladakh-kingdom 성립'
+  reason: S4 사건 묶음이 채움(성립 해가 1206년 앞)
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '942 chaulukya-dynasty 성립'
+  reason: S4 사건 묶음이 채움(성립 해가 1206년 앞)
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1003 lohara-dynasty 성립'
+  reason: S4 사건 묶음이 채움(성립 해가 1206년 앞)
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1026 soomra-dynasty 성립'
+  reason: S4 사건 묶음이 채움(성립 해가 1206년 앞)
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1187 hoysala-dynasty 성립'
+  reason: S4 사건 묶음이 채움(성립 해가 1206년 앞)
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1187 yadava-dynasty 성립'
+  reason: S4 사건 묶음이 채움(성립 해가 1206년 앞)
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1192 chahamana-dynasty 성립'
+  reason: S4 사건 묶음이 채움(성립 해가 1206년 앞)
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1206 chahamana-dynasty 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1206 chaulukya-dynasty 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1206 cutch-state 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1206 delhi-sultanate 성립'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1206 hoysala-dynasty 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1206 jaisalmer-state 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1206 ladakh-kingdom 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1206 lohara-dynasty 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1206 mewar-state 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1206 punjab-hill-states 성립'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1206 qubacha-multan 성립'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1206 soomra-dynasty 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1206 yadava-dynasty 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1228 delhi-sultanate 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1228 qubacha-multan 소멸'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1301 chahamana-dynasty 소멸'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1301 delhi-sultanate 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1303 delhi-sultanate 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1304 chaulukya-dynasty 소멸'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1304 delhi-sultanate 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1317 delhi-sultanate 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1317 yadava-dynasty 소멸'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1326 delhi-sultanate 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1339 kashmir-sultanate 성립'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1339 lohara-dynasty 소멸'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1343 hoysala-dynasty 소멸'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1347 bahmani-sultanate 성립'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1347 delhi-sultanate 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1351 delhi-sultanate 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1351 samma-dynasty 성립'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1351 soomra-dynasty 소멸'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1382 delhi-sultanate 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1382 khandesh-sultanate 성립'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1398 delhi-sultanate 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1398 gujarat-sultanate 성립'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1414 delhi-sultanate 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1445 delhi-sultanate 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1445 multan-sultanate 성립'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1490 ahmadnagar-sultanate 성립'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1490 bahmani-sultanate 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1490 berar-sultanate 성립'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1490 bijapur-sultanate 성립'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1492 bidar-sultanate 성립'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1503 jaipur-state 성립'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1520 arghun-dynasty 성립'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1520 samma-dynasty 소멸'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1526 delhi-sultanate 소멸'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1526 mughal-empire 성립'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1527 bahmani-sultanate 소멸'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1528 mughal-empire 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1528 multan-sultanate 소멸'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1540 mughal-empire 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1555 mughal-empire 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1565 bijapur-sultanate 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1573 gujarat-sultanate 소멸'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1573 mughal-empire 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1574 ahmadnagar-sultanate 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1574 berar-sultanate 소멸'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1585 chitral-kingdom 성립'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1586 kashmir-sultanate 소멸'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1586 mughal-empire 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1593 arghun-dynasty 소멸'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1593 mughal-empire 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1596 ahmadnagar-sultanate 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1596 mughal-empire 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1601 khandesh-sultanate 소멸'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1601 mughal-empire 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1619 bidar-sultanate 소멸'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1619 bijapur-sultanate 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1636 ahmadnagar-sultanate 소멸'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1636 bijapur-sultanate 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1636 mughal-empire 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1646 bijapur-sultanate 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1657 bijapur-sultanate 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1657 mughal-empire 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1659 bijapur-sultanate 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1659 maratha-peshwa 성립'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1674 bijapur-sultanate 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1674 maratha-peshwa 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1686 bijapur-sultanate 소멸'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1686 mughal-empire 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1687 mughal-empire 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1687 mysore 성립'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1701 mughal-empire 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1707 maratha-peshwa 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1707 mughal-empire 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1724 mughal-empire 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1734 baroda-state 성립'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1734 mughal-empire 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1737 mughal-empire 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1737 talpur-sindh 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1739 mughal-empire 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1748 durrani-empire 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1748 mughal-empire 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1751 nagpur-kingdom 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1752 durrani-empire 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1752 maratha-peshwa 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1752 mughal-empire 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1753 baroda-state 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1753 mughal-empire 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1754 jaipur-state 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1754 mughal-empire 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션)
+- key: '1752 hyderabad-state 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 서 구현(사건은 다음 세션 — 1752 발키 조약으로 칸데시·아마드나가르 쪽을 페슈와에)
 
+# ── 남아시아 S3 동 (2026-11-03): 1206~1756 동 칸 항목의 성립·소멸과 1만 km² 넘는 버전 해(동 칸 땅이 만든 델리 술탄국·무굴·바흐마니·비자푸르·마라타·나그푸르 버전 해 포함 — 서 칸 줄과 겹치면 합칠 때 하나만). 1206년 앞 성립은 S4, 1206~1525는 sa-05, 1526~1756은 sa-06 사건 묶음이 채움 ──
+- key: '800 paramara-dynasty 성립'
+  reason: S4 사건 묶음이 채움(성립 해가 1206년 앞)
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '831 chandela-dynasty 성립'
+  reason: S4 사건 묶음이 채움(성립 해가 1206년 앞)
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '848 chola-dynasty 성립'
+  reason: S4 사건 묶음이 채움(성립 해가 1206년 앞)
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1000 ratanpur-kingdom 성립'
+  reason: S4 사건 묶음이 채움(성립 해가 1206년 앞)
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1070 sena-dynasty 성립'
+  reason: S4 사건 묶음이 채움(성립 해가 1206년 앞)
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1070 sinhalese-kingdom 성립'
+  reason: S4 사건 묶음이 채움(성립 해가 1206년 앞)
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1078 eastern-ganga-dynasty 성립'
+  reason: S4 사건 묶음이 채움(성립 해가 1206년 앞)
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1097 karnat-dynasty 성립'
+  reason: S4 사건 묶음이 채움(성립 해가 1206년 앞)
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1100 khasa-malla-kingdom 성립'
+  reason: S4 사건 묶음이 채움(성립 해가 1206년 앞)
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1163 kakatiya-dynasty 성립'
+  reason: S4 사건 묶음이 채움(성립 해가 1206년 앞)
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1190 pandya-dynasty 성립'
+  reason: S4 사건 묶음이 채움(성립 해가 1206년 앞)
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1206 chandela-dynasty 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1206 chola-dynasty 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1206 eastern-ganga-dynasty 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1206 kakatiya-dynasty 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1206 karnat-dynasty 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1206 khasa-malla-kingdom 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1206 kumaon-kingdom 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1206 manipur 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1206 mayurbhanj-state 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1206 paramara-dynasty 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1206 ratanpur-kingdom 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1206 sena-dynasty 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1206 sinhalese-kingdom 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1215 magha-kingdom 성립'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1215 sinhalese-kingdom 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1216 pandya-dynasty 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1245 deva-dynasty-bengal 성립'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1245 sena-dynasty 소멸'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1256 magha-kingdom 소멸'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1257 kamata-kingdom 성립'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1279 chola-dynasty 소멸'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1281 delhi-sultanate 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1281 deva-dynasty-bengal 소멸'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1305 delhi-sultanate 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1305 paramara-dynasty 소멸'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1315 chandela-dynasty 소멸'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1315 delhi-sultanate 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1323 delhi-sultanate 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1323 kakatiya-dynasty 소멸'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1323 pandya-dynasty 소멸'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1324 delhi-sultanate 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1324 karnat-dynasty 소멸'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1325 reddi-kingdom 성립'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1330 delhi-sultanate 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1330 musunuri-nayakas 성립'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1330 reddi-kingdom 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1335 delhi-sultanate 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1335 madurai-sultanate 성립'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1336 delhi-sultanate 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1336 vijayanagara-empire 성립'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1338 bengal-sultanate 성립'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1338 delhi-sultanate 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1338 sonargaon-sultanate 성립'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1340 sonargaon-sultanate 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1346 delhi-sultanate 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1346 vijayanagara-empire 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1352 bengal-sultanate 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1352 sonargaon-sultanate 소멸'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1358 garhwal-kingdom 성립'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1361 vijayanagara-empire 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1368 bahmani-sultanate 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1368 musunuri-nayakas 소멸'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1368 reddi-kingdom 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1378 madurai-sultanate 소멸'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1378 vijayanagara-empire 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1391 khasa-malla-kingdom 소멸'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1394 delhi-sultanate 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1394 jaunpur-sultanate 성립'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1401 delhi-sultanate 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1401 malwa-sultanate 성립'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1412 kotte-kingdom 성립'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1412 sinhalese-kingdom 소멸'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1415 bengal-sultanate 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1415 jaunpur-sultanate 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1434 eastern-ganga-dynasty 소멸'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1434 gajapati-kingdom 성립'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1446 gajapati-kingdom 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1446 reddi-kingdom 소멸'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1446 vijayanagara-empire 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1459 bengal-sultanate 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1470 chanda-kingdom 성립'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1470 gajapati-kingdom 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1470 vijayanagara-empire 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1479 delhi-sultanate 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1479 jaunpur-sultanate 소멸'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1480 garha-mandla-kingdom 성립'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1498 bengal-sultanate 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1498 delhi-sultanate 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1498 kamata-kingdom 소멸'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1509 gingee-nayak 성립'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1510 bengal-sultanate 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1510 gajapati-kingdom 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1515 bengal-sultanate 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1515 gajapati-kingdom 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1515 koch-kingdom 성립'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1515 vijayanagara-empire 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1518 delhi-sultanate 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1518 golconda-sultanate 성립'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1521 sitawaka-kingdom 성립'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1523 ahom-kingdom 성립'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1529 bengal-sultanate 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1529 madurai-nayak 성립'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1529 mughal-empire 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1536 ahom-kingdom 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1540 sur-empire 성립'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1542 sur-empire 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1550 gajapati-kingdom 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1550 golconda-sultanate 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1554 bengal-sultanate 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1554 sur-empire 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1555 sur-empire 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1556 sur-empire 소멸'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1557 bengal-sultanate 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1562 malwa-sultanate 소멸'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1562 mughal-empire 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1565 kotte-kingdom 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1565 sitawaka-kingdom 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1568 bengal-sultanate 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1568 gajapati-kingdom 소멸'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1571 bengal-sultanate 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1571 golconda-sultanate 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1576 bengal-sultanate 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1576 mughal-empire 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1579 golconda-sultanate 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1579 vijayanagara-empire 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1585 mughal-empire 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1592 bengal-sultanate 소멸'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1592 kandy 성립'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1592 kotte-kingdom 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1592 mughal-empire 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1592 orissa-states 성립'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1594 sitawaka-kingdom 소멸'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1597 kotte-kingdom 소멸'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1597 mughal-empire 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1597 portuguese-ceylon 성립'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1600 deogarh-kingdom 성립'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1600 gingee-nayak 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1600 madurai-nayak 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1600 vijayanagara-empire 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1612 koch-kingdom 소멸'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1612 mughal-empire 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1613 ratanpur-kingdom 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1617 mughal-empire 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1634 bhutan 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1646 golconda-sultanate 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1646 vijayanagara-empire 소멸'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1649 bijapur-sultanate 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1649 gingee-nayak 소멸'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1651 bhutan 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1658 portuguese-ceylon 소멸'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1666 mughal-empire 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1677 maratha-peshwa 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1682 ahom-kingdom 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1682 mughal-empire 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1687 golconda-sultanate 소멸'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1692 mughal-empire 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1698 carnatic-nawab 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1717 mughal-empire 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1721 mughal-empire 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1722 mughal-empire 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1731 maratha-peshwa 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1731 mughal-empire 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1733 bengal-nawabs 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1733 mughal-empire 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1736 carnatic-nawab 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1736 madurai-nayak 소멸'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1738 gwalior-state 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1738 indore-state 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1738 maratha-peshwa 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1738 mughal-empire 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1741 chhattisgarh-states 성립'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1741 nagpur-kingdom 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1741 ratanpur-kingdom 소멸'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1742 garha-mandla-kingdom 소멸'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1742 maratha-peshwa 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1743 deogarh-kingdom 소멸'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1743 nagpur-kingdom 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1746 travancore 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1751 bengal-nawabs 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+- key: '1751 chanda-kingdom 소멸'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 동 구현(사건은 다음 세션)
+# ── 남아시아 S3 합치기 (2026-11-03): 서·동 두 칸 땅이 한 지도에 모여 처음 생긴 버전 해(한 칸 사본에서는 보이지 않던 것). 사건 묶음 sa-05(1206~1525)·sa-06(1526~1756)이 채움 ──
+- key: '1343 vijayanagara-empire 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 합치기(사건은 다음 세션)
+- key: '1492 bahmani-sultanate 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 합치기(사건은 다음 세션)
+- key: '1531 gujarat-sultanate 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 합치기(사건은 다음 세션)
+- key: '1537 gujarat-sultanate 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 합치기(사건은 다음 세션)
+- key: '1541 sur-empire 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 합치기(사건은 다음 세션)
+- key: '1565 vijayanagara-empire 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 합치기(사건은 다음 세션)
+- key: '1677 bijapur-sultanate 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 합치기(사건은 다음 세션)
+- key: '1698 maratha-peshwa 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 합치기(사건은 다음 세션)
+- key: '1739 deogarh-kingdom 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-03 남아시아 S3 합치기(사건은 다음 세션)
+# ── 남아시아 S3 반영 1 (2026-11-04): 검토 고칠 점(라이추르 도아브 1520·동부 라지푸타나 1527·남부 라지푸타나 1527·톤다이만달람·캄루프 1667·1679)과 창구 ③ 결정 1(카티아와르 1730)로 생긴 성립·버전 해. 사건 묶음 sa-05(1206~1525)·sa-06(1526~1756)이 채움 ──
+- key: '1520 bijapur-sultanate 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-04 남아시아 S3 반영 1(사건은 다음 세션)
+- key: '1520 vijayanagara-empire 버전'
+  reason: sa-05 사건 묶음이 채움
+  decided: 2026-11-04 남아시아 S3 반영 1(사건은 다음 세션)
+- key: '1527 south-rajputana-states 성립'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-04 남아시아 S3 반영 1(사건은 다음 세션)
+- key: '1527 mughal-empire 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-04 남아시아 S3 반영 1(사건은 다음 세션)
+- key: '1646 gingee-nayak 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-04 남아시아 S3 반영 1(사건은 다음 세션)
+- key: '1667 ahom-kingdom 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-04 남아시아 S3 반영 1(사건은 다음 세션)
+- key: '1667 mughal-empire 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-04 남아시아 S3 반영 1(사건은 다음 세션)
+- key: '1679 ahom-kingdom 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-04 남아시아 S3 반영 1(사건은 다음 세션)
+- key: '1679 mughal-empire 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-04 남아시아 S3 반영 1(사건은 다음 세션)
+- key: '1730 kathiawar-states 성립'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-04 남아시아 S3 반영 1(사건은 다음 세션)
+- key: '1730 mughal-empire 버전'
+  reason: sa-06 사건 묶음이 채움
+  decided: 2026-11-04 남아시아 S3 반영 1(사건은 다음 세션)

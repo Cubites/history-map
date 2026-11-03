@@ -169,3 +169,6 @@ export const era = {
   gapZones,
   voids,
 };
+
+// S3 뼈대(2026-11-03): 이 파일의 칼선 도형 상수 모음(1206~1756 시대 파일 sultanate.mjs가 같은 선을 다시 쓸 때 여기서만 가져온다 — 좌표를 옮겨 적지 않음). 도형·버전은 그대로, 이름만 모음
+export const S1_CUTS = { MARATHWADA, HK_KARNATAKA, KALAT_GROUP, KHARAN, MAKRAN, LAS_BELA, DNH, CN_ROC, CN_PRC };

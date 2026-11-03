@@ -2880,3 +2880,1120 @@
   expect: chitral-kingdom
   url: https://en.wikipedia.org/wiki/Mastuj
   from: 남아시아 S2 반영 1 결과노트
+# ── 남아시아 S3 서 (2026-11-03): 1206~1756 새 항목 수도(존속 가운데 해), 큰 버전 해 앞뒤, 칼선 안/밖 기준 도시, 1756년 표본(서 칸 땅만) ──
+- name: 델리
+  at: [77.21, 28.61]
+  year: 1300
+  expect: delhi-sultanate
+  url: https://en.wikipedia.org/wiki/Delhi
+  from: 남아시아 S3 서 결과노트
+- name: 라호르
+  at: [74.34, 31.55]
+  year: 1650
+  expect: mughal-empire
+  url: https://en.wikipedia.org/wiki/Lahore
+  from: 남아시아 S3 서 결과노트
+- name: 굴바르가
+  at: [76.83, 17.33]
+  year: 1400
+  expect: bahmani-sultanate
+  url: https://en.wikipedia.org/wiki/Kalaburagi
+  from: 남아시아 S3 서 결과노트
+- name: 비자푸르
+  at: [75.71, 16.83]
+  year: 1600
+  expect: bijapur-sultanate
+  url: https://en.wikipedia.org/wiki/Bijapur
+  from: 남아시아 S3 서 결과노트
+- name: 아마드나가르
+  at: [74.74, 19.09]
+  year: 1550
+  expect: ahmadnagar-sultanate
+  url: https://en.wikipedia.org/wiki/Ahmednagar
+  from: 남아시아 S3 서 결과노트
+- name: 비다르
+  at: [77.52, 17.91]
+  year: 1550
+  expect: bidar-sultanate
+  url: https://en.wikipedia.org/wiki/Bidar
+  from: 남아시아 S3 서 결과노트
+- name: 엘리치푸르
+  at: [77.51, 21.26]
+  year: 1530
+  expect: berar-sultanate
+  url: https://en.wikipedia.org/wiki/Achalpur
+  from: 남아시아 S3 서 결과노트
+- name: 잘가온
+  at: [75.57, 21.0]
+  year: 1490
+  expect: khandesh-sultanate
+  url: https://en.wikipedia.org/wiki/Jalgaon
+  from: 남아시아 S3 서 결과노트
+- name: 아마다바드
+  at: [72.58, 23.03]
+  year: 1480
+  expect: gujarat-sultanate
+  url: https://en.wikipedia.org/wiki/Ahmedabad
+  from: 남아시아 S3 서 결과노트
+- name: 물탄
+  at: [71.47, 30.2]
+  year: 1215
+  expect: qubacha-multan
+  url: https://en.wikipedia.org/wiki/Multan
+  from: 남아시아 S3 서 결과노트
+- name: 타타
+  at: [67.92, 24.75]
+  year: 1280
+  expect: soomra-dynasty
+  url: https://en.wikipedia.org/wiki/Thatta
+  from: 남아시아 S3 서 결과노트
+- name: 타타
+  at: [67.92, 24.75]
+  year: 1430
+  expect: samma-dynasty
+  url: https://en.wikipedia.org/wiki/Thatta
+  from: 남아시아 S3 서 결과노트
+- name: 타타
+  at: [67.92, 24.75]
+  year: 1555
+  expect: arghun-dynasty
+  url: https://en.wikipedia.org/wiki/Thatta
+  from: 남아시아 S3 서 결과노트
+- name: 물탄
+  at: [71.47, 30.2]
+  year: 1485
+  expect: multan-sultanate
+  url: https://en.wikipedia.org/wiki/Multan
+  from: 남아시아 S3 서 결과노트
+- name: 스리나가르
+  at: [74.8, 34.08]
+  year: 1270
+  expect: lohara-dynasty
+  url: https://en.wikipedia.org/wiki/Srinagar
+  from: 남아시아 S3 서 결과노트
+- name: 스리나가르
+  at: [74.8, 34.08]
+  year: 1460
+  expect: kashmir-sultanate
+  url: https://en.wikipedia.org/wiki/Srinagar
+  from: 남아시아 S3 서 결과노트
+- name: 파탄
+  at: [72.12, 23.85]
+  year: 1250
+  expect: chaulukya-dynasty
+  url: https://en.wikipedia.org/wiki/Patan,_Gujarat
+  from: 남아시아 S3 서 결과노트
+- name: 란탐보르
+  at: [76.46, 26.02]
+  year: 1250
+  expect: chahamana-dynasty
+  url: https://en.wikipedia.org/wiki/Ranthambore_Fort
+  from: 남아시아 S3 서 결과노트
+- name: 다울라타바드
+  at: [75.21, 19.94]
+  year: 1260
+  expect: yadava-dynasty
+  url: https://en.wikipedia.org/wiki/Daulatabad,_Maharashtra
+  from: 남아시아 S3 서 결과노트
+- name: 할레비두
+  at: [75.99, 13.21]
+  year: 1270
+  expect: hoysala-dynasty
+  url: https://en.wikipedia.org/wiki/Halebidu
+  from: 남아시아 S3 서 결과노트
+- name: 레
+  at: [77.58, 34.16]
+  year: 1350
+  expect: ladakh-kingdom
+  url: https://en.wikipedia.org/wiki/Leh
+  from: 남아시아 S3 서 결과노트
+- name: 치트랄
+  at: [71.79, 35.85]
+  year: 1670
+  expect: chitral-kingdom
+  url: https://en.wikipedia.org/wiki/Chitral
+  from: 남아시아 S3 서 결과노트
+- name: 우다이푸르
+  at: [73.71, 24.58]
+  year: 1310
+  expect: delhi-sultanate
+  url: https://en.wikipedia.org/wiki/Udaipur
+  from: 남아시아 S3 서 결과노트
+- name: 우다이푸르
+  at: [73.71, 24.58]
+  year: 1326
+  expect: mewar-state
+  url: https://en.wikipedia.org/wiki/Udaipur
+  from: 남아시아 S3 서 결과노트
+- name: 물탄
+  at: [71.47, 30.2]
+  year: 1227
+  expect: qubacha-multan
+  url: https://en.wikipedia.org/wiki/Multan
+  from: 남아시아 S3 서 결과노트
+- name: 물탄
+  at: [71.47, 30.2]
+  year: 1228
+  expect: delhi-sultanate
+  url: https://en.wikipedia.org/wiki/Multan
+  from: 남아시아 S3 서 결과노트
+- name: 라호르
+  at: [74.34, 31.55]
+  year: 1397
+  expect: delhi-sultanate
+  url: https://en.wikipedia.org/wiki/Lahore
+  from: 남아시아 S3 서 결과노트
+- name: 라호르
+  at: [74.34, 31.55]
+  year: 1398
+  expect: none
+  region: south-asia
+  url: https://en.wikipedia.org/wiki/Lahore
+  from: 남아시아 S3 서 결과노트
+- name: 라호르
+  at: [74.34, 31.55]
+  year: 1414
+  expect: delhi-sultanate
+  url: https://en.wikipedia.org/wiki/Lahore
+  from: 남아시아 S3 서 결과노트
+- name: 아마다바드
+  at: [72.58, 23.03]
+  year: 1303
+  expect: chaulukya-dynasty
+  url: https://en.wikipedia.org/wiki/Ahmedabad
+  from: 남아시아 S3 서 결과노트
+- name: 아마다바드
+  at: [72.58, 23.03]
+  year: 1304
+  expect: delhi-sultanate
+  url: https://en.wikipedia.org/wiki/Ahmedabad
+  from: 남아시아 S3 서 결과노트
+- name: 아마다바드
+  at: [72.58, 23.03]
+  year: 1397
+  expect: delhi-sultanate
+  url: https://en.wikipedia.org/wiki/Ahmedabad
+  from: 남아시아 S3 서 결과노트
+- name: 아마다바드
+  at: [72.58, 23.03]
+  year: 1398
+  expect: gujarat-sultanate
+  url: https://en.wikipedia.org/wiki/Ahmedabad
+  from: 남아시아 S3 서 결과노트
+- name: 아마다바드
+  at: [72.58, 23.03]
+  year: 1572
+  expect: gujarat-sultanate
+  url: https://en.wikipedia.org/wiki/Ahmedabad
+  from: 남아시아 S3 서 결과노트
+- name: 아마다바드
+  at: [72.58, 23.03]
+  year: 1573
+  expect: mughal-empire
+  url: https://en.wikipedia.org/wiki/Ahmedabad
+  from: 남아시아 S3 서 결과노트
+- name: 스리나가르
+  at: [74.8, 34.08]
+  year: 1585
+  expect: kashmir-sultanate
+  url: https://en.wikipedia.org/wiki/Srinagar
+  from: 남아시아 S3 서 결과노트
+- name: 스리나가르
+  at: [74.8, 34.08]
+  year: 1586
+  expect: mughal-empire
+  url: https://en.wikipedia.org/wiki/Srinagar
+  from: 남아시아 S3 서 결과노트
+- name: 타타
+  at: [67.92, 24.75]
+  year: 1592
+  expect: arghun-dynasty
+  url: https://en.wikipedia.org/wiki/Thatta
+  from: 남아시아 S3 서 결과노트
+- name: 타타
+  at: [67.92, 24.75]
+  year: 1593
+  expect: mughal-empire
+  url: https://en.wikipedia.org/wiki/Thatta
+  from: 남아시아 S3 서 결과노트
+- name: 사카르
+  at: [68.86, 27.7]
+  year: 1700
+  expect: mughal-empire
+  url: https://en.wikipedia.org/wiki/Sukkur
+  from: 남아시아 S3 서 결과노트
+- name: 사카르
+  at: [68.86, 27.7]
+  year: 1701
+  expect: talpur-sindh
+  url: https://en.wikipedia.org/wiki/Sukkur
+  from: 남아시아 S3 서 결과노트
+- name: 타타
+  at: [67.92, 24.75]
+  year: 1736
+  expect: mughal-empire
+  url: https://en.wikipedia.org/wiki/Thatta
+  from: 남아시아 S3 서 결과노트
+- name: 타타
+  at: [67.92, 24.75]
+  year: 1737
+  expect: talpur-sindh
+  url: https://en.wikipedia.org/wiki/Thatta
+  from: 남아시아 S3 서 결과노트
+- name: 페샤와르
+  at: [71.58, 34.01]
+  year: 1738
+  expect: mughal-empire
+  url: https://en.wikipedia.org/wiki/Peshawar
+  from: 남아시아 S3 서 결과노트
+- name: 페샤와르
+  at: [71.58, 34.01]
+  year: 1739
+  expect: afsharid-iran
+  url: https://en.wikipedia.org/wiki/Peshawar
+  from: 남아시아 S3 서 결과노트
+- name: 페샤와르
+  at: [71.58, 34.01]
+  year: 1748
+  expect: durrani-empire
+  url: https://en.wikipedia.org/wiki/Peshawar
+  from: 남아시아 S3 서 결과노트
+- name: 라호르
+  at: [74.34, 31.55]
+  year: 1751
+  expect: mughal-empire
+  url: https://en.wikipedia.org/wiki/Lahore
+  from: 남아시아 S3 서 결과노트
+- name: 라호르
+  at: [74.34, 31.55]
+  year: 1752
+  expect: durrani-empire
+  url: https://en.wikipedia.org/wiki/Lahore
+  from: 남아시아 S3 서 결과노트
+- name: 엘리치푸르
+  at: [77.51, 21.26]
+  year: 1573
+  expect: berar-sultanate
+  url: https://en.wikipedia.org/wiki/Achalpur
+  from: 남아시아 S3 서 결과노트
+- name: 엘리치푸르
+  at: [77.51, 21.26]
+  year: 1574
+  expect: ahmadnagar-sultanate
+  url: https://en.wikipedia.org/wiki/Achalpur
+  from: 남아시아 S3 서 결과노트
+- name: 엘리치푸르
+  at: [77.51, 21.26]
+  year: 1596
+  expect: mughal-empire
+  url: https://en.wikipedia.org/wiki/Achalpur
+  from: 남아시아 S3 서 결과노트
+- name: 잘가온
+  at: [75.57, 21.0]
+  year: 1600
+  expect: khandesh-sultanate
+  url: https://en.wikipedia.org/wiki/Jalgaon
+  from: 남아시아 S3 서 결과노트
+- name: 잘가온
+  at: [75.57, 21.0]
+  year: 1601
+  expect: mughal-empire
+  url: https://en.wikipedia.org/wiki/Jalgaon
+  from: 남아시아 S3 서 결과노트
+- name: 아마드나가르
+  at: [74.74, 19.09]
+  year: 1635
+  expect: ahmadnagar-sultanate
+  url: https://en.wikipedia.org/wiki/Ahmednagar
+  from: 남아시아 S3 서 결과노트
+- name: 아마드나가르
+  at: [74.74, 19.09]
+  year: 1636
+  expect: mughal-empire
+  url: https://en.wikipedia.org/wiki/Ahmednagar
+  from: 남아시아 S3 서 결과노트
+- name: 푸네
+  at: [73.86, 18.52]
+  year: 1658
+  expect: bijapur-sultanate
+  url: https://en.wikipedia.org/wiki/Pune
+  from: 남아시아 S3 서 결과노트
+- name: 푸네
+  at: [73.86, 18.52]
+  year: 1659
+  expect: maratha-peshwa
+  url: https://en.wikipedia.org/wiki/Pune
+  from: 남아시아 S3 서 결과노트
+- name: 비자푸르
+  at: [75.71, 16.83]
+  year: 1685
+  expect: bijapur-sultanate
+  url: https://en.wikipedia.org/wiki/Bijapur
+  from: 남아시아 S3 서 결과노트
+- name: 비자푸르
+  at: [75.71, 16.83]
+  year: 1686
+  expect: mughal-empire
+  url: https://en.wikipedia.org/wiki/Bijapur
+  from: 남아시아 S3 서 결과노트
+- name: 비자푸르
+  at: [75.71, 16.83]
+  year: 1707
+  expect: maratha-peshwa
+  url: https://en.wikipedia.org/wiki/Bijapur
+  from: 남아시아 S3 서 결과노트
+- name: 벵갈루루
+  at: [77.59, 12.97]
+  year: 1650
+  expect: bijapur-sultanate
+  url: https://en.wikipedia.org/wiki/Bangalore
+  from: 남아시아 S3 서 결과노트
+- name: 벵갈루루
+  at: [77.59, 12.97]
+  year: 1687
+  expect: mysore
+  url: https://en.wikipedia.org/wiki/Bangalore
+  from: 남아시아 S3 서 결과노트
+- name: 함피
+  at: [76.46, 15.34]
+  year: 1564
+  expect: vijayanagara-empire
+  url: https://en.wikipedia.org/wiki/Hampi
+  from: 남아시아 S3 서 결과노트
+- name: 함피
+  at: [76.46, 15.34]
+  year: 1565
+  expect: bijapur-sultanate
+  url: https://en.wikipedia.org/wiki/Hampi
+  from: 남아시아 S3 서 결과노트
+- name: 마이소르
+  at: [76.64, 12.3]
+  year: 1342
+  expect: hoysala-dynasty
+  url: https://en.wikipedia.org/wiki/Mysore
+  from: 남아시아 S3 서 결과노트
+- name: 마이소르
+  at: [76.64, 12.3]
+  year: 1343
+  expect: vijayanagara-empire
+  url: https://en.wikipedia.org/wiki/Mysore
+  from: 남아시아 S3 서 결과노트
+- name: 다울라타바드
+  at: [75.21, 19.94]
+  year: 1316
+  expect: yadava-dynasty
+  url: https://en.wikipedia.org/wiki/Daulatabad,_Maharashtra
+  from: 남아시아 S3 서 결과노트
+- name: 다울라타바드
+  at: [75.21, 19.94]
+  year: 1317
+  expect: delhi-sultanate
+  url: https://en.wikipedia.org/wiki/Daulatabad,_Maharashtra
+  from: 남아시아 S3 서 결과노트
+- name: 굴바르가
+  at: [76.83, 17.33]
+  year: 1723
+  expect: mughal-empire
+  url: https://en.wikipedia.org/wiki/Kalaburagi
+  from: 남아시아 S3 서 결과노트
+- name: 굴바르가
+  at: [76.83, 17.33]
+  year: 1724
+  expect: hyderabad-state
+  url: https://en.wikipedia.org/wiki/Kalaburagi
+  from: 남아시아 S3 서 결과노트
+- name: 바로다
+  at: [73.18, 22.31]
+  year: 1734
+  expect: baroda-state
+  url: https://en.wikipedia.org/wiki/Vadodara
+  from: 남아시아 S3 서 결과노트
+- name: 아마다바드
+  at: [72.58, 23.03]
+  year: 1753
+  expect: baroda-state
+  url: https://en.wikipedia.org/wiki/Ahmedabad
+  from: 남아시아 S3 서 결과노트
+- name: 고아
+  at: [73.83, 15.49]
+  year: 1510
+  expect: portuguese-india
+  url: https://en.wikipedia.org/wiki/Goa
+  from: 남아시아 S3 서 결과노트
+- name: 퀘타
+  at: [67.0, 30.18]
+  year: 1747
+  expect: none
+  region: south-asia
+  url: https://en.wikipedia.org/wiki/Quetta
+  from: 남아시아 S3 서 결과노트
+- name: 퀘타
+  at: [67.0, 30.18]
+  year: 1748
+  expect: durrani-empire
+  url: https://en.wikipedia.org/wiki/Quetta
+  from: 남아시아 S3 서 결과노트
+- name: 바하왈푸르
+  at: [71.68, 29.4]
+  year: 1748
+  expect: bahawalpur-state
+  url: https://en.wikipedia.org/wiki/Bahawalpur
+  from: 남아시아 S3 서 결과노트
+- name: 자이푸르
+  at: [75.79, 26.91]
+  year: 1503
+  expect: jaipur-state
+  url: https://en.wikipedia.org/wiki/Jaipur
+  from: 남아시아 S3 서 결과노트
+- name: 코타
+  at: [75.84, 25.18]
+  year: 1631
+  expect: kota-state
+  url: https://en.wikipedia.org/wiki/Kota,_Rajasthan
+  from: 남아시아 S3 서 결과노트
+- name: 조드푸르
+  at: [73.02, 26.24]
+  year: 1459
+  expect: jodhpur-state
+  url: https://en.wikipedia.org/wiki/Jodhpur
+  from: 남아시아 S3 서 결과노트
+- name: 비카네르
+  at: [73.31, 28.02]
+  year: 1465
+  expect: bikaner-state
+  url: https://en.wikipedia.org/wiki/Bikaner
+  from: 남아시아 S3 서 결과노트
+- name: 나그푸르
+  at: [79.09, 21.15]
+  year: 1739
+  expect: nagpur-kingdom
+  url: https://en.wikipedia.org/wiki/Nagpur
+  from: 남아시아 S3 서 결과노트
+- name: 루디아나
+  at: [75.85, 30.9]
+  year: 1400
+  expect: delhi-sultanate
+  url: https://en.wikipedia.org/wiki/Ludhiana
+  from: 남아시아 S3 서 결과노트
+- name: 암리차르
+  at: [74.87, 31.63]
+  year: 1400
+  expect: none
+  region: south-asia
+  url: https://en.wikipedia.org/wiki/Amritsar
+  from: 남아시아 S3 서 결과노트
+- name: 라트나기리
+  at: [73.3, 16.99]
+  year: 1206
+  expect: none
+  region: south-asia
+  url: https://en.wikipedia.org/wiki/Ratnagiri
+  from: 남아시아 S3 서 결과노트
+- name: 사타라
+  at: [74.0, 17.68]
+  year: 1206
+  expect: yadava-dynasty
+  url: https://en.wikipedia.org/wiki/Satara
+  from: 남아시아 S3 서 결과노트
+- name: 나시크
+  at: [73.79, 20.0]
+  year: 1400
+  expect: bahmani-sultanate
+  url: https://en.wikipedia.org/wiki/Nashik
+  from: 남아시아 S3 서 결과노트
+- name: 둘레
+  at: [74.78, 20.9]
+  year: 1400
+  expect: khandesh-sultanate
+  url: https://en.wikipedia.org/wiki/Dhule
+  from: 남아시아 S3 서 결과노트
+- name: 치트라두르가
+  at: [76.4, 14.23]
+  year: 1330
+  expect: hoysala-dynasty
+  url: https://en.wikipedia.org/wiki/Chitradurga
+  from: 남아시아 S3 서 결과노트
+- name: 벨라리
+  at: [76.92, 15.14]
+  year: 1330
+  expect: delhi-sultanate
+  url: https://en.wikipedia.org/wiki/Bellary
+  from: 남아시아 S3 서 결과노트
+- name: 잠무
+  at: [74.86, 32.73]
+  year: 1300
+  expect: none
+  region: south-asia
+  url: https://en.wikipedia.org/wiki/Jammu
+  from: 남아시아 S3 서 결과노트
+- name: 라자우리
+  at: [74.3, 33.38]
+  year: 1300
+  expect: lohara-dynasty
+  url: https://en.wikipedia.org/wiki/Rajouri
+  from: 남아시아 S3 서 결과노트
+- name: 나와브샤
+  at: [68.41, 26.25]
+  year: 1300
+  expect: delhi-sultanate
+  url: https://en.wikipedia.org/wiki/Nawabshah
+  from: 남아시아 S3 서 결과노트
+- name: 미르푸르카스
+  at: [69.0, 25.53]
+  year: 1300
+  expect: soomra-dynasty
+  url: https://en.wikipedia.org/wiki/Mirpur_Khas
+  from: 남아시아 S3 서 결과노트
+- name: 굴바르가
+  at: [76.83, 17.33]
+  year: 1500
+  expect: bijapur-sultanate
+  url: https://en.wikipedia.org/wiki/Kalaburagi
+  from: 남아시아 S3 서 결과노트
+- name: 우드기르
+  at: [77.12, 18.4]
+  year: 1500
+  expect: bidar-sultanate
+  url: https://en.wikipedia.org/wiki/Udgir
+  from: 남아시아 S3 서 결과노트
+- name: 솔라푸르
+  at: [75.91, 17.66]
+  year: 1500
+  expect: bijapur-sultanate
+  url: https://en.wikipedia.org/wiki/Solapur
+  from: 남아시아 S3 서 결과노트
+- name: 비드
+  at: [75.76, 18.99]
+  year: 1500
+  expect: ahmadnagar-sultanate
+  url: https://en.wikipedia.org/wiki/Beed
+  from: 남아시아 S3 서 결과노트
+- name: 판할라
+  at: [74.11, 16.81]
+  year: 1680
+  expect: maratha-peshwa
+  url: https://en.wikipedia.org/wiki/Panhala
+  from: 남아시아 S3 서 결과노트
+- name: 솔라푸르
+  at: [75.91, 17.66]
+  year: 1680
+  expect: bijapur-sultanate
+  url: https://en.wikipedia.org/wiki/Solapur
+  from: 남아시아 S3 서 결과노트
+- name: 분디
+  at: [75.64, 25.44]
+  year: 1250
+  expect: none
+  region: south-asia
+  url: https://en.wikipedia.org/wiki/Bundi
+  from: 남아시아 S3 서 결과노트
+- name: 통크
+  at: [75.79, 26.17]
+  year: 1250
+  expect: chahamana-dynasty
+  url: https://en.wikipedia.org/wiki/Tonk,_Rajasthan
+  from: 남아시아 S3 서 결과노트
+- name: 미안왈리
+  at: [71.53, 32.58]
+  year: 1740
+  expect: afsharid-iran
+  url: https://en.wikipedia.org/wiki/Mianwali
+  from: 남아시아 S3 서 결과노트
+- name: 물탄
+  at: [71.47, 30.2]
+  year: 1740
+  expect: mughal-empire
+  url: https://en.wikipedia.org/wiki/Multan
+  from: 남아시아 S3 서 결과노트
+- name: 데라 가지 칸
+  at: [70.64, 30.05]
+  year: 1739
+  expect: afsharid-iran
+  url: https://en.wikipedia.org/wiki/Dera_Ghazi_Khan
+  from: 남아시아 S3 서 결과노트
+- name: 시라
+  at: [76.9, 13.74]
+  year: 1650
+  expect: bijapur-sultanate
+  url: https://en.wikipedia.org/wiki/Sira,_Karnataka
+  from: 남아시아 S3 서 결과노트
+- name: 치트라두르가
+  at: [76.4, 14.23]
+  year: 1650
+  expect: none
+  region: south-asia
+  url: https://en.wikipedia.org/wiki/Chitradurga
+  from: 남아시아 S3 서 결과노트
+- name: 델리
+  at: [77.21, 28.61]
+  year: 1756
+  expect: mughal-empire
+  url: https://en.wikipedia.org/wiki/Delhi
+  from: 남아시아 S3 서 결과노트
+- name: 시르힌드
+  at: [76.43, 30.64]
+  year: 1756
+  expect: mughal-empire
+  url: https://en.wikipedia.org/wiki/Sirhind
+  from: 남아시아 S3 서 결과노트
+- name: 라호르
+  at: [74.34, 31.55]
+  year: 1756
+  expect: durrani-empire
+  url: https://en.wikipedia.org/wiki/Lahore
+  from: 남아시아 S3 서 결과노트
+- name: 아마드나가르
+  at: [74.74, 19.09]
+  year: 1756
+  expect: maratha-peshwa
+  url: https://en.wikipedia.org/wiki/Ahmednagar
+  from: 남아시아 S3 서 결과노트
+
+# ── 남아시아 S3 동 (2026-11-03): 1206~1756 새 항목 수도(존속 가운데 해 무렵), 칼선 안/밖 기준 도시, 1756년 표본 ──
+- name: 가우르
+  at: [88.13, 24.87]
+  year: 1450
+  expect: bengal-sultanate
+  url: https://en.wikipedia.org/wiki/Bengal_Sultanate
+  from: 남아시아 S3 동 결과노트
+- name: 소나르가온
+  at: [90.6, 23.65]
+  year: 1345
+  expect: sonargaon-sultanate
+  url: https://en.wikipedia.org/wiki/Sonargaon
+  from: 남아시아 S3 동 결과노트
+- name: 자운푸르
+  at: [82.68, 25.75]
+  year: 1436
+  expect: jaunpur-sultanate
+  url: https://en.wikipedia.org/wiki/Jaunpur_Sultanate
+  from: 남아시아 S3 동 결과노트
+- name: 다르방가
+  at: [85.9, 26.15]
+  year: 1265
+  expect: karnat-dynasty
+  url: https://en.wikipedia.org/wiki/Karnat_dynasty
+  from: 남아시아 S3 동 결과노트
+- name: 다카
+  at: [90.41, 23.81]
+  year: 1225
+  expect: sena-dynasty
+  url: https://en.wikipedia.org/wiki/Sena_dynasty
+  from: 남아시아 S3 동 결과노트
+- name: 코밀라
+  at: [91.18, 23.46]
+  year: 1262
+  expect: deva-dynasty-bengal
+  url: https://en.wikipedia.org/wiki/Deva_dynasty
+  from: 남아시아 S3 동 결과노트
+- name: 쿠치비하르
+  at: [89.45, 26.32]
+  year: 1377
+  expect: kamata-kingdom
+  url: https://en.wikipedia.org/wiki/Kamata_Kingdom
+  from: 남아시아 S3 동 결과노트
+- name: 쿠치비하르
+  at: [89.45, 26.32]
+  year: 1563
+  expect: koch-kingdom
+  url: https://en.wikipedia.org/wiki/Koch_dynasty
+  from: 남아시아 S3 동 결과노트
+- name: 줌라
+  at: [82.18, 29.27]
+  year: 1298
+  expect: khasa-malla-kingdom
+  url: https://en.wikipedia.org/wiki/Khasa_Kingdom
+  from: 남아시아 S3 동 결과노트
+- name: 마호바
+  at: [79.87, 25.29]
+  year: 1260
+  expect: chandela-dynasty
+  url: https://en.wikipedia.org/wiki/Mahoba
+  from: 남아시아 S3 동 결과노트
+- name: 다르
+  at: [75.3, 22.6]
+  year: 1255
+  expect: paramara-dynasty
+  url: https://en.wikipedia.org/wiki/Paramara_dynasty
+  from: 남아시아 S3 동 결과노트
+- name: 만두
+  at: [75.4, 22.36]
+  year: 1480
+  expect: malwa-sultanate
+  url: https://en.wikipedia.org/wiki/Mandu,_Madhya_Pradesh
+  from: 남아시아 S3 동 결과노트
+- name: 푸리
+  at: [85.83, 19.81]
+  year: 1320
+  expect: eastern-ganga-dynasty
+  url: https://en.wikipedia.org/wiki/Eastern_Ganga_dynasty
+  from: 남아시아 S3 동 결과노트
+- name: 쿠타크
+  at: [85.88, 20.46]
+  year: 1500
+  expect: gajapati-kingdom
+  url: https://en.wikipedia.org/wiki/Gajapati_Kingdom
+  from: 남아시아 S3 동 결과노트
+- name: 라탄푸르
+  at: [82.17, 22.29]
+  year: 1470
+  expect: ratanpur-kingdom
+  url: https://en.wikipedia.org/wiki/Ratanpur
+  from: 남아시아 S3 동 결과노트
+- name: 만들라
+  at: [80.37, 22.6]
+  year: 1610
+  expect: garha-mandla-kingdom
+  url: https://en.wikipedia.org/wiki/Garha_Kingdom
+  from: 남아시아 S3 동 결과노트
+- name: 친드와라
+  at: [78.94, 22.06]
+  year: 1670
+  expect: deogarh-kingdom
+  url: https://en.wikipedia.org/wiki/Gond_kingdoms
+  from: 남아시아 S3 동 결과노트
+- name: 와랑갈
+  at: [79.59, 17.97]
+  year: 1264
+  expect: kakatiya-dynasty
+  url: https://en.wikipedia.org/wiki/Kakatiya_dynasty
+  from: 남아시아 S3 동 결과노트
+- name: 와랑갈
+  at: [79.59, 17.97]
+  year: 1348
+  expect: musunuri-nayakas
+  url: https://en.wikipedia.org/wiki/Musunuri_Nayakas
+  from: 남아시아 S3 동 결과노트
+- name: 콘다비두
+  at: [80.25, 16.25]
+  year: 1385
+  expect: reddi-kingdom
+  url: https://en.wikipedia.org/wiki/Reddi_Kingdom
+  from: 남아시아 S3 동 결과노트
+- name: 탄자부르
+  at: [79.14, 10.79]
+  year: 1210
+  expect: chola-dynasty
+  url: https://en.wikipedia.org/wiki/Chola_dynasty
+  from: 남아시아 S3 동 결과노트
+- name: 마두라이
+  at: [78.12, 9.93]
+  year: 1270
+  expect: pandya-dynasty
+  url: https://en.wikipedia.org/wiki/Pandya_dynasty
+  from: 남아시아 S3 동 결과노트
+- name: 마두라이
+  at: [78.12, 9.93]
+  year: 1356
+  expect: madurai-sultanate
+  url: https://en.wikipedia.org/wiki/Madurai_Sultanate
+  from: 남아시아 S3 동 결과노트
+- name: 마두라이
+  at: [78.12, 9.93]
+  year: 1668
+  expect: madurai-nayak
+  url: https://en.wikipedia.org/wiki/Madurai_Nayak_dynasty
+  from: 남아시아 S3 동 결과노트
+- name: 진지
+  at: [79.42, 12.25]
+  year: 1624
+  expect: gingee-nayak
+  url: https://en.wikipedia.org/wiki/Gingee_Nayaks
+  from: 남아시아 S3 동 결과노트
+- name: 담바데니야
+  at: [80.15, 7.37]
+  year: 1310
+  expect: sinhalese-kingdom
+  url: https://en.wikipedia.org/wiki/Dambadeniya
+  from: 남아시아 S3 동 결과노트
+- name: 폴론나루와
+  at: [81.0, 7.94]
+  year: 1235
+  expect: magha-kingdom
+  url: https://en.wikipedia.org/wiki/Kalinga_Magha
+  from: 남아시아 S3 동 결과노트
+- name: 코테
+  at: [79.92, 6.89]
+  year: 1500
+  expect: kotte-kingdom
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Kotte
+  from: 남아시아 S3 동 결과노트
+- name: 라트나푸라(시타와카 땅)
+  at: [80.4, 6.68]
+  year: 1580
+  expect: sitawaka-kingdom
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Sitawaka
+  from: 남아시아 S3 동 결과노트
+- name: 콜롬보
+  at: [79.86, 6.93]
+  year: 1627
+  expect: portuguese-ceylon
+  url: https://en.wikipedia.org/wiki/Portuguese_Ceylon
+  from: 남아시아 S3 동 결과노트
+- name: 골콘다
+  at: [78.4, 17.38]
+  year: 1600
+  expect: golconda-sultanate
+  url: https://en.wikipedia.org/wiki/Golconda_Sultanate
+  from: 남아시아 S3 동 결과노트
+- name: 파트나
+  at: [85.14, 25.6]
+  year: 1548
+  expect: sur-empire
+  url: https://en.wikipedia.org/wiki/Sur_Empire
+  from: 남아시아 S3 동 결과노트
+- name: 함피 동쪽 페누콘다
+  at: [77.6, 14.09]
+  year: 1580
+  expect: vijayanagara-empire
+  url: https://en.wikipedia.org/wiki/Penukonda
+  from: 남아시아 S3 동 결과노트
+- name: 무자파르푸르(미틸라 안)
+  at: [85.4, 26.12]
+  year: 1206
+  expect: karnat-dynasty
+  url: https://en.wikipedia.org/wiki/Muzaffarpur
+  from: 남아시아 S3 동 결과노트
+- name: 파트나(미틸라 밖)
+  at: [85.14, 25.6]
+  year: 1206
+  expect: delhi-sultanate
+  url: https://en.wikipedia.org/wiki/Patna
+  from: 남아시아 S3 동 결과노트
+- name: 사사람(샤르키 안)
+  at: [84.03, 24.95]
+  year: 1500
+  expect: delhi-sultanate
+  url: https://en.wikipedia.org/wiki/Sasaram
+  from: 남아시아 S3 동 결과노트
+- name: 날란다(샤르키 밖)
+  at: [85.53, 24.88]
+  year: 1500
+  expect: bengal-sultanate
+  url: https://en.wikipedia.org/wiki/Nalanda
+  from: 남아시아 S3 동 결과노트
+- name: 탐루크(미드나포르 안)
+  at: [87.92, 22.3]
+  year: 1206
+  expect: eastern-ganga-dynasty
+  url: https://en.wikipedia.org/wiki/Tamluk
+  from: 남아시아 S3 동 결과노트
+- name: 반쿠라(미드나포르 밖)
+  at: [87.07, 23.23]
+  year: 1206
+  expect: delhi-sultanate
+  url: https://en.wikipedia.org/wiki/Bankura
+  from: 남아시아 S3 동 결과노트
+- name: 잘파이구리(코치 땅 안)
+  at: [88.72, 26.52]
+  year: 1300
+  expect: kamata-kingdom
+  url: https://en.wikipedia.org/wiki/Jalpaiguri
+  from: 남아시아 S3 동 결과노트
+- name: 발루르가트(코치 땅 밖)
+  at: [88.78, 25.22]
+  year: 1300
+  expect: delhi-sultanate
+  url: https://en.wikipedia.org/wiki/Balurghat
+  from: 남아시아 S3 동 결과노트
+- name: 스리카쿨람(북칼링가 안)
+  at: [83.9, 18.3]
+  year: 1206
+  expect: eastern-ganga-dynasty
+  url: https://en.wikipedia.org/wiki/Srikakulam
+  from: 남아시아 S3 동 결과노트
+- name: 엘루루(북칼링가 밖)
+  at: [81.1, 16.7]
+  year: 1206
+  expect: kakatiya-dynasty
+  url: https://en.wikipedia.org/wiki/Eluru
+  from: 남아시아 S3 동 결과노트
+- name: 콕스바자르(치타공 안)
+  at: [92.0, 21.45]
+  year: 1500
+  expect: none
+  region: south-asia
+  url: https://en.wikipedia.org/wiki/Cox%27s_Bazar
+  from: 남아시아 S3 동 결과노트
+- name: 페니(치타공 밖)
+  at: [91.4, 23.01]
+  year: 1500
+  expect: bengal-sultanate
+  url: https://en.wikipedia.org/wiki/Feni_District
+  from: 남아시아 S3 동 결과노트
+- name: 칸치푸람(톤다이만달람 북부 안)
+  at: [79.7, 12.83]
+  year: 1600
+  expect: vijayanagara-empire
+  url: https://en.wikipedia.org/wiki/Kanchipuram
+  from: 남아시아 S3 동 결과노트
+- name: 쿰바코남(북타밀 밖)
+  at: [79.39, 10.96]
+  year: 1600
+  expect: madurai-nayak
+  url: https://en.wikipedia.org/wiki/Kumbakonam
+  from: 남아시아 S3 동 결과노트
+- name: 골라가트(아홈 1523 안)
+  at: [93.97, 26.52]
+  year: 1530
+  expect: ahom-kingdom
+  url: https://en.wikipedia.org/wiki/Golaghat
+  from: 남아시아 S3 동 결과노트
+- name: 보카칼(아홈 1523 밖)
+  at: [93.6, 26.64]
+  year: 1530
+  expect: none
+  region: south-asia
+  url: https://en.wikipedia.org/wiki/Bokakhat
+  from: 남아시아 S3 동 결과노트
+- name: 나가온(아홈 1536 안)
+  at: [92.68, 26.35]
+  year: 1540
+  expect: ahom-kingdom
+  url: https://en.wikipedia.org/wiki/Nagaon
+  from: 남아시아 S3 동 결과노트
+- name: 망갈도이(아홈 1536 밖)
+  at: [92.03, 26.44]
+  year: 1540
+  expect: koch-kingdom
+  url: https://en.wikipedia.org/wiki/Mangaldoi
+  from: 남아시아 S3 동 결과노트
+- name: 러크나우
+  at: [80.95, 26.85]
+  year: 1756
+  expect: awadh
+  url: https://en.wikipedia.org/wiki/Oudh_State
+  from: 남아시아 S3 동 결과노트
+- name: 무르시다바드
+  at: [88.27, 24.18]
+  year: 1756
+  expect: bengal-nawabs
+  url: https://en.wikipedia.org/wiki/Murshidabad
+  from: 남아시아 S3 동 결과노트
+- name: 메러트
+  at: [77.7, 28.98]
+  year: 1756
+  expect: mughal-empire
+  url: https://en.wikipedia.org/wiki/Meerut
+  from: 남아시아 S3 동 결과노트
+# ── 남아시아 S3 반영 1 (2026-11-04): 검토 고칠 점으로 고친·새 칼선(라이추르 도아브·톤다이만달람·캄루프·베라르·라지푸타나·라주라·미드나포르)과 카티아와르 1730의 안/밖 기준 도시 ──
+- name: 라이추르(라이추르 도아브 안)
+  at: [77.36, 16.2]
+  year: 1530
+  expect: vijayanagara-empire
+  url: https://en.wikipedia.org/wiki/Raichur
+  from: 남아시아 S3 반영 1 결과노트
+- name: 무드갈(라이추르 도아브 안)
+  at: [76.43, 16.01]
+  year: 1600
+  expect: bijapur-sultanate
+  url: https://en.wikipedia.org/wiki/Mudgal
+  from: 남아시아 S3 반영 1 결과노트
+- name: 바갈코트(라이추르 도아브 밖)
+  at: [75.7, 16.18]
+  year: 1530
+  expect: bijapur-sultanate
+  url: https://en.wikipedia.org/wiki/Bagalkot
+  from: 남아시아 S3 반영 1 결과노트
+- name: 가드왈(라이추르 도아브 동쪽 끝 안)
+  at: [77.8, 16.23]
+  year: 1530
+  expect: vijayanagara-empire
+  url: https://en.wikipedia.org/wiki/Gadwal
+  from: 남아시아 S3 반영 1 결과노트
+- name: 마흐부브나가르(라이추르 도아브 밖)
+  at: [77.99, 16.74]
+  year: 1530
+  expect: golconda-sultanate
+  url: https://en.wikipedia.org/wiki/Mahabubnagar
+  from: 남아시아 S3 반영 1 결과노트
+- name: 벨로르(톤다이만달람 북부 안)
+  at: [79.13, 12.92]
+  year: 1620
+  expect: vijayanagara-empire
+  url: https://en.wikipedia.org/wiki/Vellore
+  from: 남아시아 S3 반영 1 결과노트
+- name: 티루반나말라이(톤다이만달람 북부 밖)
+  at: [79.07, 12.23]
+  year: 1620
+  expect: gingee-nayak
+  url: https://en.wikipedia.org/wiki/Tiruvannamalai
+  from: 남아시아 S3 반영 1 결과노트
+- name: 구와하티(캄루프, 아홈 되찾음)
+  at: [91.75, 26.15]
+  year: 1670
+  expect: ahom-kingdom
+  url: https://en.wikipedia.org/wiki/Guwahati
+  from: 남아시아 S3 반영 1 결과노트
+- name: 구와하티(캄루프, 무굴에 넘김)
+  at: [91.75, 26.15]
+  year: 1680
+  expect: mughal-empire
+  url: https://en.wikipedia.org/wiki/Guwahati
+  from: 남아시아 S3 반영 1 결과노트
+- name: 와심(베라르 안)
+  at: [77.13, 20.1]
+  year: 1500
+  expect: berar-sultanate
+  url: https://en.wikipedia.org/wiki/Washim
+  from: 남아시아 S3 반영 1 결과노트
+- name: 잘나(베라르 밖)
+  at: [75.88, 19.84]
+  year: 1500
+  expect: ahmadnagar-sultanate
+  url: https://en.wikipedia.org/wiki/Jalna
+  from: 남아시아 S3 반영 1 결과노트
+- name: 알와르(동부 라지푸타나, 무굴 직할)
+  at: [76.6, 27.56]
+  year: 1600
+  expect: mughal-empire
+  url: https://en.wikipedia.org/wiki/Alwar
+  from: 남아시아 S3 반영 1 결과노트
+- name: 아지메르(아지메르 수바)
+  at: [74.64, 26.45]
+  year: 1600
+  expect: mughal-empire
+  url: https://en.wikipedia.org/wiki/Ajmer
+  from: 남아시아 S3 반영 1 결과노트
+- name: 둥가르푸르(남부 라지푸타나 안)
+  at: [73.71, 23.84]
+  year: 1600
+  expect: south-rajputana-states
+  url: https://en.wikipedia.org/wiki/Dungarpur
+  from: 남아시아 S3 반영 1 결과노트
+- name: 반스와라(남부 라지푸타나 안)
+  at: [74.44, 23.55]
+  year: 1700
+  expect: south-rajputana-states
+  url: https://en.wikipedia.org/wiki/Banswara
+  from: 남아시아 S3 반영 1 결과노트
+- name: 라주라(찬다 왕국 쪽)
+  at: [79.36, 19.78]
+  year: 1600
+  expect: chanda-kingdom
+  url: https://en.wikipedia.org/wiki/Rajura
+  from: 남아시아 S3 반영 1 결과노트
+- name: 비슈누푸르(미드나포르 밖)
+  at: [87.32, 23.07]
+  year: 1500
+  expect: bengal-sultanate
+  url: https://en.wikipedia.org/wiki/Bishnupur,_Bankura
+  from: 남아시아 S3 반영 1 결과노트
+- name: 자르그람(미드나포르 안)
+  at: [86.99, 22.45]
+  year: 1500
+  expect: gajapati-kingdom
+  url: https://en.wikipedia.org/wiki/Jhargram
+  from: 남아시아 S3 반영 1 결과노트
+- name: 주나가드(카티아와르 토후국들)
+  at: [70.46, 21.52]
+  year: 1740
+  expect: kathiawar-states
+  url: https://en.wikipedia.org/wiki/Junagadh
+  from: 남아시아 S3 반영 1 결과노트
+- name: 주나가드(무굴 구자라트)
+  at: [70.46, 21.52]
+  year: 1720
+  expect: mughal-empire
+  url: https://en.wikipedia.org/wiki/Junagadh
+  from: 남아시아 S3 반영 1 결과노트
