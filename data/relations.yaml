@@ -1076,3 +1076,122 @@
 - { type: vassal_of, subject: makran, object: kalat, from: 1947, to: 1947 } # 1948-03 따로 파키스탄 가입
 - { type: vassal_of, subject: las-bela, object: kalat, from: 1947, to: 1947 } # 1948-03 따로 파키스탄 가입
 - { type: successor_of, subject: sri-lanka, object: british-ceylon, from: 1948, to: null } # 1948-02-04 자치령 실론, 1972-05-22 스리랑카 공화국
+
+# ── 남아시아 S2 서 (2026-11-03): 1757~1946 파키스탄·카슈미르·펀자브·라지푸타나·구자라트 (토후국·보호국은 vassal_of 종주: 1857년까지 동인도 회사, 1858년부터 영국령 인도. 끝 해 포함) ──
+# 라지푸타나 주들의 1818년 앞 마라타 공납, 칼라트의 두라니 종주(1758년 뒤 다툼), 바하왈푸르의 두라니 명목 종주는 관계로 두지 않고 글로만
+- { type: vassal_of, subject: talpur-sindh, object: durrani-empire, from: 1757, to: 1825 } # 칼호라·탈푸르 왕조가 두라니에 공물을 바침
+- { type: vassal_of, subject: jammu-kashmir-state, object: sikh-empire, from: 1840, to: 1845 } # 굴랍 싱은 시크 제국 아래 잠무 라자(1822~)
+- { type: vassal_of, subject: jammu-kashmir-state, object: company-india, from: 1846, to: 1857 } # 1846-03-16 암리차르 조약
+- { type: vassal_of, subject: jammu-kashmir-state, object: british-raj, from: 1858, to: 1946 }
+- { type: vassal_of, subject: sikh-empire, object: company-india, from: 1846, to: 1848 } # 1846년 라호르 조약·바이로왈 조약 뒤 영국 주재관 아래 라호르 정부
+- { type: vassal_of, subject: chitral-kingdom, object: british-raj, from: 1891, to: 1946 } # 1891년 영국 종주(1877~1911년 잠무 카슈미르 종주는 글로만)
+- { type: vassal_of, subject: bahawalpur-state, object: company-india, from: 1833, to: 1857 } # 1833년 영국과 조약
+- { type: vassal_of, subject: bahawalpur-state, object: british-raj, from: 1858, to: 1946 }
+- { type: vassal_of, subject: khairpur-state, object: company-india, from: 1843, to: 1857 } # 1843년 신드 병합 뒤 토후국으로 남음
+- { type: vassal_of, subject: khairpur-state, object: british-raj, from: 1858, to: 1946 }
+- { type: vassal_of, subject: cutch-state, object: company-india, from: 1819, to: 1857 } # 1819년 영국 종주
+- { type: vassal_of, subject: cutch-state, object: british-raj, from: 1858, to: 1946 }
+- { type: vassal_of, subject: kathiawar-states, object: baroda-state, from: 1757, to: 1806 } # 가이크와드가 공물을 걷음(1807년 워커 협정 전)
+- { type: vassal_of, subject: kathiawar-states, object: company-india, from: 1807, to: 1857 } # 1807년 워커 협정
+- { type: vassal_of, subject: kathiawar-states, object: british-raj, from: 1858, to: 1946 }
+- { type: vassal_of, subject: baroda-state, object: maratha-peshwa, from: 1757, to: 1801 } # 가이크와드는 페슈와의 구자라트 총독에서 출발
+- { type: vassal_of, subject: baroda-state, object: company-india, from: 1802, to: 1857 } # 1802년 보조 조약
+- { type: vassal_of, subject: baroda-state, object: british-raj, from: 1858, to: 1946 }
+- { type: vassal_of, subject: punjab-states, object: company-india, from: 1809, to: 1857 } # 1809-04-25 암리차르 조약(시스틀레지 보호)
+- { type: vassal_of, subject: punjab-states, object: british-raj, from: 1858, to: 1946 }
+- { type: vassal_of, subject: punjab-hill-states, object: company-india, from: 1815, to: 1857 } # 1815년 구르카 전쟁 뒤 영국 보호
+- { type: vassal_of, subject: punjab-hill-states, object: british-raj, from: 1858, to: 1946 }
+- { type: vassal_of, subject: jodhpur-state, object: company-india, from: 1818, to: 1857 } # 1818-01-06 보호 조약
+- { type: vassal_of, subject: jodhpur-state, object: british-raj, from: 1858, to: 1946 }
+- { type: vassal_of, subject: bikaner-state, object: company-india, from: 1818, to: 1857 } # 1818-03-09 보호 조약
+- { type: vassal_of, subject: bikaner-state, object: british-raj, from: 1858, to: 1946 }
+- { type: vassal_of, subject: jaisalmer-state, object: company-india, from: 1818, to: 1857 } # 1818-12-12 보호 조약
+- { type: vassal_of, subject: jaisalmer-state, object: british-raj, from: 1858, to: 1946 }
+- { type: vassal_of, subject: jaipur-state, object: company-india, from: 1818, to: 1857 } # 1818-04-02 보호 조약
+- { type: vassal_of, subject: jaipur-state, object: british-raj, from: 1858, to: 1946 }
+- { type: vassal_of, subject: mewar-state, object: company-india, from: 1818, to: 1857 } # 1818-01-13 보호 조약
+- { type: vassal_of, subject: mewar-state, object: british-raj, from: 1858, to: 1946 }
+- { type: vassal_of, subject: kota-state, object: company-india, from: 1817, to: 1857 } # 1817-12-26 보호 조약
+- { type: vassal_of, subject: kota-state, object: british-raj, from: 1858, to: 1946 }
+- { type: vassal_of, subject: east-rajputana-states, object: company-india, from: 1818, to: 1857 } # 1803~1818년 알와르·바라트푸르·카라울리·돌푸르가 차례로 조약(1818년으로 묶음)
+- { type: vassal_of, subject: east-rajputana-states, object: british-raj, from: 1858, to: 1946 }
+- { type: vassal_of, subject: kalat, object: company-india, from: 1854, to: 1857 } # 1854년 첫 조약
+- { type: vassal_of, subject: kalat, object: british-raj, from: 1858, to: 1946 } # 1876-12-08 마스퉁 조약
+- { type: vassal_of, subject: kharan, object: kalat, from: 1757, to: 1946 } # 칼라트 칸이 속령으로 봄(1947년은 S1 줄)
+- { type: vassal_of, subject: makran, object: kalat, from: 1757, to: 1946 } # 나시르 칸 1세 때부터 세입의 절반을 칼라트에 바침
+- { type: vassal_of, subject: las-bela, object: kalat, from: 1757, to: 1946 } # 칼라트 칸의 속령
+- { type: vassal_of, subject: south-rajputana-states, object: company-india, from: 1818, to: 1857 } # 1818년 둥가르푸르·반스와라·프라타프가르 보호 조약(그 전 마라타 공납은 글로만)
+- { type: vassal_of, subject: south-rajputana-states, object: british-raj, from: 1858, to: 1946 }
+- { type: vassal_of, subject: palanpur-states, object: company-india, from: 1818, to: 1857 } # 1817년 팔란푸르 보호 조약
+- { type: vassal_of, subject: palanpur-states, object: british-raj, from: 1858, to: 1946 }
+- { type: vassal_of, subject: mahi-kantha-states, object: company-india, from: 1818, to: 1857 } # 1820년 무렵 마히칸타 에이전시
+- { type: vassal_of, subject: mahi-kantha-states, object: british-raj, from: 1858, to: 1946 }
+- { type: vassal_of, subject: rewa-kantha-states, object: company-india, from: 1818, to: 1857 } # 1820년대 레와칸타 에이전시
+- { type: vassal_of, subject: rewa-kantha-states, object: british-raj, from: 1858, to: 1946 }
+
+# ── 남아시아 S2 동 (2026-11-03): 1757~1946 동인도 회사·영국령 인도와 갠지스 평원·벵골·아삼·북동·오리사·차티스가르·히말라야 ──
+# 회사·영국령 인도는 vassal_of 본국(uk), 1858년에 회사 → 영국 왕실(successor_of). 1858년 전 회사의 보호를 받은 토후국은 1858년부터 vassal_of 영국령 인도로 한 줄 더
+# 1947년 인도·파키스탄이 영국령 인도를 잇는다(successor_of). 끝 해는 포함(그해 말 모습 기준)
+- { type: vassal_of, subject: company-india, object: uk, from: 1757, to: 1857 } # 동인도 회사는 영국 칙허 회사, 1773 규제법부터 의회 감독
+- { type: vassal_of, subject: british-raj, object: uk, from: 1858, to: 1946 } # 1858 인도 통치법, 인도 담당 장관
+- { type: successor_of, subject: british-raj, object: company-india, from: 1858, to: null } # 1858-11-01 왕실 통치
+- { type: successor_of, subject: india, object: british-raj, from: 1947, to: null } # 1947-08-15 인도 독립법
+- { type: successor_of, subject: pakistan, object: british-raj, from: 1947, to: null } # 1947-08-14 인도 독립법
+- { type: vassal_of, subject: bengal-nawabs, object: company-india, from: 1757, to: 1764 } # 플라시 뒤 회사가 미르 자파르·미르 카심을 세움(운영자 결정 1)
+- { type: vassal_of, subject: awadh, object: company-india, from: 1801, to: 1855 } # 1801 보조 조약, 1856-02-07 병합
+- { type: successor_of, subject: tehri-garhwal, object: garhwal-kingdom, from: 1815, to: null } # 수다르샨 샤가 옛 가르왈 왕가를 이음
+- { type: vassal_of, subject: tehri-garhwal, object: company-india, from: 1815, to: 1857 } # 수가울리 조약 뒤 회사가 라자로 인정
+- { type: vassal_of, subject: tehri-garhwal, object: british-raj, from: 1858, to: 1946 }
+- { type: vassal_of, subject: manipur, object: company-india, from: 1826, to: 1857 } # 1826 얀다보 조약 뒤 회사의 보호(1891 전쟁 뒤 토후국)
+- { type: vassal_of, subject: manipur, object: british-raj, from: 1858, to: 1946 }
+- { type: vassal_of, subject: tripura, object: british-raj, from: 1871, to: 1946 } # 1871 영국 정무관을 둠(일반 지식)
+- { type: vassal_of, subject: orissa-states, object: nagpur-kingdom, from: 1757, to: 1802 } # 나그푸르 본슬레에 공물
+- { type: vassal_of, subject: orissa-states, object: company-india, from: 1803, to: 1857 } # 1803 데오가온 조약 뒤 회사에 공물
+- { type: vassal_of, subject: orissa-states, object: british-raj, from: 1858, to: 1946 }
+- { type: vassal_of, subject: mayurbhanj-state, object: nagpur-kingdom, from: 1757, to: 1802 } # 1751 무렵부터 마라타에 공물
+- { type: vassal_of, subject: mayurbhanj-state, object: company-india, from: 1803, to: 1857 }
+- { type: vassal_of, subject: mayurbhanj-state, object: british-raj, from: 1858, to: 1946 }
+- { type: vassal_of, subject: bastar-state, object: nagpur-kingdom, from: 1779, to: 1817 } # 1779 무렵부터 본슬레에 공물
+- { type: vassal_of, subject: bastar-state, object: company-india, from: 1818, to: 1857 } # 제3차 영국-마라타 전쟁 뒤 보호
+- { type: vassal_of, subject: bastar-state, object: british-raj, from: 1858, to: 1946 }
+- { type: vassal_of, subject: surguja-state, object: nagpur-kingdom, from: 1790, to: 1817 }
+- { type: vassal_of, subject: surguja-state, object: company-india, from: 1818, to: 1857 }
+- { type: vassal_of, subject: surguja-state, object: british-raj, from: 1858, to: 1946 }
+- { type: vassal_of, subject: chhattisgarh-states, object: nagpur-kingdom, from: 1757, to: 1817 }
+- { type: vassal_of, subject: chhattisgarh-states, object: company-india, from: 1818, to: 1857 }
+- { type: vassal_of, subject: chhattisgarh-states, object: british-raj, from: 1858, to: 1946 }
+- { type: vassal_of, subject: sikkim, object: british-raj, from: 1861, to: 1946 } # 1861 툼롱 조약, 1890 영국·청 협약으로 보호국
+
+# ── 남아시아 S2 남 (2026-11-03): 1757~1946 데칸·중앙 인도·남인도·실론. 끝 해는 포함(그해 말 모습 기준), 1818년 전 마라타 장군 가문과 페슈와의 관계는 명목 종속 ──
+- { type: vassal_of, subject: gwalior-state, object: maratha-peshwa, from: 1757, to: 1817 } # 페슈와가 나눠 준 말와 몫(명목)
+- { type: vassal_of, subject: gwalior-state, object: company-india, from: 1818, to: 1857 } # 1817-11-05 괄리오르 조약
+- { type: vassal_of, subject: gwalior-state, object: british-raj, from: 1858, to: 1946 }
+- { type: vassal_of, subject: indore-state, object: maratha-peshwa, from: 1757, to: 1817 }
+- { type: vassal_of, subject: indore-state, object: company-india, from: 1818, to: 1857 } # 1818-01-06 만드소르 조약
+- { type: vassal_of, subject: indore-state, object: british-raj, from: 1858, to: 1946 }
+- { type: vassal_of, subject: nagpur-kingdom, object: maratha-peshwa, from: 1757, to: 1817 }
+- { type: vassal_of, subject: nagpur-kingdom, object: company-india, from: 1818, to: 1853 } # 1817 시타불디 뒤 영국 주재관 감독, 1853 병합
+- { type: vassal_of, subject: hyderabad-state, object: company-india, from: 1798, to: 1857 } # 1798-09-01 보조 동맹
+- { type: vassal_of, subject: hyderabad-state, object: british-raj, from: 1858, to: 1946 }
+- { type: vassal_of, subject: mysore, object: company-india, from: 1799, to: 1857 } # 1799 워디야르 복위·보조 조약
+- { type: vassal_of, subject: mysore, object: british-raj, from: 1858, to: 1946 }
+- { type: vassal_of, subject: travancore, object: company-india, from: 1795, to: 1857 } # 1795 보조 동맹, 1805 조약
+- { type: vassal_of, subject: travancore, object: british-raj, from: 1858, to: 1946 }
+- { type: vassal_of, subject: bhopal-state, object: maratha-peshwa, from: 1757, to: 1817 } # 1737 보팔 전투 뒤 조공
+- { type: vassal_of, subject: bhopal-state, object: company-india, from: 1818, to: 1857 } # 1818 보호 조약
+- { type: vassal_of, subject: bhopal-state, object: british-raj, from: 1858, to: 1946 }
+- { type: vassal_of, subject: rewa-state, object: company-india, from: 1812, to: 1857 } # 1812-10-05 보호 조약
+- { type: vassal_of, subject: rewa-state, object: british-raj, from: 1858, to: 1946 }
+- { type: vassal_of, subject: bundelkhand-states, object: maratha-peshwa, from: 1757, to: 1802 } # 차트라살 유산 3분의 1과 조공, 1802 바세인 조약으로 영국에 넘김
+- { type: vassal_of, subject: bundelkhand-states, object: company-india, from: 1803, to: 1857 } # 1802~1812 보호 조약들
+- { type: vassal_of, subject: bundelkhand-states, object: british-raj, from: 1858, to: 1946 }
+- { type: vassal_of, subject: malwa-states, object: company-india, from: 1818, to: 1857 }
+- { type: vassal_of, subject: malwa-states, object: british-raj, from: 1858, to: 1946 }
+- { type: vassal_of, subject: deccan-states, object: company-india, from: 1818, to: 1857 } # 1818년 사타라 왕 복위, 1819년 사타라 조약, 남부 마라타 토후국들의 조약
+- { type: vassal_of, subject: deccan-states, object: british-raj, from: 1858, to: 1946 }
+- { type: vassal_of, subject: dutch-ceylon, object: dutch-republic, from: 1757, to: 1794 } # 네덜란드 동인도 회사
+- { type: vassal_of, subject: dutch-ceylon, object: batavian-republic, from: 1795, to: 1795 } # 1795 바타비아 공화국, 1796-02 콜롬보 항복
+- { type: vassal_of, subject: british-ceylon, object: uk, from: 1796, to: 1946 } # 1798 왕실 직할, 1802 아미앵 조약으로 식민지
+- { type: vassal_of, subject: french-india, object: france, from: 1757, to: 1946 }
+- { type: vassal_of, subject: portuguese-india, object: portugal, from: 1757, to: 1946 }
+- { type: successor_of, subject: british-ceylon, object: dutch-ceylon, from: 1796, to: null } # 바닷가 지구를 이어 다스림

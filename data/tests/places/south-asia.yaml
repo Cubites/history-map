@@ -315,3 +315,2568 @@
   expect: india
   url: https://en.wikipedia.org/wiki/Ballarpur
   from: 남아시아 S1 재검토
+
+# ── 남아시아 S2 서 (2026-11-03): 1757~1946 파키스탄·카슈미르·펀자브·라지푸타나·구자라트. 새 항목마다 수도 1점, 큰 버전 해 앞뒤, 칼선마다 안/밖 기준 도시 ──
+- name: 라호르
+  at: [74.35, 31.55]
+  year: 1760
+  expect: durrani-empire
+  url: https://en.wikipedia.org/wiki/Durrani_Empire
+  from: 남아시아 S2 서 결과노트
+- name: 라호르
+  at: [74.35, 31.55]
+  year: 1830
+  expect: sikh-empire
+  url: https://en.wikipedia.org/wiki/Sikh_Empire
+  from: 남아시아 S2 서 결과노트
+- name: 스리나가르
+  at: [74.8, 34.08]
+  year: 1900
+  expect: jammu-kashmir-state
+  url: https://en.wikipedia.org/wiki/Jammu_and_Kashmir_(princely_state)
+  from: 남아시아 S2 서 결과노트
+- name: 레
+  at: [77.58, 34.16]
+  year: 1800
+  expect: ladakh-kingdom
+  url: https://en.wikipedia.org/wiki/Ladakh
+  from: 남아시아 S2 서 결과노트
+- name: 치트랄
+  at: [71.79, 35.85]
+  year: 1850
+  expect: chitral-kingdom
+  url: https://en.wikipedia.org/wiki/Chitral_(princely_state)
+  from: 남아시아 S2 서 결과노트
+- name: 바하왈푸르
+  at: [71.68, 29.4]
+  year: 1850
+  expect: bahawalpur-state
+  url: https://en.wikipedia.org/wiki/Bahawalpur_(princely_state)
+  from: 남아시아 S2 서 결과노트
+- name: 하이데라바드(신드)
+  at: [68.37, 25.4]
+  year: 1800
+  expect: talpur-sindh
+  url: https://en.wikipedia.org/wiki/Talpur_dynasty
+  from: 남아시아 S2 서 결과노트
+- name: 하이르푸르
+  at: [68.76, 27.53]
+  year: 1860
+  expect: khairpur-state
+  url: https://en.wikipedia.org/wiki/Khairpur_(princely_state)
+  from: 남아시아 S2 서 결과노트
+- name: 부즈
+  at: [69.67, 23.25]
+  year: 1850
+  expect: cutch-state
+  url: https://en.wikipedia.org/wiki/Cutch_State
+  from: 남아시아 S2 서 결과노트
+- name: 라지코트
+  at: [70.8, 22.3]
+  year: 1850
+  expect: kathiawar-states
+  url: https://en.wikipedia.org/wiki/Kathiawar_Agency
+  from: 남아시아 S2 서 결과노트
+- name: 바도다라
+  at: [73.18, 22.31]
+  year: 1850
+  expect: baroda-state
+  url: https://en.wikipedia.org/wiki/Baroda_State
+  from: 남아시아 S2 서 결과노트
+- name: 파티알라
+  at: [76.4, 30.33]
+  year: 1880
+  expect: punjab-states
+  url: https://en.wikipedia.org/wiki/Punjab_States_Agency
+  from: 남아시아 S2 서 결과노트
+- name: 심라
+  at: [77.17, 31.1]
+  year: 1880
+  expect: punjab-hill-states
+  url: https://en.wikipedia.org/wiki/Punjab_States_Agency
+  from: 남아시아 S2 서 결과노트
+- name: 조드푸르
+  at: [73.02, 26.24]
+  year: 1850
+  expect: jodhpur-state
+  url: https://en.wikipedia.org/wiki/Rajputana_Agency
+  from: 남아시아 S2 서 결과노트
+- name: 비카네르
+  at: [73.31, 28.02]
+  year: 1850
+  expect: bikaner-state
+  url: https://en.wikipedia.org/wiki/Rajputana_Agency
+  from: 남아시아 S2 서 결과노트
+- name: 자이살메르
+  at: [70.92, 26.92]
+  year: 1850
+  expect: jaisalmer-state
+  url: https://en.wikipedia.org/wiki/Rajputana_Agency
+  from: 남아시아 S2 서 결과노트
+- name: 자이푸르
+  at: [75.79, 26.91]
+  year: 1850
+  expect: jaipur-state
+  url: https://en.wikipedia.org/wiki/Rajputana_Agency
+  from: 남아시아 S2 서 결과노트
+- name: 우다이푸르
+  at: [73.71, 24.58]
+  year: 1850
+  expect: mewar-state
+  url: https://en.wikipedia.org/wiki/Rajputana_Agency
+  from: 남아시아 S2 서 결과노트
+- name: 코타
+  at: [75.84, 25.18]
+  year: 1850
+  expect: kota-state
+  url: https://en.wikipedia.org/wiki/Rajputana_Agency
+  from: 남아시아 S2 서 결과노트
+- name: 바라트푸르
+  at: [77.49, 27.22]
+  year: 1850
+  expect: east-rajputana-states
+  url: https://en.wikipedia.org/wiki/Rajputana_Agency
+  from: 남아시아 S2 서 결과노트
+- name: 칼라트
+  at: [66.59, 29.03]
+  year: 1850
+  expect: kalat
+  url: https://en.wikipedia.org/wiki/Khanate_of_Kalat
+  from: 남아시아 S2 서 결과노트
+- name: 카란
+  at: [65.42, 28.58]
+  year: 1850
+  expect: kharan
+  url: https://en.wikipedia.org/wiki/Kharan_(princely_state)
+  from: 남아시아 S2 서 결과노트
+- name: 투르바트(케치)
+  at: [63.05, 26.0]
+  year: 1850
+  expect: makran
+  url: https://en.wikipedia.org/wiki/Makran_(princely_state)
+  from: 남아시아 S2 서 결과노트
+- name: 벨라
+  at: [66.31, 26.23]
+  year: 1850
+  expect: las-bela
+  url: https://en.wikipedia.org/wiki/Las_Bela_(princely_state)
+  from: 남아시아 S2 서 결과노트
+- name: 라호르
+  at: [74.35, 31.55]
+  year: 1764
+  expect: durrani-empire
+  url: https://en.wikipedia.org/wiki/Sikh_Empire
+  from: 남아시아 S2 서 결과노트
+- name: 라호르
+  at: [74.35, 31.55]
+  year: 1765
+  expect: sikh-empire
+  url: https://en.wikipedia.org/wiki/Sikh_Empire
+  from: 남아시아 S2 서 결과노트
+- name: 라호르
+  at: [74.35, 31.55]
+  year: 1848
+  expect: sikh-empire
+  url: https://en.wikipedia.org/wiki/Second_Anglo-Sikh_War
+  from: 남아시아 S2 서 결과노트
+- name: 라호르
+  at: [74.35, 31.55]
+  year: 1849
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Second_Anglo-Sikh_War
+  from: 남아시아 S2 서 결과노트
+- name: 라호르
+  at: [74.35, 31.55]
+  year: 1858
+  expect: british-raj
+  url: https://en.wikipedia.org/wiki/Government_of_India_Act_1858
+  from: 남아시아 S2 서 결과노트
+- name: 하이르푸르
+  at: [68.76, 27.53]
+  year: 1782
+  expect: talpur-sindh
+  url: https://en.wikipedia.org/wiki/Talpur_dynasty
+  from: 남아시아 S2 서 결과노트
+- name: 하이르푸르
+  at: [68.76, 27.53]
+  year: 1783
+  expect: khairpur-state
+  url: https://en.wikipedia.org/wiki/Talpur_dynasty
+  from: 남아시아 S2 서 결과노트
+- name: 델리
+  at: [77.21, 28.65]
+  year: 1787
+  expect: none
+  region: south-asia
+  url: https://en.wikipedia.org/wiki/Mahadaji_Shinde
+  from: 남아시아 S2 서 결과노트
+- name: 델리
+  at: [77.21, 28.65]
+  year: 1790
+  expect: gwalior-state
+  url: https://en.wikipedia.org/wiki/Mahadaji_Shinde
+  from: 남아시아 S2 서 결과노트
+- name: 델리
+  at: [77.21, 28.65]
+  year: 1803
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Battle_of_Delhi_(1803)
+  from: 남아시아 S2 서 결과노트
+- name: 루디아나
+  at: [75.85, 30.9]
+  year: 1808
+  expect: sikh-empire
+  url: https://en.wikipedia.org/wiki/Treaty_of_Amritsar_(1809)
+  from: 남아시아 S2 서 결과노트
+- name: 루디아나
+  at: [75.85, 30.9]
+  year: 1809
+  expect: punjab-states
+  url: https://en.wikipedia.org/wiki/Treaty_of_Amritsar_(1809)
+  from: 남아시아 S2 서 결과노트
+- name: 루디아나
+  at: [75.85, 30.9]
+  year: 1846
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/First_Anglo-Sikh_War
+  from: 남아시아 S2 서 결과노트
+- name: 심라
+  at: [77.17, 31.1]
+  year: 1802
+  expect: punjab-hill-states
+  url: https://en.wikipedia.org/wiki/Anglo-Nepalese_War
+  from: 남아시아 S2 서 결과노트
+- name: 심라
+  at: [77.17, 31.1]
+  year: 1805
+  expect: nepal
+  url: https://en.wikipedia.org/wiki/Anglo-Nepalese_War
+  from: 남아시아 S2 서 결과노트
+- name: 심라
+  at: [77.17, 31.1]
+  year: 1815
+  expect: punjab-hill-states
+  url: https://en.wikipedia.org/wiki/Anglo-Nepalese_War
+  from: 남아시아 S2 서 결과노트
+- name: 물탄
+  at: [71.47, 30.2]
+  year: 1817
+  expect: durrani-empire
+  url: https://en.wikipedia.org/wiki/Siege_of_Multan_(1818)
+  from: 남아시아 S2 서 결과노트
+- name: 물탄
+  at: [71.47, 30.2]
+  year: 1818
+  expect: sikh-empire
+  url: https://en.wikipedia.org/wiki/Siege_of_Multan_(1818)
+  from: 남아시아 S2 서 결과노트
+- name: 아마다바드
+  at: [72.57, 23.03]
+  year: 1817
+  expect: baroda-state
+  url: https://en.wikipedia.org/wiki/Baroda_State
+  from: 남아시아 S2 서 결과노트
+- name: 아마다바드
+  at: [72.57, 23.03]
+  year: 1818
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Baroda_State
+  from: 남아시아 S2 서 결과노트
+- name: 아지메르
+  at: [74.64, 26.45]
+  year: 1817
+  expect: none
+  region: south-asia
+  url: https://en.wikipedia.org/wiki/Ajmer-Merwara
+  from: 남아시아 S2 서 결과노트
+- name: 아지메르
+  at: [74.64, 26.45]
+  year: 1818
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Ajmer-Merwara
+  from: 남아시아 S2 서 결과노트
+- name: 스리나가르
+  at: [74.8, 34.08]
+  year: 1818
+  expect: durrani-empire
+  url: https://en.wikipedia.org/wiki/Battle_of_Shopian
+  from: 남아시아 S2 서 결과노트
+- name: 스리나가르
+  at: [74.8, 34.08]
+  year: 1819
+  expect: sikh-empire
+  url: https://en.wikipedia.org/wiki/Battle_of_Shopian
+  from: 남아시아 S2 서 결과노트
+- name: 스리나가르
+  at: [74.8, 34.08]
+  year: 1846
+  expect: jammu-kashmir-state
+  url: https://en.wikipedia.org/wiki/Treaty_of_Amritsar_(1846)
+  from: 남아시아 S2 서 결과노트
+- name: 아보타바드
+  at: [73.22, 34.15]
+  year: 1821
+  expect: durrani-empire
+  url: https://en.wikipedia.org/wiki/Hazara_region
+  from: 남아시아 S2 서 결과노트
+- name: 아보타바드
+  at: [73.22, 34.15]
+  year: 1822
+  expect: sikh-empire
+  url: https://en.wikipedia.org/wiki/Hazara_region
+  from: 남아시아 S2 서 결과노트
+- name: 페샤와르
+  at: [71.57, 34.01]
+  year: 1822
+  expect: durrani-empire
+  url: https://en.wikipedia.org/wiki/Sikh_Empire
+  from: 남아시아 S2 서 결과노트
+- name: 페샤와르
+  at: [71.57, 34.01]
+  year: 1823
+  expect: none
+  region: south-asia
+  url: https://en.wikipedia.org/wiki/Battle_of_Nowshera
+  from: 남아시아 S2 서 결과노트
+- name: 페샤와르
+  at: [71.57, 34.01]
+  year: 1834
+  expect: sikh-empire
+  url: https://en.wikipedia.org/wiki/Sikh_Empire
+  from: 남아시아 S2 서 결과노트
+- name: 퀘타
+  at: [67.0, 30.18]
+  year: 1825
+  expect: durrani-empire
+  url: https://en.wikipedia.org/wiki/British_Baluchistan
+  from: 남아시아 S2 서 결과노트
+- name: 퀘타
+  at: [67.0, 30.18]
+  year: 1826
+  expect: none
+  region: south-asia
+  url: https://en.wikipedia.org/wiki/British_Baluchistan
+  from: 남아시아 S2 서 결과노트
+- name: 퀘타
+  at: [67.0, 30.18]
+  year: 1887
+  expect: british-raj
+  url: https://en.wikipedia.org/wiki/British_Baluchistan
+  from: 남아시아 S2 서 결과노트
+- name: 레
+  at: [77.58, 34.16]
+  year: 1839
+  expect: ladakh-kingdom
+  url: https://en.wikipedia.org/wiki/Zorawar_Singh_Kahluria
+  from: 남아시아 S2 서 결과노트
+- name: 레
+  at: [77.58, 34.16]
+  year: 1840
+  expect: jammu-kashmir-state
+  url: https://en.wikipedia.org/wiki/Zorawar_Singh_Kahluria
+  from: 남아시아 S2 서 결과노트
+- name: 잠무
+  at: [74.86, 32.73]
+  year: 1839
+  expect: sikh-empire
+  url: https://en.wikipedia.org/wiki/Gulab_Singh
+  from: 남아시아 S2 서 결과노트
+- name: 잠무
+  at: [74.86, 32.73]
+  year: 1840
+  expect: jammu-kashmir-state
+  url: https://en.wikipedia.org/wiki/Gulab_Singh
+  from: 남아시아 S2 서 결과노트
+- name: 하이데라바드(신드)
+  at: [68.37, 25.4]
+  year: 1842
+  expect: talpur-sindh
+  url: https://en.wikipedia.org/wiki/Battle_of_Miani
+  from: 남아시아 S2 서 결과노트
+- name: 하이데라바드(신드)
+  at: [68.37, 25.4]
+  year: 1843
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Battle_of_Miani
+  from: 남아시아 S2 서 결과노트
+- name: 잘란다르
+  at: [75.58, 31.33]
+  year: 1845
+  expect: sikh-empire
+  url: https://en.wikipedia.org/wiki/Treaty_of_Lahore
+  from: 남아시아 S2 서 결과노트
+- name: 잘란다르
+  at: [75.58, 31.33]
+  year: 1846
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Treaty_of_Lahore
+  from: 남아시아 S2 서 결과노트
+- name: 길기트
+  at: [74.31, 35.92]
+  year: 1859
+  expect: none
+  region: south-asia
+  url: https://en.wikipedia.org/wiki/Gilgit_Agency
+  from: 남아시아 S2 서 결과노트
+- name: 길기트
+  at: [74.31, 35.92]
+  year: 1860
+  expect: jammu-kashmir-state
+  url: https://en.wikipedia.org/wiki/Gilgit_Agency
+  from: 남아시아 S2 서 결과노트
+- name: 미란샤
+  at: [70.07, 33.0]
+  year: 1893
+  expect: british-raj
+  url: https://en.wikipedia.org/wiki/Durand_Line
+  from: 남아시아 S2 서 결과노트
+- name: 밍고라
+  at: [72.36, 34.78]
+  year: 1894
+  expect: none
+  region: south-asia
+  url: https://en.wikipedia.org/wiki/Malakand_Agency
+  from: 남아시아 S2 서 결과노트
+- name: 밍고라
+  at: [72.36, 34.78]
+  year: 1895
+  expect: british-raj
+  url: https://en.wikipedia.org/wiki/Malakand_Agency
+  from: 남아시아 S2 서 결과노트
+- name: 람가르(자이살메르)
+  at: [70.6, 27.3]
+  year: 1850
+  expect: jaisalmer-state
+  url: https://en.wikipedia.org/wiki/Rajputana_Agency
+  from: 남아시아 S2 서 결과노트
+- name: 포카란
+  at: [71.92, 26.92]
+  year: 1850
+  expect: jodhpur-state
+  url: https://en.wikipedia.org/wiki/Rajputana_Agency
+  from: 남아시아 S2 서 결과노트
+- name: 수잔가르
+  at: [74.47, 27.7]
+  year: 1850
+  expect: bikaner-state
+  url: https://en.wikipedia.org/wiki/Rajputana_Agency
+  from: 남아시아 S2 서 결과노트
+- name: 라드누
+  at: [74.39, 27.65]
+  year: 1850
+  expect: jodhpur-state
+  url: https://en.wikipedia.org/wiki/Rajputana_Agency
+  from: 남아시아 S2 서 결과노트
+- name: 파테푸르(셰카와티)
+  at: [74.95, 27.99]
+  year: 1850
+  expect: jaipur-state
+  url: https://en.wikipedia.org/wiki/Rajputana_Agency
+  from: 남아시아 S2 서 결과노트
+- name: 사둘푸르
+  at: [75.38, 28.63]
+  year: 1850
+  expect: bikaner-state
+  url: https://en.wikipedia.org/wiki/Rajputana_Agency
+  from: 남아시아 S2 서 결과노트
+- name: 디드와나
+  at: [74.57, 27.4]
+  year: 1850
+  expect: jodhpur-state
+  url: https://en.wikipedia.org/wiki/Rajputana_Agency
+  from: 남아시아 S2 서 결과노트
+- name: 로살
+  at: [74.92, 27.4]
+  year: 1850
+  expect: jaipur-state
+  url: https://en.wikipedia.org/wiki/Rajputana_Agency
+  from: 남아시아 S2 서 결과노트
+- name: 키샨가르
+  at: [74.86, 26.59]
+  year: 1850
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Rajputana_Agency
+  from: 남아시아 S2 서 결과노트
+- name: 푸시카르
+  at: [74.55, 26.49]
+  year: 1850
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Rajputana_Agency
+  from: 남아시아 S2 서 결과노트
+- name: 베아와르
+  at: [74.32, 26.1]
+  year: 1850
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Rajputana_Agency
+  from: 남아시아 S2 서 결과노트
+- name: 라이푸르(팔리)
+  at: [74.02, 26.05]
+  year: 1850
+  expect: jodhpur-state
+  url: https://en.wikipedia.org/wiki/Rajputana_Agency
+  from: 남아시아 S2 서 결과노트
+- name: 사드리
+  at: [73.45, 25.18]
+  year: 1850
+  expect: jodhpur-state
+  url: https://en.wikipedia.org/wiki/Rajputana_Agency
+  from: 남아시아 S2 서 결과노트
+- name: 쿰발가르
+  at: [73.58, 25.15]
+  year: 1850
+  expect: mewar-state
+  url: https://en.wikipedia.org/wiki/Rajputana_Agency
+  from: 남아시아 S2 서 결과노트
+- name: 핀드와라
+  at: [73.06, 24.8]
+  year: 1850
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Rajputana_Agency
+  from: 남아시아 S2 서 결과노트
+- name: 데오가르
+  at: [73.9, 25.53]
+  year: 1850
+  expect: mewar-state
+  url: https://en.wikipedia.org/wiki/Rajputana_Agency
+  from: 남아시아 S2 서 결과노트
+- name: 빔
+  at: [74.07, 25.72]
+  year: 1850
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Rajputana_Agency
+  from: 남아시아 S2 서 결과노트
+- name: 자하즈푸르
+  at: [75.28, 25.62]
+  year: 1850
+  expect: mewar-state
+  url: https://en.wikipedia.org/wiki/Rajputana_Agency
+  from: 남아시아 S2 서 결과노트
+- name: 분디
+  at: [75.64, 25.44]
+  year: 1850
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Rajputana_Agency
+  from: 남아시아 S2 서 결과노트
+- name: 라와트바타
+  at: [75.58, 24.93]
+  year: 1850
+  expect: mewar-state
+  url: https://en.wikipedia.org/wiki/Rajputana_Agency
+  from: 남아시아 S2 서 결과노트
+- name: 둥가르푸르
+  at: [73.72, 23.84]
+  year: 1850
+  expect: south-rajputana-states
+  url: https://en.wikipedia.org/wiki/Rajputana_Agency
+  from: 남아시아 S2 서 결과노트
+- name: 프라타프가르
+  at: [74.78, 24.03]
+  year: 1850
+  expect: south-rajputana-states
+  url: https://en.wikipedia.org/wiki/Rajputana_Agency
+  from: 남아시아 S2 서 결과노트
+- name: 통크
+  at: [75.79, 26.17]
+  year: 1850
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Rajputana_Agency
+  from: 남아시아 S2 서 결과노트
+- name: 니와이
+  at: [75.92, 26.36]
+  year: 1850
+  expect: jaipur-state
+  url: https://en.wikipedia.org/wiki/Rajputana_Agency
+  from: 남아시아 S2 서 결과노트
+- name: 사와이마도푸르
+  at: [76.35, 26.0]
+  year: 1850
+  expect: jaipur-state
+  url: https://en.wikipedia.org/wiki/Rajputana_Agency
+  from: 남아시아 S2 서 결과노트
+- name: 힌다운
+  at: [77.03, 26.73]
+  year: 1850
+  expect: jaipur-state
+  url: https://en.wikipedia.org/wiki/Rajputana_Agency
+  from: 남아시아 S2 서 결과노트
+- name: 카라울리
+  at: [77.02, 26.5]
+  year: 1850
+  expect: east-rajputana-states
+  url: https://en.wikipedia.org/wiki/Rajputana_Agency
+  from: 남아시아 S2 서 결과노트
+- name: 니므라나
+  at: [76.39, 27.98]
+  year: 1850
+  expect: east-rajputana-states
+  url: https://en.wikipedia.org/wiki/Rajputana_Agency
+  from: 남아시아 S2 서 결과노트
+- name: 코트푸틀리
+  at: [76.2, 27.7]
+  year: 1850
+  expect: jaipur-state
+  url: https://en.wikipedia.org/wiki/Rajputana_Agency
+  from: 남아시아 S2 서 결과노트
+- name: 케쇼라이파탄
+  at: [75.94, 25.29]
+  year: 1850
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Rajputana_Agency
+  from: 남아시아 S2 서 결과노트
+- name: 람간지만디
+  at: [75.95, 24.65]
+  year: 1850
+  expect: kota-state
+  url: https://en.wikipedia.org/wiki/Rajputana_Agency
+  from: 남아시아 S2 서 결과노트
+- name: 잘라와르
+  at: [76.16, 24.6]
+  year: 1850
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Rajputana_Agency
+  from: 남아시아 S2 서 결과노트
+- name: 바란
+  at: [76.52, 25.1]
+  year: 1850
+  expect: kota-state
+  url: https://en.wikipedia.org/wiki/Rajputana_Agency
+  from: 남아시아 S2 서 결과노트
+- name: 라파르
+  at: [70.65, 23.57]
+  year: 1850
+  expect: cutch-state
+  url: https://en.wikipedia.org/wiki/Cutch_State
+  from: 남아시아 S2 서 결과노트
+- name: 마리야
+  at: [70.88, 23.08]
+  year: 1850
+  expect: kathiawar-states
+  url: https://en.wikipedia.org/wiki/Kathiawar_Agency
+  from: 남아시아 S2 서 결과노트
+- name: 림브디
+  at: [71.8, 22.57]
+  year: 1850
+  expect: kathiawar-states
+  url: https://en.wikipedia.org/wiki/Kathiawar_Agency
+  from: 남아시아 S2 서 결과노트
+- name: 단두카
+  at: [71.98, 22.38]
+  year: 1850
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Kathiawar_Agency
+  from: 남아시아 S2 서 결과노트
+- name: 비람감
+  at: [72.04, 23.12]
+  year: 1850
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Kathiawar_Agency
+  from: 남아시아 S2 서 결과노트
+- name: 메사나
+  at: [72.37, 23.6]
+  year: 1850
+  expect: baroda-state
+  url: https://en.wikipedia.org/wiki/Baroda_State
+  from: 남아시아 S2 서 결과노트
+- name: 팔란푸르
+  at: [72.43, 24.17]
+  year: 1850
+  expect: palanpur-states
+  url: https://en.wikipedia.org/wiki/Baroda_State
+  from: 남아시아 S2 서 결과노트
+- name: 다보이
+  at: [73.4, 22.13]
+  year: 1850
+  expect: baroda-state
+  url: https://en.wikipedia.org/wiki/Baroda_State
+  from: 남아시아 S2 서 결과노트
+- name: 아난드
+  at: [72.93, 22.56]
+  year: 1850
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Baroda_State
+  from: 남아시아 S2 서 결과노트
+- name: 카푸르탈라
+  at: [75.38, 31.38]
+  year: 1847
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Jullundur_Doab
+  from: 남아시아 S2 서 결과노트
+- name: 무케리안
+  at: [75.62, 31.95]
+  year: 1847
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Jullundur_Doab
+  from: 남아시아 S2 서 결과노트
+- name: 베아스 읍
+  at: [75.29, 31.52]
+  year: 1847
+  expect: sikh-empire
+  url: https://en.wikipedia.org/wiki/Jullundur_Doab
+  from: 남아시아 S2 서 결과노트
+- name: 구르다스푸르
+  at: [75.4, 32.04]
+  year: 1847
+  expect: sikh-empire
+  url: https://en.wikipedia.org/wiki/Jullundur_Doab
+  from: 남아시아 S2 서 결과노트
+- name: 필라우르
+  at: [75.78, 31.02]
+  year: 1830
+  expect: sikh-empire
+  url: https://en.wikipedia.org/wiki/Sutlej
+  from: 남아시아 S2 서 결과노트
+- name: 페로제푸르
+  at: [74.6, 30.93]
+  year: 1830
+  expect: punjab-states
+  url: https://en.wikipedia.org/wiki/Cis-Sutlej_states
+  from: 남아시아 S2 서 결과노트
+- name: 아난드푸르
+  at: [76.5, 31.24]
+  year: 1830
+  expect: punjab-states
+  url: https://en.wikipedia.org/wiki/Cis-Sutlej_states
+  from: 남아시아 S2 서 결과노트
+- name: 시르힌드
+  at: [76.38, 30.64]
+  year: 1850
+  expect: punjab-states
+  url: https://en.wikipedia.org/wiki/Patiala_State
+  from: 남아시아 S2 서 결과노트
+- name: 사둘가르
+  at: [75.24, 29.69]
+  year: 1850
+  expect: punjab-states
+  url: https://en.wikipedia.org/wiki/Patiala_State
+  from: 남아시아 S2 서 결과노트
+- name: 나르와나
+  at: [76.12, 29.6]
+  year: 1850
+  expect: punjab-states
+  url: https://en.wikipedia.org/wiki/Jind_State
+  from: 남아시아 S2 서 결과노트
+- name: 라이코트
+  at: [75.6, 30.65]
+  year: 1850
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Punjab_States_Agency
+  from: 남아시아 S2 서 결과노트
+- name: 카이탈
+  at: [76.4, 29.8]
+  year: 1850
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Punjab_States_Agency
+  from: 남아시아 S2 서 결과노트
+- name: 토하나
+  at: [75.9, 29.7]
+  year: 1850
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Punjab_States_Agency
+  from: 남아시아 S2 서 결과노트
+- name: 무크트사르
+  at: [74.52, 30.47]
+  year: 1850
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Punjab_States_Agency
+  from: 남아시아 S2 서 결과노트
+- name: 하미르푸르
+  at: [76.52, 31.69]
+  year: 1830
+  expect: sikh-empire
+  url: https://en.wikipedia.org/wiki/Kangra_district
+  from: 남아시아 S2 서 결과노트
+- name: 쿨루
+  at: [77.11, 31.96]
+  year: 1830
+  expect: punjab-hill-states
+  url: https://en.wikipedia.org/wiki/Kullu_district
+  from: 남아시아 S2 서 결과노트
+- name: 쿨루
+  at: [77.11, 31.96]
+  year: 1840
+  expect: sikh-empire
+  url: https://en.wikipedia.org/wiki/Kullu_district
+  from: 남아시아 S2 서 결과노트
+- name: 우나
+  at: [76.27, 31.47]
+  year: 1830
+  expect: sikh-empire
+  url: https://en.wikipedia.org/wiki/Kangra_district
+  from: 남아시아 S2 서 결과노트
+- name: 만디
+  at: [76.93, 31.71]
+  year: 1830
+  expect: punjab-hill-states
+  url: https://en.wikipedia.org/wiki/Mandi_State
+  from: 남아시아 S2 서 결과노트
+- name: 조긴데르나가르
+  at: [76.77, 31.99]
+  year: 1830
+  expect: punjab-hill-states
+  url: https://en.wikipedia.org/wiki/Mandi_State
+  from: 남아시아 S2 서 결과노트
+- name: 참바
+  at: [76.13, 32.55]
+  year: 1830
+  expect: punjab-hill-states
+  url: https://en.wikipedia.org/wiki/Chamba_State
+  from: 남아시아 S2 서 결과노트
+- name: 비라스푸르
+  at: [76.76, 31.33]
+  year: 1810
+  expect: punjab-hill-states
+  url: https://en.wikipedia.org/wiki/Bilaspur_State_(India)
+  from: 남아시아 S2 서 결과노트
+- name: 람푸르(바샤르)
+  at: [77.63, 31.45]
+  year: 1810
+  expect: nepal
+  url: https://en.wikipedia.org/wiki/Bushahr_State
+  from: 남아시아 S2 서 결과노트
+- name: 나한
+  at: [77.3, 30.56]
+  year: 1810
+  expect: nepal
+  url: https://en.wikipedia.org/wiki/Sirmur_State
+  from: 남아시아 S2 서 결과노트
+- name: 아니
+  at: [77.43, 31.48]
+  year: 1810
+  expect: punjab-hill-states
+  url: https://en.wikipedia.org/wiki/Kangra_district
+  from: 남아시아 S2 서 결과노트
+- name: 아난트나그
+  at: [75.15, 33.73]
+  year: 1830
+  expect: sikh-empire
+  url: https://en.wikipedia.org/wiki/Kashmir_Valley
+  from: 남아시아 S2 서 결과노트
+- name: 우리
+  at: [74.05, 34.08]
+  year: 1843
+  expect: sikh-empire
+  url: https://en.wikipedia.org/wiki/Kashmir_Valley
+  from: 남아시아 S2 서 결과노트
+- name: 바니할
+  at: [75.2, 33.43]
+  year: 1843
+  expect: jammu-kashmir-state
+  url: https://en.wikipedia.org/wiki/Kashmir_Valley
+  from: 남아시아 S2 서 결과노트
+- name: 키슈트와르
+  at: [75.77, 33.31]
+  year: 1843
+  expect: jammu-kashmir-state
+  url: https://en.wikipedia.org/wiki/Kashmir_Valley
+  from: 남아시아 S2 서 결과노트
+- name: 스카르두
+  at: [75.57, 35.3]
+  year: 1850
+  expect: jammu-kashmir-state
+  url: https://en.wikipedia.org/wiki/Baltistan
+  from: 남아시아 S2 서 결과노트
+- name: 아스토르
+  at: [74.86, 35.37]
+  year: 1850
+  expect: jammu-kashmir-state
+  url: https://en.wikipedia.org/wiki/Baltistan
+  from: 남아시아 S2 서 결과노트
+- name: 칠라스
+  at: [74.1, 35.42]
+  year: 1850
+  expect: none
+  region: south-asia
+  url: https://en.wikipedia.org/wiki/Gilgit_Agency
+  from: 남아시아 S2 서 결과노트
+- name: 카리마바드
+  at: [74.66, 36.32]
+  year: 1850
+  expect: none
+  region: south-asia
+  url: https://en.wikipedia.org/wiki/Gilgit_Agency
+  from: 남아시아 S2 서 결과노트
+- name: 드로시
+  at: [71.78, 35.57]
+  year: 1850
+  expect: chitral-kingdom
+  url: https://en.wikipedia.org/wiki/Chitral_(princely_state)
+  from: 남아시아 S2 서 결과노트
+- name: 디르
+  at: [71.87, 35.21]
+  year: 1850
+  expect: none
+  region: south-asia
+  url: https://en.wikipedia.org/wiki/Dir_(princely_state)
+  from: 남아시아 S2 서 결과노트
+- name: 쿰라트
+  at: [72.22, 35.53]
+  year: 1850
+  expect: none
+  region: south-asia
+  url: https://en.wikipedia.org/wiki/Dir_(princely_state)
+  from: 남아시아 S2 서 결과노트
+- name: 다르가이
+  at: [71.88, 34.5]
+  year: 1850
+  expect: none
+  region: south-asia
+  url: https://en.wikipedia.org/wiki/Malakand_Agency
+  from: 남아시아 S2 서 결과노트
+- name: 베샴
+  at: [72.88, 34.93]
+  year: 1850
+  expect: none
+  region: south-asia
+  url: https://en.wikipedia.org/wiki/Malakand_Agency
+  from: 남아시아 S2 서 결과노트
+- name: 탁티바히
+  at: [71.93, 34.29]
+  year: 1850
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Malakand_Agency
+  from: 남아시아 S2 서 결과노트
+- name: 바타그람
+  at: [73.02, 34.68]
+  year: 1850
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Hazara_region
+  from: 남아시아 S2 서 결과노트
+- name: 나란
+  at: [73.65, 34.91]
+  year: 1850
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Hazara_region
+  from: 남아시아 S2 서 결과노트
+- name: 하리푸르
+  at: [72.93, 33.99]
+  year: 1830
+  expect: sikh-empire
+  url: https://en.wikipedia.org/wiki/Haripur
+  from: 남아시아 S2 서 결과노트
+- name: 토피
+  at: [72.62, 34.07]
+  year: 1830
+  expect: none
+  region: south-asia
+  url: https://en.wikipedia.org/wiki/Swabi_District
+  from: 남아시아 S2 서 결과노트
+- name: 미안찬누
+  at: [72.35, 30.44]
+  year: 1810
+  expect: durrani-empire
+  url: https://en.wikipedia.org/wiki/Multan_Subah
+  from: 남아시아 S2 서 결과노트
+- name: 베하리
+  at: [72.35, 30.04]
+  year: 1810
+  expect: durrani-empire
+  url: https://en.wikipedia.org/wiki/Multan_Subah
+  from: 남아시아 S2 서 결과노트
+- name: 미안왈리
+  at: [71.55, 32.58]
+  year: 1810
+  expect: durrani-empire
+  url: https://en.wikipedia.org/wiki/Multan_Subah
+  from: 남아시아 S2 서 결과노트
+- name: 장
+  at: [72.32, 31.27]
+  year: 1810
+  expect: sikh-empire
+  url: https://en.wikipedia.org/wiki/Jhang_District
+  from: 남아시아 S2 서 결과노트
+- name: 치차와트니
+  at: [72.69, 30.53]
+  year: 1810
+  expect: sikh-empire
+  url: https://en.wikipedia.org/wiki/Sahiwal_District
+  from: 남아시아 S2 서 결과노트
+- name: 쿠샤브
+  at: [72.35, 32.3]
+  year: 1810
+  expect: sikh-empire
+  url: https://en.wikipedia.org/wiki/Khushab_District
+  from: 남아시아 S2 서 결과노트
+- name: 바하왈나가르
+  at: [73.25, 29.99]
+  year: 1810
+  expect: bahawalpur-state
+  url: https://en.wikipedia.org/wiki/Bahawalpur_(princely_state)
+  from: 남아시아 S2 서 결과노트
+- name: 라잔푸르
+  at: [70.33, 29.1]
+  year: 1810
+  expect: durrani-empire
+  url: https://en.wikipedia.org/wiki/Bahawalpur_(princely_state)
+  from: 남아시아 S2 서 결과노트
+- name: 수쿠르
+  at: [68.86, 27.7]
+  year: 1860
+  expect: british-raj
+  url: https://en.wikipedia.org/wiki/Khairpur_(princely_state)
+  from: 남아시아 S2 서 결과노트
+- name: 감바트
+  at: [68.52, 27.35]
+  year: 1860
+  expect: khairpur-state
+  url: https://en.wikipedia.org/wiki/Khairpur_(princely_state)
+  from: 남아시아 S2 서 결과노트
+- name: 라르카나
+  at: [68.21, 27.56]
+  year: 1860
+  expect: british-raj
+  url: https://en.wikipedia.org/wiki/Khairpur_(princely_state)
+  from: 남아시아 S2 서 결과노트
+- name: 팔람푸르
+  at: [76.54, 32.11]
+  year: 1830
+  expect: sikh-empire
+  url: https://en.wikipedia.org/wiki/Kangra_district
+  from: 남아시아 S2 서 결과노트
+
+# ── 남아시아 S2 동 (2026-11-03): 1757~1946 새 항목 수도, 큰 버전 해 앞뒤, 칼선 안/밖 기준 도시(동 칸 땅만) ──
+- name: 콜카타
+  at: [88.36, 22.57]
+  year: 1810
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Company_rule_in_India
+  from: 남아시아 S2 동 결과노트
+- name: 콜카타
+  at: [88.36, 22.57]
+  year: 1900
+  expect: british-raj
+  url: https://en.wikipedia.org/wiki/British_Raj
+  from: 남아시아 S2 동 결과노트
+- name: 무르시다바드
+  at: [88.27, 24.18]
+  year: 1760
+  expect: bengal-nawabs
+  url: https://en.wikipedia.org/wiki/Nawabs_of_Bengal
+  from: 남아시아 S2 동 결과노트
+- name: 러크나우
+  at: [80.95, 26.85]
+  year: 1830
+  expect: awadh
+  url: https://en.wikipedia.org/wiki/Oudh_State
+  from: 남아시아 S2 동 결과노트
+- name: 바레일리
+  at: [79.43, 28.37]
+  year: 1765
+  expect: rohilkhand
+  url: https://en.wikipedia.org/wiki/Rohilkhand
+  from: 남아시아 S2 동 결과노트
+- name: 알모라
+  at: [79.66, 29.6]
+  year: 1770
+  expect: kumaon-kingdom
+  url: https://en.wikipedia.org/wiki/Kumaon_Kingdom
+  from: 남아시아 S2 동 결과노트
+- name: 스리나가르(가르왈)
+  at: [78.78, 30.22]
+  year: 1780
+  expect: garhwal-kingdom
+  url: https://en.wikipedia.org/wiki/Garhwal_Kingdom
+  from: 남아시아 S2 동 결과노트
+- name: 테흐리
+  at: [78.43, 30.38]
+  year: 1880
+  expect: tehri-garhwal
+  url: https://en.wikipedia.org/wiki/Garhwal_Kingdom
+  from: 남아시아 S2 동 결과노트
+- name: 조르하트
+  at: [94.22, 26.75]
+  year: 1800
+  expect: ahom-kingdom
+  url: https://en.wikipedia.org/wiki/Ahom_kingdom
+  from: 남아시아 S2 동 결과노트
+- name: 임팔
+  at: [93.95, 24.82]
+  year: 1850
+  expect: manipur
+  url: https://en.wikipedia.org/wiki/Manipur_Kingdom
+  from: 남아시아 S2 동 결과노트
+- name: 아가르탈라
+  at: [91.28, 23.83]
+  year: 1850
+  expect: tripura
+  url: https://en.wikipedia.org/wiki/Twipra_Kingdom
+  from: 남아시아 S2 동 결과노트
+- name: 덴카날
+  at: [85.6, 20.66]
+  year: 1850
+  expect: orissa-states
+  url: https://en.wikipedia.org/wiki/Orissa_Tributary_States
+  from: 남아시아 S2 동 결과노트
+- name: 바리파다
+  at: [86.72, 21.93]
+  year: 1850
+  expect: mayurbhanj-state
+  url: https://en.wikipedia.org/wiki/Mayurbhanj_State
+  from: 남아시아 S2 동 결과노트
+- name: 자그달푸르
+  at: [82.03, 19.07]
+  year: 1850
+  expect: bastar-state
+  url: https://en.wikipedia.org/wiki/Bastar_State
+  from: 남아시아 S2 동 결과노트
+- name: 암비카푸르
+  at: [83.2, 23.12]
+  year: 1850
+  expect: surguja-state
+  url: https://en.wikipedia.org/wiki/Surguja_State
+  from: 남아시아 S2 동 결과노트
+- name: 자슈푸르
+  at: [84.15, 22.88]
+  year: 1850
+  expect: chhattisgarh-states
+  url: https://en.wikipedia.org/wiki/Chhattisgarh_States_Agency
+  from: 남아시아 S2 동 결과노트
+- name: 카트만두
+  at: [85.32, 27.72]
+  year: 1800
+  expect: nepal
+  url: https://en.wikipedia.org/wiki/Unification_of_Nepal
+  from: 남아시아 S2 동 결과노트
+- name: 푸나카
+  at: [89.86, 27.58]
+  year: 1800
+  expect: bhutan
+  url: https://en.wikipedia.org/wiki/History_of_Bhutan
+  from: 남아시아 S2 동 결과노트
+- name: 강토크
+  at: [88.61, 27.33]
+  year: 1900
+  expect: sikkim
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Sikkim
+  from: 남아시아 S2 동 결과노트
+- name: 무르시다바드
+  at: [88.27, 24.18]
+  year: 1765
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Company_rule_in_India
+  from: 남아시아 S2 동 결과노트
+- name: 파트나
+  at: [85.14, 25.61]
+  year: 1764
+  expect: bengal-nawabs
+  url: https://en.wikipedia.org/wiki/Nawabs_of_Bengal
+  from: 남아시아 S2 동 결과노트
+- name: 카트만두
+  at: [85.32, 27.72]
+  year: 1767
+  expect: none
+  region: south-asia
+  url: https://en.wikipedia.org/wiki/Unification_of_Nepal
+  from: 남아시아 S2 동 결과노트
+- name: 카트만두
+  at: [85.32, 27.72]
+  year: 1768
+  expect: nepal
+  url: https://en.wikipedia.org/wiki/Unification_of_Nepal
+  from: 남아시아 S2 동 결과노트
+- name: 비라트나가르
+  at: [87.28, 26.45]
+  year: 1773
+  expect: none
+  region: south-asia
+  url: https://en.wikipedia.org/wiki/Unification_of_Nepal
+  from: 남아시아 S2 동 결과노트
+- name: 비라트나가르
+  at: [87.28, 26.45]
+  year: 1774
+  expect: nepal
+  url: https://en.wikipedia.org/wiki/Unification_of_Nepal
+  from: 남아시아 S2 동 결과노트
+- name: 네팔간지
+  at: [81.62, 28.05]
+  year: 1789
+  expect: none
+  region: south-asia
+  url: https://en.wikipedia.org/wiki/Unification_of_Nepal
+  from: 남아시아 S2 동 결과노트
+- name: 네팔간지
+  at: [81.62, 28.05]
+  year: 1790
+  expect: nepal
+  url: https://en.wikipedia.org/wiki/Unification_of_Nepal
+  from: 남아시아 S2 동 결과노트
+- name: 알모라
+  at: [79.66, 29.6]
+  year: 1790
+  expect: nepal
+  url: https://en.wikipedia.org/wiki/Unification_of_Nepal
+  from: 남아시아 S2 동 결과노트
+- name: 알모라
+  at: [79.66, 29.6]
+  year: 1815
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Anglo-Nepalese_War
+  from: 남아시아 S2 동 결과노트
+- name: 스리나가르(가르왈)
+  at: [78.78, 30.22]
+  year: 1803
+  expect: nepal
+  url: https://en.wikipedia.org/wiki/Anglo-Nepalese_War
+  from: 남아시아 S2 동 결과노트
+- name: 스리나가르(가르왈)
+  at: [78.78, 30.22]
+  year: 1815
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Anglo-Nepalese_War
+  from: 남아시아 S2 동 결과노트
+- name: 바라나시
+  at: [83.0, 25.32]
+  year: 1774
+  expect: awadh
+  url: https://en.wikipedia.org/wiki/Oudh_State
+  from: 남아시아 S2 동 결과노트
+- name: 바라나시
+  at: [83.0, 25.32]
+  year: 1775
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Oudh_State
+  from: 남아시아 S2 동 결과노트
+- name: 칸푸르
+  at: [80.33, 26.45]
+  year: 1800
+  expect: awadh
+  url: https://en.wikipedia.org/wiki/Oudh_State
+  from: 남아시아 S2 동 결과노트
+- name: 칸푸르
+  at: [80.33, 26.45]
+  year: 1801
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Oudh_State
+  from: 남아시아 S2 동 결과노트
+- name: 바레일리
+  at: [79.43, 28.37]
+  year: 1773
+  expect: rohilkhand
+  url: https://en.wikipedia.org/wiki/Rohilkhand
+  from: 남아시아 S2 동 결과노트
+- name: 바레일리
+  at: [79.43, 28.37]
+  year: 1774
+  expect: awadh
+  url: https://en.wikipedia.org/wiki/Rohilkhand
+  from: 남아시아 S2 동 결과노트
+- name: 바레일리
+  at: [79.43, 28.37]
+  year: 1801
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Oudh_State
+  from: 남아시아 S2 동 결과노트
+- name: 러크나우
+  at: [80.95, 26.85]
+  year: 1855
+  expect: awadh
+  url: https://en.wikipedia.org/wiki/Oudh_State
+  from: 남아시아 S2 동 결과노트
+- name: 러크나우
+  at: [80.95, 26.85]
+  year: 1856
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Oudh_State
+  from: 남아시아 S2 동 결과노트
+- name: 아그라
+  at: [78.01, 27.18]
+  year: 1787
+  expect: none
+  region: south-asia
+  url: https://en.wikipedia.org/wiki/Battle_of_Delhi_(1803)
+  from: 남아시아 S2 동 결과노트
+- name: 아그라
+  at: [78.01, 27.18]
+  year: 1788
+  expect: gwalior-state
+  url: https://en.wikipedia.org/wiki/Battle_of_Delhi_(1803)
+  from: 남아시아 S2 동 결과노트
+- name: 아그라
+  at: [78.01, 27.18]
+  year: 1803
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Treaty_of_Surji-Anjangaon
+  from: 남아시아 S2 동 결과노트
+- name: 잔시
+  at: [78.57, 25.45]
+  year: 1802
+  expect: maratha-peshwa
+  url: https://en.wikipedia.org/wiki/Company_rule_in_India
+  from: 남아시아 S2 동 결과노트
+- name: 잔시
+  at: [78.57, 25.45]
+  year: 1803
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Company_rule_in_India
+  from: 남아시아 S2 동 결과노트
+- name: 쿠타크
+  at: [85.88, 20.46]
+  year: 1802
+  expect: nagpur-kingdom
+  url: https://en.wikipedia.org/wiki/Nagpur_Kingdom
+  from: 남아시아 S2 동 결과노트
+- name: 쿠타크
+  at: [85.88, 20.46]
+  year: 1803
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Treaty_of_Deogaon
+  from: 남아시아 S2 동 결과노트
+- name: 베르함푸르(간잠)
+  at: [84.79, 19.31]
+  year: 1765
+  expect: hyderabad-state
+  url: https://en.wikipedia.org/wiki/Northern_Circars
+  from: 남아시아 S2 동 결과노트
+- name: 베르함푸르(간잠)
+  at: [84.79, 19.31]
+  year: 1766
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Northern_Circars
+  from: 남아시아 S2 동 결과노트
+- name: 라이푸르
+  at: [81.63, 21.25]
+  year: 1853
+  expect: nagpur-kingdom
+  url: https://en.wikipedia.org/wiki/Nagpur_Kingdom
+  from: 남아시아 S2 동 결과노트
+- name: 라이푸르
+  at: [81.63, 21.25]
+  year: 1854
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Nagpur_Kingdom
+  from: 남아시아 S2 동 결과노트
+- name: 삼발푸르
+  at: [83.97, 21.47]
+  year: 1848
+  expect: orissa-states
+  url: https://en.wikipedia.org/wiki/Sambalpur_district
+  from: 남아시아 S2 동 결과노트
+- name: 삼발푸르
+  at: [83.97, 21.47]
+  year: 1849
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Sambalpur_district
+  from: 남아시아 S2 동 결과노트
+- name: 구와하티
+  at: [91.74, 26.14]
+  year: 1818
+  expect: ahom-kingdom
+  url: https://en.wikipedia.org/wiki/Ahom_kingdom
+  from: 남아시아 S2 동 결과노트
+- name: 구와하티
+  at: [91.74, 26.14]
+  year: 1819
+  expect: none
+  region: south-asia
+  url: https://en.wikipedia.org/wiki/Ahom_kingdom
+  from: 남아시아 S2 동 결과노트
+- name: 구와하티
+  at: [91.74, 26.14]
+  year: 1826
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Treaty_of_Yandabo
+  from: 남아시아 S2 동 결과노트
+- name: 임팔
+  at: [93.95, 24.82]
+  year: 1819
+  expect: none
+  region: south-asia
+  url: https://en.wikipedia.org/wiki/Manipur_Kingdom
+  from: 남아시아 S2 동 결과노트
+- name: 실차르
+  at: [92.8, 24.82]
+  year: 1831
+  expect: none
+  region: south-asia
+  url: https://en.wikipedia.org/wiki/Dimasa_Kingdom
+  from: 남아시아 S2 동 결과노트
+- name: 실차르
+  at: [92.8, 24.82]
+  year: 1832
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Dimasa_Kingdom
+  from: 남아시아 S2 동 결과노트
+- name: 실롱
+  at: [91.88, 25.57]
+  year: 1835
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Jaintia_Kingdom
+  from: 남아시아 S2 동 결과노트
+- name: 코히마
+  at: [94.11, 25.67]
+  year: 1880
+  expect: none
+  region: south-asia
+  url: https://en.wikipedia.org/wiki/Naga_Hills_District
+  from: 남아시아 S2 동 결과노트
+- name: 코히마
+  at: [94.11, 25.67]
+  year: 1881
+  expect: british-raj
+  url: https://en.wikipedia.org/wiki/Naga_Hills_District
+  from: 남아시아 S2 동 결과노트
+- name: 아이자울
+  at: [92.72, 23.73]
+  year: 1894
+  expect: none
+  region: south-asia
+  url: https://en.wikipedia.org/wiki/Lushai_Hills
+  from: 남아시아 S2 동 결과노트
+- name: 아이자울
+  at: [92.72, 23.73]
+  year: 1895
+  expect: british-raj
+  url: https://en.wikipedia.org/wiki/Lushai_Hills
+  from: 남아시아 S2 동 결과노트
+- name: 이타나가르
+  at: [93.62, 27.08]
+  year: 1913
+  expect: none
+  region: south-asia
+  url: https://en.wikipedia.org/wiki/McMahon_Line
+  from: 남아시아 S2 동 결과노트
+- name: 이타나가르
+  at: [93.62, 27.08]
+  year: 1914
+  expect: british-raj
+  url: https://en.wikipedia.org/wiki/McMahon_Line
+  from: 남아시아 S2 동 결과노트
+- name: 알리푸르두아르
+  at: [89.53, 26.49]
+  year: 1864
+  expect: bhutan
+  url: https://en.wikipedia.org/wiki/Duar_War
+  from: 남아시아 S2 동 결과노트
+- name: 알리푸르두아르
+  at: [89.53, 26.49]
+  year: 1865
+  expect: british-raj
+  url: https://en.wikipedia.org/wiki/Duar_War
+  from: 남아시아 S2 동 결과노트
+- name: 칼림퐁
+  at: [88.47, 27.06]
+  year: 1865
+  expect: british-raj
+  url: https://en.wikipedia.org/wiki/Duar_War
+  from: 남아시아 S2 동 결과노트
+- name: 강토크
+  at: [88.61, 27.33]
+  year: 1860
+  expect: none
+  region: south-asia
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Sikkim
+  from: 남아시아 S2 동 결과노트
+- name: 포트블레어
+  at: [92.73, 11.62]
+  year: 1858
+  expect: british-raj
+  url: https://en.wikipedia.org/wiki/Cellular_Jail
+  from: 남아시아 S2 동 결과노트
+- name: 파이자바드(오우드 안)
+  at: [82.14, 26.8]
+  year: 1830
+  expect: awadh
+  url: https://en.wikipedia.org/wiki/Oudh_State
+  from: 남아시아 S2 동 결과노트
+- name: 바스티(오우드 밖)
+  at: [82.73, 26.8]
+  year: 1830
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Oudh_State
+  from: 남아시아 S2 동 결과노트
+- name: 모라다바드(로힐칸드 안)
+  at: [78.78, 28.84]
+  year: 1760
+  expect: rohilkhand
+  url: https://en.wikipedia.org/wiki/Rohilkhand
+  from: 남아시아 S2 동 결과노트
+- name: 메러트(로힐칸드 밖)
+  at: [77.7, 28.98]
+  year: 1760
+  expect: none
+  region: south-asia
+  url: https://en.wikipedia.org/wiki/Rohilkhand
+  from: 남아시아 S2 동 결과노트
+- name: 에타와(하부 도아브 안)
+  at: [79.02, 26.78]
+  year: 1801
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Oudh_State
+  from: 남아시아 S2 동 결과노트
+- name: 알리가르(하부 도아브 밖)
+  at: [78.08, 27.88]
+  year: 1801
+  expect: gwalior-state
+  url: https://en.wikipedia.org/wiki/Oudh_State
+  from: 남아시아 S2 동 결과노트
+- name: 자운푸르(바라나시 안)
+  at: [82.68, 25.75]
+  year: 1790
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Oudh_State
+  from: 남아시아 S2 동 결과노트
+- name: 아잠가르(바라나시 밖)
+  at: [83.19, 26.07]
+  year: 1790
+  expect: awadh
+  url: https://en.wikipedia.org/wiki/Oudh_State
+  from: 남아시아 S2 동 결과노트
+- name: 반다(분델칸드 안)
+  at: [80.34, 25.48]
+  year: 1790
+  expect: maratha-peshwa
+  url: https://en.wikipedia.org/wiki/Company_rule_in_India
+  from: 남아시아 S2 동 결과노트
+- name: 파테푸르(분델칸드 밖)
+  at: [80.81, 25.93]
+  year: 1790
+  expect: awadh
+  url: https://en.wikipedia.org/wiki/Oudh_State
+  from: 남아시아 S2 동 결과노트
+- name: 나이니탈(쿠마온 안)
+  at: [79.46, 29.38]
+  year: 1795
+  expect: nepal
+  url: https://en.wikipedia.org/wiki/Kumaon_Kingdom
+  from: 남아시아 S2 동 결과노트
+- name: 데라둔(쿠마온 밖)
+  at: [78.03, 30.32]
+  year: 1795
+  expect: garhwal-kingdom
+  url: https://en.wikipedia.org/wiki/Garhwal_Kingdom
+  from: 남아시아 S2 동 결과노트
+- name: 우타르카시(테흐리 안)
+  at: [78.45, 30.73]
+  year: 1830
+  expect: tehri-garhwal
+  url: https://en.wikipedia.org/wiki/Garhwal_Kingdom
+  from: 남아시아 S2 동 결과노트
+- name: 파우리(테흐리 밖)
+  at: [78.78, 30.15]
+  year: 1830
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Garhwal_Kingdom
+  from: 남아시아 S2 동 결과노트
+- name: 말바자르(서부 두아르 안)
+  at: [88.73, 26.85]
+  year: 1800
+  expect: bhutan
+  url: https://en.wikipedia.org/wiki/Duar_War
+  from: 남아시아 S2 동 결과노트
+- name: 쿠치비하르(서부 두아르 밖)
+  at: [89.45, 26.32]
+  year: 1800
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Duar_War
+  from: 남아시아 S2 동 결과노트
+- name: 우달구리(아삼 두아르 안)
+  at: [92.1, 26.75]
+  year: 1800
+  expect: bhutan
+  url: https://en.wikipedia.org/wiki/Duar_War
+  from: 남아시아 S2 동 결과노트
+- name: 봉가이가온(고알파라 안)
+  at: [90.55, 26.48]
+  year: 1800
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Goalpara_district
+  from: 남아시아 S2 동 결과노트
+- name: 바르페타(아홈 안)
+  at: [91.0, 26.32]
+  year: 1800
+  expect: ahom-kingdom
+  url: https://en.wikipedia.org/wiki/Ahom_kingdom
+  from: 남아시아 S2 동 결과노트
+- name: 디푸(아홈 밖)
+  at: [93.43, 25.84]
+  year: 1800
+  expect: none
+  region: south-asia
+  url: https://en.wikipedia.org/wiki/Ahom_kingdom
+  from: 남아시아 S2 동 결과노트
+- name: 코라푸트(오리사 남부 안)
+  at: [82.71, 18.81]
+  year: 1760
+  expect: hyderabad-state
+  url: https://en.wikipedia.org/wiki/Northern_Circars
+  from: 남아시아 S2 동 결과노트
+- name: 바와니파트나(오리사 남부 밖)
+  at: [83.17, 19.91]
+  year: 1760
+  expect: orissa-states
+  url: https://en.wikipedia.org/wiki/Kalahandi_State
+  from: 남아시아 S2 동 결과노트
+- name: 발라소르(오리사 해안 안)
+  at: [86.92, 21.49]
+  year: 1790
+  expect: nagpur-kingdom
+  url: https://en.wikipedia.org/wiki/Nagpur_Kingdom
+  from: 남아시아 S2 동 결과노트
+- name: 덴카날(오리사 해안 밖)
+  at: [85.6, 20.66]
+  year: 1790
+  expect: orissa-states
+  url: https://en.wikipedia.org/wiki/Orissa_Tributary_States
+  from: 남아시아 S2 동 결과노트
+- name: 바르가르(삼발푸르 안)
+  at: [83.62, 21.33]
+  year: 1860
+  expect: british-raj
+  url: https://en.wikipedia.org/wiki/Sambalpur_district
+  from: 남아시아 S2 동 결과노트
+- name: 데오가르(삼발푸르 밖)
+  at: [84.73, 21.53]
+  year: 1860
+  expect: orissa-states
+  url: https://en.wikipedia.org/wiki/Bamra_State
+  from: 남아시아 S2 동 결과노트
+- name: 카란지아(마유르반즈 안)
+  at: [85.97, 21.78]
+  year: 1790
+  expect: mayurbhanj-state
+  url: https://en.wikipedia.org/wiki/Mayurbhanj_State
+  from: 남아시아 S2 동 결과노트
+- name: 케온자르(마유르반즈 밖)
+  at: [85.58, 21.63]
+  year: 1790
+  expect: orissa-states
+  url: https://en.wikipedia.org/wiki/Keonjhar_State
+  from: 남아시아 S2 동 결과노트
+- name: 콘다가온(바스타르 안)
+  at: [81.66, 19.59]
+  year: 1860
+  expect: bastar-state
+  url: https://en.wikipedia.org/wiki/Bastar_State
+  from: 남아시아 S2 동 결과노트
+- name: 칸케르(바스타르 밖)
+  at: [81.49, 20.27]
+  year: 1860
+  expect: british-raj
+  url: https://en.wikipedia.org/wiki/Kanker_State
+  from: 남아시아 S2 동 결과노트
+- name: 수라지푸르(수르구자 안)
+  at: [82.87, 23.22]
+  year: 1860
+  expect: surguja-state
+  url: https://en.wikipedia.org/wiki/Surguja_State
+  from: 남아시아 S2 동 결과노트
+- name: 라이가르(북부 토후국 안)
+  at: [83.4, 21.9]
+  year: 1860
+  expect: chhattisgarh-states
+  url: https://en.wikipedia.org/wiki/Raigarh_State
+  from: 남아시아 S2 동 결과노트
+- name: 빌라스푸르(북부 토후국 밖)
+  at: [82.15, 22.08]
+  year: 1860
+  expect: british-raj
+  url: https://en.wikipedia.org/wiki/Chhattisgarh_States_Agency
+  from: 남아시아 S2 동 결과노트
+
+# ── 남아시아 S2 남 (2026-11-03): 1757~1946 데칸·중앙 인도·남인도·실론. 새 항목 수도, 버전 해 앞뒤, 칼선 안팎(베라르·나그푸르·마이소르·카나라·다르와드·벨라리·구투르·양도 지구·아난타푸르·트라방코르·괄리오르·말와·보팔·레와·나르마다·베툴 세오니) ──
+- name: 푸네
+  at: [73.86, 18.52]
+  year: 1787
+  expect: maratha-peshwa
+  url: https://en.wikipedia.org/wiki/Maratha_Empire
+  from: 남아시아 S2 남 결과노트
+- name: 우자인
+  at: [75.78, 23.18]
+  year: 1785
+  expect: gwalior-state
+  url: https://en.wikipedia.org/wiki/Gwalior_State
+  from: 남아시아 S2 남 결과노트
+- name: 괄리오르
+  at: [78.18, 26.22]
+  year: 1880
+  expect: gwalior-state
+  url: https://en.wikipedia.org/wiki/Gwalior_State
+  from: 남아시아 S2 남 결과노트
+- name: 마헤슈와르
+  at: [75.59, 22.18]
+  year: 1790
+  expect: indore-state
+  url: https://en.wikipedia.org/wiki/Indore_State
+  from: 남아시아 S2 남 결과노트
+- name: 인도르
+  at: [75.86, 22.72]
+  year: 1880
+  expect: indore-state
+  url: https://en.wikipedia.org/wiki/Indore_State
+  from: 남아시아 S2 남 결과노트
+- name: 나그푸르
+  at: [79.09, 21.15]
+  year: 1805
+  expect: nagpur-kingdom
+  url: https://en.wikipedia.org/wiki/Nagpur_Kingdom
+  from: 남아시아 S2 남 결과노트
+- name: 스리랑가파트나
+  at: [76.69, 12.42]
+  year: 1780
+  expect: mysore
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Mysore
+  from: 남아시아 S2 남 결과노트
+- name: 마이소르
+  at: [76.64, 12.3]
+  year: 1880
+  expect: mysore
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Mysore
+  from: 남아시아 S2 남 결과노트
+- name: 아르코트
+  at: [79.33, 12.91]
+  year: 1780
+  expect: carnatic-nawab
+  url: https://en.wikipedia.org/wiki/Carnatic_Sultanate
+  from: 남아시아 S2 남 결과노트
+- name: 티루바난타푸람
+  at: [76.95, 8.52]
+  year: 1850
+  expect: travancore
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Travancore
+  from: 남아시아 S2 남 결과노트
+- name: 보팔
+  at: [77.41, 23.26]
+  year: 1850
+  expect: bhopal-state
+  url: https://en.wikipedia.org/wiki/Bhopal_State
+  from: 남아시아 S2 남 결과노트
+- name: 레와
+  at: [81.3, 24.53]
+  year: 1850
+  expect: rewa-state
+  url: https://en.wikipedia.org/wiki/Rewa_State
+  from: 남아시아 S2 남 결과노트
+- name: 오르차
+  at: [78.64, 25.35]
+  year: 1850
+  expect: bundelkhand-states
+  url: https://en.wikipedia.org/wiki/Bundelkhand_Agency
+  from: 남아시아 S2 남 결과노트
+- name: 다르
+  at: [75.3, 22.6]
+  year: 1880
+  expect: malwa-states
+  url: https://en.wikipedia.org/wiki/Malwa_Agency
+  from: 남아시아 S2 남 결과노트
+- name: 칸디
+  at: [80.63, 7.29]
+  year: 1786
+  expect: kandy
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Kandy
+  from: 남아시아 S2 남 결과노트
+- name: 콜롬보
+  at: [79.86, 6.93]
+  year: 1776
+  expect: dutch-ceylon
+  url: https://en.wikipedia.org/wiki/Dutch_Ceylon
+  from: 남아시아 S2 남 결과노트
+- name: 콜롬보
+  at: [79.86, 6.93]
+  year: 1870
+  expect: british-ceylon
+  url: https://en.wikipedia.org/wiki/British_Ceylon
+  from: 남아시아 S2 남 결과노트
+- name: 하이데라바드
+  at: [78.47, 17.38]
+  year: 1850
+  expect: hyderabad-state
+  url: https://en.wikipedia.org/wiki/Hyderabad_State
+  from: 남아시아 S2 남 결과노트
+- name: 아우랑가바드(마라트와다)
+  at: [75.34, 19.88]
+  year: 1760
+  expect: hyderabad-state
+  url: https://en.wikipedia.org/wiki/Hyderabad_State
+  from: 남아시아 S2 남 결과노트
+- name: 퐁디셰리
+  at: [79.83, 11.93]
+  year: 1850
+  expect: french-india
+  url: https://en.wikipedia.org/wiki/French_India
+  from: 남아시아 S2 남 결과노트
+- name: 옛 고아
+  at: [73.91, 15.5]
+  year: 1850
+  expect: portuguese-india
+  url: https://en.wikipedia.org/wiki/Portuguese_India
+  from: 남아시아 S2 남 결과노트
+- name: 시모가
+  at: [75.57, 13.93]
+  year: 1762
+  expect: none
+  region: south-asia
+  url: https://en.wikipedia.org/wiki/Keladi_Nayaka_kingdom
+  from: 남아시아 S2 남 결과노트
+- name: 시모가
+  at: [75.57, 13.93]
+  year: 1763
+  expect: mysore
+  url: https://en.wikipedia.org/wiki/Keladi_Nayaka_kingdom
+  from: 남아시아 S2 남 결과노트
+- name: 코지코드
+  at: [75.78, 11.25]
+  year: 1765
+  expect: none
+  region: south-asia
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Mysore
+  from: 남아시아 S2 남 결과노트
+- name: 코지코드
+  at: [75.78, 11.25]
+  year: 1766
+  expect: mysore
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Mysore
+  from: 남아시아 S2 남 결과노트
+- name: 코지코드
+  at: [75.78, 11.25]
+  year: 1792
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Treaty_of_Seringapatam
+  from: 남아시아 S2 남 결과노트
+- name: 코임바토르
+  at: [76.96, 11]
+  year: 1765
+  expect: carnatic-nawab
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Mysore
+  from: 남아시아 S2 남 결과노트
+- name: 코임바토르
+  at: [76.96, 11]
+  year: 1798
+  expect: mysore
+  url: https://en.wikipedia.org/wiki/Fourth_Anglo-Mysore_War
+  from: 남아시아 S2 남 결과노트
+- name: 코임바토르
+  at: [76.96, 11]
+  year: 1799
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Fourth_Anglo-Mysore_War
+  from: 남아시아 S2 남 결과노트
+- name: 라자문드리
+  at: [81.8, 17]
+  year: 1765
+  expect: hyderabad-state
+  url: https://en.wikipedia.org/wiki/Northern_Circars
+  from: 남아시아 S2 남 결과노트
+- name: 라자문드리
+  at: [81.8, 17]
+  year: 1766
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Northern_Circars
+  from: 남아시아 S2 남 결과노트
+- name: 구투르
+  at: [80.44, 16.31]
+  year: 1787
+  expect: hyderabad-state
+  url: https://en.wikipedia.org/wiki/Guntur
+  from: 남아시아 S2 남 결과노트
+- name: 구투르
+  at: [80.44, 16.31]
+  year: 1788
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Guntur
+  from: 남아시아 S2 남 결과노트
+- name: 카다파
+  at: [78.82, 14.47]
+  year: 1778
+  expect: hyderabad-state
+  url: https://en.wikipedia.org/wiki/Ceded_Districts
+  from: 남아시아 S2 남 결과노트
+- name: 카다파
+  at: [78.82, 14.47]
+  year: 1779
+  expect: mysore
+  url: https://en.wikipedia.org/wiki/Ceded_Districts
+  from: 남아시아 S2 남 결과노트
+- name: 카다파
+  at: [78.82, 14.47]
+  year: 1792
+  expect: hyderabad-state
+  url: https://en.wikipedia.org/wiki/Treaty_of_Seringapatam
+  from: 남아시아 S2 남 결과노트
+- name: 카다파
+  at: [78.82, 14.47]
+  year: 1800
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Ceded_Districts
+  from: 남아시아 S2 남 결과노트
+- name: 아난타푸르
+  at: [77.6, 14.68]
+  year: 1798
+  expect: mysore
+  url: https://en.wikipedia.org/wiki/Ceded_Districts
+  from: 남아시아 S2 남 결과노트
+- name: 아난타푸르
+  at: [77.6, 14.68]
+  year: 1799
+  expect: hyderabad-state
+  url: https://en.wikipedia.org/wiki/Ceded_Districts
+  from: 남아시아 S2 남 결과노트
+- name: 다르와드
+  at: [75, 15.46]
+  year: 1778
+  expect: maratha-peshwa
+  url: https://en.wikipedia.org/wiki/Dharwad
+  from: 남아시아 S2 남 결과노트
+- name: 다르와드
+  at: [75, 15.46]
+  year: 1779
+  expect: mysore
+  url: https://en.wikipedia.org/wiki/Dharwad
+  from: 남아시아 S2 남 결과노트
+- name: 다르와드
+  at: [75, 15.46]
+  year: 1792
+  expect: maratha-peshwa
+  url: https://en.wikipedia.org/wiki/Treaty_of_Seringapatam
+  from: 남아시아 S2 남 결과노트
+- name: 넬로르
+  at: [79.99, 14.44]
+  year: 1800
+  expect: carnatic-nawab
+  url: https://en.wikipedia.org/wiki/Carnatic_Sultanate
+  from: 남아시아 S2 남 결과노트
+- name: 넬로르
+  at: [79.99, 14.44]
+  year: 1801
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Carnatic_Sultanate
+  from: 남아시아 S2 남 결과노트
+- name: 괄리오르
+  at: [78.18, 26.22]
+  year: 1783
+  expect: none
+  region: south-asia
+  url: https://en.wikipedia.org/wiki/Gwalior_State
+  from: 남아시아 S2 남 결과노트
+- name: 괄리오르
+  at: [78.18, 26.22]
+  year: 1784
+  expect: gwalior-state
+  url: https://en.wikipedia.org/wiki/Gwalior_State
+  from: 남아시아 S2 남 결과노트
+- name: 자발푸르
+  at: [79.94, 23.18]
+  year: 1784
+  expect: maratha-peshwa
+  url: https://en.wikipedia.org/wiki/Nagpur_Kingdom
+  from: 남아시아 S2 남 결과노트
+- name: 자발푸르
+  at: [79.94, 23.18]
+  year: 1785
+  expect: nagpur-kingdom
+  url: https://en.wikipedia.org/wiki/Nagpur_Kingdom
+  from: 남아시아 S2 남 결과노트
+- name: 자발푸르
+  at: [79.94, 23.18]
+  year: 1818
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Saugor_and_Nerbudda_Territories
+  from: 남아시아 S2 남 결과노트
+- name: 푸네
+  at: [73.86, 18.52]
+  year: 1817
+  expect: maratha-peshwa
+  url: https://en.wikipedia.org/wiki/Third_Anglo-Maratha_War
+  from: 남아시아 S2 남 결과노트
+- name: 푸네
+  at: [73.86, 18.52]
+  year: 1818
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Third_Anglo-Maratha_War
+  from: 남아시아 S2 남 결과노트
+- name: 세오니
+  at: [79.54, 22.09]
+  year: 1817
+  expect: nagpur-kingdom
+  url: https://en.wikipedia.org/wiki/Seoni_district
+  from: 남아시아 S2 남 결과노트
+- name: 세오니
+  at: [79.54, 22.09]
+  year: 1818
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Seoni_district
+  from: 남아시아 S2 남 결과노트
+- name: 나그푸르
+  at: [79.09, 21.15]
+  year: 1853
+  expect: nagpur-kingdom
+  url: https://en.wikipedia.org/wiki/Nagpur_Kingdom
+  from: 남아시아 S2 남 결과노트
+- name: 나그푸르
+  at: [79.09, 21.15]
+  year: 1854
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Nagpur_Kingdom
+  from: 남아시아 S2 남 결과노트
+- name: 아마라바티
+  at: [77.75, 20.93]
+  year: 1852
+  expect: hyderabad-state
+  url: https://en.wikipedia.org/wiki/Berar_Province
+  from: 남아시아 S2 남 결과노트
+- name: 아마라바티
+  at: [77.75, 20.93]
+  year: 1853
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Berar_Province
+  from: 남아시아 S2 남 결과노트
+- name: 샤돌
+  at: [81.36, 23.3]
+  year: 1818
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Shahdol_district
+  from: 남아시아 S2 남 결과노트
+- name: 샤돌
+  at: [81.36, 23.3]
+  year: 1858
+  expect: rewa-state
+  url: https://en.wikipedia.org/wiki/Shahdol_district
+  from: 남아시아 S2 남 결과노트
+- name: 라틀람
+  at: [75.04, 23.33]
+  year: 1817
+  expect: maratha-peshwa
+  url: https://en.wikipedia.org/wiki/Malwa_Agency
+  from: 남아시아 S2 남 결과노트
+- name: 라틀람
+  at: [75.04, 23.33]
+  year: 1818
+  expect: malwa-states
+  url: https://en.wikipedia.org/wiki/Malwa_Agency
+  from: 남아시아 S2 남 결과노트
+- name: 마디케리
+  at: [75.74, 12.42]
+  year: 1833
+  expect: none
+  region: south-asia
+  url: https://en.wikipedia.org/wiki/Coorg_State
+  from: 남아시아 S2 남 결과노트
+- name: 마디케리
+  at: [75.74, 12.42]
+  year: 1834
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Coorg_State
+  from: 남아시아 S2 남 결과노트
+- name: 갈레
+  at: [80.22, 6.03]
+  year: 1795
+  expect: dutch-ceylon
+  url: https://en.wikipedia.org/wiki/Dutch_Ceylon
+  from: 남아시아 S2 남 결과노트
+- name: 갈레
+  at: [80.22, 6.03]
+  year: 1796
+  expect: british-ceylon
+  url: https://en.wikipedia.org/wiki/Dutch_Ceylon
+  from: 남아시아 S2 남 결과노트
+- name: 칸디
+  at: [80.63, 7.29]
+  year: 1814
+  expect: kandy
+  url: https://en.wikipedia.org/wiki/Kandyan_Convention
+  from: 남아시아 S2 남 결과노트
+- name: 칸디
+  at: [80.63, 7.29]
+  year: 1815
+  expect: british-ceylon
+  url: https://en.wikipedia.org/wiki/Kandyan_Convention
+  from: 남아시아 S2 남 결과노트
+- name: 벵갈루루
+  at: [77.59, 12.97]
+  year: 1946
+  expect: mysore
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Mysore
+  from: 남아시아 S2 남 결과노트
+- name: 와루드(베라르)
+  at: [78.27, 21.47]
+  year: 1800
+  expect: hyderabad-state
+  url: https://en.wikipedia.org/wiki/Amravati_division
+  from: 남아시아 S2 남 결과노트
+- name: 와니(베라르)
+  at: [78.95, 20.05]
+  year: 1800
+  expect: hyderabad-state
+  url: https://en.wikipedia.org/wiki/Amravati_division
+  from: 남아시아 S2 남 결과노트
+- name: 불다나(베라르)
+  at: [76.18, 20.53]
+  year: 1800
+  expect: hyderabad-state
+  url: https://en.wikipedia.org/wiki/Amravati_division
+  from: 남아시아 S2 남 결과노트
+- name: 풀가온(와르다 지구)
+  at: [78.32, 20.73]
+  year: 1800
+  expect: nagpur-kingdom
+  url: https://en.wikipedia.org/wiki/Nagpur_division
+  from: 남아시아 S2 남 결과노트
+- name: 아슈티(와르다 지구)
+  at: [78.18, 21.2]
+  year: 1800
+  expect: nagpur-kingdom
+  url: https://en.wikipedia.org/wiki/Nagpur_division
+  from: 남아시아 S2 남 결과노트
+- name: 와로라(찬드라푸르 지구)
+  at: [79, 20.23]
+  year: 1800
+  expect: nagpur-kingdom
+  url: https://en.wikipedia.org/wiki/Nagpur_division
+  from: 남아시아 S2 남 결과노트
+- name: 묵타이나가르(잘가온 지구)
+  at: [76.05, 21.05]
+  year: 1800
+  expect: maratha-peshwa
+  url: https://en.wikipedia.org/wiki/Khandesh
+  from: 남아시아 S2 남 결과노트
+- name: 치트라두르가
+  at: [76.4, 14.23]
+  year: 1760
+  expect: none
+  region: south-asia
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Mysore
+  from: 남아시아 S2 남 결과노트
+- name: 콜라르
+  at: [78.13, 13.14]
+  year: 1760
+  expect: none
+  region: south-asia
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Mysore
+  from: 남아시아 S2 남 결과노트
+- name: 툼쿠루
+  at: [77.1, 13.34]
+  year: 1760
+  expect: mysore
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Mysore
+  from: 남아시아 S2 남 결과노트
+- name: 다바나게레
+  at: [75.92, 14.47]
+  year: 1800
+  expect: mysore
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Mysore
+  from: 남아시아 S2 남 결과노트
+- name: 하라파나할리
+  at: [75.95, 14.79]
+  year: 1800
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Bellary_district
+  from: 남아시아 S2 남 결과노트
+- name: 호수르
+  at: [77.83, 12.74]
+  year: 1800
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Mysore
+  from: 남아시아 S2 남 결과노트
+- name: 콜레갈
+  at: [77.11, 12.15]
+  year: 1800
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Kollegal
+  from: 남아시아 S2 남 결과노트
+- name: 싯다푸르(우타라 칸나다)
+  at: [74.89, 14.34]
+  year: 1800
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Uttara_Kannada
+  from: 남아시아 S2 남 결과노트
+- name: 할리얄(우타라 칸나다)
+  at: [74.77, 15.33]
+  year: 1800
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Uttara_Kannada
+  from: 남아시아 S2 남 결과노트
+- name: 소라브(시모가 지구)
+  at: [75.09, 14.38]
+  year: 1800
+  expect: mysore
+  url: https://en.wikipedia.org/wiki/Uttara_Kannada
+  from: 남아시아 S2 남 결과노트
+- name: 한갈(하베리 지구)
+  at: [75.13, 14.76]
+  year: 1800
+  expect: maratha-peshwa
+  url: https://en.wikipedia.org/wiki/Uttara_Kannada
+  from: 남아시아 S2 남 결과노트
+- name: 하베리
+  at: [75.4, 14.79]
+  year: 1785
+  expect: mysore
+  url: https://en.wikipedia.org/wiki/Dharwad
+  from: 남아시아 S2 남 결과노트
+- name: 사운다티(벨가움 지구)
+  at: [75.12, 15.77]
+  year: 1785
+  expect: maratha-peshwa
+  url: https://en.wikipedia.org/wiki/Dharwad
+  from: 남아시아 S2 남 결과노트
+- name: 호스페트(벨라리 지구)
+  at: [76.39, 15.27]
+  year: 1799
+  expect: hyderabad-state
+  url: https://en.wikipedia.org/wiki/Bellary_district
+  from: 남아시아 S2 남 결과노트
+- name: 테날리(구투르)
+  at: [80.64, 16.24]
+  year: 1770
+  expect: hyderabad-state
+  url: https://en.wikipedia.org/wiki/Guntur
+  from: 남아시아 S2 남 결과노트
+- name: 비자야와다
+  at: [80.65, 16.51]
+  year: 1770
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Northern_Circars
+  from: 남아시아 S2 남 결과노트
+- name: 옹골
+  at: [80.05, 15.5]
+  year: 1790
+  expect: carnatic-nawab
+  url: https://en.wikipedia.org/wiki/Carnatic_Sultanate
+  from: 남아시아 S2 남 결과노트
+- name: 마르카푸르(쿠르눌 지구)
+  at: [79.27, 15.73]
+  year: 1795
+  expect: hyderabad-state
+  url: https://en.wikipedia.org/wiki/Ceded_Districts
+  from: 남아시아 S2 남 결과노트
+- name: 풀리벤둘라(카다파 지구)
+  at: [78.23, 14.42]
+  year: 1795
+  expect: hyderabad-state
+  url: https://en.wikipedia.org/wiki/Ceded_Districts
+  from: 남아시아 S2 남 결과노트
+- name: 타디파트리(아난타푸르 지구)
+  at: [78, 14.9]
+  year: 1795
+  expect: mysore
+  url: https://en.wikipedia.org/wiki/Ceded_Districts
+  from: 남아시아 S2 남 결과노트
+- name: 마다나팔레
+  at: [78.5, 13.55]
+  year: 1795
+  expect: carnatic-nawab
+  url: https://en.wikipedia.org/wiki/Carnatic_Sultanate
+  from: 남아시아 S2 남 결과노트
+- name: 살렘
+  at: [78.15, 11.66]
+  year: 1795
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Baramahal
+  from: 남아시아 S2 남 결과노트
+- name: 딘디굴
+  at: [77.98, 10.37]
+  year: 1795
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Treaty_of_Seringapatam
+  from: 남아시아 S2 남 결과노트
+- name: 에로드
+  at: [77.72, 11.34]
+  year: 1795
+  expect: mysore
+  url: https://en.wikipedia.org/wiki/Treaty_of_Seringapatam
+  from: 남아시아 S2 남 결과노트
+- name: 나게르코일
+  at: [77.43, 8.18]
+  year: 1800
+  expect: travancore
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Travancore
+  from: 남아시아 S2 남 결과노트
+- name: 티루넬벨리
+  at: [77.7, 8.73]
+  year: 1800
+  expect: carnatic-nawab
+  url: https://en.wikipedia.org/wiki/Carnatic_Sultanate
+  from: 남아시아 S2 남 결과노트
+- name: 코타얌
+  at: [76.52, 9.59]
+  year: 1800
+  expect: travancore
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Travancore
+  from: 남아시아 S2 남 결과노트
+- name: 코치
+  at: [76.27, 9.97]
+  year: 1800
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Cochin
+  from: 남아시아 S2 남 결과노트
+- name: 시브푸리
+  at: [77.66, 25.43]
+  year: 1790
+  expect: gwalior-state
+  url: https://en.wikipedia.org/wiki/Gwalior_State
+  from: 남아시아 S2 남 결과노트
+- name: 다티아
+  at: [78.46, 25.67]
+  year: 1790
+  expect: bundelkhand-states
+  url: https://en.wikipedia.org/wiki/Bundelkhand_Agency
+  from: 남아시아 S2 남 결과노트
+- name: 만드소르
+  at: [75.07, 24.07]
+  year: 1790
+  expect: gwalior-state
+  url: https://en.wikipedia.org/wiki/Gwalior_State
+  from: 남아시아 S2 남 결과노트
+- name: 카르곤
+  at: [75.62, 21.82]
+  year: 1790
+  expect: indore-state
+  url: https://en.wikipedia.org/wiki/Indore_State
+  from: 남아시아 S2 남 결과노트
+- name: 바르와니
+  at: [74.9, 22.03]
+  year: 1830
+  expect: malwa-states
+  url: https://en.wikipedia.org/wiki/Malwa_Agency
+  from: 남아시아 S2 남 결과노트
+- name: 세호르
+  at: [77.08, 23.2]
+  year: 1830
+  expect: bhopal-state
+  url: https://en.wikipedia.org/wiki/Bhopal_State
+  from: 남아시아 S2 남 결과노트
+- name: 비디샤
+  at: [77.81, 23.52]
+  year: 1830
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Bhopal_State
+  from: 남아시아 S2 남 결과노트
+- name: 나르싱가르
+  at: [77.1, 23.7]
+  year: 1830
+  expect: malwa-states
+  url: https://en.wikipedia.org/wiki/Bhopal_Agency
+  from: 남아시아 S2 남 결과노트
+- name: 사트나
+  at: [80.83, 24.6]
+  year: 1830
+  expect: rewa-state
+  url: https://en.wikipedia.org/wiki/Rewa_State
+  from: 남아시아 S2 남 결과노트
+- name: 판나
+  at: [80.19, 24.72]
+  year: 1830
+  expect: bundelkhand-states
+  url: https://en.wikipedia.org/wiki/Bundelkhand_Agency
+  from: 남아시아 S2 남 결과노트
+- name: 이타르시(호샹가바드 지구)
+  at: [77.76, 22.61]
+  year: 1830
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Saugor_and_Nerbudda_Territories
+  from: 남아시아 S2 남 결과노트
+- name: 베툴
+  at: [77.9, 21.9]
+  year: 1830
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Betul_district
+  from: 남아시아 S2 남 결과노트
+- name: 친드와라
+  at: [78.94, 22.06]
+  year: 1830
+  expect: nagpur-kingdom
+  url: https://en.wikipedia.org/wiki/Nagpur_Kingdom
+  from: 남아시아 S2 남 결과노트
+- name: 차우라이(친드와라 지구)
+  at: [79.19, 22.03]
+  year: 1830
+  expect: nagpur-kingdom
+  url: https://en.wikipedia.org/wiki/Nagpur_Kingdom
+  from: 남아시아 S2 남 결과노트
+- name: 락나돈(세오니 지구)
+  at: [79.6, 22.6]
+  year: 1830
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Seoni_district
+  from: 남아시아 S2 남 결과노트
+- name: 발라가트
+  at: [80.19, 21.81]
+  year: 1830
+  expect: nagpur-kingdom
+  url: https://en.wikipedia.org/wiki/Nagpur_Kingdom
+  from: 남아시아 S2 남 결과노트
+- name: 칸드와
+  at: [76.35, 21.83]
+  year: 1830
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Nimar
+  from: 남아시아 S2 남 결과노트
+- name: 트링코말리
+  at: [81.23, 8.57]
+  year: 1790
+  expect: dutch-ceylon
+  url: https://en.wikipedia.org/wiki/Dutch_Ceylon
+  from: 남아시아 S2 남 결과노트
+- name: 아누라다푸라
+  at: [80.4, 8.31]
+  year: 1790
+  expect: kandy
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Kandy
+  from: 남아시아 S2 남 결과노트
+# ── 남아시아 S2 반영 1 (2026-11-03): 새 묶음 수도(존속 가운데 해)·버전 해 앞뒤, 새·고친 칼선 안/밖 기준 도시 ──
+- name: 둥가르푸르
+  at: [73.71, 23.84]
+  year: 1851
+  expect: south-rajputana-states
+  url: https://en.wikipedia.org/wiki/Dungarpur_State
+  from: 남아시아 S2 반영 1 결과노트
+- name: 반스와라
+  at: [74.44, 23.55]
+  year: 1790
+  expect: south-rajputana-states
+  url: https://en.wikipedia.org/wiki/Banswara_State
+  from: 남아시아 S2 반영 1 결과노트
+- name: 프라타프가르
+  at: [74.78, 24.03]
+  year: 1900
+  expect: south-rajputana-states
+  url: https://en.wikipedia.org/wiki/Pratapgarh_State,_Rajasthan
+  from: 남아시아 S2 반영 1 결과노트
+- name: 살룸바르
+  at: [74.05, 24.13]
+  year: 1851
+  expect: mewar-state
+  url: https://en.wikipedia.org/wiki/Salumbar
+  from: 남아시아 S2 반영 1 결과노트
+- name: 분디
+  at: [75.64, 25.44]
+  year: 1900
+  expect: british-raj
+  url: https://en.wikipedia.org/wiki/Bundi_State
+  from: 남아시아 S2 반영 1 결과노트
+- name: 팔란푸르
+  at: [72.43, 24.17]
+  year: 1882
+  expect: palanpur-states
+  url: https://en.wikipedia.org/wiki/Palanpur_State
+  from: 남아시아 S2 반영 1 결과노트
+- name: 라단푸르
+  at: [71.6, 23.83]
+  year: 1830
+  expect: palanpur-states
+  url: https://en.wikipedia.org/wiki/Radhanpur_State
+  from: 남아시아 S2 반영 1 결과노트
+- name: 파탄
+  at: [72.12, 23.85]
+  year: 1830
+  expect: baroda-state
+  url: https://en.wikipedia.org/wiki/Patan,_Gujarat
+  from: 남아시아 S2 반영 1 결과노트
+- name: 이다르
+  at: [73.0, 23.84]
+  year: 1882
+  expect: mahi-kantha-states
+  url: https://en.wikipedia.org/wiki/Idar_State
+  from: 남아시아 S2 반영 1 결과노트
+- name: 히마트나가르
+  at: [72.97, 23.6]
+  year: 1830
+  expect: mahi-kantha-states
+  url: https://en.wikipedia.org/wiki/Himmatnagar
+  from: 남아시아 S2 반영 1 결과노트
+- name: 카파드완지
+  at: [73.07, 23.02]
+  year: 1830
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Kapadvanj
+  from: 남아시아 S2 반영 1 결과노트
+- name: 라지플라
+  at: [73.53, 21.87]
+  year: 1882
+  expect: rewa-kantha-states
+  url: https://en.wikipedia.org/wiki/Rajpipla_State
+  from: 남아시아 S2 반영 1 결과노트
+- name: 바리아
+  at: [73.9, 22.7]
+  year: 1900
+  expect: rewa-kantha-states
+  url: https://en.wikipedia.org/wiki/Baria_State
+  from: 남아시아 S2 반영 1 결과노트
+- name: 루나와다
+  at: [73.62, 23.13]
+  year: 1830
+  expect: rewa-kantha-states
+  url: https://en.wikipedia.org/wiki/Lunavada_State
+  from: 남아시아 S2 반영 1 결과노트
+- name: 고드라
+  at: [73.61, 22.78]
+  year: 1900
+  expect: british-raj
+  url: https://en.wikipedia.org/wiki/Godhra
+  from: 남아시아 S2 반영 1 결과노트
+- name: 콜하푸르
+  at: [74.24, 16.7]
+  year: 1882
+  expect: deccan-states
+  url: https://en.wikipedia.org/wiki/Kolhapur_State
+  from: 남아시아 S2 반영 1 결과노트
+- name: 콜하푸르
+  at: [74.24, 16.7]
+  year: 1810
+  expect: maratha-peshwa
+  url: https://en.wikipedia.org/wiki/Kolhapur_State
+  from: 남아시아 S2 반영 1 결과노트
+- name: 사타라
+  at: [74.0, 17.69]
+  year: 1830
+  expect: deccan-states
+  url: https://en.wikipedia.org/wiki/Satara_(state)
+  from: 남아시아 S2 반영 1 결과노트
+- name: 사타라
+  at: [74.0, 17.69]
+  year: 1860
+  expect: british-raj
+  url: https://en.wikipedia.org/wiki/Satara_(state)
+  from: 남아시아 S2 반영 1 결과노트
+- name: 상글리
+  at: [74.57, 16.85]
+  year: 1900
+  expect: british-raj
+  url: https://en.wikipedia.org/wiki/Sangli_State
+  from: 남아시아 S2 반영 1 결과노트
+- name: 움에르코트
+  at: [69.74, 25.36]
+  year: 1790
+  expect: jodhpur-state
+  url: https://en.wikipedia.org/wiki/Umerkot
+  from: 남아시아 S2 반영 1 결과노트
+- name: 움에르코트
+  at: [69.74, 25.36]
+  year: 1820
+  expect: talpur-sindh
+  url: https://en.wikipedia.org/wiki/Umerkot
+  from: 남아시아 S2 반영 1 결과노트
+- name: 미르푸르카스
+  at: [69.01, 25.53]
+  year: 1790
+  expect: talpur-sindh
+  url: https://en.wikipedia.org/wiki/Mirpur_Khas
+  from: 남아시아 S2 반영 1 결과노트
+- name: 우드기르
+  at: [77.11, 18.39]
+  year: 1830
+  expect: hyderabad-state
+  url: https://en.wikipedia.org/wiki/Udgir
+  from: 남아시아 S2 반영 1 결과노트
+- name: 아칼코트
+  at: [76.2, 17.52]
+  year: 1830
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Akkalkot_State
+  from: 남아시아 S2 반영 1 결과노트
+- name: 바게팔리
+  at: [77.79, 13.78]
+  year: 1830
+  expect: mysore
+  url: https://en.wikipedia.org/wiki/Bagepalli
+  from: 남아시아 S2 반영 1 결과노트
+- name: 호수르
+  at: [77.83, 12.74]
+  year: 1795
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Baramahal
+  from: 남아시아 S2 반영 1 결과노트
+- name: 마스투지
+  at: [72.52, 36.27]
+  year: 1800
+  expect: chitral-kingdom
+  url: https://en.wikipedia.org/wiki/Mastuj
+  from: 남아시아 S2 반영 1 결과노트

@@ -5,6 +5,7 @@
 // 빈 땅 검사 구역(gapZones: [{ name, zone, minus?, from?, to? }])은 비어 있으면 안 되는 지역을 적는다(engine.mjs collectGapZones). 일부러 비운 땅은 voids에 이유와 함께.
 import { joinEras } from '../shared.mjs';
 import { era as modernEra } from './south-asia/modern.mjs';
+import { era as colonialEra } from './south-asia/colonial.mjs';
 
 // 출처 문구: 이 권역 나라 모두에 붙는다(지도 정보 패널)
 export const source = '남아시아 쪽은 Natural Earth 1:10m admin-1(v5.1.2) 현대 행정구역 조각을 그 시기 국경에 맞춰 묶고, 조각이 역사 경계와 다른 곳(하이데라바드 주·칼라트 칸국과 속령 등)은 위키백과·브리태니커의 넓이와 지금 지구 경계에 맞춰 선을 그어 나눈 근사. 카슈미르는 실효 지배선대로, 중국과 맞닿은 쪽은 동아시아 지도의 중국 경계를 따름. 운영자 검수 필요';
@@ -13,4 +14,5 @@ export const source = '남아시아 쪽은 Natural Earth 1:10m admin-1(v5.1.2) �
 const ownVersions = {};
 
 // 시대 파일 잇기 (npm run new:area): 이 파일의 나라 다음에 시대 파일(areas/south-asia/<시대>.mjs)의 나라·빈 땅 검사 구역·비운 땅을 붙인다(shared.mjs joinEras)
-export const { versions, gapZones, voids, sourceOf } = joinEras('south-asia', { versions: ownVersions, gapZones: [], voids: [] }, [modernEra]);
+// 시대 파일 목록은 과거 시대가 앞이다(S1 항목 nepal·bhutan·sikkim·hyderabad-state·kalat 등의 1947년 전 버전이 1947년부터 버전 앞에 붙음). new:area는 새 시대를 끝에 붙이므로 colonial은 S2 뼈대에서 맨 앞으로 옮김
+export const { versions, gapZones, voids, sourceOf } = joinEras('south-asia', { versions: ownVersions, gapZones: [], voids: [] }, [colonialEra, modernEra]);

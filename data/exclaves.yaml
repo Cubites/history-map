@@ -4731,3 +4731,242 @@
   at: [44.12, 35.31]
   reason: 아라파(지금 키르쿠크) 둘레. 기원전 615년 메디아 군대가 이 땅에 나타난 뒤 아시리아 본토 북부(술라이마니야·아르빌)가 니네베 함락(기원전 612년)까지 아시리아 땅으로 남아 자그로스 쪽 메디아 땅과 떨어져 있었다
   sources: ["위키백과 영어판 「Median Empire」 https://en.wikipedia.org/wiki/Median_Empire", "위키백과 영어판 「Fall of Nineveh」 https://en.wikipedia.org/wiki/Fall_of_Nineveh"]
+
+# ── 남아시아 S2 (2026-11-03, 반영 1): 1757~1946 회사 땅이 이어지기 전 떨어진 땅·흩어진 상관과 1만 km² 미만 토후국을 종주 색으로 칠해 생긴 섬. baseline:suggest 규칙 3 제안을 고쳐 씀 ──
+- entity: company-india
+  from: 1766
+  to: 1800
+  at: [83.06, 18.7]
+  reason: 북부 시르카르(1766년 니잠과의 조약). 벵골 쪽 회사 땅과는 마라타(나그푸르)의 오리사 해안과 오리사 산지 토후국들을 사이에 두고 떨어져 바닷길로 이어졌다
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Northern_Circars"]
+
+- entity: company-india
+  from: 1792
+  to: 1799
+  at: [76.42, 10.64]
+  reason: 말라바르(1792년 세링가파탐 조약으로 마이소르에게서 얻음). 마드라스 쪽 회사 땅과는 마이소르·카르나타카 나와브 땅을 사이에 두고 떨어졌다
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Treaty_of_Seringapatam"]
+
+- entity: company-india
+  from: 1792
+  to: 1799
+  at: [78.26, 12.16]
+  reason: 바라마할·살렘(1792년 세링가파탐 조약). 마드라스 둘레의 회사 땅(자기르)과는 카르나타카 나와브 땅을 사이에 두고 떨어졌다
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Treaty_of_Seringapatam"]
+
+- entity: company-india
+  from: 1792
+  to: 1799
+  at: [78.01, 10.41]
+  reason: 딘디굴(1792년 세링가파탐 조약). 카르나타카 나와브 땅에 둘러싸여 다른 회사 땅과 떨어졌다
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Treaty_of_Seringapatam"]
+
+- entity: company-india
+  from: 1799
+  to: 1801
+  at: [77.52, 11.09]
+  reason: 마드라스 관구 남부(1799년 마이소르 분할로 코임바토르·카나라를 더함). 벵골 쪽 회사 땅과는 하이데라바드·마라타 땅을 사이에 두고 떨어졌다
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Madras_Presidency"]
+
+- entity: company-india
+  from: 1800
+  to: 1801
+  at: [78.46, 14.93]
+  reason: 마드라스 관구(1800년 양도 지구를 더함). 벵골 쪽 회사 땅과는 하이데라바드·마라타 땅을 사이에 두고 떨어졌다
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Madras_Presidency"]
+
+- entity: company-india
+  from: 1801
+  to: 1818
+  at: [78.28, 11.16]
+  reason: 마드라스 관구(1801년 카르나타카 조약으로 남인도 대부분). 1818년 중부 인도를 얻기 전까지 벵골 쪽 회사 땅과 하이데라바드·마라타 땅을 사이에 두고 떨어졌다
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Madras_Presidency"]
+
+- entity: company-india
+  from: 1818
+  to: 1858
+  at: [72.44, 22.7]
+  reason: 아마다바드·카이라 지구와 판치마할(1818년 페슈와 몫을 넘겨받음). 바로다 주의 바로다 프란트와 마히강 하구, 레와칸타 토후국들을 사이에 두고 브로치·수라트·봄베이 쪽과 떨어졌다
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Bombay_Presidency", "위키백과 영어판 https://en.wikipedia.org/wiki/Kaira_district"]
+
+- entity: british-raj
+  from: 1858
+  to: 1947
+  at: [72.44, 22.7]
+  reason: 아마다바드·카이라·판치마할 지구. 바로다 주와 마히강 하구, 레와칸타 토후국들을 사이에 두고 브로치·수라트 쪽 봄베이 관구와 떨어졌다
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Bombay_Presidency", "위키백과 영어판 https://en.wikipedia.org/wiki/Panch_Mahals_district"]
+
+- entity: company-india
+  from: 1818
+  to: 1858
+  at: [75.77, 25.62]
+  reason: 아지메르–메르와라(1818년 신디아가 넘김) 둘레. 라지푸트 토후국들에 둘러싸인 직할지였다(분디·통크·키샨가르 등 1만 km² 미만 토후국은 같은 색)
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Ajmer-Merwara"]
+
+- entity: british-raj
+  from: 1858
+  to: 1947
+  at: [75.77, 25.62]
+  reason: 아지메르–메르와라 직할 주 둘레. 라지푸트 토후국들에 둘러싸여 영국령 인도 본토와 떨어졌다(분디·통크·키샨가르 등 1만 km² 미만 토후국은 같은 색)
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Ajmer-Merwara"]
+
+- entity: company-india
+  from: 1818
+  to: 1858
+  at: [72.89, 24.79]
+  reason: 시로히 주(1823년 보호 조약, 1만 km² 미만이라 종주 색). 조드푸르·메와르 주와 팔란푸르 토후국들에 둘러싸인 섬으로 칠해진다
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Sirohi_State"]
+
+- entity: british-raj
+  from: 1858
+  to: 1947
+  at: [72.89, 24.79]
+  reason: 시로히 주(1만 km² 미만 토후국이라 종주 색). 조드푸르·메와르 주와 팔란푸르 토후국들에 둘러싸인 섬으로 칠해진다
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Sirohi_State"]
+
+- entity: company-india
+  from: 1818
+  to: 1858
+  at: [75.96, 24.35]
+  reason: 잘라와르 쪽(1838년 코타에서 갈라진 1만 km² 미만 토후국과 통크의 피라와 파르가나, 종주 색). 코타 주·괄리오르 주·말와 토후국들에 둘러싸인 섬으로 칠해진다
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Jhalawar_State"]
+
+- entity: british-raj
+  from: 1858
+  to: 1947
+  at: [75.96, 24.35]
+  reason: 잘라와르 주(1만 km² 미만 토후국이라 종주 색). 코타 주·괄리오르 주·말와 토후국들에 둘러싸인 섬으로 칠해진다
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Jhalawar_State"]
+
+- entity: company-india
+  from: 1843
+  to: 1849
+  at: [68.64, 25.57]
+  reason: 신드(1843년 병합). 1849년 펀자브를 병합하기 전까지 바하왈푸르 주·라지푸트 주들을 사이에 두고 다른 회사 땅과 떨어져 인더스강·바닷길로 이어졌다
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Sind_Province_(1936–1955)", "위키백과 영어판 https://en.wikipedia.org/wiki/Battle_of_Miani"]
+
+- entity: company-india
+  from: 1849
+  to: 1854
+  at: [83.76, 21.49]
+  reason: 삼발푸르(1849년 실권 원칙으로 거둠). 1854년 나그푸르 병합 전까지 오리사 산지 토후국들과 나그푸르 왕국 땅을 사이에 두고 떨어졌다
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Sambalpur_State"]
+
+- entity: baroda-state
+  from: 1818
+  to: 1947
+  at: [73.31, 22.33]
+  reason: 바로다 프란트(바도다라·다보이·파드라). 카디 프란트(메사나·파탄)와는 영국령 아마다바드·카이라 지구를 사이에 두고 떨어진 땅이었다
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Baroda_State"]
+
+- entity: british-ceylon
+  from: 1796
+  to: 1815
+  at: [81.45, 7.82]
+  reason: 바티칼로아 바닷가 지구(1796년 네덜란드에게서 넘겨받음). 칸디 왕국 땅을 사이에 두고 콜롬보 쪽 해안 지구와 떨어져 바닷길로 이어졌다
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/British_Ceylon"]
+
+- entity: dutch-ceylon
+  from: 1757
+  to: 1796
+  at: [81.45, 7.82]
+  reason: 바티칼로아 바닷가 지구. 칸디 왕국 땅을 사이에 두고 콜롬보·갈 쪽 해안 지구와 떨어져 바닷길로 이어졌다
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Dutch_Ceylon"]
+
+- entity: bundelkhand-states
+  from: 1757
+  to: 1947
+  at: [78.52, 25.73]
+  reason: 다티아 주. 괄리오르 주와 잔시 쪽 땅(페슈와, 뒤에 영국령)에 둘러싸여 분델칸드의 다른 토후국들과 떨어졌다
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Datia_State"]
+
+- entity: durrani-empire
+  from: 1765
+  to: 1819
+  at: [74.82, 34.12]
+  reason: 카슈미르 골짜기(두라니 총독). 1765년 시크가 펀자브 평원을 차지한 뒤 아프가니스탄 쪽 두라니 땅과 피르 판잘 너머로 떨어졌다(1819년 시크 정복)
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Durrani_Empire", "위키백과 영어판 https://en.wikipedia.org/wiki/Battle_of_Shopian"]
+
+- entity: sikh-empire
+  from: 1840
+  to: 1846
+  at: [74.82, 34.12]
+  reason: 카슈미르 골짜기(시크 총독). 1840년 잠무 카슈미르 주(굴랍 싱, 시크 봉신)가 잠무·라다크 쪽을 둘러싸 펀자브 쪽 시크 땅과 떨어졌다(1846년 암리차르 조약)
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Sikh_Empire", "위키백과 영어판 https://en.wikipedia.org/wiki/Treaty_of_Amritsar_(1846)"]
+
+- entity: gwalior-state
+  from: 1784
+  to: 1947
+  at: [76.15, 23.49]
+  reason: 괄리오르 주의 말와 몫(우자인·만드소르·샤자푸르). 괄리오르 쪽 북부와는 코타·보팔·말와 토후국들을 사이에 두고 떨어져 있었다
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Gwalior_State"]
+
+- entity: maratha-peshwa
+  from: 1757
+  to: 1818
+  at: [75.58, 24.55]
+  reason: 람푸라–반푸라(실제로는 홀카르의 떨어진 땅, 1만 km² 미만이라 이웃 색으로 어림). 메와르·코타·괄리오르 땅에 둘러싸여 말와 쪽과 떨어졌다
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Indore_State"]
+
+- entity: malwa-states
+  from: 1818
+  to: 1947
+  at: [75.58, 24.55]
+  reason: 람푸라–반푸라(실제로는 인도르 주의 떨어진 땅, 1만 km² 미만이라 이웃 색으로 어림). 메와르·코타·괄리오르 땅에 둘러싸여 말와 서부와 떨어졌다
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Indore_State"]
+
+- entity: nagpur-kingdom
+  from: 1757
+  to: 1803
+  at: [86.33, 20.63]
+  reason: 오리사 해안(발라소르·쿠타크·푸리, 1751년 벵골 나와브에게서 얻음). 나그푸르 본토와는 오리사 산지 토후국들(가르자트)을 사이에 두고 떨어졌다(1803년 데오가온 조약으로 영국)
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Nagpur_Kingdom", "위키백과 영어판 https://en.wikipedia.org/wiki/Treaty_of_Deogaon"]
+
+- entity: punjab-hill-states
+  from: 1840
+  to: 1947
+  at: [76.24, 32.64]
+  reason: 참바 주. 1840년 쿨루, 1846년 캉그라가 시크·영국 땅이 된 뒤 펀자브 산지의 다른 토후국들과 떨어졌다
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Chamba_State"]
+
+- entity: rewa-kantha-states
+  from: 1818
+  to: 1947
+  at: [73.74, 23.23]
+  reason: 레와칸타 북쪽 덩어리(루나와다·순트·발라시노르). 영국령 판치마할(고드라·다호드)을 사이에 두고 남쪽 덩어리(라지플라·바리아·초타우다이푸르)와 떨어졌다
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Rewa_Kantha_Agency"]
+
+- entity: french-india
+  from: 1757
+  to: 1947
+  at: [79.8, 10.92]
+  reason: 카라이칼. 퐁디셰리와 떨어진 프랑스 상관
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/French_India"]
+
+- entity: french-india
+  from: 1757
+  to: 1947
+  at: [75.26, 12.06]
+  reason: 마헤(말라바르 해안). 퐁디셰리와 떨어진 프랑스 상관
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/French_India"]
+
+- entity: french-india
+  from: 1757
+  to: 1947
+  at: [82.21, 16.72]
+  reason: 야남(고다바리 하구). 퐁디셰리와 떨어진 프랑스 상관
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/French_India"]
+
+- entity: portuguese-india
+  from: 1757
+  to: 1947
+  at: [73.02, 20.11]
+  reason: 다드라·나가르 하벨리(1779~1783년 마라타에게서 얻음). 고아와 떨어진 포르투갈 땅
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Dadra_and_Nagar_Haveli"]
+
+- entity: portuguese-india
+  from: 1757
+  to: 1947
+  at: [72.86, 20.42]
+  reason: 다만. 고아와 떨어진 포르투갈 땅
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Daman_and_Diu"]
