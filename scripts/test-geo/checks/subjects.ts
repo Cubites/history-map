@@ -15,6 +15,9 @@
 //       꼬리가 있을 때 '괄호 말 + 꼬리'만('후우마이야 칼리프국 (코르도바)' → '코르도바 칼리프국')
 //     + 묶음 항목('(묶음)'·'…들')은 첫 낱말을 가운뎃점으로 나눈 이름('그리스 도시국가 (묶음)' → '그리스', '알바니아·제타 영주국들 (묶음)' → '알바니아'·'제타').
 //     이 규칙으로 HEAD 660838f의 항목이 괄호 떼기·꼬리 떼기만 할 때의 1,255개에서 954개로 줄었다(줄어든 것은 본문에 꼬리 뗀 이름 등이 있던 틀린 경보).
+//     + (2026-11-03 더함) 나라 이름 맞추기 두 가지: '○○ 주'(주)와 '○○인민공화국'(앞부분 '중화')은 꼬리를 뗀 꼴도 맞고('카란 주' → '카란'),
+//       본문이 흔히 쓰는 짧은 이름·옛 이름은 항목 id별 표 SHORT_OR_FORMER_NAMES로 맞는다(prc '중국', sri-lanka '실론', bangladesh '동파키스탄'·'동벵골'). 항목 yaml에 별칭·옛 이름 칸이 없어 표를 검사 코드에 둔다.
+//       검사 대상·기준(본문에 그 나라가 나오는가)은 그대로이고 이름만 더 넓게 알아본다.
 //  2. 두 글자 이상 변형은 제목·본문에서 띄어쓰기를 지운 글의 부분 문자열로 찾는다('동로마제국'·'동로마 제국' 모두 맞음, 조사가 붙어도 맞음).
 //     띄어 쓴 변형은 낱말 사이에 '의'가 낀 꼴도 맞는다('메카 샤리프' ↔ '메카의 샤리프').
 //  시험(2026-11-02, 서아시아 사건 me-04~08 초안 상태): 사실 대조의 이름 없음 지적 22건 가운데 17건을 잡음. 놓친 5건은 제목에만 이름이 있는 것 2건(이 검사는 제목도 본문으로 봄),
@@ -43,7 +46,15 @@ const TAILS = [
   '왕국', '왕조', '제국', '공국', '대공국', '전제공국', '공화국', '공화정', '백국', '후국', '술탄국', '토후국', '칸국', '칼리프국', '베이국', '이맘국', '아미르국', '에미르국',
   '샤리프국', '차르국', '기사단국', '헤트만국', '군주국', '연방', '합중국', '자유국', '자치국', '자유시', '보호령', '정권', '가문', '연맹', '판관국', '영주령', '총독부',
   '공국들', '영주국들', '왕국들', '도시국가들',
+  '주', // '카란 주'·'마크란 주'·'라스벨라 주'(2026-11-03)
 ];
+
+/** 본문이 흔히 쓰는 짧은 이름·옛 이름(항목 id → 이름들). 항목 yaml에 별칭·옛 이름 칸이 없어 여기 둔다(2026-11-03). 실론은 1972년 앞, 동파키스탄은 1947~1971년의 이름 */
+const SHORT_OR_FORMER_NAMES: Record<string, string[]> = {
+  prc: ['중국'],
+  'sri-lanka': ['실론'],
+  bangladesh: ['동파키스탄', '동벵골'],
+};
 const TAIL_RE = new RegExp(`^(?:제?\\d+)?(?:${[...TAILS].sort((a, b) => b.length - a.length).join('|')})$`);
 const HANGUL = /[가-힣]/;
 /** 한 글자 이름 뒤에 올 수 있는 조사·말 */
@@ -57,7 +68,7 @@ export interface NameVariants {
 }
 
 /** names.ko 하나에서 맞출 변형 만들기 (규칙 1) */
-export function nameVariants(ko: string): NameVariants {
+export function nameVariants(ko: string, id?: string): NameVariants {
   const set = new Set<string>();
   const add = (s: string) => {
     const t = s.trim();
@@ -66,6 +77,10 @@ export function nameVariants(ko: string): NameVariants {
   add(ko);
   const noParen = ko.replace(/\s*\([^)]*\)/g, '').trim();
   add(noParen);
+  // 띄어 쓰지 않은 '○○인민공화국'은 앞부분도('중화인민공화국' → '중화')
+  const inmin = noParen.match(/^([가-힣]{2,})인민공화국$/);
+  if (inmin) add(inmin[1]);
+  for (const x of (id !== undefined ? SHORT_OR_FORMER_NAMES[id] : undefined) ?? []) add(x);
   const isTail = (w: string) => w.split('·').every((p) => TAIL_RE.test(p));
   // 꼬리 떼기: 마지막 낱말이 꼬리면 뗀다. 남은 마지막 낱말이 '연합'이면 한 번 더('아라곤 연합 왕국' → '아라곤')
   let words = noParen.split(/\s+/);
@@ -170,7 +185,7 @@ export function findMisses(root: string, names: Map<string, string>, keep: (file
         checked++;
         const name = names.get(sid);
         if (name === undefined) continue; // 없는 id는 check:data가 잡는다
-        const v = nameVariants(name);
+        const v = nameVariants(name, sid);
         if (mentions(outside, v)) continue;
         misses.push({ eventId: String(e.id), file: f, subject: sid, kind: mentions(text, v) ? 'quoted' : 'none', name, title });
       }
@@ -179,8 +194,8 @@ export function findMisses(root: string, names: Map<string, string>, keep: (file
   return { checked, misses };
 }
 
-const variantsLabel = (name: string) => {
-  const v = nameVariants(name);
+const variantsLabel = (name: string, id?: string) => {
+  const v = nameVariants(name, id);
   return [...v.long, ...v.short].join('/');
 };
 
@@ -201,7 +216,7 @@ const subjects: Check = {
       if (seen.has(key)) continue;
       seen.add(key);
       const how = m.kind === 'quoted' ? '「」(다른 사건 제목) 안에만 있음' : '제목·본문에 없음';
-      items.push({ key, msg: `${m.title}(${m.eventId}): subjects '${m.subject}'(${m.name}) ${how} — 찾은 변형 ${variantsLabel(m.name)}` });
+      items.push({ key, msg: `${m.title}(${m.eventId}): subjects '${m.subject}'(${m.name}) ${how} — 찾은 변형 ${variantsLabel(m.name, m.subject)}` });
     }
     const quoted = misses.filter((m) => m.kind === 'quoted').length;
     return { checked, items, notes: quoted ? [`「」 안에만 ${quoted}`] : [] };

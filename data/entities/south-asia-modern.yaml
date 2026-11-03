@@ -19,7 +19,7 @@
     - 1950년 헌법으로 연방 의회 민주주의와 주 정부를 둠
     - 1956년 주 재편법으로 언어에 따라 주 경계를 다시 그음
     - 1974년 첫 핵실험, 1998년 공개 핵실험
-  startEvents: []
+  startEvents: [partition-1947, india-constitution-1950]
   endEvents: []
   basis:
     type: primary_source
@@ -39,7 +39,7 @@
     - 1958년 아유브 칸의 쿠데타 뒤 여러 차례 군정이 이어짐
     - 1963년 중국과 국경 협정을 맺어 샥스감 골짜기 쪽을 중국에 넘김
     - 1998년 공개 핵실험
-  startEvents: []
+  startEvents: [partition-1947]
   endEvents: []
   basis:
     type: primary_source
@@ -58,7 +58,7 @@
     - 도읍은 다카
     - 1952년 벵골어를 국어로 인정하라는 언어 운동이 독립 운동의 뿌리가 됨
     - 1975년 무지부르 라만이 쿠데타로 살해됨
-  startEvents: []
+  startEvents: [bangladesh-liberation-1971]
   endEvents: []
   basis:
     type: primary_source
@@ -118,7 +118,7 @@
     - 1950년 조약 뒤 인도가 국방·외교·교통을 맡음
     - 1973년 반왕정 시위 뒤 인도가 행정에 깊이 관여함
   startEvents: []
-  endEvents: []
+  endEvents: [sikkim-merger-1975]
   basis:
     type: primary_source
     refs: ["인도·시킴 조약(1950)", "인도 헌법 제36차 개정(1975)"]
@@ -139,7 +139,7 @@
     - 1946년 소울버리 헌법으로 내각제 자치 정부를 준비함
     - 차 수출이 식민지 경제의 중심
   startEvents: []
-  endEvents: []
+  endEvents: [ceylon-independence-1948]
   basis:
     type: primary_source
     refs: ["실론 독립법(1947)"]
@@ -157,7 +157,7 @@
     - 도읍은 콜롬보, 1982년부터 의회는 스리자야와르데네푸라코테
     - 1960년 시리마보 반다라나이케가 세계 첫 여성 총리가 됨
     - 1978년 헌법으로 대통령 중심제를 둠
-  startEvents: []
+  startEvents: [ceylon-independence-1948]
   endEvents: []
   basis:
     type: primary_source
@@ -179,7 +179,7 @@
     - 주민 대부분은 힌두교도, 니잠과 지배층은 무슬림
     - 1946년부터 텔랑가나 농민 봉기와 라자카르 민병대의 충돌이 이어짐
   startEvents: []
-  endEvents: []
+  endEvents: [hyderabad-polo-1948]
   basis:
     type: primary_source
     refs: ["인도·하이데라바드 정지 협정(1947)"]
@@ -199,7 +199,7 @@
     - 사라완·잘라완 두 부족 연합과 카치 평야를 다스림
     - 1952년 이웃 토후국들과 발루치스탄 연합을 이루었다가 1955년 서파키스탄에 합쳐짐
   startEvents: []
-  endEvents: []
+  endEvents: [princely-integration-1948]
   basis:
     type: primary_source
     refs: ["칼라트 독립 선언(1947)", "칼라트 가입 문서(1948)"]
@@ -218,7 +218,7 @@
     - 도읍은 카란
     - 이란과 맞닿은 마슈켈 쪽까지 사막이 넓음
   startEvents: []
-  endEvents: []
+  endEvents: [princely-integration-1948]
   basis:
     type: primary_source
     refs: ["카란 가입 문서(1948)"]
@@ -237,7 +237,7 @@
     - 도읍은 케치(투르바트)
     - 판즈구르·툼프에 기치키 가문의 갈래가 있었음
   startEvents: []
-  endEvents: []
+  endEvents: [princely-integration-1948]
   basis:
     type: primary_source
     refs: ["마크란 가입 문서(1948)"]
@@ -256,7 +256,7 @@
     - 도읍은 벨라
     - 1952년 발루치스탄 연합에 들었다가 1955년 10월 14일 없어짐
   startEvents: []
-  endEvents: []
+  endEvents: [princely-integration-1948]
   basis:
     type: primary_source
     refs: ["라스벨라 가입 문서(1948)"]
@@ -276,7 +276,7 @@
     - 도읍은 퐁디셰리
     - 18세기 뒤플렉스 때 영국과 인도 남부를 다툰 거점
   startEvents: []
-  endEvents: []
+  endEvents: [indian-enclaves-1954]
   basis:
     type: primary_source
     refs: ["인도·프랑스 이양 조약(1956)"]
@@ -295,7 +295,7 @@
     - 도읍은 판짐(노바고아)
     - 1954년 다드라·나가르 하벨리는 주민 의용군이 차지해 1961년 인도에 편입됨
   startEvents: []
-  endEvents: []
+  endEvents: [indian-enclaves-1954]
   basis:
     type: primary_source
     refs: ["인도·포르투갈 조약(1974)"]

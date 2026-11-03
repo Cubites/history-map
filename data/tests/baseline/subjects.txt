@@ -41,7 +41,6 @@ subjects armistice-1918 france
 subjects armistice-1918 italy
 subjects armistice-1918 uk
 subjects armistice-1918 usa
-subjects armistice-1953 prc
 subjects armistice-1953 rok
 subjects armistice-1953 usa
 subjects armistice-talks-1951 dprk
@@ -126,7 +125,6 @@ subjects cheonggyecheon-1760 joseon
 subjects cheonsang-yeolcha-1395 joseon
 subjects children-movement-1923 occupied-korea
 subjects chinese-entry-1950 dprk
-subjects chinese-entry-1950 prc
 subjects chinese-entry-1950 rok
 subjects chinese-entry-1950 usa
 subjects choe-chiwon-894 silla
@@ -251,7 +249,6 @@ subjects geneva-conference-1954 belgium
 subjects geneva-conference-1954 greece
 subjects geneva-conference-1954 luxembourg
 subjects geneva-conference-1954 netherlands
-subjects geneva-conference-1954 prc
 subjects geneva-conference-1954 turkey
 subjects geneva-conference-1954 uk
 subjects geolsapyo-608 silla
@@ -417,7 +414,6 @@ subjects jang-bogo-846 silla
 subjects jangsi-1470 joseon
 subjects jangsi-1770 joseon
 subjects jangyongyeong-1793 joseon
-subjects january-4-retreat-1951 prc
 subjects january-4-retreat-1951 rok
 subjects january-4-retreat-1951 usa
 subjects japan-surrender-1945 occupied-china
@@ -818,11 +814,9 @@ subjects sinhae-1791 joseon
 subjects sinim-oksa-1721 joseon
 subjects sinjip-600 goguryeo
 subjects sinminhoe-1907 daehan-jeguk
-subjects sino-indian-war-1962 prc
 subjects sino-japanese-occupation-1937 occupied-korea
 subjects sinyu-1801 joseon
 subjects six-day-war-1967 soviet-union
-subjects six-party-2003 prc
 subjects six-party-2003 rok
 subjects slave-review-956 goryeo
 subjects soburi-ju-671 tang
@@ -862,7 +856,6 @@ subjects thirty-years-war-danish-1625 holy-roman-empire
 subjects thirty-years-war-swedish-1630 holy-roman-empire
 subjects three-campaigns-1948 roc
 subjects three-party-merger-1988 rok
-subjects tibet-uprising-1959 prc
 subjects tiglath-pileser-iii-745bc aram-damascus
 subjects tongni-gimu-1880 joseon
 subjects tongsinsa-1590 joseon
