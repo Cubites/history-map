@@ -22,7 +22,7 @@
     - 겨울마다 인더스강을 건너 펀자브로 원정함
     - 아흐마드 샤는 1747~1767년 여덟 차례 넘게 인도로 군대를 보냄
   startEvents: []
-  endEvents: []
+  endEvents: [ranjit-singh-1799]
   basis:
     type: primary_source
     refs: ["위키백과 Durrani Empire"]
@@ -42,8 +42,8 @@
     - 도읍은 라호르, 미슬 시기의 중심은 암리차르
     - 란지트 싱은 유럽식 훈련을 받은 칼사 군대를 키움
     - 1809년 수틀레지강 남동쪽 시크 수장들은 영국 보호로 넘어감
-  startEvents: []
-  endEvents: []
+  startEvents: [sikh-misl-lahore-1765]
+  endEvents: [anglo-sikh-wars-1845]
   basis:
     type: primary_source
     refs: ["위키백과 Sikh Empire", "암리차르 조약(1809)", "라호르 조약(1846)"]
@@ -63,8 +63,8 @@
     - 도읍은 여름 스리나가르, 겨울 잠무
     - 1842년 추슐 조약으로 티베트와 라다크 경계를 확인함
     - 1877년부터 영국 주재관이 길기트를 맡아 다스림
-  startEvents: []
-  endEvents: []
+  startEvents: [dogra-ladakh-1834, anglo-sikh-wars-1845]
+  endEvents: [princely-states-1921]
   basis:
     type: primary_source
     refs: ["위키백과 Jammu and Kashmir (princely state)", "암리차르 조약(1846)"]
@@ -83,7 +83,7 @@
     - 도읍은 레
     - 카슈미르의 파시미나 양모 교역로를 쥠
   startEvents: []
-  endEvents: []
+  endEvents: [dogra-ladakh-1834]
   basis:
     type: primary_source
     refs: ["위키백과 Sikh Empire", "팅모스강 조약(1684)"]
@@ -103,7 +103,7 @@
     - 1877년 잠무 카슈미르와 조약을 맺어 그 종주를 받아들임
     - 1895년 영국군이 치트랄 요새 포위를 풀어 줌
   startEvents: []
-  endEvents: []
+  endEvents: [princely-states-1921]
   basis:
     type: primary_source
     refs: ["위키백과 Chitral (princely state)"]
@@ -123,7 +123,7 @@
     - 1809년 암리차르 조약으로 시크와의 경계가 수틀레지강에 머묾
     - 20세기에 수틀레지 계곡 관개로 경작지가 크게 늚
   startEvents: []
-  endEvents: []
+  endEvents: [princely-states-1921]
   basis:
     type: primary_source
     refs: ["위키백과 Bahawalpur (princely state)", "영국·바하왈푸르 조약(1833)"]
@@ -143,7 +143,7 @@
     - 도읍은 후다바드, 1768년부터 하이데라바드
     - 탈푸르 미르들은 땅을 갈래별로 나눠 다스림
   startEvents: []
-  endEvents: []
+  endEvents: [talpur-sindh-1779]
   basis:
     type: primary_source
     refs: ["위키백과 Talpur dynasty"]
@@ -162,7 +162,7 @@
     - 도읍은 하이르푸르
     - 미르 알리 무라드가 1843년 영국을 도와 지위를 지킴
   startEvents: []
-  endEvents: []
+  endEvents: [princely-states-1921]
   basis:
     type: primary_source
     refs: ["위키백과 Talpur dynasty"]
@@ -181,7 +181,7 @@
     - 도읍은 1549년부터 부즈
     - 1819년 지진으로 신드 쪽 란에 '알라의 둑'이 솟음
   startEvents: []
-  endEvents: []
+  endEvents: [princely-states-1921]
   basis:
     type: primary_source
     refs: ["위키백과 Cutch State"]
@@ -201,7 +201,7 @@
     - 1901년 합 넓이 약 5.4만 km²
     - 1807년까지 바로다의 가이크와드가 공물을 걷음
   startEvents: []
-  endEvents: []
+  endEvents: [princely-states-1921]
   basis:
     type: primary_source
     refs: ["위키백과 Kathiawar Agency"]
@@ -222,7 +222,7 @@
     - 사야지라오 3세(재위 1875~1939)가 학교·철도를 넓힘
     - 1802년부터 영국 주재관이 바로다에 머묾
   startEvents: []
-  endEvents: []
+  endEvents: [princely-states-1921]
   basis:
     type: primary_source
     refs: ["위키백과 Baroda State"]
@@ -241,8 +241,8 @@
     - 가장 큰 파티알라는 1763년 무렵 알라 싱이 세움
     - 1857년 봉기 때 영국을 도와 땅을 더 받음
     - 1921년 펀자브 토후국 에이전시로 묶임
-  startEvents: []
-  endEvents: []
+  startEvents: [ranjit-singh-1799]
+  endEvents: [princely-states-1921]
   basis:
     type: primary_source
     refs: ["위키백과 Punjab States Agency", "암리차르 조약(1809)"]
@@ -261,7 +261,7 @@
     - 에이전시 본부는 심라
     - 1806~1809년 구르카의 캉그라 포위 끝에 캉그라는 란지트 싱에게 넘어감
   startEvents: []
-  endEvents: []
+  endEvents: [princely-states-1921]
   basis:
     type: primary_source
     refs: ["위키백과 Punjab States Agency"]
@@ -280,7 +280,7 @@
     - 도읍은 조드푸르(메헤랑가르 요새)
     - 1901년 넓이 약 9.1만 km²
   startEvents: []
-  endEvents: []
+  endEvents: [princely-states-1921]
   basis:
     type: primary_source
     refs: ["위키백과 Rajputana Agency"]
@@ -299,7 +299,7 @@
     - 도읍은 비카네르(1488년 세움)
     - 1927년 간가 운하가 열려 북부 사막에 물을 댐
   startEvents: []
-  endEvents: []
+  endEvents: [princely-states-1921]
   basis:
     type: primary_source
     refs: ["위키백과 Rajputana Agency"]
@@ -318,7 +318,7 @@
     - 도읍은 자이살메르(황금 요새)
     - 바다 쪽 항로가 커지며 19세기에 교역이 줄어듦
   startEvents: []
-  endEvents: []
+  endEvents: [princely-states-1921]
   basis:
     type: primary_source
     refs: ["위키백과 Rajputana Agency"]
@@ -337,7 +337,7 @@
     - 도읍은 암베르, 1727년부터 자이푸르
     - 자이 싱 2세는 천문대 잔타르 만타르를 세움
   startEvents: []
-  endEvents: []
+  endEvents: [princely-states-1921]
   basis:
     type: primary_source
     refs: ["위키백과 Rajputana Agency"]
@@ -356,7 +356,7 @@
     - 도읍은 우다이푸르(1559년부터, 그 앞은 치토르)
     - 무굴에 끝까지 맞선 왕가로 이름남
   startEvents: []
-  endEvents: []
+  endEvents: [princely-states-1921]
   basis:
     type: primary_source
     refs: ["위키백과 Rajputana Agency"]
@@ -375,7 +375,7 @@
     - 도읍은 코타
     - 1838년 섭정 가문 몫으로 잘라와르 주를 떼어 줌
   startEvents: []
-  endEvents: []
+  endEvents: [princely-states-1921]
   basis:
     type: primary_source
     refs: ["위키백과 Rajputana Agency"]
@@ -394,7 +394,7 @@
     - 바라트푸르 요새는 1805년 영국군의 네 차례 공격을 막아 냄
     - 1826년 영국이 바라트푸르를 함락함
   startEvents: []
-  endEvents: []
+  endEvents: [princely-states-1921]
   basis:
     type: primary_source
     refs: ["위키백과 Rajputana Agency"]
@@ -413,7 +413,7 @@
     - 반스와라는 16세기 초 둥가르푸르에서 갈라져 섬
     - 1906년부터 남부 라지푸타나 토후국 에이전시가 감독함(그 전은 메와르 주재관)
   startEvents: []
-  endEvents: []
+  endEvents: [princely-states-1921]
   basis:
     type: primary_source
     refs: ["위키백과 Rajputana Agency"]
@@ -431,8 +431,8 @@
   features:
     - 에이전시 본부는 팔란푸르
     - 작은 란(소금 늪) 동쪽 가장자리의 산탈푸르·사미도 이 묶음
-  startEvents: []
-  endEvents: []
+  startEvents: [third-anglo-maratha-war-1817]
+  endEvents: [princely-states-1921]
   basis:
     type: primary_source
     refs: ["위키백과 Palanpur Agency"]
@@ -450,8 +450,8 @@
   features:
     - 이다르의 도읍은 이다르, 뒤에 히마트나가르
     - 에이전시 본부는 사드라
-  startEvents: []
-  endEvents: []
+  startEvents: [third-anglo-maratha-war-1817]
+  endEvents: [princely-states-1921]
   basis:
     type: primary_source
     refs: ["위키백과 Mahi Kantha"]
@@ -469,8 +469,8 @@
   features:
     - 가장 큰 라지플라의 도읍은 난도드
     - 에이전시 본부는 고드라
-  startEvents: []
-  endEvents: []
+  startEvents: [third-anglo-maratha-war-1817]
+  endEvents: [princely-states-1921]
   basis:
     type: primary_source
     refs: ["위키백과 Rewa Kantha Agency"]
@@ -494,8 +494,8 @@
     - 벵골·마드라스·봄베이 세 관구로 나누어 다스림
     - 1793년 영구 정액제로 벵골 지세를 자민다르에게 고정함
     - 군대 대부분이 인도인 병사 세포이였음
-  startEvents: []
-  endEvents: []
+  startEvents: [plassey-1757]
+  endEvents: [indian-rebellion-1857]
   basis:
     type: primary_source
     refs: ["알라하바드 조약(1765)", "인도 통치법(1858)"]
@@ -515,8 +515,8 @@
     - 1877년 빅토리아 여왕이 인도 황제 칭호를 받음
     - 1905년 벵골을 나누었다가 1911년 되돌림
     - 1919년 암리차르 학살, 1930년 간디의 소금 행진
-  startEvents: []
-  endEvents: []
+  startEvents: [crown-rule-1858]
+  endEvents: [cabinet-mission-1946]
   basis:
     type: primary_source
     refs: ["인도 통치법(1858)", "인도 독립법(1947)"]
@@ -537,7 +537,7 @@
     - 1756년 시라지 웃다울라가 콜카타의 영국 요새를 빼앗음
     - 1760년 미르 카심이 부르드완·미드나포르·치타공을 회사에 넘김
   startEvents: []
-  endEvents: []
+  endEvents: [buxar-1764]
   basis:
     type: primary_source
     refs: ["알라하바드 조약(1765)"]
@@ -557,7 +557,7 @@
     - 1801년 보조 조약으로 회사 군대를 두고 땅 절반을 넘김
     - 러크나우에서 시아파 이슬람 건축과 궁정 문화가 꽃핌
   startEvents: []
-  endEvents: []
+  endEvents: [dalhousie-lapse-1848]
   basis:
     type: primary_source
     refs: ["바라나시 조약(1775)", "아와드 할양 조약(1801)"]
@@ -577,7 +577,7 @@
     - 로힐라는 18세기에 들어온 파슈툰계 이주민과 그 후손
     - 수장들이 땅을 나눠 가진 느슨한 연합이었음
   startEvents: []
-  endEvents: []
+  endEvents: [rohilla-war-1773]
   basis:
     type: primary_source
     refs: ["『Imperial Gazetteer of India』 로힐칸드 항목"]
@@ -598,7 +598,7 @@
     - 서쪽 이웃 가르왈 왕국과 자주 싸움
     - 1740년대 로힐라 군대가 알모라까지 쳐들어옴
   startEvents: []
-  endEvents: []
+  endEvents: [nepal-unification-1768]
   basis:
     type: primary_source
     refs: ["『Imperial Gazetteer of India』 쿠마온 항목"]
@@ -619,7 +619,7 @@
     - 바드리나트·케다르나트 등 힌두교 성지가 있음
     - 1803년 큰 지진을 겪은 해에 고르카의 침공을 받음
   startEvents: []
-  endEvents: []
+  endEvents: [nepal-unification-1768]
   basis:
     type: primary_source
     refs: ["『Imperial Gazetteer of India』 가르왈 항목"]
@@ -638,8 +638,8 @@
     - 도읍은 테흐리, 20세기에 나렌드라나가르를 새로 세움
     - 갠지스강 수원 강고트리가 영토 안에 있음
     - 1930년 틸라리에서 숲 권리를 요구한 농민에게 총을 쏨
-  startEvents: []
-  endEvents: []
+  startEvents: [anglo-nepal-war-1814]
+  endEvents: [princely-states-1921]
   basis:
     type: primary_source
     refs: ["수가울리 조약(1815)"]
@@ -660,7 +660,7 @@
     - 성인 남자가 나라에 노역을 바치는 파이크 제도로 다스림
     - 부란지라는 연대기를 남김
   startEvents: []
-  endEvents: []
+  endEvents: [first-anglo-burmese-war-1824]
   basis:
     type: primary_source
     refs: ["부란지(아홈 연대기)", "얀다보 조약(1826)"]
@@ -681,7 +681,7 @@
     - 1891년 전쟁 뒤 영국이 어린 추라찬드 싱을 왕으로 세움
     - 폴로 경기가 이곳에서 영국으로 퍼짐
   startEvents: []
-  endEvents: []
+  endEvents: [princely-states-1921]
   basis:
     type: primary_source
     refs: ["얀다보 조약(1826)"]
@@ -701,7 +701,7 @@
     - 왕실 연대기 『라즈말라』를 남김
     - 1871년부터 영국 정무관이 아가르탈라에 머묾
   startEvents: []
-  endEvents: []
+  endEvents: [princely-states-1921]
   basis:
     type: primary_source
     refs: ["『라즈말라』"]
@@ -722,7 +722,7 @@
     - 각 라자가 내정을 다스리고 공물을 바침
     - 1930년대 주민 운동(프라자 만달)이 토후 통치에 맞섬
   startEvents: []
-  endEvents: []
+  endEvents: [princely-states-1921]
   basis:
     type: primary_source
     refs: ["『Imperial Gazetteer of India』 오리사 속국 항목"]
@@ -742,7 +742,7 @@
     - 시밀리팔 숲과 철광산이 있음
     - 주민 다수가 산탈·호 등 부족민
   startEvents: []
-  endEvents: []
+  endEvents: [princely-states-1921]
   basis:
     type: primary_source
     refs: ["『Imperial Gazetteer of India』 마유르반즈 항목"]
@@ -762,7 +762,7 @@
     - 단테와다의 단테슈와리 여신을 왕가 수호신으로 모심
     - 다세라 축제가 75일 동안 열림
   startEvents: []
-  endEvents: []
+  endEvents: [princely-states-1921]
   basis:
     type: primary_source
     refs: ["『Imperial Gazetteer of India』 바스타르 항목"]
@@ -782,7 +782,7 @@
     - 마인파트 고원과 숲이 넓게 차지함
     - 주민 다수가 곤드·오라온 등 부족민
   startEvents: []
-  endEvents: []
+  endEvents: [princely-states-1921]
   basis:
     type: primary_source
     refs: ["『Imperial Gazetteer of India』 수르구자 항목"]
@@ -802,7 +802,7 @@
     - 각 라자가 내정을 다스리고 공물을 바침
     - 주민 다수가 곤드·오라온 등 부족민
   startEvents: []
-  endEvents: []
+  endEvents: [princely-states-1921]
   basis:
     type: primary_source
     refs: ["『Imperial Gazetteer of India』 차티스가르 속국 항목"]
@@ -828,7 +828,7 @@
     - 1782년 살바이 조약으로 1차 전쟁 전 모습으로 돌아감
     - 1802년 바세인 조약으로 페슈와가 영국의 보조 동맹을 받아들임
   startEvents: []
-  endEvents: []
+  endEvents: [third-anglo-maratha-war-1817]
   basis:
     type: primary_source
     refs: ["살바이 조약(1782)", "바세인 조약(1802)"]
@@ -849,7 +849,7 @@
     - 1844년 마하라지푸르 전투에 진 뒤 영국 주재관의 감독을 받음
     - 1857년 항쟁 때 왕은 영국 편에 섰으나 군대 일부가 반란에 가담함
   startEvents: []
-  endEvents: []
+  endEvents: [princely-states-1921]
   basis:
     type: primary_source
     refs: ["괄리오르 조약(1817)", "Imperial Gazetteer of India: Gwalior State"]
@@ -869,7 +869,7 @@
     - 1817년 마히드푸르 전투에서 영국군에 짐
     - 1818년 만드소르 조약으로 라지푸타나 쪽 권리를 내놓음
   startEvents: []
-  endEvents: []
+  endEvents: [princely-states-1921]
   basis:
     type: primary_source
     refs: ["만드소르 조약(1818)", "Imperial Gazetteer of India: Indore State"]
@@ -889,7 +889,7 @@
     - 1785년 페슈와와의 조약으로 만들라와 상부 나르마다를 얻음
     - 1818년 시타불디 패배 뒤 남은 땅을 영국 주재관이 감독함
   startEvents: []
-  endEvents: []
+  endEvents: [dalhousie-lapse-1848]
   basis:
     type: primary_source
     refs: ["데오가온 조약(1803)", "Imperial Gazetteer of India: Nagpur"]
@@ -910,7 +910,7 @@
     - 1784년 망갈로르 조약으로 2차 전쟁을 서로 땅을 돌려주고 끝냄
     - 1831년 농민 봉기 뒤 영국이 50년 동안 직접 다스리고 1881년 왕에게 돌려줌
   startEvents: []
-  endEvents: []
+  endEvents: [princely-states-1921]
   basis:
     type: primary_source
     refs: ["세링가파탐 조약(1792)", "마이소르 분할 조약(1799)"]
@@ -930,7 +930,7 @@
     - 1765년 무굴 황제가 나와브의 자립을 인정함
     - 회사에 진 빚이 커져 땅의 세금을 회사가 직접 거둠
   startEvents: []
-  endEvents: []
+  endEvents: [wellesley-subsidiary-1798]
   basis:
     type: primary_source
     refs: ["카르나타카 조약(1801)"]
@@ -950,7 +950,7 @@
     - 1750년 마르탄다 바르마가 나라를 파드마나바 신에게 바침
     - 1809년 재상 벨루 탐비가 영국에 맞서 봉기함
   startEvents: []
-  endEvents: []
+  endEvents: [princely-states-1921]
   basis:
     type: primary_source
     refs: ["트라방코르 조약(1805)"]
@@ -970,7 +970,7 @@
     - 쿠드시아·시칸다르·샤자한·술탄 자한 네 베굼이 다스림
     - 1857년 항쟁 때 영국 편에 섬
   startEvents: []
-  endEvents: []
+  endEvents: [princely-states-1921]
   basis:
     type: primary_source
     refs: ["보팔 조약(1818)", "Imperial Gazetteer of India: Bhopal State"]
@@ -990,7 +990,7 @@
     - 1812년 영국과 맺은 조약으로 보호국이 됨
     - 판나·마이하르 등 바겔칸드의 작은 토후국들과 이웃함
   startEvents: []
-  endEvents: []
+  endEvents: [princely-states-1921]
   basis:
     type: primary_source
     refs: ["레와 조약(1812)", "Imperial Gazetteer of India: Rewa State"]
@@ -1010,7 +1010,7 @@
     - 판나는 다이아몬드 광산으로 이름남
     - 카주라호 사원은 차타르푸르 땅에 있었음
   startEvents: []
-  endEvents: []
+  endEvents: [princely-states-1921]
   basis:
     type: primary_source
     refs: ["Imperial Gazetteer of India: Bundelkhand Agency"]
@@ -1029,8 +1029,8 @@
     - 다르와 데와스는 페슈와 시대의 마라타 장군 파와르 가문이 다스림
     - 자오라는 홀카르의 장군 아미르 칸 일가의 무슬림 토후국
     - 1925년 바호파와르 에이전시가 말와 에이전시에 합쳐짐
-  startEvents: []
-  endEvents: []
+  startEvents: [third-anglo-maratha-war-1817]
+  endEvents: [princely-states-1921]
   basis:
     type: primary_source
     refs: ["Imperial Gazetteer of India: Malwa Agency"]
@@ -1050,7 +1050,7 @@
     - 부처의 치아 사리를 모신 달라다 말리가와 사원이 왕권의 상징
     - 1766년 네덜란드와의 조약으로 바닷가 전부를 네덜란드에 내줌
   startEvents: []
-  endEvents: []
+  endEvents: [ceylon-british-1796]
   basis:
     type: primary_source
     refs: ["칸디 협약(1815)"]
@@ -1070,7 +1070,7 @@
     - 로마-네덜란드법과 토지 대장을 들임
     - 갈레 요새는 이때 지은 성벽이 남음
   startEvents: []
-  endEvents: []
+  endEvents: [ceylon-british-1796]
   basis:
     type: primary_source
     refs: ["아미앵 조약(1802)"]
@@ -1089,8 +1089,8 @@
     - 콜하푸르의 도읍은 콜하푸르
     - 사타라 왕국은 1848년 왕이 아들 없이 죽자 실권 원칙으로 거두어짐
     - 1933년 데칸 토후국 에이전시로 묶임
-  startEvents: []
-  endEvents: []
+  startEvents: [third-anglo-maratha-war-1817]
+  endEvents: [princely-states-1921]
   basis:
     type: primary_source
     refs: ["위키백과 Deccan States Agency", "위키백과 Satara State"]

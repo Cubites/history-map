@@ -67,55 +67,55 @@
   decided: 2026-11-02 사건 묶음 me-00 제안(운영자 검수 권장)
 # ── 남아시아 S2 서 (2026-11-03): 1757~1946 파키스탄·카슈미르·펀자브·라지푸타나·구자라트 새 항목의 성립·소멸과 1만 km² 넘는 버전 해(동인도 회사·영국령 인도·괄리오르·네팔은 이 칸 땅으로 생긴 버전 해만). 사건 묶음 sa-07이 사건을 쓰며 이 줄을 지운다 ──
 - key: '734 mewar-state 성립'
-  reason: sa-07 사건 묶음이 채움
+  reason: S4 사건 묶음이 채움(성립 해가 1206년 앞)
   decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
 - key: '1128 jaipur-state 성립'
-  reason: sa-07 사건 묶음이 채움
+  reason: S4 사건 묶음이 채움(성립 해가 1206년 앞)
   decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
 - key: '1147 cutch-state 성립'
-  reason: sa-07 사건 묶음이 채움
+  reason: S4 사건 묶음이 채움(성립 해가 1206년 앞)
   decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
 - key: '1156 jaisalmer-state 성립'
-  reason: sa-07 사건 묶음이 채움
+  reason: S4 사건 묶음이 채움(성립 해가 1206년 앞)
   decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
 - key: '1459 jodhpur-state 성립'
-  reason: sa-07 사건 묶음이 채움
+  reason: S3 사건 묶음이 채움(성립 해가 1757년 지도 앞)
   decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
 - key: '1460 ladakh-kingdom 성립'
-  reason: sa-07 사건 묶음이 채움
+  reason: S3 사건 묶음이 채움(성립 해가 1757년 지도 앞)
   decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
 - key: '1465 bikaner-state 성립'
-  reason: sa-07 사건 묶음이 채움
+  reason: S3 사건 묶음이 채움(성립 해가 1757년 지도 앞)
   decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
 - key: '1631 kota-state 성립'
-  reason: sa-07 사건 묶음이 채움
+  reason: S3 사건 묶음이 채움(성립 해가 1757년 지도 앞)
   decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
 - key: '1660 chitral-kingdom 성립'
-  reason: sa-07 사건 묶음이 채움
+  reason: S3 사건 묶음이 채움(성립 해가 1757년 지도 앞)
   decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
 - key: '1666 kalat 성립'
-  reason: sa-07 사건 묶음이 채움
+  reason: S3 사건 묶음이 채움(성립 해가 1757년 지도 앞)
   decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
 - key: '1697 kharan 성립'
-  reason: sa-07 사건 묶음이 채움
+  reason: S3 사건 묶음이 채움(성립 해가 1757년 지도 앞)
   decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
 - key: '1701 talpur-sindh 성립'
-  reason: sa-07 사건 묶음이 채움
+  reason: S3 사건 묶음이 채움(성립 해가 1757년 지도 앞)
   decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
 - key: '1721 baroda-state 성립'
-  reason: sa-07 사건 묶음이 채움
+  reason: S3 사건 묶음이 채움(성립 해가 1757년 지도 앞)
   decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
 - key: '1740 makran 성립'
-  reason: sa-07 사건 묶음이 채움
+  reason: S3 사건 묶음이 채움(성립 해가 1757년 지도 앞)
   decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
 - key: '1742 las-bela 성립'
-  reason: sa-07 사건 묶음이 채움
+  reason: S3 사건 묶음이 채움(성립 해가 1757년 지도 앞)
   decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
 - key: '1747 durrani-empire 성립'
-  reason: sa-07 사건 묶음이 채움
+  reason: S3 사건 묶음이 채움(성립 해가 1757년 지도 앞)
   decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
 - key: '1748 bahawalpur-state 성립'
-  reason: sa-07 사건 묶음이 채움
+  reason: S3 사건 묶음이 채움(성립 해가 1757년 지도 앞)
   decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
 - key: '1757 kathiawar-states 성립'
   reason: sa-07 사건 묶음이 채움
@@ -124,81 +124,6 @@
   reason: sa-07 사건 묶음이 채움
   decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
 - key: '1757 east-rajputana-states 성립'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1765 sikh-empire 성립'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1783 khairpur-state 성립'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1809 punjab-states 성립'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1825 durrani-empire 소멸'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1839 ladakh-kingdom 소멸'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1840 jammu-kashmir-state 성립'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1842 talpur-sindh 소멸'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1848 sikh-empire 소멸'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1946 jammu-kashmir-state 소멸'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1946 chitral-kingdom 소멸'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1946 bahawalpur-state 소멸'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1946 khairpur-state 소멸'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1946 cutch-state 소멸'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1946 kathiawar-states 소멸'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1946 baroda-state 소멸'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1946 punjab-states 소멸'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1946 punjab-hill-states 소멸'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1946 jodhpur-state 소멸'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1946 bikaner-state 소멸'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1946 jaisalmer-state 소멸'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1946 jaipur-state 소멸'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1946 mewar-state 소멸'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1946 kota-state 소멸'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1946 east-rajputana-states 소멸'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1757 durrani-empire 버전'
   reason: sa-07 사건 묶음이 채움
   decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
 - key: '1757 ladakh-kingdom 버전'
@@ -249,212 +174,47 @@
 - key: '1757 las-bela 버전'
   reason: sa-07 사건 묶음이 채움
   decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1765 durrani-empire 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1783 talpur-sindh 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1788 gwalior-state 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1803 punjab-hill-states 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1803 company-india 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1803 nepal 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1809 sikh-empire 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1815 punjab-hill-states 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1840 punjab-hill-states 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1818 durrani-empire 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1818 sikh-empire 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1818 baroda-state 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1818 company-india 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1819 durrani-empire 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1819 sikh-empire 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1822 durrani-empire 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1822 sikh-empire 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1823 durrani-empire 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1834 sikh-empire 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1840 sikh-empire 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1843 company-india 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1846 sikh-empire 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1846 jammu-kashmir-state 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1846 punjab-states 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1846 company-india 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1849 company-india 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1860 jammu-kashmir-state 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1887 british-raj 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1893 british-raj 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1895 british-raj 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 서 구현(사건은 다음 세션)
-- key: '1803 gwalior-state 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 합치기(서·동 칸 땅에서 생긴 다른 칸 항목 버전 해, 사건은 다음 세션)
 # ── 남아시아 S2 동 (2026-11-03): 1757~1946 동 칸 항목의 성립·소멸과 1만 km² 넘는 버전 해(동 칸 땅이 만든 괄리오르 1788·나그푸르 1803 포함). 사건 묶음 sa-07이 사건을 쓰며 이 줄을 지운다 ──
 - key: '700 kumaon-kingdom 성립'
-  reason: sa-07 사건 묶음이 채움
+  reason: S4 사건 묶음이 채움(성립 해가 1206년 앞)
   decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
 - key: '823 garhwal-kingdom 성립'
-  reason: sa-07 사건 묶음이 채움
+  reason: S4 사건 묶음이 채움(성립 해가 1206년 앞)
   decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
 - key: '1100 mayurbhanj-state 성립'
-  reason: sa-07 사건 묶음이 채움
+  reason: S4 사건 묶음이 채움(성립 해가 1206년 앞)
   decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
 - key: '1110 manipur 성립'
-  reason: sa-07 사건 묶음이 채움
+  reason: S4 사건 묶음이 채움(성립 해가 1206년 앞)
   decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
 - key: '1228 ahom-kingdom 성립'
-  reason: sa-07 사건 묶음이 채움
+  reason: S3 사건 묶음이 채움(성립 해가 1757년 지도 앞)
   decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
 - key: '1324 bastar-state 성립'
-  reason: sa-07 사건 묶음이 채움
+  reason: S3 사건 묶음이 채움(성립 해가 1757년 지도 앞)
   decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
 - key: '1400 tripura 성립'
-  reason: sa-07 사건 묶음이 채움
+  reason: S3 사건 묶음이 채움(성립 해가 1757년 지도 앞)
   decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
 - key: '1613 surguja-state 성립'
-  reason: sa-07 사건 묶음이 채움
+  reason: S3 사건 묶음이 채움(성립 해가 1757년 지도 앞)
   decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
 - key: '1616 bhutan 성립'
-  reason: sa-07 사건 묶음이 채움
+  reason: S3 사건 묶음이 채움(성립 해가 1757년 지도 앞)
   decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
 - key: '1717 bengal-nawabs 성립'
-  reason: sa-07 사건 묶음이 채움
+  reason: S3 사건 묶음이 채움(성립 해가 1757년 지도 앞)
   decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
 - key: '1721 rohilkhand 성립'
-  reason: sa-07 사건 묶음이 채움
+  reason: S3 사건 묶음이 채움(성립 해가 1757년 지도 앞)
   decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
 - key: '1722 awadh 성립'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
-- key: '1757 company-india 성립'
-  reason: sa-07 사건 묶음이 채움
+  reason: S3 사건 묶음이 채움(성립 해가 1757년 지도 앞)
   decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
 - key: '1757 orissa-states 성립'
   reason: sa-07 사건 묶음이 채움
   decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
 - key: '1757 chhattisgarh-states 성립'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
-- key: '1764 bengal-nawabs 소멸'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
-- key: '1768 nepal 성립'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
-- key: '1773 rohilkhand 소멸'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
-- key: '1789 kumaon-kingdom 소멸'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
-- key: '1802 garhwal-kingdom 소멸'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
-- key: '1815 tehri-garhwal 성립'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
-- key: '1825 ahom-kingdom 소멸'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
-- key: '1855 awadh 소멸'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
-- key: '1857 company-india 소멸'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
-- key: '1858 british-raj 성립'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
-- key: '1861 sikkim 성립'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
-- key: '1946 british-raj 소멸'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
-- key: '1946 tehri-garhwal 소멸'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
-- key: '1946 manipur 소멸'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
-- key: '1946 tripura 소멸'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
-- key: '1946 orissa-states 소멸'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
-- key: '1946 mayurbhanj-state 소멸'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
-- key: '1946 bastar-state 소멸'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
-- key: '1946 surguja-state 소멸'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
-- key: '1946 chhattisgarh-states 소멸'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
-- key: '1757 bengal-nawabs 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
-- key: '1757 awadh 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
-- key: '1757 rohilkhand 버전'
   reason: sa-07 사건 묶음이 채움
   decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
 - key: '1757 kumaon-kingdom 버전'
@@ -484,75 +244,6 @@
 - key: '1757 bhutan 버전'
   reason: sa-07 사건 묶음이 채움
   decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
-- key: '1765 company-india 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
-- key: '1766 company-india 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
-- key: '1774 awadh 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
-- key: '1774 nepal 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
-- key: '1775 company-india 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
-- key: '1775 awadh 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
-- key: '1790 nepal 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
-- key: '1801 company-india 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
-- key: '1801 awadh 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
-- key: '1803 nagpur-kingdom 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
-- key: '1815 company-india 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
-- key: '1815 nepal 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
-- key: '1826 company-india 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
-- key: '1832 company-india 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
-- key: '1835 company-india 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
-- key: '1849 orissa-states 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
-- key: '1854 company-india 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
-- key: '1856 company-india 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
-- key: '1865 british-raj 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
-- key: '1865 bhutan 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
-- key: '1881 british-raj 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
-- key: '1914 british-raj 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 동 구현(사건은 다음 세션)
-- key: '1803 maratha-peshwa 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 합치기(동 칸 땅에서 생긴 다른 칸 항목 버전 해, 사건은 다음 세션)
 # ── 남아시아 S2 남 (2026-11-03): 1757~1946 데칸·중앙 인도·남인도·실론 항목의 성립·소멸과 1만 km² 넘는 버전 해. 1757년 버전은 지도 첫 해, 1757년 전 성립은 S3 몫. 사건 묶음이 사건을 쓰며 이 줄을 지운다 ──
 - key: '1399 mysore 성립'
   reason: S3 사건 묶음이 채움(성립 해가 1757년 지도 앞)
@@ -599,67 +290,10 @@
 - key: '1739 nagpur-kingdom 성립'
   reason: S3 사건 묶음이 채움(성립 해가 1757년 지도 앞)
   decided: 2026-11-03 남아시아 S2 남 구현(사건은 다음 세션)
-- key: '1796 british-ceylon 성립'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 남 구현(사건은 다음 세션)
-- key: '1818 malwa-states 성립'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 남 구현(사건은 다음 세션)
-- key: '1796 dutch-ceylon 소멸'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 남 구현(사건은 다음 세션)
-- key: '1801 carnatic-nawab 소멸'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 남 구현(사건은 다음 세션)
-- key: '1815 kandy 소멸'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 남 구현(사건은 다음 세션)
-- key: '1818 maratha-peshwa 소멸'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 남 구현(사건은 다음 세션)
-- key: '1853 nagpur-kingdom 소멸'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 남 구현(사건은 다음 세션)
-- key: '1946 gwalior-state 소멸'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 남 구현(사건은 다음 세션)
-- key: '1946 indore-state 소멸'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 남 구현(사건은 다음 세션)
-- key: '1946 mysore 소멸'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 남 구현(사건은 다음 세션)
-- key: '1946 travancore 소멸'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 남 구현(사건은 다음 세션)
-- key: '1946 bhopal-state 소멸'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 남 구현(사건은 다음 세션)
-- key: '1946 rewa-state 소멸'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 남 구현(사건은 다음 세션)
-- key: '1946 bundelkhand-states 소멸'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 남 구현(사건은 다음 세션)
-- key: '1946 malwa-states 소멸'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 남 구현(사건은 다음 세션)
-- key: '1757 maratha-peshwa 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 남 구현(사건은 다음 세션)
-- key: '1757 gwalior-state 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 남 구현(사건은 다음 세션)
-- key: '1757 indore-state 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 남 구현(사건은 다음 세션)
 - key: '1757 nagpur-kingdom 버전'
   reason: sa-07 사건 묶음이 채움
   decided: 2026-11-03 남아시아 S2 남 구현(사건은 다음 세션)
 - key: '1757 mysore 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 남 구현(사건은 다음 세션)
-- key: '1757 carnatic-nawab 버전'
   reason: sa-07 사건 묶음이 채움
   decided: 2026-11-03 남아시아 S2 남 구현(사건은 다음 세션)
 - key: '1757 travancore 버전'
@@ -680,133 +314,11 @@
 - key: '1757 dutch-ceylon 버전'
   reason: sa-07 사건 묶음이 채움
   decided: 2026-11-03 남아시아 S2 남 구현(사건은 다음 세션)
-- key: '1757 hyderabad-state 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 남 구현(사건은 다음 세션)
-- key: '1763 mysore 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 남 구현(사건은 다음 세션)
-- key: '1766 mysore 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 남 구현(사건은 다음 세션)
-- key: '1766 carnatic-nawab 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 남 구현(사건은 다음 세션)
-- key: '1766 hyderabad-state 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 남 구현(사건은 다음 세션)
-- key: '1779 maratha-peshwa 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 남 구현(사건은 다음 세션)
-- key: '1779 mysore 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 남 구현(사건은 다음 세션)
-- key: '1779 hyderabad-state 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 남 구현(사건은 다음 세션)
-- key: '1784 gwalior-state 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 남 구현(사건은 다음 세션)
-- key: '1785 maratha-peshwa 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 남 구현(사건은 다음 세션)
 - key: '1785 nagpur-kingdom 버전'
   reason: sa-07 사건 묶음이 채움
   decided: 2026-11-03 남아시아 S2 남 구현(사건은 다음 세션)
-- key: '1788 hyderabad-state 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 남 구현(사건은 다음 세션)
-- key: '1792 maratha-peshwa 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 남 구현(사건은 다음 세션)
-- key: '1792 mysore 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 남 구현(사건은 다음 세션)
-- key: '1792 hyderabad-state 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 남 구현(사건은 다음 세션)
-- key: '1799 mysore 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 남 구현(사건은 다음 세션)
-- key: '1799 hyderabad-state 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 남 구현(사건은 다음 세션)
-- key: '1800 hyderabad-state 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 남 구현(사건은 다음 세션)
-- key: '1815 british-ceylon 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 남 구현(사건은 다음 세션)
-- key: '1818 nagpur-kingdom 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 남 구현(사건은 다음 세션)
-- key: '1818 rewa-state 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 남 구현(사건은 다음 세션)
-- key: '1853 hyderabad-state 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 남 구현(사건은 다음 세션)
-- key: '1858 rewa-state 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 남 구현(사건은 다음 세션)
-- key: '1788 company-india 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 합치기(남 칸 땅에서 생긴 다른 칸 항목 버전 해, 사건은 다음 세션)
-- key: '1792 company-india 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 합치기(남 칸 땅에서 생긴 다른 칸 항목 버전 해, 사건은 다음 세션)
-- key: '1799 company-india 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 합치기(남 칸 땅에서 생긴 다른 칸 항목 버전 해, 사건은 다음 세션)
-- key: '1800 company-india 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 합치기(남 칸 땅에서 생긴 다른 칸 항목 버전 해, 사건은 다음 세션)
-- key: '1853 company-india 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 합치기(남 칸 땅에서 생긴 다른 칸 항목 버전 해, 사건은 다음 세션)
 # ── 남아시아 S2 반영 1 (2026-11-03): 검토 고칠 점으로 더한 묶음 다섯(남부 라지푸타나·팔란푸르·마히칸타·레와칸타·데칸 토후국들)의 성립·소멸과 움에르코트·타르파르카르(1779·1813)·사타라(1849) 버전 해. 사건 묶음 sa-07이 사건을 쓰며 이 줄을 지운다 ──
 - key: '1757 south-rajputana-states 성립'
   reason: sa-07 사건 묶음이 채움
   decided: 2026-11-03 남아시아 S2 반영 1(사건은 다음 세션)
-- key: '1946 south-rajputana-states 소멸'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 반영 1(사건은 다음 세션)
-- key: '1818 palanpur-states 성립'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 반영 1(사건은 다음 세션)
-- key: '1946 palanpur-states 소멸'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 반영 1(사건은 다음 세션)
-- key: '1818 mahi-kantha-states 성립'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 반영 1(사건은 다음 세션)
-- key: '1946 mahi-kantha-states 소멸'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 반영 1(사건은 다음 세션)
-- key: '1818 rewa-kantha-states 성립'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 반영 1(사건은 다음 세션)
-- key: '1946 rewa-kantha-states 소멸'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 반영 1(사건은 다음 세션)
-- key: '1818 deccan-states 성립'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 반영 1(사건은 다음 세션)
-- key: '1946 deccan-states 소멸'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 반영 1(사건은 다음 세션)
-- key: '1849 deccan-states 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 반영 1(사건은 다음 세션)
-- key: '1779 talpur-sindh 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 반영 1(사건은 다음 세션)
-- key: '1779 jodhpur-state 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 반영 1(사건은 다음 세션)
-- key: '1813 talpur-sindh 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 반영 1(사건은 다음 세션)
-- key: '1813 jodhpur-state 버전'
-  reason: sa-07 사건 묶음이 채움
-  decided: 2026-11-03 남아시아 S2 반영 1(사건은 다음 세션)
+

@@ -2903,3 +2903,83 @@
   avoid: [챙글페트, 칭글풋]
   note: "Chengalpattu(옛 Chingleput, 마드라스 남서쪽 회사 땅 자기르). 0회(이 반영 전 '챙글페트' 1회)"
   scope: 남아시아 지명
+- use: 하이데르 알리
+  avoid: [하이더 알리]
+  note: "Hyder Ali(마이소르의 실권자 1761~1782). 위키백과 한국어판 '하이데르 알리'. 0회(사건 sa-07)"
+  scope: 남아시아 근세
+- use: 티푸 술탄
+  avoid: [팁푸 술탄, 티푸 수탄]
+  note: "Tipu Sultan(마이소르 1782~1799). 위키백과 한국어판 '티푸 술탄'. 0회(사건 sa-07)"
+  scope: 남아시아 근세
+- use: 콘월리스
+  avoid: [콘윌리스, 콘왈리스]
+  note: "Cornwallis(총독 1786~1793·1805). 위키백과 한국어판 '찰스 콘월리스'. 0회(사건 sa-07)"
+  scope: 남아시아 근세
+- use: 웰즐리
+  avoid: [웰슬리, 웰즈리]
+  note: "Wellesley(총독 1798~1805). 위키백과 한국어판 '리처드 웰즐리'. 0회(사건 sa-07)"
+  scope: 남아시아 근세
+- use: 헤이스팅스
+  avoid: [헤이스팅즈]
+  note: "Hastings(총독 워런 헤이스팅스). 위키백과 한국어판 표제. 0회(사건 sa-07)"
+  scope: 남아시아 근세
+- use: 시라지 웃다울라
+  avoid: [시라지 우드 다울라, 시라지웃다울라]
+  note: "Siraj ud-Daulah(벵골 나와브). 위키백과 한국어판 표제. 0회(사건 sa-07)"
+  scope: 남아시아 근세
+- use: 슈자 웃다울라
+  avoid: [슈자 우드 다울라, 슈자웃다울라]
+  note: "Shuja-ud-Daula(아와드 나와브). 위키백과 한국어판 표제. 0회(사건 sa-07)"
+  scope: 남아시아 근세
+- use: 굴랍 싱
+  avoid: [구랍 싱, 굴라브 싱]
+  note: "Gulab Singh(잠무 카슈미르 주의 창건자). 위키백과 한국어판 표제. 0회(사건 sa-07)"
+  scope: 남아시아 근세
+- use: 달하우지
+  avoid: [댈하우지]
+  note: "Dalhousie(총독 1848~1856). 위키백과 한국어판 '제임스 브라운램지'·교과서 '달하우지'. 0회(사건 sa-07)"
+  scope: 남아시아 근세
+- use: 매콜리
+  avoid: [맥컬리, 머콜리, 매컬리]
+  note: "Macaulay(토머스 배빙턴 매콜리, 1835년 교육 건의서). 위키백과 한국어판 표제. 0회(사건 sa-07)"
+  scope: 남아시아 근세
+- use: 로파르
+  avoid: [룹나르]
+  note: "Rupar/Ropar(1831년 란지트 싱과 벤팅크가 만난 사틀레지강가 도시). 영어 표기에 가까운 꼴로 하나로 맞춤. 0회(사건 sa-07)"
+  scope: 남아시아 근세
+- use: 장 바하두르 라나
+  avoid: [정 바하두르 라나, 정 바하두르]
+  note: "Jang Bahadur Rana(네팔 총리 1846~1877). 위키백과 한국어판 표제 '장 바하두르 라나', sa-08과 맞춤. 0회(사건 sa-07)"
+  scope: 남아시아 근세
+- use: 우메시 찬드라 바네르지
+  avoid: [우메시 찬드라 보너지]
+  note: "W. C. Bonnerjee(국민 회의 초대 의장). 저장소 기존 '바네르지'(sa-08)와 맞춤. 0회(사건 sa-07)"
+  scope: 남아시아 근세
+- use: 사이먼 위원회
+  avoid: [사이몬 위원회]
+  note: "Simon Commission(1927~1930). 교과서·위키 한국어판 표제. 0회(사건 sa-07)"
+  scope: 남아시아 근세
+- use: 푸나 협정
+  avoid: [푸네 협정]
+  note: "Poona Pact(1932). 교과서 표기. 0회(사건 sa-07)"
+  scope: 남아시아 근세
+- use: 린리스고
+  avoid: [링리스고]
+  note: "Linlithgow(부왕 1936~1943). 위키백과 한국어판 표제. 0회(사건 sa-07)"
+  scope: 남아시아 근세
+- use: 웨이블
+  avoid: [웨이벌, 와벨]
+  note: "Wavell(부왕 1943~1947). 위키백과 한국어판 표제. 0회(사건 sa-07)"
+  scope: 남아시아 근세
+- use: 스태퍼드 크립스
+  avoid: [스태포드 크립스]
+  note: "Stafford Cripps(1942·1946년 사절). 위키백과 한국어판 표제. 0회(사건 sa-07)"
+  scope: 남아시아 근세
+- use: 간디–어윈 협정
+  avoid: [간디-어윈 조약]
+  note: "Gandhi–Irwin Pact(1931). 교과서 표기. 0회(사건 sa-07)"
+  scope: 남아시아 근세
+- use: 델리 더바르
+  avoid: [델리 두르바르]
+  note: "Delhi Durbar(1877 제국 대회 등). 위키백과 한국어판 '델리 더바르'. 0회(사건 sa-07)"
+  scope: 남아시아 근세

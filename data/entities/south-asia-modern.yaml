@@ -80,7 +80,7 @@
     - 1923년 영국과의 조약으로 독립을 확인받음
     - 1950년 인도와 평화 우호 조약을 맺음
     - 2015년 새 헌법으로 일곱 주를 둔 연방제를 정함
-  startEvents: []
+  startEvents: [nepal-unification-1768]
   endEvents: []
   basis:
     type: primary_source
@@ -120,7 +120,7 @@
     - 도읍은 툼롱, 1894년부터 강토크
     - 1950년 조약 뒤 인도가 국방·외교·교통을 맡음
     - 1973년 반왕정 시위 뒤 인도가 행정에 깊이 관여함
-  startEvents: []
+  startEvents: [sikkim-tumlong-1861]
   endEvents: [sikkim-merger-1975]
   basis:
     type: primary_source
@@ -142,7 +142,7 @@
     - 1802년 아미앵 조약으로 영국 땅이 되어 왕실 직할 식민지가 됨
     - 1946년 소울버리 헌법으로 내각제 자치 정부를 준비함
     - 차 수출이 식민지 경제의 중심
-  startEvents: []
+  startEvents: [ceylon-british-1796]
   endEvents: [ceylon-independence-1948]
   basis:
     type: primary_source
