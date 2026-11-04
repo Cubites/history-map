@@ -82,7 +82,7 @@
   features:
     - 도읍은 레
     - 카슈미르의 파시미나 양모 교역로를 쥠
-  startEvents: []
+  startEvents: [hill-kingdoms-920]
   endEvents: [dogra-ladakh-1834]
   basis:
     type: primary_source
@@ -180,7 +180,7 @@
   features:
     - 도읍은 1549년부터 부즈
     - 1819년 지진으로 신드 쪽 란에 '알라의 둑'이 솟음
-  startEvents: []
+  startEvents: [cutch-jaisalmer-1147]
   endEvents: [princely-states-1921]
   basis:
     type: primary_source
@@ -260,7 +260,7 @@
   features:
     - 에이전시 본부는 심라
     - 1806~1809년 구르카의 캉그라 포위 끝에 캉그라는 란지트 싱에게 넘어감
-  startEvents: []
+  startEvents: [hill-kingdoms-920]
   endEvents: [princely-states-1921]
   basis:
     type: primary_source
@@ -317,7 +317,7 @@
   features:
     - 도읍은 자이살메르(황금 요새)
     - 바다 쪽 항로가 커지며 19세기에 교역이 줄어듦
-  startEvents: []
+  startEvents: [cutch-jaisalmer-1147]
   endEvents: [princely-states-1921]
   basis:
     type: primary_source
@@ -355,7 +355,7 @@
   features:
     - 도읍은 우다이푸르(1559년부터, 그 앞은 치토르)
     - 무굴에 끝까지 맞선 왕가로 이름남
-  startEvents: []
+  startEvents: [mewar-tomara-734]
   endEvents: [princely-states-1921]
   basis:
     type: primary_source
@@ -597,7 +597,7 @@
     - 도읍은 참파와트, 1563년부터 알모라
     - 서쪽 이웃 가르왈 왕국과 자주 싸움
     - 1740년대 로힐라 군대가 알모라까지 쳐들어옴
-  startEvents: []
+  startEvents: [tibet-west-650]
   endEvents: [nepal-unification-1768]
   basis:
     type: primary_source
@@ -680,7 +680,7 @@
     - 메이테이 말과 고유 문자 메이테이 마예크를 씀
     - 1891년 전쟁 뒤 영국이 어린 추라찬드 싱을 왕으로 세움
     - 폴로 경기가 이곳에서 영국으로 퍼짐
-  startEvents: []
+  startEvents: [khasa-manipur-1100]
   endEvents: [princely-states-1921]
   basis:
     type: primary_source
@@ -741,7 +741,7 @@
     - 도읍은 바리파다
     - 시밀리팔 숲과 철광산이 있음
     - 주민 다수가 산탈·호 등 부족민
-  startEvents: []
+  startEvents: [eastern-ganga-1078]
   endEvents: [princely-states-1921]
   basis:
     type: primary_source

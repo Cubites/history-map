@@ -3175,3 +3175,91 @@
   avoid: [비슈누쿤디나, 비시누쿤딘]
   note: "Vishnukundina(విష్ణుకుండినులు). 저장소 0회, 다른 꼴 0회"
   scope: 남아시아 고대
+- use: 마츠야니아야
+  avoid: [마차냐야, 마츠야나야]
+  note: "matsyanyaya(물고기의 법칙, 팔라 동판의 무정부 상태). 표준 산스크리트 음 그대로. 저장소 1회(sa-04 pala-founding-750)"
+  scope: 남아시아 고대
+- use: 아디 샹카라
+  avoid: [아디 샨카라, 샹카라차리아 1세]
+  note: "Adi Shankara(8세기 아드바이타 베단타 철학자). 교과서·위키 한국어판 '아디 샹카라'. 저장소 1회"
+  scope: 남아시아 고대
+- use: 바트사라자
+  avoid: [밧사라자, 바차라자]
+  note: "Vatsaraja(프라티하라 780~800 무렵). 저장소 1회"
+  scope: 남아시아 고대
+- use: 시다라자
+  avoid: [싯다라자, 시다라자 자야심하 1세]
+  note: "Siddharaja Jayasimha(찰루키아 1092~1142). 저장소 1회"
+  scope: 남아시아 고대
+- use: 비라샤이바
+  avoid: [비라샤이비즘, 비라시바]
+  note: "Veerashaiva(링가야트 운동). 저장소 1회"
+  scope: 남아시아 고대
+- use: 마하밤사
+  avoid: [마하방사, 마하왕사]
+  note: "Mahavamsa(스리랑카 팔리어 연대기). 항목 anuradhapura-kingdom mapNote가 쓰는 꼴로 통일. sa-03 anuradhapura-300 등"
+  scope: 남아시아 고대
+- use: 베당가
+  avoid: [베단가, 베당카]
+  note: "Vedāṅga(베다의 보조 학문 여섯). 위키 한국어판 '베당가'. 사건 sa-01 1회, 다른 꼴 0회"
+  scope: 남아시아 고대
+- use: 슐바 수트라
+  avoid: [술바 수트라, 슐바수트라]
+  note: "Śulba Sūtra(제단 쌓는 법과 기하). 슐바 1회, 다른 꼴 0회"
+  scope: 남아시아 고대
+- use: 아슈타디야이
+  avoid: [아슈타댜이, 아쉬타디아이, 아스타댜이]
+  note: "Aṣṭādhyāyī(파니니의 문법서). 아슈타디야이 1회"
+  scope: 남아시아 고대
+- use: 하라파
+  avoid: [하랍파, 하랍빠]
+  note: "Harappa(인더스 문명 도시, 문명 이름 '하라파 문화'). 교과서 '하라파'. 다른 꼴 0회"
+  scope: 남아시아 고대
+- use: 아자타샤트루
+  avoid: [아자타사트루, 아자타삿투]
+  note: "Ajātaśatru(마가다 왕). 항목 mapNote 꼴과 같음. 팔리 이름 아자타삿투는 쓰지 않음"
+  scope: 남아시아 고대
+- use: 프라디요타
+  avoid: [프라디오타, 프라드요타]
+  note: "Pradyota(아반티 왕조 시조, 불전 팔리 이름 짠다 파조타). 프라디요타 1회"
+  scope: 남아시아 고대
+- use: 시슈나가
+  avoid: [시수나가, 쉬슈나가]
+  note: "Śiśunāga(마가다 왕조의 시조). 시슈나가 1회"
+  scope: 남아시아 고대
+- use: 앙굿타라 니카야
+  avoid: [앙구타라 니카야, 앙굿따라 니까야]
+  note: "Aṅguttara Nikāya(팔리 경전, 16대국 열거). 00-scope·T1 꼴"
+  scope: 남아시아 고대
+- use: 신타시타 문화
+  avoid: [신타슈타 문화]
+  note: "Sintashta(카스피해 북쪽 초원, 기원전 2200~1900). 위키 한국어판 표제 '신타시타 문화'"
+  scope: 남아시아 고대
+- use: 메르가르
+  avoid: [메헤르가르]
+  note: "Mehrgarh(발루치스탄의 신석기 유적). 위키 한국어판 인더스 문명 문서 꼴"
+  scope: 남아시아 고대
+- use: 간웨리왈라
+  avoid: [가네리왈라]
+  note: "Ganweriwala(촐리스탄의 인더스 도시). 위키 한국어판 인더스 문명 문서 꼴"
+  scope: 남아시아 고대
+- use: 트리샬라
+  avoid: [트리샤라]
+  note: "Triśalā(마하비라의 어머니). 위키 한국어판 '마하비라' 꼴"
+  scope: 남아시아 고대
+- use: 푸샤미트라
+  avoid: [푸시야미트라, 푸쉬야미트라]
+  note: "Pushyamitra(슝가 왕조 창건자). 항목 endNote 꼴"
+  scope: 남아시아 고대
+- use: 두타가마니
+  avoid: [두투게무누]
+  note: "Dutthagamani(아누라다푸라 왕, 항목 mapNote 꼴). 위키 한국어판에 두투가무누도 있어 항목 꼴로 통일"
+  scope: 남아시아 고대
+- use: 카라벨라
+  avoid: [카라벨라왕]
+  note: "Kharavela(칼링가 왕). 저장소에 다른 꼴 0회"
+  scope: 남아시아 고대
+- use: 굽타력
+  avoid: [굽타 기년, 굽타 연호]
+  note: "Gupta era(굽타 제국에서 쓴 연호, 320년 무렵 기점이라는 설). 한국어 세계사 용례 '굽타력'. 샤카력과 함께 sa-03 사건 글이 비문 해를 환산할 때 씀"
+  scope: 남아시아 고대

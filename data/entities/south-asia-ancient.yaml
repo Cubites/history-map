@@ -23,8 +23,8 @@
     - 도읍은 라자그리하(지금 라지기르), 뒤에 파탈리푸트라(지금 파트나)
     - 붓다와 마하비라가 활동한 무대
     - 하리앙카 왕조(기원전 544 무렵~413)에 이어 시슈나가 왕조(기원전 413~345)가 다스림
-  startEvents: []
-  endEvents: []
+  startEvents: [bimbisara-magadha-544bc]
+  endEvents: [nanda-345bc]
   basis:
     type: primary_source
     refs: ["위키백과 Magadha", "위키백과 Nanda Empire"]
@@ -44,8 +44,8 @@
     - 도읍은 파탈리푸트라
     - 푸라나는 마하파드마 난다가 '모든 크샤트리아를 없앴다'고 전함
     - 아버지와 아들 여덟, 아홉 왕이 이었다고 전함
-  startEvents: []
-  endEvents: []
+  startEvents: [nanda-345bc]
+  endEvents: [maurya-founding-321bc]
   basis:
     type: primary_source
     refs: ["위키백과 Nanda Empire"]
@@ -66,8 +66,8 @@
     - 아소카가 칼링가 전쟁 뒤 다르마(법)를 새긴 바위·기둥 비문을 곳곳에 세움
     - 찬드라굽타는 기원전 305년 무렵 셀레우코스 1세와 조약을 맺어 아라코시아·게드로시아를 얻음
     - 재상 카우틸랴가 쓴 것으로 전하는 『아르타샤스트라』가 다스림의 틀을 보여 줌
-  startEvents: []
-  endEvents: []
+  startEvents: [maurya-founding-321bc]
+  endEvents: [maurya-decline-232bc]
   basis:
     type: primary_source
     refs: ["위키백과 Maurya Empire", "아소카 비문"]
@@ -87,8 +87,8 @@
     - 도읍은 파탈리푸트라, 뒤에 비디샤
     - 푸샤미트라가 말제사(아슈바메다)를 열어 브라만교 의례를 되살림
     - 산치·바르후트 불탑의 난간과 문이 이 무렵 지어짐
-  startEvents: []
-  endEvents: []
+  startEvents: [shunga-pushyamitra-185bc]
+  endEvents: [kanva-end-73bc]
   basis:
     type: primary_source
     refs: ["위키백과 Shunga Empire", "위키백과 Kanva dynasty"]
@@ -108,8 +108,8 @@
     - 도읍은 푸루샤푸라(페샤와르)와 마투라
     - 카니슈카가 불교를 후원했다고 전하며 간다라 미술이 이때 꽃핌
     - 중국 한나라·로마와 비단길 무역으로 이어짐
-  startEvents: []
-  endEvents: []
+  startEvents: [kushan-founding-30]
+  endEvents: [kidarite-360]
   basis:
     type: primary_source
     refs: ["위키백과 Kushan Empire", "위키백과 Rabatak inscription"]
@@ -129,8 +129,8 @@
     - 도읍은 우자인
     - 루드라다만 1세의 주나가드 바위 비문(150년 무렵)은 산스크리트로 쓴 이른 긴 비문
     - 데칸 서북을 두고 사타바하나 왕조와 여러 번 싸움
-  startEvents: []
-  endEvents: []
+  startEvents: [kshaharata-nahapana-35]
+  endEvents: [chandragupta-ii-380]
   basis:
     type: primary_source
     refs: ["위키백과 Western Satraps"]
@@ -151,8 +151,8 @@
     - 사무드라굽타의 알라하바드 기둥 비문이 정복한 왕과 조공국을 늘어놓음
     - 찬드라굽타 2세 때 중국 승려 법현이 다녀감
     - 5세기 말 알촌 훈족의 침입으로 서쪽 땅을 잃음
-  startEvents: []
-  endEvents: []
+  startEvents: [gupta-founding-320]
+  endEvents: [gupta-end-543]
   basis:
     type: primary_source
     refs: ["위키백과 Gupta Empire", "알라하바드 기둥 비문"]
@@ -172,8 +172,8 @@
     - 동전에 박트리아 문자로 'αλχονο'(알촌)라는 이름을 새김
     - 토라마나·미히라쿨라 부자가 북인도 서부를 휩씀
     - 528년 무렵 말와의 야쇼다르만에게 손다니에서 짐
-  startEvents: []
-  endEvents: []
+  startEvents: [alchon-460]
+  endEvents: [alchon-end-542]
   basis:
     type: primary_source
     refs: ["위키백과 Alchon Huns"]
@@ -194,8 +194,8 @@
     - 619년 무렵 풀라케신 2세에게 막혀 나르마다강이 남쪽 경계가 됨
     - 중국 승려 현장이 머물며 『대당서역기』에 이 나라를 기록함
     - 하르샤는 산스크리트 극 『나가난다』를 지었다고 전함
-  startEvents: []
-  endEvents: []
+  startEvents: [harsha-606]
+  endEvents: [harsha-606, post-harsha-647]
   basis:
     type: primary_source
     refs: ["위키백과 Harsha", "위키백과 Pushyabhuti dynasty"]
@@ -215,8 +215,8 @@
     - 도읍은 바타피(바다미)
     - 아이홀레·파타다칼에 초기 석조 사원을 지음
     - 아이홀레 비문(634)이 풀라케신 2세의 정복을 적음
-  startEvents: []
-  endEvents: []
+  startEvents: [badami-chalukya-543]
+  endEvents: [rashtrakuta-753]
   basis:
     type: primary_source
     refs: ["위키백과 Chalukya dynasty"]
@@ -235,8 +235,8 @@
   features:
     - 도읍은 마냐케타(말케드)
     - 엘로라의 카일라사 사원을 지음
-  startEvents: []
-  endEvents: []
+  startEvents: [rashtrakuta-753]
+  endEvents: [rashtrakuta-decline-949]
   basis:
     type: primary_source
     refs: ["위키백과 Rashtrakuta dynasty"]
@@ -256,8 +256,8 @@
     - 도읍은 빈말·만도르, 9세기부터 카나우지
     - 8세기에 신드의 아랍 군대가 동쪽으로 오는 것을 막음
     - 팔라·라슈트라쿠타와 카나우지를 두고 겨룸(세 나라 다툼)
-  startEvents: []
-  endEvents: []
+  startEvents: [pratihara-arabs-730]
+  endEvents: [mahmud-india-1005, bhoja-paramara-1010]
   basis:
     type: primary_source
     refs: ["위키백과 Gurjara-Pratihara dynasty"]
@@ -277,8 +277,8 @@
     - 도읍은 피루즈쿠, 인도 원정의 거점은 가즈니·라호르
     - 1191년 타라인 1차 전투에서 지고 1192년 2차 전투에서 프리트비라지 3세를 이김
     - 델리 술탄국을 연 아이바크와 물탄의 카바차는 이 왕조의 노예 출신 장군
-  startEvents: []
-  endEvents: []
+  startEvents: [ghurid-multan-1175]
+  endEvents: [delhi-sultanate-1206]
   basis:
     type: primary_source
     refs: ["위키백과 Ghurid dynasty"]
@@ -298,8 +298,8 @@
     - 도읍은 사갈라(시알코트)와 탁실라
     - 메난드로스 1세는 불경 『밀린다왕문경』의 밀린다왕
     - 그리스 문자와 카로슈티 문자를 함께 새긴 두 말 동전을 찍음
-  startEvents: []
-  endEvents: []
+  startEvents: [demetrius-indo-greek-200bc]
+  endEvents: [rajuvula-gondophares-10]
   basis:
     type: primary_source
     refs: ["위키백과 Indo-Greek Kingdom"]
@@ -318,8 +318,8 @@
     - 도읍은 탁실라
     - 사카 태수(크샤트라파) 가문이 서인도와 마투라로 퍼짐
     - 아제스 1세 즉위를 비크라마 기원의 시작으로 보는 설이 있음
-  startEvents: []
-  endEvents: []
+  startEvents: [maues-saka-85bc]
+  endEvents: [rajuvula-gondophares-10]
   basis:
     type: primary_source
     refs: ["위키백과 Indo-Scythians"]
@@ -338,8 +338,8 @@
     - 도읍은 탁실라
     - 탁트이바히 비문에 곤도파레스의 이름이 나옴
     - 사도 토마스가 곤도파레스의 궁정에 왔다는 전승이 있음
-  startEvents: []
-  endEvents: []
+  startEvents: [gondophares-19]
+  endEvents: [indo-parthian-fall-127]
   basis:
     type: primary_source
     refs: ["위키백과 Indo-Parthian Kingdom"]
@@ -358,8 +358,8 @@
     - 도읍은 발흐
     - 사산 제국 왕족이 다스린 속국
     - 사산식 왕관을 쓴 쿠샨샤의 동전이 남음
-  startEvents: []
-  endEvents: []
+  startEvents: [kushanshahr-231]
+  endEvents: [kidarite-360]
   basis:
     type: primary_source
     refs: ["위키백과 Kushano-Sasanian Kingdom"]
@@ -378,8 +378,8 @@
     - 나라 이름은 왕 키다라에서 옴
     - 쿠샨식 금화를 이어 찍음
     - 굽타 제국·사산 제국과 맞섬
-  startEvents: []
-  endEvents: []
+  startEvents: [kidarite-360]
+  endEvents: [alchon-460]
   basis:
     type: primary_source
     refs: ["위키백과 Kidarites"]
@@ -398,8 +398,8 @@
     - 도읍은 발라비
     - 발라비는 불교 학문의 중심으로 현장·의정이 기록함
     - 640년 무렵 하르샤의 종주를 받아들임
-  startEvents: []
-  endEvents: []
+  startEvents: [maitraka-475]
+  endEvents: [tripartite-struggle-770]
   basis:
     type: primary_source
     refs: ["위키백과 Maitraka dynasty"]
@@ -418,8 +418,8 @@
     - 도읍은 아로르
     - 시작 해와 왕 계보는 후대 기록에만 남아 학설이 갈림
     - 불교를 후원했다고 전함
-  startEvents: []
-  endEvents: []
+  startEvents: [rai-chach-489]
+  endEvents: [rai-chach-489]
   basis:
     type: primary_source
     refs: ["위키백과 Rai dynasty"]
@@ -437,8 +437,8 @@
   features:
     - 도읍은 아로르
     - 다히르의 패전과 죽음은 『차치나마』가 전함
-  startEvents: []
-  endEvents: []
+  startEvents: [rai-chach-489]
+  endEvents: [arab-sindh-711]
   basis:
     type: primary_source
     refs: ["위키백과 Brahmin dynasty of Sindh"]
@@ -457,8 +457,8 @@
     - 도읍은 스리나가르와 파리하사푸라
     - 라리타디티야가 마르탄드 태양 사원을 세움
     - 칼하나의 『라자타랑기니』가 역사를 전함
-  startEvents: []
-  endEvents: []
+  startEvents: [karkota-625]
+  endEvents: [kashmir-utpala-855]
   basis:
     type: primary_source
     refs: ["위키백과 Karkota dynasty"]
@@ -477,8 +477,8 @@
     - 도읍은 아반티푸라와 스리나가르
     - 재상 수야가 젤룸강 치수를 맡음
     - 10세기 후반 디다 여왕이 실권을 쥠
-  startEvents: []
-  endEvents: []
+  startEvents: [kashmir-utpala-855]
+  endEvents: [didda-lohara-980]
   basis:
     type: primary_source
     refs: ["위키백과 Utpala dynasty"]
@@ -497,8 +497,8 @@
     - 도읍은 카불
     - 당나라에 사신을 보냄
     - 아바스 칼리프국에 공물을 바친 때가 있음
-  startEvents: []
-  endEvents: []
+  startEvents: [turk-shahi-665]
+  endEvents: [hindu-shahi-822]
   basis:
     type: primary_source
     refs: ["위키백과 Turk Shahis"]
@@ -517,8 +517,8 @@
     - 도읍은 카불, 870년 무렵부터 우다반다푸라(훈드)
     - 자야팔라가 1001년 페샤와르 전투에서 마흐무드에게 짐
     - 이 왕조의 은화가 북인도에서 널리 쓰임
-  startEvents: []
-  endEvents: []
+  startEvents: [hindu-shahi-822]
+  endEvents: [mahmud-india-1005]
   basis:
     type: primary_source
     refs: ["위키백과 Hindu Shahis"]
@@ -536,8 +536,8 @@
   features:
     - 델리를 처음 도읍으로 삼은 왕조로 전함
     - 델리 남쪽 랄 코트 성채를 쌓았다고 전함
-  startEvents: []
-  endEvents: []
+  startEvents: [mewar-tomara-734]
+  endEvents: [chahamana-ajmer-1100]
   basis:
     type: primary_source
     refs: ["위키백과 Tomaras of Delhi"]
@@ -555,8 +555,8 @@
   features:
     - 도읍은 만수라
     - 아바스 칼리프의 이름으로 금요 설교를 이어 함
-  startEvents: []
-  endEvents: []
+  startEvents: [habbarid-multan-854]
+  endEvents: [mahmud-india-1005]
   basis:
     type: primary_source
     refs: ["위키백과 Habbari dynasty"]
@@ -575,8 +575,8 @@
     - 도읍은 물탄
     - 물탄의 태양 신전 순례로 부유했다고 아랍 지리서가 전함
     - 965년 무렵부터 파티마 칼리프를 따름
-  startEvents: []
-  endEvents: []
+  startEvents: [habbarid-multan-854]
+  endEvents: [mahmud-india-1005]
   basis:
     type: primary_source
     refs: ["위키백과 Emirate of Multan"]
@@ -597,8 +597,8 @@
     - 도읍은 바라나시, 카나우지도 함께 씀
     - 고빈다찬드라 때의 동판 문서가 가장 많이 남음
     - 바라나시의 사원과 학문을 후원함
-  startEvents: []
-  endEvents: []
+  startEvents: [gahadavala-kannauj-1090]
+  endEvents: [chandawar-1194]
   basis:
     type: primary_source
     refs: ["위키백과 Gahadavala dynasty"]
@@ -617,8 +617,8 @@
     - 도읍은 구헤스와라파타카(지금 자지푸르 근처)
     - 라트나기리·랄리타기리 불교 사원이 이 무렵 번성함
     - 여왕이 여러 번 왕위에 오름
-  startEvents: []
-  endEvents: []
+  startEvents: [bhauma-kara-736]
+  endEvents: [somavamshi-940]
   basis:
     type: primary_source
     refs: ["위키백과 History of Odisha"]
@@ -637,8 +637,8 @@
     - 도읍은 수바르나푸르(지금 소네푸르), 뒤에 자지푸르
     - 부바네스와르의 묵테스와라·링가라자 사원을 지음
     - 차티스가르 시르푸르의 판두방시 왕가에서 갈라져 나왔다고 봄
-  startEvents: []
-  endEvents: []
+  startEvents: [somavamshi-940]
+  endEvents: [eastern-ganga-1078]
   basis:
     type: primary_source
     refs: ["위키백과 History of Odisha"]
@@ -657,8 +657,8 @@
     - 마가다의 가야·라자그리하 둘레가 중심
     - 아디티야세나가 아프사드 비문을 남기고 '대왕'을 칭함
     - 마우카리 왕조와 혼인과 전쟁을 거듭함
-  startEvents: []
-  endEvents: []
+  startEvents: [gupta-end-543, post-harsha-647]
+  endEvents: [pala-founding-750]
   basis:
     type: primary_source
     refs: ["위키백과 Later Gupta dynasty", "아프사드 비문"]
@@ -677,8 +677,8 @@
     - 도읍은 카나우지
     - 이샤나바르만이 6세기 중엽 '대왕'을 칭함
     - 후기 굽타 왕조와 갠지스 평원을 두고 다툼
-  startEvents: []
-  endEvents: []
+  startEvents: [gupta-end-543]
+  endEvents: [gupta-end-543, harsha-606]
   basis:
     type: primary_source
     refs: ["위키백과 Maukhari dynasty"]
@@ -697,8 +697,8 @@
     - 도읍은 카르나수바르나(지금 무르시다바드 근처)
     - 벵골을 하나로 다스린 첫 왕으로 꼽힘
     - 하르샤와 카마루파의 바스카르바르만이 손잡고 맞섬
-  startEvents: []
-  endEvents: []
+  startEvents: [gauda-shashanka-600]
+  endEvents: [gauda-shashanka-600]
   basis:
     type: primary_source
     refs: ["위키백과 History of Bengal", "위키백과 Harsha"]
@@ -718,8 +718,8 @@
     - 사무드라굽타의 알라하바드 기둥 비문에 조공국으로 나옴
     - 바스카르바르만이 중국 승려 현장을 초청함
     - 닛단푸르 동판은 벵골 카르나수바르나의 진중에서 발급됨
-  startEvents: []
-  endEvents: []
+  startEvents: [kamarupa-350]
+  endEvents: [sena-vijayasena-1096]
   basis:
     type: primary_source
     refs: ["위키백과 Kamarupa", "닛단푸르 동판"]
@@ -738,8 +738,8 @@
     - 도읍은 카트만두 골짜기
     - 마나데바의 464년 창구나라얀 비문이 네팔에서 가장 오래된 비문
     - 암슈바르만 때 티베트 왕실과 혼인 동맹을 맺었다고 전함
-  startEvents: []
-  endEvents: []
+  startEvents: [licchavi-400]
+  endEvents: [licchavi-end-879]
   basis:
     type: primary_source
     refs: ["위키백과 Licchavi (kingdom)", "창구나라얀 비문"]
@@ -759,8 +759,8 @@
     - 다르마팔라가 비크라마실라 대학을 세움
     - 데바팔라 때 수마트라의 샤일렌드라 왕이 날란다에 절을 지어 달라고 청함
     - 팔라 양식 불교 미술이 티베트·동남아로 퍼짐
-  startEvents: []
-  endEvents: []
+  startEvents: [pala-founding-750]
+  endEvents: [pala-end-1144]
   basis:
     type: primary_source
     refs: ["위키백과 Pala Empire"]
@@ -779,8 +779,8 @@
     - 도읍은 슈라바스티, 아요디아(사케타)도 큰 도시
     - 마하코살라의 딸이 마가다의 빔비사라와 혼인하며 카시의 마을 하나를 지참금으로 줌
     - 파세나디 왕은 붓다의 후원자로 불전에 자주 나옴
-  startEvents: []
-  endEvents: []
+  startEvents: [mahajanapadas-600bc]
+  endEvents: [nanda-345bc]
   basis:
     type: primary_source
     refs: ["위키백과 Kosala", "위키백과 Mahajanapadas"]
@@ -799,8 +799,8 @@
     - 도읍은 코삼비(지금 카우샴비)
     - 갠지스와 야무나 사이 교역길의 중심 도시
     - 우다야나 왕과 아반티 공주의 이야기가 산스크리트 극으로 전함
-  startEvents: []
-  endEvents: []
+  startEvents: [mahajanapadas-600bc]
+  endEvents: [nanda-345bc]
   basis:
     type: primary_source
     refs: ["위키백과 Mahajanapadas"]
@@ -819,8 +819,8 @@
     - 도읍은 아히차트라(북)·캄필랴(남)
     - 베다 문헌에 서쪽 이웃 쿠루와 함께 자주 나오는 나라
     - 『마하바라타』의 드라우파디가 판찰라 왕의 딸로 나옴
-  startEvents: []
-  endEvents: []
+  startEvents: [mahajanapadas-600bc]
+  endEvents: [nanda-345bc]
   basis:
     type: primary_source
     refs: ["위키백과 Mahajanapadas"]
@@ -839,8 +839,8 @@
     - 중심 도시는 바이샬리
     - 리차비·비데하 등 여러 씨족이 모인 연맹
     - 자이나교의 마하비라가 이 땅에서 태어났다고 전함
-  startEvents: []
-  endEvents: []
+  startEvents: [mahajanapadas-600bc]
+  endEvents: [ajatashatru-vajji-468bc]
   basis:
     type: primary_source
     refs: ["위키백과 Mahajanapadas"]
@@ -860,8 +860,8 @@
   features:
     - 도읍은 우자인, 남쪽 도읍은 마히슈마티
     - 갠지스 평원과 서해안을 잇는 교역로의 길목
-  startEvents: []
-  endEvents: []
+  startEvents: [mahajanapadas-600bc]
+  endEvents: [shishunaga-avanti-414bc]
   basis:
     type: primary_source
     refs: ["위키백과 Mahajanapadas", "위키백과 Avanti (India)"]
@@ -876,8 +876,8 @@
   summary: 고다바리강 중류의 포타나를 도읍으로 한 16대국의 하나로, 16대국 가운데 가장 남쪽인 데칸에 있었음
   mapNote: 지도에는 기원전 500년부터 기원전 346년까지 고다바리강 중류(지금 텔랑가나주 북서부와 마하라슈트라주 남동부)를 표시함. 경계는 불전의 16대국 열거와 도읍 이름에 기댄 어림
   endNote: 기원전 345년 무렵 난다 왕조의 마하파드마 난다에게 정복됨(푸라나)
-  startEvents: []
-  endEvents: []
+  startEvents: [mahajanapadas-600bc]
+  endEvents: [deccan-megaliths-600bc]
   basis:
     type: primary_source
     refs: ["위키백과 Mahajanapadas"]
@@ -896,8 +896,8 @@
     - 도읍은 프라티슈타나(파이탄), 뒤에 아마라바티
     - 나식·나네가트 동굴 비문과 산치·아마라바티 불탑을 남김
     - 로마와의 바닷길 교역이 활발했음
-  startEvents: []
-  endEvents: []
+  startEvents: [satavahana-founding-100bc]
+  endEvents: [satavahana-revival-180]
   basis:
     type: primary_source
     refs: ["위키백과 Satavahana dynasty"]
@@ -911,8 +911,8 @@
   color: "#4a8a70"
   summary: 사타바하나 뒤 크리슈나강 하류를 다스린 왕조로, 비자야푸리(나가르주나콘다)를 도읍으로 불교 사원을 크게 일으킴
   mapNote: 지도에는 225년부터 325년까지 크리슈나강 하류 남쪽(지금 안드라프라데시주 군투르·팔나두)을 표시함. 경계는 나가르주나콘다 비문에 기댄 어림이고 해도 어림
-  startEvents: []
-  endEvents: []
+  startEvents: [deccan-dynasties-225]
+  endEvents: [salankayana-pallava-320]
   basis:
     type: primary_source
     refs: ["위키백과 Satavahana dynasty"]
@@ -925,8 +925,8 @@
   color: "#a08850"
   summary: 사타바하나 뒤 나식 둘레의 서부 데칸을 다스린 왕조. 이슈바라세나의 나식 비문으로 알려짐
   mapNote: 지도에는 225년부터 335년까지 북콩칸·나식·푸네(지금 마하라슈트라주 서북부)를 표시함. 비문이 한 건뿐이라 경계와 해 모두 어림
-  startEvents: []
-  endEvents: []
+  startEvents: [deccan-dynasties-225]
+  endEvents: [abhira-chutu-ganga-335]
   basis:
     type: primary_source
     refs: ["위키백과 Abhira dynasty"]
@@ -940,8 +940,8 @@
   summary: 사타바하나 뒤 바나바시를 중심으로 카르나타카 북서부를 다스린 왕조. 화폐 몇 종으로 알려짐
   mapNote: 지도에는 225년부터 344년까지 바나바시와 벨가움 둘레를 표시함. 화폐 출토지에 기댄 어림
   endNote: 345년 무렵 카담바 왕조의 마유라샤르마가 바나바시를 차지함
-  startEvents: []
-  endEvents: []
+  startEvents: [deccan-dynasties-225]
+  endEvents: [abhira-chutu-ganga-335]
   basis:
     type: primary_source
     refs: ["위키백과 Chutu dynasty"]
@@ -959,8 +959,8 @@
     - 도읍은 칸치푸람
     - 마말라푸람의 바위 사원과 해안 사원을 지음
     - 642년 나라심하바르만 1세가 바다미를 점령함
-  startEvents: []
-  endEvents: []
+  startEvents: [deccan-dynasties-225]
+  endEvents: [aditya-i-chola-871]
   basis:
     type: primary_source
     refs: ["위키백과 Pallava dynasty"]
@@ -976,8 +976,8 @@
   features:
     - 도읍은 난디바르다나와 바트사굴마(두 갈래)
     - 아잔타 석굴의 후기 굴을 지음
-  startEvents: []
-  endEvents: []
+  startEvents: [deccan-dynasties-225]
+  endEvents: [vakataka-harishena-475]
   basis:
     type: primary_source
     refs: ["위키백과 Vakataka dynasty"]
@@ -992,8 +992,8 @@
   summary: 마유라샤르마가 바나바시에서 세운 카르나타카 최초의 토착 왕조. 카쿠스타바르마 때 가장 강함
   mapNote: 지도에는 345년부터 539년까지 바나바시 둘레를 표시하고, 435년부터 할라시·벨가움을 더함. 경계는 비문 분포에 기댄 어림
   endNote: 540년 무렵 바다미 찰루키아에게 땅을 잃음
-  startEvents: []
-  endEvents: []
+  startEvents: [kadamba-345]
+  endEvents: [kadamba-345]
   basis:
     type: primary_source
     refs: ["위키백과 Kadamba dynasty"]
@@ -1010,8 +1010,8 @@
   features:
     - 도읍은 콜라르, 뒤에 탈라카드
     - 슈라바나벨라골라의 고마테슈와라 거상을 세움
-  startEvents: []
-  endEvents: []
+  startEvents: [abhira-chutu-ganga-335]
+  endEvents: [rajaraja-985]
   basis:
     type: primary_source
     refs: ["위키백과 Western Ganga dynasty"]
@@ -1024,8 +1024,8 @@
   color: "#7090c0"
   summary: 벵기(엘루루 둘레)를 도읍으로 고다바리강과 크리슈나강 사이를 다스린 왕조
   mapNote: 지도에는 320년부터 440년까지 고다바리강·크리슈나강 삼각주(벵기)를 표시함. 동판 몇 장에 기댄 어림이고 해도 어림
-  startEvents: []
-  endEvents: []
+  startEvents: [salankayana-pallava-320]
+  endEvents: [vishnukundin-pallava-420]
   basis:
     type: primary_source
     refs: ["위키백과 Salankayana dynasty"]
@@ -1039,8 +1039,8 @@
   summary: 텔랑가나 동남부에서 일어나 벵기와 크리슈나강 하류를 다스린 왕조
   mapNote: 지도에는 420년부터 623년까지 텔랑가나 동남부, 420~435년 크리슈나강 하류 남쪽, 441년부터 벵기를 표시함. 동판에 기댄 어림
   endNote: 624년 무렵 바다미 찰루키아의 풀라케신 2세가 벵기를 차지하고 아우 쿠브자 비슈누바르다나에게 맡김
-  startEvents: []
-  endEvents: []
+  startEvents: [vishnukundin-pallava-420]
+  endEvents: [pulakeshin-ii-610]
   basis:
     type: primary_source
     refs: ["위키백과 Vishnukundina dynasty"]
@@ -1053,8 +1053,8 @@
   color: "#607a40"
   summary: 다사푸라(만다소르)를 도읍으로 말와 서부를 다스린 왕조. 처음엔 굽타의 신하였고 야소다르만이 미히라쿨라를 꺾음
   mapNote: 지도에는 440년부터 540년까지 말와 서부(지금 마디아프라데시주 서부)를 표시함. 경계는 만다소르 비문들에 기댄 어림
-  startEvents: []
-  endEvents: []
+  startEvents: [kumaragupta-415]
+  endEvents: [yashodharman-528]
   basis:
     type: primary_source
     refs: ["위키백과 Aulikaras"]
@@ -1068,8 +1068,8 @@
   summary: 마히슈마티를 중심으로 말와·칸데시·콘칸 북부를 다스린 초기 칼추리 왕조. 크리슈나라자의 은화가 널리 쓰임
   mapNote: 지도에는 550년부터 609년까지 말와 서부와 칸데시를 표시함. 화폐 분포와 아이홀레 비문에 기댄 어림
   endNote: 610년 무렵 바다미 찰루키아의 망갈레샤·풀라케신 2세에게 붓다라자가 져서 힘을 잃음
-  startEvents: []
-  endEvents: []
+  startEvents: [badami-chalukya-543]
+  endEvents: [badami-chalukya-543]
   basis:
     type: primary_source
     refs: ["위키백과 Kalachuris of Mahishmati"]
@@ -1086,8 +1086,8 @@
   features:
     - 도읍은 벵기, 뒤에 라자마헨드라바람(라자문드리)
     - 텔루구어 문학이 이 왕조 때 시작됨
-  startEvents: []
-  endEvents: []
+  startEvents: [pulakeshin-ii-610]
+  endEvents: [kulottunga-1070]
   basis:
     type: primary_source
     refs: ["위키백과 Eastern Chalukyas"]
@@ -1104,8 +1104,8 @@
   features:
     - 도읍은 마냐케타, 뒤에 칼랴니(바사바칼랴나)
     - 빌하나·비즈냐네슈와라가 이 궁정에서 활동함
-  startEvents: []
-  endEvents: []
+  startEvents: [rashtrakuta-decline-949]
+  endEvents: [yadava-devagiri-1187]
   basis:
     type: primary_source
     refs: ["위키백과 Western Chalukya Empire"]
@@ -1120,8 +1120,8 @@
   summary: 서 찰루키아의 신하 비잘라 2세가 칼랴니를 차지해 세운 짧은 왕조. 바사바의 링가야트 운동이 이 궁정에서 일어남
   mapNote: 지도에는 1157년부터 1183년까지 칼랴니·비다르·칼라부라기 둘레를 표시함. 서 찰루키아 옛 땅의 나머지는 서 찰루키아로 그림
   endNote: 1183년 소메슈바라 4세가 칼랴니를 되찾음
-  startEvents: []
-  endEvents: []
+  startEvents: [bijjala-kalachuri-1157]
+  endEvents: [bijjala-kalachuri-1157]
   basis:
     type: primary_source
     refs: ["위키백과 Kalachuris of Kalyani"]
@@ -1137,8 +1137,8 @@
   features:
     - 도읍은 트리푸리
     - 라트나푸르 칼추리(차티스가르)가 이 가문의 갈래
-  startEvents: []
-  endEvents: []
+  startEvents: [bhoja-paramara-1010]
+  endEvents: [bakhtiyar-khalji-1200]
   basis:
     type: primary_source
     refs: ["위키백과 Kalachuris of Tripuri"]
@@ -1156,8 +1156,8 @@
   features:
     - 도읍은 아누라다푸라(5세기 말 한때 시기리야)
     - 대사(마하비하라)와 큰 불탑들을 남김
-  startEvents: []
-  endEvents: []
+  startEvents: [pandukabhaya-anuradhapura-377bc]
+  endEvents: [chola-lanka-993]
   basis:
     type: primary_source
     refs: ["위키백과 Anuradhapura Kingdom"]
@@ -1172,9 +1172,51 @@
   summary: 케랄라와 콩구 지방을 다스린 타밀 왕조. 상감 시대 세 왕국의 하나였고, 9세기에 마호다야푸람(코둥갈루르)을 도읍으로 다시 일어남
   mapNote: 지도에는 기원전 260년부터 299년까지(상감 시대, 콩구와 케랄라 중·북부)와 800년부터 1102년까지(케랄라) 표시함. 300~799년은 주인이 알려지지 않아 비움. 985년 뒤 케랄라 남부는 촐라 땅으로 그림. 상감 시대 경계는 문헌에 기댄 어림
   endNote: 12세기 초 왕국이 나뉘어 베나드·코친 등 작은 나라들이 됨
-  startEvents: []
-  endEvents: []
+  startEvents: [tamil-three-kingdoms-260bc]
+  endEvents: [kulottunga-1070]
   basis:
     type: primary_source
     refs: ["위키백과 Chera dynasty", "위키백과 Sangam period"]
     foundingNote: 아소카 비문(기원전 260년 무렵)이 이웃 나라로 이름을 든 때부터 봄
+
+# 땅 없는 항목 둘 — 영토가 없어 사건 subjects에만 둔다(links 금지)
+- id: indus-civilization
+  level: region
+  names: { ko: 인더스 문명, en: Indus Valley Civilisation }
+  from: -2599
+  to: -1899
+  color: "#b98a52"
+  summary: 인더스강과 가가르·하크라강 유역에서 기원전 2600년 무렵부터 도시를 이룬 청동기 문명. 하라파·모헨조다로·돌라비라 같은 계획 도시와 구운 벽돌, 하수도, 표준 추와 인장을 갖췄고 메소포타미아와 '멜루하'로 교역했다. 문자는 아직 풀리지 않았다
+  mapNote: 지도에는 땅을 그리지 않음. 도시 터와 문화권이 지금의 파키스탄·인도·아프가니스탄에 걸쳐 있고 하나의 나라였는지도 알 수 없어, 사건의 주체로만 둠
+  endNote: 기원전 1900년 무렵부터 계절풍이 약해지고 강물이 줄어 도시가 쇠퇴했고, 기원전 1700년 무렵에는 대부분 버려져 후기 하라파의 작은 마을들로 흩어짐
+  features:
+    - 모헨조다로·하라파·간웨리왈라·라키가르히·돌라비라가 큰 도시 다섯으로 꼽힘
+    - 격자 도로와 덮개 있는 하수도, 4:2:1 비의 벽돌, 표준화된 추를 씀
+    - 활석 인장과 400가지 안팎의 기호로 된 문자는 풀리지 않음
+    - 수메르·아카드 기록의 '멜루하'가 이 문명이라고 보는 학자가 많음
+  startEvents: [harappa-mohenjo-2300bc]
+  endEvents: [indus-decline-1900bc]
+  basis:
+    type: primary_source
+    refs: ["위키백과 Indus Valley Civilisation", "Gregory L. Possehl, The Indus Civilization: A Contemporary Perspective (AltaMira Press, 2002)"]
+    foundingNote: 성숙기 도시가 나타나는 기원전 2600년 무렵부터
+- id: vedic-india
+  level: region
+  names: { ko: 베다 시대 인도, en: Vedic India }
+  from: -1499
+  to: -600
+  color: "#a3b86c"
+  summary: 인도-아리아어를 쓰는 집단이 펀자브에서 갠지스–야무나 도아브로 퍼져 간 시대. 『리그베다』가 지어진 초기 베다 시기(기원전 1500~1100 무렵)와 철기·바르나·쿠루와 판찰라, 우파니샤드가 나온 후기 베다 시기(기원전 1100~600 무렵)로 나눈다
+  mapNote: 지도에는 땅을 그리지 않음. 부족과 소국의 경계가 문자 사료 없이 구전 문헌에만 나와 확정할 수 없어, 사건의 주체로만 둠
+  endNote: 기원전 600년 무렵부터 불전이 전하는 16대국의 시대로 넘어감
+  features:
+    - 『리그베다』는 기원전 1500~1000년 무렵 펀자브에서 지어져 구전으로 전해짐
+    - 철기(기원전 1000 무렵)와 회색채도토기 문화, 정착 농업의 확대
+    - 사제·무사·평민·봉사자의 바르나 구분이 제도로 굳어짐
+    - 쿠루와 판찰라가 중심이었고 뒤에 비데하·코살라로 문화가 퍼짐
+  startEvents: [rigveda-1500bc]
+  endEvents: [upanishads-650bc]
+  basis:
+    type: primary_source
+    refs: ["위키백과 Vedic period", "Romila Thapar, Early India: From the Origins to AD 1300 (University of California Press, 2002)"]
+    foundingNote: 『리그베다』가 지어지기 시작한 기원전 1500년 무렵부터

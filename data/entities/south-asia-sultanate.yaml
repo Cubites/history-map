@@ -187,7 +187,7 @@
     - 도읍은 타타 둘레
     - 델리의 종주는 명목에 그침
     - 시작 해는 11세기 전반으로 학설이 갈림
-  startEvents: []
+  startEvents: [mahmud-india-1005]
   endEvents: [sind-samma-1351]
   basis:
     type: primary_source
@@ -264,7 +264,7 @@
     - 도읍은 스리나가르 둘레
     - 칼하나의 역사서 라자타랑기니가 이 시기에 쓰임
     - 1320년 몽골계 둘차의 침입으로 골짜기가 크게 무너짐
-  startEvents: []
+  startEvents: [didda-lohara-980]
   endEvents: [kashmir-sultanate-1339]
   basis:
     type: primary_source
@@ -302,7 +302,7 @@
     - 도읍은 아나힐라파타카(파탄)
     - 솔랑키라고도 부름
     - 모데라 태양 사원과 아부산 자이나교 사원을 남김
-  startEvents: []
+  startEvents: [mularaja-chaulukya-942]
   endEvents: [alauddin-khalji-1290]
   basis:
     type: primary_source
@@ -322,7 +322,7 @@
     - 도읍은 란탐보르 성
     - 하미르데바가 델리에서 도망친 몽골 장수들을 받아 줌
     - 차우한이라고도 부름
-  startEvents: []
+  startEvents: [chahamana-ajmer-1100]
   endEvents: [alauddin-khalji-1290]
   basis:
     type: primary_source
@@ -342,7 +342,7 @@
     - 도읍은 데바기리(뒤의 다울라타바드)
     - 마라티어 문학과 바크티 운동이 일어남
     - 1296년 알라웃딘 할지의 첫 데칸 원정에 굴복함
-  startEvents: []
+  startEvents: [yadava-devagiri-1187]
   endEvents: [malik-kafur-deccan-1307]
   basis:
     type: primary_source
@@ -362,7 +362,7 @@
     - 도읍은 도라사무드라(할레비두)
     - 벨루르·할레비두의 정교한 석조 사원을 남김
     - 비라 발랄라 2세 때 독립 왕국이 됨
-  startEvents: []
+  startEvents: [hoysala-1116]
   endEvents: [madurai-sultanate-1335]
   basis:
     type: primary_source
@@ -500,7 +500,7 @@
   color: "#9aa83a"
   summary: 1097년 난야데바가 미틸라(티르후트)에 세운 왕조. 1324년 기야스웃딘 투글루크가 도읍 심라운가르흐를 차지해 끝남
   mapNote: 지도에는 1097년부터 1323년까지 갠지스강 북쪽 미틸라(지금 비하르주 다르방가·무자파르푸르·마두바니 일대)를 어림한 선으로 표시함
-  startEvents: []
+  startEvents: [pala-ramapala-1070]
   endEvents: [tughluq-dynasty-1320]
   basis:
     type: primary_source
@@ -514,7 +514,7 @@
   color: "#b87a50"
   summary: 11세기 후반 벵골에 일어난 힌두 왕조. 1204년 바크티야르 할지에게 라크나우티를 잃은 뒤 동벵골 비크라마푸르에서 이어짐
   mapNote: 지도에는 1070년부터 1244년까지 표시함. 1070년 라르(서벵골 서부, 미드나포르는 1134년까지), 1096년 남·동벵골(방가), 1159년 가우다·바렌드라(북벵골)를 더하고, 1205년 바크티야르 할지에게 서·북벵골을 잃은 뒤 1205년부터 1244년까지 동벵골(지금 방글라데시 다카·바리살·쿨나 지구)만 표시함. 1206년 앞 경계는 동판 문서에 기댄 어림이고 끝 해는 어림
-  startEvents: []
+  startEvents: [pala-ramapala-1070, sena-vijayasena-1096]
   endEvents: [bengal-lakhnauti-1206]
   basis:
     type: primary_source
@@ -570,7 +570,7 @@
   color: "#6a8a9a"
   summary: 12~14세기 지금 네팔 서부 카르날리 골짜기의 셈자(시자)를 도읍으로 한 카스 말라 왕조의 나라
   mapNote: 지도에는 1100년부터 1390년까지 지금 네팔 카르날리·세티·마하칼리 지역을 표시함. 시작 해는 나가라자 때로 어림하고, 끝 해는 줌라·도티·둘루로 갈린 무렵으로 어림
-  startEvents: []
+  startEvents: [khasa-manipur-1100]
   endEvents: [garhwal-himalaya-1358]
   basis:
     type: primary_source
@@ -584,7 +584,7 @@
   color: "#70d0b0"
   summary: 9세기부터 분델칸드(제자카북티)를 다스린 라지푸트 왕조. 카주라호 사원을 지음
   mapNote: 지도에는 925년부터 1314년까지 분델칸드(마디아프라데시주 사가르·다모 일대와 우타르프라데시주 남서부의 마호바·칼린자르)를 표시하고, 1000~1195년 괄리오르 쪽을 더함. 끝 해는 어림
-  startEvents: []
+  startEvents: [pratihara-bhoja-831]
   endEvents: [malik-kafur-deccan-1307]
   basis:
     type: primary_source
@@ -598,7 +598,7 @@
   color: "#5a9ac0"
   summary: 9세기부터 말와를 다스린 라지푸트 왕조. 1305년 알라웃딘 할지의 군대에게 끝남
   mapNote: 지도에는 972년부터 1134년까지와 1175년부터 1304년까지 말와(지금 마디아프라데시주 서부)를 표시함. 1135~1174년은 차울루키아(구자라트)가 말와를 다스려 그 색으로 그림. 972년 앞 라슈트라쿠타의 신하였던 때는 라슈트라쿠타 색
-  startEvents: []
+  startEvents: [tripartite-struggle-770]
   endEvents: [alauddin-khalji-1290]
   basis:
     type: primary_source
@@ -626,7 +626,7 @@
   color: "#c05a6a"
   summary: 11세기 후반부터 칼링가(오리사)를 다스린 왕조. 푸리의 자간나트 사원과 코나르크 태양 사원을 지음
   mapNote: 지도에는 1078년부터 1433년까지 표시함. 1078년 오리사 남부와 고다바리강 북쪽 북칼링가, 1110년 우트칼라(오리사 해안·내륙 영주 땅), 1135년 미드나포르를 더한 모습. 미드나포르 쪽과 1206년 앞 경계는 어림
-  startEvents: []
+  startEvents: [eastern-ganga-1078]
   endEvents: [kapilendra-gajapati-1434]
   basis:
     type: primary_source
@@ -654,7 +654,7 @@
   color: "#4040b0"
   summary: 11세기부터 차티스가르 평야를 다스린 칼추리 왕조의 나라. 1741년 나그푸르 본슬레의 군대에게 무너짐
   mapNote: 지도에는 1000년부터 1740년까지 차티스가르 평야와 북부 토후국 땅(수르구자는 1612년까지)을 표시함. 경계는 어림
-  startEvents: []
+  startEvents: [chandela-dhanga-950]
   endEvents: ["nagpur-bhonsle-1739"]
   basis:
     type: primary_source
@@ -710,7 +710,7 @@
   color: "#d08038"
   summary: 1163년 무렵 칼리아니 찰루키아에서 독립해 와랑갈을 도읍으로 텔루구 땅을 다스린 왕조. 1323년 델리 술탄국에게 와랑갈을 잃고 끝남
   mapNote: 지도에는 1163년부터 1322년까지 표시함. 1163~1198년은 텔랑가나와 라얄라시마 북부, 1199년(가나파티 즉위)부터 지금 텔랑가나주와 안드라프라데시주(고다바리강 북쪽 북칼링가 제외). 13세기 초 해안 정복 전 모습은 가장 컸을 때로 어림
-  startEvents: []
+  startEvents: [kakatiya-1163]
   endEvents: [tughluq-dynasty-1320]
   basis:
     type: primary_source
@@ -752,7 +752,7 @@
   color: "#406898"
   summary: 상감 시대부터 이름이 알려진 타밀 왕조로, 9세기 중엽 비자얄라야가 탄자부르에서 다시 일으킴. 13세기에 판디아에게 밀려 1279년 무렵 끝남
   mapNote: 지도에는 기원전 260년부터 299년까지(상감 시대의 카베리강 삼각주)와 871년부터 1215년까지 표시함. 300~870년은 칼라브라·팔라바 시기라 비움. 871년 뒤 타밀나두 전체로 넓어지고 안드라 남부(898~1198년)·케랄라 남부(985~1102년)·실론(993~1069년)·강가바디(1004~1115년)·벵기(1070~1117년, 1135~1198년)를 함께 그림. 1206~1215년은 지금 타밀나두주. 1216년 판디아의 공격 뒤는 판디아 색으로 그림
-  startEvents: []
+  startEvents: [tamil-three-kingdoms-260bc]
   endEvents: [chola-pandya-1216]
   basis:
     type: primary_source
@@ -767,7 +767,7 @@
   color: "#50a060"
   summary: 마두라이를 도읍으로 한 타밀 왕조. 12세기 말 다시 일어나 13세기에 촐라를 누르고 남인도 동부를 다스림
   mapNote: 지도에는 기원전 260년부터 299년까지(상감 시대)와 590년부터 909년까지 마두라이 둘레(지금 타밀나두주 남부)를, 1216년부터 1322년까지 지금 타밀나두주를 표시함. 300~589년(칼라브라 시기)은 주인이 알려지지 않아 비우고, 촐라의 신하였던 910~1215년은 촐라 색으로 그림. 케랄라 남부·실론 북부에 대한 원정과 공납은 칠하지 않음
-  startEvents: []
+  startEvents: [tamil-three-kingdoms-260bc]
   endEvents: [tughluq-dynasty-1320]
   basis:
     type: primary_source
@@ -826,7 +826,7 @@
   color: "#d0a070"
   summary: 1070년 비자야바후 1세가 촐라를 몰아낸 뒤 폴론나루와를 도읍으로 한 싱할라 왕국. 13세기부터 담바데니야·얍파후와·쿠루네갈라·감폴라로 도읍을 옮김
   mapNote: 지도에는 1055년부터 1411년까지 표시함. 1055~1069년은 비자야바후 1세가 일어난 남부(루후나)만 그리고, 1215년 칼링가 마가가 북쪽 라자라타를 차지한 뒤로는 남서부·중부·동부만 그리며, 도읍을 옮긴 왕조는 한 나라로 그림
-  startEvents: []
+  startEvents: [chola-lanka-993]
   endEvents: [kotte-kingdom-1412]
   basis:
     type: primary_source
