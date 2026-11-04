@@ -1,0 +1,1180 @@
+# south-asia ancient 나라 (시대 파일 scripts/geo/areas/south-asia/ancient.mjs의 짝 항목 파일, npm run new:area가 만든 빈 틀)
+# 시대·범위: 기원전 800~1205: 16대국·마우리아·쿠샨·굽타·지역 왕조와 가즈니·구르
+# 나라를 넣을 때 아래 []를 지우고 - id: …로 적는다(docs/DATA_GUIDE.md). 권역 값은 파일 이름에서 정해진다(src/schema/regions.ts REGION_FILTER_OF의 'south-asia-ancient').
+# 해는 천문 연도(기원전 N년 = 1−N, 예: 기원전 321년 = −320). 화면 글(summary·mapNote 등)에는 '기원전 321년'처럼 사람이 읽는 꼴로 쓴다.
+# 1206년 뒤까지 이어지는 S3 항목(촐라·판디아·호이살라·야다바·카카티야·세나·차하마나 등)은 항목이 south-asia-sultanate.yaml에 있으므로 여기 두지 않는다
+#   (두 항목 파일에 같은 id를 두지 않음 — from과 글만 그 파일에서 고침). 다른 권역 늘린 나라(achaemenid-empire 등)도 그 권역 파일 블록에서 고친다(서 칸).
+# 칸 나눔(S4 뼈대, <sp>/IMPL-SPLIT.md): 구현 S4-서는 '# ── S4 서 ──', S4-동은 '# ── S4 동 ──', S4-남은 '# ── S4 남 ──' 칸 아래에만 쓴다. 아래 '# ── S4 공통(뼈대) ──' 블록은 항목마다
+#   '글은 ○ 칸이 채움'에 적힌 칸만 고친다. 공통 블록의 id·이름·색은 메인이 정한 값(IMPL-COMMON '여러 칸이 쓰는 항목 표')이라 바꾸지 않는다.
+#   summary·mapNote·basis는 뼈대의 자리 글이라 글을 쓰는 칸이 바꿔 쓴다(endNote·features·foundingNote·startEvents·endEvents도 그 칸이 더하고, native는 그 칸이 확인).
+
+# ── S4 공통(뼈대) ──
+# 글은 동 칸이 채움
+- id: magadha-kingdom
+  level: polity
+  names: { ko: 마가다 왕국, en: Magadha, native: मगध }
+  from: -543
+  to: -344
+  color: "#c8a040"
+  summary: 갠지스강 중류 남쪽(지금 비하르주 남부)의 왕국. 하리앙카 왕조의 빔비사라가 동쪽 앙가를 합치고 아들 아자타샤트루가 북쪽 밧지 연맹을 꺾었으며, 시슈나가 왕조 때 서쪽 아반티까지 합쳐 16대국 가운데 가장 큰 나라가 됨
+  mapNote: 지도에는 기원전 500년부터 기원전 346년까지 표시함. 기원전 500년에는 라자그리하 둘레 마가다와 동쪽 앙가(지금 바갈푸르·문게르 일대), 기원전 468년부터 갠지스강 북쪽 미틸라(밧지 땅), 기원전 413년부터 서쪽 아반티(지금 마디아프라데시 서부)를 더한 모습. 경계는 팔리 경전·푸라나의 지역 이름에 기댄 어림
+  endNote: 기원전 345년 무렵 마하파드마 난다가 시슈나가 왕조를 무너뜨리고 난다 왕조를 엶
+  features:
+    - 도읍은 라자그리하(지금 라지기르), 뒤에 파탈리푸트라(지금 파트나)
+    - 붓다와 마하비라가 활동한 무대
+    - 하리앙카 왕조(기원전 544 무렵~413)에 이어 시슈나가 왕조(기원전 413~345)가 다스림
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Magadha", "위키백과 Nanda Empire"]
+    foundingNote: 빔비사라가 즉위했다고 보는 기원전 544년 무렵부터
+
+# 글은 동 칸이 채움
+- id: nanda-empire
+  level: polity
+  names: { ko: 난다 제국, en: Nanda Empire, native: नन्द साम्राज्य }
+  from: -344
+  to: -320
+  color: "#3a6a8a"
+  summary: 마하파드마 난다가 마가다의 시슈나가 왕조를 이어 세운 왕조. 갠지스 평원의 여러 나라를 합치고 칼링가(오리사)까지 다스렸으며, 알렉산드로스가 인더스강에 이르렀을 때 동쪽의 큰 나라로 알려짐
+  mapNote: 지도에는 기원전 345년부터 기원전 322년까지 갠지스 평원(지금 우타르프라데시·비하르·자르칸드)과 오리사, 나르마다강 북쪽 중부 인도와 아스마카를 표시함. 오리사는 하티굼파 비문이 전하는 '난다 왕의 운하'에 기댐. 벵골은 그리스 사료의 간가리다이를 난다 땅으로 보는 설이 있으나 근거가 약해 비움. 경계는 푸라나에 기댄 어림
+  endNote: 기원전 322년 무렵 찬드라굽타가 다나 난다를 무너뜨리고 마우리아 왕조를 엶
+  features:
+    - 도읍은 파탈리푸트라
+    - 푸라나는 마하파드마 난다가 '모든 크샤트리아를 없앴다'고 전함
+    - 아버지와 아들 여덟, 아홉 왕이 이었다고 전함
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Nanda Empire"]
+    foundingNote: 마하파드마 난다가 즉위했다고 보는 기원전 345년 무렵부터
+
+# 글은 동 칸이 채움
+- id: maurya-empire
+  level: polity
+  names: { ko: 마우리아 제국, en: Maurya Empire, native: मौर्य साम्राज्य }
+  from: -320
+  to: -184
+  color: "#7a3f9a"
+  summary: 찬드라굽타가 난다 왕조를 무너뜨리고 세운 제국. 셀레우코스 1세와의 조약으로 인더스 서쪽을 얻었고, 아소카 때 칼링가를 정복해 남인도 끝을 뺀 남아시아 대부분을 다스림
+  mapNote: 지도에는 기원전 321년부터 기원전 186년까지 표시함. 기원전 321년 갠지스 평원·벵골(마하스탄 비문)과 서쪽 카슈미르·인도 쪽 펀자브·라자스탄·구자라트·나르마다강 북쪽 말와, 기원전 316년 간다라·신드·펀자브 서부(알렉산드로스의 인더스 태수령 땅), 기원전 305년 발루치스탄, 기원전 297년(빈두사라) 북위 14.3도 위 데칸(마하라슈트라 내륙 포함), 기원전 261년 칼링가 정복으로 오리사·안드라 북부(북칼링가)와 우타라칸드·실헤트·치타공·네팔 테라이를 더함. 라다크·길기트와 자이살메르 쪽 사막은 칠하지 않음. 마하라슈트라 내륙은 아소카 비문이 없는 땅이고, 말기(기원전 233년 무렵부터)에 잃은 땅의 범위는 알려지지 않아 최대 범위로 칠함. 기원전 185년 뒤 데칸의 주인은 알려지지 않아 비움. 경계는 아소카 비문의 자리에 기댄 어림
+  endNote: 기원전 185년 무렵 장군 푸샤미트라 슝가가 마지막 왕 브리하드라타를 죽이고 슝가 왕조를 엶
+  features:
+    - 도읍은 파탈리푸트라
+    - 아소카가 칼링가 전쟁 뒤 다르마(법)를 새긴 바위·기둥 비문을 곳곳에 세움
+    - 찬드라굽타는 기원전 305년 무렵 셀레우코스 1세와 조약을 맺어 아라코시아·게드로시아를 얻음
+    - 재상 카우틸랴가 쓴 것으로 전하는 『아르타샤스트라』가 다스림의 틀을 보여 줌
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Maurya Empire", "아소카 비문"]
+    foundingNote: 찬드라굽타가 난다 왕조를 무너뜨린 기원전 321년 무렵부터
+
+# 글은 동 칸이 채움
+- id: shunga-empire
+  level: polity
+  names: { ko: 슝가 제국, en: Shunga Empire, native: शुंग साम्राज्य }
+  from: -184
+  to: -27
+  color: "#a85a3a"
+  summary: 푸샤미트라 슝가가 마지막 마우리아 왕을 죽이고 세운 왕조. 서북에서 들어온 인도-그리스 세력과 다투며 갠지스 평원과 말와 동부를 다스렸고, 기원전 73년 무렵 재상 바수데바가 칸바 왕조를 엶
+  mapNote: 지도에는 기원전 185년부터 기원전 29년까지 표시하고, 뒤를 이은 칸바 왕조(기원전 73~28년)도 같은 항목·같은 색으로 그림. 처음에는 갠지스 평원(지금 우타르프라데시·비하르·자르칸드)과 나르마다강 북쪽 말와 동부·분델칸드(비디샤 둘레, 기원전 101년까지), 기원전 100년 무렵부터는 마가다(비하르 남부)만 표시함. 경계는 아요디아의 다나데바 비문 등에 기댄 어림
+  endNote: 기원전 28년 무렵 칸바 왕조의 마지막 왕이 사타바하나 왕조에게 무너졌다고 푸라나가 전함
+  features:
+    - 도읍은 파탈리푸트라, 뒤에 비디샤
+    - 푸샤미트라가 말제사(아슈바메다)를 열어 브라만교 의례를 되살림
+    - 산치·바르후트 불탑의 난간과 문이 이 무렵 지어짐
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Shunga Empire", "위키백과 Kanva dynasty"]
+    foundingNote: 푸샤미트라가 마우리아의 마지막 왕을 죽인 기원전 185년 무렵부터
+
+# 글은 서 칸이 채움
+- id: kushan-empire
+  level: polity
+  names: { ko: 쿠샨 제국, en: Kushan Empire, native: Κυϸανο }
+  from: 30
+  to: 375
+  color: "#d8a060"
+  summary: 월지의 한 갈래인 쿠샨이 박트리아에서 일어나 간다라·펀자브·갠지스 평원 서부까지 다스린 제국. 카니슈카 때 가장 넓었음
+  mapNote: 지도에는 75년부터 374년까지 남아시아 쪽 땅만 표시함(박트리아 본토는 그리지 않음). 75년 간다라·펀자브, 127년 카니슈카 때 카슈미르·신드 북부·하리아나·델리를 더하고, 240년 간다라를 쿠샨샤르 왕국에, 360년 펀자브 북부·카슈미르를 키다라에 잃은 모습. 갠지스 평원(지금 우타르프라데시)은 127년부터 230년까지(사르나트·코삼비 비문) 표시함. 경계는 라바탁 비문과 동전 출토지에 기댄 어림
+  endNote: 4세기에 사산 제국과 키다라에 땅을 잃고 375년 무렵 펀자브에 남은 마지막 왕계가 끊김
+  features:
+    - 도읍은 푸루샤푸라(페샤와르)와 마투라
+    - 카니슈카가 불교를 후원했다고 전하며 간다라 미술이 이때 꽃핌
+    - 중국 한나라·로마와 비단길 무역으로 이어짐
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Kushan Empire", "위키백과 Rabatak inscription"]
+    foundingNote: 쿠줄라 카드피세스가 월지 다섯 부족을 묶은 30년 무렵부터 봄
+
+# 글은 서 칸이 채움
+- id: western-satraps
+  level: polity
+  names: { ko: 서 크샤트라파, en: Western Satraps, native: पश्चिमी क्षत्रप }
+  from: 35
+  to: 415
+  color: "#8a9ad0"
+  summary: 사카(스키타이) 계통의 태수 왕조. 구자라트·말와·신드 하부를 다스리며 사타바하나와 다툼
+  mapNote: 지도에는 119년부터 408년까지 표시함. 119년 구자라트(쿠치 빼고)·라자스탄 남부, 130년 루드라다만 1세 때 쿠치·하부 신드를 더하고 396년 하부 신드를 잃은 모습. 데칸 서북(북콘칸·나식·푸네 쪽)은 150년부터 179년까지(루드라다만 1세), 말와 서부는 150년부터 408년까지 표시함. 경계는 주나가드 바위 비문에 든 지명에 기댄 어림
+  endNote: 409년 무렵 굽타 제국의 찬드라굽타 2세가 구자라트·말와를 정복함. 마지막 왕은 415년 무렵까지 기록에 남음
+  features:
+    - 도읍은 우자인
+    - 루드라다만 1세의 주나가드 바위 비문(150년 무렵)은 산스크리트로 쓴 이른 긴 비문
+    - 데칸 서북을 두고 사타바하나 왕조와 여러 번 싸움
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Western Satraps"]
+    foundingNote: 크샤하라타 가문의 첫 태수 기록이 나오는 35년 무렵부터 봄
+
+# 글은 동 칸이 채움
+- id: gupta-empire
+  level: polity
+  names: { ko: 굽타 제국, en: Gupta Empire, native: गुप्त साम्राज्य }
+  from: 320
+  to: 543
+  color: "#e0b830"
+  summary: 찬드라굽타 1세가 마가다에서 세운 제국. 사무드라굽타가 갠지스 평원을 정복하고 변경 왕들을 조공국으로 삼았으며, 찬드라굽타 2세가 서 크샤트라파를 무너뜨려 북인도 대부분을 다스림. 5세기 말 훈족의 침입 뒤 약해짐
+  mapNote: 지도에는 320년부터 542년까지 표시함. 320년에 마가다(비하르)와 프라야가·사케타(우타르프라데시 동부), 350년 무렵 갠지스 평원 전부와 벵골 서부, 400년 무렵 벵골 동·북부를 더함. 나르마다강 북쪽 중부 인도(에란)는 350년부터 509년까지, 구자라트는 409년부터 474년까지, 말와 서부는 409년부터 439년까지(그 뒤 아울리카라) 그림. 510년부터는 갠지스 평원 서·중부를 잃고 마가다·벵골·우타르프라데시 동부가 중심인 모습. 사마타타·카마루파·네팔 등 알라하바드 기둥 비문의 조공국은 칠하지 않음. 경계는 비문과 동판 문서의 자리에 기댄 어림
+  endNote: 6세기 중엽 마지막 왕 비슈누굽타의 기록 뒤 끊겼고, 땅은 후기 굽타·마우카리 등 여러 왕조로 갈림
+  features:
+    - 도읍은 파탈리푸트라
+    - 사무드라굽타의 알라하바드 기둥 비문이 정복한 왕과 조공국을 늘어놓음
+    - 찬드라굽타 2세 때 중국 승려 법현이 다녀감
+    - 5세기 말 알촌 훈족의 침입으로 서쪽 땅을 잃음
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Gupta Empire", "알라하바드 기둥 비문"]
+    foundingNote: 찬드라굽타 1세가 즉위해 굽타 기원을 연 320년부터
+
+# 글은 서 칸이 채움
+- id: alchon-huns
+  level: polity
+  names: { ko: 알촌 훈족, en: Alchon Huns, native: αλχονο }
+  from: 460
+  to: 565
+  color: "#606060"
+  summary: 중앙아시아에서 내려와 간다라·펀자브를 차지한 훈족 계통 집단. 토라마나·미히라쿨라 때 북인도 서부까지 들어옴
+  mapNote: 지도에는 470년부터 564년까지 표시함. 470년 간다라·펀자브·카슈미르, 502년 토라마나 때 수틀레지강 양쪽 펀자브·하리아나·델리를 더하고, 528년 손다니 패전 뒤 하리아나 쪽을, 542년 펀자브를 잃고 간다라·카슈미르만 남은 모습. 에란·괄리오르 쪽 중부 인도는 510년부터 527년까지 그림(토라마나·미히라쿨라 비문). 경계는 비문과 동전 출토지에 기댄 어림
+  endNote: 미히라쿨라가 죽은 뒤 세력이 줄어 6세기 중반 간다라·카슈미르에서 사라짐
+  features:
+    - 동전에 박트리아 문자로 'αλχονο'(알촌)라는 이름을 새김
+    - 토라마나·미히라쿨라 부자가 북인도 서부를 휩씀
+    - 528년 무렵 말와의 야쇼다르만에게 손다니에서 짐
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Alchon Huns"]
+    foundingNote: 키다라를 밀어내고 간다라에 들어온 460년 무렵부터 봄
+
+# 글은 동 칸이 채움
+- id: vardhana-dynasty
+  level: polity
+  names: { ko: 바르다나 왕조, en: Vardhana dynasty, native: वर्धन राजवंश }
+  from: 606
+  to: 647
+  color: "#4a9a9a"
+  summary: 타네사르의 푸샤부티(바르다나) 왕조. 하르샤가 형 라지야바르다나를 이어 카나우지를 도읍으로 갠지스 평원을 다스렸으나, 남쪽으로는 바다미 찰루키아에 막힘
+  mapNote: 지도에는 606년부터 646년까지 갠지스 평원(지금 우타르프라데시·비하르)과 서쪽 타네사르 둘레(하리아나·델리·수틀레지강 동쪽 펀자브)를 표시하고, 마가다의 푸르나바르만 같은 봉신 땅도 같은 색으로 그림. 643년 간잠 원정과, 현장의 기록에 따로 나오고 풀라케신 2세와 나르마다강을 경계로 맞선 말와는 칠하지 않음. 경계는 반스케라·마두반 동판과 현장의 기록에 기댄 어림
+  endNote: 647년 하르샤가 후계자 없이 죽은 뒤 신하 아루나슈바가 왕위를 차지했고 나라는 흩어짐
+  features:
+    - 도읍은 타네사르, 뒤에 카나우지
+    - 619년 무렵 풀라케신 2세에게 막혀 나르마다강이 남쪽 경계가 됨
+    - 중국 승려 현장이 머물며 『대당서역기』에 이 나라를 기록함
+    - 하르샤는 산스크리트 극 『나가난다』를 지었다고 전함
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Harsha", "위키백과 Pushyabhuti dynasty"]
+    foundingNote: 하르샤가 형을 이어 즉위한 606년부터
+
+# 글은 남 칸이 채움
+- id: badami-chalukya-dynasty
+  level: polity
+  names: { ko: 바다미 찰루키아 왕조, en: Chalukya dynasty of Badami, native: ಬಾದಾಮಿ ಚಾಳುಕ್ಯರು }
+  from: 543
+  to: 753
+  color: "#3a7ac0"
+  summary: 풀라케신 1세가 바다미(바타피)에 세운 데칸 서부의 왕조. 풀라케신 2세 때 나르마다강에서 하르샤의 남진을 막고 벵기까지 넓힘
+  mapNote: 지도에는 543년부터 752년까지 표시함. 처음에는 바다미 둘레의 카르나타카 북부만, 566년부터 콘칸과 카르나타카 남서부, 610년부터 데칸 대부분, 624년부터 텔랑가나를 더함. 642년 팔라바의 바타피 점령은 되돌려져 칠하지 않음
+  endNote: 753년 단티두르가의 라슈트라쿠타가 키르티바르만 2세를 몰아내 끝남
+  features:
+    - 도읍은 바타피(바다미)
+    - 아이홀레·파타다칼에 초기 석조 사원을 지음
+    - 아이홀레 비문(634)이 풀라케신 2세의 정복을 적음
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Chalukya dynasty"]
+    foundingNote: 풀라케신 1세가 바타피 성을 쌓은 543년부터 봄
+
+# 글은 남 칸이 채움
+- id: rashtrakuta-dynasty
+  level: polity
+  names: { ko: 라슈트라쿠타 왕조, en: Rashtrakuta dynasty, native: ರಾಷ್ಟ್ರಕೂಟ }
+  from: 753
+  to: 973
+  color: "#d05030"
+  summary: 단티두르가가 바다미 찰루키아를 무너뜨리고 세운 데칸의 왕조로, 마냐케타를 도읍으로 삼음. 고빈다 3세·인드라 3세·크리슈나 3세 때 북인도와 타밀까지 원정함
+  mapNote: 지도에는 753년부터 972년까지 데칸 서부·북카르나타카·텔랑가나를 표시하고, 915년부터 말와, 949~965년 톤다이만달람을 더함. 카나우지·갠지스 원정은 칠하지 않고, 신하였던 서 강가 왕조는 따로 그림
+  endNote: 972년 파라마라의 시야카가 마냐케타를 약탈한 뒤 973년 타일라파 2세가 자립해 끝남
+  features:
+    - 도읍은 마냐케타(말케드)
+    - 엘로라의 카일라사 사원을 지음
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Rashtrakuta dynasty"]
+    foundingNote: 단티두르가가 찰루키아를 누른 753년부터 봄
+
+# 글은 서 칸이 채움
+- id: gurjara-pratihara-dynasty
+  level: polity
+  names: { ko: 프라티하라 왕조, en: Gurjara-Pratihara dynasty, native: गुर्जर-प्रतिहार }
+  from: 730
+  to: 1036
+  color: "#9a3050"
+  summary: 라자스탄 서부에서 일어나 카나우지를 도읍으로 북인도를 다스린 왕조. 아랍의 동진을 막음
+  mapNote: 지도에는 730년부터 표시함. 730년 라자스탄 서부(빈말·만도르·잘로르), 836년 미히라 보자 때 라자스탄 대부분·하리아나·델리·수틀레지강 동쪽 펀자브·북 구자라트를 더하고, 960년 무렵 라자스탄을 잃은 모습. 갠지스 평원(지금 우타르프라데시)은 816년 카나우지 점령부터 1018년(가즈니의 카나우지 약탈)까지, 말와는 730년부터 914년까지, 괄리오르·분델칸드는 836년부터(분델칸드는 924년, 괄리오르는 999년까지) 표시함. 1019년부터는 서쪽 땅을 칠하지 않음. 경계는 비문 출토지에 기댄 어림
+  endNote: 1018년 가즈니 왕조의 마흐무드에게 카나우지를 잃은 뒤 쇠약해져 1036년 무렵 끊김
+  features:
+    - 도읍은 빈말·만도르, 9세기부터 카나우지
+    - 8세기에 신드의 아랍 군대가 동쪽으로 오는 것을 막음
+    - 팔라·라슈트라쿠타와 카나우지를 두고 겨룸(세 나라 다툼)
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Gurjara-Pratihara dynasty"]
+    foundingNote: 나가바타 1세가 아랍 군대를 물리치고 세력을 넓힌 730년 무렵부터 봄
+
+# 글은 서 칸이 채움
+- id: ghurid-dynasty
+  level: polity
+  names: { ko: 구르 왕조, en: Ghurid dynasty, native: شنسبانیان }
+  from: 1175
+  to: 1206
+  color: "#5a3a2a"
+  summary: 아프가니스탄 구르 지방에서 일어나 무함마드 구리 때 물탄·펀자브·델리를 차지한 왕조. 1206년 그가 죽은 뒤 인도 땅은 노예 출신 장군들이 나눠 가짐
+  mapNote: 지도에는 1175년부터 1205년까지 남아시아 쪽 땅만 표시함(구르·가즈니 본토는 그리지 않음). 1175년 물탄·신드 북부, 1179년 페샤와르, 1186년 라호르, 1192년 하리아나·델리·수틀레지강 동쪽 펀자브, 1195년 아지메르를 더한 모습. 동쪽은 1193년 상부 도아브, 1194년 찬다와르 전투 뒤 가하다발라 땅(아와드·바라나시), 1197년 로힐칸드, 1200년 무렵 비하르, 1205년 바크티야르 할지의 서·북벵골(가우르 둘레)을, 남쪽은 1196년 괄리오르를 더함. 1206년부터 이 땅은 델리 술탄국과 물탄 카바차 정권이 이음
+  endNote: 1206년 무함마드 구리가 암살되자 인도의 총독들이 갈라섬. 구르 본거지의 왕조는 1215년 호라즘에 망함
+  features:
+    - 도읍은 피루즈쿠, 인도 원정의 거점은 가즈니·라호르
+    - 1191년 타라인 1차 전투에서 지고 1192년 2차 전투에서 프리트비라지 3세를 이김
+    - 델리 술탄국을 연 아이바크와 물탄의 카바차는 이 왕조의 노예 출신 장군
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Ghurid dynasty"]
+    foundingNote: 무함마드 구리가 물탄을 빼앗아 인도 쪽에 처음 땅을 얻은 1175년부터 봄. 구르 본거지의 왕조는 그 앞부터 있었음
+
+# ── S4 서 ──
+- id: indo-greek-kingdom
+  level: polity
+  names: { ko: 인도-그리스 왕국, en: Indo-Greek Kingdom, native: Βασιλεία τῶν Ἰνδοελλήνων }
+  from: -199
+  to: 10
+  color: "#3060c8"
+  summary: 박트리아의 그리스인 왕들이 힌두쿠시를 넘어 간다라·펀자브에 세운 왕국들. 메난드로스 1세 때 가장 넓었음
+  mapNote: 지도에는 기원전 180년부터 기원후 9년까지 표시함. 기원전 180년 간다라·펀자브 서부, 기원전 165년 메난드로스 1세 때 물탄 쪽과 수틀레지강 서쪽 펀자브를 더하고, 기원전 130년 물탄 쪽을, 기원전 85년 간다라를, 기원전 55년 펀자브 서부를 잃은 모습. 여러 왕이 갈라 다스렸으나 한 색으로 그림. 경계는 동전 출토지에 기댄 어림(신드·구자라트 원정은 칠하지 않음)
+  endNote: 기원후 10년 무렵 수틀레지강 서쪽 펀자브에 남은 마지막 그리스인 왕계가 사카에 밀려 끊김
+  features:
+    - 도읍은 사갈라(시알코트)와 탁실라
+    - 메난드로스 1세는 불경 『밀린다왕문경』의 밀린다왕
+    - 그리스 문자와 카로슈티 문자를 함께 새긴 두 말 동전을 찍음
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Indo-Greek Kingdom"]
+    foundingNote: 데메트리오스 1세가 힌두쿠시 남쪽으로 내려온 기원전 200년 무렵부터 봄
+
+- id: indo-scythian-kingdom
+  level: polity
+  names: { ko: 인도-스키타이 왕국, en: Indo-Scythian Kingdom }
+  from: -84
+  to: 19
+  color: "#c06090"
+  summary: 중앙아시아의 사카(스키타이) 사람들이 인더스강을 따라 들어와 간다라·펀자브·신드에 세운 나라. 마우에스와 아제스 1세가 다스림
+  mapNote: 지도에는 기원전 85년부터 기원후 18년까지 표시함. 기원전 85년 마우에스 때 간다라·물탄 쪽, 기원전 55년 아제스 1세 때 펀자브 서부와 신드를 더하고, 기원후 10년 수틀레지강 서쪽 펀자브를 더한 모습. 마투라의 북부 태수는 칠하지 않음. 경계는 동전 출토지에 기댄 어림
+  endNote: 기원후 19년 무렵 곤도파레스의 인도-파르티아 왕국에 북서부를 내줌
+  features:
+    - 도읍은 탁실라
+    - 사카 태수(크샤트라파) 가문이 서인도와 마투라로 퍼짐
+    - 아제스 1세 즉위를 비크라마 기원의 시작으로 보는 설이 있음
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Indo-Scythians"]
+    foundingNote: 마우에스가 간다라를 차지한 기원전 85년 무렵부터 봄
+
+- id: indo-parthian-kingdom
+  level: polity
+  names: { ko: 인도-파르티아 왕국, en: Indo-Parthian Kingdom }
+  from: 19
+  to: 226
+  color: "#508030"
+  summary: 시스탄의 파르티아 계통 총독 곤도파레스가 독립해 아라코시아·간다라·펀자브·신드를 다스린 나라
+  mapNote: 지도에는 19년부터 225년까지 남아시아 쪽 땅만 표시함(시스탄·아라코시아는 그리지 않음). 19년 간다라·펀자브·신드·마크란 해안, 75년 쿠샨에 간다라·펀자브를 잃고, 127년 신드 북부, 130년 하부 신드를 잃어 마크란 해안만 남은 모습. 경계는 동전 출토지에 기댄 어림
+  endNote: 3세기 초 사산 제국이 일어나며 사라짐
+  features:
+    - 도읍은 탁실라
+    - 탁트이바히 비문에 곤도파레스의 이름이 나옴
+    - 사도 토마스가 곤도파레스의 궁정에 왔다는 전승이 있음
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Indo-Parthian Kingdom"]
+    foundingNote: 곤도파레스가 시스탄에서 독립한 19년 무렵부터 봄
+
+- id: kushano-sasanian-kingdom
+  level: polity
+  names: { ko: 쿠샨샤르 왕국, en: Kushano-Sasanian Kingdom, native: کوشانشهر }
+  from: 240
+  to: 360
+  color: "#c0d060"
+  summary: 사산 제국이 쿠샨의 서쪽 땅을 빼앗아 왕족에게 맡긴 속국. 다스린 왕은 쿠샨샤(쿠샨의 왕)라는 칭호를 씀
+  mapNote: 지도에는 240년부터 359년까지 남아시아 쪽 간다라(페샤와르 골짜기·스와트·탁실라)만 표시함(박트리아 쪽은 그리지 않음)
+  endNote: 360년 무렵 키다라에 간다라를 잃음
+  features:
+    - 도읍은 발흐
+    - 사산 제국 왕족이 다스린 속국
+    - 사산식 왕관을 쓴 쿠샨샤의 동전이 남음
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Kushano-Sasanian Kingdom"]
+    foundingNote: 사산 제국의 샤푸르 1세가 쿠샨 서부를 정복한 240년 무렵부터 봄
+
+- id: kidarite-kingdom
+  level: polity
+  names: { ko: 키다라 왕국, en: Kidarite Kingdom }
+  from: 360
+  to: 470
+  color: "#e08080"
+  summary: 4세기 박트리아에서 일어난 훈 계통 집단 키다라가 간다라·펀자브 북부·카슈미르에 세운 나라
+  mapNote: 지도에는 360년부터 469년까지 간다라·펀자브 북부·카슈미르를 표시함. 경계는 동전 출토지에 기댄 어림
+  endNote: 5세기 후반 알촌 훈족에게 간다라를 잃음
+  features:
+    - 나라 이름은 왕 키다라에서 옴
+    - 쿠샨식 금화를 이어 찍음
+    - 굽타 제국·사산 제국과 맞섬
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Kidarites"]
+    foundingNote: 키다라가 쿠샨샤르 왕국에게서 간다라를 빼앗은 360년 무렵부터 봄
+
+- id: maitraka-dynasty
+  level: polity
+  names: { ko: 마이트라카 왕조, en: Maitraka dynasty, native: मैत्रक }
+  from: 475
+  to: 776
+  color: "#30a060"
+  summary: 굽타 제국의 사우라슈트라 총독 박타르카가 자립해 발라비를 도읍으로 세운 왕조. 구자라트 서부를 다스림
+  mapNote: 지도에는 475년부터 775년까지 사우라슈트라(카티아와르)와 구자라트 평원(바로다·수라트 쪽 포함)을 표시함. 경계는 동판 문서 출토지에 기댄 어림
+  endNote: 8세기 후반 발라비가 무너지며 끝남. 아랍 침입 때문이라는 설은 확인되지 않음
+  features:
+    - 도읍은 발라비
+    - 발라비는 불교 학문의 중심으로 현장·의정이 기록함
+    - 640년 무렵 하르샤의 종주를 받아들임
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Maitraka dynasty"]
+    foundingNote: 박타르카가 사우라슈트라에서 자립한 475년 무렵부터 봄
+
+- id: rai-dynasty
+  level: polity
+  names: { ko: 라이 왕조, en: Rai dynasty, native: راءِ گھراڻو }
+  from: 489
+  to: 632
+  color: "#d07020"
+  summary: 아로르를 도읍으로 신드를 다스린 왕조. 신드와 물탄 쪽·마크란 해안까지 다스렸다고 『차치나마』가 전함
+  mapNote: 지도에는 489년부터 631년까지 신드·마크란 해안을, 542년부터 물탄 쪽을 더해 표시함. 경계는 후대 기록 『차치나마』에 기댄 어림
+  endNote: 632년 무렵 브라만 재상 차치가 왕위를 빼앗음
+  features:
+    - 도읍은 아로르
+    - 시작 해와 왕 계보는 후대 기록에만 남아 학설이 갈림
+    - 불교를 후원했다고 전함
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Rai dynasty"]
+    foundingNote: 『차치나마』의 왕 계보를 따라 489년 무렵부터 봄
+
+- id: chach-dynasty
+  level: polity
+  names: { ko: 차치 왕조, en: Chach dynasty, native: چچ گھراڻو }
+  from: 632
+  to: 711
+  color: "#a04080"
+  summary: 라이 왕조의 브라만 재상 차치가 세운 신드 왕조. 마지막 왕 다히르가 우마이야 군대와 싸우다 죽음
+  mapNote: 지도에는 632년부터 710년까지 신드·물탄 쪽·마크란 해안을 표시함. 경계는 후대 기록 『차치나마』에 기댄 어림
+  endNote: 711~712년 무함마드 이븐 카심이 이끈 우마이야 칼리프국 군대에 정복됨
+  features:
+    - 도읍은 아로르
+    - 다히르의 패전과 죽음은 『차치나마』가 전함
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Brahmin dynasty of Sindh"]
+    foundingNote: 차치가 라이 왕조의 왕위를 이은 632년 무렵부터 봄
+
+- id: karkota-dynasty
+  level: polity
+  names: { ko: 카르코타 왕조, en: Karkota dynasty, native: कार्कोट }
+  from: 625
+  to: 855
+  color: "#3090d0"
+  summary: 카슈미르 골짜기를 다스린 왕조. 라리타디티야 무크타피다 때 여러 원정으로 이름을 떨침
+  mapNote: 지도에는 625년부터 854년까지 카슈미르 골짜기만 표시함. 라리타디티야가 원정한 땅은 사료가 갈려 칠하지 않음
+  endNote: 855년 무렵 아반티바르만이 우트팔라 왕조를 열며 끝남
+  features:
+    - 도읍은 스리나가르와 파리하사푸라
+    - 라리타디티야가 마르탄드 태양 사원을 세움
+    - 칼하나의 『라자타랑기니』가 역사를 전함
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Karkota dynasty"]
+    foundingNote: 두를라바바르다나가 즉위한 625년 무렵부터 봄
+
+- id: utpala-dynasty
+  level: polity
+  names: { ko: 우트팔라 왕조, en: Utpala dynasty, native: उत्पल }
+  from: 855
+  to: 1003
+  color: "#80c0f0"
+  summary: 아반티바르만이 연 카슈미르 왕조. 운하와 치수 사업으로 이름남
+  mapNote: 지도에는 855년부터 1002년까지 카슈미르 골짜기를 표시함. 939년 뒤 왕가가 바뀐 시기도 같은 색으로 그림
+  endNote: 1003년 디다 여왕이 죽은 뒤 로하라 가문이 왕위를 이음
+  features:
+    - 도읍은 아반티푸라와 스리나가르
+    - 재상 수야가 젤룸강 치수를 맡음
+    - 10세기 후반 디다 여왕이 실권을 쥠
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Utpala dynasty"]
+    foundingNote: 아반티바르만이 즉위한 855년 무렵부터 봄
+
+- id: turk-shahi
+  level: polity
+  names: { ko: 투르크 샤히, en: Turk Shahi }
+  from: 665
+  to: 822
+  color: "#a0a040"
+  summary: 카불과 간다라를 다스린 튀르크 계통 왕조. 아랍의 동쪽 진출을 오래 막음
+  mapNote: 지도에는 665년부터 821년까지 남아시아 쪽 페샤와르 골짜기·탁실라만 표시함(카불 쪽은 그리지 않음)
+  endNote: 822년 무렵 브라만 재상 칼라르가 왕위를 빼앗아 힌두 샤히를 엶
+  features:
+    - 도읍은 카불
+    - 당나라에 사신을 보냄
+    - 아바스 칼리프국에 공물을 바친 때가 있음
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Turk Shahis"]
+    foundingNote: 알촌 뒤 카불·간다라를 이은 665년 무렵부터 봄. 시작 해는 학설이 갈림
+
+- id: hindu-shahi
+  level: polity
+  names: { ko: 힌두 샤히, en: Hindu Shahi }
+  from: 822
+  to: 1026
+  color: "#6a50b0"
+  summary: 카불과 간다라·펀자브를 다스린 왕조. 가즈니 왕조의 마흐무드에게 차례로 땅을 잃음
+  mapNote: 지도에는 822년부터 1020년까지 남아시아 쪽 땅만 표시함. 822년 페샤와르 골짜기·탁실라, 998년 라호르 쪽 펀자브를 더하고 1001년 페샤와르를 잃은 모습. 1021년 라호르를 잃은 뒤 산지에 남은 세력은 칠하지 않음
+  endNote: 1026년 무렵 마지막 왕 비마팔라가 죽으며 끊김
+  features:
+    - 도읍은 카불, 870년 무렵부터 우다반다푸라(훈드)
+    - 자야팔라가 1001년 페샤와르 전투에서 마흐무드에게 짐
+    - 이 왕조의 은화가 북인도에서 널리 쓰임
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Hindu Shahis"]
+    foundingNote: 칼라르가 투르크 샤히의 왕위를 빼앗은 822년 무렵부터 봄
+
+- id: tomara-dynasty
+  level: polity
+  names: { ko: 토마라 왕조, en: Tomara dynasty, native: तोमर }
+  from: 736
+  to: 1151
+  color: "#6a8a3a"
+  summary: 델리(딜리카)와 하리아나를 다스린 라지푸트 계통 왕조. 프라티하라의 신하로 시작해 자립함
+  mapNote: 지도에는 1060년부터 1150년까지 하리아나·델리를 표시함. 그 앞은 땅이 작거나 프라티하라의 종주 아래라 칠하지 않음. 경계는 어림
+  endNote: 12세기 중반 차하마나 왕조의 비그라하라자 4세에게 델리를 빼앗김
+  features:
+    - 델리를 처음 도읍으로 삼은 왕조로 전함
+    - 델리 남쪽 랄 코트 성채를 쌓았다고 전함
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Tomaras of Delhi"]
+    foundingNote: 전승이 전하는 델리 건설 해(736년)부터 봄. 시작 해는 학설이 갈림
+
+- id: habbarid-emirate
+  level: polity
+  names: { ko: 하바리 에미르국, en: Habbarid emirate, native: الهباريون }
+  from: 854
+  to: 1026
+  color: "#3a9a6a"
+  summary: 아바스 칼리프국의 신드 총독 가문이 만수라를 도읍으로 자립해 세운 아랍 왕조
+  mapNote: 지도에는 854년부터 1025년까지 신드를 표시함. 경계는 어림
+  endNote: 1026년 무렵 가즈니 왕조의 마흐무드가 만수라를 친 뒤 소마라 왕조가 신드를 이음
+  features:
+    - 도읍은 만수라
+    - 아바스 칼리프의 이름으로 금요 설교를 이어 함
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Habbari dynasty"]
+    foundingNote: 우마르 알하바리가 신드에서 자립한 854년 무렵부터 봄
+
+- id: multan-emirate
+  level: polity
+  names: { ko: 물탄 에미르국, en: Emirate of Multan, native: إمارة ملتان }
+  from: 855
+  to: 1010
+  color: "#2a6a5a"
+  summary: 물탄을 다스린 아랍 왕조. 처음엔 바누 문아비 가문, 10세기 후반부터 이스마일파 정권
+  mapNote: 지도에는 855년부터 1009년까지 물탄·바하왈푸르와 인더스강 서안을 표시함. 경계는 어림
+  endNote: 1010년 가즈니 왕조의 마흐무드가 물탄을 병합함
+  features:
+    - 도읍은 물탄
+    - 물탄의 태양 신전 순례로 부유했다고 아랍 지리서가 전함
+    - 965년 무렵부터 파티마 칼리프를 따름
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Emirate of Multan"]
+    foundingNote: 바누 문아비 가문이 물탄에서 자립한 855년 무렵부터 봄
+
+# ── S4 동 ──
+
+- id: gahadavala-dynasty
+  level: polity
+  names: { ko: 가하다발라 왕조, en: Gahadavala dynasty, native: गाहड़वाल }
+  from: 1090
+  to: 1194
+  color: "#8a5ab0"
+  summary: 11세기 말 찬드라데바가 바라나시·카나우지를 차지해 세운 왕조. 고빈다찬드라 때 갠지스 평원 중·동부를 다스렸고, 1194년 자야찬드라가 찬다와르 전투에서 구르 왕조에게 져 무너짐
+  mapNote: 지도에는 1090년부터 1193년까지 갠지스 평원 중·동부(지금 우타르프라데시 아와드·하부 도아브·바라나시·고라크푸르)와 비하르 서부를 표시함. 1194년 뒤 하리슈찬드라 등 남은 왕들의 땅은 1만 km²가 안 되어 칠하지 않음. 경계는 동판 문서에 기댄 어림
+  endNote: 1194년 자야찬드라가 찬다와르 전투에서 무함마드 구리에게 져 죽었고, 남은 왕들의 기록은 1237년까지 이어짐
+  features:
+    - 도읍은 바라나시, 카나우지도 함께 씀
+    - 고빈다찬드라 때의 동판 문서가 가장 많이 남음
+    - 바라나시의 사원과 학문을 후원함
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Gahadavala dynasty"]
+    foundingNote: 찬드라데바가 카나우지를 차지한 1090년 무렵부터
+
+- id: bhauma-kara-dynasty
+  level: polity
+  names: { ko: 바우마카라 왕조, en: Bhauma-Kara dynasty, native: ଭୌମକର }
+  from: 736
+  to: 940
+  color: "#d08a40"
+  summary: 8세기부터 오리사 해안(토살리)을 다스린 왕조. 불교와 힌두교를 함께 후원했고 여왕이 여러 번 왕위를 이음
+  mapNote: 지도에는 736년부터 939년까지 오리사 해안과 남부(지금 쿠타크·푸리·발라소르·간잠 일대)를 표시함. 남부 산지(코라푸트 쪽)는 이 왕조의 비문이 없어 칠하지 않음. 연대와 경계는 동판 문서에 기댄 어림
+  endNote: 10세기 중엽 서쪽에서 일어난 소마바시 왕조가 오리사 해안을 차지함
+  features:
+    - 도읍은 구헤스와라파타카(지금 자지푸르 근처)
+    - 라트나기리·랄리타기리 불교 사원이 이 무렵 번성함
+    - 여왕이 여러 번 왕위에 오름
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 History of Odisha"]
+    foundingNote: 왕조가 동판 문서에 나타나는 736년 무렵부터(왕조 기원의 해는 학설이 갈림)
+
+- id: somavamshi-dynasty
+  level: polity
+  names: { ko: 소마바시 왕조, en: Somavamshi dynasty, native: ସୋମବଂଶୀ }
+  from: 940
+  to: 1110
+  color: "#3a9a7a"
+  summary: 다크시나 코살라(지금 차티스가르 동부·서오리사)에서 일어나 오리사 해안까지 합친 왕조. 야야티 때 우트칼라와 코살라를 함께 다스림
+  mapNote: 지도에는 940년부터 1109년까지 서오리사와 오리사 해안, 999년까지 차티스가르 평야를 표시함. 남부 산지(코라푸트 쪽)는 칠하지 않음. 1078년부터 오리사 남부는 동부 강가 왕조 땅. 경계는 동판 문서에 기댄 어림
+  endNote: 12세기 초 동부 강가 왕조의 아난타바르만 초다강가가 우트칼라를 차지하며 끝남
+  features:
+    - 도읍은 수바르나푸르(지금 소네푸르), 뒤에 자지푸르
+    - 부바네스와르의 묵테스와라·링가라자 사원을 지음
+    - 차티스가르 시르푸르의 판두방시 왕가에서 갈라져 나왔다고 봄
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 History of Odisha"]
+    foundingNote: 바우마카라 왕조를 대신해 오리사의 큰 세력이 된 940년 무렵부터
+
+- id: later-gupta-dynasty
+  level: polity
+  names: { ko: 후기 굽타 왕조, en: Later Gupta dynasty, native: उत्तरवर्ती गुप्त राजवंश }
+  from: 550
+  to: 750
+  color: "#d0c060"
+  summary: 6세기 중엽부터 마가다(지금 비하르 남부)를 다스린 왕조. 굽타 제국과의 혈연은 확실하지 않고, 이웃 마우카리 왕조와 갠지스 평원을 두고 다툼. 7세기 후반 아디티야세나 때 다시 세력을 키움
+  mapNote: 지도에는 550년부터 605년까지와 647년부터 749년까지 마가다와 앙가(지금 비하르 남부·자르칸드 북동부)를 표시함. 606~646년은 바르다나 왕조의 봉신 시기라 바르다나 색으로 칠함. 경계와 연대는 비문에 기댄 어림
+  endNote: 8세기 중엽 마가다가 벵골에서 일어난 팔라 왕조의 땅이 되며 끝남
+  features:
+    - 마가다의 가야·라자그리하 둘레가 중심
+    - 아디티야세나가 아프사드 비문을 남기고 '대왕'을 칭함
+    - 마우카리 왕조와 혼인과 전쟁을 거듭함
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Later Gupta dynasty", "아프사드 비문"]
+    foundingNote: 마가다에서 이 왕조의 지배가 확인되는 550년 무렵부터
+
+- id: maukhari-dynasty
+  level: polity
+  names: { ko: 마우카리 왕조, en: Maukhari dynasty, native: मौखरि }
+  from: 550
+  to: 606
+  color: "#7a6ab0"
+  summary: 굽타 제국이 약해진 뒤 카나우지를 중심으로 갠지스 평원 중부를 다스린 왕조. 이샤나바르만 때 크게 일어났고, 마지막 왕 그라하바르만이 타네사르 왕가의 공주 라지야슈리와 혼인함
+  mapNote: 지도에는 550년부터 605년까지 갠지스 평원 중·동부(지금 우타르프라데시 아와드·로힐칸드·하부 도아브·바라나시·고라크푸르)를 표시함. 경계는 비문에 기댄 어림
+  endNote: 605년 그라하바르만이 말와 왕에게 죽은 뒤 606년 땅이 하르샤의 바르다나 왕조로 넘어감
+  features:
+    - 도읍은 카나우지
+    - 이샤나바르만이 6세기 중엽 '대왕'을 칭함
+    - 후기 굽타 왕조와 갠지스 평원을 두고 다툼
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Maukhari dynasty"]
+    foundingNote: 이샤나바르만 때 독립한 나라로 보는 550년 무렵부터
+
+- id: gauda-kingdom
+  level: polity
+  names: { ko: 가우다 왕국, en: Gauda Kingdom, native: গৌড় রাজ্য }
+  from: 600
+  to: 637
+  color: "#c06080"
+  summary: 샤샹카가 벵골 서·북부를 중심으로 세운 왕국. 카르나수바르나를 도읍으로 마가다·오리사 북부까지 세력을 뻗었고, 하르샤의 형 라지야바르다나를 죽여 바르다나 왕조와 맞섬
+  mapNote: 지도에는 600년부터 636년까지 벵골 서·북부(지금 서벵골과 방글라데시 라즈샤히)를 표시함. 마가다·오리사 쪽 세력권은 경계를 알 수 없어 칠하지 않음. 샤샹카가 죽은 뒤 637~646년의 가우다는 하르샤·카마루파 어느 쪽 땅이었는지 확실하지 않아 비움. 경계는 어림
+  endNote: 637년 무렵 샤샹카가 죽은 뒤 아들 마나바가 잠시 이었으나 곧 무너짐
+  features:
+    - 도읍은 카르나수바르나(지금 무르시다바드 근처)
+    - 벵골을 하나로 다스린 첫 왕으로 꼽힘
+    - 하르샤와 카마루파의 바스카르바르만이 손잡고 맞섬
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 History of Bengal", "위키백과 Harsha"]
+    foundingNote: 샤샹카가 가우다 왕으로 나타나는 600년 무렵부터
+
+- id: kamarupa-kingdom
+  level: polity
+  names: { ko: 카마루파 왕국, en: Kamarupa, native: কামৰূপ }
+  from: 350
+  to: 1140
+  color: "#2f8a5a"
+  summary: 브라마푸트라강 골짜기(지금 아삼)를 다스린 고대 왕국. 바르만·믈레차·팔라 세 왕조가 이었고, 7세기 바스카르바르만 때 하르샤와 손잡고 벵골까지 세력을 뻗음
+  mapNote: 지도에는 350년부터 1140년까지 표시함. 350년에 아삼의 브라마푸트라 골짜기, 640년부터 서쪽 카라토야강까지(지금 서벵골 쿠치비하르·잘파이구리와 방글라데시 랑푸르 동부)를 더함. 세 왕조를 같은 항목·같은 색으로 그림. 경계는 동판 문서와 전통적 사방 경계에 기댄 어림
+  endNote: 12세기 중엽 마지막 왕조가 끊긴 뒤 땅이 여러 소국으로 갈렸고, 13세기에 카마타 왕국이 서쪽을 이음
+  features:
+    - 도읍은 프라그조티샤푸라(지금 구와하티 근처), 뒤에 하루페스와라
+    - 사무드라굽타의 알라하바드 기둥 비문에 조공국으로 나옴
+    - 바스카르바르만이 중국 승려 현장을 초청함
+    - 닛단푸르 동판은 벵골 카르나수바르나의 진중에서 발급됨
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Kamarupa", "닛단푸르 동판"]
+    foundingNote: 푸샤바르만이 바르만 왕조를 열었다고 보는 350년 무렵부터
+
+- id: licchavi-kingdom
+  level: polity
+  names: { ko: 리차비 왕국, en: Licchavi kingdom, native: लिच्छवि }
+  from: 400
+  to: 879
+  color: "#a04a3a"
+  summary: 카트만두 골짜기를 중심으로 네팔 중부를 다스린 왕국. 산스크리트 비문을 많이 남겼고 인도와 티베트를 잇는 교역으로 번영함
+  mapNote: 지도에는 첫 비문이 남은 464년부터 879년까지 카트만두 골짜기와 동쪽 반에파·서쪽 고르카를 어림한 선으로 표시함. 북쪽 히말라야 높은 땅은 넣지 않음. 879년 뒤 타쿠리 왕조는 골짜기만 다스려 1만 km²가 안 되므로 비움
+  endNote: 879년 무렵 끝나고 타쿠리 왕조가 골짜기를 이음
+  features:
+    - 도읍은 카트만두 골짜기
+    - 마나데바의 464년 창구나라얀 비문이 네팔에서 가장 오래된 비문
+    - 암슈바르만 때 티베트 왕실과 혼인 동맹을 맺었다고 전함
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Licchavi (kingdom)", "창구나라얀 비문"]
+    foundingNote: 리차비 왕조가 골짜기를 다스리기 시작했다고 보는 400년 무렵부터
+
+- id: pala-empire
+  level: polity
+  names: { ko: 팔라 제국, en: Pala Empire, native: পাল সাম্রাজ্য }
+  from: 750
+  to: 1161
+  color: "#1a3a6a"
+  summary: 8세기 중엽 벵골의 유력자들이 고팔라를 왕으로 뽑아 세운 불교 왕조. 다르마팔라·데바팔라 때 비하르·벵골을 바탕으로 카나우지를 두고 프라티하라·라슈트라쿠타와 겨루었고, 날란다·비크라마실라 대학을 후원함
+  mapNote: 지도에는 750년부터 1161년까지 표시함. 750년 벵골 서·북부(가우다·바렌드라), 770년부터 비하르·자르칸드를 더한 모습. 카나우지의 속국과 데바팔라의 원정 땅은 칠하지 않음. 1070년 라르(서벵골 서부)를 세나 왕조에, 1090년 비하르 서부를 가하다발라 왕조에, 1097년 미틸라를 카르나타 왕조에 잃고, 1144년 자르칸드, 1159년 북벵골을 잃은 뒤 비하르 중·동부만 남음. 10세기 말 캄보자 팔라의 가우다 점령 같은 짧은 상실은 경계를 알 수 없어 칠하지 않음. 경계는 동판 문서에 기댄 어림
+  endNote: 1161년 무렵 마다나팔라 뒤 끊겼고, 벵골은 세나 왕조의 땅이 되고 비하르는 여러 세력으로 갈림
+  features:
+    - 도읍은 가우다·파탈리푸트라, 뒤에 문게르 등 왕의 진영을 옮겨 다님
+    - 다르마팔라가 비크라마실라 대학을 세움
+    - 데바팔라 때 수마트라의 샤일렌드라 왕이 날란다에 절을 지어 달라고 청함
+    - 팔라 양식 불교 미술이 티베트·동남아로 퍼짐
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Pala Empire"]
+    foundingNote: 고팔라가 왕으로 뽑힌 750년 무렵부터
+
+- id: kosala-kingdom
+  level: polity
+  names: { ko: 코살라 왕국, en: Kosala, native: कोसल }
+  from: -599
+  to: -344
+  color: "#5f9a3a"
+  summary: 갠지스강 북쪽 아와드(지금 우타르프라데시 중·동부)의 왕국. 마하코살라 때 이웃 카시를 정복했고, 붓다와 같은 때 파세나디 왕이 슈라바스티에서 다스림
+  mapNote: 지도에는 기원전 500년부터 기원전 346년까지 카시(바라나시 둘레)를 포함한 모습으로 표시함. 기원전 5세기에 마가다에 합쳐졌다는 전승은 해를 알 수 없어, 난다 왕조가 갠지스 평원을 합친 기원전 345년에 끝냄. 쿠시나가르 둘레 말라는 1만 km²가 안 되어 비움. 경계는 팔리 경전의 지역 이름에 기댄 어림
+  endNote: 기원전 5세기 비두다바가 마가다의 아자타샤트루에게 져 마가다에 흡수되었다고 전하고, 기원전 4세기 중엽 난다 왕조의 땅이 됨
+  features:
+    - 도읍은 슈라바스티, 아요디아(사케타)도 큰 도시
+    - 마하코살라의 딸이 마가다의 빔비사라와 혼인하며 카시의 마을 하나를 지참금으로 줌
+    - 파세나디 왕은 붓다의 후원자로 불전에 자주 나옴
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Kosala", "위키백과 Mahajanapadas"]
+    foundingNote: 16대국이 불전에 나타나는 기원전 600년 무렵부터(성립 해는 알려지지 않음)
+
+- id: vatsa-kingdom
+  level: polity
+  names: { ko: 바트사 왕국, en: Vatsa, native: वत्स }
+  from: -599
+  to: -344
+  color: "#b0508a"
+  summary: 갠지스강과 야무나강이 만나는 곳 둘레(지금 프라야그라지 일대)의 왕국. 코삼비를 도읍으로 삼았고, 붓다와 같은 때 우다야나 왕이 다스림
+  mapNote: 지도에는 기원전 500년부터 기원전 346년까지 표시함. 병합 해는 알 수 없어 난다 왕조가 갠지스 평원을 합친 기원전 345년에 끝냄. 경계는 팔리 경전의 지역 이름에 기댄 어림
+  endNote: 기원전 4세기 중엽 마가다의 난다 왕조 땅이 됨
+  features:
+    - 도읍은 코삼비(지금 카우샴비)
+    - 갠지스와 야무나 사이 교역길의 중심 도시
+    - 우다야나 왕과 아반티 공주의 이야기가 산스크리트 극으로 전함
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Mahajanapadas"]
+    foundingNote: 16대국이 불전에 나타나는 기원전 600년 무렵부터(성립 해는 알려지지 않음)
+
+- id: panchala-kingdom
+  level: polity
+  names: { ko: 판찰라 왕국, en: Panchala, native: पञ्चाल }
+  from: -599
+  to: -344
+  color: "#4f6fc0"
+  summary: 갠지스강 상류 동쪽(지금 우타르프라데시 로힐칸드와 중부 도아브)의 왕국. 북판찰라는 아히차트라, 남판찰라는 캄필랴를 도읍으로 삼음
+  mapNote: 지도에는 기원전 500년부터 기원전 346년까지 남북 판찰라를 한 덩어리로 표시함. 병합 해는 알 수 없어 난다 왕조가 갠지스 평원을 합친 기원전 345년에 끝냄. 경계는 팔리 경전의 지역 이름에 기댄 어림
+  endNote: 기원전 4세기 중엽 마가다의 난다 왕조 땅이 됨
+  features:
+    - 도읍은 아히차트라(북)·캄필랴(남)
+    - 베다 문헌에 서쪽 이웃 쿠루와 함께 자주 나오는 나라
+    - 『마하바라타』의 드라우파디가 판찰라 왕의 딸로 나옴
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Mahajanapadas"]
+    foundingNote: 16대국이 불전에 나타나는 기원전 600년 무렵부터(성립 해는 알려지지 않음)
+
+- id: vajji-confederacy
+  level: polity
+  names: { ko: 밧지 연맹, en: Vajji, native: वज्जि }
+  from: -599
+  to: -467
+  color: "#3aa08a"
+  summary: 갠지스강 북쪽 미틸라(지금 비하르주 북부)의 씨족 연맹. 리차비족 등이 바이샬리를 중심으로 회의로 다스린 공화정 나라
+  mapNote: 지도에는 기원전 500년부터 기원전 469년까지 갠지스강 북쪽 미틸라를 어림한 선으로 표시함. 마가다에 진 해는 학설이 갈려 기원전 468년으로 고름
+  endNote: 기원전 5세기 후반 마가다의 아자타샤트루가 오랜 전쟁 끝에 바이샬리를 차지함
+  features:
+    - 중심 도시는 바이샬리
+    - 리차비·비데하 등 여러 씨족이 모인 연맹
+    - 자이나교의 마하비라가 이 땅에서 태어났다고 전함
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Mahajanapadas"]
+    foundingNote: 16대국이 불전에 나타나는 기원전 600년 무렵부터(성립 해는 알려지지 않음)
+
+# ── S4 남 ──
+# 기원전 6세기~1205년 마디아프라데시·데칸·남인도·실론의 새 나라(구현 S4-남, 2026-11-04)
+- id: avanti-kingdom
+  level: polity
+  names: { ko: 아반티 왕국, en: Avanti, native: अवन्ति }
+  from: -599
+  to: -413
+  color: "#9a6aa8"
+  summary: 우자인을 도읍으로 말와 지방을 다스린 16대국의 하나. 프라디요타 왕조 때 마가다와 다투다가 시슈나가 왕조에 합쳐짐
+  mapNote: 지도에는 기원전 500년부터 기원전 414년까지 말와와 나르마다강 골짜기(니마르)를 표시함. 경계는 불전·푸라나의 16대국 열거와 도읍 이름에 기댄 어림
+  endNote: 기원전 413년 무렵 시슈나가가 프라디요타 왕조를 누르고 마가다에 합침
+  features:
+    - 도읍은 우자인, 남쪽 도읍은 마히슈마티
+    - 갠지스 평원과 서해안을 잇는 교역로의 길목
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Mahajanapadas", "위키백과 Avanti (India)"]
+    foundingNote: 16대국이 열거되는 기원전 600년 무렵부터 봄(지도는 경계 사료가 서는 기원전 500년부터)
+
+- id: assaka-kingdom
+  level: polity
+  names: { ko: 아스마카 왕국, en: Assaka, native: अश्मक }
+  from: -599
+  to: -345
+  color: "#6a8a3a"
+  summary: 고다바리강 중류의 포타나를 도읍으로 한 16대국의 하나로, 16대국 가운데 가장 남쪽인 데칸에 있었음
+  mapNote: 지도에는 기원전 500년부터 기원전 346년까지 고다바리강 중류(지금 텔랑가나주 북서부와 마하라슈트라주 남동부)를 표시함. 경계는 불전의 16대국 열거와 도읍 이름에 기댄 어림
+  endNote: 기원전 345년 무렵 난다 왕조의 마하파드마 난다에게 정복됨(푸라나)
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Mahajanapadas"]
+    foundingNote: 16대국이 열거되는 기원전 600년 무렵부터 봄(지도는 기원전 500년부터)
+
+- id: satavahana-dynasty
+  level: polity
+  names: { ko: 사타바하나 왕조, en: Satavahana dynasty, native: सातवाहन }
+  from: -99
+  to: 224
+  color: "#b04868"
+  summary: 프라티슈타나(파이탄)와 아마라바티를 중심으로 데칸 대부분을 다스린 왕조. 고타미푸트라 사타카르니 때 서 크샤트라파를 꺾어 가장 넓어짐
+  mapNote: 지도에는 기원전 100년부터 224년까지 데칸을 표시함. 그 앞 기원전 185~101년 데칸은 주인이 알려지지 않아 비움. 기원전 70년 말와·비다르바, 124년 안드라·카르나타카 북부를 더하고, 150년 루드라다만에게 말와와 나식·푸네를 잃은 모습(나식은 180년에 되찾음)을 그림. 경계는 비문·화폐가 나온 곳에 기댄 어림
+  endNote: 3세기 초 왕권이 약해져 아비라·이크슈바쿠·추투 등 여러 갈래로 나뉨
+  features:
+    - 도읍은 프라티슈타나(파이탄), 뒤에 아마라바티
+    - 나식·나네가트 동굴 비문과 산치·아마라바티 불탑을 남김
+    - 로마와의 바닷길 교역이 활발했음
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Satavahana dynasty"]
+    foundingNote: 고고학 연대(기원전 2세기 말)를 따라 기원전 100년부터 봄. 푸라나식 기원전 3세기 시작은 따르지 않음
+
+- id: andhra-ikshvaku-dynasty
+  level: polity
+  names: { ko: 안드라 이크슈바쿠 왕조, en: Andhra Ikshvaku dynasty, native: ఇక్ష్వాకులు }
+  from: 225
+  to: 325
+  color: "#4a8a70"
+  summary: 사타바하나 뒤 크리슈나강 하류를 다스린 왕조로, 비자야푸리(나가르주나콘다)를 도읍으로 불교 사원을 크게 일으킴
+  mapNote: 지도에는 225년부터 325년까지 크리슈나강 하류 남쪽(지금 안드라프라데시주 군투르·팔나두)을 표시함. 경계는 나가르주나콘다 비문에 기댄 어림이고 해도 어림
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Satavahana dynasty"]
+
+- id: abhira-kingdom
+  level: polity
+  names: { ko: 아비라 왕국, en: Abhira dynasty, native: आभीर }
+  from: 225
+  to: 335
+  color: "#a08850"
+  summary: 사타바하나 뒤 나식 둘레의 서부 데칸을 다스린 왕조. 이슈바라세나의 나식 비문으로 알려짐
+  mapNote: 지도에는 225년부터 335년까지 북콩칸·나식·푸네(지금 마하라슈트라주 서북부)를 표시함. 비문이 한 건뿐이라 경계와 해 모두 어림
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Abhira dynasty"]
+
+- id: chutu-kingdom
+  level: polity
+  names: { ko: 추투 왕국, en: Chutu dynasty, native: ಚುಟು }
+  from: 225
+  to: 344
+  color: "#5a70b0"
+  summary: 사타바하나 뒤 바나바시를 중심으로 카르나타카 북서부를 다스린 왕조. 화폐 몇 종으로 알려짐
+  mapNote: 지도에는 225년부터 344년까지 바나바시와 벨가움 둘레를 표시함. 화폐 출토지에 기댄 어림
+  endNote: 345년 무렵 카담바 왕조의 마유라샤르마가 바나바시를 차지함
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Chutu dynasty"]
+
+- id: pallava-dynasty
+  level: polity
+  names: { ko: 팔라바 왕조, en: Pallava dynasty, native: பல்லவர் }
+  from: 275
+  to: 897
+  color: "#c86070"
+  summary: 칸치푸람을 도읍으로 타밀 북부와 안드라 남부를 다스린 왕조. 마헨드라바르만 1세와 나라심하바르만 1세 때 바다미 찰루키아와 다툼
+  mapNote: 지도에는 275년부터 897년까지 표시함. 처음에는 안드라 남부(넬로르)만, 326년부터 군투르(420~435년 제외), 340년부터 톤다이만달람(칸치), 575년부터 콜리담강 북쪽까지, 600년부터 라얄라시마 남부까지 그림. 642년 바타피 점령은 되돌려져 칠하지 않음
+  endNote: 897년 무렵 촐라의 아디티야 1세가 아파라지타를 꺾어 끝남
+  features:
+    - 도읍은 칸치푸람
+    - 마말라푸람의 바위 사원과 해안 사원을 지음
+    - 642년 나라심하바르만 1세가 바다미를 점령함
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Pallava dynasty"]
+
+- id: vakataka-dynasty
+  level: polity
+  names: { ko: 바카타카 왕조, en: Vakataka dynasty, native: वाकाटक }
+  from: 250
+  to: 510
+  color: "#8a5a30"
+  summary: 비다르바를 중심으로 데칸 북부를 다스린 왕조. 굽타 왕실과 혼인으로 묶였고 하리셰나 때 아잔타 석굴을 지음
+  mapNote: 지도에는 270년부터 510년까지 비다르바와 사트푸라 남쪽 기슭을 표시하고, 475년부터 마라트와다(아잔타 둘레)를 더함. 아잔타 비문이 적은 하리셰나의 넓은 정복은 범위가 불확실해 칠하지 않음
+  features:
+    - 도읍은 난디바르다나와 바트사굴마(두 갈래)
+    - 아잔타 석굴의 후기 굴을 지음
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Vakataka dynasty"]
+    foundingNote: 빈디야샤크티가 일어난 250년 무렵부터 봄(지도는 프라바라세나 1세가 넓힌 270년부터)
+
+- id: kadamba-dynasty
+  level: polity
+  names: { ko: 카담바 왕조, en: Kadamba dynasty, native: ಕದಂಬರು }
+  from: 345
+  to: 540
+  color: "#3a9a70"
+  summary: 마유라샤르마가 바나바시에서 세운 카르나타카 최초의 토착 왕조. 카쿠스타바르마 때 가장 강함
+  mapNote: 지도에는 345년부터 539년까지 바나바시 둘레를 표시하고, 435년부터 할라시·벨가움을 더함. 경계는 비문 분포에 기댄 어림
+  endNote: 540년 무렵 바다미 찰루키아에게 땅을 잃음
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Kadamba dynasty"]
+
+- id: western-ganga-dynasty
+  level: polity
+  names: { ko: 서 강가 왕조, en: Western Ganga dynasty, native: ಪಶ್ಚಿಮ ಗಂಗ }
+  from: 350
+  to: 1004
+  color: "#b0a040"
+  summary: 콜라르와 탈라카드를 도읍으로 카르나타카 남부(강가바디)를 다스린 왕조. 바다미 찰루키아와 라슈트라쿠타의 신하로 오래 이어짐
+  mapNote: 지도에는 350년부터 1003년까지 강가바디(지금 카르나타카주 남부 마이소르·방갈루루·콜라르)를 표시함. 신하였던 기간도 따로 그림
+  endNote: 1004년 촐라의 라자라자 1세가 탈라카드를 점령해 끝남
+  features:
+    - 도읍은 콜라르, 뒤에 탈라카드
+    - 슈라바나벨라골라의 고마테슈와라 거상을 세움
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Western Ganga dynasty"]
+
+- id: salankayana-dynasty
+  level: polity
+  names: { ko: 살란카야나 왕조, en: Salankayana dynasty, native: శాలంకాయన }
+  from: 320
+  to: 440
+  color: "#7090c0"
+  summary: 벵기(엘루루 둘레)를 도읍으로 고다바리강과 크리슈나강 사이를 다스린 왕조
+  mapNote: 지도에는 320년부터 440년까지 고다바리강·크리슈나강 삼각주(벵기)를 표시함. 동판 몇 장에 기댄 어림이고 해도 어림
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Salankayana dynasty"]
+
+- id: vishnukundin-dynasty
+  level: polity
+  names: { ko: 비슈누쿤딘 왕조, en: Vishnukundina dynasty, native: విష్ణుకుండినులు }
+  from: 420
+  to: 624
+  color: "#a05a8a"
+  summary: 텔랑가나 동남부에서 일어나 벵기와 크리슈나강 하류를 다스린 왕조
+  mapNote: 지도에는 420년부터 623년까지 텔랑가나 동남부, 420~435년 크리슈나강 하류 남쪽, 441년부터 벵기를 표시함. 동판에 기댄 어림
+  endNote: 624년 무렵 바다미 찰루키아의 풀라케신 2세가 벵기를 차지하고 아우 쿠브자 비슈누바르다나에게 맡김
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Vishnukundina dynasty"]
+
+- id: aulikara-dynasty
+  level: polity
+  names: { ko: 아울리카라 왕조, en: Aulikara dynasty, native: औलिकर }
+  from: 440
+  to: 540
+  color: "#607a40"
+  summary: 다사푸라(만다소르)를 도읍으로 말와 서부를 다스린 왕조. 처음엔 굽타의 신하였고 야소다르만이 미히라쿨라를 꺾음
+  mapNote: 지도에는 440년부터 540년까지 말와 서부(지금 마디아프라데시주 서부)를 표시함. 경계는 만다소르 비문들에 기댄 어림
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Aulikaras"]
+
+- id: kalachuri-mahishmati
+  level: polity
+  names: { ko: 칼추리 왕조(마히슈마티), en: Kalachuris of Mahishmati, native: कलचुरि }
+  from: 550
+  to: 610
+  color: "#c07a3a"
+  summary: 마히슈마티를 중심으로 말와·칸데시·콘칸 북부를 다스린 초기 칼추리 왕조. 크리슈나라자의 은화가 널리 쓰임
+  mapNote: 지도에는 550년부터 609년까지 말와 서부와 칸데시를 표시함. 화폐 분포와 아이홀레 비문에 기댄 어림
+  endNote: 610년 무렵 바다미 찰루키아의 망갈레샤·풀라케신 2세에게 붓다라자가 져서 힘을 잃음
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Kalachuris of Mahishmati"]
+
+- id: eastern-chalukya-dynasty
+  level: polity
+  names: { ko: 동 찰루키아 왕조, en: Eastern Chalukyas, native: తూర్పు చాళుక్యులు }
+  from: 624
+  to: 1070
+  color: "#b08ad8"
+  summary: 풀라케신 2세의 아우 쿠브자 비슈누바르다나가 벵기에 세운 왕조. 촐라와 혼인으로 묶여 쿨로퉁가 1세 때 촐라에 합쳐짐
+  mapNote: 지도에는 624년부터 1069년까지 벵기와 군투르(크리슈나강·고다바리강 하류)를 표시함
+  endNote: 1070년 쿨로퉁가 1세가 촐라 왕위에 올라 벵기를 촐라에 합침
+  features:
+    - 도읍은 벵기, 뒤에 라자마헨드라바람(라자문드리)
+    - 텔루구어 문학이 이 왕조 때 시작됨
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Eastern Chalukyas"]
+
+- id: western-chalukya-dynasty
+  level: polity
+  names: { ko: 서 찰루키아 왕조, en: Western Chalukya Empire, native: ಕಲ್ಯಾಣಿ ಚಾಳುಕ್ಯರು }
+  from: 973
+  to: 1189
+  color: "#8a4a7a"
+  summary: 타일라파 2세가 라슈트라쿠타를 무너뜨리고 세운 데칸 왕조로, 뒤에 칼랴니를 도읍으로 함. 비크라마디티야 6세 때 가장 강함
+  mapNote: 지도에는 973년부터 1188년까지 데칸 서부·북카르나타카·텔랑가나를 표시함. 1157~1183년 칼랴니 둘레는 칼추리 비잘라의 땅으로 그리고, 1118~1134년 벵기를 더함
+  endNote: 1189년 무렵 야다바·호이살라에게 밀려 소메슈바라 4세가 바나바시로 달아나며 끝남
+  features:
+    - 도읍은 마냐케타, 뒤에 칼랴니(바사바칼랴나)
+    - 빌하나·비즈냐네슈와라가 이 궁정에서 활동함
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Western Chalukya Empire"]
+    foundingNote: 타일라파 2세가 라슈트라쿠타에서 자립한 973년부터 봄
+
+- id: kalachuri-kalyani
+  level: polity
+  names: { ko: 칼추리 왕조(칼랴니), en: Kalachuris of Kalyani, native: ಕಲಚುರಿ }
+  from: 1157
+  to: 1183
+  color: "#50b8d8"
+  summary: 서 찰루키아의 신하 비잘라 2세가 칼랴니를 차지해 세운 짧은 왕조. 바사바의 링가야트 운동이 이 궁정에서 일어남
+  mapNote: 지도에는 1157년부터 1183년까지 칼랴니·비다르·칼라부라기 둘레를 표시함. 서 찰루키아 옛 땅의 나머지는 서 찰루키아로 그림
+  endNote: 1183년 소메슈바라 4세가 칼랴니를 되찾음
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Kalachuris of Kalyani"]
+
+- id: kalachuri-tripuri
+  level: polity
+  names: { ko: 칼추리 왕조(트리푸리), en: Kalachuris of Tripuri, native: त्रिपुरी कलचुरि }
+  from: 1015
+  to: 1205
+  color: "#6a6a30"
+  summary: 트리푸리(잡발푸르 둘레)를 도읍으로 다할라 지방을 다스린 왕조. 강게야데바와 라크슈미카르나 때 가장 강함
+  mapNote: 지도에는 1015년부터 1205년까지 다할라(지금 마디아프라데시주 잡발푸르·만들라·샤돌)를 표시함. 마지막 왕 트라일로키아말라의 기록은 1212년 무렵까지 이어지나, 1206년 뒤 이 땅은 비워 둠
+  features:
+    - 도읍은 트리푸리
+    - 라트나푸르 칼추리(차티스가르)가 이 가문의 갈래
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Kalachuris of Tripuri"]
+    foundingNote: 가문은 7세기부터 기록되나, 다할라를 넘어 넓힌 강게야데바 즉위(1015년 무렵)부터 봄
+
+- id: anuradhapura-kingdom
+  level: polity
+  names: { ko: 아누라다푸라 왕국, en: Anuradhapura Kingdom, native: අනුරාධපුර රාජධානිය }
+  from: -376
+  to: 1017
+  color: "#b07050"
+  summary: 아누라다푸라를 도읍으로 실론을 1,000년 넘게 다스린 싱할라 왕국. 데바남피야 티사 때 불교가 들어옴
+  mapNote: 지도에는 기원전 250년부터 1016년까지 표시함. 처음에는 북중부(라자라타와 산지)만, 기원전 161년 두타가마니의 통일부터 섬 전체를 그리고, 993년 촐라가 북부를 차지한 뒤로는 남부(루후나)만 그림. 연대기(마하밤사)에 기댄 어림
+  endNote: 1017년 촐라의 라젠드라 1세가 마힌다 5세를 사로잡아 끝남
+  features:
+    - 도읍은 아누라다푸라(5세기 말 한때 시기리야)
+    - 대사(마하비하라)와 큰 불탑들을 남김
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Anuradhapura Kingdom"]
+    foundingNote: 판두카바야가 아누라다푸라를 도읍으로 삼은 기원전 377년부터 봄(지도는 전설 시대를 벗어나는 기원전 250년부터)
+
+- id: chera-dynasty
+  level: polity
+  names: { ko: 체라 왕조, en: Chera dynasty, native: சேரர் }
+  from: -259
+  to: 1102
+  color: "#e0a8c0"
+  summary: 케랄라와 콩구 지방을 다스린 타밀 왕조. 상감 시대 세 왕국의 하나였고, 9세기에 마호다야푸람(코둥갈루르)을 도읍으로 다시 일어남
+  mapNote: 지도에는 기원전 260년부터 299년까지(상감 시대, 콩구와 케랄라 중·북부)와 800년부터 1102년까지(케랄라) 표시함. 300~799년은 주인이 알려지지 않아 비움. 985년 뒤 케랄라 남부는 촐라 땅으로 그림. 상감 시대 경계는 문헌에 기댄 어림
+  endNote: 12세기 초 왕국이 나뉘어 베나드·코친 등 작은 나라들이 됨
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Chera dynasty", "위키백과 Sangam period"]
+    foundingNote: 아소카 비문(기원전 260년 무렵)이 이웃 나라로 이름을 든 때부터 봄

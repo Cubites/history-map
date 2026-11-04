@@ -42,6 +42,7 @@ colors byeonhan|mahan
 colors cao-wei|goguryeo
 colors cao-wei|wu
 colors carolingian-empire|san-marino
+colors chahamana-dynasty|chandela-dynasty
 colors champagne|holy-roman-empire
 colors chu-state|qin-state
 colors cisalpine-republic|etruria
@@ -137,6 +138,7 @@ colors germany-zone-su|germany-zone-uk
 colors germany-zone-su|germany-zone-us
 colors germany-zone-uk|germany-zone-us
 colors germany|luxembourg
+colors ghaznavid-empire|jaisalmer-state
 colors goguryeo|northern-wei
 colors goguryeo|western-han
 colors goguryeo|western-jin

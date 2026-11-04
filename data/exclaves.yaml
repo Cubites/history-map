@@ -5168,3 +5168,133 @@
   at: [72.86, 20.42]
   reason: 다만(실제 얻은 해는 1559 — 알려진 근사). 고아·디우와 바닷길로 이어진 포르투갈 해안 지구
   sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Daman,_India"]
+
+# ── 남아시아 S4 서 (2026-11-04): 기원전 800~1205 다른 권역 나라를 남아시아로 늘린 땅(결정 2·4·5·6)이 아프가니스탄·이란 동부를 칠하지 않은 지도에서 본토와 떨어진 것과 구르의 아지메르 총독령. baseline:suggest 규칙 3 제안을 고쳐 씀 ──
+- entity: achaemenid-empire
+  from: -517
+  to: -512
+  at: [72.28, 34.16]
+  reason: 간다라 속주(기원전 518년부터). 박트리아·아라코시아(아프가니스탄)는 지도에 그리지 않아 이란 본토와 떨어져 보임(남아시아 S4 결정 2)
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Gandhara"]
+
+- entity: achaemenid-empire
+  from: -512
+  to: -330
+  at: [72.27, 31.63]
+  reason: 간다라·힌두시 속주(기원전 513년부터 331년까지). 아프가니스탄을 그리지 않아 이란 본토와 떨어져 보임(남아시아 S4 결정 2)
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Hindush"]
+
+- entity: sasanian-empire
+  from: 240
+  to: 489
+  at: [64.55, 26.29]
+  reason: 마크란 해안 직할지. 이란 쪽 발루치스탄(사카스탄 남쪽)을 사산 제국 땅으로 그리지 않아 본토와 떨어져 보임(남아시아 S4 결정 4)
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Makran"]
+
+- entity: umayyad-caliphate
+  from: 711
+  to: 750
+  at: [68.3, 25.79]
+  reason: 신드·물탄·마크란 해안 총독령. 이란 쪽 발루치스탄과 시스탄을 칠하지 않아 본토와 떨어져 보임(남아시아 S4 결정 6)
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Muhammad_ibn_Qasim"]
+
+- entity: abbasid-caliphate
+  from: 750
+  to: 854
+  at: [68.3, 25.79]
+  reason: 신드·물탄·마크란 해안 총독령. 이란 쪽 발루치스탄·시스탄을 칠하지 않아 본토와 떨어져 보임(남아시아 S4 결정 6)
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Muhammad_ibn_Qasim"]
+
+- entity: abbasid-caliphate
+  from: 854
+  to: 855
+  at: [71.21, 29.53]
+  reason: 하바리 에미르국이 신드에서 자립한 뒤 한 해 남은 물탄 쪽 총독령(남아시아 S4 결정 6·기본값 5)
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Emirate_of_Multan"]
+
+- entity: ghaznavid-empire
+  from: 1001
+  to: 1010
+  at: [70.6, 32.02]
+  reason: 1001년 페샤와르 전투로 얻은 페샤와르 골짜기. 가즈니 본토(아프가니스탄)를 지도에 그리지 않아 이란 쪽 땅과 떨어져 보임(남아시아 S4 결정 5)
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Battle_of_Peshawar_(1001)"]
+
+- entity: ghaznavid-empire
+  from: 1010
+  to: 1021
+  at: [71.21, 29.53]
+  reason: 1010년 물탄을 더한 남아시아 쪽 땅. 가즈니 본토(아프가니스탄)를 그리지 않아 이란 쪽 땅과 떨어져 보임(남아시아 S4 결정 5)
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Ghaznavids"]
+
+- entity: ghaznavid-empire
+  from: 1021
+  to: 1040
+  at: [59.29, 35.36]
+  reason: 1021년 라호르를 더해 펀자브 쪽이 더 넓어지면서 이란 쪽 호라산이 떨어진 조각으로 잡힘. 가즈니 본토(아프가니스탄)를 그리지 않은 탓(남아시아 S4 결정 5)
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Ghaznavids"]
+
+- entity: ghurid-dynasty
+  from: 1195
+  to: 1206
+  at: [74.79, 26.25]
+  reason: 1195년 하리라자를 꺾은 뒤 둔 아지메르 총독령. 델리·하리아나 쪽 땅과는 1만 km² 넘는 한 나라가 없는 자이푸르(암베르) 쪽 땅을 사이에 두고 떨어짐(남아시아 S4 결정 8의 아지메르 1년 어긋남 땅)
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Chahamanas_of_Shakambhari"]
+
+- entity: alchon-huns
+  from: 510
+  to: 528
+  at: [80.57, 23.95]
+  reason: 토라마나의 에란 멧돼지상 비문과 미히라쿨라의 괄리오르 비문이 나온 중부 인도(에란·괄리오르 쪽). 사이의 갠지스 평원 서부·라자스탄 동부는 주인이 알려지지 않아 비워 펀자브 쪽 본토와 떨어져 보임(남아시아 S4 검토 1)
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Alchon_Huns"]
+
+- entity: gurjara-pratihara-dynasty
+  from: 730
+  to: 836
+  at: [72.5, 25.61]
+  reason: 나가바타 1세 때부터 다스린 서쪽 마르와르(빈말·잘로르·만도르 쪽). 말와(우자인)와 함께 사료에 서지만 사이의 메와르는 구힐라 왕조로 따로, 하도티는 주인이 알려지지 않아 비워 떨어져 보임(836년 미히라 보자 때 이어짐, 남아시아 S4 검토 1)
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Gurjara-Pratihara_dynasty"]
+
+- entity: gurjara-pratihara-dynasty
+  from: 816
+  to: 836
+  at: [75.73, 22.58]
+  reason: 나가바타 2세가 816년 무렵 카나우지를 차지한 뒤의 말와(아반티, 우자인 쪽). 갠지스 평원 본토와의 사이 분델칸드·괄리오르는 주인이 알려지지 않고, 마르와르와의 사이 메와르는 따로 그려 떨어져 보임(836년 미히라 보자 때 이어짐, 남아시아 S4 검토 1)
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Gurjara-Pratihara_dynasty"]
+# ── 남아시아 S4 동 (2026-11-04): 기원전 500~1205년 동 칸 땅의 진짜 떨어진 땅 ──
+- entity: somavamshi-dynasty
+  from: 1078
+  to: 1110
+  at: [85.37, 19.63]
+  reason: 칠리카 호수 바깥 모래톱(약 113 km²). 1078년 오리사 남부(간잠)가 동부 강가 왕조 땅이 된 뒤 소마바시의 해안 땅과 칠리카 호수로 떨어짐(1110년 동부 강가의 우트칼라 정복까지)
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Chilika_Lake"]
+- entity: gupta-empire
+  from: 440
+  to: 475
+  at: [71.79, 23.42]
+  reason: 스칸다굽타의 총독 파르나닷타가 다스린 구자라트(주나가드 비문, 456~457년). 사이의 말와 서부는 굽타의 신하 아울리카라 왕조로 따로 그리고 라자스탄은 비워 본토와 떨어져 보임(남아시아 S4 검토 1)
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Skandagupta"]
+# ── 남아시아 S4 남 (2026-11-04): 기원전 600~1205 이웃 나라·비운 땅을 사이에 두고 떨어진 땅과 섬(진짜 떨어진 땅만 — 칼선 부스러기는 칼선을 고쳐 없앰) ──
+- entity: magadha-kingdom
+  from: -412
+  to: -344
+  at: [86.02, 25.4]
+  reason: 마가다 본토(비하르 남부). 시슈나가 왕조가 아반티(말와)를 합쳐 그쪽이 더 넓게 잡히고, 사이의 바트사·코살라는 기원전 346년까지 따로 그리며 체디(분델칸드)는 주인이 알려지지 않아 비워 떨어져 보임(남아시아 S4 검토 1)
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Shishunaga_dynasty"]
+- entity: nanda-empire
+  from: -344
+  to: -320
+  at: [78.1, 18.82]
+  reason: 아스마카(고다바리강 중류). 푸라나가 적은 마하파드마 난다의 정복 땅으로, 말와(아반티)와의 사이 비다르바·데칸 북부는 주인이 알려지지 않아 비운 땅이라 떨어짐
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Nanda_Empire"]
+- entity: rashtrakuta-dynasty
+  from: 949
+  to: 966
+  at: [79.95, 12.95]
+  reason: 톤다이만달람(949 타콜람 전투 뒤 크리슈나 3세의 직접 통치, 기본값 37). 데칸 본령과의 사이는 신하 서 강가 왕조 땅과 촐라 땅이라 떨어짐
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Battle_of_Takkolam"]
+- entity: chera-dynasty
+  from: 985
+  to: 1103
+  at: [76.26, 9.91]
+  reason: 코치 앞 섬(약 8 km²). 985년 뒤 케랄라 남부(트라방코르 선 안)를 촐라 땅으로 칠해 체라 본토와 바다로 떨어진 섬
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Chera_dynasty"]

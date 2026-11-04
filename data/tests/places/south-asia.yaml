@@ -3997,3 +3997,1955 @@
   expect: mughal-empire
   url: https://en.wikipedia.org/wiki/Junagadh
   from: 남아시아 S3 반영 1 결과노트
+# ── 남아시아 S4 서 (2026-11-04): 기원전 800~1205 새 항목 수도(존속 가운데 해 무렵), 늘린 나라, 큰 버전 해 앞뒤, 칼선 안/밖 기준 도시, 1205년 표본(서 칸 땅만) ──
+- name: 시알코트
+  at: [74.53, 32.49]
+  year: -150
+  expect: indo-greek-kingdom
+  url: https://en.wikipedia.org/wiki/Sialkot
+  from: 남아시아 S4 서 결과노트
+  note: 사갈라, 메난드로스 1세의 도읍
+- name: 탁실라
+  at: [72.79, 33.74]
+  year: -30
+  expect: indo-scythian-kingdom
+  url: https://en.wikipedia.org/wiki/Taxila
+  from: 남아시아 S4 서 결과노트
+- name: 탁실라
+  at: [72.79, 33.74]
+  year: 50
+  expect: indo-parthian-kingdom
+  url: https://en.wikipedia.org/wiki/Taxila
+  from: 남아시아 S4 서 결과노트
+- name: 페샤와르
+  at: [71.58, 34.01]
+  year: 200
+  expect: kushan-empire
+  url: https://en.wikipedia.org/wiki/Peshawar
+  from: 남아시아 S4 서 결과노트
+  note: 푸루샤푸라
+- name: 주나가드
+  at: [70.46, 21.52]
+  year: 250
+  expect: western-satraps
+  url: https://en.wikipedia.org/wiki/Junagadh
+  from: 남아시아 S4 서 결과노트
+  note: 루드라다만 1세 비문
+- name: 페샤와르
+  at: [71.58, 34.01]
+  year: 300
+  expect: kushano-sasanian-kingdom
+  url: https://en.wikipedia.org/wiki/Peshawar
+  from: 남아시아 S4 서 결과노트
+- name: 페샤와르
+  at: [71.58, 34.01]
+  year: 400
+  expect: kidarite-kingdom
+  url: https://en.wikipedia.org/wiki/Peshawar
+  from: 남아시아 S4 서 결과노트
+- name: 시알코트
+  at: [74.53, 32.49]
+  year: 500
+  expect: alchon-huns
+  url: https://en.wikipedia.org/wiki/Sialkot
+  from: 남아시아 S4 서 결과노트
+  note: 미히라쿨라의 도읍 사칼라
+- name: 발라비
+  at: [71.88, 21.9]
+  year: 600
+  expect: maitraka-dynasty
+  url: https://en.wikipedia.org/wiki/Vallabhi
+  from: 남아시아 S4 서 결과노트
+- name: 로리
+  at: [68.9, 27.69]
+  year: 560
+  expect: rai-dynasty
+  url: https://en.wikipedia.org/wiki/Aror
+  from: 남아시아 S4 서 결과노트
+  note: 도읍 아로르
+- name: 로리
+  at: [68.9, 27.69]
+  year: 670
+  expect: chach-dynasty
+  url: https://en.wikipedia.org/wiki/Aror
+  from: 남아시아 S4 서 결과노트
+  note: 도읍 아로르
+- name: 스리나가르
+  at: [74.8, 34.08]
+  year: 740
+  expect: karkota-dynasty
+  url: https://en.wikipedia.org/wiki/Srinagar
+  from: 남아시아 S4 서 결과노트
+- name: 스리나가르
+  at: [74.8, 34.08]
+  year: 930
+  expect: utpala-dynasty
+  url: https://en.wikipedia.org/wiki/Srinagar
+  from: 남아시아 S4 서 결과노트
+- name: 페샤와르
+  at: [71.58, 34.01]
+  year: 740
+  expect: turk-shahi
+  url: https://en.wikipedia.org/wiki/Peshawar
+  from: 남아시아 S4 서 결과노트
+- name: 페샤와르
+  at: [71.58, 34.01]
+  year: 900
+  expect: hindu-shahi
+  url: https://en.wikipedia.org/wiki/Peshawar
+  from: 남아시아 S4 서 결과노트
+- name: 만도르
+  at: [73.04, 26.35]
+  year: 800
+  expect: gurjara-pratihara-dynasty
+  url: https://en.wikipedia.org/wiki/Mandore
+  from: 남아시아 S4 서 결과노트
+- name: 델리
+  at: [77.21, 28.61]
+  year: 1100
+  expect: tomara-dynasty
+  url: https://en.wikipedia.org/wiki/Delhi
+  from: 남아시아 S4 서 결과노트
+- name: 만수라
+  at: [68.77, 26]
+  year: 940
+  expect: habbarid-emirate
+  url: https://en.wikipedia.org/wiki/Mansura,_Sindh
+  from: 남아시아 S4 서 결과노트
+- name: 물탄
+  at: [71.47, 30.2]
+  year: 930
+  expect: multan-emirate
+  url: https://en.wikipedia.org/wiki/Multan
+  from: 남아시아 S4 서 결과노트
+- name: 라호르
+  at: [74.34, 31.55]
+  year: 1195
+  expect: ghurid-dynasty
+  url: https://en.wikipedia.org/wiki/Lahore
+  from: 남아시아 S4 서 결과노트
+- name: 탁실라
+  at: [72.79, 33.74]
+  year: -400
+  expect: achaemenid-empire
+  url: https://en.wikipedia.org/wiki/Taxila
+  from: 남아시아 S4 서 결과노트
+  note: 간다라 속주
+- name: 과다르
+  at: [62.32, 25.12]
+  year: 300
+  expect: sasanian-empire
+  url: https://en.wikipedia.org/wiki/Gwadar
+  from: 남아시아 S4 서 결과노트
+  note: 마크란 해안
+- name: 라호르
+  at: [74.34, 31.55]
+  year: 1100
+  expect: ghaznavid-empire
+  url: https://en.wikipedia.org/wiki/Lahore
+  from: 남아시아 S4 서 결과노트
+- name: 타타
+  at: [67.92, 24.75]
+  year: 730
+  expect: umayyad-caliphate
+  url: https://en.wikipedia.org/wiki/Thatta
+  from: 남아시아 S4 서 결과노트
+- name: 물탄
+  at: [71.47, 30.2]
+  year: 800
+  expect: abbasid-caliphate
+  url: https://en.wikipedia.org/wiki/Multan
+  from: 남아시아 S4 서 결과노트
+- name: 레
+  at: [77.58, 34.16]
+  year: 700
+  expect: tibet
+  url: https://en.wikipedia.org/wiki/Leh
+  from: 남아시아 S4 서 결과노트
+- name: 스카르두
+  at: [75.63, 35.3]
+  year: 800
+  expect: tibet
+  url: https://en.wikipedia.org/wiki/Skardu
+  from: 남아시아 S4 서 결과노트
+  note: 발티스탄
+- name: 페샤와르
+  at: [71.58, 34.01]
+  year: -518
+  expect: none
+  region: south-asia
+  url: https://en.wikipedia.org/wiki/Peshawar
+  from: 남아시아 S4 서 결과노트
+- name: 페샤와르
+  at: [71.58, 34.01]
+  year: -517
+  expect: achaemenid-empire
+  url: https://en.wikipedia.org/wiki/Peshawar
+  from: 남아시아 S4 서 결과노트
+- name: 타타
+  at: [67.92, 24.75]
+  year: -513
+  expect: none
+  region: south-asia
+  url: https://en.wikipedia.org/wiki/Thatta
+  from: 남아시아 S4 서 결과노트
+- name: 타타
+  at: [67.92, 24.75]
+  year: -512
+  expect: achaemenid-empire
+  url: https://en.wikipedia.org/wiki/Thatta
+  from: 남아시아 S4 서 결과노트
+- name: 페샤와르
+  at: [71.58, 34.01]
+  year: -330
+  expect: achaemenid-empire
+  url: https://en.wikipedia.org/wiki/Peshawar
+  from: 남아시아 S4 서 결과노트
+- name: 페샤와르
+  at: [71.58, 34.01]
+  year: -329
+  expect: none
+  region: south-asia
+  url: https://en.wikipedia.org/wiki/Peshawar
+  from: 남아시아 S4 서 결과노트
+  note: 인더스 태수령 땅은 칠하지 않음
+- name: 페샤와르
+  at: [71.58, 34.01]
+  year: -315
+  expect: maurya-empire
+  url: https://en.wikipedia.org/wiki/Peshawar
+  from: 남아시아 S4 서 결과노트
+- name: 델리
+  at: [77.21, 28.61]
+  year: -320
+  expect: maurya-empire
+  url: https://en.wikipedia.org/wiki/Delhi
+  from: 남아시아 S4 서 결과노트
+- name: 과다르
+  at: [62.32, 25.12]
+  year: -304
+  expect: maurya-empire
+  url: https://en.wikipedia.org/wiki/Gwadar
+  from: 남아시아 S4 서 결과노트
+- name: 탁실라
+  at: [72.79, 33.74]
+  year: -184
+  expect: none
+  region: south-asia
+  url: https://en.wikipedia.org/wiki/Taxila
+  from: 남아시아 S4 서 결과노트
+- name: 탁실라
+  at: [72.79, 33.74]
+  year: -179
+  expect: indo-greek-kingdom
+  url: https://en.wikipedia.org/wiki/Taxila
+  from: 남아시아 S4 서 결과노트
+- name: 물탄
+  at: [71.47, 30.2]
+  year: -164
+  expect: indo-greek-kingdom
+  url: https://en.wikipedia.org/wiki/Multan
+  from: 남아시아 S4 서 결과노트
+- name: 물탄
+  at: [71.47, 30.2]
+  year: -129
+  expect: none
+  region: south-asia
+  url: https://en.wikipedia.org/wiki/Multan
+  from: 남아시아 S4 서 결과노트
+- name: 라호르
+  at: [74.34, 31.55]
+  year: -55
+  expect: indo-greek-kingdom
+  url: https://en.wikipedia.org/wiki/Lahore
+  from: 남아시아 S4 서 결과노트
+- name: 라호르
+  at: [74.34, 31.55]
+  year: -54
+  expect: indo-scythian-kingdom
+  url: https://en.wikipedia.org/wiki/Lahore
+  from: 남아시아 S4 서 결과노트
+- name: 탁실라
+  at: [72.79, 33.74]
+  year: 74
+  expect: indo-parthian-kingdom
+  url: https://en.wikipedia.org/wiki/Taxila
+  from: 남아시아 S4 서 결과노트
+- name: 탁실라
+  at: [72.79, 33.74]
+  year: 75
+  expect: kushan-empire
+  url: https://en.wikipedia.org/wiki/Taxila
+  from: 남아시아 S4 서 결과노트
+- name: 스리나가르
+  at: [74.8, 34.08]
+  year: 126
+  expect: none
+  region: south-asia
+  url: https://en.wikipedia.org/wiki/Srinagar
+  from: 남아시아 S4 서 결과노트
+- name: 스리나가르
+  at: [74.8, 34.08]
+  year: 127
+  expect: kushan-empire
+  url: https://en.wikipedia.org/wiki/Srinagar
+  from: 남아시아 S4 서 결과노트
+- name: 페샤와르
+  at: [71.58, 34.01]
+  year: 240
+  expect: kushano-sasanian-kingdom
+  url: https://en.wikipedia.org/wiki/Peshawar
+  from: 남아시아 S4 서 결과노트
+- name: 페샤와르
+  at: [71.58, 34.01]
+  year: 360
+  expect: kidarite-kingdom
+  url: https://en.wikipedia.org/wiki/Peshawar
+  from: 남아시아 S4 서 결과노트
+- name: 페샤와르
+  at: [71.58, 34.01]
+  year: 470
+  expect: alchon-huns
+  url: https://en.wikipedia.org/wiki/Peshawar
+  from: 남아시아 S4 서 결과노트
+- name: 델리
+  at: [77.21, 28.61]
+  year: 502
+  expect: alchon-huns
+  url: https://en.wikipedia.org/wiki/Delhi
+  from: 남아시아 S4 서 결과노트
+- name: 델리
+  at: [77.21, 28.61]
+  year: 528
+  expect: none
+  region: south-asia
+  url: https://en.wikipedia.org/wiki/Delhi
+  from: 남아시아 S4 서 결과노트
+- name: 라호르
+  at: [74.34, 31.55]
+  year: 542
+  expect: none
+  region: south-asia
+  url: https://en.wikipedia.org/wiki/Lahore
+  from: 남아시아 S4 서 결과노트
+- name: 타네사르
+  at: [76.83, 29.97]
+  year: 606
+  expect: vardhana-dynasty
+  url: https://en.wikipedia.org/wiki/Thanesar
+  from: 남아시아 S4 서 결과노트
+- name: 타네사르
+  at: [76.83, 29.97]
+  year: 647
+  expect: none
+  region: south-asia
+  url: https://en.wikipedia.org/wiki/Thanesar
+  from: 남아시아 S4 서 결과노트
+- name: 타타
+  at: [67.92, 24.75]
+  year: 395
+  expect: western-satraps
+  url: https://en.wikipedia.org/wiki/Thatta
+  from: 남아시아 S4 서 결과노트
+- name: 타타
+  at: [67.92, 24.75]
+  year: 396
+  expect: none
+  region: south-asia
+  url: https://en.wikipedia.org/wiki/Thatta
+  from: 남아시아 S4 서 결과노트
+- name: 과다르
+  at: [62.32, 25.12]
+  year: 488
+  expect: sasanian-empire
+  url: https://en.wikipedia.org/wiki/Gwadar
+  from: 남아시아 S4 서 결과노트
+- name: 과다르
+  at: [62.32, 25.12]
+  year: 489
+  expect: rai-dynasty
+  url: https://en.wikipedia.org/wiki/Gwadar
+  from: 남아시아 S4 서 결과노트
+- name: 타타
+  at: [67.92, 24.75]
+  year: 710
+  expect: chach-dynasty
+  url: https://en.wikipedia.org/wiki/Thatta
+  from: 남아시아 S4 서 결과노트
+- name: 타타
+  at: [67.92, 24.75]
+  year: 711
+  expect: umayyad-caliphate
+  url: https://en.wikipedia.org/wiki/Thatta
+  from: 남아시아 S4 서 결과노트
+- name: 타타
+  at: [67.92, 24.75]
+  year: 749
+  expect: umayyad-caliphate
+  url: https://en.wikipedia.org/wiki/Thatta
+  from: 남아시아 S4 서 결과노트
+- name: 타타
+  at: [67.92, 24.75]
+  year: 750
+  expect: abbasid-caliphate
+  url: https://en.wikipedia.org/wiki/Thatta
+  from: 남아시아 S4 서 결과노트
+- name: 타타
+  at: [67.92, 24.75]
+  year: 854
+  expect: habbarid-emirate
+  url: https://en.wikipedia.org/wiki/Thatta
+  from: 남아시아 S4 서 결과노트
+- name: 물탄
+  at: [71.47, 30.2]
+  year: 854
+  expect: abbasid-caliphate
+  url: https://en.wikipedia.org/wiki/Multan
+  from: 남아시아 S4 서 결과노트
+- name: 물탄
+  at: [71.47, 30.2]
+  year: 855
+  expect: multan-emirate
+  url: https://en.wikipedia.org/wiki/Multan
+  from: 남아시아 S4 서 결과노트
+- name: 페샤와르
+  at: [71.58, 34.01]
+  year: 1000
+  expect: hindu-shahi
+  url: https://en.wikipedia.org/wiki/Peshawar
+  from: 남아시아 S4 서 결과노트
+- name: 페샤와르
+  at: [71.58, 34.01]
+  year: 1001
+  expect: ghaznavid-empire
+  url: https://en.wikipedia.org/wiki/Peshawar
+  from: 남아시아 S4 서 결과노트
+- name: 물탄
+  at: [71.47, 30.2]
+  year: 1010
+  expect: ghaznavid-empire
+  url: https://en.wikipedia.org/wiki/Multan
+  from: 남아시아 S4 서 결과노트
+- name: 라호르
+  at: [74.34, 31.55]
+  year: 1020
+  expect: hindu-shahi
+  url: https://en.wikipedia.org/wiki/Lahore
+  from: 남아시아 S4 서 결과노트
+- name: 라호르
+  at: [74.34, 31.55]
+  year: 1021
+  expect: ghaznavid-empire
+  url: https://en.wikipedia.org/wiki/Lahore
+  from: 남아시아 S4 서 결과노트
+- name: 타타
+  at: [67.92, 24.75]
+  year: 1026
+  expect: soomra-dynasty
+  url: https://en.wikipedia.org/wiki/Thatta
+  from: 남아시아 S4 서 결과노트
+- name: 물탄
+  at: [71.47, 30.2]
+  year: 1175
+  expect: ghurid-dynasty
+  url: https://en.wikipedia.org/wiki/Multan
+  from: 남아시아 S4 서 결과노트
+- name: 라호르
+  at: [74.34, 31.55]
+  year: 1185
+  expect: ghaznavid-empire
+  url: https://en.wikipedia.org/wiki/Lahore
+  from: 남아시아 S4 서 결과노트
+- name: 라호르
+  at: [74.34, 31.55]
+  year: 1186
+  expect: ghurid-dynasty
+  url: https://en.wikipedia.org/wiki/Lahore
+  from: 남아시아 S4 서 결과노트
+- name: 레
+  at: [77.58, 34.16]
+  year: 650
+  expect: tibet
+  url: https://en.wikipedia.org/wiki/Leh
+  from: 남아시아 S4 서 결과노트
+- name: 레
+  at: [77.58, 34.16]
+  year: 843
+  expect: none
+  region: south-asia
+  url: https://en.wikipedia.org/wiki/Leh
+  from: 남아시아 S4 서 결과노트
+- name: 레
+  at: [77.58, 34.16]
+  year: 930
+  expect: ladakh-kingdom
+  url: https://en.wikipedia.org/wiki/Leh
+  from: 남아시아 S4 서 결과노트
+- name: 발라비
+  at: [71.88, 21.9]
+  year: 475
+  expect: maitraka-dynasty
+  url: https://en.wikipedia.org/wiki/Vallabhi
+  from: 남아시아 S4 서 결과노트
+- name: 발라비
+  at: [71.88, 21.9]
+  year: 776
+  expect: none
+  region: south-asia
+  url: https://en.wikipedia.org/wiki/Vallabhi
+  from: 남아시아 S4 서 결과노트
+- name: 파탄
+  at: [72.11, 23.85]
+  year: 942
+  expect: chaulukya-dynasty
+  url: https://en.wikipedia.org/wiki/Patan,_Gujarat
+  from: 남아시아 S4 서 결과노트
+- name: 아마다바드
+  at: [72.58, 23.03]
+  year: 409
+  expect: gupta-empire
+  url: https://en.wikipedia.org/wiki/Ahmedabad
+  from: 남아시아 S4 서 결과노트
+- name: 아지메르
+  at: [74.64, 26.45]
+  year: 1100
+  expect: chahamana-dynasty
+  url: https://en.wikipedia.org/wiki/Ajmer
+  from: 남아시아 S4 서 결과노트
+- name: 아지메르
+  at: [74.64, 26.45]
+  year: 1195
+  expect: ghurid-dynasty
+  url: https://en.wikipedia.org/wiki/Ajmer
+  from: 남아시아 S4 서 결과노트
+- name: 델리
+  at: [77.21, 28.61]
+  year: 1060
+  expect: tomara-dynasty
+  url: https://en.wikipedia.org/wiki/Delhi
+  from: 남아시아 S4 서 결과노트
+- name: 델리
+  at: [77.21, 28.61]
+  year: 1151
+  expect: chahamana-dynasty
+  url: https://en.wikipedia.org/wiki/Delhi
+  from: 남아시아 S4 서 결과노트
+- name: 델리
+  at: [77.21, 28.61]
+  year: 1193
+  expect: ghurid-dynasty
+  url: https://en.wikipedia.org/wiki/Delhi
+  from: 남아시아 S4 서 결과노트
+- name: 스리나가르
+  at: [74.8, 34.08]
+  year: 625
+  expect: karkota-dynasty
+  url: https://en.wikipedia.org/wiki/Srinagar
+  from: 남아시아 S4 서 결과노트
+- name: 스리나가르
+  at: [74.8, 34.08]
+  year: 1003
+  expect: lohara-dynasty
+  url: https://en.wikipedia.org/wiki/Srinagar
+  from: 남아시아 S4 서 결과노트
+- name: 라왈핀디
+  at: [73.04, 33.6]
+  year: -517
+  expect: achaemenid-empire
+  url: https://en.wikipedia.org/wiki/Rawalpindi
+  from: 남아시아 S4 서 결과노트
+  note: 포트와르 안
+- name: 젤룸
+  at: [73.73, 32.93]
+  year: -517
+  expect: none
+  region: south-asia
+  url: https://en.wikipedia.org/wiki/Jhelum
+  from: 남아시아 S4 서 결과노트
+  note: 포트와르 밖(젤룸강 동쪽)
+- name: 퀘타
+  at: [67, 30.2]
+  year: 300
+  expect: none
+  region: south-asia
+  url: https://en.wikipedia.org/wiki/Quetta
+  from: 남아시아 S4 서 결과노트
+  note: 마크란 해안 밖
+- name: 카라치
+  at: [67, 24.86]
+  year: 300
+  expect: western-satraps
+  url: https://en.wikipedia.org/wiki/Karachi
+  from: 남아시아 S4 서 결과노트
+  note: 마크란 해안 밖(하부 신드)
+- name: 나가우르
+  at: [73.74, 27.2]
+  year: 1120
+  expect: chahamana-dynasty
+  url: https://en.wikipedia.org/wiki/Nagaur
+  from: 남아시아 S4 서 결과노트
+  note: 사파달락샤 안
+- name: 세카르
+  at: [75.14, 27.61]
+  year: 1120
+  expect: chahamana-dynasty
+  url: https://en.wikipedia.org/wiki/Sikar
+  from: 남아시아 S4 서 결과노트
+  note: 사파달락샤 안
+- name: 조드푸르
+  at: [73.02, 26.24]
+  year: 1120
+  expect: none
+  region: south-asia
+  url: https://en.wikipedia.org/wiki/Jodhpur
+  from: 남아시아 S4 서 결과노트
+  note: 사파달락샤 밖
+- name: 한시
+  at: [75.97, 29.1]
+  year: 1120
+  expect: tomara-dynasty
+  url: https://en.wikipedia.org/wiki/Hansi
+  from: 남아시아 S4 서 결과노트
+  note: 사파달락샤 밖
+- name: 빈말
+  at: [72.26, 25]
+  year: 750
+  expect: gurjara-pratihara-dynasty
+  url: https://en.wikipedia.org/wiki/Bhinmal
+  from: 남아시아 S4 서 결과노트
+  note: 빈말·만도르 안
+- name: 자이살메르
+  at: [70.91, 26.91]
+  year: 750
+  expect: none
+  region: south-asia
+  url: https://en.wikipedia.org/wiki/Jaisalmer
+  from: 남아시아 S4 서 결과노트
+  note: 빈말·만도르 밖
+- name: 우다이푸르
+  at: [73.71, 24.58]
+  year: 750
+  expect: mewar-state
+  url: https://en.wikipedia.org/wiki/Udaipur
+  from: 남아시아 S4 서 결과노트
+  note: 빈말·만도르 밖
+- name: 마운트아부
+  at: [72.71, 24.59]
+  year: 1150
+  expect: chaulukya-dynasty
+  url: https://en.wikipedia.org/wiki/Mount_Abu
+  from: 남아시아 S4 서 결과노트
+  note: 아부 안
+- name: 시로히
+  at: [72.86, 24.89]
+  year: 1150
+  expect: chaulukya-dynasty
+  url: https://en.wikipedia.org/wiki/Sirohi
+  from: 남아시아 S4 서 결과노트
+  note: 아부 안
+- name: 조드푸르
+  at: [73.02, 26.24]
+  year: 1150
+  expect: none
+  region: south-asia
+  url: https://en.wikipedia.org/wiki/Jodhpur
+  from: 남아시아 S4 서 결과노트
+  note: 아부 밖
+- name: 우다이푸르
+  at: [73.71, 24.58]
+  year: 1150
+  expect: mewar-state
+  url: https://en.wikipedia.org/wiki/Udaipur
+  from: 남아시아 S4 서 결과노트
+  note: 아부 밖
+- name: 라호르
+  at: [74.34, 31.55]
+  year: 1205
+  expect: ghurid-dynasty
+  url: https://en.wikipedia.org/wiki/Lahore
+  from: 남아시아 S4 서 결과노트
+- name: 우다이푸르
+  at: [73.71, 24.58]
+  year: 1205
+  expect: mewar-state
+  url: https://en.wikipedia.org/wiki/Udaipur
+  from: 남아시아 S4 서 결과노트
+- name: 레
+  at: [77.58, 34.16]
+  year: 1205
+  expect: ladakh-kingdom
+  url: https://en.wikipedia.org/wiki/Leh
+  from: 남아시아 S4 서 결과노트
+- name: 길기트
+  at: [74.31, 35.92]
+  year: 1205
+  expect: none
+  region: south-asia
+  url: https://en.wikipedia.org/wiki/Gilgit
+  from: 남아시아 S4 서 결과노트
+  note: 길기트는 시대 내내 비움
+
+# ── 남아시아 S4 동 (2026-11-04): 기원전 500~1205년 새 항목 수도(존속 가운데 해 무렵), 큰 버전 해 앞뒤, 칼선 안/밖 기준 도시(마가다·앙가·코살라·카시·바트사·판찰라·말라·테라이·굽타 초기·카마루파 서쪽·리차비·라르·바렌드라), 1205년 표본 ──
+- name: 라지기르
+  at: [85.42, 25.03]
+  year: -420
+  expect: magadha-kingdom
+  url: https://en.wikipedia.org/wiki/Magadha
+  from: 남아시아 S4 동 결과노트
+- name: 슈라바스티
+  at: [82.05, 27.5]
+  year: -420
+  expect: kosala-kingdom
+  url: https://en.wikipedia.org/wiki/Kosala
+  from: 남아시아 S4 동 결과노트
+- name: 카우샴비
+  at: [81.38, 25.35]
+  year: -420
+  expect: vatsa-kingdom
+  url: https://en.wikipedia.org/wiki/Vatsa
+  from: 남아시아 S4 동 결과노트
+- name: 바레일리
+  at: [79.43, 28.37]
+  year: -420
+  expect: panchala-kingdom
+  url: https://en.wikipedia.org/wiki/Panchala
+  from: 남아시아 S4 동 결과노트
+- name: 바이샬리
+  at: [85.13, 25.99]
+  year: -480
+  expect: vajji-confederacy
+  url: https://en.wikipedia.org/wiki/Vajji
+  from: 남아시아 S4 동 결과노트
+- name: 파트나
+  at: [85.14, 25.6]
+  year: -330
+  expect: nanda-empire
+  url: https://en.wikipedia.org/wiki/Nanda_Empire
+  from: 남아시아 S4 동 결과노트
+- name: 파트나
+  at: [85.14, 25.6]
+  year: -250
+  expect: maurya-empire
+  url: https://en.wikipedia.org/wiki/Maurya_Empire
+  from: 남아시아 S4 동 결과노트
+- name: 파트나
+  at: [85.14, 25.6]
+  year: -150
+  expect: shunga-empire
+  url: https://en.wikipedia.org/wiki/Shunga_Empire
+  from: 남아시아 S4 동 결과노트
+- name: 파트나
+  at: [85.14, 25.6]
+  year: 430
+  expect: gupta-empire
+  url: https://en.wikipedia.org/wiki/Gupta_Empire
+  from: 남아시아 S4 동 결과노트
+- name: 가야
+  at: [85, 24.8]
+  year: 700
+  expect: later-gupta-dynasty
+  url: https://en.wikipedia.org/wiki/Later_Gupta_dynasty
+  from: 남아시아 S4 동 결과노트
+- name: 카나우지
+  at: [79.92, 27.06]
+  year: 580
+  expect: maukhari-dynasty
+  url: https://en.wikipedia.org/wiki/Maukhari_dynasty
+  from: 남아시아 S4 동 결과노트
+- name: 카르나수바르나
+  at: [88.3, 24.2]
+  year: 620
+  expect: gauda-kingdom
+  url: https://en.wikipedia.org/wiki/Gauda_Kingdom
+  from: 남아시아 S4 동 결과노트
+- name: 카나우지
+  at: [79.92, 27.06]
+  year: 625
+  expect: vardhana-dynasty
+  url: https://en.wikipedia.org/wiki/Harsha
+  from: 남아시아 S4 동 결과노트
+- name: 구와하티
+  at: [91.75, 26.14]
+  year: 745
+  expect: kamarupa-kingdom
+  url: https://en.wikipedia.org/wiki/Kamarupa
+  from: 남아시아 S4 동 결과노트
+- name: 카트만두
+  at: [85.32, 27.7]
+  year: 670
+  expect: licchavi-kingdom
+  url: https://en.wikipedia.org/wiki/Licchavi_(kingdom)
+  from: 남아시아 S4 동 결과노트
+- name: 문게르
+  at: [86.47, 25.38]
+  year: 950
+  expect: pala-empire
+  url: https://en.wikipedia.org/wiki/Pala_Empire
+  from: 남아시아 S4 동 결과노트
+- name: 바라나시
+  at: [83, 25.32]
+  year: 1140
+  expect: gahadavala-dynasty
+  url: https://en.wikipedia.org/wiki/Gahadavala_dynasty
+  from: 남아시아 S4 동 결과노트
+- name: 자지푸르
+  at: [86.34, 20.85]
+  year: 840
+  expect: bhauma-kara-dynasty
+  url: https://en.wikipedia.org/wiki/Bhauma-Kara_dynasty
+  from: 남아시아 S4 동 결과노트
+- name: 소네푸르
+  at: [83.91, 20.83]
+  year: 1020
+  expect: somavamshi-dynasty
+  url: https://en.wikipedia.org/wiki/Somavamshi_dynasty
+  from: 남아시아 S4 동 결과노트
+- name: 바이샬리
+  at: [85.13, 25.99]
+  year: -468
+  expect: vajji-confederacy
+  url: https://en.wikipedia.org/wiki/Vajji
+  from: 남아시아 S4 동 결과노트
+- name: 바이샬리
+  at: [85.13, 25.99]
+  year: -467
+  expect: magadha-kingdom
+  url: https://en.wikipedia.org/wiki/Magadha
+  from: 남아시아 S4 동 결과노트
+- name: 쿠타크
+  at: [85.88, 20.46]
+  year: -261
+  expect: none
+  url: https://en.wikipedia.org/wiki/Kalinga_War
+  from: 남아시아 S4 동 결과노트
+- name: 쿠타크
+  at: [85.88, 20.46]
+  year: -260
+  expect: maurya-empire
+  url: https://en.wikipedia.org/wiki/Kalinga_War
+  from: 남아시아 S4 동 결과노트
+- name: 쿠타크
+  at: [85.88, 20.46]
+  year: -184
+  expect: none
+  url: https://en.wikipedia.org/wiki/Maurya_Empire
+  from: 남아시아 S4 동 결과노트
+- name: 아요디아
+  at: [82.2, 26.8]
+  year: -100
+  expect: shunga-empire
+  url: https://en.wikipedia.org/wiki/Shunga_Empire
+  from: 남아시아 S4 동 결과노트
+- name: 아요디아
+  at: [82.2, 26.8]
+  year: -99
+  expect: none
+  url: https://en.wikipedia.org/wiki/Shunga_Empire
+  from: 남아시아 S4 동 결과노트
+- name: 마투라
+  at: [77.67, 27.49]
+  year: 127
+  expect: kushan-empire
+  url: https://en.wikipedia.org/wiki/Kushan_Empire
+  from: 남아시아 S4 동 결과노트
+- name: 마투라
+  at: [77.67, 27.49]
+  year: 231
+  expect: none
+  url: https://en.wikipedia.org/wiki/Kushan_Empire
+  from: 남아시아 S4 동 결과노트
+- name: 락나우
+  at: [80.95, 26.85]
+  year: 349
+  expect: none
+  url: https://en.wikipedia.org/wiki/Gupta_Empire
+  from: 남아시아 S4 동 결과노트
+- name: 락나우
+  at: [80.95, 26.85]
+  year: 350
+  expect: gupta-empire
+  url: https://en.wikipedia.org/wiki/Gupta_Empire
+  from: 남아시아 S4 동 결과노트
+- name: 락나우
+  at: [80.95, 26.85]
+  year: 510
+  expect: none
+  url: https://en.wikipedia.org/wiki/Gupta_Empire
+  from: 남아시아 S4 동 결과노트
+- name: 다카
+  at: [90.41, 23.81]
+  year: 399
+  expect: none
+  url: https://en.wikipedia.org/wiki/Gupta_Empire
+  from: 남아시아 S4 동 결과노트
+- name: 다카
+  at: [90.41, 23.81]
+  year: 400
+  expect: gupta-empire
+  url: https://en.wikipedia.org/wiki/Gupta_Empire
+  from: 남아시아 S4 동 결과노트
+- name: 랑푸르
+  at: [89.25, 25.75]
+  year: 639
+  expect: none
+  url: https://en.wikipedia.org/wiki/Kamarupa
+  from: 남아시아 S4 동 결과노트
+- name: 랑푸르
+  at: [89.25, 25.75]
+  year: 640
+  expect: kamarupa-kingdom
+  url: https://en.wikipedia.org/wiki/Kamarupa
+  from: 남아시아 S4 동 결과노트
+- name: 파트나
+  at: [85.14, 25.6]
+  year: 769
+  expect: none
+  url: https://en.wikipedia.org/wiki/Pala_Empire
+  from: 남아시아 S4 동 결과노트
+- name: 파트나
+  at: [85.14, 25.6]
+  year: 770
+  expect: pala-empire
+  url: https://en.wikipedia.org/wiki/Pala_Empire
+  from: 남아시아 S4 동 결과노트
+- name: 카나우지
+  at: [79.92, 27.06]
+  year: 815
+  expect: none
+  url: https://en.wikipedia.org/wiki/Gurjara-Pratihara_dynasty
+  from: 남아시아 S4 동 결과노트
+- name: 카나우지
+  at: [79.92, 27.06]
+  year: 816
+  expect: gurjara-pratihara-dynasty
+  url: https://en.wikipedia.org/wiki/Gurjara-Pratihara_dynasty
+  from: 남아시아 S4 동 결과노트
+- name: 카나우지
+  at: [79.92, 27.06]
+  year: 1019
+  expect: none
+  url: https://en.wikipedia.org/wiki/Gurjara-Pratihara_dynasty
+  from: 남아시아 S4 동 결과노트
+- name: 마호바
+  at: [79.87, 25.29]
+  year: 1019
+  expect: chandela-dynasty
+  url: https://en.wikipedia.org/wiki/Chandela_dynasty
+  from: 남아시아 S4 동 결과노트
+- name: 부르드완
+  at: [87.86, 23.24]
+  year: 1069
+  expect: pala-empire
+  url: https://en.wikipedia.org/wiki/Sena_dynasty
+  from: 남아시아 S4 동 결과노트
+- name: 부르드완
+  at: [87.86, 23.24]
+  year: 1070
+  expect: sena-dynasty
+  url: https://en.wikipedia.org/wiki/Sena_dynasty
+  from: 남아시아 S4 동 결과노트
+- name: 다카
+  at: [90.41, 23.81]
+  year: 1095
+  expect: none
+  url: https://en.wikipedia.org/wiki/Sena_dynasty
+  from: 남아시아 S4 동 결과노트
+- name: 다카
+  at: [90.41, 23.81]
+  year: 1096
+  expect: sena-dynasty
+  url: https://en.wikipedia.org/wiki/Sena_dynasty
+  from: 남아시아 S4 동 결과노트
+- name: 다르방가
+  at: [85.9, 26.15]
+  year: 1097
+  expect: karnat-dynasty
+  url: https://en.wikipedia.org/wiki/Karnat_dynasty
+  from: 남아시아 S4 동 결과노트
+- name: 가우르
+  at: [88.13, 24.87]
+  year: 1158
+  expect: pala-empire
+  url: https://en.wikipedia.org/wiki/Sena_dynasty
+  from: 남아시아 S4 동 결과노트
+- name: 가우르
+  at: [88.13, 24.87]
+  year: 1159
+  expect: sena-dynasty
+  url: https://en.wikipedia.org/wiki/Sena_dynasty
+  from: 남아시아 S4 동 결과노트
+- name: 가우르
+  at: [88.13, 24.87]
+  year: 1204
+  expect: sena-dynasty
+  url: https://en.wikipedia.org/wiki/Sena_dynasty
+  from: 남아시아 S4 동 결과노트
+- name: 가우르
+  at: [88.13, 24.87]
+  year: 1205
+  expect: ghurid-dynasty
+  url: https://en.wikipedia.org/wiki/Bakhtiyar_Khalji
+  from: 남아시아 S4 동 결과노트
+- name: 바라나시
+  at: [83, 25.32]
+  year: 1193
+  expect: gahadavala-dynasty
+  url: https://en.wikipedia.org/wiki/Gahadavala_dynasty
+  from: 남아시아 S4 동 결과노트
+- name: 바라나시
+  at: [83, 25.32]
+  year: 1194
+  expect: ghurid-dynasty
+  url: https://en.wikipedia.org/wiki/Battle_of_Chandawar
+  from: 남아시아 S4 동 결과노트
+- name: 쿠타크
+  at: [85.88, 20.46]
+  year: 1109
+  expect: somavamshi-dynasty
+  url: https://en.wikipedia.org/wiki/Somavamshi_dynasty
+  from: 남아시아 S4 동 결과노트
+- name: 쿠타크
+  at: [85.88, 20.46]
+  year: 1110
+  expect: eastern-ganga-dynasty
+  url: https://en.wikipedia.org/wiki/Eastern_Ganga_dynasty
+  from: 남아시아 S4 동 결과노트
+- name: 구와하티
+  at: [91.75, 26.14]
+  year: 1140
+  expect: kamarupa-kingdom
+  url: https://en.wikipedia.org/wiki/Kamarupa
+  from: 남아시아 S4 동 결과노트
+- name: 구와하티
+  at: [91.75, 26.14]
+  year: 1141
+  expect: none
+  url: https://en.wikipedia.org/wiki/Kamarupa
+  from: 남아시아 S4 동 결과노트
+- name: 카트만두
+  at: [85.32, 27.7]
+  year: 879
+  expect: licchavi-kingdom
+  url: https://en.wikipedia.org/wiki/Licchavi_(kingdom)
+  from: 남아시아 S4 동 결과노트
+- name: 카트만두
+  at: [85.32, 27.7]
+  year: 880
+  expect: none
+  url: https://en.wikipedia.org/wiki/Licchavi_(kingdom)
+  from: 남아시아 S4 동 결과노트
+- name: 라트나푸르
+  at: [82.17, 22.29]
+  year: 1000
+  expect: ratanpur-kingdom
+  url: https://en.wikipedia.org/wiki/Kalachuris_of_Ratnapura
+  from: 남아시아 S4 동 결과노트
+- name: 줌라
+  at: [82.18, 29.27]
+  year: 1100
+  expect: khasa-malla-kingdom
+  url: https://en.wikipedia.org/wiki/Khasa_Kingdom
+  from: 남아시아 S4 동 결과노트
+- name: 임팔
+  at: [93.94, 24.82]
+  year: 1110
+  expect: manipur
+  url: https://en.wikipedia.org/wiki/Manipur_(princely_state)
+  from: 남아시아 S4 동 결과노트
+- name: 바리파다
+  at: [86.73, 21.94]
+  year: 1100
+  expect: mayurbhanj-state
+  url: https://en.wikipedia.org/wiki/Mayurbhanj_State
+  from: 남아시아 S4 동 결과노트
+- name: 파트나
+  at: [85.14, 25.6]
+  year: -420
+  expect: magadha-kingdom
+  url: https://en.wikipedia.org/wiki/Magadha
+  from: 남아시아 S4 동 결과노트
+- name: 아라
+  at: [84.66, 25.55]
+  year: -420
+  expect: none
+  url: https://en.wikipedia.org/wiki/Magadha
+  from: 남아시아 S4 동 결과노트
+- name: 사사람
+  at: [84.03, 24.95]
+  year: -420
+  expect: none
+  url: https://en.wikipedia.org/wiki/Magadha
+  from: 남아시아 S4 동 결과노트
+- name: 바갈푸르
+  at: [87, 25.24]
+  year: -420
+  expect: magadha-kingdom
+  url: https://en.wikipedia.org/wiki/Anga
+  from: 남아시아 S4 동 결과노트
+- name: 락나우
+  at: [80.95, 26.85]
+  year: -420
+  expect: kosala-kingdom
+  url: https://en.wikipedia.org/wiki/Kosala
+  from: 남아시아 S4 동 결과노트
+- name: 칸푸르
+  at: [80.35, 26.45]
+  year: -420
+  expect: none
+  url: https://en.wikipedia.org/wiki/Kosala
+  from: 남아시아 S4 동 결과노트
+- name: 쿠시나가르
+  at: [83.89, 26.74]
+  year: -420
+  expect: none
+  url: https://en.wikipedia.org/wiki/Malla_(tribe)
+  from: 남아시아 S4 동 결과노트
+- name: 바라나시
+  at: [83, 25.32]
+  year: -420
+  expect: kosala-kingdom
+  url: https://en.wikipedia.org/wiki/Kashi_Kingdom
+  from: 남아시아 S4 동 결과노트
+- name: 가지푸르
+  at: [83.58, 25.58]
+  year: -420
+  expect: kosala-kingdom
+  url: https://en.wikipedia.org/wiki/Kashi_Kingdom
+  from: 남아시아 S4 동 결과노트
+- name: 프라야그라지
+  at: [81.85, 25.43]
+  year: -420
+  expect: vatsa-kingdom
+  url: https://en.wikipedia.org/wiki/Vatsa
+  from: 남아시아 S4 동 결과노트
+- name: 카나우지
+  at: [79.92, 27.06]
+  year: -420
+  expect: panchala-kingdom
+  url: https://en.wikipedia.org/wiki/Panchala
+  from: 남아시아 S4 동 결과노트
+- name: 마투라
+  at: [77.67, 27.49]
+  year: -420
+  expect: none
+  url: https://en.wikipedia.org/wiki/Surasena
+  from: 남아시아 S4 동 결과노트
+- name: 룸비니
+  at: [83.28, 27.47]
+  year: -200
+  expect: maurya-empire
+  url: https://en.wikipedia.org/wiki/Lumbini_pillar_inscription
+  from: 남아시아 S4 동 결과노트
+- name: 비라트나가르
+  at: [87.28, 26.45]
+  year: -200
+  expect: maurya-empire
+  url: https://en.wikipedia.org/wiki/Maurya_Empire
+  from: 남아시아 S4 동 결과노트
+- name: 카트만두
+  at: [85.32, 27.7]
+  year: -200
+  expect: none
+  url: https://en.wikipedia.org/wiki/Maurya_Empire
+  from: 남아시아 S4 동 결과노트
+- name: 포카라
+  at: [83.98, 28.21]
+  year: -200
+  expect: none
+  url: https://en.wikipedia.org/wiki/Maurya_Empire
+  from: 남아시아 S4 동 결과노트
+- name: 아요디아
+  at: [82.2, 26.8]
+  year: 330
+  expect: gupta-empire
+  url: https://en.wikipedia.org/wiki/Gupta_Empire
+  from: 남아시아 S4 동 결과노트
+- name: 프라야그라지
+  at: [81.85, 25.43]
+  year: 330
+  expect: gupta-empire
+  url: https://en.wikipedia.org/wiki/Gupta_Empire
+  from: 남아시아 S4 동 결과노트
+- name: 락나우
+  at: [80.95, 26.85]
+  year: 330
+  expect: none
+  url: https://en.wikipedia.org/wiki/Gupta_Empire
+  from: 남아시아 S4 동 결과노트
+- name: 쿠치비하르
+  at: [89.45, 26.33]
+  year: 700
+  expect: kamarupa-kingdom
+  url: https://en.wikipedia.org/wiki/Kamarupa
+  from: 남아시아 S4 동 결과노트
+- name: 랑푸르
+  at: [89.25, 25.75]
+  year: 700
+  expect: kamarupa-kingdom
+  url: https://en.wikipedia.org/wiki/Kamarupa
+  from: 남아시아 S4 동 결과노트
+- name: 실리구리
+  at: [88.43, 26.72]
+  year: 700
+  expect: none
+  url: https://en.wikipedia.org/wiki/Kamarupa
+  from: 남아시아 S4 동 결과노트
+- name: 발루르가트
+  at: [88.78, 25.22]
+  year: 700
+  expect: none
+  url: https://en.wikipedia.org/wiki/Kamarupa
+  from: 남아시아 S4 동 결과노트
+- name: 고르카
+  at: [84.63, 28]
+  year: 700
+  expect: licchavi-kingdom
+  url: https://en.wikipedia.org/wiki/Licchavi_(kingdom)
+  from: 남아시아 S4 동 결과노트
+- name: 포카라
+  at: [83.98, 28.21]
+  year: 700
+  expect: none
+  url: https://en.wikipedia.org/wiki/Licchavi_(kingdom)
+  from: 남아시아 S4 동 결과노트
+- name: 룸비니
+  at: [83.28, 27.47]
+  year: 700
+  expect: none
+  url: https://en.wikipedia.org/wiki/Licchavi_(kingdom)
+  from: 남아시아 S4 동 결과노트
+- name: 반쿠라
+  at: [87.07, 23.23]
+  year: 1080
+  expect: sena-dynasty
+  url: https://en.wikipedia.org/wiki/Sena_dynasty
+  from: 남아시아 S4 동 결과노트
+- name: 콜카타
+  at: [88.36, 22.57]
+  year: 1080
+  expect: pala-empire
+  url: https://en.wikipedia.org/wiki/Sena_dynasty
+  from: 남아시아 S4 동 결과노트
+- name: 말다
+  at: [88.14, 25]
+  year: 1080
+  expect: pala-empire
+  url: https://en.wikipedia.org/wiki/Pala_Empire
+  from: 남아시아 S4 동 결과노트
+- name: 말다
+  at: [88.14, 25]
+  year: 1160
+  expect: sena-dynasty
+  url: https://en.wikipedia.org/wiki/Sena_dynasty
+  from: 남아시아 S4 동 결과노트
+- name: 바라나시
+  at: [83, 25.32]
+  year: 1205
+  expect: ghurid-dynasty
+  url: https://en.wikipedia.org/wiki/Ghurid_dynasty
+  from: 남아시아 S4 동 결과노트
+- name: 다카
+  at: [90.41, 23.81]
+  year: 1205
+  expect: sena-dynasty
+  url: https://en.wikipedia.org/wiki/Sena_dynasty
+  from: 남아시아 S4 동 결과노트
+- name: 쿠타크
+  at: [85.88, 20.46]
+  year: 1205
+  expect: eastern-ganga-dynasty
+  url: https://en.wikipedia.org/wiki/Eastern_Ganga_dynasty
+  from: 남아시아 S4 동 결과노트
+- name: 라이푸르
+  at: [81.63, 21.25]
+  year: 1205
+  expect: ratanpur-kingdom
+  url: https://en.wikipedia.org/wiki/Kalachuris_of_Ratnapura
+  from: 남아시아 S4 동 결과노트
+- name: 다르방가
+  at: [85.9, 26.15]
+  year: 1205
+  expect: karnat-dynasty
+  url: https://en.wikipedia.org/wiki/Karnat_dynasty
+  from: 남아시아 S4 동 결과노트
+
+# ── 남아시아 S4 남 (2026-11-04): 기원전 500~1205 새 항목 수도(존속 가운데 해 무렵), 큰 버전 해 앞뒤, 칼선 안/밖 기준 도시, 1205년 표본(남 칸 땅만) ──
+- name: 우자인
+  at: [75.78, 23.18]
+  year: -450
+  expect: avanti-kingdom
+  url: https://en.wikipedia.org/wiki/Avanti_(India)
+  from: 남아시아 S4 남 결과노트
+- name: 바단
+  at: [77.88, 18.66]
+  year: -420
+  expect: assaka-kingdom
+  url: https://en.wikipedia.org/wiki/Mahajanapadas
+  from: 남아시아 S4 남 결과노트
+- name: 파이탄
+  at: [75.38, 19.48]
+  year: 60
+  expect: satavahana-dynasty
+  url: https://en.wikipedia.org/wiki/Satavahana_dynasty
+  from: 남아시아 S4 남 결과노트
+- name: 나가르주나콘다
+  at: [79.24, 16.5]
+  year: 275
+  expect: andhra-ikshvaku-dynasty
+  url: https://en.wikipedia.org/wiki/Nagarjunakonda
+  from: 남아시아 S4 남 결과노트
+- name: 나식
+  at: [73.79, 20]
+  year: 280
+  expect: abhira-kingdom
+  url: https://en.wikipedia.org/wiki/Abhira_dynasty
+  from: 남아시아 S4 남 결과노트
+- name: 바나바시
+  at: [75, 14.54]
+  year: 285
+  expect: chutu-kingdom
+  url: https://en.wikipedia.org/wiki/Chutu_dynasty
+  from: 남아시아 S4 남 결과노트
+- name: 칸치푸람
+  at: [79.7, 12.84]
+  year: 600
+  expect: pallava-dynasty
+  url: https://en.wikipedia.org/wiki/Pallava_dynasty
+  from: 남아시아 S4 남 결과노트
+- name: 나그푸르
+  at: [79.09, 21.15]
+  year: 390
+  expect: vakataka-dynasty
+  url: https://en.wikipedia.org/wiki/Vakataka_dynasty
+  from: 남아시아 S4 남 결과노트
+- name: 바나바시
+  at: [75, 14.54]
+  year: 440
+  expect: kadamba-dynasty
+  url: https://en.wikipedia.org/wiki/Kadamba_dynasty
+  from: 남아시아 S4 남 결과노트
+- name: 탈라카드
+  at: [77, 12.19]
+  year: 680
+  expect: western-ganga-dynasty
+  url: https://en.wikipedia.org/wiki/Western_Ganga_dynasty
+  from: 남아시아 S4 남 결과노트
+- name: 엘루루
+  at: [81.1, 16.71]
+  year: 380
+  expect: salankayana-dynasty
+  url: https://en.wikipedia.org/wiki/Salankayana_dynasty
+  from: 남아시아 S4 남 결과노트
+- name: 엘루루
+  at: [81.1, 16.71]
+  year: 520
+  expect: vishnukundin-dynasty
+  url: https://en.wikipedia.org/wiki/Vishnukundina_dynasty
+  from: 남아시아 S4 남 결과노트
+- name: 만다소르
+  at: [75.07, 24.07]
+  year: 490
+  expect: aulikara-dynasty
+  url: https://en.wikipedia.org/wiki/Aulikaras
+  from: 남아시아 S4 남 결과노트
+- name: 마헤슈와르
+  at: [75.59, 22.18]
+  year: 580
+  expect: kalachuri-mahishmati
+  url: https://en.wikipedia.org/wiki/Kalachuris_of_Mahishmati
+  from: 남아시아 S4 남 결과노트
+- name: 바다미
+  at: [75.68, 15.92]
+  year: 650
+  expect: badami-chalukya-dynasty
+  url: https://en.wikipedia.org/wiki/Chalukya_dynasty
+  from: 남아시아 S4 남 결과노트
+- name: 라자문드리
+  at: [81.78, 17]
+  year: 850
+  expect: eastern-chalukya-dynasty
+  url: https://en.wikipedia.org/wiki/Eastern_Chalukyas
+  from: 남아시아 S4 남 결과노트
+- name: 마냐케타
+  at: [76.9, 17.2]
+  year: 860
+  expect: rashtrakuta-dynasty
+  url: https://en.wikipedia.org/wiki/Rashtrakuta_dynasty
+  from: 남아시아 S4 남 결과노트
+- name: 칼랴니
+  at: [76.94, 17.87]
+  year: 1080
+  expect: western-chalukya-dynasty
+  url: https://en.wikipedia.org/wiki/Western_Chalukya_Empire
+  from: 남아시아 S4 남 결과노트
+- name: 칼랴니
+  at: [76.94, 17.87]
+  year: 1170
+  expect: kalachuri-kalyani
+  url: https://en.wikipedia.org/wiki/Kalachuris_of_Kalyani
+  from: 남아시아 S4 남 결과노트
+- name: 잡발푸르
+  at: [79.95, 23.17]
+  year: 1110
+  expect: kalachuri-tripuri
+  url: https://en.wikipedia.org/wiki/Kalachuris_of_Tripuri
+  from: 남아시아 S4 남 결과노트
+- name: 아누라다푸라
+  at: [80.41, 8.35]
+  year: 400
+  expect: anuradhapura-kingdom
+  url: https://en.wikipedia.org/wiki/Anuradhapura_Kingdom
+  from: 남아시아 S4 남 결과노트
+- name: 코둥갈루르
+  at: [76.2, 10.22]
+  year: 950
+  expect: chera-dynasty
+  url: https://en.wikipedia.org/wiki/Chera_dynasty
+  from: 남아시아 S4 남 결과노트
+- name: 우자인
+  at: [75.78, 23.18]
+  year: -500
+  expect: none
+  url: https://en.wikipedia.org/wiki/Mahajanapadas
+  from: 남아시아 S4 남 결과노트
+- name: 우자인
+  at: [75.78, 23.18]
+  year: -499
+  expect: avanti-kingdom
+  url: https://en.wikipedia.org/wiki/Mahajanapadas
+  from: 남아시아 S4 남 결과노트
+- name: 비디샤
+  at: [77.81, 23.52]
+  year: -100
+  expect: shunga-empire
+  url: https://en.wikipedia.org/wiki/Shunga_Empire
+  from: 남아시아 S4 남 결과노트
+- name: 비디샤
+  at: [77.81, 23.52]
+  year: -99
+  expect: none
+  url: https://en.wikipedia.org/wiki/Satavahana_dynasty
+  from: 남아시아 S4 남 결과노트
+- name: 나식
+  at: [73.79, 20]
+  year: 149
+  expect: satavahana-dynasty
+  url: https://en.wikipedia.org/wiki/Nahapana
+  from: 남아시아 S4 남 결과노트
+- name: 나식
+  at: [73.79, 20]
+  year: 150
+  expect: western-satraps
+  url: https://en.wikipedia.org/wiki/Rudradaman_I
+  from: 남아시아 S4 남 결과노트
+- name: 나식
+  at: [73.79, 20]
+  year: 180
+  expect: satavahana-dynasty
+  url: https://en.wikipedia.org/wiki/Yajna_Sri_Satakarni
+  from: 남아시아 S4 남 결과노트
+- name: 바다미
+  at: [75.68, 15.92]
+  year: 123
+  expect: none
+  url: https://en.wikipedia.org/wiki/Gautamiputra_Satakarni
+  from: 남아시아 S4 남 결과노트
+- name: 바다미
+  at: [75.68, 15.92]
+  year: 124
+  expect: satavahana-dynasty
+  url: https://en.wikipedia.org/wiki/Gautamiputra_Satakarni
+  from: 남아시아 S4 남 결과노트
+- name: 마냐케타
+  at: [76.9, 17.2]
+  year: 752
+  expect: badami-chalukya-dynasty
+  url: https://en.wikipedia.org/wiki/Dantidurga
+  from: 남아시아 S4 남 결과노트
+- name: 마냐케타
+  at: [76.9, 17.2]
+  year: 753
+  expect: rashtrakuta-dynasty
+  url: https://en.wikipedia.org/wiki/Dantidurga
+  from: 남아시아 S4 남 결과노트
+- name: 칼랴니
+  at: [76.94, 17.87]
+  year: 972
+  expect: rashtrakuta-dynasty
+  url: https://en.wikipedia.org/wiki/Tailapa_II
+  from: 남아시아 S4 남 결과노트
+- name: 칼랴니
+  at: [76.94, 17.87]
+  year: 973
+  expect: western-chalukya-dynasty
+  url: https://en.wikipedia.org/wiki/Tailapa_II
+  from: 남아시아 S4 남 결과노트
+- name: 탄자부르
+  at: [79.14, 10.79]
+  year: 870
+  expect: none
+  url: https://en.wikipedia.org/wiki/Aditya_I
+  from: 남아시아 S4 남 결과노트
+- name: 탄자부르
+  at: [79.14, 10.79]
+  year: 871
+  expect: chola-dynasty
+  url: https://en.wikipedia.org/wiki/Aditya_I
+  from: 남아시아 S4 남 결과노트
+- name: 마두라이
+  at: [78.12, 9.93]
+  year: 909
+  expect: pandya-dynasty
+  url: https://en.wikipedia.org/wiki/Parantaka_I
+  from: 남아시아 S4 남 결과노트
+- name: 마두라이
+  at: [78.12, 9.93]
+  year: 910
+  expect: chola-dynasty
+  url: https://en.wikipedia.org/wiki/Parantaka_I
+  from: 남아시아 S4 남 결과노트
+- name: 칸치푸람
+  at: [79.7, 12.84]
+  year: 948
+  expect: chola-dynasty
+  url: https://en.wikipedia.org/wiki/Battle_of_Takkolam
+  from: 남아시아 S4 남 결과노트
+- name: 칸치푸람
+  at: [79.7, 12.84]
+  year: 949
+  expect: rashtrakuta-dynasty
+  url: https://en.wikipedia.org/wiki/Battle_of_Takkolam
+  from: 남아시아 S4 남 결과노트
+- name: 칸치푸람
+  at: [79.7, 12.84]
+  year: 966
+  expect: chola-dynasty
+  url: https://en.wikipedia.org/wiki/Battle_of_Takkolam
+  from: 남아시아 S4 남 결과노트
+- name: 폴론나루와
+  at: [81, 7.94]
+  year: 992
+  expect: anuradhapura-kingdom
+  url: https://en.wikipedia.org/wiki/Chola_conquest_of_Anuradhapura
+  from: 남아시아 S4 남 결과노트
+- name: 폴론나루와
+  at: [81, 7.94]
+  year: 993
+  expect: chola-dynasty
+  url: https://en.wikipedia.org/wiki/Chola_conquest_of_Anuradhapura
+  from: 남아시아 S4 남 결과노트
+- name: 콜롬보
+  at: [79.86, 6.93]
+  year: 1016
+  expect: anuradhapura-kingdom
+  url: https://en.wikipedia.org/wiki/Mahinda_V
+  from: 남아시아 S4 남 결과노트
+- name: 콜롬보
+  at: [79.86, 6.93]
+  year: 1017
+  expect: chola-dynasty
+  url: https://en.wikipedia.org/wiki/Mahinda_V
+  from: 남아시아 S4 남 결과노트
+- name: 콜롬보
+  at: [79.86, 6.93]
+  year: 1055
+  expect: sinhalese-kingdom
+  url: https://en.wikipedia.org/wiki/Vijayabahu_I
+  from: 남아시아 S4 남 결과노트
+- name: 폴론나루와
+  at: [81, 7.94]
+  year: 1070
+  expect: sinhalese-kingdom
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Polonnaruwa
+  from: 남아시아 S4 남 결과노트
+- name: 탈라카드
+  at: [77, 12.19]
+  year: 1003
+  expect: western-ganga-dynasty
+  url: https://en.wikipedia.org/wiki/Rajaraja_I
+  from: 남아시아 S4 남 결과노트
+- name: 탈라카드
+  at: [77, 12.19]
+  year: 1004
+  expect: chola-dynasty
+  url: https://en.wikipedia.org/wiki/Rajaraja_I
+  from: 남아시아 S4 남 결과노트
+- name: 탈라카드
+  at: [77, 12.19]
+  year: 1116
+  expect: hoysala-dynasty
+  url: https://en.wikipedia.org/wiki/Vishnuvardhana
+  from: 남아시아 S4 남 결과노트
+- name: 엘루루
+  at: [81.1, 16.71]
+  year: 1069
+  expect: eastern-chalukya-dynasty
+  url: https://en.wikipedia.org/wiki/Kulothunga_I
+  from: 남아시아 S4 남 결과노트
+- name: 엘루루
+  at: [81.1, 16.71]
+  year: 1070
+  expect: chola-dynasty
+  url: https://en.wikipedia.org/wiki/Kulothunga_I
+  from: 남아시아 S4 남 결과노트
+- name: 다라
+  at: [75.3, 22.6]
+  year: 1134
+  expect: paramara-dynasty
+  url: https://en.wikipedia.org/wiki/Paramara_dynasty
+  from: 남아시아 S4 남 결과노트
+- name: 다라
+  at: [75.3, 22.6]
+  year: 1135
+  expect: chaulukya-dynasty
+  url: https://en.wikipedia.org/wiki/Jayasimha_Siddharaja
+  from: 남아시아 S4 남 결과노트
+- name: 다라
+  at: [75.3, 22.6]
+  year: 1175
+  expect: paramara-dynasty
+  url: https://en.wikipedia.org/wiki/Paramara_dynasty
+  from: 남아시아 S4 남 결과노트
+- name: 카루르
+  at: [78.08, 10.96]
+  year: -259
+  expect: chera-dynasty
+  url: https://en.wikipedia.org/wiki/Sangam_period
+  from: 남아시아 S4 남 결과노트
+- name: 카루르
+  at: [78.08, 10.96]
+  year: 300
+  expect: none
+  url: https://en.wikipedia.org/wiki/Kalabhra_dynasty
+  from: 남아시아 S4 남 결과노트
+- name: 인도르
+  at: [75.86, 22.72]
+  year: -499
+  expect: avanti-kingdom
+  url: https://en.wikipedia.org/wiki/Avanti_(India)
+  from: 남아시아 S4 남 결과노트
+- name: 사가르
+  at: [78.74, 23.84]
+  year: -499
+  expect: none
+  url: https://en.wikipedia.org/wiki/Avanti_(India)
+  from: 남아시아 S4 남 결과노트
+- name: 니자마바드
+  at: [78.09, 18.67]
+  year: -499
+  expect: assaka-kingdom
+  url: https://en.wikipedia.org/wiki/Assaka
+  from: 남아시아 S4 남 결과노트
+- name: 하이데라바드
+  at: [78.47, 17.38]
+  year: -499
+  expect: none
+  url: https://en.wikipedia.org/wiki/Assaka
+  from: 남아시아 S4 남 결과노트
+- name: 괄리오르
+  at: [78.18, 26.22]
+  year: -320
+  expect: maurya-empire
+  url: https://en.wikipedia.org/wiki/Maurya_Empire
+  from: 남아시아 S4 남 결과노트
+- name: 베툴
+  at: [77.9, 21.9]
+  year: -320
+  expect: none
+  url: https://en.wikipedia.org/wiki/Maurya_Empire
+  from: 남아시아 S4 남 결과노트
+- name: 시다푸라
+  at: [76.8, 14.8]
+  year: -296
+  expect: maurya-empire
+  url: https://en.wikipedia.org/wiki/Edicts_of_Ashoka
+  from: 남아시아 S4 남 결과노트
+- name: 마이소르
+  at: [76.64, 12.3]
+  year: -296
+  expect: none
+  url: https://en.wikipedia.org/wiki/Edicts_of_Ashoka
+  from: 남아시아 S4 남 결과노트
+- name: 만다소르
+  at: [75.07, 24.07]
+  year: 150
+  expect: western-satraps
+  url: https://en.wikipedia.org/wiki/Rudradaman_I
+  from: 남아시아 S4 남 결과노트
+- name: 에란
+  at: [78.07, 24.09]
+  year: 150
+  expect: none
+  url: https://en.wikipedia.org/wiki/Eran
+  from: 남아시아 S4 남 결과노트
+- name: 푸네
+  at: [73.86, 18.52]
+  year: 150
+  expect: western-satraps
+  url: https://en.wikipedia.org/wiki/Rudradaman_I
+  from: 남아시아 S4 남 결과노트
+- name: 파이탄
+  at: [75.38, 19.48]
+  year: 150
+  expect: satavahana-dynasty
+  url: https://en.wikipedia.org/wiki/Satavahana_dynasty
+  from: 남아시아 S4 남 결과노트
+- name: 시모가
+  at: [75.57, 13.93]
+  year: 345
+  expect: kadamba-dynasty
+  url: https://en.wikipedia.org/wiki/Kadamba_dynasty
+  from: 남아시아 S4 남 결과노트
+- name: 벨라가비
+  at: [74.5, 15.85]
+  year: 345
+  expect: none
+  url: https://en.wikipedia.org/wiki/Kadamba_dynasty
+  from: 남아시아 S4 남 결과노트
+- name: 벨라가비
+  at: [74.5, 15.85]
+  year: 435
+  expect: kadamba-dynasty
+  url: https://en.wikipedia.org/wiki/Kakusthavarma
+  from: 남아시아 S4 남 결과노트
+- name: 비자푸르
+  at: [75.71, 16.83]
+  year: 435
+  expect: none
+  url: https://en.wikipedia.org/wiki/Kakusthavarma
+  from: 남아시아 S4 남 결과노트
+- name: 툼쿠루
+  at: [77.1, 13.34]
+  year: 350
+  expect: western-ganga-dynasty
+  url: https://en.wikipedia.org/wiki/Western_Ganga_dynasty
+  from: 남아시아 S4 남 결과노트
+- name: 하산
+  at: [76.1, 13]
+  year: 350
+  expect: none
+  url: https://en.wikipedia.org/wiki/Western_Ganga_dynasty
+  from: 남아시아 S4 남 결과노트
+- name: 비다르
+  at: [77.52, 17.91]
+  year: 1157
+  expect: kalachuri-kalyani
+  url: https://en.wikipedia.org/wiki/Bijjala_II
+  from: 남아시아 S4 남 결과노트
+- name: 솔라푸르
+  at: [75.9, 17.67]
+  year: 1157
+  expect: western-chalukya-dynasty
+  url: https://en.wikipedia.org/wiki/Bijjala_II
+  from: 남아시아 S4 남 결과노트
+- name: 마출리파트남
+  at: [81.14, 16.17]
+  year: 320
+  expect: salankayana-dynasty
+  url: https://en.wikipedia.org/wiki/Salankayana_dynasty
+  from: 남아시아 S4 남 결과노트
+- name: 군투르
+  at: [80.44, 16.31]
+  year: 320
+  expect: andhra-ikshvaku-dynasty
+  url: https://en.wikipedia.org/wiki/Salankayana_dynasty
+  from: 남아시아 S4 남 결과노트
+- name: 아마라바티
+  at: [80.36, 16.57]
+  year: 225
+  expect: andhra-ikshvaku-dynasty
+  url: https://en.wikipedia.org/wiki/Nagarjunakonda
+  from: 남아시아 S4 남 결과노트
+- name: 카키나다
+  at: [82.25, 16.99]
+  year: 225
+  expect: none
+  url: https://en.wikipedia.org/wiki/Nagarjunakonda
+  from: 남아시아 S4 남 결과노트
+- name: 카발리
+  at: [79.99, 14.92]
+  year: 275
+  expect: pallava-dynasty
+  url: https://en.wikipedia.org/wiki/Pallava_dynasty
+  from: 남아시아 S4 남 결과노트
+- name: 카다파
+  at: [78.82, 14.47]
+  year: 275
+  expect: none
+  url: https://en.wikipedia.org/wiki/Pallava_dynasty
+  from: 남아시아 S4 남 결과노트
+- name: 카맘
+  at: [80.15, 17.25]
+  year: 420
+  expect: vishnukundin-dynasty
+  url: https://en.wikipedia.org/wiki/Vishnukundina_dynasty
+  from: 남아시아 S4 남 결과노트
+- name: 하이데라바드
+  at: [78.47, 17.38]
+  year: 420
+  expect: none
+  url: https://en.wikipedia.org/wiki/Vishnukundina_dynasty
+  from: 남아시아 S4 남 결과노트
+- name: 티루넬벨리
+  at: [77.7, 8.73]
+  year: 590
+  expect: pandya-dynasty
+  url: https://en.wikipedia.org/wiki/Pandya_dynasty
+  from: 남아시아 S4 남 결과노트
+- name: 탄자부르
+  at: [79.14, 10.79]
+  year: 590
+  expect: none
+  url: https://en.wikipedia.org/wiki/Kalabhra_dynasty
+  from: 남아시아 S4 남 결과노트
+- name: 쿰바코남
+  at: [79.38, 10.96]
+  year: -259
+  expect: chola-dynasty
+  url: https://en.wikipedia.org/wiki/Sangam_period
+  from: 남아시아 S4 남 결과노트
+- name: 첸나이
+  at: [80.27, 13.08]
+  year: -259
+  expect: none
+  url: https://en.wikipedia.org/wiki/Sangam_period
+  from: 남아시아 S4 남 결과노트
+- name: 에로드
+  at: [77.72, 11.34]
+  year: -259
+  expect: chera-dynasty
+  url: https://en.wikipedia.org/wiki/Sangam_period
+  from: 남아시아 S4 남 결과노트
+- name: 마두라이
+  at: [78.12, 9.93]
+  year: -259
+  expect: pandya-dynasty
+  url: https://en.wikipedia.org/wiki/Sangam_period
+  from: 남아시아 S4 남 결과노트
+- name: 킬리노치
+  at: [80.4, 9.39]
+  year: 993
+  expect: chola-dynasty
+  url: https://en.wikipedia.org/wiki/Chola_conquest_of_Anuradhapura
+  from: 남아시아 S4 남 결과노트
+- name: 캔디
+  at: [80.64, 7.29]
+  year: 993
+  expect: anuradhapura-kingdom
+  url: https://en.wikipedia.org/wiki/Chola_conquest_of_Anuradhapura
+  from: 남아시아 S4 남 결과노트
+- name: 캔디
+  at: [80.64, 7.29]
+  year: -249
+  expect: anuradhapura-kingdom
+  url: https://en.wikipedia.org/wiki/Devanampiya_Tissa
+  from: 남아시아 S4 남 결과노트
+- name: 콜롬보
+  at: [79.86, 6.93]
+  year: -249
+  expect: none
+  url: https://en.wikipedia.org/wiki/Devanampiya_Tissa
+  from: 남아시아 S4 남 결과노트
+- name: 카트니
+  at: [80.4, 23.83]
+  year: 1015
+  expect: kalachuri-tripuri
+  url: https://en.wikipedia.org/wiki/Gangeyadeva
+  from: 남아시아 S4 남 결과노트
+- name: 레와
+  at: [81.3, 24.53]
+  year: 1015
+  expect: none
+  url: https://en.wikipedia.org/wiki/Gangeyadeva
+  from: 남아시아 S4 남 결과노트
+- name: 괄리오르
+  at: [78.18, 26.22]
+  year: 1205
+  expect: ghurid-dynasty
+  url: https://en.wikipedia.org/wiki/Gwalior_Fort
+  from: 남아시아 S4 남 결과노트
+- name: 다울라타바드
+  at: [75.21, 19.94]
+  year: 1205
+  expect: yadava-dynasty
+  url: https://en.wikipedia.org/wiki/Seuna_(Yadava)_dynasty
+  from: 남아시아 S4 남 결과노트
+- name: 와랑갈
+  at: [79.59, 18]
+  year: 1205
+  expect: kakatiya-dynasty
+  url: https://en.wikipedia.org/wiki/Kakatiya_dynasty
+  from: 남아시아 S4 남 결과노트
+- name: 잡발푸르
+  at: [79.95, 23.17]
+  year: 1205
+  expect: kalachuri-tripuri
+  url: https://en.wikipedia.org/wiki/Kalachuris_of_Tripuri
+  from: 남아시아 S4 남 결과노트
+# ── 남아시아 S4 반영 1 (2026-11-04): 검토 1 F1 코라푸트 산지 칼선 안/밖, 창구 ③ 결정 5 난다의 나르마다강 북쪽 중부 인도 안/밖, 결정 6 펀자브 산지 토후국들 920년부터 ──
+- name: 코라푸트(산지 칼선 안)
+  at: [82.71, 18.81]
+  year: 800
+  expect: none
+  url: https://en.wikipedia.org/wiki/Bhauma-Kara_dynasty
+  from: 남아시아 S4 반영 1 노트
+- name: 라야가다(산지 칼선 안)
+  at: [83.42, 19.17]
+  year: 1050
+  expect: none
+  url: https://en.wikipedia.org/wiki/Somavamshi_dynasty
+  from: 남아시아 S4 반영 1 노트
+- name: 구누푸르(산지 칼선 안)
+  at: [83.82, 19.08]
+  year: 1078
+  expect: eastern-ganga-dynasty
+  url: https://en.wikipedia.org/wiki/Eastern_Ganga_dynasty
+  from: 남아시아 S4 반영 1 노트
+- name: 베르함푸르(산지 칼선 밖)
+  at: [84.79, 19.31]
+  year: 800
+  expect: bhauma-kara-dynasty
+  url: https://en.wikipedia.org/wiki/Bhauma-Kara_dynasty
+  from: 남아시아 S4 반영 1 노트
+- name: 모하나(산지 칼선 밖)
+  at: [84.27, 19.45]
+  year: 1050
+  expect: somavamshi-dynasty
+  url: https://en.wikipedia.org/wiki/Somavamshi_dynasty
+  from: 남아시아 S4 반영 1 노트
+- name: 사가르
+  at: [78.74, 23.84]
+  year: -330
+  expect: nanda-empire
+  url: https://en.wikipedia.org/wiki/Nanda_Empire
+  from: 남아시아 S4 반영 1 노트
+- name: 괄리오르
+  at: [78.18, 26.22]
+  year: -330
+  expect: nanda-empire
+  url: https://en.wikipedia.org/wiki/Nanda_Empire
+  from: 남아시아 S4 반영 1 노트
+- name: 친드와라(나르마다강 남쪽)
+  at: [78.94, 22.06]
+  year: -330
+  expect: none
+  url: https://en.wikipedia.org/wiki/Nanda_Empire
+  from: 남아시아 S4 반영 1 노트
+- name: 참바
+  at: [76.13, 32.55]
+  year: 919
+  expect: none
+  url: https://en.wikipedia.org/wiki/Chamba_State
+  from: 남아시아 S4 반영 1 노트
+- name: 참바
+  at: [76.13, 32.55]
+  year: 920
+  expect: punjab-hill-states
+  url: https://en.wikipedia.org/wiki/Chamba_State
+  from: 남아시아 S4 반영 1 노트
+- name: 참바
+  at: [76.13, 32.55]
+  year: 1205
+  expect: punjab-hill-states
+  url: https://en.wikipedia.org/wiki/Chamba_State
+  from: 남아시아 S4 반영 1 노트

@@ -1229,3 +1229,26 @@
 - { type: vassal_of, subject: awadh, object: mughal-empire, from: 1722, to: 1756 } # 무굴 황제의 수바다르·와지르(명목 종주)
 - { type: vassal_of, subject: hyderabad-state, object: mughal-empire, from: 1724, to: 1756 } # 니잠은 무굴 황제의 데칸 총독(명목 종주)
 - { type: vassal_of, subject: rohilkhand, object: mughal-empire, from: 1721, to: 1756 } # 무굴 황제가 나와브 칭호를 줌(명목 종주)
+# ── 남아시아 S4 서 (2026-11-04): 기원전 800~1205 서 칸 정의 항목의 속국·계승 관계(끝 해 포함). 칼리프의 종주는 금요 설교의 이름뿐인 명목 종주 ──
+- { type: vassal_of, subject: kushano-sasanian-kingdom, object: sasanian-empire, from: 240, to: 359 } # 사산 제국 왕족이 쿠샨샤로 다스린 속국(D18)
+- { type: vassal_of, subject: maitraka-dynasty, object: vardhana-dynasty, from: 640, to: 646 } # 하르샤의 종주를 받아들임(D9)
+- { type: vassal_of, subject: tomara-dynasty, object: gurjara-pratihara-dynasty, from: 736, to: 950 } # 10세기 중반까지 프라티하라의 신하
+- { type: vassal_of, subject: habbarid-emirate, object: abbasid-caliphate, from: 854, to: 1025 } # 아바스 칼리프의 이름으로 금요 설교(명목, D5)
+- { type: vassal_of, subject: multan-emirate, object: abbasid-caliphate, from: 855, to: 964 } # 965년 무렵부터 이스마일파(파티마)를 따름(D5)
+- { type: successor_of, subject: hindu-shahi, object: turk-shahi, from: 822, to: null } # 재상 칼라르가 왕위를 빼앗아 이음
+- { type: successor_of, subject: utpala-dynasty, object: karkota-dynasty, from: 855, to: null } # 아반티바르만이 카슈미르 왕위를 이음
+- { type: successor_of, subject: chach-dynasty, object: rai-dynasty, from: 632, to: null } # 재상 차치가 왕위를 이음
+- { type: successor_of, subject: delhi-sultanate, object: ghurid-dynasty, from: 1206, to: null } # 무함마드 구리가 죽은 뒤 노예 장군 아이바크가 라호르에서 즉위(결정 8)
+- { type: successor_of, subject: qubacha-multan, object: ghurid-dynasty, from: 1206, to: null } # 구르 왕조의 장군 카바차가 물탄·우치에서 자립(결정 8)
+- { type: vassal_of, subject: chahamana-dynasty, object: ghurid-dynasty, from: 1192, to: 1205 } # 타라인 2차 전투 뒤 프리트비라지 3세의 아들 고빈다라자가 구르 왕조의 신하로 남음
+
+# ── 남아시아 S4 동 (2026-11-04): 기원전 500~1205년 동 칸 항목의 속국·조공 관계. 끝 해는 포함 ──
+- { type: vassal_of, subject: kamarupa-kingdom, object: gupta-empire, from: 350, to: 375 } # 사무드라굽타의 알라하바드 기둥 비문이 카마루파를 조공국으로 듦(재위 끝 375년 무렵까지)
+- { type: vassal_of, subject: later-gupta-dynasty, object: vardhana-dynasty, from: 606, to: 646 } # 마가다의 왕(푸르나바르만·마다바굽타)이 하르샤의 봉신(지도는 바르다나 색)
+
+# ── 남아시아 S4 남 (2026-11-04): 기원전 600~1205 남 칸이 정의한 항목의 신하 관계(신하였어도 세습 왕조라 따로 그림). 끝 해는 포함 ──
+- { type: vassal_of, subject: aulikara-dynasty, object: gupta-empire, from: 440, to: 531 } # 만다소르 비문의 굽타 연호, 532 야소다르만의 자립
+- { type: vassal_of, subject: western-ganga-dynasty, object: badami-chalukya-dynasty, from: 610, to: 752 } # 풀라케신 2세 뒤 바다미의 신하
+- { type: vassal_of, subject: western-ganga-dynasty, object: rashtrakuta-dynasty, from: 788, to: 972 } # 도루바의 강가바디 정복 뒤 라슈트라쿠타의 신하(혼인 동맹)
+- { type: vassal_of, subject: hoysala-dynasty, object: western-chalukya-dynasty, from: 1116, to: 1186 } # 비슈누바르다나·나라심하 1세는 칼랴니 찰루키아의 신하
+- { type: vassal_of, subject: chandela-dynasty, object: gurjara-pratihara-dynasty, from: 925, to: 949 } # 야소바르만 때까지 프라티하라의 신하, 단가 때 자립
