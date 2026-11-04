@@ -100,7 +100,7 @@
     - 1910년 푸나카 조약으로 외교에 영국의 조언을 받기로 함
     - 티베트 불교 둑파 카규파가 나라의 종교
     - 1972년 즉위한 지그메 싱게 왕추크가 국민 총행복을 내세움
-  startEvents: []
+  startEvents: ["bhutan-shabdrung-1616"]
   endEvents: []
   basis:
     type: primary_source
@@ -183,7 +183,7 @@
     - 주민 대부분은 힌두교도, 니잠과 지배층은 무슬림
     - 1798년 보조 동맹으로 프랑스 장교의 군대를 해산하고 영국군을 둠
     - 1946년부터 텔랑가나 농민 봉기와 라자카르 민병대의 충돌이 이어짐
-  startEvents: []
+  startEvents: ["mughal-successor-states-1717"]
   endEvents: [hyderabad-polo-1948]
   basis:
     type: primary_source
@@ -203,7 +203,7 @@
     - 도읍은 칼라트
     - 사라완·잘라완 두 부족 연합과 카치 평야를 다스림
     - 1952년 이웃 토후국들과 발루치스탄 연합을 이루었다가 1955년 서파키스탄에 합쳐짐
-  startEvents: []
+  startEvents: ["kalat-baloch-1666"]
   endEvents: [princely-integration-1948]
   basis:
     type: primary_source
@@ -222,7 +222,7 @@
   features:
     - 도읍은 카란
     - 이란과 맞닿은 마슈켈 쪽까지 사막이 넓음
-  startEvents: []
+  startEvents: ["kalat-baloch-1666"]
   endEvents: [princely-integration-1948]
   basis:
     type: primary_source
@@ -241,7 +241,7 @@
   features:
     - 도읍은 케치(투르바트)
     - 판즈구르·툼프에 기치키 가문의 갈래가 있었음
-  startEvents: []
+  startEvents: ["kalat-baloch-1666"]
   endEvents: [princely-integration-1948]
   basis:
     type: primary_source
@@ -260,7 +260,7 @@
   features:
     - 도읍은 벨라
     - 1952년 발루치스탄 연합에 들었다가 1955년 10월 14일 없어짐
-  startEvents: []
+  startEvents: ["kalat-baloch-1666"]
   endEvents: [princely-integration-1948]
   basis:
     type: primary_source
@@ -281,7 +281,7 @@
     - 도읍은 퐁디셰리
     - 18세기 뒤플렉스 때 영국과 인도 남부를 다툰 거점
     - 1761년 영국군이 퐁디셰리를 무너뜨렸으나 1763년 파리 조약으로 돌려받음
-  startEvents: []
+  startEvents: ["madras-bombay-1639"]
   endEvents: [indian-enclaves-1954]
   basis:
     type: primary_source
@@ -301,7 +301,7 @@
     - 도읍은 1759년부터 판짐(노바고아), 그 전 옛 고아
     - 1763~1788년 폰다·산게·페르넹 등 신정복지를 얻어 고아 땅이 크게 늚
     - 1954년 다드라·나가르 하벨리는 주민 의용군이 차지해 1961년 인도에 편입됨
-  startEvents: []
+  startEvents: [portuguese-goa-1510]
   endEvents: [indian-enclaves-1954]
   basis:
     type: primary_source

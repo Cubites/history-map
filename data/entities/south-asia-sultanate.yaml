@@ -21,8 +21,8 @@
     - 도읍은 라호르, 1210년 무렵부터 델리(1327~1335년 데바기리로 옮김)
     - 알라웃딘 할지가 몽골 침입을 막고 구자라트·란탐보르·치토르를 정복함
     - 왕조 교체는 1290 할지·1320 투글루크·1414 사이이드·1451 로디
-  startEvents: []
-  endEvents: []
+  startEvents: [delhi-sultanate-1206]
+  endEvents: ["first-panipat-1526"]
   basis:
     type: primary_source
     refs: ["위키백과 Delhi Sultanate"]
@@ -41,8 +41,8 @@
     - 도읍은 아그라·파테푸르 시크리·라호르, 1648년부터 샤자하나바드(델리)
     - 아크바르가 만사브다르 제도와 라지푸트 혼인 동맹으로 나라를 굳힘
     - 1739년 나디르 샤의 델리 약탈로 공작 왕좌를 빼앗김
-  startEvents: []
-  endEvents: []
+  startEvents: ["first-panipat-1526"]
+  endEvents: ["indian-rebellion-1857"]
   basis:
     type: primary_source
     refs: ["위키백과 Mughal Empire"]
@@ -56,8 +56,8 @@
   color: "#506040"
   summary: 1540년 셰르 샤 수르가 차우사·카나우지 전투에서 무굴의 후마윤을 몰아내고 세운 아프간 왕조. 화폐 루피야와 대간선 도로를 정비했고, 1555년 후마윤이 델리를 되찾은 뒤 무너짐
   mapNote: 지도에는 1540년부터 1554년(비하르는 1556년)까지 갠지스 평원·벵골·비하르를, 1542년부터 말와를 더해 표시함. 서쪽은 펀자브·델리·란탐보르 쪽을 1540년, 물탄을 1541년부터 1554년까지 그림. 벵골은 1554년 무함마드 칸 수르의 독립 뒤 벵골 술탄국 색으로, 비하르는 1557년 수라지가르 전투 뒤 벵골 술탄국 색으로 그림
-  startEvents: []
-  endEvents: []
+  startEvents: ["chausa-kannauj-1539"]
+  endEvents: ["second-panipat-1556"]
   basis:
     type: primary_source
     refs: ["위키백과 Sur Empire"]
@@ -76,8 +76,8 @@
     - 도읍은 굴바르가, 1429년부터 비다르
     - 15세기 후반 재상 마흐무드 가완이 고아와 콘칸을 얻어 가장 넓힘
     - 지방 총독들이 갈라져 데칸 술탄국 다섯이 됨
-  startEvents: []
-  endEvents: []
+  startEvents: [bahmani-1347]
+  endEvents: ["deccan-sultanates-1527"]
   basis:
     type: primary_source
     refs: ["위키백과 Bahmani Sultanate"]
@@ -96,8 +96,8 @@
     - 도읍은 비자푸르
     - 골 굼바즈 같은 이슬람 건축과 데칸 회화가 꽃핌
     - 1510년 고아를 포르투갈에게 빼앗김
-  startEvents: []
-  endEvents: []
+  startEvents: [bahmani-breakup-1490]
+  endEvents: ["deccan-conquest-1686"]
   basis:
     type: primary_source
     refs: ["위키백과 Bijapur Sultanate"]
@@ -116,8 +116,8 @@
     - 도읍은 주나르, 1494년부터 아마드나가르
     - 찬드 비비가 무굴의 아마드나가르 포위를 한때 막아 냄
     - 말리크 암바르가 게릴라전과 토지세 제도로 이름남
-  startEvents: []
-  endEvents: []
+  startEvents: [bahmani-breakup-1490]
+  endEvents: ["malik-ambar-1600"]
   basis:
     type: primary_source
     refs: ["위키백과 Ahmadnagar Sultanate"]
@@ -131,8 +131,8 @@
   color: "#488830"
   summary: 바흐마니 술탄국의 텔랑가나 총독 술탄 쿨리가 1518년 독립해 세운 쿠틉 샤 왕조의 데칸 술탄국. 골콘다 요새와 1591년 세운 하이데라바드를 도읍으로 다이아몬드 교역으로 번성했고, 1687년 아우랑제브에게 무너짐
   mapNote: 지도에는 1518년부터 1686년까지 텔랑가나를, 1550년 고다바리강 쪽 안드라 해안, 1571년 간잠, 1579년 군투르, 1646년 라야랄라시마·넬로르를 더해 표시함. 1636년 무굴에 공납한 뒤에도 실제로 다스린 나라로 그림
-  startEvents: []
-  endEvents: []
+  startEvents: [bahmani-breakup-1490]
+  endEvents: ["deccan-conquest-1686"]
   basis:
     type: primary_source
     refs: ["위키백과 Golconda Sultanate"]
@@ -146,8 +146,8 @@
   color: "#d8902c"
   summary: 1336년 하리하라와 부카 형제가 퉁가바드라강 가 비자야나가라(함피)에 세운 남인도의 힌두 제국. 크리슈나데바 라야(1509~1529) 때 가장 컸고, 1565년 탈리코타 전투에서 데칸 술탄국 연합에게 진 뒤 페누콘다·찬드라기리·벨로르로 도읍을 옮기며 1646년까지 이어짐
   mapNote: 지도에는 1336년부터 1645년까지 표시함. 서쪽은 1336년 벨라리 쪽, 1343년부터 1564년까지 카르나타카 남부를 그림. 1378년 마두라이 술탄국을 무너뜨린 뒤 타밀 땅 전부를 그리고, 1446~1469년 가자파티가 차지한 안드라 해안·북타밀은 가자파티 색으로 그림. 1520년부터 1564년까지 라이추르 도아브(크리슈나강–퉁가바드라강 사이)를 더함. 마두라이·진지 나야크가 공납을 끊은 무렵인 1600년부터는 라야랄라시마 쪽과 팔라르강 북쪽 톤다이만달람(벨로르·찬드라기리)만 남김(나야크의 독립 해는 어림)
-  startEvents: []
-  endEvents: []
+  startEvents: [vijayanagara-1336]
+  endEvents: ["talikota-1565"]
   basis:
     type: primary_source
     refs: ["위키백과 Vijayanagara Empire"]
@@ -168,8 +168,8 @@
     - 도읍은 물탄과 우치
     - 몽골을 피해 온 호라즘의 잘랄 웃딘과도 싸움
     - 델리 술탄국과 같은 구르 왕조 장군 출신
-  startEvents: []
-  endEvents: []
+  startEvents: [delhi-sultanate-1206]
+  endEvents: [iltutmish-1211]
   basis:
     type: primary_source
     refs: ["위키백과 Nasir-ud-Din Qabacha"]
@@ -188,7 +188,7 @@
     - 델리의 종주는 명목에 그침
     - 시작 해는 11세기 전반으로 학설이 갈림
   startEvents: []
-  endEvents: []
+  endEvents: [sind-samma-1351]
   basis:
     type: primary_source
     refs: ["위키백과 Soomra dynasty"]
@@ -207,8 +207,8 @@
     - 도읍은 타타
     - 마클리 언덕의 왕실 묘역을 남김
     - 델리 술탄국의 원정을 여러 번 물리침
-  startEvents: []
-  endEvents: []
+  startEvents: [sind-samma-1351]
+  endEvents: [sind-samma-1351]
   basis:
     type: primary_source
     refs: ["위키백과 Samma dynasty"]
@@ -226,8 +226,8 @@
     - 도읍은 박카르, 뒤에 타타
     - 1528년 무렵 물탄의 랑가 왕조를 무너뜨림
     - 쫓겨난 후마윤이 신드에 머물 때 아크바르가 아마르코트에서 태어남
-  startEvents: []
-  endEvents: []
+  startEvents: [sind-samma-1351]
+  endEvents: ["sindh-multan-1527"]
   basis:
     type: primary_source
     refs: ["위키백과 Arghun dynasty"]
@@ -245,8 +245,8 @@
     - 도읍은 물탄
     - 후사인 랑가 때 가장 넓음
     - 수피 성자들의 성지 물탄을 지킴
-  startEvents: []
-  endEvents: []
+  startEvents: [sayyid-dynasty-1414]
+  endEvents: ["sindh-multan-1527"]
   basis:
     type: primary_source
     refs: ["위키백과 Langah Sultanate"]
@@ -265,7 +265,7 @@
     - 칼하나의 역사서 라자타랑기니가 이 시기에 쓰임
     - 1320년 몽골계 둘차의 침입으로 골짜기가 크게 무너짐
   startEvents: []
-  endEvents: []
+  endEvents: [kashmir-sultanate-1339]
   basis:
     type: primary_source
     refs: ["위키백과 Lohara dynasty"]
@@ -283,8 +283,8 @@
     - 도읍은 스리나가르
     - 자인 울 아비딘이 종교 관용과 수공업 장려로 이름남
     - 라다크·발티스탄에 원정함
-  startEvents: []
-  endEvents: []
+  startEvents: [kashmir-sultanate-1339]
+  endEvents: ["mughal-north-1585"]
   basis:
     type: primary_source
     refs: ["위키백과 Kashmir Sultanate"]
@@ -303,7 +303,7 @@
     - 솔랑키라고도 부름
     - 모데라 태양 사원과 아부산 자이나교 사원을 남김
   startEvents: []
-  endEvents: []
+  endEvents: [alauddin-khalji-1290]
   basis:
     type: primary_source
     refs: ["위키백과 Chaulukya dynasty"]
@@ -323,7 +323,7 @@
     - 하미르데바가 델리에서 도망친 몽골 장수들을 받아 줌
     - 차우한이라고도 부름
   startEvents: []
-  endEvents: []
+  endEvents: [alauddin-khalji-1290]
   basis:
     type: primary_source
     refs: ["위키백과 Chahamanas of Ranastambhapura"]
@@ -343,7 +343,7 @@
     - 마라티어 문학과 바크티 운동이 일어남
     - 1296년 알라웃딘 할지의 첫 데칸 원정에 굴복함
   startEvents: []
-  endEvents: []
+  endEvents: [malik-kafur-deccan-1307]
   basis:
     type: primary_source
     refs: ["위키백과 Seuna (Yadava) dynasty"]
@@ -363,7 +363,7 @@
     - 벨루르·할레비두의 정교한 석조 사원을 남김
     - 비라 발랄라 2세 때 독립 왕국이 됨
   startEvents: []
-  endEvents: []
+  endEvents: [madurai-sultanate-1335]
   basis:
     type: primary_source
     refs: ["위키백과 Hoysala Empire"]
@@ -382,8 +382,8 @@
     - 도읍은 아마다바드, 한때 참파네르
     - 1509년 디우 해전에서 맘루크와 함께 포르투갈에 짐
     - 아마다바드의 인도·이슬람 건축을 남김
-  startEvents: []
-  endEvents: []
+  startEvents: [timur-sack-regional-sultanates-1394]
+  endEvents: ["gujarat-conquest-1572"]
   basis:
     type: primary_source
     refs: ["위키백과 Gujarat Sultanate"]
@@ -402,8 +402,8 @@
     - 도읍은 탈네르, 뒤에 부르한푸르
     - 난공불락으로 이름난 아시르가르 성을 가짐
     - 15세기에 구자라트 술탄국의 종주를 받음
-  startEvents: []
-  endEvents: []
+  startEvents: [firuz-shah-tughluq-1351]
+  endEvents: ["mughal-deccan-1595"]
   basis:
     type: primary_source
     refs: ["위키백과 Khandesh Sultanate"]
@@ -421,8 +421,8 @@
     - 도읍은 엘리치푸르
     - 데칸 다섯 술탄국 가운데 가장 먼저 사라짐
     - 가윌가르·나르날라 산성을 가짐
-  startEvents: []
-  endEvents: []
+  startEvents: [bahmani-breakup-1490]
+  endEvents: ["deccan-sultanates-1527"]
   basis:
     type: primary_source
     refs: ["위키백과 Berar Sultanate"]
@@ -440,8 +440,8 @@
     - 도읍은 비다르
     - 바흐마니 술탄을 꼭두각시로 두고 재상 가문이 다스림
     - 데칸 다섯 술탄국 가운데 가장 작음
-  startEvents: []
-  endEvents: []
+  startEvents: [bahmani-breakup-1490]
+  endEvents: ["malik-ambar-1600"]
   basis:
     type: primary_source
     refs: ["위키백과 Bidar Sultanate"]
@@ -457,8 +457,8 @@
   color: "#2f8a7a"
   summary: 1338년 라크나우티·사트가온에서 델리 술탄국으로부터 떨어져 나와 1352년 샴수딘 일리야스 샤가 벵골 전체를 하나로 묶은 술탄국. 일리야스 샤히·가네샤 가문·후세인 샤히·카라니 왕조가 이어 다스림
   mapNote: 지도에는 1338년부터 1591년까지 표시함. 1338~1351년은 라크나우티·사트가온 쪽만, 1352년부터 동벵골을 더하고, 미틸라(1415)·카마타(1498)·미드나포르(1510)·오리사(1568)를 더함. 1540~1553년은 수르 왕조 땅으로 그리고, 1576년 라지마할 전투 뒤에는 오리사에 남은 카라니 아프간 세력만 1591년까지 표시함. 1211~1227년 이와즈 할지, 1287~1324년 부그라 칸 계 라크나우티의 사실상 독립기는 델리 술탄국 색으로 그림
-  startEvents: []
-  endEvents: []
+  startEvents: [bengal-ilyas-1338]
+  endEvents: ["bengal-afghan-1550"]
   basis:
     type: primary_source
     refs: ["위키백과 Bengal Sultanate"]
@@ -472,8 +472,8 @@
   color: "#40a040"
   summary: 1338년 파크루딘 무바라크 샤가 동벵골의 소나르가온에서 세운 술탄국. 1352년 일리야스 샤에게 병합됨
   mapNote: 지도에는 1338년부터 1351년까지 지금 방글라데시 다카·바리살·쿨나·실헤트 지구와 치타공(1340년부터)을 표시함
-  startEvents: []
-  endEvents: []
+  startEvents: [bengal-ilyas-1338]
+  endEvents: [bengal-ilyas-1338]
   basis:
     type: primary_source
     refs: ["위키백과 Bengal Sultanate"]
@@ -486,8 +486,8 @@
   color: "#c8a040"
   summary: 1394년 투글루크 왕조의 재상 말리크 사르와르가 자운푸르에서 세운 샤르키 왕조의 술탄국. 오우드·도아브 하부와 비하르 서부를 다스림
   mapNote: 지도에는 1394년부터 1478년까지 지금 우타르프라데시주 오우드·바라나시·고라크푸르·하부 도아브와 비하르주 서남부(보지푸르·로타스·가야)를 표시함. 끝은 바흘룰 로디가 자운푸르를 차지한 1479년으로 잡음(후세인 샤의 마지막 패배 1494년과 학설이 갈림)
-  startEvents: []
-  endEvents: []
+  startEvents: [jaunpur-sharqi-1394]
+  endEvents: [jaunpur-sharqi-1394]
   basis:
     type: primary_source
     refs: ["위키백과 Jaunpur Sultanate"]
@@ -501,7 +501,7 @@
   summary: 1097년 난야데바가 미틸라(티르후트)에 세운 왕조. 1324년 기야스웃딘 투글루크가 도읍 심라운가르흐를 차지해 끝남
   mapNote: 지도에는 1206년부터 1323년까지 갠지스강 북쪽 미틸라(지금 비하르주 다르방가·무자파르푸르·마두바니 일대)를 어림한 선으로 표시함
   startEvents: []
-  endEvents: []
+  endEvents: [tughluq-dynasty-1320]
   basis:
     type: primary_source
     refs: ["위키백과 Karnat dynasty"]
@@ -515,7 +515,7 @@
   summary: 11세기 후반 벵골에 일어난 힌두 왕조. 1204년 바크티야르 할지에게 라크나우티를 잃은 뒤 동벵골 비크라마푸르에서 이어짐
   mapNote: 지도에는 1206년부터 1244년까지 동벵골(지금 방글라데시 다카·바리살·쿨나 지구)만 표시함. 끝 해는 어림
   startEvents: []
-  endEvents: []
+  endEvents: [bengal-lakhnauti-1206]
   basis:
     type: primary_source
     refs: ["위키백과 Sena dynasty"]
@@ -528,8 +528,8 @@
   color: "#5a7ab8"
   summary: 13세기 동벵골 사마타타·비크라마푸르에서 세나 왕조를 이은 힌두 왕조. 1281년 무렵 발반의 원정 뒤 소나르가온이 델리 술탄국 땅이 됨
   mapNote: 지도에는 1245년부터 1280년까지 동벵골(지금 방글라데시 다카·바리살·쿨나·코밀라 일대)을 표시함. 시작·끝 해는 어림
-  startEvents: []
-  endEvents: []
+  startEvents: [bengal-lakhnauti-1206]
+  endEvents: [balban-mongols-1246]
   basis:
     type: primary_source
     refs: ["위키백과 Deva dynasty"]
@@ -542,8 +542,8 @@
   color: "#a85a8a"
   summary: 13세기 중엽 카마루파를 이어 카라토야강과 바르나디강 사이(북벵골·서아삼)에 선 왕국. 1498년 벵골의 후세인 샤가 칸 왕조를 무너뜨림
   mapNote: 지도에는 1257년부터 1497년까지 지금 서벵골주 쿠치비하르·잘파이구리, 방글라데시 랑푸르 지구, 아삼주 고알파라·캄루프를 어림한 선으로 표시함. 시작 해는 상디아가 카마타푸르로 옮긴 무렵으로 어림
-  startEvents: []
-  endEvents: []
+  startEvents: [assam-ahom-kamata-1228]
+  endEvents: [assam-ahom-kamata-1228]
   basis:
     type: primary_source
     refs: ["위키백과 Kamata Kingdom"]
@@ -556,8 +556,8 @@
   color: "#d0d070"
   summary: 1515년 비스와 싱하가 세운 코치 왕조의 나라. 나라 나라얀 때 가장 컸고, 1587년 코치 비하르와 코치 하조로 갈림
   mapNote: 지도에는 1515년부터 1611년까지 쿠치비하르·잘파이구리·랑푸르와 아삼 고알파라·캄루프를 표시함. 1587년에 갈린 두 나라는 같은 색으로 그리고, 1612년 무굴의 코치 하조 병합에서 끝냄
-  startEvents: []
-  endEvents: []
+  startEvents: [assam-ahom-kamata-1228]
+  endEvents: ["ahom-mughal-1536"]
   basis:
     type: primary_source
     refs: ["위키백과 Koch dynasty"]
@@ -571,7 +571,7 @@
   summary: 12~14세기 지금 네팔 서부 카르날리 골짜기의 셈자(시자)를 도읍으로 한 카스 말라 왕조의 나라
   mapNote: 지도에는 1206년부터 1390년까지 지금 네팔 카르날리·세티·마하칼리 지역을 표시함. 끝 해는 줌라·도티·둘루로 갈린 무렵으로 어림
   startEvents: []
-  endEvents: []
+  endEvents: [garhwal-himalaya-1358]
   basis:
     type: primary_source
     refs: ["위키백과 Khasa Kingdom"]
@@ -585,7 +585,7 @@
   summary: 9세기부터 분델칸드(제자카북티)를 다스린 라지푸트 왕조. 카주라호 사원을 지음
   mapNote: 지도에는 1206년부터 1314년까지 분델칸드(지금 우타르프라데시주 남서부와 마디아프라데시주 사가르·다모 일대)를 표시함. 끝 해는 어림
   startEvents: []
-  endEvents: []
+  endEvents: [malik-kafur-deccan-1307]
   basis:
     type: primary_source
     refs: ["위키백과 Chandela dynasty"]
@@ -599,7 +599,7 @@
   summary: 9세기부터 말와를 다스린 라지푸트 왕조. 1305년 알라웃딘 할지의 군대에게 끝남
   mapNote: 지도에는 1206년부터 1304년까지 말와(지금 마디아프라데시주 서부)를 표시함
   startEvents: []
-  endEvents: []
+  endEvents: [alauddin-khalji-1290]
   basis:
     type: primary_source
     refs: ["위키백과 Paramara dynasty"]
@@ -612,8 +612,8 @@
   color: "#7a4a8a"
   summary: 1401년 델리 술탄국의 총독 딜라와르 칸이 세운 술탄국. 만두를 도읍으로 구리·할지 왕조가 다스림
   mapNote: 지도에는 1401년부터 1530년까지와, 구자라트 점령(1531~1536)·수르 왕조(1542~1554) 사이의 카디르 샤(1537~1541)·바즈 바하두르(1555~1561) 시기를 같은 색으로 표시함. 1562년 무굴 병합에서 끝냄
-  startEvents: []
-  endEvents: []
+  startEvents: [timur-sack-regional-sultanates-1394]
+  endEvents: ["second-panipat-1556"]
   basis:
     type: primary_source
     refs: ["위키백과 Malwa Sultanate"]
@@ -627,7 +627,7 @@
   summary: 11세기 후반부터 칼링가(오리사)를 다스린 왕조. 푸리의 자간나트 사원과 코나르크 태양 사원을 지음
   mapNote: 지도에는 1206년부터 1433년까지 오리사 해안·남부와 내륙 영주 땅, 미드나포르, 고다바리강 북쪽 북칼링가를 표시함. 미드나포르 쪽 경계는 어림
   startEvents: []
-  endEvents: []
+  endEvents: [kapilendra-gajapati-1434]
   basis:
     type: primary_source
     refs: ["위키백과 Eastern Ganga dynasty"]
@@ -640,8 +640,8 @@
   color: "#80c0d0"
   summary: 1434년 카필렌드라 데바가 동부 강가 왕조를 이어 세운 오리사의 수르야밤샤 왕조 나라. 한때 갠지스강 어귀에서 카베리강까지 이름
   mapNote: 지도에는 1434년부터 1567년까지 표시함. 1446~1469년은 안드라 해안과 북타밀(톤다이만달람)을 더함. 위키백과는 수르야밤샤가 끊긴 1541년을 끝으로 적지만, 지도는 같은 가자파티 칭호로 오리사를 다스린 바이 왕조(1541~1559)·무쿤다 데바(1559~1568)까지 한 나라로 그려 1568년 카라니 왕조의 정복에서 끝냄
-  startEvents: []
-  endEvents: []
+  startEvents: [kapilendra-gajapati-1434]
+  endEvents: ["bengal-afghan-1550"]
   basis:
     type: primary_source
     refs: ["위키백과 Gajapati Kingdom"]
@@ -655,7 +655,7 @@
   summary: 11세기부터 차티스가르 평야를 다스린 칼추리 왕조의 나라. 1741년 나그푸르 본슬레의 군대에게 무너짐
   mapNote: 지도에는 1206년부터 1740년까지 차티스가르 평야와 북부 토후국 땅(수르구자는 1612년까지)을 표시함. 경계는 어림
   startEvents: []
-  endEvents: []
+  endEvents: ["nagpur-bhonsle-1739"]
   basis:
     type: primary_source
     refs: ["위키백과 Kalachuris of Ratnapura"]
@@ -668,8 +668,8 @@
   color: "#b0b050"
   summary: 15세기 말 상그람 샤가 52 가르(성채 영지)를 묶어 나르마다강 상류에 세운 곤드 왕국. 1564년 무굴에게 진 뒤에도 곤드 왕가가 다스림
   mapNote: 지도에는 1480년부터 1741년까지 지금 마디아프라데시주 자발푸르·만들라·나르마다푸람 쪽을 어림한 선으로 표시함. 1564년 뒤 무굴과의 관계는 공납이라 실제 다스린 곤드 왕국으로 그림
-  startEvents: []
-  endEvents: []
+  startEvents: [gond-kingdoms-1470]
+  endEvents: ["nagpur-bhonsle-1739"]
   basis:
     type: primary_source
     refs: ["위키백과 Gond kingdoms"]
@@ -682,8 +682,8 @@
   color: "#b07050"
   summary: 16세기 말 사트푸라 산지 데오가르에 선 곤드 왕국. 18세기 초 나그푸르를 세웠고, 1743년 라고지 본슬레에게 넘어감
   mapNote: 지도에는 1600년부터 1742년까지 지금 마디아프라데시주 친드와라·세오니·베툴·발라가트와 마하라슈트라주 나그푸르 쪽(나그푸르 쪽은 1738년까지)을 표시함. 시작 해는 어림
-  startEvents: []
-  endEvents: []
+  startEvents: ["gond-kingdoms-1600"]
+  endEvents: ["nagpur-bhonsle-1739"]
   basis:
     type: primary_source
     refs: ["위키백과 Gond kingdoms"]
@@ -696,8 +696,8 @@
   color: "#888098"
   summary: 찬다(찬드라푸르)를 도읍으로 한 곤드 왕국. 1751년 나그푸르 본슬레에게 병합됨
   mapNote: 지도에는 1470년부터 1750년까지 지금 마하라슈트라주 찬드라푸르·가드치롤리 쪽을 표시함. 시작 해는 어림
-  startEvents: []
-  endEvents: []
+  startEvents: [gond-kingdoms-1470]
+  endEvents: ["nagpur-bhonsle-1739"]
   basis:
     type: primary_source
     refs: ["위키백과 Gond kingdoms"]
@@ -711,7 +711,7 @@
   summary: 1163년 무렵 칼리아니 찰루키아에서 독립해 와랑갈을 도읍으로 텔루구 땅을 다스린 왕조. 1323년 델리 술탄국에게 와랑갈을 잃고 끝남
   mapNote: 지도에는 1206년부터 1322년까지 지금 텔랑가나주와 안드라프라데시주(고다바리강 북쪽 북칼링가 제외)를 표시함. 13세기 초 해안 정복 전 모습은 가장 컸을 때로 어림
   startEvents: []
-  endEvents: []
+  endEvents: [tughluq-dynasty-1320]
   basis:
     type: primary_source
     refs: ["위키백과 Kakatiya dynasty"]
@@ -724,8 +724,8 @@
   color: "#5aa0a0"
   summary: 1330년 무렵 카파야 나야카가 델리 술탄국을 몰아내고 와랑갈을 되찾아 세운 텔루구 나야카들의 나라
   mapNote: 지도에는 1330년부터 1367년까지 지금 텔랑가나주와 안드라 고다바리·크리슈나 삼각주 쪽을 어림해 표시함. 끝 해는 어림
-  startEvents: []
-  endEvents: []
+  startEvents: [kakatiya-andhra-1323]
+  endEvents: [kakatiya-andhra-1323]
   basis:
     type: primary_source
     refs: ["위키백과 Musunuri Nayakas"]
@@ -738,8 +738,8 @@
   color: "#d070d0"
   summary: 1325년 프롤라야 베마 레디가 안드라 해안 콘다비두에 세운 왕국. 라자문드리 갈래도 있었음
   mapNote: 지도에는 1330년부터 1445년까지 군투르 쪽을, 1368년부터 고다바리·크리슈나 삼각주를 표시함. 1446년 가자파티의 정복에서 끝냄
-  startEvents: []
-  endEvents: []
+  startEvents: [kakatiya-andhra-1323]
+  endEvents: [kapilendra-gajapati-1434]
   basis:
     type: primary_source
     refs: ["위키백과 Reddi Kingdom"]
@@ -753,7 +753,7 @@
   summary: 9세기 중엽 비자얄라야가 탄자부르에서 다시 일으킨 타밀 왕조. 13세기에 판디아에게 밀려 1279년 무렵 끝남
   mapNote: 지도에는 1206년부터 1215년까지 지금 타밀나두주를 표시함. 1216년 판디아의 공격 뒤는 판디아 색으로 그림
   startEvents: []
-  endEvents: []
+  endEvents: [chola-pandya-1216]
   basis:
     type: primary_source
     refs: ["위키백과 Chola dynasty"]
@@ -767,7 +767,7 @@
   summary: 마두라이를 도읍으로 한 타밀 왕조. 12세기 말 다시 일어나 13세기에 촐라를 누르고 남인도 동부를 다스림
   mapNote: 지도에는 1216년부터 1322년까지 지금 타밀나두주를 표시함. 케랄라 남부·실론 북부에 대한 원정과 공납은 칠하지 않음
   startEvents: []
-  endEvents: []
+  endEvents: [tughluq-dynasty-1320]
   basis:
     type: primary_source
     refs: ["위키백과 Pandya dynasty"]
@@ -780,8 +780,8 @@
   color: "#8a8a3a"
   summary: 1335년 델리 술탄국의 마바르 총독 잘랄 앗딘 아산 칸이 독립해 세운 술탄국. 1378년 비자야나가라에게 무너짐
   mapNote: 지도에는 1335년부터 1377년까지 지금 타밀나두주 중·남부를 표시함
-  startEvents: []
-  endEvents: []
+  startEvents: [madurai-sultanate-1335]
+  endEvents: [madurai-sultanate-1335]
   basis:
     type: primary_source
     refs: ["위키백과 Madurai Sultanate"]
@@ -794,8 +794,8 @@
   color: "#e890a8"
   summary: 비자야나가라가 1529년 마두라이에 보낸 나야크(총독) 비스바나타가 세운 왕조. 비자야나가라가 약해진 뒤 독립해 1736년까지 이어짐
   mapNote: 지도에는 1600년부터 1735년까지 지금 타밀나두주 중·남부를 표시함. 비자야나가라에서 떨어져 나온 해는 공납을 끊은 무렵인 1600년으로 어림
-  startEvents: []
-  endEvents: []
+  startEvents: ["madurai-nayak-1529"]
+  endEvents: ["madurai-nayak-1529"]
   basis:
     type: primary_source
     refs: ["위키백과 Madurai Nayak dynasty"]
@@ -809,8 +809,8 @@
   color: "#6a5aa0"
   summary: 비자야나가라가 진지에 둔 나야크 가문이 세운 왕조. 1649년 비자푸르 술탄국에게 진지를 잃음
   mapNote: 지도에는 1600년부터 1648년까지 톤다이만달람(지금 타밀나두주 북부)을 표시함. 팔라르강 북쪽(벨로르·칸치푸람)은 16세기 중반 아라비두 왕조에 잃어 1600~1645년 비자야나가라 땅으로 그림. 독립 해는 마두라이 나야크와 같이 1600년으로 어림
-  startEvents: []
-  endEvents: []
+  startEvents: [krishnadevaraya-vijayanagara-1509]
+  endEvents: ["talikota-1565"]
   basis:
     type: primary_source
     refs: ["위키백과 Gingee Nayaks"]
@@ -825,7 +825,7 @@
   summary: 1070년 비자야바후 1세가 촐라를 몰아낸 뒤 폴론나루와를 도읍으로 한 싱할라 왕국. 13세기부터 담바데니야·얍파후와·쿠루네갈라·감폴라로 도읍을 옮김
   mapNote: 지도에는 1206년부터 1411년까지 표시함. 1215년 칼링가 마가가 북쪽 라자라타를 차지한 뒤로는 남서부·중부·동부만 그리고, 도읍을 옮긴 왕조는 한 나라로 그림
   startEvents: []
-  endEvents: []
+  endEvents: [kotte-kingdom-1412]
   basis:
     type: primary_source
     refs: ["위키백과 Kingdom of Polonnaruwa"]
@@ -839,8 +839,8 @@
   color: "#7a5a4a"
   summary: 1215년 칼링가 마가가 폴론나루와를 빼앗아 실론 북부 라자라타에 세운 나라
   mapNote: 지도에는 1215년부터 1255년까지 실론 북부(지금 북중부·북부·트린코말리 지구)를 표시함. 끝 해는 어림
-  startEvents: []
-  endEvents: []
+  startEvents: [magha-sri-lanka-1215]
+  endEvents: [magha-sri-lanka-1215]
   basis:
     type: primary_source
     refs: ["위키백과 Kalinga Magha"]
@@ -853,8 +853,8 @@
   color: "#4a9ab0"
   summary: 1412년 파라크라마바후 6세가 즉위해 1415년 코테로 도읍을 옮긴 싱할라 왕국. 1597년 다르마팔라가 포르투갈 왕에게 나라를 넘김
   mapNote: 지도에는 1412년부터 1596년까지 실론의 반니·자프나를 뺀 땅을 표시함. 칸디(1469~)는 1591년까지 1만 km² 미만이라 같은 색으로 그리고, 시타와카가 차지한 땅은 1565년부터 시타와카 색으로 그림
-  startEvents: []
-  endEvents: []
+  startEvents: [kotte-kingdom-1412]
+  endEvents: ["sitawaka-kotte-1565"]
   basis:
     type: primary_source
     refs: ["위키백과 Kingdom of Kotte"]
@@ -867,8 +867,8 @@
   color: "#d07090"
   summary: 1521년 코테 왕국이 셋으로 갈릴 때 마야두네가 세운 왕국. 라자싱하 1세 때 섬 대부분을 다스렸고 1593년 그가 죽은 뒤 무너짐
   mapNote: 지도에는 1565년부터 1593년까지 표시함. 1521~1564년 시타와카 땅은 1만 km² 미만이라 코테 색으로 그리고, 1565년 코테가 콜롬보로 물러난 뒤 내륙 저지(가마하·칼루타라·쿠루네갈라·사바라가무와)와 1582년 정복한 칸디 산지를 그림
-  startEvents: []
-  endEvents: []
+  startEvents: [kotte-kingdom-1412]
+  endEvents: ["sitawaka-kotte-1565"]
   basis:
     type: primary_source
     refs: ["위키백과 Kingdom of Sitawaka"]
@@ -881,8 +881,8 @@
   color: "#2a7a4a"
   summary: 1597년 코테 왕 다르마팔라가 포르투갈 왕에게 나라를 넘기며 생긴 실론 해안의 포르투갈 식민지. 1658년 네덜란드에게 넘어감
   mapNote: 지도에는 1597년부터 1657년까지 실론 서·남해안 지구를, 1619년부터 자프나를 더해 표시함
-  startEvents: []
-  endEvents: []
+  startEvents: ["sitawaka-kotte-1565"]
+  endEvents: ["ceylon-dutch-1638"]
   basis:
     type: primary_source
     refs: ["위키백과 Portuguese Ceylon"]

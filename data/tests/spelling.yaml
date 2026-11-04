@@ -3000,3 +3000,107 @@
   avoid: [호이쌀라]
   note: "Hoysala 왕조. 위키백과 한국어판 '호이살라 왕조'. 0회(S3 서 구현)"
   scope: 남아시아 중세
+- use: 샤자한
+  avoid: [샤 자한, 샤자핸]
+  note: "Shah Jahan(재위 1628~1658). 저장소 항목 글(아마드나가르·무굴)의 붙여 쓴 꼴"
+  scope: 남아시아 근세
+- use: 아크바르
+  avoid: [악바르]
+  note: "Akbar(재위 1556~1605). 위키백과 한국어판 표제 아크바르"
+  scope: 남아시아 근세
+- use: 후마윤
+  avoid: [후마이운, 후마윤 샤]
+  note: "Humayun(재위 1530~1540, 1555~1556). 위키백과 한국어판 표제"
+  scope: 남아시아 근세
+- use: 자한기르
+  avoid: [자한길]
+  note: "Jahangir(재위 1605~1627). 위키백과 한국어판 표제"
+  scope: 남아시아 근세
+- use: 셰르 샤 수르
+  avoid: [쉐르 샤, 셰르샤 수르, 셰르 샤 수리]
+  note: "Sher Shah Suri(재위 1540~1545). 외래어 표기법 sh→시, 항목 글 꼴 셰르 샤 수르"
+  scope: 남아시아 근세
+- use: 반다 싱 바하두르
+  avoid: [반다 바하두르, 반다 싱 바하더]
+  note: "Banda Singh Bahadur(1670 무렵~1716). 위키백과 한국어판 표제"
+  scope: 남아시아 근세
+- use: 말리크 암바르
+  avoid: [말릭 암바르]
+  note: "Malik Ambar(1548~1626). 위키백과 한국어판 표제"
+  scope: 남아시아 근세
+- use: 바지 라오
+  avoid: [바지 라우]
+  note: "Baji Rao I(페슈와 1720~1740). 위키백과 한국어판 표제 바지 라오 1세"
+  scope: 남아시아 근세
+- use: 니잠 울물크
+  avoid: [니잠 울 물크, 니잠울물크]
+  note: "Nizam-ul-Mulk(아사프 자 1세). 저장소 항목 글 꼴"
+  scope: 남아시아 근세
+- use: 만사브다르
+  avoid: [만삽다르, 만사브 다르]
+  note: "Mansabdar. 위키백과 한국어판 표제"
+  scope: 남아시아 근세
+- use: 파테푸르 시크리
+  avoid: [파테푸르시크리, 파테푸르 식리]
+  note: "Fatehpur Sikri. 위키백과 한국어판 표제"
+  scope: 남아시아 근세
+- use: 찬드 비비
+  avoid: [찬드비비, 챤드 비비]
+  note: "Chand Bibi(찬드 술타나). 위키백과 한국어판 표제"
+  scope: 남아시아 근세
+- use: 알라웃딘
+  avoid: [알라우딘, 알라우드딘]
+  note: "Alauddin Khalji. 같은 낱말 꼴 쿠트브 웃딘·기야스 웃딘과 맞춤"
+  scope: 남아시아 중세
+- use: 쿠트브 웃딘
+  avoid: [쿠틉 웃딘, 쿠트부딘, 쿠툽딘]
+  note: "Qutb ud-Din Aibak"
+  scope: 남아시아 중세
+- use: 무함마드 빈 투글루크
+  avoid: [무하마드 빈 투글루크]
+  note: "Muhammad bin Tughluq(재위 1325~1351)"
+  scope: 남아시아 중세
+- use: 피루즈 샤
+  avoid: [피로즈 샤, 피루즈샤]
+  note: "Firuz Shah Tughlaq(재위 1351~1388)"
+  scope: 남아시아 중세
+- use: 마흐무드 가완
+  avoid: [마흐무드 가반, 마무드 가완]
+  note: "Mahmud Gawan(바흐마니 재상)"
+  scope: 남아시아 중세
+- use: 크리슈나데바 라야
+  avoid: [크리슈나 데바 라야, 크리슈나데바라야, 크리슈나 데바라야]
+  note: "Krishnadevaraya(재위 1509~1529)"
+  scope: 남아시아 중세
+- use: 바흘룰 로디
+  avoid: [바훌룰 로디, 바흘롤 로디]
+  note: "Bahlul Lodi(재위 1451~1489)"
+  scope: 남아시아 중세
+- use: 시칸다르 로디
+  avoid: [시칸다 로디, 시칸더 로디]
+  note: "Sikandar Lodi(재위 1489~1517)"
+  scope: 남아시아 중세
+- use: 구루 나나크
+  avoid: [구루 나낙, 구루 나나끄]
+  note: "Guru Nanak(1469~1539)"
+  scope: 남아시아 중세
+- use: 카비르
+  avoid: [까비르, 카비어]
+  note: "Kabir. 위키백과 한국어판 표제"
+  scope: 남아시아 중세
+- use: 라지야
+  avoid: [라지야 베굼]
+  note: "Razia Sultana(재위 1236~1240)"
+  scope: 남아시아 중세
+- use: 말리크 카푸르
+  avoid: [말릭 카푸르, 말리크 카풀]
+  note: "Malik Kafur"
+  scope: 남아시아 중세
+- use: 다가마
+  avoid: [다 가마]
+  note: "Vasco da Gama. 저장소 유럽 사건의 붙여 쓴 꼴"
+  scope: 남아시아 중세
+- use: 알부케르케
+  avoid: [알부케르크]
+  note: "Afonso de Albuquerque. 저장소 서아시아 사건(me-06)의 기존 꼴"
+  scope: 남아시아 중세

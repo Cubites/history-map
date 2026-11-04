@@ -21,7 +21,7 @@
     - 도읍은 칸다하르, 1776년부터 카불
     - 겨울마다 인더스강을 건너 펀자브로 원정함
     - 아흐마드 샤는 1747~1767년 여덟 차례 넘게 인도로 군대를 보냄
-  startEvents: []
+  startEvents: ["durrani-punjab-1748"]
   endEvents: [ranjit-singh-1799]
   basis:
     type: primary_source
@@ -102,7 +102,7 @@
     - 도읍은 치트랄
     - 1877년 잠무 카슈미르와 조약을 맺어 그 종주를 받아들임
     - 1895년 영국군이 치트랄 요새 포위를 풀어 줌
-  startEvents: []
+  startEvents: ["mughal-north-1585"]
   endEvents: [princely-states-1921]
   basis:
     type: primary_source
@@ -122,7 +122,7 @@
     - 도읍은 바하왈푸르
     - 1809년 암리차르 조약으로 시크와의 경계가 수틀레지강에 머묾
     - 20세기에 수틀레지 계곡 관개로 경작지가 크게 늚
-  startEvents: []
+  startEvents: ["kalhora-sindh-1701"]
   endEvents: [princely-states-1921]
   basis:
     type: primary_source
@@ -142,7 +142,7 @@
   features:
     - 도읍은 후다바드, 1768년부터 하이데라바드
     - 탈푸르 미르들은 땅을 갈래별로 나눠 다스림
-  startEvents: []
+  startEvents: ["kalhora-sindh-1701"]
   endEvents: [talpur-sindh-1779]
   basis:
     type: primary_source
@@ -200,7 +200,7 @@
     - 에이전시 본부는 라지코트
     - 1901년 합 넓이 약 5.4만 km²
     - 1807년까지 바로다의 가이크와드가 공물을 걷음
-  startEvents: []
+  startEvents: ["gaekwad-gujarat-1721"]
   endEvents: [princely-states-1921]
   basis:
     type: primary_source
@@ -221,7 +221,7 @@
     - 도읍은 바로다(지금 바도다라)
     - 사야지라오 3세(재위 1875~1939)가 학교·철도를 넓힘
     - 1802년부터 영국 주재관이 바로다에 머묾
-  startEvents: []
+  startEvents: ["gaekwad-gujarat-1721"]
   endEvents: [princely-states-1921]
   basis:
     type: primary_source
@@ -260,7 +260,7 @@
   features:
     - 에이전시 본부는 심라
     - 1806~1809년 구르카의 캉그라 포위 끝에 캉그라는 란지트 싱에게 넘어감
-  startEvents: []
+  startEvents: [north-india-dynasties-1206]
   endEvents: [princely-states-1921]
   basis:
     type: primary_source
@@ -279,7 +279,7 @@
   features:
     - 도읍은 조드푸르(메헤랑가르 요새)
     - 1901년 넓이 약 9.1만 km²
-  startEvents: []
+  startEvents: [rajput-states-1459]
   endEvents: [princely-states-1921]
   basis:
     type: primary_source
@@ -298,7 +298,7 @@
   features:
     - 도읍은 비카네르(1488년 세움)
     - 1927년 간가 운하가 열려 북부 사막에 물을 댐
-  startEvents: []
+  startEvents: [rajput-states-1459]
   endEvents: [princely-states-1921]
   basis:
     type: primary_source
@@ -336,7 +336,7 @@
   features:
     - 도읍은 암베르, 1727년부터 자이푸르
     - 자이 싱 2세는 천문대 잔타르 만타르를 세움
-  startEvents: []
+  startEvents: [rajput-states-1459]
   endEvents: [princely-states-1921]
   basis:
     type: primary_source
@@ -374,7 +374,7 @@
   features:
     - 도읍은 코타
     - 1838년 섭정 가문 몫으로 잘라와르 주를 떼어 줌
-  startEvents: []
+  startEvents: ["shah-jahan-1628"]
   endEvents: [princely-states-1921]
   basis:
     type: primary_source
@@ -412,7 +412,7 @@
   features:
     - 반스와라는 16세기 초 둥가르푸르에서 갈라져 섬
     - 1906년부터 남부 라지푸타나 토후국 에이전시가 감독함(그 전은 메와르 주재관)
-  startEvents: [third-anglo-maratha-war-1817]
+  startEvents: ["first-panipat-1526"]
   endEvents: [princely-states-1921]
   basis:
     type: primary_source
@@ -536,7 +536,7 @@
     - 도읍은 무르시다바드
     - 1756년 시라지 웃다울라가 콜카타의 영국 요새를 빼앗음
     - 1760년 미르 카심이 부르드완·미드나포르·치타공을 회사에 넘김
-  startEvents: []
+  startEvents: ["mughal-successor-states-1717"]
   endEvents: [buxar-1764]
   basis:
     type: primary_source
@@ -556,7 +556,7 @@
     - 도읍은 파이자바드, 1775년부터 러크나우
     - 1801년 보조 조약으로 회사 군대를 두고 땅 절반을 넘김
     - 러크나우에서 시아파 이슬람 건축과 궁정 문화가 꽃핌
-  startEvents: []
+  startEvents: ["mughal-successor-states-1717"]
   endEvents: [dalhousie-lapse-1848]
   basis:
     type: primary_source
@@ -576,7 +576,7 @@
     - 도읍은 바레일리
     - 로힐라는 18세기에 들어온 파슈툰계 이주민과 그 후손
     - 수장들이 땅을 나눠 가진 느슨한 연합이었음
-  startEvents: []
+  startEvents: ["mughal-successor-states-1717"]
   endEvents: [rohilla-war-1773]
   basis:
     type: primary_source
@@ -618,7 +618,7 @@
     - 도읍은 스리나가르(가르왈)
     - 바드리나트·케다르나트 등 힌두교 성지가 있음
     - 1803년 큰 지진을 겪은 해에 고르카의 침공을 받음
-  startEvents: []
+  startEvents: [garhwal-himalaya-1358]
   endEvents: [nepal-unification-1768]
   basis:
     type: primary_source
@@ -659,7 +659,7 @@
     - 도읍은 가르가온·랑푸르, 1794년부터 조르하트
     - 성인 남자가 나라에 노역을 바치는 파이크 제도로 다스림
     - 부란지라는 연대기를 남김
-  startEvents: []
+  startEvents: [assam-ahom-kamata-1228]
   endEvents: [first-anglo-burmese-war-1824]
   basis:
     type: primary_source
@@ -700,7 +700,7 @@
     - 도읍은 우다이푸르, 18세기 중엽 옛 아가르탈라, 1849년부터 아가르탈라
     - 왕실 연대기 『라즈말라』를 남김
     - 1871년부터 영국 정무관이 아가르탈라에 머묾
-  startEvents: []
+  startEvents: [tripura-manikya-1400]
   endEvents: [princely-states-1921]
   basis:
     type: primary_source
@@ -721,7 +721,7 @@
     - 큰 나라는 케온자르·칼라한디·파트나·덴카날
     - 각 라자가 내정을 다스리고 공물을 바침
     - 1930년대 주민 운동(프라자 만달)이 토후 통치에 맞섬
-  startEvents: []
+  startEvents: ["bengal-afghan-1550"]
   endEvents: [princely-states-1921]
   basis:
     type: primary_source
@@ -761,7 +761,7 @@
     - 도읍은 자그달푸르
     - 단테와다의 단테슈와리 여신을 왕가 수호신으로 모심
     - 다세라 축제가 75일 동안 열림
-  startEvents: []
+  startEvents: [kakatiya-andhra-1323]
   endEvents: [princely-states-1921]
   basis:
     type: primary_source
@@ -781,7 +781,7 @@
     - 도읍은 암비카푸르
     - 마인파트 고원과 숲이 넓게 차지함
     - 주민 다수가 곤드·오라온 등 부족민
-  startEvents: []
+  startEvents: ["gond-kingdoms-1600"]
   endEvents: [princely-states-1921]
   basis:
     type: primary_source
@@ -801,7 +801,7 @@
     - 큰 나라는 자슈푸르·코리아·라이가르
     - 각 라자가 내정을 다스리고 공물을 바침
     - 주민 다수가 곤드·오라온 등 부족민
-  startEvents: []
+  startEvents: ["nagpur-bhonsle-1739"]
   endEvents: [princely-states-1921]
   basis:
     type: primary_source
@@ -827,7 +827,7 @@
     - 땅마다 수확의 4분의 1을 거두는 차우트 세금으로 세력을 넓힘
     - 1782년 살바이 조약으로 1차 전쟁 전 모습으로 돌아감
     - 1802년 바세인 조약으로 페슈와가 영국의 보조 동맹을 받아들임
-  startEvents: []
+  startEvents: ["shivaji-swarajya-1645"]
   endEvents: [third-anglo-maratha-war-1817]
   basis:
     type: primary_source
@@ -848,7 +848,7 @@
     - 1817년 조약으로 영국의 보호를 받고 1818년부터 토후국이 됨
     - 1844년 마하라지푸르 전투에 진 뒤 영국 주재관의 감독을 받음
     - 1857년 항쟁 때 왕은 영국 편에 섰으나 군대 일부가 반란에 가담함
-  startEvents: []
+  startEvents: ["bajirao-north-1720"]
   endEvents: [princely-states-1921]
   basis:
     type: primary_source
@@ -868,7 +868,7 @@
     - 도읍은 1767~1818년 마헤슈와르, 1818년부터 인도르
     - 1817년 마히드푸르 전투에서 영국군에 짐
     - 1818년 만드소르 조약으로 라지푸타나 쪽 권리를 내놓음
-  startEvents: []
+  startEvents: ["bajirao-north-1720"]
   endEvents: [princely-states-1921]
   basis:
     type: primary_source
@@ -888,7 +888,7 @@
     - 도읍은 나그푸르
     - 1785년 페슈와와의 조약으로 만들라와 상부 나르마다를 얻음
     - 1818년 시타불디 패배 뒤 남은 땅을 영국 주재관이 감독함
-  startEvents: []
+  startEvents: ["nagpur-bhonsle-1739"]
   endEvents: [dalhousie-lapse-1848]
   basis:
     type: primary_source
@@ -909,7 +909,7 @@
     - 하이데르 알리와 티푸 술탄은 로켓과 프랑스식 군대로 영국과 싸움
     - 1784년 망갈로르 조약으로 2차 전쟁을 서로 땅을 돌려주고 끝냄
     - 1831년 농민 봉기 뒤 영국이 50년 동안 직접 다스리고 1881년 왕에게 돌려줌
-  startEvents: []
+  startEvents: ["mysore-wodeyar-1610"]
   endEvents: [princely-states-1921]
   basis:
     type: primary_source
@@ -929,7 +929,7 @@
     - 도읍은 아르코트, 1768년부터 마드라스의 체파욱 궁전
     - 1765년 무굴 황제가 나와브의 자립을 인정함
     - 회사에 진 빚이 커져 땅의 세금을 회사가 직접 거둠
-  startEvents: []
+  startEvents: ["maratha-wars-1680"]
   endEvents: [wellesley-subsidiary-1798]
   basis:
     type: primary_source
@@ -949,7 +949,7 @@
     - 도읍은 파드마나바푸람, 1795년부터 티루바난타푸람
     - 1750년 마르탄다 바르마가 나라를 파드마나바 신에게 바침
     - 1809년 재상 벨루 탐비가 영국에 맞서 봉기함
-  startEvents: []
+  startEvents: ["travancore-marthanda-1729"]
   endEvents: [princely-states-1921]
   basis:
     type: primary_source
@@ -969,7 +969,7 @@
     - 도읍은 보팔(1728~1742년 이슬람나가르)
     - 쿠드시아·시칸다르·샤자한·술탄 자한 네 베굼이 다스림
     - 1857년 항쟁 때 영국 편에 섬
-  startEvents: []
+  startEvents: ["aurangzeb-death-1707"]
   endEvents: [princely-states-1921]
   basis:
     type: primary_source
@@ -989,7 +989,7 @@
     - 도읍은 1618년부터 레와(그 전 반다브가르)
     - 1812년 영국과 맺은 조약으로 보호국이 됨
     - 판나·마이하르 등 바겔칸드의 작은 토후국들과 이웃함
-  startEvents: []
+  startEvents: ["jahangir-1605"]
   endEvents: [princely-states-1921]
   basis:
     type: primary_source
@@ -1009,7 +1009,7 @@
     - 오르차는 16세기부터 이어진 분델라 왕가의 본가
     - 판나는 다이아몬드 광산으로 이름남
     - 카주라호 사원은 차타르푸르 땅에 있었음
-  startEvents: []
+  startEvents: ["bajirao-north-1720"]
   endEvents: [princely-states-1921]
   basis:
     type: primary_source
@@ -1049,7 +1049,7 @@
     - 도읍은 칸디(마하누와라)
     - 부처의 치아 사리를 모신 달라다 말리가와 사원이 왕권의 상징
     - 1766년 네덜란드와의 조약으로 바닷가 전부를 네덜란드에 내줌
-  startEvents: []
+  startEvents: ["sitawaka-kotte-1565"]
   endEvents: [ceylon-british-1796]
   basis:
     type: primary_source
@@ -1069,7 +1069,7 @@
     - 도읍은 콜롬보
     - 로마-네덜란드법과 토지 대장을 들임
     - 갈레 요새는 이때 지은 성벽이 남음
-  startEvents: []
+  startEvents: ["ceylon-dutch-1638"]
   endEvents: [ceylon-british-1796]
   basis:
     type: primary_source
