@@ -86,39 +86,6 @@
 - key: '1823 afghanistan 성립'
   reason: ca-04 사건 묶음이 채움(성립 해가 1865년 앞 — C2가 앞을 그림)
   decided: 2026-11-05 중앙아시아 C1 A 구현(사건은 다음 세션)
-- key: '1924 khiva-khanate 소멸'
-  reason: ca-05 사건 묶음이 채움
-  decided: 2026-11-05 중앙아시아 C1 A 구현(사건은 다음 세션)
-- key: '1991 turkmenistan 성립'
-  reason: ca-05 사건 묶음이 채움
-  decided: 2026-11-05 중앙아시아 C1 A 구현(사건은 다음 세션)
-- key: '1865 afghanistan 버전'
-  reason: ca-05 사건 묶음이 채움
-  decided: 2026-11-05 중앙아시아 C1 A 구현(사건은 다음 세션)
-- key: '1865 khiva-khanate 버전'
-  reason: ca-05 사건 묶음이 채움
-  decided: 2026-11-05 중앙아시아 C1 A 구현(사건은 다음 세션)
-- key: '1873 afghanistan 버전'
-  reason: ca-05 사건 묶음이 채움
-  decided: 2026-11-05 중앙아시아 C1 A 구현(사건은 다음 세션)
-- key: '1873 khiva-khanate 버전'
-  reason: ca-05 사건 묶음이 채움
-  decided: 2026-11-05 중앙아시아 C1 A 구현(사건은 다음 세션)
-- key: '1883 afghanistan 버전'
-  reason: ca-05 사건 묶음이 채움
-  decided: 2026-11-05 중앙아시아 C1 A 구현(사건은 다음 세션)
-- key: '1893 afghanistan 버전'
-  reason: ca-05 사건 묶음이 채움
-  decided: 2026-11-05 중앙아시아 C1 A 구현(사건은 다음 세션)
-- key: '1895 afghanistan 버전'
-  reason: ca-05 사건 묶음이 채움(1895년 파미르 협정으로 판지강 오른쪽 슈그난·로샨을 러시아에 넘김 — W 칸이 칠한 땅)
-  decided: 2026-11-05 중앙아시아 C1 합치기(사건은 다음 세션)
-- key: '1896 afghanistan 버전'
-  reason: ca-05 사건 묶음이 채움
-  decided: 2026-11-05 중앙아시아 C1 A 구현(사건은 다음 세션)
-- key: '1992 turkmenistan 버전'
-  reason: ca-05 사건 묶음이 채움
-  decided: 2026-11-05 중앙아시아 C1 A 구현(사건은 다음 세션)
 
 # ── 중앙아시아 C1 W (서, 2026-11-05): 부하라·코칸트·우즈베크·타지크·키르기스 칸이 이 아래에만 ──
 - key: '1709 kokand-khanate 성립'
@@ -127,68 +94,8 @@
 - key: '1785 bukhara-emirate 성립'
   reason: ca-04 사건 묶음이 채움(성립 해가 1865년 앞 — C2가 앞을 그림)
   decided: 2026-11-05 중앙아시아 C1 W 구현(사건은 다음 세션)
-- key: '1865 bukhara-emirate 버전'
-  reason: ca-05 사건 묶음이 채움
-  decided: 2026-11-05 중앙아시아 C1 W 구현(사건은 다음 세션)
-- key: '1865 kokand-khanate 버전'
-  reason: ca-05 사건 묶음이 채움
-  decided: 2026-11-05 중앙아시아 C1 W 구현(사건은 다음 세션)
-- key: '1866 bukhara-emirate 버전'
-  reason: ca-05 사건 묶음이 채움
-  decided: 2026-11-05 중앙아시아 C1 W 구현(사건은 다음 세션)
-- key: '1868 bukhara-emirate 버전'
-  reason: ca-05 사건 묶음이 채움
-  decided: 2026-11-05 중앙아시아 C1 W 구현(사건은 다음 세션)
-- key: '1876 kokand-khanate 소멸'
-  reason: ca-05 사건 묶음이 채움
-  decided: 2026-11-05 중앙아시아 C1 W 구현(사건은 다음 세션)
-- key: '1924 bukhara-emirate 소멸'
-  reason: ca-05 사건 묶음이 채움
-  decided: 2026-11-05 중앙아시아 C1 W 구현(사건은 다음 세션)
-- key: '1991 uzbekistan 성립'
-  reason: ca-05 사건 묶음이 채움
-  decided: 2026-11-05 중앙아시아 C1 W 구현(사건은 다음 세션)
-- key: '1991 kyrgyzstan 성립'
-  reason: ca-05 사건 묶음이 채움
-  decided: 2026-11-05 중앙아시아 C1 W 구현(사건은 다음 세션)
-- key: '1991 tajikistan 성립'
-  reason: ca-05 사건 묶음이 채움
-  decided: 2026-11-05 중앙아시아 C1 W 구현(사건은 다음 세션)
-- key: '1992 uzbekistan 버전'
-  reason: ca-05 사건 묶음이 채움
-  decided: 2026-11-05 중앙아시아 C1 W 구현(사건은 다음 세션)
-- key: '1992 kyrgyzstan 버전'
-  reason: ca-05 사건 묶음이 채움
-  decided: 2026-11-05 중앙아시아 C1 W 구현(사건은 다음 세션)
-- key: '1992 tajikistan 버전'
-  reason: ca-05 사건 묶음이 채움
-  decided: 2026-11-05 중앙아시아 C1 W 구현(사건은 다음 세션)
 
 # ── 중앙아시아 C1 E (동, 2026-11-05): 카자흐·신장 칸이 이 아래에만 ──
-- key: '1865 yettishar 성립'
-  reason: ca-05 사건 묶음이 채움
-  decided: 2026-11-05 중앙아시아 C1 E 구현(사건은 다음 세션)
-- key: '1878 yettishar 소멸'
-  reason: ca-05 사건 묶음이 채움
-  decided: 2026-11-05 중앙아시아 C1 E 구현(사건은 다음 세션)
-- key: '1991 kazakhstan 성립'
-  reason: ca-05 사건 묶음이 채움
-  decided: 2026-11-05 중앙아시아 C1 E 구현(사건은 다음 세션)
-- key: '1867 yettishar 버전'
-  reason: ca-05 사건 묶음이 채움
-  decided: 2026-11-05 중앙아시아 C1 E 구현(사건은 다음 세션)
-- key: '1870 yettishar 버전'
-  reason: ca-05 사건 묶음이 채움
-  decided: 2026-11-05 중앙아시아 C1 E 구현(사건은 다음 세션)
-- key: '1876 yettishar 버전'
-  reason: ca-05 사건 묶음이 채움
-  decided: 2026-11-05 중앙아시아 C1 E 구현(사건은 다음 세션)
-- key: '1877 yettishar 버전'
-  reason: ca-05 사건 묶음이 채움
-  decided: 2026-11-05 중앙아시아 C1 E 구현(사건은 다음 세션)
-- key: '1992 kazakhstan 버전'
-  reason: ca-05 사건 묶음이 채움
-  decided: 2026-11-05 중앙아시아 C1 E 구현(사건은 다음 세션)
 - key: '1865 russia 계산실패'
-  reason: 'ca-05 사건 묶음이 채움: 1865년 버전은 1864년 모양에 카자흐스탄 동쪽 끝(약 2.6만 km²)을 더한 것이라 대칭차가 그 넓이인데, 반올림 좌표에서 polyclip이 예외를 냄'
+  reason: 'ca-05 사건 묶음이 1865년 사건 tashkent-1865로 이었으나 남김: 1865년 버전은 1864년 모양에 카자흐스탄 동쪽 끝(약 2.6만 km²)을 더한 것이라 대칭차가 그 넓이인데, 반올림 좌표에서 polyclip이 예외를 냄(사건으로 지워지지 않는 계산실패 줄)'
   decided: 2026-11-05 중앙아시아 C1 E 구현(사건은 다음 세션)

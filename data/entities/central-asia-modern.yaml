@@ -45,7 +45,7 @@
     - 1918~1920년 투르크멘 지도자 주나이드 칸이 실권을 쥠
     - 1920~1924년 호라즘 인민 소비에트 공화국
   startEvents: []
-  endEvents: []
+  endEvents: [people-soviet-republics-1920, national-delimitation-1924]
   basis:
     type: primary_source
     refs: ["위키백과 Khanate of Khiva", "겐데미안 조약(1873)"]
@@ -64,7 +64,7 @@
     - 1991년 10월 국민 투표 뒤 독립을 선언함
     - 1995년 12월 유엔 총회가 영세 중립국 지위를 인정함
     - 사파르무라트 니야조프(1990~2006)가 종신 대통령으로 다스림
-  startEvents: []
+  startEvents: [central-asia-independence-1991]
   endEvents: []
   basis:
     type: primary_source
@@ -87,7 +87,7 @@
     - 1868년 러시아의 보호국이 된 뒤 샤흐리삽즈(1870)·다르바즈(1878 무렵) 등 동쪽 벡국들을 병합함
     - 1920년 부하라 인민 소비에트 공화국으로 바뀌었다가 1924년 소련의 민족 경계 획정으로 사라짐
   startEvents: []
-  endEvents: []
+  endEvents: [people-soviet-republics-1920, national-delimitation-1924]
   basis:
     type: primary_source
     refs: ["위키백과 Emirate of Bukhara", "러시아–부하라 강화 조약(1868)"]
@@ -108,7 +108,7 @@
     - 1868년 러시아와 통상 조약을 맺고 사실상 보호국이 됨
     - 1876년 러시아에 병합되어 페르가나주가 됨
   startEvents: []
-  endEvents: []
+  endEvents: [kokand-annexation-1876]
   basis:
     type: primary_source
     refs: ["위키백과 Khanate of Kokand", "러시아–코칸트 통상 조약(1868)"]
@@ -127,7 +127,7 @@
     - 1936년 카라칼파크 자치 공화국을 넣어 지금의 국경 모양을 거의 갖춤
     - 1991년 8월 31일 독립을 선언하고 12월 독립 국가 연합에 들어감
     - 2005년 안디잔에서 일어난 시위를 군대가 진압해 많은 사람이 죽음
-  startEvents: []
+  startEvents: [central-asia-independence-1991]
   endEvents: []
   basis:
     type: primary_source
@@ -147,7 +147,7 @@
     - 1991년 8월 31일 독립을 선언하고 12월 독립 국가 연합에 들어감
     - 2005년 튤립 혁명으로 아카예프 대통령이 물러남
     - 2010년 정변으로 바키예프 대통령이 물러나고 남부 오시에서 민족 충돌이 일어남
-  startEvents: []
+  startEvents: [central-asia-independence-1991]
   endEvents: []
   basis:
     type: primary_source
@@ -166,7 +166,7 @@
     - 1924년 우즈베크 공화국 안의 타지크 자치 공화국으로 세워져 1929년 후잔드 쪽을 더해 연방 공화국이 됨
     - 1991년 9월 9일 독립을 선언하고 12월 독립 국가 연합에 들어감
     - 1992~1997년 정부와 이슬람·민주 세력 연합 사이의 내전을 겪고 1997년 평화 협정을 맺음
-  startEvents: []
+  startEvents: [central-asia-independence-1991]
   endEvents: []
   basis:
     type: primary_source
@@ -189,8 +189,8 @@
     - 러시아(1872)·영국(1874)과 통상 조약을 맺음
     - 1876~1877년 좌종당이 이끈 청군에게 우루무치·투루판을 잃음
   mapNote: 지도에는 1865년부터 1877년까지. 1865년은 카슈가르·양기히사르·야르칸드·사리콜, 1867년부터 호탄·악수·쿠차, 1870년부터 카라샤르·투루판·우루무치를 넣음. 1876년 말에는 우루무치를, 1877년 말에는 투루판·카슈가르를 잃어 호탄 쪽만 남음. 경계는 지금의 지구 경계와 톈산 능선에 기댄 어림
-  startEvents: []
-  endEvents: []
+  startEvents: [yettishar-1865]
+  endEvents: [yettishar-1865]
   basis:
     type: primary_source
     refs: ["위키백과 Yettishar", "위키백과 Dungan Revolt (1862–1877)"]
@@ -208,7 +208,7 @@
     - 1991년 12월 16일 소련의 구성 공화국 가운데 마지막으로 독립을 선언함
     - 1994년부터 바이코누르 우주 기지를 러시아에 빌려줌
     - 1997년 수도를 알마티에서 아크몰라로 옮기고 이듬해 아스타나로 이름을 바꿈
-  startEvents: []
+  startEvents: [central-asia-independence-1991]
   endEvents: []
   basis:
     type: primary_source
