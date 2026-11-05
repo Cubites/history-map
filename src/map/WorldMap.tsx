@@ -76,6 +76,17 @@ const RETRY_MS = 5000;
 const onMapUi = (target: EventTarget | null) => target instanceof Element && !!target.closest('.map-ui');
 
 /**
+ * 휴대폰은 지도가 나라 정보 판 뒤까지 깔리므로(2026-11-05, useBottomSheet.ts) 범위를 맞출 때는 판이 늘 가리는 아래쪽(.app의 --sheet-cover)을 뺀 크기로 맞춘다.
+ * 그러면 범위가 판 위 보이는 곳 가운데에 온다(시점의 ty는 화면 위 끝 기준이라 줄인 크기로 구한 시점을 그대로 쓴다). PC·전쟁 보기는 판이 없어 그대로
+ */
+function visibleSize(size: Size): Size {
+  const app = document.querySelector<HTMLElement>('.app');
+  if (!app || !document.querySelector('.panel.sheet') || !window.matchMedia('(max-width: 768px)').matches) return size;
+  const cover = parseFloat(getComputedStyle(app).getPropertyValue('--sheet-cover')) || 0;
+  return { width: size.width, height: Math.max(120, size.height - cover) };
+}
+
+/**
  * 정밀도 단계 (DESIGN.md §3.1). 움직이는 동안에는 가볍게, 멈추거나 확대하면 정밀하게 그린다.
  * 확대할수록 화면 밖 영토를 건너뛰므로 정밀한 단계를 써도 계산량이 크게 늘지 않는다.
  */
@@ -175,7 +186,7 @@ export default function WorldMap({ data }: { data: StaticData }) {
     const prev = sized.current;
     viewRef.current = prev
       ? toView(size, s0, toGeoView(prev.size, prev.s0, viewRef.current))
-      : fitBounds(size, s0, REGION_FILTER_INFO[regionFilter].bounds ?? EAST_ASIA_BOUNDS);
+      : fitBounds(visibleSize(size), s0, REGION_FILTER_INFO[regionFilter].bounds ?? EAST_ASIA_BOUNDS);
     sized.current = { size, s0 };
   }
   const active = useMemo(() => activeTerritories(data.territories, year), [data.territories, year]);
@@ -715,7 +726,7 @@ export default function WorldMap({ data }: { data: StaticData }) {
     if (!size || regionFocus === shownRegionFocus.current) return;
     shownRegionFocus.current = regionFocus;
     const bounds = REGION_FILTER_INFO[regionFilter].bounds;
-    if (bounds && !warId) animateTo(fitBounds(size, s0, bounds));
+    if (bounds && !warId) animateTo(fitBounds(visibleSize(size), s0, bounds));
   }, [regionFocus, regionFilter, warId, size, s0, animateTo]);
   // 전쟁 보기 중에 전쟁 기간 밖의 연도로 옮기면(사건 목록의 이동 등) 전쟁 보기를 닫는다
   useEffect(() => {

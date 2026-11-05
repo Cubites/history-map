@@ -39,8 +39,9 @@ export function MajorEvents({ data }: { data: StaticData }) {
     const map = list?.closest('.app-main');
     if (!open || !list || !map) return;
     const fit = () => {
-      // 휴대폰은 지도 아래 14px가 나라 정보 판 뒤에 있으므로 그만큼 더 띄운다
-      const bottomGap = document.querySelector('.panel.sheet') ? 26 : 12;
+      // 휴대폰은 지도가 나라 정보 판 뒤까지 깔리므로 판이 가리는 높이(--sheet-cover, useBottomSheet.ts)만큼 더 띄운다
+      const cover = document.querySelector('.panel.sheet') ? parseFloat(getComputedStyle(map).getPropertyValue('--sheet-cover')) || 0 : 0;
+      const bottomGap = 12 + cover;
       list.style.maxHeight = `${Math.max(120, Math.round(map.getBoundingClientRect().bottom - list.getBoundingClientRect().top - bottomGap))}px`;
     };
     fit();

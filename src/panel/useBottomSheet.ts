@@ -16,10 +16,12 @@ const ORDER: SheetState[] = ['min', 'closed', 'open'];
 /**
  * 휴대폰 아래 나라 정보 패널을 끌어 올리고 내리는 판(바텀 시트)으로 (2026-10-28, DESIGN.md §6.5).
  * 접힌 높이는 화면 높이의 1/3(2026-10-28, 이름란이 그보다 크면 손잡이 + 나라 이름란([data-sheet-head]))이고, 손잡이를 위로 끌면 지도 위 검색창 아래까지 펼쳐진다.
- * 접힌 판을 아래로 더 끌면 손잡이(슬릿 막대)와 나라 이름란만 남고 그 아래는 숨는다(2026-11-05, 같은 날 손잡이만에서 이름란까지로 고침). 이때는 지도가 아래로 넓어진다.
+ * 접힌 판을 아래로 더 끌면 손잡이(슬릿 막대)와 나라 이름란만 남고 그 아래는 숨는다(2026-11-05, 같은 날 손잡이만에서 이름란까지로 고침). 그만큼 뒤의 지도가 드러난다.
  * 검색창을 누르면 펼친 판이 접힌다. 손잡이를 짧게 누르면 내림 → 접힘 → 펼침 → 접힘 순으로 바뀐다. 내린 채 다른 나라를 고르면 접힘으로 올라온다.
- * 높이는 CSS 변수(--sheet-peek 접힌 높이, --sheet-h 지금 높이, --sheet-flow 흐름 속 크기)로만 넘긴다. 휴대폰 CSS(.panel.sheet)가 높이와 음수 위 여백을 같이 바꿔
- * 흐름 속 크기는 접힌 높이 그대로(내렸을 때와 그보다 낮게 끄는 동안은 지금 높이)다. 그래서 펼쳐도 지도 크기가 바뀌지 않고 패널이 지도 위를 덮는다. PC에서는 CSS가 이 변수를 쓰지 않는다
+ * 높이는 CSS 변수(--sheet-peek 접힌 높이, --sheet-min 내린 높이, --sheet-h 지금 높이)로만 넘긴다. 휴대폰 CSS(.panel.sheet)가 높이와 같은 만큼의 음수 위 여백을 줘
+ * 흐름 속 크기는 늘 0이다. 지도는 화면 아래 끝까지 깔리고 판은 그 위에 뜬다(2026-11-05: 전에는 흐름 속 크기가 판 높이를 따라 바뀌어 끄는 동안 지도가 매번 크기를 바꿔 다시 그려 버벅였다).
+ * 판이 늘 가리는 높이(내림이면 내린 높이, 아니면 접힌 높이)는 앱(.app)의 --sheet-cover로 넘겨 지도 아래쪽 단추와 처음 시점(WorldMap)을 그 위로 맞춘다. 끄는 동안에는 바꾸지 않고 놓을 때만 바꾼다.
+ * PC에서는 CSS가 이 변수들을 쓰지 않는다
  */
 export function useBottomSheet(active: boolean, contentKey: unknown) {
   const ref = useRef<HTMLElement>(null);
@@ -37,6 +39,9 @@ export function useBottomSheet(active: boolean, contentKey: unknown) {
     return search ? Math.max(peekOf(el), Math.round(el.getBoundingClientRect().bottom - search.bottom - GAP_BELOW_SEARCH)) : peekOf(el);
   };
   const heightOf = (el: HTMLElement, s: SheetState) => (s === 'min' ? minOf(el) : s === 'open' ? openHeight(el) : peekOf(el));
+  // 판이 지도를 늘 가리는 높이를 앱에 넘긴다(펼침은 접힌 높이로 친다: 펼친 판 밑 단추는 가려져도 된다)
+  const setCover = (el: HTMLElement, s: SheetState) =>
+    el.closest<HTMLElement>('.app')?.style.setProperty('--sheet-cover', `${s === 'min' ? minOf(el) : peekOf(el)}px`);
 
   // 접힌 높이 = 화면 높이의 1/3과 (손잡이 + 나라 이름란 높이) 가운데 큰 것, 내린 높이 = 손잡이 + 나라 이름란 높이. 이름란이나 화면 크기가 바뀌면 다시 잰다
   useLayoutEffect(() => {
@@ -51,11 +56,9 @@ export function useBottomSheet(active: boolean, contentKey: unknown) {
       if (first) el.style.transition = 'none';
       el.style.setProperty('--sheet-peek', `${Math.max(byHead, Math.round(window.innerHeight / 3))}px`);
       el.style.setProperty('--sheet-min', `${byHead}px`);
-      // 내린 채 이름란 높이가 바뀌면(나라 선택 해제 등) 판 높이도 같이
-      if (el.dataset.sheet === 'min') {
-        el.style.setProperty('--sheet-h', `${byHead}px`);
-        el.style.setProperty('--sheet-flow', `${byHead}px`);
-      }
+      // 내린 채 이름란 높이가 바뀌면(나라 선택 해제 등) 판 높이도 같이. 끄는 중이 아니면 가리는 높이도 다시
+      if (el.dataset.sheet === 'min') el.style.setProperty('--sheet-h', `${byHead}px`);
+      if (el.dataset.sheet !== 'drag') setCover(el, el.dataset.sheet === 'min' ? 'min' : 'closed');
       if (first) {
         void el.offsetHeight;
         requestAnimationFrame(() => el.style.removeProperty('transition'));
@@ -79,17 +82,17 @@ export function useBottomSheet(active: boolean, contentKey: unknown) {
     const s = active ? state : 'closed';
     el.dataset.sheet = s;
     if (s !== 'open') el.scrollTop = 0;
-    if (s === 'closed') {
+    if (!active) {
+      el.closest<HTMLElement>('.app')?.style.removeProperty('--sheet-cover');
       el.style.removeProperty('--sheet-h');
-      el.style.removeProperty('--sheet-flow');
       return;
     }
-    const place = () => {
-      const h = heightOf(el, s);
-      el.style.setProperty('--sheet-h', `${h}px`);
-      if (s === 'min') el.style.setProperty('--sheet-flow', `${h}px`);
-      else el.style.removeProperty('--sheet-flow');
-    };
+    setCover(el, s);
+    if (s === 'closed') {
+      el.style.removeProperty('--sheet-h');
+      return;
+    }
+    const place = () => el.style.setProperty('--sheet-h', `${heightOf(el, s)}px`);
     place();
     const onResize = () => !keyboardHeld() && place();
     window.addEventListener('resize', onResize);
@@ -137,9 +140,8 @@ export function useBottomSheet(active: boolean, contentKey: unknown) {
     d.moved = true;
     el.dataset.sheet = 'drag';
     const h = Math.min(openHeight(el), Math.max(minOf(el), d.h + dy));
+    // 판 높이만 바꾼다(지도는 판 뒤에 깔려 있어 크기가 바뀌지 않음)
     el.style.setProperty('--sheet-h', `${h}px`);
-    // 접힌 높이보다 낮게 끄는 동안은 흐름 속 크기도 같이 줄여 판 위로 빈 곳이 생기지 않게(그만큼 지도가 넓어짐)
-    el.style.setProperty('--sheet-flow', `${Math.min(h, peekOf(el))}px`);
   }, []);
   const onPointerUp = useCallback((e: ReactPointerEvent<HTMLElement>) => {
     const el = ref.current;
@@ -159,14 +161,9 @@ export function useBottomSheet(active: boolean, contentKey: unknown) {
           : d.state;
     // 같은 단계로 돌아가도 끌던 높이를 지우도록 반영을 다시 일으킨다
     el.dataset.sheet = next;
-    if (next === 'closed') {
-      el.style.removeProperty('--sheet-h');
-      el.style.removeProperty('--sheet-flow');
-    } else {
-      el.style.setProperty('--sheet-h', `${heights[ORDER.indexOf(next)]}px`);
-      if (next === 'min') el.style.setProperty('--sheet-flow', `${heights[0]}px`);
-      else el.style.removeProperty('--sheet-flow');
-    }
+    if (next === 'closed') el.style.removeProperty('--sheet-h');
+    else el.style.setProperty('--sheet-h', `${heights[ORDER.indexOf(next)]}px`);
+    setCover(el, next);
     if (next !== 'open') el.scrollTop = 0;
     setState(next);
   }, []);
