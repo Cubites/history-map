@@ -5332,3 +5332,39 @@
 
 
 # ── 중앙아시아 C1 E (동, 2026-11-05): 카자흐·신장 칸이 이 아래에만 ──
+
+# ── 중앙아시아 C2 A (서남, 2026-11-05) ──
+- entity: mughal-empire
+  from: 1526
+  to: 1739
+  at: [68.42, 33.55]
+  reason: 카불 주(카불·가즈니와 동쪽 부족 땅, 번갈이 해에는 칸다하르도)는 카이버 고개 쪽 파슈툰 부족 땅(남아시아 지도에서 비움)을 사이에 두고 펀자브 쪽 무굴 본토와 떨어져 칠해짐. 1540~1554년 수르 왕조 때는 카불 쪽만 남음
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Kabul_Subah", "위키백과 영어판 https://en.wikipedia.org/wiki/Babur"]
+
+- entity: mughal-empire
+  from: 1540
+  to: 1541
+  at: [71.21, 29.53]
+  reason: 1540년 수르 왕조에 밀려 남은 물탄 쪽 무굴 땅(남아시아 지도)이 캄란이 지킨 카불·칸다하르 쪽과 떨어짐 — 카불 쪽이 더 넓어 본토로 잡힘
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Humayun"]
+
+- entity: safavid-iran
+  from: 1589
+  to: 1595
+  at: [65.71, 31.61]
+  reason: 우즈베크(부하라 칸국)가 헤라트·호라산을 차지한 1589~1597년 동안 사파비의 칸다하르는 부하라 칸국의 헤라트 땅을 사이에 두고 이란 본토와 떨어짐(1595년 무굴에 넘어감)
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Kandahar", "위키백과 영어판 https://en.wikipedia.org/wiki/Tahmasp_I"]
+
+- entity: hotak-dynasty
+  from: 1722
+  to: 1729
+  at: [65.71, 31.61]
+  reason: 호타키 왕조의 본거지 칸다하르와 1722~1728년 이스파한 쪽 정복지는 사파비 땅·비운 헤라트(아브달리)를 사이에 두고 떨어져 칠해짐
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Hotak_dynasty"]
+
+
+# ── 중앙아시아 C2 W (서, 2026-11-05) ──
+
+# ── 중앙아시아 C2 EK (카자흐스탄, 2026-11-05) ──
+
+# ── 중앙아시아 C2 EX (신장, 2026-11-05) ──

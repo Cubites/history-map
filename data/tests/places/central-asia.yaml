@@ -525,3 +525,297 @@
   expect: kazakhstan
   url: https://en.wikipedia.org/wiki/Baikonur_Cosmodrome
   from: 중앙아시아 C1 E 결과노트
+
+# ── 중앙아시아 C2 A (서남, 2026-11-05) ──
+- name: 카불
+  at: [69.17, 34.53]
+  year: 1510
+  expect: babur-kabul-kingdom
+  url: https://en.wikipedia.org/wiki/Babur
+  from: 중앙아시아 C2 A 결과노트
+- name: 칸다하르
+  at: [65.71, 31.61]
+  year: 1818
+  expect: kandahar-principality
+  url: https://en.wikipedia.org/wiki/Principality_of_Qandahar
+  from: 중앙아시아 C2 A 결과노트
+- name: 헤라트
+  at: [62.2, 34.35]
+  year: 1830
+  expect: herat-principality
+  url: https://en.wikipedia.org/wiki/Emirate_of_Herat
+  from: 중앙아시아 C2 A 결과노트
+- name: 칸다하르
+  at: [65.71, 31.61]
+  year: 1557
+  expect: mughal-empire
+  url: https://en.wikipedia.org/wiki/Tahmasp_I
+  from: 중앙아시아 C2 A 결과노트
+- name: 칸다하르
+  at: [65.71, 31.61]
+  year: 1558
+  expect: safavid-iran
+  url: https://en.wikipedia.org/wiki/Tahmasp_I
+  from: 중앙아시아 C2 A 결과노트
+- name: 칸다하르
+  at: [65.71, 31.61]
+  year: 1594
+  expect: safavid-iran
+  url: https://en.wikipedia.org/wiki/Kandahar
+  from: 중앙아시아 C2 A 결과노트
+- name: 칸다하르
+  at: [65.71, 31.61]
+  year: 1595
+  expect: mughal-empire
+  url: https://en.wikipedia.org/wiki/Kandahar
+  from: 중앙아시아 C2 A 결과노트
+- name: 칸다하르
+  at: [65.71, 31.61]
+  year: 1621
+  expect: mughal-empire
+  url: https://en.wikipedia.org/wiki/Mughal%E2%80%93Safavid_War_(1622%E2%80%931623)
+  from: 중앙아시아 C2 A 결과노트
+- name: 칸다하르
+  at: [65.71, 31.61]
+  year: 1622
+  expect: safavid-iran
+  url: https://en.wikipedia.org/wiki/Mughal%E2%80%93Safavid_War_(1622%E2%80%931623)
+  from: 중앙아시아 C2 A 결과노트
+- name: 칸다하르
+  at: [65.71, 31.61]
+  year: 1637
+  expect: safavid-iran
+  url: https://en.wikipedia.org/wiki/Mughal%E2%80%93Safavid_War_(1649%E2%80%931653)
+  from: 중앙아시아 C2 A 결과노트
+- name: 칸다하르
+  at: [65.71, 31.61]
+  year: 1638
+  expect: mughal-empire
+  url: https://en.wikipedia.org/wiki/Mughal%E2%80%93Safavid_War_(1649%E2%80%931653)
+  from: 중앙아시아 C2 A 결과노트
+- name: 칸다하르
+  at: [65.71, 31.61]
+  year: 1648
+  expect: mughal-empire
+  url: https://en.wikipedia.org/wiki/Mughal%E2%80%93Safavid_War_(1649%E2%80%931653)
+  from: 중앙아시아 C2 A 결과노트
+- name: 칸다하르
+  at: [65.71, 31.61]
+  year: 1649
+  expect: safavid-iran
+  url: https://en.wikipedia.org/wiki/Mughal%E2%80%93Safavid_War_(1649%E2%80%931653)
+  from: 중앙아시아 C2 A 결과노트
+- name: 헤라트
+  at: [62.2, 34.35]
+  year: 1590
+  expect: bukhara-khanate
+  url: https://en.wikipedia.org/wiki/Abdullah_Khan_II
+  from: 중앙아시아 C2 반영 1(창구 ③ 질문 5)
+
+# ── 중앙아시아 C2 W (서, 2026-11-05) ──
+- name: 부하라
+  at: [64.42, 39.77]
+  year: 1600
+  expect: bukhara-khanate
+  url: https://en.wikipedia.org/wiki/Khanate_of_Bukhara
+  from: 중앙아시아 C2 W 결과노트(수도)
+- name: 사마르칸트
+  at: [66.96, 39.65]
+  year: 1500
+  expect: none
+  region: central-asia
+  url: https://en.wikipedia.org/wiki/Khanate_of_Bukhara
+  from: 중앙아시아 C2 W 결과노트(1501 버전 앞(C3 몫 — 비움))
+- name: 사마르칸트
+  at: [66.96, 39.65]
+  year: 1501
+  expect: bukhara-khanate
+  url: https://en.wikipedia.org/wiki/Khanate_of_Bukhara
+  from: 중앙아시아 C2 W 결과노트(1501 버전)
+- name: 안디잔
+  at: [72.34, 40.78]
+  year: 1708
+  expect: bukhara-khanate
+  url: https://en.wikipedia.org/wiki/Khanate_of_Kokand
+  from: 중앙아시아 C2 W 결과노트(1709 코칸트 앞)
+- name: 안디잔
+  at: [72.34, 40.78]
+  year: 1709
+  expect: kokand-khanate
+  url: https://en.wikipedia.org/wiki/Khanate_of_Kokand
+  from: 중앙아시아 C2 W 결과노트(1709 코칸트)
+- name: 타슈켄트
+  at: [69.28, 41.31]
+  year: 1598
+  expect: bukhara-khanate
+  url: https://en.wikipedia.org/wiki/Khanate_of_Bukhara
+  from: 중앙아시아 C2 W 결과노트(샤이반 왕조 끝 앞)
+- name: 타슈켄트
+  at: [69.28, 41.31]
+  year: 1599
+  expect: none
+  region: central-asia
+  url: https://en.wikipedia.org/wiki/Khanate_of_Bukhara
+  from: 중앙아시아 C2 W 결과노트(1599~1809 비움)
+- name: 타슈켄트
+  at: [69.28, 41.31]
+  year: 1810
+  expect: kokand-khanate
+  url: https://en.wikipedia.org/wiki/Khanate_of_Kokand
+  from: 중앙아시아 C2 W 결과노트(1810 코칸트)
+- name: 샤흐리삽즈
+  at: [66.83, 39.05]
+  year: 1746
+  expect: bukhara-khanate
+  url: https://en.wikipedia.org/wiki/Khanate_of_Bukhara
+  from: 중앙아시아 C2 W 결과노트(동부 부하라 칼선 안(1747 앞))
+- name: 샤흐리삽즈
+  at: [66.83, 39.05]
+  year: 1747
+  expect: none
+  region: central-asia
+  url: https://en.wikipedia.org/wiki/Khanate_of_Bukhara
+  from: 중앙아시아 C2 W 결과노트(동부 부하라 칼선 안(1747 뒤 — 비움))
+- name: 투르크메나바트(차르주이)
+  at: [63.58, 39.08]
+  year: 1761
+  expect: none
+  region: central-asia
+  url: https://en.wikipedia.org/wiki/Khanate_of_Bukhara
+  from: 중앙아시아 C2 W 결과노트(레바프 강가 띠(1762 앞 — 비움))
+- name: 투르크메나바트(차르주이)
+  at: [63.58, 39.08]
+  year: 1762
+  expect: bukhara-khanate
+  url: https://en.wikipedia.org/wiki/Khanate_of_Bukhara
+  from: 중앙아시아 C2 W 결과노트(레바프 강가 띠(1762 차르주이))
+- name: 부하라
+  at: [64.42, 39.77]
+  year: 1784
+  expect: bukhara-khanate
+  url: https://en.wikipedia.org/wiki/Emirate_of_Bukhara
+  from: 중앙아시아 C2 W 결과노트(1785 에미르 칭호 앞)
+- name: 부하라
+  at: [64.42, 39.77]
+  year: 1785
+  expect: bukhara-emirate
+  url: https://en.wikipedia.org/wiki/Emirate_of_Bukhara
+  from: 중앙아시아 C2 W 결과노트(1785 에미르 칭호)
+
+# ── 중앙아시아 C2 EK (카자흐스탄, 2026-11-05) ──
+- name: 투르키스탄(카자흐 칸국 중심)
+  at: [68.25, 43.3]
+  year: 1700
+  expect: kazakh-khanate
+  url: https://en.wikipedia.org/wiki/Kazakh_Khanate
+  from: 중앙아시아 C2 EK 결과노트
+- name: 투르키스탄
+  at: [68.25, 43.3]
+  year: 1809
+  expect: kazakh-khanate
+  url: https://en.wikipedia.org/wiki/Kazakh_Khanate
+  from: 중앙아시아 C2 EK 결과노트
+- name: 투르키스탄
+  at: [68.25, 43.3]
+  year: 1810
+  expect: kokand-khanate
+  url: https://en.wikipedia.org/wiki/Khanate_of_Kokand
+  from: 중앙아시아 C2 EK 결과노트
+- name: 투르키스탄
+  at: [68.25, 43.3]
+  year: 1864
+  expect: none
+  url: https://en.wikipedia.org/wiki/Russian_conquest_of_Central_Asia
+  from: 중앙아시아 C2 EK 결과노트
+- name: 크질오르다(악메체트)
+  at: [65.5, 44.85]
+  year: 1817
+  expect: kokand-khanate
+  url: https://en.wikipedia.org/wiki/Kyzylorda
+  from: 중앙아시아 C2 EK 결과노트
+- name: 자이산
+  at: [84.87, 47.47]
+  year: 1633
+  expect: kazakh-khanate
+  url: https://en.wikipedia.org/wiki/Kazakh_Khanate
+  from: 중앙아시아 C2 EK 결과노트
+- name: 자이산
+  at: [84.87, 47.47]
+  year: 1634
+  expect: dzungar-khanate
+  url: https://en.wikipedia.org/wiki/Dzungar_Khanate
+  from: 중앙아시아 C2 EK 결과노트
+- name: 자이산
+  at: [84.87, 47.47]
+  year: 1759
+  expect: qing
+  url: https://en.wikipedia.org/wiki/Treaty_of_Tarbagatai
+  from: 중앙아시아 C2 EK 결과노트
+- name: 악퇴베(엠바 서쪽)
+  at: [57.2, 50.28]
+  year: 1699
+  expect: none
+  url: https://en.wikipedia.org/wiki/Kazakh_Khanate
+  from: 중앙아시아 C2 EK 결과노트
+
+# ── 중앙아시아 C2 EX (신장, 2026-11-05) ──
+- name: 코를라
+  at: [86.15, 41.76]
+  year: 1600
+  expect: yarkand-khanate
+  url: https://en.wikipedia.org/wiki/Yarkent_Khanate
+  from: 중앙아시아 C2 반영 1(창구 ③ 질문 4)
+- name: 야르칸드
+  at: [77.24, 38.42]
+  year: 1600
+  expect: yarkand-khanate
+  url: https://en.wikipedia.org/wiki/Yarkent_Khanate
+  from: 중앙아시아 C2 EX 결과노트
+- name: 투루판
+  at: [89.19, 42.95]
+  year: 1550
+  expect: turfan-khanate
+  url: https://en.wikipedia.org/wiki/Turpan_Khanate
+  from: 중앙아시아 C2 EX 결과노트
+- name: 굴자
+  at: [81.33, 43.92]
+  year: 1700
+  expect: dzungar-khanate
+  url: https://en.wikipedia.org/wiki/Dzungar_Khanate
+  from: 중앙아시아 C2 EX 결과노트
+- name: 카슈가르
+  at: [75.99, 39.47]
+  year: 1679
+  expect: yarkand-khanate
+  url: https://en.wikipedia.org/wiki/Yarkent_Khanate
+  from: 중앙아시아 C2 EX 결과노트
+- name: 카슈가르
+  at: [75.99, 39.47]
+  year: 1680
+  expect: dzungar-khanate
+  url: https://en.wikipedia.org/wiki/Dzungar_Khanate
+  from: 중앙아시아 C2 EX 결과노트
+- name: 바르쿨
+  at: [93.0, 43.6]
+  year: 1695
+  expect: dzungar-khanate
+  url: https://en.wikipedia.org/wiki/Dzungar_Khanate
+  from: 중앙아시아 C2 EX 결과노트
+- name: 바르쿨
+  at: [93.0, 43.6]
+  year: 1696
+  expect: qing
+  url: https://en.wikipedia.org/wiki/Dzungar_Khanate
+  from: 중앙아시아 C2 EX 결과노트
+- name: 굴자
+  at: [81.33, 43.92]
+  year: 1758
+  expect: dzungar-khanate
+  url: https://en.wikipedia.org/wiki/Dzungar_Khanate
+  from: 중앙아시아 C2 EX 결과노트
+- name: 굴자
+  at: [81.33, 43.92]
+  year: 1759
+  expect: qing
+  url: https://en.wikipedia.org/wiki/Dzungar_Khanate
+  from: 중앙아시아 C2 EX 결과노트

@@ -53,10 +53,7 @@
 import { D, I, U } from '../../lib.mjs';
 import { ALL_IDS, CA, CN, DOMAIN, F, XJ, XJ_ID, idsOf, minus, tableKit } from './table.mjs';
 import { RU_CA_ZONES, RU_CA_LINES, versions as EUROPE_VERSIONS } from '../europe.mjs';
-import { versions as CHINA_VERSIONS } from '../china.mjs';
-import { versions as INNER_ASIA_VERSIONS, fillSpecs as INNER_ASIA_FILLS } from '../inner-asia.mjs';
-import { versions as MIDDLE_EAST_VERSIONS, extensions as MIDDLE_EAST_EXTENSIONS } from '../middle-east.mjs';
-import { versions as SOUTH_ASIA_VERSIONS, extensions as SOUTH_ASIA_EXTENSIONS } from '../south-asia.mjs';
+import { PREV_IDS, deg2, prevListOf, prevMinusOf } from './prev.mjs';
 
 const { build, geomOfUnit, joinTables, makeTable } = tableKit('modern');
 
@@ -64,50 +61,8 @@ const C1_START = 1865; // 이 시대 파일의 첫 해(1865년 말 모습). 그 
 const PRESENT = 2026; // 지금 해. 표는 PRESENT년 말까지 정하고, 끝까지 이어지는 버전은 to: null(지금까지)
 const C1_END = PRESENT + 1; // 마지막 표의 끝(미포함)
 
-// ── 다른 권역 도형 빼기 (C1 뼈대가 짬 — 칸은 고치지 않음) ─────────────────────────────
-// 1865~2026년 이 권역 조각(83개)·신장 조각과 1 km² 넘게 겹치는 앞 권역 나라(뼈대 측정 c1/skel/prev-overlap.txt — 해 1865·1866·1868·1873·1876·1881·1884·1895·1900·1918·1924·1946·1950·1992·2000·2022):
-//   조각 83개 안: russia(1865 2,358,461 → 1895 3,845,812 km²)·soviet-union(3,845,812)·russia-fed(4,724, 카자흐스탄 북쪽 가장자리)
-//   신장 조각 안: qing·roc(80,876 — 동쪽 띠)·prc(78,697)·mongolia(2,179, 1924년 판부터 — roc가 그만큼 줄어듦)·russia(6,473 → 9,491)·soviet-union(9,491, 러시아 구역의 신장 넘침 — 기본값 5로 고치지 않음)
-//   이란·파키스탄·인도 쪽은 조각끼리 0 km²(under·이음매)라 할 일 없음.
-//   mongolia는 inner-asia.mjs의 빈 땅 채우기(fillSpecs, 1921~)로만 생기는 나라라 버전 대신 채우기 구역을 쓴다. 채우기는 이 권역 땅을 뺀 뒤 돌므로
-//   이 권역이 그 구역을 칠하면 몽골이 줄어든다 — 구역을 권역 바깥선으로 자른 땅을 통째로 빼면 몽골 땅(신장 조각 안 2,179 km²)이 그대로 남는다
-//   (구역 안에서 다른 앞 권역 나라가 덮는 땅도 함께 빠지지만 그 땅은 어차피 빼므로 뺄 땅 합은 같다).
-const PREV_IDS = ['russia', 'soviet-union', 'russia-fed', 'qing', 'roc', 'prc', 'mongolia'];
-const PREV_AREAS = [EUROPE_VERSIONS, CHINA_VERSIONS, INNER_ASIA_VERSIONS, MIDDLE_EAST_VERSIONS, MIDDLE_EAST_EXTENSIONS, SOUTH_ASIA_VERSIONS, SOUTH_ASIA_EXTENSIONS];
-const prevLists = new Map(); // 나라 id → [[from, to(끝 없음은 Infinity), 원래 도형], ...]
-const prevListOf = (id) => {
-  if (!prevLists.has(id)) {
-    const list = [
-      ...PREV_AREAS.flatMap((table) => table?.[id] ?? []).map(([f, t, g]) => [f, t ?? Infinity, g]),
-      ...INNER_ASIA_FILLS.filter((sp) => sp.id === id).map((sp) => [sp.from, sp.to === 3000 ? Infinity : sp.to, sp.zone]), // 채우기 끝 없음은 to: 3000
-    ];
-    if (!list.length) throw new Error(`central-asia modern: 앞 권역에 나라 ${id}의 버전이 없음 (prevMinusOf의 PREV_IDS를 다시 잰다)`);
-    prevLists.set(id, list);
-  }
-  return prevLists.get(id);
-};
-const clipped = new Map(); // 원래 도형 → 권역 바깥선(조각 83개 + 신장)으로 자른 도형
-const clipToDomain = (g) => {
-  if (!clipped.has(g)) clipped.set(g, I(g, DOMAIN));
-  return clipped.get(g);
-};
-const deg2 = (m) => m.reduce((s, poly) => s + poly.reduce((s2, r, k) => { let a2 = 0; for (let i = 0, j = r.length - 1; i < r.length; j = i++) a2 += (r[j][0] + r[i][0]) * (r[j][1] - r[i][1]); return s2 + (k === 0 ? 1 : -1) * Math.abs(a2 / 2); }, 0), 0);
-// [from, to) 동안 뺄 앞 권역 도형 목록(to는 미포함, 끝 없음은 null). except: 빼지 않을 나라 id(깎기 구역 안 보호국 땅의 'russia'·'soviet-union')
-export const prevMinusOf = (from, to, except = []) => {
-  const T = to ?? Infinity;
-  if (!Number.isInteger(from) || !(T === Infinity || (Number.isInteger(T) && from < T))) throw new Error(`central-asia modern prevMinusOf: 기간 [${from}, ${to})이 틀림`);
-  for (const id of except) if (!PREV_IDS.includes(id)) throw new Error(`central-asia modern prevMinusOf: except의 ${id}는 PREV_IDS(${PREV_IDS.join(', ')})가 아님`);
-  const out = [];
-  for (const id of PREV_IDS) {
-    if (except.includes(id)) continue;
-    const hits = prevListOf(id).filter(([f, t]) => f < T && from < t).map(([f, t, g]) => [f, t, clipToDomain(g)]).filter(([, , g]) => g.length);
-    if (!hits.length) continue;
-    const sizes = [...new Set(hits.map(([, , g]) => Math.round(deg2(g) * 1e6)))];
-    if (sizes.length > 1) throw new Error(`central-asia modern prevMinusOf: [${from}, ${to}) 안에서 ${id}의 도형이 바뀜(버전 ${hits.map(([f, t]) => `${f}~${t === Infinity ? '' : t - 1}`).join(', ')}) — 그 해를 BOUNDS에 넣거나 기간을 나눠 부른다`);
-    out.push(hits[0][2]);
-  }
-  return out;
-};
+// ── 다른 권역 도형 빼기 ─────────────────────────────
+// prevMinusOf·PREV_IDS·prevListOf·deg2는 도우미 모듈 ./prev.mjs(C2 뼈대가 이 파일에서 옮김 — C1·C2가 함께 씀, 칸은 고치지 않음). 측정·쓰는 법은 그 모듈 머리
 
 // ── 조각 소유표 도우미 (남아시아 S4 ancient.mjs와 같은 꼴, 표가 여럿) ─────────────────────────────
 // 표 경계 해(BOUNDS)는 칸 머리의 A_BOUNDS·W_BOUNDS·E_BOUNDS를 칸 줄 뒤에서 합친다 — 그래서 아래 도우미는 BOUNDS를 fillTables에서만 본다
@@ -164,59 +119,9 @@ const B = (from, to, ...units) => [from, to, build(units)];
 // 앞 권역 도형: A_prevSpan(from, to)이 [from, to) 동안 이 칸 조각과 겹치는 앞 권역 도형(prevMinusOf를 해마다 불러 칸 땅으로 자름)을 돌려주고, 그 사이 넓이가 바뀌면 멈춘다
 //   (prevMinusOf는 권역 전체를 보므로 신장·카자흐 쪽 해에도 멈추지만, 이 칸 땅 안에서는 러시아 구역 해 1854·1868·1873·1881·1884·1895에만 바뀐다).
 import { bx as A_bx, rev as A_rev, ring as A_ring } from '../../lib.mjs';
+// 칼선·도형 상수와 칸 땅·앞 권역 도형 자르기는 도우미 모듈 ./cuts.mjs(C2 뼈대가 옮김 — 이름·식 그대로)
+import { A_AF, A_KH, A_TM, A_DOM_AF, A_DOM_KH, A_prevSpan, A_minus, A_K73, A_K65, A_NORTH, A_BDS, A_HAZ, A_KAF, A_LEBAP_N } from './cuts.mjs';
 const A_BOUNDS = [1868, 1873, 1881, 1883, 1884, 1893, 1895, 1896, 1924, 1992]; // 이 칸 표 경계 해: 러시아 구역 해(1868·1873·1881·1884·1895 — 넘침·히바 묶음이 바뀜), 아프가니스탄 단계(1873·1883·1893·1896, 결정 6), 1924 민족 경계 획정, 1992 독립
-const A_AF = idsOf('AFG'); // 아프가니스탄 34조각
-const A_KH = ['UZ-XO', 'UZ-QR', 'TM-D']; // 히바 칸국이 걸친 조각(호라즘·카라칼파크스탄·다쇼구즈)
-const A_TM = ['TM-A', 'TM-B', 'TM-M']; // 투르크멘 땅(아할·발칸·마리)
-const A_DOM_AF = F(...A_AF); // 아프가니스탄 쪽
-const A_DOM_KH = F(...A_KH, ...A_TM); // 히바·투르크멘 쪽
-const A_clip = new Map(); // 칸 땅 도형 → (앞 권역 도형(prevMinusOf가 돌려준 잘린 도형) → 그 땅으로 자른 도형)
-const A_prevAt = (y, dom) => {
-  if (!A_clip.has(dom)) A_clip.set(dom, new Map());
-  const memo = A_clip.get(dom);
-  return prevMinusOf(y, y + 1).map((g) => {
-    if (!memo.has(g)) memo.set(g, I(g, dom));
-    return memo.get(g);
-  }).filter((g) => g.length);
-};
-// [from, to) 동안 dom(칸 땅의 한쪽) 안 앞 권역 도형. 그 사이 넓이가 바뀌면 멈춤
-const A_prevSpan = (from, to, dom) => {
-  const first = A_prevAt(from, dom);
-  const size = first.reduce((t, g) => t + deg2(g), 0);
-  for (let y = from + 1; y < to; y++) {
-    const s = A_prevAt(y, dom).reduce((t, g) => t + deg2(g), 0);
-    if (Math.abs(s - size) > 1e-4) throw new Error(`central-asia modern C1-A: ${from}~${to - 1} 안 ${y}년에 이 칸 땅의 앞 권역 도형이 바뀜(${size.toFixed(5)} → ${s.toFixed(5)}제곱도) — A_BOUNDS·묶음 기간을 나눈다`);
-  }
-  return first.length ? U(...first) : [];
-};
-const A_minus = (g, p) => (p.length ? D(g, p) : g);
-// 러시아 1873 구역(유럽 SIBERIA_ZONES 1873 링, RU_CA_ZONES.Z1873 — 히바 칸국 보호국화 단계). 남쪽 변(북위 약 41°, 다쇼구즈 오아시스 남쪽 카라쿰 가장자리)을 히바–투르크멘 땅 선으로 다시 쓴다.
-// 구역 링 대신 그 링으로 그린 1873~1880년 러시아 도형(이 칸 땅으로 자름)을 써서 깎은 뒤 남는 띠가 없게 한다
-const A_PREV1873 = A_prevSpan(1873, 1881, A_DOM_KH);
-
-// 칼선 1 A_AMU(아무다리야 본류, 카라칼파크스탄 UZ-QR 안 — 남쪽 UZ-XO·UZ-QR 경계 끝 60.46,41.97에서 옛 아랄해 기슭까지, 남→북).
-//   기준 도시: 왼쪽(서) 망기트(60.06,42.12)·호젤리(59.46,42.40)·타히아타시(59.60,42.32)·샤마나이(58.92,42.71)·칸리쿨(59.0,42.83)·쿤그라트(58.91,43.08)·무이나크(59.03,43.77),
-//   오른쪽(동) 누쿠스(59.61,42.46)·케게일리(59.61,42.78)·침바이(59.78,42.94)·카라우자크(60.0,43.0)·타흐타쿠피르(60.29,43.02) — 강 자료(Natural Earth 10m 강)가 저장소에 없어 기슭 도시 사이로 그은 어림(estimated)
-const A_AMU = [[60.46, 41.97], [60.25, 42.2], [59.95, 42.3], [59.65, 42.36], [59.5, 42.5], [59.3, 42.78], [59.1, 43.0], [59.1, 43.3], [59.25, 43.6], [59.35, 44.0]];
-// 칼선 2 A_CUT_KHIVA_W(히바 왼쪽 기슭: 서쪽 우스튜르트 낭떠러지(zones.yaml ustyurt-plateau 동쪽 변보다 약 0.3° 바깥)·북쪽 옛 아랄해 기슭(북위 44.0°)·동쪽 아무다리야).
-//   UZ-XO(호라즘)는 통째로 더하고, UZ-QR·TM-D는 이 링 ∩ 러시아 1873 구역 도형(남쪽 변 = 다쇼구즈 오아시스 남쪽)으로 자른다. 남동쪽 변(60.4,41.9 → 61.0,41.2)은 UZ-XO 안이라 도형에 영향 없음
-const A_CUT_KHIVA_W = A_ring([[56.9, 40.3], [56.9, 41.45], [57.75, 42.2], [58.55, 43.25], [58.35, 44.0]], A_rev(A_AMU), [[60.4, 41.9], [61.0, 41.2], [61.1, 40.3]]);
-// 칼선 3 A_CUT_KHIVA_RIGHT(1865~1872 히바의 아무다리야 오른쪽 기슭: 카라칼파크 정착지 누쿠스·케게일리·침바이·타흐타쿠피르·베루니·투르트쿨·엘리칼라, 동쪽은 키질쿰 가장자리
-//   (zones.yaml kyzylkum-desert 서쪽 변보다 약 0.3° 안), 남쪽 끝은 부하라 쪽 UZ-NW·UZ-BU 조각 경계). 1873년 겐데미안 조약으로 러시아 아무다리야 관구가 됨(러시아 도형 1873 구역)
-const A_CUT_KHIVA_RIGHT = A_ring(A_AMU, [[60.25, 44.0], [60.5, 43.6], [60.8, 43.0], [61.2, 42.4], [61.75, 41.85], [62.3, 41.4], [62.6, 40.9], [61.2, 41.1], [60.6, 41.5], [60.4, 41.9]]);
-const A_K73 = U(F('UZ-XO'), I(I(F('UZ-QR', 'TM-D'), [[A_CUT_KHIVA_W]]), A_PREV1873)); // 히바 칸국 1873~1923(왼쪽 기슭)
-const A_K65 = U(A_K73, I(F('UZ-QR'), [[A_CUT_KHIVA_RIGHT]])); // 히바 칸국 1865~1872(양쪽 기슭)
-
-// 칼선 4 A_CUT_HAZARA(하자라자트, 1891~1893 압두르 라흐만 정복 — 결정 6의 1893 단계): 다이쿤디(AFG-1753) 대부분, 바미안 서부(판자브·와라스·야카울랑, 바미안 골짜기는 밖),
-//   고르 동부(랄와사르장갈), 우루즈간 북부(하스우루즈간·기자브), 가즈니 서부(자고리·말리스탄·나와르), 와르다크 서부(베흐수드). 경계 사료가 없어 지구 이름에 기댄 어림(estimated)
-const A_CUT_HAZARA = A_ring([[65.75, 34.75], [66.1, 35.1], [66.45, 35.1], [67.1, 35.05], [67.55, 34.75], [67.65, 34.5], [68.05, 34.4], [68.15, 34.1], [67.95, 33.75], [67.75, 33.35], [67.6, 33.0],
-  [67.1, 32.85], [66.5, 32.75], [65.9, 32.95], [65.4, 33.35], [65.4, 34.0], [65.6, 34.45]]);
-// 칼선 5 A_CUT_KAFIR(카피리스탄 가운데 지금 누리스탄주 밖: 라그만 북부 알링가르·알리샹 위쪽 골짜기, 쿠나르 북서 페치강 위쪽 — 1991년 누리스탄주가 두 주에서 떨어져 나옴)
-const A_CUT_KAFIR = A_ring([[69.8, 34.95], [71.05, 34.95], [71.05, 35.3], [70.0, 35.6]]);
-const A_NORTH = F('AF-FYB', 'AF-JOW', 'AF-SAR'); // 북부 칸국(마이마나·안드호이·시베르간·아크차·사르이풀) — 1873 영러 협정으로 아프간 땅 인정
-const A_BDS = F('AF-BDS'); // 바다흐샨·와한 — 1883
-const A_HAZ = I(F('AF-BAM', 'AF-GHO', 'AF-GHA', 'AF-WAR', 'AFG-1752', 'AFG-1753'), [[A_CUT_HAZARA]]); // 하자라자트 — 1893
-const A_KAF = U(F('AF-NUR'), I(F('AF-LAG', 'AF-KNR'), [[A_CUT_KAFIR]])); // 카피리스탄 — 1896
 const A_AF_UNITS = {};
 for (const [from, to] of [[1865, 1868], [1868, 1884], [1884, 1895], [1895, 1992]]) {
   // 1895년부터의 넘침은 와한 동쪽 끝(74.891,37.232, 러시아 남쪽 한계 L_AFG_N 꼭짓점)에서 아프간 쪽에 넓이 0 조각을 남겨 그 둘레 0.1 km 네모(약 0.01 km²)를 넘침에 더한다
@@ -241,15 +146,6 @@ own(['UZ-XO', 'UZ-QR'], [[1924, null], [1992, 'uzbekistan']]);
 own(A_TM, [[1865, null], [1992, 'turkmenistan']]);
 
 // 깎기(결정 1 — 영향표 '줄임' 승인): 히바 칸국 1873~1923 땅을 러시아(1873~1917)·소련(1918~1923)에서 뺀다. 뺄 땅은 히바 단위 도형 그대로(러시아가 덮지 않는 몫은 차집합에서 사라짐)
-// 합칠 때 더함: 레바프(TM-L, W 칸 조각) 북쪽 끝과 다쇼구즈(TM-D) 동쪽 끝(칼선 2 동쪽)의 러시아 1873 구역 몫(약 96 km², 세 조각)과
-// 히바 남쪽 변(59,40.9 → 60.4,40.9933)에 남는 러시아 띠(약 20~24 km², 폭 0.16 km)는 히바 땅을 깎자 러시아 몸통과 끊긴 부스러기라 1873~1883년 히바 땅과 한 조각으로 깎는다.
-// 구역 링 대신 그보다 조금 넓은 상자로 자른다(링 변으로 자르면 러시아 도형 변과 겹쳐 폭 0.35 km 띠·넓이 0 조각이 남음 — 상자 안 1873~1883년 다른 러시아 땅 없음, 지점 판정으로 확인).
-// 서쪽 상자의 남쪽 변은 그 띠의 남쪽 변(러시아 1873 구역 링 변) 그대로라 1881년 구역 러시아 땅을 건드리지 않음.
-// TM-L 쪽은 W 칸 voids '레바프 남서쪽 카라쿰'이 비우고, 1884년부터는 메르브 구역으로 다시 이어져 러시아 그대로
-// 서쪽 상자의 서남 꼭짓점은 러시아 1873 구역 링의 꼭짓점(유럽 SIBERIA_ZONES)을 그대로 가져다 씀(좌표를 다시 적지 않음)
-const A_Z73_SW = RU_CA_ZONES.Z1873.flat().find((q) => q[0] === 59 && q[1] === 40.9);
-if (!A_Z73_SW) throw new Error('central-asia modern C1-A: 러시아 1873 구역 링에서 히바 남쪽 변 꼭짓점을 찾지 못함');
-const A_LEBAP_N = U(I(F('TM-L', 'TM-D'), [[A_ring([[60.4, 40.85], [61.75, 40.85], [61.75, 41.5], [60.4, 41.5]])]]), [[A_ring([A_Z73_SW, [60.4, 40.9933], [60.4, 41.3], [A_Z73_SW[0], 41.3]])]]);
 const A_TRIMS = { russia: [[1873, 1884, U(A_K73, A_LEBAP_N)], [1884, 1918, A_K73]], 'soviet-union': [[1918, 1924, A_K73]] };
 // 비운 땅(fillTables 뒤에 부름): 그해 이 칸의 주인 없는 단위에서 그해 앞 권역 도형(러시아)을 뺀 땅
 const A_voids = () => {
@@ -283,44 +179,17 @@ const A_voids = () => {
 // ── C1 W 서 (부하라·코칸트·우즈베크·타지크·키르기스, 구현 C1-W): 칼선·상수·import·own 줄·voids·깎기는 이 아래에, 최상위 이름은 W_ ──
 // 조각: UZ-AN·BU·FA·JI·NG·NW·QA·SA·SI·SU·TK·TO, TJ-DU·GB·KT·SU·TJK-368, KG-B·C·GB·J·N·O·T·Y, TM-L. 정의 항목 bukhara-emirate·kokand-khanate·uzbekistan·tajikistan·kyrgyzstan, 칠하기만 turkmenistan(TM-L 1992~)
 import { P as W_P, ring as W_ring } from '../../lib.mjs';
+// 러시아 구역 링·칼선·코칸트·조각 목록·1865 부분 목록은 도우미 모듈 ./cuts.mjs(C2 뼈대가 옮김 — 이름·식 그대로)
+import { W_Z_OLD, W_Z66, W_Z68, W_Z73, W_CUT_BUKHARA_KYZYLKUM, W_CUT_LEBAP, W_UZ, W_TJ, W_KG, W_IDS, W_FER_IDS, W_REST_IDS, W_FER_PARTS, W_REST_PARTS_1865 } from './cuts.mjs';
 // 표 경계 해: 1866(후잔드·우라튜베·지작 러시아 점령), 1868(사마르칸트 할양·보호국), 1876(코칸트 병합), 1883(아프가니스탄의 슈그난·로샨 점령), 1884(레바프 남쪽 러시아 구역), 1895(파미르 협정), 1918·1924(소련·민족 경계 획정), 1992(독립)
 const W_BOUNDS = [1866, 1868, 1876, 1883, 1884, 1895, 1918, 1924, 1992];
-// 러시아 구역 링(유럽 SIBERIA_ZONES 그대로)을 멀티폴리곤으로. 보호국–러시아 선은 이 링의 변을 다시 쓴다(좌표를 옮겨 적지 않음)
-const W_Z = (k) => RU_CA_ZONES[k].map((r) => [r]);
-const W_Z_OLD = U(W_Z('Z1854'), W_Z('Z1864')); // 1865년 말 이미 러시아(대주즈·이식쿨 둘레)
-const W_Z66 = W_Z('Z1866'); // 타슈켄트·침켄트·추강·탈라스(러시아 도형 1866~)
-const W_Z68 = W_Z('Z1868'); // 사마르칸트·부하라·코칸트·톈산 안쪽(러시아 도형 1868~) — 남동 변(72.0,39.2 → 71.3,38.0 → 70.5,36.5)이 부하라 동쪽 끝
-const W_Z73 = W_Z('Z1873'); // 아무다리야 오른쪽(1873~)
-const W_Z95 = W_Z('Z1895'); // 파미르(1895~)
-// 칼선(손그림 어림, 근거는 결과 노트 3절). 모두 이 칸 조각과 겹치는 부분만 쓴다
-// 키질쿰 북쪽: 부하라의 북쪽 끝(카르마나·누라타 북쪽 사막, 주변 등급 키질쿰 구역 안). 북쪽은 1868년부터 러시아 구역 그대로, 1865~1867은 비움
-const W_CUT_BUKHARA_KYZYLKUM = W_P(W_ring([[60.0, 41.3], [62.0, 41.25], [63.5, 41.1], [64.6, 40.95], [65.6, 40.85], [66.5, 40.75], [67.5, 40.75], [67.5, 45.0], [60.0, 45.0]]));
-// 동부 부하라·샤흐리삽즈(1865~1867 비움 — 1868 보호국 버전부터 부하라): 카시카다리야 위쪽(샤흐리삽즈·키타브)과 바이순타우 동쪽 수르한다리야 골짜기(히사르 벡국 쪽). 테르메즈·바이순·구자르는 부하라
-const W_CUT_EAST_BUKHARA = W_P(W_ring([[66.45, 39.6], [68.5, 39.6], [68.5, 37.0], [67.65, 37.15], [67.5, 37.5], [67.35, 38.0], [67.45, 38.5], [67.1, 38.65], [66.6, 38.8]]));
-// 투르키스탄 산줄기 남쪽(소그드주의 제라프샨 골짜기 — 판지켄트·아이니·코히스탄): 1865~1867 부하라, 1868 할양(1866 점령 땅이 아님)
-const W_CUT_TURKESTAN = W_P(W_ring([[67.0, 39.78], [68.0, 39.72], [68.6, 39.55], [69.3, 39.55], [70.0, 39.65], [70.8, 39.6], [70.8, 38.5], [67.0, 38.5]]));
-// 후잔드–코칸트: 소그드주 북부에서 동경 70.0° 동쪽(칸이바담·이스파라·아슈트)은 코칸트, 서쪽(후잔드·우라튜베)은 1865년 부하라(1866 러시아 점령)
-const W_CUT_KHUJAND = W_P(W_ring([[70.0, 38.5], [71.5, 38.5], [71.5, 41.6], [70.0, 41.6]]));
-// 레바프 왼쪽 기슭(차르주이–케르키–켈리프의 강가 띠, 러시아 1884 구역 안): 부하라. 그 남서쪽 카라쿰은 투르크멘 땅(1884부터 러시아 구역, 그 앞은 비움)
-const W_CUT_LEBAP = W_P(W_ring([[63.2, 39.05], [63.9, 38.55], [64.6, 37.95], [65.1, 37.55], [65.6, 37.25], [66.1, 37.1], [66.7, 37.1], [66.7, 38.5], [64.5, 38.6], [63.2, 39.4]]));
 // 슈그난·로샨·와한 오른쪽 기슭(고르노바다흐샨 서부 골짜기, 1883~1894 아프가니스탄 점령): 동쪽 변은 무르가브 고원 서쪽 끝 어림. 서쪽 변은 러시아 1868 구역(W_Z68)을 빼서 정해지므로 링의 서쪽 꼭짓점은 그 안 아무 데나
 const W_CUT_SHUGNAN = W_P(W_ring([[70.8, 39.3], [72.6, 39.25], [72.7, 38.9], [72.85, 38.45], [72.65, 38.1], [72.85, 37.75], [73.1, 37.45], [73.2, 37.1], [73.2, 36.6], [70.3, 36.4]]));
 // 고르노바다흐샨 조각에서 부하라가 가지는 1868 구역 몫은 북위 39.15° 남쪽(다르바즈·반즈)만 — 그 북쪽 알라이 쪽 104 km²는 따로 떨어진 조각이라 파미르와 함께 비움(1895부터 러시아)
 const W_GB_SOUTH = W_P(W_ring([[69.5, 36.0], [73.0, 36.0], [73.0, 39.15], [69.5, 39.15]]));
-const W_KOKAND_IDS = ['UZ-AN', 'UZ-FA', 'UZ-NG', 'KG-O', 'KG-B', 'KG-J'];
-const W_KOKAND = U(F(...W_KOKAND_IDS), I(F('TJ-SU'), D(W_CUT_KHUJAND, W_CUT_TURKESTAN))); // 페르가나 분지와 둘레 산(차트칼·페르가나·알라이), 1866 구역 몫은 앞 부분이 뗌
-const W_UZ = ['UZ-AN', 'UZ-BU', 'UZ-FA', 'UZ-JI', 'UZ-NG', 'UZ-NW', 'UZ-QA', 'UZ-SA', 'UZ-SI', 'UZ-SU', 'UZ-TK', 'UZ-TO'];
-const W_TJ = ['TJ-DU', 'TJ-GB', 'TJ-KT', 'TJ-SU', 'TJK-368'];
-const W_KG = ['KG-B', 'KG-C', 'KG-GB', 'KG-J', 'KG-N', 'KG-O', 'KG-T', 'KG-Y'];
-const W_IDS = [...W_UZ, ...W_TJ, ...W_KG, 'TM-L'];
 // 페르가나 쪽(코칸트 조각 + 소그드주): 1865~1923 한 묶음 — 코칸트 1865~1875 한 버전, 후잔드·우라튜베 1865 부하라(1866 러시아 점령), 제라프샨 골짜기 1865~1867 부하라(1868 할양)
-const W_FER_IDS = [...W_KOKAND_IDS, 'TJ-SU'];
 const W_UF = ownSplit('W_페르가나', W_FER_IDS, [
-  ['러시아', U(W_Z_OLD, W_Z66)],
-  ['알라이남', I(F('KG-O'), W_Z95)],
-  ['코칸트', W_KOKAND],
-  ['후잔드', D(F('TJ-SU'), W_CUT_TURKESTAN)],
-  ['제라프샨', I(F('TJ-SU'), W_CUT_TURKESTAN)],
+  ...W_FER_PARTS,
 ], '나머지', {
   러시아: [[1865, null]],
   알라이남: [[1865, 'kokand-khanate'], [1876, null]],
@@ -329,18 +198,9 @@ const W_UF = ownSplit('W_페르가나', W_FER_IDS, [
   제라프샨: [[1865, 'bukhara-emirate'], [1868, null]],
   나머지: [[1865, null]],
 }, { from: 1865, to: 1924 });
-const W_REST_IDS = W_IDS.filter((id) => !W_FER_IDS.includes(id));
 // 1865~1867: 1865년 말 모습(타슈켄트 쪽은 러시아가 차지했으나 러시아 도형은 1866부터 — 비움), 1866년 지작 러시아 점령(러시아 도형은 1868부터 — 비움)
 const W_U65 = ownSplit('W_1865', W_REST_IDS, [
-  ['러시아', W_Z_OLD],
-  ['타슈켄트쪽', W_Z66],
-  ['톈산', I(F('KG-N', 'KG-Y', 'KG-C', 'KG-T', 'UZ-TO'), W_Z68)],
-  ['키질쿰북', I(F('UZ-NW', 'UZ-BU'), W_CUT_BUKHARA_KYZYLKUM)],
-  ['동부부하라', U(I(F('UZ-QA', 'UZ-SU'), W_CUT_EAST_BUKHARA), F('TJ-KT', 'TJK-368', 'TJ-DU'), I(F('TJ-GB'), W_Z68))],
-  ['파미르', F('TJ-GB')],
-  ['레바프남', D(F('TM-L'), U(W_Z68, W_CUT_LEBAP))],
-  ['지작', F('UZ-JI', 'UZ-SI')],
-  ['부하라', F('UZ-BU', 'UZ-NW', 'UZ-QA', 'UZ-SU', 'UZ-SA', 'TM-L')],
+  ...W_REST_PARTS_1865,
 ], '나머지', {
   러시아: [[1865, null]],
   타슈켄트쪽: [[1865, null]],
@@ -414,6 +274,8 @@ const W_voids = () => [
 // ── C1 E 동 (카자흐·신장, 구현 C1-E): 칼선·상수·import·own 줄·voids는 이 아래에, 최상위 이름은 E_ ──
 // 조각: KZ 14·KAZ-3207·KAZ-4829·KAB(바이코누르 — 카자흐스탄 땅으로 칠함), 신장 'CN-XJ'(XJ). 정의 항목 yettishar·kazakhstan, 늘리기 russia·soviet-union(카자흐 동쪽 끝)·qing·roc·prc(신장). 깎기 없음
 import { box as E_box, ring as E_ring } from '../../lib.mjs';
+// 카자흐 동쪽 끝 상자·신장 칼선과 그 땅은 도우미 모듈 ./cuts.mjs(C2 뼈대가 옮김 — 이름·식 그대로)
+import { E_KZ_EAST_IDS, E_KZ_EAST_ZONE, E_S_ILI, E_S_HAMI, E_S_NORTH, E_S_ETR, E_S_URUM, E_S_KASH, E_S_AKSU, E_S_KHOTAN } from './cuts.mjs';
 // 표 경계 해: 이 칸은 나눈 조각의 모양이 바뀌는 해만 둔다(주인이 바뀌는 해는 표 안에서 해마다 적을 수 있음).
 //   1868·1895: 신장 조각 안 러시아 구역 넘침이 바뀌는 해(9,276 → 9,491 km², 기본값 5로 고치지 않음) / 1921: 몽골(채우기 1921~)이 생겨 신장 조각 안 중화민국 도형이 바뀌는 해 /
 //   1992: 소련이 없어져 신장 북서 넘침을 중화인민공화국이 칠하고 카자흐스탄이 생기는 해
@@ -460,8 +322,6 @@ const E_cutLine = (line, from, to) => [[from, line.filter(([y]) => y <= from).at
 // 그래서 상자(동경 80~86°, 북위 42~47.8°)와 알마티 주·동카자흐스탄 주 조각이 겹치는 땅에서 러시아·소련 원래 도형을 뺀 땅을 1865~1917 russia, 1918~1991 soviet-union으로 늘린다.
 const E_KZ_IDS = idsOf('KAZ', 'KAB'); // 카자흐스탄 조각 16 + 바이코누르 임차지(KAB — 카자흐스탄 주권 땅이라 1992년부터 카자흐스탄으로 칠함)
 const E_KZ_ALL = F(...E_KZ_IDS);
-const E_KZ_EAST_IDS = ['KAZ-3207', 'KZ-VOS']; // 알마티 주·동카자흐스탄 주(Natural Earth 1:10m admin-1 — 2022년 새 주 전의 경계)
-const E_KZ_EAST_ZONE = I(F(...E_KZ_EAST_IDS), E_box(80.0, 42.0, 86.0, 47.8));
 // 러시아 도형과 떨어진 작은 조각(칸텡그리 북쪽 74 km² 등 300 km² 미만)은 늘리지 않는다(떨어진 섬이 생김 — 비운 땅으로 둠)
 const E_KZ_FILL = E_rawMinus(E_KZ_EAST_ZONE, C1_START, 1992).filter((p) => deg2([p]) >= 0.03);
 ownSplit('E_카자흐동끝', E_KZ_EAST_IDS, [['메움', E_KZ_FILL]], '나머지', { 메움: [[C1_START, 'russia'], [1918, 'soviet-union']] }, { from: C1_START, to: 1992 });
@@ -471,32 +331,6 @@ ownSplit('E_카자흐1992', E_KZ_IDS, [['카자흐', E_rawMinus(E_KZ_ALL, 1992, 
 // ── 신장 (운영자 결정 2·3, 기본값 1·2·10, 결정 맞춤 7·8·9) ──
 // 신장은 중국 조각 CN-XJ 한 덩어리(약 163만 km²)라 시대 경계는 모두 칼선이다. 선은 산줄기 능선·강·오아시스 사이 사막을 따라 손으로 그은 근사(확실성 estimated, 지금 주·현 경계를 기준점으로 삼음).
 // 남쪽 쿤룬·알툰산 띠와 몽골 국경 부스러기는 청·중화민국·중화인민공화국·몽골 기존 도형, 북서쪽 알타이·일리·카슈가르 서쪽 가장자리 부스러기(6,537~9,556 km²)는 러시아·소련 기존 도형이 덮는다(기본값 5 — 고치지 않음) — 기간마다 '앞'으로 떼어 둠.
-// 톈산 능선(남북 가름) 서쪽 토막: 이리 골짜기 남쪽(자오쑤·터커스 남쪽 주능선 → 할리크산 → 나라트산), 카자흐·키르기스 국경 밖에서 시작
-const E_TS_W = [[79.8, 42.0], [80.6, 42.15], [81.2, 42.3], [81.9, 42.45], [82.5, 42.65], [83.2, 42.9], [83.8, 43.15], [84.4, 43.35], [84.9, 43.5]];
-// 톈산 능선 동쪽 토막: 이렌하비르가산(사완·허징 사이) → 우루무치강 원류(성리다반) → 다반청 남쪽·동쪽 → 보그다산 → 무레이·산산 사이 → 하미 칼선
-const E_TS_E = [[85.5, 43.6], [85.9, 43.55], [86.8, 43.15], [87.6, 43.05], [88.5, 43.3], [88.75, 43.7], [89.3, 43.8], [90.2, 43.7], [91.0, 43.55], [91.6, 43.5]];
-// 보로호로산 능선(이리 골짜기 북쪽, 동 → 서): 닐카·궁류 북쪽 → 이닝·훠청 북쪽(싸이람 호는 북쪽 보르탈라) → 카자흐 국경 밖
-const E_BORO = [[84.4, 43.75], [83.7, 43.9], [83.0, 44.05], [82.3, 44.25], [81.6, 44.4], [81.0, 44.5], [80.7, 44.85], [79.5, 45.2]];
-// 마나스강(1945년 9월 휴전선 — 서쪽이 세 지구): 톈산 능선 → 스허쯔·마나스 사이 → 마나스 호
-const E_MANAS = [[85.9, 43.55], [86.2, 44.0], [86.15, 44.3], [86.25, 44.6], [86.1, 45.0], [85.95, 45.6], [85.9, 45.9]];
-// 알타이 지구 남쪽 경계(구르반퉁구트 사막 북쪽 — 지금 알타이 지구와 창지 주 사이 어림, 서 → 동)
-const E_ALTAY_S = [[86.8, 45.75], [87.8, 45.5], [88.8, 45.35], [89.8, 45.4], [90.8, 45.45], [91.35, 45.5]];
-// 투루판·하미 가름(북 → 남): 칭허 동쪽 몽골 국경 → 무레이·바르쿨 사이 → 산산·하미 사이 → 하미 남쪽 사막 → 신장 동쪽 끝
-const E_HAMI_W = [[91.25, 47.5], [91.35, 45.5], [91.45, 44.3], [91.6, 43.5], [91.75, 42.8], [91.9, 42.0], [92.4, 41.3], [93.3, 40.9], [94.0, 40.6]];
-const E_S_ILI = [E_ring([[79.5, 41.9]], E_TS_W, E_BORO)]; // 이리 골짜기(지금 이리 카자흐 자치주 직할 8현 2시 어림)
-const E_S_HAMI = [E_ring(E_HAMI_W, [[97.5, 40.6], [97.5, 47.5]])]; // 하미(바르쿨·이우 포함)
-const E_S_NORTH = [E_ring([[79.0, 42.0]], E_TS_W, E_TS_E, [[91.6, 49.8], [79.0, 49.8]])]; // 톈산 북쪽 전부(준가르·일리·알타이)
-const E_S_ETR = [E_ring(E_MANAS, E_ALTAY_S, [[91.3, 49.8], [79.0, 49.8], [79.0, 42.0]], E_TS_W, [[85.5, 43.6]])]; // 세 지구(일리·타르바가타이·알타이): 마나스강 서쪽 + 알타이 지구
-const E_S_URUM = I(E_S_NORTH, [E_ring(E_MANAS.slice(0, 5), [[86.1, 44.75], [88.9, 44.75], [88.9, 42.5], [85.9, 42.5]])]); // 우루무치 쪽 오아시스 띠(마나스강 ~ 푸캉·짐사르 서쪽, 사막 가장자리까지)
-// 카슈가르·양기히사르·야르칸드·사리콜(지금 카슈가르 지구·키질수 주 어림): 동쪽은 아크치·우스 사이 → 칼핀 서쪽 → 바추(마랄바시) 동쪽 → 사막 → 예청·피산 사이 → 카라코람
-const E_KASH_E = [[79.0, 42.5], [78.9, 41.0], [78.75, 40.5], [79.3, 40.0], [79.6, 39.4], [78.6, 38.6], [78.1, 38.0], [77.95, 37.3], [77.8, 36.5], [77.7, 35.0]];
-const E_S_KASH = [E_ring([[72.5, 42.5]], E_KASH_E, [[72.5, 35.0]])];
-// 악수·우치투루판·쿠차(지금 악수 지구 어림): 동쪽은 쿠차·룬타이(부구르) 사이 동경 84°, 남쪽은 타클라마칸 사막 안(주변 등급)
-const E_DESERT = [[79.6, 39.4], [81.0, 39.6], [82.5, 40.0], [84.0, 40.3]];
-const E_S_AKSU = [E_ring([[71.3, 45.0], [84.0, 45.0]], [...E_DESERT].reverse(), [[71.3, 39.4]])];
-// 호탄·케리야·니야(지금 호탄 지구 어림): 동쪽은 민펑·체모 사이
-const E_S_KHOTAN = [E_ring([[71.3, 39.4]], E_DESERT, [[84.0, 39.0], [83.9, 37.5], [84.2, 36.5], [84.2, 34.0], [71.3, 34.0]])];
-// 나머지 '동' = 카라샤르·코를라·룬타이·뤄창·체모·로프노르·투루판·톡순·산산
 // 주인 줄(그해 말 모습). 결정 맞춤 7: 1877년 12월 카슈가르(17~18일)·야르칸드(21일) 함락, 호탄은 1878년 1월 2일 — 그해 말 예티샤르 땅은 호탄 쪽만(1만 km² 넘음)
 const E_XJ_LINES = {
   일리: [[C1_START, null], [1881, 'qing'], [1912, 'roc'], [1944, null], [1949, 'prc']], // 1864~1871 타란치 술탄국·1871~1881 러시아 점령은 비움(기본값 1, 맞춤 8), 1881 상트페테르부르크 조약, 1944년 11월 동투르키스탄 공화국(맞춤 9)

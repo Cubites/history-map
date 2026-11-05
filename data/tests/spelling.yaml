@@ -3568,3 +3568,64 @@
   avoid: [제라프샨]
   note: "Zeravshan(강·구역). 위키백과 한국어판 꼴"
   scope: 중앙아시아
+
+# ── 중앙아시아 C2 A (서남, 2026-11-05) ──
+- use: 바부르의 카불 왕국
+  avoid: [바부르 카불 왕국, 카불 왕국(바부르)]
+  note: "Babur's Kingdom of Kabul(1504~1526, 나라 id babur-kabul-kingdom). 저장소 0회"
+  scope: 중앙아시아
+
+- use: 칸다하르 토후국
+  avoid: [칸다하르 공국, 칸다하르 사르다르국, 칸다하르 수장국]
+  note: "Principality of Qandahar(1818~1855, 나라 id kandahar-principality). 아프가니스탄 토후국(afghanistan)과 같은 '토후국'. 저장소 0회"
+  scope: 중앙아시아
+
+- use: 헤라트 토후국
+  avoid: [헤라트 공국, 헤라트 수장국, 헤라트 국]
+  note: "Emirate/Principality of Herat(1818~1863, 나라 id herat-principality). 저장소 0회"
+  scope: 중앙아시아
+
+- use: 바다크샨
+  avoid: [바다흐산, 바닥샨]
+  note: "Badakhshan(아프가니스탄 북동부). 저장소 화면 글 '바다크샨' 5회(C1 아프가니스탄·ca-05·sa-01·sa-06), 지금 타지키스탄 주 이름 '고르노바다흐샨' 1회는 다른 이름이라 그대로"
+  scope: 중앙아시아
+
+- use: 코한딜 칸
+  avoid: [쿠한딜 칸, 코한딜칸]
+  note: "Kohan Dil Khan(칸다하르 토후국, 1830~1839·1842~1855). 저장소 0회"
+  scope: 중앙아시아
+
+
+# ── 중앙아시아 C2 W (서, 2026-11-05) ──
+- use: 침켄트
+  avoid: [시므켄트, 심켄트]
+  note: "Chimkent(지금 카자흐스탄 쉼켄트, 1864년까지 코칸트 칸국 요새). 사건 ca-05 '침켄트' 1회에 맞춤"
+  scope: 중앙아시아 근세·근대
+
+- use: 차르주이
+  avoid: [차르조우, 차르주]
+  note: "Charjuy(지금 투르크메나바트, 아무다리야 강가 — 1762년 부하라가 차지). 저장소 0회"
+  scope: 중앙아시아 근세
+
+- use: 악메체트
+  avoid: [아크메체트, 악메치트]
+  note: "Ak-Mechet(코칸트 요새, 1853년 러시아가 차지해 페롭스크 — 지금 크질오르다). 저장소 0회"
+  scope: 중앙아시아 근세
+
+# ── 중앙아시아 C2 EK (카자흐스탄, 2026-11-05) ──
+- use: 발하시호
+  avoid: [발하슈호, 발하쉬호]
+  note: "Lake Balkhash. 저장소 '발하시' 1회 꼴을 따름, 발하슈·발하쉬 0회"
+  scope: 중앙아시아
+
+- use: 타우케 칸
+  avoid: [타우케 한, 타우케칸]
+  note: "Tauke Khan(카자흐 칸, 재위 1680 무렵~1718). 저장소 0회"
+  scope: 중앙아시아 근세
+
+# ── 중앙아시아 C2 EX (신장, 2026-11-05) ──
+- use: 야르칸드
+  avoid: [야르칸트, 야르켄트, 야르칸]
+  note: "Yarkand(葉爾羌, 야르칸드 칸국의 도읍). 저장소 기존 꼴 야르칸드 6회·나머지 0회"
+  scope: 서역
+
