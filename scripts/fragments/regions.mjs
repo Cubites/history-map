@@ -119,6 +119,27 @@ export const FRAGMENT_REGIONS = {
     // 카슈미르 실제 지배선 양쪽: countries-50m의 소속과 따로 견준다
     checkIds: ['IN-JK', 'IN-LA', 'PK-JK', 'PK-GB'],
   },
+  // 중앙아시아 (2026-11-05, 0단계 등록): 이 지역 C1~C4가 이 조각과 칼선으로 나라를 만든다(docs/central-asia/00-scope.md 2절).
+  // 파키스탄은 남아시아 조각(south-asia.topo.json)이라 under로 그대로 이웃으로 쓴다(듀랜드선·와한–길기트 이음매가 그 바깥선 그대로, 이음매가 가장 길다).
+  // 이란(서아시아)·러시아(유럽)·중국 쪽은 under가 하나뿐이라 원본 행정구역을 이웃으로 가공하고, 생성기가 그 조각·손 도형을 빼서 맞춘다.
+  // 신장은 넣지 않는다: 중국 조각 파일의 CN-XJ 한 조각을 생성기가 loadFragments('china')로 읽어 쓴다(이 파일에 한 번 더 넣으면 같은 땅 조각이 두 파일에 생김)
+  'central-asia': {
+    readme: 'README.central-asia.md',
+    under: 'south-asia',
+    adm0: ['KAZ', 'UZB', 'TKM', 'KGZ', 'TJK', 'AFG', 'KAB'], // KAB: 바이코누르 임차지(크질오르다 안, NE에서 따로 나라 단위)
+    // 카자흐스탄 서쪽 끝(약 동경 46.5°)·북쪽 끝(약 북위 55.4°)·동쪽 끝(알타이 약 87.4°)과 아프가니스탄 남쪽 끝(약 북위 29.4°)을 덮는다
+    box: [46.4, 29.3, 87.5, 55.6],
+    idExamples: { iso: 'KZ-KAR', adm1: '타지키스탄 공화국 직할 구 `TJK-368`', adm0: ['KAB'] },
+    notes: [
+      '카자흐스탄: 조각 {count:KAZ}개와 바이코누르 임차지(`KAB`, 러시아가 1994년부터 빌려 쓰는 우주 기지 땅, 크질오르다 `KZ-KZY` 안의 구멍) 하나. 주가 커서(10만 km² 넘는 것이 대부분) 시대별 나라 경계는 대부분 칼선이다. 알마티는 주(`KAZ-3207`)와 시(`KAZ-4829`)가 같은 ISO 코드라 NE adm1_code가 id다.',
+      '아프가니스탄: 조각 {count:AFG}개. 와한 회랑은 바다흐샨(`AF-BDS`) 안이고, 듀랜드선은 남아시아 조각 바깥선 그대로다. 2004년에 갈라진 다이쿤디(`AFG-1753`)·판지시르(`AFG-1769`)가 NE에서 옛 주 이름·ISO 코드(우루즈간 `AFG-1752`·파르완 `AFG-1772`와 같음)로 남아 있어 네 조각은 adm1_code가 id다.',
+      '우즈베키스탄 {count:UZB}·투르크메니스탄 {count:TKM}·키르기스스탄 {count:KGZ}·타지키스탄 {count:TJK}. 카라칼파크스탄(`UZ-QR`)은 우즈베키스탄 조각 하나, 타슈켄트는 주(`UZ-TO`)와 시(`UZ-TK`) 둘이다. 타지키스탄 공화국 직할 구(`TJK-368`)는 ISO 코드가 없다. 조각 사이의 내륙 구멍은 {micro}.',
+      '신장: 이 파일에 없다. 중국 조각 파일(`china.topo.json`)의 `CN-XJ` 한 조각(약 164만 km²)을 생성기가 읽어 칼선으로 나눈다. 이 파일과 `CN-XJ`의 이음매는 원본 행정구역끼리 따로 간략화한 것이라 수십 km² 어긋나며 생성기가 맞춘다.',
+    ],
+    countries50m: { KAZ: 'Kazakhstan', UZB: 'Uzbekistan', TKM: 'Turkmenistan', KGZ: 'Kyrgyzstan', TJK: 'Tajikistan', AFG: 'Afghanistan' },
+    // 와한·파미르(아프가니스탄·타지키스탄 쪽 끝): countries-50m의 소속과 따로 견준다
+    checkIds: ['AF-BDS', 'TJ-GB'],
+  },
 };
 
 /** 지역 이름 → 항목. 모르는 이름이면 오류(알려진 이름을 함께 적음) */
