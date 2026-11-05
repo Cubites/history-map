@@ -10240,3 +10240,9 @@ export const gapZones = gapSegments.map(([from, to, list]) => {
   const open = to === TABLE_TO;
   return { name: open ? `유럽 ${from}~` : `유럽 ${from}~${to - 1}`, zone: list.length ? D(domain, build(list)) : domain, from, to: open ? null : to };
 });
+
+// 중앙아시아 C1 뼈대(2026-11-05): 러시아 제국 중앙아시아 구역 링(SIBERIA_ZONES의 그 해 링 배열 그대로)과 러시아 남쪽 한계 선을 central-asia 시대 파일이 가져다 쓴다
+// (보호국–러시아 선을 이 링의 변으로 다시 긋기 위함 — 좌표를 옮겨 적지 않음). 도형·버전은 그대로, 이름만 내보냄
+const zoneRings = (year) => SIBERIA_ZONES.find(([y]) => y === year)[1];
+export const RU_CA_ZONES = { Z1854: zoneRings(1854), Z1864: zoneRings(1864), Z1866: zoneRings(1866), Z1868: zoneRings(1868), Z1873: zoneRings(1873), Z1881: zoneRings(1881), Z1884: zoneRings(1884), Z1895: zoneRings(1895) };
+export const RU_CA_LINES = { L_AFG_N, L_TKM_S };

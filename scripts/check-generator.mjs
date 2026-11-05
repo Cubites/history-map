@@ -4,7 +4,8 @@
 //     scripts/geo의 파일끼리 같은 좌표를 이름 없이 되풀이하지 않음('값만 같은 점' 허용 목록 ALLOWED_REPEATS만).
 // [2] 안전장치: 잘못된 권역 구성·옵션·인자 오타에서 생성기가 data/geo를 지우기 전에(엉뚱한 폴더에 쓰지 않고) 멈추는지, --prune과 권역 출처(source)가 약속대로 도는지,
 //     빈 땅 검사 구역(gapZones)이 AREAS 순서대로 모이고 새 권역의 구역도 저절로 들어가는지, 구역 모양이 틀리면 멈추는지,
-//     앞 권역 나라 늘리기(extendable·extensions, 2026-10-29)가 약속대로 더하고 원래 모양을 home/에 같은 바이트로 쓰는지, 허용 목록 밖·겹침 등에서 멈추는지.
+//     앞 권역 나라 늘리기(extendable·extensions, 2026-10-29)가 약속대로 더하고 원래 모양을 home/에 같은 바이트로 쓰는지, 허용 목록 밖·겹침 등에서 멈추는지,
+//     앞 권역 나라 깎기(trimmable·trims, 2026-11-05)가 약속대로 빼고 원래 모양·뺄 땅 목록을 home/에 쓰는지, 허용 목록 밖·헛 깎기·빈 도형 등에서 멈추는지.
 // [3] 행정구역 조각(2026-09-30): topojson-client와 조각 파일(data/base/fragments)은 lib.mjs에서만 쓰는지(층 규칙은 [1]),
 //     조각 파일이 prep:fragments가 쓴 그대로인지(그 지역 README의 크기·sha256: README.<지역>.md가 있으면 그것, 없으면 README.md), 형식·id·arc 번호가 맞는지, lib의 loadFragments·F가 약속대로 도는지.
 // 프로젝트의 data/geo는 건드리지 않는다. data/geo를 임시 폴더에 복사해 그곳에서 시험하고, 끝나면 임시 폴더를 지운다.
@@ -156,8 +157,8 @@ if (AREAS.length) {
 const argvUsers = files.filter((f) => /\bprocess\.|\bargv\b/.test(f.text)).map((f) => f.rel);
 if (!argvUsers.length) ok('scripts/geo는 process·argv를 쓰지 않음 (다른 스크립트가 권역 파일을 가져와도 됨)');
 else bad(`process·argv를 쓰는 파일: [${argvUsers}]`);
-const helperExports = files.filter((f) => /^areas\/[^/]+\//.test(f.rel)).flatMap((f) => [...f.text.matchAll(/^export\s+(?:const|let|function)\s+(\w+)/gm)].filter((m) => /^(fill|version|source|gap|exten)/i.test(m[1])).map((m) => `${f.rel}의 ${m[1]}`));
-if (helperExports.length) bad(`도우미 모듈이 versions·fillSpecs·source·gapZones·extendable·extensions 같은 이름을 내보냄 (권역 파일에만 둔다): ${helperExports.join(', ')}`);
+const helperExports = files.filter((f) => /^areas\/[^/]+\//.test(f.rel)).flatMap((f) => [...f.text.matchAll(/^export\s+(?:const|let|function)\s+(\w+)/gm)].filter((m) => /^(fill|version|source|gap|exten|trim)/i.test(m[1])).map((m) => `${f.rel}의 ${m[1]}`));
+if (helperExports.length) bad(`도우미 모듈이 versions·fillSpecs·source·gapZones·extendable·extensions·trimmable·trims 같은 이름을 내보냄 (권역 파일에만 둔다): ${helperExports.join(', ')}`);
 // 타입 선언(.d.mts): .ts 스크립트가 .mjs를 가져올 때 tsc가 쓴다. 선언한 이름이 짝 .mjs의 export에 있어야 한다(없으면 tsc는 통과해도 실행할 때 멈춘다)
 const decls = readdirSync(GEO_SRC).filter((f) => f.endsWith('.d.mts')).map((d) => {
   const mjs = d.slice(0, -'.d.mts'.length) + '.mjs';
@@ -477,9 +478,54 @@ try {
       else bad(`늘리기: 원래 버전 없는 해의 새 버전이 약속과 다름: ${sp}, 모양 ${shapeOk}`);
     }
     expectStop('늘리기: 더할 땅이 원래 도형과 겹침', '겹침', () => extB({ 'check-e1': [[1850, 1920, sqr(0.5)]] }));
-    expectStop('늘리기: 조각 모양(to가 null)', '한 줄 모양', () => extB({ 'check-e1': [[1850, null, sqr(1)]] }));
+    expectStop('늘리기: 조각 모양(to가 null, 허용 끝 해는 정수)', '한 줄 모양', () => extB({ 'check-e1': [[1850, null, sqr(1)]] }));
+    {
+      // 끝 없는 늘리기(2026-11-05 중앙아시아 C1 뼈대, 예: prc): 허용 끝 해가 null이면 조각 to도 null, 원래 버전의 끝 없음(null)이 그대로 이어짐
+      const mo = engine.mergeAreas([areaA, ['check-b', { versions: {}, extendable: { 'check-e1': [1800, null] }, extensions: { 'check-e1': [[1950, null, sqr(1)]] } }]]);
+      const so = mo.versions['check-e1'].map(([f, t]) => `${f}-${t}`).join(',');
+      if (so === '1800-1900,1900-1950,1950-null' && mo.versions['check-e1'][2][2] !== home) ok(`늘리기: 허용 끝 해 null이면 끝 없는 조각을 받아 끝 없는 원래 버전과 합침 (${so})`);
+      else bad(`늘리기: 끝 없는 조각 결과가 약속과 다름: ${so}`);
+    }
     expectStop('늘리기: 채우기(fillSpecs) 대상 나라', '채우기', () => engine.mergeAreas([['check-a', { versions: { 'check-e1': homeList }, fillSpecs: [{ id: 'check-e1', zone: sqr(9), from: 1800, to: 1900 }] }], ['check-b', { versions: {}, extendable: { 'check-e1': [1800, 1950] } }]]));
     expectStop('늘리기: export 이름 오타(extention)', "'extention'", () => engine.mergeAreas([areaA, ['check-b', { versions: {}, extention: {} }]]));
+  }
+
+  // 앞 권역 나라 깎기(2026-11-05 중앙아시아 C1 뼈대, engine.mjs '앞 권역 나라 깎기'): 뒤 권역이 trimmable에 적은 앞 권역 나라의 버전에서 뺄 땅(trims)을 빼고,
+  // 원래 버전은 homes로(늘리기와 같은 home/ 파일), 뺄 땅 목록은 home/<id>.trims.json으로 쓴다. 깎기 → 늘리기 순서, 허용 목록 밖·기간 밖·헛 깎기·빈 도형이면 멈춘다
+  {
+    const { joinEras } = await import(pathToFileURL(path.join(GEO_SRC, 'shared.mjs')).href);
+    const rect = (x0, x1) => [[[[x0, 10], [x1, 10], [x1, 11], [x0, 11], [x0, 10]]]]; // 시험용 직사각형
+    const home = rect(0, 2);
+    const homeList = [[1800, 1900, home], [1900, null, home, 'disputed']];
+    const areaA = ['check-a', { versions: { 'check-t1': homeList } }];
+    const cut = rect(1, 2), add = rect(2, 3);
+    const jt = joinEras('check-b', { versions: {}, trimmable: { 'check-t1': [1850, 1950] }, extendable: { 'check-t1': [1850, 1950] } }, [{ name: 'check-era', versions: { 'check-t1': [[1880, 1920, add]] }, trims: { 'check-t1': [[1850, 1920, cut]] } }]);
+    if (jt.trims['check-t1']?.length === 1 && jt.trimmable['check-t1'].join() === '1850,1950' && !Object.hasOwn(jt.versions, 'check-t1')) ok('깎기: joinEras가 시대 파일의 trims를 모으고 권역 파일의 trimmable을 그대로 돌려줌');
+    else bad(`깎기: joinEras가 약속과 다름: trims ${JSON.stringify(Object.keys(jt.trims))} / trimmable ${JSON.stringify(jt.trimmable)}`);
+    expectStop('깎기: 시대 파일에 trims가 있는데 권역 파일이 trimmable을 주지 않음', 'trimmable을 joinEras에 주지 않음', () => joinEras('check-b', { versions: {} }, [{ name: 'check-era', versions: {}, trims: { 'check-t1': [] } }]));
+    const mt = engine.mergeAreas([areaA, ['check-b', jt]]);
+    const gt = mt.versions['check-t1'];
+    const st = gt.map(([f, t]) => `${f}-${t}`).join(',');
+    const areaOf = (g) => g.reduce((s, poly) => s + poly.reduce((s2, r, k) => { let a2 = 0; for (let i = 0, j = r.length - 1; i < r.length; j = i++) a2 += (r[j][0] + r[i][0]) * (r[j][1] - r[i][1]); return s2 + (k === 0 ? 1 : -1) * Math.abs(a2 / 2); }, 0), 0);
+    const shapeT = gt[0][2] === home && Math.abs(areaOf(gt[1][2]) - 1) < 1e-9 && Math.abs(areaOf(gt[2][2]) - 2) < 1e-9 && Math.abs(areaOf(gt[3][2]) - 2) < 1e-9 && gt[3][3] === 'disputed' && gt.at(-1)[2] === home && gt.at(-1)[3] === 'disputed';
+    if (st === '1800-1850,1850-1880,1880-1900,1900-1920,1920-null' && shapeT && mt.homes['check-t1'] === homeList && mt.trims['check-t1'].length === 1) ok(`깎기: 뺄 땅의 기간 경계에서 나누고 그 기간만 차집합, 늘리기는 깎은 뒤 합집합 (${st}, 나뉜 앞뒤는 원래 도형 그대로, 확실성 그대로), 원래 버전 목록은 homes`);
+    else bad(`깎기 결과가 약속과 다름: ${st}, 모양 ${shapeT}, homes ${mt.homes['check-t1'] === homeList}`);
+    const trimProject = path.join(tmp, 'trim-test'), trimPlain = path.join(tmp, 'trim-plain');
+    quiet(() => engine.writeGeo(trimProject, mt.versions, { sources: mt.sources, homes: mt.homes, trims: mt.trims }));
+    quiet(() => engine.writeGeo(trimPlain, { 'check-t1': homeList }, { sources: mt.sources }));
+    const trimHomeSame = readFileSync(path.join(trimProject, 'data/geo/home/check-t1.geojson')).equals(readFileSync(path.join(trimPlain, 'data/geo/check-t1.geojson')));
+    const trimRec = JSON.parse(readFileSync(path.join(trimProject, 'data/geo/home/check-t1.trims.json'), 'utf8')).features;
+    if (trimHomeSame && trimRec.length === 1 && trimRec[0].properties.from === 1850 && trimRec[0].properties.to === 1920) ok('깎기: data/geo/home/<id>.geojson이 깎지 않았을 때의 <id>.geojson과 바이트가 같고, 뺄 땅 목록을 home/<id>.trims.json에 씀');
+    else bad(`깎기: home 파일이 깎지 않았을 때와 다르거나 뺄 땅 목록이 틀림 (home 같음 ${trimHomeSame}, 목록 ${trimRec.length}줄)`);
+    const trimB = (trims, allow = { 'check-t1': [1800, 1950] }) => engine.mergeAreas([areaA, ['check-b', { versions: {}, trimmable: allow, trims }]]);
+    expectStop('깎기: 허용 목록(trimmable)에 없는 나라를 깎음', 'trimmable에 없는 나라', () => engine.mergeAreas([areaA, ['check-b', { versions: {}, trims: { 'check-t1': [[1850, 1920, cut]] } }]]));
+    expectStop('깎기: trimmable의 id 오타', '어느 권역의 나라도 아님', () => trimB({}, { 'check-zz': [1800, 1900] }));
+    expectStop('깎기: 자기 권역 나라를 trimmable에 적음', '깎을 수 없음', () => engine.mergeAreas([areaA, ['check-b', { versions: { 'check-b1': [[1800, null, rect(5, 6)]] }, trimmable: { 'check-b1': [1800, 1900] } }]]));
+    expectStop('깎기: 조각이 trimmable 기간 밖', 'trimmable 기간', () => trimB({ 'check-t1': [[1850, 1920, cut]] }, { 'check-t1': [1800, 1900] }));
+    expectStop('깎기: 헛 깎기(뺄 땅이 원래 도형과 겹치지 않음)', '헛 깎기', () => trimB({ 'check-t1': [[1850, 1920, rect(5, 6)]] }));
+    expectStop('깎기: 깎은 결과가 빈 도형', '빈 도형', () => trimB({ 'check-t1': [[1850, 1920, rect(-1, 3)]] }));
+    expectStop('깎기: 조각 모양(to가 null, 허용 끝 해는 정수)', '한 줄 모양', () => trimB({ 'check-t1': [[1850, null, cut]] }));
+    expectStop('깎기: export 이름 오타(trimms)', "'trimms'", () => engine.mergeAreas([areaA, ['check-b', { versions: {}, trimms: {} }]]));
   }
 
   // 진입 파일: 모르는 옵션, 인자 오타, 지우기 전 대조, --prune

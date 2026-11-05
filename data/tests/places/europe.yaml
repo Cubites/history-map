@@ -1774,20 +1774,29 @@
 - name: "안드호이(아프가니스탄)"
   at: [65.117, 36.95]
   years: [1890, 1950]
-  expect: none
+  expect: afghanistan
   region: europe
   url: "https://en.wikipedia.org/wiki/Afghanistan–Turkmenistan_border"
   from: "세션 M1 결과노트"
-  note: "아무다리야 남쪽의 아프가니스탄 땅(1873 합의, 1885~88 하미아브까지 국경) · 고치기 전 HEAD는 1884~1991 러시아 제국·소련"
+  note: "아무다리야 남쪽의 아프가니스탄 땅(1873 합의, 1885~88 하미아브까지 국경) · 고치기 전 HEAD는 1884~1991 러시아 제국·소련 · 중앙아시아 C1(2026-11-05)부터 아프가니스탄(1873년부터)"
 
 - name: "파이자바드(바다흐샨)"
   at: [70.58, 37.118]
-  years: [1870, 1900, 1950]
+  years: [1900, 1950]
+  expect: afghanistan
+  region: europe
+  url: "https://en.wikipedia.org/wiki/Afghanistan–Tajikistan_border"
+  from: "세션 M1 결과노트"
+  note: "판지강 남쪽 바다흐샨(1873 합의로 아프가니스탄) · 고치기 전 HEAD는 1868~1991 러시아 제국·소련 · 중앙아시아 C1(2026-11-05)부터 아프가니스탄(바다크샨은 1883년부터)"
+
+- name: "파이자바드(바다흐샨, 1883년 전)"
+  at: [70.58, 37.118]
+  years: [1870]
   expect: none
   region: europe
   url: "https://en.wikipedia.org/wiki/Afghanistan–Tajikistan_border"
   from: "세션 M1 결과노트"
-  note: "판지강 남쪽 바다흐샨(1873 합의로 아프가니스탄) · 고치기 전 HEAD는 1868~1991 러시아 제국·소련"
+  note: "판지강 남쪽 바다흐샨(1873 합의로 아프가니스탄) · 고치기 전 HEAD는 1868~1991 러시아 제국·소련 · 1883년 전 바다크샨은 미르가 다스려 비운 땅(중앙아시아 C1)"
 
 - name: "테르메즈"
   at: [67.283, 37.217]

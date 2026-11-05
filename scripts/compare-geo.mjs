@@ -5,6 +5,9 @@
 // 뒤 권역이 늘린 나라(scripts/geo/engine.mjs '앞 권역 나라 늘리기', data/geo/home/<id>.geojson이 있는 나라, 2026-10-29 A2-0)는 원래 권역 모양(home, 기준에 home이 없으면 기준 <id>.geojson)을
 // 기준과 위처럼 견주고, 늘린 모양(<id>.geojson)은 원래 권역 모양을 모두 품는지(빠진 땅 0)와 기간마다 더한 땅의 넓이만 보인다. 원래 권역 모양이 같고 빠진 땅이 없으면 '늘림만 다름'(문제 아님).
 // 원래 권역 버전이 없는 해의 늘린 버전(2026-10-30 A3-0)은 빠진 땅이 없고, 그 버전 넓이 전부를 '더한 땅 (원래 버전 없는 해)'로 보인다.
+// 뒤 권역이 깎은 나라(engine.mjs '앞 권역 나라 깎기', data/geo/home/<id>.trims.json이 있는 나라, 2026-11-05 중앙아시아 C1 뼈대)는 원래 권역 모양을 위처럼 견주고,
+// 원래 권역 모양에서 빠진 땅이 모두 뺄 땅 목록 안인지(깎은 땅 밖 빠진 땅이 TRIM_SLACK_KM2 이하 — 칼선 꼭짓점 반올림 오차)와 기간마다 깎은 땅·더한 땅 넓이를 보인다.
+// 원래 권역 모양이 같고 깎은 땅 밖 빠진 땅이 없으면 '깎임·늘림만 다름'(문제 아님).
 import { execFileSync } from 'node:child_process';
 import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import path from 'node:path';
@@ -38,6 +41,7 @@ const area = (m) => m.reduce((sum, poly) => sum + poly.reduce((s2, r, k) => { le
 const km2 = (m, deg2) => { const ys = m.flat(2).map((c) => c[1]); const lat = (Math.min(...ys) + Math.max(...ys)) / 2; return deg2 * 111.32 ** 2 * Math.cos((lat * Math.PI) / 180); };
 const points = (fs) => fs.reduce((s, f) => s + multi(f.geometry).flat(2).length, 0);
 const END = 3000; // 끝 없음(to: null)을 비교할 때 쓰는 해
+const TRIM_SLACK_KM2 = 1; // 깎은 나라: 뺄 땅 밖에서 빠진 땅을 0으로 보는 한도(좌표를 소수 넷째 자리로 반올림해 칼선 위 꼭짓점이 어긋난 몫)
 
 // 원래 권역 모양(home) 파일: 지금은 data/geo/home/, 기준은 기준 폴더의 home/ 또는 git HEAD의 data/geo/home/
 const HOME = path.join(GEO, 'home');
@@ -46,6 +50,8 @@ const baseHomeNames = BASE
   ? (existsSync(path.join(BASE, 'home')) ? readdirSync(path.join(BASE, 'home')).filter((f) => f.endsWith('.geojson')) : [])
   : git('ls-tree', '--name-only', 'HEAD', 'data/geo/home/').split('\n').filter((p) => p.endsWith('.geojson')).map((p) => path.posix.basename(p));
 const baseHome = (f) => (!baseHomeNames.includes(f) ? null : BASE ? readFileSync(path.join(BASE, 'home', f), 'utf8') : git('show', `HEAD:data/geo/home/${f}`));
+// 깎은 나라의 뺄 땅 목록(engine.mjs writeGeo): 지금 data/geo/home/<id>.trims.json
+const curTrims = (f) => { const t = path.join(HOME, f.replace(/\.geojson$/, '.trims.json')); return existsSync(t) ? JSON.parse(readFileSync(t, 'utf8')).features : null; };
 
 // 두 geojson 글을 기간마다 견준다: op가 'xor'면 대칭차(같은지), 'minus'면 앞 것에만 있는 땅(뒤 것이 앞 것을 품는지), 'plus'면 뒤 것에만 있는 땅(더한 땅)
 const pick = (fs, y) => fs.find((x) => x.properties.from <= y && y < (x.properties.to ?? END));
@@ -70,6 +76,31 @@ function periods(oldText, curText, op = 'xor') {
   return { diffs, A, B };
 }
 
+// 깎은 나라: 기간마다 원래 권역 모양에서 빠진 땅(깎은 땅)과 그중 뺄 땅 목록 밖에 있는 땅
+function trimPeriods(homeText, curText, trims) {
+  const A = JSON.parse(homeText).features, B = JSON.parse(curText).features;
+  const years = [...new Set([...A, ...B].flatMap((x) => [x.properties.from, x.properties.to ?? END]))].sort((a, b) => a - b);
+  const cut = [], outside = [];
+  for (let i = 0; i < years.length - 1; i++) {
+    const [y0, y1] = [years[i], years[i + 1]];
+    const mid = (y0 + y1) / 2;
+    const a = pick(A, mid), b = pick(B, mid);
+    if (!a) continue;
+    const ma = multi(a.geometry);
+    const lost = b ? polyclip.difference(ma, multi(b.geometry)) : ma;
+    const d = Math.abs(area(lost));
+    if (!(d > EPS)) continue;
+    cut.push(`${y0}~${y1}: 깎은 땅 약 ${km2(lost, d).toFixed(0)}km²`);
+    const active = trims.filter((x) => x.properties.from <= mid && mid < (x.properties.to ?? END)).map((x) => multi(x.geometry));
+    const rest = active.length ? polyclip.difference(lost, ...active) : lost;
+    const r = Math.abs(area(rest));
+    const rk = r > EPS ? km2(rest, r) : 0;
+    if (rk > TRIM_SLACK_KM2) outside.push(`${y0}~${y1}: 뺄 땅 목록 밖에서 빠진 땅 약 ${rk.toFixed(3)}km²`);
+    else if (rk > 0) cut[cut.length - 1] += ` (뺄 땅 밖 반올림 오차 ${rk.toFixed(3)}km²)`;
+  }
+  return { cut, outside };
+}
+
 let same = 0, geomSame = 0, added = 0, problems = 0, extendedOnly = 0;
 for (const f of [...new Set([...baseNames, ...curNames])].sort()) {
   const cur = curNames.includes(f) ? readFileSync(path.join(GEO, f), 'utf8') : null;
@@ -82,8 +113,24 @@ for (const f of [...new Set([...baseNames, ...curNames])].sort()) {
     // 늘린 나라: 원래 권역 모양끼리 견주고, 늘린 모양이 원래 권역 모양을 품는지 본다
     const homeNow = hCur ?? cur, homeBefore = hOld ?? old;
     const home = homeNow === homeBefore ? { diffs: [] } : periods(homeBefore, homeNow);
-    const lost = hCur === null ? { diffs: [] } : periods(hCur, cur, 'minus');
+    const trims = hCur === null ? null : curTrims(f);
     const plus = hCur === null ? { diffs: [] } : periods(hCur, cur, 'plus');
+    if (trims) {
+      // 깎은 나라(늘리기도 했을 수 있음): 빠진 땅은 뺄 땅 목록 안이어야 한다
+      const t = trimPeriods(hCur, cur, trims);
+      if (home.diffs.length || t.outside.length) {
+        problems++;
+        console.log(`  도형 다름 ${f} (깎은 나라)`);
+        for (const d of home.diffs) console.log(`    원래 권역 모양 ${d}`);
+        for (const d of t.outside) console.log(`    깎은 모양 ${d}`);
+      } else {
+        extendedOnly++;
+        console.log(`  깎임·늘림만 다름 ${f} (원래 권역 모양 ${homeNow === homeBefore ? '바이트 같음' : '기간마다 대칭차 0'}, 깎은 땅 밖 빠진 땅 0)`);
+      }
+      for (const d of [...t.cut, ...plus.diffs]) console.log(`    ${d}`);
+      continue;
+    }
+    const lost = hCur === null ? { diffs: [] } : periods(hCur, cur, 'minus');
     if (home.diffs.length || lost.diffs.length) {
       problems++;
       console.log(`  도형 다름 ${f} (늘린 나라)`);
@@ -100,5 +147,5 @@ for (const f of [...new Set([...baseNames, ...curNames])].sort()) {
   if (diffs.length) { problems++; console.log(`  도형 다름 ${f}\n    ${diffs.join('\n    ')}`); }
   else { geomSame++; console.log(`  도형 같음 ${f} (바이트만 다름: 버전 ${A.length}→${B.length}개, 꼭짓점 ${points(A)}→${points(B)}개, 기간마다 대칭차 0)`); }
 }
-console.log(`기준 ${BASE ?? 'git HEAD'}: 바이트 같음 ${same}개, 도형 같음 ${geomSame}개, 늘림만 다름 ${extendedOnly}개, 새 파일 ${added}개, 다름·사라짐 ${problems}개`);
+console.log(`기준 ${BASE ?? 'git HEAD'}: 바이트 같음 ${same}개, 도형 같음 ${geomSame}개, 늘림(깎임)만 다름 ${extendedOnly}개, 새 파일 ${added}개, 다름·사라짐 ${problems}개`);
 process.exit(problems ? 1 : 0);

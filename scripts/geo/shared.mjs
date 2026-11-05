@@ -237,13 +237,17 @@ export const YANYUN_REST = I(D([CHINA], XIXIA, [YANYUN], LIAOXI), [NORTH_OF_YANY
 // - extendable(2026-10-29 서아시아·북아프리카 A2-0, 선택): 권역 파일이 own에 { 앞 권역 나라 id: [첫 해, 끝 해] }를 주면, 다 이은 versions에서 그 나라를 빼
 //   extensions(나라 id → 버전 목록과 같은 꼴 [[from, to, 멀티폴리곤]])로 옮기고(sourceOf에서도 뺌) extendable과 함께 돌려준다. 시대 파일은 소유표에 그 나라 id를 주인으로 쓰기만 한다.
 //   권역 파일은 둘을 그대로 export하고, 엔진(engine.mjs '앞 권역 나라 늘리기')이 앞 권역 나라 버전에 더한다
-const ERA_KEYS = new Set(['name', 'versions', 'gapZones', 'voids', 'source']);
+// - trimmable·trims(2026-11-05 중앙아시아 C1 뼈대, 선택): 앞 권역 나라 깎기(engine.mjs '앞 권역 나라 깎기'). 권역 파일이 own에 { 앞 권역 나라 id: [첫 해, 끝 해] }를 주면
+//   그대로 trimmable로 돌려주고, 시대 파일의 era.trims({ 나라 id: [[from, to, 멀티폴리곤], ...] }, 뺄 땅)를 시대 목록 순서대로 이어 trims로 돌려준다(모양 검사는 엔진이 함).
+//   권역 파일은 둘을 그대로 export한다. 시대 파일에 trims가 있는데 권역 파일이 trimmable을 주지 않으면 멈춘다(조용히 버려지지 않게)
+const ERA_KEYS = new Set(['name', 'versions', 'gapZones', 'voids', 'source', 'trims']);
 export function joinEras(area, own, eras) {
   const versions = { ...own.versions };
   const where = Object.fromEntries(Object.keys(versions).map((id) => [id, `${area} 권역 파일`]));
   const gapZones = [...(own.gapZones ?? [])];
   const voids = [...(own.voids ?? [])];
   const sourceOf = {};
+  const trims = {};
   const names = new Set();
   for (const era of eras) {
     const label = `${area} 시대 파일 ${JSON.stringify(era?.name)}`;
@@ -251,7 +255,7 @@ export function joinEras(area, own, eras) {
     if (names.has(era.name)) throw new Error(`${label}: 같은 시대 파일을 두 번 넣음`);
     names.add(era.name);
     const unknown = Object.keys(era).filter((k) => !ERA_KEYS.has(k));
-    if (unknown.length) throw new Error(`${label}: 모르는 칸 ${unknown.join(', ')} (name·versions·gapZones·voids·source만 쓴다)`);
+    if (unknown.length) throw new Error(`${label}: 모르는 칸 ${unknown.join(', ')} (name·versions·gapZones·voids·source·trims만 쓴다)`);
     if (!era.versions || typeof era.versions !== 'object' || Array.isArray(era.versions)) throw new Error(`${label}: versions는 나라 id → 버전 목록 객체여야 함`);
     for (const k of ['gapZones', 'voids']) if (era[k] !== undefined && !Array.isArray(era[k])) throw new Error(`${label}: ${k}는 배열이어야 함`);
     if (era.source !== undefined && (typeof era.source !== 'string' || !era.source.trim())) throw new Error(`${label}: source는 비어 있지 않은 문자열이어야 함`);
@@ -273,6 +277,14 @@ export function joinEras(area, own, eras) {
     }
     gapZones.push(...(era.gapZones ?? []));
     voids.push(...(era.voids ?? []));
+    if (era.trims !== undefined) {
+      if (!era.trims || typeof era.trims !== 'object' || Array.isArray(era.trims)) throw new Error(`${label}: trims는 나라 id → 뺄 땅 조각 목록 객체여야 함`);
+      if (!own.trimmable) throw new Error(`${label}: trims가 있는데 권역 파일이 trimmable을 joinEras에 주지 않음 (engine.mjs '앞 권역 나라 깎기')`);
+      for (const [id, list] of Object.entries(era.trims)) {
+        if (!Array.isArray(list)) throw new Error(`${label}: trims '${id}'가 배열이 아님`);
+        trims[id] = [...(trims[id] ?? []), ...list];
+      }
+    }
   }
   // 앞 권역 나라 늘리기: extendable의 나라는 versions가 아니라 extensions로 (모양 검사는 엔진이 함)
   const extendable = own.extendable ?? {};
@@ -283,5 +295,5 @@ export function joinEras(area, own, eras) {
     delete versions[id];
     delete sourceOf[id];
   }
-  return { versions, gapZones, voids, sourceOf, extensions, extendable };
+  return { versions, gapZones, voids, sourceOf, extensions, extendable, trims, trimmable: own.trimmable ?? {} };
 }

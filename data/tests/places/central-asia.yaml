@@ -1,0 +1,527 @@
+# central-asia 권역 국경 지점 정답표 (평소 지도, npm run new:area가 만든 빈 틀)
+# 읽는 곳: scripts/test-geo (npm run test:geo -- --only places). 꼴은 docs/DATA_GUIDE.md의 정답표 절을 따른다. 나라·시대마다 몇 점인지는 시작 때 정한다(standards.md 9절 10).
+# 지점은 칸 머리 아래 - name: …로 적는다(주석만 있는 파일은 빈 목록으로 읽힘). 해는 천문 연도(기원전 N년 = 1-N), 새 지점은 url을 반드시 단다.
+
+# ── 중앙아시아 C1 A (서남, 2026-11-05): 아프가니스탄·히바·투르크멘 칸이 이 아래에만 ──
+- name: 카불
+  at: [69.17, 34.53]
+  year: 1950
+  expect: afghanistan
+  url: https://en.wikipedia.org/wiki/Emirate_of_Afghanistan
+  from: 중앙아시아 C1 A 결과노트
+- name: 시베르간(북부 칸국)
+  at: [65.75, 36.67]
+  year: 1872
+  expect: none
+  url: https://en.wikipedia.org/wiki/Emirate_of_Afghanistan
+  from: 중앙아시아 C1 A 결과노트
+- name: 시베르간(북부 칸국)
+  at: [65.75, 36.67]
+  year: 1874
+  expect: afghanistan
+  url: https://en.wikipedia.org/wiki/Emirate_of_Afghanistan
+  from: 중앙아시아 C1 A 결과노트
+- name: 마자르이샤리프
+  at: [67.11, 36.71]
+  year: 1870
+  expect: afghanistan
+  url: https://en.wikipedia.org/wiki/Emirate_of_Afghanistan
+  from: 중앙아시아 C1 A 결과노트
+- name: 파이자바드(바다크샨)
+  at: [70.58, 37.12]
+  year: 1882
+  expect: none
+  url: https://en.wikipedia.org/wiki/Emirate_of_Afghanistan
+  from: 중앙아시아 C1 A 결과노트
+- name: 파이자바드(바다크샨)
+  at: [70.58, 37.12]
+  year: 1884
+  expect: afghanistan
+  url: https://en.wikipedia.org/wiki/Emirate_of_Afghanistan
+  from: 중앙아시아 C1 A 결과노트
+- name: 판자브(하자라자트)
+  at: [67, 34.37]
+  year: 1892
+  expect: none
+  url: https://en.wikipedia.org/wiki/Hazarajat
+  from: 중앙아시아 C1 A 결과노트
+- name: 판자브(하자라자트)
+  at: [67, 34.37]
+  year: 1894
+  expect: afghanistan
+  url: https://en.wikipedia.org/wiki/Hazarajat
+  from: 중앙아시아 C1 A 결과노트
+- name: 바미안(하자라자트 밖)
+  at: [67.83, 34.82]
+  year: 1892
+  expect: afghanistan
+  url: https://en.wikipedia.org/wiki/Hazarajat
+  from: 중앙아시아 C1 A 결과노트
+- name: 파룬(카피리스탄)
+  at: [70.92, 35.42]
+  year: 1895
+  expect: none
+  url: https://en.wikipedia.org/wiki/Kafiristan
+  from: 중앙아시아 C1 A 결과노트
+- name: 파룬(카피리스탄)
+  at: [70.92, 35.42]
+  year: 1897
+  expect: afghanistan
+  url: https://en.wikipedia.org/wiki/Kafiristan
+  from: 중앙아시아 C1 A 결과노트
+- name: 메타르람(카피리스탄 밖)
+  at: [70.21, 34.65]
+  year: 1895
+  expect: afghanistan
+  url: https://en.wikipedia.org/wiki/Kafiristan
+  from: 중앙아시아 C1 A 결과노트
+- name: 히바
+  at: [60.36, 41.38]
+  year: 1895
+  expect: khiva-khanate
+  url: https://en.wikipedia.org/wiki/Khanate_of_Khiva
+  from: 중앙아시아 C1 A 결과노트
+- name: 누쿠스(아무다리야 오른쪽 기슭)
+  at: [59.61, 42.46]
+  year: 1872
+  expect: khiva-khanate
+  url: https://en.wikipedia.org/wiki/Khanate_of_Khiva
+  from: 중앙아시아 C1 A 결과노트
+- name: 누쿠스(아무다리야 오른쪽 기슭)
+  at: [59.61, 42.46]
+  year: 1874
+  expect: russia
+  url: https://en.wikipedia.org/wiki/Khanate_of_Khiva
+  from: 중앙아시아 C1 A 결과노트
+- name: 호젤리(아무다리야 왼쪽 기슭)
+  at: [59.45, 42.4]
+  year: 1874
+  expect: khiva-khanate
+  url: https://en.wikipedia.org/wiki/Khanate_of_Khiva
+  from: 중앙아시아 C1 A 결과노트
+- name: 타흐타쿠피르(오른쪽 기슭 정착지)
+  at: [60.29, 43.02]
+  year: 1870
+  expect: khiva-khanate
+  url: https://en.wikipedia.org/wiki/Khanate_of_Khiva
+  from: 중앙아시아 C1 A 결과노트
+- name: 키질쿰 서부(히바 밖)
+  at: [61.6, 43.2]
+  year: 1870
+  expect: none
+  url: https://en.wikipedia.org/wiki/Khanate_of_Khiva
+  from: 중앙아시아 C1 A 결과노트
+- name: 쿤그라트
+  at: [58.91, 43.08]
+  year: 1880
+  expect: khiva-khanate
+  url: https://en.wikipedia.org/wiki/Khanate_of_Khiva
+  from: 중앙아시아 C1 A 결과노트
+- name: 자슬리크(우스튜르트, 히바 밖)
+  at: [57.47, 43.98]
+  year: 1880
+  expect: russia
+  url: https://en.wikipedia.org/wiki/Khanate_of_Khiva
+  from: 중앙아시아 C1 A 결과노트
+- name: 다쇼구즈
+  at: [59.97, 41.84]
+  year: 1880
+  expect: khiva-khanate
+  url: https://en.wikipedia.org/wiki/Khanate_of_Khiva
+  from: 중앙아시아 C1 A 결과노트
+- name: 다쇼구즈 남쪽 카라쿰(히바 밖)
+  at: [59, 40.6]
+  year: 1880
+  expect: none
+  url: https://en.wikipedia.org/wiki/Khanate_of_Khiva
+  from: 중앙아시아 C1 A 결과노트
+- name: 다쇼구즈
+  at: [59.97, 41.84]
+  year: 1923
+  expect: khiva-khanate
+  url: https://en.wikipedia.org/wiki/Khorezm_People%27s_Soviet_Republic
+  from: 중앙아시아 C1 A 결과노트
+- name: 다쇼구즈
+  at: [59.97, 41.84]
+  year: 1925
+  expect: soviet-union
+  url: https://en.wikipedia.org/wiki/National_delimitation_in_the_Soviet_Union
+  from: 중앙아시아 C1 A 결과노트
+- name: 아시가바트
+  at: [58.38, 37.95]
+  year: 1880
+  expect: none
+  url: https://en.wikipedia.org/wiki/Turkmenistan
+  from: 중앙아시아 C1 A 결과노트
+- name: 아시가바트
+  at: [58.38, 37.95]
+  year: 1991
+  expect: soviet-union
+  url: https://en.wikipedia.org/wiki/Turkmenistan
+  from: 중앙아시아 C1 A 결과노트
+- name: 아시가바트
+  at: [58.38, 37.95]
+  year: 2010
+  expect: turkmenistan
+  url: https://en.wikipedia.org/wiki/Turkmenistan
+  from: 중앙아시아 C1 A 결과노트
+- name: 우르겐치
+  at: [60.63, 41.55]
+  year: 1993
+  expect: uzbekistan
+  url: https://en.wikipedia.org/wiki/Uzbekistan
+  from: 중앙아시아 C1 A 결과노트
+
+# ── 중앙아시아 C1 W (서, 2026-11-05): 부하라·코칸트·우즈베크·타지크·키르기스 칸이 이 아래에만 ──
+- name: 부하라
+  at: [64.42, 39.77]
+  year: 1900
+  expect: bukhara-emirate
+  url: https://en.wikipedia.org/wiki/Emirate_of_Bukhara
+  from: 중앙아시아 C1 W 결과노트(수도)
+- name: 사마르칸트
+  at: [66.96, 39.65]
+  year: 1867
+  expect: bukhara-emirate
+  url: https://en.wikipedia.org/wiki/Russian_conquest_of_Bukhara
+  from: 중앙아시아 C1 W 결과노트(1868 할양 앞)
+- name: 사마르칸트
+  at: [66.96, 39.65]
+  year: 1869
+  expect: russia
+  url: https://en.wikipedia.org/wiki/Russian_conquest_of_Bukhara
+  from: 중앙아시아 C1 W 결과노트(1868 할양 뒤)
+- name: 지작
+  at: [67.84, 40.12]
+  year: 1865
+  expect: bukhara-emirate
+  url: https://en.wikipedia.org/wiki/Russian_conquest_of_Bukhara
+  from: 중앙아시아 C1 W 결과노트(1866 점령 앞)
+- name: 지작
+  at: [67.84, 40.12]
+  year: 1866
+  expect: none
+  region: central-asia
+  url: https://en.wikipedia.org/wiki/Russian_conquest_of_Bukhara
+  from: 중앙아시아 C1 W 결과노트(1866 점령 뒤(러시아 도형은 1868부터 — 비움))
+- name: 샤흐리삽즈
+  at: [66.83, 39.05]
+  year: 1867
+  expect: none
+  region: central-asia
+  url: https://en.wikipedia.org/wiki/Emirate_of_Bukhara
+  from: 중앙아시아 C1 W 결과노트(동부 부하라 칼선 안(병합 전 — 비움))
+- name: 샤흐리삽즈
+  at: [66.83, 39.05]
+  year: 1869
+  expect: bukhara-emirate
+  url: https://en.wikipedia.org/wiki/Emirate_of_Bukhara
+  from: 중앙아시아 C1 W 결과노트(동부 부하라 칼선 안(1868 버전))
+- name: 카르시
+  at: [65.79, 38.86]
+  year: 1866
+  expect: bukhara-emirate
+  url: https://en.wikipedia.org/wiki/Emirate_of_Bukhara
+  from: 중앙아시아 C1 W 결과노트(동부 부하라 칼선 밖)
+- name: 누라타
+  at: [65.68, 40.56]
+  year: 1900
+  expect: bukhara-emirate
+  url: https://en.wikipedia.org/wiki/Emirate_of_Bukhara
+  from: 중앙아시아 C1 W 결과노트(키질쿰 칼선 남쪽)
+- name: 탐디불락
+  at: [64.62, 41.73]
+  year: 1900
+  expect: russia
+  url: https://en.wikipedia.org/wiki/Emirate_of_Bukhara
+  from: 중앙아시아 C1 W 결과노트(키질쿰 칼선 북쪽)
+- name: 케르키(아타무라트)
+  at: [65.2, 37.83]
+  year: 1900
+  expect: bukhara-emirate
+  url: https://en.wikipedia.org/wiki/Emirate_of_Bukhara
+  from: 중앙아시아 C1 W 결과노트(레바프 강가 띠 안)
+- name: 레바프 남서 카라쿰
+  at: [63.3, 38.3]
+  year: 1880
+  expect: none
+  region: central-asia
+  url: https://en.wikipedia.org/wiki/Emirate_of_Bukhara
+  from: 중앙아시아 C1 W 결과노트(레바프 강가 띠 밖(1884 전 — 비움))
+- name: 후잔드
+  at: [69.62, 40.28]
+  year: 1865
+  expect: bukhara-emirate
+  url: https://en.wikipedia.org/wiki/Khujand
+  from: 중앙아시아 C1 W 결과노트(후잔드 칼선 서쪽)
+- name: 칸이바담
+  at: [70.42, 40.29]
+  year: 1865
+  expect: kokand-khanate
+  url: https://en.wikipedia.org/wiki/Khanate_of_Kokand
+  from: 중앙아시아 C1 W 결과노트(후잔드 칼선 동쪽)
+- name: 판지켄트
+  at: [67.61, 39.49]
+  year: 1867
+  expect: bukhara-emirate
+  url: https://en.wikipedia.org/wiki/Russian_conquest_of_Bukhara
+  from: 중앙아시아 C1 W 결과노트(투르키스탄 산줄기 칼선 남쪽(1868 할양 앞))
+- name: 이스타라프샨
+  at: [69.0, 39.91]
+  year: 1867
+  expect: none
+  region: central-asia
+  url: https://en.wikipedia.org/wiki/Russian_conquest_of_Bukhara
+  from: 중앙아시아 C1 W 결과노트(투르키스탄 산줄기 칼선 북쪽(1866 점령 뒤 — 비움))
+- name: 두샨베
+  at: [68.78, 38.56]
+  year: 1900
+  expect: bukhara-emirate
+  url: https://en.wikipedia.org/wiki/Emirate_of_Bukhara
+  from: 중앙아시아 C1 W 결과노트(동부 부하라(1868 버전))
+- name: 칼라이훔
+  at: [70.77, 38.45]
+  year: 1900
+  expect: bukhara-emirate
+  url: https://en.wikipedia.org/wiki/Emirate_of_Bukhara
+  from: 중앙아시아 C1 W 결과노트(슈그난 칼선 밖(다르바즈))
+- name: 호로그
+  at: [71.55, 37.49]
+  year: 1890
+  expect: afghanistan
+  url: https://en.wikipedia.org/wiki/Pamir_Mountains
+  from: 중앙아시아 C1 W 결과노트(슈그난 칼선 안(1883~1894 아프가니스탄 점령))
+- name: 호로그
+  at: [71.55, 37.49]
+  year: 1896
+  expect: russia
+  url: https://en.wikipedia.org/wiki/Pamir_Mountains
+  from: 중앙아시아 C1 W 결과노트(1895 파미르 협정 뒤)
+- name: 무르가브
+  at: [73.97, 38.17]
+  year: 1890
+  expect: none
+  region: central-asia
+  url: https://en.wikipedia.org/wiki/Pamir_Mountains
+  from: 중앙아시아 C1 W 결과노트(슈그난 칼선 밖(1895 전 — 비움))
+- name: 코칸트
+  at: [70.94, 40.53]
+  year: 1870
+  expect: kokand-khanate
+  url: https://en.wikipedia.org/wiki/Khanate_of_Kokand
+  from: 중앙아시아 C1 W 결과노트(수도)
+- name: 코칸트
+  at: [70.94, 40.53]
+  year: 1875
+  expect: kokand-khanate
+  url: https://en.wikipedia.org/wiki/Khanate_of_Kokand
+  from: 중앙아시아 C1 W 결과노트(1876 병합 앞)
+- name: 코칸트
+  at: [70.94, 40.53]
+  year: 1877
+  expect: russia
+  url: https://en.wikipedia.org/wiki/Khanate_of_Kokand
+  from: 중앙아시아 C1 W 결과노트(1876 병합 뒤)
+- name: 나린
+  at: [76.0, 41.43]
+  year: 1866
+  expect: none
+  region: central-asia
+  url: https://en.wikipedia.org/wiki/Naryn
+  from: 중앙아시아 C1 W 결과노트(톈산 안쪽(1868 전 — 비움))
+- name: 나린
+  at: [76.0, 41.43]
+  year: 1870
+  expect: russia
+  url: https://en.wikipedia.org/wiki/Naryn
+  from: 중앙아시아 C1 W 결과노트(1868 요새 뒤)
+- name: 타슈켄트
+  at: [69.28, 41.31]
+  year: 1865
+  expect: none
+  region: central-asia
+  url: https://en.wikipedia.org/wiki/Khanate_of_Kokand
+  from: 중앙아시아 C1 W 결과노트(1865 점령, 러시아 도형은 1866부터 — 비움)
+- name: 타슈켄트
+  at: [69.28, 41.31]
+  year: 2000
+  expect: uzbekistan
+  url: https://en.wikipedia.org/wiki/Uzbekistan
+  from: 중앙아시아 C1 W 결과노트(수도)
+- name: 비슈케크
+  at: [74.59, 42.87]
+  year: 2000
+  expect: kyrgyzstan
+  url: https://en.wikipedia.org/wiki/Kyrgyzstan
+  from: 중앙아시아 C1 W 결과노트(수도)
+- name: 두샨베
+  at: [68.78, 38.56]
+  year: 2000
+  expect: tajikistan
+  url: https://en.wikipedia.org/wiki/Tajikistan
+  from: 중앙아시아 C1 W 결과노트(수도)
+- name: 투르크메나바트
+  at: [63.58, 39.08]
+  year: 2000
+  expect: turkmenistan
+  url: https://en.wikipedia.org/wiki/Turkmenistan
+  from: 중앙아시아 C1 W 결과노트(레바프 조각)
+
+# ── 중앙아시아 C1 E (동, 2026-11-05): 카자흐·신장 칸이 이 아래에만 ──
+# C1 E(2026-11-05): 새 나라 수도(카슈가르·아스타나), 버전 해 앞뒤(1867·1870·1876·1877·1878·1881·1944·1949), 칼선 안팎(톈산·이리·세 지구·카슈가르·악수·호탄·하미), 카자흐스탄 동쪽 끝 메움
+- name: 카슈가르
+  at: [75.99, 39.47]
+  year: 1865
+  expect: yettishar
+  url: https://en.wikipedia.org/wiki/Yettishar
+  from: 중앙아시아 C1 E 결과노트
+- name: 카슈가르
+  at: [75.99, 39.47]
+  year: 1876
+  expect: yettishar
+  url: https://en.wikipedia.org/wiki/Yettishar
+  from: 중앙아시아 C1 E 결과노트
+- name: 카슈가르
+  at: [75.99, 39.47]
+  year: 1877
+  expect: qing
+  url: https://en.wikipedia.org/wiki/Dungan_Revolt_(1862%E2%80%931877)
+  from: 중앙아시아 C1 E 결과노트
+- name: 호탄
+  at: [79.92, 37.11]
+  year: 1867
+  expect: yettishar
+  url: https://en.wikipedia.org/wiki/Yettishar
+  from: 중앙아시아 C1 E 결과노트
+- name: 호탄
+  at: [79.92, 37.11]
+  year: 1877
+  expect: yettishar
+  url: https://en.wikipedia.org/wiki/Yettishar
+  from: 중앙아시아 C1 E 결과노트
+- name: 호탄
+  at: [79.92, 37.11]
+  year: 1878
+  expect: qing
+  url: https://en.wikipedia.org/wiki/Yettishar
+  from: 중앙아시아 C1 E 결과노트
+- name: 쿠차
+  at: [82.96, 41.72]
+  year: 1867
+  expect: yettishar
+  url: https://en.wikipedia.org/wiki/Yettishar
+  from: 중앙아시아 C1 E 결과노트
+- name: 쿠차
+  at: [82.96, 41.72]
+  year: 1877
+  expect: qing
+  url: https://en.wikipedia.org/wiki/Dungan_Revolt_(1862%E2%80%931877)
+  from: 중앙아시아 C1 E 결과노트
+- name: 투루판
+  at: [89.19, 42.95]
+  year: 1870
+  expect: yettishar
+  url: https://en.wikipedia.org/wiki/Yettishar
+  from: 중앙아시아 C1 E 결과노트
+- name: 투루판
+  at: [89.19, 42.95]
+  year: 1876
+  expect: yettishar
+  url: https://en.wikipedia.org/wiki/Dungan_Revolt_(1862%E2%80%931877)
+  from: 중앙아시아 C1 E 결과노트
+- name: 투루판
+  at: [89.19, 42.95]
+  year: 1877
+  expect: qing
+  url: https://en.wikipedia.org/wiki/Dungan_Revolt_(1862%E2%80%931877)
+  from: 중앙아시아 C1 E 결과노트
+- name: 우루무치
+  at: [87.62, 43.83]
+  year: 1870
+  expect: yettishar
+  url: https://en.wikipedia.org/wiki/Yettishar
+  from: 중앙아시아 C1 E 결과노트
+- name: 우루무치
+  at: [87.62, 43.83]
+  year: 1876
+  expect: qing
+  url: https://en.wikipedia.org/wiki/Dungan_Revolt_(1862%E2%80%931877)
+  from: 중앙아시아 C1 E 결과노트
+- name: 하미
+  at: [93.51, 42.83]
+  year: 1876
+  expect: qing
+  url: https://en.wikipedia.org/wiki/Kumul_Khanate
+  from: 중앙아시아 C1 E 결과노트
+- name: 이닝(쿨자)
+  at: [81.33, 43.92]
+  year: 1881
+  expect: qing
+  url: https://en.wikipedia.org/wiki/Treaty_of_Saint_Petersburg_(1881)
+  from: 중앙아시아 C1 E 결과노트
+- name: 이닝(쿨자)
+  at: [81.33, 43.92]
+  year: 1943
+  expect: roc
+  url: https://en.wikipedia.org/wiki/East_Turkestan_Republic
+  from: 중앙아시아 C1 E 결과노트
+- name: 이닝(쿨자)
+  at: [81.33, 43.92]
+  year: 1949
+  expect: prc
+  url: https://en.wikipedia.org/wiki/Incorporation_of_Xinjiang_into_the_People%27s_Republic_of_China
+  from: 중앙아시아 C1 E 결과노트
+- name: 카라마이
+  at: [84.87, 45.6]
+  year: 1944
+  expect: roc
+  url: https://en.wikipedia.org/wiki/East_Turkestan_Republic
+  from: 중앙아시아 C1 E 결과노트
+- name: 창지(마나스강 동쪽)
+  at: [87.3, 44.0]
+  year: 1946
+  expect: roc
+  url: https://en.wikipedia.org/wiki/East_Turkestan_Republic
+  from: 중앙아시아 C1 E 결과노트
+- name: 타청
+  at: [82.98, 46.75]
+  year: 1949
+  expect: prc
+  url: https://en.wikipedia.org/wiki/Incorporation_of_Xinjiang_into_the_People%27s_Republic_of_China
+  from: 중앙아시아 C1 E 결과노트
+- name: 알마티
+  at: [76.95, 43.24]
+  year: 1900
+  expect: russia
+  url: https://en.wikipedia.org/wiki/Russian_conquest_of_Central_Asia
+  from: 중앙아시아 C1 E 결과노트
+- name: 바흐티(동쪽 끝)
+  at: [82.71, 46.68]
+  year: 1865
+  expect: russia
+  url: https://en.wikipedia.org/wiki/Treaty_of_Tarbagatai
+  from: 중앙아시아 C1 E 결과노트
+- name: 바흐티(동쪽 끝)
+  at: [82.71, 46.68]
+  year: 1950
+  expect: soviet-union
+  url: https://en.wikipedia.org/wiki/Kazakh_Soviet_Socialist_Republic
+  from: 중앙아시아 C1 E 결과노트
+- name: 쉼켄트
+  at: [69.6, 42.3]
+  year: 1866
+  expect: russia
+  url: https://en.wikipedia.org/wiki/Russian_conquest_of_Central_Asia
+  from: 중앙아시아 C1 E 결과노트
+- name: 아스타나
+  at: [71.43, 51.13]
+  year: 2000
+  expect: kazakhstan
+  url: https://en.wikipedia.org/wiki/Kazakhstan
+  from: 중앙아시아 C1 E 결과노트
+- name: 바이코누르
+  at: [63.32, 45.62]
+  year: 1992
+  expect: kazakhstan
+  url: https://en.wikipedia.org/wiki/Baikonur_Cosmodrome
+  from: 중앙아시아 C1 E 결과노트

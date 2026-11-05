@@ -1252,3 +1252,18 @@
 - { type: vassal_of, subject: western-ganga-dynasty, object: rashtrakuta-dynasty, from: 788, to: 972 } # 도루바의 강가바디 정복 뒤 라슈트라쿠타의 신하(혼인 동맹)
 - { type: vassal_of, subject: hoysala-dynasty, object: western-chalukya-dynasty, from: 1116, to: 1186 } # 비슈누바르다나·나라심하 1세는 칼랴니 찰루키아의 신하
 - { type: vassal_of, subject: chandela-dynasty, object: gurjara-pratihara-dynasty, from: 925, to: 949 } # 야소바르만 때까지 프라티하라의 신하, 단가 때 자립
+
+# ── 중앙아시아 C1 A (서남, 2026-11-05): 아프가니스탄·히바·투르크멘 칸이 이 아래에만 ──
+- { type: successor_of, subject: afghanistan, object: durrani-empire, from: 1826, to: null } # 1826년 무렵 바라크자이 가문(도스트 무함마드 칸)이 카불을 쥐며 두라니 제국이 갈라짐
+- { type: vassal_of, subject: afghanistan, object: british-raj, from: 1880, to: 1918 } # 1879-05 간다마크 조약·1880 압두르 라흐만 칸의 합의로 영국이 외교를 맡음(내정은 스스로), 1919-08-08 라왈핀디 조약으로 끝남
+- { type: vassal_of, subject: khiva-khanate, object: russia, from: 1873, to: 1917 } # 1873-08-12 겐데미안 조약으로 러시아 보호국
+- { type: vassal_of, subject: khiva-khanate, object: soviet-union, from: 1920, to: 1923 } # 1920-02 칸 퇴위 뒤 호라즘 인민 소비에트 공화국, 1920-09 러시아 사회주의 연방과 동맹 조약·붉은 군대 주둔(1918~1919년 주나이드 칸 때는 관계 없음)
+
+# ── 중앙아시아 C1 W (서, 2026-11-05): 부하라·코칸트·우즈베크·타지크·키르기스 칸이 이 아래에만 ──
+- { type: vassal_of, subject: bukhara-emirate, object: russia, from: 1868, to: 1917 } # 1868년 강화 조약으로 보호국(1873년 조약으로 성문화), 에미르가 내정을 다스림
+- { type: vassal_of, subject: bukhara-emirate, object: soviet-union, from: 1920, to: 1923 } # 부하라 인민 소비에트 공화국(1920-10~1924-10): 붉은 군대가 부하라를 차지한 뒤 소비에트 러시아의 통제 아래 사실상 종속
+- { type: vassal_of, subject: kokand-khanate, object: russia, from: 1868, to: 1875 } # 1868년 통상 조약으로 사실상 보호국, 1876년 병합
+
+# ── 중앙아시아 C1 E (동, 2026-11-05): 카자흐·신장 칸이 이 아래에만 ──
+- { type: vassal_of, subject: yettishar, object: ottoman, from: 1873, to: 1877 } # 1873년 야쿱 벡이 오스만 술탄의 종주를 받아들여 에미르 칭호를 받고 술탄 이름으로 주화를 찍음(명목 — 남아시아 하바리·물탄 에미르국과 같은 꼴)
+- { type: successor_of, subject: kazakhstan, object: soviet-union, from: 1991, to: null }

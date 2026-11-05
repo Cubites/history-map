@@ -5298,3 +5298,37 @@
   at: [76.26, 9.91]
   reason: 코치 앞 섬(약 8 km²). 985년 뒤 케랄라 남부(트라방코르 선 안)를 촐라 땅으로 칠해 체라 본토와 바다로 떨어진 섬
   sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Chera_dynasty"]
+
+# ── 중앙아시아 C1 A (서남, 2026-11-05): 아프가니스탄·히바·투르크멘 칸이 이 아래에만 ──
+
+# ── 중앙아시아 C1 W (서, 2026-11-05): 부하라·코칸트·우즈베크·타지크·키르기스 칸이 이 아래에만 ──
+- entity: uzbekistan
+  from: 1992
+  to: null
+  at: [71.11, 39.96]
+  reason: 소흐(Soʻx) 월경지. 소련 때 공화국 경계를 그은 결과 페르가나 분지 남쪽 키르기스스탄 바트켄주 안에 우즈베키스탄 페르가나주의 땅으로 남았다
+  sources: ["위키백과 Sokh District https://en.wikipedia.org/wiki/Sokh_District"]
+
+- entity: uzbekistan
+  from: 1992
+  to: null
+  at: [71.73, 39.94]
+  reason: 샤히마르돈(Shohimardon) 월경지. 키르기스스탄 바트켄주 안의 우즈베키스탄 페르가나주 땅
+  sources: ["위키백과 Shakhimardan https://en.wikipedia.org/wiki/Shakhimardan"]
+
+- entity: tajikistan
+  from: 1992
+  to: null
+  at: [70.59, 39.82]
+  reason: 보루흐(Vorukh) 월경지. 키르기스스탄 바트켄주 안의 타지키스탄 소그드주(이스파라 지구) 땅
+  sources: ["위키백과 Vorukh https://en.wikipedia.org/wiki/Vorukh"]
+
+- entity: tajikistan
+  from: 1992
+  to: null
+  at: [70.59, 40.99]
+  reason: 사르반(사르바크) 월경지. 페르가나 분지 북쪽 우즈베키스탄 나망간주 안의 타지키스탄 소그드주 땅
+  sources: ["위키백과 Enclave and exclave https://en.wikipedia.org/wiki/Enclave_and_exclave"]
+
+
+# ── 중앙아시아 C1 E (동, 2026-11-05): 카자흐·신장 칸이 이 아래에만 ──

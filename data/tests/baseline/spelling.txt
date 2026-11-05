@@ -11,3 +11,6 @@ spelling russo-turkish-war-1768 summary 남부흐강
 spelling scipio-zama-210bc summary 묵특
 spelling thessaly refs 니키포로스
 spelling yaroslav-wise-1015 summary 엘리자베타
+# ── 중앙아시아 C1 A (서남, 2026-11-05): 아프가니스탄·히바·투르크멘 칸이 이 아래에만 ──
+# ── 중앙아시아 C1 W (서, 2026-11-05): 부하라·코칸트·우즈베크·타지크·키르기스 칸이 이 아래에만 ──
+# ── 중앙아시아 C1 E (동, 2026-11-05): 카자흐·신장 칸이 이 아래에만 ──
