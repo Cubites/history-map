@@ -1,33 +1,41 @@
 import { useCallback, useEffect, useLayoutEffect, useRef, useState, type PointerEvent as ReactPointerEvent } from 'react';
 
-/** 손잡이를 이만큼(px) 넘게 움직여야 끌기로 친다. 그보다 짧으면 누름(펼치기·접기 바꾸기) */
+/** 손잡이를 이만큼(px) 넘게 움직여야 끌기로 친다. 그보다 짧으면 누름(단계 바꾸기) */
 const DRAG_MIN = 5;
-/** 손을 뗄 때 이만큼(px) 넘게 끌었으면 그 방향으로 펼치거나 접는다. 아니면 끌기 전 상태로 돌아간다 */
+/** 손을 뗄 때 이만큼(px) 넘게 끌었으면 그 방향의 다음 단계로 간다. 아니면 끌기 전 단계로 돌아간다 */
 const SNAP = 30;
 /** 펼쳤을 때 패널 위 끝과 지도 위 검색창 아래 끝 사이 간격(px) */
 const GAP_BELOW_SEARCH = 8;
 /** 연도 칸을 고치는 동안(화면 키보드, MapYearControls) 키보드 때문에 생긴 화면 크기 변화로는 판 높이를 다시 재지 않는다(지도가 옮겨지지 않게) */
 const keyboardHeld = () => document.documentElement.classList.contains('keyboard-hold');
 
+/** 판의 세 단계: 손잡이만(min) · 접힘(closed, 화면 1/3) · 펼침(open, 검색창 아래까지) */
+export type SheetState = 'min' | 'closed' | 'open';
+const ORDER: SheetState[] = ['min', 'closed', 'open'];
+
 /**
- * 휴대폰 아래 나라 정보 패널을 끌어 올리는 판(바텀 시트)으로 (2026-10-28, DESIGN.md §6.5).
+ * 휴대폰 아래 나라 정보 패널을 끌어 올리고 내리는 판(바텀 시트)으로 (2026-10-28, DESIGN.md §6.5).
  * 접힌 높이는 화면 높이의 1/3(2026-10-28, 이름란이 그보다 크면 손잡이 + 나라 이름란([data-sheet-head]))이고, 손잡이를 위로 끌면 지도 위 검색창 아래까지 펼쳐진다.
- * 아래로 끌거나 검색창을 누르면 접힌다. 손잡이를 짧게 누르면 펼치기·접기를 바꾼다.
- * 높이는 CSS 변수(--sheet-peek 접힌 높이, --sheet-h 지금 높이)로만 넘기고, 휴대폰 CSS(.panel.sheet)가 높이와 음수 위 여백을 같이 바꿔
- * 흐름 속 크기는 늘 접힌 높이 그대로다. 그래서 펼쳐도 지도 크기가 바뀌지 않고 패널이 지도 위를 덮는다. PC에서는 CSS가 이 변수를 쓰지 않는다
+ * 접힌 판을 아래로 더 끌면 손잡이(슬릿 막대)만 남고 그 아래는 숨는다(2026-11-05). 이때는 지도가 아래로 넓어진다.
+ * 검색창을 누르면 펼친 판이 접힌다. 손잡이를 짧게 누르면 손잡이만 → 접힘 → 펼침 → 접힘 순으로 바뀐다. 손잡이만 남은 채 다른 나라를 고르면 접힘으로 올라온다.
+ * 높이는 CSS 변수(--sheet-peek 접힌 높이, --sheet-h 지금 높이, --sheet-flow 흐름 속 크기)로만 넘긴다. 휴대폰 CSS(.panel.sheet)가 높이와 음수 위 여백을 같이 바꿔
+ * 흐름 속 크기는 접힌 높이 그대로(손잡이만일 때와 그보다 낮게 끄는 동안은 지금 높이)다. 그래서 펼쳐도 지도 크기가 바뀌지 않고 패널이 지도 위를 덮는다. PC에서는 CSS가 이 변수를 쓰지 않는다
  */
 export function useBottomSheet(active: boolean, contentKey: unknown) {
   const ref = useRef<HTMLElement>(null);
-  const [open, setOpen] = useState(false);
-  const drag = useRef<{ y: number; h: number; moved: boolean; open: boolean } | null>(null);
+  const [state, setState] = useState<SheetState>('closed');
+  const drag = useRef<{ y: number; h: number; moved: boolean; state: SheetState } | null>(null);
   const suppressClick = useRef(false);
 
   const peekOf = (el: HTMLElement) => parseFloat(el.style.getPropertyValue('--sheet-peek')) || el.offsetHeight;
+  // 손잡이만 남은 높이: 손잡이 + 판 테두리
+  const minOf = (el: HTMLElement) => (el.querySelector<HTMLElement>('.sheet-handle')?.offsetHeight ?? 22) + (el.offsetHeight - el.clientHeight);
   // 펼친 높이: 패널 아래 끝(흐름 속 자리라 펼쳐도 그대로)에서 지도 위 검색창 아래 끝 + 간격까지
   const openHeight = (el: HTMLElement) => {
     const search = document.querySelector('.map-search')?.getBoundingClientRect();
     return search ? Math.max(peekOf(el), Math.round(el.getBoundingClientRect().bottom - search.bottom - GAP_BELOW_SEARCH)) : peekOf(el);
   };
+  const heightOf = (el: HTMLElement, s: SheetState) => (s === 'min' ? minOf(el) : s === 'open' ? openHeight(el) : peekOf(el));
 
   // 접힌 높이 = 화면 높이의 1/3과 (손잡이 + 나라 이름란 높이) 가운데 큰 것. 이름란이나 화면 크기가 바뀌면 다시 잰다
   useLayoutEffect(() => {
@@ -57,33 +65,44 @@ export function useBottomSheet(active: boolean, contentKey: unknown) {
     };
   }, [active, contentKey]);
 
-  // 펼침·접힘을 패널에 반영한다. 화면 크기가 바뀌면 펼친 높이를 다시 잰다
+  // 단계를 패널에 반영한다. 화면 크기가 바뀌면 펼친 높이를 다시 잰다
   useLayoutEffect(() => {
     const el = ref.current;
     if (!el) return;
-    if (!active || !open) {
+    const s = active ? state : 'closed';
+    el.dataset.sheet = s;
+    if (s !== 'open') el.scrollTop = 0;
+    if (s === 'closed') {
       el.style.removeProperty('--sheet-h');
-      el.dataset.sheet = 'closed';
-      el.scrollTop = 0;
+      el.style.removeProperty('--sheet-flow');
       return;
     }
-    const place = () => el.style.setProperty('--sheet-h', `${openHeight(el)}px`);
+    const place = () => {
+      const h = heightOf(el, s);
+      el.style.setProperty('--sheet-h', `${h}px`);
+      if (s === 'min') el.style.setProperty('--sheet-flow', `${h}px`);
+      else el.style.removeProperty('--sheet-flow');
+    };
     place();
-    el.dataset.sheet = 'open';
     const onResize = () => !keyboardHeld() && place();
     window.addEventListener('resize', onResize);
     return () => window.removeEventListener('resize', onResize);
-  }, [active, open]);
+  }, [active, state]);
 
-  // 전쟁 보기로 바뀌면(패널이 지도 위로 감) 접는다
+  // 전쟁 보기로 바뀌면(패널이 지도 위로 감) 접힘으로 돌린다
   useEffect(() => {
-    if (!active) setOpen(false);
+    if (!active) setState('closed');
   }, [active]);
 
-  // 검색창을 누르면 접는다(검색 결과가 패널에 가리지 않게)
+  // 손잡이만 남은 채 다른 나라를 고르면 이름이 보이게 접힘으로 올린다
+  useEffect(() => {
+    if (contentKey) setState((s) => (s === 'min' ? 'closed' : s));
+  }, [contentKey]);
+
+  // 검색창을 누르면 펼친 판을 접는다(검색 결과가 패널에 가리지 않게)
   useEffect(() => {
     const onFocus = (e: FocusEvent) => {
-      if (e.target instanceof Element && e.target.closest('.map-search')) setOpen(false);
+      if (e.target instanceof Element && e.target.closest('.map-search')) setState((s) => (s === 'open' ? 'closed' : s));
     };
     document.addEventListener('focusin', onFocus);
     return () => document.removeEventListener('focusin', onFocus);
@@ -98,9 +117,9 @@ export function useBottomSheet(active: boolean, contentKey: unknown) {
       } catch {
         // 포인터를 붙잡지 못해도 손잡이 위에서의 끌기는 그대로 된다
       }
-      drag.current = { y: e.clientY, h: el.offsetHeight, moved: false, open };
+      drag.current = { y: e.clientY, h: el.offsetHeight, moved: false, state };
     },
-    [active, open],
+    [active, state],
   );
   const onPointerMove = useCallback((e: ReactPointerEvent<HTMLElement>) => {
     const el = ref.current;
@@ -110,7 +129,10 @@ export function useBottomSheet(active: boolean, contentKey: unknown) {
     if (!d.moved && Math.abs(dy) <= DRAG_MIN) return;
     d.moved = true;
     el.dataset.sheet = 'drag';
-    el.style.setProperty('--sheet-h', `${Math.min(openHeight(el), Math.max(peekOf(el), d.h + dy))}px`);
+    const h = Math.min(openHeight(el), Math.max(minOf(el), d.h + dy));
+    el.style.setProperty('--sheet-h', `${h}px`);
+    // 접힌 높이보다 낮게 끄는 동안은 흐름 속 크기도 같이 줄여 판 위로 빈 곳이 생기지 않게(그만큼 지도가 넓어짐)
+    el.style.setProperty('--sheet-flow', `${Math.min(h, peekOf(el))}px`);
   }, []);
   const onPointerUp = useCallback((e: ReactPointerEvent<HTMLElement>) => {
     const el = ref.current;
@@ -119,23 +141,35 @@ export function useBottomSheet(active: boolean, contentKey: unknown) {
     if (!el || !d || !d.moved) return;
     suppressClick.current = true;
     const dy = d.y - e.clientY;
-    const next = dy > SNAP ? true : dy < -SNAP ? false : d.open;
-    // 같은 상태로 돌아가도 끌던 높이를 지우도록 반영을 다시 일으킨다
-    setOpen(next);
-    el.dataset.sheet = next ? 'open' : 'closed';
-    if (next) el.style.setProperty('--sheet-h', `${openHeight(el)}px`);
-    else {
+    const h = el.offsetHeight;
+    const heights = ORDER.map((s) => heightOf(el, s));
+    // 위로 끌었으면 지금 높이 이상인 가장 낮은 단계, 아래로 끌었으면 지금 높이 이하인 가장 높은 단계
+    const next =
+      dy > SNAP
+        ? (ORDER.find((_, i) => heights[i] >= h - 1) ?? 'open')
+        : dy < -SNAP
+          ? ([...ORDER].reverse().find((s) => heights[ORDER.indexOf(s)] <= h + 1) ?? 'min')
+          : d.state;
+    // 같은 단계로 돌아가도 끌던 높이를 지우도록 반영을 다시 일으킨다
+    el.dataset.sheet = next;
+    if (next === 'closed') {
       el.style.removeProperty('--sheet-h');
-      el.scrollTop = 0;
+      el.style.removeProperty('--sheet-flow');
+    } else {
+      el.style.setProperty('--sheet-h', `${heights[ORDER.indexOf(next)]}px`);
+      if (next === 'min') el.style.setProperty('--sheet-flow', `${heights[0]}px`);
+      else el.style.removeProperty('--sheet-flow');
     }
+    if (next !== 'open') el.scrollTop = 0;
+    setState(next);
   }, []);
   const onClick = useCallback(() => {
     if (suppressClick.current) {
       suppressClick.current = false;
       return;
     }
-    setOpen((v) => !v);
+    setState((s) => (s === 'closed' ? 'open' : 'closed'));
   }, []);
 
-  return { ref, open, handleProps: { onPointerDown, onPointerMove, onPointerUp, onPointerCancel: onPointerUp, onClick } };
+  return { ref, state, open: state === 'open', handleProps: { onPointerDown, onPointerMove, onPointerUp, onPointerCancel: onPointerUp, onClick } };
 }
