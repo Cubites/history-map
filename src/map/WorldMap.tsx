@@ -585,23 +585,34 @@ export default function WorldMap({ data }: { data: StaticData }) {
     };
   }, [containerRef, size, s0, requestDraw, setMoving, syncZoom]);
 
-  // 한 손가락 확대(2026-10-27): 빠르게 두 번 터치하고 두 번째 터치를 누른 채 움직이면, 손가락이 화면 가운데에서 멀어질수록 확대·가까워질수록 축소한다.
-  // 첫 터치를 '짧게 누름'으로 기억해 두고, 그 뒤 DOUBLE_TAP_MS 안에 가까운 곳을 다시 누르면 d3-zoom보다 먼저(캡처 단계) 받아 지도 끌기로 넘기지 않는다
+  // 한 손가락 확대(2026-10-27): 빠르게 두 번 터치하고 두 번째 터치를 누른 채 움직이면, 위로 올릴수록 확대·내릴수록 축소한다
+  // (2026-11-05 고침: 전에는 손가락이 화면 가운데에서 멀어질수록 확대). 확대 기준점은 판에 가리지 않은 지도 가운데(visibleSize).
+  // 첫 터치를 '짧게 누름'으로 기억해 두고, 그 뒤 DOUBLE_TAP_MS 안에 가까운 곳을 다시 누르면 d3-zoom보다 먼저(캡처 단계) 받아 지도 끌기로 넘기지 않는다.
+  // 터치로 생긴 지도 누름(나라·전쟁 아이콘 고르기)은 DOUBLE_TAP_MS 동안 미뤄 두고, 그 안에 두 번째 터치가 오면 버린다(2026-11-05):
+  // 두 번 터치의 첫 터치로 나라·아이콘이 골라지지 않고, 확실한 한 번 터치일 때만 반응한다. 지도 위 단추(.map-ui)와 마우스 누름은 미루지 않는다
   useEffect(() => {
     const el = containerRef.current;
     if (!el || !size) return;
     const DOUBLE_TAP_MS = 300;
     const TAP_MOVE = 12; // 짧게 누름으로 치는 움직임 한도(px)
     const TAP_NEAR = 40; // 두 번째 터치가 첫 터치에서 이만큼 안이어야 함(px)
-    const PX_PER_E = 120; // 가운데에서 이만큼 멀어질 때마다 e(약 2.7)배
+    const PX_PER_E = 120; // 위로 이만큼 올릴 때마다 e(약 2.7)배
+    const TOUCH_CLICK_MS = 800; // 터치가 끝난 뒤 이 안에 온 누름은 터치에서 생긴 것으로 친다(누름 이벤트에 pointerType이 없는 브라우저용)
     let tapStart: { x: number; y: number; t: number } | null = null;
     let lastTap: { x: number; y: number; t: number } | null = null;
-    let gesture: { d0: number; view: View } | null = null;
+    let gesture: { y0: number; view: View } | null = null;
+    let lastTouchEnd = -Infinity;
+    // 미뤄 둔 한 번 터치 누름. 시간이 지나면 같은 자리에 다시 보낸다(replaying 동안은 그대로 통과)
+    let pending: { target: EventTarget; x: number; y: number; timer: number } | null = null;
+    let replaying = false;
+    const dropPending = () => {
+      if (pending) clearTimeout(pending.timer);
+      pending = null;
+    };
     const local = (t: Touch) => {
       const r = el.getBoundingClientRect();
       return [t.clientX - r.left, t.clientY - r.top] as const;
     };
-    const fromCenter = (x: number, y: number) => Math.hypot(x - size.width / 2, y - size.height / 2);
     const swallow = (e: TouchEvent) => {
       e.preventDefault();
       e.stopImmediatePropagation();
@@ -617,8 +628,10 @@ export default function WorldMap({ data }: { data: StaticData }) {
       if (lastTap && now - lastTap.t < DOUBLE_TAP_MS && Math.hypot(x - lastTap.x, y - lastTap.y) < TAP_NEAR) {
         lastTap = null;
         tapStart = null;
+        // 두 번 터치이므로 첫 터치의 누름(나라·아이콘 고르기)은 버린다
+        dropPending();
         cancelAnimationFrame(animation.current);
-        gesture = { d0: fromCenter(x, y), view: viewRef.current };
+        gesture = { y0: y, view: viewRef.current };
         setMoving(true);
         swallow(e);
         return;
@@ -634,14 +647,16 @@ export default function WorldMap({ data }: { data: StaticData }) {
         return;
       }
       swallow(e);
-      const [x, y] = local(e.touches[0]);
-      const k = Math.min(MAX_ZOOM, Math.max(MIN_ZOOM, gesture.view.k * Math.exp((fromCenter(x, y) - gesture.d0) / PX_PER_E)));
-      const center: [number, number] = [size.width / 2, size.height / 2];
+      const [, y] = local(e.touches[0]);
+      const k = Math.min(MAX_ZOOM, Math.max(MIN_ZOOM, gesture.view.k * Math.exp((gesture.y0 - y) / PX_PER_E)));
+      const shown = visibleSize(size);
+      const center: [number, number] = [shown.width / 2, shown.height / 2];
       viewRef.current = zoomAround(size, s0, gesture.view, center, k, center);
       setHovered(null);
       requestDraw();
     };
     const onEnd = (e: TouchEvent) => {
+      lastTouchEnd = performance.now();
       if (gesture) {
         swallow(e);
         if (e.touches.length === 0) {
@@ -655,16 +670,45 @@ export default function WorldMap({ data }: { data: StaticData }) {
       else lastTap = null;
       tapStart = null;
     };
+    // 터치로 생긴 누름은 React(나라 고르기·전쟁 아이콘)에 닿기 전에 붙잡아 DOUBLE_TAP_MS 뒤에 다시 보낸다
+    const onClick = (e: MouseEvent) => {
+      if (replaying || onMapUi(e.target)) return;
+      const touch = 'pointerType' in e && e.pointerType ? e.pointerType === 'touch' : performance.now() - lastTouchEnd < TOUCH_CLICK_MS;
+      if (!touch || !e.target) return;
+      e.preventDefault();
+      e.stopImmediatePropagation();
+      dropPending();
+      const target = e.target;
+      const [x, y] = [e.clientX, e.clientY];
+      pending = {
+        target,
+        x,
+        y,
+        timer: window.setTimeout(() => {
+          pending = null;
+          if (!(target instanceof Node) || !target.isConnected) return;
+          replaying = true;
+          try {
+            target.dispatchEvent(new MouseEvent('click', { bubbles: true, cancelable: true, view: window, clientX: x, clientY: y }));
+          } finally {
+            replaying = false;
+          }
+        }, DOUBLE_TAP_MS),
+      };
+    };
     const opts = { capture: true, passive: false } as const;
     el.addEventListener('touchstart', onStart, opts);
     el.addEventListener('touchmove', onMove, opts);
     el.addEventListener('touchend', onEnd, opts);
     el.addEventListener('touchcancel', onEnd, opts);
+    el.addEventListener('click', onClick, true);
     return () => {
+      dropPending();
       el.removeEventListener('touchstart', onStart, opts);
       el.removeEventListener('touchmove', onMove, opts);
       el.removeEventListener('touchend', onEnd, opts);
       el.removeEventListener('touchcancel', onEnd, opts);
+      el.removeEventListener('click', onClick, true);
     };
   }, [containerRef, size, s0, requestDraw, setMoving, syncZoom]);
 
