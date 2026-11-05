@@ -9,17 +9,17 @@ const GAP_BELOW_SEARCH = 8;
 /** 연도 칸을 고치는 동안(화면 키보드, MapYearControls) 키보드 때문에 생긴 화면 크기 변화로는 판 높이를 다시 재지 않는다(지도가 옮겨지지 않게) */
 const keyboardHeld = () => document.documentElement.classList.contains('keyboard-hold');
 
-/** 판의 세 단계: 손잡이만(min) · 접힘(closed, 화면 1/3) · 펼침(open, 검색창 아래까지) */
+/** 판의 세 단계: 내림(min, 손잡이 + 나라 이름란) · 접힘(closed, 화면 1/3) · 펼침(open, 검색창 아래까지) */
 export type SheetState = 'min' | 'closed' | 'open';
 const ORDER: SheetState[] = ['min', 'closed', 'open'];
 
 /**
  * 휴대폰 아래 나라 정보 패널을 끌어 올리고 내리는 판(바텀 시트)으로 (2026-10-28, DESIGN.md §6.5).
  * 접힌 높이는 화면 높이의 1/3(2026-10-28, 이름란이 그보다 크면 손잡이 + 나라 이름란([data-sheet-head]))이고, 손잡이를 위로 끌면 지도 위 검색창 아래까지 펼쳐진다.
- * 접힌 판을 아래로 더 끌면 손잡이(슬릿 막대)만 남고 그 아래는 숨는다(2026-11-05). 이때는 지도가 아래로 넓어진다.
- * 검색창을 누르면 펼친 판이 접힌다. 손잡이를 짧게 누르면 손잡이만 → 접힘 → 펼침 → 접힘 순으로 바뀐다. 손잡이만 남은 채 다른 나라를 고르면 접힘으로 올라온다.
+ * 접힌 판을 아래로 더 끌면 손잡이(슬릿 막대)와 나라 이름란만 남고 그 아래는 숨는다(2026-11-05, 같은 날 손잡이만에서 이름란까지로 고침). 이때는 지도가 아래로 넓어진다.
+ * 검색창을 누르면 펼친 판이 접힌다. 손잡이를 짧게 누르면 내림 → 접힘 → 펼침 → 접힘 순으로 바뀐다. 내린 채 다른 나라를 고르면 접힘으로 올라온다.
  * 높이는 CSS 변수(--sheet-peek 접힌 높이, --sheet-h 지금 높이, --sheet-flow 흐름 속 크기)로만 넘긴다. 휴대폰 CSS(.panel.sheet)가 높이와 음수 위 여백을 같이 바꿔
- * 흐름 속 크기는 접힌 높이 그대로(손잡이만일 때와 그보다 낮게 끄는 동안은 지금 높이)다. 그래서 펼쳐도 지도 크기가 바뀌지 않고 패널이 지도 위를 덮는다. PC에서는 CSS가 이 변수를 쓰지 않는다
+ * 흐름 속 크기는 접힌 높이 그대로(내렸을 때와 그보다 낮게 끄는 동안은 지금 높이)다. 그래서 펼쳐도 지도 크기가 바뀌지 않고 패널이 지도 위를 덮는다. PC에서는 CSS가 이 변수를 쓰지 않는다
  */
 export function useBottomSheet(active: boolean, contentKey: unknown) {
   const ref = useRef<HTMLElement>(null);
@@ -28,8 +28,9 @@ export function useBottomSheet(active: boolean, contentKey: unknown) {
   const suppressClick = useRef(false);
 
   const peekOf = (el: HTMLElement) => parseFloat(el.style.getPropertyValue('--sheet-peek')) || el.offsetHeight;
-  // 손잡이만 남은 높이: 손잡이 + 판 테두리
-  const minOf = (el: HTMLElement) => (el.querySelector<HTMLElement>('.sheet-handle')?.offsetHeight ?? 22) + (el.offsetHeight - el.clientHeight);
+  // 내린 높이: 손잡이 + 나라 이름란(--sheet-min, 아래 measure). 재기 전이면 손잡이 + 판 테두리
+  const minOf = (el: HTMLElement) =>
+    parseFloat(el.style.getPropertyValue('--sheet-min')) || (el.querySelector<HTMLElement>('.sheet-handle')?.offsetHeight ?? 22) + (el.offsetHeight - el.clientHeight);
   // 펼친 높이: 패널 아래 끝(흐름 속 자리라 펼쳐도 그대로)에서 지도 위 검색창 아래 끝 + 간격까지
   const openHeight = (el: HTMLElement) => {
     const search = document.querySelector('.map-search')?.getBoundingClientRect();
@@ -37,7 +38,7 @@ export function useBottomSheet(active: boolean, contentKey: unknown) {
   };
   const heightOf = (el: HTMLElement, s: SheetState) => (s === 'min' ? minOf(el) : s === 'open' ? openHeight(el) : peekOf(el));
 
-  // 접힌 높이 = 화면 높이의 1/3과 (손잡이 + 나라 이름란 높이) 가운데 큰 것. 이름란이나 화면 크기가 바뀌면 다시 잰다
+  // 접힌 높이 = 화면 높이의 1/3과 (손잡이 + 나라 이름란 높이) 가운데 큰 것, 내린 높이 = 손잡이 + 나라 이름란 높이. 이름란이나 화면 크기가 바뀌면 다시 잰다
   useLayoutEffect(() => {
     const el = ref.current;
     if (!el || !active) return;
@@ -49,6 +50,12 @@ export function useBottomSheet(active: boolean, contentKey: unknown) {
       const first = !el.style.getPropertyValue('--sheet-peek');
       if (first) el.style.transition = 'none';
       el.style.setProperty('--sheet-peek', `${Math.max(byHead, Math.round(window.innerHeight / 3))}px`);
+      el.style.setProperty('--sheet-min', `${byHead}px`);
+      // 내린 채 이름란 높이가 바뀌면(나라 선택 해제 등) 판 높이도 같이
+      if (el.dataset.sheet === 'min') {
+        el.style.setProperty('--sheet-h', `${byHead}px`);
+        el.style.setProperty('--sheet-flow', `${byHead}px`);
+      }
       if (first) {
         void el.offsetHeight;
         requestAnimationFrame(() => el.style.removeProperty('transition'));
@@ -94,7 +101,7 @@ export function useBottomSheet(active: boolean, contentKey: unknown) {
     if (!active) setState('closed');
   }, [active]);
 
-  // 손잡이만 남은 채 다른 나라를 고르면 이름이 보이게 접힘으로 올린다
+  // 내린 채 다른 나라를 고르면 접힘으로 올린다
   useEffect(() => {
     if (contentKey) setState((s) => (s === 'min' ? 'closed' : s));
   }, [contentKey]);
@@ -143,7 +150,7 @@ export function useBottomSheet(active: boolean, contentKey: unknown) {
     const dy = d.y - e.clientY;
     const h = el.offsetHeight;
     const heights = ORDER.map((s) => heightOf(el, s));
-    // 위로 끌었으면 지금 높이 이상인 가장 낮은 단계, 아래로 끌었으면 지금 높이 이하인 가장 높은 단계
+    // 위로 끌었으면 지금 높이 이상인 가장 낮은 단계, 아래로 끌었으면 지금 높이 이하인 가장 높은 단계(이름란이 1/3보다 커 내림·접힘 높이가 같으면 접힘)
     const next =
       dy > SNAP
         ? (ORDER.find((_, i) => heights[i] >= h - 1) ?? 'open')

@@ -633,7 +633,7 @@ button {
     border-top: 1px solid var(--border);
   }
   /* 아래 패널은 끌어 올리는 판(2026-10-28, useBottomSheet.ts): 접히면 손잡이 + 나라 이름란 높이(--sheet-peek), 위로 끌면 검색창 아래까지(--sheet-h),
-     아래로 끌면 손잡이만(2026-11-05). 높이가 늘어난 만큼 위 여백을 음수로 줘서 흐름 속 크기(--sheet-flow, 없으면 접힌 높이)는 그대로 → 펼쳐도 지도 크기는 바뀌지 않고 판이 지도 위를 덮는다 */
+     아래로 끌면 손잡이 + 나라 이름란만(2026-11-05). 높이가 늘어난 만큼 위 여백을 음수로 줘서 흐름 속 크기(--sheet-flow, 없으면 접힌 높이)는 그대로 → 펼쳐도 지도 크기는 바뀌지 않고 판이 지도 위를 덮는다 */
   .panel.sheet {
     position: relative;
     z-index: 6;
@@ -650,7 +650,7 @@ button {
     transition: height 0.22s ease, margin-top 0.22s ease;
   }
   .panel.sheet[data-sheet='drag'] { transition: none; }
-  /* 손잡이만 남긴 단계(2026-11-05): 흐름 속 크기도 손잡이 높이(--sheet-flow)라 지도가 아래로 넓어진다. 판 안 스크롤은 막는다 */
+  /* 내린 단계(2026-11-05, 손잡이 + 나라 이름란): 흐름 속 크기도 그 높이(--sheet-flow)라 지도가 아래로 넓어진다. 판 안 스크롤은 막는다 */
   .panel.sheet[data-sheet='min'] { overflow: hidden; }
   /* 손잡이: 판 위 가운데 가로로 긴 슬릿. 판 위 끝에 붙어 스크롤해도 남는다. 끌기는 브라우저 스크롤로 가져가지 않게(touch-action) */
   .panel.sheet .sheet-handle { position: sticky; top: 0; z-index: 4; display: flex; align-items: center; justify-content: center; width: calc(100% + 24px); height: 22px; margin: 0 -12px; padding: 0; border: none; border-radius: 14px 14px 0 0; background: var(--surface); cursor: grab; touch-action: none; }

@@ -81,7 +81,7 @@ export function EventPanel({ data }: { data: StaticData }) {
   // 휴대폰에서 아래 패널은 끌어 올리는 판(useBottomSheet). 전쟁 보기에서는 패널이 지도 위로 가므로 쓰지 않는다
   const sheet = useBottomSheet(!warId, selectedId);
   const sheetHandle = !warId && (
-    <button type="button" className="sheet-handle" aria-label={sheet.state === 'open' ? '나라 정보 접기' : sheet.state === 'min' ? '나라 정보 보이기' : '나라 정보 펼치기'} aria-expanded={sheet.state !== 'min'} {...sheet.handleProps} />
+    <button type="button" className="sheet-handle" aria-label={sheet.state === 'open' ? '나라 정보 접기' : sheet.state === 'min' ? '나라 정보 올리기' : '나라 정보 펼치기'} aria-expanded={sheet.state !== 'min'} {...sheet.handleProps} />
   );
 
   const entity = selectedId ? data.entities.get(selectedId) : undefined;
