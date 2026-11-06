@@ -22,7 +22,15 @@ import { versions as SOUTH_ASIA_VERSIONS, extensions as SOUTH_ASIA_EXTENSIONS } 
 //   신장 조각 안: mongols(1388~1723, 1500 2,250 → 1509 23,542 → 1691 21,292)·ming(1,393, ~1643)·qing(1644~ 1,393 → 1691 3,642 → 1720 59,555 → 1724 80,876)·russia(1854 705·1864 6,473)
 //   아프가니스탄·투르크멘·히바 조각 안: russia(1854~ 8,965) / 부하라·코칸트 조각 안: russia(1864 46,863). 사파비·무굴·호타크·아프샤르·두라니·카자르·티무르는 이 권역 조각과 0 km²(선만 닿음)
 // 그래서 C1 목록 뒤에 russia-tsardom·mongols·ming을 더했다(셋 다 1865년 뒤 버전이 없어 C1 결과는 그대로 — gen:geo 바이트 같음으로 확인)
-export const PREV_IDS = ['russia', 'soviet-union', 'russia-fed', 'qing', 'roc', 'prc', 'mongolia', 'russia-tsardom', 'mongols', 'ming'];
+// 600~1499년(C3 뼈대 측정 ca3/c3/skel/prev-overlap.txt — 해 600·630·640·663·670·700·790·843·866·1000·1100·1209·1220·1227·1270·1301·1347·1370·1400·1499와 버전 전부 훑기):
+//   서 61조각(아프가니스탄·투르크멘·우즈베크·타지크·키르기스 남부)·카자흐스탄·키르기스 북부 22조각 안은 모든 나라 0 km²(사산·우마이야·아바스·가즈니·일 칸국 등 선만 닿음).
+//   신장 조각 안: tuyuhun(600~608·618~662 21,292)·sui(~608 1,393 → 609~617 22,676)·tang(618~906 1,393)·tibet(618~662 43,710 → 663~842 65,040)·guiyi(907~1035 1,393)·liao(936~1037 2,250 → 1038~1124 2,179)
+//   ·xixia(1038~1226 1,464)·mongol-empire(1206~1226 2,179 → 1227~1270 24,926)·yuan(1271~1278 24,926 → 1279~1367 68,673)·northern-yuan(1368~1387 2,250)·eastern-turks(~629 2,250)
+//   과 내륙아시아 빈 땅 채우기 구역 xueyantuo(630~645)·anbuk-dohobu(646~681)·second-turks(682~743)·uyghur(744~839)·zubu(840~935)·steppe-tribes(1125~1205) 각 2,250(채우기 구역은 통째로 빼야 그 나라가 줄지 않음 — 위 mongolia와 같음)
+// 그래서 C2 목록 뒤에 이 열일곱을 더했다(모두 1500년 뒤 이 권역 땅과 겹치는 버전·채우기가 없어 C1·C2 결과는 그대로 — gen:geo 뒤 data/geo 0줄로 확인).
+//   tang·tibet·mongol-empire는 이 권역이 늘리는 나라이기도 하다(권역 파일 EXTENDABLE) — 늘릴 땅은 원래 도형을 뺀 땅이라 여기서 뺀다
+export const PREV_IDS = ['russia', 'soviet-union', 'russia-fed', 'qing', 'roc', 'prc', 'mongolia', 'russia-tsardom', 'mongols', 'ming',
+  'tuyuhun', 'sui', 'tang', 'tibet', 'eastern-turks', 'xueyantuo', 'anbuk-dohobu', 'second-turks', 'uyghur', 'zubu', 'guiyi', 'liao', 'steppe-tribes', 'xixia', 'mongol-empire', 'yuan', 'northern-yuan'];
 export const PREV_AREAS = [EUROPE_VERSIONS, CHINA_VERSIONS, INNER_ASIA_VERSIONS, MIDDLE_EAST_VERSIONS, MIDDLE_EAST_EXTENSIONS, SOUTH_ASIA_VERSIONS, SOUTH_ASIA_EXTENSIONS];
 const prevLists = new Map(); // 나라 id → [[from, to(끝 없음은 Infinity), 원래 도형], ...]
 export const prevListOf = (id) => {

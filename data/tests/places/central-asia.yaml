@@ -819,3 +819,463 @@
   expect: qing
   url: https://en.wikipedia.org/wiki/Dzungar_Khanate
   from: 중앙아시아 C2 EX 결과노트
+
+# ── 중앙아시아 C3 W1A (서남 앞 600~820, 2026-11-06) ──
+- name: 쿤두즈
+  at: [68.86, 36.73]
+  year: 700
+  expect: tokhara-yabghus
+  url: https://en.wikipedia.org/wiki/Tokhara_Yabghus
+  from: 중앙아시아 C3 W1A 결과노트
+- name: 카트
+  at: [60.75, 41.69]
+  year: 700
+  expect: afrighid-dynasty
+  url: https://en.wikipedia.org/wiki/Afrighids
+  from: 중앙아시아 C3 W1A 결과노트
+- name: 메르브
+  at: [62.19, 37.66]
+  year: 650
+  expect: sasanian-empire
+  url: https://en.wikipedia.org/wiki/Muslim_conquest_of_Khorasan
+  from: 중앙아시아 C3 W1A 결과노트
+- name: 메르브
+  at: [62.19, 37.66]
+  year: 651
+  expect: rashidun-caliphate
+  url: https://en.wikipedia.org/wiki/Muslim_conquest_of_Khorasan
+  from: 중앙아시아 C3 W1A 결과노트
+- name: 발흐
+  at: [66.9, 36.76]
+  year: 704
+  expect: tokhara-yabghus
+  url: https://en.wikipedia.org/wiki/Tokhara_Yabghus
+  from: 중앙아시아 C3 W1A 결과노트
+- name: 발흐
+  at: [66.9, 36.76]
+  year: 705
+  expect: umayyad-caliphate
+  url: https://en.wikipedia.org/wiki/Tokhara_Yabghus
+  from: 중앙아시아 C3 W1A 결과노트
+- name: 헤라트
+  at: [62.2, 34.35]
+  year: 749
+  expect: umayyad-caliphate
+  url: https://en.wikipedia.org/wiki/Abbasid_Revolution
+  from: 중앙아시아 C3 W1A 결과노트
+- name: 헤라트
+  at: [62.2, 34.35]
+  year: 750
+  expect: abbasid-caliphate
+  url: https://en.wikipedia.org/wiki/Abbasid_Revolution
+  from: 중앙아시아 C3 W1A 결과노트
+
+# ── 중앙아시아 C3 W1T (서 앞 600~820, 2026-11-06) ──
+- name: 사마르칸트
+  at: [66.96, 39.65]
+  year: 700
+  expect: sogdian-city-states
+  url: https://en.wikipedia.org/wiki/Sogdia
+  from: 중앙아시아 C3 W1T 결과노트
+- name: 이스타라브샨
+  at: [69, 39.91]
+  year: 800
+  expect: ustrushana-afshins
+  url: https://en.wikipedia.org/wiki/Ushrusana
+  from: 중앙아시아 C3 W1T 결과노트
+- name: 쿠바
+  at: [72.07, 40.52]
+  year: 700
+  expect: ferghana-kingdom
+  url: https://en.wikipedia.org/wiki/Principality_of_Farghana
+  from: 중앙아시아 C3 W1T 결과노트
+- name: 부하라
+  at: [64.42, 39.77]
+  year: 708
+  expect: sogdian-city-states
+  url: https://en.wikipedia.org/wiki/Muslim_conquest_of_Transoxiana
+  from: 중앙아시아 C3 W1T 결과노트
+- name: 부하라
+  at: [64.42, 39.77]
+  year: 709
+  expect: umayyad-caliphate
+  url: https://en.wikipedia.org/wiki/Muslim_conquest_of_Transoxiana
+  from: 중앙아시아 C3 W1T 결과노트
+- name: 사마르칸트
+  at: [66.96, 39.65]
+  year: 711
+  expect: sogdian-city-states
+  url: https://en.wikipedia.org/wiki/Muslim_conquest_of_Transoxiana
+  from: 중앙아시아 C3 W1T 결과노트
+- name: 사마르칸트
+  at: [66.96, 39.65]
+  year: 712
+  expect: umayyad-caliphate
+  url: https://en.wikipedia.org/wiki/Muslim_conquest_of_Transoxiana
+  from: 중앙아시아 C3 W1T 결과노트
+- name: 쿠바
+  at: [72.07, 40.52]
+  year: 818
+  expect: ferghana-kingdom
+  url: https://en.wikipedia.org/wiki/Principality_of_Farghana
+  from: 중앙아시아 C3 W1T 결과노트(창구 ③ 결정 Q-A — 반영)
+- name: 쿠바
+  at: [72.07, 40.52]
+  year: 819
+  expect: abbasid-caliphate
+  url: https://en.wikipedia.org/wiki/Principality_of_Farghana
+  from: 중앙아시아 C3 W1T 결과노트(창구 ③ 결정 Q-A — 반영)
+
+# ── 중앙아시아 C3 E1 (동 앞 600~820, 2026-11-06) ──
+- name: 고창
+  at: [89.53, 42.85]
+  year: 620
+  expect: qu-gaochang
+  url: https://en.wikipedia.org/wiki/Gaochang
+  from: 중앙아시아 C3 반영(창구 ③ 결정 Q-B)
+- name: 수야브(악베심)
+  at: [75.2, 42.8]
+  year: 602
+  expect: none
+  url: https://en.wikipedia.org/wiki/Western_Turkic_Khaganate
+  from: 중앙아시아 C3 E1 결과노트
+- name: 수야브(악베심)
+  at: [75.2, 42.8]
+  year: 603
+  expect: western-turkic-khaganate
+  url: https://en.wikipedia.org/wiki/Western_Turkic_Khaganate
+  from: 중앙아시아 C3 E1 결과노트
+- name: 수야브(악베심)
+  at: [75.2, 42.8]
+  year: 650
+  expect: western-turkic-khaganate
+  url: https://en.wikipedia.org/wiki/Western_Turkic_Khaganate
+  from: 중앙아시아 C3 E1 결과노트
+- name: 수야브(악베심)
+  at: [75.2, 42.8]
+  year: 720
+  expect: turgesh-khaganate
+  url: https://en.wikipedia.org/wiki/Turgesh
+  from: 중앙아시아 C3 E1 결과노트
+- name: 수야브(악베심)
+  at: [75.2, 42.8]
+  year: 765
+  expect: turgesh-khaganate
+  url: https://en.wikipedia.org/wiki/Turgesh
+  from: 중앙아시아 C3 E1 결과노트
+- name: 수야브(악베심)
+  at: [75.2, 42.8]
+  year: 766
+  expect: karluk-yabgu-state
+  url: https://en.wikipedia.org/wiki/Karluk_Yabgu_State
+  from: 중앙아시아 C3 E1 결과노트
+- name: 쿠차
+  at: [82.96, 41.72]
+  year: 669
+  expect: tang
+  url: https://en.wikipedia.org/wiki/Protectorate_General_to_Pacify_the_West
+  from: 중앙아시아 C3 E1 결과노트
+- name: 쿠차
+  at: [82.96, 41.72]
+  year: 670
+  expect: tibet
+  url: https://en.wikipedia.org/wiki/Protectorate_General_to_Pacify_the_West
+  from: 중앙아시아 C3 E1 결과노트
+- name: 쿠차
+  at: [82.96, 41.72]
+  year: 691
+  expect: tibet
+  url: https://en.wikipedia.org/wiki/Protectorate_General_to_Pacify_the_West
+  from: 중앙아시아 C3 E1 결과노트
+- name: 쿠차
+  at: [82.96, 41.72]
+  year: 692
+  expect: tang
+  url: https://en.wikipedia.org/wiki/Protectorate_General_to_Pacify_the_West
+  from: 중앙아시아 C3 E1 결과노트
+- name: 쿠차
+  at: [82.96, 41.72]
+  year: 700
+  expect: tang
+  url: https://en.wikipedia.org/wiki/Protectorate_General_to_Pacify_the_West
+  from: 중앙아시아 C3 E1 결과노트
+
+# ── 중앙아시아 C3 E2 (동 가운데 821~1219, 2026-11-06) ──
+- name: 발라사군
+  at: [75.25, 42.75]
+  year: 900
+  expect: karakhanid-dynasty
+  url: https://en.wikipedia.org/wiki/Kara-Khanid_Khanate
+  from: 중앙아시아 C3 E2 결과노트
+- name: 고창
+  at: [89.53, 42.85]
+  year: 900
+  expect: qocho-uyghur-kingdom
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Qocho
+  from: 중앙아시아 C3 E2 결과노트
+- name: 호탄
+  at: [79.92, 37.11]
+  year: 900
+  expect: khotan-kingdom
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Khotan
+  from: 중앙아시아 C3 E2 결과노트
+- name: 발라사군
+  at: [75.25, 42.75]
+  year: 1150
+  expect: qara-khitai
+  url: https://en.wikipedia.org/wiki/Qara_Khitai
+  from: 중앙아시아 C3 E2 결과노트
+- name: 발라사군
+  at: [75.25, 42.75]
+  year: 839
+  expect: karluk-yabgu-state
+  url: https://en.wikipedia.org/wiki/Kara-Khanid_Khanate
+  from: 중앙아시아 C3 E2 결과노트
+- name: 발라사군
+  at: [75.25, 42.75]
+  year: 840
+  expect: karakhanid-dynasty
+  url: https://en.wikipedia.org/wiki/Kara-Khanid_Khanate
+  from: 중앙아시아 C3 E2 결과노트
+- name: 카슈가르
+  at: [75.99, 39.47]
+  year: 1040
+  expect: karakhanid-dynasty
+  url: https://en.wikipedia.org/wiki/Kara-Khanid_Khanate
+  from: 중앙아시아 C3 E2 결과노트
+- name: 카슈가르
+  at: [75.99, 39.47]
+  year: 1041
+  expect: eastern-karakhanid
+  url: https://en.wikipedia.org/wiki/Kara-Khanid_Khanate
+  from: 중앙아시아 C3 E2 결과노트
+- name: 발라사군
+  at: [75.25, 42.75]
+  year: 1133
+  expect: eastern-karakhanid
+  url: https://en.wikipedia.org/wiki/Qara_Khitai
+  from: 중앙아시아 C3 E2 결과노트
+- name: 발라사군
+  at: [75.25, 42.75]
+  year: 1134
+  expect: qara-khitai
+  url: https://en.wikipedia.org/wiki/Qara_Khitai
+  from: 중앙아시아 C3 E2 결과노트
+- name: 발라사군
+  at: [75.25, 42.75]
+  year: 1217
+  expect: qara-khitai
+  url: https://en.wikipedia.org/wiki/Kuchlug
+  from: 중앙아시아 C3 E2 결과노트
+- name: 발라사군
+  at: [75.25, 42.75]
+  year: 1218
+  expect: mongol-empire
+  url: https://en.wikipedia.org/wiki/Kuchlug
+  from: 중앙아시아 C3 E2 결과노트
+
+# ── 중앙아시아 C3 W2 (서 가운데 821~1219, 2026-11-06) ──
+- name: 쿠냐우르겐치
+  at: [59.15, 42.32]
+  year: 1000
+  expect: mamunid-dynasty
+  url: https://en.wikipedia.org/wiki/Ma%27munids
+  from: 중앙아시아 C3 W2 결과노트
+- name: 사마르칸트
+  at: [66.96, 39.65]
+  year: 1100
+  expect: western-karakhanid
+  url: https://en.wikipedia.org/wiki/Kara-Khanid_Khanate
+  from: 중앙아시아 C3 W2 결과노트
+- name: 부하라
+  at: [64.42, 39.77]
+  year: 891
+  expect: abbasid-caliphate
+  url: https://en.wikipedia.org/wiki/Samanid_Empire
+  from: 중앙아시아 C3 W2 결과노트
+- name: 부하라
+  at: [64.42, 39.77]
+  year: 892
+  expect: samanid-empire
+  url: https://en.wikipedia.org/wiki/Samanid_Empire
+  from: 중앙아시아 C3 W2 결과노트
+- name: 사마르칸트
+  at: [66.96, 39.65]
+  year: 998
+  expect: samanid-empire
+  url: https://en.wikipedia.org/wiki/Samanid_Empire
+  from: 중앙아시아 C3 W2 결과노트
+- name: 사마르칸트
+  at: [66.96, 39.65]
+  year: 999
+  expect: karakhanid-dynasty
+  url: https://en.wikipedia.org/wiki/Kara-Khanid_Khanate
+  from: 중앙아시아 C3 W2 결과노트
+- name: 카르시
+  at: [65.79, 38.86]
+  year: 1040
+  expect: karakhanid-dynasty
+  url: https://en.wikipedia.org/wiki/Kara-Khanid_Khanate
+  from: 중앙아시아 C3 W2 결과노트
+- name: 카르시
+  at: [65.79, 38.86]
+  year: 1041
+  expect: western-karakhanid
+  url: https://en.wikipedia.org/wiki/Kara-Khanid_Khanate
+  from: 중앙아시아 C3 W2 결과노트
+- name: 타슈켄트
+  at: [69.24, 41.31]
+  year: 1209
+  expect: western-karakhanid
+  url: https://en.wikipedia.org/wiki/Khwarazmian_Empire
+  from: 중앙아시아 C3 W2 결과노트
+- name: 타슈켄트
+  at: [69.24, 41.31]
+  year: 1210
+  expect: khwarazmian-empire
+  url: https://en.wikipedia.org/wiki/Khwarazmian_Empire
+  from: 중앙아시아 C3 W2 결과노트
+
+# ── 중앙아시아 C3 W3 (서 뒤 1220~1499, 2026-11-06) ──
+- name: 헤라트
+  at: [62.2, 34.35]
+  year: 1300
+  expect: kart-dynasty
+  url: https://en.wikipedia.org/wiki/Kart_dynasty
+  from: 중앙아시아 C3 W3 결과노트
+- name: 쿠냐우르겐치
+  at: [59.15, 42.32]
+  year: 1370
+  expect: sufi-dynasty
+  url: https://en.wikipedia.org/wiki/Sufi_dynasty
+  from: 중앙아시아 C3 W3 결과노트
+- name: 사마르칸트
+  at: [66.96, 39.65]
+  year: 1300
+  expect: chagatai-khanate
+  url: https://en.wikipedia.org/wiki/Chagatai_Khanate
+  from: 중앙아시아 C3 W3 결과노트
+- name: 사마르칸트
+  at: [66.96, 39.65]
+  year: 1226
+  expect: mongol-empire
+  url: https://en.wikipedia.org/wiki/Mongol_invasion_of_the_Khwarazmian_Empire
+  from: 중앙아시아 C3 W3 결과노트
+- name: 사마르칸트
+  at: [66.96, 39.65]
+  year: 1227
+  expect: chagatai-khanate
+  url: https://en.wikipedia.org/wiki/Chagatai_Khanate
+  from: 중앙아시아 C3 W3 결과노트
+- name: 사마르칸트
+  at: [66.96, 39.65]
+  year: 1369
+  expect: chagatai-khanate
+  url: https://en.wikipedia.org/wiki/Chagatai_Khanate
+  from: 중앙아시아 C3 W3 결과노트
+- name: 사마르칸트
+  at: [66.96, 39.65]
+  year: 1370
+  expect: timurid-empire
+  url: https://en.wikipedia.org/wiki/Timurid_Empire
+  from: 중앙아시아 C3 W3 결과노트
+- name: 헤라트
+  at: [62.2, 34.35]
+  year: 1380
+  expect: kart-dynasty
+  url: https://en.wikipedia.org/wiki/Kart_dynasty
+  from: 중앙아시아 C3 W3 결과노트
+- name: 헤라트
+  at: [62.2, 34.35]
+  year: 1381
+  expect: timurid-empire
+  url: https://en.wikipedia.org/wiki/Kart_dynasty
+  from: 중앙아시아 C3 W3 결과노트
+- name: 칸다하르
+  at: [65.71, 31.61]
+  year: 1478
+  expect: timurid-empire
+  url: https://en.wikipedia.org/wiki/Kandahar
+  from: 중앙아시아 C3 W3 결과노트
+- name: 칸다하르
+  at: [65.71, 31.61]
+  year: 1479
+  expect: arghun-kandahar
+  url: https://en.wikipedia.org/wiki/Arghun_dynasty
+  from: 중앙아시아 C3 W3 결과노트
+
+# ── 중앙아시아 C3 E3 (동 뒤 1220~1499, 2026-11-06) ──
+- name: 알말리크
+  at: [80.75, 44.05]
+  year: 1300
+  expect: chagatai-khanate
+  url: https://en.wikipedia.org/wiki/Almaliq
+  from: 중앙아시아 C3 E3 결과노트
+- name: 시그나크
+  at: [67.05, 44.0]
+  year: 1300
+  expect: golden-horde
+  url: https://en.wikipedia.org/wiki/White_Horde
+  from: 중앙아시아 C3 E3 결과노트
+- name: 하미
+  at: [93.51, 42.83]
+  year: 1450
+  expect: kara-del
+  url: https://en.wikipedia.org/wiki/Kara_Del
+  from: 중앙아시아 C3 E3 결과노트
+- name: 악수
+  at: [80.26, 41.17]
+  year: 1400
+  expect: moghulistan
+  url: https://en.wikipedia.org/wiki/Moghulistan
+  from: 중앙아시아 C3 E3 결과노트
+- name: 아스타나
+  at: [71.45, 51.17]
+  year: 1259
+  expect: mongol-empire
+  url: https://en.wikipedia.org/wiki/Mongol_Empire
+  from: 중앙아시아 C3 E3 결과노트
+- name: 아스타나
+  at: [71.45, 51.17]
+  year: 1260
+  expect: golden-horde
+  url: https://en.wikipedia.org/wiki/Golden_Horde
+  from: 중앙아시아 C3 E3 결과노트
+- name: 카슈가르
+  at: [75.99, 39.47]
+  year: 1346
+  expect: chagatai-khanate
+  url: https://en.wikipedia.org/wiki/Chagatai_Khanate
+  from: 중앙아시아 C3 E3 결과노트
+- name: 카슈가르
+  at: [75.99, 39.47]
+  year: 1347
+  expect: moghulistan
+  url: https://en.wikipedia.org/wiki/Moghulistan
+  from: 중앙아시아 C3 E3 결과노트
+- name: 투르키스탄
+  at: [68.25, 43.3]
+  year: 1395
+  expect: golden-horde
+  url: https://en.wikipedia.org/wiki/White_Horde
+  from: 중앙아시아 C3 E3 결과노트
+- name: 투르키스탄
+  at: [68.25, 43.3]
+  year: 1396
+  expect: timurid-empire
+  url: https://en.wikipedia.org/wiki/Timurid_Empire
+  from: 중앙아시아 C3 E3 결과노트
+- name: 투루판
+  at: [89.19, 42.95]
+  year: 1486
+  expect: moghulistan
+  url: https://en.wikipedia.org/wiki/Moghulistan
+  from: 중앙아시아 C3 E3 결과노트
+- name: 투루판
+  at: [89.19, 42.95]
+  year: 1487
+  expect: turfan-khanate
+  url: https://en.wikipedia.org/wiki/Moghulistan
+  from: 중앙아시아 C3 E3 결과노트
+
+# ── 중앙아시아 C3 J (1500 이음 1500~1521, 2026-11-06) ──

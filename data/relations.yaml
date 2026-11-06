@@ -1276,3 +1276,40 @@
 # ── 중앙아시아 C2 EK (카자흐스탄, 2026-11-05) ──
 
 # ── 중앙아시아 C2 EX (신장, 2026-11-05) ──
+
+# ── 중앙아시아 C3 W1A (서남 앞 600~820, 2026-11-06) ──
+- { type: vassal_of, subject: tokhara-yabghus, object: western-turkic-khaganate, from: 625, to: 657 } # 625년 무렵 퉁 야브구 카간이 아들을 토하리스탄 야브구로 세움 — 657년 서돌궐이 당에 무너질 때까지(658~758 당의 월지도독부 책봉은 명목이라 줄을 두지 않음)
+
+# ── 중앙아시아 C3 W1T (서 앞 600~820, 2026-11-06) ──
+- { type: vassal_of, subject: sogdian-city-states, object: western-turkic-khaganate, from: 603, to: 657 } # 소그드 도시 군주들은 서돌궐 카간을 섬기고 조공함(657년 서돌궐이 당에 무너짐)
+- { type: vassal_of, subject: ferghana-kingdom, object: western-turkic-khaganate, from: 603, to: 657 } # 페르가나의 이흐시드는 서돌궐 아래, 657년 뒤 당의 안서도호부 아래
+- { type: vassal_of, subject: ustrushana-afshins, object: western-turkic-khaganate, from: 603, to: 657 } # 우스루샤나의 아프신은 서돌궐 아래서 자치
+- { type: vassal_of, subject: ustrushana-afshins, object: abbasid-caliphate, from: 794, to: 891 } # 794~795년 알파들 이븐 야히야가 아프신 카라카나의 복속을 받고, 822년 마문의 원정으로 완전히 굴복 — 892년 무렵 사만 왕조의 주가 될 때까지
+
+# ── 중앙아시아 C3 E1 (동 앞 600~820, 2026-11-06) ──
+- { type: vassal_of, subject: qu-gaochang, object: western-turkic-khaganate, from: 603, to: 639 } # 고창 왕 국백아·국문태가 서돌궐 카간과 혼인·동맹을 맺고 그 아래 듦(위키백과 Gaochang — 창구 ③ 결정 Q-B), 640년 당이 고창을 병합
+
+# ── 중앙아시아 C3 E2 (동 가운데 821~1219, 2026-11-06) ──
+- { type: vassal_of, subject: qocho-uyghur-kingdom, object: qara-khitai, from: 1128, to: 1208 } # 1128년 무렵 야율대석의 서진 때 고창 위구르가 서요에 복속(감국을 둠), 1209년 바르축 아르트 테긴이 서요 감국을 죽이고 몽골로 돌아섬(위키백과 Kingdom of Qocho)
+- { type: vassal_of, subject: qocho-uyghur-kingdom, object: mongol-empire, from: 1209, to: 1219 } # 1209년 이디쿠트 바르축이 칭기즈 칸에게 스스로 귀순(1220년부터는 E3가 이어 씀 — M13)
+
+# ── 중앙아시아 C3 W2 (서 가운데 821~1219, 2026-11-06) ──
+- { type: vassal_of, subject: afrighid-dynasty, object: samanid-empire, from: 900, to: 994 } # 10세기 초 이스마일 사마니가 아므르를 이긴 뒤 호라즘 샤가 사만 왕조를 종주로 받듦 — 995년 마문 왕조에 무너질 때까지
+- { type: vassal_of, subject: khwarazmian-empire, object: seljuk-empire, from: 1077, to: 1193 } # 1077년 셀주크의 맘루크 아누슈티긴이 호라즘 총독이 되고 1097년부터 그 집안이 대를 이음 — 셀주크 술탄국이 끝날 때까지 형식상 신하
+- { type: vassal_of, subject: khwarazmian-empire, object: qara-khitai, from: 1141, to: 1209 } # 1141년 카트완 싸움 뒤 아트시즈가 서요에 공물을 바침 — 1210년 무함마드 2세가 서요를 이기고 공물을 끊을 때까지
+- { type: vassal_of, subject: western-karakhanid, object: seljuk-empire, from: 1089, to: 1140 } # 1089년 말리크샤가 사마르칸트를 쳐 서카라한 칸을 신하로 삼음
+- { type: vassal_of, subject: western-karakhanid, object: qara-khitai, from: 1141, to: 1209 } # 1141년 카트완 싸움에서 서요가 산자르를 이긴 뒤 서카라한은 서요의 속국 — 1210년 호라즘이 사마르칸트를 차지할 때까지
+
+# ── 중앙아시아 C3 W3 (서 뒤 1220~1499, 2026-11-06) ──
+- { type: vassal_of, subject: chagatai-khanate, object: mongol-empire, from: 1227, to: 1259 } # 칭기즈 칸이 죽은 뒤 차가타이가 울루스를 물려받음 — 1260년 알구가 아리크 부케·쿠빌라이 다툼 속에 자립할 때까지(킵차크 칸국 1242~1259와 같은 꼴)
+- { type: vassal_of, subject: kart-dynasty, object: mongol-empire, from: 1245, to: 1259 } # 1245년 무렵 샴스 앗딘 카르트가 헤라트를 맡음, 1251년 몽케 칸이 권한을 줌
+- { type: vassal_of, subject: kart-dynasty, object: ilkhanate, from: 1260, to: 1334 } # 일 칸국 아래(1335년 아부 사이드가 죽어 일 칸국이 무너질 때까지)
+- { type: vassal_of, subject: kart-dynasty, object: togha-temur-domain, from: 1338, to: 1348 } # 토가 테무르에게 조공(1349년 무렵부터 독립)
+
+# ── 중앙아시아 C3 E3 (동 뒤 1220~1499, 2026-11-06) ──
+- { type: vassal_of, subject: qocho-uyghur-kingdom, object: mongol-empire, from: 1220, to: 1270 } # 1209년 귀순에 이어 이디쿠트가 몽골 제국의 부마로 원정에 따름(E2 줄을 이어 씀 — M13)
+- { type: vassal_of, subject: qocho-uyghur-kingdom, object: yuan, from: 1271, to: 1368 } # 원이 선 뒤 이디쿠트는 원 조정에 속함(1284년 이디쿠트가 하미·간쑤로 옮김 — 위키백과 Turpan), 1368년 원이 물러남(1369~1388 종주 없음 — 창구 ③ 결정 Q-F)
+- { type: vassal_of, subject: kara-del, object: ming, from: 1404, to: 1513 } # 1404년 명이 하미위를 두고 왕을 충순왕으로 봉함, 1513년 투루판 칸국의 만수르가 하미를 정복(위키백과 Kara Del)
+
+# ── 중앙아시아 C3 J (1500 이음 1500~1521, 2026-11-06) ──
+- { type: vassal_of, subject: arghun-kandahar, object: timurid-empire, from: 1479, to: 1506 } # 1479 술탄 후사인 바이카라가 둘눈 베그를 총독으로 세움, 1506년 후사인이 죽고 1507 샤이바니가 헤라트를 차지하며 끝남

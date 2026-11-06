@@ -4436,7 +4436,7 @@
   from: 1221
   to: 1260
   at: [58.80, 36.21]
-  reason: 1221~1259년 몽골 제국의 이란·이라크 땅(호라즘 정복 뒤 굳은 땅, 1258년 이라크)은 몽골 초원 본토와 아직 그리지 않은 중앙아시아(3묶음)를 사이에 두고 떨어져 보인다(영향표 A3 mongol-empire 줄, 1260년부터 일 칸국)
+  reason: 1221~1259년 몽골 제국의 이란·이라크 땅(호라즘 정복 뒤 굳은 땅, 1258년 이라크)은 투르크메니스탄 쪽 빈 땅(사막·투르크멘 부족 땅)을 사이에 두고 카자흐 초원·호라즘의 몽골 땅과 떨어져 보인다(1227년부터 트란스옥시아나는 차가타이 칸국, 1260년부터 일 칸국)
   sources: ["위키백과 영어판 「Khwarazmian Empire」 https://en.wikipedia.org/wiki/Khwarazmian_Empire", "위키백과 영어판 「Chormaqan」 https://en.wikipedia.org/wiki/Chormaqan", "위키백과 영어판 「Ilkhanate」 https://en.wikipedia.org/wiki/Ilkhanate"]
 
 # ── 서아시아·북아프리카 A3c (2026-10-31): 1000~1452 서 (지브롤터 해협 너머의 이베리아, 칠하지 않은 땅 너머의 땅, 정복 순서로 떨어진 땅) ──
@@ -5226,13 +5226,6 @@
   reason: 1010년 물탄을 더한 남아시아 쪽 땅. 가즈니 본토(아프가니스탄)를 그리지 않아 이란 쪽 땅과 떨어져 보임(남아시아 S4 결정 5)
   sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Ghaznavids"]
 
-- entity: ghaznavid-empire
-  from: 1021
-  to: 1040
-  at: [59.29, 35.36]
-  reason: 1021년 라호르를 더해 펀자브 쪽이 더 넓어지면서 이란 쪽 호라산이 떨어진 조각으로 잡힘. 가즈니 본토(아프가니스탄)를 그리지 않은 탓(남아시아 S4 결정 5)
-  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Ghaznavids"]
-
 - entity: ghurid-dynasty
   from: 1195
   to: 1206
@@ -5368,3 +5361,337 @@
 # ── 중앙아시아 C2 EK (카자흐스탄, 2026-11-05) ──
 
 # ── 중앙아시아 C2 EX (신장, 2026-11-05) ──
+
+# ── 중앙아시아 C3 W1A (서남 앞 600~820, 2026-11-06) ──
+- entity: sasanian-empire
+  from: 600
+  to: 651
+  at: [65.4, 37.87]
+  reason: 아무다리야 왼쪽 기슭 띠(아물·케르키 — 강을 건너는 길목 오아시스). 메르브와는 카라쿰 사막을 사이에 두고 떨어져 칠해지고, 705년 아래 토하리스탄(발흐 쪽)을 칠하기 전에는 이어지는 땅이 없음(중앙아시아 C3 W1A, 사막은 기본값 B8로 비움)
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Muslim_conquest_of_Khorasan"]
+
+- entity: rashidun-caliphate
+  from: 651
+  to: 661
+  at: [65.4, 37.87]
+  reason: 아무다리야 왼쪽 기슭 띠(아물·케르키 — 강을 건너는 길목 오아시스). 메르브와는 카라쿰 사막을 사이에 두고 떨어져 칠해지고, 705년 아래 토하리스탄(발흐 쪽)을 칠하기 전에는 이어지는 땅이 없음(중앙아시아 C3 W1A, 사막은 기본값 B8로 비움)
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Muslim_conquest_of_Khorasan"]
+
+- entity: umayyad-caliphate
+  from: 661
+  to: 705
+  at: [65.4, 37.87]
+  reason: 아무다리야 왼쪽 기슭 띠(아물·케르키 — 강을 건너는 길목 오아시스). 메르브와는 카라쿰 사막을 사이에 두고 떨어져 칠해지고, 705년 아래 토하리스탄(발흐 쪽)을 칠하기 전에는 이어지는 땅이 없음(중앙아시아 C3 W1A, 사막은 기본값 B8로 비움)
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Muslim_conquest_of_Khorasan"]
+
+- entity: turk-shahi
+  from: 665
+  to: 680
+  at: [72.41, 33.26]
+  reason: 페샤와르 골짜기·탁실라(남아시아 쪽 땅). 665~679년 본토인 카불·자불리스탄과 카이바르 고개 둘레 산지(남아시아 쪽에서 칠하지 않은 부족 땅)를 사이에 두고 떨어져 보임(중앙아시아 C3 W1A)
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Turk_Shahis"]
+
+- entity: turk-shahi
+  from: 680
+  to: 821
+  at: [69.46, 34.6]
+  reason: 카불 골짜기(도읍 카불). 680년 자불리스탄이 준빌 왕조로 갈라진 뒤 더 넓은 남아시아 쪽 페샤와르 골짜기와 카이바르 고개 둘레 산지(칠하지 않은 부족 땅)를 사이에 두고 떨어져 보임(중앙아시아 C3 W1A)
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Turk_Shahis"]
+
+# ── 중앙아시아 C3 W1T (서 앞 600~820, 2026-11-06) ──
+- entity: umayyad-caliphate
+  from: 709
+  to: 750
+  at: [64.19, 40.05]
+  reason: 트란스옥시아나(709년 부하라 오아시스, 712년부터 사마르칸트·카슈카다리야까지). 호라산 쪽 메르브·아무다리야 띠와는 카라쿰 사막과 키질쿰 쪽 비운 땅(지도에서 칠하지 않은 사막·초원)을 사이에 두고 떨어져 칠해짐(중앙아시아 C3 합치기에서 W1A와 함께 확인)
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Muslim_conquest_of_Transoxiana"]
+
+- entity: abbasid-caliphate
+  from: 750
+  to: 759
+  at: [64.24, 40.03]
+  reason: 트란스옥시아나(750년 부하라·사마르칸트·카슈카다리야, 751년부터 샤시, 819년부터 페르가나까지). 759년 위 토하리스탄을 칠하기 전에는 아래 토하리스탄·메르브 쪽 본토와 카라쿰 사막·아무다리야 북쪽 비운 땅을 사이에 두고 떨어짐(중앙아시아 C3 합치기에서 W1A와 함께 확인)
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Muslim_conquest_of_Transoxiana"]
+
+- entity: abbasid-caliphate
+  from: 751
+  to: 819
+  at: [69.8, 41.2]
+  reason: 샤시(타슈켄트·일라크 — 751년 탈라스 전투 뒤 칼리프국 땅). 페르가나를 이흐시드 왕가의 페르가나 왕국으로 818년까지 그려(창구 ③ 결정 Q-A), 소그디아나 쪽 본토와 미르자출 초원·지작·후잔드(칠하지 않은 땅)를 사이에 두고 떨어져 보임(819년 페르가나를 더해 이어짐, 중앙아시아 C3 반영)
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Principality_of_Farghana"]
+
+
+# ── 중앙아시아 C3 E1 (동 앞 600~820, 2026-11-06) ──
+- entity: tang
+  from: 640
+  to: 648
+  at: [93.5, 42.97]
+  reason: 당의 서역(하미·투루판·베슈발리크와 4진 오아시스)은 허시회랑 서쪽 끝(둔황)과 하미 사이 베이산·가순 고비 사막(내륙아시아 지도에서 돌궐·설연타·안북도호부 등 초원 나라 채우기 구역이 덮는 땅)을 사이에 두고 떨어져 칠해짐. 실제로는 이오–서주를 잇는 역로로 이어짐
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Protectorate_General_to_Pacify_the_West"]
+
+- entity: tang
+  from: 648
+  to: 670
+  at: [80.79, 38.87]
+  reason: 당의 서역(하미·투루판·베슈발리크와 4진 오아시스)은 허시회랑 서쪽 끝(둔황)과 하미 사이 베이산·가순 고비 사막(내륙아시아 지도에서 돌궐·설연타·안북도호부 등 초원 나라 채우기 구역이 덮는 땅)을 사이에 두고 떨어져 칠해짐. 실제로는 이오–서주를 잇는 역로로 이어짐
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Protectorate_General_to_Pacify_the_West"]
+
+- entity: tang
+  from: 670
+  to: 692
+  at: [93.5, 42.97]
+  reason: 당의 서역(하미·투루판·베슈발리크와 4진 오아시스)은 허시회랑 서쪽 끝(둔황)과 하미 사이 베이산·가순 고비 사막(내륙아시아 지도에서 돌궐·설연타·안북도호부 등 초원 나라 채우기 구역이 덮는 땅)을 사이에 두고 떨어져 칠해짐. 실제로는 이오–서주를 잇는 역로로 이어짐
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Protectorate_General_to_Pacify_the_West"]
+
+- entity: tang
+  from: 692
+  to: 790
+  at: [80.79, 38.87]
+  reason: 당의 서역(하미·투루판·베슈발리크와 4진 오아시스)은 허시회랑 서쪽 끝(둔황)과 하미 사이 베이산·가순 고비 사막(내륙아시아 지도에서 돌궐·설연타·안북도호부 등 초원 나라 채우기 구역이 덮는 땅)을 사이에 두고 떨어져 칠해짐. 실제로는 이오–서주를 잇는 역로로 이어짐
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Protectorate_General_to_Pacify_the_West"]
+
+- entity: tang
+  from: 790
+  to: 791
+  at: [93.5, 42.97]
+  reason: 당의 서역(하미·투루판·베슈발리크와 4진 오아시스)은 허시회랑 서쪽 끝(둔황)과 하미 사이 베이산·가순 고비 사막(내륙아시아 지도에서 돌궐·설연타·안북도호부 등 초원 나라 채우기 구역이 덮는 땅)을 사이에 두고 떨어져 칠해짐. 실제로는 이오–서주를 잇는 역로로 이어짐
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Protectorate_General_to_Pacify_the_West"]
+
+
+# ── 중앙아시아 C3 E2 (동 가운데 821~1219, 2026-11-06) ──
+- entity: mongol-empire
+  from: 1218
+  to: 1220
+  at: [79.42, 40.02]
+  reason: 1218~1219년 몽골 제국이 쿠출루크(서요)를 쓰러뜨리고 얻은 세미레치예·이리·타림 서쪽은 몽골 초원 본토와 준가르(1220년부터 칠함 — 결정 Q6·M19)와 종속국 고창 위구르를 사이에 두고 떨어져 보인다
+  sources: ["위키백과 영어판 「Mongol conquest of the Qara Khitai」 https://en.wikipedia.org/wiki/Mongol_conquest_of_the_Qara_Khitai", "위키백과 영어판 「Qara Khitai」 https://en.wikipedia.org/wiki/Qara_Khitai"]
+
+# ── 중앙아시아 C3 W2 (서 가운데 821~1219, 2026-11-06) ──
+- entity: abbasid-caliphate
+  from: 821
+  to: 873
+  at: [68.3, 37.15]
+  reason: 트란스옥시아나·토하리스탄과 시스탄의 칼리프 총독 땅. 호라산(메르브·헤라트)을 타히르 왕조로 그려 이라크·이란 쪽 본토와 떨어져 보임(중앙아시아 C3 W2)
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Tahirid_dynasty"]
+
+- entity: abbasid-caliphate
+  from: 873
+  to: 892
+  at: [71.53, 40.64]
+  reason: 트란스옥시아나의 칼리프 총독 땅(사만 가문). 호라산·토하리스탄을 사파르 왕조로 그려 본토와 떨어져 보임(892년 사만 왕조로 넘어감, 중앙아시아 C3 W2)
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Samanid_Empire"]
+
+- entity: tahirid-dynasty
+  from: 821
+  to: 873
+  at: [65.4, 37.87]
+  reason: 아무다리야 왼쪽 강가 띠(아물·케르키). 메르브 오아시스와 카라쿰 사막(주인 없는 땅)을 사이에 두고 떨어짐(중앙아시아 C3 W2)
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Tahirid_dynasty"]
+
+- entity: tahirid-dynasty
+  from: 870
+  to: 873
+  at: [62.03, 37.67]
+  reason: 메르브 오아시스. 870년 헤라트·바드기스를 사파르 왕조에 잃어 니샤푸르 쪽 본토와 사막·산지를 사이에 두고 떨어짐(중앙아시아 C3 W2)
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Saffarid_dynasty"]
+
+- entity: saffarid-dynasty
+  from: 870
+  to: 873
+  at: [62.43, 34.22]
+  reason: 870년 차지한 헤라트·바드기스. 시스탄 오아시스와 파라 북쪽 사막(주인 없는 땅)을 사이에 두고 떨어짐(873년 호라산을 더해 이어짐, 중앙아시아 C3 W2)
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Saffarid_dynasty"]
+
+- entity: turk-shahi
+  from: 821
+  to: 822
+  at: [69.46, 34.6]
+  reason: 카불 골짜기(도읍 카불). 남아시아 쪽 페샤와르 골짜기와 카이바르 고개 둘레 부족 땅(칠하지 않음)을 사이에 두고 떨어짐(W1A 줄의 마지막 해, 중앙아시아 C3 W2)
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Turk_Shahis"]
+
+- entity: hindu-shahi
+  from: 822
+  to: 870
+  at: [69.46, 34.6]
+  reason: 카불 골짜기. 남아시아 쪽 본토(훈드·페샤와르)와 카이바르 고개 둘레 부족 땅(칠하지 않음)을 사이에 두고 떨어짐(중앙아시아 C3 W2)
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Hindu_Shahis"]
+
+- entity: hindu-shahi
+  from: 880
+  to: 965
+  at: [69.46, 34.6]
+  reason: 사파르 왕조에게서 되찾은 카불 골짜기. 남아시아 쪽 본토와 카이바르 고개 둘레 부족 땅을 사이에 두고 떨어짐(964~965년 무렵 잃음, 중앙아시아 C3 W2)
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Hindu_Shahis"]
+
+- entity: ghaznavid-empire
+  from: 1017
+  to: 1041
+  at: [58.74, 41.95]
+  reason: 1017년 편입한 호라즘 오아시스. 호라산 쪽 본토와 카라쿰 사막(주인 없는 땅)을 사이에 두고 떨어짐(중앙아시아 C3 W2)
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Ma%27munids"]
+
+- entity: ghaznavid-empire
+  from: 1021
+  to: 1040
+  at: [72.35, 31.62]
+  reason: 1021년 라호르를 더한 펀자브 쪽 땅. 가즈니·카불의 본토와 카이바르 고개 둘레 부족 땅(칠하지 않음)을 사이에 두고 떨어짐(중앙아시아 C3 W2 — 남아시아 S4의 호라산 쪽 줄을 바꿈)
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Ghaznavids"]
+
+- entity: ghaznavid-empire
+  from: 1040
+  to: 1151
+  at: [67.34, 32.35]
+  reason: 단다나칸 싸움 뒤 남은 가즈니·자불·카불 골짜기(본거지). 더 넓은 펀자브 쪽 땅과 카이바르 고개 둘레 부족 땅을 사이에 두고 떨어짐(중앙아시아 C3 W2)
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Ghaznavids"]
+
+- entity: ghaznavid-empire
+  from: 1040
+  to: 1150
+  at: [64.76, 33.92]
+  reason: 1011년 마흐무드가 정복한 구르 고원. 가즈니 본거지와 하자라자트 산지(주인 없는 땅)를 사이에 두고 떨어짐(중앙아시아 C3 W2)
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Ghurid_dynasty"]
+
+- entity: ghaznavid-empire
+  from: 1152
+  to: 1160
+  at: [67.34, 32.34]
+  reason: 1152년 되찾은 가즈니 본거지(결정 Q2). 라호르 쪽 펀자브와 카이바르 고개 둘레 부족 땅을 사이에 두고 떨어짐(중앙아시아 C3 W2)
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Ala_al-Din_Husayn"]
+
+- entity: ghurid-dynasty
+  from: 1175
+  to: 1206
+  at: [63.6, 34.52]
+  reason: 구르 본거지(피루즈쿠)와 1175년 차지한 헤라트·바드기스. 인도 쪽 본토와 하자라자트 산지·카이바르 고개 둘레 부족 땅을 사이에 두고 떨어짐(중앙아시아 C3 W2)
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Ghurid_dynasty"]
+
+- entity: ghurid-dynasty
+  from: 1175
+  to: 1206
+  at: [67.33, 32.34]
+  reason: 1173년 차지한 가즈니·자불·카불 골짜기(지도에서 1175년부터). 인도 쪽 본토와 카이바르 고개 둘레 부족 땅을 사이에 두고 떨어짐(중앙아시아 C3 W2)
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Ghurid_dynasty"]
+
+- entity: ghurid-dynasty
+  from: 1206
+  to: 1215
+  at: [64.76, 33.92]
+  reason: 구르 본거지(피루즈쿠). 1206년 인도 쪽 땅이 갈라선 뒤 가즈니 쪽과 하자라자트 산지(주인 없는 땅)를 사이에 두고 떨어짐(1215년 호라즘이 끝냄, 중앙아시아 C3 W2)
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Ghurid_dynasty"]
+
+- entity: seljuk-empire
+  from: 1041
+  to: 1077
+  at: [58.74, 41.95]
+  reason: 호라즘 오아시스(1041~1043년 샤 말리크를 거쳐 셀주크). 호라산 쪽 본토와 카라쿰 사막(주인 없는 땅)을 사이에 두고 떨어짐(1077년부터 호라즘 제국, 중앙아시아 C3 W2)
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Seljuk_Empire"]
+
+- entity: khwarazmian-empire
+  from: 1181
+  to: 1198
+  at: [60.42, 37.17]
+  reason: 술탄 샤가 쥔 아할 기슭(니사·아비바르드). 호라즘 오아시스와 카라쿰 사막(주인 없는 땅)을 사이에 두고 떨어짐(1198년 이란 쪽 호라산과 이어짐, 중앙아시아 C3 W2)
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Seljuk_Empire"]
+
+- entity: khwarazmian-empire
+  from: 1181
+  to: 1206
+  at: [65.4, 37.87]
+  reason: 아무다리야 왼쪽 강가 띠(아물·케르키). 호라즘 오아시스와 카라쿰 사막(주인 없는 땅)을 사이에 두고 떨어짐(1206년 토하리스탄을 더해 이어짐, 중앙아시아 C3 W2)
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Khwarazmian_Empire"]
+
+- entity: khwarazmian-empire
+  from: 1181
+  to: 1206
+  at: [62.03, 37.67]
+  reason: 메르브 오아시스(술탄 샤, 1193년부터 테케시). 호라즘 오아시스와 카라쿰 사막(주인 없는 땅)을 사이에 두고 떨어짐(1206년 헤라트를 더해 이어짐, 중앙아시아 C3 W2)
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Seljuk_Empire"]
+
+- entity: khwarazmian-empire
+  from: 1194
+  to: 1210
+  at: [58.74, 41.95]
+  reason: 도읍 구르간지가 있는 호라즘 오아시스. 1194년 페르시아 이라크를 더한 뒤 더 넓은 이란 쪽 땅과 카라쿰 사막(주인 없는 땅)을 사이에 두고 떨어짐(1210년 트란스옥시아나를 더해 이어짐, 중앙아시아 C3 W2)
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Khwarazmian_Empire"]
+
+# ── 중앙아시아 C3 W3 (서 뒤 1220~1499, 2026-11-06) ──
+- entity: khwarazmian-empire
+  from: 1220
+  to: 1221
+  at: [58.74, 41.95]
+  reason: 호라즘 오아시스(도읍 구르간지). 1220년 말 트란스옥시아나를 몽골에 잃은 뒤 남은 호라산·아프가니스탄 쪽 땅과 칠하지 않은 카라쿰 사막(유목지 — 기본값 B8)을 사이에 두고 떨어져 보임(중앙아시아 C3 W3)
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Mongol_invasion_of_the_Khwarazmian_Empire"]
+
+- entity: mongol-empire
+  from: 1227
+  to: 1264
+  at: [58.74, 41.95]
+  reason: 호라즘 오아시스(우르겐치·히바). 1227년 트란스옥시아나가 차가타이 칸국으로 넘어간 뒤 이란·헤라트 쪽 몽골 땅과 칠하지 않은 카라쿰 사막, 초원 쪽과 칠하지 않은 우스튜르트 고원·옛 아랄해 기슭을 사이에 두고 떨어져 보임(중앙아시아 C3 W3)
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Sufi_dynasty"]
+
+- entity: golden-horde
+  from: 1264
+  to: 1360
+  at: [58.74, 42.42]
+  reason: 호라즘 북쪽(우르겐치). 1264년 알구의 정복 뒤 킵차크 칸국 몫이 된 오아시스로, 볼가·카자흐 초원 본토와 칠하지 않은 우스튜르트 고원·옛 아랄해 기슭(유목지)을 사이에 두고 떨어져 보임(중앙아시아 C3 W3)
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Sufi_dynasty"]
+
+- entity: timurid-empire
+  from: 1381
+  to: 1383
+  at: [68.09, 38.9]
+  reason: 트란스옥시아나·발흐(본거지 사마르칸트). 1381년 헤라트를 더했으나 그 사이 마이마나·시베르간 쪽 북부 땅(우즈베크·투르크멘 소국 — 주인 불분명, 비움)과 칸다하르·카불 쪽(1383년 함락 전)을 칠하지 않아 헤라트·이란 쪽 땅과 떨어져 보임(중앙아시아 C3 W3)
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Timurid_Empire"]
+
+- entity: timurid-empire
+  from: 1479
+  to: 1500
+  at: [68.09, 38.9]
+  reason: 트란스옥시아나·발흐·카불(본거지 사마르칸트). 1479년 칸다하르가 아르군 왕조로 넘어간 뒤 헤라트·이란 쪽 땅과 마이마나·시베르간 쪽 북부 땅(비움)과 칸다하르를 사이에 두고 떨어져 보임(중앙아시아 C3 W3)
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Arghun_dynasty"]
+
+
+# ── 중앙아시아 C3 E3 (동 뒤 1220~1499, 2026-11-06) ──
+- entity: moghulistan
+  from: 1487
+  to: 1500
+  at: [69.8, 41.2]
+  reason: 1484년 유누스 칸이 얻은 타슈켄트(마흐무드 칸의 근거지). 1487년 칸국이 갈라진 뒤 톈산 안쪽·이리를 비워 세미레치예·타림 서쪽과 떨어져 칠해짐(J 칸 1500~1504 타슈켄트 줄과 같은 모양)
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Moghulistan"]
+
+- entity: moghulistan
+  from: 1487
+  to: 1500
+  at: [77.94, 44.79]
+  reason: 1487년 유누스 칸이 죽고 칸국이 서(타슈켄트)·동(투루판)으로 갈라진 뒤 모굴리스탄의 세미레치예(알마티·잠빌 쪽)는 키르기스 부족 땅이 된 톈산 안쪽(추·이식쿨·나린)과 오이라트·모굴 유목지가 된 이리 골짜기를 사이에 두고 타림 서쪽(카슈가르·악수·호탄 — 두글라트 아미르가 칸의 이름으로 다스림)과 떨어져 보인다(1500~1508년도 같은 모양 — 1509년 세미레치예는 카자흐 칸국)
+  sources: ["위키백과 영어판 「Moghulistan」 https://en.wikipedia.org/wiki/Moghulistan", "위키백과 영어판 「Yunus Khan」 https://en.wikipedia.org/wiki/Yunus_Khan"]
+
+# ── 중앙아시아 C3 J (1500 이음 1500~1521, 2026-11-06) ──
+- entity: moghulistan
+  from: 1500
+  to: 1509
+  at: [77.94, 44.79]
+  reason: 마흐무드 칸의 서모굴리스탄(세미레치예·탈라스·추강 쪽)과 두글라트 아미르가 다스린 타림 서쪽은 지도에서 비운 키르기스 톈산 산지와 북신장 유목지를 사이에 두고 떨어져 칠해짐
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Moghulistan"]
+
+- entity: moghulistan
+  from: 1500
+  to: 1505
+  at: [69.8, 41.2]
+  reason: 모굴리스탄의 타슈켄트(1484~1503 마흐무드 칸)는 칠하지 않은 남카자흐스탄 시르다리야 쪽과 키르기스 산지를 사이에 두고 세미레치예·타림 서쪽과 떨어져 칠해짐
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Moghulistan"]
+
+- entity: timurid-empire
+  from: 1500
+  to: 1505
+  at: [72.43, 40.74]
+  reason: 티무르 왕조 바부르의 페르가나(1500~1504)는 샤이바니의 우즈베크가 차지한 트란스옥시아나와 비운 히사르·발흐 북쪽 땅을 사이에 두고 헤라트의 후사인 바이카라 본토와 떨어져 칠해짐
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Muhammad_Shaybani", "위키백과 영어판 https://en.wikipedia.org/wiki/Sultan_Husayn_Bayqara"]
+
+- entity: timurid-empire
+  from: 1500
+  to: 1506
+  at: [67.42, 36.34]
+  reason: 티무르 왕조의 발흐(1500년에는 카불·가즈니 쪽까지 이어짐)는 지도에서 비운 마이마나·시베르간·사르이풀 쪽 우즈베크 소국 땅과 하자라자트 산지를 사이에 두고 헤라트 본토와 떨어져 칠해짐
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Sultan_Husayn_Bayqara"]
+

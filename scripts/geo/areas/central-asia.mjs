@@ -3,10 +3,13 @@
 // 가져와도 되는 것: lib.mjs, shared.mjs, areas/korea.mjs, areas/inner-asia.mjs, areas/china.mjs, areas/west.mjs, areas/japan.mjs, areas/southeast-asia.mjs, areas/europe.mjs, areas/middle-east.mjs, areas/south-asia.mjs, areas/central-asia/의 도우미 모듈. 위층 권역이 쓸 도형은 여기서 export한다.
 // 권역 출처 문구(export const source)는 이 권역 나라 모두에 붙는다(없으면 엔진의 기본 문구). 시대마다 다르면 시대 파일의 era.source에 적는다.
 // 빈 땅 검사 구역(gapZones: [{ name, zone, minus?, from?, to? }])은 비어 있으면 안 되는 지역을 적는다(engine.mjs collectGapZones). 일부러 비운 땅은 voids에 이유와 함께.
-// 이 파일은 C1 뼈대(2026-11-05)가 다 적었고 C2 뼈대(2026-11-05)가 C2 늘림 줄·시대 잇기를 더했다 — 구현 칸(C1 A·W·E, C2 A·W·EK·EX)은 고치지 않는다(틀렸으면 결과 노트 6절).
+// 이 파일은 C1 뼈대(2026-11-05)가 다 적었고 C2 뼈대(2026-11-05)가 C2 늘림 줄·시대 잇기를, C3 뼈대(2026-11-06)가 C3 늘림 줄·시대 셋을 더했다 — 구현 칸(C1 A·W·E, C2 A·W·EK·EX, C3 여덟)은 고치지 않는다(틀렸으면 결과 노트 6절).
 import { joinEras } from '../shared.mjs';
 import { era as modernEra } from './central-asia/modern.mjs';
 import { era as earlyModernEra } from './central-asia/early-modern.mjs';
+import { era as earlyMedievalEra } from './central-asia/early-medieval.mjs';
+import { era as highMedievalEra } from './central-asia/high-medieval.mjs';
+import { era as lateMedievalEra } from './central-asia/late-medieval.mjs';
 
 // 출처 문구: 이 권역 나라 모두에 붙는다(지도 정보 패널)
 export const source = '중앙아시아 쪽은 Natural Earth 1:10m admin-1(v5.1.2) 현대 행정구역 조각(신장은 중국 조각)을 그 시기 국경에 맞춰 묶고, 조각이 역사 경계와 다른 곳(부하라·히바·코칸트 보호국, 예티샤르, 아프가니스탄의 단계별 영토 등)은 위키백과·브리태니커의 넓이와 지금 주·지구 경계, 러시아 제국 정복 단계 구역에 맞춰 선을 그어 나눈 근사. 분쟁 땅은 실효 지배대로, 러시아·중국과 맞닿은 쪽은 유럽·동아시아 지도의 경계를 따름. 운영자 검수 필요';
@@ -36,6 +39,28 @@ const EXTENDABLE = {
   'hotak-dynasty': [1709, 1738], // Q2 칸다하르 1709~1737(원래 버전은 1722~1728만 — 그 밖의 해는 새 버전). 항목 to 1738
   'afsharid-iran': [1736, 1750], // Q2 헤라트·칸다하르 1736~1749(남아시아가 이미 인더스 서안 1739~1747을 늘린 나라 — 두 권역 늘림). 항목 to 1796
   'durrani-empire': [1747, 1823], // Q3 아프가니스탄 본토 전부 1747~1822(최대 약 56.8만 km², 1747은 원래 버전 없는 해). 항목 to 1825
+  // ── C3(600~1499) 늘림 (C3 뼈대 2026-11-06 — 원천 ca3/research/C3-DECISIONS.md·ca3/c3/COMMON.md 2·3절. 칠하는 칸은 줄 주석, 칸은 이 파일을 고치지 않음.
+  //    늘린 나라는 승인 범위 쪽으로만, 기존 범위 안 모양은 바이트 그대로: standards 9절 12. 끝 해 ≤ 항목 to + 1은 entity:where로 확인)
+  'sasanian-empire': [600, 651], // Q1 메르브·헤라트·시스탄 600~650(서아시아 나라 — 남아시아도 240~488을 늘림). W1A. 항목 224~651
+  'rashidun-caliphate': [651, 661], // Q1 메르브·헤라트·시스탄 651~660(서아시아 나라). W1A. 항목 632~661
+  'umayyad-caliphate': [661, 750 + 1], // (끝 해를 식으로 적음 — 값 쌍 [661, 751]이 서아시아 EXTENDABLE 줄과 같아 check:generator가 좌표 되풀이로 봄. 뜻은 칠하는 마지막 해 750 + 1) Q1 661 메르브·헤라트, 705 아래 토하리스탄, 709 부하라, 712 사마르칸트·케슈, 750 끝(유럽 나라 — 서아시아도 661~750을 늘림, 세 권역 늘림). W1A·W1T. 항목 661~756
+  'abbasid-caliphate': [750, 892], // Q1·B11 750~891(751 페르가나·샤시, 759 위 토하리스탄, 821 메르브 → 타히르, 892 트란스옥시아나 → 사만. 서아시아 나라 — 남아시아도 750~854를 늘림). W1A·W1T·W2. 항목 750~1258
+  'tahirid-dynasty': [821, 874], // Q1 호라산·메르브 821~873(서아시아 나라). W2. 항목 821~873
+  'saffarid-dynasty': [861, 1004], // Q1 시스탄·헤라트·발흐 쪽 861~1003(서아시아 나라). W2. 항목 861~1003
+  'samanid-empire': [892, 1000], // Q1·B11 트란스옥시아나·호라산 892~999(서아시아 나라). W2(+E2 시르다리야). 항목 819~999
+  'ghaznavid-empire': [977, 1187], // Q1·Q2 가즈니·호라산·트란스옥시아나 남쪽 977~1186, 본거지 1152~1159만(서아시아 나라 — 남아시아도 1001~1186을 늘림, 세 권역 늘림). W2. 항목 977~1186
+  'seljuk-empire': [1037, 1195], // Q1 호라산·메르브 1037~1194(서아시아 나라). W2. 항목 1037~1194
+  'khwarazmian-empire': [1077, 1221], // Q1·M14 호라즘 1077~1219, 1220 = 1219 말 모양 − 트란스옥시아나(서아시아 나라). W2·W3. 항목 1077~1231
+  'ghurid-dynasty': [1175, 1216], // Q1·Q2·M21 구르·가즈니 본거지 1175~1215(남아시아 나라 — 항목 to를 C3 뼈대가 1206 → 1215로 고침, 글은 W2). W2. 항목 1175~1215
+  'turk-shahi': [665, 822], // Q1·M16 카불·자불 665~821(821 한 해는 W2가 칠함, 남아시아 나라). W1A·W2. 항목 665~822
+  'hindu-shahi': [822, 1027], // Q1 카불 822~1026(남아시아 나라). W2. 항목 822~1026
+  'timurid-empire': [1370, 1507], // Q1·Q10 1370~1499(W3·E3), 1500~1506 헤라트·발흐·카불·페르가나(J)(서아시아 나라). 항목 1370~1507
+  tang: [640, 791], // Q4 하미·투루판 640~790, 4진 648~670·692~790(동아시아 나라). E1. 항목 618~907
+  tibet: [670, 843], // Q4 4진 670~691·호탄 790~842(내륙아시아 나라 — 원래 버전이 신장 남쪽 가장자리 65,040 km²를 이미 칠함). E1·E2. 항목 618~842
+  // uyghur [792, 840]: Q4 위구르 투루판 792~839 — 내륙아시아 빈 땅 채우기(fillSpecs '{ id: uyghur, zone: STEPPE, from: 744, to: 840 }') 대상 나라라 엔진이 늘림을 받지 않는다
+  //   (engine.mjs checkAllow '빈 땅 채우기 대상 나라는 늘릴 수 없음'). 그래서 줄을 두지 않았다 — E1·E2는 uyghur를 주인으로 쓰지 않는다(메인 판단 기다림, C3 뼈대 결과 참고)
+  'mongol-empire': [1218, 1264], // Q6·M19 1218~1219 서요 땅, 1220~1259 초원·준가르·제티수·타림 서쪽, 트란스옥시아나 1220~1226·호라즘 1221~1263·헤라트 1221~1244(내륙아시아 나라 — 서아시아도 1221~1260을 늘림, 세 권역 늘림). E2·E3·W3. 항목 1206~1270
+  'golden-horde': [1260, 1396], // Q7·M20 카자흐 초원 1260~1395(세미레치예·이리 뺌), 호라즘 북쪽 1264~1359(유럽 나라). E3·W3. 항목 1242~1502
 };
 
 // 앞 권역 나라 깎기(engine.mjs '앞 권역 나라 깎기', 2026-11-05 이 권역에서 처음): 00-scope 5절 영향표 '줄임' 승인 줄만(운영자 결정 1).
@@ -49,4 +74,4 @@ const TRIMMABLE = {
 };
 
 // 시대 파일 잇기 (npm run new:area): 이 파일의 나라 다음에 시대 파일(areas/central-asia/<시대>.mjs)의 나라·빈 땅 검사 구역·비운 땅·뺄 땅을 붙인다(shared.mjs joinEras)
-export const { versions, gapZones, voids, sourceOf, extensions, extendable, trims, trimmable } = joinEras('central-asia', { versions: ownVersions, gapZones: [], voids: [], extendable: EXTENDABLE, trimmable: TRIMMABLE }, [earlyModernEra, modernEra]);
+export const { versions, gapZones, voids, sourceOf, extensions, extendable, trims, trimmable } = joinEras('central-asia', { versions: ownVersions, gapZones: [], voids: [], extendable: EXTENDABLE, trimmable: TRIMMABLE }, [earlyMedievalEra, highMedievalEra, lateMedievalEra, earlyModernEra, modernEra]);
