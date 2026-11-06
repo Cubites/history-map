@@ -23,7 +23,7 @@
     - 압두르 라흐만 칸(1880~1901)이 바다크샨·하자라자트·카피리스탄을 정복하고 1893년 듀랜드선을 정함
     - 1919년 라왈핀디 조약으로 외교권을 되찾고 1926년 아만알라가 왕을 칭함
     - 1973년 공화국, 1978년 민주 공화국, 1992년 이슬람 국가, 1996년·2021년 탈레반의 아프가니스탄 이슬람 토후국
-  startEvents: []
+  startEvents: [barakzai-1818]
   endEvents: []
   basis:
     type: primary_source
@@ -44,7 +44,7 @@
     - 1873년 러시아군이 히바를 점령하고 겐데미안 조약으로 아무다리야강 오른쪽 기슭을 내줌
     - 1918~1920년 투르크멘 지도자 주나이드 칸이 실권을 쥠
     - 1920~1924년 호라즘 인민 소비에트 공화국
-  startEvents: []
+  startEvents: [khiva-khanate-1511]
   endEvents: [people-soviet-republics-1920, national-delimitation-1924]
   basis:
     type: primary_source
@@ -86,7 +86,7 @@
     - 1866년 후잔드·우라튜베·지작을 러시아에 빼앗기고 1868년 사마르칸트·카타쿠르간을 내줌
     - 1868년 러시아의 보호국이 된 뒤 샤흐리삽즈(1870)·다르바즈(1878 무렵) 등 동쪽 벡국들을 병합함
     - 1920년 부하라 인민 소비에트 공화국으로 바뀌었다가 1924년 소련의 민족 경계 획정으로 사라짐
-  startEvents: []
+  startEvents: [manghit-bukhara-1747]
   endEvents: [people-soviet-republics-1920, national-delimitation-1924]
   basis:
     type: primary_source
@@ -107,7 +107,7 @@
     - 19세기 초 타슈켄트와 시르다리야강 쪽 초원까지 넓혔으나 1865년 러시아에 타슈켄트를 잃음
     - 1868년 러시아와 통상 조약을 맺고 사실상 보호국이 됨
     - 1876년 러시아에 병합되어 페르가나주가 됨
-  startEvents: []
+  startEvents: [kokand-founding-1709]
   endEvents: [kokand-annexation-1876]
   basis:
     type: primary_source

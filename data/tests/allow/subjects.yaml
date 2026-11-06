@@ -1,0 +1,16 @@
+# test:geo subjects 허용 목록: 알려진 예외를 이유와 함께 적는다(검사가 낸 항목의 열쇠와 맞으면 실패로 세지 않음).
+# 형식(목록): key(검사 항목 열쇠, 끝에 `*` 하나는 앞부분 일치), reason(이유, 필수), decided(누가·어느 세션이 정했는지, 선택).
+# 열쇠 꼴: `subjects <사건 id> <항목 id>`.
+# 맞는 항목이 하나도 없는 줄은 보고서에 '낡음'으로 나온다(지워도 되는지 확인).
+- key: 'subjects safavid-ismail-1501 bukhara-khanate'
+  reason: 본문이 부하라 칸국을 '샤이바니'·'우즈베크'로 부름(표기만 다른 이름 — 글은 안 고침)
+  decided: 중앙아시아 ca-04 반영
+- key: 'subjects tahmasp-1524 bukhara-khanate'
+  reason: 본문이 부하라 칸국을 '우즈베크'로 부름(표기만 다른 이름 — 글은 안 고침)
+  decided: 중앙아시아 ca-04 반영
+- key: 'subjects abbas-reform-1587 bukhara-khanate'
+  reason: 본문이 부하라 칸국을 '우즈베크'로 부름(표기만 다른 이름 — 글은 안 고침)
+  decided: 중앙아시아 ca-04 반영
+- key: 'subjects first-panipat-1526 babur-kabul-kingdom'
+  reason: 본문이 바부르의 카불 왕국을 '바부르'로 부름(표기만 다른 이름 — 글은 안 고침)
+  decided: 중앙아시아 ca-04 반영

@@ -23,8 +23,8 @@
     - 1511~1512년 사파비 왕조의 도움으로 사마르칸트를 잠시 되찾았다가 우즈베크에 다시 잃음
     - 1522년 아르군 왕조에게서 칸다하르를 빼앗음
     - 1519년부터 인더스강 건너 펀자브로 원정을 거듭함
-  startEvents: []
-  endEvents: []
+  startEvents: [babur-kabul-1504]
+  endEvents: [babur-kabul-1504, first-panipat-1526]
   basis:
     type: primary_source
     refs: ["위키백과 Babur", "바부르나마"]
@@ -43,8 +43,8 @@
     - 도읍은 칸다하르
     - 셰르딜 칸·푸르딜 칸·코한딜 칸 등 바라크자이 형제가 차례로 다스림
     - 형제가 땅을 서쪽(가름시르·자민다와르)·북쪽·동쪽(시비·피신)으로 나누어 맡음
-  startEvents: []
-  endEvents: []
+  startEvents: [barakzai-1818]
+  endEvents: [dost-mohammad-return-1842]
   basis:
     type: primary_source
     refs: ["위키백과 Principality of Qandahar", "위키백과 Emirate of Afghanistan"]
@@ -63,8 +63,8 @@
     - 도읍은 헤라트
     - 1837~1838년 카자르 왕조의 포위를 버텨 냄
     - 1856년 카자르 왕조가 헤라트를 차지했다가 1857년 파리 조약으로 물러남
-  startEvents: []
-  endEvents: []
+  startEvents: [barakzai-1818]
+  endEvents: [dost-mohammad-return-1842]
   basis:
     type: primary_source
     refs: ["위키백과 Emirate of Herat", "파리 조약(1857)"]
@@ -85,8 +85,8 @@
     - 압둘라 칸 2세(재위 1583~1598) 때 타슈켄트·페르가나·발흐·바다크샨까지 가장 넓었음
     - 1709년 무렵 페르가나 분지가 떨어져 나가 코칸트 칸국이 됨
     - 1740년 나디르 샤에게 굴복했다가 그가 죽은 1747년부터 망기트 가문이 실권을 잡음
-  startEvents: []
-  endEvents: []
+  startEvents: [shaybani-transoxiana-1500, safavid-ismail-1501]
+  endEvents: [manghit-bukhara-1747]
   basis:
     type: primary_source
     refs: ["위키백과 Khanate of Bukhara", "브리태니커 Bukhara"]
@@ -108,7 +108,7 @@
     - 17세기 말 타우케 칸 때 투르키스탄이 칸국의 중심이 됨
     - 1723년 준가르의 큰 침입 뒤 1730년대부터 소주즈·중주즈가 러시아에 신속함
   startEvents: []
-  endEvents: []
+  endEvents: [kazakh-steppe-russia-1822, kenesary-1837, syr-darya-line-1847]
   basis:
     type: primary_source
     refs: ["위키백과 Kazakh Khanate", "위키백과 Kasym Khan", "위키백과 Kyzylorda"]
@@ -130,8 +130,8 @@
     - 1717년 티베트 라싸를 차지했다가 1720년 청군에 밀려남
     - 1723년 카자흐 초원을 쳐 카자흐 사람들이 남쪽으로 쫓겨 감
   mapNote: 지도에는 1634년부터 1758년까지. 1634년부터 톈산 북쪽(준가르 분지·이리·타르바가타이·알타이)과 카자흐스탄 동쪽 끝(자이산 호·알라콜 호 쪽)을, 1680년부터 타림 분지(코를라·율두스 포함, 롭노르 쪽 사막은 비움)·투루판·하미를 넣고, 1696년 청에 귀순한 하미는 뺌. 몽골 서부(호브드)는 청 쪽 지도에 따라 넣지 않음. 1717~1720년 티베트, 1723~1730년 카자흐 초원처럼 잠깐 차지한 땅은 넣지 않음. 경계는 톈산 능선과 지금의 지구 경계에 기댄 어림
-  startEvents: []
-  endEvents: []
+  startEvents: [dzungar-founding-1634]
+  endEvents: [qianlong-dzungar-1755, dzungar-succession-1747]
   basis:
     type: primary_source
     refs: ["위키백과 Dzungar Khanate"]
@@ -151,8 +151,8 @@
     - 1570년 호탄 총독 압두라힘이 투루판을 쳐 투루판 칸국을 아우름
     - 17세기에는 낙시반디 교단 호자들의 두 파 다툼으로 흔들림
   mapNote: 지도에는 1514년부터 1679년까지(1680년부터 준가르). 카슈가르·야르칸드·호탄·악수·우치투루판·쿠차와 코를라·부구르(룬타이)·율두스 초원을 넣고, 1570년부터 투루판 분지와 하미를 넣음. 콘치강 아래쪽 위리와 롭노르·체르첸·차클리크 쪽 사막은 비움. 경계는 지금의 지구 경계와 타클라마칸 사막 안을 가른 어림
-  startEvents: []
-  endEvents: []
+  startEvents: [moghul-yarkand-1500]
+  endEvents: [galdan-tarim-1680]
   basis:
     type: primary_source
     refs: ["위키백과 Yarkent Khanate"]
@@ -173,7 +173,7 @@
     - 1570년 야르칸드 칸국의 침입으로 홀로서기를 잃음
   mapNote: 지도에는 1500년부터 1569년까지(앞 시대는 아직 그리지 않음). 투루판 분지와 카라샤르(옌치) 분지를 넣고, 1513년부터 하미를 넣음. 경계는 톈산 능선과 쿠루크타그산 기슭에 기댄 어림
   startEvents: []
-  endEvents: []
+  endEvents: [moghul-yarkand-1500]
   basis:
     type: primary_source
     refs: ["위키백과 Turpan Khanate"]
