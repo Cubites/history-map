@@ -24,8 +24,8 @@
     - 아무다리야 가의 아이하눔에 그리스식 극장과 체육관을 갖춘 도시를 둠
     - 기원전 208~206년 안티오코스 3세에게 박트라를 포위당했으나 화의로 왕위를 지킴
     - 기원전 180년 무렵 데메트리오스 1세가 힌두쿠시 남쪽으로 내려감
-  startEvents: []
-  endEvents: []
+  startEvents: [diodotus-greco-bactria-250bc]
+  endEvents: [greco-bactria-end-170bc]
   basis:
     type: primary_source
     refs: ["위키백과 Greco-Bactrian Kingdom", "위키백과 Diodotus I"]
@@ -46,8 +46,8 @@
     - 박트리아를 다섯 흡후(제후)가 나누어 다스림
     - 간쑤에 남은 무리는 소월지로 불림
     - 그리스-박트리아의 주화를 본뜬 주화를 찍음
-  startEvents: []
-  endEvents: []
+  startEvents: [yuezhi-westward-175bc]
+  endEvents: [yuezhi-bactria-101bc]
   basis:
     type: primary_source
     refs: ["위키백과 Yuezhi", "위키백과 Zhang Qian"]
@@ -69,8 +69,8 @@
     - 기원후 1~2세기 아르타브 왕 때 세운 토프락칼라가 2~3세기의 도읍
     - 쿠샨 제국의 주화에 호라즘 글자를 덧찍어 썼으나 쿠샨의 다스림을 받았다는 근거는 없음
     - 아랄해로 흐르는 아무다리야 삼각주의 수로로 농사를 지음
-  startEvents: []
-  endEvents: []
+  startEvents: [khwarazm-independence-336bc]
+  endEvents: [khwarazm-toprak-kala-101bc]
   basis:
     type: primary_source
     refs: ["위키백과 Khwarazm", "위키백과 Toprak-Kala", "위키백과 Afrighids"]
@@ -92,8 +92,8 @@
     - 기원전 110~105년 무렵 한의 공주를 왕비로 맞아 한과 손잡고 흉노를 견제함
     - 기원전 60년대 대곤미와 소곤미로 갈려 한이 둘 다 책봉함
   mapNote: 지도에는 기원전 132년부터 436년까지, 세미레치예와 일리 골짜기를 통째로 그림. 도성 적곡성의 자리는 확인되지 않아 경계는 지금 주 경계에 기댄 어림. 대·소곤미로 갈린 뒤에도 한 나라로 그리고, 한과는 동맹이라 종속으로 표시하지 않음
-  startEvents: []
-  endEvents: []
+  startEvents: [yuezhi-westward-175bc]
+  endEvents: [northern-wei-western-regions-436]
   basis:
     type: primary_source
     refs: ["『한서』 서역전 오손국", "위키백과 Wusun"]
@@ -114,8 +114,8 @@
     - 기원전 101년 한의 대완 원정 때 대완을 도우려 함
     - 기원전 36년 이 땅에 들어온 흉노의 질지 선우가 한군에게 패해 죽음
   mapNote: 지도에는 기원전 128년부터 270년까지, 시르다리야 중류 띠(투르키스탄·오트라르·침켄트 쪽)와 타슈켄트·미르자출 초원(시르다리야주) 쪽을 그림. 소그디아나의 다섯 소왕은 이름뿐인 종속이라 그리지 않고, 시르다리야 하류(크질오르다 쪽)와 북쪽 초원도 비움. 경계는 카라타우 산줄기와 지금 주 경계에 기댄 어림
-  startEvents: []
-  endEvents: []
+  startEvents: [yuezhi-westward-175bc, dayuan-li-guangli-104bc]
+  endEvents: [sasanian-sogdiana-kangju-260]
   basis:
     type: primary_source
     refs: ["『사기』 대완열전", "『한서』 서역전 강거국", "위키백과 Kangju"]
@@ -137,8 +137,8 @@
     - 한과 흉노가 이 땅의 둔전과 왕위를 두고 여러 번 다툼
     - 450년 북량 잔여 세력에게 교하성을 잃음
   mapNote: 지도에는 기원전 108년부터 441년까지. 투루판 분지와 그 서쪽 카라샤르 분지 북쪽까지를 넣고(뒤의 고창국과 같은 땅), 보그다산 북쪽의 후차사는 넣지 않음. 기원전 60년부터 기원후 8년까지 한의 종속국으로 표시함. 경계는 분지 둘레 산줄기에 기댄 어림
-  startEvents: []
-  endEvents: []
+  startEvents: [tarim-khotan-oasis-states-223bc]
+  endEvents: [turfan-gaochang-439]
   basis:
     type: primary_source
     refs: ["위키백과 Jushi Kingdom", "위키백과 Protectorate of the Western Regions"]
@@ -161,8 +161,8 @@
     - 구자는 불경 번역가 구마라집의 고향으로 불교가 크게 일어남
     - 648년 당이 구자를 꺾고 4진을 둠
   mapNote: 지도에는 기원전 176년부터 647년까지(선선은 329년까지). 오아시스 경작지 띠만 넣고 사이의 사막과 산지는 비움. 기원후 61년부터 85년까지 사차는 호탄 왕국 몫으로 표시함. 한과 위·진의 서역도호·장사는 감독 기관이라 따로 칠하지 않음. 언기 도성 카라샤르 둘레 분지는 투루판 쪽 나라(차사국·고창국)의 땅에 함께 넣은 어림
-  startEvents: []
-  endEvents: []
+  startEvents: [tarim-khotan-oasis-states-223bc]
+  endEvents: [kucha-kizil-300]
   basis:
     type: primary_source
     refs: ["위키백과 Tarim Basin", "위키백과 Kucha", "위키백과 Shanshan", "위키백과 Protectorate of the Western Regions"]

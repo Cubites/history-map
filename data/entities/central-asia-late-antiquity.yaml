@@ -22,8 +22,8 @@
     - 498년 무렵 사산의 카바드 1세가 에프탈의 도움으로 왕위를 되찾음
     - 박트리아어를 그리스 문자로 적은 문서와 주화를 남김
     - 간다라의 알촌 훈족과는 따로 셈
-  startEvents: []
-  endEvents: []
+  startEvents: [hephthalite-rise-450]
+  endEvents: [hephthalite-tokharistan-484, istami-western-turks-553]
   basis:
     type: primary_source
     refs: ["위키백과 Hephthalites", "위키백과 Peroz I"]
@@ -48,8 +48,8 @@
     - 568년 소그드 상인 마니아크를 동로마에 보내 동맹을 맺음
     - 575년 무렵 이스테미가 죽고 아들 타르두가 뒤를 이음
   mapNote: 지도에는 555년부터 602년까지, 세미레치예와 일리 골짜기, 시르다리야 중류 도시 띠(투르키스탄·오트라르·크질오르다 쪽)를 그림(뒤의 서돌궐 카간국과 같은 땅). 소그디아나·에프탈 쪽은 조공을 받은 나라라 따로 그리고 종속으로 표시함. 582년까지 돌궐 제1 카간국의 종속으로 표시함. 경계는 카라타우 산줄기와 지금 주 경계에 기댄 어림
-  startEvents: []
-  endEvents: []
+  startEvents: [istami-western-turks-553]
+  endEvents: [istami-western-turks-553]
   basis:
     type: primary_source
     refs: ["『수서』 서돌궐전", "위키백과 Istämi", "위키백과 Tardu", "위키백과 Western Turkic Khaganate"]

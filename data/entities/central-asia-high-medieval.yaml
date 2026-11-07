@@ -132,7 +132,7 @@
     - 둔황의 귀의군과 혼인으로 이어지고 중국 왕조와 사신을 주고받음
     - 불교를 지키며 이슬람으로 개종한 카라한 왕조와 오래 싸움
   mapNote: 지도에는 기원전 176년부터 647년까지와 851년부터 1005년까지. 앞 시기는 호탄·케리야·니야의 오아시스 띠(61년부터 85년까지 사차를 더함), 뒤 시기는 호탄 오아시스와 곤륜산 북쪽 기슭, 타클라마칸 남쪽 절반을 함께 넣은 어림. 648년부터 850년까지는 당과 토번의 땅
-  startEvents: [tibet-tarim-790]
+  startEvents: [tarim-khotan-oasis-states-223bc]
   endEvents: [karakhanid-bukhara-999]
   basis:
     type: primary_source

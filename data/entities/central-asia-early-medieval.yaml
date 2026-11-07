@@ -67,7 +67,7 @@
     - 도읍은 아무다리야 오른쪽 기슭의 카트
     - 712년 쿠타이바의 원정 뒤 아랍 칼리프국에 공물을 바침
     - 10세기 초부터 사만 왕조를 종주로 받듦
-  startEvents: []
+  startEvents: [khwarazm-toprak-kala-101bc]
   endEvents: [khwarazm-mamunid-995]
   basis:
     type: primary_source
@@ -90,7 +90,7 @@
     - 6세기 말부터 서돌궐 카간을 섬기며 초원과 중국을 잇는 장사를 도맡음
     - 709년 부하라, 712년 사마르칸트가 우마이야 칼리프국에 항복함
     - 722년 판자켄트의 데와슈티치가 아랍에 맞서다 잡혀 죽음
-  startEvents: []
+  startEvents: [sogdian-letters-313, hephthalite-rise-450]
   endEvents: [arab-transoxiana-705]
   basis:
     type: primary_source
@@ -113,7 +113,7 @@
     - 715년 쿠타이바에게 군주를 잃었으나 당의 도움으로 곧 되찾음
     - 751년 탈라스 전투에서 당의 편에 섬
     - 819년 사만 가문의 아흐마드가 아바스 칼리프국의 페르가나 총독이 됨
-  startEvents: []
+  startEvents: [yuezhi-westward-175bc, dayuan-li-guangli-104bc]
   endEvents: [samanid-transoxiana-819]
   basis:
     type: primary_source
@@ -222,7 +222,7 @@
     - 630년 무렵 현장이 인도로 가는 길에 머물며 국문태의 후원을 받음
     - 640년 당의 후군집에게 함락됨
   mapNote: 지도에는 442년부터 639년까지. 북량 잔여 세력(442~460)에 이어 감씨(460~)·장씨(488~)·마씨(496~)·국씨(501~) 왕가가 다스린 투루판 분지와 그 서쪽 카라샤르 분지 북쪽까지를 넣고, 603년부터 서돌궐 카간국의 종속국으로 표시함. 경계는 분지 둘레 산줄기에 기댄 어림
-  startEvents: []
+  startEvents: [turfan-gaochang-439]
   endEvents: [oasis-states-600]
   basis:
     type: primary_source
