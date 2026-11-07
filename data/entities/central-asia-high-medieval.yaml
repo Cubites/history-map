@@ -23,8 +23,8 @@
     - 995년 아프리그 왕조를 무너뜨리고 호라즘 샤 칭호를 가져옴
     - 사만 왕조가 무너진 뒤 가즈니 왕조와 카라한 왕조 사이에서 버팀
     - 비루니·이븐 시나 같은 학자가 궁정에 머묾
-  startEvents: []
-  endEvents: []
+  startEvents: [khwarazm-mamunid-995]
+  endEvents: [khwarazm-mamunid-995]
   basis:
     type: primary_source
     refs: ["위키백과 Mamunids"]
@@ -44,8 +44,8 @@
     - 1089년 셀주크 술탄 말리크샤의 원정 뒤 셀주크를 종주로 받듦
     - 1141년 카트완 싸움 뒤 서요의 속국이 됨
     - 1212년 호라즘 제국에 합쳐져 끝남
-  startEvents: []
-  endEvents: []
+  startEvents: [karakhanid-split-1041]
+  endEvents: [kuchlug-otrar-1208]
   basis:
     type: primary_source
     refs: ["위키백과 Kara-Khanid Khanate"]
@@ -68,8 +68,8 @@
     - 1006년 불교 왕국 호탄을 정복함
     - 튀르크어 문학 『쿠타드구 빌리그』가 이 왕조 아래에서 나옴
   mapNote: 지도에는 840년부터 1040년까지. 세미레치예·이리 골짜기·시르다리야 도시 띠와 934년부터 카슈가르, 980년부터 이스피자브·타라즈, 1006년부터 호탄을 넣음. 999년부터 1040년까지는 트란스옥시아나(부하라·사마르칸트·페르가나·샤시)와 아무다리야 북쪽(테르메즈·차가니얀)도 넣음. 카자흐 초원은 칠하지 않음
-  startEvents: []
-  endEvents: []
+  startEvents: [karakhanid-rise-840]
+  endEvents: [karakhanid-split-1041]
   basis:
     type: primary_source
     refs: ["위키백과 Kara-Khanid Khanate", "위키백과 Isfijab"]
@@ -88,8 +88,8 @@
     - 1134년 발라사군을 서요에 내주고 카슈가르로 중심을 옮김
     - 서요가 서쪽으로 넓어진 뒤에도 카슈가르·호탄을 지킴
   mapNote: 지도에는 1041년부터 1211년까지. 1133년까지는 세미레치예·이리 골짜기·시르다리야 도시 띠를 넣고, 1134년부터는 카슈가르·악수·호탄만 넣음. 서요에 대한 종속은 사료가 갈려 따로 표시하지 않음
-  startEvents: []
-  endEvents: []
+  startEvents: [karakhanid-split-1041]
+  endEvents: [kuchlug-otrar-1208]
   basis:
     type: primary_source
     refs: ["위키백과 Kara-Khanid Khanate"]
@@ -111,8 +111,8 @@
     - 1096년 악수·쿠차를 카라한 왕조에 잃음
     - 1128년 서요, 1209년 몽골 제국에 스스로 복속함
   mapNote: 지도에는 866년부터 1388년까지. 투루판 분지·카라샤르·코를라와 우루무치 쪽 오아시스 띠(북정), 876년부터 하미, 1095년까지 악수·쿠차를 넣음. 1128년부터 서요, 1209년부터 몽골 제국, 1271년부터 1368년까지 원의 종속국으로 표시함
-  startEvents: []
-  endEvents: []
+  startEvents: [qocho-uyghur-866]
+  endEvents: [khizr-khoja-turfan-1389]
   basis:
     type: primary_source
     refs: ["위키백과 Kingdom of Qocho"]
@@ -131,8 +131,8 @@
     - 둔황의 귀의군과 혼인으로 이어지고 중국 왕조와 사신을 주고받음
     - 불교를 지키며 이슬람으로 개종한 카라한 왕조와 오래 싸움
   mapNote: 지도에는 851년부터 1005년까지. 호탄 오아시스와 곤륜산 북쪽 기슭, 타클라마칸 남쪽 절반을 함께 넣은 어림
-  startEvents: []
-  endEvents: []
+  startEvents: [tibet-tarim-790]
+  endEvents: [karakhanid-bukhara-999]
   basis:
     type: primary_source
     refs: ["위키백과 Kingdom of Khotan"]
@@ -153,8 +153,8 @@
     - 서카라한 왕조·호라즘·고창 위구르를 종속국으로 거느림
     - 1211년 쿠출루크가 빼앗은 뒤 이슬람 신자를 박해해 민심을 잃음
   mapNote: 지도에는 1134년부터 1217년까지. 세미레치예·이리 골짜기·시르다리야 도시 띠(1209년까지 — 1210년부터 호라즘)를 넣고, 1212년부터 카슈가르·악수·호탄을 넣음. 서카라한 왕조·호라즘·고창 위구르는 종속국이라 따로 칠함
-  startEvents: []
-  endEvents: []
+  startEvents: [qara-khitai-1124]
+  endEvents: [kuchlug-otrar-1208]
   basis:
     type: primary_source
     refs: ["위키백과 Qara Khitai", "위키백과 Kuchlug"]

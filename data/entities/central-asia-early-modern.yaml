@@ -107,7 +107,7 @@
     - 대·중·소 세 주즈로 나뉘어 저마다 칸과 술탄이 유목 부족을 이끎
     - 17세기 말 타우케 칸 때 투르키스탄이 칸국의 중심이 됨
     - 1723년 준가르의 큰 침입 뒤 1730년대부터 소주즈·중주즈가 러시아에 신속함
-  startEvents: []
+  startEvents: [kazakh-khanate-1465]
   endEvents: [kazakh-steppe-russia-1822, kenesary-1837, syr-darya-line-1847]
   basis:
     type: primary_source
@@ -172,7 +172,7 @@
     - 하미와 간쑤 쪽 무역로를 두고 명과 여러 차례 싸움
     - 1570년 야르칸드 칸국의 침입으로 홀로서기를 잃음
   mapNote: 지도에는 1487년부터 1569년까지. 투루판 분지와 카라샤르(옌치) 분지를 넣고, 1487~1513년에는 코를라·부구르(룬타이)·율두스 초원을, 1513년부터 하미를 넣음. 경계는 톈산 능선과 쿠루크타그산 기슭에 기댄 어림
-  startEvents: []
+  startEvents: [yunus-khan-moghulistan-1462]
   endEvents: [moghul-yarkand-1500]
   basis:
     type: primary_source

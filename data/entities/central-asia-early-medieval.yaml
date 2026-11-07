@@ -24,8 +24,8 @@
     - 625년 무렵부터 657년까지 서돌궐 카간을 종주로 받듦
     - 7세기 중엽 당의 책봉을 받아 월지도독부라는 이름을 얻었으나 실제 지배는 없었음
     - 718년 무렵에도 차가니얀·후탈·와한·바다크샨의 토후들이 야브구 아래에 있었음
-  startEvents: []
-  endEvents: []
+  startEvents: [oasis-states-600]
+  endEvents: [talas-aftermath-751]
   basis:
     type: primary_source
     refs: ["위키백과 Yabghus of Tokharistan", "위키백과 Tong Yabghu Qaghan"]
@@ -46,8 +46,8 @@
     - 698년 우바이달라 이븐 아비 바크라가 이끈 아랍군을 크게 무찌름
     - 아랍 총독들에게 공물을 바치기도 하고 거부하기도 하며 버팀
     - 720년 무렵 당의 책봉을 받음
-  startEvents: []
-  endEvents: []
+  startEvents: [zunbil-kabul-680]
+  endEvents: [zunbil-kabul-680]
   basis:
     type: primary_source
     refs: ["위키백과 Zunbils", "위키백과 Turk Shahis"]
@@ -68,7 +68,7 @@
     - 712년 쿠타이바의 원정 뒤 아랍 칼리프국에 공물을 바침
     - 10세기 초부터 사만 왕조를 종주로 받듦
   startEvents: []
-  endEvents: []
+  endEvents: [khwarazm-mamunid-995]
   basis:
     type: primary_source
     refs: ["위키백과 Afrighid dynasty"]
@@ -91,7 +91,7 @@
     - 709년 부하라, 712년 사마르칸트가 우마이야 칼리프국에 항복함
     - 722년 판자켄트의 데와슈티치가 아랍에 맞서다 잡혀 죽음
   startEvents: []
-  endEvents: []
+  endEvents: [arab-transoxiana-705]
   basis:
     type: primary_source
     refs: ["위키백과 Sogdia", "위키백과 Muslim conquest of Transoxiana"]
@@ -114,7 +114,7 @@
     - 751년 탈라스 전투에서 당의 편에 섬
     - 819년 사만 가문의 아흐마드가 아바스 칼리프국의 페르가나 총독이 됨
   startEvents: []
-  endEvents: []
+  endEvents: [samanid-transoxiana-819]
   basis:
     type: primary_source
     refs: ["위키백과 Principality of Farghana", "위키백과 Muslim conquest of Transoxiana"]
@@ -136,7 +136,7 @@
     - 하이다르(아프신)는 칼리프 알무타심의 장군이 되어 이름을 떨침
     - 892년 무렵 사만 왕조의 주가 됨
   startEvents: []
-  endEvents: []
+  endEvents: [samanid-transoxiana-819]
   basis:
     type: primary_source
     refs: ["위키백과 Ushrusana", "위키백과 Muslim conquest of Transoxiana"]
@@ -157,8 +157,8 @@
     - 630년 통엽호 카간이 죽은 뒤 열 부족이 두 무리로 갈라져 다툼
     - 657년 당의 소정방에게 지고 무너짐
   mapNote: 지도에는 603년부터 657년까지, 초원 중부·북부와 조공국 소그드는 그리지 않음. 세미레치예(추강·탈라스강·이시크쿨 쪽)와 이리 골짜기, 시르다리야 중류 도시 띠(투르키스탄·오트라르·크질오르다 쪽)를 넣은 대략적인 추정
-  startEvents: []
-  endEvents: []
+  startEvents: [oasis-states-600]
+  endEvents: [samarkand-afrasiab-650]
   basis:
     type: primary_source
     refs: ["위키백과 Western Turkic Khaganate"]
@@ -179,8 +179,8 @@
     - 737년 하리스탄에서 진 뒤 카간이 살해되어 내분에 빠짐
     - 766년 카를루크에게 세미레치예를 빼앗김
   mapNote: 지도에는 699년부터 765년까지. 세미레치예(추강·탈라스강·이시크쿨 쪽)와 이리 골짜기, 시르다리야 중류 도시 띠를 넣음. 728년 부하라 점령·731년 협곡 싸움 같은 트란스옥시아나 원정은 그리지 않음
-  startEvents: []
-  endEvents: []
+  startEvents: [turgesh-khaganate-699]
+  endEvents: [talas-aftermath-751]
   basis:
     type: primary_source
     refs: ["위키백과 Turgesh"]
@@ -200,8 +200,8 @@
     - 세미레치예와 이리 골짜기, 시르다리야 중류 도시 띠를 다스림
     - 840년 우두머리가 카간을 칭하며 카라한 왕조로 이어짐
   mapNote: 지도에는 766년부터 839년까지. 세미레치예(추강·탈라스강·이시크쿨 쪽)와 이리 골짜기, 시르다리야 중류 도시 띠를 넣은 대략적인 추정
-  startEvents: []
-  endEvents: []
+  startEvents: [talas-aftermath-751]
+  endEvents: [karakhanid-rise-840]
   basis:
     type: primary_source
     refs: ["위키백과 Karluk Yabgu State"]
@@ -223,7 +223,7 @@
     - 640년 당의 후군집에게 함락됨
   mapNote: 지도에는 600년부터 639년까지. 투루판 분지와 그 서쪽 카라샤르 분지 북쪽까지를 넣고, 603년부터 서돌궐 카간국의 종속국으로 표시함. 경계는 분지 둘레 산줄기에 기댄 어림
   startEvents: []
-  endEvents: []
+  endEvents: [oasis-states-600]
   basis:
     type: primary_source
     refs: ["위키백과 Gaochang"]

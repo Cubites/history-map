@@ -23,8 +23,8 @@
     - 1260~1264년 알구가 호라즘 남쪽과 트란스옥시아나를 굳게 쥠
     - 1269년 무렵부터 1301년까지 오고타이 가문의 카이두가 실권을 쥠
     - 1346년 카자간이 카잔 칸을 죽인 뒤 서쪽은 아미르들이 다스림
-  startEvents: []
-  endEvents: []
+  startEvents: [chagatai-ulus-1227]
+  endEvents: [chagatai-split-1347, timur-rise-1370]
   basis:
     type: primary_source
     refs: ["위키백과 Chagatai Khanate", "위키백과 Sufi dynasty"]
@@ -44,8 +44,8 @@
     - 1251년 몽케 칸이 헤라트·시스탄·카불 쪽 권한을 줌
     - 1342년 자바 싸움에서 사르바다르 왕조를 물리침
     - 1349년 무렵부터 누구에게도 조공하지 않음
-  startEvents: []
-  endEvents: []
+  startEvents: [kart-herat-1245]
+  endEvents: [kart-herat-1245, timur-iran-1381]
   basis:
     type: primary_source
     refs: ["위키백과 Kart dynasty", "위키백과 Kandahar"]
@@ -65,8 +65,8 @@
     - 1361년 무렵 후사인 수피가 킵차크 칸국에서 자립함
     - 1372년 유수프 수피가 카트·히바를 티무르에게 넘김
     - 1379년 티무르가 우르겐치를 함락한 뒤로 티무르의 신하로 남음
-  startEvents: []
-  endEvents: []
+  startEvents: [sufi-khwarazm-1361]
+  endEvents: [sufi-khwarazm-1361]
   basis:
     type: primary_source
     refs: ["위키백과 Sufi dynasty", "위키백과 Khwarazm"]
@@ -89,8 +89,8 @@
     - 1462~1487년 유누스 칸이 칸국을 다시 묶고 1484년 타슈켄트를 얻음
     - 15세기 내내 북쪽 오이라트와 서쪽 티무르 왕조·우즈베크와 다툼
   mapNote: 지도에는 1347년부터 1513년까지(1500~1513 타림 서쪽은 두글라트 아미르가 칸의 이름으로). 세미레치예·이리·톈산 안쪽·타림 서쪽(카슈가르·악수·호탄)을 넣고, 1389년부터 1486년까지 투루판·코를라·우루무치 쪽 오아시스를, 1484년부터 1504년까지 타슈켄트를 더함. 1487년 칸국이 갈라진 뒤 투루판·코를라는 투루판 칸국으로 그리고, 톈산 안쪽·이리·우루무치 쪽은 키르기스·오이라트 유목지로 비움. 1509년부터 세미레치예는 카자흐 칸국
-  startEvents: []
-  endEvents: []
+  startEvents: [chagatai-split-1347]
+  endEvents: [moghul-yarkand-1500]
   basis:
     type: primary_source
     refs: ["위키백과 Moghulistan", "위키백과 Yunus Khan", "위키백과 Turpan"]
@@ -111,8 +111,8 @@
     - 1430년대 오이라트에 복속했다가 1467년 무렵 다시 명의 책봉을 받음
     - 1493년 투루판의 아흐마드 알라크에게 하미를 빼앗기는 등 투루판과 다툼이 이어짐
   mapNote: 지도에는 1389년부터 1512년까지(1513년 투루판 칸국에 넘어감). 하미 오아시스와 바르쿨·이우 쪽을 넣고 1404년부터 명의 종속국으로 표시함. 1430년대 오이라트 복속과 투루판의 짧은 점령은 칠하지 않음
-  startEvents: []
-  endEvents: []
+  startEvents: [khizr-khoja-turfan-1389]
+  endEvents: [moghul-yarkand-1500]
   basis:
     type: primary_source
     refs: ["위키백과 Kara Del", "위키백과 Hami City", "위키백과 Turpan"]
@@ -134,8 +134,8 @@
     - 1507년 둘눈 베그가 헤라트를 지키다 샤이바니의 우즈베크와 싸워 죽고 아들 샤 베그가 이음
     - 1520~1521년 샤 베그가 신드를 쳐 박카르를 얻고 그쪽으로 옮겨 감
   mapNote: 지도에는 1479년부터 1521년까지(1501~1503 카불 포함). 칸다하르·자불·헬만드와 우루즈간의 하자라자트 밖 몫을 넣고, 1501~1503년에는 카불·가즈니 쪽을 더함. 1506년까지는 헤라트의 티무르 왕조를 섬긴 정권으로 봄. 경계는 지금 아프가니스탄 주 경계에 기댄 어림
-  startEvents: []
-  endEvents: []
+  startEvents: [arghun-kandahar-1479]
+  endEvents: [arghun-kandahar-1479]
   basis:
     type: primary_source
     refs: ["위키백과 Arghun dynasty (Kandahar)", "위키백과 Arghun dynasty"]
