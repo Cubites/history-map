@@ -17,6 +17,7 @@
 //   {micro}는 내륙 구멍으로 만든 조각 목록(없으면 '없었다')으로 바꾼다
 // - countries50m: check:fragments [1] 나라별 대조에 쓰는 adm0 → world-atlas countries-50m 이름(없는 나라는 비교하지 않음)
 // - checkIds: check:fragments가 조각 adm0와 countries-50m의 소속을 따로 견줘 보이는 조각 id(실효 지배 기준이 갈리는 곳)
+// - params: (선택) 이 지역만 prep-fragments.mjs의 PARAMS 값을 바꾼다 { 이름: 값 }. README 매개변수 표에 바꾼 값이 '이 지역만'으로 보인다(2026-11-08 동남아)
 export const FRAGMENT_REGIONS = {
   europe: {
     default: true,
@@ -139,6 +140,33 @@ export const FRAGMENT_REGIONS = {
     countries50m: { KAZ: 'Kazakhstan', UZB: 'Uzbekistan', TKM: 'Turkmenistan', KGZ: 'Kyrgyzstan', TJK: 'Tajikistan', AFG: 'Afghanistan' },
     // 와한·파미르(아프가니스탄·타지키스탄 쪽 끝): countries-50m의 소속과 따로 견준다
     checkIds: ['AF-BDS', 'TJ-GB'],
+  },
+  // 동남아 (2026-11-08, 0단계 등록): 이 지역 E1~E4가 이 조각과 칼선으로 나라를 만든다(docs/southeast-asia/00-scope.md 2절).
+  // 중국(윈난·광시·광둥·하이난)은 중국 조각(china.topo.json)이라 under로 그대로 이웃으로 쓴다(베트남·라오스·미얀마–중국 이음매가 그 바깥선 그대로, 이음매가 가장 길다).
+  // 인도·방글라데시(남아시아 조각) 쪽은 under가 하나뿐이라 원본 행정구역을 이웃으로 가공하고, 생성기가 그 조각을 빼서 맞춘다(중앙아시아의 이란·러시아 쪽과 같은 방법).
+  // 파라셀·스프래틀리 제도(NE에서 따로 단위, 1,000 km² 미만)와 파푸아뉴기니·오스트레일리아(오세아니아 몫)는 넣지 않는다
+  'southeast-asia': {
+    readme: 'README.southeast-asia.md',
+    under: 'china',
+    // (b) 덮이지 않은 육지: 방글라데시–미얀마 나프강 하구(약 동경 92.3°·북위 20.8~21.0°)에서 원본 행정구역 둘(BD 치타공·MMR 라카인)이 육지 자료와 맞지 않아
+    // 0.017 km²가 남는다(첫 실행 57조각 0.019 km², 기본 기준 0.01). 이웃이 남아시아 조각이 아니라 원본이라 생기는 몫이고 지도 기준(1만 km²)과 견줄 수 없이 작아 이 지역만 0.05
+    params: { gapMaxKm2: 0.05 },
+    adm0: ['MMR', 'THA', 'LAO', 'KHM', 'VNM', 'MYS', 'SGP', 'BRN', 'IDN', 'TLS', 'PHL'],
+    // 미얀마 서쪽 끝(약 동경 92.2°)·북쪽 끝(카친 약 북위 28.5°), 인도네시아 남쪽 끝(로테 섬 쪽 약 남위 11.0°)·동쪽 끝(파푸아 141.0° 자오선)을 덮는다
+    box: [92, -11.2, 141.1, 28.6],
+    idExamples: { iso: 'VN-SG', adm1: '세부 `PHL-2514`(필리핀은 고도 도시화 시가 주와 ISO 코드를 함께 써 둘 다 adm1_code)·비엔티안 `LAO-3283`·`LAO-3284`', adm0: [] },
+    notes: [
+      '서뉴기니: 인도네시아 파푸아·서파푸아 조각이고 동쪽 끝은 동경 141° 자오선(파푸아뉴기니는 이웃으로만 간략화에 쓰고 넣지 않음, 오세아니아 권역 몫). 플라이강 굽이(남쪽 141° 서쪽)는 원본 국경 그대로다.',
+      '작은 섬: 빌드가 쓰는 육지(50m·110m)와 닿지 않는 작은 섬 폴리곤은 빠진다. 1,000 km² 넘는 섬은 모두 육지 자료 안에 있다(0단계 측정, 00-scope 2절 조각 준비). 파라셀·스프래틀리 제도는 넣지 않는다(NE에서 따로 단위, 합쳐도 20 km² 안팎).',
+      '거친 곳: 미얀마는 주·관구 {count:MMR}개(라카인 `MM-16`·타닌타리 `MM-05`는 1826 양도 땅과 거의 맞고 하버마·샨 국 경계는 칼선), 인도네시아는 주 {count:IDN}개(NE v5.1.2라 2012년 북칼리만탄 분리 전, 파푸아 `ID-PA` 약 31.5만 km²), 사바 `MY-12`·사라와크 `MY-13`. 필리핀은 고도 도시화 시가 따로 조각이라 {count:PHL}개로 가장 많다.',
+      '조각 수: 미얀마 {count:MMR}·타이 {count:THA}·라오스 {count:LAO}·캄보디아 {count:KHM}·베트남 {count:VNM}·말레이시아 {count:MYS}·싱가포르 {count:SGP}·브루나이 {count:BRN}·인도네시아 {count:IDN}·동티모르 {count:TLS}·필리핀 {count:PHL}. 조각 사이의 내륙 구멍은 {micro}.',
+    ],
+    countries50m: {
+      MMR: 'Myanmar', THA: 'Thailand', LAO: 'Laos', KHM: 'Cambodia', VNM: 'Vietnam', MYS: 'Malaysia', SGP: 'Singapore', BRN: 'Brunei', IDN: 'Indonesia',
+      TLS: 'Timor-Leste', PHL: 'Philippines',
+    },
+    // 사바(필리핀이 주장, 말레이시아 실효 지배): countries-50m의 소속과 따로 견준다
+    checkIds: ['MY-12'],
   },
 };
 

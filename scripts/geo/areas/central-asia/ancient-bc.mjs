@@ -1,7 +1,7 @@
 // central-asia 시대 파일 ancient-bc (npm run new:area가 만든 틀, 시대표 하나에 파일 하나: standards.md 1절·9절 7)
 // 시대·범위: 기원전 799~1: 아케메네스·그리스-박트리아·월지·오손·강거·차사
 // 짝 항목 파일: data/entities/central-asia-ancient-bc.yaml (나라 id는 그 파일과 이 파일의 versions가 같아야 한다 — 다른 시대 파일 항목(C3 ferghana-kingdom 등)·늘린 나라는 그 파일 그대로)
-// 가져와도 되는 것: lib.mjs, shared.mjs, areas/korea.mjs, areas/inner-asia.mjs, areas/china.mjs, areas/west.mjs, areas/japan.mjs, areas/southeast-asia.mjs, areas/europe.mjs, areas/middle-east.mjs, areas/south-asia.mjs, areas/central-asia/의 다른 도우미 모듈. areas/central-asia.mjs는 이 파일을 가져오는 쪽이라 가져올 수 없다(순환).
+// 가져와도 되는 것: lib.mjs, shared.mjs, areas/korea.mjs, areas/inner-asia.mjs, areas/china.mjs, areas/west.mjs, areas/japan.mjs, areas/europe.mjs, areas/middle-east.mjs, areas/south-asia.mjs, areas/central-asia/의 다른 도우미 모듈. areas/central-asia.mjs는 이 파일을 가져오는 쪽이라 가져올 수 없다(순환).
 // 생성기에 들어가는 것은 export const era 하나다(칼선 같은 다른 이름은 export해도 되지만 versions·gapZones·source 같은 이름은 안 됨: check:generator). 권역 파일 areas/central-asia.mjs가 shared.mjs의 joinEras로 합치고,
 // 같은 나라 id를 두 파일이 내면 기간이 겹치지 않을 때만 앞 파일 버전 뒤에 이어 붙인다. 권역 파일 시대 목록 [ancientBcEra, lateAntiquityEra, earlyMedievalEra, highMedievalEra, lateMedievalEra, earlyModernEra, modernEra](과거 먼저)
 // - versions: 나라 id → [[from, to, 멀티폴리곤, 확실성?], ...] (해는 천문 연도 — 기원전 N년 = 1−N, to는 미포함)

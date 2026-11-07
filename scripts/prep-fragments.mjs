@@ -88,6 +88,12 @@ if (rest.some((a) => a.startsWith('-')) || rest.length !== 1 || !Object.hasOwn(F
   process.exit(2);
 }
 const REGION_DEF = fragmentRegion(REGION);
+// 지역 항목의 params(선택)는 이 지역만 PARAMS 값을 바꾼다(2026-11-08 동남아: 원본 행정구역끼리 맞지 않는 나프강 하구 때문에 (b) 기준만). 모르는 이름이면 멈춘다
+const OVERRIDDEN = Object.keys(REGION_DEF.params ?? {});
+for (const [k, v] of Object.entries(REGION_DEF.params ?? {})) {
+  if (!Object.hasOwn(PARAMS, k)) { console.error(`scripts/fragments/regions.mjs ${REGION}.params: 모르는 매개변수 ${k} (있는 것: ${Object.keys(PARAMS).join(", ")})`); process.exit(2); }
+  PARAMS[k] = v;
+}
 const README_FILE = REGION_DEF.readme;
 const srcPath = path.resolve(rest[0]);
 if (!existsSync(srcPath)) {
@@ -688,7 +694,7 @@ function readme(r, checks) {
   if (UNDER) L.push('- 아래층 조각: ' + code(UNDER.name + '.topo.json') + '(sha256 ' + UNDER.sha.slice(0, 16) + '…)의 조각을 그 지역 원본 행정구역 대신 이웃으로 쓰고(그 arc는 간략화하지 않음), 이 지역 조각에서 그와 겹치는 땅을 뺐다: ' + (rp.underCut.join('; ') || '없음') + '. 이음매 선은 아래층 조각 바깥선 그대로다.');
   L.push('- 육지: world-atlas 2.0.2의 land-50m ∪ land-110m(Natural Earth 4.1.0, 빌드가 해안선으로 자를 때 쓰는 것과 같음). 구멍 조각 이름: world-atlas countries-10m.', '');
   L.push('| 매개변수 | 값 | 뜻 |', '|---|---|---|');
-  for (const [k, v] of Object.entries(PARAMS)) L.push('| ' + code(k) + ' | ' + v + ' | ' + (paramDoc()[k] ?? '') + ' |');
+  for (const [k, v] of Object.entries(PARAMS)) L.push('| ' + code(k) + ' | ' + v + (OVERRIDDEN.includes(k) ? ' (이 지역만 — regions.mjs params)' : '') + ' | ' + (paramDoc()[k] ?? '') + ' |');
   L.push('');
   L.push('## 가공 결과', '');
   L.push('- 고르기: ' + r.table.size + '개 나라에서 조각 ' + frags.length + '개. 육지(50m·110m)와 닿지 않아 뺀 섬 폴리곤 ' + rp.islands + '개, 그래서 통째로 빠진 조각 ' + rp.islandFrags.length + '개(' + (rp.islandFrags.join(', ') || '없음') + ').');

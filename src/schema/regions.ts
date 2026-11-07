@@ -50,6 +50,7 @@ export const REGION_FILTER_OF: Record<string, RegionFilterUnit> = {
   'central-asia-late-medieval': 'central-asia',
   'central-asia-ancient-bc': 'central-asia',
   'central-asia-late-antiquity': 'central-asia',
+  'southeast-asia-modern': 'east-asia', // 동남아 0단계 빈 틀(2026-11-08). E1이 첫 나라를 넣을 때 새 단위 'southeast-asia'를 REGION_FILTERS·REGION_FILTER_INFO에 더하고 이 줄을 그 단위로 바꾼다(docs/southeast-asia/00-scope.md 결정 8 — 남베트남 'southeast-asia'만 'east-asia')
 };
 
 /** 사건·전쟁 파일 이름 앞머리 → 권역. 앞에서부터 처음 맞는 것을 쓴다 (예: eu-01-revolutions-1789-1914.yaml → europe) */

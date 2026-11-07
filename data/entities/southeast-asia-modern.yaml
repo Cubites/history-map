@@ -1,0 +1,4 @@
+# southeast-asia modern 나라 (시대 파일 scripts/geo/areas/southeast-asia/modern.mjs의 짝 항목 파일, npm run new:area가 만든 빈 틀)
+# 시대·범위: 1900~현재: 식민 지배와 독립 뒤 나라들 (E1, docs/southeast-asia/00-scope.md 3절)
+# 나라를 넣을 때 아래 []를 지우고 - id: …로 적는다(docs/DATA_GUIDE.md). 권역 값은 파일 이름에서 정해진다(src/schema/regions.ts REGION_FILTER_OF의 'southeast-asia-modern').
+[]
