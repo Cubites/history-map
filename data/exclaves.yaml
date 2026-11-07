@@ -5170,20 +5170,6 @@
   sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Daman,_India"]
 
 # ── 남아시아 S4 서 (2026-11-04): 기원전 800~1205 다른 권역 나라를 남아시아로 늘린 땅(결정 2·4·5·6)이 아프가니스탄·이란 동부를 칠하지 않은 지도에서 본토와 떨어진 것과 구르의 아지메르 총독령. baseline:suggest 규칙 3 제안을 고쳐 씀 ──
-- entity: achaemenid-empire
-  from: -517
-  to: -512
-  at: [72.28, 34.16]
-  reason: 간다라 속주(기원전 518년부터). 박트리아·아라코시아(아프가니스탄)는 지도에 그리지 않아 이란 본토와 떨어져 보임(남아시아 S4 결정 2)
-  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Gandhara"]
-
-- entity: achaemenid-empire
-  from: -512
-  to: -330
-  at: [72.27, 31.63]
-  reason: 간다라·힌두시 속주(기원전 513년부터 331년까지). 아프가니스탄을 그리지 않아 이란 본토와 떨어져 보임(남아시아 S4 결정 2)
-  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Hindush"]
-
 - entity: sasanian-empire
   from: 240
   to: 489
@@ -5695,3 +5681,160 @@
   reason: 티무르 왕조의 발흐(1500년에는 카불·가즈니 쪽까지 이어짐)는 지도에서 비운 마이마나·시베르간·사르이풀 쪽 우즈베크 소국 땅과 하자라자트 산지를 사이에 두고 헤라트 본토와 떨어져 칠해짐
   sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Sultan_Husayn_Bayqara"]
 
+
+# ── 중앙아시아 C4 SW (서남 −799~599, 2026-11-07) ──
+- entity: macedonia-kingdom
+  from: -328
+  to: -316
+  at: [68.31, 37.15]
+  reason: 박트리아(운영자 답 E1이 승인한 늘림). 아리아·드랑기아나는 승인 범위 밖이라 비워(맞춤 M2) 이란 쪽 본토와 떨어져 보임(W 칸이 칠하는 소그디아나·마르기아나와 합친 모습은 합치기에서 다시 봄). 기원전 317년(−316) 한 해는 이란 쪽이 안티고노스 1세의 왕국으로 넘어간 뒤에도 박트리아를 마케도니아로 둔 해(C4 결정 해 그대로)
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Bactria"]
+
+- entity: macedonia-kingdom
+  from: -316
+  to: -315
+  at: [21.88, 40.23]
+  reason: 기원전 317년(−316) 한 해 아시아 쪽 본토(이란)가 안티고노스 1세의 왕국으로 넘어가 박트리아 쪽이 가장 큰 조각이 되어 유럽 마케도니아가 떨어진 조각으로 보임(C4 결정 해 −316 그대로 — 1년)
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Bactria"]
+
+- entity: seleucid-empire
+  from: -304
+  to: -300
+  at: [68.3, 37.15]
+  reason: 박트리아·아리아(셀레우코스–마우리아 조약 기원전 305~303년, C4 결정 Q2). 서아시아 쪽은 이란 동부를 기원전 301년(−300)부터 그려 그 앞 4년은 본토와 떨어져 보임
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Seleucus_I_Nicator"]
+
+- entity: seleucid-empire
+  from: -304
+  to: -300
+  at: [62.06, 32.18]
+  reason: 드랑기아나(시스탄 — 헬만드 칼선 안). 서아시아 쪽은 이란 동부를 기원전 301년(−300)부터 그리고 헬만드 칼선 밖 사막은 비워 그 앞 4년은 본토와 떨어져 보임
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Seleucus_I_Nicator"]
+
+- entity: indo-greek-kingdom
+  from: -84
+  to: -83
+  at: [73.28, 31.45]
+  reason: 펀자브 서부. 기원전 85년 인도-스키타이의 마우에스가 간다라를 차지해 서쪽(카불·아라코시아)과 동쪽(펀자브)의 인도-그리스 왕들이 갈라진 모습(1년, 기원전 84년부터 카불·아라코시아는 비움)
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Indo-Greek_Kingdom"]
+
+- entity: hephthalites
+  from: 484
+  to: 565
+  at: [62.06, 32.18]
+  reason: 시스탄(자란즈·파라 — 헬만드 칼선 안). 아리아(헤라트)와의 사이에 있는 파라주 북쪽 산지·사막을 비워(C3 600과 같은 비움) 본토(박트리아)와 떨어져 보임
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Peroz_I"]
+
+
+# ── 중앙아시아 C4 E (동·신장 −799~599 + 600~647 이음, 2026-11-07) ──
+- entity: tarim-oasis-states
+  from: -175
+  to: 648
+  at: [76.14, 39.33]
+  reason: 타림 분지 오아시스 나라들은 여러 오아시스 왕국을 묶은 항목이라 오아시스 경작지 띠만 칠하고 띠 사이 타클라마칸 사막·산기슭은 비워(결정 Q9) 이 띠가 쿠차·코를라 쪽 본 덩어리와 떨어져 있음 — 소륵(카슈가르) 띠
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Shule_Kingdom"]
+- entity: tarim-oasis-states
+  from: -175
+  to: 61
+  at: [77.28, 38.51]
+  reason: 타림 분지 오아시스 나라들은 여러 오아시스 왕국을 묶은 항목이라 오아시스 경작지 띠만 칠하고 띠 사이 타클라마칸 사막·산기슭은 비워(결정 Q9) 이 띠가 쿠차·코를라 쪽 본 덩어리와 떨어져 있음 — 사차(야르칸드) 띠
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Yarkand"]
+- entity: tarim-oasis-states
+  from: 86
+  to: 648
+  at: [77.28, 38.51]
+  reason: 타림 분지 오아시스 나라들은 여러 오아시스 왕국을 묶은 항목이라 오아시스 경작지 띠만 칠하고 띠 사이 타클라마칸 사막·산기슭은 비워(결정 Q9) 이 띠가 쿠차·코를라 쪽 본 덩어리와 떨어져 있음 — 사차(야르칸드) 띠(61~85년은 호탄 왕국 몫)
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Yarkand"]
+- entity: tarim-oasis-states
+  from: -175
+  to: 330
+  at: [85.33, 38.08]
+  reason: 타림 분지 오아시스 나라들은 여러 오아시스 왕국을 묶은 항목이라 오아시스 경작지 띠만 칠하고 띠 사이 타클라마칸 사막·산기슭은 비워(결정 Q9) 이 띠가 쿠차·코를라 쪽 본 덩어리와 떨어져 있음 — 선선(체르첸·차클리크·미란) 띠(330년부터 비움)
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Shanshan"]
+- entity: khotan-kingdom
+  from: 61
+  to: 86
+  at: [77.28, 38.51]
+  reason: 호탄 왕국이 61년 병합한 사차(야르칸드) 띠는 카르갈릭과 피산 사이 사막을 두고 호탄 오아시스 띠와 떨어져 있음(86년 반초의 사차 평정까지)
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Kingdom_of_Khotan"]
+
+# ── 중앙아시아 C4 W (서 −799~599, 2026-11-07) ──
+- entity: achaemenid-empire
+  from: -330
+  to: -328
+  at: [60.42, 37.17]
+  reason: 아할(코페트다그 북쪽 기슭의 니사 쪽). 서아시아 쪽 이란 본토가 기원전 331년(−330)에 끝난 뒤에도 중앙아시아는 기원전 330년(−329)까지 아케메네스로 둠(C4 맞춤 M1) — 메르브는 아리아로 아프가니스탄 쪽 남은 땅과 이어지나 아할은 이란 쪽에만 붙어 있어 떨어져 보임(2년)
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Margiana"]
+
+- entity: macedonia-kingdom
+  from: -328
+  to: -315
+  at: [62.03, 37.67]
+  reason: 메르브 오아시스(마르기아나 — 운영자 답 E1이 승인한 늘림). 아리아는 승인 범위 밖이라 비워(맞춤 M2) 박트리아·이란 쪽과 카라쿰 사막으로 떨어져 보임
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Margiana"]
+
+- entity: macedonia-kingdom
+  from: -316
+  to: -315
+  at: [60.42, 37.17]
+  reason: 아할(니사 쪽). 기원전 317년(−316) 한 해 이란 쪽이 안티고노스 1세의 왕국으로 넘어가 이란에 붙은 아할이 박트리아 쪽 본토와 떨어져 보임(C4 결정 해 그대로 — 1년)
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Margiana"]
+
+- entity: seleucid-empire
+  from: -304
+  to: -300
+  at: [60.42, 37.17]
+  reason: 아할(니사 쪽). C4 셀레우코스 동방은 −304부터인데 서아시아 쪽 이란 동부가 −300부터라 4년 동안 이란에 붙은 아할이 떨어져 보임(SW 칸 정할 점의 이음매와 같은 까닭)
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Margiana"]
+
+- entity: seleucid-empire
+  from: -249
+  to: -247
+  at: [65.4, 37.87]
+  reason: 아무다리야 왼쪽 띠(아물). 박트리아가 기원전 250년(−249)에 그리스-박트리아로 갈라진 뒤 마르기아나 쪽은 기원전 248년(−247)까지 셀레우코스로 두어(C4 결정 Q4) 메르브와 카라쿰 사막으로 떨어진 이 띠가 2년 따로 보임
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Greco-Bactrian_Kingdom"]
+
+- entity: parthian-empire
+  from: -154
+  to: 224
+  at: [65.4, 37.87]
+  reason: 아무다리야 왼쪽 띠(아물 — 지금 투르크메나바트 쪽). 메르브와는 카라쿰 사막 띠로, 강 건너 박트리아·소그디아나는 다른 나라(그리스-박트리아·월지·쿠샨)라 떨어져 보임 — C3 사산 600~651 줄과 같은 까닭
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Merv"]
+
+- entity: sasanian-empire
+  from: 224
+  to: 240
+  at: [62.03, 37.67]
+  reason: 메르브 오아시스. 아르다시르 1세에게 224년에 승복했으나(C4 결정 Q4) 서아시아 쪽 사산 이란 동부는 240년부터라 16년 동안 이란 본토와 떨어져 보임
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Merv"]
+
+- entity: sasanian-empire
+  from: 224
+  to: 240
+  at: [60.42, 37.17]
+  reason: 아할(니사 쪽). 메르브와 같이 224년부터 사산으로 두었으나 서아시아 쪽 이란 동부가 240년부터라 떨어져 보임(16년)
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Merv"]
+
+- entity: sasanian-empire
+  from: 224
+  to: 600
+  at: [65.4, 37.87]
+  reason: 아무다리야 왼쪽 띠(아물). 메르브와는 카라쿰 사막 띠로, 강 건너는 쿠샨·키다라·에프탈·소그드 쪽이라 떨어져 보임 — 600~651 C3 줄과 같은 까닭(484~564는 에프탈 땅)
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Merv"]
+
+- entity: hephthalites
+  from: 484
+  to: 565
+  at: [60.42, 37.17]
+  reason: 아할(니사 쪽). 메르브와 같은 주인으로 두어(C4 W 짜임 — 세 부분 같은 주인) 이란 쪽 사산 땅에만 붙은 아할이 박트리아 쪽 본토와 떨어져 보임(아할만 사산으로 남았는지는 사료로 못 가림 — 장부 후보)
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Margiana"]
+
+- entity: kangju
+  from: -127
+  to: 271
+  at: [68.71, 40.02]
+  reason: 시르다리야주 조각(UZ-SI)의 남쪽 떨어진 부분(지작주 안 — 지금 행정 경계 그대로). 강거는 샤시 쪽 세 조각만 칠해 둘레 지작이 비어 떨어져 보임(513 km²)
+  sources: ["위키백과 영어판 https://en.wikipedia.org/wiki/Kangju"]
+
+
+# ── 중앙아시아 C4 N (북 −799~599 + 600~602 이음, 2026-11-07) ──

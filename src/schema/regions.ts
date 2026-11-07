@@ -48,6 +48,8 @@ export const REGION_FILTER_OF: Record<string, RegionFilterUnit> = {
   'central-asia-early-medieval': 'central-asia',
   'central-asia-high-medieval': 'central-asia',
   'central-asia-late-medieval': 'central-asia',
+  'central-asia-ancient-bc': 'central-asia',
+  'central-asia-late-antiquity': 'central-asia',
 };
 
 /** 사건·전쟁 파일 이름 앞머리 → 권역. 앞에서부터 처음 맞는 것을 쓴다 (예: eu-01-revolutions-1789-1914.yaml → europe) */

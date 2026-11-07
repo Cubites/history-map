@@ -936,9 +936,9 @@
 - name: 수야브(악베심)
   at: [75.2, 42.8]
   year: 602
-  expect: none
-  url: https://en.wikipedia.org/wiki/Western_Turkic_Khaganate
-  from: 중앙아시아 C3 E1 결과노트
+  expect: istami-yabghu-state
+  url: https://en.wikipedia.org/wiki/Tardu
+  from: 중앙아시아 C3 E1 결과노트(C4 N이 고침 — 결정 Q6, 600~602 이스테미 야브구국)
 - name: 수야브(악베심)
   at: [75.2, 42.8]
   year: 603
@@ -1279,3 +1279,191 @@
   from: 중앙아시아 C3 E3 결과노트
 
 # ── 중앙아시아 C3 J (1500 이음 1500~1521, 2026-11-06) ──
+
+# ── 중앙아시아 C4 SW (서남 −799~599, 2026-11-07) ──
+- name: 발흐
+  at: [66.9, 36.76]
+  year: -400
+  expect: achaemenid-empire
+  url: https://en.wikipedia.org/wiki/Bactria
+  from: 중앙아시아 C4 SW 결과노트
+- name: 발흐
+  at: [66.9, 36.76]
+  year: -200
+  expect: greco-bactrian-kingdom
+  url: https://en.wikipedia.org/wiki/Greco-Bactrian_Kingdom
+  from: 중앙아시아 C4 SW 결과노트
+- name: 발흐
+  at: [66.9, 36.76]
+  year: -100
+  expect: yuezhi
+  url: https://en.wikipedia.org/wiki/Yuezhi
+  from: 중앙아시아 C4 SW 결과노트
+- name: 발흐
+  at: [66.9, 36.76]
+  year: 100
+  expect: kushan-empire
+  url: https://en.wikipedia.org/wiki/Kushan_Empire
+  from: 중앙아시아 C4 SW 결과노트
+- name: 발흐
+  at: [66.9, 36.76]
+  year: 500
+  expect: hephthalites
+  url: https://en.wikipedia.org/wiki/Hephthalites
+  from: 중앙아시아 C4 SW 결과노트
+- name: 카불
+  at: [69.18, 34.53]
+  year: -200
+  expect: maurya-empire
+  url: https://en.wikipedia.org/wiki/Seleucid%E2%80%93Mauryan_war
+  from: 중앙아시아 C4 SW 결과노트
+- name: 카불
+  at: [69.18, 34.53]
+  year: -100
+  expect: indo-greek-kingdom
+  url: https://en.wikipedia.org/wiki/Indo-Greek_Kingdom
+  from: 중앙아시아 C4 SW 결과노트
+- name: 카불
+  at: [69.18, 34.53]
+  year: 500
+  expect: alchon-huns
+  url: https://en.wikipedia.org/wiki/Alchon_Huns
+  from: 중앙아시아 C4 SW 결과노트
+- name: 헤라트
+  at: [62.2, 34.34]
+  year: 300
+  expect: sasanian-empire
+  url: https://en.wikipedia.org/wiki/Sasanian_Empire
+  from: 중앙아시아 C4 SW 결과노트
+
+# ── 중앙아시아 C4 E (동·신장 −799~599 + 600~647 이음, 2026-11-07) ──
+- name: 쿠차
+  at: [82.96, 41.72]
+  year: -100
+  expect: tarim-oasis-states
+  url: https://en.wikipedia.org/wiki/Kucha
+  from: 중앙아시아 C4 E 결과노트
+- name: 호탄
+  at: [79.93, 37.11]
+  year: -100
+  expect: khotan-kingdom
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Khotan
+  from: 중앙아시아 C4 E 결과노트
+- name: 호탄
+  at: [79.93, 37.11]
+  year: 400
+  expect: khotan-kingdom
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Khotan
+  from: 중앙아시아 C4 E 결과노트
+- name: 교하
+  at: [89.06, 42.95]
+  year: -50
+  expect: jushi-kingdom
+  url: https://en.wikipedia.org/wiki/Jushi_Kingdom
+  from: 중앙아시아 C4 E 결과노트
+- name: 고창
+  at: [89.53, 42.85]
+  year: 500
+  expect: qu-gaochang
+  url: https://en.wikipedia.org/wiki/Gaochang
+  from: 중앙아시아 C4 E 결과노트
+- name: 쿠차
+  at: [82.96, 41.72]
+  year: 620
+  expect: tarim-oasis-states
+  url: https://en.wikipedia.org/wiki/Kucha
+  from: 중앙아시아 C4 E 결과노트
+- name: 미란
+  at: [88.97, 39.22]
+  year: 200
+  expect: tarim-oasis-states
+  url: https://en.wikipedia.org/wiki/Shanshan
+  from: 중앙아시아 C4 E 결과노트
+
+# ── 중앙아시아 C4 W (서 −799~599, 2026-11-07) ──
+- name: 메르브
+  at: [62.19, 37.66]
+  year: -400
+  expect: achaemenid-empire
+  url: https://en.wikipedia.org/wiki/Margiana
+  from: 중앙아시아 C4 W 결과노트
+- name: 메르브
+  at: [62.19, 37.66]
+  year: -100
+  expect: parthian-empire
+  url: https://en.wikipedia.org/wiki/Merv
+  from: 중앙아시아 C4 W 결과노트
+- name: 메르브
+  at: [62.19, 37.66]
+  year: 300
+  expect: sasanian-empire
+  url: https://en.wikipedia.org/wiki/Merv
+  from: 중앙아시아 C4 W 결과노트
+- name: 메르브
+  at: [62.19, 37.66]
+  year: 500
+  expect: hephthalites
+  url: https://en.wikipedia.org/wiki/Margiana
+  from: 중앙아시아 C4 W 결과노트
+- name: 사마르칸트
+  at: [66.96, 39.65]
+  year: -200
+  expect: greco-bactrian-kingdom
+  url: https://en.wikipedia.org/wiki/Greco-Bactrian_Kingdom
+  from: 중앙아시아 C4 W 결과노트
+- name: 사마르칸트
+  at: [66.96, 39.65]
+  year: 500
+  expect: sogdian-city-states
+  url: https://en.wikipedia.org/wiki/Sogdia
+  from: 중앙아시아 C4 W 결과노트
+- name: 히바
+  at: [60.36, 41.38]
+  year: -100
+  expect: khwarazm-kingdom
+  url: https://en.wikipedia.org/wiki/Khwarazm
+  from: 중앙아시아 C4 W 결과노트
+- name: 히바
+  at: [60.36, 41.38]
+  year: 400
+  expect: afrighid-dynasty
+  url: https://en.wikipedia.org/wiki/Afrighids
+  from: 중앙아시아 C4 W 결과노트
+- name: 코칸트
+  at: [70.94, 40.53]
+  year: 100
+  expect: ferghana-kingdom
+  url: https://en.wikipedia.org/wiki/Dayuan
+  from: 중앙아시아 C4 W 결과노트
+- name: 타슈켄트
+  at: [69.28, 41.31]
+  year: 0
+  expect: kangju
+  url: https://en.wikipedia.org/wiki/Kangju
+  from: 중앙아시아 C4 W 결과노트
+
+# ── 중앙아시아 C4 N (북 −799~599 + 600~602 이음, 2026-11-07) ──
+- name: 이시크쿨(촐폰아타)
+  at: [77.08, 42.65]
+  year: -100
+  expect: wusun
+  url: https://en.wikipedia.org/wiki/Wusun
+  from: 중앙아시아 C4 N 결과노트
+- name: 오트라르
+  at: [68.3, 42.85]
+  year: 0
+  expect: kangju
+  url: https://en.wikipedia.org/wiki/Kangju
+  from: 중앙아시아 C4 N 결과노트
+- name: 타라즈
+  at: [71.37, 42.9]
+  year: 580
+  expect: istami-yabghu-state
+  url: https://en.wikipedia.org/wiki/Western_Turkic_Khaganate
+  from: 중앙아시아 C4 N 결과노트
+- name: 알마티
+  at: [76.95, 43.24]
+  year: 601
+  expect: istami-yabghu-state
+  url: https://en.wikipedia.org/wiki/Tardu
+  from: 중앙아시아 C4 N 결과노트

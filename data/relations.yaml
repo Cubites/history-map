@@ -1313,3 +1313,16 @@
 
 # ── 중앙아시아 C3 J (1500 이음 1500~1521, 2026-11-06) ──
 - { type: vassal_of, subject: arghun-kandahar, object: timurid-empire, from: 1479, to: 1506 } # 1479 술탄 후사인 바이카라가 둘눈 베그를 총독으로 세움, 1506년 후사인이 죽고 1507 샤이바니가 헤라트를 차지하며 끝남
+
+# ── 중앙아시아 C4 SW (서남 −799~599, 2026-11-07) ──
+- { type: vassal_of, subject: hephthalites, object: istami-yabghu-state, from: 568, to: 599 } # 560년 무렵 돌궐·사산에게 무너진 뒤 토하리스탄의 에프탈 제후국들이 서돌궐(이스테미)을 받듦 — 568년 무렵 돌궐이 아무다리야 남쪽까지 종주권을 굳힘(결정 Q5, 위키백과 Hephthalites)
+
+# ── 중앙아시아 C4 E (동·신장 −799~599 + 600~647 이음, 2026-11-07) ──
+- { type: vassal_of, subject: jushi-kingdom, object: western-han, from: -59, to: 8 } # 기원전 60년 한이 서역도호를 두고 차사를 전·후로 나눠 전차사를 거느림 — 서한이 끝난 8년까지(기본값 B21, 그 앞 흉노 종속은 근거가 약해 적지 않음)
+
+# ── 중앙아시아 C4 W (서 −799~599, 2026-11-07) ──
+- { type: vassal_of, subject: sogdian-city-states, object: hephthalites, from: 479, to: 557 } # 479년 무렵 에프탈이 소그디아나를 차지한 뒤 도시 군주들이 에프탈을 받듦 — 557년 무렵 돌궐·사산에게 에프탈이 무너질 때까지(결정 Q5, 위키백과 Sogdia)
+- { type: vassal_of, subject: sogdian-city-states, object: istami-yabghu-state, from: 571, to: 599 } # 에프탈이 무너진 뒤 소그드 도시 군주들이 돌궐 서쪽 몫(이스테미 야브구)을 받듦 — 600년부터 C3 서돌궐 줄이 이어짐(결정 Q5, 위키백과 Sogdia·First Turkic Khaganate)
+
+# ── 중앙아시아 C4 N (북 −799~599 + 600~602 이음, 2026-11-07) ──
+- { type: vassal_of, subject: istami-yabghu-state, object: gokturk, from: 553, to: 582 } # 이스테미는 부민 카간의 동생으로 돌궐 제1 카간국의 서쪽을 맡은 야브구 — 돌궐 항목이 끝나는 582년까지(그 뒤 581년 타스파르 사후 내전 속 타르두가 사실상 독립, 599년 카간 칭호 — 결정 Q6, 위키백과 Western Turkic Khaganate)

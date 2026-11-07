@@ -49,7 +49,7 @@ import { PREV_IDS, deg2, prevListOf, prevMinusOf } from './prev.mjs';
 
 const { build, geomOfUnit, joinTables, makeTable } = tableKit('early-medieval');
 
-const ERA_START = 600; // 이 시대 파일의 첫 해(600년 말 모습). 그 앞은 C4 몫(지도에 없음)
+const ERA_START = 600; // 이 시대 파일의 첫 해(600년 말 모습). 그 앞은 C4 몫(late-antiquity.mjs)
 const ERA_END = 821; // 마지막 표의 끝(미포함) = high-medieval.mjs의 첫 해. 이 시대의 버전은 끝이 모두 정수(끝 없음 없음)
 
 // ── 조각 소유표 도우미 (남아시아 S4 ancient.mjs와 같은 꼴, 표가 여럿) ─────────────────────────────
@@ -195,15 +195,15 @@ const E1_TG = 'turgesh-khaganate';
 const E1_K = 'karluk-yabgu-state';
 // 주인 줄(그해 말 모습 — 결정 Q4·Q5 ①, 기본값 B1·B2·B4·B28·B30·B31, 맞춤 M15·M22·M24)
 const E1_LINES = {
-  // 세미레치예(잠빌·알마티 주·알마티 시·키르기스 북부 추·탈라스·이시크쿨·나린)와 이리 골짜기: 600~602 비움(B28 — 돌궐 서쪽 몫, 서돌궐 독립 앞),
+  // 세미레치예(잠빌·알마티 주·알마티 시·키르기스 북부 추·탈라스·이시크쿨·나린)와 이리 골짜기: C4 Q6 — 이스테미 야브구국(돌궐 제1 카간국의 서쪽 야브구) 600~602(late-antiquity.mjs 555~599에서 이어 칠함),
   //   603 서돌궐 독립(수야브·천산 북쪽 여름 도읍), 658 비움(B4 — 657 소정방이 아시나하로를 이긴 뒤 당 기미부주 명목 복속·돌궐 제2 사이),
   //   699 투르기시 우즈일리 건국(703 수야브), 766 카를루크가 투르기시를 꺾고 수야브를 차지(B1 — 821~839는 E2가 같은 단위로 이어 칠함)
-  세미레치예: [[600, null], [603, E1_W], [658, null], [699, E1_TG], [766, E1_K]],
-  // 시르다리야 중류 도시 띠(KZ-YUZ의 카라타우 남서쪽 — 투르키스탄·오트라르(파라브)·시므켄트(이스피자브)): 세미레치예와 같은 주인(노트 E1 3-1~3-3, Q5 ①)
-  시르다리야: [[600, null], [603, E1_W], [658, null], [699, E1_TG], [766, E1_K]],
-  // 크질오르다 시르다리야 띠(EK_CUT_KOK 안 — 자나코르간·크질오르다): 서돌궐 603~657만(노트 E1 3-1). 투르기시·카를루크는 세미레치예 정주권만(3-2·3-3) —
+  세미레치예: [[600, 'istami-yabghu-state'], [603, E1_W], [658, null], [699, E1_TG], [766, E1_K]],
+  // 시르다리야 중류 도시 띠(KZ-YUZ의 카라타우 남서쪽 — 투르키스탄·오트라르(파라브)·시므켄트(이스피자브)): 세미레치예와 같은 주인(노트 E1 3-1~3-3, Q5 ① — 600~602는 C4 Q6 이스테미 야브구국)
+  시르다리야: [[600, 'istami-yabghu-state'], [603, E1_W], [658, null], [699, E1_TG], [766, E1_K]],
+  // 크질오르다 시르다리야 띠(EK_CUT_KOK 안 — 자나코르간·크질오르다): C4 Q6 — 이스테미 야브구국 600~602, 서돌궐 603~657(노트 E1 3-1). 투르기시·카를루크는 세미레치예 정주권만(3-2·3-3) —
   //   그 뒤 하류 쪽은 오구즈 유목지라 비움(B2)
-  악메체트: [[600, null], [603, E1_W], [658, null]],
+  악메체트: [[600, 'istami-yabghu-state'], [603, E1_W], [658, null]],
   // 카자흐 초원(나머지 KZ 조각·KAB, 남카·크질오르다의 띠 밖): 비움(Q5 ① — 초원 중부·북부, B2 오구즈·키메크–킵차크 유목지)
   초원: [[600, null]],
   // 하미(이오·이주, E_S_HAMI에서 동쪽 띠의 앞 권역 도형을 뺀 땅): 600~639 비움(B28 — 수 이오군 610~618은 8년, 당 이주 630은 결정 Q4의 640을 따름 — 결과 노트 6절),
@@ -277,14 +277,19 @@ const E1_rawMinus = (from, to) => {
 };
 const E1_cutLine = (line, from, to) => [[from, line.filter(([y]) => y <= from).at(-1)[1]], ...line.filter(([y]) => y > from && y < to)];
 const E1_XJ_SHAPES = [['하미', E1_S_HAMI], ['이리', I(E1_S_ILI, E1_S_NORTH)], ['우루무치', E1_S_URUM], ['준가르', E1_S_NORTH], ['카슈가르', E1_S_KASH], ['악수', E1_S_AKSU], ['호탄', E1_S_KHOTAN], ['투루판', E1_T1], ['코를라', E1_T2]];
-const E1_XJ_LINE_OF = { ...E1_LINES, 이리: E1_LINES.세미레치예 };
-// 신장 안 앞 권역 도형이 바뀌는 해(609 수·토욕혼, 618 당·토번, 630·646·682·744 채우기 구역 나라, 663 토욕혼 끝·토번 65,040)
-const E1_XJ_YEARS = [ERA_START, 609, 618, 630, 646, 663, 682, 744, ERA_END];
+// C4 이음(C4 E 칸 2026-11-07 — 운영자 답 E4): 600~647은 C4와 같은 오아시스 띠 여섯을 끼운 차례(cuts-c4.mjs C4E_XJ_SHAPES — 띠 밖은 위 차례와 같은 상수라 같은 땅)로 나눠
+//   소륵·사차·고묵구자·언기 쪽 띠는 타림 분지 오아시스 나라들(묶음), 우전 띠는 호탄 왕국, 선선 띠는 비움(330부터 — C4 결정 Q9). 648부터는 위 C3 차례 그대로(4진 당 — 648년 뒤 도형 바이트 그대로)
+import { C4E_XJ_SHAPES as E1_C4_XJ_SHAPES } from './cuts-c4.mjs';
+const E1_C4_OASIS = [[ERA_START, 'tarim-oasis-states']];
+const E1_C4_END = 648; // 띠를 쓰는 마지막 표의 끝(미포함) = 당이 구자를 꺾고 4진을 둔 해(C4 맞춤 M3)
+const E1_XJ_LINE_OF = { ...E1_LINES, 이리: E1_LINES.세미레치예, 소륵: E1_C4_OASIS, 사차: E1_C4_OASIS, 구자: E1_C4_OASIS, 언기: E1_C4_OASIS, 우전: [[ERA_START, 'khotan-kingdom']], 선선: [[ERA_START, null]] };
+// 신장 안 앞 권역 도형이 바뀌는 해(609 수·토욕혼, 618 당·토번, 630·646·682·744 채우기 구역 나라, 663 토욕혼 끝·토번 65,040) + 648(C4 띠 끝)
+const E1_XJ_YEARS = [ERA_START, 609, 618, 630, 646, E1_C4_END, 663, 682, 744, ERA_END];
 const E1_XJ_LAYOUTS = E1_XJ_YEARS.slice(0, -1).map((from, i) => {
   const to = E1_XJ_YEARS[i + 1];
   let left = E1_rawMinus(from, to).filter((p) => deg2([p]) >= 0.03); // 부스러기(0.03제곱도 미만)는 '앞'(주인 없음)
   const parts = [];
-  for (const [name, shape] of E1_XJ_SHAPES) {
+  for (const [name, shape] of from < E1_C4_END ? E1_C4_XJ_SHAPES : E1_XJ_SHAPES) {
     // 칼선 부스러기(0.03제곱도 — 대략 300 km² 미만, 본 덩어리와 떨어진 조각)는 이 부분에 넣지 않고 다음 차례로 넘긴다
     //   (우루무치 띠 북서 끝 마나스강 선과 상자 변 사이 103 km² — 그대로 두면 당 640~790 월경지 부스러기)
     const got = E1_noDust(I(left, shape));
@@ -299,7 +304,8 @@ const E1_XJ_LAYOUTS = E1_XJ_YEARS.slice(0, -1).map((from, i) => {
   return { from, to, units, lineOf: E1_XJ_LINE_OF };
 });
 // 비운 땅(fillTables 뒤에 부름): 해마다 주인 없는 단위가 같은 기간끼리 한 줄 — 이유는 E1_LINES 줄 주석
-//   (600~602 세미레치예·시르다리야 띠, 658~698 같은 땅(B4), 초원·준가르·남동부 내내, 하미·투루판·우루무치 600~639·791~820, 4진 600~647·카슈가르·악수·코를라 790~820, 크질오르다 띠 600~602·658~820)
+//   (600~602 세미레치예·시르다리야 띠, 658~698 같은 땅(B4), 초원·준가르·남동부 내내, 하미·투루판·우루무치 600~639·791~820, 4진 600~647(C4 이음 뒤에는 오아시스 띠 밖만)·카슈가르·악수·코를라 790~820, 크질오르다 띠 600~602·658~820,
+//   선선 띠 600~647 — C4 이음)
 const E1_GROUPS = [
   { from: ERA_START, to: ERA_END, units: Object.fromEntries([...E1_ZHETYSU, ...E1_STEPPE, 'KAB'].map((id) => [id, id])), lineOf: Object.fromEntries([...E1_ZHETYSU.map((id) => [id, E1_LINES.세미레치예]), ...[...E1_STEPPE, 'KAB'].map((id) => [id, E1_LINES.초원])]) },
   ...E1_KZ_SPLITS.map((units) => ({ from: ERA_START, to: ERA_END, units, lineOf: E1_LINES })),
@@ -376,7 +382,8 @@ const versions = Object.fromEntries(Object.entries(joined.segments).map(([id, se
 // SEAM_OUT — 마지막 버전이 이 시대 끝 해까지(to = ERA_END = 다음 시대 첫 해), SEAM_IN — 첫 버전이 이 시대 첫 해부터(from = ERA_START). 버전이 없으면 지나감(뼈대)
 // (끝 해까지 칠하지 않으면 경계 앞에 틈이, 첫 해부터 칠하지 않으면 경계 뒤에 틈이 생김. 늘린 나라도 이 시대의 versions에 있는 동안 같이 본다 — joinEras가 extensions로 옮기기 전)
 const SEAM_OUT = ['abbasid-caliphate', 'turk-shahi', 'zunbils', 'afrighid-dynasty', 'ustrushana-afshins', 'karluk-yabgu-state', 'tibet', 'uyghur'];
-const SEAM_IN = [];
+// C4 뼈대(2026-11-07): 앞 시대 late-antiquity.mjs가 599년까지 칠하는 여덟(같은 조각·같은 칼선 — C4 COMMON 3절). tarim-oasis-states·khotan-kingdom 600~647·istami-yabghu-state 600~602는 C4가 이 파일 E1 머리 안에 더함(C4 E·N 칸)
+const SEAM_IN = ['sasanian-empire', 'afrighid-dynasty', 'sogdian-city-states', 'ferghana-kingdom', 'qu-gaochang', 'tarim-oasis-states', 'khotan-kingdom', 'istami-yabghu-state'];
 for (const id of SEAM_OUT) {
   const last = versions[id]?.at(-1);
   if (last && last[1] !== ERA_END) throw new Error(`central-asia early-medieval: ${id}의 마지막 버전이 ${last[0]}~${last[1] - 1} — 다음 시대가 ${ERA_END}년부터 이어 그리므로 ${ERA_END - 1}년까지 칠해야 함(맞물림)`);
