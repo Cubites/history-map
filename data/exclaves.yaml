@@ -5881,3 +5881,103 @@
   at: [124.28, -9.32]
   reason: '오에쿠시(약 730 km²): 2002년 독립 뒤에도 인도네시아 땅(서티모르)에 둘러싸인 동티모르의 월경지(지금 오에쿠시 특별 행정 구역). 1914년 판정 경계를 이어받음'
   sources: ["1914년 상설 중재 재판소 티모르 판정", "https://en.wikipedia.org/wiki/East_Timor"]
+
+# ── 동남아 E2 BM (버마 1767~1899, 2026-11-08) ──
+- entity: company-india
+  from: 1826
+  to: 1852
+  at: [98.14, 16.31]
+  reason: '테나세림 주(타닌타리와 살윈강 동쪽 몬·카인, 몰멘·타보이·머귀): 1826년 얀다보 조약으로 회사가 받았으나 아라칸과의 사이 하버마가 1852년까지 콘바웅 땅이라 뭍으로 떨어져 있었고 바닷길로 이어짐(1852 하버마를 더해 이어짐). 동남아 E2 BM 구현(baseline:suggest 규칙 3 제안을 고침)'
+  sources: ["https://en.wikipedia.org/wiki/Treaty_of_Yandabo", "https://en.wikipedia.org/wiki/Second_Anglo-Burmese_War"]
+
+# ── 동남아 E2 SC (시암·캄보디아 1767~1899, 2026-11-08) ──
+
+# ── 동남아 E2 LO (라오 1767~1899, 2026-11-08) ──
+
+# ── 동남아 E2 VT (베트남 1767~1899, 2026-11-08) ──
+- entity: nguyen-dynasty
+  from: 1862
+  to: 1867
+  at: [105.5, 9.63]
+  reason: '1862 제1차 사이공 조약으로 동쪽 세 성(비엔호아·자딘·딘뜨엉)이 프랑스령이 된 뒤 서쪽 세 성(빈롱·안장·하띠엔)이 1867 병합까지 본토와 떨어져 남음(바닷길로 이어짐 — 동남아 E2 VT 2026-11-08)'
+  sources: ['https://en.wikipedia.org/wiki/French_Cochinchina']
+
+- entity: nguyen-lords
+  from: 1773
+  to: 1775
+  at: [107.85, 15.8]
+  reason: '떠이선이 1773 꾸이년·1774 카인호아~빈투언을 차지해 응우옌 주의 북쪽 땅(푸쑤언·꽝남)과 남쪽 자딘이 갈라짐. 1775 찐 군이 푸쑤언을 빼앗을 때까지(동남아 E2 VT 2026-11-08)'
+  sources: ['https://en.wikipedia.org/wiki/T%C3%A2y_S%C6%A1n_dynasty']
+
+- entity: nguyen-lords
+  from: 1801
+  to: 1802
+  at: [107.85, 15.8]
+  reason: '1801-06 응우옌 아인이 바닷길로 올라가 푸쑤언·꽝남을 되찾아 떠이선이 쥔 꾸이년 일대를 사이에 두고 남쪽 자딘과 떨어짐(동남아 E2 VT 2026-11-08)'
+  sources: ['https://en.wikipedia.org/wiki/Gia_Long']
+
+- entity: tay-son-dynasty
+  from: 1801
+  to: 1802
+  at: [108.92, 14.2]
+  reason: '1801 응우옌 아인이 푸쑤언을 되찾아 떠이선의 꾸이년 일대(꽝응아이·빈딘·푸옌)가 북부 본토와 떨어짐. 1802 떠이선 멸망까지(동남아 E2 VT 2026-11-08)'
+  sources: ['https://en.wikipedia.org/wiki/Gia_Long']
+
+- entity: laos
+  from: 1893
+  to: 1900
+  at: [108.34, 12.69]
+  reason: '(근사) 다를락(지금 베트남 닥락성, 약 1.3만 km²): 1893 프랑스–시암 조약 뒤 라오스 쪽으로 그림(1899년 11월 라오스 소속 대리청 — 1900~1903은 E1 항목과 같은 까닭). 지금 행정구역 경계로는 라오스 땅인 라타나키리와 약 4 km 떨어져, 사이에 낀 지금 자라이성·몬돌끼리주 모서리 때문에 떨어져 보임(동남아 E2 합치기 2026-11-08 — VT 결과 노트 9절)'
+  sources: ['https://vi.wikipedia.org/wiki/Đắk_Lắk', 'https://en.wikipedia.org/wiki/Central_Highlands_(Vietnam)']
+
+# ── 동남아 E2 MI (말레이 반도·인도네시아·티모르 1767~1899, 2026-11-08) ──
+- entity: voc
+  from: 1767
+  to: 1800
+  at: [123.4, 0.61]
+  reason: '북술라웨시 미나하사·고론탈로(약 25,182 km²): 1679년부터 VOC가 마나도 요새로 다스린 땅으로, 남술라웨시 마카사르와는 아직 네덜란드와 조약을 맺지 않은 중술라웨시 왕국들 땅을 사이에 두고 바닷길로만 이어졌다'
+  sources: ["위키백과 Central Sulawesi https://en.wikipedia.org/wiki/Central_Sulawesi", "위키백과 Dutch East India Company https://en.wikipedia.org/wiki/Dutch_East_India_Company"]
+
+- entity: dutch-east-indies
+  from: 1800
+  to: 1824
+  at: [123.4, 0.61]
+  reason: '북술라웨시 미나하사·고론탈로(약 25,182 km²): 동인도 회사 땅을 넘겨받은 마나도 쪽이 1824년 팔루·바나와 서약 전까지 중술라웨시 왕국들 땅을 사이에 두고 마카사르와 바닷길로만 이어졌다'
+  sources: ["위키백과 Central Sulawesi https://en.wikipedia.org/wiki/Central_Sulawesi"]
+
+- entity: dutch-east-indies
+  from: 1821
+  to: 1823
+  at: [105.09, -4.89]
+  reason: '람풍(약 33,376 km²): 1752년부터 네덜란드 땅인 수마트라 남쪽 끝으로 자와와 순다 해협을 사이에 두고 이어졌다. 1821년 서수마트라를 더하자 이 섬의 큰 덩어리가 서수마트라가 되어, 1823년 팔렘방 술탄국을 없애 둘이 이어지기 전까지 따로 보임'
+  sources: ["위키백과 Lampung https://en.wikipedia.org/wiki/Lampung"]
+
+- entity: dutch-east-indies
+  from: 1823
+  to: 1825
+  at: [101.02, -1.2]
+  reason: '서수마트라(약 35,879 km²): 1821년 파가루융 왕가와의 조약으로 얻은 땅이 1825년 벵쿨루를 넘겨받기 전까지 잠비 술탄국·벵쿨루(영국) 땅을 사이에 두고 팔렘방·람풍 쪽과 떨어져 있었다. 파당 항구로 바닷길로 이어짐'
+  sources: ["위키백과 Pagaruyung Kingdom https://en.wikipedia.org/wiki/Pagaruyung_Kingdom", "1824년 영국–네덜란드 조약"]
+
+- entity: portuguese-timor
+  from: 1767
+  to: 1900
+  at: [124.28, -9.32]
+  reason: '오에쿠시(암베누, 약 730 km²): 서티모르 북쪽 해안의 포르투갈 땅으로 1702년 리파우에 첫 총독을 둔 곳(1769년 딜리로 도읍을 옮김). 서티모르 쿠팡 쪽 네덜란드 땅과 토착 왕국 땅에 둘러싸여 바닷길로 이어졌다(1900~ E1 줄과 같은 땅)'
+  sources: ["1859년 리스본 조약", "https://en.wikipedia.org/wiki/Portuguese_Timor"]
+
+- entity: straits-settlements
+  from: 1825
+  to: 1900
+  at: [100.45, 5.49]
+  reason: '페낭(섬과 맞은편 웰즐리 주, 약 695 km²): 1825년 말라카를 넘겨받은 뒤 해협 식민지의 큰 덩어리가 말라카가 되어, 크다·페락 술탄국 땅에 둘러싸인 페낭이 바다로만 이어진 거점으로 보임(1900~ E1 줄과 같은 땅)'
+  sources: ["위키백과 Straits Settlements https://en.wikipedia.org/wiki/Straits_Settlements"]
+
+
+# ── 동남아 E2 BP (보르네오 북부·필리핀 1767~1899, 2026-11-08) ──
+- entity: brunei
+  from: 1890
+  to: 1900
+  at: [115.14, 4.66]
+  reason: '템부롱 구역(약 1,358 km²). 1890년 사라왁이 림방강 유역을 차지해 브루나이 땅이 둘로 갈라진 뒤의 실제 월경지(1900년부터는 E1 줄이 이어 받음)'
+  sources: ["위키백과 Brunei https://en.wikipedia.org/wiki/Brunei", "위키백과 History of Sarawak https://en.wikipedia.org/wiki/History_of_Sarawak"]

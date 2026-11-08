@@ -51,6 +51,7 @@ export const REGION_FILTER_OF: Record<string, RegionFilterUnit> = {
   'central-asia-ancient-bc': 'central-asia',
   'central-asia-late-antiquity': 'central-asia',
   'southeast-asia-modern': 'southeast-asia', // 동남아 E1(2026-11-08): 새 단위 southeast-asia. 남베트남 파일 'southeast-asia'만 'east-asia' 그대로(docs/southeast-asia/00-scope.md 결정 8)
+  'southeast-asia-colonial': 'southeast-asia', // 동남아 E2(2026-11-08): E1과 같은 새 단위 southeast-asia
 };
 
 /** 사건·전쟁 파일 이름 앞머리 → 권역. 앞에서부터 처음 맞는 것을 쓴다 (예: eu-01-revolutions-1789-1914.yaml → europe) */

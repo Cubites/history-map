@@ -849,11 +849,11 @@
 - name: "하노이(통킹)"
   at: [105.85, 21.03]
   year: 1890
-  expect: none
+  expect: tonkin-protectorate
   region: east-asia
   url: "https://en.wikipedia.org/wiki/Treaty_of_Tientsin_(1885)"
   from: "작업 L1 결과노트"
-  note: "1885 톈진 조약으로 프랑스 보호령"
+  note: "1885 톈진 조약으로 프랑스 보호령(청이 덮지 않음). 동남아 E2 VT(2026-11-08)가 1884~ 통킹 보호령을 칠해 none → tonkin-protectorate"
 
 - name: "카트만두(네팔)"
   at: [85.32, 27.71]

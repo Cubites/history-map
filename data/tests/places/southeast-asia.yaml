@@ -249,3 +249,292 @@
   expect: east-timor
   url: https://en.wikipedia.org/wiki/East_Timor
   from: 동남아 E1 SI 결과노트
+
+# ── 동남아 E2 BM (버마 1767~1899, 2026-11-08) ──
+- name: 므라우우
+  at: [93.19, 20.59]
+  year: 1780
+  expect: mrauk-u
+  url: https://en.wikipedia.org/wiki/Mrauk_U
+  from: 동남아 E2 BM 결과노트
+- name: 시트웨(아캬브)
+  at: [92.9, 20.15]
+  year: 1825
+  expect: konbaung-dynasty
+  url: https://en.wikipedia.org/wiki/Sittwe
+  from: 동남아 E2 BM 결과노트
+- name: 시트웨(아캬브)
+  at: [92.9, 20.15]
+  year: 1827
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Sittwe
+  from: 동남아 E2 BM 결과노트
+- name: 몰러먀잉(몰멘)
+  at: [97.628, 16.491]
+  year: 1830
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Mawlamyine
+  from: 동남아 E2 BM 결과노트
+- name: 타톤
+  at: [97.37, 16.92]
+  year: 1830
+  expect: konbaung-dynasty
+  url: https://en.wikipedia.org/wiki/Thaton
+  from: 동남아 E2 BM 결과노트
+- name: 양곤(랑군)
+  at: [96.16, 16.8]
+  year: 1851
+  expect: konbaung-dynasty
+  url: https://en.wikipedia.org/wiki/Yangon
+  from: 동남아 E2 BM 결과노트
+- name: 양곤(랑군)
+  at: [96.16, 16.8]
+  year: 1853
+  expect: company-india
+  url: https://en.wikipedia.org/wiki/Yangon
+  from: 동남아 E2 BM 결과노트
+- name: 만달레이
+  at: [96.08, 21.98]
+  year: 1885
+  expect: konbaung-dynasty
+  url: https://en.wikipedia.org/wiki/Mandalay
+  from: 동남아 E2 BM 결과노트
+- name: 만달레이
+  at: [96.08, 21.98]
+  year: 1887
+  expect: british-raj
+  url: https://en.wikipedia.org/wiki/Mandalay
+  from: 동남아 E2 BM 결과노트
+
+# ── 동남아 E2 SC (시암·캄보디아 1767~1899, 2026-11-08) ──
+- name: 방콕
+  at: [100.5, 13.75]
+  year: 1800
+  expect: thailand
+  url: https://en.wikipedia.org/wiki/Rattanakosin_Kingdom
+  from: 동남아 E2 SC 결과노트
+- name: 치앙마이
+  at: [98.99, 18.79]
+  year: 1850
+  expect: lan-na
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Chiang_Mai
+  from: 동남아 E2 SC 결과노트
+- name: 빠따니
+  at: [101.25, 6.87]
+  year: 1850
+  expect: patani-sultanate
+  url: https://en.wikipedia.org/wiki/Sultanate_of_Patani
+  from: 동남아 E2 SC 결과노트
+- name: 바탐방
+  at: [103.2, 13.1]
+  year: 1793
+  expect: cambodia
+  url: https://en.wikipedia.org/wiki/Battambang_province
+  from: 동남아 E2 SC 결과노트
+- name: 바탐방
+  at: [103.2, 13.1]
+  year: 1795
+  expect: thailand
+  url: https://en.wikipedia.org/wiki/Battambang_province
+  from: 동남아 E2 SC 결과노트
+- name: 프놈펜
+  at: [104.92, 11.56]
+  year: 1870
+  expect: cambodia
+  url: https://en.wikipedia.org/wiki/French_protectorate_of_Cambodia
+  from: 동남아 E2 SC 결과노트
+
+# ── 동남아 E2 LO (라오 1767~1899, 2026-11-08) ──
+- name: "루앙프라방"
+  at: [102.135, 19.886]
+  year: 1850
+  expect: luang-prabang-kingdom
+  url: "https://en.wikipedia.org/wiki/Kingdom_of_Luang_Phrabang"
+  from: "동남아 E2 LO 구현"
+  note: "1778년부터 시암에 조공한 루앙프라방 왕국"
+
+- name: "비엔티안"
+  at: [102.6, 17.967]
+  year: 1820
+  expect: vientiane-kingdom
+  url: "https://en.wikipedia.org/wiki/Kingdom_of_Vientiane"
+  from: "동남아 E2 LO 구현"
+  note: "아누웡 왕 때의 비엔티안 왕국"
+
+- name: "비엔티안"
+  at: [102.6, 17.967]
+  year: 1830
+  expect: thailand
+  url: "https://en.wikipedia.org/wiki/Lao_rebellion_(1826%E2%80%931828)"
+  from: "동남아 E2 LO 구현"
+  note: "1828년 아누웡 반란 뒤 시암 합병"
+
+- name: "비엔티안"
+  at: [102.6, 17.967]
+  year: 1895
+  expect: laos
+  url: "https://en.wikipedia.org/wiki/Franco-Siamese_crisis_of_1893"
+  from: "동남아 E2 LO 구현"
+  note: "1893년 프랑스–시암 조약 뒤 프랑스 보호령 라오스"
+
+- name: "팍세"
+  at: [105.799, 15.12]
+  year: 1850
+  expect: champasak-kingdom
+  url: "https://en.wikipedia.org/wiki/Kingdom_of_Champasak"
+  from: "동남아 E2 LO 구현"
+  note: "시암에 조공한 참파삭 왕국"
+
+- name: "우본랏차타니"
+  at: [104.857, 15.244]
+  year: 1890
+  expect: thailand
+  url: "https://en.wikipedia.org/wiki/Ubon_Ratchathani_province"
+  from: "동남아 E2 LO 구현"
+  note: "1792년 방콕 직속 무앙이 된 뒤 시암 땅"
+
+- name: "나콘랏차시마"
+  at: [102.1, 14.97]
+  year: 1780
+  expect: thailand
+  url: "https://en.wikipedia.org/wiki/Thonburi_Kingdom"
+  from: "동남아 E2 LO 구현"
+  note: "1770년 톤부리 왕국의 통일 뒤 시암 직할"
+
+# ── 동남아 E2 VT (베트남 1767~1899, 2026-11-08) ──
+- name: 하노이(탕롱)
+  at: [105.85, 21.03]
+  year: 1780
+  expect: later-le-dynasty
+  url: https://en.wikipedia.org/wiki/Later_L%C3%AA_dynasty
+  from: 동남아 E2 VT 결과노트
+- name: 후에(푸쑤언)
+  at: [107.59, 16.46]
+  year: 1780
+  expect: later-le-dynasty
+  url: https://en.wikipedia.org/wiki/Tr%E1%BB%8Bnh_lords
+  from: 동남아 E2 VT 결과노트
+- name: 꾸이년
+  at: [109.22, 13.77]
+  year: 1785
+  expect: tay-son-dynasty
+  url: https://en.wikipedia.org/wiki/T%C3%A2y_S%C6%A1n_dynasty
+  from: 동남아 E2 VT 결과노트
+- name: 사이공(자딘)
+  at: [106.7, 10.78]
+  year: 1790
+  expect: nguyen-lords
+  url: https://en.wikipedia.org/wiki/Gia_Long
+  from: 동남아 E2 VT 결과노트
+- name: 후에
+  at: [107.59, 16.46]
+  year: 1850
+  expect: nguyen-dynasty
+  url: https://en.wikipedia.org/wiki/Nguy%E1%BB%85n_dynasty
+  from: 동남아 E2 VT 결과노트
+- name: 사이공
+  at: [106.7, 10.78]
+  year: 1863
+  expect: cochinchina
+  url: https://en.wikipedia.org/wiki/French_Cochinchina
+  from: 동남아 E2 VT 결과노트
+- name: 빈롱
+  at: [105.97, 10.25]
+  year: 1863
+  expect: nguyen-dynasty
+  url: https://en.wikipedia.org/wiki/French_Cochinchina
+  from: 동남아 E2 VT 결과노트
+- name: 빈롱
+  at: [105.97, 10.25]
+  year: 1868
+  expect: cochinchina
+  url: https://en.wikipedia.org/wiki/French_Cochinchina
+  from: 동남아 E2 VT 결과노트
+
+# ── 동남아 E2 MI (말레이 반도·인도네시아·티모르 1767~1899, 2026-11-08) ──
+- name: 바타비아(자카르타)
+  at: [106.85, -6.21]
+  year: 1790
+  expect: voc
+  url: https://en.wikipedia.org/wiki/Dutch_East_India_Company
+  from: 동남아 E2 MI 결과노트
+- name: 페낭(조지타운)
+  at: [100.33, 5.41]
+  year: 1850
+  expect: straits-settlements
+  url: https://en.wikipedia.org/wiki/Straits_Settlements
+  from: 동남아 E2 MI 결과노트
+- name: 말라카
+  at: [102.25, 2.19]
+  year: 1810
+  expect: dutch-east-indies
+  url: https://en.wikipedia.org/wiki/Dutch_Malacca
+  from: 동남아 E2 MI 결과노트
+- name: 말라카
+  at: [102.25, 2.19]
+  year: 1830
+  expect: straits-settlements
+  url: https://en.wikipedia.org/wiki/Anglo-Dutch_Treaty_of_1824
+  from: 동남아 E2 MI 결과노트
+- name: 쿠안탄
+  at: [103.33, 3.81]
+  year: 1860
+  expect: pahang-sultanate
+  url: https://en.wikipedia.org/wiki/Pahang_Kingdom
+  from: 동남아 E2 MI 결과노트
+- name: 딜리
+  at: [125.57, -8.56]
+  year: 1899
+  expect: portuguese-timor
+  url: https://en.wikipedia.org/wiki/Portuguese_Timor
+  from: 동남아 E2 MI 결과노트
+- name: 자야푸라(홀란디아)
+  at: [140.72, -2.53]
+  year: 1850
+  expect: dutch-east-indies
+  url: https://en.wikipedia.org/wiki/Dutch_New_Guinea
+  from: 동남아 E2 MI 결과노트
+
+# ── 동남아 E2 BP (보르네오 북부·필리핀 1767~1899, 2026-11-08) ──
+- name: 쿠칭
+  at: [110.35, 1.55]
+  year: 1840
+  expect: brunei
+  url: https://en.wikipedia.org/wiki/History_of_Sarawak
+  from: 동남아 E2 BP 결과노트
+- name: 쿠칭
+  at: [110.35, 1.55]
+  year: 1850
+  expect: sarawak
+  url: https://en.wikipedia.org/wiki/History_of_Sarawak
+  from: 동남아 E2 BP 결과노트
+- name: 시부
+  at: [111.82, 2.29]
+  year: 1860
+  expect: brunei
+  url: https://en.wikipedia.org/wiki/Raj_of_Sarawak
+  from: 동남아 E2 BP 결과노트
+- name: 시부
+  at: [111.82, 2.29]
+  year: 1870
+  expect: sarawak
+  url: https://en.wikipedia.org/wiki/Raj_of_Sarawak
+  from: 동남아 E2 BP 결과노트
+- name: 산다칸
+  at: [118.07, 5.84]
+  year: 1870
+  expect: sulu-sultanate
+  url: https://en.wikipedia.org/wiki/Sulu_Sultanate
+  from: 동남아 E2 BP 결과노트
+- name: 산다칸
+  at: [118.07, 5.84]
+  year: 1890
+  expect: north-borneo
+  url: https://en.wikipedia.org/wiki/British_North_Borneo_Company
+  from: 동남아 E2 BP 결과노트
+- name: 마닐라
+  at: [120.98, 14.6]
+  year: 1870
+  expect: spanish-philippines
+  url: https://en.wikipedia.org/wiki/Spanish_East_Indies
+  from: 동남아 E2 BP 결과노트

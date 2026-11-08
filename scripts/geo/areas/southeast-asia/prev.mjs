@@ -5,6 +5,7 @@
 //   qing(1898~1911)·roc(1912~1948)·prc(1949~) 모두 1,414 km²로 같은 모양(동아시아 손 도형 L_CN_SW가 조각 중국 국경과 조금 어긋난 띠 — 베트남·라오스·미얀마 북쪽 가장자리).
 //   south-vietnam(1955~1975, 이 권역 권역 파일) 186,507 km²(베트남 176,949·라오스 3,075·캄보디아 6,004 — e1/skel/sv-overlap.txt). 그 밖의 나라(british-raj·manipur·japan 등)는 1 km² 안
 // 이 모듈은 나라를 만들지 않는다(versions 같은 이름을 내보내지 않음: check:generator). E2~E4 뼈대가 PREV_IDS에 그 시대 나라(ming 교지 등)를 더한다
+// E2 뼈대 측정(e2/skel/prev-overlap.txt, 2026-11-08): 1767~1899에 걸치는 다른 권역 버전 가운데 1 km² 넘게 겹치는 것은 qing(1759~1909 모든 버전) 1,414 km² 띠뿐 — PREV_IDS 그대로(company-india·ahom-kingdom·manipur·british-raj 원래 모양은 1 km² 안)
 import { I } from '../../lib.mjs';
 import { DOMAIN } from './table.mjs';
 import { SOUTH_VIETNAM } from './shapes.mjs';

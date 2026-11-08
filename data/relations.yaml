@@ -1400,3 +1400,61 @@
 - { type: vassal_of, subject: portuguese-timor, object: portugal, from: 1900, to: 1975 } # 1702 리파우 총독, 1975-11-28 독립 선포·12-07 인도네시아 침공
 - { type: occupied_by, subject: portuguese-timor, object: japan, from: 1942, to: 1945 } # 1942-02 일본군 상륙~1945-09, 포르투갈은 중립국이었음(결정 3)
 - { type: successor_of, subject: indonesia, object: dutch-east-indies, from: 1949, to: null } # 1949-12-27 헤이그 원탁 회의 합의로 주권 이양(서뉴기니 뺌)
+
+# ── 동남아 E2 BM (버마 1767~1899, 2026-11-08) ──
+- { type: vassal_of, subject: mrauk-u, object: konbaung-dynasty, from: 1784, to: 1784 } # 1784년 말 콘바웅 군대가 들어옴(위키백과 Mrauk U Kingdom 연표의 1784 속국), 1785-01-02 도읍 함락·병합
+- { type: vassal_of, subject: shan-states, object: konbaung-dynasty, from: 1767, to: 1885 } # 사오파들이 콘바웅 왕실에 조공(직접 지배 아님 — 기본값 D1). 1886~는 E1 줄 vassal_of british-raj
+
+# ── 동남아 E2 SC (시암·캄보디아 1767~1899, 2026-11-08) ──
+- { type: vassal_of, subject: lan-na, object: konbaung-dynasty, from: 1767, to: 1774 } # 치앙마이에 버마 관리(1763~1774)
+- { type: vassal_of, subject: lan-na, object: thailand, from: 1775, to: 1899 } # 1775 카윌라·짜반이 시암 편으로, 1802 카윌라 속왕 책봉, 1899 몬톤 파얍
+- { type: vassal_of, subject: patani-sultanate, object: thailand, from: 1786, to: 1899 } # 1786 라마 1세 정복, 1808 일곱 므앙(1902 직할은 1900~ 지도가 타이 땅이라 줄 없음)
+- { type: vassal_of, subject: cambodia, object: thailand, from: 1794, to: 1811 } # 1794 앙 엥을 방콕에서 왕으로 세움, 1812 앙짠 2세가 베트남 쪽으로 달아남
+- { type: vassal_of, subject: cambodia, object: nguyen-dynasty, from: 1813, to: 1834 } # 1813 베트남군이 앙짠 2세를 우동에 되돌려 세움
+- { type: occupied_by, subject: cambodia, object: nguyen-dynasty, from: 1835, to: 1840 } # 트란떠이 성 병합(E2 결정 Q3 — 땅은 캄보디아 색), 1841 철수
+- { type: vassal_of, subject: cambodia, object: thailand, from: 1848, to: 1862 } # 1848 앙두옹 즉위, 시암·베트남 두 나라 조공(시암 쪽 책봉만 줄로)
+- { type: vassal_of, subject: cambodia, object: france, from: 1863, to: 1899 } # 1863-08-11 노로돔 왕 보호 조약(1900~ 줄은 E1)
+
+# ── 동남아 E2 LO (라오 1767~1899, 2026-11-08) ──
+# 라오 세 왕국의 종주(기본값 D8): 1765 콘바웅 원정으로 루앙프라방·비엔티안 복속, 1778 톤부리가 참파삭을 치고 루앙프라방이 시암 편으로, 1779 비엔티안 정복
+- { type: vassal_of, subject: luang-prabang-kingdom, object: konbaung-dynasty, from: 1767, to: 1777 }
+- { type: vassal_of, subject: luang-prabang-kingdom, object: thailand, from: 1778, to: 1892 } # 1893 프랑스 보호령
+- { type: vassal_of, subject: vientiane-kingdom, object: konbaung-dynasty, from: 1767, to: 1778 }
+- { type: vassal_of, subject: vientiane-kingdom, object: thailand, from: 1779, to: 1827 } # 1828 아누웡 반란 뒤 합병
+- { type: vassal_of, subject: champasak-kingdom, object: thailand, from: 1778, to: 1892 } # 1893~1903 오른쪽 기슭에 남은 왕국은 지도 밖(글)
+# 라오스: 1893-10-03 프랑스–시암 조약으로 프랑스 보호령(1900~ 줄은 E1), 루앙프라방 왕가가 이어짐(P7)
+- { type: vassal_of, subject: laos, object: france, from: 1893, to: 1899 }
+- { type: successor_of, subject: laos, object: luang-prabang-kingdom, from: 1893, to: null } # 1893 보호령, 왕가는 1975까지
+
+# ── 동남아 E2 VT (베트남 1767~1899, 2026-11-08) ──
+# 책봉: 떠이선은 1789 건륭제가 응우옌 후에를 안남 국왕으로 봉함, 응우옌 왕조는 1804 가경제가 월남 국왕으로 봉함(1884 파트노트르 조약까지). 응우옌 주의 후 레 명목 종속은 넣지 않음(글로)
+- { type: vassal_of, subject: tay-son-dynasty, object: qing, from: 1789, to: 1801 }
+- { type: vassal_of, subject: nguyen-dynasty, object: qing, from: 1804, to: 1883 }
+# 프랑스 보호·직할(결정 2): E1 줄(1900~)과 따로 두 줄 — 1862 제1차 사이공 조약, 1883 아르망 조약, 1884 파트노트르 조약
+- { type: vassal_of, subject: cochinchina, object: france, from: 1862, to: 1899 }
+- { type: vassal_of, subject: annam-protectorate, object: france, from: 1883, to: 1899 }
+- { type: vassal_of, subject: tonkin-protectorate, object: france, from: 1884, to: 1899 }
+- { type: successor_of, subject: nguyen-dynasty, object: nguyen-lords, from: 1802, to: null } # 1802 응우옌 아인이 자롱 황제로 즉위
+- { type: successor_of, subject: annam-protectorate, object: nguyen-dynasty, from: 1883, to: null } # 1883-08 아르망 조약
+- { type: successor_of, subject: tonkin-protectorate, object: nguyen-dynasty, from: 1884, to: null } # 1884-06 파트노트르 조약
+
+# ── 동남아 E2 MI (말레이 반도·인도네시아·티모르 1767~1899, 2026-11-08) ──
+- { type: successor_of, subject: dutch-east-indies, object: voc, from: 1800, to: null } # 1799-12-31 회사 해산, 1800-01-01 네덜란드 국가가 영토를 넘겨받음
+- { type: vassal_of, subject: dutch-east-indies, object: batavian-republic, from: 1800, to: 1805 } # 바타비아 공화국의 아시아 식민지
+- { type: vassal_of, subject: dutch-east-indies, object: kingdom-of-holland, from: 1806, to: 1809 } # 1806 홀란트 왕국(다엔덜스 총독 1808~1811). 1810~1812 본국이 프랑스에 병합된 해는 줄을 끊음, 1811~1816 영국의 자와 점령은 칠하지 않음
+- { type: vassal_of, subject: dutch-east-indies, object: netherlands, from: 1813, to: 1899 } # 1813 네덜란드 왕국 복고, 1816 영국이 자와를 돌려줌(E1 줄 1900~ 이어짐)
+- { type: vassal_of, subject: straits-settlements, object: uk, from: 1786, to: 1899 } # 1786 페낭(동인도 회사), 1826 해협 식민지, 1867 직할 식민지(E1 줄 1900~ 이어짐)
+- { type: vassal_of, subject: perak-sultanate, object: uk, from: 1874, to: 1899 } # 1874-01-20 팡코르 조약·주재관, 1895 말레이 연합주
+- { type: vassal_of, subject: selangor-negeri-sembilan, object: uk, from: 1874, to: 1899 } # 1874 슬랑오르 주재관(느그리슴빌란은 1874 숭아이우중부터 차례로), 1895 말레이 연합주
+- { type: vassal_of, subject: pahang-sultanate, object: uk, from: 1888, to: 1899 } # 1888 첫 주재관, 1895 말레이 연합주
+- { type: vassal_of, subject: johor-sultanate, object: uk, from: 1885, to: 1899 } # 1885-12-11 조약으로 대외 관계를 영국이 맡음
+- { type: vassal_of, subject: kedah-perlis, object: thailand, from: 1786, to: 1899 } # 라마 1세가 파타니를 정복한 뒤 붕아 마스 조공을 받음(1821~1842 시암 점령은 글)
+- { type: vassal_of, subject: kelantan-sultanate, object: thailand, from: 1786, to: 1899 } # 1786 파타니 정복 뒤 시암 조공(트렝가누와 함께)
+- { type: vassal_of, subject: terengganu-sultanate, object: thailand, from: 1786, to: 1899 } # 1780년대부터 시암에 붕아 마스 조공
+- { type: vassal_of, subject: portuguese-timor, object: portugal, from: 1767, to: 1899 } # 1702 리파우 총독, 1769 딜리로 도읍을 옮김, 1859 리스본 조약(E1 줄 1900~ 이어짐)
+
+# ── 동남아 E2 BP (보르네오 북부·필리핀 1767~1899, 2026-11-08) ──
+- { type: vassal_of, subject: sarawak, object: brunei, from: 1841, to: 1845 } # 1841-09-24 하심 왕자가 브룩을 사라왁의 다스리는 이로, 1842-09-18 술탄이 해마다 조공(2,500달러)·브루나이에서 떼지 않는다는 조건으로 확인, 1846 영국–브루나이 전쟁 뒤 조공 없이 확인(위키백과 History of Sarawak). 1888~ 영국 보호는 E1 줄(1888~1962)이 덮음
+- { type: vassal_of, subject: spanish-philippines, object: spain, from: 1767, to: 1897 } # 1565 레가스피(앞은 E3), 1898-12-10 파리 조약으로 미국에 넘김
+- { type: vassal_of, subject: sulu-sultanate, object: spain, from: 1851, to: 1897 } # 1851-04-19 스페인과 맺은 조약(보호 수용), 1876 홀로 점령, 1878-07-22 의정서로 스페인 주권 인정, 1898 파리 조약으로 미국 쪽(1899 베이츠 조약은 E1 앞 — 지도 밖)
+- { type: successor_of, subject: american-philippines, object: spanish-philippines, from: 1898, to: null } # 1898-12-10 파리 조약. sarawak·north-borneo·brunei의 영국 보호(1888~)와 american-philippines의 미국 종속(1898~)은 E1 줄이 덮어 더하지 않음
