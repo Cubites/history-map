@@ -1326,3 +1326,77 @@
 
 # ── 중앙아시아 C4 N (북 −799~599 + 600~602 이음, 2026-11-07) ──
 - { type: vassal_of, subject: istami-yabghu-state, object: gokturk, from: 553, to: 582 } # 이스테미는 부민 카간의 동생으로 돌궐 제1 카간국의 서쪽을 맡은 야브구 — 돌궐 항목이 끝나는 582년까지(그 뒤 581년 타스파르 사후 내전 속 타르두가 사실상 독립, 599년 카간 칭호 — 결정 Q6, 위키백과 Western Turkic Khaganate)
+
+# ── 동남아 E1 W (서 버마·타이 1900~현재, 2026-11-08) ──
+- { type: vassal_of, subject: british-burma, object: uk, from: 1937, to: 1947 } # 1937-04-01 영국령 인도에서 갈라진 영국 직할 식민지(1935 버마 통치법), 1948-01-04 독립
+- { type: vassal_of, subject: shan-states, object: british-raj, from: 1886, to: 1936 } # 1886 상버마 병합 뒤 버마 주 아래 샨 소국들(대부분 1887~1890 복속, 1922 연방 샨 국)
+- { type: vassal_of, subject: shan-states, object: british-burma, from: 1937, to: 1947 } # 1937 버마 분리 뒤 총독 직할 변경
+- { type: vassal_of, subject: karenni-states, object: british-raj, from: 1892, to: 1936 } # 1892 군주들이 영국 수당을 받으며 종속(위키백과 Karenni States)
+- { type: vassal_of, subject: karenni-states, object: british-burma, from: 1937, to: 1947 }
+- { type: occupied_by, subject: british-burma, object: japan, from: 1942, to: 1945 } # 1942-03 랑군 점령~1945-08 항복, 영토는 그대로(결정 3·맞춤 N1)
+- { type: occupied_by, subject: shan-states, object: japan, from: 1942, to: 1945 } # 1943 켕퉁·몽판은 일본이 타이에 넘겼으나 칠하지 않음(결정 4)
+- { type: occupied_by, subject: karenni-states, object: japan, from: 1942, to: 1945 }
+- { type: successor_of, subject: myanmar, object: british-burma, from: 1948, to: null } # 1948-01-04 버마 연방 독립(샨주·카레니주 포함)
+
+
+# ── 동남아 E1 CL (중서 라오스·캄보디아 1900~현재, 2026-11-08) ──
+# 프랑스 보호령(결정 2): 지도는 1900년부터라 그 해부터. 1953년 독립(라오스 10-22·캄보디아 11-09)으로 끝
+- { type: vassal_of, subject: laos, object: france, from: 1900, to: 1952 }
+- { type: vassal_of, subject: cambodia, object: france, from: 1900, to: 1952 }
+# 일본 점령(결정 3·맞춤 N1): 1945-03-09 정변으로 프랑스 행정을 무너뜨리고 8월 항복까지
+- { type: occupied_by, subject: laos, object: japan, from: 1945, to: 1945 }
+- { type: occupied_by, subject: cambodia, object: japan, from: 1945, to: 1945 }
+# 베트남군 주둔(1979-01 프놈펜 점령~1989-09 철수)
+- { type: occupied_by, subject: cambodia, object: vietnam, from: 1979, to: 1989 }
+
+# ── 동남아 E1 CV (중동 베트남 1900~현재, 2026-11-08) ──
+# 프랑스령 인도차이나 베트남 세 지역(결정 2): 종주 프랑스 1900~1954(그 앞 1862·1883·1884~는 E2 몫). 일본 점령은 1945-03-09 정변부터라 1945 한 해만(결정 3·맞춤 N1)
+- { type: vassal_of, subject: cochinchina, object: france, from: 1900, to: 1954 }
+- { type: vassal_of, subject: annam-protectorate, object: france, from: 1900, to: 1954 }
+- { type: vassal_of, subject: tonkin-protectorate, object: france, from: 1900, to: 1954 }
+- { type: occupied_by, subject: cochinchina, object: japan, from: 1945, to: 1945 }
+- { type: occupied_by, subject: annam-protectorate, object: japan, from: 1945, to: 1945 }
+- { type: occupied_by, subject: tonkin-protectorate, object: japan, from: 1945, to: 1945 }
+
+# ── 동남아 E1 SM (남서 말라야·싱가포르 1900~현재, 2026-11-08) ──
+- { type: vassal_of, subject: straits-settlements, object: uk, from: 1900, to: 1945 } # 1826 동인도 회사 행정 단위, 1867 직할 식민지(본국 영국은 넓히지 않음 — 1900 앞은 E2)
+- { type: vassal_of, subject: perak-sultanate, object: uk, from: 1900, to: 1945 } # 1874 팡코르 조약으로 주재관, 1895 말레이 연합주
+- { type: vassal_of, subject: pahang-sultanate, object: uk, from: 1900, to: 1945 } # 1888 첫 주재관, 1895 말레이 연합주
+- { type: vassal_of, subject: selangor-negeri-sembilan, object: uk, from: 1900, to: 1945 } # 슬랑오르 1874 주재관, 느그리슴빌란 1895 지금 경계·주재관, 1895 말레이 연합주
+- { type: vassal_of, subject: johor-sultanate, object: uk, from: 1900, to: 1945 } # 1885-12-11 조약으로 대외 관계를 영국이 맡음(보호), 1914 일반 고문 — 비연합주
+- { type: vassal_of, subject: kedah-perlis, object: thailand, from: 1900, to: 1908 } # 시암 종주(붕아 마스 조공)
+- { type: vassal_of, subject: kedah-perlis, object: uk, from: 1909, to: 1945 } # 1909 방콕 조약(7-09 발효) — 비연합주
+- { type: vassal_of, subject: kelantan-sultanate, object: thailand, from: 1900, to: 1908 } # 시암 종주(1902 영국·시암 협정으로 고문)
+- { type: vassal_of, subject: kelantan-sultanate, object: uk, from: 1909, to: 1945 } # 1909 방콕 조약 — 비연합주
+- { type: vassal_of, subject: terengganu-sultanate, object: thailand, from: 1900, to: 1908 } # 시암 종주
+- { type: vassal_of, subject: terengganu-sultanate, object: uk, from: 1909, to: 1945 } # 1909 방콕 조약, 1919 고문 — 비연합주
+- { type: occupied_by, subject: straits-settlements, object: japan, from: 1942, to: 1945 } # 1941-12-08 침공, 1942-02-15 싱가포르 함락(1941년 말은 점령 전 — 맞춤 N1), 1945-08-15 항복
+- { type: occupied_by, subject: perak-sultanate, object: japan, from: 1942, to: 1945 } # 말레이 작전 1941-12~1942-02
+- { type: occupied_by, subject: pahang-sultanate, object: japan, from: 1942, to: 1945 }
+- { type: occupied_by, subject: selangor-negeri-sembilan, object: japan, from: 1942, to: 1945 }
+- { type: occupied_by, subject: johor-sultanate, object: japan, from: 1942, to: 1945 }
+- { type: occupied_by, subject: kedah-perlis, object: japan, from: 1942, to: 1945 } # 1943-10 일본이 행정을 타이에 넘김(결정 4 — 칠하지 않음, mapNote)
+- { type: occupied_by, subject: kelantan-sultanate, object: japan, from: 1942, to: 1945 } # 1943-10 타이 행정(위와 같음)
+- { type: occupied_by, subject: terengganu-sultanate, object: japan, from: 1942, to: 1945 } # 1943-10 타이 행정(위와 같음)
+- { type: vassal_of, subject: malaysia, object: uk, from: 1946, to: 1956 } # 1946 말라야 연합(직할 식민지), 1948 말라야 연방(보호국), 1957-08-31 독립
+- { type: vassal_of, subject: singapore, object: uk, from: 1946, to: 1962 } # 1946 직할 식민지, 1959 자치, 1963-09-16 말레이시아
+- { type: successor_of, subject: singapore, object: straits-settlements, from: 1946, to: null } # 해협 식민지 해체 뒤 싱가포르만 따로 직할 식민지(술탄국들 → 말레이시아는 글로만)
+
+# ── 동남아 E1 SB (남동 보르네오 북부·필리핀 1900~현재, 2026-11-08) ──
+- { type: vassal_of, subject: sarawak, object: uk, from: 1888, to: 1962 } # 1888-06-14 영국 보호국(주권은 라자가 지님), 1946-07-01 영국 직할 식민지(같은 항목 — M7), 1963-09-16 말레이시아
+- { type: vassal_of, subject: north-borneo, object: uk, from: 1888, to: 1962 } # 1888 영국 보호국(영국 북보르네오 회사가 다스림), 1946-07-15 영국 직할 식민지
+- { type: vassal_of, subject: brunei, object: uk, from: 1888, to: 1983 } # 1888-09-17 보호 협정, 1906 주재관 제도, 1984-01-01 독립
+- { type: vassal_of, subject: american-philippines, object: usa, from: 1898, to: 1945 } # 1898-12-10 파리 조약, 1935-11-15 자치령(같은 항목), 1946-07-04 독립
+- { type: occupied_by, subject: sarawak, object: japan, from: 1942, to: 1945 } # 1941-12-16 일본 침공이나 그해 말 모습으로 1942부터(맞춤 N1), 영토는 그대로(결정 3)
+- { type: occupied_by, subject: north-borneo, object: japan, from: 1942, to: 1945 } # 1942-01 일본 점령~1945-09 항복
+- { type: occupied_by, subject: brunei, object: japan, from: 1942, to: 1945 } # 1941-12-16 침공, 1942~1945 점령
+- { type: occupied_by, subject: american-philippines, object: japan, from: 1942, to: 1945 } # 1941-12-08 침공·1942-01-02 마닐라 점령~1945-09-02 항복(1943 라우렐 정부는 글로)
+- { type: successor_of, subject: philippines, object: american-philippines, from: 1946, to: null } # 1946-07-04 마닐라 조약으로 독립
+
+# ── 동남아 E1 SI (남 인도네시아·티모르 1900~현재, 2026-11-08) ──
+- { type: vassal_of, subject: dutch-east-indies, object: netherlands, from: 1900, to: 1948 } # 1800-01-01 동인도 회사 해산 뒤 네덜란드 국가 식민지(E1 시대 파일은 1900부터), 1949-12-27 주권 이양
+- { type: occupied_by, subject: dutch-east-indies, object: japan, from: 1942, to: 1945 } # 1942-03-09 네덜란드군 항복~1945-08 일본 항복, 영토는 그대로(결정 3·맞춤 N1)
+- { type: vassal_of, subject: netherlands-new-guinea, object: netherlands, from: 1949, to: 1962 } # 1949 이양에서 빠진 서뉴기니, 1962-10-01 유엔 임시 행정·1963-05-01 인도네시아
+- { type: vassal_of, subject: portuguese-timor, object: portugal, from: 1900, to: 1975 } # 1702 리파우 총독, 1975-11-28 독립 선포·12-07 인도네시아 침공
+- { type: occupied_by, subject: portuguese-timor, object: japan, from: 1942, to: 1945 } # 1942-02 일본군 상륙~1945-09, 포르투갈은 중립국이었음(결정 3)
+- { type: successor_of, subject: indonesia, object: dutch-east-indies, from: 1949, to: null } # 1949-12-27 헤이그 원탁 회의 합의로 주권 이양(서뉴기니 뺌)

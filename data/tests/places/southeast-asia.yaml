@@ -1,0 +1,251 @@
+# southeast-asia 권역 국경 지점 정답표 (평소 지도, 동남아 E1 뼈대 2026-11-08이 만든 빈 틀 — 남베트남 지점은 east-asia.yaml 그대로)
+# 읽는 곳: scripts/test-geo (npm run test:geo -- --only places). 꼴은 docs/DATA_GUIDE.md의 정답표 절을 따른다. 나라·시대마다 몇 점인지는 칸 지시문이 정한다(standards.md 9절 10).
+# 지점은 칸 머리 아래 - name: …로 적는다(주석만 있는 파일은 빈 목록으로 읽힘). 해는 천문 연도, 새 지점은 url을 반드시 단다.
+
+# ── 동남아 E1 W (서 버마·타이 1900~현재, 2026-11-08) ──
+- name: 양곤(랑군)
+  at: [96.16, 16.8]
+  year: 1920
+  expect: british-raj
+  url: https://en.wikipedia.org/wiki/British_rule_in_Burma
+  from: 동남아 E1 W 결과노트
+- name: 양곤(랑군)
+  at: [96.16, 16.8]
+  year: 1940
+  expect: british-burma
+  url: https://en.wikipedia.org/wiki/Government_of_Burma_Act_1935
+  from: 동남아 E1 W 결과노트
+- name: 양곤(랑군)
+  at: [96.16, 16.8]
+  year: 1960
+  expect: myanmar
+  url: https://en.wikipedia.org/wiki/Myanmar
+  from: 동남아 E1 W 결과노트
+- name: 타웅지
+  at: [97.04, 20.78]
+  year: 1920
+  expect: shan-states
+  url: https://en.wikipedia.org/wiki/Federated_Shan_States
+  from: 동남아 E1 W 결과노트
+- name: 로이코
+  at: [97.21, 19.67]
+  year: 1920
+  expect: karenni-states
+  url: https://en.wikipedia.org/wiki/Karenni_States
+  from: 동남아 E1 W 결과노트
+- name: 방콕
+  at: [100.49, 13.75]
+  year: 1920
+  expect: thailand
+  url: https://en.wikipedia.org/wiki/Bangkok
+  from: 동남아 E1 W 결과노트
+
+# ── 동남아 E1 CL (중서 라오스·캄보디아 1900~현재, 2026-11-08) ──
+
+- name: "바탐방"
+  at: [103.2, 13.1]
+  year: 1905
+  expect: thailand
+  url: "https://en.wikipedia.org/wiki/Franco-Siamese_Treaty_of_1907"
+  from: "동남아 E1 CL 구현"
+  note: "방콕 조약(1907) 앞 시암"
+
+- name: "바탐방"
+  at: [103.2, 13.1]
+  year: 1920
+  expect: cambodia
+  url: "https://en.wikipedia.org/wiki/Franco-Siamese_Treaty_of_1907"
+  from: "동남아 E1 CL 구현"
+  note: "방콕 조약(1907)으로 프랑스령 캄보디아"
+
+- name: "바탐방"
+  at: [103.2, 13.1]
+  year: 1943
+  expect: thailand
+  url: "https://en.wikipedia.org/wiki/Franco-Thai_War"
+  from: "동남아 E1 CL 구현"
+  note: "도쿄 평화 조약(1941)"
+
+- name: "사야부리"
+  at: [101.71, 19.25]
+  year: 1902
+  expect: thailand
+  url: "https://en.wikipedia.org/wiki/Franco-Siamese_Treaty_of_1904"
+  from: "동남아 E1 CL 구현"
+  note: "파리 조약(1904) 앞 시암"
+
+- name: "사야부리"
+  at: [101.71, 19.25]
+  year: 1920
+  expect: laos
+  url: "https://en.wikipedia.org/wiki/Franco-Siamese_Treaty_of_1904"
+  from: "동남아 E1 CL 구현"
+  note: "파리 조약(1904)으로 프랑스령 라오스"
+
+- name: "앙코르 와트"
+  at: [103.867, 13.4125]
+  year: 1943
+  expect: cambodia
+  url: "https://en.wikipedia.org/wiki/Phibunsongkhram_province"
+  from: "동남아 E1 CL 구현"
+  note: "도쿄 평화 조약(1941) 할양 밖 — 시엠레아프 읍과 앙코르 유적은 프랑스 쪽"
+
+
+# ── 동남아 E1 CV (중동 베트남 1900~현재, 2026-11-08) ──
+- name: 하노이
+  at: [105.85, 21.03]
+  year: 1920
+  expect: tonkin-protectorate
+  url: https://en.wikipedia.org/wiki/Tonkin_(French_protectorate)
+  from: 동남아 E1 CV 결과노트
+- name: 후에
+  at: [107.59, 16.46]
+  year: 1920
+  expect: annam-protectorate
+  url: https://en.wikipedia.org/wiki/Annam_(French_protectorate)
+  from: 동남아 E1 CV 결과노트
+- name: 사이공
+  at: [106.7, 10.78]
+  year: 1920
+  expect: cochinchina
+  url: https://en.wikipedia.org/wiki/French_Cochinchina
+  from: 동남아 E1 CV 결과노트
+- name: 하노이
+  at: [105.85, 21.03]
+  year: 1954
+  expect: vietnam
+  url: https://en.wikipedia.org/wiki/Geneva_Conference_(1954)
+  from: 동남아 E1 CV 결과노트
+- name: 후에
+  at: [107.59, 16.46]
+  year: 1954
+  expect: annam-protectorate
+  url: https://en.wikipedia.org/wiki/Geneva_Conference_(1954)
+  from: 동남아 E1 CV 결과노트
+- name: 사이공(호찌민시)
+  at: [106.7, 10.78]
+  year: 1980
+  expect: vietnam
+  url: https://en.wikipedia.org/wiki/Ho_Chi_Minh_City
+  from: 동남아 E1 CV 결과노트
+
+# ── 동남아 E1 SM (남서 말라야·싱가포르 1900~현재, 2026-11-08) ──
+- name: 이포
+  at: [101.08, 4.60]
+  year: 1920
+  expect: perak-sultanate
+  url: https://en.wikipedia.org/wiki/Federated_Malay_States
+  from: 동남아 E1 SM 결과노트
+- name: 코타바루
+  at: [102.24, 6.13]
+  year: 1920
+  expect: kelantan-sultanate
+  url: https://en.wikipedia.org/wiki/Anglo-Siamese_Treaty_of_1909
+  from: 동남아 E1 SM 결과노트
+- name: 싱가포르
+  at: [103.85, 1.29]
+  year: 1920
+  expect: straits-settlements
+  url: https://en.wikipedia.org/wiki/Straits_Settlements
+  from: 동남아 E1 SM 결과노트
+- name: 쿠알라룸푸르
+  at: [101.69, 3.14]
+  year: 1950
+  expect: malaysia
+  url: https://en.wikipedia.org/wiki/Formation_of_Malaysia
+  from: 동남아 E1 SM 결과노트
+  note: 말라야 연방(1948)
+- name: 싱가포르
+  at: [103.85, 1.29]
+  year: 1964
+  expect: malaysia
+  url: https://en.wikipedia.org/wiki/Formation_of_Malaysia
+  from: 동남아 E1 SM 결과노트
+- name: 싱가포르
+  at: [103.85, 1.29]
+  year: 1970
+  expect: singapore
+  url: https://en.wikipedia.org/wiki/Formation_of_Malaysia
+  from: 동남아 E1 SM 결과노트
+
+# ── 동남아 E1 SB (남동 보르네오 북부·필리핀 1900~현재, 2026-11-08) ──
+- name: 쿠칭
+  at: [110.35, 1.55]
+  year: 1920
+  expect: sarawak
+  url: https://en.wikipedia.org/wiki/Raj_of_Sarawak
+  from: 동남아 E1 SB 결과노트
+- name: 산다칸
+  at: [118.07, 5.84]
+  year: 1920
+  expect: north-borneo
+  url: https://en.wikipedia.org/wiki/North_Borneo
+  from: 동남아 E1 SB 결과노트
+- name: 반다르스리브가완
+  at: [114.94, 4.89]
+  year: 1920
+  expect: brunei
+  url: https://en.wikipedia.org/wiki/Brunei
+  from: 동남아 E1 SB 결과노트
+- name: 마닐라
+  at: [120.98, 14.6]
+  year: 1920
+  expect: american-philippines
+  url: https://en.wikipedia.org/wiki/Insular_Government_of_the_Philippine_Islands
+  from: 동남아 E1 SB 결과노트
+- name: 마닐라
+  at: [120.98, 14.6]
+  year: 1950
+  expect: philippines
+  url: https://en.wikipedia.org/wiki/Philippines
+  from: 동남아 E1 SB 결과노트
+- name: 코타키나발루
+  at: [116.07, 5.98]
+  year: 1970
+  expect: malaysia
+  url: https://en.wikipedia.org/wiki/Formation_of_Malaysia
+  from: 동남아 E1 SB 결과노트
+
+# ── 동남아 E1 SI (남 인도네시아·티모르 1900~현재, 2026-11-08) ──
+- name: 반다아체(쿠타라자)
+  at: [95.32, 5.55]
+  year: 1902
+  expect: aceh-sultanate
+  url: https://en.wikipedia.org/wiki/Aceh_Sultanate
+  from: 동남아 E1 SI 결과노트
+- name: 수라바야
+  at: [112.75, -7.25]
+  year: 1920
+  expect: dutch-east-indies
+  url: https://en.wikipedia.org/wiki/Dutch_East_Indies
+  from: 동남아 E1 SI 결과노트
+- name: 자야푸라(홀란디아)
+  at: [140.72, -2.53]
+  year: 1955
+  expect: netherlands-new-guinea
+  url: https://en.wikipedia.org/wiki/Netherlands_New_Guinea
+  from: 동남아 E1 SI 결과노트
+- name: 자야푸라(홀란디아)
+  at: [140.72, -2.53]
+  year: 1970
+  expect: indonesia
+  url: https://en.wikipedia.org/wiki/Netherlands_New_Guinea
+  from: 동남아 E1 SI 결과노트
+- name: 딜리
+  at: [125.57, -8.56]
+  year: 1950
+  expect: portuguese-timor
+  url: https://en.wikipedia.org/wiki/East_Timor
+  from: 동남아 E1 SI 결과노트
+- name: 딜리
+  at: [125.57, -8.56]
+  year: 1990
+  expect: indonesia
+  url: https://en.wikipedia.org/wiki/East_Timor
+  from: 동남아 E1 SI 결과노트
+- name: 딜리
+  at: [125.57, -8.56]
+  year: 2010
+  expect: east-timor
+  url: https://en.wikipedia.org/wiki/East_Timor
+  from: 동남아 E1 SI 결과노트

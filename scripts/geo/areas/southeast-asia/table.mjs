@@ -1,0 +1,179 @@
+// southeast-asia 도우미 모듈: 행정구역 조각 소유표 (동남아 E1 뼈대, 2026-11-08)
+// 중앙아시아 도우미(areas/central-asia/table.mjs — 남아시아·서아시아·유럽 makeTable과 같은 꼴)를 이 권역 조각(loadFragments('southeast-asia'), 384개)에 맞춰 옮겼다. 신장 같은 다른 권역 조각은 쓰지 않는다.
+// 시대 파일(areas/southeast-asia/<시대>.mjs)이 이 모듈을 가져와 표를 만들고, 표를 이어 나라별 버전·주인 없는 땅을 얻는다.
+// - 단위: 조각 하나를 통째로 쓰면 그 조각 id, 선으로 나눴으면 '이름/부분'. own(단위들, [[해, 나라], ...])는 그 해부터 다음 해 전까지 그 나라 땅이라는 뜻이다.
+// - 나라가 null이면 주인 없는 땅이다(일부러 비운 땅이거나 다른 권역 도형이 덮는 땅).
+// - 표마다 모든 조각을 정확히 한 번 쓴다(안 쓴 조각이 있으면 멈춤). 단위 이름과 도형은 표 사이에서 함께 쓴다(다른 표의 나눈 조각은 reuse).
+// - renames: 나라 이름(항목)만 바뀌고 땅은 그대로 넘어간 해. 그 해부터 그 나라의 모든 단위 주인을 새 항목으로 바꿔 읽는다.
+// - 꾸러미: 단위 이름·도형 표는 시대 파일마다 따로다. 시대 파일은 const { makeTable, joinTables, build, geomOfUnit } = tableKit('<시대>')로 자기 꾸러미를 받아 쓴다.
+// - 앞 권역 나라를 주인으로 쓰려면 권역 파일의 extendable에 있어야 한다(engine.mjs '앞 권역 나라 늘리기').
+// 이 모듈은 나라를 만들지 않는다(versions 같은 이름을 내보내지 않음: check:generator). 구현 칸은 고치지 않는다(틀렸으면 결과 노트 6절)
+import { D, I, U, loadFragments } from '../../lib.mjs';
+
+export const SE = loadFragments('southeast-asia');
+// 이 꾸러미의 조각(파일 순서)
+export const ALL_IDS = [...SE.ids];
+const propsOf = (id) => SE.props.get(id);
+// 조각 합치기(arc 병합). 모르는 id는 멈춘다
+export const F = (...ids) => {
+  for (const id of ids) if (!propsOf(id)) throw new Error(`southeast-asia table.mjs: 모르는 조각 id ${id}`);
+  if (!ids.length) throw new Error('southeast-asia table.mjs: F()에 조각 id가 없음');
+  return SE.F(...ids);
+};
+// 이 권역 시대 파일 나라의 출처 문구(지도 정보 패널). 모든 시대 파일이 era.source에 이 값을 쓴다 — 같은 나라 id를 두 시대 파일이 내면 문구가 같아야 joinEras가 이어 붙인다
+export const SE_SOURCE_TEXT = '동남아 쪽은 Natural Earth 1:10m admin-1(v5.1.2) 현대 행정구역 조각을 그 시기 국경에 맞춰 묶고, 조각이 역사 경계와 다른 곳(메콩강 오른쪽 기슭·1941년 도쿄 조약선 등)은 위키백과·브리태니커의 조약·넓이와 지금 주 경계를 따라 손으로 그은 근사. 운영자 검수 필요';
+// 권역 바깥선 (빈 땅 검사 구역의 바탕)
+export const DOMAIN = SE.domain;
+
+// adm0(Natural Earth 나라 코드)별 조각 id
+export const idsOf = (...adm0s) => {
+  const out = ALL_IDS.filter((id) => adm0s.includes(propsOf(id).adm0));
+  if (!out.length) throw new Error(`southeast-asia table.mjs: 조각이 없는 나라 코드 ${adm0s.join(', ')}`);
+  return out;
+};
+// ids에서 빼기. 빼려는 id가 목록에 없으면 멈춘다(조각 id 오타를 잡는다)
+export const minus = (ids, ...out) => {
+  for (const id of out) if (!ids.includes(id)) throw new Error(`southeast-asia table.mjs: 빼려는 조각 ${id}가 목록에 없음`);
+  return ids.filter((id) => !out.includes(id));
+};
+
+// 시대 파일 하나의 꾸러미: 소유표 만들기·잇기·도형. era는 오류 글에 쓰는 시대 이름
+export const tableKit = (era) => {
+  const unitMake = new Map(); // 단위 이름 → null(통째 조각) 또는 도형을 만드는 함수 (이 꾸러미의 모든 표가 함께 씀)
+  const splitIds = new Map(); // split이 돌려준 단위 이름 객체 → 그 묶음의 조각 id (reuse가 씀)
+
+  const makeTable = (FROM, TO, renames = {}) => {
+    const label = `southeast-asia ${era} ${FROM}~${TO - 1} 소유표`;
+    const claimed = new Map();
+    const used = new Set();
+    const ownership = new Map();
+    const claim = (id, by) => {
+      if (!propsOf(id)) throw new Error(`${label}: 모르는 조각 id ${id}`);
+      if (claimed.has(id)) throw new Error(`${label}: 조각 ${id}를 ${claimed.get(id)}와 ${by}에서 함께 씀`);
+      claimed.set(id, by);
+    };
+    const use = (name) => {
+      if (used.has(name)) throw new Error(`${label}: 단위 이름 ${name}이 겹침`);
+      used.add(name);
+    };
+    const define = (name, make) => {
+      if (unitMake.has(name) && (make !== null || unitMake.get(name) !== null)) {
+        throw new Error(`${label}: 단위 이름 ${name}을 다시 정의함 (다른 표에서 나눈 조각을 쓰려면 reuse)`);
+      }
+      unitMake.set(name, make);
+    };
+    // 통째 조각. 단위 이름 = 조각 id
+    const whole = (...ids) => {
+      for (const id of ids) {
+        claim(id, id);
+        use(id);
+        define(id, null);
+      }
+      return ids;
+    };
+    // 나눈 조각: 조각 묶음 ids를 parts의 도형으로 차례로 자른다(첫 부분 = I(F(ids), 도형1), 나머지 = D(F(ids), 도형1, …)). 반환: { 부분 이름: '묶음/부분' }
+    const split = (name, ids, parts, restName) => {
+      for (const id of ids) claim(id, name);
+      const out = {};
+      const shapes = [];
+      for (const [part, shape] of parts) {
+        const before = [...shapes];
+        out[part] = `${name}/${part}`;
+        use(out[part]);
+        define(out[part], () => I(before.length ? D(F(...ids), ...before) : F(...ids), shape));
+        shapes.push(shape);
+      }
+      out[restName] = `${name}/${restName}`;
+      use(out[restName]);
+      define(out[restName], () => D(F(...ids), ...shapes));
+      splitIds.set(out, ids);
+      return out;
+    };
+    const reuse = (out) => {
+      const ids = splitIds.get(out);
+      if (!ids) throw new Error(`${label}: reuse에는 split이 돌려준 객체를 준다`);
+      for (const id of ids) claim(id, Object.values(out)[0]);
+      for (const name of Object.values(out)) use(name);
+      return out;
+    };
+    const own = (list, timeline) => {
+      if (timeline[0]?.[0] !== FROM || timeline.some(([y], i) => !Number.isInteger(y) || (i && y <= timeline[i - 1][0]) || y >= TO)) {
+        throw new Error(`${label}: ${list[0]} 등의 기간 ${JSON.stringify(timeline)} (첫 해는 ${FROM}, 해는 늘어나고 ${TO} 전)`);
+      }
+      for (const u of list) {
+        if (!used.has(u)) throw new Error(`${label}: 이 표에서 정의하지 않은 단위 ${u}`);
+        if (ownership.has(u)) throw new Error(`${label}: 단위 ${u}의 주인을 두 번 적음`);
+        ownership.set(u, timeline);
+      }
+    };
+    // 표 검사 뒤 해마다 [해, 나라|null, 단위 목록]
+    const finish = () => {
+      const unused = ALL_IDS.filter((id) => !claimed.has(id));
+      if (unused.length) throw new Error(`${label}: 쓰지 않은 조각 ${unused.length}개 (${unused.slice(0, 10).join(', ')} …)`);
+      const ownerless = [...used].filter((u) => !ownership.has(u));
+      if (ownerless.length) throw new Error(`${label}: 주인을 적지 않은 단위 ${ownerless.join(', ')}`);
+      const ownerAt = (timeline, year) => {
+        const owner = timeline.filter(([y]) => y <= year).at(-1)[1];
+        const rename = renames[owner];
+        return rename && year >= rename[0] ? rename[1] : owner;
+      };
+      const rows = [];
+      for (let year = FROM; year < TO; year++) {
+        const byOwner = new Map();
+        for (const [u, timeline] of ownership) {
+          const owner = ownerAt(timeline, year);
+          if (!byOwner.has(owner)) byOwner.set(owner, []);
+          byOwner.get(owner).push(u);
+        }
+        for (const [owner, list] of byOwner) rows.push([year, owner, list.sort()]);
+      }
+      return rows;
+    };
+    return { FROM, TO, whole, split, reuse, own, finish };
+  };
+
+  // 표들(시대 순서, 기간이 이어져야 함)을 이어 해마다 나라별 단위 목록을 만들고, 같은 목록이 이어지는 기간을 한 버전으로 묶는다.
+  // 반환: segments(나라 → [[from, to, 단위 목록]]), nullSegments(주인 없는 단위의 [[from, to, 목록]], 해마다 하나), TO(마지막 표의 끝)
+  const joinTables = (tables) => {
+    const segments = {};
+    const nullSegments = [];
+    tables.forEach((table, i) => {
+      if (i && table.FROM !== tables[i - 1].TO) throw new Error(`southeast-asia ${era} table.mjs: 소유표 기간이 이어지지 않음`);
+      for (const [year, owner, list] of table.finish()) {
+        const segs = owner === null ? nullSegments : (segments[owner] ??= []);
+        const last = segs.at(-1);
+        if (last && last[1] === year && last[2].join('|') === list.join('|')) last[1] = year + 1;
+        else segs.push([year, year + 1, list]);
+      }
+    });
+    // 주인 없는 단위가 하나도 없는 해도 빈 목록으로 채운다(빈 땅 검사 구역이 해마다 이어지게)
+    const TO = tables.at(-1).TO;
+    const gaps = [];
+    for (let year = tables[0].FROM; year < TO; year++) {
+      const list = nullSegments.find(([from, to]) => from <= year && year < to)?.[2] ?? [];
+      const last = gaps.at(-1);
+      if (last && last[1] === year && last[2].join('|') === list.join('|')) last[1] = year + 1;
+      else gaps.push([year, year + 1, list]);
+    }
+    return { segments, nullSegments: gaps, TO };
+  };
+
+  // 단위 목록 → 도형: 통째 조각은 F로 한 번에 합치고(arc 병합), 나눈 조각은 polyclip 합집합으로 더한다. 같은 목록은 한 번만 계산한다
+  const unitGeom = new Map();
+  const geomOfUnit = (u) => {
+    if (!unitMake.has(u)) throw new Error(`southeast-asia ${era} table.mjs: 모르는 단위 ${u}`);
+    if (!unitGeom.has(u)) unitGeom.set(u, unitMake.get(u)());
+    return unitGeom.get(u);
+  };
+  const builtGeom = new Map();
+  const build = (list) => {
+    const key = list.join('|');
+    if (!builtGeom.has(key)) {
+      const ids = list.filter((u) => unitMake.get(u) === null);
+      const parts = list.filter((u) => unitMake.get(u) !== null).map(geomOfUnit);
+      builtGeom.set(key, parts.length ? U(...(ids.length ? [F(...ids)] : []), ...parts) : F(...list));
+    }
+    return builtGeom.get(key);
+  };
+  return { makeTable, joinTables, geomOfUnit, build };
+};

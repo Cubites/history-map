@@ -9,7 +9,7 @@
 // 빌드 스크립트가 Node의 타입 제거 기능으로 직접 불러오므로 enum 같은 런타임 문법과 외부 패키지는 쓰지 않는다.
 
 /** 화면의 권역 필터 단위. '전체'(all)는 따로 둔다 */
-export const REGION_FILTERS = ['east-asia', 'europe', 'middle-east', 'south-asia', 'central-asia'] as const;
+export const REGION_FILTERS = ['east-asia', 'europe', 'middle-east', 'south-asia', 'central-asia', 'southeast-asia'] as const;
 export type RegionFilterUnit = (typeof REGION_FILTERS)[number];
 export type RegionFilter = 'all' | RegionFilterUnit;
 
@@ -50,11 +50,11 @@ export const REGION_FILTER_OF: Record<string, RegionFilterUnit> = {
   'central-asia-late-medieval': 'central-asia',
   'central-asia-ancient-bc': 'central-asia',
   'central-asia-late-antiquity': 'central-asia',
-  'southeast-asia-modern': 'east-asia', // 동남아 0단계 빈 틀(2026-11-08). E1이 첫 나라를 넣을 때 새 단위 'southeast-asia'를 REGION_FILTERS·REGION_FILTER_INFO에 더하고 이 줄을 그 단위로 바꾼다(docs/southeast-asia/00-scope.md 결정 8 — 남베트남 'southeast-asia'만 'east-asia')
+  'southeast-asia-modern': 'southeast-asia', // 동남아 E1(2026-11-08): 새 단위 southeast-asia. 남베트남 파일 'southeast-asia'만 'east-asia' 그대로(docs/southeast-asia/00-scope.md 결정 8)
 };
 
 /** 사건·전쟁 파일 이름 앞머리 → 권역. 앞에서부터 처음 맞는 것을 쓴다 (예: eu-01-revolutions-1789-1914.yaml → europe) */
-export const STORY_FILE_PREFIXES: [prefix: string, region: string][] = [['eu-', 'europe'], ['cn-', 'china'], ['me-', 'middle-east'], ['sa-', 'south-asia'], ['ca-', 'central-asia']];
+export const STORY_FILE_PREFIXES: [prefix: string, region: string][] = [['eu-', 'europe'], ['cn-', 'china'], ['me-', 'middle-east'], ['sa-', 'south-asia'], ['ca-', 'central-asia'], ['sea-', 'southeast-asia']];
 /** 한국사 사건 파일(01-gojoseon.yaml~08-contemporary.yaml)과 앞머리가 없는 전쟁 파일(imjin-war.yaml 등)의 권역 */
 export const DEFAULT_STORY_REGION = 'korea';
 
@@ -71,6 +71,8 @@ export const REGION_FILTER_INFO: Record<RegionFilter, { label: string; short: st
   'south-asia': { label: '남아시아', short: '남아시아', bounds: [[60.5, 5], [97.5, 37.2]] },
   // 카스피해 동쪽 기슭(망기스타우) ~ 신장 동쪽 끝(하미), 아프가니스탄 남쪽 끝 ~ 카자흐스탄 북쪽 끝. 앞 단위와 겹치는 곳은 앞 단위가 먼저 골라짐
   'central-asia': { label: '중앙아시아', short: '중앙아시아', bounds: [[46.4, 29.3], [96.5, 55.6]] },
+  // 미얀마 서쪽 끝(나프강) ~ 서뉴기니 동쪽 끝(동경 141°), 티모르·자와 남쪽 ~ 미얀마 북쪽 끝(00-scope 기본값 22). 앞 단위(동아시아 북위 18° 북쪽·남아시아 동경 97.5° 서쪽)와 겹치는 곳은 앞 단위가 먼저 골라짐
+  'southeast-asia': { label: '동남아시아', short: '동남아', bounds: [[92, -11], [141, 29]] },
 };
 
 /** 파일 경로에서 확장자를 뺀 이름 (경로 구분자는 / 와 \ 모두) */

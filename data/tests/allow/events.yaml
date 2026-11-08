@@ -83,3 +83,301 @@
   reason: 'ca-05 사건 묶음이 1865년 사건 tashkent-1865로 이었으나 남김: 1865년 버전은 1864년 모양에 카자흐스탄 동쪽 끝(약 2.6만 km²)을 더한 것이라 대칭차가 그 넓이인데, 반올림 좌표에서 polyclip이 예외를 냄(사건으로 지워지지 않는 계산실패 줄)'
   decided: 2026-11-05 중앙아시아 C1 E 구현(사건은 다음 세션)
 # ── 중앙아시아 C3 E1 (동 앞 600~820, 2026-11-06) ──
+
+# ── 동남아 E1 W (서 버마·타이 1900~현재, 2026-11-08) ──
+- key: '1782 thailand 성립'
+  reason: 'se-05 사건 묶음이 채움(1782 라마 1세의 방콕 천도·짜끄리 왕조)'
+  decided: 2026-11-08 동남아 E1 W 구현(사건은 다음 묶음)
+- key: '1875 karenni-states 성립'
+  reason: 'se-05 사건 묶음이 채움(1875-06-21 영국·버마의 서쪽 카레니 독립 인정)'
+  decided: 2026-11-08 동남아 E1 W 구현(사건은 다음 묶음)
+- key: '1886 shan-states 성립'
+  reason: 'se-05 사건 묶음이 채움(1886 상버마 병합·제3차 영국–버마 전쟁)'
+  decided: 2026-11-08 동남아 E1 W 구현(사건은 다음 묶음)
+- key: '1900 shan-states 버전'
+  reason: 'E1 시대 파일 첫 해(1900)의 첫 버전이라 대칭차가 땅 전체 — E2 지도가 1886~1899를 칠하면 사라짐'
+  decided: 2026-11-08 동남아 E1 W 구현(사건은 다음 묶음)
+- key: '1900 karenni-states 버전'
+  reason: 'E1 시대 파일 첫 해(1900)의 첫 버전이라 대칭차가 땅 전체 — E2 지도가 1875~1899를 칠하면 사라짐'
+  decided: 2026-11-08 동남아 E1 W 구현(사건은 다음 묶음)
+- key: '1900 thailand 버전'
+  reason: 'E1 시대 파일 첫 해(1900)의 첫 버전이라 대칭차가 땅 전체 — E2 지도가 1782~1899를 칠하면 사라짐'
+  decided: 2026-11-08 동남아 E1 W 구현(사건은 다음 묶음)
+- key: '1937 british-burma 성립'
+  reason: 'se-06 사건 묶음이 채움(1937-04-01 버마 분리)'
+  decided: 2026-11-08 동남아 E1 W 구현(사건은 다음 묶음)
+- key: '1947 british-burma 소멸'
+  reason: 'se-06 사건 묶음이 채움(1948-01-04 버마 독립)'
+  decided: 2026-11-08 동남아 E1 W 구현(사건은 다음 묶음)
+- key: '1947 shan-states 소멸'
+  reason: 'se-06 사건 묶음이 채움(1947 팡롱 협정·1948 버마 독립)'
+  decided: 2026-11-08 동남아 E1 W 구현(사건은 다음 묶음)
+- key: '1947 karenni-states 소멸'
+  reason: 'se-06 사건 묶음이 채움(1948 버마 독립)'
+  decided: 2026-11-08 동남아 E1 W 구현(사건은 다음 묶음)
+- key: '1948 myanmar 성립'
+  reason: 'se-06 사건 묶음이 채움(1948-01-04 버마 독립)'
+  decided: 2026-11-08 동남아 E1 W 구현(사건은 다음 묶음)
+
+# ── 동남아 E1 CL (중서 라오스·캄보디아 1900~현재, 2026-11-08) ──
+- key: '1863 cambodia 성립'
+  reason: se-05 사건 묶음이 채움
+  decided: 2026-11-08 동남아 E1 CL 구현(사건은 다음 묶음)
+- key: '1893 laos 성립'
+  reason: se-05 사건 묶음이 채움
+  decided: 2026-11-08 동남아 E1 CL 구현(사건은 다음 묶음)
+- key: '1900 laos 버전'
+  reason: se-06 사건 묶음이 채움
+  decided: 2026-11-08 동남아 E1 CL 구현(사건은 다음 묶음)
+- key: '1904 laos 버전'
+  reason: se-06 사건 묶음이 채움
+  decided: 2026-11-08 동남아 E1 CL 구현(사건은 다음 묶음)
+- key: '1941 laos 버전'
+  reason: se-06 사건 묶음이 채움
+  decided: 2026-11-08 동남아 E1 CL 구현(사건은 다음 묶음)
+- key: '1946 laos 버전'
+  reason: se-06 사건 묶음이 채움
+  decided: 2026-11-08 동남아 E1 CL 구현(사건은 다음 묶음)
+- key: '1900 cambodia 버전'
+  reason: se-06 사건 묶음이 채움
+  decided: 2026-11-08 동남아 E1 CL 구현(사건은 다음 묶음)
+- key: '1904 cambodia 버전'
+  reason: se-06 사건 묶음이 채움
+  decided: 2026-11-08 동남아 E1 CL 구현(사건은 다음 묶음)
+- key: '1907 cambodia 버전'
+  reason: se-06 사건 묶음이 채움
+  decided: 2026-11-08 동남아 E1 CL 구현(사건은 다음 묶음)
+- key: '1941 cambodia 버전'
+  reason: se-06 사건 묶음이 채움
+  decided: 2026-11-08 동남아 E1 CL 구현(사건은 다음 묶음)
+- key: '1946 cambodia 버전'
+  reason: se-06 사건 묶음이 채움
+  decided: 2026-11-08 동남아 E1 CL 구현(사건은 다음 묶음)
+- key: '1904 thailand 버전'
+  reason: se-06 사건 묶음이 채움
+  decided: 2026-11-08 동남아 E1 CL 구현(사건은 다음 묶음)
+- key: '1941 thailand 버전'
+  reason: se-06 사건 묶음이 채움
+  decided: 2026-11-08 동남아 E1 CL 구현(사건은 다음 묶음)
+- key: '1907 thailand 버전'
+  reason: se-06 사건 묶음이 채움
+  decided: 2026-11-08 동남아 E1 합치기(사건은 다음 묶음)
+- key: '1946 thailand 버전'
+  reason: se-06 사건 묶음이 채움
+  decided: 2026-11-08 동남아 E1 합치기(사건은 다음 묶음)
+
+# ── 동남아 E1 CV (중동 베트남 1900~현재, 2026-11-08) ──
+- key: '1862 cochinchina 성립'
+  reason: se-05 사건 묶음이 채움
+  decided: 2026-11-08 동남아 E1 CV 구현(사건은 다음 묶음)
+- key: '1883 annam-protectorate 성립'
+  reason: se-05 사건 묶음이 채움
+  decided: 2026-11-08 동남아 E1 CV 구현(사건은 다음 묶음)
+- key: '1884 tonkin-protectorate 성립'
+  reason: se-05 사건 묶음이 채움
+  decided: 2026-11-08 동남아 E1 CV 구현(사건은 다음 묶음)
+- key: '1945 vietnam 성립'
+  reason: se-06 사건 묶음이 채움
+  decided: 2026-11-08 동남아 E1 CV 구현(사건은 다음 묶음)
+- key: '1954 cochinchina 소멸'
+  reason: se-06 사건 묶음이 채움
+  decided: 2026-11-08 동남아 E1 CV 구현(사건은 다음 묶음)
+- key: '1954 annam-protectorate 소멸'
+  reason: se-06 사건 묶음이 채움
+  decided: 2026-11-08 동남아 E1 CV 구현(사건은 다음 묶음)
+- key: '1954 tonkin-protectorate 소멸'
+  reason: se-06 사건 묶음이 채움
+  decided: 2026-11-08 동남아 E1 CV 구현(사건은 다음 묶음)
+- key: '1900 cochinchina 버전'
+  reason: '지도 E1 첫 해(1900)라 앞 버전이 없어 생긴 버전 해: 1899년 앞 모습은 동남아 E2(1767~1899)가 칠하며, 그때 이 줄이 낡으면 지움'
+  decided: 2026-11-08 동남아 E1 CV 구현(사건은 다음 묶음)
+- key: '1900 annam-protectorate 버전'
+  reason: '지도 E1 첫 해(1900)라 앞 버전이 없어 생긴 버전 해: 1899년 앞 모습은 동남아 E2(1767~1899)가 칠하며, 그때 이 줄이 낡으면 지움'
+  decided: 2026-11-08 동남아 E1 CV 구현(사건은 다음 묶음)
+- key: '1900 tonkin-protectorate 버전'
+  reason: '지도 E1 첫 해(1900)라 앞 버전이 없어 생긴 버전 해: 1899년 앞 모습은 동남아 E2(1767~1899)가 칠하며, 그때 이 줄이 낡으면 지움'
+  decided: 2026-11-08 동남아 E1 CV 구현(사건은 다음 묶음)
+- key: '1904 annam-protectorate 버전'
+  reason: se-06 사건 묶음이 채움
+  decided: 2026-11-08 동남아 E1 CV 구현(사건은 다음 묶음)
+- key: '1954 annam-protectorate 버전'
+  reason: se-06 사건 묶음이 채움
+  decided: 2026-11-08 동남아 E1 CV 구현(사건은 다음 묶음)
+- key: '1954 vietnam 버전'
+  reason: se-06 사건 묶음이 채움
+  decided: 2026-11-08 동남아 E1 CV 구현(사건은 다음 묶음)
+- key: '1976 vietnam 버전'
+  reason: se-06 사건 묶음이 채움
+  decided: 2026-11-08 동남아 E1 CV 구현(사건은 다음 묶음)
+
+# ── 동남아 E1 SM (남서 말라야·싱가포르 1900~현재, 2026-11-08) ──
+# 1900~현재 말라야·싱가포르 새 항목 열의 성립·소멸과 1900년 버전 해(1900은 이 시대 첫 해 — 앞 버전은 E2 몫). 사건 묶음이 사건을 쓰며 이 줄을 지운다
+- key: '1136 kedah-perlis 성립'
+  reason: se-02 사건 묶음이 채움
+  decided: 2026-11-08 동남아 E1 SM 구현(사건은 다음 묶음)
+- key: '1528 perak-sultanate 성립'
+  reason: se-03 사건 묶음이 채움
+  decided: 2026-11-08 동남아 E1 SM 구현(사건은 다음 묶음)
+- key: '1528 johor-sultanate 성립'
+  reason: se-03 사건 묶음이 채움
+  decided: 2026-11-08 동남아 E1 SM 구현(사건은 다음 묶음)
+- key: '1708 terengganu-sultanate 성립'
+  reason: se-04 사건 묶음이 채움
+  decided: 2026-11-08 동남아 E1 SM 구현(사건은 다음 묶음)
+- key: '1760 kelantan-sultanate 성립'
+  reason: se-04 사건 묶음이 채움
+  decided: 2026-11-08 동남아 E1 SM 구현(사건은 다음 묶음)
+- key: '1766 selangor-negeri-sembilan 성립'
+  reason: se-04 사건 묶음이 채움
+  decided: 2026-11-08 동남아 E1 SM 구현(사건은 다음 묶음)
+- key: '1826 straits-settlements 성립'
+  reason: se-05 사건 묶음이 채움
+  decided: 2026-11-08 동남아 E1 SM 구현(사건은 다음 묶음)
+- key: '1881 pahang-sultanate 성립'
+  reason: se-05 사건 묶음이 채움
+  decided: 2026-11-08 동남아 E1 SM 구현(사건은 다음 묶음)
+- key: '1946 straits-settlements 소멸'
+  reason: se-06 사건 묶음이 채움
+  decided: 2026-11-08 동남아 E1 SM 구현(사건은 다음 묶음)
+- key: '1946 perak-sultanate 소멸'
+  reason: se-06 사건 묶음이 채움
+  decided: 2026-11-08 동남아 E1 SM 구현(사건은 다음 묶음)
+- key: '1946 pahang-sultanate 소멸'
+  reason: se-06 사건 묶음이 채움
+  decided: 2026-11-08 동남아 E1 SM 구현(사건은 다음 묶음)
+- key: '1946 selangor-negeri-sembilan 소멸'
+  reason: se-06 사건 묶음이 채움
+  decided: 2026-11-08 동남아 E1 SM 구현(사건은 다음 묶음)
+- key: '1946 johor-sultanate 소멸'
+  reason: se-06 사건 묶음이 채움
+  decided: 2026-11-08 동남아 E1 SM 구현(사건은 다음 묶음)
+- key: '1946 kedah-perlis 소멸'
+  reason: se-06 사건 묶음이 채움
+  decided: 2026-11-08 동남아 E1 SM 구현(사건은 다음 묶음)
+- key: '1946 kelantan-sultanate 소멸'
+  reason: se-06 사건 묶음이 채움
+  decided: 2026-11-08 동남아 E1 SM 구현(사건은 다음 묶음)
+- key: '1946 terengganu-sultanate 소멸'
+  reason: se-06 사건 묶음이 채움
+  decided: 2026-11-08 동남아 E1 SM 구현(사건은 다음 묶음)
+- key: '1946 malaysia 성립'
+  reason: se-06 사건 묶음이 채움
+  decided: 2026-11-08 동남아 E1 SM 구현(사건은 다음 묶음)
+- key: '1946 singapore 성립'
+  reason: se-06 사건 묶음이 채움
+  decided: 2026-11-08 동남아 E1 SM 구현(사건은 다음 묶음)
+- key: '1963 malaysia 버전'
+  reason: se-06 사건 묶음이 채움
+  decided: 2026-11-08 동남아 E1 합치기(사건은 다음 묶음)
+- key: '1900 perak-sultanate 버전'
+  reason: 1900년은 이 시대 지도의 첫 해라 앞 버전이 없어 대칭차가 크게 나옴(E2 지도가 1900 앞을 그리면 사라짐, 남으면 se-05 사건 묶음이 채움)
+  decided: 2026-11-08 동남아 E1 SM 구현(사건은 다음 묶음)
+- key: '1900 pahang-sultanate 버전'
+  reason: 1900년은 이 시대 지도의 첫 해라 앞 버전이 없어 대칭차가 크게 나옴(E2 지도가 1900 앞을 그리면 사라짐, 남으면 se-05 사건 묶음이 채움)
+  decided: 2026-11-08 동남아 E1 SM 구현(사건은 다음 묶음)
+- key: '1900 selangor-negeri-sembilan 버전'
+  reason: 1900년은 이 시대 지도의 첫 해라 앞 버전이 없어 대칭차가 크게 나옴(E2 지도가 1900 앞을 그리면 사라짐, 남으면 se-05 사건 묶음이 채움)
+  decided: 2026-11-08 동남아 E1 SM 구현(사건은 다음 묶음)
+- key: '1900 johor-sultanate 버전'
+  reason: 1900년은 이 시대 지도의 첫 해라 앞 버전이 없어 대칭차가 크게 나옴(E2 지도가 1900 앞을 그리면 사라짐, 남으면 se-05 사건 묶음이 채움)
+  decided: 2026-11-08 동남아 E1 SM 구현(사건은 다음 묶음)
+- key: '1900 kedah-perlis 버전'
+  reason: 1900년은 이 시대 지도의 첫 해라 앞 버전이 없어 대칭차가 크게 나옴(E2 지도가 1900 앞을 그리면 사라짐, 남으면 se-05 사건 묶음이 채움)
+  decided: 2026-11-08 동남아 E1 SM 구현(사건은 다음 묶음)
+- key: '1900 kelantan-sultanate 버전'
+  reason: 1900년은 이 시대 지도의 첫 해라 앞 버전이 없어 대칭차가 크게 나옴(E2 지도가 1900 앞을 그리면 사라짐, 남으면 se-05 사건 묶음이 채움)
+  decided: 2026-11-08 동남아 E1 SM 구현(사건은 다음 묶음)
+- key: '1900 terengganu-sultanate 버전'
+  reason: 1900년은 이 시대 지도의 첫 해라 앞 버전이 없어 대칭차가 크게 나옴(E2 지도가 1900 앞을 그리면 사라짐, 남으면 se-05 사건 묶음이 채움)
+  decided: 2026-11-08 동남아 E1 SM 구현(사건은 다음 묶음)
+
+# ── 동남아 E1 SB (남동 보르네오 북부·필리핀 1900~현재, 2026-11-08) ──
+- key: '1368 brunei 성립'
+  reason: 'se-03 사건 묶음이 채움(1368 무렵 첫 술탄 무함마드 샤의 개종·브루나이 술탄국)'
+  decided: 2026-11-08 동남아 E1 SB 구현(사건은 다음 묶음)
+- key: '1841 sarawak 성립'
+  reason: 'se-05 사건 묶음이 채움(1841 제임스 브룩이 사라왁의 라자가 됨)'
+  decided: 2026-11-08 동남아 E1 SB 구현(사건은 다음 묶음)
+- key: '1882 north-borneo 성립'
+  reason: 'se-05 사건 묶음이 채움(1881 왕실 특허·1882 영국 북보르네오 회사)'
+  decided: 2026-11-08 동남아 E1 SB 구현(사건은 다음 묶음)
+- key: '1898 american-philippines 성립'
+  reason: 'se-05 사건 묶음이 채움(1898 미국–스페인 전쟁·파리 조약)'
+  decided: 2026-11-08 동남아 E1 SB 구현(사건은 다음 묶음)
+- key: '1900 sarawak 버전'
+  reason: 'E1 시대 파일 첫 해(1900)의 첫 버전이라 대칭차가 땅 전체 — E2 지도가 1841~1899를 칠하면 사라짐'
+  decided: 2026-11-08 동남아 E1 SB 구현(사건은 다음 묶음)
+- key: '1900 north-borneo 버전'
+  reason: 'E1 시대 파일 첫 해(1900)의 첫 버전이라 대칭차가 땅 전체 — E2 지도가 1882~1899를 칠하면 사라짐'
+  decided: 2026-11-08 동남아 E1 SB 구현(사건은 다음 묶음)
+- key: '1900 american-philippines 버전'
+  reason: 'E1 시대 파일 첫 해(1900)의 첫 버전이라 대칭차가 땅 전체 — E2 지도가 1898~1899를 칠하면 사라짐'
+  decided: 2026-11-08 동남아 E1 SB 구현(사건은 다음 묶음)
+- key: '1946 american-philippines 소멸'
+  reason: 'se-06 사건 묶음이 채움(1946-07-04 필리핀 독립)'
+  decided: 2026-11-08 동남아 E1 SB 구현(사건은 다음 묶음)
+- key: '1946 philippines 성립'
+  reason: 'se-06 사건 묶음이 채움(1946-07-04 마닐라 조약·필리핀 독립)'
+  decided: 2026-11-08 동남아 E1 SB 구현(사건은 다음 묶음)
+- key: '1963 sarawak 소멸'
+  reason: 'se-06 사건 묶음이 채움(1963-09-16 말레이시아 결성)'
+  decided: 2026-11-08 동남아 E1 SB 구현(사건은 다음 묶음)
+- key: '1963 north-borneo 소멸'
+  reason: 'se-06 사건 묶음이 채움(1963-09-16 말레이시아 결성)'
+  decided: 2026-11-08 동남아 E1 SB 구현(사건은 다음 묶음)
+
+# ── 동남아 E1 SI (남 인도네시아·티모르 1900~현재, 2026-11-08) ──
+- key: '1496 aceh-sultanate 성립'
+  reason: 'se-03 사건 묶음이 채움(15세기 말 아체 술탄국 성립)'
+  decided: 2026-11-08 동남아 E1 SI 구현(사건은 다음 묶음)
+- key: '1702 portuguese-timor 성립'
+  reason: 'se-04 사건 묶음이 채움(1702 리파우에 포르투갈 첫 총독)'
+  decided: 2026-11-08 동남아 E1 SI 구현(사건은 다음 묶음)
+- key: '1800 dutch-east-indies 성립'
+  reason: 'se-05 사건 묶음이 채움(1800-01-01 동인도 회사 해산·국가 식민지)'
+  decided: 2026-11-08 동남아 E1 SI 구현(사건은 다음 묶음)
+- key: '1904 aceh-sultanate 소멸'
+  reason: 'se-06 사건 묶음이 채움(1903 술탄 항복·1904 아체 전쟁 끝)'
+  decided: 2026-11-08 동남아 E1 SI 구현(사건은 다음 묶음)
+- key: '1945 indonesia 성립'
+  reason: 'se-06 사건 묶음이 채움(1945-08-17 인도네시아 독립 선포)'
+  decided: 2026-11-08 동남아 E1 SI 구현(사건은 다음 묶음)
+- key: '1949 dutch-east-indies 소멸'
+  reason: 'se-06 사건 묶음이 채움(1949-12-27 헤이그 원탁 회의 합의·주권 이양)'
+  decided: 2026-11-08 동남아 E1 SI 구현(사건은 다음 묶음)
+- key: '1949 netherlands-new-guinea 성립'
+  reason: 'se-06 사건 묶음이 채움(1949 주권 이양에서 서뉴기니가 빠짐)'
+  decided: 2026-11-08 동남아 E1 SI 구현(사건은 다음 묶음)
+- key: '1962 netherlands-new-guinea 소멸'
+  reason: 'se-06 사건 묶음이 채움(1962 뉴욕 협정·유엔 임시 행정)'
+  decided: 2026-11-08 동남아 E1 SI 구현(사건은 다음 묶음)
+- key: '1975 portuguese-timor 소멸'
+  reason: 'se-06 사건 묶음이 채움(1975-11-28 독립 선포·12-07 인도네시아 침공)'
+  decided: 2026-11-08 동남아 E1 SI 구현(사건은 다음 묶음)
+- key: '2002 east-timor 성립'
+  reason: 'se-06 사건 묶음이 채움(2002-05-20 동티모르 독립)'
+  decided: 2026-11-08 동남아 E1 SI 구현(사건은 다음 묶음)
+- key: '1900 dutch-east-indies 버전'
+  reason: 'E1 시대 파일 첫 해(1900)의 첫 버전이라 대칭차가 땅 전체 — E2 지도가 1800~1899를 칠하면 사라짐'
+  decided: 2026-11-08 동남아 E1 SI 구현(사건은 다음 묶음)
+- key: '1900 aceh-sultanate 버전'
+  reason: 'E1 시대 파일 첫 해(1900)의 첫 버전이라 대칭차가 땅 전체 — E2·E3 지도가 1899 앞을 칠하면 사라짐'
+  decided: 2026-11-08 동남아 E1 SI 구현(사건은 다음 묶음)
+- key: '1900 portuguese-timor 버전'
+  reason: 'E1 시대 파일 첫 해(1900)의 첫 버전이라 대칭차가 땅 전체 — E2·E3 지도가 1899 앞을 칠하면 사라짐'
+  decided: 2026-11-08 동남아 E1 SI 구현(사건은 다음 묶음)
+- key: '1904 dutch-east-indies 버전'
+  reason: 'se-06 사건 묶음이 채움(1904 아체를 네덜란드령에 넣음)'
+  decided: 2026-11-08 동남아 E1 SI 구현(사건은 다음 묶음)
+- key: '1949 indonesia 버전'
+  reason: 'se-06 사건 묶음이 채움(1949-12-27 주권 이양)'
+  decided: 2026-11-08 동남아 E1 SI 구현(사건은 다음 묶음)
+- key: '1963 indonesia 버전'
+  reason: 'se-06 사건 묶음이 채움(1963-05-01 서뉴기니 인도네시아로)'
+  decided: 2026-11-08 동남아 E1 SI 구현(사건은 다음 묶음)
+- key: '1976 indonesia 버전'
+  reason: 'se-06 사건 묶음이 채움(1976-07-17 동티모르 병합 선언)'
+  decided: 2026-11-08 동남아 E1 SI 구현(사건은 다음 묶음)
+- key: '1999 indonesia 버전'
+  reason: 'se-06 사건 묶음이 채움(1999-08-30 동티모르 주민 투표·10-25 유엔 과도 행정)'
+  decided: 2026-11-08 동남아 E1 SI 구현(사건은 다음 묶음)

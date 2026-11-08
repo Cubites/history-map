@@ -751,12 +751,19 @@
 
 - name: "하노이(통킹)"
   at: [105.85, 21.03]
-  years: [1912, 1930, 1960]
-  expect: none
-  region: east-asia
+  years: [1912, 1930]
+  expect: tonkin-protectorate
   url: "https://en.wikipedia.org/wiki/Treaty_of_Tientsin_(1885)"
   from: "작업 K2 결과노트"
-  note: "1885 톈진 조약으로 프랑스 보호령. 전에는 중화민국·중화인민공화국이 덮었다"
+  note: "1885 톈진 조약으로 프랑스 보호령. 전에는 중화민국·중화인민공화국이 덮었다(기대 none → 동남아 E1 CV 2026-11-08에 통킹 보호령이 생겨 고침)"
+
+- name: "하노이(통킹)"
+  at: [105.85, 21.03]
+  year: 1960
+  expect: vietnam
+  url: "https://en.wikipedia.org/wiki/Geneva_Conference_(1954)"
+  from: "작업 K2 결과노트"
+  note: "1954 제네바 협정 뒤 베트남 민주 공화국. 전에는 중화인민공화국이 덮었다(기대 none → 동남아 E1 CV 2026-11-08에 vietnam이 생겨 고침)"
 
 - name: "카트만두(네팔)"
   at: [85.32, 27.71]
