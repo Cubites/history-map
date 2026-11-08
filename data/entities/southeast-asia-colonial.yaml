@@ -23,7 +23,7 @@
     - 1785년 아라칸을 병합해 가장 넓은 땅을 가짐
     - 세 차례 영국-버마 전쟁(1824~1826·1852·1885)으로 무너짐
   startEvents: []
-  endEvents: []
+  endEvents: [third-anglo-burmese-war-1885]
   basis:
     type: primary_source
     refs: ["얀다보 조약(1826)", "『콘바웅 왕조 연대기』"]
@@ -45,7 +45,7 @@
     - 1666년 치타공을 무굴 제국에 잃음
     - 1785년 콘바웅 왕조에 병합됨
   startEvents: []
-  endEvents: []
+  endEvents: [arakan-conquest-1784]
   basis:
     type: primary_source
     refs: ["『아라칸 연대기』"]
@@ -70,7 +70,7 @@
     - 버마의 침입을 막는 시암의 북쪽 울타리였고, 19세기 말 영국 목재 회사가 들어옴
     - 1899년 몬톤 파얍으로 시암에 편입
   startEvents: []
-  endEvents: []
+  endEvents: [monthon-reform-1892]
   basis:
     type: primary_source
     refs: ["위키백과 Kingdom of Chiang Mai", "위키백과 Kawila"]
@@ -92,7 +92,7 @@
     - 1786년 시암에 정복되어 큰 대포 파야타니를 방콕에 빼앗김
     - 1808년 반란 뒤 빠따니·농찍·야링·얄라·라만·라응애·사이부리 일곱 므앙으로 나뉨
   startEvents: []
-  endEvents: []
+  endEvents: [monthon-reform-1892]
   basis:
     type: primary_source
     refs: ["위키백과 Sultanate of Patani", "위키백과 Pattani Province"]
@@ -116,7 +116,7 @@
     - 1887년 흑기군이 도읍을 약탈하자 프랑스 부영사 오귀스트 파비가 왕을 피신시킴
     - 1893년 프랑스 보호령이 되고 왕가는 라오스의 왕으로 이어짐
   startEvents: []
-  endEvents: []
+  endEvents: [monthon-reform-1892]
   basis:
     type: primary_source
     refs: ["위키백과 Kingdom of Luang Phrabang", "프랑스–시암 조약(1893)"]
@@ -138,7 +138,7 @@
     - 아누웡 왕(재위 1805~1828)이 1826년 시암에 맞서 반란을 일으킴
     - 1828년 패망해 도읍이 허물어지고 시암에 합병됨
   startEvents: []
-  endEvents: []
+  endEvents: [anouvong-1826]
   basis:
     type: primary_source
     refs: ["위키백과 Kingdom of Vientiane", "위키백과 Lao rebellion (1826–1828)"]
@@ -160,7 +160,7 @@
     - 1778년 톤부리 왕국에 정복되어 시암에 조공함
     - 1893년 메콩강 왼쪽 기슭을 프랑스에 넘기고 1904년 끝남
   startEvents: []
-  endEvents: []
+  endEvents: [franco-siamese-treaties-1904]
   basis:
     type: primary_source
     refs: ["위키백과 Kingdom of Champasak", "위키백과 Isan", "프랑스–시암 조약(1893)", "파리 조약(1904)"]
@@ -184,7 +184,7 @@
     - 1786년 떠이선 군이 북진해 찐 씨 정권이 무너짐
     - 1788년 레 찌에우 통이 청에 도움을 청했으나 이듬해 동다 싸움에서 청군이 짐
   startEvents: []
-  endEvents: []
+  endEvents: [tay-son-north-1786]
   basis:
     type: primary_source
     refs: ["위키백과 Later Lê dynasty", "위키백과 Trịnh lords", "위키백과 Tây Sơn dynasty"]
@@ -207,7 +207,7 @@
     - 1788년 응우옌 아인이 사이공을 되찾고 프랑스·시암의 도움으로 힘을 키움
     - 1801년 푸쑤언을 되찾고 이듬해 탕롱까지 차지함
   startEvents: []
-  endEvents: []
+  endEvents: [gia-long-1787]
   basis:
     type: primary_source
     refs: ["위키백과 Nguyễn lords", "위키백과 Gia Long", "위키백과 Tây Sơn dynasty"]
@@ -228,8 +228,8 @@
     - 1785년 락검-소아이뭇 싸움에서 응우옌 아인을 도운 시암군을 물리침
     - 1786년 찐 씨를 무너뜨리고 1788년 응우옌 후에가 꽝쭝 황제로 즉위함
     - 1789년 동다 싸움에서 청군을 물리친 뒤 청의 책봉을 받음
-  startEvents: []
-  endEvents: []
+  startEvents: [tay-son-rising-1771]
+  endEvents: [gia-long-1787]
   basis:
     type: primary_source
     refs: ["위키백과 Tây Sơn dynasty", "위키백과 Gia Long"]
@@ -251,8 +251,8 @@
     - 1862년 제1차 사이공 조약으로 남부 동쪽 세 성을 프랑스에 넘김
     - 1867년 서쪽 세 성도 잃고 1874년 조약으로 코친차이나 전체를 인정함
     - 뜨득 황제가 죽은 1883년 뒤 아르망·파트노트르 조약으로 보호국이 됨
-  startEvents: []
-  endEvents: []
+  startEvents: [gia-long-1787]
+  endEvents: [hue-treaties-1883]
   basis:
     type: primary_source
     refs: ["위키백과 Nguyễn dynasty", "위키백과 Gia Long", "위키백과 French Cochinchina", "파트노트르 조약(1884)"]
@@ -277,7 +277,7 @@
     - 1755년 기얀티 조약, 1757년 살라티가 조약으로 마타람을 나눔
     - 1780~1784년 영국과의 전쟁으로 큰 손해를 입음
   startEvents: []
-  endEvents: []
+  endEvents: [voc-dissolution-1795]
   basis:
     type: primary_source
     refs: ["위키백과 네덜란드 동인도 회사", "기얀티 조약(1755)"]
@@ -302,7 +302,7 @@
     - 1872년 카비테 반란, 1896년 필리핀 혁명
     - 1898년 미국-스페인 전쟁과 파리 조약
   startEvents: []
-  endEvents: []
+  endEvents: [philippine-revolution-1896]
   basis:
     type: primary_source
     refs: ["위키백과 Spanish East Indies", "파리 조약(1898)"]
@@ -325,7 +325,7 @@
     - 1876년 스페인군의 홀로 점령
     - 1878년 오버벡 양허와 스페인 주권을 인정한 의정서
   startEvents: []
-  endEvents: []
+  endEvents: [moro-sulu-1903]
   basis:
     type: primary_source
     refs: ["위키백과 Sulu Sultanate", "위키백과 술루 술탄국"]

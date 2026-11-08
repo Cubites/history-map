@@ -21,8 +21,8 @@
     - 1937년 바 모가 첫 총리가 됨
     - 1942~1945년 일본 점령, 1943년 바 모의 버마국
     - 1947년 아웅 산과 영국 정부의 협정으로 독립이 정해짐
-  startEvents: []
-  endEvents: []
+  startEvents: [saya-san-1930]
+  endEvents: [burma-independence-1947]
   basis:
     type: primary_source
     refs: ["버마 통치법(1935)", "버마 독립법(1947)"]
@@ -45,7 +45,7 @@
     - 1922년 연방 샨 국으로 묶임
     - 1947년 팡롱 협정에 서명
   startEvents: []
-  endEvents: []
+  endEvents: [burma-independence-1947]
   basis:
     type: primary_source
     refs: ["팡롱 협정(1947)"]
@@ -67,7 +67,7 @@
     - 1875년 영국과 버마가 독립을 인정
     - 1892년 영국에 종속
   startEvents: []
-  endEvents: []
+  endEvents: [burma-independence-1947]
   basis:
     type: primary_source
     refs: ["영국·버마 협정(1875)"]
@@ -87,7 +87,7 @@
     - 1962~1988년 네 윈의 군정
     - 1989년 영문 국호를 미얀마로, 랑군을 양곤으로 바꿈
     - 2021년 군부 쿠데타
-  startEvents: []
+  startEvents: [burma-independence-1947]
   endEvents: []
   basis:
     type: primary_source
@@ -109,7 +109,7 @@
     - 쭐랄롱꼰(재위 1868~1910)의 근대 개혁 속에 1893~1909년 조약들로 변경 땅과 말레이 네 주 종주권을 넘김
     - 1932년 입헌 혁명, 1939년 시암에서 타이로 국호를 바꿈
     - 1941년 일본과 동맹, 도쿄 조약으로 얻은 캄보디아 서북부·라오스 두 곳을 1946년 돌려줌
-  startEvents: []
+  startEvents: [thonburi-1767]
   endEvents: []
   basis:
     type: primary_source
@@ -132,7 +132,7 @@
     - 1904년 파리 조약으로 사야부리와 참파삭 오른쪽 기슭을 더하고, 1941~1946년 이 땅을 타이에 내줌
     - 1947년 헌법으로 루앙프라방 왕가의 라오 왕국이 되고 1953년 10월 22일 완전 독립
     - 왕국 정부와 파테트 라오의 내전 끝에 1975년 12월 라오스 인민민주공화국 선포, 도읍은 비엔티안
-  startEvents: []
+  startEvents: [paknam-1893]
   endEvents: []
   basis:
     type: primary_source
@@ -178,8 +178,8 @@
     - 보호령인 안남·통킹과 달리 프랑스가 바로 다스린 직할 식민지였음
     - 1887년 프랑스령 인도차이나 연방에 들어가고 사이공이 쌀 수출항으로 커짐
     - 1946년 프랑스가 코친차이나 자치 공화국을 세웠다가 1949년 베트남국에 합침
-  startEvents: []
-  endEvents: []
+  startEvents: [saigon-treaty-1858]
+  endEvents: [dien-bien-phu-geneva-1954]
   basis:
     type: primary_source
     refs: ["위키백과 French Cochinchina", "위키백과 French Indochina", "제1차 사이공 조약(1862)"]
@@ -200,8 +200,8 @@
     - 1898년 세금 걷기를 프랑스가 넘겨받아 후에 조정에는 의례만 남음
     - 1904년 다를락 성을 두어 중부 고원을 안남의 행정에 넣음
     - 1945년 3월 일본이 프랑스 정권을 무너뜨리자 바오다이가 독립을 선포함
-  startEvents: []
-  endEvents: []
+  startEvents: [hue-treaties-1883]
+  endEvents: [dien-bien-phu-geneva-1954]
   basis:
     type: primary_source
     refs: ["위키백과 French Indochina", "위키백과 Annam (French protectorate)", "파트노트르 조약(1884)"]
@@ -222,8 +222,8 @@
     - 1885년 톈진 조약으로 청이 종주권을 버렸고 1895년 중국과 국경을 정함
     - 하노이가 1902년부터 프랑스령 인도차이나 연방의 수도가 됨
     - 1954년 디엔비엔푸 전투에서 프랑스군이 져 인도차이나 전쟁이 끝남
-  startEvents: []
-  endEvents: []
+  startEvents: [hue-treaties-1883]
+  endEvents: [dien-bien-phu-geneva-1954]
   basis:
     type: primary_source
     refs: ["위키백과 Tonkin (French protectorate)", "위키백과 French Indochina", "파트노트르 조약(1884)"]
@@ -244,7 +244,7 @@
     - 1975년 4월 사이공 함락으로 베트남 전쟁이 끝나고 1976년 7월 통일함
     - 통일 때 국호를 베트남 사회주의 공화국으로, 사이공을 호찌민시로 바꿈
     - 1986년 도이머이(쇄신) 정책으로 시장 경제를 받아들임
-  startEvents: []
+  startEvents: [august-revolution-1945]
   endEvents: []
   basis:
     type: primary_source
@@ -268,8 +268,8 @@
     - 1826년 세 곳을 묶어 동인도 회사의 한 행정 단위가 됨
     - 1867년 인도 정부에서 떨어져 런던 식민부가 다스리는 직할 식민지가 됨
     - 1907년 라부안을 더하고 1946년 해체됨
-  startEvents: []
-  endEvents: []
+  startEvents: [penang-1786]
+  endEvents: [malayan-union-1946]
   basis:
     type: primary_source
     refs: ["위키백과 Straits Settlements", "위키백과 Federated Malay States"]
@@ -291,7 +291,7 @@
     - 주석 광산에 중국인 노동자가 많이 들어와 이포·타이핑이 커짐
     - 1895년 말레이 연합주에 들어감
   startEvents: []
-  endEvents: []
+  endEvents: [malayan-union-1946]
   basis:
     type: primary_source
     refs: ["위키백과 Perak Sultanate", "팡코르 조약(1874)", "위키백과 Federated Malay States"]
@@ -313,8 +313,8 @@
     - 1887년 영국 관리 클리퍼드를 받아들이고 1888년 첫 주재관을 둠
     - 1891~1895년 영국 지배에 맞선 족장들의 파항 봉기가 일어남
     - 1895년 말레이 연합주에 들어감
-  startEvents: []
-  endEvents: []
+  startEvents: [johor-pahang-1853]
+  endEvents: [malayan-union-1946]
   basis:
     type: primary_source
     refs: ["위키백과 Pahang", "위키백과 Federated Malay States"]
@@ -336,7 +336,7 @@
     - 1896년부터 쿠알라룸푸르가 말레이 연합주의 수도가 됨
     - 슬랑오르는 술탄이, 느그리슴빌란은 족장들이 뽑는 왕이 다스림
   startEvents: []
-  endEvents: []
+  endEvents: [malayan-union-1946]
   basis:
     type: primary_source
     refs: ["위키백과 Selangor Sultanate", "위키백과 Negeri Sembilan", "위키백과 Federated Malay States"]
@@ -358,7 +358,7 @@
     - 1855년 트믄궁 가문이 다스리게 되었고 1866년 조호르바루를 도읍으로 함
     - 1885년 조약으로 내정은 술탄이, 대외 관계는 영국이 맡음
   startEvents: []
-  endEvents: []
+  endEvents: [malayan-union-1946]
   basis:
     type: primary_source
     refs: ["위키백과 Johor Sultanate", "위키백과 Abu Bakar of Johor", "영국·조호르 조약(1885)"]
@@ -380,7 +380,7 @@
     - 1821년 시암이 크다를 점령했고 1842년 술탄을 돌려보낸 뒤 프를리스를 떼어 냄
     - 1909년 7월 9일 방콕 조약이 발효해 종주가 시암에서 영국으로 바뀜
   startEvents: []
-  endEvents: []
+  endEvents: [malayan-union-1946]
   basis:
     type: primary_source
     refs: ["위키백과 Kedah Sultanate", "영국·시암 조약(1909)"]
@@ -402,7 +402,7 @@
     - 1909년 방콕 조약으로 종주가 시암에서 영국으로 바뀜
     - 1941년 12월 8일 일본군이 코타바루에 처음 올라 말레이 작전이 시작됨
   startEvents: []
-  endEvents: []
+  endEvents: [malayan-union-1946]
   basis:
     type: primary_source
     refs: ["위키백과 Kelantan Sultanate", "영국·시암 조약(1909)"]
@@ -424,7 +424,7 @@
     - 1911년 술탄이 성문 헌법을 냄
     - 1919년 영국 고문을 받아들였고 1928년 농민 봉기가 일어남
   startEvents: []
-  endEvents: []
+  endEvents: [malayan-union-1946]
   basis:
     type: primary_source
     refs: ["위키백과 Terengganu Sultanate", "영국·시암 조약(1909)"]
@@ -444,7 +444,7 @@
     - 아홉 주의 술탄들이 5년마다 그 가운데서 국왕을 뽑음
     - 1963~1966년 인도네시아가 말레이시아 결성에 맞서 대결 정책을 폄
     - 수도는 쿠알라룸푸르, 1999년부터 행정 중심은 푸트라자야
-  startEvents: []
+  startEvents: [malayan-union-1946]
   endEvents: []
   basis:
     type: primary_source
@@ -465,7 +465,7 @@
     - 1942년 2월 15일 일본군에 함락되어 1945년까지 쇼난으로 불림
     - 1959년 자치 정부를 얻고 리콴유가 첫 총리가 됨
     - 1965년 말레이시아에서 갈라져 나와 공화국이 됨
-  startEvents: []
+  startEvents: [malayan-union-1946]
   endEvents: []
   basis:
     type: primary_source
@@ -489,8 +489,8 @@
     - 1852·1861·1882·1890년 브루나이 땅을 차례로 얻고 1888년 영국 보호국
     - 1910년 미리에서 석유가 나옴
     - 1941~1945년 일본 점령, 1946년 영국 직할 식민지
-  startEvents: []
-  endEvents: []
+  startEvents: [brooke-sarawak-1841]
+  endEvents: [malaysia-formation-1963]
   basis:
     type: primary_source
     refs: ["위키백과 Raj of Sarawak", "사라왁 할양(1946)"]
@@ -512,8 +512,8 @@
     - 1888년 영국 보호국
     - 1942~1945년 일본 점령
     - 1946년 영국 직할 식민지, 라부안을 합침
-  startEvents: []
-  endEvents: []
+  startEvents: [north-borneo-brunei-1877]
+  endEvents: [malaysia-formation-1963]
   basis:
     type: primary_source
     refs: ["위키백과 North Borneo", "영국 북보르네오 회사 특허장(1881)"]
@@ -557,8 +557,8 @@
     - 1903~1913년 민다나오·술루 제도의 모로 주를 군인 총독이 다스림
     - 1935년 필리핀 자치령, 대통령 마누엘 케손
     - 1942~1945년 일본 점령, 1944~1945년 미군이 되찾음
-  startEvents: []
-  endEvents: []
+  startEvents: [spanish-american-war-1898]
+  endEvents: [philippine-independence-1946]
   basis:
     type: primary_source
     refs: ["파리 조약(1898)", "필리핀 조직법(1902)", "타이딩스–맥더피법(1934)"]
@@ -579,7 +579,7 @@
     - 1967년 아세안 창설에 참여
     - 1972~1981년 마르코스의 계엄령
     - 1986년 에드사 혁명
-  startEvents: []
+  startEvents: [philippine-independence-1946]
   endEvents: []
   basis:
     type: primary_source
@@ -604,8 +604,8 @@
     - 1873~1904년 아체 전쟁, 1906~1908년 발리 정복
     - 1942~1945년 일본 점령
     - 1945~1949년 인도네시아 독립 전쟁
-  startEvents: []
-  endEvents: []
+  startEvents: [voc-dissolution-1795]
+  endEvents: [round-table-1949]
   basis:
     type: primary_source
     refs: ["1824년 영국–네덜란드 조약", "1949년 헤이그 원탁 회의 합의"]
@@ -627,7 +627,7 @@
     - 후추 무역과 메카 순례 길목으로 번영
     - 1873~1904년 네덜란드와 아체 전쟁
   startEvents: []
-  endEvents: []
+  endEvents: [aceh-war-1873]
   basis:
     type: primary_source
     refs: ["1871년 영국–네덜란드 수마트라 조약"]
@@ -648,8 +648,8 @@
     - 1961년 뉴기니 평의회 출범
     - 1962년 뉴욕 협정과 유엔 임시 행정
     - 1969년 자유 선택법
-  startEvents: []
-  endEvents: []
+  startEvents: [round-table-1949]
+  endEvents: [west-new-guinea-1961]
   basis:
     type: primary_source
     refs: ["1949년 헤이그 원탁 회의 합의", "1962년 뉴욕 협정"]
@@ -669,7 +669,7 @@
     - 1955년 반둥 아시아·아프리카 회의
     - 1965년 9·30 사건과 수하르토의 '신질서'
     - 1998년 수하르토 퇴진과 개혁 시대
-  startEvents: []
+  startEvents: [indonesia-proclamation-1945]
   endEvents: []
   basis:
     type: primary_source
@@ -692,7 +692,7 @@
     - 1942~1945년 일본 점령
     - 1975년 11월 28일 독립 선포, 12월 7일 인도네시아 침공
   startEvents: []
-  endEvents: []
+  endEvents: [timor-decolonization-1974]
   basis:
     type: primary_source
     refs: ["1859년 리스본 조약", "1914년 상설 중재 재판소 티모르 판정"]
@@ -712,7 +712,7 @@
     - 1999년 유엔 주민 투표(독립 78.5%)
     - 1999~2002년 유엔 과도 행정
     - 2002년 5월 20일 독립, 같은 해 유엔 가입
-  startEvents: []
+  startEvents: [east-timor-referendum-1999]
   endEvents: []
   basis:
     type: primary_source

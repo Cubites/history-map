@@ -327,7 +327,7 @@
     ko: 베트남의 분단과 베트남 공화국 수립
   summary:
     ko: "1954년 4월 제네바 회의(미국·소련·중화인민공화국 등 참석)가 열린 가운데 디엔비엔푸에서 프랑스가 패하자(5월 7일) 인도차이나 협상이 속도를 내 7월 21일 휴전 협정이 맺어졌고, 북위 17도선을 경계로 베트남이 잠정 분할되었다. 같은 회의에서 한국 문제도 다루어졌으나 합의하지 못했다(유럽 '제네바 회의(1954)와 한국 문제' 참고). 약속한 통일 선거는 열리지 않았고 남쪽에서는 응오딘지엠이 1955년 국민 투표로 바오다이를 몰아내고 베트남 공화국을 세웠다. 미국이 이 정부를 지원하면서 베트남 전쟁으로 이어졌고, 한국도 1964년 의료단·태권도 교관단을, 1965년부터 전투 부대를 보냈다."
-  subjects: [south-vietnam, france, usa, prc, soviet-union, rok]
+  subjects: [south-vietnam, france, usa, prc, soviet-union, rok, vietnam]
   links:
     - { from: usa, to: south-vietnam, note: "정부 지원" }
   tags: [diplomacy, war]
@@ -425,7 +425,7 @@
     ko: 베트남 파병과 브라운 각서
   summary:
     ko: 미국의 요청으로 국군을 베트남에 파병했다. 미국은 브라운 각서(1966)로 국군 현대화와 경제 원조를 약속했고, 베트남 특수로 경제가 성장했다. 한편 전사자와 고엽제 피해, 민간인 피해 문제를 남겼다.
-  subjects: [rok, usa, south-vietnam]
+  subjects: [rok, usa, south-vietnam, vietnam]
   links:
     - { from: rok, to: south-vietnam, note: "국군 파병" }
     - { from: usa, to: rok, note: "파병 요청, 브라운 각서" }

@@ -83,100 +83,6 @@
   reason: 'ca-05 사건 묶음이 1865년 사건 tashkent-1865로 이었으나 남김: 1865년 버전은 1864년 모양에 카자흐스탄 동쪽 끝(약 2.6만 km²)을 더한 것이라 대칭차가 그 넓이인데, 반올림 좌표에서 polyclip이 예외를 냄(사건으로 지워지지 않는 계산실패 줄)'
   decided: 2026-11-05 중앙아시아 C1 E 구현(사건은 다음 세션)
 # ── 중앙아시아 C3 E1 (동 앞 600~820, 2026-11-06) ──
-
-# ── 동남아 E1 W (서 버마·타이 1900~현재, 2026-11-08) ──
-- key: '1900 thailand 버전'
-  reason: 'se-05 사건 묶음이 채움(1899-12 란나 몬톤 파얍 편입과 파타니를 1900부터 타이 땅으로 — E2 SC가 1767~1899를 칠한 뒤에도 남는 1만 km² 넘는 변화)'
-  decided: 2026-11-08 동남아 E1 W 구현(사건은 다음 묶음)
-- key: '1937 british-burma 성립'
-  reason: 'se-06 사건 묶음이 채움(1937-04-01 버마 분리)'
-  decided: 2026-11-08 동남아 E1 W 구현(사건은 다음 묶음)
-- key: '1947 british-burma 소멸'
-  reason: 'se-06 사건 묶음이 채움(1948-01-04 버마 독립)'
-  decided: 2026-11-08 동남아 E1 W 구현(사건은 다음 묶음)
-- key: '1947 shan-states 소멸'
-  reason: 'se-06 사건 묶음이 채움(1947 팡롱 협정·1948 버마 독립)'
-  decided: 2026-11-08 동남아 E1 W 구현(사건은 다음 묶음)
-- key: '1947 karenni-states 소멸'
-  reason: 'se-06 사건 묶음이 채움(1948 버마 독립)'
-  decided: 2026-11-08 동남아 E1 W 구현(사건은 다음 묶음)
-- key: '1948 myanmar 성립'
-  reason: 'se-06 사건 묶음이 채움(1948-01-04 버마 독립)'
-  decided: 2026-11-08 동남아 E1 W 구현(사건은 다음 묶음)
-
-# ── 동남아 E1 CL (중서 라오스·캄보디아 1900~현재, 2026-11-08) ──
-- key: '1893 laos 성립'
-  reason: se-05 사건 묶음이 채움
-  decided: 2026-11-08 동남아 E1 CL 구현(사건은 다음 묶음)
-- key: '1904 laos 버전'
-  reason: se-06 사건 묶음이 채움
-  decided: 2026-11-08 동남아 E1 CL 구현(사건은 다음 묶음)
-- key: '1941 laos 버전'
-  reason: se-06 사건 묶음이 채움
-  decided: 2026-11-08 동남아 E1 CL 구현(사건은 다음 묶음)
-- key: '1946 laos 버전'
-  reason: se-06 사건 묶음이 채움
-  decided: 2026-11-08 동남아 E1 CL 구현(사건은 다음 묶음)
-- key: '1904 cambodia 버전'
-  reason: se-06 사건 묶음이 채움
-  decided: 2026-11-08 동남아 E1 CL 구현(사건은 다음 묶음)
-- key: '1907 cambodia 버전'
-  reason: se-06 사건 묶음이 채움
-  decided: 2026-11-08 동남아 E1 CL 구현(사건은 다음 묶음)
-- key: '1941 cambodia 버전'
-  reason: se-06 사건 묶음이 채움
-  decided: 2026-11-08 동남아 E1 CL 구현(사건은 다음 묶음)
-- key: '1946 cambodia 버전'
-  reason: se-06 사건 묶음이 채움
-  decided: 2026-11-08 동남아 E1 CL 구현(사건은 다음 묶음)
-- key: '1904 thailand 버전'
-  reason: se-06 사건 묶음이 채움
-  decided: 2026-11-08 동남아 E1 CL 구현(사건은 다음 묶음)
-- key: '1941 thailand 버전'
-  reason: se-06 사건 묶음이 채움
-  decided: 2026-11-08 동남아 E1 CL 구현(사건은 다음 묶음)
-- key: '1907 thailand 버전'
-  reason: se-06 사건 묶음이 채움
-  decided: 2026-11-08 동남아 E1 합치기(사건은 다음 묶음)
-- key: '1946 thailand 버전'
-  reason: se-06 사건 묶음이 채움
-  decided: 2026-11-08 동남아 E1 합치기(사건은 다음 묶음)
-
-# ── 동남아 E1 CV (중동 베트남 1900~현재, 2026-11-08) ──
-- key: '1862 cochinchina 성립'
-  reason: se-05 사건 묶음이 채움
-  decided: 2026-11-08 동남아 E1 CV 구현(사건은 다음 묶음)
-- key: '1883 annam-protectorate 성립'
-  reason: se-05 사건 묶음이 채움
-  decided: 2026-11-08 동남아 E1 CV 구현(사건은 다음 묶음)
-- key: '1884 tonkin-protectorate 성립'
-  reason: se-05 사건 묶음이 채움
-  decided: 2026-11-08 동남아 E1 CV 구현(사건은 다음 묶음)
-- key: '1945 vietnam 성립'
-  reason: se-06 사건 묶음이 채움
-  decided: 2026-11-08 동남아 E1 CV 구현(사건은 다음 묶음)
-- key: '1954 cochinchina 소멸'
-  reason: se-06 사건 묶음이 채움
-  decided: 2026-11-08 동남아 E1 CV 구현(사건은 다음 묶음)
-- key: '1954 annam-protectorate 소멸'
-  reason: se-06 사건 묶음이 채움
-  decided: 2026-11-08 동남아 E1 CV 구현(사건은 다음 묶음)
-- key: '1954 tonkin-protectorate 소멸'
-  reason: se-06 사건 묶음이 채움
-  decided: 2026-11-08 동남아 E1 CV 구현(사건은 다음 묶음)
-- key: '1904 annam-protectorate 버전'
-  reason: se-06 사건 묶음이 채움
-  decided: 2026-11-08 동남아 E1 CV 구현(사건은 다음 묶음)
-- key: '1954 annam-protectorate 버전'
-  reason: se-06 사건 묶음이 채움
-  decided: 2026-11-08 동남아 E1 CV 구현(사건은 다음 묶음)
-- key: '1954 vietnam 버전'
-  reason: se-06 사건 묶음이 채움
-  decided: 2026-11-08 동남아 E1 CV 구현(사건은 다음 묶음)
-- key: '1976 vietnam 버전'
-  reason: se-06 사건 묶음이 채움
-  decided: 2026-11-08 동남아 E1 CV 구현(사건은 다음 묶음)
-
 # ── 동남아 E1 SM (남서 말라야·싱가포르 1900~현재, 2026-11-08) ──
 # 1900~현재 말라야·싱가포르 새 항목 열의 성립·소멸과 1900년 버전 해(1900은 이 시대 첫 해 — 앞 버전은 E2 몫). 사건 묶음이 사건을 쓰며 이 줄을 지운다
 - key: '1136 kedah-perlis 성립'
@@ -197,64 +103,10 @@
 - key: '1766 selangor-negeri-sembilan 성립'
   reason: se-04 사건 묶음이 채움
   decided: 2026-11-08 동남아 E1 SM 구현(사건은 다음 묶음)
-- key: '1946 straits-settlements 소멸'
-  reason: se-06 사건 묶음이 채움
-  decided: 2026-11-08 동남아 E1 SM 구현(사건은 다음 묶음)
-- key: '1946 perak-sultanate 소멸'
-  reason: se-06 사건 묶음이 채움
-  decided: 2026-11-08 동남아 E1 SM 구현(사건은 다음 묶음)
-- key: '1946 pahang-sultanate 소멸'
-  reason: se-06 사건 묶음이 채움
-  decided: 2026-11-08 동남아 E1 SM 구현(사건은 다음 묶음)
-- key: '1946 selangor-negeri-sembilan 소멸'
-  reason: se-06 사건 묶음이 채움
-  decided: 2026-11-08 동남아 E1 SM 구현(사건은 다음 묶음)
-- key: '1946 johor-sultanate 소멸'
-  reason: se-06 사건 묶음이 채움
-  decided: 2026-11-08 동남아 E1 SM 구현(사건은 다음 묶음)
-- key: '1946 kedah-perlis 소멸'
-  reason: se-06 사건 묶음이 채움
-  decided: 2026-11-08 동남아 E1 SM 구현(사건은 다음 묶음)
-- key: '1946 kelantan-sultanate 소멸'
-  reason: se-06 사건 묶음이 채움
-  decided: 2026-11-08 동남아 E1 SM 구현(사건은 다음 묶음)
-- key: '1946 terengganu-sultanate 소멸'
-  reason: se-06 사건 묶음이 채움
-  decided: 2026-11-08 동남아 E1 SM 구현(사건은 다음 묶음)
-- key: '1946 malaysia 성립'
-  reason: se-06 사건 묶음이 채움
-  decided: 2026-11-08 동남아 E1 SM 구현(사건은 다음 묶음)
-- key: '1946 singapore 성립'
-  reason: se-06 사건 묶음이 채움
-  decided: 2026-11-08 동남아 E1 SM 구현(사건은 다음 묶음)
-- key: '1963 malaysia 버전'
-  reason: se-06 사건 묶음이 채움
-  decided: 2026-11-08 동남아 E1 합치기(사건은 다음 묶음)
 
 # ── 동남아 E1 SB (남동 보르네오 북부·필리핀 1900~현재, 2026-11-08) ──
 - key: '1368 brunei 성립'
   reason: 'se-03 사건 묶음이 채움(1368 무렵 첫 술탄 무함마드 샤의 개종·브루나이 술탄국)'
-  decided: 2026-11-08 동남아 E1 SB 구현(사건은 다음 묶음)
-- key: '1841 sarawak 성립'
-  reason: 'se-05 사건 묶음이 채움(1841 제임스 브룩이 사라왁의 라자가 됨)'
-  decided: 2026-11-08 동남아 E1 SB 구현(사건은 다음 묶음)
-- key: '1882 north-borneo 성립'
-  reason: 'se-05 사건 묶음이 채움(1881 왕실 특허·1882 영국 북보르네오 회사)'
-  decided: 2026-11-08 동남아 E1 SB 구현(사건은 다음 묶음)
-- key: '1898 american-philippines 성립'
-  reason: 'se-05 사건 묶음이 채움(1898 미국–스페인 전쟁·파리 조약)'
-  decided: 2026-11-08 동남아 E1 SB 구현(사건은 다음 묶음)
-- key: '1946 american-philippines 소멸'
-  reason: 'se-06 사건 묶음이 채움(1946-07-04 필리핀 독립)'
-  decided: 2026-11-08 동남아 E1 SB 구현(사건은 다음 묶음)
-- key: '1946 philippines 성립'
-  reason: 'se-06 사건 묶음이 채움(1946-07-04 마닐라 조약·필리핀 독립)'
-  decided: 2026-11-08 동남아 E1 SB 구현(사건은 다음 묶음)
-- key: '1963 sarawak 소멸'
-  reason: 'se-06 사건 묶음이 채움(1963-09-16 말레이시아 결성)'
-  decided: 2026-11-08 동남아 E1 SB 구현(사건은 다음 묶음)
-- key: '1963 north-borneo 소멸'
-  reason: 'se-06 사건 묶음이 채움(1963-09-16 말레이시아 결성)'
   decided: 2026-11-08 동남아 E1 SB 구현(사건은 다음 묶음)
 
 # ── 동남아 E1 SI (남 인도네시아·티모르 1900~현재, 2026-11-08) ──
@@ -263,45 +115,6 @@
   decided: 2026-11-08 동남아 E1 SI 구현(사건은 다음 묶음)
 - key: '1702 portuguese-timor 성립'
   reason: 'se-04 사건 묶음이 채움(1702 리파우에 포르투갈 첫 총독)'
-  decided: 2026-11-08 동남아 E1 SI 구현(사건은 다음 묶음)
-- key: '1800 dutch-east-indies 성립'
-  reason: 'se-05 사건 묶음이 채움(1800-01-01 동인도 회사 해산·국가 식민지)'
-  decided: 2026-11-08 동남아 E1 SI 구현(사건은 다음 묶음)
-- key: '1904 aceh-sultanate 소멸'
-  reason: 'se-06 사건 묶음이 채움(1903 술탄 항복·1904 아체 전쟁 끝)'
-  decided: 2026-11-08 동남아 E1 SI 구현(사건은 다음 묶음)
-- key: '1945 indonesia 성립'
-  reason: 'se-06 사건 묶음이 채움(1945-08-17 인도네시아 독립 선포)'
-  decided: 2026-11-08 동남아 E1 SI 구현(사건은 다음 묶음)
-- key: '1949 dutch-east-indies 소멸'
-  reason: 'se-06 사건 묶음이 채움(1949-12-27 헤이그 원탁 회의 합의·주권 이양)'
-  decided: 2026-11-08 동남아 E1 SI 구현(사건은 다음 묶음)
-- key: '1949 netherlands-new-guinea 성립'
-  reason: 'se-06 사건 묶음이 채움(1949 주권 이양에서 서뉴기니가 빠짐)'
-  decided: 2026-11-08 동남아 E1 SI 구현(사건은 다음 묶음)
-- key: '1962 netherlands-new-guinea 소멸'
-  reason: 'se-06 사건 묶음이 채움(1962 뉴욕 협정·유엔 임시 행정)'
-  decided: 2026-11-08 동남아 E1 SI 구현(사건은 다음 묶음)
-- key: '1975 portuguese-timor 소멸'
-  reason: 'se-06 사건 묶음이 채움(1975-11-28 독립 선포·12-07 인도네시아 침공)'
-  decided: 2026-11-08 동남아 E1 SI 구현(사건은 다음 묶음)
-- key: '2002 east-timor 성립'
-  reason: 'se-06 사건 묶음이 채움(2002-05-20 동티모르 독립)'
-  decided: 2026-11-08 동남아 E1 SI 구현(사건은 다음 묶음)
-- key: '1904 dutch-east-indies 버전'
-  reason: 'se-06 사건 묶음이 채움(1904 아체를 네덜란드령에 넣음)'
-  decided: 2026-11-08 동남아 E1 SI 구현(사건은 다음 묶음)
-- key: '1949 indonesia 버전'
-  reason: 'se-06 사건 묶음이 채움(1949-12-27 주권 이양)'
-  decided: 2026-11-08 동남아 E1 SI 구현(사건은 다음 묶음)
-- key: '1963 indonesia 버전'
-  reason: 'se-06 사건 묶음이 채움(1963-05-01 서뉴기니 인도네시아로)'
-  decided: 2026-11-08 동남아 E1 SI 구현(사건은 다음 묶음)
-- key: '1976 indonesia 버전'
-  reason: 'se-06 사건 묶음이 채움(1976-07-17 동티모르 병합 선언)'
-  decided: 2026-11-08 동남아 E1 SI 구현(사건은 다음 묶음)
-- key: '1999 indonesia 버전'
-  reason: 'se-06 사건 묶음이 채움(1999-08-30 동티모르 주민 투표·10-25 유엔 과도 행정)'
   decided: 2026-11-08 동남아 E1 SI 구현(사건은 다음 묶음)
 
 # ── 동남아 E2 BM (버마 1767~1899, 2026-11-08) ──
@@ -317,26 +130,8 @@
 - key: '1767 karenni-states 성립'
   reason: 'se-05 사건 묶음이 채움(E2 시대 파일 첫 해 — 18세기 독립 해가 전하지 않음)'
   decided: 2026-11-08 동남아 E2 BM 구현(사건은 다음 묶음)
-- key: '1784 mrauk-u 소멸'
-  reason: 'se-05 사건 묶음이 채움(1784 말 콘바웅 침공, 1785-01-02 므라우우 함락)'
-  decided: 2026-11-08 동남아 E2 BM 구현(사건은 다음 묶음)
-- key: '1885 konbaung-dynasty 소멸'
-  reason: 'se-05 사건 묶음이 채움(1885 제3차 영국–버마 전쟁, 11-29 띠버 왕 폐위)'
-  decided: 2026-11-08 동남아 E2 BM 구현(사건은 다음 묶음)
-- key: '1767 konbaung-dynasty 버전'
-  reason: 'E2 시대 파일 첫 해(1767)의 첫 버전이라 대칭차가 땅 전체 — E3 지도가 1752~1766을 칠하면 사라짐(1767 아유타야 함락은 se-05 사건 묶음)'
-  decided: 2026-11-08 동남아 E2 BM 구현(사건은 다음 묶음)
 - key: '1767 mrauk-u 버전'
   reason: 'E2 시대 파일 첫 해(1767)의 첫 버전이라 대칭차가 땅 전체 — E3 지도가 1429~1766을 칠하면 사라짐'
-  decided: 2026-11-08 동남아 E2 BM 구현(사건은 다음 묶음)
-- key: '1785 konbaung-dynasty 버전'
-  reason: 'se-05 사건 묶음이 채움(1785-01-02 아라칸 병합)'
-  decided: 2026-11-08 동남아 E2 BM 구현(사건은 다음 묶음)
-- key: '1826 konbaung-dynasty 버전'
-  reason: 'se-05 사건 묶음이 채움(1826-02-24 얀다보 조약 — 아라칸·테나세림 할양)'
-  decided: 2026-11-08 동남아 E2 BM 구현(사건은 다음 묶음)
-- key: '1852 konbaung-dynasty 버전'
-  reason: 'se-05 사건 묶음이 채움(1852 제2차 영국–버마 전쟁 — 하버마 점령, 1853-01-20 병합 포고)'
   decided: 2026-11-08 동남아 E2 BM 구현(사건은 다음 묶음)
 
 # ── 동남아 E2 SC (시암·캄보디아 1767~1899, 2026-11-08) ──
@@ -349,38 +144,8 @@
 - key: '1457 patani-sultanate 성립'
   reason: 'se-03 사건 묶음이 채움(15세기 중엽 파타니 왕의 이슬람 개종)'
   decided: 2026-11-08 동남아 E2 SC 구현(사건은 다음 묶음)
-- key: '1767 thailand 성립'
-  reason: 'se-05 사건 묶음이 채움(1767 아유타야 멸망과 딱신의 톤부리 왕국)'
-  decided: 2026-11-08 동남아 E2 SC 구현(사건은 다음 묶음)
-- key: '1767 lan-na 버전'
-  reason: 'se-05 사건 묶음이 채움(E2 시대 파일 첫 해의 첫 버전 — 1767 앞은 E3가 칠함)'
-  decided: 2026-11-08 동남아 E2 SC 구현(사건은 다음 묶음)
 - key: '1767 patani-sultanate 버전'
   reason: 'se-05 사건 묶음이 채움(E2 시대 파일 첫 해의 첫 버전 — 1767 앞은 E3가 칠함)'
-  decided: 2026-11-08 동남아 E2 SC 구현(사건은 다음 묶음)
-- key: '1767 cambodia 버전'
-  reason: 'se-05 사건 묶음이 채움(E2 시대 파일 첫 해의 첫 버전 — 1767 앞은 E3가 칠함)'
-  decided: 2026-11-08 동남아 E2 SC 구현(사건은 다음 묶음)
-- key: '1770 thailand 버전'
-  reason: 'se-05 사건 묶음이 채움(1770 딱신의 재통일 — 피사눌록·팡·나콘시탐마랏 정권)'
-  decided: 2026-11-08 동남아 E2 SC 구현(사건은 다음 묶음)
-- key: '1775 konbaung-dynasty 버전'
-  reason: 'se-05 사건 묶음이 채움(1775 카윌라·짜반이 시암과 손잡고 버마군을 치앙마이에서 몰아냄 — 란나 북서쪽)'
-  decided: 2026-11-08 동남아 E2 반영(창구 ③ Q-E1 — 사건은 다음 묶음)
-- key: '1775 lan-na 버전'
-  reason: 'se-05 사건 묶음이 채움(1775 카윌라·짜반이 시암과 손잡고 버마군을 치앙마이에서 몰아냄 — 란나 북서쪽)'
-  decided: 2026-11-08 동남아 E2 반영(창구 ③ Q-E1 — 사건은 다음 묶음)
-- key: '1794 thailand 버전'
-  reason: 'se-05 사건 묶음이 채움(1794 캄보디아 서북 바탐방·시엠레아프 시암 직할)'
-  decided: 2026-11-08 동남아 E2 SC 구현(사건은 다음 묶음)
-- key: '1794 cambodia 버전'
-  reason: 'se-05 사건 묶음이 채움(1794 캄보디아 서북 바탐방·시엠레아프 시암 직할)'
-  decided: 2026-11-08 동남아 E2 SC 구현(사건은 다음 묶음)
-- key: '1899 lan-na 소멸'
-  reason: 'se-05 사건 묶음이 채움(1899 몬톤 파얍 편입 — 쭐랄롱꼰의 지방 개혁)'
-  decided: 2026-11-08 동남아 E2 SC 구현(사건은 다음 묶음)
-- key: '1902 patani-sultanate 소멸'
-  reason: 'se-06 사건 묶음이 채움(1902 파타니 라자 폐위와 시암 직할)'
   decided: 2026-11-08 동남아 E2 SC 구현(사건은 다음 묶음)
 
 # ── 동남아 E2 LO (라오 1767~1899, 2026-11-08) ──
@@ -402,33 +167,6 @@
 - key: '1767 champasak-kingdom 버전'
   reason: '지도 약속 해 1767(동남아 E2 시작 — 1713~1766은 E3가 칠함)'
   decided: 2026-11-08 동남아 E2 LO 구현(사건은 다음 묶음)
-- key: '1770 thailand 버전'
-  reason: 'se-05 사건 묶음이 채움(1770 톤부리 왕국의 통일 — 코랏 고원 서남을 더함)'
-  decided: 2026-11-08 동남아 E2 LO 구현(사건은 다음 묶음)
-- key: '1828 luang-prabang-kingdom 버전'
-  reason: 'se-05 사건 묶음이 채움(1828 아누웡 반란 뒤 후아판이 시암 직할로)'
-  decided: 2026-11-08 동남아 E2 LO 구현(사건은 다음 묶음)
-- key: '1828 thailand 버전'
-  reason: 'se-05 사건 묶음이 채움(1828 아누웡 반란 진압·비엔티안 합병)'
-  decided: 2026-11-08 동남아 E2 LO 구현(사건은 다음 묶음)
-- key: '1828 vientiane-kingdom 소멸'
-  reason: 'se-05 사건 묶음이 채움(1828 아누웡 반란 진압·비엔티안 합병)'
-  decided: 2026-11-08 동남아 E2 LO 구현(사건은 다음 묶음)
-- key: '1792 champasak-kingdom 버전'
-  reason: 'se-05 사건 묶음이 채움(1792 우본이 방콕 직속 무앙이 됨 — 메콩강 오른쪽 이산 동남이 시암 직할로)'
-  decided: 2026-11-08 동남아 E2 LO 구현(사건은 다음 묶음)
-- key: '1792 thailand 버전'
-  reason: 'se-05 사건 묶음이 채움(1792 우본이 방콕 직속 무앙이 됨)'
-  decided: 2026-11-08 동남아 E2 LO 구현(사건은 다음 묶음)
-- key: '1892 luang-prabang-kingdom 소멸'
-  reason: 'se-05 사건 묶음이 채움(1893 프랑스–시암 조약 — 이 해가 마지막 버전)'
-  decided: 2026-11-08 동남아 E2 LO 구현(사건은 다음 묶음)
-- key: '1893 thailand 버전'
-  reason: 'se-05 사건 묶음이 채움(1893 프랑스–시암 조약으로 메콩강 왼쪽 기슭을 넘김)'
-  decided: 2026-11-08 동남아 E2 LO 구현(사건은 다음 묶음)
-- key: '1904 champasak-kingdom 소멸'
-  reason: 'se-06 사건 묶음이 채움(1904 파리 조약 — 지도는 1892까지)'
-  decided: 2026-11-08 동남아 E2 LO 구현(사건은 다음 묶음)
 
 # ── 동남아 E2 VT (베트남 1767~1899, 2026-11-08) ──
 - key: '1428 later-le-dynasty 성립'
@@ -437,109 +175,16 @@
 - key: '1558 nguyen-lords 성립'
   reason: 'se-03 사건 묶음이 채움(1558 응우옌 호앙의 투언화 진수)'
   decided: 2026-11-08 동남아 E2 VT 구현(사건은 다음 묶음)
-- key: '1771 tay-son-dynasty 성립'
-  reason: 'se-05 사건 묶음이 채움(1771 떠이선 봉기)'
-  decided: 2026-11-08 동남아 E2 VT 구현(사건은 다음 묶음)
-- key: '1789 later-le-dynasty 소멸'
-  reason: 'se-05 사건 묶음이 채움(1789 동다 싸움·레 찌에우 통 망명)'
-  decided: 2026-11-08 동남아 E2 VT 구현(사건은 다음 묶음)
-- key: '1801 nguyen-lords 소멸'
-  reason: 'se-05 사건 묶음이 채움(1802 응우옌 아인의 자롱 즉위)'
-  decided: 2026-11-08 동남아 E2 VT 구현(사건은 다음 묶음)
-- key: '1802 tay-son-dynasty 소멸'
-  reason: 'se-05 사건 묶음이 채움(1802 탕롱 함락·떠이선 멸망)'
-  decided: 2026-11-08 동남아 E2 VT 구현(사건은 다음 묶음)
-- key: '1802 nguyen-dynasty 성립'
-  reason: 'se-05 사건 묶음이 채움(1802 자롱 황제 즉위)'
-  decided: 2026-11-08 동남아 E2 VT 구현(사건은 다음 묶음)
-- key: '1884 nguyen-dynasty 소멸'
-  reason: 'se-05 사건 묶음이 채움(1883 아르망 조약·1884 파트노트르 조약)'
-  decided: 2026-11-08 동남아 E2 VT 구현(사건은 다음 묶음)
 - key: '1767 later-le-dynasty 버전'
   reason: '지도 약속 해 1767(동남아 E2 시작 — 1428~1766은 E3가 칠함)'
   decided: 2026-11-08 동남아 E2 VT 구현(사건은 다음 묶음)
 - key: '1767 nguyen-lords 버전'
   reason: '지도 약속 해 1767(동남아 E2 시작 — 1558~1766은 E3가 칠함)'
   decided: 2026-11-08 동남아 E2 VT 구현(사건은 다음 묶음)
-- key: '1773 nguyen-lords 버전'
-  reason: 'se-05 사건 묶음이 채움(1773 떠이선의 꾸이년 점령)'
-  decided: 2026-11-08 동남아 E2 VT 구현(사건은 다음 묶음)
-- key: '1773 tay-son-dynasty 버전'
-  reason: 'se-05 사건 묶음이 채움(1773 떠이선의 꾸이년 점령)'
-  decided: 2026-11-08 동남아 E2 VT 구현(사건은 다음 묶음)
-- key: '1774 nguyen-lords 버전'
-  reason: 'se-05 사건 묶음이 채움(1774 떠이선의 남진 — 카인호아~빈투언)'
-  decided: 2026-11-08 동남아 E2 VT 구현(사건은 다음 묶음)
-- key: '1774 tay-son-dynasty 버전'
-  reason: 'se-05 사건 묶음이 채움(1774 떠이선의 남진 — 카인호아~빈투언)'
-  decided: 2026-11-08 동남아 E2 VT 구현(사건은 다음 묶음)
-- key: '1775 later-le-dynasty 버전'
-  reason: 'se-05 사건 묶음이 채움(1774~1775 찐 군의 남진·푸쑤언 점령)'
-  decided: 2026-11-08 동남아 E2 VT 구현(사건은 다음 묶음)
-- key: '1775 nguyen-lords 버전'
-  reason: 'se-05 사건 묶음이 채움(1774~1775 찐 군의 남진·푸쑤언 점령)'
-  decided: 2026-11-08 동남아 E2 VT 구현(사건은 다음 묶음)
-- key: '1775 tay-son-dynasty 버전'
-  reason: 'se-05 사건 묶음이 채움(1775 떠이선의 꽝남 차지)'
-  decided: 2026-11-08 동남아 E2 VT 구현(사건은 다음 묶음)
-- key: '1777 tay-son-dynasty 버전'
-  reason: 'se-05 사건 묶음이 채움(1777 떠이선의 자딘 점령)'
-  decided: 2026-11-08 동남아 E2 VT 구현(사건은 다음 묶음)
-- key: '1778 tay-son-dynasty 버전'
-  reason: 'se-05 사건 묶음이 채움(1778 응우옌 아인의 자딘 회복)'
-  decided: 2026-11-08 동남아 E2 VT 구현(사건은 다음 묶음)
-- key: '1783 tay-son-dynasty 버전'
-  reason: 'se-05 사건 묶음이 채움(1783 떠이선의 자딘 재점령)'
-  decided: 2026-11-08 동남아 E2 VT 구현(사건은 다음 묶음)
-- key: '1786 later-le-dynasty 버전'
-  reason: 'se-05 사건 묶음이 채움(1786 응우옌 후에의 푸쑤언 점령·북진)'
-  decided: 2026-11-08 동남아 E2 VT 구현(사건은 다음 묶음)
-- key: '1786 tay-son-dynasty 버전'
-  reason: 'se-05 사건 묶음이 채움(1786 응우옌 후에의 푸쑤언 점령·북진)'
-  decided: 2026-11-08 동남아 E2 VT 구현(사건은 다음 묶음)
-- key: '1788 tay-son-dynasty 버전'
-  reason: 'se-05 사건 묶음이 채움(1788 꽝쭝 즉위·북부 차지, 1789 동다 싸움)'
-  decided: 2026-11-08 동남아 E2 VT 구현(사건은 다음 묶음)
-- key: '1793 nguyen-lords 버전'
-  reason: 'se-05 사건 묶음이 채움(1793 응우옌 아인의 냐짱 원정)'
-  decided: 2026-11-08 동남아 E2 VT 구현(사건은 다음 묶음)
-- key: '1793 tay-son-dynasty 버전'
-  reason: 'se-05 사건 묶음이 채움(1793 응우옌 아인의 냐짱 원정)'
-  decided: 2026-11-08 동남아 E2 VT 구현(사건은 다음 묶음)
-- key: '1801 nguyen-lords 버전'
-  reason: 'se-05 사건 묶음이 채움(1801 응우옌 아인의 푸쑤언 회복)'
-  decided: 2026-11-08 동남아 E2 VT 구현(사건은 다음 묶음)
-- key: '1801 tay-son-dynasty 버전'
-  reason: 'se-05 사건 묶음이 채움(1801 응우옌 아인의 푸쑤언 회복)'
-  decided: 2026-11-08 동남아 E2 VT 구현(사건은 다음 묶음)
-- key: '1862 nguyen-dynasty 버전'
-  reason: 'se-05 사건 묶음이 채움(1862 제1차 사이공 조약)'
-  decided: 2026-11-08 동남아 E2 VT 구현(사건은 다음 묶음)
-- key: '1867 nguyen-dynasty 버전'
-  reason: 'se-05 사건 묶음이 채움(1867 프랑스의 서쪽 세 성 병합)'
-  decided: 2026-11-08 동남아 E2 VT 구현(사건은 다음 묶음)
-- key: '1867 cochinchina 버전'
-  reason: 'se-05 사건 묶음이 채움(1867 프랑스의 서쪽 세 성 병합)'
-  decided: 2026-11-08 동남아 E2 VT 구현(사건은 다음 묶음)
-- key: '1883 nguyen-dynasty 버전'
-  reason: 'se-05 사건 묶음이 채움(1883 아르망 조약)'
-  decided: 2026-11-08 동남아 E2 VT 구현(사건은 다음 묶음)
-- key: '1889 annam-protectorate 버전'
-  reason: 'se-05 사건 묶음이 채움(1889 프랑스의 중부 고원 편입)'
-  decided: 2026-11-08 동남아 E2 VT 구현(사건은 다음 묶음)
 
 # ── 동남아 E2 MI (말레이 반도·인도네시아·티모르 1767~1899, 2026-11-08) ──
 - key: '1602 voc 성립'
   reason: 'se-04 사건 묶음이 채움(1602-03-20 네덜란드 공화국 의회가 동인도 회사에 특허)'
-  decided: 2026-11-08 동남아 E2 MI 구현(사건은 다음 묶음)
-- key: '1799 voc 소멸'
-  reason: 'se-05 사건 묶음이 채움(1799-12-31 동인도 회사 해산)'
-  decided: 2026-11-08 동남아 E2 MI 구현(사건은 다음 묶음)
-- key: '1786 straits-settlements 성립'
-  reason: 'se-05 사건 묶음이 채움(1786-08-11 영국 동인도 회사의 페낭 점유)'
-  decided: 2026-11-08 동남아 E2 MI 구현(사건은 다음 묶음)
-- key: '1853 pahang-sultanate 성립'
-  reason: 'se-05 사건 묶음이 채움(1853 븐다하라 툰 알리가 조호르에서 떨어져 파항을 다스림)'
   decided: 2026-11-08 동남아 E2 MI 구현(사건은 다음 묶음)
 - key: '1767 voc 버전'
   reason: 'E2 시대 파일 첫 해(1767)의 첫 버전이라 대칭차가 땅 전체 — E3 지도가 1766 앞을 칠하면 사라짐'
@@ -568,51 +213,6 @@
 - key: '1767 portuguese-timor 버전'
   reason: 'E2 시대 파일 첫 해(1767)의 첫 버전이라 대칭차가 땅 전체 — E3 지도가 1766 앞을 칠하면 사라짐'
   decided: 2026-11-08 동남아 E2 MI 구현(사건은 다음 묶음)
-- key: '1779 voc 버전'
-  reason: 'se-05 사건 묶음이 채움(1779-07-05 폰티아낙 술탄과 VOC 협정 — 서칼리만탄)'
-  decided: 2026-11-08 동남아 E2 MI 구현(사건은 다음 묶음)
-- key: '1787 voc 버전'
-  reason: 'se-05 사건 묶음이 채움(1787 반자르 술탄국이 VOC 봉토가 됨 — 남·중칼리만탄)'
-  decided: 2026-11-08 동남아 E2 MI 구현(사건은 다음 묶음)
-- key: '1809 dutch-east-indies 버전'
-  reason: 'se-05 사건 묶음이 채움(1809 다엔덜스가 반자르마신에서 물러남 — 남·중칼리만탄)'
-  decided: 2026-11-08 동남아 E2 반영(창구 ③ Q-E4 — 사건은 다음 묶음)
-- key: '1817 dutch-east-indies 버전'
-  reason: 'se-05 사건 묶음이 채움(1817-01 반자르 술탄국과 새 협정 — 남·중칼리만탄)'
-  decided: 2026-11-08 동남아 E2 반영(창구 ③ Q-E4 — 사건은 다음 묶음)
-- key: '1816 dutch-east-indies 버전'
-  reason: 'se-05 사건 묶음이 채움(1816 영국이 자와·방카를 네덜란드에 돌려줌)'
-  decided: 2026-11-08 동남아 E2 MI 구현(사건은 다음 묶음)
-- key: '1821 dutch-east-indies 버전'
-  reason: 'se-05 사건 묶음이 채움(1821-02-10 파가루융 왕가와 조약 — 서수마트라, 파드리 전쟁)'
-  decided: 2026-11-08 동남아 E2 MI 구현(사건은 다음 묶음)
-- key: '1823 dutch-east-indies 버전'
-  reason: 'se-05 사건 묶음이 채움(1823-10-07 팔렘방 술탄국 해체)'
-  decided: 2026-11-08 동남아 E2 MI 구현(사건은 다음 묶음)
-- key: '1824 dutch-east-indies 버전'
-  reason: 'se-05 사건 묶음이 채움(1824 영국·네덜란드 조약 — 리아우 제도, 팔루·바나와의 짧은 서약)'
-  decided: 2026-11-08 동남아 E2 MI 구현(사건은 다음 묶음)
-- key: '1825 dutch-east-indies 버전'
-  reason: 'se-05 사건 묶음이 채움(1824 조약에 따라 1825 벵쿨루를 넘겨받고 말라카를 넘김)'
-  decided: 2026-11-08 동남아 E2 MI 구현(사건은 다음 묶음)
-- key: '1833 dutch-east-indies 버전'
-  reason: 'se-05 사건 묶음이 채움(1833 잠비 술탄이 네덜란드 권위를 받아들임)'
-  decided: 2026-11-08 동남아 E2 MI 구현(사건은 다음 묶음)
-- key: '1844 dutch-east-indies 버전'
-  reason: 'se-05 사건 묶음이 채움(1844 쿠타이 술탄국 조약 — 동칼리만탄, 1841~1843 발리 왕들의 조약)'
-  decided: 2026-11-08 동남아 E2 MI 구현(사건은 다음 묶음)
-- key: '1848 dutch-east-indies 버전'
-  reason: 'se-05 사건 묶음이 채움(1848 네덜란드의 서뉴기니 주장 — 테르나테·티도레 종주)'
-  decided: 2026-11-08 동남아 E2 MI 구현(사건은 다음 묶음)
-- key: '1853 johor-sultanate 버전'
-  reason: 'se-05 사건 묶음이 채움(1853 파항이 조호르에서 떨어짐)'
-  decided: 2026-11-08 동남아 E2 MI 구현(사건은 다음 묶음)
-- key: '1858 dutch-east-indies 버전'
-  reason: 'se-05 사건 묶음이 채움(1858 시악 조약 — 리아우 본토, 동남술라웨시 라이우이 계약)'
-  decided: 2026-11-08 동남아 E2 MI 구현(사건은 다음 묶음)
-- key: '1862 dutch-east-indies 버전'
-  reason: 'se-05 사건 묶음이 채움(1862 델리 술탄국 계약 — 북수마트라 동해안)'
-  decided: 2026-11-08 동남아 E2 MI 구현(사건은 다음 묶음)
 
 # ── 동남아 E2 BP (보르네오 북부·필리핀 1767~1899, 2026-11-08) ──
 - key: '1405 sulu-sultanate 성립'
@@ -620,12 +220,6 @@
   decided: 2026-11-08 동남아 E2 BP 구현(사건은 다음 묶음)
 - key: '1565 spanish-philippines 성립'
   reason: 'se-04·se-03 사건 묶음이 채움(1565 레가스피의 세부 정착, 1571 마닐라)'
-  decided: 2026-11-08 동남아 E2 BP 구현(사건은 다음 묶음)
-- key: '1897 spanish-philippines 소멸'
-  reason: 'se-05 사건 묶음이 채움(1898 미국-스페인 전쟁과 파리 조약 — 1898-12-10)'
-  decided: 2026-11-08 동남아 E2 BP 구현(사건은 다음 묶음)
-- key: '1915 sulu-sultanate 소멸'
-  reason: 'se-06 사건 묶음이 채움(1915 카펜터 협정으로 술탄이 세속 권력을 내려놓음)'
   decided: 2026-11-08 동남아 E2 BP 구현(사건은 다음 묶음)
 - key: '1767 spanish-philippines 버전'
   reason: 'E2 시대 파일 첫 해(1767)의 첫 버전이라 대칭차가 땅 전체 — E3 지도가 1565~1766을 칠하면 사라짐'
@@ -635,25 +229,4 @@
   decided: 2026-11-08 동남아 E2 BP 구현(사건은 다음 묶음)
 - key: '1767 brunei 버전'
   reason: 'E2 시대 파일 첫 해(1767)의 첫 버전이라 대칭차가 땅 전체 — E3 지도가 1766 앞을 칠하면 사라짐'
-  decided: 2026-11-08 동남아 E2 BP 구현(사건은 다음 묶음)
-- key: '1852 sarawak 버전'
-  reason: 'se-05 사건 묶음이 채움(1852~53 브루나이가 사리바스·스크랑을 브룩에게 넘김)'
-  decided: 2026-11-08 동남아 E2 BP 구현(사건은 다음 묶음)
-- key: '1852 brunei 버전'
-  reason: 'se-05 사건 묶음이 채움(1852~53 사리바스·스크랑을 사라왁에 넘김)'
-  decided: 2026-11-08 동남아 E2 BP 구현(사건은 다음 묶음)
-- key: '1861 sarawak 버전'
-  reason: 'se-05 사건 묶음이 채움(1861 브루나이가 라장·무카·빈툴루를 사라왁에 넘김)'
-  decided: 2026-11-08 동남아 E2 BP 구현(사건은 다음 묶음)
-- key: '1861 brunei 버전'
-  reason: 'se-05 사건 묶음이 채움(1861 라장·무카·빈툴루를 사라왁에 넘김)'
-  decided: 2026-11-08 동남아 E2 BP 구현(사건은 다음 묶음)
-- key: '1878 brunei 버전'
-  reason: 'se-05 사건 묶음이 채움(1877-12 브루나이 술탄이 사바 서쪽을 오버벡에게 양허)'
-  decided: 2026-11-08 동남아 E2 BP 구현(사건은 다음 묶음)
-- key: '1882 sarawak 버전'
-  reason: 'se-05 사건 묶음이 채움(1882 바람 할양)'
-  decided: 2026-11-08 동남아 E2 BP 구현(사건은 다음 묶음)
-- key: '1882 brunei 버전'
-  reason: 'se-05 사건 묶음이 채움(1882 바람을 사라왁에 넘김)'
   decided: 2026-11-08 동남아 E2 BP 구현(사건은 다음 묶음)
