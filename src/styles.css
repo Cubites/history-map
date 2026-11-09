@@ -919,7 +919,8 @@ button {
 .search-sub { color: var(--muted); font-size: 12px; }
 .search-empty { padding: 6px 10px; color: var(--muted); font-size: 13px; }
 @media (max-width: 768px) {
-  .map-search { display: block; top: 8px; left: 8px; right: 8px; } /* 화면 폭보다 살짝 작게 */
+  /* 화면 폭보다 살짝 작게. z-index 7: 결과 목록이 '주요 사건' 칸(.map-top-left, 6)과 아래 판(.panel.sheet, 6)보다 앞에 오게(2026-11-09) */
+  .map-search { display: block; top: 8px; left: 8px; right: 8px; z-index: 7; }
   .map-top-left { top: 59px; left: 8px; max-width: calc(100% - 66px); max-height: calc(100% - 60px); } /* 검색창(8px + 높이) 아래, 오른쪽은 연도 막대 */
   .app:has(.panel.sheet) .map-top-left { max-height: calc(100% - 60px - var(--sheet-cover, 96px)); } /* 지도가 판 뒤까지 깔리므로 판이 가리는 높이만큼 */
   /* 글자 16px: 16px 미만이면 iOS가 입력 시 화면을 확대한다. 지도 위 검색창은 높이 40px(2026-10-29: 33px에서 약 20% 늘림), 양 끝이 반원인 알약 모양 */
