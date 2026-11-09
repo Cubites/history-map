@@ -14,7 +14,9 @@ import { versions as INNER_ASIA_VERSIONS } from '../inner-asia.mjs';
 import { versions as SOUTH_ASIA_VERSIONS, extensions as SOUTH_ASIA_EXTENSIONS } from '../south-asia.mjs';
 import { extensions as CENTRAL_ASIA_EXTENSIONS } from '../central-asia.mjs';
 
-export const PREV_IDS = ['qing', 'roc', 'prc'];
+// E3 뼈대 측정(e3/skel/prev-overlap.txt, 2026-11-09): 1293~1766에 걸치는 다른 권역 버전 가운데 1 km² 넘게 겹치는 것은 yuan(1290~1367) 1,414 · ming(1368~1643) 154~1,375, 1407~1426 명 교지 172,010 · qing(1644~) 1,375~1,414 km²뿐
+//   — yuan·ming을 더함(그 밖의 bengal-sultanate·mughal-empire·manipur·ahom-kingdom 원래 모양은 1 km² 안). 1767 뒤 해에는 둘 다 버전이 없어 E1·E2 버전은 바뀌지 않는다
+export const PREV_IDS = ['yuan', 'ming', 'qing', 'roc', 'prc'];
 const PREV_AREAS = [CHINA_VERSIONS, INNER_ASIA_VERSIONS, SOUTH_ASIA_VERSIONS, SOUTH_ASIA_EXTENSIONS, CENTRAL_ASIA_EXTENSIONS];
 // 이 권역 권역 파일에 있는 도형(시대 파일이 가져올 수 없는 권역 파일 나라 — 좌표는 shapes.mjs 한 곳): [나라 id, from, to(미포함), 도형]
 const OWN_FIXED = [['south-vietnam', 1955, 1976, [[SOUTH_VIETNAM]]]];

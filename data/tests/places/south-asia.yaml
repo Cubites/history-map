@@ -3811,10 +3811,10 @@
 - name: 콕스바자르(치타공 안)
   at: [92.0, 21.45]
   year: 1500
-  expect: none
+  expect: mrauk-u
   region: south-asia
-  url: https://en.wikipedia.org/wiki/Cox%27s_Bazar
-  from: 남아시아 S3 동 결과노트
+  url: https://en.wikipedia.org/wiki/Mrauk-U_Kingdom
+  from: 남아시아 S3 동 결과노트 — 동남아 E3 BM이 기대를 none에서 mrauk-u로(자동 승인 A6 치타공 1459~1665)
 - name: 페니(치타공 밖)
   at: [91.4, 23.01]
   year: 1500

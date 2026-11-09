@@ -468,7 +468,7 @@
   at: [102.25, 2.19]
   year: 1810
   expect: dutch-east-indies
-  url: https://en.wikipedia.org/wiki/Dutch_Malacca
+  url: https://en.wikipedia.org/wiki/Dutch_East_India_Company
   from: 동남아 E2 MI 결과노트
 - name: 말라카
   at: [102.25, 2.19]
@@ -538,3 +538,336 @@
   expect: spanish-philippines
   url: https://en.wikipedia.org/wiki/Spanish_East_Indies
   from: 동남아 E2 BP 결과노트
+
+# ── 동남아 E3 BM (버마 1293~1766, 2026-11-09) ──
+- name: 바간
+  at: [94.86, 21.17]
+  year: 1295
+  expect: pagan-empire
+  url: https://en.wikipedia.org/wiki/Bagan
+  from: 동남아 E3 BM 결과노트
+- name: 잉와
+  at: [95.99, 21.85]
+  year: 1400
+  expect: ava-kingdom
+  url: https://en.wikipedia.org/wiki/Inwa
+  from: 동남아 E3 BM 결과노트
+- name: 바고
+  at: [96.48, 17.34]
+  year: 1450
+  expect: hanthawaddy-kingdom
+  url: https://en.wikipedia.org/wiki/Bago,_Myanmar
+  from: 동남아 E3 BM 결과노트
+- name: 바고
+  at: [96.48, 17.34]
+  year: 1580
+  expect: toungoo-dynasty
+  url: https://en.wikipedia.org/wiki/Bago,_Myanmar
+  from: 동남아 E3 BM 결과노트
+- name: 므라우우
+  at: [93.19, 20.59]
+  year: 1500
+  expect: mrauk-u
+  url: https://en.wikipedia.org/wiki/Mrauk_U
+  from: 동남아 E3 BM 결과노트
+- name: 치타공
+  at: [91.83, 22.34]
+  year: 1600
+  expect: mrauk-u
+  url: https://en.wikipedia.org/wiki/Chittagong
+  from: 동남아 E3 BM 결과노트
+- name: 쉐보
+  at: [95.7, 22.57]
+  year: 1754
+  expect: konbaung-dynasty
+  url: https://en.wikipedia.org/wiki/Shwebo
+  from: 동남아 E3 BM 결과노트
+
+# ── 동남아 E3 SC (시암·캄보디아 1293~1766, 2026-11-09) ──
+- name: 수코타이
+  at: [99.82, 17.01]
+  year: 1300
+  expect: sukhothai-kingdom
+  url: https://en.wikipedia.org/wiki/Sukhothai_Kingdom
+  from: 동남아 E3 SC 결과노트
+- name: 롭부리
+  at: [100.62, 14.8]
+  year: 1320
+  expect: lavo-kingdom
+  url: https://en.wikipedia.org/wiki/Lavo_Kingdom
+  from: 동남아 E3 SC 결과노트
+- name: 아유타야
+  at: [100.57, 14.35]
+  year: 1500
+  expect: ayutthaya-kingdom
+  url: https://en.wikipedia.org/wiki/Ayutthaya_Kingdom
+  from: 동남아 E3 SC 결과노트
+- name: 치앙마이
+  at: [98.98, 18.79]
+  year: 1450
+  expect: lan-na
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Chiang_Mai
+  from: 동남아 E3 SC 결과노트
+- name: 치앙마이
+  at: [98.98, 18.79]
+  year: 1765
+  expect: konbaung-dynasty
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Chiang_Mai
+  from: 동남아 E3 SC 결과노트
+- name: 시엠레아프
+  at: [103.86, 13.36]
+  year: 1300
+  expect: khmer-empire
+  url: https://en.wikipedia.org/wiki/Khmer_Empire
+  from: 동남아 E3 SC 결과노트
+- name: 프놈펜
+  at: [104.92, 11.56]
+  year: 1600
+  expect: cambodia
+  url: https://en.wikipedia.org/wiki/Post-Angkor_period
+  from: 동남아 E3 SC 결과노트
+- name: 나콘시탐마랏
+  at: [99.96, 8.43]
+  year: 1700
+  expect: ayutthaya-kingdom
+  url: https://en.wikipedia.org/wiki/Nakhon_Si_Thammarat_Kingdom
+  from: 동남아 E3 SC 결과노트
+
+# ── 동남아 E3 VT (베트남·참파 1293~1766, 2026-11-09) ──
+# 하노이 1300(쩐)·1500(후 레)·1700(후 레)은 동아시아 정답표(east-asia.yaml)의 기존 줄을 고쳐 씀
+- name: 하노이(동도)
+  at: [105.85, 21.03]
+  year: 1403
+  expect: ho-dynasty
+  url: https://en.wikipedia.org/wiki/H%E1%BB%93_dynasty
+  from: 동남아 E3 VT 결과노트
+- name: 하노이(동경)
+  at: [105.85, 21.03]
+  year: 1550
+  expect: mac-dynasty
+  url: https://en.wikipedia.org/wiki/L%C3%AA%E2%80%93M%E1%BA%A1c_War
+  from: 동남아 E3 VT 결과노트
+- name: 타인호아(레 중흥)
+  at: [105.78, 19.81]
+  year: 1550
+  expect: later-le-dynasty
+  url: https://en.wikipedia.org/wiki/L%C3%AA%E2%80%93M%E1%BA%A1c_War
+  from: 동남아 E3 VT 결과노트
+- name: 까오방(막 씨)
+  at: [106.26, 22.67]
+  year: 1620
+  expect: mac-dynasty
+  url: https://en.wikipedia.org/wiki/M%E1%BA%A1c_dynasty
+  from: 동남아 E3 VT 결과노트
+- name: 꾸이년(비자야)
+  at: [109.22, 13.78]
+  year: 1400
+  expect: champa
+  url: https://en.wikipedia.org/wiki/Champa
+  from: 동남아 E3 VT 결과노트
+- name: 꾸이년(비자야)
+  at: [109.22, 13.78]
+  year: 1472
+  expect: later-le-dynasty
+  url: https://en.wikipedia.org/wiki/Champa
+  from: 동남아 E3 VT 결과노트
+- name: 후에(푸쑤언)
+  at: [107.59, 16.46]
+  year: 1650
+  expect: nguyen-lords
+  url: https://en.wikipedia.org/wiki/Nguy%E1%BB%85n_lords
+  from: 동남아 E3 VT 결과노트
+- name: 판랑(판두랑가)
+  at: [108.99, 11.56]
+  year: 1650
+  expect: champa
+  url: https://en.wikipedia.org/wiki/Champa
+  from: 동남아 E3 VT 결과노트
+- name: 사이공(쁘레이노꼬르)
+  at: [106.70, 10.78]
+  year: 1650
+  expect: cambodia
+  url: https://en.wikipedia.org/wiki/Mekong_Delta
+  from: 동남아 E3 VT 결과노트
+- name: 사이공(자딘)
+  at: [106.70, 10.78]
+  year: 1700
+  expect: nguyen-lords
+  url: https://en.wikipedia.org/wiki/Nguy%E1%BB%85n_H%E1%BB%AFu_C%E1%BA%A3nh
+  from: 동남아 E3 VT 결과노트
+
+# ── 동남아 E3 LO (라오 1293~1766, 2026-11-09) ──
+- name: "루앙프라방"
+  at: [102.135, 19.886]
+  year: 1360
+  expect: lan-xang
+  url: "https://en.wikipedia.org/wiki/Lan_Xang"
+  from: "동남아 E3 LO 구현"
+  note: "1353년 파응움이 세운 란쌍 왕국의 첫 도읍"
+
+- name: "비엔티안"
+  at: [102.6, 17.967]
+  year: 1600
+  expect: lan-xang
+  url: "https://en.wikipedia.org/wiki/Lan_Xang"
+  from: "동남아 E3 LO 구현"
+  note: "1560년 셋타티랏 왕이 옮긴 란쌍 왕국의 도읍"
+
+- name: "비엔티안"
+  at: [102.6, 17.967]
+  year: 1720
+  expect: vientiane-kingdom
+  url: "https://en.wikipedia.org/wiki/Kingdom_of_Vientiane"
+  from: "동남아 E3 LO 구현"
+  note: "1707년 란쌍이 갈라진 뒤의 비엔티안 왕국"
+
+- name: "루앙프라방"
+  at: [102.135, 19.886]
+  year: 1720
+  expect: luang-prabang-kingdom
+  url: "https://en.wikipedia.org/wiki/Kingdom_of_Luang_Phrabang"
+  from: "동남아 E3 LO 구현"
+  note: "1707년 란쌍이 갈라진 뒤의 루앙프라방 왕국"
+
+- name: "참파삭"
+  at: [105.87, 14.89]
+  year: 1750
+  expect: champasak-kingdom
+  url: "https://en.wikipedia.org/wiki/Kingdom_of_Champasak"
+  from: "동남아 E3 LO 구현"
+  note: "1713년 갈라져 선 참파삭 왕국"
+
+- name: "코랏"
+  at: [102.1, 14.97]
+  year: 1600
+  expect: ayutthaya-kingdom
+  url: "https://en.wikipedia.org/wiki/Nakhon_Ratchasima_province"
+  from: "동남아 E3 LO 구현"
+  note: "창구 ② 결정 Q5 — 코랏 고원 서남은 1431년부터 아유타야"
+
+- name: "코랏"
+  at: [102.1, 14.97]
+  year: 1300
+  expect: khmer-empire
+  url: "https://en.wikipedia.org/wiki/Nakhon_Ratchasima_province"
+  from: "동남아 E3 LO 구현"
+  note: "1431년 앞 크메르 제국의 이산 남부(피마이 쪽)"
+
+
+# ── 동남아 E3 M1 (말레이 반도·수마트라·보르네오 북부·필리핀 1293~1766, 2026-11-09) ──
+- name: 말라카
+  at: [102.25, 2.19]
+  year: 1450
+  expect: malacca-sultanate
+  url: https://en.wikipedia.org/wiki/Malacca_Sultanate
+  from: 동남아 E3 M1 결과노트
+- name: 말라카
+  at: [102.25, 2.19]
+  year: 1520
+  expect: portuguese-malacca
+  url: https://en.wikipedia.org/wiki/Portuguese_Malacca
+  from: 동남아 E3 M1 결과노트
+- name: 말라카
+  at: [102.25, 2.19]
+  year: 1700
+  expect: voc
+  url: https://en.wikipedia.org/wiki/Dutch_East_India_Company
+  from: 동남아 E3 M1 결과노트
+- name: 반다르스리브가완
+  at: [114.94, 4.89]
+  year: 1600
+  expect: brunei
+  url: https://en.wikipedia.org/wiki/Brunei_Empire
+  from: 동남아 E3 M1 결과노트
+- name: 마닐라
+  at: [120.98, 14.6]
+  year: 1700
+  expect: spanish-philippines
+  url: https://en.wikipedia.org/wiki/Spanish_East_Indies
+  from: 동남아 E3 M1 결과노트
+- name: 반다아체
+  at: [95.32, 5.55]
+  year: 1600
+  expect: aceh-sultanate
+  url: https://en.wikipedia.org/wiki/Aceh_Sultanate
+  from: 동남아 E3 M1 결과노트
+- name: 조호르바루
+  at: [103.76, 1.49]
+  year: 1600
+  expect: johor-sultanate
+  url: https://en.wikipedia.org/wiki/Johor_Sultanate
+  from: 동남아 E3 M1 결과노트
+- name: 세부
+  at: [123.89, 10.32]
+  year: 1566
+  expect: spanish-philippines
+  url: https://en.wikipedia.org/wiki/Spanish_East_Indies
+  from: 동남아 E3 M1 결과노트
+- name: 쿠칭
+  at: [110.35, 1.55]
+  year: 1500
+  expect: brunei
+  url: https://en.wikipedia.org/wiki/Brunei_Empire
+  from: 동남아 E3 M1 결과노트
+
+# ── 동남아 E3 I1 (자와·칼리만탄·술라웨시·말루쿠·티모르 1293~1766, 2026-11-09) ──
+- name: 트로울란
+  at: [112.38, -7.56]
+  year: 1300
+  expect: majapahit
+  url: https://en.wikipedia.org/wiki/Majapahit
+  from: 동남아 E3 I1 결과노트
+- name: 반튼
+  at: [106.15, -6.04]
+  year: 1600
+  expect: banten-sultanate
+  url: https://en.wikipedia.org/wiki/Sultanate_of_Banten
+  from: 동남아 E3 I1 결과노트
+- name: 자카르타
+  at: [106.83, -6.18]
+  year: 1650
+  expect: voc
+  url: https://en.wikipedia.org/wiki/Dutch_East_India_Company
+  from: 동남아 E3 I1 결과노트
+- name: 드막
+  at: [110.64, -6.89]
+  year: 1530
+  expect: demak-sultanate
+  url: https://en.wikipedia.org/wiki/Demak_Sultanate
+  from: 동남아 E3 I1 결과노트
+- name: 욕야카르타
+  at: [110.36, -7.8]
+  year: 1650
+  expect: mataram-sultanate
+  url: https://en.wikipedia.org/wiki/Mataram_Sultanate
+  from: 동남아 E3 I1 결과노트
+- name: 마카사르
+  at: [119.42, -5.14]
+  year: 1600
+  expect: gowa-tallo
+  url: https://en.wikipedia.org/wiki/Sultanate_of_Gowa
+  from: 동남아 E3 I1 결과노트
+- name: 소피피
+  at: [127.57, 0.74]
+  year: 1600
+  expect: ternate-sultanate
+  url: https://en.wikipedia.org/wiki/Sultanate_of_Ternate
+  from: 동남아 E3 I1 결과노트
+- name: 소피피
+  at: [127.57, 0.74]
+  year: 1750
+  expect: voc
+  url: https://en.wikipedia.org/wiki/Sultanate_of_Ternate
+  from: 동남아 E3 I1 결과노트
+- name: 반자르마신
+  at: [114.59, -3.32]
+  year: 1700
+  expect: banjar-sultanate
+  url: https://en.wikipedia.org/wiki/Banjar_Sultanate
+  from: 동남아 E3 I1 결과노트
+- name: 딜리
+  at: [125.57, -8.56]
+  year: 1750
+  expect: portuguese-timor
+  url: https://en.wikipedia.org/wiki/Portuguese_Timor
+  from: 동남아 E3 I1 결과노트

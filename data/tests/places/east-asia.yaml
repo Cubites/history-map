@@ -840,11 +840,10 @@
 - name: "하노이(통킹)"
   at: [105.85, 21.03]
   year: 1700
-  expect: none
-  region: east-asia
+  expect: later-le-dynasty
   url: "https://en.wikipedia.org/wiki/Later_L%C3%AA_dynasty"
   from: "작업 L1 결과노트"
-  note: "레 왕조는 청의 조공국(조공·명목 땅은 칠하지 않음). 전에는 청이 덮었다"
+  note: "레 왕조는 청의 조공국(조공·명목 땅은 칠하지 않음). 전에는 청이 덮었다(기대 none → 동남아 E3 VT 2026-11-09에 후 레 왕조 앞 버전이 생겨 고침)"
 
 - name: "하노이(통킹)"
   at: [105.85, 21.03]
@@ -1009,11 +1008,10 @@
 - name: "하노이(통킹)"
   at: [105.85, 21.03]
   year: 1300
-  expect: none
-  region: east-asia
+  expect: tran-dynasty
   url: "https://en.wikipedia.org/wiki/Mongol_invasions_of_Vietnam"
   from: "작업 N1a 결과노트"
-  note: "대월이 원의 세 차례 침입(1258·1285·1287~1288)을 물리치고 조공국으로 남음. 전에는 송·원 도형이 덮었다"
+  note: "대월이 원의 세 차례 침입(1258·1285·1287~1288)을 물리치고 조공국으로 남음. 전에는 송·원 도형이 덮었다(기대 none → 동남아 E3 VT 2026-11-09에 쩐 왕조가 생겨 고침)"
 
 - name: "하노이(통킹)"
   at: [105.85, 21.03]
@@ -1026,11 +1024,10 @@
 - name: "하노이(통킹)"
   at: [105.85, 21.03]
   year: 1500
-  expect: none
-  region: east-asia
+  expect: later-le-dynasty
   url: "https://en.wikipedia.org/wiki/Lam_S%C6%A1n_uprising"
   from: "작업 N1a 결과노트"
-  note: "1427년 12월 동관 맹약 뒤 명군 철수, 1428년 레 왕조. 전에는 명 도형이 1368~1644년 내내 덮었다"
+  note: "1427년 12월 동관 맹약 뒤 명군 철수, 1428년 레 왕조. 전에는 명 도형이 1368~1644년 내내 덮었다(기대 none → 동남아 E3 VT 2026-11-09에 후 레 왕조를 1427년부터 칠해 고침)"
 
 - name: "빈(응에안, 교지 남부)"
   at: [105.68, 18.67]

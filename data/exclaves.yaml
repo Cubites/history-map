@@ -5981,3 +5981,68 @@
   at: [115.14, 4.66]
   reason: '템부롱 구역(약 1,358 km²). 1890년 사라왁이 림방강 유역을 차지해 브루나이 땅이 둘로 갈라진 뒤의 실제 월경지(1900년부터는 E1 줄이 이어 받음)'
   sources: ["위키백과 Brunei https://en.wikipedia.org/wiki/Brunei", "위키백과 History of Sarawak https://en.wikipedia.org/wiki/History_of_Sarawak"]
+
+# ── 동남아 E3 BM (버마 1293~1766, 2026-11-09) ──
+
+# ── 동남아 E3 SC (시암·캄보디아 1293~1766, 2026-11-09) ──
+
+# ── 동남아 E3 VT (베트남·참파 1293~1766, 2026-11-09) ──
+- entity: mac-dynasty
+  from: 1533
+  to: 1543
+  at: [104.9, 19.24]
+  reason: '1533 레 중흥(응우옌 낌)이 타인호아를 차지해 막 왕조의 남쪽 땅(응에안~빈딘)이 탕롱 쪽 본토와 갈라짐. 1543 응에안·하띤을 잃을 때까지(동남아 E3 VT 2026-11-09)'
+  sources: ['https://en.wikipedia.org/wiki/L%C3%AA%E2%80%93M%E1%BA%A1c_War']
+
+- entity: mac-dynasty
+  from: 1543
+  to: 1554
+  at: [107.85, 15.81]
+  reason: '1543 레 중흥군이 응에안·하띤까지 차지해 막 왕조의 투언화·꽝남(~빈딘)이 본토와 갈라짐. 1554 찐 끼엠이 두 진을 되찾을 때까지(동남아 E3 VT 2026-11-09)'
+  sources: ['https://en.wikipedia.org/wiki/L%C3%AA%E2%80%93M%E1%BA%A1c_War']
+
+# ── 동남아 E3 LO (라오 1293~1766, 2026-11-09) ──
+
+# ── 동남아 E3 M1 (말레이 반도·수마트라·보르네오 북부·필리핀 1293~1766, 2026-11-09) ──
+- entity: brunei
+  from: 1368
+  to: 1485
+  at: [115.14, 4.66]
+  reason: '템부롱 구역(약 1,358 km²). 1368~1484년에는 지금 브루나이 땅만 칠하고 그 사이 림방강 유역(지금 사라왁주 림방 구역)은 사라왁 조각과 함께 비워 두어(브루나이 확장은 1485년 볼키아 즉위부터 — E3 창구 ② Q-B) 동쪽 템부롱이 떨어져 보임. 브루나이만 바닷길로 이어진 같은 나라 땅'
+  sources: ["위키백과 Brunei Empire https://en.wikipedia.org/wiki/Brunei_Empire", "위키백과 Brunei https://en.wikipedia.org/wiki/Brunei"]
+
+# ── 동남아 E3 I1 (자와·칼리만탄·술라웨시·말루쿠·티모르 1293~1766, 2026-11-09) ──
+- entity: voc
+  from: 1667
+  to: 1679
+  at: [122.28, 0.75]
+  reason: '고론탈로(약 12,126 km²): 1667년 봉가야 조약으로 VOC 쪽이 된 땅으로, 남·서술라웨시 마카사르와는 토착 왕국들의 중술라웨시를 사이에 두고 바닷길로만 이어졌다(1679년 미나하사 조약 뒤 북술라웨시와 한 덩이)'
+  sources: ["위키백과 Treaty of Bongaya https://en.wikipedia.org/wiki/Treaty_of_Bongaya", "위키백과 Central Sulawesi https://en.wikipedia.org/wiki/Central_Sulawesi"]
+
+- entity: voc
+  from: 1679
+  to: 1767
+  at: [123.4, 0.61]
+  reason: '북술라웨시 미나하사·고론탈로(약 25,182 km²): 1679년 미나하사 조약으로 VOC가 마나도 요새로 다스린 땅으로, 마카사르와는 중술라웨시 왕국들 땅을 사이에 두고 바닷길로만 이어졌다(E2 1767~ 줄과 이음)'
+  sources: ["위키백과 Minahasa people https://en.wikipedia.org/wiki/Minahasa_people", "위키백과 Central Sulawesi https://en.wikipedia.org/wiki/Central_Sulawesi"]
+
+- entity: voc
+  from: 1743
+  to: 1752
+  at: [107.92, -6.95]
+  reason: '서자와(프리앙안·체리본, 약 37,990 km²): 1680년부터 VOC 땅이고 1743년 마타람이 동자와를 넘기자 동자와와 함께 VOC 땅이 되었으나, 그 사이 중자와는 1755년 기얀티 조약까지 마타람 술탄국 땅이었다(바타비아와 서자와는 한 덩이)'
+  sources: ["위키백과 Mataram Sultanate https://en.wikipedia.org/wiki/Mataram_Sultanate"]
+
+- entity: voc
+  from: 1752
+  to: 1755
+  at: [112.1, -7.63]
+  reason: '동자와(약 41,968 km²): 1743년 마타람이 넘긴 땅으로, 1752년 반튼까지 더해 커진 서자와 쪽과는 1755년 기얀티 조약 전까지 마타람 술탄국의 중자와를 사이에 두고 북해안 바닷길로 이어졌다'
+  sources: ["위키백과 Mataram Sultanate https://en.wikipedia.org/wiki/Mataram_Sultanate"]
+
+- entity: portuguese-timor
+  from: 1702
+  to: 1767
+  at: [124.28, -9.32]
+  reason: '오에쿠시(약 733 km²): 포르투갈 첫 총독이 1702년 자리 잡은 리파우가 있는 서티모르 북해안 땅으로, 섬 동쪽과는 토착 왕국·VOC 쪽 서티모르를 사이에 두고 바닷길로 이어졌다(E2 1767~ 줄과 이음)'
+  sources: ["위키백과 Portuguese Timor https://en.wikipedia.org/wiki/Portuguese_Timor"]

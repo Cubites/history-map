@@ -1458,3 +1458,56 @@
 - { type: vassal_of, subject: spanish-philippines, object: spain, from: 1767, to: 1897 } # 1565 레가스피(앞은 E3), 1898-12-10 파리 조약으로 미국에 넘김
 - { type: vassal_of, subject: sulu-sultanate, object: spain, from: 1851, to: 1897 } # 1851-04-19 스페인과 맺은 조약(보호 수용), 1876 홀로 점령, 1878-07-22 의정서로 스페인 주권 인정, 1898 파리 조약으로 미국 쪽(1899 베이츠 조약은 E1 앞 — 지도 밖)
 - { type: successor_of, subject: american-philippines, object: spanish-philippines, from: 1898, to: null } # 1898-12-10 파리 조약. sarawak·north-borneo·brunei의 영국 보호(1888~)와 american-philippines의 미국 종속(1898~)은 E1 줄이 덮어 더하지 않음
+
+# ── 동남아 E3 BM (버마 1293~1766, 2026-11-09) ──
+- { type: successor_of, subject: pinya-kingdom, object: pagan-empire, from: 1297, to: null } # 1297-12 마인사잉 세 형제가 바간 왕을 폐위
+- { type: successor_of, subject: ava-kingdom, object: pinya-kingdom, from: 1365, to: null } # 1364 샨 군대의 사가잉·핀야 약탈 뒤 사가잉 왕실이 두 왕실을 합쳐 아바에 도읍
+- { type: successor_of, subject: konbaung-dynasty, object: toungoo-dynasty, from: 1752, to: null } # 1752-03 항따와디가 아바를 함락한 해 알라웅브야가 쉐보에서 일어섬
+- { type: vassal_of, subject: shan-states, object: toungoo-dynasty, from: 1557, to: 1751 } # 1557 바인나웅의 샨 소국 정복(결정 Q1), 1752-03 아바 함락까지 사오파들이 따웅우 왕실에 조공
+- { type: vassal_of, subject: shan-states, object: konbaung-dynasty, from: 1754, to: 1766 } # 1754-01 아바 탈환 뒤 가까운 샨 소국부터 알라웅브야에게 신복(위키백과 Konbaung–Hanthawaddy War). 1767~1885는 E2 줄
+
+# ── 동남아 E3 SC (시암·캄보디아 1293~1766, 2026-11-09) ──
+- { type: successor_of, subject: ayutthaya-kingdom, object: lavo-kingdom, from: 1351, to: null } # 1351-03-04 우통(라마티보디 1세)이 라보·수판부리를 묶어 아유타야를 세움
+- { type: successor_of, subject: cambodia, object: khmer-empire, from: 1431, to: null } # 1431 포냐 얏이 앙코르를 버리고 남쪽으로 옮김
+- { type: successor_of, subject: thailand, object: ayutthaya-kingdom, from: 1767, to: null } # 1767-04-07 아유타야 함락, 같은 해 말 딱신이 톤부리에서 다시 일으킴(COMMON P2 예외 — 뒤 나라 첫 해부터)
+- { type: vassal_of, subject: sukhothai-kingdom, object: ayutthaya-kingdom, from: 1378, to: 1437 } # 1378 보롬마라차티랏 1세의 원정 뒤 신하의 예, 1438 흡수
+- { type: vassal_of, subject: ayutthaya-kingdom, object: toungoo-dynasty, from: 1564, to: 1567 } # 1564 흰 코끼리 전쟁 뒤 종속, 1568 마힌의 반란
+- { type: vassal_of, subject: ayutthaya-kingdom, object: toungoo-dynasty, from: 1569, to: 1583 } # 1569 함락 뒤 마하탐마라차 아래 종속, 1584 나레수안의 독립 선언(D14 — 땅 그대로)
+- { type: vassal_of, subject: lan-na, object: toungoo-dynasty, from: 1558, to: 1726 } # 1558 바인나웅의 치앙마이 정복, 1727 치앙마이 반란으로 떨어져 나옴(창구 ② Q2 — 란나 색 그대로)
+- { type: vassal_of, subject: lan-na, object: konbaung-dynasty, from: 1763, to: 1766 } # 1763 콘바웅의 치앙마이 재정복 — 람빵·프래·난(직할 다섯 도는 콘바웅 색), 1767~1774는 E2 줄
+- { type: vassal_of, subject: cambodia, object: ayutthaya-kingdom, from: 1594, to: 1617 } # 1594 롱벡 함락 뒤 조공, 1618 쩨이 쩻타 2세가 조공을 끊음(https://en.wikipedia.org/wiki/Post-Angkor_period)
+
+# ── 동남아 E3 VT (베트남·참파 1293~1766, 2026-11-09) ──
+# 이음: 호 왕조는 쩐 왕조의 왕위를 빼앗아 이음(1400-03). 후 레 왕조와 호 왕조 사이는 명 교지(1407~1426)라 이음 줄을 넣지 않음(글로)
+- { type: successor_of, subject: ho-dynasty, object: tran-dynasty, from: 1400, to: null } # 1400 호꾸이리 즉위
+# 책봉: 막 왕조는 1540 명에 항복해 안남 도통사를 받음(위키백과 Mạc dynasty — Lê–Mạc War는 1541), 명이 무너진 1644 앞까지. 청과의 관계·판두랑가의 응우옌 주 종속(1693~, 지도는 응우옌 주 색)은 글로
+- { type: vassal_of, subject: mac-dynasty, object: ming, from: 1540, to: 1643 }
+
+# ── 동남아 E3 LO (라오 1293~1766, 2026-11-09) ──
+# 란쌍의 버마 지배기(기본값 D14 — 땅 그대로 관계만): 1574 바인나웅이 비엔티안을 잡아 왕을 세움, 1597 무렵까지(위키백과 Lan Xang)
+- { type: vassal_of, subject: lan-xang, object: toungoo-dynasty, from: 1574, to: 1597 }
+# 1707 란쌍이 루앙프라방·비엔티안으로 갈라짐, 1713 남쪽이 비엔티안 왕국에서 참파삭 왕국으로 갈라짐(위키백과 Kingdom of Champasak)
+- { type: successor_of, subject: luang-prabang-kingdom, object: lan-xang, from: 1707, to: null }
+- { type: successor_of, subject: vientiane-kingdom, object: lan-xang, from: 1707, to: null }
+- { type: successor_of, subject: champasak-kingdom, object: vientiane-kingdom, from: 1713, to: null }
+# 1765 콘바웅 원정으로 루앙프라방·비엔티안 복속(E2 기본값 D8 줄 1767~과 이어지는 앞 두 해)
+- { type: vassal_of, subject: luang-prabang-kingdom, object: konbaung-dynasty, from: 1765, to: 1766 }
+- { type: vassal_of, subject: vientiane-kingdom, object: konbaung-dynasty, from: 1765, to: 1766 }
+
+# ── 동남아 E3 M1 (말레이 반도·수마트라·보르네오 북부·필리핀 1293~1766, 2026-11-09) ──
+- { type: vassal_of, subject: malacca-sultanate, object: ming, from: 1405, to: 1510 } # 1405 무렵 명이 파라메스와라를 왕으로 책봉(정화 함대 기항), 1511 포르투갈의 도읍 점령까지 조공(위키백과 Malacca Sultanate). 조공은 색이 아님(결정 10)
+- { type: vassal_of, subject: brunei, object: majapahit, from: 1369, to: 1401 } # 1369년 무렵부터 마자파힛에 조공, 1402 무렵 명에 사신을 보내 벗어남(위키백과 Brunei Empire — R-B 2-5)
+- { type: successor_of, subject: johor-sultanate, object: malacca-sultanate, from: 1528, to: null } # 1528 마흐무드 샤의 아들 알라웃딘 리아야트 샤 2세가 조호르에 술탄국을 세움
+- { type: successor_of, subject: perak-sultanate, object: malacca-sultanate, from: 1528, to: null } # 1528 마흐무드 샤의 아들 무자파르 샤 1세가 페락에 술탄국을 세움
+- { type: vassal_of, subject: portuguese-malacca, object: portugal, from: 1511, to: 1640 } # 1511-08 알부케르케의 점령, 고아의 인도 총독 아래, 1641-01-14 VOC가 함락(위키백과 Portuguese Malacca)
+- { type: vassal_of, subject: spanish-philippines, object: spain, from: 1565, to: 1766 } # 1565 레가스피의 세부 정착(E2 줄 1767~1897과 두 줄 — COMMON P2)
+
+# ── 동남아 E3 I1 (자와·칼리만탄·술라웨시·말루쿠·티모르 1293~1766, 2026-11-09) ──
+- { type: vassal_of, subject: voc, object: dutch-republic, from: 1602, to: 1766 } # 1602-03-20 공화국 의회 특허로 세운 회사(1767~ 줄은 E2에 없음 — 1795 바타비아 공화국 뒤는 E2 dutch-east-indies 줄)
+- { type: vassal_of, subject: portuguese-timor, object: portugal, from: 1702, to: 1766 } # 1702 리파우에 첫 총독(E2 줄 1767~ 이어짐)
+- { type: successor_of, subject: pajang-sultanate, object: demak-sultanate, from: 1568, to: null } # 1568 무렵 하디위자야가 드막의 왕권을 쥐고 파장으로 옮김
+- { type: successor_of, subject: mataram-sultanate, object: pajang-sultanate, from: 1586, to: null } # 1586 무렵 마타람의 군주가 파장을 꺾음
+- { type: vassal_of, subject: banjar-sultanate, object: demak-sultanate, from: 1526, to: 1567 } # 1526 드막의 도움으로 개종·즉위, 처음엔 드막에 조공(드막이 무너진 뒤 파장에는 조공하지 않음 — 위키 영어판 Banjar Sultanate)
+- { type: vassal_of, subject: banten-sultanate, object: demak-sultanate, from: 1527, to: 1567 } # 1527 드막과 손잡고 반튼을 차지, 1568 드막에서 독립(위키 한국어판 반튼 술탄국)
+- { type: vassal_of, subject: banten-sultanate, object: voc, from: 1684, to: 1751 } # 1684-04-17 술탄 하지와 VOC의 조약으로 보호를 받음, 1752 VOC의 봉토(지도는 1752부터 voc 색)
+- { type: vassal_of, subject: mataram-sultanate, object: voc, from: 1749, to: 1754 } # 1749 파쿠부워노 2세가 죽기 전 왕국 주권을 VOC에 넘김, 1755 기얀티 조약(지도는 동자와 1743·중자와 1755부터 voc 색)
