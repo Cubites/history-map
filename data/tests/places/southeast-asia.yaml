@@ -871,3 +871,165 @@
   expect: portuguese-timor
   url: https://en.wikipedia.org/wiki/Portuguese_Timor
   from: 동남아 E3 I1 결과노트
+
+# ── 동남아 E4 VC (베트남 북·중부·참파 1292 이전, 2026-11-09) ──
+- name: 광저우
+  at: [113.26, 23.13]
+  year: -150
+  expect: nanyue
+  url: https://en.wikipedia.org/wiki/Nanyue
+  from: 동남아 E4 VC 결과노트
+- name: 하노이
+  at: [105.85, 21.03]
+  year: -150
+  expect: nanyue
+  url: https://en.wikipedia.org/wiki/Nanyue
+  from: 동남아 E4 VC 결과노트
+- name: 하노이
+  at: [105.85, 21.03]
+  year: 920
+  expect: khuc-clan
+  url: https://en.wikipedia.org/wiki/Kh%C3%BAc_family
+  from: 동남아 E4 VC 결과노트
+- name: 하노이
+  at: [105.85, 21.03]
+  year: 950
+  expect: ngo-dynasty
+  url: https://en.wikipedia.org/wiki/Ng%C3%B4_dynasty
+  from: 동남아 E4 VC 결과노트
+- name: 하노이
+  at: [105.85, 21.03]
+  year: 1000
+  expect: early-le-dynasty
+  url: https://en.wikipedia.org/wiki/Early_L%C3%AA_dynasty
+  from: 동남아 E4 VC 결과노트
+- name: 하노이
+  at: [105.85, 21.03]
+  year: 1100
+  expect: ly-dynasty
+  url: https://en.wikipedia.org/wiki/L%C3%BD_dynasty
+  from: 동남아 E4 VC 결과노트
+- name: 후에
+  at: [107.59, 16.46]
+  year: 500
+  expect: champa
+  url: https://en.wikipedia.org/wiki/L%C3%A2m_%E1%BA%A4p
+  from: 동남아 E4 VC 결과노트
+- name: 디엔비엔푸
+  at: [103.02, 21.39]
+  year: 1100
+  expect: ly-dynasty
+  url: https://en.wikipedia.org/wiki/L%C3%BD_dynasty
+  from: 동남아 E4 VC 결과노트
+
+# ── 동남아 E4 SK (타이·캄보디아·라오·메콩 삼각주 1292 이전, 2026-11-09) ──
+- name: 앙코르보레이
+  at: [104.98, 10.99]
+  year: 500
+  expect: funan
+  url: https://en.wikipedia.org/wiki/Funan
+  from: 동남아 E4 SK 결과노트
+- name: 삼보르 프레이 쿡
+  at: [105.04, 12.87]
+  year: 650
+  expect: chenla
+  url: https://en.wikipedia.org/wiki/Chenla
+  from: 동남아 E4 SK 결과노트
+- name: 앙코르
+  at: [103.86, 13.36]
+  year: 900
+  expect: khmer-empire
+  url: https://en.wikipedia.org/wiki/Khmer_Empire
+  from: 동남아 E4 SK 결과노트
+- name: 코랏
+  at: [102.10, 14.97]
+  year: 1100
+  expect: khmer-empire
+  url: https://en.wikipedia.org/wiki/Suryavarman_I
+  from: 동남아 E4 SK 결과노트
+- name: 롭부리
+  at: [100.65, 14.80]
+  year: 900
+  expect: lavo-kingdom
+  url: https://en.wikipedia.org/wiki/Lavo_Kingdom
+  from: 동남아 E4 SK 결과노트
+- name: 람푼
+  at: [99.01, 18.58]
+  year: 1000
+  expect: hariphunchai
+  url: https://en.wikipedia.org/wiki/Hariphunchai
+  from: 동남아 E4 SK 결과노트
+- name: 수코타이
+  at: [99.82, 17.01]
+  year: 1250
+  expect: sukhothai-kingdom
+  url: https://en.wikipedia.org/wiki/Sukhothai_Kingdom
+  from: 동남아 E4 SK 결과노트
+- name: 치앙마이
+  at: [98.99, 18.79]
+  year: 1292
+  expect: lan-na
+  url: https://en.wikipedia.org/wiki/Lan_Na
+  from: 동남아 E4 SK 결과노트
+
+# ── 동남아 E4 BI (버마·해양 1292 이전, 2026-11-09) ──
+- name: 바간
+  at: [94.86, 21.17]
+  year: 1100
+  expect: pagan-empire
+  url: https://en.wikipedia.org/wiki/Pagan_Kingdom
+  from: 동남아 E4 BI 결과노트
+- name: 바고
+  at: [96.48, 17.34]
+  year: 1200
+  expect: pagan-empire
+  url: https://en.wikipedia.org/wiki/Pagan_Kingdom
+  from: 동남아 E4 BI 결과노트
+- name: 바고
+  at: [96.48, 17.34]
+  year: 1290
+  expect: hanthawaddy-kingdom
+  url: https://en.wikipedia.org/wiki/Hanthawaddy_kingdom
+  from: 동남아 E4 BI 결과노트
+- name: 시트웨
+  at: [92.90, 20.15]
+  year: 1000
+  expect: arakan-kingdom
+  url: https://en.wikipedia.org/wiki/History_of_Rakhine
+  from: 동남아 E4 BI 결과노트
+- name: 시트웨
+  at: [92.90, 20.15]
+  year: 1350
+  expect: arakan-kingdom
+  url: https://en.wikipedia.org/wiki/History_of_Rakhine
+  from: 동남아 E4 BI 결과노트
+- name: 자카르타
+  at: [106.85, -6.21]
+  year: 500
+  expect: tarumanagara
+  url: https://en.wikipedia.org/wiki/Tarumanagara
+  from: 동남아 E4 BI 결과노트
+- name: 족자카르타
+  at: [110.37, -7.80]
+  year: 800
+  expect: mataram-kingdom
+  url: https://en.wikipedia.org/wiki/Mataram_Kingdom
+  from: 동남아 E4 BI 결과노트
+- name: 케디리
+  at: [112.01, -7.82]
+  year: 1100
+  expect: kediri-kingdom
+  url: https://en.wikipedia.org/wiki/Kediri_Kingdom
+  from: 동남아 E4 BI 결과노트
+- name: 팔렘방
+  at: [104.76, -2.99]
+  year: 900
+  expect: srivijaya
+  url: https://en.wikipedia.org/wiki/Srivijaya
+  from: 동남아 E4 BI 결과노트
+- name: 알로르스타르
+  at: [100.37, 6.12]
+  year: 900
+  expect: srivijaya
+  url: https://en.wikipedia.org/wiki/Srivijaya
+  from: 동남아 E4 BI 결과노트

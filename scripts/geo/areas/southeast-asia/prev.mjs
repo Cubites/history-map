@@ -16,7 +16,10 @@ import { extensions as CENTRAL_ASIA_EXTENSIONS } from '../central-asia.mjs';
 
 // E3 뼈대 측정(e3/skel/prev-overlap.txt, 2026-11-09): 1293~1766에 걸치는 다른 권역 버전 가운데 1 km² 넘게 겹치는 것은 yuan(1290~1367) 1,414 · ming(1368~1643) 154~1,375, 1407~1426 명 교지 172,010 · qing(1644~) 1,375~1,414 km²뿐
 //   — yuan·ming을 더함(그 밖의 bengal-sultanate·mughal-empire·manipur·ahom-kingdom 원래 모양은 1 km² 안). 1767 뒤 해에는 둘 다 버전이 없어 E1·E2 버전은 바뀌지 않는다
-export const PREV_IDS = ['yuan', 'ming', 'qing', 'roc', 'prc'];
+// E4 뼈대 측정(e4/skel/prev-overlap.txt, 2026-11-09): 천문 −203~1292에 걸치는 다른 권역 버전 가운데 1 km² 넘게 겹치는 것은 중국 왕조의 교지(서한 −110~·신·후한·오·위·서진·동진·송(유송)·남제·양·진·수·당 ~906 —
+//   90,531~90,686 km², 오 263~270·서진 271~279·촉 221~262의 103~154 km² 부스러기 포함), 남한(911~970)·송(971~1278) 154 km², 티베트(618~842) 1,123 km², 몽골 제국(1254~1270)·원(1271~) 1,221~1,414 km² 띠뿐
+//   — 그 왕조들을 더함(앞 시대 해에만 버전이 있어 1293 뒤 E1~E3 버전은 바뀌지 않는다 — 뼈대 gen:geo 0줄로 확인)
+export const PREV_IDS = ['western-han', 'xin', 'eastern-han', 'wu', 'shu', 'cao-wei', 'western-jin', 'eastern-jin', 'liu-song', 'southern-qi', 'liang', 'chen', 'sui', 'tang', 'tibet', 'southern-han', 'song', 'mongol-empire', 'yuan', 'ming', 'qing', 'roc', 'prc'];
 const PREV_AREAS = [CHINA_VERSIONS, INNER_ASIA_VERSIONS, SOUTH_ASIA_VERSIONS, SOUTH_ASIA_EXTENSIONS, CENTRAL_ASIA_EXTENSIONS];
 // 이 권역 권역 파일에 있는 도형(시대 파일이 가져올 수 없는 권역 파일 나라 — 좌표는 shapes.mjs 한 곳): [나라 id, from, to(미포함), 도형]
 const OWN_FIXED = [['south-vietnam', 1955, 1976, [[SOUTH_VIETNAM]]]];

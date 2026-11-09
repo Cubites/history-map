@@ -1511,3 +1511,28 @@
 - { type: vassal_of, subject: banten-sultanate, object: demak-sultanate, from: 1527, to: 1567 } # 1527 드막과 손잡고 반튼을 차지, 1568 드막에서 독립(위키 한국어판 반튼 술탄국)
 - { type: vassal_of, subject: banten-sultanate, object: voc, from: 1684, to: 1751 } # 1684-04-17 술탄 하지와 VOC의 조약으로 보호를 받음, 1752 VOC의 봉토(지도는 1752부터 voc 색)
 - { type: vassal_of, subject: mataram-sultanate, object: voc, from: 1749, to: 1754 } # 1749 파쿠부워노 2세가 죽기 전 왕국 주권을 VOC에 넘김, 1755 기얀티 조약(지도는 동자와 1743·중자와 1755부터 voc 색)
+
+# ── 동남아 E4 VC (베트남 북·중부·참파 1292 이전, 2026-11-09) ──
+# 남월–서한(책봉)·쿡씨–후량·남한(명목상 절도사)·응오~리–송(책봉·조공)·참파–중국 왕조(조공)·참파–크메르(되돌려진 점령)는 관계를 넣지 않음(결정 10 — 항목 mapNote·글)
+- { type: successor_of, subject: ngo-dynasty, object: khuc-clan, from: 938, to: null } # 938 즈엉딘응에의 사위 응오꾸옌이 끼에우꽁띠엔을 꺾고 박당강에서 남한을 물리침
+- { type: successor_of, subject: dinh-dynasty, object: ngo-dynasty, from: 968, to: null } # 968 딘보린이 십이사군을 아우르고 황제를 칭함
+- { type: successor_of, subject: early-le-dynasty, object: dinh-dynasty, from: 980, to: null } # 980 레호안이 딘 왕조의 왕위를 넘겨받음
+- { type: successor_of, subject: ly-dynasty, object: early-le-dynasty, from: 1009, to: null } # 1009 리꽁우언(리 태조)이 전 레 왕조를 이어 즉위
+- { type: successor_of, subject: tran-dynasty, object: ly-dynasty, from: 1225, to: null } # 1225 리 소황이 쩐 타이 똥에게 왕위를 넘김
+
+# ── 동남아 E4 SK (타이·캄보디아·라오·메콩 삼각주 1292 이전, 2026-11-09) ──
+- { type: vassal_of, subject: chenla, object: funan, from: 550, to: 626 } # 『수서』 진랍전 '본디 부남의 속국' — 바바바르만 1세가 일어선 550 무렵부터, 627 무렵 이샤나바르만 1세가 부남을 아우름
+- { type: successor_of, subject: land-chenla, object: chenla, from: 706, to: null } # 706 무렵 첸라가 둘로 나뉨(『신당서』 진랍전 '신룡 뒤') — 북쪽 내륙
+- { type: successor_of, subject: water-chenla, object: chenla, from: 706, to: null } # 같은 해 남쪽 물가(옛 부남 땅)
+- { type: successor_of, subject: khmer-empire, object: land-chenla, from: 802, to: null } # 802 자야바르만 2세가 쿨렌산에서 즉위해 두 나라를 합침
+- { type: successor_of, subject: khmer-empire, object: water-chenla, from: 802, to: null } # 〃(남쪽 수진랍 땅도 이때 합침으로 봄)
+- { type: vassal_of, subject: lavo-kingdom, object: khmer-empire, from: 946, to: 1052 } # 창구 ② Q7 — 크메르의 종주, '궁정 칭호일 뿐'이라는 반대 학설은 mapNote
+- { type: vassal_of, subject: lavo-kingdom, object: khmer-empire, from: 1181, to: 1218 } # 창구 ② Q7 — 자야바르만 7세 때 다시 종주(1218 그가 죽은 뒤 풀림)
+- { type: successor_of, subject: lan-na, object: hariphunchai, from: 1292, to: null } # 1292 멩라이가 람푼(하리푼차이)을 차지해 란나의 중심으로 삼음
+
+# ── 동남아 E4 BI (버마·해양 1292 이전, 2026-11-09) ──
+- { type: successor_of, subject: sunda-kingdom, object: tarumanagara, from: 669, to: null } # 669 타루스바와가 타루마나가라 왕위를 이어 나라 이름을 순다로 바꾸었다고 전함(R-B B3 — 932 건국설은 summary)
+- { type: successor_of, subject: kediri-kingdom, object: mataram-kingdom, from: 1019, to: null } # 1019 다르마왕사의 사위 아이를랑가가 무너진 마타람 왕국의 동부 자와를 다시 묶음(위키백과 영어판 Kahuripan)
+- { type: successor_of, subject: singhasari, object: kediri-kingdom, from: 1222, to: null } # 1222 간테르 전투 — 켄 아록이 크르타자야를 꺾음
+- { type: successor_of, subject: majapahit, object: singhasari, from: 1293, to: null } # 1293-11 크르타나가라의 사위 라덴 위자야가 즉위(COMMON P8 — 뒤 나라 첫 해)
+- { type: successor_of, subject: mrauk-u, object: arakan-kingdom, from: 1430, to: null } # 1430 민소몬이 므라우우에 새 도읍(렝옛 왕조를 이음 — F4)

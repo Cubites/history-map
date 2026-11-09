@@ -44,7 +44,7 @@ import { E3_BM_IDS, E3_SC_IDS, E3_VT_IDS, E3_LO_IDS, E3_M1_IDS, E3_I1_IDS } from
 
 const { build, geomOfUnit, joinTables, makeTable } = tableKit('early-modern');
 
-const E3_START = 1293; // 이 시대 파일의 첫 해(1293년 말 모습 — 마자파힛 건국·원의 자와 원정 철수). 그 앞(1292 이전)은 E4 시대 파일 몫
+const E3_START = 1293; // 이 시대 파일의 첫 해(1293년 말 모습 — 마자파힛 건국·원의 자와 원정 철수). 그 앞(1292 이전)은 E4 시대 파일 ancient.mjs 몫(같은 id를 1292까지 칠하면 joinEras가 앞에 붙임)
 const E3_END = 1767; // 마지막 표의 끝(미포함) — 1767년부터는 E2 시대 파일 colonial.mjs
 
 // ── 조각 소유표 도우미 (colonial.mjs와 같은 꼴 — E3 뼈대가 옮김) ─────────────────────────────
@@ -132,8 +132,8 @@ own(BM_LOWER, [[1539, 'toungoo-dynasty'], [1599, null], [1613, 'toungoo-dynasty'
 ownSplit('BM_바고', ['MM-02'], [['북', BM_CUT_PROME]], '남', { 북: [[E3_START, 'pagan-empire'], [1297, 'pinya-kingdom'], [1365, 'ava-kingdom'], [1510, 'toungoo-dynasty']], 남: [[E3_START, 'hanthawaddy-kingdom']] }, { from: E3_START, to: 1539 });
 // 테나세림: 아유타야·항따와디·따웅우가 번갈아 다툰 땅이라 비움(D5), 콘바웅이 1757~1759 이름뿐인 지배 뒤 1760 위쪽 바닷가를 쥐고 1765 몬 저항을 몰아냄 — 1765부터 콘바웅(E2 1767과 이음)
 own(BM_TENASSERIM, [[E3_START, null], [1765, 'konbaung-dynasty']]);
-// 아라칸: 렝옛 왕조(항목 없음)는 비움, 1430 민소몬이 므라우우에 도읍(from 1429→1430). 치타공 1459~1665는 아래 BM_OUTSIDE
-own(BM_ARAKAN, [[E3_START, null], [1430, 'mrauk-u']]);
+// 아라칸: 렝옛 왕조까지 E4 항목 arakan-kingdom(같은 id — ancient.mjs BI 칸의 788~1292에 이음, 1406~1429 왕의 벵골 망명기도 같은 색), 1430 민소몬이 므라우우에 도읍(from 1429→1430). 치타공 1459~1665는 아래 BM_OUTSIDE
+own(BM_ARAKAN, [[E3_START, 'arakan-kingdom'], [1430, 'mrauk-u']]);
 // 샨 고원: 사오파 소국들이 따로 섬(Q1 — 비움), 1557 바인나웅이 샨 소국들을 정복한 뒤 따웅우·콘바웅에 매인 소국 묶음(관계 vassal_of)
 own(BM_SHAN, [[E3_START, null], [1557, 'shan-states']]);
 own(BM_KARENNI, [[E3_START, null]]);
@@ -143,7 +143,6 @@ const BM_voids = () => [
   V(E3_START, 1752, ...BM_HILLS), // 카친·친 구릉: 바간·핀야·아바·따웅우가 이 구릉을 다스렸다는 서술이 없음(Q3 — 모닌·모가웅 같은 샨 소국과 카친·친 부족 땅)
   V(E3_START, 1557, ...BM_SHAN), // 샨 고원: 사오파 소국들이 따로 섬(Q1 — 1557 따웅우 정복 앞은 하나의 나라가 아님, 1527 모닌의 아바 점령도 소국 연합)
   V(E3_START, E3_END, ...BM_KARENNI), // 카야: 카레니 소국들의 지배 서술 없음(D17 — 1767부터 karenni-states)
-  V(E3_START, 1430, ...BM_ARAKAN), // 아라칸: 렝옛 왕조(1251~1429)는 항목이 없음(1406~1429 왕이 벵골로 피한 동안 아바·항따와디가 번갈아 다툼)
   V(E3_START, 1765, ...BM_TENASSERIM), // 테나세림: 수코타이·아유타야·항따와디·따웅우가 번갈아 다툰 땅(D5 — 직접 지배가 굳지 않음)
   V(1599, 1613, ...BM_LOWER), // 하버마: 1599 페구 함락 뒤 아라칸·포르투갈(시리암의 데 브리투)·따웅우·프롬 세력이 갈라 쥠(D7)
 ];
@@ -384,7 +383,7 @@ const I1_own = (ids, line) => {
   own(ids, line);
 };
 // ── 자와·발리 (결정 10 — 직접 지배 땅만, 기본값 B1~B8) ──
-// 동자와: 1293-11 라덴 위자야 즉위(마자파힛, 도읍 트로울란) · 1527 드막이 다하(크디리)를 쳐 마자파힛 끝 · 1568 파장 · 1586 마타람 · 1743 파쿠부워노 2세가 북해안과 동자와를 VOC에 넘김
+// 동자와: 1293-11 라덴 위자야 즉위(마자파힛, 도읍 트로울란) · 1527 드막이 다하(케디리)를 쳐 마자파힛 끝 · 1568 파장 · 1586 마타람 · 1743 파쿠부워노 2세가 북해안과 동자와를 VOC에 넘김
 I1_own(['ID-JI'], [[E3_START, 'majapahit'], [1527, 'demak-sultanate'], [1568, 'pajang-sultanate'], [1586, 'mataram-sultanate'], [1743, 'voc']]);
 // 발리(8,232 km² — 1만 미만): 1343 가자 마다의 정복 뒤 마자파힛 땅(1293부터 근사), 1527 뒤 겔겔 등 발리 왕국 땅이라 비움(E2 1844 앞 비움과 이음)
 I1_own(['ID-BA'], [[E3_START, 'majapahit'], [1527, null]]);

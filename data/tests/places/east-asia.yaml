@@ -1297,11 +1297,11 @@
 - name: "광저우(번우)"
   at: [113.26, 23.13]
   year: -150
-  expect: none
+  expect: nanyue
   region: east-asia
   url: "https://en.wikipedia.org/wiki/Han_conquest_of_Nanyue"
   from: "작업 N3 결과노트"
-  note: "남월의 도읍. 기원전 111년(천문 연도 -110) 한이 정복"
+  note: "남월의 도읍. 기원전 111년(천문 연도 -110) 한이 정복 (기대 none → 동남아 E4 VC 2026-11-09에 남월 nanyue가 생겨 고침 — 창구 ② Q1)"
 
 - name: "광저우(번우)"
   at: [113.26, 23.13]
@@ -1323,11 +1323,11 @@
 - name: "하노이(통킹)"
   at: [105.85, 21.03]
   year: -150
-  expect: none
+  expect: nanyue
   region: east-asia
   url: "https://en.wikipedia.org/wiki/Han_conquest_of_Nanyue"
   from: "작업 N3 결과노트"
-  note: "남월 땅(교지)"
+  note: "남월 땅(교지) (기대 none → 동남아 E4 VC 2026-11-09에 남월 nanyue가 생겨 고침 — 창구 ② Q1)"
 
 - name: "하노이(통킹)"
   at: [105.85, 21.03]
@@ -1340,11 +1340,11 @@
 - name: "난닝"
   at: [108.37, 22.82]
   year: -150
-  expect: none
+  expect: nanyue
   region: east-asia
   url: "https://en.wikipedia.org/wiki/Han_conquest_of_Nanyue"
   from: "작업 N3 결과노트"
-  note: "남월 땅(광시)"
+  note: "남월 땅(광시) (기대 none → 동남아 E4 VC 2026-11-09에 남월 nanyue가 생겨 고침 — 창구 ② Q1)"
 
 - name: "푸저우"
   at: [119.30, 26.08]
