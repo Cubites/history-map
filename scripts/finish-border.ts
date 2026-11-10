@@ -13,11 +13,13 @@
 //            찾는 판정은 test:geo places와 같은 함수(warStaleReason)·같은 기록(.cache/build-data-wars/built.json, war-inputs.ts)이다:
 //            입력 해시가 빌드 기록과 다름 / 기록 없음 / public/data의 결과가 기록과 다름 / wars/<id>.json 없음 / wars.json에 없는 전쟁. 고를 것이 없으면 건너뜀
 //   test     npm run test:geo     검사(인자는 그대로 넘김: --ci 등)
-// 사용: npm run finish:border -- [--from <단계>] [--only <단계,…>] [--no-wars|--wars] [--budget <초>] [test:geo 인자…] [-- test:geo 인자…]
+// 사용: npm run finish:border -- [--from <단계>] [--only <단계,…>] [--no-wars|--wars] [--no-test] [--budget <초>] [test:geo 인자…] [-- test:geo 인자…]
 //   --from <단계>    그 단계부터 끝까지(앞 단계는 건너뜀). 예산 때문에 끊긴 뒤 안내대로 이어 부를 때 씀
 //   --only <단계,…>  고른 단계만(--from과 함께 쓰지 못함). test:geo의 --only와 이름이 겹치므로 test:geo의 --only·--skip은 `--` 뒤에 쓴다
 //   --no-wars        gen:wars를 건너뜀(영토 국경이 아닐 때). rebuild는 그래도 함
 //   --wars           gen:wars 자동 건너뜀을 끄고 늘 돌림(--no-wars와 함께 못 씀). --only에 wars를 넣어도 자동 건너뜀을 하지 않음
+//   --no-test        test:geo를 건너뜀(생성만 하고 검사는 따로 — 예: 인계 폴더 geo-receipt로 한 번). gen:wars 자동 건너뜀은 그대로 둔다
+//                    (`--only geo,wars,rebuild`는 wars를 직접 고른 것이라 자동 건너뜀이 꺼짐). test:geo 인자와 함께 못 씀
 //   test:geo에 --changed를 넘기면(예: `-- --changed`) 검사도 바뀐 것만 한다(test:geo 머리 주석). 단계 끝 메인 검사는 지금처럼 전체로 둔다
 //   --budget <초>    이 명령의 시간 예산(기본 270). 다음 단계를 시작하기 전에 (지금까지 시간 + 그 단계의 지난 시간)이 예산을 넘으면 시작하지 않고 이어서 부를 줄과 함께 끝낸다(종료 3)
 //   그 밖의 인자는 모두 test:geo로 넘긴다(`--` 뒤는 무엇이든). 이어서 줄도 test:geo 인자 앞에 `--`를 붙여 낸다
@@ -46,7 +48,7 @@ const NPM_SCRIPT: Partial<Record<Step, string>> = { geo: 'gen:geo', wars: 'gen:w
 const DEFAULT_BUDGET = 270;
 
 const USAGE =
-  '사용: npm run finish:border -- [--from <단계>] [--only <단계,…>] [--no-wars|--wars] [--budget <초>] [test:geo 인자…] [-- test:geo 인자…]  (단계: geo·wars·rebuild·test)';
+  '사용: npm run finish:border -- [--from <단계>] [--only <단계,…>] [--no-wars|--wars] [--no-test] [--budget <초>] [test:geo 인자…] [-- test:geo 인자…]  (단계: geo·wars·rebuild·test)';
 
 class UsageError extends Error {}
 
@@ -56,6 +58,8 @@ interface Args {
   noWars: boolean;
   /** gen:wars 자동 건너뜀을 끔 */
   wars: boolean;
+  /** test:geo를 건너뜀(gen:wars 자동 건너뜀은 그대로) */
+  noTest: boolean;
   budget: number;
   testArgs: string[];
 }
@@ -66,7 +70,7 @@ function parseStep(v: string | undefined, flag: string): Step {
 }
 
 function parseArgs(argv: string[]): Args {
-  const a: Args = { from: null, only: null, noWars: false, wars: false, budget: DEFAULT_BUDGET, testArgs: [] };
+  const a: Args = { from: null, only: null, noWars: false, wars: false, noTest: false, budget: DEFAULT_BUDGET, testArgs: [] };
   for (let i = 0; i < argv.length; i++) {
     const f = argv[i];
     if (f === '--') {
@@ -80,6 +84,7 @@ function parseArgs(argv: string[]): Args {
       a.only = [...(a.only ?? []), ...v.split(',').filter(Boolean).map((s) => parseStep(s, '--only'))];
     } else if (f === '--no-wars') a.noWars = true;
     else if (f === '--wars') a.wars = true;
+    else if (f === '--no-test') a.noTest = true;
     else if (f === '--budget') {
       const n = Number(argv[++i]);
       if (!Number.isFinite(n) || n <= 0) throw new UsageError('--budget에는 0보다 큰 초가 필요함');
@@ -89,6 +94,7 @@ function parseArgs(argv: string[]): Args {
   }
   if (a.from && a.only) throw new UsageError('--from과 --only는 함께 쓸 수 없음');
   if (a.noWars && a.wars) throw new UsageError('--no-wars와 --wars는 함께 쓸 수 없음');
+  if (a.noTest && a.testArgs.length) throw new UsageError(`--no-test와 test:geo 인자(${a.testArgs.join(' ')})는 함께 쓸 수 없음`);
   return a;
 }
 
@@ -239,9 +245,9 @@ function main(): number {
   }
 
   const wanted: Step[] = args.only ? STEPS.filter((s) => args.only!.includes(s)) : args.from ? STEPS.slice(STEPS.indexOf(args.from)) : [...STEPS];
-  const plan = wanted.filter((s) => !(s === 'wars' && args.noWars));
+  const plan = wanted.filter((s) => !(s === 'wars' && args.noWars) && !(s === 'test' && args.noTest));
   if (plan.length === 0) {
-    console.error(`할 단계가 없음 (${args.only ? '--only로 고른 단계가 모두 --no-wars로 빠짐' : '--from 이후 단계가 없음'})
+    console.error(`할 단계가 없음 (${args.only ? '--only로 고른 단계가 모두 --no-wars·--no-test로 빠짐' : '--from 이후 단계가 없음'})
 ${USAGE}`);
     return 2;
   }
@@ -262,6 +268,7 @@ ${USAGE}`);
     const parts = ['npm run finish:border --', ...(args.only ? ['--only', plan.slice(plan.indexOf(from)).join(',')] : ['--from', from])];
     if (args.noWars) parts.push('--no-wars');
     if (args.wars) parts.push('--wars');
+    if (args.noTest) parts.push('--no-test');
     if (args.budget !== DEFAULT_BUDGET) parts.push('--budget', String(args.budget));
     if (args.testArgs.length) parts.push('--', ...args.testArgs.map(q));
     return `이어서: ${parts.join(' ')}`;

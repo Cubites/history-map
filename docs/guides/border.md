@@ -94,6 +94,7 @@ node ../history-map-handoff/tools/versions2.mjs <repo 절대경로> 476 2026 100
 ```
 npm run finish:border                          # gen:geo → gen:wars → 낡은 전쟁만 재빌드 → test:geo. 단계마다 한 줄, 하위 출력은 .cache/finish-border/<단계>.log
 npm run finish:border -- --no-wars --ci        # 영토 국경이 아니면 gen:wars 생략(재빌드 판정은 함). 나머지 인자는 test:geo로(--ci 등)
+npm run finish:border -- --no-test             # 생성만 하고 test:geo는 건너뜀(검사는 따로 한 번 — 인계 폴더 geo-receipt). gen:wars 자동 건너뜀은 그대로(`--only geo,wars,rebuild`는 wars를 직접 고른 것이라 자동 건너뜀이 꺼짐). test:geo 인자와 함께 못 씀
 npm run finish:border -- --wars                # gen:wars를 억지로 돈다. 인자가 없어도 마지막 gen:wars 성공 때(기록 없으면 upstream) 뒤 바뀐 해가 전쟁(1·2차 대전) 기간과 안 겹치면 이유 한 줄과 함께 저절로 건너뜀(고대·중세 단계). `--only`에 wars를 넣어도 늘 돈다
 npm run finish:border -- --only test -- --only places   # test:geo 자신의 --only·--skip은 `--` 뒤에 쓴다(앞의 --only는 이 명령의 단계 고르기)
 npm run finish:border -- --from rebuild        # 예산(--budget 초, 기본 270) 때문에 종료 3으로 끊기면 화면의 "이어서: …" 줄 그대로 부른다 (--only rebuild,test처럼 단계를 골라도 됨)
