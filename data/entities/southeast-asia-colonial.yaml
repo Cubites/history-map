@@ -23,7 +23,7 @@
     - 1767년 아유타야를 무너뜨림
     - 1785년 아라칸을 병합해 가장 넓은 땅을 가짐
     - 세 차례 영국-버마 전쟁(1824~1826·1852·1885)으로 무너짐
-  startEvents: []
+  startEvents: [alaungpaya-1752]
   endEvents: [third-anglo-burmese-war-1885]
   basis:
     type: primary_source
@@ -45,7 +45,7 @@
     - 1430년 민소몬 왕이 도읍을 세움
     - 1459~1665년 치타공을 다스리다 1666년 무굴 제국에 잃음
     - 1785년 콘바웅 왕조에 병합됨
-  startEvents: []
+  startEvents: [mrauk-u-1430]
   endEvents: [arakan-conquest-1784]
   basis:
     type: primary_source
@@ -70,7 +70,7 @@
     - 1775년 카윌라와 짜반이 시암의 딱신과 손잡고 버마군을 몰아냄
     - 버마의 침입을 막는 시암의 북쪽 울타리였고, 19세기 말 영국 목재 회사가 들어옴
     - 1899년 몬톤 파얍으로 시암에 편입
-  startEvents: []
+  startEvents: [mangrai-lan-na-1262]
   endEvents: [monthon-reform-1892]
   basis:
     type: primary_source
@@ -92,7 +92,7 @@
     - 1584~1688년 네 여왕의 치세에 중국·일본·유럽 상인이 드나든 교역 항구
     - 1786년 시암에 정복되어 큰 대포 파야타니를 방콕에 빼앗김
     - 1808년 반란 뒤 빠따니·농찍·야링·얄라·라만·라응애·사이부리 일곱 므앙으로 나뉨
-  startEvents: []
+  startEvents: [patani-1457]
   endEvents: [monthon-reform-1892]
   basis:
     type: primary_source
@@ -116,7 +116,7 @@
     - 1765년 콘바웅 왕조에 복속, 1778년 시암 편에 서서 비엔티안 공격에 가담
     - 1887년 흑기군이 도읍을 약탈하자 프랑스 부영사 오귀스트 파비가 왕을 피신시킴
     - 1893년 프랑스 보호령이 되고 왕가는 라오스의 왕으로 이어짐
-  startEvents: []
+  startEvents: [lan-xang-split-1694]
   endEvents: [monthon-reform-1892]
   basis:
     type: primary_source
@@ -139,7 +139,7 @@
     - 1779년 톤부리 왕국에 정복되어 에메랄드 불상을 톤부리로 빼앗김
     - 아누웡 왕(재위 1805~1828)이 1826년 시암에 맞서 반란을 일으킴
     - 1828년 패망해 도읍이 허물어지고 시암에 합병됨
-  startEvents: []
+  startEvents: [lan-xang-split-1694]
   endEvents: [anouvong-1826]
   basis:
     type: primary_source
@@ -161,7 +161,7 @@
     - 1718년 지금 로이엣의 수완나품에 코랏 고원 안쪽 첫 라오 무앙을 세움
     - 1778년 톤부리 왕국에 정복되어 시암에 조공함
     - 1893년 메콩강 왼쪽 기슭을 프랑스에 넘기고 1904년 끝남
-  startEvents: []
+  startEvents: [lan-xang-split-1694]
   endEvents: [franco-siamese-treaties-1904]
   basis:
     type: primary_source
@@ -186,7 +186,7 @@
     - 1527년 막 당 중에게 왕위를 빼앗긴 뒤 1533년 응우옌 낌이 레 왕족을 세워 다시 일어남
     - 레 황제는 이름만 남고 찐 씨 주가 탕롱의 부(府)에서 나라를 다스림
     - 1786년 떠이선 군이 북진해 찐 씨 정권이 무너짐
-  startEvents: []
+  startEvents: [le-loi-1427]
   endEvents: [tay-son-north-1786]
   basis:
     type: primary_source
@@ -209,7 +209,7 @@
     - 17~18세기 참파 땅과 메콩 삼각주로 남진해 자딘과 하띠엔 막 씨 땅까지 넓힘
     - 1788년 응우옌 아인이 사이공을 되찾고 프랑스·시암의 도움으로 힘을 키움
     - 1801년 푸쑤언을 되찾고 이듬해 탕롱까지 차지함
-  startEvents: []
+  startEvents: [nguyen-lords-1600]
   endEvents: [gia-long-1787]
   basis:
     type: primary_source
@@ -280,7 +280,7 @@
     - 말루쿠의 정향·육두구 독점과 자와의 쌀·커피·설탕으로 이익을 냄
     - 1755년 기얀티 조약, 1757년 살라티가 조약으로 마타람을 나눔
     - 1780~1784년 영국과의 전쟁으로 큰 손해를 입음
-  startEvents: []
+  startEvents: [dutch-east-india-company-1602]
   endEvents: [voc-dissolution-1795]
   basis:
     type: primary_source
@@ -305,7 +305,7 @@
     - 1762~1764년 칠년 전쟁 때 영국의 마닐라 점령
     - 1872년 카비테 반란, 1896년 필리핀 혁명
     - 1898년 미국-스페인 전쟁과 파리 조약
-  startEvents: []
+  startEvents: [legazpi-1565]
   endEvents: [philippine-revolution-1896]
   basis:
     type: primary_source
@@ -328,7 +328,7 @@
     - 1851년 스페인과 맺은 조약으로 보호를 받아들임
     - 1876년 스페인군의 홀로 점령
     - 1878년 오버벡 양허와 스페인 주권을 인정한 의정서
-  startEvents: []
+  startEvents: [sulu-1405]
   endEvents: [moro-sulu-1903]
   basis:
     type: primary_source

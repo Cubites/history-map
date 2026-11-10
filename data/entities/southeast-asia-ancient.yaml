@@ -23,8 +23,8 @@
     - 동선 문화의 청동 북은 남중국에서 인도네시아까지 퍼짐
     - 타이 동북부 반 치앙 유적에서 청동기와 무늬 토기가 나옴
     - 베트남 중·남부 바닷가의 사후인 문화는 독무덤과 옥 귀걸이를 남김
-  startEvents: []
-  endEvents: []
+  startEvents: [phung-nguyen-2000bc]
+  endEvents: [indian-ocean-trade-200bc]
   basis:
     type: primary_source
     refs: ["위키백과 Đông Sơn culture", "위키백과 Phùng Nguyên culture", "위키백과 Ban Chiang", "위키백과 Sa Huỳnh culture"]
@@ -46,8 +46,8 @@
     - 기원전 179년 홍강 유역의 어우락을 아울러 교지·구진 두 군을 두었다고 전함
     - 판위의 왕궁 터와 둘째 왕 조말의 무덤이 지금 광저우에 남아 있음
     - 기원전 111년 한 무제의 원정으로 무너짐
-  startEvents: []
-  endEvents: []
+  startEvents: [nanyue-zhao-tuo-204bc]
+  endEvents: [nanyue-zhao-tuo-204bc]
   basis:
     type: primary_source
     refs: ["위키백과 Nanyue", "위키백과 Zhao Tuo", "위키백과 Han conquest of Nanyue", "『사기』 남월열전"]
@@ -69,8 +69,8 @@
     - 찌에우꽝푹이 늪지에서 버티다 550년 교주의 중심지를 되찾음
     - 571년 리펏뜨(후 리 남데)가 찌에우꽝푹을 꺾고 왕위를 이음
     - 602년 수에 항복해 끝남
-  startEvents: []
-  endEvents: []
+  startEvents: [ly-bi-van-xuan-544]
+  endEvents: [ly-bi-van-xuan-544]
   basis:
     type: primary_source
     refs: ["위키백과 Early Lý dynasty", "위키백과 Lý Nam Đế", "위키백과 Triệu Quang Phục", "『대월사기전서』"]
@@ -92,8 +92,8 @@
     - 930년 남한이 쳐들어와 쿡트어미를 붙잡아 감
     - 931년 즈엉딘응에가 남한군을 몰아내고 절도사가 됨
     - 937년 끼에우꽁띠엔이 즈엉딘응에를 죽이고 자리를 빼앗음
-  startEvents: []
-  endEvents: []
+  startEvents: [khuc-autonomy-906]
+  endEvents: [bach-dang-938]
   basis:
     type: primary_source
     refs: ["위키백과 Khúc family", "위키백과 Khúc Thừa Dụ", "위키백과 Dương Đình Nghệ", "『대월사기전서』"]
@@ -115,8 +115,8 @@
     - 944년 응오꾸옌이 죽자 외척 즈엉 씨가 왕위를 빼앗음
     - 950년 응오꾸옌의 두 아들이 왕위를 되찾아 함께 다스림
     - 965년 뒤 열두 군벌이 갈라선 십이사군 시기로 넘어감
-  startEvents: []
-  endEvents: []
+  startEvents: [bach-dang-938]
+  endEvents: [dinh-bo-linh-965]
   basis:
     type: primary_source
     refs: ["위키백과 Ngô dynasty", "위키백과 Ngô Quyền", "위키백과 Battle of Bạch Đằng (938)", "『대월사기전서』"]
@@ -137,8 +137,8 @@
     - 나라 이름을 다이꼬비엣, 도읍을 산으로 둘러싸인 호아루로 정함
     - 973년 송의 책봉을 받아 교지군왕이 됨
     - 979년 딘보린이 궁에서 살해됨
-  startEvents: []
-  endEvents: []
+  startEvents: [dinh-bo-linh-965]
+  endEvents: [le-hoan-980]
   basis:
     type: primary_source
     refs: ["위키백과 Đinh dynasty", "위키백과 Đinh Bộ Lĩnh", "『대월사기전서』"]
@@ -159,8 +159,8 @@
     - 981년 박당강과 랑선 쪽에서 송의 군대를 물리침
     - 982년 참파의 도읍 인드라푸라를 쳐 약탈함
     - 송과 화친해 책봉을 받고 조공함
-  startEvents: []
-  endEvents: []
+  startEvents: [le-hoan-980]
+  endEvents: [ly-dynasty-1009]
   basis:
     type: primary_source
     refs: ["위키백과 Early Lê dynasty", "위키백과 Lê Hoàn", "위키백과 Song–Đại Cồ Việt war", "『대월사기전서』"]
@@ -182,8 +182,8 @@
     - 1069년 참파를 쳐 지리·마링·보찐 세 현을 얻음
     - 1075~1077년 리트엉끼엣이 송을 먼저 치고 이어 쳐들어온 송군을 막음
     - 1070년 문묘를 세우고 1075년 처음으로 과거를 치름
-  startEvents: []
-  endEvents: []
+  startEvents: [ly-dynasty-1009]
+  endEvents: [tran-dynasty-1225]
   basis:
     type: primary_source
     refs: ["위키백과 Lý dynasty", "위키백과 Lý Thái Tổ", "위키백과 Lý Thường Kiệt", "『대월사기전서』"]
@@ -205,8 +205,8 @@
     - 옥에오에서 로마 금화·인도 구슬·중국 거울이 나와 먼 바다 교역을 보여 줌
     - 『양서』 부남전 등 중국 사서가 나라의 내력과 사신 왕래를 전함
     - 힌두교와 불교가 함께 퍼지고 산스크리트 비문을 남김
-  startEvents: []
-  endEvents: []
+  startEvents: [funan-founding-50]
+  endEvents: [isanavarman-funan-616]
   basis:
     type: primary_source
     refs: ["『양서』 부남전", "『수서』 진랍전", "위키백과 Funan"]
@@ -227,8 +227,8 @@
     - 『수서』 진랍전은 본디 부남의 속국이었다고 적음
     - 왓푸(지금 라오스 참파삭)의 산을 왕실의 성지로 받듦
     - 627년 무렵 부남을 아우르고, 706년 무렵 둘로 나뉨
-  startEvents: []
-  endEvents: []
+  startEvents: [chenla-rise-550]
+  endEvents: [chenla-split-706]
   basis:
     type: primary_source
     refs: ["『수서』 진랍전", "『신당서』 진랍전", "위키백과 Chenla"]
@@ -248,8 +248,8 @@
     - 중국 사서는 육진랍(陸眞臘) 또는 문단(文單)이라 부름
     - 메콩강 가운데 유역과 왓푸 둘레가 중심
     - 8세기 여러 번 당에 사신을 보냄
-  startEvents: []
-  endEvents: []
+  startEvents: [chenla-split-706]
+  endEvents: [jayavarman-ii-802]
   basis:
     type: primary_source
     refs: ["『신당서』 진랍전", "위키백과 Chenla"]
@@ -269,8 +269,8 @@
     - 옛 부남의 바닷가와 항구 땅을 이어받음
     - 8세기 말 바다 건너 자와 쪽의 침입을 받았다고 전함
     - 자야바르만 2세가 자와에서 돌아와 나라를 다시 묶었다고 전함
-  startEvents: []
-  endEvents: []
+  startEvents: [chenla-split-706]
+  endEvents: [jayavarman-ii-802]
   basis:
     type: primary_source
     refs: ["『신당서』 진랍전", "위키백과 Chenla"]
@@ -290,8 +290,8 @@
     - 중심 도시는 나콘빠톰·우텅·롭부리
     - 은화에 새긴 '스리 드바라바티'라는 글에서 이름을 얻음
     - 돌로 새긴 법륜 같은 상좌부 불교 미술을 남김
-  startEvents: []
-  endEvents: []
+  startEvents: [dvaravati-600]
+  endEvents: [dvaravati-600]
   basis:
     type: primary_source
     refs: ["위키백과 Dvaravati"]
@@ -312,8 +312,8 @@
     - 라보에서 온 짜마테위 여왕이 세웠다는 전승이 있음
     - 왓 프라탓 하리푼차이 같은 몬 불교 사원을 남김
     - 1292년 멩라이에게 정복됨
-  startEvents: []
-  endEvents: []
+  startEvents: [lavo-hariphunchai-648]
+  endEvents: [mangrai-lan-na-1262]
   basis:
     type: primary_source
     refs: ["위키백과 Hariphunchai", "위키백과 Lan Na"]
@@ -336,8 +336,8 @@
     - 벽돌 성곽과 원통 모양 불탑을 남김
     - 832년 남조의 군대가 할린을 약탈
     - 2014년 '쀼 고대 도시'로 유네스코 세계유산에 오름
-  startEvents: []
-  endEvents: []
+  startEvents: [pyu-beikthano-200bc]
+  endEvents: [anawrahta-pagan-1044]
   basis:
     type: primary_source
     refs: ["위키백과 영어판 Pyu city-states", "『신당서』 표국전"]
@@ -359,8 +359,8 @@
     - 웨탈리의 찬드라 왕조가 남긴 동전과 아난다찬드라 비문
     - 11~13세기 바간 왕국에 조공
     - 1406~1429년 왕이 벵골로 피함
-  startEvents: []
-  endEvents: []
+  startEvents: [waithali-arakan-370]
+  endEvents: [mrauk-u-1430]
   basis:
     type: primary_source
     refs: ["아난다찬드라 비문", "『아라칸 연대기』"]
@@ -381,8 +381,8 @@
     - 5세기 푸르나와르만 왕의 비문 일곱 개
     - 투구 비문에 운하를 판 일을 적음
     - 669년 순다 왕국으로 이어졌다고 전함
-  startEvents: []
-  endEvents: []
+  startEvents: [kutai-tarumanagara-358]
+  endEvents: [sunda-kingdom-669]
   basis:
     type: primary_source
     refs: ["투구 비문", "치아루테운 비문", "위키백과 영어판 Tarumanagara"]
@@ -403,8 +403,8 @@
     - 9세기 보로부두르(불교)와 프람바난(힌두교)을 세움
     - 929년 무렵 도읍을 동부 자와로 옮김
     - 1016년 무렵 와라와리 왕의 공격으로 궁정이 무너짐
-  startEvents: []
-  endEvents: []
+  startEvents: [sanjaya-mataram-732]
+  endEvents: [airlangga-1016]
   basis:
     type: primary_source
     refs: ["캉갈 비문(732)", "만트야시 비문(907)", "위키백과 영어판 Mataram Kingdom"]
@@ -425,8 +425,8 @@
     - 1045년 장갈라와 판잘루(케디리)로 나뉨
     - 조요보요 왕 때 『바라타유다』가 지어짐
     - 1222년 간테르 전투에서 무너짐
-  startEvents: []
-  endEvents: []
+  startEvents: [airlangga-1016]
+  endEvents: [ken-arok-singhasari-1222]
   basis:
     type: primary_source
     refs: ["푸찬간 비문(1041)", "『파라라톤』", "위키백과 영어판 Kahuripan"]
@@ -447,8 +447,8 @@
     - 1222년 간테르 전투에서 케디리를 꺾음
     - 1275년 말라유 원정(파말라유)
     - 1284년 발리 정복
-  startEvents: []
-  endEvents: []
+  startEvents: [ken-arok-singhasari-1222]
+  endEvents: [kertanagara-pamalayu-1275]
   basis:
     type: primary_source
     refs: ["『파라라톤』", "『나가라케르타가마』", "위키백과 싱하사리 왕국"]
@@ -470,8 +470,8 @@
     - 682년 크둑 부킷 비문
     - 의정이 머문 대승 불교의 중심지
     - 1025년 촐라 왕조의 습격
-  startEvents: []
-  endEvents: []
+  startEvents: [srivijaya-682]
+  endEvents: [kertanagara-pamalayu-1275]
   basis:
     type: primary_source
     refs: ["크둑 부킷 비문(682)", "의정 『남해기귀내법전』", "위키백과 영어판 Srivijaya"]

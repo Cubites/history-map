@@ -44,7 +44,7 @@
     - 1557~1885년 따웅우·콘바웅 왕조에 조공
     - 1922년 연방 샨 국으로 묶임
     - 1947년 팡롱 협정에 서명
-  startEvents: []
+  startEvents: [bayinnaung-1551]
   endEvents: [burma-independence-1947]
   basis:
     type: primary_source
@@ -154,7 +154,7 @@
     - 1863년 노로돔 왕이 프랑스 보호를 받아들이고, 1907년 방콕 조약으로 서북을 되찾음
     - 1953년 11월 9일 노로돔 시아누크 왕 아래 완전 독립
     - 1970년 크메르 공화국·1975년 민주 캄푸치아·1979년 캄푸치아 인민 공화국, 1993년 왕국으로
-  startEvents: []
+  startEvents: [angkor-abandoned-1431]
   endEvents: []
   basis:
     type: primary_source
@@ -290,7 +290,7 @@
     - 1874년 팡코르 조약 뒤 1875년 주재관 버치가 살해되어 페락 전쟁이 벌어짐
     - 주석 광산에 중국인 노동자가 많이 들어와 이포·타이핑이 커짐
     - 1895년 말레이 연합주에 들어감
-  startEvents: []
+  startEvents: [johor-perak-1528]
   endEvents: [malayan-union-1946]
   basis:
     type: primary_source
@@ -335,7 +335,7 @@
     - 느그리슴빌란은 1874년 숭아이우중부터 주재관을 받았고 1895년 지금 경계의 한 나라가 됨
     - 1896년부터 쿠알라룸푸르가 말레이 연합주의 수도가 됨
     - 슬랑오르는 술탄이, 느그리슴빌란은 족장들이 뽑는 왕이 다스림
-  startEvents: []
+  startEvents: [kelantan-selangor-1760]
   endEvents: [malayan-union-1946]
   basis:
     type: primary_source
@@ -357,7 +357,7 @@
     - 1824년 영국·네덜란드 조약으로 리아우와 갈라짐
     - 1855년 트믄궁 가문이 다스리게 되었고 1866년 조호르바루를 도읍으로 함
     - 1885년 조약으로 내정은 술탄이, 대외 관계는 영국이 맡음
-  startEvents: []
+  startEvents: [johor-perak-1528]
   endEvents: [malayan-union-1946]
   basis:
     type: primary_source
@@ -379,7 +379,7 @@
     - 1786년 크다 술탄이 페낭을 영국 동인도 회사에 내줌
     - 1821년 시암이 크다를 점령했고 1842년 술탄을 돌려보낸 뒤 프를리스를 떼어 냄
     - 1909년 7월 9일 방콕 조약이 발효해 종주가 시암에서 영국으로 바뀜
-  startEvents: []
+  startEvents: [kedah-islam-1136]
   endEvents: [malayan-union-1946]
   basis:
     type: primary_source
@@ -401,7 +401,7 @@
     - 1902년 영국·시암 협정으로 시암이 보낸 영국인 고문을 받아들임
     - 1909년 방콕 조약으로 종주가 시암에서 영국으로 바뀜
     - 1941년 12월 8일 일본군이 코타바루에 처음 올라 말레이 작전이 시작됨
-  startEvents: []
+  startEvents: [kelantan-selangor-1760]
   endEvents: [malayan-union-1946]
   basis:
     type: primary_source
@@ -423,7 +423,7 @@
     - 1909년 방콕 조약으로 종주가 시암에서 영국으로 바뀜
     - 1911년 술탄이 성문 헌법을 냄
     - 1919년 영국 고문을 받아들였고 1928년 농민 봉기가 일어남
-  startEvents: []
+  startEvents: [johor-bendahara-1699]
   endEvents: [malayan-union-1946]
   basis:
     type: primary_source
@@ -534,7 +534,7 @@
     - 1929년 세리아에서 석유가 나옴
     - 1959년 헌법, 1962년 브루나이 반란
     - 1984년 1월 1일 독립, 술탄 하사날 볼키아
-  startEvents: []
+  startEvents: [brunei-1368]
   endEvents: []
   basis:
     type: primary_source
@@ -626,7 +626,7 @@
     - 이스칸다르 무다(재위 1607~1636) 때 전성기
     - 후추 무역과 메카 순례 길목으로 번영
     - 1873~1904년 네덜란드와 아체 전쟁
-  startEvents: []
+  startEvents: [aceh-1496]
   endEvents: [aceh-war-1873]
   basis:
     type: primary_source
@@ -691,7 +691,7 @@
     - 1914년 네덜란드령과의 경계 판정
     - 1942~1945년 일본 점령
     - 1975년 11월 28일 독립 선포, 12월 7일 인도네시아 침공
-  startEvents: []
+  startEvents: [timor-kupang-1653]
   endEvents: [timor-decolonization-1974]
   basis:
     type: primary_source
