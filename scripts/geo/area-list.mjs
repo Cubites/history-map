@@ -15,6 +15,7 @@ import * as middleEastArea from './areas/middle-east.mjs';
 import * as southAsiaArea from './areas/south-asia.mjs';
 import * as centralAsiaArea from './areas/central-asia.mjs';
 import * as southeastAsiaArea from './areas/southeast-asia.mjs';
+import * as subSaharanAfricaArea from './areas/sub-saharan-africa.mjs';
 
 export const AREAS = [
   ['korea', koreaArea],
@@ -27,4 +28,5 @@ export const AREAS = [
   ['south-asia', southAsiaArea],
   ['central-asia', centralAsiaArea],
   ['southeast-asia', southeastAsiaArea],
+  ['sub-saharan-africa', subSaharanAfricaArea],
 ];

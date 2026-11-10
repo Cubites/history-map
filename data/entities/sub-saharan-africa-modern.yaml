@@ -1,0 +1,4 @@
+# sub-saharan-africa modern 나라 (시대 파일 scripts/geo/areas/sub-saharan-africa/modern.mjs의 짝 항목 파일, npm run new:area가 만든 빈 틀)
+# 시대·범위: 1975~현재: 포르투갈령 독립 뒤 나라들 (F1)
+# 나라를 넣을 때 아래 []를 지우고 - id: …로 적는다(docs/DATA_GUIDE.md). 권역 값은 파일 이름에서 정해진다(src/schema/regions.ts REGION_FILTER_OF의 'sub-saharan-africa-modern').
+[]

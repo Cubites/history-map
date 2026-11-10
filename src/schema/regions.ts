@@ -54,6 +54,8 @@ export const REGION_FILTER_OF: Record<string, RegionFilterUnit> = {
   'southeast-asia-colonial': 'southeast-asia', // 동남아 E2(2026-11-08): E1과 같은 새 단위 southeast-asia
   'southeast-asia-early-modern': 'southeast-asia', // 동남아 E3(2026-11-09): E1·E2와 같은 새 단위 southeast-asia
   'southeast-asia-ancient': 'southeast-asia', // 동남아 E4(2026-11-09): E1~E3과 같은 새 단위 southeast-asia
+  'sub-saharan-africa': 'middle-east', // 사하라 이남 0단계 빈 틀(2026-11-10). F1이 첫 나라를 넣을 때 새 단위 'sub-saharan-africa'를 REGION_FILTERS·REGION_FILTER_INFO에 더하고 이 줄을 그 단위로 바꾼다(docs/sub-saharan-africa/00-scope.md 2절)
+  'sub-saharan-africa-modern': 'middle-east', // 사하라 이남 0단계 빈 틀(2026-11-10). 위 줄과 함께 F1 첫머리에 새 단위로 바꾼다
 };
 
 /** 사건·전쟁 파일 이름 앞머리 → 권역. 앞에서부터 처음 맞는 것을 쓴다 (예: eu-01-revolutions-1789-1914.yaml → europe) */

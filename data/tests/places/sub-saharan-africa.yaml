@@ -1,0 +1,4 @@
+# sub-saharan-africa 권역 국경 지점 정답표 (평소 지도, npm run new:area가 만든 빈 틀)
+# 읽는 곳: scripts/test-geo (npm run test:geo -- --only places). 꼴은 docs/DATA_GUIDE.md의 정답표 절을 따른다. 나라·시대마다 몇 점인지는 시작 때 정한다(standards.md 9절 10).
+# 지점을 넣을 때 아래 []를 지우고 - name: …로 적는다. 해는 천문 연도(기원전 N년 = 1-N), 새 지점은 url을 반드시 단다.
+[]

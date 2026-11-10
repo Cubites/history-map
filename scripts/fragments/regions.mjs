@@ -168,6 +168,42 @@ export const FRAGMENT_REGIONS = {
     // 사바(필리핀이 주장, 말레이시아 실효 지배): countries-50m의 소속과 따로 견준다
     checkIds: ['MY-12'],
   },
+  // 사하라 이남 (2026-11-10, 0단계 등록): 이 지역 F1~F7이 이 조각과 칼선으로 나라를 만든다(docs/sub-saharan-africa/00-scope.md 2절).
+  // 북아프리카 여섯 나라(EGY·LBY·TUN·DZA·MAR·SAH)와 소코트라는 서아시아 조각(middle-east.topo.json)이라 under로 그대로 이웃으로 쓴다
+  // (수단·차드·니제르·말리·모리타니–북아프리카 이음매가 그 바깥선 그대로). 카나리아·마데이라는 유럽 조각이고 바다로 떨어져 있어 따로 맞출 이음매가 없다.
+  // 섬나라(마다가스카르·모리셔스·세이셸·코모로·카보베르데·상투메프린시페)와 세인트헬레나(NE 고유 adm0 SHN)는 adm0로, 프랑스 해외 땅(레위니옹·마요트)은 include로 넣는다.
+  // 남수단은 NE 고유 코드 SDS, 소말릴란드는 SOL(조각 하나, id도 SOL). 차고스(영국령 인도양, 동경 71~72°)와 프랑스령 남방 흩어진 섬은 상자 밖이라 넣지 않는다
+  'sub-saharan-africa': {
+    readme: 'README.sub-saharan-africa.md',
+    under: 'middle-east',
+    adm0: [
+      'SDN', 'SDS', 'ERI', 'DJI', 'ETH', 'SOM', 'SOL', 'KEN', 'UGA', 'RWA', 'BDI', 'TZA',
+      'MRT', 'MLI', 'NER', 'TCD', 'SEN', 'GMB', 'GNB', 'GIN', 'SLE', 'LBR', 'CIV', 'BFA', 'GHA', 'TGO', 'BEN', 'NGA',
+      'CMR', 'CAF', 'GNQ', 'GAB', 'COG', 'COD', 'AGO',
+      'ZMB', 'MWI', 'MOZ', 'ZWE', 'BWA', 'NAM', 'ZAF', 'LSO', 'SWZ',
+      'MDG', 'MUS', 'SYC', 'COM', 'CPV', 'STP', 'SHN', // 섬나라와 세인트헬레나·어센션·트리스탄다쿠냐(트리스탄은 육지 자료에 없어 빠짐)
+    ],
+    include: [{ adm0: 'FRA', prop: 'iso_3166_2', values: ['FR-RE', 'FR-YT'], note: '프랑스 해외 땅: 레위니옹·마요트({values}). 유럽 조각의 프랑스는 본토·코르시카뿐(해외 데파르트망은 유럽 상자 밖)이라 조각 id가 부딪치지 않는다.' }],
+    // 카보베르데 서쪽 끝(약 서경 25.4°)·케이프 남쪽 끝(약 남위 34.9°)·모리셔스 동쪽 끝(약 동경 57.8°)·말리 북쪽 끝(약 북위 25.0°)을 덮는다
+    box: [-26, -35, 58, 25.2],
+    idExamples: { iso: 'ZA-NC', adm1: '소말릴란드 `SOL`(NE 고유 adm0, 조각 하나)', adm0: ['SOL'] },
+    notes: [
+      '이음매: 북쪽은 서아시아 조각(under) 바깥선 그대로다. 수단–이집트는 북위 22° 선(NE 모양)이고 할라이브 삼각지대는 이집트 홍해주(`EG-BA`, 서아시아 조각), 비르타윌은 수단 홍해주(`SD-RS`)에 들어 있다. 아우주 띠는 차드 티베스티(`TD-TI`)다.',
+      '섬: 잔지바르 제도는 탄자니아 조각 다섯(`TZ-06`·`TZ-07`·`TZ-10`·`TZ-11`·`TZ-15`)으로 따로 떨어진다. 비오코는 적도기니 조각이다. 빌드가 쓰는 육지(50m·110m)와 닿지 않는 작은 섬(트리스탄다쿠냐·로드리게스·아갈레가·아노본·브라바 등, 모두 1,000 km² 미만)은 빠진다.',
+      '거친 곳: 수단 북부주·다르푸르·코르도판, 에티오피아 오로미아·소말리, 말리 팀북투, 니제르 아가데즈, 차드 보르쿠·티베스티, 콩고 민주 공화국(주 {count:COD}개)은 한 조각이 20만 km²를 넘어 식민 분할선·옛 나라 경계는 칼선이다.',
+      '조각 수: 수단 {count:SDN}·남수단 {count:SDS}·에티오피아 {count:ETH}·소말리아 {count:SOM}·케냐 {count:KEN}·탄자니아 {count:TZA}·우간다 {count:UGA}·나이지리아 {count:NGA}·말리 {count:MLI}·콩고 민주 공화국 {count:COD}·앙골라 {count:AGO}·남아프리카 {count:ZAF}·마다가스카르 {count:MDG}. 조각 사이의 내륙 구멍은 {micro}.',
+    ],
+    countries50m: {
+      SDN: 'Sudan', SDS: 'S. Sudan', ERI: 'Eritrea', DJI: 'Djibouti', ETH: 'Ethiopia', SOM: 'Somalia', SOL: 'Somaliland', KEN: 'Kenya', UGA: 'Uganda', RWA: 'Rwanda',
+      BDI: 'Burundi', TZA: 'Tanzania', MRT: 'Mauritania', MLI: 'Mali', NER: 'Niger', TCD: 'Chad', SEN: 'Senegal', GMB: 'Gambia', GNB: 'Guinea-Bissau', GIN: 'Guinea',
+      SLE: 'Sierra Leone', LBR: 'Liberia', CIV: "Côte d'Ivoire", BFA: 'Burkina Faso', GHA: 'Ghana', TGO: 'Togo', BEN: 'Benin', NGA: 'Nigeria', CMR: 'Cameroon',
+      CAF: 'Central African Rep.', GNQ: 'Eq. Guinea', GAB: 'Gabon', COG: 'Congo', COD: 'Dem. Rep. Congo', AGO: 'Angola', ZMB: 'Zambia', MWI: 'Malawi', MOZ: 'Mozambique',
+      ZWE: 'Zimbabwe', BWA: 'Botswana', NAM: 'Namibia', ZAF: 'South Africa', LSO: 'Lesotho', SWZ: 'eSwatini', MDG: 'Madagascar', MUS: 'Mauritius', SYC: 'Seychelles',
+      COM: 'Comoros', CPV: 'Cabo Verde', STP: 'São Tomé and Principe', SHN: 'Saint Helena',
+    },
+    // 소말릴란드(미승인, 법적으로 소말리아)와 비르타윌이 든 수단 홍해주: countries-50m의 소속과 따로 견준다
+    checkIds: ['SOL', 'SD-RS'],
+  },
 };
 
 /** 지역 이름 → 항목. 모르는 이름이면 오류(알려진 이름을 함께 적음) */
