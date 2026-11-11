@@ -202,17 +202,21 @@ export default function WorldMap({ data }: { data: StaticData }) {
   const s0 = useMemo(() => (size ? baseScale(size) : 1), [size]);
 
   // 화면 크기가 정해지거나 바뀌면 시점을 다시 맞춘다. 처음에는 동아시아(권역 필터를 고른 주소면 그 권역)가 꽉 차게,
-  // 주소에 나라가 있으면(바로 가기 링크, 2026-11-11) 그 나라의 그 해 영토로 맞춘다(아래 나라 이동과 같은 fitFocus).
-  // 이후(창 크기 변경, 모바일 회전)에는 보던 곳과 배율을 유지한다.
+  // 주소에 나라가 있으면(바로 가기 링크, 2026-11-11) 아래 나라 이동과 같게 맞춘다: PC는 첫 화면 배율 그대로 본토를 가운데에(2026-11-12),
+  // 휴대폰은 그 해 영토 전체가 보이게(fitFocus). 이후(창 크기 변경, 모바일 회전)에는 보던 곳과 배율을 유지한다.
   const sized = useRef<{ size: Size; s0: number } | null>(null);
   if (size && sized.current?.size !== size) {
     const prev = sized.current;
     const linked = !prev && selectedId && !warId ? focusBox(data.territories, selectedId, year) : null;
+    const shown = visibleSize(size);
+    const first = fitBounds(shown, s0, REGION_FILTER_INFO[regionFilter].bounds ?? EAST_ASIA_BOUNDS);
     viewRef.current = prev
       ? toView(size, s0, toGeoView(prev.size, prev.s0, viewRef.current))
       : linked
-        ? fitFocus(visibleSize(size), s0, linked.box)
-        : fitBounds(visibleSize(size), s0, REGION_FILTER_INFO[regionFilter].bounds ?? EAST_ASIA_BOUNDS);
+        ? isMobile()
+          ? fitFocus(shown, s0, linked.box)
+          : toView(shown, s0, { lon: linked.main.anchor[0], lat: linked.main.anchor[1], k: first.k })
+        : first;
     sized.current = { size, s0 };
   }
   const active = useMemo(() => activeTerritories(data.territories, year), [data.territories, year]);
@@ -798,10 +802,10 @@ export default function WorldMap({ data }: { data: StaticData }) {
     const bounds = REGION_FILTER_INFO[regionFilter].bounds;
     if (bounds && !warId) animateTo(fitBounds(visibleSize(size), s0, bounds));
   }, [regionFocus, regionFilter, warId, size, s0, animateTo]);
-  // 검색·패널·지도에서 나라(사건은 사건의 나라)를 고르면 그 나라의 그 해 영토로 옮기고 알맞게 확대·축소한다 (2026-11-11, fitFocus).
-  // 그 해 영토가 여럿이면(본토·떨어진 땅) 모두 합친 범위로 맞춘다. 영토가 없는 해면 옮기지 않는다.
-  // PC 나라 목록에서 골랐으면(floor) 첫 화면(동아시아가 꽉 차는 배율)보다 더 축소하지 않는다. 그 한계에 걸리는 큰 나라는
-  // 본토(가장 큰 영토)의 이름표 자리를 화면 가운데에 둔다(떨어진 땅까지 합친 범위의 가운데는 바다일 수 있음).
+  // 검색·패널·지도에서 나라(사건은 사건의 나라)를 고르면 그 나라의 그 해 영토로 옮긴다 (2026-11-11). 영토가 없는 해면 옮기지 않는다.
+  // PC(2026-11-12): 확대·축소하지 않고 지금 배율 그대로 본토(가장 큰 영토)의 이름표 자리를 화면 가운데로 옮긴다
+  // (떨어진 땅까지 합친 범위의 가운데는 바다일 수 있음).
+  // 휴대폰: 그 해 영토 전체(본토·떨어진 땅을 합친 범위)가 보이게 알맞게 확대·축소한다(fitFocus).
   // 전쟁 보기 중에는 전쟁 지역을 보고 있으므로 옮기지 않는다(검색은 전쟁 보기를 먼저 닫으므로 옮김).
   // 전쟁 보기에서 나오며 들어오기 전 위치로 돌아가는 이동(위 효과)보다 뒤에 두어, 이 이동이 그것을 대신하게 한다
   const mapFocus = useAppStore((s) => s.mapFocus);
@@ -813,12 +817,11 @@ export default function WorldMap({ data }: { data: StaticData }) {
     const found = focusBox(data.territories, mapFocus.entityId, year);
     if (!found) return;
     const shown = visibleSize(size);
-    let target = fitFocus(shown, s0, found.box);
-    if (mapFocus.floor && !isMobile()) {
-      const floor = fitBounds(shown, s0, EAST_ASIA_BOUNDS).k;
-      if (target.k < floor) target = toView(shown, s0, { lon: found.main.anchor[0], lat: found.main.anchor[1], k: floor });
-    }
-    animateTo(target);
+    animateTo(
+      isMobile()
+        ? fitFocus(shown, s0, found.box)
+        : toView(shown, s0, { lon: found.main.anchor[0], lat: found.main.anchor[1], k: viewRef.current.k }),
+    );
   }, [mapFocus, year, warId, data.territories, size, s0, animateTo]);
   // 전쟁 보기 중에 전쟁 기간 밖의 연도로 옮기면(사건 목록의 이동 등) 전쟁 보기를 닫는다
   useEffect(() => {

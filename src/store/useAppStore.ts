@@ -45,10 +45,9 @@ interface AppState {
   /**
    * 검색에서 나라·사건을 골랐을 때 지도를 그 나라 영토로 옮겨 달라는 요청 (2026-11-11).
    * n은 요청할 때마다 늘어, 같은 나라를 다시 골라도 다시 옮긴다. 영토는 그때의 연도(year)로 찾는다.
-   * floor가 참이면(PC 나라 목록에서 고름, 2026-11-11) 첫 화면(동아시아)보다 더 축소하지 않는다(WorldMap).
    * 주소에 나라(entity)가 있으면 처음부터 n=1로 두어 첫 화면을 그 나라로 맞춘다(바로 가기 링크)
    */
-  mapFocus: { entityId: string; n: number; floor?: boolean } | null;
+  mapFocus: { entityId: string; n: number } | null;
   /** 지도를 이 나라의 지금 연도 영토로 옮긴다 (mapFocus) */
   focusMap: (entityId: string) => void;
   setYear: (year: number) => void;
@@ -63,7 +62,7 @@ interface AppState {
    * 나라를 고르고 지도도 그 나라의 지금 연도 영토로 옮긴다 (select + focusMap, 2026-11-11).
    * 패널의 나라 목록·나라 링크, 지도에서 나라를 누를 때 쓴다. 연도를 함께 바꾸는 곳은 같은 처리 안에서 setYear를 불러도 된다(옮길 영토는 그려질 때의 연도로 찾음)
    */
-  selectFocus: (id: string, floor?: boolean) => void;
+  selectFocus: (id: string) => void;
   /** 사건의 나라를 고르고 그 사건을 패널에서 보여 준다 (지도의 전투 표시를 눌렀을 때) */
   focusEvent: (entityId: string, eventId: string) => void;
   hoverEvent: (id: string | null) => void;
@@ -130,7 +129,7 @@ export const useAppStore = create<AppState>((set) => ({
   exitWar: () =>
     set((s) => ({ warId: null, theaterId: null, frontDate: null, listYear: null, hoveredEventId: null, pinnedEventId: null, year: s.returnYear ?? s.year, returnYear: null })),
   select: (selectedId) => set({ selectedId, listYear: null, hoveredEventId: null, listHoverId: null, pinnedEventId: null, focusedEventId: null, showAllEvents: false }),
-  selectFocus: (selectedId, floor) =>
+  selectFocus: (selectedId) =>
     set((s) => ({
       selectedId,
       listYear: null,
@@ -139,7 +138,7 @@ export const useAppStore = create<AppState>((set) => ({
       pinnedEventId: null,
       focusedEventId: null,
       showAllEvents: false,
-      mapFocus: { entityId: selectedId, n: (s.mapFocus?.n ?? 0) + 1, floor },
+      mapFocus: { entityId: selectedId, n: (s.mapFocus?.n ?? 0) + 1 },
     })),
   focusEvent: (selectedId, eventId) => set({ selectedId, listYear: null, hoveredEventId: null, pinnedEventId: eventId, focusedEventId: eventId, showAllEvents: false }),
   hoverEvent: (hoveredEventId) => set({ hoveredEventId }),
