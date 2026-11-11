@@ -42,6 +42,13 @@ interface AppState {
   regionFilter: RegionFilter;
   /** 권역 단추를 누른 횟수. 누를 때마다(이미 고른 권역을 다시 눌러도) 지도를 그 권역 범위로 한 번 옮긴다 */
   regionFocus: number;
+  /**
+   * 검색에서 나라·사건을 골랐을 때 지도를 그 나라 영토로 옮겨 달라는 요청 (2026-11-11).
+   * n은 요청할 때마다 늘어, 같은 나라를 다시 골라도 다시 옮긴다. 영토는 그때의 연도(year)로 찾는다
+   */
+  mapFocus: { entityId: string; n: number } | null;
+  /** 지도를 이 나라의 지금 연도 영토로 옮긴다 (mapFocus) */
+  focusMap: (entityId: string) => void;
   setYear: (year: number) => void;
   /** 전쟁 보기 안에서 전선 날짜를 고른다. 연도가 다르면 연도도 함께 옮긴다 */
   setFront: (year: number, date: string | null) => void;
@@ -87,6 +94,8 @@ export const useAppStore = create<AppState>((set) => ({
   focusedEventId: null,
   showAllEvents: false,
   regionFocus: 0,
+  mapFocus: null,
+  focusMap: (entityId) => set((s) => ({ mapFocus: { entityId, n: (s.mapFocus?.n ?? 0) + 1 } })),
   listYear: null,
   setYear: (year) => set({ year, listYear: null, hoveredEventId: null, pinnedEventId: null, focusedEventId: null, frontDate: null }),
   setFront: (year, frontDate) => set({ year, frontDate, listYear: null }),

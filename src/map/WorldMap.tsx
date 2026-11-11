@@ -50,6 +50,7 @@ import {
   DEFAULT_LON,
   EAST_ASIA_BOUNDS,
   fitBounds,
+  fitFocus,
   invertPoint,
   MAX_ZOOM,
   MIN_ZOOM,
@@ -772,6 +773,26 @@ export default function WorldMap({ data }: { data: StaticData }) {
     const bounds = REGION_FILTER_INFO[regionFilter].bounds;
     if (bounds && !warId) animateTo(fitBounds(visibleSize(size), s0, bounds));
   }, [regionFocus, regionFilter, warId, size, s0, animateTo]);
+  // 검색에서 나라·사건을 고르면 그 나라의 그 해 영토로 옮기고 알맞게 확대·축소한다 (2026-11-11, fitFocus).
+  // 그 해 영토가 여럿이면(본토·떨어진 땅) 모두 합친 범위로 맞춘다. 영토가 없는 해면 옮기지 않는다.
+  // 전쟁 보기에서 나오며 들어오기 전 위치로 돌아가는 이동(위 효과)보다 뒤에 두어, 이 이동이 그것을 대신하게 한다
+  const mapFocus = useAppStore((s) => s.mapFocus);
+  const shownMapFocus = useRef(mapFocus?.n ?? 0);
+  useEffect(() => {
+    if (!size || !mapFocus || mapFocus.n === shownMapFocus.current) return;
+    shownMapFocus.current = mapFocus.n;
+    const boxes = activeTerritories(data.territories, year)
+      .filter((t) => t.entityId === mapFocus.entityId)
+      .map((t) => t.bbox);
+    if (boxes.length === 0) return;
+    const box: [number, number, number, number] = [
+      Math.min(...boxes.map((b) => b[0])),
+      Math.min(...boxes.map((b) => b[1])),
+      Math.max(...boxes.map((b) => b[2])),
+      Math.max(...boxes.map((b) => b[3])),
+    ];
+    animateTo(fitFocus(visibleSize(size), s0, box));
+  }, [mapFocus, year, data.territories, size, s0, animateTo]);
   // 전쟁 보기 중에 전쟁 기간 밖의 연도로 옮기면(사건 목록의 이동 등) 전쟁 보기를 닫는다
   useEffect(() => {
     if (!warId) return;

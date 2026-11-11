@@ -17,6 +17,7 @@ const normalize = (text: string) => text.replace(/\s+/g, '').toLowerCase();
 /**
  * 머리글의 검색 (DESIGN.md §6.4.1). 사건(제목·설명·싸운 곳)과 나라(이름·한자)를 찾는다.
  * 사건을 고르면 그 해로 가서 사건을 패널에 띄우고, 나라를 고르면 그 나라를 고른다.
+ * 어느 쪽이든 지도는 그 나라(사건은 사건의 나라)의 그 해 영토로 옮기고 알맞게 확대·축소한다 (2026-11-11, focusMap).
  * 권역 필터를 고르면 그 권역의 결과를 먼저 보여 준다. 다른 권역 결과가 있으면 끝의 2칸은 그것에 남겨 두어 숨기지 않는다 (DESIGN.md §6.4.2)
  */
 export function SearchBox({ data }: { data: StaticData }) {
@@ -28,6 +29,7 @@ export function SearchBox({ data }: { data: StaticData }) {
   const select = useAppStore((s) => s.select);
   const focusEvent = useAppStore((s) => s.focusEvent);
   const exitWar = useAppStore((s) => s.exitWar);
+  const focusMap = useAppStore((s) => s.focusMap);
   const warId = useAppStore((s) => s.warId);
   const regionFilter = useAppStore((s) => s.regionFilter);
   // 휴대폰에서는 검색창이 좁아 예시를 빼고 짧게 쓴다
@@ -76,12 +78,16 @@ export function SearchBox({ data }: { data: StaticData }) {
       // 사건 연도에 있던 주체가 없으면 사건 기간과 그 주체의 존재 기간이 겹치는 구간의 첫 해로 옮긴다 (focusTarget)
       const target = focusTarget(event, (id) => data.entities.get(id), event.year);
       setYear(target?.year ?? event.year);
-      if (target) focusEvent(target.subject, event.id);
+      if (target) {
+        focusEvent(target.subject, event.id);
+        focusMap(target.subject);
+      }
     } else {
       const { entity } = r;
       const year = useAppStore.getState().year;
       if (!isAlive(entity, year)) setYear(entity.from);
       select(entity.id);
+      focusMap(entity.id);
     }
     setQuery('');
     setOpen(false);

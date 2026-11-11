@@ -218,6 +218,30 @@ export function fitBounds(size: Size, s0: number, [[west, south], [east, north]]
   return toView(size, s0, { ...center, k });
 }
 
+/** 나라로 옮길 때 보여 줄 가장 좁은 범위(경위도 °). 모나코·산마리노 같은 작은 나라도 둘레 지역과 함께 보이게 한다 */
+const FOCUS_MIN_SPAN = 8;
+/** 나라로 옮길 때 영토 둘레에 두는 여백(범위 폭에 대한 비율, 한쪽) */
+const FOCUS_MARGIN = 0.15;
+/** 나라로 옮길 때의 최대 배율. 작은 나라도 지나치게 크게 확대하지 않는다 */
+const FOCUS_MAX_ZOOM = 24;
+
+/**
+ * 검색에서 고른 나라(또는 사건의 나라) 영토가 화면에 알맞게 들어오는 시점 (2026-11-11).
+ * 범위에 여백을 두고, 너무 좁으면 FOCUS_MIN_SPAN까지 넓히며, 배율은 FOCUS_MAX_ZOOM을 넘지 않는다.
+ * 큰 나라는 영토 전체가 보이도록 축소하고, 작은 나라는 둘레와 함께 보이도록 확대한다
+ */
+export function fitFocus(size: Size, s0: number, [west, south, east, north]: [number, number, number, number]): View {
+  const lonSpan = Math.max(FOCUS_MIN_SPAN, (east - west) * (1 + 2 * FOCUS_MARGIN));
+  const latSpan = Math.max(FOCUS_MIN_SPAN * 0.6, (north - south) * (1 + 2 * FOCUS_MARGIN));
+  const lon = (west + east) / 2;
+  const lat = (south + north) / 2;
+  const s = Math.max(-85, lat - latSpan / 2);
+  const n = Math.min(85, lat + latSpan / 2);
+  const view = fitBounds(size, s0, [[lon - lonSpan / 2, s], [lon + lonSpan / 2, n]]);
+  if (view.k <= FOCUS_MAX_ZOOM) return view;
+  return toView(size, s0, { lon, lat, k: FOCUS_MAX_ZOOM });
+}
+
 /** 화면 한 점의 경위도. 지도 바깥(세계 타원 밖)이면 null */
 export function invertPoint(projection: GeoProjection, point: [number, number]): LonLat | null {
   const p = projection.invert?.(point);
