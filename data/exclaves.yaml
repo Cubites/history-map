@@ -6097,3 +6097,64 @@
 # ── 사하라 이남 F1 CE (사헬·기니만 안쪽, 2026-11-11) ──
 
 # ── 사하라 이남 F1 HN (뿔·나일, 2026-11-11) ──
+
+# ── 사하라 이남 F2 WA (서아프리카 대서양 쪽, 2026-11-11) ──
+
+- entity: ivory-coast
+  from: 1960
+  to: 1975
+  at: [-3.16, 5.12]
+  reason: '(근사) 아비 석호와 대서양 사이 아시니 동쪽 모래톱(약 58 km², 가나 국경 쪽). 지금 주 조각 바깥선에서 석호 물이 본토와 갈라 떨어져 보이지만 같은 코트디부아르 땅이다(칼선 없음, 행정구역 탓 아님 — 석호 지형 탓)'
+  sources: ['위키백과 Ivory Coast https://en.wikipedia.org/wiki/Ivory_Coast']
+
+# ── 사하라 이남 F2 GU (기니만·적도, 2026-11-11) ──
+
+# ── 사하라 이남 F2 EA (대호수·동아프리카, 2026-11-11) ──
+
+- entity: dr-congo
+  from: 1960
+  to: 1975
+  at: [12.54, -6.05]
+  reason: '(근사) 콩고강 어귀 남쪽 물길 가의 모래톱·섬(약 10 km²): 지금 행정구역 조각 CD-BC(콩고 중앙주) 바깥선이 강 어귀에서 본토와 물길로 갈라져 떨어져 보임. 강 어귀 섬은 1960년 독립 때부터 콩고 민주 공화국 땅이라 그대로 둠(1975~는 F1 EA 머리의 같은 줄)'
+  sources: ["Natural Earth 1:10m admin-1(콩고 중앙주 Bas-Congo) — data/base/fragments/sub-saharan-africa.topo.json"]
+
+# ── 사하라 이남 F2 SH (사헬·뿔·나일, 2026-11-11) ──
+
+# ── 사하라 이남 F2 SE (남동·인도양, 2026-11-11) ──
+
+- entity: nyasaland
+  from: 1960
+  to: 1964
+  at: [34.71, -12.06]
+  reason: 말라위호 동쪽 모잠비크 쪽 물 안에 있는 니아살랜드의 리코마섬 일대(지도 조각 약 120 km²)로, 호수 건너 떨어진 섬이다(사료상 떨어진 땅 — 지금 행정구역 탓 부스러기 아님, 1964~는 말라위 줄)
+  sources: ["위키백과 Likoma Island https://en.wikipedia.org/wiki/Likoma_Island"]
+
+- entity: nyasaland
+  from: 1960
+  to: 1964
+  at: [34.6, -12.02]
+  reason: 말라위호 동쪽 모잠비크 쪽 물 안에 있는 니아살랜드의 치주물루섬 일대(지도 조각 약 81 km²)로, 호수 건너 떨어진 섬이다(사료상 떨어진 땅 — 지금 행정구역 탓 부스러기 아님, 1964~는 말라위 줄)
+  sources: ["위키백과 Likoma Island https://en.wikipedia.org/wiki/Likoma_Island"]
+
+- entity: malawi
+  from: 1964
+  to: 1975
+  at: [34.71, -12.06]
+  reason: 말라위호 동쪽 모잠비크 쪽 물 안에 있는 말라위의 리코마섬 일대(지도 조각 약 120 km²)로, 호수 건너 떨어진 섬이다(사료상 떨어진 땅 — 지금 행정구역 탓 부스러기 아님, 1975~는 F1 SF 머리의 같은 줄)
+  sources: ["위키백과 Likoma Island https://en.wikipedia.org/wiki/Likoma_Island"]
+
+- entity: malawi
+  from: 1964
+  to: 1975
+  at: [34.6, -12.02]
+  reason: 말라위호 동쪽 모잠비크 쪽 물 안에 있는 말라위의 치주물루섬 일대(지도 조각 약 81 km²)로, 호수 건너 떨어진 섬이다(사료상 떨어진 땅 — 지금 행정구역 탓 부스러기 아님, 1975~는 F1 SF 머리의 같은 줄)
+  sources: ["위키백과 Likoma Island https://en.wikipedia.org/wiki/Likoma_Island"]
+
+# ── 사하라 이남 F2 SF (남부, 2026-11-11) ──
+
+- entity: portuguese-angola
+  from: 1960
+  to: 1975
+  at: [12.26, -5.06]
+  reason: 카빈다(약 6,811 km²)는 콩고강 어귀 북쪽 대서양 기슭의 포르투갈령 앙골라 땅으로, 벨기에령 콩고(1960~ 콩고 민주 공화국)의 바다 쪽 좁은 땅에 막혀 앙골라 본토와 떨어져 있다(사료상 떨어진 땅 — 1885년 시물람부쿠 조약으로 포르투갈 보호령, 지금 행정구역 탓 부스러기 아님. 1975~는 F1 SF 머리 angola 줄)
+  sources: ["위키백과 Cabinda Province https://en.wikipedia.org/wiki/Cabinda_Province", "위키백과 Portuguese Angola https://en.wikipedia.org/wiki/Portuguese_Angola"]

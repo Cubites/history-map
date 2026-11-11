@@ -15,8 +15,8 @@
 //   '주변'은 data/tests/zones.yaml의 여섯 구역(sahara-south·eastern-desert-nubia·danakil-afar·somali-haud-ogaden·kalahari·namib) 안에서만: 땅 5만 km², 선 평균 25/최대 50 km.
 // 해 규칙: 한 버전 = 그해 말 모습. 원정·되돌려진 점령은 칠하지 않음(오가덴 1977~78·카게라 1978~79·차드 북부 1983~87·콩고 2차 전쟁 1998~2003은 관계만 — 결정 6).
 //   새 버전은 1만 km²(주변 5만 km²) 넘게 바뀔 때만. 이름만 바뀌는 해(다호메이→베냉 1975·오트볼타→부르키나파소 1984·자이르 1971~1997·스와질란드→에스와티니 2018 등)는 새 버전이 아니다 — 항목 글로(기본값 21).
-// 1975 앞 버전 없음: 이 시대 파일이 이 권역의 첫 국경 단계라 첫 해는 F1_START(1975)다. 1975 앞에 성립한 나라도 첫 버전은 1975부터이고(F2 colonial이 같은 id로 앞을 이음),
-//   1974 이하에는 이 권역 땅이 비는 것이 정상이다(빈 땅 검사 구역도 1975부터만 — 아래 gapZones).
+// 1975 앞 버전은 앞 시대 파일 몫: 이 시대 파일의 첫 해는 F1_START(1975)다. 1975 앞에 성립한 나라도 이 파일의 첫 버전은 1975부터이고, 1960~1974는 앞 시대 파일 decolonization(F2, 1960~1974)이 같은 id로 앞을 이음
+//   (사하라 이남 F2 뼈대 2026-11-11 — 1959 이하는 아직 비는 것이 정상). 이 파일의 빈 땅 검사 구역은 1975부터만(아래 gapZones — 1960~1974 구역은 decolonization.mjs의 '사하라 이남 탈식민 …').
 // 이웃 권역 항목 mauritania: 새 항목이 아니라 서아시아 항목(data/entities/middle-east-modern.yaml, 1960~)이다. 땅은 이 파일 CE 칸 own 줄(MRT 13조각)이 처음 칠하고,
 //   항목 블록 글은 CE 칸이 그 자리에서 고친다(옮기지 않음 — 필터 단위는 항목 파일을 따라 서아시아).
 // 지역 항목 셋(level: region — 결정 4·D1): somaliland(HN, 1991~, SOL)·rhodesia(SF, 1975~1979, ZWE)·aouzou-strip(CE, 1975~1993, TD-TI)은 법적 주인 색 그대로 칠한다
@@ -31,7 +31,7 @@
 //   예: own(idsOf('SDS'), [[F1_START, 'sudan'], [2011, 'south-sudan']]). 줄을 적지 않은 단위는 fillTables가 시대 내내 주인 null로 채운다.
 //   주인 null은 '이 권역 나라가 칠하지 않는 땅'이다: 일부러 비운 땅(voids에 한 줄 — 세인트헬레나·어센션 SHN, 기본값 4)만. 반투스탄은 남아공 색(기본값 15 — voids 아님).
 // 늘림 나라: 없음(F1 창구 ② 자동 승인 0건 — 리비아의 아우조우 띠는 늘림이 아니라 차드 색 지역 항목 + occupied_by, D1). 앞 권역 나라(uk·france·libya 등)를 주인으로 쓰면 생성기가 멈춘다 — 종주·점령은 관계로만.
-// 시대 경계 맞물림: 앞 시대 파일이 없다(F2 colonial이 생기면 그 끝 해 = F1_START). 끝까지 이어지는 버전은 to: null(PRESENT 2026년 말 모습 = 2027년 모습).
+// 시대 경계 맞물림: 앞 시대 파일 decolonization(F2, 1960~1974)이 같은 id로 앞을 이음 — 그 파일의 끝 해 F2_END = F1_START(1975), 권역 파일 joinEras 목록은 과거가 앞. 끝까지 이어지는 버전은 to: null(PRESENT 2026년 말 모습 = 2027년 모습).
 // 이름·확실성: 근거가 약한 경계는 estimated(기본값). 이름은 data/tests/spelling.yaml(사하라 이남 첫판·F1 공통·F1 칸 머리)을 먼저 본다.
 //
 // 가져오기: 아래 줄들은 공통이다. 각 칸이 더 가져올 것은 자기 칸 머리에 import 줄을 따로 둔다(import는 모듈 맨 위로 끌어올려지므로 칸 안에 두어도 된다)
@@ -41,7 +41,7 @@ import { F1_WA_IDS, F1_EA_IDS, F1_SF_IDS, F1_CE_IDS, F1_HN_IDS } from './cuts-f1
 
 const { build, geomOfUnit, joinTables, makeTable } = tableKit('modern');
 
-const F1_START = 1975; // 이 시대 파일의 첫 해(1975년 말 모습). 그 앞(1974 이하)은 F2 시대 파일(colonial) 몫
+const F1_START = 1975; // 이 시대 파일의 첫 해(1975년 말 모습). 그 앞(1960~1974)은 앞 시대 파일 decolonization(F2) 몫 — 그 파일의 F2_END와 같아야 함
 const PRESENT = 2026; // 지금 해. 표는 PRESENT년 말까지 정하고, 끝까지 이어지는 버전은 to: null(지금까지)
 const F1_END = PRESENT + 1; // 마지막 표의 끝(미포함)
 
@@ -303,7 +303,7 @@ const versions = Object.fromEntries(Object.entries(joined.segments).map(([id, se
 const voids = [...WA_voids(), ...EA_voids(), ...SF_voids(), ...CE_voids(), ...HN_voids()];
 
 // 빈 땅 검사 구역: 권역 바깥선(조각 779개)에서 그해 비운 땅(voids)을 뺀 곳 — 이 권역 나라 땅을 합쳐 빈 곳이 없어야 한다.
-// F1_START(1975)부터만 만든다(첫 국경 단계 — 1974 이하에는 이 권역 구역이 없음). 비운 땅이 바뀌는 해마다 구역 하나, 마지막 구역은 끝이 없다.
+// F1_START(1975)부터만 만든다(1960~1974 구역은 앞 시대 파일 decolonization.mjs '사하라 이남 탈식민 …'이 이음). 비운 땅이 바뀌는 해마다 구역 하나, 마지막 구역은 끝이 없다.
 // 이 권역 나라가 하나도 없는 기간(빈 틀)은 구역을 만들지 않는다(칸 하나만 채운 사본에서는 다른 칸 땅이 빈 땅으로 보고되는 것이 정상. gaps는 합치기 사본에서만 공식으로 돌린다)
 const ownedIn = (from, to) => Object.values(joined.segments).some((segs) => segs.some(([f, t]) => f < to && from < t));
 const gapYears = [...new Set([F1_START, F1_END, ...voids.flatMap(([f, t]) => [f, t ?? F1_END]).filter((y) => F1_START < y && y < F1_END)])].sort((a, b) => a - b);

@@ -6266,3 +6266,147 @@
   avoid: [알샤바브, 알 샤바브]
   note: "al-Shabaab(소말리아 이슬람 무장 세력). 위키 ko 표제('알샤바브'는 넘겨주기 — F1 HN 확인)"
   scope: 사하라 이남·뿔
+
+# ── 사하라 이남 F2 공통(2026-11-11, F2 뼈대): 공용 표기표 — 새 항목 이름·옛 이름·수도·분쟁 지명을 위키백과 한국어판 표제로 확정(f2/skel/ko-titles*.txt), 표제가 없으면 저장소·위키 본문 꼴. avoid는 넘겨주기·흔한 잘못 꼴만. 칸은 자기 새 이름만 칸 머리 아래(f2/SKEL-NOTE.md 끝 표) ──
+
+- use: 포르투갈령 카보베르데
+  avoid: [포르투갈령 케이프베르데]
+  note: "Província de Cabo Verde(1462~1975). 위키 ko 표제(F2 뼈대 확인, f2/skel/ko-titles*.txt)"
+  scope: 사하라 이남·서아프리카
+
+- use: 포르투갈령 상투메 프린시페
+  avoid: [포르투갈령 상투메프린시페]
+  note: "São Tomé e Príncipe(1470~1975 포르투갈 식민지). 위키 ko 표제(F2 뼈대 확인, f2/skel/ko-titles*.txt)"
+  scope: 사하라 이남·중앙
+
+- use: 루안다-우룬디
+  avoid: [루안다우룬디, 르완다-우룬디]
+  note: "Ruanda-Urundi(1922~1962 벨기에 위임·신탁 통치). 위키 ko 표제(F2 뼈대 확인, f2/skel/ko-titles*.txt)('루안다우룬디'는 넘겨주기)"
+  scope: 사하라 이남·동아프리카
+
+- use: 북로디지아
+  avoid: [북로데시아, 북 로디지아]
+  note: "Northern Rhodesia(1924~1964, 지금 잠비아). 위키 ko 표제(F2 뼈대 확인, f2/skel/ko-titles*.txt)('로데시아'는 문화어)"
+  scope: 사하라 이남·남부
+
+- use: 니아살랜드
+  avoid: [니아사랜드, 냐살랜드]
+  note: "Nyasaland(1907~1964, 지금 말라위). 위키 ko 표제(F2 뼈대 확인, f2/skel/ko-titles*.txt)"
+  scope: 사하라 이남·남부
+
+- use: 베추아날란드 보호령
+  avoid: [배추아날란드, 베추아나랜드]
+  note: "Bechuanaland Protectorate(1885~1966, 지금 보츠와나). 위키 ko 표제(F2 뼈대 확인, f2/skel/ko-titles*.txt)('베추아날란드'는 넘겨주기 — 줄여 써도 됨)"
+  scope: 사하라 이남·남부
+
+- use: 바수톨란드
+  avoid: [바수토랜드, 바수톨랜드]
+  note: "Basutoland(1884~1966, 지금 레소토). 위키 ko 표제(F2 뼈대 확인, f2/skel/ko-titles*.txt)"
+  scope: 사하라 이남·남부
+
+- use: 로디지아 니아살랜드 연방
+  avoid: [로디지아-니아살랜드 연방, 로디지아·니아살랜드 연방]
+  note: "Federation of Rhodesia and Nyasaland(1953~1963). 위키 ko 표제(F2 뼈대 확인, f2/skel/ko-titles*.txt)"
+  scope: 사하라 이남·남부
+
+- use: 남아프리카 연방
+  avoid: [남아프리카연방]
+  note: "Union of South Africa(1910~1961, 그 뒤 남아프리카 공화국). 위키 ko 표제(F2 뼈대 확인, f2/skel/ko-titles*.txt)"
+  scope: 사하라 이남·남부
+
+- use: 말리 연방
+  avoid: [말리연방]
+  note: "Fédération du Mali(1959~1960, 세네갈·수단 공화국). 위키 ko 표제(F2 뼈대 확인, f2/skel/ko-titles*.txt)"
+  scope: 사하라 이남·서아프리카
+
+- use: 프랑스령 소말릴란드
+  avoid: [프랑스령 소말리랜드]
+  note: "Côte française des Somalis(1884~1967, 지금 지부티). 위키 ko 표제(F2 뼈대 확인, f2/skel/ko-titles*.txt)"
+  scope: 사하라 이남·뿔
+
+- use: 마푸투
+  avoid: [마푸토]
+  note: "Maputo(모잠비크 수도, 1976 앞 로렌수마르케스). 위키 ko 표제(F2 뼈대 확인, f2/skel/ko-titles*.txt)('마푸토'는 넘겨주기)"
+  scope: 사하라 이남·남부
+
+- use: 부줌부라
+  avoid: [부준부라]
+  note: "Bujumbura(부룬디 옛 수도). 위키 ko 표제(F2 뼈대 확인, f2/skel/ko-titles*.txt)"
+  scope: 사하라 이남·동아프리카
+
+- use: 가보로네
+  avoid: [가보론]
+  note: "Gaborone(보츠와나 수도, 1965 앞 행정 중심은 마페킹). 위키 ko 표제(F2 뼈대 확인, f2/skel/ko-titles*.txt)"
+  scope: 사하라 이남·남부
+
+- use: 포트루이스
+  avoid: [포트 루이스]
+  note: "Port Louis(모리셔스 수도). 위키 ko 표제(F2 뼈대 확인, f2/skel/ko-titles*.txt)"
+  scope: 사하라 이남·인도양
+
+- use: 카탕가국
+  avoid: [카탕가 국]
+  note: "État du Katanga(1960~1963 분리 정권, 그리지 않음 — 결정 5). 위키 ko 표제(F2 뼈대 확인, f2/skel/ko-titles*.txt)('카탕가 공화국'은 넘겨주기). 주 이름은 카탕가주"
+  scope: 사하라 이남·중앙
+
+- use: 남카사이국
+  avoid: [남카사이 광산국]
+  note: "Sud-Kasaï(1960~1962 분리 정권, 그리지 않음 — 결정 5). 위키 ko 표제(F2 뼈대 확인, f2/skel/ko-titles*.txt)"
+  scope: 사하라 이남·중앙
+
+- use: 남카메룬
+  avoid: [남부 카메룬]
+  note: "Southern Cameroons(영국령 카메룬 남부, 1961 카메룬에 합침). 위키 ko 표제(F2 뼈대 확인, f2/skel/ko-titles*.txt). 북부는 '북카메룬'(영국령 카메룬 넘겨주기)"
+  scope: 사하라 이남·중앙
+
+# ── 사하라 이남 F2 WA (서아프리카 대서양 쪽, 2026-11-11) ──
+
+- use: 비자고스 제도
+  avoid: [비사고스 제도]
+  note: "Arquipélago dos Bijagós(기니비사우 앞바다). 위키 ko 표제(F2 WA 확인 — 비사고스 제도는 넘겨주기, f2/impl-wa/ko-titles2.txt)"
+  scope: 사하라 이남·서아프리카
+
+# ── 사하라 이남 F2 GU (기니만·적도, 2026-11-11) ──
+
+- use: 엘 파르도 조약
+  avoid: [엘파르도 조약]
+  note: "Treaty of El Pardo(1778, 포르투갈이 스페인에 비오코섬·기니만 기슭 권리를 넘김 — 스페인령 기니의 시작). 위키 ko 표제(넘겨주기 '엘파르도 조약' → 표제, F2 GU 확인)"
+  scope: 사하라 이남·중앙
+
+- use: 안노본섬
+  avoid: [아노본섬]
+  note: "Annobón(적도 기니 남쪽 바다의 섬). 위키 ko 표제(넘겨주기 '아노본섬' → 표제, F2 GU 확인)"
+  scope: 사하라 이남·중앙
+
+# ── 사하라 이남 F2 EA (대호수·동아프리카, 2026-11-11) ──
+
+- use: 스톤타운
+  avoid: [스톤 타운]
+  note: "Stone Town(잔지바르시티 옛 시가지, 잔지바르 술탄국 도읍). 위키 ko 표제(F2 EA 확인, f2/impl-ea/ko-titles-ea.txt)('스톤 타운'은 넘겨주기)"
+  scope: 사하라 이남·동아프리카
+
+# ── 사하라 이남 F2 SH (사헬·뿔·나일, 2026-11-11) ──
+
+- use: 차드 국민해방전선
+  avoid: [차드 민족 해방 전선]
+  note: "FROLINAT(1966 결성한 차드 북부 반군). 위키 ko 표제(F2 SH 확인, f2/impl-sh/ko-titles.txt)('차드 민족 해방 전선'은 넘겨주기)"
+  scope: 사하라 이남·사헬
+
+- use: 모크타르 울드 다다
+  avoid: [목타르 울드 다다]
+  note: "Moktar Ould Daddah(모리타니 첫 대통령, 1960~1978). 위키 ko 표제(F2 SH 확인, f2/impl-sh/ko-titles2.txt)"
+  scope: 사하라 이남·사헬
+
+# ── 사하라 이남 F2 SE (남동·인도양, 2026-11-11) ──
+
+- use: 모잠비크 해방전선
+  avoid: [모잠비크 해방 전선]
+  note: "FRELIMO(1962 결성, 1964~1974 독립 전쟁). 위키 ko 표제(F2 SE 확인, f2/impl-se/ko-titles-se.txt)('모잠비크 해방 전선'은 넘겨주기)"
+  scope: 사하라 이남·남부
+
+- use: 치주물루섬
+  avoid: [치줌물루섬]
+  note: "Chizumulu Island(말라위호, 리코마섬 옆 말라위 땅). 위키 ko 표제(F2 SE 확인, f2/impl-se/ko-titles-se.txt)"
+  scope: 사하라 이남·남부
+
+# ── 사하라 이남 F2 SF (남부, 2026-11-11) ──

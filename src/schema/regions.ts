@@ -56,6 +56,7 @@ export const REGION_FILTER_OF: Record<string, RegionFilterUnit> = {
   'southeast-asia-ancient': 'southeast-asia', // 동남아 E4(2026-11-09): E1~E3과 같은 새 단위 southeast-asia
   'sub-saharan-africa': 'sub-saharan-africa', // 사하라 이남 F1(2026-11-11): 새 단위 sub-saharan-africa
   'sub-saharan-africa-modern': 'sub-saharan-africa', // 사하라 이남 F1(2026-11-11): 새 단위 sub-saharan-africa
+  'sub-saharan-africa-decolonization': 'sub-saharan-africa', // 사하라 이남 F2(2026-11-11): F1과 같은 단위 sub-saharan-africa
 };
 
 /** 사건·전쟁 파일 이름 앞머리 → 권역. 앞에서부터 처음 맞는 것을 쓴다 (예: eu-01-revolutions-1789-1914.yaml → europe) */

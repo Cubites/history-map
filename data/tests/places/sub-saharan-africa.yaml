@@ -5,14 +5,6 @@
 # ── 사하라 이남 F1 WA (서아프리카 대서양 쪽, 2026-11-11) ──
 - name: 라고스
   at: [3.38, 6.52]
-  year: 1974
-  expect: none
-  region: sub-saharan-africa
-  url: https://en.wikipedia.org/wiki/Nigeria
-  from: 사하라 이남 F1 WA 결과노트
-  note: 이 권역 첫 국경 단계라 1974 이하는 비어 있음(F2가 채우면 고침)
-- name: 라고스
-  at: [3.38, 6.52]
   year: 1975
   expect: nigeria
   url: https://en.wikipedia.org/wiki/Nigeria
@@ -273,14 +265,6 @@
 # ── 사하라 이남 F1 CE (사헬·기니만 안쪽, 2026-11-11) ──
 - name: 누악쇼트
   at: [-15.97, 18.09]
-  year: 1974
-  expect: none
-  region: sub-saharan-africa
-  url: https://en.wikipedia.org/wiki/Nouakchott
-  from: 사하라 이남 F1 CE 결과노트
-  note: 이 권역 첫 국경 단계라 1974 이하는 비어 있음(F2가 채우면 고침)
-- name: 누악쇼트
-  at: [-15.97, 18.09]
   year: 2000
   expect: mauritania
   url: https://en.wikipedia.org/wiki/Nouakchott
@@ -450,3 +434,284 @@
   expect: south-sudan
   url: https://en.wikipedia.org/wiki/South_Sudan
   from: 사하라 이남 F1 HN 결과노트
+
+# ── 사하라 이남 F2 WA (서아프리카 대서양 쪽, 2026-11-11) ──
+- name: 프리타운
+  at: [-13.23, 8.48]
+  year: 1960
+  expect: british-sierra-leone
+  url: https://en.wikipedia.org/wiki/Freetown
+  from: 사하라 이남 F2 WA 결과노트
+- name: 프리타운
+  at: [-13.23, 8.48]
+  year: 1962
+  expect: sierra-leone
+  url: https://en.wikipedia.org/wiki/Freetown
+  from: 사하라 이남 F2 WA 결과노트
+- name: 반줄
+  at: [-16.58, 13.45]
+  year: 1964
+  expect: british-gambia
+  url: https://en.wikipedia.org/wiki/Banjul
+  from: 사하라 이남 F2 WA 결과노트
+- name: 반줄
+  at: [-16.58, 13.45]
+  year: 1966
+  expect: gambia
+  url: https://en.wikipedia.org/wiki/Banjul
+  from: 사하라 이남 F2 WA 결과노트
+- name: 비사우
+  at: [-15.6, 11.86]
+  year: 1973
+  expect: portuguese-guinea
+  url: https://en.wikipedia.org/wiki/Bissau
+  from: 사하라 이남 F2 WA 결과노트
+- name: 비사우
+  at: [-15.6, 11.86]
+  year: 1975
+  expect: guinea-bissau
+  url: https://en.wikipedia.org/wiki/Bissau
+  from: 사하라 이남 F2 WA 결과노트
+- name: 프라이아
+  at: [-23.51, 14.93]
+  year: 1974
+  expect: portuguese-cape-verde
+  url: https://en.wikipedia.org/wiki/Praia
+  from: 사하라 이남 F2 WA 결과노트
+- name: 다카르
+  at: [-17.44, 14.69]
+  year: 1960
+  expect: senegal
+  url: https://en.wikipedia.org/wiki/Dakar
+  from: 사하라 이남 F2 WA 결과노트
+
+# ── 사하라 이남 F2 GU (기니만·적도, 2026-11-11) ──
+- name: 라고스
+  at: [3.38, 6.52]
+  year: 1974
+  expect: nigeria
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Nigeria
+  from: 사하라 이남 F2 GU 결과노트
+  note: F2가 1960~1974를 채워 나이지리아(1960-10-01 독립)
+- name: 부에아
+  at: [9.24, 4.16]
+  year: 1960
+  expect: british-cameroons
+  url: https://en.wikipedia.org/wiki/British_Cameroons
+  from: 사하라 이남 F2 GU 결과노트
+  note: 영국령 카메룬 남부의 행정 중심, 1961-10-01 카메룬에 합침
+- name: 부에아
+  at: [9.24, 4.16]
+  year: 1962
+  expect: cameroon
+  url: https://en.wikipedia.org/wiki/British_Cameroons
+  from: 사하라 이남 F2 GU 결과노트
+- name: 말라보
+  at: [8.78, 3.75]
+  year: 1967
+  expect: spanish-guinea
+  url: https://en.wikipedia.org/wiki/Spanish_Guinea
+  from: 사하라 이남 F2 GU 결과노트
+  note: 옛 이름 산타이사벨, 스페인령 기니의 행정 중심
+- name: 말라보
+  at: [8.78, 3.75]
+  year: 1969
+  expect: equatorial-guinea
+  url: https://en.wikipedia.org/wiki/Equatorial_Guinea
+  from: 사하라 이남 F2 GU 결과노트
+- name: 상투메
+  at: [6.73, 0.34]
+  year: 1974
+  expect: portuguese-sao-tome
+  url: https://en.wikipedia.org/wiki/Portuguese_S%C3%A3o_Tom%C3%A9_and_Pr%C3%ADncipe
+  from: 사하라 이남 F2 GU 결과노트
+
+# ── 사하라 이남 F2 EA (대호수·동아프리카, 2026-11-11) ──
+- name: 부줌부라
+  at: [29.36, -3.38]
+  year: 1961
+  expect: ruanda-urundi
+  url: https://en.wikipedia.org/wiki/Bujumbura
+  from: 사하라 이남 F2 EA 결과노트
+- name: 키갈리
+  at: [30.06, -1.94]
+  year: 1961
+  expect: ruanda-urundi
+  url: https://en.wikipedia.org/wiki/Kigali
+  from: 사하라 이남 F2 EA 결과노트
+- name: 키갈리
+  at: [30.06, -1.94]
+  year: 1963
+  expect: rwanda
+  url: https://en.wikipedia.org/wiki/Kigali
+  from: 사하라 이남 F2 EA 결과노트
+- name: 엔테베
+  at: [32.47, 0.05]
+  year: 1961
+  expect: british-uganda
+  url: https://en.wikipedia.org/wiki/Entebbe
+  from: 사하라 이남 F2 EA 결과노트
+- name: 나이로비
+  at: [36.82, -1.29]
+  year: 1962
+  expect: british-kenya
+  url: https://en.wikipedia.org/wiki/Nairobi
+  from: 사하라 이남 F2 EA 결과노트
+- name: 다르에스살람
+  at: [39.28, -6.79]
+  year: 1960
+  expect: british-tanganyika
+  url: https://en.wikipedia.org/wiki/Dar_es_Salaam
+  from: 사하라 이남 F2 EA 결과노트
+- name: 잔지바르
+  at: [39.19, -6.16]
+  year: 1963
+  expect: sultanate-of-zanzibar
+  url: https://en.wikipedia.org/wiki/Zanzibar_City
+  from: 사하라 이남 F2 EA 결과노트
+- name: 잔지바르
+  at: [39.19, -6.16]
+  year: 1965
+  expect: tanzania
+  url: https://en.wikipedia.org/wiki/Zanzibar_City
+  from: 사하라 이남 F2 EA 결과노트
+- name: 루붐바시
+  at: [27.48, -11.66]
+  year: 1961
+  expect: dr-congo
+  url: https://en.wikipedia.org/wiki/Lubumbashi
+  from: 사하라 이남 F2 EA 결과노트
+
+# ── 사하라 이남 F2 SH (사헬·뿔·나일, 2026-11-11) ──
+- name: 누악쇼트
+  at: [-15.97, 18.09]
+  year: 1974
+  expect: mauritania
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Nouakchott
+  from: 사하라 이남 F2 SH 결과노트
+  note: F2가 1960~1974를 채워 모리타니(1960-11-28 독립)
+- name: 누악쇼트
+  at: [-15.97, 18.09]
+  year: 1965
+  expect: mauritania
+  url: https://en.wikipedia.org/wiki/Nouakchott
+  from: 사하라 이남 F2 SH 결과노트
+  note: 독립과 함께 세운 모리타니의 수도
+- name: 아스마라
+  at: [38.93, 15.32]
+  year: 1961
+  expect: eritrea-federation
+  url: https://en.wikipedia.org/wiki/Federation_of_Ethiopia_and_Eritrea
+  from: 사하라 이남 F2 SH 결과노트
+  note: 에리트레아 연방의 행정 중심, 1962-11-15 에티오피아에 병합
+- name: 아스마라
+  at: [38.93, 15.32]
+  year: 1963
+  expect: ethiopia
+  url: https://en.wikipedia.org/wiki/Federation_of_Ethiopia_and_Eritrea
+  from: 사하라 이남 F2 SH 결과노트
+  note: 1962년 병합 뒤 에티오피아의 한 주
+- name: 아우주
+  at: [17.43, 21.82]
+  year: 1972
+  expect: chad
+  url: https://en.wikipedia.org/wiki/Aouzou_Strip
+  from: 사하라 이남 F2 SH 결과노트
+  note: 리비아군이 들어오기 앞의 차드 티베스티
+- name: 아우주
+  at: [17.43, 21.82]
+  year: 1974
+  expect: aouzou-strip
+  url: https://en.wikipedia.org/wiki/Aouzou_Strip
+  from: 사하라 이남 F2 SH 결과노트
+  note: 1973년 리비아군이 차지한 아우주 띠(차드 색, 리비아 점령 표시)
+
+# ── 사하라 이남 F2 SE (남동·인도양, 2026-11-11) ──
+- name: 루사카
+  at: [28.28, -15.42]
+  year: 1963
+  expect: northern-rhodesia
+  url: https://en.wikipedia.org/wiki/Lusaka
+  from: 사하라 이남 F2 SE 결과노트
+- name: 루사카
+  at: [28.28, -15.42]
+  year: 1965
+  expect: zambia
+  url: https://en.wikipedia.org/wiki/Lusaka
+  from: 사하라 이남 F2 SE 결과노트
+- name: 좀바
+  at: [35.32, -15.39]
+  year: 1963
+  expect: nyasaland
+  url: https://en.wikipedia.org/wiki/Zomba,_Malawi
+  from: 사하라 이남 F2 SE 결과노트
+- name: 로렌수마르케스
+  at: [32.57, -25.97]
+  year: 1970
+  expect: portuguese-mozambique
+  url: https://en.wikipedia.org/wiki/Maputo
+  from: 사하라 이남 F2 SE 결과노트
+- name: 포트루이스
+  at: [57.50, -20.16]
+  year: 1967
+  expect: british-mauritius
+  url: https://en.wikipedia.org/wiki/Port_Louis
+  from: 사하라 이남 F2 SE 결과노트
+- name: 포트루이스
+  at: [57.50, -20.16]
+  year: 1969
+  expect: mauritius
+  url: https://en.wikipedia.org/wiki/Port_Louis
+  from: 사하라 이남 F2 SE 결과노트
+- name: 모로니
+  at: [43.26, -11.70]
+  year: 1970
+  expect: french-comoros
+  url: https://en.wikipedia.org/wiki/Moroni,_Comoros
+  from: 사하라 이남 F2 SE 결과노트
+
+# ── 사하라 이남 F2 SF (남부, 2026-11-11) ──
+- name: 루안다
+  at: [13.23, -8.84]
+  year: 1974
+  expect: portuguese-angola
+  url: https://en.wikipedia.org/wiki/Luanda
+  from: 사하라 이남 F2 SF 결과노트
+- name: 가보로네
+  at: [25.91, -24.65]
+  year: 1965
+  expect: bechuanaland
+  url: https://en.wikipedia.org/wiki/Gaborone
+  from: 사하라 이남 F2 SF 결과노트
+- name: 가보로네
+  at: [25.91, -24.65]
+  year: 1967
+  expect: botswana
+  url: https://en.wikipedia.org/wiki/Gaborone
+  from: 사하라 이남 F2 SF 결과노트
+- name: 마세루
+  at: [27.48, -29.31]
+  year: 1965
+  expect: basutoland
+  url: https://en.wikipedia.org/wiki/Maseru
+  from: 사하라 이남 F2 SF 결과노트
+- name: 음바바네
+  at: [31.14, -26.32]
+  year: 1967
+  expect: swaziland-protectorate
+  url: https://en.wikipedia.org/wiki/Mbabane
+  from: 사하라 이남 F2 SF 결과노트
+- name: 하라레
+  at: [31.05, -17.83]
+  year: 1964
+  expect: rhodesia
+  url: https://en.wikipedia.org/wiki/Harare
+  from: 사하라 이남 F2 SF 결과노트
+- name: 하라레
+  at: [31.05, -17.83]
+  year: 1966
+  expect: rhodesia
+  url: https://en.wikipedia.org/wiki/Harare
+  from: 사하라 이남 F2 SF 결과노트
