@@ -7,13 +7,14 @@ import { useAppStore } from '../store/useAppStore.ts';
 /**
  * 나라를 고르지 않았을 때 패널에 보이는 나라 목록 (2026-10-28, DESIGN.md §6.4).
  * 지금 연도에 지도에 영토가 있는 나라 가운데 지금 권역(세계면 전부)의 것을 가나다순으로 늘어놓는다.
- * 나라 아닌 지역 항목(점령지·귀속 논쟁 지역 등, level: region)은 뺀다. 누르면 지도에서 그 나라를 누른 것과 같다(store.select).
+ * 나라 아닌 지역 항목(점령지·귀속 논쟁 지역 등, level: region)은 뺀다. 누르면 지도에서 그 나라를 누른 것과 같다(store.selectFocus — 고르고 지도도 그 나라로 옮김).
  * 마우스를 올리면 지도에 그 나라 영토의 hover 테두리가 나온다(store.listHoverId, 2026-10-28)
  */
 export function CountryList({ data }: { data: StaticData }) {
   const year = useAppStore((s) => s.year);
   const regionFilter = useAppStore((s) => s.regionFilter);
-  const select = useAppStore((s) => s.select);
+  // 누르면 그 나라를 고르고 지도도 그 나라로 옮긴다 (2026-11-11)
+  const select = useAppStore((s) => s.selectFocus);
   const hoverCountry = useAppStore((s) => s.hoverCountry);
   // 목록이 사라지면(나라를 고르거나 전쟁 보기로 바뀜) 마우스가 떠나지 않아도 테두리를 지운다
   useEffect(() => () => hoverCountry(null), [hoverCountry]);

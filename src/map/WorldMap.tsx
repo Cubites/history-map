@@ -141,6 +141,7 @@ export default function WorldMap({ data }: { data: StaticData }) {
   const exitWar = useAppStore((s) => s.exitWar);
   const returnYear = useAppStore((s) => s.returnYear);
   const selectEntity = useAppStore((s) => s.select);
+  const selectFocus = useAppStore((s) => s.selectFocus);
   const focusEvent = useAppStore((s) => s.focusEvent);
   const setYear = useAppStore((s) => s.setYear);
   const regionFilter = useAppStore((s) => s.regionFilter);
@@ -773,14 +774,16 @@ export default function WorldMap({ data }: { data: StaticData }) {
     const bounds = REGION_FILTER_INFO[regionFilter].bounds;
     if (bounds && !warId) animateTo(fitBounds(visibleSize(size), s0, bounds));
   }, [regionFocus, regionFilter, warId, size, s0, animateTo]);
-  // 검색에서 나라·사건을 고르면 그 나라의 그 해 영토로 옮기고 알맞게 확대·축소한다 (2026-11-11, fitFocus).
+  // 검색·패널·지도에서 나라(사건은 사건의 나라)를 고르면 그 나라의 그 해 영토로 옮기고 알맞게 확대·축소한다 (2026-11-11, fitFocus).
   // 그 해 영토가 여럿이면(본토·떨어진 땅) 모두 합친 범위로 맞춘다. 영토가 없는 해면 옮기지 않는다.
+  // 전쟁 보기 중에는 전쟁 지역을 보고 있으므로 옮기지 않는다(검색은 전쟁 보기를 먼저 닫으므로 옮김).
   // 전쟁 보기에서 나오며 들어오기 전 위치로 돌아가는 이동(위 효과)보다 뒤에 두어, 이 이동이 그것을 대신하게 한다
   const mapFocus = useAppStore((s) => s.mapFocus);
   const shownMapFocus = useRef(mapFocus?.n ?? 0);
   useEffect(() => {
     if (!size || !mapFocus || mapFocus.n === shownMapFocus.current) return;
     shownMapFocus.current = mapFocus.n;
+    if (warId) return;
     const boxes = activeTerritories(data.territories, year)
       .filter((t) => t.entityId === mapFocus.entityId)
       .map((t) => t.bbox);
@@ -792,7 +795,7 @@ export default function WorldMap({ data }: { data: StaticData }) {
       Math.max(...boxes.map((b) => b[3])),
     ];
     animateTo(fitFocus(visibleSize(size), s0, box));
-  }, [mapFocus, year, data.territories, size, s0, animateTo]);
+  }, [mapFocus, year, warId, data.territories, size, s0, animateTo]);
   // 전쟁 보기 중에 전쟁 기간 밖의 연도로 옮기면(사건 목록의 이동 등) 전쟁 보기를 닫는다
   useEffect(() => {
     if (!warId) return;
@@ -866,7 +869,10 @@ export default function WorldMap({ data }: { data: StaticData }) {
       onClick={(e) => {
         if (onMapUi(e.target)) return;
         const [x, y] = localPoint(e);
-        selectEntity(hitTest(x, y));
+        // 나라를 누르면 고르고 그 나라로 옮긴다(2026-11-11, selectFocus). 바다·빈 땅을 누르면 고름만 푼다
+        const id = hitTest(x, y);
+        if (id) selectFocus(id);
+        else selectEntity(null);
       }}
     >
       <canvas ref={canvasRef} className="map-canvas" />

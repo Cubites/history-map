@@ -23,6 +23,8 @@ export function EventPanel({ data }: { data: StaticData }) {
   const setYear = useAppStore((s) => s.setYear);
   const focusEvent = useAppStore((s) => s.focusEvent);
   const select = useAppStore((s) => s.select);
+  // 패널의 나라 링크(귀속 논쟁·후계 국가)를 누르면 그 나라를 고르고 지도도 그 나라로 옮긴다 (2026-11-11)
+  const selectFocus = useAppStore((s) => s.selectFocus);
   const warId = useAppStore((s) => s.warId);
   // 눌러서 고정한 사건은 사건 밖(지도·패널의 다른 곳 등)을 '클릭'하면 풀린다. 다른 사건을 누르면 그 사건으로 바뀐다 (EventItem)
   // 지도를 끌어 옮기거나 두 손가락으로 확대·축소할 때는 풀리지 않는다(2026-10-09): 누른 자리에서 CLICK_DISTANCE 넘게 움직였거나,
@@ -155,7 +157,7 @@ export function EventPanel({ data }: { data: StaticData }) {
               {claimants.map((c, i) => (
                 <span key={c.id}>
                   {i > 0 && ' 또는 '}
-                  <button type="button" className="link-button" onClick={() => select(c.id)}>
+                  <button type="button" className="link-button" onClick={() => selectFocus(c.id)}>
                     {c.names.ko}
                   </button>
                 </span>
@@ -169,7 +171,7 @@ export function EventPanel({ data }: { data: StaticData }) {
               {claimedRegions.map((r, i) => (
                 <span key={r.id}>
                   {i > 0 && ', '}
-                  <button type="button" className="link-button" onClick={() => select(r.id)}>
+                  <button type="button" className="link-button" onClick={() => selectFocus(r.id)}>
                     {r.names.ko}
                   </button>
                 </span>
@@ -194,8 +196,8 @@ export function EventPanel({ data }: { data: StaticData }) {
             focusEvent(entity.id, e.id);
           }}
           onSuccessor={(id, from) => {
-            select(id);
             setYear(from);
+            selectFocus(id);
           }}
       />
 
@@ -208,8 +210,8 @@ export function EventPanel({ data }: { data: StaticData }) {
               type="button"
               className="link-button"
               onClick={() => {
-                select(next!.id);
                 setYear(relation.from);
+                selectFocus(next!.id);
               }}
             >
               후계 국가: {next!.names.ko} ({formatYear(relation.from)}) →

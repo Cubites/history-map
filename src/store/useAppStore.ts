@@ -57,6 +57,11 @@ interface AppState {
   /** 전쟁 보기를 닫고 들어오기 전 연도로 돌아간다 */
   exitWar: () => void;
   select: (id: string | null) => void;
+  /**
+   * 나라를 고르고 지도도 그 나라의 지금 연도 영토로 옮긴다 (select + focusMap, 2026-11-11).
+   * 패널의 나라 목록·나라 링크, 지도에서 나라를 누를 때 쓴다. 연도를 함께 바꾸는 곳은 같은 처리 안에서 setYear를 불러도 된다(옮길 영토는 그려질 때의 연도로 찾음)
+   */
+  selectFocus: (id: string) => void;
   /** 사건의 나라를 고르고 그 사건을 패널에서 보여 준다 (지도의 전투 표시를 눌렀을 때) */
   focusEvent: (entityId: string, eventId: string) => void;
   hoverEvent: (id: string | null) => void;
@@ -104,6 +109,17 @@ export const useAppStore = create<AppState>((set) => ({
   exitWar: () =>
     set((s) => ({ warId: null, theaterId: null, frontDate: null, listYear: null, hoveredEventId: null, pinnedEventId: null, year: s.returnYear ?? s.year, returnYear: null })),
   select: (selectedId) => set({ selectedId, listYear: null, hoveredEventId: null, listHoverId: null, pinnedEventId: null, focusedEventId: null, showAllEvents: false }),
+  selectFocus: (selectedId) =>
+    set((s) => ({
+      selectedId,
+      listYear: null,
+      hoveredEventId: null,
+      listHoverId: null,
+      pinnedEventId: null,
+      focusedEventId: null,
+      showAllEvents: false,
+      mapFocus: { entityId: selectedId, n: (s.mapFocus?.n ?? 0) + 1 },
+    })),
   focusEvent: (selectedId, eventId) => set({ selectedId, listYear: null, hoveredEventId: null, pinnedEventId: eventId, focusedEventId: eventId, showAllEvents: false }),
   hoverEvent: (hoveredEventId) => set({ hoveredEventId }),
   hoverCountry: (listHoverId) => set({ listHoverId }),
