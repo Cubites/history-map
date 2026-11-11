@@ -87,6 +87,26 @@ function visibleSize(size: Size): Size {
   return { width: size.width, height: Math.max(120, size.height - cover) };
 }
 
+/** 휴대폰 화면인가 (휴대폰 CSS와 같은 기준) */
+const isMobile = () => window.matchMedia('(max-width: 768px)').matches;
+
+/**
+ * 나라로 옮길 때 쓸 그 해 영토 범위 (2026-11-11). 영토가 여럿이면(본토·떨어진 땅) 모두 합친 범위(box)와, 가장 큰 영토(main, 본토로 봄).
+ * 그 해 영토가 없으면 null
+ */
+function focusBox(territories: TerritoryIndexEntry[], entityId: string, year: number) {
+  const mine = activeTerritories(territories, year).filter((t) => t.entityId === entityId);
+  if (mine.length === 0) return null;
+  const area = (b: TerritoryIndexEntry['bbox']) => (b[2] - b[0]) * (b[3] - b[1]);
+  const box: [number, number, number, number] = [
+    Math.min(...mine.map((t) => t.bbox[0])),
+    Math.min(...mine.map((t) => t.bbox[1])),
+    Math.max(...mine.map((t) => t.bbox[2])),
+    Math.max(...mine.map((t) => t.bbox[3])),
+  ];
+  return { box, main: mine.reduce((a, b) => (area(b.bbox) > area(a.bbox) ? b : a)) };
+}
+
 /**
  * 정밀도 단계 (DESIGN.md §3.1). 움직이는 동안에는 가볍게, 멈추거나 확대하면 정밀하게 그린다.
  * 확대할수록 화면 밖 영토를 건너뛰므로 정밀한 단계를 써도 계산량이 크게 늘지 않는다.
@@ -182,13 +202,17 @@ export default function WorldMap({ data }: { data: StaticData }) {
   const s0 = useMemo(() => (size ? baseScale(size) : 1), [size]);
 
   // 화면 크기가 정해지거나 바뀌면 시점을 다시 맞춘다. 처음에는 동아시아(권역 필터를 고른 주소면 그 권역)가 꽉 차게,
+  // 주소에 나라가 있으면(바로 가기 링크, 2026-11-11) 그 나라의 그 해 영토로 맞춘다(아래 나라 이동과 같은 fitFocus).
   // 이후(창 크기 변경, 모바일 회전)에는 보던 곳과 배율을 유지한다.
   const sized = useRef<{ size: Size; s0: number } | null>(null);
   if (size && sized.current?.size !== size) {
     const prev = sized.current;
+    const linked = !prev && selectedId && !warId ? focusBox(data.territories, selectedId, year) : null;
     viewRef.current = prev
       ? toView(size, s0, toGeoView(prev.size, prev.s0, viewRef.current))
-      : fitBounds(visibleSize(size), s0, REGION_FILTER_INFO[regionFilter].bounds ?? EAST_ASIA_BOUNDS);
+      : linked
+        ? fitFocus(visibleSize(size), s0, linked.box)
+        : fitBounds(visibleSize(size), s0, REGION_FILTER_INFO[regionFilter].bounds ?? EAST_ASIA_BOUNDS);
     sized.current = { size, s0 };
   }
   const active = useMemo(() => activeTerritories(data.territories, year), [data.territories, year]);
@@ -776,6 +800,8 @@ export default function WorldMap({ data }: { data: StaticData }) {
   }, [regionFocus, regionFilter, warId, size, s0, animateTo]);
   // 검색·패널·지도에서 나라(사건은 사건의 나라)를 고르면 그 나라의 그 해 영토로 옮기고 알맞게 확대·축소한다 (2026-11-11, fitFocus).
   // 그 해 영토가 여럿이면(본토·떨어진 땅) 모두 합친 범위로 맞춘다. 영토가 없는 해면 옮기지 않는다.
+  // PC 나라 목록에서 골랐으면(floor) 첫 화면(동아시아가 꽉 차는 배율)보다 더 축소하지 않는다. 그 한계에 걸리는 큰 나라는
+  // 본토(가장 큰 영토)의 이름표 자리를 화면 가운데에 둔다(떨어진 땅까지 합친 범위의 가운데는 바다일 수 있음).
   // 전쟁 보기 중에는 전쟁 지역을 보고 있으므로 옮기지 않는다(검색은 전쟁 보기를 먼저 닫으므로 옮김).
   // 전쟁 보기에서 나오며 들어오기 전 위치로 돌아가는 이동(위 효과)보다 뒤에 두어, 이 이동이 그것을 대신하게 한다
   const mapFocus = useAppStore((s) => s.mapFocus);
@@ -784,17 +810,15 @@ export default function WorldMap({ data }: { data: StaticData }) {
     if (!size || !mapFocus || mapFocus.n === shownMapFocus.current) return;
     shownMapFocus.current = mapFocus.n;
     if (warId) return;
-    const boxes = activeTerritories(data.territories, year)
-      .filter((t) => t.entityId === mapFocus.entityId)
-      .map((t) => t.bbox);
-    if (boxes.length === 0) return;
-    const box: [number, number, number, number] = [
-      Math.min(...boxes.map((b) => b[0])),
-      Math.min(...boxes.map((b) => b[1])),
-      Math.max(...boxes.map((b) => b[2])),
-      Math.max(...boxes.map((b) => b[3])),
-    ];
-    animateTo(fitFocus(visibleSize(size), s0, box));
+    const found = focusBox(data.territories, mapFocus.entityId, year);
+    if (!found) return;
+    const shown = visibleSize(size);
+    let target = fitFocus(shown, s0, found.box);
+    if (mapFocus.floor && !isMobile()) {
+      const floor = fitBounds(shown, s0, EAST_ASIA_BOUNDS).k;
+      if (target.k < floor) target = toView(shown, s0, { lon: found.main.anchor[0], lat: found.main.anchor[1], k: floor });
+    }
+    animateTo(target);
   }, [mapFocus, year, warId, data.territories, size, s0, animateTo]);
   // 전쟁 보기 중에 전쟁 기간 밖의 연도로 옮기면(사건 목록의 이동 등) 전쟁 보기를 닫는다
   useEffect(() => {

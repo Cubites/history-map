@@ -9,9 +9,12 @@ const GAP_BELOW_SEARCH = 8;
 /** 연도 칸을 고치는 동안(화면 키보드, MapYearControls) 키보드 때문에 생긴 화면 크기 변화로는 판 높이를 다시 재지 않는다(지도가 옮겨지지 않게) */
 const keyboardHeld = () => document.documentElement.classList.contains('keyboard-hold');
 
-/** 판의 세 단계: 내림(min, 손잡이 + 나라 이름란) · 접힘(closed, 화면 1/3) · 펼침(open, 검색창 아래까지) */
-export type SheetState = 'min' | 'closed' | 'open';
-const ORDER: SheetState[] = ['min', 'closed', 'open'];
+/**
+ * 판의 네 단계: 내림(min, 손잡이 + 나라 이름란) · 접힘(closed, 화면 1/3) · 절반(half, 판 위 끝이 화면 높이 절반) · 펼침(open, 검색창 아래까지).
+ * 절반은 '국가 상세정보'나 사건을 펼쳤을 때 저절로 올라오는 단계다(2026-11-11, raise)
+ */
+export type SheetState = 'min' | 'closed' | 'half' | 'open';
+const ORDER: SheetState[] = ['min', 'closed', 'half', 'open'];
 
 /**
  * 휴대폰 아래 나라 정보 패널을 끌어 올리고 내리는 판(바텀 시트)으로 (2026-10-28, DESIGN.md §6.5).
@@ -21,9 +24,11 @@ const ORDER: SheetState[] = ['min', 'closed', 'open'];
  * 높이는 CSS 변수(--sheet-peek 접힌 높이, --sheet-min 내린 높이, --sheet-h 지금 높이)로만 넘긴다. 휴대폰 CSS(.panel.sheet)가 높이와 같은 만큼의 음수 위 여백을 줘
  * 흐름 속 크기는 늘 0이다. 지도는 화면 아래 끝까지 깔리고 판은 그 위에 뜬다(2026-11-05: 전에는 흐름 속 크기가 판 높이를 따라 바뀌어 끄는 동안 지도가 매번 크기를 바꿔 다시 그려 버벅였다).
  * 판이 늘 가리는 높이(내림이면 내린 높이, 아니면 접힌 높이)는 앱(.app)의 --sheet-cover로 넘겨 지도 아래쪽 단추와 처음 시점(WorldMap)을 그 위로 맞춘다. 끄는 동안에는 바꾸지 않고 놓을 때만 바꾼다.
+ * '국가 상세정보'나 사건을 펼치면(raise, 2026-11-11) 내림·접힘 판이 절반 단계로 올라오고, 모두 닫으면 접힘(기본 높이)으로 돌아온다.
+ * 사용자가 그사이 손잡이로 다른 단계로 옮겼으면 닫아도 그대로 둔다.
  * PC에서는 CSS가 이 변수들을 쓰지 않는다
  */
-export function useBottomSheet(active: boolean, contentKey: unknown) {
+export function useBottomSheet(active: boolean, contentKey: unknown, raise = false) {
   const ref = useRef<HTMLElement>(null);
   const [state, setState] = useState<SheetState>('closed');
   const drag = useRef<{ y: number; h: number; moved: boolean; state: SheetState } | null>(null);
@@ -38,7 +43,10 @@ export function useBottomSheet(active: boolean, contentKey: unknown) {
     const search = document.querySelector('.map-search')?.getBoundingClientRect();
     return search ? Math.max(peekOf(el), Math.round(el.getBoundingClientRect().bottom - search.bottom - GAP_BELOW_SEARCH)) : peekOf(el);
   };
-  const heightOf = (el: HTMLElement, s: SheetState) => (s === 'min' ? minOf(el) : s === 'open' ? openHeight(el) : peekOf(el));
+  // 절반 높이: 판 위 끝이 화면 높이 절반에 오게. 접힌 높이보다 낮거나 펼친 높이보다 높으면 그 사이로
+  const halfHeight = (el: HTMLElement) =>
+    Math.min(openHeight(el), Math.max(peekOf(el), Math.round(el.getBoundingClientRect().bottom - window.innerHeight / 2)));
+  const heightOf = (el: HTMLElement, s: SheetState) => (s === 'min' ? minOf(el) : s === 'open' ? openHeight(el) : s === 'half' ? halfHeight(el) : peekOf(el));
   // 판이 지도를 늘 가리는 높이를 앱에 넘긴다(펼침은 접힌 높이로 친다: 펼친 판 밑 단추는 가려져도 된다)
   const setCover = (el: HTMLElement, s: SheetState) =>
     el.closest<HTMLElement>('.app')?.style.setProperty('--sheet-cover', `${s === 'min' ? minOf(el) : peekOf(el)}px`);
@@ -81,7 +89,8 @@ export function useBottomSheet(active: boolean, contentKey: unknown) {
     if (!el) return;
     const s = active ? state : 'closed';
     el.dataset.sheet = s;
-    if (s !== 'open') el.scrollTop = 0;
+    // 절반으로 올라올 때는 펼친 사건으로 스크롤하는 중이므로(EventItem) 맨 위로 되돌리지 않는다
+    if (s !== 'open' && s !== 'half') el.scrollTop = 0;
     if (!active) {
       el.closest<HTMLElement>('.app')?.style.removeProperty('--sheet-cover');
       el.style.removeProperty('--sheet-h');
@@ -109,10 +118,17 @@ export function useBottomSheet(active: boolean, contentKey: unknown) {
     if (contentKey) setState((s) => (s === 'min' ? 'closed' : s));
   }, [contentKey]);
 
+  // 상세정보·사건을 펼치면 절반으로 올리고, 모두 닫으면 접힘으로 돌린다(절반에 있을 때만)
+  useEffect(() => {
+    if (!active) return;
+    if (raise) setState((s) => (s === 'min' || s === 'closed' ? 'half' : s));
+    else setState((s) => (s === 'half' ? 'closed' : s));
+  }, [active, raise]);
+
   // 검색창을 누르면 펼친 판을 접는다(검색 결과가 패널에 가리지 않게)
   useEffect(() => {
     const onFocus = (e: FocusEvent) => {
-      if (e.target instanceof Element && e.target.closest('.map-search')) setState((s) => (s === 'open' ? 'closed' : s));
+      if (e.target instanceof Element && e.target.closest('.map-search')) setState((s) => (s === 'open' || s === 'half' ? 'closed' : s));
     };
     document.addEventListener('focusin', onFocus);
     return () => document.removeEventListener('focusin', onFocus);
@@ -164,7 +180,7 @@ export function useBottomSheet(active: boolean, contentKey: unknown) {
     if (next === 'closed') el.style.removeProperty('--sheet-h');
     else el.style.setProperty('--sheet-h', `${heights[ORDER.indexOf(next)]}px`);
     setCover(el, next);
-    if (next !== 'open') el.scrollTop = 0;
+    if (next !== 'open' && next !== 'half') el.scrollTop = 0;
     setState(next);
   }, []);
   const onClick = useCallback(() => {

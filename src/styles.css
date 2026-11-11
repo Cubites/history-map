@@ -348,6 +348,13 @@ button {
   background: var(--surface);
   border-bottom: 1px solid var(--border);
 }
+/* 바로 가기 링크 복사(2026-11-11, CopyLink.tsx): 나라 이름·펼친 사건 제목을 단추로 감싸고 끝에 글자 높이(1em)의 복사 아이콘. 누르면 아래에 '링크 복사됨' */
+.copy-link { position: relative; display: inline; margin: 0; padding: 0; border: none; background: none; color: inherit; font: inherit; text-align: inherit; cursor: pointer; }
+.copy-link-icon { display: inline-block; width: 1em; height: 1em; margin-left: 0.3em; vertical-align: -0.15em; color: var(--muted); }
+.copy-link:hover .copy-link-icon, .copy-link:focus-visible .copy-link-icon { color: var(--fg); }
+.copy-link:focus-visible { outline: 2px solid var(--front-line); outline-offset: 2px; border-radius: 3px; }
+.copy-link-done { position: absolute; left: 0; top: calc(100% + 2px); z-index: 5; padding: 2px 7px; border-radius: 4px; background: var(--fg); color: var(--surface); font-size: 11.5px; font-weight: 600; line-height: 1.5; white-space: nowrap; opacity: 0; pointer-events: none; transition: opacity 0.15s; }
+.copy-link-done[data-show] { opacity: 1; }
 /* 원어·한자 이름은 다음 줄에, 나라 이름(20px)과 기간(13px)의 중간 크기로 */
 .panel-header-sticky h2 .hanja { display: block; font-size: 16.5px; line-height: 1.35; }
 .panel-swatch { width: 14px; height: 14px; margin-top: 7px; border-radius: 3px; flex-shrink: 0; }

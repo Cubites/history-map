@@ -1,10 +1,12 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { claimantsAt, claimedRegionsAt, occupierAt, overlordAt, type StaticData } from '../data/staticData.ts';
 import { eventYearFor, eventsOf, formatEventYears, inDecade, linkDirection } from '../lib/events.ts';
 import { formatFrontDate, yearOfFrontDate } from '../lib/wars.ts';
+import { useMediaQuery } from '../lib/useMediaQuery.ts';
 import { formatDecade, formatRange, formatYear, isAlive, prehistoryStage } from '../lib/year.ts';
 import type { HistoryEvent } from '../schema/index.ts';
-import { useAppStore } from '../store/useAppStore.ts';
+import { shareUrl, useAppStore } from '../store/useAppStore.ts';
+import { CopyLink } from './CopyLink.tsx';
 import { ABOUT_LIST_MIN, Sentences, splitSentences } from './aboutText.tsx';
 import { CountryList } from './CountryList.tsx';
 import { EntityTabs } from './EntityTabs.tsx';
@@ -38,7 +40,8 @@ export function EventPanel({ data }: { data: StaticData }) {
       // 이미 눌린 포인터가 있으면(두 손가락 확대 등) 모두 클릭이 아니다
       const multi = downs.size > 0;
       for (const d of downs.values()) d.moved = true;
-      const outside = !(e.target instanceof Element && e.target.closest('.event'));
+      // 나라 이름의 링크 복사 단추(.copy-link)를 눌러도 펼친 사건은 그대로 둔다
+      const outside = !(e.target instanceof Element && e.target.closest('.event, .copy-link'));
       downs.set(e.pointerId, { x: e.clientX, y: e.clientY, outside, moved: multi });
     };
     const onPointerMove = (e: PointerEvent) => {
@@ -80,10 +83,13 @@ export function EventPanel({ data }: { data: StaticData }) {
     return () => document.removeEventListener('keydown', onKeyDown);
   }, [selectedId, select]);
 
-  // 휴대폰에서 아래 패널은 끌어 올리는 판(useBottomSheet). 전쟁 보기에서는 패널이 지도 위로 가므로 쓰지 않는다
-  const sheet = useBottomSheet(!warId, selectedId);
+  // 휴대폰에서 아래 패널은 끌어 올리는 판(useBottomSheet). 전쟁 보기에서는 패널이 지도 위로 가므로 쓰지 않는다.
+  // 휴대폰에서 '국가 상세정보'(EntityTabs)나 사건을 펼치면 판을 화면 절반까지 올리고, 모두 닫으면 기본 높이로 돌린다(2026-11-11)
+  const mobile = useMediaQuery('(max-width: 768px)');
+  const [detailOpen, setDetailOpen] = useState(false);
+  const sheet = useBottomSheet(!warId, selectedId, mobile && !!selectedId && (detailOpen || !!pinned));
   const sheetHandle = !warId && (
-    <button type="button" className="sheet-handle" aria-label={sheet.state === 'open' ? '나라 정보 접기' : sheet.state === 'min' ? '나라 정보 올리기' : '나라 정보 펼치기'} aria-expanded={sheet.state !== 'min'} {...sheet.handleProps} />
+    <button type="button" className="sheet-handle" aria-label={sheet.state === 'open' || sheet.state === 'half' ? '나라 정보 접기' : sheet.state === 'min' ? '나라 정보 올리기' : '나라 정보 펼치기'} aria-expanded={sheet.state !== 'min'} {...sheet.handleProps} />
   );
 
   const entity = selectedId ? data.entities.get(selectedId) : undefined;
@@ -137,7 +143,10 @@ export function EventPanel({ data }: { data: StaticData }) {
         />
         <div>
           <h2>
-            {entity.names.ko}
+            {/* 나라 이름을 누르면 이 나라를 고른 화면의 바로 가기 링크를 복사한다(2026-11-11, 이름 끝 복사 아이콘) */}
+            <CopyLink url={() => shareUrl(useAppStore.getState().year, entity.id)} label={entity.names.ko}>
+              {entity.names.ko}
+            </CopyLink>
             {(entity.names.hanja ?? entity.names.native) && <span className="hanja"> {entity.names.hanja ?? entity.names.native}</span>}
           </h2>
           <div className="panel-period">{formatRange(entity.from, entity.to)}</div>
@@ -199,6 +208,7 @@ export function EventPanel({ data }: { data: StaticData }) {
             setYear(from);
             selectFocus(id);
           }}
+          onDetailOpen={setDetailOpen}
       />
 
       {!isAlive(entity, year) && (
@@ -340,7 +350,16 @@ function EventItem({ event, data, selectedId, highlight }: { event: HistoryEvent
     >
       <div className="event-head">
         <span className="event-year">{formatEventYears(event)}</span>
-        <span className="event-title">{event.title.ko}</span>
+        {/* 펼친 사건만 제목 끝에 복사 아이콘(2026-11-11). 펼친 채 제목을 누르면 이 나라·이 사건 화면의 바로 가기 링크를 복사한다(접히지 않음) */}
+        <span className="event-title">
+          {expanded ? (
+            <CopyLink url={() => shareUrl(useAppStore.getState().year, selectedId, event.id)} label={event.title.ko}>
+              {event.title.ko}
+            </CopyLink>
+          ) : (
+            event.title.ko
+          )}
+        </span>
         <span className="event-toggle" aria-hidden="true">{expanded ? '▴' : '▾'}</span>
       </div>
       {expanded && <EventDetails event={event} war={war || undefined} inCurrentView={inCurrentView} openFront={openFront} name={name} selectedId={selectedId} />}

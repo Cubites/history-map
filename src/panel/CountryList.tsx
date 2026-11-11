@@ -13,8 +13,9 @@ import { useAppStore } from '../store/useAppStore.ts';
 export function CountryList({ data }: { data: StaticData }) {
   const year = useAppStore((s) => s.year);
   const regionFilter = useAppStore((s) => s.regionFilter);
-  // 누르면 그 나라를 고르고 지도도 그 나라로 옮긴다 (2026-11-11)
-  const select = useAppStore((s) => s.selectFocus);
+  // 누르면 그 나라를 고르고 지도도 그 나라로 옮긴다 (2026-11-11). PC에서는 첫 화면보다 더 축소하지 않는다(floor, WorldMap)
+  const selectFocus = useAppStore((s) => s.selectFocus);
+  const select = (id: string) => selectFocus(id, true);
   const hoverCountry = useAppStore((s) => s.hoverCountry);
   // 목록이 사라지면(나라를 고르거나 전쟁 보기로 바뀜) 마우스가 떠나지 않아도 테두리를 지운다
   useEffect(() => () => hoverCountry(null), [hoverCountry]);

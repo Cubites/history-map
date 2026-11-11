@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useMediaQuery } from '../lib/useMediaQuery.ts';
 import { formatYear } from '../lib/year.ts';
 import type { Entity, HistoryEvent } from '../schema/index.ts';
@@ -61,17 +61,23 @@ export function EntityTabs({
   successors,
   onEvent,
   onSuccessor,
+  onDetailOpen,
 }: {
   entity: Entity;
   events: HistoryEvent[];
   successors: { id: string; name: string; from: number }[];
   onEvent: (e: HistoryEvent) => void;
   onSuccessor: (id: string, year: number) => void;
+  /** 휴대폰 '국가 상세정보'를 펼치고 닫을 때(2026-11-11, 아래 판을 절반까지 올림). 사라질 때도 닫힘으로 알린다 */
+  onDetailOpen?: (open: boolean) => void;
 }) {
   const [tab, setTab] = useState<Tab>(readTab);
   // 휴대폰: 개요 한 문장만 머리 아래에 보이고, 나머지는 '국가 상세정보' 단추로 펼친다(테스트 중). 나라를 바꾸면 접힘으로 시작(key={entity.id})
   const mobile = useMediaQuery('(max-width: 768px)');
   const [open, setOpen] = useState(false);
+  const detailOpen = mobile && open;
+  useEffect(() => onDetailOpen?.(detailOpen), [detailOpen, onDetailOpen]);
+  useEffect(() => () => onDetailOpen?.(false), [onDetailOpen]);
   const t = buildText(entity, events);
   // 내용이 없는 탭은 숨긴다. 기억한 탭이 숨겨졌으면 개요(휴대폰은 시작과 끝)를 연다
   const tabs: [Tab, string][] = [
