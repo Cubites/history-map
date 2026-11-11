@@ -6052,3 +6052,48 @@
 # ── 동남아 E4 SK (타이·캄보디아·라오·메콩 삼각주 1292 이전, 2026-11-09) ──
 
 # ── 동남아 E4 BI (버마·해양 1292 이전, 2026-11-09) ──
+
+# ── 사하라 이남 F1 WA (서아프리카 대서양 쪽, 2026-11-11) ──
+
+- entity: ivory-coast
+  from: 1975
+  to: null
+  at: [-3.16, 5.12]
+  reason: '(근사) 아비 석호와 대서양 사이 아시니 동쪽 모래톱(약 58 km², 가나 국경 쪽). 지금 주 조각 바깥선에서 석호 물이 본토와 갈라 떨어져 보이지만 같은 코트디부아르 땅이다(칼선 없음, 행정구역 탓 아님 — 석호 지형 탓)'
+  sources: ['위키백과 Ivory Coast https://en.wikipedia.org/wiki/Ivory_Coast']
+
+# ── 사하라 이남 F1 EA (대호수·콩고 분지·인도양, 2026-11-11) ──
+
+- entity: dr-congo
+  from: 1975
+  to: null
+  at: [12.54, -6.05]
+  reason: '(근사) 콩고강 어귀 남쪽 물길 가의 모래톱·섬(약 10 km²): 지금 행정구역 조각 CD-BC(콩고 중앙주) 바깥선이 강 어귀에서 본토와 물길로 갈라져 떨어져 보임. 강 어귀 섬은 콩고 민주 공화국 땅이라 그대로 둠(같은 자리의 가는 띠 두 줄은 allow/shapes.yaml EA 머리)'
+  sources: ["Natural Earth 1:10m admin-1(콩고 중앙주 Bas-Congo) — data/base/fragments/sub-saharan-africa.topo.json"]
+
+# ── 사하라 이남 F1 SF (남부, 2026-11-11) ──
+
+- entity: angola
+  from: 1975
+  to: null
+  at: [12.26, -5.06]
+  reason: 카빈다(약 6,811 km²)는 콩고강 어귀 북쪽 대서양 기슭의 앙골라 땅으로, 콩고 민주 공화국의 바다 쪽 좁은 땅에 막혀 앙골라 본토와 떨어져 있다(사료상 떨어진 땅 — 지금 행정구역 탓 부스러기 아님)
+  sources: ["위키백과 Angola https://en.wikipedia.org/wiki/Angola"]
+
+- entity: malawi
+  from: 1975
+  to: null
+  at: [34.71, -12.06]
+  reason: 말라위호 동쪽 모잠비크 쪽 물 안에 있는 말라위의 리코마섬 일대(지도 조각 약 120 km²)로, 호수 건너 떨어진 섬이다(사료상 떨어진 땅 — 지금 행정구역 탓 부스러기 아님)
+  sources: ["위키백과 Malawi https://en.wikipedia.org/wiki/Malawi"]
+
+- entity: malawi
+  from: 1975
+  to: null
+  at: [34.6, -12.02]
+  reason: 말라위호 동쪽 모잠비크 쪽 물 안에 있는 말라위의 치주물루섬 일대(지도 조각 약 81 km²)로, 호수 건너 떨어진 섬이다(사료상 떨어진 땅 — 지금 행정구역 탓 부스러기 아님)
+  sources: ["위키백과 Malawi https://en.wikipedia.org/wiki/Malawi"]
+
+# ── 사하라 이남 F1 CE (사헬·기니만 안쪽, 2026-11-11) ──
+
+# ── 사하라 이남 F1 HN (뿔·나일, 2026-11-11) ──

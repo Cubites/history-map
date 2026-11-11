@@ -1,4 +1,1166 @@
-# sub-saharan-africa modern 나라 (시대 파일 scripts/geo/areas/sub-saharan-africa/modern.mjs의 짝 항목 파일, npm run new:area가 만든 빈 틀)
-# 시대·범위: 1975~현재: 포르투갈령 독립 뒤 나라들 (F1)
-# 나라를 넣을 때 아래 []를 지우고 - id: …로 적는다(docs/DATA_GUIDE.md). 권역 값은 파일 이름에서 정해진다(src/schema/regions.ts REGION_FILTER_OF의 'sub-saharan-africa-modern').
-[]
+# sub-saharan-africa modern 나라 (시대 파일 scripts/geo/areas/sub-saharan-africa/modern.mjs의 짝 항목 파일, npm run new:area가 만든 틀)
+# 시대·범위: 1975~현재: 포르투갈령 독립 뒤 나라들 (F1, docs/sub-saharan-africa/00-scope.md 2절)
+# 권역 값은 파일 이름에서 정해진다(src/schema/regions.ts REGION_FILTER_OF의 'sub-saharan-africa-modern' → 필터 단위 sub-saharan-africa).
+# F1 뼈대(2026-11-11)가 새 항목 54개의 id·이름·level·from·to·색을 정해 칸 머리 아래 자리 블록으로 두었다(지시문 f1/COMMON.md 4절 표, 표 원천 f1/skel/entities.tsv). 색은 뼈대가 이웃과 ΔE 48 넘게 골랐다(f1/skel/tools/df1.mjs).
+#   지역 항목 셋(somaliland·rhodesia·aouzou-strip — level region)은 법적 주인 색 그대로(somalia·uk·chad — 결정 4·D1, COMMON P4).
+#   이름은 위키백과 한국어판 표제로 확인했다(f1/skel/ko-titles*.txt — 표제가 없는 '아우주 띠'는 저장소 libya 글 꼴).
+#   summary·mapNote는 뼈대의 자리 글이라 정의 칸이 바꿔 쓴다(endNote·features 3~5줄·basis·native 확인도 그 칸이 — f1/COMMON.md 5절 탭 칸, startEvents·endEvents는 사건 1묶음 몫이라 빈 목록 그대로).
+#   from·to는 뼈대 어림이라 칸이 사료로 확인해 고칠 수 있다(고치면 결과 노트 2절에 한 줄). id·색·이름은 고치지 않는다.
+#   이웃 권역 항목 mauritania(모리타니)는 이 파일에 없다 — 서아시아 data/entities/middle-east-modern.yaml 블록을 CE 칸이 그 자리에서 고친다(COMMON P3).
+
+# ══ F1 WA 항목 (서아프리카 대서양 쪽) ══
+# 독립 1960-10-01(위키 en Nigeria). 1975~ NGA 37조각 통째. 바카시반도 665 km²는 카메룬 조각 CM-SW 안(알려진 근사)
+- id: nigeria
+  level: polity
+  names: { ko: 나이지리아, en: Nigeria, native: Nigeria }
+  from: 1960
+  to: null
+  color: "#b25a34"
+  summary: 기니만 안쪽 니제르강 하류의 연방 공화국. 1914년 영국이 남나이지리아와 북나이지리아 보호령을 합쳐 지금 땅의 틀을 만들었고, 1960년 10월 1일 연방으로 독립해 1963년 공화국이 됨. 1967~1970년 비아프라 전쟁을 겪었고 1999년 민정으로 돌아갈 때까지 군사 정권이 여러 차례 이어졌으며, 1991년 수도를 라고스에서 아부자로 옮김
+  mapNote: 지도에는 1975년부터 지금 나이지리아 땅으로 표시함. 2008년 카메룬에 넘길 때까지 나이지리아가 다스린 바카시반도(약 665 km²)는 처음부터 카메룬 색으로 그렸고, 북동부에서 보코 하람이 고을들을 장악했던 동안에도 나이지리아 색으로 칠함
+  features:
+    - 수도는 라고스, 1991년부터 아부자
+    - 1967~1970년 비아프라 전쟁
+    - 1979~1983년 제2공화국, 1999년 민정 복귀
+    - 2008년 바카시반도를 카메룬에 넘김
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Nigeria", "나이지리아 독립법(1960)"]
+    foundingNote: 영국에서 연방으로 독립한 1960년 10월 1일부터(1914년 남·북 보호령 합병은 글로)
+
+# 독립 1960-08-01 다호메이 공화국, 1975-11-30 베냉 인민 공화국(위키 en People's Republic of Benin — 이름만, 기본값 21). 1975~ BEN 12
+- id: benin
+  level: polity
+  names: { ko: 베냉, en: Benin, native: Bénin }
+  from: 1960
+  to: null
+  color: "#84c1db"
+  summary: 기니만 기슭 옛 다호메이 땅의 공화국. 프랑스령 서아프리카의 다호메이가 1960년 8월 1일 다호메이 공화국으로 독립했고, 1972년 쿠데타로 집권한 마티외 케레쿠가 1975년 11월 30일 나라 이름을 베냉 인민 공화국으로 바꾸어 마르크스–레닌주의 일당 국가를 세움. 1990년 일당 체제를 버리고 다당제의 베냉 공화국이 됨
+  mapNote: 지도에는 1975년부터 지금 베냉 땅으로 표시함. 1975년 다호메이에서 베냉으로 바뀐 것은 나라 이름뿐이라 땅은 그대로 그림
+  features:
+    - 수도는 포르토노보, 정부 기관은 코토누에 많음
+    - 1960년 다호메이 공화국으로 독립
+    - 1975~1990년 베냉 인민 공화국, 대통령 마티외 케레쿠
+    - 1990년 새 헌법, 다당제로 돌아섬
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Republic of Dahomey", "위키백과 People's Republic of Benin"]
+    foundingNote: 다호메이 공화국이 프랑스에서 독립한 1960년 8월 1일부터(1975년 베냉으로 이름만 바꿈)
+
+# 독립 1960(위키 en French Togoland — 프랑스 신탁 통치령 1946~1960). 1975~ TGO 5
+- id: togo
+  level: polity
+  names: { ko: 토고, en: Togo, native: Togo }
+  from: 1960
+  to: null
+  color: "#db84db"
+  summary: 기니만 기슭에서 북쪽으로 좁고 길게 뻗은 공화국. 독일 보호령 토골란트가 제1차 세계 대전 뒤 영국과 프랑스로 갈렸고, 프랑스 위임 통치령·신탁 통치령이던 동쪽 땅이 1960년 토고 공화국으로 독립함. 1967년 쿠데타로 집권한 냐싱베 에야데마가 일당 체제로 오래 다스렸고, 1993년부터 다당제 선거를 치름
+  mapNote: 지도에는 1975년부터 지금 토고 땅으로 표시함
+  features:
+    - 수도는 로메
+    - 1922~1960년 프랑스 위임 통치령·신탁 통치령
+    - 1960년 프랑스에서 독립
+    - 1967년 에야데마의 쿠데타, 일당 체제
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 French Togoland", "위키백과 Togo"]
+    foundingNote: 프랑스 신탁 통치령에서 토고 공화국으로 독립한 1960년부터
+
+# 독립 1957-03-06(위키 en·ko Ghana). 1975~ GHA 10
+- id: ghana
+  level: polity
+  names: { ko: 가나, en: Ghana, native: Ghana }
+  from: 1957
+  to: null
+  color: "#45a2c9"
+  summary: 옛 골드코스트 땅에 선 서아프리카 첫 독립국. 영국령 골드코스트·아샨티·북부 지역과 영국령 토골란트를 합쳐 1957년 3월 6일 사하라 이남의 식민지로는 처음 독립했고, 1960년 콰메 은크루마를 대통령으로 공화국이 됨. 1966년 은크루마가 쿠데타로 쫓겨난 뒤 군사 정권과 민정이 엇갈렸고, 1992년 제4공화국 헌법으로 민정이 자리 잡음
+  mapNote: 지도에는 1975년부터 지금 가나 땅으로 표시함
+  features:
+    - 수도는 아크라
+    - 1957년 3월 6일 영국에서 독립
+    - 1960년 공화국, 대통령 콰메 은크루마
+    - 1966년·1972년·1979년·1981년 쿠데타
+    - 1992년 제4공화국 헌법
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Ghana", "가나 독립법(1957)"]
+    foundingNote: 골드코스트가 가나로 독립한 1957년 3월 6일부터
+
+# 독립 1960-08(위키 en·ko Ivory Coast — 날짜는 8월 7일·8월 6일로 갈림). 1975~ CIV 19
+- id: ivory-coast
+  level: polity
+  names: { ko: 코트디부아르, en: Ivory Coast, native: "Côte d'Ivoire" }
+  from: 1960
+  to: null
+  color: "#c94545"
+  summary: 기니만 서쪽 기슭의 공화국. 1893년 프랑스 식민지가 되었고 1960년 8월 독립해 펠릭스 우푸에부아니가 1993년 죽을 때까지 대통령을 지냄. 커피와 코코아로 1960~1970년대에 서아프리카에서 손꼽히는 경제를 이뤘고, 1983년 수도를 야무수크로로 정함. 1999년 쿠데타 뒤 2002~2007년과 2010~2011년 두 차례 내전을 겪음
+  mapNote: 지도에는 1975년부터 지금 코트디부아르 땅으로 표시함. 2002~2007년 내전으로 반군이 북부를 쥐었던 동안에도 코트디부아르 색으로 칠함
+  features:
+    - 수도는 야무수크로, 경제 중심은 아비장
+    - 1960년 프랑스에서 독립
+    - 1960~1993년 대통령 펠릭스 우푸에부아니
+    - 2002~2007년·2010~2011년 내전
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Ivory Coast"]
+    foundingNote: 프랑스에서 독립한 1960년 8월부터
+
+# 독립 선언 1847-07-26(위키 en Liberia). 1975~ LBR 15 — 1975 앞은 앞 단계가 같은 id로 이음
+- id: liberia
+  level: polity
+  names: { ko: 라이베리아, en: Liberia, native: Liberia }
+  from: 1847
+  to: null
+  color: "#834b9b"
+  summary: 미국에서 건너간 해방 노예들이 세운 아프리카 첫 공화국. 미국 식민 협회가 1822년부터 이주민을 보냈고, 이주민의 후손인 아메리코라이베리아인이 1847년 7월 26일 독립을 선언함. 트루 휘그당의 오랜 지배가 1980년 새뮤얼 도의 쿠데타로 끝났고, 1989~1997년과 1999~2003년 두 차례 내전 뒤 2005년 아프리카에서 처음으로 여성 대통령을 뽑음
+  mapNote: 지도에는 1975년부터 지금 라이베리아 땅으로 표시함. 1989~2003년 내전 동안 반군이 나라 대부분을 쥐었던 때에도 라이베리아 색으로 칠함
+  features:
+    - 수도는 몬로비아
+    - 1847년 독립 선언, 미국은 1862년에 승인
+    - 1980년 새뮤얼 도의 쿠데타
+    - 1989~1997년·1999~2003년 내전
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Liberia", "라이베리아 독립 선언(1847)"]
+    foundingNote: 아메리코라이베리아인이 독립을 선언한 1847년 7월 26일부터
+
+# 독립 1961-04-27(위키 en Sierra Leone). 1975~ SLE 4
+- id: sierra-leone
+  level: polity
+  names: { ko: 시에라리온, en: Sierra Leone, native: Sierra Leone }
+  from: 1961
+  to: null
+  color: "#34b240"
+  summary: 프리타운을 수도로 한 대서양 기슭의 공화국. 1808년 해방 노예를 옮겨 살게 한 영국 식민지 프리타운에 1896년 내륙 보호령이 더해져 지금 땅이 되었고, 1961년 4월 27일 독립함. 1971년 시아카 스티븐스를 대통령으로 공화국이 되었고 1978년 일당 체제가 되었으며, 1991~2002년 혁명연합전선과의 내전을 겪음
+  mapNote: 지도에는 1975년부터 지금 시에라리온 땅으로 표시함. 1991~2002년 내전 동안 반군이 동부의 다이아몬드 산지를 쥐었던 때에도 시에라리온 색으로 칠함
+  features:
+    - 수도는 프리타운
+    - 1961년 영국에서 독립
+    - 1971년 공화국, 대통령 시아카 스티븐스
+    - 1991~2002년 내전
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Sierra Leone"]
+    foundingNote: 영국에서 독립한 1961년 4월 27일부터
+
+# 독립 1958-10-02(위키 en·ko Guinea). 1975~ GIN 34
+- id: guinea
+  level: polity
+  names: { ko: 기니, en: Guinea, native: Guinée }
+  from: 1958
+  to: null
+  color: "#ccbb94"
+  summary: 니제르강 원류의 고원과 대서양 기슭을 아우른 공화국. 프랑스령 기니가 1958년 국민 투표로 프랑스 공동체에 들기를 거부하고 10월 2일 독립했고, 아메드 세쿠 투레가 1984년 죽을 때까지 일당 체제로 다스림. 1984년 쿠데타로 집권한 란사나 콩테가 2008년까지 다스렸고, 2010년 첫 민주 선거를 치렀으나 2021년 다시 쿠데타가 일어남
+  mapNote: 지도에는 1975년부터 지금 기니 땅으로 표시함
+  features:
+    - 수도는 코나크리
+    - 1958년 10월 2일 프랑스에서 독립
+    - 1958~1984년 대통령 아메드 세쿠 투레
+    - 1984년·2008년·2021년 쿠데타
+    - 세계에서 손꼽히는 보크사이트 산지
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Guinea"]
+    foundingNote: 프랑스 공동체 가입을 거부하고 독립한 1958년 10월 2일부터
+
+# 독립 선언 1973·포르투갈 승인 1974-09(위키 en Guinea-Bissau·ko 기니비사우), PAIGC 두 나라 당이 1980-11-14 쿠데타로 갈림(위키 en PAIGC·1980 coup). 1975~ GNB 9
+- id: guinea-bissau
+  level: polity
+  names: { ko: 기니비사우, en: Guinea-Bissau, native: Guiné-Bissau }
+  from: 1974
+  to: null
+  color: "#8496db"
+  summary: 옛 포르투갈령 기니에서 무장 투쟁 끝에 독립한 공화국. 1956년 아밀카르 카브랄 등이 세운 기니·카보베르데 아프리카 독립당(PAIGC)이 1960년대부터 독립 전쟁을 벌여 1973년 독립을 선언했고, 1974년 9월 포르투갈이 독립을 인정함. 당은 카보베르데와 한 나라를 이루려 했으나 1980년 11월 14일 주앙 베르나르두 비에이라의 쿠데타로 두 나라의 당이 갈라졌고, 1998~1999년 내전을 겪음
+  mapNote: 지도에는 1975년부터 지금 기니비사우 땅(바다 쪽 비자고스 제도 포함)으로 표시함
+  features:
+    - 수도는 비사우
+    - 1963~1974년 독립 전쟁
+    - 1973년 독립 선언, 1974년 9월 포르투갈이 인정
+    - 1980년 비에이라의 쿠데타로 카보베르데와 갈라섬
+    - 1998~1999년 내전
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Guinea-Bissau", "위키백과 African Party for the Independence of Guinea and Cape Verde"]
+    foundingNote: 포르투갈이 독립을 인정한 1974년 9월부터(1973년 독립 선언은 글로)
+
+# 독립 1975-07-05(위키 en·ko Cape Verde), PAIGC 통치 1975~1980(위키 en PAIGC). 1975~ CPV 21(섬)
+- id: cape-verde
+  level: polity
+  names: { ko: 카보베르데, en: Cape Verde, native: Cabo Verde }
+  from: 1975
+  to: null
+  color: "#456dc9"
+  summary: 대서양 한가운데 화산섬 열 개로 이루어진 공화국. 15세기 포르투갈 사람들이 무인도였던 섬에 정착해 대서양 노예 무역의 기항지로 삼았고, 1975년 7월 5일 포르투갈에서 독립함. 독립 뒤 기니비사우와 함께 기니·카보베르데 아프리카 독립당(PAIGC)이 다스렸으나 1980년 기니비사우 쿠데타 뒤 카보베르데 쪽 당이 카보베르데 독립 아프리카당으로 갈라섰고, 1991년 첫 다당제 선거로 정권이 바뀜
+  mapNote: 지도에는 1975년부터 지금 카보베르데 섬들로 표시함
+  features:
+    - 수도는 산티아구섬의 프라이아
+    - 1975년 7월 5일 포르투갈에서 독립
+    - 1975~1980년 기니비사우와 한 당이 다스림
+    - 1991년 첫 다당제 선거
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Cape Verde", "위키백과 African Party for the Independence of Guinea and Cape Verde"]
+    foundingNote: 포르투갈에서 독립한 1975년 7월 5일부터
+
+# 독립 1960-08-20(조사 1번 — 말리 연방에서 갈림, 위키 ko 세네갈). 1975~ SEN 14. 세네감비아 1982-02-01~1989-09-30은 두 항목 + 글(6-B 9 — 맞는 관계 종류 없음)
+- id: senegal
+  level: polity
+  names: { ko: 세네갈, en: Senegal, native: Sénégal }
+  from: 1960
+  to: null
+  color: "#c9457a"
+  summary: 아프리카 서쪽 끝 다카르를 수도로 한 공화국. 프랑스령 서아프리카의 중심이던 땅으로, 1960년 6월 프랑스령 수단과 함께 말리 연방으로 독립했다가 8월 20일 갈라져 따로 공화국이 됨. 레오폴 세다르 상고르가 1980년까지 대통령을 지냈고, 1982~1989년 감비아와 세네감비아 국가 연합을 이룸. 쿠데타를 한 번도 겪지 않은 나라로 꼽힘
+  mapNote: 지도에는 1975년부터 지금 세네갈 땅으로 표시함. 세네감비아 국가 연합 동안에도 세네갈과 감비아를 따로 칠했고, 1982년부터 남부 카자망스에서 이어진 분리 운동의 장악지는 칠하지 않음
+  features:
+    - 수도는 다카르
+    - 1960년 말리 연방으로 독립, 같은 해 8월 갈라섬
+    - 1960~1980년 대통령 레오폴 세다르 상고르
+    - 1982~1989년 감비아와 세네감비아 국가 연합
+    - 1982년부터 카자망스 분쟁
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Senegal", "위키백과 Senegambia Confederation"]
+    foundingNote: 말리 연방에서 갈라져 따로 공화국이 된 1960년 8월 20일부터
+
+# 독립 1965-02-18(위키 ko 감비아). 1975~ GMB 6. 세네감비아 1982~1989는 두 항목 + 글(6-B 9)
+- id: gambia
+  level: polity
+  names: { ko: 감비아, en: The Gambia, native: The Gambia }
+  from: 1965
+  to: null
+  color: "#9b8b4b"
+  summary: 감비아강 양쪽 기슭을 따라 세네갈 안으로 길게 들어간 공화국. 1765년 영국 식민지가 되었고 1965년 2월 18일 독립했으며, 1970년 다우다 자와라를 대통령으로 공화국이 됨. 1981년 쿠데타 시도를 세네갈군의 도움으로 막은 뒤 1982~1989년 세네갈과 세네감비아 국가 연합을 이뤘고, 1994년 쿠데타로 집권한 야히아 자메가 2017년까지 다스림
+  mapNote: 지도에는 1975년부터 지금 감비아 땅으로 표시함. 1982~1989년 세네감비아 국가 연합 동안에도 감비아 색으로 따로 칠함
+  features:
+    - 수도는 반줄(옛 이름 배서스트)
+    - 1965년 영국에서 독립, 1970년 공화국
+    - 1982년 2월 1일~1989년 9월 30일 세네감비아 국가 연합
+    - 1994년 자메의 쿠데타, 2017년 아다마 바로 취임
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 The Gambia", "위키백과 Senegambia Confederation"]
+    foundingNote: 영국에서 독립한 1965년 2월 18일부터
+
+
+# ══ F1 EA 항목 (대호수·콩고 분지·인도양) ══
+# 독립 1960-06-30(벨기에), 자이르 1971-10-27~1997-05-17은 이름만(기본값 21 — 위키 ko '자이르'). 1975~ COD 11 통째. 1·2차 콩고 전쟁 점령은 칠하지 않음(6-B 3·결정 6)
+- id: dr-congo
+  level: polity
+  names: { ko: 콩고 민주 공화국, en: Democratic Republic of the Congo, native: République démocratique du Congo }
+  from: 1960
+  to: null
+  color: "#b15d5d"
+  summary: 콩고강 유역 대부분을 차지한 중앙아프리카의 큰 나라. 1960년 6월 30일 벨기에에서 독립했고, 곧 카탕가 분리와 내전이 이어짐. 1965년 쿠데타로 권력을 잡은 모부투 세세 세코가 1971년 10월 27일 나라 이름을 자이르로 바꿈. 1994년 르완다 집단 학살 뒤 난민과 무장 세력이 동부로 넘어왔고, 1996~1997년 제1차 콩고 전쟁으로 모부투가 쫓겨나 로랑데지레 카빌라가 1997년 5월 17일 이름을 콩고 민주 공화국으로 되돌림. 1998년 8월부터 2003년까지 이웃 여러 나라가 뛰어든 제2차 콩고 전쟁이 벌어짐
+  mapNote: 지도에는 1975년부터 지금 콩고 민주 공화국 땅으로 표시하고, 1971~1997년 자이르로 불린 때도 같은 색으로 그림. 1996~2003년 두 차례 콩고 전쟁 동안 르완다·우간다군과 반군이 차지한 동부와 북부, 그 뒤 동부의 반군 장악지도 점령으로 보아 콩고 땅 그대로 칠함
+  features:
+    - 수도는 킨샤사(1966년까지 레오폴드빌)
+    - 1965~1997년 모부투 세세 세코 정권, 1971~1997년 나라 이름 자이르
+    - 1996~1997년 제1차 콩고 전쟁, 1997년 콩고 민주 공화국으로 이름을 되돌림
+    - 1998~2003년 제2차 콩고 전쟁, 2003년 통합 과도 정부
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Democratic Republic of the Congo", "위키백과 자이르", "위키백과 Second Congo War"]
+    foundingNote: 벨기에령 콩고가 독립한 1960년 6월 30일부터(1971~1997년 자이르는 이름만 바뀐 같은 나라)
+
+# 독립 1962-07-01(벨기에 신탁 루안다-우룬디에서 — 위키 ko 르완다). 1975~ RWA 5 통째
+- id: rwanda
+  level: polity
+  names: { ko: 르완다, en: Rwanda, native: Rwanda }
+  from: 1962
+  to: null
+  color: "#c9c945"
+  summary: 대호수 지방 산지의 공화국. 1959~1962년 후투 혁명으로 왕정이 무너졌고, 1962년 7월 1일 벨기에 신탁 통치령 루안다-우룬디에서 독립함. 1990년 우간다에서 넘어온 르완다 애국 전선과 내전이 벌어졌고, 1994년 4월 7일부터 7월 19일까지 약 100일 동안 투치족 50만~66만여 명이 죽은 르완다 집단 학살이 일어남. 애국 전선이 나라를 장악해 학살이 끝났고, 이 일로 동쪽 이웃 자이르의 전쟁이 시작됨
+  mapNote: 지도에는 1975년부터 지금 르완다 땅으로 표시함
+  features:
+    - 수도는 키갈리
+    - 1962년 7월 1일 독립, 같은 날 부룬디와 갈라짐
+    - 1990~1994년 르완다 내전
+    - 1994년 르완다 집단 학살
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 르완다", "위키백과 Rwandan genocide"]
+    foundingNote: 루안다-우룬디 신탁 통치가 끝나 독립한 1962년 7월 1일부터
+
+# 독립 1962-07-01(루안다-우룬디에서 — 위키 en History of Burundi). 1975~ BDI 17 통째
+- id: burundi
+  level: polity
+  names: { ko: 부룬디, en: Burundi, native: Uburundi }
+  from: 1962
+  to: null
+  color: "#a665d2"
+  summary: 탕가니카호 북쪽 끝 산지의 나라. 16세기 무렵 생긴 부룬디 왕국을 잇고, 독일과 벨기에의 지배 아래 르완다와 함께 루안다-우룬디로 다스려지다가 1962년 7월 1일 왕국으로 독립함. 1966년 왕정이 무너져 공화국이 되었고, 1972년 후투족 학살(이키자)과 1993년부터 이어진 내전을 겪음. 2019년 정치 수도를 부줌부라에서 기테가로 옮기기로 정함
+  mapNote: 지도에는 1975년부터 지금 부룬디 땅으로 표시함
+  features:
+    - 수도는 부줌부라, 2019년부터 정치 수도는 기테가
+    - 1962년 7월 1일 왕국으로 독립, 1966년 공화국
+    - 1972년 후투족 학살, 1993~2005년 내전
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 History of Burundi", "위키백과 Bujumbura"]
+    foundingNote: 루안다-우룬디 신탁 통치가 끝나 독립한 1962년 7월 1일부터
+
+# 독립 1962(위키 en Uganda 'gained independence in 1962'). 1975~ UGA 112 통째, 카게라 1978~79는 칠하지 않음
+- id: uganda
+  level: polity
+  names: { ko: 우간다, en: Uganda, native: Uganda }
+  from: 1962
+  to: null
+  color: "#344db2"
+  summary: 빅토리아호 북쪽 기슭의 공화국. 1894년 영국 보호령이 되었고, 1962년 독립해 밀턴 오보테가 첫 총리가 됨. 1971년 쿠데타로 이디 아민이 권력을 잡았고, 1978년 10월 탄자니아 북서부 카게라 돌출부를 침공해 병합을 선포했다가 반격을 받아 1979년 4월 쫓겨남(우간다–탄자니아 전쟁). 1986년부터 요웨리 무세베니가 다스림
+  mapNote: 지도에는 1975년부터 지금 우간다 땅으로 표시함. 1978년 10~11월 우간다군이 차지하고 병합을 선포한 탄자니아의 카게라 돌출부(약 1,900 km²)는 곧 되찾겼으므로 탄자니아 색 그대로 둠
+  features:
+    - 수도는 캄팔라
+    - 1971~1979년 이디 아민 정권
+    - 1978~1979년 우간다–탄자니아 전쟁
+    - 1986년부터 요웨리 무세베니 정권
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Uganda", "위키백과 Uganda–Tanzania War"]
+    foundingNote: 영국 보호령에서 독립한 1962년부터
+
+# 독립 1963-12-12(조사 1번 문서). 1975~ KEN 8 통째, 일레미 삼각지대는 지금 행정 경계대로(6-B 7)
+- id: kenya
+  level: polity
+  names: { ko: 케냐, en: Kenya, native: Kenya }
+  from: 1963
+  to: null
+  color: "#d48ca9"
+  summary: 적도가 지나는 동아프리카 인도양 기슭의 공화국. 영국 식민지 시절 1952~1960년 마우마우 봉기를 겪었고, 1963년 12월 12일 독립해 이듬해 공화국이 되었으며 조모 케냐타가 첫 대통령이 됨. 1982년부터 1991년까지 한 정당만 허용되었고, 2010년 새 헌법을 만듦. 북서쪽 일레미 삼각지대를 남수단과 다툼
+  mapNote: 지도에는 1975년부터 지금 케냐 땅으로 표시함. 남수단과 다투는 일레미 삼각지대(약 11,000 km²)는 케냐가 1950년 수단 순찰선까지 실제로 다스리지만, 지도에서는 지금 행정 경계를 따라 남쪽은 케냐, 북쪽 끝 일부는 남수단 색으로 둠
+  features:
+    - 수도는 나이로비
+    - 1963년 12월 12일 독립, 1964년 공화국, 첫 대통령 조모 케냐타
+    - 1982~1991년 일당제
+    - 2010년 새 헌법
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Kenya", "위키백과 Ilemi Triangle"]
+    foundingNote: 영국 식민지에서 독립한 1963년 12월 12일부터
+
+# 탕가니카 1961 + 잔지바르 1963이 1964 합침(위키 ko 탄자니아, 연합 조약 1964-04-22 서명 — 위키 en Articles of Union). 합친 항목(기본값 17). 1975~ TZA 30 통째
+- id: tanzania
+  level: polity
+  names: { ko: 탄자니아, en: Tanzania, native: Tanzania }
+  from: 1964
+  to: null
+  color: "#45c9a2"
+  summary: 탕가니카와 잔지바르가 합쳐 세운 연합 공화국. 1961년 독립한 탕가니카와 1963년 독립한 잔지바르가 1964년 1월 잔지바르 혁명 뒤 4월에 합쳤고, 같은 해 10월 탄자니아라는 이름을 씀. 줄리어스 니에레레가 1985년까지 대통령으로 우자마아 사회주의를 폈고, 1978~1979년 우간다군이 침공한 카게라 돌출부를 되찾고 우간다로 진격해 이디 아민 정권을 무너뜨림. 1974년 수도를 다르에스살람에서 도도마로 옮기기로 정해 1996년에 마침
+  mapNote: 지도에는 1975년부터 지금 탄자니아 땅(웅구자섬·펨바섬의 잔지바르 포함)으로 표시함. 1978년 10~11월 우간다군이 차지한 카게라 돌출부(약 1,900 km²)는 곧 되찾았으므로 내내 탄자니아 색으로 그림
+  features:
+    - 법적 수도는 도도마, 가장 큰 도시는 다르에스살람
+    - 1964년 4월 탕가니카와 잔지바르가 합침, 잔지바르는 자치 정부를 둠
+    - 1964~1985년 줄리어스 니에레레 대통령
+    - 1978~1979년 우간다–탄자니아 전쟁
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 탄자니아", "탕가니카·잔지바르 연합 조약(1964)"]
+    foundingNote: 탕가니카와 잔지바르가 연합 조약으로 합친 1964년 4월부터(그 앞 두 나라는 따로)
+
+# 독립 1960-06-26(프랑스 — 조사 1번 문서). 1975~ MDG 22 통째
+- id: madagascar
+  level: polity
+  names: { ko: 마다가스카르, en: Madagascar, native: Madagasikara }
+  from: 1960
+  to: null
+  color: "#949fcc"
+  summary: 인도양 서쪽 큰 섬의 공화국. 19세기에 섬 대부분을 아우른 메리나 왕국이 1896년 프랑스 식민지가 되었고, 1960년 6월 26일 독립함. 1975년 디디에 라치라카가 권력을 잡아 사회주의 민주 공화국을 세웠고, 1992년 새 헌법으로 다당제 공화국이 됨. 2009년 정변을 겪음
+  mapNote: 지도에는 1975년부터 지금 마다가스카르 땅으로 표시함
+  features:
+    - 수도는 안타나나리보
+    - 1960년 6월 26일 프랑스에서 독립
+    - 1975~1992년 마다가스카르 민주 공화국
+    - 1992년 새 헌법, 2009년 정변
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 마다가스카르", "위키백과 History of Madagascar"]
+    foundingNote: 프랑스 식민지에서 독립한 1960년 6월 26일부터
+
+# 독립 1968-03-12(조사 1번 문서). 1975~ MUS 14 통째(로드리게스·아갈레가 일부 섬은 지도 자료 밖 — 0단계 근사)
+- id: mauritius
+  level: polity
+  names: { ko: 모리셔스, en: Mauritius, native: Maurice }
+  from: 1968
+  to: null
+  color: "#a245c9"
+  summary: 마다가스카르 동쪽 인도양 섬나라. 네덜란드와 프랑스가 차례로 차지했다가 나폴레옹 전쟁 때 영국 식민지가 되었고, 1968년 3월 12일 독립함. 초대 총리 시우사구르 람굴람 때 섬유 공업으로 빠르게 성장했고, 1992년 공화국이 됨. 영국이 독립 직전 떼어 낸 차고스 제도의 반환을 요구함
+  mapNote: 지도에는 1975년부터 모리셔스섬을 중심으로 지금 모리셔스 땅을 표시함. 멀리 떨어진 로드리게스섬과 아갈레가 제도는 지도 범위와 자료 밖이라 빠짐
+  features:
+    - 수도는 포트루이스
+    - 1968년 3월 12일 영국에서 독립
+    - 1992년 공화국
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 모리셔스", "위키백과 Port Louis"]
+    foundingNote: 영국 식민지에서 독립한 1968년 3월 12일부터
+
+# 영국 지배 1794 항복·1811 영구 식민지·1814 파리 조약(위키 en History of Seychelles, 조약 해를 from), 1903 모리셔스에서 갈린 직할 식민지, 독립 1976-06-29. 1975~1976은 같은 항목 + vassal_of uk(6-B 12). 1975~ SYC 22 통째
+- id: seychelles
+  level: polity
+  names: { ko: 세이셸, en: Seychelles, native: Sesel }
+  from: 1814
+  to: null
+  color: "#b234a5"
+  summary: 인도양 서쪽 섬들로 이루어진 섬나라. 1756년 프랑스가 차지를 선언하고 1770년 첫 정착민이 들어왔으며, 1794년 영국에 항복하고 1814년 파리 조약으로 영국 땅이 됨. 1903년 모리셔스에서 갈려 따로 된 영국 직할 식민지가 되었고, 1976년 6월 29일 공화국으로 독립함. 1977년 정변 뒤 1993년까지 한 정당이 다스림
+  mapNote: 지도에는 1975년부터 지금 세이셸 땅으로 표시하고, 1976년 6월 독립 앞 영국 식민지 때도 같은 색으로 그리고, 1975년까지 영국의 지배를 관계로 보임. 지도 자료에 없는 바깥 작은 섬 몇은 빠짐
+  features:
+    - 수도는 빅토리아(마헤섬)
+    - 1814년 파리 조약으로 영국 땅, 1903년 따로 된 직할 식민지
+    - 1976년 6월 29일 독립
+    - 1977~1993년 일당제
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 History of Seychelles", "파리 조약(1814)"]
+    foundingNote: 1814년 파리 조약으로 영국 땅이 된 때부터 같은 항목(1976년 6월 29일 독립)
+
+# 독립 1975-07-06(위키 en Comoros 'proclaimed its independence from France on 6 July 1975'). 마요트 FR-YT는 빼고 셋. 1975~ COM 3 통째
+- id: comoros
+  level: polity
+  names: { ko: 코모로, en: Comoros, native: Komori / Comores / جزر القمر }
+  from: 1975
+  to: null
+  color: "#8cd48c"
+  summary: 모잠비크 해협 북쪽 섬 셋의 이슬람 공화국. 프랑스 해외 영토였다가 1974년 주민 투표에서 네 섬 가운데 그랑드코모르섬·앙주앙섬·모엘리섬이 독립을 골라 1975년 7월 6일 독립을 선언했고, 마요트는 프랑스에 남음. 1978년 이슬람 연방 공화국이 되었고, 1997년 앙주앙섬·모엘리섬이 떨어져 나가려 한 위기 끝에 2001년 새 헌법으로 코모로 연방이 됨. 잦은 정변을 겪음
+  mapNote: 지도에는 1975년부터 그랑드코모르섬·앙주앙섬·모엘리섬 세 섬으로 표시함. 코모로가 자기 땅이라고 주장하는 마요트(약 370 km²)는 프랑스가 다스리므로 따로 마요트 색으로 둠
+  features:
+    - 수도는 그랑드코모르섬의 모로니
+    - 1975년 7월 6일 독립 선언
+    - 1978년 이슬람 연방 공화국, 2001년 코모로 연방
+    - 마요트의 귀속을 프랑스와 다툼
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Comoros", "위키백과 코모로"]
+    foundingNote: 독립을 선언한 1975년 7월 6일부터
+
+# 기본값 3 — 따로 항목, vassal_of france. 1665~(프랑스 동인도 회사 정착민 — 위키 ko '17세기 프랑스인 정착', 1946 해외 데파르트망). 1975~ FR-RE
+- id: reunion
+  level: polity
+  names: { ko: 레위니옹, en: Réunion, native: La Réunion }
+  from: 1665
+  to: null
+  color: "#4b9b63"
+  summary: 마다가스카르 동쪽 프랑스의 해외 섬. 사람이 살지 않던 섬에 17세기 프랑스인이 정착했고, 1848년까지 부르봉섬이라 불림. 사탕수수 농장에 동아프리카의 노예와 말레이·베트남·중국·인도에서 온 일꾼이 들어와 섞인 주민을 이룸. 1946년 프랑스 해외 데파르트망이 되어 본토와 같은 지위를 얻었고, 지금은 유럽 연합의 최외곽 지역임
+  mapNote: 지도에는 1975년부터 프랑스와 다른 색으로 표시하고, 프랑스 땅인 것은 관계로 보임
+  features:
+    - 주도는 생드니
+    - 1848년까지 부르봉섬
+    - 1946년 프랑스 해외 데파르트망
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 레위니옹", "위키백과 Réunion"]
+    foundingNote: 프랑스 동인도 회사가 정착민을 들인 1665년부터 같은 항목(1946년 해외 데파르트망)
+
+# 기본값 3 — 따로 항목, vassal_of france. 1841 프랑스 취득, 1974·1976 주민 투표로 잔류, 2011-03-31 데파르트망(위키 ko 마요트). 1975~ FR-YT
+- id: mayotte
+  level: polity
+  names: { ko: 마요트, en: Mayotte, native: Mayotte / Maore }
+  from: 1841
+  to: null
+  color: "#b27334"
+  summary: 코모로 제도에서 프랑스에 남은 섬. 1841년 프랑스 땅이 되었고, 1974년과 1976년 주민 투표에서 독립 대신 프랑스에 남기를 골라 코모로와 갈라짐. 2009년 주민 투표를 거쳐 2011년 3월 31일 프랑스의 101번째 데파르트망이 됨. 코모로가 귀속을 주장함
+  mapNote: 지도에는 1975년부터 프랑스와 다른 색으로 표시하고, 프랑스 땅인 것은 관계로 보임. 코모로의 귀속 주장은 글로만 적음
+  features:
+    - 주도는 그랑드테르섬의 마무주
+    - 1974·1976년 주민 투표로 프랑스에 남음
+    - 2011년 3월 31일 프랑스 데파르트망
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 마요트", "위키백과 Mayotte"]
+    foundingNote: 프랑스 땅이 된 1841년부터 같은 항목(2011년 데파르트망)
+
+
+# ══ F1 SF 항목 (남부) ══
+# 독립 1975-11-11(위키백과 Angola — 알보르 협정). 1975~ AGO 18(카빈다 포함)
+- id: angola
+  level: polity
+  names: { ko: 앙골라, en: Angola, native: República de Angola }
+  from: 1975
+  to: null
+  color: "#45bcc9"
+  summary: 대서양 기슭의 공화국으로, 1975년 11월 11일 포르투갈에서 독립함. 1975년 1월 알보르 협정으로 독립 날짜가 정해졌고, 독립과 함께 MPLA를 이끈 아고스티뉴 네투가 대통령이 됨. 독립 무렵부터 MPLA 정부와 UNITA·FNLA 사이에 내전이 벌어져, 쿠바가 MPLA 쪽에, 남아프리카 공화국과 자이르가 상대편에 군대를 보냄. 1992년 선거 결과를 UNITA가 받아들이지 않아 전쟁이 다시 일었고, 2002년 2월 22일 UNITA 지도자 조나스 사빔비가 정부군에 죽은 뒤 내전이 끝남
+  mapNote: 지도에는 1975년부터 지금 앙골라 땅으로 표시함. 콩고 민주 공화국 땅 건너 대서양 기슭에 떨어진 카빈다도 앙골라 색으로 함께 칠함. 1975~1976년과 1980년대에 남아프리카 공화국 군대가 남부에 들어온 일과 내전 동안 UNITA가 쥔 땅은 따로 칠하지 않음
+  features:
+    - 수도는 루안다
+    - 1975~2002년 MPLA 정부와 UNITA의 내전
+    - 1975년 9월 말부터 쿠바 전투 병력이 들어옴
+    - 콩고 공화국과 콩고 민주 공화국 사이 대서양 기슭에 카빈다를 둠
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["알보르 협정(1975)", "위키백과 Angola"]
+    foundingNote: 포르투갈에서 독립한 1975년 11월 11일부터
+
+# 독립 1975-06-25(위키백과 Mozambique). 1975~ MOZ 11
+- id: mozambique
+  level: polity
+  names: { ko: 모잠비크, en: Mozambique, native: República de Moçambique }
+  from: 1975
+  to: null
+  color: "#c945c9"
+  summary: 인도양 기슭의 공화국으로, 1975년 6월 25일 포르투갈에서 독립함. 1964년 9월부터 포르투갈에 맞서 무장 투쟁을 벌인 모잠비크 해방전선(FRELIMO)이 정권을 잡았고, 사모라 마셸이 이끄는 정부가 일당 국가를 세움. 1977년부터 반공 반군 RENAMO와 내전을 벌였고, 1992년 10월 로마 평화 협정으로 전쟁이 끝남. 1995년 영연방에 들어감
+  mapNote: 지도에는 1975년부터 지금 모잠비크 땅으로 표시함. 1977~1992년 내전 동안 RENAMO가 쥔 땅은 따로 칠하지 않음
+  features:
+    - 수도는 마푸투
+    - 1964년 9월 FRELIMO가 무장 투쟁을 시작함
+    - 1977~1992년 FRELIMO 정부와 RENAMO의 내전
+    - 1995년 영연방 가입, 공용어는 포르투갈어
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["루사카 협정", "로마 평화 협정(1992)", "위키백과 Mozambique"]
+    foundingNote: 포르투갈에서 독립한 1975년 6월 25일부터
+
+# 독립 1964-10-24(위키백과 Zambia — 조사 '(기억)'을 닫음). 1975~ ZMB 10
+- id: zambia
+  level: polity
+  names: { ko: 잠비아, en: Zambia, native: Republic of Zambia }
+  from: 1964
+  to: null
+  color: "#b2a534"
+  summary: 옛 영국 보호령 북로디지아 땅의 내륙 공화국으로, 1964년 10월 24일 독립함. 1953년부터 남로디지아·니아살랜드와 함께 로디지아 니아살랜드 연방에 묶였다가 연방이 1963년 12월 31일 풀린 뒤 독립했고, 케네스 카운다가 대통령이 됨. 1972년부터 통일민족독립당(UNIP)만 둔 일당 국가였다가 1991년 복수 정당제로 돌아갔고, 그해 선거에서 프레더릭 칠루바가 카운다를 이김
+  mapNote: 지도에는 1975년부터 지금 잠비아 땅으로 표시함
+  features:
+    - 수도는 루사카
+    - 1953~1963년 로디지아 니아살랜드 연방에 묶임
+    - 1972~1991년 UNIP 일당 체제
+    - 1991년 선거로 카운다가 물러남
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["잠비아 독립법(1964)", "위키백과 Zambia"]
+    foundingNote: 영국에서 독립한 1964년 10월 24일부터
+
+# 독립 1964-07-06(위키백과 Malawi). 1975~ MWI 28
+- id: malawi
+  level: polity
+  names: { ko: 말라위, en: Malawi, native: Dziko la Malaŵi }
+  from: 1964
+  to: null
+  color: "#b2344d"
+  summary: 말라위호 서쪽 기슭의 내륙 공화국으로, 영국 보호령 니아살랜드가 1964년 7월 6일 독립하며 이름을 바꿈. 1966년 7월 6일 공화국이 되어 헤이스팅스 반다가 대통령이 되었고, 말라위 의회당만 둔 일당 국가에서 1971년 종신 대통령으로 선포됨. 1993년 국민 투표로 복수 정당제를 받아들였고, 1994년 선거에서 반다가 바킬리 물루지에게 짐
+  mapNote: 지도에는 1975년부터 지금 말라위 땅으로 표시함
+  features:
+    - 수도는 릴롱궤
+    - 나라 이름은 치체와어로 '불꽃'이라는 뜻
+    - 1971년 반다가 종신 대통령으로 선포됨
+    - 1993년 국민 투표로 복수 정당제를 받아들임
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["말라위 독립법(1964)", "위키백과 Malawi"]
+    foundingNote: 영국에서 독립한 1964년 7월 6일부터
+
+# 결정 4·6-B 10 — 법적 주인 영국 색 지역 항목(level region, uk 색), 관계 없음. 일방 독립 1965-11-11·공화국 1970-03-02·짐바브웨 로디지아 1979-06-01·랭커스터 하우스 1979-12(위키백과 Rhodesia). 1975~1979 ZWE 10
+- id: rhodesia
+  level: region
+  names: { ko: 로디지아, en: Rhodesia, native: Rhodesia }
+  from: 1965
+  to: 1980
+  color: "#7a6fa8"
+  summary: 영국령 남로디지아의 백인 소수 정권이 1965년 11월 11일 일방적으로 독립을 선언해 세운 나라로, 어느 나라에서도 정식 승인을 받지 못함. 이언 스미스가 1965~1979년 총리로 정권을 이끌었고, 1970년 3월 2일 공화국을 선포함. 1979년 6월 1일 아벨 무조레와를 앞세운 짐바브웨 로디지아가 되었으며, 같은 해 12월 랭커스터 하우스 협정에 따라 새 선거 때까지 잠시 영국 식민지 통치로 돌아감
+  endNote: 1980년 영국 감독 아래 치른 선거에서 ZANU가 이기고, 1980년 4월 18일 짐바브웨로 독립함
+  mapNote: 지도에는 1975년부터 1979년까지 지금 짐바브웨 땅으로 표시함. 일방적 독립을 승인한 나라가 없어 법적 주인인 영국의 색으로 칠했고, 1979년 6월 짐바브웨 로디지아로 이름을 바꾼 뒤와 같은 해 12월 영국 통치로 돌아간 뒤에도 같은 항목과 색으로 그림
+  features:
+    - 수도는 솔즈베리(지금 하라레)
+    - 1965년 11월 11일 일방적 독립 선언
+    - 1970년 3월 2일 공화국 선포
+    - 남아프리카 공화국과 포르투갈은 정식 승인 없이 대표를 두고 오감
+    - 영국은 총독 험프리 기브스를 여왕의 유일한 합법 대리인으로 봄
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["로디지아의 일방적 독립선언(1965)", "랭커스터 하우스 협정(1979)", "위키백과 Rhodesia"]
+    foundingNote: 일방적 독립을 선언한 1965년 11월 11일부터
+
+# 독립 1980-04-18(0단계 hist.md·위키백과 Rhodesia 끝 줄). 1980~ ZWE 10(rhodesia와 같은 땅)
+- id: zimbabwe
+  level: polity
+  names: { ko: 짐바브웨, en: Zimbabwe, native: Republic of Zimbabwe }
+  from: 1980
+  to: null
+  color: "#84dbd3"
+  summary: 옛 로디지아 땅에 선 내륙 공화국으로, 1980년 4월 18일 영국에서 독립함. 1979년 12월 랭커스터 하우스 협정에 따라 영국 감독 아래 치른 1980년 선거에서 ZANU가 이겨, 국제적으로 승인받은 독립국이 됨
+  mapNote: 지도에는 1980년부터 지금 짐바브웨 땅으로 표시함. 1975~1979년 같은 땅은 로디지아 항목으로 그림
+  features:
+    - 수도는 하라레(옛 솔즈베리)
+    - 1980년 선거에서 ZANU가 이김
+    - 잠비아·모잠비크·남아프리카 공화국·보츠와나에 둘러싸인 내륙국
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["랭커스터 하우스 협정(1979)", "위키백과 Rhodesia"]
+    foundingNote: 영국에서 독립한 1980년 4월 18일부터
+
+# 독립 1966-09-30(조사 1번 목록). 1975~ BWA 15
+- id: botswana
+  level: polity
+  names: { ko: 보츠와나, en: Botswana, native: Lefatshe la Botswana }
+  from: 1966
+  to: null
+  color: "#45c960"
+  summary: 칼라하리 사막을 낀 내륙 공화국으로, 영국 보호령 베추아날란드가 1966년 9월 30일 독립하며 이름을 바꿈
+  mapNote: 지도에는 1975년부터 지금 보츠와나 땅으로 표시함
+  features:
+    - 수도는 가보로네
+    - 옛 영국 보호령 베추아날란드
+    - 땅 대부분이 칼라하리 사막
+    - 남아프리카 공화국·나미비아·짐바브웨와 맞닿은 내륙국
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["보츠와나 독립법(1966)", "위키백과 List of sovereign states by date of formation"]
+    foundingNote: 영국에서 독립한 1966년 9월 30일부터
+
+# 독립 1966-10-04(조사 1번 목록). 1975~ LSO 10
+- id: lesotho
+  level: polity
+  names: { ko: 레소토, en: Lesotho, native: Muso oa Lesotho }
+  from: 1966
+  to: null
+  color: "#b15da0"
+  summary: 남아프리카 공화국에 둘러싸인 산악 왕국으로, 영국 보호령 바수톨란드가 1966년 10월 4일 독립하며 이름을 바꿈
+  mapNote: 지도에는 1975년부터 지금 레소토 땅으로 표시함
+  features:
+    - 수도는 마세루
+    - 옛 영국 보호령 바수톨란드
+    - 사방이 남아프리카 공화국에 둘러싸인 내륙국
+    - 국왕을 둔 입헌 군주국
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["레소토 독립법(1966)", "위키백과 List of sovereign states by date of formation"]
+    foundingNote: 영국에서 독립한 1966년 10월 4일부터
+
+# 독립 1968-09-06, 스와질란드 → 에스와티니 2018-04-19(이름만 — 위키백과 Eswatini). 1975~ SWZ 4
+- id: eswatini
+  level: polity
+  names: { ko: 에스와티니, en: Eswatini, native: Umbuso weSwatini }
+  from: 1968
+  to: null
+  color: "#34b266"
+  summary: 남아프리카 공화국과 모잠비크 사이의 내륙 왕국으로, 1968년 9월 6일 영국에서 스와질란드라는 이름으로 독립함. 1973년 4월 12일 국왕 소부자 2세가 칙령으로 헌법을 없앴고, 1982년 그가 죽은 뒤 1986년 음스와티 3세가 왕위에 오름. 2005년 새 헌법을 받아들였고, 2018년 4월 19일 나라 이름을 에스와티니로 바꿈
+  mapNote: 지도에는 1975년부터 지금 에스와티니 땅으로 표시함. 2018년 나라 이름을 바꾼 해에도 같은 땅과 색으로 그림
+  features:
+    - 행정 수도는 음바바네, 입법 수도는 로밤바
+    - 1973년 칙령으로 헌법을 없앰
+    - 1986년 음스와티 3세 즉위
+    - 2005년 새 헌법
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["스와질란드 독립법(1968)", "위키백과 Eswatini"]
+    foundingNote: 영국에서 독립한 1968년 9월 6일부터
+
+# 기본값 16 — vassal_of south-africa. 점령 1915-07-09·위임 1920·유엔 종료 결의 1966-10-27·월비스베이 케이프주 1977(위키백과 South West Africa). 1975~1989 NAM 13
+- id: south-west-africa
+  level: polity
+  names: { ko: 남서아프리카, en: South West Africa, native: Suidwes-Afrika }
+  from: 1920
+  to: 1990
+  color: "#b23473"
+  summary: 남아프리카 공화국이 다스린 지금 나미비아 땅. 1915년 7월 9일 남아프리카 연방군이 독일령 남서아프리카를 점령한 뒤 1920년 국제 연맹의 위임 통치령으로 맡음. 1966년 10월 27일 유엔 총회가 위임 통치를 끝낸다고 결의했고 1968년 6월 12일 유엔이 이름을 나미비아로 정했으며, 1971년 국제 사법 재판소의 권고 의견이 나온 뒤에도 남아프리카 공화국이 계속 다스림. 1977년 월비스베이를 떼어 남아프리카 공화국 케이프주에 붙임
+  endNote: 1990년 3월 21일 나미비아로 독립함
+  mapNote: 지도에는 1975년부터 1989년까지 지금 나미비아 땅으로 표시하고, 남아프리카 공화국에 종속된 땅으로 보임. 1977년 케이프주로 넘어간 월비스베이(약 1,124 km²)는 이 땅과 같은 색으로 둔 근사임
+  features:
+    - 수도는 빈트후크
+    - 1915년 남아프리카 연방군이 독일령을 점령함
+    - 1920년 국제 연맹 위임 통치령
+    - 1966년 유엔 총회가 위임 통치 종료를 결의함
+    - 1968년 유엔이 이름을 나미비아로 정함
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["국제 연맹 남서아프리카 위임 통치(1920)", "유엔 총회 결의 2145(1966)", "위키백과 South West Africa"]
+    foundingNote: 국제 연맹이 남아프리카 연방에 위임 통치를 맡긴 1920년부터
+
+# 독립 1990-03-21(위키백과 South West Africa), 월비스베이 이양 1994-03-01(조사 13번). 1990~ NAM 13(south-west-africa와 같은 땅, 월비스베이 NA-ER 포함 — 6-B 11)
+- id: namibia
+  level: polity
+  names: { ko: 나미비아, en: Namibia, native: Republic of Namibia }
+  from: 1990
+  to: null
+  color: "#8d84db"
+  summary: 대서양 기슭 나미브 사막의 공화국으로, 1990년 3월 21일 남아프리카 공화국에서 독립함. 남아프리카 공화국이 위임 통치를 내세워 다스리던 남서아프리카가 독립한 나라이며, 1994년 3월 1일 월비스베이를 넘겨받음
+  mapNote: 지도에는 1990년부터 지금 나미비아 땅으로 표시함. 1990~1993년 남아프리카 공화국이 가졌던 월비스베이(약 1,124 km²)도 나미비아 색으로 둔 근사임
+  features:
+    - 수도는 빈트후크
+    - 1994년 3월 1일 월비스베이를 넘겨받음
+    - 북동쪽으로 카프리비 회랑이 길게 뻗음
+    - 서쪽 바닷가를 따라 나미브 사막이 펼쳐짐
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["나미비아 헌법(1990)", "위키백과 South West Africa", "위키백과 Walvis Bay"]
+    foundingNote: 남아프리카 공화국에서 독립한 1990년 3월 21일부터
+
+# 연방 1910-05-31·웨스트민스터 헌장 1931-12·공화국 1961-05-31(위키백과 Union of South Africa), 홈랜드(위키백과 Bantustan). 1975~ ZAF 9(반투스탄 안 칠함 — 기본값 15)
+- id: south-africa
+  level: polity
+  names: { ko: 남아프리카 공화국, en: South Africa, native: Suid-Afrika }
+  from: 1910
+  to: null
+  color: "#d29165"
+  summary: 아프리카 남쪽 끝의 공화국으로, 1910년 5월 31일 케이프·나탈·트란스발·오렌지강 네 식민지를 합쳐 남아프리카 연방으로 섬. 1931년 12월 웨스트민스터 헌장으로 영국에서 완전한 주권을 얻었고, 1948년 무렵부터 인종 분리 정책 아파르트헤이트를 폄. 1960년 10월 5일 국민 투표를 거쳐 1961년 5월 31일 공화국이 되며 영연방에서 나감. 흑인 홈랜드 가운데 트란스케이(1976)·보푸사츠와나(1977)·벤다(1979)·시스케이(1981)에 이름뿐인 독립을 주었으나 승인한 나라는 남아프리카 공화국뿐이었고, 1994년 4월 27일 임시 헌법이 발효되며 모든 홈랜드를 다시 합침
+  mapNote: 지도에는 1975년부터 지금 남아프리카 공화국 땅으로 표시함. 1994년까지 둔 흑인 홈랜드 열 곳(이름뿐인 독립국 넷 포함)은 승인한 나라가 없어 따로 칠하지 않고 남아프리카 공화국 색으로 그림. 1977~1993년 케이프주에 속한 월비스베이(약 1,124 km²)는 나미비아 쪽 색으로 둔 근사임
+  features:
+    - 행정 수도는 프리토리아, 입법 수도는 케이프타운
+    - 1931년 웨스트민스터 헌장으로 완전한 주권
+    - 1948년 무렵부터 아파르트헤이트
+    - 1961년 공화국 선포와 영연방 탈퇴
+    - 1994년 4월 27일 임시 헌법 발효, 홈랜드를 다시 합침
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["남아프리카법(1909)", "웨스트민스터 헌장(1931)", "남아프리카 공화국 헌법(1961)"]
+    foundingNote: 네 식민지가 남아프리카 연방으로 합쳐진 1910년 5월 31일부터
+
+
+# ══ F1 CE 항목 (사헬·기니만 안쪽) ══
+# 말리 연방 독립 1960-06-20, 세네갈 이탈 1960-08-20 뒤 말리 공화국(위키 en Mali Federation). 1975~ MLI 9(아자와드 2012~13·키달 CMA 2014~2023은 안 그림 — 결정 5·D3)
+- id: mali
+  level: polity
+  names: { ko: 말리, en: Mali, native: Mali }
+  from: 1960
+  to: null
+  color: "#3473b2"
+  summary: 니제르강 가운데와 사하라 남쪽을 아우른 내륙 공화국. 프랑스령 수단이 1960년 6월 세네갈과 함께 말리 연방으로 독립했고, 8월 세네갈이 갈라져 나간 뒤 말리 공화국이 됨. 1968년 무사 트라오레의 쿠데타 뒤 군정과 일당 체제가 이어졌고 1991년 쿠데타 뒤 다당제가 열렸으며, 2012년 북부 투아레그 반란과 쿠데타를 겪고 2020·2021년 다시 군정이 들어섬
+  mapNote: 지도에는 1975년부터 지금 말리 땅으로 표시함. 2012~2013년 북부 반군이 선언한 아자와드는 1년 남짓 만에 끝났고, 2014~2023년 반군 연합이 키달을 장악한 것도 독립 선언이 없는 10년 미만의 장악이라 따로 칠하지 않고 말리 색으로 둠
+  features:
+    - 수도는 바마코
+    - 1960년 말리 연방으로 독립, 같은 해 말리 공화국
+    - 1968~1991년 무사 트라오레의 군정·일당 체제
+    - 2012년 아자와드 선언, 2013년 프랑스군 개입
+    - 2023년 말리군이 키달을 되찾음
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Mali Federation", "위키백과 Mali"]
+    foundingNote: 말리 연방에서 세네갈이 갈라져 나간 뒤 말리 공화국이 된 1960년부터(1960년 6월 말리 연방 독립은 글로)
+
+# 독립 1960-08(위키 en Hamani Diori 1960, ko 니제르 — 날짜는 사료마다 달라 달까지). 1975~ NER 8
+- id: niger
+  level: polity
+  names: { ko: 니제르, en: Niger, native: Niger }
+  from: 1960
+  to: null
+  color: "#b2348c"
+  summary: 사하라와 사헬에 걸친 내륙 공화국. 프랑스령 서아프리카의 니제르가 1960년 8월 독립했고, 1974년 쿠데타로 세이니 쿤체가 집권해 군정이 이어짐. 1993년 첫 다당제 선거를 치렀으나 그 뒤에도 쿠데타가 되풀이되었고, 2023년 쿠데타로 다시 군정이 들어섬
+  mapNote: 지도에는 1975년부터 지금 니제르 땅으로 표시함
+  features:
+    - 수도는 니아메
+    - 1960년 프랑스에서 독립
+    - 1974~1987년 세이니 쿤체의 군정
+    - 북부 사막의 우라늄 광산
+    - 2023년 쿠데타로 다시 군정
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Niger", "위키백과 Hamani Diori"]
+    foundingNote: 프랑스에서 독립한 1960년 8월부터
+
+# 독립 1960-08-05 오트볼타 공화국, 1984-08-04 부르키나파소(위키 en Republic of Upper Volta — 이름만, 기본값 21). 1975~ BFA 45
+- id: burkina-faso
+  level: polity
+  names: { ko: 부르키나파소, en: Burkina Faso, native: Burkina Faso }
+  from: 1960
+  to: null
+  color: "#cadb84"
+  summary: 옛 오트볼타 땅의 내륙 공화국. 오트볼타 공화국이 1960년 8월 5일 프랑스에서 독립했고, 1983년 쿠데타로 집권한 토마 상카라가 1984년 8월 4일 나라 이름을 부르키나파소로 바꿈. 1987년 쿠데타로 블레즈 콩파오레가 집권해 2014년 민중 봉기로 물러날 때까지 다스렸고, 2022년 두 차례 쿠데타로 군정이 들어섬
+  mapNote: 지도에는 1975년부터 지금 부르키나파소 땅으로 표시함. 1984년 오트볼타에서 부르키나파소로 바뀐 것은 나라 이름뿐이라 땅은 그대로 그림
+  features:
+    - 수도는 와가두구
+    - 1960년 오트볼타 공화국으로 독립
+    - 1984년 나라 이름을 부르키나파소로 바꿈
+    - 1987~2014년 블레즈 콩파오레의 통치
+    - 2022년 두 차례 쿠데타
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Republic of Upper Volta", "위키백과 Burkina Faso"]
+    foundingNote: 오트볼타 공화국이 프랑스에서 독립한 1960년 8월 5일부터(1984년 부르키나파소로 이름만 바꿈)
+
+# 독립 1960-08-11(조사 1번 목록). 1975~1993 TCD 22에서 TD-TI 뺌(아우주 띠 — D1), 1994~ 통째. 1983~87 북부 점령은 관계 줄 없이 글(관계가 나라 전체에 빗금을 그려서 — M-F4)
+- id: chad
+  level: polity
+  names: { ko: 차드, en: Chad, native: Tchad / تشاد }
+  from: 1960
+  to: null
+  color: "#4b8b9b"
+  summary: 차드호와 사하라 사이의 내륙 공화국. 프랑스령 적도 아프리카의 차드가 1960년 8월 11일 독립해 프랑수아 톰발바예가 다스렸으나, 1965년 무렵부터 북부 반란으로 내전이 이어짐. 1978~1987년 리비아가 반군을 도와 군대를 들여보냈고, 1982년 집권한 이센 아브레가 프랑스의 도움으로 1987년 리비아군을 북부에서 몰아냄. 1990년 이드리스 데비가 아브레를 몰아내고 2021년까지 다스림
+  mapNote: 지도에는 1975년부터 지금 차드 땅으로 표시함. 1973년부터 리비아군이 차지한 북쪽 끝 아우주 띠는 1993년까지 같은 차드 색의 따로 된 지역으로 그려 리비아의 점령 표시를 하고, 1994년 국제 사법 재판소 판결과 리비아군 철수 뒤로는 차드 땅에 합침. 1983~1987년 리비아군과 반군이 북부 사막을 장악한 것은 되돌려진 점령이라 따로 칠하지 않고 점령 표시도 하지 않음
+  features:
+    - 수도는 은자메나
+    - 1965년 무렵부터 북부 반란과 내전
+    - 1978~1987년 차드-리비아 전쟁, 1987년 토요타 전쟁
+    - 1990~2021년 이드리스 데비의 통치
+    - 1994년 국제 사법 재판소 판결로 아우주 띠를 되찾음
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Chad", "위키백과 Toyota War", "국제 사법 재판소 영토 분쟁 판결(1994)"]
+    foundingNote: 프랑스에서 독립한 1960년 8월 11일부터
+
+# 독립 1960-08-13(조사 1번 목록), 중앙아프리카 제국 1976-12-04~1979-09-21(위키 en Central African Empire — 이름만, 기본값 21). 1975~ CAF 17
+- id: car
+  level: polity
+  names: { ko: 중앙아프리카 공화국, en: Central African Republic, native: République centrafricaine }
+  from: 1960
+  to: null
+  color: "#7a45c9"
+  summary: 아프리카 한가운데 우방기강 북쪽의 내륙 공화국. 프랑스령 적도 아프리카의 한 식민지가 1960년 8월 13일 독립했고, 1966년 쿠데타로 집권한 장베델 보카사가 1976년 12월 4일 스스로 황제에 올라 나라 이름을 중앙아프리카 제국으로 바꿈. 1979년 9월 21일 프랑스군이 도운 쿠데타로 제국이 무너지고 다비드 다코가 공화국을 되살렸으며, 2013년부터 내전이 이어짐
+  mapNote: 지도에는 1975년부터 지금 중앙아프리카 공화국 땅으로 표시함. 1976~1979년 중앙아프리카 제국이던 동안은 나라 이름만 바뀌어 땅은 그대로 그렸고, 2013년부터 이어진 내전으로 무장 세력들이 지방을 나누어 장악한 것도 따로 칠하지 않음
+  features:
+    - 수도는 방기
+    - 1960년 프랑스에서 독립
+    - 1976~1979년 보카사의 중앙아프리카 제국
+    - 2013년부터 내전
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Central African Empire", "위키백과 Central African Republic"]
+    foundingNote: 프랑스에서 독립한 1960년 8월 13일부터(1976~1979년 제국은 이름만 바뀐 것)
+
+# 독립 1960-01-01, 영국령 남부 합류 1961-10-01(조사 1번 목록), 1972 연합 공화국·1984 카메룬 공화국(위키 en Cameroon). 1975~ CMR 10(바카시 665 km²는 CM-SW 안 — 알려진 근사)
+- id: cameroon
+  level: polity
+  names: { ko: 카메룬, en: Cameroon, native: Cameroun }
+  from: 1960
+  to: null
+  color: "#73a63f"
+  summary: 기니만 안쪽 끝에서 차드호까지 뻗은 공화국. 프랑스 신탁 통치령 카메룬이 1960년 1월 1일 카메룬 공화국으로 독립했고, 1961년 10월 1일 영국령 카메룬 남부가 합쳐 연방 공화국이 됨(북부는 나이지리아에 합침). 1972년 연방을 없애 카메룬 연합 공화국이 되었다가 1984년 카메룬 공화국으로 이름을 바꾸었고, 아마두 아히조에 이어 1982년부터 폴 비야가 다스림
+  mapNote: 지도에는 1975년부터 지금 카메룬 땅으로 표시함. 2008년 넘겨받기까지 나이지리아가 다스린 바카시반도(약 665 km²)도 처음부터 카메룬 색으로 그림
+  features:
+    - 수도는 야운데
+    - 1960년 독립, 1961년 영국령 카메룬 남부가 합침
+    - 1972년 연방을 없애고 단일 공화국
+    - 2008년 국제 사법 재판소 판결에 따라 바카시반도를 넘겨받음
+    - 1982년부터 폴 비야의 통치
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Cameroon", "위키백과 Bakassi"]
+    foundingNote: 프랑스 신탁 통치령이 카메룬 공화국으로 독립한 1960년 1월 1일부터(1961년 영국령 남부 합침은 글로)
+
+# 독립 1968-10-12(조사 1번 목록), 1979 쿠데타(위키 en Equatorial Guinea). 1975~ GNQ 6(비오코섬·본토 리오무니)
+- id: equatorial-guinea
+  level: polity
+  names: { ko: 적도 기니, en: Equatorial Guinea, native: Guinea Ecuatorial }
+  from: 1968
+  to: null
+  color: "#683fa6"
+  summary: 비오코섬과 리오무니 본토로 이루어진 공화국. 스페인령 기니가 1968년 10월 12일 적도 기니로 독립했고, 첫 대통령 프란시스코 마시아스 응게마가 1972년 종신 대통령을 선언하고 공포 정치를 폄. 1979년 쿠데타로 그 조카 테오도로 오비앙 응게마 음바소고가 집권해 지금까지 다스리며, 1990년대 바다 유전 개발로 석유 수출국이 됨
+  mapNote: 지도에는 1975년부터 지금 적도 기니 땅으로 표시함. 기니만의 비오코섬과 남쪽 바다의 작은 섬들, 본토 리오무니를 모두 그림
+  features:
+    - 수도는 비오코섬의 말라보
+    - 1968년 스페인에서 독립
+    - 1968~1979년 마시아스 응게마의 독재
+    - 1979년부터 오비앙의 통치
+    - 1990년대부터 석유 수출
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Equatorial Guinea"]
+    foundingNote: 스페인에서 독립한 1968년 10월 12일부터
+
+# 독립 1975-07-12(조사 1번 목록), 일당 체제 1975~1990(위키 en São Tomé and Príncipe). 1975~ STP 2
+- id: sao-tome
+  level: polity
+  names: { ko: 상투메 프린시페, en: São Tomé and Príncipe, native: São Tomé e Príncipe }
+  from: 1975
+  to: null
+  color: "#8cd4b0"
+  summary: 기니만의 두 화산섬으로 이루어진 공화국. 포르투갈 식민지이던 상투메섬과 프린시페섬이 1975년 7월 12일 독립해 일당 사회주의 국가가 되었고, 1990년 새 헌법으로 다당제로 돌아섬. 카카오 수출에 기대어 옴
+  mapNote: 지도에는 1975년부터 지금 상투메 프린시페 땅으로 표시함
+  features:
+    - 수도는 상투메
+    - 1975년 포르투갈에서 독립
+    - 1975~1990년 일당 체제
+    - 1990년 새 헌법, 다당제
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 São Tomé and Príncipe"]
+    foundingNote: 포르투갈에서 독립한 1975년 7월 12일부터
+
+# 독립 1960-08-17(위키 ko 가봉), 오마르 봉고 1967~2009·2023 쿠데타(위키 en Gabon). 1975~ GAB 9
+- id: gabon
+  level: polity
+  names: { ko: 가봉, en: Gabon, native: Gabon }
+  from: 1960
+  to: null
+  color: "#db8d84"
+  summary: 적도가 지나는 기니만 기슭의 공화국. 프랑스령 적도 아프리카의 가봉이 1960년 8월 17일 독립했고, 1967년 대통령이 된 오마르 봉고가 2009년 죽을 때까지 42년 동안 다스림. 아들 알리 봉고 온딤바가 뒤를 이었으나 2023년 쿠데타로 물러났고, 석유와 목재 수출에 기대어 옴
+  mapNote: 지도에는 1975년부터 지금 가봉 땅으로 표시함
+  features:
+    - 수도는 리브르빌
+    - 1960년 프랑스에서 독립
+    - 1967~2009년 오마르 봉고의 통치
+    - 2023년 쿠데타
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Gabon"]
+    foundingNote: 프랑스에서 독립한 1960년 8월 17일부터
+
+# 독립 1960-08-15(조사 1번 목록), 콩고 인민 공화국 1969-12~1991(위키 en People's Republic of the Congo — 이름만, 기본값 21). 1975~ COG 12
+- id: republic-of-congo
+  level: polity
+  names: { ko: 콩고 공화국, en: Republic of the Congo, native: République du Congo }
+  from: 1960
+  to: null
+  color: "#4b639b"
+  summary: 콩고강 오른쪽 기슭 브라자빌을 수도로 한 공화국. 프랑스령 적도 아프리카의 콩고가 1960년 8월 15일 콩고 공화국으로 독립했고, 1968년 쿠데타 뒤 1969년 12월 마리앵 응구아비가 아프리카 첫 마르크스–레닌주의 국가인 콩고 인민 공화국을 세움. 1991년 다당제로 돌아서며 옛 이름을 되찾았고, 1997년 내전 끝에 드니 사수 응게소가 다시 집권함
+  mapNote: 지도에는 1975년부터 지금 콩고 공화국 땅으로 표시함. 1969~1991년 콩고 인민 공화국이던 동안은 나라 이름만 바뀌어 땅은 그대로 그림
+  features:
+    - 수도는 브라자빌
+    - 1960년 프랑스에서 독립
+    - 1969~1991년 콩고 인민 공화국
+    - 1997년 내전, 드니 사수 응게소가 다시 집권
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 People's Republic of the Congo", "위키백과 Republic of the Congo"]
+    foundingNote: 프랑스에서 독립한 1960년 8월 15일부터(1969~1991년 콩고 인민 공화국은 이름만 바뀐 것)
+
+# D1 — 차드 색 지역 항목(level region, chad 색) + occupied_by libya. 1973 점령, 1994-02-03 국제 사법 재판소 판결·1994-05 철수(위키 en United Nations Aouzou Strip Observer Group — 감시단 1994-05-04~06-06), 1975~1993 TD-TI
+- id: aouzou-strip
+  level: region
+  names: { ko: 아우주 띠, en: Aouzou Strip, native: "Bande d'Aozou / قطاع أوزو" }
+  from: 1973
+  to: 1994
+  color: "#4b8b9b"
+  summary: 리비아군이 차지했던 차드 북쪽 끝 티베스티 땅. 1935년 프랑스의 라발과 이탈리아의 무솔리니가 로마에서 맺은 협정이 이 띠를 이탈리아령 리비아에 넘기기로 했으나 비준되지 않았고, 1973년 리비아가 군대를 들여보내 차지한 뒤 쿠프라에 딸린 땅으로 다스림. 1987년 차드군이 아우주를 잠깐 되찾았다가 다시 잃었고, 1994년 2월 3일 국제 사법 재판소가 차드 땅으로 판결한 뒤 리비아군이 5월에 물러남
+  mapNote: 지도에는 1975년부터 1993년까지 차드 색으로 칠하고 리비아의 점령 표시를 함. 리비아의 병합을 인정한 나라가 없고 국제 사법 재판소도 차드 땅으로 판결했으므로 법적 주인인 차드의 색을 그대로 쓰고, 군대 점령은 관계로 나타냄. 1994년 리비아군이 물러난 뒤로는 차드 땅에 합쳐 그림. 그린 땅은 지금 차드 티베스티주 전체(약 12만 km²)라 문서상 띠(약 11.4만 km²)보다 조금 넓음
+  features:
+    - 1935년 프랑스·이탈리아 협정, 비준되지 않음
+    - 1973년 리비아군이 차지함
+    - 1987년 차드-리비아 전쟁의 마지막 싸움터
+    - 1994년 2월 국제 사법 재판소 판결, 5월 리비아군 철수
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Aouzou Strip", "위키백과 United Nations Aouzou Strip Observer Group", "국제 사법 재판소 영토 분쟁 판결(1994)"]
+    foundingNote: 리비아군이 띠를 차지한 1973년부터 물러난 1994년까지(법적 주인은 차드)
+
+
+# ══ F1 HN 항목 (뿔·나일) ══
+# 00-scope 3절 — 에티오피아 제국(솔로몬 왕조 1270~, 위키백과 Ethiopian Empire)과 같은 항목(뒤 단계가 같은 id로 앞을 이음). 데르그 1974-09-12·제정 폐지 1975-03·인민민주공화국 1987·EPRDF 1991-05·연방 1995(위키백과 Derg·Transitional Government of Ethiopia). 1975~1992 ETH 11 + ERI 6, 1993~ ETH 11
+- id: ethiopia
+  level: polity
+  names: { ko: 에티오피아, en: Ethiopia, native: ኢትዮጵያ }
+  from: 1270
+  to: null
+  color: "#3fa69c"
+  summary: 아프리카의 뿔 고원에 자리한 오랜 나라로, 1270년 솔로몬 왕조가 연 에티오피아 제국을 이음. 1974년 9월 12일 군사 정권 데르그가 하일레 셀라시에 황제를 몰아냈고, 1975년 3월 제정을 없애고 사회주의 국가를 선포함. 1977~1978년 오가덴 전쟁에서 쳐들어온 소말리아군을 쿠바·소련의 도움으로 몰아냈고, 1987년 멩기스투 하일레 마리암이 이끄는 에티오피아 인민민주공화국이 됨. 1991년 5월 에티오피아 인민혁명민주전선이 아디스아바바에 들어가 과도 정부를 세웠고, 1993년 에리트레아가 떨어져 나간 뒤 1995년 연방 민주공화국이 됨
+  mapNote: 지도에는 1975년부터 표시함. 1975~1992년에는 지금 에리트레아 땅까지 에티오피아 색으로 칠했고, 1993년부터 지금 에티오피아 땅으로 그림. 1977~1978년 오가덴 전쟁 때 소말리아군이 차지한 땅은 이듬해 되찾아 따로 칠하지 않았고, 2020~2022년 티그라이 전쟁도 나라 땅을 바꾸지 않아 따로 그리지 않음
+  features:
+    - 수도는 아디스아바바
+    - 1974년 데르그가 하일레 셀라시에 황제를 몰아냄
+    - 1977~1978년 오가덴 전쟁에서 소말리아군을 몰아냄
+    - 1998~2000년 바드메를 둘러싸고 에리트레아와 전쟁을 벌임
+    - 1995년부터 민족과 언어에 따라 나눈 주들로 된 연방 공화국
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["에티오피아 연방 민주공화국 헌법(1995)", "위키백과 Ethiopian Empire", "위키백과 Derg"]
+    foundingNote: 솔로몬 왕조가 에티오피아 제국을 연 1270년부터
+
+# D2 — 독립 1993-05-24, 주민 투표 1993-04-23~25 찬성 99.83%(위키백과 1993 Eritrean independence referendum), EPLF 아스마라 입성 1991-05-24(조사 2번). 1993~ ERI 6
+- id: eritrea
+  level: polity
+  names: { ko: 에리트레아, en: Eritrea, native: "ኤርትራ / إرتريا" }
+  from: 1993
+  to: null
+  color: "#c194cc"
+  summary: 홍해 서쪽 기슭의 공화국으로, 1993년 5월 24일 에티오피아에서 독립함. 이탈리아 식민지였다가 1952년 유엔 결정으로 에티오피아와 연방을 이루었고, 1962년 에티오피아가 의회를 없애고 병합하자 독립 전쟁이 이어짐. 1991년 5월 에리트레아 인민해방전선(EPLF)이 아스마라에 들어가 실제로 다스리기 시작했고, 1993년 4월 23~25일 주민 투표에서 99.83%가 독립에 찬성함. 1998~2000년 바드메를 둘러싸고 에티오피아와 전쟁을 벌였고, 2018년 7월 두 나라가 평화를 선언함
+  mapNote: 지도에는 1993년부터 지금 에리트레아 땅으로 표시함. 1991년 5월부터 에리트레아 인민해방전선이 실제로 다스렸지만 주민 투표로 독립이 정해진 1993년을 경계로 삼아, 1991~1992년 이 땅은 에티오피아 색으로 그림
+  features:
+    - 수도는 아스마라
+    - 1961~1991년 에티오피아에 맞선 독립 전쟁
+    - 1993년 4월 주민 투표에서 99.83%가 독립에 찬성
+    - 2005년 국경 위원회가 바드메를 에리트레아 땅으로 봄
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["에리트레아 독립 주민 투표(1993)", "알제 협정(2000)", "위키백과 Eritrea"]
+    foundingNote: 에티오피아에서 독립한 1993년 5월 24일부터
+
+# 6-B 12 — 프랑스령 소말릴란드 1884~1967(위키 ko)·프랑스령 아파르족 및 이사족 지역 1967~1977(위키백과 French Territory of the Afars and the Issas), 독립 1977-06-27(조사 1번 목록) — vassal_of france ~1977. 1975~ DJI 6
+- id: djibouti
+  level: polity
+  names: { ko: 지부티, en: Djibouti, native: "جيبوتي / Djibouti" }
+  from: 1884
+  to: null
+  color: "#94c945"
+  summary: 홍해와 아덴만이 만나는 어귀 서쪽 기슭의 공화국으로, 1977년 6월 27일 프랑스에서 독립함. 1884년부터 프랑스령 소말릴란드였고, 1967년 이름을 프랑스령 아파르족 및 이사족 지역으로 바꾼 뒤 1977년 주민 투표로 독립을 정함. 독립 뒤 첫 대통령이 1977~1999년 22년 동안 나라를 이끌었고, 1990년대 초 정부와 반대파 사이의 무력 충돌은 2000년 권력 나눔 협정으로 끝남
+  mapNote: 지도에는 1975년부터 지금 지부티 땅으로 표시함. 1977년 6월 독립 전까지는 프랑스 해외 영토였으나 경계가 같아 같은 항목으로 그리고, 그동안은 프랑스에 딸린 땅으로 나타냄
+  features:
+    - 수도는 지부티
+    - 1884~1967년 프랑스령 소말릴란드
+    - 1967~1977년 프랑스령 아파르족 및 이사족 지역
+    - 아디스아바바로 가는 철도의 바다 쪽 끝 항구
+    - 공용어는 프랑스어와 아랍어
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["지부티 독립 주민 투표(1977)", "위키백과 Djibouti", "위키백과 French Territory of the Afars and the Issas"]
+    foundingNote: 프랑스령 소말릴란드가 선 1884년부터(독립은 1977년 6월 27일)
+
+# 독립·합침 1960-07-01(조사 1번 목록, 위키백과 Somalia), 바레 쿠데타 1969-10(위키백과 Somali Democratic Republic), 정권 붕괴 1991(위키백과 Somali Civil War). 1975~1990 SOM 13 + SOL, 1991~ SOM 13
+- id: somalia
+  level: polity
+  names: { ko: 소말리아, en: Somalia, native: "Soomaaliya / الصومال" }
+  from: 1960
+  to: null
+  color: "#4034b2"
+  summary: 아프리카의 뿔 인도양 기슭의 연방 공화국으로, 1960년 7월 1일 옛 영국령 소말릴란드와 이탈리아 신탁 통치령 소말리아가 합쳐 섬. 1969년 10월 시아드 바레가 쿠데타로 권력을 잡아 소말리아 민주공화국을 세웠고, 1977~1978년 오가덴 전쟁에서 에티오피아를 쳤다가 짐. 1991년 반군에 밀려 바레 정권이 무너지면서 중앙 정부가 사라지고 내전이 이어졌고, 같은 해 5월 북부가 소말릴란드로 독립을 선언함. 2012년 8월 임시 헌법으로 연방 정부가 섬
+  mapNote: 지도에는 1975년부터 표시함. 1975~1990년에는 북부 옛 영국령 소말릴란드 땅까지 함께 칠했고, 1991년부터는 그 땅을 소말릴란드 항목으로 따로 그림(소말릴란드도 소말리아 색). 내전 동안 여러 무장 세력과 샤바브가 쥔 땅, 1998년 자치를 선언한 북동부 푼틀란드는 따로 칠하지 않음
+  features:
+    - 수도는 모가디슈
+    - 1969~1991년 시아드 바레의 군사 정권
+    - 1977~1978년 오가덴 전쟁에서 에티오피아에 짐
+    - 1991년 중앙 정부가 무너진 뒤 소말리아 내전이 이어짐
+    - 2012년 8월 임시 헌법으로 연방 공화국이 됨
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["소말리아 임시 헌법(2012)", "위키백과 Somalia", "위키백과 Somali Civil War"]
+    foundingNote: 두 옛 식민지가 합쳐 독립한 1960년 7월 1일부터
+
+# 결정 4 — 법적 주인 소말리아 색 지역 항목(level region, somalia 색), 관계 없음. 선언 1991-05-18(위키백과 Somaliland War of Independence), 이스라엘 승인 2025-12-26(위키백과 Somaliland). 1991~ SOL
+- id: somaliland
+  level: region
+  names: { ko: 소말릴란드, en: Somaliland, native: "Soomaaliland / أرض الصومال" }
+  from: 1991
+  to: null
+  color: "#4034b2"
+  summary: 옛 영국령 소말릴란드 땅에서 1991년 5월 18일 소말리아로부터 독립을 선언한 정부. 1960년 6월 26일 영국에서 독립한 소말릴란드국이 닷새 뒤 옛 이탈리아령과 합쳐 소말리아가 되었고, 바레 정권이 이사크족을 억누르자 1981년 세워진 소말리 민족 운동(SNM)이 10년 동안 싸운 끝에 독립을 선언함. 1991년부터 선거로 뽑은 정부가 하르게이사에서 다스리며 국제 승인을 구해 왔고, 2025년 12월 26일 이스라엘이 처음으로 승인함. 2023년부터 동부 라스아노드 일대를 SSC-카투모 세력에 잃음
+  mapNote: 지도에는 1991년부터 옛 영국령 소말릴란드 땅으로 표시함. 독립 선언을 승인한 나라가 거의 없어 법적 주인인 소말리아의 색으로 칠했고, 소말리아와의 관계도 따로 두지 않음. 2023년부터 SSC-카투모 세력이 쥔 동부 라스아노드 일대(약 2만 5천 km²)도 같은 소말리아 색이라 따로 나누지 않음
+  features:
+    - 수도는 하르게이사
+    - 1960년 6월 26일 영국에서 독립한 소말릴란드국을 잇는다고 봄
+    - 1981~1991년 소말리 민족 운동의 독립 전쟁
+    - 2025년 12월 이스라엘이 처음으로 승인함
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["소말릴란드 독립 선언(1991)", "위키백과 Somaliland", "위키백과 Somaliland War of Independence"]
+    foundingNote: 소말리 민족 운동이 독립을 선언한 1991년 5월 18일부터
+
+# 독립 1956-01-01(위키백과 Sudan), 니메이리 1969~1985·아디스아바바 협정 1972·이슬람법 1983(위키백과 Gaafar Nimeiry), 포괄적 평화 협정 2005-01-09, 내전 2023-04-15~(위키백과 Sudanese civil war (2023–present)). 1975~2010 SDN 17 + SDS 10, 2011~ SDN 17(다르푸르 RSF는 안 그림 — D4)
+- id: sudan
+  level: polity
+  names: { ko: 수단, en: Sudan, native: السودان }
+  from: 1956
+  to: null
+  color: "#52c945"
+  summary: 나일강 가운데 유역의 공화국으로, 1956년 1월 1일 영국·이집트 공동 통치에서 독립함. 1969년 쿠데타로 집권한 가파르 니메이리가 1972년 아디스아바바 협정으로 1차 내전을 끝내고 남부에 자치를 주었으나, 1983년 온 나라에 이슬람법을 펴자 수단 인민해방군(SPLA)과 2차 내전이 벌어짐. 1989년 쿠데타로 집권한 오마르 알바시르 아래 2003년부터 다르푸르 분쟁이 일었고, 2005년 1월 9일 포괄적 평화 협정으로 2차 내전이 끝난 뒤 2011년 남부가 남수단으로 독립함. 2019년 알바시르가 물러났고, 2023년 4월 15일부터 정부군과 신속지원군(RSF) 사이에 내전이 이어짐
+  mapNote: 지도에는 1975년부터 표시함. 1975~2010년에는 지금 남수단 땅까지 수단 색으로 칠했고, 2011년부터 지금 수단 땅으로 그림. 남수단과 다투는 아비에이·카피아킨기·헤글리그는 수단 쪽에, 이집트와 맞닿은 비르타윌은 수단 쪽에 둠. 2023년부터 신속지원군이 다르푸르 대부분을 쥐었지만 국제 승인을 받은 정부가 아니라 따로 칠하지 않음
+  features:
+    - 수도는 하르툼
+    - 1983~2005년 2차 수단 내전
+    - 2003년부터 다르푸르 분쟁
+    - 2011년 남부 10개 주가 남수단으로 독립함
+    - 2023년 4월부터 정부군과 신속지원군의 내전
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["수단 독립 선언(1956)", "포괄적 평화 협정(2005)", "위키백과 Sudan"]
+    foundingNote: 영국·이집트 공동 통치에서 독립한 1956년 1월 1일부터
+
+# 독립 2011-07-09·주민 투표 2011-01 찬성 98.83%·유엔 가입 2011-07-14(위키 ko 남수단, 위키백과 South Sudan). 2011~ SDS 10
+- id: south-sudan
+  level: polity
+  names: { ko: 남수단, en: South Sudan, native: South Sudan }
+  from: 2011
+  to: null
+  color: "#d2bc65"
+  summary: 백나일 유역의 내륙 공화국으로, 2011년 7월 9일 수단에서 독립함. 1972~1983년 남부 수단 자치 지역을 두었다가 1983년 2차 수단 내전이 벌어졌고, 2005년 1월 9일 포괄적 평화 협정으로 자치 정부를 다시 세움. 2011년 1월 주민 투표에서 98.83%가 독립에 찬성했고, 같은 해 7월 14일 유엔 회원국이 됨. 2013~2018년 살바 키르 마야르디트 대통령 정부와 반대파 사이에 남수단 내전을 겪음
+  mapNote: 지도에는 2011년부터 지금 남수단 땅으로 표시함. 2010년까지 같은 땅은 수단 색으로 그림. 두 나라가 함께 가진다고 정했으나 귀속을 정할 주민 투표가 열리지 않은 아비에이와, 카피아킨기·헤글리그는 수단 쪽에 두었고, 케냐와 다투는 일레미 삼각지대는 지금 행정 경계대로 나눔
+  features:
+    - 수도는 주바
+    - 2011년 1월 주민 투표에서 98.83%가 독립에 찬성
+    - 2011년 7월 14일 유엔 회원국이 됨
+    - 2013~2018년 남수단 내전
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["포괄적 평화 협정(2005)", "남수단 독립 주민 투표(2011)", "위키백과 South Sudan"]
+    foundingNote: 수단에서 독립한 2011년 7월 9일부터

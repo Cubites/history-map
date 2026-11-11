@@ -1,4 +1,452 @@
-# sub-saharan-africa 권역 국경 지점 정답표 (평소 지도, npm run new:area가 만든 빈 틀)
-# 읽는 곳: scripts/test-geo (npm run test:geo -- --only places). 꼴은 docs/DATA_GUIDE.md의 정답표 절을 따른다. 나라·시대마다 몇 점인지는 시작 때 정한다(standards.md 9절 10).
-# 지점을 넣을 때 아래 []를 지우고 - name: …로 적는다. 해는 천문 연도(기원전 N년 = 1-N), 새 지점은 url을 반드시 단다.
-[]
+# sub-saharan-africa 권역 국경 지점 정답표 (평소 지도, 0단계 new:area가 만든 틀 — 사하라 이남 F1 뼈대 2026-11-11이 칸 머리를 둠)
+# 읽는 곳: scripts/test-geo (npm run test:geo -- --only places). 꼴은 docs/DATA_GUIDE.md의 정답표 절을 따른다. 나라·시대마다 몇 점인지는 칸 지시문이 정한다(standards.md 9절 10, 00-scope 8절 — 나라마다 수도 1점 + 바뀌는 해 앞뒤).
+# 지점은 칸 머리 아래 - name: …로 적는다(주석만 있는 파일은 빈 목록으로 읽힘). 해는 천문 연도, 새 지점은 url을 반드시 단다.
+
+# ── 사하라 이남 F1 WA (서아프리카 대서양 쪽, 2026-11-11) ──
+- name: 라고스
+  at: [3.38, 6.52]
+  year: 1974
+  expect: none
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Nigeria
+  from: 사하라 이남 F1 WA 결과노트
+  note: 이 권역 첫 국경 단계라 1974 이하는 비어 있음(F2가 채우면 고침)
+- name: 라고스
+  at: [3.38, 6.52]
+  year: 1975
+  expect: nigeria
+  url: https://en.wikipedia.org/wiki/Nigeria
+  from: 사하라 이남 F1 WA 결과노트
+- name: 아부자
+  at: [7.49, 9.06]
+  year: 2000
+  expect: nigeria
+  url: https://en.wikipedia.org/wiki/Abuja
+  from: 사하라 이남 F1 WA 결과노트
+- name: 포르토노보
+  at: [2.63, 6.5]
+  year: 2000
+  expect: benin
+  url: https://en.wikipedia.org/wiki/Porto-Novo
+  from: 사하라 이남 F1 WA 결과노트
+- name: 로메
+  at: [1.23, 6.14]
+  year: 2000
+  expect: togo
+  url: https://en.wikipedia.org/wiki/Lom%C3%A9
+  from: 사하라 이남 F1 WA 결과노트
+- name: 아크라
+  at: [-0.19, 5.6]
+  year: 2000
+  expect: ghana
+  url: https://en.wikipedia.org/wiki/Accra
+  from: 사하라 이남 F1 WA 결과노트
+- name: 야무수크로
+  at: [-5.28, 6.82]
+  year: 2000
+  expect: ivory-coast
+  url: https://en.wikipedia.org/wiki/Yamoussoukro
+  from: 사하라 이남 F1 WA 결과노트
+- name: 몬로비아
+  at: [-10.8, 6.3]
+  year: 2000
+  expect: liberia
+  url: https://en.wikipedia.org/wiki/Monrovia
+  from: 사하라 이남 F1 WA 결과노트
+- name: 프리타운
+  at: [-13.23, 8.48]
+  year: 2000
+  expect: sierra-leone
+  url: https://en.wikipedia.org/wiki/Freetown
+  from: 사하라 이남 F1 WA 결과노트
+- name: 코나크리
+  at: [-13.68, 9.51]
+  year: 2000
+  expect: guinea
+  url: https://en.wikipedia.org/wiki/Conakry
+  from: 사하라 이남 F1 WA 결과노트
+- name: 비사우
+  at: [-15.6, 11.86]
+  year: 2000
+  expect: guinea-bissau
+  url: https://en.wikipedia.org/wiki/Bissau
+  from: 사하라 이남 F1 WA 결과노트
+- name: 프라이아
+  at: [-23.51, 14.93]
+  year: 2000
+  expect: cape-verde
+  url: https://en.wikipedia.org/wiki/Praia
+  from: 사하라 이남 F1 WA 결과노트
+- name: 다카르
+  at: [-17.44, 14.69]
+  year: 2000
+  expect: senegal
+  url: https://en.wikipedia.org/wiki/Dakar
+  from: 사하라 이남 F1 WA 결과노트
+- name: 반줄
+  at: [-16.58, 13.45]
+  year: 1985
+  expect: gambia
+  url: https://en.wikipedia.org/wiki/Senegambia_Confederation
+  from: 사하라 이남 F1 WA 결과노트
+  note: 세네감비아 국가 연합(1982~1989) 동안에도 감비아 색
+
+# ── 사하라 이남 F1 EA (대호수·콩고 분지·인도양, 2026-11-11) ──
+- name: 킨샤사
+  at: [15.31, -4.32]
+  year: 2000
+  expect: dr-congo
+  url: https://en.wikipedia.org/wiki/Kinshasa
+  from: 사하라 이남 F1 EA 결과노트
+- name: 키갈리
+  at: [30.06, -1.94]
+  year: 2000
+  expect: rwanda
+  url: https://en.wikipedia.org/wiki/Kigali
+  from: 사하라 이남 F1 EA 결과노트
+- name: 부줌부라
+  at: [29.36, -3.38]
+  year: 2000
+  expect: burundi
+  url: https://en.wikipedia.org/wiki/Bujumbura
+  from: 사하라 이남 F1 EA 결과노트
+- name: 캄팔라
+  at: [32.58, 0.35]
+  year: 2000
+  expect: uganda
+  url: https://en.wikipedia.org/wiki/Kampala
+  from: 사하라 이남 F1 EA 결과노트
+- name: 나이로비
+  at: [36.82, -1.29]
+  year: 2000
+  expect: kenya
+  url: https://en.wikipedia.org/wiki/Nairobi
+  from: 사하라 이남 F1 EA 결과노트
+- name: 다르에스살람
+  at: [39.28, -6.79]
+  year: 2000
+  expect: tanzania
+  url: https://en.wikipedia.org/wiki/Dar_es_Salaam
+  from: 사하라 이남 F1 EA 결과노트
+- name: 잔지바르
+  at: [39.19, -6.16]
+  year: 2000
+  expect: tanzania
+  url: https://en.wikipedia.org/wiki/Zanzibar_City
+  from: 사하라 이남 F1 EA 결과노트
+- name: 부코바
+  at: [31.81, -1.33]
+  year: 1979
+  expect: tanzania
+  url: https://en.wikipedia.org/wiki/Uganda%E2%80%93Tanzania_War
+  from: 사하라 이남 F1 EA 결과노트
+- name: 안타나나리보
+  at: [47.52, -18.88]
+  year: 2000
+  expect: madagascar
+  url: https://en.wikipedia.org/wiki/Antananarivo
+  from: 사하라 이남 F1 EA 결과노트
+- name: 포트루이스
+  at: [57.5, -20.16]
+  year: 2000
+  expect: mauritius
+  url: https://en.wikipedia.org/wiki/Port_Louis
+  from: 사하라 이남 F1 EA 결과노트
+- name: 빅토리아(세이셸)
+  at: [55.45, -4.62]
+  year: 1975
+  expect: seychelles
+  url: https://en.wikipedia.org/wiki/History_of_Seychelles
+  from: 사하라 이남 F1 EA 결과노트
+- name: 빅토리아(세이셸)
+  at: [55.45, -4.62]
+  year: 2000
+  expect: seychelles
+  url: https://en.wikipedia.org/wiki/Victoria,_Seychelles
+  from: 사하라 이남 F1 EA 결과노트
+- name: 모로니
+  at: [43.26, -11.7]
+  year: 2000
+  expect: comoros
+  url: https://en.wikipedia.org/wiki/Moroni,_Comoros
+  from: 사하라 이남 F1 EA 결과노트
+- name: 생드니(레위니옹)
+  at: [55.45, -20.88]
+  year: 2000
+  expect: reunion
+  url: https://en.wikipedia.org/wiki/Saint-Denis,_R%C3%A9union
+  from: 사하라 이남 F1 EA 결과노트
+- name: 마무주
+  at: [45.21, -12.79]
+  year: 2000
+  expect: mayotte
+  url: https://en.wikipedia.org/wiki/Mayotte
+  from: 사하라 이남 F1 EA 결과노트
+
+# ── 사하라 이남 F1 SF (남부, 2026-11-11) ──
+- name: 루안다
+  at: [13.23, -8.84]
+  year: 2000
+  expect: angola
+  url: https://en.wikipedia.org/wiki/Angola
+  from: 사하라 이남 F1 SF 결과노트
+- name: 카빈다
+  at: [12.2, -5.55]
+  year: 2000
+  expect: angola
+  url: https://en.wikipedia.org/wiki/Angola
+  from: 사하라 이남 F1 SF 결과노트
+- name: 마푸투
+  at: [32.57, -25.97]
+  year: 2000
+  expect: mozambique
+  url: https://en.wikipedia.org/wiki/Mozambique
+  from: 사하라 이남 F1 SF 결과노트
+- name: 루사카
+  at: [28.32, -15.39]
+  year: 2000
+  expect: zambia
+  url: https://en.wikipedia.org/wiki/Zambia
+  from: 사하라 이남 F1 SF 결과노트
+- name: 릴롱궤
+  at: [33.79, -13.96]
+  year: 2000
+  expect: malawi
+  url: https://en.wikipedia.org/wiki/Malawi
+  from: 사하라 이남 F1 SF 결과노트
+- name: 하라레(솔즈베리)
+  at: [31.05, -17.83]
+  year: 1979
+  expect: rhodesia
+  url: https://en.wikipedia.org/wiki/Rhodesia
+  from: 사하라 이남 F1 SF 결과노트
+- name: 하라레
+  at: [31.05, -17.83]
+  year: 1981
+  expect: zimbabwe
+  url: https://en.wikipedia.org/wiki/Rhodesia
+  from: 사하라 이남 F1 SF 결과노트
+- name: 가보로네
+  at: [25.91, -24.65]
+  year: 2000
+  expect: botswana
+  url: https://en.wikipedia.org/wiki/List_of_sovereign_states_by_date_of_formation
+  from: 사하라 이남 F1 SF 결과노트
+- name: 마세루
+  at: [27.48, -29.31]
+  year: 2000
+  expect: lesotho
+  url: https://en.wikipedia.org/wiki/List_of_sovereign_states_by_date_of_formation
+  from: 사하라 이남 F1 SF 결과노트
+- name: 음바바네
+  at: [31.14, -26.32]
+  year: 2000
+  expect: eswatini
+  url: https://en.wikipedia.org/wiki/Eswatini
+  from: 사하라 이남 F1 SF 결과노트
+- name: 빈트후크
+  at: [17.08, -22.56]
+  year: 1989
+  expect: south-west-africa
+  url: https://en.wikipedia.org/wiki/South_West_Africa
+  from: 사하라 이남 F1 SF 결과노트
+- name: 빈트후크
+  at: [17.08, -22.56]
+  year: 1991
+  expect: namibia
+  url: https://en.wikipedia.org/wiki/South_West_Africa
+  from: 사하라 이남 F1 SF 결과노트
+- name: 프리토리아
+  at: [28.19, -25.75]
+  year: 2000
+  expect: south-africa
+  url: https://en.wikipedia.org/wiki/Union_of_South_Africa
+  from: 사하라 이남 F1 SF 결과노트
+- name: 제임스타운(세인트헬레나)
+  at: [-5.72, -15.93]
+  year: 2000
+  expect: none
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Saint_Helena
+  from: 사하라 이남 F1 SF 결과노트
+
+# ── 사하라 이남 F1 CE (사헬·기니만 안쪽, 2026-11-11) ──
+- name: 누악쇼트
+  at: [-15.97, 18.09]
+  year: 1974
+  expect: none
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Nouakchott
+  from: 사하라 이남 F1 CE 결과노트
+  note: 이 권역 첫 국경 단계라 1974 이하는 비어 있음(F2가 채우면 고침)
+- name: 누악쇼트
+  at: [-15.97, 18.09]
+  year: 2000
+  expect: mauritania
+  url: https://en.wikipedia.org/wiki/Nouakchott
+  from: 사하라 이남 F1 CE 결과노트
+  note: 서아시아 항목 mauritania — 땅은 1975부터 이 권역 시대 파일이 칠함
+- name: 누아디부
+  at: [-17.03, 20.94]
+  year: 1977
+  expect: mauritania
+  url: https://en.wikipedia.org/wiki/Nouadhibou
+  from: 사하라 이남 F1 CE 결과노트
+  note: 서사하라 남부를 차지한 해에도 모리타니 본토(서사하라와의 이음매, 기본값 18)
+- name: 바마코
+  at: [-8.00, 12.64]
+  year: 1975
+  expect: mali
+  url: https://en.wikipedia.org/wiki/Bamako
+  from: 사하라 이남 F1 CE 결과노트
+- name: 팀북투
+  at: [-3.00, 16.77]
+  year: 2012
+  expect: mali
+  url: https://en.wikipedia.org/wiki/Timbuktu
+  from: 사하라 이남 F1 CE 결과노트
+  note: 아자와드 선언 해에도 말리 색(결정 5)
+- name: 니아메
+  at: [2.11, 13.51]
+  year: 1975
+  expect: niger
+  url: https://en.wikipedia.org/wiki/Niamey
+  from: 사하라 이남 F1 CE 결과노트
+- name: 와가두구
+  at: [-1.53, 12.37]
+  year: 1975
+  expect: burkina-faso
+  url: https://en.wikipedia.org/wiki/Ouagadougou
+  from: 사하라 이남 F1 CE 결과노트
+- name: 은자메나
+  at: [15.04, 12.11]
+  year: 1985
+  expect: chad
+  url: https://en.wikipedia.org/wiki/N%27Djamena
+  from: 사하라 이남 F1 CE 결과노트
+- name: 파야-라르조
+  at: [19.12, 17.92]
+  year: 1985
+  expect: chad
+  url: https://en.wikipedia.org/wiki/Faya-Largeau
+  from: 사하라 이남 F1 CE 결과노트
+  note: 리비아·GUNT 북부 장악 1983~1987에도 차드 색(6-B 2)
+- name: 아우주
+  at: [17.43, 21.82]
+  year: 1993
+  expect: aouzou-strip
+  url: https://en.wikipedia.org/wiki/Aouzou_Strip
+  from: 사하라 이남 F1 CE 결과노트
+  note: 리비아 점령 끝 해(1994 판결·철수 앞, D1)
+- name: 아우주
+  at: [17.43, 21.82]
+  year: 1995
+  expect: chad
+  url: https://en.wikipedia.org/wiki/Aouzou_Strip
+  from: 사하라 이남 F1 CE 결과노트
+  note: 1994 국제 사법 재판소 판결·철수 뒤(D1)
+- name: 방기
+  at: [18.56, 4.37]
+  year: 1977
+  expect: car
+  url: https://en.wikipedia.org/wiki/Bangui
+  from: 사하라 이남 F1 CE 결과노트
+  note: 중앙아프리카 제국 시기 — 이름만 바뀜
+- name: 야운데
+  at: [11.52, 3.87]
+  year: 1975
+  expect: cameroon
+  url: https://en.wikipedia.org/wiki/Yaound%C3%A9
+  from: 사하라 이남 F1 CE 결과노트
+- name: 말라보
+  at: [8.77, 3.75]
+  year: 1975
+  expect: equatorial-guinea
+  url: https://en.wikipedia.org/wiki/Malabo
+  from: 사하라 이남 F1 CE 결과노트
+- name: 상투메
+  at: [6.73, 0.34]
+  year: 1975
+  expect: sao-tome
+  url: https://en.wikipedia.org/wiki/S%C3%A3o_Tom%C3%A9
+  from: 사하라 이남 F1 CE 결과노트
+- name: 리브르빌
+  at: [9.44, 0.41]
+  year: 1975
+  expect: gabon
+  url: https://en.wikipedia.org/wiki/Libreville
+  from: 사하라 이남 F1 CE 결과노트
+- name: 브라자빌
+  at: [15.27, -4.27]
+  year: 1975
+  expect: republic-of-congo
+  url: https://en.wikipedia.org/wiki/Brazzaville
+  from: 사하라 이남 F1 CE 결과노트
+
+# ── 사하라 이남 F1 HN (뿔·나일, 2026-11-11) ──
+- name: 아디스아바바
+  at: [38.75, 9.03]
+  year: 2000
+  expect: ethiopia
+  url: https://en.wikipedia.org/wiki/Ethiopia
+  from: 사하라 이남 F1 HN 결과노트
+- name: 아스마라
+  at: [38.93, 15.32]
+  year: 1992
+  expect: ethiopia
+  url: https://en.wikipedia.org/wiki/1993_Eritrean_independence_referendum
+  from: 사하라 이남 F1 HN 결과노트
+- name: 아스마라
+  at: [38.93, 15.32]
+  year: 1994
+  expect: eritrea
+  url: https://en.wikipedia.org/wiki/Eritrea
+  from: 사하라 이남 F1 HN 결과노트
+- name: 지부티
+  at: [43.15, 11.59]
+  year: 2000
+  expect: djibouti
+  url: https://en.wikipedia.org/wiki/Djibouti
+  from: 사하라 이남 F1 HN 결과노트
+- name: 모가디슈
+  at: [45.32, 2.05]
+  year: 2000
+  expect: somalia
+  url: https://en.wikipedia.org/wiki/Somalia
+  from: 사하라 이남 F1 HN 결과노트
+- name: 하르게이사
+  at: [44.06, 9.56]
+  year: 1990
+  expect: somalia
+  url: https://en.wikipedia.org/wiki/Somaliland_War_of_Independence
+  from: 사하라 이남 F1 HN 결과노트
+- name: 하르게이사
+  at: [44.06, 9.56]
+  year: 1992
+  expect: somaliland
+  url: https://en.wikipedia.org/wiki/Somaliland
+  from: 사하라 이남 F1 HN 결과노트
+- name: 하르툼
+  at: [32.53, 15.5]
+  year: 2000
+  expect: sudan
+  url: https://en.wikipedia.org/wiki/Sudan
+  from: 사하라 이남 F1 HN 결과노트
+- name: 와디할파
+  at: [31.35, 21.8]
+  year: 2000
+  expect: sudan
+  url: https://en.wikipedia.org/wiki/Sudan
+  from: 사하라 이남 F1 HN 결과노트
+- name: 주바
+  at: [31.58, 4.85]
+  year: 2010
+  expect: sudan
+  url: https://en.wikipedia.org/wiki/South_Sudan
+  from: 사하라 이남 F1 HN 결과노트
+- name: 주바
+  at: [31.58, 4.85]
+  year: 2012
+  expect: south-sudan
+  url: https://en.wikipedia.org/wiki/South_Sudan
+  from: 사하라 이남 F1 HN 결과노트

@@ -5884,3 +5884,385 @@
   avoid: [말리 왕국]
   note: "Mali Empire(1235 무렵~1670, 기본값 20). 위키 ko 표제 '말리 제국'(0단계 R-EV 열람). 지금 나라 '말리'(1960~)와 구별"
   scope: 사하라 이남·서아프리카
+
+# ── 사하라 이남 F1 공통(2026-11-11, F1 뼈대): 공용 표기표 — 나라 이름·옛 이름·수도·분쟁 지명을 위키백과 한국어판 표제로 확정(f1/skel/ko-titles*.txt), 표제가 없으면 저장소·위키 본문 꼴. avoid는 넘겨주기·흔한 잘못 꼴만. 칸은 자기 새 이름만 칸 머리 아래(f1/SKEL-NOTE.md 끝 표) ──
+
+- use: 코트디부아르
+  avoid: [코트 디부아르, 아이보리코스트]
+  note: "Côte d'Ivoire(1960~). 위키 ko 표제(F1 뼈대 확인, f1/skel/ko-titles*.txt). 영어 이름 Ivory Coast를 옮겨 쓰지 않음"
+  scope: 사하라 이남·서아프리카
+
+- use: 베냉
+  avoid: [베닌 공화국]
+  note: "Bénin(1975~ 이 이름, 그 앞 다호메이 공화국). 위키 ko 표제(F1 뼈대 확인, f1/skel/ko-titles*.txt). 나이지리아 남부의 옛 베닌 왕국과 다른 나라"
+  scope: 사하라 이남·서아프리카
+
+- use: 라이베리아
+  avoid: [리베리아]
+  note: "Liberia(1847~). 위키 ko 표제(F1 뼈대 확인, f1/skel/ko-titles*.txt)"
+  scope: 사하라 이남·서아프리카
+
+- use: 시에라리온
+  avoid: [시에라 리온, 시에라레오네]
+  note: "Sierra Leone(1961~). 위키 ko 표제(F1 뼈대 확인, f1/skel/ko-titles*.txt)"
+  scope: 사하라 이남·서아프리카
+
+- use: 기니비사우
+  avoid: [기니 비사우]
+  note: "Guinea-Bissau(1974~). 위키 ko 표제(F1 뼈대 확인, f1/skel/ko-titles*.txt)"
+  scope: 사하라 이남·서아프리카
+
+- use: 카보베르데
+  avoid: [카보 베르데, 케이프베르데, 케이프 베르데]
+  note: "Cabo Verde(1975~). 위키 ko 표제(F1 뼈대 확인, f1/skel/ko-titles*.txt)"
+  scope: 사하라 이남·서아프리카
+
+- use: 나이지리아
+  avoid: [나이제리아]
+  note: "Nigeria(1960~). 위키 ko 표제(F1 뼈대 확인, f1/skel/ko-titles*.txt)"
+  scope: 사하라 이남·서아프리카
+
+- use: 콩고 민주 공화국
+  avoid: [콩고민주공화국, 콩고 민주공화국]
+  note: "République démocratique du Congo(1960~, 1971~1997 자이르). 위키 ko 표제(F1 뼈대 확인, f1/skel/ko-titles*.txt)"
+  scope: 사하라 이남·중앙
+
+- use: 콩고 공화국
+  avoid: [콩고공화국]
+  note: "République du Congo(1960~, 수도 브라자빌). 위키 ko 표제(F1 뼈대 확인, f1/skel/ko-titles*.txt). 콩고 민주 공화국·옛 콩고 왕국과 구별"
+  scope: 사하라 이남·중앙
+
+- use: 케냐
+  avoid: [케니아]
+  note: "Kenya(1963~). 위키 ko 표제(F1 뼈대 확인, f1/skel/ko-titles*.txt)"
+  scope: 사하라 이남·동아프리카
+
+- use: 모리셔스
+  avoid: [모리티우스]
+  note: "Mauritius(1968~). 위키 ko 표제(F1 뼈대 확인, f1/skel/ko-titles*.txt)"
+  scope: 사하라 이남·인도양
+
+- use: 세이셸
+  avoid: [세이셜, 세이쉘]
+  note: "Seychelles(1976 독립). 위키 ko 표제(F1 뼈대 확인, f1/skel/ko-titles*.txt)('세이쉘'은 문화어)"
+  scope: 사하라 이남·인도양
+
+- use: 코모로
+  avoid: [코모로스]
+  note: "Comoros(1975~). 위키 ko 표제(F1 뼈대 확인, f1/skel/ko-titles*.txt)"
+  scope: 사하라 이남·인도양
+
+- use: 레위니옹
+  avoid: [레유니옹, 리유니언]
+  note: "La Réunion(프랑스 해외 섬). 위키 ko 표제(F1 뼈대 확인, f1/skel/ko-titles*.txt)('레유니옹'은 문화어)"
+  scope: 사하라 이남·인도양
+
+- use: 마요트
+  avoid: [마이요트]
+  note: "Mayotte(프랑스 해외 섬). 위키 ko 표제(F1 뼈대 확인, f1/skel/ko-titles*.txt)"
+  scope: 사하라 이남·인도양
+
+- use: 마다가스카르
+  avoid: [마다카스카르]
+  note: "Madagascar(1960~). 위키 ko 표제(F1 뼈대 확인, f1/skel/ko-titles*.txt)"
+  scope: 사하라 이남·인도양
+
+- use: 말라위
+  avoid: [말라우이]
+  note: "Malawi(1964~). 위키 ko 표제(F1 뼈대 확인, f1/skel/ko-titles*.txt)"
+  scope: 사하라 이남·남부
+
+- use: 짐바브웨
+  avoid: [짐바브위]
+  note: "Zimbabwe(1980~). 위키 ko 표제(F1 뼈대 확인, f1/skel/ko-titles*.txt)"
+  scope: 사하라 이남·남부
+
+- use: 보츠와나
+  avoid: [보쯔와나]
+  note: "Botswana(1966~). 위키 ko 표제(F1 뼈대 확인, f1/skel/ko-titles*.txt)"
+  scope: 사하라 이남·남부
+
+- use: 남서아프리카
+  avoid: [남서 아프리카]
+  note: "South West Africa(1915~1990 남아프리카의 위임 통치령, 지금 나미비아). 위키 ko 표제(F1 뼈대 확인, f1/skel/ko-titles*.txt) — '서남아프리카'는 넘겨주기(00-scope·결정문의 '서남아프리카'를 표제로 맞춤. 유럽 사건 eu-01의 '서남아프리카'(독일령 시기 글)는 막지 않음)"
+  scope: 사하라 이남·남부
+
+- use: 남아프리카 공화국
+  avoid: [남아프리카공화국]
+  note: "Republic of South Africa(1961~, 그 앞 남아프리카 연방 1910~). 위키 ko 표제(F1 뼈대 확인, f1/skel/ko-titles*.txt)"
+  scope: 사하라 이남·남부
+
+- use: 로디지아
+  avoid: [로데시아]
+  note: "Rhodesia(1965~1979 일방 독립 정권). 위키 ko 표제(F1 뼈대 확인, f1/skel/ko-titles*.txt)('로데시아'는 문화어). 1964년 앞의 '로디지아'는 잠비아·말라위·짐바브웨 땅 전체를 가리킬 수 있음"
+  scope: 사하라 이남·남부
+
+- use: 부르키나파소
+  avoid: [부르키나 파소]
+  note: "Burkina Faso(1984~ 이 이름, 그 앞 오트볼타). 위키 ko 표제(F1 뼈대 확인, f1/skel/ko-titles*.txt)"
+  scope: 사하라 이남·사헬
+
+- use: 중앙아프리카 공화국
+  avoid: [중앙아프리카공화국]
+  note: "République centrafricaine(1960~, 1976~1979 중앙아프리카 제국). 위키 ko 표제(F1 뼈대 확인, f1/skel/ko-titles*.txt)"
+  scope: 사하라 이남·중앙
+
+- use: 적도 기니
+  avoid: [적도기니]
+  note: "Guinea Ecuatorial(1968~). 위키 ko 표제(F1 뼈대 확인, f1/skel/ko-titles*.txt)('적도기니'는 넘겨주기)"
+  scope: 사하라 이남·중앙
+
+- use: 상투메 프린시페
+  avoid: [상투메프린시페, 상토메]
+  note: "São Tomé e Príncipe(1975~). 위키 ko 표제(F1 뼈대 확인, f1/skel/ko-titles*.txt)('상투메프린시페'는 넘겨주기)"
+  scope: 사하라 이남·중앙
+
+- use: 아우주 띠
+  avoid: [아우조우 띠, 아오우조우]
+  note: "Aouzou Strip(Bande d'Aozou, 차드 티베스티 북쪽 띠 — 1973~1994 리비아 점령). 위키 ko 표제 없음 — 저장소 서아시아 libya 글 꼴과 00-scope 2·8절 꼴"
+  scope: 사하라 이남·사헬
+
+- use: 에티오피아
+  avoid: [이디오피아, 에디오피아]
+  note: "Ethiopia. 위키 ko 표제(F1 뼈대 확인, f1/skel/ko-titles*.txt)"
+  scope: 사하라 이남·뿔
+
+- use: 에리트레아
+  avoid: [에리트리아]
+  note: "Eritrea(1993~). 위키 ko 표제(F1 뼈대 확인, f1/skel/ko-titles*.txt)"
+  scope: 사하라 이남·뿔
+
+- use: 지부티
+  avoid: [지부띠]
+  note: "Djibouti(1977~). 위키 ko 표제(F1 뼈대 확인, f1/skel/ko-titles*.txt)"
+  scope: 사하라 이남·뿔
+
+- use: 소말릴란드
+  avoid: [소말리랜드]
+  note: "Somaliland(1991~ 미승인 정부, 옛 영국령 소말릴란드). 위키 ko 표제(F1 뼈대 확인, f1/skel/ko-titles*.txt)"
+  scope: 사하라 이남·뿔
+
+- use: 오트볼타
+  avoid: [오트 볼타, 어퍼볼타]
+  note: "Haute-Volta(1958~1984, 지금 부르키나파소). 위키 ko 표제(F1 뼈대 확인, f1/skel/ko-titles*.txt)"
+  scope: 사하라 이남·사헬
+
+- use: 자이르
+  avoid: [자이레]
+  note: "Zaïre(1971~1997, 지금 콩고 민주 공화국). 위키 ko 표제(F1 뼈대 확인, f1/skel/ko-titles*.txt). 그 시기 이야기에 쓰는 이름이라 막지 않음"
+  scope: 사하라 이남·중앙
+
+- use: 스와질란드
+  avoid: [스와지랜드]
+  note: "Swaziland(2018 앞 이름, 지금 에스와티니). 위키 ko '스와질란드'는 '에스와티니'로 넘겨주기 — 그 시기 이야기에 쓰는 이름이라 막지 않음"
+  scope: 사하라 이남·남부
+
+- use: 중앙아프리카 제국
+  avoid: [중앙아프리카제국]
+  note: "Empire centrafricain(1976~1979, 보카사). 위키 ko 표제(F1 뼈대 확인, f1/skel/ko-titles*.txt)"
+  scope: 사하라 이남·중앙
+
+- use: 남로디지아
+  avoid: [남 로디지아]
+  note: "Southern Rhodesia(1923~1965 영국 자치 식민지, 1979~1980 다시). 위키 ko 표제(F1 뼈대 확인, f1/skel/ko-titles*.txt)"
+  scope: 사하라 이남·남부
+
+- use: 프랑스령 아파르족 및 이사족 지역
+  avoid: [프랑스령 아파르·이사, 프랑스령 아파르 이사]
+  note: "Territoire français des Afars et des Issas(1967~1977, 지금 지부티). 위키 ko 표제 없음 — 위키 ko '프랑스령 소말릴란드' 문서 본문 꼴"
+  scope: 사하라 이남·뿔
+
+- use: 누악쇼트
+  avoid: [누아크쇼트]
+  note: "Nouakchott(모리타니 수도). 위키 ko 표제(F1 뼈대 확인, f1/skel/ko-titles*.txt)"
+  scope: 사하라 이남·사헬
+
+- use: 은자메나
+  avoid: [엔자메나]
+  note: "N'Djamena(차드 수도, 1973 앞 포르라미). 위키 ko 표제(F1 뼈대 확인, f1/skel/ko-titles*.txt)"
+  scope: 사하라 이남·사헬
+
+- use: 아디스아바바
+  avoid: [아디스 아바바]
+  note: "Addis Ababa(에티오피아 수도). 위키 ko 표제(F1 뼈대 확인, f1/skel/ko-titles*.txt)"
+  scope: 사하라 이남·뿔
+
+- use: 하르게이사
+  avoid: [하르게이샤]
+  note: "Hargeisa(소말릴란드 수도). 위키 ko 표제(F1 뼈대 확인, f1/skel/ko-titles*.txt)"
+  scope: 사하라 이남·뿔
+
+- use: 모가디슈
+  avoid: [모가디쇼]
+  note: "Mogadishu(소말리아 수도). 위키 ko 표제(F1 뼈대 확인, f1/skel/ko-titles*.txt)"
+  scope: 사하라 이남·뿔
+
+- use: 하르툼
+  avoid: [카르툼]
+  note: "Khartoum(수단 수도). 위키 ko 표제(F1 뼈대 확인, f1/skel/ko-titles*.txt)"
+  scope: 사하라 이남·나일
+
+- use: 킨샤사
+  avoid: [킨샤샤]
+  note: "Kinshasa(콩고 민주 공화국 수도, 1966 앞 레오폴드빌). 위키 ko 표제(F1 뼈대 확인, f1/skel/ko-titles*.txt)"
+  scope: 사하라 이남·중앙
+
+- use: 다르에스살람
+  avoid: [다르 에스 살람, 다레스살람]
+  note: "Dar es Salaam(탄자니아 옛 수도·최대 도시). 위키 ko 표제(F1 뼈대 확인, f1/skel/ko-titles*.txt)"
+  scope: 사하라 이남·동아프리카
+
+- use: 야무수크로
+  avoid: [야무스크로]
+  note: "Yamoussoukro(코트디부아르 법적 수도). 위키 ko 표제(F1 뼈대 확인, f1/skel/ko-titles*.txt)"
+  scope: 사하라 이남·서아프리카
+
+- use: 빈트후크
+  avoid: [윈트후크, 빈트훅]
+  note: "Windhoek(나미비아 수도). 위키 ko 표제(F1 뼈대 확인, f1/skel/ko-titles*.txt)"
+  scope: 사하라 이남·남부
+
+- use: 월비스베이
+  avoid: [월비스 베이, 왈비스베이]
+  note: "Walvis Bay(1977~1994 남아프리카 직할, 1994 나미비아에 이양). 위키 ko 표제(F1 뼈대 확인, f1/skel/ko-titles*.txt)('월비스 베이'는 넘겨주기)"
+  scope: 사하라 이남·남부
+
+- use: 와디할파
+  avoid: [와디 할파]
+  note: "Wadi Halfa(수단 북쪽 끝 나일강 가). 위키 ko 표제(F1 뼈대 확인, f1/skel/ko-titles*.txt)('와디 할파'는 넘겨주기)"
+  scope: 사하라 이남·나일
+
+- use: 파야-라르조
+  avoid: [파야라르조]
+  note: "Faya-Largeau(차드 보르쿠의 중심지). 위키 ko 표제 없음 — 위키 ko '차드-리비아 전쟁' 문서 본문 꼴"
+  scope: 사하라 이남·사헬
+
+- use: 바카시반도
+  avoid: [바카시 반도]
+  note: "Bakassi(2008 나이지리아 → 카메룬 이양). 위키 ko 표제(F1 뼈대 확인, f1/skel/ko-titles*.txt)('바카시 반도'는 넘겨주기)"
+  scope: 사하라 이남·중앙
+
+- use: 카프리비 회랑
+  avoid: [카프리비 띠, 카프리비 스트립]
+  note: "Caprivi Strip(나미비아 북동쪽 띠, 지금 잠베지주). 위키 ko 표제(F1 뼈대 확인, f1/skel/ko-titles*.txt)"
+  scope: 사하라 이남·남부
+
+- use: 일레미 삼각지대
+  avoid: [일레미 삼각 지대, 일레미 트라이앵글]
+  note: "Ilemi Triangle(케냐·남수단 사이 약 1만 km² 분쟁 땅). 위키 ko 표제 없음 — 조사 노트·지시문 꼴"
+  scope: 사하라 이남·동아프리카
+
+- use: 카피아킨기
+  avoid: [카피아 킨기]
+  note: "Kafia Kingi(수단·남수단 사이 약 12,500 km² 분쟁 땅). 위키 ko 표제 없음 — 조사 노트·지시문 꼴"
+  scope: 사하라 이남·나일
+
+- use: 티그라이
+  avoid: [티그레이]
+  note: "Tigray(에티오피아 북쪽 주). 위키 ko 표제(F1 뼈대 확인, f1/skel/ko-titles*.txt)"
+  scope: 사하라 이남·뿔
+
+- use: 다르푸르
+  avoid: [다푸르]
+  note: "Darfur(수단 서쪽). 위키 ko 표제(F1 뼈대 확인, f1/skel/ko-titles*.txt)"
+  scope: 사하라 이남·나일
+
+- use: 티베스티산맥
+  avoid: [티베스티 산맥]
+  note: "Tibesti(차드 북쪽 산지). 위키 ko 표제(F1 뼈대 확인, f1/skel/ko-titles*.txt)('티베스티 산맥'은 넘겨주기). 차드 주 이름은 '티베스티'"
+  scope: 사하라 이남·사헬
+
+# ── 사하라 이남 F1 WA (서아프리카 대서양 쪽, 2026-11-11) ──
+
+- use: 보코 하람
+  avoid: [보코하람]
+  note: "나이지리아 북동부의 이슬람 무장 단체. 위키 ko 표제(붙여 쓴 꼴은 넘겨주기, F1 WA 확인)"
+  scope: 사하라 이남·서아프리카
+
+- use: 혁명연합전선
+  avoid: [혁명 연합 전선]
+  note: "시에라리온 내전(1991~2002)의 반군. 위키 ko 표제(띄어 쓴 꼴은 넘겨주기, F1 WA 확인)"
+  scope: 사하라 이남·서아프리카
+
+- use: 아다마 바로
+  avoid: [아다마 배로]
+  note: "감비아 대통령(2017~). 위키 ko 표제(배로는 넘겨주기, F1 WA 확인)"
+  scope: 사하라 이남·서아프리카
+
+# ── 사하라 이남 F1 EA (대호수·콩고 분지·인도양, 2026-11-11) ──
+
+- use: 모엘리섬
+  avoid: [모헬리섬]
+  note: "Mohéli(코모로 세 섬 가운데 하나). 위키 ko 표제 '모엘리섬'('모헬리섬'은 넘겨주기 — F1 EA 확인, f1/impl-ea/ko-titles-ea1.txt). 저장소 0회"
+  scope: 사하라 이남·인도양
+
+- use: 그랑드코모르섬
+  avoid: [그랑코모르섬]
+  note: "Grande Comore(Ngazidja, 코모로 수도 모로니가 있는 섬). 위키 ko 표제(F1 EA 확인). 저장소 0회"
+  scope: 사하라 이남·인도양
+
+- use: 줄리어스 니에레레
+  avoid: [줄리우스 니에레레]
+  note: "Julius Nyerere(탕가니카·탄자니아 대통령 1962~1985). 위키 ko 표제(F1 EA 확인). 저장소 0회"
+  scope: 사하라 이남·동아프리카
+
+- use: 로랑데지레 카빌라
+  avoid: [로랑 데지레 카빌라]
+  note: "Laurent-Désiré Kabila(콩고 민주 공화국 대통령 1997~2001). 위키 ko 표제(붙여 씀, F1 EA 확인). 저장소 0회"
+  scope: 사하라 이남·중앙아프리카
+
+# ── 사하라 이남 F1 SF (남부, 2026-11-11) ──
+
+- use: 보푸사츠와나
+  avoid: [보푸타츠와나]
+  note: "Bophuthatswana(남아프리카 흑인 홈랜드, 1977 이름뿐인 독립). 위키 ko 표제('보푸타츠와나'는 넘겨주기 — F1 SF 확인, f1/impl-sf/titles-out.txt)"
+  scope: 사하라 이남·남부
+
+- use: 이언 스미스
+  avoid: [이안 스미스]
+  note: "Ian Smith(로디지아 총리 1965~1979). 위키 ko 표제(F1 SF 확인)"
+  scope: 사하라 이남·남부
+
+- use: 아고스티뉴 네투
+  avoid: [아고스티뉴 네토, 아고스티노 네토]
+  note: "Agostinho Neto(앙골라 첫 대통령). 위키 ko 표제(F1 SF 확인)"
+  scope: 사하라 이남·남부
+
+- use: 사모라 마셸
+  avoid: [사모라 마첼, 사모라 마텔]
+  note: "Samora Machel(모잠비크 독립 뒤 정부를 이끔). 위키 ko 표제(F1 SF 확인)"
+  scope: 사하라 이남·남부
+
+- use: 아벨 무조레와
+  avoid: [아벨 무조레바]
+  note: "Abel Muzorewa(짐바브웨 로디지아 1979 총리). 위키 ko 표제(F1 SF 확인)"
+  scope: 사하라 이남·남부
+
+- use: 음스와티 3세
+  avoid: [므스와티 3세]
+  note: "Mswati III(에스와티니 국왕 1986~). 위키 ko 표제(F1 SF 확인)"
+  scope: 사하라 이남·남부
+
+# ── 사하라 이남 F1 CE (사헬·기니만 안쪽, 2026-11-11) ──
+
+# ── 사하라 이남 F1 HN (뿔·나일, 2026-11-11) ──
+
+- use: 멩기스투 하일레 마리암
+  avoid: [멩기스투 하일레마리암]
+  note: "Mengistu Haile Mariam(에티오피아 데르그 의장 1977~1987·인민민주공화국 대통령 1987~1991). 위키 ko 표제(F1 HN 확인, f1/impl-hn/ko-names.txt)"
+  scope: 사하라 이남·뿔
+
+- use: 가파르 니메이리
+  avoid: [자파르 니메이리]
+  note: "Gaafar Nimeiry(수단 국가 원수 1969~1985). 위키 ko 표제(F1 HN 확인 — '자파르 니메이리' 표제 없음)"
+  scope: 사하라 이남·나일
+
+- use: 오마르 알바시르
+  avoid: [오마르 알 바시르]
+  note: "Omar al-Bashir(수단 대통령 1989~2019). 위키 ko 표제(F1 HN 확인)"
+  scope: 사하라 이남·나일
+
+- use: 샤바브
+  avoid: [알샤바브, 알 샤바브]
+  note: "al-Shabaab(소말리아 이슬람 무장 세력). 위키 ko 표제('알샤바브'는 넘겨주기 — F1 HN 확인)"
+  scope: 사하라 이남·뿔

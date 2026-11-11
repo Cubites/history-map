@@ -1536,3 +1536,21 @@
 - { type: successor_of, subject: singhasari, object: kediri-kingdom, from: 1222, to: null } # 1222 간테르 전투 — 켄 아록이 크르타자야를 꺾음
 - { type: successor_of, subject: majapahit, object: singhasari, from: 1293, to: null } # 1293-11 크르타나가라의 사위 라덴 위자야가 즉위(COMMON P8 — 뒤 나라 첫 해)
 - { type: successor_of, subject: mrauk-u, object: arakan-kingdom, from: 1430, to: null } # 1430 민소몬이 므라우우에 새 도읍(렝옛 왕조를 이음 — F4)
+
+# ── 사하라 이남 F1 WA (서아프리카 대서양 쪽, 2026-11-11) ──
+
+# ── 사하라 이남 F1 EA (대호수·콩고 분지·인도양, 2026-11-11) ──
+- { type: vassal_of, subject: seychelles, object: uk, from: 1814, to: 1975 } # 1814 파리 조약으로 영국 땅(1794 항복·1811 영구 식민지), 1903 따로 된 직할 식민지, 1976-06-29 독립 — 그해 말 규칙으로 1975까지(미국령 필리핀 1946-07 독립 → to 1945 꼴)
+- { type: vassal_of, subject: reunion, object: france, from: 1665, to: null } # 1665 프랑스 동인도 회사 정착, 1946 해외 데파르트망 뒤도 같은 항목(기본값 3)
+- { type: vassal_of, subject: mayotte, object: france, from: 1841, to: null } # 1841 프랑스 취득, 1974·1976 주민 투표로 잔류, 2011-03-31 데파르트망(기본값 3). 코모로의 귀속 주장은 1만 km² 미만이라 관계 없이 mapNote
+
+# ── 사하라 이남 F1 SF (남부, 2026-11-11) ──
+- { type: vassal_of, subject: south-west-africa, object: south-africa, from: 1920, to: 1989 } # 1920 국제 연맹 위임(1915-07-09 점령), 1966-10-27 유엔 총회 위임 종료 결의 뒤에도 1990-03-21 독립 전까지 남아프리카가 다스림(기본값 16)
+- { type: successor_of, subject: namibia, object: south-west-africa, from: 1990, to: null } # 1990-03-21 남서아프리카가 나미비아로 독립
+- { type: successor_of, subject: zimbabwe, object: rhodesia, from: 1980, to: null } # 1979-12 랭커스터 하우스 협정·1980 선거 뒤 1980-04-18 같은 나라가 짐바브웨로 독립(위키백과 Rhodesia). rhodesia와 영국 사이 관계는 넣지 않음(결정 4)
+
+# ── 사하라 이남 F1 CE (사헬·기니만 안쪽, 2026-11-11) ──
+- { type: occupied_by, subject: aouzou-strip, object: libya, from: 1973, to: 1993 } # 1973 리비아군이 차지함, 1994-02-03 국제 사법 재판소 판결(차드)·1994-05 철수 — 그해 말 모습 기준 1993까지(D1)
+
+# ── 사하라 이남 F1 HN (뿔·나일, 2026-11-11) ──
+- { type: vassal_of, subject: djibouti, object: france, from: 1884, to: 1976 } # 1884 프랑스령 소말릴란드(위키 ko), 1967 프랑스령 아파르족 및 이사족 지역, 1977-06-27 독립 — 그해 말 규칙으로 1976까지(6-B 12, EA 세이셸 1976-06 독립 → to 1975 꼴)

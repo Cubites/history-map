@@ -9,7 +9,7 @@
 // 빌드 스크립트가 Node의 타입 제거 기능으로 직접 불러오므로 enum 같은 런타임 문법과 외부 패키지는 쓰지 않는다.
 
 /** 화면의 권역 필터 단위. '전체'(all)는 따로 둔다 */
-export const REGION_FILTERS = ['east-asia', 'europe', 'middle-east', 'south-asia', 'central-asia', 'southeast-asia'] as const;
+export const REGION_FILTERS = ['east-asia', 'europe', 'middle-east', 'south-asia', 'central-asia', 'southeast-asia', 'sub-saharan-africa'] as const;
 export type RegionFilterUnit = (typeof REGION_FILTERS)[number];
 export type RegionFilter = 'all' | RegionFilterUnit;
 
@@ -54,12 +54,12 @@ export const REGION_FILTER_OF: Record<string, RegionFilterUnit> = {
   'southeast-asia-colonial': 'southeast-asia', // 동남아 E2(2026-11-08): E1과 같은 새 단위 southeast-asia
   'southeast-asia-early-modern': 'southeast-asia', // 동남아 E3(2026-11-09): E1·E2와 같은 새 단위 southeast-asia
   'southeast-asia-ancient': 'southeast-asia', // 동남아 E4(2026-11-09): E1~E3과 같은 새 단위 southeast-asia
-  'sub-saharan-africa': 'middle-east', // 사하라 이남 0단계 빈 틀(2026-11-10). F1이 첫 나라를 넣을 때 새 단위 'sub-saharan-africa'를 REGION_FILTERS·REGION_FILTER_INFO에 더하고 이 줄을 그 단위로 바꾼다(docs/sub-saharan-africa/00-scope.md 2절)
-  'sub-saharan-africa-modern': 'middle-east', // 사하라 이남 0단계 빈 틀(2026-11-10). 위 줄과 함께 F1 첫머리에 새 단위로 바꾼다
+  'sub-saharan-africa': 'sub-saharan-africa', // 사하라 이남 F1(2026-11-11): 새 단위 sub-saharan-africa
+  'sub-saharan-africa-modern': 'sub-saharan-africa', // 사하라 이남 F1(2026-11-11): 새 단위 sub-saharan-africa
 };
 
 /** 사건·전쟁 파일 이름 앞머리 → 권역. 앞에서부터 처음 맞는 것을 쓴다 (예: eu-01-revolutions-1789-1914.yaml → europe) */
-export const STORY_FILE_PREFIXES: [prefix: string, region: string][] = [['eu-', 'europe'], ['cn-', 'china'], ['me-', 'middle-east'], ['sa-', 'south-asia'], ['ca-', 'central-asia'], ['sea-', 'southeast-asia']];
+export const STORY_FILE_PREFIXES: [prefix: string, region: string][] = [['eu-', 'europe'], ['cn-', 'china'], ['me-', 'middle-east'], ['sa-', 'south-asia'], ['ca-', 'central-asia'], ['sea-', 'southeast-asia'], ['ssa-', 'sub-saharan-africa']];
 /** 한국사 사건 파일(01-gojoseon.yaml~08-contemporary.yaml)과 앞머리가 없는 전쟁 파일(imjin-war.yaml 등)의 권역 */
 export const DEFAULT_STORY_REGION = 'korea';
 
@@ -78,6 +78,8 @@ export const REGION_FILTER_INFO: Record<RegionFilter, { label: string; short: st
   'central-asia': { label: '중앙아시아', short: '중앙아시아', bounds: [[46.4, 29.3], [96.5, 55.6]] },
   // 미얀마 서쪽 끝(나프강) ~ 서뉴기니 동쪽 끝(동경 141°), 티모르·자와 남쪽 ~ 미얀마 북쪽 끝(00-scope 기본값 22). 앞 단위(동아시아 북위 18° 북쪽·남아시아 동경 97.5° 서쪽)와 겹치는 곳은 앞 단위가 먼저 골라짐
   'southeast-asia': { label: '동남아시아', short: '동남아', bounds: [[92, -11], [141, 29]] },
+  // 카보베르데 서쪽 끝(서경 26°) ~ 모리셔스 본섬 동쪽(동경 58° — 로드리게스는 밖), 남아프리카 남쪽 끝(남위 35°) ~ 모리타니 북쪽 끝(북위 25.2°, 00-scope 2절). 앞 단위(서아시아 북위 12° 북쪽)와 겹치는 곳은 앞 단위가 먼저 골라짐
+  'sub-saharan-africa': { label: '사하라 이남 아프리카', short: '사하라 이남', bounds: [[-26, -35], [58, 25.2]] },
 };
 
 /** 파일 경로에서 확장자를 뺀 이름 (경로 구분자는 / 와 \ 모두) */
