@@ -52,6 +52,9 @@ jobs:
       - run: npm run build:data
         timeout-minutes: 60
       - run: npm run test:geo -- --ci
+        env:
+          # 한 프로세스로 전체 해를 도는 검사가 기본 힙 한도(약 4GB)를 넘음(2026-11-12 사하라 이남 F4 e331454, 종료 134) — 러너 메모리 16GB
+          NODE_OPTIONS: --max-old-space-size=8192
         timeout-minutes: 70
       # 성공·실패·단계 제한 초과와 관계없이 캐시를 저장한다 (같은 key가 이미 있으면 저장하지 않고 넘어감)
       - if: always() && steps.geo-cache.outputs.cache-hit != 'true'
