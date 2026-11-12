@@ -1601,7 +1601,6 @@
 - { type: successor_of, subject: comoros, object: french-comoros, from: 1975, to: null } # 1975-07-06 세 섬이 코모로로 독립 선언(마요트는 프랑스에 남음 — mayotte 줄은 F1)
 
 # ── 사하라 이남 F2 SF (남부, 2026-11-11) ──
-- { type: vassal_of, subject: rhodesia, object: uk, from: 1960, to: 1964 } # 영국 자치 식민지 남로디지아(1923~, 1953~1963 로디지아 니아살랜드 연방 구성 단위), 1964-10 스스로 로디지아라 부름, 1965-11-11 일방적 독립 선언 — 그해 말 규칙으로 1964까지(기본값 3, 1965~ 관계 없음 — 결정 4, 위키 en Southern Rhodesia). from은 항목 from 1960(M-F2-5)
 - { type: vassal_of, subject: portuguese-angola, object: portugal, from: 1575, to: 1974 } # 1575 루안다 건설, 1951 해외 주, 1975-11-11 독립 — 그해 말 규칙으로 1974까지(위키 en Portuguese Angola)
 - { type: vassal_of, subject: bechuanaland, object: uk, from: 1885, to: 1965 } # 1885-03-31 보호령, 1966-09-30 독립 — 그해 말 규칙으로 1965까지(위키 en Bechuanaland Protectorate)
 - { type: vassal_of, subject: basutoland, object: uk, from: 1884, to: 1965 } # 1884 영국 직할 식민지(1868 보호), 1966-10-04 독립 — 그해 말 규칙으로 1965까지(위키 en Basutoland)
@@ -1610,3 +1609,62 @@
 - { type: successor_of, subject: botswana, object: bechuanaland, from: 1966, to: null } # 1966-09-30 베추아날란드 보호령이 보츠와나 공화국으로 독립
 - { type: successor_of, subject: lesotho, object: basutoland, from: 1966, to: null } # 1966-10-04 바수톨란드가 레소토 왕국으로 독립
 - { type: successor_of, subject: eswatini, object: swaziland-protectorate, from: 1968, to: null } # 1968-09-06 영국령 스와질란드가 스와질란드 왕국으로 독립(2018 에스와티니로 이름만 바꿈)
+
+# ── 사하라 이남 F3 WA (서아프리카 대서양 쪽·서사헬, 2026-11-12) ──
+- { type: vassal_of, subject: french-senegal, object: france, from: 1659, to: 1959 } # 1659 생루이 상관(위키 fr Colonie du Sénégal), 1895 프랑스령 서아프리카·1946 해외 영토·1958-11-25 자치 공화국·1959-04-04 말리 연방(줄 없음 — 결정 3), 1960-06-20 말리 연방 독립 — 그해 말 규칙으로 1959까지
+- { type: vassal_of, subject: french-sudan, object: france, from: 1890, to: 1959 } # 1890 프랑스령 수단 이름(위키 en French Sudan), 1958-11-24 수단 공화국·1959-04-04 말리 연방(줄 없음 — 결정 3), 1960-06-20 말리 연방 독립 — 그해 말 규칙으로 1959까지
+- { type: vassal_of, subject: french-mauritania, object: france, from: 1904, to: 1959 } # 1904 세네갈에서 떨어진 민정 영토·1920-12-04 식민지(위키 en Colonial Mauritania), 1958-11-28 이슬람 공화국, 1960-11-28 독립 — 그해 말 규칙으로 1959까지
+- { type: vassal_of, subject: french-guinea, object: france, from: 1891, to: 1957 } # 1891 식민지(위키 en French Guinea), 1958-09-28 국민 투표 반대·1958-10-02 독립 — 그해 말 규칙으로 1957까지
+- { type: successor_of, subject: guinea, object: french-guinea, from: 1958, to: null } # 1958-10-02 프랑스령 기니가 기니 공화국으로 독립
+- { type: successor_of, subject: senegal, object: french-senegal, from: 1960, to: null } # 1960-06-20 말리 연방으로 독립, 1960-08-20 연방에서 떨어져 세네갈 공화국(말리 연방은 그해 말에 없음 — 기본값 9)
+- { type: successor_of, subject: mali, object: french-sudan, from: 1960, to: null } # 1960-06-20 말리 연방으로 독립, 1960-09-22 말리 공화국
+- { type: successor_of, subject: mauritania, object: french-mauritania, from: 1960, to: null } # 1960-11-28 모리타니 이슬람 공화국 독립(서아시아 항목 — id만 씀, 기본값 8)
+
+# ── 사하라 이남 F3 GW (기니만 서쪽·사헬 가운데, 2026-11-12) ──
+- { type: vassal_of, subject: british-gold-coast, object: uk, from: 1874, to: 1956 } # 1874-07-24 해안 직할 식민지, 1901 아샨티 합병·북부 준주 보호령, 1957-03-06 가나 독립 — 그해 말 규칙으로 1956까지(위키백과 Gold Coast (British colony))
+- { type: vassal_of, subject: british-togoland, object: uk, from: 1922, to: 1956 } # 1922-07-20 국제 연맹 위임(1914 점령), 1946-12-13 유엔 신탁 통치, 1956-05-09 주민 투표, 1957-03-06 가나에 합침 — 그해 말 규칙으로 1956까지(위키백과 British Togoland). 다른 나라 일부로 합쳐져 successor_of 없음
+- { type: vassal_of, subject: french-ivory-coast, object: france, from: 1893, to: 1959 } # 1893-03-10 식민지, 1946 프랑스 연합 해외 영토, 1958-12-04 자치 공화국, 1960-08 독립 — 그해 말 규칙으로 1959까지(위키백과 French West Africa)
+- { type: vassal_of, subject: french-togoland, object: france, from: 1922, to: 1959 } # 1922-07-20 국제 연맹 위임(1914 점령), 1946-12-13 유엔 신탁 통치, 1956 자치 공화국, 1960-04-27 독립 — 그해 말 규칙으로 1959까지(위키백과 French Togoland)
+- { type: vassal_of, subject: french-dahomey, object: france, from: 1894, to: 1959 } # 1894 식민지, 1904 프랑스령 서아프리카, 1958-12-04 자치 공화국, 1960-08-01 독립 — 그해 말 규칙으로 1959까지(위키백과 French West Africa)
+- { type: vassal_of, subject: french-upper-volta, object: france, from: 1919, to: 1959 } # 1919-03-01 식민지, 1932-09-05 폐지·1947-09-04 복원, 1958-12-11 자치 공화국, 1960-08-05 독립 — 그해 말 규칙으로 1959까지(위키백과 French Upper Volta)
+- { type: vassal_of, subject: french-niger, object: france, from: 1922, to: 1959 } # 1922 식민지(1900 군사 영토), 1958-12-19 자치 공화국, 1960-08-03 독립 — 그해 말 규칙으로 1959까지(위키백과 Colony of Niger)
+- { type: successor_of, subject: ghana, object: british-gold-coast, from: 1957, to: null } # 1957-03-06 영국령 골드코스트가 가나로 독립(영국령 토골란드는 그 일부로 합쳐짐 — 줄 없음)
+- { type: successor_of, subject: ivory-coast, object: french-ivory-coast, from: 1960, to: null } # 1960-08 프랑스령 코트디부아르가 코트디부아르로 독립
+- { type: successor_of, subject: togo, object: french-togoland, from: 1960, to: null } # 1960-04-27 프랑스령 토골란드가 토고로 독립
+- { type: successor_of, subject: benin, object: french-dahomey, from: 1960, to: null } # 1960-08-01 프랑스령 다호메이가 다호메이 공화국으로 독립(1975 베냉은 이름만)
+- { type: successor_of, subject: burkina-faso, object: french-upper-volta, from: 1960, to: null } # 1960-08-05 프랑스령 오트볼타가 오트볼타 공화국으로 독립(1984 부르키나파소는 이름만)
+- { type: successor_of, subject: niger, object: french-niger, from: 1960, to: null } # 1960-08-03 프랑스령 니제르가 니제르로 독립
+
+# ── 사하라 이남 F3 CE (나이지리아·카메룬·중앙아프리카, 2026-11-12) ──
+- { type: vassal_of, subject: british-nigeria, object: uk, from: 1914, to: 1959 } # 1914-01-01 남·북 나이지리아 보호령을 합친 식민지 및 보호령, 1954-10-01 연방, 1960-10-01 독립 — 그해 말 규칙으로 1959까지(위키 en Colonial Nigeria)
+- { type: vassal_of, subject: french-cameroons, object: france, from: 1922, to: 1959 } # 1922 국제 연맹 위임(1916 점령·1919 분할), 1946 유엔 신탁 통치, 1957 신탁 자치국, 1960-01-01 독립 — 그해 말 규칙으로 1959까지(위키 en French Cameroon)
+- { type: vassal_of, subject: french-chad, object: france, from: 1920, to: 1959 } # 1900 군사 영토, 1920 민정 식민지(프랑스령 적도 아프리카), 1958-11-28 자치 공화국, 1960-08-11 독립 — 그해 말 규칙으로 1959까지(위키 en French Chad)
+- { type: vassal_of, subject: french-ubangi-shari, object: france, from: 1903, to: 1959 } # 1903-12-29 오트우방기·오트샤리를 묶어 성립, 1958-12-01 중앙아프리카 공화국(자치), 1960-08-13 독립 — 그해 말 규칙으로 1959까지(위키 en Ubangi-Shari)
+- { type: vassal_of, subject: french-gabon, object: france, from: 1906, to: 1959 } # 1906 프랑스령 콩고가 나뉘어 가봉 식민지, 1946 해외 영토, 1958-11-28 자치 공화국, 1960-08-17 독립 — 그해 말 규칙으로 1959까지(위키 fr Colonie du Gabon)
+- { type: vassal_of, subject: french-middle-congo, object: france, from: 1906, to: 1959 } # 1906 프랑스령 콩고가 나뉘어 중앙콩고 식민지, 1958-11-28 콩고 공화국(자치), 1960-08-15 독립 — 그해 말 규칙으로 1959까지(위키 fr Moyen-Congo·en French Congo)
+- { type: successor_of, subject: nigeria, object: british-nigeria, from: 1960, to: null } # 1960-10-01 식민지 및 보호령이 나이지리아 연방으로 독립(북카메룬은 1961-06-01 주민 투표로 합침 — british-cameroons는 남북이 다른 나라에 합쳐져 줄 없음)
+- { type: successor_of, subject: cameroon, object: french-cameroons, from: 1960, to: null } # 1960-01-01 신탁 통치령이 카메룬 공화국으로 독립
+- { type: successor_of, subject: chad, object: french-chad, from: 1960, to: null } # 1960-08-11 차드 공화국으로 독립
+- { type: successor_of, subject: car, object: french-ubangi-shari, from: 1960, to: null } # 1960-08-13 중앙아프리카 공화국으로 독립
+- { type: successor_of, subject: gabon, object: french-gabon, from: 1960, to: null } # 1960-08-17 가봉 공화국으로 독립
+- { type: successor_of, subject: republic-of-congo, object: french-middle-congo, from: 1960, to: null } # 1960-08-15 콩고 공화국으로 독립
+
+# ── 사하라 이남 F3 HN (뿔·나일, 2026-11-12) ──
+- { type: occupied_by, subject: eritrea-british-admin, object: uk, from: 1941, to: 1951 } # 1941 이탈리아군을 물리친 영국군 군정(위키 en British Military Administration (Eritrea)), 1947-02-10 파리 강화 조약으로 이탈리아가 포기한 뒤에도 군정, 1952-09-15 연방 — 그해 말 규칙으로 1951까지
+- { type: occupied_by, subject: somalia-british-admin, object: uk, from: 1941, to: 1949 } # 1941-02 영국군 모가디슈 점령·군정(위키 en Italian Somaliland), 1947-02-10 파리 강화 조약으로 이탈리아가 포기한 뒤에도 군정, 1950-04-01 이탈리아 시정 신탁 통치 — 그해 말 규칙으로 1949까지
+- { type: vassal_of, subject: british-somaliland, object: uk, from: 1884, to: 1959 } # 1884 보호 조약(위키 en British Somaliland), 1960-06-26 소말릴란드국 독립·07-01 합침 — 그해 말 규칙으로 1959까지
+- { type: vassal_of, subject: somalia-italian-trust, object: italy, from: 1950, to: 1959 } # 1950-04-01 유엔 신탁 통치 이탈리아 시정(위키 en Trust Territory of Somaliland), 1960-07-01 독립 — 그해 말 규칙으로 1959까지
+- { type: successor_of, subject: eritrea-federation, object: eritrea-british-admin, from: 1952, to: null } # 1952-09-15 영국 군정이 끝나고 에티오피아와 연방
+- { type: successor_of, subject: somalia-italian-trust, object: somalia-british-admin, from: 1950, to: null } # 1950-04-01 영국 군정에서 이탈리아 시정 신탁 통치로
+- { type: successor_of, subject: sudan, object: anglo-egyptian-sudan, from: 1956, to: null } # 1956-01-01 공동 통치가 끝나고 수단 공화국 독립(공동 통치 수단은 본국 관계 줄 없음 — 기본값 7)
+- { type: successor_of, subject: somalia, object: somalia-italian-trust, from: 1960, to: null } # 1960-07-01 신탁 통치령 독립·옛 영국령 소말릴란드와 합쳐 소말리아 공화국
+- { type: successor_of, subject: somalia, object: british-somaliland, from: 1960, to: null } # 1960-06-26 소말릴란드국 독립, 07-01 신탁 통치령과 합쳐 소말리아 공화국
+
+# ── 사하라 이남 F3 EA (대호수·인도양, 2026-11-12) ──
+- { type: vassal_of, subject: belgian-congo, object: belgium, from: 1908, to: 1959 } # 1908-11-15 벨기에 나라 식민지(위키 fr Congo belge), 1960-06-30 독립 — 그해 말 규칙으로 1959까지
+- { type: vassal_of, subject: french-madagascar, object: france, from: 1897, to: 1959 } # 1897 식민지(위키 ko 프랑스령 마다가스카르·fr Colonie de Madagascar et dépendances), 1946 해외 영토·1958-10-14 말라가시 공화국(프랑스 공동체 안), 1960-06-26 독립 — 그해 말 규칙으로 1959까지. 1947~1949 봉기는 관계 줄 없이 글(기본값 11)
+- { type: successor_of, subject: dr-congo, object: belgian-congo, from: 1960, to: null } # 1960-06-30 벨기에령 콩고가 콩고 공화국으로 독립
+- { type: successor_of, subject: madagascar, object: french-madagascar, from: 1960, to: null } # 1960-06-26 말라가시 공화국 독립. 마우마우 봉기는 관계 줄 없이 글(F1 R-Q1·R-Q2)
+
+# ── 사하라 이남 F3 SF (남부, 2026-11-12) ──
+- { type: vassal_of, subject: rhodesia, object: uk, from: 1923, to: 1964 } # 1923-10-01 영국 책임 자치 식민지 남로디지아(1953-08-01~1963 로디지아 니아살랜드 연방 구성 단위 — 연방은 관계 줄 없음, 결정 3), 1964-10 스스로 로디지아라 부름, 1965-11-11 일방적 독립 선언 — 그해 말 규칙으로 1964까지(1965~ 관계 없음 — 결정 4, 위키 en Southern Rhodesia). from은 항목 from 1923(F3 기본값 2)

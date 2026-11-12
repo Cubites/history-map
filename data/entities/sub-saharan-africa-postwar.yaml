@@ -1,0 +1,569 @@
+# sub-saharan-africa postwar 나라 (시대 파일 scripts/geo/areas/sub-saharan-africa/postwar.mjs의 짝 항목 파일, npm run new:area가 만든 틀)
+# 시대·범위: 1945~1959: 2차 대전 뒤부터 아프리카의 해 앞까지 (F3, docs/sub-saharan-africa/00-scope.md 2절)
+# 권역 값은 파일 이름에서 정해진다(src/schema/regions.ts REGION_FILTER_OF의 'sub-saharan-africa-postwar' → 필터 단위 sub-saharan-africa).
+# F3 뼈대(2026-11-12)가 새 식민지·신탁 통치·군정 항목 24개의 id·이름·level·from·to·색을 정해 칸 머리 아래 자리 블록으로 두었다(지시문 f3/COMMON.md 4절 표, 표 원천 f3/skel/entities.tsv).
+#   색은 본국 색이 아니라 자기 색 — 뼈대가 같은 해 맞닿는 이웃·같은 땅 앞뒤 나라와 ΔE 40 넘게 골랐다(f3/skel/tools/df3.mjs, COMMON P4). 본국은 data/relations.yaml의 vassal_of·occupied_by(칸 머리 아래).
+#   군정 항목 둘(에리트레아 (영국 군정)·이탈리아령 소말리아 (영국 군정))은 서아시아 리비아 (영국 군정) 꼴 — level: region·from 군정 시작 해 1941(칠하는 해는 1945부터).
+#   이름은 위키백과 한국어판 표제로 확인했다(f3/skel/ko-titles*.txt·en-ko.txt — 표제가 없는 프랑스령 세네갈·프랑스령 모리타니·프랑스령 코트디부아르·프랑스령 니제르·프랑스령 차드·
+#   프랑스령 가봉·프랑스령 중앙콩고는 프랑스령 기니·프랑스령 수단 꼴, 군정 둘은 리비아 (영국 군정) 꼴, 소말리아 신탁 통치령은 저장소 기존 띄어쓰기).
+#   summary·mapNote는 뼈대의 자리 글이라 정의 칸이 바꿔 쓴다(endNote·features 3~5줄·basis·native 확인도 그 칸이 — f3/COMMON.md 5절 탭 칸, startEvents·endEvents는 사건 1묶음 몫이라 빈 목록 그대로).
+#   from·to는 뼈대 어림이라 칸이 사료로 확인해 고칠 수 있다(고치면 결과 노트 2절에 한 줄). id·색·이름은 고치지 않는다.
+#   앞 잇는 항목 34는 이 파일에 없다 — F2 항목 22는 data/entities/sub-saharan-africa-decolonization.yaml, F1 항목 12는 sub-saharan-africa-modern.yaml 그 자리 블록을 칸이 고친다(파일 소유표 — COMMON 5절).
+#   서아시아 mauritania 블록(middle-east-modern.yaml)은 고치지 않는다(1945~1959 모리타니는 새 항목 french-mauritania — 기본값 8).
+
+# ══ F3 WA 항목 (서아프리카 대서양 쪽·서사헬) ══
+# 위키 ko 표제 없음(넘겨주기 → 세네갈의 역사) — 프랑스령 기니·프랑스령 수단 꼴. 1659 생루이 상관(위키 fr Colonie du Sénégal — 1626 강어귀 상관·1895 프랑스령 서아프리카 구성 식민지는 결과 노트 2절), 1946 해외 영토·1958-11-25 자치 공화국·1959-04-04 말리 연방은 글, 1960-06-20 말리 연방 독립·08-20 이탈. 1945~1959 SEN 14, vassal_of france 1659~1959(이음 1960 senegal)
+- id: french-senegal
+  level: polity
+  names: { ko: 프랑스령 세네갈, en: French Senegal, native: Sénégal }
+  from: 1659
+  to: 1960
+  color: "#45c9c9"
+  summary: 대서양 기슭 세네갈강 하류와 다카르 일대의 프랑스 식민지. 1659년 세네갈강 어귀의 섬에 생루이 상관이 서며 시작되었고, 1850년대부터 내륙으로 넓혀 1895년 프랑스령 서아프리카의 한 식민지가 되었으며 1902년부터 다카르가 그 연방의 수도였음. 1946년 프랑스 연합의 해외 영토가 되었고 1958년 11월 25일 프랑스 공동체 안 자치 공화국이 되었으며, 1959년 4월 4일 이 공화국이 프랑스령 수단과 함께 말리 연방을 이룸
+  mapNote: 지도에는 1945년부터 1959년까지 지금 세네갈 땅으로 표시함. 1959년 4월부터 프랑스령 수단과 이룬 말리 연방은 따로 칠하지 않고 세네갈 색으로 그림. 1959년까지 프랑스의 식민지였음은 프랑스와의 관계로 나타냄
+  endNote: 1960년 6월 20일 말리 연방으로 독립한 뒤 8월 20일 세네갈이 연방에서 떨어져 나와 세네갈 공화국이 되며 끝남
+  features:
+    - 1659년 세네갈강 어귀에 생루이 상관
+    - 1902년부터 프랑스령 서아프리카의 수도 다카르
+    - 1946년 프랑스 연합의 해외 영토
+    - 1958년 11월 25일 프랑스 공동체 안 자치 공화국
+    - 1959년 4월 4일 프랑스령 수단과 말리 연방
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Colonie du Sénégal", "위키백과 French West Africa"]
+    foundingNote: 세네갈강 어귀의 섬에 생루이 상관이 선 1659년부터
+
+# 위키 ko 표제 — 1890 프랑스령 수단 이름(위키 en French Sudan — 1899~1920 상세네갈·니제르 등 다른 이름, 1921 다시 프랑스령 수단), 1958-11-24 수단 공화국·1959-04-04 말리 연방은 글, 1960-09-22 말리 공화국. 1945~1959 MLI 9, vassal_of france 1890~1959(이음 1960 mali)
+- id: french-sudan
+  level: polity
+  names: { ko: 프랑스령 수단, en: French Sudan, native: Soudan français }
+  from: 1890
+  to: 1960
+  color: "#6dc945"
+  summary: 니제르강 가운데 유역을 차지한 프랑스 식민지. 1880년대 프랑스군이 세네갈강 상류에서 동쪽으로 정복해 들어간 땅이 1890년 프랑스령 수단이라는 이름을 얻었고, 몇 차례 이름이 바뀐 뒤 1921년 다시 프랑스령 수단이 됨. 2차 대전 뒤 모디보 케이타가 이끈 정당이 독립 운동의 중심이 되었고, 1958년 11월 24일 수단 공화국이 된 이 땅은 1959년 4월 4일 세네갈과 함께 말리 연방을 이룸
+  mapNote: 지도에는 1945년부터 1959년까지 지금 말리 땅으로 표시함. 1959년 4월부터 세네갈과 이룬 말리 연방은 따로 칠하지 않고 이 색으로 그림. 1959년까지 프랑스의 식민지였음은 프랑스와의 관계로 나타냄
+  endNote: 1960년 6월 20일 말리 연방으로 독립하고 8월 20일 세네갈이 떨어져 나간 뒤 9월 22일 말리 공화국이 되며 끝남
+  features:
+    - 중심은 바마코
+    - 1890년 프랑스령 수단이라는 이름, 1921년 다시 같은 이름
+    - 1946년 프랑스 연합의 해외 영토
+    - 1958년 11월 24일 수단 공화국
+    - 1959년 4월 4일 세네갈과 말리 연방
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 French Sudan", "위키백과 French West Africa"]
+    foundingNote: 정복한 땅이 프랑스령 수단이라는 이름으로 묶인 1890년부터
+
+# 위키 ko 표제 없음 — 프랑스령 기니 꼴. 1904 세네갈에서 떨어진 민정 영토(위키 en Colonial Mauritania — 1920-12-04 식민지로 프랑스령 서아프리카에 듦, 행정은 세네갈 생루이, 1957-05 첫 정부가 누악쇼트를 수도로), 1958-11-28 이슬람 공화국은 글, 1960-11-28 독립. 1945~1959 MRT 13, vassal_of france 1904~1959(이음 1960 서아시아 mauritania — 기본값 8)
+- id: french-mauritania
+  level: polity
+  names: { ko: 프랑스령 모리타니, en: French Mauritania, native: Mauritanie / موريتانيا }
+  from: 1904
+  to: 1960
+  color: "#8c34b2"
+  summary: 사하라 서쪽 끝 대서양 기슭의 프랑스 식민지. 1904년 프랑스가 세네갈강 북쪽 무어인 땅을 세네갈에서 떼어 민정 영토로 삼았고, 1920년 12월 4일 프랑스령 서아프리카의 식민지가 되었으나 오랫동안 세네갈 땅인 생루이에서 다스려짐. 1946년 프랑스 연합의 해외 영토가 되었고, 1957년 첫 정부가 누악쇼트를 새 수도로 골랐으며 1958년 11월 28일 모리타니 이슬람 공화국이 됨
+  mapNote: 지도에는 1945년부터 1959년까지 지금 모리타니 땅으로 표시함. 1959년까지 프랑스의 식민지였음은 프랑스와의 관계로 나타냄
+  endNote: 1960년 11월 28일 모리타니 이슬람 공화국이 프랑스에서 독립하며 끝남
+  features:
+    - 행정 중심은 세네갈 땅 생루이, 1957년 누악쇼트를 새 수도로 고름
+    - 1904년 세네갈에서 떨어진 민정 영토
+    - 1920년 프랑스령 서아프리카의 식민지
+    - 1946년 프랑스 연합의 해외 영토
+    - 1958년 11월 28일 모리타니 이슬람 공화국
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Colonial Mauritania", "위키백과 French West Africa"]
+    foundingNote: 세네갈에서 떨어진 민정 영토가 된 1904년부터
+
+# 위키 ko 표제 — 1891 성립(위키 en French Guinea — 1894 프랑스령 기니 이름·1895 프랑스령 서아프리카), 1958-09-28 프랑스 공동체 국민 투표 반대·1958-10-02 독립. 1945~1957 GIN 34, vassal_of france 1891~1957(이음 1958 guinea)
+- id: french-guinea
+  level: polity
+  names: { ko: 프랑스령 기니, en: French Guinea, native: Guinée française }
+  from: 1891
+  to: 1958
+  color: "#347fb2"
+  summary: 푸타잘롱 고원과 대서양 기슭을 아우른 프랑스 식민지. 1891년 세네갈의 남쪽 해안 식민지를 이어 세워졌고 1894년 프랑스령 기니라는 이름을 얻었으며, 1895년 프랑스령 서아프리카에 듦. 1946년 프랑스 연합의 해외 영토가 되었고, 아메드 세쿠 투레가 이끈 정당 아래 1958년 9월 28일 국민 투표에서 주민들이 프랑스 공동체 가입을 거부함
+  mapNote: 지도에는 1945년부터 1957년까지 지금 기니 땅으로 표시함. 1957년까지 프랑스의 식민지였음은 프랑스와의 관계로 나타냄
+  endNote: 1958년 9월 28일 국민 투표에서 프랑스 공동체 가입을 거부하고 10월 2일 기니 공화국으로 독립하며 끝남
+  features:
+    - 중심은 코나크리
+    - 1894년 프랑스령 기니라는 이름
+    - 1895년 프랑스령 서아프리카에 듦
+    - 1946년 프랑스 연합의 해외 영토
+    - 1958년 국민 투표로 프랑스 공동체 가입 거부
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 French Guinea", "위키백과 French Community"]
+    foundingNote: 프랑스령 기니 식민지가 세워진 1891년부터
+
+
+# ══ F3 GW 항목 (기니만 서쪽·사헬 가운데) ══
+# 위키 en French West Africa·Ivory Coast — 식민지 1893-03-10, 1895 프랑스령 서아프리카, 1932~1947 오트볼타 남부를 맡음(1945~1946은 오트볼타 통째 근사 — 기본값 6), 1958-12-04 자치 공화국은 글, 독립 1960-08(7일·6일로 갈림). 1945~1959 CIV 19, vassal_of france 1893~1959(이음 1960 ivory-coast)
+- id: french-ivory-coast
+  level: polity
+  names: { ko: 프랑스령 코트디부아르, en: French Ivory Coast, native: "Côte d'Ivoire" }
+  from: 1893
+  to: 1960
+  color: "#34b28c"
+  summary: 기니만 서쪽 기슭의 프랑스 식민지. 1893년 프랑스 식민지가 되었고 1895년부터 프랑스령 서아프리카에 속함. 1946년 프랑스 연합의 해외 영토가 되어 펠릭스 우푸에부아니의 아프리카 민주 연합이 정치를 이끌었고, 1958년 12월 4일 프랑스 공동체 안의 자치 공화국이 됨
+  mapNote: 지도에는 1945년부터 1959년까지 지금 코트디부아르 땅으로 표시함. 1932~1947년 함께 다스린 오트볼타 남부는 1945~1946년에도 프랑스령 오트볼타 색으로 그림
+  endNote: 1960년 8월 코트디부아르로 독립하며 끝남
+  features:
+    - 중심은 아비장
+    - 1893년 프랑스 식민지
+    - 1946년 프랑스 연합의 해외 영토
+    - 1958년 12월 4일 자치 공화국
+    - 1960년 8월 코트디부아르로 독립
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 French West Africa", "위키백과 Ivory Coast"]
+    foundingNote: 프랑스가 코트디부아르를 식민지로 정한 1893년 3월 10일부터
+
+# 위키 en Gold Coast (British colony) — 해안 직할 식민지 1874-07-24(1821 영국 거점·1867 네덜란드 거점 넘겨받음은 글), 1901 아샨티 합병·북부 준주 보호령, 1951 총선, 독립 1957-03-06 가나. 1945~1956 GHA 중 칼선 1 서쪽(207,312 km²), vassal_of uk 1874~1956
+- id: british-gold-coast
+  level: polity
+  names: { ko: 영국령 골드코스트, en: Gold Coast, native: Gold Coast }
+  from: 1874
+  to: 1957
+  color: "#9165d2"
+  summary: 기니만 북쪽 기슭의 영국 식민지와 그 뒤 내륙. 1874년 해안 지대가 영국 직할 식민지가 되었고, 1901년 아샨티를 합병하고 북부 준주를 보호령으로 삼아 세 부분으로 다스림. 1951년 첫 총선에서 콰메 은크루마의 회의인민당이 이겼고, 은크루마는 1952년 총리가 됨
+  mapNote: 지도에는 1945년부터 1956년까지 식민지·아샨티·북부 준주를 합친 땅으로 표시함. 동쪽의 영국령 토골란드는 함께 다스렸어도 따로 그림
+  endNote: 1957년 3월 6일 영국령 토골란드와 함께 가나로 독립하며 끝남
+  features:
+    - 수도는 아크라
+    - 1874년 해안 지대가 직할 식민지
+    - 1901년 아샨티 합병, 북부 준주 보호령
+    - 1951년 첫 총선, 회의인민당 승리
+    - 1957년 3월 6일 가나로 독립
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Gold Coast (British colony)", "가나 독립법(1957)"]
+    foundingNote: 해안 지대가 영국 직할 식민지가 된 1874년 7월 24일부터
+
+# 위키 en British Togoland·1956 British Togoland status plebiscite, 위키 de Britisch-Togoland(넓이 33,798 km²) — 위임 1922-07-20, 신탁 통치 1946-12-13, 주민 투표 1956-05-09(통합 57.97%, 남부는 55%가 분리), 유엔 결의 1044 1956-12-13, 가나에 합침 1957-03-06(기본값 4 — 다른 나라 일부로 합쳐져 successor_of 없음). 1945~1956 GHA 중 칼선 1 동쪽(32,953 km²), vassal_of uk 1922~1956
+- id: british-togoland
+  level: polity
+  names: { ko: 영국령 토골란드, en: British Togoland, native: British Togoland }
+  from: 1922
+  to: 1957
+  color: "#84dbc1"
+  summary: 옛 독일령 토고 서쪽을 영국이 맡아 다스린 위임·신탁 통치 땅. 1914년 영국과 프랑스가 독일령 토고를 점령해 나눈 뒤 1922년 7월 20일 국제 연맹 위임 통치령이 되었고, 1946년 12월 13일 유엔 신탁 통치령이 됨. 영국은 이 땅을 골드코스트와 함께 다스렸고, 1956년 5월 9일 주민 투표에서 약 58%가 골드코스트와의 통합을 골랐으나 남부에서는 에웨족을 중심으로 55%가 반대함
+  mapNote: 지도에는 1945년부터 1956년까지 볼타강 동쪽 남부와 다곰바·맘프루시 동쪽 북부를 이은 땅으로 표시함. 1957년부터 이 땅은 가나 색으로 그림
+  endNote: 1956년 12월 13일 유엔 총회 결의 1044호에 따라 1957년 3월 6일 가나가 독립할 때 가나에 합쳐지며 끝남
+  features:
+    - 중심은 호
+    - 1922년 국제 연맹 위임 통치령
+    - 1946년 유엔 신탁 통치령
+    - 1956년 5월 9일 주민 투표, 통합 약 58%
+    - 1957년 3월 6일 가나에 합쳐짐
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 British Togoland", "위키백과 1956 British Togoland status plebiscite", "유엔 총회 결의 1044(1956)"]
+    foundingNote: 국제 연맹 위임 통치가 시작된 1922년 7월 20일부터
+
+# 위키 en French Togoland — 위임 1922-07-20, 신탁 통치 1946-12-13, 1956 자치 공화국·1958 선거는 글, 독립 1960-04-27. 1945~1959 TGO 5, vassal_of france 1922~1959(이음 1960 togo)
+- id: french-togoland
+  level: polity
+  names: { ko: 프랑스령 토골란드, en: French Togoland, native: Togo français }
+  from: 1922
+  to: 1960
+  color: "#839b4b"
+  summary: 옛 독일령 토고 동쪽을 프랑스가 맡아 다스린 위임·신탁 통치 땅. 1922년 7월 20일 국제 연맹 위임 통치령이 되었고, 1946년 12월 13일 유엔 신탁 통치령이 되어 로메에서 다스림. 1956년 주민 투표로 프랑스 연합 안의 자치 공화국이 되었고, 1958년 유엔이 지켜본 선거에서 실바뉘 올랭피오의 토고 통일 위원회가 이김
+  mapNote: 지도에는 1945년부터 1959년까지 지금 토고 땅으로 표시함
+  endNote: 1960년 4월 27일 토고로 독립하며 끝남
+  features:
+    - 수도는 로메
+    - 1922년 국제 연맹 위임 통치령
+    - 1946년 유엔 신탁 통치령
+    - 1956년 자치 공화국
+    - 1960년 4월 27일 토고로 독립
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 French Togoland"]
+    foundingNote: 국제 연맹 위임 통치가 시작된 1922년 7월 20일부터
+
+# 위키 en French West Africa·Benin — 식민지 1894(다호메이 왕국 정복 1892~1894), 1904 프랑스령 서아프리카, 1958-12-04 자치 공화국은 글, 독립 1960-08-01. 1945~1959 BEN 12, vassal_of france 1894~1959(이음 1960 benin)
+- id: french-dahomey
+  level: polity
+  names: { ko: 프랑스령 다호메이, en: French Dahomey, native: Dahomey }
+  from: 1894
+  to: 1960
+  color: "#c945a2"
+  summary: 베냉만 기슭에서 니제르강까지 뻗은 프랑스 식민지. 1894년 아보메의 다호메이 왕국을 무너뜨린 뒤 식민지가 되었고, 1904년 프랑스령 서아프리카에 들어감. 1946년 프랑스 연합의 해외 영토가 되었고, 1958년 12월 4일 프랑스 공동체 안의 자치 공화국이 됨
+  mapNote: 지도에는 1945년부터 1959년까지 지금 베냉 땅으로 표시함
+  endNote: 1960년 8월 1일 다호메이 공화국으로 독립하며 끝남
+  features:
+    - 수도는 포르토노보
+    - 1894년 프랑스 식민지
+    - 1904년 프랑스령 서아프리카에 들어감
+    - 1958년 12월 4일 자치 공화국
+    - 1960년 8월 1일 다호메이 공화국으로 독립
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 French West Africa", "위키백과 Benin"]
+    foundingNote: 다호메이 왕국을 무너뜨리고 식민지로 정한 1894년부터
+
+# 위키 en French Upper Volta·fr Haute-Volta (colonie) — 성립 1919-03-01, 폐지 1932-09-05·복원 1947-09-04(1945~1946도 1947 경계로 통째 — 기본값 6, 알려진 근사 275,029 km²), 1958-12-11 자치 공화국은 글, 독립 1960-08-05. 1945~1959 BFA 45, vassal_of france 1919~1959(이음 1960 burkina-faso)
+- id: french-upper-volta
+  level: polity
+  names: { ko: 프랑스령 오트볼타, en: French Upper Volta, native: Haute-Volta }
+  from: 1919
+  to: 1960
+  color: "#db8484"
+  summary: 볼타강 상류 사바나의 프랑스 식민지. 1919년 3월 1일 상세네갈·니제르 식민지에서 떼어 세웠고, 1932년 9월 5일 없애 땅을 코트디부아르·프랑스령 수단·니제르에 나누었다가 1947년 9월 4일 옛 경계로 되살림. 1958년 12월 11일 프랑스 공동체 안의 자치 공화국이 됨
+  mapNote: 지도에는 1945년부터 1959년까지 지금 부르키나파소 땅으로 표시함. 1932~1947년 폐지 동안의 1945~1946년도 1947년 되살린 경계로 그림
+  endNote: 1960년 8월 5일 오트볼타 공화국으로 독립하며 끝남
+  features:
+    - 수도는 와가두구
+    - 1919년 3월 1일 식민지로 세움
+    - 1932년 9월 5일 폐지, 이웃 세 식민지에 나눔
+    - 1947년 9월 4일 옛 경계로 되살림
+    - 1960년 8월 5일 오트볼타 공화국으로 독립
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 French Upper Volta", "위키백과 Haute-Volta (colonie)"]
+    foundingNote: 상세네갈·니제르에서 떼어 식민지로 세운 1919년 3월 1일부터
+
+# 위키 en Colony of Niger — 1900 군사 영토, 식민지 1922, 수도 진데르 → 니아메 1926, 1932~1947 오트볼타 동부를 맡음(1945~1946은 오트볼타 통째 근사 — 기본값 6), 1958-12-19 자치 공화국은 글, 독립 1960-08-03. 1945~1959 NER 8, vassal_of france 1922~1959(이음 1960 niger)
+- id: french-niger
+  level: polity
+  names: { ko: 프랑스령 니제르, en: French Niger, native: Niger }
+  from: 1922
+  to: 1960
+  color: "#4552c9"
+  summary: 사하라 남쪽 가장자리의 프랑스 식민지. 1900년 군사 영토로 시작해 1922년 식민지가 되었고, 1926년 수도를 진데르에서 니아메로 옮김. 1932~1947년에는 오트볼타 동부를 함께 다스렸고, 1958년 12월 19일 프랑스 공동체 안의 자치 공화국이 됨
+  mapNote: 지도에는 1945년부터 1959년까지 지금 니제르 땅으로 표시함. 1932~1947년 함께 다스린 오트볼타 동부는 1945~1946년에도 프랑스령 오트볼타 색으로 그림
+  endNote: 1960년 8월 3일 니제르로 독립하며 끝남
+  features:
+    - 수도는 니아메(1926년부터)
+    - 1922년 프랑스 식민지
+    - 1932~1947년 오트볼타 동부를 다스림
+    - 1958년 12월 19일 자치 공화국
+    - 1960년 8월 3일 니제르로 독립
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Colony of Niger"]
+    foundingNote: 군사 영토에서 식민지가 된 1922년부터
+
+
+# ══ F3 CE 항목 (나이지리아·카메룬·중앙아프리카) ══
+# 1914-01-01 남·북 보호령 합침(위키 en Colonial Nigeria — 1861 라고스 병합·1900 두 보호령은 글), 1954-10-01 연방(리틀턴 헌법)·1957 동부·서부·1959 북부 지역 자치는 글, 독립 1960-10-01. 1945~1959 NGA 중 칼선 2 밖(북카메룬 띠 뺌 866,807 km²), vassal_of uk 1914~1959(이음 1960 nigeria)
+- id: british-nigeria
+  level: polity
+  names: { ko: 나이지리아 식민지, en: Colonial Nigeria, native: Colony and Protectorate of Nigeria }
+  from: 1914
+  to: 1960
+  color: "#45c96d"
+  summary: 니제르강 하류와 북부 하우사 땅을 묶은 영국 식민지와 보호령. 1914년 1월 1일 영국이 남나이지리아와 북나이지리아 보호령을 합쳐 나이지리아 식민지 및 보호령을 만들었고, 북부·서부·동부 지역이 저마다 큰 자치를 누림. 제2차 세계 대전 뒤 잇단 헌법으로 나이지리아인의 대표와 선거가 늘었고, 1954년 세 지역과 라고스를 묶은 연방이 됨. 1957년 동부와 서부, 1959년 북부 지역이 자치를 얻음
+  mapNote: 지도에는 1945년부터 1959년까지 지금 나이지리아 땅에서 동쪽 북카메룬 땅을 뺀 모양으로 표시함. 북카메룬은 나이지리아 북부 지역이 함께 다스렸으나 유엔 신탁 통치령인 영국령 카메룬의 일부라 영국령 카메룬 색으로 그림
+  endNote: 1960년 10월 1일 나이지리아 연방으로 독립하며 끝남
+  features:
+    - 수도는 라고스
+    - 1914년 남·북 보호령을 합침
+    - 1954년 북부·서부·동부 세 지역의 연방
+    - 1957년 동부·서부, 1959년 북부 지역 자치
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Colonial Nigeria", "리틀턴 헌법(1954)"]
+    foundingNote: 영국이 남·북 나이지리아 보호령을 합친 1914년 1월 1일부터(1861년 라고스 병합과 1900년 두 보호령은 글로)
+
+# 1922 국제 연맹 위임(위키 en French Cameroon — 1916 점령·1919 분할은 글, 영국령 카메룬 1922와 같은 꼴), 1946 신탁 통치·1957 신탁 자치국은 글, 독립 1960-01-01. 1945~1959 CMR − CM-NW·CM-SW 8(424,952 km²), vassal_of france 1922~1959(이음 1960 cameroon)
+- id: french-cameroons
+  level: polity
+  names: { ko: 프랑스령 카메룬, en: French Cameroon, native: Cameroun français }
+  from: 1922
+  to: 1960
+  color: "#d4b08c"
+  summary: 옛 독일령 카메룬 동쪽을 프랑스가 맡아 다스린 위임·신탁 통치령. 제1차 세계 대전 때 영국과 프랑스가 독일령 카메룬을 차지해 나누었고, 1922년 국제 연맹이 동쪽의 큰 몫을 프랑스에 맡김. 1946년 유엔 신탁 통치령이자 프랑스 연합의 협동 영토가 되었고, 1955년부터 독립을 바라는 무장 투쟁이 이어졌으며, 1957년 카메룬 신탁 자치국이 됨
+  mapNote: 지도에는 1945년부터 1959년까지 지금 카메룬 땅에서 서쪽 북서·남서 지방(영국령 카메룬 남부)을 뺀 모양으로 표시함
+  endNote: 1960년 1월 1일 카메룬 공화국으로 독립하며 끝남
+  features:
+    - 수도는 야운데
+    - 1922년 국제 연맹 위임 통치령, 1946년 유엔 신탁 통치령
+    - 1955년부터 독립을 바라는 무장 투쟁
+    - 1957년 카메룬 신탁 자치국
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 French Cameroon", "국제 연맹 프랑스령 카메룬 위임 통치 규약(1922)"]
+    foundingNote: 국제 연맹이 프랑스에 위임 통치를 맡긴 1922년부터(1916년 점령과 1919년 분할은 글로)
+
+# 1920 민정 식민지(위키 en French Chad — 1900 군사 영토·1910 프랑스령 적도 아프리카는 글), 1958-11-28 자치 공화국은 글, 독립 1960-08-11. 1945~1959 TCD 22(TD-TI 포함 — 티베스티는 1931부터 차드), vassal_of france 1920~1959(이음 1960 chad)
+- id: french-chad
+  level: polity
+  names: { ko: 프랑스령 차드, en: French Chad, native: "Tchad / تشاد" }
+  from: 1920
+  to: 1960
+  color: "#c94560"
+  summary: 차드호 동쪽에서 티베스티 산지까지 펼친 프랑스 식민지. 1900년 차드 군사 영토로 시작해 프랑스령 적도 아프리카에 들었고, 1920년 민정 식민지가 됨. 1940년 프랑스 식민지 가운데 처음으로 자유 프랑스 편에 섰고, 1946년 프랑스 연합의 해외 영토가 되었으며, 1958년 11월 28일 프랑스 공동체 안의 자치 공화국이 됨
+  mapNote: 지도에는 1945년부터 1959년까지 지금 차드 땅(북쪽 티베스티 산지 포함)으로 표시함
+  endNote: 1960년 8월 11일 차드 공화국으로 독립하며 끝남
+  features:
+    - 행정 중심은 포르라미(지금 은자메나)
+    - 1910년부터 프랑스령 적도 아프리카의 한 식민지
+    - 1940년 처음으로 자유 프랑스 편에 섬
+    - 1958년 프랑스 공동체 안 자치 공화국
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 French Chad", "위키백과 French Equatorial Africa"]
+    foundingNote: 프랑스 민정 식민지가 된 1920년부터(1900년 군사 영토는 글로)
+
+# 1903-12-29 성립(위키 en Ubangi-Shari), 1958-12-01 중앙아프리카 공화국(자치)은 글, 독립 1960-08-13. 1945~1959 CAF 17, vassal_of france 1903~1959(이음 1960 car)
+- id: french-ubangi-shari
+  level: polity
+  names: { ko: 우방기샤리, en: Ubangi-Shari, native: Oubangui-Chari }
+  from: 1903
+  to: 1960
+  color: "#db84ca"
+  summary: 우방기강 북쪽 사바나의 프랑스 식민지. 1903년 12월 29일 프랑스령 콩고의 오트우방기와 오트샤리 영토를 묶어 세웠고, 1906년부터 한동안 차드와 함께 다스렸으며, 1910년부터 프랑스령 적도 아프리카에 듦. 1946년 프랑스 연합의 해외 영토가 되었고, 1958년 12월 1일 프랑스 공동체 안의 자치 공화국인 중앙아프리카 공화국이 됨
+  mapNote: 지도에는 1945년부터 1959년까지 지금 중앙아프리카 공화국 땅으로 표시함
+  endNote: 1960년 8월 13일 중앙아프리카 공화국으로 독립하며 끝남
+  features:
+    - 행정 중심은 방기
+    - 우방기강과 샤리강에서 딴 이름
+    - 1910년부터 프랑스령 적도 아프리카의 한 식민지
+    - 1958년 중앙아프리카 공화국(자치)
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Ubangi-Shari"]
+    foundingNote: 프랑스령 콩고의 두 영토를 묶어 세운 1903년 12월 29일부터
+
+# 1906 프랑스령 콩고 분할로 가봉 식민지(위키 fr Colonie du Gabon — 뼈대 어림 1886을 고침, 1839 가봉 하구 거점은 글), 1946 해외 영토·1958-11-28 자치 공화국은 글, 독립 1960-08-17. 1945~1959 GAB 9, vassal_of france 1906~1959(이음 1960 gabon)
+- id: french-gabon
+  level: polity
+  names: { ko: 프랑스령 가봉, en: French Gabon, native: Gabon }
+  from: 1906
+  to: 1960
+  color: "#734b9b"
+  summary: 기니만 적도 기슭 숲의 프랑스 식민지. 1839년부터 프랑스가 지금 리브르빌 둘레 기슭에 거점을 두었고, 프랑스령 콩고가 나뉜 1906년 따로 식민지가 되어 1910년부터 프랑스령 적도 아프리카에 듦. 1946년 프랑스 연합의 해외 영토가 되었고, 1958년 11월 28일 프랑스 공동체 안의 자치 공화국이 됨
+  mapNote: 지도에는 1945년부터 1959년까지 지금 가봉 땅으로 표시함
+  endNote: 1960년 8월 17일 가봉 공화국으로 독립하며 끝남
+  features:
+    - 행정 중심은 리브르빌
+    - 1906년 프랑스령 콩고에서 나뉜 식민지
+    - 1910년부터 프랑스령 적도 아프리카의 한 식민지
+    - 1958년 프랑스 공동체 안 자치 공화국
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Colonie du Gabon", "위키백과 French Equatorial Africa"]
+    foundingNote: 프랑스령 콩고가 나뉘어 따로 식민지가 된 1906년부터(1839년 기슭 거점은 글로)
+
+# 1906 프랑스령 콩고 분할로 중앙콩고 식민지(위키 fr Moyen-Congo·en French Congo — 뼈대 어림 1903을 고침, 1880 마코코 조약은 글), 1958-11-28 콩고 공화국(자치)은 글, 독립 1960-08-15. 1945~1959 COG 12, vassal_of france 1906~1959(이음 1960 republic-of-congo)
+- id: french-middle-congo
+  level: polity
+  names: { ko: 프랑스령 중앙콩고, en: Middle Congo, native: Moyen-Congo }
+  from: 1906
+  to: 1960
+  color: "#40b234"
+  summary: 콩고강 오른쪽 기슭의 프랑스 식민지. 1880년 탐험가 피에르 사보르냥 드 브라자가 맺은 조약으로 시작한 프랑스령 콩고가 1906년 나뉘며 중앙콩고가 되었고, 1910년부터 브라자빌이 프랑스령 적도 아프리카 전체의 수도였음. 제2차 세계 대전 때 브라자빌은 자유 프랑스의 거점이었고 1944년 브라자빌 회의가 열림. 1946년 해외 영토, 1958년 11월 28일 자치 공화국인 콩고 공화국이 됨
+  mapNote: 지도에는 1945년부터 1959년까지 지금 콩고 공화국 땅으로 표시함
+  endNote: 1960년 8월 15일 콩고 공화국으로 독립하며 끝남
+  features:
+    - 행정 중심은 브라자빌(프랑스령 적도 아프리카의 수도)
+    - 1906년 프랑스령 콩고에서 나뉜 식민지
+    - 1944년 브라자빌 회의
+    - 1958년 콩고 공화국(자치)
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 French Congo", "위키백과 Moyen-Congo"]
+    foundingNote: 프랑스령 콩고가 나뉘어 중앙콩고 식민지가 된 1906년부터(1880년 브라자의 조약은 글로)
+
+
+# ══ F3 HN 항목 (뿔·나일) ══
+# 서아시아 리비아 (영국 군정) 꼴(level region·from 군정 시작 해). 위키 en British Military Administration (Eritrea) — 1941 케렌 싸움 뒤 군정, 1947-02-10 파리 강화 조약(이탈리아 포기), 유엔 총회 결의 390(V)(1950-12-02), 1952-09-15 연방. 1945~1951 ERI 6, occupied_by uk 1941~1951(이어 eritrea-federation 1952)
+- id: eritrea-british-admin
+  level: region
+  names: { ko: 에리트레아 (영국 군정), en: Eritrea (British military administration), native: ኤርትራ }
+  from: 1941
+  to: 1952
+  color: "#b234b2"
+  summary: 이탈리아가 잃은 홍해 기슭 식민지를 영국군이 다스린 땅. 1941년 이탈리아군을 물리친 영국군이 군정을 폈고, 1947년 2월 10일 파리 강화 조약으로 이탈리아가 이 식민지를 내놓음. 앞날을 두고 에티오피아와 합치자는 쪽과 따로 독립하자는 쪽이 맞섰고, 1950년 12월 2일 유엔 총회 결의 390호가 에티오피아와 연방을 이루게 정함
+  mapNote: 지도에는 1945년부터 1951년까지 지금 에리트레아 땅으로 표시함. 이탈리아가 주권을 내놓은 뒤에도 연방이 서기 전까지 영국군이 다스려, 그동안은 영국이 점령한 땅으로 나타냄
+  endNote: 1952년 9월 15일 영국 군정이 끝나고 에티오피아와 연방을 이룬 에리트레아 연방이 되며 끝남
+  features:
+    - 행정 중심은 아스마라, 바다 쪽 관문은 마사와
+    - 1941년 이탈리아군을 물리친 영국군이 군정을 폄
+    - 영국이 이탈리아가 지은 시설을 전쟁 배상으로 뜯어 감
+    - 1947년 파리 강화 조약으로 이탈리아가 주권을 내놓음
+    - 1950년 유엔 총회 결의 390호가 에티오피아와의 연방을 정함
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["파리 강화 조약(1947)", "유엔 총회 결의 390(V)(1950)", "위키백과 British Military Administration (Eritrea)"]
+    foundingNote: 이탈리아군을 물리친 영국군이 군정을 편 1941년부터
+
+# 리비아 (영국 군정) 꼴. 위키 en Italian Somaliland — 1941 영국군 점령·군정~1950, 1947-02-10 파리 강화 조약(이탈리아 포기), 유엔 총회 결의 289(1949-11-21)가 10년 기한 이탈리아 시정 신탁 통치를 정함, 1950-04-01 신탁 통치. 1945~1949 SOM 13, occupied_by uk 1941~1949(이어 somalia-italian-trust 1950)
+- id: somalia-british-admin
+  level: region
+  names: { ko: 이탈리아령 소말리아 (영국 군정), en: Italian Somaliland (British military administration), native: Soomaaliya }
+  from: 1941
+  to: 1950
+  color: "#345ab2"
+  summary: 이탈리아가 잃은 인도양 기슭 식민지를 영국군이 다스린 땅. 1941년 2월 영국군이 모가디슈를 차지해 군정을 폈고, 1947년 2월 10일 파리 강화 조약으로 이탈리아가 이 식민지를 내놓음. 1949년 11월 유엔 총회가 이 땅을 10년 기한의 신탁 통치령으로 이탈리아에 맡기기로 결의함
+  mapNote: 지도에는 1945년부터 1949년까지 지금 소말리아 땅에서 옛 영국령 소말릴란드를 뺀 땅으로 표시함. 이탈리아가 주권을 내놓은 뒤에도 신탁 통치가 시작되기 전까지 영국군이 다스려, 그동안은 영국이 점령한 땅으로 나타냄. 같은 영국군이 1948년까지 다스린 에티오피아의 오가덴은 따로 칠하지 않고 에티오피아 색으로 그림
+  endNote: 1950년 4월 1일 이탈리아가 유엔 신탁 통치를 맡으면서 영국 군정이 끝남
+  features:
+    - 행정 중심은 모가디슈
+    - 1941년 2월 영국군이 모가디슈를 차지함
+    - 1947년 파리 강화 조약으로 이탈리아가 주권을 내놓음
+    - 1949년 유엔 총회가 이탈리아 시정 신탁 통치를 결의함
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["파리 강화 조약(1947)", "유엔 총회 결의 289호(1949)", "위키백과 Italian Somaliland"]
+    foundingNote: 영국군이 모가디슈를 차지해 군정을 편 1941년부터
+
+# 위키 ko 표제 소말리아 신탁통치령 — 저장소 기존 띄어쓰기(신탁 통치령)를 따름(콩고 인민 공화국 꼴, 00-scope 6절). 위키 en Trust Territory of Somaliland — 1950-04-01~1960-07-01, 유엔 총회 결의 289(1949). 1950~1959 SOM 13, vassal_of italy 1950~1959(이음 1960 somalia — british-somaliland와 합)
+- id: somalia-italian-trust
+  level: polity
+  names: { ko: 소말리아 신탁 통치령, en: Trust Territory of Somaliland, native: Amministrazione fiduciaria italiana della Somalia }
+  from: 1950
+  to: 1960
+  color: "#4db234"
+  summary: 유엔이 10년 기한으로 이탈리아에 맡긴 옛 이탈리아령 소말리아. 1950년 4월 1일 영국 군정에 이어 이탈리아가 시정을 맡아, 열 해 뒤 독립하도록 준비시키는 임무를 짐. 기한이 끝난 1960년 7월 1일 이 신탁 통치령이 독립하면서, 닷새 앞서 영국에서 독립한 옛 영국령 소말릴란드와 합쳐 소말리아 공화국을 세움
+  mapNote: 지도에는 1950년부터 1959년까지 지금 소말리아 땅에서 옛 영국령 소말릴란드를 뺀 땅으로 표시함. 그동안 시정을 맡은 이탈리아에 딸린 땅으로 나타냄
+  endNote: 1960년 7월 1일 독립해 옛 영국령 소말릴란드와 합쳐 소말리아 공화국이 되며 끝남
+  features:
+    - 행정 중심은 모가디슈
+    - 1949년 유엔 총회 결의 289호가 10년 기한을 정함
+    - 1950년 4월 1일 이탈리아가 시정을 맡음
+    - 1960년 7월 1일 독립해 옛 영국령 소말릴란드와 합침
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["유엔 총회 결의 289호(1949)", "위키백과 Trust Territory of Somaliland", "위키백과 Italian Somaliland"]
+    foundingNote: 이탈리아가 유엔 신탁 통치를 맡은 1950년 4월 1일부터
+
+# 위키 ko 표제. 위키 en British Somaliland — 1884 보호령(소말리족 술탄국들과 조약), 1920 데르비시 운동 무너짐, 1940-08-03~1941-04-08 이탈리아 점령, 1960-06-26 소말릴란드국 독립·07-01 합침. 하우드 시정 1948~1954(1955 반환)은 에티오피아 색·글(기본값 3). 1945~1959 SOL 1(168,581), vassal_of uk 1884~1959(이음 1960 somalia)
+- id: british-somaliland
+  level: polity
+  names: { ko: 영국령 소말릴란드, en: British Somaliland, native: British Somaliland }
+  from: 1884
+  to: 1960
+  color: "#b24d34"
+  summary: 아덴만 남쪽 기슭의 영국 보호령. 1884년부터 영국이 이 기슭의 소말리족 술탄국들과 맺은 조약으로 보호령이 되었고, 1920년 영국군이 데르비시 운동을 무너뜨린 뒤 안쪽까지 다스림. 1940년 8월부터 이듬해 4월까지 이탈리아군에 점령되었다가 되찾았고, 1948~1954년 에티오피아 땅 하우드의 방목지도 함께 맡아 다스림
+  mapNote: 지도에는 1945년부터 1959년까지 지금 소말릴란드 땅으로 표시하고, 그동안 영국에 딸린 땅으로 나타냄. 영국이 함께 맡아 다스린 에티오피아 땅 하우드는 따로 칠하지 않고 에티오피아 색으로 그림. 1960년 6월 26일 독립한 소말릴란드국은 닷새 뒤 합쳐져 따로 그리지 않음
+  endNote: 1960년 6월 26일 소말릴란드국으로 독립하고, 7월 1일 옛 이탈리아 신탁 통치령과 합쳐 소말리아 공화국이 되며 끝남
+  features:
+    - 중심은 하르게이사, 바다 쪽 관문은 베르베라
+    - 1884년부터 소말리족 술탄국들과 보호 조약을 맺음
+    - 1920년 영국군이 데르비시 운동을 무너뜨림
+    - 1940~1941년 이탈리아군에 점령됨
+    - 1954년 협정으로 하우드 방목지를 에티오피아에 돌려줌
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 British Somaliland", "영국-에티오피아 협정(1954)"]
+    foundingNote: 영국이 이 기슭의 소말리족과 보호 조약을 맺기 시작한 1884년부터
+
+# 위키 ko 표제. 위키 en Anglo-Egyptian Sudan — 1899-01 공동 통치 협정, 1946 남부 정책 거둠, 1953-02-12 영국·이집트 협정(자치), 1954-01 알아즈하리 정부, 1955-08 토리트 반란, 1955-12-19 의회 독립 선언, 1956-01-01 독립(0단계 결정 1). 1945~1955 SDN 17 + SDS 10(2,546,162), 관계 줄 없음(공동 통치 — 기본값 7, 이어 sudan 1956)
+- id: anglo-egyptian-sudan
+  level: polity
+  names: { ko: 영국-이집트령 수단, en: Anglo-Egyptian Sudan, native: السودان الإنجليزي المصري }
+  from: 1899
+  to: 1956
+  color: "#6586d2"
+  summary: 나일강 가운데 유역을 영국과 이집트가 함께 다스린 땅. 1899년 1월 협정으로 영국이 추천한 총독을 이집트가 임명하는 공동 통치가 섰으나, 실제로는 하르툼의 영국 관리들이 다스림. 1946년 남부를 따로 다스리던 정책을 거두고 남북 행정을 합치기 시작했고, 1953년 2월 12일 영국·이집트 협정으로 자치를 얻어 1954년 1월 이스마일 알아즈하리의 수단인 정부가 섬. 1955년 8월 토리트 반란으로 남부의 저항이 커졌고, 같은 해 12월 19일 의회가 만장일치로 독립을 선언함
+  mapNote: 지도에는 1945년부터 1955년까지 지금 수단과 남수단 땅으로 표시함. 영국과 이집트가 함께 다스려 어느 한 나라에 딸린 땅으로 나타내지 않음
+  endNote: 1956년 1월 1일 수단 공화국으로 독립하며 끝남
+  features:
+    - 수도는 하르툼
+    - 1899년 1월 영국·이집트 공동 통치 협정
+    - 청나일과 백나일 사이 땅에 관개 목화 농장을 일으킴
+    - 1953년 2월 영국·이집트 협정으로 자치를 얻음
+    - 1955년 12월 19일 의회가 독립을 선언함
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["영국-이집트 공동 통치 협정(1899)", "영국-이집트 협정(1953)", "위키백과 Anglo-Egyptian Sudan"]
+    foundingNote: 영국과 이집트가 공동 통치 협정을 맺은 1899년 1월부터
+
+
+# ══ F3 EA 항목 (대호수·인도양) ══
+# 위키 ko·en·fr 벨기에령 콩고(1908-11-15 벨기에 식민지 — fr Congo belge 'entre le 15 novembre 1908 … et le 30 juin 1960'), 독립 1960-06-30. 1945~1959 COD 11, vassal_of belgium 1908~1959(이음 1960 dr-congo)
+- id: belgian-congo
+  level: polity
+  names: { ko: 벨기에령 콩고, en: Belgian Congo, native: Congo belge / Belgisch-Congo }
+  from: 1908
+  to: 1960
+  color: "#45c9bc"
+  summary: 콩고강 유역 적도 숲과 카탕가 광산 지대를 아우른 벨기에 식민지. 벨기에 왕이 개인 땅으로 다스린 콩고에서 주민을 짓밟은 착취가 알려져 국제 압력이 커지자, 1908년 11월 15일 벨기에 나라가 이 땅을 넘겨받아 식민지로 삼음. 국가·가톨릭 선교회·회사가 함께 다스렸고, 1940~1950년대에는 도시가 빠르게 커지며 유럽식 교육을 받은 아프리카인 중간층이 생겼으며 임금 노동자가 다른 어느 아프리카 식민지보다 많았음. 1950년대 말 독립 운동이 거세짐
+  mapNote: 지도에는 1945년부터 1959년까지 지금 콩고 민주 공화국 땅으로 표시하고, 1959년까지 벨기에의 지배를 관계로 보임
+  endNote: 1960년 6월 30일 파트리스 루뭄바를 총리, 조제프 카사부부를 대통령으로 하여 콩고 공화국으로 독립하며 끝남
+  features:
+    - 수도는 레오폴드빌(지금 킨샤사)
+    - 1908년 11월 15일 벨기에 식민지
+    - 국가·선교회·회사가 함께 다스림
+    - 카탕가의 구리 광산
+    - 1960년 6월 30일 독립
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 벨기에령 콩고", "위키백과 Belgian Congo", "위키백과 Congo belge"]
+    foundingNote: 벨기에가 콩고를 나라 식민지로 넘겨받은 1908년 11월 15일부터
+
+# 위키 ko 프랑스령 마다가스카르('1897년부터 1958년까지')·en French Madagascar('between 1897 and 1958')·fr Colonie de Madagascar et dépendances('de 1897 à 1946, avant de devenir un territoire d'outre-mer') — 뼈대 from 1896 → 1897, 1947 봉기(위키 en Malagasy Uprising 1947-03-29~1949-02 — 따로 칠하지 않음, 기본값 11)·1958-10-14 말라가시 공화국은 글, 독립 1960-06-26. 1945~1959 MDG 22(코모로 COM은 french-comoros), vassal_of france 1897~1959(이음 1960 madagascar)
+- id: french-madagascar
+  level: polity
+  names: { ko: 프랑스령 마다가스카르, en: French Madagascar, native: Colonie de Madagascar et dépendances }
+  from: 1897
+  to: 1960
+  color: "#bcc945"
+  summary: 인도양 서쪽 큰 섬 마다가스카르를 다스린 프랑스 식민지. 1895년 프랑스군이 메리나 왕국을 눌러 섬을 장악했고, 1897년 여왕 라나발로나 3세를 폐위하고 식민지로 삼아 코모로 제도 등을 딸린 땅으로 둠. 1946년 프랑스 연합의 해외 영토가 되었고, 1947년 3월 29일 동부에서 일어난 민족주의 봉기가 1949년 2월까지 이어졌으나 프랑스군이 많은 주민을 죽이며 눌렀음. 1958년 10월 14일 프랑스 공동체 안의 말라가시 공화국이 됨
+  mapNote: 지도에는 1945년부터 1959년까지 지금 마다가스카르 땅으로 표시하고, 1959년까지 프랑스의 지배를 관계로 보임. 1947~1949년 봉기군이 차지한 땅도 따로 칠하지 않고 프랑스령 마다가스카르 색으로 그림. 1946년까지 이 식민지에 딸렸던 코모로 세 섬은 따로 프랑스령 코모로 색으로 둠
+  endNote: 1960년 6월 26일 말라가시 공화국으로 독립하며 끝남
+  features:
+    - 수도는 타나나리브(지금 안타나나리보)
+    - 1897년 여왕 폐위와 식민지 행정
+    - 1946년 프랑스 연합의 해외 영토
+    - 1947~1949년 민족주의 봉기
+    - 1958년 10월 14일 말라가시 공화국
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 프랑스령 마다가스카르", "위키백과 Colonie de Madagascar et dépendances", "위키백과 Malagasy Uprising"]
+    foundingNote: 여왕을 폐위하고 섬을 프랑스 식민지로 삼은 1897년부터
+
+
+# ══ F3 SF 항목 (남부) ══
+# 새 항목 없음 — 앞 잇는 항목 블록만(파일 소유표)

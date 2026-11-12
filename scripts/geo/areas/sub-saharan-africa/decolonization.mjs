@@ -1,6 +1,7 @@
 // sub-saharan-africa 시대 파일 decolonization (npm run new:area가 만든 틀, 시대표 하나에 파일 하나: standards.md 1절·9절 7)
 // 시대·범위: 1960~1974: 아프리카의 해부터 포르투갈령 독립 앞까지 (F2)
 // 짝 항목 파일: data/entities/sub-saharan-africa-decolonization.yaml (나라 id는 그 파일과 이 파일의 versions가 같아야 한다 — 앞 잇는 F1 항목 44는 sub-saharan-africa-modern.yaml, mauritania는 서아시아 middle-east-modern.yaml)
+//   앞 시대 파일 postwar.mjs(F3, 1945~1959)가 같은 id로 앞을 잇는다(F2 항목 22 중 1945~1959에 있는 것·F1 항목 12 — 짝 항목 파일 sub-saharan-africa-postwar.yaml은 F3 새 항목 24)
 // 가져와도 되는 것: lib.mjs, shared.mjs, areas/korea.mjs, areas/inner-asia.mjs, areas/china.mjs, areas/west.mjs, areas/japan.mjs, areas/europe.mjs, areas/middle-east.mjs, areas/south-asia.mjs, areas/central-asia.mjs, areas/southeast-asia.mjs, areas/sub-saharan-africa/의 다른 도우미 모듈. areas/sub-saharan-africa.mjs는 이 파일을 가져오는 쪽이라 가져올 수 없다(순환).
 //   권역 파일 안 도형이 필요하면 그 도형을 areas/sub-saharan-africa/의 도우미 모듈로 옮겨 둘이 함께 가져온다.
 // 생성기에 들어가는 것은 export const era 하나다(칼선 같은 다른 이름은 export해도 되지만 versions·gapZones·source 같은 이름은 안 됨: check:generator). 권역 파일 areas/sub-saharan-africa.mjs가 shared.mjs의 joinEras로 자기 versions·gapZones·voids에 합치고,
@@ -16,11 +17,12 @@
 // 해 규칙: 한 버전 = 그해 말 모습. 원정·되돌려진 점령·몇 해 만에 끝난 분리는 칠하지 않음(카탕가·남카사이·비아프라·스탠리빌·시프타 전쟁·PAIGC 해방구 — 결정 5, 관계 줄도 없이 글).
 //   새 버전은 1만 km²(주변 5만 km²) 넘게 바뀔 때만. 이름만 바뀌는 해(수단 공화국→말리 1960·남아프리카 연방→공화국 1961·탕가니카→탄자니아 1964·남로디지아→로디지아 1964·
 //   프랑스령 소말릴란드→프랑스령 아파르족 및 이사족 지역 1967·콩고 인민 공화국 1970·자이르 1971)는 새 버전이 아니다 — 항목 글로(기본값 11·21).
-// 1960 앞 버전 없음: 이 시대 파일의 첫 해는 F2_START(1960)다. 1960 앞에 성립한 나라·식민지도 첫 버전은 1960부터이고(F3가 같은 id로 앞을 이음),
-//   1959 이하에는 이 권역 땅이 비는 것이 정상이다(빈 땅 검사 구역도 1960부터만 — 아래 gapZones).
-// 시대 경계 맞물림: 뒤 시대 파일 modern.mjs(F1)의 첫 해 F1_START = 1975 = 이 파일의 F2_END(미포함). 이 파일 버전의 끝은 모두 F2_END 이하이고(끝 없음 null 금지),
+// 1960 앞 버전: 이 시대 파일의 첫 해는 F2_START(1960)다. 1960 앞에 성립한 나라·식민지도 이 파일의 첫 버전은 1960부터이고, 1945~1959는 앞 시대 파일
+//   postwar.mjs(F3)가 같은 id로 앞을 이음(1959 말 모양 = 이 파일의 1960 모양 — 식민지 18이 1960에 이 파일의 독립국으로 바뀌는 결정 점프 말고). 빈 땅 검사 구역은 이 파일이 1960~1974,
+//   postwar.mjs가 1945~1959(아래 gapZones). 1944 이하에는 이 권역 땅이 비는 것이 정상이다.
+// 시대 경계 맞물림: 앞 시대 파일 postwar.mjs(F3)의 끝 F3_END = 1960 = 이 파일의 F2_START(그 파일이 손으로 맞춘 확인 줄). 뒤 시대 파일 modern.mjs(F1)의 첫 해 F1_START = 1975 = 이 파일의 F2_END(미포함). 이 파일 버전의 끝은 모두 F2_END 이하이고(끝 없음 null 금지),
 //   1975에 이어지는 나라(F1 항목 44 + mauritania)는 joinEras가 F1 버전 앞에 붙인다. 1974 말 모양은 F1의 1975 모양과 같아야 한다(결정 점프 — 포르투갈령 넷·프랑스령 코모로가
-//   1975에 F1 angola·mozambique·cape-verde·sao-tome·comoros로 바뀜, 도형 같음 — 말고). 권역 파일의 joinEras 목록은 [decolonizationEra, modernEra](과거가 앞).
+//   1975에 F1 angola·mozambique·cape-verde·sao-tome·comoros로 바뀜, 도형 같음 — 말고). 권역 파일의 joinEras 목록은 [postwarEra, decolonizationEra, modernEra](과거가 앞 — F3 뼈대 2026-11-12).
 // 앞 잇는 항목: F1 항목 44(같은 id — 블록은 sub-saharan-africa-modern.yaml 그 자리, 글·tanzania from 1961·rhodesia from 1960만 칸이 고침)와
 //   이웃 권역 항목 mauritania(서아시아 middle-east-modern.yaml 블록, 1960~1974 MRT 13조각 — 창구 ② 자동 승인 1건, SH 칸 own 줄. 서사하라로 넓히지 않음 — 기본값 18).
 //   짝 항목 파일 밖 id도 주인으로 쓸 수 있다(F1 장치 시험 ①, F2 뼈대 장치 시험 ①이 이 파일에서 다시 확인 — f2/SKEL-NOTE.md 5절).
@@ -32,7 +34,8 @@
 //   (칼선 import·상수·own 줄·voids 함수 모두). 최상위 이름은 칸 앞머리 WA_·GU_·EA_·SH_·SE_·SF_, import도 별칭(예: GU_X), ownSplit 묶음 이름도 앞머리(예: 'EA_…').
 //   칸 밖 공통 줄(import·도우미·BOUNDS 합치기·표 만들기·버전·빈 땅 검사 구역)은 고치지 않는다(바꿔야 하면 결과 노트 6절). 자기 몫이 아닌 조각에는 줄을 적지 않는다(fillTables가 주인 null로 채움).
 // 칼선 파일: cuts-f2.mjs에 칸 머리 여섯이 있다(새 칼선 0). 칸이 칼선을 더하면 그 파일 자기 머리 아래에 export const <칸>_CUT_…으로 쓰고, 이 파일 칸 머리 안에서 import { <칸>_CUT_… } from './cuts-f2.mjs'로 가져온다.
-//   앞 단계 F1 칼선(cuts-f1.mjs — 지금 0)을 쓰면 별칭으로(import { X as SH_X } from './cuts-f1.mjs').
+//   앞 단계 F1 칼선(cuts-f1.mjs — 지금 0)을 쓰면 별칭으로(import { X as SH_X } from './cuts-f1.mjs'). 앞 시대 F3 칼선(cuts-f3.mjs)도 같은 꼴 — F3 CE 북부 영국령 카메룬 띠 칼선은
+//   GU 블록이 import { CE_CUT_… as GU_CUT_… } from './cuts-f3.mjs'로 가져와 1960 띠를 가른다(F3 CE 칸 예외, F3 기본값 5 — 좌표를 베끼지 않음).
 // 칸 조각 목록: 칸 머리 안의 import { F2_<칸>_IDS } from './cuts-f2.mjs'는 칸 안 확인용(나라별 묶음 합 = 칸 몫)으로만 쓰고, 나라별 묶음은 칸 안에서 idsOf('<adm0>')·minus(idsOf('TCD'), 'TD-TI') 꼴로 다시 적는다.
 // 표 경계 해: 칸마다 <칸>_BOUNDS(칸이 사료로 더하고 뺌)를 공통 BOUNDS가 합친다(F2_START·F2_END 포함). 표 하나 안에서는 단위(조각·나눈 부분)의 모양이 같고 주인만 해마다 바뀐다.
 //   조각 통째로만 칠하면 BOUNDS를 늘리지 않아도 된다(주인은 own 줄의 해마다 바뀜). ownSplit의 { from, to }는 BOUNDS의 해여야 한다(fillTables가 확인).
@@ -131,13 +134,14 @@ for (const [adm0, line] of WA_OWN) own(idsOf(adm0), line);
 // 조각 F2_GU_IDS(가나 10·토고 5·나이지리아 37·베냉 12·카메룬 10·중앙아프리카 17·가봉 9·콩고 공화국 12·적도 기니 6·상투메 프린시페 2 = 120), 구현 F2-GU
 // 새 항목 3: british-cameroons(1960 — 남부 CM-NW·CM-SW 41,940)·spanish-guinea(1960~1967)·portuguese-sao-tome(1960~1974)
 // 앞 잇는 F1 항목 9: ghana·togo·nigeria·benin·cameroon(1960 CMR − CM-NW·CM-SW, 1961~ 통째)·car·gabon·republic-of-congo·equatorial-guinea(1968~)
-// 점프: 1961 CM-NW·CM-SW british-cameroons → cameroon(41,940)·1968 GNQ, 이음 1975 STP portuguese-sao-tome → sao-tome. 영국령 카메룬 북부 띠는 칼선 없이 1960 나이지리아 색(기본값 2 — 알려진 근사 약 4.76만 km²), 비아프라는 나이지리아 색(결정 5)
+// 점프: 1961 CM-NW·CM-SW british-cameroons → cameroon(41,940)·1968 GNQ, 이음 1975 STP portuguese-sao-tome → sao-tome. 영국령 카메룬 북부 띠는 F3 CE 칼선 2로 가름 — 1960 british-cameroons, 1961 nigeria(+약 4.87만 km² — F3 기본값 5가 F2 기본값 2를 바꿈), 비아프라는 나이지리아 색(결정 5)
 import { F2_GU_IDS } from './cuts-f2.mjs';
-const GU_BOUNDS = []; // 조각 통째·주인만 바뀜(1961·1968은 own 줄의 해)
+import { CE_CUT_NCAM as GU_CUT_NCAM } from './cuts-f3.mjs'; // F3 CE 칼선 2(북부 영국령 카메룬 띠) — 좌표는 cuts-f3.mjs 한 곳
+const GU_BOUNDS = [1961]; // 1961: 북카메룬 띠 나눔(F3 CE 칼선 2)이 1960 한 해뿐이라 묶음 기간의 끝 — 1961~ 나이지리아는 통째(합친 도형 이음매가 생기지 않게). 1968은 own 줄의 해
 // 나라별 묶음(칸 안에서 다시 적음 — 합은 F2_GU_IDS 120)
 const GU_GHA = idsOf('GHA'); // 가나 10
 const GU_TGO = idsOf('TGO'); // 토고 5
-const GU_NGA = idsOf('NGA'); // 나이지리아 37(영국령 카메룬 북부 띠 포함 — 1960도 나이지리아 색, 기본값 2)
+const GU_NGA = idsOf('NGA'); // 나이지리아 37(영국령 카메룬 북부 띠는 칼선 2로 가름 — 1960 영국령 카메룬, 1961~ 나이지리아)
 const GU_BEN = idsOf('BEN'); // 베냉 12
 const GU_CM_SOUTH = ['CM-NW', 'CM-SW']; // 영국령 카메룬 남부(지금 북서·남서 지방, 바카시는 CM-SW 안) 41,940 km²
 const GU_CMR = minus(idsOf('CMR'), ...GU_CM_SOUTH); // 프랑스 신탁 통치령에서 독립한 카메룬 8
@@ -155,7 +159,11 @@ const GU_STP = idsOf('STP'); // 상투메 프린시페 2
 // 주인 줄(그해 말 — ※ 해는 결과 노트 2절 표)
 own(GU_GHA, [[F2_START, 'ghana']]); // 1957-03-06 독립(1960 앞은 F3 몫), 1960 공화국은 정체만 바뀜
 own(GU_TGO, [[F2_START, 'togo']]); // 1960-04-27 독립
-own(GU_NGA, [[F2_START, 'nigeria']]); // 1960-10-01 독립. 비아프라 1967~1970은 칠하지 않음(결정 5)
+ownSplit('GU_NGA', GU_NGA, [['띠', GU_CUT_NCAM]], '본토', {
+  띠: [[F2_START, 'british-cameroons']], // 1961-02-11 주민 투표, 1961-06-01 나이지리아 사르다우나주
+  본토: [[F2_START, 'nigeria']], // 1960-10-01 독립
+}, { from: F2_START, to: 1961 });
+own(GU_NGA, [[1961, 'nigeria']]); // 1961~ 띠를 합친 지금 나이지리아 땅(통째). 비아프라 1967~1970은 칠하지 않음(결정 5)
 own(GU_BEN, [[F2_START, 'benin']]); // 1960-08-01 다호메이 공화국 독립(1975 베냉은 이름만)
 own(GU_CMR, [[F2_START, 'cameroon']]); // 1960-01-01 독립
 own(GU_CM_SOUTH, [[F2_START, 'british-cameroons'], [1961, 'cameroon']]); // 1961-02-11 주민 투표, 1961-10-01 카메룬 연방 공화국에 합침
@@ -365,7 +373,7 @@ const voids = [...WA_voids(), ...GU_voids(), ...EA_voids(), ...SH_voids(), ...SE
 if (voids.some(([f, t]) => f < F2_START || t === null || t > F2_END)) throw new Error(`sub-saharan-africa decolonization: 비운 땅의 기간은 ${F2_START}~${F2_END} 안이어야 함(끝 없음 null 금지 — 1975~는 modern.mjs 몫)`);
 
 // 빈 땅 검사 구역: 권역 바깥선(조각 779개)에서 그해 비운 땅(voids)을 뺀 곳 — 이 권역 나라 땅을 합쳐 빈 곳이 없어야 한다.
-// F2_START(1960)~F2_END(1975, 미포함)만 만든다(1959 이하에는 이 권역 구역이 없음 — F3가 생기면 그 단계가 앞을 더함. 1975~는 modern.mjs 구역 '사하라 이남 현대 …'가 이음).
+// F2_START(1960)~F2_END(1975, 미포함)만 만든다(1945~1959는 postwar.mjs 구역 '사하라 이남 전후 …'가, 1975~는 modern.mjs 구역 '사하라 이남 현대 …'가 이음 — 1944 이하에는 이 권역 구역이 없음).
 // 비운 땅이 바뀌는 해마다 구역 하나, 마지막 구역의 끝은 F2_END. 이름 '사하라 이남 탈식민 <from>~<to-1>'(F1 '사하라 이남 현대 …'와 겹치지 않음).
 // 이 권역 나라가 하나도 없는 기간(빈 틀)은 구역을 만들지 않는다(칸 하나만 채운 사본에서는 다른 칸 땅이 빈 땅으로 보고되는 것이 정상. gaps는 합치기 사본에서만 공식으로 돌린다)
 const ownedIn = (from, to) => Object.values(joined.segments).some((segs) => segs.some(([f, t]) => f < to && from < t));

@@ -715,3 +715,314 @@
   expect: rhodesia
   url: https://en.wikipedia.org/wiki/Harare
   from: 사하라 이남 F2 SF 결과노트
+
+# ── 사하라 이남 F3 WA (서아프리카 대서양 쪽·서사헬, 2026-11-12) ──
+- name: 다카르
+  at: [-17.44, 14.69]
+  year: 1959
+  expect: french-senegal
+  url: https://en.wikipedia.org/wiki/Dakar
+  from: 사하라 이남 F3 WA 결과노트
+- name: 바마코
+  at: [-8.0, 12.64]
+  year: 1959
+  expect: french-sudan
+  url: https://en.wikipedia.org/wiki/Bamako
+  from: 사하라 이남 F3 WA 결과노트
+- name: 누악쇼트
+  at: [-15.98, 18.09]
+  year: 1959
+  expect: french-mauritania
+  url: https://en.wikipedia.org/wiki/Nouakchott
+  from: 사하라 이남 F3 WA 결과노트
+- name: 코나크리
+  at: [-13.68, 9.64]
+  year: 1957
+  expect: french-guinea
+  url: https://en.wikipedia.org/wiki/Conakry
+  from: 사하라 이남 F3 WA 결과노트
+- name: 코나크리
+  at: [-13.68, 9.64]
+  year: 1958
+  expect: guinea
+  url: https://en.wikipedia.org/wiki/Conakry
+  from: 사하라 이남 F3 WA 결과노트
+- name: 몬로비아
+  at: [-10.8, 6.3]
+  year: 1945
+  expect: liberia
+  url: https://en.wikipedia.org/wiki/Monrovia
+  from: 사하라 이남 F3 WA 결과노트
+
+# ── 사하라 이남 F3 GW (기니만 서쪽·사헬 가운데, 2026-11-12) ──
+- name: 아비장
+  at: [-4.03, 5.32]
+  year: 1950
+  expect: french-ivory-coast
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Abidjan
+  from: 사하라 이남 F3 GW 결과노트
+  note: 1934~1983 프랑스령 코트디부아르·코트디부아르 수도
+- name: 아크라
+  at: [-0.19, 5.6]
+  year: 1956
+  expect: british-gold-coast
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Accra
+  from: 사하라 이남 F3 GW 결과노트
+  note: 영국령 골드코스트 수도
+- name: 아크라
+  at: [-0.19, 5.6]
+  year: 1957
+  expect: ghana
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Accra
+  from: 사하라 이남 F3 GW 결과노트
+  note: 1957-03-06 가나 독립
+- name: 호
+  at: [0.47, 6.6]
+  year: 1956
+  expect: british-togoland
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Ho,_Ghana
+  from: 사하라 이남 F3 GW 결과노트
+  note: 영국령 토골란드 남부 중심(칼선 1 안)
+- name: 호
+  at: [0.47, 6.6]
+  year: 1957
+  expect: ghana
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Ho,_Ghana
+  from: 사하라 이남 F3 GW 결과노트
+  note: 1957-03-06 영국령 토골란드가 가나에 합쳐짐
+- name: 옌디
+  at: [-0.01, 9.44]
+  year: 1956
+  expect: british-togoland
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Yendi
+  from: 사하라 이남 F3 GW 결과노트
+  note: 동다곰바 — 영국령 토골란드 북부(칼선 1 안)
+- name: 타말레
+  at: [-0.85, 9.4]
+  year: 1956
+  expect: british-gold-coast
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Tamale,_Ghana
+  from: 사하라 이남 F3 GW 결과노트
+  note: 북부 준주 중심 — 골드코스트 쪽(칼선 1 밖)
+- name: 로메
+  at: [1.23, 6.14]
+  year: 1950
+  expect: french-togoland
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Lom%C3%A9
+  from: 사하라 이남 F3 GW 결과노트
+  note: 프랑스령 토골란드 수도
+- name: 포르토노보
+  at: [2.63, 6.5]
+  year: 1950
+  expect: french-dahomey
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Porto-Novo
+  from: 사하라 이남 F3 GW 결과노트
+  note: 프랑스령 다호메이 수도
+- name: 와가두구
+  at: [-1.53, 12.37]
+  year: 1950
+  expect: french-upper-volta
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Ouagadougou
+  from: 사하라 이남 F3 GW 결과노트
+  note: 프랑스령 오트볼타 수도(1947 복원 뒤)
+- name: 니아메
+  at: [2.11, 13.51]
+  year: 1950
+  expect: french-niger
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Niamey
+  from: 사하라 이남 F3 GW 결과노트
+  note: 프랑스령 니제르 수도(1926~)
+
+# ── 사하라 이남 F3 CE (나이지리아·카메룬·중앙아프리카, 2026-11-12) ──
+- name: 라고스
+  at: [3.38, 6.52]
+  year: 1955
+  expect: british-nigeria
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Colonial_Nigeria
+  from: 사하라 이남 F3 CE 결과노트
+  note: 나이지리아 식민지 및 보호령의 수도(1954 연방)
+- name: 야운데
+  at: [11.50, 3.87]
+  year: 1955
+  expect: french-cameroons
+  url: https://en.wikipedia.org/wiki/French_Cameroon
+  from: 사하라 이남 F3 CE 결과노트
+  note: 프랑스 신탁 통치령 카메룬의 수도
+- name: 은자메나
+  at: [15.04, 12.13]
+  year: 1955
+  expect: french-chad
+  url: https://en.wikipedia.org/wiki/French_Chad
+  from: 사하라 이남 F3 CE 결과노트
+  note: 옛 이름 포르라미, 프랑스령 차드의 행정 중심
+- name: 방기
+  at: [18.56, 4.36]
+  year: 1955
+  expect: french-ubangi-shari
+  url: https://en.wikipedia.org/wiki/Ubangi-Shari
+  from: 사하라 이남 F3 CE 결과노트
+- name: 리브르빌
+  at: [9.45, 0.39]
+  year: 1955
+  expect: french-gabon
+  url: https://fr.wikipedia.org/wiki/Colonie_du_Gabon
+  from: 사하라 이남 F3 CE 결과노트
+- name: 브라자빌
+  at: [15.24, -4.27]
+  year: 1955
+  expect: french-middle-congo
+  url: https://en.wikipedia.org/wiki/French_Congo
+  from: 사하라 이남 F3 CE 결과노트
+  note: 중앙콩고와 프랑스령 적도 아프리카의 수도
+- name: 무비
+  at: [13.26, 10.27]
+  year: 1955
+  expect: british-cameroons
+  url: https://en.wikipedia.org/wiki/British_Cameroons
+  from: 사하라 이남 F3 CE 결과노트
+  note: 북카메룬(영국령 카메룬 북부) 안 — 1961-06-01 나이지리아 사르다우나주
+- name: 무비
+  at: [13.26, 10.27]
+  year: 1960
+  expect: british-cameroons
+  url: https://en.wikipedia.org/wiki/British_Cameroons
+  from: 사하라 이남 F3 CE 결과노트
+- name: 무비
+  at: [13.26, 10.27]
+  year: 1961
+  expect: nigeria
+  url: https://en.wikipedia.org/wiki/British_Cameroons
+  from: 사하라 이남 F3 CE 결과노트
+- name: 욜라
+  at: [12.46, 9.20]
+  year: 1955
+  expect: british-nigeria
+  url: https://en.wikipedia.org/wiki/Yola,_Nigeria
+  from: 사하라 이남 F3 CE 결과노트
+  note: 아다마와 지방의 중심, 북카메룬 두 덩어리 사이의 나이지리아 본토
+
+# ── 사하라 이남 F3 HN (뿔·나일, 2026-11-12) ──
+- name: 아스마라
+  at: [38.93, 15.32]
+  year: 1951
+  expect: eritrea-british-admin
+  url: https://en.wikipedia.org/wiki/Asmara
+  from: 사하라 이남 F3 HN 결과노트
+- name: 아스마라
+  at: [38.93, 15.32]
+  year: 1952
+  expect: eritrea-federation
+  url: https://en.wikipedia.org/wiki/Asmara
+  from: 사하라 이남 F3 HN 결과노트
+- name: 모가디슈
+  at: [45.34, 2.04]
+  year: 1949
+  expect: somalia-british-admin
+  url: https://en.wikipedia.org/wiki/Mogadishu
+  from: 사하라 이남 F3 HN 결과노트
+- name: 모가디슈
+  at: [45.34, 2.04]
+  year: 1950
+  expect: somalia-italian-trust
+  url: https://en.wikipedia.org/wiki/Mogadishu
+  from: 사하라 이남 F3 HN 결과노트
+- name: 하르게이사
+  at: [44.06, 9.56]
+  year: 1959
+  expect: british-somaliland
+  url: https://en.wikipedia.org/wiki/Hargeisa
+  from: 사하라 이남 F3 HN 결과노트
+- name: 하르툼
+  at: [32.53, 15.59]
+  year: 1955
+  expect: anglo-egyptian-sudan
+  url: https://en.wikipedia.org/wiki/Khartoum
+  from: 사하라 이남 F3 HN 결과노트
+- name: 하르툼
+  at: [32.53, 15.59]
+  year: 1956
+  expect: sudan
+  url: https://en.wikipedia.org/wiki/Khartoum
+  from: 사하라 이남 F3 HN 결과노트
+
+# ── 사하라 이남 F3 EA (대호수·인도양, 2026-11-12) ──
+- name: 킨샤사
+  at: [15.31, -4.32]
+  year: 1959
+  expect: belgian-congo
+  url: https://en.wikipedia.org/wiki/Kinshasa
+  from: 사하라 이남 F3 EA 결과노트
+- name: 킨샤사
+  at: [15.31, -4.32]
+  year: 1960
+  expect: dr-congo
+  url: https://en.wikipedia.org/wiki/Kinshasa
+  from: 사하라 이남 F3 EA 결과노트
+- name: 안타나나리보
+  at: [47.52, -18.91]
+  year: 1947
+  expect: french-madagascar
+  url: https://en.wikipedia.org/wiki/Antananarivo
+  from: 사하라 이남 F3 EA 결과노트
+- name: 안타나나리보
+  at: [47.52, -18.91]
+  year: 1959
+  expect: french-madagascar
+  url: https://en.wikipedia.org/wiki/Antananarivo
+  from: 사하라 이남 F3 EA 결과노트
+- name: 부줌부라
+  at: [29.36, -3.38]
+  year: 1950
+  expect: ruanda-urundi
+  url: https://en.wikipedia.org/wiki/Bujumbura
+  from: 사하라 이남 F3 EA 결과노트
+- name: 다르에스살람
+  at: [39.28, -6.79]
+  year: 1950
+  expect: british-tanganyika
+  url: https://en.wikipedia.org/wiki/Dar_es_Salaam
+  from: 사하라 이남 F3 EA 결과노트
+- name: 나이로비
+  at: [36.82, -1.29]
+  year: 1955
+  expect: british-kenya
+  url: https://en.wikipedia.org/wiki/Nairobi
+  from: 사하라 이남 F3 EA 결과노트
+- name: 캄팔라
+  at: [32.58, 0.35]
+  year: 1950
+  expect: british-uganda
+  url: https://en.wikipedia.org/wiki/Kampala
+  from: 사하라 이남 F3 EA 결과노트
+
+# ── 사하라 이남 F3 SF (남부, 2026-11-12) ──
+- name: 하라레(솔즈베리)
+  at: [31.05, -17.83]
+  year: 1945
+  expect: rhodesia
+  url: https://en.wikipedia.org/wiki/Southern_Rhodesia
+  from: 사하라 이남 F3 SF 결과노트
+- name: 루사카
+  at: [28.28, -15.42]
+  year: 1953
+  expect: northern-rhodesia
+  url: https://en.wikipedia.org/wiki/Federation_of_Rhodesia_and_Nyasaland
+  from: 사하라 이남 F3 SF 결과노트
+- name: 빈트후크
+  at: [17.08, -22.56]
+  year: 1950
+  expect: south-west-africa
+  url: https://en.wikipedia.org/wiki/South_West_Africa
+  from: 사하라 이남 F3 SF 결과노트

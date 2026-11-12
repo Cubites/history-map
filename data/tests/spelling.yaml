@@ -6410,3 +6410,77 @@
   scope: 사하라 이남·남부
 
 # ── 사하라 이남 F2 SF (남부, 2026-11-11) ──
+
+# ── 사하라 이남 F3 공통(2026-11-12, F3 뼈대): 공용 표기표 — 새 항목 이름·옛 이름·수도·분쟁 지명을 위키백과 한국어판 표제로 확정(f3/skel/ko-titles*.txt·en-ko.txt), 표제가 없으면 저장소·같은 갈래 꼴. avoid는 넘겨주기·흔한 잘못 꼴만. 칸은 자기 새 이름만 칸 머리 아래(f3/SKEL-NOTE.md 끝 표) ──
+
+- use: 영국령 골드코스트
+  avoid: [영국령 골드 코스트]
+  note: "Gold Coast(1874~1957 영국 식민지, 지금 가나). 위키 ko 표제(F3 뼈대 확인, f3/skel/ko-titles*.txt)"
+  scope: 사하라 이남·서아프리카
+
+- use: 영국령 토골란드
+  avoid: [영국령 토고랜드, 영국령 토골랜드]
+  note: "British Togoland(1922~1957 영국 위임·신탁 통치, 가나에 합침). 위키 ko 표제(F3 뼈대 확인, f3/skel/ko-titles*.txt)"
+  scope: 사하라 이남·서아프리카
+
+- use: 프랑스령 토골란드
+  avoid: [프랑스령 토고]
+  note: "French Togoland(1922~1960 프랑스 위임·신탁 통치, 지금 토고). 위키 ko 표제(F3 뼈대 확인, f3/skel/ko-titles*.txt)('프랑스령 토고'는 넘겨주기)"
+  scope: 사하라 이남·서아프리카
+
+- use: 프랑스령 모리타니
+  avoid: [프랑스령 모리타니아]
+  note: "Mauritanie(1904~1960 프랑스 식민지). 위키 ko 표제 없음 — 프랑스령 기니 꼴(F3 뼈대)"
+  scope: 사하라 이남·서아프리카
+
+- use: 우방기샤리
+  avoid: [우방기-샤리, 우방기 샤리]
+  note: "Oubangui-Chari(1903~1960 프랑스 식민지, 지금 중앙아프리카 공화국). 위키 ko 표제(F3 뼈대 확인, f3/skel/ko-titles*.txt)"
+  scope: 사하라 이남·중앙
+
+- use: 프랑스령 중앙콩고
+  avoid: [프랑스령 중앙 콩고]
+  note: "Moyen-Congo(1903~1960 프랑스 식민지, 지금 콩고 공화국). 위키 ko 표제 없음 — 프랑스령 기니 꼴(F3 뼈대)"
+  scope: 사하라 이남·중앙
+
+- use: 벨기에령 콩고
+  avoid: [벨기에 콩고]
+  note: "Congo belge(1908~1960 벨기에 식민지, 지금 콩고 민주 공화국). 위키 ko 표제(F3 뼈대 확인, f3/skel/ko-titles*.txt)"
+  scope: 사하라 이남·중앙
+
+- use: 이탈리아령 소말리아
+  avoid: [이탈리아령 소말릴란드]
+  note: "Somalia Italiana(1889~1941·1950~1960 신탁 통치는 소말리아 신탁 통치령). 위키 ko 표제(F3 뼈대 확인, f3/skel/ko-titles*.txt)('이탈리아령 소말릴란드'는 넘겨주기)"
+  scope: 사하라 이남·뿔
+
+- use: 영국-이집트령 수단
+  avoid: [영국-이집트 수단, 앵글로이집트 수단]
+  note: "Anglo-Egyptian Sudan(1899~1956 영국·이집트 공동 통치). 위키 ko 표제(F3 뼈대 확인, f3/skel/ko-titles*.txt)"
+  scope: 사하라 이남·뿔
+
+- use: 포르토노보
+  avoid: [포르토-노보]
+  note: "Porto-Novo(베냉 수도). 위키 ko 표제(F3 뼈대 확인, f3/skel/ko-titles*.txt)"
+  scope: 사하라 이남·서아프리카
+
+- use: 니아메
+  avoid: [니아메이]
+  note: "Niamey(니제르 수도). 위키 ko 표제(F3 뼈대 확인, f3/skel/ko-titles*.txt)"
+  scope: 사하라 이남·서아프리카
+
+# ── 사하라 이남 F3 WA (서아프리카 대서양 쪽·서사헬, 2026-11-12) ──
+
+# ── 사하라 이남 F3 GW (기니만 서쪽·사헬 가운데, 2026-11-12) ──
+
+- use: 실바뉘 올랭피오
+  avoid: [실바누스 올림피오]
+  note: "Sylvanus Olympio(1902~1963, 프랑스령 토골란드 총리·토고 첫 대통령). 위키 ko 표제(F3 GW 확인, f3/impl-gw/ko-titles-gw.txt — '실바누스 올림피오'는 넘겨주기)"
+  scope: 사하라 이남·서아프리카
+
+# ── 사하라 이남 F3 CE (나이지리아·카메룬·중앙아프리카, 2026-11-12) ──
+
+# ── 사하라 이남 F3 HN (뿔·나일, 2026-11-12) ──
+
+# ── 사하라 이남 F3 EA (대호수·인도양, 2026-11-12) ──
+
+# ── 사하라 이남 F3 SF (남부, 2026-11-12) ──
