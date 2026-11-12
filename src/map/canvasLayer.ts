@@ -117,7 +117,12 @@ export interface Palette {
   graticule: string;
   land: string;
   landStroke: string;
+  /** 전쟁 보기에서 진영 색 위에 긋는 나라 경계 */
   territoryStroke: string;
+  /** 평소 지도의 나라 경계 (2026-11-12) */
+  territoryBorder: string;
+  /** 나라 색을 옅게 섞을 바탕색 (2026-11-12) */
+  mute: string;
   outline: string;
   /** 선택·hover 강조 테두리 */
   highlight: string;
@@ -342,7 +347,8 @@ export function drawMap(
   }
 
   ctx.lineWidth = 1;
-  ctx.strokeStyle = palette.territoryStroke;
+  // 평소에는 옅게 칠한 나라를 진한 경계선으로 가른다(2026-11-12). 전쟁 보기는 진영 색 위라 밝은 선을 그대로 쓴다
+  ctx.strokeStyle = front ? palette.territoryStroke : palette.territoryBorder;
   for (const t of territories) {
     ctx.beginPath();
     trace(t.fill);

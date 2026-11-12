@@ -133,10 +133,33 @@ function readPalette(el: Element): Palette {
     land: v('--land-unassigned'),
     landStroke: v('--land-stroke'),
     territoryStroke: v('--territory-stroke'),
+    territoryBorder: v('--territory-border'),
+    mute: v('--territory-mute'),
     outline: v('--outline'),
     highlight: v('--fg'),
     frontLine: v('--front-line'),
   };
+}
+
+/**
+ * 나라 색을 옅게 하는 정도 (2026-11-12, DESIGN.md §6.3). 0이면 원래 색, 1이면 바탕색(--territory-mute).
+ * 나라를 고르지 않았을 때는 모든 나라를 DEFAULT만큼, 고르면 고른 나라는 원래 색·나머지는 OTHERS만큼 옅게 칠한다
+ */
+const MUTE = { DEFAULT: 0.62, OTHERS: 0.82 };
+const muteCache = new Map<string, string>();
+/** #rrggbb 색을 바탕색 쪽으로 amount만큼 섞는다. 다른 꼴의 색은 그대로 둔다 */
+function muteColor(color: string, base: string, amount: number): string {
+  if (amount <= 0) return color;
+  const key = `${color}|${base}|${amount}`;
+  let out = muteCache.get(key);
+  if (out === undefined) {
+    const rgb = (hex: string) => (/^#[0-9a-f]{6}$/i.test(hex) ? [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16)) : null);
+    const a = rgb(color);
+    const b = rgb(base);
+    out = a && b ? '#' + a.map((x, i) => Math.round(x + (b[i] - x) * amount).toString(16).padStart(2, '0')).join('') : color;
+    muteCache.set(key, out);
+  }
+  return out;
 }
 
 export default function WorldMap({ data }: { data: StaticData }) {
@@ -444,17 +467,20 @@ export default function WorldMap({ data }: { data: StaticData }) {
         // replaces 나라는 영토 대신 점령 지역을 칠한다
         if (frontShapes?.replaces.has(entry.entityId)) continue;
       }
-      const color = data.entities.get(entry.entityId)?.color ?? '#999999';
       const occupier = occupierAt(data.relations, entry.entityId, year);
       const hatch = occupier && data.entities.get(occupier.object)?.color;
       const overlord = overlordAt(data.relations, entry.entityId, year);
       const border = overlord && data.entities.get(overlord.object)?.color;
       // 귀속 논쟁 지역: 후보 나라 색을 번갈아 빗금으로. 후보가 하나면 그 나라 색과 주인 없는 땅 색을 번갈아
       const claimants = claimantsAt(data.relations, entry.entityId, year);
-      const claimantColors = claimants.map((id) => data.entities.get(id)?.color ?? '#999999');
-      const stripes = claimants.length ? (claimantColors.length > 1 ? claimantColors : [claimantColors[0], paletteRef.current?.land ?? '#d9d5cd']) : undefined;
       // 후보 나라를 고르면 선택 테두리에 논쟁 지역도 포함한다
       const isSelected = entry.entityId === selected || (!!selected && claimants.includes(selected));
+      // 나라 색은 옅게, 고른 나라(논쟁 지역은 후보로 고른 경우 포함)만 원래 색으로 (2026-11-12). 빗금·종속 테두리의 지배국 색은 그대로 둔다
+      const amount = isSelected ? 0 : selected ? MUTE.OTHERS : MUTE.DEFAULT;
+      const base = paletteRef.current?.mute ?? '#f6f3ec';
+      const color = muteColor(data.entities.get(entry.entityId)?.color ?? '#999999', base, amount);
+      const claimantColors = claimants.map((id) => muteColor(data.entities.get(id)?.color ?? '#999999', base, amount));
+      const stripes = claimants.length ? (claimantColors.length > 1 ? claimantColors : [claimantColors[0], paletteRef.current?.land ?? '#d9d5cd']) : undefined;
       const isHovered = entry.entityId === hoveredId || (!!hoveredId && claimants.includes(hoveredId));
       const highlight = isSelected ? SELECTED_WIDTH : isHovered ? HOVER_WIDTH : undefined;
       const outline = highlight && tiled ? { fill: plain, stroke: plain } : undefined;

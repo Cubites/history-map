@@ -9,6 +9,8 @@
   --land-unassigned: #d9d5cd; /* 데이터가 없는 육지 (DESIGN.md D5) */
   --land-stroke: #b3ada3;
   --territory-stroke: #fbfaf7;
+  --territory-border: #a29a8c; /* 평소 지도의 나라 경계선 (2026-11-12, 색을 옅게 칠하므로 경계를 진하게, DESIGN.md §6.3) */
+  --territory-mute: #f6f3ec; /* 나라 색을 옅게 섞을 바탕색 (2026-11-12, DESIGN.md §6.3) */
   --outline: #9fb0bb;
   --control-bg: #ffffffe6;
   --label: #2a2723;
@@ -38,6 +40,8 @@
     --land-unassigned: #34373a;
     --land-stroke: #4a4e51;
     --territory-stroke: #1d2124;
+    --territory-border: #5e6366;
+    --territory-mute: #24282b;
     --outline: #3b4d59;
     --control-bg: #23272ae6;
     --label: #f3f1ec;
