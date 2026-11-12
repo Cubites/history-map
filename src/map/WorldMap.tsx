@@ -880,6 +880,10 @@ export default function WorldMap({ data }: { data: StaticData }) {
     [size, s0],
   );
 
+  /** 누른 곳이 나라 이름표의 누름 칸이면 그 나라 id (LabelLayer mode="hit") */
+  const labelEntity = (target: EventTarget | null) =>
+    target instanceof Element ? (target.closest('.label-hit')?.getAttribute('data-entity') ?? null) : null;
+
   const localPoint = (e: React.MouseEvent | React.PointerEvent) => {
     const rect = e.currentTarget.getBoundingClientRect();
     return [e.clientX - rect.left, e.clientY - rect.top] as const;
@@ -915,15 +919,16 @@ export default function WorldMap({ data }: { data: StaticData }) {
           return;
         }
         const [x, y] = localPoint(e);
-        const id = hitTest(x, y);
+        const id = labelEntity(e.target) ?? hitTest(x, y);
         setHovered(id ? { id, x, y } : null);
       }}
       onPointerLeave={() => setHovered(null)}
       onClick={(e) => {
         if (onMapUi(e.target)) return;
         const [x, y] = localPoint(e);
-        // 나라를 누르면 고르고 그 나라로 옮긴다(2026-11-11, selectFocus). 바다·빈 땅을 누르면 고름만 푼다
-        const id = hitTest(x, y);
+        // 나라를 누르면 고르고 그 나라로 옮긴다(2026-11-11, selectFocus). 바다·빈 땅을 누르면 고름만 푼다.
+        // 나라 이름을 눌러도 그 나라를 고른다(2026-11-12, 작은 나라를 고르기 쉽게. 이름이 이웃 나라 땅 위에 있어도 이름의 나라)
+        const id = labelEntity(e.target) ?? hitTest(x, y);
         if (id) selectFocus(id);
         else selectEntity(null);
       }}
@@ -935,6 +940,7 @@ export default function WorldMap({ data }: { data: StaticData }) {
             <WarDetailLayer war={war} theater={theater} snapshot={snapshot} projection={projection} entityColor={(id) => data.entities.get(id)?.color} />
           )}
           {snapshot && war && <FrontArrowLayer war={war} snapshot={snapshot} projection={projection} entityColor={(id) => data.entities.get(id)?.color} />}
+          <LabelLayer mode="hit" territories={labelTerritories} entities={data.entities} selectedId={selectedId} projection={projection} view={view} size={size} />
           {battlePins.length > 0 && <BattlePinLayer pins={battlePins} projection={projection} onOpen={openBattlePin} />}
           <LabelLayer territories={labelTerritories} entities={data.entities} selectedId={selectedId} projection={projection} view={view} size={size} />
           {hoveredEvent && selectedId && (

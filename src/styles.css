@@ -121,6 +121,8 @@ button {
   user-select: none;
 }
 .label-selected { font-size: 13px; font-weight: 800; }
+/* 이름표 누름 칸(2026-11-12): 글 밑에 깐 투명한 칸. 지도 위 다른 단추(전투 표시 등)보다 아래에 있다 */
+.label-hit { fill: transparent; pointer-events: all; cursor: pointer; }
 
 .arrow-line { fill: none; stroke-width: 2.5; stroke-linecap: round; }
 .arrow-in .arrow-line { stroke: var(--arrow-in); }

@@ -11,6 +11,11 @@ interface Props {
   projection: GeoProjection;
   view: View;
   size: Size;
+  /**
+   * 'hit'이면 글 대신 보이는 이름표마다 투명한 누름 칸(data-entity)을 그린다(2026-11-12). 작은 나라도 이름을 눌러 고를 수 있게 한다.
+   * 전투 표시 같은 다른 단추를 가리지 않도록 WorldMap이 그것들보다 아래에 따로 깐다. 글 이름표는 누름을 받지 않는다
+   */
+  mode?: 'text' | 'hit';
 }
 
 /**
@@ -50,7 +55,7 @@ function textWidth(text: string, { size, weight }: { size: number; weight: numbe
  * 이름표끼리 겹치면(2026-11-11) 고른 나라 → 화면에서 큰 영토 순으로 먼저 놓고, 앞서 놓은 이름표와 겹치는 것은 숨긴다.
  * 축소할수록 작은 나라 이름부터 사라지고, 확대해서 서로 떨어지면 다시 보인다. 고른 나라의 이름은 늘 보인다
  */
-export function LabelLayer({ territories, entities, selectedId, projection, view, size }: Props) {
+export function LabelLayer({ territories, entities, selectedId, projection, view, size, mode = 'text' }: Props) {
   const mobile = useMediaQuery('(max-width: 768px)');
   const rule = mobile ? LABEL_RULES.mobile : LABEL_RULES.pc;
 
@@ -77,6 +82,15 @@ export function LabelLayer({ territories, entities, selectedId, projection, view
     return true;
   });
 
+  if (mode === 'hit') {
+    return (
+      <g className="label-hits">
+        {shown.map(({ t, p, half }) => (
+          <rect key={t.key} className="label-hit" data-entity={t.entityId} x={p[0] - half.w} y={p[1] - half.h} width={half.w * 2} height={half.h * 2} />
+        ))}
+      </g>
+    );
+  }
   return (
     <g className="labels">
       {shown.map(({ t, p, text, selected }) => (
