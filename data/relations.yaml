@@ -1566,17 +1566,13 @@
 - { type: successor_of, subject: cape-verde, object: portuguese-cape-verde, from: 1975, to: null } # 1975-07-05 독립
 
 # ── 사하라 이남 F2 GU (기니만·적도, 2026-11-11) ──
-- { type: vassal_of, subject: british-cameroons, object: uk, from: 1922, to: 1960 } # 1922 국제 연맹 위임(1916 점령), 1946-12-06 유엔 신탁 통치, 1961-02-11 주민 투표로 북부 1961-06-01 나이지리아·남부 1961-10-01 카메룬에 합침 — 그해 말 규칙으로 1960까지(위키백과 British Cameroons). 남북이 다른 나라에 합쳐져 successor_of 없음
 - { type: vassal_of, subject: spanish-guinea, object: spain, from: 1778, to: 1967 } # 1778 엘파르도 조약, 1959 적도 지방 두 주·1963 자치, 1968-10-12 적도 기니 독립 — 그해 말 규칙으로 1967까지(위키백과 Spanish Guinea)
 - { type: vassal_of, subject: portuguese-sao-tome, object: portugal, from: 1470, to: 1974 } # 1470 섬 발견, 1975-07-12 독립 — 그해 말 규칙으로 1974까지(위키백과 Portuguese São Tomé and Príncipe)
 - { type: successor_of, subject: equatorial-guinea, object: spanish-guinea, from: 1968, to: null } # 1968-10-12 스페인령 기니가 적도 기니로 독립
 - { type: successor_of, subject: sao-tome, object: portuguese-sao-tome, from: 1975, to: null } # 1975-07-12 포르투갈령 상투메 프린시페가 상투메 프린시페로 독립
 
 # ── 사하라 이남 F2 EA (대호수·동아프리카, 2026-11-11) ──
-- { type: vassal_of, subject: ruanda-urundi, object: belgium, from: 1922, to: 1961 } # 1922-07-20 국제 연맹 B식 위임(1916-05 점령), 1946-12-13 유엔 신탁, 1962-07-01 르완다·부룬디로 독립 — 그해 말 규칙으로 1961까지(위키 en Ruanda-Urundi)
 - { type: vassal_of, subject: british-uganda, object: uk, from: 1894, to: 1961 } # 1894-06-18 보호령 선포, 1962-10-09 독립 — 그해 말 규칙으로 1961까지(위키 en Uganda Protectorate)
-- { type: vassal_of, subject: british-kenya, object: uk, from: 1920, to: 1962 } # 1920-07-23 직할 식민지(해안 띠는 케냐 보호령), 1963-12-12 독립 — 그해 말 규칙으로 1962까지(위키 en Kenya Colony)
-- { type: vassal_of, subject: british-tanganyika, object: uk, from: 1922, to: 1960 } # 1922-07-20 국제 연맹 위임(1916 점령), 1946 유엔 신탁, 1961-12-09 독립 — 그해 말 규칙으로 1960까지(위키 en Tanganyika Territory)
 - { type: vassal_of, subject: sultanate-of-zanzibar, object: uk, from: 1890, to: 1962 } # 1890 헬골란트-잔지바르 조약으로 영국 보호국, 1963-12-10 보호 끝(독립) — 그해 말 규칙으로 1962까지(위키 en Sultanate of Zanzibar, 0단계 기본값 2)
 - { type: successor_of, subject: rwanda, object: ruanda-urundi, from: 1962, to: null } # 1962-07-01 신탁 통치가 끝나 르완다로 독립
 - { type: successor_of, subject: burundi, object: ruanda-urundi, from: 1962, to: null } # 1962-07-01 신탁 통치가 끝나 부룬디 왕국으로 독립
@@ -1593,7 +1589,6 @@
 - { type: vassal_of, subject: nyasaland, object: uk, from: 1907, to: 1963 } # 1907-07-06 영국령 중앙아프리카 보호령이 니아살랜드로, 1964-07-06 말라위 독립 — 그해 말 규칙으로 1963까지(위키 en Nyasaland)
 - { type: vassal_of, subject: portuguese-mozambique, object: portugal, from: 1498, to: 1974 } # 1498 바스쿠 다가마 도착 뒤 해안 거점, 1975-06-25 독립 — 그해 말 규칙으로 1974까지(위키 en Portuguese Mozambique·Lusaka Accord)
 - { type: vassal_of, subject: british-mauritius, object: uk, from: 1810, to: 1967 } # 1810-12-03 프랑스 식민지 항복(1814-05-30 파리 조약), 1968-03-12 독립 — 그해 말 규칙으로 1967까지(위키 en British Mauritius)
-- { type: vassal_of, subject: french-comoros, object: france, from: 1912, to: 1974 } # 1912 마지막 술탄 퇴위·식민 행정(1886 보호 조약·1908 마다가스카르 식민지에 붙음), 1975-07-06 독립 선언 — 그해 말 규칙으로 1974까지(위키 en History of the Comoros)
 - { type: successor_of, subject: zambia, object: northern-rhodesia, from: 1964, to: null } # 1964-10-24 보호령이 잠비아로 독립
 - { type: successor_of, subject: malawi, object: nyasaland, from: 1964, to: null } # 1964-07-06 보호령이 말라위로 독립
 - { type: successor_of, subject: mozambique, object: portuguese-mozambique, from: 1975, to: null } # 1975-06-25 루사카 협정(1974-09-07)에 따라 모잠비크로 독립
@@ -1622,12 +1617,9 @@
 
 # ── 사하라 이남 F3 GW (기니만 서쪽·사헬 가운데, 2026-11-12) ──
 - { type: vassal_of, subject: british-gold-coast, object: uk, from: 1874, to: 1956 } # 1874-07-24 해안 직할 식민지, 1901 아샨티 합병·북부 준주 보호령, 1957-03-06 가나 독립 — 그해 말 규칙으로 1956까지(위키백과 Gold Coast (British colony))
-- { type: vassal_of, subject: british-togoland, object: uk, from: 1922, to: 1956 } # 1922-07-20 국제 연맹 위임(1914 점령), 1946-12-13 유엔 신탁 통치, 1956-05-09 주민 투표, 1957-03-06 가나에 합침 — 그해 말 규칙으로 1956까지(위키백과 British Togoland). 다른 나라 일부로 합쳐져 successor_of 없음
 - { type: vassal_of, subject: french-ivory-coast, object: france, from: 1893, to: 1959 } # 1893-03-10 식민지, 1946 프랑스 연합 해외 영토, 1958-12-04 자치 공화국, 1960-08 독립 — 그해 말 규칙으로 1959까지(위키백과 French West Africa)
-- { type: vassal_of, subject: french-togoland, object: france, from: 1922, to: 1959 } # 1922-07-20 국제 연맹 위임(1914 점령), 1946-12-13 유엔 신탁 통치, 1956 자치 공화국, 1960-04-27 독립 — 그해 말 규칙으로 1959까지(위키백과 French Togoland)
 - { type: vassal_of, subject: french-dahomey, object: france, from: 1894, to: 1959 } # 1894 식민지, 1904 프랑스령 서아프리카, 1958-12-04 자치 공화국, 1960-08-01 독립 — 그해 말 규칙으로 1959까지(위키백과 French West Africa)
 - { type: vassal_of, subject: french-upper-volta, object: france, from: 1919, to: 1959 } # 1919-03-01 식민지, 1932-09-05 폐지·1947-09-04 복원, 1958-12-11 자치 공화국, 1960-08-05 독립 — 그해 말 규칙으로 1959까지(위키백과 French Upper Volta)
-- { type: vassal_of, subject: french-niger, object: france, from: 1922, to: 1959 } # 1922 식민지(1900 군사 영토), 1958-12-19 자치 공화국, 1960-08-03 독립 — 그해 말 규칙으로 1959까지(위키백과 Colony of Niger)
 - { type: successor_of, subject: ghana, object: british-gold-coast, from: 1957, to: null } # 1957-03-06 영국령 골드코스트가 가나로 독립(영국령 토골란드는 그 일부로 합쳐짐 — 줄 없음)
 - { type: successor_of, subject: ivory-coast, object: french-ivory-coast, from: 1960, to: null } # 1960-08 프랑스령 코트디부아르가 코트디부아르로 독립
 - { type: successor_of, subject: togo, object: french-togoland, from: 1960, to: null } # 1960-04-27 프랑스령 토골란드가 토고로 독립
@@ -1637,8 +1629,6 @@
 
 # ── 사하라 이남 F3 CE (나이지리아·카메룬·중앙아프리카, 2026-11-12) ──
 - { type: vassal_of, subject: british-nigeria, object: uk, from: 1914, to: 1959 } # 1914-01-01 남·북 나이지리아 보호령을 합친 식민지 및 보호령, 1954-10-01 연방, 1960-10-01 독립 — 그해 말 규칙으로 1959까지(위키 en Colonial Nigeria)
-- { type: vassal_of, subject: french-cameroons, object: france, from: 1922, to: 1959 } # 1922 국제 연맹 위임(1916 점령·1919 분할), 1946 유엔 신탁 통치, 1957 신탁 자치국, 1960-01-01 독립 — 그해 말 규칙으로 1959까지(위키 en French Cameroon)
-- { type: vassal_of, subject: french-chad, object: france, from: 1920, to: 1959 } # 1900 군사 영토, 1920 민정 식민지(프랑스령 적도 아프리카), 1958-11-28 자치 공화국, 1960-08-11 독립 — 그해 말 규칙으로 1959까지(위키 en French Chad)
 - { type: vassal_of, subject: french-ubangi-shari, object: france, from: 1903, to: 1959 } # 1903-12-29 오트우방기·오트샤리를 묶어 성립, 1958-12-01 중앙아프리카 공화국(자치), 1960-08-13 독립 — 그해 말 규칙으로 1959까지(위키 en Ubangi-Shari)
 - { type: vassal_of, subject: french-gabon, object: france, from: 1906, to: 1959 } # 1906 프랑스령 콩고가 나뉘어 가봉 식민지, 1946 해외 영토, 1958-11-28 자치 공화국, 1960-08-17 독립 — 그해 말 규칙으로 1959까지(위키 fr Colonie du Gabon)
 - { type: vassal_of, subject: french-middle-congo, object: france, from: 1906, to: 1959 } # 1906 프랑스령 콩고가 나뉘어 중앙콩고 식민지, 1958-11-28 콩고 공화국(자치), 1960-08-15 독립 — 그해 말 규칙으로 1959까지(위키 fr Moyen-Congo·en French Congo)
@@ -1668,3 +1658,62 @@
 
 # ── 사하라 이남 F3 SF (남부, 2026-11-12) ──
 - { type: vassal_of, subject: rhodesia, object: uk, from: 1923, to: 1964 } # 1923-10-01 영국 책임 자치 식민지 남로디지아(1953-08-01~1963 로디지아 니아살랜드 연방 구성 단위 — 연방은 관계 줄 없음, 결정 3), 1964-10 스스로 로디지아라 부름, 1965-11-11 일방적 독립 선언 — 그해 말 규칙으로 1964까지(1965~ 관계 없음 — 결정 4, 위키 en Southern Rhodesia). from은 항목 from 1923(F3 기본값 2)
+
+# ── 사하라 이남 F4 WA (서아프리카 대서양 쪽·서사헬, 2026-11-12) ──
+
+# ── 사하라 이남 F4 GW (기니만 서쪽·사헬 가운데, 2026-11-12) ──
+- { type: vassal_of, subject: german-togoland, object: german-empire, from: 1884, to: 1917 } # 1884-07-05 나흐티갈 보호 조약, 독일 제국 보호령 — 제국이 1918-11 무너져 1917까지(위키백과 Togoland·de Deutsch-Togo, 결정 M-F4-6 ㉮)
+- { type: vassal_of, subject: german-togoland, object: weimar-republic, from: 1918, to: 1919 } # 1918-11 제국이 공화국으로 바뀐 뒤 법적 주인은 바이마르 공화국, 1919-06-28 베르사유 조약 서명·1920-01-10 발효로 독일 지배 끝 — 그해 말 규칙으로 1919까지(결정 M-F4-6 ㉮)
+- { type: occupied_by, subject: german-togoland, object: uk, from: 1914, to: 1919 } # 1914-08-26 독일군 항복, 1916-12-27 임시 분할 — 서쪽 영국·동쪽 프랑스, 1920 위임으로 바뀌어 1919까지(위키백과 Togoland, 결정 Q1 — 점령 구역은 따로 칠하지 않음)
+- { type: occupied_by, subject: german-togoland, object: france, from: 1914, to: 1919 } # 1914-08-26 독일군 항복, 1916-12-27 임시 분할 — 서쪽 영국·동쪽 프랑스, 1920 위임으로 바뀌어 1919까지(위키백과 Togoland·French Togoland, 결정 Q1)
+- { type: vassal_of, subject: british-togoland, object: uk, from: 1920, to: 1956 } # 1920-01-10 베르사유 발효, 1922-07-20 국제 연맹 확정(1914 점령), 1946-12-13 유엔 신탁 통치, 1956-05-09 주민 투표, 1957-03-06 가나에 합침 — 그해 말 규칙으로 1956까지(위키백과 British Togoland, 사하라 이남 F4 기본값 2). 다른 나라 일부로 합쳐져 successor_of 없음
+- { type: vassal_of, subject: french-togoland, object: france, from: 1920, to: 1959 } # 1920-01-10 베르사유 발효, 1922-07-20 국제 연맹 확정(1914 점령), 1946-12-13 유엔 신탁 통치, 1956 자치 공화국, 1960-04-27 독립 — 그해 말 규칙으로 1959까지(위키백과 French Togoland, 사하라 이남 F4 기본값 2)
+- { type: vassal_of, subject: french-niger, object: france, from: 1900, to: 1959 } # 1900-07-23 진데르 군사 영토, 1910-06-22 니제르 군사 영토, 1922-10-13 식민지, 1958-12-19 자치 공화국, 1960-08-03 독립 — 그해 말 규칙으로 1959까지(위키백과 Colony of Niger, 사하라 이남 F4 기본값 8)
+
+# ── 사하라 이남 F4 CE-N (나이지리아·카메룬·기니만 섬, 2026-11-12) ──
+- { type: vassal_of, subject: german-kamerun, object: german-empire, from: 1884, to: 1917 } # 1884-07-12 두알라 족장들과 보호 조약(위키 en Kamerun — 08-17 시작 설도 있음), 1911-11-04 독일·프랑스 협정으로 노이카메룬. 독일 제국 항목이 1918에 끝나 1917까지(M-F4-6)
+- { type: vassal_of, subject: german-kamerun, object: weimar-republic, from: 1918, to: 1919 } # 1918-11 독일 혁명 뒤 바이마르 공화국이 권리를 이음, 1919-06-28 베르사유 조약 서명·1920-01-10 발효로 권리를 잃음 — 그해 말 규칙으로 1919까지(M-F4-6)
+- { type: occupied_by, subject: german-kamerun, object: uk, from: 1916, to: 1919 } # 1914-09-27 두알라 함락, 1916-02-18 모라 항복으로 점령이 끝남. 1916-03 피코 임시선으로 서쪽 약 1/5을 영국이 맡음(1919-07-10 밀너-시몽 선 선언) — 1920-01-10 베르사유 발효로 위임 통치(위키 en Kamerun campaign, Q1)
+- { type: occupied_by, subject: german-kamerun, object: france, from: 1916, to: 1919 } # 1916-02 점령이 끝나 동쪽 약 4/5와 노이카메룬을 프랑스가 맡음 — 1920-01-10 베르사유 발효로 위임 통치(위키 en Kamerun campaign, Q1)
+- { type: vassal_of, subject: northern-nigeria-protectorate, object: uk, from: 1900, to: 1913 } # 1900-01-01 왕립 니제르 회사 특허 회수로 왕실 보호령, 1914-01-01 남나이지리아와 합침 — 그해 말 규칙으로 1913까지(위키 en Northern Nigeria Protectorate)
+- { type: vassal_of, subject: southern-nigeria-protectorate, object: uk, from: 1900, to: 1913 } # 1900-01-01 니제르 해안 보호령 + 왕립 니제르 회사 남쪽 땅, 1906-05-01 라고스 식민지 합침, 1914-01-01 북나이지리아와 합침 — 그해 말 규칙으로 1913까지(위키 en Southern Nigeria Protectorate)
+- { type: successor_of, subject: british-nigeria, object: northern-nigeria-protectorate, from: 1914, to: null } # 1914-01-01 남·북 보호령을 합쳐 나이지리아 식민지 및 보호령(북부 지방)
+- { type: successor_of, subject: british-nigeria, object: southern-nigeria-protectorate, from: 1914, to: null } # 1914-01-01 남·북 보호령을 합쳐 나이지리아 식민지 및 보호령(남부 지방)
+- { type: vassal_of, subject: british-cameroons, object: uk, from: 1920, to: 1960 } # 1920-01-10 베르사유 발효로 영국 위임(1916 점령), 1922-07-20 국제 연맹 확정, 1946-12-06 유엔 신탁 통치, 1961-02-11 주민 투표로 북부 1961-06-01 나이지리아·남부 1961-10-01 카메룬에 합침 — 그해 말 규칙으로 1960까지(위키백과 British Cameroons, 기본값 2). 남북이 다른 나라에 합쳐져 successor_of 없음
+- { type: vassal_of, subject: french-cameroons, object: france, from: 1920, to: 1959 } # 1920-01-10 베르사유 발효로 프랑스 위임(1916 점령·1919 분할), 1922-07-20 국제 연맹 확정, 1946 유엔 신탁 통치, 1957 신탁 자치국, 1960-01-01 독립 — 그해 말 규칙으로 1959까지(위키 en French Cameroon, 기본값 2)
+
+# ── 사하라 이남 F4 CE-E (적도 아프리카·차드, 2026-11-12) ──
+- { type: vassal_of, subject: french-chad, object: france, from: 1900, to: 1959 } # 1900-09-05 차드 군사 영토, 1906 우방기샤리-차드에 속함, 1910 프랑스령 적도 아프리카, 1920 민정 식민지, 1958-11-28 자치 공화국, 1960-08-11 독립 — 그해 말 규칙으로 1959까지(위키 en French Chad)
+
+# ── 사하라 이남 F4 H1 (소말리아 쪽, 2026-11-12) ──
+- { type: vassal_of, subject: italian-somaliland, object: italy, from: 1889, to: 1940 } # 1889 호비오·마제르테인 보호 조약, 1905 베나디르 직할 식민지(위키 en Italian Somaliland), 1941-02-26 영국 점령 — 그해 말 규칙으로 1940까지
+- { type: vassal_of, subject: majeerteen-sultanate, object: italy, from: 1889, to: 1926 } # 1889-04-07 이탈리아 보호 조약(위키 en Majeerteen Sultanate), 1925~1927 말 정복으로 직할(M-F4-7) — 칠한 마지막 해 1926
+- { type: vassal_of, subject: sultanate-of-hobyo, object: italy, from: 1889, to: 1926 } # 1889-02-08 이탈리아 보호 조약(위키 en Sultanate of Hobyo), 1925 정복·1927 직할(M-F4-7) — 칠한 마지막 해 1926
+- { type: successor_of, subject: somalia-british-admin, object: italian-somaliland, from: 1941, to: null } # 1941-02-26 영국군 점령으로 이탈리아령 소말리아에서 영국 군정으로(위키 en Italian Somaliland)
+
+# ── 사하라 이남 F4 H2 (에티오피아·나일, 2026-11-12) ──
+- { type: vassal_of, subject: italian-eritrea, object: italy, from: 1890, to: 1940 } # 1890-01-01 칙령으로 식민지(위키 en Italian Eritrea), 1941-04-01 영국군 아스마라 함락 — 그해 말 규칙으로 1940까지(기본값 17)
+- { type: occupied_by, subject: ethiopia, object: italy, from: 1936, to: 1940 } # 1936-05-05 아디스아바바 함락, 1941-05-05 황제 복귀 — 결정 6(영토 그대로 + 점령, 그해 말 규칙으로 1940까지 — 기본값 18)
+- { type: successor_of, subject: eritrea-british-admin, object: italian-eritrea, from: 1941, to: null } # 1941-04-01 아스마라 함락 뒤 이탈리아 식민지에서 영국 군정으로
+
+# ── 사하라 이남 F4 E1 (대호수·동, 2026-11-12) ──
+- { type: vassal_of, subject: german-east-africa, object: german-empire, from: 1885, to: 1917 } # 1885-02-27 독일 동아프리카 회사 칙허장, 1891 제국 직할 식민지 — 제국이 1918-11 무너져 1917까지(위키백과 German East Africa, 결정 M-F4-6 ㉮)
+- { type: vassal_of, subject: german-east-africa, object: weimar-republic, from: 1918, to: 1919 } # 1918-11 제국이 공화국으로 바뀐 뒤 법적 주인은 바이마르 공화국, 1919-06-28 베르사유 조약 서명·1920-01-10 발효로 독일 지배 끝 — 그해 말 규칙으로 1919까지(결정 M-F4-6 ㉮)
+- { type: occupied_by, subject: german-east-africa, object: uk, from: 1916, to: 1919 } # 1916 영국군이 본토 대부분을 차지(다르에스살람 1916-09), 1919-05-30 영국·벨기에 협정 — 1920 위임으로 바뀌어 1919까지(위키백과 German East Africa·East African campaign, 결정 Q1 — 점령 구역은 따로 칠하지 않음)
+- { type: occupied_by, subject: german-east-africa, object: belgium, from: 1916, to: 1919 } # 키갈리 1916-05-06·타보라 1916-09-19, 1919-05-30 영국·벨기에 협정 — 르완다·부룬디는 벨기에 점령, 1920 위임으로 바뀌어 1919까지(위키백과 German East Africa·Ruanda-Urundi, 결정 Q1)
+- { type: vassal_of, subject: ruanda-urundi, object: belgium, from: 1920, to: 1961 } # 1920-01-10 베르사유 발효, 1922-07-20 국제 연맹 확정(1916-05 점령), 1946-12-13 유엔 신탁, 1962-07-01 르완다·부룬디로 독립 — 그해 말 규칙으로 1961까지(위키 en Ruanda-Urundi, 사하라 이남 F4 기본값 2)
+- { type: vassal_of, subject: british-kenya, object: uk, from: 1895, to: 1962 } # 1895-07-01 동아프리카 보호령 선포(위키 en East Africa Protectorate), 1920-07-23 직할 식민지(해안 띠는 케냐 보호령), 1963-12-12 독립 — 그해 말 규칙으로 1962까지(위키 en Kenya Colony, 사하라 이남 F4 기본값 30)
+- { type: vassal_of, subject: british-tanganyika, object: uk, from: 1920, to: 1960 } # 1920-01-10 베르사유 발효, 1922-07-20 국제 연맹 확정(1916 점령), 1946 유엔 신탁, 1961-12-09 독립 — 그해 말 규칙으로 1960까지(위키 en Tanganyika Territory, 사하라 이남 F4 기본값 2). 독일령 동아프리카가 둘로 나뉘어 successor_of 없음(P2)
+
+# ── 사하라 이남 F4 S1 (남쪽, 2026-11-12) ──
+- { type: vassal_of, subject: german-south-west-africa, object: german-empire, from: 1884, to: 1917 } # 1884-04-24 뤼데리츠 땅을 독일 제국 보호 아래 둠·1884-08-07 국기 게양, 1890 직할 식민지 — 제국이 1918-11 무너져 1917까지(위키백과 German South West Africa, 결정 M-F4-6 ㉮)
+- { type: vassal_of, subject: german-south-west-africa, object: weimar-republic, from: 1918, to: 1919 } # 1918-11 제국이 공화국으로 바뀐 뒤 법적 주인은 바이마르 공화국, 1919-06-28 베르사유 조약 서명·1920-01-10 발효로 독일 지배 끝 — 그해 말 규칙으로 1919까지(결정 M-F4-6 ㉮)
+- { type: occupied_by, subject: german-south-west-africa, object: south-africa, from: 1915, to: 1919 } # 1915-07-09 코라브에서 독일 수비대 항복, 남아프리카 연방 군정, 1920-01-10 베르사유 발효로 위임 통치로 바뀌어 1919까지(위키백과 German South West Africa, 결정 Q1 — 점령 지역은 따로 칠하지 않음)
+- { type: successor_of, subject: south-west-africa, object: german-south-west-africa, from: 1920, to: null } # 1920-01-10 베르사유 발효, 1920-12-17 국제 연맹이 남아프리카 연방에 C식 위임 — 같은 땅의 다음 단위(COMMON P2)
+
+# ── 사하라 이남 F4 S2 (로디지아·인도양, 2026-11-12) ──
+- { type: vassal_of, subject: french-comoros, object: france, from: 1886, to: 1974 } # 1886 세 섬 술탄과 보호 조약(1892 마요트 총독 아래 주재관, 1908-04-09 마다가스카르 식민지에 붙음, 1912-07-25 병합 법), 1975-07-06 독립 선언 — 그해 말 규칙으로 1974까지(위키 en·fr History of the Comoros, F4 창구 ③ R-Q1)
+- { type: vassal_of, subject: bsac-southern-rhodesia, object: uk, from: 1890, to: 1922 } # 1889-12-20 왕실 특허를 받은 영국 남아프리카 회사가 1890-09-13 개척대로 다스리기 시작, 1923-09-12 영국 병합·10-01 책임 자치 식민지 — 그해 말 규칙으로 1922까지(위키 en Company rule in Rhodesia, 선례 north-borneo·company-india)
+- { type: vassal_of, subject: bsac-northern-rhodesia, object: uk, from: 1900, to: 1923 } # 1899 북서·1900 북동 로디지아 칙령, 1911 합침, 1924-04-01 영국 보호령 — 그해 말 규칙으로 1923까지(위키 en Company rule in Rhodesia)
+- { type: successor_of, subject: rhodesia, object: bsac-southern-rhodesia, from: 1923, to: null } # 1923-10-01 회사령이 같은 땅의 영국 책임 자치 식민지 남로디지아로(1922-10-27 주민 투표)
+- { type: successor_of, subject: northern-rhodesia, object: bsac-northern-rhodesia, from: 1924, to: null } # 1924-04-01 영국 정부가 회사에게서 넘겨받아 보호령(1923-09-29 협정)

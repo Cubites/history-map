@@ -19,7 +19,7 @@
 //   프랑스령 소말릴란드→프랑스령 아파르족 및 이사족 지역 1967·콩고 인민 공화국 1970·자이르 1971)는 새 버전이 아니다 — 항목 글로(기본값 11·21).
 // 1960 앞 버전: 이 시대 파일의 첫 해는 F2_START(1960)다. 1960 앞에 성립한 나라·식민지도 이 파일의 첫 버전은 1960부터이고, 1945~1959는 앞 시대 파일
 //   postwar.mjs(F3)가 같은 id로 앞을 이음(1959 말 모양 = 이 파일의 1960 모양 — 식민지 18이 1960에 이 파일의 독립국으로 바뀌는 결정 점프 말고). 빈 땅 검사 구역은 이 파일이 1960~1974,
-//   postwar.mjs가 1945~1959(아래 gapZones). 1944 이하에는 이 권역 땅이 비는 것이 정상이다.
+//   postwar.mjs가 1945~1959, colonial.mjs(F4)가 1910~1944(아래 gapZones). 1909 이하에는 이 권역 땅이 비는 것이 정상이다.
 // 시대 경계 맞물림: 앞 시대 파일 postwar.mjs(F3)의 끝 F3_END = 1960 = 이 파일의 F2_START(그 파일이 손으로 맞춘 확인 줄). 뒤 시대 파일 modern.mjs(F1)의 첫 해 F1_START = 1975 = 이 파일의 F2_END(미포함). 이 파일 버전의 끝은 모두 F2_END 이하이고(끝 없음 null 금지),
 //   1975에 이어지는 나라(F1 항목 44 + mauritania)는 joinEras가 F1 버전 앞에 붙인다. 1974 말 모양은 F1의 1975 모양과 같아야 한다(결정 점프 — 포르투갈령 넷·프랑스령 코모로가
 //   1975에 F1 angola·mozambique·cape-verde·sao-tome·comoros로 바뀜, 도형 같음 — 말고). 권역 파일의 joinEras 목록은 [postwarEra, decolonizationEra, modernEra](과거가 앞 — F3 뼈대 2026-11-12).
@@ -373,7 +373,7 @@ const voids = [...WA_voids(), ...GU_voids(), ...EA_voids(), ...SH_voids(), ...SE
 if (voids.some(([f, t]) => f < F2_START || t === null || t > F2_END)) throw new Error(`sub-saharan-africa decolonization: 비운 땅의 기간은 ${F2_START}~${F2_END} 안이어야 함(끝 없음 null 금지 — 1975~는 modern.mjs 몫)`);
 
 // 빈 땅 검사 구역: 권역 바깥선(조각 779개)에서 그해 비운 땅(voids)을 뺀 곳 — 이 권역 나라 땅을 합쳐 빈 곳이 없어야 한다.
-// F2_START(1960)~F2_END(1975, 미포함)만 만든다(1945~1959는 postwar.mjs 구역 '사하라 이남 전후 …'가, 1975~는 modern.mjs 구역 '사하라 이남 현대 …'가 이음 — 1944 이하에는 이 권역 구역이 없음).
+// F2_START(1960)~F2_END(1975, 미포함)만 만든다(1945~1959는 postwar.mjs 구역 '사하라 이남 전후 …'가, 1975~는 modern.mjs 구역 '사하라 이남 현대 …'가 이음, 1910~1944는 colonial.mjs 구역 '사하라 이남 식민 …' — 1909 이하에는 이 권역 구역이 없음).
 // 비운 땅이 바뀌는 해마다 구역 하나, 마지막 구역의 끝은 F2_END. 이름 '사하라 이남 탈식민 <from>~<to-1>'(F1 '사하라 이남 현대 …'와 겹치지 않음).
 // 이 권역 나라가 하나도 없는 기간(빈 틀)은 구역을 만들지 않는다(칸 하나만 채운 사본에서는 다른 칸 땅이 빈 땅으로 보고되는 것이 정상. gaps는 합치기 사본에서만 공식으로 돌린다)
 const ownedIn = (from, to) => Object.values(joined.segments).some((segs) => segs.some(([f, t]) => f < to && from < t));

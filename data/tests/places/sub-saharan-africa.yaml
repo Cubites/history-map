@@ -1026,3 +1026,756 @@
   expect: south-west-africa
   url: https://en.wikipedia.org/wiki/South_West_Africa
   from: 사하라 이남 F3 SF 결과노트
+
+# ── 사하라 이남 F4 WA (서아프리카 대서양 쪽·서사헬, 2026-11-12) ──
+- name: 몬로비아
+  at: [-10.8, 6.3]
+  year: 1910
+  expect: liberia
+  url: https://en.wikipedia.org/wiki/Monrovia
+  from: 사하라 이남 F4 WA 결과노트
+- name: 프리타운
+  at: [-13.23, 8.48]
+  year: 1910
+  expect: british-sierra-leone
+  url: https://en.wikipedia.org/wiki/Freetown
+  from: 사하라 이남 F4 WA 결과노트
+- name: 반줄
+  at: [-16.58, 13.45]
+  year: 1910
+  expect: british-gambia
+  url: https://en.wikipedia.org/wiki/Banjul
+  from: 사하라 이남 F4 WA 결과노트
+- name: 비사우
+  at: [-15.6, 11.86]
+  year: 1910
+  expect: portuguese-guinea
+  url: https://en.wikipedia.org/wiki/Bissau
+  from: 사하라 이남 F4 WA 결과노트
+- name: 프라이아
+  at: [-23.51, 14.93]
+  year: 1910
+  expect: portuguese-cape-verde
+  url: https://en.wikipedia.org/wiki/Praia
+  from: 사하라 이남 F4 WA 결과노트
+- name: 다카르
+  at: [-17.44, 14.69]
+  year: 1910
+  expect: french-senegal
+  url: https://en.wikipedia.org/wiki/Dakar
+  from: 사하라 이남 F4 WA 결과노트
+- name: 코나크리
+  at: [-13.68, 9.64]
+  year: 1910
+  expect: french-guinea
+  url: https://en.wikipedia.org/wiki/Conakry
+  from: 사하라 이남 F4 WA 결과노트
+- name: 누악쇼트
+  at: [-15.98, 18.09]
+  year: 1910
+  expect: french-mauritania
+  url: https://en.wikipedia.org/wiki/Nouakchott
+  from: 사하라 이남 F4 WA 결과노트
+- name: 바마코
+  at: [-8, 12.64]
+  year: 1910
+  expect: french-sudan
+  url: https://en.wikipedia.org/wiki/Bamako
+  from: 사하라 이남 F4 WA 결과노트
+- name: 몬로비아
+  at: [-10.8, 6.3]
+  year: 1944
+  expect: liberia
+  url: https://en.wikipedia.org/wiki/Monrovia
+  from: 사하라 이남 F4 WA 결과노트
+- name: 프리타운
+  at: [-13.23, 8.48]
+  year: 1944
+  expect: british-sierra-leone
+  url: https://en.wikipedia.org/wiki/Freetown
+  from: 사하라 이남 F4 WA 결과노트
+- name: 반줄
+  at: [-16.58, 13.45]
+  year: 1944
+  expect: british-gambia
+  url: https://en.wikipedia.org/wiki/Banjul
+  from: 사하라 이남 F4 WA 결과노트
+- name: 비사우
+  at: [-15.6, 11.86]
+  year: 1944
+  expect: portuguese-guinea
+  url: https://en.wikipedia.org/wiki/Bissau
+  from: 사하라 이남 F4 WA 결과노트
+- name: 프라이아
+  at: [-23.51, 14.93]
+  year: 1944
+  expect: portuguese-cape-verde
+  url: https://en.wikipedia.org/wiki/Praia
+  from: 사하라 이남 F4 WA 결과노트
+- name: 다카르
+  at: [-17.44, 14.69]
+  year: 1944
+  expect: french-senegal
+  url: https://en.wikipedia.org/wiki/Dakar
+  from: 사하라 이남 F4 WA 결과노트
+- name: 코나크리
+  at: [-13.68, 9.64]
+  year: 1944
+  expect: french-guinea
+  url: https://en.wikipedia.org/wiki/Conakry
+  from: 사하라 이남 F4 WA 결과노트
+- name: 누악쇼트
+  at: [-15.98, 18.09]
+  year: 1944
+  expect: french-mauritania
+  url: https://en.wikipedia.org/wiki/Nouakchott
+  from: 사하라 이남 F4 WA 결과노트
+- name: 바마코
+  at: [-8, 12.64]
+  year: 1944
+  expect: french-sudan
+  url: https://en.wikipedia.org/wiki/Bamako
+  from: 사하라 이남 F4 WA 결과노트
+- name: 가오
+  at: [-0.04, 16.27]
+  year: 1910
+  expect: french-sudan
+  url: https://en.wikipedia.org/wiki/Gao
+  from: 사하라 이남 F4 WA 결과노트
+  note: 1910년 6월~1911년 6월 가오 서클은 니제르 군사 영토 소속이었으나 한 해라 프랑스령 수단 색 그대로(알려진 근사)
+
+# ── 사하라 이남 F4 GW (기니만 서쪽·사헬 가운데, 2026-11-12) ──
+- name: 로메
+  at: [1.22, 6.13]
+  year: 1910
+  expect: german-togoland
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Lom%C3%A9
+  from: 사하라 이남 F4 GW 결과노트
+  note: 1897~1914 독일 보호령 토고 수도
+- name: 로메
+  at: [1.22, 6.13]
+  year: 1919
+  expect: german-togoland
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Togoland
+  from: 사하라 이남 F4 GW 결과노트
+  note: 1914-08 프랑스 점령 — 결정 Q1로 1919까지 독일령 토고 색(occupied_by)
+- name: 로메
+  at: [1.22, 6.13]
+  year: 1920
+  expect: french-togoland
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/French_Togoland
+  from: 사하라 이남 F4 GW 결과노트
+  note: 1920-01-10 베르사유 발효로 프랑스 위임(기본값 2)
+- name: 호
+  at: [0.47, 6.6]
+  year: 1919
+  expect: german-togoland
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Ho,_Ghana
+  from: 사하라 이남 F4 GW 결과노트
+  note: 토골란드 칼선 안 — 1914 영국 점령, 1919까지 독일령 토고 색
+- name: 호
+  at: [0.47, 6.6]
+  year: 1920
+  expect: british-togoland
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/British_Togoland
+  from: 사하라 이남 F4 GW 결과노트
+  note: 1920 영국 위임 — 영국령 토골란드 중심
+- name: 와가두구
+  at: [-1.53, 12.37]
+  year: 1918
+  expect: french-sudan
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Upper_Senegal_and_Niger
+  from: 사하라 이남 F4 GW 결과노트
+  note: 1919 앞은 오트세네갈-니제르(french-sudan 항목)의 와가두구 서클
+- name: 와가두구
+  at: [-1.53, 12.37]
+  year: 1919
+  expect: french-upper-volta
+  region: sub-saharan-africa
+  url: https://fr.wikipedia.org/wiki/Haute-Volta_(colonie)
+  from: 사하라 이남 F4 GW 결과노트
+  note: 1919-03-01 오트볼타 식민지 수도
+- name: 와가두구
+  at: [-1.53, 12.37]
+  year: 1932
+  expect: french-ivory-coast
+  region: sub-saharan-africa
+  url: https://fr.wikipedia.org/wiki/Haute-Volta_(colonie)
+  from: 사하라 이남 F4 GW 결과노트
+  note: 1932-09-05 폐지 — 와가두구 서클은 코트디부아르로(기본값 9)
+- name: 와가두구
+  at: [-1.53, 12.37]
+  year: 1946
+  expect: french-ivory-coast
+  region: sub-saharan-africa
+  url: https://fr.wikipedia.org/wiki/Haute-Volta_(colonie)
+  from: 사하라 이남 F4 GW 결과노트
+  note: 1947-09-04 복원 앞 — F3 1945~1946도 세 몫(칸 예외 ①)
+- name: 와가두구
+  at: [-1.53, 12.37]
+  year: 1947
+  expect: french-upper-volta
+  region: sub-saharan-africa
+  url: https://fr.wikipedia.org/wiki/Haute-Volta_(colonie)
+  from: 사하라 이남 F4 GW 결과노트
+  note: 1947-09-04 옛 경계로 복원
+- name: 보보디울라소
+  at: [-4.29, 11.18]
+  year: 1932
+  expect: french-ivory-coast
+  region: sub-saharan-africa
+  url: https://fr.wikipedia.org/wiki/Haute-Volta_(colonie)
+  from: 사하라 이남 F4 GW 결과노트
+  note: 1932 보보디울라소 서클은 코트디부아르로
+- name: 도리
+  at: [-0.03, 14.03]
+  year: 1932
+  expect: french-niger
+  region: sub-saharan-africa
+  url: https://fr.wikipedia.org/wiki/Haute-Volta_(colonie)
+  from: 사하라 이남 F4 GW 결과노트
+  note: 1932 도리 서클(아리빈다 칸통 뺌)은 니제르로
+- name: 파다응구르마
+  at: [0.35, 12.06]
+  year: 1945
+  expect: french-niger
+  region: sub-saharan-africa
+  url: https://fr.wikipedia.org/wiki/Haute-Volta_(colonie)
+  from: 사하라 이남 F4 GW 결과노트
+  note: 1932~1947 파다응구르마 서클은 니제르 — F3 1945~1946도 같음
+- name: 와이구야
+  at: [-2.42, 13.58]
+  year: 1932
+  expect: french-sudan
+  region: sub-saharan-africa
+  url: https://fr.wikipedia.org/wiki/Haute-Volta_(colonie)
+  from: 사하라 이남 F4 GW 결과노트
+  note: 1932 와이구야 서클은 프랑스령 수단으로
+- name: 니아메
+  at: [2.11, 13.51]
+  year: 1910
+  expect: french-niger
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Colony_of_Niger
+  from: 사하라 이남 F4 GW 결과노트
+  note: 1910-06-22 니제르 군사 영토(1922 식민지·1926 수도)
+
+# ── 사하라 이남 F4 CE-N (나이지리아·카메룬·기니만 섬, 2026-11-12) ──
+- name: 라고스
+  at: [3.38, 6.52]
+  year: 1913
+  expect: southern-nigeria-protectorate
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Southern_Nigeria_Protectorate
+  from: 사하라 이남 F4 CE-N 결과노트
+  note: 1906년부터 남나이지리아 식민지 및 보호령의 행정 중심
+- name: 라고스
+  at: [3.38, 6.52]
+  year: 1914
+  expect: british-nigeria
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Colonial_Nigeria
+  from: 사하라 이남 F4 CE-N 결과노트
+  note: 1914-01-01 남·북 보호령을 합친 나이지리아 식민지 및 보호령의 수도
+- name: 카노
+  at: [8.52, 12.00]
+  year: 1913
+  expect: northern-nigeria-protectorate
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Northern_Nigeria_Protectorate
+  from: 사하라 이남 F4 CE-N 결과노트
+  note: 1903년 영국이 차지한 하우사 에미르국
+- name: 두알라
+  at: [9.70, 4.05]
+  year: 1919
+  expect: german-kamerun
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Kamerun
+  from: 사하라 이남 F4 CE-N 결과노트
+  note: 1914-09 영국·프랑스군이 차지했으나 베르사유 발효 전까지 독일령 색(Q1)
+- name: 두알라
+  at: [9.70, 4.05]
+  year: 1920
+  expect: french-cameroons
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/French_Cameroon
+  from: 사하라 이남 F4 CE-N 결과노트
+  note: 1920-01-10 베르사유 발효로 프랑스 위임 통치령(1922 연맹 확정 — 기본값 2)
+- name: 부에아
+  at: [9.24, 4.16]
+  year: 1919
+  expect: german-kamerun
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Kamerun
+  from: 사하라 이남 F4 CE-N 결과노트
+  note: 1901년부터 독일령 카메룬 총독부 자리
+- name: 부에아
+  at: [9.24, 4.16]
+  year: 1920
+  expect: british-cameroons
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/British_Cameroons
+  from: 사하라 이남 F4 CE-N 결과노트
+  note: 영국령 카메룬 남부의 행정 중심
+- name: 무비
+  at: [13.26, 10.27]
+  year: 1919
+  expect: german-kamerun
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Kamerun
+  from: 사하라 이남 F4 CE-N 결과노트
+  note: 북부 카메룬 띠 안(지금 나이지리아 아다마와주)
+- name: 무비
+  at: [13.26, 10.27]
+  year: 1920
+  expect: british-cameroons
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/British_Cameroons
+  from: 사하라 이남 F4 CE-N 결과노트
+  note: 영국령 카메룬 북부(1961 주민 투표로 나이지리아)
+
+# ── 사하라 이남 F4 CE-E (적도 아프리카·차드, 2026-11-12) ──
+- name: 아베셰
+  at: [20.83, 13.83]
+  year: 1911
+  expect: wadai
+  url: https://en.wikipedia.org/wiki/Wadai_Empire
+  from: 사하라 이남 F4 CE-E 결과노트
+  note: 와다이 술탄국의 도읍(1909 프랑스 점령 뒤에도 1911년까지 술탄국)
+- name: 아베셰
+  at: [20.83, 13.83]
+  year: 1912
+  expect: french-ubangi-shari
+  url: https://en.wikipedia.org/wiki/Wadai_Empire
+  from: 사하라 이남 F4 CE-E 결과노트
+  note: 1912 술탄국이 끝나 우방기샤리-차드가 직접 다스림
+- name: 아베셰
+  at: [20.83, 13.83]
+  year: 1920
+  expect: french-chad
+  url: https://en.wikipedia.org/wiki/French_Chad
+  from: 사하라 이남 F4 CE-E 결과노트
+- name: 은자메나
+  at: [15.04, 12.13]
+  year: 1919
+  expect: french-ubangi-shari
+  url: https://en.wikipedia.org/wiki/French_Chad
+  from: 사하라 이남 F4 CE-E 결과노트
+  note: 옛 이름 포르라미 — 1906~1919 우방기샤리-차드
+- name: 은자메나
+  at: [15.04, 12.13]
+  year: 1920
+  expect: french-chad
+  url: https://en.wikipedia.org/wiki/French_Chad
+  from: 사하라 이남 F4 CE-E 결과노트
+  note: 1920 차드 민정 식민지
+- name: 바르다이
+  at: [16.97, 21.36]
+  year: 1928
+  expect: none
+  url: https://fr.wikipedia.org/wiki/Borkou-Ennedi-Tibesti
+  from: 사하라 이남 F4 CE-E 결과노트
+  note: 티베스티 — 프랑스 장악 앞이라 비움
+- name: 바르다이
+  at: [16.97, 21.36]
+  year: 1929
+  expect: french-niger
+  url: https://fr.wikipedia.org/wiki/Borkou-Ennedi-Tibesti
+  from: 사하라 이남 F4 CE-E 결과노트
+  note: 1929 장악, 니제르 군사 영토의 소구역
+- name: 바르다이
+  at: [16.97, 21.36]
+  year: 1931
+  expect: french-chad
+  url: https://fr.wikipedia.org/wiki/Borkou-Ennedi-Tibesti
+  from: 사하라 이남 F4 CE-E 결과노트
+  note: 1931 차드로
+- name: 파야-라르조
+  at: [19.11, 17.92]
+  year: 1912
+  expect: none
+  url: https://fr.wikipedia.org/wiki/Borkou-Ennedi-Tibesti
+  from: 사하라 이남 F4 CE-E 결과노트
+  note: 보르쿠 — 1913-12-03 프랑스가 차지하기 앞이라 비움
+- name: 파야-라르조
+  at: [19.11, 17.92]
+  year: 1913
+  expect: french-ubangi-shari
+  url: https://fr.wikipedia.org/wiki/Borkou-Ennedi-Tibesti
+  from: 사하라 이남 F4 CE-E 결과노트
+  note: 1913 말 보르쿠 장악
+- name: 베르베라티
+  at: [15.79, 4.26]
+  year: 1910
+  expect: french-ubangi-shari
+  url: https://de.wikipedia.org/wiki/Neukamerun
+  from: 사하라 이남 F4 CE-E 결과노트
+- name: 베르베라티
+  at: [15.79, 4.26]
+  year: 1911
+  expect: german-kamerun
+  url: https://de.wikipedia.org/wiki/Neukamerun
+  from: 사하라 이남 F4 CE-E 결과노트
+  note: 노이카메룬(1911 모로코-콩고 조약)
+- name: 베르베라티
+  at: [15.79, 4.26]
+  year: 1920
+  expect: french-ubangi-shari
+  url: https://de.wikipedia.org/wiki/Neukamerun
+  from: 사하라 이남 F4 CE-E 결과노트
+  note: 1920 베르사유 조약 발효로 반환
+- name: 우에소
+  at: [16.05, 1.62]
+  year: 1915
+  expect: german-kamerun
+  url: https://de.wikipedia.org/wiki/Neukamerun
+  from: 사하라 이남 F4 CE-E 결과노트
+  note: 노이카메룬 운터상가 구역
+- name: 우에소
+  at: [16.05, 1.62]
+  year: 1920
+  expect: french-middle-congo
+  url: https://de.wikipedia.org/wiki/Neukamerun
+  from: 사하라 이남 F4 CE-E 결과노트
+- name: 오옘
+  at: [11.58, 1.60]
+  year: 1915
+  expect: german-kamerun
+  url: https://de.wikipedia.org/wiki/Neukamerun
+  from: 사하라 이남 F4 CE-E 결과노트
+  note: 노이카메룬 볼뢰은템 구역의 중심
+- name: 오옘
+  at: [11.58, 1.60]
+  year: 1920
+  expect: french-gabon
+  url: https://de.wikipedia.org/wiki/Neukamerun
+  from: 사하라 이남 F4 CE-E 결과노트
+- name: 방기
+  at: [18.56, 4.36]
+  year: 1915
+  expect: french-ubangi-shari
+  url: https://de.wikipedia.org/wiki/Neukamerun
+  from: 사하라 이남 F4 CE-E 결과노트
+  note: 노이카메룬 밖(로바예 띠의 동쪽)
+- name: 리브르빌
+  at: [9.45, 0.39]
+  year: 1915
+  expect: french-gabon
+  url: https://de.wikipedia.org/wiki/Neukamerun
+  from: 사하라 이남 F4 CE-E 결과노트
+  note: 노이카메룬 밖
+- name: 임퐁도
+  at: [18.06, 1.62]
+  year: 1915
+  expect: french-middle-congo
+  url: https://de.wikipedia.org/wiki/Neukamerun
+  from: 사하라 이남 F4 CE-E 결과노트
+  note: 노이카메룬 두 띠 사이(우방기강 기슭)
+
+# ── 사하라 이남 F4 H1 (소말리아 쪽, 2026-11-12) ──
+- name: 키스마요
+  at: [42.54, -0.36]
+  year: 1923
+  expect: british-kenya
+  url: https://en.wikipedia.org/wiki/Oltre_Giuba
+  from: 사하라 이남 F4 H1 결과노트
+- name: 키스마요
+  at: [42.54, -0.36]
+  year: 1924
+  expect: italian-somaliland
+  url: https://en.wikipedia.org/wiki/Oltre_Giuba
+  from: 사하라 이남 F4 H1 결과노트
+- name: 보사소
+  at: [49.18, 11.28]
+  year: 1926
+  expect: majeerteen-sultanate
+  url: https://en.wikipedia.org/wiki/Majeerteen_Sultanate
+  from: 사하라 이남 F4 H1 결과노트
+- name: 보사소
+  at: [49.18, 11.28]
+  year: 1927
+  expect: italian-somaliland
+  url: https://en.wikipedia.org/wiki/Majeerteen_Sultanate
+  from: 사하라 이남 F4 H1 결과노트
+- name: 호비오
+  at: [48.52, 5.35]
+  year: 1926
+  expect: sultanate-of-hobyo
+  url: https://en.wikipedia.org/wiki/Sultanate_of_Hobyo
+  from: 사하라 이남 F4 H1 결과노트
+- name: 호비오
+  at: [48.52, 5.35]
+  year: 1927
+  expect: italian-somaliland
+  url: https://en.wikipedia.org/wiki/Sultanate_of_Hobyo
+  from: 사하라 이남 F4 H1 결과노트
+- name: 모가디슈
+  at: [45.34, 2.04]
+  year: 1940
+  expect: italian-somaliland
+  url: https://en.wikipedia.org/wiki/Italian_Somaliland
+  from: 사하라 이남 F4 H1 결과노트
+- name: 모가디슈
+  at: [45.34, 2.04]
+  year: 1941
+  expect: somalia-british-admin
+  url: https://en.wikipedia.org/wiki/Italian_Somaliland
+  from: 사하라 이남 F4 H1 결과노트
+
+# ── 사하라 이남 F4 H2 (에티오피아·나일, 2026-11-12) ──
+- name: 알파시르
+  at: [25.35, 13.63]
+  year: 1915
+  expect: darfur
+  url: https://en.wikipedia.org/wiki/Sultanate_of_Darfur
+  from: 사하라 이남 F4 H2 결과노트
+- name: 알파시르
+  at: [25.35, 13.63]
+  year: 1916
+  expect: anglo-egyptian-sudan
+  url: https://en.wikipedia.org/wiki/List_of_sultans_of_Darfur
+  from: 사하라 이남 F4 H2 결과노트
+- name: 알주나이나
+  at: [22.45, 13.45]
+  year: 1915
+  expect: darfur
+  url: https://en.wikipedia.org/wiki/Sultanate_of_Darfur
+  from: 사하라 이남 F4 H2 결과노트
+- name: 아스마라
+  at: [38.93, 15.32]
+  year: 1940
+  expect: italian-eritrea
+  url: https://en.wikipedia.org/wiki/Italian_Eritrea
+  from: 사하라 이남 F4 H2 결과노트
+- name: 아스마라
+  at: [38.93, 15.32]
+  year: 1941
+  expect: eritrea-british-admin
+  url: https://en.wikipedia.org/wiki/Italian_Eritrea
+  from: 사하라 이남 F4 H2 결과노트
+- name: 아디스아바바
+  at: [38.75, 9.03]
+  year: 1936
+  expect: ethiopia
+  url: https://en.wikipedia.org/wiki/Italian_East_Africa
+  from: 사하라 이남 F4 H2 결과노트
+- name: 아디스아바바
+  at: [38.75, 9.03]
+  year: 1940
+  expect: ethiopia
+  url: https://en.wikipedia.org/wiki/Italian_East_Africa
+  from: 사하라 이남 F4 H2 결과노트
+- name: 주바
+  at: [31.58, 4.85]
+  year: 1910
+  expect: anglo-egyptian-sudan
+  url: https://en.wikipedia.org/wiki/Lado_Enclave
+  from: 사하라 이남 F4 H2 결과노트
+- name: 지부티
+  at: [43.15, 11.59]
+  year: 1941
+  expect: djibouti
+  url: https://en.wikipedia.org/wiki/French_Somaliland
+  from: 사하라 이남 F4 H2 결과노트
+
+# ── 사하라 이남 F4 E1 (대호수·동, 2026-11-12) ──
+- name: 다르에스살람
+  at: [39.28, -6.82]
+  year: 1919
+  expect: german-east-africa
+  url: https://en.wikipedia.org/wiki/German_East_Africa
+  from: 사하라 이남 F4 E1 결과노트
+- name: 다르에스살람
+  at: [39.28, -6.82]
+  year: 1920
+  expect: british-tanganyika
+  url: https://en.wikipedia.org/wiki/Tanganyika_Territory
+  from: 사하라 이남 F4 E1 결과노트
+- name: 키갈리
+  at: [30.06, -1.95]
+  year: 1919
+  expect: german-east-africa
+  url: https://en.wikipedia.org/wiki/German_East_Africa
+  from: 사하라 이남 F4 E1 결과노트
+- name: 키갈리
+  at: [30.06, -1.95]
+  year: 1920
+  expect: ruanda-urundi
+  url: https://en.wikipedia.org/wiki/Ruanda-Urundi
+  from: 사하라 이남 F4 E1 결과노트
+- name: 아루아
+  at: [30.91, 3.02]
+  year: 1913
+  expect: anglo-egyptian-sudan
+  url: https://en.wikipedia.org/wiki/Lado_Enclave
+  from: 사하라 이남 F4 E1 결과노트
+- name: 아루아
+  at: [30.91, 3.02]
+  year: 1914
+  expect: british-uganda
+  url: https://en.wikipedia.org/wiki/Lado_Enclave
+  from: 사하라 이남 F4 E1 결과노트
+- name: 로드와르
+  at: [35.60, 3.12]
+  year: 1925
+  expect: british-uganda
+  url: https://en.wikipedia.org/wiki/Turkana_County
+  from: 사하라 이남 F4 E1 결과노트
+- name: 로드와르
+  at: [35.60, 3.12]
+  year: 1926
+  expect: british-kenya
+  url: https://en.wikipedia.org/wiki/Turkana_County
+  from: 사하라 이남 F4 E1 결과노트
+
+# ── 사하라 이남 F4 S1 (남쪽, 2026-11-12) ──
+- name: 빈트후크
+  at: [17.08, -22.56]
+  year: 1910
+  expect: german-south-west-africa
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/German_South_West_Africa
+  from: 사하라 이남 F4 S1 결과노트
+  note: 1890 직할 식민지 뒤 독일령 남서아프리카 수도
+- name: 빈트후크
+  at: [17.08, -22.56]
+  year: 1919
+  expect: german-south-west-africa
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/German_South_West_Africa
+  from: 사하라 이남 F4 S1 결과노트
+  note: 1915-07-09 코라브 항복 뒤 남아프리카 점령 — 결정 Q1로 1919까지 독일령 색(occupied_by)
+- name: 빈트후크
+  at: [17.08, -22.56]
+  year: 1920
+  expect: south-west-africa
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/South_West_Africa
+  from: 사하라 이남 F4 S1 결과노트
+  note: 1920-01-10 베르사유 발효로 남아프리카 연방 위임(C식)
+- name: 뤼데리츠
+  at: [15.16, -26.65]
+  year: 1915
+  expect: german-south-west-africa
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/German_South_West_Africa
+  from: 사하라 이남 F4 S1 결과노트
+  note: 1884 독일 보호의 첫 땅 — 1914-09 남아프리카군 상륙 뒤에도 1919까지 독일령 색(결정 Q1)
+- name: 카티마물릴로
+  at: [24.27, -17.5]
+  year: 1919
+  expect: german-south-west-africa
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Zambezi_Region
+  from: 사하라 이남 F4 S1 결과노트
+  note: 카프리비 회랑 — 1차 대전 중 영국이 차지해 베추아날란드가 맡았으나 따로 칠하지 않음
+- name: 카티마물릴로
+  at: [24.27, -17.5]
+  year: 1925
+  expect: south-west-africa
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Zambezi_Region
+  from: 사하라 이남 F4 S1 결과노트
+  note: 1929까지 베추아날란드 시정이나 위임 통치령 땅이라 남서아프리카 색
+- name: 프리토리아
+  at: [28.19, -25.75]
+  year: 1910
+  expect: south-africa
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Union_of_South_Africa
+  from: 사하라 이남 F4 S1 결과노트
+  note: 1910-05-31 남아프리카 연방 행정 수도
+- name: 케이프타운
+  at: [18.42, -33.92]
+  year: 1944
+  expect: south-africa
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Union_of_South_Africa
+  from: 사하라 이남 F4 S1 결과노트
+- name: 마페킹
+  at: [25.64, -25.85]
+  year: 1930
+  expect: south-africa
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Bechuanaland_Protectorate
+  from: 사하라 이남 F4 S1 결과노트
+  note: 베추아날란드 행정 중심이나 보호령 밖 남아프리카 연방 땅
+- name: 마세루
+  at: [27.48, -29.31]
+  year: 1910
+  expect: basutoland
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Basutoland
+  from: 사하라 이남 F4 S1 결과노트
+- name: 음바바네
+  at: [31.14, -26.31]
+  year: 1910
+  expect: swaziland-protectorate
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/History_of_Eswatini
+  from: 사하라 이남 F4 S1 결과노트
+- name: 루안다
+  at: [13.23, -8.84]
+  year: 1910
+  expect: portuguese-angola
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Portuguese_Angola
+  from: 사하라 이남 F4 S1 결과노트
+- name: 카빈다
+  at: [12.2, -5.55]
+  year: 1944
+  expect: portuguese-angola
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Cabinda_Province
+  from: 사하라 이남 F4 S1 결과노트
+  note: 앙골라 본토와 떨어진 월경지
+
+# ── 사하라 이남 F4 S2 (로디지아·인도양, 2026-11-12) ──
+- name: 하라레(솔즈베리)
+  at: [31.05, -17.83]
+  year: 1922
+  expect: bsac-southern-rhodesia
+  url: https://en.wikipedia.org/wiki/Company_rule_in_Rhodesia
+  from: 사하라 이남 F4 S2 결과노트
+- name: 하라레(솔즈베리)
+  at: [31.05, -17.83]
+  year: 1923
+  expect: rhodesia
+  url: https://en.wikipedia.org/wiki/Company_rule_in_Rhodesia
+  from: 사하라 이남 F4 S2 결과노트
+- name: 루사카
+  at: [28.28, -15.42]
+  year: 1923
+  expect: bsac-northern-rhodesia
+  url: https://en.wikipedia.org/wiki/Company_rule_in_Rhodesia
+  from: 사하라 이남 F4 S2 결과노트
+- name: 루사카
+  at: [28.28, -15.42]
+  year: 1924
+  expect: northern-rhodesia
+  url: https://en.wikipedia.org/wiki/Company_rule_in_Rhodesia
+  from: 사하라 이남 F4 S2 결과노트
+- name: 모로니
+  at: [43.26, -11.70]
+  year: 1911
+  expect: french-comoros
+  url: https://en.wikipedia.org/wiki/History_of_the_Comoros
+  from: 사하라 이남 F4 S2 결과노트
+- name: 모로니
+  at: [43.26, -11.70]
+  year: 1912
+  expect: french-comoros
+  url: https://en.wikipedia.org/wiki/History_of_the_Comoros
+  from: 사하라 이남 F4 S2 결과노트
+- name: 제임스타운(세인트헬레나)
+  at: [-5.72, -15.92]
+  year: 1930
+  expect: none
+  url: https://en.wikipedia.org/wiki/Saint_Helena
+  from: 사하라 이남 F4 S2 결과노트

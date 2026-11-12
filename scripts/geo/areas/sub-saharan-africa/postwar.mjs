@@ -1,6 +1,7 @@
 // sub-saharan-africa 시대 파일 postwar (npm run new:area가 만든 틀, 시대표 하나에 파일 하나: standards.md 1절·9절 7)
 // 시대·범위: 1945~1959: 2차 대전 뒤부터 아프리카의 해 앞까지 (F3)
 // 짝 항목 파일: data/entities/sub-saharan-africa-postwar.yaml (나라 id는 그 파일과 이 파일의 versions가 같아야 한다 — 앞 잇는 F2 항목 22는 sub-saharan-africa-decolonization.yaml, F1 항목 12는 sub-saharan-africa-modern.yaml)
+//   앞 시대 파일 colonial.mjs(F4, 1910~1944)가 같은 id로 앞을 잇는다(이 파일 항목 23·F2 항목 21·F1 항목 9 중 1910~1944에 있는 것 — 짝 항목 파일 sub-saharan-africa-colonial.yaml은 F4 새 항목 14, 사하라 이남 F4 뼈대 2026-11-12)
 // 가져와도 되는 것: lib.mjs, shared.mjs, areas/korea.mjs, areas/inner-asia.mjs, areas/china.mjs, areas/west.mjs, areas/japan.mjs, areas/europe.mjs, areas/middle-east.mjs, areas/south-asia.mjs, areas/central-asia.mjs, areas/southeast-asia.mjs, areas/sub-saharan-africa/의 다른 도우미 모듈. areas/sub-saharan-africa.mjs는 이 파일을 가져오는 쪽이라 가져올 수 없다(순환).
 //   권역 파일 안 도형이 필요하면 그 도형을 areas/sub-saharan-africa/의 도우미 모듈로 옮겨 둘이 함께 가져온다.
 // 생성기에 들어가는 것은 export const era 하나다(칼선 같은 다른 이름은 export해도 되지만 versions·gapZones·source 같은 이름은 안 됨: check:generator). 권역 파일 areas/sub-saharan-africa.mjs가 shared.mjs의 joinEras로 자기 versions·gapZones·voids에 합치고,
@@ -17,11 +18,11 @@
 //   프랑스령 마다가스카르 색 — 기본값 3·11, 관계 줄도 없이 글). 새 버전은 1만 km²(주변 5만 km²) 넘게 바뀔 때만. 이름만 바뀌는 해(1946 프랑스 연합 해외 영토·토고·카메룬 위임 →
 //   신탁 통치·레위니옹 데파르트망·코모로 해외 영토, 1951 포르투갈 해외 주, 1953 로디지아 니아살랜드 연방, 1958 프랑스 공동체 자치 공화국, 1959 말리 연방·스페인령 기니 두 주)는
 //   새 버전이 아니다 — 항목 글로(기본값 9·10·12, 연방은 구성 단위별 항목 — 0단계 결정 3).
-// 1945 앞 버전 없음: 이 시대 파일의 첫 해는 F3_START(1945)다. 1945 앞에 성립한 나라·식민지도 첫 버전은 1945부터이고(F4(1910~1944)가 같은 id로 앞을 이음),
-//   1944 이하에는 이 권역 땅이 비는 것이 정상이다(빈 땅 검사 구역도 1945부터만 — 아래 gapZones, 특별 지시 2).
-// 시대 경계 맞물림: 뒤 시대 파일 decolonization.mjs(F2)의 첫 해 F2_START = 1960 = 이 파일의 F3_END(미포함). 이 파일 버전의 끝은 모두 F3_END 이하이고(끝 없음 null 금지),
+// 1945 앞 버전: 이 시대 파일의 첫 해는 F3_START(1945)다. 1945 앞에 성립한 나라·식민지도 이 파일의 첫 버전은 1945부터이고, 1910~1944는 앞 시대 파일 colonial.mjs(F4)가 같은 id로 앞을 이음
+//   (1944 말 모양 = 이 파일의 1945 모양 — 오트볼타 세 몫은 GW 블록이 1945~1946도 같은 몫으로, F4 기본값 9). 빈 땅 검사 구역은 이 파일이 1945~1959, colonial.mjs가 1910~1944(아래 gapZones). 1909 이하에는 이 권역 땅이 비는 것이 정상이다.
+// 시대 경계 맞물림: 앞 시대 파일 colonial.mjs(F4)의 끝 F4_END = 1945 = 이 파일의 F3_START(그 파일이 손으로 맞춘 확인 줄). 뒤 시대 파일 decolonization.mjs(F2)의 첫 해 F2_START = 1960 = 이 파일의 F3_END(미포함). 이 파일 버전의 끝은 모두 F3_END 이하이고(끝 없음 null 금지),
 //   1960에 이어지는 나라(F2 항목 22·F1 항목 12 — 같은 id)는 joinEras가 F2 버전 앞에 붙인다. 1959 말 모양은 F2의 1960 모양과 같아야 한다(결정 점프 — 식민지 18이 1960에
-//   F2 독립국으로 바뀜, 도형 같음, somalia는 somalia-italian-trust·british-somaliland 두 항목의 합 — 말고). 권역 파일의 joinEras 목록은 [postwarEra, decolonizationEra, modernEra](과거가 앞).
+//   F2 독립국으로 바뀜, 도형 같음, somalia는 somalia-italian-trust·british-somaliland 두 항목의 합 — 말고). 권역 파일의 joinEras 목록은 [colonialEra, postwarEra, decolonizationEra, modernEra](과거가 앞 — F4 뼈대 2026-11-12).
 // 앞 잇는 항목 34: F2 항목 22(sub-saharan-africa-decolonization.yaml)·F1 항목 12(sub-saharan-africa-modern.yaml) — 같은 id, 블록은 그 자리(파일 소유표 — COMMON 5절, 글만 칸이 고침).
 //   항목 from 고침은 rhodesia 1960 → 1923 하나(남로디지아 책임 자치 1923-10-01 — 기본값 2, SF 칸). 짝 항목 파일 밖 id도 주인으로 쓸 수 있다(F2 뼈대 장치 시험 ①, F3 뼈대 장치 시험 ①).
 //   서아시아 mauritania는 늘리지 않는다 — 1945~1959 모리타니는 새 식민지 항목 french-mauritania(기본값 8, middle-east-modern.yaml 블록 바이트 그대로).
@@ -135,7 +136,7 @@ for (const [adm0, line] of WA_OWN) own(idsOf(adm0), line);
 
 // ── F3 GW 기니만 서쪽·사헬 가운데 (최상위 이름 GW_) ──
 // 조각 F3_GW_IDS(코트디부아르 19·가나 10·토고 5·베냉 12·부르키나파소 45·니제르 8 = 99), 구현 F3-GW
-// 새 항목 7: french-ivory-coast·french-togoland·french-dahomey·french-upper-volta(BFA 45 — 1945~1946도 1947 경계로 통째, 기본값 6)·french-niger(1945~1959) · british-gold-coast·british-togoland(1945~1956 GHA를 칼선 1로 가름 — 기본값 4)
+// 새 항목 7: french-ivory-coast·french-togoland·french-dahomey·french-upper-volta(BFA 45 — 1947~ 통째. 1945~1946은 1932 분할 세 몫 french-niger·french-sudan·french-ivory-coast, F4 기본값 9가 F3 기본값 6의 통째 근사를 고침)·french-niger(1945~1959) · british-gold-coast·british-togoland(1945~1956 GHA를 칼선 1로 가름 — 기본값 4)
 // 앞 잇는 항목 1: F1 ghana(1957~ GHA 통째 — 항목 from 1957)
 // 점프: 1957 GHA british-gold-coast·british-togoland → ghana(칼선 1 두 몫이 한 나라로), 이음 1960 CIV·TGO·BEN·BFA·NER → ivory-coast·togo·benin·burkina-faso·niger(도형 같음)
 // 칼선 1(영국령 토골란드 서쪽 경계)은 cuts-f3.mjs GW 머리에 export const GW_CUT_…, 여기서 ownSplit('GW_…', idsOf('GHA'), …, { from: F3_START, to: 1957 })
@@ -165,7 +166,10 @@ ownSplit('GW_GHA', GW_GHA, [['토골란드', GW_CUT_TOGOLAND]], '골드코스트
 own(GW_GHA, [[1957, 'ghana']]); // 1957-03-06 독립(옛 영국령 토골란드 포함 통째), 1960 공화국은 정체만 바뀜
 own(GW_TGO, [[F3_START, 'french-togoland']]); // 1922 위임, 1946 신탁 통치·1956 자치 공화국(글), 1960-04-27 독립 → togo
 own(GW_BEN, [[F3_START, 'french-dahomey']]); // 1894 식민지, 1958-12-04 자치 공화국(글), 1960-08-01 독립 → benin
-own(GW_BFA, [[F3_START, 'french-upper-volta']]); // 1932-09-05~1947-09-04 폐지 동안의 1945~1946도 1947 복원 경계로(기본값 6 — 알려진 근사), 1960-08-05 독립 → burkina-faso
+import { GW_BFA_NER, GW_BFA_SDN, GW_BFA_CIV } from './cuts-f4.mjs'; // 오트볼타 1932~1946 분할 몫(사하라 이남 F4 GW — F4 기본값 9가 F3 기본값 6의 통째 근사를 고침)
+own(GW_BFA_NER, [[F3_START, 'french-niger'], [1947, 'french-upper-volta']]); // 1932-09-05 폐지 동안 파다응구르마·도리 서클은 니제르, 1947-09-04 옛 경계로 복원, 1960-08-05 독립 → burkina-faso
+own(GW_BFA_SDN, [[F3_START, 'french-sudan'], [1947, 'french-upper-volta']]); // 폐지 동안 와이구야 서클·아리빈다 칸통·데두구 서클 서쪽은 프랑스령 수단, 1947 복원
+own(GW_BFA_CIV, [[F3_START, 'french-ivory-coast'], [1947, 'french-upper-volta']]); // 폐지 동안 나머지 서클은 코트디부아르(1937 오트코트디부아르 구역), 1947 복원
 own(GW_NER, [[F3_START, 'french-niger']]); // 1922 식민지, 1958-12-19 자치 공화국(글), 1960-08-03 독립 → niger
 // ── F3 GW 끝 ──
 
@@ -384,7 +388,7 @@ const voids = [...WA_voids(), ...GW_voids(), ...CE_voids(), ...HN_voids(), ...EA
 if (voids.some(([f, t]) => f < F3_START || t === null || t > F3_END)) throw new Error(`sub-saharan-africa postwar: 비운 땅의 기간은 ${F3_START}~${F3_END} 안이어야 함(끝 없음 null 금지 — 1960~는 decolonization.mjs 몫)`);
 
 // 빈 땅 검사 구역: 권역 바깥선(조각 779개)에서 그해 비운 땅(voids)을 뺀 곳 — 이 권역 나라 땅을 합쳐 빈 곳이 없어야 한다.
-// F3_START(1945)~F3_END(1960, 미포함)만 만든다(1944 이하에는 이 권역 구역이 없음 — F4가 생기면 그 단계가 앞을 더함. 1960~는 decolonization.mjs 구역 '사하라 이남 탈식민 …'이 이음).
+// F3_START(1945)~F3_END(1960, 미포함)만 만든다(1910~1944는 colonial.mjs 구역 '사하라 이남 식민 …'이, 1960~는 decolonization.mjs 구역 '사하라 이남 탈식민 …'이 이음 — 1909 이하에는 이 권역 구역이 없음).
 // 비운 땅이 바뀌는 해마다 구역 하나, 마지막 구역의 끝은 F3_END. 이름 '사하라 이남 전후 <from>~<to-1>'(F2 '사하라 이남 탈식민 …'·F1 '사하라 이남 현대 …'와 겹치지 않음).
 // 이 권역 나라가 하나도 없는 기간(빈 틀)은 구역을 만들지 않는다(칸 하나만 채운 사본에서는 다른 칸 땅이 빈 땅으로 보고되는 것이 정상. gaps는 합치기 사본에서만 공식으로 돌린다)
 const ownedIn = (from, to) => Object.values(joined.segments).some((segs) => segs.some(([f, t]) => f < to && from < t));

@@ -6211,3 +6211,69 @@
   at: [12.26, -5.06]
   reason: 카빈다(약 6,811 km²)는 콩고강 어귀 북쪽 대서양 기슭의 포르투갈령 앙골라 땅으로, 벨기에령 콩고의 바다 쪽 좁은 땅에 막혀 앙골라 본토와 떨어져 있다(사료상 떨어진 땅 — 1885년 시물람부쿠 조약으로 포르투갈 보호령, 지금 행정구역 탓 부스러기 아님. 1960~1974는 F2 SF 머리 portuguese-angola 줄)
   sources: ["위키백과 Cabinda Province https://en.wikipedia.org/wiki/Cabinda_Province", "위키백과 Portuguese Angola https://en.wikipedia.org/wiki/Portuguese_Angola"]
+
+# ── 사하라 이남 F4 WA (서아프리카 대서양 쪽·서사헬, 2026-11-12) ──
+
+# ── 사하라 이남 F4 GW (기니만 서쪽·사헬 가운데, 2026-11-12) ──
+
+- entity: french-ivory-coast
+  from: 1910
+  to: 1945
+  at: [-3.16, 5.12]
+  reason: '(근사) 아비 석호와 대서양 사이 아시니 동쪽 모래톱(약 58 km², 가나 국경 쪽). 지금 주 조각 바깥선에서 석호 물이 본토와 갈라 떨어져 보이지만 같은 코트디부아르 땅이다(칼선 없음, 행정구역 탓 아님 — 석호 지형 탓, F3 french-ivory-coast 1945~ 줄과 같은 땅)'
+  sources: ['위키백과 Ivory Coast https://en.wikipedia.org/wiki/Ivory_Coast']
+
+# ── 사하라 이남 F4 CE-N (나이지리아·카메룬·기니만 섬, 2026-11-12) ──
+
+- entity: british-cameroons
+  from: 1920
+  to: 1945
+  at: [14.08, 11.76]
+  reason: '(진짜) 북카메룬 북쪽 덩어리(옛 디크와 토후국·그워자·무비 쪽, 약 23,000 km²): 베누에강 가의 욜라 둘레가 나이지리아 본토라 영국령 카메룬 북부는 남쪽 덩어리(남카메룬과 이어짐)와 떨어져 있었음. 1920-01-10 베르사유 발효로 영국 위임 통치(1922 연맹 확정 — F4 기본값 2)부터, 1945~ 줄(F3 CE)과 같은 칼선·같은 땅'
+  sources: ["위키백과 British Cameroons https://en.wikipedia.org/wiki/British_Cameroons"]
+
+# ── 사하라 이남 F4 CE-E (적도 아프리카·차드, 2026-11-12) ──
+
+- entity: french-middle-congo
+  from: 1911
+  to: 1920
+  at: [17.46, 2.79]
+  reason: 리쿠알라(임퐁도 둘레, 지도 조각 약 73,654 km²)는 1911년 모로코-콩고 조약으로 독일령 카메룬이 상가강을 따라 콩고강까지 받은 띠(노이카메룬의 '더듬이')에 막혀 브라자빌 쪽 중앙콩고 본토와 땅으로 끊긴 중앙콩고 땅이다(사료상 떨어진 땅 — 칼선 부스러기 아님, 1920년 반환으로 다시 이어짐)
+  sources: ["위키백과 Neukamerun https://de.wikipedia.org/wiki/Neukamerun", "위키백과 Kamerun https://en.wikipedia.org/wiki/Kamerun"]
+
+# ── 사하라 이남 F4 H1 (소말리아 쪽, 2026-11-12) ──
+
+# ── 사하라 이남 F4 H2 (에티오피아·나일, 2026-11-12) ──
+
+# ── 사하라 이남 F4 E1 (대호수·동, 2026-11-12) ──
+
+- entity: belgian-congo
+  from: 1910
+  to: 1945
+  at: [12.54, -6.05]
+  reason: '(근사) 콩고강 어귀 남쪽 물길 가의 모래톱·섬(약 10 km²): 지금 행정구역 조각 CD-BC(콩고 중앙주) 바깥선이 강 어귀에서 본토와 물길로 갈라져 떨어져 보임. 강 어귀 섬은 벨기에령 콩고 땅이라 그대로 둠(F3 belgian-congo 1945~ 줄과 같은 땅)'
+
+# ── 사하라 이남 F4 S1 (남쪽, 2026-11-12) ──
+
+- entity: portuguese-angola
+  from: 1910
+  to: 1945
+  at: [12.26, -5.06]
+  reason: 카빈다(약 6,811 km²)는 콩고강 어귀 북쪽 대서양 기슭의 포르투갈령 앙골라 땅으로, 벨기에령 콩고의 바다 쪽 좁은 땅에 막혀 앙골라 본토와 떨어져 있다(사료상 떨어진 땅 — 1885년 시물람부쿠 조약으로 포르투갈 보호령, 지금 행정구역 탓 부스러기 아님. 1945~1959는 F3 SF 머리 portuguese-angola 줄)
+  sources: ["위키백과 Cabinda Province https://en.wikipedia.org/wiki/Cabinda_Province", "위키백과 Portuguese Angola https://en.wikipedia.org/wiki/Portuguese_Angola"]
+
+# ── 사하라 이남 F4 S2 (로디지아·인도양, 2026-11-12) ──
+
+- entity: nyasaland
+  from: 1910
+  to: 1945
+  at: [34.71, -12.06]
+  reason: 말라위호 동쪽 모잠비크 쪽 물 안에 있는 니아살랜드의 리코마섬 일대(지도 조각 약 120 km²)로, 호수 건너 떨어진 섬이다(사료상 떨어진 땅 — 지금 행정구역 탓 부스러기 아님, 1945~1959는 F3 SF 머리 nyasaland 줄)
+  sources: ["위키백과 Likoma Island https://en.wikipedia.org/wiki/Likoma_Island"]
+
+- entity: nyasaland
+  from: 1910
+  to: 1945
+  at: [34.6, -12.02]
+  reason: 말라위호 동쪽 모잠비크 쪽 물 안에 있는 니아살랜드의 치주물루섬 일대(지도 조각 약 81 km²)로, 호수 건너 떨어진 섬이다(사료상 떨어진 땅 — 지금 행정구역 탓 부스러기 아님, 1945~1959는 F3 SF 머리 nyasaland 줄)
+  sources: ["위키백과 Likoma Island https://en.wikipedia.org/wiki/Likoma_Island"]
