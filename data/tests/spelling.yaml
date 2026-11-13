@@ -6564,3 +6564,115 @@
   scope: 사하라 이남·남부
 
 # ── 사하라 이남 F4 S2 (로디지아·인도양, 2026-11-12) ──
+
+# ── 사하라 이남 F5 공통(2026-11-13, F5 뼈대): 공용 표기표 — 새 항목 이름·옛 이름·수도·이음매 지명을 위키백과 한국어판 표제로 확정(f5/skel/ko-titles*.txt·en-ko.txt), 저장소에 이미 쓰인 표기가 있으면 그것(기존 표기 우선), 표제가 없으면 지시문 가칭. avoid는 넘겨주기·지시문 가칭 등 흔한 잘못 꼴만(저장소 쓰임 0을 확인). 칸은 자기 새 이름만 칸 머리 아래(f5/SKEL-NOTE.md 끝 표) ──
+
+- use: 베닌 왕국
+  avoid: [베냉 왕국]
+  note: "Kingdom of Benin(1180~1897 지금 나이지리아 에도주의 왕국). 저장소 표기(위키 ko 표제 '베닌 제국'으로 넘겨줌 — 기존 표기 우선). 지금 나라 '베냉'(옛 다호메이)과 다른 나라라 '베냉 왕국'은 막음(F5 뼈대)"
+  scope: 사하라 이남·서아프리카
+
+- use: 푸타잘롱 이맘국
+  avoid: [푸타잘론]
+  note: "Imamate of Futa Jallon(1727 무렵~1896 기니 고원의 이맘국). 위키 ko 표제 없음 — 고원 표제 '푸타 잘롱'·저장소 '푸타잘롱 고원' 표기를 따름(F5 뼈대, 지시문 가칭 '푸타잘론'은 막음)"
+  scope: 사하라 이남·서아프리카
+
+- use: 트란스발 공화국
+  avoid: [남아프리카 공화국(트란스발)]
+  note: "South African Republic(1852~1902 보어인 공화국 — 네덜란드어 Zuid-Afrikaansche Republiek). 위키 ko 표제(F5 뼈대 확인, f5/skel/ko-titles*.txt·en-ko.txt)(en South African Republic의 ko 연결). 지금 나라 '남아프리카 공화국'(1961~, south-africa)과 가르려고 표제를 씀"
+  scope: 사하라 이남·남부
+
+- use: 오라녀 자유국
+  avoid: [오렌지 자유국]
+  note: "Orange Free State(1854~1902 보어인 공화국 — Oranje-Vrijstaat). 위키 ko 표제(F5 뼈대 확인, f5/skel/ko-titles*.txt·en-ko.txt)('오렌지 자유국'은 넘겨주기). 1902~1910 영국 식민지는 표제 '오렌지강 식민지'"
+  scope: 사하라 이남·남부
+
+- use: 줄루란드
+  avoid: [줄루랜드]
+  note: "Zululand(1887 영국 병합 — 1897 나탈 식민지에 합침). 위키 ko 표제(F5 뼈대 확인, f5/skel/ko-titles*.txt·en-ko.txt)(en Zululand의 ko 연결, '줄루랜드' 표제 없음)"
+  scope: 사하라 이남·남부
+
+- use: 마피켕
+  avoid: [마피킹]
+  note: "Mafeking/Mahikeng(베추아날란드 보호령 행정 중심, 1899~1900 포위전). 위키 ko 표제(F5 뼈대 확인, f5/skel/ko-titles*.txt·en-ko.txt)(en Mafikeng의 ko 연결)"
+  scope: 사하라 이남·남부
+
+- use: 아보메
+  avoid: [아보메이]
+  note: "Abomey(다호메이 왕국 도읍). 위키 ko 표제(F5 뼈대 확인, f5/skel/ko-titles*.txt·en-ko.txt)(en Abomey의 ko 연결)"
+  scope: 사하라 이남·서아프리카
+
+- use: 베닌시티
+  avoid: [베냉시티]
+  note: "Benin City(베닌 왕국 도읍, 지금 에도주 주도). 위키 ko 표제(F5 뼈대 확인, f5/skel/ko-titles*.txt·en-ko.txt)"
+  scope: 사하라 이남·서아프리카
+
+# ── 사하라 이남 F5 WA-5 (서아프리카 대서양 쪽·서사헬, 2026-11-13) ──
+
+# ── 사하라 이남 F5 GW-5 (기니만 서쪽·사헬 가운데, 2026-11-13) ──
+
+# ── 사하라 이남 F5 CE-N-5 (나이지리아·카메룬·기니만 섬·보르누, 2026-11-13) ──
+
+- use: 라바 국가
+  avoid: [라비흐 국가]
+  note: "Rabih az-Zubayr's state(1893~1900 보르누·바기르미, 나라 id rabih-state). 위키 ko 표제 없음 — 지시문 가칭(F5 기본값 38), 아랍어 Rābiḥ의 다른 꼴은 막음(F5 CE-N-5)"
+  scope: 사하라 이남·서아프리카
+
+- use: 왕립 니제르 회사
+  avoid: [로열 니제르 회사]
+  note: "Royal Niger Company(1886~1900 특허 회사, 나라 id royal-niger-company). 위키 ko 표제 없음 — 저장소 글 표기(F4 북·남나이지리아 글), 영어 소리 꼴은 막음(F5 CE-N-5)"
+  scope: 사하라 이남·서아프리카
+
+- use: 디크와
+  avoid: [딕와]
+  note: "Dikwa(1893~1900 라바 국가 도읍, 1902~ 독일령 카메룬 쪽 보르누 — 지금 나이지리아 보르노주). 위키 ko 표제 없음 — F3 칼선 주석 표기(F5 CE-N-5)"
+  scope: 사하라 이남·서아프리카
+
+- use: 아타히루 1세
+  avoid: [아타히르 1세]
+  note: "Attahiru I(소코토 칼리프국 마지막 칼리프, 1903 부르미 전투에서 죽음). 위키 ko 표제 없음 — 하우사 꼴(F5 CE-N-5)"
+  scope: 사하라 이남·서아프리카
+
+# ── 사하라 이남 F5 H-5 (수단·에티오피아·에리트레아·소말리, 2026-11-13) ──
+
+# ── 사하라 이남 F5 S1A-5 (케이프·나탈·영국령 베추아날란드, 2026-11-13) ──
+
+- use: 위트레흐트
+  avoid: [우트레흐트]
+  note: "Utrecht(남아프리카 콰줄루나탈주 북서쪽 읍, 1859~1902 트란스발 땅, 1903 나탈). 위키 ko '우트레흐트'는 '위트레흐트'로 넘겨줌(F5 S1A-5 확인, f5/impl-s1a-5/ko-titles.txt)"
+  scope: 사하라 이남·남부
+
+- use: 줄루 전쟁
+  avoid: [영국-줄루 전쟁, 영국–줄루 전쟁]
+  note: "Anglo-Zulu War(1879 영국과 줄루 왕국의 전쟁). 위키 ko 표제('영국-줄루 전쟁'은 넘겨주기 — F5 S1A-5 확인, f5/impl-s1a-5/ko-titles.txt)"
+  scope: 사하라 이남·남부
+
+# ── 사하라 이남 F5 S1BC-5 (보어 공화국·바수톨란드·스와질란드·남서·베추아날란드·앙골라, 2026-11-13) ──
+
+- use: 베르니이헝 조약
+  avoid: [페레이니힝 조약, 페리니깅 조약, 베레니깅 조약]
+  note: "Treaty of Vereeniging(1902-05-31 제2차 보어 전쟁을 끝낸 조약). 위키 ko 표제(F5 S1BC-5 확인 — en Treaty of Vereeniging의 ko 연결), 저장소 화면 글 쓰임 0"
+  scope: 사하라 이남·남부
+
+- use: 폴 크뤼거
+  avoid: [폴 크루거]
+  note: "Paul Kruger(트란스발 공화국 대통령 1883~1902). 위키 ko 표제(F5 S1BC-5 확인 — en Paul Kruger의 ko 연결), 저장소 쓰임 0"
+  scope: 사하라 이남·남부
+
+- use: 비트바테르스란트
+  avoid: [위트워터스랜드, 위트워터스란드]
+  note: "Witwatersrand(1886 금광 발견, 요하네스버그 둘레). 위키 ko 표제(F5 S1BC-5 확인 — en Witwatersrand의 ko 연결), 저장소 쓰임 0"
+  scope: 사하라 이남·남부
+
+# ── 사하라 이남 F5 CE-E-5 (적도 아프리카·차드, 2026-11-13) ──
+
+# ── 사하라 이남 F5 E-5 (콩고·대호수·동, 2026-11-13) ──
+
+# ── 사하라 이남 F5 I-5 (인도양 섬, 2026-11-13) ──
+
+- use: 노지베섬
+  avoid: [노시베섬]
+  note: "Nosy Be(마다가스카르 북서 섬, 1841 프랑스 땅). 위키 ko 표제 '노지베섬'('노시베섬'은 넘겨주기 — f5/impl-i-5/ko-titles.txt). 저장소 0회"
+  scope: 사하라 이남·마다가스카르
+
+# ── 사하라 이남 F5 S2-5 (로디지아·니아살랜드·모잠비크, 2026-11-13) ──

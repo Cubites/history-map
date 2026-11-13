@@ -6277,3 +6277,84 @@
   at: [34.6, -12.02]
   reason: 말라위호 동쪽 모잠비크 쪽 물 안에 있는 니아살랜드의 치주물루섬 일대(지도 조각 약 81 km²)로, 호수 건너 떨어진 섬이다(사료상 떨어진 땅 — 지금 행정구역 탓 부스러기 아님, 1945~1959는 F3 SF 머리 nyasaland 줄)
   sources: ["위키백과 Likoma Island https://en.wikipedia.org/wiki/Likoma_Island"]
+
+# ── 사하라 이남 F5 WA-5 (서아프리카 대서양 쪽·서사헬, 2026-11-13) ──
+
+- entity: french-guinea
+  from: 1885
+  to: 1899
+  at: [-9.93, 9.05]
+  reason: 지금 기니 남동쪽 숲 지방(게케두·키시두구·롤라·마상타·은제레코레·요무, 지도 조각 약 33,616 km²)으로, 조사 묶음대로 1885년부터 리비에르뒤쉬드 해안과 같은 색이나 그 사이 푸타잘롱 이맘국과 고지 기니 땅(1890년까지 비움, 1891~1898년 프랑스령 수단 관할 — 창구 ③ Q-E3) 때문에 1898년까지 떨어져 보인다(1899년 고지 기니가 기니 관할이 되며 붙음. 첫 조약 1892 프랑스-라이베리아 국경 조약 앞 1885~1891 칠함은 알려진 근사)
+  sources: ["위키백과 Rivières du Sud https://en.wikipedia.org/wiki/Rivi%C3%A8res_du_Sud"]
+
+# ── 사하라 이남 F5 GW-5 (기니만 서쪽·사헬 가운데, 2026-11-13) ──
+
+- entity: british-gold-coast
+  from: 1899
+  to: 1901
+  at: [-0.42, 6.16]
+  reason: '1898년 영국-프랑스 협약 뒤 북부 준주 땅(1899~)과 해안 골드코스트 식민지 사이에 아직 병합되지 않은 아샨티 제국(1901년 병합)이 끼어 해안 식민지 쪽(약 62,325 km²)이 떨어져 보인다. 실제로 1899~1900년에는 두 땅이 아샨티로 나뉘어 있었다(칼선 탓 아님)'
+  sources: ['위키백과 Gold Coast (British colony) https://en.wikipedia.org/wiki/Gold_Coast_(British_colony)', '위키백과 Anglo-French Convention of 1898 https://en.wikipedia.org/wiki/Anglo-French_Convention_of_1898']
+
+- entity: french-ivory-coast
+  from: 1893
+  to: 1910
+  at: [-3.16, 5.12]
+  reason: '(근사) 아비 석호와 대서양 사이 아시니 동쪽 모래톱(약 58 km², 가나 국경 쪽). 지금 주 조각 바깥선에서 석호 물이 본토와 갈라 떨어져 보이지만 같은 코트디부아르 땅이다(칼선 없음, 행정구역 탓 아님 — 석호 지형 탓, F4 french-ivory-coast 1910~ 줄과 같은 땅)'
+  sources: ['위키백과 Ivory Coast https://en.wikipedia.org/wiki/Ivory_Coast']
+
+# ── 사하라 이남 F5 CE-N-5 (나이지리아·카메룬·기니만 섬·보르누, 2026-11-13) ──
+
+- entity: northern-nigeria-protectorate
+  from: 1902
+  to: 1903
+  at: [12.32, 11.9]
+  reason: '(진짜) 1902년 영국이 차지한 보르누(지금 보르노·요베주, 약 98,000 km²): 그해 말 보르누와 옛 왕립 니제르 회사 땅 사이의 바우치·곰베·아다마와는 아직 소코토 칼리프국 땅이라 본토와 떨어짐 — 1903년 칼리프국 정복으로 이어짐(F5 M-F5-2)'
+  sources: ["위키백과 Kanem–Bornu Empire https://en.wikipedia.org/wiki/Kanem%E2%80%93Bornu_Empire", "위키백과 Sokoto Caliphate https://en.wikipedia.org/wiki/Sokoto_Caliphate"]
+
+# ── 사하라 이남 F5 H-5 (수단·에티오피아·에리트레아·소말리, 2026-11-13) ──
+
+# ── 사하라 이남 F5 S1A-5 (케이프·나탈·영국령 베추아날란드, 2026-11-13) ──
+
+# ── 사하라 이남 F5 S1BC-5 (보어 공화국·바수톨란드·스와질란드·남서·베추아날란드·앙골라, 2026-11-13) ──
+
+- entity: portuguese-angola
+  from: 1885
+  to: 1910
+  at: [12.26, -5.06]
+  reason: 카빈다(약 6,811 km²)는 콩고강 어귀 북쪽 대서양 기슭의 포르투갈령 앙골라 땅으로, 콩고 자유국(1908~ 벨기에령 콩고)의 바다 쪽 좁은 땅에 막혀 앙골라 본토와 떨어져 있다(사료상 떨어진 땅 — 1885년 2월 1일 시물람부쿠 조약으로 포르투갈 보호령, 1885·1886 베를린 회의 뒤 경계 조약으로 지금 모양, 지금 행정구역 탓 부스러기 아님. 1910~1944는 F4 S1 머리 줄)
+  sources: ["위키백과 Cabinda Province https://en.wikipedia.org/wiki/Cabinda_Province", "위키백과 Portuguese Angola https://en.wikipedia.org/wiki/Portuguese_Angola"]
+
+# ── 사하라 이남 F5 CE-E-5 (적도 아프리카·차드, 2026-11-13) ──
+
+# ── 사하라 이남 F5 E-5 (콩고·대호수·동, 2026-11-13) ──
+
+- entity: congo-free-state
+  from: 1885
+  to: 1908
+  at: [12.54, -6.05]
+  reason: '(근사) 콩고강 어귀 남쪽 물길 가의 모래톱·섬(약 10 km²): 지금 행정구역 조각 CD-BC(콩고 중앙주) 바깥선이 강 어귀에서 본토와 물길로 갈라져 떨어져 보임. 강 어귀 섬은 콩고 자유국 땅이라 그대로 둠(F4 belgian-congo 1910~ 줄과 같은 땅)'
+
+- entity: belgian-congo
+  from: 1908
+  to: 1910
+  at: [12.54, -6.05]
+  reason: '(근사) 콩고강 어귀 남쪽 물길 가의 모래톱·섬(약 10 km²): 지금 행정구역 조각 CD-BC(콩고 중앙주) 바깥선이 강 어귀에서 본토와 물길로 갈라져 떨어져 보임. 강 어귀 섬은 벨기에령 콩고 땅이라 그대로 둠(F4 belgian-congo 1910~ 줄과 같은 땅)'
+
+# ── 사하라 이남 F5 I-5 (인도양 섬, 2026-11-13) ──
+
+# ── 사하라 이남 F5 S2-5 (로디지아·니아살랜드·모잠비크, 2026-11-13) ──
+
+- entity: nyasaland
+  from: 1891
+  to: 1910
+  at: [34.71, -12.06]
+  reason: 말라위호 동쪽 모잠비크 쪽 물 안에 있는 니아살랜드의 리코마섬 일대(지도 조각 약 120 km²)로, 호수 건너 떨어진 섬이다(사료상 떨어진 땅 — 지금 행정구역 탓 부스러기 아님, 1910~1944는 F4 S2 머리 nyasaland 줄)
+  sources: ["위키백과 Likoma Island https://en.wikipedia.org/wiki/Likoma_Island"]
+
+- entity: nyasaland
+  from: 1891
+  to: 1910
+  at: [34.6, -12.02]
+  reason: 말라위호 동쪽 모잠비크 쪽 물 안에 있는 니아살랜드의 치주물루섬 일대(지도 조각 약 81 km²)로, 호수 건너 떨어진 섬이다(사료상 떨어진 땅 — 지금 행정구역 탓 부스러기 아님, 1910~1944는 F4 S2 머리 nyasaland 줄)
+  sources: ["위키백과 Likoma Island https://en.wikipedia.org/wiki/Likoma_Island"]

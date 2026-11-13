@@ -4,6 +4,7 @@
 // 권역 출처 문구(export const source)는 이 권역 나라 모두에 붙는다(없으면 엔진의 기본 문구). 시대마다 다르면 시대 파일의 era.source에 적는다.
 // 빈 땅 검사 구역(gapZones: [{ name, zone, minus?, from?, to? }])은 비어 있으면 안 되는 지역을 적는다(engine.mjs collectGapZones). 일부러 비운 땅은 voids에 이유와 함께.
 import { joinEras } from '../shared.mjs';
+import { era as partitionEra } from './sub-saharan-africa/partition.mjs';
 import { era as colonialEra } from './sub-saharan-africa/colonial.mjs';
 import { era as postwarEra } from './sub-saharan-africa/postwar.mjs';
 import { era as decolonizationEra } from './sub-saharan-africa/decolonization.mjs';
@@ -12,5 +13,5 @@ import { era as modernEra } from './sub-saharan-africa/modern.mjs';
 // 이 파일에 직접 두는 나라 (나라 id: [[from, to, 멀티폴리곤, 확실성?], ...], 해는 천문 연도, to는 미포함)
 const ownVersions = {};
 
-// 시대 파일 잇기 (npm run new:area): 목록은 과거 시대가 앞(F4 colonial 1910~1944 → F3 postwar 1945~1959 → F2 decolonization 1960~1974 → F1 modern 1975~ — 사하라 이남 F2 뼈대 2026-11-11·F3 뼈대·F4 뼈대 2026-11-12, 거꾸로면 joinEras가 '기간이 겹침'으로 멈춤). 이 파일의 나라 다음에 시대 파일(areas/sub-saharan-africa/<시대>.mjs)의 나라·빈 땅 검사 구역·비운 땅을 붙인다(shared.mjs joinEras)
-export const { versions, gapZones, voids, sourceOf } = joinEras('sub-saharan-africa', { versions: ownVersions, gapZones: [], voids: [] }, [colonialEra, postwarEra, decolonizationEra, modernEra]);
+// 시대 파일 잇기 (npm run new:area): 목록은 과거 시대가 앞(F5 partition 1885~1909 → F4 colonial 1910~1944 → F3 postwar 1945~1959 → F2 decolonization 1960~1974 → F1 modern 1975~ — 사하라 이남 F2 뼈대 2026-11-11·F3 뼈대·F4 뼈대 2026-11-12·F5 뼈대 2026-11-13, 거꾸로면 joinEras가 '기간이 겹침'으로 멈춤). 이 파일의 나라 다음에 시대 파일(areas/sub-saharan-africa/<시대>.mjs)의 나라·빈 땅 검사 구역·비운 땅을 붙인다(shared.mjs joinEras)
+export const { versions, gapZones, voids, sourceOf } = joinEras('sub-saharan-africa', { versions: ownVersions, gapZones: [], voids: [] }, [partitionEra, colonialEra, postwarEra, decolonizationEra, modernEra]);

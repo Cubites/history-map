@@ -2,6 +2,7 @@
 // 시대·범위: 1910~1944: 남아프리카 연방부터 2차 대전 끝 앞까지 (F4)
 // 짝 항목 파일: data/entities/sub-saharan-africa-colonial.yaml (나라 id는 그 파일과 이 파일의 versions가 같아야 한다 — 앞 잇는 F3 항목 23은 sub-saharan-africa-postwar.yaml, F2 항목 21은
 //   sub-saharan-africa-decolonization.yaml, F1 항목 9는 sub-saharan-africa-modern.yaml)
+//   앞 시대 파일 partition.mjs(F5, 1885~1909)가 같은 id로 앞을 잇는다(이 파일 항목 14·F3·F2·F1 항목 중 1885~1909에 있는 것 — 짝 항목 파일 sub-saharan-africa-partition.yaml은 F5 새 항목 27, 사하라 이남 F5 뼈대 2026-11-13)
 // 가져와도 되는 것: lib.mjs, shared.mjs, areas/korea.mjs, areas/inner-asia.mjs, areas/china.mjs, areas/west.mjs, areas/japan.mjs, areas/europe.mjs, areas/middle-east.mjs, areas/south-asia.mjs, areas/central-asia.mjs, areas/southeast-asia.mjs, areas/sub-saharan-africa/의 다른 도우미 모듈. areas/sub-saharan-africa.mjs는 이 파일을 가져오는 쪽이라 가져올 수 없다(순환).
 //   권역 파일 안 도형이 필요하면 그 도형을 areas/sub-saharan-africa/의 도우미 모듈로 옮겨 둘이 함께 가져온다.
 // 생성기에 들어가는 것은 export const era 하나다(칼선 같은 다른 이름은 export해도 되지만 versions·gapZones·source 같은 이름은 안 됨: check:generator). 권역 파일 areas/sub-saharan-africa.mjs가 shared.mjs의 joinEras로 자기 versions·gapZones·voids에 합치고,
@@ -17,11 +18,11 @@
 // 해 규칙: 한 버전 = 그해 말 모습. 원정·되돌려진 점령·나라 일부의 협정 시정·봉기는 칠하지 않음(영국령 소말릴란드 1940~1941 이탈리아 점령·카살라 1940·마다가스카르 1942 영국 점령은
 //   그 땅 주인 색 — 기본값 20·29, 관계 줄도 없이 글). 새 버전은 1만 km²(주변 5만 km²) 넘게 바뀔 때만. 이름만 바뀌는 해(1910 프랑스령 적도 아프리카·1910 니제르 군사 영토·1920 케냐 식민지·
 //   탕가니카 영토·모리타니 식민지·1921 프랑스령 수단·1922 니제르 식민지·1936 이탈리아령 동아프리카·1940~1942 비시/자유 프랑스)는 새 버전이 아니다 — 항목 글로(기본값 12·13·30, 연방은 글 — 0단계 결정 3).
-// 1910 앞 버전 없음: 이 시대 파일의 첫 해는 F4_START(1910)다. 1910 앞에 성립한 나라·식민지도 첫 버전은 1910부터이고(F5가 같은 id로 앞을 이음 — 특별 지시 2),
-//   1909 이하에는 이 권역 땅이 비는 것이 정상이다(빈 땅 검사 구역도 1910부터만 — 아래 gapZones, M-F4-4).
-// 시대 경계 맞물림: 뒤 시대 파일 postwar.mjs(F3)의 첫 해 F3_START = 1945 = 이 파일의 F4_END(미포함). 이 파일 버전의 끝은 모두 F4_END 이하이고(끝 없음 null 금지),
+// 1910 앞 버전: 이 시대 파일의 첫 해는 F4_START(1910)다. 1910 앞에 성립한 나라·식민지도 이 파일의 첫 버전은 1910부터이고, 1885~1909는 앞 시대 파일 partition.mjs(F5)가 같은 id로 앞을 이음
+//   (1909 말 모양 = 이 파일의 1910 모양 — 결정 점프 셋 남아프리카 연방·라도와 서나일 이관·투르카나만 예외, F5 P1). 빈 땅 검사 구역은 이 파일이 1910~1944, partition.mjs가 1885~1909(아래 gapZones). 1884 이하에는 이 권역 땅이 비는 것이 정상이다.
+// 시대 경계 맞물림: 앞 시대 파일 partition.mjs(F5)의 끝 F5_END = 1910 = 이 파일의 F4_START(그 파일이 손으로 맞춘 확인 줄). 뒤 시대 파일 postwar.mjs(F3)의 첫 해 F3_START = 1945 = 이 파일의 F4_END(미포함). 이 파일 버전의 끝은 모두 F4_END 이하이고(끝 없음 null 금지),
 //   1945에 이어지는 나라(F3 항목 23·F2 항목 21·F1 항목 9 — 같은 id)는 joinEras가 이 파일 버전 뒤에 F3·F2·F1 버전을 붙인다. 1944 말 모양은 F3의 1945 모양과 같아야 한다(결정 점프 없음 —
-//   오트볼타 세 몫은 GW 칸 예외 ①로 F3 1945~1946도 같은 몫). 권역 파일의 joinEras 목록은 [colonialEra, postwarEra, decolonizationEra, modernEra](과거가 앞).
+//   오트볼타 세 몫은 GW 칸 예외 ①로 F3 1945~1946도 같은 몫). 권역 파일의 joinEras 목록은 [partitionEra, colonialEra, postwarEra, decolonizationEra, modernEra](과거가 앞 — F5 뼈대 2026-11-13).
 // 앞 잇는 항목 53: F3 항목 23(sub-saharan-africa-postwar.yaml)·F2 항목 21(sub-saharan-africa-decolonization.yaml)·F1 항목 9(sub-saharan-africa-modern.yaml) — 같은 id, 블록은 그 자리(파일 소유표 — COMMON 5절, 글과 from 고침만 칸이).
 //   항목 from 고침은 아홉: 위임 통치 여섯(british-togoland·french-togoland·british-cameroons·french-cameroons·british-tanganyika·ruanda-urundi) 1922 → 1920(기본값 2)·french-niger 1922 → 1900·
 //   french-chad 1920 → 1900(기본값 8)·british-kenya 1920 → 1895(기본값 30 — 항목 from 앞 버전은 생성기가 받지 않으므로 필수). 짝 항목 파일 밖 id도 주인으로 쓸 수 있다(F2·F3·F4 뼈대 장치 시험 ①).
@@ -64,7 +65,7 @@ import { ALL_IDS, DOMAIN, F, SSA_SOURCE_TEXT, idsOf, minus, tableKit } from './t
 
 const { build, geomOfUnit, joinTables, makeTable } = tableKit('colonial');
 
-const F4_START = 1910; // 이 시대 파일의 첫 해(1910년 말 모습). 그 앞(1909 이하)은 F5 시대 파일 몫
+const F4_START = 1910; // 이 시대 파일의 첫 해(1910년 말 모습). 그 앞(1885~1909)은 F5 시대 파일 partition.mjs 몫(그 파일의 F5_END와 F4_START가 같은지 그 파일이 확인)
 const F4_END = 1945; // 마지막 표의 끝(미포함) = 뒤 시대 파일 postwar.mjs의 F3_START(1945)
 const F3_START = 1945; // postwar.mjs의 첫 해(그 파일 상수와 같게 손으로 맞춤 — 시대 파일은 서로 가져오지 않는다)
 if (F4_END !== F3_START) throw new Error(`sub-saharan-africa colonial: F4_END ${F4_END}가 F3 첫 해 ${F3_START}와 다름(1944/1945 사이가 비거나 joinEras가 '기간이 겹침'으로 멈춤)`);
@@ -533,7 +534,7 @@ const voids = [...WA_voids(), ...GW_voids(), ...CEN_voids(), ...CEE_voids(), ...
 if (voids.some(([f, t]) => f < F4_START || t === null || t > F4_END)) throw new Error(`sub-saharan-africa colonial: 비운 땅의 기간은 ${F4_START}~${F4_END} 안이어야 함(끝 없음 null 금지 — 1945~는 postwar.mjs 몫)`);
 
 // 빈 땅 검사 구역: 권역 바깥선(조각 779개)에서 그해 비운 땅(voids)을 뺀 곳 — 이 권역 나라 땅을 합쳐 빈 곳이 없어야 한다.
-// F4_START(1910)~F4_END(1945, 미포함)만 만든다(1909 이하에는 이 권역 구역이 없음 — F5가 생기면 그 단계가 앞을 더함. 1945~는 postwar.mjs 구역 '사하라 이남 전후 …'가 이음 — M-F4-4).
+// F4_START(1910)~F4_END(1945, 미포함)만 만든다(1885~1909는 partition.mjs 구역 '사하라 이남 분할 …'이, 1945~는 postwar.mjs 구역 '사하라 이남 전후 …'가 이음 — M-F4-4·F5 특별 지시 2. 1884 이하에는 이 권역 구역이 없음).
 // 비운 땅이 바뀌는 해마다 구역 하나(CE-E 장악 해·S2 1912가 경계가 됨), 마지막 구역의 끝은 F4_END. 이름 '사하라 이남 식민 <from>~<to-1>'(F3 '사하라 이남 전후 …'·F2 '사하라 이남 탈식민 …'·F1 '사하라 이남 현대 …'와 겹치지 않음).
 // 이 권역 나라가 하나도 없는 기간(빈 틀)은 구역을 만들지 않는다(칸 하나만 채운 사본에서는 다른 칸 땅이 빈 땅으로 보고되는 것이 정상. gaps는 합치기 사본에서만 공식으로 돌린다)
 const ownedIn = (from, to) => Object.values(joined.segments).some((segs) => segs.some(([f, t]) => f < to && from < t));

@@ -5,6 +5,7 @@
 //   마제르테인–호비오 K3(H1_CUT_MAJ)·호비오–베나디르 K4(H1_CUT_HOB, 1910~1926) · E1 투르카나 K1(E1_CUT_TURKANA, 1910~1925). 조건부 하나: CE-N 북·남 나이지리아 경계(CEN_CUT_NNIG — 주 조각으로 안 닫힐 때만, 1910~1913).
 // 재사용 칼선 둘(좌표를 베끼지 않고 별칭으로 가져옴): GW는 cuts-f3.mjs의 GW_CUT_TOGOLAND(영국령 토골란드 서쪽 경계 — F4 내내 같은 나눔, 1910~1919 두 몫 모두 독일령 토고),
 //   CE-N은 import { CE_CUT_NCAM as CEN_CUT_NCAM } from './cuts-f3.mjs'(북부 카메룬 띠 — 1910~1919 독일령 카메룬, 1920~ 영국령 카메룬).
+//   F5 시대 파일 partition.mjs가 H1_CUT_JUBA·H1_CUT_MAJ·H1_CUT_HOB(H-5 칸 — 별칭 H_CUT_JUBA·H_CUT_MAJ·H_CUT_HOB, 1885~1909 주바강·마제르테인–호비오·호비오–베나디르)·E1_CUT_TURKANA(E-5 칸 — 별칭 E_CUT_TURKANA, 투르카나 K1)를 가져다 쓴다(사하라 이남 F5 뼈대 2026-11-13, 장치 시험 ⑤).
 // 몫 묶음 셋(GW — 조각 id 목록, 칼선 아님): 오트볼타 1932~1946 분할 몫 GW_BFA_NER·GW_BFA_SDN·GW_BFA_CIV(합 45 = idsOf('BFA'), 기본값 9)는 이 파일 GW 머리에 한 번 쓰고,
 //   colonial.mjs GW 칸과 F3 시대 파일 postwar.mjs GW 블록(칸 예외 ① — 1945~1946도 같은 몫)이 함께 가져온다. 이 모듈은 시대 파일을 가져오지 않는다(순환 없음 — F4 뼈대 장치 시험 ⑤).
 //   칸이 칼선을 더하면 자기 머리 아래에, 좌표 주석에 안/밖 기준 도시(안 3·밖 3 이상 — pt-dh.mjs로 확인)를 적는다. 좌표는 조사 꼭짓점을 그대로 쓰지 않고 강·산줄기·주 경계로 다듬는다.

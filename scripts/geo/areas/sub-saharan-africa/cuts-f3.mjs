@@ -4,6 +4,7 @@
 //   ② CE — 북부 영국령 카메룬 띠(NGA 37조각에서 띠를 가름, F3 시대 내내 — F3 기본값 5). CE 칼선은 F2 시대 파일 decolonization.mjs GU 블록도
 //   import { CE_CUT_… as GU_CUT_… } from './cuts-f3.mjs'로 가져와 1960 nigeria·british-cameroons 모양을 가른다(칸 예외 — f3/COMMON.md 5절, 뼈대 장치 시험 ④가 받는 것을 확인).
 //   F4 시대 파일 colonial.mjs가 GW_CUT_TOGOLAND(GW 칸 — 1910~1919 독일령 토고 서쪽 몫)·CE_CUT_NCAM(CE-N 칸 — 별칭 CEN_CUT_NCAM, 1910~1919 독일령 카메룬 띠)을 가져다 쓴다(사하라 이남 F4 뼈대 2026-11-12, 장치 시험 ⑤).
+//   F5 시대 파일 partition.mjs도 GW_CUT_TOGOLAND(GW-5 칸 — 1885~1909 독일령 토고 서쪽 몫)·CE_CUT_NCAM(CE-N-5 칸 — 별칭 CEN_CUT_NCAM, 1902~1909 독일령 카메룬·그 앞 소코토·보르누·회사 몫)을 가져다 쓴다(사하라 이남 F5 뼈대 2026-11-13).
 //   칸이 칼선을 더하면 자기 머리 아래에, 좌표 주석에 안/밖 기준 도시(안 3·밖 3 이상 — pt-dh.mjs로 확인)를 적는다. 좌표는 조사 꼭짓점을 그대로 쓰지 않고 강·산줄기·주 경계로 다듬는다.
 //   다른 권역·앞 단계 칼선을 쓰려면 별칭으로 가져온다(import { X as GW_X } …) — 좌표를 베끼지 않음(check:generator)
 // 이 모듈은 나라를 만들지 않는다(versions 같은 이름을 내보내지 않음). 칸 몫 조각 목록(F3_*_IDS)은 뼈대가 정했고 칸은 고치지 않는다.

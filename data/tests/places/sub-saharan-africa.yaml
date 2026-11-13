@@ -1779,3 +1779,1069 @@
   expect: none
   url: https://en.wikipedia.org/wiki/Saint_Helena
   from: 사하라 이남 F4 S2 결과노트
+
+# ── 사하라 이남 F5 WA-5 (서아프리카 대서양 쪽·서사헬, 2026-11-13) ──
+- name: 세구
+  at: [-6.27, 13.43]
+  year: 1892
+  expect: tukulor-empire
+  url: https://en.wikipedia.org/wiki/S%C3%A9gou
+  from: 사하라 이남 F5 WA-5 결과노트
+- name: 세구
+  at: [-6.27, 13.43]
+  year: 1893
+  expect: french-sudan
+  url: https://en.wikipedia.org/wiki/S%C3%A9gou
+  from: 사하라 이남 F5 WA-5 결과노트
+- name: 팀보
+  at: [-11.85, 10.65]
+  year: 1895
+  expect: fouta-djallon
+  url: https://en.wikipedia.org/wiki/Timbo,_Guinea
+  from: 사하라 이남 F5 WA-5 결과노트
+- name: 팀보
+  at: [-11.85, 10.65]
+  year: 1896
+  expect: french-guinea
+  url: https://en.wikipedia.org/wiki/Timbo,_Guinea
+  from: 사하라 이남 F5 WA-5 결과노트
+- name: 보
+  at: [-11.74, 7.96]
+  year: 1895
+  expect: none
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Bo,_Sierra_Leone
+  from: 사하라 이남 F5 WA-5 결과노트
+- name: 보
+  at: [-11.74, 7.96]
+  year: 1896
+  expect: british-sierra-leone
+  url: https://en.wikipedia.org/wiki/Bo,_Sierra_Leone
+  from: 사하라 이남 F5 WA-5 결과노트
+- name: 시카소
+  at: [-5.67, 11.32]
+  year: 1897
+  expect: none
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Sikasso
+  from: 사하라 이남 F5 WA-5 결과노트
+- name: 시카소
+  at: [-5.67, 11.32]
+  year: 1898
+  expect: french-sudan
+  url: https://en.wikipedia.org/wiki/Sikasso
+  from: 사하라 이남 F5 WA-5 결과노트
+- name: 누악쇼트
+  at: [-15.98, 18.09]
+  year: 1903
+  expect: none
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Nouakchott
+  from: 사하라 이남 F5 WA-5 결과노트
+- name: 누악쇼트
+  at: [-15.98, 18.09]
+  year: 1904
+  expect: french-mauritania
+  url: https://en.wikipedia.org/wiki/Nouakchott
+  from: 사하라 이남 F5 WA-5 결과노트
+- name: 아타르
+  at: [-13.05, 20.52]
+  year: 1908
+  expect: none
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Atar,_Mauritania
+  from: 사하라 이남 F5 WA-5 결과노트
+- name: 아타르
+  at: [-13.05, 20.52]
+  year: 1909
+  expect: french-mauritania
+  url: https://en.wikipedia.org/wiki/Atar,_Mauritania
+  from: 사하라 이남 F5 WA-5 결과노트
+- name: 칸칸
+  at: [-9.31, 10.39]
+  year: 1890
+  expect: none
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Kankan
+  from: 사하라 이남 F5 반영(창구 ③)
+  note: 1891년 3월 프랑스군 점령 앞(사모리 투레 땅 — 비움)
+- name: 칸칸
+  at: [-9.31, 10.39]
+  year: 1891
+  expect: french-sudan
+  url: https://en.wikipedia.org/wiki/Kankan
+  from: 사하라 이남 F5 반영(창구 ③)
+  note: 1891~1898년 프랑스령 수단 관할
+- name: 칸칸
+  at: [-9.31, 10.39]
+  year: 1899
+  expect: french-guinea
+  url: https://en.wikipedia.org/wiki/Kankan
+  from: 사하라 이남 F5 반영(창구 ③)
+  note: 1899년 10월 17일 법령으로 기니 관할
+- name: 키달
+  at: [1.41, 18.44]
+  year: 1907
+  expect: none
+  region: sub-saharan-africa
+  url: https://fr.wikipedia.org/wiki/Kidal
+  from: 사하라 이남 F5 반영(창구 ③)
+  note: 첫 군사 초소 앞(켈 아다그 땅 — 비움)
+- name: 키달
+  at: [1.41, 18.44]
+  year: 1908
+  expect: french-sudan
+  url: https://fr.wikipedia.org/wiki/Kidal
+  from: 사하라 이남 F5 반영(창구 ③)
+  note: 1908년 첫 군사 초소
+
+# ── 사하라 이남 F5 GW-5 (기니만 서쪽·사헬 가운데, 2026-11-13) ──
+- name: 쿠마시
+  at: [-1.62, 6.69]
+  year: 1900
+  expect: asante
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/War_of_the_Golden_Stool
+  from: 사하라 이남 F5 GW-5 결과노트
+  note: 1900 황금 의자 전쟁 — 병합 앞이라 아샨티 제국 색
+- name: 쿠마시
+  at: [-1.62, 6.69]
+  year: 1901
+  expect: british-gold-coast
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Ashanti_Empire
+  from: 사하라 이남 F5 GW-5 결과노트
+  note: 1901-09-26 병합(기본값 14)
+- name: 아보메
+  at: [1.99, 7.18]
+  year: 1893
+  expect: dahomey
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Dahomey
+  from: 사하라 이남 F5 GW-5 결과노트
+  note: 1892~1894 프랑스-다호메이 전쟁 중
+- name: 아보메
+  at: [1.99, 7.18]
+  year: 1894
+  expect: french-dahomey
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/French_Dahomey
+  from: 사하라 이남 F5 GW-5 결과노트
+  note: 1894 항복·1894-06-22 식민지 칙령
+- name: 타말레
+  at: [-0.85, 9.4]
+  year: 1898
+  expect: none
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Anglo-French_Convention_of_1898
+  from: 사하라 이남 F5 GW-5 결과노트
+  note: 1898 협약 비준(1899-06-13) 앞 — 북부 비움
+- name: 타말레
+  at: [-0.85, 9.4]
+  year: 1899
+  expect: british-gold-coast
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Anglo-French_Convention_of_1898
+  from: 사하라 이남 F5 GW-5 결과노트
+  note: 1898-06-14 협약 뒤 북부 준주 땅
+- name: 와가두구
+  at: [-1.53, 12.37]
+  year: 1899
+  expect: none
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Mossi_Kingdoms
+  from: 사하라 이남 F5 GW-5 결과노트
+  note: 모시 땅 — 범위 흐림(기본값 9)
+- name: 와가두구
+  at: [-1.53, 12.37]
+  year: 1900
+  expect: french-sudan
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/History_of_Burkina_Faso
+  from: 사하라 이남 F5 GW-5 결과노트
+  note: 1896 프랑스 진입~1901 저항 끝 — 표 해 1900
+- name: 아가데즈
+  at: [7.99, 16.97]
+  year: 1903
+  expect: none
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Agadez
+  from: 사하라 이남 F5 GW-5 결과노트
+  note: 아이르 투아레그 땅 — 프랑스 진출 앞
+- name: 아가데즈
+  at: [7.99, 16.97]
+  year: 1904
+  expect: french-niger
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Agadez
+  from: 사하라 이남 F5 GW-5 결과노트
+  note: 1904 아이르 진출(아가데즈 다스림은 1906 — 근사)
+- name: 진데르
+  at: [8.99, 13.81]
+  year: 1899
+  expect: none
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Colony_of_Niger
+  from: 사하라 이남 F5 GW-5 결과노트
+  note: 군사 영토 앞 — 비움
+- name: 진데르
+  at: [8.99, 13.81]
+  year: 1900
+  expect: french-niger
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Colony_of_Niger
+  from: 사하라 이남 F5 GW-5 결과노트
+  note: 1900-07-23 진데르 군사 영토
+- name: 코롱고
+  at: [-5.63, 9.46]
+  year: 1897
+  expect: none
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Wassoulou_Empire
+  from: 사하라 이남 F5 GW-5 결과노트
+  note: 사모리 땅 — 비움(기본값 9)
+- name: 코롱고
+  at: [-5.63, 9.46]
+  year: 1898
+  expect: french-ivory-coast
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Wassoulou_Empire
+  from: 사하라 이남 F5 GW-5 결과노트
+  note: 1898-09-29 사모리 사로잡힘
+- name: 아비장
+  at: [-4.01, 5.36]
+  year: 1892
+  expect: none
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/French_West_Africa
+  from: 사하라 이남 F5 GW-5 결과노트
+  note: 식민지 앞 — 비움(Q1 (다))
+- name: 아비장
+  at: [-4.01, 5.36]
+  year: 1893
+  expect: french-ivory-coast
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/French_West_Africa
+  from: 사하라 이남 F5 GW-5 결과노트
+  note: 1893-03-10 식민지
+- name: 로메
+  at: [1.22, 6.13]
+  year: 1885
+  expect: german-togoland
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Togoland
+  from: 사하라 이남 F5 GW-5 결과노트
+  note: 1884-07-05 보호 조약
+- name: 파라쿠
+  at: [2.63, 9.34]
+  year: 1899
+  expect: none
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/French_Dahomey
+  from: 사하라 이남 F5 GW-5 결과노트
+  note: 보르구 — 범위 흐림
+- name: 파라쿠
+  at: [2.63, 9.34]
+  year: 1900
+  expect: french-dahomey
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/French_Dahomey
+  from: 사하라 이남 F5 GW-5 결과노트
+  note: 북부 장악(조사 a 3절)
+
+# ── 사하라 이남 F5 CE-N-5 (나이지리아·카메룬·기니만 섬·보르누, 2026-11-13) ──
+- name: 카노
+  at: [8.52, 12.00]
+  year: 1902
+  expect: sokoto-caliphate
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Sokoto_Caliphate
+  from: 사하라 이남 F5 CE-N-5 결과노트
+  note: 1903년 2월 영국이 차지하기 앞의 칼리프국 토후국
+- name: 카노
+  at: [8.52, 12.00]
+  year: 1903
+  expect: northern-nigeria-protectorate
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Sokoto_Caliphate
+  from: 사하라 이남 F5 CE-N-5 결과노트
+  note: 1903년 소코토 칼리프국 정복 뒤
+- name: 로코자
+  at: [6.74, 7.80]
+  year: 1899
+  expect: royal-niger-company
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Royal_Niger_Company
+  from: 사하라 이남 F5 CE-N-5 결과노트
+  note: 왕립 니제르 회사 특허 지역
+- name: 로코자
+  at: [6.74, 7.80]
+  year: 1900
+  expect: northern-nigeria-protectorate
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Royal_Niger_Company
+  from: 사하라 이남 F5 CE-N-5 결과노트
+  note: 1900년 1월 1일 영국 정부가 넘겨받음
+- name: 마이두구리
+  at: [13.16, 11.85]
+  year: 1892
+  expect: kanem-bornu
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Kanem%E2%80%93Bornu_Empire
+  from: 사하라 이남 F5 CE-N-5 결과노트
+  note: 라바 정복 앞의 보르누
+- name: 마이두구리
+  at: [13.16, 11.85]
+  year: 1893
+  expect: rabih-state
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Rabih_az-Zubayr
+  from: 사하라 이남 F5 CE-N-5 결과노트
+  note: 1893년 라바가 쿠카와를 빼앗음
+- name: 마이두구리
+  at: [13.16, 11.85]
+  year: 1900
+  expect: kanem-bornu
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Kanem%E2%80%93Bornu_Empire
+  from: 사하라 이남 F5 CE-N-5 결과노트
+  note: 1900년 쿠세리 전투 뒤 셰후 복위
+- name: 마이두구리
+  at: [13.16, 11.85]
+  year: 1902
+  expect: northern-nigeria-protectorate
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Kanem%E2%80%93Bornu_Empire
+  from: 사하라 이남 F5 CE-N-5 결과노트
+  note: 1902년 영국이 보르누를 차지함
+- name: 베닌시티
+  at: [5.63, 6.34]
+  year: 1896
+  expect: benin-kingdom
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Benin_Expedition_of_1897
+  from: 사하라 이남 F5 CE-N-5 결과노트
+  note: 1897년 영국 원정 앞
+- name: 베닌시티
+  at: [5.63, 6.34]
+  year: 1897
+  expect: southern-nigeria-protectorate
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Benin_Expedition_of_1897
+  from: 사하라 이남 F5 CE-N-5 결과노트
+  note: 1897년 2월 영국 원정대가 차지함
+- name: 라고스
+  at: [3.38, 6.52]
+  year: 1905
+  expect: lagos-colony
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Lagos_Colony
+  from: 사하라 이남 F5 CE-N-5 결과노트
+  note: 남나이지리아와 합치기 앞
+- name: 라고스
+  at: [3.38, 6.52]
+  year: 1906
+  expect: southern-nigeria-protectorate
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Lagos_Colony
+  from: 사하라 이남 F5 CE-N-5 결과노트
+  note: 1906년 5월 1일 남나이지리아에 합침
+- name: 가루아
+  at: [13.40, 9.30]
+  year: 1893
+  expect: none
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Adamawa_Emirate
+  from: 사하라 이남 F5 CE-N-5 결과노트
+  note: 1894 독일·프랑스 협정 앞(소코토 범위 밖 — 비움)
+- name: 가루아
+  at: [13.40, 9.30]
+  year: 1894
+  expect: german-kamerun
+  url: https://en.wikipedia.org/wiki/Adamawa_Emirate
+  from: 사하라 이남 F5 반영(창구 ③)
+  note: 1894 협정 해부터 독일령 — 1901년까지 이름뿐인 지배
+- name: 가루아
+  at: [13.40, 9.30]
+  year: 1902
+  expect: german-kamerun
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Adamawa_Emirate
+  from: 사하라 이남 F5 CE-N-5 결과노트
+  note: 1901~1902년 독일 아다마와 원정 뒤
+
+# ── 사하라 이남 F5 H-5 (수단·에티오피아·에리트레아·소말리, 2026-11-13) ──
+- name: 동골라
+  at: [30.48, 19.17]
+  year: 1895
+  expect: mahdist-state
+  url: https://en.wikipedia.org/wiki/Mahdist_War
+  from: 사하라 이남 F5 H-5 결과노트
+- name: 동골라
+  at: [30.48, 19.17]
+  year: 1896
+  expect: none
+  url: https://en.wikipedia.org/wiki/Mahdist_War
+  from: 사하라 이남 F5 H-5 결과노트
+- name: 동골라
+  at: [30.48, 19.17]
+  year: 1899
+  expect: anglo-egyptian-sudan
+  url: https://en.wikipedia.org/wiki/Anglo-Egyptian_Sudan
+  from: 사하라 이남 F5 H-5 결과노트
+- name: 옴두르만
+  at: [32.48, 15.64]
+  year: 1897
+  expect: mahdist-state
+  url: https://en.wikipedia.org/wiki/Mahdist_State
+  from: 사하라 이남 F5 H-5 결과노트
+- name: 옴두르만
+  at: [32.48, 15.64]
+  year: 1898
+  expect: none
+  url: https://en.wikipedia.org/wiki/Mahdist_War
+  from: 사하라 이남 F5 H-5 결과노트
+- name: 옴두르만
+  at: [32.48, 15.64]
+  year: 1899
+  expect: anglo-egyptian-sudan
+  url: https://en.wikipedia.org/wiki/Anglo-Egyptian_Sudan
+  from: 사하라 이남 F5 H-5 결과노트
+- name: 엘오베이드
+  at: [30.22, 13.18]
+  year: 1898
+  expect: mahdist-state
+  url: https://en.wikipedia.org/wiki/Mahdist_State
+  from: 사하라 이남 F5 H-5 결과노트
+- name: 엘오베이드
+  at: [30.22, 13.18]
+  year: 1899
+  expect: anglo-egyptian-sudan
+  url: https://en.wikipedia.org/wiki/Anglo-Egyptian_Sudan
+  from: 사하라 이남 F5 H-5 결과노트
+- name: 알파시르
+  at: [25.35, 13.63]
+  year: 1897
+  expect: mahdist-state
+  url: https://en.wikipedia.org/wiki/Mahdist_State
+  from: 사하라 이남 F5 H-5 결과노트
+- name: 알파시르
+  at: [25.35, 13.63]
+  year: 1898
+  expect: darfur
+  url: https://en.wikipedia.org/wiki/Ali_Dinar
+  from: 사하라 이남 F5 H-5 결과노트
+- name: 지지가
+  at: [42.8, 9.35]
+  year: 1890
+  expect: none
+  url: https://en.wikipedia.org/wiki/Menelik_II
+  from: 사하라 이남 F5 H-5 결과노트
+- name: 지지가
+  at: [42.8, 9.35]
+  year: 1891
+  expect: ethiopia
+  url: https://en.wikipedia.org/wiki/Menelik_II
+  from: 사하라 이남 F5 H-5 결과노트
+- name: 야벨로
+  at: [38.08, 4.88]
+  year: 1896
+  expect: none
+  url: https://en.wikipedia.org/wiki/Menelik_II
+  from: 사하라 이남 F5 H-5 결과노트
+- name: 야벨로
+  at: [38.08, 4.88]
+  year: 1897
+  expect: ethiopia
+  url: https://en.wikipedia.org/wiki/Menelik_II
+  from: 사하라 이남 F5 H-5 결과노트
+- name: 아소사
+  at: [34.53, 10.07]
+  year: 1897
+  expect: none
+  url: https://en.wikipedia.org/wiki/Menelik_II
+  from: 사하라 이남 F5 H-5 결과노트
+- name: 아소사
+  at: [34.53, 10.07]
+  year: 1898
+  expect: ethiopia
+  url: https://en.wikipedia.org/wiki/Menelik_II
+  from: 사하라 이남 F5 H-5 결과노트
+- name: 아스마라
+  at: [38.93, 15.32]
+  year: 1889
+  expect: none
+  url: https://en.wikipedia.org/wiki/Italian_Eritrea
+  from: 사하라 이남 F5 H-5 결과노트
+- name: 아스마라
+  at: [38.93, 15.32]
+  year: 1890
+  expect: italian-eritrea
+  url: https://en.wikipedia.org/wiki/Italian_Eritrea
+  from: 사하라 이남 F5 H-5 결과노트
+- name: 예이
+  at: [30.68, 4.09]
+  year: 1893
+  expect: none
+  url: https://en.wikipedia.org/wiki/Lado_Enclave
+  from: 사하라 이남 F5 H-5 결과노트
+- name: 예이
+  at: [30.68, 4.09]
+  year: 1894
+  expect: congo-free-state
+  url: https://en.wikipedia.org/wiki/Lado_Enclave
+  from: 사하라 이남 F5 H-5 결과노트
+- name: 예이
+  at: [30.68, 4.09]
+  year: 1908
+  expect: belgian-congo
+  url: https://en.wikipedia.org/wiki/Lado_Enclave
+  from: 사하라 이남 F5 H-5 결과노트
+- name: 모가디슈
+  at: [45.34, 2.04]
+  year: 1892
+  expect: none
+  url: https://en.wikipedia.org/wiki/Italian_Somaliland
+  from: 사하라 이남 F5 H-5 결과노트
+- name: 모가디슈
+  at: [45.34, 2.04]
+  year: 1893
+  expect: italian-somaliland
+  url: https://en.wikipedia.org/wiki/Italian_Somaliland
+  from: 사하라 이남 F5 H-5 결과노트
+
+# ── 사하라 이남 F5 S1A-5 (케이프·나탈·영국령 베추아날란드, 2026-11-13) ──
+- name: 마피켕
+  at: [25.64, -25.85]
+  year: 1894
+  expect: british-bechuanaland
+  url: https://en.wikipedia.org/wiki/British_Bechuanaland
+  from: 사하라 이남 F5 S1A-5 결과노트
+- name: 마피켕
+  at: [25.64, -25.85]
+  year: 1895
+  expect: cape-colony
+  url: https://en.wikipedia.org/wiki/British_Bechuanaland
+  from: 사하라 이남 F5 S1A-5 결과노트
+- name: 에쇼웨
+  at: [31.46, -28.89]
+  year: 1896
+  expect: zulu
+  url: https://en.wikipedia.org/wiki/Zulu_Kingdom
+  from: 사하라 이남 F5 S1A-5 결과노트
+- name: 에쇼웨
+  at: [31.46, -28.89]
+  year: 1897
+  expect: natal
+  url: https://en.wikipedia.org/wiki/Colony_of_Natal
+  from: 사하라 이남 F5 S1A-5 결과노트
+- name: 빌크레이
+  at: [30.79, -27.77]
+  year: 1901
+  expect: south-african-republic
+  url: https://en.wikipedia.org/wiki/South_African_Republic
+  from: 사하라 이남 F5 S1A-5 결과노트
+- name: 빌크레이
+  at: [30.79, -27.77]
+  year: 1902
+  expect: transvaal-colony
+  url: https://en.wikipedia.org/wiki/Colony_of_Natal
+  from: 사하라 이남 F5 S1A-5 결과노트
+- name: 빌크레이
+  at: [30.79, -27.77]
+  year: 1903
+  expect: natal
+  url: https://en.wikipedia.org/wiki/Colony_of_Natal
+  from: 사하라 이남 F5 S1A-5 결과노트
+- name: 러스텐버그
+  at: [27.24, -25.67]
+  year: 1901
+  expect: south-african-republic
+  url: https://en.wikipedia.org/wiki/South_African_Republic
+  from: 사하라 이남 F5 S1A-5 결과노트
+- name: 러스텐버그
+  at: [27.24, -25.67]
+  year: 1902
+  expect: transvaal-colony
+  url: https://en.wikipedia.org/wiki/Transvaal_Colony
+  from: 사하라 이남 F5 S1A-5 결과노트
+- name: 케이프타운
+  at: [18.42, -33.92]
+  year: 1909
+  expect: cape-colony
+  url: https://en.wikipedia.org/wiki/Cape_Colony
+  from: 사하라 이남 F5 S1A-5 결과노트
+- name: 케이프타운
+  at: [18.42, -33.92]
+  year: 1910
+  expect: south-africa
+  url: https://en.wikipedia.org/wiki/Cape_Colony
+  from: 사하라 이남 F5 S1A-5 결과노트
+
+# ── 사하라 이남 F5 S1BC-5 (보어 공화국·바수톨란드·스와질란드·남서·베추아날란드·앙골라, 2026-11-13) ──
+- name: 프리토리아
+  at: [28.19, -25.75]
+  year: 1901
+  expect: south-african-republic
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/South_African_Republic
+  from: 사하라 이남 F5 S1BC-5 결과노트
+  note: 1900-06-05 영국군 입성 뒤 점령 — 기본값 28·M-F5-11로 1901까지 트란스발 공화국 색(occupied_by uk)
+- name: 프리토리아
+  at: [28.19, -25.75]
+  year: 1902
+  expect: transvaal-colony
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Transvaal_Colony
+  from: 사하라 이남 F5 S1BC-5 결과노트
+  note: 1902-05-31 베르니이헝 조약 뒤 트란스발 식민지
+- name: 블룸폰테인
+  at: [26.21, -29.12]
+  year: 1901
+  expect: orange-free-state
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Orange_Free_State
+  from: 사하라 이남 F5 S1BC-5 결과노트
+  note: 1900-03-13 영국군 입성 뒤 점령 — 기본값 28·M-F5-11로 1901까지 오라녀 자유국 색(occupied_by uk)
+- name: 블룸폰테인
+  at: [26.21, -29.12]
+  year: 1902
+  expect: orange-river-colony
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Orange_River_Colony
+  from: 사하라 이남 F5 S1BC-5 결과노트
+  note: 1902-05-31 베르니이헝 조약 뒤 오렌지강 식민지
+- name: 음바바네
+  at: [31.14, -26.31]
+  year: 1893
+  expect: none
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/History_of_Eswatini
+  from: 사하라 이남 F5 S1BC-5 결과노트
+  note: 1894 협약 앞 독립 스와지 왕국 — 기본값 32로 비움
+- name: 음바바네
+  at: [31.14, -26.31]
+  year: 1894
+  expect: swaziland-protectorate
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/History_of_Eswatini
+  from: 사하라 이남 F5 S1BC-5 결과노트
+  note: 1894-12 협약으로 트란스발 공화국 보호국(기본값 26 — 항목 from 1894)
+- name: 마운
+  at: [23.42, -19.98]
+  year: 1889
+  expect: none
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Bechuanaland_Protectorate
+  from: 사하라 이남 F5 S1BC-5 결과노트
+  note: 1885 보호령 북쪽 끝 남위 22° 밖 — 기본값 30으로 비움
+- name: 마운
+  at: [23.42, -19.98]
+  year: 1890
+  expect: bechuanaland
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Bechuanaland_Protectorate
+  from: 사하라 이남 F5 S1BC-5 결과노트
+  note: 1890-06-30 보호령 북쪽 연장(응가미랜드)
+- name: 카티마물릴로
+  at: [24.27, -17.5]
+  year: 1889
+  expect: none
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/German_South_West_Africa
+  from: 사하라 이남 F5 S1BC-5 결과노트
+  note: 1890 헬골란트–잔지바르 조약 앞 카프리비 회랑 — Q1 (다)로 비움
+- name: 카티마물릴로
+  at: [24.27, -17.5]
+  year: 1890
+  expect: german-south-west-africa
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/German_South_West_Africa
+  from: 사하라 이남 F5 S1BC-5 결과노트
+  note: 1890-07-01 헬골란트–잔지바르 조약으로 카프리비 회랑이 독일령
+
+# ── 사하라 이남 F5 CE-E-5 (적도 아프리카·차드, 2026-11-13) ──
+- name: 방기
+  at: [18.56, 4.36]
+  year: 1893
+  expect: none
+  url: https://en.wikipedia.org/wiki/Ubangi-Shari
+  from: 사하라 이남 F5 CE-E-5 결과노트
+  note: 1894 오트우방기 앞 — 첫 조약 해 앞은 비움(Q1 (다))
+- name: 방기
+  at: [18.56, 4.36]
+  year: 1894
+  expect: french-congo
+  url: https://en.wikipedia.org/wiki/Ubangi-Shari
+  from: 사하라 이남 F5 CE-E-5 결과노트
+  note: 1894-07-13 오트우방기 — 프랑스령 콩고 색
+- name: 방기
+  at: [18.56, 4.36]
+  year: 1903
+  expect: french-ubangi-shari
+  url: https://en.wikipedia.org/wiki/Ubangi-Shari
+  from: 사하라 이남 F5 CE-E-5 결과노트
+  note: 1903-12-29 우방기샤리 식민지
+- name: 리브르빌
+  at: [9.45, 0.39]
+  year: 1905
+  expect: french-congo
+  url: https://en.wikipedia.org/wiki/French_Congo
+  from: 사하라 이남 F5 CE-E-5 결과노트
+- name: 리브르빌
+  at: [9.45, 0.39]
+  year: 1906
+  expect: french-gabon
+  url: https://en.wikipedia.org/wiki/French_Congo
+  from: 사하라 이남 F5 CE-E-5 결과노트
+  note: 1906 프랑스령 콩고가 나뉘어 가봉 식민지
+- name: 은자메나
+  at: [15.04, 12.13]
+  year: 1892
+  expect: none
+  url: https://en.wikipedia.org/wiki/Rabih_az-Zubayr
+  from: 사하라 이남 F5 CE-E-5 결과노트
+  note: 바기르미 땅 — 범위가 흐려 비움(기본값 9)
+- name: 은자메나
+  at: [15.04, 12.13]
+  year: 1893
+  expect: rabih-state
+  url: https://en.wikipedia.org/wiki/Rabih_az-Zubayr
+  from: 사하라 이남 F5 CE-E-5 결과노트
+- name: 은자메나
+  at: [15.04, 12.13]
+  year: 1900
+  expect: french-chad
+  url: https://en.wikipedia.org/wiki/French_Chad
+  from: 사하라 이남 F5 CE-E-5 결과노트
+  note: 1900-04-22 쿠세리 전투, 1900-09-05 차드 군사 영토
+- name: 은자메나
+  at: [15.04, 12.13]
+  year: 1906
+  expect: french-ubangi-shari
+  url: https://en.wikipedia.org/wiki/Ubangi-Shari
+  from: 사하라 이남 F5 CE-E-5 결과노트
+  note: 1906-02-11 우방기샤리-차드
+- name: 사르
+  at: [18.39, 9.15]
+  year: 1899
+  expect: none
+  url: https://en.wikipedia.org/wiki/French_Chad
+  from: 사하라 이남 F5 CE-E-5 결과노트
+- name: 사르
+  at: [18.39, 9.15]
+  year: 1900
+  expect: french-chad
+  url: https://en.wikipedia.org/wiki/French_Chad
+  from: 사하라 이남 F5 CE-E-5 결과노트
+- name: 아베셰
+  at: [20.83, 13.83]
+  year: 1909
+  expect: wadai
+  url: https://en.wikipedia.org/wiki/Wadai_Empire
+  from: 사하라 이남 F5 CE-E-5 결과노트
+  note: 1909 프랑스 점령 뒤에도 술탄국(F4 1910~1911과 이어짐)
+- name: 파야라르조
+  at: [19.11, 17.92]
+  year: 1909
+  expect: none
+  url: https://en.wikipedia.org/wiki/French_Chad
+  from: 사하라 이남 F5 CE-E-5 결과노트
+  note: 보르쿠 — 1913 장악 앞 비움
+
+# ── 사하라 이남 F5 E-5 (콩고·대호수·동, 2026-11-13) ──
+- name: 캄팔라
+  at: [32.58, 0.32]
+  year: 1893
+  expect: buganda
+  url: https://en.wikipedia.org/wiki/Buganda
+  from: 사하라 이남 F5 E-5 결과노트
+- name: 캄팔라
+  at: [32.58, 0.32]
+  year: 1894
+  expect: british-uganda
+  url: https://en.wikipedia.org/wiki/Uganda_Protectorate
+  from: 사하라 이남 F5 E-5 결과노트
+- name: 아루아
+  at: [30.91, 3.02]
+  year: 1893
+  expect: none
+  url: https://en.wikipedia.org/wiki/Lado_Enclave
+  from: 사하라 이남 F5 E-5 결과노트
+- name: 아루아
+  at: [30.91, 3.02]
+  year: 1894
+  expect: congo-free-state
+  url: https://en.wikipedia.org/wiki/Lado_Enclave
+  from: 사하라 이남 F5 E-5 결과노트
+- name: 아루아
+  at: [30.91, 3.02]
+  year: 1908
+  expect: belgian-congo
+  url: https://en.wikipedia.org/wiki/Lado_Enclave
+  from: 사하라 이남 F5 E-5 결과노트
+- name: 몸바사
+  at: [39.67, -4.04]
+  year: 1887
+  expect: none
+  url: https://en.wikipedia.org/wiki/Imperial_British_East_Africa_Company
+  from: 사하라 이남 F5 E-5 결과노트
+- name: 몸바사
+  at: [39.67, -4.04]
+  year: 1888
+  expect: ibea-company
+  url: https://en.wikipedia.org/wiki/Imperial_British_East_Africa_Company
+  from: 사하라 이남 F5 E-5 결과노트
+- name: 몸바사
+  at: [39.67, -4.04]
+  year: 1895
+  expect: british-kenya
+  url: https://en.wikipedia.org/wiki/East_Africa_Protectorate
+  from: 사하라 이남 F5 E-5 결과노트
+- name: 키수무
+  at: [34.76, -0.09]
+  year: 1888
+  expect: ibea-company
+  url: https://en.wikipedia.org/wiki/Imperial_British_East_Africa_Company
+  from: 사하라 이남 F5 E-5 결과노트
+- name: 키수무
+  at: [34.76, -0.09]
+  year: 1895
+  expect: none
+  url: https://en.wikipedia.org/wiki/History_of_Kenya
+  from: 사하라 이남 F5 E-5 결과노트
+- name: 키수무
+  at: [34.76, -0.09]
+  year: 1896
+  expect: british-uganda
+  url: https://en.wikipedia.org/wiki/Uganda_Protectorate
+  from: 사하라 이남 F5 E-5 결과노트
+- name: 키수무
+  at: [34.76, -0.09]
+  year: 1902
+  expect: british-kenya
+  url: https://en.wikipedia.org/wiki/East_Africa_Protectorate
+  from: 사하라 이남 F5 E-5 결과노트
+- name: 로드와르
+  at: [35.60, 3.12]
+  year: 1895
+  expect: none
+  url: https://en.wikipedia.org/wiki/History_of_Kenya
+  from: 사하라 이남 F5 E-5 결과노트
+- name: 로드와르
+  at: [35.60, 3.12]
+  year: 1896
+  expect: british-uganda
+  url: https://en.wikipedia.org/wiki/Uganda_Protectorate
+  from: 사하라 이남 F5 E-5 결과노트
+- name: 키갈리
+  at: [30.06, -1.95]
+  year: 1889
+  expect: none
+  url: https://en.wikipedia.org/wiki/German_East_Africa
+  from: 사하라 이남 F5 E-5 결과노트
+- name: 키갈리
+  at: [30.06, -1.95]
+  year: 1890
+  expect: german-east-africa
+  url: https://en.wikipedia.org/wiki/German_East_Africa
+  from: 사하라 이남 F5 E-5 결과노트
+- name: 다르에스살람
+  at: [39.28, -6.82]
+  year: 1885
+  expect: none
+  url: https://en.wikipedia.org/wiki/German_East_Africa
+  from: 사하라 이남 F5 E-5 결과노트
+- name: 다르에스살람
+  at: [39.28, -6.82]
+  year: 1886
+  expect: german-east-africa
+  url: https://en.wikipedia.org/wiki/German_East_Africa
+  from: 사하라 이남 F5 E-5 결과노트
+- name: 킨샤사
+  at: [15.31, -4.32]
+  year: 1885
+  expect: congo-free-state
+  url: https://en.wikipedia.org/wiki/Congo_Free_State
+  from: 사하라 이남 F5 E-5 결과노트
+- name: 킨샤사
+  at: [15.31, -4.32]
+  year: 1907
+  expect: congo-free-state
+  url: https://en.wikipedia.org/wiki/Congo_Free_State
+  from: 사하라 이남 F5 E-5 결과노트
+- name: 킨샤사
+  at: [15.31, -4.32]
+  year: 1908
+  expect: belgian-congo
+  url: https://en.wikipedia.org/wiki/Congo_Free_State
+  from: 사하라 이남 F5 E-5 결과노트
+- name: 잔지바르
+  at: [39.19, -6.16]
+  year: 1885
+  expect: sultanate-of-zanzibar
+  url: https://en.wikipedia.org/wiki/Sultanate_of_Zanzibar
+  from: 사하라 이남 F5 E-5 결과노트
+
+# ── 사하라 이남 F5 I-5 (인도양 섬, 2026-11-13) ──
+- name: 안타나나리보
+  at: [47.52, -18.91]
+  year: 1885
+  expect: merina-kingdom
+  url: https://en.wikipedia.org/wiki/Merina_Kingdom
+  from: 사하라 이남 F5 I-5 결과노트
+- name: 안타나나리보
+  at: [47.52, -18.91]
+  year: 1896
+  expect: merina-kingdom
+  url: https://en.wikipedia.org/wiki/Franco-Hova_Wars
+  from: 사하라 이남 F5 I-5 결과노트
+- name: 안타나나리보
+  at: [47.52, -18.91]
+  year: 1897
+  expect: french-madagascar
+  url: https://en.wikipedia.org/wiki/Franco-Hova_Wars
+  from: 사하라 이남 F5 I-5 결과노트
+- name: 톨리아라
+  at: [43.67, -23.35]
+  year: 1896
+  expect: none
+  url: https://en.wikipedia.org/wiki/Toliara
+  from: 사하라 이남 F5 I-5 결과노트
+- name: 톨리아라
+  at: [43.67, -23.35]
+  year: 1897
+  expect: french-madagascar
+  url: https://en.wikipedia.org/wiki/Toliara
+  from: 사하라 이남 F5 I-5 결과노트
+- name: 모로니
+  at: [43.26, -11.70]
+  year: 1885
+  expect: none
+  url: https://en.wikipedia.org/wiki/History_of_the_Comoros
+  from: 사하라 이남 F5 I-5 결과노트
+- name: 모로니
+  at: [43.26, -11.70]
+  year: 1886
+  expect: french-comoros
+  url: https://en.wikipedia.org/wiki/History_of_the_Comoros
+  from: 사하라 이남 F5 I-5 결과노트
+- name: 마무주
+  at: [45.21, -12.79]
+  year: 1885
+  expect: mayotte
+  url: https://en.wikipedia.org/wiki/Mayotte
+  from: 사하라 이남 F5 I-5 결과노트
+- name: 생드니
+  at: [55.45, -20.88]
+  year: 1885
+  expect: reunion
+  url: https://en.wikipedia.org/wiki/Saint-Denis,_R%C3%A9union
+  from: 사하라 이남 F5 I-5 결과노트
+- name: 포트루이스
+  at: [57.50, -20.16]
+  year: 1885
+  expect: british-mauritius
+  url: https://en.wikipedia.org/wiki/British_Mauritius
+  from: 사하라 이남 F5 I-5 결과노트
+- name: 빅토리아(세이셸)
+  at: [55.45, -4.62]
+  year: 1885
+  expect: seychelles
+  url: https://en.wikipedia.org/wiki/History_of_Seychelles
+  from: 사하라 이남 F5 I-5 결과노트
+- name: 제임스타운(세인트헬레나)
+  at: [-5.72, -15.92]
+  year: 1885
+  expect: none
+  url: https://en.wikipedia.org/wiki/Saint_Helena
+  from: 사하라 이남 F5 I-5 결과노트
+- name: 제임스타운(세인트헬레나)
+  at: [-5.72, -15.92]
+  year: 1909
+  expect: none
+  url: https://en.wikipedia.org/wiki/Saint_Helena
+  from: 사하라 이남 F5 I-5 결과노트
+
+# ── 사하라 이남 F5 S2-5 (로디지아·니아살랜드·모잠비크, 2026-11-13) ──
+- name: 불라와요
+  at: [28.58, -20.15]
+  year: 1892
+  expect: ndebele-kingdom
+  url: https://en.wikipedia.org/wiki/Bulawayo
+  from: 사하라 이남 F5 S2-5 결과노트
+- name: 불라와요
+  at: [28.58, -20.15]
+  year: 1893
+  expect: bsac-southern-rhodesia
+  url: https://en.wikipedia.org/wiki/Bulawayo
+  from: 사하라 이남 F5 S2-5 결과노트
+- name: 하라레
+  at: [31.05, -17.83]
+  year: 1889
+  expect: none
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Harare
+  from: 사하라 이남 F5 S2-5 결과노트
+- name: 하라레
+  at: [31.05, -17.83]
+  year: 1890
+  expect: bsac-southern-rhodesia
+  url: https://en.wikipedia.org/wiki/Harare
+  from: 사하라 이남 F5 S2-5 결과노트
+- name: 몽구
+  at: [23.13, -15.25]
+  year: 1898
+  expect: lozi-kingdom
+  url: https://en.wikipedia.org/wiki/Mongu
+  from: 사하라 이남 F5 S2-5 결과노트
+- name: 몽구
+  at: [23.13, -15.25]
+  year: 1899
+  expect: bsac-northern-rhodesia
+  url: https://en.wikipedia.org/wiki/Mongu
+  from: 사하라 이남 F5 S2-5 결과노트
+- name: 루사카
+  at: [28.28, -15.42]
+  year: 1899
+  expect: none
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Lusaka
+  from: 사하라 이남 F5 S2-5 결과노트
+- name: 루사카
+  at: [28.28, -15.42]
+  year: 1900
+  expect: bsac-northern-rhodesia
+  url: https://en.wikipedia.org/wiki/Lusaka
+  from: 사하라 이남 F5 S2-5 결과노트
+- name: 좀바
+  at: [35.32, -15.39]
+  year: 1890
+  expect: none
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Zomba,_Malawi
+  from: 사하라 이남 F5 S2-5 결과노트
+- name: 좀바
+  at: [35.32, -15.39]
+  year: 1891
+  expect: nyasaland
+  url: https://en.wikipedia.org/wiki/Zomba,_Malawi
+  from: 사하라 이남 F5 S2-5 결과노트
+- name: 샤이샤이
+  at: [33.64, -25.04]
+  year: 1894
+  expect: gaza
+  url: https://en.wikipedia.org/wiki/Xai-Xai
+  from: 사하라 이남 F5 S2-5 결과노트
+- name: 샤이샤이
+  at: [33.64, -25.04]
+  year: 1895
+  expect: portuguese-mozambique
+  url: https://en.wikipedia.org/wiki/Xai-Xai
+  from: 사하라 이남 F5 S2-5 결과노트
+- name: 펨바
+  at: [40.52, -12.97]
+  year: 1885
+  expect: portuguese-mozambique
+  url: https://en.wikipedia.org/wiki/Pemba,_Mozambique
+  from: 사하라 이남 F5 S2-5 결과노트
