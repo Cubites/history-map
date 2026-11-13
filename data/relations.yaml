@@ -1747,7 +1747,6 @@
 - { type: successor_of, subject: south-africa, object: orange-river-colony, from: 1910, to: null } # 1910-05-31 남아프리카 연방 — 여러 단위가 합쳐 새 단위
 
 # ── 사하라 이남 F5 CE-E-5 (적도 아프리카·차드, 2026-11-13) ──
-- { type: vassal_of, subject: french-congo, object: france, from: 1882, to: 1905 } # 1882-11-30 프랑스령 콩고 설치(브라자가 맺은 조약 땅), 1906 가봉·중앙콩고·우방기샤리-차드로 나뉨 — 그해 말 규칙으로 1905까지(위키 en French Congo, 기본값 20)
 - { type: successor_of, subject: french-gabon, object: french-congo, from: 1906, to: null } # 1906 프랑스령 콩고가 나뉘어 가봉 식민지(같은 땅의 다음 단위 — 기본값 20)
 - { type: successor_of, subject: french-middle-congo, object: french-congo, from: 1906, to: null } # 1906 프랑스령 콩고가 나뉘어 중앙콩고 식민지(같은 땅의 다음 단위 — 기본값 20)
 
@@ -1761,3 +1760,32 @@
 # ── 사하라 이남 F5 S2-5 (로디지아·니아살랜드·모잠비크, 2026-11-13) ──
 - { type: vassal_of, subject: nyasaland, object: uk, from: 1891, to: 1963 } # 1889 샤이어 고지 보호령 선포·1891-05 영국 정부 비준 영국령 중앙아프리카 보호령(1893~ 이름), 1907-07-06 니아살랜드 이름, 1964-07-06 말라위 독립 — 그해 말 규칙으로 1963까지(위키 en British Central Africa Protectorate·Nyasaland, 기본값 27)
 - { type: vassal_of, subject: bsac-northern-rhodesia, object: uk, from: 1899, to: 1923 } # 1899-11-28 바로체랜드-북서 로디지아 추밀원령·1900 북동 로디지아 칙령, 1911 합침, 1924-04-01 영국 보호령 — 그해 말 규칙으로 1923까지(위키 en North-Western Rhodesia·Company rule in Rhodesia, M-F5-9)
+
+# ── 사하라 이남 F6 WA-6 (서아프리카 대서양 쪽·서사헬, 2026-11-13) ──
+
+# ── 사하라 이남 F6 GN-6 (기니만·나이지리아·카메룬·보르누, 2026-11-13) ──
+
+# ── 사하라 이남 F6 H-6 (수단·에티오피아·뿔·차드·적도 아프리카, 2026-11-13) ──
+- { type: vassal_of, subject: egyptian-sudan, object: muhammad-ali-egypt, from: 1821, to: 1884 } # 1821-06-14 센나르 항복으로 정복 마침, 1885-01-26 하르툼 함락(마흐디 국가) — 그해 말 규칙으로 1884까지(위키 en Turco-Egyptian Sudan, F6 결정 1·기본값 11). 오스만 종주는 muhammad-ali-egypt 줄이 가짐
+- { type: vassal_of, subject: french-congo, object: france, from: 1849, to: 1905 } # 1849 리브르빌(1838·1841 가봉 해안 조약) → 1882-11-30 프랑스령 콩고, 1906 가봉·중앙콩고·우방기샤리-차드로 나뉨 — 그해 말 규칙으로 1905까지(위키 en History of Gabon·French Congo, F6 기본값 20 — F5 CE-E-5 줄의 from 1882를 고침)
+
+# ── 사하라 이남 F6 S1A-6 (케이프, 2026-11-13) ──
+- { type: occupied_by, subject: cape-colony, object: uk, from: 1795, to: 1802 } # 1795-09 영국 점령, 1802 아미앵 조약으로 반환 — 주권은 네덜란드 쪽(위키 en Cape Colony, 기본값 42)
+- { type: vassal_of, subject: cape-colony, object: batavian-republic, from: 1803, to: 1805 } # 1803-02 바타비아 공화국 인수, 1806-01-08 영국 재점령 — 그해 말 규칙으로 1805까지(위키 en Cape Colony, 기본값 42)
+- { type: vassal_of, subject: british-kaffraria, object: uk, from: 1847, to: 1865 } # 1847-12-23 해리 스미스 병합(영국 직할 땅), 1860 왕령 식민지, 1866 케이프 식민지에 합침 — 1865까지(위키 en British Kaffraria)
+- { type: vassal_of, subject: griqualand-west, object: uk, from: 1871, to: 1879 } # 1871-10-27 영국령 선포, 1873 왕령 식민지, 1880-10-18 케이프 식민지에 합침 — 1879까지(위키 en Griqualand West)
+
+# ── 사하라 이남 F6 S1B-6 (보어 공화국·나탈·줄루·소토·스와지, 2026-11-13) ──
+- { type: vassal_of, subject: orange-river-sovereignty, object: uk, from: 1848, to: 1853 } # 1848-02-03 케이프 총독 해리 스미스가 오렌지강·발강 사이에 영국 주권 선포, 1854-02-23 블룸폰테인 협약으로 물러남 — 그해 말 규칙으로 1853까지(위키 en Orange River Sovereignty·Orange Free State)
+- { type: vassal_of, subject: transvaal-territory, object: uk, from: 1877, to: 1880 } # 1877-04-12 셰프스톤의 병합 선언, 1880-12 파르데크라알 봉기·1881-08-03 프리토리아 협약으로 자치 회복 — 끝 해 1880(봉기 해 말, Q5), successor_of는 두지 않음(M-F6-12 ㉮)(위키 en South African Republic)
+- { type: vassal_of, subject: south-african-republic, object: uk, from: 1881, to: 1883 } # 1881-08-03 프리토리아 협약으로 영국 종주권 아래 자치, 1884-02-27 런던 협약으로 종주권 문구가 빠짐 — 그해 말 규칙으로 1883까지(위키 en South African Republic)
+- { type: vassal_of, subject: basutoland, object: uk, from: 1868, to: 1870 } # 1868-03-12 영국 보호(바수톨란드), 1871-11-03 케이프 식민지에 붙임 — 1870까지(위키 en Basutoland·Basuto Gun War)
+- { type: vassal_of, subject: basutoland, object: cape-colony, from: 1871, to: 1883 } # 1871-11-03 케이프 식민지 관할, 1884-02-02 케이프에서 떼어 영국 직할(1883-09 케이프 분리법) — 1883까지(위키 en Basutoland·Basuto Gun War). 1884~ 영국 줄은 사하라 이남 F2
+- { type: successor_of, subject: natal, object: natalia, from: 1843, to: null } # 1843-05 영국이 나탈리아 공화국을 합쳐 나탈 식민지 선포 — 같은 땅의 다음 단위(COMMON P2)
+- { type: successor_of, subject: orange-free-state, object: orange-river-sovereignty, from: 1854, to: null } # 1854-02-23 블룸폰테인 협약으로 영국이 물러나 오라녀 자유국 — 같은 땅의 다음 단위(COMMON P2)
+
+# ── 사하라 이남 F6 S2-6 (짐바브웨·잠비아·말라위·모잠비크·앙골라·나미비아·보츠와나, 2026-11-13) ──
+
+# ── 사하라 이남 F6 EI-6 (콩고·대호수·동·인도양 섬, 2026-11-13) ──
+- { type: vassal_of, subject: french-mauritius, object: france, from: 1715, to: 1809 } # 1715-09-20 뒤프렌 다르셀이 섬을 차지해 일드프랑스(1721 정착 시작), 1810-12-03 영국군에 항복 — 그해 말 규칙으로 1809까지(위키 en Isle de France (Mauritius), 사하라 이남 F6 기본값 24)
+- { type: successor_of, subject: british-mauritius, object: french-mauritius, from: 1810, to: null } # 1810-12-03 프랑스 식민지 일드프랑스가 영국에 항복해 영국령 모리셔스(1814-05-30 파리 조약 — 같은 땅의 다음 단위, 기본값 24)

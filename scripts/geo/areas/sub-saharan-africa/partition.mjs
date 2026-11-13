@@ -2,6 +2,7 @@
 // 시대·범위: 1885~1909: 베를린 회의 뒤 분할부터 남아프리카 연방 앞까지 (F5)
 // 짝 항목 파일: data/entities/sub-saharan-africa-partition.yaml (나라 id는 그 파일과 이 파일의 versions가 같아야 한다 — 앞 잇는 F4 항목 14는 sub-saharan-africa-colonial.yaml, F3 항목 16은
 //   sub-saharan-africa-postwar.yaml, F2 항목 17은 sub-saharan-africa-decolonization.yaml, F1 항목 6은 sub-saharan-africa-modern.yaml)
+//   앞 시대 파일 prepartition.mjs(F6, 1800~1884)가 같은 id로 앞을 잇는다(이 파일 항목 19·F4·F3·F2·F1 항목 중 1800~1884에 있는 것 — 짝 항목 파일 sub-saharan-africa-prepartition.yaml은 F6 새 항목 10, 사하라 이남 F6 뼈대 2026-11-13)
 // 가져와도 되는 것: lib.mjs, shared.mjs, areas/korea.mjs, areas/inner-asia.mjs, areas/china.mjs, areas/west.mjs, areas/japan.mjs, areas/europe.mjs, areas/middle-east.mjs, areas/south-asia.mjs, areas/central-asia.mjs, areas/southeast-asia.mjs, areas/sub-saharan-africa/의 다른 도우미 모듈. areas/sub-saharan-africa.mjs는 이 파일을 가져오는 쪽이라 가져올 수 없다(순환).
 //   권역 파일 안 도형이 필요하면 그 도형을 areas/sub-saharan-africa/의 도우미 모듈로 옮겨 둘이 함께 가져온다.
 // 생성기에 들어가는 것은 export const era 하나다(칼선 같은 다른 이름은 export해도 되지만 versions·gapZones·source 같은 이름은 안 됨: check:generator). 권역 파일 areas/sub-saharan-africa.mjs가 shared.mjs의 joinEras로 자기 versions·gapZones·voids에 합치고,
@@ -17,12 +18,12 @@
 // 해 규칙: 한 버전 = 그해 말 모습. 원정·되돌려진 점령은 칠하지 않음(이탈리아의 카살라 점령 1894~1897 — 기본값 22, 우찰레 조약의 보호령 주장 — 기본값 19). 새 버전은 1만 km²(주변 5만 km²) 넘게 바뀔 때만.
 //   이름만 바뀌는 해(1890 프랑스령 수단·1891 프랑스령 기니·1893 영국령 중앙아프리카·1894 니제르 코스트·1896 프랑스령 소말리 해안·1898 남로디지아·1899~1904 수단 나눔 이름·1900 북·남나이지리아·
 //   1903 우방기샤리·1906 우방기샤리-차드·1907 니아살랜드)는 새 버전이 아니다 — 항목 글로(기본값 6·24·27, 0단계 기본값 21. 연방 AOF 1895·1904는 글 — 0단계 결정 3·기본값 8).
-// 1885 앞 버전 없음: 이 시대 파일의 첫 해는 F5_START(1885)다. 1885 앞에 성립한 나라·식민지도 첫 버전은 1885부터이고(F6(1800~1884)이 같은 id로 앞을 이음 — 특별 지시 2),
-//   1884 이하에는 이 권역 땅이 비는 것이 정상이다(빈 땅 검사 구역도 1885부터만 — 아래 gapZones).
-// 시대 경계 맞물림: 뒤 시대 파일 colonial.mjs(F4)의 첫 해 F4_START = 1910 = 이 파일의 F5_END(미포함 — 아래 확인 줄). 이 파일 버전의 끝은 모두 F5_END 이하이고(끝 없음 null 금지),
+// 1885 앞 버전: 이 시대 파일의 첫 해는 F5_START(1885)다. 1885 앞에 성립한 나라·식민지도 이 파일의 첫 버전은 1885부터이고, 1800~1884는 앞 시대 파일 prepartition.mjs(F6)가 같은 id로 앞을 이음
+//   (1884 말 모양 = 이 파일의 1885 모양 — F5 결정이 만든 1885 점프만 예외, F6 P1 ㉠~㉦). 빈 땅 검사 구역은 이 파일이 1885~1909, prepartition.mjs가 1800~1884(아래 gapZones). 1799 이하에는 이 권역 땅이 비는 것이 정상이다.
+// 시대 경계 맞물림: 앞 시대 파일 prepartition.mjs(F6)의 끝 F6_END = 1885 = 이 파일의 F5_START(그 파일이 손으로 맞춘 확인 줄). 뒤 시대 파일 colonial.mjs(F4)의 첫 해 F4_START = 1910 = 이 파일의 F5_END(미포함 — 아래 확인 줄). 이 파일 버전의 끝은 모두 F5_END 이하이고(끝 없음 null 금지),
 //   1910에 이어지는 나라(같은 id)는 joinEras가 이 파일 버전 뒤에 F4~F1 버전을 붙인다. 1909 말 모양은 F4의 1910 모양과 같아야 한다 — 결정 점프 셋만 예외(P1):
 //   ㉠ 남아프리카 연방(cape-colony·natal·transvaal-colony·orange-river-colony → south-africa, 같은 땅 주인만 바뀜) ㉡ 라도 SS-EC + 서나일 8구(belgian-congo → anglo-egyptian-sudan, 1910-06 이관)
-//   ㉢ 투르카나 K1(M-F5-10 — E-5가 사료로 닫은 해부터 british-uganda, 1910 모양과 이어짐). 권역 파일의 joinEras 목록은 [partitionEra, colonialEra, postwarEra, decolonizationEra, modernEra](과거가 앞).
+//   ㉢ 투르카나 K1(M-F5-10 — E-5가 사료로 닫은 해부터 british-uganda, 1910 모양과 이어짐). 권역 파일의 joinEras 목록은 [prepartitionEra, partitionEra, colonialEra, postwarEra, decolonizationEra, modernEra](과거가 앞 — F6 뼈대 2026-11-13).
 // 앞 잇는 항목 53: F4 항목 14(sub-saharan-africa-colonial.yaml)·F3 항목 16(…-postwar.yaml)·F2 항목 17(…-decolonization.yaml)·F1 항목 6(…-modern.yaml) — 같은 id, 블록은 그 자리(파일 소유표 —
 //   COMMON 5절, 글과 from 고침만 칸이). 항목 from 고침: french-sudan 1890 → 1880·french-guinea 1891 → 1882(M-F5-12 — 1885 해안 버전 앞이라 필수)·southern-nigeria-protectorate 1900 → 1884·
 //   swaziland-protectorate 1903 → 1894·nyasaland 1907 → 1891(기본값 24~27)·bsac-northern-rhodesia 1900 → 1899(M-F5-9 — 1899 버전은 로지 땅 ZM-01·ZM-06·ZM-07만, S2-5).
@@ -70,7 +71,7 @@ import { ALL_IDS, DOMAIN, F, SSA_SOURCE_TEXT, idsOf, minus, tableKit } from './t
 
 const { build, geomOfUnit, joinTables, makeTable } = tableKit('partition');
 
-const F5_START = 1885; // 이 시대 파일의 첫 해(1885년 말 모습). 그 앞(1884 이하)은 F6 시대 파일 몫
+const F5_START = 1885; // 이 시대 파일의 첫 해(1885년 말 모습). 그 앞(1800~1884)은 F6 시대 파일 prepartition.mjs 몫(그 파일의 F6_END와 F5_START가 같은지 그 파일이 확인)
 const F5_END = 1910; // 마지막 표의 끝(미포함) = 뒤 시대 파일 colonial.mjs의 F4_START(1910)
 const F4_START = 1910; // colonial.mjs의 첫 해(그 파일 상수와 같게 손으로 맞춤 — 시대 파일은 서로 가져오지 않는다)
 if (F5_END !== F4_START) throw new Error(`sub-saharan-africa partition: F5_END ${F5_END}가 F4 첫 해 ${F4_START}와 다름(1909/1910 사이가 비거나 joinEras가 '기간이 겹침'으로 멈춤)`);
@@ -237,25 +238,26 @@ const GW_voids = () => [
 
 // ── F5 CE-N-5 나이지리아·카메룬·기니만 섬·보르누 (최상위 이름 CEN_) ──
 // 조각 F5_CEN_IDS(나이지리아 37·카메룬 10·적도 기니 6·상투메 프린시페 2 = 55), 구현 F5-CE-N-5
-// 새 항목 6: sokoto-caliphate(1885~1902 하우사 핵심 11조각 346.1k — 기본값 1·M-F5-2)·benin-kingdom(1885~1896 NG-ED 19.9k)·royal-niger-company(1886~1899 NG-KO·NG-NI·NG-KW·NG-NA·NG-FC·NG-BE·NG-TA 262.3k)·
+// 새 항목 6: sokoto-caliphate(1885~1902 하우사 핵심 11조각 346.1k — 기본값 1·M-F5-2, F6 창구 ② Q2 (B′)로 1885 누페·일로린·타라바 + 1885~1893 아다마와 동쪽을 더함 — 1885 643.6k)·benin-kingdom(1885~1896 NG-ED 19.9k)·royal-niger-company(1886~1899 NG-KO·NG-NI·NG-KW·NG-NA·NG-FC·NG-BE·NG-TA 262.3k)·
 //   lagos-colony(1885~1905 NG-LA 3.7k → 1893~ 배후지 76.9k — 기본값 7)·rabih-state(1893~1899 NG-BO·NG-YO·CM-EN + 차드 넷은 CE-E-5)·kanem-bornu(1885~1892·1900~1901 — 같은 id 빈 기간)
 // 앞 잇는 항목 5: F4 german-kamerun·northern-nigeria-protectorate(1900~ — M-F5-2)·southern-nigeria-protectorate(from 1884) · F2 spanish-guinea·portuguese-sao-tome
-// 점프(P1): 1886 왕립 니제르 회사 · 1893 라바 국가·라고스 배후지 · 1894 카메룬 동부·카메룬 북부(창구 ③ Q-E2) · 1897 베닌 왕국 끝 · 1900 옛 회사 땅 → 북나이지리아·라바 끝 · 1902 카넴-보르누 끝 · 1903 소코토 → 북나이지리아 · 1906 라고스 → 남나이지리아
+// 점프(P1): 1886 왕립 니제르 회사(소코토 에미르국 누페·일로린·타라바 몫이 넘어감 — Q2 (B′)) · 1893 라바 국가·라고스 배후지 · 1894 카메룬 동부·카메룬 북부(창구 ③ Q-E2 — 아다마와 동쪽 소코토 색 → 독일령) · 1897 베닌 왕국 끝 · 1900 옛 회사 땅 → 북나이지리아·라바 끝 · 1902 카넴-보르누 끝 · 1903 소코토 → 북나이지리아 · 1906 라고스 → 남나이지리아
 // 칼선: 재사용 CEN_CUT_NCAM(import { CE_CUT_NCAM as CEN_CUT_NCAM } from './cuts-f3.mjs' — 북카메룬 띠, NG-BO 몫 1902~·NG-AD·NG-TA 몫 1903~1909 독일령 카메룬, 그 앞 보르누·소코토·회사 몫). 블록 소유: rabih-state·kanem-bornu(CE-E-5는 own 줄만)
 import { F5_CEN_IDS } from './cuts-f5.mjs';
 import { CE_CUT_NCAM as CEN_CUT_NCAM } from './cuts-f3.mjs';
 const CEN_BOUNDS = []; // 조각 통째·재사용 칼선은 시대 내내 같은 나눔이라 표 경계 해를 더하지 않아도 됨
 // 나라별 묶음(칸 안에서 다시 적음 — 합은 F5_CEN_IDS 55). 북카메룬 띠(CEN_CUT_NCAM)가 걸치는 NG-BO·NG-AD·NG-TA는 조각마다 따로 나눔(띠 밖 주인이 셋 다 달라서)
 const CEN_HAUSA = ['NG-SO', 'NG-KE', 'NG-ZA', 'NG-KT', 'NG-KN', 'NG-JI', 'NG-KD', 'NG-BA', 'NG-GO', 'NG-PL']; // 하우사 핵심 11 중 NG-AD(띠가 걸침)를 뺀 10 — 소코토 칼리프국(기본값 1)
-const CEN_NIGER = ['NG-KO', 'NG-NI', 'NG-KW', 'NG-NA', 'NG-FC', 'NG-BE']; // 니제르·베누에 7 중 NG-TA(띠가 걸침)를 뺀 6 — 왕립 니제르 회사(기본값 3)
+const CEN_NUPE_ILORIN = ['NG-NI', 'NG-KW']; // 누페·일로린 에미르국 2(106,862) — 1885 소코토 칼리프국(F6 창구 ② Q2 (B′)), 1886 왕립 니제르 회사
+const CEN_NIGER = ['NG-KO', 'NG-NA', 'NG-FC', 'NG-BE']; // 니제르·베누에 나머지 4(에미르국 밖) — 1885 비움, 1886 왕립 니제르 회사(기본값 3)
 const CEN_YORUBA = ['NG-OG', 'NG-OY', 'NG-OS', 'NG-ON', 'NG-EK']; // 라고스 배후지(요루바 땅) 76.9k
 const CEN_OILRIVERS = ['NG-AB', 'NG-AK', 'NG-AN', 'NG-BY', 'NG-CR', 'NG-DE', 'NG-EB', 'NG-EN', 'NG-IM', 'NG-RI']; // 동남 해안 10 — 오일 리버스·니제르 코스트 보호령 91.3k
 const CEN_CM_SW = ['CM-LT', 'CM-SW', 'CM-SU', 'CM-CE', 'CM-OU', 'CM-NW']; // 카메룬 서남 6(두알라·부에아·야운데) 193.3k
-const CEN_CM_NORTH = ['CM-AD', 'CM-NO']; // 카메룬 북(응가운데레·가루아 — 아다마와 토후국 동쪽, 기본값 1로 소코토 범위 밖, 1894 협정 해부터 독일령 — 창구 ③ Q-E2)
+const CEN_CM_NORTH = ['CM-AD', 'CM-NO']; // 카메룬 북(응가운데레·가루아 — 아다마와 에미르국 동쪽, 1885~1893 소코토 칼리프국(F6 창구 ② Q2 (B′)), 1894 협정 해부터 독일령 — 창구 ③ Q-E2)
 const CEN_GNQ = idsOf('GNQ'); // 적도 기니 6(비오코·리오무니·안노본)
 const CEN_STP = idsOf('STP'); // 상투메 프린시페 2
 {
-  const all = [CEN_HAUSA, ['NG-AD'], CEN_NIGER, ['NG-TA'], ['NG-BO', 'NG-YO'], ['NG-ED'], ['NG-LA'], CEN_YORUBA, CEN_OILRIVERS, CEN_CM_SW, ['CM-ES'], CEN_CM_NORTH, ['CM-EN'], CEN_GNQ, CEN_STP].flat();
+  const all = [CEN_HAUSA, ['NG-AD'], CEN_NUPE_ILORIN, CEN_NIGER, ['NG-TA'], ['NG-BO', 'NG-YO'], ['NG-ED'], ['NG-LA'], CEN_YORUBA, CEN_OILRIVERS, CEN_CM_SW, ['CM-ES'], CEN_CM_NORTH, ['CM-EN'], CEN_GNQ, CEN_STP].flat();
   if (all.length !== F5_CEN_IDS.length || new Set(all).size !== all.length || all.some((id) => !F5_CEN_IDS.includes(id))) {
     throw new Error(`sub-saharan-africa partition: CE-N-5 묶음 합 ${all.length}개가 F5_CEN_IDS ${F5_CEN_IDS.length}개와 다름`);
   }
@@ -267,11 +269,13 @@ ownSplit('CEN_NGAD', ['NG-AD'], [['띠', CEN_CUT_NCAM]], '본토', {
   띠: [[F5_START, 'sokoto-caliphate'], [1903, 'german-kamerun']], // 마다갈리·미치카·무비·자다·간예 쪽 — 1901~1902 독일의 아다마와 원정 뒤 칼리프국 함락 해에 맞춤(1902로 두면 띠 남쪽 덩어리 아래 31 km² 부스러기가 소코토에서 떨어짐 — 재사용 칼선이라 고치지 않음)
   본토: [[F5_START, 'sokoto-caliphate'], [1903, 'northern-nigeria-protectorate']], // 욜라(아다마와 토후국 도읍)는 1901-09-02 영국이 차지했으나 칼리프국 함락 해에 맞춤(기본값 1·5)
 });
-// 왕립 니제르 회사: 1886-07 특허, 1899 특허 취소·1900-01-01 정부가 넘겨받음(위키 en Royal Niger Company). 그 앞 1885는 비움(Q1 (다) — 특허 앞 회사 조약은 글)
-own(CEN_NIGER, [[F5_START, null], [1886, 'royal-niger-company'], [1900, 'northern-nigeria-protectorate']]); // 로코자·비다·일로린·무리 쪽
+// 왕립 니제르 회사: 1886-07 특허, 1899 특허 취소·1900-01-01 정부가 넘겨받음(위키 en Royal Niger Company). 그 앞 1885는 에미르국 땅(누페·일로린·무리)만 소코토 칼리프국 색(F6 창구 ② Q2 (B′) —
+//   F5가 아무도 칠하지 않은 해만 채움), 에미르국 밖 니제르·베누에 넷은 비움(Q1 (다) — 특허 앞 회사 조약은 글)
+own(CEN_NUPE_ILORIN, [[F5_START, 'sokoto-caliphate'], [1886, 'royal-niger-company'], [1900, 'northern-nigeria-protectorate']]); // 비다·일로린
+own(CEN_NIGER, [[F5_START, null], [1886, 'royal-niger-company'], [1900, 'northern-nigeria-protectorate']]); // 로코자·미나·아부자·마쿠르디 쪽
 ownSplit('CEN_NGTA', ['NG-TA'], [['띠', CEN_CUT_NCAM]], '본토', {
-  띠: [[F5_START, null], [1886, 'royal-niger-company'], [1900, 'northern-nigeria-protectorate'], [1903, 'german-kamerun']], // 가샤카·맘빌라 쪽 — 띠 밖과 같은 주인, 띠 남쪽 덩어리(NG-AD 몫과 함께) 1903 독일령(1902로 두면 558 km²가 독일령에서 떨어짐)
-  본토: [[F5_START, null], [1886, 'royal-niger-company'], [1900, 'northern-nigeria-protectorate']], // 무리 토후국 쪽
+  띠: [[F5_START, 'sokoto-caliphate'], [1886, 'royal-niger-company'], [1900, 'northern-nigeria-protectorate'], [1903, 'german-kamerun']], // 가샤카·맘빌라 쪽(1885 아다마와 에미르국 — Q2 (B′)) — 띠 밖과 같은 주인, 띠 남쪽 덩어리(NG-AD 몫과 함께) 1903 독일령(1902로 두면 558 km²가 독일령에서 떨어짐)
+  본토: [[F5_START, 'sokoto-caliphate'], [1886, 'royal-niger-company'], [1900, 'northern-nigeria-protectorate']], // 무리 에미르국 쪽(1885 소코토 칼리프국 — Q2 (B′))
 });
 // 보르누: 1893 라바가 쿠카와를 빼앗음(통치 시작 1893-10-02 — 위키 en Rabih az-Zubayr), 1900-04-22 쿠세리에서 라바 죽음·1900-01-14 산다 쿠라 복위(위키 en Kanem–Bornu Empire),
 //   1902-03 영국이 보르누 대부분을 차지해 북나이지리아로, 디크와는 1902 독일령 카메룬(기본값 37 — 차드 TD- 넷은 CE-E-5 own 줄)
@@ -290,14 +294,13 @@ own(CEN_YORUBA, [[F5_START, null], [1893, 'lagos-colony'], [1906, 'southern-nige
 // 카메룬: 1884 두알라 보호 조약, 1893-11-15 영국·독일·1894-03-15 독일·프랑스 협정으로 동쪽·북쪽 경계(CM-ES·CM-AD·CM-NO — 위키 en Kamerun·Adamawa Emirate), 북부는 1901~1902 아다마와 원정(가루아 1901·마루아 1902)까지 명목
 own(CEN_CM_SW, [[F5_START, 'german-kamerun']]);
 own(['CM-ES'], [[F5_START, null], [1894, 'german-kamerun']]); // 베르투아 쪽
-own(CEN_CM_NORTH, [[F5_START, null], [1894, 'german-kamerun']]); // 응가운데레·가루아 — 1894 협정 해(창구 ③ Q-E2), 1894~1901 명목
+own(CEN_CM_NORTH, [[F5_START, 'sokoto-caliphate'], [1894, 'german-kamerun']]); // 응가운데레·가루아 — 1885~1893 아다마와 에미르국(소코토 칼리프국 색 — F6 창구 ② Q2 (B′)), 1894 협정 해(창구 ③ Q-E2), 1894~1901 명목
 own(CEN_GNQ, [[F5_START, 'spanish-guinea']]); // 리오무니 본토는 1900-06-27 파리 조약으로 경계가 정해짐 — 1885부터 통째(기본값 12, 근사)
 own(CEN_STP, [[F5_START, 'portuguese-sao-tome']]); // 카카오 농장 — 모양 그대로
 const CEN_voids = () => [
-  V(F5_START, 1886, ...CEN_NIGER, 'NG-TA'), // 왕립 니제르 회사 특허(1886-07) 앞 — 1885 니제르·베누에 땅(띠 몫 포함)은 아무도 칠하지 않음(Q1 (다))
+  V(F5_START, 1886, ...CEN_NIGER), // 왕립 니제르 회사 특허(1886-07) 앞 — 1885 에미르국 밖 니제르·베누에 넷은 아무도 칠하지 않음(Q1 (다) — 누페·일로린·타라바는 소코토 색, Q2 (B′))
   V(F5_START, 1893, ...CEN_YORUBA), // 요루바 배후지 — 1893 오요·이바단 보호 조약 앞(Q1 (다))
   V(F5_START, 1894, 'CM-ES'), // 카메룬 동부 — 1894 독일·프랑스 협정 앞(Q1 (다))
-  V(F5_START, 1894, ...CEN_CM_NORTH), // 카메룬 북부(아다마와 토후국 동쪽) — 소코토 범위 밖(기본값 1), 1894 협정 앞(창구 ③ Q-E2)
 ];
 // ── F5 CE-N-5 끝 ──
 
@@ -721,7 +724,7 @@ const voids = [...WA_voids(), ...GW_voids(), ...CEN_voids(), ...H_voids(), ...S1
 if (voids.some(([f, t]) => f < F5_START || t === null || t > F5_END)) throw new Error(`sub-saharan-africa partition: 비운 땅의 기간은 ${F5_START}~${F5_END} 안이어야 함(끝 없음 null 금지 — 1910~는 colonial.mjs 몫)`);
 
 // 빈 땅 검사 구역: 권역 바깥선(조각 779개)에서 그해 비운 땅(voids)을 뺀 곳 — 이 권역 나라 땅을 합쳐 빈 곳이 없어야 한다.
-// F5_START(1885)~F5_END(1910, 미포함)만 만든다(1884 이하에는 이 권역 구역이 없음 — F6이 생기면 그 단계가 앞을 더함. 1910~는 colonial.mjs 구역 '사하라 이남 식민 …'이 이음 — 특별 지시 2).
+// F5_START(1885)~F5_END(1910, 미포함)만 만든다(1800~1884는 prepartition.mjs 구역 '사하라 이남 분할 앞 …'이, 1910~는 colonial.mjs 구역 '사하라 이남 식민 …'이 이음 — 특별 지시 2·F6 특별 지시 2. 1799 이하에는 이 권역 구역이 없음).
 // 비운 땅이 바뀌는 해마다 구역 하나(F5는 첫 조약 해·Q2·Q3 비움이 해마다 바뀌어 구역이 스무 개 안팎일 수 있음 — 정상), 마지막 구역의 끝은 F5_END. 이름 '사하라 이남 분할 <from>~<to-1>'(F4 '사하라 이남 식민 …'·F3 '사하라 이남 전후 …'·F2 '사하라 이남 탈식민 …'·F1 '사하라 이남 현대 …'와 겹치지 않음).
 // 이 권역 나라가 하나도 없는 기간(빈 틀)은 구역을 만들지 않는다(칸 하나만 채운 사본에서는 다른 칸 땅이 빈 땅으로 보고되는 것이 정상. gaps는 합치기 사본에서만 공식으로 돌린다)
 const ownedIn = (from, to) => Object.values(joined.segments).some((segs) => segs.some(([f, t]) => f < to && from < t));

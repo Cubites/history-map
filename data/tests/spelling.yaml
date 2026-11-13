@@ -6676,3 +6676,135 @@
   scope: 사하라 이남·마다가스카르
 
 # ── 사하라 이남 F5 S2-5 (로디지아·니아살랜드·모잠비크, 2026-11-13) ──
+
+# ── 사하라 이남 F6 공통(2026-11-13, F6 뼈대): 공용 표기표 — 새 항목 이름·옛 이름·사람·수도·이음매 지명을 위키백과 한국어판 표제로 확정(f6/skel/ko-titles.txt·en-ko.txt), 저장소에 이미 쓰인 표기가 있으면 그것(기존 표기 우선), 표제가 없으면 지시문 가칭. avoid는 넘겨주기·지시문 가칭 등 흔한 잘못 꼴만(저장소 쓰임 0을 확인). 칸은 자기 새 이름만 칸 머리 아래(f6/SKEL-NOTE.md 끝 표) ──
+
+- use: 오요 제국
+  avoid: [오요 왕국]
+  note: "Oyo Empire(요루바족 제국, 1836 오요일레를 버림). 위키 ko 표제(F6 뼈대 확인, f6/skel/ko-titles.txt·en-ko.txt)('오요 왕국'은 넘겨주기 — 저장소 쓰임 0)"
+  scope: 사하라 이남·서아프리카
+
+- use: 그리콸란드 웨스트
+  avoid: [그리콸랜드]
+  note: "Griqualand West(1871~1880 영국 식민지 — 1880 케이프 식민지에 합침). 위키 ko 표제 없음 — 사전 꼴 '-란드'(줄루란드 선례, '그리콸란드 이스트'도 같은 꼴), 저장소 쓰임 0"
+  scope: 사하라 이남·남부
+
+- use: 콜롤로 왕국
+  avoid: [코롤로]
+  note: "Kololo(Makololo, 1845~1864 바로체 평원의 소토계 나라). 위키 ko 표제 없음 — 저장소 꼴 '콜롤로'(F5 lozi-kingdom 글), 질문 묶기 가칭 '코롤로'는 막음"
+  scope: 사하라 이남·남부
+
+- use: 영국령 트란스발
+  avoid: [영국령 트란스발 식민지]
+  note: "British annexation of the Transvaal(1877~1881 — transvaal-territory). 위키 ko 표제 없음 — 지시문 가칭. 표제 '트란스발 식민지'(Transvaal Colony)는 1902~1910 transvaal-colony 이름이라 1877~1881 땅은 '영국령 트란스발'로 가름(두 꼴을 섞은 이름은 막음)"
+  scope: 사하라 이남·남부
+
+- use: 포체프스트롬
+  avoid: [포치프스트룸]
+  note: "Potchefstroom(트란스발 공화국 첫 수도). 위키 ko 표제(F6 뼈대 확인, f6/skel/ko-titles.txt·en-ko.txt)(en Potchefstroom의 ko 연결 — 지시문 가칭 '포치프스트룸'은 고침, 저장소 쓰임 0)"
+  scope: 사하라 이남·남부
+
+- use: 켈리마느
+  avoid: [켈리마네]
+  note: "Quelimane(모잠비크 잠베지강 어귀 포르투갈 거점). 위키 ko 표제(F6 뼈대 확인, f6/skel/ko-titles.txt·en-ko.txt)('켈리마네'는 넘겨주기 — 저장소 쓰임 0)"
+  scope: 사하라 이남·남부
+
+# ── 사하라 이남 F6 WA-6 (서아프리카 대서양 쪽·서사헬, 2026-11-13) ──
+
+- use: 페데르브
+  avoid: [파이드헤르브, 페데르베]
+  note: "Louis Faidherbe(세네갈 총독 1854~1861·1863~1865, 1855 와알로 정복·1857 다카르). 위키 ko 표제 없음 — 프랑스어 발음 [fɛdɛʁb] 표기, 조사 노트 꼴 '파이드헤르브'는 막음(저장소 쓰임 0)"
+  scope: 사하라 이남·서아프리카
+
+# ── 사하라 이남 F6 GN-6 (기니만·나이지리아·카메룬·보르누, 2026-11-13) ──
+
+- use: 알라핀
+  avoid: [알라아핀]
+  note: "Alaafin(오요 제국 왕의 칭호). 위키 ko 표제 없음 — 장모음을 겹쳐 적은 꼴은 막음"
+  scope: 사하라 이남·서아프리카
+
+- use: 오요메시
+  avoid: [오요 메시]
+  note: "Oyo Mesi(오요 제국 귀족 회의). 위키 ko 표제 없음 — 한 낱말로 붙여 씀"
+  scope: 사하라 이남·서아프리카
+
+- use: 무함마드 벨로
+  avoid: [무하마드 벨로]
+  note: "Muhammed Bello(소코토 칼리프국 둘째 지도자, 1809년 소코토를 세움). 위키 ko 표제 없음 — 저장소 꼴 무함마드"
+  scope: 사하라 이남·서아프리카
+
+# ── 사하라 이남 F6 H-6 (수단·에티오피아·뿔·차드·적도 아프리카, 2026-11-13) ──
+
+- use: 오고웨마리팀주
+  avoid: [오고우에마리팀]
+  note: "Ogooué-Maritime Province(가봉 서남 기슭 주, 포르장티). 위키 ko 표제(F6 H-6 확인 — en 표제의 ko 연결, 강 이름 '오고우에강'은 막지 않음)"
+  scope: 사하라 이남·중앙
+
+# ── 사하라 이남 F6 S1A-6 (케이프, 2026-11-13) ──
+
+- use: 키스카마강
+  avoid: [케이스카마강]
+  note: "Keiskamma River(1847~1865 영국령 카프라리아 서쪽 경계). 위키 ko 표제 없음 — 영어 발음 꼴(S1A-6, 저장소 avoid 쓰임 0)"
+
+- use: 그리콰
+  avoid: [그리쿠아]
+  note: "Griqua(그리콸란드 웨스트·이스트의 코이코이계 사람들). 저장소 쓰임 '그리콰'(S1A-6, avoid 쓰임 0)"
+
+- use: 이스트런던
+  avoid: [이스트 런던]
+  note: "East London(이스턴케이프주 항구 도시). 위키 ko 표제 '이스트런던'(붙여 씀 — S1A-6, avoid 쓰임 0)"
+
+- use: 킹윌리엄스타운
+  avoid: [킹 윌리엄스 타운, 킹윌리엄즈타운]
+  note: "King William's Town(1847~1865 영국령 카프라리아 행정 중심). F6 공용 표기표(S1A-6, avoid 쓰임 0)"
+
+# ── 사하라 이남 F6 S1B-6 (보어 공화국·나탈·줄루·소토·스와지, 2026-11-13) ──
+
+- use: 안드리스 프레토리위스
+  avoid: [안드리스 프레토리우스]
+  note: "Andries Pretorius(보어인 이주민 지도자 — 1838 블러드강 전투·1848 붐플라츠 전투). 위키 ko 표제 '안드리스 프레토리위스'(en langlinks, f6/impl-s1b-6/en-ko.txt)"
+  scope: 사하라 이남·남부
+
+- use: 케치와요
+  avoid: [세츠와요, 체츠와요]
+  note: "Cetshwayo(줄루 왕 1872~1879). 위키 ko 표제 '케치와요 캄판데'(en langlinks, f6/impl-s1b-6/en-ko.txt) — 글에서는 '케치와요'"
+  scope: 사하라 이남·남부
+
+- use: 셰프스톤
+  avoid: [셉스톤]
+  note: "Theophilus Shepstone(1877 트란스발 병합 선언). 위키 ko 표제 없음(en langlinks 0, f6/impl-s1b-6/en-ko.txt) — 영어 소리대로"
+  scope: 사하라 이남·남부
+
+# ── 사하라 이남 F6 S2-6 (짐바브웨·잠비아·말라위·모잠비크·앙골라·나미비아·보츠와나, 2026-11-13) ──
+
+- use: 세벳와네
+  avoid: [세비트와네, 세베트와네]
+  note: "Sebetwane/Sebitwane(?~1851, 콜롤로 왕국을 세운 왕). 위키 ko 표제 없음 — F6 공용 표기표(f6/SKEL-NOTE.md 끝 표) 꼴, 저장소 쓰임 0"
+  scope: 사하라 이남·남부
+
+- use: 린얀티
+  avoid: [리냔티]
+  note: "Linyanti(초베강 가, 콜롤로 왕국 도읍). 위키 ko 표제 없음(en-ko 연결 없음 — f6/skel/en-ko.txt) — F6 공용 표기표 꼴, 저장소 쓰임 0"
+  scope: 사하라 이남·남부
+
+- use: 프라주
+  avoid: [프라조]
+  note: "prazo(포르투갈 왕실이 잠베지강 계곡에 내준 땅). 위키 ko 표제 없음 — 포르투갈어 발음 꼴(바스쿠 다가마·로렌수마르케스 선례), 저장소 쓰임 0"
+  scope: 사하라 이남·남부
+
+- use: 마크 마옹
+  avoid: [마크마옹]
+  note: "Patrice de MacMahon(프랑스 대통령, 1875 델라고아만 중재). 위키 ko 표제 '파트리스 드 마크 마옹'('파트리스 드 마크마옹'은 넘겨주기) — 영국 외교관 헨리 맥마흔(맥마흔선)과 다른 사람"
+  scope: 사하라 이남·남부
+
+# ── 사하라 이남 F6 EI-6 (콩고·대호수·동·인도양 섬, 2026-11-13) ──
+
+- use: 라부르도네
+  avoid: [라부르도나이스]
+  note: "Mahé de La Bourdonnais(1735 일드프랑스 총독 — french-mauritius). 위키 ko 표제 없음(f6/impl-ei-6/ko-titles.txt) — 프랑스어 발음 꼴, 영어식 읽기 '라부르도나이스'는 막음(저장소 쓰임 0)"
+  scope: 사하라 이남·인도양
+
+- use: 쉬르쿠프
+  avoid: [서쿠프]
+  note: "Robert Surcouf(일드프랑스를 근거지로 한 프랑스 사략선 선장). 위키 ko 표제 없음 — 프랑스어 발음 꼴, 영어식 읽기 '서쿠프'는 막음(저장소 쓰임 0)"
+  scope: 사하라 이남·인도양

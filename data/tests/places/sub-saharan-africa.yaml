@@ -2148,14 +2148,6 @@
   note: 1906년 5월 1일 남나이지리아에 합침
 - name: 가루아
   at: [13.40, 9.30]
-  year: 1893
-  expect: none
-  region: sub-saharan-africa
-  url: https://en.wikipedia.org/wiki/Adamawa_Emirate
-  from: 사하라 이남 F5 CE-N-5 결과노트
-  note: 1894 독일·프랑스 협정 앞(소코토 범위 밖 — 비움)
-- name: 가루아
-  at: [13.40, 9.30]
   year: 1894
   expect: german-kamerun
   url: https://en.wikipedia.org/wiki/Adamawa_Emirate
@@ -2845,3 +2837,855 @@
   expect: portuguese-mozambique
   url: https://en.wikipedia.org/wiki/Pemba,_Mozambique
   from: 사하라 이남 F5 S2-5 결과노트
+
+# ── 사하라 이남 F6 WA-6 (서아프리카 대서양 쪽·서사헬, 2026-11-13) ──
+- name: 다카르
+  at: [-17.44, 14.69]
+  year: 1854
+  expect: none
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Dakar
+  from: 사하라 이남 F6 WA-6 결과노트
+- name: 다카르
+  at: [-17.44, 14.69]
+  year: 1855
+  expect: french-senegal
+  url: https://en.wikipedia.org/wiki/Dakar
+  from: 사하라 이남 F6 WA-6 결과노트
+- name: 니오로
+  at: [-9.60, 15.23]
+  year: 1854
+  expect: none
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Nioro_du_Sahel
+  from: 사하라 이남 F6 WA-6 결과노트
+- name: 니오로
+  at: [-9.60, 15.23]
+  year: 1855
+  expect: tukulor-empire
+  url: https://en.wikipedia.org/wiki/Nioro_du_Sahel
+  from: 사하라 이남 F6 WA-6 결과노트
+- name: 세구
+  at: [-6.27, 13.43]
+  year: 1860
+  expect: none
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/S%C3%A9gou
+  from: 사하라 이남 F6 WA-6 결과노트
+- name: 세구
+  at: [-6.27, 13.43]
+  year: 1861
+  expect: tukulor-empire
+  url: https://en.wikipedia.org/wiki/S%C3%A9gou
+  from: 사하라 이남 F6 WA-6 결과노트
+- name: 몹티
+  at: [-4.20, 14.49]
+  year: 1861
+  expect: none
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Mopti
+  from: 사하라 이남 F6 WA-6 결과노트
+- name: 몹티
+  at: [-4.20, 14.49]
+  year: 1862
+  expect: tukulor-empire
+  url: https://en.wikipedia.org/wiki/Mopti
+  from: 사하라 이남 F6 WA-6 결과노트
+- name: 몬로비아
+  at: [-10.80, 6.30]
+  year: 1846
+  expect: none
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Monrovia
+  from: 사하라 이남 F6 WA-6 결과노트
+- name: 몬로비아
+  at: [-10.80, 6.30]
+  year: 1847
+  expect: liberia
+  url: https://en.wikipedia.org/wiki/Monrovia
+  from: 사하라 이남 F6 WA-6 결과노트
+- name: 비사우
+  at: [-15.60, 11.86]
+  year: 1878
+  expect: none
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Bissau
+  from: 사하라 이남 F6 WA-6 결과노트
+- name: 비사우
+  at: [-15.60, 11.86]
+  year: 1879
+  expect: portuguese-guinea
+  url: https://en.wikipedia.org/wiki/Bissau
+  from: 사하라 이남 F6 WA-6 결과노트
+- name: 보케
+  at: [-14.29, 10.94]
+  year: 1881
+  expect: none
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Bok%C3%A9
+  from: 사하라 이남 F6 WA-6 결과노트
+- name: 보케
+  at: [-14.29, 10.94]
+  year: 1882
+  expect: french-guinea
+  url: https://en.wikipedia.org/wiki/Bok%C3%A9
+  from: 사하라 이남 F6 WA-6 결과노트
+- name: 팀보
+  at: [-11.85, 10.65]
+  year: 1800
+  expect: fouta-djallon
+  url: https://en.wikipedia.org/wiki/Timbo,_Guinea
+  from: 사하라 이남 F6 WA-6 결과노트
+
+# ── 사하라 이남 F6 GN-6 (기니만·나이지리아·카메룬·보르누, 2026-11-13) ──
+- name: 소코토
+  at: [5.24, 13.06]
+  year: 1808
+  expect: none
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Sokoto_Caliphate
+  from: 사하라 이남 F6 GN-6 결과노트
+  note: 1809년 소코토를 세우기 앞(하우사 왕국들 — 비움)
+- name: 소코토
+  at: [5.24, 13.06]
+  year: 1809
+  expect: sokoto-caliphate
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Sokoto_Caliphate
+  from: 사하라 이남 F6 GN-6 결과노트
+  note: 1809년 무함마드 벨로가 소코토를 세움
+- name: 비다
+  at: [6.01, 9.08]
+  year: 1834
+  expect: none
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Nupe_Kingdom
+  from: 사하라 이남 F6 반영(창구 ③ Q-E2)
+  note: 누페 첫 에미르 앞(누페 왕국 내전 — 비움)
+- name: 비다
+  at: [6.01, 9.08]
+  year: 1835
+  expect: sokoto-caliphate
+  region: sub-saharan-africa
+  url: https://www.britannica.com/place/Bida
+  from: 사하라 이남 F6 반영(창구 ③ Q-E2)
+  note: 1835년 우스만 자키가 첫 누페 에미르가 됨
+- name: 잘링고
+  at: [11.36, 8.90]
+  year: 1816
+  expect: none
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Muri,_Nigeria
+  from: 사하라 이남 F6 반영(창구 ③ Q-E2)
+  note: 무리 에미르국 앞(비움)
+- name: 잘링고
+  at: [11.36, 8.90]
+  year: 1817
+  expect: sokoto-caliphate
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Muri,_Nigeria
+  from: 사하라 이남 F6 반영(창구 ③ Q-E2)
+  note: 1817년 함만 루와가 무리 에미르국을 세움
+- name: 비다
+  at: [6.01, 9.08]
+  year: 1885
+  expect: sokoto-caliphate
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Nupe_Kingdom
+  from: 사하라 이남 F6 GN-6 결과노트
+  note: F5가 비운 1885를 소코토로 채움(Q2 (B′))
+- name: 비다
+  at: [6.01, 9.08]
+  year: 1886
+  expect: royal-niger-company
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Royal_Niger_Company
+  from: 사하라 이남 F6 GN-6 결과노트
+  note: 1886년 7월 왕실 특허 — F5 그대로
+- name: 일로린
+  at: [4.55, 8.50]
+  year: 1816
+  expect: oyo-empire
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Oyo_Empire
+  from: 사하라 이남 F6 GN-6 결과노트
+  note: 아폰자 반란 앞 오요 제국 땅
+- name: 일로린
+  at: [4.55, 8.50]
+  year: 1817
+  expect: none
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Oyo_Empire
+  from: 사하라 이남 F6 GN-6 결과노트
+  note: 1817년 아폰자 반란 뒤 — 풀라니 에미르국 앞(M-F6-6 ㉮)
+- name: 일로린
+  at: [4.55, 8.50]
+  year: 1823
+  expect: sokoto-caliphate
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Oyo_Empire
+  from: 사하라 이남 F6 GN-6 결과노트
+  note: 1823년 일로린 에미르국이 소코토 칼리프국에 붙음(M-F6-6 ㉮)
+- name: 오요
+  at: [3.93, 7.85]
+  year: 1835
+  expect: oyo-empire
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Oyo_Empire
+  from: 사하라 이남 F6 GN-6 결과노트
+  note: 오요일레가 무너진 해 말까지 오요 제국
+- name: 오요
+  at: [3.93, 7.85]
+  year: 1836
+  expect: none
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Oyo_Empire
+  from: 사하라 이남 F6 GN-6 결과노트
+  note: 오요 제국 끝 뒤 요루바 소국들 — 비움
+- name: 가루아
+  at: [13.40, 9.30]
+  year: 1893
+  expect: sokoto-caliphate
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Adamawa_Emirate
+  from: 사하라 이남 F6 GN-6 결과노트
+  note: 1894 독일·프랑스 협정 앞 아다마와 에미르국(Q2 (B′) — F5 비움을 소코토로 채움)
+- name: 응가운데레
+  at: [13.58, 7.32]
+  year: 1809
+  expect: sokoto-caliphate
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Adamawa_Emirate
+  from: 사하라 이남 F6 GN-6 결과노트
+  note: 1809년 모디보 아다마가 깃발을 받음
+- name: 쿠마시
+  at: [-1.62, 6.69]
+  year: 1800
+  expect: asante
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Ashanti_Empire
+  from: 사하라 이남 F6 GN-6 결과노트
+  note: 1800 첫 해 아샨티 제국 도읍
+- name: 케이프코스트
+  at: [-1.24, 5.11]
+  year: 1873
+  expect: none
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Gold_Coast_(British_colony)
+  from: 사하라 이남 F6 GN-6 결과노트
+  note: 직할 식민지 앞(요새 거점 1만 밑 — 비움)
+- name: 케이프코스트
+  at: [-1.24, 5.11]
+  year: 1874
+  expect: british-gold-coast
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Gold_Coast_(British_colony)
+  from: 사하라 이남 F6 GN-6 결과노트
+  note: 1874년 7월 24일 직할 식민지
+- name: 라고스
+  at: [3.38, 6.52]
+  year: 1860
+  expect: none
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Lagos_Colony
+  from: 사하라 이남 F6 GN-6 결과노트
+  note: 할양 앞(라고스 왕국 1만 밑 — 비움)
+- name: 라고스
+  at: [3.38, 6.52]
+  year: 1861
+  expect: lagos-colony
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Lagos_Colony
+  from: 사하라 이남 F6 GN-6 결과노트
+  note: 1861년 8월 6일 할양 조약
+
+# ── 사하라 이남 F6 H-6 (수단·에티오피아·뿔·차드·적도 아프리카, 2026-11-13) ──
+- name: 하르툼
+  at: [32.53, 15.59]
+  year: 1820
+  expect: none
+  url: https://en.wikipedia.org/wiki/Turco-Egyptian_Sudan
+  from: 사하라 이남 F6 H-6 결과노트
+- name: 하르툼
+  at: [32.53, 15.59]
+  year: 1821
+  expect: egyptian-sudan
+  url: https://en.wikipedia.org/wiki/Turco-Egyptian_Sudan
+  from: 사하라 이남 F6 H-6 결과노트
+- name: 센나르
+  at: [33.63, 13.55]
+  year: 1820
+  expect: funj-sultanate
+  url: https://en.wikipedia.org/wiki/Funj_Sultanate
+  from: 사하라 이남 F6 H-6 결과노트
+- name: 센나르
+  at: [33.63, 13.55]
+  year: 1821
+  expect: egyptian-sudan
+  url: https://en.wikipedia.org/wiki/Funj_Sultanate
+  from: 사하라 이남 F6 H-6 결과노트
+- name: 엘오베이드
+  at: [30.22, 13.18]
+  year: 1820
+  expect: darfur
+  url: https://en.wikipedia.org/wiki/Darfur_Sultanate
+  from: 사하라 이남 F6 H-6 결과노트
+- name: 엘오베이드
+  at: [30.22, 13.18]
+  year: 1821
+  expect: egyptian-sudan
+  url: https://en.wikipedia.org/wiki/Darfur_Sultanate
+  from: 사하라 이남 F6 H-6 결과노트
+- name: 알파시르
+  at: [25.35, 13.63]
+  year: 1873
+  expect: darfur
+  url: https://en.wikipedia.org/wiki/Darfur_Sultanate
+  from: 사하라 이남 F6 H-6 결과노트
+- name: 알파시르
+  at: [25.35, 13.63]
+  year: 1874
+  expect: egyptian-sudan
+  url: https://en.wikipedia.org/wiki/Darfur_Sultanate
+  from: 사하라 이남 F6 H-6 결과노트
+- name: 카살라
+  at: [36.4, 15.45]
+  year: 1839
+  expect: none
+  url: https://en.wikipedia.org/wiki/Turco-Egyptian_Sudan
+  from: 사하라 이남 F6 H-6 결과노트
+- name: 카살라
+  at: [36.4, 15.45]
+  year: 1840
+  expect: egyptian-sudan
+  url: https://en.wikipedia.org/wiki/Turco-Egyptian_Sudan
+  from: 사하라 이남 F6 H-6 결과노트
+- name: 마사와
+  at: [39.45, 15.61]
+  year: 1864
+  expect: none
+  url: https://en.wikipedia.org/wiki/History_of_Eritrea
+  from: 사하라 이남 F6 H-6 결과노트
+- name: 마사와
+  at: [39.45, 15.61]
+  year: 1865
+  expect: egyptian-sudan
+  url: https://en.wikipedia.org/wiki/History_of_Eritrea
+  from: 사하라 이남 F6 H-6 결과노트
+- name: 케렌
+  at: [38.47, 15.78]
+  year: 1871
+  expect: none
+  url: https://en.wikipedia.org/wiki/Ethiopian%E2%80%93Egyptian_War
+  from: 사하라 이남 F6 H-6 결과노트
+- name: 케렌
+  at: [38.47, 15.78]
+  year: 1872
+  expect: egyptian-sudan
+  url: https://en.wikipedia.org/wiki/Ethiopian%E2%80%93Egyptian_War
+  from: 사하라 이남 F6 H-6 결과노트
+- name: 주바
+  at: [31.58, 4.85]
+  year: 1869
+  expect: none
+  url: https://en.wikipedia.org/wiki/Equatoria
+  from: 사하라 이남 F6 H-6 결과노트
+- name: 주바
+  at: [31.58, 4.85]
+  year: 1870
+  expect: egyptian-sudan
+  url: https://en.wikipedia.org/wiki/Equatoria
+  from: 사하라 이남 F6 H-6 결과노트
+- name: 와우
+  at: [28, 7.7]
+  year: 1872
+  expect: none
+  url: https://en.wikipedia.org/wiki/Al-Zubayr_Rahma_Mansur
+  from: 사하라 이남 F6 H-6 결과노트
+- name: 와우
+  at: [28, 7.7]
+  year: 1873
+  expect: egyptian-sudan
+  url: https://en.wikipedia.org/wiki/Al-Zubayr_Rahma_Mansur
+  from: 사하라 이남 F6 H-6 결과노트
+- name: 아스마라
+  at: [38.93, 15.32]
+  year: 1800
+  expect: ethiopia
+  url: https://en.wikipedia.org/wiki/Zemene_Mesafint
+  from: 사하라 이남 F6 H-6 결과노트
+- name: 곤다르
+  at: [37.47, 12.6]
+  year: 1800
+  expect: ethiopia
+  url: https://en.wikipedia.org/wiki/Zemene_Mesafint
+  from: 사하라 이남 F6 H-6 결과노트
+- name: 아디스아바바
+  at: [38.75, 9.03]
+  year: 1877
+  expect: none
+  url: https://en.wikipedia.org/wiki/Menelik_II
+  from: 사하라 이남 F6 H-6 결과노트
+- name: 아디스아바바
+  at: [38.75, 9.03]
+  year: 1878
+  expect: ethiopia
+  url: https://en.wikipedia.org/wiki/Menelik_II
+  from: 사하라 이남 F6 H-6 결과노트
+- name: 아베셰
+  at: [20.83, 13.83]
+  year: 1800
+  expect: wadai
+  url: https://en.wikipedia.org/wiki/Wadai_Empire
+  from: 사하라 이남 F6 H-6 결과노트
+- name: 보사소
+  at: [49.18, 11.28]
+  year: 1800
+  expect: majeerteen-sultanate
+  url: https://en.wikipedia.org/wiki/Majeerteen_Sultanate
+  from: 사하라 이남 F6 H-6 결과노트
+- name: 호비오
+  at: [48.53, 5.35]
+  year: 1877
+  expect: none
+  url: https://en.wikipedia.org/wiki/Sultanate_of_Hobyo
+  from: 사하라 이남 F6 H-6 결과노트
+- name: 호비오
+  at: [48.53, 5.35]
+  year: 1878
+  expect: sultanate-of-hobyo
+  url: https://en.wikipedia.org/wiki/Sultanate_of_Hobyo
+  from: 사하라 이남 F6 H-6 결과노트
+- name: 하르게이사
+  at: [44.06, 9.56]
+  year: 1883
+  expect: none
+  url: https://en.wikipedia.org/wiki/British_Somaliland
+  from: 사하라 이남 F6 H-6 결과노트
+- name: 하르게이사
+  at: [44.06, 9.56]
+  year: 1884
+  expect: british-somaliland
+  url: https://en.wikipedia.org/wiki/British_Somaliland
+  from: 사하라 이남 F6 H-6 결과노트
+- name: 지부티
+  at: [43.15, 11.59]
+  year: 1883
+  expect: none
+  url: https://en.wikipedia.org/wiki/French_Somaliland
+  from: 사하라 이남 F6 H-6 결과노트
+- name: 지부티
+  at: [43.15, 11.59]
+  year: 1884
+  expect: djibouti
+  url: https://en.wikipedia.org/wiki/French_Somaliland
+  from: 사하라 이남 F6 H-6 결과노트
+- name: 리브르빌
+  at: [9.45, 0.39]
+  year: 1848
+  expect: none
+  url: https://en.wikipedia.org/wiki/History_of_Gabon
+  from: 사하라 이남 F6 H-6 결과노트
+- name: 리브르빌
+  at: [9.45, 0.39]
+  year: 1849
+  expect: french-congo
+  url: https://en.wikipedia.org/wiki/History_of_Gabon
+  from: 사하라 이남 F6 H-6 결과노트
+- name: 브라자빌
+  at: [15.24, -4.27]
+  year: 1881
+  expect: none
+  url: https://en.wikipedia.org/wiki/French_Congo
+  from: 사하라 이남 F6 H-6 결과노트
+- name: 브라자빌
+  at: [15.24, -4.27]
+  year: 1882
+  expect: french-congo
+  url: https://en.wikipedia.org/wiki/French_Congo
+  from: 사하라 이남 F6 H-6 결과노트
+
+# ── 사하라 이남 F6 S1A-6 (케이프, 2026-11-13) ──
+- name: 케이프타운
+  at: [18.42, -33.92]
+  year: 1800
+  expect: cape-colony
+  url: https://en.wikipedia.org/wiki/Cape_Colony
+  from: 사하라 이남 F6 S1A-6 결과노트
+- name: 콜스버그
+  at: [25.10, -30.72]
+  year: 1821
+  expect: none
+  url: https://en.wikipedia.org/wiki/Cape_Colony
+  from: 사하라 이남 F6 S1A-6 결과노트
+- name: 콜스버그
+  at: [25.10, -30.72]
+  year: 1822
+  expect: cape-colony
+  url: https://en.wikipedia.org/wiki/Cape_Colony
+  from: 사하라 이남 F6 S1A-6 결과노트
+- name: 프리스카
+  at: [22.75, -29.67]
+  year: 1846
+  expect: none
+  url: https://www.sahistory.org.za/article/cape-northern-frontier
+  from: 사하라 이남 F6 반영(창구 ③ Q-E1)
+- name: 프리스카
+  at: [22.75, -29.67]
+  year: 1847
+  expect: cape-colony
+  url: https://en.wikipedia.org/wiki/History_of_the_Cape_Colony_from_1806_to_1870
+  from: 사하라 이남 F6 반영(창구 ③ Q-E1)
+- name: 킹윌리엄스타운
+  at: [27.39, -32.88]
+  year: 1846
+  expect: none
+  url: https://en.wikipedia.org/wiki/British_Kaffraria
+  from: 사하라 이남 F6 S1A-6 결과노트
+- name: 킹윌리엄스타운
+  at: [27.39, -32.88]
+  year: 1847
+  expect: british-kaffraria
+  url: https://en.wikipedia.org/wiki/British_Kaffraria
+  from: 사하라 이남 F6 S1A-6 결과노트
+- name: 킹윌리엄스타운
+  at: [27.39, -32.88]
+  year: 1866
+  expect: cape-colony
+  url: https://en.wikipedia.org/wiki/British_Kaffraria
+  from: 사하라 이남 F6 S1A-6 결과노트
+- name: 킴벌리
+  at: [24.76, -28.74]
+  year: 1870
+  expect: none
+  url: https://en.wikipedia.org/wiki/Griqualand_West
+  from: 사하라 이남 F6 S1A-6 결과노트
+- name: 킴벌리
+  at: [24.76, -28.74]
+  year: 1871
+  expect: griqualand-west
+  url: https://en.wikipedia.org/wiki/Griqualand_West
+  from: 사하라 이남 F6 S1A-6 결과노트
+- name: 킴벌리
+  at: [24.76, -28.74]
+  year: 1880
+  expect: cape-colony
+  url: https://en.wikipedia.org/wiki/Griqualand_West
+  from: 사하라 이남 F6 S1A-6 결과노트
+- name: 부테르워스
+  at: [28.14, -32.33]
+  year: 1876
+  expect: none
+  url: https://en.wikipedia.org/wiki/Thembuland
+  from: 사하라 이남 F6 S1A-6 결과노트
+- name: 부테르워스
+  at: [28.14, -32.33]
+  year: 1877
+  expect: cape-colony
+  url: https://en.wikipedia.org/wiki/Thembuland
+  from: 사하라 이남 F6 S1A-6 결과노트
+- name: 업링턴
+  at: [21.25, -28.45]
+  year: 1884
+  expect: none
+  url: https://en.wikipedia.org/wiki/Cape_Colony
+  from: 사하라 이남 F6 S1A-6 결과노트
+
+# ── 사하라 이남 F6 S1B-6 (보어 공화국·나탈·줄루·소토·스와지, 2026-11-13) ──
+- name: 피터마리츠버그
+  at: [30.39, -29.60]
+  year: 1838
+  expect: zulu
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Zulu_Kingdom
+  from: 사하라 이남 F6 S1B-6 결과노트
+  note: 블러드강 전투(1838-12-16) 해 말까지 투겔라강 남쪽도 줄루 왕국 색(기본값 32)
+- name: 피터마리츠버그
+  at: [30.39, -29.60]
+  year: 1839
+  expect: natalia
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Natalia_Republic
+  from: 사하라 이남 F6 S1B-6 결과노트
+  note: 1839 나탈리아 공화국 수도(기본값 33)
+- name: 피터마리츠버그
+  at: [30.39, -29.60]
+  year: 1843
+  expect: natal
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Colony_of_Natal
+  from: 사하라 이남 F6 S1B-6 결과노트
+  note: 1843-05 영국 나탈 식민지(기본값 37)
+- name: 울룬디
+  at: [31.42, -28.32]
+  year: 1816
+  expect: zulu
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Zulu_Kingdom
+  from: 사하라 이남 F6 S1B-6 결과노트
+  note: 1816 무렵 샤카의 줄루 왕국(기본값 32)
+- name: 브라이헤이드
+  at: [30.79, -27.77]
+  year: 1883
+  expect: zulu
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Zulu_Kingdom
+  from: 사하라 이남 F6 S1B-6 결과노트
+  note: 뉴 리퍼블릭(1884-08) 앞은 줄루 왕국 색
+- name: 브라이헤이드
+  at: [30.79, -27.77]
+  year: 1884
+  expect: south-african-republic
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Nieuwe_Republiek
+  from: 사하라 이남 F6 S1B-6 결과노트
+  note: 1884 뉴 리퍼블릭은 트란스발 공화국 색 근사(기본값 35·M-F6-9)
+- name: 블룸폰테인
+  at: [26.21, -29.12]
+  year: 1847
+  expect: none
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Orange_River_Sovereignty
+  from: 사하라 이남 F6 S1B-6 결과노트
+  note: 1848 영국 주권 선포 앞은 비움
+- name: 블룸폰테인
+  at: [26.21, -29.12]
+  year: 1848
+  expect: orange-river-sovereignty
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Orange_River_Sovereignty
+  from: 사하라 이남 F6 S1B-6 결과노트
+  note: 1848-02-03 해리 스미스의 오렌지강 주권령(기본값 33)
+- name: 블룸폰테인
+  at: [26.21, -29.12]
+  year: 1854
+  expect: orange-free-state
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Orange_Free_State
+  from: 사하라 이남 F6 S1B-6 결과노트
+  note: 1854-02-23 블룸폰테인 협약으로 오라녀 자유국(기본값 38)
+- name: 프리토리아
+  at: [28.19, -25.75]
+  year: 1851
+  expect: none
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/South_African_Republic
+  from: 사하라 이남 F6 S1B-6 결과노트
+  note: 1852 샌드리버 협약 앞 정착지는 범위가 흐려 비움(기본값 36)
+- name: 프리토리아
+  at: [28.19, -25.75]
+  year: 1852
+  expect: south-african-republic
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/South_African_Republic
+  from: 사하라 이남 F6 S1B-6 결과노트
+  note: 1852-01-17 샌드리버 협약(기본값 38)
+- name: 프리토리아
+  at: [28.19, -25.75]
+  year: 1877
+  expect: transvaal-territory
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/South_African_Republic
+  from: 사하라 이남 F6 S1B-6 결과노트
+  note: 1877-04-12 영국 병합 선언 — 영국령 트란스발(Q5)
+- name: 프리토리아
+  at: [28.19, -25.75]
+  year: 1881
+  expect: south-african-republic
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Pretoria_Convention
+  from: 사하라 이남 F6 S1B-6 결과노트
+  note: 1881-08-03 프리토리아 협약으로 트란스발 공화국 복귀(Q5)
+- name: 마세루
+  at: [27.48, -29.31]
+  year: 1823
+  expect: none
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Moshoeshoe_I
+  from: 사하라 이남 F6 S1B-6 결과노트
+  note: 1824 소토 왕국 앞은 비움
+- name: 마세루
+  at: [27.48, -29.31]
+  year: 1824
+  expect: basutoland
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Moshoeshoe_I
+  from: 사하라 이남 F6 S1B-6 결과노트
+  note: 1824 모쇼에쇼에 1세가 타바보시우에 자리 잡은 소토 왕국(기본값 43 — 같은 id)
+- name: 음바바네
+  at: [31.14, -26.31]
+  year: 1800
+  expect: swaziland-protectorate
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Ndvungunye
+  from: 사하라 이남 F6 S1B-6 결과노트
+  note: 1780 은드붕구니예 때 스와지 왕국(기본값 43 — 같은 id)
+
+# ── 사하라 이남 F6 S2-6 (짐바브웨·잠비아·말라위·모잠비크·앙골라·나미비아·보츠와나, 2026-11-13) ──
+- name: 불라와요
+  at: [28.58, -20.15]
+  year: 1839
+  expect: none
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Bulawayo
+  from: 사하라 이남 F6 S2-6 결과노트
+- name: 불라와요
+  at: [28.58, -20.15]
+  year: 1840
+  expect: ndebele-kingdom
+  url: https://en.wikipedia.org/wiki/Matabeleland
+  from: 사하라 이남 F6 S2-6 결과노트
+- name: 몽구
+  at: [23.13, -15.25]
+  year: 1844
+  expect: lozi-kingdom
+  url: https://en.wikipedia.org/wiki/Barotseland
+  from: 사하라 이남 F6 S2-6 결과노트
+- name: 몽구
+  at: [23.13, -15.25]
+  year: 1845
+  expect: kololo-kingdom
+  url: https://en.wikipedia.org/wiki/Makololo
+  from: 사하라 이남 F6 S2-6 결과노트
+- name: 몽구
+  at: [23.13, -15.25]
+  year: 1864
+  expect: lozi-kingdom
+  url: https://en.wikipedia.org/wiki/Makololo
+  from: 사하라 이남 F6 S2-6 결과노트
+- name: 샤이샤이
+  at: [33.64, -25.04]
+  year: 1826
+  expect: none
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Gaza_Empire
+  from: 사하라 이남 F6 S2-6 결과노트
+- name: 샤이샤이
+  at: [33.64, -25.04]
+  year: 1827
+  expect: gaza
+  url: https://en.wikipedia.org/wiki/Gaza_Empire
+  from: 사하라 이남 F6 S2-6 결과노트
+- name: 루안다
+  at: [13.23, -8.84]
+  year: 1800
+  expect: portuguese-angola
+  url: https://en.wikipedia.org/wiki/Portuguese_Angola
+  from: 사하라 이남 F6 S2-6 결과노트
+- name: 우암보
+  at: [15.74, -12.78]
+  year: 1884
+  expect: none
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Huambo
+  from: 사하라 이남 F6 S2-6 결과노트
+- name: 테테
+  at: [33.59, -16.16]
+  year: 1800
+  expect: portuguese-mozambique
+  url: https://en.wikipedia.org/wiki/Prazo
+  from: 사하라 이남 F6 S2-6 결과노트
+- name: 켈리마느
+  at: [36.89, -17.88]
+  year: 1884
+  expect: portuguese-mozambique
+  url: https://en.wikipedia.org/wiki/Portuguese_Mozambique
+  from: 사하라 이남 F6 S2-6 결과노트
+- name: 구루에
+  at: [36.99, -15.46]
+  year: 1884
+  expect: none
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Gurúè
+  from: 사하라 이남 F6 S2-6 결과노트
+
+# ── 사하라 이남 F6 EI-6 (콩고·대호수·동·인도양 섬, 2026-11-13) ──
+- name: 안타나나리보
+  at: [47.52, -18.91]
+  year: 1800
+  expect: merina-kingdom
+  url: https://en.wikipedia.org/wiki/Antananarivo
+  from: 사하라 이남 F6 EI-6 결과노트
+- name: 토아마시나
+  at: [49.40, -18.15]
+  year: 1816
+  expect: none
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Toamasina
+  from: 사하라 이남 F6 EI-6 결과노트
+- name: 토아마시나
+  at: [49.40, -18.15]
+  year: 1817
+  expect: merina-kingdom
+  url: https://en.wikipedia.org/wiki/Toamasina
+  from: 사하라 이남 F6 EI-6 결과노트
+- name: 마하장가
+  at: [46.34, -15.71]
+  year: 1823
+  expect: none
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Mahajanga
+  from: 사하라 이남 F6 EI-6 결과노트
+- name: 마하장가
+  at: [46.34, -15.71]
+  year: 1824
+  expect: merina-kingdom
+  url: https://en.wikipedia.org/wiki/Mahajanga
+  from: 사하라 이남 F6 EI-6 결과노트
+- name: 포트루이스
+  at: [57.50, -20.16]
+  year: 1809
+  expect: french-mauritius
+  url: https://en.wikipedia.org/wiki/Port_Louis
+  from: 사하라 이남 F6 EI-6 결과노트
+- name: 포트루이스
+  at: [57.50, -20.16]
+  year: 1810
+  expect: british-mauritius
+  url: https://en.wikipedia.org/wiki/Port_Louis
+  from: 사하라 이남 F6 EI-6 결과노트
+- name: 빅토리아
+  at: [55.45, -4.62]
+  year: 1813
+  expect: none
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Victoria,_Seychelles
+  from: 사하라 이남 F6 EI-6 결과노트
+- name: 빅토리아
+  at: [55.45, -4.62]
+  year: 1814
+  expect: seychelles
+  url: https://en.wikipedia.org/wiki/Victoria,_Seychelles
+  from: 사하라 이남 F6 EI-6 결과노트
+- name: 잔지바르
+  at: [39.19, -6.16]
+  year: 1855
+  expect: none
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Zanzibar_City
+  from: 사하라 이남 F6 EI-6 결과노트
+- name: 잔지바르
+  at: [39.19, -6.16]
+  year: 1856
+  expect: sultanate-of-zanzibar
+  url: https://en.wikipedia.org/wiki/Zanzibar_City
+  from: 사하라 이남 F6 EI-6 결과노트
+- name: 마무주
+  at: [45.21, -12.79]
+  year: 1840
+  expect: none
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Mamoudzou
+  from: 사하라 이남 F6 EI-6 결과노트
+- name: 마무주
+  at: [45.21, -12.79]
+  year: 1841
+  expect: mayotte
+  url: https://en.wikipedia.org/wiki/Mamoudzou
+  from: 사하라 이남 F6 EI-6 결과노트
+- name: 캄팔라
+  at: [32.58, 0.32]
+  year: 1800
+  expect: buganda
+  url: https://en.wikipedia.org/wiki/Kampala
+  from: 사하라 이남 F6 EI-6 결과노트
