@@ -1022,13 +1022,7 @@
 - key: '1588 portuguese-guinea 성립'
   reason: '1800 앞 성립 — 지도는 1800부터(F6), 성립 사건은 그 해를 덮는 앞 단계 사건 묶음이 채움'
   decided: 2026-11-13 사하라 이남 F6 WA-6 구현(사건은 1묶음 ssa-05~08)
-- key: '1462 portuguese-cape-verde 성립'
-  reason: '1800 앞 성립 — 지도는 1800부터(F6), 성립 사건은 그 해를 덮는 앞 단계 사건 묶음이 채움'
-  decided: 2026-11-13 사하라 이남 F6 WA-6 구현(사건은 1묶음 ssa-05~08)
 - key: '1659 french-senegal 성립'
-  reason: '1800 앞 성립 — 지도는 1800부터(F6), 성립 사건은 그 해를 덮는 앞 단계 사건 묶음이 채움'
-  decided: 2026-11-13 사하라 이남 F6 WA-6 구현(사건은 1묶음 ssa-05~08)
-- key: '1725 fouta-djallon 성립'
   reason: '1800 앞 성립 — 지도는 1800부터(F6), 성립 사건은 그 해를 덮는 앞 단계 사건 묶음이 채움'
   decided: 2026-11-13 사하라 이남 F6 WA-6 구현(사건은 1묶음 ssa-05~08)
 - key: '1847 liberia 성립'
@@ -1045,9 +1039,6 @@
   decided: 2026-11-13 사하라 이남 F6 WA-6 구현(사건은 1묶음 ssa-05~08)
 - key: '1852 tukulor-empire 성립'
   reason: 'ssa-05~08 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-13 사하라 이남 F6 WA-6 구현(사건은 1묶음 ssa-05~08)
-- key: '1800 fouta-djallon 버전'
-  reason: 'F7(1799 이전)이 1800 앞을 칠하면 낡음 — F7 칸이 지움'
   decided: 2026-11-13 사하라 이남 F6 WA-6 구현(사건은 1묶음 ssa-05~08)
 - key: '1855 french-senegal 버전'
   reason: 'ssa-05~08 사건 묶음(1묶음)이 채움'
@@ -1081,22 +1072,7 @@
 - key: '1885 spanish-guinea 버전'
   reason: 'ssa-05~08 사건 묶음(1묶음)이 채움'
   decided: 2026-11-13 사하라 이남 F6 GN-6 구현(사건은 1묶음 ssa-05~08)
-- key: '1600 dahomey 성립'
-  reason: '1800 앞 성립 — 지도는 1800부터(F6), 성립 사건은 그 해를 덮는 앞 단계 사건 묶음이 채움'
-  decided: 2026-11-13 사하라 이남 F6 GN-6 구현(사건은 1묶음 ssa-05~08)
-- key: '1701 asante 성립'
-  reason: '1800 앞 성립 — 지도는 1800부터(F6), 성립 사건은 그 해를 덮는 앞 단계 사건 묶음이 채움'
-  decided: 2026-11-13 사하라 이남 F6 GN-6 구현(사건은 1묶음 ssa-05~08)
-- key: '1470 portuguese-sao-tome 성립'
-  reason: '1800 앞 성립 — 지도는 1800부터(F6), 성립 사건은 그 해를 덮는 앞 단계 사건 묶음이 채움'
-  decided: 2026-11-13 사하라 이남 F6 GN-6 구현(사건은 1묶음 ssa-05~08)
 - key: '1778 spanish-guinea 성립'
-  reason: '1800 앞 성립 — 지도는 1800부터(F6), 성립 사건은 그 해를 덮는 앞 단계 사건 묶음이 채움'
-  decided: 2026-11-13 사하라 이남 F6 GN-6 구현(사건은 1묶음 ssa-05~08)
-- key: '800 kanem-bornu 성립'
-  reason: '1800 앞 성립 — 지도는 1800부터(F6), 성립 사건은 그 해를 덮는 앞 단계 사건 묶음이 채움'
-  decided: 2026-11-13 사하라 이남 F6 GN-6 구현(사건은 1묶음 ssa-05~08)
-- key: '1180 benin-kingdom 성립'
   reason: '1800 앞 성립 — 지도는 1800부터(F6), 성립 사건은 그 해를 덮는 앞 단계 사건 묶음이 채움'
   decided: 2026-11-13 사하라 이남 F6 GN-6 구현(사건은 1묶음 ssa-05~08)
 - key: '1874 british-gold-coast 성립'
@@ -1108,26 +1084,8 @@
 - key: '1861 lagos-colony 성립'
   reason: 'ssa-05~08 사건 묶음(1묶음)이 채움'
   decided: 2026-11-13 사하라 이남 F6 GN-6 구현(사건은 1묶음 ssa-05~08)
-- key: '1300 oyo-empire 성립'
-  reason: '1800 앞 성립 — 지도는 1800부터(F6), 성립 사건은 그 해를 덮는 앞 단계 사건 묶음이 채움'
-  decided: 2026-11-13 사하라 이남 F6 GN-6 구현(사건은 1묶음 ssa-05~08)
 - key: '1836 oyo-empire 소멸'
   reason: 'ssa-05~08 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-13 사하라 이남 F6 GN-6 구현(사건은 1묶음 ssa-05~08)
-- key: '1800 asante 버전'
-  reason: 'F7(1799 이전)이 1800 앞을 칠하면 낡음 — F7 칸이 지움'
-  decided: 2026-11-13 사하라 이남 F6 GN-6 구현(사건은 1묶음 ssa-05~08)
-- key: '1800 dahomey 버전'
-  reason: 'F7(1799 이전)이 1800 앞을 칠하면 낡음 — F7 칸이 지움'
-  decided: 2026-11-13 사하라 이남 F6 GN-6 구현(사건은 1묶음 ssa-05~08)
-- key: '1800 benin-kingdom 버전'
-  reason: 'F7(1799 이전)이 1800 앞을 칠하면 낡음 — F7 칸이 지움'
-  decided: 2026-11-13 사하라 이남 F6 GN-6 구현(사건은 1묶음 ssa-05~08)
-- key: '1800 kanem-bornu 버전'
-  reason: 'F7(1799 이전)이 1800 앞을 칠하면 낡음 — F7 칸이 지움'
-  decided: 2026-11-13 사하라 이남 F6 GN-6 구현(사건은 1묶음 ssa-05~08)
-- key: '1800 oyo-empire 버전'
-  reason: 'F7(1799 이전)이 1800 앞을 칠하면 낡음 — F7 칸이 지움'
   decided: 2026-11-13 사하라 이남 F6 GN-6 구현(사건은 1묶음 ssa-05~08)
 - key: '1809 sokoto-caliphate 버전'
   reason: 'ssa-05~08 사건 묶음(1묶음)이 채움'
@@ -1155,18 +1113,6 @@
 - key: '1885 ethiopia 버전'
   reason: 'ssa-05~08 사건 묶음(1묶음)이 채움'
   decided: 2026-11-13 사하라 이남 F6 H-6 구현(사건은 1묶음 ssa-05~08)
-- key: '1750 majeerteen-sultanate 성립'
-  reason: '1800 앞 성립 — 지도는 1800부터(F6), 성립 사건은 그 해를 덮는 앞 단계 사건 묶음이 채움'
-  decided: 2026-11-13 사하라 이남 F6 H-6 구현(사건은 1묶음 ssa-05~08)
-- key: '1270 ethiopia 성립'
-  reason: '1800 앞 성립 — 지도는 1800부터(F6), 성립 사건은 그 해를 덮는 앞 단계 사건 묶음이 채움'
-  decided: 2026-11-13 사하라 이남 F6 H-6 구현(사건은 1묶음 ssa-05~08)
-- key: '1603 darfur 성립'
-  reason: '1800 앞 성립 — 지도는 1800부터(F6), 성립 사건은 그 해를 덮는 앞 단계 사건 묶음이 채움'
-  decided: 2026-11-13 사하라 이남 F6 H-6 구현(사건은 1묶음 ssa-05~08)
-- key: '1635 wadai 성립'
-  reason: '1800 앞 성립 — 지도는 1800부터(F6), 성립 사건은 그 해를 덮는 앞 단계 사건 묶음이 채움'
-  decided: 2026-11-13 사하라 이남 F6 H-6 구현(사건은 1묶음 ssa-05~08)
 - key: '1884 british-somaliland 성립'
   reason: 'ssa-05~08 사건 묶음(1묶음)이 채움'
   decided: 2026-11-13 사하라 이남 F6 H-6 구현(사건은 1묶음 ssa-05~08)
@@ -1179,9 +1125,6 @@
 - key: '1849 french-congo 성립'
   reason: 'ssa-05~08 사건 묶음(1묶음)이 채움'
   decided: 2026-11-13 사하라 이남 F6 H-6 구현(사건은 1묶음 ssa-05~08)
-- key: '1504 funj-sultanate 성립'
-  reason: '1800 앞 성립 — 지도는 1800부터(F6), 성립 사건은 그 해를 덮는 앞 단계 사건 묶음이 채움'
-  decided: 2026-11-13 사하라 이남 F6 H-6 구현(사건은 1묶음 ssa-05~08)
 - key: '1821 egyptian-sudan 성립'
   reason: 'ssa-05~08 사건 묶음(1묶음)이 채움'
   decided: 2026-11-13 사하라 이남 F6 H-6 구현(사건은 1묶음 ssa-05~08)
@@ -1190,21 +1133,6 @@
   decided: 2026-11-13 사하라 이남 F6 H-6 구현(사건은 1묶음 ssa-05~08)
 - key: '1885 egyptian-sudan 소멸'
   reason: 'ssa-05~08 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-13 사하라 이남 F6 H-6 구현(사건은 1묶음 ssa-05~08)
-- key: '1800 darfur 버전'
-  reason: 'F7(1799 이전)이 1800 앞을 칠하면 낡음 — F7 칸이 지움'
-  decided: 2026-11-13 사하라 이남 F6 H-6 구현(사건은 1묶음 ssa-05~08)
-- key: '1800 ethiopia 버전'
-  reason: 'F7(1799 이전)이 1800 앞을 칠하면 낡음 — F7 칸이 지움'
-  decided: 2026-11-13 사하라 이남 F6 H-6 구현(사건은 1묶음 ssa-05~08)
-- key: '1800 majeerteen-sultanate 버전'
-  reason: 'F7(1799 이전)이 1800 앞을 칠하면 낡음 — F7 칸이 지움'
-  decided: 2026-11-13 사하라 이남 F6 H-6 구현(사건은 1묶음 ssa-05~08)
-- key: '1800 wadai 버전'
-  reason: 'F7(1799 이전)이 1800 앞을 칠하면 낡음 — F7 칸이 지움'
-  decided: 2026-11-13 사하라 이남 F6 H-6 구현(사건은 1묶음 ssa-05~08)
-- key: '1800 funj-sultanate 버전'
-  reason: 'F7(1799 이전)이 1800 앞을 칠하면 낡음 — F7 칸이 지움'
   decided: 2026-11-13 사하라 이남 F6 H-6 구현(사건은 1묶음 ssa-05~08)
 - key: '1821 darfur 버전'
   reason: 'ssa-05~08 사건 묶음(1묶음)이 채움'
@@ -1238,12 +1166,6 @@
   decided: 2026-11-13 사하라 이남 F6 H-6 구현(사건은 1묶음 ssa-05~08)
 
 # ── 사하라 이남 F6 S1A-6 (케이프, 2026-11-13) ──
-- key: '1795 cape-colony 성립'
-  reason: '1800 앞 성립 — 지도는 1800부터(F6), 성립 사건은 그 해를 덮는 앞 단계 사건 묶음이 채움'
-  decided: 2026-11-13 사하라 이남 F6 S1A-6 구현(사건은 1묶음 ssa-05~08)
-- key: '1800 cape-colony 버전'
-  reason: 'F7(1799 이전)이 1800 앞을 칠하면 낡음 — F7 칸이 지움'
-  decided: 2026-11-13 사하라 이남 F6 S1A-6 구현(사건은 1묶음 ssa-05~08)
 - key: '1822 cape-colony 버전'
   reason: 'ssa-05~08 사건 묶음(1묶음)이 채움'
   decided: 2026-11-13 사하라 이남 F6 S1A-6 구현(사건은 1묶음 ssa-05~08)
@@ -1273,9 +1195,6 @@
   decided: 2026-11-13 사하라 이남 F6 S1A-6 구현(사건은 1묶음 ssa-05~08)
 
 # ── 사하라 이남 F6 S1B-6 (보어 공화국·나탈·줄루·소토·스와지, 2026-11-13) ──
-- key: '1780 swaziland-protectorate 성립'
-  reason: '1800 앞 성립 — 지도는 1800부터(F6), 성립 사건은 그 해를 덮는 앞 단계 사건 묶음이 채움'
-  decided: 2026-11-13 사하라 이남 F6 S1B-6 구현(사건은 1묶음 ssa-05~08)
 - key: '1816 zulu 성립'
   reason: 'ssa-05~08 사건 묶음(1묶음)이 채움'
   decided: 2026-11-13 사하라 이남 F6 S1B-6 구현(사건은 1묶음 ssa-05~08)
@@ -1309,9 +1228,6 @@
 - key: '1881 transvaal-territory 소멸'
   reason: 'ssa-05~08 사건 묶음(1묶음)이 채움'
   decided: 2026-11-13 사하라 이남 F6 S1B-6 구현(사건은 1묶음 ssa-05~08)
-- key: '1800 swaziland-protectorate 버전'
-  reason: 'F7(1799 이전)이 1800 앞을 칠하면 낡음 — F7 칸이 지움'
-  decided: 2026-11-13 사하라 이남 F6 S1B-6 구현(사건은 1묶음 ssa-05~08)
 - key: '1839 zulu 버전'
   reason: 'ssa-05~08 사건 묶음(1묶음)이 채움'
   decided: 2026-11-13 사하라 이남 F6 S1B-6 구현(사건은 1묶음 ssa-05~08)
@@ -1332,12 +1248,6 @@
 - key: '1885 portuguese-mozambique 버전'
   reason: 'ssa-05~08 사건 묶음(1묶음)이 채움'
   decided: 2026-11-13 사하라 이남 F6 S2-6 구현(사건은 1묶음 ssa-05~08)
-- key: '1575 portuguese-angola 성립'
-  reason: '1800 앞 성립 — 지도는 1800부터(F6), 성립 사건은 그 해를 덮는 앞 단계 사건 묶음이 채움'
-  decided: 2026-11-13 사하라 이남 F6 S2-6 구현(사건은 1묶음 ssa-05~08)
-- key: '1498 portuguese-mozambique 성립'
-  reason: '1800 앞 성립 — 지도는 1800부터(F6), 성립 사건은 그 해를 덮는 앞 단계 사건 묶음이 채움'
-  decided: 2026-11-13 사하라 이남 F6 S2-6 구현(사건은 1묶음 ssa-05~08)
 - key: '1600 lozi-kingdom 성립'
   reason: '1800 앞 성립 — 지도는 1800부터(F6), 성립 사건은 그 해를 덮는 앞 단계 사건 묶음이 채움'
   decided: 2026-11-13 사하라 이남 F6 S2-6 구현(사건은 1묶음 ssa-05~08)
@@ -1346,15 +1256,6 @@
   decided: 2026-11-13 사하라 이남 F6 S2-6 구현(사건은 1묶음 ssa-05~08)
 - key: '1824 gaza 성립'
   reason: 'ssa-05~08 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-13 사하라 이남 F6 S2-6 구현(사건은 1묶음 ssa-05~08)
-- key: '1800 lozi-kingdom 버전'
-  reason: 'F7(1799 이전)이 1800 앞을 칠하면 낡음 — F7 칸이 지움'
-  decided: 2026-11-13 사하라 이남 F6 S2-6 구현(사건은 1묶음 ssa-05~08)
-- key: '1800 portuguese-angola 버전'
-  reason: 'F7(1799 이전)이 1800 앞을 칠하면 낡음 — F7 칸이 지움'
-  decided: 2026-11-13 사하라 이남 F6 S2-6 구현(사건은 1묶음 ssa-05~08)
-- key: '1800 portuguese-mozambique 버전'
-  reason: 'F7(1799 이전)이 1800 앞을 칠하면 낡음 — F7 칸이 지움'
   decided: 2026-11-13 사하라 이남 F6 S2-6 구현(사건은 1묶음 ssa-05~08)
 - key: '1827 gaza 버전'
   reason: 'ssa-05~08 사건 묶음(1묶음)이 채움'
@@ -1368,15 +1269,6 @@
 
 # ── 사하라 이남 F6 EI-6 (콩고·대호수·동·인도양 섬, 2026-11-13) ──
 - key: '1300 buganda 성립'
-  reason: '1800 앞 성립 — 지도는 1800부터(F6), 성립 사건은 그 해를 덮는 앞 단계 사건 묶음이 채움'
-  decided: 2026-11-13 사하라 이남 F6 EI-6 구현(사건은 1묶음 ssa-05~08)
-- key: '1665 reunion 성립'
-  reason: '1800 앞 성립 — 지도는 1800부터(F6), 성립 사건은 그 해를 덮는 앞 단계 사건 묶음이 채움'
-  decided: 2026-11-13 사하라 이남 F6 EI-6 구현(사건은 1묶음 ssa-05~08)
-- key: '1540 merina-kingdom 성립'
-  reason: '1800 앞 성립 — 지도는 1800부터(F6), 성립 사건은 그 해를 덮는 앞 단계 사건 묶음이 채움'
-  decided: 2026-11-13 사하라 이남 F6 EI-6 구현(사건은 1묶음 ssa-05~08)
-- key: '1715 french-mauritius 성립'
   reason: '1800 앞 성립 — 지도는 1800부터(F6), 성립 사건은 그 해를 덮는 앞 단계 사건 묶음이 채움'
   decided: 2026-11-13 사하라 이남 F6 EI-6 구현(사건은 1묶음 ssa-05~08)
 - key: '1856 sultanate-of-zanzibar 성립'
@@ -1394,15 +1286,259 @@
 - key: '1810 french-mauritius 소멸'
   reason: 'ssa-05~08 사건 묶음(1묶음)이 채움'
   decided: 2026-11-13 사하라 이남 F6 EI-6 구현(사건은 1묶음 ssa-05~08)
-- key: '1800 buganda 버전'
-  reason: 'F7(1799 이전)이 1800 앞을 칠하면 낡음 — F7 칸이 지움'
-  decided: 2026-11-13 사하라 이남 F6 EI-6 구현(사건은 1묶음 ssa-05~08)
-- key: '1800 merina-kingdom 버전'
-  reason: 'F7(1799 이전)이 1800 앞을 칠하면 낡음 — F7 칸이 지움'
-  decided: 2026-11-13 사하라 이남 F6 EI-6 구현(사건은 1묶음 ssa-05~08)
 - key: '1817 merina-kingdom 버전'
   reason: 'ssa-05~08 사건 묶음(1묶음)이 채움'
   decided: 2026-11-13 사하라 이남 F6 EI-6 구현(사건은 1묶음 ssa-05~08)
 - key: '1824 merina-kingdom 버전'
   reason: 'ssa-05~08 사건 묶음(1묶음)이 채움'
   decided: 2026-11-13 사하라 이남 F6 EI-6 구현(사건은 1묶음 ssa-05~08)
+
+# ── 사하라 이남 F7 WA-7 (서아프리카 사헬·대서양, 2026-11-14) ──
+- key: '1725 fouta-djallon 성립'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 WA-7 구현(사건은 2묶음 ssa-01~04)
+- key: '1462 portuguese-cape-verde 성립'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 WA-7 구현(사건은 2묶음 ssa-01~04)
+- key: '830 ghana-empire 성립'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 WA-7 구현(사건은 2묶음 ssa-01~04)
+- key: '1076 ghana-empire 소멸'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 WA-7 구현(사건은 2묶음 ssa-01~04)
+- key: '1235 mali-empire 성립'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 WA-7 구현(사건은 2묶음 ssa-01~04)
+- key: '1670 mali-empire 소멸'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 WA-7 구현(사건은 2묶음 ssa-01~04)
+- key: '1464 songhai-empire 성립'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 WA-7 구현(사건은 2묶음 ssa-01~04)
+- key: '1591 songhai-empire 소멸'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 WA-7 구현(사건은 2묶음 ssa-01~04)
+- key: '1360 jolof-empire 성립'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 WA-7 구현(사건은 2묶음 ssa-01~04)
+- key: '1549 jolof-empire 소멸'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 WA-7 구현(사건은 2묶음 ssa-01~04)
+- key: '1324 mali-empire 버전'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 WA-7 구현(사건은 2묶음 ssa-01~04)
+- key: '1436 mali-empire 버전'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 WA-7 구현(사건은 2묶음 ssa-01~04)
+- key: '1464 mali-empire 버전'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 WA-7 구현(사건은 2묶음 ssa-01~04)
+- key: '1475 mali-empire 버전'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 WA-7 구현(사건은 2묶음 ssa-01~04)
+- key: '1502 mali-empire 버전'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 WA-7 구현(사건은 2묶음 ssa-01~04)
+- key: '1537 mali-empire 버전'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 WA-7 구현(사건은 2묶음 ssa-01~04)
+- key: '1599 mali-empire 버전'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 WA-7 구현(사건은 2묶음 ssa-01~04)
+- key: '1468 songhai-empire 버전'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 WA-7 구현(사건은 2묶음 ssa-01~04)
+- key: '1475 songhai-empire 버전'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 WA-7 구현(사건은 2묶음 ssa-01~04)
+- key: '1502 songhai-empire 버전'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 WA-7 구현(사건은 2묶음 ssa-01~04)
+- key: '1727 fouta-djallon 버전'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 WA-7 구현(사건은 2묶음 ssa-01~04)
+
+# ── 사하라 이남 F7 GN-7 (기니만·나이지리아·카메룬·보르누, 2026-11-14) ──
+- key: '1180 benin-kingdom 성립'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 GN-7 구현(사건은 2묶음 ssa-01~04)
+- key: '1300 oyo-empire 성립'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 GN-7 구현(사건은 2묶음 ssa-01~04)
+- key: '1470 portuguese-sao-tome 성립'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 GN-7 구현(사건은 2묶음 ssa-01~04)
+- key: '1600 dahomey 성립'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 GN-7 구현(사건은 2묶음 ssa-01~04)
+- key: '1701 asante 성립'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 GN-7 구현(사건은 2묶음 ssa-01~04)
+- key: '800 kanem-bornu 성립'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 GN-7 구현(사건은 2묶음 ssa-01~04)
+- key: '1380 kanem-bornu 버전'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 GN-7 구현(사건은 2묶음 ssa-01~04)
+- key: '1440 benin-kingdom 버전'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 GN-7 구현(사건은 2묶음 ssa-01~04)
+- key: '1608 oyo-empire 버전'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 GN-7 구현(사건은 2묶음 ssa-01~04)
+- key: '1722 asante 버전'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 GN-7 구현(사건은 2묶음 ssa-01~04)
+- key: '1727 dahomey 버전'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 GN-7 구현(사건은 2묶음 ssa-01~04)
+- key: '-999 sub-saharan-iron-age 성립'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 GN-7 구현(사건은 2묶음 ssa-01~04)
+- key: '599 sub-saharan-iron-age 소멸'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 GN-7 구현(사건은 2묶음 ssa-01~04)
+
+# ── 사하라 이남 F7 N-7 (나일 — 누비아·수단, 2026-11-14) ──
+- key: '1800 funj-sultanate 버전'
+  reason: 'ssa-05~08 사건 묶음(1묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 N-7 구현(사건은 2묶음 ssa-01~04)
+- key: '1603 darfur 성립'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 N-7 구현(사건은 2묶음 ssa-01~04)
+- key: '1504 funj-sultanate 성립'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 N-7 구현(사건은 2묶음 ssa-01~04)
+- key: '-1749 kerma 성립'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 N-7 구현(사건은 2묶음 ssa-01~04)
+- key: '-1503 kerma 소멸'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 N-7 구현(사건은 2묶음 ssa-01~04)
+- key: '-784 kush-napata 성립'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 N-7 구현(사건은 2묶음 ssa-01~04)
+- key: '350 kush-napata 소멸'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 N-7 구현(사건은 2묶음 ssa-01~04)
+- key: '400 nobatia 성립'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 N-7 구현(사건은 2묶음 ssa-01~04)
+- key: '625 nobatia 소멸'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 N-7 구현(사건은 2묶음 ssa-01~04)
+- key: '500 makuria 성립'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 N-7 구현(사건은 2묶음 ssa-01~04)
+- key: '1365 makuria 소멸'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 N-7 구현(사건은 2묶음 ssa-01~04)
+- key: '350 alodia 성립'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 N-7 구현(사건은 2묶음 ssa-01~04)
+- key: '1504 alodia 소멸'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 N-7 구현(사건은 2묶음 ssa-01~04)
+- key: '625 makuria 버전'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 N-7 구현(사건은 2묶음 ssa-01~04)
+- key: '1785 darfur 버전'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 N-7 구현(사건은 2묶음 ssa-01~04)
+
+# ── 사하라 이남 F7 HS-EI-7 (뿔·차드·동아프리카·인도양 섬, 2026-11-14) ──
+- key: '1750 majeerteen-sultanate 성립'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 HS-EI-7 구현(사건은 2묶음 ssa-01~04)
+- key: '1270 ethiopia 성립'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 HS-EI-7 구현(사건은 2묶음 ssa-01~04)
+- key: '1635 wadai 성립'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 HS-EI-7 구현(사건은 2묶음 ssa-01~04)
+- key: '1665 reunion 성립'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 HS-EI-7 구현(사건은 2묶음 ssa-01~04)
+- key: '1540 merina-kingdom 성립'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 HS-EI-7 구현(사건은 2묶음 ssa-01~04)
+- key: '1715 french-mauritius 성립'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 HS-EI-7 구현(사건은 2묶음 ssa-01~04)
+- key: '100 aksum 성립'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 HS-EI-7 구현(사건은 2묶음 ssa-01~04)
+- key: '960 aksum 소멸'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 HS-EI-7 구현(사건은 2묶음 ssa-01~04)
+- key: '1137 zagwe-dynasty 성립'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 HS-EI-7 구현(사건은 2묶음 ssa-01~04)
+- key: '1270 zagwe-dynasty 소멸'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 HS-EI-7 구현(사건은 2묶음 ssa-01~04)
+- key: '1332 ethiopia 버전'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 HS-EI-7 구현(사건은 2묶음 ssa-01~04)
+- key: '1543 ethiopia 버전'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 HS-EI-7 구현(사건은 2묶음 ssa-01~04)
+- key: '1787 merina-kingdom 버전'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 HS-EI-7 구현(사건은 2묶음 ssa-01~04)
+- key: '1800 buganda 버전'
+  reason: 'ssa-05~08 사건 묶음(1묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 HS-EI-7 구현(사건은 2묶음 ssa-01~04)
+
+# ── 사하라 이남 F7 S-7 (콩고 해안·앙골라·남부, 2026-11-14) ──
+- key: '1800 lozi-kingdom 버전'
+  reason: 'ssa-05~08 사건 묶음(1묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 S-7 구현(사건은 2묶음 ssa-01~04)
+- key: '1652 cape-colony 성립'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 S-7 구현(사건은 2묶음 ssa-01~04)
+- key: '1575 portuguese-angola 성립'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 S-7 구현(사건은 2묶음 ssa-01~04)
+- key: '1498 portuguese-mozambique 성립'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 S-7 구현(사건은 2묶음 ssa-01~04)
+- key: '1780 swaziland-protectorate 성립'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 S-7 구현(사건은 2묶음 ssa-01~04)
+- key: '1390 kongo-kingdom 성립'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 S-7 구현(사건은 2묶음 ssa-01~04)
+- key: '1665 kongo-kingdom 소멸'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 S-7 구현(사건은 2묶음 ssa-01~04)
+- key: '1561 loango-kingdom 성립'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 S-7 구현(사건은 2묶음 ssa-01~04)
+- key: '1787 loango-kingdom 소멸'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 S-7 구현(사건은 2묶음 ssa-01~04)
+- key: '1430 mutapa-empire 성립'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 S-7 구현(사건은 2묶음 ssa-01~04)
+- key: '1629 mutapa-empire 소멸'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 S-7 구현(사건은 2묶음 ssa-01~04)
+- key: '1745 cape-colony 버전'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 S-7 구현(사건은 2묶음 ssa-01~04)
+- key: '1780 cape-colony 버전'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 S-7 구현(사건은 2묶음 ssa-01~04)
+- key: '1582 portuguese-angola 버전'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 S-7 구현(사건은 2묶음 ssa-01~04)
+- key: '1617 portuguese-angola 버전'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 S-7 구현(사건은 2묶음 ssa-01~04)
+- key: '1671 portuguese-angola 버전'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 S-7 구현(사건은 2묶음 ssa-01~04)
+- key: '1629 portuguese-mozambique 버전'
+  reason: 'ssa-01~04 사건 묶음(2묶음)이 채움'
+  decided: 2026-11-14 사하라 이남 F7 S-7 구현(사건은 2묶음 ssa-01~04)

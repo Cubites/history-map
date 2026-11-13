@@ -17,13 +17,14 @@
 // 해 규칙: 한 버전 = 그해 말 모습. 원정·되돌려진 점령은 칠하지 않음. 새 버전은 1만 km²(주변 5만 km²) 넘게 바뀔 때만. 이름만 바뀌는 해(1806 보나파르트섬·1814 파리 조약·1814 런던 협약·
 //   1841 이집트령 수단 주 편입·1846 보르누 마이 폐지·1855 테워드로스 2세·1856 나탈 따로 식민지·1860 카프라리아 왕령 식민지·1868 바수톨란드·1871 요하네스 4세·1873 그리콸란드 웨스트 왕령 식민지·
 //   1879 줄루 열세 족장령·1882 리비에르뒤쉬드)는 새 버전이 아니다 — 항목 글로(기본값 39·43, 0단계 기본값 21).
-// 1800 앞 버전 없음: 이 시대 파일의 첫 해는 F6_START(1800)다. 1800 앞에 성립한 나라·식민지도 첫 버전은 1800부터이고(F7(1799 이하)이 같은 id로 앞을 이음 — 특별 지시 2),
-//   1799 이하에는 이 권역 땅이 비는 것이 정상이다(빈 땅 검사 구역도 1800부터만 — 아래 gapZones). 1800 뒤에 칠하기 시작하는 항목은 그 해부터(mapNote '지도에는 ○년부터' = 첫 칠한 해).
+// 1800 앞 버전: 이 시대 파일의 첫 해는 F6_START(1800)다. 1800 앞에 성립한 나라·식민지도 이 파일의 첫 버전은 1800부터이고, 앞 시대 파일 precolonial(F7, −2332~1799)이 같은 id로 앞을 이음
+//   (1799 말 모양 = 이 파일의 1800 모양 — 푼지만 예외, F7 P1). F7은 빈 땅 검사 구역을 두지 않음(구역은 이 파일 1800~1884부터 — 아래 gapZones). 1800 뒤에 칠하기 시작하는 항목은 그 해부터(mapNote '지도에는 ○년부터' = 첫 칠한 해).
 // 시대 경계 맞물림: 뒤 시대 파일 partition.mjs(F5)의 첫 해 F5_START = 1885 = 이 파일의 F6_END(미포함 — 아래 확인 줄). 이 파일 버전의 끝은 모두 F6_END 이하이고(끝 없음 null 금지),
 //   1885에 이어지는 나라(같은 id)는 joinEras가 이 파일 버전 뒤에 F5~F1 버전을 붙인다. 1884 말 모양은 F5의 1885 모양과 같아야 한다 — F5 결정이 만든 1885 점프(P1 ㉠~㉦)만 예외:
 //   ㉠ 프랑스령 세네갈 +178,501 ㉡ 독일령 토고·카메룬 서남·오일 리버스(기본값 8) ㉢ 스페인령 기니 리오무니 ㉣ 앙골라 해안 밖·모잠비크 거점 밖(Q6)·독일령 남서아프리카·베추아날란드·콩고 자유국
 //   ㉤ 이집트령 수단 → 마흐디 국가(같은 조각 색만 — 적도주 SS-EC·SS-EE·SS-EW·에리트레아 ER-GB·ER-SK는 1885 비움) ㉥ 에리트레아 고원 −11,442(M-F6-2 — 고원 ER-AN·ER-MA 11,184 등, 조각 파일 이름표가 실제 주 이름과 어긋남) ㉦ 노던케이프 오렌지강 북쪽·스텔라랜드·고센.
-//   권역 파일의 joinEras 목록은 [prepartitionEra, partitionEra, colonialEra, postwarEra, decolonizationEra, modernEra](과거가 앞).
+//   앞 시대 파일 precolonial.mjs(F7)의 끝 F7_END = 1800 = 이 파일의 F6_START(그 파일이 손으로 맞춘 확인 줄).
+//   권역 파일의 joinEras 목록은 [precolonialEra, prepartitionEra, partitionEra, colonialEra, postwarEra, decolonizationEra, modernEra](과거가 앞 — F7 뼈대 2026-11-14).
 // 앞 잇는 항목 45: F5 항목 19(sub-saharan-africa-partition.yaml)·F4 항목 4(…-colonial.yaml)·F3 항목 4(…-postwar.yaml)·F2 항목 12(…-decolonization.yaml)·F1 항목 6(…-modern.yaml) — 같은 id, 블록은 그 자리
 //   (파일 소유표 — COMMON 5절, 글과 from 고침만 칸이). 항목 from 고침 넷(필수 — F6 첫 버전이 지금 from보다 앞): cape-colony 1806 → 1795·basutoland 1884 → 1824·swaziland-protectorate 1894 → 1780·
 //   french-congo 1882 → 1849. 항목 from보다 앞 버전은 생성기가 받지 않으므로 from을 먼저 고친 뒤 own 줄. 짝 항목 파일 밖 id도 주인으로 쓸 수 있다(F2~F6 뼈대 장치 시험 ①).
@@ -73,7 +74,7 @@ import { ALL_IDS, DOMAIN, F, SSA_SOURCE_TEXT, idsOf, minus, tableKit } from './t
 
 const { build, geomOfUnit, joinTables, makeTable } = tableKit('prepartition');
 
-const F6_START = 1800; // 이 시대 파일의 첫 해(1800년 말 모습). 그 앞(1799 이하)은 F7 시대 파일 몫
+const F6_START = 1800; // 이 시대 파일의 첫 해(1800년 말 모습). 그 앞(−2332~1799)은 F7 시대 파일 precolonial.mjs 몫(그 파일의 F7_END와 F6_START가 같은지 그 파일이 확인)
 const F6_END = 1885; // 마지막 표의 끝(미포함) = 뒤 시대 파일 partition.mjs의 F5_START(1885)
 const F5_START = 1885; // partition.mjs의 첫 해(그 파일 상수와 같게 손으로 맞춤 — 시대 파일은 서로 가져오지 않는다)
 if (F6_END !== F5_START) throw new Error(`sub-saharan-africa prepartition: F6_END ${F6_END}가 F5 첫 해 ${F5_START}와 다름(1884/1885 사이가 비거나 joinEras가 '기간이 겹침'으로 멈춤)`);
@@ -683,7 +684,7 @@ const voids = [...WA_voids(), ...GN_voids(), ...H_voids(), ...S1A_voids(), ...S1
 if (voids.some(([f, t]) => f < F6_START || t === null || t > F6_END)) throw new Error(`sub-saharan-africa prepartition: 비운 땅의 기간은 ${F6_START}~${F6_END} 안이어야 함(끝 없음 null 금지 — 1885~는 partition.mjs 몫)`);
 
 // 빈 땅 검사 구역: 권역 바깥선(조각 779개)에서 그해 비운 땅(voids)을 뺀 곳 — 이 권역 나라 땅을 합쳐 빈 곳이 없어야 한다.
-// F6_START(1800)~F6_END(1885, 미포함)만 만든다(1799 이하에는 이 권역 구역이 없음 — F7이 생기면 그 단계가 앞을 더함. 1885~는 partition.mjs 구역 '사하라 이남 분할 …'이 이음 — 특별 지시 2).
+// F6_START(1800)~F6_END(1885, 미포함)만 만든다(1799 이하에는 이 권역 구역이 없음 — 앞 시대 파일 precolonial(F7, −2332~1799)이 같은 id로 앞을 이으나 F7은 빈 땅 검사 구역을 두지 않음(M-F7-5). 1885~는 partition.mjs 구역 '사하라 이남 분할 …'이 이음 — 특별 지시 2).
 // 비운 땅이 바뀌는 해마다 구역 하나(F6은 85년에 첫 조약·정복 해·Q1·Q3·Q4 비움이 해마다 바뀌어 구역이 마흔 개 안팎일 수 있음 — 정상), 마지막 구역의 끝은 F6_END. 이름 '사하라 이남 분할 앞 <from>~<to-1>'(F5 '사하라 이남 분할 …'·F4 '사하라 이남 식민 …'·F3 '사하라 이남 전후 …'·F2 '사하라 이남 탈식민 …'·F1 '사하라 이남 현대 …'와 겹치지 않음 — 'F5 이름 + 앞'이라 F5 이름 '분할 1885~…'과 글자가 다름).
 // 이 권역 나라가 하나도 없는 기간(빈 틀)은 구역을 만들지 않는다(칸 하나만 채운 사본에서는 다른 칸 땅이 빈 땅으로 보고되는 것이 정상. gaps는 합치기 사본에서만 공식으로 돌린다)
 const ownedIn = (from, to) => Object.values(joined.segments).some((segs) => segs.some(([f, t]) => f < to && from < t));

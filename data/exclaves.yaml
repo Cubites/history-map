@@ -6393,3 +6393,48 @@
 # ── 사하라 이남 F6 S2-6 (짐바브웨·잠비아·말라위·모잠비크·앙골라·나미비아·보츠와나, 2026-11-13) ──
 
 # ── 사하라 이남 F6 EI-6 (콩고·대호수·동·인도양 섬, 2026-11-13) ──
+
+# ── 사하라 이남 F7 WA-7 (서아프리카 사헬·대서양, 2026-11-14) ──
+
+- entity: mali-empire
+  from: 1436
+  to: 1464
+  at: [0.63, 16.42]
+  reason: 가오 땅(지금 말리 가오주, 지도 조각 약 174,726 km²)으로, 1433~1434년 팀북투 둘레를 투아레그에게 잃은 뒤에도 가오는 송가이가 차지하는 1464년까지 말리 제국 색이라 니제르강 굽이를 건너 떨어져 보인다
+  sources: ["위키백과 Mali Empire https://en.wikipedia.org/wiki/Mali_Empire"]
+
+- entity: mali-empire
+  from: 1502
+  to: 1537
+  at: [-13.03, 13.58]
+  reason: 세네갈강 상류·감비아강 땅(지금 세네갈 탐바쿤다·케두구·콜다와 감비아·기니비사우 가부, 지도 조각 약 92,519 km²)으로, 1502년 송가이가 카예 쪽 디아푸누를 차지해 말리 핵심과 떨어져 보인다(1537년 카아부 독립까지)
+  sources: ["위키백과 Mali Empire https://en.wikipedia.org/wiki/Mali_Empire", "위키백과 Songhai Empire https://en.wikipedia.org/wiki/Songhai_Empire"]
+
+- entity: mali-empire
+  from: 1537
+  to: 1599
+  at: [-12.93, 13.71]
+  reason: 세네갈강 상류 땅(지금 세네갈 탐바쿤다·케두구, 지도 조각 약 59,282 km²)으로, 1502년 송가이가 카예 쪽을 차지한 뒤 1599년 젠네 전투까지 말리 제국 색이라 핵심과 떨어져 보인다
+  sources: ["위키백과 Mali Empire https://en.wikipedia.org/wiki/Mali_Empire"]
+
+- entity: songhai-empire
+  from: 1502
+  to: 1591
+  at: [-10.26, 13.85]
+  reason: 카예 땅(지금 말리 카예주, 지도 조각 약 123,830 km²)으로, 1502년 송가이가 디아푸누를 차지했으나 사이의 니제르강 상류 핵심이 말리 제국 땅이라 송가이 본토와 떨어져 보인다
+  sources: ["위키백과 Mali Empire https://en.wikipedia.org/wiki/Mali_Empire", "위키백과 Songhai Empire https://en.wikipedia.org/wiki/Songhai_Empire"]
+
+# ── 사하라 이남 F7 GN-7 (기니만·나이지리아·카메룬·보르누, 2026-11-14) ──
+
+# ── 사하라 이남 F7 N-7 (나일 — 누비아·수단, 2026-11-14) ──
+
+# ── 사하라 이남 F7 HS-EI-7 (뿔·차드·동아프리카·인도양 섬, 2026-11-14) ──
+
+# ── 사하라 이남 F7 S-7 (콩고 해안·앙골라·남부, 2026-11-14) ──
+
+- entity: portuguese-angola
+  from: 1617
+  to: 1671
+  at: [14.05, -12.96]
+  reason: 벵겔라(약 39,880 km²)는 1617년 루안다 남쪽 해안에 따로 세운 포르투갈 거점으로, 그 사이 콴자강 남쪽 땅(지금 콴자술주)은 1671년 은동고 왕국이 무너질 때까지 포르투갈 땅이 아니어서 루안다 쪽 본토와 떨어져 있다(사료상 떨어진 땅 — 행정구역 탓 부스러기 아님, F7 기본값 D10)
+  sources: ["위키백과 Benguela https://en.wikipedia.org/wiki/Benguela", "위키백과 Kingdom of Ndongo https://en.wikipedia.org/wiki/Kingdom_of_Ndongo"]

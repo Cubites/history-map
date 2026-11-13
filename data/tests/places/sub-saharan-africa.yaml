@@ -3689,3 +3689,675 @@
   expect: buganda
   url: https://en.wikipedia.org/wiki/Kampala
   from: 사하라 이남 F6 EI-6 결과노트
+
+# ── 사하라 이남 F7 WA-7 (서아프리카 사헬·대서양, 2026-11-14) ──
+- name: 쿰비살레
+  at: [-7.97, 15.77]
+  year: 829
+  expect: none
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Koumbi_Saleh
+  from: 사하라 이남 F7 WA-7 결과노트
+- name: 쿰비살레
+  at: [-7.97, 15.77]
+  year: 830
+  expect: ghana-empire
+  url: https://en.wikipedia.org/wiki/Koumbi_Saleh
+  from: 사하라 이남 F7 WA-7 결과노트
+- name: 쿰비살레
+  at: [-7.97, 15.77]
+  year: 1076
+  expect: none
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Koumbi_Saleh
+  from: 사하라 이남 F7 WA-7 결과노트
+- name: 니아니
+  at: [-8.38, 11.38]
+  year: 1235
+  expect: mali-empire
+  url: https://en.wikipedia.org/wiki/Niani,_Guinea
+  from: 사하라 이남 F7 WA-7 결과노트
+- name: 니아니
+  at: [-8.38, 11.38]
+  year: 1670
+  expect: none
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Niani,_Guinea
+  from: 사하라 이남 F7 WA-7 결과노트
+- name: 팀북투
+  at: [-3.01, 16.78]
+  year: 1324
+  expect: mali-empire
+  url: https://en.wikipedia.org/wiki/Timbuktu
+  from: 사하라 이남 F7 WA-7 결과노트
+- name: 팀북투
+  at: [-3.01, 16.78]
+  year: 1436
+  expect: none
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Timbuktu
+  from: 사하라 이남 F7 WA-7 결과노트
+- name: 팀북투
+  at: [-3.01, 16.78]
+  year: 1468
+  expect: songhai-empire
+  url: https://en.wikipedia.org/wiki/Timbuktu
+  from: 사하라 이남 F7 WA-7 결과노트
+- name: 팀북투
+  at: [-3.01, 16.78]
+  year: 1591
+  expect: none
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Timbuktu
+  from: 사하라 이남 F7 WA-7 결과노트
+- name: 가오
+  at: [-0.05, 16.27]
+  year: 1464
+  expect: songhai-empire
+  url: https://en.wikipedia.org/wiki/Gao
+  from: 사하라 이남 F7 WA-7 결과노트
+- name: 젠네
+  at: [-4.55, 13.91]
+  year: 1475
+  expect: songhai-empire
+  url: https://en.wikipedia.org/wiki/Djenné
+  from: 사하라 이남 F7 WA-7 결과노트
+- name: 카예
+  at: [-11.43, 14.45]
+  year: 1502
+  expect: songhai-empire
+  url: https://en.wikipedia.org/wiki/Kayes
+  from: 사하라 이남 F7 WA-7 결과노트
+- name: 시카소
+  at: [-5.67, 11.32]
+  year: 1599
+  expect: none
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Sikasso
+  from: 사하라 이남 F7 WA-7 결과노트
+- name: 링게르
+  at: [-15.12, 15.39]
+  year: 1360
+  expect: jolof-empire
+  url: https://en.wikipedia.org/wiki/Linguère
+  from: 사하라 이남 F7 WA-7 결과노트
+- name: 링게르
+  at: [-15.12, 15.39]
+  year: 1549
+  expect: none
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Linguère
+  from: 사하라 이남 F7 WA-7 결과노트
+- name: 생루이
+  at: [-16.50, 16.03]
+  year: 1360
+  expect: none
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Saint-Louis,_Senegal
+  from: 사하라 이남 F7 WA-7 결과노트
+- name: 팀보
+  at: [-11.83, 10.63]
+  year: 1727
+  expect: fouta-djallon
+  url: https://en.wikipedia.org/wiki/Timbo,_Guinea
+  from: 사하라 이남 F7 WA-7 결과노트
+- name: 프라이아
+  at: [-23.51, 14.92]
+  year: 1462
+  expect: portuguese-cape-verde
+  url: https://en.wikipedia.org/wiki/Praia
+  from: 사하라 이남 F7 WA-7 결과노트
+- name: 칸칸
+  at: [-9.31, 10.39]
+  year: 1300
+  expect: mali-empire
+  url: https://en.wikipedia.org/wiki/Kankan
+  from: 사하라 이남 F7 합치기(메인 기본값 M-F7-24)
+  note: 칸칸은 니제르강 상류 만데 땅 한가운데로 말리 제국 핵심에 넣어 그림
+- name: 레레
+  at: [-4.90, 15.72]
+  year: 1324
+  expect: mali-empire
+  url: https://en.wikipedia.org/wiki/L%C3%A9r%C3%A9
+  from: 사하라 이남 F7 반영(검토 F1)
+  note: 레레는 파기비네 호수 서남 호수 지대로 니제르강 굽이 땅과 함께 그림
+- name: 레레
+  at: [-4.90, 15.72]
+  year: 1500
+  expect: songhai-empire
+  url: https://en.wikipedia.org/wiki/L%C3%A9r%C3%A9
+  from: 사하라 이남 F7 반영(검토 F1)
+  note: 레레는 파기비네 호수 서남 호수 지대로 니제르강 굽이 땅과 함께 그림
+
+# ── 사하라 이남 F7 GN-7 (기니만·나이지리아·카메룬·보르누, 2026-11-14) ──
+- name: 쿠마시
+  at: [-1.62, 6.69]
+  year: 1700
+  expect: none
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Ashanti_Empire
+  from: 사하라 이남 F7 GN-7 결과노트
+  note: 1701년 오세이 투투가 아샨티 제국을 세우기 앞(덴키라 아래 아칸 소국들 — 비움)
+- name: 쿠마시
+  at: [-1.62, 6.69]
+  year: 1701
+  expect: asante
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Ashanti_Empire
+  from: 사하라 이남 F7 GN-7 결과노트
+  note: 1701년 피아세 전투 뒤 오세이 투투가 아샨티 제국을 세움
+- name: 테치만
+  at: [-1.94, 7.59]
+  year: 1721
+  expect: none
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Ashanti_Empire
+  from: 사하라 이남 F7 GN-7 결과노트
+  note: 보노 왕국 — 아샨티 정복 앞(비움)
+- name: 테치만
+  at: [-1.94, 7.59]
+  year: 1722
+  expect: asante
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Ashanti_Empire
+  from: 사하라 이남 F7 GN-7 결과노트
+  note: 1722년 아샨티가 보노 왕국을 정복함
+- name: 아보메
+  at: [1.99, 7.18]
+  year: 1726
+  expect: none
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Dahomey
+  from: 사하라 이남 F7 GN-7 결과노트
+  note: 알라다·우이다 정복을 마치기 앞(1만 km² 밑 — 비움)
+- name: 아보메
+  at: [1.99, 7.18]
+  year: 1727
+  expect: dahomey
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Dahomey
+  from: 사하라 이남 F7 GN-7 결과노트
+  note: 1724년 알라다·1727년 우이다 정복으로 해안까지 이름
+- name: 베닌시티
+  at: [5.63, 6.34]
+  year: 1439
+  expect: none
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Benin_Empire
+  from: 사하라 이남 F7 GN-7 결과노트
+  note: 오바 에와레 앞 도시 국가 시기(비움)
+- name: 베닌시티
+  at: [5.63, 6.34]
+  year: 1440
+  expect: benin-kingdom
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Benin_Empire
+  from: 사하라 이남 F7 GN-7 결과노트
+  note: 1440년 무렵 오바 에와레가 즉위해 나라를 넓힘
+- name: 오요
+  at: [3.93, 7.85]
+  year: 1607
+  expect: none
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Oyo_Empire
+  from: 사하라 이남 F7 GN-7 결과노트
+  note: 1535년 무렵 누페 점령 뒤 망명기(비움)
+- name: 오요
+  at: [3.93, 7.85]
+  year: 1608
+  expect: oyo-empire
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Oyo_Empire
+  from: 사하라 이남 F7 GN-7 결과노트
+  note: 17세기 초 오요일레로 돌아온 뒤 제국기
+- name: 마이두구리
+  at: [13.16, 11.85]
+  year: 1379
+  expect: none
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Kanem–Bornu_Empire
+  from: 사하라 이남 F7 GN-7 결과노트
+  note: 보르누로 옮기기 앞(카넴 몫은 차드호 북동쪽)
+- name: 마이두구리
+  at: [13.16, 11.85]
+  year: 1380
+  expect: kanem-bornu
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Kanem–Bornu_Empire
+  from: 사하라 이남 F7 GN-7 결과노트
+  note: 1380년 무렵 마이 우마르 1세가 보르누로 옮김
+- name: 상투메
+  at: [6.73, 0.34]
+  year: 1469
+  expect: none
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Portuguese_São_Tomé_and_Príncipe
+  from: 사하라 이남 F7 GN-7 결과노트
+  note: 포르투갈 항해자들이 섬을 찾기 앞(무인도)
+- name: 상투메
+  at: [6.73, 0.34]
+  year: 1470
+  expect: portuguese-sao-tome
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Portuguese_São_Tomé_and_Príncipe
+  from: 사하라 이남 F7 GN-7 결과노트
+  note: 1470년 포르투갈 항해자들이 섬을 찾음
+- name: 카노
+  at: [8.52, 12]
+  year: 1700
+  expect: none
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Hausa_Kingdoms
+  from: 사하라 이남 F7 GN-7 결과노트
+  note: 하우사 도시 국가 — 범위가 흐려 비움
+- name: 와가두구
+  at: [-1.53, 12.37]
+  year: 1700
+  expect: none
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Mossi_Kingdoms
+  from: 사하라 이남 F7 GN-7 결과노트
+  note: 모시 왕국들 — 범위가 흐려 비움
+
+# ── 사하라 이남 F7 N-7 (나일 — 누비아·수단, 2026-11-14) ──
+- name: 케르마
+  at: [30.41, 19.6]
+  year: -1750
+  expect: none
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Kerma
+  from: 사하라 이남 F7 N-7 결과노트
+- name: 케르마
+  at: [30.41, 19.6]
+  year: -1749
+  expect: kerma
+  url: https://en.wikipedia.org/wiki/Kerma_culture
+  from: 사하라 이남 F7 N-7 결과노트
+- name: 케르마
+  at: [30.41, 19.6]
+  year: -1503
+  expect: none
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Kerma_culture
+  from: 사하라 이남 F7 N-7 결과노트
+- name: 케르마
+  at: [30.41, 19.6]
+  year: 400
+  expect: none
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Makuria
+  from: 사하라 이남 F7 N-7 결과노트
+- name: 케르마
+  at: [30.41, 19.6]
+  year: 500
+  expect: makuria
+  url: https://en.wikipedia.org/wiki/Makuria
+  from: 사하라 이남 F7 N-7 결과노트
+- name: 메로에
+  at: [33.75, 16.94]
+  year: -785
+  expect: none
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Kush
+  from: 사하라 이남 F7 N-7 결과노트
+- name: 메로에
+  at: [33.75, 16.94]
+  year: -784
+  expect: kush-napata
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Kush
+  from: 사하라 이남 F7 N-7 결과노트
+- name: 메로에
+  at: [33.75, 16.94]
+  year: 350
+  expect: alodia
+  url: https://en.wikipedia.org/wiki/Alodia
+  from: 사하라 이남 F7 N-7 결과노트
+- name: 사이섬
+  at: [30.33, 20.7]
+  year: 400
+  expect: nobatia
+  url: https://en.wikipedia.org/wiki/Nobatia
+  from: 사하라 이남 F7 N-7 결과노트
+- name: 와디할파
+  at: [31.35, 21.8]
+  year: 400
+  expect: nobatia
+  url: https://en.wikipedia.org/wiki/Nobatia
+  from: 사하라 이남 F7 N-7 결과노트
+- name: 와디할파
+  at: [31.35, 21.8]
+  year: 625
+  expect: makuria
+  url: https://en.wikipedia.org/wiki/Makuria
+  from: 사하라 이남 F7 N-7 결과노트
+- name: 옛 동골라
+  at: [30.74, 18.22]
+  year: 500
+  expect: makuria
+  url: https://en.wikipedia.org/wiki/Old_Dongola
+  from: 사하라 이남 F7 N-7 결과노트
+- name: 옛 동골라
+  at: [30.74, 18.22]
+  year: 1365
+  expect: none
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Makuria
+  from: 사하라 이남 F7 N-7 결과노트
+- name: 소바
+  at: [32.68, 15.52]
+  year: 350
+  expect: alodia
+  url: https://en.wikipedia.org/wiki/Alodia
+  from: 사하라 이남 F7 N-7 결과노트
+- name: 소바
+  at: [32.68, 15.52]
+  year: 1504
+  expect: funj-sultanate
+  url: https://en.wikipedia.org/wiki/Funj_Sultanate
+  from: 사하라 이남 F7 N-7 결과노트
+- name: 센나르
+  at: [33.63, 13.55]
+  year: 1504
+  expect: funj-sultanate
+  url: https://en.wikipedia.org/wiki/Funj_Sultanate
+  from: 사하라 이남 F7 N-7 결과노트
+- name: 알파시르
+  at: [25.35, 13.63]
+  year: 1603
+  expect: darfur
+  url: https://en.wikipedia.org/wiki/Sultanate_of_Darfur
+  from: 사하라 이남 F7 N-7 결과노트
+- name: 엘오베이드
+  at: [30.22, 13.18]
+  year: 1784
+  expect: none
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Sultanate_of_Darfur
+  from: 사하라 이남 F7 N-7 결과노트
+- name: 엘오베이드
+  at: [30.22, 13.18]
+  year: 1785
+  expect: darfur
+  url: https://en.wikipedia.org/wiki/Sultanate_of_Darfur
+  from: 사하라 이남 F7 N-7 결과노트
+- name: 카살라
+  at: [36.4, 15.45]
+  year: 1700
+  expect: none
+  region: sub-saharan-africa
+  url: https://en.wikipedia.org/wiki/Funj_Sultanate
+  from: 사하라 이남 F7 N-7 결과노트
+
+# ── 사하라 이남 F7 HS-EI-7 (뿔·차드·동아프리카·인도양 섬, 2026-11-14) ──
+- name: 악숨
+  at: [38.73, 14.12]
+  year: 99
+  expect: none
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Aksum
+  from: 사하라 이남 F7 HS-EI-7 결과노트
+- name: 악숨
+  at: [38.73, 14.12]
+  year: 100
+  expect: aksum
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Aksum
+  from: 사하라 이남 F7 HS-EI-7 결과노트
+- name: 악숨
+  at: [38.73, 14.12]
+  year: 960
+  expect: none
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Aksum
+  from: 사하라 이남 F7 HS-EI-7 결과노트
+- name: 악숨
+  at: [38.73, 14.12]
+  year: 1137
+  expect: zagwe-dynasty
+  url: https://en.wikipedia.org/wiki/Zagwe_dynasty
+  from: 사하라 이남 F7 HS-EI-7 결과노트
+- name: 악숨
+  at: [38.73, 14.12]
+  year: 1270
+  expect: ethiopia
+  url: https://en.wikipedia.org/wiki/Ethiopian_Empire
+  from: 사하라 이남 F7 HS-EI-7 결과노트
+- name: 마사와
+  at: [39.45, 15.61]
+  year: 100
+  expect: aksum
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Aksum
+  from: 사하라 이남 F7 HS-EI-7 결과노트
+- name: 마사와
+  at: [39.45, 15.61]
+  year: 960
+  expect: none
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Aksum
+  from: 사하라 이남 F7 HS-EI-7 결과노트
+- name: 랄리벨라
+  at: [39.04, 12.03]
+  year: 1137
+  expect: zagwe-dynasty
+  url: https://en.wikipedia.org/wiki/Zagwe_dynasty
+  from: 사하라 이남 F7 HS-EI-7 결과노트
+- name: 아디스아바바
+  at: [38.75, 9.04]
+  year: 1331
+  expect: none
+  url: https://en.wikipedia.org/wiki/Ethiopian_Empire
+  from: 사하라 이남 F7 HS-EI-7 결과노트
+- name: 아디스아바바
+  at: [38.75, 9.04]
+  year: 1332
+  expect: ethiopia
+  url: https://en.wikipedia.org/wiki/Ethiopian_Empire
+  from: 사하라 이남 F7 HS-EI-7 결과노트
+- name: 아디스아바바
+  at: [38.75, 9.04]
+  year: 1543
+  expect: none
+  url: https://en.wikipedia.org/wiki/Ethiopian_Empire
+  from: 사하라 이남 F7 HS-EI-7 결과노트
+- name: 마오
+  at: [15.31, 14.12]
+  year: 800
+  expect: kanem-bornu
+  url: https://en.wikipedia.org/wiki/Kanem–Bornu_Empire
+  from: 사하라 이남 F7 HS-EI-7 결과노트
+- name: 마오
+  at: [15.31, 14.12]
+  year: 1380
+  expect: none
+  url: https://en.wikipedia.org/wiki/Kanem–Bornu_Empire
+  from: 사하라 이남 F7 HS-EI-7 결과노트
+- name: 아베셰
+  at: [20.83, 13.83]
+  year: 1635
+  expect: wadai
+  url: https://en.wikipedia.org/wiki/Wadai_Empire
+  from: 사하라 이남 F7 HS-EI-7 결과노트
+- name: 보사소
+  at: [49.18, 11.29]
+  year: 1750
+  expect: majeerteen-sultanate
+  url: https://en.wikipedia.org/wiki/Majeerteen_Sultanate
+  from: 사하라 이남 F7 HS-EI-7 결과노트
+- name: 안타나나리보
+  at: [47.52, -18.91]
+  year: 1786
+  expect: none
+  url: https://en.wikipedia.org/wiki/Merina_Kingdom
+  from: 사하라 이남 F7 HS-EI-7 결과노트
+- name: 안타나나리보
+  at: [47.52, -18.91]
+  year: 1787
+  expect: merina-kingdom
+  url: https://en.wikipedia.org/wiki/Merina_Kingdom
+  from: 사하라 이남 F7 HS-EI-7 결과노트
+- name: 포트루이스
+  at: [57.5, -20.16]
+  year: 1715
+  expect: french-mauritius
+  url: https://en.wikipedia.org/wiki/Isle_de_France_(Mauritius)
+  from: 사하라 이남 F7 HS-EI-7 결과노트
+- name: 생드니
+  at: [55.45, -20.88]
+  year: 1665
+  expect: reunion
+  url: https://en.wikipedia.org/wiki/History_of_Réunion
+  from: 사하라 이남 F7 HS-EI-7 결과노트
+- name: 캄팔라
+  at: [32.58, 0.31]
+  year: 1799
+  expect: none
+  url: https://en.wikipedia.org/wiki/Buganda
+  from: 사하라 이남 F7 HS-EI-7 결과노트
+- name: 모가디슈
+  at: [45.34, 2.04]
+  year: 1700
+  expect: none
+  url: https://en.wikipedia.org/wiki/Ajuran_Sultanate
+  from: 사하라 이남 F7 HS-EI-7 결과노트
+
+# ── 사하라 이남 F7 S-7 (콩고 해안·앙골라·남부, 2026-11-14) ──
+- name: 음반자콩구
+  at: [14.25, -6.27]
+  year: 1389
+  expect: none
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Kongo
+  from: 사하라 이남 F7 S-7 결과노트
+- name: 음반자콩구
+  at: [14.25, -6.27]
+  year: 1390
+  expect: kongo-kingdom
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Kongo
+  from: 사하라 이남 F7 S-7 결과노트
+- name: 음반자콩구
+  at: [14.25, -6.27]
+  year: 1664
+  expect: kongo-kingdom
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Kongo
+  from: 사하라 이남 F7 S-7 결과노트
+- name: 음반자콩구
+  at: [14.25, -6.27]
+  year: 1665
+  expect: none
+  url: https://en.wikipedia.org/wiki/Battle_of_Mbwila
+  from: 사하라 이남 F7 S-7 결과노트
+- name: 디오소
+  at: [11.85, -4.65]
+  year: 1560
+  expect: none
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Loango
+  from: 사하라 이남 F7 S-7 결과노트
+- name: 디오소
+  at: [11.85, -4.65]
+  year: 1561
+  expect: loango-kingdom
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Loango
+  from: 사하라 이남 F7 S-7 결과노트
+- name: 디오소
+  at: [11.85, -4.65]
+  year: 1787
+  expect: none
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Loango
+  from: 사하라 이남 F7 S-7 결과노트
+- name: 대짐바브웨
+  at: [30.93, -20.27]
+  year: 1429
+  expect: none
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Mutapa
+  from: 사하라 이남 F7 S-7 결과노트
+- name: 대짐바브웨
+  at: [30.93, -20.27]
+  year: 1430
+  expect: mutapa-empire
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Mutapa
+  from: 사하라 이남 F7 S-7 결과노트
+- name: 대짐바브웨
+  at: [30.93, -20.27]
+  year: 1629
+  expect: none
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Mutapa
+  from: 사하라 이남 F7 S-7 결과노트
+- name: 테트
+  at: [33.60, -16.17]
+  year: 1628
+  expect: mutapa-empire
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Mutapa
+  from: 사하라 이남 F7 S-7 결과노트
+- name: 테트
+  at: [33.60, -16.17]
+  year: 1629
+  expect: portuguese-mozambique
+  url: https://en.wikipedia.org/wiki/Portuguese_Mozambique
+  from: 사하라 이남 F7 S-7 결과노트
+- name: 베이라
+  at: [34.85, -19.83]
+  year: 1629
+  expect: none
+  url: https://en.wikipedia.org/wiki/Portuguese_Mozambique
+  from: 사하라 이남 F7 S-7 결과노트
+- name: 루안다
+  at: [13.24, -8.83]
+  year: 1581
+  expect: none
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Ndongo
+  from: 사하라 이남 F7 S-7 결과노트
+- name: 루안다
+  at: [13.24, -8.83]
+  year: 1582
+  expect: portuguese-angola
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Ndongo
+  from: 사하라 이남 F7 S-7 결과노트
+- name: 벵겔라
+  at: [13.42, -12.55]
+  year: 1616
+  expect: none
+  url: https://en.wikipedia.org/wiki/Benguela
+  from: 사하라 이남 F7 S-7 결과노트
+- name: 벵겔라
+  at: [13.42, -12.55]
+  year: 1617
+  expect: portuguese-angola
+  url: https://en.wikipedia.org/wiki/Benguela
+  from: 사하라 이남 F7 S-7 결과노트
+- name: 케이프타운
+  at: [18.42, -33.93]
+  year: 1744
+  expect: none
+  url: https://en.wikipedia.org/wiki/Dutch_Cape_Colony
+  from: 사하라 이남 F7 S-7 결과노트
+- name: 케이프타운
+  at: [18.42, -33.93]
+  year: 1745
+  expect: cape-colony
+  url: https://en.wikipedia.org/wiki/Dutch_Cape_Colony
+  from: 사하라 이남 F7 S-7 결과노트
+- name: 그라프레이넷
+  at: [24.54, -32.25]
+  year: 1779
+  expect: none
+  url: https://en.wikipedia.org/wiki/Dutch_Cape_Colony
+  from: 사하라 이남 F7 S-7 결과노트
+- name: 그라프레이넷
+  at: [24.54, -32.25]
+  year: 1780
+  expect: cape-colony
+  url: https://en.wikipedia.org/wiki/Dutch_Cape_Colony
+  from: 사하라 이남 F7 S-7 결과노트
+- name: 음바바네
+  at: [31.13, -26.32]
+  year: 1779
+  expect: none
+  url: https://en.wikipedia.org/wiki/History_of_Eswatini
+  from: 사하라 이남 F7 S-7 결과노트
+- name: 음바바네
+  at: [31.13, -26.32]
+  year: 1780
+  expect: swaziland-protectorate
+  url: https://en.wikipedia.org/wiki/History_of_Eswatini
+  from: 사하라 이남 F7 S-7 결과노트
+- name: 몽구
+  at: [23.13, -15.28]
+  year: 1799
+  expect: none
+  url: https://en.wikipedia.org/wiki/Barotseland
+  from: 사하라 이남 F7 S-7 결과노트

@@ -7,6 +7,7 @@
 // 재사용 칼선 여섯(좌표를 베끼지 않고 별칭으로 가져옴 — partition.mjs 칸 머리 안 import): GW-5 cuts-f3.mjs GW_CUT_TOGOLAND(독일령 토고 서쪽 몫) · CE-N-5 cuts-f3.mjs CE_CUT_NCAM → CEN_CUT_NCAM
 //   (북카메룬 띠) · H-5 cuts-f4.mjs H1_CUT_JUBA → H_CUT_JUBA(K2 주바강)·H1_CUT_MAJ → H_CUT_MAJ(K3)·H1_CUT_HOB → H_CUT_HOB(K4) · E-5 cuts-f4.mjs E1_CUT_TURKANA → E_CUT_TURKANA(K1 — M-F5-10).
 //   F6 시대 파일 prepartition.mjs가 H_CUT_BORANA(H-6 칸 — 1878~1884 셰와·오로미아 북쪽)·S1A_CUT_ZULU·S1A_CUT_VRYHEID·S1A_CUT_BB_TVL(S1B-6 칸 — 별칭 S1B_CUT_ZULU·S1B_CUT_VRYHEID·S1B_CUT_BB_TVL)·(쓸 때만) S1A_CUT_BB_CAPE(S1A-6 칸)를 가져다 쓴다(사하라 이남 F6 뼈대 2026-11-13, 장치 시험 ⑤).
+//   F7 시대 파일 precolonial.mjs도 H_CUT_BORANA(HS-EI-7 칸 — 별칭 HS_CUT_BORANA, 1332~1542 셰와·북 오로미아)를 가져다 쓴다(사하라 이남 F7 뼈대 2026-11-14, 장치 시험 ⑤).
 //   이 모듈은 시대 파일을 가져오지 않는다(순환 없음 — F5 뼈대 장치 시험 ⑤). 앞 단계 칼선이 1885~1909 모양에 안 맞으면 고치지 않고 칸 결과 노트 6절(앞 칼선을 바꾸면 F3·F4 모양이 바뀜).
 //   칸이 칼선을 더하면 자기 머리 아래에, 좌표 주석에 안/밖 기준 도시(안 3·밖 3 이상 — pt-dh.mjs로 확인)를 적는다. 좌표는 조사 꼭짓점을 그대로 쓰지 않고 강·산줄기·주 경계로 다듬는다.
 // 이 모듈은 나라를 만들지 않는다(versions 같은 이름을 내보내지 않음). 칸 몫 조각 목록(F5_*_IDS)은 뼈대가 정했고 칸은 고치지 않는다.

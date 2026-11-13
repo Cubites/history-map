@@ -1789,3 +1789,14 @@
 # ── 사하라 이남 F6 EI-6 (콩고·대호수·동·인도양 섬, 2026-11-13) ──
 - { type: vassal_of, subject: french-mauritius, object: france, from: 1715, to: 1809 } # 1715-09-20 뒤프렌 다르셀이 섬을 차지해 일드프랑스(1721 정착 시작), 1810-12-03 영국군에 항복 — 그해 말 규칙으로 1809까지(위키 en Isle de France (Mauritius), 사하라 이남 F6 기본값 24)
 - { type: successor_of, subject: british-mauritius, object: french-mauritius, from: 1810, to: null } # 1810-12-03 프랑스 식민지 일드프랑스가 영국에 항복해 영국령 모리셔스(1814-05-30 파리 조약 — 같은 땅의 다음 단위, 기본값 24)
+
+# ── 사하라 이남 F7 WA-7 (서아프리카 사헬·대서양, 2026-11-14) ──
+
+# ── 사하라 이남 F7 GN-7 (기니만·나이지리아·카메룬·보르누, 2026-11-14) ──
+
+# ── 사하라 이남 F7 N-7 (나일 — 누비아·수단, 2026-11-14) ──
+
+# ── 사하라 이남 F7 HS-EI-7 (뿔·차드·동아프리카·인도양 섬, 2026-11-14) ──
+
+# ── 사하라 이남 F7 S-7 (콩고 해안·앙골라·남부, 2026-11-14) ──
+- { type: vassal_of, subject: cape-colony, object: dutch-republic, from: 1652, to: 1794 } # 1652-04-06 얀 반 리베크가 VOC 보급 기지를 세움, 1795-09 영국 점령 — 그해 말 규칙으로 1794까지(VOC 회사령은 본국 관계로 — dutch-ceylon 선례, 위키 en Dutch Cape Colony, F7 기본값 D1)
