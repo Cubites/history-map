@@ -30,8 +30,8 @@
     - 아우다고스트·왈라타가 사하라 교역 길의 거점
     - 1068년 알바크리 『여러 길과 나라의 책』의 기록
     - 1076년 무렵 알모라비드 공격 전승, 1203년 무렵 소소가 도읍을 차지
-  startEvents: []
-  endEvents: []
+  startEvents: [ghana-wagadu-830]
+  endEvents: [almoravid-ghana-1054]
   basis:
     type: primary_source
     refs: ["위키백과 Ghana Empire"]
@@ -53,8 +53,8 @@
     - 1324년 만사 무사의 메카 순례
     - 1352~1353년 이븐 바투타가 다녀감
     - 1599년 젠네 전투에서 짐
-  startEvents: []
-  endEvents: []
+  startEvents: [sundiata-1235]
+  endEvents: [mali-end-1650]
   basis:
     type: primary_source
     refs: ["위키백과 Mali Empire"]
@@ -75,8 +75,8 @@
     - 1464년 손니 알리 즉위, 1468년 팀북투를 차지
     - 1493년 아스키아 무함마드가 왕위에 오름
     - 1591년 톤디비 전투에서 모로코 군대에게 짐
-  startEvents: []
-  endEvents: []
+  startEvents: [sonni-ali-1464]
+  endEvents: [tondibi-1591]
   basis:
     type: primary_source
     refs: ["위키백과 Songhai Empire"]
@@ -97,8 +97,8 @@
     - 와알로·카요르·바올·시네·살룸이 조공하며 왕을 뽑는 데 참여
     - 15세기 중반부터 해안에서 포르투갈 상인과 교역
     - 1549년 카요르가 떨어져 나가며 무너짐
-  startEvents: []
-  endEvents: []
+  startEvents: [jolof-1360]
+  endEvents: [jolof-1360]
   basis:
     type: primary_source
     refs: ["위키백과 Jolof Empire"]
@@ -122,8 +122,8 @@
     - 노크 유적에서 기원전 1천년기 중반의 철 제련 흔적이 나옴
     - 니제르강 내륙 삼각주의 젠네-제노가 기원전 250년 무렵부터 도시로 자람
     - 반투어 사람들이 대호수 둘레에서 철을 녹이며 동·남아프리카로 퍼짐
-  startEvents: []
-  endEvents: []
+  startEvents: [bantu-iron-1000bc]
+  endEvents: [bantu-south-300]
   basis:
     type: primary_source
     refs: ["위키백과 Nok culture", "위키백과 Djenné-Djenno", "위키백과 Bantu expansion"]
@@ -146,8 +146,8 @@
     - 흙벽돌로 쌓은 큰 신전 데푸파를 남김
     - 고전기에 제1 폭포에서 제4 폭포 사이를 다스림
     - 기원전 1504년 무렵 투트모세 1세에게 정복됨
-  startEvents: []
-  endEvents: []
+  startEvents: [classic-kerma-1750bc]
+  endEvents: [new-kingdom-nubia-1550bc]
   basis:
     type: primary_source
     refs: ["위키백과 Kerma culture"]
@@ -169,8 +169,8 @@
     - 메로에 문자를 만들어 씀
     - 메로에 둘레의 철 생산과 피라미드로 이름남
     - 330년 무렵 악숨의 원정을 겪고 350년 무렵 끝남
-  startEvents: []
-  endEvents: []
+  startEvents: [kush-napata-785bc]
+  endEvents: [ezana-meroe-330]
   basis:
     type: primary_source
     refs: ["위키백과 Kingdom of Kush"]
@@ -191,8 +191,8 @@
     - 400년 무렵 노바족이 세움
     - 543년 기독교를 받아들임
     - 620년대 마쿠리아에 합쳐짐
-  startEvents: []
-  endEvents: []
+  startEvents: [nubian-kingdoms-350]
+  endEvents: [makuria-nobatia-600]
   basis:
     type: primary_source
     refs: ["위키백과 Nobatia"]
@@ -213,8 +213,8 @@
     - 620년대 북쪽 노바티아를 합침
     - 652년 아랍군과 바크트 조약을 맺음
     - 1365년 내전으로 동골라를 잃음
-  startEvents: []
-  endEvents: []
+  startEvents: [nubian-kingdoms-350]
+  endEvents: [makuria-fall-1317]
   basis:
     type: primary_source
     refs: ["위키백과 Makuria"]
@@ -235,8 +235,8 @@
     - 중심 땅은 청나일과 백나일 사이 게지라
     - 580년 기독교를 받아들임
     - 1500년 무렵 소바가 함락됨
-  startEvents: []
-  endEvents: []
+  startEvents: [nubian-kingdoms-350]
+  endEvents: [funj-1504]
   basis:
     type: primary_source
     refs: ["위키백과 Alodia"]
@@ -261,8 +261,8 @@
     - 4세기 에자나 왕이 기독교를 받아들임
     - 520년대 칼레브 왕이 홍해 건너 예멘을 침
     - 왕의 무덤을 표시한 커다란 돌기둥(오벨리스크)
-  startEvents: []
-  endEvents: []
+  startEvents: [aksum-rise-100]
+  endEvents: [aksum-decline-900]
   basis:
     type: primary_source
     refs: ["위키백과 Kingdom of Aksum", "에자나 비문", "『에리트레아해 안내기』"]
@@ -284,8 +284,8 @@
     - 아가우 사람들의 기독교 왕조
     - 랄리벨라 왕 때 바위를 깎아 만든 교회 열한 채
     - 1270년 안사타 전투로 솔로몬 왕조에 넘어감
-  startEvents: []
-  endEvents: []
+  startEvents: [zagwe-1137]
+  endEvents: [solomonic-1270]
   basis:
     type: primary_source
     refs: ["위키백과 Zagwe dynasty", "위키백과 자그웨 왕조"]
@@ -309,8 +309,8 @@
     - 1509년 아폰수 1세가 왕위에 올라 가톨릭을 나라의 종교로 삼음
     - 1665년 음브윌라 전투에서 포르투갈령 앙골라군에 져 왕이 죽음
     - 1709년 페드루 4세가 내전으로 갈라진 왕국을 다시 묶음
-  startEvents: []
-  endEvents: []
+  startEvents: [kongo-1390]
+  endEvents: [mbwila-1665]
   basis:
     type: primary_source
     refs: ["위키백과 Kingdom of Kongo", "위키백과 Battle of Mbwila", "위키백과 Afonso I of Kongo"]
@@ -332,8 +332,8 @@
     - 1561년 무렵 유럽 문헌에 처음 나옴
     - 17~18세기 대서양 노예 무역의 큰 항구
     - 1787년 왕 부아투가 죽은 뒤 왕위가 오래 빔
-  startEvents: []
-  endEvents: []
+  startEvents: [loango-1561]
+  endEvents: [loango-slave-coast-1700]
   basis:
     type: primary_source
     refs: ["위키백과 Kingdom of Loango", "위키백과 Kingdom of Kongo"]
@@ -354,8 +354,8 @@
     - 짐바브웨 고원의 금을 인도양 해안으로 내보낸 교역 국가
     - 16세기 포르투갈이 잠베지강 가 세나·테트에 교역지를 둠
     - 1629년 포르투갈과 조약을 맺어 그 속국이 됨
-  startEvents: []
-  endEvents: []
+  startEvents: [mutapa-1430]
+  endEvents: [mutapa-portuguese-1629]
   basis:
     type: primary_source
     refs: ["위키백과 Kingdom of Mutapa", "위키백과 Portuguese Mozambique"]

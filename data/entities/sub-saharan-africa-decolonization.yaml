@@ -71,7 +71,7 @@
     - 1963~1974년 독립 전쟁
     - 1973년 1월 아밀카르 카브랄 암살, 9월 독립 선언
     - 1974년 9월 10일 포르투갈이 독립을 인정
-  startEvents: []
+  startEvents: [cacheu-1588]
   endEvents: [carnation-lusophone-1974]
   basis:
     type: primary_source
@@ -94,7 +94,7 @@
     - 대서양 노예 무역의 기항지, 1936년 타하팔 정치범 수용소
     - 1951년 포르투갈 해외 주
     - 1975년 7월 5일 카보베르데로 독립
-  startEvents: []
+  startEvents: [atlantic-islands-1462]
   endEvents: [carnation-lusophone-1974]
   basis:
     type: primary_source
@@ -143,7 +143,7 @@
     - 1959년 페르난도포·리오무니 두 주
     - 1963년 자치, 1968년 독립
     - 카카오·커피 농장
-  startEvents: []
+  startEvents: [spanish-guinea-1777]
   endEvents: [mauritius-equatorial-guinea-1968]
   basis:
     type: primary_source
@@ -166,7 +166,7 @@
     - 카카오·커피 농장 노동에 기댐
     - 1951년 포르투갈 해외 주
     - 1953년 바테파 학살
-  startEvents: []
+  startEvents: [atlantic-islands-1462]
   endEvents: [carnation-lusophone-1974]
   basis:
     type: primary_source
@@ -385,7 +385,7 @@
     - 1951년 포르투갈 해외 주가 됨
     - 1964~1974년 모잠비크 독립 전쟁
     - 1891~1942년 모잠비크 회사, 1891~1929년 니아사 회사 영지
-  startEvents: []
+  startEvents: [portuguese-east-africa-1498]
   endEvents: [carnation-lusophone-1974]
   basis:
     type: primary_source
@@ -455,7 +455,7 @@
     - 1951년 포르투갈 해외 주가 됨
     - 1961~1974년 앙골라 독립 전쟁
     - 북쪽에 떨어진 카빈다는 1885년 포르투갈 보호령이 된 땅
-  startEvents: []
+  startEvents: [angola-ndongo-1575]
   endEvents: [carnation-lusophone-1974]
   basis:
     type: primary_source
@@ -526,7 +526,7 @@
     - 1894년 트란스발 공화국의 보호국
     - 1903년부터 영국이 다스림, 남아프리카 고등 판무관이 맡은 세 땅 가운데 하나
     - 국왕 소부자 2세 아래 스와지 왕실이 이어짐
-  startEvents: []
+  startEvents: [swazi-1745]
   endEvents: [southern-africa-independence-1966]
   basis:
     type: primary_source

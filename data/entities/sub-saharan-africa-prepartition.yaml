@@ -31,7 +31,7 @@
     - 다호메이에게서 조공을 받음
     - 1817년 일로린 아폰자의 반란
     - 1835년 도읍 오요일레가 무너짐
-  startEvents: []
+  startEvents: [oyo-origin-1300]
   endEvents: [oyo-collapse-1817]
   basis:
     type: primary_source
@@ -81,7 +81,7 @@
     - 1700년 무렵 제3 폭포에서 코르도판까지 속국을 거느림
     - 18세기 중엽부터 함라즈 섭정이 실권을 쥠
     - 1821년 이집트군에 싸우지 않고 항복함
-  startEvents: []
+  startEvents: [funj-1504]
   endEvents: [egypt-sudan-conquest-1820]
   basis:
     type: primary_source
@@ -248,7 +248,7 @@
     - 1715년 프랑스가 차지, 1721년 정착 시작
     - 1735년 마에 드 라부르도네 부임
     - 1810년 8월 그랑포르 해전, 12월 영국에 항복
-  startEvents: []
+  startEvents: [mascarene-1665]
   endEvents: [mauritius-seychelles-1810]
   basis:
     type: primary_source

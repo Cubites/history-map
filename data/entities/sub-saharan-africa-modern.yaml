@@ -500,7 +500,7 @@
     - 1810~1814년 영국 점령
     - 1940~1942년 비시 정부, 1942년 11월 자유 프랑스
     - 1946년 프랑스 해외 데파르트망
-  startEvents: []
+  startEvents: [mascarene-1665]
   endEvents: []
   basis:
     type: primary_source
@@ -1044,7 +1044,7 @@
     - 1962년 에리트레아 병합, 1974년 데르그가 하일레 셀라시에 황제를 몰아냄
     - 1977~1978년 오가덴 전쟁, 1998~2000년 바드메를 둘러싼 에리트레아와의 전쟁
     - 1995년부터 민족과 언어에 따라 나눈 주들로 된 연방 공화국
-  startEvents: []
+  startEvents: [solomonic-1270]
   endEvents: []
   basis:
     type: primary_source

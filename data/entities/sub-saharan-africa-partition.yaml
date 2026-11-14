@@ -53,7 +53,7 @@
     - 알파야·소리야 두 가문이 2년마다 알마미를 번갈아 맡음
     - 1881년 프랑스와 조약, 1889년 영국이 프랑스 세력권으로 인정
     - 1896년 11월 프랑스 보호령이 됨
-  startEvents: []
+  startEvents: [fouta-djallon-1725]
   endEvents: [samori-guinea-1882]
   basis:
     type: primary_source
@@ -79,7 +79,7 @@
     - 1874년 영국군이 쿠마시를 불태움
     - 1896년 영국군의 쿠마시 점령, 왕 유배
     - 1900년 황금 의자 전쟁
-  startEvents: []
+  startEvents: [asante-1701]
   endEvents: [golden-stool-1900]
   basis:
     type: primary_source
@@ -103,7 +103,7 @@
     - 노예 무역·야자유 무역
     - 여성 군인 부대
     - 1890년·1892~1894년 프랑스와 전쟁
-  startEvents: []
+  startEvents: [dahomey-1600]
   endEvents: [dahomey-war-1890]
   basis:
     type: primary_source
@@ -154,7 +154,7 @@
     - 15세기 말부터 포르투갈과 교역
     - 궁정의 청동판과 상아 공예
     - 1897년 영국 원정으로 무너짐
-  startEvents: []
+  startEvents: [benin-oba-1180]
   endEvents: [oil-rivers-niger-company-1884]
   basis:
     type: primary_source
@@ -250,7 +250,7 @@
     - 19세기 알카네미 집안의 셰후가 다스림
     - 1893~1899년 라바에게 끊김
     - 1902년 세 나라에 나뉨
-  startEvents: []
+  startEvents: [kanem-800]
   endEvents: [rabih-bornu-1893]
   basis:
     type: primary_source
@@ -303,7 +303,7 @@
     - 1834년 노예제 폐지, 1872년 책임 자치 정부
     - 1866년 영국령 카프라리아, 1880년 그리콸란드 웨스트, 1895년 영국령 베추아날란드를 합침
     - 1910년 남아프리카 연방의 케이프주
-  startEvents: []
+  startEvents: [voc-cape-1652]
   endEvents: [union-south-africa-1909]
   basis:
     type: primary_source
@@ -541,7 +541,7 @@
     - 1862년 영국 탐험가 스피크가 무테사 1세 궁정을 찾음
     - 1886년 기독교인 처형
     - 1888~1892년 종교 세력 사이의 내전
-  startEvents: []
+  startEvents: [buganda-great-lakes-1300]
   endEvents: [ibea-uganda-1888]
   basis:
     type: primary_source
@@ -590,7 +590,7 @@
     - 1883~1885년, 1894~1895년 프랑스와 두 차례 전쟁
     - 1817년 영국과 조약, 1824년 마하장가 차지
     - 1897년 왕정 폐지, 여왕은 레위니옹을 거쳐 알제리로 유배
-  startEvents: []
+  startEvents: [merina-1540]
   endEvents: [madagascar-1895]
   basis:
     type: primary_source
@@ -637,7 +637,7 @@
     - 1845~1863년 콜롤로 지배
     - 1878~1916년 레와니카 재위(1884~1885년 쫓겨남)
     - 1890년 로흐너 양허, 1898년 롤리 양허
-  startEvents: []
+  startEvents: [lozi-1600]
   endEvents: [barotseland-1890]
   basis:
     type: primary_source

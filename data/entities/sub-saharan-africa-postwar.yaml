@@ -28,7 +28,7 @@
     - 1914년 블레즈 디아뉴가 아프리카 흑인 첫 프랑스 하원 의원
     - 1940년 9월 영국·자유 프랑스군의 다카르 상륙 시도를 물리침
     - 1959년 4월 4일 프랑스령 수단과 말리 연방
-  startEvents: []
+  startEvents: [saint-louis-1659]
   endEvents: [mali-federation-1959]
   basis:
     type: primary_source

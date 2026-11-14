@@ -163,7 +163,7 @@
     ko: "알카사르키비르 전투와 아흐마드 알만수르, 송가이 원정(1578~1603)"
   summary:
     ko: "1576년 오스만의 도움으로 술탄이 된 사드의 아브드 알말리크가 조카 무함마드 알무타와킬을 몰아내자, 무함마드는 포르투갈의 젊은 왕 세바스티앙에게 달려가 도움을 청했다. 세바스티앙은 1578년 8월 4일 알카사르키비르(크사르 엘케비르) 근처에서 아브드 알말리크와 맞붙었으나 크게 져서 왕 자신과 무함마드 알무타와킬이 죽었고 병든 아브드 알말리크도 전투 도중 숨졌다. 세 왕이 한꺼번에 죽어 '세 왕의 전투'라 부른다. 포르투갈은 귀족과 병사 수천 명을 잃고 포로로 잡힌 사람이 1만 명이 넘었으며 몸값이 큰 부담이 되었다. 왕위는 숙부 엔히크 추기경(1578~1580)을 거쳐 1580년 스페인의 펠리페 2세에게 넘어간다(「스페인 무적함대의 패배」, 뒤의 사건). 아브드 알말리크의 동생 아흐마드 알만수르(재위 1578~1603)는 곧 술탄에 올랐고, 몸값 수입을 바탕으로 엘바디 궁전을 짓고 군을 키웠다. 그는 스페인에 맞서 잉글랜드의 엘리자베스 1세와 손잡는 길을 찾기도 했다. 1590년 말 알만수르는 스페인 출신 환관 주다르 파샤가 지휘하는 기병 1,500명과 화승총병 중심의 보병 2,500명, 모두 4천 명 안팎의 부대를 사하라 건너 송가이로 보냈다. 군은 1591년 3월 톤디비에서 송가이의 아스키아 이샤크 2세를 무찌르고 가오와 팀북투, 젠네를 차지했다. 이 땅의 금이 사드의 재정에 보탬이 되었지만 먼 곳을 오래 다스리기는 어려웠고, 학자 아흐마드 바바 같은 팀북투 지식인들은 저항을 이유로 마라케시로 끌려갔다(1593~1594). 알만수르가 1603년 죽자 아들들 사이의 계승 전쟁이 이어져 나라가 마라케시와 페스로 갈라졌다. 엘바디 궁전은 몸값과 송가이에서 들어온 금, 제당 수익으로 지어졌다고 전하며 알만수르에게 알다하비(황금의 왕)라는 별명이 붙은 것도 이 때문이라고 한다."
-  subjects: [saadi-sultanate, portugal, spain, ottoman]
+  subjects: [saadi-sultanate, portugal, spain, ottoman, songhai-empire]
   tags: [war, politics]
   sources: ["Mercedes García-Arenal, Ahmad al-Mansur: The Beginnings of Modern Morocco (Oneworld, 2009)", "Weston F. Cook Jr., The Hundred Years War for Morocco: Gunpowder and the Military Revolution in the Early Modern Muslim World (Westview Press, 1994)", "Jamil M. Abun-Nasr, A History of the Maghrib in the Islamic Period (Cambridge University Press, 1987)"]
   places: [{ name: 알카사르키비르 전투, at: [-5.9, 35.0], year: 1578 }]

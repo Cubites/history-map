@@ -136,7 +136,7 @@
     - 1805년 바기르미를 조공국으로 삼음
     - 1909년 프랑스의 아베셰 점령
     - 1911년 마지막 술탄 항복
-  startEvents: []
+  startEvents: [wadai-1635]
   endEvents: [wadai-1909]
   basis:
     type: primary_source
@@ -188,7 +188,7 @@
     - 1878년 왕족 유수프 알리 케나디드가 갈라져 나가 호비오 술탄국을 세움
     - 1889년 4월 7일 이탈리아와 보호 조약을 맺음
     - 1925~1927년 이탈리아의 정복 전쟁에 맞서 싸움
-  startEvents: []
+  startEvents: [majeerteen-1750]
   endEvents: [italian-somalia-1923]
   basis:
     type: primary_source
@@ -263,7 +263,7 @@
     - 1874년 무너졌다가 1898년 알리 디나르가 다시 세움
     - 이집트로 가는 사하라 대상로의 남쪽 끝
     - 1916년 영국-이집트군의 원정으로 무너짐
-  startEvents: []
+  startEvents: [darfur-1603]
   endEvents: [darfur-1916]
   basis:
     type: primary_source
