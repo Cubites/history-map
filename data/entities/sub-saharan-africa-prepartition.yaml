@@ -32,7 +32,7 @@
     - 1817년 일로린 아폰자의 반란
     - 1835년 도읍 오요일레가 무너짐
   startEvents: []
-  endEvents: []
+  endEvents: [oyo-collapse-1817]
   basis:
     type: primary_source
     refs: ["위키백과 Oyo Empire"]
@@ -58,8 +58,8 @@
     - 1865년 오스만 제국에게서 홍해 항구를 넘겨받음
     - 1870년 적도주를 세우고 1874년 다르푸르 술탄국을 무너뜨림
     - 1881년 마흐디 봉기로 흔들림
-  startEvents: []
-  endEvents: []
+  startEvents: [egypt-sudan-conquest-1820]
+  endEvents: [mahdi-1881]
   basis:
     type: primary_source
     refs: ["위키백과 Turco-Egyptian Sudan", "위키백과 Equatoria", "위키백과 Al-Zubayr Rahma Mansur"]
@@ -82,7 +82,7 @@
     - 18세기 중엽부터 함라즈 섭정이 실권을 쥠
     - 1821년 이집트군에 싸우지 않고 항복함
   startEvents: []
-  endEvents: []
+  endEvents: [egypt-sudan-conquest-1820]
   basis:
     type: primary_source
     refs: ["위키백과 Funj Sultanate"]
@@ -105,8 +105,8 @@
     - 1847년 12월 23일 해리 스미스 총독이 병합
     - 1856~1857년 코사 가축 도살 운동과 기근
     - 1860년 따로 왕령 식민지, 1866년 케이프 식민지에 합쳐짐
-  startEvents: []
-  endEvents: []
+  startEvents: [xhosa-kaffraria-1846]
+  endEvents: [xhosa-kaffraria-1846]
   basis:
     type: primary_source
     refs: ["위키백과 British Kaffraria", "위키백과 History of the Cape Colony from 1806 to 1870"]
@@ -127,8 +127,8 @@
     - 1867년 다이아몬드 발견, 1871년 킴벌리 광산
     - 1871년 10월 27일 영국령 선포, 1873년 왕령 식민지
     - 1880년 10월 18일 케이프 식민지에 합쳐짐
-  startEvents: []
-  endEvents: []
+  startEvents: [griqualand-diamonds-1867]
+  endEvents: [griqualand-diamonds-1867]
   basis:
     type: primary_source
     refs: ["위키백과 Griqualand West", "위키백과 Cape Colony"]
@@ -152,8 +152,8 @@
     - 1838년 12월 16일 블러드강 전투에서 줄루 군대를 이김
     - 1842년 5월 콩겔라 전투 뒤 영국군이 포트나탈을 차지
     - 1843년 영국의 나탈 식민지가 됨
-  startEvents: []
-  endEvents: []
+  startEvents: [great-trek-1835]
+  endEvents: [great-trek-1835]
   basis:
     type: primary_source
     refs: ["위키백과 Natalia Republic", "위키백과 Great Trek", "위키백과 Battle of Congella"]
@@ -175,8 +175,8 @@
     - 1848년 2월 3일 해리 스미스가 영국 주권을 선포
     - 1848년 8월 29일 붐플라츠 전투에서 보어인을 물리침
     - 1854년 블룸폰테인 협약으로 영국이 물러남
-  startEvents: []
-  endEvents: []
+  startEvents: [boer-republics-1848]
+  endEvents: [boer-republics-1848]
   basis:
     type: primary_source
     refs: ["위키백과 Orange River Sovereignty", "위키백과 Orange Free State", "위키백과 Battle of Boomplaats"]
@@ -199,8 +199,8 @@
     - 1879년 영국군이 페디 왕 세쿠쿠네를 사로잡음
     - 1880년 12월 보어인 봉기, 제1차 보어 전쟁
     - 1881년 2월 27일 마주바 언덕 전투에서 영국군이 짐
-  startEvents: []
-  endEvents: []
+  startEvents: [transvaal-1877]
+  endEvents: [transvaal-1877]
   basis:
     type: primary_source
     refs: ["위키백과 South African Republic", "위키백과 Theophilus Shepstone", "위키백과 Battle of Majuba Hill", "위키백과 Sekhukhune"]
@@ -224,8 +224,8 @@
     - 1845년 무렵 바로체 평원 정복
     - 1851년 세벳와네 죽음
     - 1863~1864년 왕위 계승 싸움
-  startEvents: []
-  endEvents: []
+  startEvents: [kololo-1845]
+  endEvents: [kololo-1845]
   basis:
     type: primary_source
     refs: ["위키백과 Makololo", "위키백과 Barotseland"]
@@ -249,7 +249,7 @@
     - 1735년 마에 드 라부르도네 부임
     - 1810년 8월 그랑포르 해전, 12월 영국에 항복
   startEvents: []
-  endEvents: []
+  endEvents: [mauritius-seychelles-1810]
   basis:
     type: primary_source
     refs: ["위키백과 Isle de France (Mauritius)", "위키백과 History of Mauritius", "파리 조약(1814)"]

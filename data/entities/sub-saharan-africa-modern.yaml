@@ -24,7 +24,7 @@
     - 1967~1970년 비아프라 전쟁
     - 1979~1983년 제2공화국, 1999년 민정 복귀
     - 2008년 바카시반도를 카메룬에 넘김
-  startEvents: []
+  startEvents: [nigeria-independence-1954]
   endEvents: []
   basis:
     type: primary_source
@@ -45,7 +45,7 @@
     - 1960년 다호메이 공화국으로 독립
     - 1975~1990년 베냉 인민 공화국, 대통령 마티외 케레쿠
     - 1990년 새 헌법, 다당제로 돌아섬
-  startEvents: []
+  startEvents: [entente-independence-1960]
   endEvents: []
   basis:
     type: primary_source
@@ -66,7 +66,7 @@
     - 1922~1960년 프랑스 위임 통치령·신탁 통치령
     - 1960년 프랑스에서 독립
     - 1967년 에야데마의 쿠데타, 일당 체제
-  startEvents: []
+  startEvents: [cameroon-togo-1955]
   endEvents: []
   basis:
     type: primary_source
@@ -88,7 +88,7 @@
     - 1960년 공화국, 대통령 콰메 은크루마
     - 1966년·1972년·1979년·1981년 쿠데타
     - 1992년 제4공화국 헌법
-  startEvents: []
+  startEvents: [ghana-independence-1951]
   endEvents: []
   basis:
     type: primary_source
@@ -109,7 +109,7 @@
     - 1960년 프랑스에서 독립
     - 1960~1993년 대통령 펠릭스 우푸에부아니
     - 2002~2007년·2010~2011년 내전
-  startEvents: []
+  startEvents: [entente-independence-1960]
   endEvents: []
   basis:
     type: primary_source
@@ -131,7 +131,7 @@
     - 1944~1971년 대통령 윌리엄 터브먼
     - 1926년 파이어스톤 고무 농장, 1930년 국제 연맹의 강제 노동 조사
     - 1980년 새뮤얼 도의 쿠데타, 1989~2003년 두 차례 내전
-  startEvents: []
+  startEvents: [liberia-1822]
   endEvents: []
   basis:
     type: primary_source
@@ -152,7 +152,7 @@
     - 1961년 영국에서 독립
     - 1971년 공화국, 대통령 시아카 스티븐스
     - 1991~2002년 내전
-  startEvents: []
+  startEvents: [sierra-leone-gambia-1961]
   endEvents: []
   basis:
     type: primary_source
@@ -174,7 +174,7 @@
     - 1958~1984년 대통령 아메드 세쿠 투레
     - 1984년·2008년·2021년 쿠데타
     - 세계에서 손꼽히는 보크사이트 산지
-  startEvents: []
+  startEvents: [guinea-1958]
   endEvents: []
   basis:
     type: primary_source
@@ -196,7 +196,7 @@
     - 1973년 독립 선언, 1974년 9월 포르투갈이 인정
     - 1980년 비에이라의 쿠데타로 카보베르데와 갈라섬
     - 1998~1999년 내전
-  startEvents: []
+  startEvents: [carnation-lusophone-1974]
   endEvents: []
   basis:
     type: primary_source
@@ -217,7 +217,7 @@
     - 1975년 7월 5일 포르투갈에서 독립
     - 1975~1980년 기니비사우와 한 당이 다스림
     - 1991년 첫 다당제 선거
-  startEvents: []
+  startEvents: [carnation-lusophone-1974]
   endEvents: []
   basis:
     type: primary_source
@@ -239,7 +239,7 @@
     - 1960~1980년 대통령 레오폴 세다르 상고르
     - 1982~1989년 감비아와 세네감비아 국가 연합
     - 1982년부터 카자망스 분쟁
-  startEvents: []
+  startEvents: [mali-federation-1959]
   endEvents: []
   basis:
     type: primary_source
@@ -260,7 +260,7 @@
     - 1965년 영국에서 독립, 1970년 공화국
     - 1982년 2월 1일~1989년 9월 30일 세네감비아 국가 연합
     - 1994년 자메의 쿠데타, 2017년 아다마 바로 취임
-  startEvents: []
+  startEvents: [sierra-leone-gambia-1961]
   endEvents: []
   basis:
     type: primary_source
@@ -284,7 +284,7 @@
     - 1965~1997년 모부투 세세 세코 정권, 1971~1997년 나라 이름 자이르
     - 1996~1997년 제1차 콩고 전쟁, 1997년 콩고 민주 공화국으로 이름을 되돌림
     - 1998~2003년 제2차 콩고 전쟁, 2003년 통합 과도 정부
-  startEvents: []
+  startEvents: [congo-crisis-1960]
   endEvents: []
   basis:
     type: primary_source
@@ -306,7 +306,7 @@
     - 1962년 7월 1일 독립, 같은 날 부룬디와 갈라짐
     - 1990~1994년 르완다 내전
     - 1994년 르완다 집단 학살
-  startEvents: []
+  startEvents: [rwanda-burundi-1959]
   endEvents: []
   basis:
     type: primary_source
@@ -326,7 +326,7 @@
     - 수도는 부줌부라, 2019년부터 정치 수도는 기테가
     - 1962년 7월 1일 왕국으로 독립, 1966년 공화국
     - 1972년 후투족 학살, 1993~2005년 내전
-  startEvents: []
+  startEvents: [rwanda-burundi-1959]
   endEvents: []
   basis:
     type: primary_source
@@ -348,7 +348,7 @@
     - 1971~1979년 이디 아민 정권
     - 1978~1979년 우간다–탄자니아 전쟁
     - 1986년부터 요웨리 무세베니 정권
-  startEvents: []
+  startEvents: [east-africa-independence-1961]
   endEvents: []
   basis:
     type: primary_source
@@ -370,7 +370,7 @@
     - 1963~1967년 시프타 전쟁
     - 1982~1991년 일당제
     - 2010년 새 헌법
-  startEvents: []
+  startEvents: [east-africa-independence-1961]
   endEvents: []
   basis:
     type: primary_source
@@ -392,7 +392,7 @@
     - 1964~1985년 줄리어스 니에레레 대통령
     - 1967년 아루샤 선언과 우자마아 사회주의
     - 1978~1979년 우간다–탄자니아 전쟁
-  startEvents: []
+  startEvents: [east-africa-independence-1961]
   endEvents: []
   basis:
     type: primary_source
@@ -414,7 +414,7 @@
     - 1959~1972년 필리베르 치라나나 대통령
     - 1975~1992년 마다가스카르 민주 공화국
     - 1992년 새 헌법, 2009년 정변
-  startEvents: []
+  startEvents: [madagascar-independence-1947]
   endEvents: []
   basis:
     type: primary_source
@@ -435,7 +435,7 @@
     - 1968년 3월 12일 영국에서 독립, 초대 총리 시우사구르 람굴람
     - 1965년 차고스 제도가 떨어져 나가 영국령 인도양 지역이 됨
     - 1992년 공화국
-  startEvents: []
+  startEvents: [mauritius-equatorial-guinea-1968]
   endEvents: []
   basis:
     type: primary_source
@@ -457,7 +457,7 @@
     - 1965~1976년 알다브라 환초 등 바깥 섬은 영국령 인도양 지역
     - 1976년 6월 29일 독립
     - 1977~1993년 일당제
-  startEvents: []
+  startEvents: [mauritius-seychelles-1810]
   endEvents: []
   basis:
     type: primary_source
@@ -478,7 +478,7 @@
     - 1975년 7월 6일 독립 선언
     - 1978년 이슬람 연방 공화국, 2001년 코모로 연방
     - 마요트의 귀속을 프랑스와 다툼
-  startEvents: []
+  startEvents: [comoros-1974]
   endEvents: []
   basis:
     type: primary_source
@@ -521,7 +521,7 @@
     - 1974년 12월 주민 투표에서 코모로 네 섬 가운데 홀로 잔류 다수(63.8%)
     - 1976년 2월 주민 투표로 프랑스에 남음
     - 2011년 3월 31일 프랑스 데파르트망
-  startEvents: []
+  startEvents: [comoros-mayotte-1841]
   endEvents: []
   basis:
     type: primary_source
@@ -544,7 +544,7 @@
     - 1975~2002년 MPLA 정부와 UNITA의 내전
     - 1975년 9월 말부터 쿠바 전투 병력이 들어옴
     - 콩고 공화국과 콩고 민주 공화국 사이 대서양 기슭에 카빈다를 둠
-  startEvents: []
+  startEvents: [carnation-lusophone-1974]
   endEvents: []
   basis:
     type: primary_source
@@ -565,7 +565,7 @@
     - 1964년 9월 FRELIMO가 무장 투쟁을 시작함
     - 1977~1992년 FRELIMO 정부와 RENAMO의 내전
     - 1995년 영연방 가입, 공용어는 포르투갈어
-  startEvents: []
+  startEvents: [carnation-lusophone-1974]
   endEvents: []
   basis:
     type: primary_source
@@ -587,7 +587,7 @@
     - 1964~1991년 케네스 카운다 대통령
     - 1972~1991년 UNIP 일당 체제
     - 1991년 선거로 카운다가 물러남
-  startEvents: []
+  startEvents: [central-african-federation-1953]
   endEvents: []
   basis:
     type: primary_source
@@ -608,7 +608,7 @@
     - 나라 이름은 치체와어로 '불꽃'이라는 뜻
     - 1971년 반다가 종신 대통령으로 선포됨
     - 1993년 국민 투표로 복수 정당제를 받아들임
-  startEvents: []
+  startEvents: [central-african-federation-1953]
   endEvents: []
   basis:
     type: primary_source
@@ -631,8 +631,8 @@
     - 1965년 11월 11일 일방적 독립 선언, 1970년 3월 2일 공화국 선포
     - 남아프리카 공화국과 포르투갈은 정식 승인 없이 대표를 두고 오감
     - 영국은 총독 험프리 기브스를 여왕의 유일한 합법 대리인으로 봄
-  startEvents: []
-  endEvents: []
+  startEvents: [rhodesia-1922]
+  endEvents: [rhodesia-udi-1965]
   basis:
     type: primary_source
     refs: ["로디지아의 일방적 독립선언(1965)", "랭커스터 하우스 협정(1979)", "위키백과 Rhodesia", "위키백과 Southern Rhodesia"]
@@ -651,7 +651,7 @@
     - 수도는 하라레(옛 솔즈베리)
     - 1980년 선거에서 ZANU가 이김
     - 잠비아·모잠비크·남아프리카 공화국·보츠와나에 둘러싸인 내륙국
-  startEvents: []
+  startEvents: [rhodesia-udi-1965]
   endEvents: []
   basis:
     type: primary_source
@@ -673,7 +673,7 @@
     - 초대 대통령은 세레체 카마
     - 땅 대부분이 칼라하리 사막
     - 남아프리카 공화국·나미비아·짐바브웨와 맞닿은 내륙국
-  startEvents: []
+  startEvents: [southern-africa-independence-1966]
   endEvents: []
   basis:
     type: primary_source
@@ -694,7 +694,7 @@
     - 옛 영국 보호령 바수톨란드
     - 사방이 남아프리카 공화국에 둘러싸인 내륙국
     - 국왕을 둔 입헌 군주국
-  startEvents: []
+  startEvents: [southern-africa-independence-1966]
   endEvents: []
   basis:
     type: primary_source
@@ -715,7 +715,7 @@
     - 1973년 칙령으로 헌법을 없앰
     - 1986년 음스와티 3세 즉위
     - 2005년 새 헌법
-  startEvents: []
+  startEvents: [southern-africa-independence-1966]
   endEvents: []
   basis:
     type: primary_source
@@ -738,8 +738,8 @@
     - 1920년 국제 연맹 위임 통치령, 1946년 유엔 신탁 통치 전환을 거부함
     - 1966년 유엔 총회가 위임 통치 종료를 결의함
     - 1968년 유엔이 이름을 나미비아로 정함
-  startEvents: []
-  endEvents: []
+  startEvents: [mandates-1919]
+  endEvents: [namibia-1990]
   basis:
     type: primary_source
     refs: ["국제 연맹 남서아프리카 위임 통치(1920)", "유엔 총회 결의 2145(1966)", "위키백과 South West Africa"]
@@ -759,7 +759,7 @@
     - 1994년 3월 1일 월비스베이를 넘겨받음
     - 북동쪽으로 카프리비 회랑이 길게 뻗음
     - 서쪽 바닷가를 따라 나미브 사막이 펼쳐짐
-  startEvents: []
+  startEvents: [namibia-1990]
   endEvents: []
   basis:
     type: primary_source
@@ -781,7 +781,7 @@
     - 1948년 국민당 집권 뒤 아파르트헤이트
     - 1961년 공화국 선포와 영연방 탈퇴
     - 1994년 4월 27일 임시 헌법 발효, 홈랜드를 다시 합침
-  startEvents: []
+  startEvents: [union-south-africa-1909]
   endEvents: []
   basis:
     type: primary_source
@@ -805,7 +805,7 @@
     - 1968~1991년 무사 트라오레의 군정·일당 체제
     - 2012년 아자와드 선언, 2013년 프랑스군 개입
     - 2023년 말리군이 키달을 되찾음
-  startEvents: []
+  startEvents: [mali-federation-1959]
   endEvents: []
   basis:
     type: primary_source
@@ -827,7 +827,7 @@
     - 1974~1987년 세이니 쿤체의 군정
     - 북부 사막의 우라늄 광산
     - 2023년 쿠데타로 다시 군정
-  startEvents: []
+  startEvents: [entente-independence-1960]
   endEvents: []
   basis:
     type: primary_source
@@ -849,7 +849,7 @@
     - 1984년 나라 이름을 부르키나파소로 바꿈
     - 1987~2014년 블레즈 콩파오레의 통치
     - 2022년 두 차례 쿠데타
-  startEvents: []
+  startEvents: [entente-independence-1960]
   endEvents: []
   basis:
     type: primary_source
@@ -871,7 +871,7 @@
     - 1978~1987년 차드-리비아 전쟁, 1987년 토요타 전쟁
     - 1990~2021년 이드리스 데비의 통치
     - 1994년 국제 사법 재판소 판결로 아우주 띠를 되찾음
-  startEvents: []
+  startEvents: [aef-independence-1958]
   endEvents: []
   basis:
     type: primary_source
@@ -892,7 +892,7 @@
     - 1960년 프랑스에서 독립
     - 1976~1979년 보카사의 중앙아프리카 제국
     - 2013년부터 내전
-  startEvents: []
+  startEvents: [aef-independence-1958]
   endEvents: []
   basis:
     type: primary_source
@@ -914,7 +914,7 @@
     - 1972년 연방을 없애고 단일 공화국
     - 2008년 국제 사법 재판소 판결에 따라 바카시반도를 넘겨받음
     - 1982년부터 폴 비야의 통치
-  startEvents: []
+  startEvents: [cameroon-togo-1955]
   endEvents: []
   basis:
     type: primary_source
@@ -936,7 +936,7 @@
     - 1968~1979년 마시아스 응게마의 독재
     - 1979년부터 오비앙의 통치
     - 1990년대부터 석유 수출
-  startEvents: []
+  startEvents: [mauritius-equatorial-guinea-1968]
   endEvents: []
   basis:
     type: primary_source
@@ -957,7 +957,7 @@
     - 1975년 포르투갈에서 독립
     - 1975~1990년 일당 체제
     - 1990년 새 헌법, 다당제
-  startEvents: []
+  startEvents: [carnation-lusophone-1974]
   endEvents: []
   basis:
     type: primary_source
@@ -978,7 +978,7 @@
     - 1960년 프랑스에서 독립
     - 1967~2009년 오마르 봉고의 통치
     - 2023년 쿠데타
-  startEvents: []
+  startEvents: [aef-independence-1958]
   endEvents: []
   basis:
     type: primary_source
@@ -999,7 +999,7 @@
     - 1960년 프랑스에서 독립
     - 1969~1991년 콩고 인민 공화국
     - 1997년 내전, 드니 사수 응게소가 다시 집권
-  startEvents: []
+  startEvents: [aef-independence-1958]
   endEvents: []
   basis:
     type: primary_source
@@ -1020,8 +1020,8 @@
     - 1973년 리비아군이 차지함
     - 1987년 차드-리비아 전쟁의 마지막 싸움터
     - 1994년 2월 국제 사법 재판소 판결, 5월 리비아군 철수
-  startEvents: []
-  endEvents: []
+  startEvents: [aouzou-chad-libya-1973]
+  endEvents: [aouzou-chad-libya-1973]
   basis:
     type: primary_source
     refs: ["위키백과 Aouzou Strip", "위키백과 United Nations Aouzou Strip Observer Group", "국제 사법 재판소 영토 분쟁 판결(1994)"]
@@ -1065,7 +1065,7 @@
     - 1961~1991년 에티오피아에 맞선 독립 전쟁
     - 1993년 4월 주민 투표에서 99.83%가 독립에 찬성
     - 2005년 국경 위원회가 바드메를 에리트레아 땅으로 봄
-  startEvents: []
+  startEvents: [derg-fall-eritrea-1991]
   endEvents: []
   basis:
     type: primary_source
@@ -1088,7 +1088,7 @@
     - 1967~1977년 프랑스령 아파르족 및 이사족 지역
     - 1917년 다 놓인 아디스아바바 철도의 바다 쪽 끝 항구
     - 공용어는 프랑스어와 아랍어
-  startEvents: []
+  startEvents: [hobyo-somali-coast-1878]
   endEvents: []
   basis:
     type: primary_source
@@ -1110,7 +1110,7 @@
     - 1977~1978년 오가덴 전쟁에서 에티오피아에 짐
     - 1991년 중앙 정부가 무너진 뒤 소말리아 내전이 이어짐
     - 2012년 8월 임시 헌법으로 연방 공화국이 됨
-  startEvents: []
+  startEvents: [somalia-independence-1960]
   endEvents: []
   basis:
     type: primary_source
@@ -1131,7 +1131,7 @@
     - 1960년 6월 26일 영국에서 독립한 소말릴란드국을 잇는다고 봄
     - 1981~1991년 소말리 민족 운동의 독립 전쟁
     - 2025년 12월 이스라엘이 처음으로 승인함
-  startEvents: []
+  startEvents: [somaliland-1991]
   endEvents: []
   basis:
     type: primary_source
@@ -1153,7 +1153,7 @@
     - 2003년부터 다르푸르 분쟁
     - 2011년 남부 10개 주가 남수단으로 독립함
     - 2023년 4월부터 정부군과 신속지원군의 내전
-  startEvents: []
+  startEvents: [sudan-independence-1953]
   endEvents: []
   basis:
     type: primary_source
@@ -1174,7 +1174,7 @@
     - 2011년 1월 주민 투표에서 98.83%가 독립에 찬성
     - 2011년 7월 14일 유엔 회원국이 됨
     - 2013~2018년 남수단 내전
-  startEvents: []
+  startEvents: [south-sudan-2011]
   endEvents: []
   basis:
     type: primary_source

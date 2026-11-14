@@ -31,8 +31,8 @@
     - 1914년 8월 26일 항복, 영국·프랑스 점령
     - 1919년 7월 10일 영국·프랑스 경계 합의
     - 1920년 위임 통치령 둘로 나뉨
-  startEvents: []
-  endEvents: []
+  startEvents: [german-protectorates-1884]
+  endEvents: [mandates-1919]
   basis:
     type: primary_source
     refs: ["위키백과 Togoland", "위키백과 Deutsch-Togo", "위키백과 Ghana–Togo border", "베르사유 조약(1919)"]
@@ -59,8 +59,8 @@
     - 1914~1916년 영국·프랑스군의 카메룬 작전
     - 1916년 영국과 프랑스가 임시 경계를 그어 나누어 다스림
     - 1920년 영국령·프랑스령 카메룬 위임 통치령으로 나뉨
-  startEvents: []
-  endEvents: []
+  startEvents: [german-protectorates-1884]
+  endEvents: [mandates-1919]
   basis:
     type: primary_source
     refs: ["위키백과 Kamerun", "독일·프랑스 협정(1911)", "베르사유 조약(1919)"]
@@ -83,8 +83,8 @@
     - 1903년 카노·소코토를 차지함
     - 에미르를 통한 간접 통치
     - 1912년부터 루가드가 남나이지리아와 함께 맡음
-  startEvents: []
-  endEvents: []
+  startEvents: [sokoto-conquest-1900]
+  endEvents: [nigeria-amalgamation-1906]
   basis:
     type: primary_source
     refs: ["위키백과 Northern Nigeria Protectorate", "위키백과 Colonial Nigeria"]
@@ -109,8 +109,8 @@
     - 1906년 라고스 식민지와 합침
     - 야자유·야자씨 수출
     - 1912년부터 루가드가 북나이지리아와 함께 맡음
-  startEvents: []
-  endEvents: []
+  startEvents: [oil-rivers-niger-company-1884]
+  endEvents: [nigeria-amalgamation-1906]
   basis:
     type: primary_source
     refs: ["위키백과 Southern Nigeria Protectorate", "위키백과 Niger Coast Protectorate", "위키백과 Colonial Nigeria"]
@@ -137,7 +137,7 @@
     - 1909년 프랑스의 아베셰 점령
     - 1911년 마지막 술탄 항복
   startEvents: []
-  endEvents: []
+  endEvents: [wadai-1909]
   basis:
     type: primary_source
     refs: ["위키백과 Wadai Empire", "위키백과 French Chad"]
@@ -162,8 +162,8 @@
     - 1905년 베나디르 기슭을 직할 식민지로 삼음
     - 1924년 영국에게서 주바강 서쪽 올트레 주바를 넘겨받음
     - 1936년 이탈리아령 동아프리카의 소말리아 총독부가 됨
-  startEvents: []
-  endEvents: []
+  startEvents: [hobyo-somali-coast-1878]
+  endEvents: [east-africa-campaign-1940]
   basis:
     type: primary_source
     refs: ["위키백과 Italian Somaliland", "위키백과 Oltre Giuba", "영국-이탈리아 조약(1924)"]
@@ -189,7 +189,7 @@
     - 1889년 4월 7일 이탈리아와 보호 조약을 맺음
     - 1925~1927년 이탈리아의 정복 전쟁에 맞서 싸움
   startEvents: []
-  endEvents: []
+  endEvents: [italian-somalia-1923]
   basis:
     type: primary_source
     refs: ["위키백과 Majeerteen Sultanate", "이탈리아-마제르테인 보호 조약(1889)"]
@@ -212,8 +212,8 @@
     - 1878년 유수프 알리 케나디드가 세움
     - 1889년 2월 8일 이탈리아와 보호 조약을 맺음
     - 1925년 이탈리아군에 정복되고 엘부르에서 반란이 일어남
-  startEvents: []
-  endEvents: []
+  startEvents: [hobyo-somali-coast-1878]
+  endEvents: [italian-somalia-1923]
   basis:
     type: primary_source
     refs: ["위키백과 Sultanate of Hobyo", "위키백과 Majeerteen Sultanate", "이탈리아-호비오 보호 조약(1889)"]
@@ -238,8 +238,8 @@
     - 1900년 조약으로 마레브강 둘레를 에티오피아와의 경계로 삼음
     - 마사와에서 아스마라로 올라가는 철도를 놓음
     - 1936년 이탈리아령 동아프리카의 에리트레아 총독부가 됨
-  startEvents: []
-  endEvents: []
+  startEvents: [ucciale-adwa-1889]
+  endEvents: [east-africa-campaign-1940]
   basis:
     type: primary_source
     refs: ["위키백과 Italian Eritrea", "이탈리아 에리트레아 식민지 칙령(1890)"]
@@ -264,7 +264,7 @@
     - 이집트로 가는 사하라 대상로의 남쪽 끝
     - 1916년 영국-이집트군의 원정으로 무너짐
   startEvents: []
-  endEvents: []
+  endEvents: [darfur-1916]
   basis:
     type: primary_source
     refs: ["위키백과 Sultanate of Darfur", "위키백과 List of sultans of Darfur"]
@@ -291,8 +291,8 @@
     - 1914년 다르에스살람에서 탕가니카호까지 중앙 철도가 다 놓임
     - 1916년 영국군·벨기에군 점령, 독일군은 1918년 11월까지 싸움
     - 1920년 영국령 탕가니카와 루안다-우룬디로 나뉨
-  startEvents: []
-  endEvents: []
+  startEvents: [german-protectorates-1884]
+  endEvents: [mandates-1919]
   basis:
     type: primary_source
     refs: ["위키백과 German East Africa", "독일 동아프리카 회사 칙허장(1885)", "베르사유 조약(1919)"]
@@ -316,8 +316,8 @@
     - 1904~1908년 헤레로인·나마인 학살
     - 1908년 남쪽 해안 사막에서 다이아몬드 발견
     - 1915년 7월 9일 코라브 항복, 남아프리카 연방군 점령
-  startEvents: []
-  endEvents: []
+  startEvents: [german-protectorates-1884]
+  endEvents: [mandates-1919]
   basis:
     type: primary_source
     refs: ["위키백과 German South West Africa", "위키백과 Heligoland–Zanzibar Treaty", "위키백과 Walvis Bay", "베르사유 조약(1919)"]
@@ -341,8 +341,8 @@
     - 1893~1897년 은데벨레·쇼나와의 전쟁
     - 1899년 입법 평의회
     - 1922년 10월 27일 주민 투표로 책임 정부를 고름
-  startEvents: []
-  endEvents: []
+  startEvents: [bsac-rhodesia-1889]
+  endEvents: [rhodesia-1922]
   basis:
     type: primary_source
     refs: ["위키백과 Company rule in Rhodesia", "위키백과 British South Africa Company", "영국 남아프리카 회사 특허장(1889)"]
@@ -364,8 +364,8 @@
     - 1900년 북동 로디지아 칙령
     - 1911년 북서·북동 로디지아를 합쳐 북로디지아
     - 1918년 11월 25일 독일군 항복
-  startEvents: []
-  endEvents: []
+  startEvents: [barotseland-1890]
+  endEvents: [rhodesia-1922]
   basis:
     type: primary_source
     refs: ["위키백과 Company rule in Rhodesia", "위키백과 British South Africa Company", "위키백과 North-Western Rhodesia", "위키백과 Barotseland"]

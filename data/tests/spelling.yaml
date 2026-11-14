@@ -6480,6 +6480,38 @@
 
 # ── 사하라 이남 F3 SF (남부, 2026-11-12) ──
 
+# ── 사하라 이남 사건 ssa-08 (1990~현재, 2026-11-14) ──
+
+- use: 프레데리크 빌럼 더클레르크
+  avoid: [프레데릭 빌렘 데 클레르크, 프레데리크 빌렘 데 클레르크]
+  note: "F. W. de Klerk(남아프리카 마지막 백인 국가 원수, 1993 노벨 평화상). 지시문 공용 표기표 꼴. 위키 ko 표제는 직접 확인하지 못함(결과 노트 6절)"
+  scope: 사하라 이남·남부
+
+- use: 신속지원군
+  avoid: [신속 지원군]
+  note: "Rapid Support Forces(RSF, 수단). 저장소 항목 글 꼴(위키 ko 표제 '신속지원군')"
+  scope: 사하라 이남·나일
+
+- use: 이사이아스 아페웨르키
+  avoid: [이사이아스 아프웨르키, 이사야스 아페웨르키]
+  note: "Isaias Afwerki(에리트레아 초대 대통령). 위키 ko 표제는 직접 확인하지 못함(결과 노트 6절)"
+  scope: 사하라 이남·뿔
+
+- use: 희망 회복 작전
+  avoid: [희망 되찾기 작전]
+  note: "Operation Restore Hope(1992-12-09, 소말리아). 지시문 후보 꼴"
+  scope: 사하라 이남·뿔
+
+- use: 소말리 민족 운동
+  avoid: [소말리 국민 운동]
+  note: "Somali National Movement(SNM, 1981~, 소말릴란드). 저장소 항목 글 꼴"
+  scope: 사하라 이남·뿔
+
+- use: 사헬 국가 동맹
+  avoid: [사헬 국가 연합]
+  note: "Alliance of Sahel States(AES, 2023-09-16 말리·부르키나파소·니제르). 지시문 후보 꼴"
+  scope: 사하라 이남·사헬
+
 # ── 사하라 이남 F4 공통(2026-11-12, F4 뼈대): 공용 표기표 — 새 항목 이름·옛 이름·수도·이음매 지명을 위키백과 한국어판 표제로 확정(f4/skel/ko-titles.txt·en-ko.txt), 표제가 없으면 저장소·같은 갈래 꼴. avoid는 넘겨주기·지시문 가칭 등 흔한 잘못 꼴만. 칸은 자기 새 이름만 칸 머리 아래(f4/SKEL-NOTE.md 끝 표) ──
 
 - use: 호비오 술탄국
@@ -6559,6 +6591,158 @@
   scope: 사하라 이남·남부
 
 # ── 사하라 이남 F4 S2 (로디지아·인도양, 2026-11-12) ──
+
+# ── 사하라 이남 사건 ssa-07 (1946~1989, 2026-11-14) ──
+
+- use: 샤를 드골
+  avoid: [샤를 드 골]
+  note: "Charles de Gaulle(1890~1970). 위키 ko 표제. 본문에서는 처음 '샤를 드골', 뒤에는 '드골'"
+  scope: 사하라 이남·사건
+
+- use: 해럴드 맥밀런
+  avoid: [해롤드 맥밀런, 해럴드 맥밀란]
+  note: "Harold Macmillan(영국 총리 1957~1963). 위키 ko 표제"
+  scope: 사하라 이남·사건
+
+- use: 바람의 변화 연설
+  avoid: [바람 변화 연설]
+  note: "Wind of Change speech(1960-02-03 케이프타운). 공용 표기표 꼴"
+  scope: 사하라 이남·사건
+
+- use: 넬슨 만델라
+  avoid: [넬슨 만델러]
+  note: "Nelson Mandela. 위키 ko 표제"
+  scope: 사하라 이남·사건
+
+- use: 로버트 무가베
+  avoid: [로버트 무가배]
+  note: "Robert Mugabe. 위키 ko 표제"
+  scope: 사하라 이남·사건
+
+- use: 스티브 비코
+  avoid: [스티븐 비코]
+  note: "Steve Biko. 위키 ko 표제"
+  scope: 사하라 이남·사건
+
+- use: 올리버 탐보
+  avoid: [올리버 탬보]
+  note: "Oliver Tambo. 위키 ko 표제"
+  scope: 사하라 이남·사건
+
+- use: 라민 게예
+  avoid: [라민 게이에]
+  note: "Lamine Guèye(세네갈 의원, 1946 시민권 법). 프랑스어 이름의 외래어 표기"
+  scope: 사하라 이남·사건
+
+- use: 아프리카 민주 연합
+  avoid: [아프리카 민주 동맹]
+  note: "Rassemblement démocratique africain(RDA, 1946). 위키 ko 표제"
+  scope: 사하라 이남·사건
+
+- use: 다니엘 말란
+  avoid: [다니엘 말랑]
+  note: "Daniël François Malan(남아프리카 총리 1948~1954). 위키 ko 표제"
+  scope: 사하라 이남·사건
+
+- use: 반투 교육법
+  avoid: [반투 교육 법]
+  note: "Bantu Education Act(1953). 위키 ko 표제"
+  scope: 사하라 이남·사건
+
+- use: 집단 지구법
+  avoid: [집단 거주지법]
+  note: "Group Areas Act(1950). 지시문 표기"
+  scope: 사하라 이남·사건
+
+- use: 토리트 반란
+  avoid: [토릿 반란]
+  note: "Torit mutiny(1955-08-18 수단 남부). 위키 ko 표제 확인 필요, 지시문 표기"
+  scope: 사하라 이남·사건
+
+- use: 리틀턴 헌법
+  avoid: [리틀턴 헌장]
+  note: "Lyttelton Constitution(1954 나이지리아). 위키 ko 표제"
+  scope: 사하라 이남·사건
+
+- use: 은남디 아지키웨
+  avoid: [은남디 아지키베]
+  note: "Nnamdi Azikiwe(나이지리아 초대 대통령). 위키 ko 표제"
+  scope: 사하라 이남·사건
+
+- use: 카메룬 인민 연합
+  avoid: [카메룬 인민 동맹]
+  note: "Union des populations du Cameroun(UPC). 위키 ko 표제"
+  scope: 사하라 이남·사건
+
+- use: 루벤 움 니오베
+  avoid: [루벤 움니오베]
+  note: "Ruben Um Nyobè(1913~1958). 위키 ko 표제"
+  scope: 사하라 이남·사건
+
+- use: 바르텔레미 보간다
+  avoid: [바르텔레미 보강다]
+  note: "Barthélemy Boganda(1910~1959). 위키 ko 표제"
+  scope: 사하라 이남·사건
+
+- use: 풀베르 유루
+  avoid: [풀베르 율루]
+  note: "Fulbert Youlou(콩고 공화국 초대 대통령). 위키 ko 표제"
+  scope: 사하라 이남·사건
+
+- use: 루이 르와가소레
+  avoid: [루이 르와가소르]
+  note: "Louis Rwagasore(부룬디 1961 암살). 위키 ko 표제"
+  scope: 사하라 이남·사건
+
+- use: 다그 함마르셸드
+  avoid: [다그 함마르스크욜드]
+  note: "Dag Hammarskjöld(유엔 사무총장 1953~1961). 위키 ko 표제"
+  scope: 사하라 이남·사건
+
+- use: 움콘토 웨 시즈웨
+  avoid: [움콘토 위 시즈웨]
+  note: "Umkhonto we Sizwe(민족의 창). 위키 ko 표제"
+  scope: 사하라 이남·사건
+
+- use: 카사블랑카 그룹
+  avoid: [카사블랑카 블록]
+  note: "Casablanca Group(1961). 지시문 표기"
+  scope: 사하라 이남·사건
+
+- use: 몬로비아 그룹
+  avoid: [몬로비아 블록]
+  note: "Monrovia Group(1961). 지시문 표기"
+  scope: 사하라 이남·사건
+
+- use: 랭커스터 하우스
+  avoid: [랭카스터 하우스]
+  note: "Lancaster House(1979 런던 회담). 위키 ko 표제"
+  scope: 사하라 이남·사건
+
+- use: 오주쿠
+  avoid: [오쥬쿠]
+  note: "Chukwuemeka Odumegwu Ojukwu(비아프라 지도자). 지시문 표기"
+  scope: 사하라 이남·사건
+
+- use: 오텐티시테
+  avoid: [오센티시티]
+  note: "authenticité(모부투의 정체성 회복 운동). 지시문 표기"
+  scope: 사하라 이남·사건
+
+- use: 샤바 전쟁
+  avoid: [샤바 분쟁]
+  note: "Shaba I·II(1977·1978 자이르). 지시문 표기"
+  scope: 사하라 이남·사건
+
+- use: 쿠이토 쿠아나발레
+  avoid: [쿠이토쿠아나발레]
+  note: "Cuito Cuanavale(앙골라 남동부). 지시문 표기"
+  scope: 사하라 이남·사건
+
+- use: 강뉴 부대
+  avoid: [카그뉴 부대]
+  note: "Kagnew Battalion(6·25 전쟁 에티오피아 파병). 지시문 표기"
+  scope: 사하라 이남·사건
 
 # ── 사하라 이남 F5 공통(2026-11-13, F5 뼈대): 공용 표기표 — 새 항목 이름·옛 이름·수도·이음매 지명을 위키백과 한국어판 표제로 확정(f5/skel/ko-titles*.txt·en-ko.txt), 저장소에 이미 쓰인 표기가 있으면 그것(기존 표기 우선), 표제가 없으면 지시문 가칭. avoid는 넘겨주기·지시문 가칭 등 흔한 잘못 꼴만(저장소 쓰임 0을 확인). 칸은 자기 새 이름만 칸 머리 아래(f5/SKEL-NOTE.md 끝 표) ──
 
@@ -6671,6 +6855,33 @@
   scope: 사하라 이남·마다가스카르
 
 # ── 사하라 이남 F5 S2-5 (로디지아·니아살랜드·모잠비크, 2026-11-13) ──
+
+# ── 사하라 이남 사건 ssa-06 (1899~1945, 2026-11-14) ──
+
+- use: 얀 스뮈츠
+  avoid: [얀 스무츠, 얀 스머츠]
+  note: "Jan Smuts(남아프리카 연방 총리 1919~1924·1939~1948). 공용 표기표(사건 1묶음 COMMON 9절) 꼴. 저장소 쓰임 0"
+  scope: 사하라 이남·남부
+
+- use: 루이스 보타
+  avoid: [루이 보타]
+  note: "Louis Botha(남아프리카 연방 초대 총리 1910~1919). 공용 표기표 꼴. 저장소 쓰임 0"
+  scope: 사하라 이남·남부
+
+- use: 파울 폰 레토포르베크
+  avoid: [레토 포르베크, 레토포어벡]
+  note: "Paul von Lettow-Vorbeck(독일령 동아프리카 지휘관, 1918-11-25 항복). 공용 표기표 꼴. 저장소 쓰임 0"
+  scope: 사하라 이남·동아프리카
+
+- use: 로타르 폰 트로타
+  avoid: [로타어 폰 트로타, 로타 폰 트로타]
+  note: "Lothar von Trotha(독일령 남서아프리카 사령관, 1904 섬멸 명령). 공용 표기표 꼴. 저장소 쓰임 0"
+  scope: 사하라 이남·남부
+
+- use: 존 칠렘브웨
+  avoid: [존 칠렘베]
+  note: "John Chilembwe(1915 니아살랜드 봉기). 공용 표기표 꼴, 저장소 기존 쓰임(니아살랜드 항목 글)과 같은 꼴"
+  scope: 사하라 이남·남부
 
 # ── 사하라 이남 F6 공통(2026-11-13, F6 뼈대): 공용 표기표 — 새 항목 이름·옛 이름·사람·수도·이음매 지명을 위키백과 한국어판 표제로 확정(f6/skel/ko-titles.txt·en-ko.txt), 저장소에 이미 쓰인 표기가 있으면 그것(기존 표기 우선), 표제가 없으면 지시문 가칭. avoid는 넘겨주기·지시문 가칭 등 흔한 잘못 꼴만(저장소 쓰임 0을 확인). 칸은 자기 새 이름만 칸 머리 아래(f6/SKEL-NOTE.md 끝 표) ──
 
@@ -6803,6 +7014,58 @@
   avoid: [서쿠프]
   note: "Robert Surcouf(일드프랑스를 근거지로 한 프랑스 사략선 선장). 위키 ko 표제 없음 — 프랑스어 발음 꼴, 영어식 읽기 '서쿠프'는 막음(저장소 쓰임 0)"
   scope: 사하라 이남·인도양
+
+# ── 사하라 이남 사건 ssa-05 (1800~1898, 2026-11-14) ──
+
+- use: 칼리프 압둘라히
+  avoid: [칼리파 압둘라히]
+  note: "Abdallahi ibn Muhammad(마흐디 국가 2대 지도자, 1885~1899). 위키 ko 표제 확인 못 함 — 공용 표기표 꼴"
+  scope: 사하라 이남·1800~1898 사건
+
+- use: 무함마드 아흐마드
+  avoid: [무하마드 아마드]
+  note: "Muhammad Ahmad(마흐디). 공용 표기표 꼴"
+  scope: 사하라 이남·1800~1898 사건
+
+- use: 허버트 키치너
+  avoid: [허버트 키처너]
+  note: "Herbert Kitchener. 저장소 '키치너' 꼴과 맞춤"
+  scope: 사하라 이남·1800~1898 사건
+
+- use: 오일 리버스 보호령
+  avoid: [오일리버스 보호령]
+  note: "Oil Rivers Protectorate(1884~1893, 이후 니제르 코스트 보호령). 항목 글 꼴"
+  scope: 사하라 이남·1800~1898 사건
+
+- use: 니제르 코스트 보호령
+  avoid: [나이저 코스트 보호령]
+  note: "Niger Coast Protectorate(1893~1900). 항목 글 꼴"
+  scope: 사하라 이남·1800~1898 사건
+
+- use: 응궁구냐네
+  avoid: [궁구냐나]
+  note: "Ngungunyane(가자 제국 마지막 왕, 1884~1895). 포르투갈어 Gungunhana 읽기는 쓰지 않음"
+  scope: 사하라 이남·1800~1898 사건
+
+- use: 라이닐라이아리부니
+  avoid: [라이닐라이아리보니]
+  note: "Rainilaiarivony(메리나 왕국 총리 1864~1895)"
+  scope: 사하라 이남·1800~1898 사건
+
+- use: 오본라므웬
+  avoid: [오보남웬]
+  note: "Ovonramwen(베닌 왕국 마지막 오바, 1888~1897)"
+  scope: 사하라 이남·1800~1898 사건
+
+- use: 농콰우세
+  avoid: [농카우세]
+  note: "Nongqawuse(1856~1857 소 죽이기 예언). 조사 노트 후보 꼴"
+  scope: 사하라 이남·1800~1898 사건
+
+- use: 로버트 타운센드 파쿼
+  avoid: [로버트 파쿠하르]
+  note: "Robert Townsend Farquhar(모리셔스 초대 영국 총독, 1810~1823). 영어 발음 파쿼, 라다마 1세 사건 글 꼴과 맞춤"
+  scope: 사하라 이남·1800~1898 사건
 
 # ── 사하라 이남 F7 공통(2026-11-14, F7 뼈대): 공용 표기표 — 새 항목 이름·옛 땅·도시·사람을 위키백과 한국어판 표제로 확정(f7/skel/ko-titles.txt·en-ko.txt), 저장소에 이미 쓰인 표기가 있으면 그것(기존 표기 우선), 표제가 없으면 가칭. avoid는 넘겨주기·지시문 가칭 등 흔한 잘못 꼴만(저장소 쓰임 0을 확인). 기원전 해가 든 note는 '기원전 N년(천문 1−N)' 꼴. 칸은 자기 새 이름만 칸 머리 아래(f7/SKEL-NOTE.md 끝 표) ──
 

@@ -25,8 +25,8 @@
     - 1896년 내륙 보호령이 더해짐
     - 2차 대전 때 프리타운에 연합군 호송 선단이 모임
     - 1961년 4월 27일 시에라리온으로 독립
-  startEvents: []
-  endEvents: []
+  startEvents: [sierra-leone-gambia-1807]
+  endEvents: [sierra-leone-gambia-1961]
   basis:
     type: primary_source
     refs: ["위키백과 Sierra Leone Colony and Protectorate", "위키백과 시에라리온 식민지 및 보호령"]
@@ -48,8 +48,8 @@
     - 1894년 내륙 보호령 선언
     - 20세기 전반 땅콩 수출에 기댄 경제
     - 1965년 2월 18일 감비아로 독립
-  startEvents: []
-  endEvents: []
+  startEvents: [sierra-leone-gambia-1807]
+  endEvents: [sierra-leone-gambia-1961]
   basis:
     type: primary_source
     refs: ["위키백과 Gambia Colony and Protectorate", "위키백과 영국령 감비아"]
@@ -72,7 +72,7 @@
     - 1973년 1월 아밀카르 카브랄 암살, 9월 독립 선언
     - 1974년 9월 10일 포르투갈이 독립을 인정
   startEvents: []
-  endEvents: []
+  endEvents: [carnation-lusophone-1974]
   basis:
     type: primary_source
     refs: ["위키백과 Portuguese Guinea", "위키백과 Guinea-Bissau War of Independence"]
@@ -95,7 +95,7 @@
     - 1951년 포르투갈 해외 주
     - 1975년 7월 5일 카보베르데로 독립
   startEvents: []
-  endEvents: []
+  endEvents: [carnation-lusophone-1974]
   basis:
     type: primary_source
     refs: ["위키백과 Portuguese Cape Verde", "위키백과 포르투갈령 카보베르데"]
@@ -120,8 +120,8 @@
     - 나이지리아 식민 정부가 함께 다스림
     - 1954년 남부는 준자치 지역 남카메룬
     - 1961년 주민 투표로 북부는 나이지리아, 남부는 카메룬에 합침
-  startEvents: []
-  endEvents: []
+  startEvents: [mandates-1919]
+  endEvents: [cameroon-togo-1955]
   basis:
     type: primary_source
     refs: ["위키백과 British Cameroons", "베르사유 조약(1919)", "국제 연맹 영국령 카메룬 위임 통치 규약(1922)"]
@@ -144,7 +144,7 @@
     - 1963년 자치, 1968년 독립
     - 카카오·커피 농장
   startEvents: []
-  endEvents: []
+  endEvents: [mauritius-equatorial-guinea-1968]
   basis:
     type: primary_source
     refs: ["위키백과 Spanish Guinea", "엘 파르도 조약(1778)"]
@@ -167,7 +167,7 @@
     - 1951년 포르투갈 해외 주
     - 1953년 바테파 학살
   startEvents: []
-  endEvents: []
+  endEvents: [carnation-lusophone-1974]
   basis:
     type: primary_source
     refs: ["위키백과 Portuguese São Tomé and Príncipe"]
@@ -191,8 +191,8 @@
     - 1920년 위임 통치(1922년 국제 연맹 확정), 1946년 유엔 신탁 통치령
     - 1926년부터 벨기에령 콩고와 행정을 합쳐 다스림
     - 1959~1962년 르완다의 후투 혁명
-  startEvents: []
-  endEvents: []
+  startEvents: [mandates-1919]
+  endEvents: [rwanda-burundi-1959]
   basis:
     type: primary_source
     refs: ["위키백과 Ruanda-Urundi", "베르사유 조약(1919)", "국제 연맹 B식 위임 통치(1922)"]
@@ -217,8 +217,8 @@
     - 1900년 협정으로 부간다 왕국의 자치를 인정, 1902년 동부주를 넘김
     - 1914년 서나일을 넘겨받고 1926년 루돌프주를 케냐에 넘김
     - 면화·커피 수출
-  startEvents: []
-  endEvents: []
+  startEvents: [ibea-uganda-1888]
+  endEvents: [east-africa-independence-1961]
   basis:
     type: primary_source
     refs: ["위키백과 Uganda Protectorate", "부간다 협정(1900)"]
@@ -244,8 +244,8 @@
     - 해안 16 km 띠는 잔지바르 술탄 땅을 맡아 다스린 보호령
     - 1902년 우간다 동부주와 1926년 루돌프주를 받고, 1924년 주바랜드를 이탈리아에 넘김
     - 1952~1960년 마우마우 봉기와 비상사태
-  startEvents: []
-  endEvents: []
+  startEvents: [ibea-uganda-1888]
+  endEvents: [east-africa-independence-1961]
   basis:
     type: primary_source
     refs: ["위키백과 East Africa Protectorate", "위키백과 Kenya Colony", "위키백과 Mau Mau rebellion"]
@@ -267,8 +267,8 @@
     - 1916년 영국군 점령, 1920년 위임 통치(1922년 7월 20일 국제 연맹 확정)
     - 1946년 유엔 신탁 통치령
     - 1954년 니에레레가 민족 정당을 세움
-  startEvents: []
-  endEvents: []
+  startEvents: [mandates-1919]
+  endEvents: [east-africa-independence-1961]
   basis:
     type: primary_source
     refs: ["위키백과 Tanganyika Territory", "베르사유 조약(1919)", "국제 연맹 B식 위임 통치(1922)"]
@@ -291,8 +291,8 @@
     - 1890~1963년 영국 보호국
     - 1896년 영국-잔지바르 전쟁
     - 정향 수출
-  startEvents: []
-  endEvents: []
+  startEvents: [oman-zanzibar-1856]
+  endEvents: [east-africa-independence-1961]
   basis:
     type: primary_source
     refs: ["위키백과 Sultanate of Zanzibar", "위키백과 잔지바르 혁명"]
@@ -315,8 +315,8 @@
     - 1952년 유엔 결정으로 에티오피아와 연방을 이룸
     - 티그리냐어와 아랍어를 공용어로 쓴 자치 헌법
     - 1961년 9월 아달 싸움으로 에리트레아 독립 전쟁 시작
-  startEvents: []
-  endEvents: []
+  startEvents: [ex-italian-colonies-1949]
+  endEvents: [ex-italian-colonies-1949]
   basis:
     type: primary_source
     refs: ["유엔 총회 결의 390(V)(1950)", "위키백과 Federation of Ethiopia and Eritrea", "위키백과 Eritrean War of Independence"]
@@ -339,8 +339,8 @@
     - 1924년 영국 남아프리카 회사에서 영국 정부로 넘어감
     - 북부 구리 광산 지대(코퍼벨트)
     - 1953~1963년 로디지아 니아살랜드 연방
-  startEvents: []
-  endEvents: []
+  startEvents: [rhodesia-1922]
+  endEvents: [central-african-federation-1953]
   basis:
     type: primary_source
     refs: ["위키백과 Northern Rhodesia", "위키백과 Federation of Rhodesia and Nyasaland"]
@@ -362,8 +362,8 @@
     - 1915년 칠렘브웨 봉기
     - 1953~1963년 로디지아 니아살랜드 연방
     - 1959년 3월 3일 비상사태 선포
-  startEvents: []
-  endEvents: []
+  startEvents: [bsac-rhodesia-1889]
+  endEvents: [central-african-federation-1953]
   basis:
     type: primary_source
     refs: ["위키백과 Nyasaland", "위키백과 니아살랜드", "위키백과 British Central Africa Protectorate"]
@@ -386,7 +386,7 @@
     - 1964~1974년 모잠비크 독립 전쟁
     - 1891~1942년 모잠비크 회사, 1891~1929년 니아사 회사 영지
   startEvents: []
-  endEvents: []
+  endEvents: [carnation-lusophone-1974]
   basis:
     type: primary_source
     refs: ["위키백과 Portuguese Mozambique", "위키백과 Kingdom of Mutapa", "위키백과 Mozambican War of Independence", "위키백과 Lusaka Accord", "위키백과 Gungunhana"]
@@ -407,8 +407,8 @@
     - 1810년 12월 3일 프랑스 식민지 항복, 1814년 파리 조약
     - 1834년부터 인도인 계약 노동자 이주
     - 1965년 차고스 제도를 떼어 냄
-  startEvents: []
-  endEvents: []
+  startEvents: [mauritius-seychelles-1810]
+  endEvents: [mauritius-equatorial-guinea-1968]
   basis:
     type: primary_source
     refs: ["위키백과 British Mauritius", "위키백과 British Indian Ocean Territory"]
@@ -430,8 +430,8 @@
     - 1912년 마지막 술탄이 물러나 식민 행정
     - 1946년 마다가스카르와 갈린 프랑스 해외 영토
     - 1974년 12월 주민 투표
-  startEvents: []
-  endEvents: []
+  startEvents: [comoros-mayotte-1841]
+  endEvents: [comoros-1974]
   basis:
     type: primary_source
     refs: ["위키백과 History of the Comoros", "위키백과 Comoros"]
@@ -456,7 +456,7 @@
     - 1961~1974년 앙골라 독립 전쟁
     - 북쪽에 떨어진 카빈다는 1885년 포르투갈 보호령이 된 땅
   startEvents: []
-  endEvents: []
+  endEvents: [carnation-lusophone-1974]
   basis:
     type: primary_source
     refs: ["위키백과 Portuguese Angola", "위키백과 Kingdom of Ndongo", "위키백과 Benguela", "위키백과 Angolan War of Independence", "위키백과 Cabinda Province"]
@@ -478,8 +478,8 @@
     - 남아프리카 고등 판무관이 맡은 세 땅 가운데 하나
     - 1948년 세레체 카마의 결혼으로 그가 보호령에서 쫓겨남
     - 땅 대부분이 칼라하리 사막
-  startEvents: []
-  endEvents: []
+  startEvents: [bechuanaland-1885]
+  endEvents: [southern-africa-independence-1966]
   basis:
     type: primary_source
     refs: ["위키백과 Bechuanaland Protectorate"]
@@ -501,8 +501,8 @@
     - 1868년 영국 보호 아래 바수톨란드, 1871년 케이프 식민지 소속
     - 1884년 영국 직할 식민지
     - 1910년부터 사방이 남아프리카 땅에 둘러싸임
-  startEvents: []
-  endEvents: []
+  startEvents: [mfecane-1818]
+  endEvents: [southern-africa-independence-1966]
   basis:
     type: primary_source
     refs: ["위키백과 Basutoland", "위키백과 Moshoeshoe I", "위키백과 Mfecane", "위키백과 Basuto Gun War"]
@@ -527,7 +527,7 @@
     - 1903년부터 영국이 다스림, 남아프리카 고등 판무관이 맡은 세 땅 가운데 하나
     - 국왕 소부자 2세 아래 스와지 왕실이 이어짐
   startEvents: []
-  endEvents: []
+  endEvents: [southern-africa-independence-1966]
   basis:
     type: primary_source
     refs: ["위키백과 History of Eswatini", "위키백과 Eswatini", "위키백과 Ndvungunye", "위키백과 Sobhuza I", "위키백과 Mswati II"]

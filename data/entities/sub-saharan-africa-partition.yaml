@@ -29,8 +29,8 @@
     - 1855년 니오로, 1861년 세구, 1862년 마시나 정복
     - 1864년 우마르가 죽은 뒤 아들 아마두가 다스림
     - 1890~1893년 프랑스군에 세구·니오로·반디아가라를 차례로 잃음
-  startEvents: []
-  endEvents: []
+  startEvents: [umar-tal-1852]
+  endEvents: [umar-tal-1852]
   basis:
     type: primary_source
     refs: ["위키백과 Toucouleur Empire", "위키백과 Umar Tall"]
@@ -54,7 +54,7 @@
     - 1881년 프랑스와 조약, 1889년 영국이 프랑스 세력권으로 인정
     - 1896년 11월 프랑스 보호령이 됨
   startEvents: []
-  endEvents: []
+  endEvents: [samori-guinea-1882]
   basis:
     type: primary_source
     refs: ["위키백과 Imamate of Futa Jallon", "위키백과 Rivières du Sud"]
@@ -80,7 +80,7 @@
     - 1896년 영국군의 쿠마시 점령, 왕 유배
     - 1900년 황금 의자 전쟁
   startEvents: []
-  endEvents: []
+  endEvents: [golden-stool-1900]
   basis:
     type: primary_source
     refs: ["위키백과 Ashanti Empire", "위키백과 War of the Golden Stool", "위키백과 Gold Coast (British colony)"]
@@ -104,7 +104,7 @@
     - 여성 군인 부대
     - 1890년·1892~1894년 프랑스와 전쟁
   startEvents: []
-  endEvents: []
+  endEvents: [dahomey-war-1890]
   basis:
     type: primary_source
     refs: ["위키백과 Kingdom of Dahomey", "위키백과 French Dahomey"]
@@ -130,8 +130,8 @@
     - 에미르들이 다스리는 토후국 연합
     - 카노는 사하라 횡단 무역과 염색 천으로 이름남
     - 1903년 부르미 전투로 끝남
-  startEvents: []
-  endEvents: []
+  startEvents: [sokoto-jihad-1804]
+  endEvents: [sokoto-conquest-1900]
   basis:
     type: primary_source
     refs: ["위키백과 Sokoto Caliphate", "위키백과 Adamawa Emirate"]
@@ -155,7 +155,7 @@
     - 궁정의 청동판과 상아 공예
     - 1897년 영국 원정으로 무너짐
   startEvents: []
-  endEvents: []
+  endEvents: [oil-rivers-niger-company-1884]
   basis:
     type: primary_source
     refs: ["위키백과 Benin Expedition of 1897"]
@@ -178,8 +178,8 @@
     - 1895년 브라스 사람들이 아카사를 습격함
     - 1897년 비다·일로린 정복
     - 1900년 영국 정부에 땅을 넘김
-  startEvents: []
-  endEvents: []
+  startEvents: [oil-rivers-niger-company-1884]
+  endEvents: [sokoto-conquest-1900]
   basis:
     type: primary_source
     refs: ["위키백과 Royal Niger Company"]
@@ -202,8 +202,8 @@
     - 1886년 골드코스트에서 떨어져 나옴
     - 1893년 오요·이바단과 보호 조약
     - 라고스~이바단 철도
-  startEvents: []
-  endEvents: []
+  startEvents: [lagos-1851]
+  endEvents: [nigeria-amalgamation-1906]
   basis:
     type: primary_source
     refs: ["위키백과 Lagos Colony"]
@@ -226,8 +226,8 @@
     - 1893년 쿠카와 함락
     - 1899년 베아글을 죽여 프랑스와 전쟁
     - 1900년 쿠세리 전투로 끝남
-  startEvents: []
-  endEvents: []
+  startEvents: [rabih-bornu-1893]
+  endEvents: [rabih-bornu-1893]
   basis:
     type: primary_source
     refs: ["위키백과 Rabih az-Zubayr", "위키백과 Kanem–Bornu Empire"]
@@ -251,7 +251,7 @@
     - 1893~1899년 라바에게 끊김
     - 1902년 세 나라에 나뉨
   startEvents: []
-  endEvents: []
+  endEvents: [rabih-bornu-1893]
   basis:
     type: primary_source
     refs: ["위키백과 Kanem–Bornu Empire", "위키백과 Rabih az-Zubayr"]
@@ -276,8 +276,8 @@
     - 1885년 1월 26일 하르툼을 함락함
     - 1889년 토슈키 전투에서 져 이집트 쪽 진격이 꺾임
     - 1896~1898년 영국-이집트군의 재정복으로 무너짐
-  startEvents: []
-  endEvents: []
+  startEvents: [mahdi-1881]
+  endEvents: [omdurman-fashoda-1896]
   basis:
     type: primary_source
     refs: ["위키백과 Mahdist State", "위키백과 Mahdist War"]
@@ -304,7 +304,7 @@
     - 1866년 영국령 카프라리아, 1880년 그리콸란드 웨스트, 1895년 영국령 베추아날란드를 합침
     - 1910년 남아프리카 연방의 케이프주
   startEvents: []
-  endEvents: []
+  endEvents: [union-south-africa-1909]
   basis:
     type: primary_source
     refs: ["위키백과 Cape Colony", "위키백과 Dutch Cape Colony", "위키백과 History of the Cape Colony from 1806 to 1870", "위키백과 British Bechuanaland", "런던 협약(1814)"]
@@ -326,8 +326,8 @@
     - 1860년부터 인도에서 계약 노동자가 들어옴
     - 1893년 책임 자치 정부, 1906년 밤바타 반란
     - 1897년 줄루란드, 1903년 빌크레이·위트레흐트를 합침
-  startEvents: []
-  endEvents: []
+  startEvents: [great-trek-1835]
+  endEvents: [union-south-africa-1909]
   basis:
     type: primary_source
     refs: ["위키백과 Colony of Natal", "위키백과 Zulu Kingdom"]
@@ -349,8 +349,8 @@
     - 1885년 9월 30일 영국 직할 식민지
     - 넓이 약 13만 km²
     - 1895년 11월 16일 케이프 식민지에 합쳐짐
-  startEvents: []
-  endEvents: []
+  startEvents: [bechuanaland-1885]
+  endEvents: [bechuanaland-1885]
   basis:
     type: primary_source
     refs: ["위키백과 British Bechuanaland", "위키백과 Cape Colony"]
@@ -372,8 +372,8 @@
     - 1838년 12월 16일 블러드강 전투에서 보어인 이주민에게 짐
     - 1879년 줄루 전쟁에서 영국군에 져 열세 족장령으로 쪼개짐
     - 1884년 뉴 리퍼블릭이 섬, 1887년 영국이 합쳐 줄루란드, 1897년 나탈에 합쳐짐
-  startEvents: []
-  endEvents: []
+  startEvents: [shaka-zulu-1816]
+  endEvents: [zulu-war-1879]
   basis:
     type: primary_source
     refs: ["위키백과 Zulu Kingdom", "위키백과 Colony of Natal", "위키백과 Dingane", "위키백과 Mpande kaSenzangakhona"]
@@ -398,8 +398,8 @@
     - 1877~1880년 영국 병합, 1881년 프리토리아 협약으로 자치 회복
     - 1886년 비트바테르스란트 금광 발견, 요하네스버그가 생김
     - 1899~1902년 제2차 보어 전쟁
-  startEvents: []
-  endEvents: []
+  startEvents: [boer-republics-1848]
+  endEvents: [second-boer-war-1899]
   basis:
     type: primary_source
     refs: ["위키백과 South African Republic", "위키백과 Second Boer War", "위키백과 Treaty of Vereeniging"]
@@ -422,8 +422,8 @@
     - 1858년·1865~1868년 바소토와 전쟁, 1869년 칼레돈강 서쪽 땅을 얻음
     - 1899년 트란스발 공화국과 함께 영국과 전쟁
     - 1900년 3월 13일 영국군 블룸폰테인 입성
-  startEvents: []
-  endEvents: []
+  startEvents: [boer-republics-1848]
+  endEvents: [second-boer-war-1899]
   basis:
     type: primary_source
     refs: ["위키백과 Orange Free State", "위키백과 Second Boer War", "위키백과 Treaty of Vereeniging"]
@@ -444,8 +444,8 @@
     - 1902년 5월 31일 베르니이헝 조약으로 영국 식민지
     - 1904년부터 금광에 중국인 노동자
     - 1907년 첫 책임 정부
-  startEvents: []
-  endEvents: []
+  startEvents: [second-boer-war-1899]
+  endEvents: [union-south-africa-1909]
   basis:
     type: primary_source
     refs: ["위키백과 Transvaal Colony", "위키백과 Treaty of Vereeniging"]
@@ -465,8 +465,8 @@
     - 행정 중심은 블룸폰테인
     - 1902년 5월 31일 베르니이헝 조약으로 영국 식민지
     - 1907년 첫 책임 정부
-  startEvents: []
-  endEvents: []
+  startEvents: [second-boer-war-1899]
+  endEvents: [union-south-africa-1909]
   basis:
     type: primary_source
     refs: ["위키백과 Orange River Colony", "위키백과 Treaty of Vereeniging"]
@@ -491,8 +491,8 @@
     - 1891년 가봉 기슭 식민지를 정식으로 합침
     - 1894년 오트우방기, 1903년 우방기샤리로 떨어짐
     - 이권 회사의 고무 수탈
-  startEvents: []
-  endEvents: []
+  startEvents: [french-congo-1849]
+  endEvents: [french-equatorial-africa-1903]
   basis:
     type: primary_source
     refs: ["위키백과 French Congo", "위키백과 Ubangi-Shari", "위키백과 History of Gabon"]
@@ -517,8 +517,8 @@
     - 1892~1894년 콩고-아랍 전쟁
     - 고무 착취와 1904년 케이스먼트 보고
     - 1908년 벨기에에 넘어감
-  startEvents: []
-  endEvents: []
+  startEvents: [scramble-for-africa-1884, congo-free-state-1885]
+  endEvents: [belgian-congo-1908]
   basis:
     type: primary_source
     refs: ["위키백과 Congo Free State", "베를린 회의 일반 의정서(1885)", "케이스먼트 보고(1904)"]
@@ -542,7 +542,7 @@
     - 1886년 기독교인 처형
     - 1888~1892년 종교 세력 사이의 내전
   startEvents: []
-  endEvents: []
+  endEvents: [ibea-uganda-1888]
   basis:
     type: primary_source
     refs: ["위키백과 Buganda", "위키백과 Uganda Protectorate"]
@@ -564,8 +564,8 @@
     - 1888년 영국 왕실 칙허
     - 1890년 루가드를 부간다에 보냄
     - 1895년 영국 정부가 넘겨받음
-  startEvents: []
-  endEvents: []
+  startEvents: [ibea-uganda-1888]
+  endEvents: [ibea-uganda-1888]
   basis:
     type: primary_source
     refs: ["위키백과 East Africa Protectorate", "영국 왕실 칙허장(1888)"]
@@ -591,7 +591,7 @@
     - 1817년 영국과 조약, 1824년 마하장가 차지
     - 1897년 왕정 폐지, 여왕은 레위니옹을 거쳐 알제리로 유배
   startEvents: []
-  endEvents: []
+  endEvents: [madagascar-1895]
   basis:
     type: primary_source
     refs: ["위키백과 메리나 왕국", "위키백과 Merina Kingdom", "위키백과 Franco-Hova Wars", "위키백과 마다가스카르의 역사"]
@@ -614,8 +614,8 @@
     - 1868~1894년 로벵굴라 재위
     - 1888년 10월 30일 러드 양허
     - 1893년 제1차 마타벨레 전쟁
-  startEvents: []
-  endEvents: []
+  startEvents: [mfecane-1818]
+  endEvents: [bsac-rhodesia-1889]
   basis:
     type: primary_source
     refs: ["위키백과 Lobengula", "위키백과 Matabeleland", "위키백과 Company rule in Rhodesia"]
@@ -638,7 +638,7 @@
     - 1878~1916년 레와니카 재위(1884~1885년 쫓겨남)
     - 1890년 로흐너 양허, 1898년 롤리 양허
   startEvents: []
-  endEvents: []
+  endEvents: [barotseland-1890]
   basis:
     type: primary_source
     refs: ["위키백과 Barotseland", "위키백과 North-Western Rhodesia"]
@@ -659,8 +659,8 @@
     - 1884~1895년 응궁구냐네 재위
     - 1895년 포르투갈 원정
     - 1895년 12월 28일 응궁구냐네가 붙잡힘
-  startEvents: []
-  endEvents: []
+  startEvents: [mfecane-1818]
+  endEvents: [gaza-1895]
   basis:
     type: primary_source
     refs: ["위키백과 Gaza Empire", "위키백과 Gungunhana"]

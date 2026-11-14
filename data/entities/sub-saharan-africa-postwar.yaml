@@ -29,7 +29,7 @@
     - 1940년 9월 영국·자유 프랑스군의 다카르 상륙 시도를 물리침
     - 1959년 4월 4일 프랑스령 수단과 말리 연방
   startEvents: []
-  endEvents: []
+  endEvents: [mali-federation-1959]
   basis:
     type: primary_source
     refs: ["위키백과 Colonie du Sénégal", "위키백과 French West Africa"]
@@ -51,8 +51,8 @@
     - 1919년 오트볼타가 떨어져 나감
     - 1932~1947년 오트볼타의 북서쪽 와이구야 일대를 맡음
     - 1959년 4월 4일 세네갈과 말리 연방
-  startEvents: []
-  endEvents: []
+  startEvents: [umar-tal-1852]
+  endEvents: [mali-federation-1959]
   basis:
     type: primary_source
     refs: ["위키백과 French Sudan", "위키백과 French West Africa"]
@@ -74,8 +74,8 @@
     - 1920년 프랑스령 서아프리카의 식민지
     - 1946년 프랑스 연합의 해외 영토
     - 1958년 11월 28일 모리타니 이슬람 공화국
-  startEvents: []
-  endEvents: []
+  startEvents: [french-west-africa-1900]
+  endEvents: [morocco-independence-1953]
   basis:
     type: primary_source
     refs: ["위키백과 Colonial Mauritania", "위키백과 French West Africa"]
@@ -97,8 +97,8 @@
     - 1895년 프랑스령 서아프리카에 듦
     - 1910년대 고무 수출이 무너진 뒤 바나나 농장이 늘어남
     - 1958년 국민 투표로 프랑스 공동체 가입 거부
-  startEvents: []
-  endEvents: []
+  startEvents: [samori-guinea-1882]
+  endEvents: [guinea-1958]
   basis:
     type: primary_source
     refs: ["위키백과 French Guinea", "위키백과 Rivières du Sud", "위키백과 French Community"]
@@ -122,8 +122,8 @@
     - 1932~1947년 오트볼타 남부·서부를 다스림
     - 1958년 12월 4일 자치 공화국
     - 1960년 8월 코트디부아르로 독립
-  startEvents: []
-  endEvents: []
+  startEvents: [samori-guinea-1882]
+  endEvents: [entente-independence-1960]
   basis:
     type: primary_source
     refs: ["위키백과 French West Africa", "위키백과 Ivory Coast", "위키백과 Haute-Volta (colonie)"]
@@ -145,8 +145,8 @@
     - 1901년 아샨티 합병, 북부 준주 보호령
     - 1951년 첫 총선, 회의인민당 승리
     - 1957년 3월 6일 가나로 독립
-  startEvents: []
-  endEvents: []
+  startEvents: [anglo-asante-1824]
+  endEvents: [ghana-independence-1951]
   basis:
     type: primary_source
     refs: ["위키백과 Gold Coast (British colony)", "가나 독립법(1957)"]
@@ -168,8 +168,8 @@
     - 1946년 유엔 신탁 통치령
     - 1956년 5월 9일 주민 투표, 통합 약 58%
     - 1957년 3월 6일 가나에 합쳐짐
-  startEvents: []
-  endEvents: []
+  startEvents: [mandates-1919]
+  endEvents: [ghana-independence-1951]
   basis:
     type: primary_source
     refs: ["위키백과 British Togoland", "위키백과 1956 British Togoland status plebiscite", "베르사유 조약(1919)", "유엔 총회 결의 1044(1956)"]
@@ -191,8 +191,8 @@
     - 1946년 유엔 신탁 통치령
     - 1956년 자치 공화국
     - 1960년 4월 27일 토고로 독립
-  startEvents: []
-  endEvents: []
+  startEvents: [mandates-1919]
+  endEvents: [cameroon-togo-1955]
   basis:
     type: primary_source
     refs: ["위키백과 French Togoland", "베르사유 조약(1919)"]
@@ -214,8 +214,8 @@
     - 1904년 프랑스령 서아프리카에 들어감
     - 1958년 12월 4일 자치 공화국
     - 1960년 8월 1일 다호메이 공화국으로 독립
-  startEvents: []
-  endEvents: []
+  startEvents: [dahomey-war-1890]
+  endEvents: [entente-independence-1960]
   basis:
     type: primary_source
     refs: ["위키백과 French West Africa", "위키백과 Benin"]
@@ -237,8 +237,8 @@
     - 1932년 9월 5일 폐지, 이웃 세 식민지에 나눔
     - 1947년 9월 4일 옛 경계로 되살림
     - 1960년 8월 5일 오트볼타 공화국으로 독립
-  startEvents: []
-  endEvents: []
+  startEvents: [upper-volta-1915]
+  endEvents: [entente-independence-1960]
   basis:
     type: primary_source
     refs: ["위키백과 French Upper Volta", "위키백과 Haute-Volta (colonie)"]
@@ -260,8 +260,8 @@
     - 1932~1947년 오트볼타 동부를 다스림
     - 1958년 12월 19일 자치 공화국
     - 1960년 8월 3일 니제르로 독립
-  startEvents: []
-  endEvents: []
+  startEvents: [french-west-africa-1900]
+  endEvents: [entente-independence-1960]
   basis:
     type: primary_source
     refs: ["위키백과 Colony of Niger", "위키백과 Haute-Volta (colonie)"]
@@ -286,8 +286,8 @@
     - 1939년 남부 지방이 동부·서부로 나뉨
     - 1954년 북부·서부·동부 세 지역의 연방
     - 1957년 동부·서부, 1959년 북부 지역 자치
-  startEvents: []
-  endEvents: []
+  startEvents: [nigeria-amalgamation-1906]
+  endEvents: [nigeria-independence-1954]
   basis:
     type: primary_source
     refs: ["위키백과 Colonial Nigeria", "리틀턴 헌법(1954)"]
@@ -310,8 +310,8 @@
     - 1940년 자유 프랑스 편에 섬
     - 1955년부터 독립을 바라는 무장 투쟁
     - 1957년 카메룬 신탁 자치국
-  startEvents: []
-  endEvents: []
+  startEvents: [mandates-1919]
+  endEvents: [cameroon-togo-1955]
   basis:
     type: primary_source
     refs: ["위키백과 French Cameroon", "베르사유 조약(1919)", "국제 연맹 프랑스령 카메룬 위임 통치 규약(1922)"]
@@ -333,8 +333,8 @@
     - 1913년 보르쿠·엔네디, 1931년 티베스티를 더함
     - 1940년 처음으로 자유 프랑스 편에 섬
     - 1958년 프랑스 공동체 안 자치 공화국
-  startEvents: []
-  endEvents: []
+  startEvents: [rabih-bornu-1893]
+  endEvents: [aef-independence-1958]
   basis:
     type: primary_source
     refs: ["위키백과 French Chad", "위키백과 French Equatorial Africa"]
@@ -356,8 +356,8 @@
     - 1906~1919년 우방기샤리-차드
     - 1910년부터 프랑스령 적도 아프리카의 한 식민지
     - 1958년 중앙아프리카 공화국(자치)
-  startEvents: []
-  endEvents: []
+  startEvents: [french-equatorial-africa-1903]
+  endEvents: [aef-independence-1958]
   basis:
     type: primary_source
     refs: ["위키백과 Ubangi-Shari"]
@@ -379,8 +379,8 @@
     - 1910년부터 프랑스령 적도 아프리카의 한 식민지
     - 1940년 가봉 전투
     - 1958년 프랑스 공동체 안 자치 공화국
-  startEvents: []
-  endEvents: []
+  startEvents: [french-equatorial-africa-1903]
+  endEvents: [aef-independence-1958]
   basis:
     type: primary_source
     refs: ["위키백과 Colonie du Gabon", "위키백과 French Equatorial Africa", "위키백과 Neukamerun"]
@@ -401,8 +401,8 @@
     - 1906년 프랑스령 콩고에서 나뉜 식민지
     - 1944년 브라자빌 회의
     - 1958년 콩고 공화국(자치)
-  startEvents: []
-  endEvents: []
+  startEvents: [french-equatorial-africa-1903]
+  endEvents: [aef-independence-1958]
   basis:
     type: primary_source
     refs: ["위키백과 French Congo", "위키백과 Moyen-Congo", "위키백과 Neukamerun"]
@@ -426,8 +426,8 @@
     - 영국이 이탈리아가 지은 시설을 전쟁 배상으로 뜯어 감
     - 1947년 파리 강화 조약으로 이탈리아가 주권을 내놓음
     - 1950년 유엔 총회 결의 390호가 에티오피아와의 연방을 정함
-  startEvents: []
-  endEvents: []
+  startEvents: [east-africa-campaign-1940]
+  endEvents: [ex-italian-colonies-1949]
   basis:
     type: primary_source
     refs: ["파리 강화 조약(1947)", "유엔 총회 결의 390(V)(1950)", "위키백과 British Military Administration (Eritrea)"]
@@ -448,8 +448,8 @@
     - 1941년 2월 영국군이 모가디슈를 차지함
     - 1947년 파리 강화 조약으로 이탈리아가 주권을 내놓음
     - 1949년 유엔 총회가 이탈리아 시정 신탁 통치를 결의함
-  startEvents: []
-  endEvents: []
+  startEvents: [east-africa-campaign-1940]
+  endEvents: [ex-italian-colonies-1949]
   basis:
     type: primary_source
     refs: ["파리 강화 조약(1947)", "유엔 총회 결의 289호(1949)", "위키백과 Italian Somaliland"]
@@ -470,8 +470,8 @@
     - 1949년 유엔 총회 결의 289호가 10년 기한을 정함
     - 1950년 4월 1일 이탈리아가 시정을 맡음
     - 1960년 7월 1일 독립해 옛 영국령 소말릴란드와 합침
-  startEvents: []
-  endEvents: []
+  startEvents: [ex-italian-colonies-1949]
+  endEvents: [somalia-independence-1960]
   basis:
     type: primary_source
     refs: ["유엔 총회 결의 289호(1949)", "위키백과 Trust Territory of Somaliland", "위키백과 Italian Somaliland"]
@@ -494,8 +494,8 @@
     - 1910년 기슭으로 물러났다가 1920년 비행기 폭격으로 데르비시 운동을 무너뜨림
     - 1940~1941년 이탈리아군에 점령됨
     - 1954년 협정으로 하우드 방목지를 에티오피아에 돌려줌
-  startEvents: []
-  endEvents: []
+  startEvents: [hobyo-somali-coast-1878]
+  endEvents: [somalia-independence-1960]
   basis:
     type: primary_source
     refs: ["위키백과 British Somaliland", "영국-에티오피아 협정(1954)"]
@@ -517,8 +517,8 @@
     - 1916년 다르푸르 술탄국을 정복해 이듬해 합침
     - 청나일과 백나일 사이 땅에 관개 목화 농장을 일으킴
     - 1953년 2월 영국·이집트 협정으로 자치, 1955년 12월 19일 의회가 독립 선언
-  startEvents: []
-  endEvents: []
+  startEvents: [omdurman-fashoda-1896]
+  endEvents: [sudan-independence-1953]
   basis:
     type: primary_source
     refs: ["영국-이집트 공동 통치 협정(1899)", "영국-이집트 협정(1953)", "위키백과 Anglo-Egyptian Sudan"]
@@ -543,8 +543,8 @@
     - 국가·선교회·회사가 함께 다스림
     - 카탕가의 구리 광산
     - 1960년 6월 30일 독립
-  startEvents: []
-  endEvents: []
+  startEvents: [belgian-congo-1908]
+  endEvents: [congo-crisis-1960]
   basis:
     type: primary_source
     refs: ["위키백과 벨기에령 콩고", "위키백과 Belgian Congo", "위키백과 Congo belge"]
@@ -566,8 +566,8 @@
     - 1942년 5~11월 마다가스카르 전투, 자유 프랑스에 넘김
     - 1947~1949년 민족주의 봉기
     - 1958년 10월 14일 말라가시 공화국
-  startEvents: []
-  endEvents: []
+  startEvents: [madagascar-1895]
+  endEvents: [madagascar-independence-1947]
   basis:
     type: primary_source
     refs: ["위키백과 프랑스령 마다가스카르", "위키백과 Colonie de Madagascar et dépendances", "위키백과 Malagasy Uprising"]
