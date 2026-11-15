@@ -123,6 +123,8 @@ export interface Palette {
   territoryBorder: string;
   /** 나라 색을 옅게 섞을 바탕색 (2026-11-12) */
   mute: string;
+  /** '속국만'에서 지배 관계가 없는 나라의 바탕색 (2026-11-15) */
+  neutral: string;
   outline: string;
   /** 선택·hover 강조 테두리 */
   highlight: string;

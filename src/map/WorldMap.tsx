@@ -40,6 +40,7 @@ import {
   type Palette,
   type Shape,
 } from './canvasLayer.ts';
+import { FillModeSwitch } from './FillModeSwitch.tsx';
 import { LabelLayer } from './LabelLayer.tsx';
 import { layoutLabels } from './labelLayout.ts';
 import { useElementSize } from './useElementSize.ts';
@@ -134,6 +135,7 @@ function readPalette(el: Element): Palette {
     landStroke: v('--land-stroke'),
     territoryStroke: v('--territory-stroke'),
     territoryBorder: v('--territory-border'),
+    neutral: v('--territory-neutral'),
     mute: v('--territory-mute'),
     outline: v('--outline'),
     highlight: v('--fg'),
@@ -145,7 +147,7 @@ function readPalette(el: Element): Palette {
  * 나라 색을 옅게 하는 정도 (2026-11-12, DESIGN.md §6.3). 0이면 원래 색, 1이면 바탕색(--territory-mute).
  * 나라를 고르지 않았을 때는 모든 나라를 DEFAULT만큼, 고르면 고른 나라는 원래 색·나머지는 OTHERS만큼 옅게 칠한다
  */
-const MUTE = { DEFAULT: 0.62, OTHERS: 0.82 };
+const MUTE = { DEFAULT: 0.62, OTHERS: 0.82, /** 속국만: 지배국 */ RULER: 0.2, /** 속국만: 지배를 받는 땅(지배국 색) */ SUBJECT: 0.55 };
 const muteCache = new Map<string, string>();
 /** #rrggbb 색을 바탕색 쪽으로 amount만큼 섞는다. 다른 꼴의 색은 그대로 둔다 */
 function muteColor(color: string, base: string, amount: number): string {
@@ -188,6 +190,7 @@ export default function WorldMap({ data }: { data: StaticData }) {
   const focusEvent = useAppStore((s) => s.focusEvent);
   const setYear = useAppStore((s) => s.setYear);
   const regionFilter = useAppStore((s) => s.regionFilter);
+  const fillMode = useAppStore((s) => s.fillMode);
   const regionFocus = useAppStore((s) => s.regionFocus);
   const chooseRegion = useRegionChoice();
   // 휴대폰 권역 단추(2026-10-28): 평소에는 지금 권역 단추만 보이고, 누르면 다른 권역이 그 위에 펼쳐진다.
@@ -453,6 +456,22 @@ export default function WorldMap({ data }: { data: StaticData }) {
         borders: [],
       };
     }
+    // '속국만'(2026-11-15): 그해 다른 나라를 점령·종속시킨 나라(맨 위 지배국까지 거슬러 감)와 그 땅만 색을 칠한다
+    const topRuler = (id: string) => {
+      let cur = id;
+      for (let i = 0; i < 4; i++) {
+        const r = occupierAt(data.relations, cur, year) ?? overlordAt(data.relations, cur, year);
+        if (!r || r.object === cur) break;
+        cur = r.object;
+      }
+      return cur;
+    };
+    const rulers = new Set<string>();
+    if (fillMode === 'bloc')
+      for (const e of active) {
+        const r = topRuler(e.entityId);
+        if (r !== e.entityId) rulers.add(r);
+      }
     for (const entry of active) {
       if (!isVisible(entry.bbox, bounds, v)) continue;
       const feature = featureFor(entry, lod);
@@ -475,10 +494,18 @@ export default function WorldMap({ data }: { data: StaticData }) {
       const claimants = claimantsAt(data.relations, entry.entityId, year);
       // 후보 나라를 고르면 선택 테두리에 논쟁 지역도 포함한다
       const isSelected = entry.entityId === selected || (!!selected && claimants.includes(selected));
-      // 나라 색은 옅게, 고른 나라(논쟁 지역은 후보로 고른 경우 포함)만 원래 색으로 (2026-11-12). 빗금·종속 테두리의 지배국 색은 그대로 둔다
-      const amount = isSelected ? 0 : selected ? MUTE.OTHERS : MUTE.DEFAULT;
+      // 칠하기 방식(2026-11-15, fillMode): 진하게는 고유색 그대로, 연하게는 고유색을 옅게(2026-11-12), 속국만은 지배국과 그 땅만 색.
+      // 연하게·속국만에서도 고른 나라(논쟁 지역은 후보로 고른 경우 포함)는 원래 색. 빗금·종속 테두리의 지배국 색은 늘 그대로 둔다
+      const amount = isSelected || fillMode === 'strong' ? 0 : selected ? MUTE.OTHERS : MUTE.DEFAULT;
       const base = paletteRef.current?.mute ?? '#f6f3ec';
-      const color = muteColor(data.entities.get(entry.entityId)?.color ?? '#999999', base, amount);
+      const own = data.entities.get(entry.entityId)?.color ?? '#999999';
+      let color = muteColor(own, base, amount);
+      if (fillMode === 'bloc' && !isSelected) {
+        const ruler = topRuler(entry.entityId);
+        if (rulers.has(entry.entityId)) color = muteColor(own, base, MUTE.RULER);
+        else if (ruler !== entry.entityId) color = muteColor(data.entities.get(ruler)?.color ?? '#999999', base, MUTE.SUBJECT);
+        else color = paletteRef.current?.neutral ?? '#ebe7de';
+      }
       const claimantColors = claimants.map((id) => muteColor(data.entities.get(id)?.color ?? '#999999', base, amount));
       const stripes = claimants.length ? (claimantColors.length > 1 ? claimantColors : [claimantColors[0], paletteRef.current?.land ?? '#d9d5cd']) : undefined;
       const isHovered = entry.entityId === hoveredId || (!!hoveredId && claimants.includes(hoveredId));
@@ -505,10 +532,12 @@ export default function WorldMap({ data }: { data: StaticData }) {
     const tiledLand = useTiles ? landTiled.current.get(lod) : undefined;
     const plainLand = landFor(lod).filter((p) => isVisible(p.bbox, bounds, v));
     const land = tiledLand ? { fill: visiblePieces(tiledLand.tiles), stroke: visiblePieces(tiledLand.lines) } : { fill: plainLand, stroke: plainLand };
-    drawMap(ctx, projection, createProjection(size, s0, v, true), v, size, land, territories, paletteRef.current, front);
+    // 진하게는 전처럼 진한 색 사이를 밝은 선으로 가른다(연하게·속국만은 옅은 칠 사이를 진한 선으로)
+    const palette = fillMode === 'strong' ? { ...paletteRef.current, territoryBorder: paletteRef.current.territoryStroke } : paletteRef.current;
+    drawMap(ctx, projection, createProjection(size, s0, v, true), v, size, land, territories, palette, front);
     // 이름표·화살표(SVG)도 방금 그린 지도와 같은 프레임에 맞춘다. 늦게 그리면 움직이는 동안 지도에서 밀려 보인다
     flushSync(() => setView(v));
-  }, [size, s0, year, active, frontShapes, data.entities, data.relations, ensureLoaded, ensureTiled, featureFor, landFor, isWarCountry]);
+  }, [size, s0, year, active, frontShapes, data.entities, data.relations, ensureLoaded, ensureTiled, featureFor, landFor, isWarCountry, fillMode]);
 
   const requestDraw = useCallback(() => {
     cancelAnimationFrame(frame.current);
@@ -978,7 +1007,11 @@ export default function WorldMap({ data }: { data: StaticData }) {
       {/* 지도 왼쪽 위 "주요 사건" 단추와 목록(2026-10-27, 지도의 전쟁 표시 ⚔ 대신). 전쟁 보기 중에는 숨긴다 */}
       {!war && (
         <div className="map-top-left">
-          <MajorEvents data={data} />
+          {/* '주요 사건' 아래에 나라 칠하기 방식 단추(2026-11-15) */}
+          <div className="map-top-stack">
+            <MajorEvents data={data} />
+            <FillModeSwitch />
+          </div>
           {/* 사건 화살표 뜻(2026-10-28: 권역 단추 오른쪽에서 "주요 사건" 단추 오른쪽으로). 나라를 골랐을 때만 */}
           {selectedEntity && (
             <div className="map-legend map-ui">
