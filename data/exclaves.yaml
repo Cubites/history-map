@@ -6438,3 +6438,22 @@
   at: [14.05, -12.96]
   reason: 벵겔라(약 39,880 km²)는 1617년 루안다 남쪽 해안에 따로 세운 포르투갈 거점으로, 그 사이 콴자강 남쪽 땅(지금 콴자술주)은 1671년 은동고 왕국이 무너질 때까지 포르투갈 땅이 아니어서 루안다 쪽 본토와 떨어져 있다(사료상 떨어진 땅 — 행정구역 탓 부스러기 아님, F7 기본값 D10)
   sources: ["위키백과 Benguela https://en.wikipedia.org/wiki/Benguela", "위키백과 Kingdom of Ndongo https://en.wikipedia.org/wiki/Kingdom_of_Ndongo"]
+
+# ── 아메리카 M1 NA-M1 (북미 북부·카리브, 2026-11-15) ──
+
+- entity: canada
+  from: 1900
+  to: null
+  at: [-130.31, 54.9]
+  reason: 1903년 알래스카 경계 판정으로 캐나다 땅이 된 피어스섬 둘레(약 212 km²) — 퍼스 운하·포틀랜드 인렛 사이 섬이라 본토와 물길로 떨어져 있는데, 50m 땅 자름이 퍼스 운하를 메워 알래스카 쪽 땅덩이에 붙은 조각으로 잡힘(행정구역 탓 부스러기 아님 — 아메리카 M1 검토 F2)
+  sources: ["위키백과 Alaska boundary dispute https://en.wikipedia.org/wiki/Alaska_boundary_dispute", "위키백과 Pearse Island https://en.wikipedia.org/wiki/Pearse_Island"]
+
+# ── 아메리카 M1 US-M1 (미국·추코트카, 2026-11-15) ──
+
+# ── 아메리카 M1 CA-M1 (멕시코·중앙아메리카, 2026-11-15) ──
+
+# ── 아메리카 M1 SA-N-M1 (안데스 북부·기아나, 2026-11-15) ──
+
+# ── 아메리카 M1 SC-M1 (안데스 중부·남콘·브라질, 2026-11-15) ──
+
+# ── 아메리카 M1 LA-M1 (작은 앤틸리스 독립국, 2026-11-15) ──

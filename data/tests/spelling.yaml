@@ -2184,11 +2184,6 @@
   note: "Aksum(에티오피아 북부의 왕국, 525~570년 예멘을 다스림). A4b ⑦c(2026-10-31)"
   scope: 서아시아·북아프리카 고대
 
-- use: 마준
-  avoid: [마존]
-  note: "Mazun(사산 제국의 오만 해안 속주). A4b ⑦c(2026-10-31)"
-  scope: 서아시아·북아프리카 고대
-
 - use: 아브라하
   avoid: [아브라하흐]
   note: "Abraha(악숨령 예멘의 통치자, 535~570 무렵). A4b ⑦c(2026-10-31)"
@@ -7507,3 +7502,163 @@
   avoid: [피사르로]
   note: "Francisco Pizarro(프란시스코 피사로, 잉카 정복 1532~1533). 위키 ko 잉카 제국 목차 '피사로의 침략'(0단계 R-EV 열람)"
   scope: 아메리카·정복
+
+# ── 아메리카 M1 공통(2026-11-15, M1 뼈대): 공용 표기표 — 새 항목 이름·수도·이음매 도시·분쟁 지명을 외래어 표기법 → 표준국어대사전 → 위키백과 한국어판 표제(m1/skel/ko-titles.txt) 순으로 확정, 저장소에 이미 쓰인 표기가 있으면 그것(00-scope 6절). avoid가 있는 것만 여기에(나머지는 m1/SKEL-NOTE.md 끝 표), avoid 글자는 저장소 data·src 쓰임 0을 확인함 ──
+
+- use: 영국령 기아나
+  avoid: [영국령 가이아나]
+  note: "British Guiana(1831~1966 영국 식민지 — british-guiana). 위키 ko 표제(M1 뼈대 확인, m1/skel/ko-titles.txt)('영국령 가이아나'는 표제 없음)"
+  scope: 아메리카·기아나
+
+- use: 프랑스령 기아나
+  avoid: [프랑스령 가이아나]
+  note: "French Guiana(french-guiana). 위키 ko 표제(M1 뼈대 확인, m1/skel/ko-titles.txt)"
+  scope: 아메리카·기아나
+
+- use: 포클랜드 제도
+  avoid: [포클랜드섬, 포클랜드 군도]
+  note: "Falkland Islands(falkland-islands). 위키 ko 표제(M1 뼈대 확인, m1/skel/ko-titles.txt)('말비나스 제도'는 넘겨주기 — 아르헨티나 쪽 이름이라 막지 않음)"
+  scope: 아메리카·남대서양
+
+- use: 트리니다드 토바고
+  avoid: [트리니다드토바고, 트리니다드 앤 토바고]
+  note: "Trinidad and Tobago(trinidad-and-tobago, 1962 독립). 위키 ko 표제(M1 뼈대 확인, m1/skel/ko-titles.txt)"
+  scope: 아메리카·작은 앤틸리스
+
+- use: 바베이도스
+  avoid: [바베이도즈, 바르바도스]
+  note: "Barbados(barbados, 1966 독립). 위키 ko 표제(M1 뼈대 확인, m1/skel/ko-titles.txt)"
+  scope: 아메리카·작은 앤틸리스
+
+- use: 세인트빈센트 그레나딘
+  avoid: [세인트빈센트 그레나딘스, 세인트빈센트 및 그레나딘]
+  note: "Saint Vincent and the Grenadines(1979 독립). 위키 ko 표제(M1 뼈대 확인, m1/skel/ko-titles.txt)"
+  scope: 아메리카·작은 앤틸리스
+
+- use: 앤티가 바부다
+  avoid: [안티과 바부다, 앤티가 앤 바부다]
+  note: "Antigua and Barbuda(1981 독립). 위키 ko 표제(M1 뼈대 확인, m1/skel/ko-titles.txt)"
+  scope: 아메리카·작은 앤틸리스
+
+- use: 세인트키츠 네비스
+  avoid: [세인트키츠 앤 네비스, 세인트크리스토퍼 네비스]
+  note: "Saint Kitts and Nevis(1983 독립). 위키 ko 표제(M1 뼈대 확인, m1/skel/ko-titles.txt)"
+  scope: 아메리카·작은 앤틸리스
+
+- use: 세인트루시아
+  avoid: [세인트 루시아]
+  note: "Saint Lucia(1979 독립). 위키 ko 표제(M1 뼈대 확인, m1/skel/ko-titles.txt)"
+  scope: 아메리카·작은 앤틸리스
+
+- use: 도미니카 연방
+  avoid: [도미니카국]
+  note: "Dominica(dominica, 1978 독립 — 도미니카 공화국과 구별). 위키 ko 표제(M1 뼈대 확인, m1/skel/ko-titles.txt)"
+  scope: 아메리카·작은 앤틸리스
+
+- use: 엘살바도르
+  avoid: [엘 살바도르]
+  note: "El Salvador. 위키 ko 표제(M1 뼈대 확인, m1/skel/ko-titles.txt)"
+  scope: 아메리카·중앙아메리카
+
+- use: 코스타리카
+  avoid: [코스타 리카]
+  note: "Costa Rica. 위키 ko 표제(M1 뼈대 확인, m1/skel/ko-titles.txt)"
+  scope: 아메리카·중앙아메리카
+
+- use: 멕시코시티
+  avoid: [멕시코 시티]
+  note: "Mexico City(멕시코 수도). 위키 ko 표제(M1 뼈대 확인, m1/skel/ko-titles.txt)"
+  scope: 아메리카·중앙아메리카
+
+- use: 과테말라시티
+  avoid: [과테말라 시티]
+  note: "Guatemala City(과테말라 수도). 위키 ko 표제(M1 뼈대 확인, m1/skel/ko-titles.txt)"
+  scope: 아메리카·중앙아메리카
+
+- use: 파나마시티
+  avoid: [파나마 시티]
+  note: "Panama City(파나마 수도). 위키 ko 표제(M1 뼈대 확인, m1/skel/ko-titles.txt)"
+  scope: 아메리카·중앙아메리카
+
+- use: 포르토프랭스
+  avoid: [포르토프린스]
+  note: "Port-au-Prince(아이티 수도). 위키 ko 표제(M1 뼈대 확인, m1/skel/ko-titles.txt)"
+  scope: 아메리카·카리브
+
+- use: 포트오브스페인
+  avoid: [포트 오브 스페인]
+  note: "Port of Spain(트리니다드 토바고 수도). 위키 ko 표제(M1 뼈대 확인, m1/skel/ko-titles.txt)"
+  scope: 아메리카·작은 앤틸리스
+
+- use: 부에노스아이레스
+  avoid: [부에노스 아이레스]
+  note: "Buenos Aires(아르헨티나 수도). 위키 ko 표제(M1 뼈대 확인, m1/skel/ko-titles.txt)"
+  scope: 아메리카·남콘
+
+- use: 히우브랑쿠
+  avoid: [리우브랑쿠, 히우 브랑쿠]
+  note: "Rio Branco(아크리주 주도). 위키 ko 표제(M1 뼈대 확인, m1/skel/ko-titles.txt)('리우브랑쿠'는 넘겨주기 — 지시문 가칭을 고침)"
+  scope: 아메리카·브라질
+
+- use: 카나크
+  avoid: [카낙]
+  note: "Qaanaaq(그린란드 북서 — 1953 툴레에서 옮긴 마을). 위키 ko 표제(M1 뼈대 확인, m1/skel/ko-titles.txt)('카낙'은 넘겨주기 — 지시문 가칭을 고침)"
+  scope: 아메리카·그린란드
+
+- use: 아나디리
+  avoid: [아나디르]
+  note: "Anadyr(추코트카 중심 도시). 위키 ko 표제(M1 뼈대 확인, m1/skel/ko-titles.txt)('아나디르'는 넘겨주기 — 지시문 가칭을 고침, 저장소 사건 글도 '아나디리')"
+  scope: 아메리카·추코트카
+
+- use: 웰렌
+  avoid: [우엘렌]
+  note: "Uelen(추코트카 동쪽 끝 마을 — 날짜변경선 정답표). 위키 ko 표제(M1 뼈대 확인, m1/skel/ko-titles.txt)('우엘렌'은 넘겨주기 — 지시문 가칭을 고침)"
+  scope: 아메리카·추코트카
+
+- use: 아바나
+  avoid: [하바나]
+  note: "La Habana(쿠바 수도). 위키 ko 표제·외래어 표기법 스페인어(메인 결정 M-M1-10 — 사건 sea-05 508줄 '하바나'를 반영이 고침)"
+  scope: 아메리카·쿠바
+
+# ── 아메리카 M1 NA-M1 (북미 북부·카리브, 2026-11-15) ──
+
+# ── 아메리카 M1 US-M1 (미국·추코트카, 2026-11-15) ──
+
+# ── 아메리카 M1 CA-M1 (멕시코·중앙아메리카, 2026-11-15) ──
+
+# ── 아메리카 M1 SA-N-M1 (안데스 북부·기아나, 2026-11-15) ──
+
+- use: 마준
+  avoid: [마존]
+  except: [아마존]
+  note: "Mazun(사산 제국의 오만 해안 속주). A4b ⑦c(2026-10-31)"
+  scope: 서아시아·북아프리카 고대
+
+# ── 아메리카 M1 SC-M1 (안데스 중부·남콘·브라질, 2026-11-15) ──
+
+- use: 마드레데디오스
+  avoid: [마드레 데 디오스]
+  note: "Madre de Dios(페루 동남쪽 강·주). 위키 ko 표제 '마드레데디오스주'(M1 SC-M1 확인)"
+  scope: 아메리카·남아메리카
+
+- use: 리우데자네이루
+  avoid: [리오데자네이루, 리우 데 자네이루]
+  note: "Rio de Janeiro(1960년까지 브라질 수도). 위키 ko 표제(M1 SC-M1 확인)"
+  scope: 아메리카·남아메리카
+
+- use: 마리스칼에스티가리비아
+  avoid: [마리스칼 에스티가리비아]
+  note: "Mariscal Estigarribia(파라과이 차코 도시). 위키 ko 표제 없음 — 가칭(공용 표기표 붙여 쓰기 꼴)"
+  scope: 아메리카·남아메리카
+
+- use: 이스터섬
+  avoid: [이스터 섬]
+  note: "Easter Island(칠레, 1888 병합). 위키 ko 표제(M1 SC-M1 확인)"
+  scope: 아메리카·남아메리카
+
+- use: 스트로에스네르
+  avoid: [스트로에스너]
+  note: "Alfredo Stroessner(파라과이 독재자 1954~1989). 위키 ko 표제 '알프레도 스트로에스네르'(M1 SC-M1 확인)"
+  scope: 아메리카·남아메리카
+
+# ── 아메리카 M1 LA-M1 (작은 앤틸리스 독립국, 2026-11-15) ──

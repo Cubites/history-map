@@ -8,7 +8,6 @@
 import * as koreaArea from './areas/korea.mjs';
 import * as innerAsiaArea from './areas/inner-asia.mjs';
 import * as chinaArea from './areas/china.mjs';
-import * as westArea from './areas/west.mjs';
 import * as japanArea from './areas/japan.mjs';
 import * as europeArea from './areas/europe.mjs';
 import * as middleEastArea from './areas/middle-east.mjs';
@@ -22,7 +21,6 @@ export const AREAS = [
   ['korea', koreaArea],
   ['inner-asia', innerAsiaArea],
   ['china', chinaArea],
-  ['west', westArea],
   ['japan', japanArea],
   ['europe', europeArea],
   ['middle-east', middleEastArea],

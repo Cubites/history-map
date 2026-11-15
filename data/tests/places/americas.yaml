@@ -1,4 +1,598 @@
-# americas 권역 국경 지점 정답표 (평소 지도, npm run new:area가 만든 빈 틀)
-# 읽는 곳: scripts/test-geo (npm run test:geo -- --only places). 꼴은 docs/DATA_GUIDE.md의 정답표 절을 따른다. 나라·시대마다 몇 점인지는 시작 때 정한다(standards.md 9절 10).
-# 지점을 넣을 때 아래 []를 지우고 - name: …로 적는다. 해는 천문 연도(기원전 N년 = 1-N), 새 지점은 url을 반드시 단다.
-[]
+# americas 권역 국경 지점 정답표 (평소 지도, 0단계 new:area가 만든 틀 — 아메리카 M1 뼈대 2026-11-15가 칸 머리를 둠)
+# 읽는 곳: scripts/test-geo (npm run test:geo -- --only places). 꼴은 docs/DATA_GUIDE.md의 정답표 절을 따른다. 나라·시대마다 몇 점인지는 칸 지시문이 정한다(standards.md 9절 10, 00-scope 8절 — 나라마다 수도 1점 + 바뀌는 해 앞뒤, 날짜변경선 웰렌·아나디리·애투).
+# 지점은 칸 머리 아래 - name: …로 적는다(주석만 있는 파일은 빈 목록으로 읽힘). 해는 천문 연도, 새 지점은 url을 반드시 단다.
+
+# ── 아메리카 M1 NA-M1 (북미 북부·카리브, 2026-11-15) ──
+- name: 오타와
+  at: [-75.7, 45.42]
+  year: 1950
+  expect: canada
+  url: https://en.wikipedia.org/wiki/Ottawa
+  from: 아메리카 M1 NA-M1 결과노트
+- name: 세인트존스(뉴펀들랜드)
+  at: [-52.71, 47.56]
+  year: 1948
+  expect: newfoundland
+  url: https://en.wikipedia.org/wiki/Dominion_of_Newfoundland
+  from: 아메리카 M1 NA-M1 결과노트
+- name: 세인트존스(뉴펀들랜드) 합류 뒤
+  at: [-52.71, 47.56]
+  year: 1950
+  expect: canada
+  url: https://en.wikipedia.org/wiki/Territorial_evolution_of_Canada
+  from: 아메리카 M1 NA-M1 결과노트
+- name: 해피밸리구스베이(래브라도)
+  at: [-60.45, 53.34]
+  year: 1930
+  expect: newfoundland
+  url: https://en.wikipedia.org/wiki/Labrador_boundary_dispute
+  from: 아메리카 M1 NA-M1 결과노트
+- name: 누크
+  at: [-51.72, 64.18]
+  year: 1900
+  expect: greenland
+  url: https://en.wikipedia.org/wiki/History_of_Greenland
+  from: 아메리카 M1 NA-M1 결과노트
+- name: 이토코르토르미트(동그린란드) 판결 앞
+  at: [-21.96, 70.48]
+  year: 1932
+  expect: none
+  region: americas
+  url: https://en.wikipedia.org/wiki/Erik_the_Red%27s_Land
+  from: 아메리카 M1 NA-M1 결과노트
+- name: 이토코르토르미트(동그린란드) 판결 뒤
+  at: [-21.96, 70.48]
+  year: 1934
+  expect: greenland
+  url: https://en.wikipedia.org/wiki/Erik_the_Red%27s_Land
+  from: 아메리카 M1 NA-M1 결과노트
+- name: 카나크(툴레) 판결 앞
+  at: [-69.23, 77.47]
+  year: 1932
+  expect: none
+  region: americas
+  url: https://en.wikipedia.org/wiki/Qaanaaq
+  from: 아메리카 M1 NA-M1 결과노트
+- name: 카나크(툴레) 판결 뒤
+  at: [-69.23, 77.47]
+  year: 1934
+  expect: greenland
+  url: https://en.wikipedia.org/wiki/Qaanaaq
+  from: 아메리카 M1 NA-M1 결과노트
+- name: 아바나 군정
+  at: [-82.38, 23.13]
+  year: 1900
+  expect: none
+  region: americas
+  url: https://en.wikipedia.org/wiki/Provisional_Government_of_Cuba
+  from: 아메리카 M1 NA-M1 결과노트
+- name: 아바나
+  at: [-82.38, 23.13]
+  year: 1905
+  expect: cuba
+  url: https://en.wikipedia.org/wiki/Republic_of_Cuba_(1902%E2%80%931959)
+  from: 아메리카 M1 NA-M1 결과노트
+- name: 포르토프랭스
+  at: [-72.34, 18.54]
+  year: 1960
+  expect: haiti
+  url: https://en.wikipedia.org/wiki/Port-au-Prince
+  from: 아메리카 M1 NA-M1 결과노트
+- name: 산토도밍고
+  at: [-69.9, 18.47]
+  year: 1960
+  expect: dominican-republic
+  url: https://en.wikipedia.org/wiki/Santo_Domingo
+  from: 아메리카 M1 NA-M1 결과노트
+- name: 킹스턴
+  at: [-76.79, 17.97]
+  year: 1960
+  expect: jamaica
+  url: https://en.wikipedia.org/wiki/Kingston,_Jamaica
+  from: 아메리카 M1 NA-M1 결과노트
+- name: 나소
+  at: [-77.35, 25.05]
+  year: 1960
+  expect: bahamas
+  url: https://en.wikipedia.org/wiki/Nassau,_Bahamas
+  from: 아메리카 M1 NA-M1 결과노트
+
+# ── 아메리카 M1 US-M1 (미국·추코트카, 2026-11-15) ──
+- name: 워싱턴 D.C.
+  at: [-77.04, 38.9]
+  year: 1900
+  expect: usa
+  url: https://en.wikipedia.org/wiki/Washington,_D.C.
+  from: 아메리카 M1 US-M1 결과노트
+- name: 주노
+  at: [-134.42, 58.3]
+  year: 1900
+  expect: usa
+  url: https://en.wikipedia.org/wiki/Juneau,_Alaska
+  from: 아메리카 M1 US-M1 결과노트
+- name: 애투섬
+  at: [172.9, 52.84]
+  year: 1943
+  expect: usa
+  url: https://en.wikipedia.org/wiki/Attu_Island
+  from: 아메리카 M1 US-M1 결과노트
+- name: 라브렌티야
+  at: [-171.0, 65.6]
+  year: 1900
+  expect: russia
+  url: https://en.wikipedia.org/wiki/Lavrentiya
+  from: 아메리카 M1 US-M1 결과노트
+- name: 라브렌티야
+  at: [-171.0, 65.6]
+  year: 1940
+  expect: soviet-union
+  url: https://en.wikipedia.org/wiki/Lavrentiya
+  from: 아메리카 M1 US-M1 결과노트
+- name: 라브렌티야
+  at: [-171.0, 65.6]
+  year: 2000
+  expect: russia-fed
+  url: https://en.wikipedia.org/wiki/Lavrentiya
+  from: 아메리카 M1 US-M1 결과노트
+- name: 웰렌
+  at: [-169.95, 66.15]
+  year: 1950
+  expect: soviet-union
+  url: https://en.wikipedia.org/wiki/Uelen
+  from: 아메리카 M1 US-M1 결과노트
+
+# ── 아메리카 M1 CA-M1 (멕시코·중앙아메리카, 2026-11-15) ──
+- name: 멕시코시티
+  at: [-99.13, 19.43]
+  year: 1950
+  expect: mexico
+  url: https://en.wikipedia.org/wiki/Mexico_City
+  from: 아메리카 M1 CA-M1 결과노트
+- name: 과테말라시티
+  at: [-90.51, 14.63]
+  year: 1950
+  expect: guatemala
+  url: https://en.wikipedia.org/wiki/Guatemala_City
+  from: 아메리카 M1 CA-M1 결과노트
+- name: 벨모판
+  at: [-88.77, 17.25]
+  year: 1960
+  expect: belize
+  url: https://en.wikipedia.org/wiki/Belmopan
+  from: 아메리카 M1 CA-M1 결과노트
+  note: 1981년 독립 앞 영국령 온두라스 때도 벨리즈 색
+- name: 테구시갈파
+  at: [-87.21, 14.07]
+  year: 1950
+  expect: honduras
+  url: https://en.wikipedia.org/wiki/Tegucigalpa
+  from: 아메리카 M1 CA-M1 결과노트
+- name: 푸에르토렘피라
+  at: [-83.78, 15.26]
+  year: 1950
+  expect: honduras
+  url: https://en.wikipedia.org/wiki/Puerto_Lempira
+  from: 아메리카 M1 CA-M1 결과노트
+  note: 코코강 북쪽 모스키티아 — 1906년 판정대로 온두라스 색(G15)
+- name: 산살바도르
+  at: [-89.19, 13.69]
+  year: 1950
+  expect: el-salvador
+  url: https://en.wikipedia.org/wiki/San_Salvador
+  from: 아메리카 M1 CA-M1 결과노트
+- name: 마나과
+  at: [-86.25, 12.13]
+  year: 1950
+  expect: nicaragua
+  url: https://en.wikipedia.org/wiki/Managua
+  from: 아메리카 M1 CA-M1 결과노트
+- name: 산호세
+  at: [-84.09, 9.93]
+  year: 1950
+  expect: costa-rica
+  url: https://en.wikipedia.org/wiki/San_Jos%C3%A9,_Costa_Rica
+  from: 아메리카 M1 CA-M1 결과노트
+- name: 파나마시티
+  at: [-79.52, 8.98]
+  year: 1902
+  expect: colombia
+  url: https://en.wikipedia.org/wiki/Separation_of_Panama_from_Colombia
+  from: 아메리카 M1 CA-M1 결과노트
+  note: 1903년 11월 3일 갈라지기 전에는 콜롬비아 땅
+- name: 파나마시티
+  at: [-79.52, 8.98]
+  year: 1904
+  expect: panama
+  url: https://en.wikipedia.org/wiki/Panama_City
+  from: 아메리카 M1 CA-M1 결과노트
+
+# ── 아메리카 M1 SA-N-M1 (안데스 북부·기아나, 2026-11-15) ──
+- name: 보고타
+  at: [-74.07, 4.71]
+  year: 1950
+  expect: colombia
+  url: https://en.wikipedia.org/wiki/Bogot%C3%A1
+  from: 아메리카 M1 SA-N-M1 결과노트
+- name: 레티시아
+  at: [-69.95, -4.18]
+  year: 1950
+  expect: colombia
+  url: https://en.wikipedia.org/wiki/Leticia,_Amazonas
+  from: 아메리카 M1 SA-N-M1 결과노트
+- name: 카라카스
+  at: [-66.9, 10.48]
+  year: 1950
+  expect: venezuela
+  url: https://en.wikipedia.org/wiki/Caracas
+  from: 아메리카 M1 SA-N-M1 결과노트
+- name: 키토
+  at: [-78.47, -0.18]
+  year: 1950
+  expect: ecuador
+  url: https://en.wikipedia.org/wiki/Quito
+  from: 아메리카 M1 SA-N-M1 결과노트
+- name: 과야킬
+  at: [-79.89, -2.19]
+  year: 1990
+  expect: ecuador
+  url: https://en.wikipedia.org/wiki/Guayaquil
+  from: 아메리카 M1 SA-N-M1 결과노트
+- name: 조지타운
+  at: [-58.16, 6.8]
+  year: 1965
+  expect: british-guiana
+  url: https://en.wikipedia.org/wiki/British_Guiana
+  from: 아메리카 M1 SA-N-M1 결과노트
+- name: 조지타운
+  at: [-58.16, 6.8]
+  year: 1967
+  expect: guyana
+  url: https://en.wikipedia.org/wiki/Guyana
+  from: 아메리카 M1 SA-N-M1 결과노트
+- name: 파라마리보
+  at: [-55.2, 5.85]
+  year: 1974
+  expect: dutch-suriname
+  url: https://en.wikipedia.org/wiki/Surinam_(Dutch_colony)
+  from: 아메리카 M1 SA-N-M1 결과노트
+- name: 파라마리보
+  at: [-55.2, 5.85]
+  year: 1976
+  expect: suriname
+  url: https://en.wikipedia.org/wiki/Suriname
+  from: 아메리카 M1 SA-N-M1 결과노트
+- name: 카옌
+  at: [-52.33, 4.94]
+  year: 1900
+  expect: french-guiana
+  url: https://en.wikipedia.org/wiki/French_Guiana
+  from: 아메리카 M1 SA-N-M1 결과노트
+- name: 카옌
+  at: [-52.33, 4.94]
+  year: 2000
+  expect: french-guiana
+  url: https://en.wikipedia.org/wiki/French_Guiana
+  from: 아메리카 M1 SA-N-M1 결과노트
+- name: 이키토스
+  at: [-73.25, -3.75]
+  year: 1940
+  expect: peru
+  url: https://en.wikipedia.org/wiki/Iquitos
+  from: 아메리카 M1 SA-N-M1 결과노트
+- name: 툼베스
+  at: [-80.46, -3.57]
+  year: 1950
+  expect: peru
+  url: https://en.wikipedia.org/wiki/Tumbes,_Peru
+  from: 아메리카 M1 SA-N-M1 결과노트
+- name: 에세키보 가운데
+  at: [-59.0, 5.5]
+  year: 1990
+  expect: guyana
+  url: https://en.wikipedia.org/wiki/Guayana_Esequiba
+  from: 아메리카 M1 SA-N-M1 결과노트
+- name: 라가르토코차 서쪽(1936 현상 유지선의 페루 쪽)
+  at: [-75.5, -0.3]
+  year: 1941
+  expect: peru
+  url: https://es.wikipedia.org/wiki/Carlos_Arroyo_del_R%C3%ADo
+  from: 아메리카 M1 SA-N-M1 결과노트
+- name: 라가르토코차 서쪽(1942 의정서 뒤 에콰도르)
+  at: [-75.5, -0.3]
+  year: 1943
+  expect: ecuador
+  url: https://en.wikipedia.org/wiki/Rio_Protocol
+  from: 아메리카 M1 SA-N-M1 결과노트
+- name: 안도아스(1936 현상 유지선의 에콰도르 쪽)
+  at: [-76.4, -2.9]
+  year: 1941
+  expect: ecuador
+  url: https://en.wikipedia.org/wiki/Andoas
+  from: 아메리카 M1 SA-N-M1 결과노트
+- name: 안도아스(1942 의정서 뒤 페루)
+  at: [-76.4, -2.9]
+  year: 1943
+  expect: peru
+  url: https://en.wikipedia.org/wiki/Rio_Protocol
+  from: 아메리카 M1 SA-N-M1 결과노트
+- name: 라초레라(1922 조약 앞 비움)
+  at: [-72.79, -1.44]
+  year: 1929
+  expect: none
+  url: https://en.wikipedia.org/wiki/Salom%C3%B3n%E2%80%93Lozano_Treaty
+  from: 아메리카 M1 반영(fix1)
+- name: 라초레라(1930 인계 뒤 콜롬비아)
+  at: [-72.79, -1.44]
+  year: 1930
+  expect: colombia
+  url: https://en.wikipedia.org/wiki/Salom%C3%B3n%E2%80%93Lozano_Treaty
+  from: 아메리카 M1 반영(fix1)
+- name: 엘엔칸토(1922 조약 앞 비움)
+  at: [-73.21, -1.75]
+  year: 1920
+  expect: none
+  url: https://en.wikipedia.org/wiki/Salom%C3%B3n%E2%80%93Lozano_Treaty
+  from: 아메리카 M1 반영(fix1)
+- name: 푸에르토레기사모(1922 조약 앞 비움)
+  at: [-74.78, -0.19]
+  year: 1920
+  expect: none
+  url: https://en.wikipedia.org/wiki/Salom%C3%B3n%E2%80%93Lozano_Treaty
+  from: 아메리카 M1 반영(fix1)
+- name: 미리티파라나(카케타강 북쪽 콜롬비아)
+  at: [-70.98, -0.88]
+  year: 1920
+  expect: colombia
+  url: https://en.wikipedia.org/wiki/Salom%C3%B3n%E2%80%93Lozano_Treaty
+  from: 아메리카 M1 반영(fix1)
+- name: 모코아(푸투마요 상류 콜롬비아)
+  at: [-76.65, 1.15]
+  year: 1920
+  expect: colombia
+  url: https://en.wikipedia.org/wiki/Salom%C3%B3n%E2%80%93Lozano_Treaty
+  from: 아메리카 M1 반영(fix1)
+
+# ── 아메리카 M1 SC-M1 (안데스 중부·남콘·브라질, 2026-11-15) ──
+- name: 리마
+  at: [-77.04, -12.05]
+  year: 2000
+  expect: peru
+  url: https://en.wikipedia.org/wiki/Lima
+  from: 아메리카 M1 SC-M1 결과노트
+- name: 라파스
+  at: [-68.15, -16.5]
+  year: 2000
+  expect: bolivia
+  url: https://en.wikipedia.org/wiki/La_Paz
+  from: 아메리카 M1 SC-M1 결과노트
+- name: 산티아고
+  at: [-70.67, -33.45]
+  year: 2000
+  expect: chile
+  url: https://en.wikipedia.org/wiki/Santiago
+  from: 아메리카 M1 SC-M1 결과노트
+- name: 부에노스아이레스
+  at: [-58.38, -34.6]
+  year: 2000
+  expect: argentina
+  url: https://en.wikipedia.org/wiki/Buenos_Aires
+  from: 아메리카 M1 SC-M1 결과노트
+- name: 몬테비데오
+  at: [-56.16, -34.9]
+  year: 2000
+  expect: uruguay
+  url: https://en.wikipedia.org/wiki/Montevideo
+  from: 아메리카 M1 SC-M1 결과노트
+- name: 아순시온
+  at: [-57.58, -25.26]
+  year: 2000
+  expect: paraguay
+  url: https://en.wikipedia.org/wiki/Asunci%C3%B3n
+  from: 아메리카 M1 SC-M1 결과노트
+- name: 브라질리아
+  at: [-47.88, -15.79]
+  year: 2000
+  expect: brazil
+  url: https://en.wikipedia.org/wiki/Bras%C3%ADlia
+  from: 아메리카 M1 SC-M1 결과노트
+- name: 스탠리
+  at: [-57.85, -51.69]
+  year: 1900
+  expect: falkland-islands
+  url: https://en.wikipedia.org/wiki/Stanley,_Falkland_Islands
+  from: 아메리카 M1 SC-M1 결과노트
+- name: 스탠리
+  at: [-57.85, -51.69]
+  year: 1990
+  expect: falkland-islands
+  url: https://en.wikipedia.org/wiki/Stanley,_Falkland_Islands
+  from: 아메리카 M1 SC-M1 결과노트
+- name: 히우브랑쿠
+  at: [-67.81, -9.97]
+  year: 1902
+  expect: bolivia
+  url: https://en.wikipedia.org/wiki/Rio_Branco,_Acre
+  from: 아메리카 M1 SC-M1 결과노트
+- name: 히우브랑쿠
+  at: [-67.81, -9.97]
+  year: 1904
+  expect: brazil
+  url: https://en.wikipedia.org/wiki/Rio_Branco,_Acre
+  from: 아메리카 M1 SC-M1 결과노트
+- name: 타크나
+  at: [-70.25, -18.01]
+  year: 1928
+  expect: chile
+  url: https://en.wikipedia.org/wiki/Tacna
+  from: 아메리카 M1 SC-M1 결과노트
+- name: 타크나
+  at: [-70.25, -18.01]
+  year: 1930
+  expect: peru
+  url: https://en.wikipedia.org/wiki/Tacna
+  from: 아메리카 M1 SC-M1 결과노트
+- name: 아리카
+  at: [-70.31, -18.48]
+  year: 1928
+  expect: chile
+  url: https://en.wikipedia.org/wiki/Arica
+  from: 아메리카 M1 SC-M1 결과노트
+- name: 아리카
+  at: [-70.31, -18.48]
+  year: 1930
+  expect: chile
+  url: https://en.wikipedia.org/wiki/Arica
+  from: 아메리카 M1 SC-M1 결과노트
+- name: 마리스칼에스티가리비아
+  at: [-60.62, -22.03]
+  year: 1937
+  expect: none
+  region: americas
+  url: https://en.wikipedia.org/wiki/Mariscal_Estigarribia
+  from: 아메리카 M1 SC-M1 결과노트
+- name: 마리스칼에스티가리비아
+  at: [-60.62, -22.03]
+  year: 1939
+  expect: paraguay
+  url: https://en.wikipedia.org/wiki/Mariscal_Estigarribia
+  from: 아메리카 M1 SC-M1 결과노트
+- name: 마카파
+  at: [-51.07, 0.03]
+  year: 1900
+  expect: brazil
+  url: https://en.wikipedia.org/wiki/Macap%C3%A1
+  from: 아메리카 M1 SC-M1 결과노트
+- name: 푸에르토말도나도(1909 조약 앞 비움)
+  at: [-69.18, -12.6]
+  year: 1908
+  expect: none
+  url: https://en.wikipedia.org/wiki/Bolivian%E2%80%93Peruvian_territorial_dispute
+  from: 아메리카 M1 반영(fix1)
+- name: 푸에르토말도나도(1909 조약 뒤 페루)
+  at: [-69.18, -12.6]
+  year: 1909
+  expect: peru
+  url: https://en.wikipedia.org/wiki/Bolivian%E2%80%93Peruvian_territorial_dispute
+  from: 아메리카 M1 반영(fix1)
+- name: 이냐파리 남서쪽(1909 조약 앞 비움)
+  at: [-69.65, -11.05]
+  year: 1908
+  expect: none
+  url: https://en.wikipedia.org/wiki/Bolivian%E2%80%93Peruvian_territorial_dispute
+  from: 아메리카 M1 반영(fix1)
+- name: 쿠스코(1909 띠 밖 페루)
+  at: [-71.97, -13.53]
+  year: 1900
+  expect: peru
+  url: https://en.wikipedia.org/wiki/Bolivian%E2%80%93Peruvian_territorial_dispute
+  from: 아메리카 M1 반영(fix1)
+- name: 푸노(1909 띠 밖 페루)
+  at: [-70.02, -15.84]
+  year: 1900
+  expect: peru
+  url: https://en.wikipedia.org/wiki/Bolivian%E2%80%93Peruvian_territorial_dispute
+  from: 아메리카 M1 반영(fix1)
+- name: 아타라야(1909 띠 밖 페루)
+  at: [-73.75, -10.73]
+  year: 1900
+  expect: peru
+  url: https://en.wikipedia.org/wiki/Bolivian%E2%80%93Peruvian_territorial_dispute
+  from: 아메리카 M1 반영(fix1)
+
+# ── 아메리카 M1 LA-M1 (작은 앤틸리스 독립국, 2026-11-15) ──
+- name: 포트오브스페인
+  at: [-61.51, 10.66]
+  year: 1961
+  expect: none
+  url: https://en.wikipedia.org/wiki/Port_of_Spain
+  from: 아메리카 M1 LA-M1 결과노트
+- name: 포트오브스페인
+  at: [-61.51, 10.66]
+  year: 1990
+  expect: trinidad-and-tobago
+  url: https://en.wikipedia.org/wiki/Port_of_Spain
+  from: 아메리카 M1 LA-M1 결과노트
+- name: 브리지타운
+  at: [-59.62, 13.1]
+  year: 1965
+  expect: none
+  url: https://en.wikipedia.org/wiki/Bridgetown
+  from: 아메리카 M1 LA-M1 결과노트
+- name: 브리지타운
+  at: [-59.62, 13.1]
+  year: 1995
+  expect: barbados
+  url: https://en.wikipedia.org/wiki/Bridgetown
+  from: 아메리카 M1 LA-M1 결과노트
+- name: 세인트조지스
+  at: [-61.75, 12.05]
+  year: 1973
+  expect: none
+  url: https://en.wikipedia.org/wiki/St._George%27s,_Grenada
+  from: 아메리카 M1 LA-M1 결과노트
+- name: 세인트조지스
+  at: [-61.75, 12.05]
+  year: 2000
+  expect: grenada
+  url: https://en.wikipedia.org/wiki/St._George%27s,_Grenada
+  from: 아메리카 M1 LA-M1 결과노트
+- name: 로조
+  at: [-61.39, 15.3]
+  year: 1977
+  expect: none
+  url: https://en.wikipedia.org/wiki/Roseau
+  from: 아메리카 M1 LA-M1 결과노트
+- name: 로조
+  at: [-61.39, 15.3]
+  year: 2000
+  expect: dominica
+  url: https://en.wikipedia.org/wiki/Roseau
+  from: 아메리카 M1 LA-M1 결과노트
+- name: 캐스트리스
+  at: [-61.0, 14.01]
+  year: 1978
+  expect: none
+  url: https://en.wikipedia.org/wiki/Castries
+  from: 아메리카 M1 LA-M1 결과노트
+- name: 캐스트리스
+  at: [-61.0, 14.01]
+  year: 2000
+  expect: saint-lucia
+  url: https://en.wikipedia.org/wiki/Castries
+  from: 아메리카 M1 LA-M1 결과노트
+- name: 킹스타운
+  at: [-61.23, 13.16]
+  year: 1978
+  expect: none
+  url: https://en.wikipedia.org/wiki/Kingstown
+  from: 아메리카 M1 LA-M1 결과노트
+- name: 킹스타운
+  at: [-61.23, 13.16]
+  year: 2000
+  expect: saint-vincent-and-the-grenadines
+  url: https://en.wikipedia.org/wiki/Kingstown
+  from: 아메리카 M1 LA-M1 결과노트
+- name: 세인트존스(앤티가)
+  at: [-61.85, 17.12]
+  year: 1980
+  expect: none
+  url: https://en.wikipedia.org/wiki/St._John%27s,_Antigua_and_Barbuda
+  from: 아메리카 M1 LA-M1 결과노트
+- name: 세인트존스(앤티가)
+  at: [-61.85, 17.12]
+  year: 2000
+  expect: antigua-and-barbuda
+  url: https://en.wikipedia.org/wiki/St._John%27s,_Antigua_and_Barbuda
+  from: 아메리카 M1 LA-M1 결과노트
+- name: 바스테르(세인트키츠)
+  at: [-62.72, 17.3]
+  year: 1982
+  expect: none
+  url: https://en.wikipedia.org/wiki/Basseterre
+  from: 아메리카 M1 LA-M1 결과노트
+- name: 바스테르(세인트키츠)
+  at: [-62.72, 17.3]
+  year: 2005
+  expect: saint-kitts-and-nevis
+  url: https://en.wikipedia.org/wiki/Basseterre
+  from: 아메리카 M1 LA-M1 결과노트

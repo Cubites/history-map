@@ -1800,3 +1800,36 @@
 
 # ── 사하라 이남 F7 S-7 (콩고 해안·앙골라·남부, 2026-11-14) ──
 - { type: vassal_of, subject: cape-colony, object: dutch-republic, from: 1652, to: 1794 } # 1652-04-06 얀 반 리베크가 VOC 보급 기지를 세움, 1795-09 영국 점령 — 그해 말 규칙으로 1794까지(VOC 회사령은 본국 관계로 — dutch-ceylon 선례, 위키 en Dutch Cape Colony, F7 기본값 D1)
+
+# ── 아메리카 M1 NA-M1 (북미 북부·카리브, 2026-11-15) ──
+- { type: vassal_of, subject: greenland, object: denmark, from: 1814, to: null } # 1814-01-14 킬 조약으로 노르웨이가 떨어진 뒤 덴마크 식민지(1721~1813 덴마크-노르웨이 몫은 M3), 1953 편입·1979 자치·2009 자치정부 뒤에도 덴마크 왕국 안(위키 en History of Greenland)
+- { type: vassal_of, subject: newfoundland, object: uk, from: 1707, to: 1906 } # 영국 식민지(1610~ — 대상 uk가 1707부터라 그 앞은 M2·M3 몫), 1907-09-26 자치령 앞 해까지(G5, 위키 en Dominion of Newfoundland)
+- { type: vassal_of, subject: newfoundland, object: uk, from: 1934, to: 1948 } # 1934-02-16 위원회 정부(영국 임명)~1949-03-31 캐나다 합류 앞 해(G5)
+- { type: vassal_of, subject: jamaica, object: uk, from: 1707, to: 1961 } # 1655 영국 점령(대상 uk가 1707부터), 1962-08-06 독립 앞 해까지(위키 en West Indies Federation)
+- { type: vassal_of, subject: bahamas, object: uk, from: 1718, to: 1972 } # 1718 왕령 총독 우즈 로저스 부임, 1973-07-10 독립 앞 해까지(1964 내정 자치는 글 — 위키 en History of the Bahamas)
+- { type: occupied_by, subject: cuba, object: usa, from: 1906, to: 1908 } # 두 번째 미국 점령 1906-09~1909-02-06(G14, 위키 en Provisional Government of Cuba)
+- { type: occupied_by, subject: haiti, object: usa, from: 1915, to: 1933 } # 1915-07-28 상륙~1934-08-01 철수(G14, 위키 en United States occupation of Haiti)
+- { type: occupied_by, subject: dominican-republic, object: usa, from: 1916, to: 1923 } # 1916-05-05 상륙~1924-09-18 철수(G14, 위키 en United States occupation of the Dominican Republic (1916–1924))
+
+# ── 아메리카 M1 US-M1 (미국·추코트카, 2026-11-15) ──
+
+# ── 아메리카 M1 CA-M1 (멕시코·중앙아메리카, 2026-11-15) ──
+- { type: vassal_of, subject: belize, object: uk, from: 1862, to: 1980 } # 1862 영국령 온두라스 식민지, 1981-09-21 독립 — 그해 말 규칙으로 1980까지(위키 en Belize). 1973-06-01 이름만 벨리즈로
+- { type: occupied_by, subject: nicaragua, object: usa, from: 1912, to: 1924 } # 1912-08-04 미국 해병대 상륙, 1925-08-04 철수 — 1924까지(G14, 위키 en United States occupation of Nicaragua — 대통령·정부는 계속)
+- { type: occupied_by, subject: nicaragua, object: usa, from: 1926, to: 1932 } # 1926-05-07 다시 상륙, 1933-01-02 철수 — 1932까지(G14, 같은 문서)
+
+# ── 아메리카 M1 SA-N-M1 (안데스 북부·기아나, 2026-11-15) ──
+# 종속: 영국령 기아나는 1831년 세 식민지를 묶어 세운 영국 식민지, 1966-05-26 가이아나로 독립(to는 앞 해)
+- { type: vassal_of, subject: british-guiana, object: uk, from: 1831, to: 1965 }
+# 종속: 네덜란드령 수리남은 1816년 영국에게서 돌려받은 뒤 네덜란드 왕국 식민지(1667~1815 네덜란드 공화국·영국 점령 시기는 M2·M3 몫), 1954 왕국 구성국, 1975-11-25 독립(to는 앞 해)
+- { type: vassal_of, subject: dutch-suriname, object: netherlands, from: 1816, to: 1974 }
+# 종속: 프랑스령 기아나는 1643년 카옌 건설부터 프랑스 땅(1946 해외 데파르트망)
+- { type: vassal_of, subject: french-guiana, object: france, from: 1643, to: null }
+# 이음: 독립국이 같은 땅의 식민 단위를 이음
+- { type: successor_of, subject: guyana, object: british-guiana, from: 1966, to: null }
+- { type: successor_of, subject: suriname, object: dutch-suriname, from: 1975, to: null }
+
+# ── 아메리카 M1 SC-M1 (안데스 중부·남콘·브라질, 2026-11-15) ──
+- { type: vassal_of, subject: falkland-islands, object: uk, from: 1833, to: null } # 1833-01-03 영국 재점령부터 영국 해외 땅(1982-04-02~06-14 아르헨티나 점령은 글 — G14, 위키 en Falkland Islands)
+
+# ── 아메리카 M1 LA-M1 (작은 앤틸리스 독립국, 2026-11-15) ──

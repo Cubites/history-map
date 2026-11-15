@@ -9,14 +9,13 @@
 // 빌드 스크립트가 Node의 타입 제거 기능으로 직접 불러오므로 enum 같은 런타임 문법과 외부 패키지는 쓰지 않는다.
 
 /** 화면의 권역 필터 단위. '전체'(all)는 따로 둔다 */
-export const REGION_FILTERS = ['east-asia', 'europe', 'middle-east', 'south-asia', 'central-asia', 'southeast-asia', 'sub-saharan-africa'] as const;
+export const REGION_FILTERS = ['east-asia', 'europe', 'middle-east', 'south-asia', 'central-asia', 'southeast-asia', 'sub-saharan-africa', 'americas'] as const;
 export type RegionFilterUnit = (typeof REGION_FILTERS)[number];
 export type RegionFilter = 'all' | RegionFilterUnit;
 
 /**
  * 권역(데이터 파일 이름) → 필터 단위 대응표. **새 권역 파일을 만들면 여기에 한 줄을 더한다.**
  * 여기에 없는 나라 파일이 있으면 build:data·check:data가 멈춘다.
- * west(미국)는 한국사와 닿는 시기만 그린 유럽 밖 서양 나라라서 한국·동아시아에 둔다 (운영자가 정함)
  */
 export const REGION_FILTER_OF: Record<string, RegionFilterUnit> = {
   korea: 'east-asia',
@@ -25,7 +24,6 @@ export const REGION_FILTER_OF: Record<string, RegionFilterUnit> = {
   'inner-asia': 'east-asia',
   japan: 'east-asia',
   'southeast-asia': 'east-asia',
-  west: 'east-asia',
   europe: 'europe',
   'china-pre-qin': 'east-asia',
   'china-warring-states': 'east-asia',
@@ -62,12 +60,12 @@ export const REGION_FILTER_OF: Record<string, RegionFilterUnit> = {
   'sub-saharan-africa-partition': 'sub-saharan-africa', // 사하라 이남 F5(2026-11-13): F1과 같은 단위 sub-saharan-africa
   'sub-saharan-africa-prepartition': 'sub-saharan-africa', // 사하라 이남 F6(2026-11-13): F1과 같은 단위 sub-saharan-africa
   'sub-saharan-africa-precolonial': 'sub-saharan-africa', // 사하라 이남 F7(2026-11-14): F1과 같은 단위 sub-saharan-africa
-  americas: 'europe', // 아메리카 0단계 빈 틀(2026-11-15). M1이 첫 나라를 넣을 때(미국 usa를 west.yaml에서 옮길 때 함께) 새 단위 'americas'를 REGION_FILTERS·REGION_FILTER_INFO에 더하고 이 줄을 그 단위로 바꾼다(docs/americas/00-scope.md 2절)
-  'americas-modern': 'europe', // 아메리카 0단계 빈 틀(2026-11-15). 위 줄과 함께 M1 첫머리에 새 단위로 바꾼다
+  americas: 'americas', // 아메리카 M1(2026-11-15): 새 단위 americas
+  'americas-modern': 'americas', // 아메리카 M1(2026-11-15): 새 단위 americas
 };
 
 /** 사건·전쟁 파일 이름 앞머리 → 권역. 앞에서부터 처음 맞는 것을 쓴다 (예: eu-01-revolutions-1789-1914.yaml → europe) */
-export const STORY_FILE_PREFIXES: [prefix: string, region: string][] = [['eu-', 'europe'], ['cn-', 'china'], ['me-', 'middle-east'], ['sa-', 'south-asia'], ['ca-', 'central-asia'], ['sea-', 'southeast-asia'], ['ssa-', 'sub-saharan-africa']];
+export const STORY_FILE_PREFIXES: [prefix: string, region: string][] = [['eu-', 'europe'], ['cn-', 'china'], ['me-', 'middle-east'], ['sa-', 'south-asia'], ['ca-', 'central-asia'], ['sea-', 'southeast-asia'], ['ssa-', 'sub-saharan-africa'], ['am-', 'americas']];
 /** 한국사 사건 파일(01-gojoseon.yaml~08-contemporary.yaml)과 앞머리가 없는 전쟁 파일(imjin-war.yaml 등)의 권역 */
 export const DEFAULT_STORY_REGION = 'korea';
 
@@ -88,6 +86,8 @@ export const REGION_FILTER_INFO: Record<RegionFilter, { label: string; short: st
   'southeast-asia': { label: '동남아시아', short: '동남아', bounds: [[92, -11], [141, 29]] },
   // 카보베르데 서쪽 끝(서경 26°) ~ 모리셔스 본섬 동쪽(동경 58° — 로드리게스는 밖), 남아프리카 남쪽 끝(남위 35°) ~ 모리타니 북쪽 끝(북위 25.2°, 00-scope 2절). 앞 단위(서아시아 북위 12° 북쪽)와 겹치는 곳은 앞 단위가 먼저 골라짐
   'sub-saharan-africa': { label: '사하라 이남 아프리카', short: '사하라 이남', bounds: [[-26, -35], [58, 25.2]] },
+  // 알류샨 서쪽 끝(서경 180°) ~ 그린란드 동쪽 끝(서경 11°), 티에라델푸에고 남쪽(남위 60°) ~ 그린란드 북쪽 끝(북위 84°, 00-scope 2절). 앞 단위와 겹치는 곳은 앞 단위가 먼저 골라짐
+  americas: { label: '아메리카', short: '아메리카', bounds: [[-180, -60], [-11, 84]] },
 };
 
 /** 파일 경로에서 확장자를 뺀 이름 (경로 구분자는 / 와 \ 모두) */

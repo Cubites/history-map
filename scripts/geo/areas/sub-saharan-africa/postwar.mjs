@@ -2,7 +2,7 @@
 // 시대·범위: 1945~1959: 2차 대전 뒤부터 아프리카의 해 앞까지 (F3)
 // 짝 항목 파일: data/entities/sub-saharan-africa-postwar.yaml (나라 id는 그 파일과 이 파일의 versions가 같아야 한다 — 앞 잇는 F2 항목 22는 sub-saharan-africa-decolonization.yaml, F1 항목 12는 sub-saharan-africa-modern.yaml)
 //   앞 시대 파일 colonial.mjs(F4, 1910~1944)가 같은 id로 앞을 잇는다(이 파일 항목 23·F2 항목 21·F1 항목 9 중 1910~1944에 있는 것 — 짝 항목 파일 sub-saharan-africa-colonial.yaml은 F4 새 항목 14, 사하라 이남 F4 뼈대 2026-11-12)
-// 가져와도 되는 것: lib.mjs, shared.mjs, areas/korea.mjs, areas/inner-asia.mjs, areas/china.mjs, areas/west.mjs, areas/japan.mjs, areas/europe.mjs, areas/middle-east.mjs, areas/south-asia.mjs, areas/central-asia.mjs, areas/southeast-asia.mjs, areas/sub-saharan-africa/의 다른 도우미 모듈. areas/sub-saharan-africa.mjs는 이 파일을 가져오는 쪽이라 가져올 수 없다(순환).
+// 가져와도 되는 것: lib.mjs, shared.mjs, areas/korea.mjs, areas/inner-asia.mjs, areas/china.mjs, areas/japan.mjs, areas/europe.mjs, areas/middle-east.mjs, areas/south-asia.mjs, areas/central-asia.mjs, areas/southeast-asia.mjs, areas/sub-saharan-africa/의 다른 도우미 모듈. areas/sub-saharan-africa.mjs는 이 파일을 가져오는 쪽이라 가져올 수 없다(순환).
 //   권역 파일 안 도형이 필요하면 그 도형을 areas/sub-saharan-africa/의 도우미 모듈로 옮겨 둘이 함께 가져온다.
 // 생성기에 들어가는 것은 export const era 하나다(칼선 같은 다른 이름은 export해도 되지만 versions·gapZones·source 같은 이름은 안 됨: check:generator). 권역 파일 areas/sub-saharan-africa.mjs가 shared.mjs의 joinEras로 자기 versions·gapZones·voids에 합치고,
 // 같은 나라 id를 두 파일이 내면 기간이 겹치지 않을 때만 앞 파일 버전 뒤에 이어 붙인다(겹치거나 출처 문구가 다르면 생성기가 멈춘다).
