@@ -267,6 +267,11 @@ export function MapYearControls({ data }: { data: StaticData }) {
             if (submit(shown)) (document.activeElement as HTMLElement | null)?.blur();
           }}
         >
+          {/* 고칠 수 있는 칸임을 알리는 편집 아이콘(2026-11-15). 글자 높이(1em)와 같은 크기, 누름은 뒤의 칸으로 넘긴다 */}
+          <svg className="map-yearbox-edit" viewBox="0 0 16 16" aria-hidden>
+            <path d="M11.2 2.3a1.5 1.5 0 0 1 2.1 0l.4.4a1.5 1.5 0 0 1 0 2.1L5.6 12.9 2.5 13.5l.6-3.1z" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+            <path d="M9.8 3.7l2.5 2.5" fill="none" stroke="currentColor" strokeWidth="1.5" />
+          </svg>
           <input
             ref={inputRef}
             value={shown}

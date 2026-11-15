@@ -25,12 +25,16 @@ const ORDER: SheetState[] = ['min', 'closed', 'half', 'open'];
  * 흐름 속 크기는 늘 0이다. 지도는 화면 아래 끝까지 깔리고 판은 그 위에 뜬다(2026-11-05: 전에는 흐름 속 크기가 판 높이를 따라 바뀌어 끄는 동안 지도가 매번 크기를 바꿔 다시 그려 버벅였다).
  * 판이 늘 가리는 높이(내림이면 내린 높이, 아니면 접힌 높이)는 앱(.app)의 --sheet-cover로 넘겨 지도 아래쪽 단추와 처음 시점(WorldMap)을 그 위로 맞춘다. 끄는 동안에는 바꾸지 않고 놓을 때만 바꾼다.
  * '국가 상세정보'나 사건을 펼치면(raise, 2026-11-11) 내림·접힘 판이 절반 단계로 올라오고, 모두 닫으면 접힘(기본 높이)으로 돌아온다.
- * 사용자가 그사이 손잡이로 다른 단계로 옮겼으면 닫아도 그대로 둔다.
+ * 사용자가 그사이 손잡이로 다른 단계로 옮겼으면 닫아도 그대로 둔다. 절반 단계는 펼쳤을 때(raise)만 갈 수 있고, 아니면 끌어도 건너뛴다(2026-11-15).
+ * 나라를 고르지 않았으면(contentKey 없음) 내림이 기본 높이다(2026-11-15). 그 뒤 손잡이로는 다른 단계로 옮길 수 있다.
  * PC에서는 CSS가 이 변수들을 쓰지 않는다
  */
 export function useBottomSheet(active: boolean, contentKey: unknown, raise = false) {
   const ref = useRef<HTMLElement>(null);
-  const [state, setState] = useState<SheetState>('closed');
+  const [state, setState] = useState<SheetState>(contentKey ? 'closed' : 'min');
+  // 끄는 중의 처리(onPointerUp)는 한 번 만든 함수를 계속 쓰므로 raise는 ref로 읽는다
+  const raiseRef = useRef(raise);
+  raiseRef.current = raise;
   const drag = useRef<{ y: number; h: number; moved: boolean; state: SheetState } | null>(null);
   const suppressClick = useRef(false);
 
@@ -113,9 +117,10 @@ export function useBottomSheet(active: boolean, contentKey: unknown, raise = fal
     if (!active) setState('closed');
   }, [active]);
 
-  // 내린 채 다른 나라를 고르면 접힘으로 올린다
+  // 내린 채 다른 나라를 고르면 접힘으로 올린다. 나라 고름을 풀면 내림으로 내린다(2026-11-15, 나라가 없을 때의 기본 높이)
   useEffect(() => {
     if (contentKey) setState((s) => (s === 'min' ? 'closed' : s));
+    else setState('min');
   }, [contentKey]);
 
   // 상세정보·사건을 펼치면 절반으로 올리고, 모두 닫으면 접힘으로 돌린다(절반에 있을 때만)
@@ -167,18 +172,20 @@ export function useBottomSheet(active: boolean, contentKey: unknown, raise = fal
     suppressClick.current = true;
     const dy = d.y - e.clientY;
     const h = el.offsetHeight;
-    const heights = ORDER.map((s) => heightOf(el, s));
+    // 절반 단계는 '국가 상세정보'나 사건을 펼쳤을 때만 고를 수 있다(2026-11-15). 아니면 건너뛴다
+    const order = raiseRef.current ? ORDER : ORDER.filter((s) => s !== 'half');
+    const heightOfStep = (s: SheetState) => heightOf(el, s);
     // 위로 끌었으면 지금 높이 이상인 가장 낮은 단계, 아래로 끌었으면 지금 높이 이하인 가장 높은 단계(이름란이 1/3보다 커 내림·접힘 높이가 같으면 접힘)
     const next =
       dy > SNAP
-        ? (ORDER.find((_, i) => heights[i] >= h - 1) ?? 'open')
+        ? (order.find((s) => heightOfStep(s) >= h - 1) ?? 'open')
         : dy < -SNAP
-          ? ([...ORDER].reverse().find((s) => heights[ORDER.indexOf(s)] <= h + 1) ?? 'min')
+          ? ([...order].reverse().find((s) => heightOfStep(s) <= h + 1) ?? 'min')
           : d.state;
     // 같은 단계로 돌아가도 끌던 높이를 지우도록 반영을 다시 일으킨다
     el.dataset.sheet = next;
     if (next === 'closed') el.style.removeProperty('--sheet-h');
-    else el.style.setProperty('--sheet-h', `${heights[ORDER.indexOf(next)]}px`);
+    else el.style.setProperty('--sheet-h', `${heightOfStep(next)}px`);
     setCover(el, next);
     if (next !== 'open' && next !== 'half') el.scrollTop = 0;
     setState(next);
