@@ -174,11 +174,13 @@ function build(src, region, verbose) {
   const partOf = (p) => (region.include ?? []).some((r) => r.adm0 === p.adm0_a3 && r.values.includes(p[r.prop]));
   // 버리는 나라(drop): 조각에도 이웃에도 넣지 않는다. 그 땅은 5) 해안 맞추기에서 옆 조각이 덮는다(이웃 행정구역과 국경이 맞지 않아 arc를 공유하지 못하는 아주 작은 단위)
   const dropSet = new Set(region.drop ?? []);
+  // 버리는 행정구역(dropCodes, NE adm1_code): 나라 전체가 아니라 그 칸 하나만 뺀다(이름·ISO 코드가 없는 NE 임시 칸, 이웃 칸과 arc를 공유하지 못하는 칸 — 2026-11-15 아메리카)
+  const dropCodeSet = new Set(region.dropCodes ?? []);
   let chosen = [];
   let neighbors = [];
   for (const f of src.features) {
     const p = f.properties;
-    if (dropSet.has(p.adm0_a3)) continue;
+    if (dropSet.has(p.adm0_a3) || dropCodeSet.has(p.adm1_code)) continue;
     const isChosen = adm0Set.has(p.adm0_a3) || partOf(p);
     const all = toMulti(f.geometry);
     const polys = all.filter((poly) => !boxesApart(bboxOf([poly]), region.box));
@@ -689,6 +691,7 @@ function readme(r, checks) {
   L.push('## 권역과 매개변수', '');
   L.push('- 나라(adm0_a3): ' + region.adm0.join(', '));
   if (region.drop?.length) L.push('- 버린 나라(조각에도 이웃에도 넣지 않고, 그 땅은 해안 맞추기에서 옆 조각이 덮음): ' + region.drop.join(', '));
+  if (region.dropCodes?.length) L.push('- 버린 행정구역(NE adm1_code, 조각에도 이웃에도 넣지 않음 — 그 땅은 해안 맞추기에서 옆 조각이 덮거나 내륙 구멍 조각이 됨): ' + region.dropCodes.join(', '));
   for (const inc of region.include ?? []) L.push('- ' + inc.note.replaceAll('{values}', inc.values.join('·')));
   L.push('- 범위 상자 [서, 남, 동, 북] = [' + region.box.join(', ') + ']. 상자 밖에 통째로 있는 폴리곤은 뺐다: ' + (rp.dropped.join('; ') || '없음'));
   if (UNDER) L.push('- 아래층 조각: ' + code(UNDER.name + '.topo.json') + '(sha256 ' + UNDER.sha.slice(0, 16) + '…)의 조각을 그 지역 원본 행정구역 대신 이웃으로 쓰고(그 arc는 간략화하지 않음), 이 지역 조각에서 그와 겹치는 땅을 뺐다: ' + (rp.underCut.join('; ') || '없음') + '. 이음매 선은 아래층 조각 바깥선 그대로다.');

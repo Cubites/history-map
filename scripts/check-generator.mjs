@@ -632,13 +632,14 @@ console.log('[3] 행정구역 조각 파일 (data/base/fragments)');
       const ringArea = (r) => { let a = 0; for (let i = 0, j = r.length - 1; i < r.length; j = i++) a += (r[j][0] + r[i][0]) * (r[j][1] - r[i][1]); return Math.abs(a / 2); };
       const area = (m) => m.reduce((s2, poly) => s2 + poly.reduce((s3, r, k) => s3 + (k ? -1 : 1) * ringArea(r), 0), 0);
       const perim = (m) => m.reduce((s2, poly) => s2 + poly.reduce((s3, r) => s3 + r.slice(1).reduce((s4, q, k) => s4 + Math.hypot(q[0] - r[k][0], q[1] - r[k][1]), 0), 0), 0);
-      const a = set.ids[0];
+      // a: arc를 함께 쓰는 이웃이 있는 첫 조각(첫 조각이 이웃 없는 섬이면 다음 조각 — 2026-11-15 아메리카, 첫 조각이 아루바), b: a와 arc를 함께 쓰는 이웃 조각 하나
+      const arcsOf = (g) => { const out = new Set(); const w = (x) => (Array.isArray(x) ? x.forEach(w) : out.add(x < 0 ? ~x : x)); w(g.arcs); return out; };
+      const geomArcs = new Map(geoms.map((g) => [g.id, arcsOf(g)]));
+      const neighborOf = (id) => geoms.find((g) => g.id !== id && [...geomArcs.get(g.id)].some((x) => geomArcs.get(id)?.has(x)))?.id;
+      const a = set.ids.find((id) => neighborOf(id)) ?? set.ids[0];
       const fa = set.F(a);
       const onGrid = fa.every((poly) => poly.every((r) => r.length >= 4 && r[0][0] === r.at(-1)[0] && r[0][1] === r.at(-1)[1] && r.every(([x, y]) => x === Math.round(x * 1e4) / 1e4 && y === Math.round(y * 1e4) / 1e4)));
-      // a와 arc를 함께 쓰는 이웃 조각 하나
-      const arcsOf = (g) => { const out = new Set(); const w = (x) => (Array.isArray(x) ? x.forEach(w) : out.add(x < 0 ? ~x : x)); w(g.arcs); return out; };
-      const aArcs = arcsOf(geoms.find((g) => g.id === a));
-      const b = geoms.find((g) => g.id !== a && [...arcsOf(g)].some((x) => aArcs.has(x)))?.id;
+      const b = neighborOf(a);
       const same = b ? set.F(a, b) === set.F(b, a) : false;
       const dissolved = b ? perim(set.F(a, b)) < perim(fa) + perim(set.F(b)) - 1e-9 : false;
       const all = set.F(...set.ids);

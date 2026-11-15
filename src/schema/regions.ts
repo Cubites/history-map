@@ -62,6 +62,8 @@ export const REGION_FILTER_OF: Record<string, RegionFilterUnit> = {
   'sub-saharan-africa-partition': 'sub-saharan-africa', // 사하라 이남 F5(2026-11-13): F1과 같은 단위 sub-saharan-africa
   'sub-saharan-africa-prepartition': 'sub-saharan-africa', // 사하라 이남 F6(2026-11-13): F1과 같은 단위 sub-saharan-africa
   'sub-saharan-africa-precolonial': 'sub-saharan-africa', // 사하라 이남 F7(2026-11-14): F1과 같은 단위 sub-saharan-africa
+  americas: 'europe', // 아메리카 0단계 빈 틀(2026-11-15). M1이 첫 나라를 넣을 때(미국 usa를 west.yaml에서 옮길 때 함께) 새 단위 'americas'를 REGION_FILTERS·REGION_FILTER_INFO에 더하고 이 줄을 그 단위로 바꾼다(docs/americas/00-scope.md 2절)
+  'americas-modern': 'europe', // 아메리카 0단계 빈 틀(2026-11-15). 위 줄과 함께 M1 첫머리에 새 단위로 바꾼다
 };
 
 /** 사건·전쟁 파일 이름 앞머리 → 권역. 앞에서부터 처음 맞는 것을 쓴다 (예: eu-01-revolutions-1789-1914.yaml → europe) */

@@ -9,6 +9,7 @@
 // - adm0: 통째로 넣는 나라(Natural Earth adm0_a3)
 // - include: 나라 일부만 넣을 때 [{ adm0, prop(NE 속성 이름), values(그 속성 값 목록), note(README 한 줄, {values}는 값을 '·'로 이은 것) }]
 // - drop: (선택) 조각에도 이웃에도 넣지 않는 나라(adm0_a3). 그 땅은 해안 맞추기에서 옆 조각이 덮는다(옆 행정구역과 국경이 맞지 않아 arc를 공유하지 못하는 아주 작은 단위)
+// - dropCodes: (선택) 조각에도 이웃에도 넣지 않는 행정구역 하나하나(NE adm1_code). 이름·ISO 코드가 없는 NE 임시 칸(id를 정할 수 없음)이나 이웃 칸과 arc를 공유하지 못하는 칸을 뺀다(2026-11-15 아메리카)
 // - under: (선택) 아래층 지역 이름. 그 지역이 고르는 행정구역은 원본 대신 이미 만든 그 지역 조각 파일의 조각을 이웃으로 쓰고(그 arc는 간략화하지 않음), 이 지역 조각에서 그와 겹치는 땅을 뺀다.
 //   이음매 선이 아래층 조각 바깥선 그대로가 된다(아래층 파일은 읽기만 하고 바뀌지 않음, 2026-10-29 서아시아)
 // - box: 범위 상자 [서, 남, 동, 북]. 상자 밖에 통째로 있는 폴리곤은 빼고, 상자에 걸친 다른 행정구역은 '이웃'으로 함께 가공한다(파일에는 넣지 않음)
@@ -203,6 +204,56 @@ export const FRAGMENT_REGIONS = {
     },
     // 소말릴란드(미승인, 법적으로 소말리아)와 비르타윌이 든 수단 홍해주: countries-50m의 소속과 따로 견준다
     checkIds: ['SOL', 'SD-RS'],
+  },
+  // 아메리카 (2026-11-15, 0단계 등록): 이 지역 M1~M5가 이 조각과 칼선으로 나라를 만든다(docs/americas/00-scope.md 2절).
+  // 북·중·남아메리카·카리브·그린란드·대서양 쪽 섬(버뮤다·포클랜드·사우스조지아)은 adm0로, 미국은 하와이(US-HI)를 뺀 주 50개(워싱턴 D.C. 포함)를,
+  // 프랑스 해외 땅은 기아나·마르티니크·과들루프를, 러시아는 추코트카(RU-CHU)를 include로 넣는다. 하와이·이스터섬(라파누이)은 오세아니아 몫(0단계 창구 ① 결정 2).
+  // 날짜변경선: 상자 서쪽 끝이 −180°라 추코트카는 서경 쪽 폴리곤만, 알류샨은 서경 쪽만 조각에 든다. 동경 쪽 알류샨(US-AK 폴리곤 9개, 합 약 2,039 km²)은 상자 밖이라 빠지고 권역 파일 손 도형으로 그린다(0단계 기본값 1).
+  // 앞 권역 조각과 땅으로 닿는 곳이 없어 under를 두지 않는다(베링 해협·대서양은 바다, 추코트카는 유럽 손 도형이 그리는 땅).
+  americas: {
+    readme: 'README.americas.md',
+    // 관타나모 미군 기지(USG, 66 km²): 쿠바 조각이 해안 맞추기로 덮는다
+    drop: ['USG'],
+    // NE 임시 칸(이름·ISO 코드 없음): 콜롬비아 말펠로섬 약 8·베네수엘라 아베스섬 약 1·멕시코 알라크란 암초 약 134 km².
+    // 브라질 연방구 BRA-599(약 5,810 km²)는 고이아스 BR-GO 바깥 고리가 그 꼭짓점을 그대로 품어 arc를 공유하지 못하므로 빼고, 그 땅은 내륙 구멍 조각(HOLE-n)으로 돌아온다
+    dropCodes: ['COL+99?', 'VEN+99?', 'MEX+99?', 'BRA-599'],
+    adm0: [
+      'CAN', 'GRL', 'MEX', 'GTM', 'BLZ', 'SLV', 'HND', 'NIC', 'CRI', 'PAN',
+      'CUB', 'JAM', 'HTI', 'DOM', 'BHS', 'TTO', 'ATG', 'BRB', 'DMA', 'GRD', 'KNA', 'LCA', 'VCT',
+      'ABW', 'CUW', 'SXM', 'MAF', 'BLM', 'AIA', 'MSR', 'VGB', 'VIR', 'PRI', 'CYM', 'TCA', 'BMU', 'SPM', 'FLK', 'SGS', 'NLD', // 카리브·대서양 섬(NLD는 보네르·신트외스타티위스·사바)
+      'COL', 'VEN', 'GUY', 'SUR', 'ECU', 'PER', 'BRA', 'BOL', 'PRY', 'URY', 'ARG', 'CHL',
+    ],
+    include: [
+      {
+        adm0: 'USA', prop: 'iso_3166_2',
+        values: [
+          'US-AK', 'US-AL', 'US-AR', 'US-AZ', 'US-CA', 'US-CO', 'US-CT', 'US-DC', 'US-DE', 'US-FL', 'US-GA', 'US-IA', 'US-ID', 'US-IL', 'US-IN', 'US-KS', 'US-KY',
+          'US-LA', 'US-MA', 'US-MD', 'US-ME', 'US-MI', 'US-MN', 'US-MO', 'US-MS', 'US-MT', 'US-NC', 'US-ND', 'US-NE', 'US-NH', 'US-NJ', 'US-NM', 'US-NV', 'US-NY',
+          'US-OH', 'US-OK', 'US-OR', 'US-PA', 'US-RI', 'US-SC', 'US-SD', 'US-TN', 'US-TX', 'US-UT', 'US-VA', 'US-VT', 'US-WA', 'US-WI', 'US-WV', 'US-WY',
+        ],
+        note: '미국: 하와이(`US-HI`, 오세아니아 몫)를 뺀 주 50개(워싱턴 D.C. 포함) {values}',
+      },
+      { adm0: 'FRA', prop: 'iso_3166_2', values: ['FR-GF', 'FR-MQ', 'FR-GP'], note: '프랑스 해외 땅: 기아나·마르티니크·과들루프({values}). 유럽 조각의 프랑스는 본토·코르시카뿐이라 조각 id가 부딪치지 않는다.' },
+      { adm0: 'RUS', prop: 'iso_3166_2', values: ['RU-CHU'], note: '러시아 추코트카({values}): 범위 상자가 서경 쪽(서경 169.6~180°) 폴리곤만 남긴다. 동경 쪽 추코트카는 유럽 권역 손 도형(러시아 아시아 쪽)이 그린다.' },
+    ],
+    // 추코트카·알류샨 서경 쪽(−180°)부터 그린란드 동쪽 끝(약 서경 11.4°), 사우스샌드위치(약 남위 59.4°)부터 그린란드 북쪽 끝(약 북위 83.6°)까지
+    box: [-180, -60, -11, 84],
+    idExamples: { iso: 'CA-NU', adm1: '그린란드 국립공원 `GRL-2742`', adm0: ['CYM', 'SGS', 'VGB'] },
+    notes: [
+      '날짜변경선: 범위 상자 서쪽 끝이 서경 180°라 알류샨 동경 쪽(애투·키스카 등 `US-AK` 폴리곤 9개, 합 약 2,039 km², 모두 1,000 km² 미만)은 상자 밖으로 빠진다 — 생성기 `scripts/geo/areas/americas.mjs`가 손 도형으로 그린다. 추코트카 `RU-CHU`는 서경 쪽만 들어오고, 러시아 손 도형 동쪽 끝(동경 179.9°)과 이 조각 서쪽 끝(서경 180°) 사이 약 0.1° 틈(약 3,000 km², 어림)은 생성기가 메운다.',
+      '빼거나 남긴 땅: 하와이(`US-HI`)는 include 목록에서 뺐다(오세아니아 몫). 이스터섬(약 175 km²)은 칠레 발파라이소주 `CL-VS`의 폴리곤 하나라 그 조각에 남는다(오세아니아가 따로 그림). 관타나모(`USG`)는 drop, NE 임시 칸 셋(말펠로·아베스·알라크란)과 브라질 연방구는 dropCodes로 뺐고 연방구 땅은 내륙 구멍 조각이 됐다. 내륙 구멍은 {micro}.',
+      '섬: 빌드가 쓰는 육지(50m·110m)와 닿지 않는 작은 섬(바하마 비미니·베리 제도 등, 산안드레스, 사바·신트외스타티위스, 생바르텔레미, 그레나딘, 터크스케이커스 남쪽 섬 등 — 모두 1,000 km² 미만)은 빠진다. 1,000 km² 넘는 섬(쿠바·이스파니올라·자메이카·푸에르토리코·트리니다드·안드로스·포클랜드·사우스조지아·뉴펀들랜드·밴쿠버·캐나다 북극 제도 등)은 모두 조각에 있다.',
+      '거친 곳: 누나부트·노스웨스트 준주·퀘벡·온타리오·브리티시컬럼비아, 알래스카·텍사스와 미국 서부 주, 아마조나스·파라·마투그로수, 그린란드 국립공원 등 한 조각이 20만 km²를 넘는 곳이 많아 조약선·식민 경계는 대부분 칼선이다.',
+      '조각 수: 캐나다 {count:CAN}·미국 {count:USA}·멕시코 {count:MEX}·브라질 {count:BRA}·아르헨티나 {count:ARG}·칠레 {count:CHL}·페루 {count:PER}·콜롬비아 {count:COL}·베네수엘라 {count:VEN}·볼리비아 {count:BOL}·그린란드 {count:GRL}.',
+    ],
+    countries50m: {
+      CAN: 'Canada', USA: 'United States of America', GRL: 'Greenland', MEX: 'Mexico', GTM: 'Guatemala', BLZ: 'Belize', SLV: 'El Salvador', HND: 'Honduras',
+      NIC: 'Nicaragua', CRI: 'Costa Rica', PAN: 'Panama', CUB: 'Cuba', JAM: 'Jamaica', HTI: 'Haiti', DOM: 'Dominican Rep.', BHS: 'Bahamas', TTO: 'Trinidad and Tobago',
+      PRI: 'Puerto Rico', FLK: 'Falkland Is.', COL: 'Colombia', VEN: 'Venezuela', GUY: 'Guyana', SUR: 'Suriname', ECU: 'Ecuador', PER: 'Peru', BRA: 'Brazil',
+      BOL: 'Bolivia', PRY: 'Paraguay', URY: 'Uruguay', ARG: 'Argentina', CHL: 'Chile', FRA: 'France', RUS: 'Russia',
+    },
+    // 포클랜드(아르헨티나가 주장, 영국 실효 지배): countries-50m의 소속과 따로 견준다
+    checkIds: ['FLK-5152'],
   },
 };
 
