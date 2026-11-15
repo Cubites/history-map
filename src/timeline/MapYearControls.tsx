@@ -5,6 +5,17 @@ import { activeWarView } from '../lib/wars.ts';
 import { useAppStore } from '../store/useAppStore.ts';
 import { useMediaQuery } from '../lib/useMediaQuery.ts';
 
+/** 연도 칸 글자(styles.css의 .map-yearbox input과 같게: 16px, 800) */
+const YEAR_FONT = { size: 16, weight: 800 };
+let yearMeasure: CanvasRenderingContext2D | null | undefined;
+/** 연도 칸 글 폭(px). 칸 폭을 글에 꼭 맞춰 달력 아이콘과 글 사이를 3px로 둔다(2026-11-15) */
+function yearTextWidth(text: string): number {
+  yearMeasure ??= document.createElement('canvas').getContext('2d');
+  if (!yearMeasure) return text.length * YEAR_FONT.size * 0.6;
+  yearMeasure.font = `${YEAR_FONT.weight} ${YEAR_FONT.size}px ${getComputedStyle(document.body).fontFamily}`;
+  return yearMeasure.measureText(text).width;
+}
+
 /**
  * 연도 눈금 (2026-10-18). 100년마다 짧은 눈금, 500년마다 긴 눈금과 숫자. 휴대폰은 500년 눈금만(CSS).
  * 자리는 천문 연도(기원전 N년 = 1 - N). 숫자는 짧게: 기원전은 'BC 2000', 서기는 숫자만, 경계는 'AD 1'
@@ -267,16 +278,20 @@ export function MapYearControls({ data }: { data: StaticData }) {
             if (submit(shown)) (document.activeElement as HTMLElement | null)?.blur();
           }}
         >
-          {/* 고칠 수 있는 칸임을 알리는 편집 아이콘(2026-11-15). 글자 높이(1em)와 같은 크기, 누름은 뒤의 칸으로 넘긴다 */}
-          <svg className="map-yearbox-edit" viewBox="0 0 16 16" aria-hidden>
-            <path d="M11.2 2.3a1.5 1.5 0 0 1 2.1 0l.4.4a1.5 1.5 0 0 1 0 2.1L5.6 12.9 2.5 13.5l.6-3.1z" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
-            <path d="M9.8 3.7l2.5 2.5" fill="none" stroke="currentColor" strokeWidth="1.5" />
+          {/* 칸 테두리는 label(.map-yearbox-field)이 맡고, 그 안에 달력 아이콘과 글을 3px 띄워 나란히 둔다(2026-11-15).
+              아이콘은 글자 높이(16px)와 같은 크기이고, 누르면 label이라 글 칸으로 들어간다 */}
+          <label className="map-yearbox-field">
+          <svg className="map-yearbox-icon" viewBox="0 0 16 16" aria-hidden>
+            <rect x="1.75" y="3" width="12.5" height="11.25" rx="1.75" fill="none" stroke="currentColor" strokeWidth="1.5" />
+            <path d="M1.75 6.75h12.5M5 1.5v3M11 1.5v3" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+            <path d="M4.5 9.25h1.5M7.25 9.25h1.5M10 9.25h1.5M4.5 11.75h1.5M7.25 11.75h1.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
           </svg>
           <input
             ref={inputRef}
             value={shown}
-            // 폭은 평소 글("1700년")과 입력 중 숫자 가운데 긴 쪽에 맞춘다. 숫자만 보일 때 칸이 줄어들지 않게(2026-10-28)
+            // 폭은 글에 꼭 맞춘다(2026-11-15, 아이콘과 글 사이 3px). 고치는 중에는 평소 글("1700년")과 입력 중 숫자 가운데 긴 쪽에 맞춰 칸이 줄어들지 않게(2026-10-28)
             size={Math.max(5, label.length, draft?.length ?? 0) + 1}
+            style={{ width: `${Math.ceil(Math.max(yearTextWidth(label), draft ? yearTextWidth(draft) : 0)) + 2}px` }}
             inputMode="numeric"
             onFocus={() => {
               setTyping(true);
@@ -305,6 +320,7 @@ export function MapYearControls({ data }: { data: StaticData }) {
             autoComplete="off"
             spellCheck={false}
           />
+          </label>
         </form>
         <button type="button" disabled={nextChange === undefined} onClick={() => nextChange !== undefined && go(nextChange)} title="다음 지도 변화" aria-label="다음 지도 변화">
           ▶

@@ -560,14 +560,14 @@ button {
 .map-yearbox button { min-width: 30px; height: 30px; padding: 0 8px; border: 1px solid var(--border); border-radius: 6px; background: var(--control-bg); color: var(--fg); font: inherit; font-size: 13px; cursor: pointer; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12); }
 .map-yearbox button:hover:not(:disabled) { border-color: var(--muted); }
 .map-yearbox button:disabled { opacity: 0.4; cursor: default; }
-.map-yearbox-form { position: relative; display: flex; }
-/* 연도 글 앞의 편집 아이콘(2026-11-15): 칸 안 왼쪽, 글자 크기(16px)와 같게. 그 자리만큼 칸 왼쪽 여백을 늘린다 */
-.map-yearbox-edit { position: absolute; left: 7px; top: 50%; width: 16px; height: 16px; transform: translateY(-50%); color: var(--muted); pointer-events: none; }
-.map-yearbox-form input { padding-left: 27px; }
-/* 입력 칸 글자 16px: 16px 미만이면 iOS가 입력 시 화면을 확대한다 */
-.map-yearbox input { box-sizing: border-box; height: 30px; padding: 0 6px; border: 1px solid var(--border); border-radius: 6px; background: var(--control-bg); box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12); color: var(--fg); font: inherit; font-size: 16px; font-weight: 800; text-align: center; font-variant-numeric: tabular-nums; }
-.map-yearbox input:focus { outline: 2px solid var(--front-line); outline-offset: -1px; }
-.map-yearbox input[aria-invalid='true'] { border-color: var(--error); outline-color: var(--error); }
+.map-yearbox-form { display: flex; }
+/* 연도 칸(2026-11-15 바꿈): 테두리·바탕은 label(.map-yearbox-field)이 맡고, 그 안에 달력 아이콘과 글을 3px 띄워 나란히 둔다.
+   글 칸(input)은 테두리 없이 글 폭에 꼭 맞춘다(MapYearControls의 yearTextWidth). 입력 칸 글자 16px: 16px 미만이면 iOS가 입력 시 화면을 확대한다 */
+.map-yearbox-field { box-sizing: border-box; display: flex; align-items: center; gap: 3px; height: 30px; padding: 0 9px; border: 1px solid var(--border); border-radius: 6px; background: var(--control-bg); box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12); cursor: text; }
+.map-yearbox-icon { flex: none; width: 16px; height: 16px; color: var(--muted); }
+.map-yearbox input { box-sizing: content-box; height: 28px; padding: 0; border: none; background: transparent; color: var(--fg); font: inherit; font-size: 16px; font-weight: 800; text-align: left; font-variant-numeric: tabular-nums; outline: none; }
+.map-yearbox-field:focus-within { outline: 2px solid var(--front-line); outline-offset: -1px; }
+.map-yearbox-field:has(input[aria-invalid='true']) { border-color: var(--error); outline-color: var(--error); }
 /* PC 연도 막대(2026-10-28): 지도 위에 띄우지 않고 지도 아래 따로 둔 띠(지도 칸 폭만, 왼쪽 나라 정보 칸 아래로는 가지 않음).
    지도는 띠 높이만큼 짧아지고, 연도 칸(◀ 연도 ▶)은 지도 아래 가운데 그대로(띠 위). 막대는 가로(오른쪽이 최근), 눈금 숫자는 늘 막대 아래 */
 .app-main:has(> .map-yearbar.across) { --yearstrip-h: 52px; }
@@ -727,9 +727,7 @@ button {
   .map-yearbar { top: 69px; right: 6px; bottom: 134px; gap: 14px; }
   .map-yearbox { bottom: 22px; }
   .map-yearbox button { min-width: 28px; padding: 0 6px; font-size: 12px; }
-  .map-yearbox input { padding: 0 4px; }
-  .map-yearbox-form input { padding-left: 24px; }
-  .map-yearbox-edit { left: 5px; }
+  .map-yearbox-field { padding: 0 7px; }
 
   .panel-header h2 { font-size: 17px; }
   .panel-deselect { width: 40px; height: 40px; margin: -2px -10px -18px auto; } /* 위로 넘치면 판 손잡이에 가린다 */
