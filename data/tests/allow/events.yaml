@@ -236,55 +236,13 @@
 - key: '1718 bahamas 성립'
   reason: '성립 사건(1900 앞)이 아직 없음 — 그 해를 맡은 M2(1776~1899)·M3(1492~1775) 사건 묶음이 채우면 낡음, 그 칸이 지움'
   decided: 2026-11-15 아메리카 M1 NA-M1 구현(사건은 1묶음 am-05~07)
-- key: '1902 cuba 성립'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-15 아메리카 M1 NA-M1 구현(사건은 1묶음 am-05~07)
-- key: '1933 greenland 버전'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-15 아메리카 M1 NA-M1 구현(사건은 1묶음 am-05~07)
-- key: '1949 newfoundland 소멸'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-15 아메리카 M1 NA-M1 구현(사건은 1묶음 am-05~07)
-- key: '1949 canada 버전'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-15 아메리카 M1 NA-M1 구현(사건은 1묶음 am-05~07)
 - key: '1721 greenland 성립'
-  reason: '성립 사건(1900 앞)이 아직 없음 — 그 해를 맡은 M2(1776~1899)·M3(1492~1775) 사건 묶음이 채우면 낡음, 그 칸이 지움'
-  decided: 2026-11-15 아메리카 M1 NA-M1 구현(사건은 1묶음 am-05~07)
-- key: '1804 haiti 성립'
-  reason: '성립 사건(1900 앞)이 아직 없음 — 그 해를 맡은 M2(1776~1899)·M3(1492~1775) 사건 묶음이 채우면 낡음, 그 칸이 지움'
-  decided: 2026-11-15 아메리카 M1 NA-M1 구현(사건은 1묶음 am-05~07)
-- key: '1844 dominican-republic 성립'
-  reason: '성립 사건(1900 앞)이 아직 없음 — 그 해를 맡은 M2(1776~1899)·M3(1492~1775) 사건 묶음이 채우면 낡음, 그 칸이 지움'
-  decided: 2026-11-15 아메리카 M1 NA-M1 구현(사건은 1묶음 am-05~07)
-- key: '1867 canada 성립'
   reason: '성립 사건(1900 앞)이 아직 없음 — 그 해를 맡은 M2(1776~1899)·M3(1492~1775) 사건 묶음이 채우면 낡음, 그 칸이 지움'
   decided: 2026-11-15 아메리카 M1 NA-M1 구현(사건은 1묶음 am-05~07)
 
 # ── 아메리카 M1 US-M1 (미국·추코트카, 2026-11-15) ──
 
 # ── 아메리카 M1 CA-M1 (멕시코·중앙아메리카, 2026-11-15) ──
-- key: '1903 panama 성립'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-15 아메리카 M1 CA-M1 구현(사건은 1묶음 am-05~07)
-- key: '1821 mexico 성립'
-  reason: '성립 사건(1900 앞)이 아직 없음 — 그 해를 맡은 M2(1776~1899)·M3(1492~1775) 사건 묶음이 채우면 낡음, 그 칸이 지움'
-  decided: 2026-11-15 아메리카 M1 CA-M1 구현(사건은 1묶음 am-05~07)
-- key: '1839 guatemala 성립'
-  reason: '성립 사건(1900 앞)이 아직 없음 — 그 해를 맡은 M2(1776~1899)·M3(1492~1775) 사건 묶음이 채우면 낡음, 그 칸이 지움'
-  decided: 2026-11-15 아메리카 M1 CA-M1 구현(사건은 1묶음 am-05~07)
-- key: '1839 honduras 성립'
-  reason: '성립 사건(1900 앞)이 아직 없음 — 그 해를 맡은 M2(1776~1899)·M3(1492~1775) 사건 묶음이 채우면 낡음, 그 칸이 지움'
-  decided: 2026-11-15 아메리카 M1 CA-M1 구현(사건은 1묶음 am-05~07)
-- key: '1841 el-salvador 성립'
-  reason: '성립 사건(1900 앞)이 아직 없음 — 그 해를 맡은 M2(1776~1899)·M3(1492~1775) 사건 묶음이 채우면 낡음, 그 칸이 지움'
-  decided: 2026-11-15 아메리카 M1 CA-M1 구현(사건은 1묶음 am-05~07)
-- key: '1838 nicaragua 성립'
-  reason: '성립 사건(1900 앞)이 아직 없음 — 그 해를 맡은 M2(1776~1899)·M3(1492~1775) 사건 묶음이 채우면 낡음, 그 칸이 지움'
-  decided: 2026-11-15 아메리카 M1 CA-M1 구현(사건은 1묶음 am-05~07)
-- key: '1838 costa-rica 성립'
-  reason: '성립 사건(1900 앞)이 아직 없음 — 그 해를 맡은 M2(1776~1899)·M3(1492~1775) 사건 묶음이 채우면 낡음, 그 칸이 지움'
-  decided: 2026-11-15 아메리카 M1 CA-M1 구현(사건은 1묶음 am-05~07)
 
 # ── 아메리카 M1 SA-N-M1 (안데스 북부·기아나, 2026-11-15) ──
 - key: '1643 french-guiana 성립'
@@ -293,112 +251,10 @@
 - key: '1667 dutch-suriname 성립'
   reason: '성립 사건(1900 앞)이 아직 없음 — 그 해를 맡은 M2(1776~1899)·M3(1492~1775) 사건 묶음이 채우면 낡음, 그 칸이 지움'
   decided: 2026-11-15 아메리카 M1 SA-N-M1 구현(사건은 1묶음 am-05~07)
-- key: '1830 venezuela 성립'
-  reason: '성립 사건(1900 앞)이 아직 없음 — 그 해를 맡은 M2(1776~1899)·M3(1492~1775) 사건 묶음이 채우면 낡음, 그 칸이 지움'
-  decided: 2026-11-15 아메리카 M1 SA-N-M1 구현(사건은 1묶음 am-05~07)
-- key: '1830 ecuador 성립'
-  reason: '성립 사건(1900 앞)이 아직 없음 — 그 해를 맡은 M2(1776~1899)·M3(1492~1775) 사건 묶음이 채우면 낡음, 그 칸이 지움'
-  decided: 2026-11-15 아메리카 M1 SA-N-M1 구현(사건은 1묶음 am-05~07)
-- key: '1831 colombia 성립'
-  reason: '성립 사건(1900 앞)이 아직 없음 — 그 해를 맡은 M2(1776~1899)·M3(1492~1775) 사건 묶음이 채우면 낡음, 그 칸이 지움'
-  decided: 2026-11-15 아메리카 M1 SA-N-M1 구현(사건은 1묶음 am-05~07)
-- key: '1903 colombia 버전'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-15 아메리카 M1 SA-N-M1 구현(사건은 1묶음 am-05~07)
-- key: '1942 ecuador 버전'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-15 아메리카 M1 SA-N-M1 구현(사건은 1묶음 am-05~07)
-- key: '1942 peru 버전'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-15 아메리카 M1 SA-N-M1 구현(사건은 1묶음 am-05~07)
-- key: '1966 guyana 성립'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-15 아메리카 M1 SA-N-M1 구현(사건은 1묶음 am-05~07)
-- key: '1966 british-guiana 소멸'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-15 아메리카 M1 SA-N-M1 구현(사건은 1묶음 am-05~07)
-- key: '1975 suriname 성립'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-15 아메리카 M1 SA-N-M1 구현(사건은 1묶음 am-05~07)
-- key: '1975 dutch-suriname 소멸'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-15 아메리카 M1 SA-N-M1 구현(사건은 1묶음 am-05~07)
 
-- key: '1930 colombia 버전'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-15 아메리카 M1 반영(창구 ③ Q-R1 푸투마요–카케타 땅 1930 — 사건은 1묶음 am-05~07)
 # ── 아메리카 M1 SC-M1 (안데스 중부·남콘·브라질, 2026-11-15) ──
-- key: '1900 brazil 버전'
-  reason: 'M2(1776~1899)가 1900 앞을 칠하면 낡음 — M2 칸이 지움'
-  decided: 2026-11-15 아메리카 M1 SC-M1 구현(사건은 1묶음 am-05~07)
-- key: '1903 bolivia 버전'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-15 아메리카 M1 SC-M1 구현(사건은 1묶음 am-05~07)
-- key: '1903 brazil 버전'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-15 아메리카 M1 SC-M1 구현(사건은 1묶음 am-05~07)
-- key: '1929 peru 버전'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-15 아메리카 M1 SC-M1 구현(사건은 1묶음 am-05~07)
-- key: '1929 chile 버전'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-15 아메리카 M1 SC-M1 구현(사건은 1묶음 am-05~07)
-- key: '1938 paraguay 버전'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-15 아메리카 M1 SC-M1 구현(사건은 1묶음 am-05~07)
-- key: '1811 paraguay 성립'
-  reason: '성립 사건(1900 앞)이 아직 없음 — 그 해를 맡은 M2(1776~1899)·M3(1492~1775) 사건 묶음이 채우면 낡음, 그 칸이 지움'
-  decided: 2026-11-15 아메리카 M1 SC-M1 구현(사건은 1묶음 am-05~07)
-- key: '1816 argentina 성립'
-  reason: '성립 사건(1900 앞)이 아직 없음 — 그 해를 맡은 M2(1776~1899)·M3(1492~1775) 사건 묶음이 채우면 낡음, 그 칸이 지움'
-  decided: 2026-11-15 아메리카 M1 SC-M1 구현(사건은 1묶음 am-05~07)
-- key: '1818 chile 성립'
-  reason: '성립 사건(1900 앞)이 아직 없음 — 그 해를 맡은 M2(1776~1899)·M3(1492~1775) 사건 묶음이 채우면 낡음, 그 칸이 지움'
-  decided: 2026-11-15 아메리카 M1 SC-M1 구현(사건은 1묶음 am-05~07)
-- key: '1821 peru 성립'
-  reason: '성립 사건(1900 앞)이 아직 없음 — 그 해를 맡은 M2(1776~1899)·M3(1492~1775) 사건 묶음이 채우면 낡음, 그 칸이 지움'
-  decided: 2026-11-15 아메리카 M1 SC-M1 구현(사건은 1묶음 am-05~07)
-- key: '1822 brazil 성립'
-  reason: '성립 사건(1900 앞)이 아직 없음 — 그 해를 맡은 M2(1776~1899)·M3(1492~1775) 사건 묶음이 채우면 낡음, 그 칸이 지움'
-  decided: 2026-11-15 아메리카 M1 SC-M1 구현(사건은 1묶음 am-05~07)
-- key: '1825 bolivia 성립'
-  reason: '성립 사건(1900 앞)이 아직 없음 — 그 해를 맡은 M2(1776~1899)·M3(1492~1775) 사건 묶음이 채우면 낡음, 그 칸이 지움'
-  decided: 2026-11-15 아메리카 M1 SC-M1 구현(사건은 1묶음 am-05~07)
-- key: '1828 uruguay 성립'
-  reason: '성립 사건(1900 앞)이 아직 없음 — 그 해를 맡은 M2(1776~1899)·M3(1492~1775) 사건 묶음이 채우면 낡음, 그 칸이 지움'
-  decided: 2026-11-15 아메리카 M1 SC-M1 구현(사건은 1묶음 am-05~07)
-- key: '1833 falkland-islands 성립'
-  reason: '성립 사건(1900 앞)이 아직 없음 — 그 해를 맡은 M2(1776~1899)·M3(1492~1775) 사건 묶음이 채우면 낡음, 그 칸이 지움'
-  decided: 2026-11-15 아메리카 M1 SC-M1 구현(사건은 1묶음 am-05~07)
 
-- key: '1909 peru 버전'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-15 아메리카 M1 반영(검토 F1 볼리비아–페루 띠 1909 — 사건은 1묶음 am-05~07)
 # ── 아메리카 M1 LA-M1 (작은 앤틸리스 독립국, 2026-11-15) ──
-- key: '1962 trinidad-and-tobago 성립'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-15 아메리카 M1 LA-M1 구현(사건은 1묶음 am-05~07)
-- key: '1966 barbados 성립'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-15 아메리카 M1 LA-M1 구현(사건은 1묶음 am-05~07)
-- key: '1974 grenada 성립'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-15 아메리카 M1 LA-M1 구현(사건은 1묶음 am-05~07)
-- key: '1978 dominica 성립'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-15 아메리카 M1 LA-M1 구현(사건은 1묶음 am-05~07)
-- key: '1979 saint-lucia 성립'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-15 아메리카 M1 LA-M1 구현(사건은 1묶음 am-05~07)
-- key: '1979 saint-vincent-and-the-grenadines 성립'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-15 아메리카 M1 LA-M1 구현(사건은 1묶음 am-05~07)
-- key: '1981 antigua-and-barbuda 성립'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-15 아메리카 M1 LA-M1 구현(사건은 1묶음 am-05~07)
-- key: '1983 saint-kitts-and-nevis 성립'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-15 아메리카 M1 LA-M1 구현(사건은 1묶음 am-05~07)
 
 # ── 아메리카 M2 FL-M2 (플로리다·루이지애나, 2026-11-16) ──
 - key: '1776 spanish-louisiana 버전'
@@ -416,24 +272,6 @@
 - key: '1763 british-florida 성립'
   reason: '성립 사건(1776 앞)이 아직 없음 — 그 해를 맡은 M3(1492~1775) 사건 묶음이 채우면 낡음, 그 칸이 지움'
   decided: 2026-11-16 아메리카 M2 FL-M2 구현(사건은 1묶음 am-05~07)
-- key: '1783 british-florida 소멸'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 FL-M2 구현(사건은 1묶음 am-05~07)
-- key: '1803 spanish-louisiana 소멸'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 FL-M2 구현(사건은 1묶음 am-05~07)
-- key: '1821 spanish-florida 소멸'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 FL-M2 구현(사건은 1묶음 am-05~07)
-- key: '1783 spanish-florida 버전'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 FL-M2 구현(사건은 1묶음 am-05~07)
-- key: '1810 spanish-florida 버전'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 FL-M2 구현(사건은 1묶음 am-05~07)
-- key: '1813 spanish-florida 버전'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 FL-M2 구현(사건은 1묶음 am-05~07)
 
 # ── 아메리카 M2 BNA-W-M2 (캐나다 서쪽·허드슨만, 2026-11-16) ──
 - key: '1670 ruperts-land 성립'
@@ -442,70 +280,10 @@
 - key: '1776 ruperts-land 버전'
   reason: 'M3(1492~1775)가 1776 앞을 칠하면 낡음 — M3 칸이 지움'
   decided: 2026-11-16 아메리카 M2 BNA-W-M2 구현(사건은 1묶음 am-05~07)
-- key: '1821 north-western-territory 성립'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 BNA-W-M2 구현(사건은 1묶음 am-05~07)
-- key: '1870 ruperts-land 소멸'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 BNA-W-M2 구현(사건은 1묶음 am-05~07)
-- key: '1870 north-western-territory 소멸'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 BNA-W-M2 구현(사건은 1묶음 am-05~07)
-- key: '1870 canada 버전'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 BNA-W-M2 구현(사건은 1묶음 am-05~07)
-- key: '1871 canada 버전'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 BNA-W-M2 구현(사건은 1묶음 am-05~07)
-- key: '1880 canada 버전'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 BNA-W-M2 구현(사건은 1묶음 am-05~07)
-- key: '1783 ruperts-land 버전'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 BNA-W-M2 구현(사건은 1묶음 am-05~07)
-- key: '1819 ruperts-land 버전'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 BNA-W-M2 구현(사건은 1묶음 am-05~07)
-- key: '1846 north-western-territory 버전'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 BNA-W-M2 구현(사건은 1묶음 am-05~07)
-- key: '1858 north-western-territory 버전'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 BNA-W-M2 구현(사건은 1묶음 am-05~07)
-- key: '1863 north-western-territory 버전'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 BNA-W-M2 구현(사건은 1묶음 am-05~07)
 
 # ── 아메리카 M2 SC-E-M2 (라플라타, 2026-11-16) ──
-- key: '1776 rio-de-la-plata-viceroyalty 성립'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 SC-E-M2 구현(사건은 1묶음 am-05~07)
-- key: '1810 rio-de-la-plata-viceroyalty 버전'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 SC-E-M2 구현(사건은 1묶음 am-05~07)
-- key: '1811 rio-de-la-plata-viceroyalty 버전'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 SC-E-M2 구현(사건은 1묶음 am-05~07)
-- key: '1816 rio-de-la-plata-viceroyalty 소멸'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 SC-E-M2 구현(사건은 1묶음 am-05~07)
-- key: '1879 argentina 버전'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 SC-E-M2 구현(사건은 1묶음 am-05~07)
-- key: '1881 argentina 버전'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 SC-E-M2 구현(사건은 1묶음 am-05~07)
-- key: '1884 argentina 버전'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 SC-E-M2 구현(사건은 1묶음 am-05~07)
-- key: '1899 argentina 버전'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 SC-E-M2 구현(사건은 1묶음 am-05~07)
 
 # ── 아메리카 M2 US-M2 (미국, 2026-11-16) ──
-- key: '1853 usa 버전'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 US-M2 구현(사건은 1묶음 am-05~07)
 
 # ── 아메리카 M2 BNA-E-M2 (캐나다 동쪽, 2026-11-16) ──
 - key: '1713 nova-scotia 성립'
@@ -523,48 +301,6 @@
 - key: '1776 newfoundland 버전'
   reason: 'M3(1492~1775)가 1776 앞을 칠하면 낡음 — M3 칸이 지움'
   decided: 2026-11-16 아메리카 M2 BNA-E-M2 구현(사건은 1묶음 am-05~07)
-- key: '1783 province-of-quebec 버전'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 BNA-E-M2 구현(사건은 1묶음 am-05~07)
-- key: '1784 new-brunswick 성립'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 BNA-E-M2 구현(사건은 1묶음 am-05~07)
-- key: '1784 nova-scotia 버전'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 BNA-E-M2 구현(사건은 1묶음 am-05~07)
-- key: '1791 province-of-quebec 소멸'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 BNA-E-M2 구현(사건은 1묶음 am-05~07)
-- key: '1791 upper-canada 성립'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 BNA-E-M2 구현(사건은 1묶음 am-05~07)
-- key: '1791 lower-canada 성립'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 BNA-E-M2 구현(사건은 1묶음 am-05~07)
-- key: '1841 upper-canada 소멸'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 BNA-E-M2 구현(사건은 1묶음 am-05~07)
-- key: '1841 lower-canada 소멸'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 BNA-E-M2 구현(사건은 1묶음 am-05~07)
-- key: '1841 province-of-canada 성립'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 BNA-E-M2 구현(사건은 1묶음 am-05~07)
-- key: '1867 nova-scotia 소멸'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 BNA-E-M2 구현(사건은 1묶음 am-05~07)
-- key: '1867 new-brunswick 소멸'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 BNA-E-M2 구현(사건은 1묶음 am-05~07)
-- key: '1867 province-of-canada 소멸'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 BNA-E-M2 구현(사건은 1묶음 am-05~07)
-- key: '1809 lower-canada 버전'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 BNA-E-M2 구현(사건은 1묶음 am-05~07) — M2 반영 1(창구 ③ Q-R2)
-- key: '1809 newfoundland 버전'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 BNA-E-M2 구현(사건은 1묶음 am-05~07) — M2 반영 1(창구 ③ Q-R2)
 
 # ── 아메리카 M2 SC-W-M2 (칠레·마푸체·포클랜드, 2026-11-16) ──
 - key: '1776 mapuche-araucania 버전'
@@ -578,39 +314,6 @@
   decided: 2026-11-16 아메리카 M2 SC-W-M2 구현(사건은 1묶음 am-05~07)
 - key: '1767 spanish-falkland-islands 성립'
   reason: '성립 사건(1776 앞)이 아직 없음 — 그 해를 맡은 M3(1492~1775) 사건 묶음이 채우면 낡음, 그 칸이 지움'
-  decided: 2026-11-16 아메리카 M2 SC-W-M2 구현(사건은 1묶음 am-05~07)
-- key: '1789 chile-captaincy-general 성립'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 SC-W-M2 구현(사건은 1묶음 am-05~07)
-- key: '1818 chile-captaincy-general 소멸'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 SC-W-M2 구현(사건은 1묶음 am-05~07)
-- key: '1811 spanish-falkland-islands 소멸'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 SC-W-M2 구현(사건은 1묶음 am-05~07)
-- key: '1883 mapuche-araucania 소멸'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 SC-W-M2 구현(사건은 1묶음 am-05~07)
-- key: '1870 mapuche-araucania 버전'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 SC-W-M2 구현(사건은 1묶음 am-05~07)
-- key: '1843 chile 버전'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 SC-W-M2 구현(사건은 1묶음 am-05~07)
-- key: '1870 chile 버전'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 SC-W-M2 구현(사건은 1묶음 am-05~07)
-- key: '1879 chile 버전'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 SC-W-M2 구현(사건은 1묶음 am-05~07)
-- key: '1881 chile 버전'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 SC-W-M2 구현(사건은 1묶음 am-05~07)
-- key: '1883 chile 버전'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 SC-W-M2 구현(사건은 1묶음 am-05~07)
-- key: '1899 chile 버전'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
   decided: 2026-11-16 아메리카 M2 SC-W-M2 구현(사건은 1묶음 am-05~07)
 
 # ── 아메리카 M2 MX-M2 (멕시코·텍사스·미국 서남, 2026-11-16) ──
@@ -626,39 +329,6 @@
 - key: '1617 yucatan-captaincy 성립'
   reason: '성립 사건(1776 앞)이 아직 없음 — 그 해를 맡은 M3(1492~1775) 사건 묶음이 채우면 낡음, 그 칸이 지움'
   decided: 2026-11-16 아메리카 M2 MX-M2 구현(사건은 1묶음 am-05~07)
-- key: '1819 new-spain-viceroyalty 버전'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 MX-M2 구현(사건은 1묶음 am-05~07)
-- key: '1821 new-spain-viceroyalty 소멸'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 MX-M2 구현(사건은 1묶음 am-05~07)
-- key: '1821 yucatan-captaincy 소멸'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 MX-M2 구현(사건은 1묶음 am-05~07)
-- key: '1822 mexico 버전'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 MX-M2 구현(사건은 1묶음 am-05~07)
-- key: '1823 mexico 버전'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 MX-M2 구현(사건은 1묶음 am-05~07)
-- key: '1824 mexico 버전'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 MX-M2 구현(사건은 1묶음 am-05~07)
-- key: '1836 mexico 버전'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 MX-M2 구현(사건은 1묶음 am-05~07)
-- key: '1836 texas-republic 성립'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 MX-M2 구현(사건은 1묶음 am-05~07)
-- key: '1845 texas-republic 소멸'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 MX-M2 구현(사건은 1묶음 am-05~07)
-- key: '1848 mexico 버전'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 MX-M2 구현(사건은 1묶음 am-05~07)
-- key: '1853 mexico 버전'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 MX-M2 구현(사건은 1묶음 am-05~07)
 
 # ── 아메리카 M2 AND-N-M2 (그란콜롬비아·안데스, 2026-11-16) ──
 - key: '1776 new-granada-viceroyalty 버전'
@@ -673,62 +343,8 @@
 - key: '1542 peru-viceroyalty 성립'
   reason: '성립 사건(1776 앞)이 아직 없음 — 그 해를 맡은 M3(1492~1775) 사건 묶음이 채우면 낡음, 그 칸이 지움'
   decided: 2026-11-16 아메리카 M2 AND-N-M2 구현(사건은 1묶음 am-05~07)
-- key: '1777 venezuela-captaincy-general 성립'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 AND-N-M2 구현(사건은 1묶음 am-05~07)
-- key: '1777 new-granada-viceroyalty 버전'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 AND-N-M2 구현(사건은 1묶음 am-05~07)
-- key: '1789 peru-viceroyalty 버전'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 AND-N-M2 구현(사건은 1묶음 am-05~07)
-- key: '1802 new-granada-viceroyalty 버전'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 AND-N-M2 구현(사건은 1묶음 am-05~07)
-- key: '1802 peru-viceroyalty 버전'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 AND-N-M2 구현(사건은 1묶음 am-05~07)
-- key: '1810 peru-viceroyalty 버전'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 AND-N-M2 구현(사건은 1묶음 am-05~07)
-- key: '1819 gran-colombia 성립'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 AND-N-M2 구현(사건은 1묶음 am-05~07)
-- key: '1819 new-granada-viceroyalty 소멸'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 AND-N-M2 구현(사건은 1묶음 am-05~07)
-- key: '1819 venezuela-captaincy-general 소멸'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 AND-N-M2 구현(사건은 1묶음 am-05~07)
-- key: '1821 peru-viceroyalty 버전'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 AND-N-M2 구현(사건은 1묶음 am-05~07)
-- key: '1825 peru-viceroyalty 소멸'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 AND-N-M2 구현(사건은 1묶음 am-05~07)
-- key: '1830 gran-colombia 버전'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 AND-N-M2 구현(사건은 1묶음 am-05~07)
-- key: '1831 gran-colombia 소멸'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 AND-N-M2 구현(사건은 1묶음 am-05~07)
-- key: '1830 peru 버전'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 AND-N-M2 구현(사건은 1묶음 am-05~07)
-- key: '1879 bolivia 버전'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 AND-N-M2 구현(사건은 1묶음 am-05~07)
-- key: '1883 peru 버전'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 AND-N-M2 구현(사건은 1묶음 am-05~07)
-- key: '1819 peru-viceroyalty 버전'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 AND-N-M2 구현(사건은 1묶음 am-05~07) — M2 반영 1(창구 ③ Q-R3)
 
 # ── 아메리카 M2 CAM-M2 (중앙아메리카, 2026-11-16) ──
-- key: '1798 belize 성립'
-  reason: '성립 사건(1900 앞)이 아직 없음 — 그 해를 맡은 M2(1776~1899)·M3(1492~1775) 사건 묶음이 채우면 낡음, 그 칸이 지움'
-  decided: 2026-11-15 아메리카 M1 CA-M1 구현(사건은 1묶음 am-05~07)
 - key: '1776 guatemala-captaincy 버전'
   reason: 'M3(1492~1775)가 1776 앞을 칠하면 낡음 — M3 칸이 지움'
   decided: 2026-11-16 아메리카 M2 CAM-M2 구현(사건은 1묶음 am-05~07)
@@ -741,36 +357,6 @@
 - key: '1740 mosquito-kingdom 성립'
   reason: '성립 사건(1776 앞)이 아직 없음 — 그 해를 맡은 M3(1492~1775) 사건 묶음이 채우면 낡음, 그 칸이 지움'
   decided: 2026-11-16 아메리카 M2 CAM-M2 구현(사건은 1묶음 am-05~07)
-- key: '1798 guatemala-captaincy 버전'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 CAM-M2 구현(사건은 1묶음 am-05~07)
-- key: '1822 guatemala-captaincy 소멸'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 CAM-M2 구현(사건은 1묶음 am-05~07)
-- key: '1823 central-american-federation 성립'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 CAM-M2 구현(사건은 1묶음 am-05~07)
-- key: '1838 central-american-federation 버전'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 CAM-M2 구현(사건은 1묶음 am-05~07)
-- key: '1839 central-american-federation 소멸'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 CAM-M2 구현(사건은 1묶음 am-05~07)
-- key: '1860 mosquito-kingdom 버전'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 CAM-M2 구현(사건은 1묶음 am-05~07)
-- key: '1860 honduras 버전'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 CAM-M2 구현(사건은 1묶음 am-05~07)
-- key: '1894 mosquito-kingdom 소멸'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 CAM-M2 구현(사건은 1묶음 am-05~07)
-- key: '1894 nicaragua 버전'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 CAM-M2 구현(사건은 1묶음 am-05~07)
-- key: '1860 nicaragua 버전'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 CAM-M2 구현(사건은 1묶음 am-05~07) — M2 반영 1(검토 F2)
 
 # ── 아메리카 M2 CAR-M2 (카리브, 2026-11-16) ──
 - key: '1776 cuba-captaincy-general 버전'
@@ -797,70 +383,13 @@
 - key: '1697 saint-domingue 성립'
   reason: '성립 사건(1776 앞)이 아직 없음 — 그 해를 맡은 M3(1492~1775) 사건 묶음이 채우면 낡음, 그 칸이 지움'
   decided: 2026-11-16 아메리카 M2 CAR-M2 구현(사건은 1묶음 am-05~07)
-- key: '1804 saint-domingue 소멸'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 CAR-M2 구현(사건은 1묶음 am-05~07)
-- key: '1807 kingdom-of-haiti 성립'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 CAR-M2 구현(사건은 1묶음 am-05~07)
-- key: '1807 haiti 버전'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 CAR-M2 구현(사건은 1묶음 am-05~07)
-- key: '1820 kingdom-of-haiti 소멸'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 CAR-M2 구현(사건은 1묶음 am-05~07)
-- key: '1820 haiti 버전'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 CAR-M2 구현(사건은 1묶음 am-05~07)
-- key: '1822 santo-domingo-captaincy 소멸'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 CAR-M2 구현(사건은 1묶음 am-05~07)
-- key: '1822 haiti 버전'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 CAR-M2 구현(사건은 1묶음 am-05~07)
-- key: '1844 haiti 버전'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 CAR-M2 구현(사건은 1묶음 am-05~07)
-- key: '1899 cuba-captaincy-general 소멸'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 CAR-M2 구현(사건은 1묶음 am-05~07)
 
 # ── 아메리카 M2 NW-M2 (알래스카·추코트카·그린란드·브리티시컬럼비아, 2026-11-16) ──
 - key: '1776 greenland 버전'
   reason: 'M3(1492~1775)가 1776 앞을 칠하면 낡음 — M3 칸이 지움'
   decided: 2026-11-16 아메리카 M2 NW-M2 구현(사건은 1묶음 am-05~07)
-- key: '1799 russian-america 성립'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 NW-M2 구현(사건은 1묶음 am-05~07)
-- key: '1825 russian-america 버전'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 NW-M2 구현(사건은 1묶음 am-05~07)
-- key: '1867 russian-america 소멸'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 NW-M2 구현(사건은 1묶음 am-05~07)
-- key: '1849 vancouver-island 성립'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 NW-M2 구현(사건은 1묶음 am-05~07)
-- key: '1866 vancouver-island 소멸'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 NW-M2 구현(사건은 1묶음 am-05~07)
-- key: '1858 british-columbia 성립'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 NW-M2 구현(사건은 1묶음 am-05~07)
-- key: '1863 british-columbia 버전'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 NW-M2 구현(사건은 1묶음 am-05~07)
-- key: '1866 british-columbia 버전'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 NW-M2 구현(사건은 1묶음 am-05~07)
-- key: '1871 british-columbia 소멸'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 NW-M2 구현(사건은 1묶음 am-05~07)
 
 # ── 아메리카 M2 BRG-M2 (브라질·기아나, 2026-11-16) ──
-- key: '1814 british-guiana 성립'
-  reason: '성립 사건(1900 앞)이 아직 없음 — 그 해를 맡은 M2(1776~1899)·M3(1492~1775) 사건 묶음이 채우면 낡음, 그 칸이 지움'
-  decided: 2026-11-15 아메리카 M1 SA-N-M1 구현(사건은 1묶음 am-05~07)
 - key: '1776 portuguese-brazil 버전'
   reason: 'M3(1492~1775)가 1776 앞을 칠하면 낡음 — M3 칸이 지움'
   decided: 2026-11-16 아메리카 M2 BRG-M2 구현(사건은 1묶음 am-05~07)
@@ -878,19 +407,4 @@
   decided: 2026-11-16 아메리카 M2 BRG-M2 구현(사건은 1묶음 am-05~07)
 - key: '1616 dutch-essequibo-berbice 성립'
   reason: '성립 사건(1776 앞)이 아직 없음 — 그 해를 맡은 M3(1492~1775) 사건 묶음이 채우면 낡음, 그 칸이 지움'
-  decided: 2026-11-16 아메리카 M2 BRG-M2 구현(사건은 1묶음 am-05~07)
-- key: '1814 dutch-essequibo-berbice 소멸'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 BRG-M2 구현(사건은 1묶음 am-05~07)
-- key: '1817 portuguese-brazil 버전'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 BRG-M2 구현(사건은 1묶음 am-05~07)
-- key: '1822 portuguese-brazil 소멸'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 BRG-M2 구현(사건은 1묶음 am-05~07)
-- key: '1828 brazil 버전'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
-  decided: 2026-11-16 아메리카 M2 BRG-M2 구현(사건은 1묶음 am-05~07)
-- key: '1841 brazil 버전'
-  reason: 'am-05~07 사건 묶음(1묶음)이 채움'
   decided: 2026-11-16 아메리카 M2 BRG-M2 구현(사건은 1묶음 am-05~07)

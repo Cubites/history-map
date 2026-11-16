@@ -25,7 +25,7 @@
     - 1870년 루퍼츠랜드·북서부 영토, 1871년 브리티시컬럼비아, 1880년 북극 제도
     - 1931년 웨스트민스터 헌장, 1982년 헌법 이양
     - 1949년 뉴펀들랜드 합류, 1999년 누나부트 준주 신설
-  startEvents: []
+  startEvents: [canadian-confederation-1864]
   endEvents: []
   basis:
     type: primary_source
@@ -48,7 +48,7 @@
     - 1934년부터 영국이 임명한 위원회 정부가 다스림
     - 1949년 3월 31일 캐나다 합류
   startEvents: []
-  endEvents: []
+  endEvents: [newfoundland-confederation-1946]
   basis:
     type: primary_source
     refs: ["위키백과 뉴펀들랜드 자치령", "위키백과 Newfoundland Colony", "위키백과 Labrador boundary dispute"]
@@ -87,7 +87,7 @@
     - 1902년 5월 20일 공화국 출범(플랫 수정 조항)
     - 1906년부터 1909년까지 미국의 두 번째 점령
     - 1959년 쿠바 혁명, 1961년 사회주의 선언
-  startEvents: []
+  startEvents: [cuba-republic-1901]
   endEvents: []
   basis:
     type: primary_source
@@ -108,7 +108,7 @@
     - 1807년부터 1820년까지 남북으로 갈라짐
     - 1822년부터 1844년까지 섬 전체를 다스림
     - 1915년부터 1934년까지 미국 점령, 1957년부터 1986년까지 뒤발리에 독재
-  startEvents: []
+  startEvents: [haiti-independence-1803]
   endEvents: []
   basis:
     type: primary_source
@@ -128,7 +128,7 @@
     - 1844년 2월 27일 아이티에서 독립
     - 1916년부터 1924년까지 미국 점령
     - 1930년부터 1961년까지 트루히요 독재
-  startEvents: []
+  startEvents: [hispaniola-unification-1822]
   endEvents: []
   basis:
     type: primary_source
@@ -212,7 +212,7 @@
     - 1910년부터 1920년까지 멕시코 혁명, 1917년 지금 헌법
     - 1929년부터 2000년까지 제도혁명당 계열 한 정당이 집권
     - 1963년 미국과 협정으로 리오그란데강 기슭 차미살 땅을 돌려받음
-  startEvents: []
+  startEvents: [mexico-independence-1821]
   endEvents: []
   basis:
     type: primary_source
@@ -233,7 +233,7 @@
     - 1933년 중재 재판으로 온두라스와 국경을 정함
     - 1954년 정변으로 개혁 정부가 무너짐
     - 1960년부터 1996년까지 내전
-  startEvents: []
+  startEvents: [central-america-breakup-1838]
   endEvents: []
   basis:
     type: primary_source
@@ -254,7 +254,7 @@
     - 1973년 6월 1일 이름을 벨리즈로 바꿈
     - 1981년 9월 21일 영국에서 독립
     - 과테말라가 땅 전체를 요구함
-  startEvents: []
+  startEvents: [belize-1798]
   endEvents: []
   basis:
     type: primary_source
@@ -275,7 +275,7 @@
     - 1957년 모스키티아에 그라시아스아디오스주를 만듦
     - 1960년 국제 사법 재판소가 1906년 판정을 유효하다고 판결
     - 1969년 엘살바도르와 전쟁
-  startEvents: []
+  startEvents: [central-america-breakup-1838]
   endEvents: []
   basis:
     type: primary_source
@@ -295,7 +295,7 @@
     - 1841년 1월 30일 독립 공화국 선포
     - 1932년 농민 봉기를 군이 짓밟음
     - 1980년부터 1992년까지 내전, 1992년 평화 협정
-  startEvents: []
+  startEvents: [central-america-breakup-1838]
   endEvents: []
   basis:
     type: primary_source
@@ -316,7 +316,7 @@
     - 1912년부터 1933년까지 미국 해병대 주둔(1925년부터 1926년까지 잠깐 철수)
     - 1936년부터 1979년까지 소모사 집안 독재
     - 1979년 산디니스타 혁명
-  startEvents: []
+  startEvents: [central-america-breakup-1838]
   endEvents: []
   basis:
     type: primary_source
@@ -336,7 +336,7 @@
     - 1838년 11월 14일 중앙아메리카 연방에서 갈라짐
     - 1921년 코토 지역을 두고 파나마와 전쟁
     - 1949년 헌법으로 상비군을 없앰
-  startEvents: []
+  startEvents: [central-america-breakup-1838]
   endEvents: []
   basis:
     type: primary_source
@@ -357,7 +357,7 @@
     - 1903년 11월 조약으로 미국에 운하 지대를 내줌
     - 1914년 파나마 운하 개통
     - 1999년 12월 31일 운하를 돌려받음
-  startEvents: []
+  startEvents: [panama-independence-1903]
   endEvents: []
   basis:
     type: primary_source
@@ -380,7 +380,7 @@
     - 1899~1902년 「천일 전쟁」, 1903년 파나마 분리
     - 1922년 페루와 조약, 1932~1933년 레티시아를 두고 싸움
     - 1958년 국민 전선 체제, 1991년 새 헌법
-  startEvents: []
+  startEvents: [gran-colombia-breakup-1828]
   endEvents: []
   basis:
     type: primary_source
@@ -401,7 +401,7 @@
     - 1908~1935년 후안 비센테 고메스 독재, 석유 개발
     - 1958년 민주 정치 회복
     - 1999년 새 헌법, 베네수엘라 볼리바르 공화국
-  startEvents: []
+  startEvents: [gran-colombia-breakup-1828]
   endEvents: []
   basis:
     type: primary_source
@@ -422,7 +422,7 @@
     - 1941년 페루와 전쟁, 1942년 리우데자네이루 의정서
     - 1995년 세네파 전쟁, 1998년 브라질리아 의정서로 국경 마무리
     - 2000년 미국 달러를 나라 돈으로 삼음
-  startEvents: []
+  startEvents: [gran-colombia-breakup-1828]
   endEvents: []
   basis:
     type: primary_source
@@ -444,8 +444,8 @@
     - 1899년 파리 중재 재판으로 베네수엘라와 국경을 정함
     - 1953년 헌법 정지, 1961년 내부 자치
     - 1966년 가이아나로 독립
-  startEvents: []
-  endEvents: []
+  startEvents: [british-guiana-1803]
+  endEvents: [guyana-independence-1953]
   basis:
     type: primary_source
     refs: ["위키백과 British Guiana", "위키백과 Guyana–Venezuela territorial dispute"]
@@ -464,7 +464,7 @@
     - 1966년 5월 26일 독립, 1970년 협동 공화국
     - 1966년 제네바 협정, 에세키보 땅 다툼
     - 남아메리카에서 영어를 공용어로 쓰는 나라
-  startEvents: []
+  startEvents: [guyana-independence-1953]
   endEvents: []
   basis:
     type: primary_source
@@ -487,7 +487,7 @@
     - 1954년 네덜란드 왕국의 구성국
     - 1975년 수리남으로 독립
   startEvents: []
-  endEvents: []
+  endEvents: [suriname-independence-1954]
   basis:
     type: primary_source
     refs: ["위키백과 Surinam (Dutch colony)", "브레다 조약(1667)", "네덜란드 왕국 헌장(1954)"]
@@ -506,7 +506,7 @@
     - 1975년 11월 25일 독립
     - 1980년 군사 쿠데타, 1986~1992년 내전
     - 남아메리카에서 네덜란드어를 공용어로 쓰는 나라
-  startEvents: []
+  startEvents: [suriname-independence-1954]
   endEvents: []
   basis:
     type: primary_source
@@ -550,7 +550,7 @@
     - 1879~1883년 남아메리카 태평양 전쟁에서 칠레에 져 남쪽 타라파카를 잃음
     - 1929년 리마 조약으로 타크나를 돌려받고 아리카는 칠레 땅으로 남김
     - 1942년 리우데자네이루 의정서로 에콰도르와 국경 마무리
-  startEvents: []
+  startEvents: [peru-bolivia-independence-1821]
   endEvents: []
   basis:
     type: primary_source
@@ -571,7 +571,7 @@
     - 1903년 페트로폴리스 조약으로 아크리를 브라질에 넘김
     - 1932~1935년 차코 전쟁에서 져 1938년 조약으로 차코 보레알을 잃음
     - 2009년 새 헌법으로 볼리비아 다민족국이 됨
-  startEvents: []
+  startEvents: [peru-bolivia-independence-1821]
   endEvents: []
   basis:
     type: primary_source
@@ -592,7 +592,7 @@
     - 1902년 영국 왕의 판정으로 아르헨티나와의 남쪽 국경을 정함
     - 1929년 리마 조약으로 타크나를 페루에 돌려주고 아리카를 남김
     - 1973~1990년 피노체트 군사 정권
-  startEvents: []
+  startEvents: [argentina-chile-independence-1816]
   endEvents: []
   basis:
     type: primary_source
@@ -613,7 +613,7 @@
     - 1902년 영국 왕의 판정으로 칠레와의 파타고니아 국경을 정함
     - 1946~1955년 페론 정권, 1976~1983년 군사 정권
     - 1982년 포클랜드 전쟁에서 영국에 짐
-  startEvents: []
+  startEvents: [argentina-chile-independence-1816]
   endEvents: []
   basis:
     type: primary_source
@@ -633,7 +633,7 @@
     - 1828년 브라질과 아르헨티나 사이의 완충국으로 독립함
     - 1817~1827년 포르투갈·브라질이 시스플라티나주로 다스림
     - 1973~1985년 군부가 실권을 쥔 독재
-  startEvents: []
+  startEvents: [cisplatine-uruguay-1816]
   endEvents: []
   basis:
     type: primary_source
@@ -653,7 +653,7 @@
     - 1864~1870년 파라과이 전쟁에서 져 땅과 사람을 크게 잃음
     - 1932~1935년 차코 전쟁에서 이겨 1938년 조약으로 차코 보레알을 얻음
     - 1954~1989년 스트로에스네르 독재
-  startEvents: []
+  startEvents: [may-revolution-1810]
   endEvents: []
   basis:
     type: primary_source
@@ -672,7 +672,7 @@
     - 중심 도시는 스탠리
     - 1833년부터 영국이 다스림
     - 1982년 포클랜드 전쟁 때 아르헨티나가 두 달 반 동안 차지함
-  startEvents: []
+  startEvents: [falklands-1829]
   endEvents: []
   basis:
     type: primary_source
@@ -692,7 +692,7 @@
     - 1822년 제국으로 독립, 1889년 왕정을 없애고 공화국이 됨
     - 1900년 아마파 판정과 1903년 아크리 조약으로 북쪽 국경을 넓힘
     - 1964~1985년 군사 정권
-  startEvents: []
+  startEvents: [brazil-independence-1822]
   endEvents: []
   basis:
     type: primary_source
@@ -714,7 +714,7 @@
     - 1958년부터 1962년까지 서인도 연방의 한 주
     - 1962년 8월 31일 영연방 왕국으로 독립
     - 1976년 8월 1일 공화국
-  startEvents: []
+  startEvents: [west-indies-federation-1958]
   endEvents: []
   basis:
     type: primary_source
@@ -734,7 +734,7 @@
     - 1958년부터 1962년까지 서인도 연방의 한 주
     - 1966년 11월 30일 영연방 왕국으로 독립
     - 2021년 11월 30일 공화국
-  startEvents: []
+  startEvents: [west-indies-federation-1958]
   endEvents: []
   basis:
     type: primary_source
@@ -755,7 +755,7 @@
     - 1974년 2월 7일 독립
     - 1979년부터 1983년까지 인민 혁명 정부
     - 1983년 10월 미국이 이끈 군대가 들어옴
-  startEvents: []
+  startEvents: [associated-states-1967]
   endEvents: []
   basis:
     type: primary_source
@@ -775,7 +775,7 @@
     - 1967년 3월 영국 협동국
     - 1978년 11월 3일 공화국으로 독립
     - 섬 동쪽에 칼리나고 원주민 땅
-  startEvents: []
+  startEvents: [associated-states-1967]
   endEvents: []
   basis:
     type: primary_source
@@ -795,7 +795,7 @@
     - 1814년 파리 조약으로 영국 땅
     - 1967년 3월 영국 협동국
     - 1979년 2월 22일 영연방 왕국으로 독립
-  startEvents: []
+  startEvents: [associated-states-1967]
   endEvents: []
   basis:
     type: primary_source
@@ -815,7 +815,7 @@
     - 1969년 10월 영국 협동국
     - 1979년 10월 27일 영연방 왕국으로 독립
     - 그레나딘 제도 북쪽 섬들이 나라 땅
-  startEvents: []
+  startEvents: [associated-states-1967]
   endEvents: []
   basis:
     type: primary_source
@@ -835,7 +835,7 @@
     - 1860년 바부다가 앤티가에 합쳐짐
     - 1967년 2월 영국 협동국
     - 1981년 11월 1일 영연방 왕국으로 독립
-  startEvents: []
+  startEvents: [leeward-independence-1981]
   endEvents: []
   basis:
     type: primary_source
@@ -855,7 +855,7 @@
     - 1967년 2월 앵귈라와 함께 영국 협동국
     - 1983년 9월 19일 영연방 왕국으로 독립
     - 두 섬의 연방
-  startEvents: []
+  startEvents: [leeward-independence-1981]
   endEvents: []
   basis:
     type: primary_source

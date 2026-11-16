@@ -7730,6 +7730,63 @@
   note: "Treaty of Ancón(1883 칠레–페루). 저장소 peru 글 '안콘 조약'(기존 표기 우선 — 위키 ko 표제 없음, 지시문 가칭 '앙콘'을 고침)"
   scope: 아메리카·남아메리카
 
+# ── 아메리카 사건 am-05a (1776~1814년, 2026-11-17) ──
+
+- use: 알렉산더 폰 훔볼트
+  avoid: [홈볼트]
+  note: "Alexander von Humboldt(1769~1859). 위키 ko 표제 '알렉산더 폰 훔볼트'."
+  scope: 아메리카·남아메리카
+
+- use: 테쿰세
+  avoid: [테쿰시]
+  note: "Tecumseh(1768~1813). 위키 ko 표제."
+  scope: 아메리카·북아메리카
+
+- use: 사라토가 전투
+  avoid: [새러토가 전투]
+  note: "Battles of Saratoga(1777). 저장소 항목 글 '사라토가 전투'(기존 표기 우선)."
+  scope: 아메리카·북아메리카
+
+- use: 칠판싱고 의회
+  avoid: [칠판싱코]
+  note: "Congress of Chilpancingo(1813). 위키 ko 표제 '칠판싱고 의회'."
+  scope: 아메리카·멕시코
+
+- use: 마누엘 벨그라노
+  avoid: [벨그라뇨]
+  note: "Manuel Belgrano(1770~1820). 공용 표기표 05a 몫(저장소 쓰임 없음, 위키 ko 표제)."
+  scope: 아메리카·남아메리카
+
+- use: 프란시스코 데 미란다
+  avoid: [미란타]
+  note: "Francisco de Miranda(1750~1816). 공용 표기표 05a 몫(위키 ko 표제)."
+  scope: 아메리카·남아메리카
+
+- use: 호세 마리아 모렐로스
+  avoid: [모렐로즈]
+  note: "José María Morelos(1765~1815). 공용 표기표 05a 몫(위키 ko 표제)."
+  scope: 아메리카·멕시코
+
+- use: 토머스 제퍼슨
+  avoid: [제퍼선]
+  note: "Thomas Jefferson. 공용 표기표 05a 몫(외래어 표기법)."
+  scope: 아메리카·북아메리카
+
+- use: 앙리 크리스토프
+  avoid: [앙리 크리스토페]
+  note: "Henri Christophe(1767~1820). 공용 표기표 05a 몫(위키 ko 표제)."
+  scope: 아메리카·카리브
+
+- use: 산티아고 데 리니에르스
+  avoid: [리니어스]
+  note: "Santiago de Liniers(1753~1810). 외래어 표기법(스페인어)."
+  scope: 아메리카·남아메리카
+
+- use: 윌리엄 베레스퍼드
+  avoid: [베레스포드]
+  note: "William Beresford(1768~1854). 외래어 표기법."
+  scope: 아메리카·남아메리카
+
 # ── 아메리카 M2 FL-M2 (플로리다·루이지애나, 2026-11-16) ──
 
 - use: 펜서콜라
@@ -7752,6 +7809,48 @@
   note: "Natchez. 공용 표기표(M2 뼈대 — 위키 ko 표제)"
   scope: 아메리카·북아메리카 식민지
 
+# ── 아메리카 사건 am-05b (1816~1849, 2026-11-17) ──
+
+- use: 보야카 전투
+  avoid: [보야까 전투]
+  note: "Batalla de Boyacá(1819-08-07). 외래어 표기법(스페인어 y→ㅇ·c→ㅋ). 위키 ko 표제 미확인(am-05b 초안 — 사실 대조가 확인). 저장소 쓰임 0"
+  scope: 아메리카·남아메리카
+
+- use: 이괄라 계획
+  avoid: [이구알라 계획]
+  note: "Plan de Iguala(1821-02-24). 외래어 표기법(스페인어 gu+a→과). 위키 ko 표제 미확인(am-05b 초안 — 사실 대조가 확인). 저장소 쓰임 0"
+  scope: 아메리카·멕시코
+
+- use: 비센테 게레로
+  avoid: [빈센트 게레로]
+  note: "Vicente Guerrero(멕시코 독립 운동 지도자, 1829년 대통령). 스페인어 이름 표기. 저장소 쓰임 0"
+  scope: 아메리카·멕시코
+
+- use: 세븐오크스
+  avoid: [세븐 오크스]
+  note: "Seven Oaks(1816-06-19, 레드강 정착지 부근). 붙여 씀. 위키 ko 표제 미확인(am-05b 초안). 저장소 쓰임 0"
+  scope: 아메리카·캐나다
+
+- use: 노스웨스트 회사
+  avoid: [북서 회사, 노스웨스턴 회사]
+  note: "North West Company(몬트리올 모피 상인 회사, 1821 허드슨 베이 회사에 합병). 'North-Western Territory'(북서부 영토)와 다른 이름. 저장소 쓰임 0"
+  scope: 아메리카·캐나다
+
+- use: 더럼 보고서
+  avoid: [더햄 보고서]
+  note: "Durham Report(1839, 더럼 백작 존 램턴). 외래어 표기법(Durham 영국 지명 더럼). 저장소 쓰임 0"
+  scope: 아메리카·캐나다
+
+- use: 알라모 요새
+  avoid: [앨러모 요새]
+  note: "Alamo(1836-03-06 함락). 외래어 표기법(스페인어에서 온 이름). 저장소 쓰임 0"
+  scope: 아메리카·북아메리카 식민지
+
+- use: 인디언 이주법
+  avoid: [인디언 제거법]
+  note: "Indian Removal Act(1830-05-28). 법 이름이라 '인디언'을 씀(그 밖은 원주민·부족 이름). 위키 ko 표제 미확인. 저장소 쓰임 0"
+  scope: 아메리카·북아메리카 식민지
+
 # ── 아메리카 M2 BNA-W-M2 (캐나다 서쪽·허드슨만, 2026-11-16) ──
 
 - use: 아시니보인
@@ -7759,9 +7858,283 @@
   note: "Assiniboine(북아메리카 대평원 원주민 — ruperts-land 글). 위키 ko 표제 '아시니보인족'('어시니보인족'이 넘겨줌, BNA-W-M2 확인 m2/impl-bna-w-m2/tools/ko-titles.txt). 어시니보인 저장소 쓰임 0"
   scope: 아메리카·캐나다
 
+# ── 아메리카 사건 am-06a (1853~1903, 2026-11-17) ──
+- use: 개즈던 매입
+  avoid: [개즈덴 매입, 개즈던 구입]
+  note: "Gadsden Purchase(1853~1854). 위키 ko 표제 '개즈던 매입'(M2 ko-titles 확인)"
+  scope: 아메리카·멕시코
+- use: 루이 리엘
+  avoid: [루이스 리엘]
+  note: "Louis Riel(1844~1885). 위키 ko 표제 '루이 리엘'(공용 표기표의 '루이스 리엘'은 표제와 달라 쓰지 않음)"
+  scope: 아메리카·캐나다
+- use: 게티즈버그 전투
+  avoid: [게티스버그 전투]
+  note: "Battle of Gettysburg(1863-07-01~03). 위키 ko 표제(기억, 미확인)"
+  scope: 아메리카·미국
+- use: 애퍼매톡스
+  avoid: [아포마톡스, 애포매톡스]
+  note: "Appomattox Court House(1865-04-09). 위키 ko 표제(기억, 미확인)"
+  scope: 아메리카·미국
+- use: 리틀빅혼 전투
+  avoid: [리틀 빅혼 전투, 리틀빅호른 전투]
+  note: "Battle of the Little Bighorn(1876-06-25). 위키 ko 표제(기억, 미확인)"
+  scope: 아메리카·미국
+- use: 운디드니 학살
+  avoid: [운디드 니 학살]
+  note: "Wounded Knee Massacre(1890-12-29). 위키 ko 표제(기억, 미확인)"
+  scope: 아메리카·미국
+- use: 윌리엄 수어드
+  avoid: [윌리엄 슈어드, 윌리엄 수워드]
+  note: "William H. Seward(미국 국무 장관 1861~1869). 위키 ko 표제(기억, 미확인)"
+  scope: 아메리카·미국
+
 # ── 아메리카 M2 SC-E-M2 (라플라타, 2026-11-16) ──
 
+# ── 아메리카 사건 am-06b (1900~1944, 2026-11-17) ──
+
+- use: 토마스 에스트라다 팔마
+  avoid: [토머스 에스트라다 팔마, 에스트라다팔마]
+  note: "Tomás Estrada Palma(쿠바 초대 대통령 1902). 스페인어 이름 외래어 표기법 기준, 위키 ko 표제 미확인(06b 초안). avoid 글자 저장소 쓰임 0"
+  scope: 아메리카·카리브
+
+- use: 레너드 우드
+  avoid: [레오나드 우드]
+  note: "Leonard Wood(쿠바 군정 총독). 외래어 표기법 기준, 위키 ko 표제 미확인. avoid 글자 저장소 쓰임 0"
+  scope: 아메리카·카리브
+
+- use: 관타나모만
+  avoid: [과타나모만, 관타나모 만]
+  note: "Guantánamo Bay. 외래어 표기법·통용 표기. avoid 글자 저장소 쓰임 0"
+  scope: 아메리카·카리브
+
+- use: 천일 전쟁
+  avoid: [천일전쟁, 천일 내전]
+  note: "Guerra de los Mil Días(콜롬비아 1899~1902). 띄어쓰기 규칙, 위키 ko 표제 미확인. avoid 글자 저장소 쓰임 0"
+  scope: 아메리카·콜롬비아
+
+- use: 헤이–에란 조약
+  avoid: [헤이-헤란 조약, 헤이–헤란 조약, 헤이–에란 협정]
+  note: "Hay–Herrán Treaty(1903). 외래어 표기법 기준(Herrán 에란). avoid 글자 저장소 쓰임 0"
+  scope: 아메리카·파나마
+
+- use: 헤이–뷔노바리야 조약
+  avoid: [헤이-뷔노바리야 조약, 헤이–부노바리야 조약, 헤이–뷔노–바리야 조약]
+  note: "Hay–Bunau-Varilla Treaty(1903-11-18). 프랑스어 이름은 뷔노바리야. avoid 글자 저장소 쓰임 0"
+  scope: 아메리카·파나마
+
+- use: 필리프 뷔노바리야
+  avoid: [필립 뷔노바리야, 필리프 부노바리야, 필리프 뷔노–바리야]
+  note: "Philippe-Jean Bunau-Varilla(프랑스 기술자, 파나마 대표). 프랑스어 표기. avoid 글자 저장소 쓰임 0"
+  scope: 아메리카·파나마
+
+- use: 마누엘 아마도르 게레로
+  avoid: [마누엘 아마도르 구에레로]
+  note: "Manuel Amador Guerrero(파나마 초대 대통령 1904). 스페인어 표기. avoid 글자 저장소 쓰임 0"
+  scope: 아메리카·파나마
+
+- use: 톰슨–우루티아 조약
+  avoid: [톰슨-우루티아 조약, 톰프슨–우루티아 조약, 톰슨–우루티아 협정]
+  note: "Thomson–Urrutia Treaty(1914 서명·1921 발효, 미국이 콜롬비아에 2,500만 달러). avoid 글자 저장소 쓰임 0"
+  scope: 아메리카·콜롬비아
+
+- use: 페르디낭 드 레셉스
+  avoid: [페르디낭드레셉스, 페르디난드 드 레셉스]
+  note: "Ferdinand de Lesseps. 저장소 기존 '드 레셉스' 꼴과 맞춤. avoid 글자 저장소 쓰임 0"
+  scope: 아메리카·파나마
+
+- use: 윌리엄 C. 고거스
+  avoid: [윌리엄 고가스, 윌리엄 고르가스, 윌리엄 고서스]
+  note: "William C. Gorgas. 위키 ko 표제 '윌리엄 C. 고거스'(검색 확인 2026-11-17). avoid 글자 저장소 쓰임 0"
+  scope: 아메리카·파나마
+
+- use: 조지 워싱턴 고설스
+  avoid: [조지 워싱턴 괴설스, 조지 워싱턴 고설즈, 조지 W. 고설스]
+  note: "George Washington Goethals. 외래어 표기법 기준, 위키 ko 표제 미확인. avoid 글자 저장소 쓰임 0"
+  scope: 아메리카·파나마
+
+- use: 존 프랭크 스티븐스
+  avoid: [존 F. 스티븐스, 존 프랭크 스티븐슨]
+  note: "John Frank Stevens(파나마 운하 수석 기술자 1905~1907). avoid 글자 저장소 쓰임 0"
+  scope: 아메리카·파나마
+
+- use: 호세 피게로아 알코르타
+  avoid: [호세 피구에로아 알코르타, 호세 피게로아 알코르따]
+  note: "José Figueroa Alcorta(아르헨티나 대통령 1906~1910, 1909 볼리비아–페루 중재). 스페인어 표기. avoid 글자 저장소 쓰임 0"
+  scope: 아메리카·남아메리카
+
+- use: 다니엘 산체스 부스타만테
+  avoid: [다니엘 산체스 부스타만떼, 다니엘 산체스 부스타멘테]
+  note: "Daniel Sánchez Bustamante(볼리비아 외무 장관). 스페인어 표기. avoid 글자 저장소 쓰임 0"
+  scope: 아메리카·남아메리카
+
+- use: 훌리오 세사르 아라나
+  avoid: [홀리오 세사르 아라나, 훌리오 세사르 아란다]
+  note: "Julio César Arana(페루 고무 사업가). 스페인어 표기. avoid 글자 저장소 쓰임 0"
+  scope: 아메리카·남아메리카
+
+- use: 로저 케이스먼트
+  avoid: [로저 케이스멘트, 로저 케이즈먼트]
+  note: "Roger Casement(영국 영사, 1910~1912 푸투마요 조사). avoid 글자 저장소 쓰임 0"
+  scope: 아메리카·남아메리카
+
+- use: 루스벨트 추론
+  avoid: [루즈벨트 추론, 루스벨트 보론]
+  note: "Roosevelt Corollary(1904-12-06). 공용 표기표 꼴. avoid 글자 저장소 쓰임 0"
+  scope: 아메리카·미국
+
+- use: 달러 외교
+  avoid: [달러외교, 달러 디플로머시]
+  note: "Dollar diplomacy(태프트 정부). avoid 글자 저장소 쓰임 0"
+  scope: 아메리카·미국
+
+- use: 클라크 각서
+  avoid: [클라크 메모, 클라크 비망록]
+  note: "Clark Memorandum(1928). avoid 글자 저장소 쓰임 0"
+  scope: 아메리카·미국
+
+- use: 프란시스코 마데로
+  avoid: [프란시스코 이 마데로, 프란치스코 마데로, 후란시스코 마데로]
+  note: "Francisco I. Madero. 공용 표기표 꼴. avoid 글자 저장소 쓰임 0"
+  scope: 아메리카·멕시코
+
+- use: 판초 비야
+  avoid: [판쵸 비야, 판초 빌라, 팬초 비야]
+  note: "Pancho Villa. 공용 표기표 꼴. avoid 글자 저장소 쓰임 0"
+  scope: 아메리카·멕시코
+
+- use: 에밀리아노 사파타
+  avoid: [에밀리아노 싸파타, 에밀리아노 자파타]
+  note: "Emiliano Zapata. 공용 표기표 꼴. avoid 글자 저장소 쓰임 0"
+  scope: 아메리카·멕시코
+
+- use: 베누스티아노 카란사
+  avoid: [베누스티아노 카란자, 베네스티아노 카란사]
+  note: "Venustiano Carranza. 공용 표기표 꼴. avoid 글자 저장소 쓰임 0"
+  scope: 아메리카·멕시코
+
+- use: 빅토리아노 우에르타
+  avoid: [빅토리아노 휴에르타, 빅토리아노 웨르타]
+  note: "Victoriano Huerta. 스페인어 표기. avoid 글자 저장소 쓰임 0"
+  scope: 아메리카·멕시코
+
+- use: 알바로 오브레곤
+  avoid: [알바로 오브레건]
+  note: "Álvaro Obregón. 스페인어 표기. avoid 글자 저장소 쓰임 0"
+  scope: 아메리카·멕시코
+
+- use: 산루이스포토시 계획
+  avoid: [산 루이스 포토시 계획, 산루이스 포토시 계획]
+  note: "Plan de San Luis Potosí(1910). 도시 표기 '산루이스포토시'. avoid 글자 저장소 쓰임 0"
+  scope: 아메리카·멕시코
+
+- use: 아구아프리에타 계획
+  avoid: [아과프리에타 계획, 아구아 프리에타 계획]
+  note: "Plan de Agua Prieta(1920). 스페인어 표기. avoid 글자 저장소 쓰임 0"
+  scope: 아메리카·멕시코
+
+- use: 이폴리토 이리고옌
+  avoid: [히폴리토 이리고옌, 이뽈리또 이리고옌]
+  note: "Hipólito Yrigoyen. 스페인어 표기(H 묵음). avoid 글자 저장소 쓰임 0"
+  scope: 아메리카·아르헨티나
+
+- use: 볼스테드법
+  avoid: [볼스테드 법, 볼스테드 금주법]
+  note: "Volstead Act(1919). 법률명은 붙여 씀. avoid 글자 저장소 쓰임 0"
+  scope: 아메리카·미국
+
+- use: 알 카포네
+  avoid: [알카포네, 알 카포니]
+  note: "Al Capone. avoid 글자 저장소 쓰임 0"
+  scope: 아메리카·미국
+
+- use: 더치하버
+  avoid: [더치 하버]
+  note: "Dutch Harbor(운알래스카섬 미국 해군 기지, 1942-06 공습). 외래어 표기법·통용 표기, 위키 ko 표제 미확인"
+  scope: 아메리카·알래스카
+
+- use: 애투섬
+  avoid: [아투섬, 앗투섬]
+  note: "Attu Island(알류샨 열도 서쪽 끝, 1942-06-07 일본 점령·1943-05 탈환). 외래어 표기법, 위키 ko 표제 미확인"
+  scope: 아메리카·알래스카
+
+- use: 키스카섬
+  avoid: [키스카 섬]
+  note: "Kiska Island(1942-06-06 일본 점령·1943-08-15 연합군 상륙). 외래어 표기법, 위키 ko 표제 미확인"
+  scope: 아메리카·알래스카
+
+- use: 알류트인
+  avoid: [알류트 사람]
+  note: "Aleut(Unangax). 원주민은 부족·민족 이름으로 쓰는 원칙"
+  scope: 아메리카·알래스카
+
+- use: 브라세로 협정
+  avoid: [브라세로 계획, 브라세로 프로그램]
+  note: "Bracero Program(1942-08 미국–멕시코 농업 노동자 협정, 1964 종료). 협정 이름으로 통일, 위키 ko 표제 미확인"
+  scope: 아메리카·멕시코
+
+- use: 마누엘 아빌라 카마초
+  avoid: [마누엘 아비라 카마초, 마누엘 아빌라 까마초]
+  note: "Manuel Ávila Camacho(멕시코 대통령 1940~1946). 외래어 표기법 기준, 위키 ko 표제 미확인"
+  scope: 아메리카·멕시코
+
+- use: 몬테카스텔로
+  avoid: [몬테카스텔루, 몬테 카스텔로]
+  note: "Monte Castello(이탈리아 북부, 브라질 원정군 전투 1944-11~1945-02). 이탈리아어 외래어 표기법, 위키 ko 표제 미확인"
+  scope: 아메리카·브라질
+
+- use: 브라질 원정군
+  avoid: [브라질 파견군]
+  note: "Força Expedicionária Brasileira(FEB). 통용 번역, 위키 ko 표제 미확인"
+  scope: 아메리카·브라질
+
+- use: 에델미로 파렐
+  avoid: [에델미로 파레르]
+  note: "Edelmiro Farrell(아르헨티나 대통령 1944~1946). 외래어 표기법 기준, 위키 ko 표제 미확인"
+  scope: 아메리카·아르헨티나
+
+- use: 브레턴우즈 회의
+  avoid: [브레튼우즈 회의, 브레턴 우즈 회의]
+  note: "Bretton Woods Conference(1944-07-01~22). 저장소 기존 글 '브레턴우즈 체제'와 같은 표기"
+  scope: 아메리카·세계
+
 # ── 아메리카 M2 US-M2 (미국, 2026-11-16) ──
+
+# ── 아메리카 사건 am-07a (1945~1979, 2026-11-17) ──
+
+- use: 조이 스몰우드
+  avoid: [조 스몰우드]
+  note: "Joey Smallwood(뉴펀들랜드 마지막 위원회 정부 뒤 첫 주 총리). 위키 ko 표제 확인 전(기억, 미확인)"
+  scope: 아메리카·캐나다
+
+- use: 체디 자간
+  avoid: [체디 재건, 체디 자건]
+  note: "Cheddi Jagan(영국령 기아나·가이아나 정치인). 위키 ko 표제 '체디 자간'"
+  scope: 아메리카·기아나
+
+- use: 포브스 버넘
+  avoid: [포브스 번햄]
+  note: "Forbes Burnham(가이아나 초대 총리). 위키 ko 표제"
+  scope: 아메리카·기아나
+
+- use: 로자 파크스
+  avoid: [로사 파크스]
+  note: "Rosa Parks(몽고메리 버스 불매 운동). 위키 ko 표제"
+  scope: 아메리카·미국
+
+- use: 그랜틀리 애덤스
+  avoid: [그랜틀리 아담스]
+  note: "Grantley Adams(서인도 연방 총리). 위키 ko 표제 확인 전(기억, 미확인)"
+  scope: 아메리카·카리브
+
+- use: 에릭 게리
+  avoid: [에릭 게어리]
+  note: "Eric Gairy(그레나다 초대 총리). 위키 ko 표제 확인 전(기억, 미확인)"
+  scope: 아메리카·카리브
+
+- use: 호아킨 발라게르
+  avoid: [호아킹 발라게르]
+  note: "Joaquín Balaguer(도미니카 공화국 대통령). 위키 ko 표제 '호아킨 발라게르'"
+  scope: 아메리카·카리브
 
 # ── 아메리카 M2 BNA-E-M2 (캐나다 동쪽, 2026-11-16) ──
 
@@ -7774,6 +8147,33 @@
   avoid: [케이프 브레턴, 케이프브레튼]
   note: "Cape Breton(nova-scotia 글). 위키 ko 표제 '케이프브레턴섬'(BNA-E-M2 확인 m2/impl-bna-e-m2/tools/ko-titles.txt). avoid 글자 저장소 쓰임 0"
   scope: 아메리카·캐나다
+
+# ── 아메리카 사건 am-07b (1980~현재, 2026-11-17) ──
+
+- use: 헤네랄 벨그라노호
+  avoid: [제너럴 벨그라노호]
+  note: "ARA General Belgrano(1982-05-02 격침). 스페인어 Heneral/General은 아르헨티나 군함 이름이라 '헤네랄'. 사전 아메리카 공용 '마누엘 벨그라노' 꼴과 짝"
+  scope: 아메리카·남아메리카
+
+- use: 사파티스타 민족 해방군
+  avoid: [사파티스타 민족해방군]
+  note: "Ejército Zapatista de Liberación Nacional(EZLN, 1994 치아파스 봉기). 위키 ko 표제 꼴"
+  scope: 아메리카·멕시코
+
+- use: 신보석 운동
+  avoid: [뉴 주얼 운동]
+  note: "New Jewel Movement(그레나다, 모리스 비숍, 1979). 위키 ko '신보석 운동'"
+  scope: 아메리카·카리브
+
+- use: 정의의 명분 작전
+  avoid: [저스트 코즈 작전]
+  note: "Operation Just Cause(미국의 파나마 침공, 1989-12-20). 위키 ko '정의의 명분 작전'"
+  scope: 아메리카·중앙아메리카
+
+- use: 오루프레투 의정서
+  avoid: [오우루프레투 의정서]
+  note: "Protocolo de Ouro Preto(메르코수르 기구 짜임, 1994-12). 위키 ko '오루프레투 의정서'"
+  scope: 아메리카·남아메리카
 
 # ── 아메리카 M2 SC-W-M2 (칠레·마푸체·포클랜드, 2026-11-16) ──
 

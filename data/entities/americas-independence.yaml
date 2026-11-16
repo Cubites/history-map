@@ -28,7 +28,7 @@
     - 1800년 산일데폰소 조약으로 프랑스에 돌려주기로 함
     - 1803년 루이지애나 매입으로 미국 땅이 됨
   startEvents: []
-  endEvents: []
+  endEvents: [louisiana-purchase-1800]
   basis:
     type: primary_source
     refs: ["위키백과 Spanish Louisiana", "위키백과 Louisiana Purchase"]
@@ -50,7 +50,7 @@
     - 1810년 서플로리다 공화국 반란 뒤 배턴루지 둘레를 미국이 병합
     - 1819년 애덤스-오니스 조약, 1821년 미국에 넘김
   startEvents: []
-  endEvents: []
+  endEvents: [adams-onis-1819]
   basis:
     type: primary_source
     refs: ["위키백과 Spanish Florida", "위키백과 West Florida", "위키백과 Adams–Onís Treaty"]
@@ -72,7 +72,7 @@
     - 1779~1781년 스페인 갈베스 총독의 원정으로 서플로리다를 잃음
     - 1783년 파리 조약으로 스페인에 돌려줌
   startEvents: []
-  endEvents: []
+  endEvents: [treaty-of-paris-1783]
   basis:
     type: primary_source
     refs: ["위키백과 West Florida", "위키백과 East Florida", "위키백과 Spanish Florida"]
@@ -95,7 +95,7 @@
     - 1812년 레드강 식민지, 1818년 북위 49도 경계
     - 1869년 헌장 땅을 돌려주고 1870년 캐나다로 넘어감
   startEvents: []
-  endEvents: []
+  endEvents: [red-river-1869]
   basis:
     type: primary_source
     refs: ["위키백과 Rupert's Land", "위키백과 Hudson's Bay Company"]
@@ -115,8 +115,8 @@
     - 1821년 영국 정부가 회사에 원주민 교역 독점 허가를 줌
     - 1825년 러시아와의 협약으로 서경 141도가 서쪽 경계가 됨
     - 1870년 루퍼츠랜드와 함께 캐나다로 넘어감
-  startEvents: []
-  endEvents: []
+  startEvents: [fur-trade-merger-1816]
+  endEvents: [red-river-1869]
   basis:
     type: primary_source
     refs: ["위키백과 North-Western Territory", "위키백과 Rupert's Land"]
@@ -139,8 +139,8 @@
     - 1806~1807년 영국군의 부에노스아이레스 침공을 물리침
     - 1810년 5월 혁명으로 자치 정부가 들어섬
     - 1816년 독립 선언으로 끝남
-  startEvents: []
-  endEvents: []
+  startEvents: [rio-de-la-plata-1776]
+  endEvents: [argentina-chile-independence-1816]
   basis:
     type: primary_source
     refs: ["위키백과 Viceroyalty of the Río de la Plata", "위키백과 Zanja de Alsina"]
@@ -167,7 +167,7 @@
     - 1775년 미국 대륙군의 침공을 막아 냄
     - 1783년 파리 조약으로 오대호 남쪽 땅을 미국에 넘김
   startEvents: []
-  endEvents: []
+  endEvents: [constitutional-act-1791]
   basis:
     type: primary_source
     refs: ["위키백과 Quebec Act", "위키백과 Constitutional Act 1791"]
@@ -189,7 +189,7 @@
     - 1784년 뉴브런즈윅과 케이프브레턴을 떼고 1820년 케이프브레턴을 다시 합침
     - 1867년 7월 1일 캐나다 연방에 들어감
   startEvents: []
-  endEvents: []
+  endEvents: [canadian-confederation-1864]
   basis:
     type: primary_source
     refs: ["위키백과 Nova Scotia", "위키백과 New Brunswick"]
@@ -210,8 +210,8 @@
     - 미국 독립 전쟁 뒤 옮겨 온 왕당파가 세운 식민지
     - 1842년 영국과 미국의 조약으로 메인과의 경계가 정해짐
     - 1867년 7월 1일 캐나다 연방에 들어감
-  startEvents: []
-  endEvents: []
+  startEvents: [treaty-of-paris-1783]
+  endEvents: [canadian-confederation-1864]
   basis:
     type: primary_source
     refs: ["위키백과 New Brunswick"]
@@ -232,8 +232,8 @@
     - 미영 전쟁 때 미국군의 침공을 막아 냄
     - 1837년 반란
     - 1841년 로어캐나다와 합쳐 캐나다주가 됨
-  startEvents: []
-  endEvents: []
+  startEvents: [constitutional-act-1791]
+  endEvents: [canada-union-1837]
   basis:
     type: primary_source
     refs: ["위키백과 Constitutional Act 1791", "위키백과 Province of Canada"]
@@ -254,8 +254,8 @@
     - 프랑스 민법과 영주 토지 제도를 그대로 둠
     - 1809년 래브라도 해안 관할을 뉴펀들랜드에 넘김
     - 1837년과 1838년 애국파 반란
-  startEvents: []
-  endEvents: []
+  startEvents: [constitutional-act-1791]
+  endEvents: [canada-union-1837]
   basis:
     type: primary_source
     refs: ["위키백과 Constitutional Act 1791", "위키백과 Newfoundland Colony"]
@@ -276,8 +276,8 @@
     - 1848년 책임 정부를 얻음
     - 1857년 오타와를 수도로 정함
     - 1867년 7월 1일 캐나다 연방을 이룸
-  startEvents: []
-  endEvents: []
+  startEvents: [canada-union-1837]
+  endEvents: [canadian-confederation-1864]
   basis:
     type: primary_source
     refs: ["위키백과 Province of Canada"]
@@ -300,8 +300,8 @@
     - 비오비오강을 사이에 두고 남쪽 마푸체 땅과 맞섬
     - 1810년 첫 정부 위원회, 1814년 스페인군이 다시 차지함
     - 1818년 독립 선언으로 끝남
-  startEvents: []
-  endEvents: []
+  startEvents: [bourbon-captaincies-1777]
+  endEvents: [argentina-chile-independence-1816]
   basis:
     type: primary_source
     refs: ["위키백과 Captaincy General of Chile", "칠레 독립 선언(1818)"]
@@ -322,7 +322,7 @@
     - 스페인·칠레와 회담을 열어 관계를 맺음
     - 1861~1883년 칠레의 아라우카니아 점령으로 끝남
   startEvents: []
-  endEvents: []
+  endEvents: [araucania-occupation-1861]
   basis:
     type: primary_source
     refs: ["킬린 회담(1641)", "위키백과 Parlamento de Quilín (1641)", "위키백과 Occupation of Araucanía"]
@@ -343,7 +343,7 @@
     - 1770년 영국 에그몬트 항 기지를 두고 위기를 겪음
     - 1811년 스페인이 섬을 떠남
   startEvents: []
-  endEvents: []
+  endEvents: [may-revolution-1810]
   basis:
     type: primary_source
     refs: ["위키백과 History of the Falkland Islands"]
@@ -367,7 +367,7 @@
     - 1810년 이달고 신부의 봉기로 독립 전쟁이 시작됨
     - 1819년 애덤스-오니스 조약으로 미국과 경계를 정함
   startEvents: []
-  endEvents: []
+  endEvents: [mexico-independence-1821]
   basis:
     type: primary_source
     refs: ["위키백과 Viceroyalty of New Spain", "위키백과 Provincias Internas", "위키백과 Adams–Onís Treaty"]
@@ -388,7 +388,7 @@
     - 캄페체는 해적을 막으려 성벽을 두른 항구 도시
     - 1821년 9월 15일 스페인에서 독립을 선언함
   startEvents: []
-  endEvents: []
+  endEvents: [mexico-independence-1821]
   basis:
     type: primary_source
     refs: ["위키백과 Captaincy General of Yucatan"]
@@ -408,8 +408,8 @@
     - 1836년 3월 2일 독립 선언, 4월 21일 샌재신토 전투
     - 샘 휴스턴이 두 번 대통령을 지냄
     - 1845년 12월 29일 미국의 28번째 주가 됨
-  startEvents: []
-  endEvents: []
+  startEvents: [texas-revolution-1835]
+  endEvents: [texas-revolution-1835]
   basis:
     type: primary_source
     refs: ["위키백과 Republic of Texas", "위키백과 Mexican Texas", "위키백과 Texas Revolution"]
@@ -432,8 +432,8 @@
     - 시몬 볼리바르가 대통령을 맡음
     - 1828~1829년 페루와 싸움
     - 1830년 베네수엘라·에콰도르가 갈라져 나감
-  startEvents: []
-  endEvents: []
+  startEvents: [boyaca-gran-colombia-1819]
+  endEvents: [gran-colombia-breakup-1828]
   basis:
     type: primary_source
     refs: ["위키백과 Gran Colombia", "콜롬비아 공화국 기본법(1819)", "쿠쿠타 헌법(1821)"]
@@ -455,7 +455,7 @@
     - 1802년 칙령으로 마이나스와 키호스가 페루 부왕령으로 넘어감
     - 1819년 보야카 전투로 사실상 끝남
   startEvents: []
-  endEvents: []
+  endEvents: [boyaca-gran-colombia-1819]
   basis:
     type: primary_source
     refs: ["위키백과 Viceroyalty of New Granada", "위키백과(스페인어) Comandancia general de Maynas"]
@@ -476,8 +476,8 @@
     - 1797년 트리니다드섬을 영국에 잃음
     - 1811년 7월 5일 독립 선언
     - 1819년 그란콜롬비아에 들어감
-  startEvents: []
-  endEvents: []
+  startEvents: [bourbon-captaincies-1777]
+  endEvents: [boyaca-gran-colombia-1819]
   basis:
     type: primary_source
     refs: ["위키백과 Captaincy General of Venezuela", "카를로스 3세 왕령(1777)"]
@@ -499,7 +499,7 @@
     - 1821년 호세 데 산마르틴의 페루 독립 선언
     - 1824년 아야쿠초 전투로 끝남
   startEvents: []
-  endEvents: []
+  endEvents: [peru-bolivia-independence-1821]
   basis:
     type: primary_source
     refs: ["위키백과 Viceroyalty of Peru", "위키백과(스페인어) Comandancia general de Maynas"]
@@ -522,7 +522,7 @@
     - 모스키토 해안과 벨리즈 정착지에는 지배가 닿지 않음
     - 1821년 9월 15일 독립 선언
   startEvents: []
-  endEvents: []
+  endEvents: [central-america-independence-1821]
   basis:
     type: primary_source
     refs: ["위키백과 Captaincy General of Guatemala", "중앙아메리카 독립 선언(1821)"]
@@ -542,8 +542,8 @@
     - 1823년 7월 1일 멕시코 제1제국에서 떨어져 독립 선언
     - 1824년 11월 22일 연방 헌법
     - 1838년부터 1840년까지 다섯 주가 차례로 떠나며 무너짐
-  startEvents: []
-  endEvents: []
+  startEvents: [central-america-independence-1821]
+  endEvents: [central-america-breakup-1838]
   basis:
     type: primary_source
     refs: ["위키백과 Federal Republic of Central America", "중앙아메리카 연방 헌법(1824)"]
@@ -565,7 +565,7 @@
     - 1860년 마나과 조약으로 니카라과 안 자치 보호구가 됨
     - 1894년 니카라과에 병합
   startEvents: []
-  endEvents: []
+  endEvents: [mosquito-reincorporation-1894]
   basis:
     type: primary_source
     refs: ["위키백과 Mosquito Coast", "위키백과 Treaty of Managua", "위키백과 Battle of St. George's Caye"]
@@ -588,7 +588,7 @@
     - 1868년부터 1878년까지 10년 전쟁, 1886년 노예제 폐지
     - 1895년 쿠바 독립 전쟁, 1898년 미국-스페인 전쟁
   startEvents: []
-  endEvents: []
+  endEvents: [cuban-independence-war-1895]
   basis:
     type: primary_source
     refs: ["위키백과 Captaincy General of Cuba", "위키백과 Treaty of Paris (1898)"]
@@ -610,7 +610,7 @@
     - 1809년 스페인 지배로 돌아감
     - 1821년 12월 1일 스페인령 아이티 독립 선포
   startEvents: []
-  endEvents: []
+  endEvents: [hispaniola-unification-1822]
   basis:
     type: primary_source
     refs: ["위키백과 Captaincy General of Santo Domingo", "위키백과 Era de Francia", "위키백과 Haitian occupation of Santo Domingo"]
@@ -631,7 +631,7 @@
     - 1791년 8월 노예 봉기로 아이티 혁명 시작
     - 1793년 노예제 폐지, 투생 루베르튀르가 섬을 이끎
   startEvents: []
-  endEvents: []
+  endEvents: [haiti-independence-1803]
   basis:
     type: primary_source
     refs: ["위키백과 Saint-Domingue", "위키백과 아이티 혁명"]
@@ -652,8 +652,8 @@
     - 1811년 3월 28일 앙리 1세 즉위로 왕국이 됨
     - 시타델 라페리에르 요새와 상수시궁을 지음
     - 1820년 10월 크리스토프가 죽고 남부에 합쳐짐
-  startEvents: []
-  endEvents: []
+  startEvents: [kingdom-of-haiti-1806]
+  endEvents: [kingdom-of-haiti-1806]
   basis:
     type: primary_source
     refs: ["위키백과 Kingdom of Haiti", "위키백과 State of Haiti"]
@@ -676,8 +676,8 @@
     - 1824·1825년 미국·영국과 경계 협약(북위 54°40′·서경 141°)
     - 1812년부터 1841년까지 캘리포니아의 로스 요새도 운영
     - 1867년 알래스카 매매로 미국에 넘어감
-  startEvents: []
-  endEvents: []
+  startEvents: [russian-america-1799]
+  endEvents: [alaska-purchase-1867]
   basis:
     type: primary_source
     refs: ["위키백과 Russian America", "위키백과 Alaska boundary dispute", "위키백과 러시아-아메리카 회사"]
@@ -697,8 +697,8 @@
     - 1849년 1월 13일 허드슨 베이 회사에 맡겨 세움
     - 1856년 이 지역 첫 의회
     - 1866년 브리티시컬럼비아 식민지와 합침
-  startEvents: []
-  endEvents: []
+  startEvents: [oregon-treaty-1846]
+  endEvents: [fraser-gold-rush-1858]
   basis:
     type: primary_source
     refs: ["위키백과 Colony of Vancouver Island", "위키백과 오리건 조약"]
@@ -719,8 +719,8 @@
     - 1863년 7월 28일 북위 60°·서경 120°까지 넓힘
     - 1866년 밴쿠버섬 식민지와 합침
     - 1871년 7월 20일 캐나다 합류
-  startEvents: []
-  endEvents: []
+  startEvents: [fraser-gold-rush-1858]
+  endEvents: [red-river-1869]
   basis:
     type: primary_source
     refs: ["위키백과 Colony of British Columbia (1858–1866)", "위키백과 Colony of Vancouver Island", "위키백과 Nass River", "위키백과 Finlay River"]
@@ -744,7 +744,7 @@
     - 1796~1802년·1803~1814년 영국군 점령
     - 1814년 런던 조약으로 영국에 넘어감
   startEvents: []
-  endEvents: []
+  endEvents: [british-guiana-1803]
   basis:
     type: primary_source
     refs: ["위키백과 British Guiana", "위키백과 Essequibo (colony)", "위키백과 Berbice"]
@@ -766,7 +766,7 @@
     - 1808~1821년 포르투갈 왕실이 리우데자네이루에 머묾
     - 1815년 포르투갈 브라질 알가르브 연합왕국
   startEvents: []
-  endEvents: []
+  endEvents: [brazil-independence-1822]
   basis:
     type: primary_source
     refs: ["위키백과 Colonial Brazil", "위키백과 United Kingdom of Portugal, Brazil and the Algarves", "산일데폰소 조약(1777)"]
