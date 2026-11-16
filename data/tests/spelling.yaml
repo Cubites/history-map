@@ -7662,3 +7662,274 @@
   scope: 아메리카·남아메리카
 
 # ── 아메리카 M1 LA-M1 (작은 앤틸리스 독립국, 2026-11-15) ──
+
+# ── 아메리카 M2 공통(2026-11-16, M2 뼈대): 공용 표기표 — 새 항목 이름·옛 이름·조약·도시·분쟁 지명을 외래어 표기법 → 표준국어대사전 → 위키백과 한국어판 표제(m2/skel/ko-titles.txt·ko-titles2.txt) 순으로 확인한 것 가운데 넘겨주기·흔한 잘못 꼴을 막는 것만(avoid 글자는 저장소 쓰임 0을 확인 — 표 전체는 m2/SKEL-NOTE.md 끝) ──
+
+- use: 어퍼캐나다
+  avoid: [어퍼 캐나다]
+  note: "Upper Canada(1791~1841 — upper-canada). 위키 ko 표제(M2 뼈대 확인, m2/skel/ko-titles.txt·ko-titles2.txt)('어퍼 캐나다'는 넘겨주기)"
+  scope: 아메리카·캐나다
+
+- use: 로어캐나다
+  avoid: [로어 캐나다]
+  note: "Lower Canada(1791~1841 — lower-canada). 위키 ko 표제(M2 뼈대 확인, m2/skel/ko-titles.txt·ko-titles2.txt)('로어 캐나다'는 넘겨주기)"
+  scope: 아메리카·캐나다
+
+- use: 캐나다주
+  avoid: [캐나다 연합주]
+  note: "Province of Canada(1841~1867 — province-of-canada). 위키 ko 표제(M2 뼈대 확인, m2/skel/ko-titles.txt·ko-titles2.txt)('캐나다 연합주'는 넘겨주기)"
+  scope: 아메리카·캐나다
+
+- use: 북서부 영토
+  avoid: [노스웨스턴 준주]
+  note: "North-Western Territory(1821~1870 — north-western-territory, 지금 노스웨스트 준주와 다름). 위키 ko 표제(M2 뼈대 확인, m2/skel/ko-titles.txt·ko-titles2.txt)('북서 준주'가 넘겨줌)"
+  scope: 아메리카·캐나다
+
+- use: 중앙아메리카 연방공화국
+  avoid: [중앙아메리카 연방 공화국]
+  note: "Federal Republic of Central America(1823~1839 — central-american-federation). 위키 ko 표제(M2 뼈대 확인, m2/skel/ko-titles.txt·ko-titles2.txt)"
+  scope: 아메리카·중앙아메리카
+
+- use: 생도맹그
+  avoid: [세인트도밍그, 생도밍그]
+  note: "Saint-Domingue(1697~1804 프랑스 식민지 — saint-domingue). 위키 ko 표제(M2 뼈대 확인, m2/skel/ko-titles.txt·ko-titles2.txt)"
+  scope: 아메리카·카리브
+
+- use: 러시아령 아메리카
+  avoid: [러시아령 알래스카]
+  note: "Russian America(1799~1867 — russian-america). 위키 ko 표제(M2 뼈대 확인, m2/skel/ko-titles.txt·ko-titles2.txt)('러시아령 알래스카'는 넘겨주기)"
+  scope: 아메리카·알래스카
+
+- use: 버비스
+  avoid: [베르비서]
+  note: "Berbice(기아나 해안 네덜란드 식민지·강 — dutch-essequibo-berbice). 위키 ko 표제(M2 뼈대 확인, m2/skel/ko-titles.txt·ko-titles2.txt)('버비스강' 표제, 저장소 british-guiana 글 '버비스' — 조사 가칭 '베르비서'를 고침)"
+  scope: 아메리카·기아나
+
+- use: 싯카
+  avoid: [시트카]
+  note: "Sitka(러시아령 아메리카 중심지 노보아르항겔스크). 위키 ko 표제(M2 뼈대 확인, m2/skel/ko-titles.txt·ko-titles2.txt)('시트카'는 표제 없음 — 지시문 가칭을 고침)"
+  scope: 아메리카·알래스카
+
+- use: 뉴에이서스강
+  avoid: [누에세스]
+  note: "Nueces River(텍사스 — 1836~1847 분쟁 띠 남쪽 끝). 위키 ko 표제(M2 뼈대 확인, m2/skel/ko-titles.txt·ko-titles2.txt)('누에세스강'이 넘겨줌 — 결정·지시문 가칭을 고침)"
+  scope: 아메리카·텍사스
+
+- use: 알타칼리포르니아
+  avoid: [알타캘리포니아]
+  note: "Alta California(누에바에스파냐·멕시코의 북서 땅). 위키 ko 표제(M2 뼈대 확인, m2/skel/ko-titles.txt·ko-titles2.txt) '알타칼리포르니아주'('알타캘리포니아'가 넘겨줌)"
+  scope: 아메리카·멕시코
+
+- use: 과달루페이달고 조약
+  avoid: [과달루페 이달고 조약]
+  note: "Treaty of Guadalupe Hidalgo(1848). 위키 ko 표제(M2 뼈대 확인, m2/skel/ko-titles.txt·ko-titles2.txt)('과달루페 이달고 조약'은 넘겨주기)"
+  scope: 아메리카·멕시코
+
+- use: 안콘 조약
+  avoid: [앙콘 조약]
+  note: "Treaty of Ancón(1883 칠레–페루). 저장소 peru 글 '안콘 조약'(기존 표기 우선 — 위키 ko 표제 없음, 지시문 가칭 '앙콘'을 고침)"
+  scope: 아메리카·남아메리카
+
+# ── 아메리카 M2 FL-M2 (플로리다·루이지애나, 2026-11-16) ──
+
+- use: 펜서콜라
+  avoid: [펜사콜라]
+  note: "Pensacola(서플로리다 중심). 공용 표기표(M2 뼈대 — 위키 ko 표제)"
+  scope: 아메리카·북아메리카 식민지
+
+- use: 배턴루지
+  avoid: [바톤루지, 배턴 루지]
+  note: "Baton Rouge. 공용 표기표(M2 뼈대 — 위키 ko 표제)"
+  scope: 아메리카·북아메리카 식민지
+
+- use: 세인트오거스틴
+  avoid: [세인트어거스틴, 세인트 오거스틴]
+  note: "St. Augustine(동플로리다 중심). 공용 표기표(M2 뼈대 — 위키 ko 표제)"
+  scope: 아메리카·북아메리카 식민지
+
+- use: 나체즈
+  avoid: [내치즈]
+  note: "Natchez. 공용 표기표(M2 뼈대 — 위키 ko 표제)"
+  scope: 아메리카·북아메리카 식민지
+
+# ── 아메리카 M2 BNA-W-M2 (캐나다 서쪽·허드슨만, 2026-11-16) ──
+
+- use: 아시니보인
+  avoid: [어시니보인]
+  note: "Assiniboine(북아메리카 대평원 원주민 — ruperts-land 글). 위키 ko 표제 '아시니보인족'('어시니보인족'이 넘겨줌, BNA-W-M2 확인 m2/impl-bna-w-m2/tools/ko-titles.txt). 어시니보인 저장소 쓰임 0"
+  scope: 아메리카·캐나다
+
+# ── 아메리카 M2 SC-E-M2 (라플라타, 2026-11-16) ──
+
+# ── 아메리카 M2 US-M2 (미국, 2026-11-16) ──
+
+# ── 아메리카 M2 BNA-E-M2 (캐나다 동쪽, 2026-11-16) ──
+
+- use: 프레더릭턴
+  avoid: [프레데릭턴, 프레데릭톤]
+  note: "Fredericton(뉴브런즈윅 수도 — new-brunswick 글). 위키 ko 표제(BNA-E-M2 확인 m2/impl-bna-e-m2/tools/ko-titles.txt). avoid 글자 저장소 쓰임 0"
+  scope: 아메리카·캐나다
+
+- use: 케이프브레턴
+  avoid: [케이프 브레턴, 케이프브레튼]
+  note: "Cape Breton(nova-scotia 글). 위키 ko 표제 '케이프브레턴섬'(BNA-E-M2 확인 m2/impl-bna-e-m2/tools/ko-titles.txt). avoid 글자 저장소 쓰임 0"
+  scope: 아메리카·캐나다
+
+# ── 아메리카 M2 SC-W-M2 (칠레·마푸체·포클랜드, 2026-11-16) ──
+
+- use: 칠레 총사령부
+  avoid: [칠레 총독령]
+  note: "Captaincy General of Chile(chile-captaincy-general, 1789~1817 칠함). 위키 ko 표제 없음 — 공용 표기표 가칭(M2 뼈대 skel/ko-titles.txt)"
+  scope: 아메리카·칠레
+
+- use: 스페인령 포클랜드 제도
+  avoid: [에스파냐령 포클랜드 제도]
+  note: "Spanish Falkland Islands(spanish-falkland-islands, 1767~1810). 위키 ko 표제 없음 — 공용 표기표 가칭, 저장소 '스페인' 표기"
+  scope: 아메리카·남대서양
+
+- use: 칠로에섬
+  avoid: [치로에섬]
+  note: "Chiloé Island(칠레 로스라고스주). 위키 ko 표제(m2/impl-sc-w-m2/ko-titles.txt)"
+  scope: 아메리카·칠레
+
+- use: 마가야네스
+  avoid: [마갈라네스]
+  note: "Magallanes(칠레 남쪽 끝 마젤란 해협 둘레). 위키 ko 표제(m2/impl-sc-w-m2/ko-titles.txt — '마가야네스주'는 '마가야네스이데라안타르티카칠레나주'로 넘겨줌)"
+  scope: 아메리카·칠레
+
+- use: 푸에르토솔레다드
+  avoid: [푸에르토 솔레다드]
+  note: "Puerto Soledad(포클랜드 동쪽 섬의 스페인 정착지, 옛 프랑스 생루이). 위키 ko 표제 없음 — 붙여 씀(스페인어 지명 붙여 쓰기)"
+  scope: 아메리카·남대서양
+
+# ── 아메리카 M2 MX-M2 (멕시코·텍사스·미국 서남, 2026-11-16) ──
+
+- use: 샌재신토 전투
+  avoid: [산하신토 전투]
+  note: "Battle of San Jacinto(1836 텍사스 혁명). 위키 ko 표제(MX-M2 확인 — '산하신토 전투'가 넘겨줌)"
+  scope: 아메리카·텍사스
+
+- use: 콜로라도고원
+  avoid: [콜로라도 고원]
+  note: "Colorado Plateau. 위키 ko 표제(MX-M2 확인 — '콜로라도 고원'이 넘겨줌)"
+  scope: 아메리카·북아메리카
+
+# ── 아메리카 M2 AND-N-M2 (그란콜롬비아·안데스, 2026-11-16) ──
+
+- use: 누에바그라나다 부왕령
+  avoid: [뉴그라나다 부왕령, 누에바 그라나다 부왕령]
+  note: "Viceroyalty of New Granada(new-granada-viceroyalty, 1717~1819). 위키 ko 표제(m2/skel/ko-titles.txt — 공용 표기표), 표제 '누에바그라나다 공화국'과 같은 붙여 쓰기"
+  scope: 아메리카·남아메리카
+
+- use: 투팍 아마루 2세
+  avoid: [투파크 아마루]
+  note: "Túpac Amaru II(1780~1783 페루 부왕령 봉기). 위키 ko 표제(AND-N-M2 확인, m2/impl-and-n-m2/kot-out.txt)"
+  scope: 아메리카·남아메리카
+
+# ── 아메리카 M2 CAM-M2 (중앙아메리카, 2026-11-16) ──
+
+- use: 과테말라 총사령부
+  avoid: [과테말라 총독령]
+  note: "Captaincy General of Guatemala(guatemala-captaincy, 1776~1821 칠함). 위키 ko 표제 없음 — 공용 표기표 가칭(M2 뼈대 skel/ko-titles.txt)"
+  scope: 아메리카·중앙아메리카
+
+- use: 로스알토스
+  avoid: [로스 알토스]
+  note: "Los Altos(과테말라 서부, 1838~1840 따로 선 주). 위키 ko 표제(m2/impl-cam-m2/ko-titles-cam.txt)"
+  scope: 아메리카·중앙아메리카
+
+- use: 블루필즈
+  avoid: [블루필드]
+  note: "Bluefields(니카라과 카리브 해안, 모스키토 왕국·보호구 중심지). 위키 ko 표제(m2/impl-cam-m2/ko-titles-cam.txt)"
+  scope: 아메리카·중앙아메리카
+
+- use: 그라시아스아디오스주
+  avoid: [그라시아스 아 디오스]
+  note: "Gracias a Dios(온두라스 동쪽 모스키티아, 1860 온두라스). 위키 ko 표제(m2/impl-cam-m2/ko-titles-cam.txt)"
+  scope: 아메리카·중앙아메리카
+
+# ── 아메리카 M2 CAR-M2 (카리브, 2026-11-16) ──
+
+- use: 쿠바 총사령부
+  avoid: [쿠바 총독령]
+  note: "Captaincy General of Cuba(cuba-captaincy-general, 1776~1898 칠함). 위키 ko 표제 없음 — 공용 표기표 가칭(M2 뼈대 skel/ko-titles.txt, m2/impl-car-m2/kot-out.txt)"
+  scope: 아메리카·카리브
+
+- use: 산토도밍고 총사령부
+  avoid: [산토도밍고 총독령]
+  note: "Captaincy General of Santo Domingo(santo-domingo-captaincy, 1776~1821 칠함). 위키 ko 표제 없음 — 공용 표기표 가칭(m2/impl-car-m2/kot-out.txt)"
+  scope: 아메리카·카리브
+
+- use: 아이티 북부 왕국
+  avoid: [아이티 왕국]
+  note: "Kingdom of Haiti(1807 북부 아이티국·1811 왕국 — kingdom-of-haiti). 위키 ko 표제 없음 — 공용 표기표 가칭(m2/impl-car-m2/kot-out.txt)"
+  scope: 아메리카·카리브
+
+- use: 알렉상드르 페티옹
+  avoid: [알렉상드르 페시옹]
+  note: "Alexandre Pétion(아이티 남부 공화국 대통령 1807~1818). 위키 ko 표제('알렉상드르 페시옹'이 넘겨줌 — m2/impl-car-m2/kot-out.txt)"
+  scope: 아메리카·카리브
+
+- use: 장피에르 부아예
+  avoid: [장피에르 보예르]
+  note: "Jean-Pierre Boyer(아이티 대통령 1818~1843, 1820 남북 통일·1822 섬 동쪽 차지). 위키 ko 표제(m2/impl-car-m2/kot-out.txt)"
+  scope: 아메리카·카리브
+
+- use: 상수시궁
+  avoid: [상수시 궁전]
+  note: "Sans-Souci Palace(아이티 북부 왕국 궁전 — 포츠담 상수시 궁전과 구별하지 않고 표제 꼴로). 위키 ko 표제('상수시 궁전'이 넘겨줌 — m2/impl-car-m2/kot-out.txt)"
+  scope: 아메리카·카리브
+
+# ── 아메리카 M2 NW-M2 (알래스카·추코트카·그린란드·브리티시컬럼비아, 2026-11-16) ──
+
+- use: 러시아-아메리카 회사
+  avoid: [러시아·아메리카 회사]
+  note: "Russian-American Company(1799~1881 — russian-america 글). 위키 ko 표제(NW-M2 확인 m2/impl-nw-m2/ko-titles.txt — 가운뎃점 꼴은 표제 없음). 가운뎃점 꼴 저장소 쓰임 0(뼈대 자리 글을 고침)"
+  scope: 아메리카·알래스카
+
+- use: 틀링깃족
+  avoid: [틀링잇족]
+  note: "Tlingit(알래스카 남동부 원주민 — russian-america 글). 위키 ko 표제(NW-M2 확인 m2/impl-nw-m2/ko-titles.txt). 틀링잇 저장소 쓰임 0"
+  scope: 아메리카·알래스카
+
+- use: 로스 요새
+  avoid: [포트 로스]
+  note: "Fort Ross(캘리포니아의 러시아 교역소 1812~1841 — russian-america 글). 위키 ko 표제('포트 로스'가 넘겨줌, NW-M2 확인 m2/impl-nw-m2/ko-titles.txt). '포트 로스' 저장소 쓰임 0"
+  scope: 아메리카·캘리포니아
+
+# ── 아메리카 M2 BRG-M2 (브라질·기아나, 2026-11-16) ──
+
+- use: 포르투갈령 브라질
+  avoid: [포르투갈령브라질]
+  note: "Colonial Brazil(portuguese-brazil, 1549~1822). 공용 표기표 가칭(위키 ko '포르투갈령 브라질'은 '포르투갈 브라질 알가르브 연합왕국'으로 넘겨줌, 식민지 표제는 '브라질 식민지')"
+  scope: 아메리카·남아메리카
+
+- use: 네덜란드령 에세키보·버비스
+  avoid: [에세퀴보]
+  note: "Essequibo and Berbice(dutch-essequibo-berbice, ~1814). 공용 표기표(위키 ko 표제 '에세키보강'·'버비스강')"
+  scope: 아메리카·남아메리카
+
+- use: 사우바도르
+  avoid: [살바도르데바이아]
+  note: "Salvador(브라질 바이아주, 1549~1763 포르투갈령 브라질 총독 자리). 위키 ko 표제(BRG-M2 확인, m2/impl-brg-m2/ko-titles.txt)"
+  scope: 아메리카·남아메리카
+
+- use: 아라과리강
+  avoid: [아라구아리강]
+  note: "Rio Araguari(아마파, 1841~1899 브라질·프랑스 중립 지대 남쪽 끝). 위키 ko 표제 없음 — 가칭(포르투갈어 소리, BRG-M2)"
+  scope: 아메리카·남아메리카
+
+- use: 시스플라티나주
+  avoid: [시스플라틴주]
+  note: "Província Cisplatina(지금 우루과이, 1821~1828 포르투갈령 브라질·브라질 제국). 공용 표기표 가칭(위키 ko 표제 없음)"
+  scope: 아메리카·남아메리카
+
+- use: 주앙 6세
+  avoid: [조앙 6세, 후앙 6세]
+  note: "João VI(포르투갈 왕, 1808~1821 리우데자네이루 궁정). 위키 ko 표제(BRG-M2 확인, m2/impl-brg-m2/ko-titles.txt)"
+  scope: 아메리카·남아메리카
+
+- use: 그랑파라
+  avoid: [그랑 파라]
+  note: "Grão-Pará(포르투갈령 브라질 북쪽 주, 1775 합침). 위키 ko 표제 없음 — 가칭(BRG-M2)"
+  scope: 아메리카·남아메리카

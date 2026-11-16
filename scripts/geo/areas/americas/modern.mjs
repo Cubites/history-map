@@ -16,12 +16,12 @@
 // 해 규칙: 한 버전 = 그해 말 모습. 원정·되돌려진 점령은 칠하지 않음(점령은 관계 occupied_by usa만 — G14). 새 버전은 1만 km² 넘게 바뀔 때만.
 //   이름만 바뀌는 해(영국령 온두라스→벨리즈 1973·수리남 1954 왕국 구성국·그린란드 1953·1979·2009 등)는 새 버전이 아니다 — 항목 글로(P7).
 // 1900 앞 버전 없음: 이 시대 파일이 이 권역의 첫 국경 단계라 첫 해는 M1_START(1900, 1900년 말 모습 — G9)다. 1900 앞에 성립한 나라도 첫 버전은 1900부터이고(M2가 같은 id로 앞을 이음),
-//   1900 뒤 성립이면 그 해(쿠바 1902·파나마 1903·트리니다드 토바고 1962·가이아나 1966 등). 1899 이하 이 권역 땅은 usa 손그림(권역 파일)과 russia 1898~1899(아래 늘림) 말고 빈 것이 정상(빈 땅 검사 구역도 1900부터만).
+//   1900 뒤 성립이면 그 해(쿠바 1902·파나마 1903·트리니다드 토바고 1962·가이아나 1966 등). 1899 이하 이 권역 땅은 M2 시대 파일 independence.mjs 몫(이 파일은 russia 1898~1899 늘림만 — 아래, 이 파일의 빈 땅 검사 구역은 1900부터만).
 // 결정 점프(P1): 1902 cuba·1903 colombia→panama(PA-*)와 bolivia→brazil(BR-AC)·1909 볼리비아–페루 띠→peru·1918 russia→soviet-union·1929 chile→peru(PE-TAC)·1933 greenland 섬 전체·
 //   1938 차코→paraguay·1942 에콰도르–페루 교환 둘·1949 newfoundland→canada·1966 british-guiana→guyana·1975 dutch-suriname→suriname·1992 soviet-union→russia-fed. 그 밖에 1만 km² 넘게 바뀌면 칸 결과 노트 2절에 까닭.
-// usa(미국): 항목은 data/entities/americas-modern.yaml US-M1 머리(west.yaml에서 글자 그대로 옮김 — 0단계 기본값 4). 1848~1899 손그림은 권역 파일 americas.mjs(고리는 도우미 usa-hand.mjs),
-//   1900~는 이 파일 US-M1 머리(지금은 손그림과 같은 모양의 임시 줄 — US-M1이 조각 바탕 새 도형으로 바꿈). 1899 손그림 대 1900 조각 도형 점프는 M2가 손그림을 없앨 때까지 둠(G8).
-// 늘림 나라(권역 파일 EXTENDABLE — 0단계 창구 ② 결정 3·G6): 유럽 항목 russia [1898, 1918)·soviet-union [1918, 1992)·russia-fed [1992, null). 땅은 추코트카 RU-CHU(US-M1 own 줄)와 180° 틈 띠(US-M1 손 도형).
+// usa(미국): 항목은 data/entities/americas-modern.yaml US-M1 머리(west.yaml에서 글자 그대로 옮김 — 0단계 기본값 4). 1776~1899는 M2 시대 파일 independence.mjs(조각 바탕 — 옛 손그림은 M2 US-M2가 지움),
+//   1900~는 이 파일 US-M1 머리(조각 바탕). 1899 = 1900 모양으로 이어짐(G8 점프 닫힘).
+// 늘림 나라(권역 파일 EXTENDABLE — 0단계 창구 ② 결정 3·G6): 유럽 항목 russia [1778, 1918)(1778~1897은 M2 independence.mjs, 이 파일은 1898부터)·soviet-union [1918, 1992)·russia-fed [1992, null). 땅은 추코트카 RU-CHU(US-M1 own 줄)와 180° 틈 띠(US-M1 손 도형).
 //   russia 1898~1899는 표 첫 해 앞이라 extra(…, { units: ['RU-CHU'] })로 더한다(M1_EARLY — 1900~ 표 줄과 같은 단위면 한 버전으로 이어져 유럽 1898~1905 버전이 1900에서 갈리지 않음). 다른 앞 권역 나라(uk·denmark·france·netherlands)는 주인으로 쓰지 않는다 — 관계로만(P2).
 // 손 도형 둘(조각 밖 — 0단계 기본값 1·6, COMMON 10절 '날짜변경선'): 알류샨 동경 쪽 상자 [172, 51, 180, 54] ∩ 육지(약 2,039 km² → usa)·러시아 손 도형 동변 179.90°~180° 틈 띠(약 3,000 km² → 러시아 계열).
 //   US-M1이 cuts-m1.mjs 자기 머리에 US_… 이름으로 두고 이 파일 자기 머리에서 extra(id, from, to, { shape, name })로 더한다(조각 줄 단위와 합집합 — 아래 '표 밖 땅').
@@ -37,8 +37,8 @@
 // 주인 줄: own(단위 목록, [[해, 나라 id|null], ...]) — 첫 해는 M1_START(1900)부터, 해는 늘어난다(첫 해가 늦으면 생성기가 '표 첫 해의 주인이 없음'으로 멈춤).
 //   예: own(idsOf('CAN'), [[M1_START, 'canada']]) · own(['PY-15', 'PY-16', 'PY-19'], [[M1_START, null], [1938, 'paraguay']]). 줄을 적지 않은 단위는 fillTables가 시대 내내 주인 null로 채운다.
 //   주인 null은 '이 권역 나라가 칠하지 않는 땅'이다: 일부러 비운 땅(칸 voids에 한 줄과 이유 — 쿠바 1900~1901·그린란드 동·북 1900~1932·차코 1900~1937·볼리비아–페루 띠 1900~1908·속령 섬·작은 앤틸리스 독립 앞)만.
-// 시대 경계 맞물림: 앞 시대 파일이 없다(M2가 생기면 그 끝 해 = M1_START). 권역 파일 usa 손그림은 1900에서 끝나고 이 파일 usa는 1900부터(아래 확인 줄). 끝까지 이어지는 버전은 to: null(PRESENT 2026년 말 모습 = 2027년 모습).
-// 출처 문구: 이 시대 파일은 era.source를 두지 않는다 — 권역 파일 americas.mjs의 sourceOf가 이 권역 나라 모두에 table.mjs AM_SOURCE_TEXT를 붙인다(usa만 손그림 때 문구 그대로 — 출처 문구가 하나여야 이어 붙임: joinEras).
+// 시대 경계 맞물림: 앞 시대 파일은 M2 independence.mjs(끝 해 M2_END = M1_START). M2 usa는 1899에서 끝나고 이 파일 usa는 1900부터(아래 확인 줄). 끝까지 이어지는 버전은 to: null(PRESENT 2026년 말 모습 = 2027년 모습).
+// 출처 문구: 이 시대 파일은 era.source를 두지 않는다 — 권역 파일 americas.mjs의 sourceOf가 이 권역 나라 모두에 table.mjs AM_SOURCE_TEXT를 붙인다(usa도 같은 문구 — 1776~1899는 M2 independence.mjs).
 // 이름·확실성: 근거가 약한 경계는 estimated(기본값). 이름은 data/tests/spelling.yaml(아메리카 첫판·M1 공통·M1 칸 머리)을 먼저 본다.
 //
 // 가져오기: 아래 줄들은 공통이다. 각 칸이 더 가져올 것은 자기 칸 머리에 import 줄을 따로 둔다(import는 모듈 맨 위로 끌어올려지므로 칸 안에 두어도 된다)
@@ -48,7 +48,7 @@ import { M1_NA_IDS, M1_US_IDS, M1_CAM_IDS, M1_SAN_IDS, M1_SC_IDS, M1_LA_IDS } fr
 
 const { build, geomOfUnit, joinTables, makeTable } = tableKit('modern');
 
-const M1_START = 1900; // 이 시대 파일의 첫 해(1900년 말 모습). 그 앞(1899 이하)은 M2 시대 파일 몫(usa 손그림은 권역 파일)
+const M1_START = 1900; // 이 시대 파일의 첫 해(1900년 말 모습). 그 앞(1899 이하)은 M2 시대 파일 independence.mjs 몫
 const PRESENT = 2026; // 지금 해. 표는 PRESENT년 말까지 정하고, 끝까지 이어지는 버전은 to: null(지금까지)
 const M1_END = PRESENT + 1; // 마지막 표의 끝(미포함)
 
@@ -101,7 +101,7 @@ const B = (from, to, ...units) => [from, to, build(units)];
 //   - units: 조각 id·나눈 부분 이름 목록. 표 첫 해(M1_START) 앞은 M1_EARLY의 나라만(G6 — russia 1898~1899 RU-CHU). 표 줄과 같은 단위 목록이 이어지면 한 버전이 된다
 //   - shape·name: 조각 밖 손 도형(멀티폴리곤 — 바다 쪽은 빌드가 육지와 교차)과 그 이름(칸 앞머리로 — 예 'US_ALEUTIAN_E'). 같은 이름은 같은 도형이어야 한다
 //   버전 = 그해 표 줄의 단위 ∪ 더하는 단위 ∪ 손 도형(손 도형 하나뿐이면 그 도형 그대로). 버전은 표 줄·더하는 땅의 기간 경계에서 나뉘고 같은 모양이 이어지면 한 버전이다
-const M1_EARLY = { russia: 1898 }; // 표 첫 해 앞을 쓸 수 있는 나라와 그 첫 해(권역 파일 EXTENDABLE russia 첫 해와 같음 — 1900을 걸치는 유럽 russia 1898~1905 버전)
+const M1_EARLY = { russia: 1898 }; // 표 첫 해 앞을 쓸 수 있는 나라와 그 첫 해(1900을 걸치는 유럽 russia 1898~1905 버전 — 권역 파일 EXTENDABLE russia 첫 해는 M2가 1778로 넓힘, 1778~1897은 independence.mjs)
 const extras = [];
 const extraShapes = new Map(); // 손 도형 이름 → 도형
 const extra = (id, from, to, { units = [], shape = null, name = null } = {}) => {
@@ -154,8 +154,8 @@ const NA_voids = () => [
 // ── M1 US-M1 미국·추코트카 (최상위 이름 US_) ──
 // 조각 M1_US_IDS(미국 50 — 하와이 없음, 워싱턴 D.C. 포함·러시아 RU-CHU 1 = 51) + 손 도형 둘(알류샨 동경 쪽·180° 틈 띠 — 짜임 안내), 구현 US-M1
 // 항목: 새 항목 없음 — usa(옮긴 블록, 1900~ 조각 바탕 새 도형)·유럽 russia·soviet-union·russia-fed(늘림 — RU-CHU 1898~, own 줄 [[M1_START, 'russia'], [1918, 'soviet-union'], [1992, 'russia-fed']] 꼴, 1898~1899는 extra)
-// usa 1900 첫 모양: 조각 50 + 알류샨 동경 쪽(G12 — 알래스카 경계 1900부터 지금 선). 1899 손그림 대 1900 조각 도형 점프는 G8(M2가 손그림을 없앨 때까지 둠)
-const US_BOUNDS = []; // 처음 값: 이 칸 안 앞 권역 도형이 바뀌는 해 없음(손그림 usa는 1899에서 끝남 — 권역 파일)
+// usa 1900 첫 모양: 조각 50 + 알류샨 동경 쪽(G12 — 알래스카 경계 1900부터 지금 선). 1899 = 1900 모양(M2 US-M2가 손그림을 없애 G8 점프 닫힘)
+const US_BOUNDS = []; // 처음 값: 이 칸 안 앞 권역 도형이 바뀌는 해 없음(M2 usa는 1899에서 끝남 — independence.mjs)
 const US_voids = () => [
   B(M1_START, null, US_RUCHU.서경밖), // 조각 RU-CHU의 서경 180° 서쪽 띠(폭 약 10 m) — 경위도 범위 밖 꼭짓점이라 칠하지 않음(합치기)
 ];
@@ -399,12 +399,12 @@ const versionsOf = (id, segs) => {
 };
 const versionIds = [...new Set([...Object.keys(joined.segments), ...extras.map((e) => e.id)])];
 const versions = Object.fromEntries(versionIds.map((id) => [id, versionsOf(id, joined.segments[id] ?? [])]).filter(([, list]) => list.length));
-// 시대 경계 검사(버전이 있을 때만): 모든 버전이 M1_START(M1_EARLY 나라는 그 해) 이상에서 시작, usa는 권역 파일 손그림(1848~1899)의 끝 해 1900에서 바로 이어짐
+// 시대 경계 검사(버전이 있을 때만): 모든 버전이 M1_START(M1_EARLY 나라는 그 해) 이상에서 시작, usa는 M2 independence.mjs usa(1776~1899)의 끝 해 1900에서 바로 이어짐
 for (const [id, list] of Object.entries(versions)) {
   const first = M1_EARLY[id] ?? M1_START;
   if (list.some(([f]) => f < first)) throw new Error(`americas modern: ${id} 버전이 ${first} 앞에서 시작함`);
 }
-if (versions.usa && versions.usa[0][0] !== M1_START) throw new Error(`americas modern: usa 첫 버전 ${versions.usa[0][0]} — 권역 파일 손그림이 ${M1_START}에서 끝나므로 ${M1_START}부터 이어야 함`);
+if (versions.usa && versions.usa[0][0] !== M1_START) throw new Error(`americas modern: usa 첫 버전 ${versions.usa[0][0]} — M2 independence.mjs의 usa가 ${M1_START - 1}에서 끝나므로 ${M1_START}부터 이어야 함`);
 
 // 일부러 비운 땅(생성기의 구멍 메우기가 이웃으로 채우지 않게). 칸마다 자기 voids 함수에(이유는 줄 주석)
 const voids = [...NA_voids(), ...US_voids(), ...CAM_voids(), ...SAN_voids(), ...SC_voids(), ...LA_voids()];

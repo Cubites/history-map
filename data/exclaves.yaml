@@ -6457,3 +6457,104 @@
 # ── 아메리카 M1 SC-M1 (안데스 중부·남콘·브라질, 2026-11-15) ──
 
 # ── 아메리카 M1 LA-M1 (작은 앤틸리스 독립국, 2026-11-15) ──
+
+# ── 아메리카 M2 FL-M2 (플로리다·루이지애나, 2026-11-16) ──
+
+- entity: usa
+  from: 1813
+  to: 1821
+  at: [-87.48, 30.32]
+  reason: '퍼디도강 어귀 서쪽 앨라배마 몫 모래섬(퍼디도 키 서쪽 끝 둘레, 약 10km²). 1813년 모빌 지구(퍼디도강 서쪽)와 함께 미국 땅이 되었고, 강 동쪽 플로리다가 1821년까지 스페인령이라 본토와 바다·스페인령 땅을 사이에 두고 떨어짐'
+  sources: ["https://en.wikipedia.org/wiki/West_Florida"]
+
+# ── 아메리카 M2 BNA-W-M2 (캐나다 서쪽·허드슨만, 2026-11-16) ──
+
+# ── 아메리카 M2 SC-E-M2 (라플라타, 2026-11-16) ──
+
+# ── 아메리카 M2 US-M2 (미국, 2026-11-16) ──
+
+# ── 아메리카 M2 BNA-E-M2 (캐나다 동쪽, 2026-11-16) ──
+
+- entity: lower-canada
+  from: 1791
+  to: 1841
+  at: [-71.97, 45.75]
+  reason: 세인트로렌스강 남쪽 기슭(이스턴타운십·보스·리슐리외강 둘레, 약 8.7만 km²)은 세인트로렌스강이 북쪽 기슭(수도 퀘벡·몬트리올 쪽)과 가르고, 강 상류 쪽에서는 어퍼캐나다 땅으로만 이어져 따로 떨어진 조각으로 잡힘 — 강을 건너 한 식민지로 다스렸음(칼선 탓 부스러기 아님)
+  sources: ["위키백과 Lower Canada https://en.wikipedia.org/wiki/Lower_Canada", "위키백과 Constitutional Act 1791 https://en.wikipedia.org/wiki/Constitutional_Act_1791"]
+
+# ── 아메리카 M2 SC-W-M2 (칠레·마푸체·포클랜드, 2026-11-16) ──
+
+- entity: peru-viceroyalty
+  from: 1776
+  to: 1789
+  at: [-72.87, -40.59]
+  reason: 발디비아·로스라고스·칠로에섬(지금 로스리오스·로스라고스주, 지도 조각 약 5.5만 km² — 1881년부터 아이센·마가야네스와 이어져 약 21만 km²)은 스페인이 바다로 이어 지킨 요새 땅으로, 그 사이 비오비오강 남쪽(1870년부터 말레코강 남쪽) 아라우카니아가 1883년까지 마푸체 땅이라 산티아고 쪽 본토와 떨어져 있다(사료상 떨어진 땅 — 행정구역 탓 부스러기 아님)
+  sources: ["위키백과 Arauco War https://en.wikipedia.org/wiki/Arauco_War", "위키백과 Occupation of Araucanía https://en.wikipedia.org/wiki/Occupation_of_Araucan%C3%ADa"]
+
+- entity: peru-viceroyalty
+  from: 1776
+  to: 1789
+  at: [-69.63, -26.49]
+  reason: 지금 칠레 중부와 남위 24° 남쪽 아타카마(1789년 칠레 총사령부로 떨어지기 앞까지 페루 부왕령 관할)는 그 북쪽 남위 24° 북쪽 아타카마 해안이 1776년부터 1809년까지 포토시 관할로 리오데라플라타 부왕령 땅이고 알토페루도 리오데라플라타 부왕령이라 리마 쪽 본토와 땅으로 이어지지 않는다(사료상 떨어진 땅 — 행정구역 탓 부스러기 아님, 합치기가 AND-N-M2 페루 본토와 합친 뒤 보여 넣음)
+  sources: ["위키백과 Captaincy General of Chile https://en.wikipedia.org/wiki/Captaincy_General_of_Chile", "위키백과 Viceroyalty of the Río de la Plata https://en.wikipedia.org/wiki/Viceroyalty_of_the_R%C3%ADo_de_la_Plata"]
+
+- entity: chile-captaincy-general
+  from: 1789
+  to: 1818
+  at: [-72.87, -40.59]
+  reason: 발디비아·로스라고스·칠로에섬(지금 로스리오스·로스라고스주, 지도 조각 약 5.5만 km² — 1881년부터 아이센·마가야네스와 이어져 약 21만 km²)은 스페인이 바다로 이어 지킨 요새 땅으로, 그 사이 비오비오강 남쪽(1870년부터 말레코강 남쪽) 아라우카니아가 1883년까지 마푸체 땅이라 산티아고 쪽 본토와 떨어져 있다(사료상 떨어진 땅 — 행정구역 탓 부스러기 아님)
+  sources: ["위키백과 Arauco War https://en.wikipedia.org/wiki/Arauco_War", "위키백과 Occupation of Araucanía https://en.wikipedia.org/wiki/Occupation_of_Araucan%C3%ADa"]
+
+- entity: chile
+  from: 1818
+  to: 1883
+  at: [-72.87, -40.59]
+  reason: 발디비아·로스라고스·칠로에섬(지금 로스리오스·로스라고스주, 지도 조각 약 5.5만 km² — 1881년부터 아이센·마가야네스와 이어져 약 21만 km²)은 스페인·칠레가 바다로 이어 지킨 요새 땅으로, 그 사이 비오비오강 남쪽(1870년부터 말레코강 남쪽) 아라우카니아가 1883년까지 마푸체 땅이라 산티아고 쪽 본토와 떨어져 있다(사료상 떨어진 땅 — 행정구역 탓 부스러기 아님)
+  sources: ["위키백과 Arauco War https://en.wikipedia.org/wiki/Arauco_War", "위키백과 Occupation of Araucanía https://en.wikipedia.org/wiki/Occupation_of_Araucan%C3%ADa"]
+
+- entity: chile
+  from: 1843
+  to: 1881
+  at: [-71.05, -52.43]
+  reason: 마가야네스(마젤란 해협 둘레, 지도 조각 약 6.7만 km²)는 1843년 불네스 요새로 칠레가 차지했으나 그 북쪽 아이센이 1881년 국경 조약 앞까지 원주민 땅이라 비어 본토와 떨어져 있다(사료상 떨어진 땅 — 행정구역 탓 부스러기 아님)
+  sources: ["위키백과 Fuerte Bulnes https://en.wikipedia.org/wiki/Fuerte_Bulnes", "위키백과 Boundary treaty of 1881 between Chile and Argentina https://en.wikipedia.org/wiki/Boundary_treaty_of_1881_between_Chile_and_Argentina"]
+
+# ── 아메리카 M2 MX-M2 (멕시코·텍사스·미국 서남, 2026-11-16) ──
+
+- entity: guatemala-captaincy
+  from: 1776
+  to: 1822
+  at: [-94.08, 16.07]
+  reason: '치아파스 태평양 기슭 석호(마르무에르토 둘레)의 모래톱(약 42km²). 지금 치아파스주 조각 자료 그대로 석호를 사이에 두고 본토와 떨어짐 — 1822년 멕시코에 들기 전까지 치아파스는 과테말라 총사령부 땅'
+  sources: ["https://en.wikipedia.org/wiki/Chiapas"]
+
+# ── 아메리카 M2 AND-N-M2 (그란콜롬비아·안데스, 2026-11-16) ──
+
+# ── 아메리카 M2 CAM-M2 (중앙아메리카, 2026-11-16) ──
+
+# ── 아메리카 M2 CAR-M2 (카리브, 2026-11-16) ──
+
+# ── 아메리카 M2 NW-M2 (알래스카·추코트카·그린란드·브리티시컬럼비아, 2026-11-16) ──
+
+- entity: north-western-territory
+  from: 1821
+  to: 1858
+  at: [-130.31, 54.9]
+  reason: 퍼스 운하·포틀랜드 인렛 사이 피어스섬 둘레(약 212 km²) — 본토와 물길로 떨어진 섬인데 50m 땅 자름이 퍼스 운하를 메워 알래스카 쪽 땅덩이에 붙은 조각으로 잡힘(1900~ canada 줄과 같은 까닭, 1903년 판정 앞 허드슨 베이 회사 독점 허가 땅 — 행정구역 탓 부스러기 아님)
+  sources: ["위키백과 Alaska boundary dispute https://en.wikipedia.org/wiki/Alaska_boundary_dispute", "위키백과 Pearse Island https://en.wikipedia.org/wiki/Pearse_Island"]
+
+- entity: british-columbia
+  from: 1858
+  to: 1871
+  at: [-130.31, 54.9]
+  reason: 퍼스 운하·포틀랜드 인렛 사이 피어스섬 둘레(약 212 km²) — 본토와 물길로 떨어진 섬인데 50m 땅 자름이 퍼스 운하를 메워 알래스카 쪽 땅덩이에 붙은 조각으로 잡힘(1900~ canada 줄과 같은 까닭, 1903년 판정 앞 영국 식민지 땅 — 행정구역 탓 부스러기 아님)
+  sources: ["위키백과 Alaska boundary dispute https://en.wikipedia.org/wiki/Alaska_boundary_dispute", "위키백과 Pearse Island https://en.wikipedia.org/wiki/Pearse_Island"]
+
+- entity: canada
+  from: 1871
+  to: 1900
+  at: [-130.31, 54.9]
+  reason: 퍼스 운하·포틀랜드 인렛 사이 피어스섬 둘레(약 212 km²) — 본토와 물길로 떨어진 섬인데 50m 땅 자름이 퍼스 운하를 메워 알래스카 쪽 땅덩이에 붙은 조각으로 잡힘(1900~ canada 줄과 같은 까닭, 1903년 판정 앞 캐나다 땅 — 행정구역 탓 부스러기 아님)
+  sources: ["위키백과 Alaska boundary dispute https://en.wikipedia.org/wiki/Alaska_boundary_dispute", "위키백과 Pearse Island https://en.wikipedia.org/wiki/Pearse_Island"]
+
+# ── 아메리카 M2 BRG-M2 (브라질·기아나, 2026-11-16) ──

@@ -596,3 +596,1471 @@
   expect: saint-kitts-and-nevis
   url: https://en.wikipedia.org/wiki/Basseterre
   from: 아메리카 M1 LA-M1 결과노트
+
+# ── 아메리카 M2 FL-M2 (플로리다·루이지애나, 2026-11-16) ──
+- name: 뉴올리언스 스페인령 시기
+  at: [-90.07, 29.95]
+  year: 1790
+  expect: spanish-louisiana
+  url: https://en.wikipedia.org/wiki/Spanish_Louisiana
+  from: 아메리카 M2 FL-M2 결과노트
+- name: 뉴올리언스 산일데폰소 조약 뒤
+  at: [-90.07, 29.95]
+  year: 1800
+  expect: spanish-louisiana
+  url: https://en.wikipedia.org/wiki/Spanish_Louisiana
+  from: 아메리카 M2 FL-M2 결과노트
+- name: 뉴올리언스 루이지애나 매입 뒤
+  at: [-90.07, 29.95]
+  year: 1810
+  expect: usa
+  url: https://en.wikipedia.org/wiki/Louisiana_Purchase
+  from: 아메리카 M2 FL-M2 결과노트
+- name: 세인트루이스(시내 서쪽) 스페인령 시기
+  at: [-90.3, 38.63]
+  year: 1790
+  expect: spanish-louisiana
+  url: https://en.wikipedia.org/wiki/Spanish_Louisiana
+  from: 아메리카 M2 FL-M2 결과노트
+- name: 세인트루이스(시내 서쪽) 매입 뒤
+  at: [-90.3, 38.63]
+  year: 1810
+  expect: usa
+  url: https://en.wikipedia.org/wiki/Louisiana_Purchase
+  from: 아메리카 M2 FL-M2 결과노트
+- name: 리틀록 매입 앞
+  at: [-92.29, 34.75]
+  year: 1802
+  expect: spanish-louisiana
+  url: https://en.wikipedia.org/wiki/Spanish_Louisiana
+  from: 아메리카 M2 FL-M2 결과노트
+- name: 펜서콜라 영국령 시기
+  at: [-87.22, 30.42]
+  year: 1776
+  expect: british-florida
+  url: https://en.wikipedia.org/wiki/West_Florida
+  from: 아메리카 M2 FL-M2 결과노트
+- name: 펜서콜라 스페인령 시기
+  at: [-87.22, 30.42]
+  year: 1820
+  expect: spanish-florida
+  url: https://en.wikipedia.org/wiki/Spanish_Florida
+  from: 아메리카 M2 FL-M2 결과노트
+- name: 펜서콜라 미국 인계 뒤
+  at: [-87.22, 30.42]
+  year: 1830
+  expect: usa
+  url: https://en.wikipedia.org/wiki/Adams%E2%80%93On%C3%ADs_Treaty
+  from: 아메리카 M2 FL-M2 결과노트
+- name: 세인트오거스틴 영국령 시기
+  at: [-81.31, 29.89]
+  year: 1776
+  expect: british-florida
+  url: https://en.wikipedia.org/wiki/East_Florida
+  from: 아메리카 M2 FL-M2 결과노트
+- name: 세인트오거스틴 스페인령 시기
+  at: [-81.31, 29.89]
+  year: 1790
+  expect: spanish-florida
+  url: https://en.wikipedia.org/wiki/Spanish_Florida
+  from: 아메리카 M2 FL-M2 결과노트
+- name: 세인트오거스틴 미국 인계 뒤
+  at: [-81.31, 29.89]
+  year: 1830
+  expect: usa
+  url: https://en.wikipedia.org/wiki/Adams%E2%80%93On%C3%ADs_Treaty
+  from: 아메리카 M2 FL-M2 결과노트
+- name: 나체즈 영국령 서플로리다
+  at: [-91.4, 31.56]
+  year: 1776
+  expect: british-florida
+  url: https://en.wikipedia.org/wiki/West_Florida
+  from: 아메리카 M2 FL-M2 결과노트
+- name: 나체즈 미국·스페인 분쟁
+  at: [-91.4, 31.56]
+  year: 1790
+  expect: none
+  region: americas
+  url: https://en.wikipedia.org/wiki/Natchez_District
+  from: 아메리카 M2 FL-M2 결과노트
+- name: 나체즈 핀크니 조약 뒤
+  at: [-91.4, 31.56]
+  year: 1800
+  expect: usa
+  url: https://en.wikipedia.org/wiki/Natchez_District
+  from: 아메리카 M2 FL-M2 결과노트
+- name: 몽고메리 분쟁 띠
+  at: [-86.3, 32.37]
+  year: 1790
+  expect: none
+  region: americas
+  url: https://en.wikipedia.org/wiki/Pinckney%27s_Treaty
+  from: 아메리카 M2 FL-M2 결과노트
+- name: 배턴루지 서플로리다 병합 앞
+  at: [-91.19, 30.45]
+  year: 1809
+  expect: spanish-florida
+  url: https://en.wikipedia.org/wiki/West_Florida
+  from: 아메리카 M2 FL-M2 결과노트
+- name: 배턴루지 서플로리다 병합 뒤
+  at: [-91.19, 30.45]
+  year: 1811
+  expect: usa
+  url: https://en.wikipedia.org/wiki/West_Florida
+  from: 아메리카 M2 FL-M2 결과노트
+- name: 모빌 미국 점령 앞
+  at: [-88.04, 30.69]
+  year: 1812
+  expect: spanish-florida
+  url: https://en.wikipedia.org/wiki/West_Florida
+  from: 아메리카 M2 FL-M2 결과노트
+- name: 모빌 미국 점령 뒤
+  at: [-88.04, 30.69]
+  year: 1814
+  expect: usa
+  url: https://en.wikipedia.org/wiki/West_Florida
+  from: 아메리카 M2 FL-M2 결과노트
+- name: 헌츠빌 파리 조약 앞
+  at: [-86.59, 34.73]
+  year: 1780
+  expect: none
+  region: americas
+  url: https://en.wikipedia.org/wiki/Treaty_of_Paris_(1783)
+  from: 아메리카 M2 FL-M2 결과노트
+- name: 헌츠빌 파리 조약 뒤
+  at: [-86.59, 34.73]
+  year: 1784
+  expect: usa
+  url: https://en.wikipedia.org/wiki/Treaty_of_Paris_(1783)
+  from: 아메리카 M2 FL-M2 결과노트
+
+# ── 아메리카 M2 BNA-W-M2 (캐나다 서쪽·허드슨만, 2026-11-16) ──
+- name: 요크팩토리(허드슨만)
+  at: [-92.4, 57.0]
+  year: 1776
+  expect: ruperts-land
+  url: https://en.wikipedia.org/wiki/Rupert%27s_Land
+  from: 아메리카 M2 BNA-W-M2 결과노트
+- name: 위니펙(레드강 식민지) 이양 앞
+  at: [-97.14, 49.9]
+  year: 1869
+  expect: ruperts-land
+  url: https://en.wikipedia.org/wiki/Rupert%27s_Land
+  from: 아메리카 M2 BNA-W-M2 결과노트
+- name: 위니펙(레드강 식민지) 이양 뒤
+  at: [-97.14, 49.9]
+  year: 1870
+  expect: canada
+  url: https://en.wikipedia.org/wiki/Territorial_evolution_of_Canada
+  from: 아메리카 M2 BNA-W-M2 결과노트
+- name: 캘거리(보강 물길)
+  at: [-114.07, 51.05]
+  year: 1820
+  expect: ruperts-land
+  url: https://en.wikipedia.org/wiki/Rupert%27s_Land
+  from: 아메리카 M2 BNA-W-M2 결과노트
+- name: 포트맥머리(애서배스카강) 허가 앞
+  at: [-111.38, 56.73]
+  year: 1820
+  expect: none
+  region: americas
+  url: https://en.wikipedia.org/wiki/North-Western_Territory
+  from: 아메리카 M2 BNA-W-M2 결과노트
+- name: 포트맥머리(애서배스카강) 허가 뒤
+  at: [-111.38, 56.73]
+  year: 1821
+  expect: north-western-territory
+  url: https://en.wikipedia.org/wiki/North-Western_Territory
+  from: 아메리카 M2 BNA-W-M2 결과노트
+- name: 화이트호스(유콘강)
+  at: [-135.06, 60.72]
+  year: 1869
+  expect: north-western-territory
+  url: https://en.wikipedia.org/wiki/North-Western_Territory
+  from: 아메리카 M2 BNA-W-M2 결과노트
+- name: 옐로나이프(그레이트슬레이브호) 이양 뒤
+  at: [-114.37, 62.45]
+  year: 1870
+  expect: canada
+  url: https://en.wikipedia.org/wiki/Territorial_evolution_of_Canada
+  from: 아메리카 M2 BNA-W-M2 결과노트
+- name: 이칼루이트(배핀섬) 추밀원령 앞
+  at: [-68.52, 63.75]
+  year: 1879
+  expect: none
+  region: americas
+  url: https://en.wikipedia.org/wiki/Territorial_evolution_of_Canada
+  from: 아메리카 M2 BNA-W-M2 결과노트
+- name: 이칼루이트(배핀섬) 추밀원령 뒤
+  at: [-68.52, 63.75]
+  year: 1880
+  expect: canada
+  url: https://en.wikipedia.org/wiki/Territorial_evolution_of_Canada
+  from: 아메리카 M2 BNA-W-M2 결과노트
+- name: 레졸루트(콘월리스섬) 추밀원령 앞
+  at: [-94.83, 74.7]
+  year: 1870
+  expect: none
+  region: americas
+  url: https://en.wikipedia.org/wiki/Territorial_evolution_of_Canada
+  from: 아메리카 M2 BNA-W-M2 결과노트
+
+# ── 아메리카 M2 SC-E-M2 (라플라타, 2026-11-16) ──
+- name: 부에노스아이레스
+  at: [-58.38, -34.6]
+  year: 1815
+  expect: rio-de-la-plata-viceroyalty
+  url: https://en.wikipedia.org/wiki/Viceroyalty_of_the_R%C3%ADo_de_la_Plata
+  from: 아메리카 M2 SC-E-M2 결과노트
+- name: 부에노스아이레스
+  at: [-58.38, -34.6]
+  year: 1816
+  expect: argentina
+  url: https://en.wikipedia.org/wiki/Argentine_Declaration_of_Independence
+  from: 아메리카 M2 SC-E-M2 결과노트
+- name: 몬테비데오
+  at: [-56.16, -34.9]
+  year: 1816
+  expect: none
+  url: https://en.wikipedia.org/wiki/Cisplatine_War
+  from: 아메리카 M2 SC-E-M2 결과노트
+- name: 몬테비데오
+  at: [-56.16, -34.9]
+  year: 1817
+  expect: portuguese-brazil
+  url: https://en.wikipedia.org/wiki/Cisplatine_War
+  from: 아메리카 M2 SC-E-M2 결과노트
+- name: 몬테비데오
+  at: [-56.16, -34.9]
+  year: 1828
+  expect: uruguay
+  url: https://en.wikipedia.org/wiki/Cisplatine_War
+  from: 아메리카 M2 SC-E-M2 결과노트
+- name: 아순시온
+  at: [-57.58, -25.26]
+  year: 1810
+  expect: rio-de-la-plata-viceroyalty
+  url: https://en.wikipedia.org/wiki/Viceroyalty_of_the_R%C3%ADo_de_la_Plata
+  from: 아메리카 M2 SC-E-M2 결과노트
+- name: 아순시온
+  at: [-57.58, -25.26]
+  year: 1811
+  expect: paraguay
+  url: https://en.wikipedia.org/wiki/Paraguay
+  from: 아메리카 M2 SC-E-M2 결과노트
+- name: 카르우에
+  at: [-62.76, -37.18]
+  year: 1878
+  expect: argentina
+  url: https://es.wikipedia.org/wiki/Zanja_de_Alsina
+  from: 아메리카 M2 SC-E-M2 결과노트
+- name: 메다노스
+  at: [-62.7, -38.83]
+  year: 1878
+  expect: none
+  url: https://es.wikipedia.org/wiki/Zanja_de_Alsina
+  from: 아메리카 M2 SC-E-M2 결과노트
+- name: 산타로사
+  at: [-64.29, -36.62]
+  year: 1879
+  expect: argentina
+  url: https://en.wikipedia.org/wiki/Conquest_of_the_Desert
+  from: 아메리카 M2 SC-E-M2 결과노트
+- name: 네우켄
+  at: [-68.06, -38.95]
+  year: 1880
+  expect: none
+  url: https://en.wikipedia.org/wiki/Conquest_of_the_Desert
+  from: 아메리카 M2 SC-E-M2 결과노트
+- name: 레시스텐시아
+  at: [-58.98, -27.45]
+  year: 1884
+  expect: argentina
+  url: https://en.wikipedia.org/wiki/Chaco_Province
+  from: 아메리카 M2 SC-E-M2 결과노트
+- name: 산안토니오데로스코브레스
+  at: [-66.32, -24.21]
+  year: 1878
+  expect: bolivia
+  url: https://en.wikipedia.org/wiki/Puna_de_Atacama_dispute
+  from: 아메리카 M2 SC-E-M2 결과노트
+- name: 산안토니오데로스코브레스
+  at: [-66.32, -24.21]
+  year: 1899
+  expect: argentina
+  url: https://es.wikipedia.org/wiki/Territorio_Nacional_de_Los_Andes
+  from: 아메리카 M2 SC-E-M2 결과노트
+
+# ── 아메리카 M2 US-M2 (미국, 2026-11-16) ──
+- name: 필라델피아
+  at: [-75.17, 39.95]
+  year: 1776
+  expect: usa
+  url: https://en.wikipedia.org/wiki/Philadelphia
+  from: 아메리카 M2 US-M2 결과노트
+- name: 디트로이트 파리 조약 앞
+  at: [-83.05, 42.33]
+  year: 1782
+  expect: province-of-quebec
+  url: https://en.wikipedia.org/wiki/Quebec_Act
+  from: 아메리카 M2 US-M2 결과노트
+- name: 디트로이트
+  at: [-83.05, 42.33]
+  year: 1783
+  expect: usa
+  url: https://en.wikipedia.org/wiki/Treaty_of_Paris_(1783)
+  from: 아메리카 M2 US-M2 결과노트
+- name: 시카고 파리 조약 앞
+  at: [-87.63, 41.88]
+  year: 1782
+  expect: province-of-quebec
+  url: https://en.wikipedia.org/wiki/Quebec_Act
+  from: 아메리카 M2 US-M2 결과노트
+- name: 인터내셔널폴스 파리 조약 앞
+  at: [-93.41, 48.6]
+  year: 1782
+  expect: ruperts-land
+  url: https://en.wikipedia.org/wiki/Rupert%27s_Land
+  from: 아메리카 M2 US-M2 결과노트
+- name: 인터내셔널폴스
+  at: [-93.41, 48.6]
+  year: 1783
+  expect: usa
+  url: https://en.wikipedia.org/wiki/Treaty_of_Paris_(1783)
+  from: 아메리카 M2 US-M2 결과노트
+- name: 디모인 루이지애나 매입 앞
+  at: [-93.61, 41.59]
+  year: 1802
+  expect: spanish-louisiana
+  url: https://en.wikipedia.org/wiki/Louisiana_(New_Spain)
+  from: 아메리카 M2 US-M2 결과노트
+- name: 디모인
+  at: [-93.61, 41.59]
+  year: 1803
+  expect: usa
+  url: https://en.wikipedia.org/wiki/Louisiana_Purchase
+  from: 아메리카 M2 US-M2 결과노트
+- name: 빌링스
+  at: [-108.5, 45.78]
+  year: 1803
+  expect: usa
+  url: https://en.wikipedia.org/wiki/Louisiana_Purchase
+  from: 아메리카 M2 US-M2 결과노트
+- name: 파고 1818년 조약 앞
+  at: [-96.79, 46.88]
+  year: 1818
+  expect: ruperts-land
+  url: https://en.wikipedia.org/wiki/Rupert%27s_Land
+  from: 아메리카 M2 US-M2 결과노트
+- name: 파고
+  at: [-96.79, 46.88]
+  year: 1819
+  expect: usa
+  url: https://en.wikipedia.org/wiki/Treaty_of_1818
+  from: 아메리카 M2 US-M2 결과노트
+- name: 리버럴 애덤스-오니스 조약 앞
+  at: [-100.92, 37.04]
+  year: 1818
+  expect: none
+  region: americas
+  url: https://en.wikipedia.org/wiki/Adams%E2%80%93On%C3%ADs_Treaty
+  from: 아메리카 M2 US-M2 결과노트
+- name: 리버럴
+  at: [-100.92, 37.04]
+  year: 1819
+  expect: new-spain-viceroyalty
+  url: https://en.wikipedia.org/wiki/Adams%E2%80%93On%C3%ADs_Treaty
+  from: 아메리카 M2 US-M2 결과노트
+- name: 리버럴 텍사스 청구 때
+  at: [-100.92, 37.04]
+  year: 1840
+  expect: none
+  region: americas
+  url: https://en.wikipedia.org/wiki/Republic_of_Texas
+  from: 아메리카 M2 US-M2 결과노트
+- name: 리버럴 멕시코 할양 뒤
+  at: [-100.92, 37.04]
+  year: 1848
+  expect: usa
+  url: https://en.wikipedia.org/wiki/Treaty_of_Guadalupe_Hidalgo
+  from: 아메리카 M2 US-M2 결과노트
+- name: 록스프링스
+  at: [-109.2, 41.59]
+  year: 1830
+  expect: mexico
+  url: https://en.wikipedia.org/wiki/Adams%E2%80%93On%C3%ADs_Treaty
+  from: 아메리카 M2 US-M2 결과노트
+- name: 록스프링스 멕시코 할양 뒤
+  at: [-109.2, 41.59]
+  year: 1848
+  expect: usa
+  url: https://en.wikipedia.org/wiki/Mexican_Cession
+  from: 아메리카 M2 US-M2 결과노트
+- name: 포틀랜드(오리건) 오리건 조약 앞
+  at: [-122.68, 45.52]
+  year: 1845
+  expect: none
+  region: americas
+  url: https://en.wikipedia.org/wiki/Oregon_boundary_dispute
+  from: 아메리카 M2 US-M2 결과노트
+- name: 포틀랜드(오리건)
+  at: [-122.68, 45.52]
+  year: 1846
+  expect: usa
+  url: https://en.wikipedia.org/wiki/Oregon_Treaty
+  from: 아메리카 M2 US-M2 결과노트
+- name: 미줄라 오리건 조약 앞
+  at: [-113.99, 46.87]
+  year: 1845
+  expect: none
+  region: americas
+  url: https://en.wikipedia.org/wiki/Oregon_Country
+  from: 아메리카 M2 US-M2 결과노트
+
+# ── 아메리카 M2 BNA-E-M2 (캐나다 동쪽, 2026-11-16) ──
+- name: 퀘벡(퀘벡 주 수도) 헌법법 앞
+  at: [-71.21, 46.81]
+  year: 1790
+  expect: province-of-quebec
+  url: https://en.wikipedia.org/wiki/Constitutional_Act_1791
+  from: 아메리카 M2 BNA-E-M2 결과노트
+- name: 퀘벡(로어캐나다 수도) 헌법법 뒤
+  at: [-71.21, 46.81]
+  year: 1791
+  expect: lower-canada
+  url: https://en.wikipedia.org/wiki/Constitutional_Act_1791
+  from: 아메리카 M2 BNA-E-M2 결과노트
+- name: 토론토(요크) 헌법법 앞
+  at: [-79.38, 43.65]
+  year: 1790
+  expect: province-of-quebec
+  url: https://en.wikipedia.org/wiki/Constitutional_Act_1791
+  from: 아메리카 M2 BNA-E-M2 결과노트
+- name: 토론토(요크) 헌법법 뒤
+  at: [-79.38, 43.65]
+  year: 1791
+  expect: upper-canada
+  url: https://en.wikipedia.org/wiki/Constitutional_Act_1791
+  from: 아메리카 M2 BNA-E-M2 결과노트
+- name: 몬트리올 연합법 앞
+  at: [-73.57, 45.5]
+  year: 1840
+  expect: lower-canada
+  url: https://en.wikipedia.org/wiki/Province_of_Canada
+  from: 아메리카 M2 BNA-E-M2 결과노트
+- name: 킹스턴(캐나다주 첫 수도) 연합법 뒤
+  at: [-76.48, 44.23]
+  year: 1841
+  expect: province-of-canada
+  url: https://en.wikipedia.org/wiki/Province_of_Canada
+  from: 아메리카 M2 BNA-E-M2 결과노트
+- name: 퀘벡 연방 앞
+  at: [-71.21, 46.81]
+  year: 1866
+  expect: province-of-canada
+  url: https://en.wikipedia.org/wiki/Province_of_Canada
+  from: 아메리카 M2 BNA-E-M2 결과노트
+- name: 퀘벡 연방 뒤
+  at: [-71.21, 46.81]
+  year: 1867
+  expect: canada
+  url: https://en.wikipedia.org/wiki/Province_of_Canada
+  from: 아메리카 M2 BNA-E-M2 결과노트
+- name: 핼리팩스(노바스코샤 수도) 연방 앞
+  at: [-63.57, 44.65]
+  year: 1866
+  expect: nova-scotia
+  url: https://en.wikipedia.org/wiki/New_Brunswick
+  from: 아메리카 M2 BNA-E-M2 결과노트
+- name: 핼리팩스 연방 뒤
+  at: [-63.57, 44.65]
+  year: 1867
+  expect: canada
+  url: https://en.wikipedia.org/wiki/New_Brunswick
+  from: 아메리카 M2 BNA-E-M2 결과노트
+- name: 프레더릭턴 뉴브런즈윅 성립 앞
+  at: [-66.64, 45.96]
+  year: 1783
+  expect: nova-scotia
+  url: https://en.wikipedia.org/wiki/New_Brunswick
+  from: 아메리카 M2 BNA-E-M2 결과노트
+- name: 프레더릭턴(뉴브런즈윅 수도) 성립 뒤
+  at: [-66.64, 45.96]
+  year: 1784
+  expect: new-brunswick
+  url: https://en.wikipedia.org/wiki/New_Brunswick
+  from: 아메리카 M2 BNA-E-M2 결과노트
+- name: 세인트존스(뉴펀들랜드 수도)
+  at: [-52.71, 47.56]
+  year: 1776
+  expect: newfoundland
+  url: https://en.wikipedia.org/wiki/Newfoundland_Colony
+  from: 아메리카 M2 BNA-E-M2 결과노트
+- name: 무스팩토리(제임스만) 이양 앞
+  at: [-80.65, 51.27]
+  year: 1869
+  expect: ruperts-land
+  url: https://en.wikipedia.org/wiki/Rupert%27s_Land
+  from: 아메리카 M2 BNA-E-M2 결과노트
+- name: 서드베리(휴런호 물길)
+  at: [-80.99, 46.49]
+  year: 1866
+  expect: province-of-canada
+  url: https://en.wikipedia.org/wiki/Province_of_Canada
+  from: 아메리카 M2 BNA-E-M2 결과노트
+- name: 샬럿타운(프린스에드워드섬)
+  at: [-63.13, 46.24]
+  year: 1871
+  expect: canada
+  url: https://en.wikipedia.org/wiki/Prince_Edward_Island
+  from: 아메리카 M2 BNA-E-M2 결과노트
+
+# ── 아메리카 M2 SC-W-M2 (칠레·마푸체·포클랜드, 2026-11-16) ──
+- name: 산티아고
+  at: [-70.65, -33.45]
+  year: 1788
+  expect: peru-viceroyalty
+  url: https://en.wikipedia.org/wiki/Captaincy_General_of_Chile
+  from: 아메리카 M2 SC-W-M2 결과노트
+- name: 산티아고
+  at: [-70.65, -33.45]
+  year: 1789
+  expect: chile-captaincy-general
+  url: https://en.wikipedia.org/wiki/Captaincy_General_of_Chile
+  from: 아메리카 M2 SC-W-M2 결과노트
+- name: 산티아고
+  at: [-70.65, -33.45]
+  year: 1817
+  expect: chile-captaincy-general
+  url: https://en.wikipedia.org/wiki/Captaincy_General_of_Chile
+  from: 아메리카 M2 SC-W-M2 결과노트
+- name: 산티아고
+  at: [-70.65, -33.45]
+  year: 1818
+  expect: chile
+  url: https://en.wikipedia.org/wiki/Captaincy_General_of_Chile
+  from: 아메리카 M2 SC-W-M2 결과노트
+- name: 콘셉시온
+  at: [-73.05, -36.83]
+  year: 1800
+  expect: chile-captaincy-general
+  url: https://en.wikipedia.org/wiki/Captaincy_General_of_Chile
+  from: 아메리카 M2 SC-W-M2 결과노트
+- name: 로스앙헬레스
+  at: [-72.35, -37.47]
+  year: 1869
+  expect: chile
+  url: https://en.wikipedia.org/wiki/Occupation_of_Araucan%C3%ADa
+  from: 아메리카 M2 SC-W-M2 결과노트
+- name: 앙골
+  at: [-72.71, -37.8]
+  year: 1869
+  expect: mapuche-araucania
+  url: https://en.wikipedia.org/wiki/Occupation_of_Araucan%C3%ADa
+  from: 아메리카 M2 SC-W-M2 결과노트
+- name: 앙골
+  at: [-72.71, -37.8]
+  year: 1870
+  expect: chile
+  url: https://en.wikipedia.org/wiki/Occupation_of_Araucan%C3%ADa
+  from: 아메리카 M2 SC-W-M2 결과노트
+- name: 테무코
+  at: [-72.59, -38.74]
+  year: 1882
+  expect: mapuche-araucania
+  url: https://en.wikipedia.org/wiki/Occupation_of_Araucan%C3%ADa
+  from: 아메리카 M2 SC-W-M2 결과노트
+- name: 테무코
+  at: [-72.59, -38.74]
+  year: 1883
+  expect: chile
+  url: https://en.wikipedia.org/wiki/Occupation_of_Araucan%C3%ADa
+  from: 아메리카 M2 SC-W-M2 결과노트
+- name: 안토파가스타
+  at: [-70.4, -23.65]
+  year: 1824
+  expect: peru-viceroyalty
+  url: https://en.wikipedia.org/wiki/Boundary_Treaty_of_1874_between_Chile_and_Bolivia
+  from: 아메리카 M2 SC-W-M2 결과노트
+- name: 안토파가스타
+  at: [-70.4, -23.65]
+  year: 1825
+  expect: bolivia
+  url: https://en.wikipedia.org/wiki/Boundary_Treaty_of_1874_between_Chile_and_Bolivia
+  from: 아메리카 M2 SC-W-M2 결과노트
+- name: 안토파가스타
+  at: [-70.4, -23.65]
+  year: 1878
+  expect: bolivia
+  url: https://en.wikipedia.org/wiki/Boundary_Treaty_of_1874_between_Chile_and_Bolivia
+  from: 아메리카 M2 SC-W-M2 결과노트
+- name: 안토파가스타
+  at: [-70.4, -23.65]
+  year: 1879
+  expect: chile
+  url: https://en.wikipedia.org/wiki/War_of_the_Pacific
+  from: 아메리카 M2 SC-W-M2 결과노트
+- name: 칼라마
+  at: [-68.93, -22.46]
+  year: 1878
+  expect: bolivia
+  url: https://en.wikipedia.org/wiki/Boundary_Treaty_of_1874_between_Chile_and_Bolivia
+  from: 아메리카 M2 SC-W-M2 결과노트
+- name: 칼라마
+  at: [-68.93, -22.46]
+  year: 1879
+  expect: chile
+  url: https://en.wikipedia.org/wiki/War_of_the_Pacific
+  from: 아메리카 M2 SC-W-M2 결과노트
+- name: 탈탈
+  at: [-70.48, -25.41]
+  year: 1878
+  expect: chile
+  url: https://en.wikipedia.org/wiki/Boundary_Treaty_of_1874_between_Chile_and_Bolivia
+  from: 아메리카 M2 SC-W-M2 결과노트
+- name: 미스칸티 호수
+  at: [-67.77, -23.73]
+  year: 1879
+  expect: none
+  url: https://en.wikipedia.org/wiki/Puna_de_Atacama_dispute
+  from: 아메리카 M2 SC-W-M2 결과노트
+- name: 미스칸티 호수
+  at: [-67.77, -23.73]
+  year: 1899
+  expect: chile
+  url: https://en.wikipedia.org/wiki/Puna_de_Atacama_dispute
+  from: 아메리카 M2 SC-W-M2 결과노트
+- name: 이키케
+  at: [-70.15, -20.21]
+  year: 1820
+  expect: peru-viceroyalty
+  url: https://en.wikipedia.org/wiki/Viceroyalty_of_Peru
+  from: 아메리카 M2 SC-W-M2 결과노트
+- name: 이키케
+  at: [-70.15, -20.21]
+  year: 1821
+  expect: peru
+  url: https://en.wikipedia.org/wiki/Viceroyalty_of_Peru
+  from: 아메리카 M2 SC-W-M2 결과노트
+- name: 이키케
+  at: [-70.15, -20.21]
+  year: 1882
+  expect: peru
+  url: https://en.wikipedia.org/wiki/War_of_the_Pacific
+  from: 아메리카 M2 SC-W-M2 결과노트
+- name: 이키케
+  at: [-70.15, -20.21]
+  year: 1883
+  expect: chile
+  url: https://en.wikipedia.org/wiki/War_of_the_Pacific
+  from: 아메리카 M2 SC-W-M2 결과노트
+- name: 아리카
+  at: [-70.31, -18.48]
+  year: 1882
+  expect: peru
+  url: https://en.wikipedia.org/wiki/War_of_the_Pacific
+  from: 아메리카 M2 SC-W-M2 결과노트
+- name: 아리카
+  at: [-70.31, -18.48]
+  year: 1883
+  expect: chile
+  url: https://en.wikipedia.org/wiki/War_of_the_Pacific
+  from: 아메리카 M2 SC-W-M2 결과노트
+- name: 푼타아레나스
+  at: [-70.91, -53.16]
+  year: 1842
+  expect: none
+  url: https://en.wikipedia.org/wiki/Fuerte_Bulnes
+  from: 아메리카 M2 SC-W-M2 결과노트
+- name: 푼타아레나스
+  at: [-70.91, -53.16]
+  year: 1843
+  expect: chile
+  url: https://en.wikipedia.org/wiki/Fuerte_Bulnes
+  from: 아메리카 M2 SC-W-M2 결과노트
+- name: 코이아이케
+  at: [-72.07, -45.57]
+  year: 1880
+  expect: none
+  url: https://en.wikipedia.org/wiki/Boundary_treaty_of_1881_between_Chile_and_Argentina
+  from: 아메리카 M2 SC-W-M2 결과노트
+- name: 코이아이케
+  at: [-72.07, -45.57]
+  year: 1881
+  expect: chile
+  url: https://en.wikipedia.org/wiki/Boundary_treaty_of_1881_between_Chile_and_Argentina
+  from: 아메리카 M2 SC-W-M2 결과노트
+- name: 스탠리
+  at: [-57.85, -51.69]
+  year: 1810
+  expect: spanish-falkland-islands
+  url: https://en.wikipedia.org/wiki/History_of_the_Falkland_Islands
+  from: 아메리카 M2 SC-W-M2 결과노트
+- name: 스탠리
+  at: [-57.85, -51.69]
+  year: 1811
+  expect: none
+  url: https://en.wikipedia.org/wiki/History_of_the_Falkland_Islands
+  from: 아메리카 M2 SC-W-M2 결과노트
+- name: 스탠리
+  at: [-57.85, -51.69]
+  year: 1833
+  expect: falkland-islands
+  url: https://en.wikipedia.org/wiki/History_of_the_Falkland_Islands
+  from: 아메리카 M2 SC-W-M2 결과노트
+
+# ── 아메리카 M2 MX-M2 (멕시코·텍사스·미국 서남, 2026-11-16) ──
+- name: 멕시코시티
+  at: [-99.13, 19.43]
+  year: 1800
+  expect: new-spain-viceroyalty
+  url: https://en.wikipedia.org/wiki/Mexico_City
+  from: 아메리카 M2 MX-M2 결과노트
+- name: 멕시코시티
+  at: [-99.13, 19.43]
+  year: 1830
+  expect: mexico
+  url: https://en.wikipedia.org/wiki/Mexico_City
+  from: 아메리카 M2 MX-M2 결과노트
+- name: 메리다
+  at: [-89.62, 20.97]
+  year: 1800
+  expect: yucatan-captaincy
+  url: https://en.wikipedia.org/wiki/Mérida,_Yucatán
+  from: 아메리카 M2 MX-M2 결과노트
+- name: 메리다
+  at: [-89.62, 20.97]
+  year: 1830
+  expect: mexico
+  url: https://en.wikipedia.org/wiki/Mérida,_Yucatán
+  from: 아메리카 M2 MX-M2 결과노트
+- name: 툭스틀라구티에레스
+  at: [-93.12, 16.75]
+  year: 1820
+  expect: guatemala-captaincy
+  url: https://en.wikipedia.org/wiki/Chiapas
+  from: 아메리카 M2 MX-M2 결과노트
+- name: 툭스틀라구티에레스
+  at: [-93.12, 16.75]
+  year: 1823
+  expect: none
+  url: https://en.wikipedia.org/wiki/Chiapas
+  from: 아메리카 M2 MX-M2 결과노트
+- name: 툭스틀라구티에레스
+  at: [-93.12, 16.75]
+  year: 1824
+  expect: mexico
+  url: https://en.wikipedia.org/wiki/Chiapas
+  from: 아메리카 M2 MX-M2 결과노트
+- name: 샌안토니오
+  at: [-98.49, 29.42]
+  year: 1830
+  expect: mexico
+  url: https://en.wikipedia.org/wiki/San_Antonio
+  from: 아메리카 M2 MX-M2 결과노트
+- name: 샌안토니오
+  at: [-98.49, 29.42]
+  year: 1840
+  expect: texas-republic
+  url: https://en.wikipedia.org/wiki/San_Antonio
+  from: 아메리카 M2 MX-M2 결과노트
+- name: 샌안토니오
+  at: [-98.49, 29.42]
+  year: 1850
+  expect: usa
+  url: https://en.wikipedia.org/wiki/San_Antonio
+  from: 아메리카 M2 MX-M2 결과노트
+- name: 휴스턴
+  at: [-95.37, 29.76]
+  year: 1840
+  expect: texas-republic
+  url: https://en.wikipedia.org/wiki/Houston
+  from: 아메리카 M2 MX-M2 결과노트
+- name: 코퍼스크리스티 뉴에이서스강 띠
+  at: [-97.4, 27.8]
+  year: 1840
+  expect: none
+  url: https://en.wikipedia.org/wiki/Corpus_Christi,_Texas
+  from: 아메리카 M2 MX-M2 결과노트
+- name: 코퍼스크리스티 뉴에이서스강 띠
+  at: [-97.4, 27.8]
+  year: 1850
+  expect: usa
+  url: https://en.wikipedia.org/wiki/Corpus_Christi,_Texas
+  from: 아메리카 M2 MX-M2 결과노트
+- name: 엘패소 텍사스 서쪽
+  at: [-106.44, 31.8]
+  year: 1840
+  expect: none
+  url: https://en.wikipedia.org/wiki/El_Paso,_Texas
+  from: 아메리카 M2 MX-M2 결과노트
+- name: 엘패소 텍사스 서쪽
+  at: [-106.44, 31.8]
+  year: 1850
+  expect: usa
+  url: https://en.wikipedia.org/wiki/El_Paso,_Texas
+  from: 아메리카 M2 MX-M2 결과노트
+- name: 산타페
+  at: [-105.94, 35.69]
+  year: 1800
+  expect: new-spain-viceroyalty
+  url: https://en.wikipedia.org/wiki/Santa_Fe,_New_Mexico
+  from: 아메리카 M2 MX-M2 결과노트
+- name: 산타페
+  at: [-105.94, 35.69]
+  year: 1840
+  expect: mexico
+  url: https://en.wikipedia.org/wiki/Santa_Fe,_New_Mexico
+  from: 아메리카 M2 MX-M2 결과노트
+- name: 산타페
+  at: [-105.94, 35.69]
+  year: 1850
+  expect: usa
+  url: https://en.wikipedia.org/wiki/Santa_Fe,_New_Mexico
+  from: 아메리카 M2 MX-M2 결과노트
+- name: 몬터레이(캘리포니아)
+  at: [-121.89, 36.6]
+  year: 1800
+  expect: new-spain-viceroyalty
+  url: https://en.wikipedia.org/wiki/Monterey,_California
+  from: 아메리카 M2 MX-M2 결과노트
+- name: 몬터레이(캘리포니아)
+  at: [-121.89, 36.6]
+  year: 1830
+  expect: mexico
+  url: https://en.wikipedia.org/wiki/Monterey,_California
+  from: 아메리카 M2 MX-M2 결과노트
+- name: 몬터레이(캘리포니아)
+  at: [-121.89, 36.6]
+  year: 1850
+  expect: usa
+  url: https://en.wikipedia.org/wiki/Monterey,_California
+  from: 아메리카 M2 MX-M2 결과노트
+- name: 투손 개즈던 매입
+  at: [-110.97, 32.22]
+  year: 1850
+  expect: mexico
+  url: https://en.wikipedia.org/wiki/Gadsden_Purchase
+  from: 아메리카 M2 MX-M2 결과노트
+- name: 투손 개즈던 매입
+  at: [-110.97, 32.22]
+  year: 1854
+  expect: usa
+  url: https://en.wikipedia.org/wiki/Gadsden_Purchase
+  from: 아메리카 M2 MX-M2 결과노트
+- name: 솔트레이크시티 내륙
+  at: [-111.89, 40.76]
+  year: 1810
+  expect: none
+  url: https://en.wikipedia.org/wiki/Adams–Onís_Treaty
+  from: 아메리카 M2 MX-M2 결과노트
+- name: 솔트레이크시티 내륙
+  at: [-111.89, 40.76]
+  year: 1830
+  expect: mexico
+  url: https://en.wikipedia.org/wiki/Adams–Onís_Treaty
+  from: 아메리카 M2 MX-M2 결과노트
+- name: 솔트레이크시티 내륙
+  at: [-111.89, 40.76]
+  year: 1850
+  expect: usa
+  url: https://en.wikipedia.org/wiki/Adams–Onís_Treaty
+  from: 아메리카 M2 MX-M2 결과노트
+- name: 플래그스태프 애리조나 북부
+  at: [-111.65, 35.2]
+  year: 1810
+  expect: none
+  url: https://en.wikipedia.org/wiki/Pimería_Alta
+  from: 아메리카 M2 MX-M2 결과노트
+- name: 플래그스태프 애리조나 북부
+  at: [-111.65, 35.2]
+  year: 1820
+  expect: new-spain-viceroyalty
+  url: https://en.wikipedia.org/wiki/Pimería_Alta
+  from: 아메리카 M2 MX-M2 결과노트
+- name: 덴버 루이지애나
+  at: [-104.99, 39.74]
+  year: 1800
+  expect: spanish-louisiana
+  url: https://en.wikipedia.org/wiki/Louisiana_Purchase
+  from: 아메리카 M2 MX-M2 결과노트
+- name: 덴버 루이지애나
+  at: [-104.99, 39.74]
+  year: 1810
+  expect: usa
+  url: https://en.wikipedia.org/wiki/Louisiana_Purchase
+  from: 아메리카 M2 MX-M2 결과노트
+
+# ── 아메리카 M2 AND-N-M2 (그란콜롬비아·안데스, 2026-11-16) ──
+- name: 카라카스
+  at: [-66.9, 10.49]
+  year: 1776
+  expect: new-granada-viceroyalty
+  url: https://en.wikipedia.org/wiki/Viceroyalty_of_New_Granada
+  from: 아메리카 M2 AND-N-M2 결과노트
+- name: 카라카스
+  at: [-66.9, 10.49]
+  year: 1777
+  expect: venezuela-captaincy-general
+  url: https://en.wikipedia.org/wiki/Captaincy_General_of_Venezuela
+  from: 아메리카 M2 AND-N-M2 결과노트
+- name: 카라카스
+  at: [-66.9, 10.49]
+  year: 1819
+  expect: gran-colombia
+  url: https://en.wikipedia.org/wiki/Gran_Colombia
+  from: 아메리카 M2 AND-N-M2 결과노트
+- name: 카라카스
+  at: [-66.9, 10.49]
+  year: 1830
+  expect: venezuela
+  url: https://en.wikipedia.org/wiki/Gran_Colombia
+  from: 아메리카 M2 AND-N-M2 결과노트
+- name: 보고타
+  at: [-74.07, 4.71]
+  year: 1818
+  expect: new-granada-viceroyalty
+  url: https://en.wikipedia.org/wiki/Battle_of_Boyac%C3%A1
+  from: 아메리카 M2 AND-N-M2 결과노트
+- name: 보고타
+  at: [-74.07, 4.71]
+  year: 1819
+  expect: gran-colombia
+  url: https://en.wikipedia.org/wiki/Gran_Colombia
+  from: 아메리카 M2 AND-N-M2 결과노트
+- name: 보고타
+  at: [-74.07, 4.71]
+  year: 1831
+  expect: colombia
+  url: https://en.wikipedia.org/wiki/Republic_of_New_Granada
+  from: 아메리카 M2 AND-N-M2 결과노트
+- name: 파나마시티
+  at: [-79.52, 8.98]
+  year: 1818
+  expect: new-granada-viceroyalty
+  url: https://en.wikipedia.org/wiki/Viceroyalty_of_New_Granada
+  from: 아메리카 M2 AND-N-M2 결과노트
+- name: 파나마시티
+  at: [-79.52, 8.98]
+  year: 1831
+  expect: colombia
+  url: https://en.wikipedia.org/wiki/Republic_of_New_Granada
+  from: 아메리카 M2 AND-N-M2 결과노트
+- name: 키토
+  at: [-78.47, -0.18]
+  year: 1829
+  expect: gran-colombia
+  url: https://en.wikipedia.org/wiki/Gran_Colombia
+  from: 아메리카 M2 AND-N-M2 결과노트
+- name: 키토
+  at: [-78.47, -0.18]
+  year: 1830
+  expect: ecuador
+  url: https://en.wikipedia.org/wiki/Ecuador
+  from: 아메리카 M2 AND-N-M2 결과노트
+- name: 이키토스(마이나스)
+  at: [-73.25, -3.75]
+  year: 1801
+  expect: new-granada-viceroyalty
+  url: https://en.wikipedia.org/wiki/Viceroyalty_of_Peru
+  from: 아메리카 M2 AND-N-M2 결과노트
+- name: 이키토스(마이나스)
+  at: [-73.25, -3.75]
+  year: 1802
+  expect: peru-viceroyalty
+  url: https://en.wikipedia.org/wiki/Viceroyalty_of_Peru
+  from: 아메리카 M2 AND-N-M2 결과노트
+- name: 이키토스(마이나스)
+  at: [-73.25, -3.75]
+  year: 1821
+  expect: peru
+  url: https://en.wikipedia.org/wiki/Viceroyalty_of_Peru
+  from: 아메리카 M2 AND-N-M2 결과노트
+- name: 유리마과스(마라뇬강 남쪽)
+  at: [-76.08, -5.9]
+  year: 1801
+  expect: peru-viceroyalty
+  url: https://en.wikipedia.org/wiki/Yurimaguas
+  from: 아메리카 M2 AND-N-M2 결과노트
+- name: 리마
+  at: [-77.04, -12.05]
+  year: 1820
+  expect: peru-viceroyalty
+  url: https://en.wikipedia.org/wiki/Viceroyalty_of_Peru
+  from: 아메리카 M2 AND-N-M2 결과노트
+- name: 리마
+  at: [-77.04, -12.05]
+  year: 1821
+  expect: peru
+  url: https://en.wikipedia.org/wiki/Viceroyalty_of_Peru
+  from: 아메리카 M2 AND-N-M2 결과노트
+- name: 라파스
+  at: [-68.15, -16.5]
+  year: 1809
+  expect: rio-de-la-plata-viceroyalty
+  url: https://en.wikipedia.org/wiki/Viceroyalty_of_the_R%C3%ADo_de_la_Plata
+  from: 아메리카 M2 AND-N-M2 결과노트
+- name: 라파스
+  at: [-68.15, -16.5]
+  year: 1810
+  expect: peru-viceroyalty
+  url: https://en.wikipedia.org/wiki/Viceroyalty_of_the_R%C3%ADo_de_la_Plata
+  from: 아메리카 M2 AND-N-M2 결과노트
+- name: 라파스
+  at: [-68.15, -16.5]
+  year: 1824
+  expect: peru-viceroyalty
+  url: https://en.wikipedia.org/wiki/Viceroyalty_of_Peru
+  from: 아메리카 M2 AND-N-M2 결과노트
+- name: 수크레
+  at: [-65.26, -19.04]
+  year: 1825
+  expect: bolivia
+  url: https://en.wikipedia.org/wiki/Bolivia
+  from: 아메리카 M2 AND-N-M2 결과노트
+- name: 히우브랑쿠(아크리)
+  at: [-67.81, -9.97]
+  year: 1825
+  expect: bolivia
+  url: https://en.wikipedia.org/wiki/Acre_War
+  from: 아메리카 M2 AND-N-M2 결과노트
+- name: 타크나
+  at: [-70.25, -18.01]
+  year: 1882
+  expect: peru
+  url: https://en.wikipedia.org/wiki/Treaty_of_Anc%C3%B3n
+  from: 아메리카 M2 AND-N-M2 결과노트
+- name: 타크나
+  at: [-70.25, -18.01]
+  year: 1883
+  expect: chile
+  url: https://en.wikipedia.org/wiki/Treaty_of_Anc%C3%B3n
+  from: 아메리카 M2 AND-N-M2 결과노트
+- name: 엘엔칸토(푸투마요–카케타 사이)
+  at: [-73.21, -1.75]
+  year: 1829
+  expect: gran-colombia
+  url: https://en.wikipedia.org/wiki/Gran_Colombia
+  from: 아메리카 M2 AND-N-M2 결과노트
+- name: 엘엔칸토(푸투마요–카케타 사이)
+  at: [-73.21, -1.75]
+  year: 1830
+  expect: none
+  url: https://en.wikipedia.org/wiki/Colombia%E2%80%93Peru_War
+  from: 아메리카 M2 AND-N-M2 결과노트
+- name: 푸에르토아요라(갈라파고스)
+  at: [-90.31, -0.74]
+  year: 1831
+  expect: none
+  url: https://en.wikipedia.org/wiki/Gal%C3%A1pagos_Islands
+  from: 아메리카 M2 AND-N-M2 결과노트
+- name: 푸에르토아요라(갈라파고스)
+  at: [-90.31, -0.74]
+  year: 1832
+  expect: ecuador
+  url: https://en.wikipedia.org/wiki/Gal%C3%A1pagos_Islands
+  from: 아메리카 M2 AND-N-M2 결과노트
+
+# ── 아메리카 M2 CAM-M2 (중앙아메리카, 2026-11-16) ──
+- name: 과테말라시티
+  at: [-90.51, 14.63]
+  year: 1800
+  expect: guatemala-captaincy
+  url: https://en.wikipedia.org/wiki/Federal_Republic_of_Central_America
+  from: 아메리카 M2 CAM-M2 결과노트
+- name: 과테말라시티
+  at: [-90.51, 14.63]
+  year: 1822
+  expect: mexico
+  url: https://en.wikipedia.org/wiki/Federal_Republic_of_Central_America
+  from: 아메리카 M2 CAM-M2 결과노트
+- name: 과테말라시티
+  at: [-90.51, 14.63]
+  year: 1830
+  expect: central-american-federation
+  url: https://en.wikipedia.org/wiki/Federal_Republic_of_Central_America
+  from: 아메리카 M2 CAM-M2 결과노트
+- name: 과테말라시티
+  at: [-90.51, 14.63]
+  year: 1839
+  expect: guatemala
+  url: https://en.wikipedia.org/wiki/Federal_Republic_of_Central_America
+  from: 아메리카 M2 CAM-M2 결과노트
+- name: 테구시갈파
+  at: [-87.21, 14.07]
+  year: 1821
+  expect: guatemala-captaincy
+  url: https://en.wikipedia.org/wiki/Federal_Republic_of_Central_America
+  from: 아메리카 M2 CAM-M2 결과노트
+- name: 테구시갈파
+  at: [-87.21, 14.07]
+  year: 1838
+  expect: central-american-federation
+  url: https://en.wikipedia.org/wiki/Federal_Republic_of_Central_America
+  from: 아메리카 M2 CAM-M2 결과노트
+- name: 테구시갈파
+  at: [-87.21, 14.07]
+  year: 1839
+  expect: honduras
+  url: https://en.wikipedia.org/wiki/Federal_Republic_of_Central_America
+  from: 아메리카 M2 CAM-M2 결과노트
+- name: 마나과
+  at: [-86.25, 12.13]
+  year: 1837
+  expect: central-american-federation
+  url: https://en.wikipedia.org/wiki/Federal_Republic_of_Central_America
+  from: 아메리카 M2 CAM-M2 결과노트
+- name: 마나과
+  at: [-86.25, 12.13]
+  year: 1838
+  expect: nicaragua
+  url: https://en.wikipedia.org/wiki/Federal_Republic_of_Central_America
+  from: 아메리카 M2 CAM-M2 결과노트
+- name: 산호세
+  at: [-84.09, 9.93]
+  year: 1837
+  expect: central-american-federation
+  url: https://en.wikipedia.org/wiki/Federal_Republic_of_Central_America
+  from: 아메리카 M2 CAM-M2 결과노트
+- name: 산호세
+  at: [-84.09, 9.93]
+  year: 1838
+  expect: costa-rica
+  url: https://en.wikipedia.org/wiki/Federal_Republic_of_Central_America
+  from: 아메리카 M2 CAM-M2 결과노트
+- name: 산살바도르
+  at: [-89.19, 13.69]
+  year: 1830
+  expect: central-american-federation
+  url: https://en.wikipedia.org/wiki/Federal_Republic_of_Central_America
+  from: 아메리카 M2 CAM-M2 결과노트
+- name: 산살바도르
+  at: [-89.19, 13.69]
+  year: 1841
+  expect: el-salvador
+  url: https://en.wikipedia.org/wiki/Federal_Republic_of_Central_America
+  from: 아메리카 M2 CAM-M2 결과노트
+- name: 벨리즈시티
+  at: [-88.2, 17.5]
+  year: 1797
+  expect: guatemala-captaincy
+  url: https://en.wikipedia.org/wiki/Battle_of_St._George%27s_Caye
+  from: 아메리카 M2 CAM-M2 결과노트
+- name: 벨리즈시티
+  at: [-88.2, 17.5]
+  year: 1798
+  expect: belize
+  url: https://en.wikipedia.org/wiki/Battle_of_St._George%27s_Caye
+  from: 아메리카 M2 CAM-M2 결과노트
+- name: 푸에르토렘피라
+  at: [-83.78, 15.26]
+  year: 1859
+  expect: mosquito-kingdom
+  url: https://en.wikipedia.org/wiki/Mosquito_Coast
+  from: 아메리카 M2 CAM-M2 결과노트
+- name: 푸에르토렘피라
+  at: [-83.78, 15.26]
+  year: 1860
+  expect: honduras
+  url: https://en.wikipedia.org/wiki/Mosquito_Coast
+  from: 아메리카 M2 CAM-M2 결과노트
+- name: 블루필즈
+  at: [-83.77, 12.01]
+  year: 1800
+  expect: mosquito-kingdom
+  url: https://en.wikipedia.org/wiki/Mosquito_Coast
+  from: 아메리카 M2 CAM-M2 결과노트
+- name: 블루필즈
+  at: [-83.77, 12.01]
+  year: 1893
+  expect: mosquito-kingdom
+  url: https://en.wikipedia.org/wiki/Mosquito_Coast
+  from: 아메리카 M2 CAM-M2 결과노트
+- name: 블루필즈
+  at: [-83.77, 12.01]
+  year: 1894
+  expect: nicaragua
+  url: https://en.wikipedia.org/wiki/Mosquito_Coast
+  from: 아메리카 M2 CAM-M2 결과노트
+
+# ── 아메리카 M2 CAR-M2 (카리브, 2026-11-16) ──
+- name: 아바나
+  at: [-82.38, 23.13]
+  year: 1850
+  expect: cuba-captaincy-general
+  url: https://en.wikipedia.org/wiki/Captaincy_General_of_Cuba
+  from: 아메리카 M2 CAR-M2 결과노트
+- name: 아바나
+  at: [-82.38, 23.13]
+  year: 1899
+  expect: none
+  url: https://en.wikipedia.org/wiki/Captaincy_General_of_Cuba
+  from: 아메리카 M2 CAR-M2 결과노트
+- name: 포르토프랭스
+  at: [-72.34, 18.54]
+  year: 1790
+  expect: saint-domingue
+  url: https://en.wikipedia.org/wiki/Saint-Domingue
+  from: 아메리카 M2 CAR-M2 결과노트
+- name: 포르토프랭스
+  at: [-72.34, 18.54]
+  year: 1810
+  expect: haiti
+  url: https://en.wikipedia.org/wiki/State_of_Haiti
+  from: 아메리카 M2 CAR-M2 결과노트
+- name: 카프아이시앵
+  at: [-72.20, 19.76]
+  year: 1815
+  expect: kingdom-of-haiti
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Haiti
+  from: 아메리카 M2 CAR-M2 결과노트
+- name: 카프아이시앵
+  at: [-72.20, 19.76]
+  year: 1830
+  expect: haiti
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Haiti
+  from: 아메리카 M2 CAR-M2 결과노트
+- name: 산토도밍고
+  at: [-69.93, 18.49]
+  year: 1790
+  expect: santo-domingo-captaincy
+  url: https://en.wikipedia.org/wiki/Haitian_occupation_of_Santo_Domingo
+  from: 아메리카 M2 CAR-M2 결과노트
+- name: 산토도밍고
+  at: [-69.93, 18.49]
+  year: 1830
+  expect: haiti
+  url: https://en.wikipedia.org/wiki/Haitian_occupation_of_Santo_Domingo
+  from: 아메리카 M2 CAR-M2 결과노트
+- name: 산토도밍고
+  at: [-69.93, 18.49]
+  year: 1850
+  expect: dominican-republic
+  url: https://en.wikipedia.org/wiki/Haitian_occupation_of_Santo_Domingo
+  from: 아메리카 M2 CAR-M2 결과노트
+- name: 킹스턴
+  at: [-76.79, 17.97]
+  year: 1850
+  expect: jamaica
+  url: https://en.wikipedia.org/wiki/Colony_of_Jamaica
+  from: 아메리카 M2 CAR-M2 결과노트
+- name: 나소
+  at: [-77.35, 25.05]
+  year: 1850
+  expect: bahamas
+  url: https://en.wikipedia.org/wiki/History_of_the_Bahamas
+  from: 아메리카 M2 CAR-M2 결과노트
+
+# ── 아메리카 M2 NW-M2 (알래스카·추코트카·그린란드·브리티시컬럼비아, 2026-11-16) ──
+- name: 싯카(배러노프섬) 헌장 앞
+  at: [-135.2, 57.1]
+  year: 1798
+  expect: none
+  url: https://en.wikipedia.org/wiki/Russian_America
+  from: 아메리카 M2 NW-M2 결과노트
+- name: 싯카(배러노프섬) 헌장 뒤
+  at: [-135.2, 57.1]
+  year: 1799
+  expect: russian-america
+  url: https://en.wikipedia.org/wiki/Russian_America
+  from: 아메리카 M2 NW-M2 결과노트
+- name: 싯카(배러노프섬) 매매 뒤
+  at: [-135.2, 57.1]
+  year: 1867
+  expect: usa
+  url: https://en.wikipedia.org/wiki/Russian_America
+  from: 아메리카 M2 NW-M2 결과노트
+- name: 페어뱅크스(알래스카 내륙) 협약 앞
+  at: [-147.72, 64.84]
+  year: 1824
+  expect: none
+  url: https://en.wikipedia.org/wiki/Alaska_boundary_dispute
+  from: 아메리카 M2 NW-M2 결과노트
+- name: 페어뱅크스(알래스카 내륙) 협약 뒤
+  at: [-147.72, 64.84]
+  year: 1825
+  expect: russian-america
+  url: https://en.wikipedia.org/wiki/Alaska_boundary_dispute
+  from: 아메리카 M2 NW-M2 결과노트
+- name: 애투섬(알류샨 동경 쪽) 헌장 뒤
+  at: [172.9, 52.84]
+  year: 1799
+  expect: russian-america
+  url: https://en.wikipedia.org/wiki/Russian_America
+  from: 아메리카 M2 NW-M2 결과노트
+- name: 애투섬(알류샨 동경 쪽) 매매 뒤
+  at: [172.9, 52.84]
+  year: 1867
+  expect: usa
+  url: https://en.wikipedia.org/wiki/Russian_America
+  from: 아메리카 M2 NW-M2 결과노트
+- name: 라브렌티야(추코트카) 늘림 앞
+  at: [-171, 65.6]
+  year: 1777
+  expect: none
+  url: https://en.wikipedia.org/wiki/Chukotka_Autonomous_Okrug
+  from: 아메리카 M2 NW-M2 결과노트
+- name: 라브렌티야(추코트카) 늘림 뒤
+  at: [-171, 65.6]
+  year: 1778
+  expect: russia
+  url: https://en.wikipedia.org/wiki/Chukotka_Autonomous_Okrug
+  from: 아메리카 M2 NW-M2 결과노트
+- name: 라브렌티야(추코트카) 늘림 끝 해
+  at: [-171, 65.6]
+  year: 1897
+  expect: russia
+  url: https://en.wikipedia.org/wiki/Chukotka_Autonomous_Okrug
+  from: 아메리카 M2 NW-M2 결과노트
+- name: 누크(그린란드 서해안)
+  at: [-51.72, 64.18]
+  year: 1776
+  expect: greenland
+  url: https://en.wikipedia.org/wiki/History_of_Greenland
+  from: 아메리카 M2 NW-M2 결과노트
+- name: 나나이모(밴쿠버섬) 식민지 앞
+  at: [-123.94, 49.17]
+  year: 1848
+  expect: none
+  url: https://en.wikipedia.org/wiki/Colony_of_Vancouver_Island
+  from: 아메리카 M2 NW-M2 결과노트
+- name: 나나이모(밴쿠버섬) 식민지 뒤
+  at: [-123.94, 49.17]
+  year: 1849
+  expect: vancouver-island
+  url: https://en.wikipedia.org/wiki/Colony_of_Vancouver_Island
+  from: 아메리카 M2 NW-M2 결과노트
+- name: 나나이모(밴쿠버섬) 합병 뒤
+  at: [-123.94, 49.17]
+  year: 1866
+  expect: british-columbia
+  url: https://en.wikipedia.org/wiki/Colony_of_Vancouver_Island
+  from: 아메리카 M2 NW-M2 결과노트
+- name: 나나이모(밴쿠버섬) 캐나다 합류 뒤
+  at: [-123.94, 49.17]
+  year: 1871
+  expect: canada
+  url: https://en.wikipedia.org/wiki/Colony_of_Vancouver_Island
+  from: 아메리카 M2 NW-M2 결과노트
+- name: 프린스조지(54°40′ 남쪽 본토) 공동 점유 끝 앞
+  at: [-122.75, 53.92]
+  year: 1845
+  expect: none
+  url: https://en.wikipedia.org/wiki/North-Western_Territory
+  from: 아메리카 M2 NW-M2 결과노트
+- name: 프린스조지(54°40′ 남쪽 본토) 오리건 조약 뒤
+  at: [-122.75, 53.92]
+  year: 1846
+  expect: north-western-territory
+  url: https://en.wikipedia.org/wiki/North-Western_Territory
+  from: 아메리카 M2 NW-M2 결과노트
+- name: 프린스조지(54°40′ 남쪽 본토) 식민지 뒤
+  at: [-122.75, 53.92]
+  year: 1858
+  expect: british-columbia
+  url: https://en.wikipedia.org/wiki/Colony_of_British_Columbia_(1858%E2%80%931866)
+  from: 아메리카 M2 NW-M2 결과노트
+- name: 포트넬슨(브리티시컬럼비아 북동부) 허가 앞
+  at: [-122.7, 58.81]
+  year: 1820
+  expect: none
+  url: https://en.wikipedia.org/wiki/North-Western_Territory
+  from: 아메리카 M2 NW-M2 결과노트
+- name: 포트넬슨(브리티시컬럼비아 북동부) 허가 뒤
+  at: [-122.7, 58.81]
+  year: 1821
+  expect: north-western-territory
+  url: https://en.wikipedia.org/wiki/North-Western_Territory
+  from: 아메리카 M2 NW-M2 결과노트
+- name: 포트넬슨(브리티시컬럼비아 북동부) 넓힘 앞
+  at: [-122.7, 58.81]
+  year: 1862
+  expect: north-western-territory
+  url: https://en.wikipedia.org/wiki/Colony_of_British_Columbia_(1858%E2%80%931866)
+  from: 아메리카 M2 NW-M2 결과노트
+- name: 포트넬슨(브리티시컬럼비아 북동부) 넓힘 뒤
+  at: [-122.7, 58.81]
+  year: 1863
+  expect: british-columbia
+  url: https://en.wikipedia.org/wiki/Colony_of_British_Columbia_(1858%E2%80%931866)
+  from: 아메리카 M2 NW-M2 결과노트
+- name: 스미더스(나스강·핀레이강 남쪽) 식민지 뒤
+  at: [-127.17, 54.78]
+  year: 1858
+  expect: british-columbia
+  url: https://en.wikipedia.org/wiki/Colony_of_British_Columbia_(1858%E2%80%931866)
+  from: 아메리카 M2 NW-M2 결과노트
+
+# ── 아메리카 M2 BRG-M2 (브라질·기아나, 2026-11-16) ──
+- name: 리우데자네이루
+  at: [-43.17, -22.91]
+  year: 1821
+  expect: portuguese-brazil
+  url: https://en.wikipedia.org/wiki/Colonial_Brazil
+  from: 아메리카 M2 BRG-M2 결과노트
+- name: 리우데자네이루
+  at: [-43.17, -22.91]
+  year: 1822
+  expect: brazil
+  url: https://en.wikipedia.org/wiki/Empire_of_Brazil
+  from: 아메리카 M2 BRG-M2 결과노트
+- name: 벨렝
+  at: [-48.5, -1.46]
+  year: 1776
+  expect: portuguese-brazil
+  url: https://en.wikipedia.org/wiki/Colonial_Brazil
+  from: 아메리카 M2 BRG-M2 결과노트
+- name: 벨렝
+  at: [-48.5, -1.46]
+  year: 1822
+  expect: brazil
+  url: https://en.wikipedia.org/wiki/Empire_of_Brazil
+  from: 아메리카 M2 BRG-M2 결과노트
+- name: 오이아포크
+  at: [-51.83, 3.84]
+  year: 1840
+  expect: brazil
+  url: https://en.wikipedia.org/wiki/Republic_of_Independent_Guiana
+  from: 아메리카 M2 BRG-M2 결과노트
+- name: 오이아포크
+  at: [-51.83, 3.84]
+  year: 1841
+  expect: none
+  url: https://en.wikipedia.org/wiki/Republic_of_Independent_Guiana
+  from: 아메리카 M2 BRG-M2 결과노트
+- name: 오이아포크
+  at: [-51.83, 3.84]
+  year: 1899
+  expect: none
+  url: https://en.wikipedia.org/wiki/Republic_of_Independent_Guiana
+  from: 아메리카 M2 BRG-M2 결과노트
+- name: 마카파
+  at: [-51.07, 0.03]
+  year: 1850
+  expect: brazil
+  url: https://en.wikipedia.org/wiki/Amap%C3%A1
+  from: 아메리카 M2 BRG-M2 결과노트
+- name: 조지타운
+  at: [-58.16, 6.8]
+  year: 1813
+  expect: dutch-essequibo-berbice
+  url: https://en.wikipedia.org/wiki/British_Guiana
+  from: 아메리카 M2 BRG-M2 결과노트
+- name: 조지타운
+  at: [-58.16, 6.8]
+  year: 1814
+  expect: british-guiana
+  url: https://en.wikipedia.org/wiki/British_Guiana
+  from: 아메리카 M2 BRG-M2 결과노트
+- name: 파라마리보
+  at: [-55.2, 5.85]
+  year: 1776
+  expect: dutch-suriname
+  url: https://en.wikipedia.org/wiki/Surinam_(Dutch_colony)
+  from: 아메리카 M2 BRG-M2 결과노트
+- name: 카옌
+  at: [-52.33, 4.94]
+  year: 1776
+  expect: french-guiana
+  url: https://en.wikipedia.org/wiki/French_Guiana
+  from: 아메리카 M2 BRG-M2 결과노트

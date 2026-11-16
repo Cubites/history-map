@@ -62,6 +62,7 @@ export const REGION_FILTER_OF: Record<string, RegionFilterUnit> = {
   'sub-saharan-africa-precolonial': 'sub-saharan-africa', // 사하라 이남 F7(2026-11-14): F1과 같은 단위 sub-saharan-africa
   americas: 'americas', // 아메리카 M1(2026-11-15): 새 단위 americas
   'americas-modern': 'americas', // 아메리카 M1(2026-11-15): 새 단위 americas
+  'americas-independence': 'americas', // 아메리카 M2(2026-11-16): M1과 같은 단위 americas
 };
 
 /** 사건·전쟁 파일 이름 앞머리 → 권역. 앞에서부터 처음 맞는 것을 쓴다 (예: eu-01-revolutions-1789-1914.yaml → europe) */

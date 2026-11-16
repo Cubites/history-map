@@ -1,6 +1,6 @@
 // americas 도우미 모듈: 행정구역 조각 소유표 (아메리카 M1 뼈대, 2026-11-15)
 // 사하라 이남 도우미(areas/sub-saharan-africa/table.mjs — 동남아·중앙아시아·남아시아·서아시아·유럽 makeTable과 같은 꼴)를 이 권역 조각(loadFragments('americas'), 664개)에 맞춰 옮겼다.
-// 이 권역 조각은 앞 권역 조각과 땅으로 닿지 않아(조각 파일에 under 없음 — 0단계) 앞 권역 도형을 빼는 prev.mjs가 없다. 1900~ 이 권역 조각과 겹치는 앞 권역 도형도 없다(usa 손그림은 이 권역 권역 파일 몫).
+// 이 권역 조각은 앞 권역 조각과 땅으로 닿지 않아(조각 파일에 under 없음 — 0단계) 앞 권역 도형을 빼는 prev.mjs가 없다. 1900~ 이 권역 조각과 겹치는 앞 권역 도형도 없다(옛 usa 손그림은 M2 US-M2가 지움).
 // 시대 파일(areas/americas/<시대>.mjs)이 이 모듈을 가져와 표를 만들고, 표를 이어 나라별 버전·주인 없는 땅을 얻는다.
 // - 단위: 조각 하나를 통째로 쓰면 그 조각 id, 선으로 나눴으면 '이름/부분'. own(단위들, [[해, 나라], ...])는 그 해부터 다음 해 전까지 그 나라 땅이라는 뜻이다.
 // - 나라가 null이면 주인 없는 땅이다(일부러 비운 땅이거나 다른 권역 도형이 덮는 땅).
@@ -21,7 +21,7 @@ export const F = (...ids) => {
   if (!ids.length) throw new Error('americas table.mjs: F()에 조각 id가 없음');
   return AM.F(...ids);
 };
-// 이 권역 나라의 출처 문구(지도 정보 패널). 권역 파일 americas.mjs가 sourceOf로 이 권역 나라 모두에 붙인다(usa는 손그림 때 문구 그대로 — 권역 파일 SOURCE_KEEP). 시대 파일은 era.source를 두지 않는다
+// 이 권역 나라의 출처 문구(지도 정보 패널). 권역 파일 americas.mjs가 sourceOf로 이 권역 나라 모두에 붙인다(usa도 같은 문구 — 옛 SOURCE_KEEP은 M2 US-M2가 지움). 시대 파일은 era.source를 두지 않는다
 export const AM_SOURCE_TEXT = '아메리카 쪽은 Natural Earth 1:10m admin-1(v5.1.2) 현대 행정구역 조각을 그 시기 국경에 맞춰 묶은 근사(지금 나라 경계와 같은 곳은 조각 통째). 점령 땅은 관계로만 나타냄. 운영자 검수 필요';
 // 권역 바깥선 (빈 땅 검사 구역의 바탕)
 export const DOMAIN = AM.domain;
