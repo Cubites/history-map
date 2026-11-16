@@ -8333,3 +8333,123 @@
   avoid: [그랑 파라]
   note: "Grão-Pará(포르투갈령 브라질 북쪽 주, 1775 합침). 위키 ko 표제 없음 — 가칭(BRG-M2)"
   scope: 아메리카·남아메리카
+
+# ── 오세아니아 첫판 (0단계, 2026-11-17) ──
+# 0단계 조사 R-EV(`events-spelling.md` 3절)가 위키백과 한국어판 표제를 연 것과 창구 ② 기본값 16·18(누벨칼레도니, '호주'는 avoid 걸지 않음)대로.
+# 넣을 때 avoid 표기마다 data/events·data/entities를 grep해 0건인 것만 걸었다(새 실패 0). 이스터섬은 아메리카 항목(위)이 이미 있어 넣지 않았다.
+# '호주'는 기존 사건 글 5파일(구어·인용)에 있어 avoid로 걸지 않는다 — 새 글은 '오스트레일리아'로 쓴다(아래 첫 항목 note).
+
+- use: 오스트레일리아
+  avoid: [오스트렐리아]
+  note: "Australia. 위키 ko 표제(R-EV 열람). 구어 '호주'는 기존 사건 글 5파일에 있어 avoid로 걸지 않고, 새 사건·나라 글은 '오스트레일리아'로 통일(창구 ② 기본값 18)"
+  scope: 오세아니아
+
+- use: 파푸아뉴기니
+  avoid: [파푸아 뉴기니]
+  note: "Papua New Guinea. 위키 ko 표제 붙여 씀(R-EV 열람). 1949~1975 준주 이름도 '파푸아뉴기니 준주'로"
+  scope: 오세아니아
+
+- use: 키리바시
+  avoid: [키리바티]
+  note: "Kiribati(1979 독립, 옛 길버트 제도). 위키 ko 표제(R-EV 열람). 1979 앞 '길버트 제도'는 이름 바뀜이라 허용"
+  scope: 오세아니아
+
+- use: 누벨칼레도니
+  avoid: [뉴칼레도니아]
+  note: "Nouvelle-Calédonie(프랑스, 1853 병합). 위키 ko 표제(창구 ② 기본값 16 재확인 — ko 표제 '누벨칼레도니', 영어식 '뉴칼레도니아'는 버림). 저장소 grep 0"
+  scope: 오세아니아
+
+- use: 프랑스령 폴리네시아
+  avoid: [프렌치폴리네시아, 프렌치 폴리네시아]
+  note: "Polynésie française(1880 식민지, 1946 해외 영토, 1957 이름). 위키 ko 표제(R-EV 열람)"
+  scope: 오세아니아
+
+- use: 북마리아나 제도
+  avoid: [북마리아나 군도]
+  note: "Northern Mariana Islands(미국 자치령 1986~). 위키 ko 표제(R-EV 열람)"
+  scope: 오세아니아
+
+- use: 핏케언 제도
+  avoid: [핏케른, 핏케인]
+  note: "Pitcairn Islands(영국, 1838). 위키 ko 표제(R-EV 열람)"
+  scope: 오세아니아
+
+- use: 마오리족
+  avoid: [마오리 족, 마오리인]
+  note: "Māori. 위키 ko 표제 '마오리족'(R-EV 열람). 사회·문화를 가리키는 땅 없는 항목 이름 '마오리'는 허용"
+  scope: 오세아니아·뉴질랜드
+
+- use: 와이탕이 조약
+  avoid: [와이탕기]
+  note: "Treaty of Waitangi(1840-02-06 서명). 위키 ko 마오리족 문서가 '와이탕이'로 일관(R-EV 열람)"
+  scope: 오세아니아·뉴질랜드
+
+- use: 아오테아로아
+  avoid: [아오테아로와]
+  note: "Aotearoa(뉴질랜드의 마오리어 이름). 위키 ko 문서에 안 나옴 — 마오리어 소리 그대로(R-EV, 기억, 미확인)"
+  scope: 오세아니아·뉴질랜드
+
+- use: 라파누이
+  avoid: [라파 누이]
+  note: "Rapa Nui(이스터섬의 원주민 이름·사회). 위키 ko 이스터섬 본문 붙여 씀(R-EV 열람). 땅은 아메리카 칠레 CL-VS(창구 ① 결정 3(b))"
+  scope: 오세아니아·이스터섬
+
+- use: 제임스 쿡
+  avoid: [캡틴 쿡]
+  note: "James Cook(1728~1779). 위키 ko 표제(R-EV 열람). 짧은 '쿡'은 다른 낱말에 섞여 avoid로 쓰지 않음"
+  scope: 오세아니아
+
+- use: 아벌 타스만
+  avoid: [아벨 타스만, 타즈만]
+  note: "Abel Janszoon Tasman(네덜란드). 위키 ko 뉴질랜드 문서 표기(R-EV 열람, 창구 ② 공용 인명표). 땅·바다 이름은 태즈메이니아·태즈먼해"
+  scope: 오세아니아
+
+- use: 태즈먼해
+  avoid: [타스만해]
+  note: "Tasman Sea. 외래어 표기법(영어) — 사람 이름 '아벌 타스만'과 갈림(R-EV 3.1 16)"
+  scope: 오세아니아
+
+- use: 태즈메이니아
+  avoid: [태스메이니아, 타스마니아]
+  note: "Tasmania(1856 개칭, 옛 반디먼즈랜드). 위키 ko 오스트레일리아의 역사 본문(R-EV 열람)"
+  scope: 오세아니아·오스트레일리아
+
+- use: 반디먼즈랜드
+  avoid: [밴디먼스랜드, 반디멘스랜드]
+  note: "Van Diemen's Land(1825 분리~1856 태즈메이니아 개칭). R-EV 3.1 17(기억, 미확인 — M2 직전 위키 ko 확인)"
+  scope: 오세아니아·오스트레일리아
+
+- use: 카메하메하
+  avoid: [카메하메아]
+  note: "Kamehameha(하와이 왕국 왕, 카메하메하 1세 1795~1819). 위키 ko 하와이 왕국 문서(R-EV 열람)"
+  scope: 오세아니아·하와이
+
+- use: 릴리우오칼라니
+  avoid: [릴리오칼라니]
+  note: "Liliʻuokalani(하와이 왕국 마지막 여왕, 1891~1893). 위키 ko(R-EV 열람)"
+  scope: 오세아니아·하와이
+
+- use: 칼라카우아
+  avoid: [칼라카와]
+  note: "Kalākaua(하와이 왕, 1874~1891). 위키 ko 하와이 왕국 문서(R-EV 열람)"
+  scope: 오세아니아·하와이
+
+- use: 하와이 왕국
+  avoid: [하와이 제국]
+  note: "Kingdom of Hawaiʻi(1795~1893, 항목 hawaiian-kingdom). 위키 ko 표제(R-EV 열람)"
+  scope: 오세아니아·하와이
+
+- use: 솔로몬 제도
+  avoid: [솔로몬 군도]
+  note: "Solomon Islands. 위키 ko 표제(R-EV 열람). 저장소 '솔로몬' 5파일은 성서·솔로몬 왕조라 '솔로몬 군도'만 버림"
+  scope: 오세아니아
+
+- use: 오세아니아
+  avoid: [대양주]
+  note: "Oceania(권역 id oceania). 위키 ko 표제(R-EV 열람)"
+  scope: 오세아니아
+
+- use: 폴리네시아
+  avoid: [뽈리네시아]
+  note: "Polynesia. 위키 ko 표제(R-EV 열람, '뽈리네시아'는 문화어)"
+  scope: 오세아니아

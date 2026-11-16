@@ -43,7 +43,9 @@ for (const name of names) {
   const ADM0_50M = FRAGMENT_REGIONS[name]?.countries50m ?? {};
   const frags = set.ids.map((id) => ({ id, props: set.props.get(id), multi: set.F(id) }));
   const box = bboxOf(set.domain);
-  const near = (multi) => multi.filter((poly) => !boxesApart(bboxOf([poly]), box));
+  // 지역 표에 boxes(날짜변경선 양쪽 상자 목록, 2026-11-17 오세아니아)가 있으면 그 상자들로 육지를 거른다 — 권역 바깥선의 bbox가 경도 360°가 되어 위도 띠 전체 육지를 읽지 않게. 없으면 전과 같음
+  const nearBoxes = FRAGMENT_REGIONS[name]?.boxes ?? [box];
+  const near = (multi) => multi.filter((poly) => nearBoxes.some((b) => !boxesApart(bboxOf([poly]), b)));
   const L50 = near(land50), L110 = near(land110);
   console.log(`=== ${name}: 조각 ${frags.length}개, 권역 범위 [${box.map((v) => v.toFixed(2)).join(', ')}] ===`);
 

@@ -111,9 +111,13 @@ log(`원본 ${srcPath}: ${buf.length}B, git blob SHA-1 ${blobSha1} (기록과 �
 // 세계 육지(권역 상자에 걸친 것만): landTrue = (land-50m ∪ land-110m) ∩ 상자(빌드가 해안선으로 자를 때 쓰는 육지 그대로), L = 그것을 격자에 맞춘 것.
 // 해안 조각은 L을 격자 두 칸(PARAMS.coastMargin)만큼 부풀린 L⁺(L과, 대각선 네 방향으로 두 칸씩 옮긴 L의 합집합. 곧은 해안이면 어느 방향으로도 두 칸 이상 부푼다)에서 뺀다. 해안 조각의 꼭짓점 가운데
 // 조각 해안선과의 교차점은 격자에 맞출 때 최대 0.71칸 움직이므로, 부풀려 두어야 움직인 뒤에도 육지를 빈틈없이 덮는다(부푼 띠는 바다라 빌드가 잘라 낸다)
-const B = REGION_DEF.box;
-const boxPoly = [[[B[0], B[1]], [B[2], B[1]], [B[2], B[3]], [B[0], B[3]], [B[0], B[1]]]];
-const near = (multi) => multi.filter((poly) => !boxesApart(bboxOf([poly]), B));
+// 범위 상자: 지역 표의 box 하나, 또는 boxes(상자 목록 — 날짜변경선 양쪽에 걸친 지역, 2026-11-17 오세아니아). 상자 목록이면 육지는 상자들의 합집합과 자르고,
+// 폴리곤은 어느 상자에도 걸치지 않을 때만 뺀다. box 하나인 지역은 전과 같은 길(상자 다각형·거름이 바이트까지 같음)
+const BOXES = REGION_DEF.boxes ?? [REGION_DEF.box];
+const rectOf = (b) => [[[b[0], b[1]], [b[2], b[1]], [b[2], b[3]], [b[0], b[3]], [b[0], b[1]]]];
+const boxPoly = BOXES.length === 1 ? rectOf(BOXES[0]) : polyclip.union(...BOXES.map(rectOf));
+const outsideBoxes = (bb) => BOXES.every((b) => boxesApart(bb, b));
+const near = (multi) => multi.filter((poly) => !outsideBoxes(bboxOf([poly])));
 const landTrue = polyclip.intersection(polyclip.union(near(loadLand('50m')), near(loadLand('110m'))), boxPoly);
 const L = cleanMulti(landTrue);
 const cm = PARAMS.coastMargin;
@@ -132,7 +136,7 @@ function loadUnder(name) {
   const text = readFileSync(file, 'utf8');
   const topo = JSON.parse(text);
   const frags = topo.objects.fragments.geometries.map((g) => ({ id: g.id, adm0: g.properties.adm0, multi: cleanMulti(toMulti(feature(topo, g).geometry)) }))
-    .map((u) => ({ ...u, multi: u.multi.filter((poly) => !boxesApart(bboxOf([poly]), B)) })).filter((u) => u.multi.length);
+    .map((u) => ({ ...u, multi: u.multi.filter((poly) => !outsideBoxes(bboxOf([poly]))) })).filter((u) => u.multi.length);
   return { name, sha: createHash('sha256').update(text).digest('hex'), frags };
 }
 
@@ -183,7 +187,7 @@ function build(src, region, verbose) {
     if (dropSet.has(p.adm0_a3) || dropCodeSet.has(p.adm1_code)) continue;
     const isChosen = adm0Set.has(p.adm0_a3) || partOf(p);
     const all = toMulti(f.geometry);
-    const polys = all.filter((poly) => !boxesApart(bboxOf([poly]), region.box));
+    const polys = all.filter((poly) => !outsideBoxes(bboxOf([poly])));
     if (isChosen && polys.length < all.length) report.dropped.push(`${p.adm0_a3} ${p.name}(${p.type_en ?? '-'}): 폴리곤 ${all.length - polys.length}/${all.length}개`);
     if (!polys.length) continue;
     (isChosen ? chosen : neighbors).push({ p, multi: polys });
@@ -693,7 +697,8 @@ function readme(r, checks) {
   if (region.drop?.length) L.push('- 버린 나라(조각에도 이웃에도 넣지 않고, 그 땅은 해안 맞추기에서 옆 조각이 덮음): ' + region.drop.join(', '));
   if (region.dropCodes?.length) L.push('- 버린 행정구역(NE adm1_code, 조각에도 이웃에도 넣지 않음 — 그 땅은 해안 맞추기에서 옆 조각이 덮거나 내륙 구멍 조각이 됨): ' + region.dropCodes.join(', '));
   for (const inc of region.include ?? []) L.push('- ' + inc.note.replaceAll('{values}', inc.values.join('·')));
-  L.push('- 범위 상자 [서, 남, 동, 북] = [' + region.box.join(', ') + ']. 상자 밖에 통째로 있는 폴리곤은 뺐다: ' + (rp.dropped.join('; ') || '없음'));
+  if (region.boxes) L.push('- 범위 상자 ' + region.boxes.length + '개(날짜변경선 양쪽, 각 [서, 남, 동, 북]) = ' + region.boxes.map((b) => '[' + b.join(', ') + ']').join(' · ') + '. 어느 상자에도 걸치지 않는 폴리곤은 뺐다: ' + (rp.dropped.join('; ') || '없음'));
+  else L.push('- 범위 상자 [서, 남, 동, 북] = [' + region.box.join(', ') + ']. 상자 밖에 통째로 있는 폴리곤은 뺐다: ' + (rp.dropped.join('; ') || '없음'));
   if (UNDER) L.push('- 아래층 조각: ' + code(UNDER.name + '.topo.json') + '(sha256 ' + UNDER.sha.slice(0, 16) + '…)의 조각을 그 지역 원본 행정구역 대신 이웃으로 쓰고(그 arc는 간략화하지 않음), 이 지역 조각에서 그와 겹치는 땅을 뺐다: ' + (rp.underCut.join('; ') || '없음') + '. 이음매 선은 아래층 조각 바깥선 그대로다.');
   L.push('- 육지: world-atlas 2.0.2의 land-50m ∪ land-110m(Natural Earth 4.1.0, 빌드가 해안선으로 자를 때 쓰는 것과 같음). 구멍 조각 이름: world-atlas countries-10m.', '');
   L.push('| 매개변수 | 값 | 뜻 |', '|---|---|---|');

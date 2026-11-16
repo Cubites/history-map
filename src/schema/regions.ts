@@ -63,6 +63,8 @@ export const REGION_FILTER_OF: Record<string, RegionFilterUnit> = {
   americas: 'americas', // 아메리카 M1(2026-11-15): 새 단위 americas
   'americas-modern': 'americas', // 아메리카 M1(2026-11-15): 새 단위 americas
   'americas-independence': 'americas', // 아메리카 M2(2026-11-16): M1과 같은 단위 americas
+  oceania: 'southeast-asia', // 오세아니아 0단계 빈 틀(2026-11-17, 땅으로 닿는 이웃 권역 동남아를 임시로). M1이 첫 나라를 넣을 때 새 단위 'oceania'를 REGION_FILTERS·REGION_FILTER_INFO에 더하고(범위가 경도 180°를 넘는 문제와 함께) 이 줄을 그 단위로 바꾼다(docs/oceania/00-scope.md 2절)
+  'oceania-modern': 'southeast-asia', // 오세아니아 0단계 빈 틀(2026-11-17). 위 줄과 함께 M1 첫머리에 새 단위로 바꾼다
 };
 
 /** 사건·전쟁 파일 이름 앞머리 → 권역. 앞에서부터 처음 맞는 것을 쓴다 (예: eu-01-revolutions-1789-1914.yaml → europe) */
