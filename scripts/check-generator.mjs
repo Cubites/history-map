@@ -327,9 +327,11 @@ try {
   const [plainName] = areas.filter(([n]) => !existsSync(path.join(AREA_DIR, n))).at(-1);
   expectStop(`AREAS에서 ${plainName}를 빠뜨림(파일은 남음)`, 'AREAS 목록에 없음', () => engine.mergeAreas(areas.filter(([n]) => n !== plainName), AREA_DIR));
   // 권역 파일째 없어지면 이름 검사로는 못 잡고, 지우기 전 대조가 잡는다. data/geo에 geojson이 있는 권역 가운데 마지막 것을 뺀다
-  // (나라 없이 gapZones만 내보내는 권역은 만드는 파일이 없어 건너뛴다)
+  // (나라 없이 gapZones만 내보내는 권역은 만드는 파일이 없어 건너뛴다. 다른 권역이 extendable로 늘리는 나라를 가진 권역도 건너뛴다 — 빼면 그 권역의
+  //  '어느 권역의 나라도 아님'이 먼저 멈춤. 오세아니아 M1 뼈대 2026-11-17: 빈 오세아니아가 아메리카 usa를 늘려 아메리카가 골라졌을 때)
   const filesOf = ([, a]) => [...Object.keys(a.versions), ...(a.fillSpecs ?? []).map((s) => s.id).filter((id) => !owned.has(id))].map((id) => `${id}.geojson`).filter((f) => readdirSync(tmpGeo).includes(f));
-  const gone = [...areas].reverse().find((e) => filesOf(e).length);
+  const extended = ([n, a]) => areas.some(([m, b]) => m !== n && Object.keys(b.extendable ?? {}).some((id) => Object.hasOwn(a.versions, id)));
+  const gone = [...areas].reverse().find((e) => filesOf(e).length && !extended(e));
   if (!gone) bad("data/geo에 권역이 만드는 geojson이 없어 '권역 파일째 없어짐' 시험을 못 함 (먼저 npm run gen:geo)");
   else expectStop(`${gone[0]} 권역 파일째 없어짐`, `사라질 파일 ${filesOf(gone).length}개`, () => {
     const m = engine.mergeAreas(areas.filter((e) => e !== gone));

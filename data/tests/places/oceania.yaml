@@ -1,4 +1,452 @@
-# oceania 권역 국경 지점 정답표 (평소 지도, npm run new:area가 만든 빈 틀)
-# 읽는 곳: scripts/test-geo (npm run test:geo -- --only places). 꼴은 docs/DATA_GUIDE.md의 정답표 절을 따른다. 나라·시대마다 몇 점인지는 시작 때 정한다(standards.md 9절 10).
-# 지점을 넣을 때 아래 []를 지우고 - name: …로 적는다. 해는 천문 연도(기원전 N년 = 1-N), 새 지점은 url을 반드시 단다.
-[]
+# oceania 권역 국경 지점 정답표 (평소 지도, 0단계 new:area가 만든 틀 — 오세아니아 M1 뼈대 2026-11-17이 칸 머리를 둠)
+# 읽는 곳: scripts/test-geo (npm run test:geo -- --only places). 꼴은 docs/DATA_GUIDE.md의 정답표 절을 따른다. 나라·시대마다 몇 점인지는 칸 지시문이 정한다(standards.md 9절 10, 00-scope 8절 — 나라마다 수도 1점 + 바뀌는 해 앞뒤, 동경 141° 양쪽·하와이·날짜변경선 양쪽(람바사 179.34·라우 −178.7·채텀 −176.55)).
+# 지점은 칸 머리 아래 - name: …로 적는다(주석만 있는 파일은 빈 목록으로 읽힘). 해는 천문 연도, 경도는 −180~180(필터 범위의 236 꼴은 쓰지 않음), 새 지점은 url을 반드시 단다.
+
+# ── 오세아니아 M1 AZP-M1 (오스트레일리아·뉴질랜드·남태평양·하와이, 2026-11-17) ──
+- name: 캔버라
+  at: [149.13, -35.28]
+  year: 1950
+  expect: australia
+  url: https://en.wikipedia.org/wiki/Canberra
+  from: 오세아니아 M1 AZP-M1 결과노트
+- name: 시드니 연방 앞
+  at: [151.21, -33.87]
+  year: 1900
+  expect: none
+  region: oceania
+  url: https://en.wikipedia.org/wiki/Territorial_evolution_of_Australia
+  from: 오세아니아 M1 AZP-M1 결과노트
+- name: 시드니 연방 뒤
+  at: [151.21, -33.87]
+  year: 1902
+  expect: australia
+  url: https://en.wikipedia.org/wiki/Territorial_evolution_of_Australia
+  from: 오세아니아 M1 AZP-M1 결과노트
+- name: 다윈 연방 직할 앞
+  at: [130.84, -12.46]
+  year: 1910
+  expect: australia
+  url: https://en.wikipedia.org/wiki/Northern_Territory
+  from: 오세아니아 M1 AZP-M1 결과노트
+- name: 다윈 연방 직할 뒤
+  at: [130.84, -12.46]
+  year: 1912
+  expect: australia
+  url: https://en.wikipedia.org/wiki/Northern_Territory
+  from: 오세아니아 M1 AZP-M1 결과노트
+- name: 퍼스
+  at: [115.86, -31.95]
+  year: 1950
+  expect: australia
+  url: https://en.wikipedia.org/wiki/Perth
+  from: 오세아니아 M1 AZP-M1 결과노트
+- name: 호바트(태즈메이니아)
+  at: [147.33, -42.88]
+  year: 1950
+  expect: australia
+  url: https://en.wikipedia.org/wiki/Hobart
+  from: 오세아니아 M1 AZP-M1 결과노트
+- name: 웰링턴 자치령 앞
+  at: [174.78, -41.29]
+  year: 1906
+  expect: colony-of-new-zealand
+  url: https://en.wikipedia.org/wiki/Colony_of_New_Zealand
+  from: 오세아니아 M1 AZP-M1 결과노트
+- name: 웰링턴 자치령 뒤
+  at: [174.78, -41.29]
+  year: 1908
+  expect: new-zealand
+  url: https://en.wikipedia.org/wiki/Dominion_of_New_Zealand
+  from: 오세아니아 M1 AZP-M1 결과노트
+- name: 채텀섬(와이탕이 북동쪽) 자치령 앞
+  at: [-176.478, -43.892]
+  year: 1906
+  expect: colony-of-new-zealand
+  url: https://en.wikipedia.org/wiki/Chatham_Islands
+  from: 오세아니아 M1 AZP-M1 결과노트
+- name: 채텀섬(와이탕이 북동쪽) 자치령 뒤
+  at: [-176.478, -43.892]
+  year: 1908
+  expect: new-zealand
+  url: https://en.wikipedia.org/wiki/Chatham_Islands
+  from: 오세아니아 M1 AZP-M1 결과노트
+- name: 수바 독립 앞
+  at: [178.44, -18.14]
+  year: 1969
+  expect: fiji-colony
+  url: https://en.wikipedia.org/wiki/Suva
+  from: 오세아니아 M1 AZP-M1 결과노트
+- name: 수바 독립 뒤
+  at: [178.44, -18.14]
+  year: 1971
+  expect: fiji
+  url: https://en.wikipedia.org/wiki/Fiji
+  from: 오세아니아 M1 AZP-M1 결과노트
+- name: 람바사(경도 180° 서쪽) 독립 앞
+  at: [179.34, -16.43]
+  year: 1969
+  expect: fiji-colony
+  url: https://en.wikipedia.org/wiki/Labasa
+  from: 오세아니아 M1 AZP-M1 결과노트
+- name: 람바사(경도 180° 서쪽) 독립 뒤
+  at: [179.34, -16.43]
+  year: 1971
+  expect: fiji
+  url: https://en.wikipedia.org/wiki/Labasa
+  from: 오세아니아 M1 AZP-M1 결과노트
+- name: 라우 제도 북쪽 섬(경도 180° 동쪽) 독립 앞
+  at: [-178.96, -17.219]
+  year: 1969
+  expect: fiji-colony
+  url: https://en.wikipedia.org/wiki/Lau_Islands
+  from: 오세아니아 M1 AZP-M1 결과노트
+- name: 라우 제도 북쪽 섬(경도 180° 동쪽) 독립 뒤
+  at: [-178.96, -17.219]
+  year: 1971
+  expect: fiji
+  url: https://en.wikipedia.org/wiki/Lau_Islands
+  from: 오세아니아 M1 AZP-M1 결과노트
+- name: 누쿠알로파 보호국 때
+  at: [-175.2, -21.14]
+  year: 1901
+  expect: kingdom-of-tonga
+  url: https://en.wikipedia.org/wiki/Tonga
+  from: 오세아니아 M1 AZP-M1 결과노트
+- name: 누쿠알로파 보호 끝 뒤
+  at: [-175.2, -21.14]
+  year: 1971
+  expect: kingdom-of-tonga
+  url: https://en.wikipedia.org/wiki/Tonga
+  from: 오세아니아 M1 AZP-M1 결과노트
+- name: 아피아 점령 앞
+  at: [-171.76, -13.83]
+  year: 1913
+  expect: german-samoa
+  url: https://en.wikipedia.org/wiki/German_Samoa
+  from: 오세아니아 M1 AZP-M1 결과노트
+- name: 아피아 뉴질랜드군 점령 때
+  at: [-171.76, -13.83]
+  year: 1916
+  expect: german-samoa
+  url: https://en.wikipedia.org/wiki/German_Samoa
+  from: 오세아니아 M1 AZP-M1 결과노트
+- name: 아피아 위임 통치 뒤
+  at: [-171.76, -13.83]
+  year: 1921
+  expect: western-samoa
+  url: https://en.wikipedia.org/wiki/Western_Samoa_Trust_Territory
+  from: 오세아니아 M1 AZP-M1 결과노트
+- name: 아피아 독립 뒤
+  at: [-171.76, -13.83]
+  year: 1963
+  expect: samoa
+  url: https://en.wikipedia.org/wiki/Samoa
+  from: 오세아니아 M1 AZP-M1 결과노트
+- name: 팡오팡오(아메리칸사모아, 칠하지 않음)
+  at: [-170.7, -14.28]
+  year: 1950
+  expect: none
+  region: oceania
+  url: https://en.wikipedia.org/wiki/American_Samoa
+  from: 오세아니아 M1 AZP-M1 결과노트
+- name: 팡오팡오(아메리칸사모아, 칠하지 않음) 지금
+  at: [-170.7, -14.28]
+  year: 2026
+  expect: none
+  region: oceania
+  url: https://en.wikipedia.org/wiki/American_Samoa
+  from: 오세아니아 M1 AZP-M1 결과노트
+- name: 파페에테
+  at: [-149.57, -17.53]
+  year: 1901
+  expect: french-polynesia
+  url: https://en.wikipedia.org/wiki/French_Polynesia
+  from: 오세아니아 M1 AZP-M1 결과노트
+- name: 파페에테 지금
+  at: [-149.57, -17.53]
+  year: 2026
+  expect: french-polynesia
+  url: https://en.wikipedia.org/wiki/French_Polynesia
+  from: 오세아니아 M1 AZP-M1 결과노트
+- name: 호놀룰루 병합 앞
+  at: [-157.86, 21.31]
+  year: 1897
+  expect: none
+  region: oceania
+  url: https://en.wikipedia.org/wiki/Annexation_of_Hawaii
+  from: 오세아니아 M1 AZP-M1 결과노트
+- name: 호놀룰루 병합 뒤
+  at: [-157.86, 21.31]
+  year: 1899
+  expect: usa
+  url: https://en.wikipedia.org/wiki/Annexation_of_Hawaii
+  from: 오세아니아 M1 AZP-M1 결과노트
+- name: 힐로
+  at: [-155.09, 19.72]
+  year: 1960
+  expect: usa
+  url: https://en.wikipedia.org/wiki/Hilo,_Hawaii
+  from: 오세아니아 M1 AZP-M1 결과노트
+
+# ── 오세아니아 M1 MIC-M1 (미크로네시아·키리바시·투발루·나우루, 2026-11-17) ──
+- name: 사우스타라와
+  at: [173.05, 1.36]
+  year: 1978
+  expect: none
+  url: https://en.wikipedia.org/wiki/South_Tarawa
+  from: 오세아니아 M1 MIC-M1 결과노트
+- name: 사우스타라와
+  at: [173.05, 1.36]
+  year: 1980
+  expect: kiribati
+  url: https://en.wikipedia.org/wiki/South_Tarawa
+  from: 오세아니아 M1 MIC-M1 결과노트
+- name: 키리티마티
+  at: [-157.4, 1.87]
+  year: 1978
+  expect: none
+  url: https://en.wikipedia.org/wiki/Kiritimati
+  from: 오세아니아 M1 MIC-M1 결과노트
+- name: 키리티마티
+  at: [-157.4, 1.87]
+  year: 1980
+  expect: kiribati
+  url: https://en.wikipedia.org/wiki/Kiritimati
+  from: 오세아니아 M1 MIC-M1 결과노트
+- name: 푸나푸티
+  at: [179.2, -8.52]
+  year: 1977
+  expect: none
+  url: https://en.wikipedia.org/wiki/Funafuti
+  from: 오세아니아 M1 MIC-M1 결과노트
+- name: 푸나푸티
+  at: [179.2, -8.52]
+  year: 1979
+  expect: tuvalu
+  url: https://en.wikipedia.org/wiki/Funafuti
+  from: 오세아니아 M1 MIC-M1 결과노트
+- name: 야렌구
+  at: [166.925, -0.54]
+  year: 1967
+  expect: none
+  url: https://en.wikipedia.org/wiki/Yaren_District
+  from: 오세아니아 M1 MIC-M1 결과노트
+- name: 야렌구
+  at: [166.925, -0.54]
+  year: 1969
+  expect: nauru
+  url: https://en.wikipedia.org/wiki/Yaren_District
+  from: 오세아니아 M1 MIC-M1 결과노트
+- name: 마주로
+  at: [171.37, 7.1]
+  year: 1985
+  expect: none
+  url: https://en.wikipedia.org/wiki/Majuro
+  from: 오세아니아 M1 MIC-M1 결과노트
+- name: 마주로
+  at: [171.37, 7.1]
+  year: 1987
+  expect: marshall-islands
+  url: https://en.wikipedia.org/wiki/Majuro
+  from: 오세아니아 M1 MIC-M1 결과노트
+- name: 팔리키르
+  at: [158.16, 6.92]
+  year: 1985
+  expect: none
+  url: https://en.wikipedia.org/wiki/Palikir
+  from: 오세아니아 M1 MIC-M1 결과노트
+- name: 팔리키르
+  at: [158.16, 6.92]
+  year: 1987
+  expect: micronesia
+  url: https://en.wikipedia.org/wiki/Palikir
+  from: 오세아니아 M1 MIC-M1 결과노트
+- name: 응게룰무드
+  at: [134.62, 7.5]
+  year: 1993
+  expect: none
+  url: https://en.wikipedia.org/wiki/Ngerulmud
+  from: 오세아니아 M1 MIC-M1 결과노트
+- name: 응게룰무드
+  at: [134.62, 7.5]
+  year: 1995
+  expect: palau
+  url: https://en.wikipedia.org/wiki/Ngerulmud
+  from: 오세아니아 M1 MIC-M1 결과노트
+- name: 하갓냐
+  at: [144.75, 13.47]
+  year: 1950
+  expect: none
+  url: https://en.wikipedia.org/wiki/Hag%C3%A5t%C3%B1a,_Guam
+  from: 오세아니아 M1 MIC-M1 결과노트
+- name: 하갓냐
+  at: [144.75, 13.47]
+  year: 2000
+  expect: none
+  url: https://en.wikipedia.org/wiki/Hag%C3%A5t%C3%B1a,_Guam
+  from: 오세아니아 M1 MIC-M1 결과노트
+- name: 사이판
+  at: [145.75, 15.18]
+  year: 1950
+  expect: none
+  url: https://en.wikipedia.org/wiki/Saipan
+  from: 오세아니아 M1 MIC-M1 결과노트
+- name: 사이판
+  at: [145.75, 15.18]
+  year: 2000
+  expect: none
+  url: https://en.wikipedia.org/wiki/Saipan
+  from: 오세아니아 M1 MIC-M1 결과노트
+
+# ── 오세아니아 M1 PNG-M1 (파푸아뉴기니·솔로몬·바누아투·누벨칼레도니, 2026-11-17) ──
+- name: 포트모르즈비 영국령 시기
+  at: [147.18, -9.44]
+  year: 1905
+  expect: british-new-guinea
+  url: https://en.wikipedia.org/wiki/Territory_of_Papua
+  from: 오세아니아 M1 PNG-M1 결과노트
+- name: 포트모르즈비 파푸아 준주
+  at: [147.18, -9.44]
+  year: 1907
+  expect: territory-of-papua
+  url: https://en.wikipedia.org/wiki/Territory_of_Papua
+  from: 오세아니아 M1 PNG-M1 결과노트
+- name: 포트모르즈비 두 준주 합친 뒤
+  at: [147.18, -9.44]
+  year: 1950
+  expect: territory-of-papua-and-new-guinea
+  url: https://en.wikipedia.org/wiki/Territory_of_Papua_and_New_Guinea
+  from: 오세아니아 M1 PNG-M1 결과노트
+- name: 포트모르즈비 독립 앞
+  at: [147.18, -9.44]
+  year: 1974
+  expect: territory-of-papua-and-new-guinea
+  url: https://en.wikipedia.org/wiki/Territory_of_Papua_and_New_Guinea
+  from: 오세아니아 M1 PNG-M1 결과노트
+- name: 포트모르즈비 독립 뒤
+  at: [147.18, -9.44]
+  year: 1976
+  expect: papua-new-guinea
+  url: https://en.wikipedia.org/wiki/Territory_of_Papua_and_New_Guinea
+  from: 오세아니아 M1 PNG-M1 결과노트
+- name: 라바울 독일령 시기
+  at: [152.17, -4.2]
+  year: 1913
+  expect: german-new-guinea
+  url: https://en.wikipedia.org/wiki/German_New_Guinea
+  from: 오세아니아 M1 PNG-M1 결과노트
+- name: 라바울 오스트레일리아 점령 중
+  at: [152.17, -4.2]
+  year: 1916
+  expect: german-new-guinea
+  url: https://en.wikipedia.org/wiki/Australian_Naval_and_Military_Expeditionary_Force
+  from: 오세아니아 M1 PNG-M1 결과노트
+- name: 라바울 위임 통치령
+  at: [152.17, -4.2]
+  year: 1921
+  expect: territory-of-new-guinea
+  url: https://en.wikipedia.org/wiki/Territory_of_New_Guinea
+  from: 오세아니아 M1 PNG-M1 결과노트
+- name: 부카 독일령 시기
+  at: [154.67, -5.43]
+  year: 1913
+  expect: german-new-guinea
+  url: https://en.wikipedia.org/wiki/German_New_Guinea
+  from: 오세아니아 M1 PNG-M1 결과노트
+- name: 부카 위임 통치령
+  at: [154.67, -5.43]
+  year: 1921
+  expect: territory-of-new-guinea
+  url: https://en.wikipedia.org/wiki/Territory_of_New_Guinea
+  from: 오세아니아 M1 PNG-M1 결과노트
+- name: 마당 독일령 시기
+  at: [145.8, -5.22]
+  year: 1913
+  expect: german-new-guinea
+  url: https://en.wikipedia.org/wiki/German_New_Guinea
+  from: 오세아니아 M1 PNG-M1 결과노트
+- name: 마당 위임 통치령
+  at: [145.8, -5.22]
+  year: 1921
+  expect: territory-of-new-guinea
+  url: https://en.wikipedia.org/wiki/Territory_of_New_Guinea
+  from: 오세아니아 M1 PNG-M1 결과노트
+- name: 키웅가(동경 141° 동쪽) 영국령 시기
+  at: [141.3, -6.12]
+  year: 1903
+  expect: british-new-guinea
+  url: https://en.wikipedia.org/wiki/Territory_of_Papua
+  from: 오세아니아 M1 PNG-M1 결과노트
+- name: 키웅가(동경 141° 동쪽) 파푸아 준주
+  at: [141.3, -6.12]
+  year: 1910
+  expect: territory-of-papua
+  url: https://en.wikipedia.org/wiki/Territory_of_Papua
+  from: 오세아니아 M1 PNG-M1 결과노트
+- name: 바니모(동경 141° 동쪽) 독일령 시기
+  at: [141.3, -2.68]
+  year: 1903
+  expect: german-new-guinea
+  url: https://en.wikipedia.org/wiki/German_New_Guinea
+  from: 오세아니아 M1 PNG-M1 결과노트
+- name: 바니모(동경 141° 동쪽) 위임 통치령
+  at: [141.3, -2.68]
+  year: 1921
+  expect: territory-of-new-guinea
+  url: https://en.wikipedia.org/wiki/Territory_of_New_Guinea
+  from: 오세아니아 M1 PNG-M1 결과노트
+- name: 호니아라 영국령 시기
+  at: [159.992, -9.412]
+  year: 1977
+  expect: british-solomon-islands
+  url: https://en.wikipedia.org/wiki/British_Solomon_Islands
+  from: 오세아니아 M1 PNG-M1 결과노트
+- name: 호니아라 독립 뒤
+  at: [159.992, -9.412]
+  year: 1979
+  expect: solomon-islands
+  url: https://en.wikipedia.org/wiki/British_Solomon_Islands
+  from: 오세아니아 M1 PNG-M1 결과노트
+- name: 포트빌라 공동 통치 앞
+  at: [168.32, -17.73]
+  year: 1905
+  expect: none
+  region: oceania
+  url: https://en.wikipedia.org/wiki/New_Hebrides
+  from: 오세아니아 M1 PNG-M1 결과노트
+- name: 포트빌라 공동 통치
+  at: [168.32, -17.73]
+  year: 1908
+  expect: new-hebrides
+  url: https://en.wikipedia.org/wiki/New_Hebrides
+  from: 오세아니아 M1 PNG-M1 결과노트
+- name: 포트빌라 독립 뒤
+  at: [168.32, -17.73]
+  year: 1981
+  expect: vanuatu
+  url: https://en.wikipedia.org/wiki/New_Hebrides
+  from: 오세아니아 M1 PNG-M1 결과노트
+- name: 루간빌 공동 통치 끝
+  at: [167.17, -15.5]
+  year: 1979
+  expect: new-hebrides
+  url: https://en.wikipedia.org/wiki/New_Hebrides
+  from: 오세아니아 M1 PNG-M1 결과노트
+- name: 루간빌 독립 뒤
+  at: [167.17, -15.5]
+  year: 1981
+  expect: vanuatu
+  url: https://en.wikipedia.org/wiki/New_Hebrides
+  from: 오세아니아 M1 PNG-M1 결과노트
+- name: 누메아 1902
+  at: [166.45, -22.27]
+  year: 1902
+  expect: new-caledonia
+  url: https://en.wikipedia.org/wiki/New_Caledonia
+  from: 오세아니아 M1 PNG-M1 결과노트
+- name: 누메아 2000
+  at: [166.45, -22.27]
+  year: 2000
+  expect: new-caledonia
+  url: https://en.wikipedia.org/wiki/New_Caledonia
+  from: 오세아니아 M1 PNG-M1 결과노트

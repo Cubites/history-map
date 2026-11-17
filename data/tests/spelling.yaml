@@ -8536,7 +8536,7 @@
 
 - use: 아오테아로아
   avoid: [아오테아로와]
-  note: "Aotearoa(뉴질랜드의 마오리어 이름). 위키 ko 문서에 안 나옴 — 마오리어 소리 그대로(R-EV, 기억, 미확인)"
+  note: "Aotearoa(뉴질랜드의 마오리어 이름). 위키 ko 표제(오세아니아 M1 뼈대 열람 — 0단계 R-EV의 미확인을 닫음)"
   scope: 오세아니아·뉴질랜드
 
 - use: 라파누이
@@ -8566,7 +8566,7 @@
 
 - use: 반디먼즈랜드
   avoid: [밴디먼스랜드, 반디멘스랜드]
-  note: "Van Diemen's Land(1825 분리~1856 태즈메이니아 개칭). R-EV 3.1 17(기억, 미확인 — M2 직전 위키 ko 확인)"
+  note: "Van Diemen's Land(1825 분리~1856 태즈메이니아 개칭). R-EV 3.1 17(기억). 오세아니아 M1 뼈대가 위키 ko를 열어 봄 — 반디먼즈랜드·반디멘스랜드·밴디먼스랜드·반디먼스랜드 모두 표제·넘겨주기 없음(M2가 다른 근거로 확인)"
   scope: 오세아니아·오스트레일리아
 
 - use: 카메하메하
@@ -8603,3 +8603,93 @@
   avoid: [뽈리네시아]
   note: "Polynesia. 위키 ko 표제(R-EV 열람, '뽈리네시아'는 문화어)"
   scope: 오세아니아
+
+# ── 오세아니아 M1 공통 (뼈대, 2026-11-17) ──
+# 뼈대가 위키백과 한국어판 표제를 연 공용 표기표(oc-m1/m1/SKEL-NOTE.md 끝 표, skel/ko-titles*.txt) 가운데 넘겨주기·흔한 다른 꼴이 있는 것만. avoid 표기마다 data/events·data/entities·data/wars·data/tests/places를 grep해 0건.
+# 나라 이름 27은 항목 파일(oceania-modern.yaml)이 쓰고, 00-scope 6절 칭호 규칙(뉴기니 위임 통치령·파푸아뉴기니 준주·뉴헤브리디스 공동 통치령·통가 왕국)과 기존 표기(나우루)가 표제보다 앞선다.
+
+- use: 노던 준주
+  avoid: [노던 테리토리]
+  note: "Northern Territory(1911-01-01 연방 직할). 위키 ko 표제('노던 테리토리'·'노던준주'는 넘겨주기)"
+  scope: 오세아니아·오스트레일리아
+
+- use: 오스트레일리아 수도 준주
+  avoid: [연방 수도 영토]
+  note: "Australian Capital Territory(1911 연방 수도 영토로 떼어 냄, 수도 캔버라). 위키 ko 표제(조사 가칭 '연방 수도 영토'는 표제 없음)"
+  scope: 오세아니아·오스트레일리아
+
+- use: 남부하일랜즈주
+  avoid: [서던하일랜즈, 사우던하일랜즈]
+  note: "Southern Highlands Province(파푸아뉴기니, 조각 PG-SHM). 위키 ko 표제('서던하일랜즈주'는 넘겨주기)"
+  scope: 오세아니아·파푸아뉴기니
+
+- use: 엥가주
+  avoid: [엔가주, 엔가 주]
+  note: "Enga Province(파푸아뉴기니). 위키 ko 표제('엔가 주'는 넘겨주기)"
+  scope: 오세아니아·파푸아뉴기니
+
+- use: 말레이타섬
+  avoid: [말라이타]
+  note: "Malaita(솔로몬 제도). 위키 ko 표제('말라이타섬'은 넘겨주기)"
+  scope: 오세아니아·솔로몬 제도
+
+- use: 사바이섬
+  avoid: [사바이이]
+  note: "Savaiʻi(사모아). 위키 ko 표제('사바이이섬'은 넘겨주기)"
+  scope: 오세아니아·사모아
+
+- use: 비치레부섬
+  avoid: [비티레부]
+  note: "Viti Levu(피지 본섬). 위키 ko 표제('비티레부섬'은 넘겨주기)"
+  scope: 오세아니아·피지
+
+- use: 람바사
+  avoid: [래버사, 라바사]
+  note: "Labasa(피지 바누아레부섬, 동경 179.34° — 날짜변경선 서쪽 정답표 지점). 위키 ko 표제('라바사'는 넘겨주기)"
+  scope: 오세아니아·피지
+
+- use: 팡오팡오
+  avoid: [파고파고]
+  note: "Pago Pago(아메리칸사모아 중심지). 위키 ko 표제('파고파고'는 넘겨주기)"
+  scope: 오세아니아·사모아
+
+- use: 아메리칸사모아
+  avoid: [미국령 사모아]
+  note: "American Samoa(미국 속령, 1900~ — 칠하지 않는 작은 속령, G1-9). 위키 ko 표제('미국령 사모아'는 넘겨주기)"
+  scope: 오세아니아·사모아
+
+- use: 왈리스 푸투나
+  avoid: [월리스 푸투나]
+  note: "Wallis-et-Futuna(프랑스 속령 — 칠하지 않는 작은 속령, G1-9). 위키 ko 표제('월리스 푸투나'는 넘겨주기)"
+  scope: 오세아니아
+
+- use: 노퍽섬
+  avoid: [노포크섬]
+  note: "Norfolk Island(오스트레일리아 속령 — 조각 없음). 위키 ko 표제"
+  scope: 오세아니아·오스트레일리아
+
+# ── 오세아니아 M1 AZP-M1 (오스트레일리아·뉴질랜드·남태평양·하와이, 2026-11-17) ──
+
+# ── 오세아니아 M1 MIC-M1 (미크로네시아·키리바시·투발루·나우루, 2026-11-17) ──
+
+- use: 랄리크 열도
+  avoid: [랄릭 열도]
+  note: "Ralik Chain(마셜 제도 서쪽 열도, 조각 MH-L). 위키 ko 표제(오세아니아 M1 MIC-M1 열람 — '랄리크 제도'는 넘겨주기, '랄릭 열도'는 표제·넘겨주기 없음)"
+  scope: 오세아니아·마셜 제도
+
+- use: 라타크 열도
+  avoid: [라탁 열도]
+  note: "Ratak Chain(마셜 제도 동쪽 열도, 조각 MH-T — 수도 마주로). 위키 ko 표제(오세아니아 M1 MIC-M1 열람 — '라타크 제도'는 넘겨주기, '라탁 열도'는 표제·넘겨주기 없음)"
+  scope: 오세아니아·마셜 제도
+
+# ── 오세아니아 M1 PNG-M1 (파푸아뉴기니·솔로몬·바누아투·누벨칼레도니, 2026-11-17) ──
+
+- use: 톡 피신
+  avoid: [톡피신]
+  note: "Tok Pisin(파푸아뉴기니 공용어 — papua-new-guinea 원어 이름 Papua Niugini). 위키 ko 표제('톡피신'은 넘겨주기, impl-png-m1/ko-titles-png.txt)"
+  scope: 오세아니아·파푸아뉴기니
+
+- use: 히리 모투
+  avoid: [히리모투]
+  note: "Hiri Motu(파푸아뉴기니 공용어). 위키 ko 표제('히리모투'는 넘겨주기, impl-png-m1/ko-titles-png.txt)"
+  scope: 오세아니아·파푸아뉴기니

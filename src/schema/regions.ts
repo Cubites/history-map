@@ -9,7 +9,7 @@
 // 빌드 스크립트가 Node의 타입 제거 기능으로 직접 불러오므로 enum 같은 런타임 문법과 외부 패키지는 쓰지 않는다.
 
 /** 화면의 권역 필터 단위. '전체'(all)는 따로 둔다 */
-export const REGION_FILTERS = ['east-asia', 'europe', 'middle-east', 'south-asia', 'central-asia', 'southeast-asia', 'sub-saharan-africa', 'americas'] as const;
+export const REGION_FILTERS = ['east-asia', 'europe', 'middle-east', 'south-asia', 'central-asia', 'southeast-asia', 'sub-saharan-africa', 'oceania', 'americas'] as const;
 export type RegionFilterUnit = (typeof REGION_FILTERS)[number];
 export type RegionFilter = 'all' | RegionFilterUnit;
 
@@ -64,12 +64,12 @@ export const REGION_FILTER_OF: Record<string, RegionFilterUnit> = {
   'americas-modern': 'americas', // 아메리카 M1(2026-11-15): 새 단위 americas
   'americas-independence': 'americas', // 아메리카 M2(2026-11-16): M1과 같은 단위 americas
   'americas-colonial': 'americas', // 아메리카 M3(2026-11-17): M1·M2와 같은 단위 americas
-  oceania: 'southeast-asia', // 오세아니아 0단계 빈 틀(2026-11-17, 땅으로 닿는 이웃 권역 동남아를 임시로). M1이 첫 나라를 넣을 때 새 단위 'oceania'를 REGION_FILTERS·REGION_FILTER_INFO에 더하고(범위가 경도 180°를 넘는 문제와 함께) 이 줄을 그 단위로 바꾼다(docs/oceania/00-scope.md 2절)
-  'oceania-modern': 'southeast-asia', // 오세아니아 0단계 빈 틀(2026-11-17). 위 줄과 함께 M1 첫머리에 새 단위로 바꾼다
+  oceania: 'oceania', // 오세아니아 M1(2026-11-17): 새 단위 oceania
+  'oceania-modern': 'oceania', // 오세아니아 M1(2026-11-17): 새 단위 oceania
 };
 
 /** 사건·전쟁 파일 이름 앞머리 → 권역. 앞에서부터 처음 맞는 것을 쓴다 (예: eu-01-revolutions-1789-1914.yaml → europe) */
-export const STORY_FILE_PREFIXES: [prefix: string, region: string][] = [['eu-', 'europe'], ['cn-', 'china'], ['me-', 'middle-east'], ['sa-', 'south-asia'], ['ca-', 'central-asia'], ['sea-', 'southeast-asia'], ['ssa-', 'sub-saharan-africa'], ['am-', 'americas']];
+export const STORY_FILE_PREFIXES: [prefix: string, region: string][] = [['eu-', 'europe'], ['cn-', 'china'], ['me-', 'middle-east'], ['sa-', 'south-asia'], ['ca-', 'central-asia'], ['sea-', 'southeast-asia'], ['ssa-', 'sub-saharan-africa'], ['am-', 'americas'], ['oc-', 'oceania']];
 /** 한국사 사건 파일(01-gojoseon.yaml~08-contemporary.yaml)과 앞머리가 없는 전쟁 파일(imjin-war.yaml 등)의 권역 */
 export const DEFAULT_STORY_REGION = 'korea';
 
@@ -92,6 +92,8 @@ export const REGION_FILTER_INFO: Record<RegionFilter, { label: string; short: st
   'sub-saharan-africa': { label: '사하라 이남 아프리카', short: '사하라 이남', bounds: [[-26, -35], [58, 25.2]] },
   // 알류샨 서쪽 끝(서경 180°) ~ 그린란드 동쪽 끝(서경 11°), 티에라델푸에고 남쪽(남위 60°) ~ 그린란드 북쪽 끝(북위 84°, 00-scope 2절). 앞 단위와 겹치는 곳은 앞 단위가 먼저 골라짐
   americas: { label: '아메리카', short: '아메리카', bounds: [[-180, -60], [-11, 84]] },
+  // 인도양 쪽 오스트레일리아 서쪽 끝(동경 112.5°) ~ 핏케언·이스터섬 서쪽(서경 124° = 236 — 경도 180°를 넘는 범위, view.ts inBox가 lon + 360도 봄), 매쿼리섬 남쪽(남위 54°) ~ 하와이·북마리아나 북쪽(북위 29°, 00-scope 2절). 앞 단위(동남아 동경 141° 서쪽)와 겹치는 곳은 앞 단위가 먼저 골라짐(팔라우·야프는 view.ts REGION_PICK_FIRST)
+  oceania: { label: '오세아니아', short: '오세아니아', bounds: [[112.5, -54], [236, 29]] },
 };
 
 /** 파일 경로에서 확장자를 뺀 이름 (경로 구분자는 / 와 \ 모두) */

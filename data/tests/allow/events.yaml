@@ -762,3 +762,144 @@
 - key: '1654 dutch-brazil 소멸'
   reason: 'am-03~04 사건 묶음(2묶음)이 채움'
   decided: 2026-11-17 아메리카 M3 CAB-M3 구현(사건은 2묶음 am-03~04)
+
+# ── 오세아니아 M1 AZP-M1 (오스트레일리아·뉴질랜드·남태평양·하와이, 2026-11-17) ──
+- key: '1840 colony-of-new-zealand 성립'
+  reason: 'M2(하한~1900) 사건 묶음이 채움 — 1901 앞 성립'
+  decided: 2026-11-17 오세아니아 M1 AZP-M1 구현(사건은 oc-01~03 한 묶음)
+- key: '1845 kingdom-of-tonga 성립'
+  reason: 'M2(하한~1900) 사건 묶음이 채움 — 1901 앞 성립'
+  decided: 2026-11-17 오세아니아 M1 AZP-M1 구현(사건은 oc-01~03 한 묶음)
+- key: '1874 fiji-colony 성립'
+  reason: 'M2(하한~1900) 사건 묶음이 채움 — 1901 앞 성립'
+  decided: 2026-11-17 오세아니아 M1 AZP-M1 구현(사건은 oc-01~03 한 묶음)
+- key: '1880 french-polynesia 성립'
+  reason: 'M2(하한~1900) 사건 묶음이 채움 — 1901 앞 성립'
+  decided: 2026-11-17 오세아니아 M1 AZP-M1 구현(사건은 oc-01~03 한 묶음)
+- key: '1900 german-samoa 성립'
+  reason: 'M2(하한~1900) 사건 묶음이 채움 — 1901 앞 성립'
+  decided: 2026-11-17 오세아니아 M1 AZP-M1 구현(사건은 oc-01~03 한 묶음)
+- key: '1901 colony-of-new-zealand 버전'
+  reason: 'M2(하한~1900)가 1901 앞을 칠하면 낡음 — M2 칸이 지움'
+  decided: 2026-11-17 오세아니아 M1 AZP-M1 구현(사건은 oc-01~03 한 묶음)
+- key: '1901 fiji-colony 버전'
+  reason: 'M2(하한~1900)가 1901 앞을 칠하면 낡음 — M2 칸이 지움'
+  decided: 2026-11-17 오세아니아 M1 AZP-M1 구현(사건은 oc-01~03 한 묶음)
+- key: '1901 australia 성립'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-17 오세아니아 M1 AZP-M1 구현(사건은 oc-01~03 한 묶음)
+- key: '1907 colony-of-new-zealand 소멸'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-17 오세아니아 M1 AZP-M1 구현(사건은 oc-01~03 한 묶음)
+- key: '1907 new-zealand 성립'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-17 오세아니아 M1 AZP-M1 구현(사건은 oc-01~03 한 묶음)
+- key: '1920 german-samoa 소멸'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-17 오세아니아 M1 AZP-M1 구현(사건은 oc-01~03 한 묶음)
+- key: '1920 western-samoa 성립'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-17 오세아니아 M1 AZP-M1 구현(사건은 oc-01~03 한 묶음)
+- key: '1962 western-samoa 소멸'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-17 오세아니아 M1 AZP-M1 구현(사건은 oc-01~03 한 묶음)
+- key: '1962 samoa 성립'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-17 오세아니아 M1 AZP-M1 구현(사건은 oc-01~03 한 묶음)
+- key: '1970 fiji-colony 소멸'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-17 오세아니아 M1 AZP-M1 구현(사건은 oc-01~03 한 묶음)
+- key: '1970 fiji 성립'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-17 오세아니아 M1 AZP-M1 구현(사건은 oc-01~03 한 묶음)
+
+# ── 오세아니아 M1 MIC-M1 (미크로네시아·키리바시·투발루·나우루, 2026-11-17) ──
+- key: '1968 nauru 성립'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-17 오세아니아 M1 MIC-M1 구현(사건은 oc-01~03 한 묶음)
+- key: '1978 tuvalu 성립'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-17 오세아니아 M1 MIC-M1 구현(사건은 oc-01~03 한 묶음)
+- key: '1979 kiribati 성립'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-17 오세아니아 M1 MIC-M1 구현(사건은 oc-01~03 한 묶음)
+- key: '1986 marshall-islands 성립'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-17 오세아니아 M1 MIC-M1 구현(사건은 oc-01~03 한 묶음)
+- key: '1986 micronesia 성립'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-17 오세아니아 M1 MIC-M1 구현(사건은 oc-01~03 한 묶음)
+- key: '1994 palau 성립'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-17 오세아니아 M1 MIC-M1 구현(사건은 oc-01~03 한 묶음)
+
+# ── 오세아니아 M1 PNG-M1 (파푸아뉴기니·솔로몬·바누아투·누벨칼레도니, 2026-11-17) ──
+- key: '1853 new-caledonia 성립'
+  reason: 'M2(하한~1900) 사건 묶음이 채움 — 1901 앞 성립'
+  decided: 2026-11-17 오세아니아 M1 PNG-M1 구현(사건은 oc-01~03 한 묶음)
+- key: '1884 british-new-guinea 성립'
+  reason: 'M2(하한~1900) 사건 묶음이 채움 — 1901 앞 성립'
+  decided: 2026-11-17 오세아니아 M1 PNG-M1 구현(사건은 oc-01~03 한 묶음)
+- key: '1884 german-new-guinea 성립'
+  reason: 'M2(하한~1900) 사건 묶음이 채움 — 1901 앞 성립'
+  decided: 2026-11-17 오세아니아 M1 PNG-M1 구현(사건은 oc-01~03 한 묶음)
+- key: '1893 british-solomon-islands 성립'
+  reason: 'M2(하한~1900) 사건 묶음이 채움 — 1901 앞 성립'
+  decided: 2026-11-17 오세아니아 M1 PNG-M1 구현(사건은 oc-01~03 한 묶음)
+- key: '1901 british-new-guinea 버전'
+  reason: 'M2(하한~1900)가 1901 앞을 칠하면 낡음 — M2 칸이 지움'
+  decided: 2026-11-17 오세아니아 M1 PNG-M1 구현(사건은 oc-01~03 한 묶음)
+- key: '1901 german-new-guinea 버전'
+  reason: 'M2(하한~1900)가 1901 앞을 칠하면 낡음 — M2 칸이 지움'
+  decided: 2026-11-17 오세아니아 M1 PNG-M1 구현(사건은 oc-01~03 한 묶음)
+- key: '1901 british-solomon-islands 버전'
+  reason: 'M2(하한~1900)가 1901 앞을 칠하면 낡음 — M2 칸이 지움'
+  decided: 2026-11-17 오세아니아 M1 PNG-M1 구현(사건은 oc-01~03 한 묶음)
+- key: '1901 new-caledonia 버전'
+  reason: 'M2(하한~1900)가 1901 앞을 칠하면 낡음 — M2 칸이 지움'
+  decided: 2026-11-17 오세아니아 M1 PNG-M1 구현(사건은 oc-01~03 한 묶음)
+- key: '1906 british-new-guinea 소멸'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-17 오세아니아 M1 PNG-M1 구현(사건은 oc-01~03 한 묶음)
+- key: '1906 territory-of-papua 성립'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-17 오세아니아 M1 PNG-M1 구현(사건은 oc-01~03 한 묶음)
+- key: '1906 new-hebrides 성립'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-17 오세아니아 M1 PNG-M1 구현(사건은 oc-01~03 한 묶음)
+- key: '1907 new-hebrides 버전'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-17 오세아니아 M1 PNG-M1 구현(사건은 oc-01~03 한 묶음)
+- key: '1920 german-new-guinea 소멸'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-17 오세아니아 M1 PNG-M1 구현(사건은 oc-01~03 한 묶음)
+- key: '1920 territory-of-new-guinea 성립'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-17 오세아니아 M1 PNG-M1 구현(사건은 oc-01~03 한 묶음)
+- key: '1949 territory-of-papua 소멸'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-17 오세아니아 M1 PNG-M1 구현(사건은 oc-01~03 한 묶음)
+- key: '1949 territory-of-new-guinea 소멸'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-17 오세아니아 M1 PNG-M1 구현(사건은 oc-01~03 한 묶음)
+- key: '1949 territory-of-papua-and-new-guinea 성립'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-17 오세아니아 M1 PNG-M1 구현(사건은 oc-01~03 한 묶음)
+- key: '1975 territory-of-papua-and-new-guinea 소멸'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-17 오세아니아 M1 PNG-M1 구현(사건은 oc-01~03 한 묶음)
+- key: '1975 papua-new-guinea 성립'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-17 오세아니아 M1 PNG-M1 구현(사건은 oc-01~03 한 묶음)
+- key: '1978 british-solomon-islands 소멸'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-17 오세아니아 M1 PNG-M1 구현(사건은 oc-01~03 한 묶음)
+- key: '1978 solomon-islands 성립'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-17 오세아니아 M1 PNG-M1 구현(사건은 oc-01~03 한 묶음)
+- key: '1980 new-hebrides 소멸'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-17 오세아니아 M1 PNG-M1 구현(사건은 oc-01~03 한 묶음)
+- key: '1980 vanuatu 성립'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-17 오세아니아 M1 PNG-M1 구현(사건은 oc-01~03 한 묶음)

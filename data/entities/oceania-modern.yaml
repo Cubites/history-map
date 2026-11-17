@@ -1,4 +1,576 @@
 # oceania modern 나라 (시대 파일 scripts/geo/areas/oceania/modern.mjs의 짝 항목 파일, npm run new:area가 만든 빈 틀)
 # 시대·범위: 1901~현재: 연방·자치령·위임 통치와 섬나라 독립 (M1)
-# 나라를 넣을 때 아래 []를 지우고 - id: …로 적는다(docs/DATA_GUIDE.md). 권역 값은 파일 이름에서 정해진다(src/schema/regions.ts REGION_FILTER_OF의 'oceania-modern').
-[]
+# 나라를 넣을 때 - id: …로 적는다(docs/DATA_GUIDE.md). 권역 값은 파일 이름에서 정해진다(src/schema/regions.ts REGION_FILTER_OF의 'oceania-modern' → 단위 oceania).
+# 오세아니아 M1 뼈대(2026-11-17): 칸마다 머리 '# ══ M1 <칸> 항목 ══' 아래 블록 — id·level·이름(ko 확정)·from·to·색은 뼈대가 박음(칸은 id·색·ko 이름을 고치지 않음, from·to는 사료로 고칠 수 있음). 글·native·basis는 칸이 채움.
+#   to는 칠한 마지막 해 + 1(저장소 꼴 — C-M1-5). 새 항목 startEvents·endEvents는 [] 그대로(사건 묶음 몫)
+
+# ══ M1 AZP-M1 항목 (오스트레일리아·뉴질랜드·남태평양·하와이) ══
+# 글은 AZP-M1 칸이 채움 — 위키 ko 표제·사전(오세아니아 첫판). 1901-01-01 연방 성립(자치령 — vassal_of 없음, Q3: 1911 노던 준주·오스트레일리아 수도 준주 이관은 글)
+- id: australia
+  level: polity
+  names: { ko: 오스트레일리아, en: Australia, native: Australia }
+  from: 1901
+  to: null
+  color: "#65c7d2"
+  summary: 오스트레일리아 대륙과 태즈메이니아를 아우르는 연방 나라. 1901년 1월 1일 영국의 여섯 식민지가 하나로 묶여 영국 제국 안의 자치령으로 출발함. 1911년 1월 1일 노던 준주와 새 수도를 둘 오스트레일리아 수도 준주가 연방 직할 땅이 되었고, 1927년 연방 의회가 멜버른에서 캔버라로 옮겨 옴. 1942년 웨스트민스터 헌장을 받아들여(1939년 9월 3일로 거슬러 적용) 입법에서 영국에서 벗어났고, 1986년 오스트레일리아 법으로 영국 의회와의 마지막 끈을 끊음
+  mapNote: 지도에는 1901년부터 지금까지 오스트레일리아 본토와 태즈메이니아를 한 나라로 표시함. 1911년부터 노던 준주와 오스트레일리아 수도 준주가 연방 직할이 되었으나 같은 나라 땅이라 땅과 색을 그대로 그림
+  features:
+    - 수도는 캔버라(1927년까지 연방 의회는 멜버른)
+    - 1901년 1월 1일 여섯 식민지가 연방을 이룸
+    - 1911년 노던 준주·오스트레일리아 수도 준주를 연방 직할로
+    - 1942년 웨스트민스터 헌장 채택, 1986년 오스트레일리아 법
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Territorial evolution of Australia", "위키백과 Statute of Westminster Adoption Act 1942"]
+    foundingNote: 여섯 식민지가 연방을 이룬 1901년 1월 1일부터
+# 글은 AZP-M1 칸이 채움 — 위키 ko 표제. from 1840(G1-2 — 와이탕이 조약 1840-02-06), 지도는 1901부터(P1), vassal_of uk 1840~1906
+- id: colony-of-new-zealand
+  level: polity
+  names: { ko: 뉴질랜드 식민지, en: Colony of New Zealand, native: Colony of New Zealand }
+  from: 1840
+  to: 1907
+  color: "#9b5b4b"
+  summary: 영국의 식민지였던 뉴질랜드. 1840년 2월 6일 와이탕이 조약을 맺고 5월 21일 영국이 주권을 선포했으며, 1841년 5월 3일 오스트레일리아 쪽 식민지에서 떨어져 따로 식민지가 됨. 1856년 책임 정부가 섰고, 1865년 수도를 오클랜드에서 웰링턴으로 옮김. 1893년 세계에서 처음으로 여성에게 국회 선거권을 줌. 1901년 6월 11일 쿡 제도와 니우에를 넘겨받았고, 1907년 9월 26일 자치령이 되어 뉴질랜드로 이어짐
+  mapNote: 지도에는 1901년부터 1906년까지 북섬·남섬과 채텀 제도 등 둘레 섬으로 표시함. 1901년 넘겨받은 쿡 제도와 니우에는 작은 섬이라 칠하지 않음. 1907년부터는 뉴질랜드로 이어짐
+  endNote: 1907년 9월 26일 자치령 뉴질랜드가 되어 없어짐
+  features:
+    - 수도는 오클랜드였다가 1865년부터 웰링턴
+    - 1840년 와이탕이 조약, 1841년 따로 식민지가 됨
+    - 1856년 책임 정부
+    - 1893년 여성 선거권
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Colony of New Zealand", "와이탕이 조약(1840)"]
+    foundingNote: 와이탕이 조약을 맺고 영국이 주권을 선포한 1840년부터(1841년 5월 3일 따로 식민지가 됨)
+# 글은 AZP-M1 칸이 채움 — 위키 ko 표제. 1907-09-26 자치령(창구 ② 결정 4 — vassal_of 없음). native는 마오리어(위키 ko 표제 '아오테아로아' 확인). 토켈라우 NZL-5472는 칠하지 않음(G1-10)
+- id: new-zealand
+  level: polity
+  names: { ko: 뉴질랜드, en: New Zealand, native: Aotearoa }
+  from: 1907
+  to: null
+  color: "#bdb251"
+  summary: 남태평양 남서쪽 북섬·남섬과 둘레 섬의 나라. 1907년 9월 26일 영국의 식민지에서 자치령이 됨. 1920년부터 1961년까지 서사모아를 위임 통치·신탁 통치로 맡았음. 1947년 11월 25일 웨스트민스터 헌장을 받아들여 입법에서 영국에서 벗어남. 쿡 제도와 니우에는 1965년·1974년 뉴질랜드와 자유 연합을 맺은 자치 지역이 되었고, 토켈라우는 지금도 뉴질랜드 땅임
+  mapNote: 지도에는 1907년부터 지금까지 북섬·남섬과 채텀 제도·오클랜드 제도 등 둘레 섬으로 표시함. 쿡 제도·니우에·토켈라우는 작은 섬이라 칠하지 않음
+  features:
+    - 수도는 웰링턴
+    - 1907년 9월 26일 자치령
+    - 1920년부터 1961년까지 서사모아를 맡아 다스림
+    - 1947년 웨스트민스터 헌장 채택
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Dominion of New Zealand", "위키백과 Colony of New Zealand"]
+    foundingNote: 자치령이 된 1907년 9월 26일부터
+# 글은 AZP-M1 칸이 채움 — 위키 ko 표제. 1874-10-10 할양(G1-2), vassal_of uk 1874~1969. 로투마(1881 편입)는 FJ-R 조각
+- id: fiji-colony
+  level: polity
+  names: { ko: 피지 식민지, en: Colony of Fiji, native: Colony of Fiji }
+  from: 1874
+  to: 1970
+  color: "#7fb234"
+  summary: 영국의 직할 식민지였던 피지 제도. 1874년 10월 10일 피지 추장들이 영국에 땅을 넘겨 식민지가 되었고, 1881년 5월 13일 북쪽 로투마섬을 더함. 1879년부터 1916년까지 인도에서 계약 노동자 약 6만 1천 명을 데려와 사탕수수 농장에서 일하게 했고, 그 후손이 인구의 큰 몫이 됨. 1970년 10월 10일 피지로 독립함
+  mapNote: 지도에는 1901년부터 1969년까지 비치레부섬·바누아레부섬과 라우 제도·로투마섬 등 둘레 섬으로 표시함. 1970년부터는 피지로 이어짐
+  endNote: 1970년 10월 10일 피지로 독립해 없어짐
+  features:
+    - 행정 중심은 수바
+    - 1874년 추장들이 땅을 넘겨 식민지가 됨
+    - 1881년 로투마섬을 더함
+    - 1879년부터 1916년까지 인도 계약 노동자를 데려옴
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Colony of Fiji", "위키백과 Rotuma"]
+    foundingNote: 추장들이 영국에 땅을 넘긴 1874년 10월 10일부터
+# 글은 AZP-M1 칸이 채움 — 위키 ko 표제. 1970-10-10 독립(G1-6). native는 피지어
+- id: fiji
+  level: polity
+  names: { ko: 피지, en: Fiji, native: Matanitu Tugalala o Viti }
+  from: 1970
+  to: null
+  color: "#c86f6f"
+  summary: 남태평양 피지 제도의 나라. 1970년 10월 10일 영국에서 독립함. 1987년 두 차례 군사 정변 뒤 10월 6일 공화국을 선포했고, 2000년과 2006년에도 정변이 일어남. 원주민 피지인과 인도계 주민 사이의 정치 다툼이 오래 이어졌음. 경도 180° 선이 나라 동쪽 섬들 사이를 지남
+  mapNote: 지도에는 1970년부터 지금까지 비치레부섬·바누아레부섬과 라우 제도·로투마섬 등 둘레 섬으로 표시함. 경도 180° 양쪽 섬을 한 나라로 함께 그림
+  features:
+    - 수도는 수바
+    - 1970년 10월 10일 독립
+    - 1987년 정변과 공화국 선포
+    - 2000년·2006년 정변
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Fiji", "위키백과 Colony of Fiji"]
+    foundingNote: 영국에서 독립한 1970년 10월 10일부터
+# 글은 AZP-M1 칸이 채움 — 00-scope 6절 칭호 '○○ 왕국'(위키 ko '통가 왕국' → 표제 '통가'). from 1845(en Tonga 정보 상자 established_date1 'circa 1845' 통일 — C-M1-11, M2가 고칠 수 있음). 1900-05-18 영국 보호국·1970-06-04 독립은 글(G1-13 관계 줄 없음)
+- id: kingdom-of-tonga
+  level: polity
+  names: { ko: 통가 왕국, en: Tonga, native: Puleʻanga Fakatuʻi ʻo Tonga }
+  from: 1845
+  to: null
+  color: "#51bdb2"
+  summary: 남태평양 통가 제도의 왕국. 1845년 무렵 조지 투포우 1세가 섬들을 하나로 묶어 왕국을 세웠고, 1875년 헌법을 두어 입헌 군주국이 됨. 1900년 5월 18일 우호 조약으로 영국의 보호국이 되었으나 왕실이 나라를 다스리는 일은 이어졌음. 1970년 6월 4일 보호 관계를 끝내고 완전히 독립함. 태평양 섬나라 가운데 유럽 나라의 식민지가 된 적이 없는 드문 나라임
+  mapNote: 지도에는 1901년부터 지금까지 통가타푸섬과 둘레 섬으로 표시함. 1900년부터 1970년까지 영국의 보호국이었으나 왕국이 스스로 다스렸으므로 영국 땅으로 칠하지 않음
+  features:
+    - 수도는 누쿠알로파
+    - 1845년 무렵 조지 투포우 1세가 섬들을 하나로 묶음
+    - 1875년 헌법으로 입헌 군주국
+    - 1900년 영국 보호국, 1970년 완전 독립
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Tonga"]
+    foundingNote: 조지 투포우 1세가 섬들을 하나로 묶은 1845년 무렵부터
+# 글은 AZP-M1 칸이 채움 — 위키 ko 표제. 1900-03-01(G1-2), Q1 — vassal_of german-empire 1900~1917·weimar-republic 1918~1919, occupied_by new-zealand 1914~1919. native는 독일어
+- id: german-samoa
+  level: polity
+  names: { ko: 독일령 사모아, en: German Samoa, native: Deutsch-Samoa }
+  from: 1900
+  to: 1920
+  color: "#d26565"
+  summary: 독일 제국의 식민지였던 사모아 서쪽 섬들. 1899년 12월 2일 미국·영국·독일의 삼국 조약으로 사모아 제도를 나누어 서쪽 우폴루섬·사바이섬 등을 독일이 가졌고, 1900년 3월 1일 독일 깃발을 올림. 1914년 8월 29일 뉴질랜드군이 점령했고, 1919년 베르사유 조약으로 독일이 권리를 잃어 1920년부터 뉴질랜드가 맡은 서사모아로 바뀜
+  mapNote: 지도에는 1901년부터 1919년까지 우폴루섬·사바이섬과 둘레 작은 섬으로 표시함. 1914년부터 1919년까지 뉴질랜드군이 점령했으나 아직 독일 땅이던 때라 같은 땅으로 그림. 1920년부터는 서사모아로 이어짐
+  endNote: 1919년 베르사유 조약으로 독일이 권리를 잃고 1920년 뉴질랜드가 맡은 위임 통치령 서사모아로 바뀌어 없어짐
+  features:
+    - 행정 중심은 아피아
+    - 1899년 삼국 조약으로 사모아 제도를 나눔
+    - 1914년 8월 뉴질랜드군 점령
+    - 1919년 베르사유 조약으로 독일이 권리를 잃음
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 German Samoa", "삼국 조약(1899)"]
+    foundingNote: 조약 비준(1900년 2월 16일) 뒤 독일 깃발을 올린 1900년 3월 1일부터
+# 글은 AZP-M1 칸이 채움 — 가칭(위키 ko '서사모아' → 표제 '사모아' — 00-scope 6절 '이름만 바뀐 나라'의 서사모아는 1962~ samoa 항목 이름 줄 1997). vassal_of new-zealand 1920~1961, 1946 신탁 전환은 글(G1-5)
+- id: western-samoa
+  level: polity
+  names: { ko: 서사모아, en: Western Samoa, native: Western Samoa }
+  from: 1920
+  to: 1962
+  color: "#a851bd"
+  summary: 뉴질랜드가 위임 통치·신탁 통치한 사모아 서쪽 섬들. 1920년 12월 17일 국제 연맹의 위임 통치령으로 뉴질랜드가 맡음. 1920년대부터 자치를 바라는 사모아 사람들의 운동이 이어졌음. 1946년 12월 13일 국제 연합의 신탁 통치령으로 바뀌었고, 1962년 1월 1일 서사모아라는 이름으로 독립함
+  mapNote: 지도에는 1920년부터 1961년까지 우폴루섬·사바이섬과 둘레 작은 섬으로 표시함. 1946년 위임 통치령에서 신탁 통치령으로 바뀌었으나 맡은 나라와 땅이 같아 같은 땅으로 그림. 1962년부터는 사모아로 이어짐
+  endNote: 1962년 1월 1일 독립해 없어짐
+  features:
+    - 행정 중심은 아피아
+    - 1920년 국제 연맹 위임 통치
+    - 1946년 국제 연합 신탁 통치
+    - 1962년 1월 1일 독립
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Western Samoa Trust Territory"]
+    foundingNote: 국제 연맹 위임 통치가 시작된 1920년 12월 17일부터
+# 글은 AZP-M1 칸이 채움 — 위키 ko 표제. 1962-01-01 독립(G1-6), 1997 '서사모아'에서 '사모아'로 이름 줄(G1-3 — 칸이 확인). native는 사모아어
+- id: samoa
+  level: polity
+  names: { ko: 사모아, en: Samoa, native: Sāmoa }
+  from: 1962
+  to: null
+  color: "#99b234"
+  summary: 남태평양 사모아 제도 서쪽의 나라. 1962년 1월 1일 뉴질랜드의 신탁 통치에서 벗어나 서사모아라는 이름으로 독립했고, 20세기 태평양 섬들 가운데 가장 먼저 독립함. 1997년 7월 4일 나라 이름을 사모아로 바꿈. 2011년 말 날짜변경선의 서쪽으로 날짜를 옮김
+  mapNote: 지도에는 1962년부터 지금까지 우폴루섬·사바이섬과 둘레 작은 섬으로 표시함. 1997년까지 나라 이름은 서사모아였으나 같은 나라라 같은 땅과 색으로 그림
+  features:
+    - 수도는 아피아
+    - 1962년 1월 1일 독립
+    - 1997년 서사모아에서 사모아로 이름을 바꿈
+    - 2011년 날짜변경선 서쪽으로 날짜를 옮김
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Samoa", "위키백과 Western Samoa Trust Territory"]
+    foundingNote: 신탁 통치를 끝내고 독립한 1962년 1월 1일부터
+# 글은 AZP-M1 칸이 채움 — 위키 ko 표제·사전(오세아니아 첫판). from 1880(타히티 병합 — G1-2·창구 ② 결정 6), vassal_of france 1880~. 1946 해외 영토·1957 이름은 글(G1-17)
+- id: french-polynesia
+  level: polity
+  names: { ko: 프랑스령 폴리네시아, en: French Polynesia, native: Polynésie française }
+  from: 1880
+  to: null
+  color: "#7b9b4b"
+  summary: 프랑스가 다스리는 남태평양 동쪽 섬들. 1880년 프랑스가 보호국이던 타히티를 병합해 식민지로 삼았고, 1903년 둘레 섬들과 묶어 프랑스령 오세아니아라 부름. 1946년 해외 영토가 되어 주민이 프랑스 시민권을 얻었고, 1957년 이름을 프랑스령 폴리네시아로 바꿈. 1996년 1월까지 남쪽 환초에서 프랑스가 핵실험을 했음. 2003년 해외 집합체가 되었고, 2004년부터 '해외 나라'라는 이름을 씀
+  mapNote: 지도에는 1901년부터 지금까지 타히티섬과 둘레 섬들로 표시함. 1946년·1957년·2003년 지위와 이름이 바뀌었으나 프랑스가 다스리는 같은 땅이라 같은 땅과 색으로 그림
+  features:
+    - 행정 중심은 파페에테
+    - 1880년 타히티 병합
+    - 1946년 해외 영토, 1957년 이름을 바꿈
+    - 1996년까지 핵실험
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 French Polynesia"]
+    foundingNote: 프랑스가 타히티를 병합한 1880년부터
+
+# ══ M1 MIC-M1 항목 (미크로네시아·키리바시·투발루·나우루) ══
+# 독립 1979-07-12(위키 en Kiribati 정보 상자·본문, G1-6). 1979~ KIR 1 통째 — 조각 하나가 경도 180° 양쪽(칼선 아님). 그 앞 길버트 엘리스·길버트 제도 식민지는 비움(G1-9)
+- id: kiribati
+  level: polity
+  names: { ko: 키리바시, en: Kiribati, native: Kiribati }
+  from: 1979
+  to: null
+  color: "#be9579"
+  summary: 태평양 한가운데 길버트·피닉스·라인 제도에 걸친 섬나라. 1892년 영국 보호령이 되었고 1916년 엘리스 제도와 함께 길버트 엘리스 제도 식민지가 됨. 태평양 전쟁 때 1941년부터 1943년까지 일본군이 북쪽 섬들을 점령했고, 1943년 11월 타라와에서 미군과 큰 싸움이 벌어짐. 1975년 엘리스 제도가 갈라져 나간 뒤 1979년 7월 12일 독립함. 1995년 날짜변경선을 나라 동쪽 끝으로 옮겨 온 나라가 같은 날짜를 씀
+  mapNote: 지도에는 1979년 독립부터 길버트·피닉스·라인 제도를 표시함. 그 앞 영국 보호령·식민지 때는 칠하지 않음. 라인 제도는 경도 180° 동쪽에 있어 지도의 양쪽 끝에 나뉘어 보임
+  features:
+    - 수도는 사우스타라와
+    - 1916년 길버트 엘리스 제도 식민지
+    - 1943년 11월 타라와 전투
+    - 1979년 7월 12일 영국에서 독립
+    - 1995년 날짜변경선을 동쪽 끝으로 옮김
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Kiribati", "위키백과 키리바시"]
+    foundingNote: 영국에서 독립한 1979년 7월 12일부터
+# 독립 1978-10-01(위키 en Tuvalu — 1975-10-01 투발루 칙령으로 길버트 제도와 갈라섬, G1-6). 1978~ TUV 1 통째, 그 앞 비움(G1-9)
+- id: tuvalu
+  level: polity
+  names: { ko: 투발루, en: Tuvalu, native: Tuvalu }
+  from: 1978
+  to: null
+  color: "#8484db"
+  summary: 남태평양 엘리스 제도의 아홉 섬으로 이루어진 섬나라. 1892년 영국 보호령이 되었고 1916년 길버트 엘리스 제도 식민지의 한 부분이 됨. 태평양 전쟁 때 1942년 10월부터 미군이 푸나푸티에 기지를 둠. 1974년 주민 투표로 길버트 제도와 갈라서기로 하여 1975년 10월 1일 따로 식민지가 되었고, 1978년 10월 1일 독립함. 영국 국왕을 군주로 둔 영연방 왕국
+  mapNote: 지도에는 1978년 독립부터 엘리스 제도를 표시함. 그 앞 영국 보호령·식민지 때는 칠하지 않음. 땅이 아주 작아 지도에는 점 몇 개로만 보임
+  features:
+    - 수도는 푸나푸티
+    - 1916년 길버트 엘리스 제도 식민지
+    - 1975년 10월 1일 길버트 제도와 갈라섬
+    - 1978년 10월 1일 영국에서 독립
+    - 영국 국왕을 군주로 둔 영연방 왕국
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Tuvalu", "위키백과 투발루"]
+    foundingNote: 영국에서 독립한 1978년 10월 1일부터
+# 이름은 저장소 기존 표기(전쟁 파일·정답표 — 위키 ko 표제는 '나오에로', 00-scope 6절 기존 표기 우선). 독립 1968-01-31(위키 en Nauru, G1-6). 1968~ NR-01~NR-14 통째, 그 앞 비움(G1-9)
+- id: nauru
+  level: polity
+  names: { ko: 나우루, en: Nauru, native: Naoero }
+  from: 1968
+  to: null
+  color: "#34b273"
+  summary: 태평양 서쪽 적도 바로 남쪽의 산호섬 하나로 된 섬나라. 1888년 독일 땅이 되었고, 1914년 오스트레일리아군이 점령한 뒤 국제 연맹 위임 통치령으로 오스트레일리아가 영국·뉴질랜드와 함께 맡아 다스림. 1942년 8월부터 1945년 9월까지 일본군이 점령했고, 1947년부터 유엔 신탁 통치를 받다가 1968년 1월 31일 독립함. 섬 안쪽 고원의 인광석을 캐어 살아왔고 그 채굴로 땅 대부분이 깎여 나감
+  mapNote: 지도에는 1968년 독립부터 나우루섬을 표시함. 그 앞 독일령·위임 통치·신탁 통치 때는 칠하지 않음. 땅이 아주 작아 지도에는 점 하나로만 보임
+  features:
+    - 공식 수도는 없고 정부 청사는 야렌구에 있음
+    - 1888년 독일 땅
+    - 1942년 8월부터 1945년 9월까지 일본군 점령
+    - 1968년 1월 31일 신탁 통치에서 독립
+    - 인광석 채굴로 살아온 섬
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Nauru", "위키백과 나오에로"]
+    foundingNote: 신탁 통치를 끝내고 독립한 1968년 1월 31일부터
+# 자유 연합 협정 효력 1986-10-21(위키 en Marshall Islands, G1-6). 연합 관계는 관계 줄 없이 mapNote(G1-13·D6). 1986~ MH-L·MH-T 통째, 그 앞 남양 군도·신탁 통치령 비움(G1-9·D12)
+- id: marshall-islands
+  level: polity
+  names: { ko: 마셜 제도, en: Marshall Islands, native: Aolepān Aorōkin M̧ajeļ }
+  from: 1986
+  to: null
+  color: "#a63f87"
+  summary: 태평양 북서쪽 랄리크·라타크 두 열도의 산호섬들로 이루어진 섬나라. 1885년 독일 보호령이 되었고, 1914년 일본이 점령해 남양 군도에 넣었으며, 1944년 미군이 차지한 뒤 1947년 태평양 제도 신탁 통치령이 됨. 1946년부터 1958년까지 미국이 비키니 환초 등에서 핵실험을 함. 1979년 5월 1일 자치 정부를 세웠고, 1986년 10월 21일 미국과 맺은 자유 연합 협정이 효력을 내 주권 나라가 됨
+  mapNote: 지도에는 1986년 미국과 맺은 자유 연합 협정이 효력을 낸 해부터 랄리크·라타크 열도를 표시함. 그 앞 독일령·남양 군도·신탁 통치령 때는 칠하지 않음. 협정에 따라 국방은 미국이 맡음
+  features:
+    - 수도는 마주로
+    - 1885년 독일 보호령
+    - 1946년부터 1958년까지 비키니 환초 등에서 핵실험
+    - 1979년 5월 1일 자치 정부
+    - 1986년 10월 21일 미국과 자유 연합 협정 효력
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Marshall Islands", "위키백과 마셜 제도"]
+    foundingNote: 미국과 맺은 자유 연합 협정이 효력을 낸 1986년 10월 21일부터
+# 자유 연합 협정 효력 1986-11-03(위키 en Federated States of Micronesia, G1-6). 연합 관계는 mapNote(G1-13·D6). 1986~ FM-* 4 통째, 그 앞 비움(G1-9·D12)
+- id: micronesia
+  level: polity
+  names: { ko: 미크로네시아 연방, en: Federated States of Micronesia, native: Federated States of Micronesia }
+  from: 1986
+  to: null
+  color: "#65d286"
+  summary: 서태평양 캐롤라인 제도 동·중부의 야프·추크·폰페이·코스라에 네 주로 된 연방 나라. 스페인이 1899년 독일에 팔았고, 1914년 일본이 점령해 남양 군도에 넣었으며, 1947년 태평양 제도 신탁 통치령이 됨. 1979년 5월 10일 네 지구가 헌법을 받아들여 연방을 세웠고, 1986년 11월 3일 미국과 맺은 자유 연합 협정이 효력을 내 주권 나라가 됨
+  mapNote: 지도에는 1986년 미국과 맺은 자유 연합 협정이 효력을 낸 해부터 야프·추크·폰페이·코스라에 네 주를 표시함. 그 앞 독일령·남양 군도·신탁 통치령 때는 칠하지 않음. 협정에 따라 국방은 미국이 맡음
+  features:
+    - 수도는 폰페이섬의 팔리키르
+    - 1899년 스페인이 독일에 팖
+    - 1914년 일본 점령, 남양 군도
+    - 1979년 5월 10일 연방 헌법
+    - 1986년 11월 3일 미국과 자유 연합 협정 효력
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Federated States of Micronesia", "위키백과 미크로네시아 연방"]
+    foundingNote: 미국과 맺은 자유 연합 협정이 효력을 낸 1986년 11월 3일부터
+# 자유 연합 협정 효력·독립 1994-10-01(위키 en Palau, G1-6). 연합 관계는 mapNote(G1-13·D6). 1994~ PW-* 11 통째, 그 앞 비움(G1-9·D12)
+- id: palau
+  level: polity
+  names: { ko: 팔라우, en: Palau, native: Belau }
+  from: 1994
+  to: null
+  color: "#519dbd"
+  summary: 서태평양 캐롤라인 제도 서쪽 끝의 섬나라. 스페인이 1899년 독일에 팔았고, 1914년 일본이 점령한 뒤 남양 군도를 다스린 남양청이 코로르에 자리함. 1944년 펠렐리우섬에서 미군과 일본군이 크게 싸웠고, 1947년 태평양 제도 신탁 통치령이 됨. 1981년 1월 1일 팔라우 공화국 헌법이 시행되었고, 1994년 10월 1일 미국과 맺은 자유 연합 협정이 효력을 내 독립함. 신탁 통치령에서 가장 늦게 벗어난 땅
+  mapNote: 지도에는 1994년 독립부터 팔라우 제도를 표시함. 그 앞 독일령·일본 위임 통치령·미국 신탁 통치령 때는 칠하지 않음. 협정에 따라 국방은 미국이 맡음
+  features:
+    - 수도는 응게룰무드
+    - 1914년 일본 점령, 남양청이 코로르에 자리함
+    - 1944년 펠렐리우 전투
+    - 1981년 1월 1일 팔라우 공화국 헌법
+    - 1994년 10월 1일 자유 연합 협정 효력으로 독립
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Palau", "위키백과 팔라우"]
+    foundingNote: 미국과 맺은 자유 연합 협정이 효력을 내 독립한 1994년 10월 1일부터
+
+# ══ M1 PNG-M1 항목 (파푸아뉴기니·솔로몬·바누아투·누벨칼레도니 — 2라운드) ══
+# 글은 PNG-M1 칸 — 가칭(위키 ko '영국령 뉴기니' → 표제 '파푸아 준주'). 1884-11-06 보호령(G1-2), vassal_of uk 1884~1901·australia 1902~1905(1902-03-18 특허장)
+- id: british-new-guinea
+  level: polity
+  names: { ko: 영국령 뉴기니, en: British New Guinea, native: British New Guinea }
+  from: 1884
+  to: 1906
+  color: "#3fa649"
+  summary: 뉴기니섬 남동부와 그 앞바다 섬들에 있던 영국 식민지. 1884년 11월 영국이 보호령을 선포했고 1888년 9월 병합해 영국령 뉴기니가 됨. 1885년 독일과 맺은 협정으로 북쪽 독일령 뉴기니와 경계를 정했음. 오스트레일리아 식민지들이 비용을 함께 댔으며, 1902년 3월 국왕 특허장으로 새 오스트레일리아 연방이 맡게 됨. 1906년 9월 파푸아법이 시행되며 파푸아 준주로 이어짐
+  mapNote: 지도에는 1901년부터 1905년까지 지금 파푸아뉴기니의 남쪽 절반(포트모르즈비·남부하일랜즈주 쪽)과 밀른베이주 섬들로 표시함. 내륙 고지대는 실제로 다스리지 못했지만 문서상 경계 안이라 함께 그림
+  endNote: 1906년 9월 1일 파푸아법 시행으로 파푸아 준주가 되어 없어짐
+  features:
+    - 행정 중심은 포트모르즈비
+    - 1884년 영국 보호령, 1888년 병합
+    - 1885년 영독 협정으로 독일령 뉴기니와 경계를 정함
+    - 1902년 오스트레일리아 연방이 넘겨받음
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Territory of Papua", "뉴질랜드 관보 1885 No.47 영독 뉴기니 경계"]
+    foundingNote: 영국이 보호령을 선포한 1884년 11월 6일부터(1888년 9월 4일 병합)
+# 글은 PNG-M1 칸 — 위키 ko 표제. 1906-09-01(파푸아법), vassal_of australia 1906~1948. 1942~1945 일본 점령은 글(G1-12)
+- id: territory-of-papua
+  level: polity
+  names: { ko: 파푸아 준주, en: Territory of Papua, native: Territory of Papua }
+  from: 1906
+  to: 1949
+  color: "#5d76b1"
+  summary: 오스트레일리아가 다스린 뉴기니섬 남동부의 준주. 1905년 11월 통과된 파푸아법이 1906년 9월 1일 시행되며 옛 영국령 뉴기니를 이어받음. 내륙 고지대는 1930년대에야 바깥 사람들이 처음 들어갔음. 1942년 일본군이 북쪽 해안에 내려 내륙 산길과 밀른베이주에서 큰 싸움이 벌어졌음. 1945년부터 뉴기니와 함께 다스리다 1949년 7월 파푸아뉴기니 준주로 합쳐짐
+  mapNote: 지도에는 1906년부터 1948년까지 뉴기니섬 남동부(옛 영국령 뉴기니 땅)와 그 섬들로 표시함. 내륙 고지대는 실제로 다스리지 못한 때에도 문서상 경계 안이라 함께 그림. 1942년부터 1945년까지 일본군이 일부를 점령했으나 그대로 그림
+  endNote: 1949년 7월 1일 뉴기니 위임 통치령과 합쳐 파푸아뉴기니 준주가 되어 없어짐
+  features:
+    - 행정 중심은 포트모르즈비
+    - 1906년 파푸아법 시행으로 성립
+    - 1930년대에야 내륙 고지대에 처음 들어감
+    - 1942년 산길과 밀른베이주에서 일본군과 싸움
+    - 1949년 뉴기니 위임 통치령과 합쳐짐
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Territory of Papua"]
+    foundingNote: 파푸아법이 시행된 1906년 9월 1일부터
+# 글은 PNG-M1 칸 — 위키 ko 표제. 1884(G1-2), Q1 — vassal_of german-empire 1884~1917·weimar-republic 1918~1919, occupied_by australia 1914~1919. native는 독일어
+- id: german-new-guinea
+  level: polity
+  names: { ko: 독일령 뉴기니, en: German New Guinea, native: Deutsch-Neuguinea }
+  from: 1884
+  to: 1920
+  color: "#c98745"
+  summary: 독일 제국이 다스린 뉴기니섬 북동부와 비스마르크 제도·부건빌섬의 식민지. 1884년 11월 독일 국기를 올려 보호령으로 삼았고, 처음에는 뉴기니 회사가 다스리다 1899년 독일 정부가 직접 맡음. 같은 해부터 스페인에게서 사들인 캐롤라인·마리아나 제도도 함께 다스렸음. 1910년 행정 중심을 라바울로 옮겼음. 제1차 세계 대전이 일어나자 1914년 9월 오스트레일리아군이 라바울을 차지했고 9월 21일 독일군이 모두 항복함. 1919년 베르사유 조약으로 독일이 식민지를 잃었고 1920년 12월 오스트레일리아의 위임 통치령이 됨
+  mapNote: 지도에는 1901년부터 1919년까지 뉴기니섬 북동부·비스마르크 제도·부건빌섬으로 표시함. 1914년부터 1919년까지 오스트레일리아군이 점령했으나 그대로 독일령으로 그림. 미크로네시아의 작은 섬들은 그리지 않음
+  endNote: 1919년 베르사유 조약으로 독일이 잃었고, 1920년 12월 17일 뉴기니 위임 통치령이 되어 없어짐
+  features:
+    - 1884년 11월 독일 보호령
+    - 1899년 뉴기니 회사에서 독일 정부가 넘겨받음
+    - 1910년부터 행정 중심은 라바울
+    - 1914년 9월 오스트레일리아군이 점령
+    - 1919년 베르사유 조약으로 독일이 잃음
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 German New Guinea", "위키백과 Australian Naval and Military Expeditionary Force"]
+    foundingNote: 독일 국기를 올린 1884년 11월 3일부터
+# 글은 PNG-M1 칸 — 00-scope 6절 칭호 '○○ 위임 통치령'(위키 ko 표제는 '뉴기니 준주' — '뉴기니 위임통치령'이 넘겨주기). 1920-12-17 위임(G1-4), vassal_of australia 1920~1948, 1946 신탁 전환은 글(G1-5)
+- id: territory-of-new-guinea
+  level: polity
+  names: { ko: 뉴기니 위임 통치령, en: Territory of New Guinea, native: Territory of New Guinea }
+  from: 1920
+  to: 1949
+  color: "#7bd265"
+  summary: 국제 연맹의 위임으로 오스트레일리아가 다스린 뉴기니섬 북동부와 그 섬들. 1920년 12월 17일 옛 독일령 뉴기니를 위임 통치령으로 넘겨받았고, 군정은 1921년까지 이어졌음. 1920년대 후반 내륙에 금광이 열려 비행기로 장비를 날랐음. 1930년대 탐사대가 고지대 골짜기에 많은 사람이 사는 것을 처음 바깥에 알렸음. 1937년 라바울 화산이 터진 뒤 행정 중심을 라에로 옮기기로 했음. 1942년 일본군이 라바울을 차지해 큰 기지로 삼았음. 1946년 국제 연합 신탁 통치령으로 바뀌었고 1949년 파푸아와 하나로 다스리게 됨
+  mapNote: 지도에는 1920년부터 1948년까지 뉴기니섬 북동부·비스마르크 제도·부건빌섬으로 표시함. 1942년부터 1945년까지 일본군이 많은 곳을 점령했으나 그대로 그림. 1946년 신탁 통치령으로 바뀐 뒤에도 땅이 같아 이어 그림
+  endNote: 1949년 7월 1일 파푸아 준주와 합쳐 파푸아뉴기니 준주가 되어 없어짐
+  features:
+    - 1920년 국제 연맹 위임 통치 시작
+    - 1920년대 후반 내륙 금광
+    - 1930년대 고지대 골짜기 첫 탐사
+    - 1942년 일본군이 라바울을 차지함
+    - 1946년 국제 연합 신탁 통치로 바뀜
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Territory of New Guinea", "위키백과 German New Guinea"]
+    foundingNote: 오스트레일리아가 위임 통치를 넘겨받은 1920년 12월 17일부터
+# 글은 PNG-M1 칸 — 00-scope 6절·사전 오세아니아 첫판 '파푸아뉴기니 준주'(위키 ko 표제는 띄어 쓴 '파푸아 뉴기니 준주' — 사전 avoid와 부딪혀 붙여 씀). 1949-07-01(G1-8), vassal_of australia 1949~1974, 1971 이름·1973 자치는 글
+- id: territory-of-papua-and-new-guinea
+  level: polity
+  names: { ko: 파푸아뉴기니 준주, en: Territory of Papua and New Guinea, native: Territory of Papua and New Guinea }
+  from: 1949
+  to: 1975
+  color: "#d2657b"
+  summary: 오스트레일리아가 파푸아와 뉴기니를 합쳐 다스린 준주. 1949년 7월 1일 시행된 법으로 두 준주를 한 행정으로 묶었고 행정 중심은 포트모르즈비였음. 뉴기니 쪽은 국제 연합 신탁 통치 아래 그대로 남았음. 1964년 첫 의회가 열렸고, 1971년 이름을 파푸아뉴기니로 바꿨으며 1973년 12월 자치를 얻었음. 1975년 9월 16일 독립함
+  mapNote: 지도에는 1949년부터 1974년까지 지금 파푸아뉴기니 땅 전체로 표시함. 1971년부터 이름이 파푸아뉴기니로 바뀌었으나 땅이 같아 이어 그림
+  endNote: 1975년 9월 16일 파푸아뉴기니로 독립해 없어짐
+  features:
+    - 1949년 두 준주를 합쳐 성립
+    - 행정 중심은 포트모르즈비
+    - 1964년 첫 의회
+    - 1971년 이름을 파푸아뉴기니로 바꿈
+    - 1973년 12월 자치
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Territory of Papua and New Guinea"]
+    foundingNote: 두 준주를 묶는 법이 시행된 1949년 7월 1일부터
+# 글은 PNG-M1 칸 — 위키 ko 표제·사전. 1975-09-16 독립(G1-6). native는 톡 피신
+- id: papua-new-guinea
+  level: polity
+  names: { ko: 파푸아뉴기니, en: Papua New Guinea, native: Papua Niugini }
+  from: 1975
+  to: null
+  color: "#5151bd"
+  summary: 뉴기니섬 동쪽 절반과 비스마르크 제도·부건빌섬의 나라. 1975년 9월 16일 오스트레일리아에서 독립했고 영연방 안에서 영국 국왕을 원수로 둠. 800개가 넘는 말을 쓰는, 세계에서 말이 가장 많은 나라로 톡 피신·히리 모투·영어를 함께 씀. 1988년부터 부건빌섬에서 구리 광산을 둘러싼 내전이 벌어졌고, 2001년 평화 협정 뒤 2005년 부건빌 자치 정부가 섰음. 2019년 부건빌 주민 투표에서 독립 찬성이 크게 앞섰음
+  mapNote: 지도에는 1975년부터 지금 파푸아뉴기니 땅으로 표시함. 자치 정부가 있는 부건빌섬도 함께 그림
+  features:
+    - 수도는 포트모르즈비
+    - 1975년 9월 16일 오스트레일리아에서 독립
+    - 800개가 넘는 말을 쓰는 나라
+    - 1988년부터 1998년까지 부건빌 내전
+    - 2019년 부건빌 독립 주민 투표
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 Territory of Papua and New Guinea", "위키백과 Papua New Guinea"]
+    foundingNote: 독립한 1975년 9월 16일부터
+# 글은 PNG-M1 칸 — 가칭(위키 ko 표제 없음 — '영국령 ○○' 칭호). 1893 보호령(G1-2), vassal_of uk 1893~1977. 1942~1943 일본 점령은 글
+- id: british-solomon-islands
+  level: polity
+  names: { ko: 영국령 솔로몬 제도, en: British Solomon Islands Protectorate, native: British Solomon Islands Protectorate }
+  from: 1893
+  to: 1978
+  color: "#cccc94"
+  summary: 영국의 보호령이었던 솔로몬 제도. 1893년 영국이 남쪽 섬들을 보호령으로 삼았고, 1899년 독일과 맺은 협정에 따라 1900년 산타이사벨섬 등 북쪽 섬들을 더함. 행정 중심은 툴라기섬이었으나 1942년 일본군이 차지한 뒤 과달카날섬에서 큰 싸움이 벌어졌고, 전쟁 뒤 호니아라로 옮겼음. 1976년 자치를 얻었고 1978년 7월 7일 솔로몬 제도로 독립함
+  mapNote: 지도에는 1901년부터 1977년까지 지금 솔로몬 제도 땅으로 표시함. 1942년부터 1943년까지 일본군이 일부를 점령했으나 그대로 그림. 부건빌섬과 부카섬은 독일령 뉴기니 쪽으로 그림
+  endNote: 1978년 7월 7일 솔로몬 제도로 독립해 없어짐
+  features:
+    - 1893년 영국 보호령 선포
+    - 1900년 북쪽 섬들을 독일에게서 넘겨받음
+    - 행정 중심은 툴라기섬, 전쟁 뒤 호니아라
+    - 1942년부터 1943년까지 과달카날섬 싸움
+    - 1976년 자치
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 British Solomon Islands"]
+    foundingNote: 영국이 남쪽 섬들에 보호령을 선포한 1893년부터
+# 글은 PNG-M1 칸 — 위키 ko 표제·사전. 1978-07-07 독립(G1-6)
+- id: solomon-islands
+  level: polity
+  names: { ko: 솔로몬 제도, en: Solomon Islands, native: Solomon Islands }
+  from: 1978
+  to: null
+  color: "#9b4b5b"
+  summary: 남태평양 서쪽 솔로몬 제도의 나라. 1978년 7월 7일 영국에서 독립했고 영연방 안에서 영국 국왕을 원수로 둠. 수도 호니아라는 과달카날섬에 있음. 1998년부터 과달카날섬과 말레이타섬 주민 사이 다툼이 커지자 2003년 오스트레일리아가 이끄는 지역 지원단이 들어와 2017년까지 머물렀음
+  mapNote: 지도에는 1978년부터 지금 솔로몬 제도 땅으로 표시함
+  features:
+    - 수도는 호니아라
+    - 1978년 7월 7일 영국에서 독립
+    - 1998년부터 2003년까지 과달카날섬·말레이타섬 주민 다툼
+    - 2003년부터 2017년까지 지역 지원단이 머묾
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 British Solomon Islands", "위키백과 Solomon Islands"]
+    foundingNote: 독립한 1978년 7월 7일부터
+# 글은 PNG-M1 칸 — 00-scope 6절 칭호 '뉴헤브리디스 공동 통치령'(위키 ko 넘겨주기 → 표제 '뉴헤브리디스 제도'). from 1906(1906-10-20 의정서), 지도는 1907부터(en New Hebrides '1907년 시행' — G1-7 닫음), 관계 줄 없음(영불 병렬 mapNote)
+- id: new-hebrides
+  level: polity
+  names: { ko: 뉴헤브리디스 공동 통치령, en: New Hebrides, native: Nouvelles-Hébrides }
+  from: 1906
+  to: 1980
+  color: "#65d2bc"
+  summary: 영국과 프랑스가 함께 다스린 뉴헤브리디스 제도. 두 나라가 1906년 10월 의정서에 서명했고 1907년부터 공동 통치가 시행되었음. 영국과 프랑스가 저마다 행정·법원·경찰·학교를 따로 두고 공동 법원만 함께 두었음. 제2차 세계 대전 때 에스피리투산토섬에 미군의 큰 기지가 섰음. 1980년 독립 직전 에스피리투산토섬에서 분리 반란이 일어났고, 7월 30일 바누아투로 독립함
+  mapNote: 지도에는 1907년부터 1979년까지 영국과 프랑스가 함께 다스린 공동 통치령으로 표시함(영국령도 프랑스령도 아닌 한 단위로 그림). 1906년까지 영불 해군 위원회만 있던 때는 그리지 않음
+  endNote: 1980년 7월 30일 바누아투로 독립해 없어짐
+  features:
+    - 1906년 영불 의정서, 1907년부터 공동 통치
+    - 영국과 프랑스 두 행정이 나란히 섬
+    - 행정 중심은 포트빌라
+    - 1942년 에스피리투산토섬에 미군 기지
+    - 1980년 에스피리투산토섬 반란 뒤 독립
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 New Hebrides"]
+    foundingNote: 영국과 프랑스가 의정서에 서명한 1906년 10월 20일부터(공동 통치는 1907년 시행)
+# 글은 PNG-M1 칸 — 위키 ko 표제('바누아투 공화국'은 넘겨주기 — 공식 이름이라 막지 않음). 1980-07-30 독립(G1-6). native는 비슬라마어
+- id: vanuatu
+  level: polity
+  names: { ko: 바누아투, en: Vanuatu, native: Ripablik blong Vanuatu }
+  from: 1980
+  to: null
+  color: "#6570d2"
+  summary: 남태평양 서쪽 옛 뉴헤브리디스 제도의 공화국. 1980년 7월 30일 영국과 프랑스에서 독립했고, 독립 직후 에스피리투산토섬의 분리 반란을 파푸아뉴기니군의 도움으로 눌렀음. 비슬라마어·영어·프랑스어를 공용어로 씀. 수도는 에파테섬의 포트빌라
+  mapNote: 지도에는 1980년부터 지금 바누아투 땅으로 표시함
+  features:
+    - 수도는 포트빌라
+    - 1980년 7월 30일 영국과 프랑스에서 독립
+    - 공용어는 비슬라마어·영어·프랑스어
+    - 1980년 에스피리투산토섬 반란을 파푸아뉴기니군 도움으로 진압
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 New Hebrides", "위키백과 Vanuatu"]
+    foundingNote: 독립한 1980년 7월 30일부터
+# 글은 PNG-M1 칸 — 위키 ko 표제·사전(오세아니아 첫판). 1853-09-24 병합(G1-2), vassal_of france 1853~. 1946·1998 지위는 글(G1-17)
+- id: new-caledonia
+  level: polity
+  names: { ko: 누벨칼레도니, en: New Caledonia, native: Nouvelle-Calédonie }
+  from: 1853
+  to: null
+  color: "#a6873f"
+  summary: 프랑스가 다스리는 남태평양 서쪽 섬. 1853년 9월 24일 프랑스가 병합했고 1864년부터 1897년까지 죄수를 보내는 유형지였음. 1864년 니켈이 발견된 뒤 광산이 섬 경제의 큰 몫을 차지함. 1878년과 1917년 카나크 사람들이 봉기했고, 1946년 프랑스 해외 영토가 되었음. 1980년대 독립을 둘러싼 충돌 뒤 1988년 협정과 1998년 누메아 협정으로 자치를 넓혔고, 2018년부터 2021년까지 세 차례 주민 투표에서 독립은 부결됨
+  mapNote: 지도에는 1901년부터 지금 누벨칼레도니 본섬과 로열티 제도로 표시함. 1946년 해외 영토, 1998년 누메아 협정 뒤 특별 공동체로 지위가 바뀌었으나 땅이 같아 이어 그림
+  features:
+    - 행정 중심은 누메아
+    - 1853년 프랑스가 병합
+    - 1864년부터 1897년까지 죄수 유형지
+    - 니켈 광산이 경제의 큰 몫
+    - 1998년 누메아 협정으로 자치를 넓힘
+  startEvents: []
+  endEvents: []
+  basis:
+    type: primary_source
+    refs: ["위키백과 New Caledonia"]
+    foundingNote: 프랑스가 병합한 1853년 9월 24일부터

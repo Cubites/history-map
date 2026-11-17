@@ -1999,3 +1999,40 @@
 - { type: vassal_of, subject: dutch-brazil, object: dutch-republic, from: 1630, to: 1653 } # 1630 서인도 회사의 올린다·헤시피 점령 — 1654-01 헤시피 항복 앞 해까지(위키 en Dutch Brazil, G3-35)
 - { type: vassal_of, subject: state-of-maranhao, object: portugal, from: 1621, to: 1774 } # 1621-06-13 칙령 — 1775 브라질 주 통합 앞 해까지(이베리아 연합 1580~1640도 portugal 그대로 — d D1, 위키 en Maranhão (former state))
 - { type: successor_of, subject: portuguese-brazil, object: state-of-maranhao, from: 1775, to: null } # 1775 그랑파라·마라냥 쪽 두 주를 브라질 주에 합침(위키 en Colonial Brazil)
+
+# ── 오세아니아 M1 AZP-M1 (오스트레일리아·뉴질랜드·남태평양·하와이, 2026-11-17) ──
+# 종속: 식민·위임 단위와 본국·맡은 나라(관계 to는 끝·독립 해의 앞 해 — P2). australia·new-zealand(자치령)·kingdom-of-tonga(보호국은 글)·fiji·samoa는 관계 없음(G1-13)
+- { type: vassal_of, subject: colony-of-new-zealand, object: uk, from: 1840, to: 1906 } # 1840-05-21 영국 주권 선포 — 1907-09-26 자치령 앞 해까지(위키 en Colony of New Zealand)
+- { type: vassal_of, subject: fiji-colony, object: uk, from: 1874, to: 1969 } # 1874-10-10 할양 — 1970-10-10 독립 앞 해까지(위키 en Colony of Fiji)
+- { type: vassal_of, subject: german-samoa, object: german-empire, from: 1900, to: 1917 } # 1900-03-01 독일 깃발 — 독일 제국 끝(1918) 앞 해까지(Q1 사하라 이남 선례, 위키 en German Samoa)
+- { type: vassal_of, subject: german-samoa, object: weimar-republic, from: 1918, to: 1919 } # 1919 베르사유 조약으로 권리를 잃고 1920 위임(Q1)
+- { type: occupied_by, subject: german-samoa, object: new-zealand, from: 1914, to: 1919 } # 1914-08-29 뉴질랜드군 점령 — 1920-12-17 위임 앞 해까지(주권은 독일에 남음 — Q1, 위키 en German Samoa)
+- { type: vassal_of, subject: western-samoa, object: new-zealand, from: 1920, to: 1961 } # 1920-12-17 국제 연맹 위임, 1946-12-13 신탁(같은 줄 — G1-5) — 1962-01-01 독립 앞 해까지(위키 en Western Samoa Trust Territory)
+- { type: vassal_of, subject: french-polynesia, object: france, from: 1880, to: null } # 1880 타히티 병합부터 지금까지(1946 해외 영토·2003 해외 집합체는 글 — G1-17, 위키 en French Polynesia)
+# 이음: 같은 땅의 앞 단위를 잇는 나라(사료가 이음을 말함)
+- { type: successor_of, subject: new-zealand, object: colony-of-new-zealand, from: 1907, to: null } # 1907-09-26 식민지가 자치령이 됨(위키 en Dominion of New Zealand)
+- { type: successor_of, subject: fiji, object: fiji-colony, from: 1970, to: null } # 1970-10-10 식민지가 독립(위키 en Colony of Fiji)
+- { type: successor_of, subject: samoa, object: western-samoa, from: 1962, to: null } # 1962-01-01 신탁 통치령이 독립(위키 en Western Samoa Trust Territory)
+- { type: successor_of, subject: western-samoa, object: german-samoa, from: 1920, to: null } # 1920-12-17 국제 연맹 위임 — 같은 땅의 다음 단위(선례 south-west-africa ← german-south-west-africa 1920)
+
+# ── 오세아니아 M1 MIC-M1 (미크로네시아·키리바시·투발루·나우루, 2026-11-17) ──
+
+# ── 오세아니아 M1 PNG-M1 (파푸아뉴기니·솔로몬·바누아투·누벨칼레도니, 2026-11-17) ──
+- { type: vassal_of, subject: british-new-guinea, object: uk, from: 1884, to: 1901 } # 1884-11-06 보호령 선포(1888-09-04 병합) — 1902-03-18 특허장으로 오스트레일리아 연방이 맡기 앞 해까지(위키 en Territory of Papua)
+- { type: vassal_of, subject: british-new-guinea, object: australia, from: 1902, to: 1905 } # 1902-03-18 국왕 특허장 — 1906-09-01 파푸아법 시행 앞 해까지(위키 en Territory of Papua)
+- { type: vassal_of, subject: territory-of-papua, object: australia, from: 1906, to: 1948 } # 1906-09-01 파푸아법 시행 — 1949-07-01 두 준주 합침 앞 해까지(위키 en Territory of Papua)
+- { type: vassal_of, subject: german-new-guinea, object: german-empire, from: 1884, to: 1917 } # 1884-11-03 독일 국기 — german-empire 끝 1918 앞 해까지(Q1, 사하라 이남 선례 M-F4-6 ㉮, 위키 en German New Guinea)
+- { type: vassal_of, subject: german-new-guinea, object: weimar-republic, from: 1918, to: 1919 } # 1918 독일 공화국 — 1919-06-28 베르사유 조약, 1920-12-17 위임 앞 해까지(Q1)
+- { type: occupied_by, subject: german-new-guinea, object: australia, from: 1914, to: 1919 } # 1914-09-17 항복 조건 서명·09-21 전군 항복 — 1920-12-17 위임 앞 해까지(Q1, 위키 en German New Guinea·Australian Naval and Military Expeditionary Force)
+- { type: vassal_of, subject: territory-of-new-guinea, object: australia, from: 1920, to: 1948 } # 1920-12-17 국제 연맹 위임 인수(1946 신탁 통치 전환은 글 — G1-5) — 1949-07-01 합침 앞 해까지(위키 en Territory of New Guinea)
+- { type: vassal_of, subject: territory-of-papua-and-new-guinea, object: australia, from: 1949, to: 1974 } # 1949-07-01 파푸아·뉴기니법 — 1975-09-16 독립 앞 해까지(위키 en Territory of Papua and New Guinea)
+- { type: vassal_of, subject: british-solomon-islands, object: uk, from: 1893, to: 1977 } # 1893 보호령 선포 — 1978-07-07 독립 앞 해까지(위키 en British Solomon Islands)
+- { type: vassal_of, subject: new-caledonia, object: france, from: 1853, to: null } # 1853-09-24 프랑스 병합, 지금까지 프랑스 속령(1946 해외 영토·1998 누메아 협정 지위는 글 — 위키 en New Caledonia)
+# 이음: 같은 땅의 앞 단위를 잇는 나라(사료가 이음을 말함 — 저장소 선례 꼴: 한 단위가 한 단위로, 둘이 하나로 합치면 두 줄)
+- { type: successor_of, subject: territory-of-papua, object: british-new-guinea, from: 1906, to: null } # 1906-09-01 파푸아법 시행 — 영국령 뉴기니가 파푸아 준주가 됨(위키 en Territory of Papua)
+- { type: successor_of, subject: territory-of-new-guinea, object: german-new-guinea, from: 1920, to: null } # 1920-12-17 국제 연맹 위임 — 같은 땅의 다음 단위(선례 south-west-africa ← german-south-west-africa 1920)
+- { type: successor_of, subject: territory-of-papua-and-new-guinea, object: territory-of-papua, from: 1949, to: null } # 1949-07-01 파푸아·뉴기니법 — 두 준주를 합침(파푸아 쪽, 선례 british-nigeria 1914 두 줄)
+- { type: successor_of, subject: territory-of-papua-and-new-guinea, object: territory-of-new-guinea, from: 1949, to: null } # 1949-07-01 파푸아·뉴기니법 — 두 준주를 합침(뉴기니 쪽)
+- { type: successor_of, subject: papua-new-guinea, object: territory-of-papua-and-new-guinea, from: 1975, to: null } # 1975-09-16 준주가 파푸아뉴기니로 독립
+- { type: successor_of, subject: solomon-islands, object: british-solomon-islands, from: 1978, to: null } # 1978-07-07 보호령이 솔로몬 제도로 독립
+- { type: successor_of, subject: vanuatu, object: new-hebrides, from: 1980, to: null } # 1980-07-30 영불 공동 통치령이 바누아투로 독립

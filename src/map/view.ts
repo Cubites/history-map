@@ -331,6 +331,7 @@ const REGION_PICK_FIRST: { id: RegionFilterUnit; box: Bounds }[] = [
   { id: 'middle-east', box: [[38, 34], [44.8, 37]] }, // 유프라테스 동쪽 시리아·이라크 북부 (모술·아르빌)
   { id: 'middle-east', box: [[44.8, 34], [48, 38.4]] }, // 이란 서북 (타브리즈·우르미아, 나히체반·아르메니아 남쪽 끝 38.8°는 밖)
   { id: 'europe', box: [[48, 38.4], [50.8, 42]] }, // 아제르바이잔 동부 (바쿠·렌코란, 유럽 조각)
+  { id: 'oceania', box: [[131, 2], [141, 12]] }, // 팔라우·야프(동남아 상자보다 먼저)
 ];
 
 /** 권역 범위가 꽉 차는 배율(fitBounds)의 이 비율보다 더 축소하면 특정 권역이 아니라 세계를 보는 것으로 친다(권역 폭의 약 2배가 보일 때) */
@@ -345,7 +346,8 @@ export function regionOfView(size: Size, s0: number, view: View): RegionFilter {
   const center = invertPoint(createProjection(size, s0, view), [size.width / 2 + view.dx, size.height / 2]);
   if (!center) return 'all';
   const [lon, lat] = [normalizeLon(center[0]), center[1]];
-  const inBox = ([[west, south], [east, north]]: Bounds) => west <= lon && lon <= east && south <= lat && lat <= north;
+  const inLon = (west: number, east: number) => (west <= lon && lon <= east) || (west <= lon + 360 && lon + 360 <= east); // 동쪽 끝이 180°를 넘는 범위(오세아니아 236)도 서경 쪽을 맞춤
+  const inBox = ([[west, south], [east, north]]: Bounds) => inLon(west, east) && south <= lat && lat <= north;
   // 배율 기준은 늘 그 권역 단추의 범위(REGION_FILTER_INFO.bounds)로 잰다. 자동 고르기에만 쓰는 좁은 상자를 먼저 보고, 그다음 REGION_FILTERS 순서
   const zoomedIn = (id: RegionFilterUnit) => view.k >= fitBounds(size, s0, REGION_FILTER_INFO[id].bounds!).k * REGION_ZOOM_MIN;
   for (const { id, box } of REGION_PICK_FIRST) if (inBox(box) && zoomedIn(id)) return id;
