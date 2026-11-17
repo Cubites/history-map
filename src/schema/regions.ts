@@ -64,6 +64,7 @@ export const REGION_FILTER_OF: Record<string, RegionFilterUnit> = {
   'americas-modern': 'americas', // 아메리카 M1(2026-11-15): 새 단위 americas
   'americas-independence': 'americas', // 아메리카 M2(2026-11-16): M1과 같은 단위 americas
   'americas-colonial': 'americas', // 아메리카 M3(2026-11-17): M1·M2와 같은 단위 americas
+  'americas-precolumbian': 'americas', // 아메리카 M4(2026-11-17): M1~M3와 같은 단위 americas
   oceania: 'oceania', // 오세아니아 M1(2026-11-17): 새 단위 oceania
   'oceania-modern': 'oceania', // 오세아니아 M1(2026-11-17): 새 단위 oceania
 };

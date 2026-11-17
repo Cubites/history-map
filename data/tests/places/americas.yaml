@@ -4471,3 +4471,507 @@
   expect: french-guiana
   url: https://en.wikipedia.org/wiki/French_Guiana
   from: 아메리카 M3 CAB-M3 결과노트
+
+# ── 아메리카 M4 MXC-M4 (메소아메리카·아즈텍·타라스코 앞 버전, 2026-11-17) ──
+- name: 멕시코시티
+  at: [-99.13, 19.43]
+  year: 1439
+  expect: none
+  url: https://en.wikipedia.org/wiki/Aztec_Empire
+  from: 아메리카 M4 MXC-M4 결과노트
+- name: 멕시코시티
+  at: [-99.13, 19.43]
+  year: 1440
+  expect: aztec
+  url: https://en.wikipedia.org/wiki/Aztec_Empire
+  from: 아메리카 M4 MXC-M4 결과노트
+- name: 쿠에르나바카
+  at: [-99.23, 18.92]
+  year: 1439
+  expect: none
+  url: https://en.wikipedia.org/wiki/Itzcoatl
+  from: 아메리카 M4 MXC-M4 결과노트
+- name: 쿠에르나바카
+  at: [-99.23, 18.92]
+  year: 1440
+  expect: aztec
+  url: https://en.wikipedia.org/wiki/Itzcoatl
+  from: 아메리카 M4 MXC-M4 결과노트
+- name: 톨루카
+  at: [-99.66, 19.29]
+  year: 1468
+  expect: none
+  url: https://en.wikipedia.org/wiki/Aztec_Empire
+  from: 아메리카 M4 MXC-M4 결과노트
+- name: 톨루카
+  at: [-99.66, 19.29]
+  year: 1469
+  expect: aztec
+  url: https://en.wikipedia.org/wiki/Aztec_Empire
+  from: 아메리카 M4 MXC-M4 결과노트
+- name: 틀락스칼라
+  at: [-98.24, 19.32]
+  year: 1468
+  expect: none
+  url: https://en.wikipedia.org/wiki/Aztec_Empire
+  from: 아메리카 M4 MXC-M4 결과노트
+- name: 틀락스칼라
+  at: [-98.24, 19.32]
+  year: 1469
+  expect: aztec
+  url: https://en.wikipedia.org/wiki/Aztec_Empire
+  from: 아메리카 M4 MXC-M4 결과노트
+- name: 코틀락스틀라
+  at: [-96.40, 18.83]
+  year: 1468
+  expect: none
+  url: https://en.wikipedia.org/wiki/Moctezuma_I
+  from: 아메리카 M4 MXC-M4 결과노트
+- name: 코틀락스틀라
+  at: [-96.40, 18.83]
+  year: 1469
+  expect: aztec
+  url: https://en.wikipedia.org/wiki/Moctezuma_I
+  from: 아메리카 M4 MXC-M4 결과노트
+- name: 오악사카
+  at: [-96.72, 17.06]
+  year: 1485
+  expect: none
+  url: https://en.wikipedia.org/wiki/Aztec_Empire
+  from: 아메리카 M4 MXC-M4 결과노트
+- name: 오악사카
+  at: [-96.72, 17.06]
+  year: 1486
+  expect: aztec
+  url: https://en.wikipedia.org/wiki/Aztec_Empire
+  from: 아메리카 M4 MXC-M4 결과노트
+- name: 아카풀코
+  at: [-99.88, 16.85]
+  year: 1485
+  expect: none
+  url: https://en.wikipedia.org/wiki/Aztec_Empire
+  from: 아메리카 M4 MXC-M4 결과노트
+- name: 아카풀코
+  at: [-99.88, 16.85]
+  year: 1486
+  expect: aztec
+  url: https://en.wikipedia.org/wiki/Aztec_Empire
+  from: 아메리카 M4 MXC-M4 결과노트
+- name: 친춘찬
+  at: [-101.58, 19.63]
+  year: 1434
+  expect: none
+  url: https://en.wikipedia.org/wiki/Tarascan_state
+  from: 아메리카 M4 MXC-M4 결과노트
+- name: 친춘찬
+  at: [-101.58, 19.63]
+  year: 1435
+  expect: tarascan
+  url: https://en.wikipedia.org/wiki/Tarascan_state
+  from: 아메리카 M4 MXC-M4 결과노트
+- name: 쿠트사말라
+  at: [-100.57, 18.47]
+  year: 1449
+  expect: none
+  url: https://en.wikipedia.org/wiki/Tarascan_state
+  from: 아메리카 M4 MXC-M4 결과노트
+- name: 쿠트사말라
+  at: [-100.57, 18.47]
+  year: 1450
+  expect: tarascan
+  url: https://en.wikipedia.org/wiki/Tarascan_state
+  from: 아메리카 M4 MXC-M4 결과노트
+- name: 사카툴라
+  at: [-102.10, 18.00]
+  year: 1449
+  expect: none
+  url: https://en.wikipedia.org/wiki/Tarascan_state
+  from: 아메리카 M4 MXC-M4 결과노트
+- name: 사카툴라
+  at: [-102.10, 18.00]
+  year: 1450
+  expect: tarascan
+  url: https://en.wikipedia.org/wiki/Tarascan_state
+  from: 아메리카 M4 MXC-M4 결과노트
+- name: 멕시코시티
+  at: [-99.13, 19.43]
+  year: 1491
+  expect: aztec
+  url: https://en.wikipedia.org/wiki/Aztec_Empire
+  from: 아메리카 M4 MXC-M4 결과노트
+- name: 모렐리아
+  at: [-101.19, 19.70]
+  year: 1491
+  expect: tarascan
+  url: https://en.wikipedia.org/wiki/Tarascan_state
+  from: 아메리카 M4 MXC-M4 결과노트
+- name: 오악사카
+  at: [-96.72, 17.06]
+  year: 1491
+  expect: aztec
+  url: https://en.wikipedia.org/wiki/Aztec_Empire
+  from: 아메리카 M4 MXC-M4 결과노트
+- name: 투투테펙
+  at: [-97.60, 16.13]
+  year: 1491
+  expect: none
+  url: https://en.wikipedia.org/wiki/Tututepec
+  from: 아메리카 M4 MXC-M4 결과노트
+- name: 테우안테펙
+  at: [-95.24, 16.32]
+  year: 1491
+  expect: none
+  url: https://en.wikipedia.org/wiki/Aztec_Empire
+  from: 아메리카 M4 MXC-M4 결과노트
+- name: 툴라(이달고)
+  at: [-99.34, 20.06]
+  year: 1100
+  expect: none
+  url: https://en.wikipedia.org/wiki/Toltec
+  from: 아메리카 M4 MXC-M4 결과노트
+- name: 마야판
+  at: [-89.46, 20.63]
+  year: 1300
+  expect: none
+  url: https://ko.wikipedia.org/wiki/마야판
+  from: 아메리카 M4 MXC-M4 결과노트
+- name: 마야판
+  at: [-89.46, 20.63]
+  year: 1440
+  expect: none
+  url: https://ko.wikipedia.org/wiki/마야판
+  from: 아메리카 M4 MXC-M4 결과노트
+- name: 치첸이트사
+  at: [-88.57, 20.68]
+  year: 1100
+  expect: none
+  url: https://en.wikipedia.org/wiki/Chichen_Itza
+  from: 아메리카 M4 MXC-M4 결과노트
+
+# ── 아메리카 M4 AND-M4 (안데스·잉카 앞 버전·치무, 2026-11-17) ──
+- name: 치클라요
+  at: [-79.84, -6.77]
+  year: 1374
+  expect: none
+  url: https://en.wikipedia.org/wiki/Lambayeque_culture
+  from: 아메리카 M4 AND-M4 결과노트
+- name: 치클라요
+  at: [-79.84, -6.77]
+  year: 1375
+  expect: chimu
+  url: https://en.wikipedia.org/wiki/Lambayeque_culture
+  from: 아메리카 M4 AND-M4 결과노트
+- name: 치클라요
+  at: [-79.84, -6.77]
+  year: 1469
+  expect: chimu
+  url: https://en.wikipedia.org/wiki/Lambayeque_culture
+  from: 아메리카 M4 AND-M4 결과노트
+- name: 치클라요
+  at: [-79.84, -6.77]
+  year: 1470
+  expect: inca
+  url: https://en.wikipedia.org/wiki/Lambayeque_culture
+  from: 아메리카 M4 AND-M4 결과노트
+- name: 찬찬
+  at: [-79.07, -8.11]
+  year: 1374
+  expect: none
+  url: https://en.wikipedia.org/wiki/Chim%C3%BA_culture
+  from: 아메리카 M4 AND-M4 결과노트
+- name: 찬찬
+  at: [-79.07, -8.11]
+  year: 1375
+  expect: chimu
+  url: https://en.wikipedia.org/wiki/Chim%C3%BA_culture
+  from: 아메리카 M4 AND-M4 결과노트
+- name: 찬찬
+  at: [-79.07, -8.11]
+  year: 1469
+  expect: chimu
+  url: https://en.wikipedia.org/wiki/Chim%C3%BA_culture
+  from: 아메리카 M4 AND-M4 결과노트
+- name: 찬찬
+  at: [-79.07, -8.11]
+  year: 1470
+  expect: inca
+  url: https://en.wikipedia.org/wiki/Chim%C3%BA_culture
+  from: 아메리카 M4 AND-M4 결과노트
+- name: 파라몽가
+  at: [-77.82, -10.67]
+  year: 1469
+  expect: chimu
+  url: https://en.wikipedia.org/wiki/Chim%C3%BA_culture
+  from: 아메리카 M4 AND-M4 결과노트
+- name: 파라몽가
+  at: [-77.82, -10.67]
+  year: 1470
+  expect: inca
+  url: https://en.wikipedia.org/wiki/Chim%C3%BA_culture
+  from: 아메리카 M4 AND-M4 결과노트
+- name: 쿠스코
+  at: [-71.97, -13.52]
+  year: 1437
+  expect: none
+  url: https://en.wikipedia.org/wiki/Pachacuti
+  from: 아메리카 M4 AND-M4 결과노트
+- name: 쿠스코
+  at: [-71.97, -13.52]
+  year: 1438
+  expect: inca
+  url: https://en.wikipedia.org/wiki/Pachacuti
+  from: 아메리카 M4 AND-M4 결과노트
+- name: 쿠스코
+  at: [-71.97, -13.52]
+  year: 1491
+  expect: inca
+  url: https://en.wikipedia.org/wiki/Pachacuti
+  from: 아메리카 M4 AND-M4 결과노트
+- name: 아야쿠초
+  at: [-74.22, -13.16]
+  year: 1437
+  expect: none
+  url: https://en.wikipedia.org/wiki/Chanka_people
+  from: 아메리카 M4 AND-M4 결과노트
+- name: 아야쿠초
+  at: [-74.22, -13.16]
+  year: 1438
+  expect: inca
+  url: https://en.wikipedia.org/wiki/Chanka_people
+  from: 아메리카 M4 AND-M4 결과노트
+- name: 우안카요
+  at: [-75.21, -12.07]
+  year: 1462
+  expect: none
+  url: https://en.wikipedia.org/wiki/Pachacuti
+  from: 아메리카 M4 AND-M4 결과노트
+- name: 우안카요
+  at: [-75.21, -12.07]
+  year: 1463
+  expect: inca
+  url: https://en.wikipedia.org/wiki/Pachacuti
+  from: 아메리카 M4 AND-M4 결과노트
+- name: 푸노
+  at: [-70.02, -15.84]
+  year: 1438
+  expect: none
+  url: https://en.wikipedia.org/wiki/Lupaca
+  from: 아메리카 M4 AND-M4 결과노트
+- name: 푸노
+  at: [-70.02, -15.84]
+  year: 1463
+  expect: inca
+  url: https://en.wikipedia.org/wiki/Lupaca
+  from: 아메리카 M4 AND-M4 결과노트
+- name: 카하마르카
+  at: [-78.51, -7.16]
+  year: 1462
+  expect: none
+  url: https://en.wikipedia.org/wiki/Inca_Empire
+  from: 아메리카 M4 AND-M4 결과노트
+- name: 카하마르카
+  at: [-78.51, -7.16]
+  year: 1463
+  expect: inca
+  url: https://en.wikipedia.org/wiki/Inca_Empire
+  from: 아메리카 M4 AND-M4 결과노트
+- name: 추쿠이토
+  at: [-69.89, -15.89]
+  year: 1462
+  expect: none
+  url: https://en.wikipedia.org/wiki/Lupaca
+  from: 아메리카 M4 AND-M4 결과노트
+- name: 추쿠이토
+  at: [-69.89, -15.89]
+  year: 1463
+  expect: inca
+  url: https://en.wikipedia.org/wiki/Lupaca
+  from: 아메리카 M4 AND-M4 결과노트
+- name: 우아누코
+  at: [-76.24, -9.93]
+  year: 1463
+  expect: inca
+  url: https://en.wikipedia.org/wiki/Pachacuti
+  from: 아메리카 M4 AND-M4 결과노트
+- name: 포토시
+  at: [-65.75, -19.58]
+  year: 1463
+  expect: none
+  url: https://en.wikipedia.org/wiki/Inca_Empire
+  from: 아메리카 M4 AND-M4 결과노트
+- name: 포토시
+  at: [-65.75, -19.58]
+  year: 1481
+  expect: inca
+  url: https://en.wikipedia.org/wiki/Inca_Empire
+  from: 아메리카 M4 AND-M4 결과노트
+- name: 리마
+  at: [-77.04, -12.05]
+  year: 1469
+  expect: none
+  url: https://en.wikipedia.org/wiki/Chim%C3%BA_culture
+  from: 아메리카 M4 AND-M4 결과노트
+- name: 리마
+  at: [-77.04, -12.05]
+  year: 1470
+  expect: inca
+  url: https://en.wikipedia.org/wiki/Chim%C3%BA_culture
+  from: 아메리카 M4 AND-M4 결과노트
+- name: 리마
+  at: [-77.04, -12.05]
+  year: 1491
+  expect: inca
+  url: https://en.wikipedia.org/wiki/Chim%C3%BA_culture
+  from: 아메리카 M4 AND-M4 결과노트
+- name: 키토
+  at: [-78.47, -0.18]
+  year: 1463
+  expect: none
+  url: https://en.wikipedia.org/wiki/Tupac_Inca_Yupanqui
+  from: 아메리카 M4 AND-M4 결과노트
+- name: 키토
+  at: [-78.47, -0.18]
+  year: 1469
+  expect: none
+  url: https://en.wikipedia.org/wiki/Tupac_Inca_Yupanqui
+  from: 아메리카 M4 AND-M4 결과노트
+- name: 키토
+  at: [-78.47, -0.18]
+  year: 1470
+  expect: inca
+  url: https://en.wikipedia.org/wiki/Tupac_Inca_Yupanqui
+  from: 아메리카 M4 AND-M4 결과노트
+- name: 키토
+  at: [-78.47, -0.18]
+  year: 1491
+  expect: inca
+  url: https://en.wikipedia.org/wiki/Tupac_Inca_Yupanqui
+  from: 아메리카 M4 AND-M4 결과노트
+- name: 차차포야스
+  at: [-77.87, -6.23]
+  year: 1470
+  expect: none
+  url: https://en.wikipedia.org/wiki/Tupac_Inca_Yupanqui
+  from: 아메리카 M4 AND-M4 결과노트
+- name: 차차포야스
+  at: [-77.87, -6.23]
+  year: 1481
+  expect: inca
+  url: https://en.wikipedia.org/wiki/Tupac_Inca_Yupanqui
+  from: 아메리카 M4 AND-M4 결과노트
+- name: 산티아고
+  at: [-70.65, -33.45]
+  year: 1480
+  expect: none
+  url: https://en.wikipedia.org/wiki/Inca_Empire
+  from: 아메리카 M4 AND-M4 결과노트
+- name: 산티아고
+  at: [-70.65, -33.45]
+  year: 1481
+  expect: inca
+  url: https://en.wikipedia.org/wiki/Inca_Empire
+  from: 아메리카 M4 AND-M4 결과노트
+- name: 산티아고
+  at: [-70.65, -33.45]
+  year: 1491
+  expect: inca
+  url: https://en.wikipedia.org/wiki/Inca_Empire
+  from: 아메리카 M4 AND-M4 결과노트
+- name: 투쿠만
+  at: [-65.22, -26.81]
+  year: 1480
+  expect: none
+  url: https://en.wikipedia.org/wiki/Inca_Empire
+  from: 아메리카 M4 AND-M4 결과노트
+- name: 투쿠만
+  at: [-65.22, -26.81]
+  year: 1481
+  expect: inca
+  url: https://en.wikipedia.org/wiki/Inca_Empire
+  from: 아메리카 M4 AND-M4 결과노트
+- name: 보고타
+  at: [-74.07, 4.71]
+  year: 1450
+  expect: none
+  url: https://en.wikipedia.org/wiki/Muisca_Confederation
+  from: 아메리카 M4 AND-M4 결과노트
+
+# ── 아메리카 M4 NAC-M4 (북미·그린란드·카리브·땅 없는 항목, 2026-11-17) ──
+- name: 그린란드 동부 정착지 둘레
+  at: [-45.40, 61.00]
+  year: 1100
+  expect: none
+  url: https://en.wikipedia.org/wiki/Norse_settlements_in_Greenland
+  from: 아메리카 M4 NAC-M4 결과노트
+- name: 그린란드 동부 정착지 둘레
+  at: [-45.40, 61.00]
+  year: 1300
+  expect: none
+  url: https://en.wikipedia.org/wiki/Norse_settlements_in_Greenland
+  from: 아메리카 M4 NAC-M4 결과노트
+- name: 그린란드 동부 정착지 둘레
+  at: [-45.40, 61.00]
+  year: 1450
+  expect: none
+  url: https://en.wikipedia.org/wiki/Norse_settlements_in_Greenland
+  from: 아메리카 M4 NAC-M4 결과노트
+- name: 누크 둘레(그린란드 서부 정착지)
+  at: [-51.20, 64.20]
+  year: 1200
+  expect: none
+  url: https://en.wikipedia.org/wiki/Norse_settlements_in_Greenland
+  from: 아메리카 M4 NAC-M4 결과노트
+- name: 누크 둘레(그린란드 서부 정착지)
+  at: [-51.20, 64.20]
+  year: 1340
+  expect: none
+  url: https://en.wikipedia.org/wiki/Norse_settlements_in_Greenland
+  from: 아메리카 M4 NAC-M4 결과노트
+- name: 카호키아
+  at: [-90.06, 38.65]
+  year: 1100
+  expect: none
+  url: https://en.wikipedia.org/wiki/Cahokia
+  from: 아메리카 M4 NAC-M4 결과노트
+- name: 카호키아
+  at: [-90.06, 38.65]
+  year: 1350
+  expect: none
+  url: https://en.wikipedia.org/wiki/Cahokia
+  from: 아메리카 M4 NAC-M4 결과노트
+- name: 차코 캐니언
+  at: [-107.96, 36.06]
+  year: 1000
+  expect: none
+  url: https://en.wikipedia.org/wiki/Chaco_Culture_National_Historical_Park
+  from: 아메리카 M4 NAC-M4 결과노트
+- name: 차코 캐니언
+  at: [-107.96, 36.06]
+  year: 1150
+  expect: none
+  url: https://en.wikipedia.org/wiki/Chaco_Culture_National_Historical_Park
+  from: 아메리카 M4 NAC-M4 결과노트
+- name: 히스파니올라 가운데
+  at: [-70.00, 19.00]
+  year: 1400
+  expect: none
+  url: https://en.wikipedia.org/wiki/Ta%C3%ADno
+  from: 아메리카 M4 NAC-M4 결과노트
+- name: 히스파니올라 가운데
+  at: [-70.00, 19.00]
+  year: 1491
+  expect: none
+  url: https://en.wikipedia.org/wiki/Ta%C3%ADno
+  from: 아메리카 M4 NAC-M4 결과노트
+- name: 마야판 둘레(유카탄)
+  at: [-89.46, 20.63]
+  year: 1300
+  expect: none
+  url: https://en.wikipedia.org/wiki/Maya_civilization
+  from: 아메리카 M4 NAC-M4 결과노트
+- name: 시에라네바다데산타마르타
+  at: [-73.72, 10.87]
+  year: 1400
+  expect: none
+  url: https://en.wikipedia.org/wiki/Sierra_Nevada_de_Santa_Marta
+  from: 아메리카 M4 NAC-M4 결과노트

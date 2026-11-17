@@ -8792,6 +8792,99 @@
   note: "Saint-Louis(세네갈). 위키 ko 표제 대조는 웹 미확인. 브라질 마라냥의 São Luís(상루이스 — 아메리카 M3 공용 표기표)는 다른 도시라 except(아메리카 M3 CAB-M3)"
   scope: 사하라 이남·서부
 
+# ── 아메리카 M4 공통(2026-11-18, M4 뼈대): 공용 표기표 — 새 항목 이름·통치자·도시·땅 이름을 저장소 기존 표기 → 위키백과 한국어판 표제(m4/skel/ko-titles.txt·ko-titles2.txt) 순으로 확인한 것 가운데 넘겨주기·흔한 잘못 꼴을 막는 것만(avoid 글자는 저장소 사건·항목 글 쓰임 0을 확인 — 표 전체는 m4/SKEL-NOTE.md 끝) ──
+
+- use: 몬테수마 1세
+  avoid: [모테수마]
+  note: "Moctezuma I(아즈텍 삼각 동맹 1440~1469 — aztec 1440·1469 버전). 사전 아메리카 첫판 '몬테수마'와 같은 꼴(위키 ko 표제는 '모테쿠소마 일위카미나' — M4 뼈대 확인, m4/skel/ko-titles2.txt). 지시문 가칭 '모테수마 1세'를 고침"
+  scope: 아메리카·메소아메리카
+
+- use: 믹스텍
+  avoid: [미스텍]
+  note: "Mixtec(오악사카 서부 믹스테카 — mixtec). 00-scope 0단계 표기(C-M4-11) — 위키 ko 표제 '미슈텍인'은 민족 이름이라 글에 병기(avoid 아님), '미스텍'은 넘겨주기(M4 뼈대 확인, m4/skel/ko-titles.txt)"
+  scope: 아메리카·메소아메리카
+
+- use: 치첸이트사
+  avoid: [치첸 이차]
+  note: "Chichen Itza(chichen-itza). 위키 ko 표제(M4 뼈대 확인, m4/skel/ko-titles.txt)('치첸 이차'가 넘겨줌)"
+  scope: 아메리카·메소아메리카
+
+- use: 도싯 문화
+  avoid: [도셋 문화]
+  note: "Dorset culture(기원전 500년~1300 — dorset-culture). 위키 ko 표제(M4 뼈대 확인, m4/skel/ko-titles.txt)('도싯인'이 넘겨줌, '도셋 문화'는 00-scope 사건 초안 꼴)"
+  scope: 아메리카·북아메리카
+
+- use: 카리브족
+  avoid: [카리브인]
+  note: "Kalinago·Island Caribs(carib). 위키 ko 표제(M4 뼈대 확인, m4/skel/ko-titles.txt)('카리브인'·'칼리나고'가 넘겨줌 — '칼리나고'는 M1 도미니카 글에 써서 avoid 아님)"
+  scope: 아메리카·카리브
+
+- use: 타이노인
+  avoid: [타이노족]
+  note: "Taíno(taino-culture). 위키 ko 표제(M4 뼈대 확인, m4/skel/ko-titles.txt)('타이노족'이 넘겨줌)"
+  scope: 아메리카·카리브
+
+- use: 메사버드
+  avoid: [메사베르데]
+  note: "Mesa Verde(조상 푸에블로인 절벽 마을 — ancestral-puebloan-culture 글). 위키 ko 표제 '메사버드 국립공원'(M4 뼈대 확인, m4/skel/ko-titles2.txt — '메사베르데'는 표제·넘겨주기 없음, 지시문 가칭을 고침)"
+  scope: 아메리카·북아메리카
+
+- use: 랑스 오 메도즈
+  avoid: [랑스오메도스, 랑스 오 메도스]
+  note: "L'Anse aux Meadows(1000 무렵 노르드인 빈란드 터 — norse-greenland 글). 위키 ko 표제(M4 뼈대 확인, m4/skel/ko-titles2.txt)('랑스 오 메도스'가 넘겨줌, 붙여 쓴 '랑스오메도스'는 지시문 가칭)"
+  scope: 아메리카·북아메리카
+
+# ── 아메리카 M4 MXC-M4 (메소아메리카·아즈텍·타라스코 앞 버전, 2026-11-17) ──
+
+# ── 아메리카 M4 AND-M4 (안데스·잉카 앞 버전·치무, 2026-11-17) ──
+
+- use: 치무
+  avoid: [치무 제국]
+  note: "Chimú·Chimor(페루 북부 해안 900~1470 — chimu). 위키 ko 표제(M4 뼈대 확인, m4/skel/ko-titles.txt)('치무 왕국'·'치무 문화'·'치모르'가 넘겨줌 — 글에 써도 됨). '치무 제국'은 표제·넘겨주기 없음(저장소 쓰임 0 — AND-M4 확인)"
+  scope: 아메리카·안데스
+
+- use: 시칸 문화
+  avoid: [시칸 문명]
+  note: "Sicán·Lambayeque culture(750~1375 — sican-culture). 위키 ko 표제(M4 뼈대 확인, '람바예케 문화'는 표제 없음 — 글에 병기)"
+  scope: 아메리카·안데스
+
+- use: 찬카이 문화
+  avoid: [찬카이 문명]
+  note: "Chancay culture(1000~1470 — chancay-culture). 위키 ko 표제 없음 — 가칭(M4 뼈대 공용 표기표)"
+  scope: 아메리카·안데스
+
+- use: 민찬카만
+  avoid: [밍찬카만]
+  note: "Minchançaman(치무 마지막 왕 — chimu 글). 가칭(M4 뼈대 공용 표기표, 위키 ko 표제 없음)"
+  scope: 아메리카·안데스
+
+# ── 아메리카 M4 NAC-M4 (북미·그린란드·카리브·땅 없는 항목, 2026-11-17) ──
+
+- use: 이로쿼이 연맹
+  avoid: [이로쿼이족]
+  note: "Haudenosaunee·Iroquois Confederacy(haudenosaunee). 위키 ko 표제(M4 뼈대 확인, m4/skel/ko-titles.txt)('이로쿼이족'이 넘겨줌). 사건 am-04a '이로쿼이 연맹'과 같음, '이로쿼이족' 사건·항목 글 쓰임 0(아메리카 M4 NAC-M4)"
+  scope: 아메리카·북아메리카
+
+- use: 툴레인
+  avoid: [툴레 문화, 툴레족]
+  note: "Thule people(1000~1600 — thule-culture). 위키 ko 표제(M4 뼈대 확인, m4/skel/ko-titles.txt — '툴레 문화'·'툴레족'은 표제·넘겨주기 없음, 지시문 가칭 '툴레 문화'를 고침). 둘 다 사건·항목 글 쓰임 0(아메리카 M4 NAC-M4)"
+  scope: 아메리카·북아메리카
+
+- use: 조상 푸에블로인
+  avoid: [아나사지]
+  note: "Ancestral Puebloans(1~1300 — ancestral-puebloan-culture). 위키 ko 표제 없음(M4 뼈대 확인 — '조상 푸에블로인'·'아나사지'·'고대 푸에블로인' 모두 없음), 뼈대 가칭. 옛 이름 '아나사지'는 표제가 없어 쓰지 않음, 사건·항목 글 쓰임 0(아메리카 M4 NAC-M4)"
+  scope: 아메리카·북아메리카
+
+- use: 타이로나 문화
+  avoid: [타이로나족]
+  note: "Tairona(900~1650 — tairona-culture). 위키 ko 표제 없음(M4 뼈대 확인 — '타이로나'·'타이로나족'도 없음), 뼈대 가칭. 국가·민족 이름이 아닌 수장국 문화라 '족'을 붙이지 않음, '타이로나족' 사건·항목 글 쓰임 0(아메리카 M4 NAC-M4)"
+  scope: 아메리카·남아메리카
+
+- use: 노르드인 그린란드 정착
+  avoid: [그린란드의 노르드인]
+  note: "Norse settlements in Greenland(985~1450 — norse-greenland). 위키 ko 표제 없음(M4 뼈대 확인 — '그린란드의 노르드인'·'그린란드의 노르드인 정착지'도 없음, '노르드인'은 표제), 뼈대 가칭. '그린란드의 노르드인' 사건·항목 글 쓰임 0(아메리카 M4 NAC-M4)"
+  scope: 아메리카·북아메리카
+
 # ── 오세아니아 첫판 (0단계, 2026-11-17) ──
 # 0단계 조사 R-EV(`events-spelling.md` 3절)가 위키백과 한국어판 표제를 연 것과 창구 ② 기본값 16·18(누벨칼레도니, '호주'는 avoid 걸지 않음)대로.
 # 넣을 때 avoid 표기마다 data/events·data/entities를 grep해 0건인 것만 걸었다(새 실패 0). 이스터섬은 아메리카 항목(위)이 이미 있어 넣지 않았다.

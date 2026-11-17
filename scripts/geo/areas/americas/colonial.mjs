@@ -16,7 +16,7 @@
 // 등급(00-scope 3절): 일반(땅 1만 km², 해 어긋남 5만 km² 이상 3년·1만~5만 km² 10년, 손그림 선 평균 10/최대 25 km). '주변'은 data/tests/zones.yaml greenland-ice-sheet 안만(땅 5만·선 25/50 km).
 // 해 규칙(P1): 한 버전 = 그해 말 모습. 원정·되돌려진 점령은 칠하지 않음(점령은 관계 줄 없이 글 — G3-15). 새 버전은 1만 km² 넘게 바뀔 때만.
 //   이름만 바뀌는 해(누에바에스파냐 왕국 → 부왕령 1535, 누에바카스티야 총독부 → 페루 부왕령 1542, 쿠바 총독령 → 총사령부 1607, 과테말라 아우디엔시아 → 총사령부 1609, 그랑파라 마라냥 1751 — G3-43)는 새 버전이 아니다 — 항목 글로(P3).
-// 1492 앞 버전 없음: 첫 해는 M3_START(1492, 1492년 말 모습). 1492 앞에 성립한 나라(aztec 1428·tarascan 1300·inca 1438)도 첫 버전은 1492부터이고 1491 앞은 M4 몫(빈 땅 검사 구역도 1492부터만).
+// 1492 앞 버전 없음: 첫 해는 M3_START(1492, 1492년 말 모습). 1492 앞에 성립한 나라(aztec 1428·tarascan 1300·inca 1438)도 첫 버전은 1492부터이고 1491 앞은 M4 precolumbian.mjs가 1001~1491(끝 해 = M3_START — 빈 땅 검사 구역도 이 파일은 1492부터만).
 // 끝 해(이음): 이 파일 표의 주인은 1775까지(M3_END = 1776 = M2 independence.mjs의 M2_START — 아래 확인 줄). 1775 모양 = M2 1776 모양이 원칙(m3/SKEL-NOTE.md 3절 이음 표 — 칸이 그대로 따라 칠함),
 //   결정이 만든 1775→1776 바뀜은 주인만 바뀌는 둘 — 13식민지 열한 항목 → usa(1776-07-04)·라플라타 몫 peru-viceroyalty → rio-de-la-plata-viceroyalty(1776-08-01). 모양 점프 0. 그 밖에 1만 km² 넘게 주인이 바뀌면 칸 결과 노트 2절에 까닭.
 // 정복기(Q1 A): 같은 계보의 왕령 단위는 항목 from을 사료 성립 해로 앞당겨 칠함 — new-spain-viceroyalty 1521·guatemala-captaincy 1527(칠함 1530)·santo-domingo-captaincy 1492(1496)·cuba-captaincy-general 1511(1515)·
@@ -47,7 +47,7 @@
 //   예: own(['US-VA'], [[M3_START, null], [1607, 'virginia-colony']]) · own(idsOf('CUB'), [[M3_START, null], [1515, 'cuba-captaincy-general']]).
 //   주인 null은 '이 권역 나라가 칠하지 않는 땅'이다: 일부러 비운 땅(칸 voids에 한 줄과 이유 — 정복·정착 앞 원주민 땅·문서 없는 청구·분쟁 띠·1만 km² 미만 속령 섬 등)만.
 // 표 밖 땅 extra(id, from, to, { units, shape, name }): 손 도형(조각 밖)과 그 기간 더하는 단위. to는 1776 이하(null은 M3_END). 1492 원주민 손 도형은 조각 안 땅이라 extra가 아니라 ownSplit(C-M3-11).
-// 시대 경계 맞물림: 앞 시대 없음(1491 앞은 M4). 뒤 시대 M2 independence.mjs는 1776부터 — 이 파일 버전은 모두 1776 이하에서 끝난다(to: null 없음, 아래 확인 줄). 같은 id(앞 잇는 25 항목)가
+// 시대 경계 맞물림: 앞 시대 M4 precolumbian.mjs가 1001~1491(끝 해 = M3_START — 같은 id aztec·tarascan·inca는 1491 = 1492 모양이면 joinEras가 이어 붙임). 뒤 시대 M2 independence.mjs는 1776부터 — 이 파일 버전은 모두 1776 이하에서 끝난다(to: null 없음, 아래 확인 줄). 같은 id(앞 잇는 25 항목)가
 //   1775 = 1776 모양이면 joinEras가 두 파일 버전을 이어 붙이고(1776에 버전 경계가 남음 — M2 '1776 <id> 버전' 허용 줄은 사건 검사가 낡았다고 낼 때만 칸이 지움, P6), 모양이 다르면 1776에 갈린다.
 // 출처 문구: 이 시대 파일은 era.source를 두지 않는다 — 권역 파일 americas.mjs의 sourceOf가 table.mjs AM_SOURCE_TEXT를 붙인다.
 // 이름·확실성: 근거가 약한 경계는 estimated(기본값). 이름은 data/tests/spelling.yaml(아메리카 첫판·M1·M2·M3 공통·칸 머리)과 m3/SKEL-NOTE.md 끝 공용 표기표를 먼저 본다.
@@ -703,7 +703,7 @@ const voids = [...NEC3_voids(), ...SEL3_voids(), ...NF3_voids(), ...MXC3_voids()
 for (const [f, t] of voids) if (!(Number.isInteger(f) && f >= M3_START && Number.isInteger(t) && f < t && t <= M3_END)) throw new Error(`americas colonial: 비운 땅 기간 [${f}, ${t}) (${M3_START} 이상, 끝은 ${M3_END} 이하 — null 없음, 1776~는 M2)`);
 
 // 빈 땅 검사 구역: 권역 바깥선(조각 664개)에서 그해 비운 땅(voids)을 뺀 곳 — 이 권역 나라 땅을 합쳐 빈 곳이 없어야 한다.
-// M3_START~M3_END만 만든다(특별 지시 2 — 1491 이하에는 이 권역 구역이 없음, 1492~1564는 북미 거의 전부·남미 대부분이 voids라 구역이 작음이 정상). 비운 땅이 바뀌는 해마다 구역 하나, 모두 끝이 있다(1776~는 M2 구역).
+// M3_START~M3_END만 만든다(특별 지시 2 — 1491 이하 구역은 M4 precolumbian.mjs가 1001~1491(끝 해 = M3_START), 1492~1564는 북미 거의 전부·남미 대부분이 voids라 구역이 작음이 정상). 비운 땅이 바뀌는 해마다 구역 하나, 모두 끝이 있다(1776~는 M2 구역).
 // 이 권역 나라가 소유표에 하나도 없는 기간(빈 틀·뼈대)은 구역을 만들지 않는다(칸 하나만 채운 사본에서는 다른 칸 땅이 빈 땅으로 보고되는 것이 정상. gaps는 합치기 사본에서만 공식으로 돌린다).
 // 손 도형(extra)은 조각 밖 땅이라 구역과 상관없다
 const ownedIn = (from, to) => Object.values(joined.segments).some((segs) => segs.some(([f, t]) => f < to && from < t));

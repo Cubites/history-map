@@ -2000,6 +2000,12 @@
 - { type: vassal_of, subject: state-of-maranhao, object: portugal, from: 1621, to: 1774 } # 1621-06-13 칙령 — 1775 브라질 주 통합 앞 해까지(이베리아 연합 1580~1640도 portugal 그대로 — d D1, 위키 en Maranhão (former state))
 - { type: successor_of, subject: portuguese-brazil, object: state-of-maranhao, from: 1775, to: null } # 1775 그랑파라·마라냥 쪽 두 주를 브라질 주에 합침(위키 en Colonial Brazil)
 
+# ── 아메리카 M4 MXC-M4 (메소아메리카·아즈텍·타라스코 앞 버전, 2026-11-17) ──
+
+# ── 아메리카 M4 AND-M4 (안데스·잉카 앞 버전·치무, 2026-11-17) ──
+
+# ── 아메리카 M4 NAC-M4 (북미·그린란드·카리브·땅 없는 항목, 2026-11-17) ──
+
 # ── 오세아니아 M1 AZP-M1 (오스트레일리아·뉴질랜드·남태평양·하와이, 2026-11-17) ──
 # 종속: 식민·위임 단위와 본국·맡은 나라(관계 to는 끝·독립 해의 앞 해 — P2). australia·new-zealand(자치령)·kingdom-of-tonga(보호국은 글)·fiji·samoa는 관계 없음(G1-13)
 - { type: vassal_of, subject: colony-of-new-zealand, object: uk, from: 1840, to: 1906 } # 1840-05-21 영국 주권 선포 — 1907-09-26 자치령 앞 해까지(위키 en Colony of New Zealand)
