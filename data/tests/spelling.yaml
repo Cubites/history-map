@@ -8885,6 +8885,102 @@
   note: "Norse settlements in Greenland(985~1450 — norse-greenland). 위키 ko 표제 없음(M4 뼈대 확인 — '그린란드의 노르드인'·'그린란드의 노르드인 정착지'도 없음, '노르드인'은 표제), 뼈대 가칭. '그린란드의 노르드인' 사건·항목 글 쓰임 0(아메리카 M4 NAC-M4)"
   scope: 아메리카·북아메리카
 
+# ── 아메리카 M5 공통(2026-11-18, M5 뼈대): 공용 표기표 — 새 항목 이름·유적·땅 이름을 저장소 기존 표기 → 위키백과 한국어판 표제(m5/skel/ko-titles.txt) 순으로 확인한 것 가운데 넘겨주기·흔한 잘못 꼴을 막는 것만(avoid 글자는 저장소 사건·항목·전쟁 글 쓰임 0을 확인 — 표 전체는 m5/SKEL-NOTE.md 끝). 테오티우아칸·올멕·산로렌소는 아메리카 첫판 그대로, 와리 문화·티와나쿠는 avoid를 걸 글자가 없어 넣지 않음 ──
+
+- use: 몬테알반
+  avoid: [몬테 알반]
+  note: "Monte Albán(오아하카 계곡의 사포텍 도읍, 기원전 500년~750 — monte-alban). 위키 ko 표제 없음(M5 뼈대 확인, m5/skel/ko-titles.txt — '사포텍 문명'·'사포텍인'은 표제), 스페인어 지명 붙여 씀(산로렌소 꼴). 저장소 쓰임 '몬테알반' 1파일·'몬테 알반' 0"
+  scope: 아메리카·메소아메리카
+
+- use: 포버티 포인트 문화
+  avoid: [파버티포인트, 포벌티 포인트]
+  note: "Poverty Point culture(미시시피강 하류 토루, 기원전 1700년~기원전 1100년 — poverty-point-culture). 위키 ko 표제 없음(M5 뼈대 확인, m5/skel/ko-titles.txt) — 가칭, avoid는 조사가 짚은 흔한 잘못 꼴(G5-15)"
+  scope: 아메리카·북아메리카
+
+- use: 노르테 치코 문명
+  avoid: [노르테치코]
+  note: "Norte Chico civilization(카랄수페, 페루 중부 해안, 기원전 3500년~기원전 1800년 — norte-chico). 위키 ko 표제(M5 뼈대 확인, m5/skel/ko-titles.txt — 조사 때 404에서 바뀜, '카랄'도 표제). 붙여 쓴 '노르테치코'는 막음"
+  scope: 아메리카·안데스
+
+- use: 나스카 문화
+  avoid: [나즈카]
+  note: "Nazca culture(페루 남부 해안, 기원전 200년~800 — nasca-culture). 위키 ko 표제(M5 뼈대 확인, m5/skel/ko-titles.txt — '나스카 지상화'도 표제, '나스카 라인'이 넘겨줌). 영어 철자 Nazca를 옮긴 '나즈카'는 막음(저장소 쓰임 0)"
+  scope: 아메리카·안데스
+
+- use: 차빈 데 완타르
+  avoid: [차빈 데 우안타르]
+  note: "Chavín de Huántar(차빈 문화의 중심 신전 — chavin-culture 글). 위키 ko 표제 없음(M5 뼈대 확인, m5/skel/ko-titles.txt — '차빈 문화'도 표제 없음) — 가칭, 스페인어 Huán을 '완'으로(우아이나 카팍의 Huayna는 표제 표기라 다름)"
+  scope: 아메리카·안데스
+
+- use: 모체 문화
+  avoid: [모치카 문화]
+  note: "Moche culture(페루 북부 해안, 100~800 — moche-culture). 위키 ko 표제(M5 뼈대 확인, m5/skel/ko-titles.txt — '모치카'는 표제·넘겨주기 없음). 원어 이름 Mochica는 names.native에만"
+  scope: 아메리카·안데스
+
+# ── 아메리카 M5 MXN-M5 (메소아메리카·북미 — 땅 없는 여섯, 2026-11-18) ──
+
+- use: 라벤타
+  avoid: [라 벤타]
+  note: "La Venta(올멕의 두 번째 중심지, 지금 타바스코주 — olmec-culture 글). 위키 ko 표제 없음(M5 뼈대 확인 m5/skel/ko-titles.txt — 공용 표기표 가칭), 스페인어 지명 붙여 씀(산로렌소 꼴). 띄어 쓴 '라 벤타' 저장소 쓰임 0(아메리카 M5 MXN-M5)"
+  scope: 아메리카·메소아메리카
+
+- use: 트레스사포테스
+  avoid: [트레스 사포테스]
+  note: "Tres Zapotes(올멕 뒤 에피올멕 중심지, 지금 베라크루스주 — olmec-culture 글). 위키 ko 표제 없음(공용 표기표 가칭), 스페인어 지명 붙여 씀(산로렌소 꼴). 띄어 쓴 꼴 저장소 쓰임 0(아메리카 M5 MXN-M5)"
+  scope: 아메리카·메소아메리카
+
+- use: 그레이브크리크 마운드
+  avoid: [그레이브 크리크 마운드]
+  note: "Grave Creek Mound(웨스트버지니아의 아데나 문화 무덤 둔덕 — adena-culture 글). 위키 ko 표제 없음(공용 표기표 가칭), 강 이름 Grave Creek은 붙여 씀(서펀트 마운드 꼴로 '마운드'만 띄움). 띄어 쓴 꼴 저장소 쓰임 0(아메리카 M5 MXN-M5)"
+  scope: 아메리카·북아메리카
+
+- use: 호프웰 문화
+  avoid: [호프웰 전통]
+  note: "Hopewell tradition(기원전 200년~500 — hopewell-culture). 위키 ko 표제 없음(M5 뼈대 확인 — 가칭), en 표제를 옮긴 '호프웰 전통'은 막음(교류권은 글로). 저장소 쓰임 0(아메리카 M5 MXN-M5)"
+  scope: 아메리카·북아메리카
+
+# ── 아메리카 M5 AND-M5 (안데스 — 땅 없는 여덟, 2026-11-18) ──
+
+- use: 레알알토
+  avoid: [레알 알토]
+  note: "Real Alto(에콰도르 산타엘레나 반도의 발디비아 문화 마을 유적 — valdivia 글). 위키 ko 표제 없음 — 가칭(M5 뼈대 공용 표기표), 스페인어 지명 붙여 씀(산로렌소 꼴). 저장소 쓰임 '레알 알토' 0"
+  scope: 아메리카·안데스
+
+- use: 와리 카얀
+  avoid: [와리카얀]
+  note: "Wari Kayan(파라카스 반도의 파라카스 문화 무덤군 — paracas-culture 글). 위키 ko 표제 없음 — 가칭(M5 뼈대 공용 표기표). avoid '와리' 홀로는 금지('아미르 와리'·'하와리즈'에 걸림), 붙여 쓴 꼴만 막음(저장소 쓰임 0)"
+  scope: 아메리카·안데스
+
+- use: 카와치
+  avoid: [카우아치]
+  note: "Cahuachi(나스카 문화의 의례 중심 유적 — nasca-culture 글 '카와치 유적'). 위키 ko는 일본 '가와치'로 넘어감 — 가칭(M5 뼈대 공용 표기표). 저장소 쓰임 '카우아치' 0"
+  scope: 아메리카·안데스
+
+- use: 태양의 와카
+  avoid: [태양의 우아카]
+  note: "Huaca del Sol(모체 골짜기의 모체 문화 흙벽돌 신전 — moche-culture 글). 위키 ko 표제 없음 — 가칭(M5 뼈대 공용 표기표, '달의 와카'와 같은 꼴). 저장소 쓰임 '태양의 우아카' 0"
+  scope: 아메리카·안데스
+
+- use: 달의 와카
+  avoid: [달의 우아카]
+  note: "Huaca de la Luna(모체 골짜기의 모체 문화 신전 — moche-culture 글). 위키 ko 표제 없음 — 가칭(M5 뼈대 공용 표기표). 저장소 쓰임 '달의 우아카' 0"
+  scope: 아메리카·안데스
+
+- use: 시판의 군주
+  avoid: [시판의 왕]
+  note: "Lord of Sipán(람바예케 둘레 북 모체의 무덤 — moche-culture 글). 위키 ko 표제 없음 — 가칭(M5 뼈대 공용 표기표). 저장소 쓰임 '시판의 왕' 0"
+  scope: 아메리카·안데스
+
+- use: 피키약타
+  avoid: [피킬락타, 피킬라크타]
+  note: "Pikillaqta(쿠스코 남동쪽의 와리 행정 중심지 — wari 글). 위키 ko 표제 없음 — ko 「와리 문화」 본문 표기(피키약타, 케추아어 ll → 야). 저장소 쓰임 옛 가칭 피킬락타·피킬라크타 0"
+  scope: 아메리카·안데스
+
+- use: 푸마푼쿠
+  avoid: [푸마 푼쿠]
+  note: "Pumapunku(티와나쿠의 큰 돌 건축 — tiwanaku 글, 아카파나와 함께). 위키 ko 표제 없음 — 가칭(M5 뼈대 공용 표기표), 붙여 씀. 저장소 쓰임 '푸마 푼쿠' 0"
+  scope: 아메리카·안데스
+
 # ── 오세아니아 첫판 (0단계, 2026-11-17) ──
 # 0단계 조사 R-EV(`events-spelling.md` 3절)가 위키백과 한국어판 표제를 연 것과 창구 ② 기본값 16·18(누벨칼레도니, '호주'는 avoid 걸지 않음)대로.
 # 넣을 때 avoid 표기마다 data/events·data/entities를 grep해 0건인 것만 걸었다(새 실패 0). 이스터섬은 아메리카 항목(위)이 이미 있어 넣지 않았다.

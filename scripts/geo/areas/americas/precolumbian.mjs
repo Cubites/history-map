@@ -5,7 +5,7 @@
 // 가져와도 되는 것: lib.mjs, shared.mjs, areas/korea.mjs, areas/inner-asia.mjs, areas/china.mjs, areas/japan.mjs, areas/europe.mjs, areas/middle-east.mjs, areas/south-asia.mjs, areas/central-asia.mjs, areas/southeast-asia.mjs, areas/sub-saharan-africa.mjs, areas/americas/의 다른 도우미 모듈. areas/americas.mjs는 이 파일을 가져오는 쪽이라 가져올 수 없다(순환).
 //   권역 파일 안 도형이 필요하면 그 도형을 areas/americas/의 도우미 모듈로 옮겨 둘이 함께 가져온다.
 // 생성기에 들어가는 것은 export const era 하나다(칼선 같은 다른 이름은 export해도 되지만 versions·gapZones·source 같은 이름은 안 됨: check:generator). 권역 파일 areas/americas.mjs가 shared.mjs의 joinEras로 자기 versions·gapZones·voids에 합치고,
-// 같은 나라 id를 두 파일이 내면 기간이 겹치지 않을 때만 앞 파일 버전 뒤에 이어 붙인다(겹치거나 출처 문구가 다르면 생성기가 멈춘다 — 권역 파일 joinEras 차례는 과거 시대가 앞: precolumbian·colonial·independence·modern).
+// 같은 나라 id를 두 파일이 내면 기간이 겹치지 않을 때만 앞 파일 버전 뒤에 이어 붙인다(겹치거나 출처 문구가 다르면 생성기가 멈춘다 — 권역 파일 joinEras 차례는 과거 시대가 앞: ancient·precolumbian·colonial·independence·modern).
 // - versions: 나라 id → [[from, to, 멀티폴리곤, 확실성?], ...] (해는 천문 연도, to는 미포함)
 // - gapZones: 빈 땅 검사 구역 [{ name, zone, minus?, from?, to? }] (engine.mjs collectGapZones, 이름은 모든 권역을 통틀어 겹치지 않게)
 // - voids: 일부러 비운 땅 [[from, to(끝 없음은 null), 멀티폴리곤]] (이유는 그 줄 주석에)
@@ -17,7 +17,7 @@
 // 해 규칙(P1): 한 버전 = 그해 말 모습. 원정·되돌려진 점령은 칠하지 않음(아즈텍 1472 톨루카 재정복·1479 타라스코에 패배, 잉카 원정, 1480~1510 타라스코의 콜리마·할리스코 점령 — 글, P9).
 //   새 버전은 1만 km² 넘게 바뀔 때만. 버전 해는 결정 Q2·Q3가 전부 — aztec 1440·1469·1486, tarascan 1435·1450, inca 1438·1463·1470·1481, chimu 1375(그 밖에 1만 km² 넘게 주인이 바뀌면 칸 결과 노트 2절에 까닭).
 //   Q2 잣대: ① 문서가 해를 직접 주면 그 해 ② 앞 대가 끝난 모습은 후임 즉위 해 ③ 문서가 해를 안 주는 한 대 안의 큰 변화는 그 대 가운데 해(M3 1492 앞). 해를 못 닫은 큰 걸음은 알려진 근사(km²·년).
-// 1000 앞 버전 없음: 첫 해는 M4_START(1001, 1001년 말 모습). 1000 이하는 M5 몫(C-M4-16) — 1001 앞에 성립한 나라(chimu 900)도 이 단계에서는 1001 앞을 칠하지 않는다.
+// 1000 앞 버전 없음: 첫 해는 M4_START(1001, 1001년 말 모습). 1000 이하는 M5 ancient.mjs가 −2332~1000(끝 해 = M4_START — 칠한 나라 0, C-M4-16·C-M5-13) — 1001 앞에 성립한 나라(chimu 900)도 이 단계에서는 1001 앞을 칠하지 않는다.
 // 끝 해(이음): 이 파일 표의 주인은 1491까지(M4_END = 1492 = M3 colonial.mjs의 M3_START — 아래 확인 줄). 1491 모양 = M3 1492 모양(G4-2 — 모양 점프 0, m4/SKEL-NOTE.md 3절 이음 표):
 //   aztec 1486~·tarascan 1450~·inca 1481~ 버전은 M3 1492 줄과 같은 조각 묶음·같은 칼선 별칭·같은 비운 띠로 재현한다(새로 긋지 않음). 같은 모양이면 joinEras가 두 파일 버전을 이어 붙이고
 //   사건 검사가 M3 허용 줄 '1492 aztec·tarascan·inca 버전'을 낡았다고 낸다 — 칸이 del/(P6·C-M4-13). 1492에 칠하지 않는 땅(키체·투투테펙·틀락스칼라 밖·무이스카·카리브·북미)은 1491도 비움.
@@ -43,7 +43,7 @@
 //   표 하나 안에서는 단위(조각·나눈 부분)의 모양이 같고 주인만 해마다 바뀐다. ownSplit의 { from, to }는 BOUNDS의 해여야 한다(fillTables가 확인).
 // 주인 줄: own(단위 목록, [[해, 나라 id|null], ...]) — 첫 해는 M4_START(1001)부터, 해는 늘어나고 1491 이하(첫 해가 늦으면 생성기가 '표 첫 해의 주인이 없음'으로 멈춤).
 //   예: own(['MX-DIF'], [[M4_START, null], [1440, 'aztec']]). ownSplit 부분의 줄 첫 해는 그 묶음의 from. 주인 null은 '이 권역 나라가 칠하지 않는 땅'(고리 밖은 공통 비운 땅, 고리 안은 칸 voids에 이유).
-// 시대 경계 맞물림: 앞 시대 없음(1000 이하는 M5 — 아직 시대 파일 없음). 뒤 시대 M3 colonial.mjs는 1492부터 — 이 파일 버전은 모두 1001 이상에서 시작해 1492 이하에서 끝난다(to: null 없음, 아래 확인 줄).
+// 시대 경계 맞물림: 앞 시대 M5 ancient.mjs가 −2332~1000(끝 해 = M4_START — 버전 없음·공통 비운 땅 한 줄, 그 파일 확인 줄). 뒤 시대 M3 colonial.mjs는 1492부터 — 이 파일 버전은 모두 1001 이상에서 시작해 1492 이하에서 끝난다(to: null 없음, 아래 확인 줄).
 // 출처 문구: 이 시대 파일은 era.source를 두지 않는다 — 권역 파일 americas.mjs의 sourceOf가 table.mjs AM_SOURCE_TEXT를 붙인다(두면 aztec·tarascan·inca 이어 붙이기가 '출처 문구가 다름'으로 멈춤).
 // 이름·확실성: 근거가 약한 경계는 estimated(기본값). 이름은 data/tests/spelling.yaml(아메리카 첫판·M1·M2·M3·M4 공통·칸 머리)과 m4/SKEL-NOTE.md 끝 공용 표기표를 먼저 본다.
 //
@@ -54,7 +54,7 @@ import { M4_MXC_IDS, M4_AND_IDS } from './cuts-m4.mjs';
 
 const { build, geomOfUnit, joinTables, makeTable } = tableKit('precolumbian');
 
-const M4_START = 1001; // 이 시대 파일의 첫 해(1001년 말 모습). 그 앞(1000 이하)은 M5 몫
+const M4_START = 1001; // 이 시대 파일의 첫 해(1001년 말 모습). 그 앞(1000 이하)은 M5 ancient.mjs(그 파일 ANCIENT_END = 이 값)
 const M4_END = 1492; // 마지막 표의 끝(미포함) = 뒤 시대 M3의 첫 해
 const M3_START = 1492; // M3 시대 파일 colonial.mjs의 M3_START(그 파일은 export하지 않아 값을 여기 적음 — 둘이 다르면 멈춤)
 if (M4_END !== M3_START) throw new Error(`americas precolumbian: 끝 해 ${M4_END}가 M3 첫 해 ${M3_START}와 다름(시대 경계 맞물림)`);

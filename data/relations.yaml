@@ -2006,6 +2006,10 @@
 
 # ── 아메리카 M4 NAC-M4 (북미·그린란드·카리브·땅 없는 항목, 2026-11-17) ──
 
+# ── 아메리카 M5 MXN-M5 (메소아메리카·북미 — 땅 없는 여섯, 2026-11-18) ──
+
+# ── 아메리카 M5 AND-M5 (안데스 — 땅 없는 여덟, 2026-11-18) ──
+
 # ── 오세아니아 M1 AZP-M1 (오스트레일리아·뉴질랜드·남태평양·하와이, 2026-11-17) ──
 # 종속: 식민·위임 단위와 본국·맡은 나라(관계 to는 끝·독립 해의 앞 해 — P2). australia·new-zealand(자치령)·kingdom-of-tonga(보호국은 글)·fiji·samoa는 관계 없음(G1-13)
 - { type: vassal_of, subject: colony-of-new-zealand, object: uk, from: 1840, to: 1906 } # 1840-05-21 영국 주권 선포 — 1907-09-26 자치령 앞 해까지(위키 en Colony of New Zealand)

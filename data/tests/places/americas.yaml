@@ -4975,3 +4975,187 @@
   expect: none
   url: https://en.wikipedia.org/wiki/Sierra_Nevada_de_Santa_Marta
   from: 아메리카 M4 NAC-M4 결과노트
+
+# ── 아메리카 M5 MXN-M5 (메소아메리카·북미 — 땅 없는 여섯, 2026-11-18) ──
+- name: 몬테알반
+  at: [-96.77, 17.04]
+  year: -400
+  expect: none
+  url: https://en.wikipedia.org/wiki/Monte_Alb%C3%A1n
+  from: 아메리카 M5 MXN-M5 결과노트
+- name: 몬테알반
+  at: [-96.77, 17.04]
+  year: 500
+  expect: none
+  url: https://en.wikipedia.org/wiki/Monte_Alb%C3%A1n
+  from: 아메리카 M5 MXN-M5 결과노트
+- name: 몬테알반
+  at: [-96.77, 17.04]
+  year: 700
+  expect: none
+  url: https://en.wikipedia.org/wiki/Monte_Alb%C3%A1n
+  from: 아메리카 M5 MXN-M5 결과노트
+- name: 몬테알반
+  at: [-96.77, 17.04]
+  year: 1001
+  expect: none
+  url: https://en.wikipedia.org/wiki/Monte_Alb%C3%A1n
+  from: 아메리카 M5 MXN-M5 결과노트
+- name: 테오티우아칸
+  at: [-98.84, 19.69]
+  year: 1
+  expect: none
+  url: https://en.wikipedia.org/wiki/Teotihuacan
+  from: 아메리카 M5 MXN-M5 결과노트
+- name: 테오티우아칸
+  at: [-98.84, 19.69]
+  year: 400
+  expect: none
+  url: https://en.wikipedia.org/wiki/Teotihuacan
+  from: 아메리카 M5 MXN-M5 결과노트
+- name: 테오티우아칸
+  at: [-98.84, 19.69]
+  year: 600
+  expect: none
+  url: https://en.wikipedia.org/wiki/Teotihuacan
+  from: 아메리카 M5 MXN-M5 결과노트
+- name: 테오티우아칸
+  at: [-98.84, 19.69]
+  year: 1001
+  expect: none
+  url: https://en.wikipedia.org/wiki/Teotihuacan
+  from: 아메리카 M5 MXN-M5 결과노트
+- name: 산로렌소
+  at: [-94.76, 17.75]
+  year: -1100
+  expect: none
+  url: https://en.wikipedia.org/wiki/San_Lorenzo_Tenochtitl%C3%A1n
+  from: 아메리카 M5 MXN-M5 결과노트
+- name: 라벤타
+  at: [-94.04, 18.10]
+  year: -800
+  expect: none
+  url: https://en.wikipedia.org/wiki/La_Venta
+  from: 아메리카 M5 MXN-M5 결과노트
+- name: 티칼
+  at: [-89.62, 17.22]
+  year: 300
+  expect: none
+  url: https://en.wikipedia.org/wiki/Tikal
+  from: 아메리카 M5 MXN-M5 결과노트
+- name: 티칼
+  at: [-89.62, 17.22]
+  year: 700
+  expect: none
+  url: https://en.wikipedia.org/wiki/Tikal
+  from: 아메리카 M5 MXN-M5 결과노트
+- name: 칼라크물
+  at: [-89.81, 18.11]
+  year: 650
+  expect: none
+  url: https://en.wikipedia.org/wiki/Calakmul
+  from: 아메리카 M5 MXN-M5 결과노트
+- name: 포버티 포인트
+  at: [-91.41, 32.64]
+  year: -1500
+  expect: none
+  url: https://en.wikipedia.org/wiki/Poverty_Point
+  from: 아메리카 M5 MXN-M5 결과노트
+- name: 칠리코시
+  at: [-83.00, 39.34]
+  year: -200
+  expect: none
+  url: https://en.wikipedia.org/wiki/Chillicothe,_Ohio
+  from: 아메리카 M5 MXN-M5 결과노트
+- name: 칠리코시
+  at: [-83.00, 39.34]
+  year: 1
+  expect: none
+  url: https://en.wikipedia.org/wiki/Chillicothe,_Ohio
+  from: 아메리카 M5 MXN-M5 결과노트
+- name: 칠리코시
+  at: [-83.00, 39.34]
+  year: 400
+  expect: none
+  url: https://en.wikipedia.org/wiki/Chillicothe,_Ohio
+  from: 아메리카 M5 MXN-M5 결과노트
+
+# ── 아메리카 M5 AND-M5 (안데스 — 땅 없는 여덟, 2026-11-18) ──
+- name: 카랄 기원전 2301년
+  at: [-77.52, -10.89]
+  year: -2300
+  expect: none
+  url: https://en.wikipedia.org/wiki/Caral
+  from: 아메리카 M5 AND-M5 결과노트
+- name: 카랄 기원전 2001년
+  at: [-77.52, -10.89]
+  year: -2000
+  expect: none
+  url: https://en.wikipedia.org/wiki/Caral
+  from: 아메리카 M5 AND-M5 결과노트
+- name: 카랄 기원전 1801년
+  at: [-77.52, -10.89]
+  year: -1800
+  expect: none
+  url: https://en.wikipedia.org/wiki/Caral
+  from: 아메리카 M5 AND-M5 결과노트
+- name: 발디비아(산타엘레나 반도) 기원전 2001년
+  at: [-80.72, -1.94]
+  year: -2000
+  expect: none
+  url: https://en.wikipedia.org/wiki/Valdivia_culture
+  from: 아메리카 M5 AND-M5 결과노트
+- name: 차빈 데 완타르 기원전 501년
+  at: [-77.18, -9.59]
+  year: -500
+  expect: none
+  url: https://en.wikipedia.org/wiki/Chav%C3%ADn_de_Hu%C3%A1ntar
+  from: 아메리카 M5 AND-M5 결과노트
+- name: 파라카스 반도 기원전 401년
+  at: [-76.33, -13.86]
+  year: -400
+  expect: none
+  url: https://en.wikipedia.org/wiki/Paracas_culture
+  from: 아메리카 M5 AND-M5 결과노트
+- name: 나스카 300년
+  at: [-74.94, -14.83]
+  year: 300
+  expect: none
+  url: https://en.wikipedia.org/wiki/Nazca_culture
+  from: 아메리카 M5 AND-M5 결과노트
+- name: 태양의 와카(모체 골짜기) 500년
+  at: [-78.99, -8.13]
+  year: 500
+  expect: none
+  url: https://en.wikipedia.org/wiki/Huaca_del_Sol
+  from: 아메리카 M5 AND-M5 결과노트
+- name: 태양의 와카(모체 골짜기) 1001년
+  at: [-78.99, -8.13]
+  year: 1001
+  expect: none
+  url: https://en.wikipedia.org/wiki/Huaca_del_Sol
+  from: 아메리카 M5 AND-M5 결과노트
+- name: 와리(아야쿠초 북동) 700년
+  at: [-74.20, -13.06]
+  year: 700
+  expect: none
+  url: https://en.wikipedia.org/wiki/Wari_culture
+  from: 아메리카 M5 AND-M5 결과노트
+- name: 티와나쿠 800년
+  at: [-68.67, -16.55]
+  year: 800
+  expect: none
+  url: https://en.wikipedia.org/wiki/Tiwanaku
+  from: 아메리카 M5 AND-M5 결과노트
+- name: 티와나쿠 1000년
+  at: [-68.67, -16.55]
+  year: 1000
+  expect: none
+  url: https://en.wikipedia.org/wiki/Tiwanaku
+  from: 아메리카 M5 AND-M5 결과노트
+- name: 티와나쿠 1001년
+  at: [-68.67, -16.55]
+  year: 1001
+  expect: none
+  url: https://en.wikipedia.org/wiki/Tiwanaku
+  from: 아메리카 M5 AND-M5 결과노트

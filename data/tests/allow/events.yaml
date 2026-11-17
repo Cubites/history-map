@@ -421,6 +421,94 @@
   reason: 'am-01~02 사건 묶음(3묶음)이 채움(1492 뒤 해 — 2묶음 am-03~04가 끝나 3묶음이 함께 채움)'
   decided: 2026-11-17 아메리카 M4 NAC-M4 구현(사건은 3묶음 am-01~02)
 
+# ── 아메리카 M5 MXN-M5 (메소아메리카·북미 — 땅 없는 여섯, 2026-11-18) ──
+- key: '-1699 poverty-point-culture 성립'
+  reason: 'am-01~02 사건 묶음(3묶음)이 채움(M5 — 3묶음이 채움)'
+  decided: 2026-11-18 아메리카 M5 MXN-M5 구현(사건은 3묶음 am-01~02)
+- key: '-1099 poverty-point-culture 소멸'
+  reason: 'am-01~02 사건 묶음(3묶음)이 채움(M5 — 3묶음이 채움)'
+  decided: 2026-11-18 아메리카 M5 MXN-M5 구현(사건은 3묶음 am-01~02)
+- key: '-1199 olmec-culture 성립'
+  reason: 'am-01~02 사건 묶음(3묶음)이 채움(M5 — 3묶음이 채움)'
+  decided: 2026-11-18 아메리카 M5 MXN-M5 구현(사건은 3묶음 am-01~02)
+- key: '-399 olmec-culture 소멸'
+  reason: 'am-01~02 사건 묶음(3묶음)이 채움(M5 — 3묶음이 채움)'
+  decided: 2026-11-18 아메리카 M5 MXN-M5 구현(사건은 3묶음 am-01~02)
+- key: '-499 monte-alban 성립'
+  reason: 'am-01~02 사건 묶음(3묶음)이 채움(M5 — 3묶음이 채움)'
+  decided: 2026-11-18 아메리카 M5 MXN-M5 구현(사건은 3묶음 am-01~02)
+- key: '750 monte-alban 소멸'
+  reason: 'am-01~02 사건 묶음(3묶음)이 채움(M5 — 3묶음이 채움)'
+  decided: 2026-11-18 아메리카 M5 MXN-M5 구현(사건은 3묶음 am-01~02)
+- key: '-499 adena-culture 성립'
+  reason: 'am-01~02 사건 묶음(3묶음)이 채움(M5 — 3묶음이 채움)'
+  decided: 2026-11-18 아메리카 M5 MXN-M5 구현(사건은 3묶음 am-01~02)
+- key: '100 adena-culture 소멸'
+  reason: 'am-01~02 사건 묶음(3묶음)이 채움(M5 — 3묶음이 채움)'
+  decided: 2026-11-18 아메리카 M5 MXN-M5 구현(사건은 3묶음 am-01~02)
+- key: '-199 hopewell-culture 성립'
+  reason: 'am-01~02 사건 묶음(3묶음)이 채움(M5 — 3묶음이 채움)'
+  decided: 2026-11-18 아메리카 M5 MXN-M5 구현(사건은 3묶음 am-01~02)
+- key: '500 hopewell-culture 소멸'
+  reason: 'am-01~02 사건 묶음(3묶음)이 채움(M5 — 3묶음이 채움)'
+  decided: 2026-11-18 아메리카 M5 MXN-M5 구현(사건은 3묶음 am-01~02)
+- key: '-99 teotihuacan 성립'
+  reason: 'am-01~02 사건 묶음(3묶음)이 채움(M5 — 3묶음이 채움)'
+  decided: 2026-11-18 아메리카 M5 MXN-M5 구현(사건은 3묶음 am-01~02)
+- key: '650 teotihuacan 소멸'
+  reason: 'am-01~02 사건 묶음(3묶음)이 채움(M5 — 3묶음이 채움)'
+  decided: 2026-11-18 아메리카 M5 MXN-M5 구현(사건은 3묶음 am-01~02)
+
+# ── 아메리카 M5 AND-M5 (안데스 — 땅 없는 여덟, 2026-11-18) ──
+- key: '-3499 norte-chico 성립'
+  reason: '사건 묶음 3묶음(am-01~02)에서 이을 사건 없음: 성립 해(기원전 3500년 무렵)가 연도 막대 시작(기원전 2333년)보다 앞서 같은 해에 사건을 둘 수 없음. 사건은 기원전 2333년 뒤 해에 이미 번성하던 모습으로 적음'
+  decided: 2026-11-18 아메리카 M5 AND-M5 구현(G5-3 — 남아시아 -2599 indus-civilization 성립 꼴)
+- key: '-3499 valdivia 성립'
+  reason: '사건 묶음 3묶음(am-01~02)에서 이을 사건 없음: 성립 해(기원전 3500년 무렵)가 연도 막대 시작(기원전 2333년)보다 앞서 같은 해에 사건을 둘 수 없음. 사건은 기원전 2333년 뒤 해에 이미 번성하던 모습으로 적음'
+  decided: 2026-11-18 아메리카 M5 AND-M5 구현(G5-3 — 남아시아 -2599 indus-civilization 성립 꼴)
+- key: '-1799 norte-chico 소멸'
+  reason: 'am-01~02 사건 묶음(3묶음)이 채움(M5 — 3묶음이 채움)'
+  decided: 2026-11-18 아메리카 M5 AND-M5 구현(사건은 3묶음 am-01~02)
+- key: '-1499 valdivia 소멸'
+  reason: 'am-01~02 사건 묶음(3묶음)이 채움(M5 — 3묶음이 채움)'
+  decided: 2026-11-18 아메리카 M5 AND-M5 구현(사건은 3묶음 am-01~02)
+- key: '-899 chavin-culture 성립'
+  reason: 'am-01~02 사건 묶음(3묶음)이 채움(M5 — 3묶음이 채움)'
+  decided: 2026-11-18 아메리카 M5 AND-M5 구현(사건은 3묶음 am-01~02)
+- key: '-249 chavin-culture 소멸'
+  reason: 'am-01~02 사건 묶음(3묶음)이 채움(M5 — 3묶음이 채움)'
+  decided: 2026-11-18 아메리카 M5 AND-M5 구현(사건은 3묶음 am-01~02)
+- key: '-799 paracas-culture 성립'
+  reason: 'am-01~02 사건 묶음(3묶음)이 채움(M5 — 3묶음이 채움)'
+  decided: 2026-11-18 아메리카 M5 AND-M5 구현(사건은 3묶음 am-01~02)
+- key: '-99 paracas-culture 소멸'
+  reason: 'am-01~02 사건 묶음(3묶음)이 채움(M5 — 3묶음이 채움)'
+  decided: 2026-11-18 아메리카 M5 AND-M5 구현(사건은 3묶음 am-01~02)
+- key: '-199 nasca-culture 성립'
+  reason: 'am-01~02 사건 묶음(3묶음)이 채움(M5 — 3묶음이 채움)'
+  decided: 2026-11-18 아메리카 M5 AND-M5 구현(사건은 3묶음 am-01~02)
+- key: '800 nasca-culture 소멸'
+  reason: 'am-01~02 사건 묶음(3묶음)이 채움(M5 — 3묶음이 채움)'
+  decided: 2026-11-18 아메리카 M5 AND-M5 구현(사건은 3묶음 am-01~02)
+- key: '100 moche-culture 성립'
+  reason: 'am-01~02 사건 묶음(3묶음)이 채움(M5 — 3묶음이 채움)'
+  decided: 2026-11-18 아메리카 M5 AND-M5 구현(사건은 3묶음 am-01~02)
+- key: '800 moche-culture 소멸'
+  reason: 'am-01~02 사건 묶음(3묶음)이 채움(M5 — 3묶음이 채움)'
+  decided: 2026-11-18 아메리카 M5 AND-M5 구현(사건은 3묶음 am-01~02)
+- key: '500 wari 성립'
+  reason: 'am-01~02 사건 묶음(3묶음)이 채움(M5 — 3묶음이 채움)'
+  decided: 2026-11-18 아메리카 M5 AND-M5 구현(사건은 3묶음 am-01~02)
+- key: '1000 wari 소멸'
+  reason: 'am-01~02 사건 묶음(3묶음)이 채움(M5 — 3묶음이 채움)'
+  decided: 2026-11-18 아메리카 M5 AND-M5 구현(사건은 3묶음 am-01~02)
+- key: '110 tiwanaku 성립'
+  reason: 'am-01~02 사건 묶음(3묶음)이 채움(M5 — 3묶음이 채움)'
+  decided: 2026-11-18 아메리카 M5 AND-M5 구현(사건은 3묶음 am-01~02)
+- key: '1000 tiwanaku 소멸'
+  reason: 'am-01~02 사건 묶음(3묶음)이 채움(M5 — 3묶음이 채움)'
+  decided: 2026-11-18 아메리카 M5 AND-M5 구현(사건은 3묶음 am-01~02)
+
 # ── 오세아니아 M1 AZP-M1 (오스트레일리아·뉴질랜드·남태평양·하와이, 2026-11-17) ──
 - key: '1840 colony-of-new-zealand 성립'
   reason: 'M2(하한~1900) 사건 묶음이 채움 — 1901 앞 성립'
