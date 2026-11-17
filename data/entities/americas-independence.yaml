@@ -27,7 +27,7 @@
     - 1779년 갈베스 총독이 영국령 서플로리다를 공격함
     - 1800년 산일데폰소 조약으로 프랑스에 돌려주기로 함
     - 1803년 루이지애나 매입으로 미국 땅이 됨
-  startEvents: []
+  startEvents: [havana-fontainebleau-1762]
   endEvents: [louisiana-purchase-1800]
   basis:
     type: primary_source
@@ -49,7 +49,7 @@
     - 1795년 핀크니 조약으로 북 경계를 북위 31°로 정함
     - 1810년 서플로리다 공화국 반란 뒤 배턴루지 둘레를 미국이 병합
     - 1819년 애덤스-오니스 조약, 1821년 미국에 넘김
-  startEvents: []
+  startEvents: [florida-balboa-1513]
   endEvents: [adams-onis-1819]
   basis:
     type: primary_source
@@ -71,7 +71,7 @@
     - 서플로리다 북 경계를 북위 32°28′로 넓힘
     - 1779~1781년 스페인 갈베스 총독의 원정으로 서플로리다를 잃음
     - 1783년 파리 조약으로 스페인에 돌려줌
-  startEvents: []
+  startEvents: [paris-1763]
   endEvents: [treaty-of-paris-1783]
   basis:
     type: primary_source
@@ -94,7 +94,7 @@
     - 1713년 위트레흐트 조약으로 프랑스가 허드슨만을 영국 땅으로 인정
     - 1812년 레드강 식민지, 1818년 북위 49도 경계
     - 1869년 헌장 땅을 돌려주고 1870년 캐나다로 넘어감
-  startEvents: []
+  startEvents: [hbc-1670]
   endEvents: [red-river-1869]
   basis:
     type: primary_source
@@ -166,7 +166,7 @@
     - 1774년 퀘벡 법으로 오대호 남쪽 땅까지 넓힘
     - 1775년 미국 대륙군의 침공을 막아 냄
     - 1783년 파리 조약으로 오대호 남쪽 땅을 미국에 넘김
-  startEvents: []
+  startEvents: [paris-1763]
   endEvents: [constitutional-act-1791]
   basis:
     type: primary_source
@@ -188,7 +188,7 @@
     - 1755년부터 아카디아인을 쫓아냄
     - 1784년 뉴브런즈윅과 케이프브레턴을 떼고 1820년 케이프브레턴을 다시 합침
     - 1867년 7월 1일 캐나다 연방에 들어감
-  startEvents: []
+  startEvents: [queen-anne-utrecht-1701]
   endEvents: [canadian-confederation-1864]
   basis:
     type: primary_source
@@ -322,7 +322,7 @@
     - 1641년 킬린 회담에서 스페인이 자유를 인정함
     - 스페인·칠레와 회담을 열어 관계를 맺음
     - 1861~1883년 칠레의 아라우카니아 점령으로 끝남
-  startEvents: []
+  startEvents: [araucania-quilin-1641]
   endEvents: [araucania-occupation-1861]
   basis:
     type: primary_source
@@ -343,7 +343,7 @@
     - 1767년 프랑스에게서 넘겨받음
     - 1770년 영국 에그몬트 항 기지를 두고 위기를 겪음
     - 1811년 스페인이 섬을 떠남
-  startEvents: []
+  startEvents: [falklands-1764]
   endEvents: [may-revolution-1810]
   basis:
     type: primary_source
@@ -367,7 +367,7 @@
     - 1546년 사카테카스 은광이 열려 북쪽 개척이 시작됨
     - 1776년 북쪽 변경을 내륙 주 총사령부로 따로 묶음
     - 1810년 이달고 신부의 봉기로 독립 전쟁이 시작됨
-  startEvents: []
+  startEvents: [tenochtitlan-1519]
   endEvents: [mexico-independence-1821]
   basis:
     type: primary_source
@@ -388,7 +388,7 @@
     - 1617년 누에바에스파냐 안의 총사령부가 됨
     - 캄페체는 해적을 막으려 성벽을 두른 항구 도시
     - 1821년 9월 15일 스페인에서 독립을 선언함
-  startEvents: []
+  startEvents: [yucatan-sonora-1614]
   endEvents: [mexico-independence-1821]
   basis:
     type: primary_source
@@ -455,7 +455,7 @@
     - 1777년 베네수엘라 총사령부가 갈라짐
     - 1802년 칙령으로 마이나스와 키호스가 페루 부왕령으로 넘어감
     - 1819년 보야카 전투로 사실상 끝남
-  startEvents: []
+  startEvents: [new-granada-1717]
   endEvents: [boyaca-gran-colombia-1819]
   basis:
     type: primary_source
@@ -499,7 +499,7 @@
     - 1542년 카를로스 1세의 신법으로 부왕령이 됨
     - 1780~1783년 투팍 아마루 2세의 봉기
     - 1824년 아야쿠초 전투로 끝남
-  startEvents: []
+  startEvents: [inca-conquest-1529]
   endEvents: [peru-bolivia-independence-1821]
   basis:
     type: primary_source
@@ -523,7 +523,7 @@
     - 다섯 주와 치아파스를 다스림
     - 모스키토 해안과 벨리즈 정착지에는 지배가 닿지 않음
     - 1821년 9월 15일 독립 선언
-  startEvents: []
+  startEvents: [alvarado-guatemala-1524]
   endEvents: [central-america-independence-1821]
   basis:
     type: primary_source
@@ -566,7 +566,7 @@
     - 1844년부터 1859년까지 영국 보호
     - 1860년 마나과 조약으로 니카라과 안 자치 보호구가 됨
     - 1894년 니카라과에 병합
-  startEvents: []
+  startEvents: [mosquito-1740]
   endEvents: [mosquito-reincorporation-1894]
   basis:
     type: primary_source
@@ -589,7 +589,7 @@
     - 1511년 바라코아 건설, 1607년 총사령부
     - 사탕수수 농장과 노예 노동으로 자람
     - 1868~1878년 10년 전쟁, 1895년 독립 전쟁
-  startEvents: []
+  startEvents: [cuba-conquest-1511]
   endEvents: [cuban-independence-war-1895]
   basis:
     type: primary_source
@@ -611,7 +611,7 @@
     - 1697년 레이스베이크 조약으로 섬 서쪽을 프랑스에 내줌
     - 1795년 바젤 조약, 1801~1808년 프랑스 지배
     - 1821년 12월 1일 스페인령 아이티 독립 선포
-  startEvents: []
+  startEvents: [hispaniola-1493]
   endEvents: [hispaniola-unification-1822]
   basis:
     type: primary_source
@@ -633,7 +633,7 @@
     - 설탕·커피 농장과 노예 노동으로 가장 부유한 식민지가 됨
     - 1791년 8월 노예 봉기로 아이티 혁명 시작
     - 1793년 노예제 폐지, 투생 루베르튀르가 섬을 이끎
-  startEvents: []
+  startEvents: [french-antilles-1635]
   endEvents: [haiti-independence-1803]
   basis:
     type: primary_source
@@ -746,7 +746,7 @@
     - 1763년 버비스 노예 반란
     - 1796~1802년·1803~1814년 영국군 점령
     - 1814년 런던 조약으로 영국에 넘어감
-  startEvents: []
+  startEvents: [wic-1621]
   endEvents: [british-guiana-1803]
   basis:
     type: primary_source
@@ -768,7 +768,7 @@
     - 1630~1654년 네덜란드가 북동부를 차지
     - 1777년 산일데폰소 조약으로 스페인과 국경을 정함
     - 1808~1821년 포르투갈 왕실이 리우데자네이루에 머묾
-  startEvents: []
+  startEvents: [brazil-governorate-1549]
   endEvents: [brazil-independence-1822]
   basis:
     type: primary_source

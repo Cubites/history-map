@@ -8371,6 +8371,48 @@
   note: "Peace of Ryswick(1697 — 생도맹그). 위키 ko 표제(M3 뼈대 확인, m3/skel/ko-titles.txt)"
   scope: 아메리카·카리브
 
+# ── 아메리카 사건 am-04a (1621~1711년, 2026-11-17) ──
+
+- use: 필립 왕 전쟁
+  avoid: [필립왕 전쟁]
+  note: "King Philip's War(1675~1678). 메타콤(Metacom)은 영국 사람들이 필립 왕이라 부른 왐파노아그 지도자"
+  scope: 아메리카·뉴잉글랜드
+
+- use: 하트퍼드 조약
+  avoid: [하트포드 조약]
+  note: "Treaty of Hartford(1638-09-21, 피쿼트 전쟁을 끝냄). 도시 Hartford는 하트퍼드"
+  scope: 아메리카·뉴잉글랜드
+
+- use: 에드먼드 앤드로스
+  avoid: [에드먼드 안드로스]
+  note: "Edmund Andros(뉴잉글랜드 자치령 총독 1686~1689)"
+  scope: 아메리카·뉴잉글랜드
+
+- use: 자크 마르케트
+  avoid: [자크 마케트]
+  note: "Jacques Marquette(예수회 사제, 1673년 미시시피강 탐험)"
+  scope: 아메리카·누벨프랑스
+
+- use: 루이 졸리
+  avoid: [루이 졸리에, 루이 졸리엣]
+  note: "Louis Jolliet(1673년 마르케트와 미시시피강 탐험)"
+  scope: 아메리카·누벨프랑스
+
+- use: 피에르 르무안 디베르빌
+  avoid: [피에르 르무안 이베르빌]
+  note: "Pierre Le Moyne d'Iberville(1699년 빌럭시 만 정착). 동생은 장바티스트 르무안 드 비엔빌"
+  scope: 아메리카·루이지애나
+
+- use: 헨리 모건
+  avoid: [헨리 모간]
+  note: "Henry Morgan(버커니어, 포르토벨로 1668·마라카이보 1669·파나마 1671 습격)"
+  scope: 아메리카·카리브
+
+- use: 요한 마우리츠
+  avoid: [요한 모리츠]
+  note: "John Maurice of Nassau(네덜란드령 브라질 총독 1637~1644). 그가 세운 도시는 마우리츠스타트"
+  scope: 아메리카·브라질
+
 # ── 아메리카 M3 NEC-M3 (뉴잉글랜드·중부, 2026-11-17) ──
 
 - use: 페터르 스타위베산트
@@ -8390,7 +8432,201 @@
   note: "Biloxi(1699 프랑스 기지 — french-louisiana 글). 위키 ko 표제 빌럭시 (미시시피주)(M3 SEL-M3 — 지시문 기준 도시 표기)"
   scope: 아메리카·북아메리카 식민지
 
+# ── 아메리카 사건 am-04b (1712~1775, 2026-11-17) ──
+
+- use: 루이 쥐셰로 드 생드니
+  avoid: [루이 주쉬로 드 생드니]
+  note: "Louis Juchereau de St. Denis(1714 나치토치스를 세움). 프랑스어 이름 — 외래어 표기법"
+  scope: 아메리카·북아메리카 식민지
+
+- use: 나치토치스
+  avoid: [나키토시스, 나키토치스]
+  note: "Natchitoches(루이지애나주 최초의 지속 정착지, 1714). 위키 ko 표제 나치토치스"
+  scope: 아메리카·북아메리카 식민지
+
+- use: 호르헤 데 비야롱가
+  avoid: [호르헤 데 빌라롱가]
+  note: "Jorge de Villalonga(누에바그라나다 부왕, 1719~). 스페인어식 — 외래어 표기법"
+  scope: 아메리카·스페인 식민지
+
+- use: 젠킨스의 귀 전쟁
+  avoid: [젱킨스의 귀 전쟁]
+  note: "War of Jenkins' Ear(1739~1748). 위키 ko 표제 젠킨스의 귀 전쟁"
+  scope: 아메리카·카리브
+
+- use: 에드워드 버넌
+  avoid: [에드워드 버논]
+  note: "Edward Vernon(포르토벨로 1739·카르타헤나 1741). 외래어 표기법"
+  scope: 아메리카·카리브
+
+- use: 비투스 베링
+  avoid: [비투스 베링 선장]
+  note: "Vitus Bering(1741 알래스카 항해). 위키 ko 표제 비투스 베링"
+  scope: 아메리카·북아메리카 탐험
+
+- use: 알렉세이 치리코프
+  avoid: [알렉세이 치리코브]
+  note: "Alexei Chirikov(성 바오로호 선장, 1741). 러시아어 — 외래어 표기법"
+  scope: 아메리카·북아메리카 탐험
+
+- use: 후안 산토스 아타우알파
+  avoid: [후안 산토스 아타왈파]
+  note: "Juan Santos Atahualpa(1742 셀바 센트랄 봉기). 위키 ko 표제 후안 산토스 아타우알파"
+  scope: 아메리카·안데스
+
+- use: 아샤닌카
+  avoid: [아사닌카, 아샤닌까]
+  note: "Asháninka(셀바 센트랄 원주민). 위키 ko 표제 아샤닌카"
+  scope: 아메리카·안데스
+
+- use: 세페 티아라주
+  avoid: [세페 티아라유]
+  note: "Sepé Tiaraju(과라니 지도자, 1756 사망). 포르투갈어식"
+  scope: 아메리카·브라질
+
+- use: 호세 데 에스칸돈
+  avoid: [호세 데 에스코돈]
+  note: "José de Escandón(누에보산탄데르 식민, 1748). 스페인어식"
+  scope: 아메리카·스페인 식민지
+
+- use: 누에보산탄데르
+  avoid: [누에보 산탄데르]
+  note: "Nuevo Santander(1748 에스칸돈이 세운 식민지, 지금의 타마울리파스). 위키 ko 표제 누에보산탄데르"
+  scope: 아메리카·스페인 식민지
+
+- use: 가스파르 데 포르톨라
+  avoid: [가스파 데 포르톨라]
+  note: "Gaspar de Portolá(1769 알타칼리포르니아 원정). 스페인어식"
+  scope: 아메리카·스페인 식민지
+
+- use: 주니페로 세라
+  avoid: [후니페로 세라]
+  note: "Junípero Serra(프란시스코회 사제, 캘리포니아 선교). 위키 ko 표제 주니페로 세라"
+  scope: 아메리카·스페인 식민지
+
+- use: 후안 바우티스타 데 안사
+  avoid: [후안 바티스타 데 안사]
+  note: "Juan Bautista de Anza(1774·1775 원정). 스페인어식"
+  scope: 아메리카·스페인 식민지
+
+- use: 폼발 후작
+  avoid: [퐁발 후작]
+  note: "Marquês de Pombal(세바스치앙 주제 드 카르발류 이 멜루). 포르투갈어식"
+  scope: 아메리카·브라질
+
+- use: 프란시스쿠 샤비에르 드 멘동사 푸르타두
+  avoid: [프란시스쿠 사비에르 드 멘돈사 푸르타두]
+  note: "Francisco Xavier de Mendonça Furtado(그랑파라·마라냥 초대 총독). 포르투갈어식"
+  scope: 아메리카·브라질
+
+- use: 디레토리우
+  avoid: [디렉토리우]
+  note: "Diretório dos Índios(1757 원주민 감독법). 포르투갈어식"
+  scope: 아메리카·브라질
+
+- use: 뒤켄 요새
+  avoid: [듀케인 요새, 뒤케인 요새]
+  note: "Fort Duquesne(1754 프랑스가 오하이오강 합류점에 세움). 프랑스어 Duquesne — 외래어 표기법"
+  scope: 아메리카·북아메리카 식민지
+
+- use: 네세서티 요새
+  avoid: [네세시티 요새]
+  note: "Fort Necessity(1754 워싱턴이 항복한 곳). 영어 — 외래어 표기법"
+  scope: 아메리카·북아메리카 식민지
+
+- use: 올버니 회의
+  avoid: [알바니 회의]
+  note: "Albany Congress(1754). 저장소 기존 올버니 꼴"
+  scope: 아메리카·북아메리카 식민지
+
+- use: 에드워드 브래독
+  avoid: [에드워드 브래덕]
+  note: "Edward Braddock(1755 모논가헬라). 영어 — 외래어 표기법"
+  scope: 아메리카·북아메리카 식민지
+
+- use: 보세주르 요새
+  avoid: [보세쥐르 요새]
+  note: "Fort Beauséjour(1755 영국이 차지). 프랑스어 — 외래어 표기법"
+  scope: 아메리카·북아메리카 식민지
+
+- use: 아브라함 평원 전투
+  avoid: [에이브러햄 평원 전투]
+  note: "Battle of the Plains of Abraham(1759). 위키 ko 표제 아브라함 평원 전투"
+  scope: 아메리카·북아메리카 식민지
+
+- use: 제임스 울프
+  avoid: [제임스 울페]
+  note: "James Wolfe(1759 퀘벡). 영어 — 외래어 표기법"
+  scope: 아메리카·북아메리카 식민지
+
+- use: 루이조제프 드 몽칼름
+  avoid: [루이조제프 몽칼름]
+  note: "Louis-Joseph de Montcalm(1759 퀘벡). 프랑스어 — 외래어 표기법"
+  scope: 아메리카·북아메리카 식민지
+
+- use: 호세 데 갈베스
+  avoid: [호세 데 갈벳스]
+  note: "José de Gálvez(누에바에스파냐 감찰관 1765~1771). 스페인어식"
+  scope: 아메리카·스페인 식민지
+
+- use: 폰티악 전쟁
+  avoid: [폰티아크 전쟁]
+  note: "Pontiac's War(1763). 위키 ko 표제 폰티악 전쟁"
+  scope: 아메리카·북아메리카 식민지
+
+- use: 루이앙투안 드 부갱빌
+  avoid: [루이앙투안 드 부겐빌]
+  note: "Louis-Antoine de Bougainville(1764 포클랜드 포르생루이). 프랑스어 — 외래어 표기법"
+  scope: 아메리카·남아메리카
+
+- use: 포트에그먼트
+  avoid: [포트 에그먼트]
+  note: "Port Egmont(1766 영국 정착지). 영어 — 외래어 표기법"
+  scope: 아메리카·남아메리카
+
+- use: 왓터가 협회
+  avoid: [워터가 협회]
+  note: "Watauga Association(1772 이후 노스캐롤라이나 서쪽 정착). 저장소 기존 왓터가 꼴"
+  scope: 아메리카·북아메리카 식민지
+
 # ── 아메리카 M3 NF-M3 (누벨프랑스·허드슨만·오대호·북동, 2026-11-17) ──
+
+# ── 아메리카 사건 am-03a (1492~1540년, 2026-11-17) ──
+
+- use: 쿠아우테목
+  avoid: [콰우테목, 쿠아우테모크, 콰우테모크]
+  note: "Cuauhtémoc(아즈텍 마지막 틀라토아니, 1521). 위키 ko 표제 쿠아우테목(am-03a)"
+  scope: 아메리카·멕시코
+
+- use: 아투에이
+  avoid: [하투에이]
+  note: "Hatuey(쿠바 저항 지도자, 1512 무렵). 위키 ko 표제 아투에이(am-03a)"
+  scope: 아메리카·카리브
+
+- use: 후안 폰세 데 레온
+  avoid: [폰세데레온, 후안 폰세 드 레온]
+  note: "Juan Ponce de León(1513 플로리다). 스페인어 표기(am-03a)"
+  scope: 아메리카·북아메리카 식민지
+
+- use: 라스살리나스 전투
+  avoid: [라스 살리나스 전투]
+  note: "Battle of Las Salinas(1538-04-06, 알마그로 대 피사로). 위키 ko 표제(am-03a)"
+  scope: 아메리카·안데스
+
+- use: 산타페데보고타
+  avoid: [산타페 데 보고타]
+  note: "Santa Fe de Bogotá(1538-08-06 건설). M3 표 표기(am-03a)"
+  scope: 아메리카·안데스
+
+- use: 카마궤이
+  avoid: [카마과이, 카마구에이]
+  note: "Camagüey(쿠바 도시, 1515 건설). 위키 ko 표제 카마궤이(카마구에이는 넘겨주기)(am-03a)"
+  scope: 아메리카·카리브
+
+- use: 아키민사케
+  avoid: [아키미스케]
+  note: "Aquiminzaque(무이스카의 마지막 사케, 1540 처형). 외래어 표기법(am-03a)"
+  scope: 아메리카·안데스
 
 # ── 아메리카 M3 MXC-M3 (멕시코·중앙아메리카·1492 두 나라, 2026-11-17) ──
 
@@ -8443,6 +8679,78 @@
   avoid: [누에보 레온 왕국]
   note: "Nuevo Reino de León(1582 — 지금 누에보레온주·코아우일라주 둘레, new-spain-viceroyalty 글). 위키 ko 표제 없음 — 공용 표기표 가칭(M3 뼈대)"
   scope: 아메리카·스페인 식민지
+
+# ── 아메리카 사건 am-03b (1541~1620, 2026-11-17) ──
+
+- use: 프랜시스 드레이크
+  avoid: [프란시스 드레이크]
+  note: "Francis Drake(1577~1580 세계 일주). 외래어 표기법(Francis→프랜시스)·위키 ko 표제 꼴"
+  scope: 아메리카·1541~1620
+
+- use: 월터 롤리
+  avoid: [월터 롤레이]
+  note: "Walter Raleigh(로어노크 특허 1584·기아나 1595). 위키 ko 표제 꼴"
+  scope: 아메리카·1541~1620
+
+- use: 로어노크
+  avoid: [로아노크]
+  note: "Roanoke(1585·1587 잉글랜드 정착지). 위키 ko 표제 꼴"
+  scope: 아메리카·1541~1620
+
+- use: 크로아토안
+  avoid: [크로아탄]
+  note: "Croatoan(1590 로어노크 기둥에 새긴 글자·섬 이름). 외래어 표기법"
+  scope: 아메리카·1541~1620
+
+- use: 후안 데 오냐테
+  avoid: [후안 데 오나테]
+  note: "Juan de Oñate(1598 누에보멕시코 원정). 스페인어 ñ→냐, 위키 ko 꼴"
+  scope: 아메리카·1541~1620
+
+- use: 곤살로 피사로
+  avoid: [곤잘로 피사로]
+  note: "Gonzalo Pizarro(1544~1548 반란). 스페인어 Gonzalo→곤살로, 저장소 기존"
+  scope: 아메리카·1541~1620
+
+- use: 블라스코 누녜스 벨라
+  avoid: [블라스코 누네스 벨라]
+  note: "Blasco Núñez Vela(초대 페루 부왕, 1546 아냐키토에서 죽음). 스페인어 ñ→뇨"
+  scope: 아메리카·1541~1620
+
+- use: 아냐키토
+  avoid: [아나키토]
+  note: "Añaquito(1546-01-18 전투). 스페인어 ñ→냐"
+  scope: 아메리카·1541~1620
+
+- use: 마탄사스
+  avoid: [마탄자스]
+  note: "Matanzas(1565 프랑스인 처형 하구). 스페인어 z→ㅅ"
+  scope: 아메리카·1541~1620
+
+- use: 포우하탄
+  avoid: [파우하탄, 포하탄]
+  note: "Powhatan(제임스타운 둘레 연맹·지도자). 공용 표기표 03b 몫 꼴"
+  scope: 아메리카·1541~1620
+
+- use: 페드로 메넨데스 데 아빌레스
+  avoid: [페드로 메넨데즈 데 아빌레스]
+  note: "Pedro Menéndez de Avilés(1565 세인트오거스틴). 공용 표기표 03b 몫 꼴"
+  scope: 아메리카·1541~1620
+
+- use: 사뮈엘 드 샹플랭
+  avoid: [새뮤얼 드 샹플랭, 사무엘 드 샹플랭]
+  note: "Samuel de Champlain(1604 아카디아·1608 퀘벡). 프랑스 사람은 프랑스어식(공용 표기표)"
+  scope: 아메리카·1541~1620
+
+- use: 쿠랄라바
+  avoid: [쿠라라바]
+  note: "Curalaba(1598-12-23 전투). 스페인어 표기, 공용 표기표 03b 몫"
+  scope: 아메리카·1541~1620
+
+- use: 살디바르
+  avoid: [사르디바르]
+  note: "Zaldívar(오냐테의 조카 후안 데 살디바르·형제 비센테). 스페인어 z→ㅅ(am-03b)"
+  scope: 아메리카·1541~1620
 
 # ── 아메리카 M3 AND-M3 (안데스·라플라타·1492 잉카, 2026-11-17) ──
 

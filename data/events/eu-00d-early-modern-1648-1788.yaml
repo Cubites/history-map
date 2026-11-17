@@ -440,7 +440,7 @@
     ko: 위트레흐트 조약과 라슈타트 조약
   summary:
     ko: "1713년 4월 위트레흐트에서 프랑스가 영국·네덜란드·포르투갈·프로이센·사보이아와, 이어 7월부터 스페인이 각국과 강화 조약을 맺었다(위트레흐트 조약). 펠리페 5세는 스페인 왕위와 아메리카 식민지를 지키는 대신 프랑스 왕위를 잇지 않기로 했다. 영국은 스페인에게서 지브롤터와 메노르카, 스페인령 아메리카에 아프리카 노예를 30년 동안 공급하는 권리(아시엔토)를, 프랑스에게서 뉴펀들랜드·노바스코샤(아카디아)·허드슨만 지역을 얻어 해상·식민 강국으로 올라섰다. 사보이아 공작은 시칠리아를 얻어 왕이 되었고, 프로이센은 왕호를 인정받고 겔더른 일대를 얻었다. 계속 싸우던 황제 카를 6세는 1714년 라슈타트 조약으로 프랑스와 강화하고 스페인령 네덜란드(오스트리아령 네덜란드)·밀라노·나폴리·사르데냐를 얻었다. 이로써 프랑스의 팽창이 멈추고, 한 나라가 지나치게 강해지지 않게 하는 세력 균형이 유럽 외교의 원칙이 되었다."
-  subjects: [spain, france, uk, habsburg-monarchy, savoy, dutch-republic, prussia, portugal, holy-roman-empire]
+  subjects: [spain, france, uk, habsburg-monarchy, savoy, dutch-republic, prussia, portugal, holy-roman-empire, acadia, nova-scotia, newfoundland]
   links:
     - { from: uk, to: spain, note: "지브롤터·메노르카·아시엔토 획득" }
     - { from: uk, to: france, note: "뉴펀들랜드·노바스코샤·허드슨만 획득" }

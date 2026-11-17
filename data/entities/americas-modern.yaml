@@ -47,7 +47,7 @@
     - 1927년 영국 추밀원 판결로 래브라도 경계 확정
     - 1934년부터 영국이 임명한 위원회 정부가 다스림
     - 1949년 3월 31일 캐나다 합류
-  startEvents: []
+  startEvents: [hudson-cupids-1609]
   endEvents: [newfoundland-confederation-1946]
   basis:
     type: primary_source
@@ -67,7 +67,7 @@
     - 1721년 한스 에게데 정착, 1814년 킬 조약 뒤 덴마크령
     - 1933년 상설국제사법재판소 판결로 동부 주권 확정
     - 1953년 덴마크 편입, 1979년 자치, 2009년 자치정부
-  startEvents: []
+  startEvents: [egede-1721]
   endEvents: []
   basis:
     type: primary_source
@@ -149,7 +149,7 @@
     - 1866년 직할 식민지
     - 1958년부터 1962년까지 서인도 연방 가입
     - 1962년 8월 6일 독립
-  startEvents: []
+  startEvents: [jamaica-buccaneers-1655]
   endEvents: []
   basis:
     type: primary_source
@@ -170,7 +170,7 @@
     - 1718년 우즈 로저스 총독 부임, 영국 왕령 식민지
     - 1964년 내정 자치
     - 1973년 7월 10일 독립
-  startEvents: []
+  startEvents: [carolina-bahamas-1663]
   endEvents: []
   basis:
     type: primary_source
@@ -488,7 +488,7 @@
     - 1863년 노예제 폐지, 인도·자와섬 계약 노동자
     - 1954년 네덜란드 왕국의 구성국
     - 1975년 수리남으로 독립
-  startEvents: []
+  startEvents: [breda-1664]
   endEvents: [suriname-independence-1954]
   basis:
     type: primary_source
@@ -529,7 +529,7 @@
     - 1852~1953년 죄수 유형지
     - 1946년 프랑스 해외 데파르트망
     - 쿠루의 기아나 우주 센터
-  startEvents: []
+  startEvents: [french-antilles-1635]
   endEvents: []
   basis:
     type: primary_source

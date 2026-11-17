@@ -28,8 +28,8 @@
     - 1630년 청교도 이주민이 보스턴에 자리 잡음
     - 1641년부터 1679년까지 뉴햄프셔 마을들을 다스림
     - 1691년 왕령 헌장으로 플리머스 식민지와 메인을 합침
-  startEvents: []
-  endEvents: []
+  startEvents: [new-england-1629]
+  endEvents: [boston-tea-party-1773]
   basis:
     type: primary_source
     refs: ["위키백과 Massachusetts Bay Colony", "위키백과 Province of Massachusetts Bay", "위키백과 Thirteen Colonies"]
@@ -49,8 +49,8 @@
     - 1637년 피쿼트 전쟁으로 피쿼트 사람들을 꺾음
     - 1662년 찰스 2세의 헌장으로 뉴헤이븐 식민지를 합침
     - 총독을 스스로 뽑는 자치 식민지
-  startEvents: []
-  endEvents: []
+  startEvents: [new-england-1629]
+  endEvents: [boston-tea-party-1773]
   basis:
     type: primary_source
     refs: ["위키백과 Connecticut Colony", "위키백과 Thirteen Colonies"]
@@ -70,8 +70,8 @@
     - 1679년 찰스 2세의 헌장으로 왕령 식민지가 됨
     - 1686년부터 1689년까지 뉴잉글랜드 자치령에 묶임
     - 코네티컷강 서쪽 땅을 두고 뉴욕과 다툼
-  startEvents: []
-  endEvents: []
+  startEvents: [king-philips-1675]
+  endEvents: [boston-tea-party-1773]
   basis:
     type: primary_source
     refs: ["위키백과 Province of New Hampshire", "위키백과 Thirteen Colonies"]
@@ -92,8 +92,8 @@
     - 1655년 델라웨어강의 스웨덴 식민지를 차지함
     - 1664년 잉글랜드 함대에 항복
     - 1673년부터 1674년까지 네덜란드가 잠깐 되찾음
-  startEvents: []
-  endEvents: []
+  startEvents: [hudson-cupids-1609]
+  endEvents: [breda-1664]
   basis:
     type: primary_source
     refs: ["위키백과 New Netherland", "위키백과 Delaware Colony"]
@@ -113,8 +113,8 @@
     - 1685년 제임스 2세 즉위로 왕령 식민지가 됨
     - 이로쿼이 연맹과 손잡고 모피 무역을 꾸림
     - 1764년 국왕 판정으로 지금 버몬트 땅을 얻음
-  startEvents: []
-  endEvents: []
+  startEvents: [breda-1664]
+  endEvents: [boston-tea-party-1773]
   basis:
     type: primary_source
     refs: ["위키백과 Province of New York", "위키백과 New Netherland", "위키백과 New Hampshire Grants"]
@@ -133,8 +133,8 @@
     - 1664년 요크 공작이 버클리와 카터릿에게 넘김
     - 1674년부터 1702년까지 동저지와 서저지로 나뉨
     - 1702년 왕령 식민지로 다시 합침
-  startEvents: []
-  endEvents: []
+  startEvents: [breda-1664]
+  endEvents: [boston-tea-party-1773]
   basis:
     type: primary_source
     refs: ["위키백과 Province of New Jersey", "위키백과 Thirteen Colonies"]
@@ -154,8 +154,8 @@
     - 1682년 필라델피아를 세움
     - 1682년 델라웨어강 하류 세 군을 빌림
     - 1767년 메이슨 딕슨 선으로 메릴랜드와 경계를 정함
-  startEvents: []
-  endEvents: []
+  startEvents: [pennsylvania-1681]
+  endEvents: [boston-tea-party-1773]
   basis:
     type: primary_source
     refs: ["위키백과 Province of Pennsylvania", "위키백과 Delaware Colony", "위키백과 Thirteen Colonies"]
@@ -175,8 +175,8 @@
     - 1634년 세인트메리스에 처음 자리 잡음
     - 1649년 종교 관용법
     - 1689년부터 1715년까지 왕령 식민지
-  startEvents: []
-  endEvents: []
+  startEvents: [maryland-1632]
+  endEvents: [boston-tea-party-1773]
   basis:
     type: primary_source
     refs: ["위키백과 Province of Maryland", "위키백과 Thirteen Colonies"]
@@ -198,8 +198,8 @@
     - 1619년 북아메리카 첫 식민지 의회(버지니아 하원)를 엶
     - 1624년 버지니아 회사 헌장을 거두어 국왕 직할 식민지가 됨
     - 1768년 스탠윅스 요새 조약 뒤 오하이오강 남쪽(지금 켄터키)까지 넓힘
-  startEvents: []
-  endEvents: []
+  startEvents: [jamestown-1607]
+  endEvents: [boston-tea-party-1773]
   basis:
     type: primary_source
     refs: ["위키백과 Colony of Virginia", "위키백과 Thirteen Colonies", "위키백과 Treaty of Fort Stanwix (1768)"]
@@ -219,8 +219,8 @@
     - 1670년 찰스턴(옛 찰스타운) 정착, 1680년 지금 자리로 옮김
     - 북쪽 앨버말과 남쪽 찰스턴에 따로 총독을 둠
     - 1712년 남북 두 식민지로 갈라짐
-  startEvents: []
-  endEvents: []
+  startEvents: [carolina-bahamas-1663]
+  endEvents: [tuscarora-georgia-1711]
   basis:
     type: primary_source
     refs: ["위키백과 Province of Carolina", "위키백과 Thirteen Colonies"]
@@ -240,8 +240,8 @@
     - 1729년 국왕 직할 식민지가 됨
     - 1711~1715년 투스카로라 전쟁
     - 1775년 시카모어숄스에서 체로키에게서 서쪽 땅을 사들임
-  startEvents: []
-  endEvents: []
+  startEvents: [tuscarora-georgia-1711]
+  endEvents: [boston-tea-party-1773]
   basis:
     type: primary_source
     refs: ["위키백과 Province of North Carolina", "위키백과 Province of Carolina", "위키백과 Watauga Association"]
@@ -261,8 +261,8 @@
     - 1715~1717년 야마시 전쟁
     - 1719년 영주 정부를 몰아내고 1729년 국왕 직할 식민지가 됨
     - 쌀·인디고 농장 경제
-  startEvents: []
-  endEvents: []
+  startEvents: [tuscarora-georgia-1711]
+  endEvents: [boston-tea-party-1773]
   basis:
     type: primary_source
     refs: ["위키백과 Province of South Carolina", "위키백과 Province of Carolina"]
@@ -282,8 +282,8 @@
     - 스페인령 플로리다와 캐롤라이나 사이의 완충지
     - 1742년 블러디마시 싸움
     - 1752년 국왕 직할 식민지가 됨
-  startEvents: []
-  endEvents: []
+  startEvents: [tuscarora-georgia-1711]
+  endEvents: [boston-tea-party-1773]
   basis:
     type: primary_source
     refs: ["위키백과 Province of Georgia", "위키백과 Thirteen Colonies"]
@@ -303,8 +303,8 @@
     - 1712년 크로자의 교역 독점 특허, 1717년 미시시피 회사로 넘어감
     - 1718년 뉴올리언스 건설, 1722년부터 수도
     - 1762년 퐁텐블로 조약·1763년 파리 조약으로 나뉘어 넘어감
-  startEvents: []
-  endEvents: []
+  startEvents: [mississippi-1673]
+  endEvents: [paris-1763]
   basis:
     type: primary_source
     refs: ["위키백과 Louisiana (New France)", "위키백과 Antoine Crozat", "위키백과 New France"]
@@ -327,8 +327,8 @@
     - 1663년 국왕 직할 식민지가 됨
     - 1701년 디트로이트 건설과 몬트리올 대평화
     - 1760년 몬트리올 항복, 1763년 파리 조약으로 영국에 넘김
-  startEvents: []
-  endEvents: []
+  startEvents: [quebec-1608]
+  endEvents: [paris-1763]
   basis:
     type: primary_source
     refs: ["위키백과 New France", "위키백과 Fort Pontchartrain du Détroit", "위키백과 Fort Presque Isle"]
@@ -349,8 +349,8 @@
     - 1632년 생제르맹앙레 조약으로 프랑스에 돌아옴
     - 1654년 잉글랜드 점령, 1667년 브레다 조약으로 돌려받음
     - 1713년 위트레흐트 조약으로 반도를 영국에 넘김
-  startEvents: []
-  endEvents: []
+  startEvents: [acadia-1604]
+  endEvents: [queen-anne-utrecht-1701]
   basis:
     type: primary_source
     refs: ["위키백과 Acadia", "위키백과 New France", "위키백과 Treaty of Utrecht"]
@@ -370,8 +370,8 @@
     - 1713년 위트레흐트 조약 뒤 케이프브레턴섬에 세움
     - 1745년 뉴잉글랜드 민병대에 함락, 1748년 돌려받음
     - 1758년 루이스버그 함락
-  startEvents: []
-  endEvents: []
+  startEvents: [queen-anne-utrecht-1701]
+  endEvents: [acadian-expulsion-1755]
   basis:
     type: primary_source
     refs: ["위키백과 Treaty of Utrecht", "위키백과 Acadia", "위키백과 Strait of Canso"]
@@ -391,8 +391,8 @@
     - 식민지 사람의 정착과 땅 사들이기를 막음
     - 1768년 스탠윅스 요새 조약으로 켄터키 땅이 버지니아로
     - 1774년 퀘벡 법으로 북쪽이 퀘벡 주로
-  startEvents: []
-  endEvents: []
+  startEvents: [proclamation-1763]
+  endEvents: [quebec-act-1774]
   basis:
     type: primary_source
     refs: ["위키백과 Indian Reserve (1763)", "위키백과 Royal Proclamation of 1763", "위키백과 Quebec Act", "위키백과 Treaty of Fort Stanwix (1768)"]
@@ -416,7 +416,7 @@
     - 1519년 에르난 코르테스의 스페인군이 상륙함
     - 1521년 8월 13일 테노치티틀란이 함락됨
   startEvents: []
-  endEvents: []
+  endEvents: [tenochtitlan-1519]
   basis:
     type: primary_source
     refs: ["위키백과 Aztec Triple Alliance", "위키백과 아즈텍 제국"]
@@ -438,7 +438,7 @@
     - 구리와 청동을 다루는 금속 기술이 뛰어남
     - 1530년 스페인에 정복됨
   startEvents: []
-  endEvents: []
+  endEvents: [nuno-guzman-1529]
   basis:
     type: primary_source
     refs: ["위키백과 Tarascan state"]
@@ -462,7 +462,7 @@
     - 1532년 카하마르카에서 아타우알파가 사로잡힘
     - 1533년 스페인군이 쿠스코에 들어감
   startEvents: []
-  endEvents: []
+  endEvents: [inca-conquest-1529]
   basis:
     type: primary_source
     refs: ["위키백과 Inca Empire", "위키백과 Spanish conquest of the Inca Empire"]
@@ -483,7 +483,7 @@
     - 1537년 히메네스 데 케사다의 원정대가 들어옴
     - 1538년 산타페데보고타가 세워짐
   startEvents: []
-  endEvents: []
+  endEvents: [muisca-conquest-1537]
 # 글은 AND-M3 칸이 채움 — 위키 ko 표제. 땅 없는 나라 항목(Q4 A·C-M3-6 — early-ly-dynasty 꼴, polity라 basis는 AND-M3가 씀), 1537~1572
 - id: neo-inca-state
   level: polity
@@ -499,8 +499,8 @@
     - 1537년 망코 잉카 유팡키가 세움
     - 1571년 투팍 아마루가 왕위를 이음
     - 1572년 스페인군이 빌카밤바를 차지함
-  startEvents: []
-  endEvents: []
+  startEvents: [manco-inca-1536]
+  endEvents: [potosi-toledo-1545]
   basis:
     type: primary_source
     refs: ["위키백과 Neo-Inca State"]
@@ -523,8 +523,8 @@
     - 1637~1644년 요한 마우리츠 총독
     - 1645년 포르투갈계 농장주의 반란
     - 1654년 헤시피 항복, 1661년 헤이그 조약
-  startEvents: []
-  endEvents: []
+  startEvents: [dutch-brazil-1630]
+  endEvents: [pernambuco-1644]
   basis:
     type: primary_source
     refs: ["위키백과 Dutch Brazil", "위키백과 Colonial Brazil"]
@@ -545,8 +545,8 @@
     - 1641~1644년 네덜란드가 상루이스를 차지
     - 1751년 그랑파라·마라냥 주
     - 1775년 포르투갈령 브라질에 합쳐짐
-  startEvents: []
-  endEvents: []
+  startEvents: [maranhao-state-1621]
+  endEvents: [pombal-1751]
   basis:
     type: primary_source
     refs: ["위키백과 Maranhão (former state)", "위키백과 State of Grão-Pará and Maranhão", "위키백과 Colonial Brazil"]
