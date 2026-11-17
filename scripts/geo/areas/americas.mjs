@@ -7,6 +7,7 @@ import { joinEras } from '../shared.mjs';
 import { AM_SOURCE_TEXT } from './americas/table.mjs';
 import { era as modernEra } from './americas/modern.mjs';
 import { era as independenceEra } from './americas/independence.mjs';
+import { era as colonialEra } from './americas/colonial.mjs';
 
 // 이 파일에 직접 두는 나라 (나라 id: [[from, to, 멀티폴리곤, 확실성?], ...], 해는 천문 연도, to는 미포함)
 // usa(미국): 옛 손그림(1848~1899, west.mjs에서 옮겨 온 것)은 아메리카 M2 US-M2가 지웠다 — 1776~1899는 시대 파일 americas/independence.mjs, 1900~는 americas/modern.mjs(모두 조각 바탕)
@@ -25,7 +26,8 @@ const EXTENDABLE = {
 };
 
 // 시대 파일 잇기 (npm run new:area): 이 파일의 나라 다음에 시대 파일(areas/americas/<시대>.mjs)의 나라·빈 땅 검사 구역·비운 땅을 붙인다(shared.mjs joinEras)
-const joined = joinEras('americas', { versions: ownVersions, extendable: EXTENDABLE, gapZones: [], voids: [] }, [independenceEra, modernEra]);
+//   차례는 과거 시대가 앞(M3 colonial 1492~1775 · M2 independence 1776~1899 · M1 modern 1900~ — 거꾸로면 같은 id 이어 붙이기가 '기간이 겹침'으로 멈춤, M3 뼈대 2026-11-17)
+const joined = joinEras('americas', { versions: ownVersions, extendable: EXTENDABLE, gapZones: [], voids: [] }, [colonialEra, independenceEra, modernEra]);
 export const { versions, gapZones, voids, extensions, extendable } = joined;
 // 출처 문구(sourceOf — 나라 id → 문구, 엔진이 권역 source보다 먼저 씀): 이 권역 나라 모두 table.mjs의 AM_SOURCE_TEXT(usa 예외는 손그림을 없앤 M2 US-M2가 지움 — M-M1-9).
 //   시대 파일은 era.source를 두지 않는다(두면 joinEras가 '출처 문구가 다름'으로 멈출 수 있음)

@@ -1806,7 +1806,6 @@
 - { type: vassal_of, subject: newfoundland, object: uk, from: 1707, to: 1906 } # 영국 식민지(1610~ — 대상 uk가 1707부터라 그 앞은 M2·M3 몫), 1907-09-26 자치령 앞 해까지(G5, 위키 en Dominion of Newfoundland)
 - { type: vassal_of, subject: newfoundland, object: uk, from: 1934, to: 1948 } # 1934-02-16 위원회 정부(영국 임명)~1949-03-31 캐나다 합류 앞 해(G5)
 - { type: vassal_of, subject: jamaica, object: uk, from: 1707, to: 1961 } # 1655 영국 점령(대상 uk가 1707부터), 1962-08-06 독립 앞 해까지(위키 en West Indies Federation)
-- { type: vassal_of, subject: bahamas, object: uk, from: 1718, to: 1972 } # 1718 왕령 총독 우즈 로저스 부임, 1973-07-10 독립 앞 해까지(1964 내정 자치는 글 — 위키 en History of the Bahamas)
 - { type: occupied_by, subject: cuba, object: usa, from: 1906, to: 1908 } # 두 번째 미국 점령 1906-09~1909-02-06(G14, 위키 en Provisional Government of Cuba)
 - { type: occupied_by, subject: haiti, object: usa, from: 1915, to: 1933 } # 1915-07-28 상륙~1934-08-01 철수(G14, 위키 en United States occupation of Haiti)
 - { type: occupied_by, subject: dominican-republic, object: usa, from: 1916, to: 1923 } # 1916-05-05 상륙~1924-09-18 철수(G14, 위키 en United States occupation of the Dominican Republic (1916–1924))
@@ -1879,28 +1878,20 @@
 - { type: vassal_of, subject: spanish-falkland-islands, object: spain, from: 1767, to: 1810 } # 1767 프랑스에게서 넘겨받음 — 1811 수비대 철수 앞 해까지(위키 en History of the Falkland Islands)
 
 # ── 아메리카 M2 MX-M2 (멕시코·텍사스·미국 서남, 2026-11-16) ──
-# 종속: 누에바에스파냐 부왕령은 1535년 첫 부왕 부임부터 스페인 식민 단위, 1821-09-28 멕시코 제국 독립 선언(위키 en Viceroyalty of New Spain)
-- { type: vassal_of, subject: new-spain-viceroyalty, object: spain, from: 1535, to: 1820 }
 # 종속: 유카탄 총사령부는 1617년부터 스페인 식민 단위(누에바에스파냐 부왕령 아래), 1821-09-15 독립 선언·11-02 멕시코 제국 편입(위키 en Captaincy General of Yucatan)
 - { type: vassal_of, subject: yucatan-captaincy, object: spain, from: 1617, to: 1820 }
 
 # ── 아메리카 M2 AND-N-M2 (그란콜롬비아·안데스, 2026-11-16) ──
-- { type: vassal_of, subject: new-granada-viceroyalty, object: spain, from: 1717, to: 1818 } # 1717-05-27 설치(1723~1738 거둠 — 1776 앞은 M3 몫), 1819 보야카 뒤 그란콜롬비아(to는 앞 해 — 위키 en Viceroyalty of New Granada)
 - { type: vassal_of, subject: venezuela-captaincy-general, object: spain, from: 1777, to: 1818 } # 1777-09-08 왕령으로 설치, 1819 그란콜롬비아(위키 en Captaincy General of Venezuela)
-- { type: vassal_of, subject: peru-viceroyalty, object: spain, from: 1542, to: 1824 } # 1542-11-20 신법, 1824-12-09 아야쿠초·알토페루 1825-04(그해 말 볼리비아 — to는 앞 해, 위키 en Viceroyalty of Peru)
 
 # ── 아메리카 M2 CAM-M2 (중앙아메리카, 2026-11-16) ──
-- { type: vassal_of, subject: guatemala-captaincy, object: spain, from: 1609, to: 1821 } # 스페인의 중앙아메리카 식민 단위 — 1821-09-15 독립 선언 뒤 1822 멕시코 제1제국 합류 앞 해까지(위키 en Captaincy General of Guatemala)
 - { type: vassal_of, subject: belize, object: uk, from: 1798, to: 1980 } # 1798-09-10 세인트조지스키 싸움 뒤 영국 정착지가 굳음(위키 en Battle of St. George's Caye), 1862 영국령 온두라스 식민지, 1981-09-21 독립 — 그해 말 규칙으로 1980까지. 1973-06-01 이름만 벨리즈로
 - { type: vassal_of, subject: mosquito-kingdom, object: uk, from: 1844, to: 1859 } # 1844 영국 보호 선언 — 1860-01-28 마나과 조약 앞 해까지(위키 en Mosquito Coast, 0단계 기본값 19)
 - { type: vassal_of, subject: mosquito-kingdom, object: nicaragua, from: 1860, to: 1893 } # 1860 마나과 조약으로 니카라과 주권 아래 자치 보호구 — 1894-11-20 병합 앞 해까지(위키 en Mosquito Coast)
 
 # ── 아메리카 M2 CAR-M2 (카리브, 2026-11-16) ──
-- { type: vassal_of, subject: cuba-captaincy-general, object: spain, from: 1607, to: 1898 } # 스페인의 쿠바 식민 단위 — 1898-12-10 파리 조약, 1899-01-01 미국 군정 앞 해까지(위키 en Captaincy General of Cuba)
-- { type: vassal_of, subject: santo-domingo-captaincy, object: spain, from: 1535, to: 1800 } # 1795 바젤 조약은 넘김 결정뿐, 1801-01 투생 루베르튀르 입성 앞 해까지 스페인이 다스림(위키 en Era de Francia·Haitian occupation of Santo Domingo)
 - { type: vassal_of, subject: santo-domingo-captaincy, object: france, from: 1801, to: 1808 } # 1801-01 투생 입성·1802 르클레르 원정군 — 1808-11-07 팔로인카도 싸움 뒤 1809-07 산토도밍고 항복 앞 해까지(같은 문서)
 - { type: vassal_of, subject: santo-domingo-captaincy, object: spain, from: 1809, to: 1821 } # 1809-07 스페인 지배로 돌아감 — 1821-12-01 스페인령 아이티 선포, 1822-02-09 아이티 입성 앞 해까지(같은 문서)
-- { type: vassal_of, subject: saint-domingue, object: france, from: 1697, to: 1803 } # 1697 레이스베이크 조약 — 1804-01-01 아이티 독립 앞 해까지(위키 en Saint-Domingue)
 
 # ── 아메리카 M2 NW-M2 (알래스카·추코트카·그린란드·브리티시컬럼비아, 2026-11-16) ──
 # 종속: 러시아령 아메리카는 1799 러시아-아메리카 회사 헌장 땅, 1867-10-18 미국 인도 앞 해까지(위키 en Russian America)
@@ -1918,8 +1909,6 @@
 # 종속: 포르투갈령 브라질은 1549년 첫 총독부터 포르투갈 식민지, 1815-12-16 포르투갈 브라질 알가르브 연합왕국의 동등한 왕국이 되어 줄을 끝냄(to는 앞 해 — G2-8, 위키 en United Kingdom of Portugal, Brazil and the Algarves)
 - { type: vassal_of, subject: portuguese-brazil, object: portugal, from: 1549, to: 1814 }
 # 종속: 네덜란드령 에세키보·버비스는 네덜란드 서인도 회사 식민지 — 본국 사슬 네덜란드 공화국 → 바타비아 공화국 1795 → 홀란트 왕국 1806(1810~1813 프랑스 병합 때는 줄 없음, 본국 id 표). from 1616은 조사 값(M3가 닫음)
-- { type: vassal_of, subject: dutch-essequibo-berbice, object: dutch-republic, from: 1616, to: 1794 }
-- { type: vassal_of, subject: dutch-essequibo-berbice, object: batavian-republic, from: 1795, to: 1805 }
 - { type: vassal_of, subject: dutch-essequibo-berbice, object: kingdom-of-holland, from: 1806, to: 1809 }
 # 점령: 영국군이 1803년 9월 다시 차지해 1814-08-13 런던 조약으로 넘겨받을 때까지(주권 유지 — G2 점령 표, 1796~1802 점령은 되돌려져 글, 위키 en British Guiana)
 - { type: occupied_by, subject: dutch-essequibo-berbice, object: uk, from: 1803, to: 1813 }
@@ -1931,3 +1920,82 @@
 - { type: occupied_by, subject: dutch-suriname, object: uk, from: 1804, to: 1815 }
 # 점령: 포르투갈·영국군이 1809년 1월 카옌을 차지해 1817년 11월 돌려줌(주권 유지·to는 반환 앞 해 — G2 점령 표, 위키 en French Guiana)
 - { type: occupied_by, subject: french-guiana, object: portugal, from: 1809, to: 1816 }
+
+# ── 아메리카 M3 NEC-M3 (뉴잉글랜드·중부, 2026-11-17) ──
+# 종속: 뉴잉글랜드·중부 일곱 식민지는 헌장·왕령 식민지 — 1706까지 잉글랜드, 1707 연합법부터 영국(본국 id 표), 1776 독립 선언 앞 해까지(위키 en Thirteen Colonies)
+- { type: vassal_of, subject: massachusetts-bay, object: england, from: 1629, to: 1706 }
+- { type: vassal_of, subject: massachusetts-bay, object: uk, from: 1707, to: 1775 }
+- { type: vassal_of, subject: connecticut-colony, object: england, from: 1636, to: 1706 }
+- { type: vassal_of, subject: connecticut-colony, object: uk, from: 1707, to: 1775 }
+- { type: vassal_of, subject: new-hampshire, object: england, from: 1679, to: 1706 }
+- { type: vassal_of, subject: new-hampshire, object: uk, from: 1707, to: 1775 }
+- { type: vassal_of, subject: maryland-colony, object: england, from: 1632, to: 1706 }
+- { type: vassal_of, subject: maryland-colony, object: uk, from: 1707, to: 1775 }
+- { type: vassal_of, subject: province-of-new-york, object: england, from: 1664, to: 1706 }
+- { type: vassal_of, subject: province-of-new-york, object: uk, from: 1707, to: 1775 }
+- { type: vassal_of, subject: province-of-new-jersey, object: england, from: 1664, to: 1706 }
+- { type: vassal_of, subject: province-of-new-jersey, object: uk, from: 1707, to: 1775 }
+- { type: vassal_of, subject: province-of-pennsylvania, object: england, from: 1681, to: 1706 }
+- { type: vassal_of, subject: province-of-pennsylvania, object: uk, from: 1707, to: 1775 }
+# 종속: 뉴네덜란드는 1624 네덜란드 공화국 속주(서인도 회사 경영)부터, 1664-08-27 잉글랜드 항복 앞 해까지(위키 en New Netherland — 1614 특허는 교역 독점이라 넣지 않음)
+- { type: vassal_of, subject: new-netherland, object: dutch-republic, from: 1624, to: 1663 }
+# 이음: 1664 뉴네덜란드 항복 뒤 요크 공작령 뉴욕과 그 남쪽을 넘겨받은 뉴저지(위키 en New Netherland·Province of New Jersey)
+- { type: successor_of, subject: province-of-new-york, object: new-netherland, from: 1664, to: null }
+- { type: successor_of, subject: province-of-new-jersey, object: new-netherland, from: 1664, to: null }
+
+# ── 아메리카 M3 SEL-M3 (남부·플로리다·루이지애나, 2026-11-17) ──
+# 종속: 버지니아 식민지는 1607 제임스타운부터 잉글랜드 식민지(1624 국왕 직할), 1707 연합법부터 대상 uk(위키 en Colony of Virginia·Thirteen Colonies)
+- { type: vassal_of, subject: virginia-colony, object: england, from: 1607, to: 1706 }
+- { type: vassal_of, subject: virginia-colony, object: uk, from: 1707, to: 1775 }
+# 종속: 캐롤라이나 식민지는 1663-03-24 찰스 2세 헌장의 영주 식민지, 1712 남북으로 갈림(위키 en Province of Carolina)
+- { type: vassal_of, subject: province-of-carolina, object: england, from: 1663, to: 1706 }
+- { type: vassal_of, subject: province-of-carolina, object: uk, from: 1707, to: 1711 }
+# 종속: 노스·사우스캐롤라이나는 1712 갈린 뒤 영국 식민지(1729 국왕 직할), 1776 독립 선언 앞 해까지
+- { type: vassal_of, subject: north-carolina, object: uk, from: 1712, to: 1775 }
+- { type: vassal_of, subject: south-carolina, object: uk, from: 1712, to: 1775 }
+# 종속: 조지아 식민지는 1732 헌장(신탁 관리인, 1752 국왕 직할)부터 영국 식민지(위키 en Province of Georgia)
+- { type: vassal_of, subject: province-of-georgia, object: uk, from: 1732, to: 1775 }
+# 종속: 프랑스령 루이지애나는 1682 라살 선언부터 프랑스 식민지, 1762-11-03 퐁텐블로·1763-02-10 파리 조약으로 넘김(위키 en Louisiana (New France))
+- { type: vassal_of, subject: french-louisiana, object: france, from: 1682, to: 1762 }
+# 종속: 스페인령 플로리다 앞 시기 — 1565-09 세인트오거스틴 건설부터 1763 파리 조약 앞 해까지(뒤 시기 1783~1820은 M2 줄, 위키 en Spanish Florida)
+- { type: vassal_of, subject: spanish-florida, object: spain, from: 1565, to: 1762 }
+# 이음: 캐롤라이나가 1712 남북 두 식민지로 갈림 · 루이지애나 서쪽은 1762 퐁텐블로 조약으로 스페인령 · 플로리다는 1763 파리 조약으로 영국령
+- { type: successor_of, subject: north-carolina, object: province-of-carolina, from: 1712, to: null }
+- { type: successor_of, subject: south-carolina, object: province-of-carolina, from: 1712, to: null }
+- { type: successor_of, subject: spanish-louisiana, object: french-louisiana, from: 1762, to: null }
+- { type: successor_of, subject: british-florida, object: spanish-florida, from: 1763, to: null }
+
+# ── 아메리카 M3 NF-M3 (누벨프랑스·허드슨만·오대호·북동, 2026-11-17) ──
+- { type: vassal_of, subject: new-france-canada, object: france, from: 1608, to: 1762 } # 1608 퀘벡 건설(1663 국왕 직할)~1763-02-10 파리 조약 앞 해(위키 en New France)
+- { type: vassal_of, subject: acadia, object: france, from: 1604, to: 1712 } # 1604 생크루아섬 정착~1713 위트레흐트 조약 앞 해(1654~1670 잉글랜드 점령은 글 — G3-13, 위키 en Acadia)
+- { type: vassal_of, subject: ile-royale, object: france, from: 1713, to: 1757 } # 1713 위트레흐트 조약~1758 루이스버그 함락 앞 해(위키 en Treaty of Utrecht)
+- { type: vassal_of, subject: indian-reserve, object: uk, from: 1763, to: 1774 } # 1763-10-07 왕실 선언이 정한 왕실 보호지 — 지도 끝 해(1774 퀘벡 법·1775 테네시)까지(Q2 C, 위키 en Indian Reserve (1763))
+- { type: vassal_of, subject: ruperts-land, object: england, from: 1670, to: 1706 } # 1670-05-02 헌장~1707 연합법 앞 해(1707부터 uk 줄 — 본국 id 표)
+- { type: vassal_of, subject: newfoundland, object: england, from: 1610, to: 1706 } # 1610 정착 식민지~1707 연합법 앞 해(1707부터 uk 줄 — 본국 id 표)
+- { type: successor_of, subject: province-of-quebec, object: new-france-canada, from: 1763, to: null } # 1763 파리 조약으로 받은 누벨프랑스 캐나다 땅에 세움(위키 en Royal Proclamation of 1763)
+- { type: successor_of, subject: nova-scotia, object: acadia, from: 1713, to: null } # 1713 위트레흐트 조약으로 받은 아카디아 반도에 세움(위키 en Acadia)
+
+# ── 아메리카 M3 MXC-M3 (멕시코·중앙아메리카·1492 두 나라, 2026-11-17) ──
+# 종속: 누에바에스파냐는 1521-08-13 테노치티틀란 함락 뒤 왕국(1521~1534)·1535년 첫 부왕 부임부터 부왕령으로 스페인 식민 단위, 1821-09-28 멕시코 제국 독립 선언(위키 en Viceroyalty of New Spain — Q1 A)
+- { type: vassal_of, subject: new-spain-viceroyalty, object: spain, from: 1521, to: 1820 }
+- { type: vassal_of, subject: guatemala-captaincy, object: spain, from: 1527, to: 1821 } # 1527 과테말라 총독령 설립(1543 아우디엔시아·1609 총사령부 — 이름 줄, Q1 A) — 1821-09-15 독립 선언 뒤 1822 멕시코 제1제국 합류 앞 해까지(위키 en Captaincy General of Guatemala)
+- { type: successor_of, subject: new-spain-viceroyalty, object: aztec, from: 1521, to: null } # 1521-08-13 테노치티틀란 함락 뒤 그 자리에 누에바에스파냐를 세움(위키 en Viceroyalty of New Spain — 앞 나라 아즈텍 제국)
+
+# ── 아메리카 M3 AND-M3 (안데스·라플라타·1492 잉카, 2026-11-17) ──
+- { type: vassal_of, subject: peru-viceroyalty, object: spain, from: 1529, to: 1824 } # 1529 톨레도 협약 누에바카스티야 총독부(1542-11-20 신법으로 부왕령 — Q1 A), 1824-12-09 아야쿠초·알토페루 1825-04(to는 앞 해, 위키 en Governorate of New Castile·en Viceroyalty of Peru)
+- { type: vassal_of, subject: new-granada-viceroyalty, object: spain, from: 1717, to: 1722 } # 1717-05-27 설치, 1723-11-05 거둠(to는 앞 해 — G3-7, 위키 en Viceroyalty of New Granada)
+- { type: vassal_of, subject: new-granada-viceroyalty, object: spain, from: 1739, to: 1818 } # 1739-08-20 다시 세움, 1819 보야카 뒤 그란콜롬비아(to는 앞 해 — 위키 en Viceroyalty of New Granada)
+- { type: successor_of, subject: peru-viceroyalty, object: inca, from: 1533, to: null } # 1533-11-15 쿠스코 함락 뒤 누에바카스티야 총독부가 잉카 제국 땅을 넘겨받음(위키 en Governorate of New Castile — 앞 단위로 잉카 제국)
+
+# ── 아메리카 M3 CAB-M3 (카리브·브라질·기아나, 2026-11-17) ──
+- { type: vassal_of, subject: dutch-essequibo-berbice, object: batavian-republic, from: 1795, to: 1805 }
+- { type: vassal_of, subject: cuba-captaincy-general, object: spain, from: 1511, to: 1898 } # 1511 디에고 벨라스케스의 바라코아(총사령부 1607은 이름 — M3 Q1 A) — 1898-12-10 파리 조약, 1899-01-01 미국 군정 앞 해까지(위키 en Captaincy General of Cuba)
+- { type: vassal_of, subject: santo-domingo-captaincy, object: spain, from: 1492, to: 1800 } # 1492 콜럼버스 첫 항해(산토도밍고 1496 — M3 Q1 A·C-M3-9) — 1801-01 투생 루베르튀르 입성 앞 해까지(위키 en Captaincy General of Santo Domingo·Era de Francia)
+- { type: vassal_of, subject: saint-domingue, object: france, from: 1665, to: 1803 } # 1665 루이 14세가 섬 서쪽 프랑스 식민을 공식 인정(1697 레이스베이크 조약은 글) — 1804-01-01 아이티 독립 앞 해까지(위키 en Saint-Domingue)
+- { type: vassal_of, subject: jamaica, object: england, from: 1655, to: 1706 } # 1655-05 잉글랜드 점령(1670 마드리드 조약 인정) — 1707 연합법 앞 해까지(그 뒤 uk 줄, 위키 en Spanish Jamaica)
+- { type: vassal_of, subject: bahamas, object: england, from: 1670, to: 1706 } # 1670 캐롤라이나 영주 특허(C-M3-8) — 1707 연합법 앞 해까지(위키 en History of the Bahamas)
+- { type: vassal_of, subject: bahamas, object: uk, from: 1707, to: 1972 } # 1707 연합법(1718 왕령 총독 우즈 로저스 부임은 글), 1973-07-10 독립 앞 해까지(1964 내정 자치는 글 — 위키 en History of the Bahamas)
+- { type: vassal_of, subject: dutch-essequibo-berbice, object: dutch-republic, from: 1621, to: 1794 } # 1621 네덜란드 서인도 회사 식민지(1616 교역소는 글 — d D5) — 1795 바타비아 공화국 앞 해까지(위키 en Essequibo (colony))
+- { type: vassal_of, subject: dutch-brazil, object: dutch-republic, from: 1630, to: 1653 } # 1630 서인도 회사의 올린다·헤시피 점령 — 1654-01 헤시피 항복 앞 해까지(위키 en Dutch Brazil, G3-35)
+- { type: vassal_of, subject: state-of-maranhao, object: portugal, from: 1621, to: 1774 } # 1621-06-13 칙령 — 1775 브라질 주 통합 앞 해까지(이베리아 연합 1580~1640도 portugal 그대로 — d D1, 위키 en Maranhão (former state))
+- { type: successor_of, subject: portuguese-brazil, object: state-of-maranhao, from: 1775, to: null } # 1775 그랑파라·마라냥 쪽 두 주를 브라질 주에 합침(위키 en Colonial Brazil)

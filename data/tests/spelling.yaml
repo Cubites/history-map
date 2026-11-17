@@ -7288,11 +7288,6 @@
   note: "Mbwila 전투(1665). 위키 ko 표제 대조는 웹 미확인"
   scope: 사하라 이남·중서부
 
-- use: 생루이
-  avoid: [상루이]
-  note: "Saint-Louis(세네갈). 위키 ko 표제 대조는 웹 미확인"
-  scope: 사하라 이남·서부
-
 - use: 고레
   avoid: [고래 섬]
   note: "Gorée 섬. 위키 ko 표제 대조는 웹 미확인"
@@ -8333,6 +8328,161 @@
   avoid: [그랑 파라]
   note: "Grão-Pará(포르투갈령 브라질 북쪽 주, 1775 합침). 위키 ko 표제 없음 — 가칭(BRG-M2)"
   scope: 아메리카·남아메리카
+
+# ── 아메리카 M3 공통(2026-11-17, M3 뼈대): 공용 표기표 — 새 항목 이름·옛 이름·조약·도시·땅 이름을 외래어 표기법 → 표준국어대사전 → 위키백과 한국어판 표제(m3/skel/ko-titles.txt) 순으로 확인한 것 가운데 넘겨주기·흔한 잘못 꼴을 막는 것만(avoid 글자는 저장소 쓰임 0을 확인 — 표 전체는 m3/SKEL-NOTE.md 끝) ──
+
+- use: 매사추세츠만 식민지
+  avoid: [매사추세츠 베이 식민지]
+  note: "Massachusetts Bay Colony(1629~1776 — massachusetts-bay). 위키 ko 표제(M3 뼈대 확인, m3/skel/ko-titles.txt)"
+  scope: 아메리카·북아메리카 식민지
+
+- use: 뉴네덜란드
+  avoid: [신네덜란드]
+  note: "New Netherland(1614~1664 — new-netherland). 위키 ko 표제(M3 뼈대 확인, m3/skel/ko-titles.txt)"
+  scope: 아메리카·북아메리카 식민지
+
+- use: 일루아얄
+  avoid: [루아얄섬]
+  note: "Île Royale(1713~1758 케이프브레턴섬의 프랑스 식민지 — ile-royale). 위키 ko 표제 없음 — 가칭(섬 표제는 '케이프브레턴섬', M3 뼈대)"
+  scope: 아메리카·북아메리카 식민지
+
+- use: 오하이오 영토
+  avoid: [오하이오 컨트리]
+  note: "Ohio Country(오대호 남쪽·오하이오강 북쪽 땅, 1753 프랑스·1763 영국). 위키 ko 표제(M3 뼈대 확인, m3/skel/ko-titles.txt)('오하이오 컨트리'가 넘겨줌)"
+  scope: 아메리카·북아메리카 식민지
+
+- use: 타라스코 왕국
+  avoid: [푸레페차 왕국, 타라스코 제국]
+  note: "Tarascan State(미초아칸, ~1530 — tarascan). 위키 ko 표제 없음 — 가칭(M3 뼈대, 민족은 푸레페차)"
+  scope: 아메리카·메소아메리카
+
+- use: 누에바카스티야 총독부
+  avoid: [누에바카스티야 총독령]
+  note: "Gobernación de Nueva Castilla(1529 톨레도 협약으로 피사로에게 준 땅 — 1542 페루 부왕령, peru-viceroyalty 이름 글). 위키 ko 표제(M3 뼈대 확인, m3/skel/ko-titles.txt)('누에바카스티야'가 넘겨줌 — 결정·지시문 가칭 '총독령'을 고침)"
+  scope: 아메리카·스페인 식민지
+
+- use: 마라냥 주
+  avoid: [마라냥 국]
+  note: "Estado do Maranhão(1621~1775 포르투갈 식민 단위 — state-of-maranhao). 위키 ko 표제 없음 — 가칭(지금 주 '마라냥주'와 띄어 써 구별, M3 뼈대)"
+  scope: 아메리카·남아메리카
+
+- use: 레이스베이크 조약
+  avoid: [리스윅 조약]
+  note: "Peace of Ryswick(1697 — 생도맹그). 위키 ko 표제(M3 뼈대 확인, m3/skel/ko-titles.txt)"
+  scope: 아메리카·카리브
+
+# ── 아메리카 M3 NEC-M3 (뉴잉글랜드·중부, 2026-11-17) ──
+
+- use: 페터르 스타위베산트
+  avoid: [스타이베선트]
+  note: "Peter Stuyvesant(뉴네덜란드 마지막 총독 1647~1664 — new-netherland). 위키 ko 표제(NEC-M3 확인)"
+  scope: 아메리카·뉴네덜란드
+
+- use: 메이슨 딕슨 선
+  avoid: [메이슨-딕슨 선]
+  note: "Mason–Dixon line(1763~1767 측량 — 펜실베이니아·메릴랜드 경계). 위키 ko 표제('메이슨-딕슨 선'이 넘겨줌, NEC-M3 확인)"
+  scope: 아메리카·13식민지
+
+# ── 아메리카 M3 SEL-M3 (남부·플로리다·루이지애나, 2026-11-17) ──
+
+- use: 빌럭시
+  avoid: [비록시, 빌록시]
+  note: "Biloxi(1699 프랑스 기지 — french-louisiana 글). 위키 ko 표제 빌럭시 (미시시피주)(M3 SEL-M3 — 지시문 기준 도시 표기)"
+  scope: 아메리카·북아메리카 식민지
+
+# ── 아메리카 M3 NF-M3 (누벨프랑스·허드슨만·오대호·북동, 2026-11-17) ──
+
+# ── 아메리카 M3 MXC-M3 (멕시코·중앙아메리카·1492 두 나라, 2026-11-17) ──
+
+- use: 틀락스칼라
+  avoid: [트락스칼라, 틀라스칼라]
+  note: "Tlaxcala(아즈텍 삼각 동맹에 굴복하지 않은 나우아 도시 연합·지금 주). 위키 ko 표제(M3 MXC-M3 확인, impl-mxc-m3/kot-out.txt)"
+  scope: 아메리카·메소아메리카
+
+- use: 친춘찬
+  avoid: [틴툰찬, 틴춘찬]
+  note: "Tzintzuntzan(타라스코 왕국의 도읍). 위키 ko 표제(M3 MXC-M3 확인)"
+  scope: 아메리카·메소아메리카
+
+- use: 사카테카스
+  avoid: [자카테카스]
+  note: "Zacatecas(1546 은광 — 누에바에스파냐 북쪽 개척). 위키 ko 표제(M3 MXC-M3 확인)"
+  scope: 아메리카·스페인 식민지
+
+- use: 페드로 데 알바라도
+  avoid: [페드로 알바라도]
+  note: "Pedro de Alvarado(1524 과테말라 정복). 위키 ko 표제(M3 MXC-M3 확인)"
+  scope: 아메리카·스페인 식민지
+
+- use: 치치메카
+  avoid: [치치멕]
+  note: "Chichimeca(멕시코 북부 원주민을 묶어 부른 이름). 위키 ko 표제(M3 MXC-M3 확인)"
+  scope: 아메리카·메소아메리카
+
+- use: 레르마강
+  avoid: [레르마 강]
+  note: "Río Lerma(타라스코 왕국 북쪽 끝). 위키 ko 표제 없음 — 가칭(M3 MXC-M3, 강 이름은 붙여 씀 — 저장소 꼴)"
+  scope: 아메리카·메소아메리카
+
+- use: 발사스강
+  avoid: [발사스 강]
+  note: "Río Balsas(타라스코 왕국 남쪽·아즈텍과 맞선 강). 위키 ko 표제 없음 — 가칭(M3 MXC-M3)"
+  scope: 아메리카·메소아메리카
+
+- use: 안티과과테말라
+  avoid: [안티구아과테말라, 안티구아 과테말라]
+  note: "Antigua Guatemala(1543~1773 과테말라 총사령부의 행정 중심). 공용 표기표(M3 뼈대 SKEL-NOTE 끝 표)"
+  scope: 아메리카·중앙아메리카
+
+- use: 누에바비스카야
+  avoid: [누에바 비스카야, 누에바비즈카야]
+  note: "Nueva Vizcaya(1562 이바라 — 두랑고·치와와, new-spain-viceroyalty 글). 위키 ko 표제 없음 — 공용 표기표 가칭(M3 뼈대)"
+  scope: 아메리카·스페인 식민지
+
+- use: 누에보레온 왕국
+  avoid: [누에보 레온 왕국]
+  note: "Nuevo Reino de León(1582 — 지금 누에보레온주·코아우일라주 둘레, new-spain-viceroyalty 글). 위키 ko 표제 없음 — 공용 표기표 가칭(M3 뼈대)"
+  scope: 아메리카·스페인 식민지
+
+# ── 아메리카 M3 AND-M3 (안데스·라플라타·1492 잉카, 2026-11-17) ──
+
+- use: 파차쿠티
+  avoid: [파차쿠텍]
+  note: "Pachacuti(잉카 9대 — 1438 타완틴수유를 넓히기 시작, inca). 위키 ko 표제(AND-M3 확인, m3/impl-and-m3/ko-titles.txt)"
+  scope: 아메리카·안데스
+
+- use: 투팍 잉카 유팡키
+  avoid: [토파 잉카]
+  note: "Topa Inca Yupanqui(잉카 10대 — 키토~마울레강 정복, inca). 위키 ko 표제(AND-M3 확인, m3/impl-and-m3/ko-titles.txt)"
+  scope: 아메리카·안데스
+
+- use: 우아스카르
+  avoid: [와스카르]
+  note: "Huáscar(잉카 12대 — 아타우알파와 왕위 다툼, inca). 위키 ko 표제(AND-M3 확인, m3/impl-and-m3/ko-titles.txt)"
+  scope: 아메리카·안데스
+
+- use: 망코 잉카 유팡키
+  avoid: [만코 잉카]
+  note: "Manco Inca Yupanqui(1537 빌카밤바 — neo-inca-state). 위키 ko 표제(AND-M3 확인, m3/impl-and-m3/ko-titles.txt)"
+  scope: 아메리카·안데스
+
+- use: 티투 쿠시 유팡키
+  avoid: [티투 쿠시 유판키]
+  note: "Titu Cusi Yupanqui(신잉카국 왕 — neo-inca-state). 위키 ko 표제(AND-M3 확인, m3/impl-and-m3/ko-titles.txt)('티투 쿠시'가 넘겨줌)"
+  scope: 아메리카·안데스
+
+- use: 빌카밤바
+  avoid: [빌카팜파]
+  note: "Vilcabamba(신잉카국 중심지, 1572 스페인군 입성 — neo-inca-state). 위키 ko 표제(AND-M3 확인, m3/impl-and-m3/ko-titles.txt)"
+  scope: 아메리카·안데스
+
+# ── 아메리카 M3 CAB-M3 (카리브·브라질·기아나, 2026-11-17) ──
+
+- use: 생루이
+  avoid: [상루이]
+  except: [상루이스]
+  note: "Saint-Louis(세네갈). 위키 ko 표제 대조는 웹 미확인. 브라질 마라냥의 São Luís(상루이스 — 아메리카 M3 공용 표기표)는 다른 도시라 except(아메리카 M3 CAB-M3)"
+  scope: 사하라 이남·서부
 
 # ── 오세아니아 첫판 (0단계, 2026-11-17) ──
 # 0단계 조사 R-EV(`events-spelling.md` 3절)가 위키백과 한국어판 표제를 연 것과 창구 ② 기본값 16·18(누벨칼레도니, '호주'는 avoid 걸지 않음)대로.

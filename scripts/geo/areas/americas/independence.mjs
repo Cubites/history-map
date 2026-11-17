@@ -46,7 +46,7 @@
 //   예: own(idsOf('PRY'), [[M2_START, 'rio-de-la-plata-viceroyalty'], [1811, 'paraguay']]) · own(['US-NV', 'US-UT'], [[M2_START, null], [1819, 'new-spain-viceroyalty'], [1822, 'mexico'], [1848, 'usa']]).
 //   주인 null은 '이 권역 나라가 칠하지 않는 땅'이다: 일부러 비운 땅(칸 voids에 한 줄과 이유 — 문서 없는 청구·분쟁 띠·1만 km² 미만 속령 섬 등)만.
 // 표 밖 땅 extra(id, from, to, { units, shape, name }): 손 도형(조각 밖 — 러시아령 아메리카 해안 띠·M1 알류샨 동경 쪽·180° 틈 띠)과 그 기간 더하는 단위. to는 1900 이하(null은 M2_END).
-// 시대 경계 맞물림: 앞 시대 파일이 없다(M3 colonial 1492~1775가 생기면 그 끝 해 = M2_START). 뒤 시대 M1 modern.mjs는 1900부터 — 이 파일 버전은 모두 1900 이하에서 끝난다(to: null 없음, 아래 확인 줄).
+// 시대 경계 맞물림: 앞 시대 M3 colonial.mjs가 1492~1775(끝 해 = M2_START). 뒤 시대 M1 modern.mjs는 1900부터 — 이 파일 버전은 모두 1900 이하에서 끝난다(to: null 없음, 아래 확인 줄).
 // 출처 문구: 이 시대 파일은 era.source를 두지 않는다 — 권역 파일 americas.mjs의 sourceOf가 table.mjs AM_SOURCE_TEXT를 붙인다(usa도 같은 문구 — M-M1-9).
 // 이름·확실성: 근거가 약한 경계는 estimated(기본값). 이름은 data/tests/spelling.yaml(아메리카 첫판·M1 공통·M2 공통·칸 머리)과 m2/SKEL-NOTE.md 끝 공용 표기표를 먼저 본다.
 //

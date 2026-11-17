@@ -2064,3 +2064,2410 @@
   expect: french-guiana
   url: https://en.wikipedia.org/wiki/French_Guiana
   from: 아메리카 M2 BRG-M2 결과노트
+
+# ── 아메리카 M3 NEC-M3 (뉴잉글랜드·중부, 2026-11-17) ──
+- name: 올버니 뉴네덜란드 앞
+  at: [-73.75, 42.65]
+  year: 1623
+  expect: none
+  url: https://en.wikipedia.org/wiki/New_Netherland
+  from: 아메리카 M3 NEC-M3 결과노트
+- name: 올버니
+  at: [-73.75, 42.65]
+  year: 1624
+  expect: new-netherland
+  url: https://en.wikipedia.org/wiki/New_Netherland
+  from: 아메리카 M3 NEC-M3 결과노트
+- name: 올버니 항복 앞
+  at: [-73.75, 42.65]
+  year: 1663
+  expect: new-netherland
+  url: https://en.wikipedia.org/wiki/New_Netherland
+  from: 아메리카 M3 NEC-M3 결과노트
+- name: 올버니 항복 뒤
+  at: [-73.75, 42.65]
+  year: 1664
+  expect: province-of-new-york
+  url: https://en.wikipedia.org/wiki/Province_of_New_York
+  from: 아메리카 M3 NEC-M3 결과노트
+- name: 올버니 독립 앞
+  at: [-73.75, 42.65]
+  year: 1775
+  expect: province-of-new-york
+  url: https://en.wikipedia.org/wiki/Province_of_New_York
+  from: 아메리카 M3 NEC-M3 결과노트
+- name: 올버니 독립
+  at: [-73.75, 42.65]
+  year: 1776
+  expect: usa
+  url: https://en.wikipedia.org/wiki/Thirteen_Colonies
+  from: 아메리카 M3 NEC-M3 결과노트
+- name: 뉴욕 뉴네덜란드 앞
+  at: [-73.97, 40.78]
+  year: 1623
+  expect: none
+  url: https://en.wikipedia.org/wiki/New_Netherland
+  from: 아메리카 M3 NEC-M3 결과노트
+- name: 뉴암스테르담
+  at: [-73.97, 40.78]
+  year: 1624
+  expect: new-netherland
+  url: https://en.wikipedia.org/wiki/New_Netherland
+  from: 아메리카 M3 NEC-M3 결과노트
+- name: 뉴욕 항복 뒤
+  at: [-73.97, 40.78]
+  year: 1664
+  expect: province-of-new-york
+  url: https://en.wikipedia.org/wiki/New_Netherland
+  from: 아메리카 M3 NEC-M3 결과노트
+- name: 뉴욕 네덜란드 재점령 해
+  at: [-73.97, 40.78]
+  year: 1673
+  expect: province-of-new-york
+  url: https://en.wikipedia.org/wiki/New_Netherland
+  from: 아메리카 M3 NEC-M3 결과노트
+- name: 뉴욕 독립 앞
+  at: [-73.97, 40.78]
+  year: 1775
+  expect: province-of-new-york
+  url: https://en.wikipedia.org/wiki/Province_of_New_York
+  from: 아메리카 M3 NEC-M3 결과노트
+- name: 트렌턴 항복 앞
+  at: [-74.76, 40.22]
+  year: 1663
+  expect: new-netherland
+  url: https://en.wikipedia.org/wiki/New_Netherland
+  from: 아메리카 M3 NEC-M3 결과노트
+- name: 트렌턴
+  at: [-74.76, 40.22]
+  year: 1664
+  expect: province-of-new-jersey
+  url: https://en.wikipedia.org/wiki/Province_of_New_Jersey
+  from: 아메리카 M3 NEC-M3 결과노트
+- name: 트렌턴 독립 앞
+  at: [-74.76, 40.22]
+  year: 1775
+  expect: province-of-new-jersey
+  url: https://en.wikipedia.org/wiki/Province_of_New_Jersey
+  from: 아메리카 M3 NEC-M3 결과노트
+- name: 도버 항복 앞
+  at: [-75.52, 39.16]
+  year: 1663
+  expect: new-netherland
+  url: https://en.wikipedia.org/wiki/Delaware_Colony
+  from: 아메리카 M3 NEC-M3 결과노트
+- name: 도버 요크 공작령
+  at: [-75.52, 39.16]
+  year: 1664
+  expect: province-of-new-york
+  url: https://en.wikipedia.org/wiki/Delaware_Colony
+  from: 아메리카 M3 NEC-M3 결과노트
+- name: 도버 펜 임차 앞
+  at: [-75.52, 39.16]
+  year: 1681
+  expect: province-of-new-york
+  url: https://en.wikipedia.org/wiki/Delaware_Colony
+  from: 아메리카 M3 NEC-M3 결과노트
+- name: 도버 펜 임차 뒤
+  at: [-75.52, 39.16]
+  year: 1682
+  expect: province-of-pennsylvania
+  url: https://en.wikipedia.org/wiki/Delaware_Colony
+  from: 아메리카 M3 NEC-M3 결과노트
+- name: 필라델피아 헌장 앞
+  at: [-75.16, 39.95]
+  year: 1680
+  expect: none
+  url: https://en.wikipedia.org/wiki/Province_of_Pennsylvania
+  from: 아메리카 M3 NEC-M3 결과노트
+- name: 필라델피아 헌장 뒤
+  at: [-75.16, 39.95]
+  year: 1681
+  expect: province-of-pennsylvania
+  url: https://en.wikipedia.org/wiki/Province_of_Pennsylvania
+  from: 아메리카 M3 NEC-M3 결과노트
+- name: 필라델피아 독립 앞
+  at: [-75.16, 39.95]
+  year: 1775
+  expect: province-of-pennsylvania
+  url: https://en.wikipedia.org/wiki/Province_of_Pennsylvania
+  from: 아메리카 M3 NEC-M3 결과노트
+- name: 볼티모어 헌장 앞
+  at: [-76.61, 39.29]
+  year: 1631
+  expect: none
+  url: https://en.wikipedia.org/wiki/Province_of_Maryland
+  from: 아메리카 M3 NEC-M3 결과노트
+- name: 볼티모어
+  at: [-76.61, 39.29]
+  year: 1632
+  expect: maryland-colony
+  url: https://en.wikipedia.org/wiki/Province_of_Maryland
+  from: 아메리카 M3 NEC-M3 결과노트
+- name: 워싱턴 D.C. 독립 앞
+  at: [-77.04, 38.9]
+  year: 1775
+  expect: maryland-colony
+  url: https://en.wikipedia.org/wiki/Province_of_Maryland
+  from: 아메리카 M3 NEC-M3 결과노트
+- name: 하트퍼드 정착 앞
+  at: [-72.68, 41.76]
+  year: 1635
+  expect: none
+  url: https://en.wikipedia.org/wiki/Connecticut_Colony
+  from: 아메리카 M3 NEC-M3 결과노트
+- name: 하트퍼드
+  at: [-72.68, 41.76]
+  year: 1636
+  expect: connecticut-colony
+  url: https://en.wikipedia.org/wiki/Connecticut_Colony
+  from: 아메리카 M3 NEC-M3 결과노트
+- name: 하트퍼드 독립 앞
+  at: [-72.68, 41.76]
+  year: 1775
+  expect: connecticut-colony
+  url: https://en.wikipedia.org/wiki/Connecticut_Colony
+  from: 아메리카 M3 NEC-M3 결과노트
+- name: 보스턴 헌장 앞
+  at: [-71.06, 42.36]
+  year: 1628
+  expect: none
+  url: https://en.wikipedia.org/wiki/Massachusetts_Bay_Colony
+  from: 아메리카 M3 NEC-M3 결과노트
+- name: 보스턴
+  at: [-71.06, 42.36]
+  year: 1629
+  expect: massachusetts-bay
+  url: https://en.wikipedia.org/wiki/Massachusetts_Bay_Colony
+  from: 아메리카 M3 NEC-M3 결과노트
+- name: 보스턴 독립 앞
+  at: [-71.06, 42.36]
+  year: 1775
+  expect: massachusetts-bay
+  url: https://en.wikipedia.org/wiki/Province_of_Massachusetts_Bay
+  from: 아메리카 M3 NEC-M3 결과노트
+- name: 보스턴 독립
+  at: [-71.06, 42.36]
+  year: 1776
+  expect: usa
+  url: https://en.wikipedia.org/wiki/Thirteen_Colonies
+  from: 아메리카 M3 NEC-M3 결과노트
+- name: 프로비던스 헌장 앞
+  at: [-71.41, 41.82]
+  year: 1628
+  expect: none
+  url: https://en.wikipedia.org/wiki/Massachusetts_Bay_Colony
+  from: 아메리카 M3 NEC-M3 결과노트
+- name: 프로비던스
+  at: [-71.41, 41.82]
+  year: 1629
+  expect: massachusetts-bay
+  url: https://en.wikipedia.org/wiki/Colony_of_Rhode_Island_and_Providence_Plantations
+  from: 아메리카 M3 NEC-M3 결과노트
+- name: 포츠머스 매사추세츠 다스림 앞
+  at: [-70.76, 43.07]
+  year: 1640
+  expect: none
+  url: https://en.wikipedia.org/wiki/Province_of_New_Hampshire
+  from: 아메리카 M3 NEC-M3 결과노트
+- name: 포츠머스 매사추세츠 다스림
+  at: [-70.76, 43.07]
+  year: 1641
+  expect: massachusetts-bay
+  url: https://en.wikipedia.org/wiki/Province_of_New_Hampshire
+  from: 아메리카 M3 NEC-M3 결과노트
+- name: 포츠머스 왕령 앞
+  at: [-70.76, 43.07]
+  year: 1678
+  expect: massachusetts-bay
+  url: https://en.wikipedia.org/wiki/Province_of_New_Hampshire
+  from: 아메리카 M3 NEC-M3 결과노트
+- name: 포츠머스 왕령
+  at: [-70.76, 43.07]
+  year: 1679
+  expect: new-hampshire
+  url: https://en.wikipedia.org/wiki/Province_of_New_Hampshire
+  from: 아메리카 M3 NEC-M3 결과노트
+- name: 포츠머스 독립 앞
+  at: [-70.76, 43.07]
+  year: 1775
+  expect: new-hampshire
+  url: https://en.wikipedia.org/wiki/Province_of_New_Hampshire
+  from: 아메리카 M3 NEC-M3 결과노트
+- name: 포틀랜드 왕령 헌장 앞
+  at: [-70.26, 43.66]
+  year: 1690
+  expect: none
+  url: https://en.wikipedia.org/wiki/Province_of_Massachusetts_Bay
+  from: 아메리카 M3 NEC-M3 결과노트
+- name: 포틀랜드 왕령 헌장 뒤
+  at: [-70.26, 43.66]
+  year: 1691
+  expect: massachusetts-bay
+  url: https://en.wikipedia.org/wiki/Province_of_Massachusetts_Bay
+  from: 아메리카 M3 NEC-M3 결과노트
+- name: 포틀랜드 독립 앞
+  at: [-70.26, 43.66]
+  year: 1775
+  expect: massachusetts-bay
+  url: https://en.wikipedia.org/wiki/Province_of_Massachusetts_Bay
+  from: 아메리카 M3 NEC-M3 결과노트
+- name: 벌링턴 파리 조약 앞
+  at: [-73.21, 44.48]
+  year: 1762
+  expect: none
+  url: https://en.wikipedia.org/wiki/New_Hampshire_Grants
+  from: 아메리카 M3 NEC-M3 결과노트
+- name: 벌링턴
+  at: [-73.21, 44.48]
+  year: 1763
+  expect: province-of-new-york
+  url: https://en.wikipedia.org/wiki/New_Hampshire_Grants
+  from: 아메리카 M3 NEC-M3 결과노트
+- name: 벌링턴 독립 앞
+  at: [-73.21, 44.48]
+  year: 1775
+  expect: province-of-new-york
+  url: https://en.wikipedia.org/wiki/New_Hampshire_Grants
+  from: 아메리카 M3 NEC-M3 결과노트
+
+# ── 아메리카 M3 SEL-M3 (남부·플로리다·루이지애나, 2026-11-17) ──
+- name: 제임스타운
+  at: [-76.78, 37.21]
+  year: 1606
+  expect: none
+  url: https://en.wikipedia.org/wiki/Jamestown,_Virginia
+  from: 아메리카 M3 SEL-M3 결과노트
+- name: 제임스타운
+  at: [-76.78, 37.21]
+  year: 1607
+  expect: virginia-colony
+  url: https://en.wikipedia.org/wiki/Jamestown,_Virginia
+  from: 아메리카 M3 SEL-M3 결과노트
+- name: 리치먼드
+  at: [-77.44, 37.54]
+  year: 1775
+  expect: virginia-colony
+  url: https://en.wikipedia.org/wiki/Richmond,_Virginia
+  from: 아메리카 M3 SEL-M3 결과노트
+- name: 렉싱턴(켄터키)
+  at: [-84.5, 38.04]
+  year: 1762
+  expect: none
+  url: https://en.wikipedia.org/wiki/Lexington,_Kentucky
+  from: 아메리카 M3 SEL-M3 결과노트
+- name: 렉싱턴(켄터키)
+  at: [-84.5, 38.04]
+  year: 1763
+  expect: indian-reserve
+  url: https://en.wikipedia.org/wiki/Lexington,_Kentucky
+  from: 아메리카 M3 SEL-M3 결과노트
+- name: 렉싱턴(켄터키)
+  at: [-84.5, 38.04]
+  year: 1767
+  expect: indian-reserve
+  url: https://en.wikipedia.org/wiki/Lexington,_Kentucky
+  from: 아메리카 M3 SEL-M3 결과노트
+- name: 렉싱턴(켄터키)
+  at: [-84.5, 38.04]
+  year: 1768
+  expect: virginia-colony
+  url: https://en.wikipedia.org/wiki/Lexington,_Kentucky
+  from: 아메리카 M3 SEL-M3 결과노트
+- name: 내슈빌
+  at: [-86.78, 36.16]
+  year: 1762
+  expect: none
+  url: https://en.wikipedia.org/wiki/Nashville,_Tennessee
+  from: 아메리카 M3 SEL-M3 결과노트
+- name: 내슈빌
+  at: [-86.78, 36.16]
+  year: 1763
+  expect: indian-reserve
+  url: https://en.wikipedia.org/wiki/Nashville,_Tennessee
+  from: 아메리카 M3 SEL-M3 결과노트
+- name: 내슈빌
+  at: [-86.78, 36.16]
+  year: 1774
+  expect: indian-reserve
+  url: https://en.wikipedia.org/wiki/Nashville,_Tennessee
+  from: 아메리카 M3 SEL-M3 결과노트
+- name: 내슈빌
+  at: [-86.78, 36.16]
+  year: 1775
+  expect: north-carolina
+  url: https://en.wikipedia.org/wiki/Nashville,_Tennessee
+  from: 아메리카 M3 SEL-M3 결과노트
+- name: 롤리
+  at: [-78.64, 35.78]
+  year: 1662
+  expect: none
+  url: https://en.wikipedia.org/wiki/Raleigh,_North_Carolina
+  from: 아메리카 M3 SEL-M3 결과노트
+- name: 롤리
+  at: [-78.64, 35.78]
+  year: 1663
+  expect: province-of-carolina
+  url: https://en.wikipedia.org/wiki/Raleigh,_North_Carolina
+  from: 아메리카 M3 SEL-M3 결과노트
+- name: 롤리
+  at: [-78.64, 35.78]
+  year: 1712
+  expect: north-carolina
+  url: https://en.wikipedia.org/wiki/Raleigh,_North_Carolina
+  from: 아메리카 M3 SEL-M3 결과노트
+- name: 찰스턴
+  at: [-79.93, 32.78]
+  year: 1662
+  expect: none
+  url: https://en.wikipedia.org/wiki/Charleston,_South_Carolina
+  from: 아메리카 M3 SEL-M3 결과노트
+- name: 찰스턴
+  at: [-79.93, 32.78]
+  year: 1711
+  expect: province-of-carolina
+  url: https://en.wikipedia.org/wiki/Charleston,_South_Carolina
+  from: 아메리카 M3 SEL-M3 결과노트
+- name: 찰스턴
+  at: [-79.93, 32.78]
+  year: 1712
+  expect: south-carolina
+  url: https://en.wikipedia.org/wiki/Charleston,_South_Carolina
+  from: 아메리카 M3 SEL-M3 결과노트
+- name: 서배너
+  at: [-81.1, 32.08]
+  year: 1731
+  expect: none
+  url: https://en.wikipedia.org/wiki/Savannah,_Georgia
+  from: 아메리카 M3 SEL-M3 결과노트
+- name: 서배너
+  at: [-81.1, 32.08]
+  year: 1732
+  expect: province-of-georgia
+  url: https://en.wikipedia.org/wiki/Savannah,_Georgia
+  from: 아메리카 M3 SEL-M3 결과노트
+- name: 세인트오거스틴
+  at: [-81.31, 29.89]
+  year: 1564
+  expect: none
+  url: https://en.wikipedia.org/wiki/St._Augustine,_Florida
+  from: 아메리카 M3 SEL-M3 결과노트
+- name: 세인트오거스틴
+  at: [-81.31, 29.89]
+  year: 1565
+  expect: spanish-florida
+  url: https://en.wikipedia.org/wiki/St._Augustine,_Florida
+  from: 아메리카 M3 SEL-M3 결과노트
+- name: 세인트오거스틴
+  at: [-81.31, 29.89]
+  year: 1762
+  expect: spanish-florida
+  url: https://en.wikipedia.org/wiki/St._Augustine,_Florida
+  from: 아메리카 M3 SEL-M3 결과노트
+- name: 세인트오거스틴
+  at: [-81.31, 29.89]
+  year: 1763
+  expect: british-florida
+  url: https://en.wikipedia.org/wiki/St._Augustine,_Florida
+  from: 아메리카 M3 SEL-M3 결과노트
+- name: 펜서콜라
+  at: [-87.22, 30.42]
+  year: 1565
+  expect: spanish-florida
+  url: https://en.wikipedia.org/wiki/Pensacola,_Florida
+  from: 아메리카 M3 SEL-M3 결과노트
+- name: 펜서콜라
+  at: [-87.22, 30.42]
+  year: 1763
+  expect: british-florida
+  url: https://en.wikipedia.org/wiki/Pensacola,_Florida
+  from: 아메리카 M3 SEL-M3 결과노트
+- name: 모빌
+  at: [-88.04, 30.69]
+  year: 1711
+  expect: none
+  url: https://en.wikipedia.org/wiki/Mobile,_Alabama
+  from: 아메리카 M3 SEL-M3 결과노트
+- name: 모빌
+  at: [-88.04, 30.69]
+  year: 1712
+  expect: french-louisiana
+  url: https://en.wikipedia.org/wiki/Mobile,_Alabama
+  from: 아메리카 M3 SEL-M3 결과노트
+- name: 모빌
+  at: [-88.04, 30.69]
+  year: 1762
+  expect: french-louisiana
+  url: https://en.wikipedia.org/wiki/Mobile,_Alabama
+  from: 아메리카 M3 SEL-M3 결과노트
+- name: 모빌
+  at: [-88.04, 30.69]
+  year: 1763
+  expect: british-florida
+  url: https://en.wikipedia.org/wiki/Mobile,_Alabama
+  from: 아메리카 M3 SEL-M3 결과노트
+- name: 빌럭시
+  at: [-88.89, 30.4]
+  year: 1712
+  expect: french-louisiana
+  url: https://en.wikipedia.org/wiki/Biloxi,_Mississippi
+  from: 아메리카 M3 SEL-M3 결과노트
+- name: 빌럭시
+  at: [-88.89, 30.4]
+  year: 1763
+  expect: british-florida
+  url: https://en.wikipedia.org/wiki/Biloxi,_Mississippi
+  from: 아메리카 M3 SEL-M3 결과노트
+- name: 나체즈
+  at: [-91.4, 31.56]
+  year: 1711
+  expect: none
+  url: https://en.wikipedia.org/wiki/Natchez,_Mississippi
+  from: 아메리카 M3 SEL-M3 결과노트
+- name: 나체즈
+  at: [-91.4, 31.56]
+  year: 1712
+  expect: french-louisiana
+  url: https://en.wikipedia.org/wiki/Natchez,_Mississippi
+  from: 아메리카 M3 SEL-M3 결과노트
+- name: 나체즈
+  at: [-91.4, 31.56]
+  year: 1763
+  expect: british-florida
+  url: https://en.wikipedia.org/wiki/Natchez,_Mississippi
+  from: 아메리카 M3 SEL-M3 결과노트
+- name: 몽고메리
+  at: [-86.3, 32.37]
+  year: 1712
+  expect: french-louisiana
+  url: https://en.wikipedia.org/wiki/Montgomery,_Alabama
+  from: 아메리카 M3 SEL-M3 결과노트
+- name: 몽고메리
+  at: [-86.3, 32.37]
+  year: 1763
+  expect: british-florida
+  url: https://en.wikipedia.org/wiki/Montgomery,_Alabama
+  from: 아메리카 M3 SEL-M3 결과노트
+- name: 헌츠빌
+  at: [-86.59, 34.73]
+  year: 1711
+  expect: none
+  url: https://en.wikipedia.org/wiki/Huntsville,_Alabama
+  from: 아메리카 M3 SEL-M3 결과노트
+- name: 헌츠빌
+  at: [-86.59, 34.73]
+  year: 1712
+  expect: french-louisiana
+  url: https://en.wikipedia.org/wiki/Huntsville,_Alabama
+  from: 아메리카 M3 SEL-M3 결과노트
+- name: 헌츠빌
+  at: [-86.59, 34.73]
+  year: 1762
+  expect: french-louisiana
+  url: https://en.wikipedia.org/wiki/Huntsville,_Alabama
+  from: 아메리카 M3 SEL-M3 결과노트
+- name: 헌츠빌
+  at: [-86.59, 34.73]
+  year: 1763
+  expect: none
+  url: https://en.wikipedia.org/wiki/Huntsville,_Alabama
+  from: 아메리카 M3 SEL-M3 결과노트
+- name: 투펄로
+  at: [-88.7, 34.26]
+  year: 1712
+  expect: french-louisiana
+  url: https://en.wikipedia.org/wiki/Tupelo,_Mississippi
+  from: 아메리카 M3 SEL-M3 결과노트
+- name: 투펄로
+  at: [-88.7, 34.26]
+  year: 1763
+  expect: none
+  url: https://en.wikipedia.org/wiki/Tupelo,_Mississippi
+  from: 아메리카 M3 SEL-M3 결과노트
+- name: 투펄로
+  at: [-88.7, 34.26]
+  year: 1775
+  expect: none
+  url: https://en.wikipedia.org/wiki/Tupelo,_Mississippi
+  from: 아메리카 M3 SEL-M3 결과노트
+- name: 배턴루지
+  at: [-91.19, 30.45]
+  year: 1762
+  expect: french-louisiana
+  url: https://en.wikipedia.org/wiki/Baton_Rouge,_Louisiana
+  from: 아메리카 M3 SEL-M3 결과노트
+- name: 배턴루지
+  at: [-91.19, 30.45]
+  year: 1763
+  expect: british-florida
+  url: https://en.wikipedia.org/wiki/Baton_Rouge,_Louisiana
+  from: 아메리카 M3 SEL-M3 결과노트
+- name: 뉴올리언스
+  at: [-90.07, 29.95]
+  year: 1711
+  expect: none
+  url: https://en.wikipedia.org/wiki/New_Orleans
+  from: 아메리카 M3 SEL-M3 결과노트
+- name: 뉴올리언스
+  at: [-90.07, 29.95]
+  year: 1712
+  expect: french-louisiana
+  url: https://en.wikipedia.org/wiki/New_Orleans
+  from: 아메리카 M3 SEL-M3 결과노트
+- name: 뉴올리언스
+  at: [-90.07, 29.95]
+  year: 1761
+  expect: french-louisiana
+  url: https://en.wikipedia.org/wiki/New_Orleans
+  from: 아메리카 M3 SEL-M3 결과노트
+- name: 뉴올리언스
+  at: [-90.07, 29.95]
+  year: 1762
+  expect: spanish-louisiana
+  url: https://en.wikipedia.org/wiki/New_Orleans
+  from: 아메리카 M3 SEL-M3 결과노트
+- name: 세인트루이스
+  at: [-90.25, 38.63]
+  year: 1711
+  expect: none
+  url: https://en.wikipedia.org/wiki/St._Louis
+  from: 아메리카 M3 SEL-M3 결과노트
+- name: 세인트루이스
+  at: [-90.25, 38.63]
+  year: 1712
+  expect: french-louisiana
+  url: https://en.wikipedia.org/wiki/St._Louis
+  from: 아메리카 M3 SEL-M3 결과노트
+- name: 세인트루이스
+  at: [-90.25, 38.63]
+  year: 1762
+  expect: spanish-louisiana
+  url: https://en.wikipedia.org/wiki/St._Louis
+  from: 아메리카 M3 SEL-M3 결과노트
+- name: 리틀록
+  at: [-92.29, 34.75]
+  year: 1712
+  expect: french-louisiana
+  url: https://en.wikipedia.org/wiki/Little_Rock,_Arkansas
+  from: 아메리카 M3 SEL-M3 결과노트
+- name: 리틀록
+  at: [-92.29, 34.75]
+  year: 1762
+  expect: spanish-louisiana
+  url: https://en.wikipedia.org/wiki/Little_Rock,_Arkansas
+  from: 아메리카 M3 SEL-M3 결과노트
+- name: 디모인
+  at: [-93.62, 41.59]
+  year: 1711
+  expect: none
+  url: https://en.wikipedia.org/wiki/Des_Moines,_Iowa
+  from: 아메리카 M3 SEL-M3 결과노트
+- name: 디모인
+  at: [-93.62, 41.59]
+  year: 1712
+  expect: french-louisiana
+  url: https://en.wikipedia.org/wiki/Des_Moines,_Iowa
+  from: 아메리카 M3 SEL-M3 결과노트
+- name: 디모인
+  at: [-93.62, 41.59]
+  year: 1762
+  expect: spanish-louisiana
+  url: https://en.wikipedia.org/wiki/Des_Moines,_Iowa
+  from: 아메리카 M3 SEL-M3 결과노트
+- name: 오마하
+  at: [-95.93, 41.26]
+  year: 1712
+  expect: french-louisiana
+  url: https://en.wikipedia.org/wiki/Omaha,_Nebraska
+  from: 아메리카 M3 SEL-M3 결과노트
+- name: 오마하
+  at: [-95.93, 41.26]
+  year: 1762
+  expect: spanish-louisiana
+  url: https://en.wikipedia.org/wiki/Omaha,_Nebraska
+  from: 아메리카 M3 SEL-M3 결과노트
+- name: 비즈마크
+  at: [-100.78, 46.81]
+  year: 1711
+  expect: none
+  url: https://en.wikipedia.org/wiki/Bismarck,_North_Dakota
+  from: 아메리카 M3 SEL-M3 결과노트
+- name: 비즈마크
+  at: [-100.78, 46.81]
+  year: 1712
+  expect: french-louisiana
+  url: https://en.wikipedia.org/wiki/Bismarck,_North_Dakota
+  from: 아메리카 M3 SEL-M3 결과노트
+- name: 비즈마크
+  at: [-100.78, 46.81]
+  year: 1762
+  expect: spanish-louisiana
+  url: https://en.wikipedia.org/wiki/Bismarck,_North_Dakota
+  from: 아메리카 M3 SEL-M3 결과노트
+- name: 파고
+  at: [-96.79, 46.88]
+  year: 1669
+  expect: none
+  url: https://en.wikipedia.org/wiki/Fargo,_North_Dakota
+  from: 아메리카 M3 SEL-M3 결과노트
+- name: 파고
+  at: [-96.79, 46.88]
+  year: 1670
+  expect: ruperts-land
+  url: https://en.wikipedia.org/wiki/Fargo,_North_Dakota
+  from: 아메리카 M3 SEL-M3 결과노트
+- name: 덴버
+  at: [-104.99, 39.74]
+  year: 1712
+  expect: french-louisiana
+  url: https://en.wikipedia.org/wiki/Denver
+  from: 아메리카 M3 SEL-M3 결과노트
+- name: 덴버
+  at: [-104.99, 39.74]
+  year: 1775
+  expect: spanish-louisiana
+  url: https://en.wikipedia.org/wiki/Denver
+  from: 아메리카 M3 SEL-M3 결과노트
+- name: 빌링스
+  at: [-108.5, 45.78]
+  year: 1712
+  expect: french-louisiana
+  url: https://en.wikipedia.org/wiki/Billings,_Montana
+  from: 아메리카 M3 SEL-M3 결과노트
+- name: 빌링스
+  at: [-108.5, 45.78]
+  year: 1775
+  expect: spanish-louisiana
+  url: https://en.wikipedia.org/wiki/Billings,_Montana
+  from: 아메리카 M3 SEL-M3 결과노트
+- name: 그랜드정크션
+  at: [-108.55, 39.06]
+  year: 1775
+  expect: none
+  url: https://en.wikipedia.org/wiki/Grand_Junction,_Colorado
+  from: 아메리카 M3 SEL-M3 결과노트
+
+# ── 아메리카 M3 NF-M3 (누벨프랑스·허드슨만·오대호·북동, 2026-11-17) ──
+- name: 퀘벡
+  at: [-71.21, 46.81]
+  year: 1607
+  expect: none
+  region: americas
+  url: https://en.wikipedia.org/wiki/New_France
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 퀘벡
+  at: [-71.21, 46.81]
+  year: 1608
+  expect: new-france-canada
+  url: https://en.wikipedia.org/wiki/New_France
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 퀘벡
+  at: [-71.21, 46.81]
+  year: 1762
+  expect: new-france-canada
+  url: https://en.wikipedia.org/wiki/New_France
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 퀘벡
+  at: [-71.21, 46.81]
+  year: 1763
+  expect: province-of-quebec
+  url: https://en.wikipedia.org/wiki/New_France
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 퀘벡
+  at: [-71.21, 46.81]
+  year: 1775
+  expect: province-of-quebec
+  url: https://en.wikipedia.org/wiki/New_France
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 몬트리올
+  at: [-73.57, 45.5]
+  year: 1607
+  expect: none
+  region: americas
+  url: https://en.wikipedia.org/wiki/New_France
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 몬트리올
+  at: [-73.57, 45.5]
+  year: 1608
+  expect: new-france-canada
+  url: https://en.wikipedia.org/wiki/New_France
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 몬트리올
+  at: [-73.57, 45.5]
+  year: 1763
+  expect: province-of-quebec
+  url: https://en.wikipedia.org/wiki/New_France
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 토론토
+  at: [-79.38, 43.65]
+  year: 1700
+  expect: none
+  region: americas
+  url: https://en.wikipedia.org/wiki/Quebec_Act
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 토론토
+  at: [-79.38, 43.65]
+  year: 1701
+  expect: new-france-canada
+  url: https://en.wikipedia.org/wiki/Quebec_Act
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 토론토
+  at: [-79.38, 43.65]
+  year: 1763
+  expect: indian-reserve
+  url: https://en.wikipedia.org/wiki/Quebec_Act
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 토론토
+  at: [-79.38, 43.65]
+  year: 1773
+  expect: indian-reserve
+  url: https://en.wikipedia.org/wiki/Quebec_Act
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 토론토
+  at: [-79.38, 43.65]
+  year: 1774
+  expect: province-of-quebec
+  url: https://en.wikipedia.org/wiki/Quebec_Act
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 디트로이트
+  at: [-83.05, 42.33]
+  year: 1700
+  expect: none
+  region: americas
+  url: https://en.wikipedia.org/wiki/Fort_Pontchartrain_du_D%C3%A9troit
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 디트로이트
+  at: [-83.05, 42.33]
+  year: 1701
+  expect: new-france-canada
+  url: https://en.wikipedia.org/wiki/Fort_Pontchartrain_du_D%C3%A9troit
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 디트로이트
+  at: [-83.05, 42.33]
+  year: 1762
+  expect: new-france-canada
+  url: https://en.wikipedia.org/wiki/Fort_Pontchartrain_du_D%C3%A9troit
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 디트로이트
+  at: [-83.05, 42.33]
+  year: 1763
+  expect: indian-reserve
+  url: https://en.wikipedia.org/wiki/Fort_Pontchartrain_du_D%C3%A9troit
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 디트로이트
+  at: [-83.05, 42.33]
+  year: 1774
+  expect: province-of-quebec
+  url: https://en.wikipedia.org/wiki/Fort_Pontchartrain_du_D%C3%A9troit
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 디트로이트
+  at: [-83.05, 42.33]
+  year: 1775
+  expect: province-of-quebec
+  url: https://en.wikipedia.org/wiki/Fort_Pontchartrain_du_D%C3%A9troit
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 밀워키
+  at: [-87.91, 43.04]
+  year: 1700
+  expect: none
+  region: americas
+  url: https://en.wikipedia.org/wiki/Indian_Reserve_(1763)
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 밀워키
+  at: [-87.91, 43.04]
+  year: 1701
+  expect: new-france-canada
+  url: https://en.wikipedia.org/wiki/Indian_Reserve_(1763)
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 밀워키
+  at: [-87.91, 43.04]
+  year: 1763
+  expect: indian-reserve
+  url: https://en.wikipedia.org/wiki/Indian_Reserve_(1763)
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 밀워키
+  at: [-87.91, 43.04]
+  year: 1774
+  expect: province-of-quebec
+  url: https://en.wikipedia.org/wiki/Indian_Reserve_(1763)
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 세인트폴
+  at: [-93.09, 44.95]
+  year: 1700
+  expect: none
+  region: americas
+  url: https://en.wikipedia.org/wiki/Indian_Reserve_(1763)
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 세인트폴
+  at: [-93.09, 44.95]
+  year: 1701
+  expect: new-france-canada
+  url: https://en.wikipedia.org/wiki/Indian_Reserve_(1763)
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 세인트폴
+  at: [-93.09, 44.95]
+  year: 1763
+  expect: indian-reserve
+  url: https://en.wikipedia.org/wiki/Indian_Reserve_(1763)
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 세인트폴
+  at: [-93.09, 44.95]
+  year: 1774
+  expect: province-of-quebec
+  url: https://en.wikipedia.org/wiki/Indian_Reserve_(1763)
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 콜럼버스(오하이오)
+  at: [-83, 39.96]
+  year: 1752
+  expect: none
+  region: americas
+  url: https://en.wikipedia.org/wiki/Fort_Presque_Isle
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 콜럼버스(오하이오)
+  at: [-83, 39.96]
+  year: 1753
+  expect: new-france-canada
+  url: https://en.wikipedia.org/wiki/Fort_Presque_Isle
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 콜럼버스(오하이오)
+  at: [-83, 39.96]
+  year: 1762
+  expect: new-france-canada
+  url: https://en.wikipedia.org/wiki/Fort_Presque_Isle
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 콜럼버스(오하이오)
+  at: [-83, 39.96]
+  year: 1763
+  expect: indian-reserve
+  url: https://en.wikipedia.org/wiki/Fort_Presque_Isle
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 콜럼버스(오하이오)
+  at: [-83, 39.96]
+  year: 1774
+  expect: province-of-quebec
+  url: https://en.wikipedia.org/wiki/Fort_Presque_Isle
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 인디애나폴리스
+  at: [-86.16, 39.77]
+  year: 1752
+  expect: none
+  region: americas
+  url: https://en.wikipedia.org/wiki/Fort_Presque_Isle
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 인디애나폴리스
+  at: [-86.16, 39.77]
+  year: 1753
+  expect: new-france-canada
+  url: https://en.wikipedia.org/wiki/Fort_Presque_Isle
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 인디애나폴리스
+  at: [-86.16, 39.77]
+  year: 1763
+  expect: indian-reserve
+  url: https://en.wikipedia.org/wiki/Fort_Presque_Isle
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 인디애나폴리스
+  at: [-86.16, 39.77]
+  year: 1774
+  expect: province-of-quebec
+  url: https://en.wikipedia.org/wiki/Fort_Presque_Isle
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 카스카스키아
+  at: [-89.92, 37.99]
+  year: 1711
+  expect: none
+  region: americas
+  url: https://en.wikipedia.org/wiki/Louisiana_(New_France)
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 카스카스키아
+  at: [-89.92, 37.99]
+  year: 1712
+  expect: french-louisiana
+  url: https://en.wikipedia.org/wiki/Louisiana_(New_France)
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 카스카스키아
+  at: [-89.92, 37.99]
+  year: 1762
+  expect: french-louisiana
+  url: https://en.wikipedia.org/wiki/Louisiana_(New_France)
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 카스카스키아
+  at: [-89.92, 37.99]
+  year: 1763
+  expect: indian-reserve
+  url: https://en.wikipedia.org/wiki/Louisiana_(New_France)
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 카스카스키아
+  at: [-89.92, 37.99]
+  year: 1774
+  expect: province-of-quebec
+  url: https://en.wikipedia.org/wiki/Louisiana_(New_France)
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 스프링필드(일리노이)
+  at: [-89.65, 39.8]
+  year: 1711
+  expect: none
+  region: americas
+  url: https://en.wikipedia.org/wiki/Louisiana_(New_France)
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 스프링필드(일리노이)
+  at: [-89.65, 39.8]
+  year: 1712
+  expect: french-louisiana
+  url: https://en.wikipedia.org/wiki/Louisiana_(New_France)
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 스프링필드(일리노이)
+  at: [-89.65, 39.8]
+  year: 1763
+  expect: indian-reserve
+  url: https://en.wikipedia.org/wiki/Louisiana_(New_France)
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 스프링필드(일리노이)
+  at: [-89.65, 39.8]
+  year: 1774
+  expect: province-of-quebec
+  url: https://en.wikipedia.org/wiki/Louisiana_(New_France)
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 마셜(미네소타)
+  at: [-95.79, 44.45]
+  year: 1711
+  expect: none
+  region: americas
+  url: https://en.wikipedia.org/wiki/Louisiana_(New_France)
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 마셜(미네소타)
+  at: [-95.79, 44.45]
+  year: 1712
+  expect: french-louisiana
+  url: https://en.wikipedia.org/wiki/Louisiana_(New_France)
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 마셜(미네소타)
+  at: [-95.79, 44.45]
+  year: 1761
+  expect: french-louisiana
+  url: https://en.wikipedia.org/wiki/Louisiana_(New_France)
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 마셜(미네소타)
+  at: [-95.79, 44.45]
+  year: 1762
+  expect: spanish-louisiana
+  url: https://en.wikipedia.org/wiki/Louisiana_(New_France)
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 요크팩토리
+  at: [-92.3, 57]
+  year: 1669
+  expect: none
+  region: americas
+  url: https://en.wikipedia.org/wiki/Rupert%27s_Land
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 요크팩토리
+  at: [-92.3, 57]
+  year: 1670
+  expect: ruperts-land
+  url: https://en.wikipedia.org/wiki/Rupert%27s_Land
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 요크팩토리
+  at: [-92.3, 57]
+  year: 1775
+  expect: ruperts-land
+  url: https://en.wikipedia.org/wiki/Rupert%27s_Land
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 처칠
+  at: [-94.17, 58.77]
+  year: 1669
+  expect: none
+  region: americas
+  url: https://en.wikipedia.org/wiki/Rupert%27s_Land
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 처칠
+  at: [-94.17, 58.77]
+  year: 1670
+  expect: ruperts-land
+  url: https://en.wikipedia.org/wiki/Rupert%27s_Land
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 위니펙
+  at: [-97.14, 49.9]
+  year: 1669
+  expect: none
+  region: americas
+  url: https://en.wikipedia.org/wiki/Rupert%27s_Land
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 위니펙
+  at: [-97.14, 49.9]
+  year: 1670
+  expect: ruperts-land
+  url: https://en.wikipedia.org/wiki/Rupert%27s_Land
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 무스팩토리
+  at: [-80.65, 51.27]
+  year: 1669
+  expect: none
+  region: americas
+  url: https://en.wikipedia.org/wiki/Rupert%27s_Land
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 무스팩토리
+  at: [-80.65, 51.27]
+  year: 1670
+  expect: ruperts-land
+  url: https://en.wikipedia.org/wiki/Rupert%27s_Land
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 밀크리버(앨버타)
+  at: [-112.08, 49.15]
+  year: 1711
+  expect: none
+  region: americas
+  url: https://en.wikipedia.org/wiki/Louisiana_(New_France)
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 밀크리버(앨버타)
+  at: [-112.08, 49.15]
+  year: 1712
+  expect: french-louisiana
+  url: https://en.wikipedia.org/wiki/Louisiana_(New_France)
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 밀크리버(앨버타)
+  at: [-112.08, 49.15]
+  year: 1761
+  expect: french-louisiana
+  url: https://en.wikipedia.org/wiki/Louisiana_(New_France)
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 밀크리버(앨버타)
+  at: [-112.08, 49.15]
+  year: 1762
+  expect: spanish-louisiana
+  url: https://en.wikipedia.org/wiki/Louisiana_(New_France)
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 세인트존스
+  at: [-52.71, 47.56]
+  year: 1609
+  expect: none
+  region: americas
+  url: https://en.wikipedia.org/wiki/Newfoundland_Colony
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 세인트존스
+  at: [-52.71, 47.56]
+  year: 1610
+  expect: newfoundland
+  url: https://en.wikipedia.org/wiki/Newfoundland_Colony
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 세인트존스
+  at: [-52.71, 47.56]
+  year: 1775
+  expect: newfoundland
+  url: https://en.wikipedia.org/wiki/Newfoundland_Colony
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 해피밸리구스베이
+  at: [-60.33, 53.3]
+  year: 1762
+  expect: none
+  region: americas
+  url: https://en.wikipedia.org/wiki/Royal_Proclamation_of_1763
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 해피밸리구스베이
+  at: [-60.33, 53.3]
+  year: 1763
+  expect: newfoundland
+  url: https://en.wikipedia.org/wiki/Royal_Proclamation_of_1763
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 해피밸리구스베이
+  at: [-60.33, 53.3]
+  year: 1773
+  expect: newfoundland
+  url: https://en.wikipedia.org/wiki/Royal_Proclamation_of_1763
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 해피밸리구스베이
+  at: [-60.33, 53.3]
+  year: 1774
+  expect: province-of-quebec
+  url: https://en.wikipedia.org/wiki/Royal_Proclamation_of_1763
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 아나폴리스로열
+  at: [-65.52, 44.74]
+  year: 1631
+  expect: none
+  region: americas
+  url: https://en.wikipedia.org/wiki/Acadia
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 아나폴리스로열
+  at: [-65.52, 44.74]
+  year: 1632
+  expect: acadia
+  url: https://en.wikipedia.org/wiki/Acadia
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 아나폴리스로열
+  at: [-65.52, 44.74]
+  year: 1712
+  expect: acadia
+  url: https://en.wikipedia.org/wiki/Acadia
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 아나폴리스로열
+  at: [-65.52, 44.74]
+  year: 1713
+  expect: nova-scotia
+  url: https://en.wikipedia.org/wiki/Acadia
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 핼리팩스
+  at: [-63.57, 44.65]
+  year: 1631
+  expect: none
+  region: americas
+  url: https://en.wikipedia.org/wiki/Acadia
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 핼리팩스
+  at: [-63.57, 44.65]
+  year: 1632
+  expect: acadia
+  url: https://en.wikipedia.org/wiki/Acadia
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 핼리팩스
+  at: [-63.57, 44.65]
+  year: 1713
+  expect: nova-scotia
+  url: https://en.wikipedia.org/wiki/Acadia
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 핼리팩스
+  at: [-63.57, 44.65]
+  year: 1775
+  expect: nova-scotia
+  url: https://en.wikipedia.org/wiki/Acadia
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 루이스버그
+  at: [-59.97, 45.92]
+  year: 1712
+  expect: acadia
+  url: https://en.wikipedia.org/wiki/Treaty_of_Utrecht
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 루이스버그
+  at: [-59.97, 45.92]
+  year: 1713
+  expect: ile-royale
+  url: https://en.wikipedia.org/wiki/Treaty_of_Utrecht
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 루이스버그
+  at: [-59.97, 45.92]
+  year: 1757
+  expect: ile-royale
+  url: https://en.wikipedia.org/wiki/Treaty_of_Utrecht
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 루이스버그
+  at: [-59.97, 45.92]
+  year: 1758
+  expect: nova-scotia
+  url: https://en.wikipedia.org/wiki/Treaty_of_Utrecht
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 시드니(노바스코샤)
+  at: [-60.19, 46.14]
+  year: 1712
+  expect: acadia
+  url: https://en.wikipedia.org/wiki/Treaty_of_Utrecht
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 시드니(노바스코샤)
+  at: [-60.19, 46.14]
+  year: 1713
+  expect: ile-royale
+  url: https://en.wikipedia.org/wiki/Treaty_of_Utrecht
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 시드니(노바스코샤)
+  at: [-60.19, 46.14]
+  year: 1757
+  expect: ile-royale
+  url: https://en.wikipedia.org/wiki/Treaty_of_Utrecht
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 시드니(노바스코샤)
+  at: [-60.19, 46.14]
+  year: 1758
+  expect: nova-scotia
+  url: https://en.wikipedia.org/wiki/Treaty_of_Utrecht
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 포트호크스베리(캔소 해협 동안)
+  at: [-61.35, 45.62]
+  year: 1713
+  expect: ile-royale
+  url: https://en.wikipedia.org/wiki/Strait_of_Canso
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 포트호크스베리(캔소 해협 동안)
+  at: [-61.35, 45.62]
+  year: 1757
+  expect: ile-royale
+  url: https://en.wikipedia.org/wiki/Strait_of_Canso
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 멀그레이브(캔소 해협 서안)
+  at: [-61.39, 45.6]
+  year: 1713
+  expect: nova-scotia
+  url: https://en.wikipedia.org/wiki/Strait_of_Canso
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 멀그레이브(캔소 해협 서안)
+  at: [-61.39, 45.6]
+  year: 1757
+  expect: nova-scotia
+  url: https://en.wikipedia.org/wiki/Strait_of_Canso
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 앤티고니시
+  at: [-61.99, 45.62]
+  year: 1713
+  expect: nova-scotia
+  url: https://en.wikipedia.org/wiki/Strait_of_Canso
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 세인트존(뉴브런즈윅)
+  at: [-66.06, 45.27]
+  year: 1712
+  expect: acadia
+  url: https://en.wikipedia.org/wiki/Acadia
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 세인트존(뉴브런즈윅)
+  at: [-66.06, 45.27]
+  year: 1713
+  expect: none
+  region: americas
+  url: https://en.wikipedia.org/wiki/Acadia
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 세인트존(뉴브런즈윅)
+  at: [-66.06, 45.27]
+  year: 1757
+  expect: none
+  region: americas
+  url: https://en.wikipedia.org/wiki/Acadia
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 세인트존(뉴브런즈윅)
+  at: [-66.06, 45.27]
+  year: 1758
+  expect: nova-scotia
+  url: https://en.wikipedia.org/wiki/Acadia
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 프레더릭턴
+  at: [-66.64, 45.96]
+  year: 1712
+  expect: acadia
+  url: https://en.wikipedia.org/wiki/Acadia
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 프레더릭턴
+  at: [-66.64, 45.96]
+  year: 1713
+  expect: none
+  region: americas
+  url: https://en.wikipedia.org/wiki/Acadia
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 프레더릭턴
+  at: [-66.64, 45.96]
+  year: 1758
+  expect: nova-scotia
+  url: https://en.wikipedia.org/wiki/Acadia
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 누크
+  at: [-51.74, 64.18]
+  year: 1720
+  expect: none
+  region: americas
+  url: https://en.wikipedia.org/wiki/History_of_Greenland
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 누크
+  at: [-51.74, 64.18]
+  year: 1721
+  expect: greenland
+  url: https://en.wikipedia.org/wiki/History_of_Greenland
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 누크
+  at: [-51.74, 64.18]
+  year: 1775
+  expect: greenland
+  url: https://en.wikipedia.org/wiki/History_of_Greenland
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 카코르톡
+  at: [-46.03, 60.72]
+  year: 1720
+  expect: none
+  region: americas
+  url: https://en.wikipedia.org/wiki/History_of_Greenland
+  from: 아메리카 M3 NF-M3 결과노트
+- name: 카코르톡
+  at: [-46.03, 60.72]
+  year: 1721
+  expect: greenland
+  url: https://en.wikipedia.org/wiki/History_of_Greenland
+  from: 아메리카 M3 NF-M3 결과노트
+
+# ── 아메리카 M3 MXC-M3 (멕시코·중앙아메리카·1492 두 나라, 2026-11-17) ──
+- name: 멕시코시티
+  at: [-99.13, 19.43]
+  year: 1520
+  expect: aztec
+  url: https://en.wikipedia.org/wiki/Aztec_Triple_Alliance
+  from: 아메리카 M3 MXC-M3 결과노트
+- name: 멕시코시티
+  at: [-99.13, 19.43]
+  year: 1521
+  expect: new-spain-viceroyalty
+  url: https://en.wikipedia.org/wiki/Viceroyalty_of_New_Spain
+  from: 아메리카 M3 MXC-M3 결과노트
+- name: 틀락스칼라
+  at: [-98.24, 19.32]
+  year: 1510
+  expect: aztec
+  url: https://en.wikipedia.org/wiki/Aztec_Triple_Alliance
+  from: 아메리카 M3 MXC-M3 결과노트
+- name: 오악사카
+  at: [-96.72, 17.06]
+  year: 1510
+  expect: aztec
+  url: https://en.wikipedia.org/wiki/Aztec_Triple_Alliance
+  from: 아메리카 M3 MXC-M3 결과노트
+- name: 친춘찬
+  at: [-101.58, 19.63]
+  year: 1529
+  expect: tarascan
+  url: https://en.wikipedia.org/wiki/Tarascan_state
+  from: 아메리카 M3 MXC-M3 결과노트
+- name: 친춘찬
+  at: [-101.58, 19.63]
+  year: 1530
+  expect: new-spain-viceroyalty
+  url: https://en.wikipedia.org/wiki/Tarascan_state
+  from: 아메리카 M3 MXC-M3 결과노트
+- name: 모렐리아
+  at: [-101.19, 19.7]
+  year: 1500
+  expect: tarascan
+  url: https://en.wikipedia.org/wiki/Tarascan_state
+  from: 아메리카 M3 MXC-M3 결과노트
+- name: 과달라하라
+  at: [-103.35, 20.67]
+  year: 1530
+  expect: new-spain-viceroyalty
+  url: https://en.wikipedia.org/wiki/Viceroyalty_of_New_Spain
+  from: 아메리카 M3 MXC-M3 결과노트
+- name: 비야에르모사
+  at: [-92.93, 17.99]
+  year: 1530
+  expect: new-spain-viceroyalty
+  url: https://en.wikipedia.org/wiki/Viceroyalty_of_New_Spain
+  from: 아메리카 M3 MXC-M3 결과노트
+- name: 쿨리아칸
+  at: [-107.39, 24.81]
+  year: 1531
+  expect: new-spain-viceroyalty
+  url: https://en.wikipedia.org/wiki/Culiac%C3%A1n
+  from: 아메리카 M3 MXC-M3 결과노트
+- name: 사카테카스
+  at: [-102.57, 22.77]
+  year: 1546
+  expect: new-spain-viceroyalty
+  url: https://en.wikipedia.org/wiki/Viceroyalty_of_New_Spain
+  from: 아메리카 M3 MXC-M3 결과노트
+- name: 두랑고
+  at: [-104.66, 24.02]
+  year: 1562
+  expect: new-spain-viceroyalty
+  url: https://en.wikipedia.org/wiki/Nueva_Vizcaya,_New_Spain
+  from: 아메리카 M3 MXC-M3 결과노트
+- name: 치와와
+  at: [-106.09, 28.63]
+  year: 1562
+  expect: new-spain-viceroyalty
+  url: https://en.wikipedia.org/wiki/Nueva_Vizcaya,_New_Spain
+  from: 아메리카 M3 MXC-M3 결과노트
+- name: 몬테레이
+  at: [-100.32, 25.69]
+  year: 1582
+  expect: new-spain-viceroyalty
+  url: https://en.wikipedia.org/wiki/New_Kingdom_of_Le%C3%B3n
+  from: 아메리카 M3 MXC-M3 결과노트
+- name: 산루이스포토시
+  at: [-100.98, 22.15]
+  year: 1592
+  expect: new-spain-viceroyalty
+  url: https://en.wikipedia.org/wiki/San_Luis_Potos%C3%AD_(city)
+  from: 아메리카 M3 MXC-M3 결과노트
+- name: 산타페
+  at: [-105.94, 35.69]
+  year: 1598
+  expect: new-spain-viceroyalty
+  url: https://en.wikipedia.org/wiki/Santa_Fe_de_Nuevo_M%C3%A9xico
+  from: 아메리카 M3 MXC-M3 결과노트
+- name: 산타페
+  at: [-105.94, 35.69]
+  year: 1685
+  expect: new-spain-viceroyalty
+  url: https://en.wikipedia.org/wiki/Santa_Fe_de_Nuevo_M%C3%A9xico
+  from: 아메리카 M3 MXC-M3 결과노트
+- name: 에르모시요
+  at: [-110.96, 29.07]
+  year: 1614
+  expect: new-spain-viceroyalty
+  url: https://en.wikipedia.org/wiki/History_of_Sonora
+  from: 아메리카 M3 MXC-M3 결과노트
+- name: 투손
+  at: [-110.97, 32.22]
+  year: 1687
+  expect: new-spain-viceroyalty
+  url: https://en.wikipedia.org/wiki/Pimer%C3%ADa_Alta
+  from: 아메리카 M3 MXC-M3 결과노트
+- name: 로레토
+  at: [-111.35, 26.01]
+  year: 1697
+  expect: new-spain-viceroyalty
+  url: https://en.wikipedia.org/wiki/Las_Californias
+  from: 아메리카 M3 MXC-M3 결과노트
+- name: 샌안토니오
+  at: [-98.49, 29.42]
+  year: 1716
+  expect: new-spain-viceroyalty
+  url: https://en.wikipedia.org/wiki/Spanish_Texas
+  from: 아메리카 M3 MXC-M3 결과노트
+- name: 시우다드빅토리아
+  at: [-99.13, 23.74]
+  year: 1747
+  expect: new-spain-viceroyalty
+  url: https://en.wikipedia.org/wiki/Nuevo_Santander
+  from: 아메리카 M3 MXC-M3 결과노트
+- name: 몬터레이(캘리포니아)
+  at: [-121.89, 36.6]
+  year: 1769
+  expect: new-spain-viceroyalty
+  url: https://en.wikipedia.org/wiki/Las_Californias
+  from: 아메리카 M3 MXC-M3 결과노트
+- name: 몬터레이(캘리포니아)
+  at: [-121.89, 36.6]
+  year: 1775
+  expect: new-spain-viceroyalty
+  url: https://en.wikipedia.org/wiki/Las_Californias
+  from: 아메리카 M3 MXC-M3 결과노트
+- name: 메리다
+  at: [-89.62, 20.97]
+  year: 1546
+  expect: new-spain-viceroyalty
+  url: https://en.wikipedia.org/wiki/Spanish_conquest_of_Yucat%C3%A1n
+  from: 아메리카 M3 MXC-M3 결과노트
+- name: 메리다
+  at: [-89.62, 20.97]
+  year: 1617
+  expect: yucatan-captaincy
+  url: https://en.wikipedia.org/wiki/Captaincy_General_of_Yucatan
+  from: 아메리카 M3 MXC-M3 결과노트
+- name: 툭스틀라구티에레스
+  at: [-93.12, 16.75]
+  year: 1528
+  expect: new-spain-viceroyalty
+  url: https://en.wikipedia.org/wiki/Viceroyalty_of_New_Spain
+  from: 아메리카 M3 MXC-M3 결과노트
+- name: 툭스틀라구티에레스
+  at: [-93.12, 16.75]
+  year: 1543
+  expect: guatemala-captaincy
+  url: https://en.wikipedia.org/wiki/Captaincy_General_of_Guatemala
+  from: 아메리카 M3 MXC-M3 결과노트
+- name: 과테말라시티
+  at: [-90.51, 14.63]
+  year: 1530
+  expect: guatemala-captaincy
+  url: https://en.wikipedia.org/wiki/Captaincy_General_of_Guatemala
+  from: 아메리카 M3 MXC-M3 결과노트
+- name: 산살바도르
+  at: [-89.19, 13.69]
+  year: 1530
+  expect: guatemala-captaincy
+  url: https://en.wikipedia.org/wiki/Captaincy_General_of_Guatemala
+  from: 아메리카 M3 MXC-M3 결과노트
+- name: 산호세
+  at: [-84.09, 9.93]
+  year: 1563
+  expect: guatemala-captaincy
+  url: https://en.wikipedia.org/wiki/Cartago,_Costa_Rica
+  from: 아메리카 M3 MXC-M3 결과노트
+- name: 플로레스
+  at: [-89.89, 16.93]
+  year: 1697
+  expect: guatemala-captaincy
+  url: https://en.wikipedia.org/wiki/Spanish_conquest_of_Yucat%C3%A1n
+  from: 아메리카 M3 MXC-M3 결과노트
+- name: 벨리즈시티
+  at: [-88.2, 17.5]
+  year: 1543
+  expect: guatemala-captaincy
+  url: https://en.wikipedia.org/wiki/Captaincy_General_of_Guatemala
+  from: 아메리카 M3 MXC-M3 결과노트
+- name: 블루필즈
+  at: [-83.77, 12.01]
+  year: 1543
+  expect: guatemala-captaincy
+  url: https://en.wikipedia.org/wiki/Captaincy_General_of_Guatemala
+  from: 아메리카 M3 MXC-M3 결과노트
+- name: 블루필즈
+  at: [-83.77, 12.01]
+  year: 1740
+  expect: mosquito-kingdom
+  url: https://en.wikipedia.org/wiki/Mosquito_Coast
+  from: 아메리카 M3 MXC-M3 결과노트
+- name: 멕시코시티
+  at: [-99.13, 19.43]
+  year: 1775
+  expect: new-spain-viceroyalty
+  url: https://en.wikipedia.org/wiki/Viceroyalty_of_New_Spain
+  from: 아메리카 M3 MXC-M3 결과노트
+
+# ── 아메리카 M3 AND-M3 (안데스·라플라타·1492 잉카, 2026-11-17) ──
+- name: 쿠스코
+  at: [-71.97, -13.52]
+  year: 1532
+  expect: inca
+  url: https://en.wikipedia.org/wiki/Inca_Empire
+  from: 아메리카 M3 AND-M3 결과노트
+- name: 쿠스코
+  at: [-71.97, -13.52]
+  year: 1533
+  expect: peru-viceroyalty
+  url: https://en.wikipedia.org/wiki/Governorate_of_New_Castile
+  from: 아메리카 M3 AND-M3 결과노트
+- name: 카하마르카
+  at: [-78.51, -7.16]
+  year: 1532
+  expect: inca
+  url: https://en.wikipedia.org/wiki/Spanish_conquest_of_the_Inca_Empire
+  from: 아메리카 M3 AND-M3 결과노트
+- name: 리마
+  at: [-77.04, -12.05]
+  year: 1540
+  expect: peru-viceroyalty
+  url: https://en.wikipedia.org/wiki/Governorate_of_New_Castile
+  from: 아메리카 M3 AND-M3 결과노트
+- name: 포토시
+  at: [-65.75, -19.58]
+  year: 1532
+  expect: inca
+  url: https://en.wikipedia.org/wiki/Inca_Empire
+  from: 아메리카 M3 AND-M3 결과노트
+- name: 투쿠만
+  at: [-65.22, -26.81]
+  year: 1532
+  expect: inca
+  url: https://en.wikipedia.org/wiki/Inca_Empire
+  from: 아메리카 M3 AND-M3 결과노트
+- name: 탈카
+  at: [-71.66, -35.43]
+  year: 1532
+  expect: inca
+  url: https://en.wikipedia.org/wiki/Inca_Empire
+  from: 아메리카 M3 AND-M3 결과노트
+- name: 파스토
+  at: [-77.28, 1.21]
+  year: 1532
+  expect: none
+  url: https://en.wikipedia.org/wiki/Inca_Empire
+  from: 아메리카 M3 AND-M3 결과노트
+- name: 멘도사
+  at: [-68.84, -32.89]
+  year: 1532
+  expect: none
+  url: https://en.wikipedia.org/wiki/Inca_Empire
+  from: 아메리카 M3 AND-M3 결과노트
+- name: 키토
+  at: [-78.47, -0.18]
+  year: 1532
+  expect: inca
+  url: https://en.wikipedia.org/wiki/Inca_Empire
+  from: 아메리카 M3 AND-M3 결과노트
+- name: 키토
+  at: [-78.47, -0.18]
+  year: 1716
+  expect: peru-viceroyalty
+  url: https://en.wikipedia.org/wiki/Royal_Audience_of_Quito
+  from: 아메리카 M3 AND-M3 결과노트
+- name: 키토
+  at: [-78.47, -0.18]
+  year: 1717
+  expect: new-granada-viceroyalty
+  url: https://en.wikipedia.org/wiki/Viceroyalty_of_New_Granada
+  from: 아메리카 M3 AND-M3 결과노트
+- name: 키토
+  at: [-78.47, -0.18]
+  year: 1723
+  expect: peru-viceroyalty
+  url: https://en.wikipedia.org/wiki/Viceroyalty_of_New_Granada
+  from: 아메리카 M3 AND-M3 결과노트
+- name: 키토
+  at: [-78.47, -0.18]
+  year: 1739
+  expect: new-granada-viceroyalty
+  url: https://en.wikipedia.org/wiki/Viceroyalty_of_New_Granada
+  from: 아메리카 M3 AND-M3 결과노트
+- name: 보고타
+  at: [-74.07, 4.71]
+  year: 1541
+  expect: none
+  url: https://en.wikipedia.org/wiki/Muisca_Confederation
+  from: 아메리카 M3 AND-M3 결과노트
+- name: 보고타
+  at: [-74.07, 4.71]
+  year: 1542
+  expect: peru-viceroyalty
+  url: https://en.wikipedia.org/wiki/Viceroyalty_of_Peru
+  from: 아메리카 M3 AND-M3 결과노트
+- name: 파나마시티
+  at: [-79.52, 8.98]
+  year: 1738
+  expect: peru-viceroyalty
+  url: https://en.wikipedia.org/wiki/Real_Audiencia_of_Panama
+  from: 아메리카 M3 AND-M3 결과노트
+- name: 파나마시티
+  at: [-79.52, 8.98]
+  year: 1739
+  expect: new-granada-viceroyalty
+  url: https://en.wikipedia.org/wiki/Real_Audiencia_of_Panama
+  from: 아메리카 M3 AND-M3 결과노트
+- name: 카라카스
+  at: [-66.9, 10.49]
+  year: 1545
+  expect: none
+  url: https://en.wikipedia.org/wiki/Province_of_Venezuela
+  from: 아메리카 M3 AND-M3 결과노트
+- name: 카라카스
+  at: [-66.9, 10.49]
+  year: 1546
+  expect: new-spain-viceroyalty
+  url: https://en.wikipedia.org/wiki/Province_of_Venezuela
+  from: 아메리카 M3 AND-M3 결과노트
+- name: 카라카스
+  at: [-66.9, 10.49]
+  year: 1730
+  expect: new-spain-viceroyalty
+  url: https://en.wikipedia.org/wiki/Province_of_Venezuela
+  from: 아메리카 M3 AND-M3 결과노트
+- name: 카라카스
+  at: [-66.9, 10.49]
+  year: 1739
+  expect: new-granada-viceroyalty
+  url: https://en.wikipedia.org/wiki/Captaincy_General_of_Venezuela
+  from: 아메리카 M3 AND-M3 결과노트
+- name: 마라카이보
+  at: [-71.64, 10.65]
+  year: 1675
+  expect: new-spain-viceroyalty
+  url: https://es.wikipedia.org/wiki/Capitan%C3%ADa_General_de_Venezuela
+  from: 아메리카 M3 AND-M3 결과노트
+- name: 마라카이보
+  at: [-71.64, 10.65]
+  year: 1676
+  expect: peru-viceroyalty
+  url: https://es.wikipedia.org/wiki/Capitan%C3%ADa_General_de_Venezuela
+  from: 아메리카 M3 AND-M3 결과노트
+- name: 쿠마나
+  at: [-64.18, 10.46]
+  year: 1568
+  expect: new-spain-viceroyalty
+  url: https://es.wikipedia.org/wiki/Capitan%C3%ADa_General_de_Venezuela
+  from: 아메리카 M3 AND-M3 결과노트
+- name: 메리다(베네수엘라)
+  at: [-71.14, 8.59]
+  year: 1558
+  expect: peru-viceroyalty
+  url: https://es.wikipedia.org/wiki/Capitan%C3%ADa_General_de_Venezuela
+  from: 아메리카 M3 AND-M3 결과노트
+- name: 시우다드볼리바르
+  at: [-63.55, 8.12]
+  year: 1591
+  expect: peru-viceroyalty
+  url: https://es.wikipedia.org/wiki/Capitan%C3%ADa_General_de_Venezuela
+  from: 아메리카 M3 AND-M3 결과노트
+- name: 앙골
+  at: [-72.71, -37.8]
+  year: 1599
+  expect: peru-viceroyalty
+  url: https://en.wikipedia.org/wiki/Destruction_of_the_Seven_Cities
+  from: 아메리카 M3 AND-M3 결과노트
+- name: 앙골
+  at: [-72.71, -37.8]
+  year: 1600
+  expect: none
+  url: https://en.wikipedia.org/wiki/Destruction_of_the_Seven_Cities
+  from: 아메리카 M3 AND-M3 결과노트
+- name: 앙골
+  at: [-72.71, -37.8]
+  year: 1641
+  expect: mapuche-araucania
+  url: https://en.wikipedia.org/wiki/Parliament_of_Quill%C3%ADn
+  from: 아메리카 M3 AND-M3 결과노트
+- name: 발디비아
+  at: [-73.25, -39.81]
+  year: 1600
+  expect: none
+  url: https://en.wikipedia.org/wiki/Destruction_of_the_Seven_Cities
+  from: 아메리카 M3 AND-M3 결과노트
+- name: 발디비아
+  at: [-73.25, -39.81]
+  year: 1645
+  expect: peru-viceroyalty
+  url: https://en.wikipedia.org/wiki/Arauco_War
+  from: 아메리카 M3 AND-M3 결과노트
+- name: 카스트로
+  at: [-73.76, -42.48]
+  year: 1620
+  expect: peru-viceroyalty
+  url: https://en.wikipedia.org/wiki/Captaincy_General_of_Chile
+  from: 아메리카 M3 AND-M3 결과노트
+- name: 푸에르토몬트
+  at: [-72.94, -41.47]
+  year: 1620
+  expect: none
+  url: https://en.wikipedia.org/wiki/Arauco_War
+  from: 아메리카 M3 AND-M3 결과노트
+- name: 부에노스아이레스
+  at: [-58.38, -34.6]
+  year: 1558
+  expect: none
+  url: https://en.wikipedia.org/wiki/Audiencia_of_Charcas
+  from: 아메리카 M3 AND-M3 결과노트
+- name: 부에노스아이레스
+  at: [-58.38, -34.6]
+  year: 1775
+  expect: peru-viceroyalty
+  url: https://en.wikipedia.org/wiki/Viceroyalty_of_Peru
+  from: 아메리카 M3 AND-M3 결과노트
+- name: 아순시온
+  at: [-57.58, -25.26]
+  year: 1559
+  expect: peru-viceroyalty
+  url: https://en.wikipedia.org/wiki/Audiencia_of_Charcas
+  from: 아메리카 M3 AND-M3 결과노트
+- name: 산타로사
+  at: [-64.29, -36.62]
+  year: 1775
+  expect: none
+  url: https://en.wikipedia.org/wiki/Conquest_of_the_Desert
+  from: 아메리카 M3 AND-M3 결과노트
+- name: 스탠리
+  at: [-57.85, -51.69]
+  year: 1766
+  expect: none
+  url: https://en.wikipedia.org/wiki/History_of_the_Falkland_Islands
+  from: 아메리카 M3 AND-M3 결과노트
+- name: 스탠리
+  at: [-57.85, -51.69]
+  year: 1767
+  expect: spanish-falkland-islands
+  url: https://en.wikipedia.org/wiki/History_of_the_Falkland_Islands
+  from: 아메리카 M3 AND-M3 결과노트
+
+# ── 아메리카 M3 CAB-M3 (카리브·브라질·기아나, 2026-11-17) ──
+- name: 산토도밍고
+  at: [-69.93, 18.49]
+  year: 1495
+  expect: none
+  url: https://en.wikipedia.org/wiki/Captaincy_General_of_Santo_Domingo
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 산토도밍고
+  at: [-69.93, 18.49]
+  year: 1496
+  expect: santo-domingo-captaincy
+  url: https://en.wikipedia.org/wiki/Captaincy_General_of_Santo_Domingo
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 산토도밍고
+  at: [-69.93, 18.49]
+  year: 1775
+  expect: santo-domingo-captaincy
+  url: https://en.wikipedia.org/wiki/Captaincy_General_of_Santo_Domingo
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 카프아이시앵
+  at: [-72.20, 19.76]
+  year: 1664
+  expect: santo-domingo-captaincy
+  url: https://en.wikipedia.org/wiki/Saint-Domingue
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 카프아이시앵
+  at: [-72.20, 19.76]
+  year: 1665
+  expect: saint-domingue
+  url: https://en.wikipedia.org/wiki/Saint-Domingue
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 포르토프랭스
+  at: [-72.34, 18.54]
+  year: 1495
+  expect: none
+  url: https://en.wikipedia.org/wiki/Saint-Domingue
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 포르토프랭스
+  at: [-72.34, 18.54]
+  year: 1600
+  expect: santo-domingo-captaincy
+  url: https://en.wikipedia.org/wiki/Saint-Domingue
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 포르토프랭스
+  at: [-72.34, 18.54]
+  year: 1775
+  expect: saint-domingue
+  url: https://en.wikipedia.org/wiki/Saint-Domingue
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 킹스턴
+  at: [-76.79, 17.97]
+  year: 1508
+  expect: none
+  url: https://en.wikipedia.org/wiki/Spanish_Jamaica
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 킹스턴
+  at: [-76.79, 17.97]
+  year: 1509
+  expect: santo-domingo-captaincy
+  url: https://en.wikipedia.org/wiki/Spanish_Jamaica
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 킹스턴
+  at: [-76.79, 17.97]
+  year: 1654
+  expect: santo-domingo-captaincy
+  url: https://en.wikipedia.org/wiki/Spanish_Jamaica
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 킹스턴
+  at: [-76.79, 17.97]
+  year: 1655
+  expect: jamaica
+  url: https://en.wikipedia.org/wiki/Spanish_Jamaica
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 킹스턴
+  at: [-76.79, 17.97]
+  year: 1775
+  expect: jamaica
+  url: https://en.wikipedia.org/wiki/Spanish_Jamaica
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 스패니시타운
+  at: [-76.96, 17.99]
+  year: 1600
+  expect: santo-domingo-captaincy
+  url: https://en.wikipedia.org/wiki/Spanish_Jamaica
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 스패니시타운
+  at: [-76.96, 17.99]
+  year: 1700
+  expect: jamaica
+  url: https://en.wikipedia.org/wiki/Spanish_Jamaica
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 아바나
+  at: [-82.38, 23.13]
+  year: 1514
+  expect: none
+  url: https://en.wikipedia.org/wiki/Captaincy_General_of_Cuba
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 아바나
+  at: [-82.38, 23.13]
+  year: 1515
+  expect: cuba-captaincy-general
+  url: https://en.wikipedia.org/wiki/Captaincy_General_of_Cuba
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 아바나
+  at: [-82.38, 23.13]
+  year: 1762
+  expect: cuba-captaincy-general
+  url: https://en.wikipedia.org/wiki/Captaincy_General_of_Cuba
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 아바나
+  at: [-82.38, 23.13]
+  year: 1775
+  expect: cuba-captaincy-general
+  url: https://en.wikipedia.org/wiki/Captaincy_General_of_Cuba
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 산티아고데쿠바
+  at: [-75.82, 20.02]
+  year: 1514
+  expect: none
+  url: https://en.wikipedia.org/wiki/Captaincy_General_of_Cuba
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 산티아고데쿠바
+  at: [-75.82, 20.02]
+  year: 1515
+  expect: cuba-captaincy-general
+  url: https://en.wikipedia.org/wiki/Captaincy_General_of_Cuba
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 나소
+  at: [-77.35, 25.05]
+  year: 1669
+  expect: none
+  url: https://en.wikipedia.org/wiki/History_of_the_Bahamas
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 나소
+  at: [-77.35, 25.05]
+  year: 1670
+  expect: bahamas
+  url: https://en.wikipedia.org/wiki/History_of_the_Bahamas
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 나소
+  at: [-77.35, 25.05]
+  year: 1775
+  expect: bahamas
+  url: https://en.wikipedia.org/wiki/History_of_the_Bahamas
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 산후안
+  at: [-66.11, 18.47]
+  year: 1775
+  expect: none
+  url: https://en.wikipedia.org/wiki/Puerto_Rico
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 사우바도르
+  at: [-38.50, -12.97]
+  year: 1548
+  expect: none
+  url: https://en.wikipedia.org/wiki/Colonial_Brazil
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 사우바도르
+  at: [-38.50, -12.97]
+  year: 1549
+  expect: portuguese-brazil
+  url: https://en.wikipedia.org/wiki/Colonial_Brazil
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 사우바도르
+  at: [-38.50, -12.97]
+  year: 1640
+  expect: portuguese-brazil
+  url: https://en.wikipedia.org/wiki/Colonial_Brazil
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 리우데자네이루
+  at: [-43.17, -22.91]
+  year: 1548
+  expect: none
+  url: https://en.wikipedia.org/wiki/Colonial_Brazil
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 리우데자네이루
+  at: [-43.17, -22.91]
+  year: 1549
+  expect: portuguese-brazil
+  url: https://en.wikipedia.org/wiki/Colonial_Brazil
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 리우데자네이루
+  at: [-43.17, -22.91]
+  year: 1775
+  expect: portuguese-brazil
+  url: https://en.wikipedia.org/wiki/Colonial_Brazil
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 상파울루
+  at: [-46.63, -23.55]
+  year: 1548
+  expect: none
+  url: https://en.wikipedia.org/wiki/Colonial_Brazil
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 상파울루
+  at: [-46.63, -23.55]
+  year: 1549
+  expect: portuguese-brazil
+  url: https://en.wikipedia.org/wiki/Colonial_Brazil
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 헤시피
+  at: [-34.88, -8.05]
+  year: 1629
+  expect: portuguese-brazil
+  url: https://en.wikipedia.org/wiki/Dutch_Brazil
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 헤시피
+  at: [-34.88, -8.05]
+  year: 1630
+  expect: dutch-brazil
+  url: https://en.wikipedia.org/wiki/Dutch_Brazil
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 헤시피
+  at: [-34.88, -8.05]
+  year: 1653
+  expect: dutch-brazil
+  url: https://en.wikipedia.org/wiki/Dutch_Brazil
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 헤시피
+  at: [-34.88, -8.05]
+  year: 1654
+  expect: none
+  url: https://en.wikipedia.org/wiki/Dutch_Brazil
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 헤시피
+  at: [-34.88, -8.05]
+  year: 1655
+  expect: none
+  url: https://en.wikipedia.org/wiki/Dutch_Brazil
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 헤시피
+  at: [-34.88, -8.05]
+  year: 1656
+  expect: portuguese-brazil
+  url: https://en.wikipedia.org/wiki/Dutch_Brazil
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 주앙페소아
+  at: [-34.86, -7.12]
+  year: 1634
+  expect: portuguese-brazil
+  url: https://en.wikipedia.org/wiki/Dutch_Brazil
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 주앙페소아
+  at: [-34.86, -7.12]
+  year: 1635
+  expect: dutch-brazil
+  url: https://en.wikipedia.org/wiki/Dutch_Brazil
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 주앙페소아
+  at: [-34.86, -7.12]
+  year: 1653
+  expect: dutch-brazil
+  url: https://en.wikipedia.org/wiki/Dutch_Brazil
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 주앙페소아
+  at: [-34.86, -7.12]
+  year: 1655
+  expect: none
+  url: https://en.wikipedia.org/wiki/Dutch_Brazil
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 주앙페소아
+  at: [-34.86, -7.12]
+  year: 1656
+  expect: portuguese-brazil
+  url: https://en.wikipedia.org/wiki/Dutch_Brazil
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 나타우
+  at: [-35.21, -5.79]
+  year: 1634
+  expect: portuguese-brazil
+  url: https://en.wikipedia.org/wiki/Dutch_Brazil
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 나타우
+  at: [-35.21, -5.79]
+  year: 1635
+  expect: dutch-brazil
+  url: https://en.wikipedia.org/wiki/Dutch_Brazil
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 나타우
+  at: [-35.21, -5.79]
+  year: 1656
+  expect: portuguese-brazil
+  url: https://en.wikipedia.org/wiki/Dutch_Brazil
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 마세이오
+  at: [-35.74, -9.67]
+  year: 1634
+  expect: portuguese-brazil
+  url: https://en.wikipedia.org/wiki/Dutch_Brazil
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 마세이오
+  at: [-35.74, -9.67]
+  year: 1635
+  expect: dutch-brazil
+  url: https://en.wikipedia.org/wiki/Dutch_Brazil
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 마세이오
+  at: [-35.74, -9.67]
+  year: 1643
+  expect: dutch-brazil
+  url: https://en.wikipedia.org/wiki/Dutch_Brazil
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 마세이오
+  at: [-35.74, -9.67]
+  year: 1644
+  expect: none
+  url: https://en.wikipedia.org/wiki/Dutch_Brazil
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 마세이오
+  at: [-35.74, -9.67]
+  year: 1647
+  expect: none
+  url: https://en.wikipedia.org/wiki/Dutch_Brazil
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 마세이오
+  at: [-35.74, -9.67]
+  year: 1648
+  expect: portuguese-brazil
+  url: https://en.wikipedia.org/wiki/Dutch_Brazil
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 포르탈레자
+  at: [-38.54, -3.72]
+  year: 1620
+  expect: none
+  url: https://en.wikipedia.org/wiki/Maranhão_(former_state)
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 포르탈레자
+  at: [-38.54, -3.72]
+  year: 1621
+  expect: state-of-maranhao
+  url: https://en.wikipedia.org/wiki/Maranhão_(former_state)
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 포르탈레자
+  at: [-38.54, -3.72]
+  year: 1634
+  expect: state-of-maranhao
+  url: https://en.wikipedia.org/wiki/Maranhão_(former_state)
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 포르탈레자
+  at: [-38.54, -3.72]
+  year: 1635
+  expect: dutch-brazil
+  url: https://en.wikipedia.org/wiki/Maranhão_(former_state)
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 포르탈레자
+  at: [-38.54, -3.72]
+  year: 1643
+  expect: dutch-brazil
+  url: https://en.wikipedia.org/wiki/Maranhão_(former_state)
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 포르탈레자
+  at: [-38.54, -3.72]
+  year: 1644
+  expect: state-of-maranhao
+  url: https://en.wikipedia.org/wiki/Maranhão_(former_state)
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 포르탈레자
+  at: [-38.54, -3.72]
+  year: 1655
+  expect: state-of-maranhao
+  url: https://en.wikipedia.org/wiki/Maranhão_(former_state)
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 포르탈레자
+  at: [-38.54, -3.72]
+  year: 1656
+  expect: portuguese-brazil
+  url: https://en.wikipedia.org/wiki/Maranhão_(former_state)
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 상루이스
+  at: [-44.30, -2.53]
+  year: 1620
+  expect: none
+  url: https://en.wikipedia.org/wiki/Maranhão_(former_state)
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 상루이스
+  at: [-44.30, -2.53]
+  year: 1621
+  expect: state-of-maranhao
+  url: https://en.wikipedia.org/wiki/Maranhão_(former_state)
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 상루이스
+  at: [-44.30, -2.53]
+  year: 1640
+  expect: state-of-maranhao
+  url: https://en.wikipedia.org/wiki/Maranhão_(former_state)
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 상루이스
+  at: [-44.30, -2.53]
+  year: 1641
+  expect: dutch-brazil
+  url: https://en.wikipedia.org/wiki/Maranhão_(former_state)
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 상루이스
+  at: [-44.30, -2.53]
+  year: 1643
+  expect: dutch-brazil
+  url: https://en.wikipedia.org/wiki/Maranhão_(former_state)
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 상루이스
+  at: [-44.30, -2.53]
+  year: 1644
+  expect: state-of-maranhao
+  url: https://en.wikipedia.org/wiki/Maranhão_(former_state)
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 상루이스
+  at: [-44.30, -2.53]
+  year: 1774
+  expect: state-of-maranhao
+  url: https://en.wikipedia.org/wiki/Maranhão_(former_state)
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 상루이스
+  at: [-44.30, -2.53]
+  year: 1775
+  expect: portuguese-brazil
+  url: https://en.wikipedia.org/wiki/Maranhão_(former_state)
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 벨렝
+  at: [-48.50, -1.46]
+  year: 1620
+  expect: none
+  url: https://en.wikipedia.org/wiki/State_of_Grão-Pará_and_Maranhão
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 벨렝
+  at: [-48.50, -1.46]
+  year: 1621
+  expect: state-of-maranhao
+  url: https://en.wikipedia.org/wiki/State_of_Grão-Pará_and_Maranhão
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 벨렝
+  at: [-48.50, -1.46]
+  year: 1774
+  expect: state-of-maranhao
+  url: https://en.wikipedia.org/wiki/State_of_Grão-Pará_and_Maranhão
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 벨렝
+  at: [-48.50, -1.46]
+  year: 1775
+  expect: portuguese-brazil
+  url: https://en.wikipedia.org/wiki/State_of_Grão-Pará_and_Maranhão
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 마카파
+  at: [-51.07, 0.03]
+  year: 1712
+  expect: none
+  url: https://en.wikipedia.org/wiki/Amapá
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 마카파
+  at: [-51.07, 0.03]
+  year: 1713
+  expect: state-of-maranhao
+  url: https://en.wikipedia.org/wiki/Amapá
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 마카파
+  at: [-51.07, 0.03]
+  year: 1774
+  expect: state-of-maranhao
+  url: https://en.wikipedia.org/wiki/Amapá
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 마카파
+  at: [-51.07, 0.03]
+  year: 1775
+  expect: portuguese-brazil
+  url: https://en.wikipedia.org/wiki/Amapá
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 테레지나
+  at: [-42.78, -5.09]
+  year: 1673
+  expect: none
+  url: https://en.wikipedia.org/wiki/Piauí
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 테레지나
+  at: [-42.78, -5.09]
+  year: 1674
+  expect: portuguese-brazil
+  url: https://en.wikipedia.org/wiki/Piauí
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 쿠리치바
+  at: [-49.27, -25.43]
+  year: 1647
+  expect: none
+  url: https://en.wikipedia.org/wiki/Paranaguá
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 쿠리치바
+  at: [-49.27, -25.43]
+  year: 1648
+  expect: portuguese-brazil
+  url: https://en.wikipedia.org/wiki/Paranaguá
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 블루메나우
+  at: [-49.07, -26.92]
+  year: 1655
+  expect: none
+  url: https://en.wikipedia.org/wiki/Santa_Catarina_(state)
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 블루메나우
+  at: [-49.07, -26.92]
+  year: 1656
+  expect: portuguese-brazil
+  url: https://en.wikipedia.org/wiki/Santa_Catarina_(state)
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 오루프레투
+  at: [-43.50, -20.38]
+  year: 1708
+  expect: none
+  url: https://en.wikipedia.org/wiki/Minas_Gerais
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 오루프레투
+  at: [-43.50, -20.38]
+  year: 1709
+  expect: portuguese-brazil
+  url: https://en.wikipedia.org/wiki/Minas_Gerais
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 포르투알레그리
+  at: [-51.23, -30.03]
+  year: 1736
+  expect: none
+  url: https://en.wikipedia.org/wiki/Rio_Grande_do_Sul
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 포르투알레그리
+  at: [-51.23, -30.03]
+  year: 1737
+  expect: portuguese-brazil
+  url: https://en.wikipedia.org/wiki/Rio_Grande_do_Sul
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 쿠이아바
+  at: [-56.10, -15.60]
+  year: 1745
+  expect: none
+  url: https://en.wikipedia.org/wiki/Captaincies_of_Brazil
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 쿠이아바
+  at: [-56.10, -15.60]
+  year: 1746
+  expect: portuguese-brazil
+  url: https://en.wikipedia.org/wiki/Captaincies_of_Brazil
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 고이아스
+  at: [-50.14, -15.93]
+  year: 1745
+  expect: none
+  url: https://en.wikipedia.org/wiki/Goiás
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 고이아스
+  at: [-50.14, -15.93]
+  year: 1746
+  expect: portuguese-brazil
+  url: https://en.wikipedia.org/wiki/Goiás
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 마나우스
+  at: [-60.02, -3.12]
+  year: 1750
+  expect: none
+  url: https://en.wikipedia.org/wiki/State_of_Grão-Pará_and_Maranhão
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 마나우스
+  at: [-60.02, -3.12]
+  year: 1751
+  expect: state-of-maranhao
+  url: https://en.wikipedia.org/wiki/State_of_Grão-Pará_and_Maranhão
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 마나우스
+  at: [-60.02, -3.12]
+  year: 1774
+  expect: state-of-maranhao
+  url: https://en.wikipedia.org/wiki/State_of_Grão-Pará_and_Maranhão
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 마나우스
+  at: [-60.02, -3.12]
+  year: 1775
+  expect: portuguese-brazil
+  url: https://en.wikipedia.org/wiki/State_of_Grão-Pará_and_Maranhão
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 조지타운
+  at: [-58.16, 6.80]
+  year: 1620
+  expect: none
+  url: https://en.wikipedia.org/wiki/Essequibo_(colony)
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 조지타운
+  at: [-58.16, 6.80]
+  year: 1621
+  expect: dutch-essequibo-berbice
+  url: https://en.wikipedia.org/wiki/Essequibo_(colony)
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 조지타운
+  at: [-58.16, 6.80]
+  year: 1775
+  expect: dutch-essequibo-berbice
+  url: https://en.wikipedia.org/wiki/Essequibo_(colony)
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 파라마리보
+  at: [-55.20, 5.85]
+  year: 1666
+  expect: none
+  url: https://en.wikipedia.org/wiki/Surinam_(Dutch_colony)
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 파라마리보
+  at: [-55.20, 5.85]
+  year: 1667
+  expect: dutch-suriname
+  url: https://en.wikipedia.org/wiki/Surinam_(Dutch_colony)
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 파라마리보
+  at: [-55.20, 5.85]
+  year: 1775
+  expect: dutch-suriname
+  url: https://en.wikipedia.org/wiki/Surinam_(Dutch_colony)
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 카옌
+  at: [-52.33, 4.94]
+  year: 1642
+  expect: none
+  url: https://en.wikipedia.org/wiki/French_Guiana
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 카옌
+  at: [-52.33, 4.94]
+  year: 1643
+  expect: french-guiana
+  url: https://en.wikipedia.org/wiki/French_Guiana
+  from: 아메리카 M3 CAB-M3 결과노트
+- name: 카옌
+  at: [-52.33, 4.94]
+  year: 1775
+  expect: french-guiana
+  url: https://en.wikipedia.org/wiki/French_Guiana
+  from: 아메리카 M3 CAB-M3 결과노트

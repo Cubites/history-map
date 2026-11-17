@@ -6558,3 +6558,204 @@
   sources: ["위키백과 Alaska boundary dispute https://en.wikipedia.org/wiki/Alaska_boundary_dispute", "위키백과 Pearse Island https://en.wikipedia.org/wiki/Pearse_Island"]
 
 # ── 아메리카 M2 BRG-M2 (브라질·기아나, 2026-11-16) ──
+
+# ── 아메리카 M3 NEC-M3 (뉴잉글랜드·중부, 2026-11-17) ──
+
+- entity: maryland-colony
+  from: 1632
+  to: 1776
+  at: [-77.19, 38.35]
+  reason: '포토맥강 메릴랜드 쪽 물가(약 6km²): 메릴랜드 헌장 땅은 포토맥강 남쪽 기슭까지라 조각 US-MD 바깥선이 강 굽이에서 본토와 떨어진 작은 땅을 남김 — 1776~는 이웃 버지니아와 같은 usa라 사라짐(조각 자료 그대로)'
+  sources: ["위키백과 Province of Maryland https://en.wikipedia.org/wiki/Province_of_Maryland"]
+
+- entity: massachusetts-bay
+  from: 1691
+  to: 1776
+  at: [-71.47, 42.28]
+  reason: '1691 왕령 헌장으로 매사추세츠만 식민지에 든 메인은 뉴햄프셔를 사이에 두고 매사추세츠 본토와 떨어진 땅(메인 지구 — 1820 메인주로 갈림). 조각 자리로는 더 넓은 메인이 본토로 잡혀 매사추세츠·로드아일랜드 쪽(약 23,459km²)이 떨어진 조각으로 보임'
+  sources: ["위키백과 Province of Massachusetts Bay https://en.wikipedia.org/wiki/Province_of_Massachusetts_Bay"]
+
+- entity: new-netherland
+  from: 1624
+  to: 1664
+  at: [-75.45, 38.72]
+  reason: '델라웨어강 하류의 뉴네덜란드 땅(지금 델라웨어, 약 5,244km²): 허드슨강 쪽 본토와는 델라웨어만 물길로 이어지고 육지 사이 펜실베이니아 땅은 1681 앞 칠하지 않음(1655 스웨덴 식민지를 차지한 뒤 뉴암스텔로 다스림)'
+  sources: ["위키백과 New Netherland https://en.wikipedia.org/wiki/New_Netherland", "위키백과 Delaware Colony https://en.wikipedia.org/wiki/Delaware_Colony"]
+
+- entity: province-of-new-york
+  from: 1664
+  to: 1682
+  at: [-75.45, 38.72]
+  reason: '요크 공작 몫의 델라웨어강 하류 땅(지금 델라웨어, 약 5,240km²): 1664~1681 뉴욕 부총독이 다스린 땅으로 뉴저지·델라웨어만을 사이에 두고 뉴욕 본토와 떨어짐, 1682 펜에게 빌려줌'
+  sources: ["위키백과 Delaware Colony https://en.wikipedia.org/wiki/Delaware_Colony"]
+
+# ── 아메리카 M3 SEL-M3 (남부·플로리다·루이지애나, 2026-11-17) ──
+
+- entity: virginia-colony
+  from: 1607
+  to: 1776
+  at: [-75.72, 37.64]
+  reason: '체서피크만 동쪽 델마바반도 남쪽 끝의 버지니아 동부 해안(이스턴쇼어, 약 1,732km²). 1614년 무렵부터 버지니아 사람이 정착해 1634년 애커맥 군이 된 버지니아 땅이라, 만을 사이에 두고 본토와 떨어지고 북쪽은 메릴랜드 땅'
+  sources: ["https://en.wikipedia.org/wiki/Eastern_Shore_of_Virginia"]
+
+- entity: virginia-colony
+  from: 1607
+  to: 1776
+  at: [-77.14, 38.63]
+  reason: '포토맥강 기슭 메이슨넥 둘레의 조각 자료 그대로인 작은 땅(약 6km²) — 강을 사이에 두고 메릴랜드 쪽 조각과 맞물려 본토와 떨어져 보이는 자리, 칼선 부스러기 아님'
+  sources: ["https://en.wikipedia.org/wiki/Potomac_River"]
+
+- entity: virginia-colony
+  from: 1768
+  to: 1776
+  at: [-89.54, 36.53]
+  reason: '미시시피강 굽이에 생긴 켄터키 벤드(약 44km²). 지금 켄터키주 땅이지만 미주리·테네시 땅에 둘러싸여 본토와 떨어짐 — 1768년 스탠윅스 요새 조약 뒤 버지니아 몫으로 칠한 켄터키 조각 자료 그대로'
+  sources: ["https://en.wikipedia.org/wiki/Kentucky_Bend"]
+
+- entity: province-of-carolina
+  from: 1663
+  to: 1712
+  at: [-75.79, 36.27]
+  reason: '앨버말 해협 바깥 아우터뱅크스 북쪽 모래섬(커리턱 둘레, 약 247km²). 캐롤라이나 헌장 땅의 바깥 섬이라 해협을 사이에 두고 본토와 떨어짐'
+  sources: ["https://en.wikipedia.org/wiki/Outer_Banks"]
+
+- entity: north-carolina
+  from: 1712
+  to: 1776
+  at: [-75.79, 36.27]
+  reason: '앨버말 해협 바깥 아우터뱅크스 북쪽 모래섬(커리턱 둘레, 약 247km²). 노스캐롤라이나 땅의 바깥 섬이라 해협을 사이에 두고 본토와 떨어짐'
+  sources: ["https://en.wikipedia.org/wiki/Outer_Banks"]
+
+- entity: french-louisiana
+  from: 1712
+  to: 1763
+  at: [-87.48, 30.32]
+  reason: '퍼디도강 어귀 서쪽 앨라배마 몫 모래섬(퍼디도 키 서쪽 끝 둘레, 약 10km²). 지금 앨라배마주 조각을 통째 프랑스령 루이지애나로 칠해, 퍼디도만과 강 동쪽 스페인령 플로리다를 사이에 두고 본토와 떨어짐(M2 usa 1813~1820 줄과 같은 자리)'
+  sources: ["https://en.wikipedia.org/wiki/Perdido_Key,_Florida"]
+
+- entity: french-louisiana
+  from: 1762
+  to: 1763
+  at: [-89.24, 40.3]
+  reason: '일리노이 컨트리(지금 일리노이주, 약 152,681km²). 1762년 퐁텐블로 조약으로 미시시피강 서쪽을 스페인에 넘긴 뒤 강 동쪽만 남은 프랑스령 루이지애나에서, 일리노이는 비워 둔 켄터키·테네시 쪽 보호지 땅과 미시시피·앨라배마 북부(북위 32°28′ 북쪽 비움)를 사이에 두고 미시시피강 물길로만 하류 땅과 이어져 떨어짐(1763년 파리 조약으로 영국)'
+  sources: ["https://en.wikipedia.org/wiki/Illinois_Country", "https://en.wikipedia.org/wiki/Treaty_of_Fontainebleau_(1762)"]
+
+# ── 아메리카 M3 NF-M3 (누벨프랑스·허드슨만·오대호·북동, 2026-11-17) ──
+
+- entity: new-france-canada
+  from: 1608
+  to: 1701
+  at: [-71.97, 45.75]
+  reason: '세인트로렌스강 남쪽 기슭(지금 퀘벡 남부 — 강이 땅 자료를 가름): 두 기슭의 정착지가 강 물길로 이어진 같은 식민지 땅. 서쪽 온타리오 남부가 이 나라 땅이 아닌 해(누벨프랑스 1608~1700·퀘벡 주 1763~1773 — 1701년부터는 오대호 땅, 1774년부터는 퀘벡 법 땅으로 이어짐)에 떨어진 조각으로 보임(아메리카 M3 NF-M3 구현, 2026-11-17)'
+  sources: ["https://en.wikipedia.org/wiki/New_France"]
+
+- entity: province-of-quebec
+  from: 1763
+  to: 1774
+  at: [-71.97, 45.75]
+  reason: '세인트로렌스강 남쪽 기슭(지금 퀘벡 남부 — 강이 땅 자료를 가름): 두 기슭의 정착지가 강 물길로 이어진 같은 식민지 땅. 서쪽 온타리오 남부가 이 나라 땅이 아닌 해(누벨프랑스 1608~1700·퀘벡 주 1763~1773 — 1701년부터는 오대호 땅, 1774년부터는 퀘벡 법 땅으로 이어짐)에 떨어진 조각으로 보임(아메리카 M3 NF-M3 구현, 2026-11-17)'
+  sources: ["https://en.wikipedia.org/wiki/New_France"]
+
+- entity: indian-reserve
+  from: 1768
+  to: 1774
+  at: [-86.54, 35.82]
+  reason: '지금 테네시 땅(약 109,523km²). 1768년 스탠윅스 요새 조약으로 오하이오강 남쪽(지금 켄터키)이 버지니아 식민지로 넘어가, 보호지의 남쪽 몫(테네시)이 오하이오강 북쪽 본토와 켄터키를 사이에 두고 떨어짐(M-M3-2 — 1774년 북쪽은 퀘벡 주, 1775년 테네시는 노스캐롤라이나)'
+  sources: ["https://en.wikipedia.org/wiki/Treaty_of_Fort_Stanwix_(1768)", "https://en.wikipedia.org/wiki/Royal_Proclamation_of_1763"]
+
+# ── 아메리카 M3 MXC-M3 (멕시코·중앙아메리카·1492 두 나라, 2026-11-17) ──
+
+- entity: guatemala-captaincy
+  from: 1543
+  to: 1776
+  at: [-94.08, 16.07]
+  reason: '치아파스 태평양 기슭 석호(마르무에르토 둘레)의 모래톱(약 42km²). 지금 치아파스주 조각 자료 그대로 석호를 사이에 두고 본토와 떨어짐 — 1543년 과테말라 아우디엔시아 관할이 된 뒤 1822년 멕시코에 들기 전까지 치아파스는 과테말라 총사령부 땅(M2 1776~1822 줄과 같은 조각)'
+  sources: ["https://en.wikipedia.org/wiki/Chiapas", "https://en.wikipedia.org/wiki/Captaincy_General_of_Guatemala"]
+
+- entity: new-spain-viceroyalty
+  from: 1546
+  to: 1568
+  at: [-69.52, 10.16]
+  reason: '베네수엘라 주(카라카스 둘레, 약 189,433km²). 1546년부터 왕실 직할 주로 산토도밍고 아우디엔시아(누에바에스파냐 부왕령 아래)가 맡아 카리브해 건너 멕시코 본토와 떨어짐(M-M3-1)'
+  sources: ["https://en.wikipedia.org/wiki/Province_of_Venezuela", "https://es.wikipedia.org/wiki/Capitan%C3%ADa_General_de_Venezuela"]
+
+- entity: new-spain-viceroyalty
+  from: 1568
+  to: 1717
+  at: [-66.7, 9.18]
+  reason: '베네수엘라 주와 누에바안달루시아(카라카스·쿠마나 둘레, 약 267,795~275,353km²). 1568년부터 쿠마나 쪽도 함께 산토도밍고 아우디엔시아가 맡아 카리브해 건너 본토와 떨어짐(M-M3-1 — 1676년 마라카이보는 메리다 쪽으로 넘어감)'
+  sources: ["https://en.wikipedia.org/wiki/Province_of_Venezuela", "https://es.wikipedia.org/wiki/Capitan%C3%ADa_General_de_Venezuela"]
+
+- entity: new-spain-viceroyalty
+  from: 1723
+  to: 1739
+  at: [-66.72, 9.19]
+  reason: '베네수엘라 주와 누에바안달루시아(카라카스·쿠마나 둘레, 약 267,795km²). 1723년 누에바그라나다 부왕령이 폐지되어 다시 산토도밍고 아우디엔시아가 맡았고, 1739년 누에바그라나다가 다시 세워질 때까지 카리브해 건너 본토와 떨어짐(M-M3-1)'
+  sources: ["https://en.wikipedia.org/wiki/Province_of_Venezuela", "https://es.wikipedia.org/wiki/Capitan%C3%ADa_General_de_Venezuela"]
+
+# ── 아메리카 M3 AND-M3 (안데스·라플라타·1492 잉카, 2026-11-17) ──
+
+- entity: new-spain-viceroyalty
+  from: 1546
+  to: 1676
+  at: [-72.26, 10.53]
+  reason: '마라카이보 호수 서쪽 술리아(약 37,929km²). 1546~1675 마라카이보는 카라카스의 베네수엘라 주(산토도밍고 아우디엔시아 — 누에바에스파냐 부왕령)에 속했고, 호수가 지금 술리아주 조각을 동서로 갈라 본토(호수 동쪽·카라카스 쪽)와 떨어짐(M-M3-1)'
+  sources: ["https://es.wikipedia.org/wiki/Capitan%C3%ADa_General_de_Venezuela", "https://en.wikipedia.org/wiki/Province_of_Venezuela"]
+
+- entity: peru-viceroyalty
+  from: 1645
+  to: 1776
+  at: [-72.87, -40.59]
+  reason: '발디비아·로스라고스 본토(약 54,893km²). 1645 발디비아 재건 뒤 스페인이 바다로 이어 지킨 요새 땅 — 그 북쪽 비오비오강~아라우카니아는 1641 킬린 회담이 인정한 마푸체 땅이라 본토(칠레 중부)와 떨어짐(M2 1776 모양과 같음)'
+  sources: ["https://en.wikipedia.org/wiki/Arauco_War", "https://en.wikipedia.org/wiki/Parliament_of_Quill%C3%ADn"]
+
+- entity: peru-viceroyalty
+  from: 1676
+  to: 1717
+  at: [-71.05, 10.23]
+  reason: '마라카이보 호수 동쪽 기슭 술리아(약 7,463km²). 1676-12-31 마라카이보가 메리다·라그리타 주와 합쳐 산타페 아우디엔시아(페루 부왕령) 쪽이 되었고, 호수가 술리아 조각을 갈라 동쪽 기슭이 메리다 쪽 본토와 떨어짐'
+  sources: ["https://es.wikipedia.org/wiki/Capitan%C3%ADa_General_de_Venezuela"]
+
+- entity: peru-viceroyalty
+  from: 1717
+  to: 1723
+  at: [-80.91, 8.36]
+  reason: '파나마 지협(약 73,664km²). 1717~1722 누에바그라나다 부왕령이 지금 콜롬비아를 맡은 동안 파나마는 1739 편입 앞이라 페루 부왕령 권한(G3-5 — 1718 아우디엔시아 폐지 뒤 페루), 콜롬비아를 사이에 두고 본토와 떨어짐'
+  sources: ["https://en.wikipedia.org/wiki/Real_Audiencia_of_Panama", "https://en.wikipedia.org/wiki/Viceroyalty_of_New_Granada"]
+
+- entity: peru-viceroyalty
+  from: 1723
+  to: 1739
+  at: [-71.05, 10.23]
+  reason: '마라카이보 호수 동쪽 기슭 술리아(약 7,463km²) — 1676~1716과 같은 까닭(호수가 조각을 가름), 1723~1738 누에바그라나다 부왕령이 거둬진 동안 다시 페루 부왕령'
+  sources: ["https://es.wikipedia.org/wiki/Capitan%C3%ADa_General_de_Venezuela"]
+
+# ── 아메리카 M3 CAB-M3 (카리브·브라질·기아나, 2026-11-17) ──
+
+- entity: dutch-brazil
+  from: 1641
+  to: 1644
+  at: [-45.41, -5.18]
+  reason: 1641년 11월 네덜란드가 차지한 마라냥(상루이스 둘레, 약 326,511 km²) — 세아라와 마라냥 사이 피아우이 해안은 1674년 첫 정착 앞이라 칠하지 않아 본토(페르남부쿠 쪽)와 떨어져 보임. 실제로 두 땅은 바닷길로 이어졌고 1644년 2월 철수(아메리카 M3 CAB-M3)
+  sources: ["위키백과 Dutch Brazil https://en.wikipedia.org/wiki/Dutch_Brazil"]
+
+- entity: portuguese-brazil
+  from: 1630
+  to: 1635
+  at: [-36.34, -6.34]
+  reason: 1630년 네덜란드가 페르남부쿠를 차지한 뒤 포르투갈 쪽에 남은 파라이바·히우그란지두노르치(약 109,794 km²) — 네덜란드령 페르남부쿠가 사이에 끼어 바이아 쪽 본토와 떨어짐. 1633~1635년 네덜란드가 차지하기 전까지 바닷길로 이어진 포르투갈 땅(아메리카 M3 CAB-M3)
+  sources: ["위키백과 Dutch Brazil https://en.wikipedia.org/wiki/Dutch_Brazil"]
+
+- entity: state-of-maranhao
+  from: 1621
+  to: 1635
+  at: [-39.49, -4.95]
+  reason: 1621년 마라냥 주에 든 세아라(약 151,176 km²) — 마라냥과 사이에 있는 피아우이 해안은 1674년 첫 정착 앞이라 칠하지 않아 상루이스 쪽 본토와 떨어져 보임. 실제로는 해안 바닷길로 이어진 한 주(아메리카 M3 CAB-M3)
+  sources: ["위키백과 Maranhão (former state) https://en.wikipedia.org/wiki/Maranh%C3%A3o_(former_state)"]
+
+- entity: state-of-maranhao
+  from: 1644
+  to: 1656
+  at: [-39.49, -4.95]
+  reason: 1644년 네덜란드가 물러난 뒤 다시 마라냥 주에 든 세아라(약 151,176 km²) — 1621~1635년 줄과 같은 까닭(피아우이 해안 칠하지 않음), 1656년 브라질 주로 옮겨짐(아메리카 M3 CAB-M3)
+  sources: ["위키백과 Maranhão (former state) https://en.wikipedia.org/wiki/Maranh%C3%A3o_(former_state)"]
