@@ -15,7 +15,8 @@
 // 괄호 꼴: '(기원전 1600~기원전 1300)', '(기원전 674~667)'(뒤 숫자도 기원전), '(기원전 300~기원후 500)', '(1914~1918)', '(1788)', 끝에 '년'이 붙어도 됨.
 //   해가 아닌 괄호('(민정 문서)')·여러 해 나열('(기원전 49~45)와 암살(44)' 같은 끝 아닌 괄호)은 보지 않는다.
 // 잰 값(2026-11-18 저장소 사건 3,419개): 제목 끝 괄호가 해로 읽히는 사건 1,919개 — (가) 4건(assyria-egypt-674bc·nebuchadnezzar-exile-605bc·arsaces-parni-247bc·
-//   darius-gandhara-518bc), (나) 6건(tarim-khotan-oasis-states-223bc 등). 모두 예전 사건이라 고치지 않고 목록만 남김(개선 ⑤ 기록).
+//   darius-gandhara-518bc), (나) 6건(tarim-khotan-oasis-states-223bc 등). 개선 ⑤는 목록만 남겼고, 개선 ⑥(2026-11-18)에서 (가) 4건은 endYear를 제목대로 고치고
+//   (나) 6건은 값이 사실대로 맞아(id 끝만 어긋남) 아래 ID_YEAR_OK 예외로 올림 — 새 사건은 id 끝을 1−year로 맞추고 이 목록에 더하지 않는다.
 //   요약 첫 문장의 해는 넣지 않았다: year와 1 다른 것이 기원전 13·서기 162건인데 거의 다 앞선 배경 해('기원전 686년 … 이듬해')라 잡음이 크다.
 // 한계: 제목 괄호가 사건 기간이 아니라 하위 사건 해인데 그 시작이 우연히 year와 같으면 (가)가 틀린 경보를 낼 수 있다. 본문 속 날짜·기간 말('천 년 동안')은 보지 않는다(사실 대조 몫).
 
@@ -51,6 +52,16 @@ export function idBcYear(id: string): number | null {
 /** 천문 연도를 사람 글로: −1299 → '기원전 1300년(천문 −1299)' */
 export const fmtAstro = (n: number) => (n <= 0 ? `기원전 ${1 - n}년(천문 ${n})` : `${n}년`);
 
+/** (나) 예외: id 끝 해만 한 해 어긋나고 year·endYear·제목은 사실대로 맞는 예전 사건(id는 화면·전쟁·링크가 참조해 바꾸지 않음). 2026-11-18 개선 ⑥에서 건마다 확인 */
+export const ID_YEAR_OK: Record<string, string> = {
+  'tarim-khotan-oasis-states-223bc': "year −223 = 본문 '호탄의 시작 … 기원전 224년이라는 기록'",
+  'yuezhi-westward-175bc': '제목(기원전 176~126 무렵)·묵돌 선우 편지(기원전 176) = year −175',
+  'greco-bactria-end-170bc': '제목(기원전 171~129 무렵)·에우크라티데스 1세 집권(기원전 171) = year −170',
+  'qin-qi-221bc': '제목(기원전 222~221) — 연의 요동·대 평정(기원전 222)부터 = year −221',
+  'syracuse-siege-213bc': '제목(기원전 214~212)·마르켈루스 포위 시작(기원전 214) = year −213',
+  'carrhae-han-53bc': '원정 시작(기원전 54, 크라수스 시리아 부임)~카레 전투(기원전 53) = year −53·endYear −52',
+};
+
 /** 사건 yaml 하나: 항목 글 목록(없으면 빈 배열) */
 export function checkEventYears(e: { id: string; year: number; endYear: number | null; title: string }): string[] {
   const out: string[] = [];
@@ -58,7 +69,7 @@ export function checkEventYears(e: { id: string; year: number; endYear: number |
   if (sp && sp.b !== null && sp.a === e.year && e.endYear !== null && sp.b !== e.endYear && Math.abs(sp.b - e.endYear) === 1 && (sp.b <= 0 || e.endYear <= 0))
     out.push(`제목 끝 '${sp.raw}'의 끝은 ${fmtAstro(sp.b)}인데 endYear ${e.endYear}(${fmtAstro(e.endYear)}) — 천문 연도 실수 의심(기원전 N년 = 1−N). endYear를 ${sp.b}(으)로 하거나 제목을 고침`);
   const idY = idBcYear(e.id);
-  if (idY !== null && idY !== e.year && Math.abs(idY - e.year) === 1)
+  if (idY !== null && idY !== e.year && Math.abs(idY - e.year) === 1 && !(e.id in ID_YEAR_OK))
     out.push(`id 끝 '${e.id.match(/\d+bc$/)![0]}'은 천문 ${idY}인데 year ${e.year}(${fmtAstro(e.year)}) — 천문 연도 실수 의심(id 끝 N = 1−year)`);
   return out;
 }
