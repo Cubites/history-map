@@ -318,12 +318,6 @@
 - key: '1900 german-samoa 성립'
   reason: 'M2(하한~1900) 사건 묶음이 채움 — 1901 앞 성립'
   decided: 2026-11-17 오세아니아 M1 AZP-M1 구현(사건은 oc-01~03 한 묶음)
-- key: '1901 colony-of-new-zealand 버전'
-  reason: 'M2(하한~1900)가 1901 앞을 칠하면 낡음 — M2 칸이 지움'
-  decided: 2026-11-17 오세아니아 M1 AZP-M1 구현(사건은 oc-01~03 한 묶음)
-- key: '1901 fiji-colony 버전'
-  reason: 'M2(하한~1900)가 1901 앞을 칠하면 낡음 — M2 칸이 지움'
-  decided: 2026-11-17 오세아니아 M1 AZP-M1 구현(사건은 oc-01~03 한 묶음)
 - key: '1901 australia 성립'
   reason: 'oc-01~03 사건 묶음이 채움'
   decided: 2026-11-17 오세아니아 M1 AZP-M1 구현(사건은 oc-01~03 한 묶음)
@@ -385,18 +379,6 @@
 - key: '1893 british-solomon-islands 성립'
   reason: 'M2(하한~1900) 사건 묶음이 채움 — 1901 앞 성립'
   decided: 2026-11-17 오세아니아 M1 PNG-M1 구현(사건은 oc-01~03 한 묶음)
-- key: '1901 british-new-guinea 버전'
-  reason: 'M2(하한~1900)가 1901 앞을 칠하면 낡음 — M2 칸이 지움'
-  decided: 2026-11-17 오세아니아 M1 PNG-M1 구현(사건은 oc-01~03 한 묶음)
-- key: '1901 german-new-guinea 버전'
-  reason: 'M2(하한~1900)가 1901 앞을 칠하면 낡음 — M2 칸이 지움'
-  decided: 2026-11-17 오세아니아 M1 PNG-M1 구현(사건은 oc-01~03 한 묶음)
-- key: '1901 british-solomon-islands 버전'
-  reason: 'M2(하한~1900)가 1901 앞을 칠하면 낡음 — M2 칸이 지움'
-  decided: 2026-11-17 오세아니아 M1 PNG-M1 구현(사건은 oc-01~03 한 묶음)
-- key: '1901 new-caledonia 버전'
-  reason: 'M2(하한~1900)가 1901 앞을 칠하면 낡음 — M2 칸이 지움'
-  decided: 2026-11-17 오세아니아 M1 PNG-M1 구현(사건은 oc-01~03 한 묶음)
 - key: '1906 british-new-guinea 소멸'
   reason: 'oc-01~03 사건 묶음이 채움'
   decided: 2026-11-17 오세아니아 M1 PNG-M1 구현(사건은 oc-01~03 한 묶음)
@@ -442,3 +424,176 @@
 - key: '1980 vanuatu 성립'
   reason: 'oc-01~03 사건 묶음이 채움'
   decided: 2026-11-17 오세아니아 M1 PNG-M1 구현(사건은 oc-01~03 한 묶음)
+
+# ── 오세아니아 M2 AUS-M2 (오스트레일리아 식민지 여섯, 2026-11-18) ──
+- key: '1788 new-south-wales 성립'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-18 오세아니아 M2 AUS-M2 구현(사건은 oc-01~03 한 묶음)
+- key: '1825 van-diemens-land 성립'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-18 오세아니아 M2 AUS-M2 구현(사건은 oc-01~03 한 묶음)
+- key: '1829 western-australia 성립'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-18 오세아니아 M2 AUS-M2 구현(사건은 oc-01~03 한 묶음)
+- key: '1836 south-australia 성립'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-18 오세아니아 M2 AUS-M2 구현(사건은 oc-01~03 한 묶음)
+- key: '1851 victoria 성립'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-18 오세아니아 M2 AUS-M2 구현(사건은 oc-01~03 한 묶음)
+- key: '1859 queensland 성립'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-18 오세아니아 M2 AUS-M2 구현(사건은 oc-01~03 한 묶음)
+- key: '1901 new-south-wales 소멸'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-18 오세아니아 M2 AUS-M2 구현(사건은 oc-01~03 한 묶음)
+- key: '1901 van-diemens-land 소멸'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-18 오세아니아 M2 AUS-M2 구현(사건은 oc-01~03 한 묶음)
+- key: '1901 western-australia 소멸'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-18 오세아니아 M2 AUS-M2 구현(사건은 oc-01~03 한 묶음)
+- key: '1901 south-australia 소멸'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-18 오세아니아 M2 AUS-M2 구현(사건은 oc-01~03 한 묶음)
+- key: '1901 victoria 소멸'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-18 오세아니아 M2 AUS-M2 구현(사건은 oc-01~03 한 묶음)
+- key: '1901 queensland 소멸'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-18 오세아니아 M2 AUS-M2 구현(사건은 oc-01~03 한 묶음)
+- key: '1825 new-south-wales 버전'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-18 오세아니아 M2 AUS-M2 구현(사건은 oc-01~03 한 묶음)
+- key: '1836 new-south-wales 버전'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-18 오세아니아 M2 AUS-M2 구현(사건은 oc-01~03 한 묶음)
+- key: '1851 new-south-wales 버전'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-18 오세아니아 M2 AUS-M2 구현(사건은 oc-01~03 한 묶음)
+- key: '1859 new-south-wales 버전'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-18 오세아니아 M2 AUS-M2 구현(사건은 oc-01~03 한 묶음)
+- key: '1861 new-south-wales 버전'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-18 오세아니아 M2 AUS-M2 구현(사건은 oc-01~03 한 묶음)
+- key: '1861 south-australia 버전'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-18 오세아니아 M2 AUS-M2 구현(사건은 oc-01~03 한 묶음)
+- key: '1862 new-south-wales 버전'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-18 오세아니아 M2 AUS-M2 구현(사건은 oc-01~03 한 묶음)
+- key: '1862 queensland 버전'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-18 오세아니아 M2 AUS-M2 구현(사건은 oc-01~03 한 묶음)
+- key: '1863 new-south-wales 버전'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-18 오세아니아 M2 AUS-M2 구현(사건은 oc-01~03 한 묶음)
+- key: '1863 south-australia 버전'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-18 오세아니아 M2 AUS-M2 구현(사건은 oc-01~03 한 묶음)
+
+# ── 오세아니아 M2 MEL-M2 (뉴기니·솔로몬·바누아투·땅 없는 항목 여덟, 2026-11-18) ──
+- key: '-2332 aboriginal-australians 성립'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-18 오세아니아 M2 MEL-M2 구현(사건은 oc-01~03 한 묶음)
+- key: '-2332 torres-strait-islanders 성립'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-18 오세아니아 M2 MEL-M2 구현(사건은 oc-01~03 한 묶음)
+- key: '-2332 papuans 성립'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-18 오세아니아 M2 MEL-M2 구현(사건은 oc-01~03 한 묶음)
+- key: '-1599 lapita-culture 성립'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-18 오세아니아 M2 MEL-M2 구현(사건은 oc-01~03 한 묶음)
+- key: '-498 lapita-culture 소멸'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-18 오세아니아 M2 MEL-M2 구현(사건은 oc-01~03 한 묶음)
+- key: '-2332 austronesian-culture 성립'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-18 오세아니아 M2 MEL-M2 구현(사건은 oc-01~03 한 묶음)
+- key: '-1599 melanesian-societies 성립'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-18 오세아니아 M2 MEL-M2 구현(사건은 oc-01~03 한 묶음)
+- key: '-1199 solomon-islanders 성립'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-18 오세아니아 M2 MEL-M2 구현(사건은 oc-01~03 한 묶음)
+- key: '-1199 ni-vanuatu 성립'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-18 오세아니아 M2 MEL-M2 구현(사건은 oc-01~03 한 묶음)
+- key: '1885 german-new-guinea 버전'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-18 오세아니아 M2 MEL-M2 구현(사건은 oc-01~03 한 묶음)
+
+# ── 오세아니아 M2 SPC-M2 (뉴질랜드·피지·통가·사모아·타히티·누벨칼레도니, 2026-11-18) ──
+- key: '1791 kingdom-of-tahiti 성립'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-18 오세아니아 M2 SPC-M2 구현(사건은 oc-01~03 한 묶음)
+- key: '1880 kingdom-of-tahiti 소멸'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-18 오세아니아 M2 SPC-M2 구현(사건은 oc-01~03 한 묶음)
+- key: '1871 kingdom-of-fiji 성립'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-18 오세아니아 M2 SPC-M2 구현(사건은 oc-01~03 한 묶음)
+- key: '1874 kingdom-of-fiji 소멸'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-18 오세아니아 M2 SPC-M2 구현(사건은 oc-01~03 한 묶음)
+- key: '1889 samoa-kingdom 성립'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-18 오세아니아 M2 SPC-M2 구현(사건은 oc-01~03 한 묶음)
+- key: '1900 samoa-kingdom 소멸'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-18 오세아니아 M2 SPC-M2 구현(사건은 oc-01~03 한 묶음)
+
+# ── 오세아니아 M2 HPO-M2 (하와이·폴리네시아·미크로네시아·땅 없는 항목 아홉, 2026-11-18) ──
+- key: '-1499 micronesian-culture 성립'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-18 오세아니아 M2 HPO-M2 구현(사건은 oc-01~03 한 묶음)
+- key: '-1499 chamorro 성립'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-18 오세아니아 M2 HPO-M2 구현(사건은 oc-01~03 한 묶음)
+- key: '-799 polynesian-culture 성립'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-18 오세아니아 M2 HPO-M2 구현(사건은 oc-01~03 한 묶음)
+- key: '300 tahitian-chiefdoms 성립'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-18 오세아니아 M2 HPO-M2 구현(사건은 oc-01~03 한 묶음)
+- key: '950 tui-tonga 성립'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-18 오세아니아 M2 HPO-M2 구현(사건은 oc-01~03 한 묶음)
+- key: '1000 hawaiian-chiefdoms 성립'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-18 오세아니아 M2 HPO-M2 구현(사건은 oc-01~03 한 묶음)
+- key: '1100 saudeleur 성립'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-18 오세아니아 M2 HPO-M2 구현(사건은 oc-01~03 한 묶음)
+- key: '1200 rapa-nui 성립'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-18 오세아니아 M2 HPO-M2 구현(사건은 oc-01~03 한 묶음)
+- key: '1250 maori 성립'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-18 오세아니아 M2 HPO-M2 구현(사건은 oc-01~03 한 묶음)
+- key: '1629 saudeleur 소멸'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-18 오세아니아 M2 HPO-M2 구현(사건은 oc-01~03 한 묶음)
+- key: '1791 tahitian-chiefdoms 소멸'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-18 오세아니아 M2 HPO-M2 구현(사건은 oc-01~03 한 묶음)
+- key: '1795 hawaiian-kingdom 성립'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-18 오세아니아 M2 HPO-M2 구현(사건은 oc-01~03 한 묶음)
+- key: '1795 hawaiian-chiefdoms 소멸'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-18 오세아니아 M2 HPO-M2 구현(사건은 oc-01~03 한 묶음)
+- key: '1866 tui-tonga 소멸'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-18 오세아니아 M2 HPO-M2 구현(사건은 oc-01~03 한 묶음)
+- key: '1893 hawaiian-kingdom 소멸'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-18 오세아니아 M2 HPO-M2 구현(사건은 oc-01~03 한 묶음)
+- key: '1893 republic-of-hawaii 성립'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-18 오세아니아 M2 HPO-M2 구현(사건은 oc-01~03 한 묶음)
+- key: '1898 republic-of-hawaii 소멸'
+  reason: 'oc-01~03 사건 묶음이 채움'
+  decided: 2026-11-18 오세아니아 M2 HPO-M2 구현(사건은 oc-01~03 한 묶음)

@@ -68,6 +68,7 @@ export const REGION_FILTER_OF: Record<string, RegionFilterUnit> = {
   'americas-ancient': 'americas', // 아메리카 M5(2026-11-18): M1~M4와 같은 단위 americas
   oceania: 'oceania', // 오세아니아 M1(2026-11-17): 새 단위 oceania
   'oceania-modern': 'oceania', // 오세아니아 M1(2026-11-17): 새 단위 oceania
+  'oceania-colonial': 'oceania', // 오세아니아 M2(2026-11-18): M1과 같은 단위 oceania
 };
 
 /** 사건·전쟁 파일 이름 앞머리 → 권역. 앞에서부터 처음 맞는 것을 쓴다 (예: eu-01-revolutions-1789-1914.yaml → europe) */

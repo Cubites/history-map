@@ -2046,3 +2046,29 @@
 - { type: successor_of, subject: papua-new-guinea, object: territory-of-papua-and-new-guinea, from: 1975, to: null } # 1975-09-16 준주가 파푸아뉴기니로 독립
 - { type: successor_of, subject: solomon-islands, object: british-solomon-islands, from: 1978, to: null } # 1978-07-07 보호령이 솔로몬 제도로 독립
 - { type: successor_of, subject: vanuatu, object: new-hebrides, from: 1980, to: null } # 1980-07-30 영불 공동 통치령이 바누아투로 독립
+
+# ── 오세아니아 M2 AUS-M2 (오스트레일리아 식민지 여섯, 2026-11-18) ──
+- { type: vassal_of, subject: new-south-wales, object: uk, from: 1788, to: 1900 } # 1788-02-07 식민지 선포(1787-04-25 필립 총독 위임장) — 1901-01-01 연방 앞 해까지(위키 en Colony of New South Wales)
+- { type: vassal_of, subject: van-diemens-land, object: uk, from: 1825, to: 1900 } # 1825-12-03 뉴사우스웨일스에서 분리(1856 태즈메이니아 개칭은 글) — 1901 연방 앞 해까지(위키 en Van Diemen's Land)
+- { type: vassal_of, subject: western-australia, object: uk, from: 1829, to: 1900 } # 1829-05-02 프리맨틀 영유 선언·06-17 스완강 정착 — 1901 연방 앞 해까지(위키 en Swan River Colony)
+- { type: vassal_of, subject: south-australia, object: uk, from: 1836, to: 1900 } # 1836-02-19 특허장(12-28 선포) — 1901 연방 앞 해까지(위키 en South Australia)
+- { type: vassal_of, subject: victoria, object: uk, from: 1851, to: 1900 } # 1851-07-01 뉴사우스웨일스에서 분리 — 1901 연방 앞 해까지(위키 en Territorial evolution of Australia)
+- { type: vassal_of, subject: queensland, object: uk, from: 1859, to: 1900 } # 1859-06-06 특허장(12-10 선포) — 1901 연방 앞 해까지(위키 en Colony of Queensland)
+# 이음: 1901-01-01 여섯 식민지가 연방을 이룸(둘 넘이 하나로 합침 — 대상마다 한 줄, 선례 territory-of-papua-and-new-guinea 1949 두 줄, SKEL-NOTE 5절 K7)
+- { type: successor_of, subject: australia, object: new-south-wales, from: 1901, to: null } # 1901-01-01 오스트레일리아 연방 — 뉴사우스웨일스 쪽(위키 en Federation of Australia)
+- { type: successor_of, subject: australia, object: van-diemens-land, from: 1901, to: null } # 1901-01-01 오스트레일리아 연방 — 태즈메이니아 쪽
+- { type: successor_of, subject: australia, object: western-australia, from: 1901, to: null } # 1901-01-01 오스트레일리아 연방 — 웨스턴오스트레일리아 쪽
+- { type: successor_of, subject: australia, object: south-australia, from: 1901, to: null } # 1901-01-01 오스트레일리아 연방 — 사우스오스트레일리아 쪽(노던 준주 땅 포함)
+- { type: successor_of, subject: australia, object: victoria, from: 1901, to: null } # 1901-01-01 오스트레일리아 연방 — 빅토리아 쪽
+- { type: successor_of, subject: australia, object: queensland, from: 1901, to: null } # 1901-01-01 오스트레일리아 연방 — 퀸즐랜드 쪽
+
+# ── 오세아니아 M2 MEL-M2 (뉴기니·솔로몬·바누아투·땅 없는 항목 여덟, 2026-11-18) ──
+
+# ── 오세아니아 M2 SPC-M2 (뉴질랜드·피지·통가·사모아·타히티·누벨칼레도니, 2026-11-18) ──
+- { type: vassal_of, subject: kingdom-of-tahiti, object: france, from: 1842, to: 1879 } # 1842-09-09 프랑스 보호령 — 1880-06-29 병합 앞 해까지(위키 en Kingdom of Tahiti)
+- { type: successor_of, subject: fiji-colony, object: kingdom-of-fiji, from: 1874, to: null } # 1874-10-10 할양 — 피지 왕국 땅이 그대로 식민지가 됨(위키 en Kingdom of Fiji)
+- { type: successor_of, subject: french-polynesia, object: kingdom-of-tahiti, from: 1880, to: null } # 1880-06-29 포마레 5세 양도 — 보호령 왕국이 프랑스 식민지가 됨(위키 en Kingdom of Tahiti)
+- { type: successor_of, subject: german-samoa, object: samoa-kingdom, from: 1900, to: null } # 1900-02-16 삼국 조약 효력 — 사모아 왕국 서쪽 섬이 독일령이 됨(위키 en Samoa Tripartite Convention)
+
+# ── 오세아니아 M2 HPO-M2 (하와이·폴리네시아·미크로네시아·땅 없는 항목 아홉, 2026-11-18) ──
+- { type: successor_of, subject: republic-of-hawaii, object: hawaiian-kingdom, from: 1893, to: null } # 1893-01-17 왕국 전복 — 같은 하와이 제도를 임시 정부(1894-07-04 공화국)가 이어 다스림(위키 en Republic of Hawaii, SKEL-NOTE 5절 K7)

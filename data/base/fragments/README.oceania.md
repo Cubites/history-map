@@ -17,7 +17,9 @@
 
 | 파일 | 크기 | sha256 |
 |---|---|---|
-| `oceania.topo.json` | 162,950B | `f8f4e5bd5e9d79bc55e172ce7ce22bd1d46afc33cfd682eb27d3a918ebcf5379` |
+| `oceania.topo.json` | 162,939B | `c414b23dcfee43dab0ec538f2f313712a14cd7189393cb7694000daf8ab2d61b` |
+
+- 손 고침(커밋 `b0800fe`, 2026-11-17 — 표 맞춤은 오세아니아 M2 뼈대 2026-11-18): Natural Earth 원본의 피지 `FJ-N`·`FJ-E` 꼭짓점 8개와 bbox의 경도 ±180.0002를 ±180.0000으로 고쳤다(약 22 m — `build:data --check` 경위도 범위). 위 크기·sha256은 고친 파일 값이다. `prep:fragments`는 경도를 자르지 않아 같은 원본에서 다시 만들면 ±180.0002가 되살아나므로, 다시 만들 때는 이 꼭짓점들을 같은 값으로 고치고 이 표를 맞춘다.
 
 - TopoJSON. transform은 scale [0.0001, 0.0001], translate [0, 0]이라 좌표 = 정수 × 0.0001°다. 다른 권역 파일도 같은 transform을 쓰므로 복호화한 좌표가 같다.
 - `objects.fragments`: 조각 138개. `id`와 `properties` { adm0(NE adm0_a3), name, type(NE type_en), region(NE region, 있으면), unit(NE geonunit이 나라 이름과 다를 때) }

@@ -9,13 +9,6 @@
   expect: australia
   url: https://en.wikipedia.org/wiki/Canberra
   from: 오세아니아 M1 AZP-M1 결과노트
-- name: 시드니 연방 앞
-  at: [151.21, -33.87]
-  year: 1900
-  expect: none
-  region: oceania
-  url: https://en.wikipedia.org/wiki/Territorial_evolution_of_Australia
-  from: 오세아니아 M1 AZP-M1 결과노트
 - name: 시드니 연방 뒤
   at: [151.21, -33.87]
   year: 1902
@@ -167,13 +160,6 @@
   year: 2026
   expect: french-polynesia
   url: https://en.wikipedia.org/wiki/French_Polynesia
-  from: 오세아니아 M1 AZP-M1 결과노트
-- name: 호놀룰루 병합 앞
-  at: [-157.86, 21.31]
-  year: 1897
-  expect: none
-  region: oceania
-  url: https://en.wikipedia.org/wiki/Annexation_of_Hawaii
   from: 오세아니아 M1 AZP-M1 결과노트
 - name: 호놀룰루 병합 뒤
   at: [-157.86, 21.31]
@@ -450,3 +436,520 @@
   expect: new-caledonia
   url: https://en.wikipedia.org/wiki/New_Caledonia
   from: 오세아니아 M1 PNG-M1 결과노트
+
+# ── 오세아니아 M2 AUS-M2 (오스트레일리아 식민지 여섯, 2026-11-18) ──
+- name: 시드니 연방 앞
+  at: [151.21, -33.87]
+  year: 1900
+  expect: new-south-wales
+  url: https://en.wikipedia.org/wiki/Territorial_evolution_of_Australia
+  from: 오세아니아 M1 AZP-M1 결과노트
+- name: 시드니 정착 앞
+  at: [151.21, -33.87]
+  year: 1787
+  expect: none
+  region: oceania
+  url: https://en.wikipedia.org/wiki/First_Fleet
+  from: 오세아니아 M2 AUS-M2 결과노트
+- name: 시드니 정착
+  at: [151.21, -33.87]
+  year: 1789
+  expect: new-south-wales
+  url: https://en.wikipedia.org/wiki/Colony_of_New_South_Wales
+  from: 오세아니아 M2 AUS-M2 결과노트
+- name: 시드니 (뉴사우스웨일스 수도)
+  at: [151.21, -33.87]
+  year: 1845
+  expect: new-south-wales
+  url: https://en.wikipedia.org/wiki/Sydney
+  from: 오세아니아 M2 AUS-M2 결과노트
+- name: 호바트 분리 앞
+  at: [147.33, -42.88]
+  year: 1800
+  expect: new-south-wales
+  url: https://en.wikipedia.org/wiki/Hobart
+  from: 오세아니아 M2 AUS-M2 결과노트
+- name: 호바트 분리 뒤
+  at: [147.33, -42.88]
+  year: 1830
+  expect: van-diemens-land
+  url: https://en.wikipedia.org/wiki/Van_Diemen%27s_Land
+  from: 오세아니아 M2 AUS-M2 결과노트
+- name: 호바트 (반디먼즈랜드 수도)
+  at: [147.33, -42.88]
+  year: 1863
+  expect: van-diemens-land
+  url: https://en.wikipedia.org/wiki/Hobart
+  from: 오세아니아 M2 AUS-M2 결과노트
+- name: 퍼스 선언 앞
+  at: [115.86, -31.95]
+  year: 1820
+  expect: none
+  region: oceania
+  url: https://en.wikipedia.org/wiki/Swan_River_Colony
+  from: 오세아니아 M2 AUS-M2 결과노트
+- name: 퍼스 선언 뒤
+  at: [115.86, -31.95]
+  year: 1830
+  expect: western-australia
+  url: https://en.wikipedia.org/wiki/Swan_River_Colony
+  from: 오세아니아 M2 AUS-M2 결과노트
+- name: 퍼스 (웨스턴오스트레일리아 수도)
+  at: [115.86, -31.95]
+  year: 1865
+  expect: western-australia
+  url: https://en.wikipedia.org/wiki/Perth
+  from: 오세아니아 M2 AUS-M2 결과노트
+- name: 애들레이드 특허장 앞
+  at: [138.60, -34.93]
+  year: 1830
+  expect: new-south-wales
+  url: https://en.wikipedia.org/wiki/Territorial_evolution_of_Australia
+  from: 오세아니아 M2 AUS-M2 결과노트
+- name: 애들레이드 특허장 뒤
+  at: [138.60, -34.93]
+  year: 1840
+  expect: south-australia
+  url: https://en.wikipedia.org/wiki/South_Australia
+  from: 오세아니아 M2 AUS-M2 결과노트
+- name: 애들레이드 (사우스오스트레일리아 수도)
+  at: [138.60, -34.93]
+  year: 1868
+  expect: south-australia
+  url: https://en.wikipedia.org/wiki/Adelaide
+  from: 오세아니아 M2 AUS-M2 결과노트
+- name: 멜버른 분리 앞
+  at: [144.96, -37.81]
+  year: 1840
+  expect: new-south-wales
+  url: https://en.wikipedia.org/wiki/Territorial_evolution_of_Australia
+  from: 오세아니아 M2 AUS-M2 결과노트
+- name: 멜버른 분리 뒤
+  at: [144.96, -37.81]
+  year: 1855
+  expect: victoria
+  url: https://en.wikipedia.org/wiki/Territorial_evolution_of_Australia
+  from: 오세아니아 M2 AUS-M2 결과노트
+- name: 멜버른 (빅토리아 수도)
+  at: [144.96, -37.81]
+  year: 1876
+  expect: victoria
+  url: https://en.wikipedia.org/wiki/Melbourne
+  from: 오세아니아 M2 AUS-M2 결과노트
+- name: 브리즈번 분리 앞
+  at: [153.03, -27.47]
+  year: 1855
+  expect: new-south-wales
+  url: https://en.wikipedia.org/wiki/Colony_of_Queensland
+  from: 오세아니아 M2 AUS-M2 결과노트
+- name: 브리즈번 분리 뒤
+  at: [153.03, -27.47]
+  year: 1860
+  expect: queensland
+  url: https://en.wikipedia.org/wiki/Colony_of_Queensland
+  from: 오세아니아 M2 AUS-M2 결과노트
+- name: 브리즈번 (퀸즐랜드 수도)
+  at: [153.03, -27.47]
+  year: 1880
+  expect: queensland
+  url: https://en.wikipedia.org/wiki/Brisbane
+  from: 오세아니아 M2 AUS-M2 결과노트
+- name: 다윈 135° 서쪽 비움
+  at: [130.84, -12.46]
+  year: 1800
+  expect: none
+  region: oceania
+  url: https://en.wikipedia.org/wiki/Territorial_evolution_of_Australia
+  from: 오세아니아 M2 AUS-M2 결과노트
+- name: 다윈 129°까지 넓힘 뒤
+  at: [130.84, -12.46]
+  year: 1830
+  expect: new-south-wales
+  url: https://en.wikipedia.org/wiki/Territorial_evolution_of_Australia
+  from: 오세아니아 M2 AUS-M2 결과노트
+- name: 다윈 노스오스트레일리아 때
+  at: [130.84, -12.46]
+  year: 1846
+  expect: new-south-wales
+  url: https://en.wikipedia.org/wiki/North_Australia
+  from: 오세아니아 M2 AUS-M2 결과노트
+- name: 다윈 사우스오스트레일리아 편입 뒤
+  at: [130.84, -12.46]
+  year: 1870
+  expect: south-australia
+  url: https://en.wikipedia.org/wiki/South_Australia
+  from: 오세아니아 M2 AUS-M2 결과노트
+- name: 앨리스스프링스 135° 서쪽 비움
+  at: [133.88, -23.70]
+  year: 1800
+  expect: none
+  region: oceania
+  url: https://en.wikipedia.org/wiki/Territorial_evolution_of_Australia
+  from: 오세아니아 M2 AUS-M2 결과노트
+- name: 앨리스스프링스 사우스오스트레일리아 편입 뒤
+  at: [133.88, -23.70]
+  year: 1870
+  expect: south-australia
+  url: https://en.wikipedia.org/wiki/South_Australia
+  from: 오세아니아 M2 AUS-M2 결과노트
+- name: 동경 135° 서쪽 (위임장 밖)
+  at: [134.90, -20.00]
+  year: 1800
+  expect: none
+  region: oceania
+  url: https://en.wikipedia.org/wiki/Territorial_evolution_of_Australia
+  from: 오세아니아 M2 AUS-M2 결과노트
+- name: 동경 135° 동쪽 (위임장 안)
+  at: [135.10, -20.00]
+  year: 1800
+  expect: new-south-wales
+  url: https://en.wikipedia.org/wiki/Territorial_evolution_of_Australia
+  from: 오세아니아 M2 AUS-M2 결과노트
+- name: 동경 135° 서쪽 129°까지 넓힘 뒤
+  at: [134.90, -20.00]
+  year: 1840
+  expect: new-south-wales
+  url: https://en.wikipedia.org/wiki/Territorial_evolution_of_Australia
+  from: 오세아니아 M2 AUS-M2 결과노트
+- name: 동경 132° 서쪽 (사우스오스트레일리아 밖)
+  at: [131.90, -30.00]
+  year: 1840
+  expect: new-south-wales
+  url: https://en.wikipedia.org/wiki/South_Australia
+  from: 오세아니아 M2 AUS-M2 결과노트
+- name: 동경 132° 동쪽 (사우스오스트레일리아 안)
+  at: [132.10, -30.00]
+  year: 1840
+  expect: south-australia
+  url: https://en.wikipedia.org/wiki/South_Australia
+  from: 오세아니아 M2 AUS-M2 결과노트
+- name: 동경 132° 서쪽 1861 넓힘 뒤
+  at: [131.90, -30.00]
+  year: 1865
+  expect: south-australia
+  url: https://en.wikipedia.org/wiki/Territorial_evolution_of_Australia
+  from: 오세아니아 M2 AUS-M2 결과노트
+- name: 동경 141° 서쪽 (퀸즐랜드 밖)
+  at: [140.90, -20.00]
+  year: 1860
+  expect: new-south-wales
+  url: https://en.wikipedia.org/wiki/Colony_of_Queensland
+  from: 오세아니아 M2 AUS-M2 결과노트
+- name: 동경 141° 동쪽 (퀸즐랜드 안)
+  at: [141.10, -20.00]
+  year: 1860
+  expect: queensland
+  url: https://en.wikipedia.org/wiki/Colony_of_Queensland
+  from: 오세아니아 M2 AUS-M2 결과노트
+- name: 동경 141° 서쪽 1862 넓힘 뒤
+  at: [140.90, -20.00]
+  year: 1865
+  expect: queensland
+  url: https://en.wikipedia.org/wiki/Colony_of_Queensland
+  from: 오세아니아 M2 AUS-M2 결과노트
+
+# ── 오세아니아 M2 MEL-M2 (뉴기니·솔로몬·바누아투·땅 없는 항목 여덟, 2026-11-18) ──
+- name: 포트모르즈비 보호령 앞
+  at: [147.18, -9.44]
+  year: 1883
+  expect: none
+  region: oceania
+  url: https://en.wikipedia.org/wiki/British_New_Guinea
+  from: 오세아니아 M2 MEL-M2 결과노트
+- name: 포트모르즈비 영국 보호령 첫해 뒤
+  at: [147.18, -9.44]
+  year: 1885
+  expect: british-new-guinea
+  url: https://en.wikipedia.org/wiki/British_New_Guinea
+  from: 오세아니아 M2 MEL-M2 결과노트
+- name: 포트모르즈비 연방 앞 영국령
+  at: [147.18, -9.44]
+  year: 1900
+  expect: british-new-guinea
+  url: https://en.wikipedia.org/wiki/Territory_of_Papua
+  from: 오세아니아 M2 MEL-M2 결과노트
+- name: 마당 독일 보호령 앞
+  at: [145.8, -5.22]
+  year: 1883
+  expect: none
+  region: oceania
+  url: https://en.wikipedia.org/wiki/German_New_Guinea
+  from: 오세아니아 M2 MEL-M2 결과노트
+- name: 마당 독일 보호령 첫해
+  at: [145.8, -5.22]
+  year: 1884
+  expect: german-new-guinea
+  url: https://en.wikipedia.org/wiki/German_New_Guinea
+  from: 오세아니아 M2 MEL-M2 결과노트
+- name: 마당 연방 앞 독일령
+  at: [145.8, -5.22]
+  year: 1900
+  expect: german-new-guinea
+  url: https://en.wikipedia.org/wiki/German_New_Guinea
+  from: 오세아니아 M2 MEL-M2 결과노트
+- name: 라바울 독일 보호령 넓히기 앞
+  at: [152.17, -4.2]
+  year: 1884
+  expect: none
+  region: oceania
+  url: https://en.wikipedia.org/wiki/German_New_Guinea
+  from: 오세아니아 M2 MEL-M2 결과노트
+- name: 라바울 비스마르크 제도 편입 뒤
+  at: [152.17, -4.2]
+  year: 1886
+  expect: german-new-guinea
+  url: https://en.wikipedia.org/wiki/German_New_Guinea
+  from: 오세아니아 M2 MEL-M2 결과노트
+- name: 부카 독일 보호령 넓히기 앞
+  at: [154.67, -5.43]
+  year: 1884
+  expect: none
+  region: oceania
+  url: https://en.wikipedia.org/wiki/German_New_Guinea
+  from: 오세아니아 M2 MEL-M2 결과노트
+- name: 부카 북솔로몬 편입 뒤
+  at: [154.67, -5.43]
+  year: 1886
+  expect: german-new-guinea
+  url: https://en.wikipedia.org/wiki/German_New_Guinea
+  from: 오세아니아 M2 MEL-M2 결과노트
+- name: 바니모(동경 141° 동쪽) 독일 보호령 앞
+  at: [141.3, -2.68]
+  year: 1883
+  expect: none
+  region: oceania
+  url: https://en.wikipedia.org/wiki/German_New_Guinea
+  from: 오세아니아 M2 MEL-M2 결과노트
+- name: 바니모(동경 141° 동쪽) 독일 보호령 뒤
+  at: [141.3, -2.68]
+  year: 1886
+  expect: german-new-guinea
+  url: https://en.wikipedia.org/wiki/German_New_Guinea
+  from: 오세아니아 M2 MEL-M2 결과노트
+- name: 호니아라 영국 보호령 앞
+  at: [159.992, -9.412]
+  year: 1892
+  expect: none
+  region: oceania
+  url: https://en.wikipedia.org/wiki/British_Solomon_Islands
+  from: 오세아니아 M2 MEL-M2 결과노트
+- name: 호니아라 영국 보호령 뒤
+  at: [159.992, -9.412]
+  year: 1894
+  expect: british-solomon-islands
+  url: https://en.wikipedia.org/wiki/British_Solomon_Islands
+  from: 오세아니아 M2 MEL-M2 결과노트
+- name: 포트빌라 해군 위원회 시기
+  at: [168.32, -17.73]
+  year: 1888
+  expect: none
+  region: oceania
+  url: https://en.wikipedia.org/wiki/New_Hebrides
+  from: 오세아니아 M2 MEL-M2 결과노트
+- name: 포트빌라 연방 앞
+  at: [168.32, -17.73]
+  year: 1900
+  expect: none
+  region: oceania
+  url: https://en.wikipedia.org/wiki/New_Hebrides
+  from: 오세아니아 M2 MEL-M2 결과노트
+
+# ── 오세아니아 M2 SPC-M2 (뉴질랜드·피지·통가·사모아·타히티·누벨칼레도니, 2026-11-18) ──
+- name: 웰링턴 주권 선포 앞
+  at: [174.78, -41.29]
+  year: 1835
+  expect: none
+  region: oceania
+  url: https://en.wikipedia.org/wiki/Colony_of_New_Zealand
+  from: 오세아니아 M2 SPC-M2 결과노트
+- name: 웰링턴 식민지 때
+  at: [174.78, -41.29]
+  year: 1845
+  expect: colony-of-new-zealand
+  url: https://en.wikipedia.org/wiki/Colony_of_New_Zealand
+  from: 오세아니아 M2 SPC-M2 결과노트
+- name: 채텀섬(와이탕이 북동쪽, 경도 180° 동쪽) 식민지 때
+  at: [-176.478, -43.892]
+  year: 1845
+  expect: colony-of-new-zealand
+  url: https://en.wikipedia.org/wiki/Chatham_Islands
+  from: 오세아니아 M2 SPC-M2 결과노트
+- name: 수바 피지 왕국 앞
+  at: [178.44, -18.14]
+  year: 1870
+  expect: none
+  region: oceania
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Fiji
+  from: 오세아니아 M2 SPC-M2 결과노트
+- name: 수바 피지 왕국 때
+  at: [178.44, -18.14]
+  year: 1872
+  expect: kingdom-of-fiji
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Fiji
+  from: 오세아니아 M2 SPC-M2 결과노트
+- name: 수바 피지 왕국 끝 해
+  at: [178.44, -18.14]
+  year: 1873
+  expect: kingdom-of-fiji
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Fiji
+  from: 오세아니아 M2 SPC-M2 결과노트
+- name: 수바 할양 뒤
+  at: [178.44, -18.14]
+  year: 1874
+  expect: fiji-colony
+  url: https://en.wikipedia.org/wiki/Colony_of_Fiji
+  from: 오세아니아 M2 SPC-M2 결과노트
+- name: 람바사(경도 180° 서쪽) 피지 왕국 때
+  at: [179.34, -16.43]
+  year: 1872
+  expect: kingdom-of-fiji
+  url: https://en.wikipedia.org/wiki/Labasa
+  from: 오세아니아 M2 SPC-M2 결과노트
+- name: 라우 제도 북쪽 섬(경도 180° 동쪽) 피지 왕국 때
+  at: [-178.96, -17.219]
+  year: 1872
+  expect: kingdom-of-fiji
+  url: https://en.wikipedia.org/wiki/Lau_Islands
+  from: 오세아니아 M2 SPC-M2 결과노트
+- name: 누쿠알로파 왕국 앞
+  at: [-175.2, -21.14]
+  year: 1844
+  expect: none
+  region: oceania
+  url: https://en.wikipedia.org/wiki/George_Tupou_I
+  from: 오세아니아 M2 SPC-M2 결과노트
+- name: 누쿠알로파 왕국 선 뒤
+  at: [-175.2, -21.14]
+  year: 1846
+  expect: kingdom-of-tonga
+  url: https://en.wikipedia.org/wiki/George_Tupou_I
+  from: 오세아니아 M2 SPC-M2 결과노트
+- name: 아피아 베를린 조약 앞
+  at: [-171.76, -13.83]
+  year: 1888
+  expect: none
+  region: oceania
+  url: https://en.wikipedia.org/wiki/Samoan_Civil_War
+  from: 오세아니아 M2 SPC-M2 결과노트
+- name: 아피아 사모아 왕국 때
+  at: [-171.76, -13.83]
+  year: 1890
+  expect: samoa-kingdom
+  url: https://en.wikipedia.org/wiki/Samoan_Civil_War
+  from: 오세아니아 M2 SPC-M2 결과노트
+- name: 아피아 삼국 조약 앞
+  at: [-171.76, -13.83]
+  year: 1899
+  expect: samoa-kingdom
+  url: https://en.wikipedia.org/wiki/Samoa_Tripartite_Convention
+  from: 오세아니아 M2 SPC-M2 결과노트
+- name: 아피아 삼국 조약 뒤
+  at: [-171.76, -13.83]
+  year: 1900
+  expect: german-samoa
+  url: https://en.wikipedia.org/wiki/Samoa_Tripartite_Convention
+  from: 오세아니아 M2 SPC-M2 결과노트
+- name: 팡오팡오(투투일라섬, 칠하지 않음) 사모아 왕국 때
+  at: [-170.7, -14.28]
+  year: 1890
+  expect: none
+  region: oceania
+  url: https://en.wikipedia.org/wiki/American_Samoa
+  from: 오세아니아 M2 SPC-M2 결과노트
+- name: 파페에테 타히티 왕국 앞
+  at: [-149.57, -17.53]
+  year: 1790
+  expect: none
+  region: oceania
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Tahiti
+  from: 오세아니아 M2 SPC-M2 결과노트
+- name: 파페에테 타히티 왕국 때
+  at: [-149.57, -17.53]
+  year: 1792
+  expect: kingdom-of-tahiti
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Tahiti
+  from: 오세아니아 M2 SPC-M2 결과노트
+- name: 파페에테 프랑스 병합 앞
+  at: [-149.57, -17.53]
+  year: 1879
+  expect: kingdom-of-tahiti
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Tahiti
+  from: 오세아니아 M2 SPC-M2 결과노트
+- name: 파페에테 프랑스 병합 뒤
+  at: [-149.57, -17.53]
+  year: 1880
+  expect: french-polynesia
+  url: https://en.wikipedia.org/wiki/Kingdom_of_Tahiti
+  from: 오세아니아 M2 SPC-M2 결과노트
+- name: 누메아 프랑스 병합 앞
+  at: [166.45, -22.27]
+  year: 1852
+  expect: none
+  region: oceania
+  url: https://en.wikipedia.org/wiki/New_Caledonia
+  from: 오세아니아 M2 SPC-M2 결과노트
+- name: 누메아 프랑스 병합 뒤
+  at: [166.45, -22.27]
+  year: 1854
+  expect: new-caledonia
+  url: https://en.wikipedia.org/wiki/New_Caledonia
+  from: 오세아니아 M2 SPC-M2 결과노트
+
+# ── 오세아니아 M2 HPO-M2 (하와이·폴리네시아·미크로네시아·땅 없는 항목 아홉, 2026-11-18) ──
+- name: 호놀룰루 병합 앞
+  at: [-157.86, 21.31]
+  year: 1897
+  expect: republic-of-hawaii
+  url: https://en.wikipedia.org/wiki/Annexation_of_Hawaii
+  from: 오세아니아 M1 AZP-M1 결과노트
+- name: 호놀룰루 왕국 앞
+  at: [-157.86, 21.31]
+  year: 1794
+  expect: none
+  region: oceania
+  url: https://en.wikipedia.org/wiki/Ancient_Hawaii
+  from: 오세아니아 M2 HPO-M2 결과노트
+- name: 호놀룰루 왕국 첫해 뒤
+  at: [-157.86, 21.31]
+  year: 1796
+  expect: hawaiian-kingdom
+  url: https://en.wikipedia.org/wiki/Hawaiian_Kingdom
+  from: 오세아니아 M2 HPO-M2 결과노트
+- name: 호놀룰루 전복 앞
+  at: [-157.86, 21.31]
+  year: 1892
+  expect: hawaiian-kingdom
+  url: https://en.wikipedia.org/wiki/Hawaiian_Kingdom
+  from: 오세아니아 M2 HPO-M2 결과노트
+- name: 호놀룰루 전복 뒤
+  at: [-157.86, 21.31]
+  year: 1893
+  expect: republic-of-hawaii
+  url: https://en.wikipedia.org/wiki/Republic_of_Hawaii
+  from: 오세아니아 M2 HPO-M2 결과노트
+- name: 힐로 공화국
+  at: [-155.09, 19.72]
+  year: 1895
+  expect: republic-of-hawaii
+  url: https://en.wikipedia.org/wiki/Republic_of_Hawaii
+  from: 오세아니아 M2 HPO-M2 결과노트
+- name: 리후에 카우아이 귀속 뒤
+  at: [-159.37, 21.98]
+  year: 1811
+  expect: hawaiian-kingdom
+  url: https://en.wikipedia.org/wiki/Hawaiian_Kingdom
+  from: 오세아니아 M2 HPO-M2 결과노트
+- name: 하갓냐 스페인령 괌
+  at: [144.75, 13.47]
+  year: 1850
+  expect: none
+  region: oceania
+  url: https://en.wikipedia.org/wiki/Hag%C3%A5t%C3%B1a,_Guam
+  from: 오세아니아 M2 HPO-M2 결과노트
+- name: 타라와 식민 앞
+  at: [173.02, 1.45]
+  year: 1850
+  expect: none
+  region: oceania
+  url: https://en.wikipedia.org/wiki/Tarawa
+  from: 오세아니아 M2 HPO-M2 결과노트

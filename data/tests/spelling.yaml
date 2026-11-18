@@ -9483,3 +9483,116 @@
   avoid: [히리모투]
   note: "Hiri Motu(파푸아뉴기니 공용어). 위키 ko 표제('히리모투'는 넘겨주기, impl-png-m1/ko-titles-png.txt)"
   scope: 오세아니아·파푸아뉴기니
+
+# ── 오세아니아 M2 공통 (뼈대, 2026-11-18) ──
+# 뼈대가 위키백과 한국어판 표제를 연 공용 표기표(oc-m2/m2/SKEL-NOTE.md 끝 표, skel/ko-titles*.txt) 가운데 넘겨주기·지시문 가칭·흔한 다른 꼴이 있는 것만. avoid 표기마다 data/events·data/entities·data/wars·data/tests/places를 grep해 0건.
+# 나라 이름 11·땅 없는 항목 17은 항목 파일(oceania-colonial.yaml)이 쓰고, 00-scope 6절 칭호 규칙('○○ 식민지'·'○○ 왕국')이 표제보다 앞선다. 땅 없는 항목은 사람 표제가 있으면 그 꼴(아메리카 M4 '타이노인'·'툴레인' 선례).
+# '서오스트레일리아'는 사건 sea-05(크라카타우)에 쓰여 avoid를 걸지 않는다(G2-23 — 사건 묶음이 볼 일).
+
+- use: 사우스오스트레일리아 식민지
+  avoid: [남오스트레일리아]
+  note: "Province of South Australia(1836~1900, 항목 south-australia). 00-scope 6절 칭호(표제 '사우스오스트레일리아주'), 0단계 나라 표 '서·남오스트레일리아' 꼴을 G2-7로 고침"
+  scope: 오세아니아·오스트레일리아
+
+- use: 토레스 해협 제도 원주민
+  avoid: [토레스 해협 섬 주민]
+  note: "Torres Strait Islanders(항목 torres-strait-islanders). 위키 ko 표제(지시문 가칭 '토레스 해협 섬 주민'은 표제·넘겨주기 없음 — 오세아니아 M2 뼈대 열람)"
+  scope: 오세아니아·오스트레일리아
+
+- use: 오스트로네시아족
+  avoid: [오스트로네시아인]
+  note: "Austronesian peoples(항목 austronesian-culture). 위키 ko 표제('오스트로네시아인'은 넘겨주기, 지시문 가칭 '오스트로네시아 문화'는 표제 없음 — 오세아니아 M2 뼈대 열람). 말 이름은 '오스트로네시아어족'(표제)"
+  scope: 오세아니아
+
+- use: 차모로인
+  avoid: [차모로족]
+  note: "Chamorro people(항목 chamorro). 위키 ko 표제('차모로족'은 넘겨주기 — 오세아니아 M2 뼈대 열람)"
+  scope: 오세아니아·미크로네시아
+
+- use: 라파누이인
+  avoid: [라파누이족]
+  note: "Rapa Nui people(항목 rapa-nui). 위키 ko 표제('라파누이족'은 넘겨주기, '라파누이'는 '이스터섬'으로 넘겨줌 — 오세아니아 M2 뼈대 열람). 섬 이름은 이스터섬"
+  scope: 오세아니아·이스터섬
+
+- use: 고대 하와이
+  avoid: [하와이 족장 사회]
+  note: "Ancient Hawaii(1795 하와이 왕국 앞 시대, 항목 hawaiian-chiefdoms). 위키 ko 표제(지시문 가칭 '하와이 족장 사회'는 표제 없음 — 오세아니아 M2 뼈대 열람)"
+  scope: 오세아니아·하와이
+
+- use: 통가 제국
+  avoid: [투이 통가 제국]
+  note: "Tuʻi Tonga Empire(950~1865, 항목 tui-tonga). 위키 ko 표제('투이 통가 제국'·'투이 통가 왕조'는 표제·넘겨주기 없음 — 오세아니아 M2 뼈대 열람). 왕 칭호 '투이 통가'는 글에 그대로 씀"
+  scope: 오세아니아·통가
+
+- use: 니하우섬
+  avoid: [니이하우섬, 니이하우]
+  note: "Niʻihau(하와이 제도 서쪽 섬, 1810 카우아이와 함께 하와이 왕국에 귀속). 위키 ko 표제('니이하우섬'은 '니하우섬'으로 넘겨줌 — 오세아니아 M2 뼈대 열람)"
+  scope: 오세아니아·하와이
+
+- use: 난 마돌
+  avoid: [난마돌]
+  note: "Nan Madol(폰페이섬 사우델레우르 왕조의 중심지). 위키 ko 표제('난마돌'은 넘겨주기 — 오세아니아 M2 뼈대 열람)"
+  scope: 오세아니아·미크로네시아
+
+# ── 오세아니아 M2 AUS-M2 (오스트레일리아 식민지 여섯, 2026-11-18) ──
+
+- use: 뉴사우스웨일스 식민지
+  avoid: [뉴사우스웨일즈 식민지, 뉴사우스웨일즈]
+  note: "Colony of New South Wales(1788~1900, 항목 new-south-wales). 위키 ko 표제(오세아니아 M2 뼈대 열람), 주 이름은 '뉴사우스웨일스주'"
+  scope: 오세아니아·오스트레일리아
+
+- use: 웨스턴오스트레일리아 식민지
+  avoid: [서오스트레일리아 식민지]
+  note: "Colony of Western Australia(1829~1900, 항목 western-australia). 00-scope 6절 칭호(표제 '웨스턴오스트레일리아주'), G2-7"
+  scope: 오세아니아·오스트레일리아
+
+- use: 퀸즐랜드 식민지
+  avoid: [퀸스랜드 식민지, 퀸스랜드]
+  note: "Colony of Queensland(1859~1900, 항목 queensland). 00-scope 6절 칭호(표제 '퀸즐랜드주'), G2-7"
+  scope: 오세아니아·오스트레일리아
+
+- use: 스완강 식민지
+  avoid: [스완 강 식민지, 스완리버 식민지]
+  note: "Swan River Colony(1829~1832, 1832-02-06 웨스턴오스트레일리아로 개칭 — 이름만 바뀜, P7). 표제 없음(가칭 — 오세아니아 M2 공용 표기표)"
+  scope: 오세아니아·오스트레일리아
+
+- use: 노스오스트레일리아
+  avoid: [노스 오스트레일리아, 북오스트레일리아]
+  note: "North Australia(1846-02-17 특허장~1847 철수, 칠하지 않음 — Q4). 표제 없음(가칭 — 오세아니아 M2 공용 표기표)"
+  scope: 오세아니아·오스트레일리아
+
+# ── 오세아니아 M2 MEL-M2 (뉴기니·솔로몬·바누아투·땅 없는 항목 여덟, 2026-11-18) ──
+
+- use: 파푸아인
+  avoid: [파푸아족]
+  note: "Papuans(항목 papuans — 뉴기니섬과 둘레 섬의 비오스트로네시아어 사용 집단). 위키 ko 표제('파푸아족'은 표제·넘겨주기 없음 — 오세아니아 M2 뼈대 열람 skel/ko-titles*.txt)"
+  scope: 오세아니아·파푸아뉴기니
+
+- use: 멜라네시아인
+  avoid: [멜라네시아족]
+  note: "Melanesians(항목 melanesian-societies). 위키 ko 표제(지시문 가칭 '멜라네시아 사회'는 표제 없음 — 사람 표제, 오세아니아 M2 뼈대 열람)"
+  scope: 오세아니아·멜라네시아
+
+- use: 카이저빌헬름슬란트
+  avoid: [카이저빌헬름란트, 카이저 빌헬름슬란트]
+  note: "Kaiser-Wilhelmsland(독일령 뉴기니의 뉴기니섬 북동부, 1884~). 공용 표기표 가칭(위키 ko 표제 없음 — 오세아니아 M2 뼈대 SKEL-NOTE 끝 표), german-new-guinea mapNote에 씀"
+  scope: 오세아니아·파푸아뉴기니
+
+# ── 오세아니아 M2 SPC-M2 (뉴질랜드·피지·통가·사모아·타히티·누벨칼레도니, 2026-11-18) ──
+
+- use: 말리에토아 라우페파
+  avoid: [말리에토아 라우페빠]
+  note: "Malietoa Laupepa(사모아 왕 — 1889 복위·1898 죽음, 항목 samoa-kingdom 글). 위키 ko 표제 없음(en 'Malietoa Laupepa' 꼴 — SPC-M2 칸이 정함, 오세아니아 M2 합치기가 사전에 한 번 넣음)"
+  scope: 오세아니아·사모아
+
+# ── 오세아니아 M2 HPO-M2 (하와이·폴리네시아·미크로네시아·땅 없는 항목 아홉, 2026-11-18) ──
+
+- use: 폴리네시아인
+  avoid: [폴리네시아족]
+  note: "Polynesians(항목 polynesian-culture). 위키 ko 표제('폴리네시아족'은 표제·넘겨주기 없음 — 오세아니아 M2 HPO-M2 열람)"
+  scope: 오세아니아·폴리네시아
+
+- use: 미크로네시아인
+  avoid: [미크로네시아족]
+  note: "Micronesians(항목 micronesian-culture). 위키 ko 표제('미크로네시아족'은 표제·넘겨주기 없음 — 오세아니아 M2 HPO-M2 열람)"
+  scope: 오세아니아·미크로네시아

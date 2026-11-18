@@ -15,8 +15,9 @@
 //   '주변' 구역은 이 단계 등록 0(0단계 후보 파푸아뉴기니 고지대·세픽·플라이 저지는 칠한 땅에서 빈 땅 검사가 걸릴 때만 — 칸 결과 노트 6절).
 // 해 규칙: 한 버전 = 그해 말 모습. 원정·되돌려진 점령은 칠하지 않음(1914~1919 독일령 뉴기니·사모아 점령은 관계 occupied_by만 — Q1, 일본 점령은 글 — G1-12). 새 버전은 1만 km² 넘게 바뀔 때만.
 //   이름만 바뀌는 해(파푸아뉴기니 준주 1971·서사모아→사모아 1997 이름·누벨칼레도니 1946·1998 지위·프랑스령 폴리네시아 1946·1957)는 새 버전이 아니다 — 항목 글로(P7·G1-3).
-// 1901 앞 버전 없음: 이 시대 파일이 이 권역의 첫 국경 단계라 첫 해는 M1_START(1901, 1901년 말 모습 — P1, 00-scope 3절 끊는 해 1900/1901)다. 1901 앞에 성립한 나라도 첫 버전은 1901부터이고
-//   (M2가 같은 id로 앞을 이음), 1901 뒤 성립이면 그 해(뉴질랜드 1907·뉴헤브리디스 1907·위임 1920·준주 1949·작은 섬나라 독립 해). 1900 이하 이 권역 땅은 하와이 usa 1898~1900(아래 extra) 말고 빈 것이 정상.
+// 1901 앞은 M2: 이 시대 파일의 첫 해는 M1_START(1901, 1901년 말 모습 — P1, 00-scope 3절 끊는 해 1900/1901)다. 1900 이하 이 권역 땅은 M2 시대 파일 colonial.mjs(1788~1900) 몫이고
+//   (이 파일은 하와이 usa 1898~1900 늘림만 — 아래 extra), 1901 앞에 성립한 나라(앞 잇는 아홉 — colony-of-new-zealand·fiji-colony 등)는 colonial.mjs가 from 해부터 1900까지 내고 joinEras가 이 파일 버전 앞에 이어 붙인다
+//   (1901에 같은 모양 버전 경계가 남음 — 메인 결정 M-M2-1, 아메리카 M2 e47c293 꼴). 1901 뒤 성립이면 그 해(뉴질랜드 1907·뉴헤브리디스 1907·위임 1920·준주 1949·작은 섬나라 독립 해). 이 파일의 빈 땅 검사 구역은 1901부터만.
 // 결정 점프(P1): 1906 british-new-guinea→territory-of-papua(모양 같음)·1907 colony-of-new-zealand→new-zealand·1907 뉴헤브리디스 빈 땅→new-hebrides·1920 german-new-guinea→territory-of-new-guinea·
 //   german-samoa→western-samoa·1949 두 준주→territory-of-papua-and-new-guinea·1962 samoa·1968 nauru·1970 fiji·1975 papua-new-guinea·1978 solomon-islands·tuvalu·1979 kiribati·1980 vanuatu·
 //   1986 marshall-islands·micronesia·1994 palau(작은 섬나라 독립은 빈 땅→나라). 그 밖에 1만 km² 넘게 바뀌면 칸 결과 노트 2절에 까닭.
@@ -37,7 +38,7 @@
 // 주인 줄: own(단위 목록, [[해, 나라 id|null], ...]) — 첫 해는 M1_START(1901)부터, 해는 늘어난다(첫 해가 늦으면 생성기가 '표 첫 해의 주인이 없음'으로 멈춤).
 //   예: own(idsOf('AUS'), [[M1_START, 'australia']]) · own(idsOf('VUT'), [[M1_START, null], [1907, 'new-hebrides'], [1980, 'vanuatu']]). 줄을 적지 않은 단위는 fillTables가 시대 내내 주인 null로 채운다.
 //   주인 null은 '이 권역 나라가 칠하지 않는 땅'이다: 일부러 비운 땅(칸 voids에 한 줄과 이유 — 바누아투 1901~1906·작은 섬나라 독립 앞·작은 속령·토켈라우)만.
-// 시대 경계 맞물림: 앞 시대 파일이 없다(M2가 이 파일 앞에 시대 파일을 더하고 권역 파일 joinEras 목록 앞에 둠). 끝까지 이어지는 버전은 to: null(PRESENT 2026년 말 모습 = 2027년 모습).
+// 시대 경계 맞물림: 앞 시대 파일은 M2 colonial.mjs(1788~1900, 끝 해 M2_END = M1_START — 권역 파일 joinEras 목록 앞). 같은 id는 M2가 1900에서 끝나고 이 파일이 1901부터 잇는다(usa는 M2가 내지 않음 — 1898~1900은 아래 extra). 끝까지 이어지는 버전은 to: null(PRESENT 2026년 말 모습 = 2027년 모습).
 // 출처 문구: 이 시대 파일은 era.source를 두지 않는다 — 권역 파일 oceania.mjs의 sourceOf가 이 권역 나라 모두에 table.mjs OC_SOURCE_TEXT를 붙인다(늘린 usa는 아메리카 문구 그대로).
 // 이름·확실성: 근거가 약한 경계는 estimated(기본값). 이름은 data/tests/spelling.yaml(오세아니아 첫판·M1 공통·M1 칸 머리)을 먼저 본다.
 //
@@ -48,7 +49,7 @@ import { M1_AZP_IDS, M1_MIC_IDS, M1_PNG_IDS } from './cuts-m1.mjs';
 
 const { build, geomOfUnit, joinTables, makeTable } = tableKit('modern');
 
-const M1_START = 1901; // 이 시대 파일의 첫 해(1901년 말 모습). 그 앞(1900 이하)은 M2 몫(하와이 usa 1898~1900만 아래 extra)
+const M1_START = 1901; // 이 시대 파일의 첫 해(1901년 말 모습). 그 앞(1900 이하)은 M2 시대 파일 colonial.mjs 몫(하와이 usa 1898~1900만 아래 extra)
 const PRESENT = 2026; // 지금 해. 표는 PRESENT년 말까지 정하고, 끝까지 이어지는 버전은 to: null(지금까지)
 const M1_END = PRESENT + 1; // 마지막 표의 끝(미포함)
 
@@ -307,10 +308,10 @@ const versionsOf = (id, segs) => {
 };
 const versionIds = [...new Set([...Object.keys(joined.segments), ...extras.map((e) => e.id)])];
 const versions = Object.fromEntries(versionIds.map((id) => [id, versionsOf(id, joined.segments[id] ?? [])]).filter(([, list]) => list.length));
-// 시대 경계 검사(버전이 있을 때만): 모든 버전이 M1_START(M1_EARLY 나라는 그 해) 이상에서 시작. 앞 시대 파일이 없어 이어지는 나라 검사는 없다(M2가 더함)
+// 시대 경계 검사(버전이 있을 때만): 모든 버전이 M1_START(M1_EARLY 나라는 그 해) 이상에서 시작. 이어지는 나라 검사는 M2 colonial.mjs 끝 확인 줄(모든 버전 1901 이하에서 끝남·usa 내지 않음)이 맡는다
 for (const [id, list] of Object.entries(versions)) {
   const first = M1_EARLY[id] ?? M1_START;
-  if (list.some(([f]) => f < first)) throw new Error(`oceania modern: ${id} 버전이 ${first} 앞에서 시작함`);
+  if (list.some(([f]) => f < first)) throw new Error(`oceania modern: ${id} 버전이 ${first} 앞에서 시작함(1900 이하는 M2 colonial.mjs 몫)`);
 }
 
 // 일부러 비운 땅(생성기의 구멍 메우기가 이웃으로 채우지 않게). 칸마다 자기 voids 함수에(이유는 줄 주석)
@@ -318,7 +319,7 @@ const voids = [...AZP_voids(), ...MIC_voids(), ...PNG_voids()];
 for (const [f, t] of voids) if (!(Number.isInteger(f) && f >= M1_START && (t === null || (Number.isInteger(t) && f < t && t <= M1_END)))) throw new Error(`oceania modern: 비운 땅 기간 [${f}, ${t}) (${M1_START} 이상, 끝은 ${M1_END} 이하 또는 null)`);
 
 // 빈 땅 검사 구역: 권역 바깥선(조각 138개)에서 그해 비운 땅(voids)을 뺀 곳 — 이 권역 나라 땅을 합쳐 빈 곳이 없어야 한다.
-// M1_START(1901)부터만 만든다(첫 국경 단계 — 1900 이하에는 이 권역 구역이 없음, 특별 지시 2 — data/tests/baseline/gaps.txt에 오세아니아 줄을 넣지 않음). 비운 땅이 바뀌는 해마다 구역 하나, 마지막 구역은 끝이 없다.
+// M1_START(1901)부터만 만든다(1788~1900 구역은 M2 colonial.mjs, 1787 이하에는 이 권역 구역이 없음 — data/tests/baseline/gaps.txt에 오세아니아 줄을 넣지 않음). 비운 땅이 바뀌는 해마다 구역 하나, 마지막 구역은 끝이 없다.
 // 이 권역 나라가 소유표에 하나도 없는 기간(빈 틀·뼈대)은 구역을 만들지 않는다(칸 하나만 채운 사본에서는 다른 칸 땅이 빈 땅으로 보고되는 것이 정상. gaps는 합치기 사본에서만 공식으로 돌린다).
 // 늘린 usa(하와이 US-HI)도 소유표 주인이라 구역 안 땅을 덮는다(엔진이 아메리카 usa 버전에 더함)
 const ownedIn = (from, to) => Object.values(joined.segments).some((segs) => segs.some(([f, t]) => f < to && from < t));
