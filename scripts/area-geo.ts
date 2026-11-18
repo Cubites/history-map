@@ -1,9 +1,14 @@
 // 넓이 재기 도구: 고른 영역·해에서 나라별 영토 넓이, 빈 땅, 겹침, (선택) 원본과 바뀐 넓이를 잰다.
 // 쓰임: npm run area:geo -- --year <Y[,Y2…]> (--box 서,남,동,북 | --pieces <조각 id,…> | --poly <geojson 경로>)
-//         [--entity <id,…>] [--base <원본 저장소 경로>] [--no-land] [--json] [--out <파일>]
+//         [--entity <id,…>] [--base <원본 저장소 경로>] [--no-land] [--formula exact|events] [--json] [--out <파일>]
 //  - 영토: data/geo/<id>.geojson. 그 해 Y에 효력 있는 버전은 properties.from ≤ Y < to(null은 끝없음). 영역 상자와 겹치는 파일만 읽는다(상자 색인은 .cache/area-geo/에 둠).
 //  - 영역: --box(경도·위도 상자), --pieces(data/base/fragments/*.topo.json의 조각 id), --poly(Polygon/MultiPolygon geojson). 기본으로 땅(land-50m)과 겹친 부분만 잰다(--no-land면 그대로).
-//  - 넓이 공식은 scripts/test-geo/checks/events.ts의 area()를 그대로 쓴다(1만 km² 판단이 이 공식으로 내려졌으므로 새로 짜지 말 것). 도형 연산은 polyclip-ts.
+//  - 넓이 공식(--formula, 2026-11-18 개선 ③): 기본 exact = 경위도 직선 변을 따라 cos(위도)를 적분한 넓이(구면 근사, 1도 = 111.32 km).
+//    나눠 잰 넓이의 합이 통째 넓이와 같다(더하기가 성립). 예전 기본 events = scripts/test-geo/checks/events.ts의 area()(폴리곤마다 바깥 고리 평균 위도 하나) —
+//    작은 도형은 exact와 거의 같지만, 위도 폭이 큰 도형을 나눠 재면 합이 통째와 어긋났다(CA-ON 1776 영역 땅 1,115,296 대 나라 합 1,083,989·빈 땅 0, 멕시코 125조각 1492 약 16만 차).
+//    test:geo events의 1만 km² 판단 숫자와 똑같은 값이 필요할 때만 --formula events. 도형 연산은 polyclip-ts.
+//  - polyclip이 예외를 내면 영역 쪽 폴리곤을 하나씩 나눠 다시 계산한다(그래도 실패한 것만 '계산 실패'로 센다 — 그 몫은 0으로 빠졌을 수 있음).
+//  - 검산: 해마다 '영역 땅 = 나라 합 − 겹침 + 빈 땅'을 견줘, 0.5%와 100 km²를 함께 넘게 어긋나면 [검산 어긋남] 줄을 낸다(세 나라 이상 겹친 곳은 겹침을 덜 셈).
 //  - --entity X: X 줄을 맨 위에 "X 땅 · 이웃이 덮은 땅(나라별) · 빈 땅 → X에서 빠진 땅(= 이웃 + 빈 땅)"으로 보인다.
 //  - --base <원본 경로>: 같은 영역·해에서 원본의 같은 항목과 비교해 이번에 바뀐 넓이(나라마다 더해진·빠진 따로, 합 = 대칭차). 원본은 읽기만 한다.
 //  - 영역 가운데 점의 정밀도 구역은 data/tests/zones.yaml(등급·끝 기준 landKm2)에서 scripts/test-geo/zones.ts로 읽는다. 없으면 일반(1만 km²)으로 본다. 빠진 땅·바뀐 넓이가 끝 기준 이상이면 '끝 기준 넘음'.
@@ -17,7 +22,7 @@ import * as pc from 'polyclip-ts';
 import { feature } from 'topojson-client';
 import type { GeometryCollection, Topology } from 'topojson-specification';
 import { loadLand } from './build-data/tasks.ts';
-import { area, asMulti, type Multi } from './test-geo/checks/events.ts';
+import { area as areaEvents, asMulti, type Multi } from './test-geo/checks/events.ts';
 import { DEFAULT_ZONE_ID, ZONES_FILE, ZONES_REL, ZonesError, zoneAt } from './test-geo/zones.ts';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -27,7 +32,7 @@ type BBox = [number, number, number, number];
 // ── 인자 ────────────────────────────────────────────────────
 
 class UsageError extends Error {}
-const USAGE = '사용: npm run area:geo -- --year <Y[,Y2…]> (--box 서,남,동,북 | --pieces <조각 id,…> | --poly <geojson 경로>) [--entity <id,…>] [--base <원본 저장소 경로>] [--no-land] [--json] [--out <파일>]';
+const USAGE = '사용: npm run area:geo -- --year <Y[,Y2…]> (--box 서,남,동,북 | --pieces <조각 id,…> | --poly <geojson 경로>) [--entity <id,…>] [--base <원본 저장소 경로>] [--no-land] [--formula exact|events] [--json] [--out <파일>]';
 
 interface Args {
   years: number[];
@@ -37,6 +42,7 @@ interface Args {
   entities: string[];
   base: string | null;
   land: boolean;
+  formula: 'exact' | 'events';
   json: boolean;
   out: string | null;
 }
@@ -53,7 +59,7 @@ function parseArgs(argv: string[]): Args {
       vals.set(key, '1');
       continue;
     }
-    if (!['year', 'box', 'pieces', 'poly', 'entity', 'base', 'out'].includes(key)) throw new UsageError(`알 수 없는 옵션: --${key}`);
+    if (!['year', 'box', 'pieces', 'poly', 'entity', 'base', 'out', 'formula'].includes(key)) throw new UsageError(`알 수 없는 옵션: --${key}`);
     const v = eq >= 0 ? a.slice(eq + 1) : argv[++i];
     if (v === undefined) throw new UsageError(`--${key} 값이 없음`);
     vals.set(key, v);
@@ -70,8 +76,34 @@ function parseArgs(argv: string[]): Args {
   const pieces = vals.has('pieces') ? list(vals.get('pieces')) : null;
   const poly = vals.get('poly') ?? null;
   if ([box, pieces, poly].filter((x) => x != null).length !== 1) throw new UsageError('영역은 --box, --pieces, --poly 중 하나만');
-  return { years, box, pieces, poly, entities: list(vals.get('entity')), base: vals.get('base') ?? null, land: !vals.has('no-land'), json: vals.has('json'), out: vals.get('out') ?? null };
+  const formula = vals.get('formula') ?? 'exact';
+  if (formula !== 'exact' && formula !== 'events') throw new UsageError('--formula는 exact 또는 events');
+  return { years, box, pieces, poly, entities: list(vals.get('entity')), base: vals.get('base') ?? null, land: !vals.has('no-land'), formula, json: vals.has('json'), out: vals.get('out') ?? null };
 }
+
+// ── 넓이 ────────────────────────────────────────────────────
+
+const D2R = Math.PI / 180;
+const R_KM = (111.32 * 180) / Math.PI; // 1도 = 111.32 km(events.ts 공식과 같은 축척)
+/** 고리 넓이(km²): 변마다 위도가 경도에 따라 곧게 바뀐다고 보고 ∮ sin(위도) d(경도)를 정확히 적분 */
+function ringExact(ring: number[][]): number {
+  let s = 0;
+  for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+    const p1 = ring[j][1] * D2R;
+    const h = (ring[i][1] * D2R - p1) / 2;
+    const dl = (ring[i][0] - ring[j][0]) * D2R;
+    // (cos p1 − cos p2)/(p2 − p1) = sin(평균 위도)·sin(h)/h — 위도 차가 작아도 정밀도를 잃지 않는 꼴
+    s += dl * Math.sin(p1 + h) * (h === 0 ? 1 : Math.sin(h) / h);
+  }
+  return Math.abs(s) * R_KM * R_KM;
+}
+function areaExact(multi: Multi): number {
+  let t = 0;
+  for (const poly of multi) poly.forEach((r, i) => { t += (i === 0 ? 1 : -1) * ringExact(r); });
+  return t;
+}
+/** 고른 공식(main이 --formula로 정함) */
+let area: (m: Multi) => number = areaExact;
 
 // ── 도형 도우미 ────────────────────────────────────────────
 
@@ -99,8 +131,28 @@ function safe<T>(label: string, fn: () => T, fallback: T): T {
     return fallback;
   }
 }
-const intersect = (a: Multi, b: Multi, label: string): Multi => (a.length && b.length ? safe(label, () => pc.intersection(clone(a), clone(b)) as Multi, []) : []);
-const diff = (a: Multi, b: Multi, label: string): Multi => (!a.length ? [] : !b.length ? a : safe(label, () => pc.difference(clone(a), clone(b)) as Multi, []));
+/** a를 b로 자르는 연산. 예외가 나면 a의 폴리곤 하나씩 다시 하고 결과를 잇는다(a의 폴리곤끼리 겹치지 않으므로 잇기만 해도 됨) */
+function clipOp(op: 'intersection' | 'difference', a: Multi, b: Multi, label: string): Multi {
+  try {
+    return pc[op](clone(a), clone(b)) as Multi;
+  } catch (e) {
+    if (a.length < 2) {
+      failures.push(`${label}: ${(e as Error).message}`);
+      return [];
+    }
+    const out: Multi = [];
+    for (const [i, p] of a.entries()) {
+      try {
+        out.push(...(pc[op](clone([p]), clone(b)) as Multi));
+      } catch (e2) {
+        failures.push(`${label} (폴리곤 ${i + 1}/${a.length}): ${(e2 as Error).message}`);
+      }
+    }
+    return out;
+  }
+}
+const intersect = (a: Multi, b: Multi, label: string): Multi => (a.length && b.length ? clipOp('intersection', a, b, label) : []);
+const diff = (a: Multi, b: Multi, label: string): Multi => (!a.length ? [] : !b.length ? a : clipOp('difference', a, b, label));
 const union = (parts: Multi[], label: string): Multi => {
   const ps = parts.filter((p) => p.length);
   if (!ps.length) return [];
@@ -241,6 +293,7 @@ interface YearResult {
   landKm2: number;
   emptyKm2: number;
   overlapKm2: number;
+  checkGapKm2: number;
   byEntity: Neighbor[];
   entities: Record<string, EntityResult>;
   changed: { totalKm2: number; addedKm2: number; removedKm2: number; overLimit: boolean; byEntity: ChangedRow[] } | null;
@@ -275,6 +328,8 @@ function measureYear(year: number, L: Multi, box: BBox, ids: string[], baseIds: 
   const overlapKm2 = area(union(overlaps, `${year} 겹침 합치기`));
 
   const byEntity = [...areas].map(([id, km2]) => ({ id, km2 })).sort((p, q) => q.km2 - p.km2);
+  // 검산: 영역 땅 = 나라 합 − 겹침 + 빈 땅 (어긋나면 연산 실패나 공식 탓)
+  const checkGapKm2 = landKm2 - (byEntity.reduce((s, r) => s + r.km2, 0) - overlapKm2 + emptyKm2);
 
   const entities: Record<string, EntityResult> = {};
   for (const x of a.entities) {
@@ -312,12 +367,13 @@ function measureYear(year: number, L: Multi, box: BBox, ids: string[], baseIds: 
     changed = { totalKm2: addedKm2 + removedKm2, addedKm2, removedKm2, overLimit: rows.some((r) => r.changedKm2 >= zone.landKm2), byEntity: rows };
     for (const x of a.entities) entities[x].changed = rows.find((r) => r.id === x) ?? { id: x, addedKm2: 0, removedKm2: 0, changedKm2: 0 };
   }
-  return { year, landKm2, emptyKm2, overlapKm2, byEntity, entities, changed };
+  return { year, landKm2, emptyKm2, overlapKm2, checkGapKm2, byEntity, entities, changed };
 }
 
 // ── 출력 ────────────────────────────────────────────────────
 
 const n = (x: number) => Math.round(x).toLocaleString('en-US');
+const checkBad = (y: YearResult) => Math.abs(y.checkGapKm2) > Math.max(100, y.landKm2 * 0.005);
 const OVER = ' [끝 기준 넘음]';
 
 function summaryLines(y: YearResult, a: Args, zone: ZoneInfo): string[] {
@@ -330,6 +386,7 @@ function summaryLines(y: YearResult, a: Args, zone: ZoneInfo): string[] {
     out.push(`${t} ${x} 땅 ${n(e.ownKm2)} km² · 이웃이 덮은 땅 ${n(e.otherKm2)} km²${nb ? `(${nb})` : ''} · 빈 땅 ${n(e.emptyKm2)} km² → ${x}에서 빠진 땅 ${n(e.missingKm2)} km²${e.overLimit ? OVER : ''}${ch}`);
   }
   out.push(`${t} ${a.land ? '영역 땅' : '영역(땅 자르기 없음)'} ${n(y.landKm2)} km² · 빈 땅(어느 영토에도 안 덮임) ${n(y.emptyKm2)} km²${y.overlapKm2 >= 0.5 ? ` · 겹침 ${n(y.overlapKm2)} km²` : ''}`);
+  if (checkBad(y)) out.push(`${t} [검산 어긋남] 영역 땅 − (나라 합 − 겹침 + 빈 땅) = ${n(y.checkGapKm2)} km²${a.formula === 'events' ? ' — --formula events는 나눠 잰 합이 맞지 않음(기본 exact로 다시 잴 것)' : ' — 계산 실패나 세 나라 이상 겹침'}`);
   const top = y.byEntity.slice(0, 8).map((r) => `${r.id} ${n(r.km2)}`).join(', ');
   const rest = y.byEntity.slice(8);
   out.push(`${t} 나라별 영역 안: ${top || '(없음)'}${rest.length ? `, 나머지 ${rest.length}개 ${n(rest.reduce((s, r) => s + r.km2, 0))}` : ''}`);
@@ -343,7 +400,7 @@ function summaryLines(y: YearResult, a: Args, zone: ZoneInfo): string[] {
 function detailTable(years: YearResult[], a: Args, head: string): string {
   const L: string[] = [`# area:geo 자세한 표`, '', head, ''];
   for (const y of years) {
-    L.push(`## ${y.year}년`, '', `- 영역 땅 ${n(y.landKm2)} km² · 빈 땅 ${n(y.emptyKm2)} km² · 겹침 ${n(y.overlapKm2)} km²`, '', '| 나라 | 영역 안 km² |', '| --- | ---: |');
+    L.push(`## ${y.year}년`, '', `- 영역 땅 ${n(y.landKm2)} km² · 빈 땅 ${n(y.emptyKm2)} km² · 겹침 ${n(y.overlapKm2)} km² · 검산 차 ${n(y.checkGapKm2)} km²${checkBad(y) ? ' [검산 어긋남]' : ''}`, '', '| 나라 | 영역 안 km² |', '| --- | ---: |');
     for (const r of y.byEntity) L.push(`| ${r.id} | ${n(r.km2)} |`);
     L.push('');
     for (const x of a.entities) {
@@ -374,6 +431,7 @@ function main(): number {
   }
   try {
     const t0 = Date.now();
+    if (a.formula === 'events') area = areaEvents;
     const region = buildRegion(a);
     const box = bboxOf(region.geom);
     const center: [number, number] = [(box[0] + box[2]) / 2, (box[1] + box[3]) / 2];
@@ -395,7 +453,7 @@ function main(): number {
     if (unknown.length) throw new UsageError(`항목 파일이 없음: ${unknown.join(',')}`);
     const years = a.years.map((y) => measureYear(y, L, box, ids, baseIds, a, zone));
 
-    const head = `${region.label} · ${a.land ? '땅 50m 자름' : '땅 자르기 없음'} · 구역 ${zone.id ?? '(구역 밖)'} ${zone.label} 끝 기준 ${n(zone.landKm2)} km²${a.base ? ' · 원본과 비교' : ''}`;
+    const head = `${region.label} · ${a.land ? '땅 50m 자름' : '땅 자르기 없음'}${a.formula === 'events' ? ' · 넓이 공식 events(예전)' : ''} · 구역 ${zone.id ?? '(구역 밖)'} ${zone.label} 끝 기준 ${n(zone.landKm2)} km²${a.base ? ' · 원본과 비교' : ''}`;
     const sec = ((Date.now() - t0) / 1000).toFixed(1);
     if (a.out) {
       mkdirSync(path.dirname(path.resolve(a.out)), { recursive: true });
@@ -405,11 +463,12 @@ function main(): number {
       const json = {
         tool: 'area-geo',
         region: { label: region.label, bbox: box, center, land: a.land },
+        formula: a.formula,
         zone,
         base: a.base,
         entityFiles: ids.length,
         failures,
-        years: years.map((y) => ({ ...y, landKm2: round(y.landKm2), emptyKm2: round(y.emptyKm2), overlapKm2: round(y.overlapKm2) })),
+        years: years.map((y) => ({ ...y, landKm2: round(y.landKm2), emptyKm2: round(y.emptyKm2), overlapKm2: round(y.overlapKm2), checkGapKm2: round(y.checkGapKm2) })),
       };
       if (zone.note) console.error(zone.note);
       console.log(JSON.stringify(json));
@@ -418,7 +477,7 @@ function main(): number {
     const lines = [`area:geo ${head} · 항목 파일 ${ids.length}개 · ${sec}초`];
     if (zone.note) lines.push(`알림: ${zone.note}`);
     for (const y of years) lines.push(...summaryLines(y, a, zone));
-    if (failures.length) lines.push(`계산 실패 ${failures.length}건: ${failures.slice(0, 3).join(' | ')}`);
+    if (failures.length) lines.push(`[계산 실패 ${failures.length}건 — 그 몫은 0으로 빠졌을 수 있음, 값을 믿지 말 것] ${failures.slice(0, 3).join(' | ')}`);
     if (a.out) lines.push(`자세한 표: ${a.out}`);
     console.log(lines.join('\n'));
     return 0;

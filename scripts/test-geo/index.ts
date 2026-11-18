@@ -1,6 +1,6 @@
 // 지형 테스트 러너 (npm run test:geo): 검사 모음(scripts/test-geo/checks/*.ts)을 한 번에 돌리고 결과를 몇 줄로 요약한다.
 // 사용: npm run test:geo -- [--region <europe|east-asia|항목 파일 이름>] [--years 1500-1600] [--only places,lines] [--skip islands]
-//                         [--ci] [--update-baseline <검사 id>] [--report <경로>] [--changed [<기준 커밋>]]
+//                         [--ci] [--update-baseline <검사 id>] [--report <경로>] [--changed [<기준 커밋>]] [--focus <항목 id,…|@파일>]
 // - 검사 파일: checks/places.ts(지점)·shapes.ts(도형 품질)·events.ts(사건 연결)·lines.ts(선 기준선)·colors.ts(이웃 색)·years.ts(글 속 해)·spelling.ts(표기 사전). 파일이 아직 없으면 '아직 없음'으로 건너뛴다.
 //   각 파일은 `export const checks: Check[]`를 내보낸다(꼴은 types.ts). --only·--skip은 검사 id 또는 파일 이름을 받는다.
 // - 판정 순서: 검사가 낸 항목마다 열쇠(key)로 ① 허용 목록(data/tests/allow/<검사 id 또는 파일 이름>.yaml, 사람이 이유와 함께 적음: key·reason·decided,
@@ -18,6 +18,11 @@
 //   규칙: --update-baseline과 함께 못 씀. --years를 손으로 주면 손으로 준 것이 이긴다(--changed는 범위를 고르지 않고 모든 검사가 그 범위). --region을 주면 모든 검사에 그대로 쓴다.
 //   범위를 좁힌 gaps·overlap은 낡은 허용 줄을 세지 않는다(--years와 같음). 기준 커밋에 이미 있던 실패는 범위 밖이면 보이지 않는다.
 //   구현 중 반복 검사용이다. **단계 끝 메인 검사는 지금처럼 전체로 둔다**(--changed 없이).
+// - --focus <항목 id,…> 또는 --focus @<파일>(id를 쉼표·빈칸·줄바꿈으로 나눔) (2026-11-18 개선 ③): 칸 끝 검사용. 검사 범위는 그대로 두고 새 실패만 가른다.
+//   새 실패의 열쇠·글에 나오는 항목 id(data/entities에 있는 것, 영문 낱말 단위)가 하나라도 있는데 그 가운데 고른 id가 하나도 없으면 '다른 항목 몫'으로 옮겨
+//   따로 세고 보이기만 한다(종료 코드·새 실패 수에 안 셈). 항목 id가 하나도 안 나오는 새 실패(구역·표기 등 — 누구 몫인지 모름)는 그대로 새 실패로 센다.
+//   칸 사본에 섞인 다른 칸 몫(자리 글·임시 손그림 — M2 칸마다 76~87건)을 손으로 가르던 일을 대신한다. 모르는 id를 주면 오류(2). --update-baseline과 함께 못 씀.
+//   인계 폴더 tools/geo-receipt.mjs는 --focus로 돈 영수증을 --region처럼 어느 요구도 덮지 않는 것으로 친다(칸 끝 기록용).
 import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync, appendFileSync } from 'node:fs';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
@@ -31,7 +36,7 @@ const KNOWN_GROUPS = ['places', 'shapes', 'events', 'lines', 'colors', 'years', 
 /** 느려서 --ci나 --only로 직접 고를 때만 도는 검사 id */
 const CI_ONLY = new Set(['gen']);
 
-const USAGE = `사용: npm run test:geo -- [--region <europe|east-asia|항목 파일 이름>] [--years 1500-1600] [--only places,lines] [--skip islands] [--ci] [--update-baseline <검사 id>] [--report <경로>] [--changed [<기준 커밋>]]`;
+const USAGE = `사용: npm run test:geo -- [--region <europe|east-asia|항목 파일 이름>] [--years 1500-1600] [--only places,lines] [--skip islands] [--ci] [--update-baseline <검사 id>] [--report <경로>] [--changed [<기준 커밋>]] [--focus <항목 id,…|@파일>]`;
 
 class UsageError extends Error {}
 
@@ -40,10 +45,12 @@ interface Args extends Options {
   report: string | null;
   /** --changed의 기준 커밋(값 없이 주면 HEAD). 없으면 null */
   changed: string | null;
+  /** --focus: 이 항목들이 걸린 새 실패만 센다. 없으면 null */
+  focus: string[] | null;
 }
 
 function parseArgs(argv: string[]): Args {
-  const a: Args = { region: null, years: null, only: null, skip: [], ci: false, updateBaseline: null, report: null, changed: null };
+  const a: Args = { region: null, years: null, only: null, skip: [], ci: false, updateBaseline: null, report: null, changed: null, focus: null };
   const value = (i: number, flag: string) => {
     const v = argv[i + 1];
     if (v === undefined || v.startsWith('--')) throw new UsageError(`${flag}에 값이 필요함`);
@@ -64,10 +71,23 @@ function parseArgs(argv: string[]): Args {
     else if (f === '--changed') {
       const v = argv[i + 1];
       a.changed = v !== undefined && !v.startsWith('--') ? (i++, v) : 'HEAD';
+    } else if (f === '--focus') {
+      const v = value(i++, f);
+      let text = v;
+      if (v.startsWith('@')) {
+        try {
+          text = readFileSync(path.resolve(v.slice(1)), 'utf8');
+        } catch (e) {
+          throw new UsageError(`--focus 파일을 읽지 못함: ${v.slice(1)} (${(e as Error).message.split('\n')[0]})`);
+        }
+      }
+      a.focus = [...(a.focus ?? []), ...text.split(/[\s,]+/).filter(Boolean)];
+      if (!a.focus.length) throw new UsageError('--focus에 항목 id가 없음');
     } else throw new UsageError(`모르는 인자 '${f}'`);
   }
   if (a.updateBaseline && (a.region || a.years)) throw new UsageError('--update-baseline은 --region·--years와 함께 쓸 수 없음(기준선에서 범위 밖 열쇠가 사라짐)');
   if (a.updateBaseline && a.changed) throw new UsageError('--update-baseline은 --changed와 함께 쓸 수 없음(기준선에서 범위 밖 열쇠가 사라짐)');
+  if (a.updateBaseline && a.focus) throw new UsageError('--update-baseline은 --focus와 함께 쓸 수 없음(다른 항목 몫이 기준선에 들어감)');
   return a;
 }
 
@@ -157,6 +177,8 @@ interface Outcome {
   checked: number;
   notes: string[];
   newFailures: Item[];
+  /** --focus 밖(다른 항목 몫) 새 실패 — 세지 않고 보이기만 */
+  outside: Item[];
   allowed: { item: Item; entry: AllowEntry }[];
   baselined: number;
   warnings: Item[];
@@ -168,7 +190,7 @@ interface Outcome {
 }
 
 const blank = (id: string, title: string, group: string): Outcome => ({
-  id, title, group, status: 'pass', checked: 0, notes: [], newFailures: [], allowed: [], baselined: 0, warnings: [], staleAllow: [], staleBaseline: 0, seconds: 0, skipped: 0,
+  id, title, group, status: 'pass', checked: 0, notes: [], newFailures: [], outside: [], allowed: [], baselined: 0, warnings: [], staleAllow: [], staleBaseline: 0, seconds: 0, skipped: 0,
 });
 
 function fmtDur(s: number): string {
@@ -199,6 +221,7 @@ function reportMd(head: string, outs: Outcome[]): string {
     if (o.newFailures.length) {
       L.push('### 새 실패', '', ...o.newFailures.map((i) => `- \`${i.key}\` — ${i.msg}`), '');
     }
+    if (o.outside.length) L.push('### 다른 항목 몫 (--focus 밖 — 세지 않음)', '', ...o.outside.map((i) => `- \`${i.key}\` — ${i.msg}`), '');
     if (o.warnings.length) L.push('### 경고', '', ...o.warnings.map((i) => `- ${i.msg}`), '');
     if (o.allowed.length) {
       L.push('### 허용된 예외', '', ...o.allowed.map(({ item, entry }) => `- \`${item.key}\` — ${entry.reason}${entry.decided ? ` (${entry.decided})` : ''}`), '');
@@ -263,6 +286,26 @@ async function main(): Promise<number> {
   const ctxStart = performance.now();
   const ctx = createContext(args);
   const ctxSec = (performance.now() - ctxStart) / 1000;
+
+  // --focus: 고른 항목 id. 새 실패마다 열쇠·글에 나오는 항목 id를 찾아 가른다
+  const focus = args.focus ? new Set(args.focus) : null;
+  if (focus) {
+    const unknown = [...focus].filter((id) => !ctx.entities.has(id));
+    if (unknown.length) {
+      console.error(`test:geo: --focus에 모르는 항목 id ${unknown.length}개: ${unknown.slice(0, 10).join(', ')}${unknown.length > 10 ? ' …' : ''}\n${USAGE}`);
+      return 2;
+    }
+  }
+  /** 다른 항목 몫인가: 항목 id가 하나라도 나오는데 고른 id가 하나도 없음 */
+  const isOutside = (item: Item): boolean => {
+    let any = false;
+    for (const tok of `${item.key} ${item.msg}`.match(/[a-z0-9]+(?:-[a-z0-9]+)*/g) ?? []) {
+      if (!ctx.entities.has(tok)) continue;
+      if (focus!.has(tok)) return false;
+      any = true;
+    }
+    return any;
+  };
 
   const outs: Outcome[] = [];
   let hadError = false;
@@ -333,7 +376,8 @@ async function main(): Promise<number> {
           else if (base.has(item.key)) o.baselined++;
           else fresh.push(item);
         }
-        o.newFailures = fresh;
+        o.newFailures = focus ? fresh.filter((i) => !isOutside(i)) : fresh;
+        if (focus) o.outside = fresh.filter((i) => isOutside(i));
         for (const e of allow) if (e.used && e.file === groupFile) groupUsed.add(e.key);
         const unfiltered = args.region === null && optFor(check).years === null;
         if (unfiltered) {
@@ -381,10 +425,12 @@ async function main(): Promise<number> {
 
   const total = (performance.now() - t0) / 1000;
   const failures = outs.reduce((n, o) => n + o.newFailures.length, 0);
+  const outsideN = outs.reduce((n, o) => n + o.outside.length, 0);
   const changedScope = !plan ? null : plan.mode === 'range' ? `gaps·overlap ${plan.years![0]}~${plan.years![1]}년·나머지 전체(바뀐 것만)` : plan.mode === 'none' ? 'gaps·overlap 건너뜀·나머지 전체(바뀐 것만)' : '(바뀐 것만: 전체 모드)';
   const scope = [args.region ? `권역 ${args.region}` : null, args.years ? `${args.years[0]}~${args.years[1]}년` : null, changedScope].filter(Boolean).join(' ') || '전체';
+  const focusText = focus ? ` · --focus 항목 ${focus.size}개(다른 항목 몫 ${outsideN} — 세지 않음)` : '';
   const skippedItems = outs.reduce((n, o) => n + o.skipped, 0);
-  const head = `test:geo 범위 ${scope} · ${fmtDur(total)} · ${hadError ? `오류 ${outs.filter((o) => o.status === 'error').length} · ` : ''}${failures ? `실패 ${failures}` : '실패 0'}${skippedItems ? ` · 건너뜀 ${skippedItems.toLocaleString()}` : ''}`;
+  const head = `test:geo 범위 ${scope} · ${fmtDur(total)} · ${hadError ? `오류 ${outs.filter((o) => o.status === 'error').length} · ` : ''}${failures ? `실패 ${failures}` : '실패 0'}${skippedItems ? ` · 건너뜀 ${skippedItems.toLocaleString()}` : ''}${focusText}`;
 
   const lines: string[] = [head];
   const pad = Math.max(6, ...outs.map((o) => o.id.length));
@@ -400,6 +446,7 @@ async function main(): Promise<number> {
       if (o.baselined) parts.push(`기준선 ${o.baselined}`);
       if (o.allowed.length) parts.push(`알려진 예외 ${o.allowed.length}`);
     }
+    if (o.outside.length) parts.push(`다른 항목 몫 ${o.outside.length}`);
     if (o.warnings.length) parts.push(`경고 ${o.warnings.length}`);
     parts.push(fmtDur(o.seconds));
     lines.push(`  ${mark} ${o.id.padEnd(pad)}  ${parts.join(' · ')}`);
@@ -421,6 +468,7 @@ async function main(): Promise<number> {
       {
         scope,
         ...(args.changed !== null ? { changed: plan ?? { note: planLine } } : {}),
+        ...(focus ? { focus: { ids: [...focus], outside: outsideN } } : {}),
         seconds: Math.round(total * 10) / 10,
         newFailures: failures,
         checks: outs.map((o) => ({
@@ -432,6 +480,7 @@ async function main(): Promise<number> {
           notes: o.notes,
           seconds: Math.round(o.seconds * 10) / 10,
           newFailures: o.newFailures,
+          ...(focus ? { outside: o.outside } : {}),
           allowed: o.allowed.map(({ item, entry }) => ({ key: item.key, reason: entry.reason, decided: entry.decided })),
           baselined: o.baselined,
           skipped: o.skipped,

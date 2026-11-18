@@ -14,6 +14,7 @@
 //            입력 해시가 빌드 기록과 다름 / 기록 없음 / public/data의 결과가 기록과 다름 / wars/<id>.json 없음 / wars.json에 없는 전쟁. 고를 것이 없으면 건너뜀
 //   test     npm run test:geo     검사(인자는 그대로 넘김: --ci 등)
 // 사용: npm run finish:border -- [--from <단계>] [--only <단계,…>] [--no-wars|--wars] [--no-test] [--budget <초>] [test:geo 인자…] [-- test:geo 인자…]
+//       npm run finish:border -- --plan [--no-wars]   (아무것도 돌리지 않고 전쟁 쪽 할 일만 판정)
 //   --from <단계>    그 단계부터 끝까지(앞 단계는 건너뜀). 예산 때문에 끊긴 뒤 안내대로 이어 부를 때 씀
 //   --only <단계,…>  고른 단계만(--from과 함께 쓰지 못함). test:geo의 --only와 이름이 겹치므로 test:geo의 --only·--skip은 `--` 뒤에 쓴다
 //   --no-wars        gen:wars를 건너뜀(영토 국경이 아닐 때). rebuild는 그래도 함
@@ -22,12 +23,17 @@
 //                    (`--only geo,wars,rebuild`는 wars를 직접 고른 것이라 자동 건너뜀이 꺼짐). test:geo 인자와 함께 못 씀
 //   test:geo에 --changed를 넘기면(예: `-- --changed`) 검사도 바뀐 것만 한다(test:geo 머리 주석). 단계 끝 메인 검사는 지금처럼 전체로 둔다
 //   --budget <초>    이 명령의 시간 예산(기본 270). 다음 단계를 시작하기 전에 (지금까지 시간 + 그 단계의 지난 시간)이 예산을 넘으면 시작하지 않고 이어서 부를 줄과 함께 끝낸다(종료 3)
+//   --plan           (2026-11-18 개선 ③) 아무 단계도 돌리지 않고 wars(위 자동 건너뜀 판정 — --no-wars면 안 봄)·rebuild(낡은 전쟁 목록)에 할 일이 있는지만 보인다.
+//                    geo·test는 판정하지 않는다(gen:geo는 돌려야 알고, 그 낡음은 test:geo gen 검사가 본다). public/data/wars.json이 없으면 rebuild는 판정하지 않음.
+//                    종료 0 = 전쟁 쪽 할 일 없음, 4 = 있음. 인계 폴더 tools/geo-receipt.mjs run이 구간 검사 앞에 불러, 할 일이 있으면 먼저
+//                    `npm run finish:border -- --no-test`를 하게 막는다 — 구간 검사 뒤 전쟁 재빌드가 지문을 바꿔 영수증이 모두 무효가 되던 일(M2 적용 대행 133분)을 막으려고.
+//                    다른 옵션(--from·--only·--wars·--no-test·--budget·test:geo 인자)과 함께 쓰지 못함. 상태 파일을 쓰지 않는다
 //   그 밖의 인자는 모두 test:geo로 넘긴다(`--` 뒤는 무엇이든). 이어서 줄도 test:geo 인자 앞에 `--`를 붙여 낸다
 // 단계마다 걸린 시간과 마지막 gen:wars 성공 기록(warsGen)은 .cache/finish-border/state.json에 적는다(처음이면 어림: geo 90초, wars 200초, 전쟁 하나 빌드 30초, test 120초).
 //   rebuild는 한 번에 예산 안에서 빌드할 수 있는 만큼의 전쟁만 빌드하고 나머지는 이어서 부르게 한다(다음 호출이 낡은 전쟁을 다시 찾으므로 남은 것만 고른다).
 //   아무 단계도 안 한 처음 단계는 예산보다 길어 보여도 한다(안 그러면 이어 부를 수 없음).
 // 하위 명령은 package.json scripts를 읽어 `node …` 꼴이면 process.execPath로 직접 부른다(npm.cmd를 거치지 않으므로 Windows에서도 같고, 명령의 원천이 package.json 하나). 출력은 .cache/finish-border/<단계>.log에 받고 화면은 요약만(test:geo 전체는 test-geo.log).
-// 종료 코드: 0 성공, 1 test:geo 실패·하위 명령 오류·전체 build:data 필요, 2 사용법 오류, 3 예산 때문에 끊김(이어서 부를 줄을 보임).
+// 종료 코드: 0 성공, 1 test:geo 실패·하위 명령 오류·전체 build:data 필요, 2 사용법 오류, 3 예산 때문에 끊김(이어서 부를 줄을 보임), 4 --plan에서 할 일 있음.
 import { spawnSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
 import { closeSync, existsSync, mkdirSync, openSync, readFileSync, writeFileSync } from 'node:fs';
@@ -48,7 +54,8 @@ const NPM_SCRIPT: Partial<Record<Step, string>> = { geo: 'gen:geo', wars: 'gen:w
 const DEFAULT_BUDGET = 270;
 
 const USAGE =
-  '사용: npm run finish:border -- [--from <단계>] [--only <단계,…>] [--no-wars|--wars] [--no-test] [--budget <초>] [test:geo 인자…] [-- test:geo 인자…]  (단계: geo·wars·rebuild·test)';
+  '사용: npm run finish:border -- [--from <단계>] [--only <단계,…>] [--no-wars|--wars] [--no-test] [--budget <초>] [test:geo 인자…] [-- test:geo 인자…]  (단계: geo·wars·rebuild·test)\n' +
+  '      npm run finish:border -- --plan [--no-wars]  (돌리지 않고 전쟁 쪽 할 일만 — 종료 0 없음·4 있음)';
 
 class UsageError extends Error {}
 
@@ -60,6 +67,8 @@ interface Args {
   wars: boolean;
   /** test:geo를 건너뜀(gen:wars 자동 건너뜀은 그대로) */
   noTest: boolean;
+  /** 돌리지 않고 전쟁 쪽 할 일만 판정 */
+  plan: boolean;
   budget: number;
   testArgs: string[];
 }
@@ -70,7 +79,8 @@ function parseStep(v: string | undefined, flag: string): Step {
 }
 
 function parseArgs(argv: string[]): Args {
-  const a: Args = { from: null, only: null, noWars: false, wars: false, noTest: false, budget: DEFAULT_BUDGET, testArgs: [] };
+  const a: Args = { from: null, only: null, noWars: false, wars: false, noTest: false, plan: false, budget: DEFAULT_BUDGET, testArgs: [] };
+  let budgetGiven = false;
   for (let i = 0; i < argv.length; i++) {
     const f = argv[i];
     if (f === '--') {
@@ -85,7 +95,9 @@ function parseArgs(argv: string[]): Args {
     } else if (f === '--no-wars') a.noWars = true;
     else if (f === '--wars') a.wars = true;
     else if (f === '--no-test') a.noTest = true;
+    else if (f === '--plan') a.plan = true;
     else if (f === '--budget') {
+      budgetGiven = true;
       const n = Number(argv[++i]);
       if (!Number.isFinite(n) || n <= 0) throw new UsageError('--budget에는 0보다 큰 초가 필요함');
       a.budget = n;
@@ -95,6 +107,7 @@ function parseArgs(argv: string[]): Args {
   if (a.from && a.only) throw new UsageError('--from과 --only는 함께 쓸 수 없음');
   if (a.noWars && a.wars) throw new UsageError('--no-wars와 --wars는 함께 쓸 수 없음');
   if (a.noTest && a.testArgs.length) throw new UsageError(`--no-test와 test:geo 인자(${a.testArgs.join(' ')})는 함께 쓸 수 없음`);
+  if (a.plan && (a.from || a.only || a.wars || a.noTest || budgetGiven || a.testArgs.length)) throw new UsageError('--plan은 --no-wars 말고 다른 옵션·test:geo 인자와 함께 쓸 수 없음');
   return a;
 }
 
@@ -232,6 +245,42 @@ function findStale(): StaleResult {
   return { stale: stale.sort((a, b) => a.id.localeCompare(b.id)), orphans };
 }
 
+// ── --plan: 돌리지 않고 전쟁 쪽 할 일만 ──────────────────────
+
+function planOnly(args: Args): number {
+  const t0 = Date.now();
+  const todo: string[] = [];
+  /** 기계용 줄(geo-receipt가 읽음): plan wars=<0|1|-> rebuild=<낡은 수|-> */
+  let mWars = '-';
+  let mRebuild = '-';
+  if (args.noWars) console.log('② gen:wars       판정 안 함 · --no-wars');
+  else {
+    const p = planWars(ROOT, readState().warsGen ?? null);
+    console.log(`② gen:wars       ${p.run ? '할 일 있음' : '건너뜀'} · ${p.reason}`);
+    mWars = p.run ? '1' : '0';
+    if (p.run) todo.push('gen:wars');
+  }
+  if (!existsSync(path.join(ROOT, 'public/data/wars.json'))) console.log('③ 전쟁 재빌드    판정 안 함 · public/data/wars.json 없음(전쟁 빌드가 없는 사본)');
+  else {
+    const found = findStale();
+    mRebuild = String(found.stale.length);
+    if (found.orphans.length) console.log(`  ! wars.json에는 있는데 전쟁 YAML이 없는 전쟁 ${found.orphans.join(', ')} — 부분 빌드로 못 고침(전체 build:data)`);
+    if (found.stale.length) {
+      const shown = found.stale.slice(0, 6).map((s) => `${s.id}(${s.reason})`).join(', ');
+      console.log(`③ 전쟁 재빌드    할 일 있음 · 낡은 전쟁 ${found.stale.length}개: ${shown}${found.stale.length > 6 ? ` 외 ${found.stale.length - 6}` : ''}`);
+      todo.push('전쟁 재빌드');
+    } else console.log('③ 전쟁 재빌드    건너뜀 · 낡은 전쟁 없음');
+  }
+  const sec = fmt((Date.now() - t0) / 1000);
+  console.log(`plan wars=${mWars} rebuild=${mRebuild}`);
+  if (!todo.length) {
+    console.log(`판정: 전쟁 쪽 할 일 없음 (${sec})`);
+    return 0;
+  }
+  console.log(`판정: 할 일 있음 — ${todo.join('·')} (${sec}). 구간 검사 앞에 \`npm run finish:border -- --no-test${args.noWars ? ' --no-wars' : ''}\`(전쟁 재빌드는 지문을 바꿔 그 전 영수증을 무효로 만듦)`);
+  return 4;
+}
+
 // ── 본체 ─────────────────────────────────────────────────────
 
 function main(): number {
@@ -243,6 +292,7 @@ function main(): number {
     console.error(e.message ? `${e.message}\n${USAGE}` : USAGE);
     return e.message ? 2 : 0;
   }
+  if (args.plan) return planOnly(args);
 
   const wanted: Step[] = args.only ? STEPS.filter((s) => args.only!.includes(s)) : args.from ? STEPS.slice(STEPS.indexOf(args.from)) : [...STEPS];
   const plan = wanted.filter((s) => !(s === 'wars' && args.noWars) && !(s === 'test' && args.noTest));
