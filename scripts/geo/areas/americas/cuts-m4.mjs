@@ -82,7 +82,7 @@ export const MXC4_CUT_TA1435 = P(ring([
 //   poly/inca1471.json — M3 안 532,585) · AND4_CUT_INCA1470(치무 정복 — 키토 남쪽·북부 해안, poly/incaV3union.json — M3 안 713,627) · AND4_CUT_CHIMU(1375 시칸 정복 — 툼베스 남쪽에서 카라바이요까지
 //   북부 해안, poly/chimuAll.json 93,223).
 // 시대 파일에서 쓰는 꼴: I(AND3_CUT_INCA 별칭, AND4_CUT_INCA1438 별칭)·D(I(…, AND4_CUT_INCA1463 별칭), 치무 땅)·U(I(…, AND4_CUT_INCA1470 별칭), 치무 땅) — 치무 땅 = I(AND3_CUT_INCA 별칭, AND4_CUT_CHIMU 별칭)
-//   (치무 ⊂ 잉카 1470·치무 ∩ 잉카 1438·1463 = 0). 잉카 1481~1491은 M3 1492 줄 그대로(AND3_CUT_INCA·M1 SC_CUT_1909 별칭, 오리엔테 EC-Z·EC-S·EC-T·AR-M 비움 — C-M4-17).
+//   (치무 ⊂ 잉카 1470·치무 ∩ 잉카 1438·1463 = 0). 잉카 1481~1491은 M3 1492 줄 그대로(AND3_CUT_INCA·M1 SC_CUT_1909 별칭, 오리엔테 EC-Z·EC-S·EC-N·AR-M 비움 — C-M4-17).
 // 고리 넷 모두 바깥 변(바다 쪽·아마존 쪽)은 M3 잉카 도형 밖으로 넉넉히 — 교집합이 M3 변과 조각 해안을 쓴다. 안쪽 변만 지형(안데스 서쪽 기슭·코르디예라 레알·라라야 고개 등)으로 긋는다.
 // AND4_CUT_CHIMU — 1375~1469 치무 왕국(치모르) 땅: 툼베스 골짜기에서 카라바이요(치욘강 아래쪽)까지 북부 해안 골짜기와 안데스 서쪽 기슭(약 1,000 km — 위키 en Chimú culture).
 //   근거: 1375 무렵 시칸(람바예케) 정복(위키 en Lambayeque_culture), 남쪽 끝 카라바이요·북쪽 끝 툼베스(위키 en Chimú culture — 남쪽 확장 해는 문서에 없음, 학설 하나로 고정).

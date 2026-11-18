@@ -28,7 +28,7 @@
 //   한 조각을 두 나라 고리가 함께 지나면(MX-MEX·MX-GRO — 아즈텍·타라스코, 페루 해안 조각 — 치무·잉카) 한 ownSplit에 부분 둘(겹침 0). 고리가 바뀌는 해마다 { from, to }를 나누고 다른 묶음 이름(M2 BNE2_NL 꼴).
 // 공통 비운 땅·빈 땅 검사 구역(특별 지시 2·C-M4-2 — 이 파일 공통 줄이 만든다, 칸은 고치지 않음): 칸이 내보내는 <앞머리>_RINGS = [[from, to, 그해 칠하는 땅(교집합 뒤 도형)], …]의 합으로
 //   ① 공통 비운 땅 = D(DOMAIN, 그해 RINGS 합)(이유 '1001~1491 칠할 나라 밖 — Q1 A, 결정 9') ② 빈 땅 검사 구역 = I(DOMAIN, 그해 RINGS 합) − 칸 voids(이름 '아메리카 콜럼버스 이전 <from>~<to-1>').
-//   고리가 없는 1001~1374는 구역 없음(공통 비운 땅이 권역 바깥선 전부). 칸 voids는 고리 안인데 칠하지 않는 조각 몫만(예 잉카 1481~1491 오리엔테 EC-Z·EC-S·EC-T·AR-M 몫과 M1 1909 띠 — M3 AND3_voids와 같게).
+//   고리가 없는 1001~1374는 구역 없음(공통 비운 땅이 권역 바깥선 전부). 칸 voids는 고리 안인데 칠하지 않는 조각 몫만(예 잉카 1481~1491 오리엔테 EC-Z·EC-S·EC-N·AR-M 몫과 M1 1909 띠 — M3 AND3_voids와 같게).
 // 늘림 나라: 없음(권역 파일 EXTENDABLE 그대로 — russia 1778~는 M4 기간 밖, M4 창구 ② 자동 승인 0건 — 노르드인 그린란드 정착은 땅 없는 norse-greenland, G4-9). 관계 줄 0(P2·C-M4-7).
 // 칸 나눔(지리 칸 셋, 한 라운드): MXC-M4(메소아메리카 — 조각 cuts-m4.mjs M4_MXC_IDS 125)·AND-M4(안데스 — M4_AND_IDS 210)·NAC-M4(북미·카리브·땅 없는 항목 — 조각 없음, 이 파일에 줄 없음).
 //   나머지 329조각은 어느 칸도 줄을 쓰지 않는다(fillTables가 주인 null로 채우고 공통 비운 땅이 덮음). 칸 경계는 조각 경계라 고리는 칸을 넘지 않는다.
@@ -162,7 +162,7 @@ void MXC4_S35; void MXC4_S40; void MXC4_S50; void MXC4_S69; void MXC4_A; void MX
 //   AND3_CL_ML(CL-ML)·AND3_AR_I 6과 같은 조각(M3 1492 inca 줄 — ownSplit 'AND3_IN'·'AND3_I09' 등). 나머지는 줄 없음(공통 비운 땅).
 // 새 항목: chimu [1375, 1470)(칠함 — 고리 AND4_CUT_CHIMU)·땅 없는 sican-culture·chancay-culture. 앞 잇기(블록 americas-colonial.yaml — 이 칸): inca 1438·1463·1470·1481(1481~1491 = M3 1492 도형).
 // 고리 자리(cuts-m4.mjs AND-M4 머리): AND4_CUT_INCA1438·AND4_CUT_INCA1463·AND4_CUT_INCA1470·AND4_CUT_CHIMU — I(AND3_CUT_INCA 별칭, …), 잉카 1463 = D(…, 치무 땅)·1470 = U(…, 치무 땅).
-//   끝 버전은 M3 AND 1492 줄(AND3_CUT_INCA·M1 SC_CUT_1909 별칭, 오리엔테 EC-Z·EC-S·EC-T·AR-M과 1909 띠 비움 — C-M4-17)을 같은 조각 묶음·같은 별칭으로 재현.
+//   끝 버전은 M3 AND 1492 줄(AND3_CUT_INCA·M1 SC_CUT_1909 별칭, 오리엔테 EC-Z·EC-S·EC-N·AR-M과 1909 띠 비움 — C-M4-17)을 같은 조각 묶음·같은 별칭으로 재현.
 // 기본값: 쿠스코 왕국(1438 앞)·찬카·콜랴·루파카 비움(Q1 A), 치무 1001~1374 비움(Q3 A — 남쪽 약 6.3만은 알려진 근사), 잉카 V1~V3 넓이 G4-4(칸이 고리로 다시 잼).
 // 이음(1491 = M3 1492): m4/SKEL-NOTE.md 3절 — inca 1,677,902(M3 합치기 4절), 그 밖 이 칸 조각 1491 빈 땅(공통 비운 땅 — 무이스카 등).
 import { AND3_CUT_INCA as AND4_IN3 } from './cuts-m3.mjs';
@@ -180,7 +180,7 @@ const AND4_V3 = U(I(AND4_IN3, AND4_K1470), AND4_V2, AND4_CH);
 const AND4_RINGS = [[1375, 1470, AND4_CH], [1438, 1463, AND4_V1], [1463, 1470, AND4_V2], [1470, 1481, AND4_V3], [1481, M4_END, AND4_IN3]];
 // 조각 묶음(id 목록 — M3 colonial.mjs AND-M3 머리의 묶음과 같은 조각, 상수는 export되지 않아 다시 적음)
 const AND4_PE_I = ['PE-AMA', 'PE-ANC', 'PE-APU', 'PE-ARE', 'PE-AYA', 'PE-CAJ', 'PE-CAL', 'PE-HUC', 'PE-HUV', 'PE-ICA', 'PE-JUN', 'PE-LAL', 'PE-LAM', 'PE-MOQ', 'PE-PAS', 'PE-PIU', 'PE-SAM', 'PE-TAC', 'PE-TUM', 'PER-587', 'PER-591'];
-const AND4_EC_I = ['EC-A', 'EC-B', 'EC-F', 'EC-G', 'EC-H', 'EC-L', 'EC-N', 'EC-O', 'EC-P', 'EC-R', 'EC-SD', 'EC-X']; // EC-N은 조각 자료 이름표가 'Napo'지만 도형은 퉁구라우아주(안데스 고원)
+const AND4_EC_I = ['EC-A', 'EC-B', 'EC-F', 'EC-G', 'EC-H', 'EC-L', 'EC-T', 'EC-O', 'EC-P', 'EC-R', 'EC-SD', 'EC-X']; // EC-T = 퉁구라우아주(안데스 고원. 2026-11-18 조각 이름표 바로잡기 앞에는 EC-N으로 적었음)
 const AND4_BO_I = ['BO-L', 'BO-O', 'BO-P', 'BO-C', 'BO-H', 'BO-T']; // 라파스·오루로·포토시·코차밤바·추키사카·타리하
 const AND4_CL_I = ['CL-TA', 'CL-AP', 'CL-AN', 'CL-AT', 'CL-CO', 'CL-VS', 'CL-RM', 'CL-LI']; // 칠레 북~중부(마울레강 북쪽)
 const AND4_INCA_IDS = [...AND4_PE_I, ...AND4_EC_I, ...AND4_BO_I, ...AND4_CL_I];
@@ -194,7 +194,7 @@ const AND4_CH_IDS = ['PE-ANC', 'PE-CAJ', 'PE-LAL', 'PE-LAM', 'PE-PIU', 'PE-TUM',
 const AND4_V1_IDS = ['PE-APU', 'PE-ARE', 'PE-AYA', 'PE-HUV', 'PE-ICA']; // 잉카 1438(+ 쿠스코·푸노 — 띠 먼저)
 // 잉카 1463과 치무가 함께 지나는 조각(PE-ANC·PE-CAJ·PE-LAL·PE-LAM·PER-591) — 1463~1469는 치무 8조각을 한 ownSplit에 부분 둘로(치무 땅 단위를 1375~1462와 같은 조각 묶음으로 두어 도형 바이트가 같게)
 const AND4_V2_IDS = ['BO-C', 'BO-L', 'BO-O', 'BO-P', 'PE-AMA', 'PE-APU', 'PE-ARE', 'PE-AYA', 'PE-HUC', 'PE-HUV', 'PE-ICA', 'PE-JUN', 'PE-MOQ', 'PE-PAS', 'PE-SAM', 'PE-TAC', 'CL-AP', 'CL-TA'];
-const AND4_V3_IDS = [...AND4_V2_IDS, ...AND4_CH_IDS, 'PE-CAL', ...AND4_EC_I]; // 잉카 1470(오리엔테 EC-S·EC-T·EC-Z는 통째 비움 — 1481~와 같게)
+const AND4_V3_IDS = [...AND4_V2_IDS, ...AND4_CH_IDS, 'PE-CAL', ...AND4_EC_I]; // 잉카 1470(오리엔테 EC-S·EC-N·EC-Z는 통째 비움 — 1481~와 같게)
 if ([...AND4_V3_IDS, ...AND4_PE_09I].some((id) => !AND4_ALL.includes(id))) throw new Error('americas precolumbian AND-M4: 앞 버전 조각은 잉카 조각 56 안이어야 함(부분집합)');
 const AND4_C = 'chimu';
 // 1375~1437 치무(1001~1374는 통째 비움 — 핵심 모체·치카마 골짜기는 1만 km² 밑, Q3 A)
@@ -218,7 +218,7 @@ ownSplit('AND4_INCA_AR', AND4_AR_I, [['안', AND4_IN3]], '밖', { 안: [[1481, '
 // 고리 안인데 칠하지 않는 몫(고리 밖은 공통 비운 땅 — C-M4-2·C-M4-17, M3 AND3_voids 1492 몫과 같게)
 const AND4_voids = () => [
   B(1463, 1470, AND4_V2P.띠), B(1470, 1481, AND4_V3P.띠), B(1481, M4_END, AND4_I09.띠), // 1909 폴로–산체스 부스타만테 조약 앞 마드레데디오스·푸루스 띠(M3·M2·M1과 같음 — 내내 비움)
-  V(1470, M4_END, 'EC-S', 'EC-T', 'EC-Z'), // 에콰도르 오리엔테(수쿰비오스·나포·사모라친치페 — 잉카 도형이 동쪽 기슭에 걸친 몫, 1563 키토 아우디엔시아 앞 원주민 땅)
+  V(1470, M4_END, 'EC-S', 'EC-N', 'EC-Z'), // 에콰도르 오리엔테(모로나산티아고·나포·사모라친치페 — 잉카 도형이 동쪽 기슭에 걸친 몫, 1563 키토 아우디엔시아 앞 원주민 땅)
   V(1481, M4_END, 'AR-M', 'BO-S'), // 멘도사(우스파야타 북쪽 끝)·산타크루스(사마이파타 둘레 — 치리과노 변경) — M3 1492와 같이 비움
 ];
 // ── M4 AND-M4 끝 ──

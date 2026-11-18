@@ -17,7 +17,7 @@
 
 | 파일 | 크기 | sha256 |
 |---|---|---|
-| `americas.topo.json` | 887,563B | `8dacc639ec08d4764d9f17f13163d215d22c4fbe5aea59eb4699fcd31b21d41a` |
+| `americas.topo.json` | 887,524B | `8726fbd6b6a028f1f2180f718dca4d7e7c2bbffd6faf820a984b2b740a78e000` |
 
 - TopoJSON. transform은 scale [0.0001, 0.0001], translate [0, 0]이라 좌표 = 정수 × 0.0001°다. 다른 권역 파일도 같은 transform을 쓰므로 복호화한 좌표가 같다.
 - `objects.fragments`: 조각 664개. `id`와 `properties` { adm0(NE adm0_a3), name, type(NE type_en), region(NE region, 있으면), unit(NE geonunit이 나라 이름과 다를 때) }
@@ -35,6 +35,7 @@
 
 - 나라(adm0_a3): CAN, GRL, MEX, GTM, BLZ, SLV, HND, NIC, CRI, PAN, CUB, JAM, HTI, DOM, BHS, TTO, ATG, BRB, DMA, GRD, KNA, LCA, VCT, ABW, CUW, SXM, MAF, BLM, AIA, MSR, VGB, VIR, PRI, CYM, TCA, BMU, SPM, FLK, SGS, NLD, COL, VEN, GUY, SUR, ECU, PER, BRA, BOL, PRY, URY, ARG, CHL
 - 버린 나라(조각에도 이웃에도 넣지 않고, 그 땅은 해안 맞추기에서 옆 조각이 덮음): USG
+- 원본 바로잡기(NE 속성 iso_3166_2·name·code_hasc 맞바꿈): 에콰도르 `ECU-1289`·`ECU-1290`: NE가 이름·ISO 코드(Napo `EC-N`·Tungurahua `EC-T`)를 서로 바꿔 붙여 맞바꿨다 — `EC-N`은 나포주(테나), `EC-T`는 퉁구라우아주(암바토)
 - 버린 행정구역(NE adm1_code, 조각에도 이웃에도 넣지 않음 — 그 땅은 해안 맞추기에서 옆 조각이 덮거나 내륙 구멍 조각이 됨): COL+99?, VEN+99?, MEX+99?, BRA-599
 - 미국: 하와이(`US-HI`, 오세아니아 몫)를 뺀 주 50개(워싱턴 D.C. 포함) US-AK·US-AL·US-AR·US-AZ·US-CA·US-CO·US-CT·US-DC·US-DE·US-FL·US-GA·US-IA·US-ID·US-IL·US-IN·US-KS·US-KY·US-LA·US-MA·US-MD·US-ME·US-MI·US-MN·US-MO·US-MS·US-MT·US-NC·US-ND·US-NE·US-NH·US-NJ·US-NM·US-NV·US-NY·US-OH·US-OK·US-OR·US-PA·US-RI·US-SC·US-SD·US-TN·US-TX·US-UT·US-VA·US-VT·US-WA·US-WI·US-WV·US-WY
 - 프랑스 해외 땅: 기아나·마르티니크·과들루프(FR-GF·FR-MQ·FR-GP). 유럽 조각의 프랑스는 본토·코르시카뿐이라 조각 id가 부딪치지 않는다.
@@ -84,7 +85,7 @@
   - 통과: (a) 조각 쌍 겹침: 가장 큰 쌍 0.0000km², 겹친 쌍 0개 합 0.0000km² (살핀 쌍 1,737개, 기준 쌍마다 1km² 미만)
   - 통과: (b) 덮이지 않은 육지(빌드가 쓰는 land-50m ∪ land-110m 그대로, 가장 가까운 것이 조각인 곳) 156조각 0.003856km² (기준 0.01km² 미만)
   - 통과: (c) arc 공유: 모두 합친 둘레가 합집합보다 0.060km 김(공유하지 않은 이웃 경계 약 0.030km, 기준 0.1km 이하), 합친 폴리곤 300개 / 합집합 300개
-  - 통과: (d) 파일 크기 887,563B (1MB 이하)
+  - 통과: (d) 파일 크기 887,524B (1MB 이하)
   - 통과: (e) 처음부터 두 번 만든 결과가 바이트 단위로 같음
 
 ## 따로 볼 곳

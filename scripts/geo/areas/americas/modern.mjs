@@ -235,7 +235,7 @@ const SAN_COFT = ownSplit('SAN_CO_FT', SAN_CO_FT, [['띠', SAN_CUT_FT]], '나머
 }, { from: M1_START, to: 1930 });
 own(SAN_CO_FT, [[1930, 'colombia']]); // 1930 인계 뒤 지금 경계(통째). 1932~1933 레티시아 점령은 글
 own(SAN_VEN, [[M1_START, 'venezuela']]); // 에세키보 재주장 1962는 글(G8)
-own(SAN_ECU.filter((id) => !SAN_EC_A.includes(id)), [[M1_START, 'ecuador']]); // 오리엔테 EC-S·EC-Y·EC-Z·EC-N·EC-T도 1900부터(Q1 (B))
+own(SAN_ECU.filter((id) => !SAN_EC_A.includes(id)), [[M1_START, 'ecuador']]); // 오리엔테 EC-S·EC-Y·EC-Z·EC-N도 1900부터(Q1 (B))
 ownSplit('SAN_EC_A', SAN_EC_A, [['교환', SAN_CUT_A]], '나머지', {
   교환: [[M1_START, 'peru']], // 1936 현상 유지선에서 페루가 가진 아과리코 아래쪽 북동 띠(G17) — 1942-01-29 리우 의정서로 에콰도르에
   나머지: [[M1_START, 'ecuador']],

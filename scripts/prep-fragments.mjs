@@ -213,6 +213,15 @@ function build(src, region, verbose) {
     }
     say(`[${stamp()}]    아래층 조각 ${UNDER.name}: 이웃으로 ${uNear.length}개, 겹쳐서 깎은 조각 ${report.underCut.length}개(${report.underCut.join(', ') || '없음'})`);
   }
+  // 원본 속성 바로잡기(표의 swapProps): 이름표가 뒤바뀐 두 행정구역의 속성을 맞바꾼다(도형은 그대로). 둘 다 골라져 있어야 한다
+  for (const sw of region.swapProps ?? []) {
+    const pair = sw.codes.map((code) => chosen.find((c) => c.p.adm1_code === code));
+    if (pair.some((c) => !c) || sw.codes.length !== 2) throw new Error(`swapProps: 골라진 행정구역에 없음 ${sw.codes.join('·')}`);
+    const [a, b] = pair.map((c) => ({ ...c.p }));
+    for (const k of sw.props) [a[k], b[k]] = [b[k], a[k]];
+    [pair[0].p, pair[1].p] = [a, b];
+    say(`[${stamp()}]    원본 바로잡기: ${sw.codes.join('·')}의 ${sw.props.join('·')} 맞바꿈 → ${a.adm1_code} ${a.iso_3166_2} ${a.name} / ${b.adm1_code} ${b.iso_3166_2} ${b.name}`);
+  }
   const missing = region.adm0.filter((a) => !chosen.some((c) => c.p.adm0_a3 === a));
   if (missing.length) throw new Error(`원본에 없는 나라: ${missing.join(', ')}`);
   say(`[${stamp()}] 1) 고르기: 조각 ${chosen.length}개, 범위 상자에 걸친 이웃 행정구역 ${neighbors.length}개, 상자 밖이라 뺀 것 ${report.dropped.length}건`);
@@ -695,6 +704,7 @@ function readme(r, checks) {
   L.push('## 권역과 매개변수', '');
   L.push('- 나라(adm0_a3): ' + region.adm0.join(', '));
   if (region.drop?.length) L.push('- 버린 나라(조각에도 이웃에도 넣지 않고, 그 땅은 해안 맞추기에서 옆 조각이 덮음): ' + region.drop.join(', '));
+  for (const sw of region.swapProps ?? []) L.push('- 원본 바로잡기(NE 속성 ' + sw.props.join('·') + ' 맞바꿈): ' + sw.note);
   if (region.dropCodes?.length) L.push('- 버린 행정구역(NE adm1_code, 조각에도 이웃에도 넣지 않음 — 그 땅은 해안 맞추기에서 옆 조각이 덮거나 내륙 구멍 조각이 됨): ' + region.dropCodes.join(', '));
   for (const inc of region.include ?? []) L.push('- ' + inc.note.replaceAll('{values}', inc.values.join('·')));
   if (region.boxes) L.push('- 범위 상자 ' + region.boxes.length + '개(날짜변경선 양쪽, 각 [서, 남, 동, 북]) = ' + region.boxes.map((b) => '[' + b.join(', ') + ']').join(' · ') + '. 어느 상자에도 걸치지 않는 폴리곤은 뺐다: ' + (rp.dropped.join('; ') || '없음'));

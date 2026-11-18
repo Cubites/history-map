@@ -431,9 +431,9 @@ const ANN2_CO_FT = ['CO-AMA', 'CO-PUT']; // 푸투마요–카케타 띠를 품�
 const ANN2_CO = [...idsOf('COL').filter((id) => !ANN2_CO_FT.includes(id)), ...idsOf('PAN')]; // 콜롬비아 30 + 파나마 12(파나마는 1903까지 같은 주인 — M1 G19)
 const ANN2_EC_A = ['EC-U', 'EC-D']; // 1942 교환 땅 A(페루가 1936 현상 유지선까지 가진 아과리코 아래쪽 띠)를 품는 에콰도르 조각
 // 나포 — 키호스(1802 칙령이 페루 부왕령에 넘긴 '파팔락타를 뺀 키호스 마을' — 창구 ③ Q-R3, 나포강 유역 세 조각 가운데 교환 땅 A를 품지 않는 하나).
-//   조각 자료의 이름표가 뒤바뀜: id EC-T(name Tungurahua)의 도형이 지금 나포주(테나·아르치도나·바에사·파팔락타)이고, id EC-N(name Napo)의 도형은 퉁구라우아주(암바토·바뇨스 — 안데스 고원).
-//   결정 문장의 'EC-N(나포강 유역)'은 뜻대로 나포주 도형 EC-T로 칠함(조각 파일은 고치지 않음 — 반영 fix1.md)
-const ANN2_EC_Q = ['EC-T'];
+//   EC-N = 나포주(테나·아르치도나·바에사·파팔락타), 결정 문장의 'EC-N(나포강 유역)' 그대로. 2026-11-18 개선 ③이 조각 자료의 NE 이름표 뒤바뀜을 바로잡기 앞에는
+//   이 도형의 id가 EC-T(EC-N은 퉁구라우아주 — 암바토·바뇨스)여서 EC-T로 적었음(반영 fix1.md). 칠하는 땅은 같다
+const ANN2_EC_Q = ['EC-N'];
 const ANN2_EC_GAL = ['EC-W']; // 갈라파고스 제도 — 1832-02-12 에콰도르 병합 앞은 어느 나라도 다스리지 않음(1만 km² 미만)
 const ANN2_EC = idsOf('ECU').filter((id) => !ANN2_EC_A.includes(id) && !ANN2_EC_GAL.includes(id) && !ANN2_EC_Q.includes(id)); // 에콰도르 20(오리엔테 포함 — M1 Q1 (B))
 const ANN2_PE_LOR = ['PE-LOR']; // 로레토 — 마라뇬강 북쪽 마이나스(Q3)와 1942 교환 땅 B를 품음
@@ -454,7 +454,7 @@ const ANN2_FT = ownSplit('ANN2_CO_FT', ANN2_CO_FT, [['띠', ANN2_PUTUMAYO]], '�
 }, { from: 1830, to: M2_END });
 // 에콰도르: 1822 피친차까지 스페인(3년 안 — G2-16), 1830-05-13 그란콜롬비아에서 분리
 own(ANN2_EC, [[M2_START, 'new-granada-viceroyalty'], [1819, 'gran-colombia'], [1830, 'ecuador']]);
-// 키호스(창구 ③ Q-R3): 나포강 유역 세 조각(EC-U·EC-T(나포주 도형 — 위 줄)·EC-D) 1802-07-15 칙령으로 페루 부왕령, 1819 그란콜롬비아(1822 피친차 — 3년 안). 칙령의 '강가' 몫(모로나·파스타사·사모라 등)은 장부 칙령 판본 갈림 줄
+// 키호스(창구 ③ Q-R3): 나포강 유역 세 조각(EC-U·EC-N(나포주 — 위 줄)·EC-D) 1802-07-15 칙령으로 페루 부왕령, 1819 그란콜롬비아(1822 피친차 — 3년 안). 칙령의 '강가' 몫(모로나·파스타사·사모라 등)은 장부 칙령 판본 갈림 줄
 own(ANN2_EC_Q, [[M2_START, 'new-granada-viceroyalty'], [1802, 'peru-viceroyalty'], [1819, 'gran-colombia'], [1830, 'ecuador']]);
 own(ANN2_EC_A, [[M2_START, 'new-granada-viceroyalty'], [1802, 'peru-viceroyalty'], [1819, 'gran-colombia']]); // 1829까지 조각 통째(키호스 — 위 줄과 같은 해)
 ownSplit('ANN2_EC_A', ANN2_EC_A, [['교환', ANN2_X42A]], '나머지', {

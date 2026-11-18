@@ -418,7 +418,7 @@ const AND3_NG_LINE = (from) => [[from, AND3_NG], [1723, AND3_PV], [1739, AND3_NG
 // 조각 묶음(합 210 — 아래 확인 줄)
 // 잉카 손 도형이 지나는 조각(1492~1532 안/밖) — 페루·에콰도르 고원·볼리비아 서쪽·칠레 북중부. 1533부터 통째 페루 부왕령(C-M3-12, 이름 '누에바카스티야 총독부' 1533~1541)
 const AND3_PE_I = ['PE-AMA', 'PE-ANC', 'PE-APU', 'PE-ARE', 'PE-AYA', 'PE-CAJ', 'PE-CAL', 'PE-HUC', 'PE-HUV', 'PE-ICA', 'PE-JUN', 'PE-LAL', 'PE-LAM', 'PE-MOQ', 'PE-PAS', 'PE-PIU', 'PE-SAM', 'PE-TAC', 'PE-TUM', 'PER-587', 'PER-591'];
-const AND3_EC_I = ['EC-A', 'EC-B', 'EC-F', 'EC-G', 'EC-H', 'EC-L', 'EC-N', 'EC-O', 'EC-P', 'EC-R', 'EC-SD', 'EC-X']; // EC-N은 조각 자료 이름표가 'Napo'지만 도형은 퉁구라우아주(암바토·바뇨스 — 안데스 고원)
+const AND3_EC_I = ['EC-A', 'EC-B', 'EC-F', 'EC-G', 'EC-H', 'EC-L', 'EC-T', 'EC-O', 'EC-P', 'EC-R', 'EC-SD', 'EC-X']; // EC-T = 퉁구라우아주(암바토·바뇨스 — 안데스 고원. 2026-11-18 조각 이름표 바로잡기 앞에는 EC-N으로 적었음)
 const AND3_BO_I = ['BO-L', 'BO-O', 'BO-P', 'BO-C', 'BO-H', 'BO-T']; // 라파스·오루로·포토시·코차밤바·추키사카·타리하(차르카스)
 const AND3_CL_I = ['CL-TA', 'CL-AP', 'CL-AN', 'CL-AT', 'CL-CO', 'CL-VS', 'CL-RM', 'CL-LI']; // 칠레 북~중부(마울레강 북쪽)
 const AND3_INCA_IDS = [...AND3_PE_I, ...AND3_EC_I, ...AND3_BO_I, ...AND3_CL_I];
@@ -427,7 +427,7 @@ const AND3_PE_09 = ['PE-MDD', 'PE-UCA']; // 마드레데디오스·우카얄리 
 const AND3_CL_ML = ['CL-ML']; // 마울레 — 마울레강이 잉카 남쪽 끝(강 남쪽은 1550 콘셉시온 뒤)
 const AND3_AR_I = ['AR-Y', 'AR-A', 'AR-T', 'AR-K', 'AR-F', 'AR-J']; // 후후이·살타·투쿠만·카타마르카·라리오하·산후안 — 잉카 남동 몫(도형 밖은 1559 라플라타 몫과 같게)
 const AND3_EC_N = ['EC-C', 'EC-I', 'EC-E', 'EC-M', 'EC-SE']; // 카르치·임바부라(키토 북쪽 — 와이나 카팍 때)·에스메랄다스·마나비·산타엘레나(해안 저지) — 잉카 밖, 1534 키토 점령은 3년 안
-const AND3_EC_O = ['EC-S', 'EC-Y', 'EC-D', 'EC-U', 'EC-Z', 'EC-T']; // 에콰도르 오리엔테(EC-T 도형이 나포주 — 이름표 뒤바뀜)
+const AND3_EC_O = ['EC-S', 'EC-Y', 'EC-D', 'EC-U', 'EC-Z', 'EC-N']; // 에콰도르 오리엔테(EC-N = 나포주 — 2026-11-18 조각 이름표 바로잡기 앞에는 EC-T로 적었음)
 const AND3_EC_GAL = ['EC-W']; // 갈라파고스(1만 km² 미만)
 const AND3_PE_LOR = ['PE-LOR']; // 로레토 — 마라뇬강 북쪽 마이나스(+1942 교환 땅)와 남쪽
 const AND3_CO = idsOf('COL'); // 콜롬비아 32(무이스카 땅 COL-1398·COL-1399·CO-BOY·CO-SAN 포함 — 땅 없는 항목이라 1541까지 비움)
