@@ -1,9 +1,12 @@
 // 사건 점검 도우미 (npm run ev:check): 사건 초안·반영 에이전트가 묶음마다 새로 짜던 통계·글 길이·인용 저자·새 이름·겹침 즉석 스크립트(stats.mjs·val.mjs·table.mjs 등)와
 // 사실 대조가 손으로 잡던 [서지]·[표기]·[겹침] 지적 가운데 기계로 잡을 수 있는 것을 한 번에 미리 본다. 사건 데이터·사이트 글은 고치지 않는다(읽기만).
-// 사용: npm run ev:check -- [<사건 파일 이름|id 앞머리> …] [--all] [--base <git rev>]
+// 사용: npm run ev:check -- [<사건 파일 이름|id 앞머리> …] [--all] [--base <git rev>] [--dup] [--with <폴더> …]
 //   - 인자 없음: 작업 트리의 사건 가운데 기준(--base, 기본 HEAD)과 내용이 다르거나 새로 생긴 사건만 본다(초안·반영 뒤에 돌리는 쓰임). 바뀐 사건이 없으면 그렇게 알리고 끝(0).
 //     마지막 커밋의 사건을 보려면 --base HEAD~1. 모든 사건은 --all.
 //   - 인자: 사건 파일 이름의 앞부분(me-05, me-05-mamluk…yaml)이면 그 파일의 사건 모두, 아니면 사건 id 앞부분. 맞는 사건이 없는 인자는 사용법 오류(2).
+//   - --dup: ⑥ 되풀이·해 어긋남(scripts/ev-dup.ts)을 더 본다. --with <폴더>(여러 번 쓸 수 있음, 이름에 * 가능 — 따옴표로 감싸 넘기면 도구가 펼침): 다른 갈래 초안의
+//     사건 yaml 폴더(초안 new-files/)나 사본 뿌리(그 안 data/events/)를 견줄 사건에 더한다(--dup을 켬). 저장소와 id가 같고 내용이 다르면 --with 쪽을 새 글로 본다.
+//     --with 사건도 이름 인자로 고를 수 있다(묶음 끝: --with '<묶음>/draft-*/new-files' am-0). --dup 없이 부르면 예전과 똑같다.
 //   - 사건 전문 보기는 하지 않는다(인계 폴더 tools/tabs/ev.mjs). subjects 이름이 본문에 있나는 `test:geo --only subjects`, 표기 사전의 avoid는 `--only spelling`, 글 속 해는 `--only years`가 본다(되풀이하지 않음).
 // 하는 일 (고른 사건마다. 견줄 때는 저장소 사건 전부를 쓴다)
 //   ① 통계: 파일별·세기별 사건 수, subjects·links 수(최소·중앙값·최대, subjects 0개). 항목을 내지 않는다.
@@ -17,8 +20,10 @@
 //      같은 원어가 다른 사건·나라 글에서 다른 한글 표기로 쓰였으면 '표기 갈림'으로 따로 낸다. 대문자 줄임말(OPEC)은 이름이 아니라 뺀다.
 //   ⑤ 겹침: (가) 「제목」(앞의 사건|뒤의 사건|같은 시기의 사건|같은 해의 사건) 또는 (「제목」, 앞의 사건) 꼴의 제목이 저장소에 없거나, 방향 말이 두 사건 year의 앞뒤와 어긋남(year가 같으면 어느 말이든 받음)(사실 대조 me-05의 '[겹침] 방향' 지적)
 //      (나) 같은 subjects 나라를 둘 이상 함께 둔 사건 쌍(OVERLAP_COMMON보다 많은 사건에 든 큰 나라는 세지 않음) 가운데 시작 해가 OVERLAP_YEARS 안이고 서로 「제목」으로 가리키지 않은 것(같은 일을 두 번 쓴 후보).
+//   ⑥ (--dup일 때만) 고른 사건을 저장소 사건 전부·--with 초안·나라 항목 글과 견준다: 같은 문장(항목), 말을 바꾼 같은 사실 후보와 같은 사람의 재위 해 어긋남 후보(경고 — 종료 코드에 넣지 않음).
+//      규칙·기준·한계는 scripts/ev-dup.ts 머리 주석. 경고는 '같은 일을 다른 쪽에서 쓴 정상 문장'도 나오니 읽고 고를 것만 고친다(뒤쪽 사건을 「제목」(앞의 사건)으로 가리키며 한 구절로 줄이기).
 // 출력: 표준 출력에 몇 줄 요약(갈래별 수와 앞 몇 건). 전체는 .cache/ev-check/report.md(사람용)·report.json(기계용).
-// 종료 코드: 0 찾은 것 없음, 1 항목 있음(②~⑤), 2 사용법 오류. (3 예산으로 끊김은 쓰지 않음: 사건 전부 약 1,000개도 수 초)
+// 종료 코드: 0 찾은 것 없음, 1 항목 있음(②~⑤, ⑥ 같은 문장), 2 사용법 오류. ⑥의 경고는 종료 코드에 넣지 않는다. (3 예산으로 끊김은 쓰지 않음: 사건 전부 약 1,000개도 수 초)
 // 한계: ③은 이름 뼈대가 우연히 같은 다른 저자를 '있음'으로 보아 놓치고, 왕·장군을 '적었다'(비문)로 든 문장도 후보로 낸다(비문 책이 sources에 있으면 빠짐).
 //   ④는 괄호 원어가 붙은 이름만 본다(원어 없이 새로 쓴 이름은 못 잡음). 한글 낱말 수는 원어 낱말 수에 맞춰 자르므로 '아시리아 왕 X(…)'에서 앞말이 섞일 수 있다.
 //   ⑤(나)는 후보일 뿐 같은 일을 다른 쪽에서 쓴 정상 사건도 나온다.
@@ -27,10 +32,11 @@ import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parse as parseYaml } from 'yaml';
+import { findDup, splitSentences, type DupDoc } from './ev-dup.ts';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const OUT_DIR = path.join(ROOT, '.cache/ev-check');
-const USAGE = '사용: npm run ev:check -- [<사건 파일 이름|id 앞머리> …] [--all] [--base <git rev>]';
+const USAGE = '사용: npm run ev:check -- [<사건 파일 이름|id 앞머리> …] [--all] [--base <git rev>] [--dup] [--with <폴더> …]';
 
 /** 제목이 이 백분위(저장소 모든 사건 제목 길이 기준)보다 길면 항목. 박은 글자 수 대신 저장소 분포를 쓴다(문서에 제목 길이 규칙이 없어서). 95는 '다른 사건 스무 개 중 하나보다 긴' 정도 */
 const TITLE_PERCENTILE = 95;
@@ -58,10 +64,14 @@ interface Ev {
   /** 그 파일 머리 주석의 summary 글자 수 범위 */
   range: [number, number] | null;
   raw: string;
+  /** --with에서 온 사건이면 그 파일 경로 */
+  from?: string;
+  /** --with로 새로 더한 사건(저장소에 없는 id) */
+  added?: boolean;
 }
 
 interface Found {
-  kind: 'length' | 'cite' | 'name' | 'ref' | 'overlap';
+  kind: 'length' | 'cite' | 'name' | 'ref' | 'overlap' | 'same' | 'fact' | 'reign';
   id: string;
   msg: string;
 }
@@ -101,6 +111,38 @@ function parseEvents(file: string, text: string): Ev[] {
   });
 }
 
+/** --with 경로: '*'가 든 낱말을 펼친다(윈도우 셸이 펼치지 않을 때를 위해) */
+function expandGlob(p: string): string[] {
+  const parts = p.replace(/\\/g, '/').split('/');
+  let cur = [parts[0] === '' ? '/' : /:$/.test(parts[0]) ? `${parts[0]}/` : parts[0]]; // 'E:'만 두면 path.join이 드라이브 상대 경로로 읽음
+  for (const part of parts.slice(1)) {
+    if (!part) continue;
+    if (!part.includes('*')) {
+      cur = cur.map((c) => path.join(c, part));
+      continue;
+    }
+    const re = new RegExp(`^${part.replace(/[.+?^${}()|[\]\\]/g, '\\$&').replace(/\*/g, '.*')}$`);
+    cur = cur.flatMap((c) => (existsSync(c) ? readdirSync(c).filter((n) => re.test(n)).sort().map((n) => path.join(c, n)) : []));
+  }
+  return cur.filter((c) => existsSync(c));
+}
+
+/** --with 폴더의 사건(폴더의 *.yaml, 사본 뿌리면 data/events/*.yaml, 파일 하나도 됨) */
+function loadWith(paths: string[]): Ev[] {
+  const out: Ev[] = [];
+  for (const p of paths) {
+    const hits = expandGlob(p);
+    if (!hits.length) throw new UsageError(`--with ${p}: 찾지 못함`);
+    for (const h of hits) {
+      const dir = existsSync(path.join(h, 'data/events')) ? path.join(h, 'data/events') : h;
+      const files = dir.endsWith('.yaml') ? [dir] : readdirSync(dir).filter((f) => f.endsWith('.yaml')).sort().map((f) => path.join(dir, f));
+      if (!files.length) throw new UsageError(`--with ${p}: 사건 yaml이 없음(${dir})`);
+      for (const f of files) out.push(...parseEvents(path.basename(f), readFileSync(f, 'utf8')).map((e) => ({ ...e, from: f.replace(/\\/g, '/') })));
+    }
+  }
+  return out;
+}
+
 function loadAll(): Ev[] {
   const dir = path.join(ROOT, 'data/events');
   return readdirSync(dir).filter((f) => f.endsWith('.yaml')).sort().flatMap((f) => parseEvents(f, readFileSync(path.join(dir, f), 'utf8')));
@@ -120,24 +162,7 @@ function baseEvents(rev: string): Map<string, string> {
   return out;
 }
 
-/** src/panel/aboutText.tsx의 splitSentences와 같은 규칙(그 파일은 JSX라 node로 불러올 수 없어 옮김) */
-function splitSentences(text: string): string[] {
-  const out: string[] = [];
-  let depth = 0;
-  let start = 0;
-  for (let i = 0; i < text.length; i++) {
-    const c = text[i];
-    if (c === '(' || c === '「' || c === '『') depth++;
-    else if ((c === ')' || c === '」' || c === '』') && depth > 0) depth--;
-    else if (c === '.' && depth === 0 && (i + 1 === text.length || text[i + 1] === ' ')) {
-      out.push(text.slice(start, i + 1).trim());
-      start = i + 1;
-    }
-  }
-  const tail = text.slice(start).trim();
-  if (tail) out.push(tail);
-  return out;
-}
+// splitSentences(화면과 같은 문장 나누기)는 scripts/ev-dup.ts에 있다.
 
 const percentile = (xs: number[], p: number) => {
   const a = [...xs].sort((x, y) => x - y);
@@ -283,7 +308,7 @@ function loadEntities(): Map<string, EntityText> {
 
 // ── 실행 ───────────────────────────────────────────────────────────
 function parseArgs(argv: string[]) {
-  const a = { names: [] as string[], all: false, base: 'HEAD' };
+  const a = { names: [] as string[], all: false, base: 'HEAD', dup: false, with: [] as string[] };
   for (let i = 0; i < argv.length; i++) {
     const f = argv[i];
     if (f === '--all') a.all = true;
@@ -291,6 +316,12 @@ function parseArgs(argv: string[]) {
       const v = argv[++i];
       if (!v || v.startsWith('--')) throw new UsageError('--base 다음에 git rev가 필요');
       a.base = v;
+    } else if (f === '--dup') a.dup = true;
+    else if (f === '--with') {
+      const v = argv[++i];
+      if (!v || v.startsWith('--')) throw new UsageError('--with 다음에 폴더가 필요');
+      a.with.push(v);
+      a.dup = true;
     } else if (f === '--help' || f === '-h') throw new UsageError('');
     else if (f.startsWith('--')) throw new UsageError(`모르는 인자 ${f}`);
     else a.names.push(f);
@@ -303,6 +334,22 @@ function main(): number {
   const args = parseArgs(process.argv.slice(2));
   const t0 = Date.now();
   const all = loadAll();
+  // --with 초안: 저장소와 같은 id·같은 내용은 건너뛰고, 내용이 다르면 --with 쪽을 새 글로, 없는 id는 더함
+  let withNew = 0;
+  if (args.with.length) {
+    const at = new Map(all.map((e, i) => [e.id, i]));
+    for (const e of loadWith(args.with)) {
+      const i = at.get(e.id);
+      if (i === undefined) {
+        at.set(e.id, all.length);
+        all.push({ ...e, added: true });
+        withNew++;
+      } else if (all[i].raw !== e.raw) {
+        all[i] = { ...e, file: all[i].file }; // 파일 앞머리로 고를 수 있게 저장소 파일 이름을 둠
+        withNew++;
+      }
+    }
+  }
   let picked: Ev[];
   let how: string;
   if (args.all) {
@@ -321,7 +368,7 @@ function main(): number {
     how = `인자 ${args.names.join(' ')}`;
   } else {
     const base = baseEvents(args.base);
-    picked = all.filter((e) => base.get(e.id) !== e.raw);
+    picked = all.filter((e) => !e.added && base.get(e.id) !== e.raw); // --with로 새로 더한 사건은 이름 인자로만 고름
     how = `기준 ${args.base}에서 바뀐 사건(새 사건 ${picked.filter((e) => !base.has(e.id)).length})`;
     if (!picked.length) {
       console.log(`ev:check: 기준 ${args.base}에서 바뀐 사건이 없음 — 모든 사건은 --all, 특정 사건은 파일 이름·id 앞머리를 인자로`);
@@ -451,25 +498,46 @@ function main(): number {
     }
   }
 
+  // ⑥ 되풀이·해 어긋남(--dup)
+  const warn: Found[] = [];
+  if (args.dup) {
+    const docs: DupDoc[] = [
+      ...all.map((x) => ({ id: x.id, year: x.year, title: x.title, text: x.summary, event: true })),
+      ...[...entities].map(([id, x]) => ({ id: `나라 ${id}`, year: 0, text: x.texts.join(' '), event: false })),
+    ];
+    for (const h of findDup(new Set(picked.map((e) => e.id)), docs)) {
+      const where = h.other === h.id ? '' : `↔ ${h.other} `;
+      (h.kind === 'same' ? found : warn).push({ kind: h.kind, id: h.id, msg: `${where}${h.msg}` });
+    }
+    stats.push(`⑥ 되풀이: 견준 사건 ${all.length}개${args.with.length ? `(--with에서 새 글 ${withNew}개)` : ''} · 같은 문장 ${found.filter((f) => f.kind === 'same').length} · 경고 같은 사실 후보 ${warn.filter((f) => f.kind === 'fact').length}·재위 해 ${warn.filter((f) => f.kind === 'reign').length}`);
+  }
+
   // 출력
-  const KINDS: [Found['kind'], string][] = [['length', '② 글 길이'], ['cite', '③ 인용 저자가 sources에 없음'], ['name', '④ 새 이름·표기 갈림'], ['ref', '⑤ 「제목」 가리킴'], ['overlap', '⑤ 겹침 후보']];
+  const KINDS: [Found['kind'], string][] = [['length', '② 글 길이'], ['cite', '③ 인용 저자가 sources에 없음'], ['name', '④ 새 이름·표기 갈림'], ['ref', '⑤ 「제목」 가리킴'], ['overlap', '⑤ 겹침 후보'], ...(args.dup ? ([['same', '⑥ 같은 문장']] as [Found['kind'], string][]) : [])];
+  const WARN: [Found['kind'], string][] = [['fact', '⑥ 경고 — 같은 사실 후보(점수 높은 순)'], ['reign', '⑥ 경고 — 재위 해 어긋남 후보']];
   mkdirSync(OUT_DIR, { recursive: true });
   const md: string[] = [`# ev:check 보고 (${new Date().toISOString().slice(0, 16)})`, '', '## ① 통계', '', ...stats.map((l) => `- ${l}`), `- 파일별: ${[...byFile].map(([f, n]) => `${f} ${n}`).join(' · ')}`, ''];
   for (const [k, label] of KINDS) {
     const xs = found.filter((f) => f.kind === k);
     md.push(`## ${label} (${xs.length})`, '', ...xs.map((f) => `- \`${f.id}\` ${f.msg}`), '');
   }
+  if (args.dup)
+    for (const [k, label] of WARN) {
+      const xs = warn.filter((f) => f.kind === k);
+      md.push(`## ${label} (${xs.length})`, '', ...xs.map((f) => `- \`${f.id}\` ${f.msg}`), '');
+    }
   const perEvent = lens.map(({ e, t, n, k }) => `| ${e.id} | ${e.year}~${e.end} | ${t} | ${n} | ${k} | ${e.subjects.length} | ${e.sources.length} |`);
   md.push('## 사건별 수', '', '| id | 해 | 제목 자 | summary 자 | 문장 | subjects | sources |', '|---|---|---|---|---|---|---|', ...perEvent, '');
   writeFileSync(path.join(OUT_DIR, 'report.md'), md.join('\n'));
-  writeFileSync(path.join(OUT_DIR, 'report.json'), JSON.stringify({ how, events: picked.map((e) => e.id), stats, found }, null, 1));
+  writeFileSync(path.join(OUT_DIR, 'report.json'), JSON.stringify({ how, events: picked.map((e) => e.id), stats, found, ...(args.dup ? { warn } : {}) }, null, 1));
 
   console.log(`ev:check: ${stats[0]} · 항목 ${found.length} · ${((Date.now() - t0) / 1000).toFixed(1)}초`);
   console.log(`  ${stats[1]}`);
   console.log(`  ${stats[2]}`);
   console.log(`  ${stats[3]}`);
-  for (const [k, label] of KINDS) {
-    const xs = found.filter((f) => f.kind === k);
+  if (args.dup) console.log(`  ${stats[4]}`);
+  for (const [k, label] of [...KINDS, ...(args.dup ? WARN : [])]) {
+    const xs = (k === 'fact' || k === 'reign' ? warn : found).filter((f) => f.kind === k);
     if (!xs.length) continue;
     console.log(`${label} ${xs.length}`);
     for (const f of xs.slice(0, SHOW)) console.log(`  - ${f.id} ${f.msg}`.slice(0, 220));
