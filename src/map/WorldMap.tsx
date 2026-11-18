@@ -5,16 +5,23 @@ import { select } from 'd3-selection';
 import { zoom, zoomIdentity, type ZoomBehavior, type ZoomTransform } from 'd3-zoom';
 import {
   activeTerritories,
+  beginGeometryFrame,
   claimantsAt,
+  entityAt,
+  entityTiledAt,
+  geoKeys,
+  hasGeometry,
+  landAt,
+  landTiledAt,
   occupierAt,
   overlordAt,
   loadEntityGeometry,
   loadLand,
   loadLandTiled,
   loadEntityTiled,
-  type LandPiece,
+  pruneGeometry,
+  touchGeometry,
   type Piece,
-  type TiledGroup,
   type StaticData,
   type TerritoryFeature,
 } from '../data/staticData.ts';
@@ -24,7 +31,7 @@ import { activeWarView, entryYear, factionColor, frontBattleSpots, nearBy, snaps
 import { formatRange, formatYear } from '../lib/year.ts';
 import { REGION_FILTER_INFO } from '../schema/regions.ts';
 import { useRegionChoice } from '../search/RegionFilter.tsx';
-import type { Lod, TerritoryIndexEntry } from '../schema/index.ts';
+import { LODS, type Lod, type TerritoryIndexEntry } from '../schema/index.ts';
 import { activeEventId, useAppStore } from '../store/useAppStore.ts';
 import { ArrowLayer } from './ArrowLayer.tsx';
 import { FrontArrowLayer } from './FrontArrowLayer.tsx';
@@ -74,6 +81,12 @@ const SELECTED_WIDTH = 2.5;
 const HOVER_WIDTH = 1.5;
 /** 영토 파일을 받지 못했을 때 다시 시도하기까지의 시간(ms) */
 const RETRY_MS = 5000;
+/**
+ * 받아 둔 도형을 이만큼(ms) 쓰지 않으면 버린다(2026-11-18, 메모리). 지금 화면에 쓰는 것은 버리지 않는다.
+ * 다시 필요해지면 브라우저 캐시에서 다시 받는다(10분 안이면 내려받기 없음)
+ */
+const PRUNE_IDLE_MS = 60_000;
+const PRUNE_EVERY_MS = 20_000;
 /** 지도 위에 띄운 단추·블럭(.map-ui) 위의 포인터인가. 그 위에서는 지도가 강조·툴팁·끌기·휠·클릭에 반응하지 않는다(2026-10-27) */
 const onMapUi = (target: EventTarget | null) => target instanceof Element && !!target.closest('.map-ui');
 
@@ -123,7 +136,8 @@ function lodFor(k: number, moving: boolean): Lod {
  */
 const TILE_VIEW_AREA = 3000;
 
-const FALLBACK: Record<Lod, Lod[]> ={ low: ['low', 'mid', 'high'], mid: ['mid', 'low', 'high'], high: ['high', 'mid', 'low'] };
+/** 원하는 단계가 없을 때 대신 쓸 순서. mid는 high를 먼저(움직이는 동안 mid를 새로 받지 않을 때 해안선이 거칠게 바뀌지 않게, 2026-11-18) */
+const FALLBACK: Record<Lod, Lod[]> = { low: ['low', 'mid', 'high'], mid: ['mid', 'high', 'low'], high: ['high', 'mid', 'low'] };
 
 function readPalette(el: Element): Palette {
   const css = getComputedStyle(el);
@@ -348,40 +362,40 @@ export default function WorldMap({ data }: { data: StaticData }) {
   }, [active, snapshot, theater, isWarCountry, data.territories]);
 
   // ── 도형 불러오기 ─────────────────────────────────────────
-  const geo = useRef(new Map<string, Map<string, TerritoryFeature>>());
-  const land = useRef(new Map<Lod, LandPiece[]>());
-  /** 이미 요청한 파일. 매 프레임 같은 요청을 다시 걸지 않도록 기록한다 */
-  const requested = useRef(new Set<string>());
+  // 받은 도형은 staticData의 캐시에 두고 그릴 때 꺼낸다(entityAt 등). 오래 쓰지 않은 것은 주기적으로 버린다(D, 2026-11-18)
+  /** 받지 못해 잠시(나라 영토) 또는 계속(격자 조각) 다시 받지 않을 파일 */
+  const failed = useRef(new Set<string>());
+  useEffect(() => {
+    const timer = window.setInterval(() => pruneGeometry(PRUNE_IDLE_MS), PRUNE_EVERY_MS);
+    return () => window.clearInterval(timer);
+  }, []);
 
+  /**
+   * 그 해 나라들의 영토와 육지를 받는다. 받았거나 받는 중이면 쓴 것으로만 친다(화면 밖 나라도 버리지 않게).
+   * 움직이는 동안의 mid 단계는(B, 2026-11-18) 다른 단계라도 받아 둔 것이 있으면 받지 않고 그것으로 그린다(배율 4~12에서는 high와 그리는 시간이 비슷함).
+   * low는 작고(640년 나라 전부 약 100KB) 넓게 볼 때 high보다 열 배 넘게 빨리 그리므로(세계 보기 9ms 대 150ms) 움직일 때 그대로 받는다
+   */
   const ensureLoaded = useCallback(
-    (lod: Lod, entityIds: string[]) => {
-      if (!requested.current.has(`land/${lod}`)) {
-        requested.current.add(`land/${lod}`);
+    (lod: Lod, entityIds: string[], moving: boolean) => {
+      const skip = (key: (l: Lod) => string) =>
+        touchGeometry(key(lod)) || (moving && lod === 'mid' && LODS.some((l) => hasGeometry(key(l))));
+      if (!skip(geoKeys.land)) {
         loadLand(lod)
-          .then((pieces) => {
-            land.current.set(lod, pieces);
-            setGeoVersion((v) => v + 1);
-          })
-          .catch((e: Error) => {
-            requested.current.delete(`land/${lod}`);
-            setError(e.message);
-          });
+          .then(() => setGeoVersion((v) => v + 1))
+          .catch((e: Error) => setError(e.message));
       }
       for (const id of entityIds) {
-        const key = `${lod}/${id}`;
-        if (requested.current.has(key)) continue;
-        requested.current.add(key);
+        const key = geoKeys.entity(lod, id);
+        if (failed.current.has(key) || skip((l) => geoKeys.entity(l, id))) continue;
         loadEntityGeometry(lod, id)
-          .then((m) => {
-            geo.current.set(key, m);
-            setGeoVersion((v) => v + 1);
-          })
+          .then(() => setGeoVersion((v) => v + 1))
           .catch((e: Error) => {
             // 한 나라의 한 단계 파일이 없어도 다른 단계로 대신 그리므로(featureFor) 지도 전체 오류로 띄우지 않는다.
-            // 매 프레임 다시 요청하지 않도록 요청 기록은 잠시 남겨 두었다가, 일시적인 실패(배포 직후 등)일 수 있으니 뒤에 다시 시도한다.
+            // 매 프레임 다시 요청하지 않도록 잠시 쉬었다가, 일시적인 실패(배포 직후 등)일 수 있으니 뒤에 다시 시도한다.
             console.warn(`영토 파일을 불러오지 못함 (${key}): ${e.message}`);
+            failed.current.add(key);
             window.setTimeout(() => {
-              requested.current.delete(key);
+              failed.current.delete(key);
               setGeoVersion((v) => v + 1);
             }, RETRY_MS);
           });
@@ -390,38 +404,56 @@ export default function WorldMap({ data }: { data: StaticData }) {
     [],
   );
 
-  // 격자 조각 (DESIGN.md §3.2): 확대했을 때만 받아서 보이는 조각만 그린다
-  const landTiled = useRef(new Map<Lod, TiledGroup>());
-  const geoTiled = useRef(new Map<string, Map<string, TiledGroup>>());
-
+  /**
+   * 격자 조각 (DESIGN.md §3.2): 확대했을 때만 받아서 보이는 조각만 그린다.
+   * 화면에 보이는 나라의 조각만 받는다(A, 2026-11-18). 전에는 그 해 나라 전부의 조각을 받아 확대 한 번에 1~2MB를 내려받고 힙이 100MB 넘게 늘었다
+   */
   const ensureTiled = useCallback((lod: Lod, entityIds: string[]) => {
-    const request = (key: string, load: () => Promise<void>) => {
-      if (requested.current.has(key)) return;
-      requested.current.add(key);
+    const request = (key: string, load: () => Promise<unknown>) => {
+      if (failed.current.has(key) || touchGeometry(key)) return;
       load()
         .then(() => setGeoVersion((v) => v + 1))
-        // 조각 파일이 없어도 원래 도형으로 그리므로 오류로 띄우지 않는다
-        .catch((e: Error) => console.warn(`격자 조각을 불러오지 못함 (${key}): ${e.message}`));
+        // 조각 파일이 없어도 원래 도형으로 그리므로 오류로 띄우지 않고, 다시 받지 않는다
+        .catch((e: Error) => {
+          failed.current.add(key);
+          console.warn(`격자 조각을 불러오지 못함 (${key}): ${e.message}`);
+        });
     };
-    request(`tiled/land/${lod}`, () => loadLandTiled(lod).then((g) => void landTiled.current.set(lod, g)));
-    for (const id of entityIds)
-      request(`tiled/${lod}/${id}`, () => loadEntityTiled(lod, id).then((m) => void geoTiled.current.set(`${lod}/${id}`, m)));
+    request(geoKeys.landTiled(lod), () => loadLandTiled(lod));
+    for (const id of entityIds) request(geoKeys.entityTiled(lod, id), () => loadEntityTiled(lod, id));
   }, []);
 
   /** 원하는 단계가 아직 없으면 받아 둔 다른 단계로 대신 그린다 */
   const featureFor = useCallback((entry: TerritoryIndexEntry, lod: Lod) => {
     for (const l of FALLBACK[lod]) {
-      const f = geo.current.get(`${l}/${entry.entityId}`)?.get(entry.key);
+      const f = entityAt(l, entry.entityId)?.get(entry.key);
       if (f) return f;
     }
     return undefined;
   }, []);
   const landFor = useCallback((lod: Lod) => {
     for (const l of FALLBACK[lod]) {
-      const pieces = land.current.get(l);
+      const pieces = landAt(l);
       if (pieces) return pieces;
     }
     return [];
+  }, []);
+  /** 격자 조각. 움직이는 동안에는 받아 둔 다른 단계(low 제외)로 대신한다(B) */
+  const tiledFor = useCallback((entry: TerritoryIndexEntry, lod: Lod, moving: boolean) => {
+    for (const l of moving ? FALLBACK[lod] : [lod]) {
+      if (l === 'low') continue;
+      const group = entityTiledAt(l, entry.entityId)?.get(entry.key);
+      if (group) return group;
+    }
+    return undefined;
+  }, []);
+  const landTiledFor = useCallback((lod: Lod, moving: boolean) => {
+    for (const l of moving ? FALLBACK[lod] : [lod]) {
+      if (l === 'low') continue;
+      const group = landTiledAt(l);
+      if (group) return group;
+    }
+    return undefined;
   }, []);
 
   // ── 그리기 ────────────────────────────────────────────────
@@ -433,14 +465,17 @@ export default function WorldMap({ data }: { data: StaticData }) {
     const canvas = canvasRef.current;
     if (!canvas || !size) return;
     const v = viewRef.current;
-    const lod = lodFor(v.k, movingRef.current);
+    const moving = movingRef.current;
+    const lod = lodFor(v.k, moving);
+    beginGeometryFrame();
     const entityIds = [...new Set(active.map((t) => t.entityId))];
-    ensureLoaded(lod, entityIds);
+    ensureLoaded(lod, entityIds, moving);
     const projection = createProjection(size, s0, v);
     const bounds = visibleBounds(projection, size, v);
     // 충분히 확대했을 때만 격자 조각을 쓴다. 넓게 볼 때는 건너뛸 조각이 적고 점만 늘어 오히려 느리다 (측정 결과)
     const useTiles = lod !== 'low' && !bounds.all && (bounds.e - bounds.w) * (bounds.n - bounds.s) <= TILE_VIEW_AREA;
-    if (useTiles) ensureTiled(lod, entityIds);
+    // 조각은 멈췄을 때 화면에 보이는 나라 것만 받는다(A·B)
+    if (useTiles && !moving) ensureTiled(lod, [...new Set(active.filter((t) => isVisible(t.bbox, bounds, v)).map((t) => t.entityId))]);
     const visiblePieces = (pieces: Piece[]) => pieces.filter((p) => isVisible(p.bbox, bounds, v));
 
     paletteRef.current ??= readPalette(canvas);
@@ -476,7 +511,7 @@ export default function WorldMap({ data }: { data: StaticData }) {
       if (!isVisible(entry.bbox, bounds, v)) continue;
       const feature = featureFor(entry, lod);
       if (!feature) continue;
-      const tiled = useTiles ? geoTiled.current.get(`${lod}/${entry.entityId}`)?.get(entry.key) : undefined;
+      const tiled = useTiles ? tiledFor(entry, lod, moving) : undefined;
       const plain = [{ feature, bbox: entry.bbox }];
       const shapes = tiled ? { fill: visiblePieces(tiled.tiles), stroke: visiblePieces(tiled.lines) } : { fill: plain, stroke: plain };
       if (front) {
@@ -529,7 +564,7 @@ export default function WorldMap({ data }: { data: StaticData }) {
     const dpr = window.devicePixelRatio || 1;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     paletteRef.current ??= readPalette(canvas);
-    const tiledLand = useTiles ? landTiled.current.get(lod) : undefined;
+    const tiledLand = useTiles ? landTiledFor(lod, moving) : undefined;
     const plainLand = landFor(lod).filter((p) => isVisible(p.bbox, bounds, v));
     const land = tiledLand ? { fill: visiblePieces(tiledLand.tiles), stroke: visiblePieces(tiledLand.lines) } : { fill: plainLand, stroke: plainLand };
     // 진하게는 전처럼 진한 색 사이를 밝은 선으로 가른다(연하게·속국만은 옅은 칠 사이를 진한 선으로)
@@ -537,7 +572,7 @@ export default function WorldMap({ data }: { data: StaticData }) {
     drawMap(ctx, projection, createProjection(size, s0, v, true), v, size, land, territories, palette, front);
     // 이름표·화살표(SVG)도 방금 그린 지도와 같은 프레임에 맞춘다. 늦게 그리면 움직이는 동안 지도에서 밀려 보인다
     flushSync(() => setView(v));
-  }, [size, s0, year, active, frontShapes, data.entities, data.relations, ensureLoaded, ensureTiled, featureFor, landFor, isWarCountry, fillMode]);
+  }, [size, s0, year, active, frontShapes, data.entities, data.relations, ensureLoaded, ensureTiled, featureFor, landFor, tiledFor, landTiledFor, isWarCountry, fillMode]);
 
   const requestDraw = useCallback(() => {
     cancelAnimationFrame(frame.current);
