@@ -8836,6 +8836,158 @@
 
 # ── 아메리카 M4 MXC-M4 (메소아메리카·아즈텍·타라스코 앞 버전, 2026-11-17) ──
 
+# ── 아메리카 사건 am-02a (600~1299, 2026-11-18) ──
+
+- use: 파칼 대왕
+  avoid: [파카르 대왕]
+  note: "K'inich Janaab' Pakal(팔렌케 왕, 615~683 — pakal-615). 공용표 꼴. 위키 ko 표제 미확인(외래어 표기법)"
+  scope: 아메리카·메소아메리카
+
+- use: 비문의 신전
+  avoid: [비명의 신전]
+  note: "Temple of the Inscriptions(팔렌케 — pakal-615). 공용표 꼴"
+  scope: 아메리카·메소아메리카
+
+- use: 알베르토 루스
+  avoid: [알베르토 루즈]
+  note: "Alberto Ruz Lhuillier(1952 파칼 무덤방 — pakal-615). 공용표 꼴"
+  scope: 아메리카·메소아메리카
+
+- use: 삭 쿡
+  avoid: [삭 쿠크]
+  note: "Sak K'uk'(파칼의 어머니 — pakal-615). 외래어 표기법, 위키 ko 표제 미확인"
+  scope: 아메리카·메소아메리카
+
+- use: 자사우 찬 카위일 1세
+  avoid: [하사우 찬 카윌 1세]
+  note: "Jasaw Chan K'awiil I(티칼 왕, 682~734 — tikal-calakmul-695). 공용표 꼴"
+  scope: 아메리카·메소아메리카
+
+- use: 이칙나아브 칵
+  avoid: [이칙나브 칵]
+  note: "Yich'aak K'ahk'(칼라크물 왕 — tikal-calakmul-695). 공용표 꼴"
+  scope: 아메리카·메소아메리카
+
+- use: 판파그란데
+  avoid: [팜파 그란데]
+  note: "Pampa Grande(후기 모체 유적 — moche-nasca-end-600). 공용표 꼴"
+  scope: 아메리카·안데스
+
+- use: 갈린도
+  avoid: [가린도]
+  note: "Galindo(후기 모체 유적 — moche-nasca-end-600). 공용표 꼴"
+  scope: 아메리카·안데스
+
+- use: 나이람라프
+  avoid: [나임랍]
+  note: "Naymlap(시칸 건국 전승, 1586 카베요 발보아 — sican-750). 공용표 꼴"
+  scope: 아메리카·안데스
+
+- use: 바탄 그란데
+  avoid: [바탄 그랑데]
+  note: "Batán Grande(시칸 중심지 — sican-750). 공용표·고정 제목 꼴(항목 sican-culture의 features는 '바탄그란데'로 붙여 씀 — 결과 노트 6절)"
+  scope: 아메리카·안데스
+
+- use: 몽크스 마운드
+  avoid: [몽크 마운드]
+  note: "Monks Mound(카호키아 — mississippian-800). 공용표 꼴"
+  scope: 아메리카·북아메리카
+
+- use: 우드헨지
+  avoid: [우드 헨지]
+  note: "Woodhenge(카호키아 목재 기둥 원 — mississippian-800). 공용표 꼴"
+  scope: 아메리카·북아메리카
+
+- use: 시우다드 페르디다
+  avoid: [시우다드페르디다]
+  note: "Ciudad Perdida(타이로나 유적, 테유나 — muisca-tairona-800). 공용표 꼴, 위키 ko 표제 미확인"
+  scope: 아메리카·콜롬비아
+
+- use: 푸에블로 보니토
+  avoid: [푸에블로보니토]
+  note: "Pueblo Bonito(차코 캐니언 큰 집 — chaco-850). 공용표 꼴"
+  scope: 아메리카·북아메리카
+
+- use: 클리프 팰리스
+  avoid: [클리프팰리스]
+  note: "Cliff Palace(메사버드 — mesa-verde-1190). 공용표 꼴"
+  scope: 아메리카·북아메리카
+
+- use: 케찰코아틀 토필친
+  avoid: [케찰코틀 토필친]
+  note: "Quetzalcoatl Topiltzin(톨텍 전승의 사제 왕 — toltec-900). 공용표 꼴"
+  scope: 아메리카·메소아메리카
+
+- use: 틸란통고
+  avoid: [틸란통코]
+  note: "Tilantongo(믹스텍 도시 — mixtec-900). 공용표 꼴"
+  scope: 아메리카·메소아메리카
+
+- use: 타카이나모
+  avoid: [타이카나모]
+  note: "Tacaynamo(치무 건국 전승 — chimu-chancay-900). 공용표 꼴"
+  scope: 아메리카·안데스
+
+- use: 난셈핀코
+  avoid: [난셈핀초, 낭셈핀코]
+  note: "Ñancenpinco(치무 왕 1375 무렵 — chimu-chancay-900). 외래어 표기법, 위키 ko 표제 미확인"
+  scope: 아메리카·안데스
+
+- use: 레이프 에이릭손
+  avoid: [레이프 에릭슨, 레이프 에릭손]
+  note: "Leif Erikson(빈란드 항해 — norse-greenland-985). 공용표 꼴(노르드어 Eiríksson)"
+  scope: 아메리카·북아메리카
+
+- use: 토르핀 칼세프니
+  avoid: [토르핀 카를세프니]
+  note: "Thorfinn Karlsefni(빈란드 원정 — norse-greenland-985). 공용표 꼴"
+  scope: 아메리카·북아메리카
+
+- use: 카시케
+  avoid: [카치케]
+  note: "cacique(타이노 수장 — taino-kalinago-1200). 공용표 꼴"
+  scope: 아메리카·카리브해
+
+- use: 바테이
+  avoid: [바떼이]
+  note: "batey(타이노 의례 공놀이 — taino-kalinago-1200). 공용표 꼴"
+  scope: 아메리카·카리브해
+
+- use: 후낙 켈
+  avoid: [후나크 켈]
+  note: "Hunac Ceel(마야판 장군 전승 — mayapan-1220). 외래어 표기법, 위키 ko 표제 미확인"
+  scope: 아메리카·메소아메리카
+
+- use: 쿠쿨칸 신전
+  avoid: [쿠쿨칸의 신전]
+  note: "Temple of Kukulcán(마야판·치첸이트사 — mayapan-1220). 외래어 표기법"
+  scope: 아메리카·메소아메리카
+
+- use: 네모콘
+  avoid: [넵모콘]
+  note: "Nemocón(무이스카 소금 생산지 — muisca-tairona-800). 02a FC 지적, 외래어 표기법(스페인어)"
+  scope: 아메리카·콜롬비아
+
+- use: 소몬도코
+  avoid: [소모손도]
+  note: "Somondoco(무이스카 에메랄드 광산 — muisca-tairona-800). 02a FC 지적, 외래어 표기법(스페인어)"
+  scope: 아메리카·콜롬비아
+
+- use: 네구안헤
+  avoid: [네구아니예기, 네구아니예]
+  note: "Neguanje(타이로나 금 유물 — muisca-tairona-800). 02a FC 지적, 외래어 표기법(스페인어 j=ㅎ)"
+  scope: 아메리카·콜롬비아
+
+- use: 텔차키요
+  avoid: [텔차킬로]
+  note: "Telchaquillo(후낙 켈의 고향 — mayapan-1220). 02a FC 지적, 외래어 표기법(스페인어 -llo)"
+  scope: 아메리카·메소아메리카
+
+- use: 툴라 데 아옌데
+  avoid: [툴라 데 아얀데]
+  note: "Tula de Allende(톨텍의 툴라, 이달고 — toltec-900). 02a FC 지적, 살바도르 아옌데와 같은 표기"
+  scope: 아메리카·메소아메리카
+
 # ── 아메리카 M4 AND-M4 (안데스·잉카 앞 버전·치무, 2026-11-17) ──
 
 - use: 치무
@@ -8857,6 +9009,48 @@
   avoid: [밍찬카만]
   note: "Minchançaman(치무 마지막 왕 — chimu 글). 가칭(M4 뼈대 공용 표기표, 위키 ko 표제 없음)"
   scope: 아메리카·안데스
+
+# ── 아메리카 사건 am-02b (1300~1491, 2026-11-18) ──
+
+- use: 틀라텔롤코
+  avoid: [틀라테롤코]
+  note: "Tlatelolco(테노치티틀란과 같은 섬의 멕시카 도시 — 1473 악사야카틀이 합병). 저장소 기존 표기 '틀라텔롤코'(사건 am-03a)를 따름"
+  scope: 아메리카·메소아메리카
+
+- use: 코이스틀라우아카
+  avoid: [코익스틀라우아카]
+  note: "Coixtlahuaca(믹스테카 알타의 도시 — 1458 무렵 몬테수마 1세가 침). 02b 공용 표기표(위키 ko 표제 없음 — 외래어 표기법)"
+  scope: 아메리카·메소아메리카
+
+- use: 데가나위다
+  avoid: [데카나위다]
+  note: "Deganawida/Dekanawida(대평화법 구전의 '위대한 평화의 사람'). 02b 공용 표기표(위키 ko 표제 없음 — 외래어 표기법)"
+  scope: 아메리카·북아메리카
+
+- use: 하이어와사
+  avoid: [히아와타, 하이와타]
+  note: "Hiawatha(대평화법 구전의 인물). 02b 공용 표기표(위키 ko 표제 없음)"
+  scope: 아메리카·북아메리카
+
+- use: 대평화법
+  avoid: [위대한 평화의 법]
+  note: "Great Law of Peace(이로쿼이 연맹의 구전 헌법). 항목 이로쿼이 연맹 글의 '평화의 대법'과 같은 것 — 사건 글은 '대평화법'(02b 공용 표기표)"
+  scope: 아메리카·북아메리카
+
+- use: 이바르 바르다르손
+  avoid: [이바르 바르다손]
+  note: "Ívar Bárðarson(1350 서쪽 정착지가 빈 것을 본 사람). 02b 공용 표기표(아이슬란드어 이름 — 외래어 표기법)"
+  scope: 아메리카·그린란드
+
+- use: 흐발세이
+  avoid: [발세이]
+  note: "Hvalsey(그린란드 동쪽 정착지의 교회 — 1408 혼례 기록). 02b 공용 표기표(외래어 표기법)"
+  scope: 아메리카·그린란드
+
+- use: 우에호친고
+  avoid: [우에호칭고]
+  note: "Huexotzinco(틀락스칼라 곁의 도시국가). 저장소 기존 표기 '우에호친고'(사건 am-03a)가 02b 공용 표기표의 '우에호칭고'보다 앞서므로 기존을 따름"
+  scope: 아메리카·메소아메리카
 
 # ── 아메리카 M4 NAC-M4 (북미·그린란드·카리브·땅 없는 항목, 2026-11-17) ──
 
@@ -8917,6 +9111,58 @@
   note: "Moche culture(페루 북부 해안, 100~800 — moche-culture). 위키 ko 표제(M5 뼈대 확인, m5/skel/ko-titles.txt — '모치카'는 표제·넘겨주기 없음). 원어 이름 Mochica는 names.native에만"
   scope: 아메리카·안데스
 
+# ── 아메리카 사건 am-01a (기원전 2333년~기원전 1년, 2026-11-18) ──
+
+- use: 파티빌카
+  avoid: [파티비카]
+  note: "Pativilca(노르테 치코 문명의 북쪽 계곡 — norte-chico). 외래어 표기법 스페인어 v→ㅂ, c→ㅋ. 위키 ko 표제 없음 — 가칭(사건 am-01a)"
+  scope: 아메리카·안데스
+
+- use: 마찰리야 문화
+  avoid: [마찰릴라 문화]
+  note: "Machalilla culture(에콰도르 해안, 발디비아 문화 뒤). 스페인어 ll→ㅣ야. 위키 ko 표제 없음 — 가칭(사건 am-01a)"
+  scope: 아메리카·안데스
+
+- use: 테오신테
+  avoid: [테오신트]
+  note: "teosinte(옥수수의 야생 조상 풀, 나우아틀어). 위키 ko 표제 '테오신테'. 사건 am-01a"
+  scope: 아메리카·메소아메리카
+
+- use: 엘 미라도르
+  avoid: [엘미라도르]
+  note: "El Mirador(과테말라 페텐의 선고전기 마야 도시). 스페인어 관사 띄어 씀. 위키 ko 표제 없음 — 가칭(사건 am-01a)"
+  scope: 아메리카·메소아메리카
+
+- use: 산바르톨로
+  avoid: [산 바르톨로]
+  note: "San Bartolo(과테말라 페텐의 벽화 유적). 스페인어 지명 붙여 씀. 위키 ko 표제 없음 — 가칭(사건 am-01a)"
+  scope: 아메리카·메소아메리카
+
+- use: 나크베
+  avoid: [낙베]
+  note: "Nakbe(마야 저지대 선고전기 중기 중심지). 위키 ko 표제 없음 — 가칭(사건 am-01a)"
+  scope: 아메리카·메소아메리카
+
+- use: 라단타
+  avoid: [라 단타]
+  note: "La Danta(엘 미라도르의 큰 피라미드). 사건 am-01a — 위키 ko 표제 없음, 라벤타 꼴을 따라 붙여 씀"
+  scope: 아메리카·메소아메리카
+
+- use: 쿠이쿠일코
+  avoid: [쿠이쿠이코]
+  note: "Cuicuilco(멕시코 분지 남쪽 선고전기 도시). 스페인어 표기 'cuil'→쿠일. 사건 am-01a — 위키 ko 표제 없음"
+  scope: 아메리카·메소아메리카
+
+- use: 산호세 모고테
+  avoid: [산 호세 모고테]
+  note: "San José Mogote(오아하카 계곡의 몬테알반 앞 중심지). 위키 ko 표제 없음 — 가칭(사건 am-01a)"
+  scope: 아메리카·메소아메리카
+
+- use: 루스 샤디
+  avoid: [루스 사디]
+  note: "Ruth Shady(카랄 발굴 책임 고고학자). 공용 표기표 01a 몫(사건 am-01a)"
+  scope: 아메리카·안데스
+
 # ── 아메리카 M5 MXN-M5 (메소아메리카·북미 — 땅 없는 여섯, 2026-11-18) ──
 
 - use: 라벤타
@@ -8938,6 +9184,53 @@
   avoid: [호프웰 전통]
   note: "Hopewell tradition(기원전 200년~500 — hopewell-culture). 위키 ko 표제 없음(M5 뼈대 확인 — 가칭), en 표제를 옮긴 '호프웰 전통'은 막음(교류권은 글로). 저장소 쓰임 0(아메리카 M5 MXN-M5)"
   scope: 아메리카·북아메리카
+
+# ── 아메리카 사건 am-01b (기원후 1~599, 2026-11-18) ──
+
+- use: 바스켓메이커
+  avoid: [바스켓 메이커]
+  note: "Basketmaker(조상 푸에블로인 앞 시기 구분 — basketmaker-1 글). 위키 ko 표제 없음 — 공용 표기표 01b 몫, 외래어 표기법. 저장소 쓰임 '바스켓 메이커' 0"
+  scope: 아메리카·북아메리카
+
+- use: 스네이크타운
+  avoid: [스네이크 타운]
+  note: "Snaketown(호호캄의 큰 마을 유적 — hohokam-300 글). 호호캄 항목 글과 같은 꼴, 위키 ko 표제 없음 — 공용 표기표 01b 몫"
+  scope: 아메리카·북아메리카
+
+- use: 솔트강
+  avoid: [솔트 강]
+  note: "Salt River(애리조나 — 호호캄 수로 유역). 공용 표기표 01b 몫, 붙여 씀(강 이름 꼴). 저장소 쓰임 '솔트 강' 0"
+  scope: 아메리카·북아메리카
+
+- use: 힐라강
+  avoid: [힐라 강]
+  note: "Gila River(애리조나 — 호호캄 수로 유역). 공용 표기표 01b 몫 '힐라강', 저장소 2묶음 사건 글도 '힐라강'(호호캄 항목 글은 '길라강' — 결과 노트 6절). 저장소 쓰임 '힐라 강' 0"
+  scope: 아메리카·북아메리카
+
+- use: 시야흐 칵
+  avoid: [시야 카크, 시야흐 카크]
+  note: "Siyaj K'ak'(378년 티칼에 온 인물 — siyaj-kak-378 글). 위키 ko 표제 없음(웹 확인 못 함)이라 공용 표기표 01b 몫 꼴. 저장소 쓰임 '시야 카크' 0"
+  scope: 아메리카·메소아메리카
+
+- use: 착 토크 이착 1세
+  avoid: [차크 토크 이차크 1세]
+  note: "Chak Tok Ich'aak I(티칼 14대 왕). 공용 표기표 01b 몫. 저장소 쓰임 0"
+  scope: 아메리카·메소아메리카
+
+- use: 약스 누운 아인 1세
+  avoid: [야슈 눈 아인 1세]
+  note: "Yax Nuun Ahiin I(티칼 15대 왕, 별칭 '곱슬코'). 공용 표기표 01b 몫. 저장소 쓰임 0"
+  scope: 아메리카·메소아메리카
+
+- use: 살라도이드
+  avoid: [살라도이드족]
+  note: "Saladoid(기원전 500년~기원후 545 카리브의 고고 문화 — taino-400 글). 위키 ko 표제 없음 — 공용 표기표 01b 몫. 저장소 쓰임 0"
+  scope: 아메리카·카리브
+
+- use: 오스티오노이드
+  avoid: [오스티오노이드족]
+  note: "Ostionoid(살라도이드 뒤의 카리브 고고 문화 — taino-400 글). 위키 ko 표제 없음 — 공용 표기표 01b 몫. 저장소 쓰임 0"
+  scope: 아메리카·카리브
 
 # ── 아메리카 M5 AND-M5 (안데스 — 땅 없는 여덟, 2026-11-18) ──
 

@@ -28,8 +28,8 @@
     - 메소아메리카에서 가장 이른 도시 가운데 하나
     - 천 년 가까이 사포텍 사람들의 정치·경제 중심
     - 돌판 부조와 이른 문자 기록을 남김
-  startEvents: []
-  endEvents: []
+  startEvents: [monte-alban-500bc]
+  endEvents: [classic-collapse-750]
   basis:
     type: primary_source
     refs: ["위키백과 Monte Albán"]
@@ -49,8 +49,8 @@
     - 태양의 피라미드·달의 피라미드와 죽은 자의 길로 알려짐
     - 전성기 인구 10만 안팎으로 아메리카에서 가장 큰 도시
     - 흑요석 도구를 메소아메리카 곳곳에 내보냄
-  startEvents: []
-  endEvents: []
+  startEvents: [teotihuacan-100bc]
+  endEvents: [teotihuacan-fall-550]
   basis:
     type: primary_source
     refs: ["위키백과 Teotihuacan"]
@@ -70,8 +70,8 @@
     - 큰 돌머리 석상으로 알려짐
     - 중심지가 산로렌소에서 라벤타로 옮겨 감
     - 공놀이 경기와 피 흘림 의식을 뒤 사회가 이어받음
-  startEvents: []
-  endEvents: []
+  startEvents: [san-lorenzo-1200bc]
+  endEvents: [la-venta-900bc]
   basis:
     type: primary_source
     refs: ["위키백과 Olmecs", "위키백과 올멕"]
@@ -91,8 +91,8 @@
     - 농사 없이 수렵채집으로 산 사람들이 쌓음
     - 멀리서 들여온 돌과 구리가 모인 교역 중심
     - 유네스코 세계유산으로 지정됨
-  startEvents: []
-  endEvents: []
+  startEvents: [poverty-point-1700bc]
+  endEvents: [poverty-point-1700bc]
   basis:
     type: primary_source
     refs: ["위키백과 Poverty Point"]
@@ -112,8 +112,8 @@
     - 무덤 위에 흙을 거듭 쌓은 원뿔꼴 둔덕을 남김
     - 그레이브크리크 마운드가 대표 유적
     - 하나의 사회가 아니라 장례와 의례를 나눈 여러 사회
-  startEvents: []
-  endEvents: []
+  startEvents: [adena-500bc]
+  endEvents: [adena-500bc]
   basis:
     type: primary_source
     refs: ["위키백과 Adena culture"]
@@ -133,8 +133,8 @@
     - 온타리오호에서 플로리다까지 이어진 교역망
     - 흑요석·구리·조개 같은 먼 곳 물자로 공예품을 만듦
     - 뉴어크 토루 같은 기하학 꼴 흙 울타리를 쌓음
-  startEvents: []
-  endEvents: []
+  startEvents: [hopewell-200bc]
+  endEvents: [hopewell-200bc]
   basis:
     type: primary_source
     refs: ["위키백과 Hopewell tradition"]
@@ -156,8 +156,8 @@
     - 중심지 카랄은 수페 계곡에 있음
     - 토기 없이 큰 단 피라미드와 둥근 광장을 지음
     - 아메리카에서 가장 이른 복잡 사회 가운데 하나로 꼽힘
-  startEvents: []
-  endEvents: []
+  startEvents: [caral-2333bc]
+  endEvents: [caral-2333bc]
   basis:
     type: primary_source
     refs: ["위키백과 Caral–Supe civilization", "위키백과 카랄"]
@@ -177,8 +177,8 @@
     - 아메리카에서 가장 이른 토기 가운데 하나를 만듦
     - 작은 여인 토우로 이름남
     - 레알알토 같은 정착 마을을 이룸
-  startEvents: []
-  endEvents: []
+  startEvents: [valdivia-2300bc]
+  endEvents: [valdivia-2300bc]
   basis:
     type: primary_source
     refs: ["위키백과 Valdivia culture"]
@@ -198,8 +198,8 @@
     - 신전 깊은 곳에 란손 석상을 세움
     - 신전 종교와 무늬가 안데스 여러 곳에 퍼짐
     - 금속 공예와 직물 기술이 발달함
-  startEvents: []
-  endEvents: []
+  startEvents: [chavin-900bc]
+  endEvents: [chavin-900bc]
   basis:
     type: primary_source
     refs: ["위키백과 Chavín culture"]
@@ -219,8 +219,8 @@
     - 무덤 직물과 자수가 안데스에서 손꼽히게 정교함
     - 머리 모양을 길게 바꾸는 풍습이 있었음
     - 나스카 문화가 뒤를 이음
-  startEvents: []
-  endEvents: []
+  startEvents: [paracas-800bc]
+  endEvents: [paracas-800bc]
   basis:
     type: primary_source
     refs: ["위키백과 Paracas culture", "위키백과 파라카스 문화"]
@@ -240,8 +240,8 @@
     - 땅속 물길을 파서 물을 댐
     - 의례 중심지는 카와치 유적
     - 여러 빛깔로 칠한 토기로 이름남
-  startEvents: []
-  endEvents: []
+  startEvents: [nasca-200bc]
+  endEvents: [moche-nasca-end-600]
   basis:
     type: primary_source
     refs: ["위키백과 Nazca culture", "위키백과 나스카 문화"]
@@ -262,8 +262,8 @@
     - 시판의 군주 무덤에서 금은 장신구가 나옴
     - 사람 얼굴을 빚은 토기로 이름남
     - 뒤를 시칸 문화와 치무가 이음
-  startEvents: []
-  endEvents: []
+  startEvents: [moche-100]
+  endEvents: [moche-nasca-end-600]
   basis:
     type: primary_source
     refs: ["위키백과 Moche culture", "위키백과 모체 문화"]
@@ -283,8 +283,8 @@
     - 600년 무렵부터 페루 고지대와 해안에 퍼짐
     - 피키약타 같은 행정 중심지를 지음
     - 와리 제국이라 부르기도 하나 경계는 전하지 않음
-  startEvents: []
-  endEvents: []
+  startEvents: [wari-500]
+  endEvents: [wari-tiwanaku-end-900]
   basis:
     type: primary_source
     refs: ["위키백과 Wari culture", "위키백과 와리 문화"]
@@ -304,8 +304,8 @@
     - 아카파나·푸마푼쿠 같은 큰 돌 건축을 남김
     - 호숫가 두둑 밭으로 도시를 먹임
     - 페루 남부 해안·칠레 북부에 먼 거점을 둠
-  startEvents: []
-  endEvents: []
+  startEvents: [tiwanaku-110]
+  endEvents: [wari-tiwanaku-end-900]
   basis:
     type: primary_source
     refs: ["위키백과 Tiwanaku polity", "위키백과 티아우아나코"]

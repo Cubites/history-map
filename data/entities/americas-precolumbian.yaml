@@ -28,8 +28,8 @@
     - 아즈텍 사람들이 문명의 본보기로 여김
     - 제국이었는지 작은 나라였는지 학설이 갈림
   mapNote: 지도에는 땅을 그리지 않음. 다스린 땅의 범위가 전하지 않고 제국이었는지도 학설이 갈려 사건의 주체로만 둠
-  startEvents: []
-  endEvents: []
+  startEvents: [toltec-900]
+  endEvents: [toltec-900]
 # 글은 MXC-M4 칸이 채움 — 위키 ko 표제('치첸 이차'가 넘겨줌 — 사전 avoid). 땅 없는 지역 항목(chichen-itza 등급은 a 노트 polity가 아니라 region — C-M4-6), 900~1200
 - id: chichen-itza
   level: region
@@ -45,8 +45,8 @@
     - 큰 공놀이 경기장과 성스러운 샘(세노테)이 있음
     - 그 뒤 유카탄 북부의 중심은 마야판으로 옮겨 감
   mapNote: 지도에는 땅을 그리지 않음. 도시가 이끈 땅의 경계가 전하지 않아 사건의 주체로만 둠
-  startEvents: []
-  endEvents: []
+  startEvents: [chichen-itza-900]
+  endEvents: [chichen-itza-900]
 # 글은 MXC-M4 칸이 채움 — 위키 ko 표제. 땅 없는 지역 항목, 1220~1441(1441 반란으로 버려짐 — to = 끝난 해)
 - id: mayapan
   level: region
@@ -62,8 +62,8 @@
     - 1441년 슈 가문의 반란으로 무너짐
     - 그 뒤 유카탄 북부는 작은 나라들로 나뉨
   mapNote: 지도에는 땅을 그리지 않음. 도시 연맹이 다스린 땅의 범위가 전하지 않아 사건의 주체로만 두고, 유카탄 반도 북부는 비움
-  startEvents: []
-  endEvents: []
+  startEvents: [mayapan-1220]
+  endEvents: [mayapan-fall-1441]
 # 글은 MXC-M4 칸이 채움 — '믹스텍'(00-scope 0단계 표기 — C-M4-11), 위키 ko 표제 '미슈텍인'(민족 이름 — 글에 병기, avoid 아님). 땅 없는 지역 항목, 900~1522(1522-03 투투테펙 정복)
 - id: mixtec
   level: region
@@ -80,8 +80,8 @@
     - 투투테펙은 아즈텍에 끝까지 굴복하지 않음
     - 1522년 3월 스페인군에 정복됨
   mapNote: 지도에는 땅을 그리지 않음. 여러 소왕국이 따로 다스려 하나의 경계로 묶을 수 없어 사건의 주체로만 둠. 아즈텍 삼각 동맹에 공물을 바친 고원 땅은 그 해에 맞춰 동맹의 색으로 그렸고, 투투테펙이 다스린 해안은 비움
-  startEvents: []
-  endEvents: []
+  startEvents: [mixtec-900]
+  endEvents: [oaxaca-mixteca-1521]
 
 # ══ M4 AND-M4 항목 (안데스 — 치무와 땅 없는 둘) ══
 # 글은 AND-M4 칸이 채움 — 위키 ko 표제 '치무'('치무 왕국'·'치무 문화'·'치모르'가 넘겨줌 — 글에 '치무 왕국'은 써도 됨, avoid 아님). from 900(칠함은 1375 시칸 정복부터 — G4-6·Q3 A), to 1470(잉카 정복 — 칠함 마지막 1469). polity라 basis는 AND-M4가 씀
@@ -100,8 +100,8 @@
     - 1375년 무렵 시칸 땅을 정복함
     - 마지막 왕은 민찬카만
     - 1470년 잉카군에게 정복됨
-  startEvents: []
-  endEvents: []
+  startEvents: [chimu-chancay-900]
+  endEvents: [tupac-inca-chimu-1463]
   basis:
     type: primary_source
     refs: ["위키백과 Chimú culture", "위키백과 Lambayeque culture"]
@@ -121,8 +121,8 @@
     - 중심지는 바탄그란데
     - 금속 공예로 이름남
     - 1375년 무렵 치무 왕국에게 정복됨
-  startEvents: []
-  endEvents: []
+  startEvents: [sican-750]
+  endEvents: [chimu-sican-1375]
 # 글은 AND-M4 칸이 채움 — 가칭(위키 ko 표제 없음). 땅 없는 지역 항목, 1000~1470(en 인포박스 — b 노트 값)
 - id: chancay-culture
   level: region
@@ -138,8 +138,8 @@
     - 흑백 토기와 직물로 이름남
     - 1400년대 초 남쪽 일부가 치무 왕국에 들어감
     - 1470년 무렵 잉카 제국에 들어감
-  startEvents: []
-  endEvents: []
+  startEvents: [chimu-chancay-900]
+  endEvents: [tupac-inca-chimu-1463]
 
 # ══ M4 NAC-M4 항목 (북미·그린란드·카리브·땅 없는 항목) ══
 # 글은 NAC-M4 칸이 채움 — 가칭(위키 ko 표제 없음, '노르드인'은 표제). 땅 없는 지역 항목(G4-9 — norway-medieval 늘림 아님), 985~1450. 노르웨이 복속(1261)은 관계 줄 없이 글(C-M4-7)
@@ -158,8 +158,8 @@
     - 1000년 무렵 빈란드(지금 뉴펀들랜드)까지 배를 보냄
     - 1261년 노르웨이 왕에게 복속함
     - 1408년 흐발세이 교회의 혼례가 마지막 기록
-  startEvents: []
-  endEvents: []
+  startEvents: [norse-greenland-985]
+  endEvents: [norse-greenland-end-1408]
   basis:
     type: primary_source
     refs: ["위키백과 Norse settlements in Greenland", "위키백과 Norse colonization of North America"]
@@ -179,7 +179,7 @@
     - 꼭대기가 평평한 흙 둔덕 위에 건물을 지음
     - 카호키아는 멕시코 북쪽에서 가장 큰 흙 둔덕 도시
     - 여러 추장국이 따로 다스림
-  startEvents: []
+  startEvents: [mississippian-800]
   endEvents: []
   basis:
     type: primary_source
@@ -200,8 +200,8 @@
     - 차코 캐니언에 여러 층의 큰 집을 짓고 길로 둘레 마을을 이음
     - 메사버드에 절벽 마을을 지음
     - 후손은 지금의 푸에블로 사람들로 이어짐
-  startEvents: []
-  endEvents: []
+  startEvents: [basketmaker-1]
+  endEvents: [mesa-verde-1190]
   basis:
     type: primary_source
     refs: ["위키백과 Ancestral Puebloans", "위키백과 Chaco Culture National Historical Park", "위키백과 Mesa Verde National Park"]
@@ -221,8 +221,8 @@
     - 피닉스 둘레의 옛 물길 일부는 지금도 물을 나름
     - 스네이크타운 같은 큰 마을에 시장이 섬
     - 아키멜 오오덤·토호노 오오덤의 조상이라는 구전이 있음
-  startEvents: []
-  endEvents: []
+  startEvents: [hohokam-300]
+  endEvents: [cahokia-hohokam-1350]
   basis:
     type: primary_source
     refs: ["위키백과 Hohokam", "위키백과 호호캄"]
@@ -242,7 +242,7 @@
     - 13세기에 그린란드에 닿음
     - 이름은 북서 그린란드 툴레의 유적에서 따옴
     - 그린란드에서 노르드인과 만남
-  startEvents: []
+  startEvents: [thule-dorset-1000]
   endEvents: []
   basis:
     type: primary_source
@@ -263,8 +263,8 @@
     - 사냥 도구가 달라진 네 단계로 나뉨
     - 툴레인과 피나 문화가 섞인 흔적이 거의 없음
     - 이누이트 전설의 '투니트'로 남음
-  startEvents: []
-  endEvents: []
+  startEvents: [dorset-500bc]
+  endEvents: [thule-dorset-1000]
   basis:
     type: primary_source
     refs: ["위키백과 Dorset culture"]
@@ -283,7 +283,7 @@
     - 평화의 대법에 따라 부족 대표들이 함께 회의함
     - 이름은 '긴 집을 짓는 사람들'이라는 뜻
     - 프랑스와 영국 식민지 사이에서 오래 힘의 균형을 쥠
-  startEvents: []
+  startEvents: [haudenosaunee-1450]
   endEvents: []
   basis:
     type: primary_source
@@ -305,7 +305,7 @@
     - 우두머리 자리는 어머니 쪽으로 이어짐
     - 히스파니올라는 다섯 카시카스고로 나뉨
     - 푸에르토리코·쿠바·도미니카 공화국에 후손이 있음
-  startEvents: []
+  startEvents: [taino-400]
   endEvents: []
   basis:
     type: primary_source
@@ -325,7 +325,7 @@
     - 스스로를 칼리나고라 부름
     - 타이노인과 섬을 두고 다툼
     - 유럽 사람들이 붙인 '카리브'가 카리브해의 이름이 됨
-  startEvents: []
+  startEvents: [taino-kalinago-1200]
   endEvents: []
   basis:
     type: primary_source
@@ -346,8 +346,8 @@
     - 영을 쓰는 셈법과 여러 겹으로 맞물린 달력을 만듦
     - 고전기 도시 국가마다 신성한 왕이 다스림
     - 후고전기에 치첸이트사·마야판이 유카탄 북부의 중심이 됨
-  startEvents: []
-  endEvents: []
+  startEvents: [maize-maya-2000bc]
+  endEvents: [itza-nojpeten-1695]
   basis:
     type: primary_source
     refs: ["위키백과 Maya civilization"]
@@ -367,7 +367,7 @@
     - 여러 수장국으로 나뉨
     - 스페인과 부딪히자 일부가 높은 산으로 옮겨 식민 지배를 덜 받음
     - 지금의 코기·위와·아르와코 사람들의 조상
-  startEvents: []
+  startEvents: [muisca-tairona-800]
   endEvents: []
   basis:
     type: primary_source

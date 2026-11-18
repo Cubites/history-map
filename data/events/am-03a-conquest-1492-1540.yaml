@@ -126,6 +126,17 @@
   tags: [politics, society]
   sources: ["Laurence Bergreen, Over the Edge of the World: Magellan's Terrifying Circumnavigation of the Globe (William Morrow, 2003)", "Antonio Pigafetta, Relazione del primo viaggio intorno al mondo"]
 
+- id: oaxaca-mixteca-1521
+  year: 1521
+  endYear: 1529
+  title:
+    ko: "오악사카 정복과 믹스텍·사포텍 나라들(1521~1529)"
+  summary:
+    ko: "1521년 8월 테노치티틀란이 항복한 뒤 스페인 사람들은 곧 남쪽 오악사카로 눈을 돌렸다(「코르테스의 원정과 테노치티틀란 함락(1519~1521)」(앞의 사건)). 위키백과 영어판 오악사카 역사는 곤살로 데 산도발과 프란시스코 데 오로스코, 페드로 데 알바라도가 아즈텍 쪽의 큰 군사 거점을 테노치티틀란이 무너진 지 넉 달 만에 누른 것으로 적고, 오로스코가 사제 후안 디아스와 함께 오악사카 계곡에 들어가 첫 성당을 지었다고 한다. 사포텍 지도자들은 아즈텍 제국이 무너졌다는 소식을 듣고 스페인에 동맹을 제안했다고 전한다. 믹스텍 쪽의 큰 나라는 태평양 해안의 투투테펙이었다. 8사슴 재규어 발톱이 1083년 무렵 이 나라를 다스리기 시작했다고 전하며(앞 일은 「믹스텍 나라들과 8사슴 재규어 발톱(900~1115)」(앞의 사건)), 영향권은 2만 5천 km²를 넘었다고 한다. 알바라도는 코르테스가 보낸 군대와 함께 1522년 1월 테우안테펙의 사포텍 동맹군의 도움을 받았고 2월 투투테펙에 들어가 3월 초 무렵까지 이 나라를 눌렀다. 마지막 통치자 코악신테쿠틀리는 사로잡혀 금 3만 페소를 내놓은 뒤 갇힌 채 죽었다고 한다. 믹스텍 나라들이 끝난 해는 이 1522년으로 보지만 위키백과 한국어판은 1523년으로 적는다. 투투테펙을 비롯한 믹스텍 나라들은 스페인 지배 아래 들어갔고, 오악사카 계곡과 둘레는 코르테스의 영지가 되었다. 1529년 7월 6일 왕의 칙서가 코르테스에게 오악사카 계곡 후작이라는 칭호를 내렸고, 7월 27일 새 칙서가 이 영지를 한 사람에게만 물려주는 한사상속으로 세우는 일을 허락했으며, 이 제도가 실제로 세워진 때는 1535년 1월 9일이다. 영지는 약 2만 3천 명의 봉신과 1만 1,500 km² 넘는 땅으로 오악사카·모렐로스·베라크루스·미초아칸·멕시코주에 흩어져 있었다(원주민 공동체를 스페인 사람에게 맡기는 엔코미엔다는 「엔코미엔다와 부르고스법, 히스파니올라에서 푸에르토리코·자메이카로(1503~1513)」(앞의 사건)). 이 땅은 누에바에스파냐 왕국(1535년부터 누에바에스파냐 부왕령)에 들어갔고, 도미니코회가 1528년 오악사카에 자리를 잡아 1535년 주교구가 섰다. 미헤 사람들의 마지막 큰 반란은 1570년이었다. 한 서술은 오악사카 원주민 인구가 1520년 약 150만 명에서 1650년 약 15만 명으로 줄었다고 어림한다. 알바라도의 다음 원정은 「알바라도의 과테말라 정복과 치아파스(1524~1530)」(뒤의 사건)로 이어진다."
+  subjects: [mixtec, new-spain-viceroyalty]
+  tags: [war, politics]
+  sources: ["Ronald Spores, The Mixtecs in Ancient and Colonial Times (University of Oklahoma Press, 1984)", "Hugh Thomas, Conquest: Montezuma, Cortés, and the Fall of Old Mexico (Simon & Schuster, 1993)", "Matthew Restall, Seven Myths of the Spanish Conquest (Oxford University Press, 2003)", "위키백과 영어판 History of Oaxaca·Tututepec·Marquesado del Valle de Oaxaca", "위키백과 한국어판 미슈텍인"]
+
 - id: alvarado-guatemala-1524
   year: 1524
   endYear: 1530

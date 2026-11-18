@@ -415,7 +415,7 @@
     - 몬테수마 1세 때 멕시코만 중부와 믹스테카로 넓힘
     - 정복한 지방에서 공물을 거두는 방식으로 다스림
     - 1521년 8월 13일 테노치티틀란이 함락됨
-  startEvents: []
+  startEvents: [tenochtitlan-1325]
   endEvents: [tenochtitlan-1519]
   basis:
     type: primary_source
@@ -437,7 +437,7 @@
     - 1479년 무렵 아즈텍의 침공을 물리침
     - 구리와 청동을 다루는 금속 기술이 뛰어남
     - 1530년 스페인에 정복됨
-  startEvents: []
+  startEvents: [tariacuri-1300]
   endEvents: [nuno-guzman-1529]
   basis:
     type: primary_source
@@ -461,7 +461,7 @@
     - 1470년 치무 왕국을 정복함
     - 1532년 카하마르카에서 아타우알파가 사로잡힘
     - 1533년 스페인군이 쿠스코에 들어감
-  startEvents: []
+  startEvents: [pachacuti-1438]
   endEvents: [inca-conquest-1529]
   basis:
     type: primary_source
@@ -482,7 +482,7 @@
     - 네 정치체가 따로 다스림
     - 1537년 히메네스 데 케사다의 원정대가 들어옴
     - 1538년 산타페데보고타가 세워짐
-  startEvents: []
+  startEvents: [muisca-tairona-800]
   endEvents: [muisca-conquest-1537]
 # 글은 AND-M3 칸이 채움 — 위키 ko 표제. 땅 없는 나라 항목(Q4 A·C-M3-6 — early-ly-dynasty 꼴, polity라 basis는 AND-M3가 씀), 1537~1572
 - id: neo-inca-state
