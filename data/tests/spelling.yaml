@@ -9460,6 +9460,78 @@
 
 # ── 오세아니아 M1 AZP-M1 (오스트레일리아·뉴질랜드·남태평양·하와이, 2026-11-17) ──
 
+# ── 오세아니아 사건 oc-03b (1946~현재, 2026-11-18) ──
+
+- use: 크로스로드 작전
+  avoid: [크로스로즈 작전]
+  note: "Operation Crossroads(1946 비키니 환초 핵실험). 외래어 표기법 — 위키 ko 표제는 갈래 7절에서 대조 필요"
+  scope: 오세아니아·마셜 제도
+
+- use: 롱겔라프
+  avoid: [롱게랩]
+  note: "Rongelap(마셜 제도, 1954 캐슬 브라보 낙진). 외래어 표기법"
+  scope: 오세아니아·마셜 제도
+
+- use: 캐슬 브라보
+  avoid: [캐슬 브라보호]
+  note: "Castle Bravo(1954-03-01). 외래어 표기법"
+  scope: 오세아니아·마셜 제도
+
+- use: 마랄링가
+  avoid: [마라링가]
+  note: "Maralinga(남오스트레일리아 영국 핵실험장). 외래어 표기법"
+  scope: 오세아니아·오스트레일리아
+
+- use: 무루로아
+  avoid: [무로로아, 뮤루로아]
+  note: "Moruroa(프랑스령 폴리네시아 환초, 1966~1996 핵실험). 외래어 표기법"
+  scope: 오세아니아·프랑스령 폴리네시아
+
+- use: 레인보 워리어호
+  avoid: [레인보우 워리어호, 레인보우 워리어]
+  note: "Rainbow Warrior(그린피스 배, 1985-07-10 폭파). 외래어 표기법"
+  scope: 오세아니아·뉴질랜드
+
+- use: 라로통가 조약
+  avoid: [라로통가 협약]
+  note: "Treaty of Rarotonga(남태평양 비핵 지대 조약, 1985-08-06 서명·1986-12-11 발효). 외래어 표기법"
+  scope: 오세아니아·남태평양
+
+- use: 해머 디로버트
+  avoid: [해머 드로버트]
+  note: "Hammer DeRoburt(나우루 초대 대통령). 외래어 표기법"
+  scope: 오세아니아·나우루
+
+- use: 월터 리니
+  avoid: [월터 리니 신부님]
+  note: "Walter Lini(바누아투 초대 총리). 외래어 표기법"
+  scope: 오세아니아·바누아투
+
+- use: 우베아
+  avoid: [우베아섬 동굴]
+  note: "Ouvéa(누벨칼레도니 로열티 제도, 1988 인질 사건). 외래어 표기법"
+  scope: 오세아니아·누벨칼레도니
+
+- use: 팡구나
+  avoid: [판구나]
+  note: "Panguna(부건빌 구리·금 광산). 외래어 표기법"
+  scope: 오세아니아·파푸아뉴기니
+
+- use: 탐파호
+  avoid: [탐파 호]
+  note: "MV Tampa(2001 노르웨이 화물선). 외래어 표기법"
+  scope: 오세아니아·오스트레일리아
+
+- use: 마누스섬
+  avoid: [마너스섬]
+  note: "Manus Island(파푸아뉴기니 — 오스트레일리아 수용소). 외래어 표기법"
+  scope: 오세아니아·파푸아뉴기니
+
+- use: 팔레필리 연합
+  avoid: [팔레필리 유니언]
+  note: "Falepili Union(2023-11-10 서명, 투발루–오스트레일리아). 외래어 표기법"
+  scope: 오세아니아·투발루
+
 # ── 오세아니아 M1 MIC-M1 (미크로네시아·키리바시·투발루·나우루, 2026-11-17) ──
 
 - use: 랄리크 열도
@@ -9471,6 +9543,113 @@
   avoid: [라탁 열도]
   note: "Ratak Chain(마셜 제도 동쪽 열도, 조각 MH-T — 수도 마주로). 위키 ko 표제(오세아니아 M1 MIC-M1 열람 — '라타크 제도'는 넘겨주기, '라탁 열도'는 표제·넘겨주기 없음)"
   scope: 오세아니아·마셜 제도
+
+# ── 오세아니아 사건 oc-03a (1900~1945, 2026-11-18) ──
+
+- use: 에드먼드 바턴
+  avoid: [에드먼드 바튼, 에드먼드 버턴]
+  note: "Edmund Barton(오스트레일리아 초대 총리, 1901~1903). 공용 표기표 03a 몫(oc-03a 사건)"
+  scope: 오세아니아·오스트레일리아
+
+- use: 휴버트 머리
+  avoid: [허버트 머리, 휴버트 머레이]
+  note: "Hubert Murray(파푸아 부총독, 1908~1940). 공용 표기표 03a 몫(oc-03a 사건)"
+  scope: 오세아니아·파푸아
+
+- use: 조지프 워드
+  avoid: [조셉 워드]
+  note: "Joseph Ward(뉴질랜드 총리, 1906~1912). 공용 표기표 03a 몫(oc-03a 사건)"
+  scope: 오세아니아·뉴질랜드
+
+- use: 비타 파카
+  avoid: [비타파카]
+  note: "Bita Paka(1914 뉴브리튼섬의 독일 무선 기지 싸움터). 공용 표기표 03a 몫(oc-03a 사건)"
+  scope: 오세아니아·파푸아뉴기니
+
+- use: 월터 벌리 그리핀
+  avoid: [월터 버얼리 그리핀]
+  note: "Walter Burley Griffin(캔버라 설계). 공용 표기표 03a 몫(oc-03a 사건)"
+  scope: 오세아니아·오스트레일리아
+
+- use: 앤잭 기념일
+  avoid: [앤작 기념일, 안작 기념일]
+  note: "Anzac Day(4월 25일). 공용 표기표 03a 몫(oc-03a 사건)"
+  scope: 오세아니아·오스트레일리아
+
+- use: 로버트 로건
+  avoid: [로버트 로간]
+  note: "Robert Logan(뉴질랜드군 사모아 군정 책임자, 1914~1919). 공용 표기표 03a 몫(oc-03a 사건)"
+  scope: 오세아니아·사모아
+
+- use: 올라프 넬슨
+  avoid: [올라프 넬손]
+  note: "Olaf Nelson(사모아 마우 운동의 지도자). 공용 표기표 03a 몫(oc-03a 사건)"
+  scope: 오세아니아·사모아
+
+- use: 타마세세 레알로피 3세
+  avoid: [타마세세 레알로피 III]
+  note: "Tupua Tamasese Lealofi III(1929 검은 토요일에 숨짐). 공용 표기표 03a 몫(oc-03a 사건)"
+  scope: 오세아니아·사모아
+
+- use: 코니스턴
+  avoid: [코니스톤]
+  note: "Coniston(노던 테리토리의 목장, 1928 학살). 공용 표기표 03a 몫(oc-03a 사건)"
+  scope: 오세아니아·오스트레일리아
+
+- use: 리히 형제
+  avoid: [레히 형제]
+  note: "Leahy brothers(뉴기니 고지대 탐사). 공용 표기표 03a 몫(oc-03a 사건)"
+  scope: 오세아니아·파푸아뉴기니
+
+- use: 와기 계곡
+  avoid: [와기 밸리]
+  note: "Wahgi Valley(뉴기니 서부 고지대). 공용 표기표 03a 몫(oc-03a 사건)"
+  scope: 오세아니아·파푸아뉴기니
+
+- use: 잭 패턴
+  avoid: [잭 패튼]
+  note: "Jack Patten(원주민 진보 협회, 1938 애도의 날). 공용 표기표 03a 몫(oc-03a 사건)"
+  scope: 오세아니아·오스트레일리아
+
+- use: 산호해 해전
+  avoid: [산호해 전투]
+  note: "Battle of the Coral Sea(1942-05-04~08). 공용 표기표 03a 몫(oc-03a 사건)"
+  scope: 오세아니아·태평양 전쟁
+
+- use: 코코다 트랙
+  avoid: [코코다 길]
+  note: "Kokoda Track(오언스탠리산맥을 넘는 길). 공용 표기표 03a 몫(oc-03a 사건)"
+  scope: 오세아니아·파푸아뉴기니
+
+- use: 밀른만
+  avoid: [밀른 만]
+  note: "Milne Bay(파푸아 동쪽 끝, 1942 싸움). 공용 표기표 03a 몫(oc-03a 사건)"
+  scope: 오세아니아·파푸아뉴기니
+
+- use: 헨더슨 비행장
+  avoid: [핸더슨 비행장]
+  note: "Henderson Field(과달카날). 공용 표기표 03a 몫(oc-03a 사건)"
+  scope: 오세아니아·솔로몬 제도
+
+- use: 제이컵 보자
+  avoid: [제이콥 보자]
+  note: "Jacob Vouza(솔로몬 제도 정찰병). 공용 표기표 03a 몫(oc-03a 사건)"
+  scope: 오세아니아·솔로몬 제도
+
+- use: 베티오
+  avoid: [비티오]
+  note: "Betio(타라와 환초의 섬). 공용 표기표 03a 몫(oc-03a 사건)"
+  scope: 오세아니아·키리바시
+
+- use: 펠렐리우
+  avoid: [펠렐류]
+  note: "Peleliu(팔라우의 섬). 공용 표기표 03a 몫(oc-03a 사건)"
+  scope: 오세아니아·팔라우
+
+- use: 이마무라 히토시
+  avoid: [이마무라 히도시]
+  note: "今村均(Imamura Hitoshi, 일본 제8방면군 사령관). 공용 표기표 03a 몫(oc-03a 사건)"
+  scope: 오세아니아·태평양 전쟁
 
 # ── 오세아니아 M1 PNG-M1 (파푸아뉴기니·솔로몬·바누아투·누벨칼레도니, 2026-11-17) ──
 
@@ -9534,6 +9713,133 @@
   note: "Nan Madol(폰페이섬 사우델레우르 왕조의 중심지). 위키 ko 표제('난마돌'은 넘겨주기 — 오세아니아 M2 뼈대 열람)"
   scope: 오세아니아·미크로네시아
 
+# ── 오세아니아 사건 oc-02a (1788~1850, 2026-11-18) ──
+
+- use: 시드니 코브
+  avoid: [시드니 만]
+  note: "Sydney Cove(1788 제1함대 상륙지). 위키 ko 표제"
+  scope: 오세아니아·오스트레일리아
+
+- use: 베넬롱
+  avoid: [베넬론]
+  note: "Bennelong(에오라 사람, 필립의 통역·중재자). 위키 ko 표제"
+  scope: 오세아니아·오스트레일리아
+
+- use: 펨루이
+  avoid: [페물위, 펨울루이]
+  note: "Pemulwuy(비자이갈 사람, 1802 죽음). 위키 ko 표제"
+  scope: 오세아니아·오스트레일리아
+
+- use: 블랙 워
+  avoid: [블랙워]
+  note: "Black War(반디먼즈랜드 1820년대 중반~1831). 위키 ko 표제"
+  scope: 오세아니아·오스트레일리아
+
+- use: 조지 오거스터스 로빈슨
+  avoid: [조지 어거스터스 로빈슨]
+  note: "George Augustus Robinson(반디먼즈랜드 원주민 보호관). 위키 ko 표제"
+  scope: 오세아니아·오스트레일리아
+
+- use: 홍이 히카
+  avoid: [홍기 히카]
+  note: "Hongi Hika(응아푸히 족장). 위키 ko 표제"
+  scope: 오세아니아·뉴질랜드
+
+- use: 테 라우파라하
+  avoid: [테라우파라하]
+  note: "Te Rauparaha(응아티 토아 족장). 위키 ko 표제"
+  scope: 오세아니아·뉴질랜드
+
+- use: 머스킷 전쟁
+  avoid: [머스킷 전쟁들, 머스킷총 전쟁]
+  note: "Musket Wars(1807~). 위키 ko 표제"
+  scope: 오세아니아·뉴질랜드
+
+- use: 카우무알리이
+  avoid: [카우마알리이]
+  note: "Kaumualiʻi(카우아이섬 족장). 위키 ko 표제"
+  scope: 오세아니아·하와이
+
+- use: 리홀리호
+  avoid: [리호리호]
+  note: "Liholiho(카메하메하 2세). 위키 ko 표제"
+  scope: 오세아니아·하와이
+
+- use: 카아후마누
+  avoid: [카하후마누]
+  note: "Kaʻahumanu(쿠히나 누이). 위키 ko 표제"
+  scope: 오세아니아·하와이
+
+- use: 제임스 스털링
+  avoid: [제임스 스터링]
+  note: "James Stirling(스완강 식민지 초대 총독). 위키 ko 표제"
+  scope: 오세아니아·오스트레일리아
+
+- use: 핀자라
+  avoid: [핀잘라]
+  note: "Pinjarra(1834 학살의 땅). 위키 ko 표제"
+  scope: 오세아니아·오스트레일리아
+
+- use: 존 배트먼
+  avoid: [존 배트맨]
+  note: "John Batman(포트필립 협회). 위키 ko 표제"
+  scope: 오세아니아·오스트레일리아
+
+- use: 에드워드 기번 웨이크필드
+  avoid: [에드워드 깁본 웨이크필드]
+  note: "Edward Gibbon Wakefield(체계적 식민론). 위키 ko 표제"
+  scope: 오세아니아·오스트레일리아
+
+- use: 테 티리티
+  avoid: [테 티리티 오 와이탕이]
+  note: "Te Tiriti(와이탕이 조약 마오리어본 이름). 위키 ko 표제"
+  scope: 오세아니아·뉴질랜드
+
+- use: 뒤프티투아르
+  avoid: [뒤프티투아]
+  note: "Abel Aubert du Petit-Thouars(타히티 보호령 제독). 저장소 오세아니아 표기표"
+  scope: 오세아니아·타히티
+
+- use: 조지 프리처드
+  avoid: [조지 프리차드]
+  note: "George Pritchard(런던 선교회 선교사·영국 영사). 위키 ko 표제"
+  scope: 오세아니아·타히티
+
+- use: 조지 폴릿
+  avoid: [조지 폴렛]
+  note: "George Paulet(1843 하와이 점령). 위키 ko 표제"
+  scope: 오세아니아·하와이
+
+- use: 호네 헤케
+  avoid: [혼 헤케]
+  note: "Hōne Heke(응아푸히 족장, 깃대 전쟁). 위키 ko 표제"
+  scope: 오세아니아·뉴질랜드
+
+- use: 테 루키 카위티
+  avoid: [테 루키 카비티]
+  note: "Te Ruki Kawiti(응아푸히 족장). 위키 ko 표제"
+  scope: 오세아니아·뉴질랜드
+
+- use: 타우파아하우
+  avoid: [타우파하우]
+  note: "Tāufaʻāhau(조지 투포우 1세의 본명). 위키 ko 표제"
+  scope: 오세아니아·통가
+
+- use: 라우피리통가
+  avoid: [라우필리통가]
+  note: "Laufilitonga(마지막 투이 통가, 1865 죽음). 위키 ko 표제"
+  scope: 오세아니아·통가
+
+- use: 마헤레
+  avoid: [마헬레]
+  note: "Māhele(1848 하와이 토지 분배). 위키 ko 표제"
+  scope: 오세아니아·하와이
+
+- use: 쿨레아나
+  avoid: [쿠레아나]
+  note: "Kuleana(평민 땅). 위키 ko 표제"
+  scope: 오세아니아·하와이
+
 # ── 오세아니아 M2 AUS-M2 (오스트레일리아 식민지 여섯, 2026-11-18) ──
 
 - use: 뉴사우스웨일스 식민지
@@ -9561,6 +9867,68 @@
   note: "North Australia(1846-02-17 특허장~1847 철수, 칠하지 않음 — Q4). 표제 없음(가칭 — 오세아니아 M2 공용 표기표)"
   scope: 오세아니아·오스트레일리아
 
+# ── 오세아니아 사건 oc-01a (기원전 2333년~1299, 2026-11-18) ──
+
+- use: 사훌
+  avoid: [사홀]
+  note: "Sahul(오스트레일리아·뉴기니가 이어졌던 옛 대륙). 공용 표기표 01a 몫 — 위키 ko 표제 없음, 외래어 표기법(oc-01a 사건)"
+  scope: 오세아니아·오스트레일리아
+
+- use: 딩고
+  avoid: [딘고]
+  note: "dingo(오스트레일리아의 야생 개). 공용 표기표 01a 몫 — 위키 ko 표제 없음, 외래어 표기법(oc-01a 사건)"
+  scope: 오세아니아·오스트레일리아
+
+- use: 쿠크 습지
+  avoid: [쿡 습지]
+  note: "Kuk Swamp(와기 계곡의 농경 유적, 2008 세계유산). 공용 표기표 01a 몫 — 위키 ko 표제 없음, 외래어 표기법(oc-01a 사건)"
+  scope: 오세아니아·파푸아뉴기니
+
+- use: 송라인
+  avoid: [송 라인]
+  note: "songline(노래의 길 — 오스트레일리아 원주민). 공용 표기표 01a 몫 — 위키 ko 표제 없음, 외래어 표기법(oc-01a 사건)"
+  scope: 오세아니아·오스트레일리아
+
+- use: 라테 석주
+  avoid: [라떼 석주]
+  note: "latte stone(마리아나의 돌기둥 — 하리기와 타사). 공용 표기표 01a 몫 — 위키 ko 표제 없음, 외래어 표기법(oc-01a 사건)"
+  scope: 오세아니아·미크로네시아
+
+- use: 아호에이투
+  avoid: [아호에이트]
+  note: "ʻAhoʻeitu(첫 투이 통가, 950 무렵 전승). 공용 표기표 01a 몫 — 위키 ko 표제 없음, 외래어 표기법(oc-01a 사건)"
+  scope: 오세아니아·통가
+
+- use: 하아몽가 아 마우이
+  avoid: [하아몽가아마우이]
+  note: "Haʻamonga ʻa Maui(통가의 돌문). 공용 표기표 01a 몫 — 위키 ko 표제 없음, 외래어 표기법(oc-01a 사건)"
+  scope: 오세아니아·통가
+
+- use: 호투 마투아
+  avoid: [호투마투아]
+  note: "Hotu Matuʻa(이스터섬 정착 전승의 족장). 공용 표기표 01a 몫 — 위키 ko 표제 없음, 외래어 표기법(oc-01a 사건)"
+  scope: 오세아니아·이스터섬
+
+- use: 라노 라라쿠
+  avoid: [라노라라쿠]
+  note: "Rano Raraku(이스터섬 모아이 채석장). 공용 표기표 01a 몫 — 위키 ko 표제 없음, 외래어 표기법(oc-01a 사건)"
+  scope: 오세아니아·이스터섬
+
+- use: 와이라우 바
+  avoid: [와이라우바]
+  note: "Wairau Bar(뉴질랜드 남섬의 초기 정착 유적). 공용 표기표 01a 몫 — 위키 ko 표제 없음, 외래어 표기법(oc-01a 사건)"
+  scope: 오세아니아·뉴질랜드
+
+- use: 하와이키
+  avoid: [하와이 키]
+  note: "Hawaiki(마오리 구전의 고향). 공용 표기표 01a 몫 — 위키 ko 표제 없음, 외래어 표기법(oc-01a 사건)"
+  scope: 오세아니아·뉴질랜드
+
+- use: 모리오리
+  avoid: [모리오리인]
+  note: "Moriori(채텀 제도 원주민). 공용 표기표 01a 몫 — 위키 ko 표제 없음, 외래어 표기법(oc-01a 사건)"
+  scope: 오세아니아·뉴질랜드
+
 # ── 오세아니아 M2 MEL-M2 (뉴기니·솔로몬·바누아투·땅 없는 항목 여덟, 2026-11-18) ──
 
 - use: 파푸아인
@@ -9578,12 +9946,216 @@
   note: "Kaiser-Wilhelmsland(독일령 뉴기니의 뉴기니섬 북동부, 1884~). 공용 표기표 가칭(위키 ko 표제 없음 — 오세아니아 M2 뼈대 SKEL-NOTE 끝 표), german-new-guinea mapNote에 씀"
   scope: 오세아니아·파푸아뉴기니
 
+# ── 오세아니아 사건 oc-02b (1851~1899, 2026-11-18) ──
+
+- use: 밸러랫
+  avoid: [발라라트, 밸라랫]
+  note: "Ballarat(빅토리아 금광 도시, 1854 유레카 방책). 위키 ko 표제"
+  scope: 오세아니아·오스트레일리아
+
+- use: 벤디고
+  avoid: [벤디고우]
+  note: "Bendigo(빅토리아 금광 도시). 위키 ko 표제"
+  scope: 오세아니아·오스트레일리아
+
+- use: 유레카 방책
+  avoid: [유레카 스톡케이드]
+  note: "Eureka Stockade(1854-12-03 밸러랫). 위키 ko 표제 '유레카 방책'"
+  scope: 오세아니아·오스트레일리아
+
+- use: 킹잉아
+  avoid: [킹기탕아, 킹이탕가]
+  note: "Kīngitanga(마오리 왕 운동, 1858~). 위키 ko 표제"
+  scope: 오세아니아·뉴질랜드
+
+- use: 포타타우 테 훼로훼로
+  avoid: [포타타우 테 웨로웨로]
+  note: "Pōtatau Te Wherowhero(초대 마오리 왕). 위키 ko 표제·M2 표기 ㅍㅎ 규칙"
+  scope: 오세아니아·뉴질랜드
+
+- use: 와이타라
+  avoid: [와이타라이]
+  note: "Waitara(타라나키, 1860 전쟁의 발단). 위키 ko 표제"
+  scope: 오세아니아·뉴질랜드
+
+- use: 오라카우
+  avoid: [오라코]
+  note: "Ōrākau(1864 와이카토 전쟁 막바지 포위전). 위키 ko 표제"
+  scope: 오세아니아·뉴질랜드
+
+- use: 티토코와루
+  avoid: [티토코와로]
+  note: "Tītokowaru(타라나키 마오리 지도자, 1868~1869). 위키 ko 표제"
+  scope: 오세아니아·뉴질랜드
+
+- use: 테 쿠티
+  avoid: [테 코오티]
+  note: "Te Kooti(1868~1872 전쟁의 마오리 지도자). 위키 ko 표제"
+  scope: 오세아니아·뉴질랜드
+
+- use: 로버트 타운스
+  avoid: [로버트 타운즈]
+  note: "Robert Towns(퀸즐랜드 첫 노동선 1863). 위키 ko 표제"
+  scope: 오세아니아·오스트레일리아
+
+- use: 블랙버딩
+  avoid: [블랙 버딩]
+  note: "blackbirding(태평양 섬 주민 납치·속임수 모집). 위키 ko 표제"
+  scope: 오세아니아·태평양
+
+- use: 마아푸
+  avoid: [마파우]
+  note: "Maʻafu(통가 출신 라우 지배자, 피지 1874 할양 증서 서명). 위키 ko 표제"
+  scope: 오세아니아·피지
+
+- use: 아서 고든
+  avoid: [아서 고돈]
+  note: "Arthur Gordon(피지 식민지 초대 총독 1875~). 위키 ko 표제"
+  scope: 오세아니아·피지
+
+- use: 아타이
+  avoid: [아테이]
+  note: "Ataï(라포아 대족장, 1878 카나크 봉기). 위키 ko 표제"
+  scope: 오세아니아·누벨칼레도니
+
+- use: 로린 서스턴
+  avoid: [로린 써스턴]
+  note: "Lorrin A. Thurston(하와이 연맹, 1887 총검 헌법 기초). 위키 ko 표제"
+  scope: 오세아니아·하와이
+
+- use: 샌퍼드 돌
+  avoid: [샌포드 돌]
+  note: "Sanford B. Dole(1887 헌법 기초·1893 임시 정부 수장·1894 하와이 공화국 대통령). 위키 ko 표제"
+  scope: 오세아니아·하와이
+
+- use: 마케아 타카우
+  avoid: [마케아 타카오]
+  note: "Makea Takau(라로통가 아리키, 1888 영국 보호 청원). 위키 ko 표제"
+  scope: 오세아니아·쿡 제도
+
+- use: 타마세세
+  avoid: [타마시시]
+  note: "Tamasese(사모아 독일 편 지도자 Tupua Tamasese Titimaea 1887). 위키 ko 표제 없음 — 0단계 표"
+  scope: 오세아니아·사모아
+
+- use: 마타아파
+  avoid: [마타파, 마타파아]
+  note: "Matāʻafa Iosefo(사모아 지도자, 1893 잘루이트 추방). 위키 ko 표제 없음 — 0단계 표"
+  scope: 오세아니아·사모아
+
+- use: 잘루이트 회사
+  avoid: [자루이트 회사]
+  note: "Jaluit Company(마셜 제도 코프라 무역 독일 회사, 1888~). 위키 ko 표제"
+  scope: 오세아니아·마셜 제도
+
+- use: 케이트 셰퍼드
+  avoid: [케이트 쉐퍼드, 케이트 셰퍼트]
+  note: "Kate Sheppard(뉴질랜드 여성 참정권 운동, 1893). 위키 ko 표제"
+  scope: 오세아니아·뉴질랜드
+
+- use: 쿠 이 청원
+  avoid: [쿠에 청원, 쿠이 청원]
+  note: "Kūʻē Petitions(1897 하와이 병합 반대 청원, 서명 21,269명). 위키 ko 표제"
+  scope: 오세아니아·하와이
+
+- use: 뉴랜즈 결의
+  avoid: [뉴랜드 결의, 뉴랜즈 결의안]
+  note: "Newlands Resolution(1898-07-07 서명, 의회 공동 결의 — 조약 아님). 위키 ko 표제"
+  scope: 오세아니아·하와이
+
+- use: 빌헬름 졸프
+  avoid: [빌헬름 솔프, 빌헬름 졸프스]
+  note: "Wilhelm Solf(독일령 사모아 초대 총독 1900~). 위키 ko 표제"
+  scope: 오세아니아·사모아
+
+- use: 이올라니 궁
+  avoid: [이오라니 궁전, 이올라니 궁전]
+  note: "ʻIolani Palace(호놀룰루 — 1898-08-12 이양 의식). 위키 ko 표제"
+  scope: 오세아니아·하와이
+
+- use: 새뮤얼 그리피스
+  avoid: [사무엘 그리피스, 새뮤엘 그리피스]
+  note: "Samuel Griffith(1891 연방 헌법 초안). 위키 ko 표제"
+  scope: 오세아니아·오스트레일리아
+
+- use: 헨리 파크스
+  avoid: [헨리 파크즈, 헨리 팍스]
+  note: "Henry Parkes(1889 텐터필드 연설). 위키 ko 표제"
+  scope: 오세아니아·오스트레일리아
+
 # ── 오세아니아 M2 SPC-M2 (뉴질랜드·피지·통가·사모아·타히티·누벨칼레도니, 2026-11-18) ──
 
 - use: 말리에토아 라우페파
   avoid: [말리에토아 라우페빠]
   note: "Malietoa Laupepa(사모아 왕 — 1889 복위·1898 죽음, 항목 samoa-kingdom 글). 위키 ko 표제 없음(en 'Malietoa Laupepa' 꼴 — SPC-M2 칸이 정함, 오세아니아 M2 합치기가 사전에 한 번 넣음)"
   scope: 오세아니아·사모아
+
+# ── 오세아니아 사건 oc-01b (1300~1787, 2026-11-18) ──
+
+- use: 우미 아 릴로아
+  avoid: [우미아릴로아, 우미 아 리로아]
+  note: "ʻUmi-a-Līloa(하와이섬 알리이 누이 — 전승 1500년 무렵). 위키 ko 표제 확인 못 함 — 외래어 표기"
+  scope: 오세아니아·하와이
+
+- use: 투이 하아타칼라우아
+  avoid: [투이 하아탈라우아, 투이 하타칼라우아]
+  note: "Tuʻi Haʻatakalaua(통가 칭호). 외래어 표기(위키 ko 표제 확인 못 함)"
+  scope: 오세아니아·통가
+
+- use: 투이 카노쿠폴루
+  avoid: [투이 카노쿠플루]
+  note: "Tuʻi Kanokupolu(통가 칭호). 외래어 표기(위키 ko 표제 확인 못 함)"
+  scope: 오세아니아·통가
+
+- use: 알바로 데 멘다냐
+  avoid: [알바로 데 멘다나]
+  note: "Álvaro de Mendaña(1542~1595). 외래어 표기"
+  scope: 오세아니아·솔로몬
+
+- use: 빌럼 얀스존
+  avoid: [빌렘 얀스존, 윌리엄 얀손]
+  note: "Willem Janszoon(네덜란드 항해자). 네덜란드어 표기"
+  scope: 오세아니아·오스트레일리아
+
+- use: 두이프컨호
+  avoid: [다이프켄호, 두이프켄호]
+  note: "Duyfken(1606 얀스존의 배). 네덜란드어 표기"
+  scope: 오세아니아·오스트레일리아
+
+- use: 이소켈레칼
+  avoid: [이소켈렉켈]
+  note: "Isokelekel(폰페이 전승의 정복자). 위키 ko 표제 확인 못 함"
+  scope: 오세아니아·미크로네시아
+
+- use: 산비토레스
+  avoid: [산 비토레스]
+  note: "Diego Luis de San Vitores(마리아나 선교). 붙여 씀"
+  scope: 오세아니아·미크로네시아
+
+- use: 야코프 로헤벤
+  avoid: [야콥 로헤벤, 야코프 로게벤]
+  note: "Jacob Roggeveen(1722 이스터섬). 네덜란드어 표기"
+  scope: 오세아니아·폴리네시아
+
+- use: 새뮤얼 월리스
+  avoid: [사무엘 월리스]
+  note: "Samuel Wallis(1767 타히티). 영어 표기('월리스 푸투나'와 다름)"
+  scope: 오세아니아·타히티
+
+- use: 조지프 뱅크스
+  avoid: [조셉 뱅크스]
+  note: "Joseph Banks. 영어 표기"
+  scope: 오세아니아·오스트레일리아
+
+- use: 투파이아
+  avoid: [투파이어]
+  note: "Tupaia(라이아테아 사제·항해자, 쿡 1차 항해 동행). 위키 ko 표제 확인 못 함"
+  scope: 오세아니아·타히티
+
+- use: 케알라케쿠아만
+  avoid: [케알라케쿠아 만]
+  note: "Kealakekua Bay(쿡의 죽음). 붙여 씀('M2 표 지명' 꼴)"
+  scope: 오세아니아·하와이
 
 # ── 오세아니아 M2 HPO-M2 (하와이·폴리네시아·미크로네시아·땅 없는 항목 아홉, 2026-11-18) ──
 

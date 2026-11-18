@@ -19,7 +19,7 @@
     - 1901년 1월 1일 여섯 식민지가 연방을 이룸
     - 1911년 노던 준주·오스트레일리아 수도 준주를 연방 직할로
     - 1942년 웨스트민스터 헌장 채택, 1986년 오스트레일리아 법
-  startEvents: []
+  startEvents: [federation-1901]
   endEvents: []
   basis:
     type: primary_source
@@ -41,8 +41,8 @@
     - 1840년 와이탕이 조약, 1841년 따로 식민지가 됨
     - 1856년 책임 정부
     - 1893년 여성 선거권
-  startEvents: []
-  endEvents: []
+  startEvents: [waitangi-1840]
+  endEvents: [dominion-nz-1907]
   basis:
     type: primary_source
     refs: ["위키백과 Colony of New Zealand", "와이탕이 조약(1840)"]
@@ -61,7 +61,7 @@
     - 1907년 9월 26일 자치령
     - 1920년부터 1961년까지 서사모아를 맡아 다스림
     - 1947년 웨스트민스터 헌장 채택
-  startEvents: []
+  startEvents: [dominion-nz-1907]
   endEvents: []
   basis:
     type: primary_source
@@ -82,8 +82,8 @@
     - 1874년 추장들이 땅을 넘겨 식민지가 됨
     - 1881년 로투마섬을 더함
     - 1879년부터 1916년까지 인도 계약 노동자를 데려옴
-  startEvents: []
-  endEvents: []
+  startEvents: [cakobau-fiji-1871]
+  endEvents: [nauru-fiji-1968]
   basis:
     type: primary_source
     refs: ["위키백과 Colony of Fiji", "위키백과 Rotuma"]
@@ -102,7 +102,7 @@
     - 1970년 10월 10일 독립
     - 1987년 정변과 공화국 선포
     - 2000년·2006년 정변
-  startEvents: []
+  startEvents: [nauru-fiji-1968]
   endEvents: []
   basis:
     type: primary_source
@@ -122,7 +122,7 @@
     - 1845년 무렵 조지 투포우 1세가 섬들을 하나로 묶음
     - 1875년 헌법으로 입헌 군주국
     - 1900년 영국 보호국, 1970년 완전 독립
-  startEvents: []
+  startEvents: [tupou-tonga-1845]
   endEvents: []
   basis:
     type: primary_source
@@ -143,8 +143,8 @@
     - 1899년 삼국 조약으로 사모아 제도를 나눔
     - 1914년 8월 뉴질랜드군 점령
     - 1919년 베르사유 조약으로 독일이 권리를 잃음
-  startEvents: []
-  endEvents: []
+  startEvents: [samoa-tripartite-1899]
+  endEvents: [mandates-1920]
   basis:
     type: primary_source
     refs: ["위키백과 German Samoa", "삼국 조약(1899)"]
@@ -164,8 +164,8 @@
     - 1920년 국제 연맹 위임 통치
     - 1946년 국제 연합 신탁 통치
     - 1962년 1월 1일 독립
-  startEvents: []
-  endEvents: []
+  startEvents: [mandates-1920]
+  endEvents: [samoa-independence-1962]
   basis:
     type: primary_source
     refs: ["위키백과 Western Samoa Trust Territory"]
@@ -184,7 +184,7 @@
     - 1962년 1월 1일 독립
     - 1997년 서사모아에서 사모아로 이름을 바꿈
     - 2011년 날짜변경선 서쪽으로 날짜를 옮김
-  startEvents: []
+  startEvents: [samoa-independence-1962]
   endEvents: []
   basis:
     type: primary_source
@@ -204,7 +204,7 @@
     - 1880년 타히티 병합
     - 1946년 해외 영토, 1957년 이름을 바꿈
     - 1996년까지 핵실험
-  startEvents: []
+  startEvents: [tahiti-annexation-1880]
   endEvents: []
   basis:
     type: primary_source
@@ -227,7 +227,7 @@
     - 1943년 11월 타라와 전투
     - 1979년 7월 12일 영국에서 독립
     - 1995년 날짜변경선을 동쪽 끝으로 옮김
-  startEvents: []
+  startEvents: [solomons-tuvalu-kiribati-1978]
   endEvents: []
   basis:
     type: primary_source
@@ -248,7 +248,7 @@
     - 1975년 10월 1일 길버트 제도와 갈라섬
     - 1978년 10월 1일 영국에서 독립
     - 영국 국왕을 군주로 둔 영연방 왕국
-  startEvents: []
+  startEvents: [solomons-tuvalu-kiribati-1978]
   endEvents: []
   basis:
     type: primary_source
@@ -269,7 +269,7 @@
     - 1942년 8월부터 1945년 9월까지 일본군 점령
     - 1968년 1월 31일 신탁 통치에서 독립
     - 인광석 채굴로 살아온 섬
-  startEvents: []
+  startEvents: [nauru-fiji-1968]
   endEvents: []
   basis:
     type: primary_source
@@ -290,7 +290,7 @@
     - 1946년부터 1958년까지 비키니 환초 등에서 핵실험
     - 1979년 5월 1일 자치 정부
     - 1986년 10월 21일 미국과 자유 연합 협정 효력
-  startEvents: []
+  startEvents: [free-association-1986]
   endEvents: []
   basis:
     type: primary_source
@@ -311,7 +311,7 @@
     - 1914년 일본 점령, 남양 군도
     - 1979년 5월 10일 연방 헌법
     - 1986년 11월 3일 미국과 자유 연합 협정 효력
-  startEvents: []
+  startEvents: [free-association-1986]
   endEvents: []
   basis:
     type: primary_source
@@ -332,7 +332,7 @@
     - 1944년 펠렐리우 전투
     - 1981년 1월 1일 팔라우 공화국 헌법
     - 1994년 10월 1일 자유 연합 협정 효력으로 독립
-  startEvents: []
+  startEvents: [free-association-1986]
   endEvents: []
   basis:
     type: primary_source
@@ -355,8 +355,8 @@
     - 1884년 영국 보호령, 1888년 병합
     - 1885년 영독 협정으로 독일령 뉴기니와 경계를 정함
     - 1902년 오스트레일리아 연방이 넘겨받음
-  startEvents: []
-  endEvents: []
+  startEvents: [new-guinea-partition-1884]
+  endEvents: [papua-new-hebrides-1906]
   basis:
     type: primary_source
     refs: ["위키백과 Territory of Papua", "뉴질랜드 관보 1885 No.47 영독 뉴기니 경계"]
@@ -377,8 +377,8 @@
     - 1930년대에야 내륙 고지대에 처음 들어감
     - 1942년 산길과 밀른베이주에서 일본군과 싸움
     - 1949년 뉴기니 위임 통치령과 합쳐짐
-  startEvents: []
-  endEvents: []
+  startEvents: [papua-new-hebrides-1906]
+  endEvents: [japan-surrender-papua-1945]
   basis:
     type: primary_source
     refs: ["위키백과 Territory of Papua"]
@@ -399,8 +399,8 @@
     - 1910년부터 행정 중심은 라바울
     - 1914년 9월 오스트레일리아군이 점령
     - 1919년 베르사유 조약으로 독일이 잃음
-  startEvents: []
-  endEvents: []
+  startEvents: [new-guinea-partition-1884]
+  endEvents: [mandates-1920]
   basis:
     type: primary_source
     refs: ["위키백과 German New Guinea", "위키백과 Australian Naval and Military Expeditionary Force"]
@@ -421,8 +421,8 @@
     - 1930년대 고지대 골짜기 첫 탐사
     - 1942년 일본군이 라바울을 차지함
     - 1946년 국제 연합 신탁 통치로 바뀜
-  startEvents: []
-  endEvents: []
+  startEvents: [mandates-1920]
+  endEvents: [japan-surrender-papua-1945]
   basis:
     type: primary_source
     refs: ["위키백과 Territory of New Guinea", "위키백과 German New Guinea"]
@@ -443,8 +443,8 @@
     - 1964년 첫 의회
     - 1971년 이름을 파푸아뉴기니로 바꿈
     - 1973년 12월 자치
-  startEvents: []
-  endEvents: []
+  startEvents: [japan-surrender-papua-1945]
+  endEvents: [png-independence-1975]
   basis:
     type: primary_source
     refs: ["위키백과 Territory of Papua and New Guinea"]
@@ -464,7 +464,7 @@
     - 800개가 넘는 말을 쓰는 나라
     - 1988년부터 1998년까지 부건빌 내전
     - 2019년 부건빌 독립 주민 투표
-  startEvents: []
+  startEvents: [png-independence-1975]
   endEvents: []
   basis:
     type: primary_source
@@ -486,8 +486,8 @@
     - 행정 중심은 툴라기섬, 전쟁 뒤 호니아라
     - 1942년부터 1943년까지 과달카날섬 싸움
     - 1976년 자치
-  startEvents: []
-  endEvents: []
+  startEvents: [new-hebrides-solomons-1887]
+  endEvents: [solomons-tuvalu-kiribati-1978]
   basis:
     type: primary_source
     refs: ["위키백과 British Solomon Islands"]
@@ -506,7 +506,7 @@
     - 1978년 7월 7일 영국에서 독립
     - 1998년부터 2003년까지 과달카날섬·말레이타섬 주민 다툼
     - 2003년부터 2017년까지 지역 지원단이 머묾
-  startEvents: []
+  startEvents: [solomons-tuvalu-kiribati-1978]
   endEvents: []
   basis:
     type: primary_source
@@ -528,8 +528,8 @@
     - 행정 중심은 포트빌라
     - 1942년 에스피리투산토섬에 미군 기지
     - 1980년 에스피리투산토섬 반란 뒤 독립
-  startEvents: []
-  endEvents: []
+  startEvents: [papua-new-hebrides-1906]
+  endEvents: [vanuatu-1980]
   basis:
     type: primary_source
     refs: ["위키백과 New Hebrides"]
@@ -548,7 +548,7 @@
     - 1980년 7월 30일 영국과 프랑스에서 독립
     - 공용어는 비슬라마어·영어·프랑스어
     - 1980년 에스피리투산토섬 반란을 파푸아뉴기니군 도움으로 진압
-  startEvents: []
+  startEvents: [vanuatu-1980]
   endEvents: []
   basis:
     type: primary_source
@@ -569,7 +569,7 @@
     - 1864년부터 1897년까지 죄수 유형지
     - 니켈 광산이 경제의 큰 몫
     - 1998년 누메아 협정으로 자치를 넓힘
-  startEvents: []
+  startEvents: [new-caledonia-1853]
   endEvents: []
   basis:
     type: primary_source

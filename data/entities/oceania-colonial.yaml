@@ -21,8 +21,8 @@
     - 1788년 1월 26일 첫 선단이 시드니만에 닿아 죄수 유형 식민지로 출발
     - 1825년 서쪽 경계를 동경 135°에서 129°로 옮김
     - 1851년 금이 발견되어 골드러시가 시작됨
-  startEvents: []
-  endEvents: []
+  startEvents: [first-fleet-1788]
+  endEvents: [federation-1901]
   basis:
     type: primary_source
     refs: ["위키백과 Territorial evolution of Australia", "위키백과 Colony of New South Wales", "위키백과 North Australia"]
@@ -42,8 +42,8 @@
     - 1825년 12월 3일 뉴사우스웨일스에서 갈라짐
     - 1853년까지 죄수 유형지로 쓰임
     - 1856년 1월 1일 태즈메이니아로 이름을 바꿈
-  startEvents: []
-  endEvents: []
+  startEvents: [van-diemens-land-1803]
+  endEvents: [federation-1901]
   basis:
     type: primary_source
     refs: ["위키백과 Van Diemen's Land", "위키백과 Territorial evolution of Australia"]
@@ -63,8 +63,8 @@
     - 1829년 스완강 식민지로 시작, 1832년 지금 이름으로
     - 1850~1868년 죄수를 받음
     - 1890년 책임 정부, 1890년대 동부 금광 골드러시
-  startEvents: []
-  endEvents: []
+  startEvents: [swan-river-1829]
+  endEvents: [federation-1901]
   basis:
     type: primary_source
     refs: ["위키백과 Swan River Colony", "위키백과 Territorial evolution of Australia"]
@@ -85,8 +85,8 @@
     - 1863년부터 지금의 노던 준주 땅을 맡음
     - 1872년 애들레이드에서 북쪽 해안까지 대륙 종단 전신선
     - 1894년 여성에게 선거권과 피선거권을 줌
-  startEvents: []
-  endEvents: []
+  startEvents: [south-australia-1836]
+  endEvents: [federation-1901]
   basis:
     type: primary_source
     refs: ["위키백과 South Australia", "위키백과 Territorial evolution of Australia"]
@@ -106,8 +106,8 @@
     - 1851년 7월 1일 뉴사우스웨일스에서 갈라짐
     - 1850년대 골드러시로 사람이 크게 늚
     - 1901~1927년 멜버른에 연방 의회
-  startEvents: []
-  endEvents: []
+  startEvents: [victoria-gold-1851]
+  endEvents: [federation-1901]
   basis:
     type: primary_source
     refs: ["위키백과 Territorial evolution of Australia", "위키백과 Colony of Victoria"]
@@ -127,8 +127,8 @@
     - 1859년 12월 10일 뉴사우스웨일스에서 갈라져 선포됨
     - 1862년 서쪽 경계를 동경 141°에서 138°로 옮김
     - 사탕수수 농장과 태평양 섬 일꾼
-  startEvents: []
-  endEvents: []
+  startEvents: [queensland-1859]
+  endEvents: [federation-1901]
   basis:
     type: primary_source
     refs: ["위키백과 Colony of Queensland", "위키백과 Territorial evolution of Australia"]
@@ -149,7 +149,7 @@
     - 사냥·채집과 불 놓기로 땅을 가꿈
     - 1788년부터 영국 식민지 개척으로 땅을 잃음
   mapNote: 지도에는 땅을 그리지 않음. 수백 개의 집단이 대륙 곳곳에 나뉘어 살아 하나의 나라 경계로 그릴 수 없어 사건의 주체로만 둠
-  startEvents: []
+  startEvents: [aboriginal-2333bc]
   endEvents: []
 # 글은 MEL-M2 칸 — 위키 ko 표제(가칭 '토레스 해협 섬 주민'을 고침 — 표제·넘겨주기 없음). from 결정 값 −2332(G2-5 — 정착 해를 문서로 못 닫음, b 10절 −1199와 다름, C-M2-6)
 - id: torres-strait-islanders
@@ -165,7 +165,7 @@
     - 카누로 섬 사이와 뉴기니섬을 오가며 교역
     - 1879년 퀸즐랜드 식민지에 편입
   mapNote: 지도에는 땅을 그리지 않음. 섬마다 따로 사는 작은 사회이고 섬들도 작아 나라 경계로 그릴 수 없어 사건의 주체로만 둠
-  startEvents: []
+  startEvents: [aboriginal-2333bc]
   endEvents: []
 # 글은 MEL-M2 칸 — 위키 ko 표제('파푸아족'은 표제·넘겨주기 없음). 하한 앞부터 이어짐(G2-5)
 - id: papuans
@@ -181,7 +181,7 @@
     - 고지대에서 일찍 농사를 시작
     - 내륙 고지대는 1930년대에 바깥과 처음 만남
   mapNote: 지도에는 땅을 그리지 않음. 수많은 작은 부족 사회로 나뉘어 하나의 나라 경계로 그릴 수 없어 사건의 주체로만 둠
-  startEvents: []
+  startEvents: [new-guinea-highlands-2333bc]
   endEvents: []
 # 글은 MEL-M2 칸 — 위키 ko 표제 없음(가칭 — '라피타'·'라피타 토기'·'라피타 문화권'도 없음). 기원전 1600년(천문 −1599)~기원전 500년(마지막 해 천문 −499, to −498 = 기원전 499년 — G2-6, en Lapita_culture)
 - id: lapita-culture
@@ -198,8 +198,8 @@
     - 폴리네시아인의 조상으로 봄
     - 이름은 누벨칼레도니의 유적지에서 따옴
   mapNote: 지도에는 땅을 그리지 않음. 섬들에 흩어진 유적으로만 알려진 문화라 경계를 그릴 수 없어 사건의 주체로만 둠
-  startEvents: []
-  endEvents: []
+  startEvents: [lapita-1600bc]
+  endEvents: [lapita-fiji-tonga-1000bc]
 # 글은 MEL-M2 칸 — 위키 ko 표제(가칭 '오스트로네시아 문화'는 표제 없음, '오스트로네시아인'은 넘겨주기 — 아메리카 M4 '타이노인' 선례로 사람 표제). from −2332·to 없음(G2-5·G2-6 — b 10절 −1999~−1598과 다름, C-M2-6). 타이완 팽창 약 기원전 3000~1500(en Austronesian_peoples)
 - id: austronesian-culture
   level: region
@@ -214,7 +214,7 @@
     - 버팀목을 단 카누와 별을 읽는 항해술
     - 폴리네시아인·미크로네시아인 대부분이 이 갈래
   mapNote: 지도에는 땅을 그리지 않음. 넓은 바다에 흩어져 여러 사회를 이룬 사람들의 큰 갈래라 경계를 그릴 수 없어 사건의 주체로만 둠
-  startEvents: []
+  startEvents: [austronesian-2333bc]
   endEvents: []
 # 글은 MEL-M2 칸 — 위키 ko 표제(가칭 '멜라네시아 사회'는 표제 없음 — 사람 표제). from 기원전 1600년(천문 −1599, b 10절 — 비스마르크 라피타 출현)
 - id: melanesian-societies
@@ -230,7 +230,7 @@
     - 마을 단위 사회와 조개 장신구 교역
     - 19세기 농장 일꾼으로 끌려가는 일이 잦았음
   mapNote: 지도에는 땅을 그리지 않음. 섬마다 작은 사회로 나뉘어 하나의 나라 경계로 그릴 수 없어 사건의 주체로만 둠
-  startEvents: []
+  startEvents: [lapita-1600bc]
   endEvents: []
 # 글은 MEL-M2 칸 — 위키 ko 표제 없음(가칭 — '솔로몬 제도 사람들'·'솔로몬 제도인'도 없음). from 기원전 1200년(천문 −1199, b 10절 — 라피타가 솔로몬에 닿음)
 - id: solomon-islanders
@@ -246,7 +246,7 @@
     - 조개 화폐와 큰 전투 카누로 알려짐
     - 1893년 영국 보호령이 됨
   mapNote: 지도에는 땅을 그리지 않음. 섬과 마을마다 작은 사회로 나뉘어 나라 경계로 그릴 수 없어 사건의 주체로만 둠
-  startEvents: []
+  startEvents: [lapita-southwest-1300bc]
   endEvents: []
 # 글은 MEL-M2 칸 — 위키 ko 표제(가칭 확정). from 기원전 1200년(천문 −1199, b 10절 — 라피타가 바누아투에 닿음)
 - id: ni-vanuatu
@@ -262,7 +262,7 @@
     - 돼지를 바쳐 지위를 오르는 등급 사회와 모래 그림
     - 1906년 영국·프랑스 공동 통치 협약
   mapNote: 지도에는 땅을 그리지 않음. 섬마다 작은 사회로 나뉘어 나라 경계로 그릴 수 없어 사건의 주체로만 둠
-  startEvents: []
+  startEvents: [lapita-southwest-1300bc]
   endEvents: []
 
 # ══ M2 SPC-M2 항목 (뉴질랜드·피지·통가·사모아·타히티·누벨칼레도니 — 2라운드) ══
@@ -286,8 +286,8 @@
     type: primary_source
     refs: ["위키백과 Kingdom of Fiji", "피지 할양 증서(1874)"]
     foundingNote: 카코바우를 왕으로 하는 입헌 정부가 선 1871년 6월 5일부터
-  startEvents: []
-  endEvents: []
+  startEvents: [cakobau-fiji-1871]
+  endEvents: [cakobau-fiji-1871]
 # 글은 SPC-M2 칸이 씀 — 위키 ko 표제 없음(칭호 규칙). 1889 베를린 조약 중립 왕국(G2-19), 1899 삼국 조약으로 나뉨 — 효력 1900(독일령 사모아 1900~), 관계 줄 없음. native는 위키 en 정보 상자 사모아어(위키 en 정보 상자는 1873~1900 — 지도는 G2-19대로 1889부터)
 - id: samoa-kingdom
   level: polity
@@ -308,8 +308,8 @@
     type: primary_source
     refs: ["위키백과 Samoan Civil War", "위키백과 Samoa Tripartite Convention", "베를린 조약(1889)"]
     foundingNote: 세 나라가 베를린 조약으로 왕국의 중립을 정한 1889년 6월 14일부터
-  startEvents: []
-  endEvents: []
+  startEvents: [samoa-crisis-1889]
+  endEvents: [samoa-tripartite-1899]
 # 글은 SPC-M2 칸이 씀 — 위키 ko 표제 없음(칭호 규칙). 1791 포마레 1세 통일(G2-15 — PYF-4963 한 조각), 1842 프랑스 보호령(vassal_of france 1842~1879), 1880 병합 → french-polynesia. native는 비움(위키 en 정보 상자는 프랑스어 'Royaume de Tahiti'뿐 — 타히티어 이름 확인 못 함)
 - id: kingdom-of-tahiti
   level: polity
@@ -330,8 +330,8 @@
     type: primary_source
     refs: ["위키백과 Kingdom of Tahiti"]
     foundingNote: 포마레 1세가 섬들을 하나로 묶은 1791년 무렵부터(위키백과 정보 상자는 1788년 또는 1791년)
-  startEvents: []
-  endEvents: []
+  startEvents: [pomare-tahiti-1791]
+  endEvents: [tahiti-annexation-1880]
 
 # ══ M2 HPO-M2 항목 (하와이·폴리네시아·미크로네시아 + 땅 없는 항목 — 2라운드) ══
 # 글은 HPO-M2 칸이 채움 — 위키 ko 표제. 1795 오아후 정복(카우아이·니하우 1810 귀속은 1만 km² 미만 — G2-3), 1893-01-17 전복(G2-16), 관계 줄 없음(republic-of-hawaii successor_of만 — K7)
@@ -350,8 +350,8 @@
     - 1840년 첫 헌법
     - 1845년부터 수도는 호놀룰루
     - 1893년 릴리우오칼라니 여왕이 쫓겨나며 끝남
-  startEvents: []
-  endEvents: []
+  startEvents: [kamehameha-1782]
+  endEvents: [hawaii-overthrow-1893]
   basis:
     type: primary_source
     refs: ["위키백과 Hawaiian Kingdom", "위키백과 하와이 왕국"]
@@ -371,8 +371,8 @@
     - 정부는 호놀룰루에 둠
     - 1895년 왕정을 되살리려는 봉기를 누름
     - 1898년 미국에 병합되며 끝남
-  startEvents: []
-  endEvents: []
+  startEvents: [hawaii-overthrow-1893]
+  endEvents: [hawaii-annexation-1898]
   basis:
     type: primary_source
     refs: ["위키백과 Republic of Hawaii", "위키백과 하와이 공화국"]
@@ -391,7 +391,7 @@
     - 아웃리거 카누와 쌍동선을 타고 다님
     - 타로·빵나무·코코넛을 배에 싣고 옮겨 심음
     - 하와이·이스터섬·뉴질랜드를 꼭짓점으로 한 삼각지대에 삶
-  startEvents: []
+  startEvents: [polynesia-800bc]
   endEvents: []
   basis:
     type: primary_source
@@ -411,7 +411,7 @@
     - 작은 산호섬과 화산섬에 흩어져 삶
     - 폰페이섬에 돌로 쌓은 난 마돌을 남김
     - 1521년 마젤란 일행이 마리아나 제도에 닿으며 유럽과 처음 만남
-  startEvents: []
+  startEvents: [marianas-1500bc]
   endEvents: []
   basis:
     type: primary_source
@@ -431,7 +431,7 @@
     - 1521년 마젤란 일행을 만남
     - 1668년부터 스페인의 선교와 다스림을 받음
     - 지금 괌과 북마리아나 제도에 삶
-  startEvents: []
+  startEvents: [marianas-1500bc]
   endEvents: []
   basis:
     type: primary_source
@@ -452,8 +452,8 @@
     - 현무암 기둥을 쌓아 인공 섬 90여 개를 만듦
     - 섬 사람들에게 무거운 공물을 거둠
     - 무너진 뒤 섬은 여러 우두머리가 나누어 다스림
-  startEvents: []
-  endEvents: []
+  startEvents: [nan-madol-1100]
+  endEvents: [isokelekel-1628]
   basis:
     type: primary_source
     refs: ["위키백과 Saudeleur dynasty", "위키백과 사우델레우르 왕조"]
@@ -472,7 +472,7 @@
     - 롱고롱고라는 글자 판을 남김
     - 1722년 네덜란드 배가 처음 닿음
     - 1888년 칠레가 섬을 병합
-  startEvents: []
+  startEvents: [rapa-nui-1200]
   endEvents: []
   basis:
     type: primary_source
@@ -492,7 +492,7 @@
     - 부족마다 우두머리가 다스림
     - 1840년 와이탕이 조약
     - 1845년부터 1872년까지 뉴질랜드 전쟁
-  startEvents: []
+  startEvents: [maori-1250]
   endEvents: []
   basis:
     type: primary_source
@@ -513,8 +513,8 @@
     - 큰 쌍동선으로 섬들을 오감
     - 1200년부터 1500년 무렵까지 가장 힘이 셈
     - 투이 통가는 신성한 왕으로 받들어짐
-  startEvents: []
-  endEvents: []
+  startEvents: [tui-tonga-950]
+  endEvents: [tupou-tonga-1845]
   basis:
     type: primary_source
     refs: ["위키백과 Tuʻi Tonga Empire", "위키백과 통가 제국"]
@@ -534,8 +534,8 @@
     - 카푸라는 금기로 질서를 지킴
     - 산에서 바다까지 땅을 길게 나누어 물과 농사를 다스림
     - 타로를 기르고 바닷가에 물고기 못을 만듦
-  startEvents: []
-  endEvents: []
+  startEvents: [hawaii-settlement-1000]
+  endEvents: [kamehameha-1782]
   basis:
     type: primary_source
     refs: ["위키백과 Ancient Hawaii", "위키백과 고대 하와이"]
@@ -555,8 +555,8 @@
     - 마라에라는 돌 제단에서 제사를 지냄
     - 1767년 영국 배가 처음 닿음
     - 1791년 무렵 포마레 1세가 섬들을 하나로 묶음
-  startEvents: []
-  endEvents: []
+  startEvents: [east-polynesia-300]
+  endEvents: [pomare-tahiti-1791]
   basis:
     type: primary_source
     refs: ["위키백과 Kingdom of Tahiti", "위키백과 Ancient Hawaii"]
