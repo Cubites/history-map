@@ -27,6 +27,7 @@ import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync, append
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { parse as parseYaml } from 'yaml';
+import { getHeapStatistics } from 'node:v8';
 import { ROOT, createContext } from './context.ts';
 import { ChangedUsageError, RANGE_CHECKS, describePlan, planChanged, type ChangedPlan } from './changed.ts';
 import type { Check, Item, Options } from './types.ts';
@@ -35,6 +36,13 @@ import type { Check, Item, Options } from './types.ts';
 const KNOWN_GROUPS = ['places', 'shapes', 'events', 'lines', 'colors', 'years', 'spelling'];
 /** 느려서 --ci나 --only로 직접 고를 때만 도는 검사 id */
 const CI_ONLY = new Set(['gen']);
+/** TEST_GEO_MEM=1이면 검사마다 끝난 뒤 힙·RSS를 표준 오류에 한 줄(메모리 부족 원인 찾기용, 2026-11-18 개선 ⑤) */
+const memLine = (id: string) => {
+  (globalThis as { gc?: () => void }).gc?.(); // --expose-gc면 치운 뒤(살아 있는 양)
+  const m = process.memoryUsage();
+  const mb = (n: number) => Math.round(n / 1048576);
+  process.stderr.write(`[힙] ${id} 끝: 힙 ${mb(m.heapUsed)}MB / ${mb(m.heapTotal)}MB · RSS ${mb(m.rss)}MB · 한도 ${mb(getHeapStatistics().heap_size_limit)}MB\n`);
+};
 
 const USAGE = `사용: npm run test:geo -- [--region <europe|east-asia|항목 파일 이름>] [--years 1500-1600] [--only places,lines] [--skip islands] [--ci] [--update-baseline <검사 id>] [--report <경로>] [--changed [<기준 커밋>]] [--focus <항목 id,…|@파일>]`;
 
@@ -361,6 +369,7 @@ async function main(): Promise<number> {
         const allow = readAllow(check, group);
         const base = check.selfBaseline ? new Set<string>() : readBaseline(check, group);
         const res = await check.run(ctx, optFor(check));
+        if (process.env.TEST_GEO_MEM) memLine(check.id);
         o.checked = res.checked;
         o.notes = res.notes ?? [];
         o.skipped = res.skipped ?? 0;

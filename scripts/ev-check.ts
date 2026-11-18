@@ -1,6 +1,7 @@
 // 사건 점검 도우미 (npm run ev:check): 사건 초안·반영 에이전트가 묶음마다 새로 짜던 통계·글 길이·인용 저자·새 이름·겹침 즉석 스크립트(stats.mjs·val.mjs·table.mjs 등)와
 // 사실 대조가 손으로 잡던 [서지]·[표기]·[겹침] 지적 가운데 기계로 잡을 수 있는 것을 한 번에 미리 본다. 사건 데이터·사이트 글은 고치지 않는다(읽기만).
-// 사용: npm run ev:check -- [<사건 파일 이름|id 앞머리> …] [--all] [--base <git rev>] [--dup] [--with <폴더> …]
+// 사용: npm run ev:check -- [<사건 파일 이름|id 앞머리> …] [--all] [--base <git rev>] [--dup] [--with <폴더> …] [--wiki]
+//       npm run ev:check -- --table <지시문 .md> [--table …]   (고정 제목 표만 — ⑦ 해 칸, 아래)
 //   - 인자 없음: 작업 트리의 사건 가운데 기준(--base, 기본 HEAD)과 내용이 다르거나 새로 생긴 사건만 본다(초안·반영 뒤에 돌리는 쓰임). 바뀐 사건이 없으면 그렇게 알리고 끝(0).
 //     마지막 커밋의 사건을 보려면 --base HEAD~1. 모든 사건은 --all.
 //   - 인자: 사건 파일 이름의 앞부분(me-05, me-05-mamluk…yaml)이면 그 파일의 사건 모두, 아니면 사건 id 앞부분. 맞는 사건이 없는 인자는 사용법 오류(2).
@@ -22,8 +23,14 @@
 //      (나) 같은 subjects 나라를 둘 이상 함께 둔 사건 쌍(OVERLAP_COMMON보다 많은 사건에 든 큰 나라는 세지 않음) 가운데 시작 해가 OVERLAP_YEARS 안이고 서로 「제목」으로 가리키지 않은 것(같은 일을 두 번 쓴 후보).
 //   ⑥ (--dup일 때만) 고른 사건을 저장소 사건 전부·--with 초안·나라 항목 글과 견준다: 같은 문장(항목), 말을 바꾼 같은 사실 후보와 같은 사람의 재위 해 어긋남 후보(경고 — 종료 코드에 넣지 않음).
 //      규칙·기준·한계는 scripts/ev-dup.ts 머리 주석. 경고는 '같은 일을 다른 쪽에서 쓴 정상 문장'도 나오니 읽고 고를 것만 고친다(뒤쪽 사건을 「제목」(앞의 사건)으로 가리키며 한 구절로 줄이기).
+//   ⑦ 해 칸(늘 봄, 2026-11-18 개선 ⑤): 제목 끝 괄호 '(기원전 A~기원전 B)'가 사건 기간(A = year)인데 B와 endYear가 기원전 쪽에서 한 해 어긋남, id 끝 `-NNNbc`가 year와 한 해 어긋남
+//      (천문 연도: 기원전 N년 = 1−N). 규칙·잰 값·한계는 scripts/ev-years.ts 머리 주석.
+//   --table <md>: 사건 yaml 대신 지시문의 고정 제목 표(`id` | 시작~끝 천문 연도 | 제목(기원전 …) 줄)를 읽어 ⑦만 본다 — 표의 기간 칸·제목 괄호·id 끝 해가 하나라도 다르면 항목.
+//      고정 제목 표를 만들거나 고친 뒤 초안을 돌리기 전에 쓴다. 다른 인자와 함께 쓸 수 없다. 출력은 표준 출력만(보고 파일을 쓰지 않음), 종료 0/1/2는 아래와 같음.
+//   ⑧ (--wiki일 때만, 네트워크) 고른 사건의 sources에 적은 위키백과 문서가 그 언어판에 없거나(404) 동음이의 문서면 항목([서지]). 읽는 꼴·캐시·한계는 scripts/ev-wiki.ts 머리 주석.
+//      위키백과에 닿지 못하면 '못 봄'을 알리고 항목으로 세지 않는다. 사건 100개쯤 처음 10초 안팎, 다시 돌리면 캐시로 1초 안.
 // 출력: 표준 출력에 몇 줄 요약(갈래별 수와 앞 몇 건). 전체는 .cache/ev-check/report.md(사람용)·report.json(기계용).
-// 종료 코드: 0 찾은 것 없음, 1 항목 있음(②~⑤, ⑥ 같은 문장), 2 사용법 오류. ⑥의 경고는 종료 코드에 넣지 않는다. (3 예산으로 끊김은 쓰지 않음: 사건 전부 약 1,000개도 수 초)
+// 종료 코드: 0 찾은 것 없음, 1 항목 있음(②~⑤·⑦·⑧, ⑥ 같은 문장), 2 사용법 오류. ⑥의 경고는 종료 코드에 넣지 않는다. (3 예산으로 끊김은 쓰지 않음: 사건 전부 약 1,000개도 수 초)
 // 한계: ③은 이름 뼈대가 우연히 같은 다른 저자를 '있음'으로 보아 놓치고, 왕·장군을 '적었다'(비문)로 든 문장도 후보로 낸다(비문 책이 sources에 있으면 빠짐).
 //   ④는 괄호 원어가 붙은 이름만 본다(원어 없이 새로 쓴 이름은 못 잡음). 한글 낱말 수는 원어 낱말 수에 맞춰 자르므로 '아시리아 왕 X(…)'에서 앞말이 섞일 수 있다.
 //   ⑤(나)는 후보일 뿐 같은 일을 다른 쪽에서 쓴 정상 사건도 나온다.
@@ -33,10 +40,12 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parse as parseYaml } from 'yaml';
 import { findDup, splitSentences, type DupDoc } from './ev-dup.ts';
+import { checkEventYears, checkTableRow, tableRows } from './ev-years.ts';
+import { WIKI_LABEL, wikiRefs, wikiStatus, type WikiRef } from './ev-wiki.ts';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const OUT_DIR = path.join(ROOT, '.cache/ev-check');
-const USAGE = '사용: npm run ev:check -- [<사건 파일 이름|id 앞머리> …] [--all] [--base <git rev>] [--dup] [--with <폴더> …]';
+const USAGE = '사용: npm run ev:check -- [<사건 파일 이름|id 앞머리> …] [--all] [--base <git rev>] [--dup] [--with <폴더> …] [--wiki]\n      npm run ev:check -- --table <지시문 .md> [--table …]';
 
 /** 제목이 이 백분위(저장소 모든 사건 제목 길이 기준)보다 길면 항목. 박은 글자 수 대신 저장소 분포를 쓴다(문서에 제목 길이 규칙이 없어서). 95는 '다른 사건 스무 개 중 하나보다 긴' 정도 */
 const TITLE_PERCENTILE = 95;
@@ -56,6 +65,8 @@ interface Ev {
   file: string;
   year: number;
   end: number;
+  /** yaml의 endYear(없으면 null) */
+  endYear: number | null;
   title: string;
   summary: string;
   subjects: string[];
@@ -71,7 +82,7 @@ interface Ev {
 }
 
 interface Found {
-  kind: 'length' | 'cite' | 'name' | 'ref' | 'overlap' | 'same' | 'fact' | 'reign';
+  kind: 'length' | 'cite' | 'name' | 'ref' | 'overlap' | 'same' | 'fact' | 'reign' | 'year' | 'wiki';
   id: string;
   msg: string;
 }
@@ -100,6 +111,7 @@ function parseEvents(file: string, text: string): Ev[] {
       file,
       year,
       end: e.endYear === undefined || e.endYear === null ? year : Number(e.endYear),
+      endYear: e.endYear === undefined || e.endYear === null ? null : Number(e.endYear),
       title: ko(e.title),
       summary: ko(e.summary),
       subjects: ((e.subjects as unknown[] | undefined) ?? []).map(String),
@@ -308,7 +320,7 @@ function loadEntities(): Map<string, EntityText> {
 
 // ── 실행 ───────────────────────────────────────────────────────────
 function parseArgs(argv: string[]) {
-  const a = { names: [] as string[], all: false, base: 'HEAD', dup: false, with: [] as string[] };
+  const a = { names: [] as string[], all: false, base: 'HEAD', dup: false, with: [] as string[], table: [] as string[], wiki: false };
   for (let i = 0; i < argv.length; i++) {
     const f = argv[i];
     if (f === '--all') a.all = true;
@@ -317,21 +329,46 @@ function parseArgs(argv: string[]) {
       if (!v || v.startsWith('--')) throw new UsageError('--base 다음에 git rev가 필요');
       a.base = v;
     } else if (f === '--dup') a.dup = true;
+    else if (f === '--wiki') a.wiki = true;
     else if (f === '--with') {
       const v = argv[++i];
       if (!v || v.startsWith('--')) throw new UsageError('--with 다음에 폴더가 필요');
       a.with.push(v);
       a.dup = true;
+    } else if (f === '--table') {
+      const v = argv[++i];
+      if (!v || v.startsWith('--')) throw new UsageError('--table 다음에 지시문 .md 파일이 필요');
+      a.table.push(v);
     } else if (f === '--help' || f === '-h') throw new UsageError('');
     else if (f.startsWith('--')) throw new UsageError(`모르는 인자 ${f}`);
     else a.names.push(f);
   }
   if (a.all && a.names.length) throw new UsageError('--all과 사건 이름을 함께 쓸 수 없음');
+  if (a.table.length && (a.all || a.names.length || a.dup || a.wiki || a.base !== 'HEAD')) throw new UsageError('--table은 다른 인자와 함께 쓸 수 없음');
   return a;
 }
 
-function main(): number {
+/** --table: 지시문의 고정 제목 표만 ⑦로 본다 */
+function mainTable(files: string[]): number {
+  let rows = 0;
+  let bad = 0;
+  for (const f of files.flatMap(expandGlob)) {
+    if (!existsSync(f)) throw new UsageError(`--table 파일이 없음: ${f}`);
+    const rs = tableRows(path.basename(f), readFileSync(f, 'utf8'));
+    rows += rs.length;
+    for (const r of rs)
+      for (const msg of checkTableRow(r)) {
+        bad++;
+        console.log(`  - ${r.file}:${r.line} \`${r.id}\` ${msg}`);
+      }
+  }
+  console.log(`ev:check --table: 고정 제목 줄 ${rows}개 · ⑦ 해 칸 항목 ${bad}${rows ? '' : ' — 표 줄을 못 찾음(`id` 칸·시작~끝 칸·제목(해) 칸이 한 줄에 있어야 함)'}`);
+  return bad ? 1 : 0;
+}
+
+async function main(): Promise<number> {
   const args = parseArgs(process.argv.slice(2));
+  if (args.table.length) return mainTable(args.table);
   const t0 = Date.now();
   const all = loadAll();
   // --with 초안: 저장소와 같은 id·같은 내용은 건너뛰고, 내용이 다르면 --with 쪽을 새 글로, 없는 id는 더함
@@ -498,6 +535,23 @@ function main(): number {
     }
   }
 
+  // ⑦ 해 칸(scripts/ev-years.ts)
+  for (const e of picked) for (const msg of checkEventYears(e)) found.push({ kind: 'year', id: e.id, msg });
+
+  // ⑧ 위키백과 문서(--wiki, 네트워크)
+  if (args.wiki) {
+    const refs: (WikiRef & { id: string })[] = picked.flatMap((e) => e.sources.flatMap((src) => wikiRefs(src).map((r) => ({ ...r, id: e.id }))));
+    const w = await wikiStatus(refs, OUT_DIR);
+    let bad = 0;
+    for (const r of refs) {
+      const st = w.status.get(`${r.lang}|${r.title}`);
+      if (!st || st === 'ok') continue;
+      bad++;
+      found.push({ kind: 'wiki', id: r.id, msg: `[서지] ${r.lang}.wikipedia '${r.title}' — ${WIKI_LABEL[st]} (sources: ${r.src.slice(0, 80)})` });
+    }
+    stats.push(`⑧ 위키백과 문서: 참조 ${refs.length}개(물음 ${w.asked}번·캐시 ${w.cached}) · 없음·동음이의 ${bad}${w.errors.length ? ` · 못 봄: ${w.errors.join('; ')}` : ''}`);
+  }
+
   // ⑥ 되풀이·해 어긋남(--dup)
   const warn: Found[] = [];
   if (args.dup) {
@@ -513,7 +567,7 @@ function main(): number {
   }
 
   // 출력
-  const KINDS: [Found['kind'], string][] = [['length', '② 글 길이'], ['cite', '③ 인용 저자가 sources에 없음'], ['name', '④ 새 이름·표기 갈림'], ['ref', '⑤ 「제목」 가리킴'], ['overlap', '⑤ 겹침 후보'], ...(args.dup ? ([['same', '⑥ 같은 문장']] as [Found['kind'], string][]) : [])];
+  const KINDS: [Found['kind'], string][] = [['length', '② 글 길이'], ['cite', '③ 인용 저자가 sources에 없음'], ['name', '④ 새 이름·표기 갈림'], ['ref', '⑤ 「제목」 가리킴'], ['overlap', '⑤ 겹침 후보'], ['year', '⑦ 해 칸(천문 연도)'], ...(args.wiki ? ([['wiki', '⑧ 위키백과 문서(서지)']] as [Found['kind'], string][]) : []), ...(args.dup ? ([['same', '⑥ 같은 문장']] as [Found['kind'], string][]) : [])];
   const WARN: [Found['kind'], string][] = [['fact', '⑥ 경고 — 같은 사실 후보(점수 높은 순)'], ['reign', '⑥ 경고 — 재위 해 어긋남 후보']];
   mkdirSync(OUT_DIR, { recursive: true });
   const md: string[] = [`# ev:check 보고 (${new Date().toISOString().slice(0, 16)})`, '', '## ① 통계', '', ...stats.map((l) => `- ${l}`), `- 파일별: ${[...byFile].map(([f, n]) => `${f} ${n}`).join(' · ')}`, ''];
@@ -535,7 +589,7 @@ function main(): number {
   console.log(`  ${stats[1]}`);
   console.log(`  ${stats[2]}`);
   console.log(`  ${stats[3]}`);
-  if (args.dup) console.log(`  ${stats[4]}`);
+  for (const l of stats.slice(4)) console.log(`  ${l}`);
   for (const [k, label] of [...KINDS, ...(args.dup ? WARN : [])]) {
     const xs = (k === 'fact' || k === 'reign' ? warn : found).filter((f) => f.kind === k);
     if (!xs.length) continue;
@@ -547,7 +601,7 @@ function main(): number {
 }
 
 try {
-  process.exitCode = main();
+  process.exitCode = await main();
 } catch (e) {
   if (e instanceof UsageError) {
     if (e.message) console.error(`ev:check: ${e.message}`);

@@ -1,6 +1,6 @@
 // 넓이 재기 도구: 고른 영역·해에서 나라별 영토 넓이, 빈 땅, 겹침, (선택) 원본과 바뀐 넓이를 잰다.
 // 쓰임: npm run area:geo -- --year <Y[,Y2…]> (--box 서,남,동,북 | --pieces <조각 id,…> | --poly <geojson 경로>)
-//         [--entity <id,…>] [--base <원본 저장소 경로>] [--no-land] [--formula exact|events] [--json] [--out <파일>]
+//         [--entity <id,…>] [--base <원본 저장소 경로>] [--no-land] [--formula exact|events] [--holes] [--json] [--out <파일>]
 //  - 영토: data/geo/<id>.geojson. 그 해 Y에 효력 있는 버전은 properties.from ≤ Y < to(null은 끝없음). 영역 상자와 겹치는 파일만 읽는다(상자 색인은 .cache/area-geo/에 둠).
 //  - 영역: --box(경도·위도 상자), --pieces(data/base/fragments/*.topo.json의 조각 id), --poly(Polygon/MultiPolygon geojson). 기본으로 땅(land-50m)과 겹친 부분만 잰다(--no-land면 그대로).
 //  - 넓이 공식(--formula, 2026-11-18 개선 ③): 기본 exact = 경위도 직선 변을 따라 cos(위도)를 적분한 넓이(구면 근사, 1도 = 111.32 km).
@@ -12,6 +12,11 @@
 //  - --entity X: X 줄을 맨 위에 "X 땅 · 이웃이 덮은 땅(나라별) · 빈 땅 → X에서 빠진 땅(= 이웃 + 빈 땅)"으로 보인다.
 //  - --base <원본 경로>: 같은 영역·해에서 원본의 같은 항목과 비교해 이번에 바뀐 넓이(나라마다 더해진·빠진 따로, 합 = 대칭차). 원본은 읽기만 한다.
 //  - 영역 가운데 점의 정밀도 구역은 data/tests/zones.yaml(등급·끝 기준 landKm2)에서 scripts/test-geo/zones.ts로 읽는다. 없으면 일반(1만 km²)으로 본다. 빠진 땅·바뀐 넓이가 끝 기준 이상이면 '끝 기준 넘음'.
+//  - --holes(2026-11-18 개선 ⑤): 해마다 '둘레가 모두 칠한 땅인 빈 땅'(칠한 땅 합집합 — 땅으로 자른 것 — 의 안쪽 고리, 호수 빼고)을 조각마다 넓이·상자로 낸다.
+//    빈 땅 합 = voids 넓이 합이 맞아도 칼선 밖 voids로 넣은 땅이 사방이 칠해진 구멍이면 칸 땅 재기·합치기가 놓치던 것을 잡는다.
+//    한계(잰 것): 사하 F7 레레 띠 11,382 km²는 세 쪽이 칠한 땅이고 북쪽만 좁은 목(북위 16.6~17.0°)으로 내내 비운 사막에 이어진 '만'이라 구멍으로 나오지 않는다
+//    (F7 고치기 전 칼선으로 되살린 사본에서 1324·1502 구멍 0 — 빈 땅만 14,751 늘어남). 그런 꼴은 틀 COMMON 5절 '둘레를 본다' 줄(pt-dh 한 점)이 막는다.
+//    해안·영역 가장자리에 닿은 빈 땅은 바깥 고리라 세지 않는다(영역을 넉넉히 잡을 것). 1 km² 밑 조각은 뺀다. 결정으로 일부러 비운 둘러싸인 땅(자치 소국 따위)도 나오니 voids 이유와 견준다.
 //  - --json: 기계용 JSON 한 덩어리만 표준 출력(인계 폴더 tools/approx-check.mjs가 씀). --out: 자세한 표를 파일로.
 // 종료 코드: 0 정상, 2 인자 오류.
 import { createHash } from 'node:crypto';
@@ -32,7 +37,7 @@ type BBox = [number, number, number, number];
 // ── 인자 ────────────────────────────────────────────────────
 
 class UsageError extends Error {}
-const USAGE = '사용: npm run area:geo -- --year <Y[,Y2…]> (--box 서,남,동,북 | --pieces <조각 id,…> | --poly <geojson 경로>) [--entity <id,…>] [--base <원본 저장소 경로>] [--no-land] [--formula exact|events] [--json] [--out <파일>]';
+const USAGE = '사용: npm run area:geo -- --year <Y[,Y2…]> (--box 서,남,동,북 | --pieces <조각 id,…> | --poly <geojson 경로>) [--entity <id,…>] [--base <원본 저장소 경로>] [--no-land] [--formula exact|events] [--holes] [--json] [--out <파일>]';
 
 interface Args {
   years: number[];
@@ -44,11 +49,12 @@ interface Args {
   land: boolean;
   formula: 'exact' | 'events';
   json: boolean;
+  holes: boolean;
   out: string | null;
 }
 
 function parseArgs(argv: string[]): Args {
-  const flags = new Set(['no-land', 'json']);
+  const flags = new Set(['no-land', 'json', 'holes']);
   const vals = new Map<string, string>();
   for (let i = 0; i < argv.length; i++) {
     const a = argv[i];
@@ -78,7 +84,7 @@ function parseArgs(argv: string[]): Args {
   if ([box, pieces, poly].filter((x) => x != null).length !== 1) throw new UsageError('영역은 --box, --pieces, --poly 중 하나만');
   const formula = vals.get('formula') ?? 'exact';
   if (formula !== 'exact' && formula !== 'events') throw new UsageError('--formula는 exact 또는 events');
-  return { years, box, pieces, poly, entities: list(vals.get('entity')), base: vals.get('base') ?? null, land: !vals.has('no-land'), formula, json: vals.has('json'), out: vals.get('out') ?? null };
+  return { years, box, pieces, poly, entities: list(vals.get('entity')), base: vals.get('base') ?? null, land: !vals.has('no-land'), formula, json: vals.has('json'), holes: vals.has('holes'), out: vals.get('out') ?? null };
 }
 
 // ── 넓이 ────────────────────────────────────────────────────
@@ -297,6 +303,8 @@ interface YearResult {
   byEntity: Neighbor[];
   entities: Record<string, EntityResult>;
   changed: { totalKm2: number; addedKm2: number; removedKm2: number; overLimit: boolean; byEntity: ChangedRow[] } | null;
+  /** --holes: 둘레가 모두 칠한 땅인 빈 땅 조각(넓이 큰 순) */
+  holes?: { km2: number; box: BBox }[];
 }
 
 const round = (x: number) => Math.round(x * 10) / 10;
@@ -367,8 +375,22 @@ function measureYear(year: number, L: Multi, box: BBox, ids: string[], baseIds: 
     changed = { totalKm2: addedKm2 + removedKm2, addedKm2, removedKm2, overLimit: rows.some((r) => r.changedKm2 >= zone.landKm2), byEntity: rows };
     for (const x of a.entities) entities[x].changed = rows.find((r) => r.id === x) ?? { id: x, addedKm2: 0, removedKm2: 0, changedKm2: 0 };
   }
-  return { year, landKm2, emptyKm2, overlapKm2, checkGapKm2, byEntity, entities, changed };
+  let holes: YearResult['holes'];
+  if (a.holes) {
+    // 칠한 땅 합집합 U의 안쪽 고리 = 사방이 칠한 땅인 빈 곳. 땅과 겹친 부분만(호수 빼기), 그 안에 칠한 섬이 있으면 뺀다
+    holes = [];
+    for (const poly of U)
+      for (const ring of poly.slice(1)) {
+        const h = diff(intersect(L, [[ring]], `${year} 구멍 땅`), U, `${year} 구멍 안 섬`);
+        const km2 = area(h);
+        if (km2 >= HOLE_MIN_KM2) holes.push({ km2: round(km2), box: bboxOf(h).map((v) => Math.round(v * 100) / 100) as BBox });
+      }
+    holes.sort((p, q) => q.km2 - p.km2);
+  }
+  return { year, landKm2, emptyKm2, overlapKm2, checkGapKm2, byEntity, entities, changed, ...(holes ? { holes } : {}) };
 }
+/** --holes에서 이보다 작은 구멍은 뺀다(polyclip 이음매 잡음) */
+const HOLE_MIN_KM2 = 1;
 
 // ── 출력 ────────────────────────────────────────────────────
 
@@ -387,6 +409,7 @@ function summaryLines(y: YearResult, a: Args, zone: ZoneInfo): string[] {
   }
   out.push(`${t} ${a.land ? '영역 땅' : '영역(땅 자르기 없음)'} ${n(y.landKm2)} km² · 빈 땅(어느 영토에도 안 덮임) ${n(y.emptyKm2)} km²${y.overlapKm2 >= 0.5 ? ` · 겹침 ${n(y.overlapKm2)} km²` : ''}`);
   if (checkBad(y)) out.push(`${t} [검산 어긋남] 영역 땅 − (나라 합 − 겹침 + 빈 땅) = ${n(y.checkGapKm2)} km²${a.formula === 'events' ? ' — --formula events는 나눠 잰 합이 맞지 않음(기본 exact로 다시 잴 것)' : ' — 계산 실패나 세 나라 이상 겹침'}`);
+  if (y.holes) out.push(`${t} ${y.holes.length ? `[구멍] 둘레가 모두 칠한 땅인 빈 땅 ${y.holes.length}조각 · 합 ${n(y.holes.reduce((s, h) => s + h.km2, 0))} km²: ${y.holes.slice(0, 5).map((h) => `${n(h.km2)} (${h.box.join(',')})`).join(' · ')}${y.holes.length > 5 ? ` 외 ${y.holes.length - 5}` : ''} — voids 이유와 견줌(칼선 밖·사막이라 적었으면 구멍)` : '구멍(둘레가 모두 칠한 빈 땅) 0'}`);
   const top = y.byEntity.slice(0, 8).map((r) => `${r.id} ${n(r.km2)}`).join(', ');
   const rest = y.byEntity.slice(8);
   out.push(`${t} 나라별 영역 안: ${top || '(없음)'}${rest.length ? `, 나머지 ${rest.length}개 ${n(rest.reduce((s, r) => s + r.km2, 0))}` : ''}`);

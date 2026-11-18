@@ -153,14 +153,19 @@ function strictGapTests(region: MultiCoords, cfg: ZonesConfig): Pick<TestValues,
 
 // 구역별 검사 값 메모 (2026-11-18 개선 ① 긴 명령 끊김): strictGapTests는 gaps 구역(약 790개)마다 정밀도 구역과 polyclip 교차·차집합을 하는데
 // 캐시가 없어 gaps를 부를 때마다(해를 한 해로 좁혀도) 약 5분이 걸렸다. 결과(두 수)를 구역 도형 열쇠(keyOf)로 .cache/test-geo/gap-zone-tests.json에 둔다.
-// 열쇠 판(salt): 이 파일 원문 + data/tests/zones.yaml 원문 + polyclip-ts 판 — 하나라도 바뀌면 메모를 버리고 다시 계산한다(값은 계산한 것과 같다).
+// 열쇠 판(salt): strictGapTests 원문 + build-data/geo.ts·test-geo/zones.ts 원문 + data/tests/zones.yaml 원문 + polyclip-ts 판 — 하나라도 바뀌면 메모를 버리고 다시 계산한다(값은 계산한 것과 같다).
 // 계산 도중 10초마다 저장하므로, 첫 계산이 명령 시간 한도에 끊겨도 다음 실행이 남은 구역만 이어 계산한다.
 const GAP_TESTS_FILE = path.join(ROOT, '.cache/test-geo/gap-zone-tests.json');
 function gapTestsMemo() {
   let salt = '';
   try {
+    // 2026-11-18 개선 ⑤: 예전엔 이 파일 원문 전체를 넣어, gaps와 무관한 곳을 고쳐도 메모 1,224개가 모두 버려지고 다시 계산(약 5분·0.5GB 더)되었다.
+    // 값을 정하는 것만 넣는다: strictGapTests 원문, 그것이 부르는 넓이·상자 함수 파일(build-data/geo.ts)과 구역 읽기(zones.ts), 구역 파일, polyclip 판
     salt = hashOf(
-      readFileSync(fileURLToPath(import.meta.url)),
+      'strictGapTests 2',
+      strictGapTests.toString(),
+      readFileSync(path.join(ROOT, 'scripts/build-data/geo.ts')),
+      readFileSync(path.join(ROOT, 'scripts/test-geo/zones.ts')),
       readFileSync(path.join(ROOT, 'data/tests/zones.yaml')),
       String(JSON.parse(readFileSync(path.join(ROOT, 'node_modules/polyclip-ts/package.json'), 'utf8')).version),
     );
@@ -222,10 +227,46 @@ function readGapBaseline(): Map<string, GapBase> {
   return m;
 }
 
+// 빈 땅 검사 구역은 자식 프로세스에서 모은다(2026-11-18 개선 ⑤ — 오세아니아 사건 1묶음 적용 대행의 '구간 1 gaps 힙 부족(종료 134)').
+// 잰 것: scripts/geo/area-list.mjs를 이 프로세스에 불러오면 모든 권역 생성기와 그 바탕 자료가 살아 있는 힙 약 2.2GB를 차지하고 test:geo가 끝날 때까지 남는다
+//   (gaps 앞 places까지 약 0.7GB → gaps 구역 준비 뒤 3.5GB → 뒤 검사들 내내 3.8~4.1GB, 기본 한도 약 4.2GB). 그 위에 메모에 없는 구역의 검사 값 계산(구역 178개, 약 0.5GB·100초)이
+//   얹히면 한도를 넘었다. gaps가 쓰는 것은 구역 목록(이름·권역·도형·minus·from·to)뿐이라 자식이 JSON 파일로 넘기고 끝나면 자료가 함께 사라진다.
+//   결과·캐시 열쇠는 그대로다(JSON은 수를 바이트 그대로 되돌림 — keyOf가 같은 값). 자식 시간 약 10초.
+interface GapZone { area: string; name: string; zone: MultiCoords; minus: string[]; from: number | null; to: number | null }
+const GAP_ZONES_CHILD = `
+import { writeFileSync } from 'node:fs';
+import { pathToFileURL } from 'node:url';
+const [dir, out] = process.argv.slice(1);
+const { AREAS } = await import(pathToFileURL(dir + '/area-list.mjs').href);
+const { collectGapZones } = await import(pathToFileURL(dir + '/engine.mjs').href);
+writeFileSync(out, JSON.stringify(collectGapZones(AREAS).map((z) => ({ area: z.area, name: z.name, zone: z.zone, minus: [...z.minus], from: z.from, to: z.to }))));
+`;
+function gapZonesInChild(): GapZone[] {
+  const dir = path.join(ROOT, '.cache/test-geo');
+  mkdirSync(dir, { recursive: true });
+  const out = path.join(dir, `gap-zones-${process.pid}.json`);
+  try {
+    const r = spawnSync(process.execPath, ['--input-type=module', '-e', GAP_ZONES_CHILD, path.join(ROOT, 'scripts/geo').replaceAll('\\', '/'), out], { cwd: ROOT, encoding: 'utf8', stdio: ['ignore', 'ignore', 'pipe'], maxBuffer: 1 << 26 });
+    if (r.status !== 0 || !existsSync(out)) {
+      const lines = (r.stderr ?? '').split(/\r?\n/).filter((l) => l.trim());
+      const first = lines.find((l) => /^\w*Error\b|오류|권역 /.test(l.trim())) ?? lines.find((l) => !/^Node\.js v/.test(l)) ?? (r.error ? String(r.error) : '이유 모름');
+      throw new Error(`빈 땅 검사 구역을 자식 프로세스에서 모으지 못함(종료 ${r.status}): ${first.trim().slice(0, 200)}`);
+    }
+    return JSON.parse(readFileSync(out, 'utf8')) as GapZone[];
+  } finally {
+    rmSync(out, { force: true });
+  }
+}
+/** TEST_GEO_MEM=1(그리고 node --expose-gc)이면 gaps 단계마다 살아 있는 힙을 표준 오류에 */
+const gapMem = (label: string) => {
+  if (!process.env.TEST_GEO_MEM) return;
+  (globalThis as { gc?: () => void }).gc?.();
+  process.stderr.write(`[힙] gaps ${label}: ${Math.round(process.memoryUsage().heapUsed / 1048576)}MB\n`);
+};
+
 async function runGaps(_ctx: Context, opt: Options): Promise<CheckResult> {
-  const { AREAS } = await import('../../geo/area-list.mjs');
-  const { collectGapZones } = await import('../../geo/engine.mjs');
-  const zones = collectGapZones(AREAS);
+  gapMem('시작');
+  const zones = gapZonesInChild();
   const precision = loadZones();
   const stats: RunStats = { hits: 0, computed: 0 };
   const t0 = Date.now();
@@ -237,6 +278,7 @@ async function runGaps(_ctx: Context, opt: Options): Promise<CheckResult> {
     regions.push([name, earlier.length ? (polyclip.difference(clippedZones[i] as polyclip.Geom, ...earlier) as MultiCoords) : clippedZones[i]]);
   }
   const t1 = Date.now();
+  gapMem('구역 준비 뒤');
   // 칸(구역 gapZone)마다 겹치는 정밀도 구역들 가운데 가장 엄격한 검사 값(한 번만 계산, 메모 — gapTestsMemo). 조각이 없으면(해안으로 자르니 비었음) 기본값
   const memo = gapTestsMemo();
   let zoneTests: Pick<TestValues, 'gapMinKm2' | 'gapGrowKm2'>[];
@@ -274,6 +316,7 @@ async function runGaps(_ctx: Context, opt: Options): Promise<CheckResult> {
   }
   const ids = [...jobs.keys()];
   const t3 = Date.now();
+  gapMem(`칸 만든 뒤(칸 ${cells.length}·계산 ${jobs.size}종)`);
   const done = await runCached<string | null>('gapsZone', [...jobs.values()], hashOf(readFileSync(path.join(ROOT, 'scripts/check-gaps.ts'))), stats);
   const partOf = new Map(ids.map((id, i) => [id, done[i]]));
 
