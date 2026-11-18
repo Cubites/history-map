@@ -4,7 +4,7 @@
 // .ts 스크립트가 가져올 때 tsc가 쓰는 타입 선언은 engine.d.mts에 있다(.ts가 쓰는 export만).
 // 영토는 기간마다 서로 배타라고 본다: 빈 땅 채우기는 구역에서 다른 모든 나라를 빼고, 틈새 구멍 메우기는 다른 나라가 든 구멍을 남긴다
 // (빌드의 겹침 검사도 모든 영토 쌍을 본다). 그래서 나라와 겹치는 지역 폴리곤(DESIGN.md §7의 행정구역)은 같은 기간의 나라 폴리곤과 함께 쓸 수 없다.
-import { writeFileSync, mkdirSync, readdirSync, rmSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, readdirSync, renameSync, rmSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { D, U, opKey, peekOp, polyclip, runParallel, serveParallel, withOpKey, workerCount } from './lib.mjs';
 
@@ -486,10 +486,15 @@ serveParallel('engine-holes', (data, i) => {
   keepHoles(data.all, v.entityId, v.from, v.to, v.multi, (h, o) => polyclip.intersection([[h]], o.multi).length > 0, () => {});
 });
 
-// data/geo 쓰기: 지우기 전 대조 → 기존 geojson 삭제 → 틈새 구멍 메우기 → 나라마다 <id>.geojson(FeatureCollection 하나, 버전마다 한 줄 + 개행).
+// data/geo 쓰기: 지우기 전 대조 → 틈새 구멍 메우기 → 나라마다 <id>.geojson(FeatureCollection 하나, 버전마다 한 줄 + 개행).
 // sources는 mergeAreas가 만든 나라 id → 출처 문구 표다. 없는 나라는 ESTIMATED를 쓴다
 // homes(mergeAreas, 앞 권역 나라 늘리기)의 나라는 늘리기 전 버전을 data/geo/home/<id>.geojson에 같은 방식(구멍 메우기 포함)으로 쓴다.
 // 빌드·검사 스크립트는 data/geo 바로 아래만 읽으므로 home 파일은 나라로 읽히지 않는다(읽는 곳: 전쟁 쪽과 compare:geo)
+// 임시 자리에 다 쓴 뒤 바꿔 넣기(2026-11-18 개선 ①): 계산(구멍 메우기)이 끝날 때까지 data/geo를 건드리지 않는다. 바뀐 파일만 <프로젝트>/.cache/gen-geo-stage/에
+// 써 두고, 모두 계산한 뒤에 rename으로 바꿔 넣고 이번에 쓰지 않는 geojson(--prune)·home 파일을 지운다. 계산 도중 끊기면 data/geo는 앞 실행 그대로이고,
+// 바꿔 넣는 짧은 동안(파일 rename만) 끊기면 표식 SWAPPING이 남아 다음 실행이 알리고 처음부터 다시 맞춘다(다음 실행은 내용을 견주므로 결과가 같다).
+// 내용이 같은 파일은 다시 쓰지 않는다(쓰기 151MB → 바뀐 파일만. 결과 바이트는 예전과 같음).
+const STAGE_REL = '.cache/gen-geo-stage';
 export function writeGeo(project, versions, { prune = false, sources = {}, voids = [], homes = {}, trims = {} } = {}) {
   const outDir = path.join(project, 'data/geo');
   mkdirSync(outDir, { recursive: true });
@@ -497,42 +502,71 @@ export function writeGeo(project, versions, { prune = false, sources = {}, voids
   // 나라를 일부러 없애거나 id를 바꿀 때만 --prune으로 지운다. --prune은 손으로 그린 파일도 지우므로 그런 파일은 먼저 권역 파일로 옮긴다
   const vanishing = readdirSync(outDir).filter((f) => f.endsWith('.geojson') && !Object.hasOwn(versions, f.slice(0, -'.geojson'.length)));
   if (vanishing.length && !prune) throw new Error(`data/geo에서 사라질 파일 ${vanishing.length}개: ${vanishing.join(', ')}. 나라를 일부러 없앴거나 id를 바꿨으면 --prune을 붙여 다시 실행한다. 생성기 밖에서 그린 파일이면 먼저 권역 파일로 옮긴다(--prune은 그 파일도 지운다)`);
-  // 구멍 판정 미리 계산은 지우기 전에 한다(미리 계산이 실패해 멈춰도 data/geo가 그대로 남게)
+  const stage = path.join(project, STAGE_REL);
+  const swapMark = path.join(stage, 'SWAPPING');
+  if (existsSync(swapMark)) console.log(`주의: 지난 gen:geo가 data/geo에 바꿔 넣는 도중 끊겼음(${STAGE_REL}/SWAPPING) — 이번 실행이 처음부터 다시 맞춤`);
+  rmSync(stage, { recursive: true, force: true });
+  mkdirSync(path.join(stage, 'home'), { recursive: true });
+  // 구멍 판정 미리 계산(미리 계산이 실패해 멈춰도 data/geo가 그대로 남게)
   const all = holeOwners(versions);
   prefetchHoles(all);
-  for (const f of readdirSync(outDir)) if (f.endsWith('.geojson')) rmSync(path.join(outDir, f));
   let filled = 0;
   const occupiedBy = (h, o) => polyclip.intersection([[h]], o.multi).length > 0;
   const voidList = voidOwners(voids);
+  const staged = []; // [임시 파일, 최종 파일]
+  const sameAs = (file, text) => {
+    try {
+      return readFileSync(file, 'utf8') === text;
+    } catch {
+      return false;
+    }
+  };
+  const put = (rel, text) => {
+    const final = path.join(outDir, rel);
+    if (sameAs(final, text)) return;
+    const tmp = path.join(stage, rel);
+    writeFileSync(tmp, text);
+    staged.push([tmp, final]);
+  };
   // 네 번째 값으로 확실성을 바꿀 수 있다 (예: 'disputed' — 학설 차이가 큰 고조선 초기). 출처는 권역의 source(없으면 ESTIMATED)
   // 버전(feature)마다 한 줄로 쓴다. 들여쓰기 형식보다 약 3분의 1 크기이고, git diff는 바뀐 버전 줄만 보인다 (2026-10-01)
-  const writeEntity = (file, entityId, list, onFilled) => {
+  const entityText = (entityId, list, onFilled) => {
     const features = list.map(([from, to, multi, certainty]) => ({
       type: 'Feature',
       properties: { entityId, from, to, certainty: certainty ?? 'estimated', source: Object.hasOwn(sources, entityId) ? sources[entityId] : ESTIMATED },
       geometry: geometry(keepHoles(all, entityId, from, to, multi, occupiedBy, onFilled, voidList)),
     }));
     const lines = features.map((f) => JSON.stringify(f)).join(',\n');
-    writeFileSync(file, `{"type":"FeatureCollection","features":[\n${lines}\n]}\n`);
+    return `{"type":"FeatureCollection","features":[\n${lines}\n]}\n`;
   };
   for (const [entityId, list] of Object.entries(versions)) {
-    writeEntity(path.join(outDir, `${entityId}.geojson`), entityId, list, () => filled++);
+    put(`${entityId}.geojson`, entityText(entityId, list, () => filled++));
     console.log(entityId, list.map(([f, t, m]) => `${f}-${t}:${m.length}`).join(' '));
   }
   console.log(`빈 틈새 구멍 ${filled}개를 메움`);
   // 깎거나 늘린 나라의 원래 권역 모양 (구멍 메우기 수는 위 줄에 세지 않음). home/은 생성기가 통째로 다시 쓰고, 그런 나라가 없으면 지운다.
   // 깎은 나라는 뺄 땅 목록도 <id>.trims.json(조각마다 한 줄, 좌표 반올림만)으로 쓴다(compare:geo가 읽음)
   const homeDir = path.join(outDir, 'home');
-  rmSync(homeDir, { recursive: true, force: true });
   const homeIds = Object.keys(homes);
-  if (homeIds.length) {
-    mkdirSync(homeDir, { recursive: true });
-    for (const entityId of homeIds) writeEntity(path.join(homeDir, `${entityId}.geojson`), entityId, homes[entityId], () => {});
-    console.log(`깎거나 늘린 나라 ${homeIds.length}개의 원래 권역 모양을 data/geo/home/에 씀: ${homeIds.join(', ')}`);
-    for (const [entityId, pieces] of Object.entries(trims)) {
-      if (!Object.hasOwn(homes, entityId)) throw new Error(`깎은 나라 ${entityId}의 원래 권역 모양(homes)이 없음`);
-      const lines = pieces.map(([from, to, multi]) => JSON.stringify({ type: 'Feature', properties: { entityId, from, to }, geometry: geometry(multi) })).join(',\n');
-      writeFileSync(path.join(homeDir, `${entityId}.trims.json`), `{"type":"FeatureCollection","features":[\n${lines}\n]}\n`);
-    }
+  const homeFiles = new Set();
+  for (const entityId of homeIds) {
+    homeFiles.add(`${entityId}.geojson`);
+    put(`home/${entityId}.geojson`, entityText(entityId, homes[entityId], () => {}));
   }
+  if (homeIds.length) for (const [entityId, pieces] of Object.entries(trims)) {
+    if (!Object.hasOwn(homes, entityId)) throw new Error(`깎은 나라 ${entityId}의 원래 권역 모양(homes)이 없음`);
+    const lines = pieces.map(([from, to, multi]) => JSON.stringify({ type: 'Feature', properties: { entityId, from, to }, geometry: geometry(multi) })).join(',\n');
+    homeFiles.add(`${entityId}.trims.json`);
+    put(`home/${entityId}.trims.json`, `{"type":"FeatureCollection","features":[\n${lines}\n]}\n`);
+  }
+  // 바꿔 넣기: 여기까지 data/geo는 그대로다. 이제 rename·지우기만 한다
+  writeFileSync(swapMark, `${new Date().toISOString()} 바꿔 넣을 파일 ${staged.length}개\n`);
+  if (homeIds.length) mkdirSync(homeDir, { recursive: true });
+  for (const [tmp, final] of staged) renameSync(tmp, final);
+  for (const f of vanishing) rmSync(path.join(outDir, f), { force: true });
+  if (!homeIds.length) rmSync(homeDir, { recursive: true, force: true });
+  else for (const f of readdirSync(homeDir)) if (!homeFiles.has(f)) rmSync(path.join(homeDir, f), { recursive: true, force: true });
+  rmSync(stage, { recursive: true, force: true });
+  if (homeIds.length) console.log(`깎거나 늘린 나라 ${homeIds.length}개의 원래 권역 모양을 data/geo/home/에 씀: ${homeIds.join(', ')}`);
+  console.log(`data/geo: 바뀐 파일 ${staged.length}개를 바꿔 넣음${vanishing.length ? `, 지운 파일 ${vanishing.length}개` : ''}`);
 }

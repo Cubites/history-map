@@ -25,11 +25,23 @@ const ENTRY = path.join(SCRIPTS, 'generate-geo.mjs');
 const LIST = path.join(GEO_SRC, 'area-list.mjs');
 const GAPS = path.join(SCRIPTS, 'check-gaps.ts');
 // 인자는 생성기와 같은 규칙으로 본다: '-'로 시작하는 인자는 받지 않고, 폴더는 하나만, package.json·data/entities가 있어야 프로젝트 폴더다
-const cliArgs = process.argv.slice(2);
-if (cliArgs.length > 1 || cliArgs.some((a) => a.startsWith('-'))) {
-  console.error(`사용: npm run check:generator [-- 프로젝트 폴더] (받은 인자: ${cliArgs.join(' ')})`);
+// --part <목록>(2026-11-18 개선 ① 긴 명령 끊김): 전체 한 번이 5분을 넘을 때 나눠 돈다. 목록은 쉼표로 1·2·2a·2b·3(2 = 2a+2b).
+//   2a = [2]의 엔진 시험(권역 합치기·채우기·늘리기·깎기 등, 프로세스 안), 2b = [2]의 진입 파일 시험(모르는 옵션·인자 오타·지우기 전 대조·--prune, 생성기를 자식 프로세스로 두 번 통째로 돎).
+//   [1]은 빠르고 뒤 단계가 그 결과(권역 목록)를 쓰므로 언제나 돈다. 옵션이 없으면 예전처럼 전부. 나눠 돈 조각들이 모두 통과하면 전체 통과로 친다(끝 줄에 돈 조각을 적음).
+const rawArgs = process.argv.slice(2);
+const partAt = rawArgs.indexOf('--part');
+const partSpec = partAt >= 0 ? rawArgs[partAt + 1] : null;
+const cliArgs = partAt >= 0 ? rawArgs.filter((_, i) => i !== partAt && i !== partAt + 1) : rawArgs;
+const PART_NAMES = ['1', '2', '2a', '2b', '3'];
+const partList = partSpec === null ? null : String(partSpec ?? '').split(',').map((p) => p.trim()).filter(Boolean);
+if (cliArgs.length > 1 || cliArgs.some((a) => a.startsWith('-')) || (partList && (!partList.length || partList.some((p) => !PART_NAMES.includes(p))))) {
+  console.error(`사용: npm run check:generator [-- [프로젝트 폴더] [--part 1,2,2a,2b,3]] (받은 인자: ${rawArgs.join(' ')})`);
   process.exit(2);
 }
+const runs = (p) => !partList || partList.includes(p) || (p.startsWith('2') && partList.includes('2'));
+const RUN2A = runs('2a');
+const RUN2B = runs('2b');
+const RUN3 = runs('3');
 const PROJECT = path.resolve(cliArgs[0] ?? path.join(SCRIPTS, '..'));
 const PROJECT_GEO = path.join(PROJECT, 'data/geo');
 const notProject = ['package.json', 'data/entities', 'data/geo'].filter((f) => !existsSync(path.join(PROJECT, f)));
@@ -267,7 +279,7 @@ if (!geoDirs.length) ok('data/geo에 하위 폴더 없음 (생성기가 쓰는 h
 else bad(`data/geo에 하위 폴더: [${geoDirs}] (생성기가 쓰는 home/만 둔다)`);
 
 // ── [2] 안전장치 ─────────────────────────────────────────
-console.log('[2] 안전장치 (data/geo를 임시 폴더에 복사해 시험)');
+console.log(RUN2A || RUN2B ? `[2] 안전장치 (data/geo를 임시 폴더에 복사해 시험${RUN2A && RUN2B ? '' : RUN2A ? ' — 2a 엔진 시험만' : ' — 2b 진입 파일 시험만'})` : '[2] 안전장치 — 건너뜀(--part)');
 const tmp = mkdtempSync(path.join(tmpdir(), 'check-generator-'));
 const tmpGeo = path.join(tmp, 'data/geo');
 // 생성기는 package.json·data/entities가 있는 폴더만 프로젝트 폴더로 받으므로 임시 폴더에도 둔다(내용은 쓰지 않는다)
@@ -297,8 +309,9 @@ const expectStop = (label, needle, fn) => {
 const runEntry = (...args) => spawnSync(process.execPath, [ENTRY, ...args], { encoding: 'utf8', cwd: tmp });
 const firstLine = (s) => s.split('\n').find((l) => /^\w*Error: /.test(l)) ?? s.trim().split('\n')[0] ?? '';
 
-try {
+if (RUN2A || RUN2B) try {
   restore();
+  if (RUN2A) {
   const engine = await import(pathToFileURL(path.join(GEO_SRC, 'engine.mjs')).href);
   // 권역 목록을 실제로 불러와, [1]에서 글로 읽은 이름·순서와 같은지, 항목마다 같은 이름의 권역 파일 모듈인지 본다
   const { AREAS: loaded } = await import(pathToFileURL(LIST).href);
@@ -530,7 +543,9 @@ try {
     expectStop('깎기: export 이름 오타(trimms)', "'trimms'", () => engine.mergeAreas([areaA, ['check-b', { versions: {}, trimms: {} }]]));
   }
 
+  } // RUN2A 끝
   // 진입 파일: 모르는 옵션, 인자 오타, 지우기 전 대조, --prune
+  if (RUN2B) {
   {
     const before = snapshot();
     const r = runEntry(tmp, '--purne');
@@ -565,15 +580,17 @@ try {
       console.log(diff.length ? `  참고  생성기 결과가 data/geo와 다른 파일 ${diff.length}개 (영토를 고친 뒤 gen:geo를 아직 돌리지 않았으면 정상): ${short(diff.join(', '))}` : `  참고  생성기 결과가 data/geo ${now.length}개와 바이트 단위로 같음`);
     }
   }
+  } // RUN2B 끝
 } catch (e) {
   bad(`시험 도중 오류: ${e.stack ?? e}`);
 } finally {
   rmSync(tmp, { recursive: true, force: true });
 }
+if (!(RUN2A || RUN2B)) rmSync(tmp, { recursive: true, force: true });
 
 // ── [3] 행정구역 조각 파일 ───────────────────────────────
-console.log('[3] 행정구역 조각 파일 (data/base/fragments)');
-{
+console.log(RUN3 ? '[3] 행정구역 조각 파일 (data/base/fragments)' : '[3] 행정구역 조각 파일 — 건너뜀(--part)');
+if (RUN3) {
   const FRAG_DIR = path.join(PROJECT, 'data/base/fragments');
   const entries = existsSync(FRAG_DIR) ? readdirSync(FRAG_DIR) : [];
   const topoFiles = entries.filter((f) => f.endsWith('.topo.json')).sort();
@@ -656,5 +673,6 @@ console.log('[3] 행정구역 조각 파일 (data/base/fragments)');
   }
 }
 
-console.log(failed ? `=== 실패 ${failed}개 ===` : '=== 전체 통과 ===');
+const partNote = partList ? ` (--part ${partList.join(',')}만 — 나머지 조각도 통과해야 전체 통과)` : '';
+console.log(failed ? `=== 실패 ${failed}개 ===${partNote}` : partList ? `=== 조각 통과 ===${partNote}` : '=== 전체 통과 ===');
 process.exit(failed ? 1 : 0);

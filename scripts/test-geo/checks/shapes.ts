@@ -17,7 +17,7 @@
 //   값이 500이면 캐시 열쇠(minKm2)는 예전과 같다. check:gaps(scripts/check-gaps.ts)는 500 고정이라 구역 값을 바꾸면 두 명령의 결과가 갈린다(캐시 열쇠도 달라져 캐시를 공유하지 않음).
 // 계산은 build-data의 runCached(worker들에 나눔, HISTORY_MAP_WORKERS로 개수 조절)와 캐시를 쓴다. cache.ts·tasks.ts·geo.ts·check-gaps.ts는 고치지 않는다(캐시 열쇠가 그 원문을 담음).
 import { spawnSync } from 'node:child_process';
-import { existsSync, mkdirSync, mkdtempSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, mkdtempSync, readFileSync, readdirSync, renameSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -151,6 +151,58 @@ function strictGapTests(region: MultiCoords, cfg: ZonesConfig): Pick<TestValues,
   return pick([...hit.map((z) => z.tests), ...(outside ? [cfg.tests] : [])]);
 }
 
+// 구역별 검사 값 메모 (2026-11-18 개선 ① 긴 명령 끊김): strictGapTests는 gaps 구역(약 790개)마다 정밀도 구역과 polyclip 교차·차집합을 하는데
+// 캐시가 없어 gaps를 부를 때마다(해를 한 해로 좁혀도) 약 5분이 걸렸다. 결과(두 수)를 구역 도형 열쇠(keyOf)로 .cache/test-geo/gap-zone-tests.json에 둔다.
+// 열쇠 판(salt): 이 파일 원문 + data/tests/zones.yaml 원문 + polyclip-ts 판 — 하나라도 바뀌면 메모를 버리고 다시 계산한다(값은 계산한 것과 같다).
+// 계산 도중 10초마다 저장하므로, 첫 계산이 명령 시간 한도에 끊겨도 다음 실행이 남은 구역만 이어 계산한다.
+const GAP_TESTS_FILE = path.join(ROOT, '.cache/test-geo/gap-zone-tests.json');
+function gapTestsMemo() {
+  let salt = '';
+  try {
+    salt = hashOf(
+      readFileSync(fileURLToPath(import.meta.url)),
+      readFileSync(path.join(ROOT, 'data/tests/zones.yaml')),
+      String(JSON.parse(readFileSync(path.join(ROOT, 'node_modules/polyclip-ts/package.json'), 'utf8')).version),
+    );
+  } catch {
+    salt = '';
+  }
+  let table: Record<string, [number, number]> = {};
+  try {
+    const old = JSON.parse(readFileSync(GAP_TESTS_FILE, 'utf8'));
+    if (salt && old.salt === salt && old.table && typeof old.table === 'object') table = old.table;
+  } catch {
+    // 메모 없음
+  }
+  let dirty = false;
+  let savedAt = Date.now();
+  const stats = { hits: 0, computed: 0 };
+  const save = () => {
+    if (!dirty || !salt) return;
+    mkdirSync(path.dirname(GAP_TESTS_FILE), { recursive: true });
+    const tmp = `${GAP_TESTS_FILE}.${Date.now()}.tmp`;
+    writeFileSync(tmp, JSON.stringify({ salt, table }));
+    renameSync(tmp, GAP_TESTS_FILE);
+    dirty = false;
+    savedAt = Date.now();
+  };
+  const get = (region: MultiCoords, cfg: ZonesConfig): Pick<TestValues, 'gapMinKm2' | 'gapGrowKm2'> => {
+    const k = keyOf(region);
+    const hit = table[k];
+    if (hit) {
+      stats.hits++;
+      return { gapMinKm2: hit[0], gapGrowKm2: hit[1] };
+    }
+    const v = strictGapTests(region, cfg);
+    stats.computed++;
+    table[k] = [v.gapMinKm2, v.gapGrowKm2];
+    dirty = true;
+    if (Date.now() - savedAt > 10_000) save();
+    return v;
+  };
+  return { get, save, stats };
+}
+
 /** 칸 글에서 큰 조각들: "[12,345km² 127.5,35.5,128.0,35.9]" → 넓이와 상자 글 */
 const piecesOf = (text: string) => [...text.matchAll(/\[([\d,]+)km² ([-\d.,]+)\]/g)].map((m) => ({ km2: Number(m[1].replaceAll(',', '')), box: m[2] }));
 
@@ -176,6 +228,7 @@ async function runGaps(_ctx: Context, opt: Options): Promise<CheckResult> {
   const zones = collectGapZones(AREAS);
   const precision = loadZones();
   const stats: RunStats = { hits: 0, computed: 0 };
+  const t0 = Date.now();
   // check-gaps.ts와 같은 순서·같은 인자: 구역 자르기 → minus를 뺀 구역 → 구역마다 범위 상자가 겹치는 영토(파일 순서) → 해 목록 → 칸
   const clippedZones = await runCached<MultiCoords>('clip', zones.map(({ zone }) => ({ args: { g: keyOf(zone), land: '50m' }, geoms: new Map([[keyOf(zone), zone]]) })), '', stats);
   const regions: [string, MultiCoords][] = [];
@@ -183,8 +236,16 @@ async function runGaps(_ctx: Context, opt: Options): Promise<CheckResult> {
     const earlier = minus.map((m) => regions.find(([n]) => n === m)![1] as polyclip.Geom);
     regions.push([name, earlier.length ? (polyclip.difference(clippedZones[i] as polyclip.Geom, ...earlier) as MultiCoords) : clippedZones[i]]);
   }
-  // 칸(구역 gapZone)마다 겹치는 정밀도 구역들 가운데 가장 엄격한 검사 값(한 번만 계산). 조각이 없으면(해안으로 자르니 비었음) 기본값
-  const zoneTests = regions.map(([, r]) => strictGapTests(r, precision));
+  const t1 = Date.now();
+  // 칸(구역 gapZone)마다 겹치는 정밀도 구역들 가운데 가장 엄격한 검사 값(한 번만 계산, 메모 — gapTestsMemo). 조각이 없으면(해안으로 자르니 비었음) 기본값
+  const memo = gapTestsMemo();
+  let zoneTests: Pick<TestValues, 'gapMinKm2' | 'gapGrowKm2'>[];
+  try {
+    zoneTests = regions.map(([, r]) => memo.get(r, precision));
+  } finally {
+    memo.save();
+  }
+  const t2 = Date.now();
   const regionBoxes = regions.map(([, r]) => bbox(r));
   const all = loadTerritories();
   const boxes = new Map(all.map((t) => [t, bbox(t.coords)] as const));
@@ -212,6 +273,7 @@ async function runGaps(_ctx: Context, opt: Options): Promise<CheckResult> {
     });
   }
   const ids = [...jobs.keys()];
+  const t3 = Date.now();
   const done = await runCached<string | null>('gapsZone', [...jobs.values()], hashOf(readFileSync(path.join(ROOT, 'scripts/check-gaps.ts'))), stats);
   const partOf = new Map(ids.map((id, i) => [id, done[i]]));
 
@@ -250,7 +312,7 @@ async function runGaps(_ctx: Context, opt: Options): Promise<CheckResult> {
   return {
     checked: cells.length,
     items,
-    notes: [`칸 ${cells.length}${cells.length === 0 ? ' (범위 안 칸 없음)' : ''}(계산 ${jobs.size}종, 캐시 ${stats.hits}·새로 ${stats.computed})`, `빈 땅 ${found.length}(기준선 안 ${known}${better ? `, 줄어듦 ${better}` : ''})`, ...(gone ? [`기준선에서 사라짐 ${gone}`] : [])],
+    notes: [`칸 ${cells.length}${cells.length === 0 ? ' (범위 안 칸 없음)' : ''}(계산 ${jobs.size}종, 캐시 ${stats.hits}·새로 ${stats.computed})`, `빈 땅 ${found.length}(기준선 안 ${known}${better ? `, 줄어듦 ${better}` : ''})`, `시간: 구역 준비 ${((t1 - t0) / 1000).toFixed(0)}초·검사 값 ${((t2 - t1) / 1000).toFixed(0)}초(메모 ${memo.stats.hits}·새로 ${memo.stats.computed})·칸 계산 ${((Date.now() - t3) / 1000).toFixed(0)}초`, ...(gone ? [`기준선에서 사라짐 ${gone}`] : [])],
   };
 }
 
