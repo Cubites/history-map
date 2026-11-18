@@ -344,18 +344,19 @@ button {
 .panel-guide { margin: 0 0 8px; }
 .sheet-handle { display: none; } /* 휴대폰 아래 판의 손잡이(아래 @media). PC에서는 숨김 */
 .panel-note { margin: 4px 0 8px; font-size: 12px; color: var(--muted); }
-/* 나라를 고르지 않았을 때의 나라 목록(2026-10-28, CountryList.tsx): 색 견본·이름·원문 이름 한 줄씩, 누르면 그 나라를 고름 */
+/* 나라를 고르지 않았을 때의 나라 목록(2026-10-28, CountryList.tsx): 색 견본 옆에 이름, 그 아래 줄에 원문 이름. 누르면 그 나라를 고름 */
 .country-list h3 { margin: 12px 0 6px; font-size: 13px; font-weight: 600; color: var(--muted); }
 .country-list-count { margin-left: 4px; font-weight: 400; font-variant-numeric: tabular-nums; }
-/* 긴 이름은 낱말 단위로 줄바꿈(2026-11-18): 전에는 이름이 한 줄 고정이라 패널에 가로 스크롤이 생겼다.
-   칸은 내용 폭에 밀려 넓어지지 않게 minmax(0, 1fr), 원문 이름은 한 줄 말줄임인 채 먼저 줄어든다 */
+/* 이름 두 줄(2026-11-18): 첫 줄에 한글 이름, 둘째 줄에 원문 이름. 둘 다 말줄임 없이 길면 줄바꿈한다
+   (전에는 한글 이름이 한 줄 고정이라 패널에 가로 스크롤이 생겼고, 원문 이름은 한 줄 말줄임이라 끝이 잘렸다).
+   단추는 2칸 격자: 색 견본 칸(12px) + 글 칸. 칸은 내용 폭에 밀려 넓어지지 않게 minmax(0, 1fr) */
 .country-list ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 2px; }
-.country-list button { display: flex; align-items: baseline; gap: 8px; width: 100%; padding: 6px 8px; border: 1px solid transparent; border-radius: 6px; background: transparent; color: var(--fg); font: inherit; font-size: 14px; text-align: left; cursor: pointer; }
+.country-list button { display: grid; grid-template-columns: 12px minmax(0, 1fr); align-items: start; column-gap: 8px; width: 100%; padding: 6px 8px; border: 1px solid transparent; border-radius: 6px; background: transparent; color: var(--fg); font: inherit; font-size: 14px; text-align: left; cursor: pointer; }
 .country-list button:hover, .country-list button:focus-visible { background: var(--highlight); border-color: var(--border); outline: none; }
-/* 색 견본은 이름이 두 줄이 되어도 첫 줄 가운데에 오게 위에서 5px((줄 높이 21.7px - 12px) / 2) */
-.country-list-swatch { flex-shrink: 0; align-self: flex-start; width: 12px; height: 12px; margin-top: 5px; border-radius: 3px; border: 1px solid rgba(0, 0, 0, 0.15); }
-.country-list-name { flex: 0 1 auto; min-width: 0; font-weight: 600; word-break: keep-all; overflow-wrap: anywhere; }
-.country-list-native { flex: 0 9999 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 12px; color: var(--muted); }
+/* 색 견본은 한글 이름 첫 줄 가운데에 오게 위에서 5px((줄 높이 21.7px - 12px) / 2) */
+.country-list-swatch { box-sizing: border-box; width: 12px; height: 12px; margin-top: 5px; border-radius: 3px; border: 1px solid rgba(0, 0, 0, 0.15); }
+.country-list-name { grid-column: 2; min-width: 0; font-weight: 600; word-break: keep-all; overflow-wrap: anywhere; }
+.country-list-native { grid-column: 2; min-width: 0; font-size: 12px; line-height: 1.4; color: var(--muted); overflow-wrap: anywhere; }
 
 .panel-header { display: flex; gap: 10px; align-items: flex-start; }
 .panel-header h2 { margin: 0; font-size: 20px; }
