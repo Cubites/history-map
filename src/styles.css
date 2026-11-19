@@ -599,48 +599,6 @@ button {
   background: var(--surface);
 }
 
-.timeline-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
-/* 연도 표시: 숫자 부분이 곧 입력 칸(2026-10-27). 검색창처럼 테두리 있는 상자로 보이고 Enter로만 옮긴다.
-   글자 크기·색은 선사 단계 이름(신석기·구석기)과 연도가 같다 */
-.timeline-year {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-  min-width: 128px;
-  margin: 0;
-  font-size: 16px;
-  font-weight: 800;
-  font-variant-numeric: tabular-nums;
-  white-space: nowrap;
-}
-.timeline-year input {
-  width: auto;
-  min-width: 2ch;
-  height: 30px;
-  box-sizing: border-box;
-  padding: 0 8px;
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  background: var(--surface);
-  color: inherit;
-  font: inherit;
-  text-align: center;
-}
-.timeline-year input:focus { outline: 2px solid var(--front-line); outline-offset: -1px; }
-.timeline-year input[aria-invalid='true'] { border-color: var(--error); outline-color: var(--error); }
-
-.timeline-track { position: relative; margin-top: 6px; }
-.timeline-track input[type='range'] { width: 100%; margin: 0; position: relative; accent-color: var(--accent); }
-/* 연도 눈금 (2026-10-18). 슬라이더 손잡이 반지름(8px)만큼 안쪽에서 시작해 손잡이 중심과 맞춘다 */
-.timeline-years { position: relative; height: 22px; margin: 0 8px; }
-.timeline-mark { position: absolute; top: 0; width: 1px; height: 4px; background: var(--muted); opacity: 0.6; }
-.timeline-mark.major { height: 7px; opacity: 1; }
-.timeline-mark-label { position: absolute; top: 8px; left: 0; transform: translateX(-50%); font-size: 11px; line-height: 1.2; color: var(--muted); white-space: nowrap; }
-.timeline-mark-label.edge-r { transform: translateX(-100%); }
-.timeline-mark-label.edge-l { transform: none; }
-.timeline-scale { display: flex; justify-content: space-between; font-size: 11px; color: var(--muted); }
-
 /* ── 모바일 세로 화면 (DESIGN.md §6.5) ────────────────────
    PC 배치는 그대로 두고, 폭이 좁을 때만 위: 날짜 조절 / 가운데: 지도 / 아래: 사건 목록으로 바꾼다. */
 
@@ -692,17 +650,8 @@ button {
   .panel.sheet .panel-header-sticky { top: 22px; margin-top: 0; padding-top: 2px; }
   .app-footer { display: none; }
 
-  /* 날짜 조절: 한 줄에 버튼과 연도, 입력 칸은 연도를 눌렀을 때만 */
-  .timeline-controls { flex-wrap: nowrap; justify-content: space-between; gap: 4px; }
-  .timeline-button-label { display: none; }
+  /* 전쟁 보기 아래 줄의 단추(날짜 축 등)는 좁게 */
   .timeline button { min-width: 0; padding: 0 8px; }
-  .timeline-year { min-width: 0; flex: 1; } /* 입력 칸 글자 16px: 16px 미만이면 iOS가 입력 시 화면을 확대한다 */
-  .timeline-year-stage { display: none; } /* 폭이 좁아 겹치므로, 선사 단계는 아래 줄의 구석기·신석기 단추 강조로만 보인다 */
-  .timeline-scale { display: none; }
-  /* 휴대폰: 500년 눈금과 1000년 숫자만 */
-  .timeline-mark:not(.m500) { display: none; }
-  .timeline-mark-label:not(.k1000) { display: none; }
-  .timeline-mark-label { font-size: 10px; }
 
   /* 모바일은 두 손가락으로 확대하므로 축척 막대는 숨긴다. 권역 단추·전쟁 보기의 전역 단추는 PC처럼 왼쪽 아래에 세로로(2026-10-26) */
   .map-controls, .map-bottom-left { bottom: 8px; left: 8px; }
@@ -966,12 +915,6 @@ button {
 .update-notice { display: flex; gap: 10px; align-items: center; justify-content: center; padding: 6px 12px; font-size: 13.5px; background: var(--surface); border-bottom: 1px solid var(--border); }
 .update-notice button { font: inherit; font-weight: 600; padding: 3px 10px; border: 1px solid var(--front-line); border-radius: 6px; background: transparent; color: var(--front-line); cursor: pointer; }
 
-/* 선사 시대 단계 (연도 막대 왼쪽) */
-.timeline-row { display: flex; align-items: flex-start; gap: 6px; margin-top: 6px; }
-.timeline-row .timeline-track { flex: 1; min-width: 0; margin-top: 0; }
-.timeline-prehistory { display: flex; gap: 2px; flex: 0 0 auto; }
-.timeline .timeline-prehistory button { height: 22px; padding: 0 7px; font-size: 12px; border-radius: 4px; }
-.timeline .timeline-prehistory button[aria-pressed='true'] { border-color: var(--front-line); color: var(--front-line); font-weight: 700; }
 /* 유적 표시: 전투(⊗)와 구별되게 채운 점 */
 .site-pin .battle-pin-disc { fill: var(--label); stroke: var(--surface); stroke-width: 1.5; }
 .site-pin .battle-pin-label { fill: var(--label); }

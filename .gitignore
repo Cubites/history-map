@@ -4,3 +4,4 @@ public/data/
 *.log
 .DS_Store
 .cache/
+*.tsbuildinfo
