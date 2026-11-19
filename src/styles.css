@@ -920,3 +920,156 @@ button {
 .site-pin .battle-pin-disc { fill: var(--label); stroke: var(--surface); stroke-width: 1.5; }
 .site-pin .battle-pin-label { fill: var(--label); }
 .site-pin:hover .battle-pin-disc, .site-pin:focus-visible .battle-pin-disc { fill: var(--front-line); }
+
+/* ── 지도 단추의 반투명 바탕 (2026-11-19) ─────────────────
+   '주요 사건'·미니게임·권역 선택·나라 색칠 단추는 평소 바탕을 50% 투명하게 해 지도가 비쳐 보이게 한다.
+   목록을 펼친 동안에는 글자가 잘 읽히게 불투명으로 바꾸고, 닫으면 다시 50%로 돌아간다.
+   (권역 단추는 휴대폰에서만 접혔다 펼쳐진다. PC는 늘 넷 다 보이므로 늘 50%) */
+:root { --control-half: #ffffff80; --control-solid: #ffffff; }
+@media (prefers-color-scheme: dark) {
+  :root { --control-half: #23272a80; --control-solid: #23272a; }
+}
+.major-events-toggle { background: var(--control-half); }
+.major-events-toggle:hover { background: color-mix(in srgb, var(--front-line) 10%, var(--control-half)); }
+.major-events-toggle[aria-expanded='true'] { background: color-mix(in srgb, var(--front-line) 18%, var(--control-solid)); }
+.fill-mode button { background: var(--control-half); }
+.fill-mode-current[aria-expanded='true'], .fill-mode-list button { background: var(--control-solid); }
+.map-regions button { background: var(--control-half); }
+.map-regions[data-open] button { background: var(--control-solid); }
+
+/* ── 미니게임 (2026-11-17) ─────────────────────────
+   본 지도 위에 덮어 띄우는 화면. 색은 위의 변수를 그대로 쓰고, 정답 색(--mg-ok)만 따로 둔다 */
+/* 미니게임으로 가는 단추 (2026-11-19): 지도 오른쪽 위의 정사각형 게임패드 단추(모서리 5px).
+   한 변은 '주요 사건' 단추(.major-events-toggle) 높이의 2배, 휴대폰은 1.3배. 그 단추 높이가 바뀌면 --mg-major-h도 함께 고친다 */
+.app-main { --mg-major-h: 32px; }
+.mg-launch { position: absolute; top: 12px; right: 12px; z-index: 4; width: calc(var(--mg-major-h) * 2); height: calc(var(--mg-major-h) * 2); padding: 0; display: grid; place-items: center; border: 1.5px solid var(--accent); border-radius: 5px; background: var(--control-half); color: var(--accent); cursor: pointer; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15); }
+.mg-launch svg { width: 62%; height: 62%; }
+.mg-launch:hover { background: color-mix(in srgb, var(--accent) 10%, var(--control-half)); }
+@media (max-width: 768px) {
+  /* 휴대폰: 검색창 아래 '주요 사건'과 같은 높이에, 오른쪽 세로 연도 막대의 바로 위(막대 폭 50px·오른쪽 6px의 가운데 줄에 맞춤).
+     단추가 들어간 만큼(단추 한 변) 연도 막대를 아래에서 시작하게 해 길이를 줄인다. 원래 막대의 top은 69px */
+  .mg-launch { top: 59px; right: calc(31px - var(--mg-major-h) * 0.65); width: calc(var(--mg-major-h) * 1.3); height: calc(var(--mg-major-h) * 1.3); }
+  .map-yearbar { top: calc(69px + var(--mg-major-h) * 1.3); }
+  .mg-launch svg { width: 68%; height: 68%; }
+}
+.mg { --mg-ok: #2e7d4f; position: fixed; inset: 0; z-index: 1000; background: var(--bg); display: flex; flex-direction: column; font-size: 15px; line-height: 1.5; }
+@media (prefers-color-scheme: dark) { .mg { --mg-ok: #6fcf97; } }
+.mg button { cursor: pointer; }
+.mg h2, .mg h3, .mg p, .mg figure, .mg ol { margin: 0; }
+.mg-top { display: flex; align-items: center; gap: 10px; padding: 10px 16px; border-bottom: 1px solid var(--border); background: var(--surface); }
+.mg-top strong { flex: 1; font-size: 16px; font-weight: 800; }
+.mg-top strong span { color: var(--muted); font-weight: 600; }
+.mg-ghost { border: 1px solid var(--border); background: var(--surface); padding: 6px 12px; border-radius: 8px; font-size: 13px; }
+.mg-ghost:hover { border-color: var(--accent); }
+.mg-back { display: inline-flex; align-items: center; gap: 6px; }
+.mg-back svg { width: 16px; height: 16px; flex: none; }
+.mg-primary { border: 0; background: var(--accent); color: var(--surface); font-weight: 700; padding: 9px 20px; border-radius: 10px; }
+.mg-primary:hover { filter: brightness(1.08); }
+.mg-link { border: 0; background: none; color: var(--accent); text-decoration: underline; font-size: 13px; padding: 0; }
+.mg-sub { color: var(--muted); font-size: 13px; margin-top: 4px; }
+.mg-warn { color: var(--error); margin-top: 12px; font-weight: 600; }
+.mg-row { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+
+.mg-lobby, .mg-end { flex: 1; min-height: 0; width: 100%; max-width: 980px; margin: 0 auto; padding: 32px 16px 48px; overflow: auto; }
+.mg-lobby h2, .mg-end h2 { font-size: 24px; font-weight: 800; }
+.mg-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 22px; }
+.mg-card { border: 1.5px solid var(--border); background: var(--surface); border-radius: 14px; padding: 16px; }
+.mg-card.on { border-color: var(--accent); box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 25%, transparent); }
+button.mg-card { font: inherit; color: inherit; text-align: left; }
+button.mg-card:hover { border-color: var(--accent); }
+.mg-year { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.mg-year input { width: 86px; font: inherit; font-size: 16px; color: var(--fg); background: var(--bg); border: 1px solid var(--border); border-radius: 9px; padding: 7px 10px; }
+.mg-primary:disabled, .mg-ghost:disabled, .mg-seg button:disabled { opacity: 0.5; cursor: default; }
+.mg-yearpick { display: grid; gap: 6px; border: 1px solid var(--border); border-radius: 10px; padding: 12px; }
+.mg-yearpick b { font-size: 18px; font-variant-numeric: tabular-nums; }
+.mg-yearpick input { width: 100%; }
+.mg-yearpick .mg-row { margin-top: 0; }
+.mg-map.pick canvas { cursor: pointer; }
+.mg-map.move canvas { touch-action: none; cursor: grab; }
+.mg-map.move canvas:active { cursor: grabbing; }
+.mg-zoom { position: absolute; right: 12px; bottom: 12px; display: grid; gap: 4px; }
+.mg-zoom button { width: 34px; height: 34px; border: 1px solid var(--border); background: var(--control-bg); color: var(--fg); border-radius: 8px; font-size: 18px; font-weight: 700; line-height: 1; }
+.mg-zoom button:hover { border-color: var(--accent); }
+.mg-zoom[hidden] { display: none; }
+.mg-level { border: 1px solid var(--accent); color: var(--accent); border-radius: 999px; padding: 0 9px; font-size: 12px; font-weight: 700; margin-left: -8px; }
+.mg-note span { display: block; }
+.mg-note { font-size: 13px; color: var(--muted); border-left: 3px solid var(--accent); padding: 2px 0 2px 10px; }
+.mg-note b { color: var(--fg); }
+.mg-card b { font-size: 12px; color: var(--accent); }
+.mg-card h3 { font-size: 17px; }
+.mg-card p { color: var(--muted); font-size: 13.5px; margin-top: 6px; }
+.mg-setup { margin: 22px 0 10px; border: 1px solid var(--border); background: var(--surface); border-radius: 14px; padding: 18px; display: grid; grid-template-columns: auto 1fr auto; gap: 18px; align-items: end; }
+.mg-setup label { display: grid; gap: 6px; font-size: 12px; font-weight: 700; color: var(--muted); }
+.mg-setup select { font: inherit; font-size: 14px; color: var(--fg); background: var(--bg); border: 1px solid var(--border); border-radius: 9px; padding: 7px 10px; }
+.mg-seg { display: inline-flex; border: 1px solid var(--border); border-radius: 9px; overflow: hidden; background: var(--bg); }
+.mg-seg button { border: 0; background: none; padding: 7px 14px; font-size: 14px; font-weight: 600; color: var(--muted); }
+.mg-seg button[aria-pressed='true'] { background: var(--accent); color: var(--surface); }
+/* 난이도 단추: 칸 너비만큼 늘이지 않고 글자에 맞추며, 쉬움·어려움 두 단추의 너비는 같게 한다 (2026-11-18) */
+.mg-setup .mg-seg { display: inline-grid; grid-template-columns: 1fr 1fr; justify-self: start; }
+
+.mg-game { flex: 1; min-height: 0; display: grid; grid-template-columns: minmax(0, 1fr) 380px; grid-template-rows: auto minmax(0, 1fr); }
+.mg-status { grid-column: 1 / -1; display: flex; align-items: center; gap: 16px; padding: 8px 16px; border-bottom: 1px solid var(--border); font-size: 13.5px; flex-wrap: wrap; }
+.mg-status b { font-variant-numeric: tabular-nums; }
+.mg-status > b { font-size: 15px; font-weight: 800; }
+.mg-sp { flex: 1; }
+.mg-dots { display: flex; gap: 4px; }
+.mg-dots i { width: 18px; height: 6px; border-radius: 3px; background: var(--border); }
+.mg-dots i.ok { background: var(--mg-ok); }
+.mg-dots i.no { background: var(--error); }
+.mg-dots i.now { background: var(--accent); }
+.mg-mapwrap { position: relative; background: var(--ocean); min-height: 280px; }
+.mg-mapwrap > .mg-map { position: absolute; inset: 0; }
+.mg-map canvas { width: 100%; height: 100%; display: block; }
+.mg-loading { position: absolute; inset: 0; display: grid; place-items: center; color: var(--muted); }
+.mg-chip { position: absolute; left: 12px; top: 12px; background: var(--control-bg); border: 1px solid var(--border); border-radius: 8px; padding: 5px 10px; font-size: 12.5px; color: var(--muted); }
+.mg-panel { border-left: 1px solid var(--border); background: var(--surface); overflow: auto; padding: 18px; display: flex; flex-direction: column; gap: 16px; }
+.mg-q { font-size: 20px; font-weight: 800; line-height: 1.35; }
+.mg-q em { font-style: normal; color: var(--accent); }
+.mg-opts { display: grid; gap: 8px; }
+.mg-opts button { text-align: left; border: 1.5px solid var(--border); background: var(--bg); border-radius: 10px; padding: 11px 14px; font-weight: 600; display: flex; gap: 10px; align-items: center; }
+.mg-opts button:not(:disabled):hover { border-color: var(--accent); }
+.mg-opts button:disabled { cursor: default; }
+.mg-opts kbd { font: inherit; font-size: 12px; color: var(--muted); border: 1px solid var(--border); border-radius: 5px; width: 22px; height: 22px; display: grid; place-items: center; flex: none; }
+.mg-opts .right { border-color: var(--mg-ok); background: color-mix(in srgb, var(--mg-ok) 14%, var(--bg)); }
+.mg-opts .wrong { border-color: var(--error); background: color-mix(in srgb, var(--error) 12%, var(--bg)); }
+.mg-result { border-radius: 12px; padding: 14px; border: 1.5px solid var(--mg-ok); background: color-mix(in srgb, var(--mg-ok) 12%, var(--surface)); }
+.mg-result.bad { border-color: var(--error); background: color-mix(in srgb, var(--error) 10%, var(--surface)); }
+.mg-result strong { font-size: 16px; }
+.mg-hints h3 { font-size: 13px; font-weight: 800; color: var(--muted); display: flex; justify-content: space-between; }
+.mg-hints ol { list-style: none; margin-top: 8px; padding: 0; display: grid; gap: 6px; }
+.mg-hints li { border: 1px solid var(--border); border-radius: 10px; padding: 9px 12px; font-size: 13.5px; display: grid; grid-template-columns: 22px 1fr auto; gap: 8px; align-items: start; }
+.mg-hints li.open { background: var(--highlight); }
+.mg-hints li.locked { opacity: 0.5; }
+.mg-hints .n { width: 22px; height: 22px; border-radius: 50%; background: var(--bg); border: 1px solid var(--border); display: grid; place-items: center; font-size: 12px; font-weight: 700; color: var(--muted); }
+.mg-hints .t { font-weight: 700; }
+.mg-hints .c { margin-top: 3px; }
+.mg-hints li button { border: 1px solid var(--border); background: var(--surface); border-radius: 7px; padding: 3px 9px; font-size: 12px; }
+.mg-minis { display: flex; gap: 8px; margin-top: 6px; }
+.mg-minis figure { flex: 1; min-width: 0; font-size: 11.5px; color: var(--muted); text-align: center; }
+.mg-minis .mg-map { aspect-ratio: 8 / 5; border-radius: 6px; overflow: hidden; }
+
+.mg-score { display: grid; grid-template-columns: 1.4fr repeat(3, 1fr); gap: 12px; margin-top: 18px; }
+.mg-score > div { border: 1px solid var(--border); background: var(--surface); border-radius: 12px; padding: 14px 16px; }
+.mg-score span { font-size: 12px; font-weight: 700; color: var(--muted); display: block; }
+.mg-score b { font-size: 26px; font-variant-numeric: tabular-nums; }
+.mg-score small { font-size: 14px; color: var(--muted); font-weight: 600; }
+.mg-score .main { background: var(--accent); color: var(--surface); border-color: transparent; }
+.mg-score .main span, .mg-score .main small { color: inherit; opacity: 0.8; }
+.mg-log { margin-top: 18px; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; background: var(--surface); }
+.mg-log > div { display: grid; grid-template-columns: 34px 1fr minmax(110px, 1.1fr) 60px 60px 40px; gap: 10px; padding: 9px 14px; align-items: center; font-size: 14px; }
+.mg-log > div + div { border-top: 1px solid var(--border); }
+.mg-log .hd { font-size: 12px; font-weight: 700; color: var(--muted); background: var(--bg); }
+.mg-log .mark { width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; font-size: 13px; font-weight: 800; color: #fff; background: var(--mg-ok); }
+.mg-log .mark.no { background: var(--error); }
+
+@media (max-width: 860px) {
+  .mg-top strong span { display: none; }
+  .mg-cards, .mg-setup, .mg-score { grid-template-columns: 1fr; }
+  /* 화면 전체는 스크롤하지 않는다: 위쪽 줄과 지도는 제자리에 두고, 아래 문제 영역(.mg-panel)만 스크롤한다 (2026-11-18) */
+  .mg-game { display: flex; flex-direction: column; }
+  .mg-status { flex: none; }
+  .mg-mapwrap { flex: none; height: 38vh; height: 38dvh; min-height: 200px; }
+  .mg-panel { flex: 1; min-height: 0; border-left: 0; border-top: 1px solid var(--border); overflow: auto; overscroll-behavior: contain; }
+  .mg-log > div { grid-template-columns: 34px 1fr 60px 40px; }
+  .mg-log > div > :nth-child(3), .mg-log > div > :nth-child(4) { display: none; }
+}
