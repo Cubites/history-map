@@ -82,9 +82,9 @@ export function MiniGame({ data, onClose }: { data: StaticData; onClose: () => v
           <h2>어떤 게임을 할까요?</h2>
           <p className="mg-sub">역사 지도의 영토와 사건으로 푸는 문제입니다. 한 판은 {ROUND}문제입니다.</p>
           <div className="mg-cards">
-            {GAMES.map((g, i) => (
+            {GAMES.map((g) => (
               <button key={g.id} className={`mg-card${g.id === game ? ' on' : ''}`} aria-pressed={g.id === game} onClick={() => setGame(g.id)}>
-                <b>{i + 1}</b><h3>{g.title}</h3><p>{g.about}</p>
+                <h3>{g.title}</h3><p>{g.about}</p>
               </button>
             ))}
           </div>
