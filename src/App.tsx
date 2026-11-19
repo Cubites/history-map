@@ -17,7 +17,7 @@ export default function App() {
           <div className="app-body">
             <main className="app-main">
               <WorldMap data={data} />
-              {/* 평소의 연도 조절: 지도 오른쪽 세로 막대와 지도 아래 가운데 연도 입력 칸(2026-10-28 시험 중). 전쟁 보기에서는 아래 줄(Timeline) */}
+              {/* 평소의 연도 조절(2026-10-28부터): 휴대폰은 지도 오른쪽 세로 막대, PC는 지도 아래 가로 띠, 둘 다 지도 아래 가운데 연도 입력 칸. 전쟁 보기에서는 아래 줄(Timeline) */}
               <MapYearControls data={data} />
               {/* 사건·나라 검색창: 휴대폰은 지도 위쪽(2026-10-27: '역사 지도' 머리글을 없애고 옮김), PC는 아래 왼쪽 칸 맨 위(.side-search).
                   지도(.world-map) 밖이라 지도 끌기·휠이 닿지 않는다 */}
