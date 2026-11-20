@@ -331,6 +331,7 @@ button {
 /* 검색창: 칸 폭보다 조금 작게(양옆 12px), 높이는 지도 위에 있을 때(32px)보다 40% 크게, 모서리는 덜 둥글게(2026-10-27) */
 .side-search { position: relative; z-index: 5; padding: 12px 12px 4px; }
 .side-search .search-input { height: 45px; padding: 0 12px; font-size: 15px; border-radius: 3px; }
+.side-search .search-scope { height: 45px; font-size: 15px; border-radius: 3px; }
 .panel {
   flex: 1;
   min-height: 0;
@@ -496,7 +497,8 @@ button {
 .event-pinned { box-shadow: 0 0 0 2px var(--accent); }
 
 .event-head { display: flex; gap: 8px; align-items: baseline; }
-.event-year { font-variant-numeric: tabular-nums; font-weight: 700; color: var(--muted); white-space: nowrap; }
+/* 연도는 늘 제목 첫 줄에 맞춘다(2026-11-20): 펼친 사건의 제목은 복사 단추 안이라, 두 줄 이상이면 기준선 맞춤이 마지막 줄을 따라갔다 */
+.event-year { align-self: flex-start; font-variant-numeric: tabular-nums; font-weight: 700; color: var(--muted); white-space: nowrap; }
 .event-title { font-weight: 700; flex: 1; }
 .event-toggle { color: var(--muted); font-size: 11px; flex-shrink: 0; }
 .event-head + .event-summary { margin-top: 6px; }
@@ -890,8 +892,11 @@ button {
 /* 검색: 지도 왼쪽 위(2026-10-27, 전에는 머리글) */
 /* 지도 위 검색창은 휴대폰만(PC는 왼쪽 칸 맨 위 .side-search) */
 .map-search { display: none; position: absolute; z-index: 5; }
-.search { position: relative; min-width: 0; }
-.search-input { width: 100%; box-sizing: border-box; padding: 6px 10px; font: inherit; font-size: 14px; color: var(--fg); background: var(--surface); border: 1px solid var(--border); border-radius: 6px; }
+/* 검색창 왼쪽의 찾을 분야 고르기(전체·국가명·사건, 2026-11-20). 모양은 자리마다 검색창을 따른다 */
+.search { position: relative; min-width: 0; display: flex; gap: 6px; }
+.search-scope { flex: 0 0 auto; box-sizing: border-box; padding: 0 6px; font: inherit; font-size: 14px; color: var(--fg); background: var(--surface); border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
+.search-scope:focus-visible { outline: 2px solid var(--front-line); outline-offset: -1px; }
+.search-input { flex: 1 1 0; min-width: 0; width: 100%; box-sizing: border-box; padding: 6px 10px; font: inherit; font-size: 14px; color: var(--fg); background: var(--surface); border: 1px solid var(--border); border-radius: 6px; }
 .search-input:focus { outline: 2px solid var(--front-line); outline-offset: -1px; }
 .search-results { position: absolute; z-index: 20; top: calc(100% + 4px); left: 0; right: 0; margin: 0; padding: 4px 0; list-style: none; background: var(--surface); border: 1px solid var(--border); border-radius: 6px; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15); max-height: 60vh; overflow-y: auto; }
 .search-result { display: flex; gap: 8px; padding: 6px 10px; cursor: pointer; font-size: 13.5px; }
@@ -908,6 +913,8 @@ button {
   /* 글자 16px: 16px 미만이면 iOS가 입력 시 화면을 확대한다. 지도 위 검색창은 높이 40px(2026-10-29: 33px에서 약 20% 늘림), 양 끝이 반원인 알약 모양 */
   .search-input { font-size: 16px; padding: 5px 8px; }
   .map-search .search-input { height: 40px; padding: 0 18px; border-radius: 20px; }
+  .search-scope { font-size: 16px; }
+  .map-search .search-scope { height: 40px; padding: 0 8px 0 12px; border-radius: 20px; }
   /* 검색창이 좁으므로 결과 목록은 지도 폭에 맞춘다 */
 
 }
@@ -921,30 +928,27 @@ button {
 .site-pin .battle-pin-label { fill: var(--label); }
 .site-pin:hover .battle-pin-disc, .site-pin:focus-visible .battle-pin-disc { fill: var(--front-line); }
 
-/* ── 지도 단추의 반투명 바탕 (2026-11-19) ─────────────────
-   '주요 사건'·미니게임·권역 선택·나라 색칠 단추는 평소 바탕을 50% 투명하게 해 지도가 비쳐 보이게 한다.
-   목록을 펼친 동안에는 글자가 잘 읽히게 불투명으로 바꾸고, 닫으면 다시 50%로 돌아간다.
-   (권역 단추는 휴대폰에서만 접혔다 펼쳐진다. PC는 늘 넷 다 보이므로 늘 50%) */
-:root { --control-half: #ffffff80; --control-solid: #ffffff; }
+/* ── 지도 단추의 불투명 바탕 (2026-11-20) ─────────────────
+   '주요 사건'·미니게임·권역 선택·나라 색칠 단추는 바탕이 비치지 않는다
+   (2026-11-19에 50% 투명으로 했다가 운영자 지시로 투명도를 없앰) */
+:root { --control-solid: #ffffff; }
 @media (prefers-color-scheme: dark) {
-  :root { --control-half: #23272a80; --control-solid: #23272a; }
+  :root { --control-solid: #23272a; }
 }
-.major-events-toggle { background: var(--control-half); }
-.major-events-toggle:hover { background: color-mix(in srgb, var(--front-line) 10%, var(--control-half)); }
+.major-events-toggle { background: var(--control-solid); }
+.major-events-toggle:hover { background: color-mix(in srgb, var(--front-line) 10%, var(--control-solid)); }
 .major-events-toggle[aria-expanded='true'] { background: color-mix(in srgb, var(--front-line) 18%, var(--control-solid)); }
-.fill-mode button { background: var(--control-half); }
-.fill-mode-current[aria-expanded='true'], .fill-mode-list button { background: var(--control-solid); }
-.map-regions button { background: var(--control-half); }
-.map-regions[data-open] button { background: var(--control-solid); }
+.fill-mode button { background: var(--control-solid); }
+.map-regions button { background: var(--control-solid); }
 
 /* ── 미니게임 (2026-11-17) ─────────────────────────
    본 지도 위에 덮어 띄우는 화면. 색은 위의 변수를 그대로 쓰고, 정답 색(--mg-ok)만 따로 둔다 */
 /* 미니게임으로 가는 단추 (2026-11-19): 지도 오른쪽 위의 정사각형 게임패드 단추(모서리 5px).
    한 변은 '주요 사건' 단추(.major-events-toggle) 높이의 2배, 휴대폰은 1.3배. 그 단추 높이가 바뀌면 --mg-major-h도 함께 고친다 */
 .app-main { --mg-major-h: 32px; }
-.mg-launch { position: absolute; top: 12px; right: 12px; z-index: 4; width: calc(var(--mg-major-h) * 2); height: calc(var(--mg-major-h) * 2); padding: 0; display: grid; place-items: center; border: 1.5px solid var(--accent); border-radius: 5px; background: var(--control-half); color: var(--accent); cursor: pointer; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15); }
+.mg-launch { position: absolute; top: 12px; right: 12px; z-index: 4; width: calc(var(--mg-major-h) * 2); height: calc(var(--mg-major-h) * 2); padding: 0; display: grid; place-items: center; border: 1.5px solid var(--accent); border-radius: 5px; background: var(--control-solid); color: var(--accent); cursor: pointer; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15); }
 .mg-launch svg { width: 62%; height: 62%; }
-.mg-launch:hover { background: color-mix(in srgb, var(--accent) 10%, var(--control-half)); }
+.mg-launch:hover { background: color-mix(in srgb, var(--accent) 10%, var(--control-solid)); }
 @media (max-width: 768px) {
   /* 휴대폰: 검색창 아래 '주요 사건'과 같은 높이에, 오른쪽 세로 연도 막대의 바로 위(막대 폭 50px·오른쪽 6px의 가운데 줄에 맞춤).
      단추가 들어간 만큼(단추 한 변) 연도 막대를 아래에서 시작하게 해 길이를 줄인다. 원래 막대의 top은 69px */

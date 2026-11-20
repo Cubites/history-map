@@ -8,6 +8,14 @@ import { useAppStore } from '../store/useAppStore.ts';
 
 type Result = { kind: 'event'; event: LoadedEvent; score: number } | { kind: 'entity'; entity: LoadedEntity; score: number };
 
+/** 찾을 분야(2026-11-20): 검색창 왼쪽에서 고른다. 전체는 나라를 맨 위에, 그 아래 사건 */
+type Scope = 'all' | 'entity' | 'event';
+const SCOPES: { value: Scope; label: string; hint: string; empty: string }[] = [
+  { value: 'all', label: '전체', hint: '사건·나라 찾기', empty: '찾는 사건·나라가 없습니다' },
+  { value: 'entity', label: '국가명', hint: '나라 찾기', empty: '찾는 나라가 없습니다' },
+  { value: 'event', label: '사건', hint: '사건 찾기', empty: '찾는 사건이 없습니다' },
+];
+
 const MAX_RESULTS = 8;
 /** 권역 필터를 골랐을 때 다른 권역 결과가 있으면 목록 끝에 남겨 두는 칸 수 (DESIGN.md §6.4.2) */
 const OTHER_REGION_SLOTS = 2;
@@ -19,9 +27,11 @@ const normalize = (text: string) => text.replace(/\s+/g, '').toLowerCase();
  * 사건을 고르면 그 해로 가서 사건을 패널에 띄우고, 나라를 고르면 그 나라를 고른다.
  * 어느 쪽이든 지도는 그 나라(사건은 사건의 나라)의 그 해 영토로 옮기고 알맞게 확대·축소한다 (2026-11-11, focusMap).
  * 권역 필터를 고르면 그 권역의 결과를 먼저 보여 준다. 다른 권역 결과가 있으면 끝의 2칸은 그것에 남겨 두어 숨기지 않는다 (DESIGN.md §6.4.2)
+ * 검색창 왼쪽에서 찾을 분야(전체·국가명·사건)를 고른다. 전체는 나라를 목록 맨 위에 놓는다 (2026-11-20)
  */
 export function SearchBox({ data }: { data: StaticData }) {
   const [query, setQuery] = useState('');
+  const [scope, setScope] = useState<Scope>('all');
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -38,15 +48,16 @@ export function SearchBox({ data }: { data: StaticData }) {
   const results = useMemo<Result[]>(() => {
     const q = normalize(query);
     if (!q) return [];
-    const found: Result[] = [];
-    for (const entity of data.entities.values()) {
+    const entities: Result[] = [];
+    const events: Result[] = [];
+    for (const entity of scope === 'event' ? [] : data.entities.values()) {
       const name = normalize(entity.names.ko);
       const other = [entity.names.hanja, entity.names.native].some((n) => n && n.toLowerCase().includes(query.trim().toLowerCase()));
       if (name.includes(q) || other) {
-        found.push({ kind: 'entity', entity, score: name === q ? 0 : name.startsWith(q) ? 1 : 3 });
+        entities.push({ kind: 'entity', entity, score: name === q ? 0 : name.startsWith(q) ? 1 : 3 });
       }
     }
-    for (const event of data.events) {
+    for (const event of scope === 'entity' ? [] : data.events) {
       const title = normalize(event.title.ko);
       const places = (event.places ?? []).map((p) => normalize(p.name));
       const score = title.includes(q)
@@ -58,17 +69,24 @@ export function SearchBox({ data }: { data: StaticData }) {
           : normalize(event.summary.ko).includes(q)
             ? 4
             : -1;
-      if (score >= 0) found.push({ kind: 'event', event, score });
+      if (score >= 0) events.push({ kind: 'event', event, score });
     }
-    found.sort((a, b) => a.score - b.score || yearOf(a) - yearOf(b));
     // 고른 권역의 결과를 먼저, 다른 권역 결과는 뒤에. 다른 권역 결과가 있으면 끝의 OTHER_REGION_SLOTS칸은 그것에 남겨 둔다
     // (고른 권역 결과가 적으면 남는 칸도 다른 권역 결과로 채운다). 전체이면 모두 고른 권역으로 본다
     const inside = (r: Result) => inRegionFilter(regionFilter, r.kind === 'event' ? r.event.region : r.entity.region);
-    const mine = found.filter(inside);
-    const others = found.filter((r) => !inside(r));
-    const otherCount = Math.min(others.length, Math.max(OTHER_REGION_SLOTS, MAX_RESULTS - mine.length));
-    return [...mine.slice(0, MAX_RESULTS - otherCount), ...others.slice(0, otherCount)];
-  }, [data, query, regionFilter]);
+    const take = (found: Result[], slots: number) => {
+      found.sort((a, b) => a.score - b.score || yearOf(a) - yearOf(b));
+      const mine = found.filter(inside);
+      const others = found.filter((r) => !inside(r));
+      const otherCount = Math.min(others.length, slots, Math.max(OTHER_REGION_SLOTS, slots - mine.length));
+      return [...mine.slice(0, slots - otherCount), ...others.slice(0, otherCount)];
+    };
+    // 나라를 맨 위에, 남은 칸에 사건(2026-11-20). 분야를 하나만 고르면 다른 쪽은 비어 있다
+    const top = take(entities, MAX_RESULTS);
+    return [...top, ...take(events, MAX_RESULTS - top.length)];
+  }, [data, query, regionFilter, scope]);
+
+  const scopeInfo = SCOPES.find((s) => s.value === scope) ?? SCOPES[0];
 
   const pick = (r: Result) => {
     if (warId) exitWar();
@@ -96,12 +114,32 @@ export function SearchBox({ data }: { data: StaticData }) {
 
   return (
     <div className="search">
+      {/* 찾을 분야(2026-11-20). 바꾸면 쓰던 낱말로 바로 다시 찾는다 */}
+      <select
+        className="search-scope"
+        aria-label="찾을 분야"
+        value={scope}
+        onChange={(e) => {
+          setScope(e.target.value as Scope);
+          setActive(0);
+          if (query.trim()) {
+            setOpen(true);
+            inputRef.current?.focus();
+          }
+        }}
+      >
+        {SCOPES.map((s) => (
+          <option key={s.value} value={s.value}>
+            {s.label}
+          </option>
+        ))}
+      </select>
       <input
         ref={inputRef}
         className="search-input"
         type="search"
-        placeholder={narrow ? '사건·나라 찾기' : '사건·나라 찾기 (예: 관산성, 서희)'}
-        aria-label="사건·나라 찾기"
+        placeholder={narrow || scope !== 'all' ? scopeInfo.hint : '사건·나라 찾기 (예: 관산성, 서희)'}
+        aria-label={scopeInfo.hint}
         value={query}
         onChange={(e) => {
           setQuery(e.target.value);
@@ -127,7 +165,7 @@ export function SearchBox({ data }: { data: StaticData }) {
       />
       {open && query.trim() && (
         <ul className="search-results" role="listbox">
-          {results.length === 0 && <li className="search-empty">찾는 사건·나라가 없습니다</li>}
+          {results.length === 0 && <li className="search-empty">{scopeInfo.empty}</li>}
           {results.map((r, i) => (
             <li
               key={r.kind === 'event' ? `e:${r.event.id}` : `n:${r.entity.id}`}
