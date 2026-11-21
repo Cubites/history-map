@@ -73,7 +73,7 @@ export function SearchBox({ data }: { data: StaticData }) {
     }
     // 고른 권역의 결과를 먼저, 다른 권역 결과는 뒤에. 다른 권역 결과가 있으면 끝의 OTHER_REGION_SLOTS칸은 그것에 남겨 둔다
     // (고른 권역 결과가 적으면 남는 칸도 다른 권역 결과로 채운다). 전체이면 모두 고른 권역으로 본다
-    const inside = (r: Result) => inRegionFilter(regionFilter, r.kind === 'event' ? r.event.region : r.entity.region);
+    const inside = (r: Result) => (r.kind === 'event' ? inRegionFilter(regionFilter, r.event.region, r.event.units) : inRegionFilter(regionFilter, r.entity.region, r.entity.units));
     const take = (found: Result[], slots: number) => {
       found.sort((a, b) => a.score - b.score || yearOf(a) - yearOf(b));
       const mine = found.filter(inside);

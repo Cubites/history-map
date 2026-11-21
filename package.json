@@ -22,6 +22,7 @@
     "check:generator": "node scripts/check-generator.mjs",
     "compare:geo": "node scripts/compare-geo.mjs",
     "area:geo": "node --disable-warning=ExperimentalWarning scripts/area-geo.ts",
+    "gen:region-units": "node --disable-warning=ExperimentalWarning scripts/region-units.ts",
     "entity:where": "node --disable-warning=ExperimentalWarning scripts/entity-where.ts",
     "ev:check": "node --disable-warning=ExperimentalWarning scripts/ev-check.ts",
     "anchor-edit": "node --disable-warning=ExperimentalWarning scripts/anchor-edit.ts",

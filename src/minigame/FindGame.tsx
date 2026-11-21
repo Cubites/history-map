@@ -3,7 +3,7 @@
 // 어려움은 이름만 주고 세계 화면에서 시작해, 그 나라가 있던 해를 직접 찾게 한다. 한 번 누르면 바로 답이 된다.
 import { useEffect, useMemo, useState } from 'react';
 import { activeTerritories } from '../data/staticData.ts';
-import { REGION_FILTER_INFO } from '../schema/regions.ts';
+import { REGION_FILTER_INFO, regionFocusBounds } from '../schema/regions.ts';
 import { FindMap, type MapItem } from './FindMap.tsx';
 import { HINT_COST, Hints, POINTS, Result, Status, findBorderNeighbor, type Hint, type PlayProps } from './parts.tsx';
 import { centuryText, neighborsOf, span, unitOf, yearText } from './questions.ts';
@@ -37,7 +37,7 @@ export function FindGame({ data, q, level, total, outcomes, onView, onNext }: Pl
   const ok = picked !== null && isTarget(picked);
   const points = Math.max(0, POINTS - HINT_COST * opened);
   const unit = unitOf(q.entity);
-  const start = useMemo(() => (hard ? 'world' : REGION_FILTER_INFO[unit]?.bounds ?? 'world'), [hard, unit]);
+  const start = useMemo(() => (hard || !unit ? 'world' : regionFocusBounds(unit) ?? 'world'), [hard, unit]);
 
   const pick = (id: string) => {
     if (picked !== null) return;

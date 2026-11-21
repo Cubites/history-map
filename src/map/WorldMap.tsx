@@ -29,7 +29,7 @@ import { focusTarget, placeActive } from '../lib/events.ts';
 import { useWarShapes } from '../data/warShapes.ts';
 import { activeWarView, entryYear, factionColor, frontBattleSpots, nearBy, snapshotFor } from '../lib/wars.ts';
 import { formatRange, formatYear } from '../lib/year.ts';
-import { REGION_FILTER_INFO } from '../schema/regions.ts';
+import { REGION_BUTTONS, REGION_FILTER_INFO, regionFocusBounds } from '../schema/regions.ts';
 import { useRegionChoice } from '../search/RegionFilter.tsx';
 import { LODS, type Lod, type TerritoryIndexEntry } from '../schema/index.ts';
 import { activeEventId, useAppStore } from '../store/useAppStore.ts';
@@ -249,7 +249,7 @@ export default function WorldMap({ data }: { data: StaticData }) {
     const prev = sized.current;
     const linked = !prev && selectedId && !warId ? focusBox(data.territories, selectedId, year) : null;
     const shown = visibleSize(size);
-    const first = fitBounds(shown, s0, REGION_FILTER_INFO[regionFilter].bounds ?? EAST_ASIA_BOUNDS);
+    const first = fitBounds(shown, s0, regionFocusBounds(regionFilter) ?? EAST_ASIA_BOUNDS);
     viewRef.current = prev
       ? toView(size, s0, toGeoView(prev.size, prev.s0, viewRef.current))
       : linked
@@ -889,7 +889,7 @@ export default function WorldMap({ data }: { data: StaticData }) {
   useEffect(() => {
     if (!size || regionFocus === shownRegionFocus.current) return;
     shownRegionFocus.current = regionFocus;
-    const bounds = REGION_FILTER_INFO[regionFilter].bounds;
+    const bounds = regionFocusBounds(regionFilter);
     if (bounds && !warId) animateTo(fitBounds(visibleSize(size), s0, bounds));
   }, [regionFocus, regionFilter, warId, size, s0, animateTo]);
   // 검색·패널·지도에서 나라(사건은 사건의 나라)를 고르면 그 나라의 그 해 영토로 옮긴다 (2026-11-11). 영토가 없는 해면 옮기지 않는다.
@@ -1071,9 +1071,12 @@ export default function WorldMap({ data }: { data: StaticData }) {
           >
             세계
           </button>
-          <button type="button" aria-pressed={regionFilter === 'east-asia'} onClick={() => pickRegion(() => chooseRegion('east-asia'))}>동아시아</button>
-          <button type="button" aria-pressed={regionFilter === 'europe'} onClick={() => pickRegion(() => chooseRegion('europe'))}>유럽</button>
-          <button type="button" aria-pressed={regionFilter === 'middle-east'} onClick={() => pickRegion(() => chooseRegion('middle-east'))}>서아시아</button>
+          {/* 권역 열 개(2026-11-21): 순서는 regions.ts REGION_BUTTONS, 누르면 그 권역의 focus(없으면 bounds)로 옮긴다 */}
+          {REGION_BUTTONS.map((id) => (
+            <button key={id} type="button" aria-pressed={regionFilter === id} onClick={() => pickRegion(() => chooseRegion(id))}>
+              {REGION_FILTER_INFO[id].short}
+            </button>
+          ))}
         </div>
         </div>
       )}

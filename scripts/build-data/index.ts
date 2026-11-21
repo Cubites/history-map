@@ -33,7 +33,8 @@ import {
   type WarIndexEntry,
   type WarShapesOut,
 } from '../../src/schema/index.ts';
-import { DEFAULT_STORY_REGION, REGION_FILTERS, REGION_FILTER_OF, STORY_FILE_PREFIXES, regionOfEntityFile, regionOfEventFile } from '../../src/schema/regions.ts';
+import { DEFAULT_STORY_REGION, REGION_FILTERS, REGION_FILTER_OF, STORY_FILE_PREFIXES, regionOfEntityFile, regionOfEventFile, type RegionFilterUnit } from '../../src/schema/regions.ts';
+import { ENTITY_UNITS, EVENT_UNITS } from '../../src/schema/region-units.ts';
 import { buildLodTopology, countPoints, subTopology, tiledTopology } from './topo.ts';
 import { chunkOutlines, tilePolygons } from './tiles.ts';
 import { buildWars, checkWars, findCutText, readWars } from './wars.ts';
@@ -500,6 +501,9 @@ async function main() {
     if (entities.has(e.id)) errors.push(`나라 id 중복: ${e.id}`);
     entities.set(e.id, e);
   }
+  // 나라별 권역 단위 목록(여러 권역에 걸치는 나라·아메리카의 북아메리카 나라, src/schema/region-units.ts — npm run gen:region-units가 만듦)
+  for (const id of Object.keys(ENTITY_UNITS))
+    if (!entities.has(id)) errors.push(`src/schema/region-units.ts: '${id}'는 없는 나라 — npm run gen:region-units로 다시 만들 것`);
   const relations = await readYamlList(path.join(DATA, 'relations.yaml'), RelationSchema);
   const events = (
     await Promise.all(
@@ -522,8 +526,32 @@ async function main() {
   }
   if (errors.length) return finish();
 
-  const sortedEvents = [...events].sort((a, b) => a.year - b.year || a.id.localeCompare(b.id));
-  const entitiesOut = () => entityList.map(({ region, ...e }, i) => ({ ...e, color: colorFor(e, i), region }));
+  // 권역 단위 목록(units)은 파일의 기본 단위 하나와 다를 때만 붙인다(없으면 앱이 region의 기본 단위를 씀, regions.ts inRegionFilter).
+  // 아메리카 사건은 파일이 북·라틴을 가르지 않으므로 관련 나라(subjects)의 기본 단위(첫 단위)를 모은다.
+  // 관련 나라에 아메리카 나라가 없는 사건(유럽 나라의 항해 등)은 region-units.ts EVENT_UNITS에 손으로 적는다(없으면 오류)
+  const AMERICAS_UNITS: RegionFilterUnit[] = ['north-america', 'latin-america'];
+  const regionOfId = new Map(entityList.map((e) => [e.id, e.region]));
+  const unitsOfEntity = (id: string): RegionFilterUnit[] => ENTITY_UNITS[id] ?? [REGION_FILTER_OF[regionOfId.get(id) ?? '']];
+  const eventUnits = (e: { id: string; region: string; subjects: string[] }): RegionFilterUnit[] | undefined => {
+    const base = REGION_FILTER_OF[e.region];
+    if (!AMERICAS_UNITS.includes(base)) return undefined;
+    const found = AMERICAS_UNITS.filter((u) => e.subjects.some((id) => unitsOfEntity(id)[0] === u));
+    const units = found.length ? found : EVENT_UNITS[e.id];
+    if (!units) {
+      errors.push(`사건 ${e.id}: 관련 나라에 아메리카 나라가 없어 북아메리카·라틴아메리카를 정할 수 없음 — scripts/region-units.ts의 EVENT_UNITS에 적고 npm run gen:region-units`);
+      return undefined;
+    }
+    return units.length === 1 && units[0] === base ? undefined : units;
+  };
+  const sortedEvents = [...events]
+    .sort((a, b) => a.year - b.year || a.id.localeCompare(b.id))
+    .map((e) => {
+      const units = eventUnits(e);
+      return units ? { ...e, units } : e;
+    });
+  const entitiesOut = () =>
+    entityList.map(({ region, ...e }, i) => ({ ...e, color: colorFor(e, i), region, ...(ENTITY_UNITS[e.id] ? { units: ENTITY_UNITS[e.id] } : {}) }));
+  if (errors.length) return finish();
   if (ARGS.eventsOnly) {
     // 사건·나라·관계 YAML만 고쳤을 때: 영토에 손대지 않으므로 해안선 자르기 이후를 모두 건너뛴다
     if (CHECK_ONLY) console.log(`check:data --events-only  이상 없음 (나라 ${entities.size} · 사건 ${events.length}) — 해안선·겹침·월경지 검사 생략`);

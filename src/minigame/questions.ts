@@ -1,7 +1,7 @@
 // 미니게임 문제 만들기 (2026-11-17). 본 지도의 자료(territories.json·entities.json·events.json)만 쓴다.
 import { activeTerritories, type LoadedEntity, type StaticData } from '../data/staticData.ts';
 import type { TerritoryIndexEntry } from '../schema/index.ts';
-import { REGION_FILTER_OF, type RegionFilter } from '../schema/regions.ts';
+import { inRegionFilter, unitsOf, type RegionFilter } from '../schema/regions.ts';
 
 /** 시대 구분 (연도 맞추기의 '시대' 힌트에 쓴다. 출제 범위를 시대로 고르는 기능은 2026-11-18에 뺐다: 시대가 곧 답의 일부라서) */
 export type Era = 'ancient' | 'medieval' | 'modern';
@@ -24,7 +24,8 @@ const EASY_TOP = 0.35;
 
 export const span = ({ bbox: [w, s, e, n] }: TerritoryIndexEntry) => (e < w ? e + 360 - w : e - w) * (n - s);
 export const eraOf = (year: number): Era => (year < 500 ? 'ancient' : year < 1500 ? 'medieval' : 'modern');
-export const unitOf = (e: LoadedEntity) => REGION_FILTER_OF[e.region];
+/** 나라의 기본 권역 단위(여러 권역에 걸치는 나라는 첫 단위) */
+export const unitOf = (e: LoadedEntity) => unitsOf(e)[0];
 
 export const ERA_LABEL = { ancient: '고대 (기원후 500년 이전)', medieval: '중세 (500~1500년)', modern: '근대 이후 (1500년 이후)' } as const;
 
@@ -65,7 +66,7 @@ export function buildQuestions(data: StaticData, level: Level, region: RegionFil
   for (const t of data.territories) {
     const e = data.entities.get(t.entityId);
     if (!e || e.level !== 'polity' || t.certainty === 'disputed' || span(t) < MIN_SPAN) continue;
-    if (region !== 'all' && unitOf(e) !== region) continue;
+    if (!inRegionFilter(region, e.region, e.units)) continue;
     byEntity.set(t.entityId, [...(byEntity.get(t.entityId) ?? []), t]);
   }
   // 나라마다 구간 하나: 쉬움은 가장 넓었던 구간(전성기), 어려움은 아무 구간
@@ -117,7 +118,7 @@ export function eventHint(data: StaticData, q: Question, hide: 'name' | 'year' =
 
 /** 같은 권역에서 그 무렵에 있던, 이 나라와 관계없는 사건 (연도는 가린다) */
 export function regionEventHint(data: StaticData, q: Question): string | null {
-  const list = data.events.filter((e) => REGION_FILTER_OF[e.region] === unitOf(q.entity) && !e.subjects.includes(q.entity.id));
+  const list = data.events.filter((e) => inRegionFilter(unitOf(q.entity) ?? 'all', e.region, e.units) && !e.subjects.includes(q.entity.id));
   if (!list.length) return null;
   const ev = list.reduce((a, b) => (Math.abs(b.year - q.year) < Math.abs(a.year - q.year) ? b : a));
   return maskYears(`${ev.title.ko}: ${ev.summary.ko.split('. ')[0].replace(/\.$/, '')}.`);

@@ -23,7 +23,7 @@ export function CountryList({ data }: { data: StaticData }) {
     const ids = new Set(activeTerritories(data.territories, year).map((t) => t.entityId));
     return [...ids]
       .map((id) => data.entities.get(id))
-      .filter((e) => e !== undefined && e.level !== 'region' && inRegionFilter(regionFilter, e.region))
+      .filter((e) => e !== undefined && e.level !== 'region' && inRegionFilter(regionFilter, e.region, e.units))
       .sort((a, b) => a!.names.ko.localeCompare(b!.names.ko, 'ko'));
   }, [data.territories, data.entities, year, regionFilter]);
 

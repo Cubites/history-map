@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import type { Feature, FeatureCollection, MultiPolygon, Polygon, Position } from 'geojson';
 import { geoArea } from 'd3-geo';
 import { feature } from 'topojson-client';
+import type { RegionFilterUnit } from '../schema/regions.ts';
 import type { GeometryCollection, Topology } from 'topojson-specification';
 import type {
   BBox,
@@ -19,8 +20,8 @@ import type {
  * 권역(region: korea·europe 등 지리적 권역)은 빌드가 데이터 파일 이름에서 정해 붙인다 (src/schema/regions.ts, DESIGN.md §6.4.2).
  * 나라 항목의 `level: 'region'`(나라가 아닌 지역 항목)과는 다른 것이다
  */
-export type LoadedEntity = Entity & { color: string; region: string };
-export type LoadedEvent = HistoryEvent & { region: string };
+export type LoadedEntity = Entity & { color: string; region: string; units?: RegionFilterUnit[] };
+export type LoadedEvent = HistoryEvent & { region: string; units?: RegionFilterUnit[] };
 
 export interface StaticData {
   timeline: TimelineIndex;
