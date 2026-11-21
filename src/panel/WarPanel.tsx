@@ -2,14 +2,16 @@ import { useEffect, useRef, useState } from 'react';
 import type { StaticData } from '../data/staticData.ts';
 import { factionColor, formatFrontDate, snapshotFor, type WarTheater } from '../lib/wars.ts';
 import { formatYear } from '../lib/year.ts';
-import { activeEventId, useAppStore } from '../store/useAppStore.ts';
+import { activeEventId, useAppStore, warShareUrl } from '../store/useAppStore.ts';
 import { ABOUT_LIST_MIN, Sentences, splitSentences } from './aboutText.tsx';
+import { CopyLink } from './CopyLink.tsx';
 import { scrollUnderHeader } from './scrollUnderHeader.ts';
 
 /**
  * 전쟁 보기의 정보 패널 (2026-11-21, DESIGN.md §4.5). 나라 정보 패널 자리(PC 왼쪽 칸, 휴대폰 아래 판)에 나라 정보 대신 그린다.
  * 머리는 나라 이름란과 같은 모양: 이름 자리에 전쟁 이름, 원문 이름 자리에 기간(전역이 여럿이면 전역 이름도), 그 아래 진영 색 설명, 오른쪽 끝 ×로 전쟁 보기를 닫는다.
  * 그 아래는 사건 목록과 같은 모양의 날짜 목록: 앞에 날짜, 제목에 그때 상황 한 줄, 펼치면 자세한 글. 누른 날짜의 점령 지역·전선을 지도가 그린다.
+ * 링크 복사(2026-11-21, 나라 이름·펼친 사건 제목과 같은 CopyLink): 전쟁 이름을 누르면 이 전쟁(전역) 보기의 첫 날짜 화면, 펼친 날짜의 제목을 누르면 그 날짜 화면의 바로 가기 링크를 복사한다.
  * 전에는 화면 아래 날짜 줄(FrontTimeline)과 지도 아래 가운데 '닫기' 띠가 이 일을 했다
  */
 export function WarPanel({ data, warView }: { data: StaticData; warView: WarTheater }) {
@@ -38,7 +40,9 @@ export function WarPanel({ data, warView }: { data: StaticData; warView: WarThea
       <header className="panel-header panel-header-sticky" data-sheet-head>
         <div className="war-head">
           <h2>
-            {war.name}
+            <CopyLink url={() => warShareUrl(war.id, theater.id, theater.snapshots[0].year)} label={war.name}>
+              {war.name}
+            </CopyLink>
             <span className="hanja">
               {formatYear(war.from, '')}–{formatYear(war.to)}
               {war.theaters.length > 1 && ` · ${theater.name}`}
@@ -89,7 +93,16 @@ export function WarPanel({ data, warView }: { data: StaticData; warView: WarThea
             >
               <div className="event-head">
                 <span className="event-year">{formatFrontDate(s.date, war.calendar)}</span>
-                <span className="event-title">{s.title}</span>
+                {/* 펼친 날짜만 제목 끝에 복사 아이콘. 제목을 누르면 접히지 않고 이 날짜 화면의 링크를 복사한다 */}
+                <span className="event-title">
+                  {expanded ? (
+                    <CopyLink url={() => warShareUrl(war.id, theater.id, s.year, s.date)} label={s.title}>
+                      {s.title}
+                    </CopyLink>
+                  ) : (
+                    s.title
+                  )}
+                </span>
                 <span className="event-toggle" aria-hidden="true">{expanded ? '▴' : '▾'}</span>
               </div>
               {expanded && <Sentences sentences={sentences} className="event-summary" list={sentences.length >= ABOUT_LIST_MIN} />}

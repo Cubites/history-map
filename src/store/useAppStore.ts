@@ -128,6 +128,15 @@ export function shareUrl(year: number, entityId: string, eventId?: string): stri
   return `${window.location.origin}${window.location.pathname}?${params}`;
 }
 
+/**
+ * 전쟁 보기 바로 가기 링크 (2026-11-21). 그 전쟁·전역의 전쟁 보기가 열린다. 날짜(date)를 주면 그 날짜의 전선이 펼쳐진 화면
+ */
+export function warShareUrl(warId: string, theaterId: string, year: number, date?: string): string {
+  const params = new URLSearchParams({ year: String(year), war: warId, theater: theaterId });
+  if (date) params.set('front', date);
+  return `${window.location.origin}${window.location.pathname}?${params}`;
+}
+
 const initial = readUrl();
 
 export const useAppStore = create<AppState>((set) => ({
