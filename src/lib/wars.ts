@@ -1,6 +1,7 @@
 // 전쟁 보기 (DESIGN.md §4.5): 전쟁·전역·스냅샷 고르기와 진영 색
 import { CALENDAR_SUFFIX, type Calendar } from '../schema/calendar.ts';
 import type { FrontSnapshotOut, HistoryEvent, LonLat, TheaterOut, WarIndexEntry } from '../schema/index.ts';
+import { inRegionFilter, type RegionFilter } from '../schema/regions.ts';
 
 export interface WarTheater {
   war: WarIndexEntry;
@@ -10,10 +11,30 @@ export interface WarTheater {
 const inRange = (r: { from: number; to: number }, year: number) => r.from <= year && year <= r.to;
 
 /**
- * 세계적인 전쟁: 지도 왼쪽 위 "주요 사건" 목록에 어느 권역을 보든 늘 뜬다 (MajorEvents.tsx, 2026-10-27).
+ * 세계적인 전쟁: 지도 왼쪽 위 "주요 전쟁" 목록에 어느 권역을 보든 늘 뜬다 (MajorEvents.tsx, 2026-10-27).
  * 여기 없는 전쟁은 그 전쟁(전역)의 권역을 보고 있을 때만 뜬다. 세계적인 전쟁 보기를 새로 만들면 여기에 id를 더한다
  */
 export const WORLD_SCALE_WARS: ReadonlySet<string> = new Set(['world-war-1', 'world-war-2']);
+
+/**
+ * "주요 전쟁" 목록에 넣을 전쟁과 들어갈 전역 (MajorEvents.tsx 목록과 지도의 전쟁 아이콘 WarMarkerLayer.tsx가 함께 쓴다, 시작 해 순).
+ * 세계적인 전쟁은 어느 권역을 보든 늘, 그 밖의 전쟁은 그 권역을 보고 있을 때만(세계를 보고 있으면 세계적인 전쟁만).
+ * 나라를 골랐으면(2026-11-22) 그 나라가 관련된 전쟁(참전국이거나 진영의 대표 나라)만 남긴다: 권역을 보고 있으면 위 목록 가운데 그 나라의 전쟁,
+ * 세계를 보고 있으면 권역과 상관없이 그 나라의 전쟁 전부(세계적인 전쟁만 남기면 임진왜란 같은 그 나라의 전쟁 보기에 들어갈 길이 없어진다).
+ * 전역이 여럿이면 지금 권역의 전역을, 없으면 첫 전역을 고른다(세계 개관처럼 hideMarker인 전역은 고르지 않음)
+ */
+export function majorWars(wars: WarIndexEntry[], regionFilter: RegionFilter, selectedId: string | null): WarTheater[] {
+  return wars
+    .map((war) => {
+      const theaters = war.theaters.filter((t) => !t.hideMarker);
+      const inRegion = theaters.filter((t) => inRegionFilter(regionFilter, t.region ?? war.region));
+      const involved = !selectedId || war.participants.some((p) => p.entity === selectedId) || war.factions.some((f) => f.entity === selectedId);
+      const shown = involved && (WORLD_SCALE_WARS.has(war.id) || (regionFilter === 'all' ? !!selectedId : inRegion.length > 0));
+      return shown ? { war, theater: (regionFilter !== 'all' && inRegion[0]) || theaters[0] || war.theaters[0] } : null;
+    })
+    .filter((x) => x !== null)
+    .sort((a, b) => a.war.from - b.war.from);
+}
 
 
 /** 전역 고르기: 지정한 전역 → 그 해에 진행 중인 첫 전역 → 첫 전역 */

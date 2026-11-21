@@ -249,7 +249,7 @@ export function EventPanel({ data }: { data: StaticData }) {
         </div>
       )}
 
-      {/* 2026-10-28: '이 시기의 전쟁'(고른 나라가 참전한 전쟁 목록)은 지도 왼쪽 위 "주요 사건" 목록과 겹쳐 없앰 */}
+      {/* 2026-10-28: '이 시기의 전쟁'(고른 나라가 참전한 전쟁 목록)은 지도 왼쪽 위 "주요 전쟁" 목록과 겹쳐 없앰 */}
       <div className="panel-section-title">
         <h3>{showAll ? '전체 사건' : listYear < data.timeline.range[0] ? `${prehistoryStage(listYear).name}` : `${formatDecade(listYear)} 사건`}</h3>
         {all.length > 0 && (
@@ -342,7 +342,7 @@ function EventItem({ event, data, selectedId, highlight }: { event: HistoryEvent
     <li
       ref={itemRef}
       aria-expanded={expanded}
-      className={['event', (hovered || pinned || focused) && 'event-hovered', pinned && 'event-pinned', highlight && 'event-current'].filter(Boolean).join(' ')}
+      className={['event', (hovered || pinned || focused) && 'event-hovered', pinned && 'event-pinned', highlight && 'event-current', war && 'event-war'].filter(Boolean).join(' ')}
       onMouseEnter={() => hoverEvent(event.id)}
       onMouseLeave={() => hoverEvent(null)}
       onFocus={() => hoverEvent(event.id)}
@@ -357,6 +357,23 @@ function EventItem({ event, data, selectedId, highlight }: { event: HistoryEvent
     >
       <div className="event-head">
         <span className="event-year">{formatEventYears(event)}</span>
+        {/* 전쟁 보기에 이어진 사건(2026-11-22): 블럭 왼쪽 붉은 세로 띠(.event-war)와 제목 앞 칼 아이콘(지도의 전쟁 아이콘과 같은 모양). 아이콘을 누르면 그 날짜의 전쟁 보기로 간다 */}
+        {war && (
+          <button
+            type="button"
+            className="event-war-icon"
+            aria-label={`${war.name} 전쟁 보기`}
+            title={`${war.name} 전쟁 보기`}
+            onClick={(e) => {
+              e.stopPropagation();
+              openFront();
+            }}
+          >
+            <svg viewBox="-9 -9 18 18" width="15" height="15" aria-hidden>
+              <path d="M-6,-6 L6,6 M6,-6 L-6,6 M-7,2 L-2,7 M7,2 L2,7" />
+            </svg>
+          </button>
+        )}
         {/* 펼친 사건만 제목 끝에 복사 아이콘(2026-11-11). 펼친 채 제목을 누르면 이 나라·이 사건 화면의 바로 가기 링크를 복사한다(접히지 않음) */}
         <span className="event-title">
           {expanded ? (

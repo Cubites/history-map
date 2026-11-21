@@ -5,7 +5,7 @@ import { parseRegionFilter, type RegionFilter } from '../schema/regions.ts';
 const DEFAULT_YEAR = 640;
 
 /**
- * 지도 나라 칠하기 방식 (2026-11-15, 지도 왼쪽 위 '주요 사건' 아래 단추, DESIGN.md §6.3).
+ * 지도 나라 칠하기 방식 (2026-11-15, 지도 왼쪽 위 '주요 전쟁' 아래 단추, DESIGN.md §6.3).
  * strong 진하게: 나라마다 고유색 그대로 / light 연하게: 고유색을 옅게, 고른 나라만 원래 색 / bloc 속국만: 그해 속국·점령지가 있는 나라와 그 땅만 색, 나머지는 같은 바탕색
  */
 export type FillMode = 'strong' | 'light' | 'bloc';

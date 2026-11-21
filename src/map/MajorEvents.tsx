@@ -1,36 +1,23 @@
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import type { StaticData } from '../data/staticData.ts';
-import { WORLD_SCALE_WARS, entryYear } from '../lib/wars.ts';
+import { entryYear, majorWars } from '../lib/wars.ts';
 import { formatYear } from '../lib/year.ts';
-import { inRegionFilter } from '../schema/regions.ts';
 import { useAppStore } from '../store/useAppStore.ts';
 
 /**
- * 지도 왼쪽 위 "주요 사건" 단추와 그 아래 목록 (2026-10-27, 지도의 전쟁 표시 ⚔ 대신, DESIGN.md §4.5).
- * 목록은 전쟁 보기가 있는 전쟁이다. 세계적인 전쟁(WORLD_SCALE_WARS)은 어느 권역을 보든 늘 뜨고,
- * 그 밖의 전쟁은 그 권역(동아시아·유럽)을 보고 있을 때만 뜬다. 세계를 보고 있으면 세계적인 전쟁만.
- * 누르면 그 전쟁의 전쟁 보기를 연다. 전역이 여럿이면 지금 권역의 전역을, 없으면 첫 전역을 연다(세계 개관처럼 hideMarker인 전역은 고르지 않음).
+ * 지도 왼쪽 위 "주요 전쟁" 단추와 그 아래 목록 (2026-10-27 "주요 사건"으로 만듦, 2026-11-22 이름을 "주요 전쟁"으로, DESIGN.md §4.5).
+ * 목록은 전쟁 보기가 있는 전쟁이다. 어떤 전쟁을 넣는지는 lib/wars.ts의 majorWars(권역·고른 나라에 따름).
+ * 누르면 그 전쟁의 전쟁 보기를 연다. 같은 전쟁이 지도에도 아이콘으로 뜬다(그 해에 진행 중일 때, WarMarkerLayer.tsx).
  */
 export function MajorEvents({ data }: { data: StaticData }) {
   const year = useAppStore((s) => s.year);
   const regionFilter = useAppStore((s) => s.regionFilter);
+  const selectedId = useAppStore((s) => s.selectedId);
   const enterWar = useAppStore((s) => s.enterWar);
   const [open, setOpen] = useState(false);
   const boxRef = useRef<HTMLDivElement>(null);
 
-  const items = useMemo(
-    () =>
-      data.wars
-        .map((war) => {
-          const theaters = war.theaters.filter((t) => !t.hideMarker);
-          const inRegion = theaters.filter((t) => inRegionFilter(regionFilter, t.region ?? war.region));
-          const shown = WORLD_SCALE_WARS.has(war.id) || (regionFilter !== 'all' && inRegion.length > 0);
-          return shown ? { war, theater: (regionFilter !== 'all' && inRegion[0]) || theaters[0] || war.theaters[0] } : null;
-        })
-        .filter((x) => x !== null)
-        .sort((a, b) => a.war.from - b.war.from),
-    [data.wars, regionFilter],
-  );
+  const items = useMemo(() => majorWars(data.wars, regionFilter, selectedId), [data.wars, regionFilter, selectedId]);
 
   // 목록은 단추 아래에 떠서(absolute) 오른쪽의 화살표 뜻을 밀지 않고 덮는다(2026-10-28). 높이는 지도 아래 끝까지(넘치면 스크롤)
   const listRef = useRef<HTMLUListElement>(null);
@@ -62,11 +49,11 @@ export function MajorEvents({ data }: { data: StaticData }) {
   return (
     <div ref={boxRef} className="major-events map-ui" onClick={(e) => e.stopPropagation()} onPointerDown={(e) => e.stopPropagation()}>
       <button type="button" className="major-events-toggle" aria-expanded={open} aria-controls="major-events-list" onClick={() => setOpen((v) => !v)}>
-        주요 사건
+        주요 전쟁
       </button>
       {open && (
         <ul ref={listRef} id="major-events-list" className="major-events-list">
-          {items.length === 0 && <li className="major-events-empty">이 권역의 주요 사건이 없습니다</li>}
+          {items.length === 0 && <li className="major-events-empty">{selectedId ? '이 나라가 관련된 주요 전쟁이 없습니다' : '이 권역의 주요 전쟁이 없습니다'}</li>}
           {items.map(({ war, theater }) => (
             <li key={war.id}>
               <button

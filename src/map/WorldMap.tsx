@@ -27,7 +27,7 @@ import {
 } from '../data/staticData.ts';
 import { focusTarget, placeActive } from '../lib/events.ts';
 import { useWarShapes } from '../data/warShapes.ts';
-import { activeWarView, entryYear, factionColor, frontBattleSpots, nearBy, snapshotFor } from '../lib/wars.ts';
+import { activeWarView, entryYear, factionColor, frontBattleSpots, majorWars, nearBy, snapshotFor } from '../lib/wars.ts';
 import { formatRange } from '../lib/year.ts';
 import { REGION_BUTTONS, REGION_FILTER_INFO, regionFocusBounds } from '../schema/regions.ts';
 import { useRegionChoice } from '../search/RegionFilter.tsx';
@@ -36,6 +36,7 @@ import { activeEventId, useAppStore } from '../store/useAppStore.ts';
 import { ArrowLayer } from './ArrowLayer.tsx';
 import { FrontArrowLayer } from './FrontArrowLayer.tsx';
 import { MajorEvents } from './MajorEvents.tsx';
+import { WarMarkerLayer } from './WarMarkerLayer.tsx';
 import { BattlePinLayer, type BattlePin } from './BattlePinLayer.tsx';
 import { WarDetailLayer } from './WarDetailLayer.tsx';
 import {
@@ -302,6 +303,12 @@ export default function WorldMap({ data }: { data: StaticData }) {
                 .map((p) => ({ event, name: p.name, at: p.at }));
             }),
     [data.events, data.wars, warId, year],
+  );
+  // "주요 전쟁" 목록에 있는 전쟁 가운데 그 해에 진행 중인 것은 주 전장(전역의 marker)에 전쟁 아이콘을 둔다(2026-11-22, 누르면 전쟁 보기).
+  // 2026-10-27에 없앤 전쟁 표시 ⚔를 목록과 같은 규칙(권역·고른 나라)으로 되살린 것
+  const warMarkers = useMemo(
+    () => (warId ? [] : majorWars(data.wars, regionFilter, selectedId).filter(({ theater: t }) => t.from <= year && year <= t.to)),
+    [data.wars, warId, regionFilter, selectedId, year],
   );
   const openBattlePin = (pin: BattlePin) => {
     // 그 해에 있던 나라 가운데 사건의 첫 주체를 골라 패널에 사건을 띄운다.
@@ -1006,6 +1013,9 @@ export default function WorldMap({ data }: { data: StaticData }) {
           {snapshot && war && <FrontArrowLayer war={war} snapshot={snapshot} projection={projection} entityColor={(id) => data.entities.get(id)?.color} />}
           <LabelLayer mode="hit" territories={labelTerritories} entities={data.entities} selectedId={selectedId} projection={projection} view={view} size={size} />
           {battlePins.length > 0 && <BattlePinLayer pins={battlePins} projection={projection} onOpen={openBattlePin} />}
+          {warMarkers.length > 0 && (
+            <WarMarkerLayer items={warMarkers} projection={projection} onOpen={({ war: w, theater: t }) => enterWar(w.id, t.id, year, null)} />
+          )}
           <LabelLayer territories={labelTerritories} entities={data.entities} selectedId={selectedId} projection={projection} view={view} size={size} />
           {hoveredEvent && selectedId && (
             <ArrowLayer data={data} event={hoveredEvent} selectedId={selectedId} projection={projection} />
@@ -1028,15 +1038,15 @@ export default function WorldMap({ data }: { data: StaticData }) {
       {/* 전쟁 보기의 이름·닫기(×, Esc)는 나라 정보 패널 자리의 전쟁 정보 패널에 있다(2026-11-21, panel/WarPanel.tsx). 전에는 지도 아래 가운데 '닫기' 띠 */}
       {/* 권역 단추(2026-10-18: 머리글 권역 필터를 없애고 이리로 옮김)(권역 고르기·자료 없는 해면 옮기기·그 권역으로 지도 이동).
           세계는 '전체'를 고르고 세계로 축소한다. 전쟁 보기 중에는 전역 단추가 그 자리에 오므로 숨긴다(2026-10-26) */}
-      {/* 지도 왼쪽 위 "주요 사건" 단추와 목록(2026-10-27, 지도의 전쟁 표시 ⚔ 대신). 전쟁 보기 중에는 숨긴다 */}
+      {/* 지도 왼쪽 위 "주요 전쟁" 단추와 목록(2026-10-27, 지도의 전쟁 표시 ⚔ 대신). 전쟁 보기 중에는 숨긴다 */}
       {!war && (
         <div className="map-top-left">
-          {/* '주요 사건' 아래에 나라 칠하기 방식 단추(2026-11-15) */}
+          {/* '주요 전쟁' 아래에 나라 칠하기 방식 단추(2026-11-15) */}
           <div className="map-top-stack">
             <MajorEvents data={data} />
             <FillModeSwitch />
           </div>
-          {/* 사건 화살표 뜻(2026-10-28: 권역 단추 오른쪽에서 "주요 사건" 단추 오른쪽으로). 나라를 골랐을 때만 */}
+          {/* 사건 화살표 뜻(2026-10-28: 권역 단추 오른쪽에서 "주요 전쟁" 단추 오른쪽으로). 나라를 골랐을 때만 */}
           {selectedEntity && (
             <div className="map-legend map-ui">
               <span><i className="legend-in" />영향을 받은 경우</span>

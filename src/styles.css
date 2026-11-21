@@ -229,12 +229,12 @@ button {
 .map-regions:not([data-open]) button { grid-area: 1 / 1; }
 .map-regions:not([data-open]) button:not([aria-pressed='true']) { visibility: hidden; }
 .map-regions button[aria-pressed='true'] { order: 9; }
-/* 지도 왼쪽 위 "주요 사건" 단추와 그 아래 목록(2026-10-27, 지도의 전쟁 표시 ⚔ 대신). 목록이 길면 지도 높이 안에서 세로 스크롤. 휴대폰은 지도 위 검색창 아래 */
-/* 지도 왼쪽 위 묶음(2026-10-28): "주요 사건" 단추(+ 목록)와 그 오른쪽 사건 화살표 뜻 */
+/* 지도 왼쪽 위 "주요 전쟁" 단추와 그 아래 목록(2026-10-27, 지도의 전쟁 표시 ⚔ 대신). 목록이 길면 지도 높이 안에서 세로 스크롤. 휴대폰은 지도 위 검색창 아래 */
+/* 지도 왼쪽 위 묶음(2026-10-28): "주요 전쟁" 단추(+ 목록)와 그 오른쪽 사건 화살표 뜻 */
 .map-top-left { position: absolute; top: 12px; left: 12px; z-index: 6; display: flex; align-items: flex-start; gap: 8px; max-width: calc(100% - 90px); max-height: calc(100% - 24px); pointer-events: none; }
 .map-top-left > * { pointer-events: auto; }
 .major-events { position: relative; flex-shrink: 0; }
-/* '주요 사건' 단추와 그 아래 나라 칠하기 방식 단추(2026-11-15). 주요 사건 목록은 떠서(absolute) 칠하기 단추를 덮는다 */
+/* '주요 전쟁' 단추와 그 아래 나라 칠하기 방식 단추(2026-11-15). 주요 전쟁 목록은 떠서(absolute) 칠하기 단추를 덮는다 */
 .map-top-stack { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; flex-shrink: 0; }
 .fill-mode { position: relative; display: flex; flex-direction: column; align-items: stretch; }
 .fill-mode button { height: 30px; min-width: 64px; padding: 0 10px; border: 1px solid var(--border); border-radius: 6px; background: var(--control-bg); color: var(--fg); font: inherit; font-size: 13px; cursor: pointer; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15); }
@@ -502,6 +502,12 @@ button {
 /* 눌러서 화살표를 고정한 사건 (2026-10-05): 마우스를 올린 사건보다 테두리를 굵게 */
 .event-pinned { box-shadow: 0 0 0 2px var(--accent); }
 
+/* 전쟁 보기에 이어진 사건(2026-11-22): 왼쪽 붉은 세로 띠와 제목 앞 칼 아이콘. 띠는 마우스를 올리거나 골라도 붉은색 그대로(다른 세 변만 강조색) */
+.event-war, .event-war.event-hovered, .event-war:focus-visible { border-left: 3px solid var(--front-line); }
+.event-war-icon { align-self: flex-start; flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; margin: 0 -2px; padding: 0; border: none; border-radius: 50%; background: none; cursor: pointer; }
+.event-war-icon svg { fill: none; stroke: var(--front-line); stroke-width: 2; stroke-linecap: round; }
+.event-war-icon:hover, .event-war-icon:focus-visible { background: var(--front-line); outline: none; }
+.event-war-icon:hover svg, .event-war-icon:focus-visible svg { stroke: var(--surface); }
 .event-head { display: flex; gap: 8px; align-items: baseline; }
 /* 연도는 늘 제목 첫 줄에 맞춘다(2026-11-20): 펼친 사건의 제목은 복사 단추 안이라, 두 줄 이상이면 기준선 맞춤이 마지막 줄을 따라갔다 */
 .event-year { align-self: flex-start; font-variant-numeric: tabular-nums; font-weight: 700; color: var(--muted); white-space: nowrap; }
@@ -763,6 +769,17 @@ button {
 .panel-claims .link-button { font-size: 12.5px; padding: 0; }
 
 /* 전투 장소 표시 (DESIGN.md §4.5): 전쟁 보기(⚔)보다 작고 가볍게 */
+/* 전쟁 아이콘(2026-11-22 되살림): "주요 전쟁" 목록의 전쟁이 그 해에 진행 중이면 주 전장에. 누르면 전쟁 보기 */
+.war-marker { cursor: pointer; pointer-events: auto; }
+.war-marker-disc { fill: var(--surface); stroke: var(--front-line); stroke-width: 1.5; }
+.war-marker:hover .war-marker-disc, .war-marker:focus-visible .war-marker-disc { fill: var(--front-line); }
+.war-marker-icon { fill: none; stroke: var(--front-line); stroke-width: 2; stroke-linecap: round; }
+.war-marker:hover .war-marker-icon, .war-marker:focus-visible .war-marker-icon { stroke: var(--surface); }
+.war-marker:focus, .war-marker:focus-visible { outline: none; }
+.war-marker-label, .war-marker-sub { paint-order: stroke; stroke: var(--label-halo); stroke-width: 3.5px; }
+.war-marker-label { font-size: 12.5px; font-weight: 700; fill: var(--front-line); }
+.war-marker-sub { font-size: 11px; fill: var(--label); opacity: 0; transition: opacity .15s; }
+.war-marker:hover .war-marker-sub, .war-marker:focus-visible .war-marker-sub { opacity: 1; }
 .battle-pin { cursor: pointer; pointer-events: auto; }
 .battle-pin:focus, .battle-pin:focus-visible { outline: none; }
 .battle-pin-hit { fill: transparent; }
@@ -791,7 +808,7 @@ button {
 .search-sub { color: var(--muted); font-size: 12px; }
 .search-empty { padding: 6px 10px; color: var(--muted); font-size: 13px; }
 @media (max-width: 768px) {
-  /* 화면 폭보다 살짝 작게. z-index 7: 결과 목록이 '주요 사건' 칸(.map-top-left, 6)과 아래 판(.panel.sheet, 6)보다 앞에 오게(2026-11-09) */
+  /* 화면 폭보다 살짝 작게. z-index 7: 결과 목록이 '주요 전쟁' 칸(.map-top-left, 6)과 아래 판(.panel.sheet, 6)보다 앞에 오게(2026-11-09) */
   .map-search { display: block; top: 8px; left: 8px; right: 8px; z-index: 7; }
   .map-top-left { top: 59px; left: 8px; max-width: calc(100% - 66px); max-height: calc(100% - 60px); } /* 검색창(8px + 높이) 아래, 오른쪽은 연도 막대 */
   .app:has(.panel.sheet) .map-top-left { max-height: calc(100% - 60px - var(--sheet-cover, 96px)); } /* 지도가 판 뒤까지 깔리므로 판이 가리는 높이만큼 */
@@ -816,7 +833,7 @@ button {
 .site-pin:hover .battle-pin-disc, .site-pin:focus-visible .battle-pin-disc { fill: var(--front-line); }
 
 /* ── 지도 단추의 불투명 바탕 (2026-11-20) ─────────────────
-   '주요 사건'·미니게임·권역 선택·나라 색칠 단추는 바탕이 비치지 않는다
+   '주요 전쟁'·미니게임·권역 선택·나라 색칠 단추는 바탕이 비치지 않는다
    (2026-11-19에 50% 투명으로 했다가 운영자 지시로 투명도를 없앰) */
 :root { --control-solid: #ffffff; }
 @media (prefers-color-scheme: dark) {
@@ -831,13 +848,13 @@ button {
 /* ── 미니게임 (2026-11-17) ─────────────────────────
    본 지도 위에 덮어 띄우는 화면. 색은 위의 변수를 그대로 쓰고, 정답 색(--mg-ok)만 따로 둔다 */
 /* 미니게임으로 가는 단추 (2026-11-19): 지도 오른쪽 위의 정사각형 게임패드 단추(모서리 5px).
-   한 변은 '주요 사건' 단추(.major-events-toggle) 높이의 2배, 휴대폰은 1.3배. 그 단추 높이가 바뀌면 --mg-major-h도 함께 고친다 */
+   한 변은 '주요 전쟁' 단추(.major-events-toggle) 높이의 2배, 휴대폰은 1.3배. 그 단추 높이가 바뀌면 --mg-major-h도 함께 고친다 */
 .app-main { --mg-major-h: 32px; }
 .mg-launch { position: absolute; top: 12px; right: 12px; z-index: 4; width: calc(var(--mg-major-h) * 2); height: calc(var(--mg-major-h) * 2); padding: 0; display: grid; place-items: center; border: 1.5px solid var(--accent); border-radius: 5px; background: var(--control-solid); color: var(--accent); cursor: pointer; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15); }
 .mg-launch svg { width: 62%; height: 62%; }
 .mg-launch:hover { background: color-mix(in srgb, var(--accent) 10%, var(--control-solid)); }
 @media (max-width: 768px) {
-  /* 휴대폰: 검색창 아래 '주요 사건'과 같은 높이에, 오른쪽 세로 연도 막대의 바로 위(막대 폭 50px·오른쪽 6px의 가운데 줄에 맞춤).
+  /* 휴대폰: 검색창 아래 '주요 전쟁'과 같은 높이에, 오른쪽 세로 연도 막대의 바로 위(막대 폭 50px·오른쪽 6px의 가운데 줄에 맞춤).
      단추가 들어간 만큼(단추 한 변) 연도 막대를 아래에서 시작하게 해 길이를 줄인다. 원래 막대의 top은 69px */
   .mg-launch { top: 59px; right: calc(31px - var(--mg-major-h) * 0.65); width: calc(var(--mg-major-h) * 1.3); height: calc(var(--mg-major-h) * 1.3); }
   .map-yearbar { top: calc(69px + var(--mg-major-h) * 1.3); }
