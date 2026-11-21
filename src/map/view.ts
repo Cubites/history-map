@@ -187,8 +187,13 @@ export function constrain(size: Size, s0: number, view: View): View {
   return { lon: normalizeLon(lon), k, ty, dx };
 }
 
-/** 경위도 시점을 화면 시점으로. 해당 위도가 화면 가운데에 오게 한다 */
-export function toView(size: Size, s0: number, { lon, lat, k }: GeoView): View {
+/**
+ * 경위도 시점을 화면 시점으로. 해당 위도가 화면 가운데에 오게 한다.
+ * 배율은 먼저 한도(MIN_ZOOM~MAX_ZOOM) 안으로 맞춘 뒤 세로 위치를 구한다(2026-11-21). 전에는 한도 넘는 배율로 위치를 구하고 constrain이 배율만 깎아,
+ * 범위가 좁은 전쟁(후삼국 통일 전쟁·정묘호란·봉오동·청산리)을 폭 좁은 휴대폰에서 열면 필요한 배율이 60을 넘어 화면이 북쪽으로 수백 px 밀렸다
+ */
+export function toView(size: Size, s0: number, { lon, lat, k: wanted }: GeoView): View {
+  const k = clamp(wanted, MIN_ZOOM, MAX_ZOOM);
   // 시점(ty)은 Equal Earth 기준으로 정의되므로 세계 도법으로 계산한다
   const projection = worldProjection(size, s0, { lon, k, ty: 0, dx: 0 }, false);
   const y = projection([lon, lat])![1];
