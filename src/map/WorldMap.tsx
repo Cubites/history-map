@@ -207,12 +207,12 @@ export default function WorldMap({ data }: { data: StaticData }) {
   const fillMode = useAppStore((s) => s.fillMode);
   const regionFocus = useAppStore((s) => s.regionFocus);
   const chooseRegion = useRegionChoice();
-  // 휴대폰 권역 단추(2026-10-28): 평소에는 지금 권역 단추만 보이고, 누르면 다른 권역이 그 위에 펼쳐진다.
-  // 펼친 뒤 어느 단추든 누르면 그 권역을 고르고 다시 접힌다. 밖을 눌러도 접힌다. PC는 늘 넷 다 보이고 누르면 바로 고른다
+  // 권역 단추(2026-10-28 휴대폰, 2026-11-21 PC도 같게): 평소에는 지금 권역 단추만 보이고, 누르면 다른 권역이 그 위에 펼쳐진다.
+  // 펼친 뒤 어느 단추든 누르면 그 권역을 고르고 다시 접힌다. 밖을 눌러도 접힌다
   const [regionsOpen, setRegionsOpen] = useState(false);
   const regionsRef = useRef<HTMLDivElement>(null);
   const pickRegion = (choose: () => void) => {
-    if (!regionsOpen && window.matchMedia('(max-width: 768px)').matches) {
+    if (!regionsOpen) {
       setRegionsOpen(true);
       return;
     }
