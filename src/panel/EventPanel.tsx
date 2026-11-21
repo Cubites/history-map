@@ -1,7 +1,7 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { claimantsAt, claimedRegionsAt, occupierAt, overlordAt, type StaticData } from '../data/staticData.ts';
 import { eventYearFor, eventsOf, formatEventYears, inDecade, linkDirection } from '../lib/events.ts';
-import { formatFrontDate, yearOfFrontDate } from '../lib/wars.ts';
+import { activeWarView, formatFrontDate, yearOfFrontDate } from '../lib/wars.ts';
 import { useMediaQuery } from '../lib/useMediaQuery.ts';
 import { formatDecade, formatRange, formatYear, isAlive, prehistoryStage } from '../lib/year.ts';
 import type { HistoryEvent } from '../schema/index.ts';
@@ -10,7 +10,9 @@ import { CopyLink } from './CopyLink.tsx';
 import { ABOUT_LIST_MIN, Sentences, splitSentences } from './aboutText.tsx';
 import { CountryList } from './CountryList.tsx';
 import { EntityTabs } from './EntityTabs.tsx';
+import { scrollUnderHeader } from './scrollUnderHeader.ts';
 import { useBottomSheet } from './useBottomSheet.ts';
+import { WarPanel } from './WarPanel.tsx';
 
 /** 고정한 사건을 풀 때 클릭으로 칠 움직임 한도(px). 지도의 끌기 판정(WorldMap의 d3-zoom clickDistance)과 같다 */
 const CLICK_DISTANCE = 4;
@@ -27,7 +29,7 @@ export function EventPanel({ data }: { data: StaticData }) {
   const select = useAppStore((s) => s.select);
   // 패널의 나라 링크(귀속 논쟁·후계 국가)를 누르면 그 나라를 고르고 지도도 그 나라로 옮긴다 (2026-11-11)
   const selectFocus = useAppStore((s) => s.selectFocus);
-  const warId = useAppStore((s) => s.warId);
+  const exitWar = useAppStore((s) => s.exitWar);
   // 눌러서 고정한 사건은 사건 밖(지도·패널의 다른 곳 등)을 '클릭'하면 풀린다. 다른 사건을 누르면 그 사건으로 바뀐다 (EventItem)
   // 지도를 끌어 옮기거나 두 손가락으로 확대·축소할 때는 풀리지 않는다(2026-10-09): 누른 자리에서 CLICK_DISTANCE 넘게 움직였거나,
   // 다른 포인터가 함께 눌렸거나, 브라우저가 스크롤로 가져가면(pointercancel) 클릭으로 치지 않는다
@@ -70,32 +72,49 @@ export function EventPanel({ data }: { data: StaticData }) {
     };
   }, [pinned, pinEvent]);
 
-  // 나라를 고른 동안 Esc로 선택을 푼다(2026-10-28, 이름 줄의 × 단추와 같음). 글을 쓰는 칸(검색창·연도 칸)에서는 그 칸이 Esc를 쓴다
+  // 전쟁 보기 중에는 이 패널이 나라 정보 대신 전쟁 정보를 보여 준다(2026-11-21, WarPanel). 고른 나라는 그대로 남아 닫으면 다시 나온다
+  const warId = useAppStore((s) => s.warId);
+  const theaterId = useAppStore((s) => s.theaterId);
+  const warView = useMemo(() => activeWarView(data.wars, warId, theaterId, year), [data.wars, warId, theaterId, year]);
+  const inWar = !!warView;
+
+  // Esc(2026-10-28, 이름 줄의 × 단추와 같음): 전쟁 보기 중이면 전쟁 보기를 닫고(2026-11-21), 아니면 나라 선택을 푼다. 글을 쓰는 칸(검색창·연도 칸)에서는 그 칸이 Esc를 쓴다
   useEffect(() => {
-    if (!selectedId) return;
+    if (!selectedId && !inWar) return;
     const onKeyDown = (e: KeyboardEvent) => {
       if (e.key !== 'Escape' || e.defaultPrevented) return;
       const t = e.target;
       if (t instanceof HTMLElement && (t.isContentEditable || t.closest('input, textarea, select'))) return;
-      select(null);
+      if (inWar) exitWar();
+      else select(null);
     };
     document.addEventListener('keydown', onKeyDown);
     return () => document.removeEventListener('keydown', onKeyDown);
-  }, [selectedId, select]);
+  }, [selectedId, inWar, select, exitWar]);
 
-  // 휴대폰에서 아래 패널은 끌어 올리는 판(useBottomSheet). 전쟁 보기에서는 패널이 지도 위로 가므로 쓰지 않는다.
-  // 휴대폰에서 '국가 상세정보'(EntityTabs)나 사건을 펼치면 판을 화면 절반까지 올리고, 모두 닫으면 기본 높이로 돌린다(2026-11-11)
+  // 휴대폰에서 아래 패널은 끌어 올리는 판(useBottomSheet). 전쟁 보기의 전쟁 정보도 같은 판에 담는다(2026-11-21: 높이·둥근 모서리·뒤에 비치는 지도가 나라를 골랐을 때와 같음).
+  // 휴대폰에서 '국가 상세정보'(EntityTabs)나 사건을 펼치면 판을 화면 절반까지 올리고, 모두 닫으면 기본 높이로 돌린다(2026-11-11). 전쟁 보기는 지도를 넓게 보도록 올리지 않는다
   const mobile = useMediaQuery('(max-width: 768px)');
   const [detailOpen, setDetailOpen] = useState(false);
-  const sheet = useBottomSheet(!warId, selectedId, mobile && !!selectedId && (detailOpen || !!pinned));
-  const sheetHandle = !warId && (
-    <button type="button" className="sheet-handle" aria-label={sheet.state === 'open' || sheet.state === 'half' ? '나라 정보 접기' : sheet.state === 'min' ? '나라 정보 올리기' : '나라 정보 펼치기'} aria-expanded={sheet.state !== 'min'} {...sheet.handleProps} />
+  const sheet = useBottomSheet(true, warView ? `war:${warView.war.id}/${warView.theater.id}` : selectedId, mobile && !inWar && !!selectedId && (detailOpen || !!pinned));
+  const what = inWar ? '전쟁 정보' : '나라 정보';
+  const sheetHandle = (
+    <button type="button" className="sheet-handle" aria-label={sheet.state === 'open' || sheet.state === 'half' ? `${what} 접기` : sheet.state === 'min' ? `${what} 올리기` : `${what} 펼치기`} aria-expanded={sheet.state !== 'min'} {...sheet.handleProps} />
   );
+
+  if (warView) {
+    return (
+      <aside ref={sheet.ref} className="panel sheet panel-war">
+        {sheetHandle}
+        <WarPanel key={`${warView.war.id}/${warView.theater.id}`} data={data} warView={warView} />
+      </aside>
+    );
+  }
 
   const entity = selectedId ? data.entities.get(selectedId) : undefined;
   if (!entity) {
     return (
-      <aside ref={sheet.ref} className={warId ? 'panel panel-war-mode' : 'panel sheet'}>
+      <aside ref={sheet.ref} className="panel sheet">
         {sheetHandle}
         <p className="panel-guide" data-sheet-head>아래 목록 혹은 지도에서 나라를 누르면 상세 정보가 표시됩니다.</p>
         {/* 2026-10-28: 자료 범위 안내 글을 없애고 그 자리에 지금 권역의 나라 목록 */}
@@ -126,7 +145,7 @@ export function EventPanel({ data }: { data: StaticData }) {
     `repeating-linear-gradient(135deg, ${colors.map((c, i) => `${c} ${i * 4}px ${(i + 1) * 4}px`).join(', ')})`;
 
   return (
-    <aside ref={sheet.ref} className={warId ? 'panel panel-war-mode' : 'panel sheet'}>
+    <aside ref={sheet.ref} className="panel sheet">
       {sheetHandle}
       {/* 이름·기간 머리는 스크롤해도 패널 위에 붙어 있다(2026-10-18). 휴대폰 접힌 판은 이 머리 높이까지(data-sheet-head) */}
       <header className="panel-header panel-header-sticky" data-sheet-head>
@@ -280,20 +299,8 @@ function EventItem({ event, data, selectedId, highlight }: { event: HistoryEvent
     const item = itemRef.current;
     if (!item || !(focused || pinned)) return;
     // 이름·기간 머리가 붙어 있는 패널이면(2026-10-18), 누르거나 지도·검색에서 고른 사건의 윗변을
-    // 머리 바로 아래(사건 사이 간격만큼 띄움)에 맞춘다. 그만큼 내릴 수 없으면 맨 아래까지만 내린다
-    const panel = item.closest<HTMLElement>('.panel');
-    const header = panel?.querySelector<HTMLElement>('.panel-header-sticky');
-    if (panel && header) {
-      const gap = parseFloat(getComputedStyle(item.parentElement!).rowGap) || 0;
-      const scrollportTop = panel.getBoundingClientRect().top + panel.clientTop;
-      const itemTop = item.getBoundingClientRect().top - scrollportTop + panel.scrollTop;
-      // 머리가 붙었을 때 아래 끝 = 패널 안쪽 여백 + 붙는 위치(top, 음수일 수 있음) + 머리 높이
-      // (sticky는 스크롤 영역의 안쪽 여백 끝을 기준으로 붙는다)
-      const headerBottom =
-        (parseFloat(getComputedStyle(panel).paddingTop) || 0) + (parseFloat(getComputedStyle(header).top) || 0) + header.offsetHeight;
-      const max = panel.scrollHeight - panel.clientHeight;
-      panel.scrollTo({ top: Math.max(0, Math.min(itemTop - headerBottom - gap, max)), behavior: 'smooth' });
-    } else if (focused) item.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    // 머리 바로 아래(사건 사이 간격만큼 띄움)에 맞춘다. 그만큼 내릴 수 없으면 맨 아래까지만 내린다 (scrollUnderHeader)
+    if (!scrollUnderHeader(item) && focused) item.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
   }, [focused, pinned]);
   const setYear = useAppStore((s) => s.setYear);
   const setFront = useAppStore((s) => s.setFront);

@@ -208,8 +208,7 @@ button {
   flex-direction: column;
   gap: 4px;
 }
-.map-controls button,
-.timeline button {
+.map-controls button {
   min-width: 36px;
   height: 32px;
   padding: 0 10px;
@@ -219,9 +218,7 @@ button {
   font-size: 14px;
   cursor: pointer;
 }
-.map-controls button:hover,
-.timeline button:hover:not(:disabled) { border-color: var(--muted); }
-.timeline button:disabled { opacity: 0.4; cursor: default; }
+.map-controls button:hover { border-color: var(--muted); }
 /* 지도 왼쪽 아래 권역 단추(세계 + 권역 열 개, regions.ts REGION_BUTTONS)·전역 단추의 고른 상태와 연도 이동 알림 */
 .map-controls button[aria-pressed='true'] { border-color: var(--accent); color: var(--accent); font-weight: 600; }
 .map-theaters button[aria-pressed='true'] { border-color: var(--front-line); color: var(--front-line); font-weight: 700; }
@@ -337,8 +334,10 @@ button {
 }
 /* 검색창: 칸 폭보다 조금 작게(양옆 12px), 높이는 지도 위에 있을 때(32px)보다 40% 크게, 모서리는 덜 둥글게(2026-10-27) */
 .side-search { position: relative; z-index: 5; padding: 12px 12px 4px; }
-.side-search .search-input { height: 45px; padding: 0 12px; font-size: 15px; border-radius: 3px; }
-.side-search .search-scope { height: 45px; font-size: 15px; border-radius: 3px; }
+.side-search .search { border-radius: 3px; }
+.side-search .search-input { height: 43px; padding: 0 12px; font-size: 15px; }
+.side-search .search-scope { height: 43px; padding: 0 6px 0 10px; font-size: 15px; }
+.side-search .search-divider { margin: 9px 0; }
 .panel {
   flex: 1;
   min-height: 0;
@@ -599,29 +598,14 @@ button {
 .map-yearbar.across .map-yearbar-thumb { top: 50%; }
 .map-yearbar.across .map-yearbar-prehistory { flex-direction: row; }
 
-/* ── 타임라인 ─────────────────────────────────────────── */
-
-/* 전쟁 보기에서만 그리는 화면 아래 날짜 줄(Timeline.tsx·FrontTimeline.tsx). 평소 연도 조절은 지도 위 .map-yearbar(MapYearControls.tsx) */
-.timeline {
-  position: relative;
-  padding: 8px 16px 6px;
-  border-top: 1px solid var(--border);
-  background: var(--surface);
-}
-
 /* ── 모바일 세로 화면 (DESIGN.md §6.5) ────────────────────
    PC 배치는 그대로 두고, 폭이 좁을 때만 위: 날짜 조절 / 가운데: 지도 / 아래: 사건 목록으로 바꾼다. */
 
 @media (max-width: 768px) {
   .app { height: 100dvh; }
   .app-body { display: contents; }
-  /* 전쟁 보기 아래 날짜 줄(휴대폰). 화면 속 순서는 아래 .timeline-war 규칙(order: 3)이 정한다. 평소 연도 조절은 지도 오른쪽 세로 막대 */
-  .timeline { order: 4; padding: 6px 12px calc(4px + env(safe-area-inset-bottom)); border-bottom: none; border-top: 1px solid var(--border); min-width: 0; max-width: 100vw; }
   .side { display: contents; }
   .side-search { display: none; }
-  .front-timeline-head { font-size: 12px; gap: 2px 8px; }
-  .front-timeline-legend { font-size: 11px; }
-  .front-timeline-dates ol button { height: 26px; }
   .app-main { order: 2; flex: 1 1 auto; min-height: 180px; }
   .panel {
     order: 3;
@@ -660,9 +644,6 @@ button {
   .panel.sheet .panel-header-sticky { top: 22px; margin-top: 0; padding-top: 2px; }
   .app-footer { display: none; }
 
-  /* 전쟁 보기 아래 줄의 단추(날짜 축 등)는 좁게 */
-  .timeline button { min-width: 0; padding: 0 8px; }
-
   /* 모바일은 두 손가락으로 확대하므로 축척 막대는 숨긴다. 권역 단추·전쟁 보기의 전역 단추는 PC처럼 왼쪽 아래에 세로로(2026-10-26) */
   .map-controls, .map-bottom-left { bottom: 8px; left: 8px; }
   .map-bottom-left { right: 96px; }
@@ -672,7 +653,7 @@ button {
   .map-zoom button { width: 30px; height: 30px; font-size: 18px; } /* 손가락으로 누르기 쉽게 */
   .map-controls button { height: 28px; padding: 0 8px; font-size: 12px; }
   /* 지도가 판 뒤까지 깔리므로 지도 아래쪽 단추·확대 단추·연도 칸·연도 막대를 판이 늘 가리는 높이(.app의 --sheet-cover, useBottomSheet.ts) 위로 올린다.
-     판을 놓아 단계가 바뀔 때만 판과 같은 빠르기로 따라 움직인다(전쟁 보기는 판이 아니라 아래 기본값 그대로) */
+     판을 놓아 단계가 바뀔 때만 판과 같은 빠르기로 따라 움직인다(전쟁 보기의 전쟁 정보도 같은 판, 2026-11-21) */
   .app:has(.panel.sheet) .map-controls, .app:has(.panel.sheet) .map-bottom-left, .app:has(.panel.sheet) .map-zoom-wrap, .app:has(.panel.sheet) .map-yearbox {
     bottom: calc(var(--sheet-cover, 96px) + 8px);
     transition: bottom 0.22s ease;
@@ -690,6 +671,7 @@ button {
   .panel-header-sticky { top: -10px; margin: -10px -12px 0; padding: 10px 12px 6px; }
   .panel-header-sticky h2 .hanja { font-size: 15px; } /* 이름 17px와 기간 13px의 중간 */
   .panel-section-title { margin: 10px 0 6px; }
+  .war-fronts { margin-top: 10px; }
   .event { padding: 8px 10px; }
   .map-legend { font-size: 11px; padding: 3px 6px; }
 
@@ -740,100 +722,19 @@ button {
 .front-arrow-0 .front-arrow-label { fill: var(--front-north); }
 .front-arrow-1 .front-arrow-label { fill: var(--front-south); }
 
-/* ── 전쟁 중 하위 타임라인 (DESIGN.md §4.5) ───────────────── */
-.front-timeline {
-  margin-top: 6px;
-  padding-top: 6px;
-  border-top: 1px dashed var(--border);
-  display: grid;
-  grid-template-columns: minmax(0, 1fr); /* 날짜 목록이 화면보다 넓어도 늘어나지 않고 안에서 스크롤 */
-  gap: 4px;
-  min-width: 0;
-}
-.front-timeline-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; font-size: 13px; }
-.front-timeline-current { font-weight: 600; font-variant-numeric: tabular-nums; }
-.front-timeline-legend { display: inline-flex; align-items: center; gap: 4px; color: var(--muted); font-size: 12px; }
-.front-timeline-legend { flex-wrap: wrap; }
-.front-legend-item { display: inline-flex; align-items: center; gap: 4px; margin-right: 8px; }
-.front-legend-swatch { display: inline-block; width: 12px; height: 10px; border-radius: 2px; }
-.front-timeline-dates { display: flex; align-items: center; gap: 4px; min-width: 0; }
-.front-timeline-dates > button { flex: 0 0 auto; }
-/* 날짜가 많으면 모두 보이려 하지 않고 좌우로 스크롤한다 */
-.front-timeline-dates ol {
-  list-style: none;
-  margin: 0;
-  padding: 2px 0;
-  display: flex;
-  gap: 4px;
-  overflow-x: auto;
-  overscroll-behavior-x: contain;
-  scroll-snap-type: x proximity;
-  flex: 1 1 0;
-  min-width: 0;
-  scrollbar-width: thin;
-}
-.front-timeline-dates ol li { flex: 0 0 auto; scroll-snap-align: center; }
-.front-timeline-dates ol button {
-  font-size: 12px;
-  padding: 2px 8px;
-  border-radius: 999px;
-  white-space: nowrap;
-  font-variant-numeric: tabular-nums;
-}
-.front-timeline-dates ol button[aria-pressed='true'] {
-  border-color: var(--front-line);
-  color: var(--front-line);
-  font-weight: 700;
-}
-.front-timeline-summary { margin: 0; font-size: 12.5px; color: var(--muted); }
-.front-timeline-summary p { margin: 0; }
-.front-timeline-summary-title { display: none; }
 .event-front { font-size: 11.5px; color: var(--front-line); margin-top: 2px; }
 
 /* ── 전쟁 보기 (DESIGN.md §4.5) ─────────────────────────── */
 
-/* 전쟁 보기 띠(이름·닫기)는 지도 아래 가운데(2026-10-26: 위에서 옮김). 휴대폰은 아래 @media에서 닫기 단추만 남긴다 */
-.war-banner {
-  position: absolute;
-  bottom: 12px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 5px 6px 5px 12px;
-  border: 1px solid var(--front-line);
-  border-radius: 999px;
-  background: var(--control-bg);
-  font-size: 13px;
-  white-space: nowrap;
-  z-index: 2;
-}
-.war-banner-title { min-width: 0; overflow: hidden; text-overflow: ellipsis; color: var(--front-line); font-weight: 700; }
-.war-banner button { flex: 0 0 auto; font-size: 12px; padding: 2px 10px; border-radius: 999px; }
-/* 지도가 좁으면 왼쪽 아래 전역 단추와 겹치지 않게 양쪽 150px씩 비우고 제목을 줄인다 */
-.war-banner { max-width: calc(100% - 300px); }
-
-.timeline-war .front-timeline { margin-top: 0; padding-top: 0; border-top: none; }
-.front-timeline-period { color: var(--muted); font-variant-numeric: tabular-nums; }
-@media (max-width: 768px) {
-  /* 머리줄의 날짜·제목은 아래 글 영역 첫 줄로 옮기고, 글 영역은 4줄(18px × 4) 높이로 고정해 넘치면 세로 스크롤(2026-10-26) */
-  .front-timeline-current { display: none; }
-  .front-timeline-summary { height: 72px; line-height: 18px; overflow-y: auto; overscroll-behavior-y: contain; }
-  .front-timeline-summary-title { display: block; color: var(--fg); font-weight: 600; font-variant-numeric: tabular-nums; }
-  /* 전쟁 보기에서는 지도를 넓게 보도록 아래 패널에 나라 이름·원어명·기간만 둔다(2026-10-26) */
-  .panel-war-mode > :not(.panel-header),
-  .panel-war-mode .panel-occupation,
-  .panel-war-mode .panel-claims { display: none; }
-  .panel-war-mode:not(:has(.panel-header)) { display: none; }
-  /* 전쟁 보기에서는 고른 나라 정보를 지도 위로, 전쟁 정보(이름·진영·날짜·글)를 지도 아래로 바꿔 둔다(2026-10-26) */
-  .panel-war-mode { order: 1; border-top: none; border-bottom: 1px solid var(--border); }
-  .timeline-war { order: 3; border-bottom: none; border-top: 1px solid var(--border); }
-  /* 패널에 이름 머리만 남으므로 머리 아래 구분선과 패널 아래 여백을 없앤다. 남기면 패널 아래 테두리와 함께 얇은 막대처럼 보인다(2026-10-26) */
-  .panel-war-mode { padding-bottom: 0; }
-  .panel-war-mode .panel-header-sticky { border-bottom: none; }
-}
-
+/* 전쟁 정보 패널(2026-11-21, panel/WarPanel.tsx): 나라 정보 패널 자리(PC 왼쪽 칸, 휴대폰 아래 판)에 그린다. 머리는 나라 이름란(.panel-header-sticky)을 그대로 쓴다:
+   이름 자리에 전쟁 이름, 원문 이름 자리(.hanja)에 기간, 그 아래 진영 색 설명, 오른쪽 끝 ×(.panel-deselect)로 닫는다. 날짜 목록은 사건 목록(.event-list·.event)과 같은 모양.
+   전에 있던 화면 아래 날짜 줄(.timeline·.front-timeline)과 지도 아래 가운데 '닫기' 띠(.war-banner)는 없앴다 */
+.war-head { flex: 1; min-width: 0; }
+.war-head .hanja { font-variant-numeric: tabular-nums; }
+.war-legend { display: flex; flex-wrap: wrap; gap: 2px 12px; margin-top: 4px; font-size: 12.5px; color: var(--muted); }
+.war-legend-item { display: inline-flex; align-items: center; gap: 5px; }
+.war-legend-swatch { flex-shrink: 0; width: 12px; height: 10px; border-radius: 2px; }
+.war-fronts { margin-top: 12px; }
 
 /* 전쟁 보기의 진군 경로·전투·거점 (DESIGN.md §4.5) */
 .war-route-ahead { fill: none; stroke-width: 2; stroke-dasharray: 2 5; stroke-linecap: round; opacity: 0.55; }
@@ -857,24 +758,6 @@ button {
 .war-battle-past { opacity: 0.55; }
 .war-battle-label { font-size: 12px; font-weight: 700; }
 
-/* 모바일은 전쟁 이름이 아래 전쟁 정보에 있으므로 띠의 제목·테두리를 숨기고, 같은 닫기 단추만 지도 아래 가운데에 키워 둔다(2026-10-27 통합).
-   기본 .war-banner 규칙보다 뒤에 있어야 덮어쓴다 */
-@media (max-width: 768px) {
-  .war-banner { bottom: 8px; max-width: none; padding: 0; border: none; background: none; }
-  .war-banner-title { display: none; }
-  .war-banner .war-banner-close {
-    height: 32px;
-    padding: 0 18px;
-    border: 1px solid var(--front-line);
-    border-radius: 999px;
-    background: var(--control-bg);
-    color: var(--front-line);
-    font-size: 13px;
-    font-weight: 600;
-    cursor: pointer;
-  }
-}
-
 /* 귀속 논쟁 (DESIGN.md §4.3) */
 .panel-claims { font-size: 12.5px; color: var(--muted); margin-top: 2px; }
 .panel-claims .link-button { font-size: 12.5px; padding: 0; }
@@ -892,13 +775,14 @@ button {
 /* 검색: 지도 왼쪽 위(2026-10-27, 전에는 머리글) */
 /* 지도 위 검색창은 휴대폰만(PC는 왼쪽 칸 맨 위 .side-search) */
 .map-search { display: none; position: absolute; z-index: 5; }
-/* 검색창 왼쪽의 찾을 분야 고르기(전체·국가명·사건, 2026-11-20). 모양은 자리마다 검색창을 따른다 */
-.search { position: relative; min-width: 0; display: flex; gap: 6px; }
-.search-scope { flex: 0 0 auto; box-sizing: border-box; padding: 0 6px; font: inherit; font-size: 14px; color: var(--fg); background: var(--surface); border: 1px solid var(--border); border-radius: 6px; cursor: pointer; }
-.search-scope:focus-visible { outline: 2px solid var(--front-line); outline-offset: -1px; }
-.search-input { flex: 1 1 0; min-width: 0; width: 100%; box-sizing: border-box; padding: 6px 10px; font: inherit; font-size: 14px; color: var(--fg); background: var(--surface); border: 1px solid var(--border); border-radius: 6px; }
-.search-input:focus { outline: 2px solid var(--front-line); outline-offset: -1px; }
-.search-results { position: absolute; z-index: 20; top: calc(100% + 4px); left: 0; right: 0; margin: 0; padding: 4px 0; list-style: none; background: var(--surface); border: 1px solid var(--border); border-radius: 6px; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15); max-height: 60vh; overflow-y: auto; }
+/* 검색창 왼쪽의 찾을 분야 고르기(전체·국가명·사건, 2026-11-20). 분야 칸과 글 칸을 한 테두리 상자(.search)에 담고 사이에 세로선(.search-divider)을 둔다(2026-11-21):
+   테두리·바탕·둥근 모서리는 상자가 갖고 두 칸은 테두리 없이 그 안을 채운다. 세로선은 테두리보다 조금 진하고 위아래를 띄운다. 높이·모서리는 자리마다(.side-search·.map-search) 정한다 */
+.search { position: relative; min-width: 0; display: flex; align-items: stretch; box-sizing: border-box; background: var(--surface); border: 1px solid var(--border); border-radius: 6px; }
+.search:focus-within { outline: 2px solid var(--front-line); outline-offset: -1px; }
+.search-scope { flex: 0 0 auto; box-sizing: border-box; padding: 0 4px 0 8px; font: inherit; font-size: 14px; color: var(--fg); background: var(--surface); border: none; border-radius: inherit; outline: none; cursor: pointer; }
+.search-divider { flex: 0 0 1px; margin: 6px 0; background: color-mix(in srgb, var(--border), var(--fg) 30%); }
+.search-input { flex: 1 1 0; min-width: 0; width: 100%; box-sizing: border-box; padding: 6px 10px; font: inherit; font-size: 14px; color: var(--fg); background: var(--surface); border: none; border-radius: inherit; outline: none; }
+.search-results { position: absolute; z-index: 20; top: calc(100% + 5px); left: -1px; right: -1px; margin: 0; padding: 4px 0; list-style: none; background: var(--surface); border: 1px solid var(--border); border-radius: 6px; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15); max-height: 60vh; overflow-y: auto; }
 .search-result { display: flex; gap: 8px; padding: 6px 10px; cursor: pointer; font-size: 13.5px; }
 .search-result-active { background: var(--border); }
 .search-year { flex: 0 0 auto; min-width: 64px; color: var(--muted); font-variant-numeric: tabular-nums; }
@@ -912,9 +796,11 @@ button {
   .app:has(.panel.sheet) .map-top-left { max-height: calc(100% - 60px - var(--sheet-cover, 96px)); } /* 지도가 판 뒤까지 깔리므로 판이 가리는 높이만큼 */
   /* 글자 16px: 16px 미만이면 iOS가 입력 시 화면을 확대한다. 지도 위 검색창은 높이 40px(2026-10-29: 33px에서 약 20% 늘림), 양 끝이 반원인 알약 모양 */
   .search-input { font-size: 16px; padding: 5px 8px; }
-  .map-search .search-input { height: 40px; padding: 0 18px; border-radius: 20px; }
+  .map-search .search { border-radius: 20px; }
+  .map-search .search-input { height: 38px; padding: 0 16px 0 10px; }
   .search-scope { font-size: 16px; }
-  .map-search .search-scope { height: 40px; padding: 0 8px 0 12px; border-radius: 20px; }
+  .map-search .search-scope { height: 38px; padding: 0 4px 0 14px; }
+  .map-search .search-divider { margin: 8px 0; }
   /* 검색창이 좁으므로 결과 목록은 지도 폭에 맞춘다 */
 
 }

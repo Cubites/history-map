@@ -134,6 +134,8 @@ export function SearchBox({ data }: { data: StaticData }) {
           </option>
         ))}
       </select>
+      {/* 분야 칸과 글 칸 사이 세로선(2026-11-21): 둘을 한 상자로 보이게 하고 이 선으로 나눈다 */}
+      <span className="search-divider" aria-hidden="true" />
       <input
         ref={inputRef}
         className="search-input"

@@ -3,7 +3,6 @@ import { useStaticData } from './data/staticData.ts';
 import { MiniGame } from './minigame/MiniGame.tsx';
 import WorldMap from './map/WorldMap.tsx';
 import { EventPanel } from './panel/EventPanel.tsx';
-import { Timeline } from './timeline/Timeline.tsx';
 import { MapYearControls } from './timeline/MapYearControls.tsx';
 import { SearchBox } from './search/SearchBox.tsx';
 import { UpdateNotice } from './UpdateNotice.tsx';
@@ -21,7 +20,7 @@ export default function App() {
           <div className="app-body">
             <main className="app-main">
               <WorldMap data={data} />
-              {/* 평소의 연도 조절(2026-10-28부터): 휴대폰은 지도 오른쪽 세로 막대, PC는 지도 아래 가로 띠, 둘 다 지도 아래 가운데 연도 입력 칸. 전쟁 보기에서는 아래 줄(Timeline) */}
+              {/* 평소의 연도 조절(2026-10-28부터): 휴대폰은 지도 오른쪽 세로 막대, PC는 지도 아래 가로 띠, 둘 다 지도 아래 가운데 연도 입력 칸. 전쟁 보기에서는 숨기고 날짜는 전쟁 정보 패널(WarPanel)에서 고른다 */}
               <MapYearControls data={data} />
               {/* 미니게임으로 가는 단추(2026-11-19): 지도 오른쪽 위의 게임패드 아이콘. 크기는 '주요 사건' 단추 높이의 2배(휴대폰 1.3배), styles.css .mg-launch */}
               <button type="button" className="mg-launch" aria-label="미니게임" title="미니게임" onClick={() => setGameOpen(true)}>
@@ -38,7 +37,7 @@ export default function App() {
                 <SearchBox data={data} />
               </div>
             </main>
-            {/* PC 왼쪽 칸: 검색창(스크롤해도 맨 위에 남음) + 나라 정보·사건 패널. 휴대폰은 display: contents로 칸이 없는 것처럼 */}
+            {/* PC 왼쪽 칸: 검색창(스크롤해도 맨 위에 남음) + 나라 정보·사건 패널(전쟁 보기에서는 전쟁 정보, 2026-11-21). 휴대폰은 display: contents로 칸이 없는 것처럼 */}
             <div className="side">
               <div className="side-search">
                 <SearchBox data={data} />
@@ -46,7 +45,6 @@ export default function App() {
               <EventPanel data={data} />
             </div>
           </div>
-          <Timeline data={data} />
         </>
       ) : (
         <div className="app-loading">{error ? `데이터를 불러오지 못했습니다: ${error}` : '데이터를 불러오는 중…'}</div>

@@ -28,7 +28,7 @@ import {
 import { focusTarget, placeActive } from '../lib/events.ts';
 import { useWarShapes } from '../data/warShapes.ts';
 import { activeWarView, entryYear, factionColor, frontBattleSpots, nearBy, snapshotFor } from '../lib/wars.ts';
-import { formatRange, formatYear } from '../lib/year.ts';
+import { formatRange } from '../lib/year.ts';
 import { REGION_BUTTONS, REGION_FILTER_INFO, regionFocusBounds } from '../schema/regions.ts';
 import { useRegionChoice } from '../search/RegionFilter.tsx';
 import { LODS, type Lod, type TerritoryIndexEntry } from '../schema/index.ts';
@@ -92,12 +92,14 @@ const onMapUi = (target: EventTarget | null) => target instanceof Element && !!t
 
 /**
  * 휴대폰은 지도가 나라 정보 판 뒤까지 깔리므로(2026-11-05, useBottomSheet.ts) 범위를 맞출 때는 판이 늘 가리는 아래쪽(.app의 --sheet-cover)을 뺀 크기로 맞춘다.
- * 그러면 범위가 판 위 보이는 곳 가운데에 온다(시점의 ty는 화면 위 끝 기준이라 줄인 크기로 구한 시점을 그대로 쓴다). PC·전쟁 보기는 판이 없어 그대로
+ * 그러면 범위가 판 위 보이는 곳 가운데에 온다(시점의 ty는 화면 위 끝 기준이라 줄인 크기로 구한 시점을 그대로 쓴다). PC는 판이 없어 그대로.
+ * 전쟁 보기(2026-11-21부터 전쟁 정보도 같은 판)는 판이 접힘 단계(화면 높이 1/3)로 올라오는데, 여는 순간에는 판이 아직 내려가 있을 수 있어 접힌 높이만큼은 가린다고 본다(third)
  */
-function visibleSize(size: Size): Size {
+function visibleSize(size: Size, third = false): Size {
   const app = document.querySelector<HTMLElement>('.app');
   if (!app || !document.querySelector('.panel.sheet') || !window.matchMedia('(max-width: 768px)').matches) return size;
-  const cover = parseFloat(getComputedStyle(app).getPropertyValue('--sheet-cover')) || 0;
+  const measured = parseFloat(getComputedStyle(app).getPropertyValue('--sheet-cover')) || 0;
+  const cover = third ? Math.max(measured, Math.round(window.innerHeight / 3)) : measured;
   return { width: size.width, height: Math.max(120, size.height - cover) };
 }
 
@@ -197,8 +199,6 @@ export default function WorldMap({ data }: { data: StaticData }) {
   const warId = useAppStore((s) => s.warId);
   const theaterId = useAppStore((s) => s.theaterId);
   const enterWar = useAppStore((s) => s.enterWar);
-  const exitWar = useAppStore((s) => s.exitWar);
-  const returnYear = useAppStore((s) => s.returnYear);
   const selectEntity = useAppStore((s) => s.select);
   const selectFocus = useAppStore((s) => s.selectFocus);
   const focusEvent = useAppStore((s) => s.focusEvent);
@@ -876,7 +876,7 @@ export default function WorldMap({ data }: { data: StaticData }) {
     if (target === shownWar.current) return;
     if (target && theater) {
       if (!shownWar.current) beforeWar.current = viewRef.current;
-      animateTo(fitBounds(size, s0, theater.bounds));
+      animateTo(fitBounds(visibleSize(size, true), s0, theater.bounds));
     } else if (beforeWar.current) {
       animateTo(beforeWar.current);
       beforeWar.current = null;
@@ -1025,18 +1025,7 @@ export default function WorldMap({ data }: { data: StaticData }) {
           {year < data.timeline.range[0] ? '나라가 생기기 전입니다. 유적(●)을 누르면 그 시대의 생활을 볼 수 있습니다' : '이 시기의 영토 데이터는 아직 없습니다'}
         </div>
       )}
-      {/* 전쟁 보기 띠(제목·닫기). 닫기 단추는 PC·휴대폰이 이 하나를 쓴다(2026-10-27 통합): PC는 띠 안, 휴대폰은 제목을 숨겨 단추만 지도 아래 가운데 */}
-      {war && (
-        <div className="war-banner map-ui" onClick={(e) => e.stopPropagation()} onPointerDown={(e) => e.stopPropagation()}>
-          <span className="war-banner-title">
-            전쟁 보기 · {war.name}
-            {war.theaters.length > 1 && theater && ` · ${theater.name}`}
-          </span>
-          <button type="button" className="war-banner-close" aria-label={`닫고 ${formatYear(returnYear ?? year)} 지도로`} onClick={exitWar}>
-            닫기
-          </button>
-        </div>
-      )}
+      {/* 전쟁 보기의 이름·닫기(×, Esc)는 나라 정보 패널 자리의 전쟁 정보 패널에 있다(2026-11-21, panel/WarPanel.tsx). 전에는 지도 아래 가운데 '닫기' 띠 */}
       {/* 권역 단추(2026-10-18: 머리글 권역 필터를 없애고 이리로 옮김)(권역 고르기·자료 없는 해면 옮기기·그 권역으로 지도 이동).
           세계는 '전체'를 고르고 세계로 축소한다. 전쟁 보기 중에는 전역 단추가 그 자리에 오므로 숨긴다(2026-10-26) */}
       {/* 지도 왼쪽 위 "주요 사건" 단추와 목록(2026-10-27, 지도의 전쟁 표시 ⚔ 대신). 전쟁 보기 중에는 숨긴다 */}
