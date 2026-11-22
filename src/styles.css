@@ -588,10 +588,10 @@ button {
 .map-yearbox-field:has(input[aria-invalid='true']) { border-color: var(--error); outline-color: var(--error); }
 /* PC 연도 막대(2026-10-28): 지도 위에 띄우지 않고 지도 아래 따로 둔 띠(지도 칸 폭만, 왼쪽 나라 정보 칸 아래로는 가지 않음).
    지도는 띠 높이만큼 짧아지고, 연도 칸(◀ 연도 ▶)은 지도 아래 가운데 그대로(띠 위). 막대는 가로(오른쪽이 최근), 눈금 숫자는 늘 막대 아래 */
-.app-main:has(> .map-yearbar.across) { --yearstrip-h: 52px; }
+.app-main:has(> .map-yearbar.across) { --yearstrip-h: 66px; } /* 2026-11-23: 막대 위 시대 이름·상황 번호 줄(14px)만큼 높임 */
 .app-main:has(> .map-yearbar.across) .world-map { bottom: var(--yearstrip-h); }
 .app-main:has(> .map-yearbar.across) .map-yearbox { bottom: calc(var(--yearstrip-h) + 12px); }
-.map-yearbar.across { top: auto; right: 0; bottom: 0; left: 0; height: var(--yearstrip-h); box-sizing: border-box; flex-direction: row; align-items: flex-start; gap: 14px; padding: 6px 24px 0 12px; border-top: 1px solid var(--border); background: var(--surface); }
+.map-yearbar.across { top: auto; right: 0; bottom: 0; left: 0; height: var(--yearstrip-h); box-sizing: border-box; flex-direction: row; align-items: flex-start; gap: 14px; padding: 20px 24px 0 12px; border-top: 1px solid var(--border); background: var(--surface); }
 .map-yearbar.across .map-yearbar-track { flex: 1; width: auto; height: 24px; min-height: 0; margin: 0 5px; }
 .map-yearbar.across .map-yearbar-rail { top: 50%; bottom: auto; left: -5px; right: -5px; width: auto; height: 10px; transform: translateY(-50%); }
 .map-yearbar.across .map-yearbar-fill { top: 50%; bottom: auto; left: -5px; width: auto; height: 10px; transform: translateY(-50%); border-top: 1px solid var(--muted); border-right: none; border-radius: 5px 0 0 5px; }
@@ -603,6 +603,27 @@ button {
 .map-yearbar.across.dragging .map-yearbar-label { top: 19px; }
 .map-yearbar.across .map-yearbar-thumb { top: 50%; }
 .map-yearbar.across .map-yearbar-prehistory { flex-direction: row; }
+
+/* 시대 표시(2026-11-23, MapYearControls.tsx): 휴대폰은 막대 왼쪽, PC는 막대 위에 고대·중세·근세·근대·현대. 시대 경계에 가는 선.
+   지금 연도의 시대는 진하게. 휴대폰에서 끄는 동안 뜨는 눈금 숫자는 시대 이름 왼쪽으로 비켜 둔다 */
+.map-yearbar-era { position: absolute; right: calc(50% + 10px); transform: translateY(-50%); padding: 0 3px; border-radius: 3px; background: color-mix(in srgb, var(--control-bg) 82%, transparent); color: var(--muted); font-size: 10px; line-height: 13px; white-space: nowrap; pointer-events: none; }
+.map-yearbar-era.on { color: var(--fg); font-weight: 700; }
+.map-yearbar-eraline { position: absolute; right: 50%; width: 15px; height: 1px; transform: translateY(-50%); background: color-mix(in srgb, var(--fg) 45%, transparent); pointer-events: none; }
+.map-yearbar:not(.across) .map-yearbar-label { right: calc(100% + 30px); }
+.map-yearbar.across .map-yearbar-era { top: -15px; right: auto; transform: translateX(-50%); padding: 0; background: none; font-size: 11px; }
+.map-yearbar.across .map-yearbar-eraline { top: -15px; right: auto; width: 1px; height: 22px; transform: translateX(-50%); }
+
+/* 전쟁 보기의 상황 막대(2026-11-23, WarStepBar.tsx): 연도 막대와 같은 자리·모양. 눈금마다 상황 번호(휴대폰은 막대 왼쪽, PC는 막대 위)를 늘 보인다.
+   세로 막대는 위가 첫 상황이라 채운 부분도 위 끝부터 손잡이까지 */
+.war-steps:not(.across) .map-yearbar-fill { top: -5px; border-top: 1px solid var(--muted); border-bottom: none; border-radius: 5px 5px 0 0; }
+.war-step-no { position: absolute; top: 50%; right: calc(100% + 9px); transform: translateY(-50%); min-width: 14px; padding: 0 2px; border-radius: 3px; background: color-mix(in srgb, var(--control-bg) 82%, transparent); color: var(--muted); font-size: 11px; line-height: 13px; text-align: center; font-variant-numeric: tabular-nums; }
+.war-step-no.on { color: var(--front-line); font-weight: 800; }
+.map-yearbar.across .war-step-no { top: auto; right: auto; bottom: calc(100% + 6px); left: 50%; transform: translateX(-50%); background: none; font-size: 12px; }
+/* 전쟁 정보 목록의 상황 번호(WarPanel.tsx)와 지도의 번호 핀(WarDetailLayer.tsx) */
+.war-front-no { flex: none; min-width: 18px; height: 18px; box-sizing: border-box; padding: 0 4px; border-radius: 9px; background: var(--front-line); color: #fff; font-size: 11px; font-weight: 700; line-height: 18px; text-align: center; font-variant-numeric: tabular-nums; }
+.war-step-pin { pointer-events: none; }
+.war-step-pin path { fill: var(--front-line); stroke: #fff; stroke-width: 1.5; }
+.war-step-pin text { fill: #fff; font-size: 12px; font-weight: 800; dominant-baseline: central; font-variant-numeric: tabular-nums; }
 
 /* ── 모바일 세로 화면 (DESIGN.md §6.5) ────────────────────
    PC 배치는 그대로 두고, 폭이 좁을 때만 위: 날짜 조절 / 가운데: 지도 / 아래: 사건 목록으로 바꾼다. */

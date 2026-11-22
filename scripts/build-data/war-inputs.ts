@@ -42,7 +42,7 @@ function collect(node: unknown, entities: Set<string>, geojsons: Set<string>): v
 /** 전쟁 id → 입력 해시 (data/wars/*.yaml 마다) */
 export function warInputHashes(root: string): Map<string, string> {
   const dir = path.join(root, 'data/wars');
-  const code = ['wars.ts', 'geo.ts', 'war-cache.ts', 'war-inputs.ts', 'tasks.ts', 'index.ts'].map((f) => fileSha(path.join(root, 'scripts/build-data', f)));
+  const code = ['wars.ts', 'war-rest.ts', 'geo.ts', 'war-cache.ts', 'war-inputs.ts', 'tasks.ts', 'index.ts'].map((f) => fileSha(path.join(root, 'scripts/build-data', f)));
   code.push(fileSha(path.join(root, 'src/schema/index.ts')), fileSha(path.join(root, 'node_modules/topojson-client/package.json')));
   const land = fileSha(path.join(root, 'node_modules/world-atlas/land-50m.json'));
   const out = new Map<string, string>();

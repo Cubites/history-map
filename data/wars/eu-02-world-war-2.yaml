@@ -65,6 +65,8 @@ theaters:
     # 평소 지도의 전쟁 표시 위치 (독일·폴란드 경계 부근)
     marker: [15.5, 51.2]
     bounds: [[-11, 27], [50, 70.5]]
+    # 범위 밖의 소련 땅(시베리아 등)도 그린다. 범위 밖은 전역이 시작된 해의 영토 그대로
+    whole: [soviet-union]
     battles:
       - { name: 겨울 전쟁, at: [28.95, 60.6], date: 1939-11-30, winner: soviet, summary: "소련이 핀란드를 침공했다. 핀란드군은 만네르헤임 선에서 석 달 넘게 버텼으나 1940년 3월 모스크바 강화 조약으로 카렐리야 지협 등을 내주었다." }
       - { name: 스당 돌파, at: [4.94, 49.7], date: 1940-05-13, winner: axis, summary: "독일 기갑 부대가 아르덴 숲을 지나 스당에서 뫼즈강을 건너 프랑스군 전선을 뚫고 영국 해협으로 내달렸다." }
@@ -405,6 +407,8 @@ theaters:
     replaces: [japan, occupied-korea, manchukuo, roc, occupied-china, soviet-union, usa]
     marker: [114.3, 30.6]
     bounds: [[88.0, -14.0], [180.0, 54.0]]
+    # 범위 밖의 소련 땅(시베리아 등)도 그린다. 범위 밖은 전역이 시작된 해의 영토 그대로
+    whole: [soviet-union]
     battles:
       - { name: 루거우차오 사건, at: [116.21, 39.85], date: 1937-07-07, summary: 베이핑 서남쪽 루거우차오(노구교) 부근에서 일본군과 중국군이 충돌했다. 일본은 이를 구실로 화북에 대군을 보내 중일 전쟁을 일으켰다. }
       - { name: 쑹후 회전 (제2차 상하이 사변), at: [121.47, 31.23], date: 1937-08-13, winner: japan, summary: "상하이에서 석 달 동안 이어진 격전. 일본군은 11월 항저우만에 상륙해 중국군의 뒤를 찌르고 11월 12일 상하이를 차지했다." }
@@ -728,6 +732,8 @@ theaters:
     simplify: 10
     replaces: [soviet-union, soviet-occupied, karelia-occupied, general-government, bohemia-moravia, free-city-danzig, italy-occupied, serbia-occupied, montenegro-occupied, germany-zone-us, germany-zone-uk, germany-zone-fr, germany-zone-su, berlin-western-sectors, berlin-soviet-sector, japan, occupied-korea, manchukuo, roc, occupied-china]
     bounds: [[-20, -25], [180, 72]]
+    # 범위 밖의 소련 땅(시베리아 등)도 그린다. 범위 밖은 전역이 시작된 해의 영토 그대로
+    whole: [soviet-union]
     battles:
       - { name: 됭케르크 철수, at: [2.38, 51.03], date: 1940-05-26, summary: "해안에 몰린 영국·프랑스군 33만여 명이 6월 4일까지 크고 작은 배로 영국에 철수했다." }
       - { name: 영국 본토 항공전, at: [0.1, 51.3], date: 1940-09-15, winner: allies, summary: "영국 공군이 레이더와 전투기로 독일 공군의 큰 공습을 물리쳤다. 히틀러는 영국 상륙(바다사자 작전)을 미루었다." }

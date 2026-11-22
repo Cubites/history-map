@@ -42,7 +42,14 @@ const FRONT_LINE_WIDTH = 3;
  * 전선은 바다까지 그어진 원래 선을 점령 지역 안으로만 잘라 그린다.
  */
 export interface DrawFront {
-  areas: { shapes: Shape[]; color: string; /** 선택·hover한 진영의 강조 테두리 두께(px) */ highlight?: number }[];
+  areas: {
+    shapes: Shape[];
+    color: string;
+    /** 선택·hover한 진영의 강조 테두리 두께(px) */
+    highlight?: number;
+    /** 전역 범위 밖 땅(2026-11-23, 전역이 시작된 해의 영토 그대로). 칠하기만 하고 그해 나라 경계·전선은 이 위에 긋지 않는다 */
+    rest?: boolean;
+  }[];
   lines: Shape[];
   /** 진영 색 위에 다시 그을 그해 나라 경계 (같은 진영 나라들이 한 나라처럼 보이지 않게, 2026-10-13) */
   borders: { stroke: Shape[]; certainty?: string }[];
@@ -393,11 +400,13 @@ export function drawMap(
       ctx.fillStyle = area.color;
       ctx.fill();
     }
-    // 그해 나라 경계를 진영 색 위에 다시 긋는다 (진영 지역 안에서만, 평소 지도와 같은 선)
-    if (front.borders.length && front.areas.length) {
+    // 그해 나라 경계를 진영 색 위에 다시 긋는다 (진영 지역 안에서만, 평소 지도와 같은 선).
+    // 전역 범위 밖 땅(rest)은 전역이 시작된 해의 모습이라 그해 경계(전쟁 중 바뀐 선)를 그 위에 긋지 않는다
+    const scene = front.areas.filter((a) => !a.rest);
+    if (front.borders.length && scene.length) {
       ctx.save();
       ctx.beginPath();
-      trace(front.areas.flatMap((a) => a.shapes));
+      trace(scene.flatMap((a) => a.shapes));
       ctx.clip();
       for (const b of front.borders) {
         ctx.beginPath();
@@ -412,7 +421,7 @@ export function drawMap(
     if (front.lines.length) {
       ctx.save();
       ctx.beginPath();
-      trace(front.areas.flatMap((a) => a.shapes));
+      trace(scene.flatMap((a) => a.shapes));
       ctx.clip();
       ctx.beginPath();
       trace(front.lines);

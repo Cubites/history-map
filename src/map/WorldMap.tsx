@@ -27,11 +27,11 @@ import {
 } from '../data/staticData.ts';
 import { focusTarget, placeActive } from '../lib/events.ts';
 import { useWarShapes } from '../data/warShapes.ts';
-import { activeWarView, entryYear, factionColor, frontBattleSpots, majorWars, nearBy, snapshotFor } from '../lib/wars.ts';
+import { activeWarView, dateKey, entryYear, factionColor, frontBattleSpots, majorWars, nearBy, snapshotFor } from '../lib/wars.ts';
 import { formatRange } from '../lib/year.ts';
 import { REGION_BUTTONS, REGION_FILTER_INFO, regionFocusBounds } from '../schema/regions.ts';
 import { useRegionChoice } from '../search/RegionFilter.tsx';
-import { LODS, type Lod, type TerritoryIndexEntry } from '../schema/index.ts';
+import { LODS, type Lod, type TerritoryIndexEntry, type TheaterOut } from '../schema/index.ts';
 import { activeEventId, useAppStore } from '../store/useAppStore.ts';
 import { ArrowLayer } from './ArrowLayer.tsx';
 import { FrontArrowLayer } from './FrontArrowLayer.tsx';
@@ -63,6 +63,7 @@ import {
   invertPoint,
   MAX_ZOOM,
   MIN_ZOOM,
+  normalizeLon,
   recenter,
   regionOfView,
   zoomAround,
@@ -328,13 +329,17 @@ export default function WorldMap({ data }: { data: StaticData }) {
       const ys = line.map((p) => p[1]);
       return [Math.min(...xs), Math.min(...ys), Math.max(...xs), Math.max(...ys)];
     };
+    const area = (a: { faction: string; bbox: [number, number, number, number] }, coordinates: unknown, rest: boolean) => ({
+      entity: war.factions.find((f) => f.id === a.faction)?.entity ?? '',
+      color: factionColor(war, a.faction, (id) => data.entities.get(id)?.color),
+      rest,
+      shape: { feature: { type: 'Feature', properties: null, geometry: { type: 'MultiPolygon', coordinates: coordinates ?? [] } }, bbox: a.bbox } as Shape,
+    });
+    // 전역 범위 밖 땅(2026-11-23, 예: 2차 대전의 소련 시베리아): 장면과 상관없이 늘 같은 도형을 먼저(아래에) 칠한다
+    const restShapes = warShapes[`${theater.id}:rest`]?.[0];
     return {
       replaces: new Set(theater.replaces),
-      areas: snapshot.areas.map((a, i) => ({
-        entity: war.factions.find((f) => f.id === a.faction)?.entity ?? '',
-        color: factionColor(war, a.faction, (id) => data.entities.get(id)?.color),
-        shape: { feature: { type: 'Feature', properties: null, geometry: { type: 'MultiPolygon', coordinates: snapshotShapes[i] ?? [] } }, bbox: a.bbox } as Shape,
-      })),
+      areas: [...(theater.rest ?? []).map((a, i) => area(a, restShapes?.[i], true)), ...snapshot.areas.map((a, i) => area(a, snapshotShapes[i], false))],
       lines: snapshot.lines.map((line) => ({ feature: { type: 'Feature', properties: null, geometry: { type: 'LineString', coordinates: line } }, bbox: lineBox(line) }) as Shape),
     };
   }, [war, theater, snapshot, warShapes, data.entities]);
@@ -493,7 +498,7 @@ export default function WorldMap({ data }: { data: StaticData }) {
     if (frontShapes) {
       const width = (id: string) => (id === selected ? SELECTED_WIDTH : id === hoveredId ? HOVER_WIDTH : undefined);
       front = {
-        areas: frontShapes.areas.map((a) => ({ shapes: [a.shape], color: a.color, highlight: width(a.entity) })),
+        areas: frontShapes.areas.map((a) => ({ shapes: [a.shape], color: a.color, highlight: width(a.entity), rest: a.rest })),
         lines: frontShapes.lines,
         borders: [],
       };
@@ -620,15 +625,51 @@ export default function WorldMap({ data }: { data: StaticData }) {
   const gestureStart = useRef<ZoomTransform>(zoomIdentity);
   const syncing = useRef(false);
   const settleTimer = useRef(0);
+  /** 지도가 보여 주고 있는 전쟁 보기(`전쟁 id/전역 id`). 바뀌면 그 전역 범위로 옮긴다(아래 효과). followTheater는 옮기지 않으려고 먼저 맞춰 둔다 */
+  const shownWar = useRef<string | null>(null);
+  /** 단추·전쟁 보기 열기로 지도가 부드럽게 옮겨 가는 중인지(animateTo) */
+  const flying = useRef(false);
+
+  // 전역이 여럿인 전쟁 보기(제2차 세계 대전)에서는 지도가 멈추면 보는 곳에 맞춰 전역을 바꾼다(2026-11-23).
+  // 화면 가운데가 다른 전역의 범위(bounds) 안이고 지금 전역의 범위 밖일 때만 바꾼다(두 범위 사이·바깥에서는 그대로).
+  // 날짜는 지금 장면의 날짜와 같거나 그 앞의 마지막 장면(없으면 첫 장면)으로 맞추고, 지도는 옮기지 않는다(shownWar를 먼저 맞춰 둠).
+  // 세계 개관처럼 목록에서 바로 들어가지 않는 전역(hideMarker)은 스스로 고른 것이므로 거기서는 바꾸지 않고, 그리로 바꾸지도 않는다
+  const followTheater = useCallback(() => {
+    const s = useAppStore.getState();
+    if (!size) return;
+    const view = activeWarView(data.wars, s.warId, s.theaterId, s.year);
+    if (!view || view.theater.hideMarker) return;
+    // 그 전역 범위로 옮겨 가기 전(처음 열 때)이나 옮겨 가는 중에는 바꾸지 않는다. 아직 앞 화면을 보고 있어 엉뚱한 전역으로 바뀐다
+    if (flying.current || shownWar.current !== `${view.war.id}/${view.theater.id}`) return;
+    const center = invertPoint(createProjection(size, s0, viewRef.current), [size.width / 2 + viewRef.current.dx, size.height / 2]);
+    if (!center) return;
+    const lon = normalizeLon(center[0]);
+    const inside = (t: TheaterOut) => {
+      const [[w, so], [e, n]] = t.bounds;
+      return so <= center[1] && center[1] <= n && ((w <= lon && lon <= e) || (w <= lon + 360 && lon + 360 <= e));
+    };
+    if (inside(view.theater)) return;
+    const next = view.war.theaters.find((t) => t !== view.theater && !t.hideMarker && inside(t));
+    if (!next) return;
+    const hovered = s.hoveredEventId ? data.events.find((e) => e.id === s.hoveredEventId) : undefined;
+    const now = dateKey(snapshotFor(view, s.year, s.frontDate, hovered).date);
+    const snap = [...next.snapshots].reverse().find((x) => dateKey(x.date) <= now) ?? next.snapshots[0];
+    shownWar.current = `${view.war.id}/${next.id}`;
+    useAppStore.setState({ theaterId: next.id, year: snap.year, frontDate: snap.date, listYear: null, hoveredEventId: null, pinnedEventId: null });
+  }, [size, s0, data.wars, data.events]);
 
   // 지도가 멈추면 보는 곳에 맞춰 권역 단추를 고른다(2026-10-27). 지도 이동(regionFocus)은 일으키지 않는다.
   // 전쟁 보기 중에는 권역 단추가 없고 시점이 전쟁 지역에 묶이므로 고르지 않는다
   const followRegion = useCallback(() => {
     const { warId: inWar, regionFilter: current } = useAppStore.getState();
-    if (!size || inWar) return;
+    if (!size) return;
+    if (inWar) {
+      followTheater();
+      return;
+    }
     const next = regionOfView(size, s0, viewRef.current);
     if (next !== current) useAppStore.setState({ regionFilter: next });
-  }, [size, s0]);
+  }, [size, s0, followTheater]);
   // 처음 화면(동아시아)과 창 크기가 바뀐 뒤에도 맞춘다
   useEffect(() => followRegion(), [followRegion]);
 
@@ -853,6 +894,7 @@ export default function WorldMap({ data }: { data: StaticData }) {
       const start = performance.now();
       const DURATION = 500;
       movingRef.current = true;
+      flying.current = true;
       const step = (now: number) => {
         const t = Math.min(1, (now - start) / DURATION);
         const e = t < 0.5 ? 2 * t * t : 1 - (-2 * t + 2) ** 2 / 2;
@@ -866,6 +908,7 @@ export default function WorldMap({ data }: { data: StaticData }) {
         draw();
         if (t < 1) animation.current = requestAnimationFrame(step);
         else {
+          flying.current = false;
           syncZoom();
           setMoving(false);
         }
@@ -876,7 +919,6 @@ export default function WorldMap({ data }: { data: StaticData }) {
   );
   // 전쟁 보기를 열면 전쟁 지역으로 확대하고, 닫으면 들어오기 전 위치로 돌아간다
   const beforeWar = useRef<View | null>(null);
-  const shownWar = useRef<string | null>(null);
   useEffect(() => {
     if (!size) return;
     const target = war && theater ? `${war.id}/${theater.id}` : null;

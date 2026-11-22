@@ -252,6 +252,11 @@ export const TheaterSchema = z.object({
   simplify: z.number().positive().optional(),
   /** true면 "주요 전쟁" 목록에서 이 전역으로 바로 들어가지 않는다(2026-10-27 전에는 평소 지도의 전쟁 표시를 숨김). 전쟁 보기 안의 전역 버튼으로만 들어간다 (예: 세계 개관) */
   hideMarker: z.boolean().optional(),
+  /**
+   * 전역 범위(bounds) 밖의 땅도 진영 색으로 그릴 나라 (2026-11-23, 예: 제2차 세계 대전의 소련 — 전에는 범위 상자에서 잘려 시베리아가 비었다).
+   * 범위 밖 땅은 전역이 시작된 해의 영토 그대로 두고(전쟁 중 영토 변화는 전역 범위 안에만 적용), replaces와 bounds가 있는 전역에서만 쓴다
+   */
+  whole: z.array(z.string()).default([]),
   routes: z.array(RouteSchema).default([]),
   battles: z.array(BattleSchema).default([]),
   snapshots: z.array(FrontSnapshotSchema).min(1),
@@ -311,6 +316,8 @@ export interface TheaterOut {
   /** 평소 지도에 전쟁 표시를 두지 않음 (true일 때만 있다) */
   hideMarker?: true;
   bounds: [[number, number], [number, number]];
+  /** 전역 범위 밖에 그릴 땅(TheaterSchema.whole). 장면과 상관없이 늘 같다. 도형은 wars/<전쟁 id>.json의 `<전역 id>:rest`에 있다 (있을 때만) */
+  rest?: FrontAreaOut[];
   routes: Route[];
   battles: Battle[];
   snapshots: FrontSnapshotOut[];
@@ -332,7 +339,10 @@ export interface WarIndexEntry {
 }
 type MultiPolygonCoords = [number, number][][][];
 
-/** wars/<전쟁 id>.json: 전역 id → 스냅샷 순서 → 점령 지역 순서(wars.json의 areas와 같은 순서) → 도형 (2026-10-12) */
+/**
+ * wars/<전쟁 id>.json: 전역 id → 스냅샷 순서 → 점령 지역 순서(wars.json의 areas와 같은 순서) → 도형 (2026-10-12).
+ * 전역 범위 밖 땅(TheaterOut.rest)이 있으면 `<전역 id>:rest` → [rest 순서 → 도형] 한 줄이 더 있다 (2026-11-23)
+ */
 export type WarShapesOut = Record<string, MultiPolygonCoords[][]>;
 
 // ── 빌드 결과물 (public/data/) ──────────────────────────────

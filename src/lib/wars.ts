@@ -73,6 +73,21 @@ export function snapshotFor(
   return theater.snapshots.find((s) => s.year === year) ?? [...theater.snapshots].reverse().find((s) => s.year <= year) ?? theater.snapshots[0];
 }
 
+/**
+ * 장면(상황)을 지도에서 가리킬 자리 (2026-11-23, 지도의 상황 번호 아이콘).
+ * 직전 장면 뒤부터 이 장면 날짜까지 일어난 전투 가운데 가장 늦은 것 → 없으면 첫 작전 화살표의 끝 → 첫 거점 → 전역의 표시 자리
+ */
+export function snapshotSpot(theater: TheaterOut, snapshot: FrontSnapshotOut): LonLat {
+  const i = theater.snapshots.indexOf(snapshot);
+  const now = dateKey(snapshot.date);
+  const prev = i > 0 ? dateKey(theater.snapshots[i - 1].date) : -Infinity;
+  const fresh = theater.battles.filter((b) => dateKey(b.date) > prev && dateKey(b.date) <= now);
+  if (fresh.length) return fresh[fresh.length - 1].at;
+  const arrow = snapshot.arrows[0];
+  if (arrow) return arrow.path[arrow.path.length - 1];
+  return snapshot.holds[0]?.at ?? theater.marker;
+}
+
 /** 전쟁 보기를 열 때의 연도: 지금 연도가 기간 안이면 그대로, 아니면 첫해 */
 export function entryYear(range: { from: number; to: number }, year: number): number {
   return inRange(range, year) ? year : range.from;

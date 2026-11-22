@@ -1,6 +1,6 @@
 import { useEffect, useLayoutEffect, useMemo, useRef, useState, type PointerEvent as ReactPointerEvent } from 'react';
 import type { StaticData } from '../data/staticData.ts';
-import { PREHISTORY, clampYear, decadeOf, formatYear, parseYearInput, prehistoryStage } from '../lib/year.ts';
+import { PREHISTORY, clampYear, decadeOf, erasFor, formatYear, parseYearInput, prehistoryStage } from '../lib/year.ts';
 import { activeWarView } from '../lib/wars.ts';
 import { useAppStore } from '../store/useAppStore.ts';
 import { useMediaQuery } from '../lib/useMediaQuery.ts';
@@ -140,6 +140,36 @@ export function MapYearControls({ data }: { data: StaticData }) {
   // ── 세로 막대 끌기 ──
   const trackRef = useRef<HTMLDivElement>(null);
   const [dragging, setDragging] = useState(false);
+
+  // ── 시대 표시(2026-11-23): PC는 막대 위, 휴대폰은 막대 왼쪽에 고대·중세·근세·근대·현대. 시대 경계에 가는 선 ──
+  // 막대는 연도에 비례하므로 근대·현대처럼 짧은 시대는 이름이 겹친다. 이름 자리는 그 시대 구간의 가운데로 하되,
+  // 최근 쪽부터 차례로 놓으며 앞 이름과 최소 간격(가로 30px, 세로 14px)을 지키게 오래된 쪽으로 민다
+  const regionFilter = useAppStore((s) => s.regionFilter);
+  const [trackLen, setTrackLen] = useState(0);
+  useLayoutEffect(() => {
+    const el = trackRef.current;
+    if (!el) return;
+    const measure = () => setTrackLen(across ? el.clientWidth : el.clientHeight);
+    measure();
+    const observer = new ResizeObserver(measure);
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [across, inWar]);
+  const eras = useMemo(() => {
+    const list = erasFor(regionFilter);
+    const spans = list
+      .map((e, i) => ({ name: e.name, from: Math.max(min, e.from), to: Math.min(max, list[i + 1]?.from ?? max), start: e.from }))
+      .filter((e) => e.to > e.from);
+    const gap = across ? 30 : 14;
+    let before = Infinity;
+    const placed = [...spans].reverse().map((e) => {
+      const center = (((e.from + e.to) / 2 - min) / (max - min)) * trackLen;
+      const pos = Math.min(center, before - gap);
+      before = pos;
+      return { ...e, pos };
+    });
+    return placed.reverse();
+  }, [regionFilter, min, max, across, trackLen]);
   const yearAt = (e: ReactPointerEvent) => {
     const r = trackRef.current!.getBoundingClientRect();
     const t = Math.min(1, Math.max(0, across ? (e.clientX - r.left) / r.width : (r.bottom - e.clientY) / r.height));
@@ -262,6 +292,18 @@ export function MapYearControls({ data }: { data: StaticData }) {
             </span>
           ))}
           {!prehistoric && <span className="map-yearbar-thumb" style={at(Math.max(min, decadeOf(year)))} />}
+          {trackLen > 0 &&
+            eras.map((e, i) => (
+              <span key={e.name} aria-hidden>
+                {i > 0 && <i className="map-yearbar-eraline" style={at(e.from)} />}
+                <span
+                  className={`map-yearbar-era${!prehistoric && year >= e.start && year < (eras[i + 1]?.start ?? Infinity) ? ' on' : ''}`}
+                  style={across ? { left: `${e.pos}px` } : { top: `${trackLen - e.pos}px` }}
+                >
+                  {e.name}
+                </span>
+              </span>
+            ))}
         </div>
         {!across && prehistory}
       </div>

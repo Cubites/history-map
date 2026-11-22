@@ -29,6 +29,7 @@ y.push(`  - id: ${T.id}`, `    name: ${T.name}`);
 for (const c of T.replacesComment) y.push(`    # ${c}`);
 y.push(`    replaces: [${T.replaces.join(', ')}]`);
 y.push(`    # ${T.markerComment}`, `    marker: ${pt(T.marker)}`, `    bounds: [${pt(T.bounds[0])}, ${pt(T.bounds[1])}]`);
+y.push('    # 범위 밖의 소련 땅(시베리아 등)도 그린다. 범위 밖은 전역이 시작된 해의 영토 그대로', '    whole: [soviet-union]');
 if (BATTLES.length) y.push('    battles:');
 for (const b of BATTLES) y.push(`      - { name: ${q(b.name)}, at: ${pt(b.at)}, date: ${b.date}${b.winner ? `, winner: ${b.winner}` : ''}, summary: ${JSON.stringify(b.summary)} }`);
 y.push('    snapshots:');

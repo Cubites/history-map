@@ -61,6 +61,7 @@ y.push('  # 다시 만드는 법: npm run gen:wars (생성 스크립트는 저�
 y.push('  - id: overview', '    name: 세계 개관', '    hideMarker: true', `    simplify: ${SIMPLIFY_KM}`);
 y.push(`    replaces: [${replaces.join(', ')}]`);
 y.push(`    bounds: [${pt(BOUNDS[0])}, ${pt(BOUNDS[1])}]`);
+y.push('    # 범위 밖의 소련 땅(시베리아 등)도 그린다. 범위 밖은 전역이 시작된 해의 영토 그대로', '    whole: [soviet-union]');
 y.push('    battles:', ...battles);
 y.push('    snapshots:');
 

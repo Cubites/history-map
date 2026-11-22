@@ -39,6 +39,7 @@ import { buildLodTopology, countPoints, subTopology, tiledTopology } from './top
 import { countAdded, nodeLongEdges } from './node-edges.ts';
 import { chunkOutlines, tilePolygons } from './tiles.ts';
 import { buildWars, checkWars, findCutText, readWars } from './wars.ts';
+import { addRest } from './war-rest.ts';
 import { stats as warCacheStats } from './war-cache.ts';
 import { BUILT_FILE, readBuilt, shaOf, warInputHashes, type BuiltFile } from './war-inputs.ts';
 import { keyOf, runCached, totals as cacheTotals } from './cache.ts';
@@ -607,7 +608,7 @@ async function main() {
   if (CHECK_ONLY) {
     if (ARGS.wars) {
       // 쓰지는 않고 전쟁 장면이 오류 없이 계산되는지만 본다
-      await buildWars(wars.filter((w) => ARGS.wars!.includes(w.id)), warGeo, errors);
+      addRest(await buildWars(wars.filter((w) => ARGS.wars!.includes(w.id)), warGeo, errors), wars, warGeo, errors);
       if (errors.length) return finish();
     }
     const note = warCacheNote();
@@ -642,6 +643,8 @@ async function main() {
   }
   // 전쟁: 스냅샷마다 진영별 점령 지역을 계산한다 (DESIGN.md §4.5)
   const warIndex = await buildWars(wars, warGeo, errors);
+  // 전역 범위 밖 땅(whole, 2026-11-23): 장면과 따로 전역마다 한 번
+  addRest(warIndex, wars, warGeo, errors);
   if (errors.length) return finish();
   // 점령 지역 도형은 전쟁마다 wars/<전쟁 id>.json으로 떼어 낸다. 전쟁 보기를 열 때만 받는다 (2026-10-12, 세계 대전이 들어가
   // wars.json이 7MB가 되어 첫 화면에서 모든 방문자가 받던 문제). wars.json의 areas[].coords는 비워 둔다
@@ -666,6 +669,11 @@ async function writeWarShapes(war: WarIndexEntry) {
   for (const t of war.theaters) {
     shapes[t.id] = t.snapshots.map((s) => s.areas.map((a) => a.coords));
     for (const s of t.snapshots) for (const a of s.areas) a.coords = [];
+    // 전역 범위 밖 땅은 `<전역 id>:rest` 한 줄로 (있을 때만)
+    if (t.rest) {
+      shapes[`${t.id}:rest`] = [t.rest.map((a) => a.coords)];
+      for (const a of t.rest) a.coords = [];
+    }
   }
   await writeJson(path.join(OUT, 'wars', `${war.id}.json`), shapes);
 }
@@ -696,6 +704,7 @@ async function partialWars(
 ) {
   const selected = wars.filter((w) => ids.includes(w.id));
   const built = await buildWars(selected, geo, errs);
+  addRest(built, selected, geo, errs);
   if (errs.length) return finish();
   const warInputs = warInputHashes(ROOT);
   const record = readBuilt(ROOT);

@@ -4,6 +4,7 @@ import { MiniGame } from './minigame/MiniGame.tsx';
 import WorldMap from './map/WorldMap.tsx';
 import { EventPanel } from './panel/EventPanel.tsx';
 import { MapYearControls } from './timeline/MapYearControls.tsx';
+import { WarStepBar } from './timeline/WarStepBar.tsx';
 import { SearchBox } from './search/SearchBox.tsx';
 import { UpdateNotice } from './UpdateNotice.tsx';
 
@@ -22,6 +23,8 @@ export default function App() {
               <WorldMap data={data} />
               {/* 평소의 연도 조절(2026-10-28부터): 휴대폰은 지도 오른쪽 세로 막대, PC는 지도 아래 가로 띠, 둘 다 지도 아래 가운데 연도 입력 칸. 전쟁 보기에서는 숨기고 날짜는 전쟁 정보 패널(WarPanel)에서 고른다 */}
               <MapYearControls data={data} />
+              {/* 전쟁 보기의 상황 막대(2026-11-23): 연도 막대 자리(PC 지도 아래 가로, 휴대폰 지도 오른쪽 세로)에 번호 붙은 상황 눈금 */}
+              <WarStepBar data={data} />
               {/* 미니게임으로 가는 단추(2026-11-19): 지도 오른쪽 위의 게임패드 아이콘. 크기는 '주요 전쟁' 단추 높이의 2배(휴대폰 1.3배), styles.css .mg-launch */}
               <button type="button" className="mg-launch" aria-label="미니게임" title="미니게임" onClick={() => setGameOpen(true)}>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">

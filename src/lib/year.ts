@@ -20,6 +20,34 @@ export function prehistoryStage(year: number) {
   return [...PREHISTORY].reverse().find((s) => s.year <= year) ?? PREHISTORY[0];
 }
 
+/**
+ * 시대 구분 (2026-11-23, 연도 막대에 표시). from은 그 시대가 시작하는 해(천문 연도), 다음 시대의 from 앞까지다.
+ * - 한국·동아시아 권역: 한국사의 통상 구분 — 고대(~917) · 중세(고려 건국 918~) · 근세(조선 건국 1392~) · 근대(개항 1876~) · 현대(광복 1945~)
+ * - 그 밖(세계와 다른 권역): 세계사의 통상 구분 — 고대(~475) · 중세(서로마 멸망 476~) · 근세(콘스탄티노폴리스 함락 1453~) · 근대(프랑스 혁명 1789~) · 현대(제2차 세계 대전 종전 1945~)
+ * 경계 해는 책마다 조금씩 다르다(운영자 검수 필요). 고치려면 이 표만 바꾸면 된다
+ */
+export interface Era {
+  from: number;
+  name: string;
+}
+const ERAS_KOREA: Era[] = [
+  { from: -Infinity, name: '고대' },
+  { from: 918, name: '중세' },
+  { from: 1392, name: '근세' },
+  { from: 1876, name: '근대' },
+  { from: 1945, name: '현대' },
+];
+const ERAS_WORLD: Era[] = [
+  { from: -Infinity, name: '고대' },
+  { from: 476, name: '중세' },
+  { from: 1453, name: '근세' },
+  { from: 1789, name: '근대' },
+  { from: 1945, name: '현대' },
+];
+export function erasFor(regionFilter: string): Era[] {
+  return regionFilter === 'east-asia' ? ERAS_KOREA : ERAS_WORLD;
+}
+
 export function formatRange(from: number, to: number | null): string {
   return `${formatYear(from)} – ${to === null ? '현재' : formatYear(to)}`;
 }

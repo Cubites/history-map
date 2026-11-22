@@ -65,7 +65,7 @@ export function WarPanel({ data, warView }: { data: StaticData; warView: WarThea
         </button>
       </header>
       <ol className="event-list war-fronts" aria-label={`${war.name} 날짜별 상황`}>
-        {theater.snapshots.map((s) => {
+        {theater.snapshots.map((s, i) => {
           const on = s === current;
           const expanded = on && foldedDate !== s.date;
           const activate = () => {
@@ -92,6 +92,8 @@ export function WarPanel({ data, warView }: { data: StaticData; warView: WarThea
               tabIndex={0}
             >
               <div className="event-head">
+                {/* 상황 번호(2026-11-23): 지도의 번호 핀·상황 막대의 번호와 같다 */}
+                <span className="war-front-no">{i + 1}</span>
                 <span className="event-year">{formatFrontDate(s.date, war.calendar)}</span>
                 {/* 펼친 날짜만 제목 끝에 복사 아이콘. 제목을 누르면 접히지 않고 이 날짜 화면의 링크를 복사한다 */}
                 <span className="event-title">

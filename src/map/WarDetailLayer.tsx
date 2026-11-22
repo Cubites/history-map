@@ -1,5 +1,5 @@
 import type { GeoProjection } from 'd3-geo';
-import { dateKey, factionColor, factionStroke, formatFrontDate, formatShortFrontDate, yearOfFrontDate } from '../lib/wars.ts';
+import { dateKey, factionColor, factionStroke, formatFrontDate, formatShortFrontDate, snapshotSpot, yearOfFrontDate } from '../lib/wars.ts';
 import type { FrontSnapshotOut, TheaterOut, WarIndexEntry } from '../schema/index.ts';
 
 /** 이보다 오래전(년)에 끝난 전투·진군로는 숨긴다. 6·25 전쟁(3년)처럼 짧은 전쟁은 모두 남는다 */
@@ -69,6 +69,9 @@ export function WarDetailLayer({ war, theater, snapshot, projection, entityColor
     .filter((b) => dateKey(b.date) <= now && yearOfFrontDate(b.date) >= nowYear - STALE_YEARS)
     .map((b, i) => ({ b, i, p: xy(b.at), fresh: dateKey(b.date) > prev }))
     .filter((x) => x.p);
+
+  // 고른 상황의 번호(전쟁 정보 목록·상황 막대의 번호와 같음)를 그 상황의 자리 위에 핀으로 단다 (2026-11-23)
+  const spot = xy(snapshotSpot(theater, snapshot));
 
   return (
     <g className="war-details">
@@ -146,6 +149,13 @@ export function WarDetailLayer({ war, theater, snapshot, projection, entityColor
           </g>
         );
       })}
+
+      {spot && (
+        <g className="war-step-pin" transform={`translate(${spot[0]},${spot[1]})`} aria-hidden>
+          <path d="M0,-11 L-6,-21 A12,12 0 1 1 6,-21 Z" />
+          <text y={-27} textAnchor="middle">{index + 1}</text>
+        </g>
+      )}
     </g>
   );
 }
