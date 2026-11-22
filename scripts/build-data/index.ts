@@ -36,6 +36,7 @@ import {
 import { DEFAULT_STORY_REGION, REGION_FILTERS, REGION_FILTER_OF, STORY_FILE_PREFIXES, regionOfEntityFile, regionOfEventFile, type RegionFilterUnit } from '../../src/schema/regions.ts';
 import { ENTITY_UNITS, EVENT_UNITS } from '../../src/schema/region-units.ts';
 import { buildLodTopology, countPoints, subTopology, tiledTopology } from './topo.ts';
+import { countAdded, nodeLongEdges } from './node-edges.ts';
 import { chunkOutlines, tilePolygons } from './tiles.ts';
 import { buildWars, checkWars, findCutText, readWars } from './wars.ts';
 import { stats as warCacheStats } from './war-cache.ts';
@@ -356,12 +357,21 @@ async function writeLods(clipped: ClippedTerritory[], land50: Land, land110: Lan
 
   // low 단계는 1:110m 해안선에 맞춰 다시 자른다 (육지 레이어와 해안선이 정확히 겹치도록)
   const low110 = await runCached<MultiCoords>('clip', clipJobs(clipped.map((t) => t.coords), '110m'));
-  const low = clipped.flatMap((t, i) => {
+  const lowRaw = clipped.flatMap((t, i) => {
     const coords = roundCoords(low110[i]);
     return coords.length ? [toFeature(t.key, coords)] : [];
   });
-  const detailed = clipped.map((t) => toFeature(t.key, t.clipped));
+  const detailedRaw = clipped.map((t) => toFeature(t.key, t.clipped));
+  // 긴 직선 변에 이웃 나라의 꼭짓점을 끼워 넣어 양쪽이 같은 꼭짓점으로 변을 나눠 갖게 한다(2026-11-22, node-edges.ts: 진과 북주·북제가 북위 33° 선에서 겹쳐 보이던 문제)
   const summary: string[] = [];
+  const noded = (features: Feature<MultiPolygon, { key: string }>[], label: string) => {
+    const before = features.map((f) => f.geometry.coordinates as MultiCoords);
+    const after = nodeLongEdges(before);
+    summary.push(`${label} 변에 끼운 점 ${countAdded(before, after).toLocaleString()}개`);
+    return features.map((f, i) => ({ ...f, geometry: { ...f.geometry, coordinates: after[i] } }) as Feature<MultiPolygon, { key: string }>);
+  };
+  const low = noded(lowRaw, 'low');
+  const detailed = noded(detailedRaw, 'mid·high');
 
   for (const lod of LODS) {
     const topo = buildLodTopology(lod, lod === 'low' ? land110.fc : land50.fc, lod === 'low' ? low : detailed);
