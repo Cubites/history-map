@@ -35,6 +35,9 @@ export function useBottomSheet(active: boolean, contentKey: unknown, raise = fal
   // 끄는 중의 처리(onPointerUp)는 한 번 만든 함수를 계속 쓰므로 raise는 ref로 읽는다
   const raiseRef = useRef(raise);
   raiseRef.current = raise;
+  // 펼친 사건·상세정보를 닫아 절반에서 접힘으로 내려올 때는 스크롤을 맨 위로 되돌리지 않는다(2026-11-22).
+  // 전에는 사건을 접으면 목록이 맨 위로 튀었다. 접은 사건을 머리 아래로 맞추는 일은 EventItem이 한다
+  const keepScroll = useRef(false);
   const drag = useRef<{ y: number; h: number; moved: boolean; state: SheetState } | null>(null);
   const suppressClick = useRef(false);
 
@@ -94,7 +97,8 @@ export function useBottomSheet(active: boolean, contentKey: unknown, raise = fal
     const s = active ? state : 'closed';
     el.dataset.sheet = s;
     // 절반으로 올라올 때는 펼친 사건으로 스크롤하는 중이므로(EventItem) 맨 위로 되돌리지 않는다
-    if (s !== 'open' && s !== 'half') el.scrollTop = 0;
+    if (s !== 'open' && s !== 'half' && !keepScroll.current) el.scrollTop = 0;
+    keepScroll.current = false;
     if (!active) {
       el.closest<HTMLElement>('.app')?.style.removeProperty('--sheet-cover');
       el.style.removeProperty('--sheet-h');
@@ -127,7 +131,12 @@ export function useBottomSheet(active: boolean, contentKey: unknown, raise = fal
   useEffect(() => {
     if (!active) return;
     if (raise) setState((s) => (s === 'min' || s === 'closed' ? 'half' : s));
-    else setState((s) => (s === 'half' ? 'closed' : s));
+    else
+      setState((s) => {
+        if (s !== 'half') return s;
+        keepScroll.current = true;
+        return 'closed';
+      });
   }, [active, raise]);
 
   // 검색창을 누르면 펼친 판을 접는다(검색 결과가 패널에 가리지 않게)

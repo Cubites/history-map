@@ -302,6 +302,31 @@ function EventItem({ event, data, selectedId, highlight }: { event: HistoryEvent
     // 머리 바로 아래(사건 사이 간격만큼 띄움)에 맞춘다. 그만큼 내릴 수 없으면 맨 아래까지만 내린다 (scrollUnderHeader)
     if (!scrollUnderHeader(item) && focused) item.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
   }, [focused, pinned]);
+  // 펼친 사건을 접으면(다시 누르거나 사건 밖을 눌러서) 그 사건을 머리 바로 아래에 둔다. 아래에 사건이 적어 그만큼 내릴 수 없으면 맨 아래까지(scrollUnderHeader) (2026-11-22).
+  // 휴대폰은 판이 절반에서 접힘으로 내려온 뒤의 높이로 계산해야 맨 아래가 맞으므로, 바로 한 번 맞추고 판의 높이 움직임이 끝나면(transitionend) 한 번 더 맞춘다
+  // (움직임 시간에 기대지 않는다: 창이 뒤에 있으면 훨씬 늦게 끝난다). 다른 사건을 눌러 옮겨 간 것이면 하지 않는다
+  const wasPinned = useRef(pinned);
+  useEffect(() => {
+    const folded = wasPinned.current && !pinned;
+    wasPinned.current = pinned;
+    const panel = itemRef.current?.closest<HTMLElement>('.panel');
+    if (!folded || !panel) return;
+    const place = () => {
+      const item = itemRef.current;
+      if (item?.isConnected && !useAppStore.getState().pinnedEventId) scrollUnderHeader(item);
+    };
+    const onEnd = (e: TransitionEvent) => {
+      if (e.target === panel && e.propertyName === 'height') place();
+    };
+    const first = setTimeout(place, 60);
+    panel.addEventListener('transitionend', onEnd);
+    const stop = setTimeout(() => panel.removeEventListener('transitionend', onEnd), 3000);
+    return () => {
+      clearTimeout(first);
+      clearTimeout(stop);
+      panel.removeEventListener('transitionend', onEnd);
+    };
+  }, [pinned]);
   const setYear = useAppStore((s) => s.setYear);
   const setFront = useAppStore((s) => s.setFront);
   const enterWar = useAppStore((s) => s.enterWar);
