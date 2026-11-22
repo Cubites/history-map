@@ -119,7 +119,11 @@ function blendRaw(t: number): GeoRawProjection {
   if (hit) return hit;
   const raw: GeoRawProjection = (lambda, phi) => {
     const a = geoEqualEarthRaw(lambda, phi);
-    const b = geoAzimuthalEqualAreaRaw(lambda, phi);
+    let b = geoAzimuthalEqualAreaRaw(lambda, phi);
+    // 보는 곳의 정반대 점(대척점)은 방위 도법에서 바깥 원 전체에 해당해 d3가 늘 오른쪽 끝 [2, 0]을 돌려준다.
+    // 지구 테두리를 그릴 때는 왼쪽 끝(경도 −180°, 위도 0°)도 이 점이라, 그대로 섞으면 테두리 왼쪽이 화면 안으로 접혀
+    // 지도 왼쪽 끝에 빈 삼각형이 보였다(PC에서 축척 500 km 무렵, 2026-11-23). 왼쪽이면 왼쪽 끝 [-2, 0]으로 둔다
+    if (lambda < 0 && 1 + Math.cos(lambda) * Math.cos(phi) < 1e-12) b = [-2, 0];
     return [a[0] * (1 - key) + b[0] * key, a[1] * (1 - key) + b[1] * key];
   };
   raw.invert = (x, y) => {
