@@ -372,15 +372,14 @@
   title:
     ko: "6일 전쟁과 이스라엘의 점령, 소모전(1967~1970)"
   summary:
-    ko: "1967년 5월 이집트의 나세르가 시나이의 유엔 긴급군에 철수를 요구하고(16~19일) 티란 해협을 이스라엘 선박에 닫았으며(22일) 30일 요르단과 방위 조약을 맺었다. 6월 5일 이스라엘이 이집트 공군 기지를 먼저 공격해 6일 전쟁이 시작되었고(이스라엘은 선제 방어, 아랍 쪽은 침략이라 부른다) 요르단과 시리아가 참전했으나 6월 10일 휴전까지 이스라엘이 시나이반도·가자 지구·요르단강 서안과 동예루살렘·골란 고원을 점령했다. 사망자는 이집트 약 1만~1만 5,000명(사망·실종), 요르단 약 700명, 시리아 1,000~2,500명으로 추산되는 반면 이스라엘 쪽은 약 800~980명이다. 서안에서 약 28만~32만 명, 골란에서 약 10만 명이 피란했거나 쫓겨났다(추산). 이스라엘은 6월 27일 예루살렘에 이스라엘 법을 적용했고 점령지에 정착촌을 세우기 시작했는데, 이는 유엔 안전 보장 이사회와 국제 사법 재판소가 국제법에 어긋난다고 해석했으며 이스라엘 정부는 이를 받아들이지 않았다. 아랍 연맹은 8~9월 하르툼 정상 회담에서 평화·승인·협상을 하지 않는다는 이른바 세 가지 거부를 결의했다. 11월 22일 안전 보장 이사회 결의 242호는 점령지에서의 이스라엘군 철수와 지역 모든 나라의 안전한 국경을 함께 요구했는데 영문과 프랑스어 문안의 차이로 철수 범위는 해석이 갈린다. 1968~1970년 수에즈 운하를 사이에 둔 소모전에서는 1970년 8월 미국의 로저스 안에 따라 휴전이 되었다. 같은 해 9월 28일 나세르가 죽어 사다트가 뒤를 이었다. 팔레스타인인 사이에서는 이 패배로 아랍 나라들에 대한 기대가 줄고 팔레스타인 해방 기구 같은 독자적인 무장 조직의 비중이 커졌다."
-  subjects: [israel, united-arab-republic, jordan, syria, west-bank, gaza-strip, sinai-israeli-occupation, soviet-union, usa]
+    ko: "1967년 5월 이집트의 나세르가 시나이의 유엔 긴급군에 철수를 요구하고(16~19일) 티란 해협을 이스라엘 선박에 닫았으며(22일) 30일 요르단과 방위 조약을 맺었다. 6월 5일 이스라엘이 이집트 공군 기지를 먼저 공격해 6일 전쟁이 시작되었고(이스라엘은 선제 방어, 아랍 쪽은 침략이라 부른다) 요르단과 시리아가 참전했으나 6월 10일 휴전까지 이스라엘이 시나이반도·가자 지구·요르단강 서안과 동예루살렘·골란 고원을 점령했다. 사망자는 이집트 약 1만~1만 5,000명(사망·실종), 요르단 약 700명, 시리아 1,000~2,500명으로 추산되는 반면 이스라엘 쪽은 약 800~980명이다. 서안에서 약 28만~32만 명, 골란에서 약 10만 명이 피란했거나 쫓겨났다(추산). 이스라엘은 6월 27일 예루살렘에 이스라엘 법을 적용했고 점령지에 정착촌을 세우기 시작했는데, 이는 유엔 안전 보장 이사회와 국제 사법 재판소가 국제법에 어긋난다고 해석했으며 이스라엘 정부는 이를 받아들이지 않았다. 아랍 연맹은 8~9월 하르툼 정상 회담에서 평화·승인·협상을 하지 않는다는 이른바 세 가지 거부를 결의했다. 11월 22일 안전 보장 이사회 결의 242호는 점령지에서의 이스라엘군 철수와 지역 모든 나라의 안전한 국경을 함께 요구했는데 영문과 프랑스어 문안의 차이로 철수 범위는 해석이 갈린다. 이집트와 시리아에 무기를 대던 소련은 6월 10일 이스라엘과 외교 관계를 끊고 두 나라의 군비를 다시 채워 주었으며, 소모전이 격해진 1970년 초에는 방공 부대와 조종사를 이집트에 보냈다. 1968~1970년 수에즈 운하를 사이에 둔 소모전에서는 1970년 8월 미국의 로저스 안에 따라 휴전이 되었다. 같은 해 9월 28일 나세르가 죽어 사다트가 뒤를 이었다. 팔레스타인인 사이에서는 이 패배로 아랍 나라들에 대한 기대가 줄고 팔레스타인 해방 기구 같은 독자적인 무장 조직의 비중이 커졌다."
+  subjects: [israel, united-arab-republic, jordan, syria, west-bank, gaza-strip, sinai-israeli-occupation, usa]
   links:
     - { from: israel, to: sinai-israeli-occupation, note: "시나이반도 점령 (1967)" }
     - { from: israel, to: west-bank, note: "서안 점령 (1967)" }
     - { from: israel, to: gaza-strip, note: "가자 지구 점령 (1967)" }
   tags: [war, politics, diplomacy]
-  sources: ["Michael B. Oren, Six Days of War: June 1967 and the Making of the Modern Middle East (Oxford University Press, 2002)", "Avi Shlaim, The Iron Wall: Israel and the Arab World (W. W. Norton, 2000)", "Rashid Khalidi, The Iron Cage: The Story of the Palestinian Struggle for Statehood (Beacon Press, 2006)", "유엔 안전 보장 이사회, 「결의 242호」(1967년 11월 22일 채택)"]
-
+  sources: ["Michael B. Oren, Six Days of War: June 1967 and the Making of the Modern Middle East (Oxford University Press, 2002)", "Avi Shlaim, The Iron Wall: Israel and the Arab World (W. W. Norton, 2000)", "Rashid Khalidi, The Iron Cage: The Story of the Palestinian Struggle for Statehood (Beacon Press, 2006)", "유엔 안전 보장 이사회, 「결의 242호」(1967년 11월 22일 채택)", "Galia Golan, Soviet Policies in the Middle East: From World War Two to Gorbachev (1990)"]
 - id: libya-qaddafi-1969
   year: 1969
   endYear: 2020

@@ -859,7 +859,7 @@
     ko: 북주의 화북 통일과 수의 건국
   summary:
     ko: "북주 무제가 577년 북제를 멸망시켜 화북을 통일했다. 580년 선제의 장인 양견이 어린 정제를 대신해 실권을 잡고 이듬해(581) 선양을 받아 수를 세웠다. 고구려 평원왕은 북주(577)에 이어 수가 서자마자(581) 사신을 보내 대장군 요동군공에 책봉되었다(『수서』는 고려왕으로 고쳐 봉했다고 적는다). 돌궐의 지배 아래 있던 동북의 거란은 584년 막하불(부족장)들을 이끌고 수를 찾아왔고 585년 부족 전체가 귀부했다. 지도는 동돌궐이 선 583년부터 시라무렌강 상류 일대를 동돌궐의 땅으로 그려 그만큼 거란과 실위의 땅이 줄어든다."
-  subjects: [northern-qi, northern-zhou, sui, goguryeo, gokturk, eastern-turks, khitan, shiwei]
+  subjects: [northern-qi, northern-zhou, sui, goguryeo, gokturk, khitan]
   links:
     - { from: northern-zhou, to: sui, note: "선양(581)" }
     - { from: northern-zhou, to: goguryeo, note: "평원왕 책봉(577)" }
