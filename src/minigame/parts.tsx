@@ -1,8 +1,8 @@
-// 세 미니게임이 함께 쓰는 부품 (2026-11-17): 위쪽 상태 줄, 힌트 목록, 정답 뒤 상자, 옆 나라 도형 받기.
-import { useEffect, useState, type ReactNode } from 'react';
+// 세 미니게임이 함께 쓰는 부품 (2026-11-17): 위쪽 상태 줄, 힌트 목록, 정답 뒤 상자, 문제 지도에 그릴 나라 묶음.
+import { useEffect, useMemo, type ReactNode } from 'react';
 import { loadEntityGeometry, type StaticData } from '../data/staticData.ts';
-import type { MapShape } from './QuizMap.tsx';
-import { neighborsOf, type Level, type Question } from './questions.ts';
+import type { MapItem } from './FindMap.tsx';
+import { LEVEL_LABEL, neighborsOf, type Level, type Question } from './questions.ts';
 
 /** 점수 숫자는 임시값이다 */
 export const POINTS = 100;
@@ -32,8 +32,25 @@ export interface PlayProps {
 }
 
 export type Hint = [title: string, body: ReactNode];
-/** 어려움의 첫 힌트: 국경선만 보이던 지도에 둘레의 육지와 바다(와 나라 색)를 보여 준다 */
-export const LAND_HINT: Hint = ['둘레의 육지와 바다', '지도에 둘레의 육지와 바다를 표시했습니다.'];
+/**
+ * 옆 나라 힌트. 보통·어려움(withLand)은 국경선만 보이던 지도에 둘레의 육지와 바다(와 나라 색)도 이 힌트가 함께 연다
+ * (2026-11-23: 전에는 육지·바다가 따로 첫 힌트였다)
+ */
+export const nearHint = (withLand: boolean, hasNear: boolean): Hint => [
+  withLand ? '둘레의 육지·바다, 옆 나라 영토와 이름' : '옆 나라 영토와 이름',
+  (withLand ? '지도에 둘레의 육지와 바다를 표시했습니다. ' : '') + (hasNear ? '둘레 나라도 이름과 함께 표시했습니다.' : '그 해에 둘레에 그려진 나라가 없습니다.'),
+];
+
+/** 문제 지도(FindMap)에 그릴 것: 문제의 나라와 (showNear면) 옆 나라들. 옆 나라에만 이름표를 붙인다 */
+export function useQuizItems(data: StaticData, q: Question, showNear: boolean) {
+  const near = useMemo(() => neighborsOf(data, q), [data, q]);
+  return useMemo(() => {
+    const own: MapItem = { id: q.entity.id, key: q.version.key, color: q.entity.color, anchor: q.version.anchor, bbox: q.version.bbox };
+    if (!showNear) return { items: [own], labels: undefined, near };
+    const others = near.map((t): MapItem => ({ id: t.entityId, key: t.key, color: data.entities.get(t.entityId)!.color, anchor: t.anchor, bbox: t.bbox }));
+    return { items: [...others, own], labels: Object.fromEntries(near.map((t) => [t.entityId, data.entities.get(t.entityId)!.names.ko])), near };
+  }, [data, q, near, showNear]);
+}
 
 export function Status({ title, level, total, outcomes, points }: { title: string; level?: Level; total: number; outcomes: Outcome[]; points: number }) {
   const score = outcomes.reduce((sum, o) => sum + o.points, 0);
@@ -42,7 +59,7 @@ export function Status({ title, level, total, outcomes, points }: { title: strin
   return (
     <div className="mg-status">
       <b>{title}</b>
-      {level && <span className="mg-level">{level === 'hard' ? '어려움' : '쉬움'}</span>}
+      {level && <span className="mg-level">{LEVEL_LABEL[level]}</span>}
       <span>문제 {outcomes.length + 1} / {total}</span>
       <span className="mg-dots">
         {Array.from({ length: total }, (_, i) => (
@@ -124,24 +141,4 @@ export async function findBorderNeighbor(data: StaticData, q: Question): Promise
     }
   }
   return best;
-}
-
-/** 옆 나라 도형. on이 될 때 받아 온다 (이름과 함께 그릴 수 있게 이름·기준점을 붙인다) */
-export function useNeighbors(data: StaticData, q: Question, on: boolean): MapShape[] {
-  const [near, setNear] = useState<MapShape[]>([]);
-  useEffect(() => {
-    if (!on) return;
-    let alive = true;
-    Promise.all(
-      neighborsOf(data, q).map(async (t) => {
-        const feature = (await loadEntityGeometry('mid', t.entityId)).get(t.key);
-        const e = data.entities.get(t.entityId)!;
-        return feature ? { feature, color: e.color, name: e.names.ko, anchor: t.anchor } : null;
-      }),
-    ).then((list) => alive && setNear(list.filter((s): s is NonNullable<typeof s> => s !== null))).catch(() => {});
-    return () => {
-      alive = false;
-    };
-  }, [on, data, q]);
-  return near;
 }

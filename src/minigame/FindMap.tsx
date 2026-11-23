@@ -1,4 +1,4 @@
-// '지도에서 나라 찾기'용 지도 (2026-11-18). 역사 지도처럼 끌어서 옮기고 휠·두 손가락으로 확대한다.
+// 미니게임의 움직이는 지도 (2026-11-18, 처음에는 '나라 찾기'용. 지금은 세 게임 모두 쓴다). 역사 지도처럼 끌어서 옮기고 휠·두 손가락으로 확대한다.
 // 시점 계산은 본 지도의 것(map/view.ts)을 그대로 쓴다: 권역 단추를 눌렀을 때의 화면(fitBounds)과 세계 화면(배율 1)이 본 지도와 같다.
 // 본 지도(WorldMap)는 건드리지 않는다. 이름표는 그리지 않고, 답한 뒤 labels로 받은 나라에만 붙인다.
 import { useEffect, useRef, useState, type PointerEvent } from 'react';
@@ -33,6 +33,8 @@ interface Props {
   highlightId?: string;
   /** 주면 그 범위로 화면을 옮긴다 (답한 뒤 정답 나라로) */
   focus?: [number, number, number, number] | null;
+  /** 주면 그 권역 화면으로 옮긴다 (권역 힌트를 열었을 때. 본 지도의 권역 단추와 같은 화면) */
+  area?: Bounds | null;
   /** 진한 테두리로 그릴 나라 (답한 뒤의 정답) */
   mainId?: string;
   /** 이름표를 붙일 나라 (id → 이름) */
@@ -43,7 +45,7 @@ interface Props {
 const NO_LABELS: Record<string, string> = {};
 const clampZoom = (k: number) => Math.max(MIN_ZOOM, Math.min(MAX_ZOOM, k));
 
-export function FindMap({ items, start, focus, mainId, labels = NO_LABELS, onPick, bare = false, detail = false, highlightId }: Props) {
+export function FindMap({ items, start, focus, area, mainId, labels = NO_LABELS, onPick, bare = false, detail = false, highlightId }: Props) {
   const bareRef = useRef(bare);
   bareRef.current = bare;
   const [ref, size] = useElementSize<HTMLDivElement>();
@@ -77,6 +79,11 @@ export function FindMap({ items, start, focus, mainId, labels = NO_LABELS, onPic
     const s = sizeRef.current;
     if (focus && s) setView(fitFocus(s, baseScale(s), focus));
   }, [focus]);
+
+  useEffect(() => {
+    const s = sizeRef.current;
+    if (area && s) setView(fitBounds(s, baseScale(s), area));
+  }, [area]);
 
   useEffect(() => {
     let on = true;

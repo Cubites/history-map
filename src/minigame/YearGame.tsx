@@ -1,54 +1,43 @@
-// 2번 게임: 연도 맞추기 (2026-11-17, 11-18 정답 기준 바꿈).
-// 쉬움은 몇 세기인지 맞춘다. 어려움은 연도를 적어 10년 단위까지 맞춘다.
+// 2번 게임: 연도 맞추기 (2026-11-17, 11-18 정답 기준 바꿈, 11-23 난이도 셋·움직이는 지도).
+// 쉬움·보통은 몇 세기인지 맞춘다. 어려움은 연도를 적어 10년 단위까지 맞춘다.
 // 영토가 그대로였던 기간이 여러 세기·여러 10년 단위에 걸치면 걸친 것 전부가 정답이다.
 // 어려움에서 그 기간 안의 해를 정확히 적으면 가산점(BONUS)을 준다.
-import { useEffect, useMemo, useState, type FormEvent } from 'react';
-import { loadEntityGeometry, type TerritoryFeature } from '../data/staticData.ts';
-import { QuizMap } from './QuizMap.tsx';
-import { BONUS, HINT_COST, Hints, LAND_HINT, POINTS, Result, Status, useNeighbors, type Hint, type PlayProps } from './parts.tsx';
+// 보통·어려움은 처음에 국경선만 보이고, 둘레의 육지·바다는 옆 나라 힌트와 함께 열린다. 지도는 육지·바다가 보일 때부터 끌어서 옮기고 확대할 수 있다.
+import { useMemo, useState, type FormEvent } from 'react';
+import { FindMap } from './FindMap.tsx';
+import { BONUS, HINT_COST, Hints, POINTS, Result, Status, nearHint, useQuizItems, type Hint, type PlayProps } from './parts.tsx';
 import { ERA_LABEL, centuryKey, centuryKeyText, centuryText, decadeKey, decadeKeyText, eraOf, eventHint, keepRange, regionEventHint, yearText } from './questions.ts';
+
+/** 옆 나라 힌트의 차례(둘째). 보통·어려움은 이 힌트가 둘레의 육지·바다도 함께 연다 */
+const NEAR_AT = 2;
 
 export function YearGame({ data, q, level, total, outcomes, onView, onNext }: PlayProps) {
   const hard = level === 'hard';
-  // 어려움은 처음에 국경선만 보이고, 둘레의 육지와 바다가 첫 힌트가 된다 (그만큼 뒤 힌트의 차례가 하나씩 밀린다)
-  const shift = hard ? 1 : 0;
-  // 도형 묶음은 '하나 꺼내기'만 쓴다 (본 저장소 최신 코드의 LazyMap에도 맞게, 2026-11-19)
-  const [geo, setGeo] = useState<{ get(key: string): TerritoryFeature | undefined } | null>(null);
-  const [failed, setFailed] = useState(false);
   const [opened, setOpened] = useState(0);
   const [text, setText] = useState('');
   const [bce, setBce] = useState(false);
-  /** 낸 답. 쉬움은 세기 번호(centuryKey), 어려움은 해 */
+  /** 낸 답. 쉬움·보통은 세기 번호(centuryKey), 어려움은 해 */
   const [guess, setGuess] = useState<number | null>(null);
 
-  useEffect(() => {
-    let on = true;
-    loadEntityGeometry('mid', q.entity.id).then((g) => on && setGeo(g)).catch(() => on && setFailed(true));
-    return () => {
-      on = false;
-    };
-  }, [q]);
-
-  const target = geo?.get(q.version.key);
-  const main = useMemo(() => (target ? { feature: target, color: q.entity.color } : null), [target, q]);
-  const showNear = opened >= 2 + shift;
-  const near = useNeighbors(data, q, showNear);
+  const showNear = opened >= NEAR_AT;
+  const bare = level !== 'easy' && !showNear;
+  const { items, labels, near } = useQuizItems(data, q, showNear);
+  const start = useMemo(() => ({ bbox: q.version.bbox }), [q]);
   const keep = useMemo(() => keepRange(q, data.timeline.range[1]), [q, data]);
   const ownEvent = useMemo(() => eventHint(data, q, 'year'), [data, q]);
   const areaEvent = useMemo(() => regionEventHint(data, q), [data, q]);
 
   const hints: Hint[] = [
-    ...(shift ? [LAND_HINT] : []),
     ['시대', `${ERA_LABEL[eraOf(q.year)]}.`],
-    ['옆 나라 영토와 이름', near.length ? '지도에 둘레 나라를 이름과 함께 표시했습니다.' : '그 해에 둘레에 그려진 나라가 없습니다.'],
+    nearHint(level !== 'easy', near.length > 0),
     ['나라 이름', q.entity.names.ko],
     ['이 나라의 사건 (연도 가림)', ownEvent ?? '이 나라에 걸린 사건이 없습니다.'],
     ['이 무렵 같은 권역의 사건 (연도 가림)', areaEvent ?? '이 권역에 걸린 사건이 없습니다.'],
-    // 쉬움은 세기가 곧 답이라 이 힌트를 두지 않는다
+    // 쉬움·보통은 세기가 곧 답이라 이 힌트를 두지 않는다
     ...(hard ? [['세기', `${centuryText(q.year)}에 걸친 모습입니다.`] as Hint] : []),
   ];
 
-  // 정답 범위: 기간이 걸친 세기(쉬움) 또는 10년 단위(어려움)의 번호
+  // 정답 범위: 기간이 걸친 세기(쉬움·보통) 또는 10년 단위(어려움)의 번호
   const toKey = hard ? decadeKey : centuryKey;
   const keyText = hard ? decadeKeyText : centuryKeyText;
   const [lo, hi] = [toKey(keep[0]), toKey(keep[1])];
@@ -74,10 +63,8 @@ export function YearGame({ data, q, level, total, outcomes, onView, onNext }: Pl
     <div className="mg-game">
       <Status title="연도 맞추기" level={level} total={total} outcomes={outcomes} points={base} />
       <div className="mg-mapwrap">
-        {main ? <QuizMap fit={main.feature} main={main} others={showNear ? near : undefined} bare={opened < shift} /> : (
-          <div className="mg-loading">{failed ? '영토 도형을 불러오지 못했습니다.' : '지도를 불러오는 중…'}</div>
-        )}
-        <div className="mg-chip">{opened < shift ? '국경선만 표시' : '이름표 숨김'}</div>
+        <FindMap items={items} start={start} mainId={q.entity.id} labels={labels} bare={bare} detail />
+        <div className="mg-chip">{bare ? '국경선만 표시' : '이름표 숨김 · 끌어서 이동'}</div>
       </div>
       <aside className="mg-panel">
         <p className="mg-q">이 영토는 <em>{hard ? '어느 해' : '몇 세기'}</em>의 모습일까요?</p>

@@ -27,7 +27,7 @@ import {
 } from '../data/staticData.ts';
 import { focusTarget, placeActive } from '../lib/events.ts';
 import { useWarShapes } from '../data/warShapes.ts';
-import { activeWarView, dateKey, entryYear, factionColor, frontBattleSpots, majorWars, nearBy, snapshotFor } from '../lib/wars.ts';
+import { activeWarView, dateKey, entryYear, factionColor, frontBattleSpots, majorWars, nearBy, snapshotFor, snapshotSpot } from '../lib/wars.ts';
 import { formatRange } from '../lib/year.ts';
 import { REGION_BUTTONS, REGION_FILTER_INFO, regionFocusBounds } from '../schema/regions.ts';
 import { useRegionChoice } from '../search/RegionFilter.tsx';
@@ -962,6 +962,25 @@ export default function WorldMap({ data }: { data: StaticData }) {
         : toView(shown, s0, { lon: found.main.anchor[0], lat: found.main.anchor[1], k: viewRef.current.k }),
     );
   }, [mapFocus, year, warId, data.territories, size, s0, animateTo]);
+  // 전쟁 보기에서 확대해 보고 있을 때 다른 상황을 고르면(목록·상황 막대) 그 상황의 자리(지도 번호 핀, snapshotSpot)를 화면 가운데로 옮긴다(2026-11-23).
+  // 배율은 그대로 둔다. 전역 전체가 보이는 배율(전쟁 보기를 열었을 때의 배율의 1.15배까지)에서는 옮기지 않는다.
+  // 전쟁 보기를 열 때·전역이 바뀔 때(지도를 옮겨 전역이 따라 바뀐 경우 포함)는 상황이 바뀌어도 옮기지 않는다
+  const shownSnapshot = useRef<string | null>(null);
+  useEffect(() => {
+    if (!size || !war || !theater || !snapshot) {
+      shownSnapshot.current = null;
+      return;
+    }
+    const scope = `${war.id}/${theater.id}/`;
+    const key = scope + snapshot.date;
+    const before = shownSnapshot.current;
+    shownSnapshot.current = key;
+    if (!before || before === key || !before.startsWith(scope)) return;
+    const shown = visibleSize(size, true);
+    if (viewRef.current.k <= fitBounds(shown, s0, theater.bounds).k * 1.15) return;
+    const [lon, lat] = snapshotSpot(theater, snapshot);
+    animateTo(toView(shown, s0, { lon, lat, k: viewRef.current.k }));
+  }, [war, theater, snapshot, size, s0, animateTo]);
   // 전쟁 보기 중에 전쟁 기간 밖의 연도로 옮기면(사건 목록의 이동 등) 전쟁 보기를 닫는다
   useEffect(() => {
     if (!warId) return;
@@ -1049,19 +1068,21 @@ export default function WorldMap({ data }: { data: StaticData }) {
       <canvas ref={canvasRef} className="map-canvas" />
       {size && projection && (
         <svg ref={overlayRef} className="map-overlay" width={size.width} height={size.height} aria-hidden>
+          {/* 화살표는 글자(나라 이름, 전투·거점·지점 이름) 아래에 그린다(2026-11-23). 작전 화살표는 전투·진군로 글자가 든 WarDetailLayer보다 먼저,
+              사건 화살표는 나라 이름표(아래의 글 LabelLayer)보다 먼저 */}
+          {snapshot && war && <FrontArrowLayer war={war} snapshot={snapshot} projection={projection} entityColor={(id) => data.entities.get(id)?.color} />}
           {snapshot && war && theater && (
             <WarDetailLayer war={war} theater={theater} snapshot={snapshot} projection={projection} entityColor={(id) => data.entities.get(id)?.color} />
           )}
-          {snapshot && war && <FrontArrowLayer war={war} snapshot={snapshot} projection={projection} entityColor={(id) => data.entities.get(id)?.color} />}
           <LabelLayer mode="hit" territories={labelTerritories} entities={data.entities} selectedId={selectedId} projection={projection} view={view} size={size} />
           {battlePins.length > 0 && <BattlePinLayer pins={battlePins} projection={projection} onOpen={openBattlePin} />}
           {warMarkers.length > 0 && (
             <WarMarkerLayer items={warMarkers} projection={projection} onOpen={({ war: w, theater: t }) => enterWar(w.id, t.id, year, null)} />
           )}
-          <LabelLayer territories={labelTerritories} entities={data.entities} selectedId={selectedId} projection={projection} view={view} size={size} />
           {hoveredEvent && selectedId && (
             <ArrowLayer data={data} event={hoveredEvent} selectedId={selectedId} projection={projection} />
           )}
+          <LabelLayer territories={labelTerritories} entities={data.entities} selectedId={selectedId} projection={projection} view={view} size={size} />
         </svg>
       )}
       {hovered && hoveredEntity && (

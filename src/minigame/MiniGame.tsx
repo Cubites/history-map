@@ -1,46 +1,81 @@
-// 미니게임 (2026-11-17). 본 지도 위에 덮어 띄우는 화면: 고르기 → 문제 10개 → 결과.
-// 게임 셋: 나라 이름 맞추기(이 파일), 연도 맞추기(YearGame), 지도에서 나라 찾기(FindGame). 점수 숫자는 임시값이다(parts.tsx).
-import { useEffect, useMemo, useState } from 'react';
+// 미니게임 (2026-11-17). 본 지도 위에 덮어 띄우는 화면: 고르기 → 문제(5·10·20개) → 결과.
+// 2026-11-23: PC도 휴대폰과 같은 세로 배치로, 휴대폰만 한 창(.mg-win)을 화면 가운데에 띄운다. 뒤에는 누르기 전 화면이 흐리게 비치고,
+// 창은 살짝 위에서 내려오며 나타나고 닫을 때는 살짝 올라가며 사라진다(창 밖을 눌러도 닫힘). 휴대폰은 전처럼 화면 전체.
+// 가운데 창은 게임 고르기와 결과 화면이다. 시작하기를 누르면 PC도 화면 전체로 넓혀 문제를 풀고(지도 왼쪽·문제 오른쪽의 넓은 배치), 끝나면 가운데 창으로 돌아온다.
+// 게임 고르기는 게임 블럭을 누르면 그 블럭이 아래로 펼쳐져(0.3초) 난이도·권역·문제 수·시작 단추가 나오고, 다른 블럭은 접힌다.
+// 게임 셋: 나라 이름 맞추기(이 파일), 연도 맞추기(YearGame), 나라 찾기(FindGame). 점수 숫자는 임시값이다(parts.tsx).
+// 난이도는 쉬움·보통·어려움 셋이다(2026-11-23). 게임마다 뜻이 다르다: 아래 GAMES의 rule과 각 게임 파일 머리 참고.
+import { useEffect, useMemo, useState, type FormEvent } from 'react';
+import { createPortal } from 'react-dom';
 import { geoArea } from 'd3-geo';
 import { loadEntityGeometry, type StaticData, type TerritoryFeature } from '../data/staticData.ts';
 import { REGION_FILTERS, REGION_FILTER_INFO, type RegionFilter } from '../schema/regions.ts';
 import { useAppStore } from '../store/useAppStore.ts';
 import { FindGame } from './FindGame.tsx';
-import { FindMap, type MapItem } from './FindMap.tsx';
+import { FindMap } from './FindMap.tsx';
 import { QuizMap } from './QuizMap.tsx';
 import { YearGame } from './YearGame.tsx';
-import { HINT_COST, Hints, LAND_HINT, POINTS, Result, Status, type Hint, type Outcome, type PlayProps } from './parts.tsx';
-import { ROUND, buildQuestions, centuryText, eventHint, neighborsOf, yearText, type Level, type Question } from './questions.ts';
+import { HINT_COST, Hints, POINTS, Result, Status, nearHint, useQuizItems, type Hint, type Outcome, type PlayProps } from './parts.tsx';
+import { LEVELS, LEVEL_LABEL, ROUND, ROUNDS, answerNames, buildQuestions, centuryText, chosung, eventHint, isNameAnswer, yearText, type Level, type Pool, type Question } from './questions.ts';
 
 type Game = 'name' | 'year' | 'find';
-const GAMES: { id: Game; title: string; about: string; rule: string; play: (p: PlayProps) => JSX.Element }[] = [
+/** rule은 난이도 단추 아래에 한 줄씩 적는 난이도 설명(고른 난이도 것만 보인다). pool은 난이도별로 낼 나라와 모습(questions.ts의 Pool) */
+const GAMES: { id: Game; title: string; about: string; rule: Record<Level, string[]>; pool: Record<Level, Pool>; play: (p: PlayProps) => JSX.Element }[] = [
   {
     id: 'name',
     title: '나라 이름 맞추기',
-    about: '색칠된 영토를 보고 어느 나라인지 맞춥니다.',
-    rule: '쉬움은 넓은 나라의 전성기 모습만, 어려움은 작은 나라와 모든 시기 모습을 냅니다. 어려움은 처음에 국경선만 보이고, 둘레의 육지와 바다는 첫 힌트로 엽니다. 쉬움과 어려움 모두 4지선다입니다.',
+    about: '색칠된 영토를 보고 어느 나라인지 맞추기',
+    rule: {
+      easy: ['4지선다', '해당 나라의 전성기 영토와 대륙 및 바다 표시'],
+      normal: ['4지선다', '해당 나라의 전성기 영토만 표시'],
+      hard: ['주관식', '해당 나라의 전성기 영토만 표시'],
+    },
+    pool: { easy: 'top', normal: 'peak', hard: 'peak' },
     play: NameGame,
   },
   {
     id: 'year',
     title: '연도 맞추기',
-    about: '영토 모습을 보고 어느 해인지 맞춥니다.',
-    rule: '쉬움은 몇 세기인지 맞춥니다(넓은 나라의 전성기 모습만 냅니다). 어려움은 연도를 적어 10년 단위까지 맞추고, 영토가 그대로였던 기간 안의 해를 적으면 가산점을 받습니다. 어려움은 처음에 국경선만 보이고, 둘레의 육지와 바다는 첫 힌트로 엽니다.',
+    about: '영토 모습을 보고 어느 해인지 맞추기',
+    rule: {
+      easy: ['몇 세기인지 맞추기', '해당 나라의 전성기 영토와 대륙 및 바다 표시'],
+      normal: ['몇 세기인지 맞추기', '해당 나라의 전성기 영토만 표시'],
+      hard: ['몇 년도인지 맞추기', '해당 나라의 전성기 영토만 표시'],
+    },
+    pool: { easy: 'top', normal: 'peak', hard: 'peak' },
     play: YearGame,
   },
   {
     id: 'find',
-    title: '지도에서 나라 찾기',
-    about: '이름표 없는 지도에서 나라를 찾아 누릅니다.',
-    rule: '쉬움은 이름과 해를 주고, 그 나라가 있는 권역 화면에서 시작합니다. 어려움은 이름만 주고 세계 화면에서 시작하므로, 그 나라가 있던 해를 직접 찾아야 합니다. 지도는 역사 지도처럼 끌어서 옮기고 휠로 확대합니다.',
+    title: '나라 찾기',
+    about: '이름표 없는 지도에서 나라 찾기',
+    rule: {
+      easy: ['연도와 권역, 나라 이름을 알려주고 나라 찾기'],
+      normal: ['연도와 나라 이름을 알려주고 나라 찾기'],
+      hard: ['나라 이름만 보고 나라 찾기'],
+    },
+    pool: { easy: 'top', normal: 'top', hard: 'any' },
     play: FindGame,
   },
 ];
 
+/** 창이 닫히며 사라지는 시간(ms). styles.css의 mg-out과 같게 */
+const CLOSE_MS = 200;
+
 export function MiniGame({ data, onClose }: { data: StaticData; onClose: () => void }) {
-  const [game, setGame] = useState<Game>('name');
+  // 고르기 화면에서 펼친 게임(없으면 모두 접힘). 시작하면 이 게임을 한다
+  const [game, setGame] = useState<Game | null>(null);
   const [level, setLevel] = useState<Level>('easy');
   const [region, setRegion] = useState<RegionFilter>('all');
+  const [count, setCount] = useState<number>(ROUND);
+  const [closing, setClosing] = useState(false);
+  // 결과 창에서 '지도'를 눌러 본 지도를 보는 중(2026-11-23). 미니게임을 닫지 않고 숨겨 두고 '결과 창으로 돌아가기' 단추만 띄운다.
+  // 그 단추를 누르거나 본 지도에서 나라 고름을 풀면(×, Esc, 바다 누르기) 결과 창으로 돌아온다
+  const [away, setAway] = useState(false);
+  const selectedId = useAppStore((s) => s.selectedId);
+  useEffect(() => {
+    if (away && selectedId === null) setAway(false);
+  }, [away, selectedId]);
   const [questions, setQuestions] = useState<Question[] | null>(null);
   const [outcomes, setOutcomes] = useState<Outcome[]>([]);
   const [empty, setEmpty] = useState(false);
@@ -48,28 +83,52 @@ export function MiniGame({ data, onClose }: { data: StaticData; onClose: () => v
   const selectFocus = useAppStore((s) => s.selectFocus);
 
   const start = () => {
-    const qs = buildQuestions(data, level, region);
+    const qs = buildQuestions(data, GAMES.find((g) => g.id === game)?.pool[level] ?? 'top', region, count);
     setEmpty(!qs.length);
     setOutcomes([]);
     setQuestions(qs.length ? qs : null);
   };
   /** 본 지도를 그 나라·그 해로 옮기고 게임을 닫는다 */
+  /** 닫기: PC는 창이 살짝 올라가며 사라진 뒤 닫는다(휴대폰은 화면 전체라 바로) */
+  const close = () => {
+    if (closing) return;
+    if (!window.matchMedia('(min-width: 861px)').matches) return onClose();
+    setClosing(true);
+    window.setTimeout(onClose, CLOSE_MS);
+  };
   const viewOnMap = (q: Question) => {
     setYear(q.year);
     selectFocus(q.entity.id);
-    onClose();
+    close();
   };
 
-  const now = GAMES.find((g) => g.id === game)!;
-  const Play = now.play;
+  /** 결과 창에서: 본 지도를 그 나라·그 해로 옮기고, 미니게임은 닫지 않고 숨긴다 */
+  const viewFromResult = (q: Question) => {
+    setYear(q.year);
+    selectFocus(q.entity.id);
+    setAway(true);
+  };
+
+  const Play = GAMES.find((g) => g.id === game)?.play;
   const index = outcomes.length;
   const done = questions !== null && index >= questions.length;
+  // 단추는 지도 칸(.app-main) 안에 넣어 지도 영역의 위 가운데에 둔다(화면 전체의 가운데가 아님: PC는 왼쪽에 나라 정보 칸이 있다)
+  if (away)
+    return createPortal(
+      <button className="mg-return" onClick={() => setAway(false)}>
+        결과 창으로 돌아가기
+      </button>,
+      document.querySelector('.app-main') ?? document.body,
+    );
   return (
-    <div className="mg" role="dialog" aria-label="미니게임">
+    // 바깥(.mg)은 뒤 화면을 흐리게 덮는 막: 창 밖을 누르면 닫는다 (결과 창에서는 닫지 않는다: 잘못 눌러 결과를 잃지 않게, 2026-11-23)
+    // 문제를 푸는 동안은 .playing: PC에서 창을 화면 전체로 넓힌다(2026-11-23). 결과는 게임 고르기와 같은 가운데 창으로 돌아온다
+    <div className={`mg${questions && !done ? ' playing' : ''}${closing ? ' closing' : ''}`} onClick={(e) => e.target === e.currentTarget && !done && close()}>
+    <div className="mg-win" role="dialog" aria-label="미니게임">
       <header className="mg-top">
-        <strong>역사 지도 <span>· 미니게임</span></strong>
+        <strong>미니게임</strong>
         {questions && <button className="mg-ghost" onClick={() => setQuestions(null)}>처음으로</button>}
-        <button className="mg-ghost mg-back" onClick={onClose}>
+        <button className="mg-ghost mg-back" onClick={close}>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
             <path d="M3 6.5l6-2.5 6 2.5 6-2.5v13.5l-6 2.5-6-2.5-6 2.5z" />
             <path d="M9 4v13.5M15 6.5V20" />
@@ -79,35 +138,48 @@ export function MiniGame({ data, onClose }: { data: StaticData; onClose: () => v
       </header>
       {!questions && (
         <div className="mg-lobby">
-          <h2>어떤 게임을 할까요?</h2>
-          <p className="mg-sub">역사 지도의 영토와 사건으로 푸는 문제입니다. 한 판은 {ROUND}문제입니다.</p>
           <div className="mg-cards">
-            {GAMES.map((g) => (
-              <button key={g.id} className={`mg-card${g.id === game ? ' on' : ''}`} aria-pressed={g.id === game} onClick={() => setGame(g.id)}>
-                <h3>{g.title}</h3><p>{g.about}</p>
-              </button>
-            ))}
+            {GAMES.map((g) => {
+              const open = g.id === game;
+              return (
+                <section key={g.id} className={`mg-card${open ? ' on' : ''}`}>
+                  {/* 블럭 머리: 누르면 이 게임만 펼치고(다른 게임은 접힘), 펼친 게임을 다시 누르면 접는다 */}
+                  <button className="mg-card-head" aria-expanded={open} onClick={() => { setGame(open ? null : g.id); setEmpty(false); }}>
+                    <h3>{g.title}</h3><p>{g.about}</p>
+                  </button>
+                  <div className="mg-card-body" aria-hidden={!open}>
+                    <div className="mg-setup">
+                      <div className="mg-field">
+                        <span>난이도</span>
+                        <span className="mg-seg mg-seg-3">
+                          {LEVELS.map((l) => <button key={l} aria-pressed={level === l} onClick={() => setLevel(l)}>{LEVEL_LABEL[l]}</button>)}
+                        </span>
+                        <p className="mg-sub mg-rule">{g.rule[level].map((line) => <span key={line}>{line}</span>)}</p>
+                      </div>
+                      <label className="mg-field">
+                        <span>권역</span>
+                        <select value={region} onChange={(e) => setRegion(e.target.value as RegionFilter)}>
+                          <option value="all">모든 권역</option>
+                          {REGION_FILTERS.map((id) => <option key={id} value={id}>{REGION_FILTER_INFO[id].label}</option>)}
+                        </select>
+                      </label>
+                      <div className="mg-field">
+                        <span>문제 수</span>
+                        <span className="mg-seg mg-seg-3">
+                          {ROUNDS.map((n) => <button key={n} aria-pressed={count === n} onClick={() => setCount(n)}>{n}개</button>)}
+                        </span>
+                      </div>
+                      <button className="mg-primary" onClick={start}>시작하기</button>
+                      {open && empty && <p className="mg-warn">이 조건에 맞는 문제가 없습니다. 권역을 바꿔 보세요.</p>}
+                    </div>
+                  </div>
+                </section>
+              );
+            })}
           </div>
-          <div className="mg-setup">
-            <label>난이도
-              <span className="mg-seg">
-                <button aria-pressed={level === 'easy'} onClick={() => setLevel('easy')}>쉬움</button>
-                <button aria-pressed={level === 'hard'} onClick={() => setLevel('hard')}>어려움</button>
-              </span>
-            </label>
-            <label>권역
-              <select value={region} onChange={(e) => setRegion(e.target.value as RegionFilter)}>
-                <option value="all">모든 권역</option>
-                {REGION_FILTERS.map((id) => <option key={id} value={id}>{REGION_FILTER_INFO[id].label}</option>)}
-              </select>
-            </label>
-            <button className="mg-primary" onClick={start}>시작하기</button>
-          </div>
-          <p className="mg-sub">{now.rule}</p>
-          {empty && <p className="mg-warn">이 조건에 맞는 문제가 없습니다. 권역을 바꿔 보세요.</p>}
         </div>
       )}
-      {questions && !done && (
+      {questions && !done && Play && (
         <Play
           key={index}
           data={data}
@@ -119,18 +191,23 @@ export function MiniGame({ data, onClose }: { data: StaticData; onClose: () => v
           onNext={(o) => setOutcomes([...outcomes, o])}
         />
       )}
-      {questions && done && <End game={game} outcomes={outcomes} onAgain={start} onLobby={() => setQuestions(null)} onView={viewOnMap} />}
+      {questions && done && game && <End game={game} outcomes={outcomes} onAgain={start} onLobby={() => setQuestions(null)} onView={viewFromResult} />}
+    </div>
     </div>
   );
 }
 
-/** 1번 게임: 나라 이름 맞추기 (4지선다) */
+/** 옆 나라 힌트의 차례(셋째). 보통·어려움은 이 힌트가 둘레의 육지·바다도 함께 연다 */
+const NEAR_AT = 3;
+
+/** 1번 게임: 나라 이름 맞추기 (쉬움·보통은 4지선다, 어려움은 이름을 적는 주관식) */
 function NameGame({ data, q, level, total, outcomes, onView, onNext }: PlayProps) {
-  // 어려움은 처음에 국경선만 보이고, 둘레의 육지와 바다가 첫 힌트가 된다 (그만큼 뒤 힌트의 차례가 하나씩 밀린다)
-  const shift = level === 'hard' ? 1 : 0;
+  const hard = level === 'hard';
   // 도형 묶음은 '하나 꺼내기'만 쓴다: 본 저장소 최신 코드는 Map 대신 하나씩만 꺼내는 묶음(LazyMap)을 주므로 둘 다에 맞춘다 (2026-11-19)
   const [geo, setGeo] = useState<{ get(key: string): TerritoryFeature | undefined } | null>(null);
+  /** 낸 답: 4지선다는 고른 나라의 id, 어려움은 적은 이름 */
   const [picked, setPicked] = useState<string | null>(null);
+  const [text, setText] = useState('');
   const [opened, setOpened] = useState(0);
 
   // 최소·최대 영토 힌트에 쓸 이 나라의 모든 시기 도형
@@ -155,37 +232,35 @@ function NameGame({ data, q, level, total, outcomes, onView, onNext }: PlayProps
     return versions.length ? { min: versions[0].feature, max: versions[versions.length - 1].feature, one: versions.length === 1 } : null;
   }, [geo, data, q]);
 
-  // 힌트 3: 옆 나라는 열 때 도형을 받아 지도에 이름과 함께 그린다
-  const showNear = opened >= 3 + shift;
-  const near = useMemo(() => neighborsOf(data, q), [data, q]);
-  // 지도에 그릴 것: 문제의 나라와 (힌트를 열었으면) 옆 나라들. 옆 나라에만 이름표를 붙인다
-  const { items, labels } = useMemo(() => {
-    const own: MapItem = { id: q.entity.id, key: q.version.key, color: q.entity.color, anchor: q.version.anchor, bbox: q.version.bbox };
-    if (!showNear) return { items: [own], labels: undefined };
-    const others = near.map((t): MapItem => ({ id: t.entityId, key: t.key, color: data.entities.get(t.entityId)!.color, anchor: t.anchor, bbox: t.bbox }));
-    return { items: [...others, own], labels: Object.fromEntries(near.map((t) => [t.entityId, data.entities.get(t.entityId)!.names.ko])) };
-  }, [data, q, near, showNear]);
+  // 힌트 3: 옆 나라를 지도에 이름과 함께 그린다. 보통·어려움은 그때까지 국경선만 보인다
+  const showNear = opened >= NEAR_AT;
+  const bare = level !== 'easy' && !showNear;
+  const { items, labels, near } = useQuizItems(data, q, showNear);
   const start = useMemo(() => ({ bbox: q.version.bbox }), [q]);
   const event = useMemo(() => eventHint(data, q), [data, q]);
+  const names = useMemo(() => answerNames(q.entity), [q]);
   const hints: Hint[] = [
-    ...(shift ? [LAND_HINT] : []),
     ['시대', `${centuryText(q.year)}의 모습입니다.`],
     ['최소 영토와 최대 영토', extremes ? (
       extremes.one ? '이 나라는 지도에서 영토가 한 가지 모습뿐입니다.' : (
+        // 국경선만 보이는 동안에는 작은 지도도 국경선만 그린다 (둘레의 육지·바다는 다음 힌트)
         <span className="mg-minis">
-          <figure><QuizMap fit={extremes.max} main={{ feature: extremes.min, color: q.entity.color }} zoomOut={0.8} /><figcaption>가장 작았을 때</figcaption></figure>
-          <figure><QuizMap fit={extremes.max} main={{ feature: extremes.max, color: q.entity.color }} zoomOut={0.8} /><figcaption>가장 컸을 때</figcaption></figure>
+          <figure><QuizMap fit={extremes.max} main={{ feature: extremes.min, color: q.entity.color }} zoomOut={0.8} bare={bare} /><figcaption>가장 작았을 때</figcaption></figure>
+          <figure><QuizMap fit={extremes.max} main={{ feature: extremes.max, color: q.entity.color }} zoomOut={0.8} bare={bare} /><figcaption>가장 컸을 때</figcaption></figure>
         </span>
       )
     ) : '불러오는 중…'],
-    ['옆 나라 영토와 이름', near.length ? '지도에 둘레 나라를 이름과 함께 표시했습니다.' : '그 해에 둘레에 그려진 나라가 없습니다.'],
+    nearHint(level !== 'easy', near.length > 0),
     ['역사적 사건', event ?? '이 나라에 걸린 사건이 없습니다.'],
+    // 어려움의 마지막 힌트: 정답으로 치는 이름 전부의 초성
+    ...(hard ? [['초성', names.map(chosung).join(' 또는 ')] as Hint] : []),
   ];
 
   const points = Math.max(0, POINTS - HINT_COST * opened);
-  const ok = picked === q.entity.id;
-  // 숫자 글쇠 1~4로 고른다
+  const ok = picked !== null && (hard ? isNameAnswer(q.entity, picked) : picked === q.entity.id);
+  // 4지선다는 숫자 글쇠 1~4로 고른다
   useEffect(() => {
+    if (hard) return;
     const onKey = (e: KeyboardEvent) => {
       const n = Number(e.key);
       if (picked === null && n >= 1 && n <= q.options.length) setPicked(q.options[n - 1].id);
@@ -193,34 +268,51 @@ function NameGame({ data, q, level, total, outcomes, onView, onNext }: PlayProps
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
   });
+  const submit = (e: FormEvent) => {
+    e.preventDefault();
+    if (picked === null && text.trim()) setPicked(text.trim());
+  };
 
   return (
     <div className="mg-game">
       <Status title="나라 이름 맞추기" level={level} total={total} outcomes={outcomes} points={points} />
       <div className="mg-mapwrap">
-        {/* 쉬움, 그리고 어려움에서 첫 힌트(둘레의 육지와 바다)를 연 뒤에는 본 지도처럼 끌어서 옮기고 확대할 수 있다 */}
-        <FindMap items={items} start={start} mainId={q.entity.id} labels={labels} bare={opened < shift} detail />
-        <div className="mg-chip">{opened < shift ? '국경선만 표시' : '이름표 숨김 · 끌어서 이동'}</div>
+        {/* 육지·바다가 보이는 동안에는(쉬움은 처음부터, 보통·어려움은 옆 나라 힌트를 연 뒤) 본 지도처럼 끌어서 옮기고 확대할 수 있다 */}
+        <FindMap items={items} start={start} mainId={q.entity.id} labels={labels} bare={bare} detail />
+        <div className="mg-chip">{bare ? '국경선만 표시' : '이름표 숨김 · 끌어서 이동'}</div>
       </div>
       <aside className="mg-panel">
-        <p className="mg-q">색칠된 곳은 <em>어느 나라</em>일까요?</p>
-        <div className="mg-opts">
-          {q.options.map((o, i) => (
-            <button
-              key={o.id}
-              className={picked === null ? '' : o.id === q.entity.id ? 'right' : o.id === picked ? 'wrong' : ''}
-              disabled={picked !== null}
-              onClick={() => picked === null && setPicked(o.id)}
-            >
-              <kbd>{i + 1}</kbd>{o.names.ko}
-            </button>
-          ))}
-        </div>
+        <p className="mg-q">{hard ? '이 국경선은' : '색칠된 곳은'} <em>어느 나라</em>일까요?</p>
+        {hard ? (
+          <>
+            <p className="mg-note">
+              <span>띄어쓰기와 괄호 안은 보지 않음</span>
+              <span>예시: '잉카 제국'은 '잉카'만 적어도 정답</span>
+            </p>
+            <form className="mg-year mg-name" onSubmit={submit}>
+              <input aria-label="나라 이름" placeholder="나라 이름" autoFocus value={text} disabled={picked !== null} onChange={(e) => setText(e.target.value)} />
+              <button className="mg-primary" disabled={picked !== null || !text.trim()}>답하기</button>
+            </form>
+          </>
+        ) : (
+          <div className="mg-opts">
+            {q.options.map((o, i) => (
+              <button
+                key={o.id}
+                className={picked === null ? '' : o.id === q.entity.id ? 'right' : o.id === picked ? 'wrong' : ''}
+                disabled={picked !== null}
+                onClick={() => picked === null && setPicked(o.id)}
+              >
+                <kbd>{i + 1}</kbd>{o.names.ko}
+              </button>
+            ))}
+          </div>
+        )}
         {picked !== null && (
           <Result
             ok={ok}
             title={`${ok ? '정답입니다.' : '아쉽습니다. 정답은'} ${q.entity.names.ko}`}
-            sub={`${yearText(q.year)}의 모습 · ${ok ? points : 0}점`}
+            sub={`${hard ? `낸 답 ${picked} · ` : ''}${yearText(q.year)}의 모습 · ${ok ? points : 0}점`}
             last={outcomes.length + 1 === total}
             onView={() => onView(q)}
             onNext={() => onNext({ q, ok, hints: opened, points: ok ? points : 0 })}
@@ -232,36 +324,31 @@ function NameGame({ data, q, level, total, outcomes, onView, onNext }: PlayProps
   );
 }
 
-function End({ game, outcomes, onAgain, onLobby, onView }: { game: Game; outcomes: Outcome[]; onAgain: () => void; onLobby: () => void; onView: (q: Question) => void }) {
+function End({ outcomes, onAgain, onLobby, onView }: { game: Game; outcomes: Outcome[]; onAgain: () => void; onLobby: () => void; onView: (q: Question) => void }) {
   const score = outcomes.reduce((sum, o) => sum + o.points, 0);
-  let best = 0;
-  let run = 0;
-  for (const o of outcomes) best = Math.max(best, (run = o.ok ? run + 1 : 0));
   return (
     <div className="mg-end">
       <h2>한 판이 끝났습니다</h2>
       <div className="mg-score">
         <div className="main"><span>점수</span><b>{score} <small>/ {outcomes.reduce((sum, o) => sum + (o.max ?? POINTS), 0)}</small></b></div>
         <div><span>정답</span><b>{outcomes.filter((o) => o.ok).length} <small>/ {outcomes.length}</small></b></div>
-        <div><span>가장 긴 연속 정답</span><b>{best}</b></div>
-        <div><span>연 힌트</span><b>{outcomes.reduce((sum, o) => sum + o.hints, 0)} <small>개</small></b></div>
       </div>
       <div className="mg-log">
-        <div className="hd"><span /><span>나라</span><span>{game === 'year' ? '낸 답 → 영토가 그대로였던 기간' : '출제한 해'}</span><span>힌트</span><span>점수</span><span /></div>
+        {/* 2026-11-23: 가장 긴 연속 정답·연 힌트 칸과 표의 출제한 해·힌트 열을 뺐다 */}
+        <div className="hd"><span /><span>나라</span><span>점수</span><span /></div>
         {outcomes.map((o, i) => (
           <div key={i}>
             <span className={`mark${o.ok ? '' : ' no'}`}>{o.ok ? '○' : '×'}</span>
             <b>{o.q.entity.names.ko}</b>
-            <span>{o.note ?? yearText(o.q.year)}</span>
-            <span>{o.hints ? `${o.hints}개` : '없음'}</span>
             <span>{o.points}점</span>
             <button className="mg-link" onClick={() => onView(o.q)}>지도</button>
           </div>
         ))}
       </div>
-      <div className="mg-row">
-        <button className="mg-primary" onClick={onAgain}>다시 하기</button>
+      {/* 오른쪽 끝에 '다시 하기', 그 왼쪽에 '게임 고르기' (2026-11-23) */}
+      <div className="mg-row mg-row-end">
         <button className="mg-ghost" onClick={onLobby}>게임 고르기</button>
+        <button className="mg-primary" onClick={onAgain}>다시 하기</button>
       </div>
     </div>
   );

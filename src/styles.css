@@ -127,6 +127,9 @@ button {
 .label-hit { fill: transparent; pointer-events: all; cursor: pointer; }
 
 .arrow-line { fill: none; stroke-width: 2.5; stroke-linecap: round; }
+/* 화살표의 얇은 흰 테두리(2026-11-23): 색 선 아래에 같은 선을 흰색으로 양쪽 1px씩 굵게 깐다. 점선·흐르는 움직임은 색 선과 같은 규칙을 그대로 받는다 */
+.arrow .arrow-line.arrow-halo { stroke: #fff; stroke-width: 4.5; }
+.arrowhead-halo, .front-head-halo { fill: #fff; stroke: #fff; stroke-width: 1.5; stroke-linejoin: round; }
 .arrow-in .arrow-line { stroke: var(--arrow-in); }
 .arrow-out .arrow-line { stroke: var(--arrow-out); stroke-dasharray: 7 5; animation: arrow-flow 900ms linear infinite; }
 .arrowhead-in { fill: var(--arrow-in); }
@@ -621,6 +624,12 @@ button {
 .map-yearbar.across .war-step-no { top: auto; right: auto; bottom: calc(100% + 6px); left: 50%; transform: translateX(-50%); background: none; font-size: 12px; }
 /* 전쟁 정보 목록의 상황 번호(WarPanel.tsx)와 지도의 번호 핀(WarDetailLayer.tsx) */
 .war-front-no { flex: none; min-width: 18px; height: 18px; box-sizing: border-box; padding: 0 4px; border-radius: 9px; background: var(--front-line); color: #fff; font-size: 11px; font-weight: 700; line-height: 18px; text-align: center; font-variant-numeric: tabular-nums; }
+/* 전쟁 정보 목록의 머리줄(2026-11-23): 번호·날짜·상황 이름을 모두 첫 줄 위에 맞춘다. 기준선 맞춤이면 이름이 두 줄 넘는 펼친 상황(이름이 복사 단추 안)에서
+   기준선이 마지막 줄을 따라가 번호와 이름이 날짜와 다른 줄로 어긋났다. 이름이 길어도 날짜 옆에서 시작해 그 자리에서 줄을 바꾼다 */
+.war-fronts .event-head { align-items: flex-start; }
+.war-fronts .event-title { min-width: 0; }
+.war-fronts .war-front-no { margin-top: 1px; }
+.war-fronts .event-toggle { align-self: center; }
 .war-step-pin { pointer-events: none; }
 .war-step-pin path { fill: var(--front-line); stroke: #fff; stroke-width: 1.5; }
 .war-step-pin text { fill: #fff; font-size: 12px; font-weight: 800; dominant-baseline: central; font-variant-numeric: tabular-nums; }
@@ -737,6 +746,7 @@ button {
 .front-arrow-0 .front-arrow-line { stroke: var(--front-north); }
 .front-arrow-1 .front-arrow-line { stroke: var(--front-south); stroke-dasharray: 9 4; }
 .front-arrow-2 .front-arrow-line { stroke-dasharray: 3 4; }
+.front-arrow .front-arrow-line.front-arrow-halo { stroke: #fff; stroke-width: 5; }
 .front-head-0 { fill: var(--front-north); }
 .front-head-1 { fill: var(--front-south); }
 .front-arrow-label {
@@ -881,13 +891,35 @@ button {
   .map-yearbar { top: calc(69px + var(--mg-major-h) * 1.3); }
   .mg-launch svg { width: 68%; height: 68%; }
 }
-.mg { --mg-ok: #2e7d4f; position: fixed; inset: 0; z-index: 1000; background: var(--bg); display: flex; flex-direction: column; font-size: 15px; line-height: 1.5; }
+/* 2026-11-23: .mg는 화면 전체를 덮는 막, 그 안의 .mg-win이 미니게임 창이다. 휴대폰은 창이 화면 전체, PC(861px부터)는 휴대폰만 한 창을
+   가운데에 띄우고 뒤 화면을 흐리게 비친다. 창은 살짝 위에서 내려오며 나타나고(mg-in), 닫을 때 살짝 올라가며 사라진다(.closing, mg-out — MiniGame.tsx CLOSE_MS와 같은 시간) */
+.mg { --mg-ok: #2e7d4f; position: fixed; inset: 0; z-index: 1000; display: flex; font-size: 15px; line-height: 1.5; }
+.mg-win { flex: 1; min-width: 0; min-height: 0; display: flex; flex-direction: column; background: var(--bg); }
+@media (min-width: 861px) {
+  .mg { align-items: center; justify-content: center; background: rgba(20, 24, 32, 0.28); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); animation: mg-veil-in 0.2s ease both; }
+  .mg-win { flex: none; width: 400px; height: min(820px, calc(100vh - 48px)); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; box-shadow: 0 18px 50px rgba(0, 0, 0, 0.3); animation: mg-in 0.22s ease both; }
+  .mg.closing { animation: mg-veil-out 0.2s ease both; }
+  .mg.closing .mg-win { animation: mg-out 0.2s ease both; }
+}
+@keyframes mg-in { from { opacity: 0; transform: translateY(-14px); } to { opacity: 1; transform: none; } }
+@keyframes mg-out { from { opacity: 1; transform: none; } to { opacity: 0; transform: translateY(-14px); } }
+@keyframes mg-veil-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes mg-veil-out { from { opacity: 1; } to { opacity: 0; } }
+/* 이 움직임들은 운영자가 요청한 것이라 '움직임 줄이기' 설정에서도 끄지 않는다(이 컴퓨터가 그 설정이라 끄면 아예 보이지 않음, 2026-11-23) */
 @media (prefers-color-scheme: dark) { .mg { --mg-ok: #6fcf97; } }
 .mg button { cursor: pointer; }
+/* 결과 창에서 '지도'로 본 지도를 보는 동안 띄우는 단추(2026-11-23): 지도 영역(.app-main) 아래 가운데의 연도 입력 칸(.map-yearbox, 높이 30px) 바로 위(8px).
+   연도 칸의 bottom 규칙(PC 연도 띠 위, 휴대폰 아래 판 위)을 그대로 따라가며 38px 더 올린다. 흰 바탕에 붉은 굵은 테두리·붉은 글씨 */
+.mg-return { position: absolute; bottom: 50px; left: 50%; z-index: 900; transform: translateX(-50%); padding: 7px 16px; border: 2.5px solid var(--front-line); border-radius: 999px; background: #fff; color: var(--front-line); font: inherit; font-size: 14px; font-weight: 800; white-space: nowrap; cursor: pointer; box-shadow: 0 3px 12px rgba(0, 0, 0, 0.28); }
+.mg-return:hover { background: color-mix(in srgb, var(--front-line) 8%, #fff); }
+.app-main:has(> .map-yearbar.across) .mg-return { bottom: calc(var(--yearstrip-h) + 50px); }
+@media (max-width: 768px) {
+  .mg-return { bottom: 60px; }
+  .app:has(.panel.sheet) .mg-return { bottom: calc(var(--sheet-cover, 96px) + 46px); transition: bottom 0.22s ease; }
+}
 .mg h2, .mg h3, .mg p, .mg figure, .mg ol { margin: 0; }
 .mg-top { display: flex; align-items: center; gap: 10px; padding: 10px 16px; border-bottom: 1px solid var(--border); background: var(--surface); }
 .mg-top strong { flex: 1; font-size: 16px; font-weight: 800; }
-.mg-top strong span { color: var(--muted); font-weight: 600; }
 .mg-ghost { border: 1px solid var(--border); background: var(--surface); padding: 6px 12px; border-radius: 8px; font-size: 13px; }
 .mg-ghost:hover { border-color: var(--accent); }
 .mg-back { display: inline-flex; align-items: center; gap: 6px; }
@@ -898,14 +930,21 @@ button {
 .mg-sub { color: var(--muted); font-size: 13px; margin-top: 4px; }
 .mg-warn { color: var(--error); margin-top: 12px; font-weight: 600; }
 .mg-row { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+.mg-row-end { justify-content: flex-end; align-items: center; }
 
-.mg-lobby, .mg-end { flex: 1; min-height: 0; width: 100%; max-width: 980px; margin: 0 auto; padding: 32px 16px 48px; overflow: auto; }
+.mg-lobby, .mg-end { flex: 1; min-height: 0; width: 100%; box-sizing: border-box; margin: 0 auto; padding: 16px 16px 32px; overflow: auto; }
 .mg-lobby h2, .mg-end h2 { font-size: 24px; font-weight: 800; }
-.mg-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 22px; }
-.mg-card { border: 1.5px solid var(--border); background: var(--surface); border-radius: 14px; padding: 16px; }
+/* 게임 블럭(2026-11-23): 머리(제목·한 줄 설명)를 누르면 아래로 펼쳐져 난이도·권역·문제 수·시작 단추가 나온다. 한 번에 하나만 펼친다.
+   펼치고 접는 움직임은 0.3초: 칸 높이를 0fr ↔ 1fr로 바꾼다. 접힌 안쪽은 보이지 않게 해 글쇠로도 닿지 않게 한다 */
+.mg-cards { display: grid; grid-template-columns: 1fr; gap: 12px; }
+.mg-card { border: 1.5px solid var(--border); background: var(--surface); border-radius: 14px; overflow: hidden; }
 .mg-card.on { border-color: var(--accent); box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 25%, transparent); }
-button.mg-card { font: inherit; color: inherit; text-align: left; }
-button.mg-card:hover { border-color: var(--accent); }
+.mg-card:hover { border-color: var(--accent); }
+.mg-card-head { display: block; width: 100%; padding: 16px; border: 0; background: none; font: inherit; color: inherit; text-align: left; }
+.mg-card-body { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.3s ease; }
+.mg-card.on .mg-card-body { grid-template-rows: 1fr; }
+.mg-card-body > .mg-setup { min-height: 0; overflow: hidden; visibility: hidden; transition: visibility 0s 0.3s; }
+.mg-card.on .mg-card-body > .mg-setup { visibility: visible; transition-delay: 0s; }
 .mg-year { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
 .mg-year input { width: 86px; font: inherit; font-size: 16px; color: var(--fg); background: var(--bg); border: 1px solid var(--border); border-radius: 9px; padding: 7px 10px; }
 .mg-primary:disabled, .mg-ghost:disabled, .mg-seg button:disabled { opacity: 0.5; cursor: default; }
@@ -926,14 +965,27 @@ button.mg-card:hover { border-color: var(--accent); }
 .mg-note b { color: var(--fg); }
 .mg-card h3 { font-size: 17px; }
 .mg-card p { color: var(--muted); font-size: 13.5px; margin-top: 6px; }
-.mg-setup { margin: 22px 0 10px; border: 1px solid var(--border); background: var(--surface); border-radius: 14px; padding: 18px; display: grid; grid-template-columns: auto 1fr auto; gap: 18px; align-items: end; }
-.mg-setup label { display: grid; gap: 6px; font-size: 12px; font-weight: 700; color: var(--muted); }
+.mg-setup { display: grid; grid-template-columns: 1fr; gap: 14px; padding: 0 16px; }
+.mg-setup > :first-child { margin-top: 2px; padding-top: 14px; border-top: 1px solid var(--border); }
+.mg-setup > :last-child { margin-bottom: 16px; }
+.mg-field { display: grid; gap: 6px; }
+.mg-field > span:first-child { font-size: 12px; font-weight: 700; color: var(--muted); }
+.mg-field .mg-sub { margin-top: 0; }
+/* 난이도 설명은 두 줄 (2026-11-23) */
+.mg-rule span { display: block; }
+/* 나라 이름 맞추기 어려움: 이름 적는 칸은 남는 너비를 다 쓴다 */
+.mg-name input { flex: 1; width: auto; min-width: 0; }
+/* 결과 화면: '다시 하기'를 '게임 고르기'와 같은 크기로 (2026-11-23) */
+.mg-row-end .mg-primary { padding: 6px 12px; border: 1px solid var(--accent); border-radius: 8px; font-size: 13px; }
+.mg-row-end button { min-width: 96px; }
+.mg-setup .mg-warn { margin-top: 0; }
 .mg-setup select { font: inherit; font-size: 14px; color: var(--fg); background: var(--bg); border: 1px solid var(--border); border-radius: 9px; padding: 7px 10px; }
 .mg-seg { display: inline-flex; border: 1px solid var(--border); border-radius: 9px; overflow: hidden; background: var(--bg); }
 .mg-seg button { border: 0; background: none; padding: 7px 14px; font-size: 14px; font-weight: 600; color: var(--muted); }
 .mg-seg button[aria-pressed='true'] { background: var(--accent); color: var(--surface); }
 /* 난이도 단추: 칸 너비만큼 늘이지 않고 글자에 맞추며, 쉬움·어려움 두 단추의 너비는 같게 한다 (2026-11-18) */
 .mg-setup .mg-seg { display: inline-grid; grid-template-columns: 1fr 1fr; justify-self: start; }
+.mg-setup .mg-seg.mg-seg-3 { grid-template-columns: 1fr 1fr 1fr; }
 
 .mg-game { flex: 1; min-height: 0; display: grid; grid-template-columns: minmax(0, 1fr) 380px; grid-template-rows: auto minmax(0, 1fr); }
 .mg-status { grid-column: 1 / -1; display: flex; align-items: center; gap: 16px; padding: 8px 16px; border-bottom: 1px solid var(--border); font-size: 13.5px; flex-wrap: wrap; }
@@ -990,14 +1042,27 @@ button.mg-card:hover { border-color: var(--accent); }
 .mg-log .mark { width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; font-size: 13px; font-weight: 800; color: #fff; background: var(--mg-ok); }
 .mg-log .mark.no { background: var(--error); }
 
-@media (max-width: 860px) {
-  .mg-top strong span { display: none; }
-  .mg-cards, .mg-setup, .mg-score { grid-template-columns: 1fr; }
-  /* 화면 전체는 스크롤하지 않는다: 위쪽 줄과 지도는 제자리에 두고, 아래 문제 영역(.mg-panel)만 스크롤한다 (2026-11-18) */
-  .mg-game { display: flex; flex-direction: column; }
-  .mg-status { flex: none; }
-  .mg-mapwrap { flex: none; height: 38vh; height: 38dvh; min-height: 200px; }
-  .mg-panel { flex: 1; min-height: 0; border-left: 0; border-top: 1px solid var(--border); overflow: auto; overscroll-behavior: contain; }
-  .mg-log > div { grid-template-columns: 34px 1fr 60px 40px; }
-  .mg-log > div > :nth-child(3), .mg-log > div > :nth-child(4) { display: none; }
+/* 세로 배치(2026-11-23부터 PC도 같음, 전에는 860px 이하에서만): 위쪽 줄과 지도는 제자리에 두고 아래 문제 영역(.mg-panel)만 스크롤한다 */
+.mg-score { grid-template-columns: 1.4fr 1fr; }
+.mg-game { display: flex; flex-direction: column; }
+.mg-status { flex: none; gap: 6px 12px; }
+.mg-mapwrap { flex: none; height: 38vh; height: 38dvh; min-height: 200px; }
+.mg-panel { flex: 1; min-height: 0; border-left: 0; border-top: 1px solid var(--border); overflow: auto; overscroll-behavior: contain; }
+.mg-log > div { grid-template-columns: 34px 1fr 60px 40px; }
+/* 진행 점은 문제 수(5·10·20)에 맞춰 줄어든다 */
+.mg-dots { flex: 1 1 120px; min-width: 0; }
+.mg-dots i { flex: 1 1 0; width: auto; max-width: 18px; min-width: 3px; }
+@media (min-width: 861px) {
+  /* PC 창 안에서는 지도 높이를 창 높이에 맞춘다 */
+  .mg-mapwrap { height: 38%; }
+  /* 시작한 뒤(.playing, 2026-11-23): PC는 창을 화면 전체로 넓히고 넓은 배치로 돌아간다 — 지도 왼쪽·문제 오른쪽(380px). 결과 화면은 다시 가운데 창 */
+  .mg.playing { align-items: stretch; background: var(--bg); -webkit-backdrop-filter: none; backdrop-filter: none; }
+  .mg.playing .mg-win { flex: 1; width: auto; height: auto; border: 0; border-radius: 0; box-shadow: none; }
+  .mg.playing:not(.closing) .mg-win { animation: none; }
+  .mg.playing .mg-game { display: grid; grid-template-columns: minmax(0, 1fr) 380px; grid-template-rows: auto minmax(0, 1fr); }
+  .mg.playing .mg-status { gap: 16px; }
+  .mg.playing .mg-dots { flex: 0 1 auto; }
+  .mg.playing .mg-dots i { flex: 0 1 18px; width: 18px; }
+  .mg.playing .mg-mapwrap { height: auto; min-height: 280px; }
+  .mg.playing .mg-panel { border-top: 0; border-left: 1px solid var(--border); }
 }

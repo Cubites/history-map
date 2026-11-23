@@ -1,6 +1,13 @@
 import type { GeoProjection } from 'd3-geo';
 import { dateKey, factionColor, factionStroke, formatFrontDate, formatShortFrontDate, snapshotSpot, yearOfFrontDate } from '../lib/wars.ts';
 import type { FrontSnapshotOut, TheaterOut, WarIndexEntry } from '../schema/index.ts';
+import { pullBack } from './FrontArrowLayer.tsx';
+
+/** 진군로 화살촉 크기(px, 2026-11-23: 10 → 14)와 선이 끝나는 자리. 화살촉 끝은 가장 최근에 닿은 지점의 점(반지름 3.2px)에서 ROUTE_GAP만큼 앞에 멈춘다 */
+const ROUTE_HEAD = 14;
+const ROUTE_HEAD_REF = 6;
+const ROUTE_GAP = 6;
+const ROUTE_PULL = ROUTE_GAP + ((10 - ROUTE_HEAD_REF) * ROUTE_HEAD) / 10;
 
 /** 이보다 오래전(년)에 끝난 전투·진군로는 숨긴다. 6·25 전쟁(3년)처럼 짧은 전쟁은 모두 남는다 */
 const STALE_YEARS = 3;
@@ -31,6 +38,12 @@ export function WarDetailLayer({ war, theater, snapshot, projection, entityColor
   const pathOf = (pts: ([number, number] | null)[]) => {
     const ok = pts.filter((p): p is [number, number] => !!p);
     return ok.length >= 2 ? `M${ok.join('L')}` : '';
+  };
+
+  // 지나온 길의 끝은 가장 최근에 닿은 지점의 점·이름에 화살촉이 겹치지 않게 조금 물린다 (2026-11-23)
+  const donePoints = (pts: ([number, number] | null)[]) => {
+    const ok = pts.filter((p): p is [number, number] => !!p);
+    return ok.length >= 2 ? pullBack(ok, ROUTE_PULL) : ok;
   };
 
   const routes = theater.routes.map((route, ri) => {
@@ -76,8 +89,12 @@ export function WarDetailLayer({ war, theater, snapshot, projection, entityColor
   return (
     <g className="war-details">
       <defs>
+        {/* 화살촉의 흰 테두리(2026-11-23). 선의 테두리는 전부터 있던 바탕 선(.war-route-halo) */}
+        <marker id="route-head-halo" viewBox="0 0 10 10" refX={ROUTE_HEAD_REF} refY="5" markerWidth={ROUTE_HEAD} markerHeight={ROUTE_HEAD} markerUnits="userSpaceOnUse" orient="auto" overflow="visible">
+          <path d="M0,0L10,5L0,10z" className="front-head-halo" />
+        </marker>
         {routes.map((r) => (
-          <marker key={r.ri} id={`route-head-${r.ri}`} viewBox="0 0 10 10" refX="7" refY="5" markerWidth="10" markerHeight="10" markerUnits="userSpaceOnUse" orient="auto">
+          <marker key={r.ri} id={`route-head-${r.ri}`} viewBox="0 0 10 10" refX={ROUTE_HEAD_REF} refY="5" markerWidth={ROUTE_HEAD} markerHeight={ROUTE_HEAD} markerUnits="userSpaceOnUse" orient="auto">
             <path d="M0,0L10,5L0,10z" fill={r.stroke} />
           </marker>
         ))}
@@ -86,9 +103,9 @@ export function WarDetailLayer({ war, theater, snapshot, projection, entityColor
       {routes.map((r) => (
         <g key={r.ri} className={`war-route${r.finished ? ' war-route-finished' : ''}`} aria-hidden>
           <path className="war-route-ahead" d={pathOf(r.screen)} style={{ stroke: r.stroke }} />
-          {r.reached >= 1 && <path className="war-route-halo" d={pathOf(r.screen.slice(0, r.reached + 1))} />}
+          {r.reached >= 1 && <path className="war-route-halo" d={pathOf(donePoints(r.screen.slice(0, r.reached + 1)))} markerEnd="url(#route-head-halo)" />}
           {r.reached >= 1 && (
-            <path className="war-route-done" d={pathOf(r.screen.slice(0, r.reached + 1))} style={{ stroke: r.stroke }} markerEnd={`url(#route-head-${r.ri})`} />
+            <path className="war-route-done" d={pathOf(donePoints(r.screen.slice(0, r.reached + 1)))} style={{ stroke: r.stroke }} markerEnd={`url(#route-head-${r.ri})`} />
           )}
           {r.screen.slice(0, r.reached + 1).map((p, i) => {
             if (!p) return null;
@@ -153,7 +170,8 @@ export function WarDetailLayer({ war, theater, snapshot, projection, entityColor
       {spot && (
         <g className="war-step-pin" transform={`translate(${spot[0]},${spot[1]})`} aria-hidden>
           <path d="M0,-11 L-6,-21 A12,12 0 1 1 6,-21 Z" />
-          <text y={-27} textAnchor="middle">{index + 1}</text>
+          {/* 숫자는 원의 가운데에: 원(반지름 12)의 중심은 현(y=-21, 반폭 6)에서 √(12²−6²)=10.4 위인 y=-31.4 */}
+          <text y={-31.4} textAnchor="middle">{index + 1}</text>
         </g>
       )}
     </g>

@@ -36,7 +36,7 @@ const HALO = 1.5;
 let measureCtx: CanvasRenderingContext2D | null | undefined;
 const widthCache = new Map<string, number>();
 /** 이름표 글자 폭(px). 화면 글꼴로 한 번 재서 기억해 둔다 */
-function textWidth(text: string, { size, weight }: { size: number; weight: number }): number {
+export function textWidth(text: string, { size, weight }: { size: number; weight: number }): number {
   const key = `${weight}/${size}/${text}`;
   let width = widthCache.get(key);
   if (width === undefined) {
@@ -48,6 +48,12 @@ function textWidth(text: string, { size, weight }: { size: number; weight: numbe
     widthCache.set(key, width);
   }
   return width;
+}
+
+/** 이름표 글자 상자의 반폭·반높이(px, 흰 테두리 포함). 이름표 겹침 판정과 사건 화살표의 끝 띄우기(ArrowLayer)가 함께 쓴다 */
+export function labelHalf(text: string, selected: boolean): { w: number; h: number } {
+  const font = selected ? FONT_SELECTED : FONT;
+  return { w: textWidth(text, font) / 2 + HALO, h: font.size * 0.6 + HALO };
 }
 
 /**
@@ -67,8 +73,7 @@ export function LabelLayer({ territories, entities, selectedId, projection, view
     const selected = t.entityId === selectedId;
     if (width < rule.minWidth && !selected) return [];
     const text = entities.get(t.entityId)?.names.ko ?? t.entityId;
-    const font = selected ? FONT_SELECTED : FONT;
-    const half = { w: textWidth(text, font) / 2 + HALO, h: font.size * 0.6 + HALO };
+    const half = labelHalf(text, selected);
     const area = width * (t.bbox[3] - t.bbox[1]) * perDegree;
     return [{ t, p, text, selected, half, area }];
   });
