@@ -156,7 +156,6 @@ subjects cultural-rule-1920 occupied-korea
 subjects currency-reform-1905 daehan-jeguk
 subjects cyrus-anshan-559bc elam-neo-elamite
 subjects daedong-yeojido-1861 joseon
-subjects daedongbeop-1608 joseon
 subjects daedongbeop-nationwide-1708 joseon
 subjects daegaya-479 southern-qi
 subjects daegong-768 silla
@@ -181,7 +180,6 @@ subjects donghak-petition-1892 joseon
 subjects donghak-second-1894 joseon
 subjects dongin-seoin-1575 joseon
 subjects dongmyeongwang-pyeon-1193 goryeo
-subjects donguibogam-1610 joseon
 subjects dprk-founded-1948 soviet-north
 subjects dusan-empire-1330 bosnian-banate
 subjects dutch-war-1672 habsburg-monarchy
@@ -262,7 +260,6 @@ subjects german-surrender-1945 nazi-germany
 subjects geunchogo-diplomacy-372 baekje
 subjects gichuk-oksa-1589 joseon
 subjects gimyo-sahwa-1519 joseon
-subjects giyu-treaty-1609 joseon
 subjects goguryeo-falls-668 silla
 subjects gojong-rule-1873 joseon
 subjects golden-horde-1242 lithuania-grand-duchy
@@ -346,7 +343,6 @@ subjects hongsan-1376 goryeo
 subjects hongsan-1376 japan
 subjects hongxi-xuande-1424 ming
 subjects huguenot-wars-1562 papal-states
-subjects hullyeon-dogam-1593 joseon
 subjects hundred-days-reform-1895 qing
 subjects hundred-years-war-1337 holy-roman-empire
 subjects hungary-golden-bull-1205 bohemia-kingdom
@@ -373,7 +369,6 @@ subjects ilkhanate-fall-1329 eretnids
 subjects im-kkeokjeong-1559 joseon
 subjects imf-crisis-1997 rok
 subjects imjin-war-1592 imjin-occupied
-subjects imjin-war-1592 joseon
 subjects imo-hwabyeon-1762 joseon
 subjects imsul-uprising-1862 joseon
 subjects incheon-1950 rok
@@ -385,7 +380,6 @@ subjects independence-bases-1911 usa
 subjects independence-club-1896 joseon
 subjects independence-league-1941 occupied-korea
 subjects independence-league-1941 roc
-subjects injo-banjeong-1623 joseon
 subjects interregnum-1250 holy-roman-empire
 subjects interregnum-1250 papal-states
 subjects intifada-1987 arab-republic-of-egypt
@@ -429,11 +423,8 @@ subjects jeongeup-1946 usamgik
 subjects jeongjeon-722 silla
 subjects jeongmi-treaty-1547 joseon
 subjects jeongmi-uibyeong-1907 daehan-jeguk
-subjects jeongmyo-horan-1627 joseon
 subjects jeongseon-1751 joseon
 subjects jeongyu-war-1597 imjin-occupied
-subjects jeongyu-war-1597 joseon
-subjects jeongyu-war-1597 ming
 subjects jesuit-suppression-1773 papal-states
 subjects jesuit-suppression-1773 two-sicilies
 subjects jewang-ungi-1287 goryeo
@@ -450,7 +441,6 @@ subjects jindeok-reform-650 silla
 subjects jingae-281 manbeonhan-disputed
 subjects jingwan-1457 joseon
 subjects jingzhou-yiling-219 eastern-han
-subjects jinju-1592 joseon
 subjects jinpo-hwangsan-1380 goryeo
 subjects jinpo-hwangsan-1380 japan
 subjects jinpyeong-581 silla
@@ -723,7 +713,6 @@ subjects red-turbans-1359 goryeo
 subjects renaissance-1504 papal-states
 subjects restoration-1660 england
 subjects rhodes-otranto-1480 papal-states
-subjects righteous-army-1592 joseon
 subjects rok-founded-1948 usa
 subjects rok-founded-1948 usamgik
 subjects rudolf-habsburg-1273 holy-roman-empire
@@ -933,11 +922,9 @@ subjects yeongjeongbeop-1635 joseon
 subjects yeongjo-tangpyeong-1725 joseon
 subjects yeosun-1948 rok
 subjects yesong-1659 joseon
-subjects yi-gwal-1624 joseon
 subjects yi-injwa-1728 joseon
 subjects yi-jagyeom-1126 goryeo
 subjects yi-siae-1467 joseon
-subjects yi-sunsin-1592 joseon
 subjects yongle-rule-1402 ming
 subjects yuan-eurasian-exchange-1277 papal-states
 subjects yuanhe-805 tang
