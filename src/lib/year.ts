@@ -9,15 +9,23 @@ export function formatYear(year: number, suffix = '년'): string {
 /**
  * 선사 시대 단계 (DESIGN.md §4.4). 연도 막대 왼쪽 끝에 버튼으로 압축해 두고, 그 해로 가면 유적을 보여 준다.
  * 청동기 시대는 고조선(기원전 2333년~)과 겹치므로 연도 막대 안에서 다룬다.
+ *
+ * 2026-11-25(사본 시험): 구석기·신석기 대신 "빙하기"·"빙하기 후"로 가른다. 구석기·신석기는 생활 방식으로 정하는 이름이라
+ * 지역마다 시작이 다르지만(서아시아 기원전 1만 년 무렵, 한국 기원전 8000년 무렵), 마지막 빙하기가 끝난 때는 세계가 같기 때문이다.
+ * - year: 단추를 누르면 가는 해. 사건(data/events)의 year와 같은 10년 구간이어야 그 사건이 보이므로 옮기지 않는다
+ *   (빌드 검사 scripts/build-data/index.ts의 PREHISTORY_YEARS와도 짝).
+ * - from: 그 단계가 시작하는 해. 입력한 해가 어느 단계인지는 이 값으로 가른다.
+ *   빙하기 후의 from은 마지막 빙하기가 끝난 약 1만 2천 년 전(기원전 9700년 무렵). 운영자 검수 필요(공식 출처로 확인하지 않은 값)
+ * - hint: 단추에 마우스를 올리면 이름 옆에 보이는 시기 글
  */
 export const PREHISTORY = [
-  { year: -699999, name: '구석기 시대', short: '구석기' },
-  { year: -7999, name: '신석기 시대', short: '신석기' },
+  { year: -699999, from: -Infinity, name: '빙하기', short: '빙하기', hint: '약 1만 2천 년 전까지' },
+  { year: -7999, from: -9699, name: '빙하기 후', short: '빙하기 후', hint: '약 1만 2천 년 전부터' },
 ] as const;
 
-/** 역사 시대(연도 막대)보다 앞선 연도의 선사 단계. 단계 사이의 연도는 앞 단계로 본다 */
+/** 역사 시대(연도 막대)보다 앞선 연도의 선사 단계: from이 그 해보다 앞이거나 같은 마지막 단계 */
 export function prehistoryStage(year: number) {
-  return [...PREHISTORY].reverse().find((s) => s.year <= year) ?? PREHISTORY[0];
+  return [...PREHISTORY].reverse().find((s) => s.from <= year) ?? PREHISTORY[0];
 }
 
 /**

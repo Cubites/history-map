@@ -543,8 +543,10 @@ async function main() {
   const AMERICAS_UNITS: RegionFilterUnit[] = ['north-america', 'latin-america'];
   const regionOfId = new Map(entityList.map((e) => [e.id, e.region]));
   const unitsOfEntity = (id: string): RegionFilterUnit[] => ENTITY_UNITS[id] ?? [REGION_FILTER_OF[regionOfId.get(id) ?? '']];
-  const eventUnits = (e: { id: string; region: string; subjects: string[] }): RegionFilterUnit[] | undefined => {
+  const eventUnits = (e: { id: string; region: string; subjects: string[]; regionUnits?: RegionFilterUnit[] }): RegionFilterUnit[] | undefined => {
     const base = REGION_FILTER_OF[e.region];
+    // 선사 유물·유적처럼 사건에 권역 단위를 직접 적은 것(regionUnits, 2026-11-25 사본 시험)은 그 값을 쓴다
+    if (e.regionUnits) return e.regionUnits.length === 1 && e.regionUnits[0] === base ? undefined : e.regionUnits;
     if (!AMERICAS_UNITS.includes(base)) return undefined;
     const found = AMERICAS_UNITS.filter((u) => e.subjects.some((id) => unitsOfEntity(id)[0] === u));
     const units = found.length ? found : EVENT_UNITS[e.id];

@@ -3,12 +3,12 @@ import type { StaticData } from '../data/staticData.ts';
 import { PREHISTORY, clampYear, decadeOf, erasFor, formatYear, parseYearInput, prehistoryStage } from '../lib/year.ts';
 import { activeWarView } from '../lib/wars.ts';
 import { useAppStore } from '../store/useAppStore.ts';
-import { useMediaQuery } from '../lib/useMediaQuery.ts';
+import { useFlatBar } from './useFlatBar.ts';
 
 /** 연도 칸 글자(styles.css의 .map-yearbox input과 같게: 16px, 800) */
 const YEAR_FONT = { size: 16, weight: 800 };
 let yearMeasure: CanvasRenderingContext2D | null | undefined;
-/** 연도 칸 글 폭(px). 칸 폭을 글에 꼭 맞춰 달력 아이콘과 글 사이를 3px로 둔다(2026-11-15) */
+/** 연도 칸 글 폭(px). 칸 폭을 글에 꼭 맞춰 아이콘(편집 아이콘, 2026-11-25에 달력에서 바꿈)과 글 사이를 3px로 둔다(2026-11-15) */
 function yearTextWidth(text: string): number {
   yearMeasure ??= document.createElement('canvas').getContext('2d');
   if (!yearMeasure) return text.length * YEAR_FONT.size * 0.6;
@@ -91,19 +91,25 @@ function releaseScreen(ref: { current: ScreenHold | null }) {
   ref.current = null;
 }
 
+/** 휴대폰 가로 막대의 선사 구간(2026-11-25): 막대 왼쪽 끝에서 빙하기·빙하기 후 눈금 자리(px)와, 연도가 시작하는 자리(px).
+ * 이름이 "빙하기 후"로 길어져 두 이름이 겹치지 않게 간격을 넓혔다(16·54·92 → 18·68·110) */
+const PRE_SLOTS = [18, 68];
+const PRE_LEN = 110;
+
 function yearMarks(min: number, max: number) {
-  const marks: { year: number; major: boolean; label?: string; m500: boolean }[] = [];
-  for (let n = 2300; n >= 100; n -= 100) marks.push({ year: 1 - n, major: n % 500 === 0, label: n % 500 === 0 ? `BC ${n}` : undefined, m500: n % 500 === 0 });
-  marks.push({ year: 1, major: true, label: 'AD 1', m500: true });
-  for (let n = 100; n <= 2000; n += 100) marks.push({ year: n, major: n % 500 === 0, label: n % 500 === 0 ? String(n) : undefined, m500: n % 500 === 0 });
+  // m1000: 휴대폰 가로 막대(2026-11-25)에서 끄는 동안 숫자를 보이는 눈금(1000년마다 + AD 1)
+  const marks: { year: number; major: boolean; label?: string; m500: boolean; m1000: boolean }[] = [];
+  for (let n = 2300; n >= 100; n -= 100) marks.push({ year: 1 - n, major: n % 500 === 0, label: n % 500 === 0 ? `BC ${n}` : undefined, m500: n % 500 === 0, m1000: n % 1000 === 0 });
+  marks.push({ year: 1, major: true, label: 'AD 1', m500: true, m1000: true });
+  for (let n = 100; n <= 2000; n += 100) marks.push({ year: n, major: n % 500 === 0, label: n % 500 === 0 ? String(n) : undefined, m500: n % 500 === 0, m1000: n % 1000 === 0 });
   return marks.filter((m) => m.year >= min && m.year <= max);
 }
 
 /**
  * 지도 위 연도 조절 (2026-10-28부터, DESIGN.md D7). 전쟁 보기에서는 전쟁 정보 패널(WarPanel)의 날짜 목록을 쓰므로 그리지 않는다.
- * - 휴대폰은 지도 오른쪽: 세로 연도 막대(위가 최근). 눈금은 막대 위에 그리고, 눈금 숫자(BC 2000 등)는 막대를 끄는 동안만 보인다.
- *   막대 아래에 신석기·구석기 단추(신석기가 위).
- * - PC는 지도 아래 따로 둔 띠: 가로 연도 막대(오른쪽이 최근), 눈금 숫자는 늘 막대 아래, 막대 왼쪽에 구석기·신석기 단추(2026-10-28).
+ * - PC는 지도 아래 따로 둔 띠: 가로 연도 막대(오른쪽이 최근), 눈금 숫자는 늘 막대 아래, 막대 왼쪽에 빙하기·빙하기 후 단추(2026-10-28).
+ * - 휴대폰은 지도 영역 맨 아래에 띄운 가로 막대(2026-11-25, 사본 시험): 단추 없이 막대 왼쪽 끝에 빙하기·빙하기 후 눈금 두 칸. 연도에서 왼쪽으로 끌면 그대로 선사 눈금으로 넘어간다.
+ *   눈금 숫자(BC 2000 등)는 막대를 끄는 동안만 보인다. 처음에는 지도 오른쪽 세로 막대였으나 같은 날 없앴다.
  * - 지도 아래 가운데: ◀ 이전 변화 · 연도 입력 칸 · 다음 변화 ▶ (2026-10-28 −10·+10 단추와 감싼 상자를 없앰).
  *   입력 칸은 평소 "1700년"(기원전은 "기원전 57년", 선사 시대는 "신석기"·"구석기"만)으로 보이고, 누르면 숫자만 입력(음수는 기원전), Enter로 옮긴다.
  */
@@ -124,57 +130,65 @@ export function MapYearControls({ data }: { data: StaticData }) {
   // 선사 단계에서 +10년은 다음 단계(또는 역사 시대의 시작)로
   const forward = () => (prehistoric ? go(stops.find((y) => y > year) ?? range[0]) : go(year + 10));
   const marks = useMemo(() => yearMarks(min, max), [min, max]);
-  // PC는 가로 막대(지도 아래 띠), 휴대폰은 세로 막대(지도 오른쪽)
-  const across = useMediaQuery('(min-width: 769px)');
-  // 막대 위 자리: 세로는 위가 최근(max), 가로는 오른쪽이 최근
-  const at = (y: number) => {
-    const p = ((y - min) / (max - min)) * 100;
-    return across ? { left: `${p}%` } : { top: `${100 - p}%` };
-  };
-  // 채운 부분은 막대의 오래된 끝(세로는 아래, 가로는 왼쪽)부터 손잡이까지
-  const fillTo = (y: number) => {
-    const p = ((y - min) / (max - min)) * 100;
-    return across ? { right: `${100 - p}%` } : { top: `${100 - p}%` };
-  };
+  // 연도 막대는 PC·휴대폰 모두 지도 위에 띄운 가로 막대(.flat, 오른쪽이 최근)다.
+  // 2026-11-25(사본 시험): 휴대폰의 세로 막대(지도 오른쪽)와 디자인 고르기 단추를 없애고 가로 막대로 굳혔다.
+  // 2026-11-26(사본 시험): PC도 지도 아래 띠와 선사 단추를 없애고 휴대폰과 같은 막대로 맞췄다
+  const mobile = useFlatBar();
+  // 막대 위 자리: 오른쪽이 최근(max)
+  // 선사 단추 대신 막대 왼쪽 끝 pre(px)를 선사 구간으로 쓴다(2026-11-25): 눈금 두 칸(PRE_SLOTS), 그 오른쪽부터 연도
+  const pre = PRE_LEN;
+  const at = (y: number) => ({ left: `calc(${pre}px + (100% - ${pre}px) * ${(y - min) / (max - min)})` });
+  // 채운 부분은 막대의 오래된 끝(왼쪽)부터 손잡이까지
+  const fillTo = (y: number) => ({ right: `calc((100% - ${pre}px) * ${1 - (y - min) / (max - min)})` });
 
-  // ── 세로 막대 끌기 ──
+  // ── 막대 끌기 ──
   const trackRef = useRef<HTMLDivElement>(null);
   const [dragging, setDragging] = useState(false);
 
   // ── 시대 표시(2026-11-23): PC는 막대 위, 휴대폰은 막대 왼쪽에 고대·중세·근세·근대·현대. 시대 경계에 가는 선 ──
   // 막대는 연도에 비례하므로 근대·현대처럼 짧은 시대는 이름이 겹친다. 이름 자리는 그 시대 구간의 가운데로 하되,
-  // 최근 쪽부터 차례로 놓으며 앞 이름과 최소 간격(가로 30px, 세로 14px)을 지키게 오래된 쪽으로 민다
+  // 최근 쪽부터 차례로 놓으며 앞 이름과 최소 간격(30px)을 지키게 오래된 쪽으로 민다
   const regionFilter = useAppStore((s) => s.regionFilter);
   const [trackLen, setTrackLen] = useState(0);
   useLayoutEffect(() => {
     const el = trackRef.current;
     if (!el) return;
-    const measure = () => setTrackLen(across ? el.clientWidth : el.clientHeight);
+    const measure = () => setTrackLen(el.clientWidth);
     measure();
     const observer = new ResizeObserver(measure);
     observer.observe(el);
     return () => observer.disconnect();
-  }, [across, inWar]);
+  }, [inWar]);
   const eras = useMemo(() => {
     const list = erasFor(regionFilter);
     const spans = list
       .map((e, i) => ({ name: e.name, from: Math.max(min, e.from), to: Math.min(max, list[i + 1]?.from ?? max), start: e.from }))
       .filter((e) => e.to > e.from);
-    const gap = across ? 30 : 14;
+    const gap = 30;
+    // 2026-11-25(사본 시험): 평소에는 지금 연도의 시대 이름 하나만 보인다. 혼자 보이므로 밀 필요 없이 그 시대 구간의 가운데(solo)에 두되,
+    // 이름이 막대 끝을 넘지 않게 당긴다(half: 이름 크기의 절반 — 바탕 여백까지 휴대폰 26px·PC 28px 폭. 막대는 둥근 끝이 5px 더 나와 있다).
+    // 막대를 끄는 동안에는 모든 시대 이름이 예전처럼 밀어 놓은 자리(pos)에 나온다
+    const half = mobile ? 13 : 14;
+    const [lo, hi] = [half - 5, trackLen + 5 - half];
     let before = Infinity;
     const placed = [...spans].reverse().map((e) => {
-      const center = (((e.from + e.to) / 2 - min) / (max - min)) * trackLen;
+      const center = pre + (((e.from + e.to) / 2 - min) / (max - min)) * (trackLen - pre);
       const pos = Math.min(center, before - gap);
       before = pos;
-      return { ...e, pos };
+      return { ...e, pos, solo: Math.min(hi, Math.max(lo, center)) };
     });
     return placed.reverse();
-  }, [regionFilter, min, max, across, trackLen]);
-  const yearAt = (e: ReactPointerEvent) => {
+  }, [regionFilter, min, max, mobile, trackLen, pre]);
+  // 휴대폰 가로 막대: 선사 구간에서는 가까운 눈금(구석기·신석기)으로, 그 오른쪽은 연도로. 걸림 없이 한 번에 끌어 넘어간다(2026-11-25에 걸림을 넣었다가 뺌)
+  const preEdge = (PRE_SLOTS[1] + PRE_LEN) / 2;
+  const flatYearAt = (e: ReactPointerEvent) => {
     const r = trackRef.current!.getBoundingClientRect();
-    const t = Math.min(1, Math.max(0, across ? (e.clientX - r.left) / r.width : (r.bottom - e.clientY) / r.height));
-    return min + Math.round((t * (max - min)) / 10) * 10;
+    const x = e.clientX - r.left;
+    if (x < preEdge) return PREHISTORY[x < (PRE_SLOTS[0] + PRE_SLOTS[1]) / 2 ? 0 : 1].year;
+    const t = Math.min(1, Math.max(0, (x - pre) / (r.width - pre)));
+    return clampYear(min + Math.round((t * (max - min)) / 10) * 10, range);
   };
+  const moveTo = (e: ReactPointerEvent) => setYear(flatYearAt(e));
   const onTrackDown = (e: ReactPointerEvent<HTMLDivElement>) => {
     if (e.button !== 0) return;
     // 끄는 동안 글자가 선택되며 파란 네모가 비치지 않게 기본 동작을 막는다(2026-10-28)
@@ -185,10 +199,10 @@ export function MapYearControls({ data }: { data: StaticData }) {
       // 붙잡지 못해도 막대 위에서는 그대로 끌린다
     }
     setDragging(true);
-    go(yearAt(e));
+    moveTo(e);
   };
   const onTrackMove = (e: ReactPointerEvent<HTMLDivElement>) => {
-    if (dragging) go(yearAt(e));
+    if (dragging) moveTo(e);
   };
   const onTrackUp = () => setDragging(false);
 
@@ -203,7 +217,7 @@ export function MapYearControls({ data }: { data: StaticData }) {
     inputRef.current?.select();
   }, [draft]);
   // 연도 입력(Enter로만 옮김): 0은 서기 1년, 음수는 기원전(-57 → 기원전 57년), 올해 뒤는 막대 끝 해(range[1]).
-  // 막대 왼쪽 끝(기원전 2333년)보다 앞이면 go가 선사 단계로 옮긴다: 기원전 8000년까지는 신석기, 그보다 앞은 구석기
+  // 막대 왼쪽 끝(기원전 2333년)보다 앞이면 go가 선사 단계로 옮긴다: 기원전 9700년 무렵까지는 빙하기 후, 그보다 앞은 빙하기(year.ts의 PREHISTORY.from)
   const submit = (text: string) => {
     const parsed = parseYearInput(text);
     if (parsed === null) {
@@ -246,28 +260,16 @@ export function MapYearControls({ data }: { data: StaticData }) {
 
   if (inWar) return null;
 
-  // 선사 단계 단추: 세로 막대에서는 막대 아래(신석기가 구석기 위), 가로 막대에서는 막대 왼쪽(구석기, 신석기 차례)
-  const prehistory = (
-    <div className="map-yearbar-prehistory" role="group" aria-label="선사 시대">
-      {(across ? PREHISTORY : [...PREHISTORY].reverse()).map((s) => (
-        <button key={s.year} type="button" aria-pressed={stage?.year === s.year} onClick={() => setYear(s.year)} title={`${s.name} (${formatYear(s.year)})`}>
-          {s.short}
-        </button>
-      ))}
-    </div>
-  );
-
   return (
     <>
-      <div className={['map-yearbar map-ui', across && 'across', dragging && 'dragging'].filter(Boolean).join(' ')} onClick={(e) => e.stopPropagation()} onPointerDown={(e) => e.stopPropagation()}>
-        {across && prehistory}
+      <div className={['map-yearbar map-ui across flat', dragging && 'dragging'].filter(Boolean).join(' ')} onClick={(e) => e.stopPropagation()} onPointerDown={(e) => e.stopPropagation()}>
         <div
           ref={trackRef}
           className="map-yearbar-track"
           role="slider"
           tabIndex={0}
           aria-label="연도"
-          aria-orientation={across ? 'horizontal' : 'vertical'}
+          aria-orientation="horizontal"
           aria-valuemin={min}
           aria-valuemax={max}
           aria-valuenow={Math.max(min, decadeOf(year))}
@@ -287,25 +289,40 @@ export function MapYearControls({ data }: { data: StaticData }) {
           <i className="map-yearbar-rail" />
           {!prehistoric && <i className="map-yearbar-fill" style={fillTo(Math.max(min, decadeOf(year)))} />}
           {marks.map((m) => (
-            <span key={m.year} className={['map-yearbar-mark', m.major && 'major', m.m500 && 'm500', m.year === 1 && 'ad1'].filter(Boolean).join(' ')} style={at(m.year)}>
+            <span key={m.year} className={['map-yearbar-mark', m.major && 'major', m.m500 && 'm500', m.m1000 && 'm1000', m.year === 1 && 'ad1'].filter(Boolean).join(' ')} style={at(m.year)}>
               {m.label && <span className="map-yearbar-label">{m.label}</span>}
             </span>
           ))}
           {!prehistoric && <span className="map-yearbar-thumb" style={at(Math.max(min, decadeOf(year)))} />}
-          {trackLen > 0 &&
-            eras.map((e, i) => (
-              <span key={e.name} aria-hidden>
-                {i > 0 && <i className="map-yearbar-eraline" style={at(e.from)} />}
-                <span
-                  className={`map-yearbar-era${!prehistoric && year >= e.start && year < (eras[i + 1]?.start ?? Infinity) ? ' on' : ''}`}
-                  style={across ? { left: `${e.pos}px` } : { top: `${trackLen - e.pos}px` }}
-                >
-                  {e.name}
+          {/* 휴대폰 가로 막대의 선사 구간: 눈금 두 칸과 막대 위 이름(시대 이름과 같은 글자), 연도가 시작하는 자리에 경계선. 선사 단계에서는 손잡이가 그 눈금에 놓인다 */}
+          <>
+              {PREHISTORY.map((s, i) => (
+                <span key={s.year} aria-hidden>
+                  <span className="map-yearbar-mark m500" style={{ left: `${PRE_SLOTS[i]}px` }} />
+                  <span className={`map-yearbar-era pre${stage?.year === s.year ? ' on' : ''}`} style={{ left: `${PRE_SLOTS[i]}px` }}>
+                    {s.short}
+                  </span>
                 </span>
-              </span>
-            ))}
+              ))}
+              <i className="map-yearbar-eraline" style={{ left: `${pre}px` }} aria-hidden />
+              {stage && <i className="map-yearbar-fill" style={{ right: `calc(100% - ${PRE_SLOTS[PREHISTORY.findIndex((s) => s.year === stage.year)]}px)` }} />}
+              {stage && <span className="map-yearbar-thumb" style={{ left: `${PRE_SLOTS[PREHISTORY.findIndex((s) => s.year === stage.year)]}px` }} />}
+          </>
+          {trackLen > 0 &&
+            eras.map((e, i) => {
+              // 지금 연도의 시대만 보인다(.on). 끄는 동안(.dragging)에는 나머지도 연하게 보이고 지금 시대는 바탕을 불투명하게 해 도드라지게 한다(styles.css)
+              const on = !prehistoric && year >= e.start && year < (eras[i + 1]?.start ?? Infinity);
+              const p = on && !dragging ? e.solo : e.pos;
+              return (
+                <span key={e.name} aria-hidden>
+                  {i > 0 && <i className="map-yearbar-eraline" style={at(e.from)} />}
+                  <span className={`map-yearbar-era${on ? ' on' : ''}`} style={{ left: `${p}px` }}>
+                    {e.name}
+                  </span>
+                </span>
+              );
+            })}
         </div>
-        {!across && prehistory}
       </div>
 
       <div ref={boxRef} className="map-yearbox map-ui" onClick={(e) => e.stopPropagation()} onPointerDown={(e) => e.stopPropagation()}>
@@ -320,13 +337,14 @@ export function MapYearControls({ data }: { data: StaticData }) {
             if (submit(shown)) (document.activeElement as HTMLElement | null)?.blur();
           }}
         >
-          {/* 칸 테두리는 label(.map-yearbox-field)이 맡고, 그 안에 달력 아이콘과 글을 3px 띄워 나란히 둔다(2026-11-15).
-              아이콘은 글자 높이(16px)와 같은 크기이고, 누르면 label이라 글 칸으로 들어간다 */}
+          {/* 칸 테두리는 label(.map-yearbox-field)이 맡고, 그 안에 아이콘과 글을 3px 띄워 나란히 둔다(2026-11-15).
+              아이콘은 글자 높이(16px)와 같은 크기이고, 누르면 label이라 글 칸으로 들어간다.
+              2026-11-25(사본 시험): 달력 아이콘을 편집(연필) 아이콘으로 바꿨다 — 이 칸은 날짜를 고르는 창이 아니라 연도를 직접 써 넣는 칸이다 */}
           <label className="map-yearbox-field">
           <svg className="map-yearbox-icon" viewBox="0 0 16 16" aria-hidden>
-            <rect x="1.75" y="3" width="12.5" height="11.25" rx="1.75" fill="none" stroke="currentColor" strokeWidth="1.5" />
-            <path d="M1.75 6.75h12.5M5 1.5v3M11 1.5v3" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-            <path d="M4.5 9.25h1.5M7.25 9.25h1.5M10 9.25h1.5M4.5 11.75h1.5M7.25 11.75h1.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
+            {/* 네모 종이(오른쪽 위 모서리가 열림)와 그 위에 걸친 펜 */}
+            <path d="M7.5 2.5H4A1.5 1.5 0 0 0 2.5 4v8A1.5 1.5 0 0 0 4 13.5h8a1.5 1.5 0 0 0 1.5-1.5V8.5" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M6.4 9.6 6.9 7.4 12.2 2.1a1.15 1.15 0 0 1 1.7 1.7L8.6 9.1 6.4 9.6Z" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round" />
           </svg>
           <input
             ref={inputRef}

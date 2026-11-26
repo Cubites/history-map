@@ -3,6 +3,7 @@
 // 상대 경로 import에는 .ts 확장자를 붙이고, enum 같은 런타임 문법은 쓰지 않는다.
 import { z } from 'zod';
 import { CALENDARS, type Calendar } from './calendar.ts';
+import { REGION_FILTERS } from './regions.ts';
 
 /** 천문 연도: 기원전 1년 = 0, 기원전 57년 = -56 */
 export const Year = z.number().int();
@@ -118,6 +119,20 @@ export const EventSchema = z.object({
       }),
     )
     .default([]),
+  /**
+   * 선사 시대 유물·유적(tags에 relic, 2026-11-25 사본 시험 — data/events/00-prehistory-sites.yaml)에 쓰는 표기 칸.
+   * 이 사건들의 year는 실제 연대가 아니라 선사 단계의 해(src/lib/year.ts의 PREHISTORY)라, 화면에는 아래 글을 대신 보인다.
+   * - dateLabel: 화면에 보이는 연대 글(출처 기관의 표기, 예: "기원전 7400~6200년"). 없으면 연대를 보이지 않는다
+   * - sortYear: 목록 순서를 정하는 해(천문 연도, 어림). 없으면 맨 뒤에 이름순
+   * - period: 한국 유물·유적만. 연대 앞에 보이는 시기(예: "구석기", "신석기·청동기")
+   * - regionUnits: 그 유물·유적이 있는 권역 단위(여러 권역에 걸친 나라의 것은 둘 이상). 없으면 사건 파일의 기본 권역.
+   *   빌드가 이 값을 events.json의 `units`로 넣어, 유물·유적 목록이 고른 권역의 것만 보이게 한다(EventPanel.tsx)
+   * tags의 era는 그 단계의 '시대 특징' 글(목록에는 넣지 않음)
+   */
+  dateLabel: z.string().min(1).optional(),
+  sortYear: Year.optional(),
+  period: z.string().min(1).optional(),
+  regionUnits: z.array(z.enum(REGION_FILTERS)).min(1).optional(),
 });
 export type HistoryEvent = z.infer<typeof EventSchema>;
 

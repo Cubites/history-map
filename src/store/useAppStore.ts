@@ -4,25 +4,7 @@ import { parseRegionFilter, type RegionFilter } from '../schema/regions.ts';
 /** 첫 화면 연도: 삼국 항쟁이 한창인 640년대 */
 const DEFAULT_YEAR = 640;
 
-/**
- * 지도 나라 칠하기 방식 (2026-11-15, 지도 왼쪽 위 '주요 전쟁' 아래 단추, DESIGN.md §6.3).
- * strong 진하게: 나라마다 고유색 그대로 / light 연하게: 고유색을 옅게, 고른 나라만 원래 색 / bloc 속국만: 그해 속국·점령지가 있는 나라와 그 땅만 색, 나머지는 같은 바탕색
- */
-export type FillMode = 'strong' | 'light' | 'bloc';
-const FILL_MODE_KEY = 'history-map:fill-mode';
-function readFillMode(): FillMode {
-  try {
-    const v = localStorage.getItem(FILL_MODE_KEY);
-    return v === 'strong' || v === 'bloc' ? v : 'light';
-  } catch {
-    return 'light';
-  }
-}
-
 interface AppState {
-  /** 지도 나라 칠하기 방식. 이 기기에 기억한다(localStorage) */
-  fillMode: FillMode;
-  setFillMode: (mode: FillMode) => void;
   year: number;
   /**
    * 사건 목록을 고르는 기준 연도. null이면 year를 따른다(2026-10-13).
@@ -141,15 +123,6 @@ const initial = readUrl();
 
 export const useAppStore = create<AppState>((set) => ({
   ...initial,
-  fillMode: readFillMode(),
-  setFillMode: (fillMode) => {
-    try {
-      localStorage.setItem(FILL_MODE_KEY, fillMode);
-    } catch {
-      // 기억하지 못해도 이번 화면에서는 그대로 바뀐다
-    }
-    set({ fillMode });
-  },
   hoveredEventId: null,
   listHoverId: null,
   ...readUrlEvent(),

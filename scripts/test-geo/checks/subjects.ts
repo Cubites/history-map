@@ -178,6 +178,8 @@ export function findMisses(root: string, names: Map<string, string>, keep: (file
       const year = Number(e.year);
       const end = e.endYear === undefined || e.endYear === null ? year : Number(e.endYear);
       if (!keep(f, year, end)) continue;
+      // 선사 유물·유적(tags의 relic, 2026-11-25 사본 시험)은 주체가 '선사 시대' 항목 하나뿐인 목록 자료라 글에 그 이름을 쓰지 않는다 → 보지 않는다
+      if (((e.tags as unknown[] | undefined) ?? []).map(String).includes('relic')) continue;
       const title = ko(e.title);
       const text = `${title}\n${ko(e.summary)}`;
       const outside = blankQuoted(text);

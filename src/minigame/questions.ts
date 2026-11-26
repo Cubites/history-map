@@ -151,7 +151,8 @@ export function eventHint(data: StaticData, q: Question, hide: 'name' | 'year' =
 
 /** 같은 권역에서 그 무렵에 있던, 이 나라와 관계없는 사건 (연도는 가린다) */
 export function regionEventHint(data: StaticData, q: Question): string | null {
-  const list = data.events.filter((e) => inRegionFilter(unitOf(q.entity) ?? 'all', e.region, e.units) && !e.subjects.includes(q.entity.id));
+  // 선사 유물·유적(tags의 relic)은 해가 단계의 해라 '그 무렵 사건'으로 쓰지 않는다(2026-11-25 사본 시험)
+  const list = data.events.filter((e) => inRegionFilter(unitOf(q.entity) ?? 'all', e.region, e.units) && !e.subjects.includes(q.entity.id) && !e.tags.includes('relic'));
   if (!list.length) return null;
   const ev = list.reduce((a, b) => (Math.abs(b.year - q.year) < Math.abs(a.year - q.year) ? b : a));
   return maskYears(`${ev.title.ko}: ${ev.summary.ko.split('. ')[0].replace(/\.$/, '')}.`);

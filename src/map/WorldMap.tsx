@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import { type CSSProperties, useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { flushSync } from 'react-dom';
 import { geoContains, geoDistance } from 'd3-geo';
 import { select } from 'd3-selection';
@@ -48,10 +48,10 @@ import {
   type Palette,
   type Shape,
 } from './canvasLayer.ts';
-import { FillModeSwitch } from './FillModeSwitch.tsx';
 import { LabelLayer } from './LabelLayer.tsx';
 import { layoutLabels } from './labelLayout.ts';
 import { useElementSize } from './useElementSize.ts';
+import { useFlatBar } from '../timeline/useFlatBar.ts';
 import {
   baseScale,
   constrain,
@@ -152,35 +152,14 @@ function readPalette(el: Element): Palette {
     land: v('--land-unassigned'),
     landStroke: v('--land-stroke'),
     territoryStroke: v('--territory-stroke'),
-    territoryBorder: v('--territory-border'),
-    neutral: v('--territory-neutral'),
-    mute: v('--territory-mute'),
     outline: v('--outline'),
     highlight: v('--fg'),
     frontLine: v('--front-line'),
   };
 }
 
-/**
- * 나라 색을 옅게 하는 정도 (2026-11-12, DESIGN.md §6.3). 0이면 원래 색, 1이면 바탕색(--territory-mute).
- * 나라를 고르지 않았을 때는 모든 나라를 DEFAULT만큼, 고르면 고른 나라는 원래 색·나머지는 OTHERS만큼 옅게 칠한다
- */
-const MUTE = { DEFAULT: 0.62, OTHERS: 0.82, /** 속국만: 지배국 */ RULER: 0.2, /** 속국만: 지배를 받는 땅(지배국 색) */ SUBJECT: 0.55 };
-const muteCache = new Map<string, string>();
-/** #rrggbb 색을 바탕색 쪽으로 amount만큼 섞는다. 다른 꼴의 색은 그대로 둔다 */
-function muteColor(color: string, base: string, amount: number): string {
-  if (amount <= 0) return color;
-  const key = `${color}|${base}|${amount}`;
-  let out = muteCache.get(key);
-  if (out === undefined) {
-    const rgb = (hex: string) => (/^#[0-9a-f]{6}$/i.test(hex) ? [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16)) : null);
-    const a = rgb(color);
-    const b = rgb(base);
-    out = a && b ? '#' + a.map((x, i) => Math.round(x + (b[i] - x) * amount).toString(16).padStart(2, '0')).join('') : color;
-    muteCache.set(key, out);
-  }
-  return out;
-}
+/** 권역 단추가 접힐 때 사라지는 움직임의 길이(ms). styles.css의 region-out 길이와 같아야 한다 */
+const REGIONS_CLOSE_MS = 150;
 
 export default function WorldMap({ data }: { data: StaticData }) {
   const [containerRef, size] = useElementSize<HTMLDivElement>();
@@ -206,29 +185,45 @@ export default function WorldMap({ data }: { data: StaticData }) {
   const focusEvent = useAppStore((s) => s.focusEvent);
   const setYear = useAppStore((s) => s.setYear);
   const regionFilter = useAppStore((s) => s.regionFilter);
-  const fillMode = useAppStore((s) => s.fillMode);
+  // 휴대폰 가로 연도바 디자인(2026-11-25): 아래 줄(권역 · 연도 입력 · 축척)이 겹치지 않게 축척 막대를 짧게 잡는다
+  const flatBar = useFlatBar();
   const regionFocus = useAppStore((s) => s.regionFocus);
   const chooseRegion = useRegionChoice();
   // 권역 단추(2026-10-28 휴대폰, 2026-11-21 PC도 같게): 평소에는 지금 권역 단추만 보이고, 누르면 다른 권역이 그 위에 펼쳐진다.
   // 펼친 뒤 어느 단추든 누르면 그 권역을 고르고 다시 접힌다. 밖을 눌러도 접힌다
+  // 펼칠 때는 아래에서 위로 차례로 나타나고, 접을 때는 사라지는 움직임이 끝난 뒤에 접는다(2026-11-26, regionsClosing · styles.css .map-regions)
   const [regionsOpen, setRegionsOpen] = useState(false);
+  const [regionsClosing, setRegionsClosing] = useState(false);
   const regionsRef = useRef<HTMLDivElement>(null);
+  const regionsTimer = useRef(0);
+  const closeRegions = useCallback(() => {
+    window.clearTimeout(regionsTimer.current);
+    setRegionsClosing(true);
+    regionsTimer.current = window.setTimeout(() => {
+      setRegionsOpen(false);
+      setRegionsClosing(false);
+    }, REGIONS_CLOSE_MS);
+  }, []);
+  useEffect(() => () => window.clearTimeout(regionsTimer.current), []);
   const pickRegion = (choose: () => void) => {
-    if (!regionsOpen) {
+    // 접혀 있거나 접히는 중이면 (다시) 펼친다
+    if (!regionsOpen || regionsClosing) {
+      window.clearTimeout(regionsTimer.current);
+      setRegionsClosing(false);
       setRegionsOpen(true);
       return;
     }
-    setRegionsOpen(false);
+    closeRegions();
     choose();
   };
   useEffect(() => {
-    if (!regionsOpen) return;
+    if (!regionsOpen || regionsClosing) return;
     const close = (e: PointerEvent) => {
-      if (!regionsRef.current?.contains(e.target as Node)) setRegionsOpen(false);
+      if (!regionsRef.current?.contains(e.target as Node)) closeRegions();
     };
     document.addEventListener('pointerdown', close);
     return () => document.removeEventListener('pointerdown', close);
-  }, [regionsOpen]);
+  }, [regionsOpen, regionsClosing, closeRegions]);
 
   // 시점은 매 프레임 바뀌므로 ref에 두고, 화면 좌표 레이어(SVG)를 위해 프레임당 한 번 state로 복사한다.
   const viewRef = useRef<View>({ lon: DEFAULT_LON, k: 1, ty: 0, dx: 0 });
@@ -503,22 +498,6 @@ export default function WorldMap({ data }: { data: StaticData }) {
         borders: [],
       };
     }
-    // '속국만'(2026-11-15): 그해 다른 나라를 점령·종속시킨 나라(맨 위 지배국까지 거슬러 감)와 그 땅만 색을 칠한다
-    const topRuler = (id: string) => {
-      let cur = id;
-      for (let i = 0; i < 4; i++) {
-        const r = occupierAt(data.relations, cur, year) ?? overlordAt(data.relations, cur, year);
-        if (!r || r.object === cur) break;
-        cur = r.object;
-      }
-      return cur;
-    };
-    const rulers = new Set<string>();
-    if (fillMode === 'bloc')
-      for (const e of active) {
-        const r = topRuler(e.entityId);
-        if (r !== e.entityId) rulers.add(r);
-      }
     for (const entry of active) {
       if (!isVisible(entry.bbox, bounds, v)) continue;
       const feature = featureFor(entry, lod);
@@ -541,19 +520,9 @@ export default function WorldMap({ data }: { data: StaticData }) {
       const claimants = claimantsAt(data.relations, entry.entityId, year);
       // 후보 나라를 고르면 선택 테두리에 논쟁 지역도 포함한다
       const isSelected = entry.entityId === selected || (!!selected && claimants.includes(selected));
-      // 칠하기 방식(2026-11-15, fillMode): 진하게는 고유색 그대로, 연하게는 고유색을 옅게(2026-11-12), 속국만은 지배국과 그 땅만 색.
-      // 연하게·속국만에서도 고른 나라(논쟁 지역은 후보로 고른 경우 포함)는 원래 색. 빗금·종속 테두리의 지배국 색은 늘 그대로 둔다
-      const amount = isSelected || fillMode === 'strong' ? 0 : selected ? MUTE.OTHERS : MUTE.DEFAULT;
-      const base = paletteRef.current?.mute ?? '#f6f3ec';
-      const own = data.entities.get(entry.entityId)?.color ?? '#999999';
-      let color = muteColor(own, base, amount);
-      if (fillMode === 'bloc' && !isSelected) {
-        const ruler = topRuler(entry.entityId);
-        if (rulers.has(entry.entityId)) color = muteColor(own, base, MUTE.RULER);
-        else if (ruler !== entry.entityId) color = muteColor(data.entities.get(ruler)?.color ?? '#999999', base, MUTE.SUBJECT);
-        else color = paletteRef.current?.neutral ?? '#ebe7de';
-      }
-      const claimantColors = claimants.map((id) => muteColor(data.entities.get(id)?.color ?? '#999999', base, amount));
+      // 나라마다 고유색 그대로 칠한다(2026-11-26: 진하게·연하게·속국만 고르기를 없애고 진하게로 고정)
+      const color = data.entities.get(entry.entityId)?.color ?? '#999999';
+      const claimantColors = claimants.map((id) => data.entities.get(id)?.color ?? '#999999');
       const stripes = claimants.length ? (claimantColors.length > 1 ? claimantColors : [claimantColors[0], paletteRef.current?.land ?? '#d9d5cd']) : undefined;
       const isHovered = entry.entityId === hoveredId || (!!hoveredId && claimants.includes(hoveredId));
       const highlight = isSelected ? SELECTED_WIDTH : isHovered ? HOVER_WIDTH : undefined;
@@ -579,12 +548,10 @@ export default function WorldMap({ data }: { data: StaticData }) {
     const tiledLand = useTiles ? landTiledFor(lod, moving) : undefined;
     const plainLand = landFor(lod).filter((p) => isVisible(p.bbox, bounds, v));
     const land = tiledLand ? { fill: visiblePieces(tiledLand.tiles), stroke: visiblePieces(tiledLand.lines) } : { fill: plainLand, stroke: plainLand };
-    // 진하게는 전처럼 진한 색 사이를 밝은 선으로 가른다(연하게·속국만은 옅은 칠 사이를 진한 선으로)
-    const palette = fillMode === 'strong' ? { ...paletteRef.current, territoryBorder: paletteRef.current.territoryStroke } : paletteRef.current;
-    drawMap(ctx, projection, createProjection(size, s0, v, true), v, size, land, territories, palette, front);
+    drawMap(ctx, projection, createProjection(size, s0, v, true), v, size, land, territories, paletteRef.current, front);
     // 이름표·화살표(SVG)도 방금 그린 지도와 같은 프레임에 맞춘다. 늦게 그리면 움직이는 동안 지도에서 밀려 보인다
     flushSync(() => setView(v));
-  }, [size, s0, year, active, frontShapes, data.entities, data.relations, ensureLoaded, ensureTiled, featureFor, landFor, tiledFor, landTiledFor, isWarCountry, fillMode]);
+  }, [size, s0, year, active, frontShapes, data.entities, data.relations, ensureLoaded, ensureTiled, featureFor, landFor, tiledFor, landTiledFor, isWarCountry]);
 
   const requestDraw = useCallback(() => {
     cancelAnimationFrame(frame.current);
@@ -1025,7 +992,7 @@ export default function WorldMap({ data }: { data: StaticData }) {
   const projection = useMemo(() => (size ? createProjection(size, s0, view) : null), [size, s0, view]);
   const hoveredEntity = hovered ? data.entities.get(hovered.id) : undefined;
   const selectedEntity = selectedId ? data.entities.get(selectedId) : undefined;
-  // 거리 축척(2026-10-27): 화면 가운데 가로 100px의 실제 거리로 1·2·5×10ⁿ km 가운데 막대가 최대 80px 안에 드는 가장 긴 값을 고른다
+  // 거리 축척(2026-10-27): 화면 가운데 가로 100px의 실제 거리로 1·2·5×10ⁿ km 가운데 막대가 최대 80px(휴대폰 가로 연도바 디자인은 56px) 안에 드는 가장 긴 값을 고른다
   const distanceScale = useMemo(() => {
     if (!size || !projection) return null;
     const [cx, cy] = [size.width / 2, size.height / 2];
@@ -1034,11 +1001,11 @@ export default function WorldMap({ data }: { data: StaticData }) {
     if (!a || !b) return null;
     const kmPerPx = (geoDistance(a, b) * 6371) / 100;
     if (!(kmPerPx > 0)) return null;
-    const max = kmPerPx * 80;
+    const max = kmPerPx * (flatBar ? 56 : 80);
     const unit = 10 ** Math.floor(Math.log10(max));
     const km = [5, 2, 1].map((m) => m * unit).find((v) => v <= max) ?? unit;
     return { km, width: km / kmPerPx };
-  }, [size, projection]);
+  }, [size, projection, flatBar]);
 
   return (
     <div
@@ -1093,22 +1060,15 @@ export default function WorldMap({ data }: { data: StaticData }) {
         </div>
       )}
       {error && <div className="map-status map-status-error">지도를 불러오지 못했습니다: {error}</div>}
-      {active.length === 0 && (
-        <div className="map-notice map-ui">
-          {year < data.timeline.range[0] ? '나라가 생기기 전입니다. 유적(●)을 누르면 그 시대의 생활을 볼 수 있습니다' : '이 시기의 영토 데이터는 아직 없습니다'}
-        </div>
-      )}
+      {/* 선사 단계의 안내는 지도 위 창 대신 나라 정보 판의 안내 글로 보인다(2026-11-25, 사본 시험, EventPanel.tsx) */}
+      {active.length === 0 && year >= data.timeline.range[0] && <div className="map-notice map-ui">이 시기의 영토 데이터는 아직 없습니다</div>}
       {/* 전쟁 보기의 이름·닫기(×, Esc)는 나라 정보 패널 자리의 전쟁 정보 패널에 있다(2026-11-21, panel/WarPanel.tsx). 전에는 지도 아래 가운데 '닫기' 띠 */}
       {/* 권역 단추(2026-10-18: 머리글 권역 필터를 없애고 이리로 옮김)(권역 고르기·자료 없는 해면 옮기기·그 권역으로 지도 이동).
           세계는 '전체'를 고르고 세계로 축소한다. 전쟁 보기 중에는 전역 단추가 그 자리에 오므로 숨긴다(2026-10-26) */}
       {/* 지도 왼쪽 위 "주요 전쟁" 단추와 목록(2026-10-27, 지도의 전쟁 표시 ⚔ 대신). 전쟁 보기 중에는 숨긴다 */}
       {!war && (
         <div className="map-top-left">
-          {/* '주요 전쟁' 아래에 나라 칠하기 방식 단추(2026-11-15) */}
-          <div className="map-top-stack">
-            <MajorEvents data={data} />
-            <FillModeSwitch />
-          </div>
+          <MajorEvents data={data} />
           {/* 사건 화살표 뜻(2026-10-28: 권역 단추 오른쪽에서 "주요 전쟁" 단추 오른쪽으로). 나라를 골랐을 때만 */}
           {selectedEntity && (
             <div className="map-legend map-ui">
@@ -1120,10 +1080,11 @@ export default function WorldMap({ data }: { data: StaticData }) {
       )}
       {!war && (
         <div className="map-bottom-left">
-        <div ref={regionsRef} className="map-controls map-regions map-ui" data-open={regionsOpen || undefined} onClick={(e) => e.stopPropagation()} onPointerDown={(e) => e.stopPropagation()}>
+        <div ref={regionsRef} className="map-controls map-regions map-ui" data-open={regionsOpen || undefined} data-closing={regionsClosing || undefined} onClick={(e) => e.stopPropagation()} onPointerDown={(e) => e.stopPropagation()}>
           <button
             type="button"
             aria-pressed={regionFilter === 'all'}
+            style={{ '--i': REGION_BUTTONS.length } as CSSProperties}
             onClick={() =>
               pickRegion(() => {
                 chooseRegion('all');
@@ -1134,8 +1095,8 @@ export default function WorldMap({ data }: { data: StaticData }) {
             세계
           </button>
           {/* 권역 열 개(2026-11-21): 순서는 regions.ts REGION_BUTTONS, 누르면 그 권역의 focus(없으면 bounds)로 옮긴다 */}
-          {REGION_BUTTONS.map((id) => (
-            <button key={id} type="button" aria-pressed={regionFilter === id} onClick={() => pickRegion(() => chooseRegion(id))}>
+          {REGION_BUTTONS.map((id, i) => (
+            <button key={id} type="button" aria-pressed={regionFilter === id} style={{ '--i': REGION_BUTTONS.length - 1 - i } as CSSProperties} onClick={() => pickRegion(() => chooseRegion(id))}>
               {REGION_FILTER_INFO[id].short}
             </button>
           ))}

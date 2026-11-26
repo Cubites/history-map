@@ -76,6 +76,26 @@ export function formatEventYears(event: HistoryEvent): string {
   return event.precision === 'decade' ? `${text} 무렵` : text;
 }
 
+/** 선사 시대 유물·유적인가 (tags의 relic, 2026-11-25 사본 시험 — data/events/00-prehistory-sites.yaml) */
+export const isRelic = (event: HistoryEvent) => event.tags.includes('relic');
+/** 선사 단계의 '시대 특징' 글인가 (tags의 era). 유물·유적 목록에는 넣지 않는다 */
+export const isEraText = (event: HistoryEvent) => event.tags.includes('era');
+
+/**
+ * 한 줄로 쓰는 연대 글(검색 결과 등). 유물·유적은 year가 단계의 해라 실제 연대가 아니므로 시기(period, 한국만)와 연대 글(dateLabel)을 쓴다.
+ * 둘 다 없으면 빈 글. 그 밖의 사건은 formatEventYears
+ */
+export function eventDateText(event: HistoryEvent): string {
+  return isRelic(event) ? [event.period, event.dateLabel].filter(Boolean).join(' ') : formatEventYears(event);
+}
+
+/** 유물·유적을 시간 순으로: sortYear가 앞선 것부터, sortYear가 없는 것은 맨 뒤에 이름순 */
+export function sortRelics(list: HistoryEvent[]): HistoryEvent[] {
+  return [...list].sort(
+    (a, b) => (a.sortYear ?? Infinity) - (b.sortYear ?? Infinity) || a.title.ko.localeCompare(b.title.ko, 'ko'),
+  );
+}
+
 export type LinkDirection = 'in' | 'out' | 'other';
 
 /** 선택한 나라 기준 방향: 들어오는(in) / 나가는(out) / 선택한 나라와 무관(other) */

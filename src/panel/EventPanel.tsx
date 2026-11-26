@@ -1,10 +1,11 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { claimantsAt, claimedRegionsAt, occupierAt, overlordAt, type StaticData } from '../data/staticData.ts';
-import { eventYearFor, eventsOf, formatEventYears, inDecade, linkDirection } from '../lib/events.ts';
+import { eventYearFor, formatEventYears, inDecade, isEraText, isRelic, linkDirection, sortRelics } from '../lib/events.ts';
 import { activeWarView, formatFrontDate, yearOfFrontDate } from '../lib/wars.ts';
 import { useMediaQuery } from '../lib/useMediaQuery.ts';
 import { formatDecade, formatRange, formatYear, isAlive, prehistoryStage } from '../lib/year.ts';
 import type { HistoryEvent } from '../schema/index.ts';
+import { REGION_FILTER_INFO, inRegionFilter } from '../schema/regions.ts';
 import { shareUrl, useAppStore } from '../store/useAppStore.ts';
 import { CopyLink } from './CopyLink.tsx';
 import { ABOUT_LIST_MIN, Sentences, splitSentences } from './aboutText.tsx';
@@ -22,6 +23,7 @@ export function EventPanel({ data }: { data: StaticData }) {
   // 사건 목록은 목록 기준 연도로 고른다. 사건을 눌러 지도를 옮겨도 목록이 바뀌지 않게 (listYear)
   const listYear = useAppStore((s) => s.listYear ?? s.year);
   const selectedId = useAppStore((s) => s.selectedId);
+  const regionFilter = useAppStore((s) => s.regionFilter);
   const showAll = useAppStore((s) => s.showAllEvents);
   const setShowAll = useAppStore((s) => s.setShowAllEvents);
   const setYear = useAppStore((s) => s.setYear);
@@ -116,14 +118,23 @@ export function EventPanel({ data }: { data: StaticData }) {
     return (
       <aside ref={sheet.ref} className="panel sheet">
         {sheetHandle}
-        <p className="panel-guide" data-sheet-head>아래 목록 혹은 지도에서 나라를 누르면 상세 정보가 표시됩니다.</p>
+        {/* 구석기·신석기 단계에서는 지도 위 안내 창 대신 여기에 그 안내를 보인다(2026-11-25, 사본 시험) */}
+        <p className={year < data.timeline.range[0] ? 'panel-guide prehistory' : 'panel-guide'} data-sheet-head>
+          {year < data.timeline.range[0] ? '나라가 생기기 전입니다. 유적(●)을 누르면 그 시대의 생활을 볼 수 있습니다.' : '아래 목록 혹은 지도에서 나라를 누르면 상세 정보가 표시됩니다.'}
+        </p>
         {/* 2026-10-28: 자료 범위 안내 글을 없애고 그 자리에 지금 권역의 나라 목록 */}
         <CountryList data={data} />
       </aside>
     );
   }
 
-  const all = eventsOf(data.events, entity.id);
+  // 선사 시대 항목(2026-11-25 사본 시험): 사건 목록 자리에 유물·유적을 시간 순으로 늘어놓고, 그 단계의 생활 글(tags의 era)은 목록에서 빼 '시대 특징'으로 보인다
+  // 유물·유적 목록은 고른 권역에 있는 것만 보인다(권역이 '전체'면 모두). 권역은 빌드가 붙인 units(없으면 파일의 기본 권역) — 지도의 점은 권역과 상관없이 모두 보인다
+  const entityEvents = data.events.filter((e) => e.subjects.includes(entity.id));
+  const relicMode = entityEvents.some(isRelic);
+  const eraText = relicMode ? entityEvents.find((e) => isEraText(e) && inDecade(e, year)) : undefined;
+  const all: HistoryEvent[] = relicMode ? sortRelics(entityEvents.filter((e) => isRelic(e) && inRegionFilter(regionFilter, e.region, e.units))) : entityEvents;
+  const where = regionFilter === 'all' ? '' : `${REGION_FILTER_INFO[regionFilter].short} `;
   const current = all.filter((e) => inDecade(e, listYear));
   const shown = showAll ? all : current;
   const before = [...all].reverse().find((e) => (e.endYear ?? e.year) < listYear && !inDecade(e, listYear));
@@ -148,7 +159,8 @@ export function EventPanel({ data }: { data: StaticData }) {
     <aside ref={sheet.ref} className="panel sheet">
       {sheetHandle}
       {/* 이름·기간 머리는 스크롤해도 패널 위에 붙어 있다(2026-10-18). 휴대폰 접힌 판은 이 머리 높이까지(data-sheet-head) */}
-      <header className="panel-header panel-header-sticky" data-sheet-head>
+      {/* 선사 단계(유적을 눌러 '선사 시대 …'를 고른 때)는 이름 한 줄뿐이라 낮다 → 나라 이름란 높이로 맞춘다(.prehistory, 2026-11-25 사본 시험) */}
+      <header className={year < data.timeline.range[0] ? 'panel-header panel-header-sticky prehistory' : 'panel-header panel-header-sticky'} data-sheet-head>
         <span
           className="panel-swatch"
           style={{
@@ -218,6 +230,7 @@ export function EventPanel({ data }: { data: StaticData }) {
           key={entity.id}
           entity={entity}
           events={all}
+          era={relicMode ? { text: eraText } : undefined}
           successors={successors.map(({ relation, entity: next }) => ({ id: next!.id, name: next!.names.ko, from: relation.from }))}
           onEvent={(e) => {
             jumpTo(e);
@@ -251,10 +264,16 @@ export function EventPanel({ data }: { data: StaticData }) {
 
       {/* 2026-10-28: '이 시기의 전쟁'(고른 나라가 참전한 전쟁 목록)은 지도 왼쪽 위 "주요 전쟁" 목록과 겹쳐 없앰 */}
       <div className="panel-section-title">
-        <h3>{showAll ? '전체 사건' : listYear < data.timeline.range[0] ? `${prehistoryStage(listYear).name}` : `${formatDecade(listYear)} 사건`}</h3>
+        {relicMode ? (
+          <h3>
+            {where}{showAll ? '전체 유물·유적' : listYear < data.timeline.range[0] ? `${prehistoryStage(listYear).name} 유물·유적` : '유물·유적'} <span className="country-list-count">{shown.length}</span>
+          </h3>
+        ) : (
+          <h3>{showAll ? '전체 사건' : listYear < data.timeline.range[0] ? `${prehistoryStage(listYear).name}` : `${formatDecade(listYear)} 사건`}</h3>
+        )}
         {all.length > 0 && (
           <button type="button" className="link-button" onClick={() => setShowAll(!showAll)}>
-            {showAll ? '현재 구간만 보기' : `전체 사건 보기 (${all.length})`}
+            {relicMode ? (showAll ? '이 단계만 보기' : `전체 보기 (${all.length})`) : showAll ? '현재 구간만 보기' : `전체 사건 보기 (${all.length})`}
           </button>
         )}
       </div>
@@ -262,14 +281,14 @@ export function EventPanel({ data }: { data: StaticData }) {
 
       {shown.length === 0 ? (
         <div className="panel-empty">
-          <p>이 구간에 등록된 사건이 없습니다.</p>
+          <p>{relicMode ? (regionFilter === 'all' ? '이 단계에 등록된 유물·유적이 없습니다.' : `${REGION_FILTER_INFO[regionFilter].label} 권역에는 이 단계에 등록된 유물·유적이 없습니다.`) : '이 구간에 등록된 사건이 없습니다.'}</p>
           <div className="panel-jump">
-            {before && (
+            {!relicMode && before && (
               <button type="button" className="link-button" onClick={() => jumpTo(before)}>
                 ← {formatEventYears(before)} {before.title.ko}
               </button>
             )}
-            {after && (
+            {!relicMode && after && (
               <button type="button" className="link-button" onClick={() => jumpTo(after)}>
                 {formatEventYears(after)} {after.title.ko} →
               </button>
@@ -346,6 +365,8 @@ function EventItem({ event, data, selectedId, highlight }: { event: HistoryEvent
     // 전쟁 보기 중이면 그 전쟁의 사건은 그 날짜의 전선으로 옮긴다 (DESIGN.md §4.5)
     if (event.front && inCurrentView) setFront(yearOfFrontDate(event.front.date), event.front.date);
     else if (event.front && event.front.war === warId) openFront();
+    // 유물·유적은 지금 단계에서 보이는 것이면 연도를 옮기지 않는다(두 단계에 걸친 것을 눌러도 단계가 바뀌지 않게, 2026-11-25 사본 시험)
+    else if (isRelic(event) && inDecade(event, before.year)) hoverEvent(event.id);
     else {
       // 선택한 나라가 사건 연도에 없으면(사건 기간 중에 생긴 나라) 그 나라가 있던 해로 맞춘다 (eventYearFor)
       const entity = data.entities.get(selectedId);
@@ -367,7 +388,7 @@ function EventItem({ event, data, selectedId, highlight }: { event: HistoryEvent
     <li
       ref={itemRef}
       aria-expanded={expanded}
-      className={['event', (hovered || pinned || focused) && 'event-hovered', pinned && 'event-pinned', highlight && 'event-current', war && 'event-war'].filter(Boolean).join(' ')}
+      className={['event', (hovered || pinned || focused) && 'event-hovered', pinned && 'event-pinned', highlight && 'event-current', war && 'event-war', isRelic(event) && 'event-relic'].filter(Boolean).join(' ')}
       onMouseEnter={() => hoverEvent(event.id)}
       onMouseLeave={() => hoverEvent(null)}
       onFocus={() => hoverEvent(event.id)}
@@ -381,7 +402,17 @@ function EventItem({ event, data, selectedId, highlight }: { event: HistoryEvent
       tabIndex={0}
     >
       <div className="event-head">
-        <span className="event-year">{formatEventYears(event)}</span>
+        {/* 유물·유적(2026-11-25 사본 시험): year가 단계의 해라 연대 글(dateLabel)을 대신 보이고, 한국 것은 그 앞에 시기(period)를 붙인다. 둘 다 없으면 이름만 */}
+        {isRelic(event) ? (
+          (event.period || event.dateLabel) && (
+            <span className="event-year">
+              {event.period && <span className="event-period">{event.period}</span>}
+              {event.dateLabel}
+            </span>
+          )
+        ) : (
+          <span className="event-year">{formatEventYears(event)}</span>
+        )}
         {/* 전쟁 보기에 이어진 사건(2026-11-22): 블럭 왼쪽 붉은 세로 띠(.event-war)와 제목 앞 칼 아이콘(지도의 전쟁 아이콘과 같은 모양). 아이콘을 누르면 그 날짜의 전쟁 보기로 간다 */}
         {war && (
           <button

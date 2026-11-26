@@ -62,9 +62,15 @@ export function EntityTabs({
   onEvent,
   onSuccessor,
   onDetailOpen,
+  era,
 }: {
   entity: Entity;
   events: HistoryEvent[];
+  /**
+   * 선사 시대 항목이면 준다(2026-11-25 사본 시험). 탭('시작과 끝'·'특징')을 없애고 '시대 특징' 글을 바로 보인다:
+   * text(그 단계의 생활 글 — tags에 era인 사건)가 있으면 그 글과 출처를, 없으면(선사 단계 밖의 해) 항목의 특징 줄을 쓴다
+   */
+  era?: { text?: HistoryEvent };
   successors: { id: string; name: string; from: number }[];
   onEvent: (e: HistoryEvent) => void;
   onSuccessor: (id: string, year: number) => void;
@@ -117,6 +123,30 @@ export function EntityTabs({
       ))}
     </div>
   );
+  if (era) {
+    // 선사 시대: 탭 없이 '시대 특징' 글만. 휴대폰은 '시대 특징' 단추로 펼치고(펼치면 바로 글), PC는 제목 아래에 늘 보인다
+    const eraSentences = era.text ? splitSentences(era.text.summary.ko) : t.features;
+    const eraRefs = era.text ? era.text.sources : t.refs;
+    return (
+      <div className={mobile ? 'entity-tabs entity-tabs-mobile' : 'entity-tabs'}>
+        <div className={mobile ? (open ? 'detail-box open' : 'detail-box') : undefined}>
+          {mobile ? (
+            <button type="button" className="detail-toggle" aria-expanded={open} onClick={() => setOpen(!open)}>
+              시대 특징 <span aria-hidden="true">{open ? '▴' : '▾'}</span>
+            </button>
+          ) : (
+            <h3 className="era-title">시대 특징</h3>
+          )}
+          {(!mobile || open) && (
+            <div className="tab-body">
+              <Sentences sentences={eraSentences} className="tab-list" list />
+              {eraRefs.length > 0 && <p className="tab-refs">근거 자료: {eraRefs.join(' · ')}</p>}
+            </div>
+          )}
+        </div>
+      </div>
+    );
+  }
   return (
     <div className={mobile ? 'entity-tabs entity-tabs-mobile' : 'entity-tabs'}>
       {mobile && t.overview && <p className="tab-brief">{withYears(t.overview)}</p>}

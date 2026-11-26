@@ -1,7 +1,7 @@
 import { useMemo, useRef, useState } from 'react';
 import type { LoadedEntity, LoadedEvent, StaticData } from '../data/staticData.ts';
 import { useMediaQuery } from '../lib/useMediaQuery.ts';
-import { focusTarget, formatEventYears } from '../lib/events.ts';
+import { eventDateText, focusTarget } from '../lib/events.ts';
 import { formatRange, isAlive } from '../lib/year.ts';
 import { inRegionFilter } from '../schema/regions.ts';
 import { useAppStore } from '../store/useAppStore.ts';
@@ -182,7 +182,7 @@ export function SearchBox({ data }: { data: StaticData }) {
             >
               {r.kind === 'event' ? (
                 <>
-                  <span className="search-year">{formatEventYears(r.event)}</span>
+                  <span className="search-year">{eventDateText(r.event)}</span>
                   <span className="search-title">{r.event.title.ko}</span>
                 </>
               ) : (

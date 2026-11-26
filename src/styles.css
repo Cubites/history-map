@@ -9,9 +9,6 @@
   --land-unassigned: #d9d5cd; /* 데이터가 없는 육지 (DESIGN.md D5) */
   --land-stroke: #b3ada3;
   --territory-stroke: #fbfaf7;
-  --territory-border: #a29a8c; /* 평소 지도의 나라 경계선 (2026-11-12, 색을 옅게 칠하므로 경계를 진하게, DESIGN.md §6.3) */
-  --territory-mute: #f6f3ec; /* 나라 색을 옅게 섞을 바탕색 (2026-11-12, DESIGN.md §6.3) */
-  --territory-neutral: #ebe7de; /* '속국만'에서 지배 관계가 없는 나라 (2026-11-15) */
   --outline: #9fb0bb;
   --control-bg: #ffffffe6;
   --label: #2a2723;
@@ -41,9 +38,6 @@
     --land-unassigned: #34373a;
     --land-stroke: #4a4e51;
     --territory-stroke: #1d2124;
-    --territory-border: #5e6366;
-    --territory-mute: #24282b;
-    --territory-neutral: #2e3235;
     --outline: #3b4d59;
     --control-bg: #23272ae6;
     --label: #f3f1ec;
@@ -232,21 +226,18 @@ button {
 .map-regions:not([data-open]) button { grid-area: 1 / 1; }
 .map-regions:not([data-open]) button:not([aria-pressed='true']) { visibility: hidden; }
 .map-regions button[aria-pressed='true'] { order: 9; }
+/* 권역 단추가 나타나고 사라지는 움직임(2026-11-26): 펼치면 지금 권역 바로 위 단추부터 차례로 아래에서 떠오르고(--i가 아래에서 센 차례, WorldMap.tsx),
+   접을 때는 함께 아래로 내려가며 사라진 뒤에 접힌다([data-closing], 길이는 WorldMap.tsx REGIONS_CLOSE_MS와 같게).
+   짧고 작은 한 번짜리 움직임이라 기기의 '움직임 줄이기' 설정과 상관없이 보인다(운영자 PC가 그 설정이라 따르면 보이지 않음) */
+.map-regions[data-open] button:not([aria-pressed='true']) { animation: region-in 0.2s cubic-bezier(0.2, 0.8, 0.3, 1) both; animation-delay: calc(var(--i, 0) * 14ms); }
+.map-regions[data-closing] button:not([aria-pressed='true']) { animation: region-out 0.15s ease-in both; pointer-events: none; }
+@keyframes region-in { from { opacity: 0; transform: translateY(10px) scale(0.96); } }
+@keyframes region-out { to { opacity: 0; transform: translateY(8px) scale(0.96); } }
 /* 지도 왼쪽 위 "주요 전쟁" 단추와 그 아래 목록(2026-10-27, 지도의 전쟁 표시 ⚔ 대신). 목록이 길면 지도 높이 안에서 세로 스크롤. 휴대폰은 지도 위 검색창 아래 */
 /* 지도 왼쪽 위 묶음(2026-10-28): "주요 전쟁" 단추(+ 목록)와 그 오른쪽 사건 화살표 뜻 */
 .map-top-left { position: absolute; top: 12px; left: 12px; z-index: 6; display: flex; align-items: flex-start; gap: 8px; max-width: calc(100% - 90px); max-height: calc(100% - 24px); pointer-events: none; }
 .map-top-left > * { pointer-events: auto; }
 .major-events { position: relative; flex-shrink: 0; }
-/* '주요 전쟁' 단추와 그 아래 나라 칠하기 방식 단추(2026-11-15). 주요 전쟁 목록은 떠서(absolute) 칠하기 단추를 덮는다 */
-.map-top-stack { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; flex-shrink: 0; }
-.fill-mode { position: relative; display: flex; flex-direction: column; align-items: stretch; }
-.fill-mode button { height: 30px; min-width: 64px; padding: 0 10px; border: 1px solid var(--border); border-radius: 6px; background: var(--control-bg); color: var(--fg); font: inherit; font-size: 13px; cursor: pointer; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15); }
-.fill-mode button:hover { border-color: var(--accent); }
-.fill-mode button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-.fill-mode-current { font-weight: 600; color: var(--accent) !important; border-color: var(--accent) !important; }
-.fill-mode-current::after { content: ' ▾'; font-size: 10px; }
-.fill-mode-current[aria-expanded='true']::after { content: ' ▴'; }
-.fill-mode-list { position: absolute; top: calc(100% + 4px); left: 0; z-index: 2; display: flex; flex-direction: column; gap: 4px; width: 100%; }
 /* 단추는 아래 목록과 같은 바탕(--control-bg)에 붉은 테두리·글자(--front-line). 둘 다 어두운 화면에서 바뀐다(2026-10-28).
    올리면·목록이 열리면 바탕에 붉은색을 조금 섞는다 */
 .major-events-toggle { height: 32px; padding: 0 12px; border: 1.5px solid var(--front-line); border-radius: 6px; background: var(--control-bg); color: var(--front-line); font: inherit; font-size: 14px; font-weight: 700; cursor: pointer; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15); }
@@ -515,6 +506,10 @@ button {
 /* 연도는 늘 제목 첫 줄에 맞춘다(2026-11-20): 펼친 사건의 제목은 복사 단추 안이라, 두 줄 이상이면 기준선 맞춤이 마지막 줄을 따라갔다 */
 .event-year { align-self: flex-start; font-variant-numeric: tabular-nums; font-weight: 700; color: var(--muted); white-space: nowrap; }
 .event-title { font-weight: 700; flex: 1; }
+/* 선사 유물·유적(2026-11-25 사본 시험): 한국 것은 연대 앞에 시기(구석기·신석기 등)를 작은 딱지로 붙인다. 연대 글이 길면 줄을 바꾼다 */
+.event-period { display: inline-block; margin-right: 5px; padding: 0 5px; border: 1px solid var(--border); border-radius: 4px; font-size: 11.5px; font-weight: 600; line-height: 1.5; }
+.event-year:has(.event-period), .event-relic .event-year { white-space: normal; max-width: 46%; }
+.era-title { margin: 0 0 2px; font-size: 13px; font-weight: 700; color: var(--muted); }
 .event-toggle { color: var(--muted); font-size: 11px; flex-shrink: 0; }
 .event-head + .event-summary { margin-top: 6px; }
 .event-summary { margin: 4px 0 6px; font-size: 13px; }
@@ -555,28 +550,36 @@ button {
 .legend-out { border-top: 2.5px dashed var(--arrow-out); }
 
 /* ── 지도 위 연도 조절 (2026-10-28부터, MapYearControls.tsx) ──
-   오른쪽: 세로 연도 막대(위가 최근). 막대 안 눈금, 눈금 숫자는 끄는 동안만(.dragging). 아래에 신석기·구석기 단추(신석기가 위).
-   아래 가운데: ◀ [연도] ▶ (감싼 상자 없이, 2026-10-28) */
-.map-yearbar { position: absolute; top: 22px; right: 12px; bottom: 150px; z-index: 4; display: flex; flex-direction: column; align-items: center; gap: 16px; }
+   연도 막대와 전쟁 보기의 상황 막대(WarStepBar.tsx)는 PC·휴대폰 모두 지도 영역 맨 아래에 띄운 가로 막대 하나다(왼쪽이 오래된 쪽).
+   2026-11-25에 휴대폰의 세로 연도 막대를, 2026-11-26에 PC의 지도 아래 띠와 휴대폰의 세로 상황 막대를 없애고(사본 시험) 세로·띠 규칙을 이 한 벌로 합쳤다.
+   아래부터 차례로: 끄는 동안 뜨는 눈금 숫자 자리(막대 아래 15px) → 막대(누르는 영역 24px) → 시대 이름·상황 번호(15px) → 줄(권역 또는 전역 단추 · ◀ 연도 ▶ · 축척, 그 위에 확대·축소 단추).
+   --flat-base는 막대 아래에 비울 높이(8px, 휴대폰은 아래 판이 가리는 높이만큼 더 — 아래 @media).
+   막대 요소에는 .across.flat 클래스가 늘 붙어 있다(아래 줄 단추를 올리는 :has(> .map-yearbar.flat) 규칙과 휴대폰 규칙이 쓴다) */
+.app-main { --flat-base: 8px; }
+.map-yearbar { position: absolute; left: 8px; right: 12px; bottom: calc(var(--flat-base) + 11px); z-index: 4; display: flex; flex-direction: row; align-items: center; gap: 10px; box-sizing: border-box; height: 24px; transition: bottom 0.22s ease; }
 /* 휴대폰에서 막대·단추를 누르거나 끌 때 글자 선택(파란 네모)과 누름 강조색이 비치지 않게(2026-10-28) */
 .map-yearbar { -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
-.map-yearbar-track { position: relative; flex: 1; width: 28px; min-height: 60px; margin-bottom: 4px; cursor: pointer; touch-action: none; }
-/* 막대(2026-10-28): 조금 두꺼운 둥근 막대(10px) 위를 원형 손잡이가 위아래로 움직이고, 막대 아래 끝부터 손잡이까지는 채운다.
-   눈금은 막대 위에 그리고 평소에는 막대 폭 안(10px), 손잡이를 끄는 동안만 양옆으로 4px씩 튀어나온다(18px). 두께는 모두 1px, AD 1만 3px. 누르는 영역(.map-yearbar-track)은 28px로 넓게 둔다 */
+.map-yearbar-track { position: relative; flex: 1; height: 24px; margin: 0 5px; cursor: pointer; touch-action: none; }
+/* 막대(2026-10-28): 조금 두꺼운 둥근 막대(10px) 위를 원형 손잡이가 좌우로 움직이고, 막대 왼쪽 끝부터 손잡이까지는 채운다.
+   눈금은 막대 위에 그리고 평소에는 막대 두께 안(10px), 끄는 동안만 아래로 4px 튀어나온다(위 끝은 그대로, 14px). 두께는 모두 1px, AD 1만 3px. 누르는 영역(.map-yearbar-track)은 24px로 넓게 둔다 */
 .map-yearbar-track:focus-visible { outline: none; }
 .map-yearbar-track:focus-visible .map-yearbar-rail { border-color: var(--front-line); }
-.map-yearbar-rail { position: absolute; top: -5px; bottom: -5px; left: 50%; width: 10px; box-sizing: border-box; transform: translateX(-50%); border: 1px solid var(--muted); border-radius: 5px; background: var(--control-bg); box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15), 0 1px 3px rgba(0, 0, 0, 0.12); }
-.map-yearbar-fill { position: absolute; bottom: -5px; left: 50%; width: 10px; box-sizing: border-box; transform: translateX(-50%); border: 1px solid var(--muted); border-top: none; border-radius: 0 0 5px 5px; background: var(--accent); opacity: 0.85; }
-.map-yearbar-mark { position: absolute; left: 50%; width: 10px; height: 1px; transition: width 0.12s ease; transform: translate(-50%, -50%); background: color-mix(in srgb, var(--fg) 55%, transparent); pointer-events: none; }
+.map-yearbar-rail { position: absolute; top: 50%; left: -5px; right: -5px; height: 10px; box-sizing: border-box; transform: translateY(-50%); border: 1px solid var(--muted); border-radius: 5px; background: var(--control-bg); box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15), 0 1px 3px rgba(0, 0, 0, 0.12); }
+.map-yearbar-fill { position: absolute; top: 50%; left: -5px; height: 10px; box-sizing: border-box; transform: translateY(-50%); border: 1px solid var(--muted); border-right: none; border-radius: 5px 0 0 5px; background: var(--accent); opacity: 0.85; }
+.map-yearbar-mark { position: absolute; top: 50%; width: 1px; height: 10px; transition: height 0.12s ease, top 0.12s ease; transform: translate(-50%, -50%); background: color-mix(in srgb, var(--fg) 55%, transparent); pointer-events: none; }
 .map-yearbar-mark:not(.m500) { display: none; } /* 눈금은 500년마다만(2026-10-28, 전에는 PC에서 100년마다) */
-.map-yearbar-mark.ad1 { height: 3px; background: color-mix(in srgb, var(--fg) 85%, transparent); }
-.map-yearbar-label { display: none; position: absolute; top: 50%; right: calc(100% + 10px); transform: translateY(-50%); padding: 0 4px; border-radius: 3px; background: var(--control-bg); color: var(--fg); font-size: 11px; line-height: 1.5; white-space: nowrap; }
-.map-yearbar.dragging .map-yearbar-label { display: block; }
-.map-yearbar.dragging .map-yearbar-mark { width: 18px; }
-.map-yearbar-thumb { position: absolute; z-index: 1; left: 50%; width: 18px; height: 18px; transform: translate(-50%, -50%); border: 2px solid var(--surface); border-radius: 50%; background: var(--accent); box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); pointer-events: none; }
-.map-yearbar-prehistory { display: flex; flex-direction: column; gap: 3px; }
-.map-yearbar-prehistory button { height: 24px; padding: 0 6px; white-space: nowrap; border: 1px solid var(--border); border-radius: 4px; background: var(--control-bg); color: var(--fg); font: inherit; font-size: 12px; cursor: pointer; }
-.map-yearbar-prehistory button[aria-pressed='true'] { border-color: var(--front-line); color: var(--front-line); font-weight: 700; }
+.map-yearbar-mark.ad1 { width: 3px; background: color-mix(in srgb, var(--fg) 85%, transparent); }
+.map-yearbar.dragging .map-yearbar-mark { top: calc(50% + 2px); height: 14px; }
+/* 눈금 숫자(연도 막대만): 1000년마다(+ AD 1)만, 끄는 동안만 막대 아래에 보인다.
+   숫자 칸의 위 끝이 아래로 튀어나온 눈금 선의 끝(눈금 높이 14px)에 닿게 붙인다(2026-11-26, 전에는 5px 떨어짐) */
+.map-yearbar-label { display: none; position: absolute; top: 14px; left: 50%; transform: translateX(-50%); padding: 0 4px; border-radius: 3px; background: var(--control-bg); color: var(--fg); font-size: 11px; line-height: 1.5; white-space: nowrap; }
+.map-yearbar.dragging .map-yearbar-mark.m1000 .map-yearbar-label { display: block; }
+.map-yearbar-thumb { position: absolute; z-index: 1; top: 50%; width: 18px; height: 18px; transform: translate(-50%, -50%); border: 2px solid var(--surface); border-radius: 50%; background: var(--accent); box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); pointer-events: none; }
+/* 아래 줄(권역 단추 묶음·전쟁 보기의 전역 단추·확대 단추·연도 칸)은 막대 위로 올린다 */
+.app .app-main:has(> .map-yearbar.flat) .map-bottom-left, .app .app-main:has(> .map-yearbar.flat) .map-theaters, .app .app-main:has(> .map-yearbar.flat) .map-zoom-wrap, .app .app-main:has(> .map-yearbar.flat) .map-yearbox { bottom: calc(var(--flat-base) + 55px); }
+/* 미니게임 '지도' 보기에서 돌아가는 단추도 연도 칸 위로 */
+.app-main:has(> .map-yearbar.flat) .mg-return { bottom: calc(var(--flat-base) + 93px); }
+/* 아래 가운데: ◀ [연도] ▶ (감싼 상자 없이, 2026-10-28) */
 .map-yearbox { position: absolute; bottom: 12px; left: 50%; z-index: 4; display: flex; align-items: center; gap: 4px; transform: translateX(-50%); }
 .map-yearbox button { min-width: 30px; height: 30px; padding: 0 8px; border: 1px solid var(--border); border-radius: 6px; background: var(--control-bg); color: var(--fg); font: inherit; font-size: 13px; cursor: pointer; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12); }
 .map-yearbox button:hover:not(:disabled) { border-color: var(--muted); }
@@ -589,39 +592,24 @@ button {
 .map-yearbox input { box-sizing: content-box; height: 28px; padding: 0; border: none; background: transparent; color: var(--fg); font: inherit; font-size: 16px; font-weight: 800; text-align: left; font-variant-numeric: tabular-nums; outline: none; }
 .map-yearbox-field:focus-within { outline: 2px solid var(--front-line); outline-offset: -1px; }
 .map-yearbox-field:has(input[aria-invalid='true']) { border-color: var(--error); outline-color: var(--error); }
-/* PC 연도 막대(2026-10-28): 지도 위에 띄우지 않고 지도 아래 따로 둔 띠(지도 칸 폭만, 왼쪽 나라 정보 칸 아래로는 가지 않음).
-   지도는 띠 높이만큼 짧아지고, 연도 칸(◀ 연도 ▶)은 지도 아래 가운데 그대로(띠 위). 막대는 가로(오른쪽이 최근), 눈금 숫자는 늘 막대 아래 */
-.app-main:has(> .map-yearbar.across) { --yearstrip-h: 66px; } /* 2026-11-23: 막대 위 시대 이름·상황 번호 줄(14px)만큼 높임 */
-.app-main:has(> .map-yearbar.across) .world-map { bottom: var(--yearstrip-h); }
-.app-main:has(> .map-yearbar.across) .map-yearbox { bottom: calc(var(--yearstrip-h) + 12px); }
-.map-yearbar.across { top: auto; right: 0; bottom: 0; left: 0; height: var(--yearstrip-h); box-sizing: border-box; flex-direction: row; align-items: flex-start; gap: 14px; padding: 20px 24px 0 12px; border-top: 1px solid var(--border); background: var(--surface); }
-.map-yearbar.across .map-yearbar-track { flex: 1; width: auto; height: 24px; min-height: 0; margin: 0 5px; }
-.map-yearbar.across .map-yearbar-rail { top: 50%; bottom: auto; left: -5px; right: -5px; width: auto; height: 10px; transform: translateY(-50%); }
-.map-yearbar.across .map-yearbar-fill { top: 50%; bottom: auto; left: -5px; width: auto; height: 10px; transform: translateY(-50%); border-top: 1px solid var(--muted); border-right: none; border-radius: 5px 0 0 5px; }
-.map-yearbar.across .map-yearbar-mark { top: 50%; width: 1px; height: 10px; transition: height 0.12s ease; }
-.map-yearbar.across .map-yearbar-mark.ad1 { width: 3px; height: 10px; }
-.map-yearbar.across.dragging .map-yearbar-mark { width: 1px; height: 18px; }
-.map-yearbar.across.dragging .map-yearbar-mark.ad1 { width: 3px; }
-.map-yearbar.across .map-yearbar-label { display: block; top: 15px; right: auto; left: 50%; transform: translateX(-50%); padding: 0; background: none; color: var(--muted); }
-.map-yearbar.across.dragging .map-yearbar-label { top: 19px; }
-.map-yearbar.across .map-yearbar-thumb { top: 50%; }
-.map-yearbar.across .map-yearbar-prehistory { flex-direction: row; }
 
-/* 시대 표시(2026-11-23, MapYearControls.tsx): 휴대폰은 막대 왼쪽, PC는 막대 위에 고대·중세·근세·근대·현대. 시대 경계에 가는 선.
-   지금 연도의 시대는 진하게. 휴대폰에서 끄는 동안 뜨는 눈금 숫자는 시대 이름 왼쪽으로 비켜 둔다 */
-.map-yearbar-era { position: absolute; right: calc(50% + 10px); transform: translateY(-50%); padding: 0 3px; border-radius: 3px; background: color-mix(in srgb, var(--control-bg) 82%, transparent); color: var(--muted); font-size: 10px; line-height: 13px; white-space: nowrap; pointer-events: none; }
+/* 시대 표시(2026-11-23, MapYearControls.tsx): 막대 위에 고대·중세·근세·근대·현대. 시대 경계에 굵기 2px 선(500년 눈금 1px과 AD 1 눈금 3px의 중간). 지금 연도의 시대는 진하게.
+   지도 위에 뜨므로 반투명 바탕을 둔다. 휴대폰은 10px 글자(아래 @media) */
+.map-yearbar-era { position: absolute; top: -15px; transform: translateX(-50%); padding: 0 3px; border-radius: 3px; background: color-mix(in srgb, var(--control-bg) 82%, transparent); color: var(--muted); font-size: 11px; line-height: 13px; white-space: nowrap; pointer-events: none; }
 .map-yearbar-era.on { color: var(--fg); font-weight: 700; }
-.map-yearbar-eraline { position: absolute; right: 50%; width: 15px; height: 1px; transform: translateY(-50%); background: color-mix(in srgb, var(--fg) 45%, transparent); pointer-events: none; }
-.map-yearbar:not(.across) .map-yearbar-label { right: calc(100% + 30px); }
-.map-yearbar.across .map-yearbar-era { top: -15px; right: auto; transform: translateX(-50%); padding: 0; background: none; font-size: 11px; }
-.map-yearbar.across .map-yearbar-eraline { top: -15px; right: auto; width: 1px; height: 22px; transform: translateX(-50%); }
+/* 2026-11-25(사본 시험): 평소에는 지금 연도의 시대 이름(.on)만 보인다 — 그 시대 구간의 가운데, 막대 끝을 넘지 않게(MapYearControls.tsx의 solo). 시대 경계선은 늘 보인다.
+   막대를 끄는 동안(.dragging)에는 나머지 시대 이름도 나온다. .pre(막대 왼쪽 끝의 빙하기·빙하기 후 눈금 이름)는 늘 보인다 */
+.map-yearbar-era:not(.pre) { opacity: 0; transition: opacity 0.12s ease, left 0.12s ease; }
+.map-yearbar-era.on, .map-yearbar.dragging .map-yearbar-era { opacity: 1; }
+/* 끄는 동안의 명암(2026-11-25, 같은 날 고침): 지금 시대는 흰 바탕에 검은 글자, 나머지 시대는 진한 회색 바탕에 흰 글자로 뒤집어 한눈에 갈리게 한다 */
+.map-yearbar.dragging .map-yearbar-era:not(.pre) { background: color-mix(in srgb, var(--fg) 68%, var(--surface)); color: var(--surface); }
+.map-yearbar.dragging .map-yearbar-era.on:not(.pre) { z-index: 1; background: var(--surface); color: var(--fg); box-shadow: 0 0 0 1px var(--fg); }
+/* 시대 경계선: 막대 위로 11px(2026-11-25에 22px에서 절반으로. 아래 끝은 막대에 닿는다) */
+.map-yearbar-eraline { position: absolute; top: -4px; width: 2px; height: 11px; transform: translateX(-50%); background: color-mix(in srgb, var(--fg) 45%, transparent); pointer-events: none; }
 
-/* 전쟁 보기의 상황 막대(2026-11-23, WarStepBar.tsx): 연도 막대와 같은 자리·모양. 눈금마다 상황 번호(휴대폰은 막대 왼쪽, PC는 막대 위)를 늘 보인다.
-   세로 막대는 위가 첫 상황이라 채운 부분도 위 끝부터 손잡이까지 */
-.war-steps:not(.across) .map-yearbar-fill { top: -5px; border-top: 1px solid var(--muted); border-bottom: none; border-radius: 5px 5px 0 0; }
-.war-step-no { position: absolute; top: 50%; right: calc(100% + 9px); transform: translateY(-50%); min-width: 14px; padding: 0 2px; border-radius: 3px; background: color-mix(in srgb, var(--control-bg) 82%, transparent); color: var(--muted); font-size: 11px; line-height: 13px; text-align: center; font-variant-numeric: tabular-nums; }
+/* 전쟁 보기의 상황 막대(2026-11-23, WarStepBar.tsx): 연도 막대와 같은 자리·모양. 눈금마다 상황 번호를 막대 위에 늘 보인다 */
+.war-step-no { position: absolute; bottom: calc(100% + 6px); left: 50%; transform: translateX(-50%); min-width: 14px; padding: 0 2px; border-radius: 3px; background: color-mix(in srgb, var(--control-bg) 82%, transparent); color: var(--muted); font-size: 12px; line-height: 13px; text-align: center; font-variant-numeric: tabular-nums; }
 .war-step-no.on { color: var(--front-line); font-weight: 800; }
-.map-yearbar.across .war-step-no { top: auto; right: auto; bottom: calc(100% + 6px); left: 50%; transform: translateX(-50%); background: none; font-size: 12px; }
 /* 전쟁 정보 목록의 상황 번호(WarPanel.tsx)와 지도의 번호 핀(WarDetailLayer.tsx) */
 .war-front-no { flex: none; min-width: 18px; height: 18px; box-sizing: border-box; padding: 0 4px; border-radius: 9px; background: var(--front-line); color: #fff; font-size: 11px; font-weight: 700; line-height: 18px; text-align: center; font-variant-numeric: tabular-nums; }
 /* 전쟁 정보 목록의 머리줄(2026-11-23): 번호·날짜·상황 이름을 모두 첫 줄 위에 맞춘다. 기준선 맞춤이면 이름이 두 줄 넘는 펼친 상황(이름이 복사 단추 안)에서
@@ -694,15 +682,19 @@ button {
     bottom: calc(var(--sheet-cover, 96px) + 8px);
     transition: bottom 0.22s ease;
   }
-  .app:has(.panel.sheet) .map-yearbar { bottom: calc(var(--sheet-cover, 96px) + 120px); transition: bottom 0.22s ease; }
   /* 지도 위 연도 조절: 막대는 검색창 아래부터 확대 단추·축척(판 위 8px + 약 112px) 위까지.
      연도 칸(◀ 연도 ▶)은 권역 단추와 같은 높이 가운데 */
-  .map-yearbar { top: 69px; right: 6px; bottom: 134px; gap: 14px; }
   .map-yearbox { bottom: 22px; }
   .map-yearbox button { min-width: 28px; padding: 0 6px; font-size: 12px; }
   .map-yearbox-field { padding: 0 7px; }
 
   .panel-header h2 { font-size: 17px; }
+  /* 선사 단계의 안내 글 영역은 나라를 골랐을 때의 이름란(이름 + 원문 이름, 56px)과 같은 높이로 고정한다(2026-11-25, 사본 시험). 글은 세로 가운데 */
+  .panel.sheet .panel-guide.prehistory { display: flex; align-items: center; box-sizing: border-box; height: 56px; margin-bottom: 0; }
+  /* 선사 단계에서 유적을 고른 때의 이름란('선사 시대 한반도' 등, 이름 한 줄 35px)도 같은 56px로. 색 견본·이름·×는 세로 가운데 */
+  .panel.sheet .panel-header-sticky.prehistory { box-sizing: border-box; min-height: 56px; align-items: center; }
+  .panel.sheet .panel-header-sticky.prehistory .panel-swatch { margin-top: 0; }
+  .panel.sheet .panel-header-sticky.prehistory .panel-deselect { margin: -10px -10px -10px auto; }
   .panel-deselect { width: 40px; height: 40px; margin: -2px -10px -18px auto; } /* 위로 넘치면 판 손잡이에 가린다 */
   .panel-header-sticky { top: -10px; margin: -10px -12px 0; padding: 10px 12px 6px; }
   .panel-header-sticky h2 .hanja { font-size: 15px; } /* 이름 17px와 기간 13px의 중간 */
@@ -862,6 +854,9 @@ button {
 .site-pin .battle-pin-disc { fill: var(--label); stroke: var(--surface); stroke-width: 1.5; }
 .site-pin .battle-pin-label { fill: var(--label); }
 .site-pin:hover .battle-pin-disc, .site-pin:focus-visible .battle-pin-disc { fill: var(--front-line); }
+/* 목록에서 고른(펼치거나 마우스를 올린) 유적의 점: 붉게 키우고 이름을 늘 보인다(2026-11-25 사본 시험) */
+.site-pin.on .battle-pin-disc { fill: var(--front-line); stroke-width: 2.5; }
+.site-pin.on .battle-pin-label { fill: var(--front-line); }
 
 /* ── 지도 단추의 불투명 바탕 (2026-11-20) ─────────────────
    '주요 전쟁'·미니게임·권역 선택·나라 색칠 단추는 바탕이 비치지 않는다
@@ -873,7 +868,6 @@ button {
 .major-events-toggle { background: var(--control-solid); }
 .major-events-toggle:hover { background: color-mix(in srgb, var(--front-line) 10%, var(--control-solid)); }
 .major-events-toggle[aria-expanded='true'] { background: color-mix(in srgb, var(--front-line) 18%, var(--control-solid)); }
-.fill-mode button { background: var(--control-solid); }
 .map-regions button { background: var(--control-solid); }
 
 /* ── 미니게임 (2026-11-17) ─────────────────────────
@@ -885,10 +879,9 @@ button {
 .mg-launch svg { width: 62%; height: 62%; }
 .mg-launch:hover { background: color-mix(in srgb, var(--accent) 10%, var(--control-solid)); }
 @media (max-width: 768px) {
-  /* 휴대폰: 검색창 아래 '주요 전쟁'과 같은 높이에, 오른쪽 세로 연도 막대의 바로 위(막대 폭 50px·오른쪽 6px의 가운데 줄에 맞춤).
-     단추가 들어간 만큼(단추 한 변) 연도 막대를 아래에서 시작하게 해 길이를 줄인다. 원래 막대의 top은 69px */
+  /* 휴대폰: 검색창 아래 '주요 전쟁'과 같은 높이, 지도 오른쪽 끝(전쟁 보기에서는 오른쪽 세로 상황 막대의 바로 위 — 막대 폭 50px·오른쪽 6px의 가운데 줄에 맞춤).
+     단추가 들어간 만큼(단추 한 변) 그 세로 막대를 아래에서 시작하게 해 길이를 줄인다. 원래 막대의 top은 69px */
   .mg-launch { top: 59px; right: calc(31px - var(--mg-major-h) * 0.65); width: calc(var(--mg-major-h) * 1.3); height: calc(var(--mg-major-h) * 1.3); }
-  .map-yearbar { top: calc(69px + var(--mg-major-h) * 1.3); }
   .mg-launch svg { width: 68%; height: 68%; }
 }
 /* 2026-11-23: .mg는 화면 전체를 덮는 막, 그 안의 .mg-win이 미니게임 창이다. 휴대폰은 창이 화면 전체, PC(861px부터)는 휴대폰만 한 창을
@@ -912,7 +905,6 @@ button {
    연도 칸의 bottom 규칙(PC 연도 띠 위, 휴대폰 아래 판 위)을 그대로 따라가며 38px 더 올린다. 흰 바탕에 붉은 굵은 테두리·붉은 글씨 */
 .mg-return { position: absolute; bottom: 50px; left: 50%; z-index: 900; transform: translateX(-50%); padding: 7px 16px; border: 2.5px solid var(--front-line); border-radius: 999px; background: #fff; color: var(--front-line); font: inherit; font-size: 14px; font-weight: 800; white-space: nowrap; cursor: pointer; box-shadow: 0 3px 12px rgba(0, 0, 0, 0.28); }
 .mg-return:hover { background: color-mix(in srgb, var(--front-line) 8%, #fff); }
-.app-main:has(> .map-yearbar.across) .mg-return { bottom: calc(var(--yearstrip-h) + 50px); }
 @media (max-width: 768px) {
   .mg-return { bottom: 60px; }
   .app:has(.panel.sheet) .mg-return { bottom: calc(var(--sheet-cover, 96px) + 46px); transition: bottom 0.22s ease; }
@@ -1065,4 +1057,22 @@ button {
   .mg.playing .mg-dots i { flex: 0 1 18px; width: 18px; }
   .mg.playing .mg-mapwrap { height: auto; min-height: 280px; }
   .mg.playing .mg-panel { border-top: 0; border-left: 1px solid var(--border); }
+}
+/* ── 휴대폰의 가로 연도 막대 (2026-11-25, 사본 시험) ─────────────────
+   처음에는 '기존 | 가로 연도바'를 고르는 단추가 있었으나 가로 막대로 굳히고 단추와 세로 막대를 없앴다 */
+@media (max-width: 768px) {
+
+  /* 가로 연도바(.flat)의 휴대폰 값: 막대와 아래 줄의 공통 규칙은 위 '지도 위에 띄운 가로 연도 막대'에 있다(2026-11-26에 PC도 같은 막대가 되어 @media 밖으로 옮김).
+     --flat-base는 아래 판이 가리는 높이 위 8px(판이 없으면 8px) */
+  .app:has(.panel.sheet) .app-main { --flat-base: calc(var(--sheet-cover, 96px) + 8px); }
+  /* 아래 줄이 서로 겹치지 않게(가장 긴 '기원전 2333년' + 가장 긴 권역 이름 + 가장 넓은 축척, 폭 360px 화면까지): 권역 단추·연도 칸·축척의 여백을 줄이고
+     축척 막대는 최대 56px(WorldMap.tsx). 왼쪽 권역 단추가 오른쪽 축척보다 넓어 연도 칸은 가운데에서 오른쪽으로 7px 옮긴다 */
+  .app .app-main:has(> .map-yearbar.flat) .map-yearbox { left: calc(50% + 7px); gap: 2px; }
+  .app-main:has(> .map-yearbar.flat) .map-yearbox button { min-width: 22px; padding: 0 4px; }
+  .app-main:has(> .map-yearbar.flat) .map-yearbox-field { padding: 0 4px; }
+  .app-main:has(> .map-yearbar.flat) .map-regions button { padding: 0 6px; font-size: 11px; }
+  .app-main:has(> .map-yearbar.flat) .map-scale { padding: 3px 4px; }
+  .map-yearbar.across.flat .map-yearbar-era { font-size: 10px; }
+  /* 미니게임 '지도' 보기에서 돌아가는 단추도 연도 칸 위로 */
+  .app:has(.map-yearbar.flat) .mg-return { bottom: calc(var(--sheet-cover, 96px) + 101px); }
 }

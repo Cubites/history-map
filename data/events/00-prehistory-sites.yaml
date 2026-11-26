@@ -1,0 +1,874 @@
+# 선사 시대 유물·유적 (2026-11-25, 사본 시험): 연도 막대 왼쪽의 "빙하기"·"빙하기 후" 단계에서 유물·유적 목록과 지도의 점(●)으로 보인다.
+# 수록 기준·개수·좌표 대조 결과는 노션 「전세계 사료 추가」 2.3. 이 64건을 끝으로 선사 시대 자료는 더 넣지 않는다.
+#   한국 26건: 국가유산청 목록 창구의 시대 코드 선사(01)·석기(03) 가운데 시대 칸이나 설명 글이 구석기·신석기를 적은 지정 국가유산
+#   세계유산 38건: 유네스코 요약 설명이 구석기·신석기 유적을 중심 내용으로 적은 39건에서, 한국 묶음과 같은 자리인 「반구천의 암각화」를 뺀 것
+# 운영자 검수 필요: 설명 글은 국가유산청·유네스코 글을 옮기지 않고 거기서 확인한 사실로 새로 썼다. 세계유산의 한국어 이름 18건은 뜻만 옮긴 임시 이름이다.
+# 칸:
+#   year / endYear: 단계의 해(빙하기 -699999, 빙하기 후 -7999)에 맞춘다(실제 연대가 아니다 — src/lib/year.ts의 PREHISTORY). 두 단계에 걸친 것은 year -699999, endYear -7999
+#   dateLabel: 화면에 보이는 연대 글(출처 기관의 표기). 없으면 연대를 보이지 않는다
+#   sortYear: 목록 순서를 정하는 해(천문 연도, 어림). 없으면 그 단계의 맨 뒤에 이름순
+#   period: 한국 유물·유적만. 연대 앞에 보이는 시기(국가유산청 표기)
+#   regionUnits: 유적이 있는 권역 단위(목록을 고른 권역의 것만 보이는 데 쓴다). 없으면 이 파일의 기본 권역(동아시아).
+#                유적이 있는 오늘날 나라가 이 지도에서 속한 권역이고, 두 권역에 걸친 나라(튀르키예·아제르바이잔)는 둘 다 적는다
+#   tags의 relic: 유물·유적 목록에 넣는 표시
+#   places: 유적 자리. 한국은 국가유산청 좌표, 세계유산은 위키데이터 좌표(유네스코 좌표와 5km 넘게 어긋나는 5건과 대표 좌표가 없는 연속 유산 18건은 검수 필요).
+#           좌표가 없는 임실 하가 유적과 박물관에 있는 유물 3건은 점 없이 목록에만 나온다
+
+# ── 한국 (국가유산청 지정 국가유산) ──────────────────────────
+
+- id: pre-kr-jeongok
+  year: -699999
+  title:
+    ko: "연천 전곡리 유적"
+  summary:
+    ko: "한탄강가에 넓게 펼쳐진 구석기 유적이다. 1978년에 발견되었고 주먹도끼·찍개·긁개 등이 나왔다. 유럽과 아프리카의 아슐리안 석기와 같은 꼴의 주먹도끼가 동북아시아에서 처음 확인된 곳이다."
+  subjects: [prehistory]
+  tags: [relic]
+  sources: ["국가유산청 국가유산포털 「연천 전곡리 유적」(사적)"]
+  places: [{ name: "연천 전곡리", at: [127.0605, 38.0152] }]
+  period: "구석기"
+  dateLabel: "약 30만 년 전 무렵(학설 갈림)"
+  sortYear: -299999
+
+- id: pre-kr-jungnae
+  year: -699999
+  title:
+    ko: "순천죽내리유적"
+  summary:
+    ko: "약 10만 년 동안 쌓인 유적으로 구석기·중석기·청동기·삼국 시대 문화층이 차례로 놓여 있다. 구석기 문화층이 셋이고, 중기에서 후기 구석기까지의 석기가 나왔다."
+  subjects: [prehistory]
+  tags: [relic]
+  sources: ["국가유산청 국가유산포털 「순천죽내리유적」(시도기념물)"]
+  places: [{ name: "순천 죽내리", at: [127.4401, 35.1137] }]
+  period: "구석기"
+  dateLabel: "약 10만 년 전부터"
+  sortYear: -99999
+
+- id: pre-kr-jeommal
+  year: -699999
+  title:
+    ko: "제천 점말동굴 유적"
+  summary:
+    ko: "남한에서 처음 확인된 구석기 동굴 유적이다. 전기·중기·후기 구석기 문화층이 차례로 쌓여 있고, 중기층은 약 6만 6천 년 전, 후기층은 약 1만 9천 년 전으로 재어졌다. 털코뿔이·동굴곰 같은 짐승 화석도 나왔다."
+  subjects: [prehistory]
+  tags: [relic]
+  sources: ["국가유산청 국가유산포털 「제천 점말동굴 유적」(시도기념물)"]
+  places: [{ name: "제천 점말동굴", at: [128.2239, 37.1960] }]
+  period: "구석기"
+  dateLabel: "약 6만 6천~1만 9천 년 전"
+  sortYear: -65999
+
+- id: pre-kr-gawolli
+  year: -699999
+  title:
+    ko: "파주 가월리와 주월리 유적"
+  summary:
+    ko: "임진강가 언덕의 구석기 유적이다. 주먹도끼·가로날도끼·찍개 같은 큰 석기와 망치돌이 나와 도구를 만든 과정을 알 수 있다. 연대는 약 5만~4만 년 전 무렵으로 본다."
+  subjects: [prehistory]
+  tags: [relic]
+  sources: ["국가유산청 국가유산포털 「파주 가월리와 주월리 유적」(사적)"]
+  places: [{ name: "파주 가월리·주월리", at: [126.9009, 37.9808] }]
+  period: "구석기"
+  dateLabel: "약 5만~4만 년 전"
+  sortYear: -49999
+
+- id: pre-kr-suyanggae
+  year: -699999
+  title:
+    ko: "단양 수양개 유적"
+  summary:
+    ko: "남한강가의 후기 구석기 유적이다. 돌날몸돌과 자루에 끼우는 슴베찌르개가 나와 중국 화북·시베리아 남부·일본의 후기 구석기 석기와 견주어 볼 수 있다. 둘레에서는 초기 철기 시대 집터도 나왔다."
+  subjects: [prehistory]
+  tags: [relic]
+  sources: ["국가유산청 국가유산포털 「단양 수양개 유적」(사적)"]
+  places: [{ name: "단양 수양개", at: [128.3325, 36.9603] }]
+  period: "후기 구석기"
+  sortYear: -39999
+
+- id: pre-kr-wolpyeong
+  year: -699999
+  title:
+    ko: "순천 월평 유적"
+  summary:
+    ko: "조계산 남쪽 구릉의 후기 구석기 유적이다. 구석기 문화층 네 개에서 석기 9,400여 점이 나왔다. 넓이가 5만 평을 넘어 한국의 후기 구석기 유적 가운데 큰 편이다."
+  subjects: [prehistory]
+  tags: [relic]
+  sources: ["국가유산청 국가유산포털 「순천 월평 유적」(사적)"]
+  places: [{ name: "순천 월평", at: [127.2707, 34.9167] }]
+  period: "후기 구석기"
+  sortYear: -39998
+
+- id: pre-kr-haga
+  year: -699999
+  title:
+    ko: "임실 가덕리 하가 구석기유적"
+  summary:
+    ko: "섬진강 상류 고원 분지의 후기 구석기 유적이다. 석기를 만들던 자리와 석기 27,000여 점이 나왔다. 좀돌날몸돌·슴베찌르개와 함께 일본과 중국에서 많이 나오는 모뿔석기가 있어 세 지역의 교류를 살필 수 있다."
+  subjects: [prehistory]
+  tags: [relic]
+  sources: ["국가유산청 국가유산포털 「임실 가덕리 하가 구석기유적」(시도기념물)"]
+  period: "후기 구석기"
+  sortYear: -39997
+
+- id: pre-kr-seokjangni
+  year: -699999
+  title:
+    ko: "공주 석장리 유적"
+  summary:
+    ko: "금강가의 구석기 유적으로, 한국에서 구석기 시대에 사람이 살았음을 처음 알려 준 곳이다. 찍개·긁개·주먹도끼·새기개가 나왔다. 후기 구석기 집자리의 숯은 약 3만~2만 5천 년 전의 것으로 재어졌다."
+  subjects: [prehistory]
+  tags: [relic]
+  sources: ["국가유산청 국가유산포털 「공주 석장리 유적」(사적)"]
+  places: [{ name: "공주 석장리", at: [127.1900, 36.4466] }]
+  period: "구석기"
+  dateLabel: "약 3만~2만 5천 년 전"
+  sortYear: -29999
+
+- id: pre-kr-gosanni
+  year: -699999
+  endYear: -7999
+  title:
+    ko: "제주 고산리 유적"
+  summary:
+    ko: "제주 서쪽 해안 대지의 신석기 전기 유적이다. 석기 99,000여 점과 섬유질이 섞인 적갈색 토기(고산리식 토기)가 나왔다. 후기 구석기 말의 석기 전통을 이으며 처음으로 토기를 만든 모습을 보여 준다."
+  subjects: [prehistory]
+  tags: [relic]
+  sources: ["국가유산청 국가유산포털 「제주 고산리 유적」(사적)"]
+  places: [{ name: "제주 고산리", at: [126.1669, 33.3045] }]
+  period: "후기 구석기~신석기 전기"
+  sortYear: -9700
+
+- id: pre-kr-munamni
+  year: -7999
+  title:
+    ko: "고성 문암리 유적"
+  summary:
+    ko: "동해안 모래 언덕의 신석기 유적이다. 집터와 야외 화덕 자리, 그리고 신석기 시대의 밭이 확인되었다. 연대는 양양 오산리 유적(기원전 6000~3000년)과 비슷하게 본다."
+  subjects: [prehistory]
+  tags: [relic]
+  sources: ["국가유산청 국가유산포털 「고성 문암리 유적」(사적)"]
+  places: [{ name: "고성 문암리", at: [128.5443, 38.3048] }]
+  period: "신석기"
+  dateLabel: "기원전 6000~3000년 무렵"
+  sortYear: -5999
+
+- id: pre-kr-bangudae
+  year: -7999
+  title:
+    ko: "울주 대곡리 반구대 암각화"
+  summary:
+    ko: "높이 4.5m, 너비 8m의 절벽 바위에 고래·호랑이·사슴과 사냥·고래잡이 장면 등 200여 점을 새긴 바위그림이다. 국가유산청은 새긴 수법으로 보아 신석기 말에서 청동기 시대에 만든 것으로 추정한다. 2025년에 천전리 암각화와 함께 「반구천의 암각화」로 유네스코 세계유산에 올랐고, 유네스코는 기원전 5000년 무렵부터 9세기까지 새긴 것으로 적는다."
+  subjects: [prehistory]
+  tags: [relic]
+  sources: ["국가유산청 국가유산포털 「울주 대곡리 반구대 암각화」(국보)"]
+  places: [{ name: "울주 반구대 암각화", at: [129.1778, 35.6038] }]
+  period: "신석기·청동기"
+  dateLabel: "기원전 5000년 무렵부터"
+  sortYear: -4999
+
+- id: pre-kr-amsa
+  year: -7999
+  title:
+    ko: "서울 암사동 유적"
+  summary:
+    ko: "한강가의 신석기 마을 유적으로, 지금까지 확인된 한국 신석기 마을 가운데 가장 크다. 둥글거나 모서리가 둥근 네모꼴 움집터 20여 기와 화덕 자리가 나왔다. 바닥이 뾰족한 빗살무늬 토기와 돌도끼·그물추·불에 탄 도토리가 출토되었다."
+  subjects: [prehistory]
+  tags: [relic]
+  sources: ["국가유산청 국가유산포털 「서울 암사동 유적」(사적)"]
+  places: [{ name: "서울 암사동", at: [127.1307, 37.5610] }]
+  period: "신석기"
+  dateLabel: "기원전 4000~3000년기"
+  sortYear: -3999
+
+- id: pre-kr-misari
+  year: -7999
+  title:
+    ko: "하남 미사리 유적"
+  summary:
+    ko: "한강의 섬이던 미사리의 유적으로 신석기·청동기·삼국 시대 층이 겹쳐 있다. 신석기 층에서 집터와 빗살무늬 토기·그물추·불에 탄 도토리가 나왔다. 신석기 층의 연대는 약 5,250년 전으로 재어졌다."
+  subjects: [prehistory]
+  tags: [relic]
+  sources: ["국가유산청 국가유산포털 「하남 미사리 유적」(사적)"]
+  places: [{ name: "하남 미사리", at: [127.2011, 37.5790] }]
+  period: "신석기·청동기"
+  dateLabel: "약 5,250년 전"
+  sortYear: -3299
+
+- id: pre-kr-chuncheon
+  year: -7999
+  title:
+    ko: "춘천혈거유지"
+  summary:
+    ko: "신석기 말기에 산기슭을 동굴처럼 파서 만든 집자리이다. 바닥 지름 4m의 둥근 방이고, 나중에 무덤으로 쓰여 사람뼈 세 구와 돌도끼·돌화살촉·빗살무늬 토기가 나왔다. 약 5,000년 전의 것으로 추정한다."
+  subjects: [prehistory]
+  tags: [relic]
+  sources: ["국가유산청 국가유산포털 「춘천혈거유지」(시도기념물)"]
+  places: [{ name: "춘천 혈거유지", at: [127.7366, 37.8874] }]
+  period: "신석기 말기"
+  dateLabel: "약 5,000년 전"
+  sortYear: -2999
+
+- id: pre-kr-hyuamni
+  year: -7999
+  title:
+    ko: "서산휴암리선사유적지"
+  summary:
+    ko: "해미천가의 집터 유적이다. 움집터 11기가 확인되었고 빗살무늬 토기 조각과 민무늬 토기·반달돌칼·돌검이 함께 나왔다. 국가유산청은 기원전 8세기 무렵에 이루어진 신석기·청동기 유적으로 적는다."
+  subjects: [prehistory]
+  tags: [relic]
+  sources: ["국가유산청 국가유산포털 「서산휴암리선사유적지」(시도기념물)"]
+  places: [{ name: "서산 휴암리", at: [126.5496, 36.7027] }]
+  period: "신석기·청동기"
+  dateLabel: "기원전 8세기 무렵"
+  sortYear: -799
+
+- id: pre-kr-gageodo
+  year: -7999
+  title:
+    ko: "신안가거도패총"
+  summary:
+    ko: "가거도 북쪽 끝의 조개더미이다. 돋을무늬 토기와 눌러찍은무늬 토기가 나와 신석기 전기까지 올라가는 것으로 보며, 남해안의 신석기 조개더미와 닮은 점이 많다."
+  subjects: [prehistory]
+  tags: [relic]
+  sources: ["국가유산청 국가유산포털 「신안가거도패총」(시도기념물)"]
+  places: [{ name: "신안 가거도 패총", at: [125.1240, 34.2024] }]
+  period: "신석기 전기~후기"
+
+- id: pre-kr-yokjido
+  year: -7999
+  title:
+    ko: "통영 욕지도 패총"
+  summary:
+    ko: "욕지도의 조개더미로 중석기에서 신석기에 이르는 유물이 나왔다. 뗀석기에서 간석기로 넘어가는 과정을 보여 주며, 돌무지 시설 아래에서 사람뼈 두 구가 발견되었다."
+  subjects: [prehistory]
+  tags: [relic]
+  sources: ["국가유산청 국가유산포털 「통영 욕지도 패총」(시도기념물)"]
+  places: [{ name: "통영 욕지도 패총", at: [128.2621, 34.6366] }]
+  period: "중석기~신석기"
+
+- id: pre-kr-yeondaedo
+  year: -7999
+  title:
+    ko: "통영 연대도 패총"
+  summary:
+    ko: "섬 동북쪽의 조개더미 유적이다. 일곱 층 가운데 아래 네 층이 신석기 문화층으로 토기·무덤·사람뼈가 나왔다. 일본 신석기 토기도 나와 바다 건너 교류를 짐작하게 한다."
+  subjects: [prehistory]
+  tags: [relic]
+  sources: ["국가유산청 국가유산포털 「통영 연대도 패총」(사적)"]
+  places: [{ name: "통영 연대도 패총", at: [128.4010, 34.7386] }]
+  period: "신석기"
+
+- id: pre-kr-bibongni
+  year: -7999
+  title:
+    ko: "창녕 비봉리 패총"
+  summary:
+    ko: "내륙에서 처음 발견된 신석기 조개더미이다. 한국에서 가장 오래된 배와 망태기, 큰 도토리 저장 시설이 나왔다."
+  subjects: [prehistory]
+  tags: [relic]
+  sources: ["국가유산청 국가유산포털 「창녕 비봉리 패총」(사적)"]
+  places: [{ name: "창녕 비봉리 패총", at: [128.6453, 35.4106] }]
+  period: "신석기"
+
+- id: pre-kr-oido
+  year: -7999
+  title:
+    ko: "시흥 오이도 유적"
+  summary:
+    ko: "서해안 섬(지금은 육지) 곳곳에 조개더미와 집자리가 흩어진 유적이다. 신석기 시대부터 통일 신라까지 사람이 이어 살았다."
+  subjects: [prehistory]
+  tags: [relic]
+  sources: ["국가유산청 국가유산포털 「시흥 오이도 유적」(사적)"]
+  places: [{ name: "시흥 오이도", at: [126.6955, 37.3427] }]
+  period: "신석기"
+
+- id: pre-kr-sammokdo
+  year: -7999
+  title:
+    ko: "삼목도 선사 유적"
+  summary:
+    ko: "서해 섬 지역에서 확인된 가장 큰 신석기 마을 유적으로 움집터 17기가 나왔다."
+  subjects: [prehistory]
+  tags: [relic]
+  sources: ["국가유산청 국가유산포털 「삼목도 선사 유적」(시도기념물)"]
+  places: [{ name: "삼목도", at: [126.4757, 37.4896] }]
+  period: "신석기"
+
+- id: pre-kr-jodongni
+  year: -7999
+  title:
+    ko: "충주 조동리 유적"
+  summary:
+    ko: "남한강가의 유적으로 신석기와 청동기 문화층이 잘 남아 있다. 신석기 층에서 빗살무늬 토기가 많이 나왔는데 한강·금강·남해안 계통의 특징이 함께 보인다."
+  subjects: [prehistory]
+  tags: [relic]
+  sources: ["국가유산청 국가유산포털 「충주 조동리 유적」(시도기념물)"]
+  places: [{ name: "충주 조동리", at: [127.9629, 37.0255] }]
+  period: "신석기·청동기"
+
+- id: pre-kr-yulli
+  year: -7999
+  title:
+    ko: "금곡동 율리 바위그늘유적"
+  summary:
+    ko: "금정산 기슭 암벽 아래의 바위그늘 유적이다. 화덕 자리 셋과 돌무지 시설이 확인되었고 빗살무늬 토기와 간돌도끼가 나왔다. 신석기 후기부터 청동기 시대까지 살림 자리로 쓰인 것으로 추정한다."
+  subjects: [prehistory]
+  tags: [relic]
+  sources: ["국가유산청 국가유산포털 「금곡동 율리 바위그늘유적」(시도기념물)"]
+  places: [{ name: "부산 율리 바위그늘", at: [129.0169, 35.2470] }]
+  period: "신석기 후기~청동기"
+
+- id: pre-kr-yunggimun
+  year: -7999
+  title:
+    ko: "토기 융기문 발"
+  summary:
+    ko: "부산 영도 영선동 조개더미에서 나온 신석기 전기의 토기이다(높이 12.4cm). 아가리 한쪽에 따르는 귀때가 있고, 그 아래에 덧띠를 W자 꼴로 붙여 꾸몄다. 동아대학교박물관에 있다."
+  subjects: [prehistory]
+  tags: [relic]
+  sources: ["국가유산청 국가유산포털 「토기 융기문 발」(보물)"]
+  period: "신석기 전기"
+
+- id: pre-kr-jaksalchok
+  year: -7999
+  title:
+    ko: "고래뼈에 박힌 사슴뿔 작살촉"
+  summary:
+    ko: "울산 황성동 신석기 유적에서 2010년에 나온 유물로, 사슴뿔을 갈아 만든 작살촉이 고래뼈에 박힌 채 발견되었다. 반구천 암각화의 고래잡이 그림이 실제 있었던 일임을 보여 준다. 울산박물관에 있다."
+  subjects: [prehistory]
+  tags: [relic]
+  sources: ["국가유산청 국가유산포털 「고래뼈에 박힌 사슴뿔 작살촉」(국가민속문화유산)"]
+  period: "신석기"
+
+- id: pre-kr-golchok
+  year: -7999
+  title:
+    ko: "골촉 박힌 고래뼈"
+  summary:
+    ko: "울산 황성동 신석기 유적에서 나온 고래뼈로, 사슴뼈로 만든 작살 끝이 등뼈와 어깨뼈에 박혀 있다. 울산박물관에 있다."
+  subjects: [prehistory]
+  tags: [relic]
+  sources: ["국가유산청 국가유산포털 「골촉 박힌 고래뼈」(시도유형문화유산)"]
+  period: "신석기"
+
+# ── 세계유산 (유네스코 세계유산 목록) ─────────────────────────
+
+- id: pre-wh-10
+  year: -699999
+  title:
+    ko: "아와시강 하류 유역 (에티오피아)"
+  summary:
+    ko: "아프리카에서 손꼽히는 인류 화석 산지이다. 가장 오래된 화석은 400만 년 전까지 올라간다. 1974년에 뼈 52조각이 나와 「루시」의 모습을 되살릴 수 있었다."
+  subjects: [prehistory]
+  tags: [relic]
+  sources: ["유네스코 세계유산 목록 10 「Lower Valley of the Awash」", "위키데이터(좌표)"]
+  places: [{ name: "아와시강 하류 유역", at: [40.5794, 11.1000] }]
+  dateLabel: "약 400만 년 전부터"
+  sortYear: -3999999
+  regionUnits: [sub-saharan-africa]
+
+- id: pre-wh-39
+  year: -699999
+  title:
+    ko: "응고롱고로 보전 지역 (탄자니아)"
+  summary:
+    ko: "세계에서 가장 큰 칼데라인 응고롱고로 분화구를 품은 보전 지역이다. 인류 진화의 긴 흔적이 나왔고, 약 360만 년 전 초기 인류의 발자국이 남아 있다."
+  subjects: [prehistory]
+  tags: [relic]
+  sources: ["유네스코 세계유산 목록 39 「Ngorongoro Conservation Area」", "위키데이터(좌표)"]
+  places: [{ name: "응고롱고로 보전 지역", at: [35.4600, -3.2100] }]
+  dateLabel: "약 360만 년 전"
+  sortYear: -3599999
+  regionUnits: [sub-saharan-africa]
+
+- id: pre-wh-915
+  year: -699999
+  title:
+    ko: "남아프리카의 인류 화석 유적 (남아프리카 공화국)"
+  summary:
+    ko: "오스트랄로피테쿠스 화석이 나온 동굴들이다. 1924년에 타웅 아이의 머리뼈가 발견되었고, 마카판 계곡에는 약 330만 년 전까지 올라가는 사람의 흔적이 있다."
+  subjects: [prehistory]
+  tags: [relic]
+  sources: ["유네스코 세계유산 목록 915 「Fossil Hominid Sites of South Africa」", "위키데이터(좌표)"]
+  places: [{ name: "남아프리카의 인류 화석 유적", at: [27.6624, -25.9672] }]
+  dateLabel: "약 330만 년 전부터"
+  sortYear: -3299999
+  regionUnits: [sub-saharan-africa]
+
+- id: pre-wh-1396
+  year: -699999
+  title:
+    ko: "렝공 계곡 고고 유산 (말레이시아)"
+  summary:
+    ko: "고고 유적 네 곳으로, 200만 년 가까운 기간에 걸친 초기 인류의 기록이 한 지역에 남아 있다. 구석기 석기를 만들던 자리가 한데와 동굴에서 나왔다."
+  subjects: [prehistory]
+  tags: [relic]
+  sources: ["유네스코 세계유산 목록 1396 「Archaeological Heritage of the Lenggong Valley」", "위키데이터(좌표)"]
+  places: [{ name: "렝공 계곡 고고 유산", at: [100.9720, 5.0679] }]
+  dateLabel: "약 200만 년 전부터"
+  sortYear: -1999999
+  regionUnits: [southeast-asia]
+
+- id: pre-wh-593
+  year: -699999
+  title:
+    ko: "상이란 초기 인류 유적 (인도네시아)"
+  summary:
+    ko: "1936~1941년 발굴에서 처음 인류 화석이 나온 뒤 호모 에렉투스 등의 화석 50점이 발견되었다. 150만 년 동안 사람이 살아 온 곳이다."
+  subjects: [prehistory]
+  tags: [relic]
+  sources: ["유네스코 세계유산 목록 593 「Sangiran Early Man Site」", "위키데이터(좌표)"]
+  places: [{ name: "상이란 초기 인류 유적", at: [110.8500, -7.4500] }]
+  dateLabel: "약 150만 년 전부터"
+  sortYear: -1499999
+  regionUnits: [southeast-asia]
+
+- id: pre-wh-989
+  year: -699999
+  title:
+    ko: "아타푸에르카 고고 유적 (스페인)"
+  summary:
+    ko: "유럽에서 가장 오래된 사람들의 화석이 나온 동굴들이다. 약 100만 년 전부터의 화석 기록이 이어진다."
+  subjects: [prehistory]
+  tags: [relic]
+  sources: ["유네스코 세계유산 목록 989 「Archaeological Site of Atapuerca」", "위키데이터(좌표)"]
+  places: [{ name: "아타푸에르카 고고 유적", at: [-3.5195, 42.3501] }]
+  dateLabel: "약 100만 년 전부터"
+  sortYear: -999999
+  regionUnits: [europe]
+
+- id: pre-wh-449
+  year: -699999
+  title:
+    ko: "저우커우뎬 베이징 원인 유적 (중국)"
+  summary:
+    ko: "베이징 남서쪽 42km에 있는 유적이다. 중기 플라이스토세에 살던 베이징 원인의 화석과 기원전 18,000~11,000년의 현생 인류 화석이 나왔다."
+  subjects: [prehistory]
+  tags: [relic]
+  sources: ["유네스코 세계유산 목록 449 「Peking Man Site at Zhoukoudian」", "위키데이터(좌표)"]
+  places: [{ name: "저우커우뎬 베이징 원인 유적", at: [115.9248, 39.6890] }]
+  dateLabel: "중기 플라이스토세부터"
+  sortYear: -700000
+
+- id: pre-wh-1393
+  year: -699999
+  title:
+    ko: "카르멜산 인류 진화 유적 (이스라엘)"
+  summary:
+    ko: "타분·자말·엘와드·스쿨 네 동굴로 이루어진 유적이다. 50만 년에 걸친 인류 진화의 문화층이 쌓여 있다."
+  subjects: [prehistory]
+  tags: [relic]
+  sources: ["유네스코 세계유산 목록 1393 「Sites of Human Evolution at Mount Carmel: The Nahal Me'arot / Wadi el-Mughara Caves」", "위키데이터(좌표)"]
+  places: [{ name: "카르멜산 인류 진화 유적", at: [34.9661, 32.6708] }]
+  dateLabel: "약 50만 년 전부터"
+  sortYear: -499999
+  regionUnits: [middle-east]
+
+- id: pre-wh-1735
+  year: -699999
+  endYear: -7999
+  title:
+    ko: "파야 옛 경관 (아랍에미리트)"
+  summary:
+    ko: "페르시아만과 아라비아해 사이의 사막 유적이다. 21만~6천 년 전, 곧 중기 구석기에서 신석기에 걸쳐 사람이 살며 메마른 때와 비 오는 때에 맞추어 간 흔적이 쌓여 있다."
+  subjects: [prehistory]
+  tags: [relic]
+  sources: ["유네스코 세계유산 목록 1735 「Faya Palaeolandscape」", "위키데이터(좌표)"]
+  places: [{ name: "파야 옛 경관", at: [55.8390, 25.1114] }]
+  dateLabel: "21만~6천 년 전"
+  sortYear: -209999
+  regionUnits: [middle-east]
+
+- id: pre-wh-1744
+  year: -699999
+  title:
+    ko: "호라마바드 계곡 선사 유적 (이란)"
+  summary:
+    ko: "동굴 다섯 곳과 바위그늘 한 곳으로 이루어진 유적이다. 6만 3천 년 전부터 사람이 살았고 중기에서 후기 구석기의 흔적이 나온다."
+  subjects: [prehistory]
+  tags: [relic]
+  sources: ["유네스코 세계유산 목록 1744 「Prehistoric Sites of the Khorramabad Valley」", "위키데이터(좌표)"]
+  places: [{ name: "호라마바드 계곡 선사 유적", at: [48.3456, 33.4922] }]
+  dateLabel: "약 6만 3천 년 전부터"
+  sortYear: -62999
+  regionUnits: [middle-east]
+
+- id: pre-wh-167
+  year: -699999
+  title:
+    ko: "윌랜드라 호수 지역 (오스트레일리아)"
+  summary:
+    ko: "플라이스토세의 호수와 모래 지형이 화석처럼 남은 곳이다. 6만~4만 5천 년 전에 사람이 산 흔적이 나와 오스트레일리아 대륙의 인류사를 밝히는 기준이 된다."
+  subjects: [prehistory]
+  tags: [relic]
+  sources: ["유네스코 세계유산 목록 167 「Willandra Lakes Region」", "위키데이터(좌표)"]
+  places: [{ name: "윌랜드라 호수 지역", at: [143.1014, -33.6181] }]
+  dateLabel: "6만~4만 5천 년 전"
+  sortYear: -59999
+  regionUnits: [oceania]
+
+- id: pre-wh-1527
+  year: -699999
+  title:
+    ko: "슈바벤 유라의 동굴과 빙하기 예술 (독일)"
+  summary:
+    ko: "동굴 여섯 곳에서 4만 3천~3만 3천 년 전의 유물이 나왔다. 동굴사자·매머드·말을 새긴 작은 조각상과 악기, 치레걸이가 있다."
+  subjects: [prehistory]
+  tags: [relic]
+  sources: ["유네스코 세계유산 목록 1527 「Caves and Ice Age Art in the Swabian Jura」", "위키데이터(좌표)"]
+  places: [{ name: "슈바벤 유라의 동굴과 빙하기 예술", at: [9.7656, 48.3878] }]
+  dateLabel: "4만 3천~3만 3천 년 전"
+  sortYear: -42999
+  regionUnits: [europe]
+
+- id: pre-wh-1076
+  year: -699999
+  title:
+    ko: "고부스탄 암각화 문화 경관 (아제르바이잔)"
+  summary:
+    ko: "바위 언덕 세 곳에 암각화 6,000점 이상이 남아 있어 4만 년에 걸친 바위그림을 보여 준다. 사람이 살던 동굴과 무덤도 함께 있다."
+  subjects: [prehistory]
+  tags: [relic]
+  sources: ["유네스코 세계유산 목록 1076 「Gobustan Rock Art Cultural Landscape」", "위키데이터(좌표)"]
+  places: [{ name: "고부스탄 암각화 문화 경관", at: [49.3889, 40.1056] }]
+  dateLabel: "암각화 4만 년"
+  sortYear: -39999
+  regionUnits: [europe, middle-east]
+
+- id: pre-wh-310
+  year: -699999
+  title:
+    ko: "알타미라 동굴과 스페인 북부의 구석기 동굴 벽화 (스페인)"
+  summary:
+    ko: "알타미라 동굴과 스페인 북부의 벽화 동굴 열일곱 곳을 묶은 유산이다. 기원전 35,000~11,000년에 우랄산맥에서 이베리아반도까지 퍼진 구석기 동굴 미술의 절정을 보여 준다."
+  subjects: [prehistory]
+  tags: [relic]
+  sources: ["유네스코 세계유산 목록 310 「Cave of Altamira and Paleolithic Cave Art of Northern Spain」", "위키데이터(좌표)"]
+  places: [{ name: "알타미라 동굴과 스페인 북부의 구석기 동굴 벽화", at: [-4.1167, 43.3833] }]
+  dateLabel: "기원전 35,000~11,000년"
+  sortYear: -34999
+  regionUnits: [europe]
+
+- id: pre-wh-1426
+  year: -699999
+  title:
+    ko: "쇼베 동굴 (프랑스)"
+  summary:
+    ko: "지금까지 알려진 가장 오래된 구상 그림이 남은 동굴로, 그림은 3만 2천~3만 년 전의 것이다. 약 2만 년 전 바위가 무너져 입구가 막힌 뒤 1994년에 발견되어 보존 상태가 좋다."
+  subjects: [prehistory]
+  tags: [relic]
+  sources: ["유네스코 세계유산 목록 1426 「Decorated Cave of Pont d'Arc, known as Grotte Chauvet-Pont d'Arc, Ardèche」", "위키데이터(좌표)"]
+  places: [{ name: "쇼베 동굴", at: [4.4161, 44.3881] }]
+  dateLabel: "3만 2천~3만 년 전"
+  sortYear: -31999
+  regionUnits: [europe]
+
+- id: pre-wh-1438
+  year: -699999
+  endYear: -7999
+  title:
+    ko: "짱안 경관 단지 (베트남)"
+  summary:
+    ko: "석회암 봉우리와 물에 잠긴 골짜기가 이어진 경관이다. 높이가 다른 동굴들에서 3만 년 넘게 이어진 수렵·채집민의 흔적이 나왔고, 신석기와 청동기를 거쳐 역사 시대로 이어진다."
+  subjects: [prehistory]
+  tags: [relic]
+  sources: ["유네스코 세계유산 목록 1438 「Trang An Landscape Complex」", "위키데이터(좌표)"]
+  places: [{ name: "짱안 경관 단지", at: [105.9156, 20.2557] }]
+  dateLabel: "3만 년 전부터"
+  sortYear: -29999
+  regionUnits: [southeast-asia]
+
+- id: pre-wh-85
+  year: -699999
+  title:
+    ko: "베제르 계곡의 선사 유적과 장식 동굴 (프랑스)"
+  summary:
+    ko: "구석기 유적 147곳과 벽화 동굴 25곳이 모인 골짜기이다. 1940년에 발견된 라스코 동굴에는 짐승 100여 마리를 그린 사냥 그림이 있다."
+  subjects: [prehistory]
+  tags: [relic]
+  sources: ["유네스코 세계유산 목록 85 「Prehistoric Sites and Decorated Caves of the Vézère Valley」", "위키데이터(좌표)"]
+  places: [{ name: "베제르 계곡의 선사 유적과 장식 동굴", at: [1.1700, 45.0575] }]
+  dateLabel: "구석기"
+  regionUnits: [europe]
+
+- id: pre-wh-866
+  year: -699999
+  title:
+    ko: "코아 계곡과 시에가 베르데의 선사 암각화 (포르투갈·스페인)"
+  summary:
+    ko: "포르투갈 코아 계곡과 스페인 시에가 베르데의 강가 바위에 짐승 그림 수천 점을 새긴 유적이다. 구석기 말부터 여러 천 년에 걸쳐 새겼다."
+  subjects: [prehistory]
+  tags: [relic]
+  sources: ["유네스코 세계유산 목록 866 「Prehistoric Rock Art Sites in the Côa Valley and Siega Verde」", "위키데이터(좌표)"]
+  places: [{ name: "코아 계곡과 시에가 베르데의 선사 암각화", at: [-6.6611, 40.6975] }]
+  dateLabel: "구석기 말부터"
+  regionUnits: [europe]
+
+- id: pre-wh-1743
+  year: -699999
+  title:
+    ko: "슐간타시 동굴 벽화 (러시아)"
+  summary:
+    ko: "남우랄산맥의 동굴로 후기 구석기의 벽화가 남아 있다. 매머드·털코뿔소·들소·말과 사람 꼴, 기하 무늬를 그렸다."
+  subjects: [prehistory]
+  tags: [relic]
+  sources: ["유네스코 세계유산 목록 1743 「Rock Paintings of Shulgan-Tash Cave」", "위키데이터(좌표)"]
+  places: [{ name: "슐간타시 동굴 벽화", at: [57.0639, 53.0444] }]
+  dateLabel: "후기 구석기"
+  regionUnits: [europe]
+
+- id: pre-wh-17
+  year: -699999
+  title:
+    ko: "오모강 하류 유역 (에티오피아)"
+  summary:
+    ko: "투르카나호 가까이의 선사 유적이다. 인류 화석이 많이 나와 인류 진화 연구의 바탕이 되었다."
+  subjects: [prehistory]
+  tags: [relic]
+  sources: ["유네스코 세계유산 목록 17 「Lower Valley of the Omo」", "위키데이터(좌표)"]
+  places: [{ name: "오모강 하류 유역", at: [36.0138, 4.4969] }]
+  dateLabel: "인류 화석"
+  regionUnits: [sub-saharan-africa]
+
+- id: pre-wh-1572
+  year: -7999
+  title:
+    ko: "괴베클리 테페 (튀르키예)"
+  summary:
+    ko: "기원전 9600~8200년, 토기를 쓰기 전의 신석기에 수렵·채집민이 세운 거석 건축이다. T자 꼴 돌기둥에 들짐승을 새겼다."
+  subjects: [prehistory]
+  tags: [relic]
+  sources: ["유네스코 세계유산 목록 1572 「Göbekli Tepe」", "위키데이터(좌표)"]
+  places: [{ name: "괴베클리 테페", at: [38.9225, 37.2231] }]
+  dateLabel: "기원전 9600~8200년"
+  sortYear: -9599
+  regionUnits: [europe, middle-east]
+
+- id: pre-wh-1405
+  year: -7999
+  title:
+    ko: "차탈회위크 (튀르키예)"
+  summary:
+    ko: "남아나톨리아 고원의 두 언덕 유적이다. 동쪽 언덕에는 기원전 7400~6200년의 신석기 층 열여덟 개가 쌓여 있고 벽화·부조·조각이 나왔다. 사람들이 정착 생활로 옮겨 간 모습을 보여 준다."
+  subjects: [prehistory]
+  tags: [relic]
+  sources: ["유네스코 세계유산 목록 1405 「Neolithic Site of Çatalhöyük」", "위키데이터(좌표)"]
+  places: [{ name: "차탈회위크", at: [32.8283, 37.6675] }]
+  dateLabel: "기원전 7400~6200년"
+  sortYear: -7399
+  regionUnits: [europe, middle-east]
+
+- id: pre-wh-848
+  year: -7999
+  title:
+    ko: "히로키티아 (키프로스)"
+  summary:
+    ko: "기원전 7천년기부터 4천년기까지 사람이 산 마을 유적으로, 동지중해에서 손꼽히는 선사 유적이다."
+  subjects: [prehistory]
+  tags: [relic]
+  sources: ["유네스코 세계유산 목록 848 「Choirokoitia」", "위키데이터(좌표)"]
+  places: [{ name: "히로키티아", at: [33.3437, 34.7967] }]
+  dateLabel: "기원전 7천년기~4천년기"
+  sortYear: -6999
+  regionUnits: [europe]
+
+- id: pre-wh-1363
+  year: -7999
+  title:
+    ko: "알프스 주변의 선사 시대 말뚝 주거지 (스위스 등 6개국)"
+  summary:
+    ko: "알프스 둘레의 호숫가·강가·늪에 말뚝을 박아 지은 마을 유적 111곳이다. 기원전 5000~500년, 신석기와 청동기 시대의 생활을 보여 준다. 스위스·오스트리아·프랑스·독일·이탈리아·슬로베니아에 걸쳐 있다."
+  subjects: [prehistory]
+  tags: [relic]
+  sources: ["유네스코 세계유산 목록 1363 「Prehistoric Pile Dwellings around the Alps」", "위키데이터(좌표)"]
+  places: [{ name: "알프스 주변의 선사 시대 말뚝 주거지", at: [9.1210, 47.6746] }]
+  dateLabel: "기원전 5000~500년"
+  sortYear: -4999
+  regionUnits: [europe]
+
+- id: pre-wh-1725
+  year: -7999
+  title:
+    ko: "카르나크 열석 (프랑스)"
+  summary:
+    ko: "브르타뉴에 기원전 5000~2300년 무렵 신석기 시대에 세운 거석들이 빽빽이 모여 있다. 땅 생김새와 물길에 맞추어 줄지어 세웠다."
+  subjects: [prehistory]
+  tags: [relic]
+  sources: ["유네스코 세계유산 목록 1725 「Megaliths of Carnac and of the shores of Morbihan」", "위키데이터(좌표)"]
+  places: [{ name: "카르나크 열석", at: [-3.0797, 47.5933] }]
+  dateLabel: "기원전 5000~2300년 무렵"
+  sortYear: -4998
+  regionUnits: [europe]
+
+- id: pre-wh-1730
+  year: -7999
+  title:
+    ko: "사르데냐의 도무스 데 야나스 (이탈리아)"
+  summary:
+    ko: "사르데냐섬에서 기원전 5천년기~3천년기에 바위를 파서 만든 무덤들이다. 「요정의 집」이라 불린다."
+  subjects: [prehistory]
+  tags: [relic]
+  sources: ["유네스코 세계유산 목록 1730 「Funerary Tradition in the Prehistory of Sardinia – The domus de janas」", "위키데이터(좌표)"]
+  places: [{ name: "사르데냐의 도무스 데 야나스", at: [8.9510, 40.0850] }]
+  dateLabel: "기원전 5천년기~3천년기"
+  sortYear: -4997
+  regionUnits: [europe]
+
+- id: pre-wh-1654
+  year: -7999
+  title:
+    ko: "오네가호와 백해의 암각화 (러시아)"
+  summary:
+    ko: "카렐리야의 바위에 약 7천~6천 년 전 신석기 시대에 새긴 암각화 4,500점이다. 300km 떨어진 오네가호와 백해 두 곳에 나뉘어 있다."
+  subjects: [prehistory]
+  tags: [relic]
+  sources: ["유네스코 세계유산 목록 1654 「Petroglyphs of Lake Onega and the White Sea」", "위키데이터(좌표)"]
+  places: [{ name: "오네가호와 백해의 암각화", at: [36.0126, 61.7299] }]
+  dateLabel: "약 7천~6천 년 전"
+  sortYear: -4996
+  regionUnits: [europe]
+
+- id: pre-wh-1599
+  year: -7999
+  title:
+    ko: "크셰미온키 선사 줄무늬 플린트 광산 (폴란드)"
+  summary:
+    ko: "기원전 3900~1600년 무렵, 신석기에서 청동기에 걸쳐 줄무늬 플린트(부싯돌)를 캐던 광산 네 곳이다. 갱과 구덩이 4,000여 개가 남아 있고, 플린트는 주로 도끼를 만드는 데 썼다."
+  subjects: [prehistory]
+  tags: [relic]
+  sources: ["유네스코 세계유산 목록 1599 「Krzemionki Prehistoric Striped Flint Mining Region」", "위키데이터(좌표)"]
+  places: [{ name: "크셰미온키 선사 줄무늬 플린트 광산", at: [21.5023, 50.9680] }]
+  dateLabel: "기원전 3900~1600년 무렵"
+  sortYear: -3899
+  regionUnits: [europe]
+
+- id: pre-wh-1592
+  year: -7999
+  title:
+    ko: "량주 유적 (중국)"
+  summary:
+    ko: "기원전 3300~2300년 무렵 창장강 하류의 신석기 후기 유적이다. 벼농사를 바탕으로 하나의 믿음 체계를 가진 초기 지역 국가의 모습을 보여 준다."
+  subjects: [prehistory]
+  tags: [relic]
+  sources: ["유네스코 세계유산 목록 1592 「Archaeological Ruins of Liangzhu City」", "위키데이터(좌표)"]
+  places: [{ name: "량주 유적", at: [119.9853, 30.3967] }]
+  dateLabel: "기원전 3300~2300년 무렵"
+  sortYear: -3299
+
+- id: pre-wh-130
+  year: -7999
+  title:
+    ko: "할사플리니 지하 묘역 (몰타)"
+  summary:
+    ko: "기원전 2500년 무렵에 땅속 석회암을 파서 만든 큰 구조물이다. 처음에는 성소였다가 묘지가 된 것으로 본다."
+  subjects: [prehistory]
+  tags: [relic]
+  sources: ["유네스코 세계유산 목록 130 「Ħal Saflieni Hypogeum」", "위키데이터(좌표)"]
+  places: [{ name: "할사플리니 지하 묘역", at: [14.5069, 35.8696] }]
+  dateLabel: "기원전 2500년 무렵"
+  sortYear: -2499
+  regionUnits: [europe]
+
+- id: pre-wh-373
+  year: -7999
+  title:
+    ko: "스톤헨지와 에이브버리 (영국)"
+  summary:
+    ko: "스톤헨지와 에이브버리는 선돌을 둥글게 세운 거석 유적이다. 둘레의 신석기 유적과 함께 선사 시대를 보여 준다."
+  subjects: [prehistory]
+  tags: [relic]
+  sources: ["유네스코 세계유산 목록 373 「Stonehenge, Avebury and Associated Sites」", "위키데이터(좌표)"]
+  places: [{ name: "스톤헨지와 에이브버리", at: [-1.8261, 51.1789] }]
+  dateLabel: "신석기"
+  regionUnits: [europe]
+
+- id: pre-wh-514
+  year: -7999
+  title:
+    ko: "오크니 제도 신석기 유적 (영국)"
+  summary:
+    ko: "큰 돌방무덤(매스 하우), 돌을 둥글게 세운 의례 터 두 곳, 마을 유적(스카라 브레)으로 이루어진 신석기 유적이다."
+  subjects: [prehistory]
+  tags: [relic]
+  sources: ["유네스코 세계유산 목록 514 「Heart of Neolithic Orkney」", "위키데이터(좌표)"]
+  places: [{ name: "오크니 제도 신석기 유적", at: [-3.2150, 58.9975] }]
+  dateLabel: "신석기"
+  regionUnits: [europe]
+
+- id: pre-wh-659
+  year: -7999
+  title:
+    ko: "브루 나 보너 (아일랜드)"
+  summary:
+    ko: "보인강 북쪽 기슭의 뉴그레인지·노스·다우스 세 유적이다. 유럽에서 선사 거석 미술이 가장 많이 모여 있다."
+  subjects: [prehistory]
+  tags: [relic]
+  sources: ["유네스코 세계유산 목록 659 「Brú na Bóinne - Archaeological Ensemble of the Bend of the Boyne」", "위키데이터(좌표)"]
+  places: [{ name: "브루 나 보너", at: [-6.4493, 53.6928] }]
+  dateLabel: "선사"
+  regionUnits: [europe]
+
+- id: pre-wh-1006
+  year: -7999
+  title:
+    ko: "스피엔느 신석기 플린트 광산 (벨기에)"
+  summary:
+    ko: "넓이 100ha가 넘는 신석기 플린트(부싯돌) 광산으로, 유럽에서 가장 크고 이른 옛 광산이다. 같은 시기의 마을과 이어져 있다."
+  subjects: [prehistory]
+  tags: [relic]
+  sources: ["유네스코 세계유산 목록 1006 「Neolithic Flint Mines at Spiennes (Mons)」", "위키데이터(좌표)"]
+  places: [{ name: "스피엔느 신석기 플린트 광산", at: [3.9826, 50.4200] }]
+  dateLabel: "신석기"
+  regionUnits: [europe]
+
+- id: pre-wh-1501
+  year: -7999
+  title:
+    ko: "안테케라 고인돌 유적 (스페인)"
+  summary:
+    ko: "멩가 고인돌과 비에라 고인돌, 엘 로메랄 돌방무덤 세 거석 기념물로 이루어진 유적이다. 신석기와 청동기 시대에 큰 돌로 지었다."
+  subjects: [prehistory]
+  tags: [relic]
+  sources: ["유네스코 세계유산 목록 1501 「Antequera Dolmens Site」", "위키데이터(좌표)"]
+  places: [{ name: "안테케라 고인돌 유적", at: [-4.5481, 37.0233] }]
+  dateLabel: "신석기~청동기"
+  regionUnits: [europe]
+
+- id: pre-wh-1687
+  year: -7999
+  title:
+    ko: "고대 예리코 텔 에스술탄 (팔레스타인)"
+  summary:
+    ko: "성벽과 도랑, 탑을 갖춘 큰 정착 마을이 신석기 시대에 이미 있던 유적이다. 사람들이 한곳에 모여 살며 생업과 믿음이 바뀌어 간 모습을 보여 준다."
+  subjects: [prehistory]
+  tags: [relic]
+  sources: ["유네스코 세계유산 목록 1687 「Ancient Jericho/Tell es-Sultan」", "위키데이터(좌표)"]
+  places: [{ name: "고대 예리코 텔 에스술탄", at: [35.4446, 31.8717] }]
+  dateLabel: "신석기"
+  regionUnits: [middle-east]
+
+- id: pre-wh-575
+  year: -7999
+  title:
+    ko: "반 치앙 유적 (타이)"
+  summary:
+    ko: "동남아시아에서 발견된 가장 중요한 선사 마을 유적으로 꼽힌다. 이 지역에서 가장 이른 농경과 금속 제작의 흔적이 나왔다."
+  subjects: [prehistory]
+  tags: [relic]
+  sources: ["유네스코 세계유산 목록 575 「Ban Chiang Archaeological Site」", "위키데이터(좌표)"]
+  places: [{ name: "반 치앙 유적", at: [103.3583, 17.5486] }]
+  dateLabel: "선사"
+  regionUnits: [southeast-asia]
+
+- id: pre-wh-1147
+  year: -7999
+  title:
+    ko: "로페-오칸다 생태계와 문화 경관 (가봉)"
+  summary:
+    ko: "열대 우림과 사바나가 맞닿은 곳이다. 신석기와 철기 시대 유적, 암각화 1,800여 점이 남아 여러 민족이 오고우에강 골짜기를 따라 옮겨 간 길을 보여 준다."
+  subjects: [prehistory]
+  tags: [relic]
+  sources: ["유네스코 세계유산 목록 1147 「Ecosystem and Relict Cultural Landscape of Lopé-Okanda」", "위키데이터(좌표)"]
+  places: [{ name: "로페-오칸다 생태계와 문화 경관", at: [11.5000, -0.5000] }]
+  dateLabel: "신석기·철기"
+  regionUnits: [sub-saharan-africa]
