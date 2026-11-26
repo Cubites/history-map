@@ -13,7 +13,7 @@ interface Props {
 
 /** 화살표 시작을 기준점(나라 이름표의 가운데, 시작 점 ●)에서 띄우는 거리 */
 const END_GAP = 10;
-/** 화살촉 크기(px, 2026-11-23: 9 → 14). 선은 화살촉의 REF 자리에서 끝나고 화살촉 끝은 그 앞으로 TIP만큼 나간다 */
+/** 화살촉 크기(px, 2026-11-23: 9 → 14). 모양은 뒤쪽 가운데가 V자로 파인 쐐기(2026-11-26: 삼각형 → 쐐기, 전선 화살표·진군로도 같음). 선은 화살촉의 REF 자리에서 끝나고 화살촉 끝은 그 앞으로 TIP만큼 나간다 */
 const HEAD = 14;
 const HEAD_REF = 6;
 const TIP = ((10 - HEAD_REF) * HEAD) / 10;
@@ -74,13 +74,13 @@ export function ArrowLayer({ data, event, selectedId, projection }: Props) {
       <defs>
         {/* 흰 테두리(2026-11-23): 같은 선·화살촉을 흰색으로 조금 굵게 먼저 그리고 그 위에 색 선을 그린다 */}
         <marker id="arrowhead-halo" viewBox="0 0 10 10" refX={HEAD_REF} refY="5" markerWidth={HEAD} markerHeight={HEAD} markerUnits="userSpaceOnUse" orient="auto" overflow="visible">
-          <path d="M0,0L10,5L0,10z" className="arrowhead-halo" />
+          <path d="M0,0L10,5L0,10L3,5z" className="arrowhead-halo" />
         </marker>
         <marker id="arrowhead-in" viewBox="0 0 10 10" refX={HEAD_REF} refY="5" markerWidth={HEAD} markerHeight={HEAD} markerUnits="userSpaceOnUse" orient="auto">
-          <path d="M0,0L10,5L0,10z" className="arrowhead-in" />
+          <path d="M0,0L10,5L0,10L3,5z" className="arrowhead-in" />
         </marker>
         <marker id="arrowhead-out" viewBox="0 0 10 10" refX={HEAD_REF} refY="5" markerWidth={HEAD} markerHeight={HEAD} markerUnits="userSpaceOnUse" orient="auto">
-          <path d="M0,0L10,5L0,10z" className="arrowhead-out" />
+          <path d="M0,0L10,5L0,10L3,5z" className="arrowhead-out" />
         </marker>
       </defs>
       {arrows.map((a) => (

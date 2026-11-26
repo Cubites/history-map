@@ -105,6 +105,12 @@ function visibleSize(size: Size, third = false): Size {
   return { width: size.width, height: Math.max(120, size.height - cover) };
 }
 
+/** 휴대폰에서 나라 정보 판이 지도 아래쪽을 늘 가리는 높이(px). useBottomSheet.ts가 .app에 직접 적어 둔 --sheet-cover를 읽는다(판이 없는 PC는 0) */
+function sheetCover(): number {
+  const value = document.querySelector<HTMLElement>('.app')?.style.getPropertyValue('--sheet-cover');
+  return value ? parseFloat(value) || 0 : 0;
+}
+
 /** 휴대폰 화면인가 (휴대폰 CSS와 같은 기준) */
 const isMobile = () => window.matchMedia('(max-width: 768px)').matches;
 
@@ -162,7 +168,11 @@ function readPalette(el: Element): Palette {
 const REGIONS_CLOSE_MS = 150;
 
 export default function WorldMap({ data }: { data: StaticData }) {
-  const [containerRef, size] = useElementSize<HTMLDivElement>();
+  const [containerRef, measuredSize] = useElementSize<HTMLDivElement>();
+  // 판이 가리는 높이(cover)를 크기에 붙여 넘긴다(2026-11-26): 세계 보기처럼 세계가 화면보다 낮을 때 판 위 보이는 곳 가운데에 오게(view.ts constrain).
+  // 판 높이는 바뀔 수 있어 쓸 때마다 읽는다. 값은 coverRef에 두고, 판 높이가 바뀌면 아래 효과가 새 높이까지 부드럽게 바꿔 가며 지도를 따라 옮긴다
+  const coverRef = useRef(sheetCover());
+  const size = useMemo<Size | null>(() => (measuredSize ? { ...measuredSize, get cover() { return coverRef.current; } } : null), [measuredSize]);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const overlayRef = useRef<SVGSVGElement>(null);
   // 전쟁 보기의 이름표가 겹치면 우선순위가 낮은 것을 숨긴다. 그릴 때마다(확대·이동 포함) 다시 맞춘다
@@ -884,6 +894,50 @@ export default function WorldMap({ data }: { data: StaticData }) {
     },
     [size, s0, draw, setMoving, syncZoom],
   );
+  // 나라 정보 판의 높이가 바뀌면(내림 ↔ 접힘, 이름란 높이 변화) 그에 맞춰 지도를 옮긴다(2026-11-26).
+  // 판이 가리는 높이(.app의 --sheet-cover)가 바뀌는 것을 지켜보다가, 판이 움직이는 시간(0.22초) 동안 가린 높이를 새 값까지 바꿔 가며 시점을 다시 맞춘다.
+  // 옮겨지는 것은 세계가 보이는 곳보다 낮을 때(세계 보기)의 세로 가운데다(view.ts constrain). 확대해서 보던 곳은 그대로 둔다
+  useEffect(() => {
+    const app = document.querySelector<HTMLElement>('.app');
+    if (!app || !size) return;
+    // 처음(또는 화면 크기가 바뀐 뒤)에는 움직임 없이 바로 맞춘다
+    coverRef.current = sheetCover();
+    viewRef.current = constrain(size, s0, viewRef.current);
+    requestDraw();
+    let target = coverRef.current;
+    let raf = 0;
+    const observer = new MutationObserver(() => {
+      const next = sheetCover();
+      if (next === target) return;
+      target = next;
+      cancelAnimationFrame(raf);
+      // 버튼 이동(animateTo) 중이면 그 움직임이 프레임마다 시점을 맞추므로 값만 바꾼다
+      if (flying.current) {
+        coverRef.current = next;
+        return;
+      }
+      const from = coverRef.current;
+      const start = performance.now();
+      const DURATION = 220;
+      movingRef.current = true;
+      const step = (now: number) => {
+        const t = Math.min(1, (now - start) / DURATION);
+        const e = t < 0.5 ? 2 * t * t : 1 - (-2 * t + 2) ** 2 / 2;
+        coverRef.current = from + (next - from) * e;
+        viewRef.current = constrain(size, s0, viewRef.current);
+        draw();
+        if (t < 1) raf = requestAnimationFrame(step);
+        else setMoving(false);
+      };
+      raf = requestAnimationFrame(step);
+    });
+    observer.observe(app, { attributes: true, attributeFilter: ['style'] });
+    return () => {
+      observer.disconnect();
+      cancelAnimationFrame(raf);
+      coverRef.current = target;
+    };
+  }, [size, s0, draw, requestDraw, setMoving]);
   // 전쟁 보기를 열면 전쟁 지역으로 확대하고, 닫으면 들어오기 전 위치로 돌아간다
   const beforeWar = useRef<View | null>(null);
   useEffect(() => {
@@ -1103,11 +1157,19 @@ export default function WorldMap({ data }: { data: StaticData }) {
         </div>
         </div>
       )}
-      {/* 전쟁 보기의 전역 단추(2026-10-26: 타임라인에서 지도 왼쪽 아래로 옮김). 전역 순서대로 위에서 아래로 */}
+      {/* 전쟁 보기의 전역 단추(2026-10-26: 타임라인에서 지도 왼쪽 아래로 옮김). 전역 순서대로 위에서 아래로.
+          2026-11-26: 권역 단추와 같게 평소에는 지금 전역만 보이고, 누르면 다른 전역이 그 위에 펼쳐지며, 고르거나 밖을 누르면 접힌다.
+          권역 단추와 함께 뜨는 일이 없어 같은 상태(regionsOpen·regionsClosing)·ref·모양(.map-regions)을 함께 쓴다 */}
       {war && theater && war.theaters.length > 1 && (
-        <div className="map-controls map-theaters map-ui" role="group" aria-label="전역" onClick={(e) => e.stopPropagation()} onPointerDown={(e) => e.stopPropagation()}>
-          {war.theaters.map((t) => (
-            <button key={t.id} type="button" aria-pressed={t.id === theater.id} onClick={() => enterWar(war.id, t.id, entryYear(t, year), null)}>
+        <div ref={regionsRef} className="map-controls map-regions map-theaters map-ui" role="group" aria-label="전역" data-open={regionsOpen || undefined} data-closing={regionsClosing || undefined} onClick={(e) => e.stopPropagation()} onPointerDown={(e) => e.stopPropagation()}>
+          {war.theaters.map((t, i) => (
+            <button
+              key={t.id}
+              type="button"
+              aria-pressed={t.id === theater.id}
+              style={{ '--i': war.theaters.length - 1 - i } as CSSProperties}
+              onClick={() => pickRegion(() => (t.id === theater.id ? undefined : enterWar(war.id, t.id, entryYear(t, year), null)))}
+            >
               {t.name}
             </button>
           ))}

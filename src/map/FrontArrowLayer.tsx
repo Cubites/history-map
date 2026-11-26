@@ -47,18 +47,18 @@ export function FrontArrowLayer({
       <defs>
         {/* 흰 테두리(2026-11-23): 같은 선·화살촉을 흰색으로 조금 굵게 먼저 그리고 그 위에 색 선을 그린다 */}
         <marker id="front-head-halo" viewBox="0 0 10 10" refX={HEAD_REF} refY="5" markerWidth={HEAD} markerHeight={HEAD} markerUnits="userSpaceOnUse" orient="auto" overflow="visible">
-          <path d="M0,0L10,5L0,10z" className="front-head-halo" />
+          <path d="M0,0L10,5L0,10L3,5z" className="front-head-halo" />
         </marker>
         {[0, 1].map((i) => (
           <marker key={i} id={`front-head-${i}`} viewBox="0 0 10 10" refX={HEAD_REF} refY="5" markerWidth={HEAD} markerHeight={HEAD} markerUnits="userSpaceOnUse" orient="auto">
-            <path d="M0,0L10,5L0,10z" className={`front-head-${i}`} />
+            <path d="M0,0L10,5L0,10L3,5z" className={`front-head-${i}`} />
           </marker>
         ))}
         {arrows
           .filter((a) => a.color)
           .map((a) => (
             <marker key={`c${a.key}`} id={`front-head-c${a.key}`} viewBox="0 0 10 10" refX={HEAD_REF} refY="5" markerWidth={HEAD} markerHeight={HEAD} markerUnits="userSpaceOnUse" orient="auto">
-              <path d="M0,0L10,5L0,10z" fill={a.color} />
+              <path d="M0,0L10,5L0,10L3,5z" fill={a.color} />
             </marker>
           ))}
       </defs>

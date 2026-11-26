@@ -91,11 +91,11 @@ export function WarDetailLayer({ war, theater, snapshot, projection, entityColor
       <defs>
         {/* 화살촉의 흰 테두리(2026-11-23). 선의 테두리는 전부터 있던 바탕 선(.war-route-halo) */}
         <marker id="route-head-halo" viewBox="0 0 10 10" refX={ROUTE_HEAD_REF} refY="5" markerWidth={ROUTE_HEAD} markerHeight={ROUTE_HEAD} markerUnits="userSpaceOnUse" orient="auto" overflow="visible">
-          <path d="M0,0L10,5L0,10z" className="front-head-halo" />
+          <path d="M0,0L10,5L0,10L3,5z" className="front-head-halo" />
         </marker>
         {routes.map((r) => (
           <marker key={r.ri} id={`route-head-${r.ri}`} viewBox="0 0 10 10" refX={ROUTE_HEAD_REF} refY="5" markerWidth={ROUTE_HEAD} markerHeight={ROUTE_HEAD} markerUnits="userSpaceOnUse" orient="auto">
-            <path d="M0,0L10,5L0,10z" fill={r.stroke} />
+            <path d="M0,0L10,5L0,10L3,5z" fill={r.stroke} />
           </marker>
         ))}
       </defs>

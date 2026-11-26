@@ -12,7 +12,11 @@ import {
 import type { LonLat } from '../schema/index.ts';
 import { REGION_FILTERS, REGION_FILTER_INFO, type RegionFilter, type RegionFilterUnit } from '../schema/regions.ts';
 
-export type Size = { width: number; height: number };
+/**
+ * cover(2026-11-26): 지도 아래쪽을 늘 가리는 높이(px). 휴대폰에서 지도가 나라 정보 판 뒤까지 깔릴 때 WorldMap이 넣는다(없으면 0).
+ * 세계가 화면보다 낮을 때 세로 가운데를 판 위 보이는 곳 기준으로 잡는 데 쓴다(constrain)
+ */
+export type Size = { width: number; height: number; cover?: number };
 
 /**
  * 시점. 세로 위치와 (세계가 화면보다 좁을 때의) 가로 위치는 화면 픽셀로 둔다.
@@ -159,7 +163,7 @@ const clamp = (v: number, min: number, max: number) => Math.max(min, Math.min(ma
 
 /**
  * 축소했을 때 지도 밖 빈 곳이 보이지 않도록 지도 끝을 화면 경계에 붙인다 (DESIGN.md §6.6).
- * - 세로: 위·아래 끝이 화면 안으로 들어오면 그 경계에 붙이고, 지도가 화면보다 낮으면 세로 가운데에 둔다.
+ * - 세로: 위·아래 끝이 화면 안으로 들어오면 그 경계에 붙이고, 지도가 화면보다 낮으면 세로 가운데(아래가 가려져 있으면 보이는 곳의 가운데)에 둔다.
  * - 가로: 세계가 화면보다 넓으면 좌우가 회전으로 이어지므로 끝이 없다. 세계가 화면보다 좁을 때만
  *   회전 대신 옮기고, 왼쪽·오른쪽 끝이 화면 안으로 들어오면 그 경계에 붙인다.
  */
@@ -178,8 +182,13 @@ export function constrain(size: Size, s0: number, view: View): View {
     dx = 0;
   }
 
-  if (2 * halfHeight <= size.height) {
-    ty = size.height / 2;
+  // 아래쪽이 가려져 있으면(size.cover, 휴대폰의 나라 정보 판) 가린 곳을 뺀 보이는 높이의 가운데에 둔다(2026-11-26).
+  // 세계가 보이는 높이보다는 높고 화면 전체보다는 낮은 동안에는 위 끝을 화면 위 끝에 붙인다(두 경우 사이가 끊기지 않게)
+  const shownHeight = size.height - (size.cover ?? 0);
+  if (2 * halfHeight <= shownHeight) {
+    ty = shownHeight / 2;
+  } else if (2 * halfHeight <= size.height) {
+    ty = halfHeight;
   } else {
     // 지역 도법이 섞일수록 끝 제한을 풀어, 다 바뀌면 극점이 화면 가운데까지 올 수 있게 한다.
     // 끝 제한은 Equal Earth 기준이라, 그대로 두면 극지방을 세로로 누르는 세계 도법의 특성 때문에
