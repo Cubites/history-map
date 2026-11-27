@@ -38,10 +38,11 @@ export function WarMarkerLayer({ items, projection, onOpen }: { items: WarTheate
             <circle className="war-marker-disc" r={13} />
             {/* 교차한 두 칼 */}
             <path className="war-marker-icon" d="M-6,-6 L6,6 M6,-6 L-6,6 M-7,2 L-2,7 M7,2 L2,7" />
-            <text className="war-marker-label" x={17} y={-3}>
+            {/* 이름은 아이콘의 세로 가운데에(2026-11-27: 글자 높이의 가운데가 원의 중심에 오게 밑줄을 0.35em 내림). 둘째 줄은 그 아래 */}
+            <text className="war-marker-label" x={17} y={0} dy="0.35em">
               {name}
             </text>
-            <text className="war-marker-sub" x={17} y={11}>
+            <text className="war-marker-sub" x={17} y={18}>
               {formatYear(theater.from, '')}–{formatYear(theater.to, '')} · 전선 보기
             </text>
           </g>

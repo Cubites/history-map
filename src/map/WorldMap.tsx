@@ -232,8 +232,9 @@ export default function WorldMap({ data }: { data: StaticData }) {
     const close = (e: PointerEvent) => {
       if (!regionsRef.current?.contains(e.target as Node)) closeRegions();
     };
-    document.addEventListener('pointerdown', close);
-    return () => document.removeEventListener('pointerdown', close);
+    // 지도 위의 다른 단추·연도 막대는 누름이 밖으로 퍼지지 않게 막으므로 퍼지기 전 단계(capture)에서 듣는다(2026-11-27)
+    document.addEventListener('pointerdown', close, true);
+    return () => document.removeEventListener('pointerdown', close, true);
   }, [regionsOpen, regionsClosing, closeRegions]);
 
   // 시점은 매 프레임 바뀌므로 ref에 두고, 화면 좌표 레이어(SVG)를 위해 프레임당 한 번 state로 복사한다.

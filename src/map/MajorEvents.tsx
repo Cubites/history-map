@@ -36,14 +36,15 @@ export function MajorEvents({ data }: { data: StaticData }) {
     return () => window.removeEventListener('resize', fit);
   }, [open]);
 
-  // 목록 밖을 누르면 닫는다
+  // 목록 밖을 누르면 닫는다. 지도 위의 다른 단추·연도 막대는 누름이 밖으로 퍼지지 않게 막으므로(.map-ui의 stopPropagation)
+  // 퍼지기 전 단계(capture)에서 듣는다(2026-11-27: 다른 단추를 누르거나 연도 막대를 끌어도 닫히게)
   useEffect(() => {
     if (!open) return;
     const close = (e: PointerEvent) => {
       if (!boxRef.current?.contains(e.target as Node)) setOpen(false);
     };
-    document.addEventListener('pointerdown', close);
-    return () => document.removeEventListener('pointerdown', close);
+    document.addEventListener('pointerdown', close, true);
+    return () => document.removeEventListener('pointerdown', close, true);
   }, [open]);
 
   return (
