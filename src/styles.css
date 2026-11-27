@@ -23,14 +23,11 @@
   --front-line: #b0231b;
   --front-north: #b23a31;
   --front-south: #1d4f7a;
-  /* 2026-11-27 실험: light dark 대신 only를 붙인다 — 밝은 화면은 only light, 어두운 화면은 아래에서 only dark.
-     밝은 사이트를 스스로 어둡게 덧칠하는 브라우저(삼성 브라우저)가 덧칠을 멈추는지 보려는 것 */
-  color-scheme: only light;
+  color-scheme: light dark;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    color-scheme: only dark;
     --bg: #171a1d;
     --surface: #1d2124;
     --fg: #e8e6e1;
@@ -123,6 +120,12 @@ button {
 /* 나라 이름표는 캔버스에 그린다(2026-11-27, LabelLayer.tsx LabelCanvas). 글자 색·테두리 색은 --label·--label-halo, 크기·굵기는 위 .label·.label-selected와 같게 코드에 적혀 있다 */
 .labels, .labels-canvas { pointer-events: none; }
 .labels-canvas { display: block; }
+/* 지도 위 SVG 글자는 보이지 않게만 하고(자리·누름·겹침 정리는 그대로), 같은 모양을 캔버스가 따라 그린다(2026-11-27, TextCanvasLayer.tsx).
+   색·테두리·크기는 아래 각 글자 규칙(.war-marker-label 등)에 적힌 값을 캔버스가 읽어 쓴다. 상황 번호 핀의 숫자는 그대로 SVG 글자 */
+.map-overlay text { fill-opacity: 0; stroke-opacity: 0; }
+.map-overlay .war-step-pin text { fill-opacity: 1; }
+.text-canvas, .text-canvas-canvas { pointer-events: none; }
+.text-canvas-canvas { display: block; }
 /* 이름표 누름 칸(2026-11-12): 글 밑에 깐 투명한 칸. 지도 위 다른 단추(전투 표시 등)보다 아래에 있다 */
 .label-hit { fill: transparent; pointer-events: all; cursor: pointer; }
 
@@ -1131,10 +1134,3 @@ button {
 .ui-bg { position: absolute; inset: 0; z-index: -1; border-radius: calc(var(--ui-r, 6px) - var(--ui-bw, 1px)); background: var(--ui-bg); pointer-events: none; }
 .major-events-toggle { --ui-bw: 1.5px; }
 .mg-launch { --ui-r: 5px; --ui-bw: 1.5px; }
-/* 삼성 브라우저 전용(index.html이 html에 .samsung을 붙임): 그 브라우저의 덧칠은 밝은 바탕일수록 더 어둡게 바꾸는 것으로 보여,
-   덧칠된 화면에서 검색 영역이 지도 단추보다 어둡게 나오도록 밝은 화면의 검색 영역은 흰색, 지도 단추는 아주 옅은 회색으로 둔다
-   (설계한 어두운 화면에서 검색 영역 #1d2124가 단추 #23272a보다 어두운 것과 같은 차례). 다른 브라우저의 색은 그대로 */
-@media (prefers-color-scheme: light) {
-  :root.samsung { --control-bg: #f0f0f0e6; --control-solid: #f0f0f0; }
-  :root.samsung .search { background: #ffffff; }
-}
