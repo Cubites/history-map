@@ -64,7 +64,6 @@ export function YearGame({ data, q, level, total, outcomes, onView, onNext }: Pl
       <Status title="연도 맞추기" level={level} total={total} outcomes={outcomes} points={base} />
       <div className="mg-mapwrap">
         <FindMap items={items} start={start} mainId={q.entity.id} labels={labels} bare={bare} detail />
-        <div className="mg-chip">{bare ? '국경선만 표시' : '이름표 숨김 · 끌어서 이동'}</div>
       </div>
       <aside className="mg-panel">
         <p className="mg-q">이 영토는 <em>{hard ? '어느 해' : '몇 세기'}</em>의 모습일까요?</p>
@@ -83,20 +82,19 @@ export function YearGame({ data, q, level, total, outcomes, onView, onNext }: Pl
         )}
         <form className="mg-year" onSubmit={submit}>
           <span className="mg-seg">
-            <button type="button" aria-pressed={bce} disabled={guess !== null} onClick={() => setBce(true)}>기원전</button>
-            <button type="button" aria-pressed={!bce} disabled={guess !== null} onClick={() => setBce(false)}>기원후</button>
+            <button type="button" aria-label="기원전" aria-pressed={bce} disabled={guess !== null} onClick={() => setBce(true)}>BC</button>
+            <button type="button" aria-label="기원후" aria-pressed={!bce} disabled={guess !== null} onClick={() => setBce(false)}>AC</button>
           </span>
           <input
             inputMode="numeric"
             aria-label={hard ? '연도' : '세기'}
             placeholder={hard ? '연도' : '세기'}
-            autoFocus
             value={text}
             disabled={guess !== null}
             onChange={(e) => setText(e.target.value.replace(/\D/g, '').slice(0, hard ? 4 : 2))}
           />
           <span>{hard ? '년' : '세기'}</span>
-          <button className="mg-primary" disabled={guess !== null || !text}>답하기</button>
+          <button className="mg-primary" disabled={guess !== null || !text}>제출</button>
         </form>
         {guess !== null && (
           <Result

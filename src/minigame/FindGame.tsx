@@ -1,7 +1,8 @@
 // 3번 게임: 나라 찾기 (2026-11-17, 11-18 움직이는 지도로 바꿈, 11-23 난이도 셋·힌트 고침). 이름표 없는 지도에서 나라를 눌러 답한다.
 // 쉬움은 이름과 해를 주고, 정답 나라가 있는 권역 화면(본 지도의 권역 단추와 같은 화면)에서 시작한다.
 // 보통은 쉬움과 같되 세계 화면에서 시작하고, 권역은 힌트로 준다(열면 그 권역 화면으로 옮긴다).
-// 어려움은 이름만 주고 세계 화면에서 시작해, 그 나라가 있던 해를 직접 찾게 한다. 한 번 누르면 바로 답이 된다.
+// 어려움은 이름만 주고 세계 화면에서 시작해, 그 나라가 있던 해를 직접 찾게 한다.
+// 나라를 누르면 바로 답이 되지 않고(2026-11-27, 잘못 누름 방지) 그 나라를 화면 가운데로 옮기고 '이 국가를 선택하시겠습니까?'를 묻는다. '예'를 눌러야 답이 된다.
 import { useEffect, useMemo, useState } from 'react';
 import { activeTerritories } from '../data/staticData.ts';
 import { REGION_FILTER_INFO, regionFocusBounds } from '../schema/regions.ts';
@@ -17,6 +18,8 @@ export function FindGame({ data, q, level, total, outcomes, onView, onNext }: Pl
   /** 지도에 그리는 해. 막대를 끄는 동안 매번 다시 그리지 않게 조금 늦게 따라간다 */
   const [shown, setShown] = useState(year);
   const [picked, setPicked] = useState<string | null>(null);
+  /** 누른 나라(아직 답이 아님). '예'를 누르면 답이 되고 '아니오'를 누르면 풀린다 */
+  const [pending, setPending] = useState<string | null>(null);
   const [opened, setOpened] = useState(0);
 
   useEffect(() => {
@@ -65,6 +68,7 @@ export function FindGame({ data, q, level, total, outcomes, onView, onNext }: Pl
 
   const pick = (id: string) => {
     if (picked !== null) return;
+    setPending(null);
     setPicked(id);
     // 고른 해에 정답 나라가 없었다면 정답을 보여 주려고, 이웃 나라 힌트를 열었다면 그 나라들에 이름을 붙이려고 영토가 가장 넓었던 해로 옮긴다
     if (!items.some((it) => isTarget(it.id)) || (nearOpen && shown !== peak.year)) goYear(peak.year);
@@ -96,6 +100,12 @@ export function FindGame({ data, q, level, total, outcomes, onView, onNext }: Pl
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [target?.id, picked, borderShown, nearOpen, nearIds]);
   const focus = useMemo(() => target?.bbox ?? null, [target?.key]); // eslint-disable-line react-hooks/exhaustive-deps
+  // 고르는 중인 나라: 지도의 해가 바뀌어 그 나라가 사라지면 풀린다. 그 나라의 이름표 자리를 화면 가운데로 옮긴다
+  const pendingItem = pending === null ? undefined : items.find((it) => it.id === pending);
+  useEffect(() => {
+    if (pending !== null && !pendingItem) setPending(null);
+  }, [pending, pendingItem]);
+  const centerOn = useMemo(() => pendingItem?.anchor ?? null, [pendingItem?.key]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const life = `${yearText(q.entity.from)}~${q.entity.to === null ? '지금' : yearText(q.entity.to)}`;
   const neighborNames = [...new Set(nearIds.map(nameOf))];
@@ -117,15 +127,23 @@ export function FindGame({ data, q, level, total, outcomes, onView, onNext }: Pl
     <div className="mg-game">
       <Status title="나라 찾기" level={level} total={total} outcomes={outcomes} points={points} />
       <div className="mg-mapwrap">
-        <FindMap items={items} start={start} area={area} focus={focus} mainId={target?.id} labels={labels} highlightId={borderShown} onPick={picked === null ? pick : undefined} />
-        <div className="mg-chip">이름표 숨김 · {yearText(shown)}</div>
+        <FindMap items={items} start={start} area={area} focus={focus} mainId={target?.id} labels={labels} highlightId={borderShown} pendingId={picked === null ? pending : null} centerOn={centerOn} onPick={picked === null ? setPending : undefined} />
+        {picked === null && pendingItem && (
+          <div className="mg-confirm" role="dialog" aria-label="나라 선택 확인">
+            <p>이 국가를 선택하시겠습니까?</p>
+            <div className="mg-row">
+              <button className="mg-primary" onClick={() => pick(pendingItem.id)}>예</button>
+              <button className="mg-ghost" onClick={() => setPending(null)}>아니오</button>
+            </div>
+          </div>
+        )}
       </div>
       <aside className="mg-panel">
         <p className="mg-q">지도에서 <em>{q.entity.names.ko}</em> 찾기</p>
         <p className="mg-sub">
           {hard
-            ? '이 나라가 있던 해로 지도를 옮긴 뒤 나라를 누르세요. 한 번 누르면 바로 답이 됩니다.'
-            : `${yearText(q.year)}의 지도입니다. 한 번 누르면 바로 답이 됩니다.`}
+            ? "이 나라가 있던 해로 지도를 옮긴 뒤 나라를 누르세요. 나라를 누른 뒤 '예'를 누르면 답이 됩니다."
+            : `${yearText(q.year)}의 지도입니다. 나라를 누른 뒤 '예'를 누르면 답이 됩니다.`}
           {' '}지도는 끌어서 옮기고, 휠이나 +/− 단추로 확대합니다.
         </p>
         {hard && (

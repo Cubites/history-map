@@ -52,24 +52,29 @@ export function useQuizItems(data: StaticData, q: Question, showNear: boolean) {
   }, [data, q, near, showNear]);
 }
 
-export function Status({ title, level, total, outcomes, points }: { title: string; level?: Level; total: number; outcomes: Outcome[]; points: number }) {
+/**
+ * 위쪽 상태 줄 (2026-11-27 고침). 첫 줄: 게임 이름·난이도, 오른쪽 끝에 점수. 둘째 줄: '문제 N / N'과 그 오른쪽에 진행 점,
+ * (points를 주면) 오른쪽 끝에 이번 문제 점수. 연속 정답 표시는 없앴다. 나라 이름 맞추기는 이번 문제 점수를 보이지 않는다(points 없음)
+ */
+export function Status({ title, level, total, outcomes, points }: { title: string; level?: Level; total: number; outcomes: Outcome[]; points?: number }) {
   const score = outcomes.reduce((sum, o) => sum + o.points, 0);
-  let streak = 0;
-  for (let i = outcomes.length - 1; i >= 0 && outcomes[i].ok; i--) streak++;
   return (
     <div className="mg-status">
-      <b>{title}</b>
-      {level && <span className="mg-level">{LEVEL_LABEL[level]}</span>}
-      <span>문제 {outcomes.length + 1} / {total}</span>
-      <span className="mg-dots">
-        {Array.from({ length: total }, (_, i) => (
-          <i key={i} className={i < outcomes.length ? (outcomes[i].ok ? 'ok' : 'no') : i === outcomes.length ? 'now' : ''} />
-        ))}
-      </span>
-      <span className="mg-sp" />
-      <span>연속 정답 <b>{streak}</b></span>
-      <span>점수 <b>{score}</b></span>
-      <span>이번 문제 <b>{points}</b>점</span>
+      <div className="mg-status-row">
+        <b>{title}</b>
+        {level && <span className="mg-level">{LEVEL_LABEL[level]}</span>}
+        <span className="mg-sp" />
+        <span>점수 <b>{score}</b></span>
+      </div>
+      <div className="mg-status-row">
+        <span>문제 {outcomes.length + 1} / {total}</span>
+        <span className="mg-dots">
+          {Array.from({ length: total }, (_, i) => (
+            <i key={i} className={i < outcomes.length ? (outcomes[i].ok ? 'ok' : 'no') : i === outcomes.length ? 'now' : ''} />
+          ))}
+        </span>
+        {points !== undefined && <span className="mg-status-points">이번 문제 <b>{points}</b>점</span>}
+      </div>
     </div>
   );
 }
@@ -78,7 +83,7 @@ export function Status({ title, level, total, outcomes, points }: { title: strin
 export function Hints({ hints, opened, answered, onOpen }: { hints: Hint[]; opened: number; answered: boolean; onOpen: () => void }) {
   return (
     <div className="mg-hints">
-      <h3><span>힌트</span><span>하나 열 때마다 {HINT_COST}점 감점</span></h3>
+      <h3><span>힌트</span><span>힌트 당 {HINT_COST}점 감점</span></h3>
       <ol>
         {hints.map(([title, body], i) => (
           <li key={title} className={i < opened ? 'open' : i === opened ? '' : 'locked'}>

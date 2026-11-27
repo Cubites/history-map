@@ -5,7 +5,7 @@
 // 게임 고르기는 게임 블럭을 누르면 그 블럭이 아래로 펼쳐져(0.3초) 난이도·권역·문제 수·시작 단추가 나오고, 다른 블럭은 접힌다.
 // 게임 셋: 나라 이름 맞추기(이 파일), 연도 맞추기(YearGame), 나라 찾기(FindGame). 점수 숫자는 임시값이다(parts.tsx).
 // 난이도는 쉬움·보통·어려움 셋이다(2026-11-23). 게임마다 뜻이 다르다: 아래 GAMES의 rule과 각 게임 파일 머리 참고.
-import { useEffect, useMemo, useState, type FormEvent } from 'react';
+import { useEffect, useMemo, useRef, useState, type FormEvent } from 'react';
 import { createPortal } from 'react-dom';
 import { geoArea } from 'd3-geo';
 import { loadEntityGeometry, type StaticData, type TerritoryFeature } from '../data/staticData.ts';
@@ -69,6 +69,13 @@ export function MiniGame({ data, onClose }: { data: StaticData; onClose: () => v
   const [region, setRegion] = useState<RegionFilter>('all');
   const [count, setCount] = useState<number>(ROUND);
   const [closing, setClosing] = useState(false);
+  // 게임 블럭을 펼치면(0.3초) 그 블럭이 고르기 화면 밖으로 나가지 않게 스크롤을 맞춘다(2026-11-27). 난이도를 바꿔 설명 줄 수가 달라져도 다시 맞춘다
+  const cardsRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (!game) return;
+    const timer = window.setTimeout(() => cardsRef.current?.querySelector('.mg-card.on')?.scrollIntoView({ block: 'nearest', behavior: 'smooth' }), 320);
+    return () => window.clearTimeout(timer);
+  }, [game, level]);
   // 결과 창에서 '지도'를 눌러 본 지도를 보는 중(2026-11-23). 미니게임을 닫지 않고 숨겨 두고 '결과 창으로 돌아가기' 단추만 띄운다.
   // 그 단추를 누르거나 본 지도에서 나라 고름을 풀면(×, Esc, 바다 누르기) 결과 창으로 돌아온다
   const [away, setAway] = useState(false);
@@ -138,7 +145,7 @@ export function MiniGame({ data, onClose }: { data: StaticData; onClose: () => v
       </header>
       {!questions && (
         <div className="mg-lobby">
-          <div className="mg-cards">
+          <div className="mg-cards" ref={cardsRef}>
             {GAMES.map((g) => {
               const open = g.id === game;
               return (
@@ -275,14 +282,13 @@ function NameGame({ data, q, level, total, outcomes, onView, onNext }: PlayProps
 
   return (
     <div className="mg-game">
-      <Status title="나라 이름 맞추기" level={level} total={total} outcomes={outcomes} points={points} />
+      <Status title="나라 이름 맞추기" level={level} total={total} outcomes={outcomes} />
       <div className="mg-mapwrap">
         {/* 육지·바다가 보이는 동안에는(쉬움은 처음부터, 보통·어려움은 옆 나라 힌트를 연 뒤) 본 지도처럼 끌어서 옮기고 확대할 수 있다 */}
         <FindMap items={items} start={start} mainId={q.entity.id} labels={labels} bare={bare} detail />
-        <div className="mg-chip">{bare ? '국경선만 표시' : '이름표 숨김 · 끌어서 이동'}</div>
       </div>
       <aside className="mg-panel">
-        <p className="mg-q">{hard ? '이 국경선은' : '색칠된 곳은'} <em>어느 나라</em>일까요?</p>
+        <p className="mg-q">화면의 <em>나라 이름</em>은?</p>
         {hard ? (
           <>
             <p className="mg-note">
@@ -290,8 +296,8 @@ function NameGame({ data, q, level, total, outcomes, onView, onNext }: PlayProps
               <span>예시: '잉카 제국'은 '잉카'만 적어도 정답</span>
             </p>
             <form className="mg-year mg-name" onSubmit={submit}>
-              <input aria-label="나라 이름" placeholder="나라 이름" autoFocus value={text} disabled={picked !== null} onChange={(e) => setText(e.target.value)} />
-              <button className="mg-primary" disabled={picked !== null || !text.trim()}>답하기</button>
+              <input aria-label="나라 이름" placeholder="나라 이름" value={text} disabled={picked !== null} onChange={(e) => setText(e.target.value)} />
+              <button className="mg-primary" disabled={picked !== null || !text.trim()}>제출</button>
             </form>
           </>
         ) : (

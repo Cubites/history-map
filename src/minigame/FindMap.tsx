@@ -31,6 +31,10 @@ interface Props {
   detail?: boolean;
   /** 굵은 강조 테두리로 표시할 나라 (맞닿은 나라 힌트) */
   highlightId?: string;
+  /** 고르는 중인 나라 (나라 찾기의 '이 국가를 선택하시겠습니까?' 동안): 굵은 테두리로 표시한다 */
+  pendingId?: string | null;
+  /** 주면 배율은 그대로 두고 그 자리가 화면 가운데에 오게 옮긴다 (고르는 중인 나라의 이름표 자리) */
+  centerOn?: LonLat | null;
   /** 주면 그 범위로 화면을 옮긴다 (답한 뒤 정답 나라로) */
   focus?: [number, number, number, number] | null;
   /** 주면 그 권역 화면으로 옮긴다 (권역 힌트를 열었을 때. 본 지도의 권역 단추와 같은 화면) */
@@ -45,7 +49,7 @@ interface Props {
 const NO_LABELS: Record<string, string> = {};
 const clampZoom = (k: number) => Math.max(MIN_ZOOM, Math.min(MAX_ZOOM, k));
 
-export function FindMap({ items, start, focus, area, mainId, labels = NO_LABELS, onPick, bare = false, detail = false, highlightId }: Props) {
+export function FindMap({ items, start, focus, area, mainId, labels = NO_LABELS, onPick, bare = false, detail = false, highlightId, pendingId, centerOn }: Props) {
   const bareRef = useRef(bare);
   bareRef.current = bare;
   const [ref, size] = useElementSize<HTMLDivElement>();
@@ -84,6 +88,13 @@ export function FindMap({ items, start, focus, area, mainId, labels = NO_LABELS,
     const s = sizeRef.current;
     if (area && s) setView(fitBounds(s, baseScale(s), area));
   }, [area]);
+
+  useEffect(() => {
+    const s = sizeRef.current;
+    if (!centerOn || !s) return;
+    const s0 = baseScale(s);
+    setView((cur) => cur && toView(s, s0, { ...toGeoView(s, s0, cur), lon: centerOn[0], lat: centerOn[1] }));
+  }, [centerOn]);
 
   useEffect(() => {
     let on = true;
@@ -175,6 +186,15 @@ export function FindMap({ items, start, focus, area, mainId, labels = NO_LABELS,
       ctx.lineWidth = 3.5;
       ctx.stroke();
     }
+    // 고르는 중인 나라: 진한 굵은 테두리
+    for (const it of drawn) {
+      if (it.id !== pendingId) continue;
+      ctx.beginPath();
+      path(shapes.get(it.key)!);
+      ctx.strokeStyle = v('--fg');
+      ctx.lineWidth = 3;
+      ctx.stroke();
+    }
     for (const it of drawn) {
       if (it.id !== mainId) continue;
       ctx.beginPath();
@@ -199,7 +219,7 @@ export function FindMap({ items, start, focus, area, mainId, labels = NO_LABELS,
       ctx.fillStyle = v('--label');
       ctx.fillText(name, p[0], p[1]);
     }
-  }, [size, view, land, items, shapes, mainId, labels, bare, highlightId]);
+  }, [size, view, land, items, shapes, mainId, labels, bare, highlightId, pendingId]);
 
   /** 화면의 anchor 자리를 붙든 채 배율을 k로 바꾼다 */
   const zoomTo = (k: (now: number) => number, anchor: [number, number]) => {
