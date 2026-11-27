@@ -69,13 +69,31 @@ export function MiniGame({ data, onClose }: { data: StaticData; onClose: () => v
   const [region, setRegion] = useState<RegionFilter>('all');
   const [count, setCount] = useState<number>(ROUND);
   const [closing, setClosing] = useState(false);
-  // 게임 블럭을 펼치면(0.3초) 그 블럭이 고르기 화면 밖으로 나가지 않게 스크롤을 맞춘다(2026-11-27). 난이도를 바꿔 설명 줄 수가 달라져도 다시 맞춘다
+  const [questions, setQuestions] = useState<Question[] | null>(null);
+  // 게임 블럭을 펼치면 그 블럭이 고르기 화면 밖으로 나가지 않게 스크롤을 맞춘다(2026-11-27). 난이도를 바꿔 설명 줄 수가 달라져도 다시 맞춘다.
+  // 펼쳐지는 0.3초 동안 기다리지 않고 프레임마다 맞춰, 블럭이 펼쳐지면서 화면이 함께 따라간다(다 펼친 뒤 부드러운 스크롤을 시작하던 것보다 빠름).
+  // 게임을 하다가 '처음으로'로 고르기 화면에 돌아왔을 때도(블럭이 펼쳐진 채 다시 그려지고 스크롤은 맨 위) 같은 효과가 돌아 바로 맞춘다
   const cardsRef = useRef<HTMLDivElement>(null);
+  const inLobby = questions === null;
   useEffect(() => {
-    if (!game) return;
-    const timer = window.setTimeout(() => cardsRef.current?.querySelector('.mg-card.on')?.scrollIntoView({ block: 'nearest', behavior: 'smooth' }), 320);
-    return () => window.clearTimeout(timer);
-  }, [game, level]);
+    if (!game || !inLobby) return;
+    const until = performance.now() + 340;
+    let frame = 0;
+    const follow = () => {
+      const card = cardsRef.current?.querySelector('.mg-card.on');
+      const scroller = cardsRef.current?.parentElement;
+      if (card && scroller) {
+        const [c, s] = [card.getBoundingClientRect(), scroller.getBoundingClientRect()];
+        const margin = 12;
+        // 블럭이 화면보다 길면 위 끝을 맞추고, 아니면 넘친 쪽만큼만 옮긴다
+        if (c.height + margin * 2 > s.height || c.top < s.top + margin) scroller.scrollTop += c.top - s.top - margin;
+        else if (c.bottom > s.bottom - margin) scroller.scrollTop += c.bottom - s.bottom + margin;
+      }
+      if (performance.now() < until) frame = requestAnimationFrame(follow);
+    };
+    follow();
+    return () => cancelAnimationFrame(frame);
+  }, [game, level, inLobby]);
   // 결과 창에서 '지도'를 눌러 본 지도를 보는 중(2026-11-23). 미니게임을 닫지 않고 숨겨 두고 '결과 창으로 돌아가기' 단추만 띄운다.
   // 그 단추를 누르거나 본 지도에서 나라 고름을 풀면(×, Esc, 바다 누르기) 결과 창으로 돌아온다
   const [away, setAway] = useState(false);
@@ -83,7 +101,6 @@ export function MiniGame({ data, onClose }: { data: StaticData; onClose: () => v
   useEffect(() => {
     if (away && selectedId === null) setAway(false);
   }, [away, selectedId]);
-  const [questions, setQuestions] = useState<Question[] | null>(null);
   const [outcomes, setOutcomes] = useState<Outcome[]>([]);
   const [empty, setEmpty] = useState(false);
   const setYear = useAppStore((s) => s.setYear);
