@@ -1105,9 +1105,10 @@ export default function WorldMap({ data }: { data: StaticData }) {
           {hoveredEvent && selectedId && (
             <ArrowLayer data={data} event={hoveredEvent} selectedId={selectedId} projection={projection} />
           )}
-          {/* 위 층들의 SVG 글자(전쟁·전투·거점·진군로 이름, 화살표 설명)를 캔버스에 따라 그린다(2026-11-27, TextCanvasLayer.tsx). 나라 이름표보다 아래 */}
-          <TextCanvasLayer size={size} />
           <LabelLayer territories={labelTerritories} entities={data.entities} selectedId={selectedId} projection={projection} view={view} size={size} />
+          {/* 위 층들의 SVG 글자(전쟁·전투·거점·진군로 이름, 화살표 설명)와 전쟁·전투 아이콘을 캔버스에 따라 그린다(2026-11-27, TextCanvasLayer.tsx).
+              나라 이름표보다 위: 전쟁·전투 아이콘과 글자가 나라 이름에 가리지 않는다 */}
+          <TextCanvasLayer size={size} />
         </svg>
       )}
       {hovered && hoveredEntity && (

@@ -1,8 +1,11 @@
 import { useEffect, useLayoutEffect, useRef } from 'react';
 import type { Size } from './view.ts';
 
+/** 캔버스에 따라 그릴 아이콘: 평소 지도의 전쟁 아이콘·전투(유적) 표시와 전쟁 보기의 전투 표시의 동그라미·칼 모양 */
+const ICON_SHAPES = '.war-marker circle, .war-marker path, .battle-pin circle, .battle-pin path, .war-battle circle, .war-battle path';
+
 /**
- * 지도 위 SVG 글자(전쟁 이름·전투 이름·거점·진군로·화살표 설명)를 캔버스에 따라 그리는 층 (2026-11-27).
+ * 지도 위 SVG 글자(전쟁 이름·전투 이름·거점·진군로·화살표 설명)와 전쟁·전투 아이콘을 캔버스에 따라 그리는 층 (2026-11-27).
  *
  * 밝은 사이트를 스스로 어둡게 덧칠하는 브라우저(삼성 브라우저)는 SVG 글자의 색만 밝게 뒤집고 테두리는 그대로 둬서
  * 글자가 흐려진다. 캔버스 그림은 덧칠하지 않으므로(지도 그림·나라 이름표 LabelLayer와 같음) 사이트가 정한 색 그대로 나온다.
@@ -10,7 +13,10 @@ import type { Size } from './view.ts';
  * 글자를 그리는 층들(WarMarkerLayer·BattlePinLayer·WarDetailLayer·FrontArrowLayer·ArrowLayer)은 그대로 두고,
  * 그 SVG 글자는 보이지 않게만 한 채(styles.css `.map-overlay text` — 자리·누름·겹침 정리는 그대로 동작) 이 층이
  * 화면에 있는 글자를 찾아 같은 자리·같은 모양(색·테두리·크기·굵기·투명도)으로 캔버스에 그린다.
- * 층 순서를 지키도록 SVG 안의 foreignObject에 캔버스를 둔다. 상황 번호 핀의 숫자(.war-step-pin)는 흰 글자라 그대로 둔다
+ * 층 순서를 지키도록 SVG 안의 foreignObject에 캔버스를 둔다. 상황 번호 핀의 숫자(.war-step-pin)는 흰 글자라 그대로 둔다.
+ *
+ * 전쟁·전투 아이콘(ICON_SHAPES)도 같은 방식으로 따라 그린다(같은 날): 덧칠이 아이콘 바탕색을 바꾸던 것을 피하고,
+ * 이 층을 나라 이름표(LabelLayer) 위에 두어 전쟁·전투 아이콘과 글자가 나라 이름에 가리지 않게 한다. 아이콘을 먼저, 글자를 그 위에 그린다
  */
 export function TextCanvasLayer({ size }: { size: Size }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -33,13 +39,48 @@ export function TextCanvasLayer({ size }: { size: Size }) {
     ctx.textBaseline = 'alphabetic';
     ctx.miterLimit = 4;
 
+    /** 요소와 그 위 묶음들의 투명도를 곱한 값(지난 전투는 흐리게, 전쟁 아이콘의 둘째 줄은 올렸을 때만 등) */
+    const alphaOf = (el: Element) => {
+      let alpha = 1;
+      for (let node: Element | null = el; node && node !== svg; node = node.parentElement) alpha *= parseFloat(getComputedStyle(node).opacity);
+      return alpha;
+    };
+
+    // 아이콘: 동그라미와 칼 모양을 그 요소의 자리(묶음의 translate)에 그대로 그린다
+    for (const el of svg.querySelectorAll<SVGGeometryElement>(ICON_SHAPES)) {
+      const css = getComputedStyle(el);
+      if (css.display === 'none' || css.visibility === 'hidden') continue;
+      const alpha = alphaOf(el);
+      const matrix = el.getCTM();
+      if (!(alpha > 0.01) || !matrix) continue;
+      if (matrix.e < -40 || matrix.e > size.width + 40 || matrix.f < -40 || matrix.f > size.height + 40) continue;
+      let shape: Path2D;
+      if (el instanceof SVGCircleElement) {
+        shape = new Path2D();
+        shape.arc(el.cx.baseVal.value, el.cy.baseVal.value, el.r.baseVal.value, 0, Math.PI * 2);
+      } else shape = new Path2D(el.getAttribute('d') ?? '');
+      ctx.setTransform(dpr * matrix.a, dpr * matrix.b, dpr * matrix.c, dpr * matrix.d, dpr * matrix.e, dpr * matrix.f);
+      ctx.globalAlpha = alpha;
+      if (css.fill !== 'none') {
+        ctx.fillStyle = css.fill;
+        ctx.fill(shape);
+      }
+      const width = parseFloat(css.strokeWidth) || 0;
+      if (css.stroke !== 'none' && width > 0) {
+        ctx.strokeStyle = css.stroke;
+        ctx.lineWidth = width;
+        ctx.lineCap = css.strokeLinecap === 'round' ? 'round' : css.strokeLinecap === 'square' ? 'square' : 'butt';
+        ctx.lineJoin = css.strokeLinejoin === 'round' ? 'round' : css.strokeLinejoin === 'bevel' ? 'bevel' : 'miter';
+        ctx.stroke(shape);
+      }
+    }
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
     for (const el of svg.querySelectorAll<SVGTextElement>('text')) {
       if (el.closest('.war-step-pin')) continue;
       const css = getComputedStyle(el);
       if (css.display === 'none' || css.visibility === 'hidden') continue;
-      // 글자와 그 위 묶음들의 투명도를 곱한다(지난 전투는 흐리게, 전쟁 아이콘의 둘째 줄은 올렸을 때만 등)
-      let alpha = 1;
-      for (let node: Element | null = el; node && node !== svg; node = node.parentElement) alpha *= parseFloat(getComputedStyle(node).opacity);
+      const alpha = alphaOf(el);
       if (!(alpha > 0.01)) continue;
 
       // 글자 조각: 글자 요소 바로 아래의 글과 tspan(날짜처럼 색이 다른 부분). 빈칸은 SVG처럼 하나로 줄인다
@@ -104,7 +145,7 @@ export function TextCanvasLayer({ size }: { size: Size }) {
     const observer = new MutationObserver((records) => {
       if (records.some((r) => r.target !== canvas && r.target !== canvas.parentNode)) draw();
     });
-    observer.observe(svg, { subtree: true, childList: true, characterData: true, attributes: true, attributeFilter: ['x', 'y', 'dx', 'dy', 'transform', 'class', 'style', 'text-anchor'] });
+    observer.observe(svg, { subtree: true, childList: true, characterData: true, attributes: true, attributeFilter: ['x', 'y', 'dx', 'dy', 'transform', 'class', 'style', 'text-anchor', 'r', 'd'] });
     // 마우스를 올리거나 초점이 가면 CSS로 색·투명도가 바뀌는 글자가 있다(전쟁 아이콘의 둘째 줄은 0.15초에 걸쳐 나타남)
     let timer = 0;
     const later = () => {
