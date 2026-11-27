@@ -1,4 +1,5 @@
 import type { GeoProjection } from 'd3-geo';
+import { useLayoutEffect, useRef } from 'react';
 import type { LoadedEntity } from '../data/staticData.ts';
 import { useMediaQuery } from '../lib/useMediaQuery.ts';
 import type { TerritoryIndexEntry } from '../schema/index.ts';
@@ -96,13 +97,46 @@ export function LabelLayer({ territories, entities, selectedId, projection, view
       </g>
     );
   }
+  // 글 이름표는 SVG 글자가 아니라 캔버스에 그린다(2026-11-27). 밝은 사이트를 스스로 어둡게 덧칠하는 브라우저(삼성 브라우저)가 SVG 글자의 색만 밝게 뒤집고
+  // 흰 테두리는 그대로 둬서 이름이 테두리에 묻혔다. 캔버스 그림은 덧칠하지 않으므로(지도 그림과 같음) 글자·테두리 색이 사이트가 정한 그대로 나온다.
+  // 층 순서를 지키도록 SVG 안의 foreignObject에 캔버스를 둔다. 색·글꼴은 .labels에 적힌 값(--label, --label-halo)을 읽어 쓴다(어두운 화면에서도 따라 바뀜)
+  return <LabelCanvas labels={mode === 'text' ? shown : []} size={size} />;
+}
+
+function LabelCanvas({ labels, size }: { labels: { p: [number, number]; text: string; selected: boolean }[]; size: Size }) {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  useLayoutEffect(() => {
+    const canvas = canvasRef.current;
+    const ctx = canvas?.getContext('2d');
+    if (!canvas || !ctx) return;
+    const dpr = window.devicePixelRatio || 1;
+    const [w, h] = [Math.round(size.width * dpr), Math.round(size.height * dpr)];
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width = w;
+      canvas.height = h;
+    }
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, size.width, size.height);
+    const css = getComputedStyle(canvas);
+    const family = css.fontFamily;
+    ctx.fillStyle = css.getPropertyValue('--label').trim();
+    ctx.strokeStyle = css.getPropertyValue('--label-halo').trim();
+    ctx.lineWidth = HALO * 2;
+    ctx.lineJoin = 'round';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'alphabetic';
+    for (const { p, text, selected } of labels) {
+      const font = selected ? FONT_SELECTED : FONT;
+      ctx.font = `${font.weight} ${font.size}px ${family}`;
+      // SVG 글자의 dy="0.35em"과 같은 자리
+      const y = p[1] + font.size * 0.35;
+      ctx.strokeText(text, p[0], y);
+      ctx.fillText(text, p[0], y);
+    }
+  });
   return (
-    <g className="labels">
-      {shown.map(({ t, p, text, selected }) => (
-        <text key={t.key} className={selected ? 'label label-selected' : 'label'} x={p[0]} y={p[1]} dy="0.35em" textAnchor="middle">
-          {text}
-        </text>
-      ))}
-    </g>
+    <foreignObject className="labels" x={0} y={0} width={size.width} height={size.height}>
+      <canvas ref={canvasRef} className="labels-canvas" style={{ width: size.width, height: size.height }} />
+    </foreignObject>
   );
 }

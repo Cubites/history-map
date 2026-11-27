@@ -117,6 +117,9 @@ button {
   user-select: none;
 }
 .label-selected { font-size: 13px; font-weight: 800; }
+/* 나라 이름표는 캔버스에 그린다(2026-11-27, LabelLayer.tsx LabelCanvas). 글자 색·테두리 색은 --label·--label-halo, 크기·굵기는 위 .label·.label-selected와 같게 코드에 적혀 있다 */
+.labels, .labels-canvas { pointer-events: none; }
+.labels-canvas { display: block; }
 /* 이름표 누름 칸(2026-11-12): 글 밑에 깐 투명한 칸. 지도 위 다른 단추(전투 표시 등)보다 아래에 있다 */
 .label-hit { fill: transparent; pointer-events: all; cursor: pointer; }
 
@@ -344,6 +347,7 @@ button {
 
 .panel-guide { margin: 0 0 8px; }
 .sheet-handle { display: none; } /* 휴대폰 아래 판의 손잡이(아래 @media). PC에서는 숨김 */
+.sheet-handle-bar { display: contents; } /* 손잡이 자리의 바탕(휴대폰 아래 판에서만 보임) */
 .panel-note { margin: 4px 0 8px; font-size: 12px; color: var(--muted); }
 /* 나라를 고르지 않았을 때의 나라 목록(2026-10-28, CountryList.tsx): 색 견본 옆에 이름, 그 아래 줄에 원문 이름. 누르면 그 나라를 고름 */
 .country-list h3 { margin: 12px 0 6px; font-size: 13px; font-weight: 600; color: var(--muted); }
@@ -662,7 +666,10 @@ button {
   /* 내린 단계(2026-11-05, 손잡이 + 나라 이름란): 판 안 스크롤은 막는다 */
   .panel.sheet[data-sheet='min'] { overflow: hidden; }
   /* 손잡이: 판 위 가운데 가로로 긴 슬릿. 판 위 끝에 붙어 스크롤해도 남는다. 끌기는 브라우저 스크롤로 가져가지 않게(touch-action) */
-  .panel.sheet .sheet-handle { position: sticky; top: 0; z-index: 4; display: flex; align-items: center; justify-content: center; width: calc(100% + 24px); height: 22px; margin: 0 -12px; padding: 0; border: none; border-radius: 14px 14px 0 0; background: var(--surface); cursor: grab; touch-action: none; }
+  /* 2026-11-27: 판 위 끝에 붙는 자리와 바탕색은 단추가 아닌 바깥 칸(.sheet-handle-bar)이 갖고, 단추는 그 안을 투명하게 채운다 —
+     단추가 판과 같은 바탕색을 따로 가지면, 밝은 사이트를 스스로 어둡게 덧칠하는 브라우저(삼성 브라우저)가 단추만 다른 색으로 바꿔 손잡이 부분과 판의 색이 갈렸다 */
+  .panel.sheet .sheet-handle-bar { display: block; position: sticky; top: 0; z-index: 4; width: calc(100% + 24px); height: 22px; margin: 0 -12px; border-radius: 14px 14px 0 0; background: inherit; }
+  .panel.sheet .sheet-handle { display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; margin: 0; padding: 0; border: none; border-radius: inherit; background: transparent; cursor: grab; touch-action: none; }
   .panel.sheet .sheet-handle::before { content: ''; width: 40px; height: 5px; border-radius: 3px; background: var(--muted); opacity: 0.55; }
   .panel.sheet .sheet-handle:focus-visible { outline: 2px solid var(--front-line); outline-offset: -2px; }
   .panel.sheet .panel-header-sticky { top: 22px; margin-top: 0; padding-top: 2px; }
@@ -820,9 +827,11 @@ button {
    분야 글자는 칸 가운데 맞추고, 세로선은 펼침 화살표에서 8px 띄운다(왼쪽 여백) */
 .search { position: relative; min-width: 0; display: flex; align-items: stretch; box-sizing: border-box; background: var(--surface); border: 1px solid var(--border); border-radius: 6px; }
 .search:focus-within { outline: 2px solid var(--front-line); outline-offset: -1px; }
-.search-scope { flex: 0 0 auto; box-sizing: border-box; padding: 0 4px 0 8px; font: inherit; font-size: 14px; color: var(--fg); background: var(--surface); border: none; border-radius: inherit; outline: none; cursor: pointer; text-align: center; text-align-last: center; }
+/* 바탕색은 바깥 상자(.search)만 갖고 두 칸은 투명하다(2026-11-27): 칸마다 같은 색을 따로 가지면, 밝은 사이트를 스스로 어둡게 덧칠하는 브라우저(삼성 브라우저)가
+   고르기 칸과 입력 칸을 서로 다른 색으로 바꿔 검색창이 두 색으로 갈렸다 */
+.search-scope { flex: 0 0 auto; box-sizing: border-box; padding: 0 4px 0 8px; font: inherit; font-size: 14px; color: var(--fg); background: transparent; border: none; border-radius: inherit; outline: none; cursor: pointer; text-align: center; text-align-last: center; }
 .search-divider { flex: 0 0 1px; margin: 6px 0 6px 8px; background: color-mix(in srgb, var(--border), var(--fg) 30%); }
-.search-input { flex: 1 1 0; min-width: 0; width: 100%; box-sizing: border-box; padding: 6px 10px; font: inherit; font-size: 14px; color: var(--fg); background: var(--surface); border: none; border-radius: inherit; outline: none; }
+.search-input { flex: 1 1 0; min-width: 0; width: 100%; box-sizing: border-box; padding: 6px 10px; font: inherit; font-size: 14px; color: var(--fg); background: transparent; border: none; border-radius: inherit; outline: none; }
 .search-results { position: absolute; z-index: 20; top: calc(100% + 5px); left: -1px; right: -1px; margin: 0; padding: 4px 0; list-style: none; background: var(--surface); border: 1px solid var(--border); border-radius: 6px; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15); max-height: 60vh; overflow-y: auto; }
 .search-result { display: flex; gap: 8px; padding: 6px 10px; cursor: pointer; font-size: 13.5px; }
 .search-result-active { background: var(--border); }

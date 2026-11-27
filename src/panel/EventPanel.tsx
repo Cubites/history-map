@@ -100,8 +100,11 @@ export function EventPanel({ data }: { data: StaticData }) {
   const [detailOpen, setDetailOpen] = useState(false);
   const sheet = useBottomSheet(true, warView ? `war:${warView.war.id}/${warView.theater.id}` : selectedId, mobile && !inWar && !!selectedId && (detailOpen || !!pinned));
   const what = inWar ? '전쟁 정보' : '나라 정보';
+  // 단추를 바깥 칸으로 감싼다(2026-11-27): 판 위 끝에 붙는 자리와 바탕색은 바깥 칸이 갖는다(styles.css .sheet-handle-bar)
   const sheetHandle = (
-    <button type="button" className="sheet-handle" aria-label={sheet.state === 'open' || sheet.state === 'half' ? `${what} 접기` : sheet.state === 'min' ? `${what} 올리기` : `${what} 펼치기`} aria-expanded={sheet.state !== 'min'} {...sheet.handleProps} />
+    <div className="sheet-handle-bar">
+      <button type="button" className="sheet-handle" aria-label={sheet.state === 'open' || sheet.state === 'half' ? `${what} 접기` : sheet.state === 'min' ? `${what} 올리기` : `${what} 펼치기`} aria-expanded={sheet.state !== 'min'} {...sheet.handleProps} />
+    </div>
   );
 
   if (warView) {
