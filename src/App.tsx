@@ -27,6 +27,7 @@ export default function App() {
               <WarStepBar data={data} />
               {/* 미니게임으로 가는 단추(2026-11-19): 지도 오른쪽 위의 게임패드 아이콘. 크기는 '주요 전쟁' 단추 높이의 2배(휴대폰 1.3배), styles.css .mg-launch */}
               <button type="button" className="mg-launch" aria-label="미니게임" title="미니게임" onClick={() => setGameOpen(true)}>
+                <span className="ui-bg" aria-hidden="true" />
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <rect x="2" y="6.5" width="20" height="11" rx="4.5" />
                   <path d="M6.5 12h4M8.5 10v4" />

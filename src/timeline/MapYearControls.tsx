@@ -327,6 +327,7 @@ export function MapYearControls({ data }: { data: StaticData }) {
 
       <div ref={boxRef} className="map-yearbox map-ui" onClick={(e) => e.stopPropagation()} onPointerDown={(e) => e.stopPropagation()}>
         <button type="button" disabled={prevChange === undefined} onClick={() => prevChange !== undefined && go(prevChange)} title="이전 지도 변화" aria-label="이전 지도 변화">
+          <span className="ui-bg" aria-hidden="true" />
           ◀
         </button>
         <form
@@ -383,6 +384,7 @@ export function MapYearControls({ data }: { data: StaticData }) {
           </label>
         </form>
         <button type="button" disabled={nextChange === undefined} onClick={() => nextChange !== undefined && go(nextChange)} title="다음 지도 변화" aria-label="다음 지도 변화">
+          <span className="ui-bg" aria-hidden="true" />
           ▶
         </button>
       </div>

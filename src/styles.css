@@ -217,7 +217,7 @@ button {
   padding: 0 10px;
   border: 1px solid var(--border);
   border-radius: 6px;
-  background: var(--control-bg);
+  --ui-bg: var(--control-bg);
   font-size: 14px;
   cursor: pointer;
 }
@@ -247,9 +247,9 @@ button {
 .major-events { position: relative; flex-shrink: 0; }
 /* 단추는 아래 목록과 같은 바탕(--control-bg)에 붉은 테두리·글자(--front-line). 둘 다 어두운 화면에서 바뀐다(2026-10-28).
    올리면·목록이 열리면 바탕에 붉은색을 조금 섞는다 */
-.major-events-toggle { height: 32px; padding: 0 12px; border: 1.5px solid var(--front-line); border-radius: 6px; background: var(--control-bg); color: var(--front-line); font: inherit; font-size: 14px; font-weight: 700; cursor: pointer; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15); }
-@media (hover: hover) { .major-events-toggle:hover { background: color-mix(in srgb, var(--front-line) 10%, var(--control-bg)); } }
-.major-events-toggle[aria-expanded='true'] { background: color-mix(in srgb, var(--front-line) 18%, var(--control-bg)); }
+.major-events-toggle { height: 32px; padding: 0 12px; border: 1.5px solid var(--front-line); border-radius: 6px; --ui-bg: var(--control-bg); color: var(--front-line); font: inherit; font-size: 14px; font-weight: 700; cursor: pointer; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15); }
+@media (hover: hover) { .major-events-toggle:hover { --ui-bg: color-mix(in srgb, var(--front-line) 10%, var(--control-bg)); } }
+.major-events-toggle[aria-expanded='true'] { --ui-bg: color-mix(in srgb, var(--front-line) 18%, var(--control-bg)); }
 .major-events-toggle:focus-visible { outline: 2px solid var(--front-line); outline-offset: 2px; }
 /* 목록은 단추 아래에 떠서(absolute) 오른쪽 화살표 뜻을 밀지 않고 그 위를 덮는다(2026-10-28). 비치지 않게 불투명 바탕. 최대 높이는 MajorEvents.tsx가 지도 아래 끝까지로 맞춤 */
 .major-events-list { position: absolute; top: calc(100% + 6px); left: 0; z-index: 2; width: max-content; max-width: min(360px, calc(100vw - 32px)); max-height: 60vh; list-style: none; overflow-y: auto; margin: 0; padding: 4px; border: 1px solid var(--border); border-radius: 6px; background: var(--surface); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18); }
@@ -591,7 +591,7 @@ button {
 .app-main:has(> .map-yearbar.flat) .mg-return { bottom: calc(var(--flat-base) + 93px); }
 /* 아래 가운데: ◀ [연도] ▶ (감싼 상자 없이, 2026-10-28) */
 .map-yearbox { position: absolute; bottom: 12px; left: 50%; z-index: 4; display: flex; align-items: center; gap: 4px; transform: translateX(-50%); }
-.map-yearbox button { min-width: 30px; height: 30px; padding: 0 8px; border: 1px solid var(--border); border-radius: 6px; background: var(--control-bg); color: var(--fg); font: inherit; font-size: 13px; cursor: pointer; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12); }
+.map-yearbox button { min-width: 30px; height: 30px; padding: 0 8px; border: 1px solid var(--border); border-radius: 6px; --ui-bg: var(--control-bg); color: var(--fg); font: inherit; font-size: 13px; cursor: pointer; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12); }
 /* 테두리는 누르는 동안(:active)과 마우스 올림에만 진해진다. 터치 화면에서 손을 뗀 뒤에는 남지 않는다(2026-11-27) */
 .map-yearbox button:active:not(:disabled) { border-color: var(--muted); }
 @media (hover: hover) { .map-yearbox button:hover:not(:disabled) { border-color: var(--muted); } }
@@ -885,22 +885,22 @@ button {
 @media (prefers-color-scheme: dark) {
   :root { --control-solid: #23272a; }
 }
-.major-events-toggle { background: var(--control-bg); }
-.major-events-toggle:active { background: color-mix(in srgb, var(--front-line) 10%, var(--control-bg)); }
-@media (hover: hover) { .major-events-toggle:hover { background: color-mix(in srgb, var(--front-line) 10%, var(--control-bg)); } }
-.major-events-toggle[aria-expanded='true'] { background: color-mix(in srgb, var(--front-line) 18%, var(--control-solid)); }
-.map-regions button { background: var(--control-bg); }
-.map-regions[data-open] button { background: var(--control-solid); }
+.major-events-toggle { --ui-bg: var(--control-bg); }
+.major-events-toggle:active { --ui-bg: color-mix(in srgb, var(--front-line) 10%, var(--control-bg)); }
+@media (hover: hover) { .major-events-toggle:hover { --ui-bg: color-mix(in srgb, var(--front-line) 10%, var(--control-bg)); } }
+.major-events-toggle[aria-expanded='true'] { --ui-bg: color-mix(in srgb, var(--front-line) 18%, var(--control-solid)); }
+.map-regions button { --ui-bg: var(--control-bg); }
+.map-regions[data-open] button { --ui-bg: var(--control-solid); }
 
 /* ── 미니게임 (2026-11-17) ─────────────────────────
    본 지도 위에 덮어 띄우는 화면. 색은 위의 변수를 그대로 쓰고, 정답 색(--mg-ok)만 따로 둔다 */
 /* 미니게임으로 가는 단추 (2026-11-19): 지도 오른쪽 위의 정사각형 게임패드 단추(모서리 5px).
    한 변은 '주요 전쟁' 단추(.major-events-toggle) 높이의 2배, 휴대폰은 1.3배. 그 단추 높이가 바뀌면 --mg-major-h도 함께 고친다 */
 .app-main { --mg-major-h: 32px; }
-.mg-launch { position: absolute; top: 12px; right: 12px; z-index: 4; width: calc(var(--mg-major-h) * 2); height: calc(var(--mg-major-h) * 2); padding: 0; display: grid; place-items: center; border: 1.5px solid var(--accent); border-radius: 5px; background: var(--control-bg); color: var(--accent); cursor: pointer; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15); }
+.mg-launch { position: absolute; top: 12px; right: 12px; z-index: 4; width: calc(var(--mg-major-h) * 2); height: calc(var(--mg-major-h) * 2); padding: 0; display: grid; place-items: center; border: 1.5px solid var(--accent); border-radius: 5px; --ui-bg: var(--control-bg); color: var(--accent); cursor: pointer; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15); }
 .mg-launch svg { width: 62%; height: 62%; }
-.mg-launch:active { background: color-mix(in srgb, var(--accent) 10%, var(--control-bg)); }
-@media (hover: hover) { .mg-launch:hover { background: color-mix(in srgb, var(--accent) 10%, var(--control-bg)); } }
+.mg-launch:active { --ui-bg: color-mix(in srgb, var(--accent) 10%, var(--control-bg)); }
+@media (hover: hover) { .mg-launch:hover { --ui-bg: color-mix(in srgb, var(--accent) 10%, var(--control-bg)); } }
 @media (max-width: 768px) {
   /* 휴대폰: 검색창 아래 '주요 전쟁'과 같은 높이, 지도 오른쪽 끝(전쟁 보기에서는 오른쪽 세로 상황 막대의 바로 위 — 막대 폭 50px·오른쪽 6px의 가운데 줄에 맞춤).
      단추가 들어간 만큼(단추 한 변) 그 세로 막대를 아래에서 시작하게 해 길이를 줄인다. 원래 막대의 top은 69px */
@@ -1120,4 +1120,21 @@ button {
 @media (max-width: 768px) {
   /* 시대 경계선은 휴대폰에서만 절반 높이(14 → 7px). 아래 끝은 그대로 막대 위 끝에 닿는다 */
   .app-main:has(> .map-yearbar.flat) .map-yearbar-eraline { top: 3px; height: 7px; }
+}
+
+/* ── 단추의 바탕 전용 칸 (2026-11-27) ─────────────────
+   '주요 전쟁'·미니게임·권역(전역)·연도 좌우 화살표 단추는 바탕색을 단추가 아니라 그 안의 칸(.ui-bg, 단추 글자 뒤에 깔림)이 갖는다.
+   밝은 사이트를 스스로 어둡게 덧칠하는 브라우저(삼성 브라우저)가 '단추가 가진 바탕'만 회색으로, 단추 아닌 칸의 바탕은 거의 검정으로 바꿔서
+   같은 색을 쓰는 지도 단추들의 색이 갈렸다. 위 규칙들의 --ui-bg가 이 칸의 색이다(전에는 background) */
+.major-events-toggle, .mg-launch, .map-controls button, .map-yearbox button { isolation: isolate; background: transparent; }
+.major-events-toggle, .map-controls button, .map-yearbox button { position: relative; }
+.ui-bg { position: absolute; inset: 0; z-index: -1; border-radius: calc(var(--ui-r, 6px) - var(--ui-bw, 1px)); background: var(--ui-bg); pointer-events: none; }
+.major-events-toggle { --ui-bw: 1.5px; }
+.mg-launch { --ui-r: 5px; --ui-bw: 1.5px; }
+/* 삼성 브라우저 전용(index.html이 html에 .samsung을 붙임): 그 브라우저의 덧칠은 밝은 바탕일수록 더 어둡게 바꾸는 것으로 보여,
+   덧칠된 화면에서 검색 영역이 지도 단추보다 어둡게 나오도록 밝은 화면의 검색 영역은 흰색, 지도 단추는 아주 옅은 회색으로 둔다
+   (설계한 어두운 화면에서 검색 영역 #1d2124가 단추 #23272a보다 어두운 것과 같은 차례). 다른 브라우저의 색은 그대로 */
+@media (prefers-color-scheme: light) {
+  :root.samsung { --control-bg: #f0f0f0e6; --control-solid: #f0f0f0; }
+  :root.samsung .search { background: #ffffff; }
 }

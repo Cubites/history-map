@@ -9,6 +9,10 @@
          어두운 화면일 때는 styles.css의 :root가 only dark로 바꾼다 -->
     <meta name="color-scheme" content="only light" />
     <title>역사 지도</title>
+    <!-- 삼성 브라우저 표시(2026-11-27): 그 브라우저의 강제 어둡게 덧칠에 맞춘 색 차이를 주기 위해 html에 .samsung을 붙인다(styles.css 끝) -->
+    <script>
+      if (/SamsungBrowser/.test(navigator.userAgent)) document.documentElement.classList.add('samsung');
+    </script>
   </head>
   <body>
     <div id="root"></div>

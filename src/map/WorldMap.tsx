@@ -1146,11 +1146,13 @@ export default function WorldMap({ data }: { data: StaticData }) {
               })
             }
           >
+            <span className="ui-bg" aria-hidden="true" />
             세계
           </button>
           {/* 권역 열 개(2026-11-21): 순서는 regions.ts REGION_BUTTONS, 누르면 그 권역의 focus(없으면 bounds)로 옮긴다 */}
           {REGION_BUTTONS.map((id, i) => (
             <button key={id} type="button" aria-pressed={regionFilter === id} style={{ '--i': REGION_BUTTONS.length - 1 - i } as CSSProperties} onClick={() => pickRegion(() => chooseRegion(id))}>
+              <span className="ui-bg" aria-hidden="true" />
               {REGION_FILTER_INFO[id].short}
             </button>
           ))}
@@ -1170,6 +1172,7 @@ export default function WorldMap({ data }: { data: StaticData }) {
               style={{ '--i': war.theaters.length - 1 - i } as CSSProperties}
               onClick={() => pickRegion(() => (t.id === theater.id ? undefined : enterWar(war.id, t.id, entryYear(t, year), null)))}
             >
+              <span className="ui-bg" aria-hidden="true" />
               {t.name}
             </button>
           ))}

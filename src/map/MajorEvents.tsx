@@ -49,6 +49,8 @@ export function MajorEvents({ data }: { data: StaticData }) {
   return (
     <div ref={boxRef} className="major-events map-ui" onClick={(e) => e.stopPropagation()} onPointerDown={(e) => e.stopPropagation()}>
       <button type="button" className="major-events-toggle" aria-expanded={open} aria-controls="major-events-list" onClick={() => setOpen((v) => !v)}>
+        {/* 바탕 전용 칸(2026-11-27, styles.css .ui-bg): 바탕색을 단추가 아니라 이 칸이 갖는다 */}
+        <span className="ui-bg" aria-hidden="true" />
         주요 전쟁
       </button>
       {open && (
