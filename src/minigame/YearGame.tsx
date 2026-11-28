@@ -5,7 +5,7 @@
 // 보통·어려움은 처음에 국경선만 보이고, 둘레의 육지·바다는 옆 나라 힌트와 함께 열린다. 지도는 육지·바다가 보일 때부터 끌어서 옮기고 확대할 수 있다.
 import { useMemo, useState, type FormEvent } from 'react';
 import { FindMap } from './FindMap.tsx';
-import { BONUS, HINT_COST, Hints, POINTS, Result, Status, nearHint, useQuizItems, type Hint, type PlayProps } from './parts.tsx';
+import { BONUS, Gain, HINT_COST, Hints, POINTS, Result, Status, nearHint, useQuizItems, type Hint, type PlayProps } from './parts.tsx';
 import { ERA_LABEL, centuryKey, centuryKeyText, centuryText, decadeKey, decadeKeyText, eraOf, eventHint, keepRange, regionEventHint, yearText } from './questions.ts';
 
 /** 옆 나라 힌트의 차례(둘째). 보통·어려움은 이 힌트가 둘레의 육지·바다도 함께 연다 */
@@ -61,9 +61,10 @@ export function YearGame({ data, q, level, total, outcomes, onView, onNext }: Pl
 
   return (
     <div className="mg-game">
-      <Status title="연도 맞추기" level={level} total={total} outcomes={outcomes} points={base} />
+      <Status title="연도 맞추기" level={level} total={total} outcomes={outcomes} />
       <div className="mg-mapwrap">
         <FindMap items={items} start={start} mainId={q.entity.id} labels={labels} bare={bare} detail />
+        {ok && <Gain points={points} />}
       </div>
       <aside className="mg-panel">
         <p className="mg-q">이 영토는 <em>{hard ? '어느 해' : '몇 세기'}</em>의 모습일까요?</p>

@@ -47,6 +47,29 @@ interface Props {
 }
 
 const NO_LABELS: Record<string, string> = {};
+type Box = [number, number, number, number];
+
+// 경도 180° 선을 넘는 나라(피지·러시아)는 territories.json의 범위가 '경도 전체'(-180~180)로 적혀 있어
+// 그대로 화면을 잡으면 세계 지도가 된다. 도형에서 서쪽 반구의 경도에 360°를 더해 이어진 범위를 다시 낸다(동쪽 끝이 180°를 넘는다)
+const spansAll = (b: Box) => b[0] <= -179.9 && b[2] >= 179.9;
+const seamCache = new WeakMap<TerritoryFeature, Box>();
+function seamBox(feature: TerritoryFeature, fallback: Box): Box {
+  const hit = seamCache.get(feature);
+  if (hit) return hit;
+  let [w, e] = [Infinity, -Infinity];
+  const walk = (c: unknown): void => {
+    if (!Array.isArray(c)) return;
+    if (typeof c[0] === 'number') {
+      const lon = c[0] < 0 ? c[0] + 360 : c[0];
+      if (lon < w) w = lon;
+      if (lon > e) e = lon;
+    } else c.forEach(walk);
+  };
+  walk((feature.geometry as { coordinates?: unknown }).coordinates);
+  const box: Box = e - w < 359 ? [w, fallback[1], e, fallback[3]] : fallback;
+  seamCache.set(feature, box);
+  return box;
+}
 const clampZoom = (k: number) => Math.max(MIN_ZOOM, Math.min(MAX_ZOOM, k));
 
 export function FindMap({ items, start, focus, area, mainId, labels = NO_LABELS, onPick, bare = false, detail = false, highlightId, pendingId, centerOn }: Props) {
@@ -62,27 +85,43 @@ export function FindMap({ items, start, focus, area, mainId, labels = NO_LABELS,
   const sizeRef = useRef<Size | null>(null);
   sizeRef.current = size ?? null;
 
+  // 화면을 잡을 범위. 180° 선을 넘는 나라는 도형을 받은 뒤에야 알 수 있어 그때까지 null
+  const realBox = (bbox: Box): Box | null => {
+    if (!spansAll(bbox)) return bbox;
+    const item = items.find((it) => it.bbox.every((n, i) => n === bbox[i]));
+    if (!item) return bbox;
+    const shape = shapes.get(item.key);
+    return shape ? seamBox(shape, bbox) : null;
+  };
+  const startBox = start !== 'world' && !Array.isArray(start) ? realBox(start.bbox) : null;
+  const focusBox = focus ? realBox(focus) : null;
+  const focused = useRef<Box | null>(null);
+
   // 멀리서 볼 때는 거친 도형, 가까이서는 중간 도형 (본 지도와 같은 자료)
   const lod = detail || (view && view.k >= 3) ? 'mid' : 'low';
 
   // 처음 화면을 잡고, 창 크기가 바뀌면 지도 끝이 화면 밖으로 나가지 않게 다시 맞춘다
   useEffect(() => {
     if (!size) return;
+    if (start !== 'world' && !Array.isArray(start) && !startBox) return; // 도형을 기다린다
     const s0 = baseScale(size);
     const first = (): View => {
       if (start === 'world') return toView(size, s0, { lon: DEFAULT_LON, lat: 0, k: MIN_ZOOM });
       if (Array.isArray(start)) return fitBounds(size, s0, start);
       // 한 나라: 영토가 화면에 맞는 시점에서 조금 물러나 둘레가 함께 보이게 한다
-      const g = toGeoView(size, s0, fitFocus(size, s0, start.bbox));
+      const g = toGeoView(size, s0, fitFocus(size, s0, startBox!));
       return toView(size, s0, { ...g, k: Math.max(MIN_ZOOM, g.k * 0.6) });
     };
     setView((v) => (v ? constrain(size, s0, v) : first()));
-  }, [size, start]);
+  }, [size, start, startBox]);
 
   useEffect(() => {
     const s = sizeRef.current;
-    if (focus && s) setView(fitFocus(s, baseScale(s), focus));
-  }, [focus]);
+    if (!focus) focused.current = null;
+    if (!focus || !focusBox || !s || focused.current === focus) return; // 한 범위로는 한 번만 옮긴다
+    focused.current = focus;
+    setView(fitFocus(s, baseScale(s), focusBox));
+  }, [focus, focusBox]);
 
   useEffect(() => {
     const s = sizeRef.current;

@@ -28,7 +28,23 @@ const MIN_SPAN = 4;
 /** top은 넓이 순으로 위쪽 이 비율의 나라만 낸다 */
 const EASY_TOP = 0.35;
 
-export const span = ({ bbox: [w, s, e, n] }: TerritoryIndexEntry) => (e < w ? e + 360 - w : e - w) * (n - s);
+/**
+ * 경도 180° 선을 넘는 나라의 실제 동서 폭(°). territories.json의 범위는 이런 나라를 '경도 전체'(-180~180)로 적어
+ * 그대로 세면 피지 같은 작은 섬나라가 가장 넓은 나라로 잡힌다(2026-11-28). 도형에서 잰 값이다(피지 174.6~181.7, 러시아 19.6~190.3).
+ * 180° 선을 넘는 나라가 새로 생기면 여기에 더한다(없으면 전처럼 360°로 센다)
+ */
+const SEAM_WIDTH: Record<string, number> = {
+  'kingdom-of-fiji': 7.1,
+  'fiji-colony': 7.1,
+  fiji: 7.1,
+  russia: 172.6,
+  'soviet-union': 170.7,
+  'russia-fed': 170.7,
+};
+export const span = ({ entityId, bbox: [w, s, e, n] }: TerritoryIndexEntry) => {
+  const width = w <= -179.9 && e >= 179.9 ? SEAM_WIDTH[entityId] ?? 360 : e < w ? e + 360 - w : e - w;
+  return width * (n - s);
+};
 export const eraOf = (year: number): Era => (year < 500 ? 'ancient' : year < 1500 ? 'medieval' : 'modern');
 /** 나라의 기본 권역 단위(여러 권역에 걸치는 나라는 첫 단위) */
 export const unitOf = (e: LoadedEntity) => unitsOf(e)[0];

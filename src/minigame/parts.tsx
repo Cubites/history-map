@@ -53,10 +53,10 @@ export function useQuizItems(data: StaticData, q: Question, showNear: boolean) {
 }
 
 /**
- * 위쪽 상태 줄 (2026-11-27 고침). 첫 줄: 게임 이름·난이도, 오른쪽 끝에 점수. 둘째 줄: '문제 N / N'과 그 오른쪽에 진행 점,
- * (points를 주면) 오른쪽 끝에 이번 문제 점수. 연속 정답 표시는 없앴다. 나라 이름 맞추기는 이번 문제 점수를 보이지 않는다(points 없음)
+ * 위쪽 상태 줄 (2026-11-27 고침). 첫 줄: 게임 이름·난이도, 오른쪽 끝에 '현재 점수 N점'. 둘째 줄: '문제 N / N'과 그 오른쪽에 진행 점.
+ * 연속 정답 표시와 '이번 문제 N점' 표시는 없앴다(2026-11-28)
  */
-export function Status({ title, level, total, outcomes, points }: { title: string; level?: Level; total: number; outcomes: Outcome[]; points?: number }) {
+export function Status({ title, level, total, outcomes }: { title: string; level?: Level; total: number; outcomes: Outcome[] }) {
   const score = outcomes.reduce((sum, o) => sum + o.points, 0);
   return (
     <div className="mg-status">
@@ -64,7 +64,7 @@ export function Status({ title, level, total, outcomes, points }: { title: strin
         <b>{title}</b>
         {level && <span className="mg-level">{LEVEL_LABEL[level]}</span>}
         <span className="mg-sp" />
-        <span>점수 <b>{score}</b></span>
+        <span>현재 점수 <b>{score}</b>점</span>
       </div>
       <div className="mg-status-row">
         <span>문제 {outcomes.length + 1} / {total}</span>
@@ -73,7 +73,6 @@ export function Status({ title, level, total, outcomes, points }: { title: strin
             <i key={i} className={i < outcomes.length ? (outcomes[i].ok ? 'ok' : 'no') : i === outcomes.length ? 'now' : ''} />
           ))}
         </span>
-        {points !== undefined && <span className="mg-status-points">이번 문제 <b>{points}</b>점</span>}
       </div>
     </div>
   );
@@ -97,7 +96,15 @@ export function Hints({ hints, opened, answered, onOpen }: { hints: Hint[]; open
   );
 }
 
-export function Result({ ok, title, sub, last, onView, onNext }: { ok: boolean; title: string; sub: string; last: boolean; onView: () => void; onNext: () => void }) {
+/** 정답을 맞췄을 때 지도 영역 가운데에 뜨는 '+ N점': 아래에서 위로 올라오며 진해졌다가 연해지며 사라진다 (2026-11-28, styles.css .mg-gain) */
+export function Gain({ points }: { points: number }) {
+  return <div className="mg-gain" aria-hidden="true">+ {points}점</div>;
+}
+
+/**
+ * 답한 뒤의 상자. sub와 onView를 주지 않으면(나라 이름 맞추기, 2026-11-28) 한 줄짜리: 왼쪽에 title, 오른쪽 끝에 다음 문제 단추
+ */
+export function Result({ ok, title, sub, last, onView, onNext }: { ok: boolean; title: string; sub?: string; last: boolean; onView?: () => void; onNext: () => void }) {
   // 답한 뒤 Enter로 넘어간다
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => e.key === 'Enter' && onNext();
@@ -105,11 +112,11 @@ export function Result({ ok, title, sub, last, onView, onNext }: { ok: boolean; 
     return () => window.removeEventListener('keydown', onKey);
   });
   return (
-    <div className={`mg-result${ok ? '' : ' bad'}`}>
+    <div className={`mg-result${ok ? '' : ' bad'}${sub === undefined ? ' line' : ''}`}>
       <strong>{title}</strong>
-      <p className="mg-sub">{sub}</p>
+      {sub !== undefined && <p className="mg-sub">{sub}</p>}
       <div className="mg-row">
-        <button className="mg-ghost" onClick={onView}>지도에서 보기</button>
+        {onView && <button className="mg-ghost" onClick={onView}>지도에서 보기</button>}
         <button className="mg-primary" onClick={onNext}>{last ? '결과 보기' : '다음 문제'}</button>
       </div>
     </div>

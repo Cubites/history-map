@@ -15,8 +15,8 @@ import { FindGame } from './FindGame.tsx';
 import { FindMap } from './FindMap.tsx';
 import { QuizMap } from './QuizMap.tsx';
 import { YearGame } from './YearGame.tsx';
-import { HINT_COST, Hints, POINTS, Result, Status, nearHint, useQuizItems, type Hint, type Outcome, type PlayProps } from './parts.tsx';
-import { LEVELS, LEVEL_LABEL, ROUND, ROUNDS, answerNames, buildQuestions, centuryText, chosung, eventHint, isNameAnswer, yearText, type Level, type Pool, type Question } from './questions.ts';
+import { Gain, HINT_COST, Hints, POINTS, Result, Status, nearHint, useQuizItems, type Hint, type Outcome, type PlayProps } from './parts.tsx';
+import { LEVELS, LEVEL_LABEL, ROUND, ROUNDS, answerNames, buildQuestions, centuryText, chosung, eventHint, isNameAnswer, type Level, type Pool, type Question } from './questions.ts';
 
 type Game = 'name' | 'year' | 'find';
 /** rule은 난이도 단추 아래에 한 줄씩 적는 난이도 설명(고른 난이도 것만 보인다). pool은 난이도별로 낼 나라와 모습(questions.ts의 Pool) */
@@ -65,6 +65,8 @@ const CLOSE_MS = 200;
 export function MiniGame({ data, onClose }: { data: StaticData; onClose: () => void }) {
   // 고르기 화면에서 펼친 게임(없으면 모두 접힘). 시작하면 이 게임을 한다
   const [game, setGame] = useState<Game | null>(null);
+  /** 마지막으로 펼친 게임 */
+  const lastGame = useRef<Game | null>(null);
   const [level, setLevel] = useState<Level>('easy');
   const [region, setRegion] = useState<RegionFilter>('all');
   const [count, setCount] = useState<number>(ROUND);
@@ -102,6 +104,25 @@ export function MiniGame({ data, onClose }: { data: StaticData; onClose: () => v
     if (away && selectedId === null) setAway(false);
   }, [away, selectedId]);
   const [outcomes, setOutcomes] = useState<Outcome[]>([]);
+  // 휴대폰 글자판이 올라오면(보이는 화면이 줄면) 미니게임 화면을 보이는 높이에 맞춰 줄이고 지도 칸을 낮춰, 입력 칸이 글자판 위에 보이게 한다(2026-11-28).
+  // 화면이 고정(position: fixed)이라 브라우저가 입력 칸을 알아서 올려 주지 못한다. 줄어든 뒤 입력 칸을 문제 영역 안에서 보이는 자리로 스크롤한다
+  const [kb, setKb] = useState<{ height: number; top: number } | null>(null);
+  useEffect(() => {
+    const vv = window.visualViewport;
+    if (!vv) return;
+    const fit = () => {
+      const open = window.innerHeight - vv.height > 120;
+      setKb((cur) => (!open ? null : cur && cur.height === vv.height && cur.top === vv.offsetTop ? cur : { height: vv.height, top: vv.offsetTop }));
+      const el = document.activeElement;
+      if (open && el instanceof HTMLInputElement && el.closest('.mg')) requestAnimationFrame(() => el.scrollIntoView({ block: 'nearest' }));
+    };
+    vv.addEventListener('resize', fit);
+    vv.addEventListener('scroll', fit);
+    return () => {
+      vv.removeEventListener('resize', fit);
+      vv.removeEventListener('scroll', fit);
+    };
+  }, []);
   const [empty, setEmpty] = useState(false);
   const setYear = useAppStore((s) => s.setYear);
   const selectFocus = useAppStore((s) => s.selectFocus);
@@ -147,7 +168,7 @@ export function MiniGame({ data, onClose }: { data: StaticData; onClose: () => v
   return (
     // 바깥(.mg)은 뒤 화면을 흐리게 덮는 막: 창 밖을 누르면 닫는다 (결과 창에서는 닫지 않는다: 잘못 눌러 결과를 잃지 않게, 2026-11-23)
     // 문제를 푸는 동안은 .playing: PC에서 창을 화면 전체로 넓힌다(2026-11-23). 결과는 게임 고르기와 같은 가운데 창으로 돌아온다
-    <div className={`mg${questions && !done ? ' playing' : ''}${closing ? ' closing' : ''}`} onClick={(e) => e.target === e.currentTarget && !done && close()}>
+    <div className={`mg${questions && !done ? ' playing' : ''}${closing ? ' closing' : ''}${kb ? ' kb' : ''}`} style={kb ? { top: kb.top, bottom: 'auto', height: kb.height } : undefined} onClick={(e) => e.target === e.currentTarget && !done && close()}>
     <div className="mg-win" role="dialog" aria-label="미니게임">
       <header className="mg-top">
         <strong>미니게임</strong>
@@ -168,7 +189,17 @@ export function MiniGame({ data, onClose }: { data: StaticData; onClose: () => v
               return (
                 <section key={g.id} className={`mg-card${open ? ' on' : ''}`}>
                   {/* 블럭 머리: 누르면 이 게임만 펼치고(다른 게임은 접힘), 펼친 게임을 다시 누르면 접는다 */}
-                  <button className="mg-card-head" aria-expanded={open} onClick={() => { setGame(open ? null : g.id); setEmpty(false); }}>
+                  <button className="mg-card-head" aria-expanded={open} onClick={() => {
+                    // 다른 게임을 펼치면 난이도·권역·문제 수를 처음 값으로 되돌린다(2026-11-28). 같은 게임을 접었다 펴는 것은 그대로 둔다
+                    if (!open && lastGame.current !== g.id) {
+                      setLevel('easy');
+                      setRegion('all');
+                      setCount(ROUND);
+                    }
+                    if (!open) lastGame.current = g.id;
+                    setGame(open ? null : g.id);
+                    setEmpty(false);
+                  }}>
                     <h3>{g.title}</h3><p>{g.about}</p>
                   </button>
                   <div className="mg-card-body" aria-hidden={!open}>
@@ -225,7 +256,7 @@ export function MiniGame({ data, onClose }: { data: StaticData; onClose: () => v
 const NEAR_AT = 3;
 
 /** 1번 게임: 나라 이름 맞추기 (쉬움·보통은 4지선다, 어려움은 이름을 적는 주관식) */
-function NameGame({ data, q, level, total, outcomes, onView, onNext }: PlayProps) {
+function NameGame({ data, q, level, total, outcomes, onNext }: PlayProps) {
   const hard = level === 'hard';
   // 도형 묶음은 '하나 꺼내기'만 쓴다: 본 저장소 최신 코드는 Map 대신 하나씩만 꺼내는 묶음(LazyMap)을 주므로 둘 다에 맞춘다 (2026-11-19)
   const [geo, setGeo] = useState<{ get(key: string): TerritoryFeature | undefined } | null>(null);
@@ -303,6 +334,7 @@ function NameGame({ data, q, level, total, outcomes, onView, onNext }: PlayProps
       <div className="mg-mapwrap">
         {/* 육지·바다가 보이는 동안에는(쉬움은 처음부터, 보통·어려움은 옆 나라 힌트를 연 뒤) 본 지도처럼 끌어서 옮기고 확대할 수 있다 */}
         <FindMap items={items} start={start} mainId={q.entity.id} labels={labels} bare={bare} detail />
+        {ok && <Gain points={points} />}
       </div>
       <aside className="mg-panel">
         <p className="mg-q">화면의 <em>나라 이름</em>은?</p>
@@ -322,7 +354,8 @@ function NameGame({ data, q, level, total, outcomes, onView, onNext }: PlayProps
             {q.options.map((o, i) => (
               <button
                 key={o.id}
-                className={picked === null ? '' : o.id === q.entity.id ? 'right' : o.id === picked ? 'wrong' : ''}
+                // 고른 보기(.picked)는 한 번 움직인다: 맞으면 위로 튕기고 틀리면 좌우로 흔들린다(2026-11-28)
+                className={picked === null ? '' : `${o.id === q.entity.id ? 'right' : o.id === picked ? 'wrong' : ''}${o.id === picked ? ' picked' : ''}`}
                 disabled={picked !== null}
                 onClick={() => picked === null && setPicked(o.id)}
               >
@@ -334,10 +367,8 @@ function NameGame({ data, q, level, total, outcomes, onView, onNext }: PlayProps
         {picked !== null && (
           <Result
             ok={ok}
-            title={`${ok ? '정답입니다.' : '아쉽습니다. 정답은'} ${q.entity.names.ko}`}
-            sub={`${hard ? `낸 답 ${picked} · ` : ''}${yearText(q.year)}의 모습 · ${ok ? points : 0}점`}
+            title={ok ? '정답입니다' : '틀렸습니다'}
             last={outcomes.length + 1 === total}
-            onView={() => onView(q)}
             onNext={() => onNext({ q, ok, hints: opened, points: ok ? points : 0 })}
           />
         )}
