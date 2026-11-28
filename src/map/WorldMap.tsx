@@ -42,6 +42,7 @@ import { WarDetailLayer } from './WarDetailLayer.tsx';
 import {
   drawMap,
   isVisible,
+  onScreen,
   visibleBounds,
   type DrawFront,
   type DrawTerritory,
@@ -130,6 +131,33 @@ function focusBox(territories: TerritoryIndexEntry[], entityId: string, year: nu
     Math.max(...mine.map((t) => t.bbox[3])),
   ];
   return { box, main: mine.reduce((a, b) => (area(b.bbox) > area(a.bbox) ? b : a)) };
+}
+
+/**
+ * 나라 영토를 떨어진 땅덩이(폴리곤)별로 나눈 것 (2026-11-28). 나라 단위로만 보이는지 따지면 일부만 화면에 걸친 나라
+ * (식민 제국, 섬이 많은 나라)는 화면 밖 땅덩이까지 모두 투영했다(유럽 권역에서 그리는 점의 2/3가 화면 밖).
+ * 육지(loadLand)와 같은 방식으로 나누고 바깥 고리의 경위도 범위를 붙인다. 땅덩이가 하나뿐이면 나누지 않는다(null)
+ */
+const partsCache = new WeakMap<TerritoryFeature, Piece[] | null>();
+function partsOf(feature: TerritoryFeature): Piece[] | null {
+  let parts = partsCache.get(feature);
+  if (parts !== undefined) return parts;
+  const g = feature.geometry;
+  parts =
+    g?.type === 'MultiPolygon' && g.coordinates.length > 1
+      ? g.coordinates.map((coordinates) => {
+          let [w, s, e, n] = [Infinity, Infinity, -Infinity, -Infinity];
+          for (const [x, y] of coordinates[0]) {
+            if (x < w) w = x;
+            if (x > e) e = x;
+            if (y < s) s = y;
+            if (y > n) n = y;
+          }
+          return { feature: { type: 'Feature' as const, properties: null, geometry: { type: 'Polygon' as const, coordinates } }, bbox: [w, s, e, n] as Piece['bbox'] };
+        })
+      : null;
+  partsCache.set(feature, parts);
+  return parts;
 }
 
 /**
@@ -501,7 +529,11 @@ export default function WorldMap({ data }: { data: StaticData }) {
     const useTiles = lod !== 'low' && tileView;
     // 조각은 멈췄을 때 화면에 보이는 나라 것만 받는다(A·B)
     if (useTiles && !moving) ensureTiled(lod, [...new Set(active.filter((t) => isVisible(t.bbox, bounds, v)).map((t) => t.entityId))]);
-    const visiblePieces = (pieces: Piece[]) => pieces.filter((p) => isVisible(p.bbox, bounds, v));
+    // 경위도 상자로 거른 뒤 화면 좌표로 한 번 더 거른다(onScreen, 2026-11-28). 유럽 권역 1800년(390x800)에서 멈춘 화면의 점이 16만 → 8.8만,
+    // 그리는 경로가 249 → 87개로 줄었고, 화면 안에 점이 있는 경로는 하나도 빠지지 않았다(경로별 화면 안 점 수가 같음)
+    const cull = !bounds.all;
+    const seen = (bbox: Piece['bbox']) => isVisible(bbox, bounds, v) && (!cull || onScreen(projection, bbox, size, v));
+    const visiblePieces = (pieces: Piece[]) => pieces.filter((p) => seen(p.bbox));
 
     paletteRef.current ??= readPalette(canvas);
     const territories: DrawTerritory[] = [];
@@ -517,12 +549,15 @@ export default function WorldMap({ data }: { data: StaticData }) {
       };
     }
     for (const entry of active) {
-      if (!isVisible(entry.bbox, bounds, v)) continue;
+      if (!seen(entry.bbox)) continue;
       const feature = featureFor(entry, lod);
       if (!feature) continue;
       const tiled = useTiles ? tiledFor(entry, lod, moving) : undefined;
       const plain = [{ feature, bbox: entry.bbox }];
-      const shapes = tiled ? { fill: visiblePieces(tiled.tiles), stroke: visiblePieces(tiled.lines) } : { fill: plain, stroke: plain };
+      // 조각을 쓰지 않을 때: 여러 땅덩이로 된 영토는 화면에 보이는 땅덩이만 그린다(partsOf). 칠하기와 테두리가 같은 목록
+      const parts = tiled || !cull ? null : partsOf(feature);
+      const shown = parts ? visiblePieces(parts) : plain;
+      const shapes = tiled ? { fill: visiblePieces(tiled.tiles), stroke: visiblePieces(tiled.lines) } : { fill: shown, stroke: shown };
       if (front) {
         // 전쟁 보기: 진영 색 위에 그해 나라 경계를 다시 긋는다. 점령 지역용 항목(지역 항목·그해 점령된 땅)의 연 단위 경계는
         // 날짜별 점령선과 어긋나므로 긋지 않는다 (2026-10-13)
@@ -564,7 +599,7 @@ export default function WorldMap({ data }: { data: StaticData }) {
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     paletteRef.current ??= readPalette(canvas);
     const tiledLand = useTiles ? landTiledFor(lod, moving) : undefined;
-    const plainLand = landFor(lod).filter((p) => isVisible(p.bbox, bounds, v));
+    const plainLand = visiblePieces(landFor(lod));
     const land = tiledLand ? { fill: visiblePieces(tiledLand.tiles), stroke: visiblePieces(tiledLand.lines) } : { fill: plainLand, stroke: plainLand };
     drawMap(ctx, projection, createProjection(size, s0, v, true), v, size, land, territories, paletteRef.current, front);
     // 이름표·화살표(SVG)도 방금 그린 지도와 같은 프레임에 맞춘다. 늦게 그리면 움직이는 동안 지도에서 밀려 보인다
@@ -710,6 +745,10 @@ export default function WorldMap({ data }: { data: StaticData }) {
         // 풀 때 그 클릭의 다시 그리기가 가벼운 단계(배율 12 아래는 mid, 4 아래는 low)로 그려져 해안선·국경이 잠깐 뭉개져 보였다 (2026-11-02)
         const g0 = gestureStart.current;
         if (!movingRef.current && (t1.k !== g0.k || Math.hypot(t1.x - g0.x, t1.y - g0.y) > CLICK_DISTANCE)) setMoving(true);
+        // 끌기로 판정되기 전(누른 자리에서 몇 픽셀 안)에는 옮기지도 다시 그리지도 않는다(2026-11-28). 이때는 아직 '멈춘 상태'라
+        // 세밀한 단계로 그려, 권역 배율에서 끌기 시작의 첫 한두 프레임이 약 200ms씩 걸렸다. 그동안의 움직임은 버리지 않고
+        // (lastTransform을 그대로 둠) 끌기로 판정된 첫 프레임에 한꺼번에 반영한다
+        if (!movingRef.current) return;
         lastTransform.current = t1;
         // 새 화면 가운데에 올 점을, 옮기기 전 화면 좌표로 구한다 (끌기와 기준점 확대 모두 처리)
         const center: [number, number] = [size.width / 2, size.height / 2];

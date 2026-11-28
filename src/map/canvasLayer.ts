@@ -180,6 +180,28 @@ export function isVisible(bbox: BBox, bounds: ReturnType<typeof visibleBounds>, 
   return re >= bounds.w && rw <= bounds.e;
 }
 
+/**
+ * 경위도 범위(bbox)가 화면에 걸치는가를 화면 좌표로 따진다 (2026-11-28). isVisible(경위도 상자끼리 비교)을 통과한 것에 더 건다.
+ * 권역 배율에서는 화면 위쪽이 극 가까이 닿아 visibleBounds가 '모든 경도'가 되고, 화면에 전혀 없는 나라·육지까지 그렸다
+ * (유럽 권역에서 그리는 점의 2/3가 화면 밖). 범위의 모서리·변 가운데·한가운데 아홉 점을 투영해, 그 점들을 두른 화면 상자가
+ * 여유(margin)를 둔 화면과 겹치지 않으면 보이지 않는 것으로 친다. 이음새에 걸치거나 아주 넓은 범위는 따지지 않고 보이는 것으로 둔다
+ */
+export function onScreen(projection: GeoProjection, bbox: BBox, size: Size, view: View, margin = 80): boolean {
+  if (crossesSeam(bbox, view)) return true;
+  const [west, south, east, north] = bbox;
+  let [x0, y0, x1, y1] = [Infinity, Infinity, -Infinity, -Infinity];
+  for (let i = 0; i <= 2; i++)
+    for (let j = 0; j <= 2; j++) {
+      const p = projection([west + ((east - west) * i) / 2, south + ((north - south) * j) / 2]);
+      if (!p || !Number.isFinite(p[0]) || !Number.isFinite(p[1])) return true;
+      if (p[0] < x0) x0 = p[0];
+      if (p[0] > x1) x1 = p[0];
+      if (p[1] < y0) y0 = p[1];
+      if (p[1] > y1) y1 = p[1];
+    }
+  return x1 >= -margin && x0 <= size.width + margin && y1 >= -margin && y0 <= size.height + margin;
+}
+
 /** 이음새(중앙 경선의 반대편 경선)에 걸친 도형인가 */
 export function crossesSeam(bbox: BBox, view: View): boolean {
   const [west, , east] = bbox;
@@ -343,8 +365,11 @@ export function drawMap(
     ctx.fill();
   }
   if (land.stroke.length) {
-    ctx.beginPath();
-    trace(land.stroke);
+    // 칠하기와 테두리가 같은 목록이면(격자 조각을 쓰지 않을 때) 방금 칠한 경로에 그대로 테두리를 긋는다(2026-11-28: 같은 육지를 두 번 투영하지 않게)
+    if (land.stroke !== land.fill || !land.fill.length) {
+      ctx.beginPath();
+      trace(land.stroke);
+    }
     ctx.strokeStyle = palette.landStroke;
     ctx.stroke();
   }
