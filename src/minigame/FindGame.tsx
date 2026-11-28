@@ -8,7 +8,7 @@ import { parseYearInput } from '../lib/year.ts';
 import { activeTerritories } from '../data/staticData.ts';
 import { REGION_FILTER_INFO, regionFocusBounds } from '../schema/regions.ts';
 import { FindMap, type MapItem } from './FindMap.tsx';
-import { Gain, HINT_COST, Hints, POINTS, Result, Status, findBorderNeighbor, type Hint, type PlayProps } from './parts.tsx';
+import { HINT_COST, Hints, POINTS, Result, Status, findBorderNeighbor, type Hint, type PlayProps } from './parts.tsx';
 import { neighborsOf, peakOf, span, unitOf, yearText, type Question } from './questions.ts';
 
 export function FindGame({ data, q, level, total, outcomes, onView, onNext }: PlayProps) {
@@ -150,7 +150,6 @@ export function FindGame({ data, q, level, total, outcomes, onView, onNext }: Pl
             </div>
           </div>
         )}
-        {ok && <Gain points={points} />}
       </div>
       <aside className="mg-panel">
         <p className="mg-q">지도에서 <em>{q.entity.names.ko}</em> 찾기</p>

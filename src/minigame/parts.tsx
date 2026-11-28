@@ -96,11 +96,6 @@ export function Hints({ hints, opened, answered, onOpen }: { hints: Hint[]; open
   );
 }
 
-/** 정답을 맞췄을 때 지도 영역 가운데에 뜨는 '+ N점': 아래에서 위로 올라오며 진해졌다가 연해지며 사라진다 (2026-11-28, styles.css .mg-gain) */
-export function Gain({ points }: { points: number }) {
-  return <div className="mg-gain" aria-hidden="true">+ {points}점</div>;
-}
-
 /**
  * 답한 뒤의 상자. sub와 onView를 주지 않으면(나라 이름 맞추기, 2026-11-28) 한 줄짜리: 왼쪽에 title, 오른쪽 끝에 다음 문제 단추
  */

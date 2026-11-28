@@ -1062,10 +1062,6 @@ button {
 .mg-opts .right.picked { animation: mg-hop 0.45s ease both; }
 @keyframes mg-shake { 0%, 100% { transform: translateX(0); } 20% { transform: translateX(-8px); } 50% { transform: translateX(8px); } 80% { transform: translateX(-4px); } }
 @keyframes mg-hop { 0%, 100% { transform: translateY(0); } 35% { transform: translateY(-10px); } 65% { transform: translateY(0); } 82% { transform: translateY(-3px); } }
-/* 정답을 맞췄을 때 지도 영역 가운데의 '+ N점'(2026-11-28): 아래에서 위로 올라오며 진해졌다가 연해지며 사라진다 */
-.mg-gain { position: absolute; left: 50%; top: 50%; z-index: 3; pointer-events: none; white-space: nowrap; font-size: 30px; font-weight: 900; color: var(--mg-ok); text-shadow: 0 0 3px #fff, 0 0 3px #fff, 0 0 6px #fff, 0 2px 8px rgba(0, 0, 0, 0.25); animation: mg-gain 1.4s ease-out both; }
-@keyframes mg-gain { 0% { opacity: 0; transform: translate(-50%, 30px); } 30% { opacity: 1; } 60% { opacity: 1; } 100% { opacity: 0; transform: translate(-50%, -70px); } }
-@media (prefers-color-scheme: dark) { .mg-gain { text-shadow: 0 0 3px #000, 0 0 3px #000, 0 0 6px #000; } }
 .mg-hints h3 { font-size: 13px; font-weight: 800; color: var(--muted); display: flex; justify-content: space-between; }
 .mg-hints ol { list-style: none; margin-top: 8px; padding: 0; display: grid; gap: 6px; }
 .mg-hints li { border: 1px solid var(--border); border-radius: 10px; padding: 9px 12px; font-size: 13.5px; display: grid; grid-template-columns: 22px 1fr auto; gap: 8px; align-items: start; }

@@ -15,7 +15,7 @@ import { FindGame } from './FindGame.tsx';
 import { FindMap } from './FindMap.tsx';
 import { QuizMap } from './QuizMap.tsx';
 import { YearGame } from './YearGame.tsx';
-import { Gain, HINT_COST, Hints, POINTS, Result, Status, nearHint, useQuizItems, type Hint, type Outcome, type PlayProps } from './parts.tsx';
+import { HINT_COST, Hints, POINTS, Result, Status, nearHint, useQuizItems, type Hint, type Outcome, type PlayProps } from './parts.tsx';
 import { LEVELS, LEVEL_LABEL, ROUND, ROUNDS, answerNames, buildQuestions, centuryText, chosung, eventHint, isNameAnswer, type Level, type Pool, type Question } from './questions.ts';
 
 type Game = 'name' | 'year' | 'find';
@@ -105,24 +105,40 @@ export function MiniGame({ data, onClose }: { data: StaticData; onClose: () => v
   }, [away, selectedId]);
   const [outcomes, setOutcomes] = useState<Outcome[]>([]);
   // 휴대폰 글자판이 올라오면(보이는 화면이 줄면) 미니게임 화면을 보이는 높이에 맞춰 줄이고 지도 칸을 낮춰, 입력 칸이 글자판 위에 보이게 한다(2026-11-28).
-  // 화면이 고정(position: fixed)이라 브라우저가 입력 칸을 알아서 올려 주지 못한다. 줄어든 뒤 입력 칸을 문제 영역 안에서 보이는 자리로 스크롤한다
+  // 화면이 고정(position: fixed)이라 브라우저가 입력 칸을 알아서 올려 주지 못한다. 줄어든 뒤 입력 칸을 문제 영역 안에서 보이는 자리로 스크롤한다.
+  // 글자판이 올라왔는지는 '글자를 적는 칸을 누른 채, 보이는 높이가 지금까지 본 가장 큰 높이보다 120px 넘게 줄었는가'로 본다.
+  // window.innerHeight와 견주면 안 된다: 안드로이드 크롬 계열은 innerHeight도 보이는 높이를 따라 줄어 차이가 0이 된다(처음 그렇게 했다가 휴대폰에서 듣지 않았다)
   const [kb, setKb] = useState<{ height: number; top: number } | null>(null);
   useEffect(() => {
     const vv = window.visualViewport;
     if (!vv) return;
+    const full = { width: 0, height: 0 };
     const fit = () => {
-      const open = window.innerHeight - vv.height > 120;
-      setKb((cur) => (!open ? null : cur && cur.height === vv.height && cur.top === vv.offsetTop ? cur : { height: vv.height, top: vv.offsetTop }));
+      // 화면을 돌리면(너비가 바뀌면) 기준 높이를 새로 잡는다
+      if (full.width !== window.innerWidth) [full.width, full.height] = [window.innerWidth, 0];
+      full.height = Math.max(full.height, vv.height, document.documentElement.clientHeight);
       const el = document.activeElement;
-      if (open && el instanceof HTMLInputElement && el.closest('.mg')) requestAnimationFrame(() => el.scrollIntoView({ block: 'nearest' }));
+      const typing = (el instanceof HTMLInputElement && el.type !== 'range') && !!el.closest('.mg');
+      const open = typing && vv.scale < 1.01 && full.height - vv.height > 120;
+      setKb((cur) => (!open ? null : cur && cur.height === vv.height && cur.top === vv.offsetTop ? cur : { height: vv.height, top: vv.offsetTop }));
     };
+    fit();
     vv.addEventListener('resize', fit);
     vv.addEventListener('scroll', fit);
+    document.addEventListener('focusin', fit);
+    document.addEventListener('focusout', fit);
     return () => {
       vv.removeEventListener('resize', fit);
       vv.removeEventListener('scroll', fit);
+      document.removeEventListener('focusin', fit);
+      document.removeEventListener('focusout', fit);
     };
   }, []);
+  // 화면이 줄어든 뒤(그려진 뒤)에 입력 칸을 보이는 자리로 옮긴다. 글자판이 올라오는 동안 높이가 여러 번 바뀌므로 그때마다 다시 맞춘다
+  useEffect(() => {
+    const el = document.activeElement;
+    if (kb && el instanceof HTMLInputElement && el.closest('.mg')) el.scrollIntoView({ block: 'nearest' });
+  }, [kb]);
   const [empty, setEmpty] = useState(false);
   const setYear = useAppStore((s) => s.setYear);
   const selectFocus = useAppStore((s) => s.selectFocus);
@@ -334,7 +350,6 @@ function NameGame({ data, q, level, total, outcomes, onNext }: PlayProps) {
       <div className="mg-mapwrap">
         {/* 육지·바다가 보이는 동안에는(쉬움은 처음부터, 보통·어려움은 옆 나라 힌트를 연 뒤) 본 지도처럼 끌어서 옮기고 확대할 수 있다 */}
         <FindMap items={items} start={start} mainId={q.entity.id} labels={labels} bare={bare} detail />
-        {ok && <Gain points={points} />}
       </div>
       <aside className="mg-panel">
         <p className="mg-q">화면의 <em>나라 이름</em>은?</p>
