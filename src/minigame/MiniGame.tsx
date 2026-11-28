@@ -108,36 +108,67 @@ export function MiniGame({ data, onClose }: { data: StaticData; onClose: () => v
   // 화면이 고정(position: fixed)이라 브라우저가 입력 칸을 알아서 올려 주지 못한다. 줄어든 뒤 입력 칸을 문제 영역 안에서 보이는 자리로 스크롤한다.
   // 글자판이 올라왔는지는 '글자를 적는 칸을 누른 채, 보이는 높이가 지금까지 본 가장 큰 높이보다 120px 넘게 줄었는가'로 본다.
   // window.innerHeight와 견주면 안 된다: 안드로이드 크롬 계열은 innerHeight도 보이는 높이를 따라 줄어 차이가 0이 된다(처음 그렇게 했다가 휴대폰에서 듣지 않았다)
-  const [kb, setKb] = useState<{ height: number; top: number } | null>(null);
+  // (2026-11-28 세 번째 고침) 그래도 휴대폰에서 가려졌다. 두 가지를 더했다.
+  // ① 높이 변화를 알려 주지 않는 환경 대비: 손가락 화면에서 입력 칸을 누르고 0.7초가 지나도 보이는 높이가 그대로면, 글자판이 화면 아래 절반을 덮었다고 치고
+  //    아래 절반을 비운다(guess). 한 번 그렇게 판정된 기기에서는 다음부터 누르자마자 비운다.
+  // ② 입력 칸을 줄어든 화면의 맨 아래 끝이 아니라 가운데로 옮긴다(브라우저가 알려 주는 높이가 실제보다 조금 커도 가리지 않게).
+  // 주소에 ?kbdebug 를 붙이면 기기가 내놓는 높이 값들을 화면 위에 적어 준다(또 듣지 않을 때 원인을 보려는 것).
+  const [kb, setKb] = useState<{ height: number; top: number; pad: number } | null>(null);
+  const [kbInfo, setKbInfo] = useState('');
+  const kbOffAt = useRef(0);
   useEffect(() => {
     const vv = window.visualViewport;
-    if (!vv) return;
+    const debug = window.location.search.includes('kbdebug');
+    const coarse = window.matchMedia('(pointer: coarse)').matches;
     const full = { width: 0, height: 0 };
+    let focusedAt = 0;
+    let blind = false;
+    let reports = false;
+    const timers: number[] = [];
     const fit = () => {
+      const seen = vv ? vv.height : window.innerHeight;
+      const top = vv ? vv.offsetTop : 0;
       // 화면을 돌리면(너비가 바뀌면) 기준 높이를 새로 잡는다
       if (full.width !== window.innerWidth) [full.width, full.height] = [window.innerWidth, 0];
-      full.height = Math.max(full.height, vv.height, document.documentElement.clientHeight);
+      full.height = Math.max(full.height, seen, document.documentElement.clientHeight);
       const el = document.activeElement;
-      const typing = (el instanceof HTMLInputElement && el.type !== 'range') && !!el.closest('.mg');
-      const open = typing && vv.scale < 1.01 && full.height - vv.height > 120;
-      setKb((cur) => (!open ? null : cur && cur.height === vv.height && cur.top === vv.offsetTop ? cur : { height: vv.height, top: vv.offsetTop }));
+      const typing = el instanceof HTMLInputElement && el.type !== 'range' && !el.disabled && !!el.closest('.mg');
+      const shrunk = (!vv || vv.scale < 1.01) && full.height - seen > 120;
+      // 한 번이라도 높이가 줄어든 기기는 높이를 알려 주는 기기다: 뒤로 가기로 글자판만 내렸을 때 아래를 비우면 안 된다
+      if (shrunk) [blind, reports] = [false, true];
+      else if (!reports && typing && coarse && performance.now() - focusedAt > 700) blind = true;
+      const next = !typing ? null : shrunk ? { height: seen, top, pad: 0 } : blind ? { height: full.height, top: 0, pad: Math.round(full.height * 0.5) } : null;
+      setKb((cur) => {
+        if (cur && !next) kbOffAt.current = performance.now();
+        return cur && next && cur.height === next.height && cur.top === next.top && cur.pad === next.pad ? cur : next;
+      });
+      if (debug) setKbInfo(`vv ${Math.round(seen)}@${Math.round(top)} x${vv ? vv.scale.toFixed(2) : '-'} in ${window.innerHeight} cl ${document.documentElement.clientHeight} full ${Math.round(full.height)} ${typing ? 'typing' : '-'} ${coarse ? 'coarse' : 'fine'} ${shrunk ? 'shrunk' : blind ? 'blind' : 'none'}`);
+    };
+    const focusIn = () => {
+      focusedAt = performance.now();
+      fit();
+      // 높이 변화 알림이 오지 않는 기기를 위해, 글자판이 다 올라올 즈음까지 몇 번 다시 잰다
+      for (const ms of [150, 400, 800, 1200]) timers.push(window.setTimeout(fit, ms));
     };
     fit();
-    vv.addEventListener('resize', fit);
-    vv.addEventListener('scroll', fit);
-    document.addEventListener('focusin', fit);
+    vv?.addEventListener('resize', fit);
+    vv?.addEventListener('scroll', fit);
+    window.addEventListener('resize', fit);
+    document.addEventListener('focusin', focusIn);
     document.addEventListener('focusout', fit);
     return () => {
-      vv.removeEventListener('resize', fit);
-      vv.removeEventListener('scroll', fit);
-      document.removeEventListener('focusin', fit);
+      vv?.removeEventListener('resize', fit);
+      vv?.removeEventListener('scroll', fit);
+      window.removeEventListener('resize', fit);
+      document.removeEventListener('focusin', focusIn);
       document.removeEventListener('focusout', fit);
+      timers.forEach((t) => window.clearTimeout(t));
     };
   }, []);
-  // 화면이 줄어든 뒤(그려진 뒤)에 입력 칸을 보이는 자리로 옮긴다. 글자판이 올라오는 동안 높이가 여러 번 바뀌므로 그때마다 다시 맞춘다
+  // 화면이 줄어든 뒤(그려진 뒤)에 입력 칸을 보이는 자리 가운데로 옮긴다. 글자판이 올라오는 동안 높이가 여러 번 바뀌므로 그때마다 다시 맞춘다
   useEffect(() => {
     const el = document.activeElement;
-    if (kb && el instanceof HTMLInputElement && el.closest('.mg')) el.scrollIntoView({ block: 'nearest' });
+    if (kb && el instanceof HTMLInputElement && el.closest('.mg')) el.scrollIntoView({ block: 'center' });
   }, [kb]);
   const [empty, setEmpty] = useState(false);
   const setYear = useAppStore((s) => s.setYear);
@@ -184,7 +215,8 @@ export function MiniGame({ data, onClose }: { data: StaticData; onClose: () => v
   return (
     // 바깥(.mg)은 뒤 화면을 흐리게 덮는 막: 창 밖을 누르면 닫는다 (결과 창에서는 닫지 않는다: 잘못 눌러 결과를 잃지 않게, 2026-11-23)
     // 문제를 푸는 동안은 .playing: PC에서 창을 화면 전체로 넓힌다(2026-11-23). 결과는 게임 고르기와 같은 가운데 창으로 돌아온다
-    <div className={`mg${questions && !done ? ' playing' : ''}${closing ? ' closing' : ''}${kb ? ' kb' : ''}`} style={kb ? { top: kb.top, bottom: 'auto', height: kb.height } : undefined} onClick={(e) => e.target === e.currentTarget && !done && close()}>
+    <div className={`mg${questions && !done ? ' playing' : ''}${closing ? ' closing' : ''}${kb ? ' kb' : ''}${kb?.pad ? ' guess' : ''}`} style={kb ? (kb.pad ? { paddingBottom: kb.pad } : { top: kb.top, bottom: 'auto', height: kb.height }) : undefined} onClick={(e) => e.target === e.currentTarget && !done && !kb && performance.now() - kbOffAt.current > 600 && close()}>
+      {kbInfo && <div className="mg-kbinfo">{kbInfo}</div>}
     <div className="mg-win" role="dialog" aria-label="미니게임">
       <header className="mg-top">
         <strong>미니게임</strong>
