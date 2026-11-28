@@ -477,10 +477,6 @@ export default function WorldMap({ data }: { data: StaticData }) {
 
   // ── 그리기 ────────────────────────────────────────────────
   const paletteRef = useRef<Palette | null>(null);
-  /** 가볍게 끌기 토글(시험용, 2026-11-28). 켜면 권역 배율에서 끄는 동안 low 단계로 그린다(draw 참고). 고른 값은 기억해 둔다 */
-  const [lightDrag, setLightDrag] = useState(() => localStorage.getItem('light-drag') !== 'off');
-  const lightDragRef = useRef(lightDrag);
-  lightDragRef.current = lightDrag;
   const drawnRef = useRef<{ entry: TerritoryIndexEntry; feature: TerritoryFeature }[]>([]);
   const frame = useRef(0);
 
@@ -496,12 +492,11 @@ export default function WorldMap({ data }: { data: StaticData }) {
     const bounds = visibleBounds(projection, size, v);
     // 충분히 확대했을 때만 격자 조각을 쓴다. 넓게 볼 때는 건너뛸 조각이 적고 점만 늘어 오히려 느리다 (측정 결과)
     const tileView = !bounds.all && (bounds.e - bounds.w) * (bounds.n - bounds.s) <= TILE_VIEW_AREA;
-    // 가볍게 끌기(2026-11-28, 시험용 토글): 권역 배율(움직일 때 mid 단계, 격자 조각을 쓰기 전)에서 끄는 동안은 low로 그린다.
+    // 가볍게 끌기(2026-11-28): 권역 배율(움직일 때 mid 단계, 격자 조각을 쓰기 전)에서 끄는 동안은 low로 그린다.
     // 이 배율에서 mid는 받지 않고 받아 둔 high로 대신 그려(ensureLoaded) 한 프레임에 점 약 21만 개·200ms가 들었다(세계 배율의 low는 2.4만 개·21ms).
     // 손을 떼면 다시 세밀하게 그린다. 첫 끌기부터 가볍도록 멈춰 있을 때 low를 미리 받아 둔다(작음: 한 해 나라 전부 약 100KB)
-    const light = lightDragRef.current && lod === 'mid' && !tileView;
-    if (moving && light) lod = 'low';
-    else if (!moving && lightDragRef.current && !tileView) ensureLoaded('low', entityIds, false);
+    if (moving && lod === 'mid' && !tileView) lod = 'low';
+    else if (!moving && !tileView) ensureLoaded('low', entityIds, false);
     ensureLoaded(lod, entityIds, moving);
     const useTiles = lod !== 'low' && tileView;
     // 조각은 멈췄을 때 화면에 보이는 나라 것만 받는다(A·B)
@@ -1194,17 +1189,6 @@ export default function WorldMap({ data }: { data: StaticData }) {
           ))}
         </div>
       )}
-      {/* 가볍게 끌기 토글(시험용, 2026-11-28): 켜고 끈 화면을 견줘 보기 위한 것. 지도 영역 위 가운데 */}
-      <button
-        className="map-light map-ui"
-        aria-pressed={lightDrag}
-        onClick={() => {
-          localStorage.setItem('light-drag', lightDrag ? 'off' : 'on');
-          setLightDrag(!lightDrag);
-        }}
-      >
-        가볍게 끌기 {lightDrag ? '켬' : '끔'}
-      </button>
       <div className="map-zoom-wrap">
       <div className="map-zoom map-ui" onClick={(e) => e.stopPropagation()} onPointerDown={(e) => e.stopPropagation()}>
         <button type="button" aria-label="확대" onClick={() => zoomStep(1.6)}>+</button>

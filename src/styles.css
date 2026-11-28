@@ -902,12 +902,6 @@ button {
 /* 미니게임으로 가는 단추 (2026-11-19): 지도 오른쪽 위의 정사각형 게임패드 단추(모서리 5px).
    한 변은 '주요 전쟁' 단추(.major-events-toggle) 높이의 2배, 휴대폰은 1.3배. 그 단추 높이가 바뀌면 --mg-major-h도 함께 고친다 */
 .app-main { --mg-major-h: 32px; }
-/* 가볍게 끌기 토글(시험용, 2026-11-28, WorldMap.tsx): 지도 영역 위 가운데. 휴대폰은 검색창 아래 줄(주요 전쟁·미니게임 단추와 같은 줄) */
-.map-light { position: absolute; top: 12px; left: 50%; z-index: 4; transform: translateX(-50%); padding: 5px 12px; border: 1.5px solid var(--border); border-radius: 999px; background: var(--control-solid); color: var(--fg); font: inherit; font-size: 12.5px; font-weight: 700; white-space: nowrap; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15); }
-.map-light[aria-pressed='true'] { border-color: var(--accent); color: var(--accent); }
-@media (max-width: 768px) {
-  .map-light { top: 62px; }
-}
 .mg-launch { position: absolute; top: 12px; right: 12px; z-index: 4; width: calc(var(--mg-major-h) * 2); height: calc(var(--mg-major-h) * 2); padding: 0; display: grid; place-items: center; border: 1.5px solid var(--accent); border-radius: 5px; --ui-bg: var(--control-bg); color: var(--accent); cursor: pointer; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15); }
 .mg-launch svg { width: 62%; height: 62%; }
 .mg-launch:active { --ui-bg: color-mix(in srgb, var(--accent) 10%, var(--control-bg)); }
